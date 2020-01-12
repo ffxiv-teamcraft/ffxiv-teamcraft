@@ -130,6 +130,23 @@
           </nz-card>
         </div>
 
+        <nz-card [nzTitle]="'DB.FISH.Hour' | translate">
+          <div [style.height]="'400px'">
+            <ngx-charts-area-chart-stacked
+              [gradient]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="true"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false"
+              [activeEntries]="activeEntries$ | async"
+              [results]="data.fishesPerHourChart.data"
+              (activate)="onChartHover($event, spot)"
+              (deactivate)="highlightedFish$.next(-1)"
+            ></ngx-charts-area-chart-stacked>
+          </div>
+        </nz-card>
+
         <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
           <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate" class="card-with-list expanded">
             <ng-template #baitSider let-bait>

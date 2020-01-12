@@ -110,6 +110,7 @@ export class List extends DataWithPermissions {
 
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
+    this.modificationsHistory = [];
     this.updateAllStatuses();
   }
 
