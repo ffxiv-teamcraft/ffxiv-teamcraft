@@ -9,7 +9,6 @@ import { ListRow } from '../../modules/list/model/list-row';
 import { map, shareReplay, tap } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
-import { camelCase } from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -82,7 +81,7 @@ export class LazyDataService {
       });
 
     combineLatest(lazyFilesList.map(row => {
-      return this.getData(`./assets/data/${row.fileName}`).pipe(
+      return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
         map(data => {
           return {
             ...row,
