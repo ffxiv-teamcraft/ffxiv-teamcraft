@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import gql from 'graphql-tag';
@@ -42,6 +42,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   public activeEntries$: Observable<any[]> = this.highlightedFish$.pipe(
     distinctUntilChanged(),
+    debounceTime(100),
     map(fishId => {
       if (fishId <= 0) {
         return [];
