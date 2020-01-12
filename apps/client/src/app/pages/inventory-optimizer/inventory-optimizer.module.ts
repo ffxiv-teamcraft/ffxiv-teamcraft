@@ -19,6 +19,7 @@ import { Duplicates } from './optimizations/duplicates';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HasTooFew } from './optimizations/has-too-few';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 const optimisations: Provider[] = [
   {
@@ -30,12 +31,13 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: Duplicates,
     multi: true,
-    deps: [TranslateService, InventoryFacade]
+    deps: [TranslateService, InventoryFacade, LazyDataService]
   },
   {
     provide: INVENTORY_OPTIMIZER,
     useClass: HasTooFew,
-    multi: true
+    multi: true,
+    deps: [LazyDataService]
   }
 ];
 

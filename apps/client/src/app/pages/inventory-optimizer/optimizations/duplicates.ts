@@ -4,11 +4,11 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
-import { stackSizes } from '../../../core/data/sources/stack-sizes';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 export class Duplicates extends InventoryOptimizer {
 
-  constructor(private translate: TranslateService, private inventoryFacade: InventoryFacade) {
+  constructor(private translate: TranslateService, private inventoryFacade: InventoryFacade, private lazyData: LazyDataService) {
     super();
   }
 
@@ -22,7 +22,7 @@ export class Duplicates extends InventoryOptimizer {
           && i.hq === item.hq
           && i.spiritBond === 0
           && i.slot !== item.slot
-          && item.quantity + i.quantity < stackSizes[i.itemId];
+          && item.quantity + i.quantity < this.lazyData.data.stackSizes[i.itemId];
       });
     if (dupes.length > 0) {
       return {

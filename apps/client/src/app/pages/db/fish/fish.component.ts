@@ -9,7 +9,6 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
-import { fishingSpots } from '../../../core/data/sources/fishing-spots';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 
@@ -226,7 +225,7 @@ export class FishComponent implements OnInit {
               };
             }),
             chances: this.spot$.value === -1 ? [] : sortedWeathers.map(entry => {
-              const spotData = fishingSpots.find(row => row.id === this.spot$.value);
+              const spotData = this.lazyData.data.fishingSpots.find(row => row.id === this.spot$.value);
               return {
                 chances: 100 * this.getWeatherChances(spotData.mapId, entry.weatherId),
                 weatherId: entry.weatherId
@@ -238,7 +237,7 @@ export class FishComponent implements OnInit {
             .sort((a, b) => b.occurences - a.occurences)
             .map(entry => {
               if (this.spot$.value > -1) {
-                const spotData = fishingSpots.find(row => row.id === this.spot$.value);
+                const spotData = this.lazyData.data.fishingSpots.find(row => row.id === this.spot$.value);
                 const weatherChances = this.getWeatherChances(spotData.mapId, entry.weatherId);
                 const previousWeatherChances = this.getWeatherChances(spotData.mapId, entry.previousWeatherId);
                 entry.transitionChances = 100 * weatherChances * previousWeatherChances;
@@ -264,12 +263,12 @@ export class FishComponent implements OnInit {
           fishEyes: fishEyesPercent,
           spots: result.data.spots_per_fish
             .map(entry => {
-              entry.spotData = fishingSpots.find(row => row.id === entry.spot);
+              entry.spotData = this.lazyData.data.fishingSpots.find(row => row.id === entry.spot);
               return entry;
             }),
           everySpots: result.data.every_spots
             .map(entry => {
-              entry.spotData = fishingSpots.find(row => row.id === entry.spot);
+              entry.spotData = this.lazyData.data.fishingSpots.find(row => row.id === entry.spot);
               return entry;
             }),
           minSize: result.data.fishingresults_aggregate.aggregate.min.size,

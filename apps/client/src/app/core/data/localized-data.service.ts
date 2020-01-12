@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
 import * as weathers from './sources/weathers.json';
-import * as ventures from './sources/ventures.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import * as jobNames from './sources/job-name.json';
 import * as jobAbbrs from './sources/job-abbr.json';
@@ -23,9 +22,9 @@ export class LocalizedDataService {
   }
 
   public getItem(id: number): I18nName {
-    const zhRow = this.getRow(this.lazyData.zhItems, id);
-    const koRow = this.getRow(this.lazyData.koItems, id);
-    const row = this.getRow(this.lazyData.items, id);
+    const zhRow = this.getRow(this.lazyData.data.zhItems, id);
+    const koRow = this.getRow(this.lazyData.data.koItems, id);
+    const row = this.getRow(this.lazyData.data.items, id);
 
     if (row !== undefined) {
       // If an item doesn't exist yet inside zh and ko items, use english name instead.
@@ -37,8 +36,8 @@ export class LocalizedDataService {
   }
 
   public getInstanceName(id: number): any {
-    const koRow = this.getRow(this.lazyData.koInstances, id);
-    const row = this.getRow(this.lazyData.instances, id);
+    const koRow = this.getRow(this.lazyData.data.koInstances, id);
+    const row = this.getRow(this.lazyData.data.instances, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -52,9 +51,9 @@ export class LocalizedDataService {
   }
 
   public getPlace(id: number): I18nName {
-    const row = this.getRow(this.lazyData.places, id);
-    const zhRow = this.getRow(this.lazyData.zhPlaces, id);
-    const koRow = this.getRow(this.lazyData.koPlaces, id);
+    const row = this.getRow(this.lazyData.data.places, id);
+    const zhRow = this.getRow(this.lazyData.data.zhPlaces, id);
+    const koRow = this.getRow(this.lazyData.data.koPlaces, id);
 
     if (row !== undefined) {
       row.zh = zhRow !== undefined ? zhRow.zh : row.en;
@@ -64,8 +63,8 @@ export class LocalizedDataService {
   }
 
   public getFate(id: number): Fate {
-    const row = this.getRow<Fate>(this.lazyData.fates, id);
-    const koRow = this.getRow<Fate>(this.lazyData.fates, id);
+    const row = this.getRow<Fate>(this.lazyData.data.fates, id);
+    const koRow = this.getRow<Fate>(this.lazyData.data.fates, id);
 
     if (row !== undefined) {
       row.name.ko = koRow !== undefined ? koRow.name.ko : row.name.en;
@@ -75,8 +74,8 @@ export class LocalizedDataService {
   }
 
   public getNpc(id: number): I18nName {
-    const row = this.getRow(this.lazyData.npcs, id);
-    const koRow = this.getRow(this.lazyData.koNpcs, id);
+    const row = this.getRow(this.lazyData.data.npcs, id);
+    const koRow = this.getRow(this.lazyData.data.koNpcs, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -85,8 +84,8 @@ export class LocalizedDataService {
   }
 
   public getLeve(id: number): I18nName {
-    const row = this.getRow(this.lazyData.leves, id);
-    const koRow = this.getRow(this.lazyData.koLeves, id);
+    const row = this.getRow(this.lazyData.data.leves, id);
+    const koRow = this.getRow(this.lazyData.data.koLeves, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -95,9 +94,9 @@ export class LocalizedDataService {
   }
 
   public getShopName(englishName: string): I18nName {
-    const id = +Object.keys(this.lazyData.shops).find(k => this.lazyData.shops[k].en === englishName);
-    const row = this.getRow(this.lazyData.shops, id);
-    const koRow = this.getRow(this.lazyData.koShops, id);
+    const id = +Object.keys(this.lazyData.data.shops).find(k => this.lazyData.data.shops[k].en === englishName);
+    const row = this.getRow(this.lazyData.data.shops, id);
+    const koRow = this.getRow(this.lazyData.data.koShops, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -107,7 +106,7 @@ export class LocalizedDataService {
 
   public getJobName(id: number): I18nName {
     const row = this.getRow(jobNames, id);
-    const koRow = this.getRow(this.lazyData.koJobNames, id);
+    const koRow = this.getRow(this.lazyData.data.koJobName, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -117,7 +116,7 @@ export class LocalizedDataService {
 
   public getJobAbbr(id: number): I18nName {
     const row = this.getRow(jobAbbrs, id);
-    const koRow = this.getRow(this.lazyData.koJobAbbrs, id);
+    const koRow = this.getRow(this.lazyData.data.koJobAbbr, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -126,8 +125,8 @@ export class LocalizedDataService {
   }
 
   public getMob(id: number): I18nName {
-    const row = this.getRow(this.lazyData.mobs, id);
-    const koRow = this.getRow(this.lazyData.koMobs, Math.floor(id % 1000000));
+    const row = this.getRow(this.lazyData.data.mobs, id);
+    const koRow = this.getRow(this.lazyData.data.koMobs, Math.floor(id % 1000000));
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -136,16 +135,16 @@ export class LocalizedDataService {
   }
 
   public getMobId(name: string): number {
-    return +Object.keys(this.lazyData.mobs).find(k => this.lazyData.mobs[k].en.toLowerCase() === name.toLowerCase());
+    return +Object.keys(this.lazyData.data.mobs).find(k => this.lazyData.data.mobs[k].en.toLowerCase() === name.toLowerCase());
   }
 
   public getVenture(id: number): I18nName {
-    return this.getRow(ventures, id);
+    return this.getRow(this.lazyData.data.ventures, id);
   }
 
   public getQuest(id: number): Quest {
-    const row = this.getRow<Quest>(this.lazyData.quests, id);
-    const koRow = this.getRow(this.lazyData.koQuests, id);
+    const row = this.getRow<Quest>(this.lazyData.data.quests, id);
+    const koRow = this.getRow(this.lazyData.data.koQuests, id);
     if (row !== undefined) {
       row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
     }
@@ -153,8 +152,8 @@ export class LocalizedDataService {
   }
 
   public getTrait(id: number): any {
-    const row = this.getRow(this.lazyData.traits, id);
-    const koRow = this.getRow(this.lazyData.koTraits, id);
+    const row = this.getRow(this.lazyData.data.traits, id);
+    const koRow = this.getRow(this.lazyData.data.koTraits, id);
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
@@ -163,7 +162,7 @@ export class LocalizedDataService {
 
   public getTTRule(id: number): I18nName {
     const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
-    const koRow = this.getRow(this.lazyData.koTripleTriadRules, id);
+    const koRow = this.getRow(this.lazyData.data.koTripleTriadRules, id);
     if (row !== undefined) {
       row.name.ko = koRow !== undefined ? koRow.ko : row.name.en;
     }
@@ -172,7 +171,7 @@ export class LocalizedDataService {
 
   public getWeather(id: number): I18nName {
     const row = this.getRow(weathers, id);
-    const koRow = this.getRow(this.lazyData.koWeathers, id);
+    const koRow = this.getRow(this.lazyData.data.koWeathers, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -185,12 +184,12 @@ export class LocalizedDataService {
   }
 
   public getAreaIdByENName(name: string): number {
-    return this.getIndexByName(this.lazyData.places, name, 'en');
+    return this.getIndexByName(this.lazyData.data.places, name, 'en');
   }
 
   public getFreeCompanyAction(id: number): I18nName {
     const row = this.getRow(freeCompanyActions, id);
-    const koRow = this.getRow(this.lazyData.koFCActions, id);
+    const koRow = this.getRow(this.lazyData.data.koFreeCompanyActions, id);
 
     if (row !== undefined) {
       row.ko = koRow !== undefined ? koRow.ko : row.en;
@@ -217,9 +216,9 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let res = this.getIndexByName(this.lazyData.craftActions, name, language, true);
+    let res = this.getIndexByName(this.lazyData.data.craftActions, name, language, true);
     if (res === -1) {
-      res = this.getIndexByName(this.lazyData.actions, name, language, true);
+      res = this.getIndexByName(this.lazyData.data.actions, name, language, true);
     }
     if (res === -1) {
       throw new Error('Data row not found.');
@@ -228,7 +227,7 @@ export class LocalizedDataService {
   }
 
   public getCraftingActionByName(name: string, language: Language): I18nName {
-    const koData: any[] = Object.values({ ...this.lazyData.koActions, ...this.lazyData.koCraftActions });
+    const koData: any[] = Object.values({ ...this.lazyData.data.koActions, ...this.lazyData.data.koCraftActions });
     if (language === 'ko') {
       const koRow = koData.find(a => a.ko === name);
       if (koRow !== undefined) {
@@ -243,11 +242,11 @@ export class LocalizedDataService {
         language = 'en';
       }
     }
-    let resultIndex = this.getIndexByName(this.lazyData.craftActions, name, language);
+    let resultIndex = this.getIndexByName(this.lazyData.data.craftActions, name, language);
     if (resultIndex === -1) {
-      resultIndex = this.getIndexByName(this.lazyData.actions, name, language);
+      resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language);
     }
-    const result = this.lazyData.craftActions[resultIndex] || this.lazyData.actions[resultIndex];
+    const result = this.lazyData.data.craftActions[resultIndex] || this.lazyData.data.actions[resultIndex];
     if (resultIndex === -1) {
       throw new Error('Data row not found.');
     }
@@ -263,11 +262,11 @@ export class LocalizedDataService {
   }
 
   public getAction(id: number): I18nName {
-    const result = this.getRow(this.lazyData.craftActions, id) || this.getRow(this.lazyData.actions, id);
+    const result = this.getRow(this.lazyData.data.craftActions, id) || this.getRow(this.lazyData.data.actions, id);
     if (result === undefined) {
       throw new Error('Data row not found.');
     }
-    const koRow = this.getRow(this.lazyData.koCraftActions, id) || this.getRow(this.lazyData.koActions, id);
+    const koRow = this.getRow(this.lazyData.data.koCraftActions, id) || this.getRow(this.lazyData.data.koActions, id);
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }
@@ -275,8 +274,8 @@ export class LocalizedDataService {
   }
 
   public getStatus(id: number): I18nName {
-    const result = this.getRow(this.lazyData.statuses, id);
-    const koRow = this.getRow(this.lazyData.koStatuses, id);
+    const result = this.getRow(this.lazyData.data.statuses, id);
+    const koRow = this.getRow(this.lazyData.data.koStatuses, id);
     if (koRow !== undefined) {
       result.ko = koRow.ko;
     }

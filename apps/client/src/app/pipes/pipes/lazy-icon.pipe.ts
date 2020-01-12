@@ -10,10 +10,10 @@ export class LazyIconPipe implements PipeTransform {
   }
 
   transform(id: number): string {
-    if (!this.lazyData.icons[id] && id.toString().indexOf('draft') > -1) {
+    if (!this.lazyData.data.itemIcons[id] && id.toString().indexOf('draft') > -1) {
       return `https://garlandtools.org/files/icons/item/custom/draft.png`;
     }
-    return `https://xivapi.com${this.lazyData.icons[id]}`;
+    return `https://xivapi.com${this.lazyData.data.itemIcons[id]}`;
   }
 
 }

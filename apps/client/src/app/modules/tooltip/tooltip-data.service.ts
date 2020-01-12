@@ -36,9 +36,9 @@ export class TooltipDataService {
       if (id > 99999) {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.CraftAction, id).pipe(
           map(action => {
-            if (this.lazyData.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.koCraftDescriptions[id]) {
-              action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
-              action.Description_ko = this.lazyData.koCraftDescriptions[id].ko;
+            if (this.lazyData.data.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.data.koCraftDescriptions[id]) {
+              action.ClassJobCategory.Name_ko = this.lazyData.data.koJobCategories[action.ClassJobCategory.ID].ko;
+              action.Description_ko = this.lazyData.data.koCraftDescriptions[id].ko;
             }
             return action;
           }),
@@ -47,9 +47,9 @@ export class TooltipDataService {
       } else {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.Action, id).pipe(
           map(action => {
-            if (this.lazyData.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.koCraftDescriptions[id]) {
-              action.ClassJobCategory.Name_ko = this.lazyData.koJobCategories[action.ClassJobCategory.ID].ko;
-              action.Description_ko = this.lazyData.koActionDescriptions[id].ko;
+            if (this.lazyData.data.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.data.koCraftDescriptions[id]) {
+              action.ClassJobCategory.Name_ko = this.lazyData.data.koJobCategories[action.ClassJobCategory.ID].ko;
+              action.Description_ko = this.lazyData.data.koActionDescriptions[id].ko;
             }
             return action;
           }),

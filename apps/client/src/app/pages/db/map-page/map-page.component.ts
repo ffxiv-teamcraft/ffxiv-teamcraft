@@ -14,11 +14,8 @@ import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import * as _ from 'lodash';
 import { MapRelatedElement } from './map-related-element';
 import { MapMarker } from '../../../modules/map/map-marker';
-import * as monsters from '../../../core/data/sources/monsters.json';
-import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { HttpClient } from '@angular/common/http';
-import { hunts } from '../../../core/data/sources/hunts';
 import { tap } from 'rxjs/internal/operators/tap';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
@@ -193,7 +190,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getHunts(territoryId: number, sizeFactor: number): MapRelatedElement[] {
-    const zoneHunts = hunts.find(h => h.zoneid === territoryId);
+    const zoneHunts = this.lazyData.data.hunts.find(h => h.zoneid === territoryId);
     if (zoneHunts === undefined) {
       return [];
     }
@@ -224,10 +221,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getFates(placeNameId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.fates)
+    return Object.keys(this.lazyData.data.fates)
       .map(key => {
-        const position = this.lazyData.fates[key].position;
-        return position ? { ...this.lazyData.fates[key], id: +key } : null;
+        const position = this.lazyData.data.fates[key].position;
+        return position ? { ...this.lazyData.data.fates[key], id: +key } : null;
       })
       .filter(fate => fate !== null && fate.position.zoneid === placeNameId)
       .map(fate => {
@@ -253,10 +250,10 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getNpcs(placeNameId: number): MapRelatedElement[] {
-    return Object.keys(this.lazyData.npcs)
+    return Object.keys(this.lazyData.data.npcs)
       .map(key => {
-        const position = this.lazyData.npcs[key].position;
-        return position ? { ...this.lazyData.npcs[key], id: +key } : null;
+        const position = this.lazyData.data.npcs[key].position;
+        return position ? { ...this.lazyData.data.npcs[key], id: +key } : null;
       })
       .filter(npc => npc !== null && npc.position.zoneid === placeNameId && npc.en !== '')
       .map(npc => {
@@ -281,9 +278,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getNodes(placeNameId: number): MapRelatedElement[] {
-    const fromNodePositions = Object.keys(nodePositions)
+    const fromNodePositions = Object.keys(this.lazyData.data.nodePositions)
       .map(key => {
-        return { ...nodePositions[key], id: +key };
+        return { ...this.lazyData.data.nodePositions[key], id: +key };
       })
       .filter(node => node !== null && node.zoneid === placeNameId && !node.items.some(i => i > 2000000))
       .map(node => {
@@ -351,9 +348,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getMobs(placeNameId: number): MapRelatedElement[] {
-    return [].concat.apply([], Object.keys(monsters)
+    return [].concat.apply([], Object.keys(this.lazyData.data.monsters)
       .map(key => {
-        const monster = monsters[key];
+        const monster = this.lazyData.data.monsters[key];
         monster.positions = monster.positions.filter(p => p.zoneid === placeNameId);
         return { id: +key, ...monster };
       })

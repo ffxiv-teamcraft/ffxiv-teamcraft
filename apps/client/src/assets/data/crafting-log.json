@@ -1,4 +1,4 @@
-export const craftingLog = [
+[
   [
     1008,
     1009,
@@ -8196,4 +8196,4 @@ export const craftingLog = [
     33604,
     33612
   ]
-];
+]

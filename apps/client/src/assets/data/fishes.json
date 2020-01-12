@@ -1,4 +1,4 @@
-export const fishes = [
+[
   4925,
   4927,
   4932,
@@ -820,4 +820,4 @@ export const fishes = [
   27513,
   27514,
   27515
-];
+]

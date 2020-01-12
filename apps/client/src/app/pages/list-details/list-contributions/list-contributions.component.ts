@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { map } from 'rxjs/operators';
-import { ilvls } from '../../../core/data/sources/ilvls';
 import { BehaviorSubject, combineLatest } from 'rxjs';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-list-contributions',
@@ -32,8 +32,8 @@ export class ListContributionsComponent {
           }
           statsRow.amount += entry.amount;
           stats.total += entry.amount;
-          statsRow.ilvlAmount += entry.amount * ilvls[entry.itemId];
-          stats.ilvlTotal += entry.amount * ilvls[entry.itemId];
+          statsRow.ilvlAmount += entry.amount * this.lazyData.data.ilvls[entry.itemId];
+          stats.ilvlTotal += entry.amount * this.lazyData.data.ilvls[entry.itemId];
           return stats;
         }, { entries: [], total: 0, ilvlTotal: 0 });
       result.entries.sort((a, b) => {
@@ -43,7 +43,7 @@ export class ListContributionsComponent {
     })
   );
 
-  constructor(private listsFacade: ListsFacade) {
+  constructor(private listsFacade: ListsFacade, private lazyData: LazyDataService) {
   }
 
   public sort(event: { key: string, value: string }): void {

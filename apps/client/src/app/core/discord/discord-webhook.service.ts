@@ -237,7 +237,7 @@ export class DiscordWebhookService {
   }
 
   private getIcon(itemId: number): string {
-    return `https://xivapi.com${this.lazyData.icons[itemId]}`;
+    return `https://xivapi.com${this.lazyData.data.itemIcons[itemId]}`;
   }
 
   oauthUrl(state: string, redirectUri: string): string {

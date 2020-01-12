@@ -7,10 +7,10 @@ import { getItemSource, ListRow } from '../../model/list-row';
 import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import * as nodePositions from '../../../../core/data/sources/node-positions.json';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService) {
+  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -74,7 +74,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
           return nodes.map(node => {
             const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
-            const nodePosition = nodePositions[node.id];
+            const nodePosition = this.lazyData.data.nodePositions[node.id];
             const alarm: Partial<Alarm> = {
               itemId: node.itemId,
               icon: node.icon,

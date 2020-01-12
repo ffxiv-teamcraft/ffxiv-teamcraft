@@ -11,7 +11,6 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { actionCdGroups } from '../../../core/data/sources/action-cd-groups';
 import { actionCombos } from '../../../core/data/sources/action-combos';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
@@ -86,7 +85,7 @@ export class ActionComponent extends TeamcraftPageComponent {
           return this.xivapi.get(XivapiEndpoint.Action, +id).pipe(
             map(action => {
               if (action.CooldownGroup > 0 && action.Recast100ms !== 25) {
-                action.SharesCooldownWith = actionCdGroups[action.CooldownGroup]
+                action.SharesCooldownWith = this.lazyData.data.actionCdGroups[action.CooldownGroup]
                   .filter(i => i !== action.ID);
               }
               action.Combos = Object.keys(actionCombos)
@@ -102,9 +101,9 @@ export class ActionComponent extends TeamcraftPageComponent {
 
     this.relatedTraits$ = this.xviapiAction$.pipe(
       map(action => {
-        return Object.keys(this.lazyData.traits)
+        return Object.keys(this.lazyData.data.traits)
           .filter(key => {
-            return this.lazyData.traits[key].description.en.indexOf(`>${action.Name_en}<`) > -1;
+            return this.lazyData.data.traits[key].description.en.indexOf(`>${action.Name_en}<`) > -1;
           })
           .map(key => +key);
       })

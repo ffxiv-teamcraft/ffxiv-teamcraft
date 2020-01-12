@@ -12,7 +12,6 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { fishingSpots } from '../../../core/data/sources/fishing-spots';
 import gql from 'graphql-tag';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
@@ -53,15 +52,15 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          [this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          ['../', this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -81,7 +80,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.FishingSpot, +id);
       }),
       map(spot => {
-        spot.customData = fishingSpots.find(s => s.id === spot.ID);
+        spot.customData = this.lazyData.data.fishingSpots.find(s => s.id === spot.ID);
         return spot;
       }),
       shareReplay(1)
@@ -168,7 +167,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
             }
             return a.next - b.next;
           }),
-          fishes: fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
+          fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
           fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
             return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
           }), 'itemId', 'baitId', 'occurences'),
