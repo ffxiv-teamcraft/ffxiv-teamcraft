@@ -1,4 +1,4 @@
-FROM circleci/node:10.9.0-stretch-browsers
+FROM circleci/node:12.8.0-stretch-browsers
 
 RUN ls /etc/apt/
 
