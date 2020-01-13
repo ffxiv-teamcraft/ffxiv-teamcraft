@@ -82,7 +82,7 @@ export class LazyDataService {
       });
 
     combineLatest(lazyFilesList.map(row => {
-      return this.getData(`/assets/data/${row.fileName}`).pipe(
+      return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
         map(data => {
           return {
             ...row,

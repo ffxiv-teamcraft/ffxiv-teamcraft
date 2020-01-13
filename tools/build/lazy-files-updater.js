@@ -19,6 +19,7 @@ fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-
         const hash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/data/', row)] });
         return {
           fileName: row,
+          hashedFileName: `${row.replace('.json', '')}.${hash}.json`,
           propertyName: _.camelCase(row.replace('.json', '').replace(/\/\w+\//, ''))
         };
       })
