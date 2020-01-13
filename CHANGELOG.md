@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.7"></a>
+## [6.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.6...v6.5.7) (2020-01-13)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with "create all alarms" button not working properly ([b183393](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b183393))
+* **db:** fixed an issue with comments crashing in some cases ([61b37e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61b37e6))
+* **db:** fixed various missing data (fish baits and hidden flag on items) ([baf6025](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/baf6025))
+* **desktop:** fixed an issue with google oauth on 2FA accounts ([3f51249](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f51249)), closes [#1269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1269)
+* **fishing:** fixed an issue with fishes in Eulmore area ([43f4f18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43f4f18))
+* **fishing:** fixed an issue with fishing state not being detected properly ([2382732](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2382732))
+* **list:** fixed an issue with japanese items search ([1227c4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1227c4f)), closes [#1318](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1318)
+
+
+### Features
+
+* **fishing-spot:** added new "hour of the day" chart ([0903dfd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0903dfd))
+* **list:** lists created before 6.1.0 will now be considered as outdated ([59b3c8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59b3c8c))
+* **simulator:** added level to craft stats display in main block ([cd26ab6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd26ab6))
+
+
+
 <a name="6.5.6"></a>
 ## [6.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.5...v6.5.6) (2019-12-29)
 
