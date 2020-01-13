@@ -89,6 +89,10 @@ function createWindow() {
   } else {
     deepLink = config.get('router:uri') || '';
   }
+  // It seems like somehow, this could happen.
+  if (deepLink.indexOf('overlay') > -1) {
+    deepLink = '';
+  }
   let opts = {
     show: false,
     backgroundColor: '#000',

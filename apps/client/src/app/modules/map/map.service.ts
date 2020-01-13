@@ -35,7 +35,7 @@ export class MapService {
 
   getMapById(mapId: number): Observable<MapData> {
     if (this.cache[mapId] === undefined) {
-      const _mapData = this.lazyData.maps[mapId];
+      const _mapData = this.lazyData.data.maps[mapId];
       this.cache[mapId] = of(_mapData).pipe(
         map(mapData => {
           return {

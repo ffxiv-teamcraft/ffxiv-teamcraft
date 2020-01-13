@@ -267,7 +267,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           if (row.id < 20) {
             return;
           }
-          listAlarms.push(...getItemSource(row, DataType.ALARMS).filter(alarm => {
+          listAlarms.push(...(row.alarms || []).filter(alarm => {
             // Avoid duplicates.
             return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
           }));

@@ -1,13 +1,16 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { achievementIcons } from '../../core/data/sources/achievement-icons';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Pipe({
   name: 'achievementIcon'
 })
 export class AchievementIconPipe implements PipeTransform {
 
+  constructor(private lazyData: LazyDataService) {
+  }
+
   transform(id: number): string {
-    return achievementIcons[id];
+    return this.lazyData.data.achievementIcons[id];
   }
 
 }

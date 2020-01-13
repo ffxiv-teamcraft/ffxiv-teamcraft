@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { craftingLogPages } from '../../../core/data/sources/crafting-log-pages';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -10,8 +9,6 @@ import { combineLatest, concat, interval, Observable, of } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { gatheringLogPages } from '../../../core/data/sources/gathering-log-pages';
-import * as nodePositions from '../../../core/data/sources/node-positions.json';
 import { folklores } from '../../../core/data/sources/folklores';
 import { reductions } from '../../../core/data/sources/reductions';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
@@ -67,8 +64,8 @@ export class LogTrackerComponent extends TrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
-    this.dohTabs = [...craftingLogPages];
-    this.dolTabs = [...gatheringLogPages];
+    this.dohTabs = [...this.lazyData.data.craftingLogPages];
+    this.dolTabs = [...this.lazyData.data.gatheringLogPages];
     this.authFacade.user$.pipe(
     ).subscribe(user => {
       this.userCompletion = {};
@@ -249,13 +246,13 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private _getNodeData(itemId: number, pageId: number): any {
     const tab = Math.floor(pageId / 40);
-    const availableNodeIds = Object.keys(nodePositions)
+    const availableNodeIds = Object.keys(this.lazyData.data.nodePositions)
       .filter(key => {
-        return nodePositions[key].items.indexOf(itemId) > -1;
+        return this.lazyData.data.nodePositions[key].items.indexOf(itemId) > -1;
       });
     const nodesFromPositions = availableNodeIds
       .map(key => {
-        return { ...nodePositions[key], nodeId: key };
+        return { ...this.lazyData.data.nodePositions[key], nodeId: key };
       })
       .filter(node => {
         return tab > 10 || node.type === tab;
@@ -264,7 +261,7 @@ export class LogTrackerComponent extends TrackerComponent {
         const bellNode = this.bell.getNode(+node.nodeId);
         node.timed = bellNode !== undefined;
         node.itemId = itemId;
-        node.icon = this.lazyData.icons[itemId];
+        node.icon = this.lazyData.data.itemIcons[itemId];
         if (node.timed) {
           const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === itemId);
           node.spawnTimes = bellNode.time;
@@ -289,7 +286,7 @@ export class LogTrackerComponent extends TrackerComponent {
         return tab > 10 || node.type === tab;
       })
       .map(node => {
-        const nodePosition = nodePositions[node.id];
+        const nodePosition = this.lazyData.data.nodePositions[node.id];
         const result: any = {
           nodeId: node.id,
           zoneid: this.l12n.getAreaIdByENName(node.zone),
@@ -385,7 +382,7 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public showOptimizedMap(index: number): void {
-    const steps: NavigationObjective[] = [].concat.apply([], [...gatheringLogPages[index], ...gatheringLogPages[index + 1]]
+    const steps: NavigationObjective[] = [].concat.apply([], [...this.lazyData.data.gatheringLogPages[index], ...this.lazyData.data.gatheringLogPages[index + 1]]
       .map(page => {
         return page.items
           .filter(item => {

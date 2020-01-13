@@ -36,7 +36,7 @@ export class ItemPickerComponent implements OnInit {
     this.results$ = this.query$.pipe(
       debounceTime(500),
       filter(query => {
-        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+        if (['ko', 'zh', 'ja'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
           return query.length > 0;
         }

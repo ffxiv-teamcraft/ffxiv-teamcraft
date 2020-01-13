@@ -14,6 +14,9 @@
                 <nz-tag *ngIf="node.limitType !== undefined" nzColor="#108ee9">
                   {{node.limitType | i18n}}
                 </nz-tag>
+                <nz-tag *ngIf="node.hidden" nzColor="#108ee9">
+                  {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
+                </nz-tag>
                 <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <img [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                        src="./assets/icons/status/fish_eyes.png">

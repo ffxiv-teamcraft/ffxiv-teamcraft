@@ -35,6 +35,7 @@ export class ListCompletionPopupComponent {
   clearList(): void {
     this.list.finalItems = [];
     this.list.items = [];
+    this.list.modificationsHistory = [];
     this.listsFacade.updateList(this.list, true, true);
     this.close();
   }

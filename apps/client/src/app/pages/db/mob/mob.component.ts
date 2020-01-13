@@ -12,10 +12,8 @@ import { SeoService } from '../../../core/seo/seo.service';
 import { catchError, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import * as monsters from '../../../core/data/sources/monsters.json';
 import { MobData } from '../../../model/garland-tools/mob-data';
 import { Vector2 } from '../../../core/tools/vector2';
-import { hunts } from '../../../core/data/sources/hunts';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { monsterDrops } from '../../../core/data/sources/monster-drops';
@@ -94,7 +92,7 @@ export class MobComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.BNpcName, +id);
       }),
       map(mob => {
-        mob.mappyData = monsters[mob.ID];
+        mob.mappyData = this.lazyData.data.monsters[mob.ID];
         return mob;
       }),
       shareReplay(1)
@@ -118,7 +116,7 @@ export class MobComponent extends TeamcraftPageComponent {
             mapRow.positions.push({ x: position.x, y: position.y });
           }
         }
-        const mobHuntSpawns = hunts.find(h => h.hunts.some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
+        const mobHuntSpawns = this.lazyData.data.hunts.find(h => h.hunts.some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
         if (mobHuntSpawns !== undefined) {
           const mapIdEntry = mapIds.find(entry => entry.territory === mobHuntSpawns.zoneid);
           const c = mapIdEntry.scale / 100;
@@ -165,7 +163,7 @@ export class MobComponent extends TeamcraftPageComponent {
   }
 
   private getGTMobId(bnpcNameId: number): string {
-    const monsterEntry = monsters[bnpcNameId];
+    const monsterEntry = this.lazyData.data.monsters[bnpcNameId];
     if (monsterEntry === undefined) {
       return '';
     }

@@ -33,7 +33,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
-import { fishes } from '../../../core/data/sources/fishes';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
@@ -114,7 +113,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.Item, +itemId);
       }),
       switchMap((item) => {
-        item.IsFish = fishes.indexOf(item.ID) > -1;
+        item.IsFish = this.lazyData.data.fishes.indexOf(item.ID) > -1;
         // If it's a  consumable, get item action details and put it inside item action itself.
         if (item.ItemAction && [844, 845, 846].indexOf(item.ItemAction.Type) > -1) {
           return this.xivapi.get(XivapiEndpoint.ItemFood, item.ItemAction.Data1).pipe(
@@ -383,7 +382,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: this.lazyData.recipes.filter(r => r.result === +itemId)
+                  recipes: this.lazyData.data.recipes.filter(r => r.result === +itemId)
                 };
               })
           });
@@ -467,7 +466,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               return {
                 npcs: ts.npcs.map(npcId => {
                   const npc: TradeNpc = { id: npcId };
-                  const npcEntry = this.lazyData.npcs[npcId];
+                  const npcEntry = this.lazyData.data.npcs[npcId];
                   if (npcEntry.position) {
                     npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
                     npc.zoneId = npcEntry.position.zoneid;
@@ -587,7 +586,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: [this.lazyData.recipes.find(r => r.result === +itemId)]
+                  recipes: [this.lazyData.data.recipes.find(r => r.result === +itemId)]
                 };
               })
           });
@@ -738,7 +737,7 @@ export class ItemComponent extends TeamcraftPageComponent {
                   item.sources.push({
                     type: DataType.TRIPLE_TRIAD_DUELS,
                     data: card.sources.npcs.map(npc => {
-                      const npcPosition = this.lazyData.npcs[npc.resident_id].position;
+                      const npcPosition = this.lazyData.data.npcs[npc.resident_id].position;
                       const duel: TripleTriadDuel = {
                         atttNpcId: npc.id,
                         npcId: npc.resident_id,

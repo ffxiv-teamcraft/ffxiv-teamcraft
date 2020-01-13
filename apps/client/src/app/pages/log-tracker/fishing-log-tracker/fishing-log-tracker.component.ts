@@ -8,10 +8,8 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { first, map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { fishingLog } from '../../../core/data/sources/fishing-log';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
-import { fishParameter } from '../../../core/data/sources/fish-parameter';
 import { TrackerComponent } from '../tracker-component';
 import { fishEyes } from '../../../core/data/sources/fish-eyes';
 import { fshLogOrder } from '../fsh-log-order';
@@ -117,10 +115,10 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
           if (spot.predator) {
             result.predators = spot.predator.map(predator => {
-              const itemId = +Object.keys(this.lazyData.items).find(key => this.lazyData.items[key].en === predator.name);
+              const itemId = +Object.keys(this.lazyData.data.items).find(key => this.lazyData.data.items[key].en === predator.name);
               return {
                 id: itemId,
-                icon: this.lazyData.icons[itemId],
+                icon: this.lazyData.data.itemIcons[itemId],
                 amount: predator.predatorAmount
               };
             });
@@ -194,7 +192,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
   }
 
   ngOnInit(): void {
-    const completeDisplay$ = of([fishingLog, spearFishingLog]).pipe(
+    const completeDisplay$ = of([this.lazyData.data.fishingLog, spearFishingLog]).pipe(
       map((logs) => {
         return logs.map((log: any[], type) => {
           const display = { tabs: [], total: 0, done: 0 };
@@ -226,7 +224,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
               spot = row.spots[row.spots.length - 1];
             }
             if (type === 0) {
-              const parameter = fishParameter[entry.id];
+              const parameter = this.lazyData.data.fishParameter[entry.id];
               const fish: any = {
                 id: spot.id,
                 itemId: entry.itemId,

@@ -3,9 +3,7 @@ import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
-import { actionTimeline } from '../data/sources/action-timeline';
 import { LazyDataService } from '../data/lazy-data.service';
-import { fishingSpots } from '../data/sources/fishing-spots';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { IpcService } from '../electron/ipc.service';
 
@@ -73,9 +71,9 @@ export class FishingReporter implements DataReporter {
     );
 
     const spot$ = combineLatest([this.eorzea.mapId$, positionPackets$]).pipe(
-      filter(([mapId]) => this.lazyData.maps[mapId.toString()] !== undefined),
+      filter(([mapId]) => this.lazyData.data.maps[mapId.toString()] !== undefined),
       map(([mapId, packet]) => {
-        const mapData = this.lazyData.maps[mapId.toString()];
+        const mapData = this.lazyData.data.maps[mapId.toString()];
         const c = mapData.size_factor / 100;
         const raw = {
           x: (packet.pos.x + mapData.offset_x) * c,
@@ -90,7 +88,7 @@ export class FishingReporter implements DataReporter {
         };
       }),
       map(position => {
-        const spots = fishingSpots.filter(spot => spot.mapId === position.mapId);
+        const spots = this.lazyData.data.fishingSpots.filter(spot => spot.mapId === position.mapId);
         return spots.sort((a, b) => {
           return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2))
             - Math.sqrt(Math.pow(b.coords.x - position.x, 2) + Math.pow(b.coords.y - position.y, 2));
@@ -155,15 +153,15 @@ export class FishingReporter implements DataReporter {
     );
 
     const actionTimeline$ = packets$.pipe(
-      ofPacketType('eventUnk0'),
+      ofPacketType('eventPlay4'),
       map(packet => {
-        return actionTimeline[packet.actionTimeline.toString()];
+        return this.lazyData.data.actionTimeline[packet.actionTimeline.toString()];
       }),
       filter(key => key !== undefined)
     );
 
     const mooch$ = packets$.pipe(
-      ofPacketType('eventUnk1'),
+      ofPacketType('eventPlay8'),
       filter(packet => packet.actionTimeline === 257),
       map(packet => {
         return packet.param1 === 1121;
@@ -172,7 +170,7 @@ export class FishingReporter implements DataReporter {
 
     const misses$ = combineLatest([
       packets$.pipe(
-        ofPacketType('eventUnk1'),
+        ofPacketType('eventPlay8'),
         map(packet => {
           return {
             animation: packet.actionTimeline,

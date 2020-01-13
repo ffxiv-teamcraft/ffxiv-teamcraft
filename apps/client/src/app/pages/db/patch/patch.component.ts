@@ -64,7 +64,7 @@ export class PatchComponent extends TeamcraftPageComponent {
       map(patch => {
         return {
           ...patch,
-          ...this.lazyData.patchContents[patch.ID]
+          ...this.lazyData.data.patchContent[patch.ID]
         };
       }),
       shareReplay(1)

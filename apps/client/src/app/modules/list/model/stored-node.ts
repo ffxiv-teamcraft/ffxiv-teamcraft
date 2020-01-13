@@ -21,4 +21,5 @@ export interface StoredNode {
   predators?: { id: number, icon: number, amount: number }[];
   gig?: string;
   hookset?: string;
+  hidden?: boolean;
 }
