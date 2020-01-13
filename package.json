@@ -219,7 +219,7 @@
     "dotenv": "6.2.0",
     "electron": "^7.1.7",
     "electron-builder": "21.2.0",
-    "firebase-tools": "^4.0.1",
+    "firebase-tools": "^7.11.0",
     "firestore-export-import": "^0.2.9",
     "fs-extra": "^7.0.1",
     "fuzzy": "^0.1.3",
