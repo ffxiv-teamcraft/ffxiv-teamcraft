@@ -1,5 +1,5 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { isPlatformServer } from '@angular/common';
@@ -27,6 +27,7 @@ export class LazyDataService {
   );
 
   public data: LazyData;
+  public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
               private platformService: PlatformService) {
@@ -95,6 +96,7 @@ export class LazyDataService {
         lazyData[row.propertyName] = row.data;
       });
       this.data = lazyData as LazyData;
+      this.data$.next(this.data);
       this.loaded$.next(true);
     });
   }

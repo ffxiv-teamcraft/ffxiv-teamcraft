@@ -110,6 +110,7 @@ export class List extends DataWithPermissions {
 
   public reset(): void {
     this.finalItems.forEach(recipe => this.resetDone(recipe));
+    this.modificationsHistory = [];
     this.updateAllStatuses();
   }
 
@@ -384,8 +385,7 @@ export class List extends DataWithPermissions {
     }
     let res = false;
     res = res || (this.version === undefined);
-    res = res || semver.ltr(this.version, '5.0.0');
-    res = res || (this.items || []).some(item => item.workingOnIt !== undefined && !(item.workingOnIt instanceof Array));
+    res = res || semver.ltr(this.version, '6.1.0');
     return res;
   }
 

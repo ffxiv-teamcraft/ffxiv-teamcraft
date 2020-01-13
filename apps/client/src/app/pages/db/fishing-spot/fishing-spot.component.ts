@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import gql from 'graphql-tag';
@@ -39,6 +39,21 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   private highlightColor: number[] = [];
 
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+
+  public activeEntries$: Observable<any[]> = this.highlightedFish$.pipe(
+    distinctUntilChanged(),
+    debounceTime(100),
+    map(fishId => {
+      if (fishId <= 0) {
+        return [];
+      }
+      return [
+        {
+          name: this.i18n.getName(this.l12n.getItem(fishId))
+        }
+      ];
+    })
+  );
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -121,6 +136,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         );
       }),
       map(([spot, gubalData, time]) => {
+        const hours = Array.from(Array(24).keys());
         return {
           weathers: weatherIndex[spot.TerritoryType.WeatherRate]
             .map(row => {
@@ -167,6 +183,23 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
             }
             return a.next - b.next;
           }),
+          fishesPerHourChart: {
+            data: spot.customData.fishes
+              .filter(fish => fish > 0)
+              .map(fish => {
+                return {
+                  name: this.i18n.getName(this.l12n.getItem(fish)),
+                  series: hours
+                    .map(hour => {
+                      const row = gubalData.data.etimes_per_fish_per_spot.find(r => r.itemId === fish && r.etime === hour);
+                      return {
+                        name: `${hour}:00`,
+                        value: row ? row.occurences : 0
+                      };
+                    })
+                };
+              })
+          },
           fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
           fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
             return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
@@ -196,6 +229,13 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         this.loading = false;
       })
     );
+  }
+
+  public onChartHover(event: any, spot: any): void {
+    const itemId = spot.customData.fishes.find(fish => {
+      return this.i18n.getName(this.l12n.getItem(fish)) === event.value.name;
+    });
+    this.highlightedFish$.next(itemId);
   }
 
   private getGraphQLQuery(spotId: number): any {
