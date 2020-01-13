@@ -18,11 +18,11 @@ export class EorzeaFacade {
 
   public zoneId$ = this.store.pipe(select(eorzeaQuery.getZone));
 
-  public mapId$ = this.zoneId$.pipe(
-    map(zoneId => {
-      return +Object.keys(this.lazyData.data.maps)
+  public mapId$ = combineLatest([this.zoneId$, this.lazyData.data$]).pipe(
+    map(([zoneId, data]) => {
+      return +Object.keys(data.maps)
         .find(key => {
-          return zoneId === this.lazyData.data.maps[+key].placename_id;
+          return zoneId === data.maps[+key].placename_id;
         });
     })
   );
