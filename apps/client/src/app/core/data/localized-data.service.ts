@@ -203,6 +203,9 @@ export class LocalizedDataService {
       if (name === 'Gridania') {
         return 2;
       }
+      if (name.startsWith('Eulmore - ')) {
+        return 498;
+      }
       return -1;
     }
     return result.id;

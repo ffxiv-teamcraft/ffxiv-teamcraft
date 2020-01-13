@@ -90,7 +90,7 @@
     "commit": "git-cz",
     "electron:start": "electron ./desktop/main.js",
     "electron:start:no-decorators": "electron ./desktop/main.js --native-titlebar",
-    "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win --dir",
+    "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder --win",
     "electron:setup:build-dev": "del-cli release/* && npm run build:electron-dev && electron-builder --win --dir",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder --win",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder --win -p always",
