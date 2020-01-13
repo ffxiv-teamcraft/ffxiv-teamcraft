@@ -46,7 +46,10 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
               if (!comment.parent || comment.parent === '0') {
                 tree.push(comment);
               } else {
-                this.getCommentById(tree, comment.parent).replies.push(comment);
+                const commentData = this.getCommentById(tree, comment.parent);
+                if (commentData) {
+                  commentData.replies.push(comment);
+                }
               }
               return tree;
             }, []);
@@ -54,13 +57,14 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       );
   }
 
-  private getCommentById(tree: DbComment[], key: string): DbComment {
+  private getCommentById(tree: DbComment[], key: string, occurences = 0): DbComment {
     const finding = tree.find(c => c.$key === key);
     if (finding) {
       return finding;
-    } else {
-      return this.getCommentById([].concat.apply([], tree.map(c => c.replies)), key);
+    } else if (occurences < 10) {
+      return this.getCommentById([].concat.apply([], tree.map(c => c.replies)), key, occurences + 1);
     }
+    return null;
   }
 
   protected getBaseUri(params?: any): string {
