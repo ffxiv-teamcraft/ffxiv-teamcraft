@@ -73,6 +73,10 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             areaid: this.localized.getAreaIdByENName(partial.n),
             type: partial.t
           };
+          const lazyNode = this.lazyData.data.nodePositions[partial.i.toString()];
+          if (lazyNode && !lazyNode.items.some(row => row === item.id)) {
+            storedNode.hidden = true;
+          }
           if (details !== undefined) {
             const detailsItem = details.items.find(i => i.id === item.id);
             storedNode.slot = detailsItem !== undefined ? detailsItem.slot : '?';
