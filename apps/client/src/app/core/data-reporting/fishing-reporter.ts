@@ -263,7 +263,7 @@ export class FishingReporter implements DataReporter {
         hookset$,
         spot$,
         fisherStats$,
-        mooch$
+        mooch$.pipe(startWith(false))
       ),
       filter(([fish, , , throwData, biteData, , spot, , mooch]) => {
         return fish.id === -1 || (biteData.tug !== null &&
