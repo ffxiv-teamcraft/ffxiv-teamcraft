@@ -161,7 +161,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const mooch$ = packets$.pipe(
-      ofPacketType('eventPlay8'),
+      ofPacketType('someDirectorUnk4'),
       filter(packet => packet.actionTimeline === 257),
       map(packet => {
         return packet.param1 === 1121;
@@ -171,7 +171,7 @@ export class FishingReporter implements DataReporter {
 
     const misses$ = combineLatest([
       packets$.pipe(
-        ofPacketType('eventPlay8'),
+        ofPacketType('someDirectorUnk4'),
         map(packet => {
           return {
             animation: packet.actionTimeline,

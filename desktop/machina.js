@@ -70,6 +70,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventFinish',
         'eventPlay4',
         'eventPlay8',
+        'someDirectorUnk4',
         'updatePositionHandler',
         'actorControlSelf',
         'useMooch'
