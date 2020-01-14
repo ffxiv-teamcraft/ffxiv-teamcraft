@@ -165,7 +165,8 @@ export class FishingReporter implements DataReporter {
       filter(packet => packet.actionTimeline === 257),
       map(packet => {
         return packet.param1 === 1121;
-      })
+      }),
+      startWith(false)
     );
 
     const misses$ = combineLatest([
@@ -231,7 +232,7 @@ export class FishingReporter implements DataReporter {
       this.eorzea.baitId$.pipe(startWith(null)),
       spot$.pipe(startWith(null)),
       fisherStats$.pipe(startWith(null)),
-      mooch$.pipe(startWith(false)),
+      mooch$,
       this.eorzea.statuses$,
       this.eorzea.weatherId$.pipe(startWith(null), distinctUntilChanged()),
       this.eorzea.previousWeatherId$.pipe(startWith(null), distinctUntilChanged()),
@@ -263,7 +264,7 @@ export class FishingReporter implements DataReporter {
         hookset$,
         spot$,
         fisherStats$,
-        mooch$.pipe(startWith(false))
+        mooch$
       ),
       filter(([fish, , , throwData, biteData, , spot, , mooch]) => {
         return fish.id === -1 || (biteData.tug !== null &&
