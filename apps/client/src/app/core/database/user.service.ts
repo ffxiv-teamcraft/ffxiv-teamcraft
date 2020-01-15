@@ -1,8 +1,8 @@
 import { Injectable, NgZone } from '@angular/core';
-import { EMPTY, from, Observable, of } from 'rxjs';
+import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -27,9 +27,26 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
+  public cacheCharacter(charResponse: CharacterResponse): void {
+    localStorage.setItem(`character:${charResponse.Character.ID}`, JSON.stringify(charResponse));
+  }
+
+  public getCachedCharacter(id: number): CharacterResponse | null {
+    const data = localStorage.getItem(`character:${id}`);
+    if (data) {
+      return JSON.parse(data);
+    }
+    return null;
+  }
+
   public getCharacter(id: number): Observable<CharacterResponse> {
     if (this.characterCache[id] === undefined) {
-      this.characterCache[id] = this.xivapi.getCharacter(id).pipe(shareReplay(1));
+      this.characterCache[id] = this.xivapi.getCharacter(id).pipe(
+        tap(char => this.cacheCharacter(char)),
+        startWith(this.getCachedCharacter(id)),
+        filter(res => res !== null),
+        shareReplay(1)
+      );
     }
     return this.characterCache[id];
   }
