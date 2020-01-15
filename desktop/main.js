@@ -155,7 +155,7 @@ function createWindow() {
 
   // save window size and position
   win.on('close', (event) => {
-    if (!app.isQuitting && !config.get('always-quit')) {
+    if (!app.isQuitting && config.get('always-quit', true) === false) {
       event.preventDefault();
       win.hide();
       return false;
@@ -448,7 +448,7 @@ ipcMain.on('always-quit', (event, flag) => {
 });
 
 ipcMain.on('always-quit:get', (event) => {
-  event.sender.send('always-quit:value', config.get('always-quit'));
+  event.sender.send('always-quit:value', config.get('always-quit', true));
 });
 
 ipcMain.on('start-minimized', (event, flag) => {
