@@ -86,6 +86,9 @@ module.exports.start = function(win, config, verbose, winpcap) {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
+        if (packet.sourceActorSessionID !== packet.targetActorSessionID) {
+          return;
+        }
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);
         }
