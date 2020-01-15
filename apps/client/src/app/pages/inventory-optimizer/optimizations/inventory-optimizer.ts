@@ -27,7 +27,7 @@ export abstract class InventoryOptimizer {
     if (InventoryOptimizer.IGNORED_CONTAINERS.indexOf(item.containerId) > -1) {
       return null;
     }
-    const data = lazyData.extracts.find(i => i.id === item.itemId);
+    const data = (lazyData.extracts || []).find(i => i.id === item.itemId);
     return this._getOptimization(item, inventory, data);
   }
 
