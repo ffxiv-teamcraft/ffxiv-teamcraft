@@ -159,6 +159,14 @@ const routes: Routes = [
     loadChildren: './pages/inventory-optimizer/inventory-optimizer.module#InventoryOptimizerModule'
   },
   {
+    path: 'gearset',
+    loadChildren: './pages/gearset/gearset.module#GearsetModule'
+  },
+  {
+    path: 'gearsets',
+    loadChildren: './pages/gearsets-page/gearsets-page.module#GearsetsPageModule'
+  },
+  {
     path: 'extractor',
     loadChildren: './pages/extractor/extractor.module#ExtractorModule',
     canLoad: [DevGuard]

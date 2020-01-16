@@ -3,10 +3,8 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
-import { LogTracking } from '../../model/user/log-tracking';
 import { BlogEntry } from '../../pages/blog/blog-entry';
 import { Observable } from 'rxjs';
-import { CraftingRotationsFolder } from '../../model/other/crafting-rotations-folder';
 import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
