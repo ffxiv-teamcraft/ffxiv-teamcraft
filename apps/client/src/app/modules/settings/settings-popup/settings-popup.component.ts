@@ -42,7 +42,7 @@ export class SettingsPopupComponent {
 
   startMinimized = false;
 
-  alwaysQuit = false;
+  alwaysQuit = true;
 
   customTheme: Theme;
 

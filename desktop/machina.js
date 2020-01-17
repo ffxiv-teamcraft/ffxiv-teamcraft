@@ -70,6 +70,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventFinish',
         'eventPlay4',
         'eventPlay8',
+        'someDirectorUnk4',
         'updatePositionHandler',
         'actorControlSelf',
         'useMooch'
@@ -84,6 +85,9 @@ module.exports.start = function(win, config, verbose, winpcap) {
       Machina.on('any', (packet) => {
         if (verbose) {
           log.log(JSON.stringify(packet));
+        }
+        if (packet.sourceActorSessionID !== packet.targetActorSessionID) {
+          return;
         }
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
           sendToRenderer(win, packet);

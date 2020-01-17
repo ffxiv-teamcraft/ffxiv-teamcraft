@@ -11,6 +11,7 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
+import { ListRow } from '../../../modules/list/model/list-row';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -24,41 +25,46 @@ export class InventoryOptimizerComponent {
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-  public optimizations$: Observable<InventoryOptimization[]> = this.resultsReloader$.pipe(
-    switchMapTo(this.inventoryFacade.inventory$.pipe(
-      map(inventory => {
-        return this.optimizers
-          .map(optimizer => {
-            const entries = inventory.toArray()
-              .filter(item => {
-                return [
-                  ContainerType.RetainerMarket,
-                  ContainerType.RetainerEquippedGear
-                ].indexOf(item.containerId) === -1;
-              })
-              .map(item => {
+  public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
+    switchMap((extracts: ListRow[]) => {
+      return this.resultsReloader$.pipe(
+        switchMapTo(this.inventoryFacade.inventory$.pipe(
+          map(inventory => {
+            return this.optimizers
+              .map(optimizer => {
+                const entries = inventory.toArray()
+                  .filter(item => {
+                    return [
+                      ContainerType.RetainerMarket,
+                      ContainerType.RetainerEquippedGear
+                    ].indexOf(item.containerId) === -1;
+                  })
+                  .map(item => {
+                    return {
+                      item: item,
+                      containerName: this.getContainerName(item),
+                      isRetainer: item.retainerName !== undefined,
+                      messageParams: optimizer.getOptimization(item, inventory, extracts)
+                    };
+                  })
+                  .filter(optimization => optimization.messageParams !== null);
                 return {
-                  item: item,
-                  containerName: this.getContainerName(item),
-                  isRetainer: item.retainerName !== undefined,
-                  messageParams: optimizer.getOptimization(item, inventory, this.lazyData)
+                  type: optimizer.getId(),
+                  entries: _.chain(entries)
+                    .groupBy('containerName')
+                    .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
+                    .value(),
+                  totalLength: entries.length
                 };
               })
-              .filter(optimization => optimization.messageParams !== null);
-            return {
-              type: optimizer.getId(),
-              entries: _.chain(entries)
-                .groupBy('containerName')
-                .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
-                .value(),
-              totalLength: entries.length
-            };
+              .filter(res => res.entries.length > 0);
           })
-          .filter(res => res.entries.length > 0);
-      })
-    )),
-    tap(() => this.loading = false)
+        )),
+        tap(() => this.loading = false)
+      );
+    })
   );
+
 
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
     switchMap(optimizations => {
