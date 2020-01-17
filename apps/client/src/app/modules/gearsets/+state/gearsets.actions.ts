@@ -2,6 +2,8 @@ import { Action } from '@ngrx/store';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 
 export enum GearsetsActionTypes {
+  CreateGearset = '[Gearsets] Create Gearset',
+
   LoadGearsets = '[Gearsets] Load Gearsets',
   GearsetsLoaded = '[Gearsets] Gearsets Loaded',
 
@@ -22,6 +24,10 @@ export class GearsetsLoaded implements Action {
 
   constructor(public payload: TeamcraftGearset[]) {
   }
+}
+
+export class CreateGearset implements Action {
+  readonly type = GearsetsActionTypes.CreateGearset;
 }
 
 export class LoadGearset implements Action {
@@ -59,5 +65,5 @@ export class DeleteGearset implements Action {
   }
 }
 
-export type GearsetsAction = LoadGearsets | GearsetsLoaded | LoadGearset | GearsetLoaded | SelectGearset | UpdateGearset | DeleteGearset;
+export type GearsetsAction = LoadGearsets | GearsetsLoaded | LoadGearset | GearsetLoaded | SelectGearset | UpdateGearset | DeleteGearset | CreateGearset;
 

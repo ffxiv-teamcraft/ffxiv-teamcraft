@@ -1,1 +1,7 @@
-<p>gearsets-page works!</p>
+<button nz-button (click)="newGearset()">+</button>
+
+<ul *ngIf="gearsets$ | async as gearsets">
+  <li *ngFor="let gearset of gearsets">
+    <a routerLink="/gearset/{{gearset.$key}}/edit">{{gearset.name}}</a>
+  </li>
+</ul>

@@ -99,6 +99,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { GraphQLModule } from './graphql.module';
 import { ApolloInterceptor } from './apollo-interceptor';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
+import { GearsetsModule } from './modules/gearsets/gearsets.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -213,6 +214,7 @@ const nzConfig: NzConfig = {
     CustomItemsModule,
     PageLoaderModule,
     LoadingScreenModule,
+    GearsetsModule,
 
     AlarmsModule,
     AlarmsSidebarModule,

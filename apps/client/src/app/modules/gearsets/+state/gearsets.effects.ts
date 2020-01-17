@@ -2,9 +2,14 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
-import { DeleteGearset, GearsetsActionTypes, LoadGearset, LoadGearsets, UpdateGearset } from './gearsets.actions';
-import { distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { CreateGearset, DeleteGearset, GearsetLoaded, GearsetsActionTypes, GearsetsLoaded, LoadGearset, LoadGearsets, UpdateGearset } from './gearsets.actions';
+import { distinctUntilChanged, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
+import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { EMPTY } from 'rxjs';
 
 @Injectable()
 export class GearsetsEffects {
@@ -19,7 +24,8 @@ export class GearsetsEffects {
           return this.gearsetService.getByForeignKey(TeamcraftUser, userId);
         })
       );
-    })
+    }),
+    map(sets => new GearsetsLoaded(sets))
   );
 
   @Effect()
@@ -27,7 +33,39 @@ export class GearsetsEffects {
     ofType<LoadGearset>(GearsetsActionTypes.LoadGearset),
     switchMap(action => {
       return this.gearsetService.get(action.key);
-    })
+    }),
+    map(gearset => new GearsetLoaded(gearset))
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  createGearset$ = this.actions$.pipe(
+    ofType<CreateGearset>(GearsetsActionTypes.CreateGearset),
+    switchMap(() => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: NameQuestionPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('CUSTOM_LINKS.Add_link')
+          }).afterClose.pipe(
+            filter(name => name),
+            map(name => {
+              const gearset = new TeamcraftGearset();
+              gearset.name = name;
+              gearset.authorId = userId;
+              return gearset;
+            })
+          );
+        }),
+        switchMap(gearset => {
+          return this.gearsetService.add(gearset);
+        })
+      );
+    }),
+    switchMapTo(EMPTY)
   );
 
   @Effect()
@@ -47,6 +85,7 @@ export class GearsetsEffects {
   );
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private gearsetService: GearsetService) {
+              private gearsetService: GearsetService, private dialog: NzModalService,
+              private translate: TranslateService) {
   }
 }

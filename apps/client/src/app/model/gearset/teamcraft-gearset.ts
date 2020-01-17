@@ -2,6 +2,8 @@ import { EquipmentPiece } from './equipment-piece';
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
 
 export class TeamcraftGearset extends DataWithPermissions {
+  name: string;
+
   job: number;
 
   mainHand: EquipmentPiece;

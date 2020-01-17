@@ -4,12 +4,14 @@ import { select, Store } from '@ngrx/store';
 
 import { GearsetsPartialState } from './gearsets.reducer';
 import { gearsetsQuery } from './gearsets.selectors';
-import { DeleteGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset } from './gearsets.actions';
+import { CreateGearset, DeleteGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset } from './gearsets.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class GearsetsFacade {
   loaded$ = this.store.pipe(select(gearsetsQuery.getLoaded));
 
@@ -52,5 +54,9 @@ export class GearsetsFacade {
 
   select(key: string): void {
     this.store.dispatch(new SelectGearset(key));
+  }
+
+  createGearset(): void {
+    this.store.dispatch(new CreateGearset());
   }
 }
