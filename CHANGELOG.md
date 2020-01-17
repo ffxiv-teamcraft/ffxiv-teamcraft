@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.9"></a>
+## [6.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.8...v6.5.9) (2020-01-17)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with marketboard uploader ([916d2b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/916d2b1))
+* **desktop:** fixed an issue with retainers inventory not updating ([025324d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/025324d))
+
+
+
 <a name="6.5.8"></a>
 ## [6.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.7...v6.5.8) (2020-01-17)
 
