@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.8"></a>
+## [6.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.7...v6.5.8) (2020-01-17)
+
+
+### Bug Fixes
+
+* **desktop:** packet capture doesn't increase CPU usage in crowded areas anymore ([f38c668](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f38c668))
+* **fishing:** fixed an issue with mooch not being detected properly in some cases ([ab39749](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab39749))
+* **fishing:** fixed an issue with reporter not reporting properly ([efbd034](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efbd034))
+* **inventory-optimizer:** fixed an issue that may happen with optimizer loading ([ae99ede](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae99ede))
+* **inventory-optimizer:** now loads properly even if you have no lists at all ([7c09781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c09781))
+* **list:** added debounce of 2s to list update to avoid rollbacks when checking several items ([3c52f60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c52f60))
+
+
+### Features
+
+* **auth:** added a cache layer to character loading for better perfs ([d1ccaf6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1ccaf6))
+* **desktop:** application is now quitting by default when clicking close button ([feda18d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/feda18d))
+
+
+
 <a name="6.5.7"></a>
 ## [6.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.6...v6.5.7) (2020-01-13)
 
