@@ -14,6 +14,24 @@ function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
 }
 
+function filterPacketSessionID(packet) {
+  const packetsFromOthers = [
+    'playerSpawn',
+    'actorControl',
+    'updateClassInfo',
+    'actorControlSelf',
+    'effectResult',
+    'eventPlay',
+    'eventStart',
+    'eventFinish',
+    'eventPlay4',
+    'eventPlay8',
+    'someDirectorUnk4',
+  ];
+  return packetsFromOthers.indexOf(packet.type) === -1
+    || packet.sourceActorSessionID === packet.targetActorSessionID;
+}
+
 module.exports.start = function(win, config, verbose, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
@@ -86,7 +104,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         if (verbose) {
           log.log(JSON.stringify(packet));
         }
-        if (packet.sourceActorSessionID !== packet.targetActorSessionID) {
+        if (!filterPacketSessionID(packet)) {
           return;
         }
         if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {

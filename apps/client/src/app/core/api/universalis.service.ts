@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
 import { combineLatest, Observable } from 'rxjs';
-import { buffer, bufferCount, debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { bufferCount, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
@@ -19,8 +19,9 @@ export class UniversalisService {
     shareReplay(1)
   );
 
-  private worldId$: Observable<number> = this.ipc.worldId$.pipe(
-    filter(worldId => worldId !== undefined),
+  private worldId$: Observable<number> = this.authFacade.user$.pipe(
+    map(user => user.world),
+    filter(cid => cid !== undefined),
     distinctUntilChanged(),
     shareReplay(1)
   );
@@ -130,7 +131,7 @@ export class UniversalisService {
     this.ipc.marketboardListingCount$
       .pipe(
         switchMap(packet => {
-          return this.ipc.marketboardListing$.pipe(bufferCount(Math.ceil(packet.quantity / 10)))
+          return this.ipc.marketboardListing$.pipe(bufferCount(Math.ceil(packet.quantity / 10)));
         })
       )
       .subscribe(listings => {
@@ -248,26 +249,26 @@ export class UniversalisService {
   }
 
   public uploadMarketTaxRates(packet: any): void {
-      combineLatest([this.cid$, this.worldId$]).pipe(
-        first(),
-        switchMap(([cid, worldId]) => {
-          const data = {
-            worldID: worldId,
-            uploaderID: cid,
-            marketTaxRates: {
-                limsaLominsa: packet.limsaLominsa,
-                gridania: packet.gridania,
-                uldah: packet.uldah,
-                ishgard: packet.ishgard,
-                kugane: packet.kugane,
-                crystarium: packet.crystarium
-            }
-          };
-          return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
-            headers: new HttpHeaders().append('Content-Type', 'application/json')
-          });
-        })
-      ).subscribe();
+    combineLatest([this.cid$, this.worldId$]).pipe(
+      first(),
+      switchMap(([cid, worldId]) => {
+        const data = {
+          worldID: worldId,
+          uploaderID: cid,
+          marketTaxRates: {
+            limsaLominsa: packet.limsaLominsa,
+            gridania: packet.gridania,
+            uldah: packet.uldah,
+            ishgard: packet.ishgard,
+            kugane: packet.kugane,
+            crystarium: packet.crystarium
+          }
+        };
+        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
+          headers: new HttpHeaders().append('Content-Type', 'application/json')
+        });
+      })
+    ).subscribe();
   }
 
   public uploadCid(packet: any): void {
