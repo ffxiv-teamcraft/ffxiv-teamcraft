@@ -15,7 +15,7 @@ const getAllGearsets = createSelector(
   getGearsetsState,
   getLoaded,
   (state: GearsetsState, isLoaded) => {
-    return isLoaded ? state.list : [];
+    return state.list;
   }
 );
 

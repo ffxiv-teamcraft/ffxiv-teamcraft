@@ -1,1 +1,55 @@
-<p>gearset-editor works!</p>
+<nz-card [nzTitle]="'GEARSETS.Filters' | translate" class="filters">
+  <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
+    <!--Ilvl filter-->
+    <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+      <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-input-group fxLayout="row">
+          <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
+                           id="ilvl"></nz-input-number>
+          <input disabled nz-input placeholder="-" type="text">
+          <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
+                           formControlName="ilvlMax"></nz-input-number>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <!--Elvl filter (equipment level)-->
+    <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+      <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-input-group fxLayout="row">
+          <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
+                           id="elvl"></nz-input-number>
+          <input disabled nz-input placeholder="-" type="text">
+          <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
+                           formControlName="elvlMax"></nz-input-number>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button nzType="primary" [disabled]="!itemFiltersform.valid">{{'ITEMS.Apply_filters' | translate}}</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</nz-card>
+
+<ng-container *ngIf="items$ | async as chunks">
+  <div fxLayout="column" fxLayoutGap="10px">
+    <div nz-row *ngFor="let categories of chunks" nzGutter="10">
+      <div nz-col nzMd="12" nzSm="24" class="category-card" *ngFor="let category of categories">
+        <nz-card [nzTitle]="('GEARSETS.SLOT.'+category.name) | translate">
+          <div fxLayout="column">
+            <ng-container *ngFor="let item of category.items;let last=last; let odd = odd">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                <app-item-icon [itemId]="item.ID" [width]="32 | ifMobile:24"></app-item-icon>
+                <div>{{item | xivapiI18n}}</div>
+              </div>
+              <nz-divider *ngIf="!last"></nz-divider>
+            </ng-container>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  </div>
+</ng-container>
