@@ -5,6 +5,7 @@ export interface LazyData {
   actionIcons: any;
   actionTimeline: any;
   actions: any;
+  baseParams: any;
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;
@@ -24,6 +25,7 @@ export interface LazyData {
   items: any;
   leves: any;
   maps: any;
+  materias: any;
   mobs: any;
   monsters: any;
   nodePositions: any;

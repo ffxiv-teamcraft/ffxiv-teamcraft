@@ -427,7 +427,7 @@ if (hasTodo('craftingLog')) {
   }, null, () => RecipeLevelTable$.next(recipeLevelTable));
 
   combineLatest([
-    getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true),
+    getAllEntries('https://xivapi.com/RecipeNotebookList', true),
     RecipeLevelTable$
   ]).subscribe(([completeFetch, rlvlTable]) => {
     completeFetch.forEach(page => {
@@ -457,7 +457,7 @@ if (hasTodo('craftingLog')) {
 
 if (hasTodo('gatheringLog')) {
 
-  getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+  getAllEntries('https://xivapi.com/GatheringNotebookList', true).subscribe(completeFetch => {
     completeFetch.forEach(page => {
       // If it's an empty page, don't go further
       if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
@@ -499,7 +499,7 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).pipe(
+  getAllEntries('https://xivapi.com/FishParameter', true).pipe(
     map(completeFetch => {
       const fishParameter = {};
       completeFetch
@@ -531,7 +531,7 @@ if (hasTodo('fishingLog')) {
     persistToJsonAsset('fish-parameter', fishParameter);
   });
 
-  getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
+  getAllEntries('https://xivapi.com/FishingSpot', true).subscribe((completeFetch) => {
     const spots = [];
     const fishes = [];
     completeFetch
@@ -600,7 +600,7 @@ if (hasTodo('spearFishingLog')) {
 
       const spearFishingLog = [];
 
-      getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+      getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
         completeFetch
           .filter(entry => entry.GatheringPointBase)
           .forEach(entry => {
@@ -629,7 +629,7 @@ if (hasTodo('spearFishingLog')) {
 
       const spearFishingNodes = [];
 
-      getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+      getAllEntries('https://xivapi.com/SpearfishingItem', true).subscribe(completeFetch => {
         completeFetch
           .filter(fish => fish.Item !== null)
           .forEach(fish => {
@@ -699,7 +699,7 @@ if (hasTodo('weather')) {
     'Weather7TargetID'
   ];
 
-  getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+  getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}`).subscribe(res => {
     weatherIndexes.push(...res.Results);
   }, null, () => {
     weatherIndexes.forEach(weatherIndex => {
@@ -1504,5 +1504,71 @@ if (hasTodo('actionTimeline')) {
     });
   }, null, () => {
     persistToJsonAsset('action-timeline', actionTimeline);
+  });
+}
+
+if (hasTodo('materias')) {
+  const materiaColumns = [
+    'ID',
+    'Value0',
+    'Value1',
+    'Value2',
+    'Value3',
+    'Value4',
+    'Value5',
+    'Value6',
+    'Value7',
+    'Value8',
+    'Value9',
+    'Item0TargetID',
+    'Item1TargetID',
+    'Item2TargetID',
+    'Item3TargetID',
+    'Item4TargetID',
+    'Item5TargetID',
+    'Item6TargetID',
+    'Item7TargetID',
+    'Item8TargetID',
+    'Item9TargetID',
+    'BaseParamTargetID'
+  ];
+  const materias = [];
+  getAllPages(`https://xivapi.com/Materia?columns=${materiaColumns.join(',')}`).subscribe(page => {
+    page.Results
+      .filter(entry => entry.Item0 !== null && entry.Value0 > 0)
+      .forEach(entry => {
+        Object.entries(entry)
+          .filter(([key, itemId]) => /Item\dTargetID/.test(key) && itemId > 0)
+          .forEach(([key, itemId]) => {
+            const index = +/Item(\d)TargetID/.exec(key)[1];
+            const value = entry[`Value${index}`];
+            if (value > 0) {
+              materias.push({
+                itemId: itemId,
+                tier: index + 1,
+                value: entry[`Value${index}`],
+                baseParamId: entry.BaseParamTargetID
+              });
+            }
+          });
+      });
+  }, null, () => {
+    persistToJsonAsset('materias', materias);
+  });
+}
+
+if (hasTodo('baseParam')) {
+  const baseParams = {};
+  getAllPages('https://xivapi.com/BaseParam?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(entry => {
+      baseParams[entry.ID] = {
+        en: entry.Name_en,
+        de: entry.Name_de,
+        ja: entry.Name_ja,
+        fr: entry.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('base-params', baseParams);
   });
 }

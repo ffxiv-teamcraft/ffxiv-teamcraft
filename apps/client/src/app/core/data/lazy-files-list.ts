@@ -30,6 +30,11 @@ export const lazyFilesList = [
     'propertyName': 'actions'
   },
   {
+    'fileName': 'base-params.json',
+    'hashedFileName': 'base-params.6d0f6928a1c2c889cdac60c4547ebfbce6b9ea41.json',
+    'propertyName': 'baseParams'
+  },
+  {
     'fileName': 'craft-actions.json',
     'hashedFileName': 'craft-actions.0c1d3850be7f0bfe8c66282f7e1868b1ab3bea4f.json',
     'propertyName': 'craftActions'
@@ -76,7 +81,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
+    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -123,6 +128,11 @@ export const lazyFilesList = [
     'fileName': 'maps.json',
     'hashedFileName': 'maps.3b89bea8759e33c8159ae2381550aa89a6570752.json',
     'propertyName': 'maps'
+  },
+  {
+    'fileName': 'materias.json',
+    'hashedFileName': 'materias.d76c3c85ee0aced19c9a2907dbdd7166911276e5.json',
+    'propertyName': 'materias'
   },
   {
     'fileName': 'mobs.json',
