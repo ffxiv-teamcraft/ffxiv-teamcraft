@@ -561,7 +561,7 @@
     "Disable_HQ_suggestions": "禁用自动显示HQ图标",
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
-    "List_large": "此清单中内容过多",
+    "List_large": "这个清单太长了",
     "Enable_performance_mode": "您可以在设置中启用性能模式来加快渲染速度",
     "List_too_large": "清单过长",
     "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
@@ -1339,7 +1339,7 @@
     "Currencies": "货币",
     "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
     "Unlocks": "解锁",
-    "Jump_to_page": "Quick jump to another page",
+    "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
       "Masterpiece_base": "BASE",
@@ -1373,27 +1373,27 @@
         "Big": "Big"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
+        "Open": "打开钓鱼悬浮窗",
         "Bait": "Attached bait",
         "Tug": "Tug",
         "Hookset": "Hookset",
-        "Fishing": "Fishing",
+        "Fishing": "正在钓鱼",
         "Mooch": "Last throw was mooch",
         "Mooch_report": "Mooch",
-        "Current_weather": "Current weather",
-        "Previous_weather": "Previous weather",
-        "Spot": "Spot",
-        "Possible_fish": "Possible fish",
+        "Current_weather": "当前天气",
+        "Previous_weather": "上一天气",
+        "Spot": "钓场",
+        "Possible_fish": "可能钓上的鱼",
         "Stats": "Stats",
         "Statuses": "Statuses",
         "No_statuses": "No relevant statuses",
         "Total_reports": "Total reports for this session",
         "Last_report": "Last report",
-        "Fish": "Fish",
+        "Fish": "鱼",
         "Size": "Size",
         "ERRORS": {
           "Unknown_map": "Map unknown, change zone to load it.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "No_bait": "未检测到钓饵，请重新“选饵”"
         }
       }
     },
