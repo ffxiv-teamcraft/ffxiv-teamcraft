@@ -383,11 +383,11 @@
     "Disable_search_history": "关闭搜索记录",
     "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
     "Enable_packet_capture": "启用数据包捕获（增加实时背包等功能）",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Enable_autofill_by_default": "Enable autofill by default",
-    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
-    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
-    "Contribute_to_universalis": "Contribute to Universalis",
+    "Packet_capture_info": "针对国际服玩家：数据包捕获功能是违反 ToS 的，ACT 也因此违反 ToS。但在其他玩家不知晓的情况下，Square Enix 并不会进行处理，因此您可以私下使用而无需担心风险。",
+    "Enable_autofill_by_default": "默认启用自动填充",
+    "Enable_autofill_notification_by_default": "默认启用自动填充通知",
+    "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
+    "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Performance_mode": "Performance mode",
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
@@ -408,10 +408,10 @@
     },
     "CATEGORIES": {
       "Autofill_completion": "Autofill completion sound",
-      "Packet_capture": "Packet capture",
+      "Packet_capture": "数据包捕获",
       "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Search": "搜索",
+      "Other": "其他"
     }
   },
   "PROFILE": {
@@ -504,14 +504,14 @@
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "Reset_panel": "Reset all the items of this panel",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "红色",
+      "GREEN": "绿色",
+      "YELLOW": "黄色",
+      "BLUE": "蓝色",
+      "PURPLE": "紫色",
+      "ORANGE": "橙色",
+      "PINK": "粉色",
+      "NONE": "无"
     },
     "ROTATION": {
       "Attach": "附加手法",
@@ -562,7 +562,7 @@
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "Enable_performance_mode": "您可以在设置中启用性能模式来加快渲染速度",
     "List_too_large": "清单过长",
     "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
     "Add_to_another_list": "添加到另一个清单",
