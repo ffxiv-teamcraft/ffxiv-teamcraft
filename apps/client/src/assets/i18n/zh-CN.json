@@ -388,7 +388,7 @@
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
     "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
     "Contribute_to_universalis": "向 Universalis 提交数据",
-    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
+    "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Performance_mode": "性能模式",
     "Performance_mode_explain": "移除列表中的物品图标和菜单（仅保留按钮）以降低浏览器及应用的压力。",
     "Change_email": "修改电子邮箱",
@@ -488,7 +488,7 @@
     "Copy_list_as_text": "将整个清单复制为文本",
     "Copied_as_text": "内容已复制到剪贴板",
     "Total_price": "总费用(金币+其他货币)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "忽略此货币（仅在有其他购买方式时生效）",
     "Total_trade_price": "合计: ",
     "Add_all_alarms": "为该清单添加所有闹钟",
     "History": "历史记录",
@@ -943,7 +943,7 @@
       "No_medicine": "无强化药",
       "No_fc_buffs": "无部队特效",
       "Quest_warning": "要触发“魔匠的闪念”，请确保你完成了 70 级职业任务",
-      "Starting_quality": "Starting quality",
+      "Starting_quality": "初始品质",
       "STATS": {
         "CP": "制作力",
         "Craftsmanship": "作业精度",
@@ -1392,7 +1392,7 @@
         "Fish": "鱼",
         "Size": "Size",
         "ERRORS": {
-          "Unknown_map": "Map unknown, change zone to load it.",
+          "Unknown_map": "未知地图，请通过切换区域载入。",
           "No_bait": "未检测到钓饵，请重新“选饵”"
         }
       }
@@ -1557,7 +1557,7 @@
     "Trait": "特性",
     "Any": "任何",
     "Achievement": "成就",
-    "Fishing-spot": "Fishing spot"
+    "Fishing-spot": "钓场"
   },
   "SEARCH_FILTERS": {
     "Level": "等级",
@@ -1642,9 +1642,9 @@
     "Other": "其他"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_title": "数据包捕获功能可用",
+    "Button_label": "启用数据包捕获",
+    "Banner_description": "您可以启用数据包捕获功能，以允许 Teamcraft 读取游戏的数据包（设置中也提供了此功能的开关）。此功能可以在您获得物品时自动填写清单中的内容，并向市场聚合平台 Universalis 贡献数据。",
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
@@ -1696,7 +1696,7 @@
     }
   },
   "VERSION_LOCK": {
-    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
+    "Outdated": "你正在使用的 Teamcraft 版本已过期，无法正常工作",
+    "Refresh_or_download_latest": "如果您正在使用网页版，请按 Ctrl + F5 强制刷新；如果您正在使用桌面应用，请在这里下载最新版本： "
   }
 }
