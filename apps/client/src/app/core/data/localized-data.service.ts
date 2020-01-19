@@ -245,7 +245,7 @@ export class LocalizedDataService {
   }
 
   private guessExtendedLanguageKey(language: 'zh' | 'ko', key: keyof LazyData): keyof LazyData {
-    let guessKey = `${language}${key.charAt(0).toUpperCase()}${key.substr(1)}`
+    const guessKey = `${language}${key.charAt(0).toUpperCase()}${key.substr(1)}`
     if (!this.lazyData.data.hasOwnProperty(guessKey)) {
       return undefined;
     }
