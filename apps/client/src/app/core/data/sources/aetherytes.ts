@@ -1258,5 +1258,95 @@ export const aetherytes = [
     "x": 30.2,
     "y": 19.7,
     "type": 0
+  },
+  {
+    "id": 21,
+    "zoneid": 46,
+    "map": 24,
+    "placenameid": 46,
+    "nameid": 325,
+    "x": 21.9,
+    "y": 30.6,
+    "type": 0
+  },
+  {
+    "id": 76,
+    "zoneid": 2000,
+    "map": 212,
+    "placenameid": 2000,
+    "nameid": 2018,
+    "x": 33.2,
+    "y": 23.2,
+    "type": 0
+  },
+  {
+    "id": 80,
+    "zoneid": 2300,
+    "map": 218,
+    "placenameid": 2300,
+    "nameid": 0,
+    "x": 12.2,
+    "y": 11.3,
+    "type": 1
+  },
+  {
+    "id": 99,
+    "zoneid": 2406,
+    "map": 367,
+    "placenameid": 2406,
+    "nameid": 2634,
+    "x": 29.8,
+    "y": 26.4,
+    "type": 0
+  },
+  {
+    "id": 101,
+    "zoneid": 2407,
+    "map": 368,
+    "placenameid": 2407,
+    "nameid": 2660,
+    "x": 16.1,
+    "y": 36.5,
+    "type": 0
+  },
+  {
+    "id": 30,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 9.8,
+    "y": 8.4,
+    "type": 1
+  },
+  {
+    "id": 27,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 13.7,
+    "y": 6.7,
+    "type": 1
+  },
+  {
+    "id": 116,
+    "zoneid": 2404,
+    "map": 370,
+    "placenameid": 2404,
+    "nameid": 0,
+    "x": 9.7,
+    "y": 8,
+    "type": 1
+  },
+  {
+    "id": 34,
+    "zoneid": 40,
+    "map": 13,
+    "placenameid": 40,
+    "nameid": 0,
+    "x": 8.2,
+    "y": 12.7,
+    "type": 1
   }
 ];
