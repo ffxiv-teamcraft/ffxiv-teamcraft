@@ -222,6 +222,7 @@ export class SearchComponent implements OnInit {
               fr: result.Name_fr,
               de: result.Name_de,
               ja: result.Name_ja,
+              zh: this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en,
               ko: this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en
             }
           };

@@ -26,12 +26,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'actions.json',
-    'hashedFileName': 'actions.03e00cfb5e3b2a1b649fd48088926df00b5ddf41.json',
+    'hashedFileName': 'actions.77c7c20490a844d30b545dcbaf956903e3f73ae1.json',
     'propertyName': 'actions'
   },
   {
     'fileName': 'craft-actions.json',
-    'hashedFileName': 'craft-actions.0c1d3850be7f0bfe8c66282f7e1868b1ab3bea4f.json',
+    'hashedFileName': 'craft-actions.50c8d9d6e5b7994f88cf9610a17f308ad295985a.json',
     'propertyName': 'craftActions'
   },
   {
@@ -46,7 +46,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'fates.json',
-    'hashedFileName': 'fates.79e3c476f346ca61685731181043f50131a86ab0.json',
+    'hashedFileName': 'fates.769c95b66baaec3bf19f19d833cae56b137a18d9.json',
     'propertyName': 'fates'
   },
   {
@@ -71,7 +71,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-bonuses.json',
-    'hashedFileName': 'gathering-bonuses.afb34d273a99f7545e1bf86d42ecce59a755d031.json',
+    'hashedFileName': 'gathering-bonuses.fc6b5d397108abb85270b33933728f75048c0672.json',
     'propertyName': 'gatheringBonuses'
   },
   {
@@ -96,12 +96,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'instances.json',
-    'hashedFileName': 'instances.7d5504a3243c9c75238874f87084244fb1d389a3.json',
+    'hashedFileName': 'instances.a396995b6832a5d96715ba6f4a4b1e3c1c55865d.json',
     'propertyName': 'instances'
   },
   {
     'fileName': 'item-icons.json',
-    'hashedFileName': 'item-icons.3ce59ccb8d38773734108691e42de10d96c72f79.json',
+    'hashedFileName': 'item-icons.94ea0ed35d88ee23bf45fc971d0568962b28f3cb.json',
     'propertyName': 'itemIcons'
   },
   {
@@ -111,22 +111,22 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'items.json',
-    'hashedFileName': 'items.814f59371e65e8cb9757872a70e506ed5f3d8e33.json',
+    'hashedFileName': 'items.fe7778fd8c4d6302e5f9d47f23298cc7aa6682f1.json',
     'propertyName': 'items'
   },
   {
     'fileName': 'leves.json',
-    'hashedFileName': 'leves.bcdae0bae9d898ea453f1d2cc22b24b9df99f976.json',
+    'hashedFileName': 'leves.0fda7697f44dd363d85fcdc739dc3d217896299f.json',
     'propertyName': 'leves'
   },
   {
     'fileName': 'maps.json',
-    'hashedFileName': 'maps.3b89bea8759e33c8159ae2381550aa89a6570752.json',
+    'hashedFileName': 'maps.653c8c4fe758581b75bac639029a12164eefa0ff.json',
     'propertyName': 'maps'
   },
   {
     'fileName': 'mobs.json',
-    'hashedFileName': 'mobs.f10fa9735347345c69fa4a75830bf8865efe8619.json',
+    'hashedFileName': 'mobs.b883ce190d151fcaf85b848181927f6f0f59d3cc.json',
     'propertyName': 'mobs'
   },
   {
@@ -146,17 +146,17 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'patch-content.json',
-    'hashedFileName': 'patch-content.cfc10c6246b0b9f18546955ddb12631165299577.json',
+    'hashedFileName': 'patch-content.f101e279740155ef2d2a6dcb1b5eed7f5cd73bb8.json',
     'propertyName': 'patchContent'
   },
   {
     'fileName': 'places.json',
-    'hashedFileName': 'places.915158284f8308e153e43155058eaabe0eca50de.json',
+    'hashedFileName': 'places.c6e0158cff1c5971ee7090f9bdcf8730f4959854.json',
     'propertyName': 'places'
   },
   {
     'fileName': 'quests.json',
-    'hashedFileName': 'quests.aa39b20b836fdd845f36ed64d0647786dc81008d.json',
+    'hashedFileName': 'quests.31ec0199f3fe8647316ce5080f34c07058231660.json',
     'propertyName': 'quests'
   },
   {
@@ -166,12 +166,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'recipes.json',
-    'hashedFileName': 'recipes.9a79e7cb5feae8e1a3df4b007bbffce6c4b9a7b8.json',
+    'hashedFileName': 'recipes.d903df3f10cdd93de97a79d8f09ce818d38ddf7d.json',
     'propertyName': 'recipes'
   },
   {
     'fileName': 'shops.json',
-    'hashedFileName': 'shops.b6d06a619eee7fc4ab5b8b2fe2a1eb7b1f05a222.json',
+    'hashedFileName': 'shops.d572e4c57a9df9836594f6da917f4bf0d14c6fe4.json',
     'propertyName': 'shops'
   },
   {
@@ -181,12 +181,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'statuses.json',
-    'hashedFileName': 'statuses.06eb5c3e7df7ae5261f5fc9712805b80e349b603.json',
+    'hashedFileName': 'statuses.1d343f10c8e2db82ffd60fa02bc30e47d5050dc7.json',
     'propertyName': 'statuses'
   },
   {
     'fileName': 'traits.json',
-    'hashedFileName': 'traits.17b221161038a158a43da30b31144aca5af6a45a.json',
+    'hashedFileName': 'traits.f390c55e4af9ecc61f9b21beb1f7b7b094efa23e.json',
     'propertyName': 'traits'
   },
   {
@@ -271,7 +271,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-items.json',
-    'hashedFileName': '/ko/ko-items.849154969754382114ac85dd1d38cd4b1562b03c.json',
+    'hashedFileName': '/ko/ko-items.740f237f1486002d437e9824798a41d5cc1e4fbf.json',
     'propertyName': 'koItems'
   },
   {
@@ -336,7 +336,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-shops.json',
-    'hashedFileName': '/ko/ko-shops.e410b05a4d73acbeb1ee5591c3f3523d8cf85115.json',
+    'hashedFileName': '/ko/ko-shops.6c81d19f180461422d2532467047a6bd0f39ae35.json',
     'propertyName': 'koShops'
   },
   {
@@ -375,19 +375,54 @@ export const lazyFilesList = [
     'propertyName': 'koWeathers'
   },
   {
+    'fileName': '/zh/zh-achievement-descriptions.json',
+    'hashedFileName': '/zh/zh-achievement-descriptions.b395e64a4f33f11263076d9f3ea6207f6b8654a3.json',
+    'propertyName': 'zhAchievementDescriptions'
+  },
+  {
+    'fileName': '/zh/zh-achievements.json',
+    'hashedFileName': '/zh/zh-achievements.afeb37492062f2694585dfc32e0de711904552ff.json',
+    'propertyName': 'zhAchievements'
+  },
+  {
+    'fileName': '/zh/zh-action-categories.json',
+    'hashedFileName': '/zh/zh-action-categories.3309ef851e17cd34e3efb59dc98e94c1b7444940.json',
+    'propertyName': 'zhActionCategories'
+  },
+  {
+    'fileName': '/zh/zh-action-descriptions.json',
+    'hashedFileName': '/zh/zh-action-descriptions.40a8a68ac5b1c2d898e83e2a3af9b5087f656464.json',
+    'propertyName': 'zhActionDescriptions'
+  },
+  {
     'fileName': '/zh/zh-actions.json',
-    'hashedFileName': '/zh/zh-actions.4812de45858fa65a4dd1eec0994638744ec9f78a.json',
+    'hashedFileName': '/zh/zh-actions.b551f17513e6b4031e8a580fb6a9de2c45a76e1f.json',
     'propertyName': 'zhActions'
   },
   {
+    'fileName': '/zh/zh-content-types.json',
+    'hashedFileName': '/zh/zh-content-types.9a9986a98684f82dbb56c8b65d1639d564f1b9e1.json',
+    'propertyName': 'zhContentTypes'
+  },
+  {
     'fileName': '/zh/zh-craft-actions.json',
-    'hashedFileName': '/zh/zh-craft-actions.fed05635f57b52088e5e416f6241fb6fccad7eda.json',
+    'hashedFileName': '/zh/zh-craft-actions.e32fa1c81660e736f2b3387eaeb3dc3d8ad6cfc7.json',
     'propertyName': 'zhCraftActions'
   },
   {
+    'fileName': '/zh/zh-craft-descriptions.json',
+    'hashedFileName': '/zh/zh-craft-descriptions.c9798d2689c9963c49f3bd2d5c8260ff726bbc04.json',
+    'propertyName': 'zhCraftDescriptions'
+  },
+  {
     'fileName': '/zh/zh-fates.json',
-    'hashedFileName': '/zh/zh-fates.064737161be12c3ad0ac4eb44868503eda76dfa0.json',
+    'hashedFileName': '/zh/zh-fates.42fb478ddb7244ae880923d5341368035361c6aa.json',
     'propertyName': 'zhFates'
+  },
+  {
+    'fileName': '/zh/zh-free-company-actions.json',
+    'hashedFileName': '/zh/zh-free-company-actions.0ba8924a9170f51f360b255b37102e9fd628854c.json',
+    'propertyName': 'zhFreeCompanyActions'
   },
   {
     'fileName': '/zh/zh-gathering-bonuses.json',
@@ -395,18 +430,58 @@ export const lazyFilesList = [
     'propertyName': 'zhGatheringBonuses'
   },
   {
+    'fileName': '/zh/zh-instance-descriptions.json',
+    'hashedFileName': '/zh/zh-instance-descriptions.b87c9137d82b4cea1da99ea701457cf88fb805e1.json',
+    'propertyName': 'zhInstanceDescriptions'
+  },
+  {
     'fileName': '/zh/zh-instances.json',
-    'hashedFileName': '/zh/zh-instances.ec3ced87f906fbfddc2bc717e4d7ddd49d91e136.json',
+    'hashedFileName': '/zh/zh-instances.707b4c782fc9f3b072704a5b3bbd0f26bce637a7.json',
     'propertyName': 'zhInstances'
   },
   {
+    'fileName': '/zh/zh-item-search-categories.json',
+    'hashedFileName': '/zh/zh-item-search-categories.707b4c782fc9f3b072704a5b3bbd0f26bce637a7.json',
+    'propertyName': 'zhItemSearchCategories'
+  },
+  {
+    'fileName': '/zh/zh-item-ui-categories.json',
+    'hashedFileName': '/zh/zh-item-ui-categories.400db8f8a0877a43269228a61bb4e43da2a15b6b.json',
+    'propertyName': 'zhItemUiCategories'
+  },
+  {
     'fileName': '/zh/zh-items.json',
-    'hashedFileName': '/zh/zh-items.ead725b2e19a2a706872d2893d7a0d56e299697c.json',
+    'hashedFileName': '/zh/zh-items.14d27d8880a74328de80c7b3b2764160dd55b292.json',
     'propertyName': 'zhItems'
   },
   {
+    'fileName': '/zh/zh-job-abbr.json',
+    'hashedFileName': '/zh/zh-job-abbr.7687cc299cb470dc7b44c6a4c5c5cb88396c3840.json',
+    'propertyName': 'zhJobAbbr'
+  },
+  {
+    'fileName': '/zh/zh-job-categories.json',
+    'hashedFileName': '/zh/zh-job-categories.cd73c7eb286582cb56571bf5b3d8bb6d0d1f0953.json',
+    'propertyName': 'zhJobCategories'
+  },
+  {
+    'fileName': '/zh/zh-job-name.json',
+    'hashedFileName': '/zh/zh-job-name.7687cc299cb470dc7b44c6a4c5c5cb88396c3840.json',
+    'propertyName': 'zhJobName'
+  },
+  {
+    'fileName': '/zh/zh-journal-genre.json',
+    'hashedFileName': '/zh/zh-journal-genre.436a311ebb2cd9c8f2968c226d57e3fc03b6d303.json',
+    'propertyName': 'zhJournalGenre'
+  },
+  {
+    'fileName': '/zh/zh-leve-descriptions.json',
+    'hashedFileName': '/zh/zh-leve-descriptions.252fd299a5b3f9cf8806a073e227049e571e08b5.json',
+    'propertyName': 'zhLeveDescriptions'
+  },
+  {
     'fileName': '/zh/zh-leves.json',
-    'hashedFileName': '/zh/zh-leves.b9d2ad058a62e005bc6a9a76ea68934863856e0d.json',
+    'hashedFileName': '/zh/zh-leves.dc3b55e25cd45434860d0bddc17248bb9a333012.json',
     'propertyName': 'zhLeves'
   },
   {
@@ -415,13 +490,73 @@ export const lazyFilesList = [
     'propertyName': 'zhMaps'
   },
   {
+    'fileName': '/zh/zh-mobs.json',
+    'hashedFileName': '/zh/zh-mobs.d3cc2d37c37aff91dcc6e6f31c2d63a477091c94.json',
+    'propertyName': 'zhMobs'
+  },
+  {
+    'fileName': '/zh/zh-npc-titles.json',
+    'hashedFileName': '/zh/zh-npc-titles.3b353c02ee3ecab074d103d23b1996d8b29813b8.json',
+    'propertyName': 'zhNpcTitles'
+  },
+  {
+    'fileName': '/zh/zh-npcs.json',
+    'hashedFileName': '/zh/zh-npcs.e08908570297e1d694ee16667b438e986b670efb.json',
+    'propertyName': 'zhNpcs'
+  },
+  {
     'fileName': '/zh/zh-places.json',
-    'hashedFileName': '/zh/zh-places.6b032c61374df86691f2df864b1aed295f009e2c.json',
+    'hashedFileName': '/zh/zh-places.cde48cb25bba0e74ad80ad8c8b362e5c9d132098.json',
     'propertyName': 'zhPlaces'
   },
   {
+    'fileName': '/zh/zh-quest-descriptions.json',
+    'hashedFileName': '/zh/zh-quest-descriptions.9c1c5dce3af37c81eaca99d76ff12143f9304cb5.json',
+    'propertyName': 'zhQuestDescriptions'
+  },
+  {
+    'fileName': '/zh/zh-quests.json',
+    'hashedFileName': '/zh/zh-quests.a51b7e125948736b7dba6ed0f5f54e4573c9b20a.json',
+    'propertyName': 'zhQuests'
+  },
+  {
+    'fileName': '/zh/zh-shops.json',
+    'hashedFileName': '/zh/zh-shops.9deb79d94178fa6adde64a10cccb94adabf091b7.json',
+    'propertyName': 'zhShops'
+  },
+  {
+    'fileName': '/zh/zh-status-descriptions.json',
+    'hashedFileName': '/zh/zh-status-descriptions.3d848fe8e639492a8fc69313856a53abe3788497.json',
+    'propertyName': 'zhStatusDescriptions'
+  },
+  {
     'fileName': '/zh/zh-statuses.json',
-    'hashedFileName': '/zh/zh-statuses.68aa534d1ad88878419c5cd3e5caec1c98d6f949.json',
+    'hashedFileName': '/zh/zh-statuses.304ef397edf3c72ad3a1f36c32c8666cf9566341.json',
     'propertyName': 'zhStatuses'
+  },
+  {
+    'fileName': '/zh/zh-trait-descriptions.json',
+    'hashedFileName': '/zh/zh-trait-descriptions.cc14f4836467e41d6113c2e81127d9d40a08d366.json',
+    'propertyName': 'zhTraitDescriptions'
+  },
+  {
+    'fileName': '/zh/zh-traits.json',
+    'hashedFileName': '/zh/zh-traits.72a60629c498f577041366fe7c4cfc07d011dc5f.json',
+    'propertyName': 'zhTraits'
+  },
+  {
+    'fileName': '/zh/zh-triple-triad-rule-descriptions.json',
+    'hashedFileName': '/zh/zh-triple-triad-rule-descriptions.0c865663df8562778b1103c7abcbbb7caf9784e9.json',
+    'propertyName': 'zhTripleTriadRuleDescriptions'
+  },
+  {
+    'fileName': '/zh/zh-triple-triad-rules.json',
+    'hashedFileName': '/zh/zh-triple-triad-rules.65330eddcda193f6cfebc8b3b0e1a5ce8d409b4f.json',
+    'propertyName': 'zhTripleTriadRules'
+  },
+  {
+    'fileName': '/zh/zh-weathers.json',
+    'hashedFileName': '/zh/zh-weathers.837767db83563175579f75c531990c9c7d2b8ed8.json',
+    'propertyName': 'zhWeathers'
   }
 ];
