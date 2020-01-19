@@ -571,10 +571,10 @@
     "Contributions_popup": "贡献统计",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "自动填写",
-    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
+    "Autofill_notification_details": "在某一物品通过自动填充达到所需数量时显示通知。",
     "Autofill_notification": "完成通知",
-    "Autofill_notification_title": "Item completed",
-    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
+    "Autofill_notification_title": "物品已完成",
+    "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "布局",
@@ -615,9 +615,9 @@
       "Tag_filter": "标签筛选"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
+      "Open": "打开清单悬浮窗",
       "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "No_panel_selected": "使用上面的按钮选择一个面板"
     }
   },
   "LIST_TAGS": {
@@ -1594,7 +1594,7 @@
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
     "Import_from_clipboard": "从剪切板导入",
-    "Extension_tip": "您可以使用Lodestone inventory grabber插件复制您的雇员的背包到剪贴板： ",
+    "Extension_tip": "针对国际服玩家：您可以使用 Lodestone inventory grabber 插件将雇员的背包复制到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
     "Clipboard_import_duplicates": "此处列出显示两次的物品，因为lodestone显示堆叠数，所以它们您的雇员背包内显示为分开的两格。",
