@@ -76,7 +76,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
+    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -131,17 +131,17 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'monsters.json',
-    'hashedFileName': 'monsters.25e6e243334ac0eeca35416f8fd8c84604e5cb16.json',
+    'hashedFileName': 'monsters.2bdd042ea4954be9f511605dff3ef44c3365de90.json',
     'propertyName': 'monsters'
   },
   {
     'fileName': 'node-positions.json',
-    'hashedFileName': 'node-positions.d4a0474501122a7f0f3e22294dcc57551bfe8d1f.json',
+    'hashedFileName': 'node-positions.42d93d1c7744c7d2050f2d1623e803fd16547e36.json',
     'propertyName': 'nodePositions'
   },
   {
     'fileName': 'npcs.json',
-    'hashedFileName': 'npcs.4cd43a20c80e8c0bb3c2fc5bef1fa6f1a4e7e0ce.json',
+    'hashedFileName': 'npcs.d5e37c4a2da9ef8ce464563d609ebe0874029ac5.json',
     'propertyName': 'npcs'
   },
   {
