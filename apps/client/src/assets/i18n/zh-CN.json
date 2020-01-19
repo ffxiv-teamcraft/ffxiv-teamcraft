@@ -969,11 +969,11 @@
       "Use_byregot_brow_5_stacks": "应使用比尔格的技巧替换比尔格的祝福，可获得同样质量并节约 6 点 CP。",
       "Use_ingenuity_before_byregot": "应在使用比尔格技能前使用新颖以提升品质收益。",
       "Use_more_quality_actions": "在结束制作前你还有剩余耐久，应使用更多加工系技能提升品质。",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "66 级以上应使用 掌握 + 俭约加工 来提升品质，以获得最高的稳定性和收益",
       "Use_rapid_synthesis_earlier": "高速制作不是100%成功，不应将其用作收尾技能。建议更早地使用高速制作以备万一，即使失败也能调整后续手法。",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Do_not_use_brand_without_name": "不要在没有“元素之美名”状态时使用“元素之印记”。",
+      "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。",
+      "Requires_reuse_to_proc": "您的循环需要触发“再利用”才能正常工作，请确保其在没有触发“再利用”时也能运行。"
     }
   },
   "PRICING": {
@@ -1575,7 +1575,7 @@
     "Levequests": "您可以在理符任务页面内制作理符清单和预览理符任务经验。",
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
+    "Start_desktop_before_game": "记得在启动游戏前启动 TeamCraft，以确保数据准确性"
   },
   "RECIPE_FINDER": {
     "Title": "配方检索器",
@@ -1666,11 +1666,11 @@
     "Search_for_an_item": "搜索物品",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
-      "FC_chest": "FC chest",
+      "FC_chest": "部队储物柜",
       "Bag": "物品栏",
       "Other": "Other inventory",
       "Armory": "兵装库",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "雇员出售列表"
     }
   },
   "INVENTORY_OPTIMIZER": {
