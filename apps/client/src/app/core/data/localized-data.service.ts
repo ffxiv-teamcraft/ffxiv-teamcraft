@@ -228,7 +228,7 @@ export class LocalizedDataService {
   }
 
   private getRowWithExtendedLanguage(key: keyof LazyData, id: number | string): I18nName {
-    let row = this.getRow<I18nName>(this.lazyData.data[key], id);
+    const row = this.getRow<I18nName>(this.lazyData.data[key], id);
     if (row === undefined) {
       return undefined;
     }
