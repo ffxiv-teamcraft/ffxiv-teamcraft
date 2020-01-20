@@ -147,8 +147,8 @@
     "Apply": "应用",
     "Open_link": "在浏览器中打开",
     "Unknown": "未知",
-    "Minimum": "Minimum",
-    "Maximum": "Maximum",
+    "Minimum": "最小",
+    "Maximum": "最大",
     "Average": "平均"
   },
   "ALARMS": {
@@ -494,7 +494,7 @@
     "History": "历史记录",
     "Items_count": "{{amount}} 个物品",
     "Show_craftable_amount": "显示可制作的数量",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "显示第一个出售物品的商人",
     "Optimized_full_path": "显示完整最优路径 (最便宜且最快)",
     "Quick_layout_swap": "快速布局切换",
     "Offline": "离线",
@@ -616,7 +616,7 @@
     },
     "OVERLAY": {
       "Open": "打开清单悬浮窗",
-      "No_display": "Open a list in main window to get started",
+      "No_display": "请在主窗口中打开一个清单",
       "No_panel_selected": "使用上面的按钮选择一个面板"
     }
   },
@@ -696,7 +696,7 @@
     "Title": "最优路线",
     "Steps": "步骤",
     "Loading_path": "正在加载最优路径 (可能需要几秒)",
-    "You_are_here": "You are here",
+    "You_are_here": "当前位置",
     "STEP": {
       "Gathering": "采集{{amount}}（总计：{{total}}）",
       "Hunting": "打怪获取{{amount}}（总计：{{total}}）",
@@ -776,7 +776,7 @@
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
     "Break_on_reclaim": "在无法使用回收前拆分宏",
-    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
+    "Break_before_byregots_blessing": "在“比尔格的祝福”前拆分宏",
     "Include_consumables_notification": "添加消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
@@ -841,8 +841,8 @@
     "Rotation_solver": "手法求解器",
     "Recipe_picker_placeholder": "输入您想要制作的配方",
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
-    "Total_macro_duration": "Total macro duration: {{duration}}s.",
+    "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
+    "Total_macro_duration": "宏执行时间：{{duration}}秒。",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -1069,7 +1069,7 @@
       "FINAL_LIST_PROGRESSION": "查看产出进度",
       "USER_ASSIGNMENT": "用户分配",
       "ITEM_COMPLETION": "项目完成",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "物品进展"
     }
   },
   "MARKETBOARD": {
@@ -1346,25 +1346,25 @@
       "Masterpiece_bonus": "奖励"
     },
     "FISH": {
-      "Hour": "Hour of the day",
+      "Hour": "上钩时间",
       "Baits": "使用钓饵",
       "Hookset_and_tug": "捉钩和咬饵",
-      "Weathers": "Weathers",
-      "Weather_transitions": "Weather transitions",
+      "Weathers": "天气",
+      "Weather_transitions": "天气转换",
       "Hooksets": "捉钩",
       "Tugs": "咬饵",
       "Seconds": "秒",
       "Bite_time": "咬钩时间",
-      "Spots": "Spots",
+      "Spots": "钓场",
       "Min_gathering": "采集力要求",
       "Min_size": "最小尺寸",
       "Max_size": "最大尺寸",
       "Avg_size": "平均尺寸",
-      "Used_as_mooch_for": "Used as mooch for",
-      "No_known_mooch_usage": "No known mooch usage for this fish",
+      "Used_as_mooch_for": "以小钓大",
+      "No_known_mooch_usage": "根据已知记录，这条鱼不能用于以小钓大",
       "No_spot_filter": "未过滤钓场",
-      "Chances_for_transition": "Chances for this transition to happen",
-      "Weather_chances": "Chances for each weather to appear",
+      "Chances_for_transition": "转换发生的概率",
+      "Weather_chances": "每种天气下出现的概率",
       "Bait": "Fishing bait",
       "Refresh_data": "Refresh data",
       "TUG": {
@@ -1376,7 +1376,7 @@
         "Open": "打开钓鱼悬浮窗",
         "Bait": "当前钓饵",
         "Tug": "咬饵",
-        "Hookset": "Hookset",
+        "Hookset": "捉钩",
         "Fishing": "正在钓鱼",
         "Mooch": "Last throw was mooch",
         "Mooch_report": "以小钓大",
