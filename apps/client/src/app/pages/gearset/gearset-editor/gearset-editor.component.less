@@ -1,13 +1,31 @@
-::ng-deep {
+:host ::ng-deep {
   .ant-form-item-label {
     line-height: 29px !important;
   }
 
   .ant-divider-horizontal {
-    margin: 10px 0;
+    margin: 0 !important;
     color: #444 !important;
     background: #444 !important;
   }
+
+  .category-card {
+    .ant-card-body {
+      padding: 10px 0 0 0 !important;
+    }
+  }
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.job-icon {
+  width: 32px;
+}
+
+.gearset-name {
+  font-size: 24px;
 }
 
 .filters {
@@ -15,5 +33,19 @@
 }
 
 .category-card {
-  height: 100%;
+  &:not(.last) {
+    padding-right: 5px;
+  }
+
+  &:not(.first) {
+    padding-left: 5px;
+  }
+}
+
+.item-row {
+  padding: 10px;
+
+  &.selected {
+    background-color: var(--highlight-color-25);
+  }
 }

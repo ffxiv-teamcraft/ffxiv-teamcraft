@@ -1133,28 +1133,34 @@ if (hasTodo('items')) {
   const ilvls = {};
   const stackSizes = {};
   const itemSlots = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID').subscribe(page => {
-    page.Results.forEach(item => {
-      itemIcons[item.ID] = item.Icon;
-      names[item.ID] = {
-        en: item.Name_en,
-        de: item.Name_de,
-        ja: item.Name_ja,
-        fr: item.Name_fr
-      };
-      rarities[item.ID] = item.Rarity;
-      ilvls[item.ID] = item.LevelItem;
-      stackSizes[item.ID] = item.StackSize;
-      itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
+  const itemStats = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats')
+    .subscribe(page => {
+      page.Results.forEach(item => {
+        itemIcons[item.ID] = item.Icon;
+        names[item.ID] = {
+          en: item.Name_en,
+          de: item.Name_de,
+          ja: item.Name_ja,
+          fr: item.Name_fr
+        };
+        rarities[item.ID] = item.Rarity;
+        ilvls[item.ID] = item.LevelItem;
+        stackSizes[item.ID] = item.StackSize;
+        itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
+        if (item.Stats) {
+          itemStats[item.ID] = item.Stats;
+        }
+      });
+    }, null, () => {
+      persistToJsonAsset('item-icons', itemIcons);
+      persistToJsonAsset('items', names);
+      persistToJsonAsset('rarities', rarities);
+      persistToJsonAsset('ilvls', ilvls);
+      persistToJsonAsset('stack-sizes', stackSizes);
+      persistToJsonAsset('item-slots', itemSlots);
+      persistToJsonAsset('item-stats', itemStats);
     });
-  }, null, () => {
-    persistToJsonAsset('item-icons', itemIcons);
-    persistToJsonAsset('items', names);
-    persistToJsonAsset('rarities', rarities);
-    persistToJsonAsset('ilvls', ilvls);
-    persistToJsonAsset('stack-sizes', stackSizes);
-    persistToJsonAsset('item-slots', itemSlots);
-  });
 }
 
 if (hasTodo('aetherytes')) {

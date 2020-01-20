@@ -149,7 +149,9 @@
     "Unknown": "Unknown",
     "Minimum": "Minimum",
     "Maximum": "Maximum",
-    "Average": "Average"
+    "Average": "Average",
+    "Hq": "HQ",
+    "Nq": "NQ"
   },
   "ALARMS": {
     "Title": "Alarms",

@@ -22,6 +22,7 @@ export interface LazyData {
   instances: any;
   itemIcons: any;
   itemSlots: any;
+  itemStats: any;
   items: any;
   leves: any;
   maps: any;

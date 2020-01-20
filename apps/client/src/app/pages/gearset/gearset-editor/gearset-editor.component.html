@@ -1,49 +1,77 @@
-<nz-card [nzTitle]="'GEARSETS.Filters' | translate" class="filters">
-  <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
-    <!--Ilvl filter-->
-    <nz-form-item fxLayout="row" fxLayoutAlign="center center">
-      <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-input-group fxLayout="row">
-          <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
-                           id="ilvl"></nz-input-number>
-          <input disabled nz-input placeholder="-" type="text">
-          <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
-                           formControlName="ilvlMax"></nz-input-number>
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <!--Elvl filter (equipment level)-->
-    <nz-form-item fxLayout="row" fxLayoutAlign="center center">
-      <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
-      <nz-form-control>
-        <nz-input-group fxLayout="row">
-          <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
-                           id="elvl"></nz-input-number>
-          <input disabled nz-input placeholder="-" type="text">
-          <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                           formControlName="elvlMax"></nz-input-number>
-        </nz-input-group>
-      </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-      <nz-form-control>
-        <button nz-button nzType="primary" [disabled]="!itemFiltersform.valid">{{'ITEMS.Apply_filters' | translate}}</button>
-      </nz-form-control>
-    </nz-form-item>
-  </form>
-</nz-card>
+<ng-container *ngIf="gearset$ | async as gearset">
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
+    <span class="gearset-name">{{gearset.name}}</span>
+    <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(gearset.job | jobAbbr)?.en}}.png">
+  </div>
 
-<ng-container *ngIf="items$ | async as chunks">
-  <div fxLayout="column" fxLayoutGap="10px">
-    <div nz-row *ngFor="let categories of chunks" nzGutter="10">
-      <div nz-col nzMd="12" nzSm="24" class="category-card" *ngFor="let category of categories">
-        <nz-card [nzTitle]="('GEARSETS.SLOT.'+category.name) | translate">
+  <nz-collapse>
+    <nz-collapse-panel [nzHeader]="'GEARSETS.Filters' | translate" class="filters">
+      <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
+        <!--Ilvl filter-->
+        <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+          <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
+          <nz-form-control>
+            <nz-input-group fxLayout="row">
+              <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
+                               id="ilvl"></nz-input-number>
+              <input disabled nz-input placeholder="-" type="text">
+              <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
+                               formControlName="ilvlMax"></nz-input-number>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <!--Elvl filter (equipment level)-->
+        <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+          <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
+          <nz-form-control>
+            <nz-input-group fxLayout="row">
+              <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
+                               id="elvl"></nz-input-number>
+              <input disabled nz-input placeholder="-" type="text">
+              <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
+                               formControlName="elvlMax"></nz-input-number>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" [disabled]="!itemFiltersform.valid">{{'ITEMS.Apply_filters' | translate}}</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-collapse-panel>
+  </nz-collapse>
+
+  <div fxLayout="column" fxLayoutGap="10px" *ngIf="items$ | async as chunks">
+    <nz-card [nzTitle]="'GEARSETS.Stats' | translate" *ngIf="stats$ | async as stats">
+      <ul>
+        <li *ngFor="let stat of stats">{{stat.id | baseParamName | i18n}}: {{stat.value | number:'1.0-0':translate.currentLang}}</li>
+      </ul>
+    </nz-card>
+
+    <div nz-row *ngFor="let categories of chunks">
+      <div nz-col nzMd="12" nzSm="24" class="category-card" [class.last]="last" [class.first]="first"
+           *ngFor="let category of categories;let last=last; let first=first">
+        <nz-card [nzTitle]="cardTitleRef">
+          <ng-template #cardTitleRef>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
+              <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d" *ngIf="!gearset[category.property]"></i>
+            </div>
+          </ng-template>
           <div fxLayout="column">
-            <ng-container *ngFor="let item of category.items;let last=last; let odd = odd">
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <app-item-icon [itemId]="item.ID" [width]="32 | ifMobile:24"></app-item-icon>
-                <div>{{item | xivapiI18n}}</div>
+            <ng-container *ngFor="let row of category.items;let last=last; let odd = odd">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="item-row"
+                   [class.selected]="gearset[category.property]?.itemId === row.item.ID">
+                <label nz-checkbox [nzChecked]="gearset[category.property]?.itemId === row.item.ID"
+                       (nzCheckedChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"></label>
+                <app-item-icon [itemId]="row.item.ID" [width]="32 | ifMobile:24"></app-item-icon>
+                <div>{{row.item | xivapiI18n}}</div>
+                <nz-switch [ngModel]="row.equipmentPiece.hq"
+                           [nzDisabled]="row.item.CanBeHq === 0"
+                           (ngModelChange)="gearset[category.property]?.itemId === row.item.ID?setGearsetPiece(gearset, category.property, row.equipmentPiece):null"
+                           [nzCheckedChildren]="'COMMON.Hq' | translate"
+                           [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
               </div>
               <nz-divider *ngIf="!last"></nz-divider>
             </ng-container>

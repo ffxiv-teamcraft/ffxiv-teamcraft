@@ -115,6 +115,11 @@ export const lazyFilesList = [
     'propertyName': 'itemSlots'
   },
   {
+    'fileName': 'item-stats.json',
+    'hashedFileName': 'item-stats.dc79eb63eb87cd3bc5d92d4c919ef5afd5a0b220.json',
+    'propertyName': 'itemStats'
+  },
+  {
     'fileName': 'items.json',
     'hashedFileName': 'items.814f59371e65e8cb9757872a70e506ed5f3d8e33.json',
     'propertyName': 'items'
@@ -141,17 +146,17 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'monsters.json',
-    'hashedFileName': 'monsters.2bdd042ea4954be9f511605dff3ef44c3365de90.json',
+    'hashedFileName': 'monsters.05c5b9952b01ccd605e6dd9b554514b7dcc14b47.json',
     'propertyName': 'monsters'
   },
   {
     'fileName': 'node-positions.json',
-    'hashedFileName': 'node-positions.42d93d1c7744c7d2050f2d1623e803fd16547e36.json',
+    'hashedFileName': 'node-positions.54fe6b6c45ce827b8257441c4590e9470edf0b41.json',
     'propertyName': 'nodePositions'
   },
   {
     'fileName': 'npcs.json',
-    'hashedFileName': 'npcs.d5e37c4a2da9ef8ce464563d609ebe0874029ac5.json',
+    'hashedFileName': 'npcs.ee713febb1c52c2b5b0e65afa189b205cc7e7552.json',
     'propertyName': 'npcs'
   },
   {

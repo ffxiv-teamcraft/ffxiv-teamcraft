@@ -56,6 +56,7 @@ import { StatusNamePipe } from './pipes/status-name.pipe';
 import { RotationPipe } from './pipes/rotation.pipe';
 import { MapNamePipe } from './pipes/map-name.pipe';
 import { TradeIconPipe } from './pipes/trade-icon.pipe';
+import { BaseParamNamePipe } from './pipes/base-param-name.pipe';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { TradeIconPipe } from './pipes/trade-icon.pipe';
     StatusNamePipe,
     RotationPipe,
     MapNamePipe,
-    TradeIconPipe
+    TradeIconPipe,
+    BaseParamNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -176,7 +178,8 @@ import { TradeIconPipe } from './pipes/trade-icon.pipe';
     StatusNamePipe,
     RotationPipe,
     MapNamePipe,
-    TradeIconPipe
+    TradeIconPipe,
+    BaseParamNamePipe
   ]
 })
 export class PipesModule {

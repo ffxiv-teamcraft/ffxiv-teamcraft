@@ -68,7 +68,9 @@ export class GearsetsEffects {
     switchMapTo(EMPTY)
   );
 
-  @Effect()
+  @Effect({
+    dispatch: false
+  })
   updateGearset$ = this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
     switchMap(action => {
@@ -76,7 +78,9 @@ export class GearsetsEffects {
     })
   );
 
-  @Effect()
+  @Effect({
+    dispatch: false
+  })
   deleteGearset$ = this.actions$.pipe(
     ofType<DeleteGearset>(GearsetsActionTypes.DeleteGearset),
     switchMap(action => {
