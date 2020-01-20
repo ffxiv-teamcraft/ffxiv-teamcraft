@@ -501,7 +501,7 @@
     "Offline_help": "离线清单储存在您的浏览器或桌面APP中，因此不能通过其他渠道查看及分享，但是他们不受龟速网络影响——比较快。",
     "Mark_whole_panel_done": "将这一大类标记为已完成",
     "Set_color": "设置清单颜色",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
+    "Go_to_pinned": "转到固定清单（右键单击取消固定）",
     "Reset_panel": "重置此面板的所有物品",
     "COLORS": {
       "RED": "红色",
@@ -575,7 +575,7 @@
     "Autofill_notification": "完成通知",
     "Autofill_notification_title": "物品已完成",
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -1398,12 +1398,12 @@
       }
     },
     "FISHING_SPOT": {
-      "Next": "接下来",
+      "Next": "下一次",
       "Possible_weathers": "可能的天气",
       "Available_fishes": "可获得的鱼",
-      "Fish_per_weather": "Fish per weather",
-      "Fish_per_bait": "Fish per bait",
-      "Fish_per_tug": "Fish per tug"
+      "Fish_per_weather": "不同天气的上钩概率",
+      "Fish_per_bait": "不同钓饵的上钩概率",
+      "Fish_per_tug": "不同咬饵的上钩概率"
     },
     "NODE": {
       "Items": "物品",
@@ -1648,7 +1648,7 @@
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
-    "No_character_id": "No ingame character id set",
+    "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容。操作完成后此提示会自动关闭。"
