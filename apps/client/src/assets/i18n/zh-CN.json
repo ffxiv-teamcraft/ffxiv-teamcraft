@@ -1340,7 +1340,7 @@
     "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
     "Unlocks": "解锁",
     "Jump_to_page": "快速跳转到其他页面",
-    "Ishgard_restoration": "Ishgardian restoration",
+    "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_base": "BASE",
       "Masterpiece_bonus": "奖励"
@@ -1365,8 +1365,8 @@
       "No_spot_filter": "未过滤钓场",
       "Chances_for_transition": "转换发生的概率",
       "Weather_chances": "每种天气下出现的概率",
-      "Bait": "Fishing bait",
-      "Refresh_data": "Refresh data",
+      "Bait": "钓饵",
+      "Refresh_data": "更新数据",
       "TUG": {
         "Light": "轻杆",
         "Medium": "中杆",
@@ -1378,7 +1378,7 @@
         "Tug": "咬饵",
         "Hookset": "捉钩",
         "Fishing": "正在钓鱼",
-        "Mooch": "Last throw was mooch",
+        "Mooch": "上次抛竿使用了以小钓大",
         "Mooch_report": "以小钓大",
         "Current_weather": "当前天气",
         "Previous_weather": "上一天气",
@@ -1387,7 +1387,7 @@
         "Stats": "属性",
         "Statuses": "特效",
         "No_statuses": "无相关特效",
-        "Total_reports": "Total reports for this session",
+        "Total_reports": "本次垂钓记录总数",
         "Last_report": "最近一次垂钓记录",
         "Fish": "鱼",
         "Size": "尺寸",
@@ -1398,9 +1398,9 @@
       }
     },
     "FISHING_SPOT": {
-      "Next": "Next",
-      "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes",
+      "Next": "接下来",
+      "Possible_weathers": "可能的天气",
+      "Available_fishes": "可获得的鱼",
       "Fish_per_weather": "Fish per weather",
       "Fish_per_bait": "Fish per bait",
       "Fish_per_tug": "Fish per tug"
@@ -1649,7 +1649,7 @@
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
     "No_character_id": "No ingame character id set",
-    "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
+    "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容。操作完成后此提示会自动关闭。"
   },
@@ -1659,7 +1659,7 @@
     "Estimate_total_price": "估计物品栏总价格",
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Copied_to_clipboard": "物品栏已复制到剪贴板",
-    "Click_to_add_to_progression": "Click to add to item progression",
+    "Click_to_add_to_progression": "点击添加到物品进展",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Reset_inventory": "重置此物品栏",
     "Clean_all": "重置所有物品栏",
