@@ -193,7 +193,6 @@ function openOverlay(overlayConfig) {
     show: false,
     resizable: true,
     frame: false,
-    alwaysOnTop: true,
     autoHideMenuBar: true,
     width: dimensions.x,
     height: dimensions.y,
@@ -203,8 +202,9 @@ function openOverlay(overlayConfig) {
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
-  opts.alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
+  const alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
   const overlay = new BrowserWindow(opts);
+  overlay.setAlwaysOnTop(alwaysOnTop);
   overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
@@ -436,7 +436,7 @@ ipcMain.on('run-update', () => {
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop, 'floating');
+  win.setAlwaysOnTop(onTop);
 });
 
 ipcMain.on('always-on-top:get', (event) => {
