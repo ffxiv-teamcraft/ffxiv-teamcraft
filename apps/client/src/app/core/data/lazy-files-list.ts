@@ -31,7 +31,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'base-params.json',
-    'hashedFileName': 'base-params.6d0f6928a1c2c889cdac60c4547ebfbce6b9ea41.json',
+    'hashedFileName': 'base-params.890663e0280351d67fb8580050187359cd80f147.json',
     'propertyName': 'baseParams'
   },
   {
@@ -136,7 +136,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'materias.json',
-    'hashedFileName': 'materias.d76c3c85ee0aced19c9a2907dbdd7166911276e5.json',
+    'hashedFileName': 'materias.c6369fd2799684a957d5dfe2b452e7e9af4401ea.json',
     'propertyName': 'materias'
   },
   {
