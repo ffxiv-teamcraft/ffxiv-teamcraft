@@ -31,7 +31,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'base-params.json',
-    'hashedFileName': 'base-params.890663e0280351d67fb8580050187359cd80f147.json',
+    'hashedFileName': 'base-params.052e89d49e63acfe871177bc15e27314384b598d.json',
     'propertyName': 'baseParams'
   },
   {
@@ -108,6 +108,16 @@ export const lazyFilesList = [
     'fileName': 'item-icons.json',
     'hashedFileName': 'item-icons.3ce59ccb8d38773734108691e42de10d96c72f79.json',
     'propertyName': 'itemIcons'
+  },
+  {
+    'fileName': 'item-level.json',
+    'hashedFileName': 'item-level.cfdc81a91d944fb127b6d74ecb3e83574d2ca642.json',
+    'propertyName': 'itemLevel'
+  },
+  {
+    'fileName': 'item-melding-data.json',
+    'hashedFileName': 'item-melding-data.8276102f216ef6b118550d19fce9245283f346de.json',
+    'propertyName': 'itemMeldingData'
   },
   {
     'fileName': 'item-slots.json',

@@ -1,0 +1,68 @@
+<div fxLayout="column">
+  <table *ngIf="getMaxValuesTable() as caps">
+    <thead>
+    <tr>
+      <th>{{'GEARSETS.Stat_name' | translate}}</th>
+      <th>{{'GEARSETS.Current_value' | translate}}</th>
+      <th>{{'GEARSETS.Cap_value' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of caps" [class.capped]="row[1] === row[2]">
+      <td><b>{{row[0] | baseParamName | i18n}}</b></td>
+      <td>{{row[1]}}</td>
+      <td>{{row[2]}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <nz-divider></nz-divider>
+  <div fxLayout="column" class="materia-row" fxLayoutGap="10px">
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngFor="let materia of equipmentPiece.materias; let i = index">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <app-item-icon [itemId]="materia" [width]="24" *ngIf="materia > 0; else noMateria"></app-item-icon>
+        <ng-template #noMateria>
+          <i nz-icon nzType="stop" nzTheme="outline"></i>
+        </ng-template>
+        <div>{{materia > 0 ? getMeldingChances(materia, i) : ' - '}}%</div>
+      </div>
+      <div fxLayout="column" *ngIf="materia > 0; else addMateria">
+        <div fxLayout="row" fxLayoutGap="5px">
+          <div>{{materia | itemName | i18n}}</div>
+          <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click"
+                  nzShape="circle" nzSize="small">
+            <i nz-icon nzType="edit" nzTheme="outline"></i>
+          </button>
+        </div>
+        <div>
+          {{materiasService.getMateria(materia)?.baseParamId | baseParamName | i18n}}
+          <span *ngIf="getBonus(materia, i) as bonus" [class.overcapped]="bonus.overcapped">+{{bonus.value}}</span>
+        </div>
+      </div>
+      <ng-template #addMateria>
+        <button nz-button nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click"
+                [nzDisabled]="i > 0 && equipmentPiece.materias[i - 1] === 0">{{'GEARSETS.Add_materia' | translate}}</button>
+      </ng-template>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item (click)="resetMaterias(i)">{{'GEARSETS.No_materia' | translate}}</li>
+          <li nz-submenu *ngFor="let row of materiaMenu" [nzTitle]="row.baseParamId | baseParamName | i18n">
+            <ul>
+              <li nz-menu-item
+                  (click)="getMeldingChances(materia, i) > 0 ? equipmentPiece.materias[i] = materia: null"
+                  [nzDisabled]="getMeldingChances(materia, i) === 0"
+                  [nzSelected]="equipmentPiece.materias[i] === materia"
+                  *ngFor="let materia of row.materias">
+                {{materia | itemName | i18n}} (<span [class.overcapped]="bonus.overcapped" *ngIf="getBonus(materia, i) as bonus">+{{bonus.value}}</span>)
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+  </div>
+  <nz-divider></nz-divider>
+  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="10px">
+    <button nz-button nzType="primary" (click)="apply()">{{'COMMON.Apply' | translate}}</button>
+    <button nz-button nzType="default" (click)="cancel()">{{'Cancel' | translate}}</button>
+  </div>
+</div>

@@ -1127,6 +1127,32 @@ if (hasTodo('traits')) {
 }
 
 if (hasTodo('items')) {
+  const getSlotName = (equipSlotCategoryId) => {
+    return [
+      '1HWpn%',
+      'OH%',
+      'Head%',
+      'Chest%',
+      'Hands%',
+      'Waist%',
+      'Legs%',
+      'Feet%',
+      'Earring%',
+      'Necklace%',
+      'Wrist%',
+      'Ring%',
+      '2HWpn%',
+      '1HWpn%',
+      'ChestHead%',
+      'ChestHeadLegsFeet%',
+      '',
+      'LegsFeet%',
+      'HeadChestHandsLegsFeet%',
+      'ChestLegsGloves%',
+      'ChestLegsFeet%',
+      ''
+    ][equipSlotCategoryId - 1];
+  };
   const names = {};
   const rarities = {};
   const itemIcons = {};
@@ -1134,7 +1160,8 @@ if (hasTodo('items')) {
   const stackSizes = {};
   const itemSlots = {};
   const itemStats = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats')
+  const itemMeldingData = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1151,6 +1178,12 @@ if (hasTodo('items')) {
         if (item.Stats) {
           itemStats[item.ID] = item.Stats;
         }
+        if (item.MateriaSlotCount > 0) {
+          itemMeldingData[item.ID] = {
+            modifier: item.BaseParamModifier,
+            prop: getSlotName(item.EquipSlotCategoryTargetID)
+          };
+        }
       });
     }, null, () => {
       persistToJsonAsset('item-icons', itemIcons);
@@ -1160,6 +1193,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('stack-sizes', stackSizes);
       persistToJsonAsset('item-slots', itemSlots);
       persistToJsonAsset('item-stats', itemStats);
+      persistToJsonAsset('item-melding-data', itemMeldingData);
     });
 }
 
@@ -1565,16 +1599,137 @@ if (hasTodo('materias')) {
 
 if (hasTodo('baseParam')) {
   const baseParams = {};
-  getAllPages('https://xivapi.com/BaseParam?columns=ID,Name_*').subscribe(page => {
+  const baseParamColumns = [
+    'ID',
+    'Name_*',
+    'MeldParam0',
+    'MeldParam1',
+    'MeldParam2',
+    'MeldParam3',
+    'MeldParam4',
+    'MeldParam5',
+    'MeldParam6',
+    'MeldParam7',
+    'MeldParam8',
+    'MeldParam9',
+    'MeldParam10',
+    'MeldParam11',
+    'MeldParam12',
+    '1HWpn%',
+    '2HWpn%',
+    'Bracelet%',
+    'Chest%',
+    'ChestHead%',
+    'ChestHeadLegsFeet%',
+    'ChestLegsFeet%',
+    'ChestLegsGloves%',
+    'Earring%',
+    'Feet%',
+    'Hands%',
+    'Head%',
+    'HeadChestHandsLegsFeet%',
+    'Legs%',
+    'LegsFeet%',
+    'Necklace%',
+    'OH%',
+    'Order',
+    'Ring%',
+    'Waist%'
+  ];
+  getAllPages(`https://xivapi.com/BaseParam?columns=${baseParamColumns.join(',')}`).subscribe(page => {
     page.Results.forEach(entry => {
-      baseParams[entry.ID] = {
-        en: entry.Name_en,
-        de: entry.Name_de,
-        ja: entry.Name_ja,
-        fr: entry.Name_fr
-      };
+      baseParams[entry.ID] = entry;
     });
   }, null, () => {
     persistToJsonAsset('base-params', baseParams);
+  });
+}
+
+if (hasTodo('itemLevel')) {
+  const itemLevel = {};
+  const itemLevelColumns = [
+    'AdditionalEffect',
+    'AttackMagicPotency',
+    'AttackPower',
+    'AttackSpeed',
+    'BindResistance',
+    'BlindResistance',
+    'BlockRate',
+    'BlockStrength',
+    'BluntResistance',
+    'CP',
+    'CarefulDesynthesis',
+    'Control',
+    'Craftsmanship',
+    'CriticalHit',
+    'CriticalHitEvasion',
+    'CriticalHitPower',
+    'CriticalHitResilience',
+    'Defense',
+    'Delay',
+    'Determination',
+    'Dexterity',
+    'DirectHitRate',
+    'DoomResistance',
+    'EXPBonus',
+    'EarthResistance',
+    'EnfeeblingMagicPotency',
+    'EnhancementMagicPotency',
+    'Enmity',
+    'EnmityReduction',
+    'Evasion',
+    'FireResistance',
+    'GP',
+    'GameContentLinks',
+    'Gathering',
+    'HP',
+    'Haste',
+    'HealingMagicPotency',
+    'HeavyResistance',
+    'ID',
+    'IceResistance',
+    'IncreasedSpiritbondGain',
+    'Intelligence',
+    'LightningResistance',
+    'MP',
+    'MagicDefense',
+    'MagicResistance',
+    'MagicalDamage',
+    'Mind',
+    'Morale',
+    'MovementSpeed',
+    'ParalysisResistance',
+    'Patch',
+    'Perception',
+    'PetrificationResistance',
+    'PhysicalDamage',
+    'PiercingResistance',
+    'Piety',
+    'PoisonResistance',
+    'ProjectileResistance',
+    'ReducedDurabilityLoss',
+    'Refresh',
+    'Regen',
+    'SilenceResistance',
+    'SkillSpeed',
+    'SlashingResistance',
+    'SleepResistance',
+    'SlowResistance',
+    'SpellSpeed',
+    'Spikes',
+    'Strength',
+    'StunResistance',
+    'TP',
+    'Tenacity',
+    'Vitality',
+    'WaterResistance',
+    'WindResistance'
+  ];
+  getAllPages(`https://xivapi.com/ItemLevel?columns=${itemLevelColumns.join(',')}`).subscribe(page => {
+    page.Results.forEach(entry => {
+      itemLevel[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('item-level', itemLevel);
   });
 }

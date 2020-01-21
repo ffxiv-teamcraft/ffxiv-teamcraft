@@ -118,7 +118,13 @@ export class LocalizedDataService {
   }
 
   public getBaseParamName(id: number): I18nName {
-    const row = this.getRow(this.lazyData.data.baseParams, id);
+    const lazyRow = this.getRow<any>(this.lazyData.data.baseParams, id);
+    const row = {
+      en: lazyRow.Name_en,
+      de: lazyRow.Name_de,
+      ja: lazyRow.Name_ja,
+      fr: lazyRow.Name_fr
+    };
     this.tryFillExtendedLanguage(row, id, { zhKey: 'baseParams', koKey: 'baseParams' });
 
     return row;

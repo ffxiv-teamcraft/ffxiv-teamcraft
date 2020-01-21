@@ -49,3 +49,26 @@
     background-color: var(--highlight-color-25);
   }
 }
+
+.materias {
+  cursor: pointer;
+
+  .materia-slot {
+    border: 2px solid;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    &.slot {
+      border-color: #689034;
+    }
+
+    &.overmeld {
+      border-color: #872d2c;
+    }
+
+    &.filled {
+      background-color: rgba(255, 255, 255, .8);
+    }
+  }
+}

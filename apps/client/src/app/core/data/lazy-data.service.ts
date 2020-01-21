@@ -15,6 +15,20 @@ import { lazyFilesList } from './lazy-files-list';
 })
 export class LazyDataService {
 
+  // Source: ToolkitData.MateriaSuccessRates from ffxiv.ariyala.com
+  public meldingRates = [
+    // Sockets
+    //2, 3,  4,  5    // Tier
+    [90, 48, 28, 16], // I
+    [82, 44, 26, 16], // II
+    [70, 38, 22, 14], // III
+    [58, 32, 20, 12], // IV
+    [17, 10, 7, 5],   // V
+    [17, 0, 0, 0],    // VI
+    [17, 10, 7, 5],   // VII
+    [17, 0, 0, 0]     // VIII
+  ];
+
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public datacenters: { [index: string]: string[] } = {};

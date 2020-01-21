@@ -18,6 +18,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { MateriasPopupComponent } from './materias-popup/materias-popup.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent],
+  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -54,6 +55,9 @@ const routes: Routes = [
     PageLoaderModule,
 
     RouterModule.forChild(routes)
+  ],
+  entryComponents: [
+    MateriasPopupComponent
   ]
 })
 export class GearsetModule {

@@ -61,17 +61,30 @@
           </ng-template>
           <div fxLayout="column">
             <ng-container *ngFor="let row of category.items;let last=last; let odd = odd">
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="item-row"
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="item-row"
                    [class.selected]="gearset[category.property]?.itemId === row.item.ID">
                 <label nz-checkbox [nzChecked]="gearset[category.property]?.itemId === row.item.ID"
                        (nzCheckedChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"></label>
                 <app-item-icon [itemId]="row.item.ID" [width]="32 | ifMobile:24"></app-item-icon>
-                <div>{{row.item | xivapiI18n}}</div>
-                <nz-switch [ngModel]="row.equipmentPiece.hq"
-                           [nzDisabled]="row.item.CanBeHq === 0"
-                           (ngModelChange)="gearset[category.property]?.itemId === row.item.ID?setGearsetPiece(gearset, category.property, row.equipmentPiece):null"
-                           [nzCheckedChildren]="'COMMON.Hq' | translate"
-                           [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
+                <div fxLayout="column" fxLayoutGap="5px">
+                  <div fxLayout="row" fxLayoutGap="10px">
+                    <div>{{row.item | xivapiI18n}}</div>
+                    <nz-switch [(ngModel)]="row.equipmentPiece.hq"
+                               [nzDisabled]="row.item.CanBeHq === 0"
+                               (ngModelChange)="gearset[category.property]?.itemId === row.item.ID?setGearsetPiece(gearset, category.property, row.equipmentPiece):null"
+                               [nzCheckedChildren]="'COMMON.Hq' | translate"
+                               [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
+                  </div>
+                  <div fxLayout="row" fxLayoutGap="5px" (click)="editMaterias(gearset, category.property, row.equipmentPiece)" class="materias">
+                    <div *ngFor="let materia of row.equipmentPiece.materias; let i = index"
+                         class="materia-slot"
+                         [class.filled]="materia > 0"
+                         [class.slot]="i < row.equipmentPiece.materiaSlots"
+                         [class.overmeld]="i >= row.equipmentPiece.materiaSlots"
+                         nz-tooltip
+                         [nzTitle]="materia === 0 ? null : (materia | itemName | i18n)"></div>
+                  </div>
+                </div>
               </div>
               <nz-divider *ngIf="!last"></nz-divider>
             </ng-container>

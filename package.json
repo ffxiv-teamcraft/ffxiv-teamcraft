@@ -171,6 +171,7 @@
     "jwt-decode": "^2.2.0",
     "less": "^2.7.3",
     "lodash": "^4.17.10",
+    "memoizee": "^0.4.14",
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
     "ng-zorro-antd": "8.4.0",

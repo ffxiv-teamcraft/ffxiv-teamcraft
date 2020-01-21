@@ -3,7 +3,7 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
 import { CreateGearset, DeleteGearset, GearsetLoaded, GearsetsActionTypes, GearsetsLoaded, LoadGearset, LoadGearsets, UpdateGearset } from './gearsets.actions';
-import { distinctUntilChanged, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -73,6 +73,7 @@ export class GearsetsEffects {
   })
   updateGearset$ = this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
+    debounceTime(2000),
     switchMap(action => {
       return this.gearsetService.update(action.key, action.gearset);
     })
