@@ -204,7 +204,7 @@ function openOverlay(overlayConfig) {
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
   const alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
   const overlay = new BrowserWindow(opts);
-  overlay.setAlwaysOnTop(alwaysOnTop);
+  overlay.setAlwaysOnTop(alwaysOnTop, 'screen-saver');
   overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
@@ -436,7 +436,7 @@ ipcMain.on('run-update', () => {
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop);
+  win.setAlwaysOnTop(onTop, 'screen-saver');
 });
 
 ipcMain.on('always-on-top:get', (event) => {
@@ -480,7 +480,7 @@ ipcMain.on('overlay:get-opacity', (event, data) => {
 ipcMain.on('overlay:set-on-top', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
   if (overlayWindow !== undefined) {
-    overlayWindow.setAlwaysOnTop(data.onTop);
+    overlayWindow.setAlwaysOnTop(data.onTop, 'screen-saver');
   }
 });
 
