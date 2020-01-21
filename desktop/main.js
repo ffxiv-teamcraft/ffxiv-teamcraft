@@ -306,10 +306,16 @@ ipcMain.on('toggle-machina:get', (event) => {
 });
 
 let fishingState = {};
-
+const overlaysNeedingFishingState = [
+  '/fishing-reporter-overlay'
+];
 ipcMain.on('fishing-state:set', (_, data) => {
   fishingState = data;
-  broadcast('fishing-state', data);
+  overlaysNeedingFishingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('fishing-state', data);
+    }
+  });
 });
 
 ipcMain.on('fishing-state:get', (event) => {
@@ -318,10 +324,16 @@ ipcMain.on('fishing-state:get', (event) => {
 
 
 let appState = {};
-
+const overlaysNeedingState = [
+  '/list-panel-overlay'
+];
 ipcMain.on('app-state:set', (_, data) => {
   appState = data;
-  broadcast('app-state', data);
+  overlaysNeedingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('app-state', data);
+    }
+  });
 });
 
 ipcMain.on('app-state:get', (event) => {
