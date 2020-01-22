@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { MateriasService } from '../materias.service';
+import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { NzModalRef } from 'ng-zorro-antd';
 
 
@@ -23,7 +23,7 @@ export class MateriasPopupComponent implements OnInit {
 
   materiaMenu: MateriaMenuEntry[] = [];
 
-  constructor(private lazyData: LazyDataService, public materiasService: MateriasService,
+  constructor(private lazyData: LazyDataService, public materiasService: MateriaService,
               private modalRef: NzModalRef) {
   }
 

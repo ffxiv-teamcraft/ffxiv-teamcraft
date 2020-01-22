@@ -21,7 +21,8 @@
 }
 
 .job-icon {
-  width: 32px;
+  font-size: 32px;
+  line-height: 32px;
 }
 
 .gearset-name {
@@ -52,23 +53,20 @@
 
 .materias {
   cursor: pointer;
+}
 
-  .materia-slot {
-    border: 2px solid;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+.input-min-max {
+  .min {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 
-    &.slot {
-      border-color: #689034;
-    }
+  .input-splitter {
+    width: 28px;
+  }
 
-    &.overmeld {
-      border-color: #872d2c;
-    }
-
-    &.filled {
-      background-color: rgba(255, 255, 255, .8);
-    }
+  .max {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }

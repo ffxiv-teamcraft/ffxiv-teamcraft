@@ -14,7 +14,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
-import { MateriasService } from '../materias.service';
+import { MateriaService } from '../../../modules/gearsets/materia.service';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -44,37 +44,72 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     switchMap(([filters, job]) => {
-      return this.xivapi.search({
-        indexes: [SearchIndex.ITEM],
-        filters: [
-          ...filters,
-          {
-            column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
-            operator: '=',
-            value: 1
-          }
-        ],
-        columns: [
-          'ID',
-          'Name_*',
-          'Icon',
-          'EquipSlotCategory',
-          'BaseParamModifier',
-          'IsAdvancedMeldingPermitted',
-          'BaseParam*',
-          'MateriaSlotCount',
-          'LevelItem',
-          'LevelEquip',
-          'Stats',
-          'CanBeHq'
-        ],
-        string_algo: SearchAlgo.WILDCARD_PLUS,
-        limit: 250
-      });
+      return combineLatest([
+        this.xivapi.search({
+          indexes: [SearchIndex.ITEM],
+          filters: [
+            ...filters,
+            {
+              column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
+              operator: '=',
+              value: 1
+            }
+          ],
+          columns: [
+            'ID',
+            'Name_*',
+            'Icon',
+            'EquipSlotCategory',
+            'BaseParamModifier',
+            'IsAdvancedMeldingPermitted',
+            'BaseParam*',
+            'MateriaSlotCount',
+            'LevelItem',
+            'LevelEquip',
+            'Stats',
+            'CanBeHq'
+          ],
+          limit: 250
+        }),
+        this.xivapi.search({
+          indexes: [SearchIndex.ITEM],
+          filters: [
+            {
+              column: 'EquipSlotCategory.SoulCrystal',
+              operator: '=',
+              value: 1
+            },            {
+              column: 'ItemUICategoryTargetID',
+              operator: '=',
+              value: 62
+            },
+            {
+              column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
+              operator: '=',
+              value: 1
+            }
+          ],
+          columns: [
+            'ID',
+            'Name_*',
+            'Icon',
+            'EquipSlotCategory',
+            'BaseParamModifier',
+            'IsAdvancedMeldingPermitted',
+            'BaseParam*',
+            'MateriaSlotCount',
+            'LevelItem',
+            'LevelEquip',
+            'Stats',
+            'CanBeHq'
+          ],
+          limit: 250
+        })
+      ]);
     }),
     withLatestFrom(this.gearset$),
-    map(([response, gearset]) => {
-      return response.Results.reduce((resArray, item) => {
+    map(([[response, crystal], gearset]) => {
+      return [...response.Results, ...crystal.Results].reduce((resArray, item) => {
         const itemSlotName = Object.keys(item.EquipSlotCategory)
           .filter(key => key !== 'ID')
           .find(key => item.EquipSlotCategory[key] === 1);
@@ -184,7 +219,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
               public translate: TranslateService, private dialog: NzModalService,
-              private  materiasService: MateriasService) {
+              private  materiasService: MateriaService) {
     super();
   }
 

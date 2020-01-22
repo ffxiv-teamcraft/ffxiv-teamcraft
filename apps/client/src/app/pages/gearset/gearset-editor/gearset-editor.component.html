@@ -1,7 +1,7 @@
 <ng-container *ngIf="gearset$ | async as gearset">
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
     <span class="gearset-name">{{gearset.name}}</span>
-    <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(gearset.job | jobAbbr)?.en}}.png">
+    <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
   </div>
 
   <nz-collapse>
@@ -11,12 +11,12 @@
         <nz-form-item fxLayout="row" fxLayoutAlign="center center">
           <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
           <nz-form-control>
-            <nz-input-group fxLayout="row">
+            <nz-input-group fxLayout="row" class="input-min-max">
               <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
-                               id="ilvl"></nz-input-number>
-              <input disabled nz-input placeholder="-" type="text">
+                               id="ilvl" class="min"></nz-input-number>
+              <input disabled nz-input placeholder="-" type="text" class="input-splitter">
               <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
-                               formControlName="ilvlMax"></nz-input-number>
+                               formControlName="ilvlMax" class="max"></nz-input-number>
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -24,12 +24,12 @@
         <nz-form-item fxLayout="row" fxLayoutAlign="center center">
           <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
           <nz-form-control>
-            <nz-input-group fxLayout="row">
+            <nz-input-group fxLayout="row" class="input-min-max">
               <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
-                               id="elvl"></nz-input-number>
-              <input disabled nz-input placeholder="-" type="text">
+                               id="elvl" class="min"></nz-input-number>
+              <input disabled nz-input placeholder="-" type="text" class="input-splitter">
               <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                               formControlName="elvlMax"></nz-input-number>
+                               formControlName="elvlMax" class="max"></nz-input-number>
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>
@@ -56,7 +56,7 @@
           <ng-template #cardTitleRef>
             <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
               <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
-              <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d" *ngIf="!gearset[category.property]"></i>
+              <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d" *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal'"></i>
             </div>
           </ng-template>
           <div fxLayout="column">
@@ -75,14 +75,8 @@
                                [nzCheckedChildren]="'COMMON.Hq' | translate"
                                [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
                   </div>
-                  <div fxLayout="row" fxLayoutGap="5px" (click)="editMaterias(gearset, category.property, row.equipmentPiece)" class="materias">
-                    <div *ngFor="let materia of row.equipmentPiece.materias; let i = index"
-                         class="materia-slot"
-                         [class.filled]="materia > 0"
-                         [class.slot]="i < row.equipmentPiece.materiaSlots"
-                         [class.overmeld]="i >= row.equipmentPiece.materiaSlots"
-                         nz-tooltip
-                         [nzTitle]="materia === 0 ? null : (materia | itemName | i18n)"></div>
+                  <div fxLayout="row" (click)="editMaterias(gearset, category.property, row.equipmentPiece)" class="materias">
+                    <app-materia-slot-icon *ngFor="let materia of row.equipmentPiece.materias; let i = index" [equipmentPiece]="row.equipmentPiece" [index]="i"></app-materia-slot-icon>
                   </div>
                 </div>
               </div>

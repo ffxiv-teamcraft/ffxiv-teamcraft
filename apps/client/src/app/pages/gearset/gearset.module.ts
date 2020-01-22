@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { MateriasPopupComponent } from './materias-popup/materias-popup.component';
+import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
     TooltipModule,
     ProgressPopupModule,
     FullpageMessageModule,
+    GearsetsModule,
 
     ListModule,
     ListPickerModule,

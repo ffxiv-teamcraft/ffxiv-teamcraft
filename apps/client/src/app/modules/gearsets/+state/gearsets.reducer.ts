@@ -42,7 +42,7 @@ export function reducer(
       return {
         ...state,
         list: [
-          ...state.list,
+          ...state.list.filter(g => g.$key !== action.payload.$key),
           action.payload
         ]
       };

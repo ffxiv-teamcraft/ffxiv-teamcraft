@@ -6,7 +6,7 @@ import { Memoized } from '../../core/memoized';
 @Injectable({
   providedIn: 'root'
 })
-export class MateriasService {
+export class MateriaService {
 
   constructor(private lazyData: LazyDataService) {
   }

@@ -116,7 +116,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-melding-data.json',
-    'hashedFileName': 'item-melding-data.8276102f216ef6b118550d19fce9245283f346de.json',
+    'hashedFileName': 'item-melding-data.2df60ebb5c3a911d046375b92cb115643e59fcae.json',
     'propertyName': 'itemMeldingData'
   },
   {

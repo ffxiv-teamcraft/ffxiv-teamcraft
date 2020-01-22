@@ -3,13 +3,14 @@ import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
 import { CreateGearset, DeleteGearset, GearsetLoaded, GearsetsActionTypes, GearsetsLoaded, LoadGearset, LoadGearsets, UpdateGearset } from './gearsets.actions';
-import { debounceTime, distinctUntilChanged, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
+import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class GearsetsEffects {
@@ -17,7 +18,7 @@ export class GearsetsEffects {
   @Effect()
   loadGearsets$ = this.actions$.pipe(
     ofType<LoadGearsets>(GearsetsActionTypes.LoadGearsets),
-    switchMap(() => {
+    exhaustMap(() => {
       return this.authFacade.userId$.pipe(
         distinctUntilChanged(),
         switchMap(userId => {
@@ -47,14 +48,15 @@ export class GearsetsEffects {
         first(),
         switchMap(userId => {
           return this.dialog.create({
-            nzContent: NameQuestionPopupComponent,
+            nzContent: GearsetCreationPopupComponent,
             nzFooter: null,
-            nzTitle: this.translate.instant('CUSTOM_LINKS.Add_link')
+            nzTitle: this.translate.instant('GEARSETS.New_gearset')
           }).afterClose.pipe(
-            filter(name => name),
-            map(name => {
+            filter(opts => opts),
+            map(opts => {
               const gearset = new TeamcraftGearset();
-              gearset.name = name;
+              gearset.name = opts.name;
+              gearset.job = opts.job;
               gearset.authorId = userId;
               return gearset;
             })
@@ -64,6 +66,9 @@ export class GearsetsEffects {
           return this.gearsetService.add(gearset);
         })
       );
+    }),
+    tap((res) => {
+      this.router.navigate(['/gearset', res, 'edit']);
     }),
     switchMapTo(EMPTY)
   );
@@ -91,6 +96,6 @@ export class GearsetsEffects {
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private gearsetService: GearsetService, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private router: Router) {
   }
 }
