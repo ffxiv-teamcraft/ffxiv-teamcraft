@@ -119,6 +119,14 @@ export class SettingsService {
     this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
   }
 
+  public get onlyRecipesInPicker(): boolean {
+    return this.getSetting('only-recipes-in-picker', 'false') === 'true';
+  }
+
+  public set onlyRecipesInPicker(onlyRecipes: boolean) {
+    this.setSetting('only-recipes-in-picker', onlyRecipes.toString());
+  }
+
   public get clickthroughOverlay(): boolean {
     return this.getSetting('clickthrough', 'false') === 'true';
   }
