@@ -18,20 +18,7 @@ import {
   UpdateListAtomic,
   UpdateListIndex
 } from './lists.actions';
-import {
-  catchError,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
-  throttleTime,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY, from, of } from 'rxjs';
@@ -386,6 +373,7 @@ export class ListsEffects {
     filter(([action, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && list.isComplete();
     }),
+    debounceTime(2000),
     tap(([, list]) => {
       this.dialog.create({
         nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
