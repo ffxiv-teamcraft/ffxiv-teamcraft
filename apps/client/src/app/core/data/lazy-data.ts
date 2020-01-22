@@ -6,6 +6,7 @@ export interface LazyData {
   actionTimeline: any;
   actions: any;
   baseParams: any;
+  classJobsModifiers: any;
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;

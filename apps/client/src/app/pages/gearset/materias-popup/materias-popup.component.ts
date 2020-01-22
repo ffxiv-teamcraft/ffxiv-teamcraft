@@ -3,6 +3,7 @@ import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { NzModalRef } from 'ng-zorro-antd';
+import { StatsService } from '../../../modules/gearsets/stats.service';
 
 
 interface MateriaMenuEntry {
@@ -24,7 +25,7 @@ export class MateriasPopupComponent implements OnInit {
   materiaMenu: MateriaMenuEntry[] = [];
 
   constructor(private lazyData: LazyDataService, public materiasService: MateriaService,
-              private modalRef: NzModalRef) {
+              private modalRef: NzModalRef, private statsService: StatsService) {
   }
 
   getBonus(materia: number, index: number): { overcapped: boolean, value: number } {
@@ -38,25 +39,6 @@ export class MateriasPopupComponent implements OnInit {
       return 100;
     }
     return this.lazyData.meldingRates[materia.tier - 1][overmeldSlot];
-  }
-
-  private getRelevantBaseParamsIds(job: number): number[] {
-    switch (job) {
-      case 8:
-      case 9:
-      case 10:
-      case 11:
-      case 12:
-      case 13:
-      case 14:
-      case 15:
-        return [11, 70, 71];
-      case 16:
-      case 17:
-      case 18:
-        return [10, 72, 73];
-    }
-    return [];
   }
 
   resetMaterias(index: number): void {
@@ -74,7 +56,7 @@ export class MateriasPopupComponent implements OnInit {
   }
 
   getMaxValuesTable(): number[][] {
-    return this.getRelevantBaseParamsIds(this.job)
+    return this.statsService.getRelevantBaseStats(this.job)
       .map(baseParamId => {
         return [
           baseParamId,
@@ -98,7 +80,7 @@ export class MateriasPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const relevantBaseParamsIds = this.getRelevantBaseParamsIds(this.job);
+    const relevantBaseParamsIds = this.statsService.getRelevantBaseStats(this.job);
     this.materiaMenu = this.lazyData.data.materias
       .filter(materia => relevantBaseParamsIds.indexOf(materia.baseParamId) > -1)
       .reduce((acc, materia) => {

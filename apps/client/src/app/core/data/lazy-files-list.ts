@@ -31,8 +31,13 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'base-params.json',
-    'hashedFileName': 'base-params.052e89d49e63acfe871177bc15e27314384b598d.json',
+    'hashedFileName': 'base-params.1de2e04897f90e69e42446375d7336ea984c643b.json',
     'propertyName': 'baseParams'
+  },
+  {
+    'fileName': 'class-jobs-modifiers.json',
+    'hashedFileName': 'class-jobs-modifiers.0011af60cd3f14881f9022f5d7eff45ba94d53e2.json',
+    'propertyName': 'classJobsModifiers'
   },
   {
     'fileName': 'craft-actions.json',
@@ -111,12 +116,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-level.json',
-    'hashedFileName': 'item-level.cfdc81a91d944fb127b6d74ecb3e83574d2ca642.json',
+    'hashedFileName': 'item-level.fac3db0aeae4125a88478c4fdff283f9f8f2f932.json',
     'propertyName': 'itemLevel'
   },
   {
     'fileName': 'item-melding-data.json',
-    'hashedFileName': 'item-melding-data.2df60ebb5c3a911d046375b92cb115643e59fcae.json',
+    'hashedFileName': 'item-melding-data.945156e79ddde5424a0109b738224fd28024d60f.json',
     'propertyName': 'itemMeldingData'
   },
   {
@@ -126,7 +131,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.2724cdac978c3890479cbd1a85cdf052ceee8e35.json',
+    'hashedFileName': 'item-stats.b6f984edee65630519d6c46911eef833bf0dc227.json',
     'propertyName': 'itemStats'
   },
   {

@@ -1733,3 +1733,25 @@ if (hasTodo('itemLevel')) {
     persistToJsonAsset('item-level', itemLevel);
   });
 }
+
+if (hasTodo('classJobModifiers')) {
+  const ClassJobs = {};
+  const ClassJobsColumns = [
+    'ID',
+    'ModifierDexterity',
+    'ModifierHitPoints',
+    'ModifierIntelligence',
+    'ModifierManaPoints',
+    'ModifierMind',
+    'ModifierPiety',
+    'ModifierStrength',
+    'ModifierVitality'
+  ];
+  getAllPages(`https://xivapi.com/ClassJob?columns=${ClassJobsColumns.join(',')}`).subscribe(page => {
+    page.Results.forEach(entry => {
+      ClassJobs[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('class-jobs-modifiers', ClassJobs);
+  });
+}

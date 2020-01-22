@@ -6,7 +6,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
@@ -15,6 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { NzModalService } from 'ng-zorro-antd';
 import { MateriasPopupComponent } from '../materias-popup/materias-popup.component';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
+import { StatsService } from '../../../modules/gearsets/stats.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -78,7 +80,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               column: 'EquipSlotCategory.SoulCrystal',
               operator: '=',
               value: 1
-            },            {
+            }, {
               column: 'ItemUICategoryTargetID',
               operator: '=',
               value: 62
@@ -157,25 +159,22 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public stats$: Observable<{ id: number, value: number }[]> = this.gearset$.pipe(
     map(set => {
-      //TODO make this change based on job
-      const stats = [
-        {
-          id: 70,
-          value: 0
-        },
-        {
-          id: 71,
-          value: 0
-        },
-        {
-          id: 11,
-          value: 160
-        }
-      ];
+      const stats = this.statsService.getRelevantBaseStats(set.job)
+        .map(stat => {
+          // TODO get level from gearset?
+          return {
+            id: stat,
+            value: this.statsService.getBaseValue(stat, set.job, 80)
+          };
+        });
       Object.values(set)
         .filter(value => value && value.itemId !== undefined)
         .forEach((equipmentPiece: EquipmentPiece) => {
           const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+          // If this item has no stats, return !
+          if (!itemStats) {
+            return;
+          }
           Object.values(itemStats)
             .filter((stat: any) => stat.ID !== undefined)
             .forEach((stat: any) => {
@@ -183,8 +182,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               if (statsRow === undefined) {
                 stats.push({
                   id: stat.ID,
-                  // TODO getStartValue?
-                  value: 0
+                  // TODO get level from gearset?
+                  value: this.statsService.getBaseValue(stat.ID, set.job, 80)
                 });
                 statsRow = stats[stats.length - 1];
               }
@@ -203,8 +202,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               if (statsRow === undefined) {
                 stats.push({
                   id: materia.baseParamId,
-                  // TODO getStartValue?
-                  value: 0
+                  // TODO get level from gearset?
+                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, 80)
                 });
                 statsRow = stats[stats.length - 1];
               }
@@ -219,7 +218,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
               public translate: TranslateService, private dialog: NzModalService,
-              private  materiasService: MateriaService) {
+              private  materiasService: MateriaService, private statsService: StatsService,
+              private i18n: I18nToolsService) {
     super();
   }
 
@@ -246,9 +246,45 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       return cache[item.ID];
     }
     if (item.MateriaSlotCount > 0) {
-      return [0, 0, 0, 0, 0];
+      if (item.IsAdvancedMeldingPermitted === 1) {
+        return [0, 0, 0, 0, 0];
+      }
+      return new Array(item.MateriaSlotCount).fill(0);
     }
     return [];
+  }
+
+  private getPropertyName(slotName: string): keyof TeamcraftGearset {
+    switch (slotName) {
+      case 'Body':
+        return 'chest';
+      case 'Ears':
+        return 'earRings';
+      case 'Feet':
+        return 'feet';
+      case 'FingerL':
+        return 'ring1';
+      case 'FingerR':
+        return 'ring2';
+      case 'Gloves':
+        return 'gloves';
+      case 'Head':
+        return 'head';
+      case 'Legs':
+        return 'legs';
+      case 'MainHand':
+        return 'mainHand';
+      case 'Neck':
+        return 'necklace';
+      case 'OffHand':
+        return 'offHand';
+      case 'SoulCrystal':
+        return 'crystal';
+      case 'Waist':
+        return 'belt';
+      case 'Wrists':
+        return 'bracelet';
+    }
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
@@ -289,43 +325,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.filters$.next(filters);
   }
 
-  private getPropertyName(slotName: string): keyof TeamcraftGearset {
-    switch (slotName) {
-      case 'Body':
-        return 'chest';
-      case 'Ears':
-        return 'earRings';
-      case 'Feet':
-        return 'feet';
-      case 'FingerL':
-        return 'ring1';
-      case 'FingerR':
-        return 'ring2';
-      case 'Gloves':
-        return 'gloves';
-      case 'Head':
-        return 'head';
-      case 'Legs':
-        return 'legs';
-      case 'MainHand':
-        return 'mainHand';
-      case 'Neck':
-        return 'necklace';
-      case 'OffHand':
-        return 'offHand';
-      case 'SoulCrystal':
-        return 'crystal';
-      case 'Waist':
-        return 'belt';
-      case 'Wrists':
-        return 'bracelet';
-    }
-  }
-
-  public editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece): void {
+  editMaterias(gearset: TeamcraftGearset, propertyName: string, equipmentPiece: EquipmentPiece): void {
     const clone = JSON.parse(JSON.stringify(equipmentPiece));
     this.dialog.create({
-      nzTitle: this.translate.instant('GEARSETS.Modal_editor'),
+      nzTitle: this.translate.instant('GEARSETS.Modal_editor', { itemName: this.i18n.getName(this.l12n.getItem(equipmentPiece.itemId)) }),
       nzContent: MateriasPopupComponent,
       nzComponentParams: {
         equipmentPiece: equipmentPiece,
