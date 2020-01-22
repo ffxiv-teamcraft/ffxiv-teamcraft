@@ -544,7 +544,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "清单已完成",
-    "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为社区清单。",
+    "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为共享清单。",
     "Missing_tags_before_button": "此清单已公开分享为共享清单，但它没有标签，请使用 为它添加标签。",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
