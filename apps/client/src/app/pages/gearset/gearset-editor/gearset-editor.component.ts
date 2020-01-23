@@ -161,10 +161,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     map(set => {
       const stats = this.statsService.getRelevantBaseStats(set.job)
         .map(stat => {
-          // TODO get level from gearset?
           return {
             id: stat,
-            value: this.statsService.getBaseValue(stat, set.job, 80)
+            value: this.statsService.getBaseValue(stat, set.job, set.level)
           };
         });
       Object.values(set)
@@ -182,8 +181,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               if (statsRow === undefined) {
                 stats.push({
                   id: stat.ID,
-                  // TODO get level from gearset?
-                  value: this.statsService.getBaseValue(stat.ID, set.job, 80)
+                  value: this.statsService.getBaseValue(stat.ID, set.job, set.level)
                 });
                 statsRow = stats[stats.length - 1];
               }
@@ -202,8 +200,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               if (statsRow === undefined) {
                 stats.push({
                   id: materia.baseParamId,
-                  // TODO get level from gearset?
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, 80)
+                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, set.level)
                 });
                 statsRow = stats[stats.length - 1];
               }
