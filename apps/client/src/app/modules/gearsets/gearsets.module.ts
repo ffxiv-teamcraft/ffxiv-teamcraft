@@ -13,9 +13,10 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.component';
+import { StatPipe } from './stat.pipe';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent],
+  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe],
   entryComponents: [GearsetCreationPopupComponent],
   imports: [
     CommonModule,
@@ -38,7 +39,7 @@ import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.
     NzModalServiceModule,
     TranslateModule
   ],
-  exports: [MateriaSlotIconComponent],
+  exports: [MateriaSlotIconComponent, StatPipe],
   providers: [GearsetsFacade]
 })
 export class GearsetsModule {

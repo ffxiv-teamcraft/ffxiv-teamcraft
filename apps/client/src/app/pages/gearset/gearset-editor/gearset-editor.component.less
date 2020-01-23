@@ -13,6 +13,11 @@
     .ant-card-body {
       padding: 10px 0 0 0 !important;
     }
+
+    .ant-card-head {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
   }
 }
 
@@ -34,12 +39,16 @@
 }
 
 .category-card {
-  &:not(.last) {
+  &:not(.last):not(.full) {
     padding-right: 5px;
   }
 
-  &:not(.first) {
+  &:not(.last):not(.full) {
     padding-left: 5px;
+  }
+
+  &.full.first {
+    margin-bottom: 10px;
   }
 }
 
@@ -77,9 +86,38 @@
   border-right: 1px solid #444;
   border-left: 1px solid #444;
   text-overflow: ellipsis;
+
+  &.last {
+    border-right: none;
+  }
+
+  .has-bonus {
+    font-weight: bold;
+    color: var(--highlight-color);
+  }
 }
 
 .ilvl {
   opacity: .8;
   font-size: 11px;
+}
+
+.editor-container {
+  padding-bottom: 40px;
+}
+
+.stats-footer {
+  position: fixed;
+  height: 40px;
+  background: #292929;
+  border: 2px solid #aaa;
+  border-bottom: 0;
+  bottom: 0;
+  padding: 10px;
+
+  &.two-cols {
+    .footer-title {
+      margin-right: 6px;
+    }
+  }
 }

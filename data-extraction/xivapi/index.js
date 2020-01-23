@@ -1176,7 +1176,7 @@ if (hasTodo('items')) {
         stackSizes[item.ID] = item.StackSize;
         itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
         if (item.Stats) {
-          itemStats[item.ID] = item.Stats;
+          itemStats[item.ID] = Object.values(item.Stats);
         }
         if (item.MateriaSlotCount > 0) {
           itemMeldingData[item.ID] = {

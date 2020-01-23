@@ -36,7 +36,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'class-jobs-modifiers.json',
-    'hashedFileName': 'class-jobs-modifiers.0011af60cd3f14881f9022f5d7eff45ba94d53e2.json',
+    'hashedFileName': 'class-jobs-modifiers.2eda8aca0acdfc642950edd3046940655abfd143.json',
     'propertyName': 'classJobsModifiers'
   },
   {

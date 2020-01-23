@@ -68,7 +68,7 @@ export class MateriasPopupComponent implements OnInit {
 
   private getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): number {
     const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-    const matchingStat: any = Object.values(itemStats).find((stat: any) => stat.ID === baseParamId);
+    const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
     if (matchingStat) {
       if (equipmentPiece.hq) {
         return matchingStat.HQ;

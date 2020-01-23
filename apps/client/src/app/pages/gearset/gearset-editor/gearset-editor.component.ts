@@ -5,7 +5,7 @@ import { distinctUntilChanged, filter, map, switchMap, takeUntil, tap, withLates
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
@@ -17,6 +17,7 @@ import { MateriasPopupComponent } from '../materias-popup/materias-popup.compone
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { Memoized } from '../../../core/memoized';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -46,7 +47,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     switchMap(([filters, job]) => {
-      return combineLatest([
+      const requests = [
         this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           filters: [
@@ -72,8 +73,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             'CanBeHq'
           ],
           limit: 250
-        }),
-        this.xivapi.search({
+        })
+      ];
+      if (job >= 8 && job <= 15) {
+        requests.push(this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           filters: [
             {
@@ -106,12 +109,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             'CanBeHq'
           ],
           limit: 250
-        })
-      ]);
+        }));
+      } else {
+        requests.push(of({ Results: [] }));
+      }
+      return combineLatest(requests);
     }),
     withLatestFrom(this.gearset$),
     map(([[response, crystal], gearset]) => {
-      return [...response.Results, ...crystal.Results].reduce((resArray, item) => {
+      const prepared = [...response.Results, ...crystal.Results].reduce((resArray, item) => {
         const itemSlotName = Object.keys(item.EquipSlotCategory)
           .filter(key => key !== 'ID')
           .find(key => item.EquipSlotCategory[key] === 1);
@@ -147,10 +153,28 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
         arrayEntry.items.push(itemEntry);
         return resArray;
-      }, [])
-        .sort((a, b) => {
-          return a.index - b.index;
-        });
+      }, []);
+
+
+      const fingerLCategory = prepared.find(category => category.index === 12);
+      if (fingerLCategory) {
+        prepared.push(JSON.parse(JSON.stringify({
+          ...fingerLCategory,
+          name: 'fingerR',
+          property: this.getPropertyName('fingerR'),
+          index: 12.1
+        })));
+      }
+
+      return prepared.sort((a, b) => {
+        if (a.index === 13) {
+          return -1;
+        }
+        if (b.index === 13) {
+          return 1;
+        }
+        return a.index - b.index;
+      });
     }),
     map(categories => {
       return chunk(categories, 2);
@@ -174,7 +198,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           if (!itemStats) {
             return;
           }
-          Object.values(itemStats)
+          itemStats
             .filter((stat: any) => stat.ID !== undefined)
             .forEach((stat: any) => {
               let statsRow = stats.find(s => s.id === stat.ID);
@@ -211,6 +235,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
+  private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
+
+  private get materiaCache(): any {
+    return this._materiaCache;
+  }
+
+  private set materiaCache(cache: any) {
+    this._materiaCache = cache;
+    localStorage.setItem('materias', JSON.stringify(cache));
+  }
+
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
@@ -238,9 +273,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   private getMaterias(item: any): number[] {
-    const cache = JSON.parse(localStorage.getItem('materias') || '{}');
-    if (cache[item.ID]) {
-      return cache[item.ID];
+    if (this.materiaCache[item.ID]) {
+      return this.materiaCache[item.ID];
     }
     if (item.MateriaSlotCount > 0) {
       if (item.IsAdvancedMeldingPermitted === 1) {
@@ -251,6 +285,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return [];
   }
 
+  @Memoized()
   private getPropertyName(slotName: string): keyof TeamcraftGearset {
     switch (slotName) {
       case 'Body':
@@ -334,11 +369,29 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       nzFooter: null
     }).afterClose
       .subscribe((res) => {
-        if (res) {
+        if (res && res.materias.some(m => m > 0)) {
+          this.materiaCache = {
+            ...this.materiaCache,
+            [res.itemId]: res.materias
+          };
+        }
+        if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
           this.setGearsetPiece(gearset, propertyName, res);
-        } else {
+        } else if (!res) {
           Object.assign(equipmentPiece, clone);
         }
       });
+  }
+
+  trackByItemId(index: number, row: any): number {
+    return row.item.ID;
+  }
+
+  trackByCategory(index: number, row: any): string {
+    return row.name;
+  }
+
+  trackByChunk(index: number, row: any): number {
+    return index;
   }
 }
