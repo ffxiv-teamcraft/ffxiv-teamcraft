@@ -5,6 +5,7 @@ export class TeamcraftGearset extends DataWithPermissions {
   name: string;
 
   job: number;
+  level = 80;
 
   mainHand: EquipmentPiece;
   offHand: EquipmentPiece;

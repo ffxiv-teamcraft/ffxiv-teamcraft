@@ -12,7 +12,7 @@ export class GearsetCreationPopupComponent implements OnInit {
 
   public control: FormGroup;
 
-  public availableJobs = [];
+  public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
 
   constructor(private modalRef: NzModalRef, private fb: FormBuilder,
               private gt: GarlandToolsService) {
@@ -23,7 +23,6 @@ export class GearsetCreationPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.availableJobs = this.gt.getJobs().filter(job => job.id > 0);
     this.control = this.fb.group({
       name: ['', Validators.required],
       job: [null, Validators.required]
