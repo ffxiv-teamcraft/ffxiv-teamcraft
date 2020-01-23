@@ -118,37 +118,37 @@ export class CommentLinksPipe implements PipeTransform {
         data = [this.lazyData.data.items, this.lazyData.data.koItems, this.lazyData.data.zhItems];
         break;
       case 'fate':
-        data = [this.lazyData.data.fates, this.lazyData.data.koFates];
+        data = [this.lazyData.data.fates, this.lazyData.data.koFates, this.lazyData.data.zhFates];
         break;
       case 'action':
         data = [this.lazyData.data.actions, this.lazyData.data.craftActions, this.lazyData.data.koActions, this.lazyData.data.koCraftActions];
         break;
       case 'instance':
-        data = [this.lazyData.data.instances, this.lazyData.data.koInstances];
+        data = [this.lazyData.data.instances, this.lazyData.data.koInstances, this.lazyData.data.zhInstances];
         break;
       case 'leve':
-        data = [this.lazyData.data.leves, this.lazyData.data.koLeves];
+        data = [this.lazyData.data.leves, this.lazyData.data.koLeves, this.lazyData.data.zhLeves];
         break;
       case 'map':
         data = [this.lazyData.data.places, this.lazyData.data.koPlaces, this.lazyData.data.zhPlaces];
         break;
       case 'mob':
-        data = [this.lazyData.data.mobs, this.lazyData.data.koMobs];
+        data = [this.lazyData.data.mobs, this.lazyData.data.koMobs, this.lazyData.data.zhMobs];
         break;
       case 'npc':
-        data = [this.lazyData.data.npcs, this.lazyData.data.koNpcs];
+        data = [this.lazyData.data.npcs, this.lazyData.data.koNpcs, this.lazyData.data.zhNpcs];
         break;
       case 'achievement':
-        data = [this.lazyData.data.achievements];
+        data = [this.lazyData.data.achievements, this.lazyData.data.koAchievements, this.lazyData.data.zhAchievements];
         break;
       case 'status':
-        data = [this.lazyData.data.statuses, this.lazyData.data.koStatuses];
+        data = [this.lazyData.data.statuses, this.lazyData.data.koStatuses, this.lazyData.data.zhStatuses];
         break;
       case 'trait':
-        data = [this.lazyData.data.traits, this.lazyData.data.koTraits];
+        data = [this.lazyData.data.traits, this.lazyData.data.koTraits, this.lazyData.data.zhTraits];
         break;
       case 'quest':
-        data = [this.lazyData.data.quests, this.lazyData.data.koQuests];
+        data = [this.lazyData.data.quests, this.lazyData.data.koQuests, this.lazyData.data.zhQuests];
         break;
       default:
         return null;
