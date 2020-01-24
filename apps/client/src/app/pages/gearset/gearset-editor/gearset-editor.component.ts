@@ -17,7 +17,7 @@ import { MateriasPopupComponent } from '../materias-popup/materias-popup.compone
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { Memoized } from '../../../core/memoized';
+import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 
 @Component({
@@ -156,8 +156,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         arrayEntry.items.push(itemEntry);
         return resArray;
       }, []);
-
-
       const fingerLCategory = prepared.find(category => category.index === 12);
       if (fingerLCategory) {
         prepared.push(JSON.parse(JSON.stringify({
@@ -167,7 +165,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           index: 12.1
         })));
       }
-
       return prepared.sort((a, b) => {
         if (a.index === 13) {
           return -1;

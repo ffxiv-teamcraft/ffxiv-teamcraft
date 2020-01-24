@@ -8,4 +8,4 @@ export function Memoized() {
       return newFunction.apply(this, arguments);
     };
   };
-};
+}

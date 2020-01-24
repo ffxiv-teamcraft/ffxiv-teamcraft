@@ -85,3 +85,22 @@
     padding-left: 35px;
   }
 }
+
+
+
+.item-stat-row {
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #444;
+  border-left: 1px solid #444;
+  text-overflow: ellipsis;
+
+  &.last {
+    border-right: none;
+  }
+
+  .has-bonus {
+    font-weight: bold;
+    color: var(--highlight-color);
+  }
+}

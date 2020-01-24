@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 
@@ -8,7 +8,7 @@ import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
   styleUrls: ['./gearset-editor-row.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GearsetEditorRowComponent {
+export class GearsetEditorRowComponent implements OnInit {
 
   @Input()
   gearset: TeamcraftGearset;
@@ -31,8 +31,8 @@ export class GearsetEditorRowComponent {
   @Output()
   editMaterias = new EventEmitter<void>();
 
-  constructor() {
-  }
+  public statColsSize: number;
+  public nameColSize: number;
 
   setGearsetPiece(checked: boolean): void {
     this.pieceChange.emit(checked);
@@ -40,6 +40,19 @@ export class GearsetEditorRowComponent {
 
   triggerEditMaterias(): void {
     this.editMaterias.emit();
+  }
+
+  isPieceSelected(): boolean {
+    return this.gearset[this.property] && this.gearset[this.property].itemId === this.item.ID;
+  }
+
+  trackByStat(index: number, stat: { id: number, value: number }): number {
+    return stat.id;
+  }
+
+  ngOnInit(): void {
+    this.statColsSize = this.stats.length > 3 ? 2 : 4;
+    this.nameColSize = 24 - this.stats.length * (this.statColsSize);
   }
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
-import { Memoized } from '../../core/memoized';
+import { Memoized } from '../../core/decorators/memoized';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 
 @Injectable({
@@ -73,6 +73,7 @@ export class MateriaService {
     };
   }
 
+  @Memoized()
   getTotalStat(startingValue: number, equipmentPiece: EquipmentPiece, baseParamId: number): number {
     let result = startingValue;
     equipmentPiece.materias
