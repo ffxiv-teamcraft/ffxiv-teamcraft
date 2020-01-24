@@ -100,9 +100,12 @@ export class MateriaService {
           .filter((itemId) => itemId > 0)
           .forEach((itemId, index) => {
             let materiaRow = materias.find(m => m.id === itemId);
+            const materia = this.getMateria(itemId);
             if (materiaRow === undefined) {
               materias.push({
                 id: itemId,
+                baseParamId: materia.baseParamId,
+                tier: materia.tier,
                 amount: 0
               });
               materiaRow = materias[materias.length - 1];
@@ -111,7 +114,6 @@ export class MateriaService {
               materiaRow.amount += 1;
               return;
             }
-            const materia = this.getMateria(itemId);
             const overmeldChances = this.lazyData.meldingRates[materia.tier - 1][index - piece.materiaSlots];
             if (overmeldChances === 0) {
               return;
@@ -119,7 +121,12 @@ export class MateriaService {
             materiaRow.amount += Math.ceil(1 / (overmeldChances / 100));
           });
       });
-    return materias;
+    return materias.sort((a, b) => {
+      if (a.baseParamId === b.baseParamId) {
+        return a.tier - b.tier;
+      }
+      return a.baseParamId - b.baseParamId;
+    });
   }
 
   @Memoized()

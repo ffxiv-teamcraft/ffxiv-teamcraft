@@ -180,59 +180,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
-  public stats$: Observable<{ id: number, value: number }[]> = this.gearset$.pipe(
-    map(set => {
-      const stats = this.statsService.getRelevantBaseStats(set.job)
-        .map(stat => {
-          return {
-            id: stat,
-            value: this.statsService.getBaseValue(stat, set.job, set.level)
-          };
-        });
-      Object.values(set)
-        .filter(value => value && value.itemId !== undefined)
-        .forEach((equipmentPiece: EquipmentPiece) => {
-          const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-          // If this item has no stats, return !
-          if (!itemStats) {
-            return;
-          }
-          itemStats
-            .filter((stat: any) => stat.ID !== undefined)
-            .forEach((stat: any) => {
-              let statsRow = stats.find(s => s.id === stat.ID);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: stat.ID,
-                  value: this.statsService.getBaseValue(stat.ID, set.job, set.level)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              if (equipmentPiece.hq) {
-                statsRow.value += stat.HQ;
-              } else {
-                statsRow.value += stat.NQ;
-              }
-            });
-          equipmentPiece.materias
-            .filter(materia => materia > 0)
-            .forEach((materiaId, index) => {
-              const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
-              const materia = this.materiasService.getMateria(materiaId);
-              let statsRow = stats.find(s => s.id === materia.baseParamId);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: materia.baseParamId,
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, set.level)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              statsRow.value += bonus.value;
-            });
-        });
-      return stats;
-    })
-  );
+  public stats$: Observable<{ id: number, value: number }[]> = this.gearsetsFacade.selectedGearsetStats;
 
   private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
 

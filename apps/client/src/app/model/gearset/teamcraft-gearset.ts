@@ -23,5 +23,5 @@ export class TeamcraftGearset extends DataWithPermissions {
   ring1: EquipmentPiece;
   ring2: EquipmentPiece;
 
-  crystal: number;
+  crystal: EquipmentPiece;
 }

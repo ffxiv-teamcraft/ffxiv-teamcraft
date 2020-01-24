@@ -22,6 +22,7 @@ import { MateriasPopupComponent } from './materias-popup/materias-popup.componen
 import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-needed-popup.component';
 import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-row.component';
+import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-display-slot.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent],
+  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent],
   imports: [
     CommonModule,
     FormsModule,
