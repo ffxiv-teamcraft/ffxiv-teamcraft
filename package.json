@@ -66,7 +66,7 @@
     "prebuild": "node ./tools/build/prebuild.js && npm run update-lazy-files",
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
     "start-high-memory": "npm run prebuild && ng-high-memory serve --project=client",
-    "start": "npm run ng-high-memory serve -- --project=client --port=3000",
+    "start": "npm run prebuild && npm run ng-high-memory serve -- --project=client",
     "build:watch": "npm run prebuild && npm run ng-high-memory build -- --project=client --watch --configuration=electron-dev",
     "build:prod": "npm run prebuild && npm run ng-high-memory build -- --project=client --prod --no-progress && npm run assets:hash",
     "build:functions": "npm run prebuild && npm run ng-high-memory build -- --project=client --configuration=functions --no-progress",
