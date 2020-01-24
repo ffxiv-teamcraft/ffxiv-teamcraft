@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { distinctUntilChanged, filter, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
@@ -23,7 +23,8 @@ import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-
 @Component({
   selector: 'app-gearset-editor',
   templateUrl: './gearset-editor.component.html',
-  styleUrls: ['./gearset-editor.component.less']
+  styleUrls: ['./gearset-editor.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
 
