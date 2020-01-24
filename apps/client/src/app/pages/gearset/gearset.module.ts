@@ -21,6 +21,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { MateriasPopupComponent } from './materias-popup/materias-popup.component';
 import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-needed-popup.component';
+import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-row.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent],
+  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent],
   imports: [
     CommonModule,
     FormsModule,

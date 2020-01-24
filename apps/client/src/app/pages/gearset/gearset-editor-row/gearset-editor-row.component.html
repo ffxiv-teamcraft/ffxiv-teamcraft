@@ -1,0 +1,37 @@
+<div nz-row class="item-row" [class.selected]="gearset[property]?.itemId === item.ID">
+  <div nz-col [nzMd]="24 - stats.length * (stats.length > 3 ? 2 : 4)" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+      <label nz-checkbox [nzChecked]="gearset[property]?.itemId === item.ID"
+             (nzCheckedChange)="setGearsetPiece($event)"></label>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
+        <app-item-icon [itemId]="item.ID" [width]="32 | ifMobile:24"></app-item-icon>
+        <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{item.LevelItem}}</div>
+      </div>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutGap="10px">
+          <div>{{item | xivapiI18n}}</div>
+          <nz-switch [(ngModel)]="equipmentPiece.hq"
+                     [nzDisabled]="item.CanBeHq === 0"
+                     (ngModelChange)="gearset[property]?.itemId === item.ID?setGearsetPiece(true):null"
+                     [nzCheckedChildren]="'COMMON.Hq' | translate"
+                     [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
+        </div>
+        <div fxLayout="row" (click)="triggerEditMaterias()" class="materias">
+          <app-materia-slot-icon *ngFor="let materia of equipmentPiece.materias; let i = index"
+                                 nz-tooltip
+                                 [nzTitle]="materia === 0 ? null : materia | itemName | i18n"
+                                 [equipmentPiece]="equipmentPiece"
+                                 [index]="i"></app-materia-slot-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-col [nzMd]="stats.length > 3 ? 2 : 4" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
+                    <span *ngIf="equipmentPiece | stat:stat.id as statValue"
+                          nz-tooltip
+                          [nzTitle]="statValue.bonus === 0 ? null :  statValue.value + ' + ' + statValue.bonus"
+                          [class.has-bonus]="statValue.bonus > 0">
+                      {{(statValue.value + statValue.bonus) > 0 ? (statValue.value + statValue.bonus) : '-'}}
+                    </span>
+  </div>
+</div>
