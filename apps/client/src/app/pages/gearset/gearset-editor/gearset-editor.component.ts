@@ -18,6 +18,7 @@ import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Memoized } from '../../../core/memoized';
+import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -381,6 +382,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           Object.assign(equipmentPiece, clone);
         }
       });
+  }
+
+  openTotalNeededPopup(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('GEARSETS.Total_materias_needed'),
+      nzContent: MateriasNeededPopupComponent,
+      nzComponentParams: {
+        gearset: gearset
+      },
+      nzFooter: null
+    });
   }
 
   trackByItemId(index: number, row: any): number {

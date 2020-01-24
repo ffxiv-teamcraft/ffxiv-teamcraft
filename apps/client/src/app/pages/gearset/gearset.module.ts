@@ -20,6 +20,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { MateriasPopupComponent } from './materias-popup/materias-popup.component';
 import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
+import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-needed-popup.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent],
+  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -59,7 +60,8 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   entryComponents: [
-    MateriasPopupComponent
+    MateriasPopupComponent,
+    MateriasNeededPopupComponent
   ]
 })
 export class GearsetModule {

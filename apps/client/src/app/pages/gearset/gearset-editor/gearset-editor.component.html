@@ -111,7 +111,13 @@
     </div>
 
     <div nz-row class="stats-footer" [style.width.px]="editorContainer.offsetWidth" [class.two-cols]="stats.length <= 3">
-      <div nz-col [nzMd]="24 - stats.length * 2" class="footer-title"><b>{{'GEARSETS.Total_stats' | translate}}</b></div>
+      <div nz-col [nzMd]="24 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="5px">
+        <div><b>{{'GEARSETS.Total_stats' | translate}}</b></div>
+        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'GEARSETS.Total_materias_needed' | translate"
+                (click)="openTotalNeededPopup(gearset)">
+          <i nz-icon nzType="calculator" nzTheme="outline"></i>
+        </button>
+      </div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
         <b>{{stat.value | number:'1.0-0':translate.currentLang}}</b>
       </div>

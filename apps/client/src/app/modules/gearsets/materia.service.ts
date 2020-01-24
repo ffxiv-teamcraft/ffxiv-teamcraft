@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/memoized';
+import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 
 @Injectable({
   providedIn: 'root'
@@ -86,6 +87,38 @@ export class MateriaService {
       });
     const cap = this.getItemCapForStat(equipmentPiece.itemId, baseParamId);
     return result > cap ? cap : result;
+  }
+
+  getTotalNeededMaterias(gearset: TeamcraftGearset): { id: number, amount: number }[] {
+    const materias = [];
+    Object.keys(gearset)
+      .filter(key => gearset[key] && gearset[key].itemId !== undefined)
+      .forEach(key => {
+        const piece: EquipmentPiece = gearset[key];
+        piece.materias
+          .filter((itemId) => itemId > 0)
+          .forEach((itemId, index) => {
+            let materiaRow = materias.find(m => m.id === itemId);
+            if (materiaRow === undefined) {
+              materias.push({
+                id: itemId,
+                amount: 0
+              });
+              materiaRow = materias[materias.length - 1];
+            }
+            if (index < piece.materiaSlots) {
+              materiaRow.amount += 1;
+              return;
+            }
+            const materia = this.getMateria(itemId);
+            const overmeldChances = this.lazyData.meldingRates[materia.tier - 1][index - piece.materiaSlots];
+            if (overmeldChances === 0) {
+              return;
+            }
+            materiaRow.amount += Math.ceil(1 / (overmeldChances / 100));
+          });
+      });
+    return materias;
   }
 
   @Memoized()
