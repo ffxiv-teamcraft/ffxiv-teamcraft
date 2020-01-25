@@ -121,7 +121,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-melding-data.json',
-    'hashedFileName': 'item-melding-data.2df60ebb5c3a911d046375b92cb115643e59fcae.json',
+    'hashedFileName': 'item-melding-data.945156e79ddde5424a0109b738224fd28024d60f.json',
     'propertyName': 'itemMeldingData'
   },
   {
@@ -131,7 +131,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.90077b306eee2db119b32a46c72d0aca3e0c8c7e.json',
+    'hashedFileName': 'item-stats.4c83a0eced1f53ef868e58a1f251fa7b5f07d7a4.json',
     'propertyName': 'itemStats'
   },
   {

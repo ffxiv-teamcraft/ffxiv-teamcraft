@@ -1,7 +1,18 @@
 <button nz-button (click)="newGearset()">+</button>
 
-<ul *ngIf="gearsets$ | async as gearsets">
-  <li *ngFor="let gearset of gearsets">
-    <a routerLink="/gearset/{{gearset.$key}}/edit">{{gearset.name}}</a>
-  </li>
-</ul>
+<ng-container *ngIf="userId$ | async as userId">
+  <div cdkDropList class="gearsets-list" *ngIf="gearsets$ | async as gearsets" fxLayout="column" fxLayoutGap="10px">
+    <div class="gearset-row" *ngFor="let gearset of gearsets" cdkDrag fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
+      <div>{{gearset.name}}</div>
+      <div fxFlex="1 1 auto"></div>
+      <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">
+        <i nz-icon nzType="eye" nzTheme="outline"></i>
+      </a>
+      <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nz-tooltip
+         [nzTitle]="'GEARSETS.Edit_gearset' | translate">
+        <i nz-icon nzType="edit" nzTheme="outline"></i>
+      </a>
+    </div>
+  </div>
+</ng-container>

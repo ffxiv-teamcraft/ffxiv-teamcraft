@@ -3,6 +3,7 @@ import { NzModalService } from 'ng-zorro-antd';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Observable } from 'rxjs';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-gearsets-page',
@@ -15,7 +16,10 @@ export class GearsetsPageComponent implements OnInit {
 
   public gearsets$: Observable<TeamcraftGearset[]> = this.gearsetsFacade.myGearsets$;
 
-  constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade) {
+  public userId$: Observable<string> = this.authFacade.userId$;
+
+  constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
+              private authFacade: AuthFacade) {
   }
 
   newGearset(): void {

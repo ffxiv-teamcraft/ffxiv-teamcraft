@@ -616,7 +616,7 @@
       "Order": "Order",
       "Tag_filter": "Tag filter"
     },
-    "OVERLAY":  {
+    "OVERLAY": {
       "Open": "Open list overlay",
       "No_display": "Open a list in main window to get started",
       "No_panel_selected": "Select a panel using the buttons above"
@@ -1672,7 +1672,7 @@
       "Bag": "Inventory",
       "Other": "Other inventory",
       "Armory": "Armory",
-      "RetainerMarket":  "On sale by retainers"
+      "RetainerMarket": "On sale by retainers"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1700,5 +1700,39 @@
   "VERSION_LOCK": {
     "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
     "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
+  },
+  "GEARSETS": {
+    "View_gearset": "View gearset",
+    "Edit_gearset": "Edit gearset",
+    "Content": "Content",
+    "Stat_name": "Stat",
+    "Current_value": "Current value",
+    "Cap_value": "Cap",
+    "Add_materia": "Add materia",
+    "No_materia": "No materia",
+    "Value": "Value",
+    "Empty_slot": "Empty slot",
+    "Filters": "Filters",
+    "Total_stats": "Total stats",
+    "Total_materias_needed": "Total materias needed",
+    "Materia": "Materia",
+    "Amount_needed": "Amount",
+    "Modal_editor": "Materias for {{itemName}}",
+    "SLOT": {
+      "Body": "Chest",
+      "Ears": "Ears",
+      "Feet": "Feet",
+      "FingerL": "Left finger",
+      "FingerR": "Right finger",
+      "Gloves": "Gloves",
+      "Head": "Head",
+      "Legs": "Legs",
+      "MainHand": "Main Hand",
+      "Neck": "Neck",
+      "OffHand": "Off Hand",
+      "SoulCrystal": "Soul Crystal",
+      "Waist": "Waist",
+      "Wrists": "Wrists"
+    }
   }
 }

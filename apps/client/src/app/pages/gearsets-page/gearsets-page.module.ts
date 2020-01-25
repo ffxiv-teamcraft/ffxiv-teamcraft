@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GearsetsPageComponent } from './gearsets-page/gearsets-page.component';
-import { GearsetPanelComponent } from './gearset-panel/gearset-panel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
@@ -18,6 +17,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetsPageComponent, GearsetPanelComponent],
+  declarations: [GearsetsPageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -39,6 +39,7 @@ const routes: Routes = [
     TooltipModule,
     ProgressPopupModule,
     FullpageMessageModule,
+    DragDropModule,
 
     ListModule,
     ListPickerModule,

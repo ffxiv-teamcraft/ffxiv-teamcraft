@@ -160,8 +160,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       if (fingerLCategory) {
         prepared.push(JSON.parse(JSON.stringify({
           ...fingerLCategory,
-          name: 'fingerR',
-          property: this.getPropertyName('fingerR'),
+          name: 'FingerR',
+          property: this.getPropertyName('FingerR'),
           index: 12.1
         })));
       }
@@ -267,6 +267,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
+    console.log(property);
     gearset[property] = equipmentPiece;
     this.gearsetsFacade.update(gearset.$key, gearset);
   }
