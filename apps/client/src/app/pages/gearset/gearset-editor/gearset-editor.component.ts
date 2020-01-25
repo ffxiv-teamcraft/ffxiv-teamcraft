@@ -141,7 +141,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           equipmentPiece: {
             itemId: item.ID,
             hq: item.CanBeHq === 1,
-            materias: this.getMaterias(item),
+            materias: this.getMaterias(item, propertyName),
             materiaSlots: item.MateriaSlotCount,
             canOvermeld: item.IsAdvancedMeldingPermitted === 1
           }
@@ -219,9 +219,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.submitFilters();
   }
 
-  private getMaterias(item: any): number[] {
-    if (this.materiaCache[item.ID]) {
-      return this.materiaCache[item.ID];
+  private getMaterias(item: any, propertyName: string): number[] {
+    if (this.materiaCache[`${item.ID}:${propertyName}`]) {
+      return this.materiaCache[`${item.ID}:${propertyName}`];
     }
     if (item.MateriaSlotCount > 0) {
       if (item.IsAdvancedMeldingPermitted === 1) {
@@ -267,7 +267,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   }
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
-    console.log(property);
     gearset[property] = equipmentPiece;
     this.gearsetsFacade.update(gearset.$key, gearset);
   }
@@ -320,7 +319,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         if (res && res.materias.some(m => m > 0)) {
           this.materiaCache = {
             ...this.materiaCache,
-            [res.itemId]: res.materias
+            [`${res.itemId}:${propertyName}`]: res.materias
           };
         }
         if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
