@@ -48,7 +48,7 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { TreasuresExtractor } from './data/extractor/treasures-extractor';
 import { FatesExtractor } from './data/extractor/fates-extractor';
 import { ListDetailsPanelComponent } from './list-details-panel/list-details-panel.component';
-import { ItemRowComponent } from './item-row/item-row.component';
+import { ItemRowComponent } from './item/item-row/item-row.component';
 import { MarketboardModule } from '../marketboard/marketboard.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
