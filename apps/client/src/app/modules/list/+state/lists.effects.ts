@@ -211,6 +211,9 @@ export class ListsEffects {
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
@@ -224,6 +227,9 @@ export class ListsEffects {
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
     debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
