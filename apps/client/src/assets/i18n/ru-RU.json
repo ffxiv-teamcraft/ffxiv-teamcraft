@@ -1373,37 +1373,37 @@
         "Big": "Большой"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
-        "Bait": "Attached bait",
+        "Open": "Открыть оверлей отчета о рыбалке",
+        "Bait": "Приманка",
         "Tug": "Tug",
         "Hookset": "Hookset",
-        "Fishing": "Fishing",
-        "Mooch": "Last throw was mooch",
+        "Fishing": "Рыбалка",
+        "Mooch": "Последний бросок был Mooch",
         "Mooch_report": "Mooch",
-        "Current_weather": "Current weather",
-        "Previous_weather": "Previous weather",
-        "Spot": "Spot",
-        "Possible_fish": "Possible fish",
-        "Stats": "Stats",
-        "Statuses": "Statuses",
-        "No_statuses": "No relevant statuses",
-        "Total_reports": "Total reports for this session",
-        "Last_report": "Last report",
-        "Fish": "Fish",
-        "Size": "Size",
+        "Current_weather": "Текущая погода",
+        "Previous_weather": "Предыдущая погода",
+        "Spot": "Место",
+        "Possible_fish": "Возможная рыба",
+        "Stats": "Статы",
+        "Statuses": "Статусы",
+        "No_statuses": "Нет актуальных данных",
+        "Total_reports": "Всего отчетов в этой сессии",
+        "Last_report": "Последний отчет",
+        "Fish": "Рыба",
+        "Size": "Размер",
         "ERRORS": {
-          "Unknown_map": "Map unknown, change zone to load it.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "Unknown_map": "Неизвестная карта, поменяйте зону для загрузки.",
+          "No_bait": "Не обнаружено наживки, смените наживку один раз."
         }
       }
     },
     "FISHING_SPOT": {
-      "Next": "Next",
-      "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes",
-      "Fish_per_weather": "Fish per weather",
-      "Fish_per_bait": "Fish per bait",
-      "Fish_per_tug": "Fish per tug"
+      "Next": "Далее",
+      "Possible_weathers": "Возможная погода",
+      "Available_fishes": "Доступные рыбы",
+      "Fish_per_weather": "Рыба в погоду",
+      "Fish_per_bait": "Рыба за наживку",
+      "Fish_per_tug": "Рыба за tug"
     },
     "NODE": {
       "Items": "Предметы",
