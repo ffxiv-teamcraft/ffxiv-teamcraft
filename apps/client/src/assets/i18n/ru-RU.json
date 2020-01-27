@@ -383,7 +383,7 @@
     "Disable_search_history": "Отключить историю поиска",
     "Disable_search_debounce": "Отключить автопоиск (только нажатие enter вызовет поиск)",
     "Enable_packet_capture": "Включить захват пакетов (добавляет функцию инвентаря в реальном времени)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
+    "Packet_capture_info": "Захват пакетов идет против ToS, по той же причине, что и ACT. Square Enix терпит его, если вы не рассказываете про него всем игрокам.",
     "Enable_autofill_by_default": "Включить автозаполнение по умолчанию",
     "Enable_autofill_notification_by_default": "Включить уведомление автозаполнения по умолчанию",
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
@@ -498,7 +498,7 @@
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
+    "Offline_help": "Оффлайн списки хранятся в браузере или приложении, они доступны только внутри этого экземпляра и не могут быть общими, но они быстрее, так как не требуют сетевых подключений.",
     "Mark_whole_panel_done": "Пометить содержимое панели как готово",
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
@@ -567,7 +567,7 @@
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "Add_to_another_list": "Добавить в другой список",
     "New_tag": "Новый тег",
-    "Amount_ilvl": "Amount (ilvl)",
+    "Amount_ilvl": "Сумма (ilvl)",
     "Contributions_popup": "Статистика взносов",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Автозаполнение",
@@ -969,9 +969,9 @@
       "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
+      "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
       "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted",
       "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
     }
@@ -1348,7 +1348,7 @@
     "FISH": {
       "Hour": "Час дня",
       "Baits": "Наживка использована",
-      "Hookset_and_tug": "Hooksets and tugs",
+      "Hookset_and_tug": "Hooksets и tugs",
       "Weathers": "Погода",
       "Weather_transitions": "Переходы погоды",
       "Hooksets": "Hooksets",
@@ -1687,11 +1687,11 @@
     },
     "DUPLICATES": {
       "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
-      "Message": "This item is also present in: {{containers}}."
+      "Message": "Этот предмет также присутствует в: {{containers}}."
     },
     "HAS_TOO_FEW": {
-      "Title": "Items that you have in very small stacks",
-      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
+      "Title": "Предметы, которые у вас есть в маленьком количестве",
+      "Message": "У вас только {{amount}} этого предмета, стоит ли сохранить их?",
       "Threshold_amount": "Пороговое значение"
     }
   },
