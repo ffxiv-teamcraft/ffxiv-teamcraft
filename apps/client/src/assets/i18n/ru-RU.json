@@ -561,14 +561,14 @@
     "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
     "Amount_craftable": "Вы можете сделать {{amount}}",
     "Add_item": "Добавить предмет",
-    "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "List_large": "Это большой список",
+    "Enable_performance_mode": "Вы можете включить режим производительности в настройках для ускорения рендеринга",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "Add_to_another_list": "Добавить в другой список",
     "New_tag": "Новый тег",
     "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Contributions_popup": "Статистика взносов",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Автозаполнение",
     "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
@@ -1557,7 +1557,7 @@
     "Trait": "Особенность",
     "Any": "Любое",
     "Achievement": "Достижение",
-    "Fishing-spot": "Fishing spot"
+    "Fishing-spot": "Рыболовное место"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
@@ -1575,7 +1575,7 @@
     "Levequests": "Вы можете подготовить списки ливквестов и предварительно посмотреть количество опыта за них в разделе Ливквесты.",
     "Log_tracker": "Вы можете отслеживать прогресс вашего журнала (сбор, крафт, рыбалка) на странице трекера журнала.",
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
+    "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1642,8 +1642,8 @@
     "Other": "Другое"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
+    "Banner_title": "Захват пакетов доступен",
+    "Button_label": "Включить захват пакетов",
     "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
@@ -1661,32 +1661,32 @@
     "Copied_to_clipboard": "Инвентарь скопирован в буфер обмена",
     "Click_to_add_to_progression": "Нажмите, чтобы добавить к прогрессу предмета",
     "Contribute_to_universalis": "Внести данные в universalis",
-    "Reset_inventory": "Reset this inventory",
-    "Clean_all": "Reset all your inventories",
-    "Search_for_an_item": "Search for an item",
+    "Reset_inventory": "Сбросить этот инвентарь",
+    "Clean_all": "Сбросить все ваши инвентари",
+    "Search_for_an_item": "Поиск предмета",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "На продаже у ретейнеров"
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Ignore_container": "Ignore this tip for this container",
-    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
-    "Show_ignored": "Show ignored items",
-    "No_optimizations": "No optimizations available",
+    "Title": "Оптимизатор инвентаря",
+    "Ignore_item": "Игнорировать этот совет для этого предмета",
+    "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
+    "Ignore_container": "Игнорировать этот совет для этого контейнера",
+    "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
+    "Show_ignored": "Показать игнорируемые предметы",
+    "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Title": "Предметы, которые можно купить за gil",
+      "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated across multiple containers",
+      "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
       "Message": "This item is also present in: {{containers}}."
     },
     "HAS_TOO_FEW": {
