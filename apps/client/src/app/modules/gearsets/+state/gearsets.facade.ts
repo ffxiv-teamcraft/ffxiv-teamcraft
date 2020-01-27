@@ -13,6 +13,7 @@ import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../stats.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../materia.service';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -120,5 +121,31 @@ export class GearsetsFacade {
 
   createGearset(): void {
     this.store.dispatch(new CreateGearset());
+  }
+
+
+
+  /**
+   * Checks if a slot can be equipped, considering chest and legs pieces (for combined items like big armors and such)
+   *
+   * @param slotName Ingame slot name (the one used in EquipSlotcategory sheet)
+   * @param chestPieceId item id for chest slot
+   * @param legsPieceId item id for legs slot
+   */
+  @Memoized()
+  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
+    let matchesBody = true;
+    let matchesLegs = true;
+    // Some items are full body
+    if (['Head', 'Hands', 'Legs', 'Feet'].indexOf(slotName) > -1 && chestPieceId) {
+      const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[chestPieceId]];
+      matchesBody = +equipSlotCategory[slotName] > -1;
+    }
+    // This is for legs + feet items
+    if (slotName === 'Feet' && legsPieceId) {
+      const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[legsPieceId]];
+      matchesLegs = +equipSlotCategory[slotName] > -1;
+    }
+    return matchesBody && matchesLegs;
   }
 }

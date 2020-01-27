@@ -2,6 +2,7 @@
   <div nz-col [nzMd]="nameColSize" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
       <label nz-checkbox [nzChecked]="isPieceSelected()"
+             [nzDisabled]="!canEquip"
              (nzCheckedChange)="setGearsetPiece($event)"></label>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
         <app-item-icon [itemId]="item.ID" [width]="32 | ifMobile:24"></app-item-icon>

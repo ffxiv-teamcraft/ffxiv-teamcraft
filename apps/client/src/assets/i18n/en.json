@@ -1718,6 +1718,10 @@
     "Materia": "Materia",
     "Amount_needed": "Amount",
     "Modal_editor": "Materias for {{itemName}}",
+    "Unavailable_slot": "Slot not available",
+    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Pick_a_job": "Pick a job",
+    "New_gearset": "New gearset",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

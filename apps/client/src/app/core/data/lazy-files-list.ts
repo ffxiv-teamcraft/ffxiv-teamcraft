@@ -55,6 +55,11 @@ export const lazyFilesList = [
     'propertyName': 'craftingLog'
   },
   {
+    'fileName': 'equip-slot-categories.json',
+    'hashedFileName': 'equip-slot-categories.d9b72a4217038e46bd553a788cea4ae2e6f142df.json',
+    'propertyName': 'equipSlotCategories'
+  },
+  {
     'fileName': 'fates.json',
     'hashedFileName': 'fates.79e3c476f346ca61685731181043f50131a86ab0.json',
     'propertyName': 'fates'
@@ -86,7 +91,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
+    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -110,6 +115,11 @@ export const lazyFilesList = [
     'propertyName': 'instances'
   },
   {
+    'fileName': 'item-equip-slot-category.json',
+    'hashedFileName': 'item-equip-slot-category.d1620f0edab62e549e84e9edf1b2ea2f17d4d619.json',
+    'propertyName': 'itemEquipSlotCategory'
+  },
+  {
     'fileName': 'item-icons.json',
     'hashedFileName': 'item-icons.3ce59ccb8d38773734108691e42de10d96c72f79.json',
     'propertyName': 'itemIcons'
@@ -121,7 +131,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-melding-data.json',
-    'hashedFileName': 'item-melding-data.945156e79ddde5424a0109b738224fd28024d60f.json',
+    'hashedFileName': 'item-melding-data.2df60ebb5c3a911d046375b92cb115643e59fcae.json',
     'propertyName': 'itemMeldingData'
   },
   {
@@ -131,7 +141,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.4c83a0eced1f53ef868e58a1f251fa7b5f07d7a4.json',
+    'hashedFileName': 'item-stats.90077b306eee2db119b32a46c72d0aca3e0c8c7e.json',
     'propertyName': 'itemStats'
   },
   {

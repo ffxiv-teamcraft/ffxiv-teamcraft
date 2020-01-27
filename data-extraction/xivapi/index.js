@@ -1161,6 +1161,7 @@ if (hasTodo('items')) {
   const itemSlots = {};
   const itemStats = {};
   const itemMeldingData = {};
+  const equipSlotCategoryId = {};
   getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier')
     .subscribe(page => {
       page.Results.forEach(item => {
@@ -1178,6 +1179,9 @@ if (hasTodo('items')) {
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
         }
+        if (item.EquipSlotCategoryTargetID) {
+          equipSlotCategoryId[item.ID] = item.EquipSlotCategoryTargetID;
+        }
         if (item.MateriaSlotCount > 0) {
           itemMeldingData[item.ID] = {
             modifier: item.BaseParamModifier,
@@ -1194,6 +1198,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-slots', itemSlots);
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
+      persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
     });
 }
 
@@ -1753,5 +1758,16 @@ if (hasTodo('classJobModifiers')) {
     });
   }, null, () => {
     persistToJsonAsset('class-jobs-modifiers', ClassJobs);
+  });
+}
+
+if (hasTodo('equipSlotCategories')) {
+  const equipSlotCategories = {};
+  getAllEntries(`https://xivapi.com/EquipSlotCategory`).subscribe(completeFetch => {
+    completeFetch.forEach(entry => {
+      delete entry.GameContentLinks;
+      equipSlotCategories[entry.ID] = entry;
+    });
+    persistToJsonAsset('equip-slot-categories', equipSlotCategories);
   });
 }

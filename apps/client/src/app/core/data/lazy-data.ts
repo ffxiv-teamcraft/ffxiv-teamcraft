@@ -10,6 +10,7 @@ export interface LazyData {
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;
+  equipSlotCategories: any;
   fates: any;
   fishParameter: any;
   fishes: any;
@@ -21,6 +22,7 @@ export interface LazyData {
   hunts: any;
   ilvls: any;
   instances: any;
+  itemEquipSlotCategory: any;
   itemIcons: any;
   itemLevel: any;
   itemMeldingData: any;

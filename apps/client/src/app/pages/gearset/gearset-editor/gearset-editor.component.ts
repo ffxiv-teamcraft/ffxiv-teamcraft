@@ -29,11 +29,28 @@ import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
 
   itemFiltersform: FormGroup = this.fb.group({
-    ilvlMin: [360],
+    ilvlMin: [460],
     ilvlMax: [999],
     elvlMin: [1],
     elvlMax: [80]
   });
+
+  categoriesOrder: string[] = [
+    'MainHand',
+    'OffHand',
+    'Head',
+    'Body',
+    'Gloves',
+    'Waist',
+    'Legs',
+    'Feet',
+    'Ears',
+    'Neck',
+    'Wrists',
+    'FingerL',
+    'FingerR',
+    'SoulCrystal'
+  ];
 
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
@@ -166,13 +183,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         })));
       }
       return prepared.sort((a, b) => {
-        if (a.index === 13) {
-          return -1;
-        }
-        if (b.index === 13) {
-          return 1;
-        }
-        return a.index - b.index;
+        return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
       });
     }),
     map(categories => {
@@ -268,7 +279,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
     gearset[property] = equipmentPiece;
-    this.gearsetsFacade.update(gearset.$key, gearset);
+    this.gearsetsFacade.update(gearset.$key, equipmentPiece ? this.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+  }
+
+  canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
+    return this.gearsetsFacade.canEquipSlot(slotName, chestPieceId, legsPieceId);
   }
 
   submitFilters(): void {
@@ -349,7 +364,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return row.name;
   }
 
-  trackByChunk(index: number, row: any): number {
+  trackByChunk(index: number): number {
     return index;
+  }
+
+  private applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): TeamcraftGearset {
+    const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[itemId]];
+    Object.keys(equipSlotCategory)
+      .filter(key => +equipSlotCategory[key] === -1)
+      .forEach(key => {
+        delete gearset[this.getPropertyName(key)];
+      });
+    return gearset;
   }
 }

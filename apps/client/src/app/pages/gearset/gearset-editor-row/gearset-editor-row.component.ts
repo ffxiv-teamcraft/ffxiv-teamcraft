@@ -23,6 +23,9 @@ export class GearsetEditorRowComponent implements OnInit {
   equipmentPiece: EquipmentPiece;
 
   @Input()
+  canEquip: boolean;
+
+  @Input()
   stats: { id: number, value: number }[];
 
   @Output()
