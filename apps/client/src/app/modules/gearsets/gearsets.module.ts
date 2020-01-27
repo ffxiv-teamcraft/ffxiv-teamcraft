@@ -14,10 +14,11 @@ import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.component';
 import { StatPipe } from './stat.pipe';
+import { AriyalaImportPopupComponent } from './ariyala-import-popup/ariyala-import-popup.component';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe],
-  entryComponents: [GearsetCreationPopupComponent],
+  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent],
+  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent],
   imports: [
     CommonModule,
     NzFormModule,

@@ -2,7 +2,17 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetService } from '../../../core/database/gearset.service';
-import { CreateGearset, DeleteGearset, GearsetLoaded, GearsetsActionTypes, GearsetsLoaded, LoadGearset, LoadGearsets, UpdateGearset } from './gearsets.actions';
+import {
+  CreateGearset,
+  DeleteGearset,
+  GearsetLoaded,
+  GearsetsActionTypes,
+  GearsetsLoaded,
+  ImportGearset,
+  LoadGearset,
+  LoadGearsets,
+  UpdateGearset
+} from './gearsets.actions';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -11,6 +21,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { EMPTY } from 'rxjs';
 import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';
 import { Router } from '@angular/router';
+import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
 
 @Injectable()
 export class GearsetsEffects {
@@ -57,6 +68,38 @@ export class GearsetsEffects {
               const gearset = new TeamcraftGearset();
               gearset.name = opts.name;
               gearset.job = opts.job;
+              gearset.authorId = userId;
+              return gearset;
+            })
+          );
+        }),
+        switchMap(gearset => {
+          return this.gearsetService.add(gearset);
+        })
+      );
+    }),
+    tap((res) => {
+      this.router.navigate(['/gearset', res, 'edit']);
+    }),
+    switchMapTo(EMPTY)
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  importGearset$ = this.actions$.pipe(
+    ofType<ImportGearset>(GearsetsActionTypes.ImportGearset),
+    switchMap(() => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: AriyalaImportPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('GEARSETS.Import_from_ariyala')
+          }).afterClose.pipe(
+            filter(opts => opts),
+            map((gearset) => {
               gearset.authorId = userId;
               return gearset;
             })

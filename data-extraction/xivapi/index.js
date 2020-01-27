@@ -1162,7 +1162,7 @@ if (hasTodo('items')) {
   const itemStats = {};
   const itemMeldingData = {};
   const equipSlotCategoryId = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier')
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1181,11 +1181,12 @@ if (hasTodo('items')) {
         }
         if (item.EquipSlotCategoryTargetID) {
           equipSlotCategoryId[item.ID] = item.EquipSlotCategoryTargetID;
-        }
-        if (item.MateriaSlotCount > 0) {
           itemMeldingData[item.ID] = {
             modifier: item.BaseParamModifier,
-            prop: getSlotName(item.EquipSlotCategoryTargetID)
+            prop: getSlotName(item.EquipSlotCategoryTargetID),
+            slots: item.MateriaSlotCount,
+            overmeld: item.IsAdvancedMeldingPermitted === 1,
+            canBeHq: item.CanBeHq === 1
           };
         }
       });

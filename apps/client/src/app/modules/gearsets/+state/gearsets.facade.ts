@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 
 import { GearsetsPartialState } from './gearsets.reducer';
 import { gearsetsQuery } from './gearsets.selectors';
-import { CreateGearset, DeleteGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset } from './gearsets.actions';
+import { CreateGearset, DeleteGearset, ImportGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset } from './gearsets.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -14,6 +14,10 @@ import { StatsService } from '../stats.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../materia.service';
 import { Memoized } from '../../../core/decorators/memoized';
+import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
+import { HttpClient } from '@angular/common/http';
+import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
+import * as jobAbbrs from '../../../core/data/sources/job-abbr.json';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +42,6 @@ export class GearsetsFacade {
       );
     })
   );
-
 
 
   public selectedGearsetStats: Observable<{ id: number, value: number }[]> = this.selectedGearset$.pipe(
@@ -96,7 +99,8 @@ export class GearsetsFacade {
   );
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
-              private statsService: StatsService, private lazyData: LazyDataService, private materiasService: MateriaService) {
+              private statsService: StatsService, private lazyData: LazyDataService,
+              private materiasService: MateriaService, private http: HttpClient) {
   }
 
   loadAll(): void {
@@ -119,10 +123,13 @@ export class GearsetsFacade {
     this.store.dispatch(new SelectGearset(key));
   }
 
-  createGearset(): void {
-    this.store.dispatch(new CreateGearset());
+  createGearset(gearset?: TeamcraftGearset): void {
+    this.store.dispatch(new CreateGearset(gearset));
   }
 
+  importGearset(): void {
+    this.store.dispatch(new ImportGearset());
+  }
 
 
   /**
@@ -147,5 +154,61 @@ export class GearsetsFacade {
       matchesLegs = +equipSlotCategory[slotName] > -1;
     }
     return matchesBody && matchesLegs;
+  }
+
+  fromAriyalaLink(url: string): Observable<TeamcraftGearset> {
+    const identifier: string = url.match(AriyalaLinkParser.REGEXP)[1];
+    return this.http.get<any>(`${AriyalaLinkParser.API_URL}${identifier}`).pipe(
+      map(data => {
+        let dataset = data.datasets[data.content];
+        // for DoH/DoL
+        if (dataset === undefined) {
+          dataset = data.datasets[Object.keys(data.datasets)[0]];
+        }
+        const gearset = new TeamcraftGearset();
+        gearset.job = +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === data.content);
+        gearset.name = url;
+        gearset.mainHand = this.getEquipmentPiece(dataset, 'mainhand');
+        gearset.offHand = this.getEquipmentPiece(dataset, 'offhand');
+        gearset.head = this.getEquipmentPiece(dataset, 'head');
+        gearset.chest = this.getEquipmentPiece(dataset, 'chest');
+        gearset.gloves = this.getEquipmentPiece(dataset, 'hands');
+        gearset.belt = this.getEquipmentPiece(dataset, 'waist');
+        gearset.legs = this.getEquipmentPiece(dataset, 'legs');
+        gearset.feet = this.getEquipmentPiece(dataset, 'feet');
+        gearset.earRings = this.getEquipmentPiece(dataset, 'ears');
+        gearset.necklace = this.getEquipmentPiece(dataset, 'neck');
+        gearset.bracelet = this.getEquipmentPiece(dataset, 'wrist');
+        gearset.ring1 = this.getEquipmentPiece(dataset, 'ringLeft');
+        gearset.ring2 = this.getEquipmentPiece(dataset, 'ringRight');
+        gearset.crystal = this.getEquipmentPiece(dataset, 'soulCrystal');
+        return gearset;
+      })
+    );
+  }
+
+  private getEquipmentPiece(dataset: any, ariyalaName: string): EquipmentPiece | null {
+    const itemId = dataset.normal.items[ariyalaName];
+    if (itemId === undefined) {
+      return null;
+    }
+    const itemMeldingData = this.lazyData.data.itemMeldingData[itemId];
+    const materias = (dataset.normal.materiaData[`${ariyalaName}-${itemId}`] || []).map(row => AriyalaMateria[row]) as number[];
+    while (materias.length < itemMeldingData.slots) {
+      materias.push(0);
+    }
+    if (itemMeldingData.overmeld) {
+      while (materias.length < 5) {
+        materias.push(0);
+      }
+    }
+    return {
+      itemId: itemId,
+      materias: materias,
+      materiaSlots: itemMeldingData.slots,
+      canOvermeld: itemMeldingData.overmeld,
+      baseParamModifier: itemMeldingData.modifier,
+      hq: itemMeldingData.canBeHq
+    };
   }
 }

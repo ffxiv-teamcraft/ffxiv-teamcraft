@@ -8,9 +8,9 @@ import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
-  private static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
+  public static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
 
-  private static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
+  public static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
 
   private materiaOptions: AriyalaMateriaOptions;
 

@@ -137,6 +137,6 @@ export class MateriaService {
     const baseValue = itemLevel[baseParam.Name_en.replace(/\s/g, '')];
     const slotModifier = baseParam[meldingData.prop];
     const roleModifier = baseParam[`MeldParam${meldingData.modifier}`];
-    return Math.floor(baseValue * slotModifier / roleModifier);
+    return Math.round(baseValue * slotModifier / roleModifier);
   }
 }

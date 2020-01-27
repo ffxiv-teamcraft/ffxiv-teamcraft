@@ -1,4 +1,7 @@
 <button nz-button (click)="newGearset()">+</button>
+<button nz-button (click)="importGearset()">Import</button>
+
+<nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
 
 <ng-container *ngIf="userId$ | async as userId">
   <div cdkDropList class="gearsets-list" *ngIf="gearsets$ | async as gearsets" fxLayout="column" fxLayoutGap="10px">
@@ -13,6 +16,12 @@
          [nzTitle]="'GEARSETS.Edit_gearset' | translate">
         <i nz-icon nzType="edit" nzTheme="outline"></i>
       </a>
+      <button nz-button *ngIf="gearset.authorId === userId" nzType="danger"
+              nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
+              nz-tooltip [nzTitle]="'GEARSETS.Delete_gearset' | translate"
+              (nzOnConfirm)="deleteGearset(gearset.$key)">
+        <i nz-icon nzType="delete" nzTheme="outline"></i>
+      </button>
     </div>
   </div>
 </ng-container>

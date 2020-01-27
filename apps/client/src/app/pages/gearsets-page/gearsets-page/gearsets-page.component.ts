@@ -26,6 +26,14 @@ export class GearsetsPageComponent implements OnInit {
     this.gearsetsFacade.createGearset();
   }
 
+  importGearset(): void {
+    this.gearsetsFacade.importGearset();
+  }
+
+  deleteGearset(key: string): void {
+    this.gearsetsFacade.delete(key);
+  }
+
   ngOnInit(): void {
     this.gearsetsFacade.loadAll();
   }

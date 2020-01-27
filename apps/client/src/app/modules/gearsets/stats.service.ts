@@ -117,7 +117,7 @@ export class StatsService {
       return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job));
     }
     if (baseParamId === BaseParam.CP) {
-      return 160;
+      return 180;
     }
     if (baseParamId === BaseParam.GP) {
       return 400;
