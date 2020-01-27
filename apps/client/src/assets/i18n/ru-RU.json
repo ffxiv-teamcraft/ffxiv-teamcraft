@@ -167,7 +167,7 @@
     "Volume": "Громкость",
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Открыть оверлей",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_alarms_overlay": "Открыть оверлей оповещений",
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
@@ -972,7 +972,7 @@
       "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
       "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted",
+      "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
       "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
     }
   },
@@ -1589,7 +1589,7 @@
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
+    "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и легко создать список для крафта из результатов.",
     "Empty_basket": "Ваша корзина пустая",
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
@@ -1644,7 +1644,7 @@
   "PACKET_CAPTURE": {
     "Banner_title": "Захват пакетов доступен",
     "Button_label": "Включить захват пакетов",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_description": "Вы можете включить захват пакетов, чтобы Teamcraft мог читать ваши пакеты FFXIV (галочка также находится в настройках, чтобы включить/выключить его), это позволяет автоматически заполнить списки по мере получения предметов, а также вносить данные в Universalis (данные с маркетборда).",
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
