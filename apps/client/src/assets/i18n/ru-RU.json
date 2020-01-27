@@ -488,35 +488,35 @@
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
     "Total_price": "Всего сделок (гил и др. валюты)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "Игнорировать эту валюту (работает только если есть другой способ купить)",
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Добавить все оповещения для этого списка",
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "Показывать первого доступного продавца для каждого предмета",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
     "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
-    "Mark_whole_panel_done": "Mark panel content as done",
-    "Set_color": "Set list color",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
-    "Reset_panel": "Reset all the items of this panel",
+    "Mark_whole_panel_done": "Пометить содержимое панели как готово",
+    "Set_color": "Установить цвет списка",
+    "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
+    "Reset_panel": "Сбросить все предметы этой панели",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "Красный",
+      "GREEN": "Зеленый",
+      "YELLOW": "Желтый",
+      "BLUE": "Синий",
+      "PURPLE": "Фиолетовый",
+      "ORANGE": "Оранжевый",
+      "PINK": "Розовый",
+      "NONE": "Ничего"
     },
     "ROTATION": {
       "Attach": "Прикрепить ротацию",
       "Detach": "Открепить ротацию",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Click_to_copy_macro": "Нажмите, чтобы открыть всплывающее окно копирования макроса"
     },
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
@@ -1368,9 +1368,9 @@
       "Bait": "Fishing bait",
       "Refresh_data": "Refresh data",
       "TUG": {
-        "Light": "Light",
-        "Medium": "Medium",
-        "Big": "Big"
+        "Light": "Легкий",
+        "Medium": "Средний",
+        "Big": "Большой"
       },
       "OVERLAY": {
         "Open": "Open fishing report overlay",
