@@ -615,9 +615,9 @@
       "Tag_filter": "Фильтр по тегам"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "Open": "Открыть оверлей списка",
+      "No_display": "Открыть список в главном окне для начала",
+      "No_panel_selected": "Выберите панель, используя кнопки выше"
     }
   },
   "LIST_TAGS": {
@@ -696,7 +696,7 @@
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
-    "You_are_here": "You are here",
+    "You_are_here": "Вы здесь",
     "STEP": {
       "Gathering": "Собрать{{amount}} (всего: {{total}})",
       "Hunting": "Собрать {{amount}} с монстров (всегоо: {{total}})",
