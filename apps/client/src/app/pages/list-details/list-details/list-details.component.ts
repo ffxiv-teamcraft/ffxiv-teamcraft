@@ -6,7 +6,7 @@ import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } 
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
-import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -38,7 +38,6 @@ import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-list-details',
@@ -401,8 +400,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         list.items.forEach(item => {
           const inventoryItems = inventory.getItem(item.id, true);
           if (inventoryItems.length > 0) {
-            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), true);
+            let totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            if (item.done + totalAmount > item.amount) {
+              totalAmount = item.amount - item.done;
+            }
+            list.setDone(item.id, totalAmount, true);
           }
         });
         list.finalItems.forEach(item => {

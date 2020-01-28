@@ -75,9 +75,9 @@ export class List extends DataWithPermissions {
   }
 
   public isComplete(): boolean {
-    return this.finalItems.length > 0 && this.finalItems.filter(recipe => {
+    return this.finalItems.length > 0 && !this.finalItems.some(recipe => {
       return recipe.done < recipe.amount;
-    }).length === 0;
+    });
   }
 
   public clone(internal = false): List {

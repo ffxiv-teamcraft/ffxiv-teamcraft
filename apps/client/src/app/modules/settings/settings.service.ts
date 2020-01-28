@@ -196,7 +196,7 @@ export class SettingsService {
     if (themeName === 'CUSTOM') {
       return this.customTheme;
     }
-    return Theme.byName(themeName);
+    return Theme.byName(themeName) || Theme.byName('DEFAULT');
   }
 
   public set theme(theme: Theme) {

@@ -248,7 +248,8 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('updateClassInfo')
+      ofPacketType('updateClassInfo'),
+      distinctUntilChanged((a, b) => a.classId === b.classId)
     ).subscribe(packet => {
       this.eorzeaFacade.resetStatuses();
     });
