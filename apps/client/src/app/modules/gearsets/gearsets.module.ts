@@ -15,10 +15,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.component';
 import { StatPipe } from './stat.pipe';
 import { AriyalaImportPopupComponent } from './ariyala-import-popup/ariyala-import-popup.component';
+import { LodestoneImportPopupComponent } from './lodestone-import-popup/lodestone-import-popup.component';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent],
-  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent],
+  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent],
+  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent,LodestoneImportPopupComponent],
   imports: [
     CommonModule,
     NzFormModule,

@@ -8,10 +8,11 @@ import {
   GearsetLoaded,
   GearsetsActionTypes,
   GearsetsLoaded,
-  ImportGearset,
+  ImportAriyalaGearset,
   LoadGearset,
   LoadGearsets,
-  UpdateGearset
+  UpdateGearset,
+  ImportLodestoneGearset
 } from './gearsets.actions';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -22,6 +23,7 @@ import { EMPTY } from 'rxjs';
 import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';
 import { Router } from '@angular/router';
 import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
+import { LodestoneImportPopupComponent } from '../lodestone-import-popup/lodestone-import-popup.component';
 
 @Injectable()
 export class GearsetsEffects {
@@ -87,8 +89,8 @@ export class GearsetsEffects {
   @Effect({
     dispatch: false
   })
-  importGearset$ = this.actions$.pipe(
-    ofType<ImportGearset>(GearsetsActionTypes.ImportGearset),
+  importAriyalaGearset$ = this.actions$.pipe(
+    ofType<ImportAriyalaGearset>(GearsetsActionTypes.ImportAriyalaGearset),
     switchMap(() => {
       return this.authFacade.userId$.pipe(
         first(),
@@ -97,6 +99,38 @@ export class GearsetsEffects {
             nzContent: AriyalaImportPopupComponent,
             nzFooter: null,
             nzTitle: this.translate.instant('GEARSETS.Import_from_ariyala')
+          }).afterClose.pipe(
+            filter(opts => opts),
+            map((gearset) => {
+              gearset.authorId = userId;
+              return gearset;
+            })
+          );
+        }),
+        switchMap(gearset => {
+          return this.gearsetService.add(gearset);
+        })
+      );
+    }),
+    tap((res) => {
+      this.router.navigate(['/gearset', res, 'edit']);
+    }),
+    switchMapTo(EMPTY)
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  importLodestoneGearset$ = this.actions$.pipe(
+    ofType<ImportLodestoneGearset>(GearsetsActionTypes.ImportLodestoneGearset),
+    switchMap(() => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: LodestoneImportPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('GEARSETS.Import_from_lodestone')
           }).afterClose.pipe(
             filter(opts => opts),
             map((gearset) => {

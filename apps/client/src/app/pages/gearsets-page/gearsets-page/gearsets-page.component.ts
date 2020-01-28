@@ -26,8 +26,12 @@ export class GearsetsPageComponent implements OnInit {
     this.gearsetsFacade.createGearset();
   }
 
-  importGearset(): void {
-    this.gearsetsFacade.importGearset();
+  importAriyalaGearset(): void {
+    this.gearsetsFacade.importAriyalaGearset();
+  }
+
+  importLodestoneGearset(): void {
+    this.gearsetsFacade.importLodestoneGearset();
   }
 
   deleteGearset(key: string): void {

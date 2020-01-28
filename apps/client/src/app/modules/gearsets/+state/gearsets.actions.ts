@@ -3,7 +3,8 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 
 export enum GearsetsActionTypes {
   CreateGearset = '[Gearsets] Create Gearset',
-  ImportGearset = '[Gearsets] Import Gearset',
+  ImportAriyalaGearset = '[Gearsets] Import Ariyala Gearset',
+  ImportLodestoneGearset = '[Gearsets] Import Lodestone Gearset',
 
   LoadGearsets = '[Gearsets] Load Gearsets',
   GearsetsLoaded = '[Gearsets] Gearsets Loaded',
@@ -34,8 +35,12 @@ export class CreateGearset implements Action {
   }
 }
 
-export class ImportGearset implements Action {
-  readonly type = GearsetsActionTypes.ImportGearset;
+export class ImportAriyalaGearset implements Action {
+  readonly type = GearsetsActionTypes.ImportAriyalaGearset;
+}
+
+export class ImportLodestoneGearset implements Action {
+  readonly type = GearsetsActionTypes.ImportLodestoneGearset;
 }
 
 export class LoadGearset implements Action {
@@ -73,5 +78,5 @@ export class DeleteGearset implements Action {
   }
 }
 
-export type GearsetsAction = LoadGearsets | GearsetsLoaded | LoadGearset | GearsetLoaded | SelectGearset | UpdateGearset | DeleteGearset | CreateGearset | ImportGearset;
+export type GearsetsAction = LoadGearsets | GearsetsLoaded | LoadGearset | GearsetLoaded | SelectGearset | UpdateGearset | DeleteGearset | CreateGearset | ImportAriyalaGearset | ImportLodestoneGearset;
 

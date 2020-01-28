@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 
 import { GearsetsPartialState } from './gearsets.reducer';
 import { gearsetsQuery } from './gearsets.selectors';
-import { CreateGearset, DeleteGearset, ImportGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset } from './gearsets.actions';
+import { CreateGearset, DeleteGearset, ImportAriyalaGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset, ImportLodestoneGearset } from './gearsets.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -18,6 +18,7 @@ import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-p
 import { HttpClient } from '@angular/common/http';
 import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
 import * as jobAbbrs from '../../../core/data/sources/job-abbr.json';
+import { XivapiService } from '@xivapi/angular-client';
 
 @Injectable({
   providedIn: 'root'
@@ -100,7 +101,8 @@ export class GearsetsFacade {
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
               private statsService: StatsService, private lazyData: LazyDataService,
-              private materiasService: MateriaService, private http: HttpClient) {
+              private materiasService: MateriaService, private http: HttpClient,
+              private xivapi: XivapiService) {
   }
 
   loadAll(): void {
@@ -127,8 +129,12 @@ export class GearsetsFacade {
     this.store.dispatch(new CreateGearset(gearset));
   }
 
-  importGearset(): void {
-    this.store.dispatch(new ImportGearset());
+  importAriyalaGearset(): void {
+    this.store.dispatch(new ImportAriyalaGearset());
+  }
+
+  importLodestoneGearset(): void {
+    this.store.dispatch(new ImportLodestoneGearset());
   }
 
 
@@ -168,26 +174,26 @@ export class GearsetsFacade {
         const gearset = new TeamcraftGearset();
         gearset.job = +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === data.content);
         gearset.name = url;
-        gearset.mainHand = this.getEquipmentPiece(dataset, 'mainhand');
-        gearset.offHand = this.getEquipmentPiece(dataset, 'offhand');
-        gearset.head = this.getEquipmentPiece(dataset, 'head');
-        gearset.chest = this.getEquipmentPiece(dataset, 'chest');
-        gearset.gloves = this.getEquipmentPiece(dataset, 'hands');
-        gearset.belt = this.getEquipmentPiece(dataset, 'waist');
-        gearset.legs = this.getEquipmentPiece(dataset, 'legs');
-        gearset.feet = this.getEquipmentPiece(dataset, 'feet');
-        gearset.earRings = this.getEquipmentPiece(dataset, 'ears');
-        gearset.necklace = this.getEquipmentPiece(dataset, 'neck');
-        gearset.bracelet = this.getEquipmentPiece(dataset, 'wrist');
-        gearset.ring1 = this.getEquipmentPiece(dataset, 'ringLeft');
-        gearset.ring2 = this.getEquipmentPiece(dataset, 'ringRight');
-        gearset.crystal = this.getEquipmentPiece(dataset, 'soulCrystal');
+        gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand');
+        gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand');
+        gearset.head = this.getAriyalaEquipmentPiece(dataset, 'head');
+        gearset.chest = this.getAriyalaEquipmentPiece(dataset, 'chest');
+        gearset.gloves = this.getAriyalaEquipmentPiece(dataset, 'hands');
+        gearset.belt = this.getAriyalaEquipmentPiece(dataset, 'waist');
+        gearset.legs = this.getAriyalaEquipmentPiece(dataset, 'legs');
+        gearset.feet = this.getAriyalaEquipmentPiece(dataset, 'feet');
+        gearset.earRings = this.getAriyalaEquipmentPiece(dataset, 'ears');
+        gearset.necklace = this.getAriyalaEquipmentPiece(dataset, 'neck');
+        gearset.bracelet = this.getAriyalaEquipmentPiece(dataset, 'wrist');
+        gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft');
+        gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight');
+        gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal');
         return gearset;
       })
     );
   }
 
-  private getEquipmentPiece(dataset: any, ariyalaName: string): EquipmentPiece | null {
+  private getAriyalaEquipmentPiece(dataset: any, ariyalaName: string): EquipmentPiece | null {
     const itemId = dataset.normal.items[ariyalaName];
     if (itemId === undefined) {
       return null;
@@ -210,5 +216,57 @@ export class GearsetsFacade {
       baseParamModifier: itemMeldingData.modifier,
       hq: itemMeldingData.canBeHq
     };
+  }
+
+  private getLodestoneEquipmentPiece(gear: any, lodestoneName: string): EquipmentPiece | null {
+    const item = gear[lodestoneName];
+    if (item === undefined) {
+      return null;
+    }
+    const itemId = item.ID;
+    const itemMeldingData = this.lazyData.data.itemMeldingData[itemId];
+    const materias = item.Materia;
+    while (materias.length < itemMeldingData.slots) {
+      materias.push(0);
+    }
+    if (itemMeldingData.overmeld) {
+      while (materias.length < 5) {
+        materias.push(0);
+      }
+    }
+    return {
+      itemId: itemId,
+      materias: materias,
+      materiaSlots: itemMeldingData.slots,
+      canOvermeld: itemMeldingData.overmeld,
+      baseParamModifier: itemMeldingData.modifier,
+      hq: itemMeldingData.canBeHq
+    };
+  }
+
+  fromLodestone(lodestoneId: number): Observable<TeamcraftGearset> {
+    return this.xivapi.getCharacter(lodestoneId).pipe(
+      map(data => {
+        const lodestoneGear = data.Character.GearSet.Gear;
+        const gearset = new TeamcraftGearset();
+        gearset.job = data.Character.ActiveClassJob.JobID;
+        gearset.name = data.Character.Name;
+        gearset.mainHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'MainHand');
+        gearset.offHand = this.getLodestoneEquipmentPiece(lodestoneGear, 'OffHand');
+        gearset.head = this.getLodestoneEquipmentPiece(lodestoneGear, 'Head');
+        gearset.chest = this.getLodestoneEquipmentPiece(lodestoneGear, 'Body');
+        gearset.gloves = this.getLodestoneEquipmentPiece(lodestoneGear, 'Hands');
+        gearset.belt = this.getLodestoneEquipmentPiece(lodestoneGear, 'Waist');
+        gearset.legs = this.getLodestoneEquipmentPiece(lodestoneGear, 'Legs');
+        gearset.feet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Feet');
+        gearset.earRings = this.getLodestoneEquipmentPiece(lodestoneGear, 'Earrings');
+        gearset.necklace = this.getLodestoneEquipmentPiece(lodestoneGear, 'Necklace');
+        gearset.bracelet = this.getLodestoneEquipmentPiece(lodestoneGear, 'Bracelets');
+        gearset.ring1 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring1');
+        gearset.ring2 = this.getLodestoneEquipmentPiece(lodestoneGear, 'Ring2');
+        gearset.crystal = this.getLodestoneEquipmentPiece(lodestoneGear, 'SoulCrystal');
+        return gearset;
+      })
+    );
   }
 }
