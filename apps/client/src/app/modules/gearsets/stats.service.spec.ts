@@ -33,6 +33,34 @@ describe('StatsService', () => {
           { id: BaseParam.PIETY, value: 305 },
           { id: BaseParam.VITALITY, value: 304, precision: -1 }
         ]
+      },
+      {
+        job: 19,
+        level: 79,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.STRENGTH, value: 334 },
+          { id: BaseParam.DIRECT_HIT_RATE, value: 378 },
+          { id: BaseParam.CRITICAL_HIT, value: 378 },
+          { id: BaseParam.DETERMINATION, value: 335 },
+          { id: BaseParam.SKILL_SPEED, value: 378 },
+          { id: BaseParam.VITALITY, value: 415, precision: -1 },
+          { id: BaseParam.TENACITY, value: 378 },
+        ]
+      },
+      {
+        job: 1,
+        level: 79,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.STRENGTH, value: 317 },
+          { id: BaseParam.DIRECT_HIT_RATE, value: 378 },
+          { id: BaseParam.CRITICAL_HIT, value: 378 },
+          { id: BaseParam.DETERMINATION, value: 335 },
+          { id: BaseParam.SKILL_SPEED, value: 378 },
+          { id: BaseParam.VITALITY, value: 382, precision: -1 },
+          { id: BaseParam.TENACITY, value: 378 },
+        ]
       }
     ];
 
@@ -44,7 +72,9 @@ describe('StatsService', () => {
         }, {});
 
       entry.stats.forEach(stat => {
-        expect(stats[stat.id]).toBeCloseTo(stat.value, stat.precision || 0);
+        expect(stats[stat.id]).toBeCloseTo(stat.value,
+          stat.precision || 0,
+          `${BaseParam[stat.id]}, lvl ${entry.level}, job ${entry.job}, tribe ${entry.tribe}`);
       });
     });
   }));
