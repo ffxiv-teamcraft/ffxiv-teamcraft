@@ -45,6 +45,7 @@ export interface LazyData {
   stackSizes: any;
   statuses: any;
   traits: any;
+  tribes: any;
   ventures: any;
   koAchievementDescriptions: any;
   koAchievements: any;

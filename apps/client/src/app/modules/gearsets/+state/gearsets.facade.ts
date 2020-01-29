@@ -51,7 +51,8 @@ export class GearsetsFacade {
         .map(stat => {
           return {
             id: stat,
-            value: this.statsService.getBaseValue(stat, set.job, set.level)
+            // TODO proper level/tribe input
+            value: this.statsService.getBaseValue(stat, set.job, set.level, 11)
           };
         });
       Object.values(set)
@@ -69,7 +70,8 @@ export class GearsetsFacade {
               if (statsRow === undefined) {
                 stats.push({
                   id: stat.ID,
-                  value: this.statsService.getBaseValue(stat.ID, set.job, set.level)
+                  // TODO proper level/tribe input
+                  value: this.statsService.getBaseValue(stat.ID, set.job, set.level, 11)
                 });
                 statsRow = stats[stats.length - 1];
               }
@@ -88,7 +90,8 @@ export class GearsetsFacade {
               if (statsRow === undefined) {
                 stats.push({
                   id: materia.baseParamId,
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, set.level)
+                  // TODO proper level/tribe input
+                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, set.level, 11)
                 });
                 statsRow = stats[stats.length - 1];
               }

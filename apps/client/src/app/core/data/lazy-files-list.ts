@@ -56,7 +56,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'equip-slot-categories.json',
-    'hashedFileName': 'equip-slot-categories.97c548ae25d226ac0259c0999cc831226e6608d6.json',
+    'hashedFileName': 'equip-slot-categories.d9b72a4217038e46bd553a788cea4ae2e6f142df.json',
     'propertyName': 'equipSlotCategories'
   },
   {
@@ -91,7 +91,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
+    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -116,7 +116,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-equip-slot-category.json',
-    'hashedFileName': 'item-equip-slot-category.bc01746fc3344b70ec10d84d1b68b493042e6078.json',
+    'hashedFileName': 'item-equip-slot-category.d1620f0edab62e549e84e9edf1b2ea2f17d4d619.json',
     'propertyName': 'itemEquipSlotCategory'
   },
   {
@@ -141,7 +141,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.4c83a0eced1f53ef868e58a1f251fa7b5f07d7a4.json',
+    'hashedFileName': 'item-stats.90077b306eee2db119b32a46c72d0aca3e0c8c7e.json',
     'propertyName': 'itemStats'
   },
   {
@@ -228,6 +228,11 @@ export const lazyFilesList = [
     'fileName': 'traits.json',
     'hashedFileName': 'traits.17b221161038a158a43da30b31144aca5af6a45a.json',
     'propertyName': 'traits'
+  },
+  {
+    'fileName': 'tribes.json',
+    'hashedFileName': 'tribes.cc2320b9c025a76775017c44a3d8ac5b39764619.json',
+    'propertyName': 'tribes'
   },
   {
     'fileName': 'ventures.json',

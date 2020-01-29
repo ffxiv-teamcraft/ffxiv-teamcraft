@@ -104,18 +104,22 @@ export class StatsService {
   private static MAIN_STATS: BaseParam[] = [
     BaseParam.DETERMINATION,
     BaseParam.PIETY,
-    BaseParam.VITALITY
+    BaseParam.VITALITY,
+    BaseParam.STRENGTH,
+    BaseParam.DEXTERITY,
+    BaseParam.INTELLIGENCE,
+    BaseParam.MIND
   ];
 
   constructor(private lazyData: LazyDataService) {
   }
 
-  public getBaseValue(baseParamId: number, job: number, level: number) {
+  public getBaseValue(baseParamId: number, job: number, level: number, tribe: number) {
     if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job));
+      return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job)) + this.getTribeBonus(baseParamId, tribe);
     }
     if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job));
+      return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job)) + this.getTribeBonus(baseParamId, tribe);
     }
     if (baseParamId === BaseParam.CP) {
       return 180;
@@ -205,5 +209,35 @@ export class StatsService {
         return [BaseParam.INTELLIGENCE, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
     }
     return [];
+  }
+
+  private getTribeBonus(baseParamId: number, tribe: number): number {
+    const abbr = this.getStatAbbr(baseParamId);
+    if (abbr === null) {
+      return 0;
+    }
+    return +this.lazyData.data.tribes[tribe][abbr];
+  }
+
+  private getStatAbbr(baseParamId: number): string | null {
+    switch (baseParamId) {
+      case BaseParam.HP:
+        return 'Hp';
+      case BaseParam.INTELLIGENCE:
+        return 'INT';
+      case BaseParam.MIND:
+        return 'MND';
+      case BaseParam.MP:
+        return 'Mp';
+      case BaseParam.PIETY:
+        return 'PIE';
+      case BaseParam.STRENGTH:
+        return 'STR';
+      case BaseParam.VITALITY:
+        return 'VIT';
+      case BaseParam.DEXTERITY:
+        return 'DEX';
+    }
+    return null;
   }
 }
