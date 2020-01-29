@@ -22,6 +22,7 @@ describe('StatsService', () => {
     const statsEntries = [
       {
         job: 24,
+        level: 73,
         stats: [
           { id: BaseParam.MIND, value: 401 },
           { id: BaseParam.DIRECT_HIT_RATE, value: 367 },
@@ -35,9 +36,9 @@ describe('StatsService', () => {
     ];
 
     statsEntries.forEach(entry => {
-      const stats = service.getRelevantBaseStats(24)
+      const stats = service.getRelevantBaseStats(entry.job)
         .reduce((acc, baseParamId) => {
-          acc[baseParamId] = service.getBaseValue(baseParamId, 24, 73);
+          acc[baseParamId] = service.getBaseValue(baseParamId, entry.job, entry.level);
           return acc;
         }, {});
 
