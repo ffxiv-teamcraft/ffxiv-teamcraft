@@ -6,7 +6,7 @@ import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { map, shareReplay, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
 
@@ -35,10 +35,7 @@ export class LazyDataService {
   public patches: any[] = [];
 
   public extracts: ListRow[];
-  public extracts$: Observable<ListRow[]> = this.getData('/assets/extracts.json').pipe(
-    tap(extracts => this.extracts = extracts),
-    shareReplay(1)
-  );
+  public extracts$: ReplaySubject<ListRow[]> = new ReplaySubject<ListRow[]>();
 
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
@@ -88,11 +85,13 @@ export class LazyDataService {
     }, {});
   }
 
-  private load(): void {
-    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist')])
-      .subscribe(([dcList, patches]) => {
+  protected load(): void {
+    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
+      .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches as any[];
+        this.extracts = extracts;
+        this.extracts$.next(extracts);
       });
 
     combineLatest(lazyFilesList.map(row => {

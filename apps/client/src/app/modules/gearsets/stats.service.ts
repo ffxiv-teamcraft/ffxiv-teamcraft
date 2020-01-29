@@ -103,7 +103,8 @@ export class StatsService {
 
   private static MAIN_STATS: BaseParam[] = [
     BaseParam.DETERMINATION,
-    BaseParam.PIETY
+    BaseParam.PIETY,
+    BaseParam.VITALITY
   ];
 
   constructor(private lazyData: LazyDataService) {
@@ -159,12 +160,12 @@ export class StatsService {
       case 13:
       case 14:
       case 15:
-        return [70, 71, 11];
+        return [BaseParam.CRAFTSMANSHIP, BaseParam.CONTROL, BaseParam.CP];
       // DoL
       case 16:
       case 17:
       case 18:
-        return [72, 73, 10];
+        return [BaseParam.GATHERING, BaseParam.PERCEPTION, BaseParam.GP];
       // Tanks
       case 1:
       case 3:
@@ -172,14 +173,14 @@ export class StatsService {
       case 21:
       case 32:
       case 37:
-        return [1, 22, 27, 44, 45, 3, 19];
+        return [BaseParam.STRENGTH, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SKILL_SPEED, BaseParam.VITALITY, BaseParam.TENACITY];
       // STR-based DPS
       case 2:
       case 4:
       case 20:
       case 22:
       case 34:
-        return [1, 22, 27, 44, 45, 3];
+        return [BaseParam.STRENGTH, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SKILL_SPEED, BaseParam.VITALITY];
       // DEX-based DPS
       case 5:
       case 23:
@@ -187,13 +188,13 @@ export class StatsService {
       case 30:
       case 31:
       case 38:
-        return [2, 22, 27, 44, 45, 3];
+        return [BaseParam.DEXTERITY, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SKILL_SPEED, BaseParam.VITALITY];
       // Healers
       case 6:
       case 24:
       case 28:
       case 33:
-        return [5, 22, 27, 44, 46, 6, 3];
+        return [BaseParam.MIND, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
       // Caster DPS
       case 7:
       case 25:
@@ -201,7 +202,7 @@ export class StatsService {
       case 27:
       case 35:
       case 36:
-        return [4, 22, 27, 44, 46, 6, 3];
+        return [BaseParam.INTELLIGENCE, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
     }
     return [];
   }
