@@ -36,7 +36,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'class-jobs-modifiers.json',
-    'hashedFileName': 'class-jobs-modifiers.2eda8aca0acdfc642950edd3046940655abfd143.json',
+    'hashedFileName': 'class-jobs-modifiers.3958e9d7a4521a6a0921e79e9c1933619e7c87e1.json',
     'propertyName': 'classJobsModifiers'
   },
   {
@@ -56,7 +56,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'equip-slot-categories.json',
-    'hashedFileName': 'equip-slot-categories.d9b72a4217038e46bd553a788cea4ae2e6f142df.json',
+    'hashedFileName': 'equip-slot-categories.97c548ae25d226ac0259c0999cc831226e6608d6.json',
     'propertyName': 'equipSlotCategories'
   },
   {
@@ -91,7 +91,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
+    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -116,7 +116,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-equip-slot-category.json',
-    'hashedFileName': 'item-equip-slot-category.d1620f0edab62e549e84e9edf1b2ea2f17d4d619.json',
+    'hashedFileName': 'item-equip-slot-category.bc01746fc3344b70ec10d84d1b68b493042e6078.json',
     'propertyName': 'itemEquipSlotCategory'
   },
   {
@@ -141,7 +141,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-stats.json',
-    'hashedFileName': 'item-stats.90077b306eee2db119b32a46c72d0aca3e0c8c7e.json',
+    'hashedFileName': 'item-stats.4c83a0eced1f53ef868e58a1f251fa7b5f07d7a4.json',
     'propertyName': 'itemStats'
   },
   {
@@ -200,6 +200,11 @@ export const lazyFilesList = [
     'propertyName': 'quests'
   },
   {
+    'fileName': 'races.json',
+    'hashedFileName': 'races.93af5732382917ac64fdfb3af264756ea49cabc3.json',
+    'propertyName': 'races'
+  },
+  {
     'fileName': 'rarities.json',
     'hashedFileName': 'rarities.620c9e5a6efeaa3f4291d2f89ecdc9ced53927de.json',
     'propertyName': 'rarities'
@@ -231,7 +236,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'tribes.json',
-    'hashedFileName': 'tribes.cc2320b9c025a76775017c44a3d8ac5b39764619.json',
+    'hashedFileName': 'tribes.58dbbb6da73de42faab2e658b27f3b3dbd934834.json',
     'propertyName': 'tribes'
   },
   {

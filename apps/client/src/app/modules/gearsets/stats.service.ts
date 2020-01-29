@@ -116,10 +116,14 @@ export class StatsService {
 
   public getBaseValue(baseParamId: number, job: number, level: number, tribe: number) {
     if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job)) + this.getTribeBonus(baseParamId, tribe);
+      return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job))
+        + this.getTribeBonus(baseParamId, tribe)
+        + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
     }
     if (StatsService.SUB_STATS.indexOf(baseParamId) > -1) {
-      return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job)) + this.getTribeBonus(baseParamId, tribe);
+      return Math.floor(StatsService.LEVEL_TABLE[level][1] * this.getModifier(baseParamId, job))
+        + this.getTribeBonus(baseParamId, tribe)
+        + (this.getMainStat(job) === baseParamId ? this.getMainStatBonus(level) : 0);
     }
     if (baseParamId === BaseParam.CP) {
       return 180;
@@ -209,6 +213,65 @@ export class StatsService {
         return [BaseParam.INTELLIGENCE, BaseParam.DIRECT_HIT_RATE, BaseParam.CRITICAL_HIT, BaseParam.DETERMINATION, BaseParam.SPELL_SPEED, BaseParam.PIETY, BaseParam.VITALITY];
     }
     return [];
+  }
+
+  public getMainStat(job: number): BaseParam {
+    switch (job) {
+      // Tanks
+      case 1:
+      case 3:
+      case 19:
+      case 21:
+      case 32:
+      case 37:
+        return BaseParam.VITALITY;
+      // STR-based DPS
+      case 2:
+      case 4:
+      case 20:
+      case 22:
+      case 34:
+        return BaseParam.STRENGTH;
+      // DEX-based DPS
+      case 5:
+      case 23:
+      case 29:
+      case 30:
+      case 31:
+      case 38:
+        return BaseParam.DEXTERITY;
+      // Healers
+      case 6:
+      case 24:
+      case 28:
+      case 33:
+        return BaseParam.MIND;
+      // Caster DPS
+      case 7:
+      case 25:
+      case 26:
+      case 27:
+      case 35:
+      case 36:
+        return BaseParam.INTELLIGENCE;
+    }
+    return 0;
+  }
+
+  private getMainStatBonus(level: number): number {
+    if (level >= 70) {
+      return 48;
+    }
+    if (level >= 60) {
+      // Probably not accurate, seems like it's one value per extension
+      return 48;
+    }
+    if (level >= 50) {
+      // Probably not accurate, seems like it's one value per extension
+      return 48;
+    }
+    // Probably not accurate, seems like it's one value per extension
+    return 8;
   }
 
   private getTribeBonus(baseParamId: number, tribe: number): number {

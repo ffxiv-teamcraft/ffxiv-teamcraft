@@ -39,6 +39,7 @@ export interface LazyData {
   patchContent: any;
   places: any;
   quests: any;
+  races: any;
   rarities: any;
   recipes: any;
   shops: any;

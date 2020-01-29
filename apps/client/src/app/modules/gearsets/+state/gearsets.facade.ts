@@ -4,7 +4,16 @@ import { select, Store } from '@ngrx/store';
 
 import { GearsetsPartialState } from './gearsets.reducer';
 import { gearsetsQuery } from './gearsets.selectors';
-import { CreateGearset, DeleteGearset, ImportAriyalaGearset, LoadGearset, LoadGearsets, SelectGearset, UpdateGearset, ImportLodestoneGearset } from './gearsets.actions';
+import {
+  CreateGearset,
+  DeleteGearset,
+  ImportAriyalaGearset,
+  ImportLodestoneGearset,
+  LoadGearset,
+  LoadGearsets,
+  SelectGearset,
+  UpdateGearset
+} from './gearsets.actions';
 import { map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -44,63 +53,16 @@ export class GearsetsFacade {
     })
   );
 
-
-  public selectedGearsetStats: Observable<{ id: number, value: number }[]> = this.selectedGearset$.pipe(
-    map(set => {
-      const stats = this.statsService.getRelevantBaseStats(set.job)
-        .map(stat => {
-          return {
-            id: stat,
-            // TODO proper level/tribe input
-            value: this.statsService.getBaseValue(stat, set.job, set.level, 11)
-          };
-        });
-      Object.values(set)
-        .filter(value => value && value.itemId !== undefined)
-        .forEach((equipmentPiece: EquipmentPiece) => {
-          const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-          // If this item has no stats, return !
-          if (!itemStats) {
-            return;
-          }
-          itemStats
-            .filter((stat: any) => stat.ID !== undefined)
-            .forEach((stat: any) => {
-              let statsRow = stats.find(s => s.id === stat.ID);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: stat.ID,
-                  // TODO proper level/tribe input
-                  value: this.statsService.getBaseValue(stat.ID, set.job, set.level, 11)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              if (equipmentPiece.hq) {
-                statsRow.value += stat.HQ;
-              } else {
-                statsRow.value += stat.NQ;
-              }
-            });
-          equipmentPiece.materias
-            .filter(materia => materia > 0)
-            .forEach((materiaId, index) => {
-              const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
-              const materia = this.materiasService.getMateria(materiaId);
-              let statsRow = stats.find(s => s.id === materia.baseParamId);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: materia.baseParamId,
-                  // TODO proper level/tribe input
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, set.level, 11)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              statsRow.value += bonus.value;
-            });
-        });
-      return stats;
-    })
-  );
+  public readonly tribesMenu = [
+    { race: 1, tribes: [1, 2] },
+    { race: 2, tribes: [3, 4] },
+    { race: 3, tribes: [5, 6] },
+    { race: 4, tribes: [7, 8] },
+    { race: 5, tribes: [9, 10] },
+    { race: 6, tribes: [11, 12] },
+    { race: 7, tribes: [13, 14] },
+    { race: 8, tribes: [15, 16] }
+  ];
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
               private statsService: StatsService, private lazyData: LazyDataService,

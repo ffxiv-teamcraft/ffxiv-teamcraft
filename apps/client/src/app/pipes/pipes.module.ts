@@ -59,6 +59,8 @@ import { TradeIconPipe } from './pipes/trade-icon.pipe';
 import { BaseParamNamePipe } from './pipes/base-param-name.pipe';
 import { JobUnicodePipe } from './pipes/job-unicode.pipe';
 import { IlvlPipe } from './pipes/ilvl.pipe';
+import { RaceNamePipe } from './pipes/race-name.pipe';
+import { TribeNamePipe } from './pipes/tribe-name.pipe';
 
 @NgModule({
   declarations: [
@@ -122,7 +124,9 @@ import { IlvlPipe } from './pipes/ilvl.pipe';
     TradeIconPipe,
     BaseParamNamePipe,
     JobUnicodePipe,
-    IlvlPipe
+    IlvlPipe,
+    RaceNamePipe,
+    TribeNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -185,7 +189,9 @@ import { IlvlPipe } from './pipes/ilvl.pipe';
     TradeIconPipe,
     BaseParamNamePipe,
     JobUnicodePipe,
-    IlvlPipe
+    IlvlPipe,
+    RaceNamePipe,
+    TribeNamePipe
   ]
 })
 export class PipesModule {

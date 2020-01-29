@@ -5,7 +5,7 @@ import { distinctUntilChanged, filter, map, switchMap, takeUntil, tap, withLates
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { combineLatest, Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
@@ -19,6 +19,7 @@ import { StatsService } from '../../../modules/gearsets/stats.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -191,7 +192,67 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     })
   );
 
-  public stats$: Observable<{ id: number, value: number }[]> = this.gearsetsFacade.selectedGearsetStats;
+  public level$ = new BehaviorSubject<number>(80);
+
+  public tribe$ = new BehaviorSubject<number>(1);
+
+  public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$]).pipe(
+    map(([set, level, tribe]) => {
+      const stats = this.statsService.getRelevantBaseStats(set.job)
+        .map(stat => {
+          return {
+            id: stat,
+            value: this.statsService.getBaseValue(stat, set.job, level, tribe)
+          };
+        });
+      Object.values(set)
+        .filter(value => value && value.itemId !== undefined)
+        .forEach((equipmentPiece: EquipmentPiece) => {
+          const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+          // If this item has no stats, return !
+          if (!itemStats) {
+            return;
+          }
+          itemStats
+            .filter((stat: any) => stat.ID !== undefined)
+            .forEach((stat: any) => {
+              let statsRow = stats.find(s => s.id === stat.ID);
+              if (statsRow === undefined) {
+                stats.push({
+                  id: stat.ID,
+                  value: this.statsService.getBaseValue(stat.ID, set.job, level, tribe)
+                });
+                statsRow = stats[stats.length - 1];
+              }
+              if (equipmentPiece.hq) {
+                statsRow.value += stat.HQ;
+              } else {
+                statsRow.value += stat.NQ;
+              }
+            });
+          equipmentPiece.materias
+            .filter(materia => materia > 0)
+            .forEach((materiaId, index) => {
+              const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
+              const materia = this.materiasService.getMateria(materiaId);
+              let statsRow = stats.find(s => s.id === materia.baseParamId);
+              if (statsRow === undefined) {
+                stats.push({
+                  id: materia.baseParamId,
+                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, level, tribe)
+                });
+                statsRow = stats[stats.length - 1];
+              }
+              statsRow.value += bonus.value;
+            });
+        });
+      return stats;
+    })
+  );
+
+  tribesMenu = this.gearsetsFacade.tribesMenu;
+
+  maxLevel = environment.maxLevel;
 
   private _materiaCache = JSON.parse(localStorage.getItem('materias') || '{}');
 

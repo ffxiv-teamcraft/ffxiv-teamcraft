@@ -31,7 +31,7 @@ describe('StatsService', () => {
           { id: BaseParam.DETERMINATION, value: 305 },
           { id: BaseParam.SPELL_SPEED, value: 367 },
           { id: BaseParam.PIETY, value: 305 },
-          { id: BaseParam.VITALITY, value: 304, precision: -1 }
+          { id: BaseParam.VITALITY, value: 304 }
         ]
       },
       {
@@ -44,7 +44,7 @@ describe('StatsService', () => {
           { id: BaseParam.CRITICAL_HIT, value: 378 },
           { id: BaseParam.DETERMINATION, value: 335 },
           { id: BaseParam.SKILL_SPEED, value: 378 },
-          { id: BaseParam.VITALITY, value: 415, precision: -1 },
+          { id: BaseParam.VITALITY, value: 415 },
           { id: BaseParam.TENACITY, value: 378 }
         ]
       },
@@ -58,7 +58,7 @@ describe('StatsService', () => {
           { id: BaseParam.CRITICAL_HIT, value: 378 },
           { id: BaseParam.DETERMINATION, value: 335 },
           { id: BaseParam.SKILL_SPEED, value: 378 },
-          { id: BaseParam.VITALITY, value: 382, precision: -1 },
+          { id: BaseParam.VITALITY, value: 382 },
           { id: BaseParam.TENACITY, value: 378 }
         ]
       },
@@ -68,7 +68,7 @@ describe('StatsService', () => {
         tribe: 11,
         stats: [
           { id: BaseParam.STRENGTH, value: 339 },
-          { id: BaseParam.VITALITY, value: 421, precision: -1 }
+          { id: BaseParam.VITALITY, value: 421 }
         ]
       },
       {
@@ -77,7 +77,65 @@ describe('StatsService', () => {
         tribe: 11,
         stats: [
           { id: BaseParam.STRENGTH, value: 322 },
-          { id: BaseParam.VITALITY, value: 387, precision: -1 }
+          { id: BaseParam.VITALITY, value: 387 }
+        ]
+      },
+      {
+        job: 26,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.INTELLIGENCE, value: 405 },
+          { id: BaseParam.VITALITY, value: 322 }
+        ]
+      },
+      {
+        job: 28,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.MIND, value: 442 },
+          { id: BaseParam.VITALITY, value: 339 }
+        ]
+      },
+      {
+        job: 27,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.INTELLIGENCE, value: 439 },
+          { id: BaseParam.VITALITY, value: 339 }
+        ]
+      },
+      {
+        job: 7,
+        level: 29,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.INTELLIGENCE, value: 104 },
+          { id: BaseParam.DIRECT_HIT_RATE, value: 168 },
+          { id: BaseParam.CRITICAL_HIT, value: 168 },
+          { id: BaseParam.DETERMINATION, value: 92 },
+          { id: BaseParam.SPELL_SPEED, value: 168 },
+          { id: BaseParam.VITALITY, value: 86 }
+        ]
+      },
+      {
+        job: 6,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.MIND, value: 408 },
+          { id: BaseParam.VITALITY, value: 322 }
+        ]
+      },
+      {
+        job: 24,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.MIND, value: 442 },
+          { id: BaseParam.VITALITY, value: 339 }
         ]
       }
     ];
@@ -91,7 +149,7 @@ describe('StatsService', () => {
 
       entry.stats.forEach(stat => {
         expect(stats[stat.id]).toBeCloseTo(stat.value,
-          stat.precision || 0,
+          -1,
           `${BaseParam[stat.id]}, lvl ${entry.level}, job ${entry.job}, tribe ${entry.tribe}`);
       });
     });

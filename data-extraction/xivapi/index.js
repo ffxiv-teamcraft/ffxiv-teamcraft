@@ -1751,7 +1751,9 @@ if (hasTodo('classJobModifiers')) {
     'ModifierMind',
     'ModifierPiety',
     'ModifierStrength',
-    'ModifierVitality'
+    'ModifierVitality',
+    'PrimaryStat',
+    'Role'
   ];
   getAllPages(`https://xivapi.com/ClassJob?columns=${ClassJobsColumns.join(',')}`).subscribe(page => {
     page.Results.forEach(entry => {
@@ -1789,5 +1791,21 @@ if (hasTodo('tribes')) {
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);
+  });
+}
+
+if (hasTodo('races')) {
+  const races = {};
+  getAllPages(`https://xivapi.com/Race?columns=ID,Name_*`).subscribe(page => {
+    page.Results.forEach(entry => {
+      races[entry.ID] = {
+        en: entry.Name_en,
+        ja: entry.Name_ja,
+        de: entry.Name_de,
+        fr: entry.Name_fr,
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('races', races);
   });
 }

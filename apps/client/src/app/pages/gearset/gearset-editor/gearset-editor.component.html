@@ -1,6 +1,6 @@
 <ng-container *ngIf="gearset$ | async as gearset">
   <ng-container *ngIf="stats$ | async as stats">
-    <div class="editor-container" #editorContainer>
+    <div class="editor-container" [class.two-cols]="stats.length <= 3" #editorContainer>
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
@@ -87,6 +87,14 @@
     <div nz-row class="stats-footer" [style.width.px]="editorContainer.offsetWidth" [class.two-cols]="stats.length <= 3">
       <div nz-col [nzMd]="24 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="5px">
         <div><b>{{'GEARSETS.Total_stats' | translate}}</b></div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
+          <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150" nzSize="small">
+            <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
+              <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
+            </nz-option-group>
+          </nz-select>
+          <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>
+        </div>
         <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'GEARSETS.Total_materias_needed' | translate"
                 (click)="openTotalNeededPopup(gearset)">
           <i nz-icon nzType="calculator" nzTheme="outline"></i>
