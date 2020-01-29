@@ -45,7 +45,7 @@ describe('StatsService', () => {
           { id: BaseParam.DETERMINATION, value: 335 },
           { id: BaseParam.SKILL_SPEED, value: 378 },
           { id: BaseParam.VITALITY, value: 415, precision: -1 },
-          { id: BaseParam.TENACITY, value: 378 },
+          { id: BaseParam.TENACITY, value: 378 }
         ]
       },
       {
@@ -59,7 +59,25 @@ describe('StatsService', () => {
           { id: BaseParam.DETERMINATION, value: 335 },
           { id: BaseParam.SKILL_SPEED, value: 378 },
           { id: BaseParam.VITALITY, value: 382, precision: -1 },
-          { id: BaseParam.TENACITY, value: 378 },
+          { id: BaseParam.TENACITY, value: 378 }
+        ]
+      },
+      {
+        job: 19,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.STRENGTH, value: 339 },
+          { id: BaseParam.VITALITY, value: 421, precision: -1 }
+        ]
+      },
+      {
+        job: 1,
+        level: 80,
+        tribe: 11,
+        stats: [
+          { id: BaseParam.STRENGTH, value: 322 },
+          { id: BaseParam.VITALITY, value: 387, precision: -1 }
         ]
       }
     ];
