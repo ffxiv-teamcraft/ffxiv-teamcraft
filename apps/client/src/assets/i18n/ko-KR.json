@@ -1337,7 +1337,7 @@
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
     "Currencies": "화폐",
-    "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 보상)",
+    "Rowena_splendor": "로웨나 상회 거래 (별 = 20% 추가 경험치)",
     "Unlocks": "개방",
     "Jump_to_page": "빠른 검색",
     "Ishgard_restoration": "이슈가르드 부흥",
@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "시간 통계",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "사용된 미끼",
       "Hookset_and_tug": "낚아채기 및 입질",
       "Weathers": "날씨",
