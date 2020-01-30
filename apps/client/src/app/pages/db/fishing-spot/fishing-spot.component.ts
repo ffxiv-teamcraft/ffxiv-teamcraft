@@ -18,6 +18,9 @@ import { mapIds } from '../../../core/data/sources/map-ids';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { Apollo } from 'apollo-angular';
 import { WeatherService } from '../../../core/eorzea/weather.service';
+import { NzModalService } from 'ng-zorro-antd';
+import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
+import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 
 @Component({
   selector: 'app-fishing-spot',
@@ -60,7 +63,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               private etime: EorzeanTimeService, private apollo: Apollo, private weatherService: WeatherService,
-              seo: SeoService) {
+              private dialog: NzModalService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
@@ -299,6 +302,18 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   private getColor(weight: number): string {
     return `rgba(${this.highlightColor[0]}, ${this.highlightColor[1]}, ${this.highlightColor[2]}, ${Math.floor(weight * 90) / 100})`;
+  }
+
+  public showMissesPopup(spotId: number): void {
+    this.dialog.create({
+      nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
+      nzContent: FishingMissesPopupComponent,
+      nzComponentParams: {
+        spotId: spotId
+      },
+      nzFooter: null,
+      nzWidth: '80vw'
+    });
   }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
