@@ -150,10 +150,10 @@ function createWindow() {
         win.maximize();
       }
     }
-  if (config.get('start-minimized')) {
+    if (config.get('start-minimized')) {
       tray.displayBalloon({
         title: "Teamcraft launched in the background",
-        content: "To change this, visit Settings -> Desktop."});
+        content: "To change this behavior, visit Settings -> Desktop."});
     }
     autoUpdater.checkForUpdates();
   });
