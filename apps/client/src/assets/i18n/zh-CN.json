@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "上钩时间",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "使用钓饵",
       "Hookset_and_tug": "捉钩和咬饵",
       "Weathers": "天气",
