@@ -143,7 +143,7 @@ export class ListsEffects {
           fcId = null;
         }
       }
-      if (list !== null) {
+      if (list !== null && !list.notFound) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
@@ -211,6 +211,9 @@ export class ListsEffects {
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
@@ -224,6 +227,9 @@ export class ListsEffects {
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
     debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);

@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Heure du jour",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Appât utilisé",
       "Hookset_and_tug": "Ferrages et touches",
       "Weathers": "Météo",

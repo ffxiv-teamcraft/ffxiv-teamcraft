@@ -46,6 +46,7 @@
         <div class="detail-value">{{spot.GatheringLevel}}</div>
       </div>
       <div fxFlex="1 1 auto"></div>
+      <button nz-button (click)="showMissesPopup(spot.ID)">{{'DB.FISH.Show_misses' | translate}}</button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
               (click)="loading = true;reloader$.next(null)">
         <i nz-icon nzType="reload" nzTheme="outline"></i>

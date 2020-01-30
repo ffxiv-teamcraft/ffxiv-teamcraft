@@ -57,7 +57,7 @@ export class FavoritesComponent {
         return this.workshopsFacade.allWorkshops$.pipe(
           map(ws => ws.filter(w => workshops.indexOf(w.$key) > -1)),
           filter(ws => ws.length === workshops.length),
-          tap(ws => ws.forEach(w => w.listIds.forEach(listId => this.listsFacade.load(listId))))
+          tap(ws => (ws || []).forEach(w => (w.listIds || []).forEach(listId => this.listsFacade.load(listId))))
         );
       })
     );
