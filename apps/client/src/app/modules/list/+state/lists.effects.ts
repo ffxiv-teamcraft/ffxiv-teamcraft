@@ -143,7 +143,7 @@ export class ListsEffects {
           fcId = null;
         }
       }
-      if (list !== null) {
+      if (list !== null && !list.notFound) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
