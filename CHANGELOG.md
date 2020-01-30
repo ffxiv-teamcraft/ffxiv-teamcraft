@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.11"></a>
+## [6.5.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.10...v6.5.11) (2020-01-30)
+
+
+### Bug Fixes
+
+* **db:** do not show *used for nothing* for fishes ([1d37533](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d37533))
+* **fishing:** fixed unexpected statuses reset when fishing ([e4dce86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4dce86))
+* **list:** fixed an issue with lists page loading ([8c6fb20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c6fb20))
+* **list:** fixed an issue withinventory autofill reporting wrong amount in some cases ([4b37c06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b37c06))
+* **lists:** fixed an issue with ephemeral lists not always deleting ([f6d840a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f6d840a))
+* **log:** avoid duplicates in CRP crafting log ([d172384](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d172384))
+* **theme:** fixed an issue preventing some pages from loading with specific theme settings ([accaff6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/accaff6))
+* **user-picker:** fixed an issue preventing "user not found" message from showing ([acd094b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acd094b))
+
+
+### Features
+
+* display desktop notification when app launches in background ([#1334](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1334)) ([f28aa9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f28aa9e))
+* **db:** added misses popup to spot pages ([b370f2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b370f2e))
+
+
+
 <a name="6.5.10"></a>
 ## [6.5.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.9...v6.5.10) (2020-01-23)
 
