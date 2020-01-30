@@ -431,7 +431,7 @@
     "More_than_100_lists_created": "现有 100+ 个清单",
     "Veteran": "老玩家",
     "Autofill_from_packets": "使用数据包捕获自动填充状态。",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
+    "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
     "VERIFICATION": {
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
@@ -544,7 +544,7 @@
   },
   "LIST_DETAILS": {
     "List_finished": "清单已完成",
-    "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为社区清单。",
+    "Public_list_description": "将该清单公开分享给所有人。注意：只是与其他人分享清单并不需要将其设为共享清单。",
     "Missing_tags_before_button": "此清单已公开分享为共享清单，但它没有标签，请使用 为它添加标签。",
     "Missing_tags_after_button": " 按钮添加标签。",
     "Add_remove_amount": "增加/减少",
@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "上钩时间",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "使用钓饵",
       "Hookset_and_tug": "捉钩和咬饵",
       "Weathers": "天气",
