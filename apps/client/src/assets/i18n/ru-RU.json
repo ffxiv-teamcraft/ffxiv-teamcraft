@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Час дня",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Наживка использована",
       "Hookset_and_tug": "Hooksets и tugs",
       "Weathers": "Погода",
