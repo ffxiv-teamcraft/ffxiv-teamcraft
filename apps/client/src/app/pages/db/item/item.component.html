@@ -157,7 +157,7 @@
       <ng-template #usedForTpl>
         <div *ngIf="usedFor$ | async as usedFor">
           <nz-divider [nzText]="'DB.Used_for' | translate" nzOrientation="left"></nz-divider>
-          <app-fullpage-message *ngIf="usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)"
+          <app-fullpage-message *ngIf="!xivapiItem.IsFish && usedFor.length === 0 && (xivapiItem.ID > 19 || xivapiItem.ID === 1)"
                                 height="300px">
             {{'DB.Used_for_nothing' | translate}}
           </app-fullpage-message>
