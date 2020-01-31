@@ -116,10 +116,17 @@ export class FishingMissesPopupComponent implements OnInit {
 
   filter(key: string, value: any): void {
     this.loading = true;
-    this.filters$.next({
-      ...this.filters$.value,
-      [key]: value
-    });
+    if (value.length === 0) {
+      const clone = { ...this.filters$.value };
+      delete clone[key];
+      this.filters$.next(clone);
+
+    } else {
+      this.filters$.next({
+        ...this.filters$.value,
+        [key]: value
+      });
+    }
   }
 
   getTugName(tug: number): string {

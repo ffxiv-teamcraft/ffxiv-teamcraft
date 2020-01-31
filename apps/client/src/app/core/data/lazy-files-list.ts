@@ -76,7 +76,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
+    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
     'propertyName': 'gatheringItems'
   },
   {
