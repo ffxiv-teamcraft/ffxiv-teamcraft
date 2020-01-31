@@ -28,8 +28,7 @@ const getSelectedGearset = createSelector(
   getAllGearsets,
   getSelectedId,
   (gearsets, id) => {
-    const result = gearsets.find(it => it.$key === id);
-    return result ? Object.assign({}, result) : result;
+    return gearsets.find(it => it.$key === id);
   }
 );
 

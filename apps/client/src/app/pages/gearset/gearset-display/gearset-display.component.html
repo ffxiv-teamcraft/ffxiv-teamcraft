@@ -1,9 +1,15 @@
 <ng-container *ngIf="gearset$ | async as gearset">
   <ng-container *ngIf="stats$ | async as stats">
-    <div fxLayout="column">
+    <div fxLayout="column" *ngIf="permissionLevel$ | async as permissionLevel">
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+        <div fxFlex="1 1 auto"></div>
+        <a nz-button nzShape="circle" nzType="primary"
+           nz-tooltip [nzTitle]="'GEARSETS.Edit_gearset' | translate"
+           routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="permissionLevel >= 30">
+          <i nz-icon nzType="edit"></i>
+        </a>
       </div>
       <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="1 1 auto" class="set-content">
         <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Content' | translate"></nz-divider>

@@ -36,7 +36,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'class-jobs-modifiers.json',
-    'hashedFileName': 'class-jobs-modifiers.3958e9d7a4521a6a0921e79e9c1933619e7c87e1.json',
+    'hashedFileName': 'class-jobs-modifiers.556578c23a87d95f5819e2ac6219d68236c92e2a.json',
     'propertyName': 'classJobsModifiers'
   },
   {
@@ -91,7 +91,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'gathering-items.json',
-    'hashedFileName': 'gathering-items.a11aab218a8c7b29e2794ab00210e75fb823969a.json',
+    'hashedFileName': 'gathering-items.064c49836c36d4b0df20c209a97e4b6fd17ce7c1.json',
     'propertyName': 'gatheringItems'
   },
   {
@@ -201,7 +201,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'races.json',
-    'hashedFileName': 'races.93af5732382917ac64fdfb3af264756ea49cabc3.json',
+    'hashedFileName': 'races.d75b0608fa78874135064fe7fa5508c1454a40f9.json',
     'propertyName': 'races'
   },
   {
@@ -236,7 +236,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'tribes.json',
-    'hashedFileName': 'tribes.58dbbb6da73de42faab2e658b27f3b3dbd934834.json',
+    'hashedFileName': 'tribes.6b2a6492769b1b6bca8e079054d5abb8614fe0bb.json',
     'propertyName': 'tribes'
   },
   {

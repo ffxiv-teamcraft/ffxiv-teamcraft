@@ -11,6 +11,8 @@ import { environment } from '../../../../environments/environment';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-gearset-display',
@@ -94,9 +96,17 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   maxLevel = environment.maxLevel;
 
+  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.gearset$, this.authFacade.userId$])
+    .pipe(
+      map(([gearset, userId]) => {
+        return gearset.getPermissionLevel(userId);
+      })
+    );
+
   constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
               public translate: TranslateService, private statsService: StatsService,
-              private materiasService: MateriaService, private lazyData: LazyDataService) {
+              private materiasService: MateriaService, private lazyData: LazyDataService,
+              private authFacade: AuthFacade) {
     super();
     this.activatedRoute.paramMap
       .pipe(
