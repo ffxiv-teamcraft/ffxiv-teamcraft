@@ -1346,11 +1346,11 @@
       "Masterpiece_bonus": "БОНУС"
     },
     "FISH": {
-      "Hour": "Час дня",
+      "Hour": "Время",
       "Etime": "Eorzean time",
       "Misses_popup_title": "Misses for this spot",
       "Show_misses": "Show misses",
-      "Baits": "Наживка использована",
+      "Baits": "Использованная наживка",
       "Hookset_and_tug": "Hooksets и tugs",
       "Weathers": "Погода",
       "Weather_transitions": "Переходы погоды",
