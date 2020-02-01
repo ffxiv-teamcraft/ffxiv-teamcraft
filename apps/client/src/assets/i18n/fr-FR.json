@@ -257,7 +257,7 @@
   "Login": "Identification",
   "Disconnect": "Déconnexion",
   "Password": "Mot de passe",
-  "Password_Confirmation": "Confirmation",
+  "Password_Confirmation": "Confirmez le mot de passe",
   "Submit": "Soumettre",
   "Invalid_credentials": "Mauvais email ou mot de passe",
   "Not_verified": "Non vérifié",
@@ -391,6 +391,8 @@
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "Performance_mode": "Mode hautes perfs",
     "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
+    "Change_email": "Changer votre email",
+    "Change_email_success": "Email modifié",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1345,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Heure du jour",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Appât utilisé",
       "Hookset_and_tug": "Ferrages et touches",
       "Weathers": "Météo",

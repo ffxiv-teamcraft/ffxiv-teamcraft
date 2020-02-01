@@ -7,7 +7,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { DbComment } from './model/db-comment';
 import { Language } from '../../../core/data/language';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { achievements } from '../../../core/data/sources/achievements';
 
 @Pipe({
   name: 'commentLinks',
@@ -106,7 +105,7 @@ export class CommentLinksPipe implements PipeTransform {
       case 'trait':
         return this.l12n.getTrait(id);
       case 'achievement':
-        return achievements[id];
+        return this.lazyData.data.achievements[id];
       default:
         return null;
     }
@@ -116,40 +115,40 @@ export class CommentLinksPipe implements PipeTransform {
     let data: any;
     switch (contentType) {
       case 'item':
-        data = [this.lazyData.items, this.lazyData.koItems, this.lazyData.zhItems];
+        data = [this.lazyData.data.items, this.lazyData.data.koItems, this.lazyData.data.zhItems];
         break;
       case 'fate':
-        data = [this.lazyData.fates, this.lazyData.koFates];
+        data = [this.lazyData.data.fates, this.lazyData.data.koFates, this.lazyData.data.zhFates];
         break;
       case 'action':
-        data = [this.lazyData.actions, this.lazyData.craftActions, this.lazyData.koActions, this.lazyData.koCraftActions];
+        data = [this.lazyData.data.actions, this.lazyData.data.craftActions, this.lazyData.data.koActions, this.lazyData.data.koCraftActions];
         break;
       case 'instance':
-        data = [this.lazyData.instances, this.lazyData.koInstances];
+        data = [this.lazyData.data.instances, this.lazyData.data.koInstances, this.lazyData.data.zhInstances];
         break;
       case 'leve':
-        data = [this.lazyData.leves, this.lazyData.koLeves];
+        data = [this.lazyData.data.leves, this.lazyData.data.koLeves, this.lazyData.data.zhLeves];
         break;
       case 'map':
-        data = [this.lazyData.places, this.lazyData.koPlaces, this.lazyData.zhPlaces];
+        data = [this.lazyData.data.places, this.lazyData.data.koPlaces, this.lazyData.data.zhPlaces];
         break;
       case 'mob':
-        data = [this.lazyData.mobs, this.lazyData.koMobs];
+        data = [this.lazyData.data.mobs, this.lazyData.data.koMobs, this.lazyData.data.zhMobs];
         break;
       case 'npc':
-        data = [this.lazyData.npcs, this.lazyData.koNpcs];
+        data = [this.lazyData.data.npcs, this.lazyData.data.koNpcs, this.lazyData.data.zhNpcs];
         break;
       case 'achievement':
-        data = [achievements];
+        data = [this.lazyData.data.achievements, this.lazyData.data.koAchievements, this.lazyData.data.zhAchievements];
         break;
       case 'status':
-        data = [this.lazyData.statuses, this.lazyData.koStatuses];
+        data = [this.lazyData.data.statuses, this.lazyData.data.koStatuses, this.lazyData.data.zhStatuses];
         break;
       case 'trait':
-        data = [this.lazyData.traits, this.lazyData.koTraits];
+        data = [this.lazyData.data.traits, this.lazyData.data.koTraits, this.lazyData.data.zhTraits];
         break;
       case 'quest':
-        data = [this.lazyData.quests, this.lazyData.koQuests];
+        data = [this.lazyData.data.quests, this.lazyData.data.koQuests, this.lazyData.data.zhQuests];
         break;
       default:
         return null;

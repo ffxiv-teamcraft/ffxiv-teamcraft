@@ -8,6 +8,7 @@ import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/opera
 import { SearchResult } from '../../../model/search/search-result';
 import { CustomItemsFacade } from '../../custom-items/+state/custom-items.facade';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-item-picker',
@@ -20,7 +21,7 @@ export class ItemPickerComponent implements OnInit {
 
   public results$: Observable<SearchResult[]>;
 
-  public onlyCraftable = false;
+  public onlyCraftable = this.settings.onlyRecipesInPicker;
 
   public hideAmount = false;
 
@@ -32,11 +33,12 @@ export class ItemPickerComponent implements OnInit {
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
-              private customItemsFacade: CustomItemsFacade, private translate: TranslateService) {
+              private customItemsFacade: CustomItemsFacade, private translate: TranslateService,
+              private settings: SettingsService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
       filter(query => {
-        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+        if (['ko', 'zh', 'ja'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
           return query.length > 0;
         }

@@ -80,7 +80,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade) {
     const allItems = this.lazyData.allItems;
-    this.items = Object.keys(this.lazyData.items)
+    this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 19)
       .map(key => {
         return {
@@ -96,7 +96,7 @@ export class RecipeFinderComponent implements OnDestroy {
       map((sets: GearSet[]) => {
         const possibleRecipes = [];
         for (const item of this.pool) {
-          possibleRecipes.push(...this.lazyData.recipes.filter(r => {
+          possibleRecipes.push(...this.lazyData.data.recipes.filter(r => {
             if (r.ingredients.some(i => i.id === item.id && i.amount <= item.amount)) {
               possibleRecipes.push({ ...r });
             }

@@ -37,7 +37,7 @@
     "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
-    "Only_craftable": "제작법만 검색"
+    "Only_craftable": "제작가능한 제작법만 검색"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -257,7 +257,7 @@
   "Login": "로그인",
   "Disconnect": "로그아웃",
   "Password": "비밀번호",
-  "Password_Confirmation": "패스워드 재확인",
+  "Password_Confirmation": "비밀번호 확인",
   "Submit": "제출",
   "Invalid_credentials": "로그인 정보가 틀립니다",
   "Not_verified": "미인증",
@@ -390,7 +390,9 @@
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Performance_mode": "성능 모드",
-    "Performance_mode_explain": "성능 향상을 위해 아이템 사진과 메뉴를 제거(버튼만 남게됨) 합니다",
+    "Performance_mode_explain": "성능 향상을 위해 아이템의 아이콘과 메뉴를 제거(버튼만 남게됨) 합니다",
+    "Change_email": "메일 주소 변경",
+    "Change_email_success": "메일 주소가 변경되었습니다",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -614,8 +616,8 @@
     },
     "OVERLAY": {
       "Open": "목록 오버레이 열기",
-      "No_display": "실행시 목록화면을 매인화면으로 열기",
-      "No_panel_selected": "위에 있는 버튼을 사용하여 패널을 선택하세요"
+      "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
+      "No_panel_selected": "대분류를 선택해주세요"
     }
   },
   "LIST_TAGS": {
@@ -971,7 +973,7 @@
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
-      "Requires_reuse_to_proc": "매크로에 재사용 프록이 요구됩니다. 재사용 프록이 없어도 매크로가 작동하도록 수정하세요"
+      "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요"
     }
   },
   "PRICING": {
@@ -1345,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "시간 통계",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "사용된 미끼",
       "Hookset_and_tug": "낚아채기 및 입질",
       "Weathers": "날씨",
@@ -1361,7 +1366,7 @@
       "Used_as_mooch_for": "생미끼로 사용시 낚이는 물고기",
       "No_known_mooch_usage": "생미끼로 사용된 기록이 없습니다",
       "No_spot_filter": "필터링 없음",
-      "Chances_for_transition": "이 날씨로 변환될 확률",
+      "Chances_for_transition": "이 날씨로 바뀔 확률",
       "Weather_chances": "각 날씨별 나올수 있는 확률",
       "Bait": "미끼",
       "Refresh_data": "새로고침",
@@ -1376,12 +1381,12 @@
         "Tug": "입질",
         "Hookset": "낚아채기",
         "Fishing": "낚시",
-        "Mooch": "생미끼 낚시중",
+        "Mooch": "생미끼 낚시 중",
         "Mooch_report": "생미끼",
         "Current_weather": "현재 날씨",
         "Previous_weather": "이전 날씨",
         "Spot": "낚싯터",
-        "Possible_fish": "낚일수 있는 물고기",
+        "Possible_fish": "낚일 수 있는 물고기",
         "Stats": "능력치",
         "Statuses": "상태",
         "No_statuses": "최신 상태 없음",
@@ -1390,7 +1395,7 @@
         "Fish": "물고기",
         "Size": "크기",
         "ERRORS": {
-          "Unknown_map": "알수없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
+          "Unknown_map": "알 수 없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
           "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요"
         }
       }
@@ -1398,7 +1403,7 @@
     "FISHING_SPOT": {
       "Next": "다음",
       "Possible_weathers": "가능한 날씨",
-      "Available_fishes": "낚을수 있는 물고기",
+      "Available_fishes": "낚을 수 있는 물고기",
       "Fish_per_weather": "날씨당 물고기",
       "Fish_per_bait": "미끼당 물고기",
       "Fish_per_tug": "입질당 물고기"
@@ -1668,7 +1673,7 @@
       "Bag": "소지품",
       "Other": "다른 소지품",
       "Armory": "장비함",
-      "RetainerMarket": "집사 상점에서 구입 가능"
+      "RetainerMarket": "집사가 판매중"
     }
   },
   "INVENTORY_OPTIMIZER": {

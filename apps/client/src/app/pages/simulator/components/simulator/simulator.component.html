@@ -412,7 +412,7 @@
               </div>
             </div>
             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-              <div>{{resultData.simulation.crafterStats.jobId | jobName | i18n}}</div>
+              <div>{{'Level' | translate}} {{resultData.simulation.crafterStats.level}} {{resultData.simulation.crafterStats.jobId | jobName | i18n}}</div>
               <div fxLayout="column">
                 <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}:
                   {{resultData.simulation.crafterStats.craftsmanship}}

@@ -1,0 +1,1085 @@
+{
+  "100000": {
+    "zh": ""
+  },
+  "100001": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100002": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100003": {
+    "zh": "恢复30点耐久"
+  },
+  "100004": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100005": {
+    "zh": "恢复60点耐久"
+  },
+  "100006": {
+    "zh": "消耗耐久以推动作业进展\n处理风属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100007": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100008": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100009": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90%"
+  },
+  "100010": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100011": {
+    "zh": ""
+  },
+  "100012": {
+    "zh": ""
+  },
+  "100013": {
+    "zh": ""
+  },
+  "100014": {
+    "zh": ""
+  },
+  "100015": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100016": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100017": {
+    "zh": "恢复30点耐久"
+  },
+  "100018": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100019": {
+    "zh": "恢复60点耐久"
+  },
+  "100020": {
+    "zh": "消耗耐久以推动作业进展\n处理火属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100021": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100022": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100023": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100024": {
+    "zh": ""
+  },
+  "100025": {
+    "zh": ""
+  },
+  "100026": {
+    "zh": ""
+  },
+  "100027": {
+    "zh": ""
+  },
+  "100028": {
+    "zh": ""
+  },
+  "100029": {
+    "zh": ""
+  },
+  "100030": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100031": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100032": {
+    "zh": "恢复30点耐久"
+  },
+  "100033": {
+    "zh": "消耗耐久以推动作业进展\n效率：250\n成功率：50%"
+  },
+  "100034": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100035": {
+    "zh": "恢复60点耐久"
+  },
+  "100036": {
+    "zh": "消耗耐久以推动作业进展\n处理冰属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100037": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100038": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100039": {
+    "zh": "消耗耐久完成剩余工作量的1/3左右（上限：1000）\n成功率：90%"
+  },
+  "100040": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100041": {
+    "zh": ""
+  },
+  "100042": {
+    "zh": ""
+  },
+  "100043": {
+    "zh": ""
+  },
+  "100044": {
+    "zh": ""
+  },
+  "100045": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100046": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100047": {
+    "zh": "恢复30点耐久"
+  },
+  "100048": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100049": {
+    "zh": "恢复60点耐久"
+  },
+  "100050": {
+    "zh": "消耗耐久以推动作业进展\n处理土属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100051": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100052": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100053": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100054": {
+    "zh": ""
+  },
+  "100055": {
+    "zh": ""
+  },
+  "100056": {
+    "zh": ""
+  },
+  "100057": {
+    "zh": ""
+  },
+  "100058": {
+    "zh": ""
+  },
+  "100059": {
+    "zh": ""
+  },
+  "100060": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100061": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100062": {
+    "zh": "恢复30点耐久"
+  },
+  "100063": {
+    "zh": "消耗耐久以推动作业进展\n一定会成功\n效率：90\n成功率：100%"
+  },
+  "100064": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100065": {
+    "zh": "恢复60点耐久"
+  },
+  "100066": {
+    "zh": "消耗耐久以推动作业进展\n处理雷属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100067": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100068": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100069": {
+    "zh": "消耗耐久以推动作业进展\n一定会成功\n效率：120\n成功率：100%"
+  },
+  "100070": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100071": {
+    "zh": ""
+  },
+  "100072": {
+    "zh": ""
+  },
+  "100073": {
+    "zh": ""
+  },
+  "100074": {
+    "zh": ""
+  },
+  "100075": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100076": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100077": {
+    "zh": "恢复30点耐久"
+  },
+  "100078": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100079": {
+    "zh": "恢复60点耐久"
+  },
+  "100080": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100081": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100082": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100083": {
+    "zh": "消耗耐久以推动作业进展40\n成功率：90%"
+  },
+  "100084": {
+    "zh": ""
+  },
+  "100085": {
+    "zh": ""
+  },
+  "100086": {
+    "zh": ""
+  },
+  "100087": {
+    "zh": ""
+  },
+  "100088": {
+    "zh": ""
+  },
+  "100089": {
+    "zh": ""
+  },
+  "100090": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100091": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100092": {
+    "zh": "恢复30点耐久"
+  },
+  "100093": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100094": {
+    "zh": "恢复60点耐久"
+  },
+  "100095": {
+    "zh": "消耗耐久以推动作业进展\n处理水属性配方时效率变为2倍\n效率：100（200）\n成功率：90%"
+  },
+  "100096": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100097": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100098": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n恢复20点制作力"
+  },
+  "100099": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100100": {
+    "zh": ""
+  },
+  "100101": {
+    "zh": ""
+  },
+  "100102": {
+    "zh": ""
+  },
+  "100103": {
+    "zh": ""
+  },
+  "100104": {
+    "zh": ""
+  },
+  "100105": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90%"
+  },
+  "100106": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100107": {
+    "zh": "恢复30点耐久"
+  },
+  "100108": {
+    "zh": "消耗耐久以提高制品品质不会消耗制作力，但是成功率比较低\n效率：100\n成功率：50%"
+  },
+  "100109": {
+    "zh": "消耗耐久以提高制品品质\n效率：125\n成功率：80%"
+  },
+  "100110": {
+    "zh": "恢复60点耐久"
+  },
+  "100111": {
+    "zh": "消耗耐久以推动作业进展\n效率：150\n成功率：90%"
+  },
+  "100112": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：90%"
+  },
+  "100113": {
+    "zh": "放空一次作业，不做任何事"
+  },
+  "100114": {
+    "zh": ""
+  },
+  "100115": {
+    "zh": ""
+  },
+  "100116": {
+    "zh": ""
+  },
+  "100117": {
+    "zh": ""
+  },
+  "100118": {
+    "zh": ""
+  },
+  "100119": {
+    "zh": ""
+  },
+  "100120": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100121": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100122": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100123": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100124": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100125": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100126": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100127": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升10\n使用之后会结束内静效果\n效率：150（150～）\n成功率：70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>成功率变为100%"
+  },
+  "100128": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100129": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100130": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100131": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100132": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100133": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100134": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100135": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：100\n成功率：70%"
+  },
+  "100136": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以完成工作量的1/3左右（上限：1000）\n成功率：100％"
+  },
+  "100137": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100138": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100139": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100140": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100141": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100142": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100143": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100144": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n追加效果：改革\n效率：100\n成功率：40％"
+  },
+  "100145": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100146": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100147": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100148": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100149": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100150": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100151": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100152": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升15\n使用之后会令内静积累的效果减半\n效率：100（100～）\n成功率：70%"
+  },
+  "100153": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100154": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100155": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100156": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100157": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100158": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100159": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100160": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n随工作小调档数的消耗程度恢复相应的耐久\n使用之后会结束工作小调效果\n成功率：100％"
+  },
+  "100161": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100162": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100163": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100164": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100165": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100166": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100167": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100168": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅在内静与工作小调档数相同时才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展，品质也大幅提高\n效率：150\n成功率：100%"
+  },
+  "100169": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100170": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100171": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100172": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100173": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100174": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100175": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100176": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在工作小调的档数为3的倍数时才可以使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗1档工作小调的效果，恢复15点制作力\n成功率：100％"
+  },
+  "100177": {
+    "zh": ""
+  },
+  "100178": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n根据剩余的工作量多少，令数次作业（上限25次）内发动坚实制作不消耗制作力和耐久"
+  },
+  "100179": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“刻木匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100180": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“锻铁匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100181": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“铸甲匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100182": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“雕金匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100183": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“制革匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100184": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“裁衣匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100185": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“炼金术士图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100186": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n7次作业内会比较容易出现高品质状态\n使用时需消耗道具“烹调师图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用5次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100187": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100188": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100189": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100190": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100191": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100192": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100193": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100194": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加11档工作小调的状态\n每出现一次“高品质”及以上的状态时，积累的小调效果会减少1档。效果减少到0时会发动消耗耐久推进作业进展的“收尾”，并结束工作小调效果\n（收尾　效率：200　成功率：50%）\n积累的效果为3的倍数时，部分制作系技能的效率会有所提高"
+  },
+  "100195": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100196": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100197": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100198": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100199": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100200": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100201": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100202": {
+    "zh": "消耗耐久以提高制品品质\n效率：100\n成功率：60%"
+  },
+  "100203": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100204": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100205": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100206": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100207": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100208": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100209": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100210": {
+    "zh": "消耗耐久以推动作业进展，一定会成功\n效率：150\n成功率：100%"
+  },
+  "100211": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100212": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100213": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100214": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100215": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100216": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100217": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100218": {
+    "zh": "消耗耐久以推动作业进展\n效率：300\n成功率：60%"
+  },
+  "100219": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100220": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100221": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100222": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100223": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100224": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100225": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100226": {
+    "zh": "消耗耐久以提高制品品质\n成功时：内静的积累档数+1（最多积累11档）\n失败时：内静的积累档数减半\n效率：100\n成功率：50%"
+  },
+  "100227": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100228": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100229": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100230": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100231": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100232": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100233": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100234": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在俭约和俭约II状态下无法使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n耐久度消耗量减半的同时提高制品品质\n效率：100\n成功率：70%"
+  },
+  "100235": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100236": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100237": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100238": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100239": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100240": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100241": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100242": {
+    "zh": "消耗耐久以推动作业进展\n效率：200\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100243": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100244": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100245": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100246": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100247": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100248": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100249": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100250": {
+    "zh": "消耗耐久以提高制品品质\n效率：150\n成功率：50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>观察\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连击时成功率：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>100%"
+  },
+  "100251": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100252": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100253": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100254": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100255": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100256": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100257": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100258": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n附加起始准备状态，一定概率可降低制作力的消耗量\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以使用一次专精绝技并结束起始准备的状态"
+  },
+  "100259": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100260": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100261": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100262": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100263": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100264": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100265": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100266": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复25点耐久"
+  },
+  "100267": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100268": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100269": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100270": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100271": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100272": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100273": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100274": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，恢复65点制作力"
+  },
+  "100275": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100276": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100277": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100278": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100279": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100280": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100281": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100282": {
+    "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n结束起始准备的状态，使内静的积累档数+3（最多积累11档）"
+  },
+  "100283": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100284": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100285": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100286": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100287": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100288": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100289": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100290": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的50%\n成功率：100%"
+  },
+  "100291": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100292": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100293": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100294": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100295": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100296": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100297": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100298": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>仅可在首次作业且用于等级低了10级及以上的配方时发动<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可提升制品最大品质的30％～100％\n成功率：100%"
+  },
+  "100299": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100300": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100301": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100302": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100303": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100304": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100305": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100306": {
+    "zh": "大量消耗耐久以提高制品品质\n追加效果：内静的积累档数+1（最多积累11档）\n效率：200\n成功率：70%\n耐久消耗：20"
+  },
+  "100307": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100308": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100309": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100310": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100311": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100312": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100313": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100314": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足20的情况下使用时，效率会大幅下降<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：600\n成功率：60%\n耐久消耗：20"
+  },
+  "100315": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100316": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100317": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100318": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100319": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100320": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100321": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100322": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>只有在“高品质”及以上的状态下才能使用<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n消耗耐久以使作业大幅进展\n效率：300\n成功率：80%"
+  },
+  "100323": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100324": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100325": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100326": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100327": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100328": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100329": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100330": {
+    "zh": "消耗耐久以推动作业进展，同时提高品质\n效率：100\n成功率：100%"
+  },
+  "100331": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100332": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100333": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100334": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100335": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100336": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100337": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100338": {
+    "zh": "消耗耐久以推动作业进展\n效率：100\n成功率：90％"
+  },
+  "100339": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100340": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100341": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100342": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100343": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100344": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100345": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100346": {
+    "zh": "消耗耐久以提高制品品质\n随内静的效果提高效率，内静每生效过一次效率提升20\n使用之后会结束内静效果\n效率：100（100～）\n成功率：90％"
+  },
+  "100347": {
+    "zh": ""
+  },
+  "100348": {
+    "zh": ""
+  },
+  "100349": {
+    "zh": ""
+  },
+  "100350": {
+    "zh": ""
+  },
+  "100351": {
+    "zh": ""
+  },
+  "100352": {
+    "zh": ""
+  },
+  "100353": {
+    "zh": ""
+  },
+  "100354": {
+    "zh": ""
+  },
+  "100355": {
+    "zh": ""
+  },
+  "100356": {
+    "zh": ""
+  },
+  "100357": {
+    "zh": ""
+  },
+  "100358": {
+    "zh": ""
+  },
+  "100359": {
+    "zh": ""
+  },
+  "100360": {
+    "zh": ""
+  }
+}

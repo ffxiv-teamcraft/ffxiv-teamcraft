@@ -1,6 +1,9 @@
 <div *ngIf="mapData | async as map" class="map-container">
   <app-db-button *ngIf="!hideDbButton" [id]="mapId" class="db-button" type="map"></app-db-button>
   <img (load)="loaded.emit()" alt="" class="map-image" src="{{map.image}}">
+  <img *ngFor="let aetheryte of map.aetherytes" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
+       [src]="getIcon(aetheryte.type)" alt="" class="aetheryte"
+       nz-tooltip nzTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)}}">
   <ng-container *ngFor="let marker of markers">
     <i *ngIf="!marker.iconType"
        [ngStyle]="getMarkerStyle(map, marker)"
@@ -29,7 +32,4 @@
       {{marker.materialIcon}}
     </i>
   </ng-container>
-  <img *ngFor="let aetheryte of map.aetherytes" [ngStyle]="getMarkerStyle(map, aetheryte, {x:-2,y:-2})"
-       [src]="getIcon(aetheryte.type)" alt="" class="aetheryte"
-       nz-tooltip nzTitle="{{(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)}}">
 </div>

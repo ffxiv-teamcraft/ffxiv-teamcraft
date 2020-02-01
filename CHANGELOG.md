@@ -2,6 +2,137 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.11"></a>
+## [6.5.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.10...v6.5.11) (2020-01-30)
+
+
+### Bug Fixes
+
+* **db:** do not show *used for nothing* for fishes ([1d37533](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d37533))
+* **fishing:** fixed unexpected statuses reset when fishing ([e4dce86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4dce86))
+* **list:** fixed an issue with lists page loading ([8c6fb20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c6fb20))
+* **list:** fixed an issue withinventory autofill reporting wrong amount in some cases ([4b37c06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b37c06))
+* **lists:** fixed an issue with ephemeral lists not always deleting ([f6d840a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f6d840a))
+* **log:** avoid duplicates in CRP crafting log ([d172384](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d172384))
+* **theme:** fixed an issue preventing some pages from loading with specific theme settings ([accaff6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/accaff6))
+* **user-picker:** fixed an issue preventing "user not found" message from showing ([acd094b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/acd094b))
+
+
+### Features
+
+* display desktop notification when app launches in background ([#1334](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1334)) ([f28aa9e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f28aa9e))
+* **db:** added misses popup to spot pages ([b370f2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b370f2e))
+
+
+
+<a name="6.5.10"></a>
+## [6.5.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.9...v6.5.10) (2020-01-23)
+
+
+### Bug Fixes
+
+* **data:** fixed missing aetherytes and skybuilders nodes ([ed1806c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed1806c))
+* **db:** fix korean localization ([ca6ea9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca6ea9f))
+* **desktop:** fixed an issue with always on top acting up ([26d4239](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/26d4239))
+* **desktop:** reduced the amount of state propagations for less CPU usage ([bd11e81](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bd11e81))
+* **list:** avoid multiple "what to do with this list" popups opening ([93824ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/93824ca))
+
+
+### Features
+
+* **data:** optimize filling of extended language & add Chinese to all i18n names supported ([4385414](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4385414))
+* **data:** update Chinese data ([f07601c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f07601c))
+* **db:** support for korean v5.05 update ([43569d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43569d6))
+* **list:** "only recipes" checkbox is now saved in local storage ([f980733](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f980733))
+
+
+
+<a name="6.5.9"></a>
+## [6.5.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.8...v6.5.9) (2020-01-17)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with marketboard uploader ([916d2b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/916d2b1))
+* **desktop:** fixed an issue with retainers inventory not updating ([025324d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/025324d))
+
+
+
+<a name="6.5.8"></a>
+## [6.5.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.7...v6.5.8) (2020-01-17)
+
+
+### Bug Fixes
+
+* **desktop:** packet capture doesn't increase CPU usage in crowded areas anymore ([f38c668](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f38c668))
+* **fishing:** fixed an issue with mooch not being detected properly in some cases ([ab39749](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab39749))
+* **fishing:** fixed an issue with reporter not reporting properly ([efbd034](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/efbd034))
+* **inventory-optimizer:** fixed an issue that may happen with optimizer loading ([ae99ede](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae99ede))
+* **inventory-optimizer:** now loads properly even if you have no lists at all ([7c09781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c09781))
+* **list:** added debounce of 2s to list update to avoid rollbacks when checking several items ([3c52f60](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3c52f60))
+
+
+### Features
+
+* **auth:** added a cache layer to character loading for better perfs ([d1ccaf6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1ccaf6))
+* **desktop:** application is now quitting by default when clicking close button ([feda18d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/feda18d))
+
+
+
+<a name="6.5.7"></a>
+## [6.5.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.6...v6.5.7) (2020-01-13)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with "create all alarms" button not working properly ([b183393](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b183393))
+* **db:** fixed an issue with comments crashing in some cases ([61b37e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61b37e6))
+* **db:** fixed various missing data (fish baits and hidden flag on items) ([baf6025](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/baf6025))
+* **desktop:** fixed an issue with google oauth on 2FA accounts ([3f51249](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f51249)), closes [#1269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1269)
+* **fishing:** fixed an issue with fishes in Eulmore area ([43f4f18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43f4f18))
+* **fishing:** fixed an issue with fishing state not being detected properly ([2382732](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2382732))
+* **list:** fixed an issue with japanese items search ([1227c4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1227c4f)), closes [#1318](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1318)
+
+
+### Features
+
+* **fishing-spot:** added new "hour of the day" chart ([0903dfd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0903dfd))
+* **list:** lists created before 6.1.0 will now be considered as outdated ([59b3c8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59b3c8c))
+* **simulator:** added level to craft stats display in main block ([cd26ab6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd26ab6))
+
+
+
+<a name="6.5.6"></a>
+## [6.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.5...v6.5.6) (2019-12-29)
+
+
+### Bug Fixes
+
+* **desktop:** fixed log-in with google system ([00a46e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00a46e4))
+* **desktop:** fixed memory leak when moving to a crowded area ([d5adf18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d5adf18))
+* **levequests:** fixed an issue with global exp not reporting properly ([52c0737](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52c0737))
+
+
+
+<a name="6.5.5"></a>
+## [6.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.4...v6.5.5) (2019-12-27)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with start minimized option not being applied properly ([af2cf3d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af2cf3d))
+* **inventory:** fixed an issue with quality lower action not being tracked properly ([d9d0e54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d9d0e54))
+* **list:** fixed an issue with masterbooks not showing properly ([2463cd1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2463cd1))
+
+
+### Features
+
+* **auth:** added change email button in settings, account section ([69ccaee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69ccaee))
+* **desktop:** app will now open on the same page you left it ([ff89b8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff89b8c))
+* **patreon:** new god of the hand: Post Mortem ([af37616](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af37616))
+
+
+
 <a name="6.5.4"></a>
 ## [6.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.3...v6.5.4) (2019-12-26)
 

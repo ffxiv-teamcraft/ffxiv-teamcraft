@@ -266,7 +266,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           if (row.id < 20) {
             return;
           }
-          listAlarms.push(...row.alarms.filter(alarm => {
+          listAlarms.push(...(row.alarms || []).filter(alarm => {
             // Avoid duplicates.
             return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
           }));
@@ -400,8 +400,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         list.items.forEach(item => {
           const inventoryItems = inventory.getItem(item.id, true);
           if (inventoryItems.length > 0) {
-            const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
-            list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), true);
+            let totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
+            if (item.done + totalAmount > item.amount) {
+              totalAmount = item.amount - item.done;
+            }
+            list.setDone(item.id, totalAmount, true);
           }
         });
         list.finalItems.forEach(item => {

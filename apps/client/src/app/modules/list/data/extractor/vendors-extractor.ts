@@ -55,7 +55,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
         vendor.price = itemPartial.p;
       }
       if (vendor.price > -1) {
-        const npcEntry = this.lazyData.npcs[vendorId];
+        const npcEntry = this.lazyData.data.npcs[vendorId];
         if (npcEntry && npcEntry.position) {
           const npcPosition = npcEntry.position;
           vendor.coords = { x: npcPosition.x, y: npcPosition.y };

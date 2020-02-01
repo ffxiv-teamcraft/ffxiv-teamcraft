@@ -4,8 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { NzMessageService } from 'ng-zorro-antd';
-import { first, map, switchMap, tap } from 'rxjs/operators';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -15,6 +15,7 @@ import { CustomLinksFacade } from '../../custom-links/+state/custom-links.facade
 import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { aetherytes } from '../../../core/data/sources/aetherytes';
+import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 
 @Component({
   selector: 'app-settings-popup',
@@ -41,7 +42,7 @@ export class SettingsPopupComponent {
 
   startMinimized = false;
 
-  alwaysQuit = false;
+  alwaysQuit = true;
 
   customTheme: Theme;
 
@@ -90,7 +91,8 @@ export class SettingsPopupComponent {
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
               private ipc: IpcService, private router: Router, private http: HttpClient,
-              private userService: UserService, private customLinksFacade: CustomLinksFacade) {
+              private userService: UserService, private customLinksFacade: CustomLinksFacade,
+              private dialog: NzModalService) {
 
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
@@ -175,6 +177,23 @@ export class SettingsPopupComponent {
   resetPassword(): void {
     this.af.auth.sendPasswordResetEmail(this.af.auth.currentUser.email).then(() => {
       this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
+    });
+  }
+
+  updateEmail(): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: {
+        type: 'email',
+        baseName: this.af.auth.currentUser.email
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('SETTINGS.Change_email')
+    }).afterClose.pipe(
+      filter(email => email !== undefined),
+      switchMap(email => this.authFacade.changeEmail(email))
+    ).subscribe(() => {
+      this.message.success(this.translate.instant('SETTINGS.Change_email_success'));
     });
   }
 

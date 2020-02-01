@@ -119,6 +119,14 @@ export class SettingsService {
     this.setSetting('auto-mark-as-completed', markAsCompleted.toString());
   }
 
+  public get onlyRecipesInPicker(): boolean {
+    return this.getSetting('only-recipes-in-picker', 'false') === 'true';
+  }
+
+  public set onlyRecipesInPicker(onlyRecipes: boolean) {
+    this.setSetting('only-recipes-in-picker', onlyRecipes.toString());
+  }
+
   public get clickthroughOverlay(): boolean {
     return this.getSetting('clickthrough', 'false') === 'true';
   }
@@ -188,7 +196,7 @@ export class SettingsService {
     if (themeName === 'CUSTOM') {
       return this.customTheme;
     }
-    return Theme.byName(themeName);
+    return Theme.byName(themeName) || Theme.byName('DEFAULT');
   }
 
   public set theme(theme: Theme) {

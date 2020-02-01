@@ -50,7 +50,7 @@ export class ItemIconComponent {
     if (this.icon && this.icon.toString() === this.icon && this.icon.indexOf('custom/') > -1 && !this.icon.startsWith('t/')) {
       return this.icon;
     }
-    return `https://xivapi.com${this.lazyData.icons[this.itemId]}`;
+    return `https://xivapi.com${this.lazyData.data.itemIcons[this.itemId]}`;
   }
 
 }

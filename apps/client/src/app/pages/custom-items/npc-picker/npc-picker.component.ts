@@ -37,10 +37,10 @@ export class NpcPickerComponent {
       }),
       tap(() => this.loading = true),
       map(query => {
-        return Object.keys(this.lazyData.npcs)
+        return Object.keys(this.lazyData.data.npcs)
           .map(key => {
-            const row = this.lazyData.npcs[key];
-            const koRow = this.lazyData.koNpcs[key];
+            const row = this.lazyData.data.npcs[key];
+            const koRow = this.lazyData.data.koNpcs[key];
             row.ko = koRow === undefined ? row.en : koRow.ko;
             row.id = key;
             return row;

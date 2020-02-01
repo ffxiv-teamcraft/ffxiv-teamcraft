@@ -18,20 +18,7 @@ import {
   UpdateListAtomic,
   UpdateListIndex
 } from './lists.actions';
-import {
-  catchError,
-  debounceTime,
-  delay,
-  distinctUntilChanged,
-  filter,
-  first,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
-  throttleTime,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { combineLatest, EMPTY, from, of } from 'rxjs';
@@ -156,7 +143,7 @@ export class ListsEffects {
           fcId = null;
         }
       }
-      if (list !== null) {
+      if (list !== null && !list.notFound) {
         const permissionLevel = Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
         if (permissionLevel >= PermissionLevel.READ) {
           return [listKey, list];
@@ -224,18 +211,25 @@ export class ListsEffects {
   updateListInDatabase$ = this.actions$.pipe(
     ofType<UpdateList>(ListsActionTypes.UpdateList),
     debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap(action => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
-      return this.listService.set(action.payload.$key, action.payload);
+      return this.listService.update(action.payload.$key, action.payload);
     })
   );
 
   @Effect({ dispatch: false })
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
+    debounceTime(2000),
+    filter(action => {
+      return !action.payload.isComplete();
+    }),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
@@ -321,7 +315,7 @@ export class ListsEffects {
             itemName: this.i18n.getName(this.l12n.getItem(action.itemId)),
             listName: list.name
           });
-          const notificationIcon = `https://xivapi.com${this.lazyData.icons[action.itemId]}`;
+          const notificationIcon = `https://xivapi.com${this.lazyData.data.itemIcons[action.itemId]}`;
           const audio = new Audio(`./assets/audio/${this.settings.autofillCompletionSound}.mp3`);
           audio.loop = false;
           audio.volume = this.settings.autofillCompletionVolume;
@@ -385,6 +379,7 @@ export class ListsEffects {
     filter(([action, list, userId]) => {
       return !list.ephemeral && list.authorId === userId && list.isComplete();
     }),
+    debounceTime(2000),
     tap(([, list]) => {
       this.dialog.create({
         nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),

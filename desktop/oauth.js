@@ -50,6 +50,8 @@ module.exports = function(config) {
         let code = query.code;
         let error = query.error;
 
+        console.log(error, code);
+
         if (error !== undefined) {
           reject(error);
           if (authWindow) {
@@ -81,11 +83,11 @@ module.exports = function(config) {
 
       // Prepare to filter only the callbacks for my redirectUri
       const filter = {
-        urls: [config.redirect_uri + '*']
+        urls: ['http://localhost/*']
       };
 
       // intercept all the requests for that includes my redirect uri
-      session.defaultSession.webRequest.onBeforeRequest(filter, function (details, callback) {
+      session.defaultSession.webRequest.onBeforeRequest(filter, function(details, callback) {
         const url = details.url;
         // process the callback url and get any param you need
         onCallback(url);
@@ -94,6 +96,16 @@ module.exports = function(config) {
         callback({
           cancel: false
         });
+      });
+
+      let googleLoginURLs = ['accounts.google.com/signin/oauth', 'accounts.google.com/ServiceLogin'];
+      session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
+        googleLoginURLs.forEach((loginURL) => {
+          if (details.url.indexOf(loginURL) > -1) {
+            details.requestHeaders['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:58.0) Gecko/20100101 Firefox/58.0';
+          }
+        });
+        callback({ cancel: false, requestHeaders: details.requestHeaders });
       });
     });
   }

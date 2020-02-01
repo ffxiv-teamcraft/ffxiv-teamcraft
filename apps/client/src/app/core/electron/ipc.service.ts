@@ -185,15 +185,17 @@ export class IpcService {
       this.send('app-state:get');
     } else {
       this._ipc.removeAllListeners('app-state');
-      this.stateSubscription = this.store.subscribe(state => {
-        this.send('app-state:set', state);
-      });
+      this.stateSubscription = this.store
+        .pipe(debounceTime(250))
+        .subscribe(state => {
+          this.send('app-state:set', state);
+        });
     }
   }
 
   private handlePacket(packet: any): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
-    if (this._overlayUri === undefined) {
+    if (!this.overlayUri) {
       this.packets$.next(packet);
       const debugPackets = (<any>window).debugPackets;
       if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {

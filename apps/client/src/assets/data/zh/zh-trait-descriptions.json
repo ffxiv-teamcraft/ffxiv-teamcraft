@@ -1,0 +1,1292 @@
+{
+  "1": {
+    "zh": "耐力值增加8点"
+  },
+  "2": {
+    "zh": "耐力值增加16点"
+  },
+  "3": {
+    "zh": "耐力值增加24点"
+  },
+  "4": {
+    "zh": "耐力值增加8点"
+  },
+  "5": {
+    "zh": "耐力值增加16点"
+  },
+  "6": {
+    "zh": "耐力值增加24点"
+  },
+  "7": {
+    "zh": "力量值增加8点"
+  },
+  "8": {
+    "zh": "力量值增加16点"
+  },
+  "9": {
+    "zh": "力量值增加24点"
+  },
+  "10": {
+    "zh": "疾风迅雷可以累积到2档"
+  },
+  "11": {
+    "zh": "疾风迅雷可以累积到3档"
+  },
+  "12": {
+    "zh": "力量值增加8点"
+  },
+  "13": {
+    "zh": "力量值增加16点"
+  },
+  "14": {
+    "zh": "力量值增加24点"
+  },
+  "15": {
+    "zh": "灵巧值增加8点"
+  },
+  "16": {
+    "zh": "灵巧值增加16点"
+  },
+  "17": {
+    "zh": "为自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>强力射击（发动几率20%）"
+  },
+  "18": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.1倍"
+  },
+  "19": {
+    "zh": "灵巧值增加24点"
+  },
+  "20": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.2倍"
+  },
+  "21": {
+    "zh": "精神值增加8点"
+  },
+  "22": {
+    "zh": "精神值增加16点"
+  },
+  "23": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "24": {
+    "zh": "精神值增加24点"
+  },
+  "25": {
+    "zh": "下次咏唱的救疗不消耗魔力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>治疗（发动几率15%）"
+  },
+  "26": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "27": {
+    "zh": "智力值增加8点"
+  },
+  "28": {
+    "zh": "智力值增加16点"
+  },
+  "29": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍\n星极火与灵极冰可以累积到2档"
+  },
+  "30": {
+    "zh": "智力值增加24点"
+  },
+  "31": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍\n星极火与灵极冰可以累积到3档\n在3档的状态下，相反属性的魔法咏唱时间减半"
+  },
+  "32": {
+    "zh": "下次咏唱爆炎时不需要咏唱时间也不会消耗魔力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>火炎（发动几率40%）"
+  },
+  "33": {
+    "zh": "下次咏唱的闪雷、震雷、暴雷、霹雷在命中时额外追加持续伤害总量的伤害，并且咏唱时间与消耗魔力均为0\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>18秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>闪雷、暴雷的持续伤害起效时（发动几率10%）或震雷、霹雷的持续伤害起效时（发动几率3%）"
+  },
+  "34": {
+    "zh": "转换到园艺工职业时自动发动三角测量的效果"
+  },
+  "35": {
+    "zh": "利用潜行可以回避的怪物等级提高到30级"
+  },
+  "36": {
+    "zh": "利用潜行可以回避的怪物等级提高到40级"
+  },
+  "37": {
+    "zh": "利用潜行可以回避的怪物等级提高到50级"
+  },
+  "38": {
+    "zh": "转换到采矿工职业时自动发动矿脉勘探的效果"
+  },
+  "39": {
+    "zh": "利用潜行可以回避的怪物等级提高到30级"
+  },
+  "40": {
+    "zh": "利用潜行可以回避的怪物等级提高到40级"
+  },
+  "41": {
+    "zh": "利用潜行可以回避的怪物等级提高到50级"
+  },
+  "42": {
+    "zh": "能够发现良材及草场在获得率方面的特殊性质"
+  },
+  "43": {
+    "zh": "能够发现良材及草场在采集次数方面的特殊性质"
+  },
+  "44": {
+    "zh": "能够发现良材及草场在优质获得率方面的特殊性质"
+  },
+  "45": {
+    "zh": "能够发现良材及草场在获得个数方面的特殊性质"
+  },
+  "46": {
+    "zh": "在属性加护效果下提高获取水晶的数量"
+  },
+  "47": {
+    "zh": "在属性加护效果下提高获取晶簇的数量"
+  },
+  "48": {
+    "zh": "能够发现矿脉及石场在获得率方面的特殊性质"
+  },
+  "49": {
+    "zh": "能够发现矿脉及石场在采集次数方面的特殊性质"
+  },
+  "50": {
+    "zh": "能够发现矿脉及石场在优质获得率方面的特殊性质"
+  },
+  "51": {
+    "zh": "能够发现矿脉及石场在获得个数方面的特殊性质"
+  },
+  "52": {
+    "zh": "在属性加护效果下提高获取水晶的数量"
+  },
+  "53": {
+    "zh": "在属性加护效果下提高获取晶簇的数量"
+  },
+  "54": {
+    "zh": "在沙海钓场也能抛竿钓鱼"
+  },
+  "55": {
+    "zh": "在云海钓场也能抛竿钓鱼"
+  },
+  "56": {
+    "zh": "利用潜行可以回避的怪物等级提高到30级"
+  },
+  "57": {
+    "zh": "利用潜行可以回避的怪物等级提高到40级"
+  },
+  "58": {
+    "zh": "利用潜行可以回避的怪物等级提高到50级"
+  },
+  "59": {
+    "zh": "能够发现最高15级的鱼洞"
+  },
+  "60": {
+    "zh": "能够发现最高35级的鱼洞"
+  },
+  "61": {
+    "zh": "能够发现最高50级的鱼洞"
+  },
+  "62": {
+    "zh": "可以将通过以小钓大钓到的鱼继续作为鱼饵"
+  },
+  "63": {
+    "zh": "发动以太超流时，自身会附加一档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太超流<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态"
+  },
+  "64": {
+    "zh": "智力值增加8点"
+  },
+  "65": {
+    "zh": "智力值增加16点"
+  },
+  "66": {
+    "zh": "自身与召唤兽除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "67": {
+    "zh": "发动以太超流时，自身会附加二档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太超流<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态"
+  },
+  "68": {
+    "zh": "智力值增加24点"
+  },
+  "69": {
+    "zh": "自身与召唤兽除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "70": {
+    "zh": "发动以太超流时，自身会附加三档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>以太超流<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态"
+  },
+  "71": {
+    "zh": "搭档的力量提高5%"
+  },
+  "72": {
+    "zh": "搭档的最大体力提高10%"
+  },
+  "73": {
+    "zh": "搭档的命中率提高5%"
+  },
+  "74": {
+    "zh": "搭档的暴击发动力提高15%"
+  },
+  "75": {
+    "zh": "搭档的力量提高5%"
+  },
+  "76": {
+    "zh": "搭档的最大体力提高10%"
+  },
+  "77": {
+    "zh": "搭档的力量提高5%"
+  },
+  "78": {
+    "zh": "搭档的最大体力提高5%"
+  },
+  "79": {
+    "zh": "搭档的命中率提高5%"
+  },
+  "80": {
+    "zh": "搭档的暴击发动力提高15%"
+  },
+  "81": {
+    "zh": "搭档的力量提高10%"
+  },
+  "82": {
+    "zh": "搭档的攻击速度提高10%"
+  },
+  "83": {
+    "zh": "搭档的精神提高10%"
+  },
+  "84": {
+    "zh": "搭档的最大体力提高5%"
+  },
+  "85": {
+    "zh": "搭档的命中率提高5%"
+  },
+  "86": {
+    "zh": "搭档的暴击发动力提高15%"
+  },
+  "87": {
+    "zh": "搭档的精神提高10%"
+  },
+  "88": {
+    "zh": "搭档的最大体力提高5%"
+  },
+  "89": {
+    "zh": "灵巧值增加8点"
+  },
+  "90": {
+    "zh": "降低从高处下落时受到的伤害"
+  },
+  "91": {
+    "zh": "灵巧值增加16点"
+  },
+  "92": {
+    "zh": "灵巧值增加24点"
+  },
+  "93": {
+    "zh": "提升自身的移动速度"
+  },
+  "94": {
+    "zh": "在采集不存在优质属性的道具时采集数量增多\n发动条件可通过<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>筹备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>来确认"
+  },
+  "95": {
+    "zh": "有时能够发现矿脉及石场的隐藏特殊性质"
+  },
+  "96": {
+    "zh": "利用潜行可以回避的怪物等级提高到54级"
+  },
+  "97": {
+    "zh": "利用潜行可以回避的怪物等级提高到57级"
+  },
+  "98": {
+    "zh": "利用潜行可以回避的怪物等级提高到60级"
+  },
+  "99": {
+    "zh": "在采集不存在优质属性的道具时采集数量增多\n发动条件可通过<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>筹备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>来确认"
+  },
+  "100": {
+    "zh": "有时能够发现良材及草场的隐藏特殊性质"
+  },
+  "101": {
+    "zh": "利用潜行可以回避的怪物等级提高到54级"
+  },
+  "102": {
+    "zh": "利用潜行可以回避的怪物等级提高到57级"
+  },
+  "103": {
+    "zh": "利用潜行可以回避的怪物等级提高到60级"
+  },
+  "104": {
+    "zh": "能够发现最高55级的鱼洞"
+  },
+  "105": {
+    "zh": "能够发现最高60级的鱼洞"
+  },
+  "106": {
+    "zh": "在浮岛钓场也能抛竿钓鱼"
+  },
+  "107": {
+    "zh": "利用潜行可以回避的怪物等级提高到54级"
+  },
+  "108": {
+    "zh": "利用潜行可以回避的怪物等级提高到57级"
+  },
+  "109": {
+    "zh": "利用潜行可以回避的怪物等级提高到60级"
+  },
+  "110": {
+    "zh": "在熔岩钓场也能抛竿钓鱼"
+  },
+  "111": {
+    "zh": "在魔泉钓场也能抛竿钓鱼"
+  },
+  "112": {
+    "zh": "耐力值增加8点"
+  },
+  "113": {
+    "zh": "耐力值增加16点"
+  },
+  "114": {
+    "zh": "耐力值增加24点"
+  },
+  "115": {
+    "zh": "灵巧值增加8点"
+  },
+  "116": {
+    "zh": "灵巧值增加16点"
+  },
+  "117": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.1倍，自身设置的浮空炮塔造成的伤害也提高至基本伤害的1.1倍"
+  },
+  "118": {
+    "zh": "灵巧值增加24点"
+  },
+  "119": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.2倍，自身设置的浮空炮塔造成的伤害也提高至基本伤害的1.2倍"
+  },
+  "120": {
+    "zh": "精神值增加8点"
+  },
+  "121": {
+    "zh": "精神值增加16点"
+  },
+  "122": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "123": {
+    "zh": "精神值增加24点"
+  },
+  "124": {
+    "zh": "下次咏唱的福星必定发动暴击\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>15秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>吉星（发动几率15%）"
+  },
+  "125": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "126": {
+    "zh": "利用潜行可以回避的怪物等级提高到64级"
+  },
+  "127": {
+    "zh": "利用潜行可以回避的怪物等级提高到67级"
+  },
+  "128": {
+    "zh": "利用潜行可以回避的怪物等级提高到70级"
+  },
+  "129": {
+    "zh": "利用潜行可以回避的怪物等级提高到64级"
+  },
+  "130": {
+    "zh": "利用潜行可以回避的怪物等级提高到67级"
+  },
+  "131": {
+    "zh": "利用潜行可以回避的怪物等级提高到70级"
+  },
+  "132": {
+    "zh": "利用潜行可以回避的怪物等级提高到64级"
+  },
+  "133": {
+    "zh": "利用潜行可以回避的怪物等级提高到67级"
+  },
+  "134": {
+    "zh": "利用潜行可以回避的怪物等级提高到70级"
+  },
+  "135": {
+    "zh": "在盐湖钓场也能抛竿钓鱼"
+  },
+  "136": {
+    "zh": "能够发现最高65级的鱼洞"
+  },
+  "137": {
+    "zh": "能够发现最高70级的鱼洞"
+  },
+  "138": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "139": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "140": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "141": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "142": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "143": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "144": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "145": {
+    "zh": "出现<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>高品质<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率略微提高"
+  },
+  "146": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "147": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "148": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "149": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "150": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "151": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "152": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "153": {
+    "zh": "开始制作后第二回合有一定几率附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>魔匠的闪念<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态，可以提高最大制作力\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>装备专家之证时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>必定触发"
+  },
+  "154": {
+    "zh": "转职为捕鱼人后自动获得鱼群测定的状态"
+  },
+  "155": {
+    "zh": "能够发现渔场的特殊性质"
+  },
+  "156": {
+    "zh": "在保护状态下替队员承受的伤害减轻20%"
+  },
+  "157": {
+    "zh": "战嚎的复唱时间缩短5秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>原初之魂、钢铁旋风、裂石飞环、地毁人亡命中敌人时，部分特定敌人除外"
+  },
+  "158": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>暗血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定技能命中时"
+  },
+  "159": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>暗血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>嗜血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中发动战技或魔法命中时"
+  },
+  "160": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时（发动几率50%）"
+  },
+  "161": {
+    "zh": "罗刹冲变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "162": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙尾大回旋<UIGlow>01</UIGlow><UIForeground>01</UIForeground>命中时可以使用一次<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙牙龙爪<UIGlow>01</UIGlow><UIForeground>01</UIForeground>，并且此时的威力上升100"
+  },
+  "163": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n在龙眼累积到第二阶段的状态下使用武神枪，苍天龙血就会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>红莲龙血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n在红莲龙血的状态下武神枪会变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>死者之岸<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n持续时间结束后，红莲龙血会恢复成苍天龙血\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>在<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>苍天龙血<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态下发动幻象冲"
+  },
+  "164": {
+    "zh": "自身发动除自动攻击外的技能造成的物理伤害提高5%"
+  },
+  "165": {
+    "zh": "发动时获得6点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技命中时或连击成功时"
+  },
+  "166": {
+    "zh": "重置缩地的复唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对敌人发动火遁之术、雷遁之术、冰遁之术时，部分特定敌人除外"
+  },
+  "167": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>提高40\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>夺取命中时"
+  },
+  "168": {
+    "zh": "毒咬箭变为烈毒咬箭，风蚀箭变为狂风蚀箭"
+  },
+  "169": {
+    "zh": "发动贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲的追加效果\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>正在使用贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲任意一种，且九天连箭命中时"
+  },
+  "170": {
+    "zh": "分裂弹变为热分裂弹，独头弹变为热独头弹，狙击弹变为热狙击弹\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>枪管热度<UIGlow>01</UIGlow><UIForeground>01</UIForeground>50以上"
+  },
+  "171": {
+    "zh": "闪雷变为暴雷"
+  },
+  "172": {
+    "zh": "震雷变为霹雷"
+  },
+  "173": {
+    "zh": "核爆的消耗魔力减为2/3\n发动时消耗全部<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态下"
+  },
+  "174": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>通晓<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>令<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>天语<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态持续30秒\n另外，<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>天语<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的效果量提高到10%"
+  },
+  "175": {
+    "zh": "毒菌变为猛毒菌"
+  },
+  "176": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>毁坏强化<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n毁坏变为毁绝\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到4档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>永久\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>发动灵攻I攻击技能时"
+  },
+  "177": {
+    "zh": "猛毒菌变为剧毒菌，瘴气变为瘴暍"
+  },
+  "178": {
+    "zh": "自身<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>附体深度<UIGlow>01</UIGlow><UIForeground>01</UIForeground>加深1档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>龙神附体状态结束时"
+  },
+  "179": {
+    "zh": "飞石变为坚石"
+  },
+  "180": {
+    "zh": "疾风变为烈风"
+  },
+  "181": {
+    "zh": "坚石变为垒石"
+  },
+  "182": {
+    "zh": "垒石变为崩石"
+  },
+  "183": {
+    "zh": "庇护所及法令的复唱时间缩短5秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>治疗和救疗暴击时（发动几率20%）"
+  },
+  "184": {
+    "zh": "气炎法变为魔炎法\n并将毁坏的威力提高到180"
+  },
+  "185": {
+    "zh": "以太超流的复唱时间缩短5秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>发动需要消耗以太超流的技能时"
+  },
+  "186": {
+    "zh": "烧灼变为炽灼"
+  },
+  "187": {
+    "zh": "凶星变为灾星"
+  },
+  "188": {
+    "zh": "灾星变为祸星"
+  },
+  "189": {
+    "zh": "光速的复唱时间缩短到90秒"
+  },
+  "190": {
+    "zh": "采集开始时可以触及到所有隐藏资源\n目标：60级以下的采集地点"
+  },
+  "191": {
+    "zh": "采集开始时可以触及到所有隐藏资源\n目标：60级以下的采集地点"
+  },
+  "192": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "193": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "194": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "195": {
+    "zh": "摇荡变为震荡"
+  },
+  "196": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>治疗百合<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到3档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身进入战斗状态后每经过30秒"
+  },
+  "197": {
+    "zh": "智力值增加8点"
+  },
+  "198": {
+    "zh": "智力值增加16点"
+  },
+  "199": {
+    "zh": "智力值增加24点"
+  },
+  "200": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "201": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "202": {
+    "zh": "力量值增加8点"
+  },
+  "203": {
+    "zh": "力量值增加16点"
+  },
+  "204": {
+    "zh": "力量值增加24点"
+  },
+  "205": {
+    "zh": "自身发动除自动攻击外的技能造成的物理伤害提高20%"
+  },
+  "206": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冲击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>震荡命中时"
+  },
+  "207": {
+    "zh": "自身发动的全部魔法的魔力消耗减少50%，且咏唱不会被敌人的攻击打断"
+  },
+  "208": {
+    "zh": "可以追加获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>剑气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>除居合术之外的战技命中时"
+  },
+  "209": {
+    "zh": "发动时获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忠义<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自动攻击命中时"
+  },
+  "210": {
+    "zh": "精神值增加8点"
+  },
+  "211": {
+    "zh": "精神值增加16点"
+  },
+  "212": {
+    "zh": "精神值增加24点"
+  },
+  "213": {
+    "zh": "内力迸发的复唱时间缩短到120秒"
+  },
+  "214": {
+    "zh": "毁灭变为气炎法\n并将毁坏和破阵法的威力提高到160"
+  },
+  "215": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>剑气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定战技命中时"
+  },
+  "216": {
+    "zh": "发动有咏唱时间的魔法时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>连续咏唱<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>连续咏唱效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>下次咏唱魔法不需要咏唱时间\n若在持续时间中发动自动攻击或能力之外的技能，会立即解除连续咏唱状态"
+  },
+  "217": {
+    "zh": "毁灭变为毁荡"
+  },
+  "218": {
+    "zh": "狂暴变为原初的解放"
+  },
+  "219": {
+    "zh": "击倒特定的敌人时有机会学会青魔法技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>习得条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>敌人在战斗中使用了有机会学习的技能"
+  },
+  "220": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.1倍，恢复技能的恢复量也提高至基本值的1.1倍"
+  },
+  "221": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.2倍，恢复技能的恢复量也提高至基本值的1.2倍"
+  },
+  "222": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.3倍，恢复技能的恢复量也提高至基本值的1.3倍"
+  },
+  "223": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.4倍，恢复技能的恢复量也提高至基本值的1.4倍"
+  },
+  "224": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本值的1.5倍，恢复技能的恢复量也提高至基本值的1.5倍"
+  },
+  "225": {
+    "zh": "利用潜行可以回避的怪物等级提高到74级"
+  },
+  "226": {
+    "zh": "利用潜行可以回避的怪物等级提高到77级"
+  },
+  "227": {
+    "zh": "利用潜行可以回避的怪物等级提高到80级"
+  },
+  "228": {
+    "zh": "利用潜行可以回避的怪物等级提高到74级"
+  },
+  "229": {
+    "zh": "利用潜行可以回避的怪物等级提高到77级"
+  },
+  "230": {
+    "zh": "利用潜行可以回避的怪物等级提高到80级"
+  },
+  "231": {
+    "zh": "利用潜行可以回避的怪物等级提高到74级"
+  },
+  "232": {
+    "zh": "利用潜行可以回避的怪物等级提高到77级"
+  },
+  "233": {
+    "zh": "利用潜行可以回避的怪物等级提高到80级"
+  },
+  "234": {
+    "zh": "能够发现最高75级的鱼洞"
+  },
+  "235": {
+    "zh": "能够发现最高80级的鱼洞"
+  },
+  "236": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "237": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "238": {
+    "zh": "采集力的自动恢复量提高"
+  },
+  "239": {
+    "zh": ""
+  },
+  "240": {
+    "zh": ""
+  },
+  "241": {
+    "zh": ""
+  },
+  "242": {
+    "zh": ""
+  },
+  "243": {
+    "zh": ""
+  },
+  "244": {
+    "zh": ""
+  },
+  "245": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率上升到70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时"
+  },
+  "246": {
+    "zh": "暴乱剑与深奥之灵可恢复魔力"
+  },
+  "247": {
+    "zh": "精准刺威力提高至290，贯通刺威力提高至140，开膛枪威力提高至150\n另外，在使用龙牙龙爪命中后使用龙尾大回旋时，或在使用龙尾大回旋命中后使用龙牙龙爪时，若攻击正确的方向，会对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n效果时间内，精准刺变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "248": {
+    "zh": ""
+  },
+  "249": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>兽魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>凶残裂与暴风斩连击成功时"
+  },
+  "250": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>生杀予夺<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中火遁之术与冰遁之术分别变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>劫火灭却之术<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>冰晶乱流之术<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "251": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.1倍"
+  },
+  "252": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>幻扇<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到4档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特定技能命中时"
+  },
+  "253": {
+    "zh": "除自动攻击外的技能造成的伤害提高至基本伤害的1.2倍"
+  },
+  "254": {
+    "zh": "前冲步变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "255": {
+    "zh": "标准舞步结束及技巧舞步结束成功时，对自身及周围的队员附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n效果时间内，自身或队员的战技或魔法攻击命中时，可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>伶俐<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n伶俐量值的获得数量与发动几率会根据各特职产生变化"
+  },
+  "256": {
+    "zh": "前冲步最多可积蓄3次"
+  },
+  "257": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>晶壤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到2档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>迅连斩连击成功时"
+  },
+  "258": {
+    "zh": "对自身附加能够抵御一定伤害的防护罩<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>残暴弹<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>残暴弹连击成功时"
+  },
+  "259": {
+    "zh": "危险领域变为爆破领域"
+  },
+  "260": {
+    "zh": "战女神之怒变为王权剑"
+  },
+  "261": {
+    "zh": "日珥斩可恢复魔力"
+  },
+  "262": {
+    "zh": "盾阵的持续时间延长到6秒"
+  },
+  "263": {
+    "zh": "一定时间内，咏唱魔法不需要咏唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>安魂祈祷<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "264": {
+    "zh": "对自身附加3档的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忠义之剑<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>王权剑连击成功时"
+  },
+  "265": {
+    "zh": "原初之魂变为裂石飞环"
+  },
+  "266": {
+    "zh": "钢铁旋风变为地毁人亡"
+  },
+  "267": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的混沌<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的混沌效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>地毁人亡变为混沌旋风\n当学会狂魂后，裂石飞环变为狂魂\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>战嚎<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "268": {
+    "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>兽魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>秘银暴风连击成功时"
+  },
+  "269": {
+    "zh": "为战栗附加自身所受的体力恢复效果提高20%的效果"
+  },
+  "270": {
+    "zh": ""
+  },
+  "271": {
+    "zh": "暗黑波动变为暗影波动，暗黑锋变为暗影锋"
+  },
+  "272": {
+    "zh": "跳斩变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "273": {
+    "zh": "疾风迅雷可以累积到4档\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>疾风体势<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+  },
+  "274": {
+    "zh": "效果量提高到10%"
+  },
+  "275": {
+    "zh": "跳跃变为高跳"
+  },
+  "276": {
+    "zh": "苍天龙血与红莲龙血的持续时间延长到30秒"
+  },
+  "277": {
+    "zh": "居合术的咏唱时间缩短到1.3秒"
+  },
+  "278": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>阵风<UIGlow>01</UIGlow><UIForeground>01</UIForeground>与<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>士风<UIGlow>01</UIGlow><UIForeground>01</UIForeground>效果量提高到13%"
+  },
+  "279": {
+    "zh": "缩地变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "280": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到8\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技命中时或连击成功时"
+  },
+  "281": {
+    "zh": ""
+  },
+  "282": {
+    "zh": "直线射击变为辉煌箭"
+  },
+  "283": {
+    "zh": "重置失血箭与死亡箭雨的复唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>连珠箭命中时（发动几率30%）"
+  },
+  "284": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>直线射击预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>狂风蚀箭、烈毒咬箭、伶牙俐齿命中时（发动几率35%）"
+  },
+  "285": {
+    "zh": "强力射击变为爆发射击"
+  },
+  "286": {
+    "zh": "军神的赞美歌状态中且身上有<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>诗心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>时，使用贤者的叙事谣或放浪神的小步舞曲会对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的加护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>军神的加护效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自动攻击间隔、战技与魔法的咏唱及复唱时间缩短\n\n此外，军神的赞美歌状态中且身上有<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>诗心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>时，如果没有使用贤者的叙事谣或放浪神的小步舞曲，则在军神的赞美歌状态自动结束时对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的契约<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>军神的契约效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>使用贤者的叙事谣、军神的赞美歌、放浪神的小步舞曲时，对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的加护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n不论哪种情况，该状态的效果量都会随<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的加护<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>军神的契约<UIGlow>01</UIGlow><UIForeground>01</UIForeground>附加时<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>诗心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>的档数发生变化\n\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>诗心1档时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>诗心2档时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>诗心3档时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>4%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>诗心4档时：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>12%"
+  },
+  "287": {
+    "zh": "发动时获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵魂之声<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>诗心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态时"
+  },
+  "288": {
+    "zh": "分裂弹变为热分裂弹"
+  },
+  "289": {
+    "zh": "独头弹变为热独头弹"
+  },
+  "290": {
+    "zh": "狙击弹变为热狙击弹"
+  },
+  "291": {
+    "zh": "热弹变为空气锚"
+  },
+  "292": {
+    "zh": "虹吸弹和弹射积蓄次数增加到3次"
+  },
+  "293": {
+    "zh": "野火的“每命中1次战技的威力”提高到200"
+  },
+  "294": {
+    "zh": "车式浮空炮塔变为后式自走人偶，超档车式炮塔变为超档后式人偶"
+  },
+  "295": {
+    "zh": "对自身附加1档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极心<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>玄冰"
+  },
+  "296": {
+    "zh": "当自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>星极火<UIGlow>01</UIGlow><UIForeground>01</UIForeground>或<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>灵极冰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>达到最高档数时，相反属性的魔法将不消耗魔力\n但不适用于核爆"
+  },
+  "297": {
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>通晓<UIGlow>01</UIGlow><UIForeground>01</UIForeground>可以积累到2档"
+  },
+  "298": {
+    "zh": "对自身附加2档<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>附体深度<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>龙神附体状态结束时"
+  },
+  "299": {
+    "zh": "发动灵攻II攻击技能时，可同时发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>毁坏效果提高<UIGlow>01</UIGlow><UIForeground>01</UIForeground>特性"
+  },
+  "300": {
+    "zh": "衰败的持续时间延长到30秒"
+  },
+  "301": {
+    "zh": "发动灾祸时，可以扩散自身附加在目标身上的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>衰败<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "302": {
+    "zh": "可使亚灵神不死鸟显现　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>显现时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒\n亚灵神不死鸟显现时发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>不死鸟之翼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n另外，当召唤者对敌人发动魔法攻击时，亚灵神不死鸟将同时发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>赤焰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n之前召唤出的召唤兽会在亚灵神不死鸟显现时被召回，显现时间结束后会被再次召唤\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>召唤兽处于同行状态并发动不死鸟附体时"
+  },
+  "303": {
+    "zh": "散碎变为冲击"
+  },
+  "304": {
+    "zh": "移转的威力提高到200"
+  },
+  "305": {
+    "zh": "倍增的复唱时间缩短到110秒\n并附加自身造成的魔法伤害提高5%的效果"
+  },
+  "306": {
+    "zh": "六分反击的复唱时间缩短到35秒\n并将赤震雷与赤烈风的威力提高到120"
+  },
+  "307": {
+    "zh": "疾风变为天辉"
+  },
+  "308": {
+    "zh": "崩石变为闪耀"
+  },
+  "309": {
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>血百合<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到3档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>安慰之心"
+  },
+  "310": {
+    "zh": "为庇护所附加区域内的自身和队员所受的体力恢复效果提高10%的效果"
+  },
+  "311": {
+    "zh": "猛毒菌变为蛊毒法"
+  },
+  "312": {
+    "zh": "魔炎法变为死炎法\n并将毁坏的威力提高到200"
+  },
+  "313": {
+    "zh": "为野战治疗阵附加区域内的自身和队员体力持续恢复的效果"
+  },
+  "314": {
+    "zh": "炽灼变为焚灼"
+  },
+  "315": {
+    "zh": "祸星变为煞星"
+  },
+  "316": {
+    "zh": "先天禀赋变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
+  },
+  "317": {
+    "zh": "将自身所受的伤害减轻20%\n另外，随耐力提升的最大体力值和随力量提升的伤害量将受到防护职业专属修正的影响"
+  },
+  "318": {
+    "zh": "将自身所受的伤害减轻20%\n另外，随耐力提升的最大体力值和随力量提升的伤害量将受到防护职业专属修正的影响"
+  },
+  "319": {
+    "zh": "将自身所受的伤害减轻20%\n另外，随耐力提升的最大体力值和随力量提升的伤害量将受到防护职业专属修正的影响"
+  },
+  "320": {
+    "zh": "将自身所受的伤害减轻20%\n另外，随耐力提升的最大体力值和随力量提升的伤害量将受到防护职业专属修正的影响"
+  },
+  "321": {
+    "zh": "激情咏唱的复唱时间缩短到30秒"
+  },
+  "322": {
+    "zh": "天语的效果量提高到15%"
+  },
+  "323": {
+    "zh": ""
+  },
+  "324": {
+    "zh": "毒菌变为猛毒菌"
+  },
+  "325": {
+    "zh": ""
+  },
+  "326": {
+    "zh": ""
+  },
+  "327": {
+    "zh": ""
+  },
+  "328": {
+    "zh": ""
+  },
+  "329": {
+    "zh": ""
+  },
+  "330": {
+    "zh": ""
+  },
+  "331": {
+    "zh": ""
+  },
+  "332": {
+    "zh": ""
+  },
+  "333": {
+    "zh": ""
+  },
+  "334": {
+    "zh": ""
+  },
+  "335": {
+    "zh": ""
+  },
+  "336": {
+    "zh": ""
+  },
+  "337": {
+    "zh": ""
+  },
+  "338": {
+    "zh": ""
+  },
+  "339": {
+    "zh": ""
+  },
+  "340": {
+    "zh": ""
+  },
+  "341": {
+    "zh": ""
+  },
+  "342": {
+    "zh": ""
+  },
+  "343": {
+    "zh": ""
+  },
+  "344": {
+    "zh": ""
+  },
+  "345": {
+    "zh": ""
+  },
+  "346": {
+    "zh": ""
+  },
+  "347": {
+    "zh": ""
+  },
+  "348": {
+    "zh": ""
+  },
+  "349": {
+    "zh": ""
+  },
+  "350": {
+    "zh": ""
+  },
+  "351": {
+    "zh": ""
+  },
+  "352": {
+    "zh": ""
+  },
+  "353": {
+    "zh": ""
+  },
+  "354": {
+    "zh": ""
+  },
+  "355": {
+    "zh": ""
+  },
+  "356": {
+    "zh": ""
+  },
+  "357": {
+    "zh": ""
+  },
+  "358": {
+    "zh": ""
+  },
+  "359": {
+    "zh": ""
+  },
+  "360": {
+    "zh": ""
+  },
+  "361": {
+    "zh": ""
+  },
+  "362": {
+    "zh": ""
+  },
+  "363": {
+    "zh": ""
+  },
+  "364": {
+    "zh": ""
+  },
+  "365": {
+    "zh": ""
+  },
+  "366": {
+    "zh": ""
+  },
+  "367": {
+    "zh": ""
+  },
+  "368": {
+    "zh": ""
+  },
+  "369": {
+    "zh": ""
+  },
+  "370": {
+    "zh": ""
+  },
+  "371": {
+    "zh": ""
+  },
+  "372": {
+    "zh": ""
+  },
+  "373": {
+    "zh": ""
+  },
+  "374": {
+    "zh": ""
+  },
+  "375": {
+    "zh": ""
+  },
+  "376": {
+    "zh": ""
+  },
+  "377": {
+    "zh": ""
+  },
+  "378": {
+    "zh": ""
+  },
+  "379": {
+    "zh": ""
+  },
+  "380": {
+    "zh": ""
+  },
+  "381": {
+    "zh": ""
+  },
+  "382": {
+    "zh": ""
+  },
+  "383": {
+    "zh": ""
+  },
+  "384": {
+    "zh": ""
+  },
+  "385": {
+    "zh": ""
+  },
+  "386": {
+    "zh": ""
+  },
+  "387": {
+    "zh": ""
+  },
+  "388": {
+    "zh": ""
+  },
+  "389": {
+    "zh": ""
+  },
+  "390": {
+    "zh": ""
+  },
+  "391": {
+    "zh": ""
+  },
+  "392": {
+    "zh": ""
+  },
+  "393": {
+    "zh": ""
+  },
+  "394": {
+    "zh": ""
+  },
+  "395": {
+    "zh": ""
+  },
+  "396": {
+    "zh": ""
+  },
+  "397": {
+    "zh": ""
+  },
+  "398": {
+    "zh": ""
+  },
+  "399": {
+    "zh": ""
+  },
+  "400": {
+    "zh": ""
+  },
+  "401": {
+    "zh": ""
+  },
+  "402": {
+    "zh": ""
+  },
+  "403": {
+    "zh": ""
+  },
+  "404": {
+    "zh": ""
+  },
+  "405": {
+    "zh": ""
+  },
+  "406": {
+    "zh": ""
+  },
+  "407": {
+    "zh": ""
+  },
+  "408": {
+    "zh": ""
+  },
+  "409": {
+    "zh": ""
+  },
+  "410": {
+    "zh": ""
+  },
+  "411": {
+    "zh": ""
+  },
+  "412": {
+    "zh": ""
+  },
+  "413": {
+    "zh": ""
+  },
+  "414": {
+    "zh": ""
+  },
+  "415": {
+    "zh": ""
+  },
+  "416": {
+    "zh": ""
+  },
+  "417": {
+    "zh": ""
+  },
+  "418": {
+    "zh": ""
+  },
+  "419": {
+    "zh": ""
+  },
+  "420": {
+    "zh": ""
+  },
+  "421": {
+    "zh": ""
+  },
+  "422": {
+    "zh": ""
+  },
+  "423": {
+    "zh": ""
+  },
+  "424": {
+    "zh": ""
+  },
+  "425": {
+    "zh": ""
+  },
+  "426": {
+    "zh": ""
+  },
+  "427": {
+    "zh": ""
+  },
+  "428": {
+    "zh": ""
+  },
+  "429": {
+    "zh": ""
+  },
+  "430": {
+    "zh": ""
+  }
+}

@@ -18,6 +18,8 @@ export class NameQuestionPopupComponent implements OnInit {
   @Input()
   showOfflineCheckbox = false;
 
+  public type = 'text';
+
   public control: FormGroup;
 
   constructor(private modalRef: NzModalRef, private fb: FormBuilder) {

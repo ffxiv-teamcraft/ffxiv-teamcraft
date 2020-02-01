@@ -46,6 +46,7 @@
         <div class="detail-value">{{spot.GatheringLevel}}</div>
       </div>
       <div fxFlex="1 1 auto"></div>
+      <button nz-button (click)="showMissesPopup(spot.ID)">{{'DB.FISH.Show_misses' | translate}}</button>
       <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
               (click)="loading = true;reloader$.next(null)">
         <i nz-icon nzType="reload" nzTheme="outline"></i>
@@ -129,6 +130,23 @@
             </div>
           </nz-card>
         </div>
+
+        <nz-card [nzTitle]="'DB.FISH.Hour' | translate">
+          <div [style.height]="'400px'">
+            <ngx-charts-area-chart-stacked
+              [gradient]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="true"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false"
+              [activeEntries]="activeEntries$ | async"
+              [results]="data.fishesPerHourChart.data"
+              (activate)="onChartHover($event, spot)"
+              (deactivate)="highlightedFish$.next(-1)"
+            ></ngx-charts-area-chart-stacked>
+          </div>
+        </nz-card>
 
         <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
           <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate" class="card-with-list expanded">

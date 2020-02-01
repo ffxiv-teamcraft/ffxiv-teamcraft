@@ -9,16 +9,18 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { fishingSpots } from '../../../core/data/sources/fishing-spots';
 import gql from 'graphql-tag';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { Apollo } from 'apollo-angular';
 import { WeatherService } from '../../../core/eorzea/weather.service';
+import { NzModalService } from 'ng-zorro-antd';
+import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
+import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 
 @Component({
   selector: 'app-fishing-spot',
@@ -41,27 +43,42 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
+  public activeEntries$: Observable<any[]> = this.highlightedFish$.pipe(
+    distinctUntilChanged(),
+    debounceTime(100),
+    map(fishId => {
+      if (fishId <= 0) {
+        return [];
+      }
+      return [
+        {
+          name: this.i18n.getName(this.l12n.getItem(fishId))
+        }
+      ];
+    })
+  );
+
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, public translate: TranslateService,
               private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
               private etime: EorzeanTimeService, private apollo: Apollo, private weatherService: WeatherService,
-              seo: SeoService) {
+              private dialog: NzModalService, seo: SeoService) {
     super(seo);
 
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          [this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getPlace(fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          ['../', this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -81,7 +98,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.FishingSpot, +id);
       }),
       map(spot => {
-        spot.customData = fishingSpots.find(s => s.id === spot.ID);
+        spot.customData = this.lazyData.data.fishingSpots.find(s => s.id === spot.ID);
         return spot;
       }),
       shareReplay(1)
@@ -122,6 +139,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         );
       }),
       map(([spot, gubalData, time]) => {
+        const hours = Array.from(Array(24).keys());
         return {
           weathers: weatherIndex[spot.TerritoryType.WeatherRate]
             .map(row => {
@@ -168,7 +186,24 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
             }
             return a.next - b.next;
           }),
-          fishes: fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
+          fishesPerHourChart: {
+            data: spot.customData.fishes
+              .filter(fish => fish > 0)
+              .map(fish => {
+                return {
+                  name: this.i18n.getName(this.l12n.getItem(fish)),
+                  series: hours
+                    .map(hour => {
+                      const row = gubalData.data.etimes_per_fish_per_spot.find(r => r.itemId === fish && r.etime === hour);
+                      return {
+                        name: `${hour}:00`,
+                        value: row ? row.occurences : 0
+                      };
+                    })
+                };
+              })
+          },
+          fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
           fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
             return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
           }), 'itemId', 'baitId', 'occurences'),
@@ -197,6 +232,13 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         this.loading = false;
       })
     );
+  }
+
+  public onChartHover(event: any, spot: any): void {
+    const itemId = spot.customData.fishes.find(fish => {
+      return this.i18n.getName(this.l12n.getItem(fish)) === event.value.name;
+    });
+    this.highlightedFish$.next(itemId);
   }
 
   private getGraphQLQuery(spotId: number): any {
@@ -260,6 +302,18 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   private getColor(weight: number): string {
     return `rgba(${this.highlightColor[0]}, ${this.highlightColor[1]}, ${this.highlightColor[2]}, ${Math.floor(weight * 90) / 100})`;
+  }
+
+  public showMissesPopup(spotId: number): void {
+    this.dialog.create({
+      nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
+      nzContent: FishingMissesPopupComponent,
+      nzComponentParams: {
+        spotId: spotId
+      },
+      nzFooter: null,
+      nzWidth: '80vw'
+    });
   }
 
   private getWeatherChances(mapId: number, weatherId: number): number {

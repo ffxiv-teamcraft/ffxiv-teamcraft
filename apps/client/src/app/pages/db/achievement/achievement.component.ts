@@ -11,7 +11,6 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { achievements } from '../../../core/data/sources/achievements';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
@@ -36,15 +35,15 @@ export class AchievementComponent extends TeamcraftPageComponent {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')],
+          [this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')) {
+      } else if (slug !== this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')) {
         this.router.navigate(
-          ['../', this.i18n.getName(achievements[+params.get('achievementId')]).split(' ').join('-')],
+          ['../', this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')],
           {
             relativeTo: this.route,
             replaceUrl: true

@@ -257,7 +257,7 @@
   "Login": "ログイン",
   "Disconnect": "ログアウト",
   "Password": "パスワード",
-  "Password_Confirmation": "確認のため再入力",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "提出する",
   "Invalid_credentials": "無効なログイン認証情報",
   "Not_verified": "未確認",
@@ -391,6 +391,8 @@
     "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
     "Performance_mode": "Performance mode",
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
+    "Change_email": "Change email",
+    "Change_email_success": "Email changed",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -1345,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Hour of the day",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Bait used",
       "Hookset_and_tug": "Hooksets and tugs",
       "Weathers": "Weathers",

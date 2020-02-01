@@ -257,7 +257,7 @@
   "Login": "Login",
   "Disconnect": "Desconectar",
   "Password": "Senha",
-  "Password_Confirmation": "Confirmação",
+  "Password_Confirmation": "Confirm Password",
   "Submit": "Enviar",
   "Invalid_credentials": "Credênciais inválidas",
   "Not_verified": "Não verificado",
@@ -391,6 +391,8 @@
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Performance_mode": "Performance mode",
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
+    "Change_email": "Change email",
+    "Change_email_success": "Email changed",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1345,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Hour of the day",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Bait used",
       "Hookset_and_tug": "Hooksets and tugs",
       "Weathers": "Weathers",

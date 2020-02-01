@@ -89,6 +89,10 @@ function createWindow() {
   } else {
     deepLink = config.get('router:uri') || '';
   }
+  // It seems like somehow, this could happen.
+  if (deepLink.indexOf('overlay') > -1) {
+    deepLink = '';
+  }
   let opts = {
     show: false,
     backgroundColor: '#000',
@@ -142,16 +146,21 @@ function createWindow() {
     if (!config.get('start-minimized')) {
       win.focus();
       win.show();
+      if (config.get('win:fullscreen')) {
+        win.maximize();
+      }
     }
-    if (config.get('win:fullscreen')) {
-      win.maximize();
+    if (config.get('start-minimized')) {
+      tray.displayBalloon({
+        title: "Teamcraft launched in the background",
+        content: "To change this behavior, visit Settings -> Desktop."});
     }
     autoUpdater.checkForUpdates();
   });
 
   // save window size and position
   win.on('close', (event) => {
-    if (!app.isQuitting && !config.get('always-quit')) {
+    if (!app.isQuitting && config.get('always-quit', true) === false) {
       event.preventDefault();
       win.hide();
       return false;
@@ -189,7 +198,6 @@ function openOverlay(overlayConfig) {
     show: false,
     resizable: true,
     frame: false,
-    alwaysOnTop: true,
     autoHideMenuBar: true,
     width: dimensions.x,
     height: dimensions.y,
@@ -199,8 +207,9 @@ function openOverlay(overlayConfig) {
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
-  opts.alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
+  const alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
   const overlay = new BrowserWindow(opts);
+  overlay.setAlwaysOnTop(alwaysOnTop, 'screen-saver');
   overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
@@ -302,10 +311,16 @@ ipcMain.on('toggle-machina:get', (event) => {
 });
 
 let fishingState = {};
-
+const overlaysNeedingFishingState = [
+  '/fishing-reporter-overlay'
+];
 ipcMain.on('fishing-state:set', (_, data) => {
   fishingState = data;
-  broadcast('fishing-state', data);
+  overlaysNeedingFishingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('fishing-state', data);
+    }
+  });
 });
 
 ipcMain.on('fishing-state:get', (event) => {
@@ -314,10 +329,16 @@ ipcMain.on('fishing-state:get', (event) => {
 
 
 let appState = {};
-
+const overlaysNeedingState = [
+  '/list-panel-overlay'
+];
 ipcMain.on('app-state:set', (_, data) => {
   appState = data;
-  broadcast('app-state', data);
+  overlaysNeedingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('app-state', data);
+    }
+  });
 });
 
 ipcMain.on('app-state:get', (event) => {
@@ -432,7 +453,7 @@ ipcMain.on('run-update', () => {
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop, 'floating');
+  win.setAlwaysOnTop(onTop, 'screen-saver');
 });
 
 ipcMain.on('always-on-top:get', (event) => {
@@ -444,7 +465,7 @@ ipcMain.on('always-quit', (event, flag) => {
 });
 
 ipcMain.on('always-quit:get', (event) => {
-  event.sender.send('always-quit:value', config.get('always-quit'));
+  event.sender.send('always-quit:value', config.get('always-quit', true));
 });
 
 ipcMain.on('start-minimized', (event, flag) => {
@@ -476,7 +497,7 @@ ipcMain.on('overlay:get-opacity', (event, data) => {
 ipcMain.on('overlay:set-on-top', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
   if (overlayWindow !== undefined) {
-    overlayWindow.setAlwaysOnTop(data.onTop);
+    overlayWindow.setAlwaysOnTop(data.onTop, 'screen-saver');
   }
 });
 
