@@ -3,11 +3,11 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "6.5.11",
+  "version": "6.5.12",
   "license": "MIT",
   "main": "desktop/main.js",
   "repository": {
-    "url": "https://github.com/ffxiv-teamcraft/ffxiv-teamcraft"
+    "url": "https://github.com/supamiu/ffxiv-teamcraft"
   },
   "build": {
     "appId": "ffxivteamcraft",
