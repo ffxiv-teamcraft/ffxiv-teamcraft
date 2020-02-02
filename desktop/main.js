@@ -1,5 +1,4 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu } = require('electron');
-const { autoUpdater } = require('electron-updater');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu, autoUpdater } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
@@ -42,8 +41,12 @@ for (let i = 0; i < argv.length; i++) {
   }
 }
 
-if (isDev) {
-  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+log.log(argv);
+
+if (!isDev && argv.indexOf('squirrel-firstrun') === -1) {
+  require('update-electron-app')({
+    logger: log
+  });
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
@@ -152,10 +155,11 @@ function createWindow() {
     }
     if (config.get('start-minimized')) {
       tray.displayBalloon({
-        title: "Teamcraft launched in the background",
-        content: "To change this behavior, visit Settings -> Desktop."});
+        title: 'Teamcraft launched in the background',
+        content: 'To change this behavior, visit Settings -> Desktop.'
+      });
     }
-    autoUpdater.checkForUpdates();
+    // autoUpdater.checkForUpdates();
   });
 
   // save window size and position
@@ -367,40 +371,40 @@ app.on('activate', function() {
     createWindow();
   }
 });
-
-autoUpdater.on('checking-for-update', () => {
-  log.log('Checking for update');
-  win && win.webContents.send('checking-for-update', true);
-});
-
-autoUpdater.on('download-progress', (progress) => {
-  win && win.webContents.send('download-progress', progress);
-});
-
-autoUpdater.on('update-available', () => {
-  log.log('Update available');
-  win && win.webContents.send('update-available', true);
-});
-
-autoUpdater.on('update-not-available', () => {
-  log.log('No update found');
-  win && win.webContents.send('update-available', false);
-});
-
-autoUpdater.on('update-downloaded', () => {
-  log.log('Update downloaded');
-  clearInterval(updateInterval);
-  dialog.showMessageBox({
-    type: 'info',
-    title: 'FFXIV Teamcraft - Update available',
-    message: 'An update is available and downloaded, install now?',
-    buttons: ['Yes', 'No']
-  }, (buttonIndex) => {
-    if (buttonIndex === 0) {
-      autoUpdater.quitAndInstall();
-    }
-  });
-});
+//
+// autoUpdater.on('checking-for-update', () => {
+//   log.log('Checking for update');
+//   win && win.webContents.send('checking-for-update', true);
+// });
+//
+// autoUpdater.on('download-progress', (progress) => {
+//   win && win.webContents.send('download-progress', progress);
+// });
+//
+// autoUpdater.on('update-available', () => {
+//   log.log('Update available');
+//   win && win.webContents.send('update-available', true);
+// });
+//
+// autoUpdater.on('update-not-available', () => {
+//   log.log('No update found');
+//   win && win.webContents.send('update-available', false);
+// });
+//
+// autoUpdater.on('update-downloaded', () => {
+//   log.log('Update downloaded');
+//   clearInterval(updateInterval);
+//   dialog.showMessageBox({
+//     type: 'info',
+//     title: 'FFXIV Teamcraft - Update available',
+//     message: 'An update is available and downloaded, install now?',
+//     buttons: ['Yes', 'No']
+//   }, (buttonIndex) => {
+//     if (buttonIndex === 0) {
+//       autoUpdater.quitAndInstall();
+//     }
+//   });
+// });
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
@@ -448,7 +452,7 @@ ipcMain.on('clear-cache', () => {
 
 ipcMain.on('run-update', () => {
   log.log('Run update setup');
-  autoUpdater.quitAndInstall(true, true);
+  // autoUpdater.quitAndInstall(true, true);
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
@@ -532,7 +536,7 @@ ipcMain.on('navigated', (event, uri) => {
 
 ipcMain.on('update:check', () => {
   log.log('Renderer asked for an update check');
-  autoUpdater.checkForUpdates();
+  // autoUpdater.checkForUpdates();
 });
 
 // Oauth stuff
