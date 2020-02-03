@@ -324,7 +324,10 @@ export class ListsFacade {
   }
 
   select(key: string): void {
-    this.store.dispatch(new SelectList(key, this.settings.enableAutofillByDefault));
+    this.store.dispatch(new SelectList(key));
+    if (this.settings.enableAutofillByDefault) {
+      this.toggleAutocomplete(true);
+    }
     if (this.settings.enableAutofillNotificationByDefault) {
       this.store.dispatch(new ToggleCompletionNotification(true));
     }
