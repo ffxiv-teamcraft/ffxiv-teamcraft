@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BaseParam } from './base-param';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { EquipmentPiece } from '../../model/gearset/equipment-piece';
+import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
+import { MateriaService } from './materia.service';
 
 @Injectable({
   providedIn: 'root'
@@ -111,7 +114,59 @@ export class StatsService {
     BaseParam.MIND
   ];
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
+  }
+
+  public getStats(set: TeamcraftGearset, level: number, tribe: number): { id: number, value: number }[] {
+    const stats = this.getRelevantBaseStats(set.job)
+      .map(stat => {
+        return {
+          id: stat,
+          value: this.getBaseValue(stat, set.job, level, tribe)
+        };
+      });
+    Object.values(set)
+      .filter(value => value && value.itemId !== undefined)
+      .forEach((equipmentPiece: EquipmentPiece) => {
+        const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+        // If this item has no stats, return !
+        if (!itemStats) {
+          return;
+        }
+        itemStats
+          .filter((stat: any) => stat.ID !== undefined)
+          .forEach((stat: any) => {
+            let statsRow = stats.find(s => s.id === stat.ID);
+            if (statsRow === undefined) {
+              stats.push({
+                id: stat.ID,
+                value: this.getBaseValue(stat.ID, set.job, level, tribe)
+              });
+              statsRow = stats[stats.length - 1];
+            }
+            if (equipmentPiece.hq) {
+              statsRow.value += stat.HQ;
+            } else {
+              statsRow.value += stat.NQ;
+            }
+          });
+        equipmentPiece.materias
+          .filter(materia => materia > 0)
+          .forEach((materiaId, index) => {
+            const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
+            const materia = this.materiasService.getMateria(materiaId);
+            let statsRow = stats.find(s => s.id === materia.baseParamId);
+            if (statsRow === undefined) {
+              stats.push({
+                id: materia.baseParamId,
+                value: this.getBaseValue(materia.baseParamId, set.job, level, tribe)
+              });
+              statsRow = stats[stats.length - 1];
+            }
+            statsRow.value += bonus.value;
+          });
+      });
+    return stats;
   }
 
   public getBaseValue(baseParamId: number, job: number, level: number, tribe: number) {
@@ -217,6 +272,21 @@ export class StatsService {
 
   public getMainStat(job: number): BaseParam {
     switch (job) {
+      // DoH
+      case 8:
+      case 9:
+      case 10:
+      case 11:
+      case 12:
+      case 13:
+      case 14:
+      case 15:
+        return BaseParam.CRAFTSMANSHIP;
+      // DoL
+      case 16:
+      case 17:
+      case 18:
+        return BaseParam.GATHERING;
       // Tanks
       case 1:
       case 3:

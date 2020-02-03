@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { distinctUntilChanged, filter, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
@@ -20,6 +20,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 import { environment } from '../../../../environments/environment';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -198,55 +199,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$]).pipe(
     map(([set, level, tribe]) => {
-      const stats = this.statsService.getRelevantBaseStats(set.job)
-        .map(stat => {
-          return {
-            id: stat,
-            value: this.statsService.getBaseValue(stat, set.job, level, tribe)
-          };
-        });
-      Object.values(set)
-        .filter(value => value && value.itemId !== undefined)
-        .forEach((equipmentPiece: EquipmentPiece) => {
-          const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-          // If this item has no stats, return !
-          if (!itemStats) {
-            return;
-          }
-          itemStats
-            .filter((stat: any) => stat.ID !== undefined)
-            .forEach((stat: any) => {
-              let statsRow = stats.find(s => s.id === stat.ID);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: stat.ID,
-                  value: this.statsService.getBaseValue(stat.ID, set.job, level, tribe)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              if (equipmentPiece.hq) {
-                statsRow.value += stat.HQ;
-              } else {
-                statsRow.value += stat.NQ;
-              }
-            });
-          equipmentPiece.materias
-            .filter(materia => materia > 0)
-            .forEach((materiaId, index) => {
-              const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
-              const materia = this.materiasService.getMateria(materiaId);
-              let statsRow = stats.find(s => s.id === materia.baseParamId);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: materia.baseParamId,
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, level, tribe)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              statsRow.value += bonus.value;
-            });
-        });
-      return stats;
+      return this.statsService.getStats(set, level, tribe);
     })
   );
 
@@ -265,13 +218,22 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     localStorage.setItem('materias', JSON.stringify(cache));
   }
 
+  permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
+
   constructor(private fb: FormBuilder, private gearsetsFacade: GearsetsFacade,
               private activatedRoute: ActivatedRoute, private xivapi: XivapiService,
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, private router: Router) {
     super();
+    this.permissionLevel$.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(level => {
+      if (level < PermissionLevel.WRITE) {
+        this.router.navigate(['/gearsets']);
+      }
+    });
   }
 
   ngOnInit() {

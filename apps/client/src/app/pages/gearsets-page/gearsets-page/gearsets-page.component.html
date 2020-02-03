@@ -1,6 +1,8 @@
-<button nz-button (click)="newGearset()">+</button>
-<button nz-button (click)="importAriyalaGearset()">Import from ariyala</button>
-<button nz-button (click)="importLodestoneGearset()">Import from lodestone</button>
+<div fxLayout="row" fxLayoutGap="5px">
+  <button nz-button (click)="newGearset()">+</button>
+  <button nz-button (click)="importAriyalaGearset()">Import from ariyala</button>
+  <button nz-button (click)="importLodestoneGearset()">Import from lodestone</button>
+</div>
 
 <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
 

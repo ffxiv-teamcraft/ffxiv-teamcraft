@@ -5,6 +5,11 @@
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
         <div fxFlex="1 1 auto"></div>
+        <button nz-button nzShape="circle" nzType="primary"
+           nz-tooltip [nzTitle]="'GEARSETS.Compare_gearset' | translate"
+           (click)="compare(gearset)">
+          <i nz-icon nzType="diff" nzTheme="outline"></i>
+        </button>
         <a nz-button nzShape="circle" nzType="primary"
            nz-tooltip [nzTitle]="'GEARSETS.Edit_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="permissionLevel >= 30">

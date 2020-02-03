@@ -6,13 +6,11 @@ import { map, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
-import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { environment } from '../../../../environments/environment';
 import { StatsService } from '../../../modules/gearsets/stats.service';
-import { MateriaService } from '../../../modules/gearsets/materia.service';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { AuthFacade } from '../../../+state/auth.facade';
+import { NzModalService } from 'ng-zorro-antd';
+import { GearsetComparatorPopupComponent } from '../../../modules/gearsets/gearset-comparator-popup/gearset-comparator-popup.component';
 
 @Component({
   selector: 'app-gearset-display',
@@ -40,55 +38,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$]).pipe(
     map(([set, level, tribe]) => {
-      const stats = this.statsService.getRelevantBaseStats(set.job)
-        .map(stat => {
-          return {
-            id: stat,
-            value: this.statsService.getBaseValue(stat, set.job, level, tribe)
-          };
-        });
-      Object.values(set)
-        .filter(value => value && value.itemId !== undefined)
-        .forEach((equipmentPiece: EquipmentPiece) => {
-          const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-          // If this item has no stats, return !
-          if (!itemStats) {
-            return;
-          }
-          itemStats
-            .filter((stat: any) => stat.ID !== undefined)
-            .forEach((stat: any) => {
-              let statsRow = stats.find(s => s.id === stat.ID);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: stat.ID,
-                  value: this.statsService.getBaseValue(stat.ID, set.job, level, tribe)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              if (equipmentPiece.hq) {
-                statsRow.value += stat.HQ;
-              } else {
-                statsRow.value += stat.NQ;
-              }
-            });
-          equipmentPiece.materias
-            .filter(materia => materia > 0)
-            .forEach((materiaId, index) => {
-              const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
-              const materia = this.materiasService.getMateria(materiaId);
-              let statsRow = stats.find(s => s.id === materia.baseParamId);
-              if (statsRow === undefined) {
-                stats.push({
-                  id: materia.baseParamId,
-                  value: this.statsService.getBaseValue(materia.baseParamId, set.job, level, tribe)
-                });
-                statsRow = stats[stats.length - 1];
-              }
-              statsRow.value += bonus.value;
-            });
-        });
-      return stats;
+      return this.statsService.getStats(set, level, tribe);
     })
   );
 
@@ -96,17 +46,11 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   maxLevel = environment.maxLevel;
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.gearset$, this.authFacade.userId$])
-    .pipe(
-      map(([gearset, userId]) => {
-        return gearset.getPermissionLevel(userId);
-      })
-    );
+  permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
 
   constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
               public translate: TranslateService, private statsService: StatsService,
-              private materiasService: MateriaService, private lazyData: LazyDataService,
-              private authFacade: AuthFacade) {
+              private dialog: NzModalService) {
     super();
     this.activatedRoute.paramMap
       .pipe(
@@ -117,6 +61,17 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       .subscribe(setId => {
         this.gearsetsFacade.select(setId);
       });
+  }
+
+  compare(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('GEARSETS.COMPARISON.Compare_popup_title', { setName: gearset.name }),
+      nzContent: GearsetComparatorPopupComponent,
+      nzComponentParams: {
+        gearset: gearset
+      },
+      nzFooter: null
+    });
   }
 
 }

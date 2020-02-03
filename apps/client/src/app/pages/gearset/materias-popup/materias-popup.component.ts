@@ -33,12 +33,7 @@ export class MateriasPopupComponent implements OnInit {
   }
 
   getMeldingChances(materiaItemId: number, slot: number): number {
-    const materia = this.materiasService.getMateria(materiaItemId);
-    const overmeldSlot = slot - this.equipmentPiece.materiaSlots;
-    if (overmeldSlot < 0) {
-      return 100;
-    }
-    return this.lazyData.meldingRates[materia.tier - 1][overmeldSlot];
+    return this.materiasService.getMeldingChances(this.equipmentPiece, materiaItemId, slot);
   }
 
   resetMaterias(index: number): void {

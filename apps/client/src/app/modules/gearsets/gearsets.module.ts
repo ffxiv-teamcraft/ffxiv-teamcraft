@@ -5,7 +5,7 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromGearsets from './+state/gearsets.reducer';
 import { GearsetsEffects } from './+state/gearsets.effects';
 import { GearsetsFacade } from './+state/gearsets.facade';
-import { NzButtonModule, NzFormModule, NzInputModule, NzModalServiceModule, NzSelectModule } from 'ng-zorro-antd';
+import { NzAlertModule, NzButtonModule, NzDividerModule, NzFormModule, NzInputModule, NzModalServiceModule, NzSelectModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { GearsetCreationPopupComponent } from './gearset-creation-popup/gearset-creation-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,16 +16,19 @@ import { MateriaSlotIconComponent } from './materia-slot-icon/materia-slot-icon.
 import { StatPipe } from './stat.pipe';
 import { AriyalaImportPopupComponent } from './ariyala-import-popup/ariyala-import-popup.component';
 import { LodestoneImportPopupComponent } from './lodestone-import-popup/lodestone-import-popup.component';
+import { GearsetComparatorPopupComponent } from './gearset-comparator-popup/gearset-comparator-popup.component';
+import { ItemIconModule } from '../item-icon/item-icon.module';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent],
-  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent,LodestoneImportPopupComponent],
+  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent],
+  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent,LodestoneImportPopupComponent, GearsetComparatorPopupComponent],
   imports: [
     CommonModule,
     NzFormModule,
     NzSelectModule,
     NzInputModule,
     NzButtonModule,
+    NzAlertModule,
     FormsModule,
     ReactiveFormsModule,
     PipesModule,
@@ -39,7 +42,9 @@ import { LodestoneImportPopupComponent } from './lodestone-import-popup/lodeston
     EffectsModule.forFeature([GearsetsEffects]),
 
     NzModalServiceModule,
-    TranslateModule
+    TranslateModule,
+    ItemIconModule,
+    NzDividerModule
   ],
   exports: [MateriaSlotIconComponent, StatPipe],
   providers: [GearsetsFacade]

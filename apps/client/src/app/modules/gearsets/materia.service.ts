@@ -90,6 +90,15 @@ export class MateriaService {
     return result > cap ? cap : result;
   }
 
+  getMeldingChances(equipmentPiece: EquipmentPiece, materiaItemId: number, slot: number): number {
+    const materia = this.getMateria(materiaItemId);
+    const overmeldSlot = slot - equipmentPiece.materiaSlots;
+    if (overmeldSlot < 0) {
+      return 100;
+    }
+    return this.lazyData.meldingRates[materia.tier - 1][overmeldSlot];
+  }
+
   getTotalNeededMaterias(gearset: TeamcraftGearset): { id: number, amount: number }[] {
     const materias = [];
     Object.keys(gearset)

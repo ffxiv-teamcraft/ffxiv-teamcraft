@@ -33,7 +33,10 @@ export function reducer(
     case GearsetsActionTypes.GearsetsLoaded: {
       return {
         ...state,
-        list: action.payload,
+        list: [
+          ...state.list,
+          ...action.payload.filter(set => !state.list.some(s => s.$key === set.$key))
+        ],
         loaded: true
       };
     }

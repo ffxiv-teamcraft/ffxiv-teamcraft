@@ -14,10 +14,10 @@ import {
   SelectGearset,
   UpdateGearset
 } from './gearsets.actions';
-import { map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { StatsService } from '../stats.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -28,6 +28,7 @@ import { HttpClient } from '@angular/common/http';
 import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
 import * as jobAbbrs from '../../../core/data/sources/job-abbr.json';
 import { XivapiService } from '@xivapi/angular-client';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,13 @@ export class GearsetsFacade {
     { race: 7, tribes: [13, 14] },
     { race: 8, tribes: [15, 16] }
   ];
+
+  selectedGearsetPermissionLevel$: Observable<PermissionLevel> = combineLatest([this.selectedGearset$, this.authFacade.userId$])
+    .pipe(
+      map(([gearset, userId]) => {
+        return gearset.getPermissionLevel(userId);
+      })
+    );
 
   constructor(private store: Store<GearsetsPartialState>, private authFacade: AuthFacade,
               private statsService: StatsService, private lazyData: LazyDataService,
@@ -154,7 +162,8 @@ export class GearsetsFacade {
         gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight');
         gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal');
         return gearset;
-      })
+      }),
+      catchError(() => of(null))
     );
   }
 

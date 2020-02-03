@@ -106,7 +106,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'ilvls.json',
-    'hashedFileName': 'ilvls.d1cb6a270773d60b930462ea351e00ede55738b3.json',
+    'hashedFileName': 'ilvls.29d96dbb952a2180648f00142791c1281b7e8952.json',
     'propertyName': 'ilvls'
   },
   {
@@ -136,7 +136,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'item-slots.json',
-    'hashedFileName': 'item-slots.de93e809f9f2c60febe876b7dd539f1706391c5d.json',
+    'hashedFileName': 'item-slots.eea7fb28be0f0db8c6835fe04cb90e45b4c9069d.json',
     'propertyName': 'itemSlots'
   },
   {
@@ -206,7 +206,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'rarities.json',
-    'hashedFileName': 'rarities.620c9e5a6efeaa3f4291d2f89ecdc9ced53927de.json',
+    'hashedFileName': 'rarities.8bb84b3d59b29f2b587b8f2c8e3255553232c679.json',
     'propertyName': 'rarities'
   },
   {
@@ -221,7 +221,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'stack-sizes.json',
-    'hashedFileName': 'stack-sizes.b02cc236713cbfc77fbb225daf1bb5f19e660320.json',
+    'hashedFileName': 'stack-sizes.7179b6f6ed26eef578e2a21510739a036c588cee.json',
     'propertyName': 'stackSizes'
   },
   {
