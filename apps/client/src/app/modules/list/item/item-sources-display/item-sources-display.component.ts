@@ -18,6 +18,9 @@ import { CraftedBy } from '../../model/crafted-by';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { NzModalService } from 'ng-zorro-antd';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../../core/data/localized-data.service';
+import { RotationPickerService } from '../../../rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-item-sources-display',
@@ -37,7 +40,8 @@ export class ItemSourcesDisplayComponent {
 
   dataTypes = DataType;
 
-  constructor(private modal: NzModalService) {
+  constructor(private modal: NzModalService, private i18n: I18nToolsService,
+              private l12n: LocalizedDataService, private rotationPicker: RotationPickerService) {
   }
 
   public openGatheredByPopup(item: ListRow): void {
