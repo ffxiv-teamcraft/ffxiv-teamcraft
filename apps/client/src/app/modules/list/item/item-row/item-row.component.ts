@@ -596,66 +596,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       });
   }
 
-  public openGatheredByPopup(item: ListRow): void {
-    this.openDetailsPopup(GatheredByComponent, item, DataType.GATHERED_BY);
-  }
-
-  public openHuntingPopup(item: ListRow): void {
-    this.openDetailsPopup(HuntingComponent, item, DataType.DROPS);
-  }
-
-  public openInstancesPopup(item: ListRow): void {
-    this.openDetailsPopup(InstancesComponent, item, DataType.INSTANCES);
-  }
-
-  public openReducedFromPopup(item: ListRow): void {
-    this.openDetailsPopup(ReducedFromComponent, item, DataType.REDUCED_FROM);
-  }
-
-  public openDesynthsPopup(item: ListRow): void {
-    this.openDetailsPopup(DesynthsComponent, item, DataType.DESYNTHS);
-  }
-
-  public openVendorsPopup(item: ListRow): void {
-    this.openDetailsPopup(VendorsComponent, item, DataType.VENDORS);
-  }
-
-  public openVenturesPopup(item: ListRow): void {
-    this.openDetailsPopup(VenturesComponent, item, DataType.VENTURES);
-  }
-
-  public openTreasuresPopup(item: ListRow): void {
-    this.openDetailsPopup(TreasuresComponent, item, DataType.TREASURES);
-  }
-
-  public openFatesPopup(item: ListRow): void {
-    this.openDetailsPopup(FatesComponent, item, DataType.FATES);
-  }
-
-  public openVoyagesPopup(item: ListRow): void {
-    this.openDetailsPopup(VoyagesComponent, item, DataType.VOYAGES);
-  }
-
-  public openTradesPopup(item: ListRow): void {
-    this.openDetailsPopup(TradesComponent, item, DataType.TRADE_SOURCES);
-  }
-
   public openRequirementsPopup(item: ListRow): void {
     this.openDetailsPopup(RelationshipsComponent, item, DataType.NONE);
-  }
-
-  public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
-    const craft: Partial<Craft> = {
-      id: recipeId,
-      job: entry.jobId,
-      lvl: entry.level,
-      stars: entry.stars_tooltip.length,
-      rlvl: entry.rlvl,
-      durability: entry.durability,
-      progress: entry.progression,
-      quality: entry.quality
-    };
-    this.rotationPicker.openInSimulator(item.id, recipeId, craft);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
@@ -674,16 +616,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     return this.buttonsCache[element];
   }
 
-  public trackByCraft(index: number, craft: Craft): string {
-    return craft.id;
-  }
-
   public trackByAlarm(index: number, alarm: Alarm): string {
     return alarm.$key;
-  }
-
-  public trackByItemSource(index: number, source: ItemSource): DataType {
-    return source.type;
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {

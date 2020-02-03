@@ -53,6 +53,7 @@ import { MarketboardModule } from '../marketboard/marketboard.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
 import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
+import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -114,8 +115,14 @@ export const DATA_EXTRACTORS: Provider[] = [
     ...DATA_EXTRACTORS,
     DataExtractorService
   ],
-  declarations: [ListPanelComponent, ListDetailsPanelComponent,
-    ItemRowComponent, TagsPopupComponent, ListCompletionPopupComponent],
+  declarations: [
+    ListPanelComponent,
+    ListDetailsPanelComponent,
+    ItemRowComponent,
+    TagsPopupComponent,
+    ListCompletionPopupComponent,
+    ItemSourcesDisplayComponent
+  ],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent, ListDetailsPanelComponent]
 })
