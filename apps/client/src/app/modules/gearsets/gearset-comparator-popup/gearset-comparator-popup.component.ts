@@ -59,7 +59,6 @@ export class GearsetComparatorPopupComponent {
   }
 
   public compare(): void {
-    console.log(this.gearset);
     this.loading = true;
     try {
       switch (this.comparisonType) {
@@ -70,7 +69,12 @@ export class GearsetComparatorPopupComponent {
             if (gearsetFromAriyala === null) {
               this.error = true;
             } else {
-              this.result = this.comparator.compare(this.gearset, gearsetFromAriyala);
+              try {
+                this.result = this.comparator.compare(this.gearset, gearsetFromAriyala);
+              } catch (e) {
+                this.error = true;
+                this.loading = false;
+              }
             }
             this.loading = false;
           });

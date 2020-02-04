@@ -1,7 +1,7 @@
 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="display-container">
   <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
     <ng-container *ngIf="equipmentPiece; else emptySlot">
-      <app-item-icon [itemId]="equipmentPiece.itemId" [width]="32 | ifMobile:24"></app-item-icon>
+      <app-item-icon [itemId]="equipmentPiece.itemId" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
       <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{equipmentPiece.itemId | ilvl}}</div>
     </ng-container>
     <ng-template #emptySlot>

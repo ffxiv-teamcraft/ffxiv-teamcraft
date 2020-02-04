@@ -4,13 +4,16 @@ import { GearsetsComparison } from '../../model/gearset/gearsets-comparison';
 import { StatsService } from './stats.service';
 import { MateriaService } from './materia.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
+import { Memoized } from '../../core/decorators/memoized';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GearsetComparatorService {
 
-  constructor(private statsService: StatsService, private materiaService: MateriaService) {
+  constructor(private statsService: StatsService, private materiaService: MateriaService,
+              private lazyData: LazyDataService) {
   }
 
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
@@ -95,10 +98,47 @@ export class GearsetComparatorService {
       }));
 
     const piecesDiff = this.getSlotArray().map((slot: string) => {
-      if ((a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId) || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
+      let isDifferent = (a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId);
+      if (!a.isCombatSet()) {
+        isDifferent = isDifferent && this.lazyData.data.ilvls[a[slot] && a[slot].itemId] !== this.lazyData.data.ilvls[b[slot] && b[slot].itemId];
+      }
+      if (isDifferent || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
+        const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] : [];
+        const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] : [];
+        const itemsStatsDiff = aItemStats.map(as => {
+          const bs = bItemStats.find(s => s.ID === as.ID);
+
+          const diff: any = {
+            id: as.ID,
+            a: a[slot].hq ? as.HQ : as.NQ,
+            b: 0
+          };
+          if (bs) {
+            diff.b = b[slot].hq ? bs.HQ : bs.NQ;
+          }
+          return diff;
+        });
+
+        itemsStatsDiff.push(...bItemStats
+          .filter(s => !itemsStatsDiff.some(entry => entry.id === s.ID))
+          .map(bs => {
+            const as = aItemStats.find(s => s.ID === bs.ID);
+            const diff: any = {
+              id: bs.ID,
+              a: 0,
+              b: b[slot].hq ? bs.HQ : bs.NQ
+            };
+            if (as) {
+              diff.a = a[slot].hq ? as.HQ : as.NQ;
+            }
+            return diff;
+          }));
+
         return {
+          slotName: this.getSlotName(slot as keyof TeamcraftGearset),
           a: a[slot],
-          b: b[slot]
+          b: b[slot],
+          stats: itemsStatsDiff
         };
       }
       return null;
@@ -113,6 +153,41 @@ export class GearsetComparatorService {
         b: this.getAvgMeldingChances(b)
       }
     };
+  }
+
+
+  @Memoized()
+  private getSlotName(propertyName: keyof TeamcraftGearset): string {
+    switch (propertyName) {
+      case 'chest':
+        return 'Body';
+      case 'earRings':
+        return 'Ears';
+      case 'feet':
+        return 'Feet';
+      case 'ring1':
+        return 'FingerL';
+      case 'ring2':
+        return 'FingerR';
+      case 'gloves':
+        return 'Gloves';
+      case 'head':
+        return 'Head';
+      case 'legs':
+        return 'Legs';
+      case 'mainHand':
+        return 'MainHand';
+      case 'necklace':
+        return 'Neck';
+      case 'offHand':
+        return 'OffHand';
+      case 'crystal':
+        return 'SoulCrystal';
+      case 'belt':
+        return 'Waist';
+      case 'bracelet':
+        return 'Wrists';
+    }
   }
 
   private getAvgMeldingChances(set: TeamcraftGearset): number {

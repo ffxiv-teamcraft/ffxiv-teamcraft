@@ -23,4 +23,8 @@ export class TeamcraftGearset extends DataWithPermissions {
   ring2: EquipmentPiece;
 
   crystal: EquipmentPiece;
+
+  isCombatSet(): boolean {
+    return this.job < 8 || this.job > 18;
+  }
 }
