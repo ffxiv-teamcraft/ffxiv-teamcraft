@@ -140,15 +140,16 @@
     <div *ngFor="let piece of result.piecesDiff" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <nz-divider nzOrientation="left" [nzText]="('GEARSETS.SLOT.' + piece.slotName) | translate"></nz-divider>
       <h3>{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</h3>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="piece.a; else nothing">
         <app-item-icon [width]="24" [itemId]="piece.a.itemId" [hq]="piece.a.hq"></app-item-icon>
         <div>{{piece.a.itemId | itemName | i18n}}</div>
       </div>
       <h3>{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</h3>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="piece.b; else nothing">
         <app-item-icon [width]="24" [itemId]="piece.b.itemId" [hq]="piece.b.hq"></app-item-icon>
         <div>{{piece.b.itemId | itemName | i18n}}</div>
       </div>
+      <ng-template #nothing>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
       <table>
         <thead>
         <tr>
