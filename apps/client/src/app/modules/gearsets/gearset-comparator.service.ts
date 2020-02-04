@@ -13,7 +13,6 @@ export class GearsetComparatorService {
   constructor(private statsService: StatsService, private materiaService: MateriaService) {
   }
 
-
   toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
     return [
       gearset.mainHand,
@@ -30,8 +29,26 @@ export class GearsetComparatorService {
       gearset.ring1,
       gearset.ring2,
       gearset.crystal
-    ]
-      .filter(p => p);
+    ].filter(p => p);
+  }
+
+  getSlotArray(): string[] {
+    return [
+      'mainHand',
+      'offHand',
+      'head',
+      'chest',
+      'gloves',
+      'belt',
+      'legs',
+      'feet',
+      'necklace',
+      'earRings',
+      'bracelet',
+      'ring1',
+      'ring2',
+      'crystal'
+    ];
   }
 
   public compare(a: TeamcraftGearset, b: TeamcraftGearset): GearsetsComparison {
@@ -77,9 +94,20 @@ export class GearsetComparatorService {
         };
       }));
 
+    const piecesDiff = this.getSlotArray().map((slot: string) => {
+      if ((a[slot] && a[slot].itemId) !== (b[slot] && b[slot].itemId) || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
+        return {
+          a: a[slot],
+          b: b[slot]
+        };
+      }
+      return null;
+    }).filter(diff => diff !== null);
+
     return {
       statsDifferences: statsDiff,
       materiasDifferences: materiasDiff,
+      piecesDiff: piecesDiff,
       meldingChances: {
         a: this.getAvgMeldingChances(a),
         b: this.getAvgMeldingChances(b)

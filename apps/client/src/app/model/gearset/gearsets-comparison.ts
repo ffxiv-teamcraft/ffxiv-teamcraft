@@ -1,12 +1,16 @@
+import { EquipmentPiece } from './equipment-piece';
+
 export interface GearsetsComparison {
   statsDifferences: {
-    id: number, values: {
+    id: number,
+    values: {
       a: number,
       b: number
     }
   }[];
   materiasDifferences: {
-    id: number, amounts: {
+    id: number,
+    amounts: {
       a: number,
       b: number
     }
@@ -15,4 +19,8 @@ export interface GearsetsComparison {
     a: number,
     b: number
   }
+  piecesDiff: {
+    a: EquipmentPiece,
+    b: EquipmentPiece
+  }[]
 }
