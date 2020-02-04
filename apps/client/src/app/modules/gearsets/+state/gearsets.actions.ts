@@ -5,6 +5,7 @@ export enum GearsetsActionTypes {
   CreateGearset = '[Gearsets] Create Gearset',
   ImportAriyalaGearset = '[Gearsets] Import Ariyala Gearset',
   ImportLodestoneGearset = '[Gearsets] Import Lodestone Gearset',
+  ImportFromPcap = '[Gearsets] Import From Pcap',
 
   LoadGearsets = '[Gearsets] Load Gearsets',
   GearsetsLoaded = '[Gearsets] Gearsets Loaded',
@@ -37,6 +38,10 @@ export class CreateGearset implements Action {
 
 export class ImportAriyalaGearset implements Action {
   readonly type = GearsetsActionTypes.ImportAriyalaGearset;
+}
+
+export class ImportFromPcap implements Action {
+  readonly type = GearsetsActionTypes.ImportFromPcap;
 }
 
 export class ImportLodestoneGearset implements Action {
@@ -78,5 +83,16 @@ export class DeleteGearset implements Action {
   }
 }
 
-export type GearsetsAction = LoadGearsets | GearsetsLoaded | LoadGearset | GearsetLoaded | SelectGearset | UpdateGearset | DeleteGearset | CreateGearset | ImportAriyalaGearset | ImportLodestoneGearset;
+export type GearsetsAction =
+  LoadGearsets
+  | GearsetsLoaded
+  | LoadGearset
+  | GearsetLoaded
+  | SelectGearset
+  | UpdateGearset
+  | DeleteGearset
+  | CreateGearset
+  | ImportAriyalaGearset
+  | ImportLodestoneGearset
+  | ImportFromPcap;
 

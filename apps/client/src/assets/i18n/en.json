@@ -1728,6 +1728,12 @@
     "Stats": "Stats",
     "Materias": "Materias",
     "Pieces": "Gear pieces",
+    "Import_from_ariyala": "Import from Ariyala",
+    "Import_from_lodestone": "Import from Lodestone",
+    "Import_using_pcap": "Import using packet capture",
+    "Your_gearsets": "Your gearsets",
+    "Delete_gearset": "Delete gearset",
+    "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

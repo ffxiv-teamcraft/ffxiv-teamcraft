@@ -161,7 +161,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'materias.json',
-    'hashedFileName': 'materias.c6369fd2799684a957d5dfe2b452e7e9af4401ea.json',
+    'hashedFileName': 'materias.902010e1a6441d0427f7d4d157a027d4001076af.json',
     'propertyName': 'materias'
   },
   {

@@ -1590,6 +1590,7 @@ if (hasTodo('materias')) {
             const value = entry[`Value${index}`];
             if (value > 0) {
               materias.push({
+                id: entry.ID,
                 itemId: itemId,
                 tier: index + 1,
                 value: entry[`Value${index}`],

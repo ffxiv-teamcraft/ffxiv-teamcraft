@@ -1,7 +1,8 @@
 <div fxLayout="row" fxLayoutGap="5px">
-  <button nz-button (click)="newGearset()">+</button>
-  <button nz-button (click)="importAriyalaGearset()">Import from ariyala</button>
-  <button nz-button (click)="importLodestoneGearset()">Import from lodestone</button>
+  <button nz-button (click)="newGearset()">{{'GEARSETS.New_gearset' | translate}}</button>
+  <button nz-button (click)="importAriyalaGearset()">{{'GEARSETS.Import_from_ariyala' | translate}}</button>
+  <button nz-button (click)="importLodestoneGearset()">{{'GEARSETS.Import_from_lodestone' | translate}}</button>
+  <button nz-button (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
 </div>
 
 <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>

@@ -18,10 +18,11 @@ import { AriyalaImportPopupComponent } from './ariyala-import-popup/ariyala-impo
 import { LodestoneImportPopupComponent } from './lodestone-import-popup/lodestone-import-popup.component';
 import { GearsetComparatorPopupComponent } from './gearset-comparator-popup/gearset-comparator-popup.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
+import { ImportFromPcapPopupComponent } from './import-from-pcap-popup/import-from-pcap-popup.component';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent],
-  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent,LodestoneImportPopupComponent, GearsetComparatorPopupComponent],
+  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent, ImportFromPcapPopupComponent],
+  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent, ImportFromPcapPopupComponent],
   imports: [
     CommonModule,
     NzFormModule,

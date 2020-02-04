@@ -4,6 +4,7 @@ import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Observable } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
   selector: 'app-gearsets-page',
@@ -18,8 +19,14 @@ export class GearsetsPageComponent implements OnInit {
 
   public userId$: Observable<string> = this.authFacade.userId$;
 
+  public machinaToggle = false;
+
   constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private ipc: IpcService) {
+    this.ipc.once('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
+    this.ipc.send('toggle-machina:get');
   }
 
   newGearset(): void {
@@ -28,6 +35,10 @@ export class GearsetsPageComponent implements OnInit {
 
   importAriyalaGearset(): void {
     this.gearsetsFacade.importAriyalaGearset();
+  }
+
+  importFromPcap(): void {
+    this.gearsetsFacade.importFromPcap();
   }
 
   importLodestoneGearset(): void {

@@ -12,7 +12,8 @@ import {
   LoadGearset,
   LoadGearsets,
   SelectGearset,
-  UpdateGearset
+  UpdateGearset,
+  ImportFromPcap
 } from './gearsets.actions';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -104,6 +105,10 @@ export class GearsetsFacade {
 
   importAriyalaGearset(): void {
     this.store.dispatch(new ImportAriyalaGearset());
+  }
+
+  importFromPcap(): void {
+    this.store.dispatch(new ImportFromPcap());
   }
 
   importLodestoneGearset(): void {

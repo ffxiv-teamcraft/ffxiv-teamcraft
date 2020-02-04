@@ -12,7 +12,8 @@ import {
   LoadGearset,
   LoadGearsets,
   UpdateGearset,
-  ImportLodestoneGearset
+  ImportLodestoneGearset,
+  ImportFromPcap
 } from './gearsets.actions';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -24,6 +25,7 @@ import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset
 import { Router } from '@angular/router';
 import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
 import { LodestoneImportPopupComponent } from '../lodestone-import-popup/lodestone-import-popup.component';
+import { ImportFromPcapPopupComponent } from '../import-from-pcap-popup/import-from-pcap-popup.component';
 
 @Injectable()
 export class GearsetsEffects {
@@ -81,7 +83,7 @@ export class GearsetsEffects {
       );
     }),
     tap((res) => {
-      this.router.navigate(['/gearset', res, 'edit']);
+      this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
   );
@@ -113,7 +115,41 @@ export class GearsetsEffects {
       );
     }),
     tap((res) => {
-      this.router.navigate(['/gearset', res, 'edit']);
+      this.router.navigate(['/gearset', res]);
+    }),
+    switchMapTo(EMPTY)
+  );
+
+
+
+  @Effect({
+    dispatch: false
+  })
+  importFrompcap$ = this.actions$.pipe(
+    ofType<ImportFromPcap>(GearsetsActionTypes.ImportFromPcap),
+    switchMap(() => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: ImportFromPcapPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('GEARSETS.Import_using_pcap')
+          }).afterClose.pipe(
+            filter(opts => opts),
+            map((gearset) => {
+              gearset.authorId = userId;
+              return gearset;
+            })
+          );
+        }),
+        switchMap(gearset => {
+          return this.gearsetService.add(gearset);
+        })
+      );
+    }),
+    tap((res) => {
+      this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
   );

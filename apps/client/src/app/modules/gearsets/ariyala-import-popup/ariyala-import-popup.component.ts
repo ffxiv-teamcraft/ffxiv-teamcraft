@@ -14,6 +14,8 @@ export class AriyalaImportPopupComponent {
 
   public importLinkSupported: boolean;
 
+  public gearsetName: string;
+
   constructor(private gearsetsFacade: GearsetsFacade, private modalRef: NzModalRef) {
   }
 
@@ -27,6 +29,7 @@ export class AriyalaImportPopupComponent {
   submit(): void {
     this.gearsetsFacade.fromAriyalaLink(this.importLink)
       .subscribe(gearset => {
+        gearset.name = this.gearsetName;
         this.modalRef.close(gearset);
       });
   }
