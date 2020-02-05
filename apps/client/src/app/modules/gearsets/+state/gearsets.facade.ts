@@ -107,6 +107,14 @@ export class GearsetsFacade {
     this.store.dispatch(new LoadGearset(key));
   }
 
+  clone(gearset: TeamcraftGearset): void {
+    const clone = new TeamcraftGearset();
+    Object.assign(clone, gearset);
+    delete clone.$key;
+    delete clone.authorId;
+    this.createGearset(clone);
+  }
+
   update(key: string, gearset: TeamcraftGearset): void {
     this.store.dispatch(new UpdateGearset(key, gearset));
   }

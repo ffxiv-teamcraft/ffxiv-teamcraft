@@ -15,6 +15,11 @@
                 (click)="compare(gearset)">
           <i nz-icon nzType="diff" nzTheme="outline"></i>
         </button>
+        <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTitle]="'GEARSETS.Clone_gearset' | translate"
+                (click)="clone(gearset)">
+          <i nz-icon nzType="copy" nzTheme="outline"></i>
+        </button>
         <a nz-button nzShape="circle" nzType="primary"
            nz-tooltip [nzTitle]="'GEARSETS.Edit_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="permissionLevel >= 30">

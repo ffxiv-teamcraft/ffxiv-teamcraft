@@ -107,6 +107,10 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     });
   }
 
+  clone(gearset: TeamcraftGearset): void {
+    this.gearsetsFacade.clone(gearset);
+  }
+
   foodComparator(a: any, b: any): boolean {
     return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }

@@ -9,18 +9,19 @@ import {
   GearsetsActionTypes,
   GearsetsLoaded,
   ImportAriyalaGearset,
+  ImportFromPcap,
+  ImportLodestoneGearset,
   LoadGearset,
   LoadGearsets,
-  UpdateGearset,
-  ImportLodestoneGearset,
-  ImportFromPcap, PureUpdateGearset
+  PureUpdateGearset,
+  UpdateGearset
 } from './gearsets.actions';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';
 import { Router } from '@angular/router';
 import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
@@ -58,32 +59,42 @@ export class GearsetsEffects {
   })
   createGearset$ = this.actions$.pipe(
     ofType<CreateGearset>(GearsetsActionTypes.CreateGearset),
-    switchMap(() => {
+    switchMap((action: CreateGearset) => {
       return this.authFacade.userId$.pipe(
         first(),
         switchMap(userId => {
-          return this.dialog.create({
-            nzContent: GearsetCreationPopupComponent,
-            nzFooter: null,
-            nzTitle: this.translate.instant('GEARSETS.New_gearset')
-          }).afterClose.pipe(
-            filter(opts => opts),
-            map(opts => {
-              const gearset = new TeamcraftGearset();
-              gearset.name = opts.name;
-              gearset.job = opts.job;
-              gearset.authorId = userId;
-              return gearset;
-            })
-          );
+          if (action.gearset) {
+            action.gearset.authorId = userId;
+            return of(action.gearset);
+          } else {
+            return this.dialog.create({
+              nzContent: GearsetCreationPopupComponent,
+              nzFooter: null,
+              nzTitle: this.translate.instant('GEARSETS.New_gearset')
+            }).afterClose.pipe(
+              filter(opts => opts),
+              map(opts => {
+                const gearset = new TeamcraftGearset();
+                gearset.name = opts.name;
+                gearset.job = opts.job;
+                gearset.authorId = userId;
+                return gearset;
+              })
+            );
+          }
         }),
         switchMap(gearset => {
-          return this.gearsetService.add(gearset);
+          return this.gearsetService.add(gearset).pipe(
+            tap((res) => {
+              if (action.gearset) {
+                this.router.navigate(['/gearset', res, 'edit']);
+              } else {
+                this.router.navigate(['/gearset', res]);
+              }
+            })
+          );
         })
       );
-    }),
-    tap((res) => {
-      this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
   );
@@ -119,7 +130,6 @@ export class GearsetsEffects {
     }),
     switchMapTo(EMPTY)
   );
-
 
 
   @Effect({

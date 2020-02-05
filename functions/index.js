@@ -16,21 +16,24 @@ const runtimeOpts = {
 
 // Firestore counts
 exports.firestoreCountlistsCreate = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onCreate(() => {
-  const ref = admin.database().ref('/list_count');
   const creationsRef = admin.database().ref('/lists_created');
   // Increment the number of lists created using the tool.
-  creationsRef.transaction(current => {
-    return current + 1;
-  }).then(() => null);
-  return ref.transaction(current => {
+  return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
 });
 
-exports.firestoreCountlistsDelete = functions.runWith(runtimeOpts).firestore.document('/lists/{uid}').onDelete(() => {
-  const ref = admin.database().ref('/list_count');
-  return ref.transaction(current => {
-    return current - 1;
+exports.firestoreCountRotationsCreate = functions.runWith(runtimeOpts).firestore.document('/rotations/{uid}').onCreate(() => {
+  const creationsRef = admin.database().ref('/rotations_created');
+  return creationsRef.transaction(current => {
+    return current + 1;
+  }).then(() => null);
+});
+
+exports.firestoreCountGearsetsCreate = functions.runWith(runtimeOpts).firestore.document('/gearsets/{uid}').onCreate(() => {
+  const creationsRef = admin.database().ref('/gearsets_created');
+  return creationsRef.transaction(current => {
+    return current + 1;
   }).then(() => null);
 });
 
