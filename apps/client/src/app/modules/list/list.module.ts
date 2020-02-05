@@ -55,6 +55,7 @@ import { MapModule } from '../map/map.module';
 import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
 import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
+import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -123,7 +124,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     TagsPopupComponent,
     ListCompletionPopupComponent,
     ItemSourcesDisplayComponent,
-    AlarmButtonComponent
+    AlarmButtonComponent,
+    ItemRowButtonsComponent
   ],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent, ListDetailsPanelComponent]

@@ -47,21 +47,8 @@ import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popu
 import { InventoryFacade } from '../../../inventory/+state/inventory.facade';
 import { UserInventory } from '../../../../model/user/inventory/user-inventory';
 import { DataType } from '../../data/data-type';
-import { CraftedBy } from '../../model/crafted-by';
-import { GatheredByComponent } from '../../../item-details/gathered-by/gathered-by.component';
-import { HuntingComponent } from '../../../item-details/hunting/hunting.component';
-import { ReducedFromComponent } from '../../../item-details/reduced-from/reduced-from.component';
-import { InstancesComponent } from '../../../item-details/instances/instances.component';
-import { DesynthsComponent } from '../../../item-details/desynth/desynths.component';
-import { VendorsComponent } from '../../../item-details/vendors/vendors.component';
-import { VenturesComponent } from '../../../item-details/ventures/ventures.component';
-import { TreasuresComponent } from '../../../item-details/treasures/treasures.component';
-import { FatesComponent } from '../../../item-details/fates/fates.component';
-import { VoyagesComponent } from '../../../item-details/voyages/voyages.component';
-import { TradesComponent } from '../../../item-details/trades/trades.component';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
-import { ItemSource } from '../../model/item-source';
 
 @Component({
   selector: 'app-item-row',
@@ -219,8 +206,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   );
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
-
-  dataTypes = DataType;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -610,10 +595,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       },
       nzFooter: null
     });
-  }
-
-  public isButton(element: ItemRowMenuElement): boolean {
-    return this.buttonsCache[element];
   }
 
   public trackByAlarm(index: number, alarm: Alarm): string {
