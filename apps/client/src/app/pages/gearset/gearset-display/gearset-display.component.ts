@@ -26,7 +26,13 @@ import { List } from '../../../modules/list/model/list';
 })
 export class GearsetDisplayComponent extends TeamcraftComponent {
 
-  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
+  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
+    tap(gearset => {
+      if (gearset.food) {
+        this.food$.next(gearset.food);
+      }
+    })
+  );
 
   public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
     ['mainHand', 'offHand'],
@@ -51,7 +57,19 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     })
   );
 
-  public foods: any[] = this.lazyData.data.foods;
+  public foods$: Observable<any[]> = this.gearset$.pipe(
+    first(),
+    map(gearset => {
+      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
+      return [].concat.apply([], this.lazyData.data.foods
+        .filter(food => {
+          return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
+        })
+        .map(food => {
+          return [{ ...food, HQ: false }, { ...food, HQ: true }];
+        }));
+    })
+  );
 
   tribesMenu = this.gearsetsFacade.tribesMenu;
 
@@ -87,6 +105,10 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       },
       nzFooter: null
     });
+  }
+
+  foodComparator(a: any, b: any): boolean {
+    return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
   generateList(gearset: TeamcraftGearset): void {

@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { distinctUntilChanged, filter, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -216,9 +216,29 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public tribe$ = new BehaviorSubject<number>(1);
 
-  public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$]).pipe(
-    map(([set, level, tribe]) => {
-      return this.statsService.getStats(set, level, tribe);
+  public food$ = this.gearset$.pipe(
+    map(gearset => {
+      return gearset.food;
+    })
+  );
+
+  public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$, this.food$]).pipe(
+    map(([set, level, tribe, food]) => {
+      return this.statsService.getStats(set, level, tribe, food);
+    })
+  );
+
+  public foods$: Observable<any[]> = this.gearset$.pipe(
+    first(),
+    map(gearset => {
+      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
+      return [].concat.apply([], this.lazyData.data.foods
+        .filter(food => {
+          return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
+        })
+        .map(food => {
+          return [{ ...food, HQ: false }, { ...food, HQ: true }];
+        }));
     })
   );
 
@@ -270,6 +290,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       this.itemFiltersform.patchValue(JSON.parse(filters), { emitEvent: false });
     }
     this.submitFilters();
+  }
+
+  foodComparator(a: any, b: any): boolean {
+    return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
   private getMaterias(item: any, propertyName: string): number[] {
@@ -428,6 +452,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   private applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): TeamcraftGearset {
     const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[itemId]];
+    if (!equipSlotCategory) {
+      return gearset;
+    }
     Object.keys(equipSlotCategory)
       .filter(key => +equipSlotCategory[key] === -1)
       .forEach(key => {

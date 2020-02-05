@@ -180,11 +180,6 @@ export class StatsService {
         }
         if (stat) {
           stat.value += bonusValue;
-        } else {
-          stats.push({
-            id: bonus.ID,
-            value: bonusValue
-          });
         }
       });
     }

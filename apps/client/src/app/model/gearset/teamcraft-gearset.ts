@@ -26,6 +26,8 @@ export class TeamcraftGearset extends DataWithPermissions {
 
   crystal: EquipmentPiece;
 
+  food: any;
+
   isCombatSet(): boolean {
     return this.job < 8 || this.job > 18;
   }
