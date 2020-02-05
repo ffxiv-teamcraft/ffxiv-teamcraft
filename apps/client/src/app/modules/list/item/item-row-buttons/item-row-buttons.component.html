@@ -103,7 +103,7 @@
       </button>
       <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
         <ul class="team-members" nz-menu>
-          <ng-container *ngFor="let user of item.workingOnIt">
+          <ng-container *ngFor="let user of workingOnIt">
             <li (click)="removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
                 [nzDisabled]="team?.leader !== userId && (team?.notFound || !team?.isOfficer(userId)) && user !== userId"
                 nz-menu-item>{{charName}}
@@ -292,7 +292,7 @@
             <li nz-submenu>
               <span title>{{'Remove_work_on_it' | translate}}</span>
               <ul class="team-members" nz-menu>
-                <ng-container *ngFor="let user of item.workingOnIt">
+                <ng-container *ngFor="let user of workingOnIt">
                   <li (click)="removeWorkingOnIt.emit(user)" *ngIf="user | characterName | async as charName"
                       [nzDisabled]="team?.leader !== userId && (team?.notFound || !team?.isOfficer(userId)) && user !== userId"
                       nz-menu-item>{{charName}}
