@@ -16,6 +16,7 @@ export interface LazyData {
   fishes: any;
   fishingLog: any;
   fishingSpots: any;
+  foods: any;
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;

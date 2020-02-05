@@ -11,8 +11,8 @@
           <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle" nzType="primary"
-           nz-tooltip [nzTitle]="'GEARSETS.Compare_gearset' | translate"
-           (click)="compare(gearset)">
+                nz-tooltip [nzTitle]="'GEARSETS.Compare_gearset' | translate"
+                (click)="compare(gearset)">
           <i nz-icon nzType="diff" nzTheme="outline"></i>
         </button>
         <a nz-button nzShape="circle" nzType="primary"
@@ -38,8 +38,16 @@
               </nz-select>
               <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
             </div>
-            <nz-select *ngIf="foods$ | async as foods" [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300">
-                <nz-option *ngFor="let food of foods" [nzValue]="food" [nzLabel]="(food.ID | itemName | i18n) + ' / ' + "></nz-option>
+            <nz-select [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300"
+                       [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear>
+              <nz-option *ngFor="let food of foods" [nzValue]="food"
+                         [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'Common.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
+                         nzCustomContent>
+                <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'Common.Hq' | translate}}</span></b>
+                <div class="food-bonus" *ngFor="let bonus of food | foodBonuses">
+                  {{bonus}}
+                </div>
+              </nz-option>
             </nz-select>
             <div fxLayout="row" fxLayoutAlign="center center">
               <table>

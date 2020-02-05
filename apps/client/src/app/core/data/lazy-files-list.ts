@@ -85,6 +85,11 @@ export const lazyFilesList = [
     'propertyName': 'fishingSpots'
   },
   {
+    'fileName': 'foods.json',
+    'hashedFileName': 'foods.327d5d22279ed25a56075edae5435aca744c8648.json',
+    'propertyName': 'foods'
+  },
+  {
     'fileName': 'gathering-bonuses.json',
     'hashedFileName': 'gathering-bonuses.afb34d273a99f7545e1bf86d42ecce59a755d031.json',
     'propertyName': 'gatheringBonuses'

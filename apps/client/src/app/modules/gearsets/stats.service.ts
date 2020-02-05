@@ -4,7 +4,6 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
-import { Memoized } from '../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -118,14 +117,7 @@ export class StatsService {
   constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
   }
 
-  @Memoized()
-  public getFoods(level: number): any[] {
-    return this.lazyData.data.foods.filter(food => {
-      return food.LevelEquip > level - 5 && food.LevelEquip < level + 5;
-    });
-  }
-
-  public getStats(set: TeamcraftGearset, level: number, tribe: number): { id: number, value: number }[] {
+  public getStats(set: TeamcraftGearset, level: number, tribe: number, food?: any): { id: number, value: number }[] {
     const stats = this.getRelevantBaseStats(set.job)
       .map(stat => {
         return {
@@ -174,6 +166,28 @@ export class StatsService {
             statsRow.value += bonus.value;
           });
       });
+    if (food) {
+      Object.values<any>(food.Bonuses).forEach(bonus => {
+        let bonusValue: number;
+        const stat = stats.find(s => s.id === bonus.ID);
+        if (bonus.Relative) {
+          const baseValue = stat ? stat.value : 0;
+          const multiplier = (food.HQ ? bonus.ValueHQ : bonus.Value) / 100;
+          const max = food.HQ ? bonus.MaxHQ : bonus.Max;
+          bonusValue = Math.min(Math.floor(baseValue * multiplier), max);
+        } else {
+          bonusValue = food.HQ ? bonus.ValueHQ : bonus.Value;
+        }
+        if (stat) {
+          stat.value += bonusValue;
+        } else {
+          stats.push({
+            id: bonus.ID,
+            value: bonusValue
+          });
+        }
+      });
+    }
     return stats;
   }
 

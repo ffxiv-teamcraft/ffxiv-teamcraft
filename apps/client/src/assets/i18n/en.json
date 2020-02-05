@@ -1737,6 +1737,7 @@
     "Your_gearsets": "Your gearsets",
     "Delete_gearset": "Delete gearset",
     "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
+    "No_food_selected": "No food selected",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
