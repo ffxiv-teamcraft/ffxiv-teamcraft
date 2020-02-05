@@ -1702,8 +1702,11 @@
     "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
   },
   "GEARSETS": {
+    "Title": "Gearsets",
+    "Rename_gearset": "Rename gearset",
     "View_gearset": "View gearset",
     "Edit_gearset": "Edit gearset",
+    "generate_list": "Generate a list",
     "Content": "Content",
     "Stat_name": "Stat",
     "Current_value": "Current value",

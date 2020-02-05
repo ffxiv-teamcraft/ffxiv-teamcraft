@@ -4,6 +4,15 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+        <button nz-button nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+          <i nz-icon nzType="edit"></i>
+        </button>
+        <div fxFlex="1 1 auto"></div>
+        <a nz-button nzShape="circle" nzType="primary"
+           nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate"
+           routerLink="/gearset/{{gearset.$key}}">
+          <i nz-icon nzType="eye"></i>
+        </a>
       </div>
 
       <nz-collapse>

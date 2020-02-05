@@ -5,7 +5,7 @@
              [nzDisabled]="!canEquip"
              (nzCheckedChange)="setGearsetPiece($event)"></label>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
-        <app-item-icon [itemId]="item.ID" [width]="32 | ifMobile:24"></app-item-icon>
+        <app-item-icon [itemId]="item.ID" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
         <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{item.LevelItem}}</div>
       </div>
       <div fxLayout="column" fxLayoutGap="5px">

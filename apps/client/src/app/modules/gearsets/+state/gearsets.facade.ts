@@ -8,14 +8,15 @@ import {
   CreateGearset,
   DeleteGearset,
   ImportAriyalaGearset,
+  ImportFromPcap,
   ImportLodestoneGearset,
   LoadGearset,
   LoadGearsets,
+  PureUpdateGearset,
   SelectGearset,
-  UpdateGearset,
-  ImportFromPcap
+  UpdateGearset
 } from './gearsets.actions';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -40,7 +41,8 @@ export class GearsetsFacade {
   allGearsets$ = this.store.pipe(select(gearsetsQuery.getAllGearsets));
 
   selectedGearset$ = this.store.pipe(
-    select(gearsetsQuery.getSelectedGearset)
+    select(gearsetsQuery.getSelectedGearset),
+    filter(gearset => gearset !== undefined)
   );
 
   myGearsets$ = this.allGearsets$.pipe(
@@ -69,7 +71,7 @@ export class GearsetsFacade {
   selectedGearsetPermissionLevel$: Observable<PermissionLevel> = combineLatest([this.selectedGearset$, this.authFacade.userId$])
     .pipe(
       map(([gearset, userId]) => {
-        return gearset.getPermissionLevel(userId);
+        return !gearset.notFound && gearset.getPermissionLevel(userId);
       })
     );
 
@@ -77,6 +79,24 @@ export class GearsetsFacade {
               private statsService: StatsService, private lazyData: LazyDataService,
               private materiasService: MateriaService, private http: HttpClient,
               private xivapi: XivapiService) {
+  }
+
+  toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
+    return [
+      gearset.mainHand,
+      gearset.offHand,
+      gearset.head,
+      gearset.chest,
+      gearset.gloves,
+      gearset.belt,
+      gearset.legs,
+      gearset.feet,
+      gearset.necklace,
+      gearset.earRings,
+      gearset.bracelet,
+      gearset.ring1,
+      gearset.ring2
+    ].filter(p => p);
   }
 
   loadAll(): void {
@@ -89,6 +109,10 @@ export class GearsetsFacade {
 
   update(key: string, gearset: TeamcraftGearset): void {
     this.store.dispatch(new UpdateGearset(key, gearset));
+  }
+
+  pureUpdate(key: string, gearset: Partial<TeamcraftGearset>): void {
+    this.store.dispatch(new PureUpdateGearset(key, gearset));
   }
 
   delete(key: string): void {

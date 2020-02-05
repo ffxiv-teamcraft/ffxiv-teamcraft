@@ -13,7 +13,7 @@ import {
   LoadGearsets,
   UpdateGearset,
   ImportLodestoneGearset,
-  ImportFromPcap
+  ImportFromPcap, PureUpdateGearset
 } from './gearsets.actions';
 import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -191,9 +191,19 @@ export class GearsetsEffects {
   })
   updateGearset$ = this.actions$.pipe(
     ofType<UpdateGearset>(GearsetsActionTypes.UpdateGearset),
-    debounceTime(2000),
+    debounceTime(500),
     switchMap(action => {
       return this.gearsetService.update(action.key, action.gearset);
+    })
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  pureUpdateGearset = this.actions$.pipe(
+    ofType<PureUpdateGearset>(GearsetsActionTypes.PureUpdateGearset),
+    switchMap(action => {
+      return this.gearsetService.pureUpdate(action.key, action.gearset);
     })
   );
 

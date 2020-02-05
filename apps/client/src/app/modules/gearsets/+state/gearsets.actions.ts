@@ -15,6 +15,7 @@ export enum GearsetsActionTypes {
 
   SelectGearset = '[Gearsets] Select Gearset',
   UpdateGearset = '[Gearsets] Update Gearset',
+  PureUpdateGearset = '[Gearsets] Pure Update Gearset',
   DeleteGearset = '[Gearsets] Delete Gearset'
 }
 
@@ -76,6 +77,13 @@ export class UpdateGearset implements Action {
   }
 }
 
+export class PureUpdateGearset implements Action {
+  readonly type = GearsetsActionTypes.PureUpdateGearset;
+
+  constructor(public key: string, public gearset: Partial<TeamcraftGearset>) {
+  }
+}
+
 export class DeleteGearset implements Action {
   readonly type = GearsetsActionTypes.DeleteGearset;
 
@@ -94,5 +102,6 @@ export type GearsetsAction =
   | CreateGearset
   | ImportAriyalaGearset
   | ImportLodestoneGearset
-  | ImportFromPcap;
+  | ImportFromPcap
+  | PureUpdateGearset;
 

@@ -21,6 +21,7 @@ import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -56,7 +57,25 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
-  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
+  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
+    tap(gearset => {
+      const ilvls = this.gearsetsFacade.toArray(gearset).map(piece => this.lazyData.data.ilvls[piece.itemId]);
+      const lowestIlvl = Math.min(...ilvls);
+      const highestIlvl = Math.max(...ilvls);
+      let didChange = false;
+      if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
+        this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+        didChange = true;
+      }
+      if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
+        this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+        didChange = true;
+      }
+      if (didChange) {
+        this.submitFilters();
+      }
+    })
+  );
 
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
@@ -376,6 +395,22 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         gearset: gearset
       },
       nzFooter: null
+    });
+  }
+
+  rename(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: gearset.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('GEARSETS.Rename_gearset')
+    }).afterClose.pipe(
+      filter(name => name !== undefined)
+    ).subscribe(name => {
+      gearset.name = name;
+      this.gearsetsFacade.pureUpdate(gearset.$key, {
+        name: gearset.name
+      });
     });
   }
 

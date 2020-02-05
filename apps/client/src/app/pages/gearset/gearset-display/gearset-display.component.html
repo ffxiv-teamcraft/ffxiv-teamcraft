@@ -6,6 +6,11 @@
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTitle]="'GEARSETS.Generate_list' | translate"
+                (click)="generateList(gearset)">
+          <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzShape="circle" nzType="primary"
            nz-tooltip [nzTitle]="'GEARSETS.Compare_gearset' | translate"
            (click)="compare(gearset)">
           <i nz-icon nzType="diff" nzTheme="outline"></i>
