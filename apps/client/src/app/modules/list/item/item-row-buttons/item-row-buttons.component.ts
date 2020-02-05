@@ -6,6 +6,8 @@ import { SettingsService } from '../../../settings/settings.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { takeUntil } from 'rxjs/operators';
 import { Team } from '../../../../model/team/team';
+import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 
 @Component({
   selector: 'app-item-row-buttons',
@@ -31,16 +33,19 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   overlay: boolean;
 
   @Input()
-  isCraft: boolean;// (list, list.authorId === userId, item)
+  isCraft: boolean;
 
   @Input()
-  hasAlarms: boolean;// item.alarms !== undefined && item.alarms.length > 0
+  hasAlarms: boolean;
 
   @Input()
   attachedRotation: string;
 
   @Input()
   userId: string;
+
+  @Input()
+  loggedIn: string;
 
   @Input()
   commentBadge: boolean;
@@ -50,6 +55,21 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   @Input()
   workingOnIt: string[];
+
+  @Input()
+  requiredForFinalCraft: boolean;
+
+  @Input()
+  permissionLevel: PermissionLevel;
+
+  @Input()
+  showLogCompletionButton: boolean;
+
+  @Input()
+  missingBooks: number[];
+
+  @Input()
+  masterbooks: number[]
 
   @Output()
   attachRotation = new EventEmitter<void>();
@@ -61,10 +81,46 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   openCommentsPopup = new EventEmitter<void>();
 
   @Output()
+  checkMasterbooks = new EventEmitter<number[]>();
+
+  @Output()
   addAllAlarms = new EventEmitter<void>();
 
   @Output()
-  assignTeamMember = new EventEmitter<string>();
+  openRequirementsPopup = new EventEmitter<void>();
+
+  @Output()
+  openRotationMacroPopup = new EventEmitter<CraftingRotation>();
+
+  @Output()
+  showTagInput = new EventEmitter<void>();
+
+  @Output()
+  changeAmount = new EventEmitter<void>();
+
+  @Output()
+  addToList = new EventEmitter<void>();
+
+  @Output()
+  removeItem = new EventEmitter<void>();
+
+  @Output()
+  markAsDoneInLog = new EventEmitter<void>();
+
+  @Output()
+  assignTeamMember = new EventEmitter<any>();
+
+  @Output()
+  setWorkingOnIt = new EventEmitter<string>();
+
+  @Output()
+  removeWorkingOnIt = new EventEmitter<string>();
+
+  @Input()
+  requiredAsHQ: boolean;
+
+  @Output()
+  requiredAsHQChange = new EventEmitter<boolean>();
 
   itemRowTypes = ItemRowMenuElement;
 
