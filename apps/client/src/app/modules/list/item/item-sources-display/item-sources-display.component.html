@@ -1,0 +1,86 @@
+<div class="obtentions-container" fxFlex="0 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="2px">
+  <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
+    <ng-container [ngSwitch]="source.type">
+      <a *ngSwitchCase="dataTypes.GARDENING"
+         href="{{source.data | ffxivgardening | i18n}}"
+         nz-tooltip
+         nzTitle="{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}"
+         target="_blank">
+        <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
+      </a>
+      <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button
+              nz-tooltip
+              nzShape="circle" nzTitle="{{'Hunting' | translate}}">
+        <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
+      </button>
+      <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
+              nz-button
+              nz-tooltip nzShape="circle" nzTitle="{{'Trade' | translate}}">
+        <img [src]="source.data | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'"
+             class="img-icon round-icon">
+      </button>
+      <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
+              nz-button
+              nz-tooltip nzShape="circle" nzTitle="{{source.data[0].name | i18n}}">
+        <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
+      </button>
+      <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
+              nz-button
+              nz-tooltip nzShape="circle" nzTitle="{{'Reduction' | translate}}">
+        <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
+      </button>
+      <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
+              nz-button
+              nz-tooltip nzShape="circle" nzTitle="{{'Desynth' | translate}}">
+        <i iconfont="icon-vectorcombine" nz-icon></i>
+      </button>
+      <button (click)="openVendorsPopup(item)" *ngSwitchCase="dataTypes.VENDORS"
+              [nzTitle]="'Vendors' | translate"
+              nz-button nz-tooltip nzShape="circle">
+        <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
+      </button>
+      <button (click)="openVoyagesPopup(item)" *ngSwitchCase="dataTypes.VOYAGES"
+              [nzTitle]="'Voyages' | translate"
+              nz-button nz-tooltip nzShape="circle">
+        <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
+      </button>
+      <button (click)="openVenturesPopup(item)" *ngSwitchCase="dataTypes.VENTURES"
+              [nzTitle]="'Retainer_ventures' | translate"
+              nz-button nz-tooltip nzShape="circle">
+        <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
+      </button>
+      <button (click)="openTreasuresPopup(item)" *ngSwitchCase="dataTypes.TREASURES"
+              [nzTitle]="'Treasures' | translate"
+              nz-button nz-tooltip nzShape="circle">
+        <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
+      </button>
+      <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
+              [nzTitle]="'Fates' | translate"
+              nz-button nz-tooltip nzShape="circle">
+        <img [src]="(source.data[0].id | fate).icon | xivapiIcon" alt="Fates" class="img-icon round-icon">
+      </button>
+      <ng-container *ngSwitchCase="dataTypes.CRAFTED_BY">
+        <div *ngFor="let craft of source.data; trackBy: trackByCraft"
+             [fxLayoutGap]="source.data.length > 1?'0px':'5px'"
+             [fxLayout]="source.data.length > 1?'column':'row'"
+             fxLayoutAlign="center center">
+          <ng-container *ngIf="craft.jobId > 0">
+            <button (click)="overlay?null:openSimulator(craft.recipeId, item, craft)" *ngIf="craft.icon !== ''" [nzShape]="'circle'"
+                    nz-button>
+              <img [src]="craft.icon" alt="" class="img-icon">
+            </button>
+            <div>{{craft.level}}</div>
+            <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
+          </ng-container>
+        </div>
+      </ng-container>
+      <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
+        <button (click)="openGatheredByPopup(item)" nz-button nzShape="circle">
+          <img class="img-icon gathering-icon" src="{{source.data.icon}}">
+        </button>
+        <div>{{source.data.level}}</div>
+        <div *ngIf="source.data.stars_tooltip !== undefined">{{source.data.stars_tooltip}}</div>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>
