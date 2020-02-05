@@ -1,67 +1,54 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Type, ViewChild } from '@angular/core';
-import { getItemSource, ListRow } from '../model/list-row';
-import { ListsFacade } from '../+state/lists.facade';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { AlarmDisplay } from '../../../core/alarms/alarm-display';
-import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { getItemSource, ListRow } from '../../model/list-row';
+import { ListsFacade } from '../../+state/lists.facade';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
+import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
-import { Alarm } from '../../../core/alarms/alarm';
+import { Alarm } from '../../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { exhaustMap, filter, first, map, mergeMap, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
-import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { XivapiService } from '@xivapi/angular-client';
-import { UserService } from '../../../core/database/user.service';
-import { AuthFacade } from '../../../+state/auth.facade';
-import { Team } from '../../../model/team/team';
-import { TeamsFacade } from '../../teams/+state/teams.facade';
-import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
-import { CommentsPopupComponent } from '../../comments/comments-popup/comments-popup.component';
-import { CommentTargetType } from '../../comments/comment-target-type';
-import { List } from '../model/list';
-import { ListItemCommentNotification } from '../../../model/notification/list-item-comment-notification';
-import { RotationPickerService } from '../../rotations/rotation-picker.service';
-import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
-import { ListManagerService } from '../list-manager.service';
-import { SettingsService } from '../../settings/settings.service';
-import { Craft } from '../../../model/garland-tools/craft';
-import { CommentsService } from '../../comments/comments.service';
-import { ListLayout } from '../../../core/layout/list-layout';
-import { CustomItem } from '../../custom-items/model/custom-item';
-import { ListPickerService } from '../../list-picker/list-picker.service';
-import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
-import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
+import { UserService } from '../../../../core/database/user.service';
+import { AuthFacade } from '../../../../+state/auth.facade';
+import { Team } from '../../../../model/team/team';
+import { TeamsFacade } from '../../../teams/+state/teams.facade';
+import { DiscordWebhookService } from '../../../../core/discord/discord-webhook.service';
+import { CommentsPopupComponent } from '../../../comments/comments-popup/comments-popup.component';
+import { CommentTargetType } from '../../../comments/comment-target-type';
+import { List } from '../../model/list';
+import { ListItemCommentNotification } from '../../../../model/notification/list-item-comment-notification';
+import { RotationPickerService } from '../../../rotations/rotation-picker.service';
+import { NumberQuestionPopupComponent } from '../../../number-question-popup/number-question-popup/number-question-popup.component';
+import { ListManagerService } from '../../list-manager.service';
+import { SettingsService } from '../../../settings/settings.service';
+import { Craft } from '../../../../model/garland-tools/craft';
+import { CommentsService } from '../../../comments/comments.service';
+import { ListLayout } from '../../../../core/layout/list-layout';
+import { CustomItem } from '../../../custom-items/model/custom-item';
+import { ListPickerService } from '../../../list-picker/list-picker.service';
+import { ProgressPopupService } from '../../../progress-popup/progress-popup.service';
+import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
-import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { CraftingRotation } from '../../../model/other/crafting-rotation';
-import { MacroPopupComponent } from '../../../pages/simulator/components/macro-popup/macro-popup.component';
+import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
+import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
 import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
-import { foods } from '../../../core/data/sources/foods';
-import { medicines } from '../../../core/data/sources/medicines';
-import { freeCompanyActions } from '../../../core/data/sources/free-company-actions';
-import { ConsumablesService } from '../../../pages/simulator/model/consumables.service';
-import { FreeCompanyActionsService } from '../../../pages/simulator/model/free-company-actions.service';
-import { MarketboardPopupComponent } from '../../marketboard/marketboard-popup/marketboard-popup.component';
-import { InventoryFacade } from '../../inventory/+state/inventory.facade';
-import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { DataType } from '../data/data-type';
-import { CraftedBy } from '../model/crafted-by';
-import { GatheredByComponent } from '../../item-details/gathered-by/gathered-by.component';
-import { HuntingComponent } from '../../item-details/hunting/hunting.component';
-import { ReducedFromComponent } from '../../item-details/reduced-from/reduced-from.component';
-import { InstancesComponent } from '../../item-details/instances/instances.component';
-import { DesynthsComponent } from '../../item-details/desynth/desynths.component';
-import { VendorsComponent } from '../../item-details/vendors/vendors.component';
-import { VenturesComponent } from '../../item-details/ventures/ventures.component';
-import { TreasuresComponent } from '../../item-details/treasures/treasures.component';
-import { FatesComponent } from '../../item-details/fates/fates.component';
-import { VoyagesComponent } from '../../item-details/voyages/voyages.component';
-import { TradesComponent } from '../../item-details/trades/trades.component';
-import { RelationshipsComponent } from '../../item-details/relationships/relationships.component';
-import { ItemDetailsPopup } from '../../item-details/item-details-popup';
-import { ItemSource } from '../model/item-source';
+import { foods } from '../../../../core/data/sources/foods';
+import { medicines } from '../../../../core/data/sources/medicines';
+import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
+import { ConsumablesService } from '../../../../pages/simulator/model/consumables.service';
+import { FreeCompanyActionsService } from '../../../../pages/simulator/model/free-company-actions.service';
+import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popup/marketboard-popup.component';
+import { InventoryFacade } from '../../../inventory/+state/inventory.facade';
+import { UserInventory } from '../../../../model/user/inventory/user-inventory';
+import { DataType } from '../../data/data-type';
+import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
+import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 
 @Component({
   selector: 'app-item-row',
@@ -219,8 +206,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   );
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
-
-  dataTypes = DataType;
 
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
@@ -596,66 +581,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       });
   }
 
-  public openGatheredByPopup(item: ListRow): void {
-    this.openDetailsPopup(GatheredByComponent, item, DataType.GATHERED_BY);
-  }
-
-  public openHuntingPopup(item: ListRow): void {
-    this.openDetailsPopup(HuntingComponent, item, DataType.DROPS);
-  }
-
-  public openInstancesPopup(item: ListRow): void {
-    this.openDetailsPopup(InstancesComponent, item, DataType.INSTANCES);
-  }
-
-  public openReducedFromPopup(item: ListRow): void {
-    this.openDetailsPopup(ReducedFromComponent, item, DataType.REDUCED_FROM);
-  }
-
-  public openDesynthsPopup(item: ListRow): void {
-    this.openDetailsPopup(DesynthsComponent, item, DataType.DESYNTHS);
-  }
-
-  public openVendorsPopup(item: ListRow): void {
-    this.openDetailsPopup(VendorsComponent, item, DataType.VENDORS);
-  }
-
-  public openVenturesPopup(item: ListRow): void {
-    this.openDetailsPopup(VenturesComponent, item, DataType.VENTURES);
-  }
-
-  public openTreasuresPopup(item: ListRow): void {
-    this.openDetailsPopup(TreasuresComponent, item, DataType.TREASURES);
-  }
-
-  public openFatesPopup(item: ListRow): void {
-    this.openDetailsPopup(FatesComponent, item, DataType.FATES);
-  }
-
-  public openVoyagesPopup(item: ListRow): void {
-    this.openDetailsPopup(VoyagesComponent, item, DataType.VOYAGES);
-  }
-
-  public openTradesPopup(item: ListRow): void {
-    this.openDetailsPopup(TradesComponent, item, DataType.TRADE_SOURCES);
-  }
-
   public openRequirementsPopup(item: ListRow): void {
     this.openDetailsPopup(RelationshipsComponent, item, DataType.NONE);
-  }
-
-  public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
-    const craft: Partial<Craft> = {
-      id: recipeId,
-      job: entry.jobId,
-      lvl: entry.level,
-      stars: entry.stars_tooltip.length,
-      rlvl: entry.rlvl,
-      durability: entry.durability,
-      progress: entry.progression,
-      quality: entry.quality
-    };
-    this.rotationPicker.openInSimulator(item.id, recipeId, craft);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
@@ -670,20 +597,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  public isButton(element: ItemRowMenuElement): boolean {
-    return this.buttonsCache[element];
-  }
-
-  public trackByCraft(index: number, craft: Craft): string {
-    return craft.id;
-  }
-
   public trackByAlarm(index: number, alarm: Alarm): string {
     return alarm.$key;
-  }
-
-  public trackByItemSource(index: number, source: ItemSource): DataType {
-    return source.type;
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {

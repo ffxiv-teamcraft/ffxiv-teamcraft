@@ -453,7 +453,7 @@ ipcMain.on('run-update', () => {
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop, 'screen-saver');
+  win.setAlwaysOnTop(onTop, 'normal');
 });
 
 ipcMain.on('always-on-top:get', (event) => {

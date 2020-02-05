@@ -51,7 +51,7 @@ export class LocalizedDataService {
     if (row !== undefined) {
       const koRow = this.getRow<Fate>(this.lazyData.data.koFates, id);
       const zhRow = this.getRow<Fate>(this.lazyData.data.zhFates, id);
-      
+
       row.name.ko = koRow !== undefined ? koRow.name.ko : row.name.en;
       row.description.ko = koRow !== undefined ? koRow.description.ko : row.description.en;
       row.name.zh = zhRow !== undefined ? zhRow.name.zh : row.name.en;
@@ -76,7 +76,7 @@ export class LocalizedDataService {
   public getJobName(id: number): I18nName {
     const row = this.getRow(jobNames, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobName', koKey: 'koJobName' });
-    
+
     return row;
   }
 
@@ -113,14 +113,14 @@ export class LocalizedDataService {
   public getTTRule(id: number): I18nName {
     const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
     this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhTripleTriadRules', koKey: 'koTripleTriadRules' });
-    
+
     return row.name;
   }
 
   public getWeather(id: number): I18nName {
     const row = this.getRow(weathers, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhWeathers', koKey: 'koWeathers' });
-    
+
     return row;
   }
 
@@ -245,7 +245,7 @@ export class LocalizedDataService {
   }
 
   private guessExtendedLanguageKey(language: 'zh' | 'ko', key: keyof LazyData): keyof LazyData {
-    const guessKey = `${language}${key.charAt(0).toUpperCase()}${key.substr(1)}`
+    const guessKey = `${language}${key.charAt(0).toUpperCase()}${key.substr(1)}`;
     if (!this.lazyData.data.hasOwnProperty(guessKey)) {
       return undefined;
     }

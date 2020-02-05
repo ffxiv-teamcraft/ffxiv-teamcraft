@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="6.5.12"></a>
+## [6.5.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.11...v6.5.12) (2020-02-05)
+
+
+### Bug Fixes
+
+* **db:** fixed reset filters and style in spot misses popup ([aa77045](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa77045))
+* **desktop:** fixing a bug with always on top not applied properly ([2f2aba6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2f2aba6))
+* **fishing:** fixed an issue with mooch not being detected in some cases ([52f7d74](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/52f7d74))
+* **list:** check validity of inventory on autofill enable by default too ([28e419d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/28e419d))
+* **list:** performance improvements ([23cb7ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23cb7ca))
+* **lists:** fixed an issue with lists shared to FC not loading properly ([9cda4b0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9cda4b0))
+* **macro-translator:** fixed a bug with actions that do not exist in KR/CN game ([30ed025](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30ed025))
+* **recipe-finder:** fixed import button not showing with smaller window size ([9b592a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9b592a2))
+* **search:** performance improvements for results display ([f7ca1b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7ca1b3))
+
+
+### Features
+
+* **core:** support for CN server 5.10 ([2b7e4dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b7e4dc))
+
+
+
 <a name="6.5.11"></a>
 ## [6.5.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.10...v6.5.11) (2020-01-30)
 

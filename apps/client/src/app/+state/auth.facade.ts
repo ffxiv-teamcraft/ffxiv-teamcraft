@@ -138,15 +138,16 @@ export class AuthFacade {
     map(([character, user]) => {
       if (!character || !character.FreeCompanyId || !character.FreeCompanyId
         || character.FreeCompanyId.toString() === user.currentFcId) {
-        return null;
+        return { id: user.currentFcId, save: false };
       }
-      return character.FreeCompanyId.toString();
+      return { id: character.FreeCompanyId.toString(), save: true };
     }),
-    tap(fcId => {
-      if (fcId !== null) {
-        this.store.dispatch(new SetCurrentFcId(fcId));
+    tap(entry => {
+      if (entry.save) {
+        this.store.dispatch(new SetCurrentFcId(entry.id));
       }
     }),
+    map(entry => entry.id),
     startWith('')
   );
 

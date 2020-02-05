@@ -1004,7 +1004,7 @@
     "Global_exp": "Суммировать опыт",
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
-    "Hide_large": "Скрыть большие левеквесты",
+    "Hide_large": "Скрыть большие ливквесты",
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
@@ -1346,11 +1346,11 @@
       "Masterpiece_bonus": "БОНУС"
     },
     "FISH": {
-      "Hour": "Час дня",
+      "Hour": "Время",
       "Etime": "Eorzean time",
       "Misses_popup_title": "Misses for this spot",
       "Show_misses": "Show misses",
-      "Baits": "Наживка использована",
+      "Baits": "Использованная наживка",
       "Hookset_and_tug": "Hooksets и tugs",
       "Weathers": "Погода",
       "Weather_transitions": "Переходы погоды",
@@ -1359,7 +1359,7 @@
       "Seconds": "Секунд",
       "Bite_time": "Время клева",
       "Spots": "Места",
-      "Min_gathering": "Мин. сбор",
+      "Min_gathering": "Мин. собирательство",
       "Min_size": "Мин. размер",
       "Max_size": "Макс. размер",
       "Avg_size": "Средний размер",

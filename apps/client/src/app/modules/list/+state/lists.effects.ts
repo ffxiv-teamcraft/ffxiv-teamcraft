@@ -73,7 +73,7 @@ export class ListsEffects {
   );
 
   @Effect()
-  loadListsWithWriteAccess$ = this.actions$.pipe(
+  loadSharedLists$ = this.actions$.pipe(
     ofType(ListsActionTypes.LoadSharedLists),
     first(),
     switchMap(() => combineLatest([this.authFacade.user$, this.authFacade.fcId$])),
