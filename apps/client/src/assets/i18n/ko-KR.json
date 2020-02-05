@@ -1347,9 +1347,9 @@
     },
     "FISH": {
       "Hour": "시간 통계",
-      "Etime": "Eorzean time",
-      "Misses_popup_title": "Misses for this spot",
-      "Show_misses": "Show misses",
+      "Etime": "에오르제아 시간",
+      "Misses_popup_title": "해당 낚싯터에서 놓친 물고기",
+      "Show_misses": "놓친 물고기 표시",
       "Baits": "사용된 미끼",
       "Hookset_and_tug": "낚아채기 및 입질",
       "Weathers": "날씨",
