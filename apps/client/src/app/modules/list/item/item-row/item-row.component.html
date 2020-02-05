@@ -471,32 +471,8 @@
   <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24" *ngIf="!overlay">
     <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
-        <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
-          <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
-                  [nzType]="display.spawned?'primary':'default'"
-                  nz-button
-                  nz-tooltip
-                  nzTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}">
-            <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
-            <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
-            {{display.remainingTime | timer}}
-            <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
-            <img [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
-          </button>
-          <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
-                  [nzPlacement]="'bottomCenter'"
-                  [nzSize]="'small'" nz-button
-                  nz-dropdown>
-            <i nz-icon nzType="ellipsis"></i>
-          </button>
-          <nz-dropdown-menu #menu="nzDropdownMenu">
-            <ul nz-menu>
-              <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups" nz-menu-item>
-                {{group.name}}
-              </li>
-            </ul>
-          </nz-dropdown-menu>
-        </nz-button-group>
+        <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups" (toggleAlarm)="toggleAlarm($event)"
+                          (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
       </div>
       <nz-tag
         *ngIf="moreAlarmsAvailable > 0"

@@ -54,6 +54,7 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { MapModule } from '../map/map.module';
 import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.module';
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
+import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -121,7 +122,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemRowComponent,
     TagsPopupComponent,
     ListCompletionPopupComponent,
-    ItemSourcesDisplayComponent
+    ItemSourcesDisplayComponent,
+    AlarmButtonComponent
   ],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent, ListDetailsPanelComponent]
