@@ -38,6 +38,9 @@
               </nz-select>
               <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)"></nz-input-number>
             </div>
+            <nz-select *ngIf="foods$ | async as foods" [ngModel]="food$ | async" (ngModelChange)="food$.next($event)" [style.width.px]="300">
+                <nz-option *ngFor="let food of foods" [nzValue]="food" [nzLabel]="(food.ID | itemName | i18n) + ' / ' + "></nz-option>
+            </nz-select>
             <div fxLayout="row" fxLayoutAlign="center center">
               <table>
                 <thead>

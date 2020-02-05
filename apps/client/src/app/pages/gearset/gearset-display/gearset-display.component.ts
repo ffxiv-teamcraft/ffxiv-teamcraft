@@ -43,9 +43,19 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public tribe$ = new BehaviorSubject<number>(1);
 
+  public food$ = new BehaviorSubject<any>(null);
+
   public stats$: Observable<{ id: number, value: number }[]> = combineLatest([this.gearsetsFacade.selectedGearset$, this.level$, this.tribe$]).pipe(
     map(([set, level, tribe]) => {
       return this.statsService.getStats(set, level, tribe);
+    })
+  );
+
+  public foods$: Observable<any[]> = this.level$.pipe(
+    map(level => {
+      return [].concat.apply([], this.statsService.getFoods(level).map(food => {
+        return [{...food, HQ: false}, {...food, HQ: true}]
+      }));
     })
   );
 

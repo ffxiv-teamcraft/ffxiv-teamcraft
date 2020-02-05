@@ -1803,10 +1803,21 @@ if (hasTodo('races')) {
         en: entry.Name_en,
         ja: entry.Name_ja,
         de: entry.Name_de,
-        fr: entry.Name_fr,
+        fr: entry.Name_fr
       };
     });
   }, null, () => {
     persistToJsonAsset('races', races);
+  });
+}
+
+if (hasTodo('foods')) {
+  const foods = [];
+  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemAction.Type=844&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
+    page.Results.forEach(entry => {
+      foods.push(entry);
+    });
+  }, null, () => {
+    persistToJsonAsset('foods', foods);
   });
 }

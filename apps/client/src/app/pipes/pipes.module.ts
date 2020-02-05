@@ -61,6 +61,7 @@ import { JobUnicodePipe } from './pipes/job-unicode.pipe';
 import { IlvlPipe } from './pipes/ilvl.pipe';
 import { RaceNamePipe } from './pipes/race-name.pipe';
 import { TribeNamePipe } from './pipes/tribe-name.pipe';
+import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
 
 @NgModule({
   declarations: [
@@ -126,7 +127,8 @@ import { TribeNamePipe } from './pipes/tribe-name.pipe';
     JobUnicodePipe,
     IlvlPipe,
     RaceNamePipe,
-    TribeNamePipe
+    TribeNamePipe,
+    FoodBonusesPipePipe
   ],
   exports: [
     ItemNamePipe,
@@ -191,7 +193,8 @@ import { TribeNamePipe } from './pipes/tribe-name.pipe';
     JobUnicodePipe,
     IlvlPipe,
     RaceNamePipe,
-    TribeNamePipe
+    TribeNamePipe,
+    FoodBonusesPipePipe
   ]
 })
 export class PipesModule {

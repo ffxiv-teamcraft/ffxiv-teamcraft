@@ -4,6 +4,7 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
+import { Memoized } from '../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -115,6 +116,13 @@ export class StatsService {
   ];
 
   constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
+  }
+
+  @Memoized()
+  public getFoods(level: number): any[] {
+    return this.lazyData.data.foods.filter(food => {
+      return food.LevelEquip > level - 5 && food.LevelEquip < level + 5;
+    });
   }
 
   public getStats(set: TeamcraftGearset, level: number, tribe: number): { id: number, value: number }[] {
