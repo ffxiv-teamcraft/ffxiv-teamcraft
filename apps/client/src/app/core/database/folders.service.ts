@@ -1,12 +1,12 @@
 import { Injectable, NgZone } from '@angular/core';
-import { Workshop } from '../../model/other/workshop';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
+import { Folder } from '../../model/common/folder';
 
 @Injectable()
-export class WorkshopService extends FirestoreRelationalStorage<Workshop> {
+export class FolderService extends FirestoreRelationalStorage<Folder<any>> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService) {
@@ -14,11 +14,11 @@ export class WorkshopService extends FirestoreRelationalStorage<Workshop> {
   }
 
   protected getBaseUri(): string {
-    return '/workshops';
+    return '/folders';
   }
 
   protected getClass(): any {
-    return Workshop;
+    return Folder;
   }
 
 }

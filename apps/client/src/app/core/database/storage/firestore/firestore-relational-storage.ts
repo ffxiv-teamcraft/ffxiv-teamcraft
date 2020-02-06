@@ -31,6 +31,22 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     }
   }
 
+  public getShared(userId: string): Observable<T[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<T>[]) => {
+          const rows = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<T>(rows, [this.getClass()]);
+        })
+      );
+  }
+
   public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
