@@ -57,7 +57,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   workingOnIt: string[];
 
   @Input()
-  requiredForFinalCraft: boolean;
+  requiredForFinalCraft: boolean | number;
 
   @Input()
   permissionLevel: PermissionLevel;
@@ -115,6 +115,9 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
 
   @Output()
   removeWorkingOnIt = new EventEmitter<string>();
+
+  @Output()
+  openMarketboardDialog = new EventEmitter<void>();
 
   @Input()
   requiredAsHQ: boolean;

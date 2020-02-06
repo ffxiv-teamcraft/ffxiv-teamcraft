@@ -114,7 +114,7 @@
     </ng-container>
     <ng-template #removeSingleAssignment>
       <button (click)="removeWorkingOnIt.emit(userId)"
-              *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn$ | async" [nzBackdrop]="false"
+              *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn" [nzBackdrop]="false"
               [nzShape]="'circle'"
               [nzTitle]="'Remove_work_on_it' | translate"
               nz-button nz-dropdown
@@ -247,7 +247,6 @@
 
         <ng-container *ngIf="!isButton(itemRowTypes.COMMENTS)">
           <li (click)="openCommentsPopup.emit()"
-              *ngIf="userId$ | async as userId"
               nz-menu-item>
             <nz-badge [nzDot]="commentBadge">
               {{'COMMENTS.Title' | translate}}
