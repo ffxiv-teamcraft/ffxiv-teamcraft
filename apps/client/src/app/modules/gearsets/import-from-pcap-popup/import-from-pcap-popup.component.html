@@ -8,7 +8,7 @@
   </nz-form-item>
 
   <nz-form-control>
-    <nz-select class="job-select" [nzDisabled]="!gearsetName" [(ngModel)]="job" (ngModelChange)="startPcap()" nzShowSearch
+    <nz-select class="job-select" [nzDisabled]="!gearsetName" [(ngModel)]="job" nzShowSearch
                [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
       <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | jobName | i18n"
                  [nzValue]="job.id" nzCustomContent>
