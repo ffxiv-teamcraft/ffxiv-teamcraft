@@ -30,7 +30,7 @@
                 <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
                    nzType="plus"></i>
               </ng-template>
-              <button (click)="createQuickList(searchResult)" [nzShape]="'circle'" [nzTitle]="'Quick_list_create' | translate"
+              <button (click)="createQuickList(searchResult, +amountInput.value)" [nzShape]="'circle'" [nzTitle]="'Quick_list_create' | translate"
                       fxFlex="0 0 auto"
                       nz-button nz-tooltip>
                 <i nz-icon nzType="clock-circle-o"></i>
