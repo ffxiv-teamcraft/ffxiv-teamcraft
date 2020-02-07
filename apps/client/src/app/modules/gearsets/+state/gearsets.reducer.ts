@@ -34,8 +34,8 @@ export function reducer(
       return {
         ...state,
         list: [
-          ...state.list,
-          ...action.payload.filter(set => !state.list.some(s => s.$key === set.$key))
+          ...state.list.filter(folder => !action.payload.some(s => s.$key === folder.$key)),
+          ...action.payload
         ],
         loaded: true
       };

@@ -41,6 +41,16 @@ export class GearsetEditorRowComponent implements OnInit {
     this.pieceChange.emit(checked);
   }
 
+  updateHq(toggle: boolean): void {
+    this.equipmentPiece = {
+      ...this.equipmentPiece,
+      hq: toggle
+    };
+    if (this.isPieceSelected()) {
+      this.setGearsetPiece(true);
+    }
+  }
+
   triggerEditMaterias(): void {
     this.editMaterias.emit();
   }

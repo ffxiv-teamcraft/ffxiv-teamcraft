@@ -13,7 +13,7 @@
           <div>{{item | xivapiI18n}}</div>
           <nz-switch [(ngModel)]="equipmentPiece.hq"
                      [nzDisabled]="item.CanBeHq === 0"
-                     (ngModelChange)="isPieceSelected()?setGearsetPiece(true):null"
+                     (ngModelChange)="updateHq($event)"
                      [nzCheckedChildren]="'COMMON.Hq' | translate"
                      [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
         </div>

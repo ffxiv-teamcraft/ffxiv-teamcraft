@@ -13,6 +13,9 @@
     <div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
       <div>{{gearset.name}}</div>
+      <button nz-button nzSize="small" nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+        <i nz-icon nzType="edit"></i>
+      </button>
       <div fxFlex="1 1 auto"></div>
       <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">
         <i nz-icon nzType="eye" nzTheme="outline"></i>
@@ -49,6 +52,7 @@
       <div *ngFor="let folder of display.folders; let i = index;  trackBy: trackByKey"
            cdkDrag [cdkDragData]="folder.folder">
         <app-folder [display]="folder"
+                    [userId]="userId"
                     [elementTemplate]="gearsetTemplate"
                     [dndConnections]="dndConnections"
                     id="folder-{{i}}"

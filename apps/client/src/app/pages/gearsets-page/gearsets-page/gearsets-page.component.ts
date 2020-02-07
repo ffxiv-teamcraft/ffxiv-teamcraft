@@ -11,6 +11,9 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
+import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { filter } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gearsets-page',
@@ -31,7 +34,7 @@ export class GearsetsPageComponent implements OnInit {
 
   constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
               private authFacade: AuthFacade, private ipc: IpcService,
-              private foldersFacade: FoldersFacade) {
+              private foldersFacade: FoldersFacade, private translate: TranslateService) {
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
@@ -66,6 +69,22 @@ export class GearsetsPageComponent implements OnInit {
 
   deleteGearset(key: string): void {
     this.gearsetsFacade.delete(key);
+  }
+
+  rename(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzContent: NameQuestionPopupComponent,
+      nzComponentParams: { baseName: gearset.name },
+      nzFooter: null,
+      nzTitle: this.translate.instant('GEARSETS.Rename_gearset')
+    }).afterClose.pipe(
+      filter(name => name !== undefined)
+    ).subscribe(name => {
+      gearset.name = name;
+      this.gearsetsFacade.pureUpdate(gearset.$key, {
+        name: gearset.name
+      });
+    });
   }
 
   drop(event: any, root: TeamcraftGearset[]): void {
