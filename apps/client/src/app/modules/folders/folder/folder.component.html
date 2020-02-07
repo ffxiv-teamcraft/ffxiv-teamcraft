@@ -1,6 +1,26 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="display.folder.name" #panelComponent>
+  <nz-collapse-panel [nzHeader]="header">
+    <ng-template #header>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" class="header">
+        <div>{{display.folder.name}}</div>
+        <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();rename()" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+          <i nz-icon nzType="edit"></i>
+        </button>
+        <div fxFlex="1 1 auto"></div>
+        <!--        TODO folder pages -->
+        <!--        <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">-->
+        <!--          <i nz-icon nzType="eye" nzTheme="outline"></i>-->
+        <!--        </a>-->
+        <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"
+                nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
+                nz-tooltip [nzTitle]="'FODLERS.Delete_folder' | translate"
+                (nzOnConfirm)="deleteFolder(display.folder)">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
+      </div>
+    </ng-template>
     <div cdkDropList [cdkDropListConnectedTo]="dndConnections"
+         [cdkDropListEnterPredicate]="canDropGearset"
          [id]="id" [cdkDropListData]="display.folder"
          (cdkDropListExited)="exited($event)"
          (cdkDropListEntered)="entered($event)"
@@ -9,6 +29,7 @@
     >
       <div cdkDrag *ngFor="let element of display.content; let i = index;  trackBy: trackByKey" [cdkDragData]="element">
         <app-folder *ngIf="element.isFolder; else elRef"
+                    [userId]="userId"
                     [display]="element"
                     [elementTemplate]="elementTemplate"
                     [dndConnections]="dndConnections"

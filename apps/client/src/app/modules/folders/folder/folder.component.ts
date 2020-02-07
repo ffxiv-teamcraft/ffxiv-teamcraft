@@ -5,6 +5,7 @@ import { FoldersFacade } from '../+state/folders.facade';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
+import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 
 @Component({
   selector: 'app-folder',
@@ -25,6 +26,9 @@ export class FolderComponent<T extends DataModel> implements OnInit {
 
   @Input()
   id: string;
+
+  @Input()
+  userId: string;
 
   @Output()
   connectDnD = new EventEmitter<string>();
@@ -53,8 +57,7 @@ export class FolderComponent<T extends DataModel> implements OnInit {
       if (dropped.container.id !== dropped.previousContainer.id
         && dropped.container.id === this.id) {
         if (item.data instanceof Folder) {
-          item.data.isRoot = false;
-          this.display.folder.content.splice(dropped.currentIndex, 0, `folders/${item.data.$key}`);
+          // TODO folderception
         } else {
           this.display.folder.content.splice(dropped.currentIndex, 0, `${this.foldersFacade.getPrefix(this.display.folder.contentType)}${item.data.$key}`);
         }
@@ -68,6 +71,13 @@ export class FolderComponent<T extends DataModel> implements OnInit {
     this.save();
   }
 
+  canDropGearset(drag: CdkDrag): boolean {
+    return drag.data instanceof TeamcraftGearset;
+  }
+
+  public deleteFolder(folder: Folder<T>): void {
+    this.foldersFacade.deleteFolder(folder);
+  }
 
   private save(): void {
     this.foldersFacade.updateFolder(this.display.folder);

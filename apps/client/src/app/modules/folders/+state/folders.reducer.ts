@@ -26,8 +26,8 @@ export function reducer(
       return {
         ...state,
         list: [
-          ...state.list,
-          ...action.payload.filter(folder => !state.list.some(s => s.$key === folder.$key))
+          ...state.list.filter(folder => !action.payload.some(s => s.$key === folder.$key)),
+          ...action.payload
         ]
       };
     }

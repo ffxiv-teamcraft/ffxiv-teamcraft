@@ -9,7 +9,7 @@ import { FolderComponent } from './folder/folder.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { NzCollapseModule, NzModalModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCollapseModule, NzModalModule, NzPopconfirmModule, NzToolTipModule, NzIconModule } from 'ng-zorro-antd';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -27,6 +27,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
     NzCollapseModule,
     NzModalModule,
+    NzButtonModule,
+    NzToolTipModule,
+    NzPopconfirmModule,
+    NzIconModule,
 
     TranslateModule,
     CoreModule,
