@@ -61,7 +61,7 @@
     },
     "squirrelWindows": {
       "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": true
+      "remoteReleases": "https://github.com/supamiu/ffxiv-teamcraft/releases/latest/download"
     }
   },
   "scripts": {

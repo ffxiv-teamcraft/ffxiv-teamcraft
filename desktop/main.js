@@ -45,19 +45,12 @@ log.log(argv);
 
 if (!isDev && argv.indexOf('squirrel-firstrun') === -1) {
   require('update-electron-app')({
+    repo: 'supamiu/ffxiv-teamcraft',
     logger: log
   });
 }
 
-const gotTheLock = app.requestSingleInstanceLock();
-if (!gotTheLock) {
-  app.isQuitting = true;
-  app.quit();
-}
-
 let deepLink = '';
-
-let api;
 
 if (options.noHA) {
   app.disableHardwareAcceleration();
