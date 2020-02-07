@@ -157,43 +157,50 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }),
     withLatestFrom(this.gearset$),
     map(([[response, crystal], gearset]) => {
-      const prepared = [...response.Results, ...crystal.Results].reduce((resArray, item) => {
-        const itemSlotName = Object.keys(item.EquipSlotCategory)
-          .filter(key => key !== 'ID')
-          .find(key => item.EquipSlotCategory[key] === 1);
-
-        let arrayEntry = resArray.find(row => row.name === itemSlotName);
-        const propertyName = this.getPropertyName(itemSlotName);
-        if (arrayEntry === undefined) {
-          resArray.push({
-            name: itemSlotName,
-            index: item.EquipSlotCategory.ID,
-            property: propertyName,
-            items: []
-          });
-          arrayEntry = resArray[resArray.length - 1];
-        }
-
-        const itemEntry = {
-          item: item,
-          equipmentPiece: {
-            itemId: item.ID,
-            hq: item.CanBeHq === 1,
-            materias: this.getMaterias(item, propertyName),
-            materiaSlots: item.MateriaSlotCount,
-            canOvermeld: item.IsAdvancedMeldingPermitted === 1
+      const prepared = [...response.Results, ...crystal.Results]
+        .filter(item => {
+          if (!gearset.isCombatSet()) {
+            return item.Name_en.indexOf('Gordian') === -1;
           }
-        };
+          return true;
+        })
+        .reduce((resArray, item) => {
+          const itemSlotName = Object.keys(item.EquipSlotCategory)
+            .filter(key => key !== 'ID')
+            .find(key => item.EquipSlotCategory[key] === 1);
 
-        const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
+          let arrayEntry = resArray.find(row => row.name === itemSlotName);
+          const propertyName = this.getPropertyName(itemSlotName);
+          if (arrayEntry === undefined) {
+            resArray.push({
+              name: itemSlotName,
+              index: item.EquipSlotCategory.ID,
+              property: propertyName,
+              items: []
+            });
+            arrayEntry = resArray[resArray.length - 1];
+          }
 
-        if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
-          itemEntry.equipmentPiece = equipmentPieceFromGearset;
-        }
+          const itemEntry = {
+            item: item,
+            equipmentPiece: {
+              itemId: item.ID,
+              hq: item.CanBeHq === 1,
+              materias: this.getMaterias(item, propertyName),
+              materiaSlots: item.MateriaSlotCount,
+              canOvermeld: item.IsAdvancedMeldingPermitted === 1
+            }
+          };
 
-        arrayEntry.items.push(itemEntry);
-        return resArray;
-      }, []);
+          const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
+
+          if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
+            itemEntry.equipmentPiece = equipmentPieceFromGearset;
+          }
+
+          arrayEntry.items.push(itemEntry);
+          return resArray;
+        }, []);
       const fingerLCategory = prepared.find(category => category.index === 12);
       if (fingerLCategory) {
         prepared.push(JSON.parse(JSON.stringify({
