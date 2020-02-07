@@ -14,7 +14,7 @@ import {
   LoadGearsets,
   PureUpdateGearset,
   SelectGearset,
-  UpdateGearset
+  UpdateGearset, UpdateGearsetIndexes
 } from './gearsets.actions';
 import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -145,6 +145,10 @@ export class GearsetsFacade {
 
   importLodestoneGearset(): void {
     this.store.dispatch(new ImportLodestoneGearset());
+  }
+
+  saveIndexes(sets: TeamcraftGearset[]): void {
+    this.store.dispatch(new UpdateGearsetIndexes(sets));
   }
 
 

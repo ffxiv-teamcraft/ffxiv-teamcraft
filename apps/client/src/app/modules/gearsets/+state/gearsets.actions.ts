@@ -15,6 +15,7 @@ export enum GearsetsActionTypes {
 
   SelectGearset = '[Gearsets] Select Gearset',
   UpdateGearset = '[Gearsets] Update Gearset',
+  UpdateGearsetIndexes = '[Gearsets] Update Gearset indexes',
   PureUpdateGearset = '[Gearsets] Pure Update Gearset',
   DeleteGearset = '[Gearsets] Delete Gearset'
 }
@@ -25,6 +26,13 @@ export class LoadGearsets implements Action {
 
 export class GearsetsLoaded implements Action {
   readonly type = GearsetsActionTypes.GearsetsLoaded;
+
+  constructor(public payload: TeamcraftGearset[]) {
+  }
+}
+
+export class UpdateGearsetIndexes implements Action {
+  readonly type = GearsetsActionTypes.UpdateGearsetIndexes;
 
   constructor(public payload: TeamcraftGearset[]) {
   }
@@ -103,5 +111,6 @@ export type GearsetsAction =
   | ImportAriyalaGearset
   | ImportLodestoneGearset
   | ImportFromPcap
-  | PureUpdateGearset;
+  | PureUpdateGearset
+  | UpdateGearsetIndexes;
 

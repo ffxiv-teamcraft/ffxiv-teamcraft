@@ -10,7 +10,7 @@ import {
   LoadFolder,
   LoadFolders,
   PureUpdateFolder,
-  UpdateFolder
+  UpdateFolder, UpdateFolderIndexes
 } from './folders.actions';
 import { distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -74,6 +74,16 @@ export class FoldersEffects {
     ofType<DeleteFolder>(FoldersActionTypes.DeleteFolder),
     switchMap(action => {
       return this.foldersService.remove(action.key);
+    })
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  updateFolderIndexes$ = this.actions$.pipe(
+    ofType<UpdateFolderIndexes>(FoldersActionTypes.UpdateFolderIndexes),
+    switchMap(action => {
+      return this.foldersService.updateIndexes(action.payload);
     })
   );
 

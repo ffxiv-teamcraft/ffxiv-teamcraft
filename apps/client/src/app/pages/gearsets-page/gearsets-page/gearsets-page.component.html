@@ -10,7 +10,7 @@
 
 <ng-container *ngIf="userId$ | async as userId">
   <ng-template #gearsetTemplate let-gearset>
-    <div class="gearset-row" cdkDrag fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+    <div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
       <div>{{gearset.name}}</div>
       <div fxFlex="1 1 auto"></div>
@@ -29,12 +29,33 @@
       </button>
     </div>
   </ng-template>
-
-  <div cdkDropList class="gearsets-list" *ngIf="gearsets$ | async as gearsets" fxLayout="column" fxLayoutGap="10px">
-    <ng-container *ngFor="let gearset of gearsets">
-      <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
-    </ng-container>
-    <app-folder *ngFor="let folder of folders$ | async" [display]="folder" [elementTemplate]="gearsetTemplate" cdkDrag>
-    </app-folder>
+  <div fxLayout="column" fxLayoutGap="10px" *ngIf="display$ | async as display">
+    <div cdkDropList id="gearsets-root"
+         [cdkDropListEnterPredicate]="canDropGearset"
+         [cdkDropListConnectedTo]="dndConnections"
+         (cdkDropListDropped)="drop($event, display.root)"
+         class="gearsets-list"
+         fxLayout="column" fxLayoutGap="10px">
+      <div *ngFor="let gearset of display.root" cdkDrag [cdkDragData]="gearset">
+        <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
+      </div>
+    </div>
+    <div cdkDropList fxLayout="column" fxLayoutGap="10px"
+         id="folder-root"
+         class="folder-drop-list"
+         (cdkDropListDropped)="dropFolder($event, display.folders)"
+         [cdkDropListConnectedTo]="dndConnections"
+         [cdkDropListEnterPredicate]="canDropFolder">
+      <div *ngFor="let folder of display.folders; let i = index;  trackBy: trackByKey"
+           cdkDrag [cdkDragData]="folder.folder">
+        <app-folder [display]="folder"
+                    [elementTemplate]="gearsetTemplate"
+                    [dndConnections]="dndConnections"
+                    id="folder-{{i}}"
+                    (connectDnD)="addDnDConnections($event)">
+        </app-folder>
+      </div>
+      <div class="empty-drag-slot"></div>
+    </div>
   </div>
 </ng-container>

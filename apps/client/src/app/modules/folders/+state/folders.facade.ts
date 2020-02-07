@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { FoldersPartialState } from './folders.reducer';
 import { foldersQuery } from './folders.selectors';
-import { CreateFolder, DeleteFolder, LoadFolders, PureUpdateFolder, SelectFolder, UpdateFolder } from './folders.actions';
+import { CreateFolder, DeleteFolder, LoadFolders, PureUpdateFolder, SelectFolder, UpdateFolder, UpdateFolderIndexes } from './folders.actions';
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { combineLatest, Observable } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
-import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NzModalService } from 'ng-zorro-antd';
@@ -16,8 +16,12 @@ import { TranslateService } from '@ngx-translate/core';
 export interface PreprocessedDisplay<T> {
   display: FolderDisplay<T>,
   missing: string[],
-  rootEntities: string[],
-  entitiesPicked: string[]
+  pickedEntities: string[]
+}
+
+export interface TreeFolderDisplay<T> {
+  folders: FolderDisplay<T>[],
+  root: T[]
 }
 
 @Injectable()
@@ -32,20 +36,36 @@ export class FoldersFacade {
               private translate: TranslateService) {
   }
 
-  getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<FolderDisplay<T>[]> {
-    return this.getFolders<T>(type).pipe(
-      switchMap(folders => {
-        return combineLatest(folders
+  getPrefix(type: FolderContentType): string {
+    switch (type) {
+      case FolderContentType.GEARSET:
+        return 'gearsets/';
+    }
+  }
+
+  getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<TreeFolderDisplay<T>> {
+    return combineLatest([this.getFolders<T>(type), loadedContent$]).pipe(
+      map(([folders, entities]) => {
+        let root = entities.map(e => e.$key);
+        const displays = folders
           .filter(folder => folder.isRoot)
           .map((folder: Folder<T>) => {
-            return loadedContent$.pipe(
-              map(entities => {
-                const syncDisplay = this.getSyncFolderDisplay<T>(folders, entities, folder);
-                syncDisplay.missing.forEach(loadMissing);
-                return syncDisplay.display;
-              })
-            );
-          }));
+            const syncDisplay = this.getSyncFolderDisplay<T>(folders, entities, folder);
+            syncDisplay.missing.forEach(loadMissing);
+            root = root.filter(key => syncDisplay.pickedEntities.indexOf(key) === -1);
+            return syncDisplay.display;
+          });
+        return {
+          folders: displays.sort((a, b) => a.folder.index - b.folder.index),
+          root: root
+            .map(key => entities.find(e => e.$key === key))
+            .sort((a: any, b: any) => {
+              if (a.index === b.index) {
+                return a.$key > b.$key ? 1 : -1;
+              }
+              return a.index - b.index;
+            })
+        };
       })
     );
   }
@@ -64,12 +84,14 @@ export class FoldersFacade {
         const folderDisplay = this.getSyncFolderDisplay(folders, entities, matchingFolder);
         display.content.push(folderDisplay.display);
         missing.push(...folderDisplay.missing);
-        entitiesPicked.push(...folderDisplay.entitiesPicked);
+        entitiesPicked.push(...folderDisplay.pickedEntities);
       } else {
         const matchingEntity = entities.find(e => e.$key === $key);
         if (matchingEntity) {
           entitiesPicked.push($key);
-          display.content.push(matchingEntity);
+          if (!matchingEntity.notFound) {
+            display.content.push(matchingEntity);
+          }
         } else {
           missing.push($key);
         }
@@ -78,19 +100,18 @@ export class FoldersFacade {
     return {
       display: display,
       missing: missing,
-      rootEntities: entities.map(e => e.$key).filter(key => entitiesPicked.indexOf(key) === -1),
-      entitiesPicked: entitiesPicked
+      pickedEntities: entitiesPicked
     };
   }
 
-  getSelectedFolder<T>(type: FolderContentType): Observable<Folder<T>> {
+  getSelectedFolder<T extends DataModel>(type: FolderContentType): Observable<Folder<T>> {
     if (this.selectedFoldersCache[type] === undefined) {
       this.selectedFoldersCache[type] = this.store.pipe(select(foldersQuery.getSelectedFolders(type)));
     }
     return this.selectedFoldersCache[type];
   }
 
-  getFolders<T>(type: FolderContentType): Observable<Folder<T>[]> {
+  getFolders<T extends DataModel>(type: FolderContentType): Observable<Folder<T>[]> {
     if (this.foldersPerTypeCache[type] === undefined) {
       this.foldersPerTypeCache[type] = this.allFolders$.pipe(
         map(folders => {
@@ -132,6 +153,10 @@ export class FoldersFacade {
 
   deleteFolder(folder: Folder<any>): void {
     this.store.dispatch(new DeleteFolder(folder.$key));
+  }
+
+  saveIndexes(folders: Folder<any>[]): void {
+    this.store.dispatch(new UpdateFolderIndexes(folders));
   }
 
   select(type: FolderContentType, key: string): void {

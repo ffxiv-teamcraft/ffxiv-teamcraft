@@ -1,10 +1,23 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="display.folder.name">
-    <ng-container *ngFor="let element of display.content">
-      <app-folder *ngIf="element.isFolder; else elRef" [display]="element"></app-folder>
-      <ng-template #elRef>
-        <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
-      </ng-template>
-    </ng-container>
+  <nz-collapse-panel [nzHeader]="display.folder.name" #panelComponent>
+    <div cdkDropList [cdkDropListConnectedTo]="dndConnections"
+         [id]="id" [cdkDropListData]="display.folder"
+         (cdkDropListExited)="exited($event)"
+         (cdkDropListEntered)="entered($event)"
+         (cdkDropListDropped)="drop($event)"
+         fxLayout="column" fxLayoutGap="10px"
+    >
+      <div cdkDrag *ngFor="let element of display.content; let i = index;  trackBy: trackByKey" [cdkDragData]="element">
+        <app-folder *ngIf="element.isFolder; else elRef"
+                    [display]="element"
+                    [elementTemplate]="elementTemplate"
+                    [dndConnections]="dndConnections"
+                    (connectDnD)="connectDnD.emit($event)"
+                    id="{{id}}-{{i}}"></app-folder>
+        <ng-template #elRef>
+          <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
+        </ng-template>
+      </div>
+    </div>
   </nz-collapse-panel>
 </nz-collapse>

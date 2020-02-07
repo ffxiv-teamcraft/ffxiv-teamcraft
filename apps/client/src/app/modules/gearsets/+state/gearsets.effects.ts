@@ -14,9 +14,10 @@ import {
   LoadGearset,
   LoadGearsets,
   PureUpdateGearset,
-  UpdateGearset
+  UpdateGearset,
+  UpdateGearsetIndexes
 } from './gearsets.actions';
-import { debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NzModalService } from 'ng-zorro-antd';
@@ -49,9 +50,20 @@ export class GearsetsEffects {
   loadGearset$ = this.actions$.pipe(
     ofType<LoadGearset>(GearsetsActionTypes.LoadGearset),
     switchMap(action => {
-      return this.gearsetService.get(action.key);
+      return this.gearsetService.get(action.key)
+        .pipe(catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset)));
     }),
     map(gearset => new GearsetLoaded(gearset))
+  );
+
+  @Effect({
+    dispatch: false
+  })
+  updateIndexes$ = this.actions$.pipe(
+    ofType<UpdateGearsetIndexes>(GearsetsActionTypes.UpdateGearsetIndexes),
+    switchMap(action => {
+      return this.gearsetService.updateIndexes(action.payload);
+    })
   );
 
   @Effect({

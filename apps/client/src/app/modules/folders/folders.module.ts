@@ -11,6 +11,8 @@ import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { NzCollapseModule, NzModalModule } from 'ng-zorro-antd';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [FolderComponent],
@@ -29,9 +31,11 @@ import { NameQuestionPopupModule } from '../name-question-popup/name-question-po
     TranslateModule,
     CoreModule,
     PipesModule,
-    NameQuestionPopupModule
-
+    NameQuestionPopupModule,
+    DragDropModule,
+    FlexLayoutModule
   ],
   providers: [FoldersFacade]
 })
-export class FoldersModule {}
+export class FoldersModule {
+}
