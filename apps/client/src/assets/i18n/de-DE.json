@@ -1347,6 +1347,9 @@
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
       "Baits": "Verwendeter Köder",
       "Hookset_and_tug": "Anschläge und Spitzen",
       "Weathers": "Wetter",

@@ -37,7 +37,7 @@
     "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "Только рецепты"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -95,7 +95,7 @@
   "Hide_if_empty": "Скрыть, если пусто",
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
-  "Ephemeral_tag": "Ephemeral",
+  "Ephemeral_tag": "Эфемерный",
   "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
@@ -139,17 +139,17 @@
     "Top": "Вверху",
     "Bottom": "Внизу",
     "Amount": "Количество",
-    "Undo": "Undo",
+    "Undo": "Отменить",
     "User": "Пользователь",
-    "Tables": "Table",
-    "Pie_charts": "Pie charts",
+    "Tables": "Таблица",
+    "Pie_charts": "Круговая диаграмма",
     "Read_more_on_wiki": "Подробнее на вики",
-    "Apply": "Apply",
-    "Open_link": "Open website link",
-    "Unknown": "Unknown",
-    "Minimum": "Minimum",
-    "Maximum": "Maximum",
-    "Average": "Average"
+    "Apply": "Применить",
+    "Open_link": "Открыть веб-сайт",
+    "Unknown": "Неизвестно",
+    "Minimum": "Минимум",
+    "Maximum": "Максимум",
+    "Average": "В среднем"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -167,7 +167,7 @@
     "Volume": "Громкость",
     "Macro_copied": "Макрос скопирован в буфер обмена",
     "Open_overlay": "Открыть оверлей",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_alarms_overlay": "Открыть оверлей оповещений",
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
@@ -257,7 +257,7 @@
   "Login": "Войти",
   "Disconnect": "Выйти",
   "Password": "Пароль",
-  "Password_Confirmation": "Confirm Password",
+  "Password_Confirmation": "Подтвердить пароль",
   "Submit": "Отправить",
   "Invalid_credentials": "Неверные учетные данные",
   "Not_verified": "Не подтверждён",
@@ -344,8 +344,8 @@
     "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
     "Always_on_top": "Всегда cверху",
-    "Start_minimized": "Start minimized in tray",
-    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
+    "Start_minimized": "Запускать в свёрнутом виде",
+    "Always_quit": "Выйти при нажатии на кнопку закрытия (вместо сворачивания)",
     "Check_for_update": "Проверить обновления",
     "Downloading_update": "Загрузка обновления",
     "No_update_available": "Нет доступных обновлений",
@@ -381,18 +381,18 @@
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
     "Disable_search_history": "Отключить историю поиска",
-    "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
-    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
-    "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
-    "Enable_autofill_by_default": "Enable autofill by default",
-    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
-    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
+    "Disable_search_debounce": "Отключить автопоиск (только нажатие enter вызовет поиск)",
+    "Enable_packet_capture": "Включить захват пакетов (добавляет функцию инвентаря в реальном времени)",
+    "Packet_capture_info": "Захват пакетов идет против ToS, по той же причине, что и ACT. Square Enix терпит его, если вы не рассказываете про него всем игрокам.",
+    "Enable_autofill_by_default": "Включить автозаполнение по умолчанию",
+    "Enable_autofill_notification_by_default": "Включить уведомление автозаполнения по умолчанию",
+    "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
-    "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
-    "Performance_mode": "Performance mode",
-    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
-    "Change_email": "Change email",
-    "Change_email_success": "Email changed",
+    "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
+    "Performance_mode": "Режим производительности",
+    "Performance_mode_explain": "Удаляет изображения в списках, а также в меню (сохраняет только кнопки) для снижения нагрузки в браузере и приложении",
+    "Change_email": "Изменить email",
+    "Change_email_success": "Email успешно изменен",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -407,11 +407,11 @@
       "Isearch": "Копировать /isearch макрос"
     },
     "CATEGORIES": {
-      "Autofill_completion": "Autofill completion sound",
-      "Packet_capture": "Packet capture",
-      "Theme": "Theme",
-      "Search": "Search",
-      "Other": "Other"
+      "Autofill_completion": "Звук завершения автозаполнения",
+      "Packet_capture": "Настройка захвата пакетов",
+      "Theme": "Тема",
+      "Search": "Поиск",
+      "Other": "Прочее"
     }
   },
   "PROFILE": {
@@ -430,8 +430,8 @@
     "User_not_verified": "Пользователь не подтвержден, нажмите, чтобы подтвердить",
     "More_than_100_lists_created": "Создано более 100 списков",
     "Veteran": "Ветеран",
-    "Autofill_from_packets": "Autofill stats using packet capture",
-    "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
+    "Autofill_from_packets": "Заполнить статы используя захват пакетов",
+    "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
@@ -449,7 +449,7 @@
     "Lists_merged": "Списки успешно соединены!",
     "Shared_lists": "Списки, которыми с вами поделились",
     "Add_selection": "Добавить выбранное в список",
-    "Add_selection_to_list": "Add selection to list",
+    "Add_selection_to_list": "Добавить выбранное в список",
     "Your_lists": "Ваши списки",
     "Outdated_tag": "Устаревшие",
     "No_lists": "У вас нет списков",
@@ -488,35 +488,35 @@
     "Copy_list_as_text": "Копировать весь список как текст",
     "Copied_as_text": "Скопировано в буфер обмена",
     "Total_price": "Всего сделок (гил и др. валюты)",
-    "Ignore_currency": "Ignore this currency (only works if there's another way to buy)",
+    "Ignore_currency": "Игнорировать эту валюту (работает только если есть другой способ купить)",
     "Total_trade_price": "Всего: ",
     "Add_all_alarms": "Добавить все оповещения для этого списка",
     "History": "История",
     "Items_count": "{{amount}} предметов",
     "Show_craftable_amount": "Показать количество, которое можно скрафтить",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "Показывать первого доступного продавца для каждого предмета",
     "Optimized_full_path": "Показать оптимизированный путь (дешевый и быстрый)",
     "Quick_layout_swap": "Быстрое переключение раскладки",
     "Offline": "Оффлайн",
-    "Offline_help": "Offline lists are stored inside the browser or the app, they are only available inside this instance and can't be shared, but they are faster as they don't require network calls.",
-    "Mark_whole_panel_done": "Mark panel content as done",
-    "Set_color": "Set list color",
-    "Go_to_pinned": "Go to pinned list (right click to unpin)",
-    "Reset_panel": "Reset all the items of this panel",
+    "Offline_help": "Оффлайн списки хранятся в браузере или приложении, они доступны только внутри этого экземпляра и не могут быть общими, но они быстрее, так как не требуют сетевых подключений.",
+    "Mark_whole_panel_done": "Пометить содержимое панели как готово",
+    "Set_color": "Установить цвет списка",
+    "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
+    "Reset_panel": "Сбросить все предметы этой панели",
     "COLORS": {
-      "RED": "Red",
-      "GREEN": "Green",
-      "YELLOW": "Yellow",
-      "BLUE": "Blue",
-      "PURPLE": "Purple",
-      "ORANGE": "Orange",
-      "PINK": "Pink",
-      "NONE": "None"
+      "RED": "Красный",
+      "GREEN": "Зеленый",
+      "YELLOW": "Желтый",
+      "BLUE": "Синий",
+      "PURPLE": "Фиолетовый",
+      "ORANGE": "Оранжевый",
+      "PINK": "Розовый",
+      "NONE": "Ничего"
     },
     "ROTATION": {
       "Attach": "Прикрепить ротацию",
       "Detach": "Открепить ротацию",
-      "Click_to_copy_macro": "Click to open macro copy popup"
+      "Click_to_copy_macro": "Нажмите, чтобы открыть всплывающее окно копирования макроса"
     },
     "INVENTORY": {
       "Show_final_items": "Показать конечные предметы",
@@ -561,20 +561,20 @@
     "Disable_HQ_suggestions": "Отключить автоматические флаги HQ",
     "Amount_craftable": "Вы можете сделать {{amount}}",
     "Add_item": "Добавить предмет",
-    "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "List_large": "Это большой список",
+    "Enable_performance_mode": "Вы можете включить режим производительности в настройках для ускорения рендеринга",
     "List_too_large": "Список слишком большой",
     "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
     "Add_to_another_list": "Добавить в другой список",
     "New_tag": "Новый тег",
-    "Amount_ilvl": "Amount (ilvl)",
-    "Contributions_popup": "Contributions stats",
+    "Amount_ilvl": "Сумма (ilvl)",
+    "Contributions_popup": "Статистика взносов",
     "Autofill_details": "Input progression as you obtain items ingame, using packet capture. This is disabled if you leave the list page, to avoid unwanted inputs.",
     "Autofill": "Автозаполнение",
-    "Autofill_notification_details": "Show a notification when an item is completed with autofill.",
-    "Autofill_notification": "Completion notification",
-    "Autofill_notification_title": "Item completed",
-    "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
+    "Autofill_notification_details": "Показывать уведомление, когда предмет завершен автозаполнением.",
+    "Autofill_notification": "Уведомление о завершении",
+    "Autofill_notification_title": "Предмет завершен",
+    "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
@@ -615,9 +615,9 @@
       "Tag_filter": "Фильтр по тегам"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "Open": "Открыть оверлей списка",
+      "No_display": "Открыть список в главном окне для начала",
+      "No_panel_selected": "Выберите панель, используя кнопки выше"
     }
   },
   "LIST_TAGS": {
@@ -696,7 +696,7 @@
     "Title": "Оптимизировать навигационный маршрут",
     "Steps": "Шаги",
     "Loading_path": "Загрузка оптимизированного пути (может занять несколько секунд)",
-    "You_are_here": "You are here",
+    "You_are_here": "Вы здесь",
     "STEP": {
       "Gathering": "Собрать{{amount}} (всего: {{total}})",
       "Hunting": "Собрать {{amount}} с монстров (всегоо: {{total}})",
@@ -776,7 +776,7 @@
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
-    "Break_before_byregots_blessing": "Split macros before Byregot's Blessing",
+    "Break_before_byregots_blessing": "Разделить макрос перед Byregot's Blessing",
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
@@ -841,8 +841,8 @@
     "Rotation_solver": "Генератор ротаций",
     "Recipe_picker_placeholder": "Введите название рецепта, который вы хотите сделать",
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
-    "Remove_final_appraisal": "Remove Final Appraisal buff",
-    "Total_macro_duration": "Total macro duration: {{duration}}s.",
+    "Remove_final_appraisal": "Убрать эффект Final Appraisal",
+    "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -895,7 +895,7 @@
     "ROTATIONS": {
       "Search_placeholder": "Поиск ротации",
       "FOLDERS": {
-        "Not_found": "Rotation folder not found",
+        "Not_found": "Папка с ротациями не найдена",
         "Folders": "Папки ротаций",
         "Rename": "Переименовать папку",
         "New_folder": "Новая папка",
@@ -969,10 +969,10 @@
       "Use_byregot_brow_5_stacks": "Лучше использовать Byregot's Brow вместо Byregot's Blessing чтобы получить столько же качества на 6 CP дешевле.",
       "Use_ingenuity_before_byregot": "Чтобы получить бонус качества, лучше использовать Ingenuity перед Byregot'ом.",
       "Use_more_quality_actions": "У вас осталась прочность в конце крафта. Возможно, лучше бы её использовать для нескольких действий, повышающих качество.",
-      "Use_prudent_touch_manipulation": "As you are level 66+, you should use Manipulation + Prudent Touch combo for quality gain in order to get maximum quality benefit ans more reliability.",
+      "Use_prudent_touch_manipulation": "Поскольку вы 66+ уровня, вам лучше использовать комбо из Manipulation + Prudent Touch для набора качества. Это позволит получить максимальное качество с большей надёжностью.",
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
-      "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
-      "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted",
+      "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
+      "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
       "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
     }
   },
@@ -1004,7 +1004,7 @@
     "Global_exp": "Суммировать опыт",
     "More_on_gamerescape": "Подробнее на gamerescape",
     "Deliver_to": "Доставить в {{placename}}",
-    "Hide_large": "Hide large leves",
+    "Hide_large": "Скрыть большие левеквесты",
     "INTRO": {
       "Title": "Ливквесты",
       "First_line": "На этой странице вы можете найти один или несколько levequest'ов, и создать список согласно результатам поиска",
@@ -1069,7 +1069,7 @@
       "FINAL_LIST_PROGRESSION": "Прогресс списка итоговых предметов",
       "USER_ASSIGNMENT": "Назначение пользователей",
       "ITEM_COMPLETION": "Обозначение выполнения",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "Прогресс предмета"
     }
   },
   "MARKETBOARD": {
@@ -1339,71 +1339,74 @@
     "Currencies": "Валюты",
     "Rowena_splendor": "Ровена (Звезда = бонус +20%)",
     "Unlocks": "Разблокирует",
-    "Jump_to_page": "Quick jump to another page",
-    "Ishgard_restoration": "Ishgardian restoration",
+    "Jump_to_page": "Быстрый переход на другую страницу",
+    "Ishgard_restoration": "Восстановление Ишгарда",
     "ITEM": {
       "Masterpiece_base": "БАЗА",
       "Masterpiece_bonus": "БОНУС"
     },
     "FISH": {
-      "Hour": "Hour of the day",
-      "Baits": "Bait used",
-      "Hookset_and_tug": "Hooksets and tugs",
-      "Weathers": "Weathers",
-      "Weather_transitions": "Weather transitions",
+      "Hour": "Час дня",
+      "Etime": "Eorzean time",
+      "Misses_popup_title": "Misses for this spot",
+      "Show_misses": "Show misses",
+      "Baits": "Наживка использована",
+      "Hookset_and_tug": "Hooksets и tugs",
+      "Weathers": "Погода",
+      "Weather_transitions": "Переходы погоды",
       "Hooksets": "Hooksets",
       "Tugs": "Tugs",
-      "Seconds": "Seconds",
-      "Bite_time": "Bite time",
-      "Spots": "Spots",
-      "Min_gathering": "Min. gathering",
-      "Min_size": "Min. size",
-      "Max_size": "Max. size",
-      "Avg_size": "Avg. size",
-      "Used_as_mooch_for": "Used as mooch for",
-      "No_known_mooch_usage": "No known mooch usage for this fish",
-      "No_spot_filter": "No spot filter",
-      "Chances_for_transition": "Chances for this transition to happen",
-      "Weather_chances": "Chances for each weather to appear",
-      "Bait": "Fishing bait",
-      "Refresh_data": "Refresh data",
+      "Seconds": "Секунд",
+      "Bite_time": "Время клева",
+      "Spots": "Места",
+      "Min_gathering": "Мин. сбор",
+      "Min_size": "Мин. размер",
+      "Max_size": "Макс. размер",
+      "Avg_size": "Средний размер",
+      "Used_as_mooch_for": "Используется как mooch для",
+      "No_known_mooch_usage": "Для этой рыбы не используется mooch",
+      "No_spot_filter": "Нет фильтра точки",
+      "Chances_for_transition": "Шансы на такой переход",
+      "Weather_chances": "Шансы на появление каждой погоды",
+      "Bait": "Рыболовная приманка",
+      "Refresh_data": "Обновить данные",
       "TUG": {
-        "Light": "Light",
-        "Medium": "Medium",
-        "Big": "Big"
+        "Light": "Легкий",
+        "Medium": "Средний",
+        "Big": "Большой"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
-        "Bait": "Attached bait",
+        "Open": "Открыть оверлей отчета о рыбалке",
+        "Bait": "Приманка",
         "Tug": "Tug",
         "Hookset": "Hookset",
-        "Fishing": "Fishing",
-        "Mooch": "Last throw was mooch",
+        "Fishing": "Рыбалка",
+        "Mooch": "Последний бросок был Mooch",
         "Mooch_report": "Mooch",
-        "Current_weather": "Current weather",
-        "Previous_weather": "Previous weather",
-        "Spot": "Spot",
-        "Possible_fish": "Possible fish",
-        "Stats": "Stats",
-        "Statuses": "Statuses",
-        "No_statuses": "No relevant statuses",
-        "Total_reports": "Total reports for this session",
-        "Last_report": "Last report",
-        "Fish": "Fish",
-        "Size": "Size",
+        "Current_weather": "Текущая погода",
+        "Previous_weather": "Предыдущая погода",
+        "Spot": "Место",
+        "Possible_fish": "Возможная рыба",
+        "Stats": "Статы",
+        "Statuses": "Статусы",
+        "No_statuses": "Нет актуальных данных",
+        "Total_reports": "Всего отчетов в этой сессии",
+        "Last_report": "Последний отчет",
+        "Fish": "Рыба",
+        "Size": "Размер",
         "ERRORS": {
-          "Unknown_map": "Map unknown, change zone to load it.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "Unknown_map": "Неизвестная карта, поменяйте зону для загрузки.",
+          "No_bait": "Не обнаружено наживки, смените наживку один раз."
         }
       }
     },
     "FISHING_SPOT": {
-      "Next": "Next",
-      "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes",
-      "Fish_per_weather": "Fish per weather",
-      "Fish_per_bait": "Fish per bait",
-      "Fish_per_tug": "Fish per tug"
+      "Next": "Далее",
+      "Possible_weathers": "Возможная погода",
+      "Available_fishes": "Доступные рыбы",
+      "Fish_per_weather": "Рыба в погоду",
+      "Fish_per_bait": "Рыба за наживку",
+      "Fish_per_tug": "Рыба за tug"
     },
     "NODE": {
       "Items": "Предметы",
@@ -1557,7 +1560,7 @@
     "Trait": "Особенность",
     "Any": "Любое",
     "Achievement": "Достижение",
-    "Fishing-spot": "Fishing spot"
+    "Fishing-spot": "Рыболовное место"
   },
   "SEARCH_FILTERS": {
     "Level": "Уровень",
@@ -1575,7 +1578,7 @@
     "Levequests": "Вы можете подготовить списки ливквестов и предварительно посмотреть количество опыта за них в разделе Ливквесты.",
     "Log_tracker": "Вы можете отслеживать прогресс вашего журнала (сбор, крафт, рыбалка) на странице трекера журнала.",
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity"
+    "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1589,7 +1592,7 @@
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
+    "Description": "Введите предметы, которые у вас есть, и нажмите \"Найти рецепты\", чтобы получить список возможных рецептов и легко создать список для крафта из результатов.",
     "Empty_basket": "Ваша корзина пустая",
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
@@ -1642,9 +1645,9 @@
     "Other": "Другое"
   },
   "PACKET_CAPTURE": {
-    "Banner_title": "Packet capture is available",
-    "Button_label": "Enable packet capture",
-    "Banner_description": "You can enable packet capture to allow Teamcraft to read your FFXIV packets (a checkbox is also inside settings to enable/disable it), this allows to autofill lists as you obtain items, and to contribute data to Universalis, the marketboard aggragator.",
+    "Banner_title": "Захват пакетов доступен",
+    "Button_label": "Включить захват пакетов",
+    "Banner_description": "Вы можете включить захват пакетов, чтобы Teamcraft мог читать ваши пакеты FFXIV (галочка также находится в настройках, чтобы включить/выключить его), это позволяет автоматически заполнить списки по мере получения предметов, а также вносить данные в Universalis (данные с маркетборда).",
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
@@ -1661,42 +1664,42 @@
     "Copied_to_clipboard": "Инвентарь скопирован в буфер обмена",
     "Click_to_add_to_progression": "Нажмите, чтобы добавить к прогрессу предмета",
     "Contribute_to_universalis": "Внести данные в universalis",
-    "Reset_inventory": "Reset this inventory",
-    "Clean_all": "Reset all your inventories",
-    "Search_for_an_item": "Search for an item",
+    "Reset_inventory": "Сбросить этот инвентарь",
+    "Clean_all": "Сбросить все ваши инвентари",
+    "Search_for_an_item": "Поиск предмета",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
-      "RetainerMarket": "On sale by retainers"
+      "RetainerMarket": "На продаже у ретейнеров"
     }
   },
   "INVENTORY_OPTIMIZER": {
-    "Title": "Inventory optimizer",
-    "Ignore_item": "Ignore this tip for this item",
-    "Remove_ignore_item": "Don't ignore this tip for this item anymore",
-    "Ignore_container": "Ignore this tip for this container",
-    "Remove_ignore_container": "Don't ignore this tip for this container anymore",
-    "Show_ignored": "Show ignored items",
-    "No_optimizations": "No optimizations available",
+    "Title": "Оптимизатор инвентаря",
+    "Ignore_item": "Игнорировать этот совет для этого предмета",
+    "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
+    "Ignore_container": "Игнорировать этот совет для этого контейнера",
+    "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
+    "Show_ignored": "Показать игнорируемые предметы",
+    "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
-      "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Title": "Предметы, которые можно купить за gil",
+      "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe."
     },
     "DUPLICATES": {
-      "Title": "Items that are duplicated across multiple containers",
-      "Message": "This item is also present in: {{containers}}."
+      "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
+      "Message": "Этот предмет также присутствует в: {{containers}}."
     },
     "HAS_TOO_FEW": {
-      "Title": "Items that you have in very small stacks",
-      "Message": "You only have {{amount}} of this item, is it worth keeping them?",
-      "Threshold_amount": "Threshold value"
+      "Title": "Предметы, которые у вас есть в маленьком количестве",
+      "Message": "У вас только {{amount}} этого предмета, стоит ли сохранить их?",
+      "Threshold_amount": "Пороговое значение"
     }
   },
   "VERSION_LOCK": {
-    "Outdated": "You are using an outdated version of Teamcraft that cannot work properly anymore",
-    "Refresh_or_download_latest": "If you're using the website, simple press Ctrl + F5 to refresh entirely, if you're using desktop app, download latest here: "
+    "Outdated": "Вы используете устаревшую версию Teamcraft, которая больше не может работать правильно",
+    "Refresh_or_download_latest": "Если вы пользуетесь сайтом, просто нажмите Ctrl + F5, чтобы обновиться. Если вы используете приложение для рабочего стола, скачайте последнюю версию здесь: "
   }
 }

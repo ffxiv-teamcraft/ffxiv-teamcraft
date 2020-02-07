@@ -390,6 +390,9 @@ function addToCraftingLogPage(entry, pageId) {
     });
     page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
   }
+  if (page.recipes.some(r => r.recipeId === entry.ID)) {
+    return;
+  }
   page.recipes.push({
     recipeId: entry.ID,
     itemId: entry.ItemResult,

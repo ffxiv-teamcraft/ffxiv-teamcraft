@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { FormControl, Validators } from '@angular/forms';
 import { CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { NzModalRef } from 'ng-zorro-antd';
@@ -54,6 +54,9 @@ export class UserPickerComponent {
         }),
         map((result: CharacterSearchResult) => result.Results || []),
         switchMap(results => {
+          if (results.length === 0) {
+            return of([]);
+          }
           return combineLatest(
             results.map(c => {
               return this.userService.getUsersByLodestoneId(c.ID)

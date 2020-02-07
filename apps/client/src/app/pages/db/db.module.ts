@@ -43,6 +43,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 import { ItemDetailsPopupsModule } from '../../modules/item-details/item-details-popups.module';
+import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
 
 const routes: Routes = [
   {
@@ -233,9 +234,10 @@ const routes: Routes = [
     AchievementComponent,
     PatchComponent,
     FishComponent,
-    FishingSpotComponent
+    FishingSpotComponent,
+    FishingMissesPopupComponent
   ],
-  entryComponents: [ModelViewerComponent],
+  entryComponents: [ModelViewerComponent, FishingMissesPopupComponent],
   imports: [
     CommonModule,
 

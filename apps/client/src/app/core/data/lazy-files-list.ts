@@ -46,7 +46,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'crafting-log-pages.json',
-    'hashedFileName': 'crafting-log-pages.afb5539c7e43d81b9a670d22960f7f09d125c571.json',
+    'hashedFileName': 'crafting-log-pages.8b320b3a812a254c57d89b0fa79fd09c327b8ffd.json',
     'propertyName': 'craftingLogPages'
   },
   {
@@ -251,12 +251,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-achievement-descriptions.json',
-    'hashedFileName': '/ko/ko-achievement-descriptions.35599018ba19a06040b67c38796de308dee726f0.json',
+    'hashedFileName': '/ko/ko-achievement-descriptions.e30d0946ec412091756c3ce34f7549ea9265dc0e.json',
     'propertyName': 'koAchievementDescriptions'
   },
   {
     'fileName': '/ko/ko-achievements.json',
-    'hashedFileName': '/ko/ko-achievements.e6ee5ac323e9f81905cd9c9b9765a4d3fdfaf257.json',
+    'hashedFileName': '/ko/ko-achievements.963a452350f505ca8e8667d5cffe8446e62f6088.json',
     'propertyName': 'koAchievements'
   },
   {
@@ -266,12 +266,12 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-action-descriptions.json',
-    'hashedFileName': '/ko/ko-action-descriptions.67f0b7187cc8a40753beb31d4b24a1f8f414b7cb.json',
+    'hashedFileName': '/ko/ko-action-descriptions.9c4de37634020f841e8c92bc636736a79b09cecd.json',
     'propertyName': 'koActionDescriptions'
   },
   {
     'fileName': '/ko/ko-actions.json',
-    'hashedFileName': '/ko/ko-actions.ade4eb4cdda9b5734630c8b0dae6ded9c32642dd.json',
+    'hashedFileName': '/ko/ko-actions.243b828835cc7a995b28841068bbf9055a0054af.json',
     'propertyName': 'koActions'
   },
   {
@@ -301,17 +301,17 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-instance-descriptions.json',
-    'hashedFileName': '/ko/ko-instance-descriptions.7b32f3e1cb0564124f927a8f2ca0683bf4303a34.json',
+    'hashedFileName': '/ko/ko-instance-descriptions.25ac13196bcecada94ca10949e391b5087f061a7.json',
     'propertyName': 'koInstanceDescriptions'
   },
   {
     'fileName': '/ko/ko-instances.json',
-    'hashedFileName': '/ko/ko-instances.9e70cd7eb35047dd6ddacf4b563e72c2b2f87814.json',
+    'hashedFileName': '/ko/ko-instances.09fab8957995999607fdb97117327a6bc366bac7.json',
     'propertyName': 'koInstances'
   },
   {
     'fileName': '/ko/ko-item-descriptions.json',
-    'hashedFileName': '/ko/ko-item-descriptions.b24ade5e3ca81092fd0b8d88aed2482e7e0e016a.json',
+    'hashedFileName': '/ko/ko-item-descriptions.5bff8d0d04923c5b4b802504bd2386be3f87a697.json',
     'propertyName': 'koItemDescriptions'
   },
   {
@@ -326,7 +326,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-items.json',
-    'hashedFileName': '/ko/ko-items.740f237f1486002d437e9824798a41d5cc1e4fbf.json',
+    'hashedFileName': '/ko/ko-items.a412f66bd608ba91d5d6f679d74afc3ab41c7d95.json',
     'propertyName': 'koItems'
   },
   {
@@ -361,52 +361,52 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/ko/ko-mobs.json',
-    'hashedFileName': '/ko/ko-mobs.43dda2ced4ef03389bff0c47cdc329491344f8f4.json',
+    'hashedFileName': '/ko/ko-mobs.227ea06987be7c2bee3b3c990c31cb91fbf3a13d.json',
     'propertyName': 'koMobs'
   },
   {
     'fileName': '/ko/ko-npc-titles.json',
-    'hashedFileName': '/ko/ko-npc-titles.d806d7427bd0136212aad8c44ae3e689386f9c81.json',
+    'hashedFileName': '/ko/ko-npc-titles.f975d9088e7a5bdeff8dcd431c7907672c0e9b53.json',
     'propertyName': 'koNpcTitles'
   },
   {
     'fileName': '/ko/ko-npcs.json',
-    'hashedFileName': '/ko/ko-npcs.53b6ff31aa39894b4fd399dd3c7fe0f526de555a.json',
+    'hashedFileName': '/ko/ko-npcs.de07ed23ba65654aa9d0cf4e849944c1d85e1593.json',
     'propertyName': 'koNpcs'
   },
   {
     'fileName': '/ko/ko-places.json',
-    'hashedFileName': '/ko/ko-places.55e070dccb3022cef6a0c90695fd6a1ade0267ab.json',
+    'hashedFileName': '/ko/ko-places.8fbec34cd58ce28d6bd0a5817b60d0b87a5a75a0.json',
     'propertyName': 'koPlaces'
   },
   {
     'fileName': '/ko/ko-quest-descriptions.json',
-    'hashedFileName': '/ko/ko-quest-descriptions.b4e08e7de0a6bc4443b8dae4abedde4522e19d6f.json',
+    'hashedFileName': '/ko/ko-quest-descriptions.0655b14a11a12e7027ebdca36ad0615bdddb4e32.json',
     'propertyName': 'koQuestDescriptions'
   },
   {
     'fileName': '/ko/ko-quests.json',
-    'hashedFileName': '/ko/ko-quests.ab240d640001b7403bf75e46aea91fad09e52f6e.json',
+    'hashedFileName': '/ko/ko-quests.d8b2770c4b405584b8716d4cca3cbc4c6ae205ee.json',
     'propertyName': 'koQuests'
   },
   {
     'fileName': '/ko/ko-shops.json',
-    'hashedFileName': '/ko/ko-shops.6c81d19f180461422d2532467047a6bd0f39ae35.json',
+    'hashedFileName': '/ko/ko-shops.8f3c68174bfd4c0a3a1dd3cd572cd46220f1189e.json',
     'propertyName': 'koShops'
   },
   {
     'fileName': '/ko/ko-status-descriptions.json',
-    'hashedFileName': '/ko/ko-status-descriptions.58d4afc9aa9bca39ccac5499efe0df775a89dc1c.json',
+    'hashedFileName': '/ko/ko-status-descriptions.45928034dbbd7464b4c7c6cef12840dc4893296a.json',
     'propertyName': 'koStatusDescriptions'
   },
   {
     'fileName': '/ko/ko-statuses.json',
-    'hashedFileName': '/ko/ko-statuses.84fea51bfa0f13320b5363e8e788931161ae3842.json',
+    'hashedFileName': '/ko/ko-statuses.7e74151d292811928510536105a816a208351213.json',
     'propertyName': 'koStatuses'
   },
   {
     'fileName': '/ko/ko-trait-descriptions.json',
-    'hashedFileName': '/ko/ko-trait-descriptions.254662d1c1b10ecd5b382886555ef4a45e243695.json',
+    'hashedFileName': '/ko/ko-trait-descriptions.39166238f9f885fd0b1533c843b3d805d6baa929.json',
     'propertyName': 'koTraitDescriptions'
   },
   {

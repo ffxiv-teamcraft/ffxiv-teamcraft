@@ -1,5 +1,4 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu } = require('electron');
-const { autoUpdater } = require('electron-updater');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu, autoUpdater } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
@@ -42,8 +41,12 @@ for (let i = 0; i < argv.length; i++) {
   }
 }
 
-if (isDev) {
-  // autoUpdater.updateConfigPath = path.join(__dirname, 'dev-app-update.yml');
+log.log(argv);
+
+if (!isDev && argv.indexOf('squirrel-firstrun') === -1) {
+  require('update-electron-app')({
+    logger: log
+  });
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
@@ -150,7 +153,13 @@ function createWindow() {
         win.maximize();
       }
     }
-    autoUpdater.checkForUpdates();
+    if (config.get('start-minimized')) {
+      tray.displayBalloon({
+        title: 'Teamcraft launched in the background',
+        content: 'To change this behavior, visit Settings -> Desktop.'
+      });
+    }
+    // autoUpdater.checkForUpdates();
   });
 
   // save window size and position
@@ -193,7 +202,6 @@ function openOverlay(overlayConfig) {
     show: false,
     resizable: true,
     frame: false,
-    alwaysOnTop: true,
     autoHideMenuBar: true,
     width: dimensions.x,
     height: dimensions.y,
@@ -203,8 +211,9 @@ function openOverlay(overlayConfig) {
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
   opts.opacity = config.get(`overlay:${url}:opacity`) || 1;
-  opts.alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
+  const alwaysOnTop = config.get(`overlay:${url}:on-top`) || true;
   const overlay = new BrowserWindow(opts);
+  overlay.setAlwaysOnTop(alwaysOnTop, 'screen-saver');
   overlay.setIgnoreMouseEvents(config.get('clickthrough') || false);
 
   overlay.once('ready-to-show', () => {
@@ -306,10 +315,16 @@ ipcMain.on('toggle-machina:get', (event) => {
 });
 
 let fishingState = {};
-
+const overlaysNeedingFishingState = [
+  '/fishing-reporter-overlay'
+];
 ipcMain.on('fishing-state:set', (_, data) => {
   fishingState = data;
-  broadcast('fishing-state', data);
+  overlaysNeedingFishingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('fishing-state', data);
+    }
+  });
 });
 
 ipcMain.on('fishing-state:get', (event) => {
@@ -318,10 +333,16 @@ ipcMain.on('fishing-state:get', (event) => {
 
 
 let appState = {};
-
+const overlaysNeedingState = [
+  '/list-panel-overlay'
+];
 ipcMain.on('app-state:set', (_, data) => {
   appState = data;
-  broadcast('app-state', data);
+  overlaysNeedingState.forEach(uri => {
+    if (openedOverlays[uri] !== undefined) {
+      openedOverlays[uri].webContents.send('app-state', data);
+    }
+  });
 });
 
 ipcMain.on('app-state:get', (event) => {
@@ -350,40 +371,40 @@ app.on('activate', function() {
     createWindow();
   }
 });
-
-autoUpdater.on('checking-for-update', () => {
-  log.log('Checking for update');
-  win && win.webContents.send('checking-for-update', true);
-});
-
-autoUpdater.on('download-progress', (progress) => {
-  win && win.webContents.send('download-progress', progress);
-});
-
-autoUpdater.on('update-available', () => {
-  log.log('Update available');
-  win && win.webContents.send('update-available', true);
-});
-
-autoUpdater.on('update-not-available', () => {
-  log.log('No update found');
-  win && win.webContents.send('update-available', false);
-});
-
-autoUpdater.on('update-downloaded', () => {
-  log.log('Update downloaded');
-  clearInterval(updateInterval);
-  dialog.showMessageBox({
-    type: 'info',
-    title: 'FFXIV Teamcraft - Update available',
-    message: 'An update is available and downloaded, install now?',
-    buttons: ['Yes', 'No']
-  }, (buttonIndex) => {
-    if (buttonIndex === 0) {
-      autoUpdater.quitAndInstall();
-    }
-  });
-});
+//
+// autoUpdater.on('checking-for-update', () => {
+//   log.log('Checking for update');
+//   win && win.webContents.send('checking-for-update', true);
+// });
+//
+// autoUpdater.on('download-progress', (progress) => {
+//   win && win.webContents.send('download-progress', progress);
+// });
+//
+// autoUpdater.on('update-available', () => {
+//   log.log('Update available');
+//   win && win.webContents.send('update-available', true);
+// });
+//
+// autoUpdater.on('update-not-available', () => {
+//   log.log('No update found');
+//   win && win.webContents.send('update-available', false);
+// });
+//
+// autoUpdater.on('update-downloaded', () => {
+//   log.log('Update downloaded');
+//   clearInterval(updateInterval);
+//   dialog.showMessageBox({
+//     type: 'info',
+//     title: 'FFXIV Teamcraft - Update available',
+//     message: 'An update is available and downloaded, install now?',
+//     buttons: ['Yes', 'No']
+//   }, (buttonIndex) => {
+//     if (buttonIndex === 0) {
+//       autoUpdater.quitAndInstall();
+//     }
+//   });
+// });
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
@@ -431,12 +452,12 @@ ipcMain.on('clear-cache', () => {
 
 ipcMain.on('run-update', () => {
   log.log('Run update setup');
-  autoUpdater.quitAndInstall(true, true);
+  // autoUpdater.quitAndInstall(true, true);
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop, 'floating');
+  win.setAlwaysOnTop(onTop, 'screen-saver');
 });
 
 ipcMain.on('always-on-top:get', (event) => {
@@ -480,7 +501,7 @@ ipcMain.on('overlay:get-opacity', (event, data) => {
 ipcMain.on('overlay:set-on-top', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
   if (overlayWindow !== undefined) {
-    overlayWindow.setAlwaysOnTop(data.onTop);
+    overlayWindow.setAlwaysOnTop(data.onTop, 'screen-saver');
   }
 });
 
@@ -515,7 +536,7 @@ ipcMain.on('navigated', (event, uri) => {
 
 ipcMain.on('update:check', () => {
   log.log('Renderer asked for an update check');
-  autoUpdater.checkForUpdates();
+  // autoUpdater.checkForUpdates();
 });
 
 // Oauth stuff
