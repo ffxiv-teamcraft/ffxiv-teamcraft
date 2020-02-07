@@ -13,6 +13,7 @@ export enum FoldersActionTypes {
 
   SelectFolder = '[Folders] Select Folder',
   UpdateFolder = '[Folders] Update Folder',
+  UpdateFolderIndexes = '[Folders] Update Folder indexes',
   PureUpdateFolder = '[Folders] Pure Update Folder',
   DeleteFolder = '[Folders] Delete Folder'
 }
@@ -26,6 +27,13 @@ export class LoadFolders implements Action {
 
 export class FoldersLoaded implements Action {
   readonly type = FoldersActionTypes.FoldersLoaded;
+
+  constructor(public payload: Folder<any>[]) {
+  }
+}
+
+export class UpdateFolderIndexes implements Action {
+  readonly type = FoldersActionTypes.UpdateFolderIndexes;
 
   constructor(public payload: Folder<any>[]) {
   }
@@ -89,5 +97,6 @@ export type FoldersAction =
   | UpdateFolder
   | DeleteFolder
   | CreateFolder
-  | PureUpdateFolder;
+  | PureUpdateFolder
+  | UpdateFolderIndexes;
 

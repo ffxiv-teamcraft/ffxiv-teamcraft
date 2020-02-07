@@ -138,4 +138,12 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     );
   }
 
+  updateIndexes(rows: T[]): Observable<void> {
+    const batch = this.firestore.firestore.batch();
+    rows.forEach(row => {
+      const ref = this.firestore.firestore.collection(this.getBaseUri()).doc(row.$key);
+      return batch.update(ref, { index: row.index });
+    });
+    return from(batch.commit());
+  }
 }

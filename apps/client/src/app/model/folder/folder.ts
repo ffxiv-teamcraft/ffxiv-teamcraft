@@ -5,7 +5,7 @@ import { FolderContentType } from './folder-content-type';
 export class Folder<T extends DataModel> extends DataWithPermissions {
   isRoot = true;
 
-  order = -1;
+  index = -1;
 
   name: string;
 
