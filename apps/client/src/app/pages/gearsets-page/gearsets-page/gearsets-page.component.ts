@@ -5,6 +5,9 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Observable } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
+import { FoldersFacade } from '../../../modules/folders/+state/folders.facade';
+import { FolderContentType } from '../../../model/folder/folder-content-type';
+import { FolderDisplay } from '../../../model/folder/folder-display';
 
 @Component({
   selector: 'app-gearsets-page',
@@ -19,14 +22,27 @@ export class GearsetsPageComponent implements OnInit {
 
   public userId$: Observable<string> = this.authFacade.userId$;
 
+  public folders$: Observable<FolderDisplay<TeamcraftGearset>[]>;
+
   public machinaToggle = false;
 
   constructor(private dialog: NzModalService, private gearsetsFacade: GearsetsFacade,
-              private authFacade: AuthFacade, private ipc: IpcService) {
+              private authFacade: AuthFacade, private ipc: IpcService,
+              private foldersFacade: FoldersFacade) {
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.send('toggle-machina:get');
+
+    this.folders$ = this.foldersFacade.getDisplay<TeamcraftGearset>(
+      FolderContentType.GEARSET,
+      this.gearsetsFacade.allGearsets$,
+      key => this.gearsetsFacade.load(key)
+    );
+  }
+
+  newFolder(): void {
+    this.foldersFacade.createFolder(FolderContentType.GEARSET);
   }
 
   newGearset(): void {
@@ -51,6 +67,7 @@ export class GearsetsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.gearsetsFacade.loadAll();
+    this.foldersFacade.loadFolders(FolderContentType.GEARSET);
   }
 
 }

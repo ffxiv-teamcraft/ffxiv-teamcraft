@@ -1,0 +1,10 @@
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="display.folder.name">
+    <ng-container *ngFor="let element of display.content">
+      <app-folder *ngIf="element.isFolder; else elRef" [display]="element"></app-folder>
+      <ng-template #elRef>
+        <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
+      </ng-template>
+    </ng-container>
+  </nz-collapse-panel>
+</nz-collapse>

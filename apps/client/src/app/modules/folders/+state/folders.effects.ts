@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthFacade } from '../../../+state/auth.facade';
 import {
+  CreateFolder,
   DeleteFolder,
   FolderLoaded,
   FoldersActionTypes,
@@ -11,9 +12,14 @@ import {
   PureUpdateFolder,
   UpdateFolder
 } from './folders.actions';
-import { debounceTime, distinctUntilChanged, exhaustMap, map, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { FoldersService } from '../../../core/database/folders.service';
+import { EMPTY } from 'rxjs';
+import { Folder } from '../../../model/folder/folder';
+import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
+import { NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class FoldersEffects {
@@ -71,7 +77,40 @@ export class FoldersEffects {
     })
   );
 
+
+  @Effect({
+    dispatch: false
+  })
+  createFolder$ = this.actions$.pipe(
+    ofType<CreateFolder>(FoldersActionTypes.CreateFolder),
+    switchMap((action: CreateFolder) => {
+      return this.authFacade.userId$.pipe(
+        first(),
+        switchMap(userId => {
+          return this.dialog.create({
+            nzContent: NameQuestionPopupComponent,
+            nzFooter: null,
+            nzTitle: this.translate.instant('FOLDERS.New_folder')
+          }).afterClose.pipe(
+            filter(name => name),
+            map(name => {
+              const folder = new Folder<any>(action.contentType);
+              folder.name = name;
+              folder.authorId = userId;
+              return folder;
+            })
+          );
+        }),
+        switchMap(folder => {
+          return this.foldersService.add(folder);
+        })
+      );
+    }),
+    switchMapTo(EMPTY)
+  );
+
   constructor(private actions$: Actions, private authFacade: AuthFacade,
-              private foldersService: FoldersService) {
+              private foldersService: FoldersService, private dialog: NzModalService,
+              private translate: TranslateService) {
   }
 }

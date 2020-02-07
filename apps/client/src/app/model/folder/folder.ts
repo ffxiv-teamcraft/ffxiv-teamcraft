@@ -3,12 +3,13 @@ import { DataWithPermissions } from '../../core/database/permissions/data-with-p
 import { FolderContentType } from './folder-content-type';
 
 export class Folder<T extends DataModel> extends DataWithPermissions {
+  isRoot = true;
+
   order = -1;
+
   name: string;
-  content: {
-    ownerId: string,
-    path: string
-  }[] = [];
+
+  content: string[] = [];
 
   constructor(public contentType: FolderContentType) {
     super();

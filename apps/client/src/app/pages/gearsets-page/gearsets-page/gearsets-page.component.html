@@ -1,4 +1,5 @@
 <div fxLayout="row" fxLayoutGap="5px">
+  <button nz-button (click)="newFolder()">{{'FOLDERS.New_folder' | translate}}</button>
   <button nz-button (click)="newGearset()">{{'GEARSETS.New_gearset' | translate}}</button>
   <button nz-button (click)="importAriyalaGearset()">{{'GEARSETS.Import_from_ariyala' | translate}}</button>
   <button nz-button (click)="importLodestoneGearset()">{{'GEARSETS.Import_from_lodestone' | translate}}</button>
@@ -7,9 +8,10 @@
 
 <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
 
+
 <ng-container *ngIf="userId$ | async as userId">
-  <div cdkDropList class="gearsets-list" *ngIf="gearsets$ | async as gearsets" fxLayout="column" fxLayoutGap="10px">
-    <div class="gearset-row" *ngFor="let gearset of gearsets" cdkDrag fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+  <ng-template #gearsetTemplate let-gearset>
+    <div class="gearset-row" cdkDrag fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
       <div>{{gearset.name}}</div>
       <div fxFlex="1 1 auto"></div>
@@ -27,5 +29,13 @@
         <i nz-icon nzType="delete" nzTheme="outline"></i>
       </button>
     </div>
+  </ng-template>
+
+  <div cdkDropList class="gearsets-list" *ngIf="gearsets$ | async as gearsets" fxLayout="column" fxLayoutGap="10px">
+    <ng-container *ngFor="let gearset of gearsets">
+      <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
+    </ng-container>
+    <app-folder *ngFor="let folder of folders$ | async" [display]="folder" [elementTemplate]="gearsetTemplate" cdkDrag>
+    </app-folder>
   </div>
 </ng-container>

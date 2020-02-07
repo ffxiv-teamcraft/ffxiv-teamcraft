@@ -34,7 +34,7 @@ export class FoldersLoaded implements Action {
 export class CreateFolder implements Action {
   readonly type = FoldersActionTypes.CreateFolder;
 
-  constructor(public folder?: Folder<any>) {
+  constructor(public contentType: FolderContentType) {
   }
 }
 

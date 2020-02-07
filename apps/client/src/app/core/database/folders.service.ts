@@ -19,7 +19,7 @@ export class FoldersService extends FirestoreRelationalStorage<Folder<any>> {
   }
 
   public getByForeignKeyAndType<T>(foreignEntityClass: Class, foreignKeyValue: string, folderType: FolderContentType): Observable<Folder<T>[]> {
-    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, query => query.where('content', '==', folderType));
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, query => query.where('contentType', '==', folderType));
   }
 
   protected getBaseUri(): string {

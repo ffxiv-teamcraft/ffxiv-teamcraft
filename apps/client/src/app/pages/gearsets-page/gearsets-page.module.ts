@@ -18,6 +18,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FoldersModule } from '../../modules/folders/folders.module';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
     PipesModule,
     ItemIconModule,
     PageLoaderModule,
+    FoldersModule,
 
     RouterModule.forChild(routes)
   ]

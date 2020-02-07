@@ -1770,5 +1770,8 @@
       "Diff": "Diff",
       "Avg_melding_chances": "Avg. overmeld chances"
     }
+  },
+  "FOLDERS": {
+    "New_folder": "New folder"
   }
 }

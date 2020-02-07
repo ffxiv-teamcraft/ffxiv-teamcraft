@@ -5,16 +5,32 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromFolders from './+state/folders.reducer';
 import { FoldersEffects } from './+state/folders.effects';
 import { FoldersFacade } from './+state/folders.facade';
+import { FolderComponent } from './folder/folder.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { CoreModule } from '../../core/core.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { NzCollapseModule, NzModalModule } from 'ng-zorro-antd';
+import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [FolderComponent],
+  exports: [FolderComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(
       fromFolders.FOLDERS_FEATURE_KEY,
       fromFolders.reducer
     ),
-    EffectsModule.forFeature([FoldersEffects])
+    EffectsModule.forFeature([FoldersEffects]),
+
+    NzCollapseModule,
+    NzModalModule,
+
+    TranslateModule,
+    CoreModule,
+    PipesModule,
+    NameQuestionPopupModule
+
   ],
   providers: [FoldersFacade]
 })
