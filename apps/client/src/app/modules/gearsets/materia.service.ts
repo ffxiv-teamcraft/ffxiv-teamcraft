@@ -96,7 +96,7 @@ export class MateriaService {
     if (overmeldSlot < 0) {
       return 100;
     }
-    return this.lazyData.meldingRates[materia.tier - 1][overmeldSlot];
+    return this.lazyData.dohdolMeldingRates[equipmentPiece.hq ? 'hq' : 'nq'][materia.tier - 1][overmeldSlot];
   }
 
   getTotalNeededMaterias(gearset: TeamcraftGearset): { id: number, amount: number }[] {
@@ -123,7 +123,7 @@ export class MateriaService {
               materiaRow.amount += 1;
               return;
             }
-            const overmeldChances = this.lazyData.meldingRates[materia.tier - 1][index - piece.materiaSlots];
+            const overmeldChances = this.lazyData.dohdolMeldingRates[piece.hq ? 'hq' : 'nq'][materia.tier - 1][index - piece.materiaSlots];
             if (overmeldChances === 0) {
               return;
             }

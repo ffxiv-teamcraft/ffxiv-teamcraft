@@ -110,7 +110,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
   private calcMateriaQuantity(materia: string, slot: number, materiaSlots: number, job: string, isTool: boolean): number {
     const grade = parseInt(materia.split(':')[1], 10) + 1;
     const overmeldSlot = slot - materiaSlots;
-    const chance = overmeldSlot <= 0 ? 100 : this.lazyData.meldingRates[grade - 1][overmeldSlot - 1];
+    const chance = overmeldSlot <= 0 ? 100 : this.lazyData.dohdolMeldingRates.hq[grade - 1][overmeldSlot - 1];
     const isGatherer = ['MIN', 'BTN', 'FSH'].indexOf(job) > -1;
     const isCrafter = ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'].indexOf(job) > -1;
     let mul = 1;
