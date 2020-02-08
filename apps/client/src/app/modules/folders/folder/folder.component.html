@@ -3,7 +3,8 @@
     <ng-template #header>
       <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" class="header">
         <div>{{display.folder.name}}</div>
-        <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();rename()" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+        <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();rename()" nz-tooltip
+                [nzTitle]="'GEARSETS.Rename_gearset' | translate">
           <i nz-icon nzType="edit"></i>
         </button>
         <div fxFlex="1 1 auto"></div>
@@ -14,6 +15,7 @@
         <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
                 nz-tooltip [nzTitle]="'FODLERS.Delete_folder' | translate"
+                (click)="$event.stopPropagation()"
                 (nzOnConfirm)="deleteFolder(display.folder)">
           <i nz-icon nzType="delete" nzTheme="outline"></i>
         </button>
@@ -28,16 +30,27 @@
          fxLayout="column" fxLayoutGap="10px"
     >
       <div cdkDrag *ngFor="let element of display.content; let i = index;  trackBy: trackByKey" [cdkDragData]="element">
-        <app-folder *ngIf="element.isFolder; else elRef"
-                    [userId]="userId"
-                    [display]="element"
+        <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
+      </div>
+    </div>
+
+    <div cdkDropList fxLayout="column" fxLayoutGap="10px"
+         id="{{id}}-subfolders"
+         class="folder-drop-list"
+         [cdkDropListData]="getDropListData(display.subFolders)"
+         [cdkDropListEnterPredicate]="canDropFolder"
+         [cdkDropListConnectedTo]="dndConnections"
+         (cdkDropListExited)="exited($event)"
+         (cdkDropListEntered)="entered($event)"
+         (cdkDropListDropped)="dropFolder($event)">
+      <div *ngFor="let folder of display.subFolders; let i = index;  trackBy: trackByKey"
+           cdkDrag [cdkDragData]="folder.folder">
+        <app-folder [userId]="userId"
+                    [display]="folder"
                     [elementTemplate]="elementTemplate"
                     [dndConnections]="dndConnections"
                     (connectDnD)="connectDnD.emit($event)"
                     id="{{id}}-{{i}}"></app-folder>
-        <ng-template #elRef>
-          <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
-        </ng-template>
       </div>
     </div>
   </nz-collapse-panel>

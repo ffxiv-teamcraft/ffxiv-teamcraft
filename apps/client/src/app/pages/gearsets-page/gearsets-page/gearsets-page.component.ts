@@ -112,8 +112,11 @@ export class GearsetsPageComponent implements OnInit {
     return drag.data instanceof Folder;
   }
 
-  addDnDConnections(ids: string): void {
-    this.dndConnections.push(ids);
+  addDnDConnections(id: string): void {
+    this.dndConnections = [
+      ...this.dndConnections,
+      id
+    ];
   }
 
   trackByKey(index: number, data: DataModel): string {

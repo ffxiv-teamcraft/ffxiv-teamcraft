@@ -45,7 +45,11 @@ export class FolderComponent<T extends DataModel> implements OnInit {
     item.dropped.pipe(first()).subscribe(dropped => {
       if (dropped.container.id !== dropped.previousContainer.id
         && dropped.container.id !== this.id) {
-        this.display.folder.content = this.display.folder.content.filter(key => !key.endsWith(item.data.$key));
+        if (item.data instanceof Folder) {
+          this.display.folder.subFolders = this.display.folder.subFolders.filter(key => !key.endsWith(item.data.$key));
+        } else {
+          this.display.folder.content = this.display.folder.content.filter(key => !key.endsWith(item.data.$key));
+        }
         this.save();
       }
     });
@@ -57,13 +61,17 @@ export class FolderComponent<T extends DataModel> implements OnInit {
       if (dropped.container.id !== dropped.previousContainer.id
         && dropped.container.id === this.id) {
         if (item.data instanceof Folder) {
-          // TODO folderception
+          this.display.folder.subFolders.splice(dropped.currentIndex, 0, item.data.$key);
         } else {
-          this.display.folder.content.splice(dropped.currentIndex, 0, `${this.foldersFacade.getPrefix(this.display.folder.contentType)}${item.data.$key}`);
+          this.display.folder.content.splice(dropped.currentIndex, 0, item.data.$key);
         }
         this.save();
       }
     });
+  }
+
+  getDropListData(displays: FolderDisplay<T>[]) {
+    return displays.map(d => d.folder);
   }
 
   drop(event: any): void {
@@ -71,8 +79,17 @@ export class FolderComponent<T extends DataModel> implements OnInit {
     this.save();
   }
 
+  dropFolder(event: any): void {
+    moveItemInArray(this.display.folder.subFolders, event.previousIndex, event.currentIndex);
+    this.save();
+  }
+
   canDropGearset(drag: CdkDrag): boolean {
     return drag.data instanceof TeamcraftGearset;
+  }
+
+  canDropFolder(drag: CdkDrag): boolean {
+    return drag.data instanceof Folder;
   }
 
   public deleteFolder(folder: Folder<T>): void {
@@ -88,6 +105,9 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   }
 
   ngOnInit(): void {
-    this.connectDnD.emit(this.id);
+    setTimeout(() => {
+      this.connectDnD.emit(this.id);
+      this.connectDnD.emit(`${this.id}-subfolders`);
+    });
   }
 }

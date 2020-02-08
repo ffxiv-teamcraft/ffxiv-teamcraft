@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { FoldersPartialState } from './folders.reducer';
 import { foldersQuery } from './folders.selectors';
-import { CreateFolder, DeleteFolder, LoadFolders, PureUpdateFolder, SelectFolder, UpdateFolder, UpdateFolderIndexes } from './folders.actions';
+import { CreateFolder, DeleteFolder, LoadFolder, LoadFolders, PureUpdateFolder, SelectFolder, UpdateFolder, UpdateFolderIndexes } from './folders.actions';
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { combineLatest, Observable } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
@@ -15,7 +15,8 @@ import { TranslateService } from '@ngx-translate/core';
 
 export interface PreprocessedDisplay<T> {
   display: FolderDisplay<T>,
-  missing: string[],
+  missingEntities: string[],
+  missingFolders: string[],
   pickedEntities: string[]
 }
 
@@ -36,13 +37,6 @@ export class FoldersFacade {
               private translate: TranslateService) {
   }
 
-  getPrefix(type: FolderContentType): string {
-    switch (type) {
-      case FolderContentType.GEARSET:
-        return 'gearsets/';
-    }
-  }
-
   getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<TreeFolderDisplay<T>> {
     return combineLatest([this.getFolders<T>(type), loadedContent$]).pipe(
       map(([folders, entities]) => {
@@ -51,7 +45,8 @@ export class FoldersFacade {
           .filter(folder => folder.isRoot)
           .map((folder: Folder<T>) => {
             const syncDisplay = this.getSyncFolderDisplay<T>(folders, entities, folder);
-            syncDisplay.missing.forEach(loadMissing);
+            syncDisplay.missingEntities.forEach(loadMissing);
+            syncDisplay.missingFolders.forEach($key => this.getFolder($key));
             root = root.filter(key => syncDisplay.pickedEntities.indexOf(key) === -1);
             return syncDisplay.display;
           });
@@ -72,34 +67,35 @@ export class FoldersFacade {
 
   private getSyncFolderDisplay<T extends DataModel>(folders: Folder<T>[], entities: T[], folder: Folder<T>): PreprocessedDisplay<T> {
     const display = new FolderDisplay<T>(folder);
-    const missing: string[] = [];
+    const missingEntities: string[] = [];
+    const missingFolders: string[] = [];
     const entitiesPicked: string[] = [];
-    folder.content.forEach(path => {
-      const $key = path.split('/').pop();
-      if (path.startsWith('folders/')) {
-        const matchingFolder = folders.find(f => f.$key === $key);
-        if (!matchingFolder) {
-          return;
+    folder.content.forEach($key => {
+      const matchingEntity = entities.find(e => e.$key === $key);
+      if (matchingEntity) {
+        entitiesPicked.push($key);
+        if (!matchingEntity.notFound) {
+          display.content.push(matchingEntity);
         }
-        const folderDisplay = this.getSyncFolderDisplay(folders, entities, matchingFolder);
-        display.content.push(folderDisplay.display);
-        missing.push(...folderDisplay.missing);
-        entitiesPicked.push(...folderDisplay.pickedEntities);
       } else {
-        const matchingEntity = entities.find(e => e.$key === $key);
-        if (matchingEntity) {
-          entitiesPicked.push($key);
-          if (!matchingEntity.notFound) {
-            display.content.push(matchingEntity);
-          }
-        } else {
-          missing.push($key);
-        }
+        missingEntities.push($key);
       }
+    });
+    folder.subFolders.forEach($key => {
+      const matchingFolder = folders.find(f => f.$key === $key);
+      if (!matchingFolder) {
+        missingFolders.push($key);
+        return;
+      }
+      const folderDisplay = this.getSyncFolderDisplay(folders, entities, matchingFolder);
+      display.subFolders.push(folderDisplay.display);
+      missingEntities.push(...folderDisplay.missingEntities);
+      entitiesPicked.push(...folderDisplay.pickedEntities);
     });
     return {
       display: display,
-      missing: missing,
+      missingEntities: missingEntities,
+      missingFolders: missingFolders,
       pickedEntities: entitiesPicked
     };
   }
@@ -161,5 +157,9 @@ export class FoldersFacade {
 
   select(type: FolderContentType, key: string): void {
     this.store.dispatch(new SelectFolder(type, key));
+  }
+
+  private getFolder($key: string) {
+    this.store.dispatch(new LoadFolder($key));
   }
 }
