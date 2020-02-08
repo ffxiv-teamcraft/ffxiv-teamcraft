@@ -14,7 +14,8 @@ import {
   LoadGearsets,
   PureUpdateGearset,
   SelectGearset,
-  UpdateGearset, UpdateGearsetIndexes
+  UpdateGearset,
+  UpdateGearsetIndexes
 } from './gearsets.actions';
 import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';

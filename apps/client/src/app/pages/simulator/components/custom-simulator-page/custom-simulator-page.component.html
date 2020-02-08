@@ -51,5 +51,5 @@
       </form>
     </nz-collapse-panel>
   </nz-collapse>
-  <app-simulator *ngIf="recipe$ | async as recipe" [custom]="true" [recipe]="recipe"></app-simulator>
+  <app-simulator *ngIf="recipe$ | async as recipe" [custom]="true" [recipe]="recipe"  [routeStats]="stats$ | async"></app-simulator>
 </div>

@@ -163,6 +163,10 @@ const routes: Routes = [
     loadChildren: './pages/gearset/gearset.module#GearsetModule'
   },
   {
+    path: 'gearset-folder',
+    loadChildren: './pages/gearset-folder/gearset-folder.module#GearsetFolderModule'
+  },
+  {
     path: 'gearsets',
     loadChildren: './pages/gearsets-page/gearsets-page.module#GearsetsPageModule'
   },

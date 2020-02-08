@@ -34,5 +34,9 @@ describe('MateriaService', () => {
     expect(cpCap).toBe(38);
     expect(cmsCap).toBe(66);
     expect(ctrlCap).toBe(84);
+
+    //Bug I had, giving NaN instead
+    const cpCapManasilverBracelets = service.getItemCapForStat(27214, BaseParam.CP);
+    expect(cpCapManasilverBracelets).toBe(70);
   }));
 });

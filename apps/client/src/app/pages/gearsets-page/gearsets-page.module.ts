@@ -19,6 +19,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FoldersModule } from '../../modules/folders/folders.module';
+import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 
 const routes: Routes = [
   {
@@ -51,7 +52,8 @@ const routes: Routes = [
     PageLoaderModule,
     FoldersModule,
 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    GearsetsModule
   ]
 })
 export class GearsetsPageModule {

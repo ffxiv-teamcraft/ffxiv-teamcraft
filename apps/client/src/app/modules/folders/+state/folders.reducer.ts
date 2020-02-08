@@ -44,8 +44,17 @@ export function reducer(
       return {
         ...state,
         list: [
-          ...state.list.filter(folder => action.key !== folder.$key),
+          ...state.list.filter(folder => action.key !== folder.$key)
         ]
+      };
+    }
+    case FoldersActionTypes.SelectFolder: {
+      return {
+        ...state,
+        selectedIds: {
+          ...state.selectedIds,
+          [action.contentType]: action.key
+        }
       };
     }
   }

@@ -6,6 +6,14 @@
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTitle]="'GEARSETS.Use_in_simulator' | translate"
+                (click)="openSimulator(gearset)"
+                *ngIf="gearset.job >= 8 && gearset.job <=15">
+          <i class="companion-svg link-icon">
+            &#xF239;
+          </i>
+        </button>
+        <button nz-button nzShape="circle" nzType="primary"
                 nz-tooltip [nzTitle]="'GEARSETS.Generate_list' | translate"
                 (click)="generateList(gearset)">
           <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
@@ -19,6 +27,13 @@
                 nz-tooltip [nzTitle]="'GEARSETS.Clone_gearset' | translate"
                 (click)="clone(gearset)">
           <i nz-icon nzType="copy" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzShape="circle" nzType="primary"
+                nz-tooltip [nzTitle]="'GEARSETS.Copy_as_text' | translate"
+                ngxClipboard
+                [cbContent]="getString(gearset)"
+                (cbOnSuccess)="afterStringCopy()">
+          <i nz-icon nzType="snippets" nzTheme="outline"></i>
         </button>
         <a nz-button nzShape="circle" nzType="primary"
            nz-tooltip [nzTitle]="'GEARSETS.Edit_gearset' | translate"
