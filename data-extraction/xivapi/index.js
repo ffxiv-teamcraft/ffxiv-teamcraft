@@ -1139,7 +1139,7 @@ if (hasTodo('items')) {
       'Feet%',
       'Earring%',
       'Necklace%',
-      'Wrist%',
+      'Bracelet%',
       'Ring%',
       '2HWpn%',
       '1HWpn%',
