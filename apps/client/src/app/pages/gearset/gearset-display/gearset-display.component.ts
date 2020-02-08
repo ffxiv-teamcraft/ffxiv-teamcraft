@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { environment } from '../../../../environments/environment';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { GearsetComparatorPopupComponent } from '../../../modules/gearsets/gearset-comparator-popup/gearset-comparator-popup.component';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
@@ -21,6 +21,8 @@ import { List } from '../../../modules/list/model/list';
 import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 import { BaseParam } from '../../../modules/gearsets/base-param';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-gearset-display',
@@ -86,7 +88,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private notificationService: NzNotificationService, private lazyData: LazyDataService,
-              private router: Router, private rotationPickerService: RotationPickerService) {
+              private router: Router, private i18n: I18nToolsService,
+              private l12n: LocalizedDataService, private message: NzMessageService) {
     super();
     this.activatedRoute.paramMap
       .pipe(
@@ -179,6 +182,21 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       );
       this.router.navigate(['/list', list.$key]);
     });
+  }
+
+  getString(gearset: TeamcraftGearset): string {
+    return this.gearsetsFacade.toArray(gearset)
+      .reduce((acc, piece) => {
+        acc += `**${this.i18n.getName(this.l12n.getItem(piece.itemId))}${piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
+        ${piece.materias.filter(m => m > 0).reduce((materiaStr, materia) => {
+          return `${materiaStr}\n- ${this.i18n.getName(this.l12n.getItem(materia))}`
+        }, '')}\n\n`;
+        return acc;
+      }, '');
+  }
+
+  afterStringCopy():void{
+    this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
   }
 
 }

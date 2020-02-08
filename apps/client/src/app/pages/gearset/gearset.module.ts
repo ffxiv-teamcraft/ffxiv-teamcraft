@@ -23,6 +23,7 @@ import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-needed-popup.component';
 import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-row.component';
 import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-display-slot.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 const routes: Routes = [
   {
@@ -58,6 +59,8 @@ const routes: Routes = [
     PipesModule,
     ItemIconModule,
     PageLoaderModule,
+
+    ClipboardModule,
 
     RouterModule.forChild(routes)
   ],
