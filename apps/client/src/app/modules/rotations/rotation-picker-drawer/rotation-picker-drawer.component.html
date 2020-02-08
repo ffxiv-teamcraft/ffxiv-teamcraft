@@ -1,5 +1,5 @@
 <ng-container *ngIf="!disableNew">
-  <a (click)="ref.close(null)" [nzType]="'primary'" nz-button nzBlock routerLink="/simulator/{{itemId}}/{{recipeId}}">
+  <a (click)="ref.close(null)" [nzType]="'primary'" nz-button nzBlock routerLink="/simulator/{{itemId}}/{{recipeId}}" [queryParams]="statsStr?{stats:statsStr}:null">
     <i nz-icon nzType="plus"></i>&nbsp;{{'SIMULATOR.New_rotation' | translate}}
   </a>
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
@@ -46,11 +46,11 @@
         </a>
         <ng-template #links>
           <a (click)="ref.close(rotation)" *ngIf="!custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-             routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}">
+             routerLink="/simulator/{{itemId}}/{{recipeId}}/{{rotation.$key}}" [queryParams]="statsStr?{stats:statsStr}:null">
             <i nz-icon nzType="check"></i>
           </a>
           <a (click)="ref.close(rotation)" *ngIf="custom" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-             routerLink="/simulator/custom/{{rotation.$key}}">
+             routerLink="/simulator/custom/{{rotation.$key}}" [queryParams]="statsStr?{stats:statsStr}:null">
             <i nz-icon nzType="check"></i>
           </a>
         </ng-template>
