@@ -135,10 +135,10 @@
     "zh": "能够发现良材及草场在获得个数方面的特殊性质"
   },
   "46": {
-    "zh": "在属性加护效果下提高获取水晶的数量"
+    "zh": "在十二神加护效果下提高获取水晶的数量"
   },
   "47": {
-    "zh": "在属性加护效果下提高获取晶簇的数量"
+    "zh": "在十二神加护效果下提高获取晶簇的数量"
   },
   "48": {
     "zh": "能够发现矿脉及石场在获得率方面的特殊性质"
@@ -153,10 +153,10 @@
     "zh": "能够发现矿脉及石场在获得个数方面的特殊性质"
   },
   "52": {
-    "zh": "在属性加护效果下提高获取水晶的数量"
+    "zh": "在十二神加护效果下提高获取水晶的数量"
   },
   "53": {
-    "zh": "在属性加护效果下提高获取晶簇的数量"
+    "zh": "在十二神加护效果下提高获取晶簇的数量"
   },
   "54": {
     "zh": "在沙海钓场也能抛竿钓鱼"
@@ -492,13 +492,13 @@
     "zh": "自身发动除自动攻击外的技能造成的物理伤害提高5%"
   },
   "165": {
-    "zh": "发动时获得6点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技命中时或连击成功时"
+    "zh": "发动时获得5点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技命中时或连击成功时"
   },
   "166": {
     "zh": "重置缩地的复唱时间\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>对敌人发动火遁之术、雷遁之术、冰遁之术时，部分特定敌人除外"
   },
   "167": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>提高40\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>夺取命中时"
+    "zh": "获得40点<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>夺取命中时"
   },
   "168": {
     "zh": "毒咬箭变为烈毒咬箭，风蚀箭变为狂风蚀箭"
@@ -573,16 +573,16 @@
     "zh": "采集开始时可以触及到所有隐藏资源\n目标：60级以下的采集地点"
   },
   "192": {
-    "zh": "采集力的自动恢复量提高"
+    "zh": "采集力的自动恢复量基本值提高1点"
   },
   "193": {
-    "zh": "采集力的自动恢复量提高"
+    "zh": "采集力的自动恢复量基本值提高1点"
   },
   "194": {
-    "zh": "采集力的自动恢复量提高"
+    "zh": "采集力的自动恢复量基本值提高1点"
   },
   "195": {
-    "zh": "摇荡变为震荡"
+    "zh": "摇荡变为震荡\n将赤闪雷和赤疾风的威力提高到350\n将赤火炎和赤飞石的威力提高到300"
   },
   "196": {
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>治疗百合<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>最多可积累到3档<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>自身进入战斗状态后每经过30秒"
@@ -705,31 +705,13 @@
     "zh": "能够发现最高80级的鱼洞"
   },
   "236": {
-    "zh": "采集力的自动恢复量提高"
+    "zh": "采集力的自动恢复量基本值提高2点，采集成功时采集力的恢复量基本值提高1点"
   },
   "237": {
-    "zh": "采集力的自动恢复量提高"
+    "zh": "采集力的自动恢复量基本值提高2点，采集成功时采集力的恢复量基本值提高1点"
   },
   "238": {
-    "zh": "采集力的自动恢复量提高"
-  },
-  "239": {
-    "zh": ""
-  },
-  "240": {
-    "zh": ""
-  },
-  "241": {
-    "zh": ""
-  },
-  "242": {
-    "zh": ""
-  },
-  "243": {
-    "zh": ""
-  },
-  "244": {
-    "zh": ""
+    "zh": "采集力的自动恢复量基本值提高2点"
   },
   "245": {
     "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>斗气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态的几率上升到70%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技暴击时"
@@ -739,9 +721,6 @@
   },
   "247": {
     "zh": "精准刺威力提高至290，贯通刺威力提高至140，开膛枪威力提高至150\n另外，在使用龙牙龙爪命中后使用龙尾大回旋时，或在使用龙尾大回旋命中后使用龙牙龙爪时，若攻击正确的方向，会对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电预备<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n效果时间内，精准刺变为<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>龙眼雷电<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
-  },
-  "248": {
-    "zh": ""
   },
   "249": {
     "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>兽魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>凶残裂与暴风斩连击成功时"
@@ -798,16 +777,13 @@
     "zh": "钢铁旋风变为地毁人亡"
   },
   "267": {
-    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的混沌<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的混沌效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>地毁人亡变为混沌旋风\n当学会狂魂后，裂石飞环变为狂魂\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>战嚎<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态中"
+    "zh": "对自身附加<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>原初的混沌<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>原初的混沌效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>地毁人亡变为混沌旋风\n当学会狂魂后，裂石飞环变为狂魂\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground><UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>战嚎<UIGlow>01</UIGlow><UIForeground>01</UIForeground>发动时"
   },
   "268": {
     "zh": "可获得<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>兽魂<UIGlow>01</UIGlow><UIForeground>01</UIForeground>量值\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>秘银暴风连击成功时"
   },
   "269": {
     "zh": "为战栗附加自身所受的体力恢复效果提高20%的效果"
-  },
-  "270": {
-    "zh": ""
   },
   "271": {
     "zh": "暗黑波动变为暗影波动，暗黑锋变为暗影锋"
@@ -837,10 +813,7 @@
     "zh": "缩地变为积蓄技能\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>积蓄次数：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>2"
   },
   "280": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到8\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>战技命中时或连击成功时"
-  },
-  "281": {
-    "zh": ""
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>忍气<UIGlow>01</UIGlow><UIForeground>01</UIForeground>增加量提高到10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>影牙命中时或旋风刃和强甲破点突连击成功时"
   },
   "282": {
     "zh": "直线射击变为辉煌箭"
@@ -900,7 +873,7 @@
     "zh": "衰败的持续时间延长到30秒"
   },
   "301": {
-    "zh": "发动灾祸时，可以扩散自身附加在目标身上的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>衰败<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "zh": "灾祸追加效果的发动几率变为100%"
   },
   "302": {
     "zh": "可使亚灵神不死鸟显现　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>显现时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>20秒\n亚灵神不死鸟显现时发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>不死鸟之翼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n另外，当召唤者对敌人发动魔法攻击时，亚灵神不死鸟将同时发动<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>赤焰<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n之前召唤出的召唤兽会在亚灵神不死鸟显现时被召回，显现时间结束后会被再次召唤\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>召唤兽处于同行状态并发动不死鸟附体时"
@@ -965,328 +938,100 @@
   "322": {
     "zh": "天语的效果量提高到15%"
   },
-  "323": {
-    "zh": ""
-  },
   "324": {
     "zh": "毒菌变为猛毒菌"
   },
   "325": {
-    "zh": ""
+    "zh": "转换到采矿工职业时自动发动山岳之相的效果"
   },
   "326": {
-    "zh": ""
+    "zh": "转换到园艺工职业时自动发动丛林之相的效果"
   },
   "327": {
-    "zh": ""
+    "zh": "转换到捕鱼人职业时自动发动海洋之相的效果"
   },
   "328": {
-    "zh": ""
+    "zh": "转换到采矿工职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "329": {
-    "zh": ""
+    "zh": "转换到园艺工职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "330": {
-    "zh": ""
+    "zh": "转换到捕鱼人职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "331": {
-    "zh": ""
+    "zh": "在十二神加护效果下获得个数的基本值提高1点"
   },
   "332": {
-    "zh": ""
+    "zh": "在十二神加护效果下获得个数的基本值提高1点"
   },
   "333": {
-    "zh": ""
+    "zh": "高产变为高产II"
   },
   "334": {
-    "zh": ""
+    "zh": "发掘II变为发掘III"
   },
   "335": {
-    "zh": ""
+    "zh": "直觉甄别变为直觉甄别II"
   },
   "336": {
-    "zh": ""
+    "zh": "丰收变为丰收II"
   },
   "337": {
-    "zh": ""
+    "zh": "转变变为转变II"
   },
   "338": {
-    "zh": ""
+    "zh": "直觉甄别变为直觉甄别II"
   },
   "339": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "340": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "341": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "342": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "343": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "344": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "345": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "346": {
-    "zh": ""
+    "zh": "制作的效率提高到120"
   },
   "347": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "348": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "349": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "350": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "351": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "352": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "353": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "354": {
-    "zh": ""
+    "zh": "高速制作的效率提高到500"
   },
   "355": {
-    "zh": ""
-  },
-  "356": {
-    "zh": ""
-  },
-  "357": {
-    "zh": ""
-  },
-  "358": {
-    "zh": ""
-  },
-  "359": {
-    "zh": ""
-  },
-  "360": {
-    "zh": ""
-  },
-  "361": {
-    "zh": ""
-  },
-  "362": {
-    "zh": ""
-  },
-  "363": {
-    "zh": ""
-  },
-  "364": {
-    "zh": ""
-  },
-  "365": {
-    "zh": ""
-  },
-  "366": {
-    "zh": ""
-  },
-  "367": {
-    "zh": ""
-  },
-  "368": {
-    "zh": ""
-  },
-  "369": {
-    "zh": ""
-  },
-  "370": {
-    "zh": ""
-  },
-  "371": {
-    "zh": ""
-  },
-  "372": {
-    "zh": ""
-  },
-  "373": {
-    "zh": ""
-  },
-  "374": {
-    "zh": ""
-  },
-  "375": {
-    "zh": ""
-  },
-  "376": {
-    "zh": ""
-  },
-  "377": {
-    "zh": ""
-  },
-  "378": {
-    "zh": ""
-  },
-  "379": {
-    "zh": ""
-  },
-  "380": {
-    "zh": ""
-  },
-  "381": {
-    "zh": ""
-  },
-  "382": {
-    "zh": ""
-  },
-  "383": {
-    "zh": ""
-  },
-  "384": {
-    "zh": ""
-  },
-  "385": {
-    "zh": ""
-  },
-  "386": {
-    "zh": ""
-  },
-  "387": {
-    "zh": ""
-  },
-  "388": {
-    "zh": ""
-  },
-  "389": {
-    "zh": ""
-  },
-  "390": {
-    "zh": ""
-  },
-  "391": {
-    "zh": ""
-  },
-  "392": {
-    "zh": ""
-  },
-  "393": {
-    "zh": ""
-  },
-  "394": {
-    "zh": ""
-  },
-  "395": {
-    "zh": ""
-  },
-  "396": {
-    "zh": ""
-  },
-  "397": {
-    "zh": ""
-  },
-  "398": {
-    "zh": ""
-  },
-  "399": {
-    "zh": ""
-  },
-  "400": {
-    "zh": ""
-  },
-  "401": {
-    "zh": ""
-  },
-  "402": {
-    "zh": ""
-  },
-  "403": {
-    "zh": ""
-  },
-  "404": {
-    "zh": ""
-  },
-  "405": {
-    "zh": ""
-  },
-  "406": {
-    "zh": ""
-  },
-  "407": {
-    "zh": ""
-  },
-  "408": {
-    "zh": ""
-  },
-  "409": {
-    "zh": ""
-  },
-  "410": {
-    "zh": ""
-  },
-  "411": {
-    "zh": ""
-  },
-  "412": {
-    "zh": ""
-  },
-  "413": {
-    "zh": ""
-  },
-  "414": {
-    "zh": ""
-  },
-  "415": {
-    "zh": ""
-  },
-  "416": {
-    "zh": ""
-  },
-  "417": {
-    "zh": ""
-  },
-  "418": {
-    "zh": ""
-  },
-  "419": {
-    "zh": ""
-  },
-  "420": {
-    "zh": ""
-  },
-  "421": {
-    "zh": ""
-  },
-  "422": {
-    "zh": ""
-  },
-  "423": {
-    "zh": ""
-  },
-  "424": {
-    "zh": ""
-  },
-  "425": {
-    "zh": ""
-  },
-  "426": {
-    "zh": ""
-  },
-  "427": {
-    "zh": ""
-  },
-  "428": {
-    "zh": ""
-  },
-  "429": {
-    "zh": ""
-  },
-  "430": {
-    "zh": ""
+    "zh": "迸裂的威力提高到90"
   }
 }
