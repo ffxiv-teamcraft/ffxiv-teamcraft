@@ -60,6 +60,7 @@ import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
+import { SimulationSharePopupComponent } from '../simulation-share-popup/simulation-share-popup.component';
 
 @Component({
   selector: 'app-simulator',
@@ -87,6 +88,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
   public thresholds: number[] = [];
+
+  @Input()
+  public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number };
 
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
 
@@ -288,6 +292,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     });
   }
 
+  openSharePopup(rotation: CraftingRotation): void {
+    this.simulation$.pipe(
+      first()
+    ).subscribe(simulation => {
+      this.dialog.create({
+        nzFooter: null,
+        nzContent: SimulationSharePopupComponent,
+        nzComponentParams: {
+          rotation: rotation,
+          simulation: simulation
+        },
+        nzTitle: this.translate.instant('SIMULATOR.Share_button_tooltip')
+      })
+    });
+  }
+
   public openOverlay(rotation: CraftingRotation): void {
     this.ipc.openOverlay(`/rotation-overlay/${rotation.$key}`, '/rotation-overlay', IpcService.ROTATION_DEFAULT_DIMENSIONS);
   }
@@ -407,14 +427,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       nzTitle: this.translate.instant('SIMULATOR.Step_by_step_report'),
       nzFooter: null
     });
-  }
-
-  getLink(rotation: CraftingRotation): string {
-    if (rotation.custom) {
-      return this.linkTools.getLink(`/simulator/custom/${rotation.$key}`);
-    } else {
-      return this.linkTools.getLink(`/simulator/${rotation.defaultItemId}/${rotation.defaultRecipeId}/${rotation.$key}`);
-    }
   }
 
   afterLinkCopy(): void {
@@ -783,30 +795,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         const set = sets.find(s => s.jobId === job);
         const levels = <CrafterLevels>sets.map(s => s.level);
         levels[job - 8] = set.level;
+        if (this.routeStats) {
+          set.craftsmanship = this.routeStats.craftsmanship;
+          set.control = this.routeStats.control;
+          set.cp = this.routeStats.cp;
+          set.level = this.routeStats.level;
+          set.specialist = this.routeStats.spec;
+        }
         return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, levels);
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
-      })
-    );
-
-    const statsFromRotation$ = this.rotation$.pipe(
-      map(rotation => {
-        const stats = rotation.stats;
-        if (rotation.stats) {
-          const levels = [80, 80, 80, 80, 80, 80, 80, 80];
-          levels[stats.jobId - 8] = stats.level;
-          return new CrafterStats(
-            stats.jobId,
-            stats.craftsmanship,
-            stats.control,
-            stats.cp,
-            stats.specialist,
-            stats.level,
-            <CrafterLevels>levels
-          );
-        }
-        return undefined;
       })
     );
 
@@ -819,15 +818,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       shareReplay(1)
     );
 
-    this.crafterStats$ = combineLatest([merge(statsFromRecipe$, this.customStats$), statsFromRotation$, this.route.queryParamMap, this.authFacade.userId$, this.rotation$]).pipe(
+    this.crafterStats$ = merge(statsFromRecipe$, this.customStats$).pipe(
       debounceTime(1000),
-      map(([generated, fromRotation, query, userId, rotation]) => {
-        if (!this.statsFromRotationApplied && this.custom && (query.has('includeStats') || (rotation.authorId === userId && rotation.custom))) {
-          this.statsFromRotationApplied = true;
-          return fromRotation || generated;
-        }
-        return generated;
-      }),
       shareReplay(1),
       tap(stats => {
         const levels = stats.levels;
@@ -883,13 +875,13 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.actions$.next(CraftingActionsRegistry.deserializeRotation(rotation.rotation));
         this.stepStates$.next({});
       }
-      if (rotation.food && this.selectedFood === undefined) {
+      if (rotation.food && this.selectedFood === undefined && !this.routeStats) {
         this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
       }
-      if (rotation.medicine && this.selectedMedicine === undefined) {
+      if (rotation.medicine && this.selectedMedicine === undefined && !this.routeStats) {
         this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
       }
-      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0) {
+      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0 && !this.routeStats) {
         this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
       }
       this.applyConsumables(stats);

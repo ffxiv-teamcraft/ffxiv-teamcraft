@@ -152,7 +152,8 @@
     "Average": "Average",
     "Hq": "HQ",
     "Nq": "NQ",
-    "Share_link_copied": "Share link copied to clipboard"
+    "Share_link_copied": "Share link copied to clipboard",
+    "Copy": "Copy"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -776,6 +777,7 @@
   },
   "SIMULATOR": {
     "Title": "Crafting simulator",
+    "Include_stats": "Include stats",
     "Fixed_notification_number": "Fixed notification",
     "Starting_echo_number": "Notification #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",

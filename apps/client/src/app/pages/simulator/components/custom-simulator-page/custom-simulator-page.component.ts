@@ -21,6 +21,8 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
 
   public recipe$: Observable<Partial<Craft>>;
 
+  stats$: Observable<{ craftsmanship: number, control: number, cp: number, spec: boolean, level: number }>;
+
   constructor(private fb: FormBuilder, private route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService) {
     super(seo);
@@ -87,6 +89,23 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           suggCraft: recipe.suggestedCraftsmanship,
           suggCtrl: recipe.suggestedControl
         }, { emitEvent: false });
+      })
+    );
+
+    this.stats$ = this.route.queryParamMap.pipe(
+      map(query => {
+        return query.get('stats');
+      }),
+      filter(stats => stats !== null),
+      map(statsStr => {
+        const split = statsStr.split('/');
+        return {
+          craftsmanship: +split[0],
+          control: +split[1],
+          cp: +split[2],
+          level: +split[3],
+          spec: +split[3] === 1
+        };
       })
     );
   }
