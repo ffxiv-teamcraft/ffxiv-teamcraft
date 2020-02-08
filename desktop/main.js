@@ -1,11 +1,10 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu, autoUpdater } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
 const log = require('electron-log');
 log.transports.file.level = 'debug';
-const fs = require('fs');
 const Machina = require('./machina.js');
 
 ipcMain.setMaxListeners(0);
@@ -19,8 +18,6 @@ const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 let win;
 let tray;
 let nativeIcon;
-
-let updateInterval;
 
 let openedOverlays = {};
 let openedOverlayUris = [];
@@ -57,20 +54,6 @@ if (options.noHA) {
 }
 
 function createWindow() {
-  // Remove update setup
-  const updaterFolder = path.join(process.env.APPDATA, '../Local/ffxiv-teamcraft-updater');
-  fs.readdir(updaterFolder, (err, files) => {
-    if (err) throw err;
-
-    for (const file of files) {
-      if (fs.lstatSync(path.join(updaterFolder, file)).isDirectory()) {
-        continue;
-      }
-      fs.unlink(path.join(updaterFolder, file), err => {
-        if (err) throw err;
-      });
-    }
-  });
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
@@ -152,7 +135,6 @@ function createWindow() {
         content: 'To change this behavior, visit Settings -> Desktop.'
       });
     }
-    // autoUpdater.checkForUpdates();
   });
 
   // save window size and position
@@ -364,40 +346,6 @@ app.on('activate', function() {
     createWindow();
   }
 });
-//
-// autoUpdater.on('checking-for-update', () => {
-//   log.log('Checking for update');
-//   win && win.webContents.send('checking-for-update', true);
-// });
-//
-// autoUpdater.on('download-progress', (progress) => {
-//   win && win.webContents.send('download-progress', progress);
-// });
-//
-// autoUpdater.on('update-available', () => {
-//   log.log('Update available');
-//   win && win.webContents.send('update-available', true);
-// });
-//
-// autoUpdater.on('update-not-available', () => {
-//   log.log('No update found');
-//   win && win.webContents.send('update-available', false);
-// });
-//
-// autoUpdater.on('update-downloaded', () => {
-//   log.log('Update downloaded');
-//   clearInterval(updateInterval);
-//   dialog.showMessageBox({
-//     type: 'info',
-//     title: 'FFXIV Teamcraft - Update available',
-//     message: 'An update is available and downloaded, install now?',
-//     buttons: ['Yes', 'No']
-//   }, (buttonIndex) => {
-//     if (buttonIndex === 0) {
-//       autoUpdater.quitAndInstall();
-//     }
-//   });
-// });
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
@@ -441,11 +389,6 @@ ipcMain.on('clear-cache', () => {
     app.relaunch();
     app.exit(0);
   });
-});
-
-ipcMain.on('run-update', () => {
-  log.log('Run update setup');
-  // autoUpdater.quitAndInstall(true, true);
 });
 
 ipcMain.on('always-on-top', (event, onTop) => {
@@ -525,11 +468,6 @@ ipcMain.on('minimize', () => {
 
 ipcMain.on('navigated', (event, uri) => {
   deepLink = uri;
-});
-
-ipcMain.on('update:check', () => {
-  log.log('Renderer asked for an update check');
-  // autoUpdater.checkForUpdates();
 });
 
 // Oauth stuff
