@@ -31,6 +31,23 @@ export function reducer(
         ]
       };
     }
+    case FoldersActionTypes.FolderLoaded: {
+      return {
+        ...state,
+        list: [
+          ...state.list.filter(folder => action.payload.$key !== folder.$key),
+          action.payload
+        ]
+      };
+    }
+    case FoldersActionTypes.DeleteFolder: {
+      return {
+        ...state,
+        list: [
+          ...state.list.filter(folder => action.key !== folder.$key),
+        ]
+      };
+    }
   }
   return state;
 }

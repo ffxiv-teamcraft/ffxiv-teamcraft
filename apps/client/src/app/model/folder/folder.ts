@@ -11,6 +11,8 @@ export class Folder<T extends DataModel> extends DataWithPermissions {
 
   content: string[] = [];
 
+  subFolders: string[] = [];
+
   constructor(public contentType: FolderContentType) {
     super();
   }

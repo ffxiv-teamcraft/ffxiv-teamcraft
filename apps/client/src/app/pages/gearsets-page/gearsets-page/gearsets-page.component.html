@@ -7,7 +7,6 @@
 
 <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
 
-
 <ng-container *ngIf="userId$ | async as userId">
   <ng-template #gearsetTemplate let-gearset>
     <div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
@@ -39,13 +38,12 @@
          (cdkDropListDropped)="drop($event, display.root)"
          class="gearsets-list"
          fxLayout="column" fxLayoutGap="10px">
-      <div *ngFor="let gearset of display.root" cdkDrag [cdkDragData]="gearset">
+      <div *ngFor="let gearset of display.root; trackBy: trackByKey" cdkDrag [cdkDragData]="gearset">
         <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
       </div>
     </div>
     <div cdkDropList fxLayout="column" fxLayoutGap="10px"
          id="folder-root"
-         class="folder-drop-list"
          (cdkDropListDropped)="dropFolder($event, display.folders)"
          [cdkDropListConnectedTo]="dndConnections"
          [cdkDropListEnterPredicate]="canDropFolder">
