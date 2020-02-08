@@ -151,7 +151,8 @@
     "Maximum": "Maximum",
     "Average": "Average",
     "Hq": "HQ",
-    "Nq": "NQ"
+    "Nq": "NQ",
+    "Share_link_copied": "Share link copied to clipboard"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -1738,6 +1739,9 @@
     "Delete_gearset": "Delete gearset",
     "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
     "No_food_selected": "No food selected",
+    "Generate_list": "Generate a list",
+    "Clone_gearset": "Copy this on your account",
+    "You_have_no_gearsets": "You have no gearsets",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -1772,6 +1776,12 @@
     }
   },
   "FOLDERS": {
-    "New_folder": "New folder"
+    "New_folder": "New folder",
+    "Delete_folder": "Delete folder",
+    "Rename_folder": "Rename folder",
+    "View_folder": "Open folder",
+    "Content": "Content",
+    "Folder_not_found": "Folder not found",
+    "Your_folders": "Your folders"
   }
 }

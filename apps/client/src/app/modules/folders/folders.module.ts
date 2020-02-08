@@ -9,14 +9,19 @@ import { FolderComponent } from './folder/folder.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { NzButtonModule, NzCollapseModule, NzModalModule, NzPopconfirmModule, NzToolTipModule, NzIconModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCollapseModule, NzModalModule, NzPopconfirmModule, NzToolTipModule, NzIconModule, NzDividerModule } from 'ng-zorro-antd';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FolderPageComponent } from './folder-page/folder-page.component';
+import { RouterModule } from '@angular/router';
+import { UserAvatarModule } from '../user-avatar/user-avatar.module';
+import { ClipboardModule } from 'ngx-clipboard';
+import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 
 @NgModule({
-  declarations: [FolderComponent],
-  exports: [FolderComponent],
+  declarations: [FolderComponent, FolderPageComponent],
+  exports: [FolderComponent, FolderPageComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(
@@ -32,12 +37,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NzPopconfirmModule,
     NzIconModule,
 
+    ClipboardModule,
+
     TranslateModule,
     CoreModule,
     PipesModule,
     NameQuestionPopupModule,
     DragDropModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NzDividerModule,
+    RouterModule,
+    UserAvatarModule,
+    FullpageMessageModule
   ],
   providers: [FoldersFacade]
 })

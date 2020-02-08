@@ -12,7 +12,7 @@ import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { filter } from 'rxjs/operators';
+import { filter, switchMap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -40,11 +40,14 @@ export class GearsetsPageComponent implements OnInit {
     });
     this.ipc.send('toggle-machina:get');
 
-    this.display$ = this.foldersFacade.getDisplay<TeamcraftGearset>(
-      FolderContentType.GEARSET,
-      this.gearsetsFacade.allGearsets$,
-      key => this.gearsetsFacade.load(key)
-    );
+    this.display$ = this.userId$.pipe(switchMap(userId => {
+      return this.foldersFacade.getDisplay<TeamcraftGearset>(
+        FolderContentType.GEARSET,
+        this.gearsetsFacade.allGearsets$,
+        key => this.gearsetsFacade.load(key),
+        gearset => gearset.authorId === userId
+      );
+    }));
   }
 
   newFolder(): void {
@@ -65,26 +68,6 @@ export class GearsetsPageComponent implements OnInit {
 
   importLodestoneGearset(): void {
     this.gearsetsFacade.importLodestoneGearset();
-  }
-
-  deleteGearset(key: string): void {
-    this.gearsetsFacade.delete(key);
-  }
-
-  rename(gearset: TeamcraftGearset): void {
-    this.dialog.create({
-      nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: gearset.name },
-      nzFooter: null,
-      nzTitle: this.translate.instant('GEARSETS.Rename_gearset')
-    }).afterClose.pipe(
-      filter(name => name !== undefined)
-    ).subscribe(name => {
-      gearset.name = name;
-      this.gearsetsFacade.pureUpdate(gearset.$key, {
-        name: gearset.name
-      });
-    });
   }
 
   drop(event: any, root: TeamcraftGearset[]): void {

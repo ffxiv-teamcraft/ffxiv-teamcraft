@@ -6,6 +6,9 @@ import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService } from 'ng-zorro-antd';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-folder',
@@ -30,10 +33,22 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   @Input()
   userId: string;
 
+  @Input()
+  folderPath: string;
+
   @Output()
   connectDnD = new EventEmitter<string>();
 
-  constructor(private foldersFacade: FoldersFacade) {
+  constructor(private foldersFacade: FoldersFacade, private translate: TranslateService,
+              private message: NzMessageService, private linkTools: LinkToolsService) {
+  }
+
+  getLink():string{
+    return this.linkTools.getLink(`/${this.folderPath}/${this.display.folder.$key}`)
+  }
+
+  afterLinkCopy(): void {
+    this.message.success(this.translate.instant('COMMON.Share_link_copied'));
   }
 
   rename(): void {

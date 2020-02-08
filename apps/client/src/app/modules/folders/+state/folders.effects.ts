@@ -10,12 +10,13 @@ import {
   LoadFolder,
   LoadFolders,
   PureUpdateFolder,
-  UpdateFolder, UpdateFolderIndexes
+  UpdateFolder,
+  UpdateFolderIndexes
 } from './folders.actions';
-import { distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { catchError, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { FoldersService } from '../../../core/database/folders.service';
-import { EMPTY } from 'rxjs';
+import { EMPTY, of } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { NzModalService } from 'ng-zorro-antd';
@@ -42,7 +43,8 @@ export class FoldersEffects {
   loadFolder$ = this.actions$.pipe(
     ofType<LoadFolder>(FoldersActionTypes.LoadFolder),
     switchMap(action => {
-      return this.foldersService.get(action.key);
+      return this.foldersService.get(action.key)
+        .pipe(catchError(() => of({ $key: action.key, content: [], subFolders: [], notFound: true } as Folder<any>)));
     }),
     map(folder => new FolderLoaded(folder))
   );

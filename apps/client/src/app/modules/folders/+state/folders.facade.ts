@@ -31,16 +31,16 @@ export class FoldersFacade {
 
   foldersPerTypeCache: { [index: number]: Observable<Folder<any>[]> } = {};
 
-  selectedFoldersCache: { [index: number]: Observable<Folder<any>> } = {};
+  selectedFoldersCache: { [index: number]: Observable<FolderDisplay<any>> } = {};
 
   constructor(private store: Store<FoldersPartialState>, private dialog: NzModalService,
               private translate: TranslateService) {
   }
 
-  getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<TreeFolderDisplay<T>> {
+  getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void, rootEntityPredicate: (entity: T) => boolean): Observable<TreeFolderDisplay<T>> {
     return combineLatest([this.getFolders<T>(type), loadedContent$]).pipe(
       map(([folders, entities]) => {
-        let root = entities.map(e => e.$key);
+        let root = entities.filter(rootEntityPredicate).map(e => e.$key);
         const displays = folders
           .filter(folder => folder.isRoot)
           .map((folder: Folder<T>) => {
@@ -100,9 +100,23 @@ export class FoldersFacade {
     };
   }
 
-  getSelectedFolder<T extends DataModel>(type: FolderContentType): Observable<Folder<T>> {
+  getSelectedFolderDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void): Observable<FolderDisplay<T>> {
     if (this.selectedFoldersCache[type] === undefined) {
-      this.selectedFoldersCache[type] = this.store.pipe(select(foldersQuery.getSelectedFolders(type)));
+      const selectedFolder$ = this.store.pipe(
+        select(foldersQuery.getSelectedFolders),
+        map(selectedFolders => {
+          return selectedFolders[type];
+        }),
+        filter(folder => folder !== undefined)
+      );
+      this.selectedFoldersCache[type] = combineLatest([selectedFolder$, this.getFolders<T>(type), loadedContent$]).pipe(
+        map(([folder, folders, entities]) => {
+          const syncDisplay = this.getSyncFolderDisplay(folders, entities, folder);
+          syncDisplay.missingEntities.forEach(loadMissing);
+          syncDisplay.missingFolders.forEach($key => this.getFolder($key));
+          return syncDisplay.display;
+        })
+      );
     }
     return this.selectedFoldersCache[type];
   }
@@ -159,7 +173,7 @@ export class FoldersFacade {
     this.store.dispatch(new SelectFolder(type, key));
   }
 
-  private getFolder($key: string) {
+  getFolder($key: string) {
     this.store.dispatch(new LoadFolder($key));
   }
 }

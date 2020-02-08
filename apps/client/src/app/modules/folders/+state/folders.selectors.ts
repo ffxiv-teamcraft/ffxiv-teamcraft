@@ -1,7 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { FOLDERS_FEATURE_KEY, FoldersState } from './folders.reducer';
-import { FolderContentType } from '../../../model/folder/folder-content-type';
-import * as memoizee from 'memoizee';
 
 // Lookup the 'Folders' feature state managed by NgRx
 const getFoldersState = createFeatureSelector<FoldersState>(
@@ -14,17 +12,22 @@ const getAllFolders = createSelector(
     return state.list;
   }
 );
-const getSelectedId = memoizee((type: FolderContentType) => createSelector(
+
+const getSelectedIds = createSelector(
   getFoldersState,
-  (state: FoldersState) => state.selectedIds[type]
-));
-const getSelectedFolders = memoizee((type: FolderContentType) => createSelector(
+  (state: FoldersState) => state.selectedIds
+);
+
+const getSelectedFolders = createSelector(
   getAllFolders,
-  getSelectedId(type),
-  (folders, id) => {
-    return folders.find(it => it.$key === id);
+  getSelectedIds,
+  (folders, ids) => {
+    return Object.entries(ids).reduce((acc, [id, key]) => {
+      acc[id] = folders.find(f => f.$key === key);
+      return acc;
+    }, {});
   }
-));
+);
 
 export const foldersQuery = {
   getAllFolders,
