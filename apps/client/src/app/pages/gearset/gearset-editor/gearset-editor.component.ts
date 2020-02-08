@@ -6,7 +6,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
+import { SearchAlgo, SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { chunk } from 'lodash';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
@@ -90,6 +90,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       const requests = [
         this.xivapi.search({
           indexes: [SearchIndex.ITEM],
+          string_algo: SearchAlgo.QUERY_STRING,
+          string: '-Dated*',
+          string_column: 'Name_en',
           filters: [
             ...filters,
             {
@@ -141,7 +144,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             'EquipSlotCategory',
             'BaseParamModifier',
             'IsAdvancedMeldingPermitted',
-            'BaseParam*',
             'MateriaSlotCount',
             'LevelItem',
             'LevelEquip',
@@ -157,12 +159,15 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     }),
     withLatestFrom(this.gearset$),
     map(([[response, crystal], gearset]) => {
+      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
       const prepared = [...response.Results, ...crystal.Results]
         .filter(item => {
-          if (!gearset.isCombatSet()) {
-            return item.Name_en.indexOf('Gordian') === -1;
-          }
-          return true;
+          return relevantStats.some(stat => {
+            if (!gearset.isCombatSet()) {
+              return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
+            }
+            return true;
+          });
         })
         .reduce((resArray, item) => {
           const itemSlotName = Object.keys(item.EquipSlotCategory)

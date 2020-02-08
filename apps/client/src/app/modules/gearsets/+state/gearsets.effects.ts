@@ -98,11 +98,7 @@ export class GearsetsEffects {
         switchMap(gearset => {
           return this.gearsetService.add(gearset).pipe(
             tap((res) => {
-              if (action.gearset) {
-                this.router.navigate(['/gearset', res, 'edit']);
-              } else {
-                this.router.navigate(['/gearset', res]);
-              }
+              this.router.navigate(['/gearset', res, 'edit']);
             })
           );
         })
