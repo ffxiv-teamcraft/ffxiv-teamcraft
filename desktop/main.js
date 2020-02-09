@@ -49,11 +49,8 @@ if (!isDev) {
     });
   } else {
     const cp = require('child_process');
-    log.log('execPath', process.execPath);
     const updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
-    log.log('updateDotExe', updateDotExe);
     const target = path.basename(process.execPath);
-    log.log('target', target);
     cp.spawn(updateDotExe, ['--createShortcut', target], { detached: true });
   }
 }
