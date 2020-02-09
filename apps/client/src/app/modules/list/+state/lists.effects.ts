@@ -41,6 +41,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 
 @Injectable()
 export class ListsEffects {
@@ -118,9 +119,7 @@ export class ListsEffects {
   loadListDetails$ = this.actions$.pipe(
     ofType<LoadListDetails>(ListsActionTypes.LoadListDetails),
     filter(action => !/^offline\d+$/.test(action.key)),
-    withLatestFrom(this.listsFacade.allListDetails$),
-    filter(([action, allLists]) => allLists.find(list => list.$key === action.key) === undefined),
-    map(([action]) => action),
+    onlyIfNotConnected(this.listsFacade.allListDetails$, action => action.key),
     mergeMap((action: LoadListDetails) => {
       return this.authFacade.loggedIn$.pipe(
         switchMap(loggedIn => {

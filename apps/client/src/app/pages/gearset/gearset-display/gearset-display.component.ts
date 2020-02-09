@@ -23,6 +23,7 @@ import { BaseParam } from '../../../modules/gearsets/base-param';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-gearset-display',
@@ -82,6 +83,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   permissionLevel$: Observable<PermissionLevel> = this.gearsetsFacade.selectedGearsetPermissionLevel$;
 
+  userId$: Observable<string> = this.authFacade.userId$;
+
   constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
               public translate: TranslateService, private statsService: StatsService,
               private dialog: NzModalService, private materiaService: MateriaService,
@@ -89,7 +92,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private listsFacade: ListsFacade, private progressService: ProgressPopupService,
               private notificationService: NzNotificationService, private lazyData: LazyDataService,
               private router: Router, private i18n: I18nToolsService,
-              private l12n: LocalizedDataService, private message: NzMessageService) {
+              private l12n: LocalizedDataService, private message: NzMessageService,
+              private authFacade: AuthFacade) {
     super();
     this.activatedRoute.paramMap
       .pipe(

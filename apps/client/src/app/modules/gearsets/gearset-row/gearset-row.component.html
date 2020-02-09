@@ -6,15 +6,15 @@
   </button>
   <div fxFlex="1 1 auto"></div>
   <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()"
-          [nzShape]="'circle'"
+          nzShape="circle"
           [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-          ngxClipboard nz-button nz-tooltip>
+          ngxClipboard nz-button nz-tooltip nzType="primary">
     <i nz-icon nzType="share-alt"></i>
   </button>
-  <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">
+  <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">
     <i nz-icon nzType="eye" nzTheme="outline"></i>
   </a>
-  <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nz-tooltip
+  <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nzType="primary" nz-tooltip
      [nzTitle]="'GEARSETS.Edit_gearset' | translate">
     <i nz-icon nzType="edit" nzTheme="outline"></i>
   </a>

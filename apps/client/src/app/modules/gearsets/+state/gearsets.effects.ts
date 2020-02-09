@@ -17,7 +17,7 @@ import {
   UpdateGearset,
   UpdateGearsetIndexes
 } from './gearsets.actions';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap, mergeMap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NzModalService } from 'ng-zorro-antd';
@@ -28,6 +28,8 @@ import { Router } from '@angular/router';
 import { AriyalaImportPopupComponent } from '../ariyala-import-popup/ariyala-import-popup.component';
 import { LodestoneImportPopupComponent } from '../lodestone-import-popup/lodestone-import-popup.component';
 import { ImportFromPcapPopupComponent } from '../import-from-pcap-popup/import-from-pcap-popup.component';
+import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
+import { GearsetsFacade } from './gearsets.facade';
 
 @Injectable()
 export class GearsetsEffects {
@@ -49,7 +51,8 @@ export class GearsetsEffects {
   @Effect()
   loadGearset$ = this.actions$.pipe(
     ofType<LoadGearset>(GearsetsActionTypes.LoadGearset),
-    switchMap(action => {
+    onlyIfNotConnected(this.gearsetsFacade.allGearsets$, action => action.key),
+    mergeMap(action => {
       return this.gearsetService.get(action.key)
         .pipe(catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset)));
     }),
@@ -237,6 +240,7 @@ export class GearsetsEffects {
 
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private gearsetService: GearsetService, private dialog: NzModalService,
-              private translate: TranslateService, private router: Router) {
+              private translate: TranslateService, private router: Router,
+private gearsetsFacade: GearsetsFacade) {
   }
 }

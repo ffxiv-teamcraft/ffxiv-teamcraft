@@ -1,4 +1,11 @@
-<h2>{{display.folder.name}}</h2>
+<div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="folder-title-block">
+  <div class="folder-name">{{display.folder.name}}</div>
+  <app-favorite-button [key]="display.folder.$key"
+                       [type]="favoriteType"
+                       size="small"
+                       *ngIf="display.folder.authorId !== userId">
+  </app-favorite-button>
+</div>
 <div class="author" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
   <app-user-avatar [userId]="display.folder.authorId" [width]="24"></app-user-avatar>
   <div>{{display.folder.authorId | characterName | async}}</div>

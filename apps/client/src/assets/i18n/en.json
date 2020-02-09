@@ -1747,6 +1747,7 @@
     "Generate_list": "Generate a list",
     "Clone_gearset": "Copy this on your account",
     "You_have_no_gearsets": "You have no gearsets",
+    "Favorite_gearsets": "Favorite gearsets",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -1787,6 +1788,7 @@
     "View_folder": "Open folder",
     "Content": "Content",
     "Folder_not_found": "Folder not found",
-    "Your_folders": "Your folders"
+    "Your_folders": "Your folders",
+    "Favorite_folders": "Favorite folders"
   }
 }

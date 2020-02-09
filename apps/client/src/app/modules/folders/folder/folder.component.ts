@@ -9,6 +9,7 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { Favorites } from '../../../model/other/favorites';
 
 @Component({
   selector: 'app-folder',
@@ -36,6 +37,9 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   @Input()
   folderPath: string;
 
+  @Input()
+  disableDnd = false;
+
   @Output()
   connectDnD = new EventEmitter<string>();
 
@@ -43,8 +47,8 @@ export class FolderComponent<T extends DataModel> implements OnInit {
               private message: NzMessageService, private linkTools: LinkToolsService) {
   }
 
-  getLink():string{
-    return this.linkTools.getLink(`/${this.folderPath}/${this.display.folder.$key}`)
+  getLink(): string {
+    return this.linkTools.getLink(`/${this.folderPath}/${this.display.folder.$key}`);
   }
 
   afterLinkCopy(): void {

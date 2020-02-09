@@ -11,11 +11,11 @@
         <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()"
                 [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                ngxClipboard nz-button nz-tooltip>
+                ngxClipboard nz-button nz-tooltip nzType="primary">
           <i nz-icon nzType="share-alt"></i>
         </button>
         <a nz-button *ngIf="folderPath" (click)="$event.stopPropagation()" routerLink="/{{folderPath}}/{{display.folder.$key}}" nzShape="circle" nz-tooltip
-           [nzTitle]="'FOLDERS.View_folder' | translate">
+           [nzTitle]="'FOLDERS.View_folder' | translate" nzType="primary">
           <i nz-icon nzType="folder-open"></i>
         </a>
         <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"
@@ -28,18 +28,20 @@
       </div>
     </ng-template>
     <div cdkDropList [cdkDropListConnectedTo]="dndConnections"
+         [cdkDropListDisabled]="disableDnd"
          [cdkDropListEnterPredicate]="canDropGearset"
          [id]="id" [cdkDropListData]="display.folder"
          (cdkDropListExited)="exited($event)"
          (cdkDropListEntered)="entered($event)"
          (cdkDropListDropped)="drop($event)"
          fxLayout="column" fxLayoutGap="10px">
-      <div cdkDrag *ngFor="let element of display.content; let i = index;  trackBy: trackByKey" [cdkDragData]="element">
+      <div cdkDrag [cdkDragDisabled]="disableDnd" *ngFor="let element of display.content; let i = index;  trackBy: trackByKey" [cdkDragData]="element">
         <ng-container *ngTemplateOutlet="elementTemplate;context:{$implicit: element}"></ng-container>
       </div>
     </div>
 
     <div cdkDropList fxLayout="column" fxLayoutGap="10px"
+         [cdkDropListDisabled]="disableDnd"
          id="{{id}}-subfolders"
          class="folder-drop-list"
          [cdkDropListData]="getDropListData(display.subFolders)"
@@ -49,11 +51,12 @@
          (cdkDropListEntered)="entered($event)"
          (cdkDropListDropped)="dropFolder($event)">
       <div *ngFor="let folder of display.subFolders; let i = index;  trackBy: trackByKey"
-           cdkDrag [cdkDragData]="folder.folder">
+           cdkDrag [cdkDragData]="folder.folder" [cdkDragDisabled]="disableDnd">
         <app-folder [userId]="userId"
                     [display]="folder"
                     [elementTemplate]="elementTemplate"
                     [dndConnections]="dndConnections"
+                    [disableDnd]="disableDnd"
                     (connectDnD)="connectDnD.emit($event)"
                     id="{{id}}-{{i}}"></app-folder>
       </div>

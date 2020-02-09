@@ -6,12 +6,14 @@ import { CreateFolder, DeleteFolder, LoadFolder, LoadFolders, PureUpdateFolder, 
 import { FolderContentType } from '../../../model/folder/folder-content-type';
 import { combineLatest, Observable } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
-import { distinctUntilChanged, filter, map } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { Favorites } from '../../../model/other/favorites';
 
 export interface PreprocessedDisplay<T> {
   display: FolderDisplay<T>,
@@ -31,14 +33,18 @@ export class FoldersFacade {
 
   foldersPerTypeCache: { [index: number]: Observable<Folder<any>[]> } = {};
 
+  userFoldersPerTypeCache: { [index: number]: Observable<Folder<any>[]> } = {};
+
   selectedFoldersCache: { [index: number]: Observable<FolderDisplay<any>> } = {};
 
+  favoriteFoldersCache: { [index: number]: Observable<Folder<any>[]> } = {};
+
   constructor(private store: Store<FoldersPartialState>, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private authFacade: AuthFacade) {
   }
 
-  getDisplay<T extends DataModel>(type: FolderContentType, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void, rootEntityPredicate: (entity: T) => boolean): Observable<TreeFolderDisplay<T>> {
-    return combineLatest([this.getFolders<T>(type), loadedContent$]).pipe(
+  getDisplay<T extends DataModel>(source: Observable<Folder<T>[]>, loadedContent$: Observable<T[]>, loadMissing: (key: string) => void, rootEntityPredicate: (entity: T) => boolean): Observable<TreeFolderDisplay<T>> {
+    return combineLatest([source, loadedContent$]).pipe(
       map(([folders, entities]) => {
         let root = entities.filter(rootEntityPredicate).map(e => e.$key);
         const displays = folders
@@ -46,7 +52,7 @@ export class FoldersFacade {
           .map((folder: Folder<T>) => {
             const syncDisplay = this.getSyncFolderDisplay<T>(folders, entities, folder);
             syncDisplay.missingEntities.forEach(loadMissing);
-            syncDisplay.missingFolders.forEach($key => this.getFolder($key));
+            syncDisplay.missingFolders.forEach($key => this.load($key));
             root = root.filter(key => syncDisplay.pickedEntities.indexOf(key) === -1);
             return syncDisplay.display;
           });
@@ -113,7 +119,7 @@ export class FoldersFacade {
         map(([folder, folders, entities]) => {
           const syncDisplay = this.getSyncFolderDisplay(folders, entities, folder);
           syncDisplay.missingEntities.forEach(loadMissing);
-          syncDisplay.missingFolders.forEach($key => this.getFolder($key));
+          syncDisplay.missingFolders.forEach($key => this.load($key));
           return syncDisplay.display;
         })
       );
@@ -131,6 +137,35 @@ export class FoldersFacade {
       );
     }
     return this.foldersPerTypeCache[type];
+  }
+
+  getUserFolders<T extends DataModel>(type: FolderContentType): Observable<Folder<T>[]> {
+    if (this.userFoldersPerTypeCache[type] === undefined) {
+      this.userFoldersPerTypeCache[type] = combineLatest([this.allFolders$, this.authFacade.userId$]).pipe(
+        map(([folders, userId]) => {
+          return folders.filter(f => f.contentType === type && f.authorId === userId);
+        }),
+        distinctUntilChanged()
+      );
+    }
+    return this.userFoldersPerTypeCache[type];
+  }
+
+  getFavorites<T extends DataModel>(type: FolderContentType, favoriteKey: keyof Favorites): Observable<Folder<T>[]> {
+    if (this.favoriteFoldersCache[type] === undefined) {
+      const favoriteKeys$ = this.authFacade.favorites$.pipe(
+        map(favorites => {
+          return favorites[favoriteKey];
+        })
+      );
+      this.favoriteFoldersCache[type] = combineLatest([this.allFolders$, favoriteKeys$]).pipe(
+        map(([folders, favorites]) => {
+          return folders.filter(f => f.contentType === type && (favorites || []).indexOf(f.$key) > -1);
+        }),
+        distinctUntilChanged()
+      );
+    }
+    return this.favoriteFoldersCache[type];
   }
 
   loadFolders(type: FolderContentType) {
@@ -157,10 +192,6 @@ export class FoldersFacade {
     });
   }
 
-  pureUpdateFolder(folder: Folder<any>): void {
-    this.store.dispatch(new PureUpdateFolder(folder.$key, folder));
-  }
-
   deleteFolder(folder: Folder<any>): void {
     this.store.dispatch(new DeleteFolder(folder.$key));
   }
@@ -173,7 +204,7 @@ export class FoldersFacade {
     this.store.dispatch(new SelectFolder(type, key));
   }
 
-  getFolder($key: string) {
+  load($key: string) {
     this.store.dispatch(new LoadFolder($key));
   }
 }

@@ -17,7 +17,7 @@ import {
   UpdateGearset,
   UpdateGearsetIndexes
 } from './gearsets.actions';
-import { catchError, filter, map, switchMap } from 'rxjs/operators';
+import { catchError, filter, first, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable, of } from 'rxjs';

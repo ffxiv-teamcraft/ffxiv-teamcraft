@@ -6,12 +6,12 @@
   <button nz-button (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
 </div>
 
-<nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
 
 <ng-container *ngIf="userId$ | async as userId">
   <ng-template #gearsetTemplate let-gearset>
     <app-gearset-row [gearset]="gearset" [userId]="userId"></app-gearset-row>
   </ng-template>
+  <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
   <div fxLayout="column" fxLayoutGap="10px" *ngIf="display$ | async as display">
     <app-fullpage-message *ngIf="display.folders.length === 0 && display.root.length === 0" height="300px">
       {{'GEARSETS.You_have_no_gearsets' | translate}}
@@ -43,7 +43,30 @@
                     (connectDnD)="addDnDConnections($event)">
         </app-folder>
       </div>
-      <div class="empty-drag-slot"></div>
     </div>
   </div>
+  <ng-container *ngIf="favoritesDisplay$ | async as favoritesDisplay">
+    <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Favorite_gearsets' | translate"></nz-divider>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <ng-container *ngIf="favoritesDisplay.root.length > 0">
+        <div class="gearsets-list" fxLayout="column" fxLayoutGap="10px">
+          <div *ngFor="let gearset of favoritesDisplay.root; trackBy: trackByKey">
+            <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="favoritesDisplay.folders.length > 0">
+        <nz-divider nzOrientation="left" [nzText]="'FOLDERS.Favorite_folders' | translate"></nz-divider>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div *ngFor="let folder of favoritesDisplay.folders; let i = index;  trackBy: trackByKey">
+            <app-folder [display]="folder"
+                        [userId]="userId"
+                        [elementTemplate]="gearsetTemplate"
+                        folderPath="gearset-folder">
+            </app-folder>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
 </ng-container>

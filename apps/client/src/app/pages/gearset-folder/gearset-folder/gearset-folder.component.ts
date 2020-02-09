@@ -30,7 +30,7 @@ export class GearsetFolderComponent extends TeamcraftComponent {
       takeUntil(this.onDestroy$)
     ).subscribe(paramMap => {
       const key = paramMap.get('folderId');
-      this.foldersFacade.getFolder(key);
+      this.foldersFacade.load(key);
       this.foldersFacade.select(FolderContentType.GEARSET, key);
     });
 

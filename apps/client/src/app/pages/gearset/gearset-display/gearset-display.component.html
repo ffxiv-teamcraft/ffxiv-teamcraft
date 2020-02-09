@@ -4,6 +4,12 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+        <ng-container *ngIf="userId$ | async as userId">
+          <app-favorite-button *ngIf="gearset.authorId !== userId"
+                               type="gearsets"
+                               [key]="gearset.$key"
+                               size="small"></app-favorite-button>
+        </ng-container>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle" nzType="primary"
                 nz-tooltip [nzTitle]="'GEARSETS.Use_in_simulator' | translate"

@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
+import { FavoritesModule } from '../favorites/favorites.module';
 
 @NgModule({
   declarations: [FolderComponent, FolderPageComponent],
@@ -48,7 +49,8 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
     NzDividerModule,
     RouterModule,
     UserAvatarModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    FavoritesModule
   ],
   providers: [FoldersFacade]
 })

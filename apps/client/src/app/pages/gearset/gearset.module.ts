@@ -24,6 +24,7 @@ import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-n
 import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-row.component';
 import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-display-slot.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { FavoritesModule } from '../../modules/favorites/favorites.module';
 
 const routes: Routes = [
   {
@@ -62,7 +63,8 @@ const routes: Routes = [
 
     ClipboardModule,
 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FavoritesModule
   ],
   entryComponents: [
     MateriasPopupComponent,
