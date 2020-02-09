@@ -1,3 +1,4 @@
+if (require('electron-squirrel-startup')) return;
 const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
@@ -40,11 +41,21 @@ for (let i = 0; i < argv.length; i++) {
 
 log.log(argv);
 
-if (!isDev && argv.indexOf('squirrel-firstrun') === -1) {
-  require('update-electron-app')({
-    repo: 'supamiu/ffxiv-teamcraft',
-    logger: log
-  });
+if (!isDev) {
+  if (argv.indexOf('--squirrel-firstrun') === -1) {
+    require('update-electron-app')({
+      repo: 'supamiu/ffxiv-teamcraft',
+      logger: log
+    });
+  } else {
+    const cp = require('child_process');
+    log.log('execPath', process.execPath);
+    const updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
+    log.log('updateDotExe', updateDotExe);
+    const target = path.basename(process.execPath);
+    log.log('target', target);
+    cp.spawn(updateDotExe, ['--createShortcut', target], { detached: true });
+  }
 }
 
 let deepLink = '';

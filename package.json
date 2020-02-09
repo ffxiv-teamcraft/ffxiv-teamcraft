@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "7.0.0-beta.4",
+  "version": "7.0.0-beta.6",
   "license": "MIT",
   "main": "desktop/main.js",
   "repository": {
@@ -12,6 +12,7 @@
   "build": {
     "appId": "ffxivteamcraft",
     "forceCodeSigning": true,
+    "productName": "FFXIV Teamcraft",
     "directories": {
       "output": "release"
     },
@@ -123,6 +124,7 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
+    "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "4.2.0",
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
