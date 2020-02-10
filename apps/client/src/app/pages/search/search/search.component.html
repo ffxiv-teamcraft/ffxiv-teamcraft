@@ -428,9 +428,7 @@
                   <app-db-button [id]="row.itemId" type="item"></app-db-button>
                 </div>
                 <div *ngIf="row.recipe !== undefined && row.recipe.job > 0" class="description">
-                  <img alt="{{row.recipe.job | jobAbbr | i18n}}"
-                       class="job-icon small"
-                       src="https://garlandtools.org/db/images/{{(row.recipe.job | jobAbbr)?.en}}.png">
+                  <div class="companion-svg job-icon" [innerHtml]="row.recipe.job | jobUnicode"></div>
                   lvl{{row.recipe.lvl}} <span
                   *ngIf="row.recipe.stars !== undefined">{{getStars(row.recipe.stars)}}</span>
                 </div>
@@ -610,7 +608,7 @@
                fxLayoutAlign="flex-start flex-start"
                fxLayoutAlign.lt-md="center center"
                fxLayoutGap="5px">
-            <img [src]="row.Data.Icon | xivapiIcon" alt="" class="job-icon">
+            <img [src]="row.Data.Icon | xivapiIcon" alt="" class="icon">
             <div fxLayout="column" fxLayoutGap="5px">
               <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                 <div fxLayout="row" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
