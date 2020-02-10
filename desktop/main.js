@@ -1,18 +1,18 @@
+const log = require('electron-log');
+const argv = process.argv.slice(1);
+log.transports.file.level = 'debug';
+log.log(argv);
 if (require('electron-squirrel-startup')) return;
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
 const isDev = require('electron-is-dev');
-const log = require('electron-log');
-log.transports.file.level = 'debug';
 const Machina = require('./machina.js');
 
 ipcMain.setMaxListeners(0);
 
 const oauth = require('./oauth.js');
-
-const argv = process.argv.slice(1);
 
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 
@@ -39,20 +39,18 @@ for (let i = 0; i < argv.length; i++) {
   }
 }
 
-log.log(argv);
+function callUpdater(...args) {
+  const cp = require('child_process');
+  const updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
+  cp.spawn(updateDotExe, args, { detached: true });
+}
 
 if (!isDev) {
-  if (argv.indexOf('--squirrel-firstrun') === -1) {
-    require('update-electron-app')({
-      repo: 'supamiu/ffxiv-teamcraft',
-      logger: log
-    });
-  } else {
-    const cp = require('child_process');
-    const updateDotExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
-    const target = path.basename(process.execPath);
-    cp.spawn(updateDotExe, ['--createShortcut', target], { detached: true });
-  }
+  autoUpdater.setFeedURL({
+    url: `https://update.ffxivteamcraft.com/`
+  });
+  const target = path.basename(process.execPath);
+  callUpdater('--createShortcut', target);
 }
 
 let deepLink = '';
@@ -60,6 +58,49 @@ let deepLink = '';
 if (options.noHA) {
   app.disableHardwareAcceleration();
 }
+
+/**
+ * Autoupdater
+ */
+
+autoUpdater.on('checking-for-update', () => {
+  log.log('Checking for update');
+  win && win.webContents.send('checking-for-update', true);
+});
+
+autoUpdater.on('update-available', () => {
+  log.log('Update available');
+  win && win.webContents.send('update-available', true);
+});
+
+autoUpdater.on('update-not-available', () => {
+  log.log('No update found');
+  win && win.webContents.send('update-available', false);
+});
+
+autoUpdater.on('update-downloaded', () => {
+  log.log('Update downloaded');
+  dialog.showMessageBox({
+    type: 'info',
+    title: 'FFXIV Teamcraft - Update available',
+    message: 'An update is available and downloaded, install now?',
+    buttons: ['Yes', 'No']
+  }, (buttonIndex) => {
+    if (buttonIndex === 0) {
+      autoUpdater.quitAndInstall();
+    }
+  });
+});
+
+
+ipcMain.on('update:check', () => {
+  log.log('Run update setup');
+  autoUpdater.checkForUpdates();
+});
+
+/**
+ * End autoupdater
+ */
 
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');

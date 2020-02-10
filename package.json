@@ -3,14 +3,11 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "7.0.0-beta.8",
+  "version": "7.0.0-beta.7",
   "license": "MIT",
   "main": "desktop/main.js",
-  "repository": {
-    "url": "https://github.com/supamiu/ffxiv-teamcraft"
-  },
   "build": {
-    "appId": "ffxivteamcraft",
+    "appId": "ffxiv-teamcraft",
     "forceCodeSigning": true,
     "productName": "FFXIV Teamcraft",
     "directories": {
@@ -62,8 +59,7 @@
     },
     "squirrelWindows": {
       "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://github.com/supamiu/ffxiv-teamcraft/releases/latest/download",
-      "useAppIdAsId": true
+      "remoteReleases": "https://update.ffxivteamcraft.com/"
     }
   },
   "scripts": {
@@ -97,7 +93,7 @@
     "electron": "electron",
     "electron:start": "npm run electron ./desktop/main.js",
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
-    "electron:setup:build-dev": "electron-builder -w",
+    "electron:setup:build-dev": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder -w",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder -w -p always",
     "postinstall": "electron-builder install-app-deps",

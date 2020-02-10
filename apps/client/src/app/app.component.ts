@@ -243,7 +243,7 @@ export class AppComponent implements OnInit {
 
       this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
 
-      this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
+      this.newVersionAvailable$ = this.firebase.object('app_version_beta').valueChanges().pipe(
         map((value: string) => {
           return semver.ltr(environment.version, value);
         })
