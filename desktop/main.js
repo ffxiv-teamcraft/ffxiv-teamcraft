@@ -1,4 +1,4 @@
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, dialog, protocol, Menu, shell } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const path = require('path');
 const Config = require('electron-config');
@@ -427,6 +427,10 @@ ipcMain.on('language', (event, lang) => {
 
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
+});
+
+ipcMain.on('open-link', (event, url) => {
+  shell.openExternal(url);
 });
 
 ipcMain.on('log', (event, entry) => {

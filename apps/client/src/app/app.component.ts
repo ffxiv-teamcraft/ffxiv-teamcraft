@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { buffer, catchError, debounceTime, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -134,7 +134,8 @@ export class AppComponent implements OnInit {
         'Levequests',
         'Log_tracker',
         'Desktop_app_overlay',
-        'Start_desktop_before_game'
+        'Start_desktop_before_game',
+        'Middle_click_share_button'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
@@ -502,6 +503,10 @@ export class AppComponent implements OnInit {
       .subscribe((data: string) => {
         this.router.navigate(data.replace('https://ffxivteamcraft.com/', '').split('/'));
       });
+  }
+
+  openInBrowser(url: string): void {
+    this.ipc.send('open-link', url);
   }
 
   use(lang: string, fromIpc = false, skipStorage = false): void {
