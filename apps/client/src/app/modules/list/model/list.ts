@@ -63,6 +63,8 @@ export class List extends DataWithPermissions {
 
   color: ListColor;
 
+  archived = false;
+
   constructor() {
     super();
     if (!this.createdAt) {
