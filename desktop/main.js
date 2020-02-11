@@ -423,6 +423,10 @@ ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();
 });
 
+ipcMain.on('open-link', (event, url) => {
+  shell.openExternal(url);
+});
+
 ipcMain.on('log', (event, entry) => {
   log.log(entry);
 });
@@ -442,7 +446,7 @@ ipcMain.on('clear-cache', () => {
 
 ipcMain.on('always-on-top', (event, onTop) => {
   config.set('win:alwaysOnTop', onTop);
-  win.setAlwaysOnTop(onTop, 'screen-saver');
+  win.setAlwaysOnTop(onTop, 'normal');
 });
 
 ipcMain.on('always-on-top:get', (event) => {

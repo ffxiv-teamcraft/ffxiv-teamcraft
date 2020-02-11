@@ -1,0 +1,224 @@
+<div [class.craftable]="item.canBeCrafted" [class.done]="item.amount <= item.done"
+     [class.has-all-ingredients]="item.hasAllBaseIngredients" [class.odd]="odd" class="item-row"
+     fxLayout="row wrap" nz-row *ngIf="item$ | async as item">
+  <div [nzSm]="item.alarms && item.alarms.length > 0?12:6" class="block left-block" nz-col nzMd="8" [nzXs]="overlay?12:24">
+    <div *ngIf="!item.custom" class="icon">
+      <app-item-icon *ngIf="!settings.performanceMode" [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+                     [width]="24"></app-item-icon>
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px">
+      <div fxLayout="row">
+        <div fxLayout="column" fxLayoutAlign="center flex-start">
+          <div>
+      <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
+            *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName: item | i18n"
+            [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+            class="item-name"
+            ngxClipboard
+            nz-tooltip>
+        {{item.id | itemName: item | i18n}}
+      </span>
+            <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
+                  *ngIf="settings.preferredCopyType === 'isearch'" [nzTitle]="'Copy_isearch' | translate"
+                  cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
+                  class="item-name"
+                  ngxClipboard
+                  nz-tooltip>
+        {{item.id | itemName: item | i18n}}
+      </span>
+            <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
+        <img [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
+             src="./assets/icons/HQ.png"/>
+      </span>
+            <span *ngIf="item.amount > item.done" class="needed">x{{item.amount - item.done}}<span
+              *ngIf="item.amount !== item.amount_needed">({{((item.amount - item.done) / item.yield) | ceil}})</span>
+      </span>
+          </div>
+        </div>
+        <app-user-avatar *ngFor="let user of item.workingOnIt" [userId]="user" [width]="24"
+                         class="working-on-it" messageKey="Is_working_on_it"></app-user-avatar>
+
+        <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId">
+          <app-item-row-buttons
+            [buttonsCache]="buttonsCache"
+            [finalItem]="finalItem$ | async"
+            [itemId]="item.id"
+            [fallbackItemName]="item.name"
+            [overlay]="overlay"
+            [isCraft]="item.craftedBy && item.craftedBy.length > 0"
+            [hasAlarms]="item.alarms !== undefined && item.alarms.length > 0"
+            [attachedRotation]="item.attachedRotation"
+            [userId]="userId"
+            [loggedIn]="loggedIn$ | async"
+            [commentBadge]="commentBadge$ | async"
+            [team]="team$ | async"
+            [workingOnIt]="item.workingOnIt"
+            [requiredForFinalCraft]="requiredForFinalCraft$ | async"
+            [permissionLevel]="permissionLevel"
+            [showLogCompletionButton]="showLogCompletionButton$ | async"
+            [missingBooks]="missingBooks$ | async"
+            [masterbooks]="item.masterbooks"
+            (attachRotation)="attachRotation(item)"
+            (detachRotation)="detachRotation(item)"
+            (openCommentsPopup)="openCommentsPopup(list, list.authorId === userId, item)"
+            (checkMasterbooks)="checkMasterbooks($event)"
+            (openMarketboardDialog)="openMarketboardDialog(item)"
+            (addAllAlarms)="addAllAlarms(item)"
+            (openRequirementsPopup)="openRequirementsPopup(item)"
+            (openRotationMacroPopup)="openRotationMacroPopup($event, item)"
+            (showTagInput)="showTagInput()"
+            (changeAmount)="changeAmount(item)"
+            (addToList)="addToList(item)"
+            (removeItem)="removeItem(item)"
+            (markAsDoneInLog)="markAsDoneInLog(item)"
+            (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
+            (setWorkingOnIt)="setWorkingOnIt($event, item)"
+            (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
+            [(requiredAsHQ)]="item.requiredAsHQ"
+            (requiredAsHQChange)="saveItem(item)"
+          ></app-item-row-buttons>
+        </div>
+        <ng-container *ngIf="!overlay">
+          <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
+               fxLayoutGap="5px">
+            <nz-tag (click)="add(entry.amount, item)"
+                    *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
+                    [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
+              {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
+              : {{entry.amount}}
+              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+            </nz-tag>
+          </div>
+        </ng-container>
+      </div>
+      <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async) && !overlay">
+        <nz-tag
+          (nzAfterClose)="removeTag(tag, item)"
+          *ngFor="let tag of itemTags$ | async"
+          [nzMode]="'closeable'"
+        >
+          {{ tag }}
+        </nz-tag>
+        <input
+          #inputElement
+          (blur)="addTag(item)"
+          (input)="tagInput$.next($event.target?.value)"
+          (keydown.enter)="addTag(item)"
+          *ngIf="tagInputVisible"
+          [(ngModel)]="newTag"
+          [nzAutocomplete]="tagsComplete"
+          nz-input
+          nzSize="small"
+          style="width: 78px;"
+          type="text"
+        />
+        <nz-autocomplete #tagsComplete nzBackfill>
+          <nz-auto-option *ngFor="let option of availableTags$ | async" [nzValue]="option">
+            {{ option }}
+          </nz-auto-option>
+        </nz-autocomplete>
+      </div>
+    </div>
+  </div>
+  <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24" *ngIf="!overlay">
+    <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
+        <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups" (toggleAlarm)="toggleAlarm($event)"
+                          (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+      </div>
+      <nz-tag
+        *ngIf="moreAlarmsAvailable > 0"
+        class="more-badge">{{'ALARMS.More_available' | translate: { amount: moreAlarmsAvailable } }}</nz-tag>
+    </div>
+    <ng-container *ngIf="layout?.showCraftableAmount && item.craftedBy.length > 0">
+      <div *ngIf="item.craftableAmount">
+        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
+      </div>
+    </ng-container>
+    <div *ngIf="layout?.showVendors && (item.vendors || []).length > 0" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <b>
+        {{item.vendors[0].npcId | npcName | i18n}},
+      </b>
+      <app-map-position [mapId]="item.vendors[0].mapId"
+                        [zoneId]="item.vendors[0].zoneId"
+                        [marker]="item.vendors[0].coords"
+                        showMapName="true"
+                        flex="row"></app-map-position>
+      <span *ngIf="item.vendors.length > 1">{{'ALARMS.More_available' | translate:{ amount: item.vendors.length - 1 } }}</span>
+    </div>
+  </div>
+  <div class="block books-and-input-block" nz-col nzMd="6" nzSm="12" [nzXs]="overlay?12:24">
+    <div class="masterbooks">
+      <app-item-icon *ngFor="let masterbook of item.masterbooks"
+                     [disableClick]="+item.masterbooks[0].id !== item.masterbooks[0].id"
+                     [tooltipDisabled]="+item.masterbooks[0].id !== item.masterbooks[0].id"
+                     [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"
+                     [itemName]="masterbook.id | itemName| i18n"
+                     [nzTitle]="masterbook.id | itemName:null:masterbook.name | i18n"
+                     [width]="24" nz-tooltip></app-item-icon>
+    </div>
+    <div class="amount-input">
+      <span *ngIf="item.requires !== undefined && item.requires.length > 0"
+            [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
+            nz-tooltip>
+        <button [disabled]="permissionLevel < 20" *ngIf="!overlay" [nzContent]="externalCalc" nz-button
+                nz-popover
+                nzSize="small" nzTrigger="click">
+          <i nz-icon nzType="select"></i>
+          <ng-template #externalCalc>
+            <nz-input-number #numberInput [ngModel]="0"
+                             [nzMin]="0" [nzStep]="1"
+                             nzAutoFocus></nz-input-number>
+            <button (click)="add(numberInput.value, item, true)" nz-button nzType="primary">+</button>
+            <button (click)="remove(numberInput.value,item,  true)" nz-button nzType="warn">-</button>
+          </ng-template>
+        </button>
+      </span>
+      <span [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
+        <button [disabled]="permissionLevel < 20" [nzContent]="calculator"
+                *ngIf="!overlay"
+                [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
+                nz-popover
+                nzSize="small" nzTrigger="click">
+          <i nz-icon nzType="calculator"></i>
+          <ng-template #calculator>
+            <nz-input-number #numberInput (keypress.enter)="add(numberInput.value, item)"
+                             [ngModel]="0" [nzMin]="0"
+                             [nzStep]="1"
+                             nzAutoFocus></nz-input-number>
+            <button (click)="add(numberInput.value, item)" nz-button nzType="primary">+</button>
+            <button (click)="remove(numberInput.value, item)" nz-button nzType="warn">-</button>
+          </ng-template>
+        </button>
+      </span>
+      <nz-input-number #input (keypress.enter)="itemDoneChanged(input.ngModel, item)"
+                       (ngModelChange)="itemDoneChanged($event, item)" [disabled]="permissionLevel < 20"
+                       [ngModel]="settings.displayRemaining? item.done - item.used : item.done"
+                       [nzMax]="item.amount"
+                       [nzMin]="0"
+                       [nzSize]="'small'"
+                       [nzStep]="1"
+                       style="margin-top:1px"></nz-input-number>
+      <span *ngIf="!settings.displayRemaining" class="amount-max">
+        /{{item.amount}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <span *ngIf="settings.displayRemaining" class="amount-max">
+        /{{item.amount - item.used}} <span *ngIf="item.amount_needed !== item.amount">({{item.amount_needed}})</span>
+      </span>
+      <ng-container *ngIf="!overlay">
+        <button (click)="markAsDone(item)" *ngIf="item.amount > item.done; else done"
+                [disabled]="permissionLevel < 20" [nzShape]="'circle'"
+                [nzSize]="'small'" [nzType]="'primary'"
+                class="done-button" nz-button>
+          <i nz-icon nzType="check"></i>
+        </button>
+        <ng-template #done>
+          <i (click)="resetDone(item)" class="done-icon" nz-icon nzType="check"></i>
+        </ng-template>
+      </ng-container>
+    </div>
+  </div>
+  <div class="item-obtention" nz-col nzMd="3" nzSm="6" [nzXs]="overlay?12:24">
+    <app-item-sources-display [sources]="item.sources" [item]="item" [overlay]="overlay"></app-item-sources-display>
+  </div>
+</div>

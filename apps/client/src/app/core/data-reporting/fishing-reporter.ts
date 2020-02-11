@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom, delay } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -124,6 +124,7 @@ export class FishingReporter implements DataReporter {
 
     const throw$ = eventPlay$.pipe(
       filter(packet => packet.scene === 1),
+      delay(200),
       withLatestFrom(
         this.eorzea.statuses$,
         this.eorzea.weatherId$,
@@ -162,7 +163,7 @@ export class FishingReporter implements DataReporter {
 
     const mooch$ = packets$.pipe(
       ofPacketType('someDirectorUnk4'),
-      filter(packet => packet.actionTimeline === 257),
+      filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
       map(packet => {
         return packet.param1 === 1121;
       }),

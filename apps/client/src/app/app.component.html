@@ -36,6 +36,7 @@
                 <i nz-icon nzType="arrow-left"></i>
               </button>
               <button (cbOnSuccess)="afterPathNameCopy()" cbContent="https://ffxivteamcraft.com{{getPathname()}}" ngxClipboard nz-button
+                      (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname())"
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="share-alt"></i>
               </button>

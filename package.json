@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "7.0.0-beta.7",
+  "version": "7.0.0",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -43,9 +43,6 @@
     },
     "mac": {
       "category": "public.app-category.games"
-    },
-    "linux": {
-      "target": "deb"
     },
     "win": {
       "icon": "./tools/build/icon.ico",

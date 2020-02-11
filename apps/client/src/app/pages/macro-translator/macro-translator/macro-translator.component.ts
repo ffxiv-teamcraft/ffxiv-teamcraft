@@ -52,13 +52,14 @@ export class MacroTranslatorComponent {
         // Get translated skill
         try {
           const translatedSkill = this.localizedDataService.getCraftingActionByName(skillName, this.macroLanguage);
-
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
-            if (((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) || translatedSkill[key].indexOf(" ") > -1) {
-              macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
-            } else {
-              macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+            if (translatedSkill[key] !== undefined) {
+              if (((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) || (translatedSkill[key].indexOf(' ') > -1 && line.indexOf('"') === -1)) {
+                macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
+              } else {
+                macroTranslated[key].push(line.replace(skillName, translatedSkill[key]));
+              }
             }
           });
         } catch (ignored) {

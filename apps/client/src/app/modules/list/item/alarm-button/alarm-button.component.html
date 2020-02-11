@@ -1,0 +1,26 @@
+<nz-button-group *ngIf="alarm | alarmDisplay | async as display">
+  <button (click)="toggleAlarm.emit(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
+          [nzType]="display.spawned?'primary':'default'"
+          nz-button
+          nz-tooltip
+          nzTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}">
+    <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
+    <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
+    {{display.remainingTime | timer}}
+    <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
+    <img [src]="display.alarm.type | nodeTypeIcon: true" alt="" class="node-type-icon">
+  </button>
+  <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu"
+          [nzPlacement]="'bottomCenter'"
+          [nzSize]="'small'" nz-button
+          nz-dropdown>
+    <i nz-icon nzType="ellipsis"></i>
+  </button>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li (click)="addAlarmWithGroup.emit({alarm: alarm, group: group})" *ngFor="let group of alarmGroups" nz-menu-item>
+        {{group.name}}
+      </li>
+    </ul>
+  </nz-dropdown-menu>
+</nz-button-group>

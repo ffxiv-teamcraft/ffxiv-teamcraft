@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserService } from '../database/user.service';
 import { Character, XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, EMPTY, Observable, of } from 'rxjs';
-import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { map, shareReplay, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class CharacterService {
