@@ -83,11 +83,12 @@ autoUpdater.on('update-downloaded', () => {
   dialog.showMessageBox({
     type: 'info',
     title: 'FFXIV Teamcraft - Update available',
-    message: 'An update is available and downloaded, install now?',
+    message: 'An update has been installed, restart now to apply it?',
     buttons: ['Yes', 'No']
   }, (buttonIndex) => {
     if (buttonIndex === 0) {
-      autoUpdater.quitAndInstall();
+      app.isQuitting = true;
+      app.quit()
     }
   });
 });
@@ -385,6 +386,7 @@ app.on('window-all-closed', function() {
 
   // On macOS specific close process
   if (process.platform !== 'darwin') {
+    app.isQuitting = true;
     app.quit();
   }
 });

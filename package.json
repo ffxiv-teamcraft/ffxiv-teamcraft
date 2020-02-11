@@ -90,7 +90,7 @@
     "electron": "electron",
     "electron:start": "npm run electron ./desktop/main.js",
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
-    "electron:setup:build-dev": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
+    "electron:setup:build-dev": "electron-builder -w",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder -w",
     "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder -w -p always",
     "postinstall": "electron-builder install-app-deps",
