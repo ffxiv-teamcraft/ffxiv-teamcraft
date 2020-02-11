@@ -1,0 +1,182 @@
+<div fxLayout="column" fxLayoutGap="10px" *ngIf="result === undefined; else resultTpl">
+  <nz-alert *ngIf="error" [nzCloseable]="true" [nzMessage]="'GEARSETS.COMPARISON.Error_title' | translate"
+            [nzDescription]="'GEARSETS.COMPARISON.Error_description' | translate" nzType="error"></nz-alert>
+
+  <nz-select [disabled]="loading" [(ngModel)]="comparisonType" [nzPlaceHolder]="'GEARSETS.COMPARISON.Type' | translate">
+    <nz-option *ngFor="let type of comparisonTypes" [nzValue]="type" [nzLabel]="('GEARSETS.COMPARISON.'+ type) | translate"></nz-option>
+  </nz-select>
+
+  <nz-form-item *ngIf="comparisonType === 'Ariyala'">
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+      <input [disabled]="loading" [(ngModel)]="ariyalaLink" (ngModelChange)="updateLinkSupport()"
+             [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
+             type="text">
+      <nz-form-explain
+        *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item *ngIf="comparisonType === 'External_gearset'">
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+      <input [disabled]="loading" [(ngModel)]="externalGearsetLink" (ngModelChange)="updateGearsetLinkSupported()"
+             [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
+             type="text">
+      <nz-form-explain
+        *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item *ngIf="comparisonType === 'Personal_gearset'">
+    <nz-select [style.width.%]="100" [disabled]="loading" [(ngModel)]="personalGearset" (ngModelChange)="importLinkSupported = true"
+               [nzPlaceHolder]="'GEARSETS.COMPARISON.Pick_your_gearset' | translate">
+      <nz-option *ngFor="let gearset of myGearsets$ | async" [nzValue]="gearset" [nzCustomContent]="true" [nzLabel]="gearset.name">
+        <span [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></span>
+        {{gearset.name}}
+      </nz-option>
+    </nz-select>
+  </nz-form-item>
+
+  <button [disabled]="loading || !importLinkSupported" [nzLoading]="loading" nz-button nzType="primary" (click)="compare()" fxLayout="row"
+          fxLayoutAlign="center center">
+    <i nz-icon nzType="diff" nzTheme="outline"></i>
+    <span>{{'GEARSETS.COMPARISON.Submit' | translate}}</span>
+  </button>
+</div>
+
+<ng-template #resultTpl>
+  <nz-divider [nzText]="'GEARSETS.Stats' | translate"></nz-divider>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <table>
+      <thead>
+      <tr>
+        <th class="table-cell">{{'GEARSETS.Stat_name' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Diff' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of result.statsDifferences">
+        <td class="table-cell first">
+          {{row.id | baseParamName | i18n}}
+        </td>
+        <td class="amount table-cell">
+          {{row.values.a | number:'1.0-0':translate.currentLang}}
+        </td>
+        <td class="amount table-cell">
+          {{row.values.b | number:'1.0-0':translate.currentLang}}
+        </td>
+        <td class="amount table-cell" [class.better]="row.values.a > row.values.b" [class.worse]="row.values.a < row.values.b">
+          <span *ngIf="row.values.a > row.values.b">+</span>{{(row.values.a - row.values.b) | number:'1.0-0':translate.currentLang}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nz-divider [nzText]="'GEARSETS.Materias' | translate"></nz-divider>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <table>
+      <thead>
+      <tr>
+        <th class="table-cell">{{'GEARSETS.Materia' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Diff' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let row of result.materiasDifferences">
+        <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <app-item-icon [itemId]="row.id" width="24"></app-item-icon>
+          <div>{{row.id | itemName | i18n}}</div>
+        </td>
+        <td class="amount table-cell">
+          {{row.amounts.a | number:'1.0-0':translate.currentLang}}
+        </td>
+        <td class="amount table-cell">
+          {{row.amounts.b | number:'1.0-0':translate.currentLang}}
+        </td>
+        <td class="amount table-cell" [class.better]="row.amounts.a < row.amounts.b" [class.worse]="row.amounts.a > row.amounts.b">
+          <span *ngIf="row.amounts.a > row.amounts.b">+</span>{{(row.amounts.a - row.amounts.b) | number:'1.0-0':translate.currentLang}}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead>
+      <tr>
+        <th class="table-cell"></th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</th>
+        <th class="table-cell">{{'GEARSETS.COMPARISON.Diff' | translate}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td class="table-cell first">
+          <b>{{'GEARSETS.COMPARISON.Avg_melding_chances' | translate}}</b>
+        </td>
+        <td class="amount table-cell">
+          {{result.meldingChances.a | number:'1.0-2':translate.currentLang}}%
+        </td>
+        <td class="amount table-cell">
+          {{result.meldingChances.b | number:'1.0-2':translate.currentLang}}%
+        </td>
+        <td class="amount table-cell" [class.better]="result.meldingChances.a > result.meldingChances.b"
+            [class.worse]="result.meldingChances.a < result.meldingChances.b">
+          <span
+            *ngIf="result.meldingChances.a > result.meldingChances.b">+</span>{{(result.meldingChances.a - result.meldingChances.b) | number:'1.0-2':translate.currentLang}}
+          %
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <nz-divider [nzText]="'GEARSETS.Pieces' | translate" *ngIf="result.piecesDiff.length > 0"></nz-divider>
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div *ngFor="let piece of result.piecesDiff" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <nz-divider nzOrientation="left" [nzText]="('GEARSETS.SLOT.' + piece.slotName) | translate"></nz-divider>
+      <h3>{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</h3>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="piece.a; else nothing">
+        <app-item-icon [width]="24" [itemId]="piece.a.itemId" [hq]="piece.a.hq"></app-item-icon>
+        <div>{{piece.a.itemId | itemName | i18n}}</div>
+      </div>
+      <h3>{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</h3>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" *ngIf="piece.b; else nothing">
+        <app-item-icon [width]="24" [itemId]="piece.b.itemId" [hq]="piece.b.hq"></app-item-icon>
+        <div>{{piece.b.itemId | itemName | i18n}}</div>
+      </div>
+      <ng-template #nothing>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
+      <table>
+        <thead>
+        <tr>
+          <th class="table-cell">{{'GEARSETS.Stat_name' | translate}}</th>
+          <th class="table-cell">{{'GEARSETS.COMPARISON.Your_gearset' | translate}}</th>
+          <th class="table-cell">{{'GEARSETS.COMPARISON.Other_gearset' | translate}}</th>
+          <th class="table-cell">{{'GEARSETS.COMPARISON.Diff' | translate}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of piece.stats">
+          <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div>{{row.id | baseParamName | i18n}}</div>
+          </td>
+          <td class="amount table-cell">
+            {{row.a | number:'1.0-0':translate.currentLang}}
+          </td>
+          <td class="amount table-cell">
+            {{row.b | number:'1.0-0':translate.currentLang}}
+          </td>
+          <td class="amount table-cell" [class.better]="row.a > row.b" [class.worse]="row.a < row.b">
+            <span *ngIf="row.a > row.b">+</span>{{(row.a - row.b) | number:'1.0-0':translate.currentLang}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</ng-template>

@@ -110,11 +110,40 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('traits', id);
   }
 
+  public getRaceName(id: number): any {
+    return this.getRowWithExtendedLanguage('races', id);
+  }
+
+  public getTribeName(id: number): any {
+    const lazyRow = this.getRow<any>(this.lazyData.data.tribes, id);
+    const row = {
+      en: lazyRow.Name_en,
+      de: lazyRow.Name_de,
+      ja: lazyRow.Name_ja,
+      fr: lazyRow.Name_fr
+    };
+    this.tryFillExtendedLanguage(row, id, { zhKey: 'tribes', koKey: 'tribes' });
+    return row;
+  }
+
   public getTTRule(id: number): I18nName {
     const row = this.getRow<{ name: I18nName }>(tripleTriadRules, id);
     this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhTripleTriadRules', koKey: 'koTripleTriadRules' });
 
     return row.name;
+  }
+
+  public getBaseParamName(id: number): I18nName {
+    const lazyRow = this.getRow<any>(this.lazyData.data.baseParams, id);
+    const row = {
+      en: lazyRow.Name_en,
+      de: lazyRow.Name_de,
+      ja: lazyRow.Name_ja,
+      fr: lazyRow.Name_fr
+    };
+    this.tryFillExtendedLanguage(row, id, { zhKey: 'baseParams', koKey: 'baseParams' });
+
+    return row;
   }
 
   public getWeather(id: number): I18nName {

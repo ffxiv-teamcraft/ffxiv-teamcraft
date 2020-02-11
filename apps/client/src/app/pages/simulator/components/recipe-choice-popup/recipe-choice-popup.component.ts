@@ -7,6 +7,8 @@ import { GarlandToolsService } from '../../../../core/api/garland-tools.service'
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
+import { Router } from '@angular/router';
+import { RotationPickerService } from '../../../../modules/rotations/rotation-picker.service';
 
 @Component({
   selector: 'app-recipe-choice-popup',
@@ -27,9 +29,13 @@ export class RecipeChoicePopupComponent {
 
   rotationId: string;
 
+  statsStr: string;
+
+  pickRotation: boolean;
+
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private rotationPickerService: RotationPickerService) {
     this.results$ = this.query$.pipe(
       filter(query => {
         if (['ko', 'zh', 'ja'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
@@ -67,6 +73,12 @@ export class RecipeChoicePopupComponent {
    */
   getStars(nb: number): string {
     return this.htmlTools.generateStars(nb);
+  }
+
+
+  openRotationPicker(recipe: Recipe): void {
+    this.rotationPickerService.openInSimulator(recipe.itemId, recipe.recipeId, recipe, false, false, this.statsStr);
+    this.close();
   }
 
   close(): void {

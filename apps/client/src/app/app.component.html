@@ -224,6 +224,13 @@
                       <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
                   </span>
                 </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/gearsets"
+                   routerLinkActive="ant-menu-item-selected">
+                  <span fxLayout="row">
+                      <span class="companion-svg svg-icon">&#x0F202;</span>
+                      <span class="nav-text">{{'GEARSETS.Title' | translate}}</span>
+                  </span>
+                </a>
               </li>
 
               <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>

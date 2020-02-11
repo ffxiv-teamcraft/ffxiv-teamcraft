@@ -1,33 +1,20 @@
 import { ExternalListLinkParser } from './external-list-link-parser';
-import { Observable, of, forkJoin } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, mergeMap, switchMap } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { AriyalaMateria } from './aryiala-materia';
 import { AriyalaMateriaOptions } from './ariyala-materia-options';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class AriyalaLinkParser implements ExternalListLinkParser {
-  private static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
+  public static API_URL = 'https://us-central1-ffxivteamcraft.cloudfunctions.net/ariyala-api?identifier=';
 
-  private static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
-
-  // Source: ToolkitData.MateriaSuccessRates from ffxiv.ariyala.com
-  private static MELDING_RATES = [
-    // Sockets
-    //2, 3,  4,  5    // Tier
-    [90, 48, 28, 16], // I
-    [82, 44, 26, 16], // II
-    [70, 38, 22, 14], // III
-    [58, 32, 20, 12], // IV
-    [17, 10, 7, 5],   // V
-    [17, 0, 0, 0],    // VI
-    [17, 10, 7, 5],   // VII
-    [17, 0, 0, 0]     // VIII
-  ];
+  public static REGEXP = /https?:\/\/ffxiv\.ariyala\.com\/([A-Z0-9]+)/i;
 
   private materiaOptions: AriyalaMateriaOptions;
 
-  constructor(private http: HttpClient, private xivapi: XivapiService) {
+  constructor(private http: HttpClient, private xivapi: XivapiService, private lazyData: LazyDataService) {
   }
 
   canParse(url: string): boolean {
@@ -123,7 +110,7 @@ export class AriyalaLinkParser implements ExternalListLinkParser {
   private calcMateriaQuantity(materia: string, slot: number, materiaSlots: number, job: string, isTool: boolean): number {
     const grade = parseInt(materia.split(':')[1], 10) + 1;
     const overmeldSlot = slot - materiaSlots;
-    const chance = overmeldSlot <= 0 ? 100 : AriyalaLinkParser.MELDING_RATES[grade - 1][overmeldSlot - 1];
+    const chance = overmeldSlot <= 0 ? 100 : this.lazyData.dohdolMeldingRates.hq[grade - 1][overmeldSlot - 1];
     const isGatherer = ['MIN', 'BTN', 'FSH'].indexOf(job) > -1;
     const isCrafter = ['CRP', 'BSM', 'ARM', 'GSM', 'LTW', 'WVR', 'ALC', 'CUL'].indexOf(job) > -1;
     let mul = 1;

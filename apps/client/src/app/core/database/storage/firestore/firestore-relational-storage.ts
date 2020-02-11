@@ -7,8 +7,9 @@ import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
 import { map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
-import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Query } from '@angular/fire/firestore/interfaces';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -31,7 +32,23 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     }
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<T[]> {
+  public getShared(userId: string): Observable<T[]> {
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
+      .snapshotChanges()
+      .pipe(
+        map((snaps: DocumentChangeAction<T>[]) => {
+          const rows = snaps
+            .map((snap: DocumentChangeAction<any>) => {
+              const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+              delete snap.payload;
+              return valueWithKey;
+            });
+          return this.serializer.deserialize<T>(rows, [this.getClass()]);
+        })
+      );
+  }
+
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
     if (foreignPropertyEntry === undefined) {
@@ -39,7 +56,13 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
     if (this.foreignKeyCache[foreignKeyValue] === undefined) {
-      this.foreignKeyCache[foreignKeyValue] = this.firestore.collection(this.getBaseUri(uriParams), ref => ref.where(foreignPropertyKey, '==', foreignKeyValue))
+      this.foreignKeyCache[foreignKeyValue] = this.firestore.collection(this.getBaseUri(), ref => {
+        let query = ref.where(foreignPropertyKey, '==', foreignKeyValue);
+        if (queryModifier) {
+          query = queryModifier(query);
+        }
+        return query;
+      })
         .snapshotChanges()
         .pipe(
           map((snaps: DocumentChangeAction<T>[]) => {

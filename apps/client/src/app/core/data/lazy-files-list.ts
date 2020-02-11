@@ -30,6 +30,16 @@ export const lazyFilesList = [
     'propertyName': 'actions'
   },
   {
+    'fileName': 'base-params.json',
+    'hashedFileName': 'base-params.1de2e04897f90e69e42446375d7336ea984c643b.json',
+    'propertyName': 'baseParams'
+  },
+  {
+    'fileName': 'class-jobs-modifiers.json',
+    'hashedFileName': 'class-jobs-modifiers.556578c23a87d95f5819e2ac6219d68236c92e2a.json',
+    'propertyName': 'classJobsModifiers'
+  },
+  {
     'fileName': 'craft-actions.json',
     'hashedFileName': 'craft-actions.0c1d3850be7f0bfe8c66282f7e1868b1ab3bea4f.json',
     'propertyName': 'craftActions'
@@ -43,6 +53,11 @@ export const lazyFilesList = [
     'fileName': 'crafting-log.json',
     'hashedFileName': 'crafting-log.1a551e6282a4194f5d219bc31f9050df39bea9de.json',
     'propertyName': 'craftingLog'
+  },
+  {
+    'fileName': 'equip-slot-categories.json',
+    'hashedFileName': 'equip-slot-categories.97c548ae25d226ac0259c0999cc831226e6608d6.json',
+    'propertyName': 'equipSlotCategories'
   },
   {
     'fileName': 'fates.json',
@@ -70,6 +85,11 @@ export const lazyFilesList = [
     'propertyName': 'fishingSpots'
   },
   {
+    'fileName': 'foods.json',
+    'hashedFileName': 'foods.327d5d22279ed25a56075edae5435aca744c8648.json',
+    'propertyName': 'foods'
+  },
+  {
     'fileName': 'gathering-bonuses.json',
     'hashedFileName': 'gathering-bonuses.afb34d273a99f7545e1bf86d42ecce59a755d031.json',
     'propertyName': 'gatheringBonuses'
@@ -91,7 +111,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'ilvls.json',
-    'hashedFileName': 'ilvls.29d96dbb952a2180648f00142791c1281b7e8952.json',
+    'hashedFileName': 'ilvls.d1cb6a270773d60b930462ea351e00ede55738b3.json',
     'propertyName': 'ilvls'
   },
   {
@@ -100,14 +120,34 @@ export const lazyFilesList = [
     'propertyName': 'instances'
   },
   {
+    'fileName': 'item-equip-slot-category.json',
+    'hashedFileName': 'item-equip-slot-category.bc01746fc3344b70ec10d84d1b68b493042e6078.json',
+    'propertyName': 'itemEquipSlotCategory'
+  },
+  {
     'fileName': 'item-icons.json',
     'hashedFileName': 'item-icons.3ce59ccb8d38773734108691e42de10d96c72f79.json',
     'propertyName': 'itemIcons'
   },
   {
+    'fileName': 'item-level.json',
+    'hashedFileName': 'item-level.fac3db0aeae4125a88478c4fdff283f9f8f2f932.json',
+    'propertyName': 'itemLevel'
+  },
+  {
+    'fileName': 'item-melding-data.json',
+    'hashedFileName': 'item-melding-data.200824b1578d44af875de88f1b6881af4f2535af.json',
+    'propertyName': 'itemMeldingData'
+  },
+  {
     'fileName': 'item-slots.json',
-    'hashedFileName': 'item-slots.eea7fb28be0f0db8c6835fe04cb90e45b4c9069d.json',
+    'hashedFileName': 'item-slots.de93e809f9f2c60febe876b7dd539f1706391c5d.json',
     'propertyName': 'itemSlots'
+  },
+  {
+    'fileName': 'item-stats.json',
+    'hashedFileName': 'item-stats.4c83a0eced1f53ef868e58a1f251fa7b5f07d7a4.json',
+    'propertyName': 'itemStats'
   },
   {
     'fileName': 'items.json',
@@ -123,6 +163,11 @@ export const lazyFilesList = [
     'fileName': 'maps.json',
     'hashedFileName': 'maps.3b89bea8759e33c8159ae2381550aa89a6570752.json',
     'propertyName': 'maps'
+  },
+  {
+    'fileName': 'materias.json',
+    'hashedFileName': 'materias.3d1100190bd1eeb250a048b22530ccd0cc291db9.json',
+    'propertyName': 'materias'
   },
   {
     'fileName': 'mobs.json',
@@ -160,8 +205,13 @@ export const lazyFilesList = [
     'propertyName': 'quests'
   },
   {
+    'fileName': 'races.json',
+    'hashedFileName': 'races.d75b0608fa78874135064fe7fa5508c1454a40f9.json',
+    'propertyName': 'races'
+  },
+  {
     'fileName': 'rarities.json',
-    'hashedFileName': 'rarities.8bb84b3d59b29f2b587b8f2c8e3255553232c679.json',
+    'hashedFileName': 'rarities.620c9e5a6efeaa3f4291d2f89ecdc9ced53927de.json',
     'propertyName': 'rarities'
   },
   {
@@ -176,7 +226,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'stack-sizes.json',
-    'hashedFileName': 'stack-sizes.7179b6f6ed26eef578e2a21510739a036c588cee.json',
+    'hashedFileName': 'stack-sizes.b02cc236713cbfc77fbb225daf1bb5f19e660320.json',
     'propertyName': 'stackSizes'
   },
   {
@@ -188,6 +238,11 @@ export const lazyFilesList = [
     'fileName': 'traits.json',
     'hashedFileName': 'traits.17b221161038a158a43da30b31144aca5af6a45a.json',
     'propertyName': 'traits'
+  },
+  {
+    'fileName': 'tribes.json',
+    'hashedFileName': 'tribes.6b2a6492769b1b6bca8e079054d5abb8614fe0bb.json',
+    'propertyName': 'tribes'
   },
   {
     'fileName': 'ventures.json',

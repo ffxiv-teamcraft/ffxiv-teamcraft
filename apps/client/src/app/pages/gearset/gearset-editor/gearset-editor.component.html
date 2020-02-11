@@ -1,0 +1,129 @@
+<ng-container *ngIf="gearset$ | async as gearset">
+  <ng-container *ngIf="stats$ | async as stats">
+    <div class="editor-container" [class.two-cols]="stats.length <= 3" #editorContainer>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
+        <span class="gearset-name">{{gearset.name}}</span>
+        <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
+        <button nz-button nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+          <i nz-icon nzType="edit"></i>
+        </button>
+        <div fxFlex="1 1 auto"></div>
+        <a nz-button nzShape="circle" nzType="primary"
+           nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate"
+           routerLink="/gearset/{{gearset.$key}}">
+          <i nz-icon nzType="eye"></i>
+        </a>
+      </div>
+
+      <nz-collapse>
+        <nz-collapse-panel [nzHeader]="'GEARSETS.Filters' | translate" class="filters">
+          <form (ngSubmit)="submitFilters()" [formGroup]="itemFiltersform" nz-form nzLayout="inline" fxLayout="row" fxLayoutAlign="center center">
+            <!--Ilvl filter-->
+            <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+              <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group fxLayout="row" class="input-min-max">
+                  <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
+                                   id="ilvl" class="min"></nz-input-number>
+                  <input disabled nz-input placeholder="-" type="text" class="input-splitter">
+                  <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
+                                   formControlName="ilvlMax" class="max"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <!--Elvl filter (equipment level)-->
+            <nz-form-item fxLayout="row" fxLayoutAlign="center center">
+              <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
+              <nz-form-control>
+                <nz-input-group fxLayout="row" class="input-min-max">
+                  <nz-input-number [nzMax]="gearset.level" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
+                                   id="elvl" class="min"></nz-input-number>
+                  <input disabled nz-input placeholder="-" type="text" class="input-splitter">
+                  <nz-input-number [nzMax]="gearset.level" [nzMin]="1" [nzPrecision]="0"
+                                   formControlName="elvlMax" class="max"></nz-input-number>
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control>
+                <button nz-button nzType="primary" [disabled]="!itemFiltersform.valid">{{'ITEMS.Apply_filters' | translate}}</button>
+              </nz-form-control>
+            </nz-form-item>
+          </form>
+        </nz-collapse-panel>
+      </nz-collapse>
+
+      <div fxLayout="column" fxLayoutGap="10px" *ngIf="items$ | async as chunks">
+        <div nz-row *ngFor="let categories of chunks; trackBy: trackByChunk">
+          <div nz-col [nzMd]="stats.length > 3 ? 24 : 12" nzSm="24" class="category-card" [class.full]="stats.length > 3" [class.last]="last"
+               [class.first]="first"
+               *ngFor="let category of categories;let last=last; let first=first; trackBy: trackByCategory">
+            <nz-card [nzTitle]="cardTitleRef">
+              <ng-template #cardTitleRef>
+                <div nz-row>
+                  <div nz-col [nzMd]="24 - stats.length * (stats.length > 3 ? 2 : 4)" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                    <div>{{('GEARSETS.SLOT.' + category.name) | translate}}</div>
+                    <i nz-icon nzType="warning" nzTheme="twotone" nzTwotoneColor="#f5222d"
+                       *ngIf="!gearset[category.property] && category.name !== 'SoulCrystal' && canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)"></i>
+                    <nz-tag *ngIf="!canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)">
+                      {{'GEARSETS.Unavailable_slot' | translate}}
+                    </nz-tag>
+                  </div>
+                  <div nz-col [nzMd]="stats.length > 3 ? 2 : 4" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
+                    <b>{{stat.id | baseParamName | i18n}}</b>
+                  </div>
+                </div>
+              </ng-template>
+              <div fxLayout="column">
+                <ng-container *ngFor="let row of category.items;let last=last; let odd = odd; trackBy: trackByItemId">
+                  <app-gearset-editor-row [property]="category.property"
+                                          [equipmentPiece]="row.equipmentPiece"
+                                          [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)"
+                                          [item]="row.item"
+                                          [gearset]="gearset"
+                                          [stats]="stats"
+                                          (pieceChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"
+                                          (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece)"></app-gearset-editor-row>
+                  <nz-divider *ngIf="!last"></nz-divider>
+                </ng-container>
+              </div>
+            </nz-card>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div nz-row class="stats-footer" [style.width.px]="editorContainer.offsetWidth" [class.two-cols]="stats.length <= 3">
+      <div nz-col [nzMd]="24 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="5px">
+        <div><b>{{'GEARSETS.Total_stats' | translate}}</b></div>
+        <nz-select [ngModel]="food$ | async" (ngModelChange)="setGearsetPiece(gearset, 'food', $event)" [style.width.px]="300"
+                   [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear nzSize="small" [compareWith]="foodComparator">
+          <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
+                     [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
+                     nzCustomContent>
+            <b>{{food.ID | itemName | i18n}} <span *ngIf="food.HQ">{{'COMMON.Hq' | translate}}</span></b>
+            <div class="food-bonus" *ngFor="let bonus of food | foodBonuses">
+              {{bonus}}
+            </div>
+          </nz-option>
+        </nz-select>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
+          <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150" nzSize="small">
+            <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
+              <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
+            </nz-option-group>
+          </nz-select>
+          <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>
+        </div>
+        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'GEARSETS.Total_materias_needed' | translate"
+                (click)="openTotalNeededPopup(gearset)">
+          <i nz-icon nzType="calculator" nzTheme="outline"></i>
+        </button>
+      </div>
+      <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
+        <b>{{stat.value | number:'1.0-0':translate.currentLang}}</b>
+      </div>
+    </div>
+  </ng-container>
+</ng-container>
+

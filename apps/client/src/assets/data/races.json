@@ -1,0 +1,50 @@
+{
+  "1": {
+    "en": "Hyur",
+    "ja": "ヒューラン",
+    "de": "Hyuran",
+    "fr": "Hyur"
+  },
+  "2": {
+    "en": "Elezen",
+    "ja": "エレゼン",
+    "de": "Elezen",
+    "fr": "Élézen"
+  },
+  "3": {
+    "en": "Lalafell",
+    "ja": "ララフェル",
+    "de": "Lalafell",
+    "fr": "Lalafell"
+  },
+  "4": {
+    "en": "Miqo'te",
+    "ja": "ミコッテ",
+    "de": "Miqo'te",
+    "fr": "Miqo'te"
+  },
+  "5": {
+    "en": "Roegadyn",
+    "ja": "ルガディン",
+    "de": "Roegadyn",
+    "fr": "Roegadyn"
+  },
+  "6": {
+    "en": "Au Ra",
+    "ja": "アウラ",
+    "de": "Au Ra",
+    "fr": "Ao Ra"
+  },
+  "7": {
+    "en": "Hrothgar",
+    "ja": "ロスガル",
+    "de": "Hrothgar",
+    "fr": "Hrothgar"
+  },
+  "8": {
+    "en": "Viera",
+    "ja": "ヴィエラ",
+    "de": "Viera",
+    "fr": "Viéra"
+  }
+}

@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-icon',
   templateUrl: './item-icon.component.html',
-  styleUrls: ['./item-icon.component.less']
+  styleUrls: ['./item-icon.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemIconComponent {
 

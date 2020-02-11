@@ -5,6 +5,7 @@ export const environment = {
   version: version,
   ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
+  maxLevel: 80,
   firebase: {
     apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
     authDomain: 'ffxivteamcraft.firebaseapp.com',

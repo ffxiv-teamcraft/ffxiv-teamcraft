@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <label nz-checkbox [(ngModel)]="includeStats">{{'SIMULATOR.Include_stats' | translate}}</label>
+  <nz-input-group nzSearch [nzAddOnAfter]="addOnAfterTemplate">
+    <input type="text" nz-input [ngModel]="getLink()" readonly/>
+  </nz-input-group>
+  <ng-template #addOnAfterTemplate>
+    <button nz-button nzSearch nzType="primary" ngxClipboard (cbOnSuccess)="afterLinkCopy()" [cbContent]="getLink()">{{'COMMON.Copy' | translate}}</button>
+  </ng-template>
+</div>

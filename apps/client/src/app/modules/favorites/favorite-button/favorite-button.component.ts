@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { Favorites } from '../../../model/other/favorites';
+import { NzSizeLDSType } from 'ng-zorro-antd/core';
 
 @Component({
   selector: 'app-favorite-button',
@@ -18,7 +19,7 @@ export class FavoriteButtonComponent implements OnInit {
   key: string;
 
   @Input()
-  size: string;
+  size: NzSizeLDSType;
 
   isFavorite$: Observable<boolean>;
 

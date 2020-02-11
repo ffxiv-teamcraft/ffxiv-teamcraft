@@ -1,0 +1,21 @@
+<div>
+  <nz-form-item>
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+      <input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
+             type="text">
+      <nz-form-explain
+        *ngIf="importLinkSupported === undefined">{{'GEARSETS.Please_input_ariyala_link' | translate }}</nz-form-explain>
+      <nz-form-explain
+        *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</nz-form-explain>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzHasFeedback>
+      <input [(ngModel)]="gearsetName" [placeholder]="'Please_enter_a_name' | translate" nz-input
+             type="text">
+    </nz-form-control>
+  </nz-form-item>
+
+  <button (click)="submit()" [disabled]="!importLinkSupported || !gearsetName" nz-button
+          nzType="primary">{{'Import' | translate}}</button>
+</div>

@@ -430,7 +430,7 @@ if (hasTodo('craftingLog')) {
   }, null, () => RecipeLevelTable$.next(recipeLevelTable));
 
   combineLatest([
-    getAllEntries('https://xivapi.com/RecipeNotebookList', '63cc0045d7e847149c3f', true),
+    getAllEntries('https://xivapi.com/RecipeNotebookList', true),
     RecipeLevelTable$
   ]).subscribe(([completeFetch, rlvlTable]) => {
     completeFetch.forEach(page => {
@@ -460,7 +460,7 @@ if (hasTodo('craftingLog')) {
 
 if (hasTodo('gatheringLog')) {
 
-  getAllEntries('https://xivapi.com/GatheringNotebookList', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+  getAllEntries('https://xivapi.com/GatheringNotebookList', true).subscribe(completeFetch => {
     completeFetch.forEach(page => {
       // If it's an empty page, don't go further
       if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
@@ -502,7 +502,7 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter', '63cc0045d7e847149c3f', true).pipe(
+  getAllEntries('https://xivapi.com/FishParameter', true).pipe(
     map(completeFetch => {
       const fishParameter = {};
       completeFetch
@@ -534,7 +534,7 @@ if (hasTodo('fishingLog')) {
     persistToJsonAsset('fish-parameter', fishParameter);
   });
 
-  getAllEntries('https://xivapi.com/FishingSpot', '63cc0045d7e847149c3f', true).subscribe((completeFetch) => {
+  getAllEntries('https://xivapi.com/FishingSpot', true).subscribe((completeFetch) => {
     const spots = [];
     const fishes = [];
     completeFetch
@@ -603,7 +603,7 @@ if (hasTodo('spearFishingLog')) {
 
       const spearFishingLog = [];
 
-      getAllEntries('https://xivapi.com/SpearfishingNotebook', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+      getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
         completeFetch
           .filter(entry => entry.GatheringPointBase)
           .forEach(entry => {
@@ -632,7 +632,7 @@ if (hasTodo('spearFishingLog')) {
 
       const spearFishingNodes = [];
 
-      getAllEntries('https://xivapi.com/SpearfishingItem', '63cc0045d7e847149c3f', true).subscribe(completeFetch => {
+      getAllEntries('https://xivapi.com/SpearfishingItem', true).subscribe(completeFetch => {
         completeFetch
           .filter(fish => fish.Item !== null)
           .forEach(fish => {
@@ -702,7 +702,7 @@ if (hasTodo('weather')) {
     'Weather7TargetID'
   ];
 
-  getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}&key=63cc0045d7e847149c3f`).subscribe(res => {
+  getAllPages(`https://xivapi.com/weatherrate?columns=${weatherColumns.join(',')}`).subscribe(res => {
     weatherIndexes.push(...res.Results);
   }, null, () => {
     weatherIndexes.forEach(weatherIndex => {
@@ -1130,34 +1130,80 @@ if (hasTodo('traits')) {
 }
 
 if (hasTodo('items')) {
+  const getSlotName = (equipSlotCategoryId) => {
+    return [
+      '1HWpn%',
+      'OH%',
+      'Head%',
+      'Chest%',
+      'Hands%',
+      'Waist%',
+      'Legs%',
+      'Feet%',
+      'Earring%',
+      'Necklace%',
+      'Bracelet%',
+      'Ring%',
+      '2HWpn%',
+      '1HWpn%',
+      'ChestHead%',
+      'ChestHeadLegsFeet%',
+      '',
+      'LegsFeet%',
+      'HeadChestHandsLegsFeet%',
+      'ChestLegsGloves%',
+      'ChestLegsFeet%',
+      ''
+    ][equipSlotCategoryId - 1];
+  };
   const names = {};
   const rarities = {};
   const itemIcons = {};
   const ilvls = {};
   const stackSizes = {};
   const itemSlots = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID').subscribe(page => {
-    page.Results.forEach(item => {
-      itemIcons[item.ID] = item.Icon;
-      names[item.ID] = {
-        en: item.Name_en,
-        de: item.Name_de,
-        ja: item.Name_ja,
-        fr: item.Name_fr
-      };
-      rarities[item.ID] = item.Rarity;
-      ilvls[item.ID] = item.LevelItem;
-      stackSizes[item.ID] = item.StackSize;
-      itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
+  const itemStats = {};
+  const itemMeldingData = {};
+  const equipSlotCategoryId = {};
+  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted')
+    .subscribe(page => {
+      page.Results.forEach(item => {
+        itemIcons[item.ID] = item.Icon;
+        names[item.ID] = {
+          en: item.Name_en,
+          de: item.Name_de,
+          ja: item.Name_ja,
+          fr: item.Name_fr
+        };
+        rarities[item.ID] = item.Rarity;
+        ilvls[item.ID] = item.LevelItem;
+        stackSizes[item.ID] = item.StackSize;
+        itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
+        if (item.Stats) {
+          itemStats[item.ID] = Object.values(item.Stats);
+        }
+        if (item.EquipSlotCategoryTargetID) {
+          equipSlotCategoryId[item.ID] = item.EquipSlotCategoryTargetID;
+          itemMeldingData[item.ID] = {
+            modifier: item.BaseParamModifier,
+            prop: getSlotName(item.EquipSlotCategoryTargetID),
+            slots: item.MateriaSlotCount,
+            overmeld: item.IsAdvancedMeldingPermitted === 1,
+            canBeHq: item.CanBeHq === 1
+          };
+        }
+      });
+    }, null, () => {
+      persistToJsonAsset('item-icons', itemIcons);
+      persistToJsonAsset('items', names);
+      persistToJsonAsset('rarities', rarities);
+      persistToJsonAsset('ilvls', ilvls);
+      persistToJsonAsset('stack-sizes', stackSizes);
+      persistToJsonAsset('item-slots', itemSlots);
+      persistToJsonAsset('item-stats', itemStats);
+      persistToJsonAsset('item-melding-data', itemMeldingData);
+      persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
     });
-  }, null, () => {
-    persistToJsonAsset('item-icons', itemIcons);
-    persistToJsonAsset('items', names);
-    persistToJsonAsset('rarities', rarities);
-    persistToJsonAsset('ilvls', ilvls);
-    persistToJsonAsset('stack-sizes', stackSizes);
-    persistToJsonAsset('item-slots', itemSlots);
-  });
 }
 
 if (hasTodo('aetherytes')) {
@@ -1507,5 +1553,274 @@ if (hasTodo('actionTimeline')) {
     });
   }, null, () => {
     persistToJsonAsset('action-timeline', actionTimeline);
+  });
+}
+
+if (hasTodo('materias')) {
+  const materiaColumns = [
+    'ID',
+    'Value0',
+    'Value1',
+    'Value2',
+    'Value3',
+    'Value4',
+    'Value5',
+    'Value6',
+    'Value7',
+    'Value8',
+    'Value9',
+    'Item0TargetID',
+    'Item1TargetID',
+    'Item2TargetID',
+    'Item3TargetID',
+    'Item4TargetID',
+    'Item5TargetID',
+    'Item6TargetID',
+    'Item7TargetID',
+    'Item8TargetID',
+    'Item9TargetID',
+    'BaseParamTargetID'
+  ];
+  const materias = [];
+  getAllPages(`https://xivapi.com/Materia?columns=${materiaColumns.join(',')}`).subscribe(page => {
+    page.Results
+      .filter(entry => entry.Item0 !== null && entry.Value0 > 0)
+      .forEach(entry => {
+        Object.entries(entry)
+          .filter(([key, itemId]) => /Item\dTargetID/.test(key) && itemId > 0)
+          .forEach(([key, itemId]) => {
+            const index = +/Item(\d)TargetID/.exec(key)[1];
+            const value = entry[`Value${index}`];
+            if (value > 0) {
+              materias.push({
+                id: entry.ID,
+                itemId: itemId,
+                tier: index + 1,
+                value: entry[`Value${index}`],
+                baseParamId: entry.BaseParamTargetID
+              });
+            }
+          });
+      });
+  }, null, () => {
+    persistToJsonAsset('materias', materias);
+  });
+}
+
+if (hasTodo('baseParam')) {
+  const baseParams = {};
+  const baseParamColumns = [
+    'ID',
+    'Name_*',
+    'MeldParam0',
+    'MeldParam1',
+    'MeldParam2',
+    'MeldParam3',
+    'MeldParam4',
+    'MeldParam5',
+    'MeldParam6',
+    'MeldParam7',
+    'MeldParam8',
+    'MeldParam9',
+    'MeldParam10',
+    'MeldParam11',
+    'MeldParam12',
+    '1HWpn%',
+    '2HWpn%',
+    'Bracelet%',
+    'Chest%',
+    'ChestHead%',
+    'ChestHeadLegsFeet%',
+    'ChestLegsFeet%',
+    'ChestLegsGloves%',
+    'Earring%',
+    'Feet%',
+    'Hands%',
+    'Head%',
+    'HeadChestHandsLegsFeet%',
+    'Legs%',
+    'LegsFeet%',
+    'Necklace%',
+    'OH%',
+    'Order',
+    'Ring%',
+    'Waist%'
+  ];
+  getAllPages(`https://xivapi.com/BaseParam?columns=${baseParamColumns.join(',')}`).subscribe(page => {
+    page.Results.forEach(entry => {
+      baseParams[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('base-params', baseParams);
+  });
+}
+
+if (hasTodo('itemLevel')) {
+  const itemLevel = {};
+  const itemLevelColumns = [
+    'AdditionalEffect',
+    'AttackMagicPotency',
+    'AttackPower',
+    'AttackSpeed',
+    'BindResistance',
+    'BlindResistance',
+    'BlockRate',
+    'BlockStrength',
+    'BluntResistance',
+    'CP',
+    'CarefulDesynthesis',
+    'Control',
+    'Craftsmanship',
+    'CriticalHit',
+    'CriticalHitEvasion',
+    'CriticalHitPower',
+    'CriticalHitResilience',
+    'Defense',
+    'Delay',
+    'Determination',
+    'Dexterity',
+    'DirectHitRate',
+    'DoomResistance',
+    'EXPBonus',
+    'EarthResistance',
+    'EnfeeblingMagicPotency',
+    'EnhancementMagicPotency',
+    'Enmity',
+    'EnmityReduction',
+    'Evasion',
+    'FireResistance',
+    'GP',
+    'GameContentLinks',
+    'Gathering',
+    'HP',
+    'Haste',
+    'HealingMagicPotency',
+    'HeavyResistance',
+    'ID',
+    'IceResistance',
+    'IncreasedSpiritbondGain',
+    'Intelligence',
+    'LightningResistance',
+    'MP',
+    'MagicDefense',
+    'MagicResistance',
+    'MagicalDamage',
+    'Mind',
+    'Morale',
+    'MovementSpeed',
+    'ParalysisResistance',
+    'Patch',
+    'Perception',
+    'PetrificationResistance',
+    'PhysicalDamage',
+    'PiercingResistance',
+    'Piety',
+    'PoisonResistance',
+    'ProjectileResistance',
+    'ReducedDurabilityLoss',
+    'Refresh',
+    'Regen',
+    'SilenceResistance',
+    'SkillSpeed',
+    'SlashingResistance',
+    'SleepResistance',
+    'SlowResistance',
+    'SpellSpeed',
+    'Spikes',
+    'Strength',
+    'StunResistance',
+    'TP',
+    'Tenacity',
+    'Vitality',
+    'WaterResistance',
+    'WindResistance'
+  ];
+  getAllPages(`https://xivapi.com/ItemLevel?columns=${itemLevelColumns.join(',')}`).subscribe(page => {
+    page.Results.forEach(entry => {
+      itemLevel[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('item-level', itemLevel);
+  });
+}
+
+if (hasTodo('classJobModifiers')) {
+  const ClassJobs = {};
+  const ClassJobsColumns = [
+    'ID',
+    'ModifierDexterity',
+    'ModifierHitPoints',
+    'ModifierIntelligence',
+    'ModifierManaPoints',
+    'ModifierMind',
+    'ModifierPiety',
+    'ModifierStrength',
+    'ModifierVitality',
+    'PrimaryStat',
+    'Role'
+  ];
+  getAllPages(`https://xivapi.com/ClassJob?columns=${ClassJobsColumns.join(',')}`).subscribe(page => {
+    page.Results.forEach(entry => {
+      ClassJobs[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('class-jobs-modifiers', ClassJobs);
+  });
+}
+
+if (hasTodo('equipSlotCategories')) {
+  const equipSlotCategories = {};
+  getAllEntries(`https://xivapi.com/EquipSlotCategory`).subscribe(completeFetch => {
+    completeFetch.forEach(entry => {
+      delete entry.GameContentLinks;
+      equipSlotCategories[entry.ID] = entry;
+    });
+    persistToJsonAsset('equip-slot-categories', equipSlotCategories);
+  });
+}
+
+if (hasTodo('tribes')) {
+  const tribes = {};
+  getAllEntries(`https://xivapi.com/Tribe`).subscribe(completeFetch => {
+    completeFetch.forEach(entry => {
+      delete entry.GameContentLinks;
+      delete entry.GamePatch;
+      delete entry.NameFemale;
+      delete entry.NameFemale_de;
+      delete entry.NameFemale_en;
+      delete entry.NameFemale_fr;
+      delete entry.NameFemale_ja;
+      delete entry.Patch;
+      delete entry.Url;
+      tribes[entry.ID] = entry;
+    });
+    persistToJsonAsset('tribes', tribes);
+  });
+}
+
+if (hasTodo('races')) {
+  const races = {};
+  getAllPages(`https://xivapi.com/Race?columns=ID,Name_*`).subscribe(page => {
+    page.Results.forEach(entry => {
+      races[entry.ID] = {
+        en: entry.Name_en,
+        ja: entry.Name_ja,
+        de: entry.Name_de,
+        fr: entry.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('races', races);
+  });
+}
+
+if (hasTodo('foods')) {
+  const foods = [];
+  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemAction.Type=844&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
+    page.Results.forEach(entry => {
+      foods.push(entry);
+    });
+  }, null, () => {
+    persistToJsonAsset('foods', foods);
   });
 }
