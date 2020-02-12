@@ -49,7 +49,7 @@
       "publisherName": "FFXIV Teamcraft",
       "requestedExecutionLevel": "highestAvailable",
       "target": "squirrel",
-      "sign": "./hooks/sign-windows.js",
+      "sign": "./tools/build/sign-windows.js",
       "publish": {
         "provider": "github",
         "releaseType": "release"
