@@ -580,6 +580,8 @@
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
+    "Filter_items_done": "Ignore completed items",
+    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
