@@ -14,6 +14,7 @@ import { UsePrudentTouchManipulation } from './tips/use-prudent-touch-manipulati
 import { AvoidUsingGoodActions } from './tips/avoid-using-good-actions';
 import { DoNotUseBrandWithoutName } from './tips/do-not-use-brand-without-name';
 import { RequiresReuseToProc } from './tips/requires-reuse-to-proc';
+import { UseReuse } from './tips/use-reuse';
 
 export const ROTATION_TIPS = new InjectionToken('ROTATION_TIPS');
 
@@ -30,7 +31,8 @@ const tips: Class<RotationTip>[] = [
   UsePrudentTouchManipulation,
   DoNotUseBrandWithoutName,
   AvoidUsingGoodActions,
-  RequiresReuseToProc
+  RequiresReuseToProc,
+  UseReuse
 ];
 
 @NgModule({

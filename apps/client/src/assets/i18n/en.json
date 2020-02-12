@@ -978,7 +978,8 @@
       "Use_rapid_synthesis_earlier": "You should not use Rapid Synthesis as a finisher action, putting it earlier in order to be able to handle the fail of the action is better for your rotation's reliability.",
       "Do_not_use_brand_without_name": "Do not use Brand of the Elements without Name of the Elements active.",
       "Avoid_using_good_actions": "Avoid using actions that require Good state in a macro, as they can't be predicted",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
+      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
     }
   },
   "PRICING": {
