@@ -1753,6 +1753,7 @@
     "Clone_gearset": "Créer une copie sur votre compte",
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
+    "Update_from_pcap": "Update using packet capture",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
