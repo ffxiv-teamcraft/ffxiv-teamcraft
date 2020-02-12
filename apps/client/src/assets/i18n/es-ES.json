@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "¡Nueva actualización disponible! ",
     "New_update_available_desktop": "¡Una nueva actualización está disponible!\nHaga clic aquí para descargarla e instalarla.",
-    "Web_instructions": "Por favor refresque la página para obtener la última versión."
+    "Web_instructions": "Por favor refresque la página para obtener la última versión.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "Seguidor de registro",
