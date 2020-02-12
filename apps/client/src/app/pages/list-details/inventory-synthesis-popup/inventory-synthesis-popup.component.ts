@@ -15,7 +15,7 @@ export class InventorySynthesisPopupComponent implements OnInit {
 
   list: List;
 
-  synthesis$: Observable<{containerName: string, items: InventoryItem[]}[]>;
+  synthesis$: Observable<{containerName: string, isRetainer: boolean, items: InventoryItem[]}[]>;
 
   removeDone$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.removeDoneInInventorSynthesis);
 
@@ -59,6 +59,7 @@ export class InventorySynthesisPopupComponent implements OnInit {
           if (entry === undefined) {
             report.push({
               containerName: containerName,
+              isRetainer: item.retainerName !== undefined,
               items: []
             });
             entry = report[report.length - 1];
