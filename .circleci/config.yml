@@ -135,7 +135,7 @@ jobs:
           at: ~/
       - run:
           name: Deploying desktop on github
-          command: npm run electron:setup:publish
+          command: npm run electron:setup:build
       - add_ssh_keys:
           fingerprints:
             - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
@@ -204,7 +204,7 @@ workflows:
             - build
           filters:
             branches:
-              only: master
+              only: staging
       - deploy-staging:
           requires:
             - build
