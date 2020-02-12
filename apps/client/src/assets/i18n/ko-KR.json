@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "새 업데이트가 있습니다! ",
     "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
-    "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요."
+    "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "수첩 트래커",
