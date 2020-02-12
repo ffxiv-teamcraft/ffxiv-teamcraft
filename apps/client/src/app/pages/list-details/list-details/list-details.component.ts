@@ -38,6 +38,8 @@ import * as _ from 'lodash';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-list-details',
@@ -104,7 +106,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
-              public settings: SettingsService) {
+              public settings: SettingsService, public platform: PlatformService) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -381,6 +383,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_breakdown'),
       nzFooter: null,
       nzContent: InventoryViewComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openInventorySynthesisPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Inventory_synthesis'),
+      nzFooter: null,
+      nzContent: InventorySynthesisPopupComponent,
       nzComponentParams: { list: list }
     });
   }

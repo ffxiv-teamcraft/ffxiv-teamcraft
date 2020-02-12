@@ -9,6 +9,7 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,7 @@ export class InventoryFacade {
   constructor(private store: Store<InventoryPartialState>) {
   }
 
+  @Memoized()
   public getContainerName(containerId: number): string {
     switch (containerId) {
       case ContainerType.Bag0:
