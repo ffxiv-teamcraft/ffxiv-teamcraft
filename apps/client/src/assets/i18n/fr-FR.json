@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
     "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
-    "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente."
+    "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "Carnets",
