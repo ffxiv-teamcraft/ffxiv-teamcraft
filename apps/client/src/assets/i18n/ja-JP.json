@@ -580,6 +580,8 @@
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Filter_items_done": "Ignore completed items",
+    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
