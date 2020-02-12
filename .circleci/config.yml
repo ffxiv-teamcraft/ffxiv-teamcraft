@@ -202,14 +202,14 @@ workflows:
               only: master
       - deploy-desktop:
           requires:
-            - build
-          filters:
-            branches:
-              only: master
-      - deploy-staging:
-          requires:
             - lint
             - test
+          filters:
+            branches:
+              only: staging
+      - deploy-staging:
+          requires:
+            - build
           filters:
             branches:
               only: staging
