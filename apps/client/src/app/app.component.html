@@ -23,11 +23,8 @@
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
         </div>
-        <div *ngIf="checkingForUpdate" class="download-spinner">
+        <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
-        </div>
-        <div *ngIf="downloading" class="download-spinner">
-          {{downloading.percent | number: '1.0-0'}}%
         </div>
         <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
           <ng-container *ngIf="platformService.isDesktop()">

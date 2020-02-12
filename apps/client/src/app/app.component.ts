@@ -342,10 +342,6 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
-      this.ipc.on('download-progress', (event, progress: any) => {
-        this.checkingForUpdate = false;
-        this.downloading = progress;
-      });
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);

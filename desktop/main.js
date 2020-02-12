@@ -3,7 +3,7 @@ const argv = process.argv.slice(1);
 log.transports.file.level = 'debug';
 log.log(argv);
 if (require('electron-squirrel-startup')) return;
-const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog } = require('electron');
+const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog, shell } = require('electron');
 const path = require('path');
 const Config = require('electron-config');
 const config = new Config();
