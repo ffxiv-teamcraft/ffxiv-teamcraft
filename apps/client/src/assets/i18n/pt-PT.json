@@ -580,6 +580,8 @@
     "Autofill_notification_title": "Item completed",
     "Autofill_notification_body": "{{itemName}} is now completed for list {{listName}}",
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Filter_items_done": "Ignore completed items",
+    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
