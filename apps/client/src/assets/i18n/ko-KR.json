@@ -978,7 +978,8 @@
       "Use_rapid_synthesis_earlier": "'강행 작업'을 공정의 마지막에 넣지마세요. 실패할 가능성을 염두하여 좀더 일찍 사용하는 것이 제작 로테이션의 신뢰도가 더 높습니다.",
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
-      "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요"
+      "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요",
+      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
     }
   },
   "PRICING": {
