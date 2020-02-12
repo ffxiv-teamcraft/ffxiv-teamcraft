@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "发现新版本！ ",
     "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
-    "Web_instructions": "请刷新页面以使用最新版本。"
+    "Web_instructions": "请刷新页面以使用最新版本。",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
