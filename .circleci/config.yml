@@ -5,9 +5,7 @@ defaults: &defaults
   resource_class: medium+
 
 
-version: 2.1
-orbs:
-  win: circleci/windows@2.2.0
+version: 2
 jobs:
   setup:
     <<: *defaults
@@ -131,20 +129,14 @@ jobs:
           command: ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
 
   deploy-desktop:
-    executor:
-      name: win/default
-      shell: bash.exe
+    <<: *defaults
     steps:
-      - restore_cache:
-          keys:
-            - v2-deps-{ .Branch }-{ checksum "package.json" }
-            - v2-deps-{ .Branch }
-            - v2-deps
       - attach_workspace:
           at: ~/
       - run:
           name: Deploying desktop on github
-          command: npm run electron:setup:build
+          command: npm run electron:setup:publish
+          no_output_timeout: 30m
       - add_ssh_keys:
           fingerprints:
             - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
@@ -213,7 +205,7 @@ workflows:
             - build
           filters:
             branches:
-              only: staging
+              only: master
       - deploy-staging:
           requires:
             - build
