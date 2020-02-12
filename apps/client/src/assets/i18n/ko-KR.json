@@ -1753,6 +1753,7 @@
     "Clone_gearset": "Copy this on your account",
     "You_have_no_gearsets": "You have no gearsets",
     "Favorite_gearsets": "Favorite gearsets",
+    "Update_from_pcap": "Update using packet capture",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
