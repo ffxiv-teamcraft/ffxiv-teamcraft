@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "Eine neue Version ist verfügbar!",
     "New_update_available_desktop": "Eine neue Version ist verfügbar!\nKlicke hier, um sie herunterzuladen und zu installieren.",
-    "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden."
+    "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "Notizbuch-Tracker",
