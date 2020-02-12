@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "新しいアップデートがあります! ",
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
-    "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。"
+    "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "制作/採集手帳トラッカー",
