@@ -1123,7 +1123,8 @@
   "UPDATE": {
     "New_update_available": "Доступно новое обновление!",
     "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
-    "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
+    "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "Трекер журнала",
