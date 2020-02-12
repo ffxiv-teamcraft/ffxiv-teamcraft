@@ -5,7 +5,9 @@ defaults: &defaults
   resource_class: medium+
 
 
-version: 2
+version: 2.1
+orbs:
+  win: circleci/windows@2.2.0
 jobs:
   setup:
     <<: *defaults
@@ -129,8 +131,15 @@ jobs:
           command: ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
 
   deploy-desktop:
-    <<: *defaults
+    executor:
+      name: win/default
+      shell: bash.exe
     steps:
+      - restore_cache:
+          keys:
+            - v2-deps-{ .Branch }-{ checksum "package.json" }
+            - v2-deps-{ .Branch }
+            - v2-deps
       - attach_workspace:
           at: ~/
       - run:
