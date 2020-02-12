@@ -1,6 +1,6 @@
 <div fxLayout="column" fxLayoutGap="10px">
 
-  <nz-form-item>
+  <nz-form-item *ngIf="!updateMode">
     <nz-form-control>
       <input [(ngModel)]="gearsetName" [placeholder]="'Please_enter_a_name' | translate" nz-input
              type="text">
@@ -8,7 +8,7 @@
   </nz-form-item>
 
   <nz-form-control>
-    <nz-select class="job-select" [nzDisabled]="!gearsetName" [(ngModel)]="job" nzShowSearch
+    <nz-select class="job-select" [nzDisabled]="!gearsetName || updateMode" [(ngModel)]="job" nzShowSearch
                [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
       <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | jobName | i18n"
                  [nzValue]="job.id" nzCustomContent>

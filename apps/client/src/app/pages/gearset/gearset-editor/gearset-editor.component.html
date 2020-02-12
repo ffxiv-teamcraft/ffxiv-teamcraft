@@ -8,6 +8,11 @@
           <i nz-icon nzType="edit"></i>
         </button>
         <div fxFlex="1 1 auto"></div>
+        <button nz-button nzShape="circle" nzType="primary"
+                *ngIf="machinaToggle"
+                (click)="updateFromPcap(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Update_from_pcap' | translate">
+          <i nz-icon nzType="api"></i>
+        </button>
         <a nz-button nzShape="circle" nzType="primary"
            nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}">

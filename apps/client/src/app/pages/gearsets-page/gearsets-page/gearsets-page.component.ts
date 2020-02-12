@@ -11,7 +11,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
-import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { switchMap, takeUntil } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
@@ -68,7 +68,7 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     ).subscribe(favorites => {
       favorites.gearsetFolders.forEach(key => this.foldersFacade.load(key));
       favorites.gearsets.forEach(key => this.gearsetsFacade.load(key));
-    })
+    });
   }
 
   newFolder(): void {

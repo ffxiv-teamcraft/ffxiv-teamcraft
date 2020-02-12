@@ -17,6 +17,8 @@ import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
 })
 export class ImportFromPcapPopupComponent extends TeamcraftComponent {
 
+  public updateMode = false;
+
   public job: number;
 
   public gearsetName: string;

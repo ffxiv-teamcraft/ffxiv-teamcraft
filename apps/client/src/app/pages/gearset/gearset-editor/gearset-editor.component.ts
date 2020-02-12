@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { distinctUntilChanged, filter, first, map, switchMap, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -22,6 +22,8 @@ import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-
 import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -30,6 +32,8 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearsetEditorComponent extends TeamcraftComponent implements OnInit {
+
+  public machinaToggle = false;
 
   itemFiltersform: FormGroup = this.fb.group({
     ilvlMin: [460],
@@ -157,67 +161,70 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       }
       return combineLatest(requests);
     }),
-    withLatestFrom(this.gearset$),
-    map(([[response, crystal], gearset]) => {
-      const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
-      const prepared = [...response.Results, ...crystal.Results]
-        .filter(item => {
-          return relevantStats.some(stat => {
-            if (!gearset.isCombatSet()) {
-              return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
-            }
-            return true;
+    switchMap(([response, crystal]) => {
+      return this.gearset$.pipe(
+        map(gearset => {
+          const relevantStats = this.statsService.getRelevantBaseStats(gearset.job);
+          const prepared = [...response.Results, ...crystal.Results]
+            .filter(item => {
+              return relevantStats.some(stat => {
+                if (!gearset.isCombatSet()) {
+                  return item.Stats && Object.values<any>(item.Stats).some(value => value.ID === stat);
+                }
+                return true;
+              });
+            })
+            .reduce((resArray, item) => {
+              const itemSlotName = Object.keys(item.EquipSlotCategory)
+                .filter(key => key !== 'ID')
+                .find(key => item.EquipSlotCategory[key] === 1);
+
+              let arrayEntry = resArray.find(row => row.name === itemSlotName);
+              const propertyName = this.getPropertyName(itemSlotName);
+              if (arrayEntry === undefined) {
+                resArray.push({
+                  name: itemSlotName,
+                  index: item.EquipSlotCategory.ID,
+                  property: propertyName,
+                  items: []
+                });
+                arrayEntry = resArray[resArray.length - 1];
+              }
+
+              const itemEntry = {
+                item: item,
+                equipmentPiece: {
+                  itemId: item.ID,
+                  hq: item.CanBeHq === 1,
+                  materias: this.getMaterias(item, propertyName),
+                  materiaSlots: item.MateriaSlotCount,
+                  canOvermeld: item.IsAdvancedMeldingPermitted === 1
+                }
+              };
+
+              const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
+
+              if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
+                itemEntry.equipmentPiece = equipmentPieceFromGearset;
+              }
+
+              arrayEntry.items.push(itemEntry);
+              return resArray;
+            }, []);
+          const fingerLCategory = prepared.find(category => category.index === 12);
+          if (fingerLCategory) {
+            prepared.push(JSON.parse(JSON.stringify({
+              ...fingerLCategory,
+              name: 'FingerR',
+              property: this.getPropertyName('FingerR'),
+              index: 12.1
+            })));
+          }
+          return prepared.sort((a, b) => {
+            return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
           });
         })
-        .reduce((resArray, item) => {
-          const itemSlotName = Object.keys(item.EquipSlotCategory)
-            .filter(key => key !== 'ID')
-            .find(key => item.EquipSlotCategory[key] === 1);
-
-          let arrayEntry = resArray.find(row => row.name === itemSlotName);
-          const propertyName = this.getPropertyName(itemSlotName);
-          if (arrayEntry === undefined) {
-            resArray.push({
-              name: itemSlotName,
-              index: item.EquipSlotCategory.ID,
-              property: propertyName,
-              items: []
-            });
-            arrayEntry = resArray[resArray.length - 1];
-          }
-
-          const itemEntry = {
-            item: item,
-            equipmentPiece: {
-              itemId: item.ID,
-              hq: item.CanBeHq === 1,
-              materias: this.getMaterias(item, propertyName),
-              materiaSlots: item.MateriaSlotCount,
-              canOvermeld: item.IsAdvancedMeldingPermitted === 1
-            }
-          };
-
-          const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
-
-          if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
-            itemEntry.equipmentPiece = equipmentPieceFromGearset;
-          }
-
-          arrayEntry.items.push(itemEntry);
-          return resArray;
-        }, []);
-      const fingerLCategory = prepared.find(category => category.index === 12);
-      if (fingerLCategory) {
-        prepared.push(JSON.parse(JSON.stringify({
-          ...fingerLCategory,
-          name: 'FingerR',
-          property: this.getPropertyName('FingerR'),
-          index: 12.1
-        })));
-      }
-      return prepared.sort((a, b) => {
-        return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
-      });
+      );
     }),
     map(categories => {
       return chunk(categories, 2);
@@ -276,7 +283,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
-              private i18n: I18nToolsService, private router: Router) {
+              private i18n: I18nToolsService, private ipc: IpcService, private router: Router) {
     super();
     this.permissionLevel$.pipe(
       takeUntil(this.onDestroy$)
@@ -285,6 +292,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         this.router.navigate(['/gearsets']);
       }
     });
+    this.ipc.once('toggle-machina:value', (event, value) => {
+      this.machinaToggle = value;
+    });
+    this.ipc.send('toggle-machina:get');
   }
 
   ngOnInit() {
@@ -431,6 +442,24 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         gearset: gearset
       },
       nzFooter: null
+    });
+  }
+
+  updateFromPcap(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzContent: ImportFromPcapPopupComponent,
+      nzComponentParams: {
+        job: gearset.job,
+        gearsetName: gearset.name,
+        updateMode: true
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('GEARSETS.Update_from_pcap')
+    }).afterClose.pipe(
+      first()
+    ).subscribe(res => {
+      Object.assign(gearset, res);
+      this.gearsetsFacade.update(gearset.$key, gearset);
     });
   }
 
