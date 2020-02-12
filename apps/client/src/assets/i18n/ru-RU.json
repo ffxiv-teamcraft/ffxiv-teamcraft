@@ -978,7 +978,8 @@
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
       "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
       "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
+      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
     }
   },
   "PRICING": {
