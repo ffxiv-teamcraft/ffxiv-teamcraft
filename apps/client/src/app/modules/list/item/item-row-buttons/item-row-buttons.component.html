@@ -86,7 +86,7 @@
 
   <ng-container *ngIf="isButton(itemRowTypes.WORK_ON_IT)">
     <button (click)="setWorkingOnIt.emit(userId)"
-            *ngIf="(workingOnIt || []?.indexOf(userId) === -1) && loggedIn"
+            *ngIf="(workingOnIt || [])?.indexOf(userId) === -1 && loggedIn"
             [nzTitle]="'Work_on_it' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">
