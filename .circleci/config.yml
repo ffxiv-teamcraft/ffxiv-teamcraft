@@ -2,7 +2,6 @@ defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
     - image: supamiu/circleci-node-wine
-  resource_class: medium+
 
 
 version: 2.1
@@ -75,7 +74,10 @@ jobs:
 
 
   build:
-    <<: *defaults
+    working_directory: ~/ffxiv-teamcraft
+    docker:
+      - image: supamiu/circleci-node-wine
+    resource_class: medium+
     steps:
       - attach_workspace:
           at: ~/
@@ -130,14 +132,24 @@ jobs:
           name: Deploying functions
           command: ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
 
-  deploy-desktop:
+  release-desktop:
     executor: win/default
+      working_directory: ~/ffxiv-teamcraft
     steps:
-      - checkout
-      - run: npm ci
+      - attach_workspace:
+          at: ~/
       - run:
           name: Deploying desktop on github
           command: npm run electron:setup:publish
+
+  deploy-desktop-update:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Deploying desktop update
+          command: bash tools/desktop/deploy.sh
 
 
   deploy-staging:
@@ -193,10 +205,16 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-desktop:
+      - release-desktop:
           requires:
             - lint
             - test
+          filters:
+            branches:
+              only: staging
+      - deploy-desktop-update:
+          requires:
+            - release-desktop
           filters:
             branches:
               only: staging
