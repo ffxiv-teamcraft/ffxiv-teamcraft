@@ -139,12 +139,15 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Building electron prod
-          command: npm run build:electron-prod
+          name: Reinstalling dependencies for windows
+          command: npm ci
       - run:
-          name: Releasing the setup
-          command: npm run electron-builder -- -w -p always
-
+          name: Deploying desktop on github
+          command: npm run electron:setup:publish
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ffxiv-teamcraft/release/*
   deploy-desktop-update:
     <<: *defaults
     steps:
