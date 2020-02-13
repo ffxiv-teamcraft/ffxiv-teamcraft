@@ -580,8 +580,8 @@
     "Autofill_notification_title": "Objet complété",
     "Autofill_notification_body": "{{itemName}} est maintenant complété pour la liste {{listName}}",
     "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
-    "Filter_items_done": "Ignore completed items",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Filter_items_done": "Ignorer les objets complétés",
+    "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -981,7 +981,7 @@
       "Do_not_use_brand_without_name": "N'utilisez pas de Marque des Éléments sans Nom des Éléments actifs.",
       "Avoid_using_good_actions": "Évitez d'utiliser des actions qui nécessitent un état \"Bon\" dans une macro, car cet état n'est pas prédictible",
       "Requires_reuse_to_proc": "Votre rotation nécessite récupération de chutes pour fonctionner correctement, assurez-vous qu'elle peut fonctionner sans proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Use_reuse": "Votre rotation atteint 100% HQ et vous avez assez de PS pour utiliser Récupération de chutes, pensez à l'ajouter pour récupérer des ingrédients supplémentaires."
     }
   },
   "PRICING": {
@@ -1127,7 +1127,7 @@
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
     "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "Téléchargement de la mise à jour en cours, un redémarrage vous sera proposé une fois celle-ci téléchargée"
   },
   "LOG_TRACKER": {
     "Title": "Carnets",
@@ -1753,7 +1753,7 @@
     "Clone_gearset": "Créer une copie sur votre compte",
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
-    "Update_from_pcap": "Update using packet capture",
+    "Update_from_pcap": "Mettre à jour en utilisant la capture de paquets",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
