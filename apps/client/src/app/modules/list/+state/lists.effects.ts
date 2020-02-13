@@ -227,7 +227,7 @@ export class ListsEffects {
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
     debounceTime(2000),
     filter(action => {
-      return !action.payload.isComplete();
+      return !(action.payload.ephemeral && action.payload.isComplete());
     }),
     switchMap((action) => {
       if (action.payload.offline) {
