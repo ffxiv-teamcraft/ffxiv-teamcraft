@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { SearchType } from '../search-type';
 import { SearchResult } from '../../../model/search/search-result';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-search-result',
@@ -31,7 +30,10 @@ export class SearchResultComponent {
   openInSimulator = new EventEmitter();
 
   @Output()
-  selectChange = new EventEmitter();
+  selectedChange = new EventEmitter();
+
+  @Input()
+  selected: boolean;
 
   searchTypes = SearchType;
 
