@@ -56,7 +56,8 @@
       }
     },
     "squirrelWindows": {
-      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico"
+      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
+      "remoteReleases": "https://update.ffxivteamcraft.com/"
     }
   },
   "scripts": {
