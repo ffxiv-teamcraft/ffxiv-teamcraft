@@ -580,7 +580,7 @@
     "Autofill_notification_title": "아이템 완료",
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
-    "Filter_items_done": "Ignore completed items",
+    "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
@@ -1753,7 +1753,7 @@
     "Clone_gearset": "Copy this on your account",
     "You_have_no_gearsets": "You have no gearsets",
     "Favorite_gearsets": "Favorite gearsets",
-    "Update_from_pcap": "Update using packet capture",
+    "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
