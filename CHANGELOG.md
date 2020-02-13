@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.12...v7.0.0) (2020-02-13)
+
+
+### Bug Fixes
+
+* **db:** quick list created fom db page now take amount properly ([6d83235](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d83235))
+* **list:** fixed an issue with list update on last item checked ([f289182](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f289182))
+* **list:** fixed an issue with marketboard popup not showing properly ([477891c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/477891c))
+* **list:** fixed an issue with working on it being applied several times ([a778cbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a778cbb))
+* **trades:** fixed an issue with total trades for a panel being off for HQ items ([c8f2bf2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8f2bf2))
+* **ux:** better count for total items in inventory optimizers ([4c2b276](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c2b276))
+
+
+### Features
+
+* **list-details:** new inventory synthesis popup to show items per container ([3a4b294](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a4b294))
+* **simulator:** new tip to add reuse when you can ([90a7227](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90a7227))
+* added gearsets system ([846e008](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/846e008)), closes [#485](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/485)
+* **cn:** update data for CN 5.1 ([ed6674f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed6674f))
+* **desktop:** middle click on share button opens the current page in browser ([8474cb2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8474cb2))
+
+
+
 <a name="6.5.12"></a>
 ## [6.5.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.11...v6.5.12) (2020-02-05)
 
