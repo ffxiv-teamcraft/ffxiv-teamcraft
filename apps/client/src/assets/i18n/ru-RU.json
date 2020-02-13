@@ -149,7 +149,11 @@
     "Unknown": "Неизвестно",
     "Minimum": "Минимум",
     "Maximum": "Максимум",
-    "Average": "В среднем"
+    "Average": "В среднем",
+    "Hq": "HQ",
+    "Nq": "NQ",
+    "Share_link_copied": "Share link copied to clipboard",
+    "Copy": "Copy"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -576,6 +580,8 @@
     "Autofill_notification_title": "Предмет завершен",
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Filter_items_done": "Ignore completed items",
+    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -773,6 +779,7 @@
   },
   "SIMULATOR": {
     "Title": "Симулятор крафта",
+    "Include_stats": "Include stats",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -973,7 +980,8 @@
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
       "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
       "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc."
+      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
+      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
     }
   },
   "PRICING": {
@@ -1118,7 +1126,8 @@
   "UPDATE": {
     "New_update_available": "Доступно новое обновление!",
     "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
-    "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию."
+    "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
   },
   "LOG_TRACKER": {
     "Title": "Трекер журнала",
@@ -1578,7 +1587,8 @@
     "Levequests": "Вы можете подготовить списки ливквестов и предварительно посмотреть количество опыта за них в разделе Ливквесты.",
     "Log_tracker": "Вы можете отслеживать прогресс вашего журнала (сбор, крафт, рыбалка) на странице трекера журнала.",
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
-    "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных"
+    "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
+    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1701,5 +1711,90 @@
   "VERSION_LOCK": {
     "Outdated": "Вы используете устаревшую версию Teamcraft, которая больше не может работать правильно",
     "Refresh_or_download_latest": "Если вы пользуетесь сайтом, просто нажмите Ctrl + F5, чтобы обновиться. Если вы используете приложение для рабочего стола, скачайте последнюю версию здесь: "
+  },
+  "GEARSETS": {
+    "Title": "Gearsets",
+    "Rename_gearset": "Rename gearset",
+    "View_gearset": "View gearset",
+    "Edit_gearset": "Edit gearset",
+    "generate_list": "Generate a list",
+    "Content": "Content",
+    "Stat_name": "Stat",
+    "Current_value": "Current value",
+    "Cap_value": "Cap",
+    "Add_materia": "Add materia",
+    "No_materia": "No materia",
+    "Value": "Value",
+    "Empty_slot": "Empty slot",
+    "Filters": "Filters",
+    "Total_stats": "Total stats",
+    "Total_materias_needed": "Total materias needed",
+    "Materia": "Materia",
+    "Amount_needed": "Amount",
+    "Modal_editor": "Materias for {{itemName}}",
+    "Unavailable_slot": "Slot not available",
+    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Pick_a_job": "Pick a job",
+    "New_gearset": "New gearset",
+    "Please_input_ariyala_link": "Please input an ariyala link",
+    "Link_not_supported": "Link not supported",
+    "Compare_gearset": "Compare this gearset with another",
+    "Stats": "Stats",
+    "Materias": "Materias",
+    "Pieces": "Gear pieces",
+    "Import_from_ariyala": "Import from Ariyala",
+    "Import_from_lodestone": "Import from Lodestone",
+    "Import_using_pcap": "Import using packet capture",
+    "Your_gearsets": "Your gearsets",
+    "Delete_gearset": "Delete gearset",
+    "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
+    "No_food_selected": "No food selected",
+    "Generate_list": "Generate a list",
+    "Clone_gearset": "Copy this on your account",
+    "You_have_no_gearsets": "You have no gearsets",
+    "Favorite_gearsets": "Favorite gearsets",
+    "Update_from_pcap": "Update using packet capture",
+    "SLOT": {
+      "Body": "Chest",
+      "Ears": "Ears",
+      "Feet": "Feet",
+      "FingerL": "Left finger",
+      "FingerR": "Right finger",
+      "Gloves": "Gloves",
+      "Head": "Head",
+      "Legs": "Legs",
+      "MainHand": "Main Hand",
+      "Neck": "Neck",
+      "OffHand": "Off Hand",
+      "SoulCrystal": "Soul Crystal",
+      "Waist": "Waist",
+      "Wrists": "Wrists"
+    },
+    "COMPARISON": {
+      "Compare_popup_title": "Compare {{setName}} with...",
+      "Error_title": "Could not compare gearsets",
+      "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
+      "Type": "Gearset type",
+      "Ariyala": "An ariyala set",
+      "External_gearset": "A Teamcraft gearset from someone else",
+      "Personal_gearset": "One of your gearsets",
+      "Paste_link_step_title": "Link to the gearset",
+      "Pick_your_gearset": "Pick your gearset",
+      "Submit": "Compare",
+      "Your_gearset": "Your gearset",
+      "Other_gearset": "Other gearset",
+      "Diff": "Diff",
+      "Avg_melding_chances": "Avg. overmeld chances"
+    }
+  },
+  "FOLDERS": {
+    "New_folder": "New folder",
+    "Delete_folder": "Delete folder",
+    "Rename_folder": "Rename folder",
+    "View_folder": "Open folder",
+    "Content": "Content",
+    "Folder_not_found": "Folder not found",
+    "Your_folders": "Your folders",
+    "Favorite_folders": "Favorite folders"
   }
 }
