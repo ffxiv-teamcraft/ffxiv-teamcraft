@@ -140,7 +140,7 @@ jobs:
           at: ~/
       - run:
           name: Deploying desktop on github
-          command: npm run electron:setup:publish
+          command: npm run build:electron-prod && npm run electron-builder -- -w -p always
 
   deploy-desktop-update:
     <<: *defaults
