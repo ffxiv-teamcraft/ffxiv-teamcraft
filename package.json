@@ -6,9 +6,6 @@
   "version": "7.0.0-beta.9",
   "license": "MIT",
   "main": "desktop/main.js",
-  "repository": {
-    "url": "https://github.com/supamiu/ffxiv-teamcraft"
-  },
   "build": {
     "appId": "ffxiv-teamcraft",
     "forceCodeSigning": true,
@@ -60,7 +57,7 @@
     },
     "squirrelWindows": {
       "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://github.com/supamiu/ffxiv-teamcraft/releases/download/latest"
+      "remoteReleases": "https://update.ffxivteamcraft.com/"
     }
   },
   "scripts": {
@@ -96,7 +93,7 @@
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
     "electron:setup:build-dev": "electron-builder -w",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder -w",
-    "electron:setup:publish": "del-cli release/* && npm run build:electron-prod && electron-builder -w -p always",
+    "electron:setup:publish": "npm run build:electron-prod && electron-builder -w -p always",
     "postinstall": "electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
     "pack": "electron-builder --dir",
