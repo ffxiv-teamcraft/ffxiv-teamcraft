@@ -139,8 +139,11 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Deploying desktop on github
-          command: npm run build:electron-prod && npm run electron-builder -- -w -p always
+          name: Building electron prod
+          command: npm run build:electron-prod
+      - run:
+          name: Releasing the setup
+          command: npm run electron-builder -- -w -p always
 
   deploy-desktop-update:
     <<: *defaults
