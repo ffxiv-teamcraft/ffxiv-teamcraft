@@ -1754,6 +1754,7 @@
     "You_have_no_gearsets": "등록된 장비세트가 없습니다",
     "Favorite_gearsets": "즐겨찾기 장비세트",
     "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
+    "Copy_as_text": "Copy this gearset as text",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
