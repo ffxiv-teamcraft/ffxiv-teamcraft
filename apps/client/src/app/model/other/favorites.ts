@@ -7,4 +7,8 @@ export interface Favorites {
   rotations: string[];
 
   rotationFolders: string[];
+
+  gearsets: string[];
+
+  gearsetFolders: string[];
 }

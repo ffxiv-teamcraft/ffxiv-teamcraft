@@ -1,0 +1,8 @@
+<app-page-loader [loading]="loading">
+  <app-folder-page *ngIf="display$ | async as display" [display]="display" [userId]="userId$ | async" [elementTemplate]="gearsetTemplate"
+                   favoriteType="gearsetFolders">
+    <ng-template #gearsetTemplate let-gearset>
+      <app-gearset-row [gearset]="gearset" [userId]="userId$ | async"></app-gearset-row>
+    </ng-template>
+  </app-folder-page>
+</app-page-loader>

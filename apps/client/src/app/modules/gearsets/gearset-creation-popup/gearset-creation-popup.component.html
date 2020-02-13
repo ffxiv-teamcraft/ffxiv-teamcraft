@@ -1,0 +1,18 @@
+<form (submit)="submit()" [formGroup]="control" fxLayout="column" fxLayoutGap="5px">
+  <input autofocus formControlName="name" nz-input placeholder="{{'Please_enter_a_name' | translate}}" type="text">
+  <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+    <nz-form-control nzValidateStatus="validating" [nzValidatingTip]="'GEARSETS.Job_cannot_be_changed' | translate">
+      <nz-select class="filter-select" formControlName="job" nzShowSearch [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
+        <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | jobAbbr | i18n"
+                   [nzValue]="job.id" nzCustomContent>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <div class="companion-svg" [innerHtml]="job.id | jobUnicode"></div>
+            <div>{{job.id | jobAbbr | i18n}}</div>
+          </div>
+        </nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <button [disabled]="!control.valid" [nzType]="'primary'" nz-button type="submit">{{'Submit' | translate}}
+  </button>
+</form>

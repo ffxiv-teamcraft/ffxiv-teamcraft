@@ -37,6 +37,7 @@ import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ListContributionsComponent } from './list-contributions/list-contributions.component';
+import { InventorySynthesisPopupComponent } from './inventory-synthesis-popup/inventory-synthesis-popup.component';
 
 const routes: Routes = [
   {
@@ -90,13 +91,15 @@ const routes: Routes = [
     ListHistoryPopupComponent,
     InventoryViewComponent,
     TotalPanelPricePopupComponent,
-    ListContributionsComponent
+    ListContributionsComponent,
+    InventorySynthesisPopupComponent
   ],
   entryComponents: [
     ListHistoryPopupComponent,
     InventoryViewComponent,
     TotalPanelPricePopupComponent,
-    ListContributionsComponent
+    ListContributionsComponent,
+    InventorySynthesisPopupComponent
   ]
 })
 export class ListDetailsModule {

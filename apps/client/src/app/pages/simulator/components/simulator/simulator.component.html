@@ -65,11 +65,12 @@
               nzType="primary">
         <i nz-icon nzType="ordered-list"></i>
       </button>
-      <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="rotation.$key"
-              [cbContent]="getLink(rotation)" [nzShape]="'circle'"
+      <button (click)="openSharePopup(rotation)"
+              *ngIf="rotation.$key"
+              [nzShape]="'circle'"
               [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
               [nzType]="'primary'"
-              ngxClipboard nz-button nz-tooltip>
+              nz-button nz-tooltip>
         <i nz-icon nzType="share-alt"></i>
       </button>
       <button (click)="openRotationSolver()" [nzShape]="'circle'"

@@ -7,6 +7,7 @@ import { map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
+import { uniq, uniqBy } from 'lodash';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -54,7 +55,7 @@ export class InventoryOptimizerComponent {
                     .groupBy('containerName')
                     .map((value, key) => ({ containerName: key, isRetainer: value[0].isRetainer, items: value }))
                     .value(),
-                  totalLength: entries.length
+                  totalLength: uniqBy(entries, 'item.itemId').length
                 };
               })
               .filter(res => res.entries.length > 0);
@@ -71,7 +72,7 @@ export class InventoryOptimizerComponent {
       return this.reloader$.pipe(
         map(() => {
           return optimizations.map(opt => {
-            let totalLength = 0;
+            const total: number[] = [];
             opt.entries = opt.entries.map(entry => {
               entry.ignored = this.ignoreArray.some(ignored => {
                 return ignored.containerName === entry.containerName && ignored.id === opt.type;
@@ -88,11 +89,11 @@ export class InventoryOptimizerComponent {
                 entry.totalLength = entry.items.filter(i => !i.ignored).length;
               }
               if (this.showIgnored || !entry.ignored) {
-                totalLength += entry.totalLength;
+                total.push(...entry.items.map(i => i.item.itemId));
               }
               return entry;
             });
-            opt.totalLength = totalLength;
+            opt.totalLength = uniq(total).length;
             return opt;
           }).filter(opt => opt.totalLength > 0);
         })

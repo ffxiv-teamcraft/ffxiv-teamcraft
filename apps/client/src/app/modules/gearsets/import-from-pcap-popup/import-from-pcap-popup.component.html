@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutGap="10px">
+
+  <nz-form-item *ngIf="!updateMode">
+    <nz-form-control>
+      <input [(ngModel)]="gearsetName" [placeholder]="'Please_enter_a_name' | translate" nz-input
+             type="text">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-control>
+    <nz-select class="job-select" [nzDisabled]="!gearsetName || updateMode" [(ngModel)]="job" nzShowSearch
+               [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">
+      <nz-option *ngFor="let job of availableJobs" [nzLabel]="job.id | jobName | i18n"
+                 [nzValue]="job.id" nzCustomContent>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
+          <div>{{job.id | jobName | i18n}}</div>
+        </div>
+      </nz-option>
+    </nz-select>
+  </nz-form-control>
+
+  <nz-alert nzType="info" *ngIf="job" [nzMessage]="'GEARSETS.Import_from_pcap_notice' | translate"></nz-alert>
+</div>

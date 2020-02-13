@@ -69,6 +69,7 @@
             </nz-tag>
           </div>
           <button nz-button nzType="primary" nzShape="circle" (click)="fillWithInventory(list)" nz-tooltip
+                  *ngIf="platform.isDesktop()"
                   [nzTitle]="'LIST_DETAILS.Fill_with_inventory' | translate">
             <i nz-icon nzType="shopping" nzTheme="outline"></i>
           </button>
@@ -104,10 +105,16 @@
                     nz-tooltip nzShape="circle">
               <i iconfont="icon-dollar" nz-icon></i>
             </button>
+            <button (click)="openInventorySynthesisPopup(list)" [nzTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
+                    *ngIf="platform.isDesktop()"
+                    nz-button nz-tooltip nzShape="circle"
+                    nzType="primary">
+              <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
+            </button>
             <button (click)="openInventoryPopup(list)" [nzTitle]="'LIST_DETAILS.Inventory_breakdown' | translate"
                     nz-button nz-tooltip nzShape="circle"
                     nzType="primary">
-              <i class="material-icons">apps</i>
+              <i nz-icon nzType="number" nzTheme="outline"></i>
             </button>
             <button (click)="openHistoryPopup()"
                     [disabled]="list.modificationsHistory.length === 0 || (permissionLevel$ | async) < 20"

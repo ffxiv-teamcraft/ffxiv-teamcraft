@@ -14,7 +14,7 @@ export class RotationPickerService {
   constructor(private nzDrawer: NzDrawerService, private translate: TranslateService) {
   }
 
-  pickRotation(itemId: number, recipeId: string, recipe?: Partial<Craft>): Observable<CraftingRotation> {
+  pickRotation(itemId: number, recipeId: string, recipe?: Partial<Craft>, statsStr?: string): Observable<CraftingRotation> {
     return this.nzDrawer.create<RotationPickerDrawerComponent, Partial<RotationPickerDrawerComponent>, CraftingRotation>({
       nzContent: RotationPickerDrawerComponent,
       nzContentParams: {
@@ -23,13 +23,14 @@ export class RotationPickerService {
         disableNew: true,
         custom: false,
         recipe: recipe,
-        pickOnly: true
+        pickOnly: true,
+        statsStr: statsStr
       },
       nzTitle: this.translate.instant('Pick_a_rotation')
     }).afterClose;
   }
 
-  openInSimulator(itemId: number, recipeId: string, recipe?: Partial<Craft>, disableNew = false, custom = false): void {
+  openInSimulator(itemId: number, recipeId: string, recipe?: Partial<Craft>, disableNew = false, custom = false, statsStr?: string): void {
     this.nzDrawer.create<RotationPickerDrawerComponent, Partial<RotationPickerDrawerComponent>, null>({
       nzContent: RotationPickerDrawerComponent,
       nzContentParams: {
@@ -37,7 +38,8 @@ export class RotationPickerService {
         recipeId: recipeId,
         disableNew: disableNew,
         custom: custom,
-        recipe: recipe
+        recipe: recipe,
+        statsStr: statsStr
       },
       nzTitle: this.translate.instant('Pick_a_rotation')
     });

@@ -127,7 +127,11 @@
                 <nz-select class="filter-select" formControlName="jobCategories" nzAllowClear nzMode="multiple"
                            nzShowSearch>
                   <nz-option *ngFor="let jobId of availableJobs" [nzLabel]="jobId | jobName | i18n"
-                             [nzValue]="jobId">
+                             [nzValue]="jobId" nzCustomContent>
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <div class="companion-svg job-icon" [innerHtml]="jobId | jobUnicode"></div>
+                      <div>{{jobId | jobAbbr | i18n}}</div>
+                    </div>
                   </nz-option>
                 </nz-select>
               </nz-form-control>
@@ -138,8 +142,10 @@
                 <nz-select class="filter-select" formControlName="craftJob" nzAllowClear nzShowSearch>
                   <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
                              [nzValue]="job.id" nzCustomContent>
-                    <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
-                    {{job.id | jobAbbr | i18n}}
+                    <div fxLayout="row" fxLayoutAlign="flex-start center"  fxLayoutGap="5px">
+                      <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
+                      <div>{{job.id | jobAbbr | i18n}}</div>
+                    </div>
                   </nz-option>
                 </nz-select>
               </nz-form-control>
@@ -402,8 +408,9 @@
       <app-page-loader [loading]="loading">
         <app-search-result *ngFor="let row of results; trackBy: trackByItem; let odd = odd"
                            [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
+                           [selected]="row.selected"
                            (addItemsToList)="addItemsToList([row])"
-                           (selectChange)="updateAllSelected(results)"
+                           (selectedChange)="updateAllSelected(results)"
                            (createQuickList)="createQuickList(row)"
                            (openInSimulator)="openInSimulator(row.itemId, row.recipe.recipeId)"
         ></app-search-result>

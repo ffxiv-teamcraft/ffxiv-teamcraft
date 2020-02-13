@@ -23,11 +23,8 @@
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
         </div>
-        <div *ngIf="checkingForUpdate" class="download-spinner">
+        <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
-        </div>
-        <div *ngIf="downloading" class="download-spinner">
-          {{downloading.percent | number: '1.0-0'}}%
         </div>
         <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
           <ng-container *ngIf="platformService.isDesktop()">
@@ -36,6 +33,7 @@
                 <i nz-icon nzType="arrow-left"></i>
               </button>
               <button (cbOnSuccess)="afterPathNameCopy()" cbContent="https://ffxivteamcraft.com{{getPathname()}}" ngxClipboard nz-button
+                      (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="share-alt"></i>
               </button>
@@ -221,6 +219,13 @@
                   <span>
                       <i nz-icon nzType="build"></i>
                       <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
+                  </span>
+                </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/gearsets"
+                   routerLinkActive="ant-menu-item-selected">
+                  <span fxLayout="row">
+                      <span class="companion-svg svg-icon">&#x0F202;</span>
+                      <span class="nav-text">{{'GEARSETS.Title' | translate}}</span>
                   </span>
                 </a>
               </li>

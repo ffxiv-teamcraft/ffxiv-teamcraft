@@ -24,8 +24,14 @@
         </ng-template>
       </nz-list-item-meta>
       <ng-template #content>
-        <button (click)="close()" [nzShape]="'circle'" [nzType]="'primary'" nz-button
-                routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}">
+        <a (click)="close()" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+                *ngIf="!pickRotation"
+                routerLink="/simulator/{{recipe.itemId}}/{{recipe.recipeId}}/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
+          <i nz-icon nzType="check"></i>
+        </a>
+
+        <button (click)="openRotationPicker(recipe)" [nzShape]="'circle'" [nzType]="'primary'" nz-button
+                *ngIf="pickRotation">
           <i nz-icon nzType="check"></i>
         </button>
       </ng-template>
@@ -35,7 +41,7 @@
 <div *ngIf="showCustom">
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
   <a (click)="close()" class="new-list-button" nz-button nzBlock
-     routerLink="/simulator/custom/{{rotationId}}">
+     routerLink="/simulator/custom/{{rotationId}}" [queryParams]="statsStr?{stats: statsStr}:null">
     {{'SIMULATOR.Create_a_custom_rotation' | translate}}
   </a>
 </div>

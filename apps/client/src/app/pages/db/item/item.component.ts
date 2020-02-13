@@ -666,9 +666,9 @@ export class ItemComponent extends TeamcraftPageComponent {
     );
   }
 
-  public createQuickList(item: SearchResult): void {
+  public createQuickList(item: SearchResult, amount: number): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', amount, item.addCrafts)
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {

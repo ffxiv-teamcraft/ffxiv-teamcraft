@@ -40,6 +40,14 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get removeDoneInInventorSynthesis(): boolean {
+    return this.getSetting('remove-done-in-synthesis', 'false') === 'true';
+  }
+
+  public set removeDoneInInventorSynthesis(remove: boolean) {
+    this.setSetting('remove-done-in-synthesis', remove.toString());
+  }
+
 
   public get preferredCopyType(): string {
     return this.getSetting('copy-type', 'classic');

@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px" class="display-container">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2px">
+    <ng-container *ngIf="equipmentPiece; else emptySlot">
+      <app-item-icon [itemId]="equipmentPiece.itemId" [hq]="equipmentPiece.hq" [width]="32 | ifMobile:24"></app-item-icon>
+      <div class="ilvl">{{'TOOLTIP.Ilvl' | translate}} {{equipmentPiece.itemId | ilvl}}</div>
+    </ng-container>
+    <ng-template #emptySlot>
+      <div class="empty-slot companion-svg" [innerHTML]="emptySlotIconUnicode"></div>
+    </ng-template>
+  </div>
+  <div fxLayout="column" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+      <ng-container *ngIf="equipmentPiece; else emptySlotName">
+        <div>{{equipmentPiece.itemId | itemName | i18n}}</div>
+        <img *ngIf="equipmentPiece.hq" alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
+      </ng-container>
+      <ng-template #emptySlotName>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
+    </div>
+    <div fxLayout="row" class="materias" *ngIf="equipmentPiece">
+      <app-materia-slot-icon *ngFor="let materia of equipmentPiece.materias; let i = index;"
+                             nz-tooltip
+                             [nzTitle]="materia === 0 ? null : materia | itemName | i18n"
+                             [equipmentPiece]="equipmentPiece"
+                             [index]="i"></app-materia-slot-icon>
+    </div>
+  </div>
+</div>

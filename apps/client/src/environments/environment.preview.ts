@@ -9,6 +9,7 @@ export const environment = {
   production: false,
   version: version,
   startTimestamp: Date.now(),
+  maxLevel: 80,
   firebase: {
     apiKey: 'AIzaSyAfpbw5Di3dJ3DHnkFpEh3Xea2JXfx5BTs',
     authDomain: 'ffxiv-teamcraft-canary.firebaseapp.com',

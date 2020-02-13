@@ -1,0 +1,106 @@
+:host ::ng-deep {
+  .ant-form-item-label {
+    line-height: 29px !important;
+  }
+
+  .ant-divider-horizontal {
+    margin: 0 !important;
+    color: #444 !important;
+    background: #444 !important;
+  }
+
+  .category-card {
+    .ant-card-body {
+      padding: 10px 0 0 0 !important;
+    }
+
+    .ant-card-head {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+  }
+}
+
+.page-title {
+  margin-bottom: 20px;
+}
+
+.job-icon {
+  font-size: 32px;
+  line-height: 32px;
+}
+
+.gearset-name {
+  font-size: 24px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.category-card {
+  &:not(.last):not(.full) {
+    padding-right: 5px;
+  }
+
+  &:not(.last):not(.full) {
+    padding-left: 5px;
+  }
+
+  &.full.first {
+    margin-bottom: 10px;
+  }
+}
+
+.input-min-max {
+  .min {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .input-splitter {
+    width: 28px;
+  }
+
+  .max {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.editor-container {
+  padding-bottom: 40px;
+}
+
+.stats-footer {
+  position: fixed;
+  height: 40px;
+  background: #292929;
+  border: 2px solid #aaa;
+  border-bottom: 0;
+  bottom: 0;
+  padding: 10px;
+
+  &.two-cols {
+    padding-left: 35px;
+  }
+}
+
+
+
+.item-stat-row {
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #444;
+  border-left: 1px solid #444;
+  text-overflow: ellipsis;
+
+  &.last {
+    border-right: none;
+  }
+
+  .has-bonus {
+    font-weight: bold;
+    color: var(--highlight-color);
+  }
+}

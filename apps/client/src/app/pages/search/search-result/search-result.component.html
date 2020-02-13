@@ -7,7 +7,7 @@
      fxLayoutGap="5px">
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div class="checkbox">
-      <label [(ngModel)]="row.selected" (ngModelChange)="selectChange.emit()"
+      <label [(ngModel)]="selected" (ngModelChange)="selectedChange.emit($event)"
              nz-checkbox></label>
     </div>
     <div class="avatar">

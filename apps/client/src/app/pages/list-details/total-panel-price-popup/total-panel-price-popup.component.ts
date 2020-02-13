@@ -55,9 +55,11 @@ export class TotalPanelPricePopupComponent implements OnInit {
         const trade = tradeSource.trades[0];
         const itemsPerTrade = trade.items.find(item => item.id === row.id).amount;
         this.getFilteredCurrencies(trade.currencies).forEach(currency => {
-          const costs = tradeSource.trades.sort((ta) => ta.items[0].hq ? 1 : -1).map(t => {
-            return Math.ceil(currency.amount * (row.amount - row.done) / itemsPerTrade);
-          });
+          const costs = tradeSource.trades
+            .sort((ta) => ta.items[0].hq ? 1 : -1)
+            .map(t => {
+              return Math.ceil(t.currencies.find(c => c.id === currency.id).amount * (row.amount - row.done) / itemsPerTrade);
+            });
 
           const tradeRow = result.find(r => r.currencyId === currency.id);
 
@@ -73,8 +75,8 @@ export class TotalPanelPricePopupComponent implements OnInit {
               })).length > 1
             });
           } else {
-            tradeRow.costs[0] += costs[0];
-            tradeRow.costs[1] += costs[1];
+            tradeRow.costs[0] = (tradeRow.costs[0] || 0) + costs[0];
+            tradeRow.costs[1] = (tradeRow.costs[1] || tradeRow.costs[0]) + costs[1];
           }
         });
       }

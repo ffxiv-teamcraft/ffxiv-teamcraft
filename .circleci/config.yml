@@ -2,10 +2,11 @@ defaults: &defaults
   working_directory: ~/ffxiv-teamcraft
   docker:
     - image: supamiu/circleci-node-wine
-  resource_class: medium+
 
 
-version: 2
+version: 2.1
+orbs:
+  win: circleci/windows@2.2.0
 jobs:
   setup:
     <<: *defaults
@@ -20,8 +21,6 @@ jobs:
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "package.json" }
-            - v2-deps-{ .Branch }
-            - v2-deps
       - run:
           name: Install local dependencies
           command: npm ci
@@ -73,7 +72,10 @@ jobs:
 
 
   build:
-    <<: *defaults
+    working_directory: ~/ffxiv-teamcraft
+    docker:
+      - image: supamiu/circleci-node-wine
+    resource_class: medium+
     steps:
       - attach_workspace:
           at: ~/
@@ -85,14 +87,10 @@ jobs:
             else
                 npm run build:beta
             fi
-      - save_cache:
-          key: dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
-          paths:
-            - dist
       - persist_to_workspace:
           root: ~/
           paths:
-            - ffxiv-teamcraft/*
+            - ffxiv-teamcraft/dist/*
             - .cache/*
 
 
@@ -128,14 +126,39 @@ jobs:
           name: Deploying functions
           command: ./node_modules/.bin/firebase deploy -P default --only functions --token "$FIREBASE_TOKEN"
 
-  deploy-desktop:
+  release-desktop:
+    executor: win/default
+    working_directory: ~/ffxiv-teamcraft
+    steps:
+      - attach_workspace:
+          at: ~/
+      - restore_cache:
+          keys:
+            - v2-deps-win-{ .Branch }-{ checksum "package.json" }
+      - run:
+          name: Reinstalling dependencies for windows
+          command: npm ci
+      - save_cache:
+          key: v2-deps-win-{ .Branch }-{ checksum "package.json" }
+          paths:
+            - ~/.cache
+            - ~/.npm
+      - run:
+          name: Deploying desktop on github
+          command: npm run electron:setup:publish
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ffxiv-teamcraft/release/*
+
+  deploy-desktop-update:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/
       - run:
-          name: Deploying desktop
-          command: npm run electron:setup:publish
+          name: Deploying desktop update
+          command: bash tools/desktop/deploy.sh
 
 
   deploy-staging:
@@ -191,9 +214,16 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy-desktop:
+      - release-desktop:
           requires:
-            - build
+            - lint
+            - test
+          filters:
+            branches:
+              only: master
+      - deploy-desktop-update:
+          requires:
+            - release-desktop
           filters:
             branches:
               only: master

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { UserService } from './user.service';
-import { ListStore } from './storage/list/list-store';
-import { FirestoreListStorage } from './storage/list/firestore-list-storage';
 import { CraftingRotationService } from './crafting-rotation/crafting-rotation.service';
 import { TeamService } from './team.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';

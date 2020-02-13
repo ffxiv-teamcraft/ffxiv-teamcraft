@@ -1,0 +1,33 @@
+.item-row {
+  padding: 10px;
+
+  &.selected {
+    background-color: var(--highlight-color-25);
+  }
+}
+
+.materias {
+  cursor: pointer;
+}
+
+.item-stat-row {
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #444;
+  border-left: 1px solid #444;
+  text-overflow: ellipsis;
+
+  &.last {
+    border-right: none;
+  }
+
+  .has-bonus {
+    font-weight: bold;
+    color: var(--highlight-color);
+  }
+}
+
+.ilvl {
+  opacity: .8;
+  font-size: 11px;
+}

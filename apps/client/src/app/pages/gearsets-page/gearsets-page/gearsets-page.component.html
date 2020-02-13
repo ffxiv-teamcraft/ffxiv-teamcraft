@@ -1,0 +1,72 @@
+<div fxLayout="row" fxLayoutGap="5px">
+  <button nz-button (click)="newFolder()">{{'FOLDERS.New_folder' | translate}}</button>
+  <button nz-button (click)="newGearset()">{{'GEARSETS.New_gearset' | translate}}</button>
+  <button nz-button (click)="importAriyalaGearset()">{{'GEARSETS.Import_from_ariyala' | translate}}</button>
+  <button nz-button (click)="importLodestoneGearset()">{{'GEARSETS.Import_from_lodestone' | translate}}</button>
+  <button nz-button (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
+</div>
+
+
+<ng-container *ngIf="userId$ | async as userId">
+  <ng-template #gearsetTemplate let-gearset>
+    <app-gearset-row [gearset]="gearset" [userId]="userId"></app-gearset-row>
+  </ng-template>
+  <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Your_gearsets' | translate"></nz-divider>
+  <div fxLayout="column" fxLayoutGap="10px" *ngIf="display$ | async as display">
+    <app-fullpage-message *ngIf="display.folders.length === 0 && display.root.length === 0" height="300px">
+      {{'GEARSETS.You_have_no_gearsets' | translate}}
+    </app-fullpage-message>
+    <div cdkDropList id="gearsets-root"
+         [cdkDropListEnterPredicate]="canDropGearset"
+         [cdkDropListConnectedTo]="dndConnections"
+         (cdkDropListDropped)="drop($event, display.root)"
+         class="gearsets-list"
+         fxLayout="column" fxLayoutGap="10px">
+      <div *ngFor="let gearset of display.root; trackBy: trackByKey" cdkDrag [cdkDragData]="gearset">
+        <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
+      </div>
+    </div>
+    <nz-divider nzOrientation="left" [nzText]="'FOLDERS.Your_folders' | translate"></nz-divider>
+    <div cdkDropList fxLayout="column" fxLayoutGap="10px"
+         id="folder-root"
+         (cdkDropListDropped)="dropFolder($event, display.folders)"
+         [cdkDropListConnectedTo]="dndConnections"
+         [cdkDropListEnterPredicate]="canDropFolder">
+      <div *ngFor="let folder of display.folders; let i = index;  trackBy: trackByKey"
+           cdkDrag [cdkDragData]="folder.folder">
+        <app-folder [display]="folder"
+                    [userId]="userId"
+                    [elementTemplate]="gearsetTemplate"
+                    [dndConnections]="dndConnections"
+                    folderPath="gearset-folder"
+                    id="folder-{{i}}"
+                    (connectDnD)="addDnDConnections($event)">
+        </app-folder>
+      </div>
+    </div>
+  </div>
+  <ng-container *ngIf="favoritesDisplay$ | async as favoritesDisplay">
+    <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Favorite_gearsets' | translate"></nz-divider>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <ng-container *ngIf="favoritesDisplay.root.length > 0">
+        <div class="gearsets-list" fxLayout="column" fxLayoutGap="10px">
+          <div *ngFor="let gearset of favoritesDisplay.root; trackBy: trackByKey">
+            <ng-container *ngTemplateOutlet="gearsetTemplate;context:{$implicit: gearset}"></ng-container>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="favoritesDisplay.folders.length > 0">
+        <nz-divider nzOrientation="left" [nzText]="'FOLDERS.Favorite_folders' | translate"></nz-divider>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div *ngFor="let folder of favoritesDisplay.folders; let i = index;  trackBy: trackByKey">
+            <app-folder [display]="folder"
+                        [userId]="userId"
+                        [elementTemplate]="gearsetTemplate"
+                        folderPath="gearset-folder">
+            </app-folder>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-container>
