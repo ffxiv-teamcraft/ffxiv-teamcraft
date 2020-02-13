@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "Flavien Normand <contact@flavien-normand.fr>",
-  "version": "7.0.0-beta.9",
+  "version": "6.5.12",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -56,8 +56,7 @@
       }
     },
     "squirrelWindows": {
-      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://update.ffxivteamcraft.com/"
+      "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico"
     }
   },
   "scripts": {
