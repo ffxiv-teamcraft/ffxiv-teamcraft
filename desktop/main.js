@@ -88,7 +88,8 @@ autoUpdater.on('update-downloaded', () => {
   }, (buttonIndex) => {
     if (buttonIndex === 0) {
       app.isQuitting = true;
-      app.quit()
+      app.relaunch();
+      app.exit(0);
     }
   });
 });
