@@ -47,7 +47,7 @@ function callUpdater(...args) {
 
 if (!isDev) {
   autoUpdater.setFeedURL({
-    url: `https://update.ffxivteamcraft.com/`
+    url: `https://update.electronjs.org/supamiu/ffxiv-teamcraft/${process.platform}/${app.getVersion()}`
   });
   const target = path.basename(process.execPath);
   callUpdater('--createShortcut', target);

@@ -6,6 +6,9 @@
   "version": "7.0.0-beta.9",
   "license": "MIT",
   "main": "desktop/main.js",
+  "repository": {
+    "url": "https://github.com/supamiu/ffxiv-teamcraft"
+  },
   "build": {
     "appId": "ffxiv-teamcraft",
     "forceCodeSigning": true,
@@ -57,7 +60,7 @@
     },
     "squirrelWindows": {
       "iconUrl": "https://cdn.ffxivteamcraft.com/favicon.ico",
-      "remoteReleases": "https://update.ffxivteamcraft.com/"
+      "remoteReleases": "https://github.com/supamiu/ffxiv-teamcraft/releases/download/latest"
     }
   },
   "scripts": {
