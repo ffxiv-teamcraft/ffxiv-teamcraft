@@ -86,6 +86,7 @@
                                           [canEquip]="canEquipSlot(category.name, gearset.chest?.itemId, gearset.legs?.itemId)"
                                           [item]="row.item"
                                           [gearset]="gearset"
+                                          [materias]="row.equipmentPiece.materias"
                                           [stats]="stats"
                                           (pieceChange)="$event?setGearsetPiece(gearset, category.property, row.equipmentPiece):setGearsetPiece(gearset, category.property, null)"
                                           (editMaterias)="editMaterias(gearset, category.property, row.equipmentPiece)"></app-gearset-editor-row>

@@ -18,7 +18,7 @@
                      [nzUnCheckedChildren]="'COMMON.Nq' | translate"></nz-switch>
         </div>
         <div fxLayout="row" (click)="triggerEditMaterias()" class="materias">
-          <app-materia-slot-icon *ngFor="let materia of equipmentPiece.materias; let i = index;"
+          <app-materia-slot-icon *ngFor="let materia of materias; let i = index;"
                                  nz-tooltip
                                  [nzTitle]="materia === 0 ? null : materia | itemName | i18n"
                                  [equipmentPiece]="equipmentPiece"

@@ -14,6 +14,9 @@ export class GearsetEditorRowComponent implements OnInit {
   gearset: TeamcraftGearset;
 
   @Input()
+  materias: number[];
+
+  @Input()
   property: string;
 
   @Input()
