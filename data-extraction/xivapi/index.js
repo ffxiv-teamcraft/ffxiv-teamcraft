@@ -1816,7 +1816,7 @@ if (hasTodo('races')) {
 
 if (hasTodo('foods')) {
   const foods = [];
-  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemAction.Type=844&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
+  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemSearchCategory.ID=45&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
     page.Results.forEach(entry => {
       foods.push(entry);
     });
