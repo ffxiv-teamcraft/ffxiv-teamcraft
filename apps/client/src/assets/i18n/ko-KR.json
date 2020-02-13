@@ -152,8 +152,8 @@
     "Average": "평균",
     "Hq": "HQ",
     "Nq": "NQ",
-    "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy"
+    "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
+    "Copy": "복사"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1588,7 +1588,7 @@
     "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
+    "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1713,8 +1713,8 @@
     "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버젼을 해당 링크에서 다운 받을 수 있습니다: "
   },
   "GEARSETS": {
-    "Title": "Gearsets",
-    "Rename_gearset": "Rename gearset",
+    "Title": "장비 세트",
+    "Rename_gearset": "장비세트 이름 변경",
     "View_gearset": "장비세트 보기",
     "Edit_gearset": "장비세트 수정",
     "generate_list": "목록 생성",
@@ -1771,15 +1771,15 @@
       "Wrists": "팔찌"
     },
     "COMPARISON": {
-      "Compare_popup_title": "Compare {{setName}} with...",
-      "Error_title": "Could not compare gearsets",
+      "Compare_popup_title": "{{setName}} 와 비교",
+      "Error_title": "장비세트를 비교할 수 없습니다",
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
       "Type": "Gearset type",
       "Ariyala": "An ariyala set",
       "External_gearset": "A Teamcraft gearset from someone else",
       "Personal_gearset": "One of your gearsets",
       "Paste_link_step_title": "Link to the gearset",
-      "Pick_your_gearset": "Pick your gearset",
+      "Pick_your_gearset": "장비 선택",
       "Submit": "비교",
       "Your_gearset": "내 장비",
       "Other_gearset": "다른 장비",
