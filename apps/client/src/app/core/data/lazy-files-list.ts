@@ -86,7 +86,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': 'foods.json',
-    'hashedFileName': 'foods.2320398959cb2d4b318f1ae468eaf87c40172b48.json',
+    'hashedFileName': 'foods.b953aadc88434083b7b214b229961646b45f2e6c.json',
     'propertyName': 'foods'
   },
   {

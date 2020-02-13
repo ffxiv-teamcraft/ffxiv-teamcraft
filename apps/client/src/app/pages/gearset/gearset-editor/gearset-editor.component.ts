@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
 import { distinctUntilChanged, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -220,9 +220,21 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               index: 12.1
             })));
           }
-          return prepared.sort((a, b) => {
-            return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
-          });
+          return prepared
+            .map(category => {
+              category.items = category.items.sort((a, b) => {
+                const aIlvl = this.lazyData.data.ilvls[a.equipmentPiece.itemId];
+                const bIlvl = this.lazyData.data.ilvls[b.equipmentPiece.itemId];
+                if (aIlvl === bIlvl) {
+                  return a.item.ID - b.item.Id;
+                }
+                return aIlvl - bIlvl;
+              });
+              return category;
+            })
+            .sort((a, b) => {
+              return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
+            });
         })
       );
     }),
@@ -283,7 +295,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private l12n: LocalizedDataService, private lazyData: LazyDataService,
               public translate: TranslateService, private dialog: NzModalService,
               private  materiasService: MateriaService, private statsService: StatsService,
-              private i18n: I18nToolsService, private ipc: IpcService, private router: Router) {
+              private i18n: I18nToolsService, private ipc: IpcService, private router: Router,
+              private cd: ChangeDetectorRef) {
     super();
     this.permissionLevel$.pipe(
       takeUntil(this.onDestroy$)
@@ -430,6 +443,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           this.setGearsetPiece(gearset, propertyName, res);
         } else if (!res) {
           Object.assign(equipmentPiece, clone);
+          this.cd.detectChanges();
         }
       });
   }

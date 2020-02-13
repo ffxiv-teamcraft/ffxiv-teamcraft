@@ -24,6 +24,8 @@ export class MateriasPopupComponent implements OnInit {
 
   materiaMenu: MateriaMenuEntry[] = [];
 
+  mobileEdit: number;
+
   constructor(private lazyData: LazyDataService, public materiasService: MateriaService,
               private modalRef: NzModalRef, private statsService: StatsService) {
   }
