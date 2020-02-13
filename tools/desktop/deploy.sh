@@ -2,6 +2,7 @@
 
 sudo apt-get install rsync
 
+mkdir ~/.ssh
 touch ~/.ssh/known_hosts
 
 ssh-keyscan -H ssh.ffxivteamcraft.com >> ~/.ssh/known_hosts

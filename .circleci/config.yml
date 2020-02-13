@@ -148,6 +148,7 @@ jobs:
           root: ~/
           paths:
             - ffxiv-teamcraft/release/*
+
   deploy-desktop-update:
     <<: *defaults
     steps:
