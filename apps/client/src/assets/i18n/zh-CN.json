@@ -1754,6 +1754,7 @@
     "You_have_no_gearsets": "You have no gearsets",
     "Favorite_gearsets": "Favorite gearsets",
     "Update_from_pcap": "Update using packet capture",
+    "Copy_as_text": "Copy this gearset as text",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
