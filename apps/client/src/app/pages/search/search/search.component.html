@@ -408,7 +408,7 @@
       <app-page-loader [loading]="loading">
         <app-search-result *ngFor="let row of results; trackBy: trackByItem; let odd = odd"
                            [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
-                           [selected]="row.selected"
+                           [(selected)]="row.selected"
                            (addItemsToList)="addItemsToList([row])"
                            (selectedChange)="updateAllSelected(results)"
                            (createQuickList)="createQuickList(row)"
