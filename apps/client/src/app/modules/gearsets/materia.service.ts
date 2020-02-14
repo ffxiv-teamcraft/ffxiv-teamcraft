@@ -99,7 +99,7 @@ export class MateriaService {
     return this.lazyData.dohdolMeldingRates[equipmentPiece.hq ? 'hq' : 'nq'][materia.tier - 1][overmeldSlot];
   }
 
-  getTotalNeededMaterias(gearset: TeamcraftGearset): { id: number, amount: number }[] {
+  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean): { id: number, amount: number }[] {
     const materias = [];
     Object.keys(gearset)
       .filter(key => gearset[key] && gearset[key].itemId !== undefined)
@@ -119,15 +119,29 @@ export class MateriaService {
               });
               materiaRow = materias[materias.length - 1];
             }
+            let overmeldChances = this.lazyData.dohdolMeldingRates[piece.hq ? 'hq' : 'nq'][materia.tier - 1][index - piece.materiaSlots];
             if (index < piece.materiaSlots) {
-              materiaRow.amount += 1;
-              return;
+              overmeldChances = 100;
             }
-            const overmeldChances = this.lazyData.dohdolMeldingRates[piece.hq ? 'hq' : 'nq'][materia.tier - 1][index - piece.materiaSlots];
             if (overmeldChances === 0) {
               return;
             }
-            materiaRow.amount += Math.ceil(1 / (overmeldChances / 100));
+            let amount = Math.ceil(1 / (overmeldChances / 100));
+            // If we're including all tools and it's a tool
+            if (includeAllTools && ['mainHand', 'offHand'].indexOf(key) > -1) {
+              // If DoH
+              if (gearset.job < 16) {
+                amount *= 8;
+              } else if (gearset.job < 19) {
+                if (key === 'mainHand') {
+                  amount *= 3;
+                } else {
+                  // You can't meld FSH's offhand
+                  amount *= 2;
+                }
+              }
+            }
+            materiaRow.amount += amount;
           });
       });
     return materias.sort((a, b) => {
