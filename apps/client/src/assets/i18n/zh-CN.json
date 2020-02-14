@@ -150,10 +150,10 @@
     "Minimum": "最小",
     "Maximum": "最大",
     "Average": "平均",
-    "Hq": "HQ",
-    "Nq": "NQ",
-    "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy"
+    "Hq": "高品质",
+    "Nq": "普通品质",
+    "Share_link_copied": "分享链接已复制到剪贴板",
+    "Copy": "复制"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -580,7 +580,7 @@
     "Autofill_notification_title": "物品已完成",
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
-    "Filter_items_done": "Ignore completed items",
+    "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "LAYOUT_DIALOG": {
       "Title": "布局",
@@ -981,7 +981,7 @@
       "Do_not_use_brand_without_name": "不要在没有“元素之美名”状态时使用“元素之印记”。",
       "Avoid_using_good_actions": "避免在宏中使用需要“高品质”状态的技能，因为你无法预测技能执行时物品的状态。",
       "Requires_reuse_to_proc": "您的循环需要触发“再利用”才能正常工作，请确保其在没有触发“再利用”时也能运行。",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Use_reuse": "您的手法达到了 100% 的品质，且有足够的制作力使用“再利用”。请考虑将其添加到手法中以节约素材。"
     }
   },
   "PRICING": {
@@ -1127,7 +1127,7 @@
     "New_update_available": "发现新版本！ ",
     "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "正在下载更新，完成后会提醒您进行安装"
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
@@ -1713,7 +1713,7 @@
     "Refresh_or_download_latest": "如果您正在使用网页版，请按 Ctrl + F5 强制刷新；如果您正在使用桌面应用，请在这里下载最新版本： "
   },
   "GEARSETS": {
-    "Title": "Gearsets",
+    "Title": "配装",
     "Rename_gearset": "Rename gearset",
     "View_gearset": "View gearset",
     "Edit_gearset": "Edit gearset",
