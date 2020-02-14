@@ -581,7 +581,7 @@
     "Autofill_notification_body": "{{itemName}} завершён для списка {{listName}}",
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Inventory_synthesis": "Анализ запасов в инвентаре",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
