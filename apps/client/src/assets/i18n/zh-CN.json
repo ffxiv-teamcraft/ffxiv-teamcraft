@@ -1755,6 +1755,8 @@
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
     "Copy_as_text": "复制为文本",
+    "Include_all_tools": "Include tools for the other jobs too",
+    "Use_in_simulator": "Use these stats in the simulator",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
