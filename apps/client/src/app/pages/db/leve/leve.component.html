@@ -9,8 +9,8 @@
           <img [src]="xivapiLeve.Icon | xivapiIcon" alt="{{xivapiLeve.ID | instanceName | i18n}}"
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 [innerHTML]="xivapiLeve | xivapiI18n" class="item-name"></h2>
-            <div *ngIf="xivapiLeve.JournalGenre" [innerHTML]="xivapiLeve.JournalGenre | xivapiI18n" class="item-kind">
+            <h2 [innerHTML]="xivapiLeve.ID | leveName | i18n" class="item-name"></h2>
+            <div *ngIf="xivapiLeve.JournalGenre" [innerHTML]="xivapiLeve.JournalGenre | xivapiL12n: 'journalGenre' | i18n" class="item-kind">
             </div>
             <div *ngIf="xivapiLeve.GamePatch" class="patch">
               {{xivapiLeve.GamePatch | xivapiL12n: 'patchs' | i18n}}

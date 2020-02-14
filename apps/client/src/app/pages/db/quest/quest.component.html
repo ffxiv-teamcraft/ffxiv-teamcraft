@@ -10,7 +10,7 @@
                class="img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiQuest.ID | questName | i18n}}</h2>
-            <div *ngIf="xivapiQuest.JournalGenre" class="item-kind">{{xivapiQuest.JournalGenre | xivapiI18n}}</div>
+            <div *ngIf="xivapiQuest.JournalGenre" class="item-kind">{{xivapiQuest.JournalGenre | xivapiL12n: 'journalGenre' | i18n}}</div>
             <div *ngIf="xivapiQuest.GamePatch" class="patch">
               {{xivapiQuest.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiQuest.GamePatch.ID" type="patch"></app-db-button>
