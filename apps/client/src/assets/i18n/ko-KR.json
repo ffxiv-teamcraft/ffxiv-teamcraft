@@ -1755,6 +1755,8 @@
     "Favorite_gearsets": "즐겨찾기 장비세트",
     "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
     "Copy_as_text": "현재 장비세트를 텍스트로 복사",
+    "Include_all_tools": "Include tools for the other jobs too",
+    "Use_in_simulator": "Use these stats in the simulator",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
