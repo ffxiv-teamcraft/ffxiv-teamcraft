@@ -54,7 +54,7 @@ export class GearsetComparatorService {
     ];
   }
 
-  public compare(a: TeamcraftGearset, b: TeamcraftGearset): GearsetsComparison {
+  public compare(a: TeamcraftGearset, b: TeamcraftGearset, includeAllTools: boolean): GearsetsComparison {
     const aStats = this.statsService.getStats(a, 80, 1);
     const bStats = this.statsService.getStats(b, 80, 1);
     if (this.statsService.getMainStat(a.job) !== this.statsService.getMainStat(b.job)) {
@@ -71,8 +71,8 @@ export class GearsetComparatorService {
       };
     });
 
-    const aMaterias = this.materiaService.getTotalNeededMaterias(a);
-    const bMaterias = this.materiaService.getTotalNeededMaterias(b);
+    const aMaterias = this.materiaService.getTotalNeededMaterias(a, includeAllTools);
+    const bMaterias = this.materiaService.getTotalNeededMaterias(b, includeAllTools);
 
     const materiasDiff = aMaterias.map(aMateria => {
       const bMateria = bMaterias.find(s => s.id === aMateria.id);

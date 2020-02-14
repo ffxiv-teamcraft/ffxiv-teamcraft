@@ -220,9 +220,21 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               index: 12.1
             })));
           }
-          return prepared.sort((a, b) => {
-            return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
-          });
+          return prepared
+            .map(category => {
+              category.items = category.items.sort((a, b) => {
+                const aIlvl = this.lazyData.data.ilvls[a.equipmentPiece.itemId];
+                const bIlvl = this.lazyData.data.ilvls[b.equipmentPiece.itemId];
+                if (aIlvl === bIlvl) {
+                  return b.item.ID - a.item.Id;
+                }
+                return aIlvl - bIlvl;
+              });
+              return category;
+            })
+            .sort((a, b) => {
+              return this.categoriesOrder.indexOf(a.name) - this.categoriesOrder.indexOf(b.name);
+            });
         })
       );
     }),
@@ -425,9 +437,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             ...this.materiaCache,
             [`${res.itemId}:${propertyName}`]: res.materias
           };
+          equipmentPiece.materias = [...res.materias];
         }
         if (res && gearset[propertyName] && gearset[propertyName].itemId === res.itemId) {
-          this.setGearsetPiece(gearset, propertyName, res);
+          this.setGearsetPiece(gearset, propertyName, { ...res });
         } else if (!res) {
           Object.assign(equipmentPiece, clone);
         }

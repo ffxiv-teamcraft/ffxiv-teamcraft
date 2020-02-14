@@ -1754,6 +1754,7 @@
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
     "Update_from_pcap": "Mettre à jour en utilisant la capture de paquets",
+    "Copy_as_text": "Copy this gearset as text",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",

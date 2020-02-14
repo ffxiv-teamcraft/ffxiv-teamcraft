@@ -39,6 +39,8 @@ export class GearsetComparatorPopupComponent {
 
   result: GearsetsComparison;
 
+  includeAllTools: boolean;
+
   constructor(private gearsetsFacade: GearsetsFacade, private comparator: GearsetComparatorService,
               private translate: TranslateService) {
     this.gearsetsFacade.loadAll();
@@ -70,7 +72,7 @@ export class GearsetComparatorPopupComponent {
               this.error = true;
             } else {
               try {
-                this.result = this.comparator.compare(this.gearset, gearsetFromAriyala);
+                this.result = this.comparator.compare(this.gearset, gearsetFromAriyala, this.includeAllTools);
               } catch (e) {
                 this.error = true;
                 this.loading = false;
@@ -80,7 +82,7 @@ export class GearsetComparatorPopupComponent {
           });
           break;
         case 'Personal_gearset':
-          this.result = this.comparator.compare(this.gearset, this.personalGearset);
+          this.result = this.comparator.compare(this.gearset, this.personalGearset, this.includeAllTools);
           this.loading = false;
           break;
         case 'External_gearset':
@@ -95,7 +97,7 @@ export class GearsetComparatorPopupComponent {
             if (gearset.notFound) {
               this.error = true;
             } else {
-              this.result = this.comparator.compare(this.gearset, gearset);
+              this.result = this.comparator.compare(this.gearset, gearset, this.includeAllTools);
             }
             this.loading = false;
           });

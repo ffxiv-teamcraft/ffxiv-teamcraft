@@ -1,4 +1,7 @@
-<div fxLayout="row" fxLayoutAlign="center center" *ngIf="totalNeeded.length > 0">
+<div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center" *ngIf="totalNeeded.length > 0">
+  <label nz-checkbox *ngIf="!gearset.isCombatSet()" [(nzChecked)]="includeAllTools" (nzCheckedChange)="computeRequirements()">
+    {{'GEARSETS.Include_all_tools' | translate}}
+  </label>
   <table>
     <thead>
     <tr>

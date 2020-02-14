@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.1"></a>
+## [7.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.0...v7.0.1) (2020-02-14)
+
+
+### Bug Fixes
+
+* **desktop:** firewall permissions are now applied on app startup ([48c822f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/48c822f))
+* **gearsets:** fixed an issue with foods not being listed ([8acaf6f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8acaf6f))
+* **pcap:** fixed an issue with outdated inventory popup showing in overlays ([fe275cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe275cb))
+* **search:** fixed a bug with selection checkboxes not adding items to a list ([30394a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30394a1))
+* **ux:** various UX fixes for gearset editor ([753aea1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/753aea1))
+
+
+### Features
+
+* **gearsets:** added a checkbox to include all tools for DoH and DoL sets ([598f3c1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/598f3c1))
+
+
+
 <a name="7.0.0"></a>
 # [7.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v6.5.12...v7.0.0) (2020-02-13)
 

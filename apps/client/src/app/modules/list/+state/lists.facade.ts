@@ -37,6 +37,7 @@ import { Team } from '../../../model/team/team';
 import { SettingsService } from '../../settings/settings.service';
 import { environment } from '../../../../environments/environment';
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
+import { NavigationEnd, Router } from '@angular/router';
 
 declare const gtag: Function;
 
@@ -165,8 +166,22 @@ export class ListsFacade {
 
   completionNotificationEnabled$ = this.store.select(listsQuery.getCompletionNotificationEnabled);
 
+  private overlay: boolean;
+
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade) {
+              private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade,
+              private router: Router) {
+    router.events
+      .pipe(
+        distinctUntilChanged((previous: any, current: any) => {
+          if (current instanceof NavigationEnd) {
+            return previous.url === current.url;
+          }
+          return true;
+        })
+      ).subscribe((event: any) => {
+      this.overlay = event.url.indexOf('?overlay') > -1;
+    });
   }
 
   getTeamLists(team: Team): Observable<List[]> {
@@ -271,7 +286,7 @@ export class ListsFacade {
 
   toggleAutocomplete(newValue: boolean): void {
     this.store.dispatch(new ToggleAutocompletion(newValue));
-    if (newValue) {
+    if (newValue && !this.overlay) {
       this.userInventoryService.inventory$.pipe(
         first(),
         filter((inventory) => {

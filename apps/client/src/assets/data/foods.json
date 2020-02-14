@@ -3223,12 +3223,6 @@
     "LevelItem": 110
   },
   {
-    "Bonuses": null,
-    "ID": 9516,
-    "LevelEquip": 1,
-    "LevelItem": 90
-  },
-  {
     "Bonuses": {
       "Control": {
         "ID": 71,
@@ -4098,12 +4092,6 @@
       }
     },
     "ID": 12870,
-    "LevelEquip": 1,
-    "LevelItem": 160
-  },
-  {
-    "Bonuses": null,
-    "ID": 13595,
     "LevelEquip": 1,
     "LevelItem": 160
   },

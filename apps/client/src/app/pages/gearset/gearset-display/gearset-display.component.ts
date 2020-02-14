@@ -85,6 +85,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   userId$: Observable<string> = this.authFacade.userId$;
 
+  includeAllTools = localStorage.getItem('gearsets:include-all-tools') === 'true';
+
   constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
               public translate: TranslateService, private statsService: StatsService,
               private dialog: NzModalService, private materiaService: MateriaService,
@@ -127,7 +129,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       nzTitle: this.translate.instant('GEARSETS.COMPARISON.Compare_popup_title', { setName: gearset.name }),
       nzContent: GearsetComparatorPopupComponent,
       nzComponentParams: {
-        gearset: gearset
+        gearset: gearset,
+        includeAllTools: this.includeAllTools
       },
       nzFooter: null
     });
@@ -148,7 +151,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
         amount: 1
       };
     });
-    items.push(...this.materiaService.getTotalNeededMaterias(gearset));
+    items.push(...this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools));
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
