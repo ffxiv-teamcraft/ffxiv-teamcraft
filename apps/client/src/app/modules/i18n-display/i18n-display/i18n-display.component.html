@@ -1,0 +1,4 @@
+<div *ngFor="let lang of languages" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+  <img [alt]="lang.key | uppercase" class="language-flag" src="./assets/icons/{{lang.icon}}.png">
+  <div [innerHTML]="getValue(lang) | xivUIText"></div>
+</div>

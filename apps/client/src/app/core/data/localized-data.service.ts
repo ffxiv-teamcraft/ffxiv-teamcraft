@@ -267,7 +267,7 @@ export class LocalizedDataService {
     return row;
   }
 
-  private guessExtendedLanguageKeys(key: keyof LazyData) {
+  guessExtendedLanguageKeys(key: keyof LazyData) {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
       koKey: this.guessExtendedLanguageKey('ko', key)
@@ -283,7 +283,7 @@ export class LocalizedDataService {
     return guessKey as keyof LazyData;
   }
 
-  private tryFillExtendedLanguage(row: I18nName, id: number | string, { zhKey, koKey }: ExtendedLanguageKeys = {}): void {
+  tryFillExtendedLanguage(row: I18nName, id: number | string, { zhKey, koKey }: ExtendedLanguageKeys = {}): void {
     if (row === undefined) return;
 
     // If an item doesn't exist yet inside zh and ko items, use english name instead.

@@ -29,24 +29,8 @@
       <div fxFlex="1 1 auto">
         <p *ngIf="action.Description" [innerHTML]="action | xivapiI18n: 'Description' | xivUIText"></p>
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{action.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{action.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{action.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{action.Name_ja}}</div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="action | xivapiL12n: 'actions'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div *ngIf="action.Cast100ms" class="details-block">

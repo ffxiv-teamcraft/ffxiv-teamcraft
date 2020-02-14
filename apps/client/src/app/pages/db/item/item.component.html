@@ -60,24 +60,8 @@
                     type="audio/ogg">
           </audio>
         </div>
-        <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-            <div>{{xivapiItem.Name_en}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-            <div>{{xivapiItem.Name_de}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-            <div>{{xivapiItem.Name_fr}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-            <div>{{xivapiItem.Name_ja}}</div>
-          </div>
-        </div>
+        <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+             [value]="xivapiItem | xivapiL12n: 'items'"></app-i18n-display>
       </div>
       <div class="details-container" fxLayout="column">
         <div class="main-attributes details" fxLayout="row wrap" fxLayoutGap="5px">

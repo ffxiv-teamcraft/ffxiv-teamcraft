@@ -21,6 +21,7 @@ import { TeamcraftLinkPipe } from './pipes/teamcraft-link.pipe';
 import { FfxivgardeningPipe } from './pipes/ffxivgardening.pipe';
 import { NodeTypeNamePipe } from './pipes/node-type-name';
 import { XivapiI18nPipe } from './pipes/xivapi-i18n.pipe';
+import { XivapiL12nPipe } from './pipes/xivapi-l12n.pipe';
 import { WeatherNamePipe } from './pipes/weather-name.pipe';
 import { WeatherIconPipe } from './pipes/weather-icon.pipe';
 import { ActionNamePipe } from './pipes/action-name.pipe';
@@ -89,6 +90,7 @@ import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
     TeamcraftLinkPipe,
     FfxivgardeningPipe,
     XivapiI18nPipe,
+    XivapiL12nPipe,
     WeatherNamePipe,
     WeatherIconPipe,
     CustomItemNamePipe,
@@ -155,6 +157,7 @@ import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
     TeamcraftLinkPipe,
     FfxivgardeningPipe,
     XivapiI18nPipe,
+    XivapiL12nPipe,
     WeatherNamePipe,
     WeatherIconPipe,
     CustomItemNamePipe,
