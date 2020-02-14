@@ -10,8 +10,8 @@
             <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
             <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
               <h2 [appItemRarity]="xivapiItem.ID" class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
-              <div *ngIf="xivapiItem.ItemKind" class="item-kind">{{xivapiItem.ItemKind | xivapiI18n}}
-                <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span>
+              <div *ngIf="xivapiItem.ItemKind" class="item-kind">{{xivapiItem.ItemKind | xivapiL12n: 'ItemKinds' | i18n}}
+                <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiL12n: 'ItemSearchCategories' | i18n}}</span>
               </div>
               <div *ngIf="xivapiItem.GamePatch" class="patch">
                 {{xivapiItem.GamePatch | xivapiL12n: 'patchs' | i18n}}

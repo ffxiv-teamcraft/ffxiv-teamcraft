@@ -5,7 +5,7 @@
     </div>
     <div class="name" fxLayout="column">
       <span [appItemRarity]="item.ID">{{item | xivapiI18n}}</span>
-      <span *ngIf="item.ItemKind" class="item-kind">{{item.ItemKind | xivapiI18n}} <span
+      <span *ngIf="item.ItemKind" class="item-kind">{{item.ItemKind | xivapiL12n: 'ItemKinds' | i18n}} <span
         *ngIf="item.ItemSearchCategory">> {{item.ItemSearchCategory | xivapiI18n}}</span></span>
       <i class="db-tip">{{'DB.Click_to_navigate' | translate}}</i>
     </div>
