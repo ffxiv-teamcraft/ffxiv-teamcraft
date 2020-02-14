@@ -226,7 +226,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
                 const aIlvl = this.lazyData.data.ilvls[a.equipmentPiece.itemId];
                 const bIlvl = this.lazyData.data.ilvls[b.equipmentPiece.itemId];
                 if (aIlvl === bIlvl) {
-                  return a.item.ID - b.item.Id;
+                  return b.item.ID - a.item.Id;
                 }
                 return aIlvl - bIlvl;
               });
