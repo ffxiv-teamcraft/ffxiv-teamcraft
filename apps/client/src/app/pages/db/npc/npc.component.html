@@ -14,7 +14,7 @@
               <span *ngIf="xivapiNpc.Title" [innerHTML]="xivapiNpc | xivapiI18n: 'Title' | xivUIText"></span>
             </div>
             <div *ngIf="xivapiNpc.GamePatch" class="patch">
-              {{xivapiNpc.GamePatch | xivapiI18n}}
+              {{xivapiNpc.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiNpc.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

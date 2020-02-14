@@ -6,10 +6,10 @@
          fxLayoutAlign="space-between" fxLayoutGap="10px">
       <div class="icon-block" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px">
-        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiI18n}}"
+        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiL12n: 'patchs' | i18n}}"
              class="patch-banner" fxFlex="0 0 auto">
         <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-          <h2 class="item-name">{{patch | xivapiI18n}}</h2>
+          <h2 class="item-name">{{patch | xivapiL12n: 'patchs' | i18n}}</h2>
         </div>
       </div>
     </div>

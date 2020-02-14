@@ -14,7 +14,7 @@
                 <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span>
               </div>
               <div *ngIf="xivapiItem.GamePatch" class="patch">
-                {{xivapiItem.GamePatch | xivapiI18n}}
+                {{xivapiItem.GamePatch | xivapiL12n: 'patchs' | i18n}}
                 <app-db-button [id]="xivapiItem.GamePatch.ID" type="patch"></app-db-button>
               </div>
             </div>

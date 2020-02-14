@@ -11,7 +11,7 @@
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiFate | xivapiI18n}}</h2>
             <div *ngIf="xivapiFate.GamePatch" class="patch">
-              {{xivapiFate.GamePatch | xivapiI18n}}
+              {{xivapiFate.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiFate.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

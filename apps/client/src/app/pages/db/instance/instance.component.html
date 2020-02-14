@@ -14,7 +14,7 @@
               {{xivapiInstance.ContentType | xivapiI18n}}
             </div>
             <div *ngIf="xivapiInstance.GamePatch" class="patch">
-              {{xivapiInstance.GamePatch | xivapiI18n}}
+              {{xivapiInstance.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiInstance.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

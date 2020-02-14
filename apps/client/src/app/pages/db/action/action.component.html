@@ -14,7 +14,7 @@
               <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiI18n"></div>
             </div>
             <div *ngIf="action.GamePatch" class="patch">
-              {{action.GamePatch | xivapiI18n}}
+              {{action.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="action.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

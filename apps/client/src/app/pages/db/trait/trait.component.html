@@ -13,7 +13,7 @@
               <div [innerHTML]="trait.ClassJob | xivapiI18n: 'Abbreviation'"></div>
             </div>
             <div *ngIf="trait.GamePatch" class="patch">
-              {{trait.GamePatch | xivapiI18n}}
+              {{trait.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="trait.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

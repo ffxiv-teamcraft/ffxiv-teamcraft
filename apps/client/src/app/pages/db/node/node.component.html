@@ -19,7 +19,7 @@
               [innerHTML]="xivapiNode.GatheringType | xivapiI18n"></span>
             </div>
             <div *ngIf="xivapiNode.GamePatch" class="patch">
-              {{xivapiNode.GamePatch | xivapiI18n}}
+              {{xivapiNode.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiNode.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

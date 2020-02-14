@@ -9,7 +9,7 @@
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{status | xivapiI18n}}</h2>
             <div *ngIf="status.GamePatch" class="patch">
-              {{status.GamePatch | xivapiI18n}}
+              {{status.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="status.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

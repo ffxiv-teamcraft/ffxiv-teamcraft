@@ -13,7 +13,7 @@
             <div *ngIf="xivapiLeve.JournalGenre" [innerHTML]="xivapiLeve.JournalGenre | xivapiI18n" class="item-kind">
             </div>
             <div *ngIf="xivapiLeve.GamePatch" class="patch">
-              {{xivapiLeve.GamePatch | xivapiI18n}}
+              {{xivapiLeve.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiLeve.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
