@@ -9,6 +9,7 @@ import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
 import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
+import { Npc } from '../../pages/db/model/npc/npc';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
@@ -60,8 +61,8 @@ export class LocalizedDataService {
     return row;
   }
 
-  public getNpc(id: number): I18nName {
-    return this.getRowWithExtendedLanguage('npcs', id);
+  public getNpc(id: number): Npc {
+    return this.getRowWithExtendedLanguage<Npc>('npcs', id);
   }
 
   public getLeve(id: number): I18nName {
@@ -256,8 +257,8 @@ export class LocalizedDataService {
     return array[id];
   }
 
-  private getRowWithExtendedLanguage(key: keyof LazyData, id: number | string): I18nName {
-    const row = this.getRow<I18nName>(this.lazyData.data[key], id);
+  private getRowWithExtendedLanguage<T extends I18nName = I18nName>(key: keyof LazyData, id: number | string): T {
+    const row = this.getRow<T>(this.lazyData.data[key], id);
     if (row === undefined) {
       return undefined;
     }
