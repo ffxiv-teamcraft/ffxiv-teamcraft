@@ -1750,7 +1750,7 @@
     "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
-    "Clone_gearset": "Copy this on your account",
+    "Clone_gearset": "将此配装复制到您的账号",
     "You_have_no_gearsets": "没有配装",
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
@@ -1785,7 +1785,7 @@
       "Your_gearset": "您的配装",
       "Other_gearset": "其他配装",
       "Diff": "差异",
-      "Avg_melding_chances": "Avg. overmeld chances"
+      "Avg_melding_chances": "平均禁忌镶嵌成功率"
     }
   },
   "FOLDERS": {
