@@ -90,6 +90,7 @@ export interface LazyData {
   zhActionCategories: any;
   zhActionDescriptions: any;
   zhActions: any;
+  zhBaseParams: any;
   zhContentTypes: any;
   zhCraftActions: any;
   zhCraftDescriptions: any;
@@ -98,6 +99,8 @@ export interface LazyData {
   zhGatheringBonuses: any;
   zhInstanceDescriptions: any;
   zhInstances: any;
+  zhItemDescriptions: any;
+  zhItemKinds: any;
   zhItemSearchCategories: any;
   zhItemUiCategories: any;
   zhItems: any;
@@ -111,14 +114,17 @@ export interface LazyData {
   zhMobs: any;
   zhNpcTitles: any;
   zhNpcs: any;
+  zhPatchs: any;
   zhPlaces: any;
   zhQuestDescriptions: any;
   zhQuests: any;
+  zhRaces: any;
   zhShops: any;
   zhStatusDescriptions: any;
   zhStatuses: any;
   zhTraitDescriptions: any;
   zhTraits: any;
+  zhTribes: any;
   zhTripleTriadRuleDescriptions: any;
   zhTripleTriadRules: any;
   zhWeathers: any;

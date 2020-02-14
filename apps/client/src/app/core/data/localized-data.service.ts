@@ -122,7 +122,7 @@ export class LocalizedDataService {
       ja: lazyRow.Name_ja,
       fr: lazyRow.Name_fr
     };
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'tribes', koKey: 'tribes' });
+    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhTribes', koKey: 'tribes' });
     return row;
   }
 
@@ -141,7 +141,7 @@ export class LocalizedDataService {
       ja: lazyRow.Name_ja,
       fr: lazyRow.Name_fr
     };
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'baseParams', koKey: 'baseParams' });
+    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhBaseParams', koKey: 'baseParams' });
 
     return row;
   }
