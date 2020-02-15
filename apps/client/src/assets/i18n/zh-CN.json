@@ -779,7 +779,7 @@
   },
   "SIMULATOR": {
     "Title": "生产模拟器",
-    "Include_stats": "Include stats",
+    "Include_stats": "包含属性值",
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
     "Break_on_reclaim": "在无法使用回收前拆分宏",
