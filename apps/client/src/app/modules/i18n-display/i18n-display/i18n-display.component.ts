@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
 import { I18nName } from '../../../model/common/i18n-name';
 
 @Component({
@@ -7,7 +7,7 @@ import { I18nName } from '../../../model/common/i18n-name';
   styleUrls: ['./i18n-display.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class I18nDisplayComponent {
+export class I18nDisplayComponent implements OnChanges {
 
   /**
    * I18nName to display
