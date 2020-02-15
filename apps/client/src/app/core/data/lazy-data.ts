@@ -91,6 +91,7 @@ export interface LazyData {
   zhActionDescriptions: any;
   zhActions: any;
   zhBaseParams: any;
+  zhBeastReputationRanks: any;
   zhContentTypes: any;
   zhCraftActions: any;
   zhCraftDescriptions: any;

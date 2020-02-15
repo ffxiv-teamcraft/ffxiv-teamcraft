@@ -460,6 +460,11 @@ export const lazyFilesList = [
     'propertyName': 'zhBaseParams'
   },
   {
+    'fileName': '/zh/zh-beast-reputation-ranks.json',
+    'hashedFileName': '/zh/zh-beast-reputation-ranks.6fd351ffa1946f9191d608250d609b57ec2b9f49.json',
+    'propertyName': 'zhBeastReputationRanks'
+  },
+  {
     'fileName': '/zh/zh-content-types.json',
     'hashedFileName': '/zh/zh-content-types.fa07e52ce7b68543e7976b6391deda07f9bc8f5c.json',
     'propertyName': 'zhContentTypes'
