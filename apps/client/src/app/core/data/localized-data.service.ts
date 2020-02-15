@@ -38,6 +38,10 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('instances', id);
   }
 
+  public getAchievementName(id: number): I18nName {
+    return this.getRowWithExtendedLanguage('achievements', id);
+  }
+
   public getMapName(id: number): any {
     const entry = mapIds.find(m => m.id === id);
     return this.getPlace(entry ? entry.zone : 1);
