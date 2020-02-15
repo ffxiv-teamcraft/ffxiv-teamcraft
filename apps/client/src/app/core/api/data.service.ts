@@ -219,7 +219,9 @@ export class DataService {
       ).pipe(
         map(items => {
           return items.Results.filter(item => {
-            const matchesRecipeFilter = onlyCraftable ? item.Recipes.length > 0 : true;
+            if (!onlyCraftable) return true;
+            
+            const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
             return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
               switch (filter.operator) {
                 case '>=':
