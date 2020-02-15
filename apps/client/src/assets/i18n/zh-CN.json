@@ -1668,7 +1668,7 @@
   },
   "INVENTORY": {
     "Title": "物品栏",
-    "Empty": "清空物品栏",
+    "Empty": "物品栏为空",
     "Estimate_total_price": "估计物品栏总价格",
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Copied_to_clipboard": "物品栏已复制到剪贴板",
