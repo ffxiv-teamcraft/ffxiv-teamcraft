@@ -6,10 +6,10 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{xivapiFate | xivapiI18n}}"
+          <img [src]="xivapiFate.IconMap | xivapiIcon" alt="{{(xivapiFate.ID | fate).name | i18n}}"
                class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiFate | xivapiI18n}}</h2>
+            <h2 class="item-name">{{(xivapiFate.ID | fate).name | i18n}}</h2>
             <div *ngIf="xivapiFate.GamePatch" class="patch">
               {{xivapiFate.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiFate.GamePatch.ID" type="patch"></app-db-button>
