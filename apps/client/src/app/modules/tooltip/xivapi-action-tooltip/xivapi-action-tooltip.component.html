@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="description">
-    <span [innerHtml]="action | xivapiI18n: 'Description' | xivUIText"></span>
+    <span [innerHtml]="action | xivapiL12n: 'actionDescriptions':'Description' | i18n | xivUIText"></span>
   </div>
   <div class="details">
     <div *ngFor="let row of details" nz-row nzGutter="10">
@@ -22,7 +22,7 @@
           {{row.value}}
         </p>
         <p *ngIf="row.requiresPipe" class="detail-value">
-          {{row.value | xivapiI18n}}
+          {{row.value | i18n}}
         </p>
       </div>
     </div>

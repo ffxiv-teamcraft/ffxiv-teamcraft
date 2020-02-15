@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -7,6 +8,9 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class XivapiActionTooltipComponent implements OnInit {
+
+  constructor(private l12n: LocalizedDataService) {
+  }
 
   @Input() action: any;
 
@@ -17,12 +21,12 @@ export class XivapiActionTooltipComponent implements OnInit {
       this.details = [
         { name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false },
         { name: 'TOOLTIP.Cost', value: this.action.PrimaryCostValue.toString(), requiresPipe: false },
-        { name: 'TOOLTIP.Class_job', value: this.action.ClassJobCategory, requiresPipe: true }
+        { name: 'TOOLTIP.Class_job', value: this.l12n.xivapiToI18n(this.action.ClassJobCategory, 'jobCategories'), requiresPipe: true }
       ];
     } else {
       this.details = [
         { name: 'TOOLTIP.Level', value: this.action.ClassJobLevel.toString(), requiresPipe: false },
-        { name: 'TOOLTIP.Class_job', value: this.action.ClassJobCategory, requiresPipe: true }
+        { name: 'TOOLTIP.Class_job', value: this.l12n.xivapiToI18n(this.action.ClassJobCategory, 'jobCategories'), requiresPipe: true }
       ];
     }
   }
