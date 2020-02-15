@@ -15,6 +15,7 @@ import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
 import { ExtendedLanguageKeys } from './extended-language-keys';
 import { LazyData } from './lazy-data';
+import { Trait } from '../../pages/db/model/trait/trait';
 
 @Injectable()
 export class LocalizedDataService {
@@ -107,8 +108,13 @@ export class LocalizedDataService {
     return row;
   }
 
-  public getTrait(id: number): any {
-    return this.getRowWithExtendedLanguage('traits', id);
+  public getTrait(id: number): Trait {
+    const row = this.getRowWithExtendedLanguage<Trait>('traits', id);
+    if (row && row.description) {
+      this.tryFillExtendedLanguage(row.description, id, { zhKey: 'zhTraitDescriptions', koKey: 'koTraitDescriptions' })
+    }
+
+    return row;
   }
 
   public getRaceName(id: number): any {
