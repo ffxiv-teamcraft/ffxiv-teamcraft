@@ -32,11 +32,12 @@ output('gathering-bonuses', db('GatheringPointBonus', false).toObject(row => {
     bonus: {
       zh: db('GatheringPointBonusType', null, true).findById(row.BonusType).Text
     },
-    Condition: {
+    condition: {
       zh: db('GatheringCondition', null, true).findById(row.Condition).Text
     }
   } : undefined
 }))
+output('gathering-types', db('GatheringType').simpleObject('Name'))
 output('instance-descriptions', db('ContentFinderCondition')
   .reduce((obj, row) => {
     if (!obj[row.Content] && row.Name && row.ContentLinkType !== '4') {

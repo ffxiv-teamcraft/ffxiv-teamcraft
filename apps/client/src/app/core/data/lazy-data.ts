@@ -97,6 +97,7 @@ export interface LazyData {
   zhFates: any;
   zhFreeCompanyActions: any;
   zhGatheringBonuses: any;
+  zhGatheringTypes: any;
   zhInstanceDescriptions: any;
   zhInstances: any;
   zhItemDescriptions: any;

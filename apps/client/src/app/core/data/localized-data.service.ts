@@ -304,7 +304,7 @@ export class LocalizedDataService {
     }
   }
 
-  public xivapiToI18n(value: any, key: any, fieldName = 'Name') {
+  public xivapiToI18n(value: any, key: any, fieldName = 'Name'): I18nName {
     const row = {
       en: value[`${fieldName}_en`],
       fr: value[`${fieldName}_fr`],
@@ -312,7 +312,9 @@ export class LocalizedDataService {
       ja: value[`${fieldName}_ja`],
     };
     
-    this.tryFillExtendedLanguage(row, value.ID, this.guessExtendedLanguageKeys(key));
+    if (key !== null) {
+      this.tryFillExtendedLanguage(row, value.ID, this.guessExtendedLanguageKeys(key));
+    }
     return row;
   }
 

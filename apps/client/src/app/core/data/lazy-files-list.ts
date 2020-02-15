@@ -486,8 +486,13 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/zh/zh-gathering-bonuses.json',
-    'hashedFileName': '/zh/zh-gathering-bonuses.e159c81e3556665c84bd801b42908adb35a85bcc.json',
+    'hashedFileName': '/zh/zh-gathering-bonuses.c5ac9bed341ef04d2fdfc2d96e955c352082258a.json',
     'propertyName': 'zhGatheringBonuses'
+  },
+  {
+    'fileName': '/zh/zh-gathering-types.json',
+    'hashedFileName': '/zh/zh-gathering-types.83251e713d1d7c04c0c7a4803e89c0a4264d5755.json',
+    'propertyName': 'zhGatheringTypes'
   },
   {
     'fileName': '/zh/zh-instance-descriptions.json',
@@ -601,7 +606,7 @@ export const lazyFilesList = [
   },
   {
     'fileName': '/zh/zh-shops.json',
-    'hashedFileName': '/zh/zh-shops.46d7baced8714cb020203802824a828103e1a411.json',
+    'hashedFileName': '/zh/zh-shops.038caf26eb3c3af3a1e3bf183c3cbc2b53772931.json',
     'propertyName': 'zhShops'
   },
   {
