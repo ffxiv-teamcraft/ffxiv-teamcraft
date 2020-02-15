@@ -100,7 +100,7 @@ output('quest-descriptions', db('Quest').toObject(row => {
 }))
 output('quests', db('Quest').simpleObject('Name'))
 output('races', db('Race').simpleObject('Masculine'))
-output('shops', db('SpecialShop').simpleObject('Name'))
+output('shops', Object.assign(db('GilShop').simpleObject('Name'), db('SpecialShop').simpleObject('Name')))
 output('status-descriptions', db('Status').simpleObject('Description'))
 output('statuses', db('Status').simpleObject('Name'))
 output('trait-descriptions', db('TraitTransient').simpleObject('Description'))
