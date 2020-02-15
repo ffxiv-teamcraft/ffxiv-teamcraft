@@ -163,12 +163,12 @@ export class NpcComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(npc: any): string {
-    return npc[`Title_${this.translate.currentLang}`] || npc.Title_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title'));
   }
 
-  private getName(item: any): string {
+  private getName(npc: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(npc, 'npcs'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
