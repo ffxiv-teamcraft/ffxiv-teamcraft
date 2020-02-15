@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -7,6 +8,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class XivapiItemTooltipComponent implements OnInit {
+
+  constructor(private l12n: LocalizedDataService) {}
 
   @Input() item: any;
 
@@ -64,7 +67,7 @@ export class XivapiItemTooltipComponent implements OnInit {
       .map(key => {
         const statIndex = key.match(/(\d+)/)[0];
         const res: any = {
-          name: this.item[key],
+          name: this.l12n.xivapiToI18n(this.item[key], 'baseParams'),
           value: this.item[`BaseParamValue${statIndex}`],
           requiresPipe: true
         };
@@ -94,7 +97,7 @@ export class XivapiItemTooltipComponent implements OnInit {
         const max = food[`Max${i}`];
         const maxHq = food[`MaxHQ${i}`];
         if (value > 0) {
-          statsEntry.name = food[`BaseParam${i}`];
+          statsEntry.name = this.l12n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
           statsEntry.requiresPipe = true;
           if (isRelative) {
             statsEntry.value = `${value}% (${max})`;

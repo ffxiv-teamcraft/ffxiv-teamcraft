@@ -11,14 +11,6 @@ export class XivapiL12nPipe implements PipeTransform {
   }
 
   transform(value: any, key: any, fieldName = 'Name'): I18nName {
-    const row = {
-      en: value[`${fieldName}_en`],
-      fr: value[`${fieldName}_fr`],
-      de: value[`${fieldName}_de`],
-      ja: value[`${fieldName}_ja`],
-    };
-    
-    this.l12n.tryFillExtendedLanguage(row, value.ID, this.l12n.guessExtendedLanguageKeys(key));
-    return row;
+    return this.l12n.xivapiToI18n(value, key, fieldName);
   }
 }

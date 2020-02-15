@@ -267,7 +267,7 @@ export class LocalizedDataService {
     return row;
   }
 
-  guessExtendedLanguageKeys(key: keyof LazyData) {
+  private guessExtendedLanguageKeys(key: keyof LazyData) {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
       koKey: this.guessExtendedLanguageKey('ko', key)
@@ -283,7 +283,7 @@ export class LocalizedDataService {
     return guessKey as keyof LazyData;
   }
 
-  tryFillExtendedLanguage(row: I18nName, id: number | string, { zhKey, koKey }: ExtendedLanguageKeys = {}): void {
+  private tryFillExtendedLanguage(row: I18nName, id: number | string, { zhKey, koKey }: ExtendedLanguageKeys = {}): void {
     if (row === undefined) return;
 
     // If an item doesn't exist yet inside zh and ko items, use english name instead.
@@ -296,6 +296,18 @@ export class LocalizedDataService {
       const koRow = this.getRow(this.lazyData.data[koKey], id);
       row.ko = koRow !== undefined ? koRow.ko : row.en;
     }
+  }
+
+  public xivapiToI18n(value: any, key: any, fieldName = 'Name') {
+    const row = {
+      en: value[`${fieldName}_en`],
+      fr: value[`${fieldName}_fr`],
+      de: value[`${fieldName}_de`],
+      ja: value[`${fieldName}_ja`],
+    };
+    
+    this.tryFillExtendedLanguage(row, value.ID, this.guessExtendedLanguageKeys(key));
+    return row;
   }
 
   /**

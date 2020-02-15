@@ -54,7 +54,7 @@
           </div>
         </div>
         <div fxFlex="1 1 auto">
-          <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
+          <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></p>
           <audio *ngIf="xivapiItem.ItemAction?.Type === 5845" controls controlslist="nodownload">
             <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg"
                     type="audio/ogg">
@@ -70,7 +70,7 @@
               {{row.name | translate}}
             </div>
             <div *ngIf="row.requiresPipe" class="detail-name">
-              {{row.name | xivapiI18n}}
+              {{row.name | i18n}}
             </div>
             <div class="detail-value">
               {{row.value}}
@@ -86,7 +86,7 @@
               {{row.name | translate}}
             </div>
             <div *ngIf="row.requiresPipe" class="detail-name">
-              {{row.name | xivapiI18n}}
+              {{row.name | i18n}}
             </div>
             <div class="detail-value">
               {{row.value}}

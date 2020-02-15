@@ -84,17 +84,19 @@ export class ItemComponent extends TeamcraftPageComponent {
 
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
+      const correctSlug = this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-');
+
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')],
+          [correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')) {
+      } else if (slug !== correctSlug) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getItem(+params.get('itemId'))).split(' ').join('-')],
+          ['../', correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -134,7 +136,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (item.ClassJobUseTargetID) {
           mainAttributes.push({
             name: 'DB.Class_job',
-            value: item.ClassJobCategory[`Name_${this.translate.currentLang}`] || item.ClassJobCategory.Name_en
+            value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories')),
           });
         }
         mainAttributes.push({
@@ -196,7 +198,7 @@ export class ItemComponent extends TeamcraftPageComponent {
           .map(key => {
             const statIndex = key.match(/(\d+)/)[0];
             const res: any = {
-              name: item[key],
+              name: this.l12n.xivapiToI18n(item[key], 'baseParams'),
               value: item[`BaseParamValue${statIndex}`],
               requiresPipe: true
             };
@@ -645,12 +647,12 @@ export class ItemComponent extends TeamcraftPageComponent {
 
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Description_${this.translate.currentLang}`] || item.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'item-descriptions', 'Description'));
   }
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'items'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
