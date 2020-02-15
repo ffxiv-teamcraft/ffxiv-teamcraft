@@ -108,7 +108,8 @@
             <div fxFlex="1 1 auto" fxLayout="column">
               <div nz-row>
                 <div class="list-center" nz-col nzSm="2">
-                  <b>{{leve.level}} {{leve.jobId | jobAbbr | i18n}}</b>
+                  <b>Lvl {{leve.level}}</b><br/>
+                  <b>{{leve.jobId | jobAbbr | i18n}}</b>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="flex-start center" nz-col nzSm="8">
                   <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | placeName | i18n } }}</b>
