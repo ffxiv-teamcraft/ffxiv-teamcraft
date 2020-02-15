@@ -404,9 +404,6 @@
   "100176": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n'노동요'의 중첩 수가 3의 배수일 때만 사용 가능합니다.\n'노동요'의 중첩 수를 1단계 소비하여 CP를 15 회복합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
   },
-  "100177": {
-    "ko": ""
-  },
   "100178": {
     "ko": "남은 작업량에 비례한 횟수(최대 25회) 동안 '견실한 작업'을 CP와 내구도 소비 없이 사용할 수 있게 됩니다.\n제작 공정이 1회라도 진행되면 사용할 수 없습니다."
   },
@@ -555,28 +552,28 @@
     "ko": "내구도를 소비하여 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공 시 추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수+1(최대 11회)\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>실패 시 추가 효과<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 정신 집중 중첩 수 반감\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50%"
   },
   "100227": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100228": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100229": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100230": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100231": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100232": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100233": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100234": {
-    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+    "ko": "내구도 감소량을 50% 줄이면서 품질을 높입니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 70%\n\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 근검절약, 근검절약 2 효과 중에는 사용할 수 없습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n"
   },
   "100235": {
     "ko": "내구도를 소비하여 작업을 진행합니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 200\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 50％\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 조건:<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 경과 관찰\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>콤보 시 <UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>:<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 100%"
