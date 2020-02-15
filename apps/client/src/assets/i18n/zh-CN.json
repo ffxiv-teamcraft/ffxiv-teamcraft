@@ -581,7 +581,7 @@
     "Autofill_notification_body": "{{listName}} 清单中的 {{itemName}} 已制作完成",
     "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
     "Filter_items_done": "忽略已完成的物品",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
