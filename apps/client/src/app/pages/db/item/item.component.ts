@@ -647,7 +647,7 @@ export class ItemComponent extends TeamcraftPageComponent {
 
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'item-descriptions', 'Description'));
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'itemDescriptions', 'Description'));
   }
 
   private getName(item: any): string {

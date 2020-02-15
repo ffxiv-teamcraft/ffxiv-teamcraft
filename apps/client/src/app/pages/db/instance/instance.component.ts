@@ -99,7 +99,7 @@ export class InstanceComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(instance: any): string {
-    return this.i18n.getName(this.l12n.xivapiToI18n(instance, 'instance-descriptions', 'Description'));
+    return this.i18n.getName(this.l12n.xivapiToI18n(instance, 'instanceDescriptions', 'Description'));
   }
 
   private getName(item: any): string {
