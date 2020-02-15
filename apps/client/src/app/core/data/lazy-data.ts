@@ -95,6 +95,7 @@ export interface LazyData {
   zhContentTypes: any;
   zhCraftActions: any;
   zhCraftDescriptions: any;
+  zhEventItems: any;
   zhFates: any;
   zhFreeCompanyActions: any;
   zhGatheringBonuses: any;

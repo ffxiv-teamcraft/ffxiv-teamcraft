@@ -6,7 +6,7 @@
       <div class="top-left-block" fxFlex="0 0 350px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiLeve.Icon | xivapiIcon" alt="{{xivapiLeve.ID | instanceName | i18n}}"
+          <img [src]="xivapiLeve.Icon | xivapiIcon" alt="{{xivapiLeve.ID | leveName | i18n}}"
                class="larger-img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 [innerHTML]="xivapiLeve.ID | leveName | i18n" class="item-name"></h2>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="xivapiLeve.Description" [innerHTML]="xivapiLeve | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="xivapiLeve.Description" [innerHTML]="xivapiLeve | xivapiL12n: 'leveDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
            [value]="xivapiLeve.ID | leveName"></app-i18n-display>

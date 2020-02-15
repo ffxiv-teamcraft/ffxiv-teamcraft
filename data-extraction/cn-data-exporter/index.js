@@ -12,6 +12,7 @@ output('beast-reputation-ranks', db('BeastReputationRank').simpleObject('Name'))
 output('content-types', db('ContentType').simpleObject('Name'))
 output('craft-actions', db('CraftAction').simpleObject('Name'))
 output('craft-descriptions', db('CraftAction').simpleObject('Description'))
+output('event-items', db('EventItem').simpleObject('Singular'))
 output('fates', db('Fate').toObject(row => {
   if (!row.Name) return
 

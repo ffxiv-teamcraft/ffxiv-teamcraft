@@ -480,6 +480,11 @@ export const lazyFilesList = [
     'propertyName': 'zhCraftDescriptions'
   },
   {
+    'fileName': '/zh/zh-event-items.json',
+    'hashedFileName': '/zh/zh-event-items.898df8a6901830b86a6065aeb6e1e06f74366702.json',
+    'propertyName': 'zhEventItems'
+  },
+  {
     'fileName': '/zh/zh-fates.json',
     'hashedFileName': '/zh/zh-fates.42fb478ddb7244ae880923d5341368035361c6aa.json',
     'propertyName': 'zhFates'
