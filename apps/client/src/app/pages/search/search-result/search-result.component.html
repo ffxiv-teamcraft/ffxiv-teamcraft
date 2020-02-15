@@ -123,7 +123,7 @@
             <div><span
               *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
               - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
-              <i *ngIf="(row.title | i18n) !== 'no name'">{{row.title | i18n}}</i></div>
+              <i *ngIf="(row.title | i18n) !== 'No name'">{{row.title | i18n}}</i></div>
           </div>
         </div>
         <app-db-button [id]="row.id" type="npc"></app-db-button>
