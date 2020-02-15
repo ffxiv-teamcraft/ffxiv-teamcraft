@@ -1357,8 +1357,8 @@
     "FISH": {
       "Hour": "上钩时间",
       "Etime": "艾欧泽亚时间",
-      "Misses_popup_title": "Misses for this spot",
-      "Show_misses": "Show misses",
+      "Misses_popup_title": "此钓场的提钩失败记录",
+      "Show_misses": "显示提钩失败记录",
       "Baits": "使用钓饵",
       "Hookset_and_tug": "捉钩和咬饵",
       "Weathers": "天气",
