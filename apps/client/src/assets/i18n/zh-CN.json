@@ -1747,7 +1747,7 @@
     "Import_using_pcap": "使用数据包捕获导入",
     "Your_gearsets": "您的配装",
     "Delete_gearset": "删除配装",
-    "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
+    "Import_from_pcap_notice": "请切换至需要导入的对应职业配装",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
     "Clone_gearset": "将此配装复制到您的账号",
@@ -1755,7 +1755,7 @@
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
     "Copy_as_text": "复制为文本",
-    "Include_all_tools": "Include tools for the other jobs too",
+    "Include_all_tools": "包含其他职业工具的需求",
     "Use_in_simulator": "Use these stats in the simulator",
     "SLOT": {
       "Body": "身体",
