@@ -152,8 +152,8 @@
     "Average": "Durchschnittlich",
     "Hq": "HQ",
     "Nq": "NQ",
-    "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy"
+    "Share_link_copied": "Teilbarer-Link wurde in die Zwischenablage kopiert",
+    "Copy": "Kopieren"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -261,7 +261,7 @@
   "Login": "Einloggen",
   "Disconnect": "Ausloggen",
   "Password": "Passwort",
-  "Password_Confirmation": "Confirm Password",
+  "Password_Confirmation": "Passwort bestätigen",
   "Submit": "Senden",
   "Invalid_credentials": "Ungültige Daten",
   "Not_verified": "Nicht verifiziert",
@@ -393,10 +393,10 @@
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
-    "Performance_mode": "Performance mode",
-    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
-    "Change_email": "Change email",
-    "Change_email_success": "Email changed",
+    "Performance_mode": "Leistungsmodus",
+    "Performance_mode_explain": "Entfernt Gegenstandsbilder in Listen und Menüs (Nur Schalter bleiben übrig) für weniger Stress im Browser und in der App",
+    "Change_email": "E-Mail Adresse ändern",
+    "Change_email_success": "E-Mail-Adresse wurde geändert",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -506,7 +506,7 @@
     "Mark_whole_panel_done": "Panelinhalt als erledigt markieren",
     "Set_color": "Listenfarbe festlegen",
     "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
-    "Reset_panel": "Reset all the items of this panel",
+    "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
     "COLORS": {
       "RED": "Rot",
       "GREEN": "Grün",
@@ -580,8 +580,8 @@
     "Autofill_notification_title": "Gegenstand fertiggestellt",
     "Autofill_notification_body": "{{itemName}} wurde in der Liste {{listName}} fertiggestellt",
     "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
-    "Filter_items_done": "Ignore completed items",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Filter_items_done": "Fertige Gegenstände ignorieren",
+    "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -621,9 +621,9 @@
       "Tag_filter": "Markierungs-Filter"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "Open": "Listen-Overlay öffnen",
+      "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
+      "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     }
   },
   "LIST_TAGS": {
@@ -779,7 +779,7 @@
   },
   "SIMULATOR": {
     "Title": "Handwerkssimulator",
-    "Include_stats": "Include stats",
+    "Include_stats": "Attribute einbeziehen",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
@@ -1127,7 +1127,7 @@
     "New_update_available": "Eine neue Version ist verfügbar!",
     "New_update_available_desktop": "Eine neue Version ist verfügbar!\nKlicke hier, um sie herunterzuladen und zu installieren.",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden.",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "Das Update wird heruntergeladen. Sobald es abgeschlossen ist, erhaltet Ihr eine Benachrichtigung."
   },
   "LOG_TRACKER": {
     "Title": "Notizbuch-Tracker",
@@ -1356,9 +1356,9 @@
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
-      "Etime": "Eorzean time",
-      "Misses_popup_title": "Misses for this spot",
-      "Show_misses": "Show misses",
+      "Etime": "Eorzea-Zeit",
+      "Misses_popup_title": "Fehlschläge für diesen Ort",
+      "Show_misses": "Fehlschläge zeigen",
       "Baits": "Verwendeter Köder",
       "Hookset_and_tug": "Anschläge und Spitzen",
       "Weathers": "Wetter",
@@ -1588,7 +1588,7 @@
     "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
     "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
+    "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen"
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1717,17 +1717,17 @@
     "Rename_gearset": "Rename gearset",
     "View_gearset": "View gearset",
     "Edit_gearset": "Edit gearset",
-    "generate_list": "Generate a list",
-    "Content": "Content",
-    "Stat_name": "Stat",
-    "Current_value": "Current value",
-    "Cap_value": "Cap",
-    "Add_materia": "Add materia",
-    "No_materia": "No materia",
-    "Value": "Value",
-    "Empty_slot": "Empty slot",
-    "Filters": "Filters",
-    "Total_stats": "Total stats",
+    "generate_list": "Liste erstellen",
+    "Content": "Inhalt",
+    "Stat_name": "Attribut",
+    "Current_value": "Momentaner Wert",
+    "Cap_value": "Obergrenze",
+    "Add_materia": "Materia hinzufügen",
+    "No_materia": "Keine Materia",
+    "Value": "Wert",
+    "Empty_slot": "Leerer Platz",
+    "Filters": "Filter",
+    "Total_stats": "Attribute (Gesamt)",
     "Total_materias_needed": "Total materias needed",
     "Materia": "Materia",
     "Amount_needed": "Amount",
@@ -1739,7 +1739,7 @@
     "Please_input_ariyala_link": "Please input an ariyala link",
     "Link_not_supported": "Link not supported",
     "Compare_gearset": "Compare this gearset with another",
-    "Stats": "Stats",
+    "Stats": "Attribute",
     "Materias": "Materias",
     "Pieces": "Gear pieces",
     "Import_from_ariyala": "Import from Ariyala",
@@ -1756,7 +1756,7 @@
     "Update_from_pcap": "Update using packet capture",
     "Copy_as_text": "Copy this gearset as text",
     "Include_all_tools": "Include tools for the other jobs too",
-    "Use_in_simulator": "Use these stats in the simulator",
+    "Use_in_simulator": "Diese Attribute im Simulator verwenden",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
