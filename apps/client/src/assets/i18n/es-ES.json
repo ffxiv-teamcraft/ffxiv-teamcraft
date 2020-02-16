@@ -152,8 +152,8 @@
     "Average": "Promedio",
     "Hq": "HQ",
     "Nq": "NQ",
-    "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy"
+    "Share_link_copied": "Enlace para compartir copiado al portapapeles",
+    "Copy": "Copiar"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -171,7 +171,7 @@
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
     "Open_overlay": "Abrir capa sobrepuesta",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_alarms_overlay": "Abrir capa sobrepuesta de alarmas",
     "More_available": "y {{amount}} más...",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
@@ -261,7 +261,7 @@
   "Login": "Acceder",
   "Disconnect": "Desconectar",
   "Password": "Contraseña",
-  "Password_Confirmation": "Confirm Password",
+  "Password_Confirmation": "Confirmar contraseña",
   "Submit": "Enviar",
   "Invalid_credentials": "Credenciales Inválidas",
   "Not_verified": "No verificado",
@@ -621,9 +621,9 @@
       "Tag_filter": "Filtro de etiquetas"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "Open": "Abrir capa sobrepuesta de listas",
+      "No_display": "Abra una lista en la ventana principal para empezar",
+      "No_panel_selected": "Seleccione un panel usando los botones de arriba"
     }
   },
   "LIST_TAGS": {
@@ -1385,19 +1385,19 @@
         "Big": "Big"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
-        "Bait": "Attached bait",
-        "Tug": "Tug",
-        "Hookset": "Hookset",
-        "Fishing": "Fishing",
-        "Mooch": "Last throw was mooch",
+        "Open": "Abrir capa sobrepuesta de reporte de pesca",
+        "Bait": "Cebo equipado",
+        "Tug": "Jalar",
+        "Hookset": "Anzuelo",
+        "Fishing": "Pesca",
+        "Mooch": "El último intento fue mooch",
         "Mooch_report": "Mooch",
-        "Current_weather": "Current weather",
-        "Previous_weather": "Previous weather",
-        "Spot": "Spot",
-        "Possible_fish": "Possible fish",
-        "Stats": "Stats",
-        "Statuses": "Statuses",
+        "Current_weather": "Clima actual",
+        "Previous_weather": "Clima anterior",
+        "Spot": "Lugar",
+        "Possible_fish": "Peces posibles",
+        "Stats": "Atributos",
+        "Statuses": "Estados",
         "No_statuses": "No relevant statuses",
         "Total_reports": "Total reports for this session",
         "Last_report": "Last report",
