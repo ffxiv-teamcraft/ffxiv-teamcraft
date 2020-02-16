@@ -980,8 +980,8 @@
       "Use_rapid_synthesis_earlier": "Du solltest Schnelle Bearbeitung nicht zur Fertigstellung nutzen. Nutze es früher um einen Fehlschlag besser ausgleichen zu können und die Zuverlässigkeit der Rotation zu verbessern.",
       "Do_not_use_brand_without_name": "Benutze nicht Zeichen der Elemente ohne Name der Elemente.",
       "Avoid_using_good_actions": "Vermeide Aktionen die einen guten Zustand in einem Makro erfordern, da sie nicht vorhergesagt werden können",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Requires_reuse_to_proc": "Deine Rotation ist davon abhängig, dass Wiederverwertung aktiviert wird. Stelle sicher, dass sie auch ohne Wiederverwertung funktionieren kann.",
+      "Use_reuse": "Deine Rotation erreicht 100% HQ und du hast genügend HP, um Wiederverwerten zu benutzen. Ziehe in Erwähnung dies einzusetzen, um Materialien zurückzugewinnen."
     }
   },
   "PRICING": {
@@ -1077,7 +1077,7 @@
       "FINAL_LIST_PROGRESSION": "Fortschritt bei Resultaten sehen",
       "USER_ASSIGNMENT": "Benutzerzuweisung",
       "ITEM_COMPLETION": "Gegenstand erledigen",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "Gegenstandsfortschritt"
     }
   },
   "MARKETBOARD": {
@@ -1761,8 +1761,8 @@
       "Body": "Rumpf",
       "Ears": "Ohrring",
       "Feet": "Füße",
-      "FingerL": "Left finger",
-      "FingerR": "Right finger",
+      "FingerL": "Oberer Ring",
+      "FingerR": "Unterer Ring",
       "Gloves": "Hände",
       "Head": "Kopf",
       "Legs": "Beine",
