@@ -981,7 +981,7 @@
       "Do_not_use_brand_without_name": "\"XX의 인장\" 스킬은 \"XX의 예술\"스킬을 활성화 시키고 사용하십시오",
       "Avoid_using_good_actions": "매크로를 구상할때는 고품질을 요구하는 액션을 사용하지 마세요 고품질은 예측이 불가능합니다",
       "Requires_reuse_to_proc": "로테이션에 재사용 프록이 요구됩니다. 재사용이 없어도 해당 로테이션이 작동하는지 확인하세요",
-      "Use_reuse": "현재 로테이션이 HQ100%에 도달하면서 '재사용'을 사용할 CP가 충분하므로, '재사용'을 고려해보세요."
+      "Use_reuse": "현재 로테이션이 HQ100%에 도달하면서도 '재사용'을 사용할 CP가 충분하므로, '재사용'을 고려해보세요."
     }
   },
   "PRICING": {
@@ -1748,7 +1748,7 @@
     "Your_gearsets": "내 장비세트",
     "Delete_gearset": "장비세트 삭제",
     "Import_from_pcap_notice": "원하는 장비세트로 변경하여 해당 장비세트를 가져오세요",
-    "No_food_selected": "선택된 음식이 없음",
+    "No_food_selected": "선택된 음식 없음",
     "Generate_list": "목록 생성",
     "Clone_gearset": "해당 장비세트를 내 계정에 복사하기",
     "You_have_no_gearsets": "등록된 장비세트가 없습니다",
@@ -1795,7 +1795,7 @@
     "Delete_folder": "폴더 삭제",
     "Rename_folder": "폴더 이름 변경",
     "View_folder": "폴더 열기",
-    "Content": "내용",
+    "Content": "세부 내용",
     "Folder_not_found": "폴더를 찾을 수 없습니다",
     "Your_folders": "내 폴더",
     "Favorite_folders": "즐겨찾기 폴더"
