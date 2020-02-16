@@ -348,8 +348,8 @@
     "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
     "Always_on_top": "Siempre arriba",
-    "Start_minimized": "Start minimized in tray",
-    "Always_quit": "Quit when clicking on close button (instead of minimizing)",
+    "Start_minimized": "Iniciar minimizado en la bandeja",
+    "Always_quit": "Salir al hacer clic en el botón de cerrar (en lugar de minimizar)",
     "Check_for_update": "Buscar actualizaciones",
     "Downloading_update": "Descargando actualización",
     "No_update_available": "No hay actualización disponible",
@@ -388,15 +388,15 @@
     "Disable_search_debounce": "Deshabilitar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
     "Enable_packet_capture": "Habilitar captura de paquetes (añade características de inventario en tiempo real)",
     "Packet_capture_info": "Capturar paquetes es contra los TdS, la misma razón por la que usar ACT es contra los TdS. Pero Square Enix lo tolera a menos que lo presuma a todos en el juego. Simplemente no lo haga y no se arriesgará a nada.",
-    "Enable_autofill_by_default": "Enable autofill by default",
-    "Enable_autofill_notification_by_default": "Enable autofill notification by default",
-    "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
+    "Enable_autofill_by_default": "Activar autocompletar por defecto",
+    "Enable_autofill_notification_by_default": "Activar notificación de autocompletado por defecto",
+    "Enable_autofill_hq_filter": "Solo autocompletar usando elementos HQ cuando el artículo es requerido como HQ",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
-    "Performance_mode": "Performance mode",
-    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
-    "Change_email": "Change email",
-    "Change_email_success": "Email changed",
+    "Performance_mode": "Modo de rendimiento",
+    "Performance_mode_explain": "Remueve las imágenes de los artículos en las listas, así como menús (sólo quedan los botones) para tener menos carga en el navegador y la aplicación",
+    "Change_email": "Cambiar correo electrónico",
+    "Change_email_success": "Correo electrónico cambiado",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -498,7 +498,7 @@
     "History": "Historial",
     "Items_count": "{{amount}} artículos",
     "Show_craftable_amount": "Mostrar cantidad fabricable",
-    "Show_vendors": "Show first available vendor for each item",
+    "Show_vendors": "Mostrar el primer vendedor disponible para cada artículo",
     "Optimized_full_path": "Mostrar ruta optimizada completa (más barata y más rápida)",
     "Quick_layout_swap": "Intercambio rápido de diseño",
     "Offline": "Sin conexión",
@@ -506,7 +506,7 @@
     "Mark_whole_panel_done": "Marcar contenido del panel como completado",
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
-    "Reset_panel": "Reset all the items of this panel",
+    "Reset_panel": "Restablecer todos los artículos de este panel",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
@@ -565,8 +565,8 @@
     "Disable_HQ_suggestions": "Deshabilitar las banderas HQ automáticas",
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
-    "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "List_large": "Esta es una lista larga",
+    "Enable_performance_mode": "Tal vez quiera activar el modo de rendimiento en ajustes para tener un procesamiento más rápido",
     "List_too_large": "Lista demasiado larga",
     "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
     "Add_to_another_list": "Añadir a otra lista",
@@ -579,9 +579,9 @@
     "Autofill_notification": "Notificación de finalización",
     "Autofill_notification_title": "Artículo completado",
     "Autofill_notification_body": "{{itemName}} se ha completado para la lista {{listName}}",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
-    "Filter_items_done": "Ignore completed items",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Fill_with_inventory": "Llenar con inventario (sólo cuenta lo que tiene en el inventario personal)",
+    "Filter_items_done": "Ignorar artículos completados",
+    "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -779,7 +779,7 @@
   },
   "SIMULATOR": {
     "Title": "Simulador de fabricación",
-    "Include_stats": "Include stats",
+    "Include_stats": "Incluir atributos",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -980,8 +980,8 @@
       "Use_rapid_synthesis_earlier": "No debería usar \"Rapid Synthesis\" como una acción de término, usarla antes para poder manejar el fracaso de la acción es mejor para la confiabilidad de su rotación.",
       "Do_not_use_brand_without_name": "No utilice Brand of the Elements sin Name of the Elements activo.",
       "Avoid_using_good_actions": "Evite el uso de acciones que requieran de \"Buen\" estado en una macro, ya que no son predecibles",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Requires_reuse_to_proc": "Su rotación requiere que \"Reuse\" se active para funcionar correctamente, asegúrese de que pueda funcionar sin activar \"Reuse\".",
+      "Use_reuse": "Su rotación alcanza el 100% de HQ y tiene suficiente CP para usar \"Reuse\", considere añadirlo para recuperar materiales extra."
     }
   },
   "PRICING": {
@@ -1077,7 +1077,7 @@
       "FINAL_LIST_PROGRESSION": "Progresar artículos finales de la lista",
       "USER_ASSIGNMENT": "Asignación de usuario",
       "ITEM_COMPLETION": "Completar el artículo",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "Progresión de artículos"
     }
   },
   "MARKETBOARD": {
@@ -1127,7 +1127,7 @@
     "New_update_available": "¡Nueva actualización disponible! ",
     "New_update_available_desktop": "¡Una nueva actualización está disponible!\nHaga clic aquí para descargarla e instalarla.",
     "Web_instructions": "Por favor refresque la página para obtener la última versión.",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "Descargando la actualización, se le pedirá que instale una vez que haya finalizado la descarga"
   },
   "LOG_TRACKER": {
     "Title": "Seguidor de registro",
@@ -1355,8 +1355,8 @@
       "Masterpiece_bonus": "BONUS"
     },
     "FISH": {
-      "Hour": "Hour of the day",
-      "Etime": "Eorzean time",
+      "Hour": "Hora del día",
+      "Etime": "Hora eorzeana",
       "Misses_popup_title": "Misses for this spot",
       "Show_misses": "Show misses",
       "Baits": "Bait used",
