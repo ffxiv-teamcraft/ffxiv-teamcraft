@@ -1360,11 +1360,11 @@
       "Misses_popup_title": "Fallas para este lugar",
       "Show_misses": "Mostrar fallas",
       "Baits": "Cebo utilizado",
-      "Hookset_and_tug": "Anzuelos y remolcadores",
+      "Hookset_and_tug": "Anzuelos y jalones",
       "Weathers": "Climas",
       "Weather_transitions": "Transiciones de clima",
       "Hooksets": "Anzuelos",
-      "Tugs": "Remolcadores",
+      "Tugs": "Jalones",
       "Seconds": "Segundos",
       "Bite_time": "Tiempo de mordida",
       "Spots": "Lugares",
@@ -1387,7 +1387,7 @@
       "OVERLAY": {
         "Open": "Abrir capa sobrepuesta de reporte de pesca",
         "Bait": "Cebo equipado",
-        "Tug": "Jalar",
+        "Tug": "Jalón",
         "Hookset": "Anzuelo",
         "Fishing": "Pesca",
         "Mooch": "El último intento fue mooch",
@@ -1405,17 +1405,17 @@
         "Size": "Tamaño",
         "ERRORS": {
           "Unknown_map": "Mapa desconocido, cambie de zona para cargarlo.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo."
         }
       }
     },
     "FISHING_SPOT": {
-      "Next": "Next",
-      "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes",
-      "Fish_per_weather": "Fish per weather",
-      "Fish_per_bait": "Fish per bait",
-      "Fish_per_tug": "Fish per tug"
+      "Next": "Siguiente",
+      "Possible_weathers": "Posibles climas",
+      "Available_fishes": "Peces disponibles",
+      "Fish_per_weather": "Pesces por clima",
+      "Fish_per_bait": "Pesces por cebo",
+      "Fish_per_tug": "Peces por jalón"
     },
     "NODE": {
       "Items": "Artículos",
@@ -1569,7 +1569,7 @@
     "Trait": "Rasgo",
     "Any": "Cualquiera",
     "Achievement": "Logro",
-    "Fishing-spot": "Fishing spot"
+    "Fishing-spot": "Lugar de pesca"
   },
   "SEARCH_FILTERS": {
     "Level": "Nivel",
@@ -1713,10 +1713,10 @@
     "Refresh_or_download_latest": "Si está usando el sitio web, simplemente presione Ctrl + F5 para actualizar por completo, si está utilizando la aplicación de escritorio, descargue la última versión aquí: "
   },
   "GEARSETS": {
-    "Title": "Gearsets",
-    "Rename_gearset": "Rename gearset",
-    "View_gearset": "View gearset",
-    "Edit_gearset": "Edit gearset",
+    "Title": "Conjunto de equipo",
+    "Rename_gearset": "Renombrar conjunto de equipo",
+    "View_gearset": "Ver conjunto de equipo",
+    "Edit_gearset": "Editar conjunto de equipo",
     "generate_list": "Generate a list",
     "Content": "Content",
     "Stat_name": "Stat",
@@ -1735,26 +1735,26 @@
     "Unavailable_slot": "Slot not available",
     "Job_cannot_be_changed": "Cannot be changed after creation",
     "Pick_a_job": "Pick a job",
-    "New_gearset": "New gearset",
+    "New_gearset": "Nuevo conjunto de equipo",
     "Please_input_ariyala_link": "Please input an ariyala link",
     "Link_not_supported": "Link not supported",
-    "Compare_gearset": "Compare this gearset with another",
+    "Compare_gearset": "Comparar este conjunto de equipo con otro",
     "Stats": "Stats",
     "Materias": "Materias",
-    "Pieces": "Gear pieces",
+    "Pieces": "Piezas de equipo",
     "Import_from_ariyala": "Import from Ariyala",
     "Import_from_lodestone": "Import from Lodestone",
     "Import_using_pcap": "Import using packet capture",
-    "Your_gearsets": "Your gearsets",
-    "Delete_gearset": "Delete gearset",
-    "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
+    "Your_gearsets": "Sus conjuntos de equipo",
+    "Delete_gearset": "Eliminar conjunto de equipo",
+    "Import_from_pcap_notice": "Cambia al conjunto de equipo deseado con la profesión correspondiente para importarlo.",
     "No_food_selected": "No food selected",
     "Generate_list": "Generate a list",
     "Clone_gearset": "Copy this on your account",
-    "You_have_no_gearsets": "You have no gearsets",
-    "Favorite_gearsets": "Favorite gearsets",
+    "You_have_no_gearsets": "No tiene conjuntos de equipo",
+    "Favorite_gearsets": "Conjuntos de equipo favoritos",
     "Update_from_pcap": "Update using packet capture",
-    "Copy_as_text": "Copy this gearset as text",
+    "Copy_as_text": "Copiar este conjunto de equipo como texto",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
     "SLOT": {
@@ -1775,9 +1775,9 @@
     },
     "COMPARISON": {
       "Compare_popup_title": "Compare {{setName}} with...",
-      "Error_title": "Could not compare gearsets",
-      "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
-      "Type": "Gearset type",
+      "Error_title": "No se pudo comparar los conjuntos de equipo",
+      "Error_description": "Por favor, asegúrese de que el conjunto de equipo introducido existe y es del mismo tipo que el actual (mismo atributo principal)",
+      "Type": "Tipo de conjunto de equipo",
       "Ariyala": "An ariyala set",
       "External_gearset": "A Teamcraft gearset from someone else",
       "Personal_gearset": "One of your gearsets",
