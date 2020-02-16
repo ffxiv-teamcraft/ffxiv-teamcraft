@@ -37,7 +37,7 @@
     "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "Solo recetas"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -146,10 +146,10 @@
     "Read_more_on_wiki": "Leer más detalles en el wiki",
     "Apply": "Aplicar",
     "Open_link": "Abrir enlace del sitio web",
-    "Unknown": "Unknown",
-    "Minimum": "Minimum",
-    "Maximum": "Maximum",
-    "Average": "Average",
+    "Unknown": "Desconocido",
+    "Minimum": "Mínimo",
+    "Maximum": "Máximo",
+    "Average": "Promedio",
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
