@@ -1588,7 +1588,7 @@
     "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
     "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
+    "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador"
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
@@ -1602,7 +1602,7 @@
     "Remove_from_basket": "Eliminar de la cesta",
     "Search": "Buscar recetas",
     "Generate_list": "Agregar a la lista",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
+    "Description": "Introduzca los artículos que tiene y haga clic en \"Buscar recetas\" para obtener una lista de posibles recetas para fabricar y generar fácilmente una lista de fabricación con los resultados.",
     "Empty_basket": "Su cesta está vacía",
     "Add_item": "Agregar artículo",
     "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
@@ -1696,7 +1696,7 @@
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias."
     },
     "DUPLICATES": {
       "Title": "Artículos duplicados en múltiples contenedores",
