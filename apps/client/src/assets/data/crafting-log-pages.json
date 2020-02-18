@@ -761,17 +761,17 @@
         {
           "recipeId": 2196,
           "itemId": 10604,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2201,
           "itemId": 10610,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2206,
           "itemId": 10634,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2239,
@@ -974,34 +974,34 @@
           "rlvl": 255
         },
         {
+          "recipeId": 2959,
+          "itemId": 18036,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2960,
+          "itemId": 18037,
+          "rlvl": 255
+        },
+        {
           "recipeId": 2964,
           "itemId": 18041,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3383,
+          "itemId": 19516,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3008,
+          "itemId": 18085,
           "rlvl": 255
         },
         {
           "recipeId": 3002,
           "itemId": 18079,
           "rlvl": 255
-        },
-        {
-          "recipeId": 2959,
-          "itemId": 18036,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2960,
-          "itemId": 18037,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3383,
-          "itemId": 19516,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3008,
-          "itemId": 18085,
-          "rlvl": 260
         },
         {
           "recipeId": 3609,
@@ -1095,9 +1095,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -1222,7 +1222,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -1397,7 +1397,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -1845,9 +1845,9 @@
       "masterbook": 40,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -2165,9 +2165,9 @@
       "masterbook": 48,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3149,
+        "Difficulty": 2361,
         "ID": 300,
-        "Quality": 14071,
+        "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
         "SuggestedCraftsmanship": 1100
@@ -2265,14 +2265,24 @@
       "masterbook": 56,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
       },
       "recipes": [
+        {
+          "recipeId": 33780,
+          "itemId": 30071,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33785,
+          "itemId": 30076,
+          "rlvl": 320
+        },
         {
           "recipeId": 32675,
           "itemId": 21866,
@@ -2517,7 +2527,7 @@
         "ClassJobLevel": 80,
         "Difficulty": 4143,
         "ID": 440,
-        "Quality": 21841,
+        "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
         "SuggestedCraftsmanship": 2000
@@ -2572,6 +2582,96 @@
     },
     {
       "id": 1056,
+      "masterbook": 72,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33899,
+          "itemId": 29960,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33706,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33805,
+          "itemId": 29408,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33809,
+          "itemId": 29412,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33861,
+          "itemId": 29464,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33862,
+          "itemId": 29465,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33863,
+          "itemId": 29466,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33865,
+          "itemId": 29468,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33864,
+          "itemId": 29467,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33876,
+          "itemId": 29479,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33877,
+          "itemId": 29480,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33878,
+          "itemId": 29481,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33880,
+          "itemId": 29483,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33879,
+          "itemId": 29482,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33698,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1064,
       "masterbook": 9,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -2621,7 +2721,7 @@
       ]
     },
     {
-      "id": 1064,
+      "id": 1072,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
@@ -3072,11 +3172,16 @@
           "recipeId": 4585,
           "itemId": 28642,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4599,
+          "itemId": 28962,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1072,
+      "id": 1080,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
@@ -3634,14 +3739,14 @@
           "rlvl": 110
         },
         {
-          "recipeId": 3765,
-          "itemId": 23877,
+          "recipeId": 2236,
+          "itemId": 12101,
           "rlvl": 115
         },
         {
-          "recipeId": 2236,
-          "itemId": 12101,
-          "rlvl": 120
+          "recipeId": 3765,
+          "itemId": 23877,
+          "rlvl": 115
         },
         {
           "recipeId": 2233,
@@ -3701,12 +3806,12 @@
         {
           "recipeId": 3731,
           "itemId": 20742,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3724,
           "itemId": 20734,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3722,
@@ -3772,11 +3877,31 @@
           "recipeId": 4572,
           "itemId": 28638,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4617,
+          "itemId": 29686,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4609,
+          "itemId": 28991,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4602,
+          "itemId": 28974,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4612,
+          "itemId": 29684,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1080,
+      "id": 1088,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -3916,7 +4041,7 @@
       ]
     },
     {
-      "id": 1088,
+      "id": 1096,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -3946,13 +4071,13 @@
       ]
     },
     {
-      "id": 1096,
+      "id": 1104,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -3981,13 +4106,13 @@
       ]
     },
     {
-      "id": 1112,
+      "id": 1120,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -4026,7 +4151,7 @@
       ]
     },
     {
-      "id": 1128,
+      "id": 1136,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -4236,7 +4361,7 @@
       ]
     },
     {
-      "id": 1136,
+      "id": 1144,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -4248,6 +4373,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31591,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31592,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31593,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31594,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31595,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31596,
           "itemId": 15725,
@@ -4352,36 +4502,11 @@
           "recipeId": 31616,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31591,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31592,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31593,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31594,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31595,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1144,
+      "id": 1152,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -4531,7 +4656,7 @@
       ]
     },
     {
-      "id": 1152,
+      "id": 1160,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -4596,7 +4721,7 @@
       ]
     },
     {
-      "id": 1160,
+      "id": 1168,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -4661,13 +4786,13 @@
       ]
     },
     {
-      "id": 1168,
+      "id": 1176,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -4726,13 +4851,13 @@
       ]
     },
     {
-      "id": 1176,
+      "id": 1184,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -4791,13 +4916,13 @@
       ]
     },
     {
-      "id": 1184,
+      "id": 1192,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -4831,7 +4956,7 @@
       ]
     },
     {
-      "id": 1192,
+      "id": 1200,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -6271,44 +6396,44 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2335,
+          "itemId": 12528,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2255,
+          "itemId": 10586,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2265,
+          "itemId": 10598,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2275,
+          "itemId": 10622,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2260,
+          "itemId": 10592,
+          "rlvl": 115
+        },
+        {
           "recipeId": 3650,
           "itemId": 20388,
           "rlvl": 115
         },
         {
-          "recipeId": 2335,
-          "itemId": 12528,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2255,
-          "itemId": 10586,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2265,
-          "itemId": 10598,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2275,
-          "itemId": 10622,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2260,
-          "itemId": 10592,
-          "rlvl": 120
-        },
-        {
           "recipeId": 2270,
           "itemId": 10616,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2280,
           "itemId": 10628,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2331,
@@ -6788,37 +6913,37 @@
         {
           "recipeId": 3373,
           "itemId": 19506,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3374,
           "itemId": 19507,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3375,
           "itemId": 19508,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3376,
           "itemId": 19509,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3377,
           "itemId": 19510,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3381,
           "itemId": 19514,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3382,
           "itemId": 19515,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3617,
@@ -7042,9 +7167,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -7309,7 +7434,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -7604,7 +7729,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -8217,9 +8342,9 @@
       "masterbook": 41,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -8667,9 +8792,9 @@
       "masterbook": 49,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -8757,14 +8882,64 @@
       "masterbook": 57,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
       },
       "recipes": [
+        {
+          "recipeId": 33777,
+          "itemId": 30068,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33779,
+          "itemId": 30070,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33783,
+          "itemId": 30074,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33792,
+          "itemId": 30083,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33778,
+          "itemId": 30069,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33790,
+          "itemId": 30081,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33782,
+          "itemId": 30073,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33781,
+          "itemId": 30072,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33784,
+          "itemId": 30075,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33793,
+          "itemId": 30084,
+          "rlvl": 320
+        },
         {
           "recipeId": 32660,
           "itemId": 21916,
@@ -9084,6 +9259,86 @@
     },
     {
       "id": 1057,
+      "masterbook": 73,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33896,
+          "itemId": 29958,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33707,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33801,
+          "itemId": 29404,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33803,
+          "itemId": 29406,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33807,
+          "itemId": 29410,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33816,
+          "itemId": 29419,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33804,
+          "itemId": 29407,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33802,
+          "itemId": 29405,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33814,
+          "itemId": 29417,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33806,
+          "itemId": 29409,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33808,
+          "itemId": 29411,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33817,
+          "itemId": 29420,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33699,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1065,
       "masterbook": 10,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -9208,7 +9463,7 @@
       ]
     },
     {
-      "id": 1065,
+      "id": 1073,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -9368,7 +9623,7 @@
       ]
     },
     {
-      "id": 1073,
+      "id": 1081,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
@@ -9539,11 +9794,16 @@
           "recipeId": 4568,
           "itemId": 28145,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4611,
+          "itemId": 29683,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1081,
+      "id": 1089,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -9683,7 +9943,7 @@
       ]
     },
     {
-      "id": 1089,
+      "id": 1097,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -9728,13 +9988,13 @@
       ]
     },
     {
-      "id": 1097,
+      "id": 1105,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -9763,13 +10023,13 @@
       ]
     },
     {
-      "id": 1105,
+      "id": 1113,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -9808,7 +10068,7 @@
       ]
     },
     {
-      "id": 1129,
+      "id": 1137,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -10018,7 +10278,7 @@
       ]
     },
     {
-      "id": 1137,
+      "id": 1145,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -10030,6 +10290,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31617,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31618,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31619,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31620,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31621,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31622,
           "itemId": 15725,
@@ -10134,36 +10419,11 @@
           "recipeId": 31642,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31617,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31618,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31619,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31620,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31621,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1145,
+      "id": 1153,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -10313,7 +10573,7 @@
       ]
     },
     {
-      "id": 1153,
+      "id": 1161,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -10378,7 +10638,7 @@
       ]
     },
     {
-      "id": 1161,
+      "id": 1169,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -10443,13 +10703,13 @@
       ]
     },
     {
-      "id": 1169,
+      "id": 1177,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -10508,13 +10768,13 @@
       ]
     },
     {
-      "id": 1177,
+      "id": 1185,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -10573,13 +10833,13 @@
       ]
     },
     {
-      "id": 1185,
+      "id": 1193,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -10613,7 +10873,7 @@
       ]
     },
     {
-      "id": 1193,
+      "id": 1201,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -11843,6 +12103,16 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2824,
+          "itemId": 12528,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2338,
+          "itemId": 10664,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2343,
           "itemId": 10670,
           "rlvl": 115
@@ -11850,6 +12120,26 @@
         {
           "recipeId": 2364,
           "itemId": 10712,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2347,
+          "itemId": 10677,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2368,
+          "itemId": 10719,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2351,
+          "itemId": 10684,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2372,
+          "itemId": 10726,
           "rlvl": 115
         },
         {
@@ -11863,44 +12153,14 @@
           "rlvl": 115
         },
         {
-          "recipeId": 2824,
-          "itemId": 12528,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2338,
-          "itemId": 10664,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2347,
-          "itemId": 10677,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2368,
-          "itemId": 10719,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2351,
-          "itemId": 10684,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2372,
-          "itemId": 10726,
-          "rlvl": 120
-        },
-        {
           "recipeId": 2360,
           "itemId": 10705,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2380,
           "itemId": 10747,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2403,
@@ -12228,6 +12488,16 @@
           "rlvl": 255
         },
         {
+          "recipeId": 3379,
+          "itemId": 19512,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3380,
+          "itemId": 19513,
+          "rlvl": 255
+        },
+        {
           "recipeId": 2971,
           "itemId": 18048,
           "rlvl": 255
@@ -12243,34 +12513,24 @@
           "rlvl": 255
         },
         {
-          "recipeId": 3379,
-          "itemId": 19512,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3380,
-          "itemId": 19513,
-          "rlvl": 260
-        },
-        {
           "recipeId": 2973,
           "itemId": 18050,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2979,
           "itemId": 18056,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2974,
           "itemId": 18051,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2980,
           "itemId": 18057,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3618,
@@ -12399,9 +12659,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -12566,7 +12826,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -12841,7 +13101,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -13409,9 +13669,9 @@
       "masterbook": 42,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -13879,9 +14139,9 @@
       "masterbook": 50,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -13954,9 +14214,9 @@
       "masterbook": 58,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -13980,6 +14240,11 @@
         {
           "recipeId": 33203,
           "itemId": 24493,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33794,
+          "itemId": 30085,
           "rlvl": 320
         },
         {
@@ -14216,6 +14481,116 @@
     },
     {
       "id": 1058,
+      "masterbook": 74,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4343,
+        "ID": 450,
+        "Quality": 23395,
+        "Stars": 2,
+        "SuggestedControl": 1990,
+        "SuggestedCraftsmanship": 2140
+      },
+      "recipes": [
+        {
+          "recipeId": 33800,
+          "itemId": 29402,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 33799,
+          "itemId": 28994,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 33897,
+          "itemId": 29958,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33708,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33818,
+          "itemId": 29421,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33820,
+          "itemId": 29423,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33826,
+          "itemId": 29429,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33821,
+          "itemId": 29424,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33827,
+          "itemId": 29430,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33833,
+          "itemId": 29436,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33845,
+          "itemId": 29448,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33839,
+          "itemId": 29442,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33857,
+          "itemId": 29460,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33851,
+          "itemId": 29454,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33824,
+          "itemId": 29427,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33830,
+          "itemId": 29433,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33823,
+          "itemId": 29426,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33847,
+          "itemId": 29450,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33700,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1066,
       "masterbook": 11,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -14245,7 +14620,7 @@
       ]
     },
     {
-      "id": 1066,
+      "id": 1074,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
@@ -14410,7 +14785,7 @@
       ]
     },
     {
-      "id": 1074,
+      "id": 1082,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 14,
@@ -14558,6 +14933,16 @@
           "rlvl": 412
         },
         {
+          "recipeId": 4608,
+          "itemId": 28984,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4613,
+          "itemId": 29685,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4564,
           "itemId": 28133,
           "rlvl": 430
@@ -14565,7 +14950,7 @@
       ]
     },
     {
-      "id": 1082,
+      "id": 1090,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -14705,7 +15090,7 @@
       ]
     },
     {
-      "id": 1090,
+      "id": 1098,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -14780,13 +15165,13 @@
       ]
     },
     {
-      "id": 1098,
+      "id": 1106,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -14815,13 +15200,13 @@
       ]
     },
     {
-      "id": 1106,
+      "id": 1114,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -14860,7 +15245,7 @@
       ]
     },
     {
-      "id": 1130,
+      "id": 1138,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -15070,7 +15455,7 @@
       ]
     },
     {
-      "id": 1138,
+      "id": 1146,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -15082,6 +15467,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31643,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31644,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31645,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31646,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31647,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31648,
           "itemId": 15725,
@@ -15186,36 +15596,11 @@
           "recipeId": 31668,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31643,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31644,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31645,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31646,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31647,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1146,
+      "id": 1154,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -15365,7 +15750,7 @@
       ]
     },
     {
-      "id": 1154,
+      "id": 1162,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -15430,7 +15815,7 @@
       ]
     },
     {
-      "id": 1162,
+      "id": 1170,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -15495,13 +15880,13 @@
       ]
     },
     {
-      "id": 1170,
+      "id": 1178,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -15560,13 +15945,13 @@
       ]
     },
     {
-      "id": 1178,
+      "id": 1186,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -15625,13 +16010,13 @@
       ]
     },
     {
-      "id": 1186,
+      "id": 1194,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -15665,7 +16050,7 @@
       ]
     },
     {
-      "id": 1194,
+      "id": 1202,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -15705,92 +16090,92 @@
       ]
     },
     {
-      "id": 1202,
+      "id": 1210,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
-        "Difficulty": 1400,
-        "ID": 260,
-        "Quality": 9065,
+        "Difficulty": 1116,
+        "ID": 255,
+        "Quality": 8377,
         "Stars": 0,
-        "SuggestedControl": 980,
-        "SuggestedCraftsmanship": 1016
+        "SuggestedControl": 968,
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
           "recipeId": 33613,
           "itemId": 28808,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33618,
           "itemId": 28813,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33658,
           "itemId": 28853,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33668,
           "itemId": 28863,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33614,
           "itemId": 28809,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33619,
           "itemId": 28814,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33615,
           "itemId": 28810,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33620,
           "itemId": 28815,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33650,
           "itemId": 28845,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33655,
           "itemId": 28850,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33670,
           "itemId": 28865,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33675,
           "itemId": 28870,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33662,
           "itemId": 28857,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33667,
           "itemId": 28862,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33682,
           "itemId": 28877,
-          "rlvl": 260
+          "rlvl": 255
         }
       ]
     }
@@ -17555,6 +17940,11 @@
       },
       "recipes": [
         {
+          "recipeId": 2532,
+          "itemId": 12542,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2533,
           "itemId": 12543,
           "rlvl": 115
@@ -17565,8 +17955,83 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2414,
+          "itemId": 10640,
+          "rlvl": 115
+        },
+        {
           "recipeId": 3651,
           "itemId": 20389,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2419,
+          "itemId": 10658,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2424,
+          "itemId": 10754,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2520,
+          "itemId": 11955,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2521,
+          "itemId": 11983,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2435,
+          "itemId": 10976,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2453,
+          "itemId": 11000,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2471,
+          "itemId": 11024,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2507,
+          "itemId": 11072,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2489,
+          "itemId": 11048,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2430,
+          "itemId": 10970,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2448,
+          "itemId": 10994,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2466,
+          "itemId": 11018,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2502,
+          "itemId": 11066,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2484,
+          "itemId": 11042,
           "rlvl": 115
         },
         {
@@ -17593,86 +18058,6 @@
           "recipeId": 2494,
           "itemId": 11054,
           "rlvl": 115
-        },
-        {
-          "recipeId": 2532,
-          "itemId": 12542,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2414,
-          "itemId": 10640,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2419,
-          "itemId": 10658,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2424,
-          "itemId": 10754,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2520,
-          "itemId": 11955,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2521,
-          "itemId": 11983,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2435,
-          "itemId": 10976,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2453,
-          "itemId": 11000,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2471,
-          "itemId": 11024,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2507,
-          "itemId": 11072,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2489,
-          "itemId": 11048,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2430,
-          "itemId": 10970,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2448,
-          "itemId": 10994,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2466,
-          "itemId": 11018,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2502,
-          "itemId": 11066,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2484,
-          "itemId": 11042,
-          "rlvl": 120
         },
         {
           "recipeId": 2527,
@@ -18270,8 +18655,43 @@
           "rlvl": 255
         },
         {
+          "recipeId": 3649,
+          "itemId": 20008,
+          "rlvl": 255
+        },
+        {
           "recipeId": 3613,
           "itemId": 19938,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2965,
+          "itemId": 18042,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2970,
+          "itemId": 18047,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2968,
+          "itemId": 18045,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3378,
+          "itemId": 19511,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2984,
+          "itemId": 18061,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2996,
+          "itemId": 18073,
           "rlvl": 255
         },
         {
@@ -18282,6 +18702,56 @@
         {
           "recipeId": 3004,
           "itemId": 18081,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3014,
+          "itemId": 18091,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3015,
+          "itemId": 18092,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3016,
+          "itemId": 18093,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3018,
+          "itemId": 18095,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3017,
+          "itemId": 18094,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3019,
+          "itemId": 18096,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3020,
+          "itemId": 18097,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3021,
+          "itemId": 18098,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3023,
+          "itemId": 18100,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3022,
+          "itemId": 18099,
           "rlvl": 255
         },
         {
@@ -18333,91 +18803,6 @@
           "recipeId": 3032,
           "itemId": 18109,
           "rlvl": 255
-        },
-        {
-          "recipeId": 3649,
-          "itemId": 20008,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2965,
-          "itemId": 18042,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2970,
-          "itemId": 18047,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2968,
-          "itemId": 18045,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3378,
-          "itemId": 19511,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2984,
-          "itemId": 18061,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2996,
-          "itemId": 18073,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3014,
-          "itemId": 18091,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3015,
-          "itemId": 18092,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3016,
-          "itemId": 18093,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3018,
-          "itemId": 18095,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3017,
-          "itemId": 18094,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3019,
-          "itemId": 18096,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3020,
-          "itemId": 18097,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3021,
-          "itemId": 18098,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3023,
-          "itemId": 18100,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3022,
-          "itemId": 18099,
-          "rlvl": 260
         },
         {
           "recipeId": 3629,
@@ -18701,9 +19086,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -19083,7 +19468,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -19453,7 +19838,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -20241,9 +20626,9 @@
       "masterbook": 43,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -20691,9 +21076,9 @@
       "masterbook": 51,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3149,
+        "Difficulty": 2361,
         "ID": 300,
-        "Quality": 14071,
+        "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
         "SuggestedCraftsmanship": 1100
@@ -20806,14 +21191,29 @@
       "masterbook": 59,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
       },
       "recipes": [
+        {
+          "recipeId": 33786,
+          "itemId": 30077,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33791,
+          "itemId": 30082,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33789,
+          "itemId": 30080,
+          "rlvl": 320
+        },
         {
           "recipeId": 32677,
           "itemId": 21869,
@@ -21230,6 +21630,11 @@
           "rlvl": 450
         },
         {
+          "recipeId": 33798,
+          "itemId": 29681,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33687,
           "itemId": 28144,
           "rlvl": 450
@@ -21238,6 +21643,101 @@
     },
     {
       "id": 1059,
+      "masterbook": 75,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33898,
+          "itemId": 29959,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33709,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33810,
+          "itemId": 29413,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33815,
+          "itemId": 29418,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33813,
+          "itemId": 29416,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33866,
+          "itemId": 29469,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33867,
+          "itemId": 29470,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33868,
+          "itemId": 29471,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33870,
+          "itemId": 29473,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33869,
+          "itemId": 29472,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33871,
+          "itemId": 29474,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33872,
+          "itemId": 29475,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33873,
+          "itemId": 29476,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33875,
+          "itemId": 29478,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33874,
+          "itemId": 29477,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33701,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1067,
       "masterbook": 12,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -21457,7 +21957,7 @@
       ]
     },
     {
-      "id": 1067,
+      "id": 1075,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -21863,11 +22363,21 @@
           "recipeId": 4577,
           "itemId": 28164,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4597,
+          "itemId": 28960,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4598,
+          "itemId": 28961,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1075,
+      "id": 1083,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -22157,7 +22667,7 @@
       ]
     },
     {
-      "id": 1083,
+      "id": 1091,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -22297,7 +22807,7 @@
       ]
     },
     {
-      "id": 1091,
+      "id": 1099,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -22442,13 +22952,13 @@
       ]
     },
     {
-      "id": 1099,
+      "id": 1107,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -22477,13 +22987,13 @@
       ]
     },
     {
-      "id": 1107,
+      "id": 1115,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -22522,7 +23032,7 @@
       ]
     },
     {
-      "id": 1131,
+      "id": 1139,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -22732,7 +23242,7 @@
       ]
     },
     {
-      "id": 1139,
+      "id": 1147,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -22744,6 +23254,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31669,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31670,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31671,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31672,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31673,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31674,
           "itemId": 15725,
@@ -22848,36 +23383,11 @@
           "recipeId": 31694,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31669,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31670,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31671,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31672,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31673,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1147,
+      "id": 1155,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -23027,7 +23537,7 @@
       ]
     },
     {
-      "id": 1155,
+      "id": 1163,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -23092,7 +23602,7 @@
       ]
     },
     {
-      "id": 1163,
+      "id": 1171,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -23157,13 +23667,13 @@
       ]
     },
     {
-      "id": 1171,
+      "id": 1179,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -23222,13 +23732,13 @@
       ]
     },
     {
-      "id": 1179,
+      "id": 1187,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -23287,13 +23797,13 @@
       ]
     },
     {
-      "id": 1187,
+      "id": 1195,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -23327,7 +23837,7 @@
       ]
     },
     {
-      "id": 1195,
+      "id": 1203,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -23367,62 +23877,62 @@
       ]
     },
     {
-      "id": 1203,
+      "id": 1211,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
-        "Difficulty": 1400,
-        "ID": 260,
-        "Quality": 9065,
+        "Difficulty": 1116,
+        "ID": 255,
+        "Quality": 8377,
         "Stars": 0,
-        "SuggestedControl": 980,
-        "SuggestedCraftsmanship": 1016
+        "SuggestedControl": 968,
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
           "recipeId": 33623,
           "itemId": 28818,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33633,
           "itemId": 28828,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33638,
           "itemId": 28833,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33643,
           "itemId": 28838,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33648,
           "itemId": 28843,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33653,
           "itemId": 28848,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33663,
           "itemId": 28858,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33673,
           "itemId": 28868,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33678,
           "itemId": 28873,
-          "rlvl": 260
+          "rlvl": 255
         }
       ]
     }
@@ -25017,6 +25527,11 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2850,
+          "itemId": 13685,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2562,
           "itemId": 10768,
           "rlvl": 115
@@ -25037,69 +25552,64 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2627,
+          "itemId": 11965,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2637,
+          "itemId": 11993,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2566,
           "itemId": 10775,
           "rlvl": 115
         },
         {
-          "recipeId": 2850,
-          "itemId": 13685,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2627,
-          "itemId": 11965,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2637,
-          "itemId": 11993,
-          "rlvl": 120
-        },
-        {
           "recipeId": 2548,
           "itemId": 10698,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2556,
           "itemId": 10740,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2572,
           "itemId": 10789,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2599,
           "itemId": 10873,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2585,
           "itemId": 10831,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2621,
           "itemId": 10957,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2608,
           "itemId": 10915,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2849,
           "itemId": 13684,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2852,
           "itemId": 13687,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2654,
@@ -25662,8 +26172,33 @@
           "rlvl": 255
         },
         {
+          "recipeId": 3462,
+          "itemId": 19617,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2991,
+          "itemId": 18068,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3463,
+          "itemId": 19618,
+          "rlvl": 255
+        },
+        {
           "recipeId": 2992,
           "itemId": 18069,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3459,
+          "itemId": 19614,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3464,
+          "itemId": 19619,
           "rlvl": 255
         },
         {
@@ -25702,89 +26237,64 @@
           "rlvl": 255
         },
         {
-          "recipeId": 3462,
-          "itemId": 19617,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2991,
-          "itemId": 18068,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3463,
-          "itemId": 19618,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3459,
-          "itemId": 19614,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3464,
-          "itemId": 19619,
-          "rlvl": 260
-        },
-        {
           "recipeId": 2975,
           "itemId": 18052,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2981,
           "itemId": 18058,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2993,
           "itemId": 18070,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2976,
           "itemId": 18053,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2982,
           "itemId": 18059,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2988,
           "itemId": 18065,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3000,
           "itemId": 18077,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2994,
           "itemId": 18071,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3012,
           "itemId": 18089,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3006,
           "itemId": 18083,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3461,
           "itemId": 19616,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3466,
           "itemId": 19621,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3645,
@@ -26038,9 +26548,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -26375,7 +26885,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -26735,7 +27245,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -27813,9 +28323,9 @@
       "masterbook": 44,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -28353,9 +28863,9 @@
       "masterbook": 52,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -28483,9 +28993,9 @@
       "masterbook": 60,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -28730,7 +29240,7 @@
         "ClassJobLevel": 80,
         "Difficulty": 4143,
         "ID": 440,
-        "Quality": 21841,
+        "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
         "SuggestedCraftsmanship": 2000
@@ -28845,11 +29355,116 @@
           "recipeId": 33686,
           "itemId": 28591,
           "rlvl": 450
+        },
+        {
+          "recipeId": 33797,
+          "itemId": 30057,
+          "rlvl": 450
         }
       ]
     },
     {
       "id": 1060,
+      "masterbook": 76,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33901,
+          "itemId": 29962,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33710,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33844,
+          "itemId": 29447,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33838,
+          "itemId": 29441,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33856,
+          "itemId": 29459,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33850,
+          "itemId": 29453,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33836,
+          "itemId": 29439,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33848,
+          "itemId": 29451,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33842,
+          "itemId": 29445,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33860,
+          "itemId": 29463,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33854,
+          "itemId": 29457,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33829,
+          "itemId": 29432,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33835,
+          "itemId": 29438,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33841,
+          "itemId": 29444,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33859,
+          "itemId": 29462,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33853,
+          "itemId": 29456,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33702,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1068,
       "masterbook": 13,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -28949,7 +29564,7 @@
       ]
     },
     {
-      "id": 1068,
+      "id": 1076,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -28994,7 +29609,7 @@
       ]
     },
     {
-      "id": 1076,
+      "id": 1084,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -29135,11 +29750,16 @@
           "recipeId": 4573,
           "itemId": 28639,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4610,
+          "itemId": 28992,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1084,
+      "id": 1092,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -29279,7 +29899,7 @@
       ]
     },
     {
-      "id": 1092,
+      "id": 1100,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -29349,13 +29969,13 @@
       ]
     },
     {
-      "id": 1100,
+      "id": 1108,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -29384,13 +30004,13 @@
       ]
     },
     {
-      "id": 1116,
+      "id": 1124,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -29429,7 +30049,7 @@
       ]
     },
     {
-      "id": 1132,
+      "id": 1140,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -29639,7 +30259,7 @@
       ]
     },
     {
-      "id": 1140,
+      "id": 1148,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -29651,6 +30271,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31695,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31696,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31697,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31698,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31699,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31700,
           "itemId": 15725,
@@ -29755,36 +30400,11 @@
           "recipeId": 31720,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31695,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31696,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31697,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31698,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31699,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1148,
+      "id": 1156,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -29934,7 +30554,7 @@
       ]
     },
     {
-      "id": 1156,
+      "id": 1164,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -29999,7 +30619,7 @@
       ]
     },
     {
-      "id": 1164,
+      "id": 1172,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -30064,13 +30684,13 @@
       ]
     },
     {
-      "id": 1172,
+      "id": 1180,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -30129,13 +30749,13 @@
       ]
     },
     {
-      "id": 1180,
+      "id": 1188,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -30194,13 +30814,13 @@
       ]
     },
     {
-      "id": 1188,
+      "id": 1196,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -30234,7 +30854,7 @@
       ]
     },
     {
-      "id": 1196,
+      "id": 1204,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -30274,162 +30894,162 @@
       ]
     },
     {
-      "id": 1204,
+      "id": 1212,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
-        "Difficulty": 1400,
-        "ID": 260,
-        "Quality": 9065,
+        "Difficulty": 1116,
+        "ID": 255,
+        "Quality": 8377,
         "Stars": 0,
-        "SuggestedControl": 980,
-        "SuggestedCraftsmanship": 1016
+        "SuggestedControl": 968,
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
           "recipeId": 33628,
           "itemId": 28823,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33624,
           "itemId": 28819,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33634,
           "itemId": 28829,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33649,
           "itemId": 28844,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33654,
           "itemId": 28849,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33659,
           "itemId": 28854,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33664,
           "itemId": 28859,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33669,
           "itemId": 28864,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33674,
           "itemId": 28869,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33679,
           "itemId": 28874,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33625,
           "itemId": 28820,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33630,
           "itemId": 28825,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33635,
           "itemId": 28830,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33640,
           "itemId": 28835,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33645,
           "itemId": 28840,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33660,
           "itemId": 28855,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33665,
           "itemId": 28860,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33680,
           "itemId": 28875,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33617,
           "itemId": 28812,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33622,
           "itemId": 28817,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33627,
           "itemId": 28822,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33632,
           "itemId": 28827,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33637,
           "itemId": 28832,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33642,
           "itemId": 28837,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33647,
           "itemId": 28842,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33652,
           "itemId": 28847,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33657,
           "itemId": 28852,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33672,
           "itemId": 28867,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33677,
           "itemId": 28872,
-          "rlvl": 260
+          "rlvl": 255
         }
       ]
     }
@@ -32279,6 +32899,41 @@
           "rlvl": 115
         },
         {
+          "recipeId": 2663,
+          "itemId": 10761,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2687,
+          "itemId": 10845,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2673,
+          "itemId": 10803,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2715,
+          "itemId": 10929,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2699,
+          "itemId": 10887,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2847,
+          "itemId": 13682,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2851,
+          "itemId": 13686,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2690,
           "itemId": 10852,
           "rlvl": 115
@@ -32304,94 +32959,59 @@
           "rlvl": 115
         },
         {
-          "recipeId": 2663,
-          "itemId": 10761,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2687,
-          "itemId": 10845,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2673,
-          "itemId": 10803,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2715,
-          "itemId": 10929,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2699,
-          "itemId": 10887,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2847,
-          "itemId": 13682,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2851,
-          "itemId": 13686,
-          "rlvl": 120
-        },
-        {
           "recipeId": 2666,
           "itemId": 10782,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2692,
           "itemId": 10866,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2679,
           "itemId": 10824,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2724,
           "itemId": 10950,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2709,
           "itemId": 10908,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2848,
           "itemId": 13683,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2729,
           "itemId": 10964,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2731,
           "itemId": 10988,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2733,
           "itemId": 11012,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2737,
           "itemId": 11060,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2735,
           "itemId": 11036,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2752,
@@ -32849,6 +33469,36 @@
           "rlvl": 255
         },
         {
+          "recipeId": 3457,
+          "itemId": 19612,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2985,
+          "itemId": 18062,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 2997,
+          "itemId": 18074,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3009,
+          "itemId": 18086,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3003,
+          "itemId": 18080,
+          "rlvl": 255
+        },
+        {
+          "recipeId": 3458,
+          "itemId": 19613,
+          "rlvl": 255
+        },
+        {
           "recipeId": 2986,
           "itemId": 18063,
           "rlvl": 255
@@ -32879,44 +33529,14 @@
           "rlvl": 255
         },
         {
-          "recipeId": 3457,
-          "itemId": 19612,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2985,
-          "itemId": 18062,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 2997,
-          "itemId": 18074,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3009,
-          "itemId": 18086,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3003,
-          "itemId": 18080,
-          "rlvl": 260
-        },
-        {
-          "recipeId": 3458,
-          "itemId": 19613,
-          "rlvl": 260
-        },
-        {
           "recipeId": 3460,
           "itemId": 19615,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3465,
           "itemId": 19620,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3636,
@@ -33150,9 +33770,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -33387,7 +34007,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -33707,7 +34327,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -34615,9 +35235,9 @@
       "masterbook": 45,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -35075,9 +35695,9 @@
       "masterbook": 53,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3149,
+        "Difficulty": 2361,
         "ID": 300,
-        "Quality": 14071,
+        "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
         "SuggestedCraftsmanship": 1100
@@ -35220,9 +35840,9 @@
       "masterbook": 61,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -35659,6 +36279,11 @@
           "rlvl": 450
         },
         {
+          "recipeId": 33795,
+          "itemId": 30055,
+          "rlvl": 450
+        },
+        {
           "recipeId": 33398,
           "itemId": 26466,
           "rlvl": 450
@@ -35702,11 +36327,121 @@
           "recipeId": 33517,
           "itemId": 28480,
           "rlvl": 450
+        },
+        {
+          "recipeId": 33796,
+          "itemId": 30056,
+          "rlvl": 450
         }
       ]
     },
     {
       "id": 1061,
+      "masterbook": 77,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33900,
+          "itemId": 29961,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33711,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33819,
+          "itemId": 29422,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33825,
+          "itemId": 29428,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33831,
+          "itemId": 29434,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33843,
+          "itemId": 29446,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33837,
+          "itemId": 29440,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33855,
+          "itemId": 29458,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33849,
+          "itemId": 29452,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33832,
+          "itemId": 29435,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33822,
+          "itemId": 29425,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33828,
+          "itemId": 29431,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33834,
+          "itemId": 29437,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33846,
+          "itemId": 29449,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33840,
+          "itemId": 29443,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33858,
+          "itemId": 29461,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33852,
+          "itemId": 29455,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33703,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1069,
       "masterbook": 14,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -35791,7 +36526,7 @@
       ]
     },
     {
-      "id": 1069,
+      "id": 1077,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
@@ -35941,7 +36676,7 @@
       ]
     },
     {
-      "id": 1077,
+      "id": 1085,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 16,
@@ -36207,11 +36942,21 @@
           "recipeId": 4569,
           "itemId": 28147,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4606,
+          "itemId": 28983,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4604,
+          "itemId": 28976,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1085,
+      "id": 1093,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -36351,7 +37096,7 @@
       ]
     },
     {
-      "id": 1093,
+      "id": 1101,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -36436,13 +37181,13 @@
       ]
     },
     {
-      "id": 1101,
+      "id": 1109,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -36471,13 +37216,13 @@
       ]
     },
     {
-      "id": 1117,
+      "id": 1125,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -36516,7 +37261,7 @@
       ]
     },
     {
-      "id": 1133,
+      "id": 1141,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -36726,7 +37471,7 @@
       ]
     },
     {
-      "id": 1141,
+      "id": 1149,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -36738,6 +37483,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31721,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31722,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31723,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31724,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31725,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31726,
           "itemId": 15725,
@@ -36842,36 +37612,11 @@
           "recipeId": 31746,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31721,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31722,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31723,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31724,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31725,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1149,
+      "id": 1157,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -37021,7 +37766,7 @@
       ]
     },
     {
-      "id": 1157,
+      "id": 1165,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -37086,7 +37831,7 @@
       ]
     },
     {
-      "id": 1165,
+      "id": 1173,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -37151,13 +37896,13 @@
       ]
     },
     {
-      "id": 1173,
+      "id": 1181,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -37216,13 +37961,13 @@
       ]
     },
     {
-      "id": 1181,
+      "id": 1189,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -37281,13 +38026,13 @@
       ]
     },
     {
-      "id": 1189,
+      "id": 1197,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -37321,7 +38066,7 @@
       ]
     },
     {
-      "id": 1197,
+      "id": 1205,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -37361,102 +38106,102 @@
       ]
     },
     {
-      "id": 1205,
+      "id": 1213,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 61,
-        "Difficulty": 1400,
-        "ID": 260,
-        "Quality": 9065,
+        "Difficulty": 1116,
+        "ID": 255,
+        "Quality": 8377,
         "Stars": 0,
-        "SuggestedControl": 980,
-        "SuggestedCraftsmanship": 1016
+        "SuggestedControl": 968,
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
           "recipeId": 33629,
           "itemId": 28824,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33639,
           "itemId": 28834,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33644,
           "itemId": 28839,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33616,
           "itemId": 28811,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33621,
           "itemId": 28816,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33626,
           "itemId": 28821,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33631,
           "itemId": 28826,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33636,
           "itemId": 28831,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33641,
           "itemId": 28836,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33646,
           "itemId": 28841,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33651,
           "itemId": 28846,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33656,
           "itemId": 28851,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33661,
           "itemId": 28856,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33666,
           "itemId": 28861,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33671,
           "itemId": 28866,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33676,
           "itemId": 28871,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 33681,
           "itemId": 28876,
-          "rlvl": 260
+          "rlvl": 255
         }
       ]
     }
@@ -38391,8 +39136,18 @@
       },
       "recipes": [
         {
+          "recipeId": 2781,
+          "itemId": 12607,
+          "rlvl": 115
+        },
+        {
           "recipeId": 2776,
           "itemId": 12601,
+          "rlvl": 115
+        },
+        {
+          "recipeId": 2759,
+          "itemId": 5506,
           "rlvl": 115
         },
         {
@@ -38404,16 +39159,6 @@
           "recipeId": 2768,
           "itemId": 10652,
           "rlvl": 115
-        },
-        {
-          "recipeId": 2781,
-          "itemId": 12607,
-          "rlvl": 120
-        },
-        {
-          "recipeId": 2759,
-          "itemId": 5506,
-          "rlvl": 120
         },
         {
           "recipeId": 2779,
@@ -38813,12 +39558,12 @@
         {
           "recipeId": 2966,
           "itemId": 18043,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 2967,
           "itemId": 18044,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3044,
@@ -38897,9 +39642,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -39259,7 +40004,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -39331,6 +40076,51 @@
           "rlvl": 400
         },
         {
+          "recipeId": 4588,
+          "itemId": 30131,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4589,
+          "itemId": 30132,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4590,
+          "itemId": 30133,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4591,
+          "itemId": 30134,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4592,
+          "itemId": 29984,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4593,
+          "itemId": 29985,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4594,
+          "itemId": 29986,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4595,
+          "itemId": 29987,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4596,
+          "itemId": 29988,
+          "rlvl": 400
+        },
+        {
           "recipeId": 3863,
           "itemId": 27772,
           "rlvl": 403
@@ -39364,7 +40154,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -39663,17 +40453,17 @@
         {
           "recipeId": 31211,
           "itemId": 12914,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 31213,
           "itemId": 12916,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 31215,
           "itemId": 12918,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 31212,
@@ -40002,9 +40792,9 @@
       "masterbook": 46,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -40252,9 +41042,9 @@
       "masterbook": 54,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3149,
+        "Difficulty": 2361,
         "ID": 300,
-        "Quality": 14071,
+        "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
         "SuggestedCraftsmanship": 1100
@@ -40332,14 +41122,24 @@
       "masterbook": 62,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
       },
       "recipes": [
+        {
+          "recipeId": 33787,
+          "itemId": 30078,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 33788,
+          "itemId": 30079,
+          "rlvl": 320
+        },
         {
           "recipeId": 32991,
           "itemId": 22552,
@@ -40624,6 +41424,96 @@
     },
     {
       "id": 1062,
+      "masterbook": 78,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4343,
+        "ID": 450,
+        "Quality": 23395,
+        "Stars": 2,
+        "SuggestedControl": 1990,
+        "SuggestedCraftsmanship": 2140
+      },
+      "recipes": [
+        {
+          "recipeId": 33907,
+          "itemId": 30251,
+          "rlvl": 450
+        },
+        {
+          "recipeId": 33902,
+          "itemId": 29963,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33903,
+          "itemId": 29964,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33904,
+          "itemId": 29965,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33905,
+          "itemId": 29966,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33906,
+          "itemId": 29967,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33712,
+          "itemId": 29991,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33811,
+          "itemId": 29414,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33812,
+          "itemId": 29415,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33881,
+          "itemId": 29492,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33882,
+          "itemId": 29493,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33883,
+          "itemId": 29494,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33884,
+          "itemId": 29495,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33885,
+          "itemId": 29496,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33704,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1070,
       "masterbook": 15,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -40768,7 +41658,7 @@
       ]
     },
     {
-      "id": 1070,
+      "id": 1078,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 17,
@@ -41109,11 +41999,16 @@
           "recipeId": 4586,
           "itemId": 28160,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4614,
+          "itemId": 29687,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1078,
+      "id": 1086,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 12,
@@ -41241,14 +42136,34 @@
           "rlvl": 273
         },
         {
+          "recipeId": 4607,
+          "itemId": 28137,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4600,
+          "itemId": 28965,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4603,
+          "itemId": 28975,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4587,
           "itemId": 28131,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4601,
+          "itemId": 28970,
           "rlvl": 430
         }
       ]
     },
     {
-      "id": 1086,
+      "id": 1094,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -41388,7 +42303,7 @@
       ]
     },
     {
-      "id": 1094,
+      "id": 1102,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -41423,13 +42338,13 @@
       ]
     },
     {
-      "id": 1102,
+      "id": 1110,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -41458,13 +42373,13 @@
       ]
     },
     {
-      "id": 1126,
+      "id": 1134,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -41503,7 +42418,7 @@
       ]
     },
     {
-      "id": 1134,
+      "id": 1142,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -41713,7 +42628,7 @@
       ]
     },
     {
-      "id": 1142,
+      "id": 1150,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -41725,6 +42640,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31747,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31748,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31749,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31750,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31751,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31752,
           "itemId": 15725,
@@ -41829,36 +42769,11 @@
           "recipeId": 31772,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31747,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31748,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31749,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31750,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31751,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1150,
+      "id": 1158,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -42008,7 +42923,7 @@
       ]
     },
     {
-      "id": 1158,
+      "id": 1166,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -42073,7 +42988,7 @@
       ]
     },
     {
-      "id": 1166,
+      "id": 1174,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -42138,13 +43053,13 @@
       ]
     },
     {
-      "id": 1174,
+      "id": 1182,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -42203,13 +43118,13 @@
       ]
     },
     {
-      "id": 1182,
+      "id": 1190,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -42268,13 +43183,13 @@
       ]
     },
     {
-      "id": 1190,
+      "id": 1198,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -42308,7 +43223,7 @@
       ]
     },
     {
-      "id": 1198,
+      "id": 1206,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,
@@ -43219,23 +44134,23 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 51,
-        "Difficulty": 421,
-        "ID": 120,
-        "Quality": 4561,
+        "Difficulty": 339,
+        "ID": 115,
+        "Quality": 3951,
         "Stars": 0,
-        "SuggestedControl": 444,
-        "SuggestedCraftsmanship": 485
+        "SuggestedControl": 426,
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
           "recipeId": 2820,
           "itemId": 12894,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2796,
           "itemId": 12845,
-          "rlvl": 120
+          "rlvl": 115
         },
         {
           "recipeId": 2817,
@@ -43415,12 +44330,12 @@
         {
           "recipeId": 3554,
           "itemId": 19811,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3552,
           "itemId": 19808,
-          "rlvl": 260
+          "rlvl": 255
         },
         {
           "recipeId": 3586,
@@ -43504,9 +44419,9 @@
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -43611,7 +44526,7 @@
         "ClassJobLevel": 71,
         "Difficulty": 3149,
         "ID": 390,
-        "Quality": 14071,
+        "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -43721,7 +44636,7 @@
         "ClassJobLevel": 76,
         "Difficulty": 3526,
         "ID": 409,
-        "Quality": 17024,
+        "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
         "SuggestedCraftsmanship": 1580
@@ -43994,9 +44909,9 @@
       "masterbook": 47,
       "startLevel": {
         "ClassJobLevel": 60,
-        "Difficulty": 1436,
+        "Difficulty": 1033,
         "ID": 180,
-        "Quality": 9430,
+        "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
         "SuggestedCraftsmanship": 718
@@ -44094,9 +45009,9 @@
       "masterbook": 55,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3543,
+        "Difficulty": 2657,
         "ID": 320,
-        "Quality": 15837,
+        "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
         "SuggestedCraftsmanship": 1320
@@ -44134,9 +45049,9 @@
       "masterbook": 63,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 3943,
+        "Difficulty": 2760,
         "ID": 350,
-        "Quality": 18487,
+        "Quality": 13144,
         "Stars": 3,
         "SuggestedControl": 1350,
         "SuggestedCraftsmanship": 1500
@@ -44310,13 +45225,83 @@
       ]
     },
     {
-      "id": 1071,
+      "id": 1063,
+      "masterbook": 79,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 4943,
+        "ID": 480,
+        "Quality": 25863,
+        "Stars": 3,
+        "SuggestedControl": 2195,
+        "SuggestedCraftsmanship": 2480
+      },
+      "recipes": [
+        {
+          "recipeId": 33886,
+          "itemId": 29497,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33890,
+          "itemId": 29501,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33894,
+          "itemId": 29505,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33889,
+          "itemId": 29500,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33892,
+          "itemId": 29503,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33891,
+          "itemId": 29502,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33888,
+          "itemId": 29499,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33893,
+          "itemId": 29504,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33895,
+          "itemId": 29506,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33887,
+          "itemId": 29498,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 33705,
+          "itemId": 29990,
+          "rlvl": 480
+        }
+      ]
+    },
+    {
+      "id": 1079,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 78,
         "Difficulty": 3645,
         "ID": 415,
-        "Quality": 17956,
+        "Quality": 16162,
         "Stars": 0,
         "SuggestedControl": 1541,
         "SuggestedCraftsmanship": 1662
@@ -44345,7 +45330,7 @@
       ]
     },
     {
-      "id": 1079,
+      "id": 1087,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 15,
@@ -44521,11 +45506,16 @@
           "recipeId": 4565,
           "itemId": 28132,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4605,
+          "itemId": 28977,
+          "rlvl": 430
         }
       ]
     },
     {
-      "id": 1087,
+      "id": 1095,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 30,
@@ -44665,13 +45655,13 @@
       ]
     },
     {
-      "id": 1103,
+      "id": 1111,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 63,
-        "Difficulty": 1968,
+        "Difficulty": 1476,
         "ID": 270,
-        "Quality": 10439,
+        "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
         "SuggestedCraftsmanship": 1037
@@ -44700,13 +45690,13 @@
       ]
     },
     {
-      "id": 1127,
+      "id": 1135,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -44745,7 +45735,7 @@
       ]
     },
     {
-      "id": 1135,
+      "id": 1143,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 1,
@@ -44955,7 +45945,7 @@
       ]
     },
     {
-      "id": 1143,
+      "id": 1151,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 50,
@@ -44967,6 +45957,31 @@
         "SuggestedCraftsmanship": 176
       },
       "recipes": [
+        {
+          "recipeId": 31773,
+          "itemId": 15720,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31774,
+          "itemId": 15721,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31775,
+          "itemId": 15722,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31776,
+          "itemId": 15723,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 31777,
+          "itemId": 15724,
+          "rlvl": 50
+        },
         {
           "recipeId": 31778,
           "itemId": 15725,
@@ -45071,36 +46086,11 @@
           "recipeId": 31798,
           "itemId": 15745,
           "rlvl": 50
-        },
-        {
-          "recipeId": 31773,
-          "itemId": 15720,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31774,
-          "itemId": 15721,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31775,
-          "itemId": 15722,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31776,
-          "itemId": 15723,
-          "rlvl": 52
-        },
-        {
-          "recipeId": 31777,
-          "itemId": 15724,
-          "rlvl": 52
         }
       ]
     },
     {
-      "id": 1151,
+      "id": 1159,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 58,
@@ -45250,7 +46240,7 @@
       ]
     },
     {
-      "id": 1159,
+      "id": 1167,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 57,
@@ -45315,7 +46305,7 @@
       ]
     },
     {
-      "id": 1167,
+      "id": 1175,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 60,
@@ -45380,13 +46370,13 @@
       ]
     },
     {
-      "id": 1175,
+      "id": 1183,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 62,
-        "Difficulty": 1684,
+        "Difficulty": 1263,
         "ID": 265,
-        "Quality": 9752,
+        "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
         "SuggestedCraftsmanship": 1027
@@ -45445,13 +46435,13 @@
       ]
     },
     {
-      "id": 1183,
+      "id": 1191,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 66,
-        "Difficulty": 2411,
+        "Difficulty": 1808,
         "ID": 279,
-        "Quality": 11676,
+        "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
         "SuggestedCraftsmanship": 1056
@@ -45510,13 +46500,13 @@
       ]
     },
     {
-      "id": 1191,
+      "id": 1199,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 70,
-        "Difficulty": 2952,
+        "Difficulty": 2214,
         "ID": 290,
-        "Quality": 13187,
+        "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
         "SuggestedCraftsmanship": 1079
@@ -45550,7 +46540,7 @@
       ]
     },
     {
-      "id": 1199,
+      "id": 1207,
       "masterbook": 0,
       "startLevel": {
         "ClassJobLevel": 20,

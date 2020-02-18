@@ -31,6 +31,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
     if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
       alarms.push(...getItemSource(row, DataType.GATHERED_BY, true).nodes
         .filter(node => node.uptime !== undefined || node.weathers !== undefined)
+        .filter(node => node.coords)
         .map(node => {
           const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
           const alarm: Partial<Alarm> = {
@@ -72,7 +73,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
         .filter(reduction => reduction.obj !== undefined && this.bellNodes.getNodesByItemId(reduction.obj.i).length > 0)
         .map(reduction => {
           const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
-          return nodes.map(node => {
+          return nodes
+            .filter(node => node.coords)
+            .map(node => {
             const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
             const nodePosition = this.lazyData.data.nodePositions[node.id];
             const alarm: Partial<Alarm> = {

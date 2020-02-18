@@ -1824,28 +1824,28 @@
     "fr": "C'est pas de la chance, c'est du savoir-faire"
   },
   "305": {
-    "en": "Prepare to Be Assimilated I",
+    "en": "An Extract Science I",
     "de": "Aus alt mach neu I",
     "ja": "思念の結晶：ランク1",
-    "fr": "Parfois détruire, toujours sertir I"
+    "fr": "Ça peut toujours sertir I"
   },
   "306": {
-    "en": "Prepare to Be Assimilated II",
+    "en": "An Extract Science II",
     "de": "Aus alt mach neu II",
     "ja": "思念の結晶：ランク2",
-    "fr": "Parfois détruire, toujours sertir II"
+    "fr": "Ça peut toujours sertir II"
   },
   "307": {
-    "en": "Prepare to Be Assimilated III",
+    "en": "An Extract Science III",
     "de": "Aus alt mach neu III",
     "ja": "思念の結晶：ランク3",
-    "fr": "Parfois détruire, toujours sertir III"
+    "fr": "Ça peut toujours sertir III"
   },
   "308": {
-    "en": "Prepare to Be Assimilated IV",
+    "en": "An Extract Science IV",
     "de": "Aus alt mach neu IV",
     "ja": "思念の結晶：ランク4",
-    "fr": "Parfois détruire, toujours sertir IV"
+    "fr": "Ça peut toujours sertir IV"
   },
   "309": {
     "en": "Living in a Materia World",
@@ -8004,10 +8004,10 @@
     "fr": "L'art et la matéria VI"
   },
   "1335": {
-    "en": "Prepare to Be Assimilated V",
+    "en": "An Extract Science V",
     "de": "Aus alt mach neu V",
     "ja": "思念の結晶：ランク5",
-    "fr": "Parfois détruire, toujours sertir V"
+    "fr": "Ça peut toujours sertir V"
   },
   "1336": {
     "en": "To Crush Your Enemies VII",
@@ -14768,7 +14768,7 @@
   "2462": {
     "en": "Mightier than the Raven",
     "de": "Team Blau gegen Bahamut II",
-    "ja": "第ニの大迷宮を制覇せし青魔道士",
+    "ja": "第二の大迷宮を制覇せし青魔道士",
     "fr": "Des bleus pour Bahamut II"
   },
   "2463": {
@@ -14910,9 +14910,735 @@
     "fr": ""
   },
   "2486": {
-    "en": "Go Big Far from Home",
+    "en": "Go Big Far from Home I",
     "de": "Kapitalbeschaffung im ersten Splitter",
-    "ja": "第一世界の太公望",
-    "fr": "Pêcheur de légendes itinérant"
+    "ja": "第一世界の太公望：ランク1",
+    "fr": "Pêcheur de légendes itinérant I"
+  },
+  "2487": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2488": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2489": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2490": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2491": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2492": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2493": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2494": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2495": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2496": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2497": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2498": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2499": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2500": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2501": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2502": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2503": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2504": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2505": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2506": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2507": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2508": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2509": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2510": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2511": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2512": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2513": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2514": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2515": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2516": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2517": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2518": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2519": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2520": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2521": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2522": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2523": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2524": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2525": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2526": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2527": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2528": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2529": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2530": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2531": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2532": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2533": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2534": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2535": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2536": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2537": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2538": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2539": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2540": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2541": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2542": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2543": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2544": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2545": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2546": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2547": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2548": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2549": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2550": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2551": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2552": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2553": {
+    "en": "Denizens of Galadion",
+    "de": "Meisterfischer der Galadion-Bucht",
+    "ja": "ガラディオン湾沖合の魚拓王",
+    "fr": "Ichtyogrammiste de la baie de Galadion"
+  },
+  "2554": {
+    "en": "Denizens of South Merlthor",
+    "de": "Meisterfischer der südlichen Straße von Merlthor",
+    "ja": "メルトール海峡南の魚拓王",
+    "fr": "Ichtyogrammiste du détroit sud de Merlthor"
+  },
+  "2555": {
+    "en": "Denizens of the Rhotano",
+    "de": "Meisterfischer der Rhotano-See",
+    "ja": "ロータノ海沖合の魚拓王",
+    "fr": "Ichtyogrammiste de la mer de Rhotano"
+  },
+  "2556": {
+    "en": "Denizens of North Merlthor",
+    "de": "Meisterfischer der nördlichen Straße von Merlthor ",
+    "ja": "メルトール海峡北の魚拓王",
+    "fr": "Ichtyogrammiste du détroit nord de Merlthor"
+  },
+  "2557": {
+    "en": "On a Boat I",
+    "de": "Fischer auf großer Fahrt I",
+    "ja": "世界を釣る者：ランク1",
+    "fr": "Grand pêcheur I"
+  },
+  "2558": {
+    "en": "On a Boat II",
+    "de": "Fischer auf großer Fahrt II",
+    "ja": "世界を釣る者：ランク2",
+    "fr": "Grand pêcheur II"
+  },
+  "2559": {
+    "en": "On a Boat III",
+    "de": "Fischer auf großer Fahrt III",
+    "ja": "世界を釣る者：ランク3",
+    "fr": "Grand pêcheur III"
+  },
+  "2560": {
+    "en": "No More Fish in the Sea I",
+    "de": "Hochseefischer I",
+    "ja": "オーシャンフィッシャー：ランク1",
+    "fr": "Ratisseur des océans I"
+  },
+  "2561": {
+    "en": "No More Fish in the Sea II",
+    "de": "Hochseefischer II",
+    "ja": "オーシャンフィッシャー：ランク2",
+    "fr": "Ratisseur des océans II"
+  },
+  "2562": {
+    "en": "No More Fish in the Sea III",
+    "de": "Hochseefischer III",
+    "ja": "オーシャンフィッシャー：ランク3",
+    "fr": "Ratisseur des océans III"
+  },
+  "2563": {
+    "en": "What Did Octopodes Do to You?",
+    "de": "Oktopussreiter",
+    "ja": "オクトパストラベラー",
+    "fr": "Octo-opus"
+  },
+  "2564": {
+    "en": "What Did Sharks Do to You?",
+    "de": "Haijäger",
+    "ja": "シャークハンター",
+    "fr": "Chasseurs de requins"
+  },
+  "2565": {
+    "en": "What Did Jellyfish Do to You?",
+    "de": "Quallenfänger",
+    "ja": "クラゲマニア",
+    "fr": "Le bateau de la méduse"
+  },
+  "2566": {
+    "en": "What Did Seadragons Do to You?",
+    "de": "Seepferdchenbändiger",
+    "ja": "シードラゴンキラー",
+    "fr": "Fièvre de cheval des mers"
+  },
+  "2567": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2568": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2569": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2570": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2571": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2572": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2573": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2574": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2575": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2576": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2577": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2578": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2579": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2580": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2581": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2582": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2583": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2584": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2585": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2586": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2587": {
+    "en": "Way More Heroes",
+    "de": "Echo des Sternenregens",
+    "ja": "追憶の凶星",
+    "fr": "Échos d'une étoile déchue"
+  },
+  "2588": {
+    "en": "Go Big Far from Home II",
+    "de": "Kapitalbeschaffung im ersten Splitter II",
+    "ja": "第一世界の太公望：ランク2",
+    "fr": "Pêcheur de légendes itinérant II"
+  },
+  "2589": {
+    "en": "Mapping the Realm: Anamnesis Anyder",
+    "de": "Kartograph: Anamnesis Anyder",
+    "ja": "アニドラス・アナムネーシスを踏破せし者",
+    "fr": "Cartographe du continent : Anamnesis Anydre"
+  },
+  "2590": {
+    "en": "Seeing Red",
+    "de": "Rubinschleifer",
+    "ja": "ルビーウェポンを破壊せし者",
+    "fr": "Braver rubis sur l'ongle"
+  },
+  "2591": {
+    "en": "Trouble in Paradise I",
+    "de": "Paradiesische Resonanz I",
+    "ja": "共鳴せしエデンを制覇せし者：ランク1",
+    "fr": "Briser la glace I"
+  },
+  "2592": {
+    "en": "Trouble in Paradise II",
+    "de": "Paradiesische Resonanz II",
+    "ja": "共鳴せしエデンを制覇せし者：ランク2",
+    "fr": "Briser la glace II"
+  },
+  "2593": {
+    "en": "Trouble in Paradise III",
+    "de": "Paradiesische Resonanz III",
+    "ja": "共鳴せしエデンを制覇せし者：ランク3",
+    "fr": "Briser la glace III"
+  },
+  "2594": {
+    "en": "Savage Trouble in Paradise I",
+    "de": "Epische Resonanz I",
+    "ja": "共鳴せしエデンを完全制覇せし者：ランク1",
+    "fr": "Accords parfaits I"
+  },
+  "2595": {
+    "en": "Savage Trouble in Paradise II",
+    "de": "Epische Resonanz II",
+    "ja": "共鳴せしエデンを完全制覇せし者：ランク2",
+    "fr": "Accords parfaits II"
+  },
+  "2596": {
+    "en": "Savage Trouble in Paradise III",
+    "de": "Epische Resonanz III",
+    "ja": "共鳴せしエデンを完全制覇せし者：ランク3",
+    "fr": "Accords parfaits III"
+  },
+  "2597": {
+    "en": "With My Compliments I",
+    "de": "Grabende Pfoten I",
+    "ja": "ルリの発掘隊：ランク1",
+    "fr": "Les aventuriers de la stèle perdue I"
+  },
+  "2598": {
+    "en": "With My Compliments II",
+    "de": "Grabende Pfoten II",
+    "ja": "ルリの発掘隊：ランク2",
+    "fr": "Les aventuriers de la stèle perdue II"
+  },
+  "2599": {
+    "en": "With My Compliments III",
+    "de": "Grabende Pfoten III",
+    "ja": "ルリの発掘隊：ランク3",
+    "fr": "Les aventuriers de la stèle perdue III"
+  },
+  "2600": {
+    "en": "With My Compliments IV",
+    "de": "Vertrauter der Grabenden Pfoten",
+    "ja": "ロンカの書記官",
+    "fr": "Scribe de Ronka"
+  },
+  "2601": {
+    "en": "Just Peachy",
+    "de": "Pfirsichsüße Freuden",
+    "ja": "憧れの人",
+    "fr": "Les petites copines"
+  },
+  "2602": {
+    "en": "タマゴを運ぶスーツアクター",
+    "de": "タマゴを運ぶスーツアクター",
+    "ja": "タマゴを運ぶスーツアクター",
+    "fr": "Candeur surprise"
+  },
+  "2603": {
+    "en": "Specters of Galadion",
+    "de": "Phantomfischer der Galadion-Bucht",
+    "ja": "ガラディオン湾沖合の幻海王",
+    "fr": "Spectre de la baie de Galadion"
+  },
+  "2604": {
+    "en": "Specters of South Merlthor",
+    "de": "Phantomfischer der südlichen Straße von Merlthor",
+    "ja": "メルトール海峡南の幻海王",
+    "fr": "Spectre du détroit sud de Merlthor"
+  },
+  "2605": {
+    "en": "Specters of the Rhotano",
+    "de": "Phantomfischer der Rhotano-See",
+    "ja": "ロータノ海沖合の幻海王",
+    "fr": "Spectre de la mer de Rhotano"
+  },
+  "2606": {
+    "en": "Specters of North Merlthor",
+    "de": "Phantomfischer der nördlichen Straße von Merlthor",
+    "ja": "メルトール海峡北の幻海王",
+    "fr": "Spectre du détroit nord de Merlthor"
+  },
+  "2607": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
   }
 }

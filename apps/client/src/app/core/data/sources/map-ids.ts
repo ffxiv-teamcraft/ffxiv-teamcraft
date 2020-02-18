@@ -2185,24 +2185,24 @@ export const mapIds = [
   },
   {
     "id": 274,
-    "zone": 1647,
-    "name": "The Diadem",
+    "zone": 0,
+    "name": null,
     "territory": 515,
     "scale": 100,
     "weatherRate": 62
   },
   {
     "id": 275,
-    "zone": 1647,
-    "name": "The Diadem",
+    "zone": 0,
+    "name": null,
     "territory": 514,
     "scale": 100,
     "weatherRate": 61
   },
   {
     "id": 276,
-    "zone": 1647,
-    "name": "The Diadem",
+    "zone": 0,
+    "name": null,
     "territory": 512,
     "scale": 100,
     "weatherRate": 60
@@ -2674,7 +2674,7 @@ export const mapIds = [
   {
     "id": 335,
     "zone": 695,
-    "name": "Frondale's Ward for Friendless Foundlings",
+    "name": "Frondale's Home for Friendless Foundlings",
     "territory": 611,
     "scale": 800,
     "weatherRate": 0
@@ -2841,8 +2841,8 @@ export const mapIds = [
   },
   {
     "id": 356,
-    "zone": 1647,
-    "name": "The Diadem",
+    "zone": 0,
+    "name": null,
     "territory": 656,
     "scale": 100,
     "weatherRate": 71
@@ -4653,6 +4653,206 @@ export const mapIds = [
     "name": "Lyhe Mheg",
     "territory": 892,
     "scale": 400,
-    "weatherRate": 58
+    "weatherRate": 118
+  },
+  {
+    "id": 583,
+    "zone": 3442,
+    "name": "Cinder Drift",
+    "territory": 897,
+    "scale": 400,
+    "weatherRate": 28
+  },
+  {
+    "id": 584,
+    "zone": 1647,
+    "name": "The Diadem",
+    "territory": 901,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 585,
+    "zone": 3467,
+    "name": "Anamnesis Anyder",
+    "territory": 898,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 586,
+    "zone": 3467,
+    "name": "Anamnesis Anyder",
+    "territory": 898,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 587,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 588,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 589,
+    "zone": 3468,
+    "name": "The Gandof Thunder Plains",
+    "territory": 902,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 590,
+    "zone": 3469,
+    "name": "Ashfall",
+    "territory": 903,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 591,
+    "zone": 3470,
+    "name": "The Halo",
+    "territory": 904,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 592,
+    "zone": 0,
+    "name": null,
+    "territory": 916,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 593,
+    "zone": 0,
+    "name": null,
+    "territory": 916,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 594,
+    "zone": 0,
+    "name": null,
+    "territory": 916,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 595,
+    "zone": 3467,
+    "name": "Anamnesis Anyder",
+    "territory": 898,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 596,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 597,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 598,
+    "zone": 3471,
+    "name": "Trial's Threshold",
+    "territory": 914,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 599,
+    "zone": 3487,
+    "name": "Great Glacier",
+    "territory": 905,
+    "scale": 400,
+    "weatherRate": 46
+  },
+  {
+    "id": 600,
+    "zone": 3479,
+    "name": "",
+    "territory": 911,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 601,
+    "zone": 2527,
+    "name": "The Falling City of Nym",
+    "territory": 899,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 602,
+    "zone": 3488,
+    "name": "Frozen Reflections",
+    "territory": 905,
+    "scale": 400,
+    "weatherRate": 46
+  },
+  {
+    "id": 603,
+    "zone": 3478,
+    "name": "",
+    "territory": 915,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 604,
+    "zone": 3477,
+    "name": "The Endeavor",
+    "territory": 900,
+    "scale": 400,
+    "weatherRate": 14
+  },
+  {
+    "id": 605,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 606,
+    "zone": 0,
+    "name": null,
+    "territory": 920,
+    "scale": 100,
+    "weatherRate": 0
+  },
+  {
+    "id": 607,
+    "zone": 3486,
+    "name": "",
+    "territory": 913,
+    "scale": 400,
+    "weatherRate": 0
   }
 ];

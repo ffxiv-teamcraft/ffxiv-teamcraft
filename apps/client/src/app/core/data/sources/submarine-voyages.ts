@@ -323,38 +323,38 @@ export const submarineVoyages = [
   },
   {
     "id": 47,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Open Robe",
+    "de": "Lumpenkleidinsel (P)",
+    "ja": "P　擦り切れローブ島",
+    "fr": "Île de la robe fripée (P)"
   },
   {
     "id": 48,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Nald'thal's Pipe",
+    "de": "Nald'thals Schlot (Q)",
+    "ja": "Q　ナルザルの煙管",
+    "fr": "Cheminée de Nald'thal (Q)"
   },
   {
     "id": 49,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Slipped Anchor",
+    "de": "Schliergrund (R)",
+    "ja": "R　走錨海域",
+    "fr": "Mer de Chasse-Ancre (R)"
   },
   {
     "id": 50,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Glutton's Belly",
+    "de": "Hungriger Magen (S)",
+    "ja": "S　強欲の胃袋",
+    "fr": "Estomac goulu (S)"
   },
   {
     "id": 51,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Blue Hole",
+    "de": "Das Blaue Loch (T)",
+    "ja": "T　ブルーホール",
+    "fr": "Trou bleu (T)"
   },
   {
     "id": 52,

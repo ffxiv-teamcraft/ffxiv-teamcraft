@@ -27114,7 +27114,7 @@
     "fr": "celphie"
   },
   "4520": {
-    "en": "noctilucale",
+    "en": "proto-noctilucale",
     "ja": "プロト・ノクチルカ",
     "de": "Proto-Noctiluca",
     "fr": "proto-noctilucale"
@@ -49370,7 +49370,7 @@
   "8229": {
     "en": "Esteem",
     "ja": "英雄の影身",
-    "de": "Hochachtung",
+    "de": "Dunkl[a] Schatten",
     "fr": "estime"
   },
   "8230": {
@@ -49910,7 +49910,7 @@
   "8319": {
     "en": "wroth hydrozoan",
     "ja": "ロス・ヒドロゾア",
-    "de": "erzürnt[a] Hydrozoa",
+    "de": "erzürnt[a] Hydrozoon",
     "fr": "hydrozoaire furibond"
   },
   "8320": {
@@ -49977,12 +49977,12 @@
     "en": "danbania netcutter",
     "ja": "ダンバニア・ネットカッター",
     "de": "Danbania-Netzschlitzerin",
-    "fr": "Dambanha tranche-filet"
+    "fr": "dambanha tranche-filet"
   },
   "8331": {
     "en": "wandering hydrozoan",
     "ja": "ワンダリング・ヒドロゾア",
-    "de": "umherschweifend[a] Hydrozoa",
+    "de": "umherschweifend[a] Hydrozoon",
     "fr": "hydrozoaire errant"
   },
   "8332": {
@@ -51207,7 +51207,7 @@
     "en": "Gulg knocker",
     "ja": "グルグ・ノッカー",
     "de": "Gulg-Klopfer",
-    "fr": "frappeur du mont Gulg"
+    "fr": "frappeur du Mont Gulg"
   },
   "8536": {
     "en": "whiptail",
@@ -51764,7 +51764,7 @@
   "8628": {
     "en": "hydrozoan",
     "ja": "ヒドロゾア",
-    "de": "Hydrozoa",
+    "de": "Hydrozoon",
     "fr": "hydrozoaire"
   },
   "8629": {
@@ -52425,7 +52425,7 @@
     "en": "territorial danbania",
     "ja": "テリトリアル・ダンバニア",
     "de": "hinterhältig[a] Danbania",
-    "fr": "dambanha territoriale"
+    "fr": "dambanha territorial"
   },
   "8739": {
     "en": "territorial cubus",
@@ -52856,7 +52856,7 @@
   "8810": {
     "en": "windborne hydrozoan",
     "ja": "ウインドボーン・ヒドロゾア",
-    "de": "gleitend[a] Hydrozoa",
+    "de": "gleitend[a] Hydrozoon",
     "fr": "hydrozoaire né-des-vents"
   },
   "8811": {
@@ -54248,7 +54248,7 @@
   "9042": {
     "en": "Perfect Alexander",
     "ja": "パーフェクト・アレキサンダー",
-    "de": "Perfekt[a] Alexander",
+    "de": "Perfekter Alexander",
     "fr": "Alexander parfait"
   },
   "9043": {
@@ -55494,340 +55494,340 @@
     "fr": "wamoura d'Abalathia"
   },
   "9250": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "the Ruby Weapon",
+    "ja": "ルビーウェポン",
+    "de": "Rubin-Waffe",
+    "fr": "Arme Rubis"
   },
   "9251": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "commanding voice",
+    "ja": "凜々しい女性の声",
+    "de": "entschlossen[a] Frauenstimme",
+    "fr": "voix féminine solennelle"
   },
   "9252": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "threatening voice",
+    "ja": "禍々しい女性の声",
+    "de": "bedrohlich[a] Frauenstimme",
+    "fr": "voix féminine sinistre"
   },
   "9253": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "meteor",
+    "ja": "メテオ",
+    "de": "Meteor",
+    "fr": "météore"
   },
   "9254": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Raven's image",
+    "ja": "ネールの幻影",
+    "de": "Naels Trugbild",
+    "fr": "spectre de Nael"
   },
   "9255": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "white fury",
+    "ja": "ネールの憤怒",
+    "de": "Naels Zorn",
+    "fr": "fureur de Nael"
   },
   "9256": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "white agony",
+    "ja": "ネールの悲嘆",
+    "de": "Naels Trauer",
+    "fr": "angoisse de Nael"
   },
   "9257": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "false moon",
+    "ja": "偽月ダラガブ",
+    "de": "Dalamud[p] [t] falsche Mond",
+    "fr": "copie de Dalamud"
   },
   "9258": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "lesser moon",
+    "ja": "小月ダラガブ",
+    "de": "Dalamud[p] [t] Nebenmond",
+    "fr": "mini-Dalamud"
   },
   "9259": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ruby bit",
+    "ja": "ルビービット",
+    "de": "Rubin-Drohne",
+    "fr": "drone rubis"
   },
   "9260": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unknown",
+    "ja": "正体不明",
+    "de": "abscheulich[a] Monstrum",
+    "fr": "inconnu"
   },
   "9261": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Unknown",
+    "ja": "正体不明",
+    "de": "abscheulich[a] Monstrum",
+    "fr": "inconnu"
   },
   "9262": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "sinister bubble",
+    "ja": "不気味な泡",
+    "de": "finster[a] Blase",
+    "fr": "bulle sinistre"
   },
   "9263": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kyklops",
+    "ja": "クリュプス",
+    "de": "Kyklops",
+    "fr": "Kyklops"
   },
   "9264": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Rukshs Dheem",
+    "ja": "ルクスィー・ディーマ",
+    "de": "Rukshs Dheem",
+    "fr": "Rukshs Dheem"
   },
   "9265": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "depth grip",
+    "ja": "ハンド・オブ・オーシャン",
+    "de": "Hand[p] des Ozeans",
+    "fr": "emprise des profondeurs"
   },
   "9266": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "queen's harpooner",
+    "ja": "クイーンズ・ハープナー",
+    "de": "Speer[p] der Königin",
+    "fr": "harponneur royal"
   },
   "9267": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench danbania",
+    "ja": "トレンチ・ダンバニア",
+    "de": "Tiefsee-Danbania",
+    "fr": "dambanha des abysses"
   },
   "9268": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench xzomit",
+    "ja": "トレンチ・ゾミト",
+    "de": "Tiefsee-Xzomit",
+    "fr": "xzomit des abysses"
   },
   "9269": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench phuabo",
+    "ja": "トレンチ・フワボ",
+    "de": "Tiefsee-Phuabo",
+    "fr": "phuabo des abysses"
   },
   "9270": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench anemone",
+    "ja": "トレンチ・アネモネ",
+    "de": "Tiefsee-Anemone",
+    "fr": "anémone des abysses"
   },
   "9271": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench dagonite",
+    "ja": "トレンチ・ダグ",
+    "de": "Tiefsee-Dagonit",
+    "fr": "dagonite des abysses"
   },
   "9272": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "trench yovra",
+    "ja": "トレンチ・ヨヴラ",
+    "de": "Tiefsee-Yovra",
+    "fr": "yovra des abysses"
   },
   "9273": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder squib",
+    "ja": "アニドラス・スクイブ",
+    "de": "Anyder-Kreiselkrabbe",
+    "fr": "squib de l'Anydre"
   },
   "9274": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder clionid",
+    "ja": "アニドラス・クリオニッド",
+    "de": "Anyder-Clionid",
+    "fr": "clionide de l'Anydre"
   },
   "9275": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder leech",
+    "ja": "アニドラス・リーチ",
+    "de": "Anyder-Egel",
+    "fr": "sangsue de l'Anydre"
   },
   "9276": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder grappler",
+    "ja": "アニドラス・グラップラー",
+    "de": "Anyder-Greifer",
+    "fr": "lutteur de l'Anydre"
   },
   "9277": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder harpooner",
+    "ja": "アニドラス・ハープナー",
+    "de": "Anyder-Speerwerfer",
+    "fr": "harponneur de l'Anydre"
   },
   "9278": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Anyder diviner",
+    "ja": "アニドラス・ディヴァイナー",
+    "de": "Anyder-Wahrsager",
+    "fr": "devin de l'Anydre"
   },
   "9279": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "panopt ousia",
+    "ja": "パノプト・ウーシア",
+    "de": "Ousia",
+    "fr": "panopt ousia"
   },
   "9280": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "io ousia",
+    "ja": "イーオー・ウーシア",
+    "de": "Io-Ousia",
+    "fr": "io ousia"
   },
   "9281": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ramuh",
+    "ja": "ラムウ",
+    "de": "Ramuh",
+    "fr": "Ramuh"
   },
   "9282": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "stormcloud",
+    "ja": "積乱雲",
+    "de": "Cumulonimbus-Wolke",
+    "fr": "cumulonimbus"
   },
   "9283": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "gathered storm",
+    "ja": "積乱雲群",
+    "de": "Cumulonimbus-Wolkendecke",
+    "fr": "nuée de cumulonimbus"
   },
   "9284": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "will of Ramuh",
+    "ja": "ラムウ・ミラージュ",
+    "de": "Ramuh-Spiegelung",
+    "fr": "réplique de Ramuh"
   },
   "9285": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "will of Ixion",
+    "ja": "イクシオン・ミラージュ",
+    "de": "Ixion-Spiegelung",
+    "fr": "réplique d'Ixion"
   },
   "9286": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "raiden",
+    "ja": "ライデン",
+    "de": "Raiden",
+    "fr": "Raiden"
   },
   "9287": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Garuda",
+    "ja": "ガルーダ",
+    "de": "Garuda",
+    "fr": "Garuda"
   },
   "9288": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ifrit",
+    "ja": "イフリート",
+    "de": "Ifrit",
+    "fr": "Ifrit"
   },
   "9289": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Raktapaksa",
+    "ja": "ラクタパクシャ",
+    "de": "Raktapaksa",
+    "fr": "Raktapaksa"
   },
   "9290": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "tumultuous nexus",
+    "ja": "暴風球",
+    "de": "Orkankugel",
+    "fr": "rafale"
   },
   "9291": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "great ball of fire",
+    "ja": "火焔球",
+    "de": "Flammenkugel",
+    "fr": "ignescence"
   },
   "9292": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "twisting blaze",
+    "ja": "火炎旋風",
+    "de": "Feuersturm",
+    "fr": "vortex enflammé"
   },
   "9293": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "iguana huaca",
+    "ja": "フアガス・イグアナ",
+    "de": "Leguan-Huaca",
+    "fr": "iguane huaca"
   },
   "9294": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "thorn huaca",
+    "ja": "フアガス・ロンカソーン",
+    "de": "Dornen-Huaca",
+    "fr": "épine ronka huaca"
   },
   "9295": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "cubus huaca",
+    "ja": "フアガス・カブス",
+    "de": "Kubus-Huaca",
+    "fr": "oléofuror huaca"
   },
   "9296": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "huaca",
+    "ja": "フアガス",
+    "de": "Huaca",
+    "fr": "Huaca"
   },
   "9297": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "voidgate",
+    "ja": "空間孔",
+    "de": "Raumperforator",
+    "fr": "perforateur spatial"
   },
   "9298": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "the Idol of Darkness",
+    "ja": "ダークアイドル",
+    "de": "Götzenbild[p] der Dunkelheit",
+    "fr": "Idole des Ténèbres"
   },
   "9299": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "unforgiven idolatry",
+    "ja": "アンフォーギヴン・アイドラトリー",
+    "de": "ungeläutert[a] Götzenverehrung",
+    "fr": "nuée d'idolâtries impardonnables"
   },
   "9300": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "blasphemy",
+    "ja": "ブラスヒーム",
+    "de": "Blasphemie",
+    "fr": "vol d'idolâtries impardonnables"
   },
   "9301": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "idolatry",
+    "ja": "アイドラトリー",
+    "de": "Idolatrie",
+    "fr": "vol d'idolâtries impardonnables"
   },
   "9302": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "chiaro",
+    "ja": "闇影塊",
+    "de": "verdichtet[a] Dunkel",
+    "fr": "amas de noirceur"
   },
   "9303": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "scuro",
+    "ja": "清光塊",
+    "de": "verdichtet[a] Licht",
+    "fr": "amas de clarté"
   },
   "9304": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ryne",
+    "ja": "リーンの声",
+    "de": "Rynes Stimme",
+    "fr": "voix de Ryne"
   },
   "9305": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "synthetic auracite system",
+    "ja": "疑似聖石システム",
+    "de": "Pseudoauracit-System",
+    "fr": "système d'auralithe factice"
   },
   "9306": {
     "en": "",
@@ -55896,64 +55896,64 @@
     "fr": ""
   },
   "9317": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "frozen mirror",
+    "ja": "氷面鏡",
+    "de": "Eisspiegel",
+    "fr": "miroir de glace"
   },
   "9318": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "holy light",
+    "ja": "聖なる光",
+    "de": "heilig[a] Licht",
+    "fr": "lumière sacrée"
   },
   "9319": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "electric aether",
+    "ja": "ライトニング・エーテル",
+    "de": "Blitzäther",
+    "fr": "éther de foudre"
   },
   "9320": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "aqueous aether",
+    "ja": "ウォーター・エーテル",
+    "de": "Wasseräther",
+    "fr": "éther d'eau"
   },
   "9321": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "earthen aether",
+    "ja": "アース・エーテル",
+    "de": "Erdäther",
+    "fr": "éther de terre"
   },
   "9322": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "luminous aether",
+    "ja": "ライト・エーテル",
+    "de": "Lichtäther",
+    "fr": "éther de lumière"
   },
   "9323": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "drachen wanderer",
+    "ja": "聖竜気",
+    "de": "Seele[p] des heiligen Drachen",
+    "fr": "esprit du Dragon divin"
   },
   "9324": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "great wyrm",
+    "ja": "聖竜",
+    "de": "Körper[p] des heiligen Drachen",
+    "fr": "Dragon divin"
   },
   "9325": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Mothercrystal",
+    "ja": "マザークリスタル",
+    "de": "Urkristall",
+    "fr": "Cristal-mère"
   },
   "9326": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gaia",
+    "ja": "ガイア",
+    "de": "Gaia",
+    "fr": "Gaïa"
   },
   "9327": {
     "en": "",
@@ -56052,48 +56052,648 @@
     "fr": ""
   },
   "9343": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ニワトリ",
+    "ja": "ニワトリ",
+    "de": "ニワトリ",
+    "fr": "poule"
   },
   "9344": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hatching-tide helpmeet",
+    "ja": "エッグハント実行委員",
+    "de": "エッグハント実行委員",
+    "fr": "organisateur de la chasse aux Prœufs"
   },
   "9345": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "森都の子ども",
+    "ja": "森都の子ども",
+    "de": "森都の子ども",
+    "fr": "enfant de Gridania"
   },
   "9346": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Alphinaud",
+    "ja": "アルフィノ",
+    "de": "Alphinaud",
+    "fr": "アルフィノ"
   },
   "9347": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ryne",
+    "ja": "リーン",
+    "de": "Ryne",
+    "fr": "リーン"
   },
   "9348": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Thancred",
+    "ja": "サンクレッド",
+    "de": "Thancred",
+    "fr": "サンクレッド"
   },
   "9349": {
+    "en": "Urianger",
+    "ja": "ウリエンジェ",
+    "de": "Urianger",
+    "fr": "ウリエンジェ"
+  },
+  "9350": {
+    "en": "Moonstone Carbuncle",
+    "ja": "カーバンクル・ムーンストーン",
+    "de": "Mondstein-Karfunkel",
+    "fr": "カーバンクル・ムーンストーン"
+  },
+  "9351": {
+    "en": "武具職人らしきウサギ",
+    "ja": "武具職人らしきウサギ",
+    "de": "武具職人らしきウサギ",
+    "fr": "lapin à l'allure de forgeron"
+  },
+  "9352": {
+    "en": "商魂たくましいウサギ",
+    "ja": "商魂たくましいウサギ",
+    "de": "商魂たくましいウサギ",
+    "fr": "lapine dure en affaires"
+  },
+  "9353": {
+    "en": "Shiva",
+    "ja": "シヴァ",
+    "de": "Shiva",
+    "fr": "Shiva"
+  },
+  "9354": {
+    "en": "Bismarck",
+    "ja": "ビスマルクの声",
+    "de": "Bismarcks Stimme",
+    "fr": "voix de Bismarck"
+  },
+  "9355": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "9350": {
+  "9356": {
+    "en": "ruby sphere",
+    "ja": "ルビースフィア",
+    "de": "Rubin-Sphäre",
+    "fr": "sphère rubis"
+  },
+  "9357": {
+    "en": "Foerzagyl",
+    "ja": "フールサギル",
+    "de": "Foerzagyl",
+    "fr": "Foerzagyl"
+  },
+  "9358": {
+    "en": "ice veil",
+    "ja": "永久氷晶",
+    "de": "Immerfrost-Kristall",
+    "fr": "bloc de glaces éternelles"
+  },
+  "9359": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9360": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9361": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9362": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9363": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9364": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9365": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9366": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9367": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9368": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9369": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9370": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9371": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9372": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9373": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9374": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9375": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9376": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9377": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9378": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9379": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9380": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9381": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9382": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9383": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9384": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9385": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9386": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9387": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9388": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9389": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9390": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9391": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9392": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9393": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9394": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9395": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9396": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9397": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9398": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9399": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9400": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9401": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9402": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9403": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9404": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9405": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9406": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9407": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9408": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9409": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9410": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9411": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9412": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9413": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9414": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9415": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9416": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9417": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9418": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9419": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9420": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9421": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9422": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9423": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9424": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9425": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9426": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9427": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9428": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9429": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9430": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9431": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9432": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9433": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9434": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9435": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9436": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9437": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9438": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9439": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9440": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9441": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9442": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9443": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9444": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9445": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9446": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9447": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9448": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9449": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9450": {
     "en": "",
     "ja": "",
     "de": "",

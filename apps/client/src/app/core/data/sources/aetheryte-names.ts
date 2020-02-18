@@ -127,9 +127,9 @@ export const aetheryteNames = {
   },
   "43": {
     "en": "Arcanists' Guild",
-    "de": "Hermetikergilde",
-    "ja": "巴術士ギルド前",
-    "fr": "Guilde des arcanistes"
+    "de": "Hermetikergilde (Fähranleger)",
+    "ja": "巴術士ギルド前（フェリードック）",
+    "fr": "Guilde des arcanistes (Embarcadère)"
   },
   "44": {
     "en": "Fishermen's Guild",
@@ -556,5 +556,11 @@ export const aetheryteNames = {
     "de": "Pfad zum Ruhm (Kholusia)",
     "ja": "栄光の道（コルシア島方面）",
     "fr": "Marches de la Gloire (Kholusia)"
+  },
+  "162": {
+    "en": "Ferry Docks",
+    "de": "Fähranleger",
+    "ja": "船着場",
+    "fr": "Embarcadère"
   }
 };
