@@ -9,17 +9,13 @@
             [src]="(xivapiNode.IsLimited?xivapiNode.GatheringType.IconOff : xivapiNode.GatheringType.IconMain) | xivapiIcon"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 *ngIf="xivapiNode.GatheringPoints && xivapiNode.GatheringPoints[0]?.PlaceName; else otherName"
-                class="item-name">{{xivapiNode.GatheringPoints[0]?.PlaceName | xivapiI18n}}</h2>
-            <ng-template #otherName>
-              <h2 *ngIf="xivapiNode.mappyData" class="item-name">{{xivapiNode.mappyData.zoneid | placeName | i18n}}</h2>
-            </ng-template>
+            <h2 class="item-name">{{getName(xivapiNode)}}</h2>
             <div class="item-kind">
               Lvl {{xivapiNode.GatheringLevel}} <span
-              [innerHTML]="xivapiNode.GatheringType | xivapiI18n"></span>
+              [innerHTML]="xivapiNode.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
             </div>
             <div *ngIf="xivapiNode.GamePatch" class="patch">
-              {{xivapiNode.GamePatch | xivapiI18n}}
+              {{xivapiNode.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiNode.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>

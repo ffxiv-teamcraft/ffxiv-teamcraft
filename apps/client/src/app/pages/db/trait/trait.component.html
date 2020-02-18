@@ -7,13 +7,13 @@
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="trait.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{trait | xivapiI18n}}</h2>
+            <h2 class="item-name">{{trait | xivapiL12n: 'traits' | i18n}}</h2>
             <div class="item-kind" fxLayout="row" fxLayoutGap="5px">
               <div>Lvl {{trait.Level}}</div>
-              <div [innerHTML]="trait.ClassJob | xivapiI18n: 'Abbreviation'"></div>
+              <div [innerHTML]="trait.ClassJob | xivapiL12n: 'jobAbbr':'Abbreviation' | i18n"></div>
             </div>
             <div *ngIf="trait.GamePatch" class="patch">
-              {{trait.GamePatch | xivapiI18n}}
+              {{trait.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="trait.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="trait.Description" [innerHTML]="trait | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="trait.Description" [innerHTML]="trait | xivapiL12n: 'traitDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="trait.ID" type="trait"></app-db-comments>

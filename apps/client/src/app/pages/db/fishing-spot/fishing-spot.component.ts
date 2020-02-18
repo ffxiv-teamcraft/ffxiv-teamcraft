@@ -328,7 +328,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   private getName(spot: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return spot.PlaceName[`Name_${this.translate.currentLang}`] || spot.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(spot.PlaceName, 'places'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

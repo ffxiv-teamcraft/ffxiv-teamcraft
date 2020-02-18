@@ -64,7 +64,7 @@
     <div>Lvl</div>
     <nz-input-number [(ngModel)]="startingLevel" [nzMax]="79" [nzMin]="1"
                      [nzPrecision]="0"></nz-input-number>
-    <div>Exp</div>
+    <div>{{'DB.Exp' | translate}}</div>
     <nz-input-number [(ngModel)]="startingExp" [nzMax]="getMaxExp(startingLevel) - 1" [nzMin]="0"
                      [nzPrecision]="0"></nz-input-number>
     <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
@@ -108,7 +108,8 @@
             <div fxFlex="1 1 auto" fxLayout="column">
               <div nz-row>
                 <div class="list-center" nz-col nzSm="2">
-                  <b>{{leve.level}} {{leve.jobId | jobAbbr | i18n}}</b>
+                  <b>Lvl {{leve.level}}</b><br/>
+                  <b>{{leve.jobId | jobAbbr | i18n}}</b>
                 </div>
                 <div fxLayout="column" fxLayoutAlign="flex-start center" nz-col nzSm="8">
                   <b>{{'LEVEQUESTS.Deliver_to' | translate: { placename: leve.deliveryPlaceId | placeName | i18n } }}</b>
@@ -120,10 +121,10 @@
                   </div>
                 </div>
                 <div nz-col nzSm="4">
-                  <b>EXP:</b> {{getLeveExp(leve, results) | number}} <span
+                  <b>{{'DB.Exp' | translate}}:</b> {{getLeveExp(leve, results) | number}} <span
                   *ngIf="globalExp">({{leve.exp * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span><br/>
-                  <b>Gil:</b> {{getLeveGil(leve) | number}} <span
+                  <b>{{'DB.Gil' | translate}}:</b> {{getLeveGil(leve) | number}} <span
                   *ngIf="globalExp">({{leve.gil * (leve.allDeliveries ? leve.repeats + 1 : 1) * (leve.hq ? 2 : 1) | number}}
                   x {{leve.amount}})</span>
                 </div>

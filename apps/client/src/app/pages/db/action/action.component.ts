@@ -128,12 +128,12 @@ export class ActionComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(action: any): string {
-    return action[`Description_${this.translate.currentLang}`] || action.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actionDescriptions', 'Description'));
   }
 
   private getName(action: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return action[`Name_${this.translate.currentLang}`] || action.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(action, 'actions'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

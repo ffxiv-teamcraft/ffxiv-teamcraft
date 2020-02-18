@@ -99,12 +99,12 @@ export class InstanceComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(instance: any): string {
-    return instance[`Description_${this.translate.currentLang}`] || instance.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(instance, 'instanceDescriptions', 'Description'));
   }
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'instances'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

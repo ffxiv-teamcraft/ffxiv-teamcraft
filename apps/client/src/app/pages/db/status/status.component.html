@@ -7,9 +7,9 @@
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="status.Icon | xivapiIcon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{status | xivapiI18n}}</h2>
+            <h2 class="item-name">{{status | xivapiL12n: 'statuses' | i18n}}</h2>
             <div *ngIf="status.GamePatch" class="patch">
-              {{status.GamePatch | xivapiI18n}}
+              {{status.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="status.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -22,8 +22,10 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="status.Description" [innerHTML]="status | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="status.Description" [innerHTML]="status | xivapiL12n: 'statusDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="status | xivapiL12n: 'statuses'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">

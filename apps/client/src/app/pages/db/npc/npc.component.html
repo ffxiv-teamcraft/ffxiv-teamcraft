@@ -11,10 +11,10 @@
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiNpc.ID | npcName | i18n}}</h2>
             <div *ngIf="xivapiNpc.Title" class="item-kind">
-              <span *ngIf="xivapiNpc.Title" [innerHTML]="xivapiNpc | xivapiI18n: 'Title' | xivUIText"></span>
+              <span *ngIf="xivapiNpc.Title" [innerHTML]="xivapiNpc | xivapiL12n: 'npcTitles':'Title' | i18n | xivUIText"></span>
             </div>
             <div *ngIf="xivapiNpc.GamePatch" class="patch">
-              {{xivapiNpc.GamePatch | xivapiI18n}}
+              {{xivapiNpc.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiNpc.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -28,24 +28,8 @@
       </div>
       <div fxFlex="1 1 auto">
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{xivapiNpc.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{xivapiNpc.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{xivapiNpc.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{xivapiNpc.Name_ja}}</div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="xivapiNpc.ID | npcName"></app-i18n-display>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiNpc.ID" type="npc"></app-db-comments>
 
@@ -180,14 +164,14 @@
           [nzDataSource]="shop.Items"
           [nzHeader]="shop.Name.length > 0 ? header : null"
           [nzRenderItem]="item">
-          <ng-template #header><span [innerHTML]="shop | xivapiI18n"></span></ng-template>
+          <ng-template #header><span [innerHTML]="shop | xivapiL12n: 'shops' | i18n"></span></ng-template>
           <ng-template #item let-item>
             <nz-list-item>
               <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="price" [nzTitle]="name">
                 <ng-template #avatar>
                   <app-item-icon [icon]="item.Icon | xivapiIcon" [itemId]="item.ID" [width]="32"></app-item-icon>
                 </ng-template>
-                <ng-template #name><b [appItemRarity]="item.ID" [innerHTML]="item | xivapiI18n"></b></ng-template>
+                <ng-template #name><b [appItemRarity]="item.ID" [innerHTML]="item | xivapiL12n: 'items' | i18n"></b></ng-template>
                 <ng-template #price>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">

@@ -10,7 +10,7 @@
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiMob.ID | mobName | i18n}}</h2>
             <div *ngIf="xivapiMob.GamePatch" class="patch">
-              {{xivapiMob.GamePatch | xivapiI18n}}
+              {{xivapiMob.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiMob.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -24,24 +24,8 @@
       </div>
       <div fxFlex="1 1 auto">
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{xivapiMob.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{xivapiMob.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{xivapiMob.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{xivapiMob.Name_ja}}</div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="xivapiMob.ID | mobName"></app-i18n-display>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiMob.ID" type="mob"></app-db-comments>
 

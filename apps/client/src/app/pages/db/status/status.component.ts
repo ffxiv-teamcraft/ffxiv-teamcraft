@@ -33,17 +33,19 @@ export class StatusComponent extends TeamcraftPageComponent {
 
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
+      const correctSlug = this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-');
+      
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')],
+          [correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')) {
+      } else if (slug !== correctSlug) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getStatus(+params.get('statusId'))).split(' ').join('-')],
+          ['../', correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -73,12 +75,12 @@ export class StatusComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(status: any): string {
-    return status[`Description_${this.translate.currentLang}`] || status.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'statusDescriptions', 'Description'));
   }
 
   private getName(status: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return status[`Name_${this.translate.currentLang}`] || status.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'statuses'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

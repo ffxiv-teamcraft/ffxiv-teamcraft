@@ -46,10 +46,11 @@ module.exports = function (content, fields) {
   }
 
   return lines.slice(3).map(line => fields.reduce((obj, field, i) => {
+    const content = line[i].replace(/\r\n/g, '\n')
     if (field) {
-      obj[field] = line[i]
+      obj[field] = content
     } else {
-      obj[`#${i}`] = line[i]
+      obj[`#${i}`] = content
     }
 
     return obj

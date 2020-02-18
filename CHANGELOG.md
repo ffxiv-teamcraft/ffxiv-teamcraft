@@ -2,6 +2,54 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.2"></a>
+## [7.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.1...v7.0.2) (2020-02-18)
+
+
+### Bug Fixes
+
+* **core:** fix error when item.Recipes is undefined ([3fd15f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3fd15f4))
+* **db:** fix description key ([9e09537](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e09537))
+* **db:** fix lint error ([80efeb4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80efeb4))
+* **levequests:** use translations for Gil and Exp ([e8d7e2f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8d7e2f))
+* **list:** full path popup not opening with full monsters panels ([54a1ec8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/54a1ec8))
+* **search:** fix empty title detection ([35bde58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35bde58))
+
+
+### Features
+
+* **data:** add CN db files ([b21e3de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b21e3de))
+* **data:** add data model for npc ([cffa1dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cffa1dd))
+* **db:** add Chinese & Korean to achievement page ([5ac2e64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ac2e64))
+* **db:** add Chinese & Korean to achievement page ([20de8af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20de8af))
+* **db:** add Chinese & Korean to action page & tooltip ([cdcac84](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cdcac84))
+* **db:** add Chinese & Korean to fate & npc in map element list ([d341202](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d341202))
+* **db:** add Chinese & Korean to fate page ([24496e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/24496e5))
+* **db:** add Chinese & Korean to fish-spot page ([f110d00](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f110d00))
+* **db:** add Chinese & Korean to i18n name list ([2768a82](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2768a82))
+* **db:** add Chinese & Korean to instance page ([1173621](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1173621))
+* **db:** add Chinese & Korean to item kind ([438ad5a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/438ad5a))
+* **db:** add Chinese & Korean to item page & tooltip ([d1834d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d1834d4))
+* **db:** add Chinese & Korean to leve page ([6038e25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6038e25))
+* **db:** add Chinese & Korean to node page ([a6e60e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6e60e9))
+* **db:** add Chinese & Korean to npc page ([9fbdfee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9fbdfee))
+* **db:** add Chinese & Korean to patch name ([9f64b91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9f64b91))
+* **db:** add Chinese & Korean to placenames ([9091db4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9091db4))
+* **db:** add Chinese & Korean to quest page ([918c89b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/918c89b))
+* **db:** add Chinese & Korean to quest/leve related data ([66cbd44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66cbd44))
+* **db:** add Chinese & Korean to search result ([587519f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/587519f))
+* **db:** add Chinese & Korean to status page ([260332d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/260332d))
+* **db:** add Chinese & Korean to trait page ([c63d62b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c63d62b))
+* **db:** add gilshop names ([e207971](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e207971))
+* **db:** add model for trait ([fb2b17a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb2b17a))
+* **db:** add model for traits ([086b5f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/086b5f1))
+* **levequests:** style level & job column for better understanding ([e7e22b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7e22b4))
+* **simulator:** strip old skills from rotation tips and tags ([f53e52d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f53e52d))
+* **simulator:** update for 5.2 preliminary patch notes with placeholder icons ([ef7125e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef7125e))
+* **simulator:** Update to simulator 2.3.2 ([b6a411f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b6a411f))
+
+
+
 <a name="7.0.1"></a>
 ## [7.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.0...v7.0.1) (2020-02-14)
 

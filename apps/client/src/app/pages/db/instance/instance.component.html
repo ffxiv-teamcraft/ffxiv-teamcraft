@@ -11,10 +11,10 @@
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
             <h2 class="item-name">{{xivapiInstance.ID | instanceName | i18n}}</h2>
             <div *ngIf="xivapiInstance.ContentType" class="item-kind">
-              {{xivapiInstance.ContentType | xivapiI18n}}
+              {{xivapiInstance.ContentType | xivapiL12n: 'contentTypes' | i18n}}
             </div>
             <div *ngIf="xivapiInstance.GamePatch" class="patch">
-              {{xivapiInstance.GamePatch | xivapiI18n}}
+              {{xivapiInstance.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiInstance.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -28,26 +28,10 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{xivapiInstance.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{xivapiInstance.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{xivapiInstance.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{xivapiInstance.Name_ja}}</div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="xivapiInstance | instanceName"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">

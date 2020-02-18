@@ -89,18 +89,33 @@ export class NodeComponent extends TeamcraftPageComponent {
       map(node => {
         const bonuses = [];
         (node.GatheringPoints || []).forEach(point => {
-          if (point.GatheringPointBonus0) {
+          [0, 1].forEach(index => {
+            const bonus = point[`GatheringPointBonus${index}`];
+            console.log('bonus', index, bonus)
+            if (!bonus) return;
+
+            const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');
+            const condition = this.l12n.xivapiToI18n(bonus.Condition, null, 'Text');
+
+            const zhRow = this.lazyData.data.zhGatheringBonuses[bonus.ID];
+            if (zhRow && zhRow.value === bonus.BonusValue && zhRow.conditionValue === bonus.ConditionValue) {
+              bonusType.zh = zhRow.bonus.zh;
+              condition.zh = zhRow.condition.zh;
+            }
+
+            /*
+            const koRow = this.lazyData.data.koGatheringBonuses[bonus.ID];
+            if (koRow && koRow.value === bonus.BonusValue && koRow.conditionValue === bonus.ConditionValue) {
+              bonusType.ko = koRow.bonus.ko;
+              condition.ko = koRow.condition.ko;
+            }
+            */
+
             bonuses.push({
-              bonus: this.bonusToText(point.GatheringPointBonus0.BonusType, point.GatheringPointBonus0.BonusValue),
-              condition: this.bonusToText(point.GatheringPointBonus0.Condition, point.GatheringPointBonus0.ConditionValue)
+              bonus: this.bonusToText(bonusType, bonus.BonusValue),
+              condition: this.bonusToText(condition, bonus.ConditionValue)
             });
-          }
-          if (point.GatheringPointBonus1) {
-            bonuses.push({
-              bonus: this.bonusToText(point.GatheringPointBonus1.BonusType, point.GatheringPointBonus1.BonusValue),
-              condition: this.bonusToText(point.GatheringPointBonus1.Condition, point.GatheringPointBonus1.ConditionValue)
-            });
-          }
+          })
         });
         return bonuses;
       })
@@ -119,13 +134,11 @@ export class NodeComponent extends TeamcraftPageComponent {
     );
   }
 
-  public bonusToText(entry: any, value: number): I18nName {
-    return {
-      en: entry.Text_en.replace('<Value>IntegerParameter(1)</Value>', value),
-      ja: entry.Text_ja.replace('<Value>IntegerParameter(1)</Value>', value),
-      de: entry.Text_de.replace('<Value>IntegerParameter(1)</Value>', value),
-      fr: entry.Text_fr.replace('<Value>IntegerParameter(1)</Value>', value)
-    };
+  public bonusToText(entry: I18nName, value: number): I18nName {
+    return Object.entries(entry).reduce((obj, [key, text]) => {
+      obj[key] = text.replace('<Value>IntegerParameter(1)</Value>', value)
+      return obj;
+    }, { en: '', fr: '', de: '', ja: '' });
   }
 
   public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
@@ -217,13 +230,21 @@ export class NodeComponent extends TeamcraftPageComponent {
     return null;
   }
 
-  private getDescription(npc: any): string {
-    return '';
+  private getDescription(node: any): string {
+    return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.l12n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
   }
 
-  private getName(item: any): string {
-    // We might want to add more details for some specific items, which is why this is a method.
-    return '';
+  private getName(node: any): string {
+    if (!node) return '';
+
+    if (node.GatheringPoints && node.GatheringPoints.length) {
+      const point = node.GatheringPoints[0];
+      if (point.PlaceName) {
+        return this.i18n.getName(this.l12n.xivapiToI18n(point.PlaceName, 'places'));
+      }
+    }
+
+    return this.i18n.getName(this.l12n.getPlace(node.mappyData.zoneid));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

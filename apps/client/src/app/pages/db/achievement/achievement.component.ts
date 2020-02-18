@@ -33,17 +33,19 @@ export class AchievementComponent extends TeamcraftPageComponent {
 
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
+      const correctSlug = this.i18n.getName(this.l12n.getAchievementName(+params.get('achievementId'))).split(' ').join('-');
+      
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')],
+          [correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')) {
+      } else if (slug !== correctSlug) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.lazyData.data.achievements[+params.get('achievementId')]).split(' ').join('-')],
+          ['../', correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -79,12 +81,12 @@ export class AchievementComponent extends TeamcraftPageComponent {
   }
 
   private getDescription(status: any): string {
-    return status[`Description_${this.translate.currentLang}`] || status.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievementDescriptions', 'Description'));
   }
 
   private getName(status: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return status[`Name_${this.translate.currentLang}`] || status.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(status, 'achievements'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
