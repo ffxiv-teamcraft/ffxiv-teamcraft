@@ -1,5 +1,5 @@
 const request = require('request')
-const { init, output, db, translate } = require('./lib/common')
+const { init, output, translate } = require('./lib/common')
 
 let patchMap = [
   { en: 'A Realm Reborn', zh: '重生之境' },
