@@ -46,17 +46,19 @@ export class QuestComponent extends TeamcraftPageComponent {
 
     this.route.paramMap.subscribe(params => {
       const slug = params.get('slug');
+      const correctSlug = this.i18n.getName(this.l12n.getQuest(+params.get('questId')).name).split(' ').join('-');
+
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getQuest(+params.get('questId')).name).split(' ').join('-')],
+          [correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getQuest(+params.get('questId')).name).split(' ').join('-')) {
+      } else if (slug !== correctSlug) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getQuest(+params.get('questId')).name).split(' ').join('-')],
+          ['../', correctSlug],
           {
             relativeTo: this.route,
             replaceUrl: true
@@ -206,15 +208,41 @@ export class QuestComponent extends TeamcraftPageComponent {
 
   private getName(quest: any): string {
     // We might want to add more details for some specific quests, which is why this is a method.
-    return (quest[`Name_${this.translate.currentLang}`] || quest.Name_en).replace('', '•');
+    return this.i18n.getName(this.l12n.xivapiToI18n(quest, 'quests')).replace('', '•');
+  }
+
+  private getDescription(quest: any) {
+    const lang = this.translate.currentLang;
+    let textData = quest[`TextData_${lang}`];
+    if (!textData) {
+      if (lang === 'zh') {
+        const zhRow = this.lazyData.data.zhQuestDescriptions[quest.ID];
+        if (zhRow) {
+          return zhRow.zh;
+        }
+      } else if (lang === 'ko') {
+        const koRow = this.lazyData.data.koQuestDescriptions[quest.ID];
+        if (koRow) {
+          return koRow.ko;
+        }
+      }
+
+      textData = quest.TextData_en;
+    }
+
+    if (textData && textData.Journal) {
+      return textData.Journal[0].Text;
+    } else {
+      return '';
+    }
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return combineLatest([this.xivapiQuest$, this.textData$]).pipe(
-      map(([quest, textData]) => {
+    return this.xivapiQuest$.pipe(
+      map(quest => {
         return {
           title: this.getName(quest),
-          description: textData.Journal && textData.Journal[0].Text,
+          description: this.getDescription(quest),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/quest/${quest.ID}/${this.getName(quest).split(' ').join('-')}`,
           image: quest.Banner ? `https://xivapi.com/${quest.Banner}` : `https://xivapi.com/${quest.Icon}`
         };

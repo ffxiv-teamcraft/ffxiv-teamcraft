@@ -10,11 +10,11 @@
             <img [src]="xivapiItem.Icon | xivapiIcon" alt="{{xivapiItem.ID | itemName | i18n}}" class="item-icon">
             <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
               <h2 [appItemRarity]="xivapiItem.ID" class="item-name">{{xivapiItem.ID | itemName | i18n}}</h2>
-              <div *ngIf="xivapiItem.ItemKind" class="item-kind">{{xivapiItem.ItemKind | xivapiI18n}}
-                <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiI18n}}</span>
+              <div *ngIf="xivapiItem.ItemKind" class="item-kind">{{xivapiItem.ItemKind | xivapiL12n: 'ItemKinds' | i18n}}
+                <span *ngIf="xivapiItem.ItemSearchCategory"> > {{xivapiItem.ItemSearchCategory | xivapiL12n: 'ItemSearchCategories' | i18n}}</span>
               </div>
               <div *ngIf="xivapiItem.GamePatch" class="patch">
-                {{xivapiItem.GamePatch | xivapiI18n}}
+                {{xivapiItem.GamePatch | xivapiL12n: 'patchs' | i18n}}
                 <app-db-button [id]="xivapiItem.GamePatch.ID" type="patch"></app-db-button>
               </div>
             </div>
@@ -54,30 +54,14 @@
           </div>
         </div>
         <div fxFlex="1 1 auto">
-          <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiI18n: 'Description' | xivUIText"></p>
+          <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></p>
           <audio *ngIf="xivapiItem.ItemAction?.Type === 5845" controls controlslist="nodownload">
             <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg"
                     type="audio/ogg">
           </audio>
         </div>
-        <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-            <div>{{xivapiItem.Name_en}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-            <div>{{xivapiItem.Name_de}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-            <div>{{xivapiItem.Name_fr}}</div>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-            <div>{{xivapiItem.Name_ja}}</div>
-          </div>
-        </div>
+        <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+             [value]="xivapiItem | xivapiL12n: 'items'"></app-i18n-display>
       </div>
       <div class="details-container" fxLayout="column">
         <div class="main-attributes details" fxLayout="row wrap" fxLayoutGap="5px">
@@ -86,7 +70,7 @@
               {{row.name | translate}}
             </div>
             <div *ngIf="row.requiresPipe" class="detail-name">
-              {{row.name | xivapiI18n}}
+              {{row.name | i18n}}
             </div>
             <div class="detail-value">
               {{row.value}}
@@ -102,7 +86,7 @@
               {{row.name | translate}}
             </div>
             <div *ngIf="row.requiresPipe" class="detail-name">
-              {{row.name | xivapiI18n}}
+              {{row.name | i18n}}
             </div>
             <div class="detail-value">
               {{row.value}}

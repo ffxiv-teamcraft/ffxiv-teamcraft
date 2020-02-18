@@ -6,33 +6,17 @@
          fxLayoutAlign="space-between" fxLayoutGap="10px">
       <div class="icon-block" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"
            fxLayoutGap="5px">
-        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiI18n}}"
+        <img [src]="patch.Banner || fallbackIcon" alt="{{patch | xivapiL12n: 'patchs' | i18n}}"
              class="patch-banner" fxFlex="0 0 auto">
         <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-          <h2 class="item-name">{{patch | xivapiI18n}}</h2>
+          <h2 class="item-name">{{patch | xivapiL12n: 'patchs' | i18n}}</h2>
         </div>
       </div>
     </div>
     <div fxFlex="1 1 auto">
     </div>
-    <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-        <div>{{patch.Name_en}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-        <div>{{patch.Name_de}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-        <div>{{patch.Name_fr}}</div>
-      </div>
-      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-        <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-        <div>{{patch.Name_ja}}</div>
-      </div>
-    </div>
+    <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+         [value]="patch | xivapiL12n: 'patchs'"></app-i18n-display>
   </div>
 
   <nz-divider [nzText]="'DB.PATCH.CONTENT.Title' | translate" nzOrientation="left"></nz-divider>

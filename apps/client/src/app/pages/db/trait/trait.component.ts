@@ -91,13 +91,13 @@ export class TraitComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(action: any): string {
-    return action[`Description_${this.translate.currentLang}`] || action.Description_en;
+  private getDescription(trait: any): string {
+    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traitDescriptions', 'Description'));
   }
 
-  private getName(action: any): string {
+  private getName(trait: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return action[`Name_${this.translate.currentLang}`] || action.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(trait, 'traits'));
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

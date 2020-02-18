@@ -7,14 +7,14 @@
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="action.Icon | xivapiIcon" class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{action | xivapiI18n}}</h2>
+            <h2 class="item-name">{{action | xivapiL12n: 'actions' | i18n}}</h2>
             <div *ngIf="action.IsPlayerAction || action.ID > 99999" class="item-kind" fxLayout="row" fxLayoutGap="5px">
               <div>Lvl {{action.ClassJobLevel}}</div>
-              <div [innerHTML]="action.ClassJob | xivapiI18n: 'Abbreviation'"></div>
-              <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiI18n"></div>
+              <div [innerHTML]="action.ClassJob | xivapiL12n: 'jobAbbr':'Abbreviation' | i18n"></div>
+              <div *ngIf="action.IsPlayerAction" [innerHTML]="action.ActionCategory | xivapiL12n: 'actionCategories' | i18n"></div>
             </div>
             <div *ngIf="action.GamePatch" class="patch">
-              {{action.GamePatch | xivapiI18n}}
+              {{action.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="action.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -27,26 +27,10 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="action.Description" [innerHTML]="action | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="action.Description" [innerHTML]="action | xivapiL12n: 'actionDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div>{{action.Name_en}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div>{{action.Name_de}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div>{{action.Name_fr}}</div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div>{{action.Name_ja}}</div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="action | xivapiL12n: 'actions'"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div *ngIf="action.Cast100ms" class="details-block">
@@ -262,8 +246,8 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
           <img [src]="action.ActionProcStatus.Status.Icon | xivapiIcon" alt="">
           <div fxLayout="column">
-            <div>{{action.ActionProcStatus.Status | xivapiI18n}}</div>
-            <i [innerHTML]="action.ActionProcStatus.Status | xivapiI18n: 'Description' | xivUIText"></i>
+            <div>{{action.ActionProcStatus.Status | xivapiL12n: 'statuses' | i18n}}</div>
+            <i [innerHTML]="action.ActionProcStatus.Status | xivapiL12n: 'statusDescriptions':'Description' | i18n | xivUIText"></i>
           </div>
           <app-db-button [id]="action.ActionProcStatus.Status.ID" type="status"></app-db-button>
         </div>

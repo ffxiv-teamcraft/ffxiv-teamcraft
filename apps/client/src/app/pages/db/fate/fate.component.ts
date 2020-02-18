@@ -102,13 +102,23 @@ export class FateComponent extends TeamcraftPageComponent {
     );
   }
 
-  private getDescription(npc: any): string {
-    return npc[`Description_${this.translate.currentLang}`] || npc.Description_en;
+  private getDescription(item: any): string {
+    const fate = this.l12n.getFate(+item.ID);
+    if (!fate) {
+      return item.Description_en;
+    }
+
+    return this.i18n.getName(fate.description);
   }
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+    const fate = this.l12n.getFate(+item.ID);
+    if (!fate) {
+      return item.Name_en;
+    }
+
+    return this.i18n.getName(fate.name);
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

@@ -146,13 +146,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               + leve.CraftLeve.ItemCount1
               + leve.CraftLeve.ItemCount2
               + leve.CraftLeve.ItemCount3,
-            name: {
-              en: leve.Name_en,
-              fr: leve.Name_fr,
-              de: leve.Name_de,
-              ja: leve.Name_ja,
-              ko: this.lazyData.data.koLeves[leve.ID] ? this.lazyData.data.koLeves[leve.ID].ko : leve.Name_en
-            },
+            name: this.l12n.getLeve(leve.ID),
             startPlaceId: leve.PlaceNameStart.ID,
             deliveryPlaceId: leve.LevelLevemete.Map.PlaceNameTargetID,
             repeats: leve.CraftLeve.Repeats,

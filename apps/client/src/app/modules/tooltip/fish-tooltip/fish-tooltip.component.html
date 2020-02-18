@@ -5,7 +5,7 @@
     </div>
     <div class="name" fxLayout="column">
       <span>{{fish | xivapiI18n}}</span>
-      <span class="item-kind">{{fish.ItemKind | xivapiI18n}}</span>
+      <span class="item-kind">{{fish.ItemKind | xivapiL12n: 'ItemKinds' | i18n}}</span>
     </div>
   </div>
   <div *ngIf="fish.Description !== undefined && fish.Description.length > 0" class="description">

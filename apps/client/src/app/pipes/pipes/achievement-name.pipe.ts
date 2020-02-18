@@ -1,17 +1,17 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import { LazyDataService } from '../../core/data/lazy-data.service';
+import { LocalizedDataService } from '../../core/data/localized-data.service';
 
 @Pipe({
   name: 'achievementName'
 })
 export class AchievementNamePipe implements PipeTransform {
 
-  constructor(private lazyData: LazyDataService) {
+  constructor(private i18n: LocalizedDataService) {
   }
 
   transform(id: number): I18nName {
-    return this.lazyData.data.achievements[id];
+    return this.i18n.getAchievementName(id);
   }
 
 }

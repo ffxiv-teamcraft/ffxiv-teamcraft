@@ -327,7 +327,7 @@
                     <nz-select (ngModelChange)="item.dirty = true" *ngIf="maps$ | async as maps; else loading"
                                [(ngModel)]="item.gatheredBy.nodes[0].mapid"
                                class="maps-select" nzAllowClear nzShowSearch>
-                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                      <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiL12n: 'places' | i18n"
                                  [nzValue]="map.ID"></nz-option>
                     </nz-select>
                     <ng-template #loading>
@@ -449,7 +449,7 @@
                         <nz-select (ngModelChange)="item.dirty = true" *ngIf="maps$ | async as maps; else loading"
                                    [(ngModel)]="vendor.mapId"
                                    class="maps-select" nzAllowClear nzShowSearch>
-                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiL12n: 'places' | i18n"
                                      [nzValue]="map.ID"></nz-option>
                         </nz-select>
                         <ng-template #loading>
@@ -509,7 +509,7 @@
                         <nz-select (ngModelChange)="item.dirty = true" *ngIf="maps$ | async as maps; else loading"
                                    [(ngModel)]="tradeSource.npcs[0].mapId"
                                    class="maps-select" nzAllowClear nzShowSearch>
-                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiI18n"
+                          <nz-option *ngFor="let map of maps" [nzLabel]="map.PlaceName | xivapiL12n: 'places' | i18n"
                                      [nzValue]="map.ID"></nz-option>
                         </nz-select>
                         <ng-template #loading>

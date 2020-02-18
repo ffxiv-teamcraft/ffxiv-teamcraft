@@ -6,13 +6,13 @@
       <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img [src]="xivapiQuest.Icon | xivapiIcon" alt="{{xivapiQuest.ID | questName | i18n}}"
+          <img [src]="xivapiQuest.Icon | xivapiIcon" alt="{{getName(xivapiQuest)}}"
                class="img-icon">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{xivapiQuest.ID | questName | i18n}}</h2>
-            <div *ngIf="xivapiQuest.JournalGenre" class="item-kind">{{xivapiQuest.JournalGenre | xivapiI18n}}</div>
+            <h2 class="item-name">{{getName(xivapiQuest)}}</h2>
+            <div *ngIf="xivapiQuest.JournalGenre" class="item-kind">{{xivapiQuest.JournalGenre | xivapiL12n: 'journalGenre' | i18n}}</div>
             <div *ngIf="xivapiQuest.GamePatch" class="patch">
-              {{xivapiQuest.GamePatch | xivapiI18n}}
+              {{xivapiQuest.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="xivapiQuest.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -27,31 +27,14 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="textData$ | async as textData"
-           [innerHTML]="textData.Journal && textData.Journal[0].Text | xivUIText"></p>
+        <p [innerHTML]="getDescription(xivapiQuest) | xivUIText"></p>
       </div>
-      <div fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px">
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="EN" class="language-flag" src="./assets/icons/english.png">
-          <div [innerHTML]="xivapiQuest.Name_en | xivUIText"></div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="DE" class="language-flag" src="./assets/icons/german.png">
-          <div [innerHTML]="xivapiQuest.Name_de | xivUIText"></div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="FR" class="language-flag" src="./assets/icons/french.png">
-          <div [innerHTML]="xivapiQuest.Name_fr | xivUIText"></div>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img alt="JA" class="language-flag" src="./assets/icons/japanese.png">
-          <div [innerHTML]="xivapiQuest.Name_ja | xivUIText"></div>
-        </div>
-      </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="xivapiQuest.ID | questName"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
-        <div class="detail-value">{{xivapiQuest.ClassJobCategory0 | xivapiI18n}}</div>
+        <div class="detail-value">{{xivapiQuest.ClassJobCategory0 | xivapiL12n: 'jobCategories' | i18n}}</div>
       </div>
       <div *ngIf="xivapiQuest.IsRepeatable === 1" class="details-block">
         <div class="detail-value">{{'DB.QUEST.Repeatable' | translate}}</div>
@@ -62,7 +45,7 @@
       </div>
       <div *ngIf="xivapiQuest.BeastReputationRank" class="details-block">
         <div class="detail-name">{{'DB.QUEST.Beast_tribe_rank' | translate}}</div>
-        <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiI18n}}</div>
+        <div class="detail-value">{{xivapiQuest.BeastReputationRank | xivapiL12n: 'beastReputationRanks' | i18n}}</div>
       </div>
       <div *ngIf="startingPoint$ | async as startingPoint" class="details-block">
         <div class="detail-value">

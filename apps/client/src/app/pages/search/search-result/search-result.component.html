@@ -123,7 +123,7 @@
             <div><span
               *ngIf="(row.id | npcName)?.position as npcPosition">{{npcPosition.zoneid | placeName | i18n}}
               - X: {{npcPosition.x}} Y: {{npcPosition.y}} </span>
-              <i *ngIf="(row.title | i18n) !== 'missing name'">{{row.title | i18n}}</i></div>
+              <i *ngIf="(row.title | i18n) !== 'No name'">{{row.title | i18n}}</i></div>
           </div>
         </div>
         <app-db-button [id]="row.id" type="npc"></app-db-button>
@@ -250,7 +250,7 @@
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           <div>
-            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobName' | i18n}}</i>
           </div>
         </div>
       </div>
@@ -269,11 +269,11 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <div fxLayout="column">
-        <div>{{row.data | xivapiI18n}}</div>
+        <div>{{row.data | xivapiL12n: 'statuses' | i18n}}</div>
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           <div>
-            <i>{{row.data | xivapiI18n: 'Description'}}</i>
+            <i>{{row.data | xivapiL12n: 'statusDescriptions':'Description' | i18n}}</i>
           </div>
         </div>
       </div>
@@ -296,7 +296,7 @@
         <div fxLayout="row" fxLayoutGap="5px">
           <div class="result-type">{{('SEARCH_TYPES.' + row.type) | translate}}</div>
           <div>
-            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiI18n}}</i>
+            <i *ngIf="row.job">Lvl {{row.level}} {{row.job | xivapiL12n: 'jobCategories' | i18n}}</i>
           </div>
         </div>
       </div>

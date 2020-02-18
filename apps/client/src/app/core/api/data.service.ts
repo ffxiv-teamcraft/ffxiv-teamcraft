@@ -219,7 +219,9 @@ export class DataService {
       ).pipe(
         map(items => {
           return items.Results.filter(item => {
-            const matchesRecipeFilter = onlyCraftable ? item.Recipes.length > 0 : true;
+            if (!onlyCraftable) return true;
+            
+            const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
             return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
               switch (filter.operator) {
                 case '>=':
@@ -821,12 +823,7 @@ export class DataService {
             icon: leve.Icon,
             level: leve.ClassJobLevel,
             banner: leve.IconIssuer,
-            job: {
-              en: leve.ClassJobCategory.Name_en,
-              de: leve.ClassJobCategory.Name_de,
-              ja: leve.ClassJobCategory.Name_ja,
-              fr: leve.ClassJobCategory.Name_fr
-            }
+            job: this.l12n.xivapiToI18n(leve.ClassJobCategory, 'jobCategories')
           };
         });
       })
@@ -871,12 +868,7 @@ export class DataService {
           return {
             id: npc.ID,
             icon: npc.Icon,
-            title: {
-              en: npc.Title_en,
-              de: npc.Title_de,
-              ja: npc.Title_ja,
-              fr: npc.Title_fr
-            }
+            title: this.l12n.xivapiToI18n(npc, 'npcTitles', 'Title')
           };
         });
       })

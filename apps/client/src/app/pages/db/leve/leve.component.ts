@@ -112,12 +112,7 @@ export class LeveComponent extends TeamcraftPageComponent {
             const item = leve.BattleLeve[`ItemsInvolved${index}`];
             return {
               id: item.ID,
-              name: {
-                en: item.Name_en,
-                de: item.Name_de,
-                ja: item.Name_ja,
-                fr: item.Name_fr
-              },
+              name: this.l12n.xivapiToI18n(item, 'eventItems'),
               icon: item.Icon,
               amount: leve.BattleLeve[`ItemsInvolvedQty${index}`],
               dropRate: leve.BattleLeve[`ItemDropRate${index}`]
@@ -207,12 +202,12 @@ export class LeveComponent extends TeamcraftPageComponent {
 
   private getName(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Name_${this.translate.currentLang}`] || item.Name_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leves'))
   }
 
   private getDescription(item: any): string {
     // We might want to add more details for some specific items, which is why this is a method.
-    return item[`Description_${this.translate.currentLang}`] || item.Description_en;
+    return this.i18n.getName(this.l12n.xivapiToI18n(item, 'leveDescriptions', 'Description'))
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

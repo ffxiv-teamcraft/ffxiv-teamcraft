@@ -7,9 +7,9 @@
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img [src]="achievement.Icon | xivapiIcon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{achievement | xivapiI18n}}</h2>
+            <h2 class="item-name">{{achievement | xivapiL12n: 'achievements' | i18n}}</h2>
             <div *ngIf="achievement.GamePatch" class="patch">
-              {{achievement.GamePatch | xivapiI18n}}
+              {{achievement.GamePatch | xivapiL12n: 'patchs' | i18n}}
               <app-db-button [id]="achievement.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
@@ -22,8 +22,10 @@
         </div>
       </div>
       <div fxFlex="1 1 auto">
-        <p *ngIf="achievement.Description" [innerHTML]="achievement | xivapiI18n: 'Description' | xivUIText"></p>
+        <p *ngIf="achievement.Description" [innerHTML]="achievement | xivapiL12n: 'achievementDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
+      <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
+           [value]="achievement | xivapiL12n: 'achievements'"></app-i18n-display>
     </div>
     <app-db-comments [id]="achievement.ID" type="achievement"></app-db-comments>
   </div>

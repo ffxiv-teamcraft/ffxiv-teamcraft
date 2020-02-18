@@ -1,17 +1,17 @@
 <div class="tooltip-container">
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
     <div class="icon">
-      <img alt="{{item | xivapiI18n}}" src="https://xivapi.com{{item.Icon}}">
+      <img alt="{{item | xivapiL12n: 'items' | i18n}}" src="https://xivapi.com{{item.Icon}}">
     </div>
     <div class="name" fxLayout="column">
-      <span [appItemRarity]="item.ID">{{item | xivapiI18n}}</span>
-      <span *ngIf="item.ItemKind" class="item-kind">{{item.ItemKind | xivapiI18n}} <span
-        *ngIf="item.ItemSearchCategory">> {{item.ItemSearchCategory | xivapiI18n}}</span></span>
+      <span [appItemRarity]="item.ID">{{item | xivapiL12n: 'items' | i18n}}</span>
+      <span *ngIf="item.ItemKind" class="item-kind">{{item.ItemKind | xivapiL12n: 'ItemKinds' | i18n}} <span
+        *ngIf="item.ItemSearchCategory">> {{item.ItemSearchCategory | xivapiL12n: 'itemSearchCategories' | i18n}}</span></span>
       <i class="db-tip">{{'DB.Click_to_navigate' | translate}}</i>
     </div>
   </div>
   <div *ngIf="item.Description !== undefined && item.Description.length > 0" class="description">
-    <span [innerHtml]="item | xivapiI18n: 'Description' | xivUIText"></span>
+    <span [innerHtml]="item | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></span>
   </div>
   <div *ngIf="item.ClassJobCategory !== null" class="class-jobs" nz-row>
     <div [nzXs]="12" nz-col>
@@ -21,7 +21,7 @@
     </div>
     <div [nzXs]="12" nz-col>
       <p class="detail-value">
-        {{item.ClassJobCategory | xivapiI18n}}
+        {{item.ClassJobCategory | xivapiL12n: 'jobCategories' | i18n}}
       </p>
     </div>
   </div>
@@ -32,7 +32,7 @@
           {{row.name | translate}}
         </p>
         <p *ngIf="row.requiresPipe" class="detail-name">
-          {{row.name | xivapiI18n}}
+          {{row.name | i18n}}
         </p>
       </div>
       <div [nzXs]="12" nz-col>
@@ -52,7 +52,7 @@
           {{row.name | translate}}
         </p>
         <p *ngIf="row.requiresPipe" class="detail-name">
-          {{row.name | xivapiI18n}}
+          {{row.name | i18n}}
         </p>
       </div>
       <div [nzXs]="12" nz-col>

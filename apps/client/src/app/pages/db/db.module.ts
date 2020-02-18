@@ -44,6 +44,7 @@ import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { QuickSearchModule } from '../../modules/quick-search/quick-search.module';
 import { ItemDetailsPopupsModule } from '../../modules/item-details/item-details-popups.module';
 import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
+import { I18nDisplayModule } from '../../modules/i18n-display/i18n-display.module';
 
 const routes: Routes = [
   {
@@ -262,6 +263,7 @@ const routes: Routes = [
     ListModule,
     RotationsModule,
     ItemDetailsPopupsModule,
+    I18nDisplayModule,
     MarketboardModule,
 
     NgZorroAntdModule,
