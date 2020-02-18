@@ -1205,19 +1205,67 @@
   },
   "77": {
     "value": 0,
-    "conditionValue": 0
+    "conditionValue": 2140,
+    "bonus": {
+      "en": " Gathering Fortune <Value>IntegerParameter(1)</Value>%",
+      "de": "HQ-Rate <Value>IntegerParameter(1)</Value> %",
+      "ja": "HQ獲得率 <Value>IntegerParameter(1)</Value>％",
+      "fr": "Taux de HQ <Value>IntegerParameter(1)</Value>%"
+    },
+    "condition": {
+      "en": "Perception < <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung max. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>未満",
+      "fr": "Discernement < <Value>IntegerParameter(1)</Value>"
+    }
   },
   "78": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 740,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "79": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 2244,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "80": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 2140,
+    "bonus": {
+      "en": " Gathering Fortune +<Value>IntegerParameter(1)</Value>%～",
+      "de": "HQ-Rate +<Value>IntegerParameter(1)</Value> % (steigend)",
+      "ja": "HQ獲得率＋<Value>IntegerParameter(1)</Value>％（上昇タイプ）",
+      "fr": "Taux de HQ + <Value>IntegerParameter(1)</Value>% (croissant)"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "81": {
     "value": 0,
@@ -2436,36 +2484,132 @@
     }
   },
   "163": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 5,
+    "conditionValue": 836,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value>",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "164": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 2421,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "165": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 2421,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "166": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 2345,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "167": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 2345,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "168": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 54,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "169": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 25,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "170": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 400,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value>",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value>"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "171": {
     "value": 0,
@@ -5160,52 +5304,196 @@
     "conditionValue": 0
   },
   "409": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 20,
+    "conditionValue": 1840,
+    "bonus": {
+      "en": " Gathering Fortune +<Value>IntegerParameter(1)</Value>%～",
+      "de": "HQ-Rate +<Value>IntegerParameter(1)</Value> % (steigend)",
+      "ja": "HQ獲得率＋<Value>IntegerParameter(1)</Value>％（上昇タイプ）",
+      "fr": "Taux de HQ + <Value>IntegerParameter(1)</Value>% (croissant)"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "410": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 1840,
+    "bonus": {
+      "en": " Gathering Fortune +<Value>IntegerParameter(1)</Value>%～",
+      "de": "HQ-Rate +<Value>IntegerParameter(1)</Value> % (steigend)",
+      "ja": "HQ獲得率＋<Value>IntegerParameter(1)</Value>％（上昇タイプ）",
+      "fr": "Taux de HQ + <Value>IntegerParameter(1)</Value>% (croissant)"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "411": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 1856,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>～",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個（上昇タイプ）",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value> (croissante)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "412": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 1856,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>～",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個（上昇タイプ）",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value> (croissante)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "413": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 696,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "414": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 696,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "415": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 20,
+    "conditionValue": 1898,
+    "bonus": {
+      "en": " Gathering Fortune +<Value>IntegerParameter(1)</Value>%～",
+      "de": "HQ-Rate +<Value>IntegerParameter(1)</Value> % (steigend)",
+      "ja": "HQ獲得率＋<Value>IntegerParameter(1)</Value>％（上昇タイプ）",
+      "fr": "Taux de HQ + <Value>IntegerParameter(1)</Value>% (croissant)"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "416": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 30,
+    "conditionValue": 1898,
+    "bonus": {
+      "en": " Gathering Fortune +<Value>IntegerParameter(1)</Value>%～",
+      "de": "HQ-Rate +<Value>IntegerParameter(1)</Value> % (steigend)",
+      "ja": "HQ獲得率＋<Value>IntegerParameter(1)</Value>％（上昇タイプ）",
+      "fr": "Taux de HQ + <Value>IntegerParameter(1)</Value>% (croissant)"
+    },
+    "condition": {
+      "en": "Perception ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Wahrnehmung min. <Value>IntegerParameter(1)</Value>",
+      "ja": "識質力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Discernement ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "417": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 1929,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>～",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個（上昇タイプ）",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value> (croissante)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "418": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 1929,
+    "bonus": {
+      "en": " Gathering Yield +<Value>IntegerParameter(1)</Value>～",
+      "de": "Stückzahl +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "個数＋<Value>IntegerParameter(1)</Value>個（上昇タイプ）",
+      "fr": "Quantité + <Value>IntegerParameter(1)</Value> (croissante)"
+    },
+    "condition": {
+      "en": "Gathering ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Sammeln min. <Value>IntegerParameter(1)</Value>",
+      "ja": "獲得力 <Value>IntegerParameter(1)</Value>以上",
+      "fr": "Collecte ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "419": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 1,
+    "conditionValue": 714,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "420": {
-    "value": 0,
-    "conditionValue": 0
+    "value": 2,
+    "conditionValue": 714,
+    "bonus": {
+      "en": " Gathering Attempts +<Value>IntegerParameter(1)</Value>～",
+      "de": "Sammelversuche +<Value>IntegerParameter(1)</Value> (steigend)",
+      "ja": "採集回数＋<Value>IntegerParameter(1)</Value>回（上昇タイプ）",
+      "fr": "Nombre de tentatives + <Value>IntegerParameter(1)</Value> (croissant)"
+    },
+    "condition": {
+      "en": "Max GP ≥ <Value>IntegerParameter(1)</Value>",
+      "de": "Max. SP ≥ <Value>IntegerParameter(1)</Value>",
+      "ja": "GPmax <Value>IntegerParameter(1)</Value>以上",
+      "fr": "PR ≧ <Value>IntegerParameter(1)</Value>"
+    }
   },
   "421": {
     "value": 0,

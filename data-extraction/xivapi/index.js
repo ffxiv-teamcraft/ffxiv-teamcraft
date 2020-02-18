@@ -71,18 +71,30 @@ const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
   todo = [...process.argv.slice(onlyIndex + 1)];
 }
+let cache = [];
+
+try {
+  cache = require(path.join(__dirname, 'progress.json'));
+} catch (e) {
+  // File not found, not an issue
+}
 
 const everything = process.argv.indexOf('--everything') > -1;
 
 function hasTodo(operation) {
-  let matches = todo.indexOf(operation) > -1;
-  if (everything) {
+  let matches = todo.indexOf(operation) > -1 && cache.indexOf(operation) === -1;
+  if (everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
   if (matches) {
     console.log(`========== ${operation} ========== `);
   }
   return matches;
+}
+
+function done(operation) {
+  cache.push(operation);
+  fs.writeFileSync(path.join(__dirname, 'progress.json'), JSON.stringify(cache));
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');
@@ -225,6 +237,7 @@ if (hasTodo('mappy')) {
           console.log('monsters written', emptyBnpcNames);
           persistToJsonAsset('npcs', npcs);
           console.log('npcs written');
+          done('mappy');
         });
     });
 }
@@ -342,6 +355,7 @@ if (hasTodo('map')) {
     });
   }, null, () => {
     persistToTypescript('map-ids', 'mapIds', mapIds);
+    done('map');
   });
 }
 
@@ -454,6 +468,7 @@ if (hasTodo('craftingLog')) {
     });
     persistToJsonAsset('crafting-log', craftingLog);
     persistToJsonAsset('crafting-log-pages', craftingLogPages);
+    done('craftingLog');
   });
 }
 
@@ -494,6 +509,7 @@ if (hasTodo('gatheringLog')) {
         });
     });
     persistToJsonAsset('gathering-log-pages', gatheringLogPages);
+    done('gatheringLog');
   });
 
 }
@@ -538,7 +554,7 @@ if (hasTodo('fishingLog')) {
     const spots = [];
     const fishes = [];
     completeFetch
-      .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null)
+      .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null && spot.PlaceName !== null)
       .forEach(spot => {
         const c = spot.TerritoryType.Map.SizeFactor / 100.0;
         spots.push({
@@ -588,6 +604,7 @@ if (hasTodo('fishingLog')) {
     persistToJsonAsset('fishing-log', fishingLog);
     persistToJsonAsset('fishing-spots', spots);
     persistToJsonAsset('fishes', fishes);
+    done('fishingLog');
   });
 
 }
@@ -671,6 +688,7 @@ if (hasTodo('spearFishingLog')) {
             spearFishingNodes.push(entry);
           });
         persistToTypescript('spear-fishing-nodes', 'spearFishingNodes', spearFishingNodes);
+        done('spearFishingLog');
       });
     });
 }
@@ -719,6 +737,7 @@ if (hasTodo('weather')) {
       weatherIndexData[weatherIndex.ID] = entry;
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
+    done('weather');
   });
 }
 
@@ -730,6 +749,7 @@ if (hasTodo('aetherstream')) {
     });
   }, null, () => {
     persistToTypescript('aetherstream', 'aetherstream', aetherstream);
+    done('aetherstream');
   });
 }
 
@@ -753,6 +773,7 @@ if (hasTodo('maps')) {
     });
   }, null, () => {
     persistToJsonAsset('maps', maps);
+    done('maps');
   });
 }
 
@@ -771,6 +792,7 @@ if (hasTodo('tripleTriadRules')) {
     });
   }, null, () => {
     persistToTypescript('triple-triad-rules', 'tripleTriadRules', rules);
+    done('tripleTriadRules');
   });
 }
 
@@ -809,6 +831,7 @@ if (hasTodo('quests')) {
       });
     persistToJsonAsset('quests', quests);
     persistToTypescript('quests-chain-lengths', 'questChainLengths', questChainLengths);
+    done('quests');
   });
 }
 
@@ -864,6 +887,7 @@ if (hasTodo('fates')) {
       delete fates[key].location;
     });
     persistToJsonAsset('fates', fates);
+    done('fates');
   });
 }
 
@@ -890,6 +914,7 @@ if (hasTodo('instances')) {
     });
   }, null, () => {
     persistToJsonAsset('instances', instances);
+    done('instances');
   });
 }
 
@@ -906,6 +931,7 @@ if (hasTodo('shops')) {
     });
   }, null, () => {
     persistToJsonAsset('shops', shops);
+    done('shops');
   });
 }
 
@@ -929,6 +955,7 @@ if (hasTodo('leves')) {
     });
   }, null, () => {
     persistToJsonAsset('leves', leves);
+    done('leves');
   });
 }
 
@@ -945,6 +972,7 @@ if (hasTodo('jobCategories')) {
     });
   }, null, () => {
     persistToTypescript('job-categories', 'jobCategories', jobCategories);
+    done('jobCategories');
   });
 }
 
@@ -961,6 +989,7 @@ if (hasTodo('mobs')) {
     });
   }, null, () => {
     persistToJsonAsset('mobs', mobs);
+    done('mobs');
   });
 }
 
@@ -977,6 +1006,7 @@ if (hasTodo('places')) {
     });
   }, null, () => {
     persistToJsonAsset('places', places);
+    done('places');
   });
 }
 
@@ -1029,6 +1059,7 @@ if (hasTodo('hunts')) {
     )
     .subscribe(hunts => {
       persistToJsonAsset('hunts', hunts);
+      done('hunts');
     });
 }
 
@@ -1059,6 +1090,7 @@ if (hasTodo('gatheringBonuses')) {
     });
   }, null, () => {
     persistToJsonAsset('gathering-bonuses', bonuses);
+    done('gatheringBonuses');
   });
 }
 
@@ -1073,6 +1105,7 @@ if (hasTodo('cdGroups')) {
     });
   }, null, () => {
     persistToJsonAsset('action-cd-groups', groups);
+    done('cdGroups');
   });
 }
 
@@ -1086,6 +1119,7 @@ if (hasTodo('combos')) {
     });
   }, null, () => {
     persistToTypescript('action-combos', 'actionCombos', combos);
+    done('combos');
   });
 }
 
@@ -1103,6 +1137,7 @@ if (hasTodo('statuses')) {
     });
   }, null, () => {
     persistToJsonAsset('statuses', statuses);
+    done('statuses');
   });
 }
 
@@ -1126,6 +1161,7 @@ if (hasTodo('traits')) {
     });
   }, null, () => {
     persistToJsonAsset('traits', traits);
+    done('traits');
   });
 }
 
@@ -1203,6 +1239,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
+      done('items');
     });
 }
 
@@ -1222,6 +1259,7 @@ if (hasTodo('aetherytes')) {
     });
   }, null, () => {
     persistToTypescript('aetheryte-names', 'aetheryteNames', names);
+    done('aetherytes');
   });
 }
 
@@ -1241,6 +1279,7 @@ if (hasTodo('achievements')) {
   }, null, () => {
     persistToJsonAsset('achievements', achievements);
     persistToJsonAsset('achievement-icons', icons);
+    done('achievements');
   });
 }
 
@@ -1274,6 +1313,7 @@ if (hasTodo('recipes')) {
     });
   }, null, () => {
     persistToJsonAsset('recipes', recipes);
+    done('recipes');
   });
 }
 
@@ -1311,6 +1351,7 @@ if (hasTodo('actions')) {
     persistToJsonAsset('action-icons', icons);
     persistToJsonAsset('actions', actions);
     persistToJsonAsset('craft-actions', craftActions);
+    done('actions');
   });
 }
 
@@ -1361,6 +1402,7 @@ if (hasTodo('reductions')) {
         }
       });
       persistToTypescript('reductions', 'reductions', reductions);
+      done('reductions');
     });
 }
 
@@ -1397,6 +1439,7 @@ if (hasTodo('monsterDrops')) {
         }
       });
       persistToTypescript('monster-drops', 'monsterDrops', drops);
+      done('monsterDrops');
     });
 }
 
@@ -1415,6 +1458,7 @@ if (hasTodo('stats')) {
     });
   }, null, () => {
     persistToTypescript('stats', 'stats', stats);
+    done('stats');
   });
 }
 
@@ -1445,6 +1489,7 @@ if (hasTodo('patchContent')) {
     });
   }, null, () => {
     persistToJsonAsset('patch-content', patchContent);
+    done('patchContent');
   });
 }
 
@@ -1463,6 +1508,7 @@ if (hasTodo('voyages')) {
     });
   }, null, () => {
     persistToTypescript('airship-voyages', 'airshipVoyages', airshipVoyages);
+    done('voyages');
   });
 
   getAllPages('https://xivapi.com/SubmarineExploration?columns=ID,Destination_*').subscribe(page => {
@@ -1477,6 +1523,7 @@ if (hasTodo('voyages')) {
     });
   }, null, () => {
     persistToTypescript('submarine-voyages', 'submarineVoyages', submarineVoyages);
+    done('voyages');
   });
 }
 
@@ -1488,6 +1535,7 @@ if (hasTodo('worlds')) {
     });
   }, null, () => {
     persistToTypescript('worlds', 'worlds', worlds);
+    done('worlds');
   });
 }
 
@@ -1499,34 +1547,36 @@ if (hasTodo('territories')) {
     });
   }, null, () => {
     persistToTypescript('territories', 'territories', territories);
+    done('territories');
   });
 }
 
-if (hasTodo('suggestedValues')) {
-  const suggested = {};
-  getAllPages('https://xivapi.com/RecipeLevelTable?columns=ID,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
-    page.Results.forEach(entry => {
-      suggested[entry.ID] = {
-        craftsmanship: entry.SuggestedCraftsmanship,
-        control: entry.SuggestedControl
-      };
-    });
-  }, null, () => {
-    persistToTypescript('suggested', 'suggested', suggested);
-  });
-}
+// if (hasTodo('suggestedValues')) {
+//   const suggested = {};
+//   getAllPages('https://xivapi.com/RecipeLevelTable?columns=ID,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
+//     page.Results.forEach(entry => {
+//       suggested[entry.ID] = {
+//         craftsmanship: entry.SuggestedCraftsmanship,
+//         control: entry.SuggestedControl
+//       };
+//     });
+//   }, null, () => {
+//     persistToTypescript('suggested', 'suggested', suggested);
+//   });
+// }
 
 if (hasTodo('HWDData')) {
   const supplies = {};
   getAllEntries('https://xivapi.com/HWDCrafterSupply').subscribe(completeFetch => {
     completeFetch.forEach(supply => {
       for (let i = 0; i < 5; i++) {
+        const baseReward = supply[`BaseCollectableReward${i}`];
         supplies[supply[`ItemTradeIn${i}TargetID`]] = {
           level: supply[`Level${i}`],
           base: {
             rating: supply[`BaseCollectableRating${i}`],
-            exp: supply[`BaseCollectableReward${i}`].ExpReward,
-            scrip: supply[`BaseCollectableReward${i}`].ScriptRewardAmount
+            exp: baseReward ? baseReward.ExpReward : 0,
+            scrip: baseReward ? baseReward.ScriptRewardAmount : 0
           },
           mid: {
             rating: supply[`MidBaseCollectableRating${i}`],
@@ -1542,6 +1592,7 @@ if (hasTodo('HWDData')) {
       }
     });
     persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
+    done('HWDData');
   });
 }
 
@@ -1553,6 +1604,7 @@ if (hasTodo('actionTimeline')) {
     });
   }, null, () => {
     persistToJsonAsset('action-timeline', actionTimeline);
+    done('actionTimeline');
   });
 }
 
@@ -1604,6 +1656,7 @@ if (hasTodo('materias')) {
       });
   }, null, () => {
     persistToJsonAsset('materias', materias);
+    done('materias');
   });
 }
 
@@ -1652,6 +1705,7 @@ if (hasTodo('baseParam')) {
     });
   }, null, () => {
     persistToJsonAsset('base-params', baseParams);
+    done('baseParam');
   });
 }
 
@@ -1741,6 +1795,7 @@ if (hasTodo('itemLevel')) {
     });
   }, null, () => {
     persistToJsonAsset('item-level', itemLevel);
+    done('itemLevel');
   });
 }
 
@@ -1765,6 +1820,7 @@ if (hasTodo('classJobModifiers')) {
     });
   }, null, () => {
     persistToJsonAsset('class-jobs-modifiers', ClassJobs);
+    done('classJobModifiers');
   });
 }
 
@@ -1776,6 +1832,7 @@ if (hasTodo('equipSlotCategories')) {
       equipSlotCategories[entry.ID] = entry;
     });
     persistToJsonAsset('equip-slot-categories', equipSlotCategories);
+    done('equipSlotCategories');
   });
 }
 
@@ -1795,6 +1852,7 @@ if (hasTodo('tribes')) {
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);
+    done('tribes');
   });
 }
 
@@ -1811,6 +1869,7 @@ if (hasTodo('races')) {
     });
   }, null, () => {
     persistToJsonAsset('races', races);
+    done('races');
   });
 }
 
@@ -1824,5 +1883,6 @@ if (hasTodo('foods')) {
     });
   }, null, () => {
     persistToJsonAsset('foods', foods);
+    done('foods');
   });
 }

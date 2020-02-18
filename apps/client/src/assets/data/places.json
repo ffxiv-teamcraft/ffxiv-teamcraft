@@ -4164,7 +4164,7 @@
     "fr": "Hall des Bestiarii"
   },
   "695": {
-    "en": "Frondale's Ward for Friendless Foundlings",
+    "en": "Frondale's Home for Friendless Foundlings",
     "ja": "フロンデール薬学院小児病棟",
     "de": "Frondales Physiatrische Akademie",
     "fr": "Clinique pédiatrique de l'Académie médicale de Frondale"
@@ -4609,9 +4609,9 @@
   },
   "769": {
     "en": "Arcanists' Guild",
-    "ja": "巴術士ギルド前",
-    "de": "Hermetikergilde",
-    "fr": "Guilde des arcanistes"
+    "ja": "巴術士ギルド前（フェリードック）",
+    "de": "Hermetikergilde (Fähranleger)",
+    "fr": "Guilde des arcanistes (Embarcadère)"
   },
   "770": {
     "en": "Zephyr Gate (Middle La Noscea)",
@@ -15156,10 +15156,10 @@
     "fr": "Fond du lac Seld (sud-est)"
   },
   "2527": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Falling City of Nym",
+    "ja": "ニーム浮遊遺跡風特設アスレチック",
+    "de": "Schwebende Stadt Nym",
+    "fr": "Cité croulante de Nym"
   },
   "2528": {
     "en": "",
@@ -17598,10 +17598,10 @@
     "fr": "Le Col du dragon"
   },
   "2934": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Ferry Docks",
+    "ja": "船着場",
+    "de": "Fähranleger",
+    "fr": "Embarcadère"
   },
   "2935": {
     "en": "",
@@ -18830,7 +18830,7 @@
   "3139": {
     "en": "Malikah's Well",
     "ja": "マリカの大井戸",
-    "de": "Südliche Bernsteinhügel",
+    "de": "Malikahs Brunnen",
     "fr": "Puits de Malikah"
   },
   "3140": {
@@ -18998,7 +18998,7 @@
   "3167": {
     "en": "The Blind Forest of Yx'Maja",
     "ja": "イキス・マヤエの森",
-    "de": "Der Ungesehene Wald Yx'Maja",
+    "de": "Der Ungesehene Wald von Yx'Maja",
     "fr": "Forêt interdite d'Yx'Maja"
   },
   "3168": {
@@ -20644,5 +20644,305 @@
     "ja": "複製サレタ工場廃墟",
     "de": "Die kopierte Fabrik",
     "fr": "Réplique de l'usine désaffectée"
+  },
+  "3442": {
+    "en": "Cinder Drift",
+    "ja": "ギムリト防衛ライン",
+    "de": "Verteidigungslinie Ghimlyt",
+    "fr": "Les Nuées de Brandons"
+  },
+  "3443": {
+    "en": "The High Seas",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf Hoher See",
+    "fr": "Pleine mer"
+  },
+  "3444": {
+    "en": "Galadion Bay",
+    "ja": "ガラディオン湾",
+    "de": "Galadion-Bucht",
+    "fr": "Baie de Galadion"
+  },
+  "3445": {
+    "en": "The Southern Strait of Merlthor",
+    "ja": "メルトール海峡南",
+    "de": "Merlthorstraße (Süd)",
+    "fr": "Détroit sud de Merlthor"
+  },
+  "3446": {
+    "en": "The Northern Strait of Merlthor",
+    "ja": "メルトール海峡北",
+    "de": "Merlthorstraße (Nord)",
+    "fr": "Détroit nord de Merlthor"
+  },
+  "3447": {
+    "en": "Rhotano Sea",
+    "ja": "ロータノ海",
+    "de": "Rhotano-See",
+    "fr": "Mer de Rhotano"
+  },
+  "3448": {
+    "en": "Outer Galadion Bay",
+    "ja": "ガラディオン湾沖合",
+    "de": "Galadion-Bucht - Hochsee",
+    "fr": "Large de la baie de Galadion"
+  },
+  "3449": {
+    "en": "Galadion Spectral Current",
+    "ja": "ガラディオン湾沖合：幻海流",
+    "de": "Galadion-Bucht - Phantomströmung",
+    "fr": "Courant spectral (large de la baie de Galadion)"
+  },
+  "3450": {
+    "en": "The Southern Strait of Merlthor",
+    "ja": "メルトール海峡南",
+    "de": "Südliche Straße von Merlthor",
+    "fr": "Détroit sud de Merlthor"
+  },
+  "3451": {
+    "en": "Southern Merlthor Spectral Current",
+    "ja": "メルトール海峡南：幻海流",
+    "de": "Merlthorstraße (Süd) - Phantomströmung",
+    "fr": "Courant spectral (détroit sud de Merlthor)"
+  },
+  "3452": {
+    "en": "The Northern Strait of Merlthor",
+    "ja": "メルトール海峡北",
+    "de": "Nördliche Straße von Merlthor",
+    "fr": "Détroit nord de Merlthor"
+  },
+  "3453": {
+    "en": "Northern Merlthor Spectral Current",
+    "ja": "メルトール海峡北：幻海流",
+    "de": "Merlthorstraße (Nord) - Phantomströmung",
+    "fr": "Courant spectral (détroit nord de Merlthor)"
+  },
+  "3454": {
+    "en": "Open Rhotano Sea",
+    "ja": "ロータノ海沖合",
+    "de": "Rhotano-See - Hochsee",
+    "fr": "Large de la mer de Rhotano"
+  },
+  "3455": {
+    "en": "Rhotano Spectral Current",
+    "ja": "ロータノ海沖合：幻海流",
+    "de": "Rhotano-See - Phantomströmung",
+    "fr": "Courant spectral (large de la mer de Rhotano)"
+  },
+  "3456": {
+    "en": "Central Lake Tusi Mek'ta",
+    "ja": "トゥシ・メキタ湖中央",
+    "de": "Tusi Mek'ta (Mitte)",
+    "fr": "Centre du lac Tusi Mek'ta"
+  },
+  "3457": {
+    "en": "South Lake Tusi Mek'ta",
+    "ja": "トゥシ・メキタ湖南",
+    "de": "Tusi Mek'ta (Süden)",
+    "fr": "Sud du lac Tusi Mek'ta"
+  },
+  "3458": {
+    "en": "Mjrl's Tears",
+    "ja": "ミュリルの落涙",
+    "de": "Mjrls Tränen",
+    "fr": "Les Larmes de Mjrl"
+  },
+  "3459": {
+    "en": "Bismarck's Brow",
+    "ja": "ビスマルクの額",
+    "de": "Bismarcks Stirn",
+    "fr": "Échine de Bismarck"
+  },
+  "3460": {
+    "en": "The Garden of Recollection",
+    "ja": "想起の庭",
+    "de": "Garten der Erinnerungen",
+    "fr": "Jardin des souvenirs"
+  },
+  "3461": {
+    "en": "Anamnesis",
+    "ja": "想起の館",
+    "de": "Halle der Erinnerungen",
+    "fr": "Anamnesis"
+  },
+  "3462": {
+    "en": "Katharsis",
+    "ja": "カタルシスの広場",
+    "de": "Platz der Katharsis",
+    "fr": "Catharsis"
+  },
+  "3463": {
+    "en": "Doxa",
+    "ja": "ドクサの広間",
+    "de": "Platz der Doxa",
+    "fr": "Doxa"
+  },
+  "3464": {
+    "en": "The Archive Eternal",
+    "ja": "イデア保管庫",
+    "de": "Halle der Ideen",
+    "fr": "Salle des concepts"
+  },
+  "3465": {
+    "en": "Noesis",
+    "ja": "ノエシスの間",
+    "de": "Die Noesis",
+    "fr": "Noesis"
+  },
+  "3466": {
+    "en": "The Setebos Trench",
+    "ja": "セティボス海溝",
+    "de": "Setebos-Tiefseegraben",
+    "fr": "Faille de Setebos"
+  },
+  "3467": {
+    "en": "Anamnesis Anyder",
+    "ja": "アニドラス・アナムネーシス",
+    "de": "Anamnesis Anyder",
+    "fr": "Anamnesis Anydre"
+  },
+  "3468": {
+    "en": "The Gandof Thunder Plains",
+    "ja": "ガンドフ雷平原",
+    "de": "Gandoph-Donnersteppe",
+    "fr": "Plaine foudroyée de Gandof"
+  },
+  "3469": {
+    "en": "Ashfall",
+    "ja": "灰の旅程",
+    "de": "Aschenfall",
+    "fr": "Bassin cendreux"
+  },
+  "3470": {
+    "en": "The Halo",
+    "ja": "エデン甲板",
+    "de": "Das Deck",
+    "fr": "Pont supérieur d'Éden"
+  },
+  "3471": {
+    "en": "Trial's Threshold",
+    "ja": "徳測りし前室",
+    "de": "Halle der Prüfung",
+    "fr": "Antichambre de l'épreuve"
+  },
+  "3472": {
+    "en": "Hopl's Stopple",
+    "ja": "ホパル古盤",
+    "de": "Hopls Pfropfen",
+    "fr": "Plateau de Hopl"
+  },
+  "3473": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3474": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3475": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3476": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3477": {
+    "en": "The Endeavor",
+    "ja": "エンデバー号",
+    "de": "Die Endeavor",
+    "fr": "L'Ambition"
+  },
+  "3478": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3479": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3480": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3481": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3482": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3483": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3484": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3485": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3486": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3487": {
+    "en": "Great Glacier",
+    "ja": "大氷河",
+    "de": "Gletscher",
+    "fr": "Grand Glacier"
+  },
+  "3488": {
+    "en": "Frozen Reflections",
+    "ja": "分断された大氷河",
+    "de": "Gespaltener Gletscher",
+    "fr": "Grand Glacier (éclaté) "
+  },
+  "3489": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3490": {
+    "en": "Sunken Structures",
+    "ja": "遺構表層",
+    "de": "Versunkener Vorplatz",
+    "fr": "Vestiges apparents"
+  },
+  "3491": {
+    "en": "Sunken Sanctum",
+    "ja": "遺構深層",
+    "de": "Versunkene Hallen",
+    "fr": "Vestiges dormants"
   }
 }

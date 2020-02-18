@@ -964,5 +964,11 @@ export const jobCategories = {
     "ja": "剣術士 格闘士 斧術士 槍術士 弓術士 ナイト モンク 戦士 竜騎士 吟遊詩人 双剣士 忍者 機工士 暗黒騎士 侍 ガンブレイカー 踊り子",
     "de": "KRG GLA MAR PIK WLD PAL MÖN KRG DRG BRD SCH NIN MCH DKR SAM REV TÄN",
     "fr": "GLA PGL MRD HAS ARC PLD MOI GUE DRG BRD SUR NIN MCH CHN SAM PSB DNS"
+  },
+  "162": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 };

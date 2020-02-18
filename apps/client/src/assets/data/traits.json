@@ -592,7 +592,7 @@
     "icon": "/i/005000/005459.png",
     "description": {
       "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to crystals.",
-      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
+      "de": "Die Wirkung von <span style=\"color:#40bfff;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
       "ja": "クリスタルを十二神の加護効果の対象にする。",
       "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les cristaux."
     }
@@ -605,7 +605,7 @@
     "icon": "/i/005000/005460.png",
     "description": {
       "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to clusters.",
-      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
+      "de": "Die Wirkung von <span style=\"color:#40bfff;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
       "ja": "クラスターを十二神の加護効果の対象にする。",
       "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les agrégats."
     }
@@ -670,7 +670,7 @@
     "icon": "/i/005000/005434.png",
     "description": {
       "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to crystals.",
-      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
+      "de": "Die Wirkung von <span style=\"color:#40bfff;\">Gunst der Zwölf</span> wird auf Kristalle erweitert.",
       "ja": "クリスタルを十二神の加護効果の対象にする。",
       "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les cristaux."
     }
@@ -683,7 +683,7 @@
     "icon": "/i/005000/005435.png",
     "description": {
       "en": "<span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> now extends to clusters.",
-      "de": "Die Wirkung von <span style=\"color:#ffff66;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
+      "de": "Die Wirkung von <span style=\"color:#40bfff;\">Gunst der Zwölf</span> wird auf Polykristalle erweitert.",
       "ja": "クラスターを十二神の加護効果の対象にする。",
       "fr": "Le bonus de récolte conféré par Bénédiction des Douze comprend également les agrégats."
     }
@@ -1788,7 +1788,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1801,7 +1801,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1814,7 +1814,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1827,7 +1827,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1840,7 +1840,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1853,7 +1853,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1866,7 +1866,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -1879,7 +1879,7 @@
     "icon": "/i/006000/006976.png",
     "description": {
       "en": "Slightly increases chances of material condition becoming <span style=\"color:#ffff66;\">Good</span>.",
-      "de": "Erhöht die Chance auf Materialzustand „Gut“ leicht.",
+      "de": "Erhöht die Chance auf Materialzustand <span style=\"color:#ff7b1a;\">Gut</span> leicht.",
       "ja": "「高品質」状態になる確率がわずかに上昇する。",
       "fr": "Les chances que l'état des matériaux devienne <span style=\"color:#ff7b1a;\">bon</span> augmentent légèrement."
     }
@@ -2281,7 +2281,7 @@
     "fr": "Extra Ruine améliorée",
     "icon": "/i/005000/005377.png",
     "description": {
-      "en": "Grants <span style=\"color:#ffff66;\">Further Ruin</span> upon using <span style=\"color:#ff7b1a;\">Egi Assault</span>.\n\n<span style=\"color:#00cc22;\">Maximum Stacks: </span>4\n\nThe <span style=\"color:#ff7b1a;\">Egi-Assault</span> used must be an attack action.",
+      "en": "Grants <span style=\"color:#ffff66;\">Further Ruin</span> upon using <span style=\"color:#ff7b1a;\">Egi Assault</span>.\n\n<span style=\"color:#00cc22;\">Maximum Stacks: </span>4\n\nThe <span style=\"color:#ff7b1a;\">Egi Assault</span> used must be an attack action.",
       "de": "Wenn dein Egi erfolgreich eine Attacke ausführt, wird dir <span style=\"color:#ffff66;\">Verbessertes Ruinra</span> gewährt. Damit ändert sich das Kommando <span style=\"color:#40bfff;\">Ruinra</span> zu <span style=\"color:#40bfff;\">Ruinka</span>.\n\nMaximalstapelzahl: 4",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「ルインラ強化」</span>を付与する。\n\nルインラがルインジャに変化する。\n\n<span style=\"color:#00cc22;\">最大スタック数：</span>4　<span style=\"color:#00cc22;\">効果時間：</span>永続\n\n<span style=\"color:#00cc22;\">発動条件：</span>エギアサルトIによる攻撃アクションの実行時",
       "fr": "Permet d'obtenir <span style=\"color:#ff7b1a;\">Extra Ruine renforcée</span> quand Frappe Egi I est utilisée par Garuda-Egi ou Ifrit-Egi.\n\nCet effet remplace Extra Ruine par Giga Ruine et est cumulable 4 fois."
@@ -2528,10 +2528,10 @@
     "fr": "À-coup amélioré",
     "icon": "/i/006000/006201.png",
     "description": {
-      "en": "Upgrades <span style=\"color:#ff7b1a;\">Jolt</span> to <span style=\"color:#ff7b1a;\">Jolt II</span>. Also increases the potency of <span style=\"color:#ff7b1a;\">Verthunder</span> and <span style=\"color:#ff7b1a;\">Veraero</span> to 350, and the potency of <span style=\"color:#ff7b1a;\">Verfire</span> and <span style=\"color:#ff7b1a;\">Verstone</span> to 300.",
-      "de": "Verbessert <span style=\"color:#40bfff;\">Stoß</span> zu <span style=\"color:#40bfff;\">Stoß II</span>.\n\nAußerdem werden die Attacke-Werte von <span style=\"color:#40bfff;\">Erzblitz</span> und <span style=\"color:#40bfff;\">Erzwind</span> auf 350 und von <span style=\"color:#40bfff;\">Erzfeuer</span> und <span style=\"color:#40bfff;\">Erzstein</span> auf 300 erhöht.",
-      "ja": "ジョルトがジョルラに変化する。\n\nさらに、ヴァルサンダーとヴァルエアロの威力を350に、ヴァルファイアとヴァルストーンの威力を300に上昇させる。",
-      "fr": "Remplace <span style=\"color:#ff7b1a;\">À-coup</span> par <span style=\"color:#ff7b1a;\">Extra À-coup</span>.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFoudre</span> et <span style=\"color:#ff7b1a;\">VerVent</span> à 350.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFeu</span> et <span style=\"color:#ff7b1a;\">VerTerre</span> à 300."
+      "en": "Upgrades <span style=\"color:#ff7b1a;\">Jolt</span> to <span style=\"color:#ff7b1a;\">Jolt II</span>. Also increases the potency of <span style=\"color:#ff7b1a;\">Verthunder</span> and <span style=\"color:#ff7b1a;\">Veraero</span> to 370, and the potency of <span style=\"color:#ff7b1a;\">Verfire</span> and <span style=\"color:#ff7b1a;\">Verstone</span> to 300.",
+      "de": "Verbessert <span style=\"color:#40bfff;\">Stoß</span> zu <span style=\"color:#40bfff;\">Stoß II</span>.\n\nAußerdem werden die Attacke-Werte von <span style=\"color:#40bfff;\">Erzblitz</span> und <span style=\"color:#40bfff;\">Erzwind</span> auf 370 und von <span style=\"color:#40bfff;\">Erzfeuer</span> und <span style=\"color:#40bfff;\">Erzstein</span> auf 300 erhöht.",
+      "ja": "ジョルトがジョルラに変化する。\n\nさらに、ヴァルサンダーとヴァルエアロの威力を370に、ヴァルファイアとヴァルストーンの威力を300に上昇させる。",
+      "fr": "Remplace <span style=\"color:#ff7b1a;\">À-coup</span> par <span style=\"color:#ff7b1a;\">Extra À-coup</span>.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFoudre</span> et <span style=\"color:#ff7b1a;\">VerVent</span> à 370.\n\nAugmente la puissance de <span style=\"color:#ff7b1a;\">VerFeu</span> et <span style=\"color:#ff7b1a;\">VerTerre</span> à 300."
     }
   },
   "196": {
@@ -3467,7 +3467,7 @@
       "en": "<span style=\"color:#ff7b1a;\">Infuriate</span> grants the effect of <span style=\"color:#ffff66;\">Nascent Chaos</span>, upgrading <span style=\"color:#ff7b1a;\">Decimate</span> to <span style=\"color:#ff7b1a;\">Chaotic Cyclone</span>. Upon reaching level 80, <span style=\"color:#ffff66;\">Nascent Chaos</span> will also upgrade <span style=\"color:#ff7b1a;\">Fell Cleave</span> to <span style=\"color:#ff7b1a;\">Inner Chaos</span>. \n\n<span style=\"color:#00cc22;\">Duration: </span>30s",
       "de": "Gewährt dir <span style=\"color:#ffff66;\">Saat des Chaos</span>, wenn du <span style=\"color:#40bfff;\">Schlachtruf</span> ausführst. Während <span style=\"color:#ffff66;\">Saat des Chaos</span> aktiv ist, wird <span style=\"color:#40bfff;\">Niedermähen</span> zu <span style=\"color:#40bfff;\">Inneres Chaos</span> und <span style=\"color:#40bfff;\">Kreiselklinge</span> zu <span style=\"color:#40bfff;\">Chaosklinge</span>, sobald erlernt.\n\nDauer: 30 Sekunden",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「原初の混沌」</span>が付与される。\n\n<span style=\"color:#00cc22;\">効果時間：</span>30秒\n\n<span style=\"color:#00cc22;\">原初の混沌効果：</span>デシメートがカオティックサイクロンに変化する。\n\nさらに、インナーカオスを修得するとフェルクリーヴがインナーカオスに変化するようになる。\n\n<span style=\"color:#00cc22;\">発動条件：</span><span style=\"color:#ff7b1a;\">「ウォークライ」</span>実行時",
-      "fr": "Permet de recevoir <span style=\"color:#ff7b1a;\">Chaos naissant</span> lors de l'utilisation de <span style=\"color:#ff7b1a;\">Cri de guerre</span>.\n\n<span style=\"color:#ffff66;\">Chaos naissant:</span> remplace <span style=\"color:#ff7b1a;\">Sape-fendeur</span> par <span style=\"color:#ff7b1a;\">Chaos intérieur</span> et <span style=\"color:#ff7b1a;\">Décimation</span> par <span style=\"color:#ff7b1a;\">Cyclone chaotique</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 30s"
+      "fr": "Permet de recevoir <span style=\"color:#ff7b1a;\">Chaos naissant</span> lors de l'utilisation de <span style=\"color:#ff7b1a;\">Cri de guerre</span>.\n\n<span style=\"color:#ffff66;\">Chaos naissant:</span> remplace <span style=\"color:#ff7b1a;\">Décimation</span> par <span style=\"color:#ff7b1a;\">Cyclone chaotique</span> et, à partir du niveau 80, <span style=\"color:#ff7b1a;\">Sape-fendeur</span> par <span style=\"color:#ff7b1a;\">Chaos intérieur</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 30s"
     }
   },
   "268": {
@@ -3842,7 +3842,7 @@
     "icon": "/i/005000/005362.png",
     "description": {
       "en": "Accumulating full stacks of either <span style=\"color:#ffff66;\">Astral Fire</span> or <span style=\"color:#ffff66;\">Umbral Ice</span> then casting a spell of the opposite element will consume no MP.\n\nEffect does not apply to <span style=\"color:#ff7b1a;\">Flare</span>.",
-      "de": "Hat <span style=\"color:#ffff66;\">Schatteneis</span> oder  <span style=\"color:#ffff66;\">Lichtfeuer</span> die maximale Stapelanzahl erreicht, kosten Zauber des entgegengesetzten Elements keine MP.\n\nKeine Wirkung auf Flare.",
+      "de": "Hat <span style=\"color:#ffff66;\">Schatteneis</span> oder  <span style=\"color:#ffff66;\">Lichtfeuer</span> die Maximalstapelzahl erreicht, kosten Zauber des entgegengesetzten Elements keine MP.\n\nKeine Wirkung auf Flare.",
       "ja": "自身に<span style=\"color:#ff7b1a;\">「アストラルファイア」</span>もしくは<span style=\"color:#ff7b1a;\">「アンブラルブリザード」</span>が最大スタック数まで付与されている場合、反対属性の魔法の消費ＭＰを0にする。\n\nただし、フレアには適用されない。",
       "fr": "Réduit à 0 le coût en PM des sorts de la polarité opposée lorsque vous bénéficiez de <span style=\"color:#ff7b1a;\">Feu astral</span> ou de <span style=\"color:#ff7b1a;\">Glace ombrale</span> au degré maximal. Ne s'applique pas à Brasier."
     }
@@ -4297,7 +4297,7 @@
     "icon": "/i/005000/005440.png",
     "description": {
       "en": "Increases the base yield of <span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> by one.",
-      "de": "Der Grundertrag durch Gunst der Zwölf erhöht sich um 1.",
+      "de": "Der Grundertrag durch <span style=\"color:#40bfff;\">Gunst der Zwölf</span> erhöht sich um 1.",
       "ja": "十二神の加護による獲得個数がベース値から1上昇する。",
       "fr": "L'effet de Bénédiction des Douze est amélioré de 1."
     }
@@ -4310,7 +4310,7 @@
     "icon": "/i/005000/005465.png",
     "description": {
       "en": "Increases the base yield of <span style=\"color:#ff7b1a;\">The Twelve's Bounty</span> by one.",
-      "de": "Der Grundertrag durch Gunst der Zwölf erhöht sich um 1.",
+      "de": "Der Grundertrag durch <span style=\"color:#40bfff;\">Gunst der Zwölf</span> erhöht sich um 1.",
       "ja": "十二神の加護による獲得個数がベース値から1上昇する。",
       "fr": "L'effet de Bénédiction des Douze est amélioré de 1."
     }
@@ -4401,7 +4401,7 @@
     "icon": "/i/006000/006979.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4414,7 +4414,7 @@
     "icon": "/i/006000/006980.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4427,7 +4427,7 @@
     "icon": "/i/006000/006981.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4440,7 +4440,7 @@
     "icon": "/i/006000/006982.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4453,7 +4453,7 @@
     "icon": "/i/006000/006983.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4466,7 +4466,7 @@
     "icon": "/i/006000/006984.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4479,7 +4479,7 @@
     "icon": "/i/006000/006985.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4492,7 +4492,7 @@
     "icon": "/i/006000/006986.png",
     "description": {
       "en": "Efficiency is increased to 120%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Bearbeiten</span> auf 120.",
       "ja": "作業の効率が120に上昇する。",
       "fr": "L'efficacité de Travail de base augmente à 120."
     }
@@ -4505,7 +4505,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4518,7 +4518,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4531,7 +4531,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4544,7 +4544,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4557,7 +4557,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4570,7 +4570,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4583,7 +4583,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }
@@ -4596,7 +4596,7 @@
     "icon": "/i/006000/006978.png",
     "description": {
       "en": "Efficiency is increased to 500%.",
-      "de": "Steigert Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500 %.",
+      "de": "Steigert die Effizienz von <span style=\"color:#40bfff;\">Schnelle Bearbeitung</span> auf 500.",
       "ja": "突貫作業の効率が500に上昇する。",
       "fr": "L'efficacité de Travail rapide augmente à 500."
     }

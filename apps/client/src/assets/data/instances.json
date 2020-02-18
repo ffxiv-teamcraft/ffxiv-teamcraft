@@ -6,8 +6,9 @@
     "fr": "les Mille Gueules de Toto-Rak",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      1203,
-      1200
+      444,
+      5,
+      1203
     ]
   },
   "2": {
@@ -17,10 +18,10 @@
     "fr": "l'Hypogée de Tam-Tara",
     "icon": "/i/061000/061801.png",
     "contentText": [
+      73,
       1004,
-      1003,
-      1004,
-      1000
+      2,
+      1004
     ]
   },
   "3": {
@@ -30,10 +31,10 @@
     "fr": "les Mines de Clochecuivre",
     "icon": "/i/061000/061801.png",
     "contentText": [
+      101,
       2705,
-      2704,
-      2705,
-      2700
+      3,
+      2705
     ]
   },
   "4": {
@@ -43,10 +44,10 @@
     "fr": "Sastasha",
     "icon": "/i/061000/061801.png",
     "contentText": [
+      1206,
       2505,
-      2504,
-      2505,
-      2500
+      1,
+      2505
     ]
   },
   "5": {
@@ -56,8 +57,9 @@
     "fr": "le Val d'Aurum",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      2903,
-      2900
+      1532,
+      12,
+      2903
     ]
   },
   "6": {
@@ -67,8 +69,9 @@
     "fr": "le Manoir des Haukke",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      1103,
-      1100
+      422,
+      6,
+      1103
     ]
   },
   "7": {
@@ -78,8 +81,9 @@
     "fr": "Halatali",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      2407,
-      2405
+      1197,
+      4,
+      2407
     ]
   },
   "8": {
@@ -89,8 +93,9 @@
     "fr": "le Bivouac de Brayflox",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      2403,
-      2400
+      1279,
+      7,
+      2403
     ]
   },
   "9": {
@@ -100,8 +105,9 @@
     "fr": "le Temple enseveli de Qarn",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      3509,
-      3500
+      1570,
+      8,
+      3509
     ]
   },
   "10": {
@@ -111,8 +117,9 @@
     "fr": "le Palais du Vagabond",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      2804,
-      2800
+      1547,
+      13,
+      2804
     ]
   },
   "11": {
@@ -122,8 +129,9 @@
     "fr": "le Vigile de Pierre",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      4402,
-      4400
+      1680,
+      10,
+      4402
     ]
   },
   "12": {
@@ -133,8 +141,9 @@
     "fr": "le Gouffre hurlant",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      3402,
-      3400
+      1590,
+      9,
+      3402
     ]
   },
   "13": {
@@ -144,8 +153,9 @@
     "fr": "la Forteresse de Dzemael",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      2906,
-      2904
+      1396,
+      11,
+      2906
     ]
   },
   "14": {
@@ -155,8 +165,9 @@
     "fr": "le Château d'Amdapor",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      4502,
-      4500
+      1696,
+      16,
+      4502
     ]
   },
   "15": {
@@ -166,8 +177,8 @@
     "fr": "Castrum Meridianum",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      3918,
-      3900
+      14,
+      3918
     ]
   },
   "16": {
@@ -177,8 +188,8 @@
     "fr": "le Praetorium",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      4050,
-      4000
+      15,
+      4050
     ]
   },
   "17": {
@@ -188,8 +199,9 @@
     "fr": "le Phare de Sirius",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      4612,
-      4600
+      2265,
+      17,
+      4612
     ]
   },
   "18": {
@@ -199,8 +211,9 @@
     "fr": "les Mines de Clochecuivre (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      4812,
-      4800
+      2289,
+      18,
+      4812
     ]
   },
   "19": {
@@ -210,8 +223,9 @@
     "fr": "le Manoir des Haukke (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      5007,
-      5000
+      2346,
+      19,
+      5007
     ]
   },
   "20": {
@@ -221,10 +235,10 @@
     "fr": "le Bivouac de Brayflox (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
+      2547,
       5306,
-      5305,
-      5308,
-      5300
+      22,
+      5308
     ]
   },
   "21": {
@@ -234,8 +248,9 @@
     "fr": "Halatali (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      5116,
-      5100
+      1197,
+      21,
+      5116
     ]
   },
   "22": {
@@ -245,8 +260,9 @@
     "fr": "les Vestiges de la cité d'Amdapor",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      5406,
-      5400
+      2564,
+      20,
+      5406
     ]
   },
   "23": {
@@ -256,8 +272,8 @@
     "fr": "l'Île de Crèvecarène",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6005,
-      6000
+      23,
+      6005
     ]
   },
   "24": {
@@ -267,8 +283,8 @@
     "fr": "l'Hypogée de Tam-Tara (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6414,
-      6400
+      24,
+      6414
     ]
   },
   "25": {
@@ -278,8 +294,8 @@
     "fr": "le Vigile de Pierre (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6106,
-      6100
+      25,
+      6106
     ]
   },
   "26": {
@@ -289,8 +305,8 @@
     "fr": "le Temple enseveli de Qarn (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6507,
-      6500
+      28,
+      6507
     ]
   },
   "27": {
@@ -300,8 +316,8 @@
     "fr": "Manteneige",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6804,
-      6800
+      26,
+      6804
     ]
   },
   "28": {
@@ -311,8 +327,8 @@
     "fr": "Sastasha (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6617,
-      6600
+      27,
+      6617
     ]
   },
   "29": {
@@ -322,8 +338,8 @@
     "fr": "le Château d'Amdapor (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      7309,
-      7300
+      31,
+      7309
     ]
   },
   "30": {
@@ -333,8 +349,8 @@
     "fr": "le Palais du Vagabond (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      6719,
-      6700
+      30,
+      6719
     ]
   },
   "31": {
@@ -344,8 +360,9 @@
     "fr": "la Grande bibliothèque de Gubal",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      7704,
-      7700
+      3930,
+      44,
+      7704
     ]
   },
   "32": {
@@ -355,8 +372,8 @@
     "fr": "le Gardien du lac",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      7509,
-      7500
+      29,
+      7509
     ]
   },
   "33": {
@@ -366,8 +383,9 @@
     "fr": "Nalloncques",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      9107,
-      9100
+      3740,
+      46,
+      9107
     ]
   },
   "34": {
@@ -377,8 +395,9 @@
     "fr": "La Voûte",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8208,
-      8200
+      3642,
+      43,
+      8208
     ]
   },
   "35": {
@@ -388,8 +407,9 @@
     "fr": "Le Continuum fractal",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8309,
-      8300
+      3434,
+      47,
+      8309
     ]
   },
   "36": {
@@ -399,8 +419,9 @@
     "fr": "le Vigile du Crépuscule",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8104,
-      8100
+      3409,
+      40,
+      8104
     ]
   },
   "37": {
@@ -410,8 +431,9 @@
     "fr": "Sohm Al",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8705,
-      8700
+      3798,
+      41,
+      8705
     ]
   },
   "38": {
@@ -421,8 +443,9 @@
     "fr": "le Laboratoire de magismologie",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8621,
-      8600
+      3823,
+      45,
+      8621
     ]
   },
   "39": {
@@ -432,8 +455,9 @@
     "fr": "L'Aire",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      8518,
-      8500
+      3458,
+      42,
+      8518
     ]
   },
   "40": {
@@ -443,8 +467,9 @@
     "fr": "le Phare de Sirius (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      9507,
-      9500
+      4576,
+      49,
+      9507
     ]
   },
   "41": {
@@ -454,8 +479,9 @@
     "fr": "l'Arboretum Sainte-Mocianne",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      9704,
-      9700
+      4658,
+      48,
+      9704
     ]
   },
   "42": {
@@ -465,8 +491,9 @@
     "fr": "les Vestiges de la cité d'Amdapor (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      10011,
-      10000
+      4747,
+      51,
+      10011
     ]
   },
   "43": {
@@ -476,8 +503,8 @@
     "fr": "L'Antitour",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      9806,
-      9800
+      50,
+      9806
     ]
   },
   "44": {
@@ -487,8 +514,9 @@
     "fr": "Sohr Khai",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      12414,
-      12400
+      4954,
+      52,
+      12414
     ]
   },
   "45": {
@@ -498,8 +526,8 @@
     "fr": "l'Île de Crèvecarène (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      12350,
-      12300
+      53,
+      12350
     ]
   },
   "46": {
@@ -509,8 +537,9 @@
     "fr": "Xelphatol",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      13016,
-      13000
+      5272,
+      54,
+      13016
     ]
   },
   "47": {
@@ -520,8 +549,9 @@
     "fr": "la Grande bibliothèque de Gubal (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      13816,
-      13800
+      5219,
+      55,
+      13816
     ]
   },
   "48": {
@@ -531,8 +561,9 @@
     "fr": "la Muraille de Baelsar",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14008,
-      14000
+      5564,
+      56,
+      14008
     ]
   },
   "49": {
@@ -542,8 +573,9 @@
     "fr": "Sohm Al (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14404,
-      14400
+      5531,
+      57,
+      14404
     ]
   },
   "50": {
@@ -553,8 +585,8 @@
     "fr": "le Palais aux Marées violettes",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14914,
-      14900
+      6243,
+      14914
     ]
   },
   "51": {
@@ -564,8 +596,8 @@
     "fr": "le Temple du Poing",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14623,
-      14600
+      6117,
+      14623
     ]
   },
   "52": {
@@ -575,8 +607,8 @@
     "fr": "la Mer du Chant des sirènes",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14513,
-      14500
+      6074,
+      14513
     ]
   },
   "53": {
@@ -586,8 +618,8 @@
     "fr": "la Force de Bardam",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      14722,
-      14700
+      6155,
+      14722
     ]
   },
   "54": {
@@ -597,8 +629,8 @@
     "fr": "le Château de Doma",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      16111,
-      16100
+      6205,
+      16111
     ]
   },
   "55": {
@@ -608,8 +640,8 @@
     "fr": "Castrum Abania",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      15516,
-      15500
+      6268,
+      15516
     ]
   },
   "56": {
@@ -619,8 +651,8 @@
     "fr": "Ala Mhigo",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      17317,
-      17300
+      6039,
+      17317
     ]
   },
   "57": {
@@ -630,8 +662,8 @@
     "fr": "le Château de Kugane",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      16230,
-      16200
+      6089,
+      16230
     ]
   },
   "58": {
@@ -641,8 +673,8 @@
     "fr": "la Cité engloutie de Skalla",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      17908,
-      17900
+      6910,
+      17908
     ]
   },
   "59": {
@@ -652,8 +684,8 @@
     "fr": "le Couvercle des enfers",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      18411,
-      18400
+      6996,
+      18411
     ]
   },
   "60": {
@@ -663,8 +695,8 @@
     "fr": "le Continuum fractal (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      18516,
-      18500
+      7058,
+      18516
     ]
   },
   "61": {
@@ -674,8 +706,8 @@
     "fr": "le Compas de l'Hirondelle",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      19230,
-      19200
+      7203,
+      19230
     ]
   },
   "62": {
@@ -685,8 +717,8 @@
     "fr": "l'Arboretum Sainte-Mocianne (brutal)",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      19804,
-      19800
+      7662,
+      19804
     ]
   },
   "63": {
@@ -696,8 +728,8 @@
     "fr": "L'Escarre",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      19714,
-      19700
+      7672,
+      19714
     ]
   },
   "64": {
@@ -707,8 +739,8 @@
     "fr": "Les Ténèbres de Ghimlyt",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      20819,
-      20800
+      7859,
+      20819
     ]
   },
   "65": {
@@ -718,8 +750,8 @@
     "fr": "Dohn Mheg",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21323,
-      21300
+      8146,
+      21323
     ]
   },
   "66": {
@@ -729,8 +761,8 @@
     "fr": "L'Enchevêtrement des Qitari",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21808,
-      21800
+      8233,
+      21808
     ]
   },
   "67": {
@@ -740,8 +772,8 @@
     "fr": "Amaurote",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21426,
-      21400
+      8210,
+      21426
     ]
   },
   "68": {
@@ -751,8 +783,8 @@
     "fr": "La Macle de Syrcus",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21609,
-      21600
+      8167,
+      21609
     ]
   },
   "69": {
@@ -762,8 +794,8 @@
     "fr": "le Puits de Malikah",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21505,
-      21500
+      257,
+      21505
     ]
   },
   "70": {
@@ -773,8 +805,8 @@
     "fr": "Mont Gulg",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      20414,
-      20400
+      8262,
+      20414
     ]
   },
   "71": {
@@ -784,8 +816,8 @@
     "fr": "Akadaemia Anydre",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      21707,
-      21700
+      8273,
+      21707
     ]
   },
   "72": {
@@ -795,8 +827,7 @@
     "fr": "Holminster",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      22107,
-      22100
+      22107
     ]
   },
   "73": {
@@ -806,11 +837,29 @@
     "fr": "le Cosmos coruscant",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      23440,
-      23400
+      9046,
+      23440
     ]
   },
   "74": {
+    "en": "Anamnesis Anyder",
+    "ja": "黒風海底 アニドラス・アナムネーシス",
+    "de": "Anamnesis Anyder",
+    "fr": "Anamnesis Anydre",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      9264,
+      24117
+    ]
+  },
+  "75": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "76": {
     "en": null,
     "ja": null,
     "de": null,
@@ -831,8 +880,8 @@
     "fr": "La grande manœuvre éorzéenne",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      10438,
-      10400
+      4739,
+      10438
     ]
   },
   "5002": {
@@ -842,8 +891,8 @@
     "fr": "Course-poursuite dans le laboratoire",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      12521,
-      12500
+      3818,
+      12521
     ]
   },
   "5003": {
@@ -853,8 +902,8 @@
     "fr": "Destins entrecroisés",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      13335,
-      13300
+      3818,
+      13335
     ]
   },
   "5004": {
@@ -864,8 +913,7 @@
     "fr": "Rixe à l'Héliodrome",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      14230,
-      14200
+      14230
     ]
   },
   "5005": {
@@ -875,8 +923,7 @@
     "fr": "Un drôle de Namazu",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      14822,
-      14800
+      14822
     ]
   },
   "5006": {
@@ -886,8 +933,7 @@
     "fr": "Le tournoi commémoratif du sultanat",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15025,
-      15000
+      15025
     ]
   },
   "5007": {
@@ -897,8 +943,7 @@
     "fr": "Transmigration démoniaque",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15421,
-      15400
+      15421
     ]
   },
   "5008": {
@@ -908,8 +953,7 @@
     "fr": "La grande bataille du Naadam",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15257,
-      15200
+      15257
     ]
   },
   "5009": {
@@ -919,8 +963,7 @@
     "fr": "La légende de Musosai: l'assassin de Limsa Lominsa",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15331,
-      15300
+      15331
     ]
   },
   "5010": {
@@ -930,8 +973,7 @@
     "fr": "L'abominable Kogarashi",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15625,
-      15600
+      15625
     ]
   },
   "5011": {
@@ -941,8 +983,7 @@
     "fr": "Règlement de compte au square Matsuba",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15857,
-      15800
+      15857
     ]
   },
   "5012": {
@@ -952,8 +993,7 @@
     "fr": "L'affrontement de deux justices",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16016,
-      16000
+      16016
     ]
   },
   "5013": {
@@ -963,8 +1003,7 @@
     "fr": "L'épreuve de force",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15715,
-      15700
+      15715
     ]
   },
   "5014": {
@@ -974,8 +1013,7 @@
     "fr": "L'espoir en héritage",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16608,
-      16600
+      16608
     ]
   },
   "5015": {
@@ -985,19 +1023,17 @@
     "fr": "Passion guerrière",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15930,
-      15900
+      15930
     ]
   },
   "5016": {
-    "en": "Darkwing Dragon",
+    "en": "Dark as the Night Sky",
     "ja": "漆黒の巨竜",
     "de": "Der tobende Drache",
     "fr": "Aussi sombre que la nuit",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16705,
-      16700
+      16705
     ]
   },
   "5017": {
@@ -1007,8 +1043,7 @@
     "fr": "La ruse d'Urianger",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      17039,
-      17000
+      17039
     ]
   },
   "5018": {
@@ -1018,8 +1053,7 @@
     "fr": "La finale des champions",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      15115,
-      15100
+      15115
     ]
   },
   "5019": {
@@ -1029,8 +1063,7 @@
     "fr": "L'aspiration refoulée",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16426,
-      16400
+      16426
     ]
   },
   "5020": {
@@ -1040,8 +1073,7 @@
     "fr": "La dernière séparation",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16520,
-      16500
+      16520
     ]
   },
   "5021": {
@@ -1051,8 +1083,7 @@
     "fr": "Le Dragon écarlate",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      16811,
-      16800
+      16811
     ]
   },
   "5022": {
@@ -1062,8 +1093,7 @@
     "fr": "La bataille des clans",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      17109,
-      17100
+      17109
     ]
   },
   "5023": {
@@ -1073,8 +1103,7 @@
     "fr": "Fissure interdimensionnelle",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      17440,
-      17400
+      17440
     ]
   },
   "5024": {
@@ -1084,8 +1113,7 @@
     "fr": "Retour au bercail",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      18341,
-      18300
+      18341
     ]
   },
   "5025": {
@@ -1095,8 +1123,7 @@
     "fr": "Voyage en terre hostile",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      19620,
-      19600
+      19620
     ]
   },
   "5026": {
@@ -1106,8 +1133,7 @@
     "fr": "Ralliement dans la steppe",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      20339,
-      20300
+      20339
     ]
   },
   "5027": {
@@ -1117,8 +1143,7 @@
     "fr": "La Messagère du vent",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      21112,
-      21100
+      21112
     ]
   },
   "5028": {
@@ -1128,8 +1153,7 @@
     "fr": "Un requiem pour les héros",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      21239,
-      21200
+      21239
     ]
   },
   "5029": {
@@ -1139,8 +1163,7 @@
     "fr": "Naissance d'un bourreau",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      21949,
-      21900
+      21949
     ]
   },
   "5030": {
@@ -1150,8 +1173,7 @@
     "fr": "Magie ancestrale",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      22340,
-      22300
+      22340
     ]
   },
   "5031": {
@@ -1161,8 +1183,7 @@
     "fr": "Sur les rails de Nabaath Areng",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      22763,
-      22700
+      22763
     ]
   },
   "5032": {
@@ -1172,8 +1193,7 @@
     "fr": "Le Confessionnal de Toupasa l'ancien",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      22679,
-      22600
+      22679
     ]
   },
   "5033": {
@@ -1183,8 +1203,7 @@
     "fr": "Une cupidité bien généreuse",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      22539,
-      22500
+      22539
     ]
   },
   "5034": {
@@ -1194,8 +1213,7 @@
     "fr": "La chasseuse de légende",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      22944,
-      22900
+      22944
     ]
   },
   "5035": {
@@ -1205,8 +1223,7 @@
     "fr": "Vœux de vertu, actes de cruauté",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      23832,
-      23800
+      23832
     ]
   },
   "5036": {
@@ -1216,11 +1233,27 @@
     "fr": "À l'écoute de soi",
     "icon": "/i/061000/061805.png",
     "contentText": [
-      23948,
-      23900
+      23948
     ]
   },
   "5037": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "5038": {
+    "en": "A Sleep Disturbed",
+    "ja": "汝、英雄の眠り妨げるは",
+    "de": "Von schlafenden Helden",
+    "fr": "L'épreuve ronka",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      24244
+    ]
+  },
+  "5039": {
     "en": null,
     "ja": null,
     "de": null,
@@ -1241,8 +1274,8 @@
     "fr": "Entraînement: groupes d'ennemis",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1411,
-      1400
+      1,
+      1411
     ]
   },
   "10002": {
@@ -1252,8 +1285,8 @@
     "fr": "Chasse au fantôme fantoche",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1506,
-      1500
+      2,
+      1506
     ]
   },
   "10003": {
@@ -1263,8 +1296,8 @@
     "fr": "Entraînement: infiltration en base ennemie",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1619,
-      1600
+      3,
+      1619
     ]
   },
   "10004": {
@@ -1274,8 +1307,8 @@
     "fr": "Reconquête d'une carapace escamotée",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1715,
-      1700
+      4,
+      1715
     ]
   },
   "10005": {
@@ -1285,8 +1318,8 @@
     "fr": "Opération fleurs du mal",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1811,
-      1800
+      5,
+      1811
     ]
   },
   "10006": {
@@ -1296,8 +1329,8 @@
     "fr": "Expédition punitive contre les Ventrerouge",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      1915,
-      1900
+      6,
+      1915
     ]
   },
   "10007": {
@@ -1307,8 +1340,8 @@
     "fr": "Briaxio à bras raccourcis",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      2009,
-      2000
+      7,
+      2009
     ]
   },
   "10008": {
@@ -1318,8 +1351,8 @@
     "fr": "Les Gobelins bombardiers",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      2109,
-      2100
+      8,
+      2109
     ]
   },
   "10009": {
@@ -1329,8 +1362,8 @@
     "fr": "Sus au morbol pollueur",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      2213,
-      2200
+      9,
+      2213
     ]
   },
   "10010": {
@@ -1340,8 +1373,8 @@
     "fr": "Buso l'immolateur",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      2314,
-      2300
+      10,
+      2314
     ]
   },
   "10011": {
@@ -1351,8 +1384,8 @@
     "fr": "Ombres et griffes",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      3013,
-      3000
+      11,
+      3013
     ]
   },
   "10012": {
@@ -1362,8 +1395,8 @@
     "fr": "Longue vie à la Reine",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      3117,
-      3100
+      12,
+      3117
     ]
   },
   "10013": {
@@ -1373,8 +1406,8 @@
     "fr": "Quintettes infernaux",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      3221,
-      3200
+      13,
+      3221
     ]
   },
   "10014": {
@@ -1384,8 +1417,8 @@
     "fr": "Trinité sinistre",
     "icon": "/i/061000/061803.png",
     "contentText": [
-      3322,
-      3300
+      14,
+      3322
     ]
   },
   "10015": {
@@ -1409,8 +1442,7 @@
     "fr": "Éviter les attaques à aire d'effet",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      10542,
-      10500
+      10542
     ]
   },
   "15002": {
@@ -1420,8 +1452,7 @@
     "fr": "Générer de l'inimitié avec un combo",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      10721,
-      10700
+      10721
     ]
   },
   "15003": {
@@ -1431,8 +1462,7 @@
     "fr": "Effectuer le combo en combat",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      10806,
-      10800
+      10806
     ]
   },
   "15004": {
@@ -1442,8 +1472,7 @@
     "fr": "Attirer l'inimitié de plusieurs ennemis sur soi",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11014,
-      11000
+      11014
     ]
   },
   "15005": {
@@ -1453,8 +1482,7 @@
     "fr": "Affronter plusieurs ennemis",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11110,
-      11100
+      11110
     ]
   },
   "15006": {
@@ -1464,8 +1492,7 @@
     "fr": "Générer de l'inimitié à distance",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      10913,
-      10900
+      10913
     ]
   },
   "15007": {
@@ -1475,8 +1502,7 @@
     "fr": "Faire face à des renforts ennemis",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11217,
-      11200
+      11217
     ]
   },
   "15008": {
@@ -1486,8 +1512,7 @@
     "fr": "Vaincre un ennemi en assistant des alliés",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11313,
-      11300
+      11313
     ]
   },
   "15009": {
@@ -1497,8 +1522,7 @@
     "fr": "Vaincre un ennemi occupé par un allié",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11410,
-      11400
+      11410
     ]
   },
   "15010": {
@@ -1508,8 +1532,7 @@
     "fr": "Combattre en évitant les attaques ennemies",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11509,
-      11500
+      11509
     ]
   },
   "15011": {
@@ -1519,8 +1542,7 @@
     "fr": "Éliminer les renforts ennemis",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11610,
-      11600
+      11610
     ]
   },
   "15012": {
@@ -1530,8 +1552,7 @@
     "fr": "Interagir avec le décor en combat",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11708,
-      11700
+      11708
     ]
   },
   "15013": {
@@ -1541,8 +1562,7 @@
     "fr": "Soigner un allié",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11809,
-      11800
+      11809
     ]
   },
   "15014": {
@@ -1552,8 +1572,7 @@
     "fr": "Soigner plusieurs alliés",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      11909,
-      11900
+      11909
     ]
   },
   "15015": {
@@ -1563,8 +1582,7 @@
     "fr": "Combattre en évitant les attaques ennemies",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      12011,
-      12000
+      12011
     ]
   },
   "15016": {
@@ -1574,8 +1592,7 @@
     "fr": "Exercice final",
     "icon": "/i/061000/061823.png",
     "contentText": [
-      12130,
-      12100
+      12130
     ]
   },
   "15017": {
@@ -1599,8 +1616,8 @@
     "fr": "le Cratère des tisons",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      2605,
-      2600
+      1,
+      2605
     ]
   },
   "20002": {
@@ -1610,8 +1627,8 @@
     "fr": "le Nombril",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3811,
-      3800
+      2,
+      3811
     ]
   },
   "20003": {
@@ -1621,8 +1638,8 @@
     "fr": "Hurlœil",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3705,
-      3700
+      3,
+      3705
     ]
   },
   "20004": {
@@ -1632,8 +1649,8 @@
     "fr": "le Cratère des tisons (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      2605,
-      2600
+      200,
+      2605
     ]
   },
   "20005": {
@@ -1643,8 +1660,8 @@
     "fr": "le Nombril (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3811,
-      3800
+      202,
+      3811
     ]
   },
   "20006": {
@@ -1654,8 +1671,8 @@
     "fr": "Hurlœil (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3705,
-      3700
+      201,
+      3705
     ]
   },
   "20007": {
@@ -1665,8 +1682,8 @@
     "fr": "le Cap Vendouest",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3603,
-      3600
+      4,
+      3603
     ]
   },
   "20008": {
@@ -1676,8 +1693,8 @@
     "fr": "le Cratère des tisons (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      2605,
-      2600
+      303,
+      2605
     ]
   },
   "20009": {
@@ -1687,8 +1704,8 @@
     "fr": "le Nombril (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3805,
-      3800
+      302,
+      3805
     ]
   },
   "20010": {
@@ -1698,8 +1715,8 @@
     "fr": "Hurlœil (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3705,
-      3700
+      301,
+      3705
     ]
   },
   "20011": {
@@ -1709,8 +1726,8 @@
     "fr": "la Lisière de ronces (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      4902,
-      4900
+      203,
+      4902
     ]
   },
   "20012": {
@@ -1720,8 +1737,8 @@
     "fr": "la Lisière de ronces (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      4906,
-      4900
+      304,
+      4906
     ]
   },
   "20013": {
@@ -1731,8 +1748,8 @@
     "fr": "le fléau d'Ultima",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      4050,
-      4044
+      300,
+      4050
     ]
   },
   "20014": {
@@ -1742,8 +1759,8 @@
     "fr": "Défi spécial III",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      3805,
-      3800
+      9999,
+      3805
     ]
   },
   "20015": {
@@ -1753,8 +1770,8 @@
     "fr": "Défi spécial I",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      20715,
-      20700
+      9997,
+      20715
     ]
   },
   "20016": {
@@ -1764,8 +1781,8 @@
     "fr": "Défi spécial II",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      22017,
-      22000
+      9998,
+      22017
     ]
   },
   "20017": {
@@ -1775,8 +1792,8 @@
     "fr": "le Briseur de marées (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      5205,
-      5200
+      204,
+      5205
     ]
   },
   "20018": {
@@ -1786,8 +1803,8 @@
     "fr": "le Briseur de marées (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      5207,
-      5200
+      305,
+      5207
     ]
   },
   "20019": {
@@ -1795,14 +1812,20 @@
     "ja": "ドルムキマイラ討伐戦",
     "de": "Kampf gegen die Dhorme-Chimära",
     "fr": "la chimère dhorme du Coerthas",
-    "icon": "/i/061000/061804.png"
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      100
+    ]
   },
   "20020": {
     "en": "A Relic Reborn: the Hydra",
     "ja": "ハイドラ討伐戦",
     "de": "Kampf gegen die Hydra",
     "fr": "l'hydre d'Halatali",
-    "icon": "/i/061000/061804.png"
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      101
+    ]
   },
   "20021": {
     "en": "Battle on the Big Bridge",
@@ -1811,8 +1834,8 @@
     "fr": "Affrontement sur le grand pont",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      5513,
-      5501
+      102,
+      5513
     ]
   },
   "20022": {
@@ -1822,8 +1845,8 @@
     "fr": "l'Arbre du jugement (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      6205,
-      6200
+      205,
+      6205
     ]
   },
   "20023": {
@@ -1833,8 +1856,8 @@
     "fr": "l'Arbre du jugement (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      6205,
-      6200
+      306,
+      6205
     ]
   },
   "20024": {
@@ -1844,8 +1867,8 @@
     "fr": "l'Amphithéâtre d'Akh Afah (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      7104,
-      7100
+      206,
+      7104
     ]
   },
   "20025": {
@@ -1855,8 +1878,8 @@
     "fr": "l'Amphithéâtre d'Akh Afah (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      7104,
-      7100
+      307,
+      7104
     ]
   },
   "20026": {
@@ -1866,8 +1889,8 @@
     "fr": "le Col du dragon",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      7603,
-      7600
+      103,
+      7603
     ]
   },
   "20027": {
@@ -1875,7 +1898,10 @@
     "ja": "闘神オーディン討滅戦",
     "de": "Jenseits Urths Quelle",
     "fr": "la Fontaine d'Urth",
-    "icon": "/i/061000/061804.png"
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      104
+    ]
   },
   "20028": {
     "en": "the Steps of Faith",
@@ -1884,8 +1910,8 @@
     "fr": "le Siège de la sainte Cité d'Ishgard",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      8029,
-      8000
+      6,
+      8029
     ]
   },
   "20029": {
@@ -1895,8 +1921,8 @@
     "fr": "La Chrysalide",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      7806,
-      7800
+      5,
+      7806
     ]
   },
   "20030": {
@@ -1906,8 +1932,8 @@
     "fr": "Revanche au vieux château",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      7907,
-      7900
+      105,
+      7907
     ]
   },
   "20031": {
@@ -1917,8 +1943,8 @@
     "fr": "Thok ast Thok (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      8408,
-      8400
+      400,
+      8408
     ]
   },
   "20032": {
@@ -1928,8 +1954,8 @@
     "fr": "Thok ast Thok (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      8408,
-      8400
+      404,
+      8408
     ]
   },
   "20033": {
@@ -1939,8 +1965,8 @@
     "fr": "L'Immensité bleue (brutal)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9007,
-      9000
+      401,
+      9007
     ]
   },
   "20034": {
@@ -1950,8 +1976,8 @@
     "fr": "L'Immensité bleue (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9007,
-      9000
+      403,
+      9007
     ]
   },
   "20035": {
@@ -1961,8 +1987,8 @@
     "fr": "le Réacteur de singularité",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      8807,
-      8800
+      402,
+      8807
     ]
   },
   "20036": {
@@ -1972,8 +1998,8 @@
     "fr": "le règne de Thordan",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      8808,
-      8800
+      405,
+      8808
     ]
   },
   "20037": {
@@ -1983,8 +2009,8 @@
     "fr": "Unité de contention S1P7",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9907,
-      9900
+      406,
+      9907
     ]
   },
   "20038": {
@@ -1994,8 +2020,8 @@
     "fr": "Unité de contention S1P7 (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      9907,
-      9900
+      407,
+      9907
     ]
   },
   "20039": {
@@ -2005,8 +2031,8 @@
     "fr": "la Dernière avancée de la Foi",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      12609,
-      12600
+      408,
+      12609
     ]
   },
   "20040": {
@@ -2016,8 +2042,8 @@
     "fr": "l'ire de Nidhogg",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      12609,
-      12600
+      409,
+      12609
     ]
   },
   "20041": {
@@ -2027,8 +2053,8 @@
     "fr": "Unité de contention P1P6",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      13113,
-      13100
+      410,
+      13113
     ]
   },
   "20042": {
@@ -2038,8 +2064,8 @@
     "fr": "Unité de contention P1P6 (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      13113,
-      13100
+      411,
+      13113
     ]
   },
   "20043": {
@@ -2049,8 +2075,8 @@
     "fr": "Unité de contention Z1P9",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      14327,
-      14300
+      412,
+      14327
     ]
   },
   "20044": {
@@ -2060,8 +2086,8 @@
     "fr": "Unité de contention Z1P9 (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      14327,
-      14300
+      413,
+      14327
     ]
   },
   "20045": {
@@ -2071,8 +2097,7 @@
     "fr": "la Ménagerie royale",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      16903,
-      16900
+      16903
     ]
   },
   "20046": {
@@ -2082,8 +2107,8 @@
     "fr": "la Crique aux tributs",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      17208,
-      17200
+      415,
+      17208
     ]
   },
   "20047": {
@@ -2093,8 +2118,8 @@
     "fr": "la Crique aux tributs (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      17208,
-      17200
+      416,
+      17208
     ]
   },
   "20048": {
@@ -2104,8 +2129,8 @@
     "fr": "Émanation",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      16314,
-      16300
+      417,
+      16314
     ]
   },
   "20049": {
@@ -2115,8 +2140,8 @@
     "fr": "Émanation (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      16314,
-      16300
+      418,
+      16314
     ]
   },
   "20050": {
@@ -2126,8 +2151,7 @@
     "fr": "Le domaine de Shinryu",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      16905,
-      16900
+      16905
     ]
   },
   "20051": {
@@ -2137,8 +2161,8 @@
     "fr": "la Clairière de Jade",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      18613,
-      18600
+      419,
+      18613
     ]
   },
   "20052": {
@@ -2148,8 +2172,8 @@
     "fr": "la Clairière de Jade (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      18613,
-      18600
+      420,
+      18613
     ]
   },
   "20053": {
@@ -2173,8 +2197,8 @@
     "fr": "Castrum Fluminis",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      19533,
-      19500
+      421,
+      19533
     ]
   },
   "20056": {
@@ -2184,8 +2208,8 @@
     "fr": "Castrum Fluminis (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      19533,
-      19500
+      422,
+      19533
     ]
   },
   "20057": {
@@ -2195,8 +2219,7 @@
     "fr": "le Nid des Lamentations",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      19915,
-      19900
+      19915
     ]
   },
   "20058": {
@@ -2206,8 +2229,7 @@
     "fr": "le Nid des Lamentations (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      19915,
-      19900
+      19915
     ]
   },
   "20059": {
@@ -2217,8 +2239,7 @@
     "fr": "le Pont Ohashi",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      20715,
-      20700
+      20715
     ]
   },
   "20060": {
@@ -2228,8 +2249,7 @@
     "fr": "l'Îlot des Amertumes",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      21021,
-      21000
+      21021
     ]
   },
   "20061": {
@@ -2239,8 +2259,7 @@
     "fr": "l'Îlot des Amertumes (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      21021,
-      21000
+      21021
     ]
   },
   "20062": {
@@ -2250,8 +2269,7 @@
     "fr": "la Valse du Monarque",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      22017,
-      22000
+      22017
     ]
   },
   "20063": {
@@ -2261,8 +2279,7 @@
     "fr": "la Valse du Monarque (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      22017,
-      22000
+      22017
     ]
   },
   "20064": {
@@ -2272,8 +2289,7 @@
     "fr": "La Couronne de l'Immaculé",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      22414,
-      22400
+      22414
     ]
   },
   "20065": {
@@ -2283,8 +2299,7 @@
     "fr": "La Couronne de l'Immaculé (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      22415,
-      22400
+      22415
     ]
   },
   "20066": {
@@ -2294,8 +2309,7 @@
     "fr": "le Râle de l'Agonie",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      23033,
-      23000
+      23033
     ]
   },
   "20067": {
@@ -2305,11 +2319,37 @@
     "fr": "Le Râle de l'Agonie (extrême)",
     "icon": "/i/061000/061804.png",
     "contentText": [
-      23347,
-      23300
+      23347
     ]
   },
   "20068": {
+    "en": "Cinder Drift",
+    "ja": "ルビーウェポン破壊作戦",
+    "de": "Rubinfeuer - Entfesselung",
+    "fr": "Les Nuées de Brandons",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      24079
+    ]
+  },
+  "20069": {
+    "en": "Cinder Drift (Extreme)",
+    "ja": "極ルビーウェポン破壊作戦",
+    "de": "Rubinfeuer - Trauma",
+    "fr": "Les Nuées de Brandons (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      24079
+    ]
+  },
+  "20070": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "20071": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2330,8 +2370,7 @@
     "fr": "le Manoir hanté",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      12941,
-      12900
+      12941
     ]
   },
   "25002": {
@@ -2341,8 +2380,7 @@
     "fr": "la Cérémonie de la Valention",
     "icon": "/i/061000/061801.png",
     "contentText": [
-      18739,
-      18700
+      18739
     ]
   },
   "25003": {
@@ -2366,8 +2404,8 @@
     "fr": "la Tour de Cristal - Dédale antique",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      4708,
-      4700
+      1,
+      4708
     ]
   },
   "30002": {
@@ -2377,8 +2415,9 @@
     "fr": "le Labyrinthe de Bahamut I",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      4101,
-      4100
+      1466,
+      4,
+      4101
     ]
   },
   "30003": {
@@ -2386,7 +2425,11 @@
     "ja": "大迷宮バハムート：邂逅編2",
     "de": "Verschlungene Schatten 2",
     "fr": "le Labyrinthe de Bahamut II",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      1459,
+      5
+    ]
   },
   "30004": {
     "en": "the Binding Coil of Bahamut - Turn 3",
@@ -2395,8 +2438,8 @@
     "fr": "le Labyrinthe de Bahamut III",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      4201,
-      4200
+      6,
+      4201
     ]
   },
   "30005": {
@@ -2406,7 +2449,7 @@
     "fr": "le Labyrinthe de Bahamut IV",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      4300,
+      7,
       4300
     ]
   },
@@ -2415,7 +2458,11 @@
     "ja": "大迷宮バハムート：邂逅編5",
     "de": "Verschlungene Schatten 5",
     "fr": "le Labyrinthe de Bahamut V",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      1482,
+      8
+    ]
   },
   "30007": {
     "en": "the Second Coil of Bahamut - Turn 1",
@@ -2424,7 +2471,8 @@
     "fr": "les Méandres de Bahamut I",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5600,
+      2609,
+      9,
       5600
     ]
   },
@@ -2435,7 +2483,8 @@
     "fr": "les Méandres de Bahamut II",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5700,
+      2610,
+      10,
       5700
     ]
   },
@@ -2446,7 +2495,8 @@
     "fr": "les Méandres de Bahamut III",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5800,
+      2611,
+      11,
       5800
     ]
   },
@@ -2457,8 +2507,9 @@
     "fr": "les Méandres de Bahamut IV",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5905,
-      5900
+      2612,
+      12,
+      5905
     ]
   },
   "30011": {
@@ -2468,8 +2519,9 @@
     "fr": "la Tour de Cristal - Tour de Syrcus",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      6325,
-      6300
+      2824,
+      2,
+      6325
     ]
   },
   "30012": {
@@ -2479,7 +2531,8 @@
     "fr": "les Méandres de Bahamut I (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5600,
+      2609,
+      13,
       5600
     ]
   },
@@ -2490,7 +2543,8 @@
     "fr": "les Méandres de Bahamut II (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5700,
+      2610,
+      14,
       5700
     ]
   },
@@ -2501,7 +2555,8 @@
     "fr": "les Méandres de Bahamut III (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5800,
+      2611,
+      15,
       5800
     ]
   },
@@ -2512,8 +2567,9 @@
     "fr": "les Méandres de Bahamut IV (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      5905,
-      5900
+      2612,
+      16,
+      5905
     ]
   },
   "30016": {
@@ -2523,7 +2579,8 @@
     "fr": "l'Abîme de Bahamut I",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      6900,
+      3192,
+      17,
       6900
     ]
   },
@@ -2534,7 +2591,8 @@
     "fr": "l'Abîme de Bahamut II",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      7000,
+      3197,
+      18,
       7000
     ]
   },
@@ -2543,7 +2601,11 @@
     "ja": "大迷宮バハムート：真成編3",
     "de": "Verschlungene Schatten 3 - 3",
     "fr": "l'Abîme de Bahamut III",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      3204,
+      19
+    ]
   },
   "30019": {
     "en": "the Final Coil of Bahamut - Turn 4",
@@ -2552,8 +2614,9 @@
     "fr": "l'Abîme de Bahamut IV",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      7205,
-      7200
+      3210,
+      20,
+      7205
     ]
   },
   "30020": {
@@ -2563,8 +2626,8 @@
     "fr": "la Tour de Cristal - Monde des Ténèbres",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      7418,
-      7400
+      3,
+      7418
     ]
   },
   "30021": {
@@ -2574,8 +2637,9 @@
     "fr": "Alexander - Le Poing du Père",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9202,
-      9200
+      3747,
+      40,
+      9202
     ]
   },
   "30022": {
@@ -2585,8 +2649,8 @@
     "fr": "Alexander - Le Poignet du Père",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9308,
-      9300
+      41,
+      9308
     ]
   },
   "30023": {
@@ -2596,8 +2660,9 @@
     "fr": "Alexander - Le Bras du Père",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9401,
-      9400
+      3765,
+      42,
+      9401
     ]
   },
   "30024": {
@@ -2605,7 +2670,11 @@
     "ja": "機工城アレキサンダー：起動編4",
     "de": "Alexander - Last des Vaters",
     "fr": "Alexander - Le Fardeau du Père",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      3772,
+      43
+    ]
   },
   "30025": {
     "en": "Alexander - The Fist of the Father (Savage)",
@@ -2614,8 +2683,9 @@
     "fr": "Alexander - Le Poing du Père (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9202,
-      9201
+      3747,
+      44,
+      9202
     ]
   },
   "30026": {
@@ -2625,8 +2695,8 @@
     "fr": "Alexander - Le Poignet du Père (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9308,
-      9303
+      45,
+      9308
     ]
   },
   "30027": {
@@ -2636,8 +2706,9 @@
     "fr": "Alexander - Le Bras du Père (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9401,
-      9400
+      3765,
+      46,
+      9401
     ]
   },
   "30028": {
@@ -2645,7 +2716,11 @@
     "ja": "機工城アレキサンダー零式：起動編4",
     "de": "Alexander - Last des Vaters (episch)",
     "fr": "Alexander - Le Fardeau du Père (sadique)",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      3772,
+      47
+    ]
   },
   "30029": {
     "en": "the Void Ark",
@@ -2654,8 +2729,8 @@
     "fr": "l'Arche du néant",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      9621,
-      9600
+      30,
+      9621
     ]
   },
   "30030": {
@@ -2665,8 +2740,9 @@
     "fr": "Alexander - Le Poing du Fils",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10107,
-      10100
+      4687,
+      48,
+      10107
     ]
   },
   "30031": {
@@ -2676,8 +2752,9 @@
     "fr": "Alexander - Le Poignet du Fils",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10209,
-      10200
+      4706,
+      49,
+      10209
     ]
   },
   "30032": {
@@ -2687,8 +2764,9 @@
     "fr": "Alexander - Le Bras du Fils",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10306,
-      10300
+      3376,
+      50,
+      10306
     ]
   },
   "30033": {
@@ -2698,8 +2776,9 @@
     "fr": "Alexander - Le Fardeau du Fils",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10615,
-      10600
+      4707,
+      51,
+      10615
     ]
   },
   "30034": {
@@ -2709,8 +2788,9 @@
     "fr": "Alexander - Le Poing du Fils (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10108,
-      10100
+      4687,
+      52,
+      10108
     ]
   },
   "30035": {
@@ -2720,8 +2800,9 @@
     "fr": "Alexander - Le Poignet du Fils (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10209,
-      10200
+      4706,
+      53,
+      10209
     ]
   },
   "30036": {
@@ -2731,8 +2812,9 @@
     "fr": "Alexander - Le Bras du Fils (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10306,
-      10300
+      3376,
+      54,
+      10306
     ]
   },
   "30037": {
@@ -2742,8 +2824,9 @@
     "fr": "Alexander - Le Fardeau du Fils (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      10615,
-      10600
+      4707,
+      55,
+      10615
     ]
   },
   "30038": {
@@ -2753,8 +2836,8 @@
     "fr": "la Cité défendue de Mhach",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      12749,
-      12700
+      31,
+      12749
     ]
   },
   "30039": {
@@ -2764,8 +2847,9 @@
     "fr": "Alexander - Les Yeux du Créateur",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13414,
-      13400
+      5170,
+      57,
+      13414
     ]
   },
   "30040": {
@@ -2775,8 +2859,9 @@
     "fr": "Alexander - Le Souffle du Créateur",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13507,
-      13500
+      5180,
+      58,
+      13507
     ]
   },
   "30041": {
@@ -2786,8 +2871,9 @@
     "fr": "Alexander - Le Cœur du Créateur",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13609,
-      13600
+      5186,
+      59,
+      13609
     ]
   },
   "30042": {
@@ -2797,8 +2883,9 @@
     "fr": "Alexander - L'Âme du Créateur",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13717,
-      13700
+      5193,
+      60,
+      13717
     ]
   },
   "30043": {
@@ -2808,8 +2895,9 @@
     "fr": "Alexander - Les Yeux du Créateur (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13414,
-      13400
+      5170,
+      61,
+      13414
     ]
   },
   "30044": {
@@ -2819,8 +2907,9 @@
     "fr": "Alexander - Le Souffle du Créateur (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13507,
-      13500
+      5180,
+      62,
+      13507
     ]
   },
   "30045": {
@@ -2830,8 +2919,9 @@
     "fr": "Alexander - Le Cœur du Créateur (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13609,
-      13600
+      5186,
+      63,
+      13609
     ]
   },
   "30046": {
@@ -2841,8 +2931,9 @@
     "fr": "Alexander - L'Âme du Créateur (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      13717,
-      13700
+      5193,
+      64,
+      13717
     ]
   },
   "30047": {
@@ -2852,8 +2943,8 @@
     "fr": "Dun Scaith",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      14173,
-      14100
+      32,
+      14173
     ]
   },
   "30048": {
@@ -2868,7 +2959,11 @@
     "ja": "次元の狭間オメガ：デルタ編1",
     "de": "Deltametrie 1.0",
     "fr": "Deltastice v1.0",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      5629,
+      65
+    ]
   },
   "30050": {
     "en": "Deltascape V2.0",
@@ -2877,7 +2972,8 @@
     "fr": "Deltastice v2.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17600,
+      5631,
+      66,
       17600
     ]
   },
@@ -2888,8 +2984,9 @@
     "fr": "Deltastice v3.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17738,
-      17700
+      5633,
+      67,
+      17738
     ]
   },
   "30052": {
@@ -2899,8 +2996,9 @@
     "fr": "Deltastice v4.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17810,
-      17800
+      6052,
+      68,
+      17810
     ]
   },
   "30053": {
@@ -2908,7 +3006,11 @@
     "ja": "次元の狭間オメガ零式：デルタ編1",
     "de": "Deltametrie 1.0 (episch)",
     "fr": "Deltastice v1.0 (sadique)",
-    "icon": "/i/061000/061802.png"
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      5629,
+      69
+    ]
   },
   "30054": {
     "en": "Deltascape V2.0 (Savage)",
@@ -2917,7 +3019,8 @@
     "fr": "Deltastice v2.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17600,
+      5631,
+      70,
       17600
     ]
   },
@@ -2928,8 +3031,9 @@
     "fr": "Deltastice v3.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17738,
-      17700
+      5633,
+      71,
+      17738
     ]
   },
   "30056": {
@@ -2939,8 +3043,9 @@
     "fr": "Deltastice v4.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      17822,
-      17800
+      6052,
+      72,
+      17822
     ]
   },
   "30057": {
@@ -2950,8 +3055,7 @@
     "fr": "l'Abîme infini de Bahamut (fatal)",
     "icon": "/i/061000/061832.png",
     "contentText": [
-      18107,
-      18100
+      18107
     ]
   },
   "30058": {
@@ -2961,8 +3065,7 @@
     "fr": "la Cité royale de Rabanastre",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      18078,
-      18000
+      18078
     ]
   },
   "30059": {
@@ -2972,8 +3075,8 @@
     "fr": "Sigmastice v1.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      19101,
-      19100
+      7127,
+      19101
     ]
   },
   "30060": {
@@ -2983,8 +3086,8 @@
     "fr": "Sigmastice v2.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      18912,
-      18900
+      7097,
+      18912
     ]
   },
   "30061": {
@@ -2994,8 +3097,8 @@
     "fr": "Sigmastice v3.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      18807,
-      18800
+      7107,
+      18807
     ]
   },
   "30062": {
@@ -3005,8 +3108,8 @@
     "fr": "Sigmastice v4.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      19020,
-      19000
+      7131,
+      19020
     ]
   },
   "30063": {
@@ -3016,8 +3119,8 @@
     "fr": "Sigmastice v1.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      19101,
-      19100
+      7127,
+      19101
     ]
   },
   "30064": {
@@ -3027,8 +3130,8 @@
     "fr": "Sigmastice v2.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      18912,
-      18900
+      7097,
+      18912
     ]
   },
   "30065": {
@@ -3038,8 +3141,8 @@
     "fr": "Sigmastice v3.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      18808,
-      18800
+      7107,
+      18808
     ]
   },
   "30066": {
@@ -3049,8 +3152,8 @@
     "fr": "Sigmastice v4.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      19020,
-      19000
+      7131,
+      19020
     ]
   },
   "30067": {
@@ -3060,8 +3163,7 @@
     "fr": "la Fantasmagorie d'Ultima (fatal)",
     "icon": "/i/061000/061832.png",
     "contentText": [
-      19320,
-      19300
+      19320
     ]
   },
   "30068": {
@@ -3071,8 +3173,7 @@
     "fr": "le Phare de Ridorana",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      19468,
-      19400
+      19468
     ]
   },
   "30069": {
@@ -3082,8 +3183,8 @@
     "fr": "Alphastice v1.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20007,
-      20000
+      7691,
+      20007
     ]
   },
   "30070": {
@@ -3093,8 +3194,8 @@
     "fr": "Alphastice v2.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20507,
-      20500
+      7641,
+      20507
     ]
   },
   "30071": {
@@ -3104,8 +3205,8 @@
     "fr": "Alphastice v3.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20130,
-      20100
+      7695,
+      20130
     ]
   },
   "30072": {
@@ -3115,8 +3216,8 @@
     "fr": "Alphastice v4.0",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20624,
-      20600
+      7635,
+      20624
     ]
   },
   "30073": {
@@ -3126,8 +3227,8 @@
     "fr": "Alphastice v1.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20007,
-      20000
+      7691,
+      20007
     ]
   },
   "30074": {
@@ -3137,8 +3238,8 @@
     "fr": "Alphastice v2.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20507,
-      20500
+      7641,
+      20507
     ]
   },
   "30075": {
@@ -3148,8 +3249,8 @@
     "fr": "Alphastice v3.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20135,
-      20100
+      7695,
+      20135
     ]
   },
   "30076": {
@@ -3159,8 +3260,8 @@
     "fr": "Alphastice v4.0 (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20624,
-      20600
+      7636,
+      20624
     ]
   },
   "30077": {
@@ -3170,8 +3271,7 @@
     "fr": "le Monastère d'Orbonne",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      20999,
-      20900
+      20999
     ]
   },
   "30078": {
@@ -3181,7 +3281,6 @@
     "fr": "L'Éveil d'Éden - Résurrection",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      23200,
       23200
     ]
   },
@@ -3192,7 +3291,6 @@
     "fr": "L'Éveil d'Éden - Résurrection (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      23200,
       23200
     ]
   },
@@ -3203,8 +3301,7 @@
     "fr": "L'Éveil d'Éden - Déluge",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      22814,
-      22800
+      22814
     ]
   },
   "30081": {
@@ -3214,8 +3311,7 @@
     "fr": "L'Éveil d'Éden - Déluge (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      22814,
-      22800
+      22814
     ]
   },
   "30082": {
@@ -3225,8 +3321,7 @@
     "fr": "L'Éveil d'Éden - Descente",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      22211,
-      22200
+      22211
     ]
   },
   "30083": {
@@ -3236,8 +3331,7 @@
     "fr": "L'Éveil d'Éden - Descente (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      22211,
-      22200
+      22211
     ]
   },
   "30084": {
@@ -3247,8 +3341,7 @@
     "fr": "L'Éveil d'Éden - Inhumation",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      23111,
-      23100
+      23111
     ]
   },
   "30085": {
@@ -3258,8 +3351,7 @@
     "fr": "L'Éveil d'Éden - Inhumation (sadique)",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      23114,
-      23100
+      23114
     ]
   },
   "30086": {
@@ -3269,8 +3361,7 @@
     "fr": "L'Odyssée d'Alexander (fatal)",
     "icon": "/i/061000/061832.png",
     "contentText": [
-      24018,
-      24000
+      24018
     ]
   },
   "30087": {
@@ -3280,11 +3371,97 @@
     "fr": "Réplique de l'usine désaffectée",
     "icon": "/i/061000/061802.png",
     "contentText": [
-      23611,
-      23500
+      23611
     ]
   },
   "30088": {
+    "en": "Eden's Verse: Fulmination",
+    "ja": "希望の園エデン：共鳴編1",
+    "de": "Edens Resonanz - Entladung",
+    "fr": "Les Accords d'Éden - Fulmination",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24420
+    ]
+  },
+  "30089": {
+    "en": "Eden's Verse: Fulmination (Savage)",
+    "ja": "希望の園エデン零式：共鳴編1",
+    "de": "Edens Resonanz - Entladung (episch)",
+    "fr": "Les Accords d'Éden - Fulmination (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24420
+    ]
+  },
+  "30090": {
+    "en": "Eden's Verse: Furor",
+    "ja": "希望の園エデン：共鳴編2",
+    "de": "Edens Resonanz - Raserei",
+    "fr": "Les Accords d'Éden - Fureur",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24513
+    ]
+  },
+  "30091": {
+    "en": "Eden's Verse: Furor (Savage)",
+    "ja": "希望の園エデン零式：共鳴編2",
+    "de": "Edens Resonanz - Raserei (episch)",
+    "fr": "Les Accords d'Éden - Fureur (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24513
+    ]
+  },
+  "30092": {
+    "en": "Eden's Verse: Iconoclasm",
+    "ja": "希望の園エデン：共鳴編3",
+    "de": "Edens Resonanz - Bildersturm",
+    "fr": "Les Accords d'Éden - Iconoclasme",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24609
+    ]
+  },
+  "30093": {
+    "en": "Eden's Verse: Iconoclasm (Savage)",
+    "ja": "希望の園エデン零式：共鳴編3",
+    "de": "Edens Resonanz - Bildersturm (episch)",
+    "fr": "Les Accords d'Éden - Iconoclasme (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24609
+    ]
+  },
+  "30094": {
+    "en": "Eden's Verse: Refulgence",
+    "ja": "希望の園エデン：共鳴編4",
+    "de": "Edens Resonanz - Erstarrung",
+    "fr": "Les Accords d'Éden - Éclat",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24834
+    ]
+  },
+  "30095": {
+    "en": "Eden's Verse: Refulgence (Savage)",
+    "ja": "希望の園エデン零式：共鳴編4",
+    "de": "Edens Resonanz - Erstarrung (episch)",
+    "fr": "Les Accords d'Éden - Éclat (sadique)",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      24834
+    ]
+  },
+  "30096": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "30097": {
     "en": null,
     "ja": null,
     "de": null,
@@ -3527,7 +3704,10 @@
     "ja": null,
     "de": null,
     "fr": null,
-    "icon": null
+    "icon": null,
+    "contentText": [
+      1
+    ]
   },
   "40002": {
     "en": null,
@@ -3576,7 +3756,10 @@
     "ja": "ザ・フィースト (4対4 / カジュアルマッチ)",
     "de": "The Feast (4 gegen 4, Übungskampf)",
     "fr": "The Feast (4x4/entraînement)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      8
+    ]
   },
   "40009": {
     "en": null,
@@ -3590,7 +3773,10 @@
     "ja": "ザ・フィースト (4対4 / ランクマッチ)",
     "de": "The Feast (4 gegen 4, gewertet)",
     "fr": "The Feast (4x4/classé)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      10
+    ]
   },
   "40011": {
     "en": null,
@@ -3604,7 +3790,10 @@
     "ja": null,
     "de": null,
     "fr": null,
-    "icon": null
+    "icon": null,
+    "contentText": [
+      998
+    ]
   },
   "40013": {
     "en": null,
@@ -3618,7 +3807,10 @@
     "ja": "ザ・フィースト (ウルヴズジェイル演習場：カスタムマッチ）",
     "de": "The Feast (Wolfshöhle: Schaukampf)",
     "fr": "The Feast (personnalisé/Festin des loups)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      13
+    ]
   },
   "40015": {
     "en": null,
@@ -3632,7 +3824,10 @@
     "ja": "ザ・フィースト (4対4 / カジュアルマッチ)",
     "de": "The Feast (4 gegen 4, Übungskampf)",
     "fr": "The Feast (4x4/entraînement)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      15
+    ]
   },
   "40017": {
     "en": null,
@@ -3646,7 +3841,10 @@
     "ja": "ザ・フィースト (4対4 / ランクマッチ)",
     "de": "The Feast (4 gegen 4, gewertet)",
     "fr": "The Feast (4x4/classé)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      17
+    ]
   },
   "40019": {
     "en": null,
@@ -3667,42 +3865,60 @@
     "ja": "ザ・フィースト (ライケンウィード演習場：カスタムマッチ）",
     "de": "The Feast (Flechtenhain: Schaukampf)",
     "fr": "The Feast (personnalisé/Pré-de-lichen)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      20
+    ]
   },
   "40022": {
     "en": "the Feast (Team Ranked)",
     "ja": "ザ・フィースト (チーム用ランクマッチ)",
     "de": "The Feast (Team, gewertet)",
     "fr": "The Feast (classé/équipe JcJ)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      21
+    ]
   },
   "40023": {
     "en": "the Feast (Ranked)",
     "ja": "ザ・フィースト (ランクマッチ)",
     "de": "The Feast (gewertet)",
     "fr": "The Feast (classé)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      22
+    ]
   },
   "40024": {
     "en": "the Feast (Training)",
     "ja": "ザ・フィースト (カジュアルマッチ)",
     "de": "The Feast (Übungskampf)",
     "fr": "The Feast (entraînement)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      23
+    ]
   },
   "40025": {
     "en": "the Feast (Custom Match - Crystal Tower)",
     "ja": "ザ・フィースト (クリスタルタワー演習場：カスタムマッチ）",
     "de": "The Feast (Kristallturm-Arena: Schaukampf)",
     "fr": "The Feast (personnalisé/Tour de Cristal)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      24
+    ]
   },
   "40026": {
     "en": "the Feast (Team Custom Match - Crystal Tower)",
     "ja": "ザ・フィースト (クリスタルタワー演習場：チーム用カスタムマッチ)",
     "de": "The Feast (Kristallturm-Arena: Team-Schaukampf) ",
     "fr": "The Feast (personnalisé/équipe JcJ/Tour de Cristal)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      25
+    ]
   },
   "40027": {
     "en": null,
@@ -3725,7 +3941,7 @@
     "fr": "les Ruines frontalières (annexion)",
     "icon": "/i/061000/061806.png",
     "contentText": [
-      8910,
+      7,
       8910
     ]
   },
@@ -3750,7 +3966,7 @@
     "fr": "le Rocher des tréfonds (invasion)",
     "icon": "/i/061000/061806.png",
     "contentText": [
-      8900,
+      20,
       8900
     ]
   },
@@ -3761,8 +3977,8 @@
     "fr": "les Champs de la Gloire (brise-glace)",
     "icon": "/i/061000/061806.png",
     "contentText": [
-      8902,
-      8901
+      21,
+      8902
     ]
   },
   "50006": {
@@ -3772,8 +3988,8 @@
     "fr": "Onsal Hakair (Danshig Naadam)",
     "icon": "/i/061000/061806.png",
     "contentText": [
-      23701,
-      23700
+      21,
+      23701
     ]
   },
   "50007": {
@@ -3795,14 +4011,20 @@
     "ja": "アストラガロス (機工戦)",
     "de": "Astragalos",
     "fr": "Astragalos (machinerie)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      22
+    ]
   },
   "51002": {
     "en": "Hidden Gorge",
     "ja": "ヒドゥンゴージ (機工戦)",
     "de": "Verborgene Schlucht",
     "fr": "Gorge dérobée (machinerie)",
-    "icon": "/i/061000/061806.png"
+    "icon": "/i/061000/061806.png",
+    "contentText": [
+      22
+    ]
   },
   "51003": {
     "en": null,
@@ -3825,8 +4047,7 @@
     "fr": "l'Aquapole",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12810,
-      12800
+      12810
     ]
   },
   "55002": {
@@ -3836,8 +4057,7 @@
     "fr": "les Canaux perdus d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12810,
-      12800
+      12810
     ]
   },
   "55003": {
@@ -3847,8 +4067,7 @@
     "fr": "les Canaux cachés d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12810,
-      12800
+      12810
     ]
   },
   "55004": {
@@ -3858,8 +4077,7 @@
     "fr": "le Temple sacré d'Uznair",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12810,
-      12800
+      12810
     ]
   },
   "55005": {
@@ -3876,8 +4094,7 @@
     "fr": "le Donjon hypogéen du Lyhe Ghiah",
     "icon": "/i/061000/061808.png",
     "contentText": [
-      12810,
-      12800
+      12810
     ]
   },
   "55007": {
@@ -3971,8 +4188,7 @@
     "fr": "le Palais des morts (sous-sols 91-100)",
     "icon": "/i/061000/061824.png",
     "contentText": [
-      13903,
-      13900
+      13903
     ]
   },
   "60011": {
@@ -4184,6 +4400,66 @@
     "de": "Luftwaffe, Feuer frei!",
     "fr": "As de l'air",
     "icon": "/i/061000/061820.png"
+  },
+  "63000": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
+  },
+  "63001": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
+  },
+  "63002": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
+  },
+  "63003": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
+  },
+  "63004": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
+  },
+  "63005": {
+    "en": "Ocean Fishing",
+    "ja": "オーシャンフィッシング",
+    "de": "Auf großer Fahrt",
+    "fr": "Pêche en mer",
+    "icon": "/i/061000/061815.png",
+    "contentText": [
+      24914
+    ]
   },
   "65000": {
     "en": null,

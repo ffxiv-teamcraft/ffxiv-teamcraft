@@ -35,7 +35,7 @@
     "Name_ja": "STR",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 0,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -75,7 +75,7 @@
     "Name_ja": "DEX",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 1,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -115,7 +115,7 @@
     "Name_ja": "VIT",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 2,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -155,7 +155,7 @@
     "Name_ja": "INT",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 3,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -195,7 +195,7 @@
     "Name_ja": "MND",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 4,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -235,7 +235,7 @@
     "Name_ja": "信仰",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 5,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -275,7 +275,7 @@
     "Name_ja": "HP",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 6,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -315,7 +315,7 @@
     "Name_ja": "MP",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 7,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -355,7 +355,7 @@
     "Name_ja": "TP",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 8,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -395,7 +395,7 @@
     "Name_ja": "GP",
     "Necklace%": 25,
     "OH%": 2,
-    "Order": 9,
+    "Order": null,
     "Ring%": 13,
     "Waist%": 2
   },
@@ -435,7 +435,7 @@
     "Name_ja": "CP",
     "Necklace%": 25,
     "OH%": 2,
-    "Order": 10,
+    "Order": null,
     "Ring%": 13,
     "Waist%": 3
   },
@@ -475,7 +475,7 @@
     "Name_ja": "物理基本性能",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -515,7 +515,7 @@
     "Name_ja": "魔法基本性能",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -555,7 +555,7 @@
     "Name_ja": "攻撃間隔",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 11,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -595,7 +595,7 @@
     "Name_ja": "追加効果",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -635,7 +635,7 @@
     "Name_ja": "攻撃回数",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -675,7 +675,7 @@
     "Name_ja": "ブロック発動力",
     "Necklace%": 0,
     "OH%": 100,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -715,7 +715,7 @@
     "Name_ja": "ブロック性能",
     "Necklace%": 0,
     "OH%": 100,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -755,7 +755,7 @@
     "Name_ja": "不屈",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 12,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -795,7 +795,7 @@
     "Name_ja": "物理攻撃力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 13,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -835,7 +835,7 @@
     "Name_ja": "物理防御力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 14,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 13
   },
@@ -875,7 +875,7 @@
     "Name_ja": "ダイレクトヒット",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 15,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -915,7 +915,7 @@
     "Name_ja": "回避力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 16,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -955,7 +955,7 @@
     "Name_ja": "魔法防御力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 17,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 13
   },
@@ -995,7 +995,7 @@
     "Name_ja": "クリティカル攻撃力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1035,7 +1035,7 @@
     "Name_ja": "クリティカル防御力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1075,7 +1075,7 @@
     "Name_ja": "クリティカル",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 18,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1115,7 +1115,7 @@
     "Name_ja": "クリティカル回避力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1155,7 +1155,7 @@
     "Name_ja": "斬耐性",
     "Necklace%": 20,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 20,
     "Waist%": 0
   },
@@ -1195,7 +1195,7 @@
     "Name_ja": "突耐性",
     "Necklace%": 20,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 20,
     "Waist%": 0
   },
@@ -1235,7 +1235,7 @@
     "Name_ja": "打耐性",
     "Necklace%": 20,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 20,
     "Waist%": 0
   },
@@ -1275,7 +1275,7 @@
     "Name_ja": "射耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1315,7 +1315,7 @@
     "Name_ja": "攻撃魔法威力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 19,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1355,7 +1355,7 @@
     "Name_ja": "回復魔法威力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 20,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1395,7 +1395,7 @@
     "Name_ja": "強化魔法威力",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1435,7 +1435,7 @@
     "Name_ja": "エレメンタル補正",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 21,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1475,7 +1475,7 @@
     "Name_ja": "火",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1515,7 +1515,7 @@
     "Name_ja": "氷",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1555,7 +1555,7 @@
     "Name_ja": "風",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1595,7 +1595,7 @@
     "Name_ja": "土",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1635,7 +1635,7 @@
     "Name_ja": "雷",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1675,7 +1675,7 @@
     "Name_ja": "水",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1715,7 +1715,7 @@
     "Name_ja": "全魔法耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1755,7 +1755,7 @@
     "Name_ja": "意思力",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 22,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1795,7 +1795,7 @@
     "Name_ja": "スキルスピード",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 23,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1835,7 +1835,7 @@
     "Name_ja": "スペルスピード",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": 24,
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1875,7 +1875,7 @@
     "Name_ja": "ヘイスト",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": 25,
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1915,7 +1915,7 @@
     "Name_ja": "モラル",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -1955,7 +1955,7 @@
     "Name_ja": "敵視",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -1995,7 +1995,7 @@
     "Name_ja": "敵視-",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2035,7 +2035,7 @@
     "Name_ja": "分解スキル上昇率",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2075,7 +2075,7 @@
     "Name_ja": "経験値獲得量",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2115,7 +2115,7 @@
     "Name_ja": "リジェネ",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2155,7 +2155,7 @@
     "Name_ja": "リフレシュ",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2195,7 +2195,7 @@
     "Name_ja": "主能力補正",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -2235,7 +2235,7 @@
     "Name_ja": "副能力補正",
     "Necklace%": 6,
     "OH%": 4,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 6,
     "Waist%": 6
   },
@@ -2275,7 +2275,7 @@
     "Name_ja": "スロウ耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2315,7 +2315,7 @@
     "Name_ja": "石化耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2355,7 +2355,7 @@
     "Name_ja": "麻痺耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2395,7 +2395,7 @@
     "Name_ja": "沈黙耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2435,7 +2435,7 @@
     "Name_ja": "暗闇耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2475,7 +2475,7 @@
     "Name_ja": "毒耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2515,7 +2515,7 @@
     "Name_ja": "スタン耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2555,7 +2555,7 @@
     "Name_ja": "睡眠耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2595,7 +2595,7 @@
     "Name_ja": "バインド耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2635,7 +2635,7 @@
     "Name_ja": "ヘヴィ耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2675,7 +2675,7 @@
     "Name_ja": "死の宣告耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 14
   },
@@ -2715,7 +2715,7 @@
     "Name_ja": "装備消耗耐性",
     "Necklace%": 0,
     "OH%": 0,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 0,
     "Waist%": 0
   },
@@ -2755,7 +2755,7 @@
     "Name_ja": "錬精度上昇量",
     "Necklace%": 8,
     "OH%": 2,
-    "Order": "-1",
+    "Order": null,
     "Ring%": 8,
     "Waist%": 8
   },
@@ -2795,7 +2795,7 @@
     "Name_ja": "作業精度",
     "Necklace%": 2,
     "OH%": 35,
-    "Order": 26,
+    "Order": null,
     "Ring%": 3,
     "Waist%": 2
   },
@@ -2835,7 +2835,7 @@
     "Name_ja": "加工精度",
     "Necklace%": 3,
     "OH%": 20,
-    "Order": 27,
+    "Order": null,
     "Ring%": 4,
     "Waist%": 10
   },
@@ -2875,7 +2875,7 @@
     "Name_ja": "獲得力",
     "Necklace%": 1,
     "OH%": 20,
-    "Order": 28,
+    "Order": null,
     "Ring%": 1,
     "Waist%": 1
   },
@@ -2915,7 +2915,7 @@
     "Name_ja": "識質力",
     "Necklace%": 1,
     "OH%": 35,
-    "Order": 29,
+    "Order": null,
     "Ring%": 1,
     "Waist%": 5
   }
