@@ -249,7 +249,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         type: 'Trade'
       };
     }
-    if (gatheredBy.nodes.some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
+    if ((gatheredBy.nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
       const node = gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
       return {
         x: node.coords[0],
