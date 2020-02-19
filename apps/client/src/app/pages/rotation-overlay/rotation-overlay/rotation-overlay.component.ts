@@ -3,8 +3,9 @@ import { RotationsFacade } from '../../../modules/rotations/+state/rotations.fac
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
+import { SimulationService } from '../../../core/simulation/simulation.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-rotation-overlay',
@@ -15,7 +16,8 @@ export class RotationOverlayComponent {
 
   public rotation$: Observable<CraftingRotation>;
 
-  constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute) {
+  constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute,
+              private simulationService: SimulationService, private translate: TranslateService) {
     this.rotation$ = this.route.paramMap.pipe(
       tap(params => {
         const id = params.get('rotationId');
@@ -26,7 +28,7 @@ export class RotationOverlayComponent {
         return this.rotationsFacade.selectedRotation$;
       }),
       map((rotation: any) => {
-        rotation.actions = CraftingActionsRegistry.deserializeRotation(rotation.rotation);
+        rotation.actions = simulationService.callRegistry(this.translate.currentLang, 'deserializeRotation', rotation.rotation);
         return rotation;
       })
     );
