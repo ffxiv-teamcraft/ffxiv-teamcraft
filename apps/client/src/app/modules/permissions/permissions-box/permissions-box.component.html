@@ -9,6 +9,7 @@
             <div class="avatar-container">
               <img *ngFor="let layer of row.avatar" alt="" class="avatar-layer" src="{{layer}}">
             </div>
+            <nz-avatar *ngIf="row.avatar.length === 0" nzShape="circle" [nzText]="row.name[0] | uppercase"></nz-avatar>
           </ng-template>
         </nz-list-item-meta>
         <ng-template #content>

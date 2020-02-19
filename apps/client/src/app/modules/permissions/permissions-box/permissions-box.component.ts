@@ -10,6 +10,8 @@ import { UserService } from '../../../core/database/user.service';
 import { UserPickerService } from '../../user-picker/user-picker.service';
 import { FreecompanyPickerService } from '../../freecompany-picker/freecompany-picker.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { TeamsFacade } from '../../teams/+state/teams.facade';
+import { Team } from '../../../model/team/team';
 
 @Component({
   selector: 'app-permissions-box',
@@ -47,12 +49,18 @@ export class PermissionsBoxComponent implements OnInit {
 
   canAddFc$: Observable<boolean>;
 
+  hasTeam: boolean;
+
   constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService,
-              private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade) {
+              private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
+              private teamsFacade: TeamsFacade) {
     this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }
 
   ngOnInit(): void {
+    if ((this.data as any).teamId !== undefined && this.data.registry[`team:${(this.data as any).teamId}`] === undefined) {
+      this.data.registry[`team:${(this.data as any).teamId}`] = PermissionLevel.PARTICIPATE;
+    }
     this.changes$.next(this.data);
     this.permissionRows$ = this.changes$.pipe(
       switchMap(data => {
@@ -69,6 +77,14 @@ export class PermissionsBoxComponent implements OnInit {
               if (/^\d+$/im.test(id)) {
                 entityDetails$ = this.xivapi.getFreeCompany(id, { columns: ['FreeCompany.Name', 'FreeCompany.Crest'] }).pipe(
                   map((res: any) => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.Crest }))
+                );
+              } else if (id.startsWith('team:')) {
+                const teamKey = id.replace('team:', '');
+                this.teamsFacade.loadTeam(teamKey);
+                entityDetails$ = this.teamsFacade.allTeams$.pipe(
+                  map(teams => teams.find(t => t.$key === teamKey)),
+                  filter(t => t !== undefined),
+                  map((team: Team) => ({ name: team.name, avatar: [] }))
                 );
               } else {
                 entityDetails$ = this.userService.get(id).pipe(
