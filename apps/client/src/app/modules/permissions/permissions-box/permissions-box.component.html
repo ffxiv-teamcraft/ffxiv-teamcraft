@@ -4,7 +4,7 @@
   <nz-list [nzDataSource]="permissionRows" [nzRenderItem]="permissionRowTemplate" nzSize="small">
     <ng-template #permissionRowTemplate let-row>
       <nz-list-item [nzContent]="content">
-        <nz-list-item-meta [nzAvatar]="avatar | ifMobile: null" [nzDescription]="row.id" [nzTitle]="row.name">
+        <nz-list-item-meta [nzAvatar]="avatar | ifMobile: null" [nzDescription]="row.avatar.length === 0 ? '' : row.id" [nzTitle]="row.name">
           <ng-template #avatar>
             <div class="avatar-container">
               <img *ngFor="let layer of row.avatar" alt="" class="avatar-layer" src="{{layer}}">
