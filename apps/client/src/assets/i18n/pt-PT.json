@@ -1759,6 +1759,8 @@
     "Copy_as_text": "Copy this gearset as text",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
+    "Please_input_lodestone_id": "Please input lodestone id",
+    "Paste_lodestone_id": "Paste lodestone id",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
