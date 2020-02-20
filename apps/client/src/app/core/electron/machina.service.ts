@@ -32,7 +32,7 @@ export class MachinaService {
   }
 
   private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
-    filter(spawn => spawn.modelType === 0x0A),
+    filter(spawn => spawn.name.length > 0 && /\w+/.test(spawn.name)),
     map(spawn => spawn.name),
     tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')
@@ -128,12 +128,8 @@ export class MachinaService {
 
     this.ipc.inventoryModifyHandlerPackets$.pipe(
       delayWhen(packet => {
-        const fromFCChest = [ContainerType.FreeCompanyBag0,
-          ContainerType.FreeCompanyBag1,
-          ContainerType.FreeCompanyBag2].indexOf(packet.fromContainer) > -1;
-        const toFCChest = [ContainerType.FreeCompanyBag0,
-          ContainerType.FreeCompanyBag1,
-          ContainerType.FreeCompanyBag2].indexOf(packet.toContainer) > -1;
+        const fromFCChest = packet.fromContainer > 20000 && packet.fromContainer < 22000;
+        const toFCChest = packet.toContainer > 20000 && packet.toContainer < 22000;
         if (fromFCChest || toFCChest) {
           return interval(1500);
         }

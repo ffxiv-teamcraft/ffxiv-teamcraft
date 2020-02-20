@@ -70,6 +70,8 @@ function handleSquirrelEvent() {
   }
 }
 
+handleSquirrelEvent();
+
 /**
  * End of squirrel stuff
  */

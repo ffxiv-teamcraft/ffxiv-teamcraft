@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
@@ -14,7 +14,8 @@ interface MateriaMenuEntry {
 @Component({
   selector: 'app-materias-popup',
   templateUrl: './materias-popup.component.html',
-  styleUrls: ['./materias-popup.component.less']
+  styleUrls: ['./materias-popup.component.less'],
+  changeDetection: ChangeDetectionStrategy.Default
 })
 export class MateriasPopupComponent implements OnInit {
 
@@ -25,6 +26,8 @@ export class MateriasPopupComponent implements OnInit {
   materiaMenu: MateriaMenuEntry[] = [];
 
   mobileEdit: number;
+
+  public caps: number[][] = [];
 
   constructor(private lazyData: LazyDataService, public materiasService: MateriaService,
               private modalRef: NzModalRef, private statsService: StatsService) {
@@ -40,12 +43,31 @@ export class MateriasPopupComponent implements OnInit {
 
   resetMaterias(index: number): void {
     for (let i = index; i < this.equipmentPiece.materias.length; i++) {
-      this.equipmentPiece.materias[i] = 0;
+      this.setMateria(i, 0);
     }
+    this.caps = this.getMaxValuesTable();
   }
 
   apply(): void {
     this.modalRef.close(this.equipmentPiece);
+  }
+
+  setMateria(index: number, materia: number): void {
+    if (this.getMeldingChances(materia, index) === 0) {
+      return;
+    }
+    this.equipmentPiece = {
+      ...this.equipmentPiece,
+      materias: [
+        ...this.equipmentPiece.materias.map((m, i) => {
+          if (i === index) {
+            return materia;
+          }
+          return m;
+        })
+      ]
+    };
+    this.caps = this.getMaxValuesTable();
   }
 
   cancel(): void {
@@ -77,6 +99,7 @@ export class MateriasPopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.caps = this.getMaxValuesTable();
     const relevantBaseParamsIds = this.statsService.getRelevantBaseStats(this.job);
     this.materiaMenu = this.lazyData.data.materias
       .filter(materia => relevantBaseParamsIds.indexOf(materia.baseParamId) > -1)
