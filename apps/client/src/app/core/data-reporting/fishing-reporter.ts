@@ -70,6 +70,7 @@ export class FishingReporter implements DataReporter {
       map((packet) => {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
+      filter(spot => spot !== undefined),
       shareReplay(1)
     );
 
