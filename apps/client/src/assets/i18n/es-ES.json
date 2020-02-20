@@ -1664,7 +1664,9 @@
     "No_character_id": "No hay un id de personaje establecido",
     "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez.",
     "Inventory_outdated": "Su inventario está desactualizado",
-    "Please_update_inventory_popup": "Por favor, cambie de zona (ya sea teletransportandose o entrando a una casa) para actualizar su inventario. Esta ventana se cerrará una vez terminado."
+    "Please_update_inventory_popup": "Por favor, cambie de zona (ya sea teletransportandose o entrando a una casa) para actualizar su inventario. Esta ventana se cerrará una vez terminado.",
+    "Outdated": "Packet capture isn't working",
+    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
   "INVENTORY": {
     "Title": "Inventario",
