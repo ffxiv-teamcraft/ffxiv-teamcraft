@@ -1759,6 +1759,8 @@
     "Copy_as_text": "Copiar este conjunto de equipo como texto",
     "Include_all_tools": "Incluir también herramientas para otras profesiones",
     "Use_in_simulator": "Usar estos atributos en el simulador",
+    "Please_input_lodestone_id": "Please input lodestone id",
+    "Paste_lodestone_id": "Paste lodestone id",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
