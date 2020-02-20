@@ -4,8 +4,9 @@ import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { NzDrawerRef } from 'ng-zorro-antd';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { debounceTime, filter, map, shareReplay } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, first } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
+import { TeamsFacade } from '../../teams/+state/teams.facade';
 
 @Component({
   selector: 'app-list-picker-drawer',
@@ -24,7 +25,16 @@ export class ListPickerDrawerComponent {
 
   workshopView: boolean;
 
-  constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>, private workshopsFacade: WorkshopsFacade) {
+  constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>,
+              private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {
+
+    this.teamsFacade.loadMyTeams();
+    this.teamsFacade.allTeams$.pipe(
+      filter(teams => teams.length > 0),
+      first()
+    ).subscribe(teams => {
+      teams.forEach(team => this.listsFacade.loadTeamLists(team.$key));
+    });
 
     this.listsWithWriteAccess$ = combineLatest([this.listsFacade.listsWithWriteAccess$, this.query$]).pipe(
       map(([lists, query]) => lists.filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1))

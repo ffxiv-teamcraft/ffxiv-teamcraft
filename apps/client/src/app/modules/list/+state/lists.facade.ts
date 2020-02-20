@@ -105,8 +105,8 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  public listsWithWriteAccess$ = combineLatest([this.sharedLists$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$]).pipe(
-    map(([compacts, user, userId, fcId]) => {
+  public listsWithWriteAccess$ = combineLatest([this.allListDetails$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$, this.teamsFacade.myTeams$]).pipe(
+    map(([compacts, user, userId, fcId, teams]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
@@ -116,8 +116,12 @@ export class ListsFacade {
       }
       return this.sortLists(
         compacts.filter(c => {
+          const hasFcPermission = Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE;
+          const hasTeamPermission = teams.map(team => `team:${team.$key}`).some(key => {
+            return c.getPermissionLevel(key) >= PermissionLevel.WRITE;
+          });
           return !c.notFound
-            && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.WRITE
+            && (hasFcPermission || hasTeamPermission)
             && c.authorId !== userId;
         })
       );
