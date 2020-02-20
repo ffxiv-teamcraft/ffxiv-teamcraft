@@ -67,6 +67,7 @@ export interface LazyData {
   koInstanceDescriptions: any;
   koInstances: any;
   koItemDescriptions: any;
+  koItemKinds: any;
   koItemSearchCategories: any;
   koItemUiCategories: any;
   koItems: any;
@@ -80,6 +81,7 @@ export interface LazyData {
   koMobs: any;
   koNpcTitles: any;
   koNpcs: any;
+  koPatchs: any;
   koPlaces: any;
   koQuestDescriptions: any;
   koQuests: any;
