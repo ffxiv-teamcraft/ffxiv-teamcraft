@@ -1664,7 +1664,9 @@
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
-    "Please_update_inventory_popup": "Пожалуйста, измените зону (или телепортом или войдите в дом) для обновления инвентаря. Это всплывающее окно будет закрыто после завершения."
+    "Please_update_inventory_popup": "Пожалуйста, измените зону (или телепортом или войдите в дом) для обновления инвентаря. Это всплывающее окно будет закрыто после завершения.",
+    "Outdated": "Packet capture isn't working",
+    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
   "INVENTORY": {
     "Title": "Инвентарь",
@@ -1757,6 +1759,8 @@
     "Copy_as_text": "Копировать этот набор как текст",
     "Include_all_tools": "Добавить орудия для других профессий тоже",
     "Use_in_simulator": "Использовать эти статы в симуляторе",
+    "Please_input_lodestone_id": "Please input lodestone id",
+    "Paste_lodestone_id": "Paste lodestone id",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
