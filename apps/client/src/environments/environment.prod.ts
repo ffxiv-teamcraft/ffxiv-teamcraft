@@ -1,11 +1,12 @@
 import { version } from './version';
+import { gameEnv } from './game-env';
 
 export const environment = {
   production: true,
   version: version,
   ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
-  maxLevel: 80,
+  ...gameEnv,
   firebase: {
     apiKey: 'AIzaSyDZPSJj-nXHLIATOz3IBESUTFk8zvFaUc0',
     authDomain: 'ffxivteamcraft.firebaseapp.com',
