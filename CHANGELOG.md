@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.4"></a>
+## [7.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.3...v7.0.4) (2020-02-20)
+
+
+### Bug Fixes
+
+* **desktop:** fixed inventory capture for retainers and FC chest ([3379e14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3379e14))
+* **desktop:** fixed shortcut not being created properly on update ([ed5f7fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ed5f7fc))
+* **gearsets:** fixed an issue with ariyala import ([103178b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/103178b))
+* **gearsets:** fixed an issue with stats not updating properly ([ba8fc2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba8fc2e))
+
+
+
 <a name="7.0.3"></a>
 ## [7.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.2...v7.0.3) (2020-02-20)
 
