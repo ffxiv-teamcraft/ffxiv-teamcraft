@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.3"></a>
+## [7.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.2...v7.0.3) (2020-02-20)
+
+
+### Bug Fixes
+
+* **data:** bringing back fishing data ! ([e108744](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e108744))
+* **desktop:** fixed packet capture for 5.2 ([ace403a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ace403a))
+* **gearsets:** fixed import from lodestone ([bcb5291](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bcb5291))
+
+
+### Features
+
+* **db:** add korean patch names and item kind ([525fba8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/525fba8))
+* **desktop:** added a warning for outdated packet capture not working ([03a435a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03a435a))
+* **desktop:** middle click on item icon now opens in browser ([ecf7706](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ecf7706))
+* **gearsets:** added materia bonus next to the item name ([5739464](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5739464))
+* **lists:** teams are now included in permissions popup ([a09039b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a09039b))
+
+
+
 <a name="7.0.2"></a>
 ## [7.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.1...v7.0.2) (2020-02-18)
 
