@@ -1201,7 +1201,8 @@ if (hasTodo('items')) {
   const itemStats = {};
   const itemMeldingData = {};
   const equipSlotCategoryId = {};
-  getAllPages('https://xivapi.com/Item?columns=ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted')
+  const itemPatch = {};
+  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1215,6 +1216,7 @@ if (hasTodo('items')) {
         ilvls[item.ID] = item.LevelItem;
         stackSizes[item.ID] = item.StackSize;
         itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
+        itemPatch[item.ID] = item.Patch;
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
         }
@@ -1239,6 +1241,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
+      persistToJsonAsset('item-patch', itemPatch);
       done('items');
     });
 }
