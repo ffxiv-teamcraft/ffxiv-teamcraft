@@ -105,7 +105,7 @@ export class ListsFacade {
     shareReplay(1)
   );
 
-  public listsWithWriteAccess$ = combineLatest([this.sharedLists$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$, this.teamsFacade.myTeams$]).pipe(
+  public listsWithWriteAccess$ = combineLatest([this.allListDetails$, this.authFacade.user$, this.authFacade.userId$, this.authFacade.fcId$, this.teamsFacade.myTeams$]).pipe(
     map(([compacts, user, userId, fcId, teams]) => {
       if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
