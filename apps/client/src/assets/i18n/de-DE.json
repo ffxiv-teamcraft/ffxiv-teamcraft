@@ -1759,6 +1759,8 @@
     "Copy_as_text": "Dieses Ausrüstungsset als Text kopieren",
     "Include_all_tools": "Auch Werkzeuge der anderen Jobs einbeziehen",
     "Use_in_simulator": "Diese Attribute im Simulator verwenden",
+    "Please_input_lodestone_id": "Please input lodestone id",
+    "Paste_lodestone_id": "Paste lodestone id",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
