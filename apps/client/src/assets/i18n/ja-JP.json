@@ -1664,7 +1664,9 @@
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
-    "Please_update_inventory_popup": "所持品の更新のために、地域を移動してください。このポップアップは、地域を移動すると消えます。（テレポを使用するか、ハウジングに入って行ってください）"
+    "Please_update_inventory_popup": "所持品の更新のために、地域を移動してください。このポップアップは、地域を移動すると消えます。（テレポを使用するか、ハウジングに入って行ってください）",
+    "Outdated": "Packet capture isn't working",
+    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
   "INVENTORY": {
     "Title": "所持品",
