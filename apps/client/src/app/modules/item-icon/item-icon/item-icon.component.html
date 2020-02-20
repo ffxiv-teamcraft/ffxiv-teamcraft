@@ -1,5 +1,7 @@
 <a [appXivApiTooltipDisabled]="tooltipDisabled" [appXivApiTooltip]="itemId"
-   [routerLink]="disableClick?null:getLink()" class="icon-container">
+   [routerLink]="disableClick?null:getLink()"
+   (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getLink()) : null"
+   class="icon-container">
   <img [src]="getIcon()" [style.width.px]="width" alt="{{itemName}}"
        class="item-icon">
   <img *ngIf="hq" [style.width.px]="width" class="hq-overlay"

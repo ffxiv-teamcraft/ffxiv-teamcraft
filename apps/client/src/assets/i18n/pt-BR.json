@@ -1664,7 +1664,9 @@
     "No_character_id": "No ingame character id set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
     "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done."
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done.",
+    "Outdated": "Packet capture isn't working",
+    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
   "INVENTORY": {
     "Title": "Inventory",
@@ -1757,6 +1759,8 @@
     "Copy_as_text": "Copy this gearset as text",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
+    "Please_input_lodestone_id": "Please input lodestone id",
+    "Paste_lodestone_id": "Paste lodestone id",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

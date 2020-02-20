@@ -4,12 +4,13 @@
 // The list-details of which env maps to which file can be found in `.angular-cli.json`.
 
 import { version } from './version';
+import { gameEnv } from './game-env';
 
 export const environment = {
   production: false,
   version: version,
   startTimestamp: Date.now(),
-  maxLevel: 80,
+  ...gameEnv,
   firebase: {
     apiKey: 'AIzaSyAfpbw5Di3dJ3DHnkFpEh3Xea2JXfx5BTs',
     authDomain: 'ffxiv-teamcraft-canary.firebaseapp.com',

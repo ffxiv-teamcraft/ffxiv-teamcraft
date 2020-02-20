@@ -261,7 +261,14 @@ export class GearsetsFacade {
   }
 
   fromLodestone(lodestoneId: number): Observable<TeamcraftGearset> {
-    return this.xivapi.getCharacter(lodestoneId).pipe(
+    return this.xivapi.getCharacter(
+      lodestoneId,
+      {
+        extraQueryParams: {
+          data: 'cj'
+        }
+      }
+    ).pipe(
       map(data => {
         const lodestoneGear = data.Character.GearSet.Gear;
         const gearset = new TeamcraftGearset();

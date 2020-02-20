@@ -152,7 +152,7 @@ autoUpdater.on('update-downloaded', () => {
     if (buttonIndex === 0) {
       app.isQuitting = true;
       app.relaunch();
-      app.exit(0);
+      app.quit();
     }
   });
 });
