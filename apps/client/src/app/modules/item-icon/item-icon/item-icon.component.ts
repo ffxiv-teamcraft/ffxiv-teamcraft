@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { IpcService } from '../../../core/electron/ipc.service';
 
 @Component({
   selector: 'app-item-icon',
@@ -40,11 +41,16 @@ export class ItemIconComponent {
   @Input()
   disableClick = false;
 
-  constructor(private translate: TranslateService, private lazyData: LazyDataService) {
+  constructor(private translate: TranslateService, private lazyData: LazyDataService,
+              private ipc: IpcService) {
   }
 
   getLink(): string {
     return `/db/${this.translate.currentLang}/item/${this.itemId}`;
+  }
+
+  openInBrowser(url: string): void {
+    this.ipc.send('open-link', url);
   }
 
   getIcon(): string {
