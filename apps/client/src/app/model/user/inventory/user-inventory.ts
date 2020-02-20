@@ -144,25 +144,6 @@ export class UserInventory extends DataModel {
       return null;
     }
     switch (packet.action) {
-      case 'move':
-        const moved = {
-          ...fromItem,
-          containerId: packet.toContainer,
-          slot: packet.toSlot
-        };
-        delete this.items[fromContainerKey][packet.fromSlot];
-        if (isFromRetainer && !isToRetainer) {
-          delete moved.retainerName;
-        } else if (!isFromRetainer && isToRetainer) {
-          moved.retainerName = lastSpawnedRetainer;
-        }
-        this.items[toContainerKey][packet.toSlot] = moved;
-        if (packet.toContainer === ContainerType.HandIn
-          || packet.fromContainer === ContainerType.HandIn
-          || (packet.fromContainer < 10 && packet.toContainer < 10)) {
-          return null;
-        }
-        return moved;
       case 'swap':
         const fromSlot = fromItem.slot;
         const fromContainerId = fromItem.containerId;
@@ -203,6 +184,26 @@ export class UserInventory extends DataModel {
           hq: fromItem.hq,
           quantity: -packet.splitCount
         };
+      case 'move':
+      default:
+        const moved = {
+          ...fromItem,
+          containerId: packet.toContainer,
+          slot: packet.toSlot
+        };
+        delete this.items[fromContainerKey][packet.fromSlot];
+        if (isFromRetainer && !isToRetainer) {
+          delete moved.retainerName;
+        } else if (!isFromRetainer && isToRetainer) {
+          moved.retainerName = lastSpawnedRetainer;
+        }
+        this.items[toContainerKey][packet.toSlot] = moved;
+        if (packet.toContainer === ContainerType.HandIn
+          || packet.fromContainer === ContainerType.HandIn
+          || (packet.fromContainer < 10 && packet.toContainer < 10)) {
+          return null;
+        }
+        return moved;
     }
   }
 
