@@ -66,8 +66,8 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     this.authFacade.favorites$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(favorites => {
-      favorites.gearsetFolders.forEach(key => this.foldersFacade.load(key));
-      favorites.gearsets.forEach(key => this.gearsetsFacade.load(key));
+      (favorites.gearsetFolders || []).forEach(key => this.foldersFacade.load(key));
+      (favorites.gearsets || []).forEach(key => this.gearsetsFacade.load(key));
     });
   }
 

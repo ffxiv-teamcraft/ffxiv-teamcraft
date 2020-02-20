@@ -264,7 +264,6 @@ export class GearsetsFacade {
     return this.xivapi.getCharacter(
       lodestoneId,
       {
-        extended: 1,
         extraQueryParams: {
           data: 'cj'
         }

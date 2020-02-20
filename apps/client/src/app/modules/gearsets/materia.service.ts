@@ -115,7 +115,8 @@ export class MateriaService {
                 id: itemId,
                 baseParamId: materia.baseParamId,
                 tier: materia.tier,
-                amount: 0
+                amount: 0,
+                value: materia.value
               });
               materiaRow = materias[materias.length - 1];
             }

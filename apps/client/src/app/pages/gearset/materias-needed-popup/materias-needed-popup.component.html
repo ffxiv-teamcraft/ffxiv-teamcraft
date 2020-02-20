@@ -13,7 +13,7 @@
     <tr *ngFor="let row of totalNeeded">
       <td class="table-cell first" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
         <app-item-icon [itemId]="row.id" width="24"></app-item-icon>
-        <div>{{row.id | itemName | i18n}}</div>
+        <div>{{row.id | itemName | i18n}} ({{row.baseParamId | baseParamName | i18n}} +{{row.value}})</div>
       </td>
       <td class="amount table-cell">
         {{row.amount}}
