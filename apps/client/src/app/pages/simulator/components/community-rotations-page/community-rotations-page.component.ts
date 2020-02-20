@@ -110,6 +110,10 @@ export class CommunityRotationsPageComponent {
     {
       label: '80 ★★',
       value: 450
+    },
+    {
+      label: '80 ★★★',
+      value: 480
     }
   ].sort((a, b) => a.value - b.value);
 
