@@ -136,7 +136,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         if (item.ClassJobUseTargetID) {
           mainAttributes.push({
             name: 'DB.Class_job',
-            value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories')),
+            value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories'))
           });
         }
         mainAttributes.push({
@@ -226,7 +226,7 @@ export class ItemComponent extends TeamcraftPageComponent {
             const max = food[`Max${i}`];
             const maxHq = food[`MaxHQ${i}`];
             if (value > 0) {
-              statsEntry.name = food[`BaseParam${i}`];
+              statsEntry.name = this.l12n.xivapiToI18n(food[`BaseParam${i}`], 'baseParams');
               statsEntry.requiresPipe = true;
               if (isRelative) {
                 statsEntry.value = `${value}% (${max})`;
@@ -599,7 +599,7 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = getItemSource(item,  DataType.CRAFTED_BY).find(c => c.recipeId === recipeId);
+    const entry = getItemSource(item, DataType.CRAFTED_BY).find(c => c.recipeId === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
       job: entry.jobId,
