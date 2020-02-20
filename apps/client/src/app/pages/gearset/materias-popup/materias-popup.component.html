@@ -1,5 +1,5 @@
 <div fxLayout="column">
-  <table *ngIf="getMaxValuesTable() as caps">
+  <table *ngIf="caps">
     <thead>
     <tr>
       <th>{{'GEARSETS.Stat_name' | translate}}</th>
@@ -50,7 +50,7 @@
                 *ngIf="true | ifMobile: false"
                 [nzDisabled]="i > 0 && equipmentPiece.materias[i - 1] === 0">{{'GEARSETS.Add_materia' | translate}}</button>
 
-        <nz-select *ngIf="false | ifMobile: true" [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="getMeldingChances($event, i) > 0 ? equipmentPiece.materias[i] = $event: null; mobileEdit = -1"
+        <nz-select *ngIf="false | ifMobile: true" [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="setMateria(i, materia); mobileEdit = -1"
                    nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
           <nz-option-group *ngFor="let row of materiaMenu" [nzLabel]="row.baseParamId | baseParamName | i18n">
             <nz-option *ngFor="let materia of row.materias" [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>
@@ -65,7 +65,7 @@
           <li nz-submenu *ngFor="let row of materiaMenu" [nzTitle]="row.baseParamId | baseParamName | i18n">
             <ul>
               <li nz-menu-item
-                  (click)="getMeldingChances(materia, i) > 0 ? equipmentPiece.materias[i] = materia: null"
+                  (click)="setMateria(i, materia)"
                   [nzDisabled]="getMeldingChances(materia, i) === 0"
                   [nzSelected]="equipmentPiece.materias[i] === materia"
                   *ngFor="let materia of row.materias">
