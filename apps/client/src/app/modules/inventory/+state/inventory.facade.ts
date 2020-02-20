@@ -53,6 +53,14 @@ export class InventoryFacade {
       case ContainerType.FreeCompanyBag0:
       case ContainerType.FreeCompanyBag1:
       case ContainerType.FreeCompanyBag2:
+      case ContainerType.FreeCompanyBag3:
+      case ContainerType.FreeCompanyBag4:
+      case ContainerType.FreeCompanyBag5:
+      case ContainerType.FreeCompanyBag6:
+      case ContainerType.FreeCompanyBag7:
+      case ContainerType.FreeCompanyBag8:
+      case ContainerType.FreeCompanyBag9:
+      case ContainerType.FreeCompanyBag10:
         return 'FC_chest';
       case ContainerType.ArmoryOff:
       case ContainerType.ArmoryHead:
