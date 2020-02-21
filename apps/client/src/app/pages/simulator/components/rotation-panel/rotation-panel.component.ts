@@ -1,13 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import {
-  CrafterStats,
-  CraftingAction,
-  CraftingActionsRegistry,
-  GearSet,
-  Simulation,
-  SimulationResult
-} from '@ffxiv-teamcraft/simulator';
+import { CrafterStats, CraftingAction, GearSet, Simulation, SimulationResult } from '@ffxiv-teamcraft/simulator';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -33,6 +26,7 @@ import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
+import { SimulationService } from '../../../../core/simulation/simulation.service';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -86,10 +80,10 @@ export class RotationPanelComponent implements OnInit {
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
-              public platformService: PlatformService) {
+              public platformService: PlatformService, private simulationService: SimulationService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
-      map(rotation => CraftingActionsRegistry.deserializeRotation(rotation.rotation))
+      map(rotation => this.simulationService.callRegistry(this.translate.currentLang, 'deserializeRotation', rotation.rotation))
     );
 
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.rotation$).pipe(
@@ -120,7 +114,7 @@ export class RotationPanelComponent implements OnInit {
           stats.specialist,
           stats.level,
           gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [70, 70, 70, 70, 70, 70, 70, 70]);
-        return new Simulation(rotation.recipe as Craft, CraftingActionsRegistry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+        return new Simulation(rotation.recipe as Craft, this.simulationService.callRegistry(this.translate.currentLang, 'deserializeRotation', rotation.rotation), crafterStats).run(true);
       })
     );
   }
@@ -199,7 +193,7 @@ export class RotationPanelComponent implements OnInit {
     this.dialog.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: CraftingActionsRegistry.deserializeRotation(this.rotation.rotation),
+        rotation: this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'deserializeRotation', this.rotation.rotation),
         job: this.rotation.recipe.job,
         simulation: simulation.clone(),
         food: this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq),
