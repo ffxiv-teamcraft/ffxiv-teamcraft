@@ -30,6 +30,12 @@ export abstract class InventoryOptimizer {
     ContainerType.FreeCompanyGil
   ];
 
+  /// Compare two InventoryItem objects to determine whether they consume the same slot in the same
+  /// container.
+  protected static inSameSlot(source: InventoryItem, target: InventoryItem): boolean {
+    return source.slot === target.slot && source.containerId === target.containerId;
+  }
+
   public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: ListRow[]): { [p: string]: number | string } | null {
     if (InventoryOptimizer.IGNORED_CONTAINERS.indexOf(item.containerId) > -1) {
       return null;
