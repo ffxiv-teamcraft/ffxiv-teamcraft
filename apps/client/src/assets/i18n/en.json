@@ -1708,6 +1708,12 @@
       "Title": "Items that you have in very small stacks",
       "Message": "You only have {{amount}} of this item, is it worth keeping them?",
       "Threshold_amount": "Threshold value"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
