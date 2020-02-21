@@ -57,8 +57,7 @@ export class InventoryOptimizerComponent {
                     .value(),
                   totalLength: uniqBy(entries, 'item.itemId').length
                 };
-              })
-              .filter(res => res.entries.length > 0);
+              });
           })
         )),
         tap(() => this.loading = false)
@@ -95,7 +94,7 @@ export class InventoryOptimizerComponent {
             });
             opt.totalLength = uniq(total).length;
             return opt;
-          }).filter(opt => opt.totalLength > 0);
+          });
         })
       );
     })
