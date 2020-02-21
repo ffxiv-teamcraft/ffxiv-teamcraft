@@ -9,6 +9,7 @@ import { Region } from './region.enum';
 })
 export class SettingsService {
 
+  public regionChange$ = new Subject<{ previous: Region, next: Region }>();
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
@@ -36,6 +37,14 @@ export class SettingsService {
   public set region(region: Region) {
     this.regionChange$.next({ previous: this.region, next: region });
     this.setSetting('region', region);
+  }
+
+  public get hideRegionBanner(): boolean {
+    return this.getSetting('region:hide-banner', 'false') === 'true';
+  }
+
+  public set hideRegionBanner(hide: boolean) {
+    this.setSetting('region:hide-banner', hide.toString());
   }
 
   public get timeFormat(): '24H' | '12H' {

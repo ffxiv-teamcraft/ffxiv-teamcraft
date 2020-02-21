@@ -1675,6 +1675,11 @@
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "Inventory",
     "Empty": "Empty inventory",
