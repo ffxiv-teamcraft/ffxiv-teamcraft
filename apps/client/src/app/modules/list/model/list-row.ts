@@ -54,10 +54,10 @@ export class ListRow extends DataModel {
 
 const cache = {};
 
-export function getItemSource(item: ListRow, type: DataType, isObject = false): any {
+export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
   const key = `${item.id}:${type}`;
   if (item.sources === undefined) {
-    return isObject ? {} : [];
+    return (isObject ? {} : []) as any;
   }
   if (!cache[key]) {
     const source = item.sources.find(s => s.type === type);

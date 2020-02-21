@@ -4,14 +4,16 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import * as fromGearsets from './+state/gearsets.reducer';
 import { GearsetsEffects } from './+state/gearsets.effects';
-import { GearsetsFacade } from './+state/gearsets.facade';
 import {
   NzAlertModule,
   NzButtonModule,
   NzDividerModule,
-  NzFormModule, NzIconModule,
-  NzInputModule, NzMessageModule, NzMessageService,
-  NzModalServiceModule, NzPopconfirmModule,
+  NzFormModule,
+  NzIconModule,
+  NzInputModule,
+  NzMessageModule,
+  NzModalServiceModule,
+  NzPopconfirmModule,
   NzSelectModule,
   NzToolTipModule
 } from 'ng-zorro-antd';
@@ -31,10 +33,29 @@ import { ImportFromPcapPopupComponent } from './import-from-pcap-popup/import-fr
 import { GearsetRowComponent } from './gearset-row/gearset-row.component';
 import { RouterModule } from '@angular/router';
 import { ClipboardModule } from 'ngx-clipboard';
+import { GearsetCostPopupComponent } from './gearset-cost-popup/gearset-cost-popup.component';
+import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 
 @NgModule({
-  declarations: [GearsetCreationPopupComponent, MateriaSlotIconComponent, StatPipe, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent, ImportFromPcapPopupComponent, GearsetRowComponent],
-  entryComponents: [GearsetCreationPopupComponent, AriyalaImportPopupComponent, LodestoneImportPopupComponent, GearsetComparatorPopupComponent, ImportFromPcapPopupComponent],
+  declarations: [
+    GearsetCreationPopupComponent,
+    MateriaSlotIconComponent,
+    StatPipe,
+    AriyalaImportPopupComponent,
+    LodestoneImportPopupComponent,
+    GearsetComparatorPopupComponent,
+    ImportFromPcapPopupComponent,
+    GearsetRowComponent,
+    GearsetCostPopupComponent
+  ],
+  entryComponents: [
+    GearsetCreationPopupComponent,
+    AriyalaImportPopupComponent,
+    LodestoneImportPopupComponent,
+    GearsetComparatorPopupComponent,
+    ImportFromPcapPopupComponent,
+    GearsetCostPopupComponent
+  ],
   imports: [
     CommonModule,
 
@@ -66,10 +87,15 @@ import { ClipboardModule } from 'ngx-clipboard';
 
     TranslateModule,
     RouterModule,
-    ItemIconModule
+    ItemIconModule,
+    FullpageMessageModule
   ],
-  exports: [MateriaSlotIconComponent, StatPipe, GearsetRowComponent],
-  providers: [GearsetsFacade]
+  exports: [
+    MateriaSlotIconComponent,
+    StatPipe,
+    GearsetRowComponent,
+    GearsetCostPopupComponent
+  ]
 })
 export class GearsetsModule {
 }

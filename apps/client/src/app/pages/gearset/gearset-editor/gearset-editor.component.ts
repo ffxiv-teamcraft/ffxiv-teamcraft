@@ -24,6 +24,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
+import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -451,6 +452,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.Total_materias_needed'),
       nzContent: MateriasNeededPopupComponent,
+      nzComponentParams: {
+        gearset: gearset
+      },
+      nzFooter: null
+    });
+  }
+
+  openTotalCostPopup(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('GEARSETS.Total_cost'),
+      nzContent: GearsetCostPopupComponent,
       nzComponentParams: {
         gearset: gearset
       },
