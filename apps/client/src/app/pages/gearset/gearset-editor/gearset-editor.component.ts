@@ -268,8 +268,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         .filter(food => {
           return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
         })
+        .sort((a, b) => {
+          return b.LevelItem - a.LevelItem;
+        })
         .map(food => {
-          return [{ ...food, HQ: false }, { ...food, HQ: true }];
+          return [{ ...food, HQ: true }, { ...food, HQ: false }];
         }));
     })
   );
