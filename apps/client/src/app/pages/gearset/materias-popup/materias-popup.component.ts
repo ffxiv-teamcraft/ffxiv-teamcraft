@@ -101,7 +101,7 @@ export class MateriasPopupComponent implements OnInit {
   }
 
   setMateria(index: number, materia: number): void {
-    if (this.getMeldingChances(materia, index) === 0) {
+    if (materia > 0 && this.getMeldingChances(materia, index) === 0) {
       return;
     }
     this.equipmentPiece = {
