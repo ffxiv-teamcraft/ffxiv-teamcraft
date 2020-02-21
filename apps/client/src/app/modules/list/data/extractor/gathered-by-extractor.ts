@@ -183,7 +183,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
       if (spots.length === 0) {
         for (const spot of item.fishingSpots) {
           const partial = itemData.getPartial(spot.toString(), 'fishing');
-          const mapId = this.localized.getMapId(this.localized.getPlace(partial.obj.z).en);
+          const mapId = this.localized.getMapId(partial.obj.n);
           if (partial !== undefined) {
             const node: StoredNode = {
               id: 0,
