@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { bufferCount, delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
-import { interval, merge, Observable, of, Subject } from 'rxjs';
+import { combineLatest, interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
 import * as _ from 'lodash';
 import { InventoryPatch } from '../../model/user/inventory/inventory-patch';
@@ -31,9 +31,27 @@ export class MachinaService {
     return this._inventoryPatches$.asObservable();
   }
 
-  private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
-    filter(spawn => spawn.name.length > 0 && /\w+/.test(spawn.name)),
-    map(spawn => spawn.name),
+  private retainerInformations$ = this.ipc.retainerInformationPackets$.pipe(
+    bufferCount(10)
+  );
+
+  private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$]).pipe(
+    map(([retainers, spawn]) => {
+      let name: string = spawn.name;
+      const splitForCheck = name.split('');
+      // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
+      const borkedData = splitForCheck.findIndex((char) => {
+        return char < ' ';
+      });
+      if (borkedData > -1) {
+        name = name.substring(borkedData);
+      }
+      return [retainers, name];
+    }),
+    filter(([retainers, name]: [any[], string]) => name.length > 0 && retainers.some(retainer => retainer.name === name)),
+    map(([, name]) => {
+      return name;
+    }),
     tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')
   );

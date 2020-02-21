@@ -1666,7 +1666,7 @@
     "Inventory_outdated": "Dein Inventar ist veraltet",
     "Please_update_inventory_popup": "Bitte wechsle die Zone (z. B. durch Teleportation oder indem du ein Haus betrittst), um dein Inventar zu aktualisieren. Diese Einblendung wird automatisch geschlossen, sobald dies geschehen ist.",
     "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
+    "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben."
   },
   "INVENTORY": {
     "Title": "Inventar",
@@ -1759,8 +1759,10 @@
     "Copy_as_text": "Dieses Ausrüstungsset als Text kopieren",
     "Include_all_tools": "Auch Werkzeuge der anderen Jobs einbeziehen",
     "Use_in_simulator": "Diese Attribute im Simulator verwenden",
-    "Please_input_lodestone_id": "Please input lodestone id",
-    "Paste_lodestone_id": "Paste lodestone id",
+    "Please_input_lodestone_id": "Bitte Lodestone Id eingeben",
+    "Paste_lodestone_id": "Lodestone Id einfügen",
+    "Currency": "Währung",
+    "Optimize_materias": "Optimize materias order",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",

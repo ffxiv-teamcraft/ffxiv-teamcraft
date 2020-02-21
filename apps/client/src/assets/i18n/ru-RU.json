@@ -1761,6 +1761,8 @@
     "Use_in_simulator": "Использовать эти статы в симуляторе",
     "Please_input_lodestone_id": "Please input lodestone id",
     "Paste_lodestone_id": "Paste lodestone id",
+    "Currency": "Currency",
+    "Optimize_materias": "Optimize materias order",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",

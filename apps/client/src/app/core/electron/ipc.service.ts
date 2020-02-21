@@ -63,6 +63,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('npcSpawn'));
   }
 
+  public get retainerInformationPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('retainerInformation'));
+  }
+
   public get playerStatsPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('playerStats'));
   }

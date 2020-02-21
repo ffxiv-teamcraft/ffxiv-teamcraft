@@ -30,6 +30,7 @@ import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-p
 import { HttpClient } from '@angular/common/http';
 import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
 import * as jobNames from '../../../core/data/sources/job-name.json';
+import * as jobAbbrs from '../../../core/data/sources/job-abbr.json';
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
@@ -187,7 +188,7 @@ export class GearsetsFacade {
           dataset = data.datasets[Object.keys(data.datasets)[0]];
         }
         const gearset = new TeamcraftGearset();
-        gearset.job = +Object.keys(jobNames).find(k => jobNames[k].en === data.content);
+        gearset.job = +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === data.content) || +Object.keys(jobNames).find(k => jobNames[k].en === data.content);
         gearset.name = url;
         gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand');
         gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand');

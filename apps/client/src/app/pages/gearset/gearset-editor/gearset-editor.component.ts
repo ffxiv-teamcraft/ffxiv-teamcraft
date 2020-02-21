@@ -24,6 +24,7 @@ import { PermissionLevel } from '../../../core/database/permissions/permission-l
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
+import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -175,51 +176,50 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               });
             })
             .reduce((resArray, item) => {
-              const itemSlotName = Object.keys(item.EquipSlotCategory)
+              const slotName = Object.keys(item.EquipSlotCategory)
                 .filter(key => key !== 'ID')
                 .find(key => item.EquipSlotCategory[key] === 1);
 
-              let arrayEntry = resArray.find(row => row.name === itemSlotName);
-              const propertyName = this.getPropertyName(itemSlotName);
-              if (arrayEntry === undefined) {
-                resArray.push({
-                  name: itemSlotName,
-                  index: item.EquipSlotCategory.ID,
-                  property: propertyName,
-                  items: []
-                });
-                arrayEntry = resArray[resArray.length - 1];
+              const itemSlotNames = [slotName];
+
+              if (slotName === 'FingerL') {
+                itemSlotNames.push('FingerR');
               }
 
-              const itemEntry = {
-                item: item,
-                equipmentPiece: {
-                  itemId: item.ID,
-                  hq: item.CanBeHq === 1,
-                  materias: this.getMaterias(item, propertyName),
-                  materiaSlots: item.MateriaSlotCount,
-                  canOvermeld: item.IsAdvancedMeldingPermitted === 1
+              itemSlotNames.forEach(itemSlotName => {
+                let arrayEntry = resArray.find(row => row.name === itemSlotName);
+                const propertyName = this.getPropertyName(itemSlotName);
+                if (arrayEntry === undefined) {
+                  resArray.push({
+                    name: itemSlotName,
+                    index: itemSlotName === 'FingerR' ? 12.1 : item.EquipSlotCategory.ID,
+                    property: propertyName,
+                    items: []
+                  });
+                  arrayEntry = resArray[resArray.length - 1];
                 }
-              };
 
-              const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
+                const itemEntry = {
+                  item: item,
+                  equipmentPiece: {
+                    itemId: item.ID,
+                    hq: item.CanBeHq === 1,
+                    materias: this.getMaterias(item, propertyName),
+                    materiaSlots: item.MateriaSlotCount,
+                    canOvermeld: item.IsAdvancedMeldingPermitted === 1
+                  }
+                };
 
-              if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
-                itemEntry.equipmentPiece = equipmentPieceFromGearset;
-              }
+                const equipmentPieceFromGearset: EquipmentPiece = gearset[propertyName] as EquipmentPiece;
 
-              arrayEntry.items.push(itemEntry);
+                if (equipmentPieceFromGearset && equipmentPieceFromGearset.itemId === item.ID) {
+                  itemEntry.equipmentPiece = equipmentPieceFromGearset;
+                }
+
+                arrayEntry.items.push(itemEntry);
+              });
               return resArray;
             }, []);
-          const fingerLCategory = prepared.find(category => category.index === 12);
-          if (fingerLCategory) {
-            prepared.push(JSON.parse(JSON.stringify({
-              ...fingerLCategory,
-              name: 'FingerR',
-              property: this.getPropertyName('FingerR'),
-              index: 12.1
-            })));
-          }
           return prepared
             .map(category => {
               category.items = category.items.sort((a, b) => {
@@ -267,8 +267,11 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         .filter(food => {
           return Object.values<any>(food.Bonuses).some(stat => relevantStats.indexOf(stat.ID) > -1);
         })
+        .sort((a, b) => {
+          return b.LevelItem - a.LevelItem;
+        })
         .map(food => {
-          return [{ ...food, HQ: false }, { ...food, HQ: true }];
+          return [{ ...food, HQ: true }, { ...food, HQ: false }];
         }));
     })
   );
@@ -451,6 +454,17 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     this.dialog.create({
       nzTitle: this.translate.instant('GEARSETS.Total_materias_needed'),
       nzContent: MateriasNeededPopupComponent,
+      nzComponentParams: {
+        gearset: gearset
+      },
+      nzFooter: null
+    });
+  }
+
+  openTotalCostPopup(gearset: TeamcraftGearset): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('GEARSETS.Total_cost'),
+      nzContent: GearsetCostPopupComponent,
       nzComponentParams: {
         gearset: gearset
       },

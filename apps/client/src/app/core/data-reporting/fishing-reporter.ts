@@ -65,35 +65,12 @@ export class FishingReporter implements DataReporter {
       })
     );
 
-    const positionPackets$ = packets$.pipe(
-      ofPacketType('updatePositionHandler'),
-      debounceTime(1000)
-    );
-
-    const spot$ = combineLatest([this.eorzea.mapId$, positionPackets$]).pipe(
-      filter(([mapId]) => this.lazyData.data.maps[mapId.toString()] !== undefined),
-      map(([mapId, packet]) => {
-        const mapData = this.lazyData.data.maps[mapId.toString()];
-        const c = mapData.size_factor / 100;
-        const raw = {
-          x: (packet.pos.x + mapData.offset_x) * c,
-          y: (packet.pos.z + mapData.offset_y) * c,
-          z: (packet.pos.y) * c
-        };
-        return {
-          mapId: mapId,
-          x: (41 / c) * ((raw.x + 1024) / 2048) + 1,
-          y: (41 / c) * ((raw.y + 1024) / 2048) + 1,
-          z: (41 / c) * ((raw.z + 1024) / 2048) + 1
-        };
+    const spot$ = packets$.pipe(
+      ofPacketType('someDirectorUnk4'),
+      map((packet) => {
+        return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
-      map(position => {
-        const spots = this.lazyData.data.fishingSpots.filter(spot => spot.mapId === position.mapId);
-        return spots.sort((a, b) => {
-          return Math.sqrt(Math.pow(a.coords.x - position.x, 2) + Math.pow(a.coords.y - position.y, 2))
-            - Math.sqrt(Math.pow(b.coords.x - position.x, 2) + Math.pow(b.coords.y - position.y, 2));
-        })[0];
-      }),
+      filter(spot => spot !== undefined),
       shareReplay(1)
     );
 

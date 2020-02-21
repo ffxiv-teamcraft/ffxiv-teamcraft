@@ -83,7 +83,8 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'someDirectorUnk4',
         'updatePositionHandler',
         'actorControlSelf',
-        'useMooch'
+        'useMooch',
+        'retainerInformation'
       ];
 
       Machina = new MachinaFFXIV(options);

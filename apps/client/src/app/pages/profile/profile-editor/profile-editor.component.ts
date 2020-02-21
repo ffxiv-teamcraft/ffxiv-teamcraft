@@ -78,7 +78,10 @@ export class ProfileEditorComponent {
       },
       nzFooter: null,
       nzTitle: this.translate.instant('PROFILE.Stats')
-    });
+    }).afterClose
+      .subscribe(() => {
+        this.statsReloader$.next(null);
+      });
   }
 
   openAutoFillPopup(): void {
