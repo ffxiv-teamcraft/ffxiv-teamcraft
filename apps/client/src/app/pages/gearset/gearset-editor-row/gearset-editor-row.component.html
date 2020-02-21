@@ -10,7 +10,7 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutGap="10px">
-          <div>{{item | xivapiI18n}}</div>
+          <div>{{item | xivapiL12n: 'items' | i18n}}</div>
           <nz-switch [(ngModel)]="equipmentPiece.hq"
                      [nzDisabled]="item.CanBeHq === 0"
                      (ngModelChange)="updateHq($event)"
