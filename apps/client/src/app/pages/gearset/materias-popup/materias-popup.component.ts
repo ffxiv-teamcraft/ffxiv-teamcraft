@@ -4,6 +4,8 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { NzModalRef } from 'ng-zorro-antd';
 import { StatsService } from '../../../modules/gearsets/stats.service';
+import { sum } from 'lodash';
+import { Memoized } from '../../../core/decorators/memoized';
 
 
 interface MateriaMenuEntry {
@@ -50,6 +52,52 @@ export class MateriasPopupComponent implements OnInit {
 
   apply(): void {
     this.modalRef.close(this.equipmentPiece);
+  }
+
+  optimize(): void {
+    this.equipmentPiece.materias = this.combinations(this.equipmentPiece.materias).sort((a, b) => {
+      return sum(b.map((m, i) => {
+        return this.getMateriaScore(m, i);
+      })) - sum(a.map((m, i) => {
+        return this.getMateriaScore(m, i);
+      }));
+    })[0];
+  }
+
+  @Memoized()
+  private getMateriaScore(materiaId: number, index: number): number {
+    const meldingChances = this.getMeldingChances(materiaId, index);
+    if (meldingChances === 0) {
+      // If a materia has 0% chances of melding, nuke it.
+      return -1000;
+    }
+    const materia = this.materiasService.getMateria(materiaId);
+    switch (materia.tier) {
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+        return meldingChances;
+      case 5:
+      case 7:
+        return meldingChances * 10;
+      case 6:
+      case 8:
+        return meldingChances * 30;
+    }
+  }
+
+  combinations(a: number[]) {
+    if (a.length < 2) return [a];
+    let c, d;
+    const b = [];
+    for (c = 0; c < a.length; c++) {
+      const e = a.splice(c, 1),
+        f = this.combinations(a);
+      for (d = 0; d < f.length; d++) b.push([e[0]].concat(f[d]));
+      a.splice(c, 0, e[0]);
+    }
+    return b;
   }
 
   setMateria(index: number, materia: number): void {
