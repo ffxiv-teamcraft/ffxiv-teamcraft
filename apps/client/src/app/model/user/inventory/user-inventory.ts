@@ -79,6 +79,7 @@ export class UserInventory extends DataModel {
   }
 
   updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
+    console.log('update inventory slot', packet);
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     if (this.items[containerKey] === undefined) {
@@ -170,19 +171,19 @@ export class UserInventory extends DataModel {
           quantity: toItem.quantity - packet.splitCount
         } : null;
       case 'split':
-        fromItem.quantity -= packet.splitCount;
-        const newStack: InventoryItem = {
-          quantity: packet.splitCount,
-          containerId: packet.toContainer,
-          itemId: fromItem.itemId,
-          hq: fromItem.hq,
-          slot: packet.toSlot,
-          spiritBond: fromItem.spiritBond
-        };
-        if (isToRetainer) {
-          newStack.retainerName = lastSpawnedRetainer;
-        }
-        this.items[toContainerKey][packet.toSlot] = newStack;
+          fromItem.quantity -= packet.splitCount;
+          const newStack: InventoryItem = {
+            quantity: packet.splitCount,
+            containerId: packet.toContainer,
+            itemId: fromItem.itemId,
+            hq: fromItem.hq,
+            slot: packet.toSlot,
+            spiritBond: fromItem.spiritBond
+          };
+          if (isToRetainer) {
+            newStack.retainerName = lastSpawnedRetainer;
+          }
+          this.items[toContainerKey][packet.toSlot] = newStack;
         return null;
       case 'discard':
         delete this.items[fromContainerKey][packet.fromSlot];
@@ -193,7 +194,6 @@ export class UserInventory extends DataModel {
           quantity: -packet.splitCount
         };
       case 'move':
-      default:
         const moved = {
           ...fromItem,
           containerId: packet.toContainer,
