@@ -25,8 +25,9 @@ function handleSquirrelEvent() {
     let spawnedProcess, error;
 
     try {
-      spawnedProcess = ChildProcess.spawn(command, args, {detached: true});
-    } catch (error) {}
+      spawnedProcess = ChildProcess.spawn(command, args, { detached: true });
+    } catch (error) {
+    }
 
     return spawnedProcess;
   };
@@ -150,8 +151,8 @@ autoUpdater.on('update-downloaded', () => {
     title: 'FFXIV Teamcraft - Update available',
     message: 'An update has been installed, restart now to apply it?',
     buttons: ['Yes', 'No']
-  }, (buttonIndex) => {
-    if (buttonIndex === 0) {
+  }).then(result => {
+    if (result.response === 0) {
       app.isQuitting = true;
       app.relaunch();
       app.quit();
