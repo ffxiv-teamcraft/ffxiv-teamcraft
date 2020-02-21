@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { SimulationService } from '../../../core/simulation/simulation.service';
-import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-rotation-overlay',
@@ -17,7 +17,7 @@ export class RotationOverlayComponent {
   public rotation$: Observable<CraftingRotation>;
 
   constructor(private rotationsFacade: RotationsFacade, private route: ActivatedRoute,
-              private simulationService: SimulationService, private translate: TranslateService) {
+              private simulationService: SimulationService, private settings: SettingsService) {
     this.rotation$ = this.route.paramMap.pipe(
       tap(params => {
         const id = params.get('rotationId');
@@ -28,7 +28,7 @@ export class RotationOverlayComponent {
         return this.rotationsFacade.selectedRotation$;
       }),
       map((rotation: any) => {
-        rotation.actions = simulationService.callRegistry(this.translate.currentLang, 'deserializeRotation', rotation.rotation);
+        rotation.actions = this.simulationService.callRegistry(this.settings.region, 'deserializeRotation', rotation.rotation);
         return rotation;
       })
     );

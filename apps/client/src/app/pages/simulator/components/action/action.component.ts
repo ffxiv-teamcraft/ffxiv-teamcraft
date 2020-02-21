@@ -3,6 +3,7 @@ import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulato
 import { NzDropdownContextComponent, NzDropdownService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
+import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 
 @Component({
   selector: 'app-action',
@@ -64,12 +65,12 @@ export class ActionComponent {
 
   private dropdown: NzDropdownContextComponent;
 
-  constructor(private nzDropdownService: NzDropdownService, private translate: TranslateService,
+  constructor(private nzDropdownService: NzDropdownService, private settings: SettingsService,
               private simulationService: SimulationService) {
   }
 
   getAlt(): string {
-    return this.simulationService.getAllActions(this.translate.currentLang).find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
+    return this.simulationService.getAllActions(this.settings.region).find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
   }
 
   getJobId(): number {

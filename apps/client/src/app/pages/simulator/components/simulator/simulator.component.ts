@@ -326,8 +326,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getCraftOptExportString(): string {
-    return this.simulationService.callRegistry(this.translate.currentLang, 'exportToCraftOpt',
-      this.simulationService.callRegistry(this.translate.currentLang, 'serializeRotation', this.actions$.value)
+    return this.simulationService.callRegistry(this.settings.region, 'exportToCraftOpt',
+      this.simulationService.callRegistry(this.settings.region, 'serializeRotation', this.actions$.value)
     );
   }
 
@@ -386,7 +386,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose
       .pipe(
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('[') > -1),
-        map(res => this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'importFromCraftOpt', JSON.parse(res))),
+        map(res => this.simulationService.callRegistry<CraftingAction[]>(this.settings.region, 'importFromCraftOpt', JSON.parse(res))),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
@@ -478,7 +478,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           }
           return actionIds;
         }),
-        map(actionIds => this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'createFromIds', actionIds)),
+        map(actionIds => this.simulationService.callRegistry<CraftingAction[]>(this.settings.region, 'createFromIds', actionIds)),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
@@ -505,7 +505,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         control: stats._control,
         level: stats.level
       };
-      rotation.rotation = this.simulationService.callRegistry(this.translate.currentLang, 'serializeRotation', actions);
+      rotation.rotation = this.simulationService.callRegistry(this.settings.region, 'serializeRotation', actions);
       rotation.custom = this.custom;
       if (this.selectedFood) {
         rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
@@ -712,29 +712,29 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getBuffIcon(effBuff: EffectiveBuff): string {
-    return `./assets/icons/status/${this.simulationService.getBuff(this.translate.currentLang, effBuff.buff).toLowerCase()}.png`;
+    return `./assets/icons/status/${this.simulationService.getBuff(this.settings.region, effBuff.buff).toLowerCase()}.png`;
   }
 
   getProgressActions(): CraftingAction[] {
-    return this.simulationService.callRegistry(this.translate.currentLang, 'getActionsByType', ActionType.PROGRESSION);
+    return this.simulationService.callRegistry(this.settings.region, 'getActionsByType', ActionType.PROGRESSION);
   }
 
   getQualityActions(): CraftingAction[] {
-    return this.simulationService.callRegistry(this.translate.currentLang, 'getActionsByType', ActionType.QUALITY);
+    return this.simulationService.callRegistry(this.settings.region, 'getActionsByType', ActionType.QUALITY);
   }
 
   getBuffActions(): CraftingAction[] {
-    return this.simulationService.callRegistry(this.translate.currentLang, 'getActionsByType', ActionType.BUFF);
+    return this.simulationService.callRegistry(this.settings.region, 'getActionsByType', ActionType.BUFF);
   }
 
   getRepairActions(): CraftingAction[] {
-    return this.simulationService.callRegistry(this.translate.currentLang, 'getActionsByType', ActionType.REPAIR);
+    return this.simulationService.callRegistry(this.settings.region, 'getActionsByType', ActionType.REPAIR);
   }
 
   getOtherActions(): CraftingAction[] {
     return [
-      ...this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'getActionsByType', ActionType.OTHER),
-      ...this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'getActionsByType', ActionType.CP_RECOVERY)
+      ...this.simulationService.callRegistry<CraftingAction[]>(this.settings.region, 'getActionsByType', ActionType.OTHER),
+      ...this.simulationService.callRegistry<CraftingAction[]>(this.settings.region, 'getActionsByType', ActionType.CP_RECOVERY)
     ];
   }
 
@@ -861,7 +861,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.forcedStartingQuality$]).pipe(
       map(([recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality]) => {
-        return this.simulationService.getSimulation(this.translate.currentLang, recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality) as Simulation;
+        return this.simulationService.getSimulation(this.settings.region, recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality) as Simulation;
       }),
       shareReplay(1)
     );
@@ -875,7 +875,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
-        this.actions$.next(this.simulationService.callRegistry(this.translate.currentLang, 'deserializeRotation', rotation.rotation));
+        this.actions$.next(this.simulationService.callRegistry(this.settings.region, 'deserializeRotation', rotation.rotation));
         this.stepStates$.next({});
       }
       if (rotation.food && this.selectedFood === undefined && !this.routeStats) {

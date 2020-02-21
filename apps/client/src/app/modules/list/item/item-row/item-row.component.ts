@@ -329,7 +329,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.modal.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: this.simulationService.callRegistry<CraftingAction[]>(this.translate.currentLang, 'deserializeRotation', rotation.rotation),
+        rotation: this.simulationService.callRegistry<CraftingAction[]>(this.settings.region, 'deserializeRotation', rotation.rotation),
         job: (<any>item).craftedBy[0].jobId,
         food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
         medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),
