@@ -188,7 +188,7 @@ export class GearsetsFacade {
           dataset = data.datasets[Object.keys(data.datasets)[0]];
         }
         const gearset = new TeamcraftGearset();
-        gearset.job = +Object.keys(jobNames).find(k => jobNames[k].en === data.content) || +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === data.content);
+        gearset.job = +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === data.content) || +Object.keys(jobNames).find(k => jobNames[k].en === data.content);
         gearset.name = url;
         gearset.mainHand = this.getAriyalaEquipmentPiece(dataset, 'mainhand');
         gearset.offHand = this.getAriyalaEquipmentPiece(dataset, 'offhand');
