@@ -27,6 +27,8 @@ export class SettingsPopupComponent {
   selectedTab = 0;
 
   availableLanguages = this.settings.availableLocales;
+  
+  availableRegions = this.settings.availableRegions;
 
   loggedIn$ = this.authFacade.loggedIn$;
 

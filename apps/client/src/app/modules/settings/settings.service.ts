@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
+import { Region } from './region.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,19 @@ export class SettingsService {
 
   public get availableLocales(): string[] {
     return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
+  }
+
+  public get availableRegions(): Region[] {
+    return [Region.Global, Region.China, Region.Korea];
+  }
+
+  public get region(): Region {
+    return this.getSetting('region', Region.Global) as Region;
+  }
+
+  public set region(region: Region) {
+    this.regionChange$.next({ previous: this.region, next: region });
+    this.setSetting('region', region);
   }
 
   public get timeFormat(): '24H' | '12H' {
