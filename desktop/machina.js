@@ -40,14 +40,17 @@ module.exports.start = function(win, config, verbose, winpcap) {
         exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
       });
 
+      const region = config.get('region', null);
       const options = isDev ?
         {
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
-          parseAlgorithm: 'PacketSpecific'
+          parseAlgorithm: 'PacketSpecific',
+          region: region
         } : {
           parseAlgorithm: 'PacketSpecific',
           noData: true,
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
+          region: region,
           machinaExePath: machinaExePath,
           remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
