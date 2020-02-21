@@ -79,7 +79,6 @@ export class UserInventory extends DataModel {
   }
 
   updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
-    console.log('update inventory slot', packet);
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     if (this.items[containerKey] === undefined) {
