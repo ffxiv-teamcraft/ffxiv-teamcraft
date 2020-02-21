@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.5"></a>
+## [7.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.4...v7.0.5) (2020-02-21)
+
+
+### Bug Fixes
+
+* **db:** added missing data (npcs, monsters, node positions and aetherytes) ([eb9adee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb9adee))
+* **db:** fixed fish data from GT in database pages ([9a0674c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a0674c))
+* **db:** fixed stat names not being displayed properly for foods ([0d59608](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0d59608))
+* **desktop:** fixed post-update dialog not closing app properly ([1ddda91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ddda91))
+* **desktop:** fixed retainer and FC inventory autofill and tracking ([0e97f24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0e97f24))
+* **desktop:** fixed retainer spawn detection ([179ed53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/179ed53))
+* **desktop:** possible fix for wrong retainer name in korean tracker ([e506d1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e506d1a))
+* **fishing-reporter:** fixed fishing hole detection for ocean fishing ([4d5f764](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d5f764))
+* **fishing-reporter:** fixed spot detection for ocean fishing ([4daccb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4daccb9))
+* **gearsets:** fixed a bug with favorites not loading properly ([5925fbb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5925fbb))
+* **gearsets:** fixed an issue with materia deletion ([e4b5a96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4b5a96))
+* **gearsets:** fixed an issue with right ring not being edited properly ([a4a4d57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4a4d57))
+* **gearsets:** fixed ariyala import for DoH/DoL sets ([b4ad37d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4ad37d))
+* **profile:** fixed stats display reloading after applying changes ([1da4bb9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1da4bb9))
+* **simulator:** custom sim now defaults at rlvl 480 ([aed8e47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aed8e47))
+
+
+### Features
+
+* **gearsets:** added materia meld order optimizer ([e17eceb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e17eceb))
+* **gearsets:** added total trades cost to display and editor ([15c7e9c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/15c7e9c))
+* **gearsets:** support Korean and Chinese item names ([44c00ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44c00ef))
+
+
+
 <a name="7.0.4"></a>
 ## [7.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.3...v7.0.4) (2020-02-20)
 
