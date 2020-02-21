@@ -23,6 +23,8 @@ import * as firebase from 'firebase/app';
 })
 export class MachinaService {
 
+  private validRetainerName = /(\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|[\u3131-\uD79D])+/i;
+
   private inventory$: Observable<UserInventory>;
 
   private _inventoryPatches$ = new Subject<InventoryPatch>();
@@ -32,8 +34,19 @@ export class MachinaService {
   }
 
   private retainerSpawns$: Observable<string> = this.ipc.npcSpawnPackets$.pipe(
-    filter(spawn => spawn.name.length > 0 && /\w+/.test(spawn.name)),
-    map(spawn => spawn.name),
+    filter(spawn => spawn.name.length > 0 && this.validRetainerName.test(spawn.name)),
+    map(spawn => {
+      const name: string = spawn.name;
+      const splitForCheck = name.split('');
+      // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
+      const borkedData = splitForCheck.findIndex((char) => {
+        return char < ' ';
+      });
+      if (borkedData > -1) {
+        return name.substring(borkedData);
+      }
+      return name;
+    }),
     tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')
   );
