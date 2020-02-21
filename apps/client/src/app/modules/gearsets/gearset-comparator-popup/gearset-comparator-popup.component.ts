@@ -4,7 +4,7 @@ import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-p
 import { Observable } from 'rxjs';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { GearsetsComparison } from '../../../model/gearset/gearsets-comparison';
-import { first, map } from 'rxjs/operators';
+import { filter, first, map } from 'rxjs/operators';
 import { GearsetComparatorService } from '../gearset-comparator.service';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -92,7 +92,8 @@ export class GearsetComparatorPopupComponent {
           this.gearsetsFacade.allGearsets$.pipe(
             map(gearsets => {
               return gearsets.find(g => g.$key === key);
-            })
+            }),
+            filter(gearset => gearset !== undefined)
           ).subscribe(gearset => {
             if (gearset.notFound) {
               this.error = true;
