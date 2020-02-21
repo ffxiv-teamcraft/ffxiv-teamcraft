@@ -38,7 +38,7 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [450, Validators.required],
+      rlvl: [480, Validators.required],
       level: [80, Validators.required],
       progress: [5654, Validators.required],
       quality: [37440, Validators.required],
