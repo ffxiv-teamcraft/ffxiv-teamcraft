@@ -260,14 +260,19 @@ export class AppComponent implements OnInit {
         startWith(this.translate.currentLang)
       );
 
-      this.pcapOutDated$ = combineLatest([language$, this.firebase.object('game_versions').valueChanges()]).pipe(
-        map(([lang, value]) => {
+      const region$ = this.settings.regionChange$.pipe(
+        map(change => change.next),
+        startWith(this.settings.region)
+      );
+
+      this.pcapOutDated$ = combineLatest([region$, this.firebase.object('game_versions').valueChanges()]).pipe(
+        map(([region, value]) => {
           let key: string;
-          switch (lang) {
-            case 'ko':
+          switch (region) {
+            case Region.Korea:
               key = 'koreanGameVersion';
               break;
-            case 'zh':
+            case Region.China:
               key = 'chineseGameVersion';
               break;
             default:
@@ -276,11 +281,6 @@ export class AppComponent implements OnInit {
           }
           return value[key] > environment[key];
         })
-      );
-
-      const region$ = this.settings.regionChange$.pipe(
-        map(change => change.next),
-        startWith(this.settings.region)
       );
 
       combineLatest([language$, region$]).subscribe(([lang, region]) => {
