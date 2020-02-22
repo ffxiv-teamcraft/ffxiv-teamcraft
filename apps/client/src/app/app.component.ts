@@ -297,7 +297,6 @@ export class AppComponent implements OnInit {
             break;
         }
 
-        console.log('region', lang, region, suggestedRegion)
         this.suggestedRegion = region === suggestedRegion ? null : suggestedRegion;
       });
 
