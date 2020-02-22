@@ -65,12 +65,20 @@ export class ActionComponent {
 
   private dropdown: NzDropdownContextComponent;
 
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
   constructor(private nzDropdownService: NzDropdownService, private settings: SettingsService,
               private simulationService: SimulationService) {
   }
 
   getAlt(): string {
-    return this.simulationService.getAllActions(this.settings.region).find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
+    return this.registry.ALL_ACTIONS.find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
   }
 
   getJobId(): number {
