@@ -101,6 +101,20 @@ fs.existsSync('output') || fs.mkdirSync('output');
 
 let emptyBnpcNames = 0;
 
+if (hasTodo('missingNodes')) {
+  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
+  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+  let count = 0;
+  Object.values(nodes).forEach((node) => {
+    if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
+      console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
+      console.log(`| Level: ${node.level}`);
+      console.log(`| Limited: ${node.limited}`);
+      count++;
+    }
+  });
+}
+
 if (hasTodo('mappy')) {
   // MapData extraction
   const memoryData$ = new Subject();
