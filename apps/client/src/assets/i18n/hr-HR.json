@@ -96,6 +96,8 @@
   "No_favorites": "Nema favorita",
   "Ephemeral_list": "Brisanje nakon dovršavanja",
   "Ephemeral_tag": "Ephemeral",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Upgrade to permanent list",
   "Quick_list_create": "Stvorite brz popis (briše se nakon izrade)",
   "Tag_filter": "Oznake",
@@ -539,6 +541,7 @@
       "Delete": "Delete the list",
       "Clear": "Empty the list",
       "Reset": "Reset the list",
+      "Archive": "Archive the list",
       "Nothing": "Nothing"
     },
     "BUTTONS": {
