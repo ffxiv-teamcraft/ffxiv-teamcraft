@@ -96,6 +96,8 @@
   "No_favorites": "お気に入りなし",
   "Ephemeral_list": "完了した後、削除予定",
   "Ephemeral_tag": "刻限",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "永続リストへのアップグレード",
   "Quick_list_create": "簡易リストを作成する　(完了した後、削除)",
   "Tag_filter": "タグ",
@@ -539,6 +541,7 @@
       "Delete": "このリストを削除する",
       "Clear": "リストを空にする",
       "Reset": "このリストをリセットする",
+      "Archive": "Archive the list",
       "Nothing": "ここには何もない"
     },
     "BUTTONS": {
