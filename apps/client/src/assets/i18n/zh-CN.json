@@ -492,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "更新清单到最新的 Teamcraft 版本",
     "Rename": "重命名清单",
     "Copied_x_times": "复制 {{count}} 次",
