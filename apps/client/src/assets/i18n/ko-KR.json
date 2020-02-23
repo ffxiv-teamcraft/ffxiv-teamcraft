@@ -344,6 +344,8 @@
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -416,6 +418,11 @@
       "Theme": "테마",
       "Search": "검색",
       "Other": "기타"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -1668,6 +1675,11 @@
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버젼에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "소지품",
     "Empty": "소지품이 비어있습니다",
@@ -1708,6 +1720,12 @@
       "Title": "매우 소량으로 소유하고 있는 아이템",
       "Message": "이 아이템을 {{amount}} 개 만큼 가지고 있지만 처리하는 것을 추천함",
       "Threshold_amount": "기준이 되는 수량"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
