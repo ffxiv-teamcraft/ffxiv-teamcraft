@@ -21,6 +21,12 @@
       </button>
       <div class="spacer">
       </div>
+      <button (click)="loadArchivedLists()" [nzTitle]="'LISTS.Load_archived' | translate" nz-button
+              nz-tooltip
+              nzShape="circle"
+              nzType="primary">
+        <i nz-icon nzType="file-zip" nzTheme="outline"></i>
+      </button>
       <button (click)="regenerateLists(myLists)" *ngIf="myLists$ | async as myLists" [nzTitle]="'LISTS.Regenerate_all' | translate" nz-button
               nz-tooltip
               nzShape="circle" nzType="primary">

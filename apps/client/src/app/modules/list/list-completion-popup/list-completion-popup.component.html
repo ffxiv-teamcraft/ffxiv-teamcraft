@@ -8,6 +8,9 @@
   <button (nzOnConfirm)="deleteList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="danger">
     {{'LIST.COMPLETION_POPUP.Delete' | translate}}
   </button>
+  <button (nzOnConfirm)="archiveList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
+    {{'LIST.COMPLETION_POPUP.Archive' | translate}}
+  </button>
   <button (nzOnConfirm)="resetList()" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzType="primary">
     {{'LIST.COMPLETION_POPUP.Reset' | translate}}
   </button>

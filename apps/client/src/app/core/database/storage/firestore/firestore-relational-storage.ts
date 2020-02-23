@@ -7,7 +7,7 @@ import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
 import { map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
-import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Query } from '@angular/fire/firestore/interfaces';
 
@@ -48,14 +48,14 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       );
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query): Observable<T[]> {
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<T[]> {
     const classMetadataRegistry = Reflect.getMetadata(METADATA_FOREIGN_KEY_REGISTRY, this.modelInstance);
     const foreignPropertyEntry = classMetadataRegistry.find((entry) => entry.clazz === foreignEntityClass);
     if (foreignPropertyEntry === undefined) {
       throw new Error(`No foreign key in class ${this.getClass().name} for entity ${foreignEntityClass.name}`);
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
-    if (this.foreignKeyCache[foreignKeyValue] === undefined) {
+    if (this.foreignKeyCache[foreignKeyValue + cacheSuffix] === undefined) {
       this.foreignKeyCache[foreignKeyValue] = this.firestore.collection(this.getBaseUri(), ref => {
         let query = ref.where(foreignPropertyKey, '==', foreignKeyValue);
         if (queryModifier) {

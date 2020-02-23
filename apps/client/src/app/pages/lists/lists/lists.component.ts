@@ -170,6 +170,10 @@ export class ListsComponent {
     this.listsFacade.createEmptyList();
   }
 
+  loadArchivedLists(): void {
+    this.listsFacade.loadArchivedLists();
+  }
+
   createWorkshop(): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,

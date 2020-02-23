@@ -5,6 +5,7 @@ import { ListRow } from '../model/list-row';
 export enum ListsActionTypes {
   LoadMyLists = '[Lists] Load My Lists',
   LoadTeamLists = '[Lists] Load Team Lists',
+  LoadArchivedLists = '[Lists] Load Archived Lists',
 
   LoadSharedLists = '[Lists] Load Shared Lists',
 
@@ -18,6 +19,7 @@ export enum ListsActionTypes {
   UpdateItem = '[Lists] Update Item',
 
   MyListsLoaded = '[Lists] My Lists Loaded',
+  ArchivedListsLoaded = '[Lists] Archived Lists Loaded',
   TeamListsLoaded = '[Lists] Team Lists Loaded',
   SharedListsLoaded = '[Lists] Shared Lists Loaded',
   ListDetailsLoaded = '[Lists] List Details Loaded',
@@ -25,6 +27,7 @@ export enum ListsActionTypes {
 
   CreateList = '[Lists] Create List',
   UpdateList = '[Lists] Update List',
+  PureUpdateList = '[Lists] Pure Update List',
   UpdateListAtomic = '[Lists] Update List Atomic',
   UpdateListIndex = '[Lists] Update List Index',
   DeleteList = '[Lists] Delete List',
@@ -47,6 +50,10 @@ export class LoadTeamLists implements Action {
 
   constructor(public readonly teamId: string) {
   }
+}
+
+export class LoadArchivedLists implements Action {
+  readonly type = ListsActionTypes.LoadArchivedLists;
 }
 
 export class TeamListsLoaded implements Action {
@@ -120,6 +127,13 @@ export class MyListsLoaded implements Action {
   }
 }
 
+export class ArchivedListsLoaded implements Action {
+  readonly type = ListsActionTypes.ArchivedListsLoaded;
+
+  constructor(public payload: List[], public readonly userId: string) {
+  }
+}
+
 export class OfflineListsLoaded implements Action {
   readonly type = ListsActionTypes.OfflineListsLoaded;
 
@@ -159,6 +173,13 @@ export class UpdateList implements Action {
   readonly type = ListsActionTypes.UpdateList;
 
   constructor(public readonly payload: List, public readonly updateCompact = false, public force = false, public fromPacket = false) {
+  }
+}
+
+export class PureUpdateList implements Action {
+  readonly type = ListsActionTypes.PureUpdateList;
+
+  constructor(public readonly $key: string, public readonly payload: Partial<List>) {
   }
 }
 
@@ -225,4 +246,7 @@ export type ListsAction =
   | ToggleCompletionNotification
   | UpdateListAtomic
   | PinList
-  | UnPinList;
+  | UnPinList
+  | LoadArchivedLists
+  | ArchivedListsLoaded
+  | PureUpdateList;

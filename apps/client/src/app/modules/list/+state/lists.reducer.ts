@@ -1,4 +1,4 @@
-import { ListsAction, ListsActionTypes } from './lists.actions';
+import { ArchivedListsLoaded, ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 
 
@@ -55,10 +55,21 @@ export function listsReducer(
       state = {
         ...state,
         listDetails: [
-          ...state.listDetails.filter(list => list.authorId !== action.userId || list.offline),
+          ...state.listDetails.filter(list => list.authorId !== action.userId || list.offline || list.archived),
           ...action.payload
         ],
         listsConnected: true
+      };
+      break;
+    }
+
+    case ListsActionTypes.ArchivedListsLoaded: {
+      state = {
+        ...state,
+        listDetails: [
+          ...state.listDetails.filter(list => list.authorId !== action.userId || !list.archived),
+          ...action.payload
+        ]
       };
       break;
     }

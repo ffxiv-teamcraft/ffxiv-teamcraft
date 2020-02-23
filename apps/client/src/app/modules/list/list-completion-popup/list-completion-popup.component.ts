@@ -32,6 +32,11 @@ export class ListCompletionPopupComponent {
     this.close();
   }
 
+  archiveList(): void {
+    this.listsFacade.pureUpdateList(this.list.$key, { archived: true });
+    this.close();
+  }
+
   clearList(): void {
     this.list.finalItems = [];
     this.list.items = [];

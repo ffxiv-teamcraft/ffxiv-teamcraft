@@ -244,6 +244,16 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     ).subscribe(l => this.listsFacade.updateList(l));
   }
 
+  unArchiveList(list: List): void {
+    list.archived = false;
+    this.listsFacade.pureUpdateList(list.$key, { archived: false });
+  }
+
+  archiveList(list: List): void {
+    list.archived = true;
+    this.listsFacade.pureUpdateList(list.$key, { archived: true });
+  }
+
   editNote(list: List): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.Edit_note'),
