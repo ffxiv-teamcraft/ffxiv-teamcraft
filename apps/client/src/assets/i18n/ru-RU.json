@@ -96,6 +96,8 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "Эфемерный",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
@@ -539,6 +541,7 @@
       "Delete": "Удалить список",
       "Clear": "Очистить список",
       "Reset": "Обновить список",
+      "Archive": "Archive the list",
       "Nothing": "Ничего"
     },
     "BUTTONS": {
