@@ -492,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "最新Teamcraftバージョンにリストをアップデートする",
     "Rename": "リスト名を変更する",
     "Copied_x_times": "{{count}} 回コピーされました",
