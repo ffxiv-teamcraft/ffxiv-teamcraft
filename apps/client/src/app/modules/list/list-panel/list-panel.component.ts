@@ -248,6 +248,11 @@ export class ListPanelComponent {
     });
   }
 
+  archiveList(list: List, archived: boolean): void {
+    list.archived = archived;
+    this.listsFacade.pureUpdateList(list.$key, { archived: archived });
+  }
+
   renameList(_list: List): void {
     this.listsFacade.load(this._list.$key);
     this.dialog.create({

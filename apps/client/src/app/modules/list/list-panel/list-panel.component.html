@@ -112,6 +112,14 @@
                 nz-menu-item>
               {{'LIST.Rename' | translate}}
             </li>
+            <li (click)="archiveList(_list, true)" *ngIf="!publicDisplay && !_list.archived" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
+              {{'LIST.Archive' | translate}}
+            </li>
+            <li (click)="archiveList(_list, false)" *ngIf="!publicDisplay && _list.archived" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
+              {{'LIST.Unarchive' | translate}}
+            </li>
             <li (click)="openCommentsPopup(_list, userId === _list.authorId)" *ngIf="authFacade.userId$ | async as userId"
                 nz-menu-item>
               {{'COMMENTS.Title' | translate}}
