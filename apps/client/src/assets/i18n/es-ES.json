@@ -96,6 +96,8 @@
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
   "Ephemeral_tag": "Efímero",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
@@ -539,6 +541,7 @@
       "Delete": "Borrar la lista",
       "Clear": "Vaciar la lista",
       "Reset": "Restablecer la lista",
+      "Archive": "Archive the list",
       "Nothing": "Nada"
     },
     "BUTTONS": {
