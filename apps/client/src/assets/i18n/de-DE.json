@@ -96,6 +96,8 @@
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
   "Ephemeral_tag": "Vergänglich",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
   "Quick_list_create": "Vergängliche Liste erstellen (wird bei Fertigstellung gelöscht)",
   "Tag_filter": "Markierungen",
@@ -539,6 +541,7 @@
       "Delete": "Liste löschen",
       "Clear": "Liste leeren",
       "Reset": "Liste zurücksetzen",
+      "Archive": "Archive the list",
       "Nothing": "Nichts"
     },
     "BUTTONS": {
