@@ -113,6 +113,9 @@ if (hasTodo('missingNodes')) {
       count++;
     }
   });
+  console.log(`
+
+  **Total**: ${count}`);
 }
 
 if (hasTodo('mappy')) {
