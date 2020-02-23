@@ -13,25 +13,39 @@
   <nz-spin [nzSpinning]="loading">
     <div fxLayout="column" fxLayoutGap="10px">
       <nz-collapse *ngFor="let optimization of optimizations; trackBy: trackByTip">
-        <nz-collapse-panel [nzHeader]="header" [nzExtra]="optimization.type === 'HAS_TOO_FEW' ? extraTooFewTpl : null">
+        <nz-collapse-panel [nzHeader]="header" [nzExtra]="extraTpl">
           <ng-template #header>
             {{'INVENTORY_OPTIMIZER.' + optimization.type + '.Title' | translate}} ({{optimization.totalLength}})
           </ng-template>
-          <ng-template #extraTooFewTpl>
-            <nz-input-group nzSearch nzSize="small" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
-              <input type="number" nz-input min="1" [ngModel]="stackSizeThreshold" #stackSizeInput
-                     (click)="$event.stopPropagation()"/>
-            </nz-input-group>
-            <ng-template #suffixButton>
-              <button nz-button
-                      (click)="$event.stopPropagation(); stackSizeThreshold = +stackSizeInput.value"
-                      nzType="primary"
-                      nzSize="small"
-                      nzSearch>{{'COMMON.Apply' | translate}}</button>
-            </ng-template>
-            <ng-template #nzAddOnBefore>
-              {{'INVENTORY_OPTIMIZER.HAS_TOO_FEW.Threshold_amount' | translate}}
-            </ng-template>
+          <ng-template #extraTpl>
+            <ng-container [ngSwitch]="optimization.type">
+              <ng-container *ngSwitchCase="'HAS_TOO_FEW'">
+                <nz-input-group nzSearch nzSize="small" [nzAddOnAfter]="suffixButton" [nzAddOnBefore]="nzAddOnBefore">
+                  <input type="number" nz-input min="1" [ngModel]="stackSizeThreshold" #stackSizeInput
+                         (click)="$event.stopPropagation()"/>
+                </nz-input-group>
+                <ng-template #suffixButton>
+                  <button nz-button
+                          (click)="$event.stopPropagation(); stackSizeThreshold = +stackSizeInput.value"
+                          nzType="primary"
+                          nzSize="small"
+                          nzSearch>{{'COMMON.Apply' | translate}}</button>
+                </ng-template>
+                <ng-template #nzAddOnBefore>
+                  {{'INVENTORY_OPTIMIZER.HAS_TOO_FEW.Threshold_amount' | translate}}
+                </ng-template>
+              </ng-container>
+              <ng-container *ngSwitchCase="'CONSOLIDATE_STACKS'">
+                <span>{{'INVENTORY_OPTIMIZER.CONSOLIDATE_STACKS.Filter' | translate}}</span>
+                <nz-select nzAllowClear
+                           nzSize="small"
+                           (click)="$event.stopPropagation();"
+                           [nzPlaceHolder]="'INVENTORY_OPTIMIZER.CONSOLIDATE_STACKS.Placeholder' | translate"
+                           [(ngModel)]="selectedExpansion">
+                  <nz-option *ngFor="let e of getExpansions()" [nzValue]="e.version" [nzLabel]="e.name"></nz-option>
+                </nz-select>
+              </ng-container>
+            </ng-container>
           </ng-template>
           <nz-collapse>
             <ng-container *ngFor="let container of optimization.entries; trackBy: trackByEntry">

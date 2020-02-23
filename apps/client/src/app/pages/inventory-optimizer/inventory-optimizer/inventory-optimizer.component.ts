@@ -13,6 +13,7 @@ import { NzMessageService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
 import { ListRow } from '../../../modules/list/model/list-row';
+import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -57,8 +58,7 @@ export class InventoryOptimizerComponent {
                     .value(),
                   totalLength: uniqBy(entries, 'item.itemId').length
                 };
-              })
-              .filter(res => res.entries.length > 0);
+              });
           })
         )),
         tap(() => this.loading = false)
@@ -95,7 +95,7 @@ export class InventoryOptimizerComponent {
             });
             opt.totalLength = uniq(total).length;
             return opt;
-          }).filter(opt => opt.totalLength > 0);
+          });
         })
       );
     })
@@ -120,12 +120,37 @@ export class InventoryOptimizerComponent {
   }
 
   constructor(private inventoryFacade: InventoryFacade,
-              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-              private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
+    @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
+    private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
   }
 
   private getContainerName(item: InventoryItem): string {
     return item.retainerName || this.inventoryFacade.getContainerName(item.containerId);
+  }
+
+  public getExpansions(): string[] {
+    const expansions: any[] = this.lazyData.patches.map(p => {
+      return { name: p.ExName, version: p.ExVersion }
+    });
+
+    return uniqBy(expansions, 'name');
+  }
+
+  public get selectedExpansion(): number {
+    const selection = localStorage.getItem(ConsolidateStacks.SELECTION_KEY);
+    return selection ? +selection : null;
+  }
+
+  public set selectedExpansion(selection: number) {
+    if (selection !== null) {
+      localStorage.setItem(ConsolidateStacks.SELECTION_KEY, selection.toString());
+    }
+    else {
+      localStorage.removeItem(ConsolidateStacks.SELECTION_KEY);
+    }
+
+    this.loading = true;
+    this.resultsReloader$.next(null);
   }
 
   nameCopied(key: string, args?: any): void {
