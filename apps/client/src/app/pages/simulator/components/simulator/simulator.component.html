@@ -551,7 +551,7 @@
              nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
           <div (cancel)="dragCancel($event)" (drop)="actionDrop($event)" class="actions-container ngx-dnd-container"
                fxLayout="row wrap" ngxDroppable="action">
-            <div (drag)="actionDrag(i)" *ngFor="let step of resultData.steps;let i = index;"
+            <div (drag)="actionDrag(i)" *ngFor="let step of resultData.steps;let i = index; trackBy: trackByAction"
                  [model]="step.action" [moves]="step.action.canBeMoved()" [ngxDraggable]="['action']"
                  class="ngx-dnd-item action-container rotation-action">
               <app-action (actionclick)="removeAction(i)"

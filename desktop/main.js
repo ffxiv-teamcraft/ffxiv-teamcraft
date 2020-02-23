@@ -467,6 +467,15 @@ app.on('activate', function() {
 
 ipcMain.on('apply-settings', (event, settings) => {
   try {
+    if (config.get('region') !== settings.region) {
+      config.set('region', settings.region);
+
+      if (config.get('machina') === true) {
+        Machina.stop();
+        Machina.start(win, config, options.verbose, options.winpcap);
+      }
+    }
+    
     config.set('clickthrough', settings.clickthrough === 'true');
     forEachOverlay(overlay => {
       overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');

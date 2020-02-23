@@ -450,6 +450,21 @@
                     nzCloseable
                     nzType="warning">
           </nz-alert>
+          <nz-alert (nzOnClose)="settings.hideRegionBanner = true" *ngIf="!settings.hideRegionBanner && suggestedRegion"
+                    [nzCloseText]="'Close' | translate"
+                    [nzDescription]="description"
+                    [nzMessage]="'SUGGESTED_REGION.Banner_title' | translate: { region: ('SETTINGS.REGIONS.' + suggestedRegion | translate) }"
+                    class="new-version-alert"
+                    nzBanner
+                    nzShowIcon
+                    nzType="info">
+            <ng-template #description>
+              {{'SUGGESTED_REGION.Banner_description' | translate}}<br>
+              <button (click)="changeToSuggestedRegion()" nz-button>
+                {{'SUGGESTED_REGION.Button_label' | translate}}
+              </button>
+            </ng-template>
+          </nz-alert>
           <nz-alert (nzOnClose)="settings.hideMachinaBanner = true" *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
                     [nzCloseText]="'Close' | translate"
                     [nzDescription]="description"

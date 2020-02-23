@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
+import { Region } from './region.enum';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SettingsService {
 
+  public regionChange$ = new Subject<{ previous: Region, next: Region }>();
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
@@ -22,6 +24,27 @@ export class SettingsService {
 
   public get availableLocales(): string[] {
     return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
+  }
+
+  public get availableRegions(): Region[] {
+    return [Region.Global, Region.China, Region.Korea];
+  }
+
+  public get region(): Region {
+    return this.getSetting('region', Region.Global) as Region;
+  }
+
+  public set region(region: Region) {
+    this.regionChange$.next({ previous: this.region, next: region });
+    this.setSetting('region', region);
+  }
+
+  public get hideRegionBanner(): boolean {
+    return this.getSetting('region:hide-banner', 'false') === 'true';
+  }
+
+  public set hideRegionBanner(hide: boolean) {
+    this.setSetting('region:hide-banner', hide.toString());
   }
 
   public get timeFormat(): '24H' | '12H' {

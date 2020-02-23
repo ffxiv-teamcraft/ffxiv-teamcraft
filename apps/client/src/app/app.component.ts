@@ -48,6 +48,7 @@ import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
+import { Region } from './modules/settings/region.enum';
 
 declare const gtag: Function;
 
@@ -123,6 +124,8 @@ export class AppComponent implements OnInit {
   public emptyInventory$: Observable<boolean>;
 
   public pinnedList$ = this.listsFacade.pinnedList$;
+
+  public suggestedRegion: Region = null;
 
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
@@ -253,18 +256,23 @@ export class AppComponent implements OnInit {
       );
 
       const language$ = this.translate.onLangChange.pipe(
-        mapTo(this.translate.currentLang),
+        map(event => event.lang),
         startWith(this.translate.currentLang)
       );
 
-      this.pcapOutDated$ = combineLatest([language$, this.firebase.object('game_versions').valueChanges()]).pipe(
-        map(([lang, value]) => {
+      const region$ = this.settings.regionChange$.pipe(
+        map(change => change.next),
+        startWith(this.settings.region)
+      );
+
+      this.pcapOutDated$ = combineLatest([region$, this.firebase.object('game_versions').valueChanges()]).pipe(
+        map(([region, value]) => {
           let key: string;
-          switch (lang) {
-            case 'ko':
+          switch (region) {
+            case Region.Korea:
               key = 'koreanGameVersion';
               break;
-            case 'zh':
+            case Region.China:
               key = 'chineseGameVersion';
               break;
             default:
@@ -274,6 +282,23 @@ export class AppComponent implements OnInit {
           return value[key] > environment[key];
         })
       );
+
+      combineLatest([language$, region$]).subscribe(([lang, region]) => {
+        let suggestedRegion = null;
+        switch (lang) {
+          case 'ko':
+            suggestedRegion = Region.Korea;
+            break;
+          case 'zh':
+            suggestedRegion = Region.China;
+            break
+          default:
+            suggestedRegion = Region.Global;
+            break;
+        }
+
+        this.suggestedRegion = region === suggestedRegion ? null : suggestedRegion;
+      });
 
       this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
@@ -376,6 +401,12 @@ export class AppComponent implements OnInit {
     this.ipc.machinaToggle = true;
     this.settings.enableUniversalisSourcing = true;
     this.ipc.send('toggle-machina', true);
+  }
+
+  changeToSuggestedRegion(): void {
+    if (!this.suggestedRegion) return;
+
+    this.settings.region = this.suggestedRegion;
   }
 
   getPathname(): string {

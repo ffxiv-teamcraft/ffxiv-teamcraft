@@ -10,6 +10,15 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Region' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Region_explain' | translate">
+          <nz-select [(ngModel)]="settings.region">
+            <nz-option *ngFor="let region of availableRegions" [nzLabel]="'SETTINGS.REGIONS.' + region | translate"
+                       [nzValue]="region"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
       <ng-container *ngIf="user$ | async as user">
         <nz-form-item>
