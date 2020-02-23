@@ -96,6 +96,8 @@
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
   "Ephemeral_tag": "临时",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -539,6 +541,7 @@
       "Delete": "删除清单",
       "Clear": "清空清单",
       "Reset": "重置清单",
+      "Archive": "Archive the list",
       "Nothing": "什么都不做"
     },
     "BUTTONS": {
