@@ -344,6 +344,8 @@
     "Title": "设置",
     "General": "通用",
     "Link_base": "物品链接",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "界面主题",
     "no_panel_borders": "隐藏面板边框",
     "Desktop": "客户端",
@@ -416,6 +418,11 @@
       "Theme": "界面主题",
       "Search": "搜索",
       "Other": "其他"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -1668,6 +1675,11 @@
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。"
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "物品栏",
     "Empty": "物品栏为空",
@@ -1708,6 +1720,12 @@
       "Title": "持有数量非常少的物品",
       "Message": "这件物品你只有 {{amount}} 个，值得保留吗？",
       "Threshold_amount": "阀值"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
