@@ -145,6 +145,19 @@
                 nzShape="circle" nzSize="small">
           <i nz-icon nzType="edit"></i>
         </button>
+        <button (click)="archiveList(list)"
+                *ngIf="!list.archived"
+                [nzTitle]="'COMPLETION_POPUP.Archive' | translate"
+                nz-button nz-tooltip
+                nzShape="circle" nzSize="small">
+          <i nz-icon nzType="file-zip" nzTheme="outline"></i>
+        </button>
+        <nz-tag nzColor="purple" *ngIf="list.archived"
+                [nzMode]="(permissionLevel$ | async) < 40 ? 'default': 'closeable'"
+                (nzOnClose)="unArchiveList(list)">
+          <i nz-icon nzType="file-zip" nzTheme="outline"></i>
+          {{'Archived_tag' | translate}}
+        </nz-tag>
       </div>
       <div class="list-title" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="flex-start center"
            fxLayoutAlign.lt-md="center center"
