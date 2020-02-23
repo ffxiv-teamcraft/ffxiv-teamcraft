@@ -1665,7 +1665,7 @@
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容。操作完成后此提示会自动关闭。",
-    "Outdated": "Packet capture isn't working",
+    "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
   "INVENTORY": {
@@ -1759,10 +1759,10 @@
     "Copy_as_text": "复制为文本",
     "Include_all_tools": "包含其他职业工具的需求",
     "Use_in_simulator": "在模拟器中使用此属性",
-    "Please_input_lodestone_id": "Please input lodestone id",
-    "Paste_lodestone_id": "Paste lodestone id",
+    "Please_input_lodestone_id": "请输入 Lodestone ID",
+    "Paste_lodestone_id": "粘贴 Lodestone ID",
     "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
+    "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "No trades needed",
     "SLOT": {
       "Body": "身体",
