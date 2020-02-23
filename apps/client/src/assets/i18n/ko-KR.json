@@ -492,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
