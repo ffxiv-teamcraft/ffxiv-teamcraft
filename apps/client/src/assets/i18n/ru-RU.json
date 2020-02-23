@@ -492,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "Обновить список до последней версии Teamcraft",
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
