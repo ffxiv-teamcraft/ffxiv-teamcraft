@@ -492,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "Actualizar a lista para a ultima versão de Teamcraft",
     "Rename": "Renomear lista",
     "Copied_x_times": "Copiado {{count}} vezes",
