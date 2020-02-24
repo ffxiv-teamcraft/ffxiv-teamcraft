@@ -1330,7 +1330,7 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,Durabilityfactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
       if (recipe.RecipeLevelTable === null) {
         return;
@@ -1358,7 +1358,7 @@ if (hasTodo('recipes')) {
         stars: recipe.RecipeLevelTable.Stars,
         qs: recipe.CanQuickSynth === 1,
         hq: recipe.CanHq === 1,
-        durability: Math.floor(recipe.RecipeLevelTable.Durability * recipe.Durabilityfactor / 100),
+        durability: Math.floor(recipe.RecipeLevelTable.Durability * recipe.DurabilityFactor / 100),
         quality: maxQuality,
         progress: Math.floor(recipe.RecipeLevelTable.Difficulty * recipe.DifficultyFactor / 100),
         suggestedControl: recipe.RecipeLevelTable.SuggestedControl,
