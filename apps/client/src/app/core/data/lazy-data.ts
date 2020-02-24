@@ -88,6 +88,7 @@ export interface LazyData {
   koQuestDescriptions: any;
   koQuests: any;
   koRaces: any;
+  koRecipes: any;
   koShops: any;
   koStatusDescriptions: any;
   koStatuses: any;

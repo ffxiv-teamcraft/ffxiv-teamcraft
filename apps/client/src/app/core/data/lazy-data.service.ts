@@ -76,7 +76,7 @@ export class LazyDataService {
           case Region.China:
             return this.data.recipes;
           case Region.Korea:
-            return this.data.recipes;
+            return this.data.koRecipes;
           default:
             return this.data.recipes;
         }

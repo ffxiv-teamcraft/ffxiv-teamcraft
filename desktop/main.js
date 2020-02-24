@@ -201,9 +201,6 @@ function createWindow() {
     }
   };
   Object.assign(opts, config.get('win:bounds'));
-  if (config.get('win:alwaysOnTop')) {
-    opts.alwaysOnTop = true;
-  }
   win = new BrowserWindow(opts);
 
   if (config.get('machina') === true) {
@@ -211,6 +208,7 @@ function createWindow() {
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
+  win.setAlwaysOnTop(config.get('win:alwaysOnTop'), 'normal');
   //// uncomment below to open the DevTools.
   // win.webContents.openDevTools();
 
@@ -475,7 +473,7 @@ ipcMain.on('apply-settings', (event, settings) => {
         Machina.start(win, config, options.verbose, options.winpcap);
       }
     }
-    
+
     config.set('clickthrough', settings.clickthrough === 'true');
     forEachOverlay(overlay => {
       overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
