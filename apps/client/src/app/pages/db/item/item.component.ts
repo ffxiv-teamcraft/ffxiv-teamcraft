@@ -36,6 +36,7 @@ import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
+import { CraftedBy } from '../../../modules/list/model/crafted-by';
 
 @Component({
   selector: 'app-item',
@@ -588,7 +589,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: [this.lazyData.data.recipes.find(r => r.result === +itemId)]
+                  recipes: [this.lazyData.getRecipe(itemId)]
                 };
               })
           });
@@ -599,11 +600,11 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = getItemSource(item, DataType.CRAFTED_BY).find(c => c.recipeId === recipeId);
+    const entry = getItemSource<CraftedBy[]>(item, DataType.CRAFTED_BY).find(c => c.id === recipeId);
     const craft: Partial<Craft> = {
       id: recipeId,
-      job: entry.jobId,
-      lvl: entry.level,
+      job: entry.job,
+      lvl: entry.lvl,
       stars: entry.stars_tooltip.length,
       rlvl: entry.rlvl,
       durability: entry.durability,
