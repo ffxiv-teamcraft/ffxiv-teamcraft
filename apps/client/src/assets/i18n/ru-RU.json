@@ -1745,7 +1745,7 @@
     "generate_list": "Создать список",
     "Content": "Содержимое",
     "Stat_name": "Статы",
-    "Current_value": "Текущее значение",
+    "Current_value": "Current",
     "Cap_value": "Макс.",
     "Add_materia": "Добавить материю",
     "No_materia": "Нет материи",
@@ -1787,6 +1787,7 @@
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
