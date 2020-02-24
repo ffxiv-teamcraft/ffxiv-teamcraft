@@ -1745,7 +1745,7 @@
     "generate_list": "목록 생성",
     "Content": "세부 내용",
     "Stat_name": "능력치",
-    "Current_value": "현재 능력치",
+    "Current_value": "Current",
     "Cap_value": "금단 최대치",
     "Add_materia": "마테리아 추가",
     "No_materia": "마테리아 없음",
@@ -1787,6 +1787,7 @@
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
