@@ -62,22 +62,31 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
+  private appliedFiltersFromGearset = false;
+
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
     tap(gearset => {
       const ilvls = this.gearsetsFacade.toArray(gearset).map(piece => this.lazyData.data.ilvls[piece.itemId]);
       const lowestIlvl = Math.min(...ilvls);
       const highestIlvl = Math.max(...ilvls);
       let didChange = false;
+      if (!this.appliedFiltersFromGearset) {
+        this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+        this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+        didChange = true;
+        this.appliedFiltersFromGearset = true;
+      } else {
+        if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
+          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+          didChange = true;
+        }
+        if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
+          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+          didChange = true;
+        }
+      }
       if (!gearset.isCombatSet() && this.itemFiltersform.value.ilvlMin > 430) {
         this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-        didChange = true;
-      }
-      if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
-        this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-        didChange = true;
-      }
-      if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
-        this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
         didChange = true;
       }
       if (didChange) {
