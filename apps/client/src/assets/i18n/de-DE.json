@@ -96,6 +96,8 @@
   "No_favorites": "Keine Favoriten",
   "Ephemeral_list": "Wird bei Fertigstellung gelöscht",
   "Ephemeral_tag": "Vergänglich",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Upgrade zu dauerhafter Liste",
   "Quick_list_create": "Vergängliche Liste erstellen (wird bei Fertigstellung gelöscht)",
   "Tag_filter": "Markierungen",
@@ -344,6 +346,8 @@
     "Title": "Einstellungen",
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "Design",
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
@@ -416,6 +420,11 @@
       "Theme": "Theme",
       "Search": "Suche",
       "Other": "Anderes"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -483,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "Liste auf aktuellste Teamcraft Version aktualisieren",
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}}-mal kopiert",
@@ -532,6 +543,7 @@
       "Delete": "Liste löschen",
       "Clear": "Liste leeren",
       "Reset": "Liste zurücksetzen",
+      "Archive": "Archive the list",
       "Nothing": "Nichts"
     },
     "BUTTONS": {
@@ -1668,6 +1680,11 @@
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben."
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "Inventar",
     "Empty": "Leeres Inventar",
@@ -1708,6 +1725,12 @@
       "Title": "Gegenstände, die du in sehr kleinen Stapeln hast",
       "Message": "Du hast nur {{amount}} von diesem Gegenstand. Lohnt es sich, diesen zu behalten?",
       "Threshold_amount": "Grenzwerte"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
@@ -1722,7 +1745,7 @@
     "generate_list": "Liste erstellen",
     "Content": "Inhalt",
     "Stat_name": "Attribut",
-    "Current_value": "Momentaner Wert",
+    "Current_value": "Current",
     "Cap_value": "Obergrenze",
     "Add_materia": "Materia hinzufügen",
     "No_materia": "Keine Materia",
@@ -1764,6 +1787,7 @@
     "Currency": "Währung",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",

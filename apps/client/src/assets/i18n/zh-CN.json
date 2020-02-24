@@ -96,6 +96,8 @@
   "No_favorites": "没有收藏",
   "Ephemeral_list": "完成后将被删除",
   "Ephemeral_tag": "临时",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "升级为永久清单",
   "Quick_list_create": "创建快速清单(完成后删除)",
   "Tag_filter": "标签",
@@ -344,6 +346,8 @@
     "Title": "设置",
     "General": "通用",
     "Link_base": "物品链接",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "界面主题",
     "no_panel_borders": "隐藏面板边框",
     "Desktop": "客户端",
@@ -416,6 +420,11 @@
       "Theme": "界面主题",
       "Search": "搜索",
       "Other": "其他"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -483,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "更新清单到最新的 Teamcraft 版本",
     "Rename": "重命名清单",
     "Copied_x_times": "复制 {{count}} 次",
@@ -532,6 +543,7 @@
       "Delete": "删除清单",
       "Clear": "清空清单",
       "Reset": "重置清单",
+      "Archive": "Archive the list",
       "Nothing": "什么都不做"
     },
     "BUTTONS": {
@@ -1668,6 +1680,11 @@
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。"
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "物品栏",
     "Empty": "物品栏为空",
@@ -1708,6 +1725,12 @@
       "Title": "持有数量非常少的物品",
       "Message": "这件物品你只有 {{amount}} 个，值得保留吗？",
       "Threshold_amount": "阀值"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
@@ -1722,7 +1745,7 @@
     "generate_list": "生成清单",
     "Content": "内容",
     "Stat_name": "属性",
-    "Current_value": "当前值",
+    "Current_value": "Current",
     "Cap_value": "上限",
     "Add_materia": "添加魔晶石",
     "No_materia": "无魔晶石",
@@ -1764,6 +1787,7 @@
     "Currency": "货币",
     "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
