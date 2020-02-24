@@ -1745,7 +1745,7 @@
     "generate_list": "Generate a list",
     "Content": "Content",
     "Stat_name": "Stat",
-    "Current_value": "Current value",
+    "Current_value": "Current",
     "Cap_value": "Cap",
     "Add_materia": "Add materia",
     "No_materia": "No materia",
@@ -1787,6 +1787,7 @@
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
