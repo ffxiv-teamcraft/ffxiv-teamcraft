@@ -1745,7 +1745,7 @@
     "generate_list": "Generar una lista",
     "Content": "Contenido",
     "Stat_name": "Atributo",
-    "Current_value": "Valor actual",
+    "Current_value": "Current",
     "Cap_value": "Límite Máx.",
     "Add_materia": "Añadir materia",
     "No_materia": "Sin materia",
@@ -1787,6 +1787,7 @@
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
