@@ -37,6 +37,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
 import { CraftedBy } from '../../../modules/list/model/crafted-by';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Component({
   selector: 'app-item',
@@ -595,6 +596,18 @@ export class ItemComponent extends TeamcraftPageComponent {
           });
         }
         return usedFor;
+      })
+    );
+  }
+
+  @Memoized()
+  public getRecipe(recipeId: string, fallbackData: ItemData): Observable<any> {
+    return this.lazyData.getRecipe(recipeId).pipe(
+      map(recipe => {
+        if (!recipe) {
+          return fallbackData.getCraft(recipeId);
+        }
+        return recipe;
       })
     );
   }

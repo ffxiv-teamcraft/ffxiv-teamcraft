@@ -473,11 +473,11 @@
                   </div>
                 </ng-template>
                 <div class="recipes" fxLayout="column" fxLayoutGap="10px">
-                  <nz-card *ngFor="let recipe of source.data" [nzActions]="recipe.job > 0 ?[addToList, openSimulator]: [addToList]"
+                  <nz-card *ngFor="let recipeSource of source.data" [nzActions]="recipeSource.job > 0 ?[addToList, openSimulator]: [addToList]"
                            fxLayoutGap="5px">
                     <nz-card-meta [nzTitle]="recipeTitle">
                       <ng-template #recipeTitle>
-                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="getRecipe(recipeSource.id, gtData) | async as recipe">
                           <ng-container *ngIf="recipe.job !== 0">
                             <div class="recipe-title" fxLayout="column">
                               <div fxLayout="row" fxLayoutGap="5px">
@@ -486,26 +486,26 @@
                               </div>
                               <div fxLayout="row" fxLayoutGap="5px">
                                 <b>rlvl</b>:
-                                <div>{{gtData.getCraft(recipe.id).rlvl}}</div>
+                                <div>{{recipe.rlvl}}</div>
                               </div>
                               <div fxLayout="row" fxLayoutGap="5px">
                                 <b>{{'SIMULATOR.Durability' | translate}}</b>:
-                                <div>{{gtData.getCraft(recipe.id).durability}}</div>
+                                <div>{{recipe.durability}}</div>
                               </div>
                               <div fxLayout="row" fxLayoutGap="5px">
                                 <b>{{'SIMULATOR.Progress' | translate}}</b>:
-                                <div>{{gtData.getCraft(recipe.id).progress}}</div>
+                                <div>{{recipe.progress}}</div>
                               </div>
                               <div fxLayout="row" fxLayoutGap="5px">
                                 <b>{{'SIMULATOR.Quality' | translate}}</b>:
-                                <div>{{gtData.getCraft(recipe.id).quality}}</div>
+                                <div>{{recipe.quality}}</div>
                               </div>
                             </div>
                           </ng-container>
                         </div>
                       </ng-template>
                     </nz-card-meta>
-                    <div *ngIf="gtData.getCraft(recipe.id) as craft" fxLayout="column" fxLayoutGap="5px">
+                    <div *ngIf="getRecipe(recipeSource.id, gtData) | async as craft" fxLayout="column" fxLayoutGap="5px">
                       <div *ngFor="let item of craft.ingredients">
                         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                           <app-item-icon [icon]="+item.id | lazyIcon" [itemId]="+item.id" width="32"></app-item-icon>
@@ -534,7 +534,7 @@
                       </ng-container>
                     </ng-template>
                     <ng-template #openSimulator>
-                      <button (click)="openInSimulator(data, xivapiItem.ID, recipe.recipeId)" nz-button>
+                      <button (click)="openInSimulator(data, xivapiItem.ID, recipeSource.id)" nz-button>
                         {{'SIMULATOR.Simulate_tooltip' | translate}}
                       </button>
                     </ng-template>
