@@ -29,7 +29,9 @@ export abstract class InventoryOptimizer {
     ContainerType.RetainerGil,
     ContainerType.FreeCompanyGil,
     ContainerType.GearSet0,
-    ContainerType.GearSet1
+    ContainerType.GearSet1,
+    ContainerType.Mail,
+    ContainerType.UNKNOWN_1
   ];
 
   /// Compare two InventoryItem objects to determine whether they consume the same slot in the same
