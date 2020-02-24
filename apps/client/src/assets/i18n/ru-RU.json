@@ -96,6 +96,8 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "Эфемерный",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
@@ -344,6 +346,8 @@
     "Title": "Настройки",
     "General": "Главное",
     "Link_base": "Ссылка на предмет",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "Тема",
     "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
@@ -416,6 +420,11 @@
       "Theme": "Тема",
       "Search": "Поиск",
       "Other": "Прочее"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -483,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "Обновить список до последней версии Teamcraft",
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
@@ -532,6 +543,7 @@
       "Delete": "Удалить список",
       "Clear": "Очистить список",
       "Reset": "Обновить список",
+      "Archive": "Archive the list",
       "Nothing": "Ничего"
     },
     "BUTTONS": {
@@ -1668,6 +1680,11 @@
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "Инвентарь",
     "Empty": "Пустой инвентарь",
@@ -1708,6 +1725,12 @@
       "Title": "Предметы, которые у вас есть в маленьком количестве",
       "Message": "У вас только {{amount}} этого предмета, стоит ли сохранить их?",
       "Threshold_amount": "Пороговое значение"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
@@ -1722,7 +1745,7 @@
     "generate_list": "Создать список",
     "Content": "Содержимое",
     "Stat_name": "Статы",
-    "Current_value": "Текущее значение",
+    "Current_value": "Current",
     "Cap_value": "Макс.",
     "Add_materia": "Добавить материю",
     "No_materia": "Нет материи",
@@ -1764,6 +1787,7 @@
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
