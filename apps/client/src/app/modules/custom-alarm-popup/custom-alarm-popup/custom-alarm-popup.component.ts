@@ -6,7 +6,6 @@ import { filter, map, shareReplay } from 'rxjs/operators';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { NzModalRef } from 'ng-zorro-antd';
-import * as weathers from '../../../core/data/sources/weathers.json';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import * as _ from 'lodash';
 
@@ -20,8 +19,6 @@ export class CustomAlarmPopupComponent implements OnInit {
   form: FormGroup;
 
   public maps$: Observable<any[]>;
-
-  public weatherIds: any[] = Object.keys(weathers).map(key => +key);
 
   /**
    * Should we just return the alarm instead of creating it directly?
@@ -52,7 +49,8 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   public mapWeathers$: Observable<number[]>;
 
-  constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade, private modalRef: NzModalRef) {
+  constructor(private fb: FormBuilder, private xivapi: XivapiService, private alarmsFacade: AlarmsFacade,
+              private modalRef: NzModalRef) {
     this.maps$ = this.xivapi.getList(XivapiEndpoint.Map, {
       columns: ['ID', 'PlaceName.ID', 'TerritoryType.WeatherRate'],
       max_items: 1000
@@ -117,7 +115,7 @@ export class CustomAlarmPopupComponent implements OnInit {
         return maps.find(m => m.ID === form.mapId);
       }),
       filter(m => m !== undefined),
-      map((m: {TerritoryType: {WeatherRate: number}}) => {
+      map((m: { TerritoryType: { WeatherRate: number } }) => {
         return _.uniq(weatherIndex[m.TerritoryType.WeatherRate].map(row => +row.weatherId)) as number[];
       }),
       shareReplay(1)

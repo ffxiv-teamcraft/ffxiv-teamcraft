@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import * as weathers from './sources/weathers.json';
 import * as freeCompanyActions from './sources/free-company-actions.json';
 import * as jobNames from './sources/job-name.json';
 import * as jobAbbrs from './sources/job-abbr.json';
@@ -158,14 +157,11 @@ export class LocalizedDataService {
   }
 
   public getWeather(id: number): I18nName {
-    const row = this.getRow(weathers, id);
-    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhWeathers', koKey: 'koWeathers' });
-
-    return row;
+    return this.getRowWithExtendedLanguage('weathers', id);
   }
 
   public getWeatherId(name: string): number {
-    return this.getIndexByName(weathers, name, 'en');
+    return this.getIndexByName(this.lazyData.data.weathers, name, 'en');
   }
 
   public getAreaIdByENName(name: string): number {
@@ -315,7 +311,7 @@ export class LocalizedDataService {
       de: value[`${fieldName}_de`],
       ja: value[`${fieldName}_ja`],
     };
-    
+
     if (key !== null) {
       this.tryFillExtendedLanguage(row, value.ID, this.guessExtendedLanguageKeys(key));
     }

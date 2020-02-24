@@ -50,6 +50,7 @@ export interface LazyData {
   traits: any;
   tribes: any;
   ventures: any;
+  weathers: any;
   koAchievementDescriptions: any;
   koAchievements: any;
   koActionCategories: any;
