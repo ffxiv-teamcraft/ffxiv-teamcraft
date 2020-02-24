@@ -96,7 +96,7 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "간이 목록",
-  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_list": "보관된 목록(자동으로 불러오지 않습니다)",
   "Archived_tag": "보관됨",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
@@ -492,8 +492,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "보관하기",
+    "Unarchive": "보관 취소",
     "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
@@ -543,7 +543,7 @@
       "Delete": "목록 삭제",
       "Clear": "목록 비우기",
       "Reset": "목록 초기화",
-      "Archive": "Archive the list",
+      "Archive": "목록이 보관됨",
       "Nothing": "없음"
     },
     "BUTTONS": {
@@ -791,7 +791,7 @@
   },
   "SIMULATOR": {
     "Title": "제작 시뮬레이터",
-    "Include_stats": "Include stats",
+    "Include_stats": "능력치 포함",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -1758,7 +1758,7 @@
     "Amount_needed": "필요수량",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Job_cannot_be_changed": "생성 후 변경할 수 없습니다",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
