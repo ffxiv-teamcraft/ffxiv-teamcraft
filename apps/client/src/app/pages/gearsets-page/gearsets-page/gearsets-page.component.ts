@@ -55,7 +55,6 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
 
     this.favoritesDisplay$ = combineLatest([this.authFacade.favorites$, this.userId$]).pipe(
       switchMap(([favorites, userId]) => {
-        console.log(favorites.gearsets);
         return this.foldersFacade.getDisplay<TeamcraftGearset>(
           this.foldersFacade.getFavorites<TeamcraftGearset>(FolderContentType.GEARSET, 'gearsetFolders'),
           this.gearsetsFacade.allGearsets$,

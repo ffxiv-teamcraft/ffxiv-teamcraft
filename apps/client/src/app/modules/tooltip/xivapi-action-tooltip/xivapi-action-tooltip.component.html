@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="description">
-    <span [innerHtml]="action | xivapiL12n: 'actionDescriptions':'Description' | i18n | xivUIText"></span>
+    <span [innerHtml]="getDescription(action) | xivUIText"></span>
   </div>
   <div class="details">
     <div *ngFor="let row of details" nz-row nzGutter="10">

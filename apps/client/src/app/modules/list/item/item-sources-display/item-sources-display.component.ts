@@ -91,8 +91,8 @@ export class ItemSourcesDisplayComponent {
   public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
     const craft: Partial<Craft> = {
       id: recipeId,
-      job: entry.jobId,
-      lvl: entry.level,
+      job: entry.job,
+      lvl: entry.lvl,
       stars: entry.stars_tooltip.length,
       rlvl: entry.rlvl,
       durability: entry.durability,

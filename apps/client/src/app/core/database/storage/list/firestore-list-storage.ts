@@ -5,7 +5,7 @@ import { combineLatest, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
-import { AngularFirestore, DocumentChangeAction, QueryFn } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
@@ -134,8 +134,8 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return combineLatest(lists.map(list => this.completeListData(list)));
   }
 
-  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, uriParams?: any): Observable<List[]> {
-    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, uriParams)
+  public getByForeignKey(foreignEntityClass: Class, foreignKeyValue: string, queryModifier?: (query: Query) => Query, cacheSuffix = ''): Observable<List[]> {
+    return super.getByForeignKey(foreignEntityClass, foreignKeyValue, queryModifier, cacheSuffix)
       .pipe(
         switchMap(lists => this.completeLists(lists))
       );

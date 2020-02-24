@@ -10,11 +10,11 @@ export enum ContainerType {
 
   Currency = 2000,
   Crystal = 2001,
-  //UNKNOWN_0 = 2003,
+  Mail = 2003,
   KeyItem = 2004,
   HandIn = 2005,
   DamagedGear = 2007,
-  //UNKNOWN_1 = 2008,
+  UNKNOWN_1 = 2008,
   TradeInventory = 2009,
 
   ArmoryOff = 3200,

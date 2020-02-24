@@ -35,24 +35,10 @@ export class TooltipDataService {
     if (this.actions[id] === undefined) {
       if (id > 99999) {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.CraftAction, id).pipe(
-          map(action => {
-            if (this.lazyData.data.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.data.koCraftDescriptions[id]) {
-              action.ClassJobCategory.Name_ko = this.lazyData.data.koJobCategories[action.ClassJobCategory.ID].ko;
-              action.Description_ko = this.lazyData.data.koCraftDescriptions[id].ko;
-            }
-            return action;
-          }),
           shareReplay(1)
         );
       } else {
         this.actions[id] = this.xivapi.get(XivapiEndpoint.Action, id).pipe(
-          map(action => {
-            if (this.lazyData.data.koJobCategories[action.ClassJobCategory.ID] && this.lazyData.data.koCraftDescriptions[id]) {
-              action.ClassJobCategory.Name_ko = this.lazyData.data.koJobCategories[action.ClassJobCategory.ID].ko;
-              action.Description_ko = this.lazyData.data.koActionDescriptions[id].ko;
-            }
-            return action;
-          }),
           shareReplay(1)
         );
       }

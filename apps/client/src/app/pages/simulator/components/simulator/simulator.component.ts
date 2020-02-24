@@ -38,29 +38,25 @@ import { RotationTipsPopupComponent } from '../rotation-tips-popup/rotation-tips
 import { DirtyScope } from '../../../../core/dirty/dirty-scope';
 import { DirtyFacade } from '../../../../core/dirty/+state/dirty.facade';
 import { CommunityRotationPopupComponent } from '../community-rotation-popup/community-rotation-popup.component';
-import {
-  ActionType,
-  BasicSynthesis,
-  BasicTouch,
-  Buff,
-  CrafterLevels,
-  CrafterStats,
-  CraftingAction,
-  CraftingActionsRegistry,
-  CraftingJob,
-  EffectiveBuff,
-  FinalAppraisal,
-  GearSet,
-  Simulation,
-  SimulationReliabilityReport,
-  SimulationResult,
-  StepState
-} from '@ffxiv-teamcraft/simulator';
 import { SolverPopupComponent } from '../solver-popup/solver-popup.component';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SimulationSharePopupComponent } from '../simulation-share-popup/simulation-share-popup.component';
+import { 
+  ActionResult,
+  CraftingJob,
+  CrafterLevels,
+  CrafterStats,
+  CraftingAction,
+  EffectiveBuff,
+  GearSet,
+  Simulation,
+  SimulationReliabilityReport,
+  SimulationResult,
+  SimulationService,
+  StepState
+} from '../../../../core/simulation/simulation.service';
 
 @Component({
   selector: 'app-simulator',
@@ -231,6 +227,14 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }
   };
 
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
   constructor(private htmlTools: HtmlToolsService, public settings: SettingsService,
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
@@ -238,7 +242,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
-              private ipc: IpcService, public platformService: PlatformService) {
+              private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -304,7 +308,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           simulation: simulation
         },
         nzTitle: this.translate.instant('SIMULATOR.Share_button_tooltip')
-      })
+      });
     });
   }
 
@@ -325,7 +329,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getCraftOptExportString(): string {
-    return CraftingActionsRegistry.exportToCraftOpt(CraftingActionsRegistry.serializeRotation(this.actions$.value));
+    return this.registry.exportToCraftOpt(this.registry.serializeRotation(this.actions$.value));
   }
 
   changeRecipe(rotation: CraftingRotation): void {
@@ -383,7 +387,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     }).afterClose
       .pipe(
         filter(res => res !== undefined && res !== null && res.length > 0 && res.indexOf('[') > -1),
-        map(res => CraftingActionsRegistry.importFromCraftOpt(JSON.parse(res))),
+        map(res => this.registry.importFromCraftOpt(JSON.parse(res))),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
@@ -448,7 +452,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             if (match !== null && match !== undefined) {
               const skillName = match[2].replace(/"/g, '');
 
-              if (line.startsWith('/statusoff') && skillName === this.i18nTools.getName(this.localizedDataService.getAction(new FinalAppraisal().getIds()[0]))) {
+              const FinalAppraisal = this.simulator.FinalAppraisal;
+              if (line.startsWith('/statusoff') && FinalAppraisal && skillName === this.i18nTools.getName(this.localizedDataService.getAction(new FinalAppraisal().getIds()[0]))) {
                 actionIds.push(-1);
                 continue;
               }
@@ -475,7 +480,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           }
           return actionIds;
         }),
-        map(actionIds => CraftingActionsRegistry.createFromIds(actionIds)),
+        map(actionIds => this.registry.createFromIds(actionIds)),
         first()
       ).subscribe(actions => {
       this.actions$.next(actions);
@@ -502,7 +507,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         control: stats._control,
         level: stats.level
       };
-      rotation.rotation = CraftingActionsRegistry.serializeRotation(actions);
+      rotation.rotation = this.registry.serializeRotation(actions);
       rotation.custom = this.custom;
       if (this.selectedFood) {
         rotation.food = { id: this.selectedFood.itemId, hq: this.selectedFood.hq };
@@ -582,18 +587,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   setState(index: number, state: StepState): void {
     const newStates = { ...this.stepStates$.value, [index]: state };
-    if (state === StepState.EXCELLENT) {
-      newStates[index + 1] = StepState.POOR;
+    if (state === this.simulator.StepState.EXCELLENT) {
+      newStates[index + 1] = this.simulator.StepState.POOR;
     }
-    if (state === StepState.POOR) {
-      newStates[index - 1] = StepState.EXCELLENT;
+    if (state === this.simulator.StepState.POOR) {
+      newStates[index - 1] = this.simulator.StepState.EXCELLENT;
     }
     this.stepStates$.next(newStates);
   }
 
   applyStats(): void {
     const rawForm = this.statsForm.getRawValue();
-    const stats = new CrafterStats(
+    const stats = new this.simulator.CrafterStats(
       rawForm.job,
       rawForm.craftsmanship,
       rawForm.control,
@@ -709,29 +714,29 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   getBuffIcon(effBuff: EffectiveBuff): string {
-    return `./assets/icons/status/${Buff[effBuff.buff].toLowerCase()}.png`;
+    return `./assets/icons/status/${this.simulator.Buff[effBuff.buff].toLowerCase()}.png`;
   }
 
   getProgressActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.PROGRESSION);
+    return this.registry.getActionsByType(this.simulator.ActionType.PROGRESSION);
   }
 
   getQualityActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.QUALITY);
+    return this.registry.getActionsByType(this.simulator.ActionType.QUALITY);
   }
 
   getBuffActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.BUFF);
+    return this.registry.getActionsByType(this.simulator.ActionType.BUFF);
   }
 
   getRepairActions(): CraftingAction[] {
-    return CraftingActionsRegistry.getActionsByType(ActionType.REPAIR);
+    return this.registry.getActionsByType(this.simulator.ActionType.REPAIR);
   }
 
   getOtherActions(): CraftingAction[] {
     return [
-      ...CraftingActionsRegistry.getActionsByType(ActionType.OTHER),
-      ...CraftingActionsRegistry.getActionsByType(ActionType.CP_RECOVERY)
+      ...this.registry.getActionsByType(this.simulator.ActionType.OTHER),
+      ...this.registry.getActionsByType(this.simulator.ActionType.CP_RECOVERY)
     ];
   }
 
@@ -802,7 +807,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           set.level = this.routeStats.level;
           set.specialist = this.routeStats.spec;
         }
-        return new CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, levels);
+        return new this.simulator.CrafterStats(set.jobId, set.craftsmanship, set.control, set.cp, set.specialist, set.level, levels);
       }),
       distinctUntilChanged((before, after) => {
         return JSON.stringify(before) === JSON.stringify(after);
@@ -845,7 +850,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       map(([stats, bonuses, loggedIn, job]) => {
         const levels = loggedIn ? stats.levels : [80, 80, 80, 80, 80, 80, 80, 80];
         levels[(job || stats.jobId) - 8] = stats.level;
-        return new CrafterStats(
+        return new this.simulator.CrafterStats(
           job || stats.jobId,
           stats.craftsmanship + bonuses.craftsmanship,
           stats._control + bonuses.control,
@@ -858,7 +863,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
     this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.forcedStartingQuality$]).pipe(
       map(([recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality]) => {
-        return new Simulation(recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality);
+        return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality);
       }),
       shareReplay(1)
     );
@@ -872,7 +877,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       takeUntil(this.onDestroy$)
     ).subscribe(([rotation, stats, rotationChanged]: [CraftingRotation, CrafterStats, boolean]) => {
       if (this.actions$.value.length === 0 || rotationChanged) {
-        this.actions$.next(CraftingActionsRegistry.deserializeRotation(rotation.rotation));
+        this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
         this.stepStates$.next({});
       }
       if (rotation.food && this.selectedFood === undefined && !this.routeStats) {
@@ -896,20 +901,22 @@ export class SimulatorComponent implements OnInit, OnDestroy {
           return sim.run(true, Infinity, safeMode);
         }
       }),
-      tap(result => this.actionFailed = result.steps.find(step => !step.success) !== undefined),
+      tap(result => {
+        this.actionFailed = result.steps.find(step => !step.success) !== undefined;
+      }),
       shareReplay(1)
     );
 
     this.qualityPer100$ = this.result$.pipe(
       map(result => {
-        const action = new BasicTouch();
+        const action = new this.simulator.BasicTouch();
         return Math.floor(action.getBaseQuality(result.simulation));
       })
     );
 
     this.progressPer100$ = this.result$.pipe(
       map(result => {
-        const action = new BasicSynthesis();
+        const action = new this.simulator.BasicSynthesis();
         return Math.floor(action.getBaseProgression(result.simulation));
       })
     );
@@ -938,6 +945,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.formChangesSubscription = this.statsForm.valueChanges.subscribe(() => {
       this.savedSet = false;
     });
+  }
+
+  trackByAction(index: number, step: ActionResult): number {
+    return step.action.getId(8);
   }
 
 }

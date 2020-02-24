@@ -32,7 +32,7 @@ let todo = [
   'gatheringLog',
   'map',
   'craftingLog',
-  'weather',
+  'weather-rate',
   'fishingLog',
   'itemIcons',
   'spearFishingLog',
@@ -93,6 +93,9 @@ function hasTodo(operation) {
 }
 
 function done(operation) {
+  if (process.argv.indexOf('--no-progress') > -1) {
+    return;
+  }
   cache.push(operation);
   fs.writeFileSync(path.join(__dirname, 'progress.json'), JSON.stringify(cache));
 }
@@ -100,6 +103,23 @@ function done(operation) {
 fs.existsSync('output') || fs.mkdirSync('output');
 
 let emptyBnpcNames = 0;
+
+if (hasTodo('missingNodes')) {
+  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
+  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+  let count = 0;
+  Object.values(nodes).forEach((node) => {
+    if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
+      console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
+      console.log(`| Level: ${node.level}`);
+      console.log(`| Limited: ${node.limited}`);
+      count++;
+    }
+  });
+  console.log(`
+
+  **Total**: ${count}`);
+}
 
 if (hasTodo('mappy')) {
   // MapData extraction
@@ -694,7 +714,7 @@ if (hasTodo('spearFishingLog')) {
 }
 
 
-if (hasTodo('weather')) {
+if (hasTodo('weather-rate')) {
 // Weather index extraction
   const weatherIndexes = [];
 
@@ -737,7 +757,27 @@ if (hasTodo('weather')) {
       weatherIndexData[weatherIndex.ID] = entry;
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
-    done('weather');
+    done('weather-rate');
+  });
+}
+
+
+if (hasTodo('weathers')) {
+  const weathers = {};
+  getAllPages('https://xivapi.com/Weather?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(weather => {
+      weathers[weather.ID] = {
+        name: {
+          en: weather.Name_en,
+          ja: weather.Name_ja,
+          de: weather.Name_de,
+          fr: weather.Name_fr
+        }
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('weathers', weathers);
+    done('weathers');
   });
 }
 
@@ -1287,29 +1327,50 @@ if (hasTodo('achievements')) {
 }
 
 if (hasTodo('recipes')) {
+  // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0TargetID,ItemIngredient1TargetID,ItemIngredient2TargetID,ItemIngredient3TargetID,ItemIngredient4TargetID,ItemIngredient5TargetID,ItemIngredient6TargetID,ItemIngredient7TargetID,ItemIngredient8TargetID,ItemIngredient9TargetID,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
     page.Results.forEach(recipe => {
       if (recipe.RecipeLevelTable === null) {
         return;
       }
+      const maxQuality = Math.floor(recipe.RecipeLevelTable.Quality * recipe.QualityFactor / 100);
+      const ingredients = Object.keys(recipe)
+        .filter(k => /ItemIngredient\d/.test(k))
+        .sort((a, b) => a < b ? -1 : 1)
+        .filter(key => recipe[key] && recipe[key].ID > 19)
+        .map((key, index) => {
+          return {
+            id: recipe[key].ID,
+            amount: +recipe[`AmountIngredient${index}`],
+            ilvl: +recipe[key].LevelItem
+          };
+        });
+      const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
+      const totalIlvl = ingredients.reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
       recipes.push({
         id: recipe.ID,
         job: recipe.ClassJob.ID,
-        level: recipe.RecipeLevelTable.ClassJobLevel,
+        lvl: recipe.RecipeLevelTable.ClassJobLevel,
         yields: recipe.AmountResult,
         result: recipe.ItemResultTargetID,
         stars: recipe.RecipeLevelTable.Stars,
         qs: recipe.CanQuickSynth === 1,
+        hq: recipe.CanHq === 1,
+        durability: Math.floor(recipe.RecipeLevelTable.Durability * recipe.DurabilityFactor / 100),
+        quality: maxQuality,
+        progress: Math.floor(recipe.RecipeLevelTable.Difficulty * recipe.DifficultyFactor / 100),
+        suggestedControl: recipe.RecipeLevelTable.SuggestedControl,
+        suggestedCraftsmanship: recipe.RecipeLevelTable.SuggestedCraftsmanship,
+        controlReq: recipe.RequiredControl,
+        craftsmanshipReq: recipe.RequiredCraftsmanship,
         rlvl: recipe.RecipeLevelTable.ID,
-        ingredients: Object.keys(recipe)
-          .filter(k => /ItemIngredient\dTargetID/.test(k))
-          .sort((a, b) => a < b ? -1 : 1)
-          .filter(key => recipe[key] > 19)
-          .map((key, index) => {
+        ingredients: ingredients
+          .map(ingredient => {
             return {
-              id: recipe[key],
-              amount: +recipe[`AmountIngredient${index}`]
+              id: ingredient.id,
+              amount: ingredient.amount,
+              quality: (ingredient.ilvl / totalIlvl) * totalContrib
             };
           })
       });
@@ -1852,6 +1913,10 @@ if (hasTodo('tribes')) {
       delete entry.NameFemale_ja;
       delete entry.Patch;
       delete entry.Url;
+      const VIT = entry.DEX;
+      const DEX = entry.VIT;
+      entry.VIT = VIT;
+      entry.DEX = DEX;
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);

@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
-import { CraftingAction, CraftingActionsRegistry, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { NzDropdownContextComponent, NzDropdownService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { SimulationService } from '../../../../core/simulation/simulation.service';
+import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 
 @Component({
   selector: 'app-action',
@@ -62,11 +65,20 @@ export class ActionComponent {
 
   private dropdown: NzDropdownContextComponent;
 
-  constructor(private nzDropdownService: NzDropdownService) {
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
+  constructor(private nzDropdownService: NzDropdownService, private settings: SettingsService,
+              private simulationService: SimulationService) {
   }
 
   getAlt(): string {
-    return CraftingActionsRegistry.ALL_ACTIONS.find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
+    return this.registry.ALL_ACTIONS.find(a => a.action.getIds()[0] === this.action.getIds()[0]).name;
   }
 
   getJobId(): number {

@@ -35,6 +35,7 @@ import { RouterModule } from '@angular/router';
 import { ClipboardModule } from 'ngx-clipboard';
 import { GearsetCostPopupComponent } from './gearset-cost-popup/gearset-cost-popup.component';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
+import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
     GearsetComparatorPopupComponent,
     ImportFromPcapPopupComponent,
     GearsetRowComponent,
-    GearsetCostPopupComponent
+    GearsetCostPopupComponent,
+    ItemCapsTableComponent
   ],
   entryComponents: [
     GearsetCreationPopupComponent,
@@ -94,7 +96,8 @@ import { FullpageMessageModule } from '../fullpage-message/fullpage-message.modu
     MateriaSlotIconComponent,
     StatPipe,
     GearsetRowComponent,
-    GearsetCostPopupComponent
+    GearsetCostPopupComponent,
+    ItemCapsTableComponent
   ]
 })
 export class GearsetsModule {

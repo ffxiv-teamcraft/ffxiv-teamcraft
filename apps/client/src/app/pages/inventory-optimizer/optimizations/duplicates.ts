@@ -21,7 +21,7 @@ export class Duplicates extends InventoryOptimizer {
         return i.itemId === item.itemId
           && i.hq === item.hq
           && i.spiritBond === 0
-          && i.slot !== item.slot
+          && !InventoryOptimizer.inSameSlot(i, item)
           && item.quantity + i.quantity < this.lazyData.data.stackSizes[i.itemId];
       });
     if (dupes.length > 0) {

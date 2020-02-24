@@ -27,8 +27,18 @@ export abstract class InventoryOptimizer {
     ContainerType.RetainerCrystal,
     ContainerType.HandIn,
     ContainerType.RetainerGil,
-    ContainerType.FreeCompanyGil
+    ContainerType.FreeCompanyGil,
+    ContainerType.GearSet0,
+    ContainerType.GearSet1,
+    ContainerType.Mail,
+    ContainerType.UNKNOWN_1
   ];
+
+  /// Compare two InventoryItem objects to determine whether they consume the same slot in the same
+  /// container.
+  protected static inSameSlot(source: InventoryItem, target: InventoryItem): boolean {
+    return source.slot === target.slot && source.containerId === target.containerId;
+  }
 
   public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: ListRow[]): { [p: string]: number | string } | null {
     if (InventoryOptimizer.IGNORED_CONTAINERS.indexOf(item.containerId) > -1) {

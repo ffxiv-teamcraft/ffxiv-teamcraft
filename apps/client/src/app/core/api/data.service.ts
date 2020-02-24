@@ -220,7 +220,7 @@ export class DataService {
         map(items => {
           return items.Results.filter(item => {
             if (!onlyCraftable) return true;
-            
+
             const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
             return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
               switch (filter.operator) {
@@ -269,7 +269,7 @@ export class DataService {
                     collectible: item.GameContentLinks && item.GameContentLinks.MasterpieceSupplyDuty,
                     job: recipe.job,
                     stars: recipe.stars,
-                    lvl: recipe.level,
+                    lvl: recipe.lvl,
                     icon: `https://xivapi.com${item.Icon}`
                   }
                 });

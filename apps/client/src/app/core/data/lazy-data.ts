@@ -50,6 +50,7 @@ export interface LazyData {
   traits: any;
   tribes: any;
   ventures: any;
+  weathers: any;
   koAchievementDescriptions: any;
   koAchievements: any;
   koActionCategories: any;
@@ -87,6 +88,7 @@ export interface LazyData {
   koQuestDescriptions: any;
   koQuests: any;
   koRaces: any;
+  koRecipes: any;
   koShops: any;
   koStatusDescriptions: any;
   koStatuses: any;

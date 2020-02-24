@@ -10,7 +10,7 @@
   </a>
   <h1>{{'SEARCH_INTRO.Slogan' | translate}}</h1>
   <h2
-    *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter } }}</h2>
+    *ngIf="counter$ | async as counter">{{'SEARCH_INTRO.Lists_created_counter' | translate: { amount: counter | number:'1.0-0':translate.currentLang } }}</h2>
 </div>
 <div class="list-container" fxLayout="column" fxLayoutAlign="flex-start">
   <nz-list [nzDataSource]="features" [nzHeader]="'SEARCH_INTRO.Features_header' | translate" [nzRenderItem]="featureRow"

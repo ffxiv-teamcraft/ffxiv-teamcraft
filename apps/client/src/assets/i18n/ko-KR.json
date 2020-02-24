@@ -96,6 +96,8 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "간이 목록",
+  "Archived_list": "Archived list (not loaded by default)",
+  "Archived_tag": "Archived",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
@@ -344,6 +346,8 @@
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
+    "Region": "Region",
+    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -416,6 +420,11 @@
       "Theme": "테마",
       "Search": "검색",
       "Other": "기타"
+    },
+    "REGIONS": {
+      "Global": "Global",
+      "CN": "China",
+      "KR": "Korea"
     }
   },
   "PROFILE": {
@@ -483,6 +492,8 @@
     }
   },
   "LIST": {
+    "Archive": "Archive",
+    "Unarchive": "Unarchive",
     "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
@@ -532,6 +543,7 @@
       "Delete": "목록 삭제",
       "Clear": "목록 비우기",
       "Reset": "목록 초기화",
+      "Archive": "Archive the list",
       "Nothing": "없음"
     },
     "BUTTONS": {
@@ -1668,6 +1680,11 @@
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버젼에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
+  "SUGGESTED_REGION": {
+    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Button_label": "Change region"
+  },
   "INVENTORY": {
     "Title": "소지품",
     "Empty": "소지품이 비어있습니다",
@@ -1708,6 +1725,12 @@
       "Title": "매우 소량으로 소유하고 있는 아이템",
       "Message": "이 아이템을 {{amount}} 개 만큼 가지고 있지만 처리하는 것을 추천함",
       "Threshold_amount": "기준이 되는 수량"
+    },
+    "CONSOLIDATE_STACKS": {
+      "Title": "HQ stacks of items that can have their quality lowered",
+      "Message": "Combine with NQ stack in: {{containers}}",
+      "Filter": "Only show materials up to: ",
+      "Placeholder": "Pick Expansion"
     }
   },
   "VERSION_LOCK": {
@@ -1722,7 +1745,7 @@
     "generate_list": "목록 생성",
     "Content": "세부 내용",
     "Stat_name": "능력치",
-    "Current_value": "현재 능력치",
+    "Current_value": "Current",
     "Cap_value": "금단 최대치",
     "Add_materia": "마테리아 추가",
     "No_materia": "마테리아 없음",
@@ -1763,6 +1786,8 @@
     "Paste_lodestone_id": "Lodestone ID 붙여넣기",
     "Currency": "Currency",
     "Optimize_materias": "Optimize materias order",
+    "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",

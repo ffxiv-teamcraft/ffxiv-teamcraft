@@ -206,7 +206,7 @@ export class ListManagerService {
         const craftedBy = item.sources.find(s => s.type === DataType.CRAFTED_BY);
         if (recipeId !== undefined && data.item.id === item.id) {
           craftedBy.data = craftedBy.data.filter(row => {
-            return row.recipeId.toString() === recipeId.toString();
+            return row.id.toString() === recipeId.toString();
           });
         }
       }

@@ -47,6 +47,10 @@
           <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
             {{'Ephemeral_tag' | translate}}
           </nz-tag>
+          <nz-tag *ngIf="_list.archived" [nzColor]="'purple'" [nzTitle]="'Archived_list' | translate" nz-tooltip>
+            <i nz-icon nzType="file-zip" nzTheme="outline"></i>
+            {{'Archived_tag' | translate}}
+          </nz-tag>
           <nz-tag *ngIf="_list.offline" [nzTitle]="'LIST.Offline_help' | translate" [style.border-color]="'#bd0ef2'"
                   nz-tooltip>
             {{'LIST.Offline' | translate}}
@@ -107,6 +111,14 @@
             <li (click)="renameList(_list)" *ngIf="!publicDisplay" [nzDisabled]="(permissionLevel$ | async) < 40"
                 nz-menu-item>
               {{'LIST.Rename' | translate}}
+            </li>
+            <li (click)="archiveList(_list, true)" *ngIf="!publicDisplay && !_list.archived" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
+              {{'LIST.Archive' | translate}}
+            </li>
+            <li (click)="archiveList(_list, false)" *ngIf="!publicDisplay && _list.archived" [nzDisabled]="(permissionLevel$ | async) < 40"
+                nz-menu-item>
+              {{'LIST.Unarchive' | translate}}
             </li>
             <li (click)="openCommentsPopup(_list, userId === _list.authorId)" *ngIf="authFacade.userId$ | async as userId"
                 nz-menu-item>

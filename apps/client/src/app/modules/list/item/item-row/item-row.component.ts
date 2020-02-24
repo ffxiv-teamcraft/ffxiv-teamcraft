@@ -37,7 +37,7 @@ import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
+import { CraftingAction } from '@ffxiv-teamcraft/simulator';
 import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
@@ -49,6 +49,7 @@ import { UserInventory } from '../../../../model/user/inventory/user-inventory';
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
+import { SimulationService } from '../../../../core/simulation/simulation.service';
 
 @Component({
   selector: 'app-item-row',
@@ -207,6 +208,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   masterbooksReloader$ = new BehaviorSubject<void>(null);
 
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
   constructor(public listsFacade: ListsFacade, private alarmsFacade: AlarmsFacade,
               private messageService: NzMessageService, private translate: TranslateService,
               private modal: NzModalService, private l12n: LocalizedDataService,
@@ -223,7 +232,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private notificationService: NzNotificationService,
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
-              private inventoryService: InventoryFacade) {
+              private inventoryService: InventoryFacade,
+              private simulationService: SimulationService) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -235,7 +245,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
         return getItemSource(item, DataType.MASTERBOOKS)
-        // Ignore string ids, as they are draft ids
+          // Ignore string ids, as they are draft ids
           .filter(book => Number.isInteger(book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
@@ -327,7 +337,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.modal.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: CraftingActionsRegistry.deserializeRotation(rotation.rotation),
+        rotation: this.registry.deserializeRotation(rotation.rotation),
         job: (<any>item).craftedBy[0].jobId,
         food: foodsData.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq),
         medicine: medicinesData.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq),

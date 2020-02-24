@@ -1,13 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import {
-  CrafterStats,
-  CraftingAction,
-  CraftingActionsRegistry,
-  GearSet,
-  Simulation,
-  SimulationResult
-} from '@ffxiv-teamcraft/simulator';
+import { CrafterStats, CraftingAction, GearSet, Simulation, SimulationResult } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -33,6 +26,8 @@ import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
+import { SimulationService } from '../../../../core/simulation/simulation.service';
+import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -80,16 +75,25 @@ export class RotationPanelComponent implements OnInit {
 
   public simulation$: Observable<SimulationResult>;
 
+  private get simulator() {
+    return this.simulationService.getSimulator(this.settings.region);
+  }
+
+  private get registry() {
+    return this.simulator.CraftingActionsRegistry;
+  }
+
   constructor(private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
-              public platformService: PlatformService) {
+              public platformService: PlatformService, private simulationService: SimulationService,
+              private settings: SettingsService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
-      map(rotation => CraftingActionsRegistry.deserializeRotation(rotation.rotation))
+      map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
 
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.rotation$).pipe(
@@ -112,7 +116,7 @@ export class RotationPanelComponent implements OnInit {
         const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
         const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);
         const fcActions = this.freeCompanyActions.filter(action => this.rotation.freeCompanyActions.indexOf(action.actionId) > -1);
-        const crafterStats = new CrafterStats(
+        const crafterStats = new this.simulator.CrafterStats(
           stats.jobId,
           stats.craftsmanship + this.getBonusValue('Craftsmanship', stats.craftsmanship, food, medicine, fcActions),
           stats.control + this.getBonusValue('Control', stats.craftsmanship, food, medicine, fcActions),
@@ -120,7 +124,7 @@ export class RotationPanelComponent implements OnInit {
           stats.specialist,
           stats.level,
           gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [70, 70, 70, 70, 70, 70, 70, 70]);
-        return new Simulation(rotation.recipe as Craft, CraftingActionsRegistry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+        return new this.simulator.Simulation(rotation.recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
     );
   }
@@ -199,7 +203,7 @@ export class RotationPanelComponent implements OnInit {
     this.dialog.create({
       nzContent: MacroPopupComponent,
       nzComponentParams: {
-        rotation: CraftingActionsRegistry.deserializeRotation(this.rotation.rotation),
+        rotation: this.registry.deserializeRotation(this.rotation.rotation),
         job: this.rotation.recipe.job,
         simulation: simulation.clone(),
         food: this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq),

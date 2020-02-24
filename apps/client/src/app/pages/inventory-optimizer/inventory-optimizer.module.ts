@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
 import { HasTooFew } from './optimizations/has-too-few';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { ConsolidateStacks } from './optimizations/consolidate-stacks';
 
 const optimisations: Provider[] = [
   {
@@ -38,6 +39,12 @@ const optimisations: Provider[] = [
     useClass: HasTooFew,
     multi: true,
     deps: [LazyDataService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: ConsolidateStacks,
+    multi: true,
+    deps: [TranslateService, InventoryFacade, LazyDataService]
   }
 ];
 

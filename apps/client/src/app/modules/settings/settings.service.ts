@@ -1,27 +1,55 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Injectable, Optional } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
+import { Region } from './region.enum';
+import { map, startWith } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SettingsService {
 
+  public regionChange$ = new Subject<{ previous: Region, next: Region }>();
+  public region$: Observable<Region>;
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
 
-  constructor(private ipc: IpcService) {
+  constructor(@Optional() private ipc: IpcService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
-    this.ipc.on('update-settings', (e, settings) => {
-      this.cache = settings;
-      localStorage.setItem('settings', JSON.stringify(this.cache));
-    });
+    if (this.ipc) {
+      this.ipc.on('update-settings', (e, settings) => {
+        this.cache = settings;
+        localStorage.setItem('settings', JSON.stringify(this.cache));
+      });
+    }
+    this.region$ = this.regionChange$.pipe(map(change => change.next), startWith(this.region));
   }
 
   public get availableLocales(): string[] {
     return ['en', 'de', 'fr', 'ja', 'pt', 'br', 'es', 'ko', 'zh', 'ru'];
+  }
+
+  public get availableRegions(): Region[] {
+    return [Region.Global, Region.China, Region.Korea];
+  }
+
+  public get region(): Region {
+    return this.getSetting('region', Region.Global) as Region;
+  }
+
+  public set region(region: Region) {
+    this.regionChange$.next({ previous: this.region, next: region });
+    this.setSetting('region', region);
+  }
+
+  public get hideRegionBanner(): boolean {
+    return this.getSetting('region:hide-banner', 'false') === 'true';
+  }
+
+  public set hideRegionBanner(hide: boolean) {
+    this.setSetting('region:hide-banner', hide.toString());
   }
 
   public get timeFormat(): '24H' | '12H' {
@@ -105,7 +133,7 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
-  public get sidebarState(): {[index:string]:boolean} {
+  public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,
       sharing: true,
@@ -115,7 +143,7 @@ export class SettingsService {
     })));
   }
 
-  public set sidebarState(state: {[index:string]:boolean}) {
+  public set sidebarState(state: { [index: string]: boolean }) {
     this.setSetting('sidebar-state', JSON.stringify(state));
   }
 

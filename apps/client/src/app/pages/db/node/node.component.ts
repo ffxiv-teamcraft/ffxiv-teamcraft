@@ -91,7 +91,6 @@ export class NodeComponent extends TeamcraftPageComponent {
         (node.GatheringPoints || []).forEach(point => {
           [0, 1].forEach(index => {
             const bonus = point[`GatheringPointBonus${index}`];
-            console.log('bonus', index, bonus)
             if (!bonus) return;
 
             const bonusType = this.l12n.xivapiToI18n(bonus.BonusType, null, 'Text');

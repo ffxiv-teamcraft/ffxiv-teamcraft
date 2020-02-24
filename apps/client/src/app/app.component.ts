@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -48,6 +48,7 @@ import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
+import { Region } from './modules/settings/region.enum';
 
 declare const gtag: Function;
 
@@ -123,6 +124,8 @@ export class AppComponent implements OnInit {
   public emptyInventory$: Observable<boolean>;
 
   public pinnedList$ = this.listsFacade.pinnedList$;
+
+  public suggestedRegion: Region = null;
 
   public randomTip$: Observable<string> = interval(600000).pipe(
     startWith(-1),
@@ -253,18 +256,23 @@ export class AppComponent implements OnInit {
       );
 
       const language$ = this.translate.onLangChange.pipe(
-        mapTo(this.translate.currentLang),
+        map(event => event.lang),
         startWith(this.translate.currentLang)
       );
 
-      this.pcapOutDated$ = combineLatest([language$, this.firebase.object('game_versions').valueChanges()]).pipe(
-        map(([lang, value]) => {
+      const region$ = this.settings.regionChange$.pipe(
+        map(change => change.next),
+        startWith(this.settings.region)
+      );
+
+      this.pcapOutDated$ = combineLatest([region$, this.firebase.object('game_versions').valueChanges()]).pipe(
+        map(([region, value]) => {
           let key: string;
-          switch (lang) {
-            case 'ko':
+          switch (region) {
+            case Region.Korea:
               key = 'koreanGameVersion';
               break;
-            case 'zh':
+            case Region.China:
               key = 'chineseGameVersion';
               break;
             default:
@@ -274,6 +282,23 @@ export class AppComponent implements OnInit {
           return value[key] > environment[key];
         })
       );
+
+      combineLatest([language$, region$]).subscribe(([lang, region]) => {
+        let suggestedRegion = null;
+        switch (lang) {
+          case 'ko':
+            suggestedRegion = Region.Korea;
+            break;
+          case 'zh':
+            suggestedRegion = Region.China;
+            break;
+          default:
+            suggestedRegion = Region.Global;
+            break;
+        }
+
+        this.suggestedRegion = region === suggestedRegion ? null : suggestedRegion;
+      });
 
       this.dirtyFacade.hasEntries$.subscribe(dirty => this.dirty = dirty);
 
@@ -378,6 +403,12 @@ export class AppComponent implements OnInit {
     this.ipc.send('toggle-machina', true);
   }
 
+  changeToSuggestedRegion(): void {
+    if (!this.suggestedRegion) return;
+
+    this.settings.region = this.suggestedRegion;
+  }
+
   getPathname(): string {
     return this.router.url;
   }
@@ -445,11 +476,28 @@ export class AppComponent implements OnInit {
     }
   }
 
+  hexToRgbA(hex: string, opacity: number) {
+    let c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+      c = hex.substring(1).split('');
+      if (c.length === 3) {
+        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+      }
+      c = '0x' + c.join('');
+      return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},${opacity})`;
+    }
+    throw new Error('Bad Hex');
+  }
+
   private applyTheme(theme: Theme): void {
     if (theme !== undefined) {
       document.documentElement.style.setProperty('--background-color', theme.background);
       document.documentElement.style.setProperty('--primary-color', theme.primary);
+      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.50));
+      document.documentElement.style.setProperty('--primary-color-25', this.hexToRgbA(theme.primary, 0.25));
       document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.50));
+      document.documentElement.style.setProperty('--highlight-color-25', this.hexToRgbA(theme.highlight, 0.25));
       document.documentElement.style.setProperty('--text-color', theme.text);
       document.documentElement.style.setProperty('--topbar-color', theme.topbar);
       document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);

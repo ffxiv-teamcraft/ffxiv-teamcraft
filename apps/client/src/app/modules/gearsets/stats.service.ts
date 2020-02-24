@@ -117,6 +117,31 @@ export class StatsService {
   constructor(private lazyData: LazyDataService, private materiasService: MateriaService) {
   }
 
+  public getMaxValuesTable(job: number, equipmentPiece: EquipmentPiece): number[][] {
+    return this.getRelevantBaseStats(job)
+      .map(baseParamId => {
+        return [
+          baseParamId,
+          this.materiasService.getTotalStat(this.getStartingValue(equipmentPiece, baseParamId), equipmentPiece, baseParamId),
+          this.materiasService.getItemCapForStat(equipmentPiece.itemId, baseParamId),
+          this.getStartingValue(equipmentPiece, baseParamId)
+        ];
+      });
+  }
+
+  public getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): number {
+    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+    const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
+    if (matchingStat) {
+      if (equipmentPiece.hq) {
+        return matchingStat.HQ;
+      } else {
+        return matchingStat.NQ;
+      }
+    }
+    return 0;
+  }
+
   public getStats(set: TeamcraftGearset, level: number, tribe: number, food?: any): { id: number, value: number }[] {
     const stats = this.getRelevantBaseStats(set.job)
       .map(stat => {

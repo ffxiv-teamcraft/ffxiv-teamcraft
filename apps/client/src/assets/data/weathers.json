@@ -1,0 +1,1170 @@
+{
+  "1": {
+    "name": {
+      "en": "Clear Skies",
+      "ja": "快晴",
+      "de": "Klar",
+      "fr": "Dégagé"
+    }
+  },
+  "2": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "3": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "4": {
+    "name": {
+      "en": "Fog",
+      "ja": "霧",
+      "de": "Neblig",
+      "fr": "Brouillard"
+    }
+  },
+  "5": {
+    "name": {
+      "en": "Wind",
+      "ja": "風",
+      "de": "Windig",
+      "fr": "Vent"
+    }
+  },
+  "6": {
+    "name": {
+      "en": "Gales",
+      "ja": "暴風",
+      "de": "Stürmisch",
+      "fr": "Vents violents"
+    }
+  },
+  "7": {
+    "name": {
+      "en": "Rain",
+      "ja": "雨",
+      "de": "Regnerisch",
+      "fr": "Pluie"
+    }
+  },
+  "8": {
+    "name": {
+      "en": "Showers",
+      "ja": "暴雨",
+      "de": "Wolkenbruch",
+      "fr": "Pluie torrentielle"
+    }
+  },
+  "9": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "10": {
+    "name": {
+      "en": "Thunderstorms",
+      "ja": "雷雨",
+      "de": "Gewitter",
+      "fr": "Orages violents"
+    }
+  },
+  "11": {
+    "name": {
+      "en": "Dust Storms",
+      "ja": "砂塵",
+      "de": "Staubig",
+      "fr": "Tempêtes de poussière"
+    }
+  },
+  "12": {
+    "name": {
+      "en": "Sandstorms",
+      "ja": "砂嵐",
+      "de": "Sandsturm",
+      "fr": "Tempêtes de sable"
+    }
+  },
+  "13": {
+    "name": {
+      "en": "Hot Spells",
+      "ja": "熱波",
+      "de": "Heiß",
+      "fr": "Chaud"
+    }
+  },
+  "14": {
+    "name": {
+      "en": "Heat Waves",
+      "ja": "灼熱波",
+      "de": "Gluthitze",
+      "fr": "Torride"
+    }
+  },
+  "15": {
+    "name": {
+      "en": "Snow",
+      "ja": "雪",
+      "de": "Schnee",
+      "fr": "Neige"
+    }
+  },
+  "16": {
+    "name": {
+      "en": "Blizzards",
+      "ja": "吹雪",
+      "de": "Schneesturm",
+      "fr": "Blizzard"
+    }
+  },
+  "17": {
+    "name": {
+      "en": "Gloom",
+      "ja": "妖霧",
+      "de": "Unheimlich",
+      "fr": "Nébuleux"
+    }
+  },
+  "18": {
+    "name": {
+      "en": "Auroras",
+      "ja": "オーロラ",
+      "de": "Aurora",
+      "fr": "Aurore"
+    }
+  },
+  "19": {
+    "name": {
+      "en": "Darkness",
+      "ja": "闇",
+      "de": "Dunkel",
+      "fr": "Ténèbres"
+    }
+  },
+  "20": {
+    "name": {
+      "en": "Tension",
+      "ja": "闘気",
+      "de": "Düsternis",
+      "fr": "Désespérance"
+    }
+  },
+  "21": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "22": {
+    "name": {
+      "en": "Storm Clouds",
+      "ja": "雷雲",
+      "de": "Wetterleuchten",
+      "fr": "Orageux"
+    }
+  },
+  "23": {
+    "name": {
+      "en": "Rough Seas",
+      "ja": "時化",
+      "de": "Tosend",
+      "fr": "Houle"
+    }
+  },
+  "24": {
+    "name": {
+      "en": "Rough Seas",
+      "ja": "時化",
+      "de": "Tosend",
+      "fr": "Houle"
+    }
+  },
+  "25": {
+    "name": {
+      "en": "Louring",
+      "ja": "曇天",
+      "de": "Finster",
+      "fr": "Nuageux"
+    }
+  },
+  "26": {
+    "name": {
+      "en": "Heat Waves",
+      "ja": "灼熱波",
+      "de": "Gluthitze",
+      "fr": "Torride"
+    }
+  },
+  "27": {
+    "name": {
+      "en": "Gloom",
+      "ja": "妖霧",
+      "de": "Unheimlich",
+      "fr": "Nébuleux"
+    }
+  },
+  "28": {
+    "name": {
+      "en": "Gales",
+      "ja": "暴風",
+      "de": "Stürmisch",
+      "fr": "Vents violents"
+    }
+  },
+  "29": {
+    "name": {
+      "en": "Eruptions",
+      "ja": "噴煙",
+      "de": "Rauchschwaden",
+      "fr": "Éruptions"
+    }
+  },
+  "30": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "31": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "32": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "33": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "34": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "35": {
+    "name": {
+      "en": "Irradiance",
+      "ja": "極光",
+      "de": "Blendend",
+      "fr": "Rayonnement"
+    }
+  },
+  "36": {
+    "name": {
+      "en": "Core Radiation",
+      "ja": "龍核",
+      "de": "Kernstrahlung",
+      "fr": "Radiations du Cœur"
+    }
+  },
+  "37": {
+    "name": {
+      "en": "Core Radiation",
+      "ja": "龍核",
+      "de": "Kernstrahlung",
+      "fr": "Radiations du Cœur"
+    }
+  },
+  "38": {
+    "name": {
+      "en": "Core Radiation",
+      "ja": "龍核",
+      "de": "Kernstrahlung",
+      "fr": "Radiations du Cœur"
+    }
+  },
+  "39": {
+    "name": {
+      "en": "Core Radiation",
+      "ja": "龍核",
+      "de": "Kernstrahlung",
+      "fr": "Radiations du Cœur"
+    }
+  },
+  "40": {
+    "name": {
+      "en": "Shelf Clouds",
+      "ja": "群雲",
+      "de": "Wolkenschleier",
+      "fr": "Amas nuageux"
+    }
+  },
+  "41": {
+    "name": {
+      "en": "Shelf Clouds",
+      "ja": "群雲",
+      "de": "Wolkenschleier",
+      "fr": "Amas nuageux"
+    }
+  },
+  "42": {
+    "name": {
+      "en": "Shelf Clouds",
+      "ja": "群雲",
+      "de": "Wolkenschleier",
+      "fr": "Amas nuageux"
+    }
+  },
+  "43": {
+    "name": {
+      "en": "Shelf Clouds",
+      "ja": "群雲",
+      "de": "Wolkenschleier",
+      "fr": "Amas nuageux"
+    }
+  },
+  "44": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Bedrückend",
+      "fr": "Oppression"
+    }
+  },
+  "45": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Bedrückend",
+      "fr": "Oppression"
+    }
+  },
+  "46": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Bedrückend",
+      "fr": "Oppression"
+    }
+  },
+  "47": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Bedrückend",
+      "fr": "Oppression"
+    }
+  },
+  "48": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Bedrückend",
+      "fr": "Oppression"
+    }
+  },
+  "49": {
+    "name": {
+      "en": "Umbral Wind",
+      "ja": "霊風",
+      "de": "Schattenwind",
+      "fr": "Vent ombral"
+    }
+  },
+  "50": {
+    "name": {
+      "en": "Umbral Static",
+      "ja": "放電",
+      "de": "Schattengewitter",
+      "fr": "Charges ombrales"
+    }
+  },
+  "51": {
+    "name": {
+      "en": "Smoke",
+      "ja": "煙霧",
+      "de": "Qualm",
+      "fr": "Fumées"
+    }
+  },
+  "52": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "53": {
+    "name": {
+      "en": "Royal Levin",
+      "ja": "獣雷",
+      "de": "Königsgewitter",
+      "fr": "Éclairs royaux"
+    }
+  },
+  "54": {
+    "name": {
+      "en": "Hyperelectricity",
+      "ja": "雷波",
+      "de": "Hochspannung",
+      "fr": "Hyperélectricité"
+    }
+  },
+  "55": {
+    "name": {
+      "en": "Royal Levin",
+      "ja": "獣雷",
+      "de": "Königsgewitter",
+      "fr": "Éclairs royaux"
+    }
+  },
+  "56": {
+    "name": {
+      "en": "Oppression",
+      "ja": "神意",
+      "de": "Numinos",
+      "fr": "Oppression"
+    }
+  },
+  "57": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "58": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "59": {
+    "name": {
+      "en": "CutScene",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "60": {
+    "name": {
+      "en": "Multiplicity",
+      "ja": "神秘",
+      "de": "Mystisch",
+      "fr": "Multiplicité"
+    }
+  },
+  "61": {
+    "name": {
+      "en": "Multiplicity",
+      "ja": "神秘",
+      "de": "Mystisch",
+      "fr": "Multiplicité"
+    }
+  },
+  "62": {
+    "name": {
+      "en": "Rain",
+      "ja": "雨",
+      "de": "Regnerisch",
+      "fr": "Pluie"
+    }
+  },
+  "63": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "64": {
+    "name": {
+      "en": "Rain",
+      "ja": "雨",
+      "de": "Regnerisch",
+      "fr": "Pluie"
+    }
+  },
+  "65": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "66": {
+    "name": {
+      "en": "Dragonstorms",
+      "ja": "邪天",
+      "de": "Hass",
+      "fr": "Tempête de haine"
+    }
+  },
+  "67": {
+    "name": {
+      "en": "Dragonstorms",
+      "ja": "邪天",
+      "de": "Hass",
+      "fr": "Tempête de haine"
+    }
+  },
+  "68": {
+    "name": {
+      "en": "Subterrain",
+      "ja": "晴れ",
+      "de": "Unterirdisch",
+      "fr": "Souterrain"
+    }
+  },
+  "69": {
+    "name": {
+      "en": "Concordance",
+      "ja": "調和",
+      "de": "Gerechtigkeit",
+      "fr": "Harmonie"
+    }
+  },
+  "70": {
+    "name": {
+      "en": "Concordance",
+      "ja": "調和",
+      "de": "Gerechtigkeit",
+      "fr": "Harmonie"
+    }
+  },
+  "71": {
+    "name": {
+      "en": "Beyond Time",
+      "ja": "時流",
+      "de": "Zeitfluss",
+      "fr": "Hors du temps"
+    }
+  },
+  "72": {
+    "name": {
+      "en": "Beyond Time",
+      "ja": "時流",
+      "de": "Zeitfluss",
+      "fr": "Hors du temps"
+    }
+  },
+  "73": {
+    "name": {
+      "en": "Beyond Time",
+      "ja": "時流",
+      "de": "Zeitfluss",
+      "fr": "Hors du temps"
+    }
+  },
+  "74": {
+    "name": {
+      "en": "Demonic Infinity",
+      "ja": "鬼気",
+      "de": "Dämonisch unendlich",
+      "fr": "Infini démoniaque"
+    }
+  },
+  "75": {
+    "name": {
+      "en": "Demonic Infinity",
+      "ja": "鬼気",
+      "de": "Dämonisch unendlich",
+      "fr": "Infini démoniaque"
+    }
+  },
+  "76": {
+    "name": {
+      "en": "Demonic Infinity",
+      "ja": "鬼気",
+      "de": "Dämonisch unendlich",
+      "fr": "Infini démoniaque"
+    }
+  },
+  "77": {
+    "name": {
+      "en": "Dimensional Disruption",
+      "ja": "次元",
+      "de": "Dimensionsspaltend",
+      "fr": "Perturbation dimensionnelle"
+    }
+  },
+  "78": {
+    "name": {
+      "en": "Dimensional Disruption",
+      "ja": "次元",
+      "de": "Dimensionsspaltend",
+      "fr": "Perturbation dimensionnelle"
+    }
+  },
+  "79": {
+    "name": {
+      "en": "Dimensional Disruption",
+      "ja": "次元",
+      "de": "Dimensionsspaltend",
+      "fr": "Perturbation dimensionnelle"
+    }
+  },
+  "80": {
+    "name": {
+      "en": "Revelstorms",
+      "ja": "嵐天",
+      "de": "Feiersturm",
+      "fr": "Tempête festive"
+    }
+  },
+  "81": {
+    "name": {
+      "en": "Revelstorms",
+      "ja": "嵐天",
+      "de": "Feiersturm",
+      "fr": "Tempête festive"
+    }
+  },
+  "82": {
+    "name": {
+      "en": "Eternal Bliss",
+      "ja": "美天",
+      "de": "Ewigschön",
+      "fr": "Béatitude éternelle"
+    }
+  },
+  "83": {
+    "name": {
+      "en": "Eternal Bliss",
+      "ja": "美天",
+      "de": "Ewigschön",
+      "fr": "Béatitude éternelle"
+    }
+  },
+  "84": {
+    "name": {
+      "en": "Wyrmstorms",
+      "ja": "龍天",
+      "de": "Drachensturm",
+      "fr": "Tempête draconique"
+    }
+  },
+  "85": {
+    "name": {
+      "en": "Wyrmstorms",
+      "ja": "龍天",
+      "de": "Drachensturm",
+      "fr": "Tempête draconique"
+    }
+  },
+  "86": {
+    "name": {
+      "en": "Revelstorms",
+      "ja": "嵐天",
+      "de": "Feiersturm",
+      "fr": "Tempête festive"
+    }
+  },
+  "87": {
+    "name": {
+      "en": "Quicklevin",
+      "ja": "迅雷",
+      "de": "Blitzsturm",
+      "fr": "Vif-orage"
+    }
+  },
+  "88": {
+    "name": {
+      "en": "Thunder",
+      "ja": "雷",
+      "de": "Gewittrig",
+      "fr": "Orages"
+    }
+  },
+  "89": {
+    "name": {
+      "en": "Dimensional Disruption",
+      "ja": "次元",
+      "de": "Dimensionsspaltend",
+      "fr": "Perturbation dimensionnelle"
+    }
+  },
+  "90": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "91": {
+    "name": {
+      "en": "Clear Skies",
+      "ja": "快晴",
+      "de": "Klar",
+      "fr": "Dégagé"
+    }
+  },
+  "92": {
+    "name": {
+      "en": "White Cyclones",
+      "ja": "白嵐",
+      "de": "Weißer Zyklon",
+      "fr": "Tempête blanche"
+    }
+  },
+  "93": {
+    "name": {
+      "en": "White Cyclones",
+      "ja": "白嵐",
+      "de": "Weißer Zyklon",
+      "fr": "Tempête blanche"
+    }
+  },
+  "94": {
+    "name": {
+      "en": "White Cyclones",
+      "ja": "白嵐",
+      "de": "Weißer Zyklon",
+      "fr": "Tempête blanche"
+    }
+  },
+  "95": {
+    "name": {
+      "en": "Ultimania",
+      "ja": "幻想",
+      "de": "Ultimativ",
+      "fr": "Fantasmagorique"
+    }
+  },
+  "96": {
+    "name": {
+      "en": "White Cyclones",
+      "ja": "白嵐",
+      "de": "Weißer Zyklon",
+      "fr": "Tempête blanche"
+    }
+  },
+  "97": {
+    "name": {
+      "en": "Moonlight",
+      "ja": "月夜",
+      "de": "Dunkle Mondnacht",
+      "fr": "Clair de lune"
+    }
+  },
+  "98": {
+    "name": {
+      "en": "Moonlight",
+      "ja": "月夜",
+      "de": "Dunkle Mondnacht",
+      "fr": "Clair de lune"
+    }
+  },
+  "99": {
+    "name": {
+      "en": "Moonlight",
+      "ja": "月夜",
+      "de": "Dunkle Mondnacht",
+      "fr": "Clair de lune"
+    }
+  },
+  "100": {
+    "name": {
+      "en": "Moonlight",
+      "ja": "月夜",
+      "de": "Dunkle Mondnacht",
+      "fr": "Clair de lune"
+    }
+  },
+  "101": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "紅月下",
+      "de": "Roter Mond",
+      "fr": "Lune rouge"
+    }
+  },
+  "102": {
+    "name": {
+      "en": "Scarlet",
+      "ja": "朱炎",
+      "de": "Rotlodernd",
+      "fr": "Vermillon"
+    }
+  },
+  "103": {
+    "name": {
+      "en": "Scarlet",
+      "ja": "朱炎",
+      "de": "Rotlodernd",
+      "fr": "Vermillon"
+    }
+  },
+  "104": {
+    "name": {
+      "en": "Scarlet",
+      "ja": "朱炎",
+      "de": "Rotlodernd",
+      "fr": "Vermillon"
+    }
+  },
+  "105": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "106": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "107": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "108": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "109": {
+    "name": {
+      "en": "Flames",
+      "ja": "火炎",
+      "de": "Feuer",
+      "fr": "Flammes"
+    }
+  },
+  "110": {
+    "name": {
+      "en": "Tsunamis",
+      "ja": "津波",
+      "de": "Tsunami",
+      "fr": "Raz-de-marée"
+    }
+  },
+  "111": {
+    "name": {
+      "en": "Cyclones",
+      "ja": "竜巻",
+      "de": "Tornado",
+      "fr": "Tornade"
+    }
+  },
+  "112": {
+    "name": {
+      "en": "Geostorms",
+      "ja": "地震",
+      "de": "Erdbeben",
+      "fr": "Séisme"
+    }
+  },
+  "113": {
+    "name": {
+      "en": "True Blue",
+      "ja": "青春",
+      "de": "Blauschimmernd",
+      "fr": "Azur"
+    }
+  },
+  "114": {
+    "name": {
+      "en": "True Blue",
+      "ja": "青春",
+      "de": "Blauschimmernd",
+      "fr": "Azur"
+    }
+  },
+  "115": {
+    "name": {
+      "en": "True Blue",
+      "ja": "青春",
+      "de": "Blauschimmernd",
+      "fr": "Azur"
+    }
+  },
+  "116": {
+    "name": {
+      "en": "Umbral Turbulence",
+      "ja": "乱霊流",
+      "de": "Astrale Turbulenzen",
+      "fr": "Turbulences ombrales"
+    }
+  },
+  "117": {
+    "name": {
+      "en": "True Blue",
+      "ja": "青春",
+      "de": "Blauschimmernd",
+      "fr": "Azur"
+    }
+  },
+  "118": {
+    "name": {
+      "en": "Everlasting Light",
+      "ja": "無尽光",
+      "de": "Ewiges Licht",
+      "fr": "Clarté éternelle"
+    }
+  },
+  "119": {
+    "name": {
+      "en": "Gales",
+      "ja": "暴風",
+      "de": "Stürmisch",
+      "fr": "Vents violents"
+    }
+  },
+  "120": {
+    "name": {
+      "en": "Termination",
+      "ja": "終末",
+      "de": "Apokalyptisch",
+      "fr": "Apocalypse"
+    }
+  },
+  "121": {
+    "name": {
+      "en": "Termination",
+      "ja": "終末",
+      "de": "Apokalyptisch",
+      "fr": "Apocalypse"
+    }
+  },
+  "122": {
+    "name": {
+      "en": "Dreams",
+      "ja": "妖夢",
+      "de": "Feenträume",
+      "fr": "Rêverie"
+    }
+  },
+  "123": {
+    "name": {
+      "en": "Dreams",
+      "ja": "妖夢",
+      "de": "Feenträume",
+      "fr": "Rêverie"
+    }
+  },
+  "124": {
+    "name": {
+      "en": "Dreams",
+      "ja": "妖夢",
+      "de": "Feenträume",
+      "fr": "Rêverie"
+    }
+  },
+  "125": {
+    "name": {
+      "en": "Brilliance",
+      "ja": "光天",
+      "de": "Strahlende Glanzhaftigkeit",
+      "fr": "Radiance divine"
+    }
+  },
+  "126": {
+    "name": {
+      "en": "Brilliance",
+      "ja": "光天",
+      "de": "Strahlende Glanzhaftigkeit",
+      "fr": "Radiance divine"
+    }
+  },
+  "127": {
+    "name": {
+      "en": "Termination",
+      "ja": "終末",
+      "de": "Apokalyptisch",
+      "fr": "Apocalypse"
+    }
+  },
+  "128": {
+    "name": {
+      "en": "Termination",
+      "ja": "終末",
+      "de": "Apokalyptisch",
+      "fr": "Apocalypse"
+    }
+  },
+  "129": {
+    "name": {
+      "en": "Everlasting Light",
+      "ja": "無尽光",
+      "de": "Ewiges Licht",
+      "fr": "Clarté éternelle"
+    }
+  },
+  "130": {
+    "name": {
+      "en": "Eruptions",
+      "ja": "噴煙",
+      "de": "Rauchschwaden",
+      "fr": "Éruptions"
+    }
+  },
+  "131": {
+    "name": {
+      "en": "Termination",
+      "ja": "終末",
+      "de": "Apokalyptisch",
+      "fr": "Apocalypse"
+    }
+  },
+  "132": {
+    "name": {
+      "en": "Fair Skies",
+      "ja": "晴れ",
+      "de": "Heiter",
+      "fr": "Clair"
+    }
+  },
+  "133": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "134": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "135": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "136": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "137": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "138": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "139": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "140": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "141": {
+    "name": {
+      "en": "Irradiance",
+      "ja": "極光",
+      "de": "Blendend",
+      "fr": "Rayonnement"
+    }
+  },
+  "142": {
+    "name": {
+      "en": "Irradiance",
+      "ja": "極光",
+      "de": "Blendend",
+      "fr": "Rayonnement"
+    }
+  },
+  "143": {
+    "name": {
+      "en": "Storm Clouds",
+      "ja": "雷雲",
+      "de": "Wetterleuchten",
+      "fr": "Orageux"
+    }
+  },
+  "144": {
+    "name": {
+      "en": "Firestorm",
+      "ja": "焔嵐 ",
+      "de": "Flammensturm",
+      "fr": "Tempête de feu"
+    }
+  },
+  "145": {
+    "name": {
+      "en": "Spectral Current",
+      "ja": "幻海流 ",
+      "de": "Phantomströmung",
+      "fr": "Courant spectral"
+    }
+  },
+  "146": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  }
+}

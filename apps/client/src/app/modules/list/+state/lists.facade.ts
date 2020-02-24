@@ -21,7 +21,8 @@ import {
   UnPinList,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndex,
+  LoadArchivedLists, PureUpdateList
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -206,6 +207,10 @@ export class ListsFacade {
     });
   }
 
+  loadArchivedLists(): void {
+    this.store.dispatch(new LoadArchivedLists());
+  }
+
   newList(): Observable<List> {
     return this.dialog.create({
       nzContent: NameQuestionPopupComponent,
@@ -262,6 +267,10 @@ export class ListsFacade {
 
   updateList(list: List, updateCompact = false, force = false): void {
     this.store.dispatch(new UpdateList(list, updateCompact, force));
+  }
+
+  pureUpdateList($key: string, data: Partial<List>): void {
+    this.store.dispatch(new PureUpdateList($key, data));
   }
 
   loadTeamLists(teamId: string): void {
