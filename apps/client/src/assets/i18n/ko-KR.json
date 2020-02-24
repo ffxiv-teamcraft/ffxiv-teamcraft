@@ -346,7 +346,7 @@
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
-    "Region": "Region",
+    "Region": "지역",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
@@ -422,9 +422,9 @@
       "Other": "기타"
     },
     "REGIONS": {
-      "Global": "Global",
-      "CN": "China",
-      "KR": "Korea"
+      "Global": "글로벌섭",
+      "CN": "중국서버",
+      "KR": "한국서버"
     }
   },
   "PROFILE": {
@@ -1681,9 +1681,9 @@
     "Outdated_description": "현재 게임버젼에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
     "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Button_label": "지역 변경"
   },
   "INVENTORY": {
     "Title": "소지품",
