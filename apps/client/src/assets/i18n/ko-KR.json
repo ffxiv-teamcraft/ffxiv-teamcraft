@@ -1682,7 +1682,7 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
+    "Banner_description": "지역을 알맞게 변경하시면 데이터베이스, 시뮬레이터, 패킷 캡쳐 등의 기능을 좀 더 편리하게 사용하실 수 있습니다.",
     "Button_label": "지역 변경"
   },
   "INVENTORY": {
@@ -1745,7 +1745,7 @@
     "generate_list": "목록 생성",
     "Content": "세부 내용",
     "Stat_name": "능력치",
-    "Current_value": "Current",
+    "Current_value": "현재",
     "Cap_value": "금단 최대치",
     "Add_materia": "마테리아 추가",
     "No_materia": "마테리아 없음",
@@ -1785,9 +1785,9 @@
     "Please_input_lodestone_id": "Lodestone ID를 입력하세요",
     "Paste_lodestone_id": "Lodestone ID 붙여넣기",
     "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
+    "Optimize_materias": "마테리아 순서 최적화",
     "No_trades_needed": "No trades needed",
-    "Stats_caps": "Stats caps",
+    "Stats_caps": "능력치",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
