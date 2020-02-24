@@ -1745,7 +1745,7 @@
     "generate_list": "生成清单",
     "Content": "内容",
     "Stat_name": "属性",
-    "Current_value": "当前值",
+    "Current_value": "Current",
     "Cap_value": "上限",
     "Add_materia": "添加魔晶石",
     "No_materia": "无魔晶石",
@@ -1787,6 +1787,7 @@
     "Currency": "货币",
     "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
