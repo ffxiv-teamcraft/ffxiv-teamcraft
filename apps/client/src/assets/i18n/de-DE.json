@@ -1745,7 +1745,7 @@
     "generate_list": "Liste erstellen",
     "Content": "Inhalt",
     "Stat_name": "Attribut",
-    "Current_value": "Momentaner Wert",
+    "Current_value": "Current",
     "Cap_value": "Obergrenze",
     "Add_materia": "Materia hinzufügen",
     "No_materia": "Keine Materia",
@@ -1787,6 +1787,7 @@
     "Currency": "Währung",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
+    "Stats_caps": "Stats caps",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
