@@ -1,8 +1,9 @@
 import { Injectable, Optional } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
+import { map, startWith } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ import { Region } from './region.enum';
 export class SettingsService {
 
   public regionChange$ = new Subject<{ previous: Region, next: Region }>();
+  public region$: Observable<Region>;
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
@@ -22,6 +24,7 @@ export class SettingsService {
         localStorage.setItem('settings', JSON.stringify(this.cache));
       });
     }
+    this.region$ = this.regionChange$.pipe(map(change => change.next), startWith(this.region));
   }
 
   public get availableLocales(): string[] {
