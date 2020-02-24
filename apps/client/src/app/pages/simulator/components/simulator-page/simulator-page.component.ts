@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Craft } from '../../../../model/garland-tools/craft';
 import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
@@ -10,6 +9,8 @@ import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { hwdSupplies } from '../../../../core/data/sources/hwd-supplies';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { Craft } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-simulator-page',
@@ -28,7 +29,7 @@ export class SimulatorPageComponent extends SeoPageComponent {
 
   constructor(private route: ActivatedRoute, private dataService: DataService,
               private rotationsFacade: RotationsFacade, private router: Router,
-              protected seo: SeoService) {
+              protected seo: SeoService, private lazyData: LazyDataService) {
     super(seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
@@ -92,12 +93,12 @@ export class SimulatorPageComponent extends SeoPageComponent {
     this.recipe$ = this.route.paramMap.pipe(
       switchMap(params => {
         return this.item$.pipe(
-          map(item => {
+          switchMap(item => {
             if (params.get('recipeId') === null && item.craft.length > 0) {
               this.router.navigate([item.craft[0].id], { relativeTo: this.route });
-              return item.craft.find(c => c.id.toString() === params.get('recipeId'));
+              return this.lazyData.getRecipe(params.get('recipeId'));
             }
-            return item.craft.find(c => c.id.toString() === params.get('recipeId')) || item.craft[0];
+            return this.lazyData.getRecipe(params.get('recipeId'));
           })
         );
       }),

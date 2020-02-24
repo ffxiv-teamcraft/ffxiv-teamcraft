@@ -6,9 +6,12 @@ import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
+import { SettingsService } from '../../modules/settings/settings.service';
+import { Craft } from '@ffxiv-teamcraft/simulator';
+import { Region } from '../../modules/settings/region.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -55,12 +58,32 @@ export class LazyDataService {
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
-              private platformService: PlatformService) {
+              private platformService: PlatformService, private settings: SettingsService) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
     } else {
       this.load();
     }
+  }
+
+  public getRecipe(id: string): Observable<Craft> {
+    return this.settings.regionChange$.pipe(
+      map(change => change.next),
+      startWith(this.settings.region),
+      map(region => {
+        // TODO load proper file based on region.
+        switch (region) {
+          case Region.China:
+            return this.data.recipes;
+          case Region.Korea:
+            return this.data.recipes;
+          default:
+            return this.data.recipes;
+        }
+      }),
+      map(recipes => recipes.find(r => r.id.toString() === id.toString()))
+    );
+
   }
 
   public get allItems(): any {

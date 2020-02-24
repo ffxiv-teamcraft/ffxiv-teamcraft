@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
@@ -14,12 +14,14 @@ export class SettingsService {
   public settingsChange$ = new Subject<void>();
   private cache: { [id: string]: string };
 
-  constructor(private ipc: IpcService) {
+  constructor(@Optional() private ipc: IpcService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};
-    this.ipc.on('update-settings', (e, settings) => {
-      this.cache = settings;
-      localStorage.setItem('settings', JSON.stringify(this.cache));
-    });
+    if (this.ipc) {
+      this.ipc.on('update-settings', (e, settings) => {
+        this.cache = settings;
+        localStorage.setItem('settings', JSON.stringify(this.cache));
+      });
+    }
   }
 
   public get availableLocales(): string[] {
@@ -128,7 +130,7 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
-  public get sidebarState(): {[index:string]:boolean} {
+  public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,
       sharing: true,
@@ -138,7 +140,7 @@ export class SettingsService {
     })));
   }
 
-  public set sidebarState(state: {[index:string]:boolean}) {
+  public set sidebarState(state: { [index: string]: boolean }) {
     this.setSetting('sidebar-state', JSON.stringify(state));
   }
 
