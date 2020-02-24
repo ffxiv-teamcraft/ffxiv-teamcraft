@@ -1,20 +1,7 @@
 <div fxLayout="column">
-  <table *ngIf="caps">
-    <thead>
-    <tr>
-      <th>{{'GEARSETS.Stat_name' | translate}}</th>
-      <th>{{'GEARSETS.Current_value' | translate}}</th>
-      <th>{{'GEARSETS.Cap_value' | translate}}</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let row of caps" [class.capped]="row[1] === row[2]">
-      <td><b>{{row[0] | baseParamName | i18n}}</b></td>
-      <td>{{row[1]}}</td>
-      <td>{{row[2]}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <app-item-caps-table [job]="job" [equipmentPiece]="equipmentPiece"></app-item-caps-table>
+  </div>
   <nz-divider></nz-divider>
   <div fxLayout="column" class="materia-row" fxLayoutGap="10px">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" *ngFor="let materia of equipmentPiece.materias; let i = index">

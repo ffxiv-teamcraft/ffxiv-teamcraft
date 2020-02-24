@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -291,7 +291,7 @@ export class AppComponent implements OnInit {
             break;
           case 'zh':
             suggestedRegion = Region.China;
-            break
+            break;
           default:
             suggestedRegion = Region.Global;
             break;
@@ -476,11 +476,28 @@ export class AppComponent implements OnInit {
     }
   }
 
+  hexToRgbA(hex: string, opacity: number) {
+    let c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+      c = hex.substring(1).split('');
+      if (c.length === 3) {
+        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
+      }
+      c = '0x' + c.join('');
+      return `rgba(${[(c >> 16) & 255, (c >> 8) & 255, c & 255].join(',')},${opacity})`;
+    }
+    throw new Error('Bad Hex');
+  }
+
   private applyTheme(theme: Theme): void {
     if (theme !== undefined) {
       document.documentElement.style.setProperty('--background-color', theme.background);
       document.documentElement.style.setProperty('--primary-color', theme.primary);
+      document.documentElement.style.setProperty('--primary-color-50', this.hexToRgbA(theme.primary, 0.50));
+      document.documentElement.style.setProperty('--primary-color-25', this.hexToRgbA(theme.primary, 0.25));
       document.documentElement.style.setProperty('--highlight-color', theme.highlight);
+      document.documentElement.style.setProperty('--highlight-color-50', this.hexToRgbA(theme.highlight, 0.50));
+      document.documentElement.style.setProperty('--highlight-color-25', this.hexToRgbA(theme.highlight, 0.25));
       document.documentElement.style.setProperty('--text-color', theme.text);
       document.documentElement.style.setProperty('--topbar-color', theme.topbar);
       document.documentElement.style.setProperty('--sider-trigger-color', theme.trigger);

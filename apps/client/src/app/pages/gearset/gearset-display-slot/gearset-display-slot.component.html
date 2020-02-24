@@ -13,6 +13,12 @@
       <ng-container *ngIf="equipmentPiece; else emptySlotName">
         <div>{{equipmentPiece.itemId | itemName | i18n}}</div>
         <img *ngIf="equipmentPiece.hq" alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
+        <ng-template #caps>
+          <app-item-caps-table [job]="gearset.job" [equipmentPiece]="equipmentPiece"></app-item-caps-table>
+        </ng-template>
+        <i nz-icon nzType="file-search" nzTheme="outline" nz-popover [nzTitle]="'GEARSETS.Stats_caps' | translate" [nzContent]="caps"
+           *ngIf="equipmentPiece.materias[0] > 0">
+        </i>
       </ng-container>
       <ng-template #emptySlotName>{{'GEARSETS.Empty_slot' | translate}}</ng-template>
     </div>

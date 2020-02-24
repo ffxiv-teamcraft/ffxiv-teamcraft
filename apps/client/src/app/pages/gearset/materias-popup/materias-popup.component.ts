@@ -29,8 +29,6 @@ export class MateriasPopupComponent implements OnInit {
 
   mobileEdit: number;
 
-  public caps: number[][] = [];
-
   constructor(private lazyData: LazyDataService, public materiasService: MateriaService,
               private modalRef: NzModalRef, private statsService: StatsService) {
   }
@@ -47,7 +45,6 @@ export class MateriasPopupComponent implements OnInit {
     for (let i = index; i < this.equipmentPiece.materias.length; i++) {
       this.setMateria(i, 0);
     }
-    this.caps = this.getMaxValuesTable();
   }
 
   apply(): void {
@@ -115,39 +112,13 @@ export class MateriasPopupComponent implements OnInit {
         })
       ]
     };
-    this.caps = this.getMaxValuesTable();
   }
 
   cancel(): void {
     this.modalRef.close(null);
   }
 
-  getMaxValuesTable(): number[][] {
-    return this.statsService.getRelevantBaseStats(this.job)
-      .map(baseParamId => {
-        return [
-          baseParamId,
-          this.materiasService.getTotalStat(this.getStartingValue(this.equipmentPiece, baseParamId), this.equipmentPiece, baseParamId),
-          this.materiasService.getItemCapForStat(this.equipmentPiece.itemId, baseParamId)
-        ];
-      });
-  }
-
-  private getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): number {
-    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
-    const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
-    if (matchingStat) {
-      if (equipmentPiece.hq) {
-        return matchingStat.HQ;
-      } else {
-        return matchingStat.NQ;
-      }
-    }
-    return 0;
-  }
-
   ngOnInit(): void {
-    this.caps = this.getMaxValuesTable();
     const relevantBaseParamsIds = this.statsService.getRelevantBaseStats(this.job);
     this.materiaMenu = this.lazyData.data.materias
       .filter(materia => relevantBaseParamsIds.indexOf(materia.baseParamId) > -1)
