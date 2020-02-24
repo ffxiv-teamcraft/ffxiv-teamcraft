@@ -802,9 +802,9 @@
   "101": {
     "name": {
       "en": "Fair Skies",
-      "ja": "晴れ",
-      "de": "Heiter",
-      "fr": "Clair"
+      "ja": "紅月下",
+      "de": "Roter Mond",
+      "fr": "Lune rouge"
     }
   },
   "102": {
@@ -1053,6 +1053,118 @@
       "ja": "晴れ",
       "de": "Heiter",
       "fr": "Clair"
+    }
+  },
+  "133": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "134": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "135": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "136": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "137": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "138": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    }
+  },
+  "139": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "140": {
+    "name": {
+      "en": "Clouds",
+      "ja": "曇り",
+      "de": "Wolkig",
+      "fr": "Couvert"
+    }
+  },
+  "141": {
+    "name": {
+      "en": "Irradiance",
+      "ja": "極光",
+      "de": "Blendend",
+      "fr": "Rayonnement"
+    }
+  },
+  "142": {
+    "name": {
+      "en": "Irradiance",
+      "ja": "極光",
+      "de": "Blendend",
+      "fr": "Rayonnement"
+    }
+  },
+  "143": {
+    "name": {
+      "en": "Storm Clouds",
+      "ja": "雷雲",
+      "de": "Wetterleuchten",
+      "fr": "Orageux"
+    }
+  },
+  "144": {
+    "name": {
+      "en": "Firestorm",
+      "ja": "焔嵐 ",
+      "de": "Flammensturm",
+      "fr": "Tempête de feu"
+    }
+  },
+  "145": {
+    "name": {
+      "en": "Spectral Current",
+      "ja": "幻海流 ",
+      "de": "Phantomströmung",
+      "fr": "Courant spectral"
+    }
+  },
+  "146": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
     }
   }
 }

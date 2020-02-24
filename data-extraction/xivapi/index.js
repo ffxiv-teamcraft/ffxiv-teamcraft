@@ -32,7 +32,7 @@ let todo = [
   'gatheringLog',
   'map',
   'craftingLog',
-  'weather',
+  'weather-rate',
   'fishingLog',
   'itemIcons',
   'spearFishingLog',
@@ -763,7 +763,6 @@ if (hasTodo('weather-rate')) {
 
 
 if (hasTodo('weathers')) {
-  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
   const weathers = {};
   getAllPages('https://xivapi.com/Weather?columns=ID,Name_*').subscribe(page => {
     page.Results.forEach(weather => {
