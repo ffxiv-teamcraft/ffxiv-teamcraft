@@ -714,7 +714,7 @@ if (hasTodo('spearFishingLog')) {
 }
 
 
-if (hasTodo('weather')) {
+if (hasTodo('weather-rate')) {
 // Weather index extraction
   const weatherIndexes = [];
 
@@ -757,7 +757,28 @@ if (hasTodo('weather')) {
       weatherIndexData[weatherIndex.ID] = entry;
     });
     persistToTypescript('weather-index', 'weatherIndex', weatherIndexData);
-    done('weather');
+    done('weather-rate');
+  });
+}
+
+
+if (hasTodo('weathers')) {
+  process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+  const weathers = {};
+  getAllPages('https://xivapi.com/Weather?columns=ID,Name_*').subscribe(page => {
+    page.Results.forEach(weather => {
+      weathers[weather.ID] = {
+        name: {
+          en: weather.Name_en,
+          ja: weather.Name_ja,
+          de: weather.Name_de,
+          fr: weather.Name_fr
+        }
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('weathers', weathers);
+    done('weathers');
   });
 }
 
@@ -1893,6 +1914,10 @@ if (hasTodo('tribes')) {
       delete entry.NameFemale_ja;
       delete entry.Patch;
       delete entry.Url;
+      const VIT = entry.DEX;
+      const DEX = entry.VIT;
+      entry.VIT = VIT;
+      entry.DEX = DEX;
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);
