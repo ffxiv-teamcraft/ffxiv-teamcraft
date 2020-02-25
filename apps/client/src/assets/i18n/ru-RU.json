@@ -1392,6 +1392,8 @@
       "Weather_chances": "Шансы на появление каждой погоды",
       "Bait": "Рыболовная приманка",
       "Refresh_data": "Обновить данные",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "Легкий",
         "Medium": "Средний",
@@ -1755,6 +1757,7 @@
     "Filters": "Фильтры",
     "Total_stats": "Всего статы",
     "Total_materias_needed": "Всего материй",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Материя",
     "Amount_needed": "Количество",
     "Modal_editor": "Материи для {{itemName}}",

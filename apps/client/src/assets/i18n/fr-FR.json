@@ -96,8 +96,8 @@
   "No_favorites": "Aucun favori",
   "Ephemeral_list": "Cette liste sera supprimée une fois complétée",
   "Ephemeral_tag": "Éphémère",
-  "Archived_list": "Archived list (not loaded by default)",
-  "Archived_tag": "Archived",
+  "Archived_list": "Liste archivée (non chargée par défaut)",
+  "Archived_tag": "Archivée",
   "Remove_ephemeral": "Changer en liste permanente",
   "Quick_list_create": "Créer une liste rapide (supprimée une fois complétée)",
   "Tag_filter": "Tags",
@@ -346,8 +346,8 @@
     "Title": "Options",
     "General": "Général",
     "Link_base": "Liens des objets",
-    "Region": "Region",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Region": "Région",
+    "Region_explain": "La source de données et les fonctions basées sur une version spécifique du jeu seront ajustées par région. Certaines d'entre elles peuvent ne pas être disponibles dans certaines régions.",
     "Theme": "Thème",
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
@@ -422,9 +422,9 @@
       "Other": "Autre"
     },
     "REGIONS": {
-      "Global": "Global",
-      "CN": "China",
-      "KR": "Korea"
+      "Global": "Mondial",
+      "CN": "Chine",
+      "KR": "Corée"
     }
   },
   "PROFILE": {
@@ -492,8 +492,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "Archiver",
+    "Unarchive": "Désarchiver",
     "Regenerate": "Mettre la liste à jour vers la dernière version de Teamcraft",
     "Rename": "Renommer la liste",
     "Copied_x_times": "Copiée {{count}} fois",
@@ -543,7 +543,7 @@
       "Delete": "Supprimer la liste",
       "Clear": "Vider la liste",
       "Reset": "Réinitialiser la liste",
-      "Archive": "Archive the list",
+      "Archive": "Archiver la liste",
       "Nothing": "Rien"
     },
     "BUTTONS": {
@@ -976,7 +976,7 @@
       "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",
@@ -1392,6 +1392,8 @@
       "Weather_chances": "Chances pour chaque météo d'apparaître",
       "Bait": "Appât",
       "Refresh_data": "Actualiser les données",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "Légère",
         "Medium": "Normale",
@@ -1643,7 +1645,7 @@
   },
   "ERRORS": {
     "Http_request_error": "Il y a un problème avec {{tool}}, veuillez vérifier le salon #announcements sur discord ou signaler le soucis dans le salon #bugs",
-    "Firebase_blocked": "Teamcraft n'a pas pu atteindre la base de données, il semble que quelque chose le bloque ou vous n'avez pas accès à Internet."
+    "Firebase_blocked": "Teamcraft n'a pas réussi à se connecter à la base de données, il semble que quelque chose ne fonctionne pas ou vous n'avez pas accès à internet."
   },
   "SEARCH": {
     "Sort_by": "Trier par: ",
@@ -1678,13 +1680,13 @@
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
     "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette popup se fermera une fois que ce sera effectué.",
-    "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
+    "Outdated": "La capture de paquets ne fonctionne pas",
+    "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_title": "Suggérer un changement de région à {{region}}",
+    "Banner_description": "Vous pouvez changer la région dans laquelle vous jouez pour une meilleure expérience de la base de données, du simulateur, de la capture de paquets, etc.",
+    "Button_label": "Changer la région"
   },
   "INVENTORY": {
     "Title": "Inventaire",
@@ -1728,10 +1730,10 @@
       "Threshold_amount": "Seuil minimum"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Title": "Les ensembles d'objets HQ peuvent être baissés de qualité",
+      "Message": "Combiner avec la pile NQ dans : {{containers}}",
+      "Filter": "Afficher uniquement les matérias jusqu'à : ",
+      "Placeholder": "Choisir une extension"
     }
   },
   "VERSION_LOCK": {
@@ -1746,7 +1748,7 @@
     "generate_list": "Générer une liste",
     "Content": "Contenu",
     "Stat_name": "Stat",
-    "Current_value": "Current",
+    "Current_value": "En cours",
     "Cap_value": "Max.",
     "Add_materia": "Ajouter une matéria",
     "No_materia": "Aucune matéria",
@@ -1755,6 +1757,7 @@
     "Filters": "Filtres",
     "Total_stats": "Stats totales",
     "Total_materias_needed": "Total des matérias requises",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
     "Modal_editor": "Matérias pour {{itemName}}",
@@ -1780,15 +1783,15 @@
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
     "Update_from_pcap": "Mettre à jour en utilisant la capture de paquets",
-    "Copy_as_text": "Copy this gearset as text",
-    "Include_all_tools": "Include tools for the other jobs too",
-    "Use_in_simulator": "Use these stats in the simulator",
-    "Please_input_lodestone_id": "Please input lodestone id",
-    "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
-    "No_trades_needed": "No trades needed",
-    "Stats_caps": "Stats caps",
+    "Copy_as_text": "Copier cet ensemble d'équipements sous forme de texte",
+    "Include_all_tools": "Inclure aussi les outils des autres jobs",
+    "Use_in_simulator": "Utiliser ces statistiques dans le simulateur",
+    "Please_input_lodestone_id": "Veuillez saisir l'ID lodestone",
+    "Paste_lodestone_id": "Coller l'ID lodestone",
+    "Currency": "Devise",
+    "Optimize_materias": "Optimiser l'ordre des matérias",
+    "No_trades_needed": "Aucun échange nécessaire",
+    "Stats_caps": "Max stats",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
