@@ -37,7 +37,6 @@ import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { CraftingAction } from '@ffxiv-teamcraft/simulator';
 import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
@@ -447,21 +446,26 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.saveItem(item);
   }
 
-  openCommentsPopup(list: List, isAuthor: boolean, item: ListRow): void {
-    this.modal.create({
-      nzTitle: `${this.i18n.getName(this.l12n.getItem(item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
-      nzFooter: null,
-      nzContent: CommentsPopupComponent,
-      nzComponentParams: {
-        targetType: CommentTargetType.LIST,
-        targetId: list.$key,
-        targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
-        isAuthor: isAuthor,
-        notificationFactory: (comment) => {
-          return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
-        }
-      }
-    }).afterClose.subscribe(() => {
+  openCommentsPopup(isAuthor: boolean, item: ListRow): void {
+    this.listsFacade.selectedList$.pipe(
+      first(),
+      switchMap(list => {
+        return this.modal.create({
+          nzTitle: `${this.i18n.getName(this.l12n.getItem(item.id))} - ${this.translate.instant('COMMENTS.Title')}`,
+          nzFooter: null,
+          nzContent: CommentsPopupComponent,
+          nzComponentParams: {
+            targetType: CommentTargetType.LIST,
+            targetId: list.$key,
+            targetDetails: `${this.finalItem ? 'finalItems' : 'items'}:${item.id}`,
+            isAuthor: isAuthor,
+            notificationFactory: (comment) => {
+              return new ListItemCommentNotification(list.$key, item.id, comment.content, list.name, list.authorId);
+            }
+          }
+        }).afterClose;
+      })
+    ).subscribe(() => {
       this.commentBadgeReloader$.next(null);
     });
   }
