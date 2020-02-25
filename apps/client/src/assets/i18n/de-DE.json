@@ -1395,9 +1395,9 @@
       "Bite_times": "Bite times",
       "All_baits": "No bait filter",
       "TUG": {
-        "Light": "Leicht",
-        "Medium": "Mittel",
-        "Big": "Groß"
+        "Light": "Light (!)",
+        "Medium": "Medium (!!)",
+        "Big": "Big (!!!)"
       },
       "OVERLAY": {
         "Open": "Meldungsoverlay öffnen",
