@@ -60,7 +60,7 @@
             [masterbooks]="item.masterbooks"
             (attachRotation)="attachRotation(item)"
             (detachRotation)="detachRotation(item)"
-            (openCommentsPopup)="openCommentsPopup(list, list.authorId === userId, item)"
+            (openCommentsPopup)="openCommentsPopup(list.authorId === userId, item)"
             (checkMasterbooks)="checkMasterbooks($event)"
             (openMarketboardDialog)="openMarketboardDialog(item)"
             (addAllAlarms)="addAllAlarms(item)"
