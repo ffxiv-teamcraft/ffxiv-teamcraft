@@ -135,6 +135,7 @@ export interface LazyData {
   zhQuestDescriptions: any;
   zhQuests: any;
   zhRaces: any;
+  zhRecipes: any;
   zhShops: any;
   zhStatusDescriptions: any;
   zhStatuses: any;
