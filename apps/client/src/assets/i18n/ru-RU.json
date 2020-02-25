@@ -1757,6 +1757,7 @@
     "Filters": "Фильтры",
     "Total_stats": "Всего статы",
     "Total_materias_needed": "Всего материй",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Материя",
     "Amount_needed": "Количество",
     "Modal_editor": "Материи для {{itemName}}",
