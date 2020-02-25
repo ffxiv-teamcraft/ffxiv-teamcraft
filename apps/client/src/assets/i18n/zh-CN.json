@@ -1757,6 +1757,7 @@
     "Filters": "筛选",
     "Total_stats": "总属性",
     "Total_materias_needed": "共需要魔晶石",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
     "Modal_editor": "{{itemName}} 的魔晶石",
