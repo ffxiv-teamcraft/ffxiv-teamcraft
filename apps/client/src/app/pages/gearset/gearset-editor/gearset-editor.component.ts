@@ -71,8 +71,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
       const highestIlvl = Math.max(...ilvls);
       let didChange = false;
       if (!this.appliedFiltersFromGearset) {
-        this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
-        this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+        if (lowestIlvl !== Infinity) {
+          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+        }
         didChange = true;
         this.appliedFiltersFromGearset = true;
       } else {
