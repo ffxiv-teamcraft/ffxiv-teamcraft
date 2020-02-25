@@ -1392,6 +1392,8 @@
       "Weather_chances": "Chances pour chaque météo d'apparaître",
       "Bait": "Appât",
       "Refresh_data": "Actualiser les données",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "Légère",
         "Medium": "Normale",
