@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "CP不足",
       "MISSING_LEVEL_REQUIREMENT": "レベル不足",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
-      "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用"
+      "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",

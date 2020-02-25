@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "Pas assez de PS",
       "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
-      "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé"
+      "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Si vous souhaitez ajouter de la qualité sur votre rotation, elle se doit d'intégrer Calme Intérieur afin d'ajouter un bonus non négligeable et de pouvoir utiliser des actions comme la Bénédiction de Byregot.",

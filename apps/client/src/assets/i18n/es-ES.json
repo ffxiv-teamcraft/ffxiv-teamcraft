@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "CP Insuficiente",
       "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
       "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
-      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
+      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
