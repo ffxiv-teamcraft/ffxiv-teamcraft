@@ -160,7 +160,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
           });
         const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
         const biteTimeBaits = Object.keys(groupedBaits).map(key => +key);
-          Object.entries<any>(groupedBaits)
+        Object.entries<any>(groupedBaits)
           .forEach(([baitId, baitRow]) => {
             biteTimeGraphs[+baitId] = spot.customData.fishes
               .filter(fish => fish > 0)
@@ -177,7 +177,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
                     })
                 };
               });
-          })
+          });
         return {
           weathers: weatherIndex[spot.TerritoryType.WeatherRate]
             .map(row => {
