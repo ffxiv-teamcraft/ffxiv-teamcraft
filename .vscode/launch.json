@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   // Use IntelliSense to learn about possible attributes.
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
@@ -12,3 +13,31 @@
     "webRoot": "${workspaceFolder}/apps/client"
   }]
 }
+=======
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "electron",
+      "request": "launch",
+      "name": "Launch example",
+      "cwd": "${workspaceFolder}",
+      "appDir": "C:/Development/VSCodeProjects/CollabProjects/ffxiv-teamcraft/node_modules/electron-find/example2/main.js",
+      "sourceMaps": true,
+      "breakOnLoad": true
+    },
+    {
+      "name": "Debug Main Process",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+      },
+      "args" : ["."],
+      "outputCapture": "std"
+    }
+  ]
+}
+>>>>>>> feat: IDE settings
