@@ -1395,9 +1395,9 @@
       "Bite_times": "Bite times",
       "All_baits": "No bait filter",
       "TUG": {
-        "Light": "Легкий",
-        "Medium": "Средний",
-        "Big": "Большой"
+        "Light": "Light (!)",
+        "Medium": "Medium (!!)",
+        "Big": "Big (!!!)"
       },
       "OVERLAY": {
         "Open": "Открыть оверлей отчета о рыбалке",
