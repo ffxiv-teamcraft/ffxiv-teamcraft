@@ -1757,6 +1757,7 @@
     "Filters": "Filters",
     "Total_stats": "Total stats",
     "Total_materias_needed": "Total materias needed",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Amount",
     "Modal_editor": "Materias for {{itemName}}",
