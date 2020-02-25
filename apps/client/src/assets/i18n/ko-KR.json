@@ -1757,6 +1757,7 @@
     "Filters": "필터",
     "Total_stats": "최종 능력치",
     "Total_materias_needed": "총 필요한 마테리아 수",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
     "Modal_editor": "{{itemName}}",
