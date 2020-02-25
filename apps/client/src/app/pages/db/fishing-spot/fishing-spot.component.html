@@ -21,7 +21,7 @@
       <div fxFlex="1 1 auto">
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="spot.PlaceName | xivapiL12n: 'places'"></app-i18n-display>
+                        [value]="spot.PlaceName | xivapiL12n: 'places'"></app-i18n-display>
     </div>
 
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
@@ -142,7 +142,7 @@
 
           <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_weather' | translate" class="card-with-list expanded">
             <ng-template #weatherSider let-weather>
-              <img [src]="weather | weatherIcon" alt="">
+              <img [src]="weather | weatherIcon" alt="" nz-tooltip [nzTitle]="weather | weatherName | i18n">
             </ng-template>
             <ng-container *ngTemplateOutlet="dataGrid; context:{$implicit: data.fishesPerWeather, siderTpl: weatherSider}"></ng-container>
           </nz-card>
@@ -169,7 +169,7 @@
             </thead>
             <tbody class="grid-body">
             <tr *ngFor="let row of grid.data;let i = index">
-              <td class="grid-cell grid-sider" nz-tooltip [nzTitle]="grid.siders[i] | weatherName | i18n">
+              <td class="grid-cell grid-sider">
                 <ng-container *ngTemplateOutlet="siderTpl;context:{$implicit: grid.siders[i]}"></ng-container>
               </td>
               <td *ngFor="let cell of row; let headerIndex = index; let last = last" class="grid-cell"
@@ -185,6 +185,29 @@
             </tbody>
           </table>
         </ng-template>
+
+        <nz-card [nzTitle]="'DB.FISH.Bite_times' | translate" [nzExtra]="baitSelector">
+          <ng-template #baitSelector>
+            <nz-select [(ngModel)]="selectedBait" nzShowSearch>
+              <nz-option [nzValue]="0" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
+              <nz-option *ngFor="let bait of data.biteTimesPerBait.baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
+            </nz-select>
+          </ng-template>
+          <div [style.height]="'400px'">
+            <ngx-charts-area-chart-stacked
+              [gradient]="true"
+              [xAxis]="true"
+              [yAxis]="true"
+              [legend]="true"
+              [showXAxisLabel]="false"
+              [showYAxisLabel]="false"
+              [activeEntries]="activeEntries$ | async"
+              [results]="data.biteTimesPerBait.graphs[selectedBait]"
+              (activate)="onChartHover($event, spot)"
+              (deactivate)="highlightedFish$.next(-1)"
+            ></ngx-charts-area-chart-stacked>
+          </div>
+        </nz-card>
       </div>
 
     </app-page-loader>
