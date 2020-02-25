@@ -1395,9 +1395,9 @@
       "Bite_times": "Bite times",
       "All_baits": "No bait filter",
       "TUG": {
-        "Light": "소형",
-        "Medium": "중형",
-        "Big": "대형"
+        "Light": "Light (!)",
+        "Medium": "Medium (!!)",
+        "Big": "Big (!!!)"
       },
       "OVERLAY": {
         "Open": "낚시 보고용 오버레이 열기",

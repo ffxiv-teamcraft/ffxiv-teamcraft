@@ -1395,9 +1395,9 @@
       "Bite_times": "Bite times",
       "All_baits": "No bait filter",
       "TUG": {
-        "Light": "Liviano",
-        "Medium": "Mediano",
-        "Big": "Grande"
+        "Light": "Light (!)",
+        "Medium": "Medium (!!)",
+        "Big": "Big (!!!)"
       },
       "OVERLAY": {
         "Open": "Abrir capa sobrepuesta de reporte de pesca",
