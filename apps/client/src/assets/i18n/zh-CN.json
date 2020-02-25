@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "制作力不足",
       "MISSING_LEVEL_REQUIREMENT": "等级不够",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
-      "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能"
+      "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "如果你的目标是制作HQ成品，那么几乎所有手法都要包括内静。内静能够提供很大的品质增益，并触发“比尔格的祝福”等技能。",
