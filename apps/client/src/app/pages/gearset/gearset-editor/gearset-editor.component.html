@@ -113,7 +113,7 @@
             </div>
           </nz-option>
         </nz-select>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
+        <div fxLayout="row" fxLayoutAlign="flex-start bottom" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
           <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150" nzSize="small">
             <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
               <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
@@ -136,4 +136,3 @@
     </div>
   </ng-container>
 </ng-container>
-

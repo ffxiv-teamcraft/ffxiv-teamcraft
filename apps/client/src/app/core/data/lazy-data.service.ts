@@ -74,7 +74,7 @@ export class LazyDataService {
         // TODO load proper file based on region.
         switch (region) {
           case Region.China:
-            return this.data.recipes;
+            return this.data.zhRecipes;
           case Region.Korea:
             return this.data.koRecipes;
           default:

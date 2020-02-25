@@ -19,8 +19,8 @@ import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { Apollo } from 'apollo-angular';
 import { WeatherService } from '../../../core/eorzea/weather.service';
 import { NzModalService } from 'ng-zorro-antd';
-import { MarketboardPopupComponent } from '../../../modules/marketboard/marketboard-popup/marketboard-popup.component';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
+import { groupBy } from 'lodash';
 
 @Component({
   selector: 'app-fishing-spot',
@@ -57,6 +57,8 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       ];
     })
   );
+
+  selectedBait = 0;
 
   constructor(private route: ActivatedRoute, private xivapi: XivapiService,
               private gt: DataService, private l12n: LocalizedDataService,
@@ -140,6 +142,42 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       }),
       map(([spot, gubalData, time]) => {
         const hours = Array.from(Array(24).keys());
+        const biteTimeGraphs: { [index: number]: any[] } = {};
+        biteTimeGraphs[0] = spot.customData.fishes
+          .filter(fish => fish > 0)
+          .map(fish => {
+            return {
+              name: this.i18n.getName(this.l12n.getItem(fish)),
+              series: Object.keys(groupBy(gubalData.data.bite_time_per_fish_per_spot, 'biteTime'))
+                .map(biteTime => {
+                  const row = gubalData.data.bite_time_per_fish_per_spot.find(r => r.itemId === fish && r.biteTime === +biteTime);
+                  return {
+                    name: biteTime,
+                    value: row ? row.occurences : 0
+                  };
+                })
+            };
+          });
+        const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
+        const biteTimeBaits = Object.keys(groupedBaits).map(key => +key);
+        Object.entries<any>(groupedBaits)
+          .forEach(([baitId, baitRow]) => {
+            biteTimeGraphs[+baitId] = spot.customData.fishes
+              .filter(fish => fish > 0)
+              .map(fish => {
+                return {
+                  name: this.i18n.getName(this.l12n.getItem(fish)),
+                  series: Object.keys(groupBy(baitRow, 'biteTime'))
+                    .map(biteTime => {
+                      const row = gubalData.data.bite_time_per_fish_per_spot.find(r => r.itemId === fish && r.biteTime === +biteTime);
+                      return {
+                        name: biteTime,
+                        value: row ? row.occurences : 0
+                      };
+                    })
+                };
+              });
+          });
         return {
           weathers: weatherIndex[spot.TerritoryType.WeatherRate]
             .map(row => {
@@ -203,6 +241,10 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
                 };
               })
           },
+          biteTimesPerBait: {
+            baits: [0, ...biteTimeBaits],
+            graphs: biteTimeGraphs
+          },
           fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
           fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
             return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
@@ -259,10 +301,16 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               occurences,
               itemId
             }
-            bite_time_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
+            bite_time_per_fish_per_spot(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
               biteTime,
               occurences,
               itemId
+            }
+            bite_time_per_fish_per_spot_per_bait(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
+              biteTime,
+              occurences,
+              itemId,
+              baitId
             }
             weathers_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
               weatherId,

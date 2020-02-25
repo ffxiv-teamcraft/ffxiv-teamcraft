@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "Nicht genug HP",
       "MISSING_LEVEL_REQUIREMENT": "Du hast die erforderliche Stufe nicht erreicht",
       "NOT_SPECIALIST": "Spezialist-Rotation, aber du bist kein Spezialist",
-      "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben"
+      "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
@@ -1391,6 +1392,8 @@
       "Weather_chances": "Wahrscheinlichkeiten für jedes Wetter",
       "Bait": "Fischköder",
       "Refresh_data": "Daten aktualisieren",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "Leicht",
         "Medium": "Mittel",
@@ -1754,6 +1757,7 @@
     "Filters": "Filter",
     "Total_stats": "Gesamt",
     "Total_materias_needed": "Gesamtzahl an benötigter Materia",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
     "Modal_editor": "Materia für {{itemName}}",

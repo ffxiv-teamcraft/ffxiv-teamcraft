@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "CP Insuficiente",
       "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel requerido",
       "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
-      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado"
+      "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
@@ -1391,6 +1392,8 @@
       "Weather_chances": "Probabilidades para que cada clima aparezca",
       "Bait": "Cebo de pezca",
       "Refresh_data": "Actualizar datos",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "Liviano",
         "Medium": "Mediano",
@@ -1754,6 +1757,7 @@
     "Filters": "Filtros",
     "Total_stats": "Atributos totales",
     "Total_materias_needed": "Materias totales necesarias",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Cantidad",
     "Modal_editor": "Materias para {{itemName}}",

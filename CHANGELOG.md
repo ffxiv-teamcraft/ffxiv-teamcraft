@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.7"></a>
+## [7.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.6...v7.0.7) (2020-02-25)
+
+
+### Bug Fixes
+
+* **db:** fixed broken weather names ([e2304d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2304d2))
+* **db:** fixed wrong HQ ingredients quality ([76e2a65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76e2a65))
+* **desktop:** fixed an issue with auto updater not restarting properly ([6a64695](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a64695))
+* **fishing:** added !, !! and !!! for tug names ([da03dec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da03dec))
+* **gearsets:** fixed an issue preventing new gearsets creation ([2828ffe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2828ffe))
+* **gearsets:** fixed display and missing translation label ([4cb55d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cb55d6))
+* **layout:** fixed an issue with "mark as HQ" button not showing up ([82307e2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82307e2))
+* **simulator:** Add SIMULATOR.FAIL_CAUSE.MISSING_STATS.REQUIREMENT ([#1390](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1390)) ([7797006](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7797006))
+
+
+### Features
+
+* **db:** added new bite time graph in spots pages ([1ee3d53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ee3d53)), closes [#1389](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1389)
+* **db:** added new bite time graph in spots pages ([c0c41e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c0c41e9)), closes [#1389](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1389)
+* **db:** update data for CN 5.11 ([1541687](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1541687))
+* **desktop:** add packet capture for china 5.11 update ([b486599](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b486599))
+
+
+
 <a name="7.0.6"></a>
 ## [7.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.5...v7.0.6) (2020-02-24)
 

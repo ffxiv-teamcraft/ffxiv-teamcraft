@@ -96,8 +96,8 @@
   "No_favorites": "즐겨찾기 없음",
   "Ephemeral_list": "완료 시 삭제 예정",
   "Ephemeral_tag": "간이 목록",
-  "Archived_list": "Archived list (not loaded by default)",
-  "Archived_tag": "Archived",
+  "Archived_list": "보관된 목록(자동으로 불러오지 않습니다)",
+  "Archived_tag": "보관됨",
   "Remove_ephemeral": "간이 목록을 일반 목록으로 변경",
   "Quick_list_create": "간이 목록 생성 (완료시 삭제)",
   "Tag_filter": "태그",
@@ -346,8 +346,8 @@
     "Title": "설정",
     "General": "일반",
     "Link_base": "아이템 링크",
-    "Region": "Region",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Region": "지역",
+    "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -422,9 +422,9 @@
       "Other": "기타"
     },
     "REGIONS": {
-      "Global": "Global",
-      "CN": "China",
-      "KR": "Korea"
+      "Global": "글로벌섭",
+      "CN": "중국서버",
+      "KR": "한국서버"
     }
   },
   "PROFILE": {
@@ -492,8 +492,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "보관하기",
+    "Unarchive": "보관 취소",
     "Regenerate": "최신 Teamcraft 버전으로 목록 갱신",
     "Rename": "목록 이름 바꾸기",
     "Copied_x_times": "{{count}}번 복사됨",
@@ -543,7 +543,7 @@
       "Delete": "목록 삭제",
       "Clear": "목록 비우기",
       "Reset": "목록 초기화",
-      "Archive": "Archive the list",
+      "Archive": "목록이 보관됨",
       "Nothing": "없음"
     },
     "BUTTONS": {
@@ -593,7 +593,7 @@
     "Autofill_notification_body": "{{listName}} 목록의 {{itemName}} 작업이 완료되었습니다",
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
-    "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -791,7 +791,7 @@
   },
   "SIMULATOR": {
     "Title": "제작 시뮬레이터",
-    "Include_stats": "Include stats",
+    "Include_stats": "능력치 포함",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -975,7 +975,8 @@
       "NOT_ENOUGH_CP": "CP부족",
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
-      "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함"
+      "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
+      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
@@ -1391,6 +1392,8 @@
       "Weather_chances": "각 날씨별 나올수 있는 확률",
       "Bait": "미끼",
       "Refresh_data": "새로고침",
+      "Bite_times": "Bite times",
+      "All_baits": "No bait filter",
       "TUG": {
         "Light": "소형",
         "Medium": "중형",
@@ -1681,9 +1684,9 @@
     "Outdated_description": "현재 게임버젼에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
+    "Banner_description": "지역을 알맞게 변경하시면 데이터베이스, 시뮬레이터, 패킷 캡쳐 등의 기능을 좀 더 편리하게 사용하실 수 있습니다.",
+    "Button_label": "지역 변경"
   },
   "INVENTORY": {
     "Title": "소지품",
@@ -1727,10 +1730,10 @@
       "Threshold_amount": "기준이 되는 수량"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Title": "품질하향을 이용하여 정리할 수 있는 HQ아이템",
+      "Message": "NQ재료와 합치기: {{containers}}",
+      "Filter": "해당 버젼 재료만 표시: ",
+      "Placeholder": "게임 버젼 선택"
     }
   },
   "VERSION_LOCK": {
@@ -1745,7 +1748,7 @@
     "generate_list": "목록 생성",
     "Content": "세부 내용",
     "Stat_name": "능력치",
-    "Current_value": "Current",
+    "Current_value": "현재",
     "Cap_value": "금단 최대치",
     "Add_materia": "마테리아 추가",
     "No_materia": "마테리아 없음",
@@ -1754,11 +1757,12 @@
     "Filters": "필터",
     "Total_stats": "최종 능력치",
     "Total_materias_needed": "총 필요한 마테리아 수",
+    "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Job_cannot_be_changed": "생성 후 변경할 수 없습니다",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
@@ -1784,10 +1788,10 @@
     "Use_in_simulator": "해당 능력치를 시뮬레이터에서 사용하기",
     "Please_input_lodestone_id": "Lodestone ID를 입력하세요",
     "Paste_lodestone_id": "Lodestone ID 붙여넣기",
-    "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
-    "No_trades_needed": "No trades needed",
-    "Stats_caps": "Stats caps",
+    "Currency": "화폐",
+    "Optimize_materias": "마테리아 순서 최적화",
+    "No_trades_needed": "교환으로 얻는 장비가 없습니다",
+    "Stats_caps": "능력치",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
