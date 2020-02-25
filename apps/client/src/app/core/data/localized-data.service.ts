@@ -114,7 +114,7 @@ export class LocalizedDataService {
   public getTrait(id: number): Trait {
     const row = this.getRowWithExtendedLanguage<Trait>('traits', id);
     if (row && row.description) {
-      this.tryFillExtendedLanguage(row.description, id, { zhKey: 'zhTraitDescriptions', koKey: 'koTraitDescriptions' })
+      this.tryFillExtendedLanguage(row.description, id, { zhKey: 'zhTraitDescriptions', koKey: 'koTraitDescriptions' });
     }
 
     return row;
@@ -157,7 +157,9 @@ export class LocalizedDataService {
   }
 
   public getWeather(id: number): I18nName {
-    return this.getRowWithExtendedLanguage('weathers', id);
+    const row = this.getRow<{ name: I18nName }>(this.lazyData.data.weathers, id).name;
+    this.tryFillExtendedLanguage(row, id, { zhKey: 'zhWeathers', koKey: 'koWeathers' });
+    return row;
   }
 
   public getWeatherId(name: string): number {
@@ -309,7 +311,7 @@ export class LocalizedDataService {
       en: value[`${fieldName}_en`],
       fr: value[`${fieldName}_fr`],
       de: value[`${fieldName}_de`],
-      ja: value[`${fieldName}_ja`],
+      ja: value[`${fieldName}_ja`]
     };
 
     if (key !== null) {

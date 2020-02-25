@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.6"></a>
+## [7.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.5...v7.0.6) (2020-02-24)
+
+
+### Bug Fixes
+
+* **app:** fix Korea region enum to KR ([63963a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63963a6))
+* **db:** added missing node positions ([8b8a29b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b8a29b))
+* **desktop:** fixed retainers tracking for KR/CN players ([e7f25d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e7f25d0))
+* **gearsets:** default min ilvl is now 430 for DoH/DoL sets ([a05865b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a05865b))
+* **gearsets:** fixed an issue with materias being applied to two gearsets at once ([3673f58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3673f58))
+* **inventory-optimizer:** ignore ingame gearsets for optimizations ([e752230](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e752230))
+* **inventory-optimizer:** ignore mails container ([5e708d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5e708d0))
+* **list:** removed Goetia tomestones from trade source icons ([ae8be0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae8be0a))
+* **simulator:** adding missing buff icon for veneration ([c467130](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c467130))
+* **tooltip:** fix action description & error on removed actions ([af7eff2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af7eff2))
+
+
+### Features
+
+* **app:** change pcapOutdated detection to region ([d013ee7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d013ee7))
+* **core:** change simulation condition from lang to region ([f5a2620](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5a2620))
+* **core:** simulator switcher ([36c8805](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36c8805))
+* **data:** added data swapping for korean recipes and simulator ([ecd0533](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ecd0533))
+* **gearsets:** added a quick item cap popover icon next to each melded item ([f72f2ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f72f2ce))
+* **gearsets:** change filter when first opening a gearset to show gearset pieces easily ([31ba344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31ba344))
+* **inventory:** new inventory optimizer: consolidate stacks ([a3c430a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a3c430a))
+* **layout:** add region suggestion alert ([a80c9e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a80c9e8))
+* **lists:** you can now archive lists, which makes them not load by default ([f869b6f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f869b6f))
+* **machina:** add region param to machina ([593ab4f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/593ab4f))
+* **settings:** add region setting ([c486675](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c486675))
+
+
+
 <a name="7.0.5"></a>
 ## [7.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.4...v7.0.5) (2020-02-21)
 

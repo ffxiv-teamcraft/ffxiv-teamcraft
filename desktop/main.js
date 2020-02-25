@@ -154,8 +154,7 @@ autoUpdater.on('update-downloaded', () => {
   }).then(result => {
     if (result.response === 0) {
       app.isQuitting = true;
-      app.relaunch();
-      app.quit();
+      autoUpdater.quitAndInstall();
     }
   });
 });

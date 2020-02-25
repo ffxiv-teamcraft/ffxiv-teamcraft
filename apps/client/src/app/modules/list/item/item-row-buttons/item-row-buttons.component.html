@@ -150,7 +150,7 @@
 
   <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ)">
     <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
-            *ngIf="permissionLevel >= 30 && requiredForFinalCraft === 0 && requiredAsHQ"
+            *ngIf="permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ"
             [nzTitle]="'Mark_HQ' | translate"
             nz-button
             nz-tooltip
@@ -159,7 +159,7 @@
     </button>
 
     <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
-            *ngIf="(requiredForFinalCraft >= 0 || requiredAsHQ) && permissionLevel >= 30"
+            *ngIf="(requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30"
             [nzTitle]="'Unmark_HQ' | translate" nz-button
             nz-tooltip
             nzShape="circle"
