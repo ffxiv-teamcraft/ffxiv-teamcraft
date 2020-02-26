@@ -1702,6 +1702,7 @@
     "Reset_inventory": "所持品の初期化",
     "Clean_all": "全所持品の初期化",
     "Search_for_an_item": "所持状況を確認",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "チョコボかばん",
       "FC_chest": "カンパニーチェスト",
