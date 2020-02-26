@@ -401,6 +401,7 @@
     "Performance_mode_explain": "성능 향상을 위해 아이템의 아이콘과 메뉴를 제거(버튼만 남게됨) 합니다",
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
-    "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다"
+    "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
