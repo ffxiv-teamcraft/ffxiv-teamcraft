@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
     "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données",
-    "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur"
+    "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
