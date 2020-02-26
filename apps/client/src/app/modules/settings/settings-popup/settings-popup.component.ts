@@ -27,7 +27,7 @@ export class SettingsPopupComponent {
   selectedTab = 0;
 
   availableLanguages = this.settings.availableLocales;
-  
+
   availableRegions = this.settings.availableRegions;
 
   loggedIn$ = this.authFacade.loggedIn$;
@@ -45,6 +45,8 @@ export class SettingsPopupComponent {
   startMinimized = false;
 
   alwaysQuit = true;
+
+  noShortcut = false;
 
   customTheme: Theme;
 
@@ -108,7 +110,11 @@ export class SettingsPopupComponent {
     this.ipc.once('always-quit:value', (event, value) => {
       this.alwaysQuit = value;
     });
+    this.ipc.once('no-shortcut:value', (event, value) => {
+      this.noShortcut = value;
+    });
     this.ipc.send('always-on-top:get');
+    this.ipc.send('no-shortcut:get');
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('always-quit:get');
@@ -117,6 +123,10 @@ export class SettingsPopupComponent {
 
   alwaysOnTopChange(value: boolean): void {
     this.ipc.send('always-on-top', value);
+  }
+
+  noShortcutChange(value: boolean): void {
+    this.ipc.send('no-shortcut', value);
   }
 
   startMinimizedChange(value: boolean): void {

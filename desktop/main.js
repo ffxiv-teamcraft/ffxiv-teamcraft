@@ -46,7 +46,9 @@ function handleSquirrelEvent() {
       //   explorer context menus
 
       // Install desktop and start menu shortcuts
-      spawnUpdate(['--createShortcut', exeName]);
+      if (!config.get('setup:noShortcut')) {
+        spawnUpdate(['--createShortcut', exeName]);
+      }
 
       setTimeout(app.quit, 1000);
       return true;
@@ -526,6 +528,14 @@ ipcMain.on('always-on-top', (event, onTop) => {
 
 ipcMain.on('always-on-top:get', (event) => {
   event.sender.send('always-on-top:value', config.get('win:alwaysOnTop'));
+});
+
+ipcMain.on('no-shortcut', (event, noShortcut) => {
+  config.set('setup:noShortcut', noShortcut);
+});
+
+ipcMain.on('no-shortcut:get', (event) => {
+  event.sender.send('always-on-top:value', config.get('setup:noShortcut') || false);
 });
 
 ipcMain.on('always-quit', (event, flag) => {

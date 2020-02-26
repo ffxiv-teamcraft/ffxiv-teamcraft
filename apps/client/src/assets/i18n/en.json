@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "Change_email": "Change email",
     "Change_email_success": "Email changed",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
