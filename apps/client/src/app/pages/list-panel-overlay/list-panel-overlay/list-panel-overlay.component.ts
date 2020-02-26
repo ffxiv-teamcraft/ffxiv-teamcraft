@@ -3,7 +3,8 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import { ReplaySubject, combineLatest } from 'rxjs';
+import { combineLatest, ReplaySubject } from 'rxjs';
+import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 
 @Component({
   selector: 'app-list-panel-overlay',
@@ -45,6 +46,10 @@ export class ListPanelOverlayComponent {
       this.listsFacade.select(state.lists.selectedId);
       this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
     });
+  }
+
+  trackByPanel(index: number, panel: LayoutRowDisplay): string {
+    return panel.title;
   }
 
 }
