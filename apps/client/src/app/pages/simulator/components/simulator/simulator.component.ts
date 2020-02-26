@@ -43,12 +43,12 @@ import { SettingsService } from '../../../../modules/settings/settings.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SimulationSharePopupComponent } from '../simulation-share-popup/simulation-share-popup.component';
-import { 
+import {
   ActionResult,
-  CraftingJob,
   CrafterLevels,
   CrafterStats,
   CraftingAction,
+  CraftingJob,
   EffectiveBuff,
   GearSet,
   Simulation,
@@ -325,7 +325,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   changeRotation(): void {
-    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, null, true, this.custom);
+    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
   }
 
   getCraftOptExportString(): string {

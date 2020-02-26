@@ -89,17 +89,7 @@ export class ItemSourcesDisplayComponent {
   }
 
   public openSimulator(recipeId: string, item: ListRow, entry: CraftedBy): void {
-    const craft: Partial<Craft> = {
-      id: recipeId,
-      job: entry.job,
-      lvl: entry.lvl,
-      stars: entry.stars_tooltip.length,
-      rlvl: entry.rlvl,
-      durability: entry.durability,
-      progress: entry.progression,
-      quality: entry.quality
-    };
-    this.rotationPicker.openInSimulator(item.id, recipeId, craft);
+    this.rotationPicker.openInSimulator(item.id, recipeId);
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {

@@ -71,7 +71,6 @@ export class LazyDataService {
       map(change => change.next),
       startWith(this.settings.region),
       map(region => {
-        // TODO load proper file based on region.
         switch (region) {
           case Region.China:
             return this.data.zhRecipes;
