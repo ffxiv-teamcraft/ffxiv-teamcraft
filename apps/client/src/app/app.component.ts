@@ -140,7 +140,8 @@ export class AppComponent implements OnInit {
         'Log_tracker',
         'Desktop_app_overlay',
         'Start_desktop_before_game',
-        'Middle_click_share_button'
+        'Middle_click_share_button',
+        'Quick_search'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
