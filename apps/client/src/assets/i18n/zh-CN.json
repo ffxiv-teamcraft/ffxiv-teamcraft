@@ -401,6 +401,7 @@
     "Performance_mode_explain": "移除列表中的物品图标和菜单（仅保留按钮）以降低浏览器及应用的压力。",
     "Change_email": "修改电子邮箱",
     "Change_email_success": "电子邮箱已更改",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "请验证您的角色，以确认是否有权访问共享到部队的清单",
     "Regenerate_all": "重新生成所有清单",
     "Regenerated_all": "您的清单已经是最新的了",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "您可以在笔记追踪页面中追踪您的采集、生产、捕鱼等笔记进度。",
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。",
     "Start_desktop_before_game": "记得在启动游戏前启动 TeamCraft，以确保数据准确性",
-    "Middle_click_share_button": "在桌面应用中，可以使用鼠标中键点击顶栏的分享按钮，在浏览器中打开当前页面"
+    "Middle_click_share_button": "在桌面应用中，可以使用鼠标中键点击顶栏的分享按钮，在浏览器中打开当前页面",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "配方检索器",
