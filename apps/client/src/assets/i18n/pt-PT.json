@@ -1702,6 +1702,7 @@
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
     "Search_for_an_item": "Search for an item",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
