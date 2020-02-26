@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "Change_email": "Change email",
     "Change_email_success": "Email changed",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "フリーカンパニーにシェアされたリストを確認するためには、あなたのキャラクターを認証してください",
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。",
     "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
+    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "レシピ検索",
