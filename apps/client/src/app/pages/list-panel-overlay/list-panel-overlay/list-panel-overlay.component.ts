@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { combineLatest, ReplaySubject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 
@@ -37,12 +37,9 @@ export class ListPanelOverlayComponent {
     this.ipc.mainWindowState$.pipe(
       filter(state => {
         return state.lists && state.lists.selectedId && state.layouts;
-      }),
-      distinctUntilChanged((a, b) => {
-        return a.lists.selectedId === b.lists.selectedId && a.layouts.selectedKey === b.layouts.selectedKey;
       })
     ).subscribe((state) => {
-      this.listsFacade.load(state.lists.selectedId);
+      this.listsFacade.overlayListsLoaded(state.lists.listDetails);
       this.listsFacade.select(state.lists.selectedId);
       this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
     });

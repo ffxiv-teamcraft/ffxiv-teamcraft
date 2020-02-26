@@ -7,6 +7,8 @@ import { listsQuery } from './lists.selectors';
 import {
   CreateList,
   DeleteList,
+  ListDetailsLoaded,
+  LoadArchivedLists,
   LoadListDetails,
   LoadMyLists,
   LoadSharedLists,
@@ -14,6 +16,7 @@ import {
   NeedsVerification,
   OfflineListsLoaded,
   PinList,
+  PureUpdateList,
   SelectList,
   SetItemDone,
   ToggleAutocompletion,
@@ -21,8 +24,7 @@ import {
   UnPinList,
   UpdateItem,
   UpdateList,
-  UpdateListIndex,
-  LoadArchivedLists, PureUpdateList
+  UpdateListIndex
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -39,6 +41,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { environment } from '../../../../environments/environment';
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { NavigationEnd, Router } from '@angular/router';
+import { NgSerializerService } from '@kaiu/ng-serializer';
 
 declare const gtag: Function;
 
@@ -175,7 +178,7 @@ export class ListsFacade {
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade,
-              private router: Router) {
+              private router: Router, private serializer: NgSerializerService) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -377,5 +380,16 @@ export class ListsFacade {
         }
         return a.index - b.index;
       });
+  }
+
+  overlayListsLoaded(data: List[]): void {
+    const lists = this.serializer.deserialize<List>(data, [List]);
+    lists.filter(l => !l.offline).forEach(list => {
+      this.store.dispatch(new ListDetailsLoaded(list));
+    });
+    const offline = lists.filter(l => l.offline);
+    if (offline.length > 0) {
+      this.offlineListsLoaded(offline);
+    }
   }
 }
