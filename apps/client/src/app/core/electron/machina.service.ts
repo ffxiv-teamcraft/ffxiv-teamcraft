@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { bufferCount, delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { combineLatest, interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -33,8 +33,13 @@ export class MachinaService {
     return this._inventoryPatches$.asObservable();
   }
 
+  private retainerInformationsSync = {};
+
   private retainerInformations$ = this.ipc.retainerInformationPackets$.pipe(
-    bufferCount(10)
+    map(packet => {
+      this.retainerInformationsSync[packet.retainerID] = packet;
+      return Object.values<any>(this.retainerInformationsSync);
+    })
   );
 
   private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$, this.settings.region$]).pipe(
