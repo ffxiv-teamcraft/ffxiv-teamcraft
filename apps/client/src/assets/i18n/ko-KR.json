@@ -422,7 +422,7 @@
       "Other": "기타"
     },
     "REGIONS": {
-      "Global": "글로벌섭",
+      "Global": "글로벌서버",
       "CN": "중국서버",
       "KR": "한국서버"
     }
@@ -976,7 +976,7 @@
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
@@ -1392,12 +1392,12 @@
       "Weather_chances": "각 날씨별 나올수 있는 확률",
       "Bait": "미끼",
       "Refresh_data": "새로고침",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
+      "Bite_times": "입질 시간",
+      "All_baits": "필터링 없음",
       "TUG": {
-        "Light": "Light (!)",
-        "Medium": "Medium (!!)",
-        "Big": "Big (!!!)"
+        "Light": "소형 (!)",
+        "Medium": "중형 (!!)",
+        "Big": "대형 (!!)"
       },
       "OVERLAY": {
         "Open": "낚시 보고용 오버레이 열기",
@@ -1757,7 +1757,7 @@
     "Filters": "필터",
     "Total_stats": "최종 능력치",
     "Total_materias_needed": "총 필요한 마테리아 수",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
     "Modal_editor": "{{itemName}}",
