@@ -207,7 +207,7 @@ function createWindow() {
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
-  win.setAlwaysOnTop(config.get('win:alwaysOnTop'), 'normal');
+  win.setAlwaysOnTop(config.get('win:alwaysOnTop') || false, 'normal');
   //// uncomment below to open the DevTools.
   // win.webContents.openDevTools();
 
