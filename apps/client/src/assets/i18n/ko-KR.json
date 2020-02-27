@@ -401,6 +401,7 @@
     "Performance_mode_explain": "성능 향상을 위해 아이템의 아이콘과 메뉴를 제거(버튼만 남게됨) 합니다",
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -422,7 +423,7 @@
       "Other": "기타"
     },
     "REGIONS": {
-      "Global": "글로벌섭",
+      "Global": "글로벌서버",
       "CN": "중국서버",
       "KR": "한국서버"
     }
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
@@ -976,7 +978,7 @@
       "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "거의 모든 로테이션은 HQ제작을 목표로 한다면 '정신집중'이 포함되어야 합니다. 이 스킬은 품질을 향상 시켜주며, '비레고의 축복'과 같은 스킬들을 사용할 수 있게 해줍니다.",
@@ -1392,12 +1394,12 @@
       "Weather_chances": "각 날씨별 나올수 있는 확률",
       "Bait": "미끼",
       "Refresh_data": "새로고침",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
+      "Bite_times": "입질 시간",
+      "All_baits": "필터링 없음",
       "TUG": {
-        "Light": "Light (!)",
-        "Medium": "Medium (!!)",
-        "Big": "Big (!!!)"
+        "Light": "소형 (!)",
+        "Medium": "중형 (!!)",
+        "Big": "대형 (!!)"
       },
       "OVERLAY": {
         "Open": "낚시 보고용 오버레이 열기",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "수첩 트래커 페이지에서 채집, 제작, 어부 수첩의 진행상황을 확인할 수 있습니다.",
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
-    "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다"
+    "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1699,6 +1702,7 @@
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -1757,7 +1761,7 @@
     "Filters": "필터",
     "Total_stats": "최종 능력치",
     "Total_materias_needed": "총 필요한 마테리아 수",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
     "Modal_editor": "{{itemName}}",

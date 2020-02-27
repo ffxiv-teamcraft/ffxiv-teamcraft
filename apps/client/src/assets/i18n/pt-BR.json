@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "Change_email": "Change email",
     "Change_email_success": "Email changed",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "Por favor, verifique seu personagem para ter acesso às listas compartilhadas com sua FC",
     "Regenerate_all": "Regenerar todas as listas",
     "Regenerated_all": "Suas listas estão atualizadas",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
     "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser"
+    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
@@ -1699,6 +1702,7 @@
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
     "Search_for_an_item": "Search for an item",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
