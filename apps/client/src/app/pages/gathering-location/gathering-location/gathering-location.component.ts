@@ -102,8 +102,9 @@ export class GatheringLocationComponent {
   public canCreateAlarm(alarms: Alarm[], node: any): boolean {
     const generatedAlarm = this.generateAlarm(node);
     return alarms.find(alarm => {
-      return alarm.itemId === generatedAlarm.itemId
-        && alarm.zoneId === generatedAlarm.zoneId;
+      return generatedAlarm.itemId === alarm.itemId
+        && generatedAlarm.zoneId === alarm.zoneId
+        && generatedAlarm.type === alarm.type;
     }) === undefined;
   }
 

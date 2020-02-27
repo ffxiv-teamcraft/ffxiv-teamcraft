@@ -4,16 +4,7 @@ import { Store } from '@ngrx/store';
 
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
-import {
-  AddAlarms,
-  AssignGroupToAlarm,
-  CreateAlarmGroup,
-  DeleteAlarmGroup,
-  LoadAlarms,
-  RemoveAlarm,
-  UpdateAlarm,
-  UpdateAlarmGroup
-} from './alarms.actions';
+import { AddAlarms, AssignGroupToAlarm, CreateAlarmGroup, DeleteAlarmGroup, LoadAlarms, RemoveAlarm, UpdateAlarm, UpdateAlarmGroup } from './alarms.actions';
 import { Alarm } from '../alarm';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
@@ -134,7 +125,11 @@ export class AlarmsFacade {
 
   public getRegisteredAlarm(alarm: Partial<Alarm>): Observable<Alarm> {
     return this.allAlarms$.pipe(
-      map(alarms => alarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId))
+      map(alarms => alarms.find(a => {
+        return a.itemId === alarm.itemId
+          && a.zoneId === alarm.zoneId
+          && a.type === alarm.type;
+      }))
     );
   }
 
