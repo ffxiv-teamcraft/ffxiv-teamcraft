@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Remueve las imágenes de los artículos en las listas, así como menús (sólo quedan los botones) para tener menos carga en el navegador y la aplicación",
     "Change_email": "Cambiar correo electrónico",
     "Change_email_success": "Correo electrónico cambiado",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "Por favor verifique su personaje para tener acceso a las listas compartidas de su FC",
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
     "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
-    "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador"
+    "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
@@ -1699,6 +1702,7 @@
     "Reset_inventory": "Restablecer este inventario",
     "Clean_all": "Restablecer todos sus inventarios",
     "Search_for_an_item": "Buscar un artículo",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Alforja de Chocobo",
       "FC_chest": "Cofre FC",

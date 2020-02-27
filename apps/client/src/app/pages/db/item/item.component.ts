@@ -613,18 +613,7 @@ export class ItemComponent extends TeamcraftPageComponent {
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
-    const entry = getItemSource<CraftedBy[]>(item, DataType.CRAFTED_BY).find(c => c.id === recipeId);
-    const craft: Partial<Craft> = {
-      id: recipeId,
-      job: entry.job,
-      lvl: entry.lvl,
-      stars: entry.stars_tooltip.length,
-      rlvl: entry.rlvl,
-      durability: entry.durability,
-      progress: entry.progression,
-      quality: entry.quality
-    };
-    this.rotationPicker.openInSimulator(itemId, recipeId, craft);
+    this.rotationPicker.openInSimulator(itemId, recipeId);
   }
 
   public toSearchResult(item: ListRow): SearchResult {

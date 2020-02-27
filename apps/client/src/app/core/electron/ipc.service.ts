@@ -3,8 +3,8 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { Observable, ReplaySubject, Subject, Subscription, interval } from 'rxjs';
+import { debounce, debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
 
@@ -191,11 +191,8 @@ export class IpcService {
       this._ipc.removeAllListeners('app-state');
       this.stateSubscription = this.store
         .pipe(
-          distinctUntilChanged((a, b) => {
-            return a.lists.selectedId === b.lists.selectedId
-              && a.layouts.selectedKey === b.layouts.selectedKey;
-          }),
-          debounceTime(250)
+          debounce(() => interval(250)),
+          distinctUntilChanged(),
         )
         .subscribe(state => {
           this.send('app-state:set', state);

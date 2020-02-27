@@ -77,7 +77,7 @@ export class RecipeChoicePopupComponent {
 
 
   openRotationPicker(recipe: Recipe): void {
-    this.rotationPickerService.openInSimulator(recipe.itemId, recipe.recipeId, recipe, false, false, this.statsStr);
+    this.rotationPickerService.openInSimulator(recipe.itemId, recipe.recipeId, false, false, this.statsStr);
     this.close();
   }
 

@@ -718,12 +718,7 @@ export class SearchComponent implements OnInit {
   }
 
   public openInSimulator(itemId: number, recipeId: string): void {
-    this.data.getItem(itemId).pipe(
-      first(),
-      map(item => item.getCraft(recipeId))
-    ).subscribe((recipe) => {
-      this.rotationPicker.openInSimulator(itemId, recipeId, recipe);
-    });
+    this.rotationPicker.openInSimulator(itemId, recipeId);
   }
 
   public updateAllSelected(items: SearchResult[]): void {

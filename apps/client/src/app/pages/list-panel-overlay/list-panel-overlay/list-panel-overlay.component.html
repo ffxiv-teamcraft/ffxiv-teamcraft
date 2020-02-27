@@ -1,7 +1,7 @@
 <app-overlay-container uri="/list-panel-overlay">
   <div *ngIf="display$ | async as display; else noDisplay" class="state-container" fxLayout="column" fxLayoutGap="10px">
     <div fxLayout="row wrap" fxLayoutGap="5px">
-      <button *ngFor="let panel of display" nz-button class="panel-button"
+      <button *ngFor="let panel of display; trackBy: trackByPanel" nz-button class="panel-button"
               [nzType]="(selectedPanel$ | async) === panel.title ? 'primary' : 'default'"
               (click)="selectedPanel$.next(panel.title)">
         {{panel.title | translate}}

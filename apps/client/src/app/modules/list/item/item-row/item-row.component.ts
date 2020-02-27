@@ -171,6 +171,26 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
+  totalAmountInInventory$: Observable<{ hq: number, nq: number }> = this.amountInInventory$.pipe(
+    map(rows => {
+      return rows.reduce((acc, row) => {
+        if (row.hq) {
+          acc.hq += row.amount;
+        } else {
+          acc.nq += row.amount;
+        }
+        if (acc.containers.indexOf(row.containerName) === -1) {
+          acc.containers.push(row.containerName);
+        }
+        return acc;
+      }, {
+        containers: [],
+        hq: 0,
+        nq: 0
+      });
+    })
+  );
+
   itemTags$ = combineLatest([this.item$, this.authFacade.user$]).pipe(
     map(([item, user]) => {
       return (user.itemTags || [])

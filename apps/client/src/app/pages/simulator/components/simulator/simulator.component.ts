@@ -43,12 +43,12 @@ import { SettingsService } from '../../../../modules/settings/settings.service';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
 import { SimulationSharePopupComponent } from '../simulation-share-popup/simulation-share-popup.component';
-import { 
+import {
   ActionResult,
-  CraftingJob,
   CrafterLevels,
   CrafterStats,
   CraftingAction,
+  CraftingJob,
   EffectiveBuff,
   GearSet,
   Simulation,
@@ -57,6 +57,7 @@ import {
   SimulationService,
   StepState
 } from '../../../../core/simulation/simulation.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-simulator',
@@ -325,7 +326,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   changeRotation(): void {
-    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, null, true, this.custom);
+    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
   }
 
   getCraftOptExportString(): string {
@@ -550,26 +551,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
-  actionDrag(index: number): void {
-    this.draggedAction$ = this.actions$.value[index];
-    this.draggedIndex$ = index;
-    this.removeAction(index);
-  }
-
-  actionDrop(event: any): void {
-    if (event.el.parentNode.classList.contains('actions-container')) {
-      event.el.parentNode.removeChild(event.el);
+  actionDrop(event: CdkDragDrop<CraftingAction>): void {
+    // If we're just moving the action
+    if (event.previousContainer.id === 'action-results') {
+      const actions = [...this.actions$.value];
+      moveItemInArray(actions, event.previousIndex, event.currentIndex);
+      this.actions$.next(actions);
+    } else {
+      // If we're adding an action
+      this.addAction(event.item.data, event.currentIndex);
     }
-    this.addAction(event.value, event.dropIndex);
-    this.draggedAction$ = null;
-  }
-
-  dragCancel(event: any): void {
-    if (event.el.parentNode.classList.contains('actions-container')) {
-      event.el.parentNode.removeChild(event.el);
-    }
-    this.addAction(this.draggedAction$, this.draggedIndex$);
-    this.draggedAction$ = null;
+    this.dirty = true;
+    this.dirtyFacade.addEntry('simulator', DirtyScope.PAGE);
   }
 
   removeAction(index: number): void {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { bufferCount, delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { combineLatest, interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -17,8 +17,6 @@ import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import * as firebase from 'firebase/app';
-import { SettingsService } from '../../modules/settings/settings.service';
-import { Region } from '../../modules/settings/region.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -33,12 +31,17 @@ export class MachinaService {
     return this._inventoryPatches$.asObservable();
   }
 
+  private retainerInformationsSync = {};
+
   private retainerInformations$ = this.ipc.retainerInformationPackets$.pipe(
-    bufferCount(10)
+    map(packet => {
+      this.retainerInformationsSync[packet.retainerID] = packet;
+      return Object.values<any>(this.retainerInformationsSync);
+    })
   );
 
-  private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$, this.settings.region$]).pipe(
-    map(([retainers, spawn, region]) => {
+  private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$]).pipe(
+    map(([retainers, spawn]) => {
       let name: string = spawn.name;
       const splitForCheck = name.split('');
       // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
@@ -48,14 +51,9 @@ export class MachinaService {
       if (borkedData > -1) {
         name = name.substring(borkedData);
       }
-      return [retainers, name, region, spawn];
+      return [retainers, name];
     }),
-    filter(([retainers, name, region, spawn]: [any[], string, Region, any]) => {
-      if (region === Region.Global) {
-        return name.length > 0 && retainers.some(retainer => retainer.name === name);
-      }
-      return spawn.modelType === 0x0A;
-    }),
+    filter(([retainers, name]: [any[], string]) => name.length > 0 && retainers.some(retainer => retainer.name === name)),
     map(([, name]) => {
       return name;
     }),
@@ -65,8 +63,7 @@ export class MachinaService {
 
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService) {
+              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);

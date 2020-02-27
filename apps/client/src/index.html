@@ -2,7 +2,8 @@
 <html xmlns:og="http://ogp.me/ns#">
 <head>
   <title>FFXIV Teamcraft</title>
-  <meta name="description" content="Create FINAL FANTASY XIV crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
+  <meta name="description"
+        content="Create FINAL FANTASY XIV crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
   <meta charset="utf-8">
   <base href="/">
 
@@ -11,13 +12,13 @@
   <meta property="og:description" content="Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://cdn.ffxivteamcraft.com/"/>
-  <meta property="og:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png" />
+  <meta property="og:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png"/>
 
   <meta name="twitter:title" content="FFXIV Teamcraft"/>
   <meta name="twitter:card" content="summary"/>
   <meta name="twitter:description" content="Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
   <meta name="twitter:site" content="@FFXIVTeamcraft"/>
-  <meta name="twitter:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png" />
+  <meta name="twitter:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png"/>
 
   <meta name="viewport" content="width=device-width,user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -34,7 +35,11 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104948571-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
     gtag('js', new Date());
     gtag('config', 'UA-104948571-1');
   </script>
@@ -126,7 +131,8 @@
       'Oric Yaeger | Cerberus',
       'Post Mortem',
       'Raltz Klamar',
-      'Alextros Blackthorne'
+      'Alextros Blackthorne',
+      'Nia Neyna'
     ];
     const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
     document.getElementById('random-patron').innerText = randomPatron;

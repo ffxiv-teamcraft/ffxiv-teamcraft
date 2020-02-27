@@ -77,7 +77,7 @@ export class FishComponent implements OnInit {
               tug,
               occurences
             }
-            bite_time_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
+            bite_time_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
               biteTime,
               occurences
             }
@@ -209,12 +209,12 @@ export class FishComponent implements OnInit {
             raw: sortedBaits
           },
           biteTimeChart: {
-            min: (sortedBiteTimes[0] || { biteTime: 0 }).biteTime / 10,
-            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime / 10,
+            min: (sortedBiteTimes[0] || { biteTime: 0 }).biteTime,
+            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime,
             avg: sortedBiteTimes
               .reduce((acc, entry) => {
                 return entry.biteTime * entry.occurences + acc;
-              }, 0) / totalBiteTimes / 10
+              }, 0) / totalBiteTimes
           },
           weathersChart: {
             view: [500, this.spot$.value === -1 ? 300 : 200],
