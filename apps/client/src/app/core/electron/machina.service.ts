@@ -19,6 +19,7 @@ import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import * as firebase from 'firebase/app';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,10 @@ export class MachinaService {
       if (borkedData > -1) {
         name = name.substring(borkedData);
       }
-      if (region === Region.Korea) {
+      if (region === Region.Korea && environment.koreanGameVersion < 5.2) {
+        name = name.substring(4);
+      }
+      if (region === Region.China && environment.chineseGameVersion < 5.2) {
         name = name.substring(4);
       }
       return [retainers, name];
