@@ -401,6 +401,7 @@
     "Performance_mode_explain": "Entfernt Gegenstandsbilder in Listen und Menüs (Nur Schalter bleiben übrig) für weniger Stress im Browser und in der App",
     "Change_email": "E-Mail Adresse ändern",
     "Change_email_success": "E-Mail-Adresse wurde geändert",
+    "No_shortcut": "Don't create shortcut on update",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -454,6 +455,7 @@
     }
   },
   "LISTS": {
+    "Load_archived": "Load archived lists",
     "Needs_verification": "Bitte verifiziere deinen Charakter, um Zugriff auf die geteilten Listen deiner FG zubekommen",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
@@ -1603,7 +1605,8 @@
     "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
     "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
-    "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen"
+    "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1699,6 +1702,7 @@
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
     "Search_for_an_item": "Nach Gegenstand suchen",
+    "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
