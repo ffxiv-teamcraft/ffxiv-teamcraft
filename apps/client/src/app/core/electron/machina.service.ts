@@ -17,6 +17,8 @@ import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import * as firebase from 'firebase/app';
+import { SettingsService } from '../../modules/settings/settings.service';
+import { Region } from '../../modules/settings/region.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +42,8 @@ export class MachinaService {
     })
   );
 
-  private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$]).pipe(
-    map(([retainers, spawn]) => {
+  private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$, this.settings.region$]).pipe(
+    map(([retainers, spawn, region]) => {
       let name: string = spawn.name;
       const splitForCheck = name.split('');
       // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
@@ -50,6 +52,9 @@ export class MachinaService {
       });
       if (borkedData > -1) {
         name = name.substring(borkedData);
+      }
+      if (region === Region.Korea) {
+        name = name.substring(4);
       }
       return [retainers, name];
     }),
@@ -63,7 +68,8 @@ export class MachinaService {
 
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade) {
+              private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
+              private settings: SettingsService) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
