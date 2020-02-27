@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.8"></a>
+## [7.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.7...v7.0.8) (2020-02-27)
+
+
+### Bug Fixes
+
+* **alarm:** fixed an issue with "alarm already created" sometimes being wrong ([028f68a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/028f68a))
+* **db:** fixed wrong bite times display in fish pages ([255daa5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/255daa5))
+* **desktop:** better perfs and offline tracking for list overlay ([72dc458](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72dc458))
+* **desktop:** better retainer spawn detection ([752e569](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/752e569))
+* **desktop:** fixed a possible crash when installing the application ([f94ec46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f94ec46))
+* **desktop:** possible fix for list overlay not being updated properly ([4c77b6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c77b6b))
+* **i18n:** fixed missing LISTS.Load_archived translation ([5a1ae8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a1ae8c))
+* **layout:** fixed an issue with LEVEL sort in layout with crafted items ([5bf315c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bf315c))
+* **simulator:** fixed wrong stats displayed in rotation picker ([b8d7724](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8d7724))
+
+
+### Features
+
+* **app:** added new tip about quick search (Ctrl + Shift + F) ([a990d55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a990d55))
+* **desktop:** you can now disable shortcut creation on update ([6c00eac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c00eac)), closes [#1382](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1382)
+* **list:** added collapsed view for inventory tags when container count > 3 ([6f8b354](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f8b354)), closes [#1344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1344)
+* **simulator:** complete revamp of the drag and drop system ([a0d176b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0d176b))
+
+
+
 <a name="7.0.7"></a>
 ## [7.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.6...v7.0.7) (2020-02-25)
 
