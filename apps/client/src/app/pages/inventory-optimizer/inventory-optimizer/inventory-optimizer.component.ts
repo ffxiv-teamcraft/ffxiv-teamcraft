@@ -14,6 +14,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
+import { UnwantedMaterials } from '../optimizations/unwanted-materials';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -151,6 +152,18 @@ export class InventoryOptimizerComponent {
 
     this.loading = true;
     this.resultsReloader$.next(null);
+  }
+
+  public get minRecipeIlvl(): number {
+    return +(localStorage.getItem(UnwantedMaterials.RECIPE_ILVL_KEY) || 1);
+  }
+
+  public set minRecipeIlvl(size: number) {
+    if (size > 0) {
+      localStorage.setItem(UnwantedMaterials.RECIPE_ILVL_KEY, size.toString());
+      this.loading = true;
+      this.resultsReloader$.next(null);
+    }
   }
 
   nameCopied(key: string, args?: any): void {
