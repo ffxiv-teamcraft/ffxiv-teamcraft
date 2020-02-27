@@ -46,6 +46,7 @@ import { CommunityRotationPopupComponent } from './components/community-rotation
 import { SolverPopupComponent } from './components/solver-popup/solver-popup.component';
 import { SimulatorOpenerComponent } from './components/simulator-opener/simulator-opener.component';
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -131,7 +132,8 @@ const routes: Routes = [
     PipesModule,
     CoreModule,
     SettingsModule,
-    DirtyModule
+    DirtyModule,
+    DragDropModule
   ],
   declarations: [
     CustomSimulatorPageComponent,

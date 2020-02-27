@@ -549,11 +549,11 @@
           <i *ngIf="dirty" [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
              class="warning-icon" nz-icon
              nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
-          <div (cancel)="dragCancel($event)" (drop)="actionDrop($event)" class="actions-container ngx-dnd-container"
-               fxLayout="row wrap" ngxDroppable="action">
-            <div (drag)="actionDrag(i)" *ngFor="let step of resultData.steps;let i = index; trackBy: trackByAction"
-                 [model]="step.action" [moves]="step.action.canBeMoved()" [ngxDraggable]="['action']"
-                 class="ngx-dnd-item action-container rotation-action">
+          <div class="actions-container" fxLayout="row wrap" cdkDropList cdkDropListOrientation="horizontal"
+               (cdkDropListDropped)="actionDrop($event)" id="action-results">
+            <div *ngFor="let step of resultData.steps;let i = index; trackBy: trackByAction"
+                 [cdkDragData]="step.action" [cdkDragDisabled]="!step.action.canBeMoved()"
+                 class="action-container rotation-action" cdkDrag>
               <app-action (actionclick)="removeAction(i)"
                           (stepstate)="setState(i, $event)"
                           [action]="step.action"
@@ -576,91 +576,100 @@
           <div class="category-row">
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
+              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
+                <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             *ngFor="let action of getProgressActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item"></app-action>
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
               </div>
             </div>
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
+              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
+                <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             *ngFor="let action of getQualityActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item action-from-bar"></app-action>
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
               </div>
             </div>
           </div>
           <div class="category-row">
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
+              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
+                <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             *ngFor="let action of getBuffActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item action-from-bar"></app-action>
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
               </div>
             </div>
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
+
+              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
+                <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             *ngFor="let action of getRepairActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"
-                            class="ngx-dnd-item action-from-bar"></app-action>
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
               </div>
             </div>
             <div>
               <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
-              <div (drop)="disableEvent($event)" [copy]="true" class="actions-row ngx-dnd-container" ngxDroppable>
-                <app-action (actionclick)="addAction(action)" (onDragEnd)="tooltipsDisabled = false"
-                            (onDragStart)="tooltipsDisabled = true"
+              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
+                <app-action (actionclick)="addAction(action)"
+                            cdkDrag
+                            (cdkDragEnded)="tooltipsDisabled = false"
+                            (cdkDragStarted)="tooltipsDisabled = true"
+                            [cdkDragData]="action"
+                            [cdkDragStartDelay]="50"
+                            [cdkDragDisabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
                             *ngFor="let action of getOtherActions()"
                             [action]="action"
                             [disabled]="!action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [model]="action"
-                            [ngxDraggable]="['action']"
                             [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
                             [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
                             [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled || action.getIds()[0] < 0"
-                            nz-tooltip
-                            [nzTitle]="action.getIds()[0] < 0 ? ('SIMULATOR.Remove_final_appraisal' | translate) : null"
-                            class="ngx-dnd-item action-from-bar"></app-action>
+                            [tooltipDisabled]="tooltipsDisabled"></app-action>
               </div>
             </div>
           </div>
