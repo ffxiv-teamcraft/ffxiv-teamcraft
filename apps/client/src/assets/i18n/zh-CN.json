@@ -520,6 +520,8 @@
     "Set_color": "设置清单颜色",
     "Go_to_pinned": "转到固定清单（右键单击取消固定）",
     "Reset_panel": "重置此面板的所有物品",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "红色",
       "GREEN": "绿色",
