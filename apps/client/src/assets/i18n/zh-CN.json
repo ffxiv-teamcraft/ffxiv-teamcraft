@@ -1424,7 +1424,8 @@
         "Size": "尺寸",
         "ERRORS": {
           "Unknown_map": "未知地图，请通过切换区域载入。",
-          "No_bait": "未检测到钓饵，请重新“选饵”"
+          "No_bait": "未检测到钓饵，请重新“选饵”",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
