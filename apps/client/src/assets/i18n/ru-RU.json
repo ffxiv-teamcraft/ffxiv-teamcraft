@@ -520,6 +520,8 @@
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
     "Reset_panel": "Сбросить все предметы этой панели",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Красный",
       "GREEN": "Зеленый",
