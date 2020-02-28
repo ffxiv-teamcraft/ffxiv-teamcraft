@@ -347,7 +347,7 @@
     "General": "Allgemein",
     "Link_base": "Gegenstandslink-Quelle",
     "Region": "Region",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
     "Theme": "Design",
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
@@ -401,7 +401,7 @@
     "Performance_mode_explain": "Entfernt Gegenstandsbilder in Listen und Menüs (Nur Schalter bleiben übrig) für weniger Stress im Browser und in der App",
     "Change_email": "E-Mail Adresse ändern",
     "Change_email_success": "E-Mail-Adresse wurde geändert",
-    "No_shortcut": "Don't create shortcut on update",
+    "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -455,7 +455,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "Archivierte Listen laden",
     "Needs_verification": "Bitte verifiziere deinen Charakter, um Zugriff auf die geteilten Listen deiner FG zubekommen",
     "Regenerate_all": "Alle Listen neugenerieren",
     "Regenerated_all": "Deine Listen sind jetzt aktuell",
@@ -494,8 +494,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "Archivieren",
+    "Unarchive": "Wiederherstellen",
     "Regenerate": "Liste auf aktuellste Teamcraft Version aktualisieren",
     "Rename": "Liste umbenennen",
     "Copied_x_times": "{{count}}-mal kopiert",
@@ -545,7 +545,7 @@
       "Delete": "Liste löschen",
       "Clear": "Liste leeren",
       "Reset": "Liste zurücksetzen",
-      "Archive": "Archive the list",
+      "Archive": "Liste archivieren",
       "Nothing": "Nichts"
     },
     "BUTTONS": {
@@ -978,7 +978,7 @@
       "MISSING_LEVEL_REQUIREMENT": "Du hast die erforderliche Stufe nicht erreicht",
       "NOT_SPECIALIST": "Spezialist-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "So gut wie alle Rotationen sollten Innere Ruhe beinhalten, wenn das Ziel ist, den Gegenstand in HQ herzustellen. Es erhöht stark die Kontrolle und somit die Qualität, und erlaubt die Verwendung von Kommandos wie Byregots Benediktion.",
@@ -1394,12 +1394,12 @@
       "Weather_chances": "Wahrscheinlichkeiten für jedes Wetter",
       "Bait": "Fischköder",
       "Refresh_data": "Daten aktualisieren",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
+      "Bite_times": "Zeit zum Anbeißen",
+      "All_baits": "Kein Köder-Filter",
       "TUG": {
-        "Light": "Light (!)",
-        "Medium": "Medium (!!)",
-        "Big": "Big (!!!)"
+        "Light": "Leicht (!)",
+        "Medium": "Mittel (!!)",
+        "Big": "Stark (!!!)"
       },
       "OVERLAY": {
         "Open": "Meldungsoverlay öffnen",
@@ -1606,7 +1606,7 @@
     "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
     "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen"
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1683,13 +1683,13 @@
     "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
     "Inventory_outdated": "Dein Inventar ist veraltet",
     "Please_update_inventory_popup": "Bitte wechsle die Zone (z. B. durch Teleportation oder indem du ein Haus betrittst), um dein Inventar zu aktualisieren. Diese Einblendung wird automatisch geschlossen, sobald dies geschehen ist.",
-    "Outdated": "Packet capture isn't working",
+    "Outdated": "Die Paketerfassung funktioniert nicht",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_title": "Region zu {{region}} wechseln",
+    "Banner_description": "Du kannst die Region, in der du spielst, ändern, um bessere Resultate Datenbank, Simulator, Paketerfassung usw. zu erzielen.",
+    "Button_label": "Region wechseln"
   },
   "INVENTORY": {
     "Title": "Inventar",
@@ -1702,7 +1702,7 @@
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
     "Search_for_an_item": "Nach Gegenstand suchen",
-    "In_x_containers": "In {{amount}} containers",
+    "In_x_containers": "In {{amount}} Inventaren",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
       "FC_chest": "FG-Truhe",
@@ -1734,10 +1734,10 @@
       "Threshold_amount": "Grenzwerte"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Title": "HQ-Stapel von Gegenständen, bei denen die Qualität gesenkt werden kann",
+      "Message": "Mit NQ-Stacks kombinieren in: {{containers}}",
+      "Filter": "Nur Materialen bis zu folgendem zeigen: ",
+      "Placeholder": "Erweiterung wählen"
     }
   },
   "VERSION_LOCK": {
@@ -1752,7 +1752,7 @@
     "generate_list": "Liste erstellen",
     "Content": "Inhalt",
     "Stat_name": "Attribut",
-    "Current_value": "Current",
+    "Current_value": "Momentan",
     "Cap_value": "Obergrenze",
     "Add_materia": "Materia hinzufügen",
     "No_materia": "Keine Materia",
@@ -1761,7 +1761,7 @@
     "Filters": "Filter",
     "Total_stats": "Gesamt",
     "Total_materias_needed": "Gesamtzahl an benötigter Materia",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_cost": "Gesamtkosten (Handel, Gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
     "Modal_editor": "Materia für {{itemName}}",
@@ -1793,9 +1793,9 @@
     "Please_input_lodestone_id": "Bitte Lodestone Id eingeben",
     "Paste_lodestone_id": "Lodestone Id einfügen",
     "Currency": "Währung",
-    "Optimize_materias": "Optimize materias order",
-    "No_trades_needed": "No trades needed",
-    "Stats_caps": "Stats caps",
+    "Optimize_materias": "Materialreihenfolge optimieren",
+    "No_trades_needed": "Keine Handel benötigt",
+    "Stats_caps": "Attributlimits",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
