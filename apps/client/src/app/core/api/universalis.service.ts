@@ -44,7 +44,7 @@ export class UniversalisService {
             item.Prices = res.listings.map(listing => {
               return {
                 Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
+                PricePerUnit: Math.ceil(listing.pricePerUnit / 1.05),
                 PriceTotal: listing.total,
                 IsHQ: listing.hq,
                 Quantity: listing.quantity
@@ -53,7 +53,7 @@ export class UniversalisService {
             item.History = res.recentHistory.map(listing => {
               return {
                 Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
+                PricePerUnit: Math.ceil(listing.pricePerUnit / 1.05),
                 PriceTotal: listing.total,
                 IsHQ: listing.hq,
                 Quantity: listing.quantity,
@@ -122,11 +122,6 @@ export class UniversalisService {
   }
 
   public initCapture(): void {
-    this.ipc.marketBoardSearchResult$.subscribe((searchResults) => {
-      if (this.settings.enableUniversalisSourcing) {
-        this.handleMarketboardSearchResult(searchResults);
-      }
-    });
     this.ipc.marketboardListingCount$
       .pipe(
         switchMap(packet => {
@@ -138,11 +133,16 @@ export class UniversalisService {
           this.handleMarketboardListingPackets(listings);
         }
       });
-    this.ipc.marketboardListingHistory$.subscribe(packet => {
-      if (this.settings.enableUniversalisSourcing) {
-        this.handleMarketboardListingHistory(packet);
-      }
-    });
+    this.ipc.marketboardListingHistory$
+      .pipe(
+        buffer(this.ipc.marketboardListingHistory$.pipe(debounceTime(2000))),
+        filter(packets => packets.length > 0)
+      )
+      .subscribe(listings => {
+        if (this.settings.enableUniversalisSourcing) {
+          this.handleMarketboardListingHistoryPackets(listings);
+        }
+      });
     this.ipc.marketTaxRatePackets$.subscribe(packet => {
       if (this.settings.enableUniversalisSourcing) {
         this.uploadMarketTaxRates(packet);
@@ -153,29 +153,6 @@ export class UniversalisService {
         this.uploadCid(packet);
       }
     });
-  }
-
-  public handleMarketboardSearchResult(packet: any): void {
-    combineLatest([this.cid$, this.worldId$]).pipe(
-      first(),
-      switchMap(([cid, worldId]) => {
-        const data = {
-          worldID: worldId,
-          uploaderID: cid,
-          itemIDs: _.compact(packet.items.map((item) => {
-            if (item.itemCatalogID && !item.quantity) {
-              return item.itemCatalogID;
-            }
-          })),
-          op: {
-            listings: -1
-          }
-        };
-        return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
-          headers: new HttpHeaders().append('Content-Type', 'application/json')
-        });
-      })
-    ).subscribe();
   }
 
   public handleMarketboardListingPackets(packets: any[]): void {
@@ -221,24 +198,31 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingHistory(packet: any): void {
+  public handleMarketboardListingHistoryPackets(packets: any[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
         const data = {
           worldID: worldId,
-          itemID: packet.itemID,
+          itemID: packets[0].itemID,
           uploaderID: cid,
-          entries: packet.listings.map((entry) => {
-            return {
-              hq: entry.hq,
-              pricePerUnit: entry.salePrice,
-              quantity: entry.quantity,
-              buyerName: entry.buyerName,
-              onMannequin: entry.onMannequin,
-              timestamp: entry.purchaseTime
-            };
-          })
+          entries: packets.reduce((listings, packet) => {
+            return [
+              ...listings,
+              ...packet.listings
+                .map((item) => {
+                  return {
+                    hq: item.hq,
+                    pricePerUnit: item.salePrice,
+                    quantity: item.quantity,
+                    total: item.salePrice * item.quantity,
+                    buyerName: item.buyerName,
+                    onMannequin: item.onMannequin,
+                    timestamp: item.purchaseTime
+                  };
+                })
+            ];
+          }, [])
         };
         return this.http.post('https://us-central1-ffxivteamcraft.cloudfunctions.net/universalis-publisher', data, {
           headers: new HttpHeaders().append('Content-Type', 'application/json')
