@@ -520,6 +520,8 @@
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
     "Reset_panel": "Restablecer todos los artículos de este panel",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
