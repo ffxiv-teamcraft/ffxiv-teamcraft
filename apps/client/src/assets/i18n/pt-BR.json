@@ -1424,7 +1424,8 @@
         "Size": "Size",
         "ERRORS": {
           "Unknown_map": "Map unknown, change zone to load it.",
-          "No_bait": "No bait detected, switch bait once to fix."
+          "No_bait": "No bait detected, switch bait once to fix.",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
