@@ -1424,7 +1424,8 @@
         "Size": "Tamaño",
         "ERRORS": {
           "Unknown_map": "Mapa desconocido, cambie de zona para cargarlo.",
-          "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo."
+          "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo.",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
