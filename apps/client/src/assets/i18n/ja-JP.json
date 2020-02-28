@@ -520,6 +520,8 @@
     "Set_color": "リストカラー設定",
     "Go_to_pinned": "固定しておいたリストに行く（右クリックすると固定解除）",
     "Reset_panel": "Reset all the items of this panel",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "赤",
       "GREEN": "緑",
