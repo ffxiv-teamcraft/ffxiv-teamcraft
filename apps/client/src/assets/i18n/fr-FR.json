@@ -520,6 +520,8 @@
     "Set_color": "Attribuer une couleur",
     "Go_to_pinned": "Aller à la liste épinglée (clic droit pour désépingler)",
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
