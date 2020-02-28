@@ -13,38 +13,32 @@ export class UnwantedMaterials extends InventoryOptimizer {
   constructor(private lazyData: LazyDataService) {
     super();
 
-    const appVersion = environment.version;
-    const cache = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
+    const appVersion: string = environment.version;
+    const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
     if (!cache || appVersion !== cache.version) {
       this.rebuildCache(appVersion);
-      //console.log("Rebuilt Cache");
     } 
-    else {
-      //console.log("Cache version matches");
-    }
   }
 
   //This just caches a list of materials used in all recipes, including ilvl, and company workshop usage
   rebuildCache(version: string) {
-    const recipes = this.lazyData.data.recipes;
-    const cache = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY)) || {};
-    cache["version"] = version;
+    const recipes: any[] = this.lazyData.data.recipes;
+    const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY)) || {};
+    cache.version = version;
     cache.materials = cache.materials || {};
 
-    //console.log(recipes[0]);
-
     recipes.forEach(recipe => {
-      const firstIlvl = this.lazyData.data.ilvls[recipe.result];
+      const firstIlvl: number = this.lazyData.data.ilvls[recipe.result];
 
       //We make a recursive function so we can get all the way to base materials to update their ilvls
-      const spanAllMaterials = (ingredientId: number, ilvl: number) => {        
+      //The "ilvl" parameter here takes the highest ilvl we've found so far, and brings it down though the recipe trees
+      const spanAllMaterials = (ingredientId: number, ilvl: number): void => {        
         //Grab the material from the cache if it already exists
-
-        const materialIlvl = cache.materials[ingredientId];
+        const materialIlvl: number = cache.materials[ingredientId];
         if (materialIlvl) {
           //if this new recipe had a higher ilvl, we update the cache
-          const newilvl = this.lazyData.data.ilvls[ingredientId];
-          const highilvl = ilvl > newilvl ? ilvl : newilvl
+          const newilvl: number = this.lazyData.data.ilvls[ingredientId];
+          const highilvl: number = ilvl > newilvl ? ilvl : newilvl
           cache.materials[ingredientId] = materialIlvl > highilvl ? materialIlvl : highilvl;
         }
         //Add material to cache if we don't have it yet
@@ -69,13 +63,10 @@ export class UnwantedMaterials extends InventoryOptimizer {
   }
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } {
-    const wantedIlvl = localStorage.getItem(UnwantedMaterials.RECIPE_ILVL_KEY);
-    const cache = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY)); 
-
-    const appVersion = environment.version;
-    const ilvls = this.lazyData.data.ilvls;
+    const wantedIlvl: number = parseInt(localStorage.getItem(UnwantedMaterials.RECIPE_ILVL_KEY), 10);
+    const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY)); 
     
-    const materialIlvl = cache.materials[item.itemId];
+    const materialIlvl: number = cache.materials[item.itemId];
     if (materialIlvl && materialIlvl < wantedIlvl) {
       return {ilvl: materialIlvl}
     }
