@@ -17,10 +17,10 @@ export class UnwantedMaterials extends InventoryOptimizer {
     const cache = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
     if (!cache || appVersion !== cache.version) {
       this.rebuildCache(appVersion);
-      console.log("Rebuilt Cache");
+      //console.log("Rebuilt Cache");
     } 
     else {
-      console.log("Cache version matches");
+      //console.log("Cache version matches");
     }
   }
 
