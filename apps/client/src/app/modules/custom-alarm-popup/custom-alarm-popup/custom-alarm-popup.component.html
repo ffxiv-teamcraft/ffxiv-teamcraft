@@ -28,8 +28,15 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Slot' | translate}}</nz-form-label>
-    <nz-form-control [nzSm]="16" [nzXs]="24">
+    <nz-form-label [nzSm]="8" [nzXs]="24">
+      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px" fxFlex="0">
+        <div>{{'ALARMS.CUSTOM.Slot' | translate}}</div>
+        <div [nzTitle]="'ALARMS.CUSTOM.Slot_description' | translate" nz-tooltip>
+          <i nz-icon nzType="question-circle" theme="outline"></i>
+        </div>
+      </div>      
+    </nz-form-label>
+    <nz-form-control [nzSm]="16" [nzXs]="24"> 
       <nz-input-number [nzMax]="8" [nzMin]="0" [nzStep]="1" formControlName="slot"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
