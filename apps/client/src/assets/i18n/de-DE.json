@@ -1424,7 +1424,8 @@
         "Size": "Größe",
         "ERRORS": {
           "Unknown_map": "Unbekannte Karte. Wechsel die Zone, um sie zu laden.",
-          "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln."
+          "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
