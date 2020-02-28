@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { getItemSource, ListRow } from '../model/list-row';
 import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
@@ -24,16 +24,27 @@ import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { DataType } from '../data/data-type';
+import { SettingsService } from '../../settings/settings.service';
 
 @Component({
   selector: 'app-list-details-panel',
   templateUrl: './list-details-panel.component.html',
-  styleUrls: ['./list-details-panel.component.less']
+  styleUrls: ['./list-details-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
+  private _displayRow: LayoutRowDisplay;
+
   @Input()
-  displayRow: LayoutRowDisplay;
+  public set displayRow(row: LayoutRowDisplay) {
+    this.progression = this.listsFacade.buildProgression(row.rows);
+    this._displayRow = row;
+  }
+
+  public get displayRow(): LayoutRowDisplay {
+    return this._displayRow;
+  }
 
   @Input()
   finalItems = false;
@@ -43,6 +54,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   overlay = false;
+
+  progression: number;
 
   tiers: ListRow[][];
 
@@ -65,7 +78,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
-              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade) {
+              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
+              public settings: SettingsService) {
   }
 
   addItems(): void {

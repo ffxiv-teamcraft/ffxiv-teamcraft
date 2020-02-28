@@ -42,29 +42,32 @@
       <div *ngIf="!hideAvatar && _list.authorId !== undefined" class="author-avatar">
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
-      <div class="panel-middle-content" nz-col nzMd="15" nzSm="24">
-        <div class="tags">
-          <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
-            {{'Ephemeral_tag' | translate}}
-          </nz-tag>
-          <nz-tag *ngIf="_list.archived" [nzColor]="'purple'" [nzTitle]="'Archived_list' | translate" nz-tooltip>
-            <i nz-icon nzType="file-zip" nzTheme="outline"></i>
-            {{'Archived_tag' | translate}}
-          </nz-tag>
-          <nz-tag *ngIf="_list.offline" [nzTitle]="'LIST.Offline_help' | translate" [style.border-color]="'#bd0ef2'"
-                  nz-tooltip>
-            {{'LIST.Offline' | translate}}
-          </nz-tag>
-          <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" [nzTitle]="'LIST_DETAILS.Public_list_description' | translate"
-                  nz-tooltip>
-            {{'Public_list' | translate}}
-          </nz-tag>
-          <nz-tag *ngIf="outDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
-          <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
+      <div fxLayout="column" class="panel-middle-content">
+        <div nz-col nzMd="15" nzSm="24">
+          <div class="tags">
+            <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
+              {{'Ephemeral_tag' | translate}}
+            </nz-tag>
+            <nz-tag *ngIf="_list.archived" [nzColor]="'purple'" [nzTitle]="'Archived_list' | translate" nz-tooltip>
+              <i nz-icon nzType="file-zip" nzTheme="outline"></i>
+              {{'Archived_tag' | translate}}
+            </nz-tag>
+            <nz-tag *ngIf="_list.offline" [nzTitle]="'LIST.Offline_help' | translate" [style.border-color]="'#bd0ef2'"
+                    nz-tooltip>
+              {{'LIST.Offline' | translate}}
+            </nz-tag>
+            <nz-tag *ngIf="_list.public && !publicDisplay" [nzColor]="'geekblue'" [nzTitle]="'LIST_DETAILS.Public_list_description' | translate"
+                    nz-tooltip>
+              {{'Public_list' | translate}}
+            </nz-tag>
+            <nz-tag *ngIf="outDated()" [nzColor]="'magenta'">{{'LIST_TAGS.OUTDATED' | translate}}</nz-tag>
+            <nz-tag *ngFor="let tag of getTags()">{{('LIST_TAGS.' + tag) | uppercase | translate}}</nz-tag>
+          </div>
+          <div class="description">
+            {{_list.note}}
+          </div>
         </div>
-        <div class="description">
-          {{_list.note}}
-        </div>
+        <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay"></app-list-progressbar>
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4" nzSm="24">
         <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) > 10" [cbContent]="getLink()"

@@ -108,7 +108,7 @@ export class ListPanelComponent {
   );
 
   constructor(private listsFacade: ListsFacade, private message: NzMessageService,
-              private translate: TranslateService, private linkTools: LinkToolsService,
+              public translate: TranslateService, private linkTools: LinkToolsService,
               private dialog: NzModalService, private listManager: ListManagerService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,

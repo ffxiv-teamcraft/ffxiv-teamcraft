@@ -56,6 +56,7 @@ import { ItemDetailsPopupsModule } from '../item-details/item-details-popups.mod
 import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-sources-display.component';
 import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
+import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -125,7 +126,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ListCompletionPopupComponent,
     ItemSourcesDisplayComponent,
     AlarmButtonComponent,
-    ItemRowButtonsComponent
+    ItemRowButtonsComponent,
+    ListProgressbarComponent
   ],
   entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent, ListDetailsPanelComponent]
