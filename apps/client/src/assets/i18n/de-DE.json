@@ -520,6 +520,8 @@
     "Set_color": "Listenfarbe festlegen",
     "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
     "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Rot",
       "GREEN": "Grün",
