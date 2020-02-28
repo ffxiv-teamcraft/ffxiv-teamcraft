@@ -520,6 +520,8 @@
     "Set_color": "Set list color",
     "Go_to_pinned": "Go to pinned list (right click to unpin)",
     "Reset_panel": "Reset all the items of this panel",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Vermelho",
       "GREEN": "Verde",
