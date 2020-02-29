@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
-      "Spawn": "등장 시간",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "2회 출현",
       "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
-      "Duration": "채집 가능 시간",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "슬롯",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "채집물 유형",
       "Map": "지도",
       "Weather": "날씨",
@@ -1741,6 +1742,12 @@
       "Message": "NQ재료와 합치기: {{containers}}",
       "Filter": "해당 버젼 재료만 표시: ",
       "Placeholder": "게임 버젼 선택"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {
