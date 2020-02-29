@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Название",
-      "Spawn": "Спавн",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "Двойной спавн",
       "Spawns_twice_description": "Спавнится дважды за внутриигровой день (Один днем, второй ночью)",
-      "Duration": "Длительность",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "Слот",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "Тип узла",
       "Map": "Карта",
       "Weather": "Погода",
@@ -520,6 +521,8 @@
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
     "Reset_panel": "Сбросить все предметы этой панели",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Красный",
       "GREEN": "Зеленый",
@@ -1422,7 +1425,8 @@
         "Size": "Размер",
         "ERRORS": {
           "Unknown_map": "Неизвестная карта, поменяйте зону для загрузки.",
-          "No_bait": "Не обнаружено наживки, смените наживку один раз."
+          "No_bait": "Не обнаружено наживки, смените наживку один раз.",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
@@ -1738,6 +1742,12 @@
       "Message": "Combine with NQ stack in: {{containers}}",
       "Filter": "Only show materials up to: ",
       "Placeholder": "Pick Expansion"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {
