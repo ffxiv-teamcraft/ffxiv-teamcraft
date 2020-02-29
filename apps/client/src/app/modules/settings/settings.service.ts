@@ -179,6 +179,14 @@ export class SettingsService {
     this.setSetting('always-hq-leves', alwaysHqLeves.toString());
   }
 
+  public get alwaysAllDeliveries(): boolean {
+    return this.getSetting('always-all-deliveries', 'false') === 'true';
+  }
+
+  public set alwaysAllDeliveries(alwaysAllDeliveries: boolean) {
+    this.setSetting('always-all-deliveries', alwaysAllDeliveries.toString());
+  }
+
   public get compactAlarms(): boolean {
     return this.getSetting('compact-alarms', 'false') === 'true';
   }
