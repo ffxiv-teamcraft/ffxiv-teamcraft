@@ -403,6 +403,7 @@
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
