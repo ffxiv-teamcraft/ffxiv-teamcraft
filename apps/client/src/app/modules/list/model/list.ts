@@ -20,6 +20,7 @@ import { ListManagerService } from '../list-manager.service';
 import { ListColor } from './list-color';
 import * as firebase from 'firebase/app';
 import { DataType } from '../data/data-type';
+import { SettingsService } from '../../settings/settings.service';
 
 declare const gtag: Function;
 
@@ -65,10 +66,15 @@ export class List extends DataWithPermissions {
 
   archived = false;
 
-  constructor() {
+  constructor(settings? : SettingsService) {
     super();
     if (!this.createdAt) {
       this.createdAt = firebase.firestore.Timestamp.fromDate(new Date());
+    }
+
+    if (settings) {
+      this.everyone = settings.defaultPermissionLevel;
+      this.disableHQSuggestions = settings.disableHQSuggestions;
     }
   }
 
@@ -84,6 +90,8 @@ export class List extends DataWithPermissions {
 
   public clone(internal = false): List {
     const clone = new List();
+    clone.everyone = this.everyone;
+    clone.disableHQSuggestions = this.disableHQSuggestions;
     clone.name = this.name;
     clone.version = this.version || '1.0.0';
     clone.tags = this.tags;

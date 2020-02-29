@@ -226,9 +226,7 @@ export class ListsFacade {
     }).afterClose.pipe(
       filter(res => res && res.name !== undefined),
       map(res => {
-        const list = new List();
-        list.everyone = this.settings.defaultPermissionLevel;
-        list.disableHQSuggestions = this.settings.disableHQSuggestions;
+        const list = new List(this.settings);
         list.name = res.name;
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
@@ -238,8 +236,7 @@ export class ListsFacade {
   }
 
   newEphemeralList(itemName: string): List {
-    const list = new List();
-    list.everyone = this.settings.defaultPermissionLevel;
+    const list = new List(this.settings);
     list.ephemeral = true;
     list.name = itemName;
     return list;
