@@ -51,14 +51,11 @@ export class MachinaService {
       const borkedData = splitForCheck.findIndex((char) => {
         return char < ' ';
       });
-      if (borkedData > -1) {
+      if ((region === Region.Korea && environment.koreanGameVersion < 5.2) || (region === Region.China && environment.chineseGameVersion < 5.2)) {
+        let uint8array = new TextEncoder().encode(name);
+        name = new TextDecoder().decode(uint8array.slice(4));
+      } else if (borkedData > -1) {
         name = name.substring(borkedData);
-      }
-      if (region === Region.Korea && environment.koreanGameVersion < 5.2) {
-        name = name.substring(4);
-      }
-      if (region === Region.China && environment.chineseGameVersion < 5.2) {
-        name = name.substring(4);
       }
       return [retainers, name];
     }),
