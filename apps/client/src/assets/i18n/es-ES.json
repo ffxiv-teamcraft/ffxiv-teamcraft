@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
-      "Spawn": "Tiempo de aparición",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "Aparece dos veces",
       "Spawns_twice_description": "Aparece dos veces por día eorzeano (Una aparición AM y otra PM)",
-      "Duration": "Duración",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "Ranura",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "Tipo de nodo",
       "Map": "Mapa",
       "Weather": "Clima",
@@ -402,6 +403,7 @@
     "Change_email": "Cambiar correo electrónico",
     "Change_email_success": "Correo electrónico cambiado",
     "No_shortcut": "Don't create shortcut on update",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -520,6 +522,8 @@
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
     "Reset_panel": "Restablecer todos los artículos de este panel",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
@@ -1422,7 +1426,8 @@
         "Size": "Tamaño",
         "ERRORS": {
           "Unknown_map": "Mapa desconocido, cambie de zona para cargarlo.",
-          "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo."
+          "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo.",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
@@ -1738,6 +1743,12 @@
       "Message": "Combine with NQ stack in: {{containers}}",
       "Filter": "Only show materials up to: ",
       "Placeholder": "Pick Expansion"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {

@@ -203,6 +203,14 @@ export class SettingsService {
     this.setSetting('lists:hide-large-list-message', hidden.toString());
   }
 
+  public get disableHQSuggestions(): boolean {
+    return this.getSetting('lists:disable-hq-suggestion', 'false') === 'true';
+  }
+
+  public set disableHQSuggestions(disabled: boolean) {
+    this.setSetting('lists:disable-hq-suggestion', disabled.toString());
+  }
+
   public get disableSearchHistory(): boolean {
     return this.getSetting('disable-search-history', 'false') === 'true';
   }

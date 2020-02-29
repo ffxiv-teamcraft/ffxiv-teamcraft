@@ -21,6 +21,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { HasTooFew } from './optimizations/has-too-few';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ConsolidateStacks } from './optimizations/consolidate-stacks';
+import { UnwantedMaterials } from './optimizations/unwanted-materials';
 
 const optimisations: Provider[] = [
   {
@@ -45,6 +46,12 @@ const optimisations: Provider[] = [
     useClass: ConsolidateStacks,
     multi: true,
     deps: [TranslateService, InventoryFacade, LazyDataService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: UnwantedMaterials,
+    multi: true,
+    deps: [LazyDataService]
   }
 ];
 

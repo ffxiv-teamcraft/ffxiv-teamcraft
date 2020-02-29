@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
-      "Spawn": "등장 시간",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "2회 출현",
       "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
-      "Duration": "채집 가능 시간",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "슬롯",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "채집물 유형",
       "Map": "지도",
       "Weather": "날씨",
@@ -402,6 +403,7 @@
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "Don't create shortcut on update",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -520,6 +522,8 @@
     "Set_color": "목록 색상 설정",
     "Go_to_pinned": "고정해둔 목록으로 가기 (우클릭시 고정해제)",
     "Reset_panel": "이 패널에 있는 모든 아이템 초기화하기",
+    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
+    "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "COLORS": {
       "RED": "빨강",
       "GREEN": "초록",
@@ -1422,7 +1426,8 @@
         "Size": "크기",
         "ERRORS": {
           "Unknown_map": "알 수 없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
-          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요"
+          "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
+          "No_stats": "No stats detected, switch to fisher again to fix."
         }
       }
     },
@@ -1738,6 +1743,12 @@
       "Message": "NQ재료와 합치기: {{containers}}",
       "Filter": "해당 버젼 재료만 표시: ",
       "Placeholder": "게임 버젼 선택"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {

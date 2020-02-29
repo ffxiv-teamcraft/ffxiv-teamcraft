@@ -76,13 +76,19 @@
       <ng-container *ngTemplateOutlet="display"></ng-container>
     </ng-container>
     <ng-template #panelHeader>
-      <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
+      <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>{{displayRow.title | translate}}</div>
           &nbsp;({{displayRow.rows.length}} {{'items' | translate}})
           <i *ngIf="displayRow.collapsed && (displayRow.layoutRow && displayRow.layoutRow.collapseIfDone)" nz-icon
              nzType="check"></i>
         </div>
+        <nz-progress nz-tooltip
+                     fxFlex="1 1 auto"
+                     nzTitle="{{progression | number:'1.0-1':translate.currentLang}}%"
+                     [nzStrokeColor]="settings.theme.primary"
+                     [nzPercent]="progression"
+                     [nzShowInfo]="false"></nz-progress>
         <div fxLayout="row" fxLayoutGap="10px">
           <button (nzOnConfirm)="resetPanel()" *ngIf="displayRow.zoneBreakdown"
                   (click)="$event.stopPropagation()"

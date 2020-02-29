@@ -227,6 +227,14 @@
         </nz-form-control>
       </nz-form-item>
 
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.disableHQSuggestions"
+                 nz-checkbox>{{'SETTINGS.Always_disable_hq_suggestions' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Starting_place' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">

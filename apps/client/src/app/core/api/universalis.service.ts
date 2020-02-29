@@ -45,7 +45,7 @@ export class UniversalisService {
             item.Prices = res.listings.map(listing => {
               return {
                 Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
+                PricePerUnit: Math.ceil(listing.pricePerUnit / 1.05),
                 PriceTotal: listing.total,
                 IsHQ: listing.hq,
                 Quantity: listing.quantity
@@ -54,7 +54,7 @@ export class UniversalisService {
             item.History = res.recentHistory.map(listing => {
               return {
                 Server: listing.worldName,
-                PricePerUnit: listing.pricePerUnit,
+                PricePerUnit: Math.ceil(listing.pricePerUnit / 1.05),
                 PriceTotal: listing.total,
                 IsHQ: listing.hq,
                 Quantity: listing.quantity,

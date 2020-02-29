@@ -1,5 +1,5 @@
 {
-  "Quests": "Quêtes",
+  "Quests": "Quests",
   "Search_placeholder": "Nom de l'élément à chercher",
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez un utilisateur",
@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
-      "Spawn": "Apparition",
+      "Spawn": "Spawn (heure éorzéenne)",
       "Spawns_twice": "Deux apparitions",
       "Spawns_twice_description": "Apparaît deux fois en une journée éorzéenne",
-      "Duration": "Durée",
+      "Duration": "Durée (heures éorzéennes)",
       "Slot": "Emplacement",
+      "Slot_description": "Le numéro d'emplacement (1-8) dans l'interface de collecte en jeu (Ce n'est pas super important depuis la mise à jour 5.1)",
       "Type": "Type de nœud",
       "Map": "Carte",
       "Weather": "Météo",
@@ -401,7 +402,8 @@
     "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
-    "No_shortcut": "Don't create shortcut on update",
+    "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -455,7 +457,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "Charger les listes archivées",
     "Needs_verification": "S'il vous plaît vérifier votre personnage pour avoir accès aux listes partagées à votre compagnie libre",
     "Regenerate_all": "Regénérer toutes les listes",
     "Regenerated_all": "Vos listes sont maintenant à jour",
@@ -520,6 +522,8 @@
     "Set_color": "Attribuer une couleur",
     "Go_to_pinned": "Aller à la liste épinglée (clic droit pour désépingler)",
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
+    "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
+    "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
@@ -1394,12 +1398,12 @@
       "Weather_chances": "Chances pour chaque météo d'apparaître",
       "Bait": "Appât",
       "Refresh_data": "Actualiser les données",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
+      "Bite_times": "Temps entre le lancé et la touche",
+      "All_baits": "Aucun filtre d'appât",
       "TUG": {
-        "Light": "Light (!)",
-        "Medium": "Medium (!!)",
-        "Big": "Big (!!!)"
+        "Light": "Légère (!)",
+        "Medium": "Normale (!!)",
+        "Big": "Puissante (!!!)"
       },
       "OVERLAY": {
         "Open": "Ouvrir l'overlay de pêche",
@@ -1422,7 +1426,8 @@
         "Size": "Taille",
         "ERRORS": {
           "Unknown_map": "Carte inconnue, changer de zone pour la charger.",
-          "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le soucis."
+          "No_bait": "Aucun appât détecté, changez d'appât une fois pour régler le soucis.",
+          "No_stats": "Stats non détectées, passez à nouveau en pêcheur pour régler le soucis."
         }
       }
     },
@@ -1606,7 +1611,7 @@
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
     "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données",
     "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Appuyez sur Ctrl + Maj + F pour ouvrir une fenêtre de recherche depuis n'importe où dans l'outil"
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
@@ -1702,7 +1707,7 @@
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
     "Search_for_an_item": "Rechercher un objet",
-    "In_x_containers": "In {{amount}} containers",
+    "In_x_containers": "Dans {{amount}} inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1738,6 +1743,12 @@
       "Message": "Combiner avec la pile NQ dans : {{containers}}",
       "Filter": "Afficher uniquement les matérias jusqu'à : ",
       "Placeholder": "Choisir une extension"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Anciens matériaux qui ne sont utilisés que pour fabriquer des objets de bas niveau",
+      "Message": "L'ilvl de résultat le plus élevé que ce matériau puisse fabriquer est {{ilvl}}",
+      "Recipe_ilvl": "Ilvl minimum",
+      "Company_workshop": "Craft de CL"
     }
   },
   "VERSION_LOCK": {
@@ -1761,7 +1772,7 @@
     "Filters": "Filtres",
     "Total_stats": "Stats totales",
     "Total_materias_needed": "Total des matérias requises",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
     "Modal_editor": "Matérias pour {{itemName}}",

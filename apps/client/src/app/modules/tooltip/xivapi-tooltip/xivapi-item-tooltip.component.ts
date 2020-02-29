@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -9,7 +10,8 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 })
 export class XivapiItemTooltipComponent implements OnInit {
 
-  constructor(private l12n: LocalizedDataService) {}
+  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataService) {
+  }
 
   @Input() item: any;
 
@@ -20,10 +22,13 @@ export class XivapiItemTooltipComponent implements OnInit {
 
   public stats = [];
 
+  public patch: any;
+
   ngOnInit(): void {
     if (this.item === undefined) {
       return;
     }
+    this.patch = this.lazyData.patches.find(patch => patch.ID === this.item.Patch);
     this.mainAttributes.push({
       name: 'TOOLTIP.Level',
       value: this.item.LevelEquip

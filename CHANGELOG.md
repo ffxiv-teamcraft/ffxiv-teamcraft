@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.9"></a>
+## [7.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.8...v7.0.9) (2020-02-29)
+
+
+### Bug Fixes
+
+* **universalis:** remove GST because it was screwed with profit calcs ([255c115](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/255c115))
+* **desktop:** fixed retainer tracking in CN client with version check ([0fd6750](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0fd6750))
+* **desktop:** fixed retainer tracking in KR client ([3a1c410](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a1c410))
+* **fishing-overlay:** better weather detection and new stats warning ([d7be775](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7be775))
+* **simulator:** allow to add actions for first step even if stats are not met ([af6db48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af6db48))
+* **simulator:** you can now drag disabled actions again ([c6c056f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6c056f))
+* **ux:** Custom alarm clarifications ([4eda6a5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4eda6a5))
+
+
+### Features
+
+* **inventory-optimizer:** new: low ilvl mats ([17ef1e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/17ef1e5))
+* **list:** added progress bar to list panels ([d2aa525](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d2aa525)), closes [#1410](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1410)
+* **list:** new setting to always disable HQ suggestions ([3033317](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3033317))
+* **tooltips:** added patch in item tooltips ([94ff35e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94ff35e)), closes [#1411](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1411)
+
+
+
 <a name="7.0.8"></a>
 ## [7.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.7...v7.0.8) (2020-02-27)
 

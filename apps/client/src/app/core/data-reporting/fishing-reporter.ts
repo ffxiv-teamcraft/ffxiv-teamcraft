@@ -71,6 +71,7 @@ export class FishingReporter implements DataReporter {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
       filter(spot => spot !== undefined),
+      tap(spot => this.eorzea.setZone(spot.zoneId)),
       shareReplay(1)
     );
 

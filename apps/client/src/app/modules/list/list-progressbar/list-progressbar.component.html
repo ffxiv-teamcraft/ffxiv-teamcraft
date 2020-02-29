@@ -1,0 +1,12 @@
+<ng-container *ngIf="getProgression() as progression">
+  <nz-progress nz-tooltip
+               [nzTitle]="tooltip"
+               [nzStrokeColor]="theme.primary"
+               [nzPercent]="progression.materials"
+               [nzSuccessPercent]="progression.items"
+               [nzShowInfo]="false"></nz-progress>
+  <ng-template #tooltip>
+    {{'LIST.Progression_tooltip_materials' | translate: { amount: progression.materials | number:'1.0-0':locale } }},<br>
+    {{'LIST.Progression_tooltip_items' | translate: { amount: progression.items | number:'1.0-0':locale } }}
+  </ng-template>
+</ng-container>

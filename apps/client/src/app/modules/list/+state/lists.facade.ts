@@ -228,6 +228,7 @@ export class ListsFacade {
       map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
+        list.disableHQSuggestions = this.settings.disableHQSuggestions;
         list.name = res.name;
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
@@ -391,5 +392,19 @@ export class ListsFacade {
     if (offline.length > 0) {
       this.offlineListsLoaded(offline);
     }
+  }
+
+  /**
+   * Gets progression % as a [0,100] float
+   * @param items the items to build progression on.
+   */
+  public buildProgression(items: ListRow[]): number {
+    if (items.length === 0) {
+      return 100;
+    }
+    return 100 * items.reduce((acc, item) => {
+      acc += item.done / item.amount;
+      return acc;
+    }, 0) / items.length;
   }
 }

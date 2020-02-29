@@ -26,6 +26,9 @@ export class FishingReporterOverlayComponent {
     if (!state.baitId) {
       errors.push('DB.FISH.OVERLAY.ERRORS.No_bait');
     }
+    if (!state.stats) {
+      errors.push('DB.FISH.OVERLAY.ERRORS.No_stats');
+    }
     return errors;
   }
 
