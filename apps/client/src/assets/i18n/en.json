@@ -1742,12 +1742,6 @@
       "Message": "Combine with NQ stack in: {{containers}}",
       "Filter": "Only show materials up to: ",
       "Placeholder": "Pick Expansion"
-    },
-    "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
-      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {
