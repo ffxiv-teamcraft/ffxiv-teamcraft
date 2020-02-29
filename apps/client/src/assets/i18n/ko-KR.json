@@ -403,6 +403,7 @@
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "Don't create shortcut on update",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",

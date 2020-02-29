@@ -403,6 +403,7 @@
     "Change_email": "Изменить email",
     "Change_email_success": "Email успешно изменен",
     "No_shortcut": "Don't create shortcut on update",
+    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
