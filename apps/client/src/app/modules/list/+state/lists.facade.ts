@@ -228,6 +228,7 @@ export class ListsFacade {
       map(res => {
         const list = new List();
         list.everyone = this.settings.defaultPermissionLevel;
+        list.disableHQSuggestions = this.settings.disableHQSuggestions;
         list.name = res.name;
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
