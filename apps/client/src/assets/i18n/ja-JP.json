@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "カスタムアラームを追加する",
       "Name": "名前",
-      "Spawn": "リスポンタイム",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "2回出現",
       "Spawns_twice_description": "エオルゼア日で2回出現します。(午前、午後)",
-      "Duration": "採集可能時間",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "段目",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "タイプ",
       "Map": "地図",
       "Weather": "天候",
@@ -1741,6 +1742,12 @@
       "Message": "Combine with NQ stack in: {{containers}}",
       "Filter": "Only show materials up to: ",
       "Placeholder": "Pick Expansion"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {
