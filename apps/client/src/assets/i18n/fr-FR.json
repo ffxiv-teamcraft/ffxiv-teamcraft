@@ -192,11 +192,12 @@
     "CUSTOM": {
       "Title": "Ajouter une alarme personnalisée",
       "Name": "Nom",
-      "Spawn": "Apparition",
+      "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "Deux apparitions",
       "Spawns_twice_description": "Apparaît deux fois en une journée éorzéenne",
-      "Duration": "Durée",
+      "Duration": "Duration (Eorzean hours)",
       "Slot": "Emplacement",
+      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "Type de nœud",
       "Map": "Carte",
       "Weather": "Météo",
@@ -1741,6 +1742,12 @@
       "Message": "Combiner avec la pile NQ dans : {{containers}}",
       "Filter": "Afficher uniquement les matérias jusqu'à : ",
       "Placeholder": "Choisir une extension"
+    },
+    "UNWANTED_MATERIALS": {
+      "Title": "Old materials that are only used to make low iLvl items",
+      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Recipe_ilvl": "Min Resulting iLvl",
+      "Company_workshop": "Company Workshop"
     }
   },
   "VERSION_LOCK": {
