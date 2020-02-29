@@ -1023,6 +1023,7 @@
   "LEVEQUESTS": {
     "Title": "Levequests",
     "Levequest_name": "Levequest name",
+    "Level_range": "Level range",
     "No_results": "No levequests found",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantity",
