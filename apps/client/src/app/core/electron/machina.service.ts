@@ -47,7 +47,7 @@ export class MachinaService {
     map(([retainers, spawn, region]) => {
       let name: string = spawn.name;
       if ((region === Region.Korea && environment.koreanGameVersion < 5.2) || (region === Region.China && environment.chineseGameVersion < 5.2)) {
-        let uint8array: Uint8Array = new TextEncoder().encode(name);
+        const uint8array: Uint8Array = new TextEncoder().encode(name);
         name = new TextDecoder().decode(uint8array.slice(4));
       } 
       return [retainers, name];
