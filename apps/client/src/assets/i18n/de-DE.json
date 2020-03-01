@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "Im Notizbuch als erledigt markieren, sobald in der Liste erledigt",
     "Db_comments_position": "Position der Datenbank-Kommentare",
     "Always_HQ_leves": "Freibrief-Routine immer mit HQ-Gegenständen berechnen",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "Durchklickbares Overlay",
     "Disable_search_history": "Suchverlauf deaktivieren",
     "Disable_search_debounce": "Automatische Suche deaktivieren (nur durch Drücken der Eingabetaste wird die Suche ausgelöst)",
