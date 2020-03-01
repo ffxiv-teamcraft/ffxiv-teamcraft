@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Levequests",
     "Levequest_name": "Nome da Levequest",
+    "Level_range": "Level range",
     "No_results": "Nenhuma Levequest encontrada",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantidade",
