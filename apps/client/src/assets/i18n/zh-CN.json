@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "理符任务",
     "Levequest_name": "理符任务名",
+    "Level_range": "Level range",
     "No_results": "没有找到理符任务",
     "Add_to_list": "添加此理符任务物品到清单",
     "Quantity": "数量",
