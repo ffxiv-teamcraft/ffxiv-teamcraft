@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
     "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "理符任务",
     "Levequest_name": "理符任务名",
+    "Level_range": "Level range",
     "No_results": "没有找到理符任务",
     "Add_to_list": "添加此理符任务物品到清单",
     "Quantity": "数量",

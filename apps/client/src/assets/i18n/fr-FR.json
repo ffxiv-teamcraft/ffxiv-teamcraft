@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
     "Db_comments_position": "Position des commentaires de la base de données",
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Mandats",
     "Levequest_name": "Nom du mandat",
+    "Level_range": "Level range",
     "No_results": "Aucun mandat trouvé",
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",

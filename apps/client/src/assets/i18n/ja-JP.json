@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "リストから完了されたアイテムがあれば、手帳に該当アイテムを完了されたと表示する",
     "Db_comments_position": "データベースのコメント位置",
     "Always_HQ_leves": "何時でもギルド依頼hqアイテムを納品する時の経験値を表記",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "オーバーレイクリック無視",
     "Disable_search_history": "検索記録を削除",
     "Disable_search_debounce": "自動検索機能を使用しない（エンターキーを押すときのみ検索ができる）",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
+    "Level_range": "Level range",
     "No_results": "ギルドリーヴが見つかりません",
     "Add_to_list": "このギルドリーヴのアイテムをリストに追加する",
     "Quantity": "分量",

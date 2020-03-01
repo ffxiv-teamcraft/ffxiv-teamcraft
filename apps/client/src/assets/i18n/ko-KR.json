@@ -192,12 +192,12 @@
     "CUSTOM": {
       "Title": "사용자 지정 알람 추가",
       "Name": "이름",
-      "Spawn": "Spawn (Eorzean Time)",
+      "Spawn": "출현 시간(에오르제아 시간)",
       "Spawns_twice": "2회 출현",
       "Spawns_twice_description": "에오르제아 1일 기준으로 2번 출현 합니다.(오전, 오후)",
-      "Duration": "Duration (Eorzean hours)",
+      "Duration": "지속/제한시간(에오르제아 시간)",
       "Slot": "슬롯",
-      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
+      "Slot_description": "게임 내 채집 인터페이스에 아이템이 등장하는 슬롯(1-8) (5.1패치부터는 필수는 아닙니다)",
       "Type": "채집물 유형",
       "Map": "지도",
       "Weather": "날씨",
@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
@@ -402,8 +403,8 @@
     "Performance_mode_explain": "성능 향상을 위해 아이템의 아이콘과 메뉴를 제거(버튼만 남게됨) 합니다",
     "Change_email": "메일 주소 변경",
     "Change_email_success": "메일 주소가 변경되었습니다",
-    "No_shortcut": "Don't create shortcut on update",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "No_shortcut": "업데이트시 바로가기 만들지 않기",
+    "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -457,7 +458,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "보관된 목록 불러오기",
     "Needs_verification": "자유부대에 공유된 목록을 확인하기 위해서 당신의 캐릭터를 인증해주세요",
     "Regenerate_all": "전체 목록 갱신",
     "Regenerated_all": "목록이 갱신되었습니다.",
@@ -522,8 +523,8 @@
     "Set_color": "목록 색상 설정",
     "Go_to_pinned": "고정해둔 목록으로 가기 (우클릭시 고정해제)",
     "Reset_panel": "이 패널에 있는 모든 아이템 초기화하기",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "재료 수집: {{amount}}%",
+    "Progression_tooltip_items": "아이템 완성: {{amount}}%",
     "COLORS": {
       "RED": "빨강",
       "GREEN": "초록",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
     "Levequest_name": "길드 의뢰명",
+    "Level_range": "Level range",
     "No_results": "길드의뢰를 찾을 수 없습니다",
     "Add_to_list": "이 길드 의뢰 아이템을 목록에 추가",
     "Quantity": "수량",
@@ -1427,7 +1429,7 @@
         "ERRORS": {
           "Unknown_map": "알 수 없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
           "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
         }
       }
     },
@@ -1611,7 +1613,7 @@
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
     "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1707,7 +1709,7 @@
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
-    "In_x_containers": "In {{amount}} containers",
+    "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -1745,9 +1747,9 @@
       "Placeholder": "게임 버젼 선택"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
+      "Title": "낮은 ilvl(아이템레벨) 아이템만을 만들 수 있는 오래된 재료들",
+      "Message": "해당 재료를 사용해서 만들 수 있는 아이템의 최대 아이템레벨은 {{ilvl}} 입니다",
+      "Recipe_ilvl": "최소 ilvl(아이템레벨) 결과",
       "Company_workshop": "Company Workshop"
     }
   },

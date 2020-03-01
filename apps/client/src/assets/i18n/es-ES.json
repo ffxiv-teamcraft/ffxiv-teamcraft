@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
     "Disable_search_history": "Deshabilitar historial de búsqueda",
     "Disable_search_debounce": "Deshabilitar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
     "Levequest_name": "Nombre de misión leve",
+    "Level_range": "Level range",
     "No_results": "No se encontraron misiones leve",
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",

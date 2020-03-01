@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "Mark items as done in log when they are done in a list",
     "Db_comments_position": "Database comments position",
     "Always_HQ_leves": "Always count leves exp with HQ items",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Levequests",
     "Levequest_name": "Nome da Levequest",
+    "Level_range": "Level range",
     "No_results": "Nenhuma Levequest encontrada",
     "Add_to_list": "Add this levequest's items to a list",
     "Quantity": "Quantidade",
