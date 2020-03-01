@@ -1632,6 +1632,7 @@
     "Add_item": "Agregar artículo",
     "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
     "Import_from_clipboard": "Importar desde el portapapeles",
+    "Import_from_inventory": "Import from inventory",
     "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
     "Extension_link": "Obtenga la extensión en la tienda web de chrome",
     "Clear": "Borrar lista de artículos",
