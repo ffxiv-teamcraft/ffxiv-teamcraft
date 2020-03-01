@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Mandats",
     "Levequest_name": "Nom du mandat",
+    "Level_range": "Level range",
     "No_results": "Aucun mandat trouvé",
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
