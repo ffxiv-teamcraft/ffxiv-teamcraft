@@ -52,8 +52,8 @@ export class ConsolidateStacks extends InventoryOptimizer {
         return i.itemId === item.itemId
           // If we have no expansion selected to filter on, treat *all* items as "in expansion"
           && (expansion === null || this.itemInExpansion(item.itemId, +expansion))
-          && item.hq === false
-          && i.hq === true
+          && item.hq === true
+          && i.hq === false
           && i.spiritBond === 0
           && !InventoryOptimizer.inSameSlot(i, item)
           && item.quantity + i.quantity < this.lazyData.data.stackSizes[i.itemId]
