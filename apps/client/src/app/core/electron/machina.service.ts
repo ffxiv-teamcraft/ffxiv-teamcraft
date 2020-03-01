@@ -295,10 +295,10 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
       filter(packet => {
-        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1;
+        return packet.sourceActorSessionID === packet.targetActorSessionID;
       })
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.effectID);
+      this.eorzeaFacade.addStatus(packet.statusEntries[0].id);
     });
   }
 }
