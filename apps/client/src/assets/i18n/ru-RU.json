@@ -1632,6 +1632,7 @@
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
     "Import_from_clipboard": "Импорт из ретейнера",
+    "Import_from_inventory": "Import from inventory",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
     "Clear": "Очистить список",
