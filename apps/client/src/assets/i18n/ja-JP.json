@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
+    "Level_range": "Level range",
     "No_results": "ギルドリーヴが見つかりません",
     "Add_to_list": "このギルドリーヴのアイテムをリストに追加する",
     "Quantity": "分量",
