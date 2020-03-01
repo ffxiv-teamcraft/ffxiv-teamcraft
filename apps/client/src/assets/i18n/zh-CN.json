@@ -1632,6 +1632,7 @@
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
     "Import_from_clipboard": "从剪切板导入",
+    "Import_from_inventory": "Import from inventory",
     "Extension_tip": "针对国际服玩家：您可以使用 Lodestone inventory grabber 插件将雇员的背包复制到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
