@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Freibriefe",
     "Levequest_name": "Name des Freibriefs",
+    "Level_range": "Level range",
     "No_results": "Keine Freibriefe gefunden",
     "Add_to_list": "Füge die Gegenstände für den Freibrief einer Liste hinzu",
     "Quantity": "Anzahl",
