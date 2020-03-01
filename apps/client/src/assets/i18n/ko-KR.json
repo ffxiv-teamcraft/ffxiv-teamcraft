@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
