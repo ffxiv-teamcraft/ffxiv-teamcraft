@@ -95,7 +95,7 @@ export class FishingReporter implements DataReporter {
     const moochId$ = new BehaviorSubject<number>(null);
 
     packets$.pipe(
-      ofPacketType('updateTemporaryInventorySlot')
+      ofPacketType('inventoryTransaction')
     ).subscribe(packet => {
       moochId$.next(packet.catalogId);
     });

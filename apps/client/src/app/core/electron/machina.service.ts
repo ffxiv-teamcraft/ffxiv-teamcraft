@@ -49,7 +49,7 @@ export class MachinaService {
       if ((region === Region.Korea && environment.koreanGameVersion < 5.2) || (region === Region.China && environment.chineseGameVersion < 5.2)) {
         const uint8array: Uint8Array = new TextEncoder().encode(name);
         name = new TextDecoder().decode(uint8array.slice(4));
-      } 
+      }
       return [retainers, name];
     }),
     filter(([retainers, name]: [any[], string]) => name.length > 0 && retainers.some(retainer => retainer.name === name)),
@@ -182,7 +182,11 @@ export class MachinaService {
       this.userInventoryService.updateInventory(inventory);
     });
 
-    this.ipc.updateInventorySlotPackets$.pipe(
+    const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
+      filter(packet => packet.flag === 746)
+    );
+
+    merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(
       filter(packet => {
         return packet.catalogId < 40000;
       }),

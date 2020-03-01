@@ -27,6 +27,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('updateInventorySlot'));
   }
 
+  public get inventoryTransactionPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('inventoryTransaction'));
+  }
+
   public get cid$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('playerSetup'));
   }
@@ -192,7 +196,7 @@ export class IpcService {
       this.stateSubscription = this.store
         .pipe(
           debounce(() => interval(250)),
-          distinctUntilChanged(),
+          distinctUntilChanged()
         )
         .subscribe(state => {
           this.send('app-state:set', state);
