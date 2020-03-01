@@ -42,8 +42,8 @@
       <div *ngIf="!hideAvatar && _list.authorId !== undefined" class="author-avatar">
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
-      <div fxLayout="column" class="panel-middle-content">
-        <div nz-col nzMd="15" nzSm="24">
+      <div fxLayout="column" class="panel-middle-content" nz-col nzMd="17" nzSm="24">
+        <div>
           <div class="tags">
             <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
               {{'Ephemeral_tag' | translate}}
@@ -69,7 +69,7 @@
         </div>
         <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay"></app-list-progressbar>
       </div>
-      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4" nzSm="24">
+      <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
         <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) > 10" [cbContent]="getLink()"
                 [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
