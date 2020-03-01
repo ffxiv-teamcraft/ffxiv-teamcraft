@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { EorzeaPartialState } from './eorzea.reducer';
-import { AddStatus, RemoveStatus, SetBait, SetStatuses, SetZone } from './eorzea.actions';
+import { AddStatus, RemoveStatus, SetBait, SetStatuses, SetZone, SetMap } from './eorzea.actions';
 import { eorzeaQuery } from './eorzea.selectors';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -18,14 +18,7 @@ export class EorzeaFacade {
 
   public zoneId$ = this.store.pipe(select(eorzeaQuery.getZone));
 
-  public mapId$ = combineLatest([this.zoneId$, this.lazyData.data$]).pipe(
-    map(([zoneId, data]) => {
-      return +Object.keys(data.maps)
-        .find(key => {
-          return zoneId === data.maps[+key].placename_id;
-        });
-    })
-  );
+  public mapId$ = this.store.pipe(select(eorzeaQuery.getMap));
 
   public weatherId$ = combineLatest([this.etime.getEorzeanTime(), this.mapId$]).pipe(
     filter(([, mapId]) => mapId > 0),
@@ -55,6 +48,10 @@ export class EorzeaFacade {
 
   setZone(zoneId: number) {
     this.store.dispatch(new SetZone(zoneId));
+  }
+
+  setMap(mapId: number) {
+    this.store.dispatch(new SetMap(mapId));
   }
 
   setBait(baitId: number) {

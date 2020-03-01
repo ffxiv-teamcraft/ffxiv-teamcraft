@@ -20,9 +20,6 @@ export class FishingReporterOverlayComponent {
 
   getErrors(state: any): string[] {
     const errors = [];
-    if (!state.weatherId) {
-      errors.push('DB.FISH.OVERLAY.ERRORS.Unknown_map');
-    }
     if (!state.baitId) {
       errors.push('DB.FISH.OVERLAY.ERRORS.No_bait');
     }

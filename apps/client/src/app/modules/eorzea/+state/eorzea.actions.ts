@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum EorzeaActionTypes {
   SetZone = '[Eorzea] Set Zone',
+  SetMap = '[Eorzea] Set Map',
   SetWeather = '[Eorzea] Set Weather',
   SetBait = '[Eorzea] Set Bait',
   RemoveStatus = '[Eorzea] Remove Status',
@@ -11,6 +12,13 @@ export enum EorzeaActionTypes {
 
 export class SetZone implements Action {
   readonly type = EorzeaActionTypes.SetZone;
+
+  constructor(public payload: number) {
+  }
+}
+
+export class SetMap implements Action {
+  readonly type = EorzeaActionTypes.SetMap;
 
   constructor(public payload: number) {
   }
@@ -51,4 +59,4 @@ export class SetStatuses implements Action {
   }
 }
 
-export type EorzeaAction = SetZone | SetWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;
+export type EorzeaAction = SetZone | SetMap | SetWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;

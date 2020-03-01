@@ -20,6 +20,7 @@ import * as firebase from 'firebase/app';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +64,7 @@ export class MachinaService {
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService) {
+              private settings: SettingsService, private lazyData: LazyDataService) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
@@ -237,11 +238,18 @@ export class MachinaService {
         }
       });
 
-    this.ipc.packets$.pipe(
-      ofPacketType('initZone')
-    ).subscribe(packet => {
+    combineLatest([
+      this.ipc.packets$.pipe(
+        ofPacketType('initZone')
+      ),
+      this.lazyData.data$
+    ]).subscribe(([packet, data]) => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
+      this.eorzeaFacade.setMap(+Object.keys(data.maps)
+        .find(key => {
+          return realZoneId === data.maps[+key].placename_id;
+        }));
     });
 
     this.ipc.packets$.pipe(

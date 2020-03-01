@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom, delay } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -71,7 +71,10 @@ export class FishingReporter implements DataReporter {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
       filter(spot => spot !== undefined),
-      tap(spot => this.eorzea.setZone(spot.zoneId)),
+      tap(spot => {
+        this.eorzea.setZone(spot.zoneId);
+        this.eorzea.setMap(spot.mapId);
+      }),
       shareReplay(1)
     );
 
