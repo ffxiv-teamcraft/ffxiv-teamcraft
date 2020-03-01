@@ -43,7 +43,7 @@
         <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
       </div>
       <div fxLayout="column" class="panel-middle-content" nz-col nzMd="17" nzSm="24">
-        <div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div class="tags">
             <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTitle]="'Ephemeral_list' | translate" nz-tooltip>
               {{'Ephemeral_tag' | translate}}
