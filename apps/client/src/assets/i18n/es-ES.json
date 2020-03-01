@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
     "Levequest_name": "Nombre de misión leve",
+    "Level_range": "Level range",
     "No_results": "No se encontraron misiones leve",
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
