@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Ливквесты",
     "Levequest_name": "Название ливквеста",
+    "Level_range": "Level range",
     "No_results": "Ливквест не найден",
     "Add_to_list": "Добавить предмет ливквеста в список",
     "Quantity": "Количество",
