@@ -18,6 +18,9 @@ import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorr
 import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
+import { InventoryImportPopupComponent } from '../inventory-import-popup/inventory-import-popup.component';
+import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -65,7 +68,7 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public totalItems: number;
 
-  @ViewChild('notificationRef', {static: true})
+  @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
 
   // Notification data
@@ -78,7 +81,8 @@ export class RecipeFinderComponent implements OnDestroy {
               private listManager: ListManagerService, private progressService: ProgressPopupService,
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
-              private dialog: NzModalService, private authFacade: AuthFacade) {
+              private dialog: NzModalService, private authFacade: AuthFacade,
+              public platform: PlatformService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 19)
@@ -193,6 +197,22 @@ export class RecipeFinderComponent implements OnDestroy {
         console.error(error);
         this.message.error(this.translate.instant('RECIPE_FINDER.Clipboard_content_malformed'), {
           nzDuration: 3000
+        });
+      });
+  }
+
+  importFromInventory(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('RECIPE_FINDER.Import_from_inventory'),
+      nzContent: InventoryImportPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(res => res)
+      )
+      .subscribe((items: InventoryItem[]) => {
+        items.forEach(item => {
+          this.addToPool(item.itemId, item.quantity, true);
         });
       });
   }
