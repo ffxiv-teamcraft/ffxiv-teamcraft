@@ -1745,9 +1745,9 @@
       "Placeholder": "게임 버젼 선택"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
+      "Title": "낮은 ilvl(아이템레벨) 아이템만을 만들 수 있는 오래된 재료들",
+      "Message": "해당 재료를 사용해서 만들 수 있는 아이템의 최대 아이템레벨은 {{ilvl}} 입니다",
+      "Recipe_ilvl": "최소 ilvl(아이템레벨) 결과",
       "Company_workshop": "Company Workshop"
     }
   },
