@@ -108,7 +108,7 @@ export class AuthFacade {
       const character = characters
         .filter(c => c.Character)
         .find(char => char.Character.ID === user.defaultLodestoneId);
-      const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);
+      const lodestoneIdEntry = (user.lodestoneIds || []).find(entry => entry.id === user.defaultLodestoneId);
       // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
       if (character === undefined) {
         const custom = <Character>user.customCharacters.find(c => c.ID === user.defaultLodestoneId);
