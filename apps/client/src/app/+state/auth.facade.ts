@@ -93,7 +93,7 @@ export class AuthFacade {
         });
       }));
     }),
-    map(characters => characters.filter(c => c !== null)),
+    map(characters => characters.filter(c => c && c.Character)),
     distinctUntilChanged((a, b) => a.length === b.length),
     shareReplay(1)
   );
@@ -106,7 +106,7 @@ export class AuthFacade {
   ]).pipe(
     map(([user, characters]) => {
       const character = characters
-        .filter(c => c.Character !== null)
+        .filter(c => c.Character)
         .find(char => char.Character.ID === user.defaultLodestoneId);
       const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === user.defaultLodestoneId);
       // If we couldn't find it, it's maybe because it's a custom one (for KR servers)
