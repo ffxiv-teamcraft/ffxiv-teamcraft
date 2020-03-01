@@ -1024,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
     "Levequest_name": "길드 의뢰명",
+    "Level_range": "Level range",
     "No_results": "길드의뢰를 찾을 수 없습니다",
     "Add_to_list": "이 길드 의뢰 아이템을 목록에 추가",
     "Quantity": "수량",
