@@ -95,9 +95,9 @@ export class FishingReporter implements DataReporter {
     const moochId$ = new BehaviorSubject<number>(null);
 
     packets$.pipe(
-      ofPacketType('useMooch')
+      ofPacketType('updateTemporaryInventorySlot')
     ).subscribe(packet => {
-      moochId$.next(packet.moochID);
+      moochId$.next(packet.catalogId);
     });
 
     const throw$ = eventPlay$.pipe(
@@ -235,7 +235,6 @@ export class FishingReporter implements DataReporter {
       filter(([, isFishing]) => isFishing),
       map(([fishData]) => fishData),
       withLatestFrom(
-        this.eorzea.mapId$,
         this.eorzea.baitId$,
         throw$,
         bite$,
@@ -249,12 +248,12 @@ export class FishingReporter implements DataReporter {
           spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
       }),
-      map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
+      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {
           itemId: fish.id,
           etime: throwData.etime.getUTCHours(),
           hq: fish.hq,
-          mapId,
+          mapId: spot.mapId,
           weatherId: throwData.weatherId,
           previousWeatherId: throwData.previousWeatherId,
           baitId,
