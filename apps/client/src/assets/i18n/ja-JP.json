@@ -1632,6 +1632,7 @@
     "Add_item": "アイテム追加",
     "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",
     "Import_from_clipboard": "クリップボードから読み込む",
+    "Import_from_inventory": "Import from inventory",
     "Extension_tip": "[グローバルサーバ専用] クローム拡張アプリ[Lodestone inventory grabber] を利用して、執事インベントリ内のアイテムをクリップボードにコピーすることができます： ",
     "Extension_link": "ChromeのWebストアから拡張アプリをダウンロード",
     "Clear": "アイテムリストの初期化",
