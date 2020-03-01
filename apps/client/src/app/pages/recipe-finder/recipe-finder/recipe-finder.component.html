@@ -52,6 +52,13 @@
             nzType="primary">
       <i nz-icon nzTheme="outline" nzType="snippets"></i> {{'RECIPE_FINDER.Import_from_clipboard' | translate}}
     </button>
+    <button (click)="importFromInventory()"
+            *ngIf="platform.isDesktop()"
+            class="search-button"
+            nz-button
+            nzType="primary">
+      <i nz-icon nzTheme="outline" nzType="snippets"></i> {{'RECIPE_FINDER.Import_from_inventory' | translate}}
+    </button>
     <button (click)="search$.next()" [disabled]="pool.length === 0" class="search-button" nz-button
             nzType="primary">
       <i nz-icon nzType="search"></i> {{'RECIPE_FINDER.Search' | translate}}

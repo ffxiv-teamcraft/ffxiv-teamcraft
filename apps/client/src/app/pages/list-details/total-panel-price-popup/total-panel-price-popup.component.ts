@@ -58,7 +58,11 @@ export class TotalPanelPricePopupComponent implements OnInit {
           const costs = tradeSource.trades
             .sort((ta) => ta.items[0].hq ? 1 : -1)
             .map(t => {
-              return Math.ceil(t.currencies.find(c => c.id === currency.id).amount * (row.amount - row.done) / itemsPerTrade);
+              const e = t.currencies.find(c => c.id === currency.id);
+              if (e) {
+                return Math.ceil(e.amount * (row.amount - row.done) / itemsPerTrade);
+              }
+              return null;
             });
 
           const tradeRow = result.find(r => r.currencyId === currency.id);

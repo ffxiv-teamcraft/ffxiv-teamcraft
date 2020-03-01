@@ -31,7 +31,6 @@ export class ProfileEditorComponent {
   characters$ = combineLatest([this.authFacade.characters$, this.authFacade.user$]).pipe(
     map(([chars, user]) => {
       return chars
-        .concat(<CharacterResponse[]>(user.customCharacters.map(c => ({ Character: c })) || []))
         .map(char => {
           const lodestoneIdEntry = user.lodestoneIds.find(entry => entry.id === char.Character.ID);
           return {

@@ -158,6 +158,13 @@
                  nz-checkbox>{{'SETTINGS.Always_HQ_leves' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.alwaysAllDeliveries"
+                nz-checkbox>{{'SETTINGS.Always_all_deliveries' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">

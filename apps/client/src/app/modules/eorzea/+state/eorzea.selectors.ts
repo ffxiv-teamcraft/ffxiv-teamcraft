@@ -9,6 +9,11 @@ const getZone = createSelector(
   (state: EorzeaState) => state.zoneId
 );
 
+const getMap = createSelector(
+  getEorzeaState,
+  (state: EorzeaState) => state.mapId
+);
+
 const getBait = createSelector(
   getEorzeaState,
   (state: EorzeaState) => state.baitId
@@ -22,6 +27,7 @@ const getStatuses = createSelector(
 
 export const eorzeaQuery = {
   getZone,
+  getMap,
   getBait,
   getStatuses
 };

@@ -388,6 +388,7 @@
     "Auto_mark_as_done_in_log": "Marquer les éléments comme faits dans le journal lorsqu'ils sont faits dans une liste",
     "Db_comments_position": "Position des commentaires de la base de données",
     "Always_HQ_leves": "Utiliser des mandats HQ par défaut pour le calcul d'exp",
+    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
@@ -403,7 +404,7 @@
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1023,6 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "Mandats",
     "Levequest_name": "Nom du mandat",
+    "Level_range": "Level range",
     "No_results": "Aucun mandat trouvé",
     "Add_to_list": "Ajouter les éléments de ce mandat à une liste",
     "Quantity": "Quantité",
@@ -1630,6 +1632,7 @@
     "Add_item": "Ajouter un objet",
     "Clipboard_content_malformed": "Contenu du presse-papiers mal formé",
     "Import_from_clipboard": "Importer depuis le presse-papiers",
+    "Import_from_inventory": "Importer depuis l'inventaire",
     "Extension_tip": "Vous pouvez copier l'inventaire de vos servants dans votre presse-papiers en utilisant l'extension \"inventory grabber\" : ",
     "Extension_link": "Obtenir l'extension sur le store chrome",
     "Clear": "Effacer la liste des éléments",

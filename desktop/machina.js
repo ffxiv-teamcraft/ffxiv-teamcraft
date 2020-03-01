@@ -63,6 +63,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
       const acceptedPackets = [
         'itemInfo',
         'updateInventorySlot',
+        'inventoryTransaction',
         'currencyCrystalInfo',
         'marketBoardItemListingCount',
         'marketBoardItemListing',

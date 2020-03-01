@@ -121,7 +121,7 @@ export class ListManagerService {
   private processItemAddition(data: ItemData, itemId: number, amount: number, collectible: boolean, recipeId: string | number): Observable<List> {
     const crafted = this.extractor.extract(DataType.CRAFTED_BY, +itemId, data);
     const addition = new List();
-    const toAdd: ListRow = new ListRow();
+    let toAdd: ListRow = new ListRow();
     // If this is a craft
     if (data.isCraft()) {
       if (!recipeId) {
@@ -175,6 +175,8 @@ export class ListManagerService {
         usePrice: true
       });
     }
+
+    toAdd = this.extractor.addDataToItem(toAdd, data);
     // We add the row to recipes.
     const added = addition.addToFinalItems(toAdd);
     let addition$: Observable<List>;

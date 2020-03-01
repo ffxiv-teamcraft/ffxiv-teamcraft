@@ -16,6 +16,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboard-import-popup.component';
+import { InventoryImportPopupComponent } from './inventory-import-popup/inventory-import-popup.component';
 
 const routes: Routes = [
   {
@@ -26,8 +27,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [RecipeFinderComponent, ClipboardImportPopupComponent],
-  entryComponents: [ClipboardImportPopupComponent],
+  declarations: [RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent],
+  entryComponents: [ClipboardImportPopupComponent, InventoryImportPopupComponent],
   imports: [
     CommonModule,
     FormsModule,

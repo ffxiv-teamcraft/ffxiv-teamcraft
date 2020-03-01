@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <nz-select [(ngModel)]="selectedContainers" nzShowSearch class="select-box">
+    <nz-option *ngFor="let container of containers$ | async" [nzValue]="container" [nzLabel]="container"></nz-option>
+  </nz-select>
+  <div class="footer" fxLayout="row" fxLayoutGap="5px">
+    <button (click)="confirm()" nz-button nzType="primary">{{'Import' | translate}}</button>
+    <button (click)="cancel()" nz-button>{{'Cancel' | translate}}</button>
+  </div>
+</div>

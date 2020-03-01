@@ -1,7 +1,7 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom, delay } from 'rxjs/operators';
+import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
@@ -71,7 +71,10 @@ export class FishingReporter implements DataReporter {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
       filter(spot => spot !== undefined),
-      tap(spot => this.eorzea.setZone(spot.zoneId)),
+      tap(spot => {
+        this.eorzea.setZone(spot.zoneId);
+        this.eorzea.setMap(spot.mapId);
+      }),
       shareReplay(1)
     );
 
@@ -95,9 +98,9 @@ export class FishingReporter implements DataReporter {
     const moochId$ = new BehaviorSubject<number>(null);
 
     packets$.pipe(
-      ofPacketType('useMooch')
+      ofPacketType('inventoryTransaction')
     ).subscribe(packet => {
-      moochId$.next(packet.moochID);
+      moochId$.next(packet.catalogId);
     });
 
     const throw$ = eventPlay$.pipe(
@@ -235,7 +238,6 @@ export class FishingReporter implements DataReporter {
       filter(([, isFishing]) => isFishing),
       map(([fishData]) => fishData),
       withLatestFrom(
-        this.eorzea.mapId$,
         this.eorzea.baitId$,
         throw$,
         bite$,
@@ -249,12 +251,12 @@ export class FishingReporter implements DataReporter {
           spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
       }),
-      map(([fish, mapId, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
+      map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {
           itemId: fish.id,
           etime: throwData.etime.getUTCHours(),
           hq: fish.hq,
-          mapId,
+          mapId: spot.mapId,
           weatherId: throwData.weatherId,
           previousWeatherId: throwData.previousWeatherId,
           baitId,

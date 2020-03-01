@@ -20,6 +20,7 @@ import * as firebase from 'firebase/app';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -46,19 +47,9 @@ export class MachinaService {
   private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$, this.settings.region$]).pipe(
     map(([retainers, spawn, region]) => {
       let name: string = spawn.name;
-      const splitForCheck = name.split('');
-      // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
-      const borkedData = splitForCheck.findIndex((char) => {
-        return char < ' ';
-      });
-      if (borkedData > -1) {
-        name = name.substring(borkedData);
-      }
-      if (region === Region.Korea && environment.koreanGameVersion < 5.2) {
-        name = name.substring(4);
-      }
-      if (region === Region.China && environment.chineseGameVersion < 5.2) {
-        name = name.substring(4);
+      if ((region === Region.Korea && environment.koreanGameVersion < 5.2) || (region === Region.China && environment.chineseGameVersion < 5.2)) {
+        const uint8array: Uint8Array = new TextEncoder().encode(name);
+        name = new TextDecoder().decode(uint8array.slice(4));
       }
       return [retainers, name];
     }),
@@ -73,7 +64,7 @@ export class MachinaService {
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService) {
+              private settings: SettingsService, private lazyData: LazyDataService) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
@@ -192,7 +183,11 @@ export class MachinaService {
       this.userInventoryService.updateInventory(inventory);
     });
 
-    this.ipc.updateInventorySlotPackets$.pipe(
+    const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
+      filter(packet => packet.flag === 746)
+    );
+
+    merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(
       filter(packet => {
         return packet.catalogId < 40000;
       }),
@@ -243,11 +238,18 @@ export class MachinaService {
         }
       });
 
-    this.ipc.packets$.pipe(
-      ofPacketType('initZone')
-    ).subscribe(packet => {
+    combineLatest([
+      this.ipc.packets$.pipe(
+        ofPacketType('initZone')
+      ),
+      this.lazyData.data$
+    ]).subscribe(([packet, data]) => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
+      this.eorzeaFacade.setMap(+Object.keys(data.maps)
+        .find(key => {
+          return realZoneId === data.maps[+key].placename_id;
+        }));
     });
 
     this.ipc.packets$.pipe(
@@ -293,10 +295,10 @@ export class MachinaService {
     this.ipc.packets$.pipe(
       ofPacketType('effectResult'),
       filter(packet => {
-        return packet.sourceActorSessionID === packet.targetActorSessionID && packet.actorID === packet.actorID1;
+        return packet.sourceActorSessionID === packet.targetActorSessionID;
       })
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.effectID);
+      this.eorzeaFacade.addStatus(packet.statusEntries[0].id);
     });
   }
 }

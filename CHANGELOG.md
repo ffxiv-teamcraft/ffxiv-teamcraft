@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.10"></a>
+## [7.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.9...v7.0.10) (2020-03-01)
+
+
+### Bug Fixes
+
+* **desktop:** fixed NPC trades tracking ([b7b1806](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7b1806))
+* **desktop:** fixed retainer tracking KR/CN ([911b447](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/911b447))
+* **fishing-reporter:** fixed an issue with reporting in ocean fishing ([ce8699b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce8699b))
+* **fishing-reporter:** fixed buffs tracking ([3dcfbce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3dcfbce))
+* **fishing-reporter:** fixed map id tracking for ocean fishing ([c925dba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c925dba))
+* **layout:** fixed order by JOB on new lists ([2d3b378](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d3b378))
+* **list-panel:** better alignment for tags and description ([a38caa6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a38caa6))
+* **list-panel:** too long descriptions don't push buttons anymore ([ffe3321](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ffe3321)), closes [#1429](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1429)
+* **lists:** fix ignore currencies in total trades ([b04e9b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b04e9b7))
+* **profile:** you can now properly delete CN/KR characters ([91b35ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/91b35ad)), closes [#1430](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1430)
+* **recipe-finder:** fixed min level filter not being applied properly ([f4d73f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4d73f2))
+* Consolidate Stacks comparison was reversed ([3f5bd09](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f5bd09))
+* Disable HQ setting works more thoroughly ([8714899](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8714899))
+* **ux:** fixed crafting level showing on item page ([e94ba40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e94ba40))
+
+
+### Features
+
+* **recipe-finder:** import from inventory ([bf79edb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bf79edb))
+* **ux:** add 'level range' label on leve page ([23eba0e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23eba0e))
+* **ux:** add the actual reference ([2afea29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2afea29))
+* **ux:** setting for always doing large leves ([b8d0209](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8d0209))
+
+
+
 <a name="7.0.9"></a>
 ## [7.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.8...v7.0.9) (2020-02-29)
 
