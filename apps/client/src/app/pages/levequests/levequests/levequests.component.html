@@ -28,9 +28,10 @@
     </nz-input-group>
   </div>
 
-  <div [nzMd]="{ span: 5, offset: 1, order: 3 }" [nzXXl]="{ span: 3 }" [nzXs]="{ span: 13, offset: 1, order: 2 }"
+  <div [nzMd]="{ span: 7, offset: 1, order: 3 }" [nzXXl]="{ span: 5 }" [nzXs]="{ span: 13, offset: 1, order: 2 }"
        nz-col>
     <nz-input-group class="levels" nzCompact>
+      <div class="levels range">{{'LEVEQUESTS.Level_range' | translate}}</div>
       <nz-input-number (ngModelChange)="setLevel(levelMin$, $event)" [ngModel]="levelMin$.value" [nzMax]="80"
                        [nzMin]="1"
                        [nzPrecision]="0"></nz-input-number>
