@@ -147,7 +147,7 @@
     "Pie_charts": "饼状图",
     "Read_more_on_wiki": "在wiki上阅读更多详细信息",
     "Apply": "应用",
-    "Open_link": "在浏览器中打开",
+    "Open_link": "打开网页链接",
     "Unknown": "未知",
     "Minimum": "最小",
     "Maximum": "最大",
@@ -192,10 +192,10 @@
     "CUSTOM": {
       "Title": "添加自定义闹钟",
       "Name": "名称",
-      "Spawn": "Spawn (Eorzean Time)",
+      "Spawn": "出现（艾欧泽亚时间）",
       "Spawns_twice": "出现 2 次",
       "Spawns_twice_description": "每艾欧泽亚日出现 2 次 (上午，下午)",
-      "Duration": "Duration (Eorzean hours)",
+      "Duration": "存在时间（艾欧泽亚小时）",
       "Slot": "栏位",
       "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "采集类型",
@@ -388,7 +388,7 @@
     "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
-    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
+    "Always_all_deliveries": "在理符任务工具中默认选中“共可交付 3 次”",
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
     "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
@@ -404,7 +404,7 @@
     "Change_email": "修改电子邮箱",
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -523,8 +523,8 @@
     "Set_color": "设置清单颜色",
     "Go_to_pinned": "转到固定清单（右键单击取消固定）",
     "Reset_panel": "重置此面板的所有物品",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "已获得材料：{{amount}}%",
+    "Progression_tooltip_items": "已制作物品：{{amount}}%",
     "COLORS": {
       "RED": "红色",
       "GREEN": "绿色",
@@ -1024,7 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "理符任务",
     "Levequest_name": "理符任务名",
-    "Level_range": "Level range",
+    "Level_range": "等级范围",
     "No_results": "没有找到理符任务",
     "Add_to_list": "添加此理符任务物品到清单",
     "Quantity": "数量",
@@ -1632,6 +1632,7 @@
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
     "Import_from_clipboard": "从剪切板导入",
+    "Import_from_inventory": "Import from inventory",
     "Extension_tip": "针对国际服玩家：您可以使用 Lodestone inventory grabber 插件将雇员的背包复制到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
@@ -1747,10 +1748,10 @@
       "Placeholder": "选择版本"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
-      "Company_workshop": "Company Workshop"
+      "Title": "只能用于制作低等级物品的旧材料",
+      "Message": "此材料能制造的最高物品等级是 {{ilvl}}",
+      "Recipe_ilvl": "最低产物等级",
+      "Company_workshop": "部队工房"
     }
   },
   "VERSION_LOCK": {
