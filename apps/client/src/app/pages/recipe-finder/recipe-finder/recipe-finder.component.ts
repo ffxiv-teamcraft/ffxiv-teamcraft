@@ -106,7 +106,7 @@ export class RecipeFinderComponent implements OnDestroy {
         // Now that we have all possible recipes, let's filter and rate them
         const finalRecipes = uniquified.map(recipe => {
           const jobSet = sets.find(set => recipe.job === set.jobId);
-          recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.level;
+          recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
           recipe.missing = recipe.ingredients.filter(i => {
             const poolItem = this.pool.find(item => item.id === i.id);
             return !poolItem || poolItem.amount < i.amount;
