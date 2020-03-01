@@ -46,20 +46,10 @@ export class MachinaService {
   private retainerSpawns$: Observable<string> = combineLatest([this.retainerInformations$, this.ipc.npcSpawnPackets$, this.settings.region$]).pipe(
     map(([retainers, spawn, region]) => {
       let name: string = spawn.name;
-      const splitForCheck = name.split('');
-      // If there's a char below SPACE (\u0020), it's simply not possible for this name to be valid, let's strip the invalid part
-      const borkedData = splitForCheck.findIndex((char) => {
-        return char < ' ';
-      });
-      if (borkedData > -1) {
-        name = name.substring(borkedData);
-      }
-      if (region === Region.Korea && environment.koreanGameVersion < 5.2) {
-        name = name.substring(4);
-      }
-      if (region === Region.China && environment.chineseGameVersion < 5.2) {
-        name = name.substring(4);
-      }
+      if ((region === Region.Korea && environment.koreanGameVersion < 5.2) || (region === Region.China && environment.chineseGameVersion < 5.2)) {
+        const uint8array: Uint8Array = new TextEncoder().encode(name);
+        name = new TextDecoder().decode(uint8array.slice(4));
+      } 
       return [retainers, name];
     }),
     filter(([retainers, name]: [any[], string]) => name.length > 0 && retainers.some(retainer => retainer.name === name)),
