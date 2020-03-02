@@ -26,7 +26,13 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Spot' | translate}}</div>
-        <div *ngIf="state.spot; else unknown">{{state.spot.zoneId | placeName | i18n}}</div>
+        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" *ngIf="state.spot; else unknown">
+          <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'COMMON.Open_in_main_window' | translate"
+                  (click)="openSpotInMainWindow(state.spot)">
+            <i nz-icon nzType="info"></i>
+          </button>
+          <div>{{state.spot.zoneId | placeName | i18n}}</div>
+        </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Current_weather' | translate}}</div>

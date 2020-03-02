@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { Observable, ReplaySubject, Subject, Subscription, interval } from 'rxjs';
+import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { debounce, debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
@@ -165,6 +165,7 @@ export class IpcService {
       if (url.endsWith('/')) {
         url = url.substr(0, url.length - 1);
       }
+      console.log('NAVIGATE', url);
       this.router.navigate(url.split('/'));
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));

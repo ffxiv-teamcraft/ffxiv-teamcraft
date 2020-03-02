@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-fishing-reporter-overlay',
@@ -11,11 +12,15 @@ export class FishingReporterOverlayComponent {
 
   public state$: ReplaySubject<any> = new ReplaySubject<any>();
 
-  constructor(private ipc: IpcService) {
+  constructor(private ipc: IpcService, private translate: TranslateService) {
     this.ipc.on('fishing-state', (event, data) => {
       this.state$.next(data);
     });
     this.ipc.send('fishing-state:get');
+  }
+
+  openSpotInMainWindow(spot: any): void {
+    this.ipc.send('overlay:open-page', `/db/${this.translate.currentLang}/fishing-spot/${spot.id}`);
   }
 
   getErrors(state: any): string[] {

@@ -565,6 +565,10 @@ ipcMain.on('overlay:set-opacity', (event, data) => {
   }
 });
 
+ipcMain.on('overlay:open-page', (event, data) => {
+  win.webContents.send('navigate', data);
+});
+
 ipcMain.on('overlay:get-opacity', (event, data) => {
   const overlayWindow = openedOverlays[data.uri];
   if (overlayWindow !== undefined) {
