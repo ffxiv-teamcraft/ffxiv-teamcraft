@@ -160,7 +160,7 @@
             <thead>
             <tr class="grid-header-line">
               <th class="empty-head"></th>
-              <th *ngFor="let header of grid.headers; let last = last"
+              <th *ngFor="let header of grid.headers; let last = last; let i = index"
                   class="grid-cell grid-header"
                   [class.last]="last">
                 <app-item-icon [itemId]="header" width="32"></app-item-icon>
@@ -178,8 +178,12 @@
                   [style.background-color]="getColor((useGlobalTotal ? cell / grid.total: cell / grid.totals[i]))"
                   (mouseenter)="highlightedFish$.next(grid.headers[headerIndex])"
                   (mouseleave)="highlightedFish$.next(-1)">
-                <ng-container *ngIf="cell && cell > 0.1">{{(100 * (useGlobalTotal ? cell / grid.total : cell / grid.totals[i])) | number:'1.0-1'}}%
-                </ng-container>
+                <span *ngIf="cell && (cell / grid.totals[i]) > 0.1" nz-tooltip [nzTitle]="amountTooltip">
+                  <ng-template #amountTooltip>
+                    {{cell | number:'1.0-1':translate.currentLang}} / {{grid.totals[i] | number:'1.0-1':translate.currentLang}}
+                  </ng-template>
+                  {{(100 * (useGlobalTotal ? cell / grid.total : cell / grid.totals[i])) | number:'1.0-1':translate.currentLang}}%
+                </span>
               </td>
             </tr>
             </tbody>
