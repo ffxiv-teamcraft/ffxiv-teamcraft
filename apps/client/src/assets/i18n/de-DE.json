@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Teilbarer-Link wurde in die Zwischenablage kopiert",
-    "Copy": "Kopieren"
+    "Copy": "Kopieren",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "Alarme",
