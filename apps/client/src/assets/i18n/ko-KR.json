@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
-    "Copy": "복사"
+    "Copy": "복사",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "알람",
