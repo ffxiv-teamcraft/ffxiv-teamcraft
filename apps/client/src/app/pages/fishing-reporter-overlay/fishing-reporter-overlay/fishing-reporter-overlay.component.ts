@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
-import { ReplaySubject } from 'rxjs';
+import { combineLatest, interval, Observable, ReplaySubject } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-fishing-reporter-overlay',
@@ -11,6 +12,21 @@ import { TranslateService } from '@ngx-translate/core';
 export class FishingReporterOverlayComponent {
 
   public state$: ReplaySubject<any> = new ReplaySubject<any>();
+
+  public throwTime$: Observable<number> = combineLatest([interval(1000), this.state$]).pipe(
+    map(([, state]) => {
+      // If they never threw
+      if (!state.throwData || !state.isFishing) {
+        return 0;
+      }
+      // If they threw but no bite yet
+      if (!state.biteData || state.throwData.timestamp > state.biteData.timestamp) {
+        return Math.floor((Date.now() - state.throwData.timestamp) / 1000);
+      }
+      // If they threw and bite happened
+      return Math.floor((state.biteData.timestamp - state.throwData.timestamp) / 1000);
+    })
+  );
 
   constructor(private ipc: IpcService, private translate: TranslateService) {
     this.ipc.on('fishing-state', (event, data) => {

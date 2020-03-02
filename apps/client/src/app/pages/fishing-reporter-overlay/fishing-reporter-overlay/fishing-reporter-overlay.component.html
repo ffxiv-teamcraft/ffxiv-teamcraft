@@ -21,6 +21,10 @@
         </div>
       </div>
       <div fxLayout="row" fxLayoutAlign="space-between center">
+        <div>{{'DB.FISH.OVERLAY.Time_since_thrown' | translate}}</div>
+        <div>{{throwTime$ | async}}s</div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Mooch' | translate}}</div>
         <div>{{(state.mooch ? 'Yes' : 'No') | translate}}</div>
       </div>
