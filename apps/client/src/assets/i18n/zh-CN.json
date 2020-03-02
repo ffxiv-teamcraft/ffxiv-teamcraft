@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "分享链接已复制到剪贴板",
-    "Copy": "复制"
+    "Copy": "复制",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "闹钟",
