@@ -388,7 +388,7 @@
     "Auto_mark_as_done_in_log": "목록에서 완료된 아이템이 있으면 수첩에 해당 아이템을 완료됨이라고 표시",
     "Db_comments_position": "DB댓글 위치",
     "Always_HQ_leves": "항상 길드의뢰 hq아이템을 납품할 때의 경험치를 표기",
-    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
+    "Always_all_deliveries": "길드 의뢰 페이지에서 '총 3회 납품'을 기본값으로 설정하기",
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
@@ -1024,7 +1024,7 @@
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
     "Levequest_name": "길드 의뢰명",
-    "Level_range": "Level range",
+    "Level_range": "레벨 범위",
     "No_results": "길드의뢰를 찾을 수 없습니다",
     "Add_to_list": "이 길드 의뢰 아이템을 목록에 추가",
     "Quantity": "수량",
@@ -1632,7 +1632,7 @@
     "Add_item": "아이템 추가",
     "Clipboard_content_malformed": "클립보드에 복사된 내용의 형식이 잘못되었습니다",
     "Import_from_clipboard": "클립보드 내용을 불러오기",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "소지품에서 불러오기",
     "Extension_tip": "[글로벌 서버 전용] 크롬 확장 앱 [Lodestone inventory grabber] 을 이용하여 집사 인벤토리내 아이템들을 클립보드에 복사할 수 있습니다: ",
     "Extension_link": "크롬 웹 스토어에서 확장 앱 다운받기",
     "Clear": "아이템 목록 초기화",
@@ -1733,7 +1733,7 @@
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈"
     },
     "DUPLICATES": {
-      "Title": "아이템이 여러곳에 분산되어 있습니다",
+      "Title": "여러 곳에 분산된 아이템",
       "Message": "이 아이템은 {{containers}} 에도 있습니다"
     },
     "HAS_TOO_FEW": {
@@ -1751,7 +1751,7 @@
       "Title": "낮은 ilvl(아이템레벨) 아이템만을 만들 수 있는 오래된 재료들",
       "Message": "해당 재료를 사용해서 만들 수 있는 아이템의 최대 아이템레벨은 {{ilvl}} 입니다",
       "Recipe_ilvl": "최소 ilvl(아이템레벨) 결과",
-      "Company_workshop": "Company Workshop"
+      "Company_workshop": "부대 제작 설비"
     }
   },
   "VERSION_LOCK": {
@@ -1829,7 +1829,7 @@
     "COMPARISON": {
       "Compare_popup_title": "{{setName}} 와 비교",
       "Error_title": "장비세트를 비교할 수 없습니다",
-      "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
+      "Error_description": "비교할려는 장비 세트의 직업군이 현재 장비 세트의 직업군과 동일한지 확인하세요(같은 메인 능력치를 사용하는 직업)",
       "Type": "비교할 장비세트",
       "Ariyala": "Ariyala 장비세트",
       "External_gearset": "다른 사람의 팀크래프트 장비세트",
