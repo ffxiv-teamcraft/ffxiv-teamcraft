@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Ссылка скопирована в буфер обмена",
-    "Copy": "Копировать"
+    "Copy": "Копировать",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "Оповещения",
