@@ -6,6 +6,8 @@ const log = require('electron-log');
 const argv = process.argv.slice(1);
 log.transports.file.level = 'debug';
 log.log(argv);
+const Config = require('electron-config');
+const config = new Config();
 if (require('electron-squirrel-startup')) return;
 
 function handleSquirrelEvent() {
@@ -81,8 +83,6 @@ handleSquirrelEvent();
 
 const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog, shell } = require('electron');
 const path = require('path');
-const Config = require('electron-config');
-const config = new Config();
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
 
