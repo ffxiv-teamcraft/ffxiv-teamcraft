@@ -250,7 +250,7 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , , throwData, biteData, , spot, , mooch]) => {
+      filter(([fish, , throwData, biteData, , spot, , mooch]) => {
         return fish.id === -1 || (biteData.tug !== null &&
           spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
