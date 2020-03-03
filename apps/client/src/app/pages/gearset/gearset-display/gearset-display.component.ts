@@ -20,7 +20,6 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { List } from '../../../modules/list/model/list';
 import { RecipeChoicePopupComponent } from '../../simulator/components/recipe-choice-popup/recipe-choice-popup.component';
 import { BaseParam } from '../../../modules/gearsets/base-param';
-import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -196,13 +195,13 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       .reduce((acc, piece) => {
         acc += `**${this.i18n.getName(this.l12n.getItem(piece.itemId))}${piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
         ${piece.materias.filter(m => m > 0).reduce((materiaStr, materia) => {
-          return `${materiaStr}\n- ${this.i18n.getName(this.l12n.getItem(materia))}`
+          return `${materiaStr}\n- ${this.i18n.getName(this.l12n.getItem(materia))}`;
         }, '')}\n\n`;
         return acc;
       }, '');
   }
 
-  afterStringCopy():void{
+  afterStringCopy(): void {
     this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
   }
 
