@@ -1427,8 +1427,8 @@
         "Last_report": "최근 보고",
         "Fish": "물고기",
         "Size": "크기",
+        "Time_since_thrown": "Time since throw",
         "ERRORS": {
-          "Unknown_map": "알 수 없는 지역입니다. 지역확인을 위해 임의의 위치로 텔레포트 해주세요.",
           "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
         }
