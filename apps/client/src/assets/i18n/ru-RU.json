@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Ссылка скопирована в буфер обмена",
-    "Copy": "Копировать"
+    "Copy": "Копировать",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -1426,8 +1427,8 @@
         "Last_report": "Последний отчет",
         "Fish": "Рыба",
         "Size": "Размер",
+        "Time_since_thrown": "Time since throw",
         "ERRORS": {
-          "Unknown_map": "Неизвестная карта, поменяйте зону для загрузки.",
           "No_bait": "Не обнаружено наживки, смените наживку один раз.",
           "No_stats": "No stats detected, switch to fisher again to fix."
         }
