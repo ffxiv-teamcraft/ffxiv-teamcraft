@@ -1427,8 +1427,8 @@
         "Last_report": "最近一次垂钓记录",
         "Fish": "鱼",
         "Size": "尺寸",
+        "Time_since_thrown": "Time since throw",
         "ERRORS": {
-          "Unknown_map": "未知地图，请通过切换区域载入。",
           "No_bait": "未检测到钓饵，请重新“选饵”",
           "No_stats": "No stats detected, switch to fisher again to fix."
         }
