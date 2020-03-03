@@ -42,8 +42,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
     ['mainHand', 'offHand'],
-    ['head', 'necklace'],
-    ['chest', 'earRings'],
+    ['head', 'earRings'],
+    ['chest', 'necklace'],
     ['gloves', 'bracelet'],
     ['belt', 'ring1'],
     ['legs', 'ring2'],
