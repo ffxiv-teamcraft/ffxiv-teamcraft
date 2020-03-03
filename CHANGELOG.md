@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.11"></a>
+## [7.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.10...v7.0.11) (2020-03-03)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with shortcut not being created properly ([5616363](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5616363))
+* **fishing-reporter:** fixed reporter not reporting at all ([39dc067](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39dc067))
+* **simulator:** fixed ishgard supplies' collectability thresholds ([ac35b35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ac35b35))
+
+
+### Features
+
+* **db:** added tooltip to show total on data grids for fishing spot pages ([86aee3a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86aee3a))
+* **desktop:** added spot db button to fishing overlay to open spot in main window ([1347fdc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1347fdc))
+* **desktop:** show time since throw in fishing overlay ([2837848](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2837848))
+* **log-tracker:** added db buttons next to spots in side menu ([6fcf296](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fcf296))
+
+
+
 <a name="7.0.10"></a>
 ## [7.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.9...v7.0.10) (2020-03-01)
 
