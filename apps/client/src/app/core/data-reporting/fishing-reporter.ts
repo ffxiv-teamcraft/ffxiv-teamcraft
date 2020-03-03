@@ -217,8 +217,10 @@ export class FishingReporter implements DataReporter {
       this.eorzea.statuses$,
       this.eorzea.weatherId$.pipe(startWith(null), distinctUntilChanged()),
       this.eorzea.previousWeatherId$.pipe(startWith(null), distinctUntilChanged()),
-      moochId$.pipe(startWith(null))
-    ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, moochId]) => {
+      moochId$.pipe(startWith(null)),
+      throw$.pipe(startWith(null)),
+      bite$.pipe(startWith(null))
+    ]).subscribe(([isFishing, mapId, baitId, spot, stats, mooch, statuses, weatherId, previousWeatherId, moochId, throwData, biteData]) => {
       this.setState({
         isFishing,
         mapId,
@@ -229,7 +231,9 @@ export class FishingReporter implements DataReporter {
         statuses,
         weatherId,
         previousWeatherId,
-        moochId
+        moochId,
+        throwData,
+        biteData
       });
     });
 
@@ -246,7 +250,7 @@ export class FishingReporter implements DataReporter {
         fisherStats$,
         mooch$
       ),
-      filter(([fish, , , throwData, biteData, , spot, , mooch]) => {
+      filter(([fish, , throwData, biteData, , spot, , mooch]) => {
         return fish.id === -1 || (biteData.tug !== null &&
           spot.fishes.indexOf(fish.id) > -1
           && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));

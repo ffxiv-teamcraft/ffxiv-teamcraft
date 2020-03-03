@@ -25,9 +25,13 @@
               <span title>{{area.placeId | placeName | i18n}} ({{area.done}}/{{area.total}})</span>
               <ul>
                 <ng-container *ngFor="let spot of area.spots">
-                  <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total" [class.ant-menu-item-selected]="(spotId$ | async) === spot.id"
-                      class="menu-link"
-                      nz-menu-item>{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})
+                  <li (click)="spotId$.next(spot.id)" *ngIf="!hideCompleted || spot.done < spot.total"
+                      [class.ant-menu-item-selected]="(spotId$ | async) === spot.id"
+                      fxLayout="row"
+                      fxLayoutAlign="space-between center"
+                      nz-menu-item>
+                    <div>{{spot.placeId | placeName | i18n}} ({{spot.done}}/{{spot.total}})</div>
+                    <app-db-button type="fishing-spot" [id]="spot.id"></app-db-button>
                   </li>
                 </ng-container>
               </ul>
@@ -117,7 +121,7 @@
                                               flex="row"></app-fishing-bait>
                             <img *ngIf="node.gig" [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon"
                                  nz-tooltip src="./assets/icons/gig/{{node.gig}}.png">
-                            <img *ngIf="node.hookset" [nzTitle]="(node.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="gig-icon"
+                            <img *ngIf="node.hookset" [nzTitle]="(node.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n" class="gig-icon"
                                  nz-tooltip
                                  src="./assets/icons/hookset/{{node.hookset}}.png">
                             <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"

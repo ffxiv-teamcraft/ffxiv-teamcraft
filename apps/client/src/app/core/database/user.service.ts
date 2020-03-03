@@ -63,13 +63,13 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         switchMap(user => {
           if (user === null) {
             user = new TeamcraftUser();
+            user.createdAt = firebase.firestore.Timestamp.now();
             user.notFound = true;
             user.$key = uid;
             return of(user);
           } else {
             delete user.notFound;
           }
-          user.createdAt = firebase.firestore.Timestamp.now();
           if (user.patreonToken === undefined) {
             user.patron = false;
             return of(user);

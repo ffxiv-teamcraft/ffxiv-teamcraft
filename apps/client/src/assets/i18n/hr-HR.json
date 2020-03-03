@@ -155,7 +155,8 @@
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy"
+    "Copy": "Copy",
+    "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -1426,8 +1427,8 @@
         "Last_report": "Last report",
         "Fish": "Fish",
         "Size": "Size",
+        "Time_since_thrown": "Time since throw",
         "ERRORS": {
-          "Unknown_map": "Map unknown, change zone to load it.",
           "No_bait": "No bait detected, switch bait once to fix.",
           "No_stats": "No stats detected, switch to fisher again to fix."
         }
