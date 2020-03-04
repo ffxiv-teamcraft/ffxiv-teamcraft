@@ -156,7 +156,7 @@
     "Nq": "NQ",
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
     "Copy": "복사",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "메인 창에서 열기"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1427,7 +1427,7 @@
         "Last_report": "최근 보고",
         "Fish": "물고기",
         "Size": "크기",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
