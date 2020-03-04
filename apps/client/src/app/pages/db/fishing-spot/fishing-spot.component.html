@@ -178,9 +178,9 @@
                   [style.background-color]="getColor((useGlobalTotal ? cell / grid.total: cell / grid.totals[i]))"
                   (mouseenter)="highlightedFish$.next(grid.headers[headerIndex])"
                   (mouseleave)="highlightedFish$.next(-1)">
-                <span *ngIf="cell && (cell / grid.totals[i]) > 0.1" nz-tooltip [nzTitle]="amountTooltip">
+                <span *ngIf="cell" nz-tooltip [nzTitle]="amountTooltip">
                   <ng-template #amountTooltip>
-                    {{cell | number:'1.0-1':translate.currentLang}} / {{grid.totals[i] | number:'1.0-1':translate.currentLang}}
+                    {{cell | number:'1.0-2':translate.currentLang}} / {{grid.totals[i] | number:'1.0-1':translate.currentLang}}
                   </ng-template>
                   {{(100 * (useGlobalTotal ? cell / grid.total : cell / grid.totals[i])) | number:'1.0-1':translate.currentLang}}%
                 </span>
