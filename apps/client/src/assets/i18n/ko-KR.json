@@ -1811,7 +1811,7 @@
     "Optimize_materias": "마테리아 순서 최적화",
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1845,11 +1845,11 @@
       "Avg_melding_chances": "평균 금단 확률"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
-      "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
-      "GCD": "GCD"
+      "Ilvl": "평균 아이템레벨",
+      "HP": "HP",
+      "Direct_hit_chances": "직격 확률",
+      "Critical_hit_chances": "극대화 확률",
+      "GCD": "글쿨"
     }
   },
   "FOLDERS": {
