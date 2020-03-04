@@ -36,6 +36,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { GearsetCostPopupComponent } from './gearset-cost-popup/gearset-cost-popup.component';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.component';
+import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.compon
     ImportFromPcapPopupComponent,
     GearsetRowComponent,
     GearsetCostPopupComponent,
-    ItemCapsTableComponent
+    ItemCapsTableComponent,
+    StatsPopupComponent
   ],
   entryComponents: [
     GearsetCreationPopupComponent,
@@ -56,7 +58,8 @@ import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.compon
     LodestoneImportPopupComponent,
     GearsetComparatorPopupComponent,
     ImportFromPcapPopupComponent,
-    GearsetCostPopupComponent
+    GearsetCostPopupComponent,
+    StatsPopupComponent
   ],
   imports: [
     CommonModule,
@@ -97,7 +100,8 @@ import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.compon
     StatPipe,
     GearsetRowComponent,
     GearsetCostPopupComponent,
-    ItemCapsTableComponent
+    ItemCapsTableComponent,
+    StatsPopupComponent
   ]
 })
 export class GearsetsModule {

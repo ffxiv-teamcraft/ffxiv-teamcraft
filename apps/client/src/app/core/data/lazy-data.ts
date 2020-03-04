@@ -38,6 +38,7 @@ export interface LazyData {
   monsters: any;
   nodePositions: any;
   npcs: any;
+  paramGrow: any;
   patchContent: any;
   places: any;
   quests: any;
