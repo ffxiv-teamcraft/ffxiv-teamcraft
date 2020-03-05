@@ -1848,7 +1848,7 @@
       "Ilvl": "Ilvl Moyen",
       "HP": "Points de vie",
       "Direct_hit_chances": "Champs de coup net",
-      "Critical_hit_chances": "Critical Hit Chances",
+      "Critical_hit_chances": "Chances de coup critique",
       "GCD": "GCD"
     }
   },
