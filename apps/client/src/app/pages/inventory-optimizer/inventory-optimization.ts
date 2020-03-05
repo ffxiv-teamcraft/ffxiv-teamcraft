@@ -14,4 +14,5 @@ export interface InventoryOptimization {
     }[]
   }[]
   totalLength?: number;
+  hidden?: boolean;
 }

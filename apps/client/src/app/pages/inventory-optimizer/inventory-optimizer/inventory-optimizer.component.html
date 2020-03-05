@@ -1,6 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="space-between center">
   <h2>{{'INVENTORY_OPTIMIZER.Title' | translate}}</h2>
   <div fxLayout="row" fxLayoutGap="5px">
+    <nz-switch [(ngModel)]="showHidden" (ngModelChange)="reloader$.next(null)"></nz-switch>
+    <div class="switch-label">{{'INVENTORY_OPTIMIZER.Show_hidden' | translate}}</div>
     <nz-switch [(ngModel)]="showIgnored" (ngModelChange)="reloader$.next(null)"></nz-switch>
     <div>{{'INVENTORY_OPTIMIZER.Show_ignored' | translate}}</div>
   </div>
@@ -11,9 +13,11 @@
     {{'INVENTORY_OPTIMIZER.No_optimizations' | translate}}
   </app-fullpage-message>
   <nz-spin [nzSpinning]="loading">
-    <div fxLayout="column" fxLayoutGap="10px">
+    <div fxLayout="column">
       <nz-collapse *ngFor="let optimization of optimizations; trackBy: trackByTip">
-        <nz-collapse-panel [nzHeader]="header" [nzExtra]="extraTpl">
+        <nz-collapse-panel 
+          *ngIf="showHidden || !optimization.hidden"
+          [nzHeader]="header" [nzExtra]="extraTpl">
           <ng-template #header>
             {{'INVENTORY_OPTIMIZER.' + optimization.type + '.Title' | translate}} ({{optimization.totalLength}})
           </ng-template>
@@ -61,6 +65,23 @@
                   {{'INVENTORY_OPTIMIZER.UNWANTED_MATERIALS.Recipe_ilvl' | translate}}
                 </ng-template>
               </ng-container>
+              <div class="optimizer-hide-button" fxFlex="0">
+                <button nz-button
+                        *ngIf="!optimization.hidden; else removeHidden"
+                        (click)="$event.stopPropagation();setHideOptimizer(optimization.type, true)"
+                        nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Hide_optimizer' | translate"
+                        nzType="danger">
+                  <i nz-icon nzType="eye-invisible"></i>
+                </button>
+                <ng-template #removeHidden>
+                  <button nz-button
+                          (click)="$event.stopPropagation();setHideOptimizer(optimization.type, false)"
+                          nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Unhide_optimizer' | translate"
+                          nzType="primary">
+                    <i nz-icon nzType="eye"></i>
+                  </button>
+                </ng-template>
+              </div>
             </ng-container>
           </ng-template>
           <nz-collapse>
