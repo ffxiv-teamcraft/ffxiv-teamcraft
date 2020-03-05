@@ -1811,6 +1811,7 @@
     "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "不需要兑换",
     "Stats_caps": "属性上限",
+    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -1842,6 +1843,13 @@
       "Other_gearset": "其他配装",
       "Diff": "差异",
       "Avg_melding_chances": "平均禁忌镶嵌成功率"
+    },
+    "STAT_DISPLAY": {
+      "Ilvl": "Avg. ilvl",
+      "HP": "Hit Points",
+      "Direct_hit_chances": "Direct Hit Chances",
+      "Critical_hit_chances": "Critical Hit Chances",
+      "GCD": "GCD"
     }
   },
   "FOLDERS": {

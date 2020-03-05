@@ -1811,6 +1811,7 @@
     "Optimize_materias": "Materialreihenfolge optimieren",
     "No_trades_needed": "Keine Handel benötigt",
     "Stats_caps": "Attributlimits",
+    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -1842,6 +1843,13 @@
       "Other_gearset": "Andere Ausrüstungssets",
       "Diff": "Diff",
       "Avg_melding_chances": "Ø Chance für Riskante Techniken"
+    },
+    "STAT_DISPLAY": {
+      "Ilvl": "Avg. ilvl",
+      "HP": "Hit Points",
+      "Direct_hit_chances": "Direct Hit Chances",
+      "Critical_hit_chances": "Critical Hit Chances",
+      "GCD": "GCD"
     }
   },
   "FOLDERS": {

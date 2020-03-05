@@ -156,7 +156,7 @@
     "Nq": "NQ",
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
     "Copy": "복사",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "메인 창에서 열기"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1427,7 +1427,7 @@
         "Last_report": "최근 보고",
         "Fish": "물고기",
         "Size": "크기",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "[낚싯대 던지기] 사용 후 시간",
         "ERRORS": {
           "No_bait": "미끼가 확인되지 않습니다. 교정을 위해 미끼를 한번 바꿔주세요",
           "No_stats": "능력치를 확인하지 못했습니다. 어부로 다시 변경하여 이를 해결하세요."
@@ -1811,6 +1811,7 @@
     "Optimize_materias": "마테리아 순서 최적화",
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
+    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1842,6 +1843,13 @@
       "Other_gearset": "다른 장비",
       "Diff": "차이",
       "Avg_melding_chances": "평균 금단 확률"
+    },
+    "STAT_DISPLAY": {
+      "Ilvl": "평균 아이템레벨",
+      "HP": "HP",
+      "Direct_hit_chances": "직격 확률",
+      "Critical_hit_chances": "극대화 확률",
+      "GCD": "글쿨"
     }
   },
   "FOLDERS": {
