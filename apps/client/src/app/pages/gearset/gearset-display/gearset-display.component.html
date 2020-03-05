@@ -49,7 +49,7 @@
       </div>
       <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="1 1 auto" class="set-content">
         <nz-divider nzOrientation="left" [nzText]="'GEARSETS.Content' | translate"></nz-divider>
-        <div fxLayout="row" fxLayoutAlign="space-evenly center" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
+        <div fxLayout="row" fxLayoutAlign="space-evenly flex-start" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
           <div fxFlexOrder="1" fxLayout="row" fxLayoutAlign="center center">
             <div fxLayout="column">
               <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[0]"></app-gearset-display-slot>
@@ -95,6 +95,7 @@
                 </tbody>
               </table>
             </div>
+            <app-stats-popup [gearset]="gearset" [food]="food$ | async" [level]="level$ | async" [tribe]="tribe$ | async"></app-stats-popup>
             <app-materias-needed-popup [gearset]="gearset" [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
             <app-gearset-cost-popup [gearset]="gearset"></app-gearset-cost-popup>
           </div>

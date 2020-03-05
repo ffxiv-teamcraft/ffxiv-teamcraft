@@ -100,9 +100,8 @@
     </div>
 
     <div nz-row class="stats-footer" [style.width.px]="editorContainer.offsetWidth" [class.two-cols]="stats.length <= 3">
-      <div nz-col [nzMd]="24 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="10px">
-        <div><b>{{'GEARSETS.Total_stats' | translate}}</b></div>
-        <nz-select [ngModel]="food$ | async" (ngModelChange)="setGearsetPiece(gearset, 'food', $event)" [style.width.px]="300"
+      <div nz-col [nzMd]="22 - stats.length * 2" class="footer-title" fxLayout="row" fxLayoutGap="10px">
+        <nz-select [ngModel]="food$ | async" (ngModelChange)="setGearsetPiece(gearset, 'food', $event)" [style.width.px]="250"
                    [nzPlaceHolder]="'GEARSETS.No_food_selected' | translate" nzShowSearch nzAllowClear nzSize="small" [compareWith]="foodComparator">
           <nz-option *ngFor="let food of foods$ | async" [nzValue]="food"
                      [nzLabel]="(food.ID | itemName | i18n) + (food.HQ ? ('('+( 'COMMON.Hq' | translate )+')') : '') + ' / ' + (food | foodBonuses:true)"
@@ -114,7 +113,7 @@
           </nz-option>
         </nz-select>
         <div fxLayout="row" fxLayoutAlign="flex-start bottom" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
-          <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150" nzSize="small">
+          <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="100" nzSize="small">
             <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
               <nz-option *ngFor="let tribe of row.tribes" [nzValue]="tribe" [nzLabel]="tribe | tribeName | i18n"></nz-option>
             </nz-option-group>
@@ -130,8 +129,14 @@
           <i iconfont="icon-dollar" nz-icon></i>
         </button>
       </div>
+      <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}: {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0).value}}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-        <b>{{stat.value | number:'1.0-0':translate.currentLang}}</b>
+        <b>{{stat.value | number:'1.0-0':translate.currentLang}}
+          <span *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplay" nz-tooltip
+                [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
+            ({{statDisplay.value | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
+          </span>
+        </b>
       </div>
     </div>
   </ng-container>

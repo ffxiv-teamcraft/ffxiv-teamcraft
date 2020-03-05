@@ -25,6 +25,7 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
+import { StatsPopupComponent } from '../../../modules/gearsets/stats-popup/stats-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -66,7 +67,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
     tap(gearset => {
-      const ilvls = this.gearsetsFacade.toArray(gearset).map(piece => this.lazyData.data.ilvls[piece.itemId]);
+      // We're removing Spearfishing gig from the lowest ilvl filter.
+      const ilvls = this.gearsetsFacade.toArray(gearset).filter(piece => piece.itemId !== 17726).map(piece => this.lazyData.data.ilvls[piece.itemId]);
       const lowestIlvl = Math.min(...ilvls);
       const highestIlvl = Math.max(...ilvls);
       let didChange = false;
@@ -155,6 +157,32 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
               operator: '=',
               value: 1
+            }
+          ],
+          columns: [
+            'ID',
+            'Name_*',
+            'Icon',
+            'EquipSlotCategory',
+            'BaseParamModifier',
+            'IsAdvancedMeldingPermitted',
+            'MateriaSlotCount',
+            'LevelItem',
+            'LevelEquip',
+            'Stats',
+            'CanBeHq'
+          ],
+          limit: 250
+        }));
+      } else if (job === 18) {
+        // If it's fisher, add spearfishing gig
+        requests.push(this.xivapi.search({
+          indexes: [SearchIndex.ITEM],
+          filters: [
+            {
+              column: 'ID',
+              operator: '=',
+              value: 17726
             }
           ],
           columns: [

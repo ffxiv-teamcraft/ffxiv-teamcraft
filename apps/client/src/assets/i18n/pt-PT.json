@@ -1811,6 +1811,7 @@
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
+    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -1842,6 +1843,13 @@
       "Other_gearset": "Other gearset",
       "Diff": "Diff",
       "Avg_melding_chances": "Avg. overmeld chances"
+    },
+    "STAT_DISPLAY": {
+      "Ilvl": "Avg. ilvl",
+      "HP": "Hit Points",
+      "Direct_hit_chances": "Direct Hit Chances",
+      "Critical_hit_chances": "Critical Hit Chances",
+      "GCD": "GCD"
     }
   },
   "FOLDERS": {

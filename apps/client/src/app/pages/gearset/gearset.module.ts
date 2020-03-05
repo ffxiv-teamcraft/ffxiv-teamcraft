@@ -25,6 +25,7 @@ import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-r
 import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-display-slot.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
+import { StatDisplayPipe } from './gearset-editor/stat-display.pipe';
 
 const routes: Routes = [
   {
@@ -40,7 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent],
+  declarations: [GearsetEditorComponent, GearsetDisplayComponent, MateriasPopupComponent, MateriasNeededPopupComponent, GearsetEditorRowComponent, GearsetDisplaySlotComponent, StatDisplayPipe],
   imports: [
     CommonModule,
     FormsModule,

@@ -26,7 +26,7 @@ export class TimerPipe implements PipeTransform {
     if (verbose) {
       return `${days > 0 ? daysString + this.translate.instant(days > 1 ? 'TIMERS.Days' : 'TIMERS.Day') : ''} ${hoursString}${this.translate.instant('TIMERS.Hours')} ${minutesString}${this.translate.instant('TIMERS.Minutes')} ${secondsString}${this.translate.instant('TIMERS.Seconds')}`;
     } else {
-      return `${days > 0 ? daysString + ':' : ''}${hours > 0 ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
+      return `${days > 0 ? daysString + ':' : ''}${(hours > 0 || days > 0) ? hoursString + ':' : ''}${minutesString}:${secondsString}`;
     }
   }
 

@@ -1954,3 +1954,15 @@ if (hasTodo('foods')) {
     done('foods');
   });
 }
+
+if (hasTodo('paramGrow')) {
+  const paramGrow = {};
+  getAllPages('https://xivapi.com/Paramgrow?columns=AdditionalActions,ApplyAction,BaseSpeed,CraftingLevel,ExpToNext,GameContentLinks,HpModifier,HuntingLogExpReward,ID,ItemLevelSync,LevelModifier,MonsterNoteSeals,MpModifier,Patch,ProperDungeon,ProperGuildOrder,QuestExpModifier,ScaledQuestXP').subscribe(page => {
+    page.Results.forEach(entry => {
+      paramGrow[entry.ID] = entry;
+    });
+  }, null, () => {
+    persistToJsonAsset('param-grow', paramGrow);
+    done('paramGrow');
+  });
+}

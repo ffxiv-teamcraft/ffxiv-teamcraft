@@ -77,7 +77,7 @@ export class FishComponent implements OnInit {
               tug,
               occurences
             }
-            bite_time_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
+            bite_time_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, biteTime: {_gt: 1}}) {
               biteTime,
               occurences
             }
@@ -172,7 +172,6 @@ export class FishComponent implements OnInit {
         const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const totalBiteTimes = result.data.bite_time_per_fish.reduce((acc, row) => acc + row.occurences, 0);
         const sortedBiteTimes = result.data.bite_time_per_fish
-          .filter(entry => entry.occurences > 5 || entry.occurences > totalBiteTimes / 2)
           .sort((a, b) => a.biteTime - b.biteTime);
         const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
         const sortedBaits = result.data.baits_per_fish

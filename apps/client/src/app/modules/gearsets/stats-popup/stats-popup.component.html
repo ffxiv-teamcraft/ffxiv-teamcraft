@@ -1,0 +1,18 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+  <nz-alert nzType="info" [nzDescription]="'GEARSETS.Stat_computing_diclaimer' | translate" nzShowIcon nzCloseable class="disclaimer"
+            *ngIf="!hideDisclaimer" (nzOnClose)="hideDisclaimer = true"></nz-alert>
+  <table>
+    <thead>
+    <tr>
+      <th>{{'GEARSETS.Stat_name' | translate}}</th>
+      <th>{{'GEARSETS.Value' | translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let row of getDisplay()">
+      <td><b>{{('GEARSETS.STAT_DISPLAY.' + row.name) | translate}}</b></td>
+      <td>{{row.value | number:'1.0-2':translate.currentLang}}{{row.suffix}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

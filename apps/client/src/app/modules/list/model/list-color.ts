@@ -6,5 +6,5 @@ export enum ListColor {
   PURPLE = 'rgba(153,66,245,0.1)',
   ORANGE = 'rgba(245,138,66,0.1)',
   PINK = 'rgba(245,66,239,0.1)',
-  NONE = 'rgba(255,255,255,0.1)'
+  NONE = ''
 }

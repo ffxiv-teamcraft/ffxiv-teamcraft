@@ -4,6 +4,7 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { MateriaService } from './materia.service';
+import { environment } from 'apps/client/src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -414,5 +415,90 @@ export class StatsService {
         return 'DEX';
     }
     return null;
+  }
+
+  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, suffix?: string }[] {
+    const stats = this.getStats(set, level, tribe, food);
+    const display: {  baseParamIds: number[], name: string, value: number, suffix?: string }[] = [
+      {
+        baseParamIds: [0],
+        name: 'Ilvl',
+        value: this.getAvgIlvl(set)
+      }
+    ];
+
+    if (set.isCombatSet()) {
+      display.push(...[
+        {
+          baseParamIds: [BaseParam.VITALITY],
+          name: 'HP',
+          value: this.getMaxHp(set.job, level, stats.find(stat => stat.id === BaseParam.VITALITY).value)
+        },
+        {
+          baseParamIds: [BaseParam.DIRECT_HIT_RATE],
+          name: 'Direct_hit_chances',
+          value: this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value),
+          suffix: '%'
+        },
+        {
+          baseParamIds: [BaseParam.CRITICAL_HIT],
+          name: 'Critical_hit_chances',
+          value: this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value),
+          suffix: '%'
+        },
+        {
+          baseParamIds: [BaseParam.SKILL_SPEED, BaseParam.SPELL_SPEED],
+          name: 'GCD',
+          value: this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value),
+          suffix: 's'
+        }
+      ]);
+    }
+    return display;
+  }
+
+  /**
+   * Stats computing methods here, source: http://allaganstudies.akhmorning.com/guide/parameters/
+   */
+
+  private getAvgIlvl(set: TeamcraftGearset): number {
+    const withoutOffHand = ['mainHand', 'head', 'earRings', 'chest', 'necklace', 'gloves', 'bracelet', 'belt', 'ring1', 'legs', 'ring2', 'feet']
+      .filter(key => set[key])
+      .reduce((acc, row) => {
+        return acc + this.lazyData.data.ilvls[set[row].itemId];
+      }, 0);
+
+    if (set.offHand) {
+      return Math.floor((withoutOffHand + this.lazyData.data.ilvls[set.offHand.itemId]) / 13);
+    }
+    return Math.floor(withoutOffHand / 12);
+  }
+
+  private getMaxHp(job: number, level: number, vitality: number): number {
+    if (level > environment.maxLevel) {
+      return 0;
+    }
+    const levelModHP = StatsService.LEVEL_TABLE[level][3];
+    const levelModMain = StatsService.LEVEL_TABLE[level][0];
+    const jobMod = this.lazyData.data.classJobsModifiers[job].ModifierHitPoints;
+    return Math.floor(levelModHP * (jobMod / 100)) + Math.floor((vitality - levelModMain) * 20.5);
+  }
+
+  private getDirectHitChances(level: number, directHit: number): number {
+    const levelModSub = StatsService.LEVEL_TABLE[level][1];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor(550 * (directHit - levelModSub) / levelModDiv) / 10;
+  }
+
+  private getCriticalHitChances(level: number, critical: number): number {
+    const levelModSub = StatsService.LEVEL_TABLE[level][1];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor(200 * (critical - levelModSub) / levelModDiv + 50) / 10;
+  }
+
+  private getGCD(level: number, speed: number): number {
+    const levelModSub = StatsService.LEVEL_TABLE[level][1];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor((1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5) / 1000;
   }
 }

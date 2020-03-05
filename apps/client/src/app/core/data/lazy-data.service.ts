@@ -80,7 +80,10 @@ export class LazyDataService {
             return this.data.recipes;
         }
       }),
-      map(recipes => recipes.find(r => r.id.toString() === id.toString()))
+      map(recipes => {
+        return recipes.find(r => r.id.toString() === id.toString())
+          || this.data.recipes.find(r => r.id.toString() === id.toString());
+      })
     );
 
   }
