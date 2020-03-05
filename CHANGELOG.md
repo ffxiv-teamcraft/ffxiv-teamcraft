@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.12"></a>
+## [7.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.11...v7.0.12) (2020-03-05)
+
+
+### Bug Fixes
+
+* **alarms:** Display hours when zero on timers longer than a day ([31912dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/31912dc))
+* **db:** fixed display issue in fishing spot pages ([151793c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/151793c))
+* **db:** fixed display issue with bite times and low % catch rates ([23edf47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/23edf47))
+* **gearset:** fixed an issue with fisher's gear editor not displaying gear properly ([ee812f2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee812f2))
+* **gearset:** inverted earrings and necklace slot to match ingame display ([1853287](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1853287))
+* **list-panel:** fixed list color "None" not being blank ([66adc7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66adc7d))
+* **simulator:** fallback recipe for when there is no recipe in chinese or korean data ([92be747](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92be747))
+
+
+### Features
+
+* **gearset:** show stats effects and ilvl in editor and display ([109d2c1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/109d2c1))
+
+
+
 <a name="7.0.11"></a>
 ## [7.0.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.10...v7.0.11) (2020-03-03)
 
