@@ -1726,8 +1726,11 @@
     "Ignore_item": "このアイテムではこのヒントは無視する",
     "Remove_ignore_item": "このアイテムではこのヒントは無視しない",
     "Ignore_container": "Ignore this tip for this container",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "無視された項目を示す",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "最適化ができません",
     "CAN_BE_BOUGHT": {
       "Title": "購入可能：ギル",
