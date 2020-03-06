@@ -1726,8 +1726,11 @@
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
     "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
