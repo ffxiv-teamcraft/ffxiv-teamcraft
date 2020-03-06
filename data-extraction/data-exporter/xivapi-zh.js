@@ -1,7 +1,7 @@
 const request = require('request')
 const { init, output, translate } = require('./lib/common')
 
-let patchMap = [
+let nameMap = [
   { en: 'A Realm Reborn', zh: '重生之境' },
   { en: 'A Realm Awoken', zh: '觉醒之境' },
   { en: 'Through the Maelstrom', zh: '混沌的漩涡' },
@@ -20,9 +20,12 @@ let patchMap = [
   { en: 'Under the Moonlight', zh: '月下芳华' },
   { en: 'Prelude in Violet', zh: '狂乱前奏' },
   { en: 'A Requiem for Heroes', zh: '英雄挽歌' },
-  { en: 'Shadowbringers', zh: '暗影之逆焰' },
-  { en: 'Vows of Virtue, Deeds of Cruelty', zh: '纯白誓约、漆黑密约' }
+  { en: 'Shadowbringers', zh: '暗影之逆焰' }
 ]
+
+let patchNameMap = {
+  '5.1': '纯白誓约、漆黑密约'
+}
 
 init(require('./config/zh'))
 
@@ -36,7 +39,7 @@ request(`https://xivapi.com/patchlist`, {
     if (name) {
       name = name.trim()
 
-      const mapItem = patchMap.find(item => item.en.toLowerCase() === name.toLowerCase())
+      const mapItem = nameMap.find(item => item.en.toLowerCase() === name.toLowerCase())
       if (mapItem) {
         name = mapItem.zh
       } else {
@@ -45,6 +48,8 @@ request(`https://xivapi.com/patchlist`, {
           name = ret.zh
         }
       }
+    } else if (patchNameMap[row.Version]) {
+      name = patchNameMap[row.Version]
     }
 
     return {
