@@ -1726,8 +1726,11 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Ignore_container": "Ignore this tip for this container",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
