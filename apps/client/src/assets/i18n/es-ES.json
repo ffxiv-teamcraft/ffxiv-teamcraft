@@ -1726,8 +1726,11 @@
     "Ignore_item": "Ignorar este consejo para este artículo",
     "Remove_ignore_item": "Ya no ignorar este consejo para este objeto",
     "Ignore_container": "Ignorar este consejo para este contenedor",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Ya no ignorar este consejo para este contenedor",
     "Show_ignored": "Mostrar artículos ignorados",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
