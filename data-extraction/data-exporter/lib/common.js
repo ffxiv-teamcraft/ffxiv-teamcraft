@@ -60,7 +60,15 @@ const db = function (name, lang = null, cache = false) {
   return dbItem
 }
 
+const outputList = process.argv[2] ? process.argv[2].split(',') : null
 const output = function (name, content) {
+  if (outputList && !outputList.includes(name)) return
+
+  console.log('output', name)
+  if (typeof content === 'function') {
+    content = content()
+  }
+
   fs.writeFileSync(config.outputPath(name), JSON.stringify(content, null, 2) + '\n')
 }
 
