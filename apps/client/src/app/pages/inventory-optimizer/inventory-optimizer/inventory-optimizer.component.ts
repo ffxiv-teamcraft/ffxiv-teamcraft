@@ -94,6 +94,9 @@ export class InventoryOptimizerComponent {
               }
               return entry;
             });
+            opt.hidden = this.hiddenArray.some(hidden => {
+              return hidden.optimizerId === opt.type;
+            });
             opt.totalLength = uniq(total).length;
             return opt;
           });
@@ -104,7 +107,13 @@ export class InventoryOptimizerComponent {
 
   public ignoreArray: { id: string, itemId: number, containerName?: string }[] = JSON.parse(localStorage.getItem(`optimizations:ignored`) || '[]');
 
+  //hiddenArray tracks hidden optimizers
+  public hiddenArray: { optimizerId: string }[] = JSON.parse(localStorage.getItem('optimizations:hidden') || '[]');
+
   public showIgnored = false;
+
+  //for showing hidden optimizers
+  public showHidden = false;
 
   public loading = false;
 
@@ -168,6 +177,25 @@ export class InventoryOptimizerComponent {
 
   nameCopied(key: string, args?: any): void {
     this.message.success(this.translate.instant(key, args));
+  }
+
+  public setHideOptimizer(optimizer: string, hidden: boolean): void {
+    if (hidden) {
+      this.hiddenArray = [
+        ...this.hiddenArray,
+        {
+          optimizerId: optimizer
+        }
+      ];
+    } else {
+      this.hiddenArray = this.hiddenArray.filter(o => o.optimizerId !== optimizer);
+    }
+    this.setHiddenArray(this.hiddenArray);
+    this.reloader$.next();
+  }
+
+  private setHiddenArray(array: {optimizerId: string}[]): void {
+    localStorage.setItem('optimizations:hidden', JSON.stringify(array));
   }
 
   public setIgnoreItemOptimization(itemId: number, optimization: string, ignore: boolean): void {
