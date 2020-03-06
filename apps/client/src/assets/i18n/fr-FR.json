@@ -1726,8 +1726,11 @@
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
     "Ignore_container": "Ignorer cette astuce pour cet inventaire",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Ne plus ignorer cette astuce pour cet inventaire",
     "Show_ignored": "Afficher les objets ignorés",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
