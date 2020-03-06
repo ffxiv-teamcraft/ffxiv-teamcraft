@@ -1726,8 +1726,11 @@
     "Ignore_item": "해당 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "해당 아이템에는 더이상 이 팁을 무시하지 않기",
     "Ignore_container": "해당 집사는 이 팁 무시하기",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "해당 집사는 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
