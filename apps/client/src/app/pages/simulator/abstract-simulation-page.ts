@@ -3,12 +3,23 @@ import { filter, map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { SeoPageComponent } from '../../core/seo/seo-page-component';
 import { SeoService } from '../../core/seo/seo.service';
+import { Consumable } from './model/consumable';
+import { RouteConsumables } from './model/route-consumables';
 
 export abstract class AbstractSimulationPage extends SeoPageComponent {
-  stats$: Observable<{ craftsmanship: number; control: number; cp: number; spec: boolean; level: number }>;
+  stats$: Observable<{
+    craftsmanship: number,
+    control: number,
+    cp: number,
+    spec: boolean,
+    level: number,
+  }>;
+
+  consumables$: Observable<RouteConsumables>;
 
   constructor(protected route: ActivatedRoute, protected seo: SeoService) {
     super(seo);
+
     this.stats$ = this.route.queryParamMap.pipe(
       map(query => {
         return query.get('stats');
@@ -25,5 +36,27 @@ export abstract class AbstractSimulationPage extends SeoPageComponent {
         };
       })
     );
+
+    const consumables = new RouteConsumables;
+    const params = route.snapshot.queryParamMap;
+
+    const food = params.get('food');
+    if (food) {
+      const split = food.split(',');
+      consumables.food = {id: +split[0], hq: split[1] === '1'};
+    }
+
+    const med = params.get('med');
+    if (med) {
+      const split = med.split(',');
+      consumables.medicine = {id: +split[0], hq: split[1] === '1'};
+    }
+
+    const fca = params.get('fca');
+    if (fca) {
+      consumables.freeCompanyActions = fca.split(',').map((n: String) => +n) as [number, number];
+    }
+
+    this.consumables$ = new Observable(observer => observer.next(consumables));
   }
 }
