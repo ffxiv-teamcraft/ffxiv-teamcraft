@@ -1726,8 +1726,11 @@
     "Ignore_item": "Игнорировать этот совет для этого предмета",
     "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
     "Ignore_container": "Игнорировать этот совет для этого контейнера",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
