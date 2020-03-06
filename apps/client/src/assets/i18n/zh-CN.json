@@ -1726,8 +1726,11 @@
     "Ignore_item": "忽略对此物品的提示",
     "Remove_ignore_item": "不再忽略对此物品的提示",
     "Ignore_container": "忽略对此物品栏的提示",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "不再忽略对此物品栏的提示",
     "Show_ignored": "显示被忽略的物品",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "没有可用的优化",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
