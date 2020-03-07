@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Llenar con inventario (sólo cuenta lo que tiene en el inventario personal)",
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
