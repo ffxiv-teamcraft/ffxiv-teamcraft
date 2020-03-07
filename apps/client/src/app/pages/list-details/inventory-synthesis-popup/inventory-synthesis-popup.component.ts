@@ -15,7 +15,8 @@ export class InventorySynthesisPopupComponent implements OnInit {
 
   list: List;
 
-  synthesis$: Observable<{containerName: string, isRetainer: boolean, items: InventoryItem[]}[]>;
+  // items are InventoryItem + needed:number
+  synthesis$: Observable<{ containerName: string, isRetainer: boolean, items: any[] }[]>;
 
   removeDone$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.settings.removeDoneInInventorSynthesis);
 
@@ -39,7 +40,12 @@ export class InventorySynthesisPopupComponent implements OnInit {
             return true;
           })
           .forEach(finalItem => {
-            finalItems.push(...inventory.getItem(finalItem.id, false));
+            finalItems.push(...inventory.getItem(finalItem.id, false).map(inventoryItem => {
+              return {
+                ...inventoryItem,
+                needed: finalItem.amount - finalItem.done
+              };
+            }));
           });
         const items = [];
         this.list.items
@@ -50,7 +56,12 @@ export class InventorySynthesisPopupComponent implements OnInit {
             return true;
           })
           .forEach(item => {
-            items.push(...inventory.getItem(item.id, false));
+            items.push(...inventory.getItem(item.id, false).map(inventoryItem => {
+              return {
+                ...inventoryItem,
+                needed: item.amount - item.done
+              };
+            }));
           });
 
         return [...finalItems, ...items].reduce((report, item) => {
