@@ -63,6 +63,8 @@ import { IlvlPipe } from './pipes/ilvl.pipe';
 import { RaceNamePipe } from './pipes/race-name.pipe';
 import { TribeNamePipe } from './pipes/tribe-name.pipe';
 import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
+import { NotebookDivisionCategoryNamePipe } from './pipes/notebook-division-category-name.pipe';
+import { NotebookDivisionNamePipe } from './pipes/notebook-division-name.pipe';
 
 @NgModule({
   declarations: [
@@ -130,7 +132,9 @@ import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
     IlvlPipe,
     RaceNamePipe,
     TribeNamePipe,
-    FoodBonusesPipePipe
+    FoodBonusesPipePipe,
+    NotebookDivisionNamePipe,
+    NotebookDivisionCategoryNamePipe
   ],
   exports: [
     ItemNamePipe,
@@ -197,7 +201,10 @@ import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
     IlvlPipe,
     RaceNamePipe,
     TribeNamePipe,
-    FoodBonusesPipePipe
+    FoodBonusesPipePipe,
+    NotebookDivisionNamePipe,
+    NotebookDivisionCategoryNamePipe,
+    NotebookDivisionNamePipe
   ]
 })
 export class PipesModule {

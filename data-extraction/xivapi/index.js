@@ -28,44 +28,7 @@ const monsters = {};
 const npcs = {};
 const aetheryteNameIds = {};
 
-let todo = [
-  'gatheringLog',
-  'map',
-  'craftingLog',
-  'weather-rate',
-  'fishingLog',
-  'itemIcons',
-  'spearFishingLog',
-  'aetherstream',
-  'maps',
-  'tripleTriadRules',
-  'quests',
-  'fates',
-  'instances',
-  'shops',
-  'leves',
-  'jobCategories',
-  'mobs',
-  'hunts',
-  'gatheringBonuses',
-  'cdGroups',
-  'combos',
-  'statuses',
-  'traits',
-  'items',
-  'aetherytes',
-  'achievements',
-  'recipes',
-  'actions',
-  'monsterDrops',
-  'voyages',
-  'worlds',
-  'territories',
-  'actionTimeline',
-  'suggestedValues',
-  'patchContent',
-  'places'
-];
+let todo = [];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -82,7 +45,7 @@ try {
 const everything = process.argv.indexOf('--everything') > -1;
 
 function hasTodo(operation) {
-  let matches = todo.indexOf(operation) > -1 && cache.indexOf(operation) === -1;
+  let matches = todo.indexOf(operation) > -1;
   if (everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
@@ -492,6 +455,49 @@ if (hasTodo('craftingLog')) {
   });
 }
 
+if (hasTodo('notebookDivision')) {
+  const notebookDivision = {};
+  getAllEntries('https://xivapi.com/NotebookDivision', true).subscribe(completeFetch => {
+    completeFetch.forEach(row => {
+      notebookDivision[row.ID] = {
+        name: {
+          en: row.Name_en,
+          ja: row.Name_ja,
+          de: row.Name_de,
+          fr: row.Name_fr
+        },
+        pages: [0, 1, 2, 3, 4, 5, 6, 7].map(index => {
+          if (row.ID < 1000) {
+            return 40 * index + row.ID;
+          }
+          return 1000 + 8 * (row.ID - 1000) + index;
+        })
+      };
+    });
+    persistToJsonAsset('notebook-division', notebookDivision);
+    done('notebookDivision');
+  });
+}
+
+if (hasTodo('notebookDivisionCategory')) {
+  const notebookDivisionCategory = {};
+  getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
+    page.Results.forEach(row => {
+      notebookDivisionCategory[row.ID] = {
+        name: {
+          en: row.Name_en,
+          ja: row.Name_ja,
+          de: row.Name_de,
+          fr: row.Name_fr
+        },
+        divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
+    done('notebookDivisionCategory');
+  });
+}
 
 if (hasTodo('gatheringLog')) {
 

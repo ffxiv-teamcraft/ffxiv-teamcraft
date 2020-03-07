@@ -12,7 +12,7 @@
                    nzTabPosition="left">
           <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
-          <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohPageName(page) }}<span
+          <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohDivisionId(page.id) | notebookDivisionName | i18n }}<span
             *ngIf="isRequiredForAchievement(page)" [nzTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
             nz-tooltip>*</span>
             ({{getDohPageCompletion(page)}})
