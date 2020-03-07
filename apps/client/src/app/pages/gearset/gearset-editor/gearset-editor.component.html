@@ -133,10 +133,12 @@
         : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0).value}}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
         <b>{{stat.value | number:'1.0-0':translate.currentLang}}
-          <span *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplay" nz-tooltip
-                [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
+          <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
+          <span  *ngFor="let statDisplay of statDisplays" nz-tooltip
+                 [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
             ({{statDisplay.value | floor:2 | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
           </span>
+          </ng-container>
         </b>
       </div>
     </div>
