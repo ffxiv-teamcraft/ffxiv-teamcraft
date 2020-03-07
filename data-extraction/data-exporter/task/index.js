@@ -62,6 +62,8 @@ output('maps', () => db('Map', false).toObject(row => {
   return i18n('PlaceName', placeName, 'Name')
 }))
 output('mobs', () => db('BNpcName').simpleObject('Singular'))
+output('notebook-division', () => db('NotebookDivision').simpleObject('Name'))
+output('notebook-division-category', () => db('NotebookDivisionCategory').simpleObject('Name'))
 output('npc-titles', () => db('ENpcResident').simpleObject('Title'))
 output('npcs', () => db('ENpcResident').simpleObject('Singular'))
 output('places', () => db('PlaceName').simpleObject('Name'))
