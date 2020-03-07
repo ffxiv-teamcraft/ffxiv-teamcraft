@@ -62,7 +62,21 @@ output('maps', () => db('Map', false).toObject(row => {
   return i18n('PlaceName', placeName, 'Name')
 }))
 output('mobs', () => db('BNpcName').simpleObject('Singular'))
-output('notebook-division', () => db('NotebookDivision').simpleObject('Name'))
+
+let isNotebookShifted = false
+output('notebook-division', () => db('NotebookDivision').toObject(row => {
+  let id = +row['#']
+  if (id === 1007 && !row.Name.includes('8')) {
+    isNotebookShifted = true
+    return
+  } else if (isNotebookShifted && id >= 1008 && id < 2000) {
+    --id
+  }
+
+  const name = i18n('NotebookDivision', id, 'Name')
+  console.log(row['#'], id, name)
+  return name
+}))
 output('notebook-division-category', () => db('NotebookDivisionCategory').simpleObject('Name'))
 output('npc-titles', () => db('ENpcResident').simpleObject('Title'))
 output('npcs', () => db('ENpcResident').simpleObject('Singular'))
