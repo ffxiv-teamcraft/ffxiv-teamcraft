@@ -1852,6 +1852,7 @@
       "HP": "Points de vie",
       "Direct_hit_chances": "Champs de coup net",
       "Critical_hit_chances": "Chances de coup critique",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
       "GCD": "GCD"
     }
   },
