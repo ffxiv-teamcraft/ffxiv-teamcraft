@@ -8,16 +8,67 @@ const init = function (_config) {
 }
 
 const i18n = function (dbName, id, nKey = 'name') {
-  return config.languages.reduce((obj, { output, file }) => {
-    obj[output] = db(dbName, file, true).findById(id)[nKey]
+  let hasValidName = false
+  const name = config.languages.reduce((obj, { output, file }) => {
+    const dbInst = db(dbName, file, true)
+    const dbRow = typeof id === 'function' ? dbInst.find(id) : dbInst.findById(id)
+    if (dbRow && dbRow[nKey]) {
+      hasValidName = true
+      obj[output] = dbRow[nKey]
+    }
 
     return obj
   }, {})
+
+  return hasValidName ? name : undefined
+}
+
+Array.prototype.binarySearch = function (id) {
+  id = +id
+  if (isNaN(id)) return -2
+
+  if (this.length > id && id === +this[id]['#']) {
+    return id
+  }
+
+  let startPos = 0
+  let endPos = this.length - 1
+  let startId = +this[startPos]['#']
+  let endId = +this[endPos]['#']
+
+  while (endPos > startPos) {
+    if (id === startId) return startPos
+    if (id === endId) return endPos
+
+    let pos = startPos + Math.ceil((endPos - startPos) / 2)
+    let posId = +this[pos]['#']
+
+    // console.log(`${id}, start(${startId}, ${startPos}), end(${endId}, ${endPos}), pos(${posId}, ${pos})`)
+    if (posId === id) {
+      return pos
+    } else if (posId > id) {
+      endPos = pos
+      endId = posId
+    } else {
+      startPos = pos
+      startId = posId
+    }
+  }
+
+  return -1
 }
 
 /* eslint no-extend-native: 0 */
 Array.prototype.findById = function (id) {
-  return this.find(item => item['#'] == id) // eslint-disable-line eqeqeq
+  let index = this.binarySearch(id)
+  if (index === -1) return null
+
+  if (index < 0) {
+    console.log('binarySearch failed', id)
+    return this.find(item => item['#'] == id) // eslint-disable-line eqeqeq
+  } else {
+    return this[index]
+  }
 }
 
 Array.prototype.kvmap = function (nKey = 'Name', valueFunc = (val) => val) {
