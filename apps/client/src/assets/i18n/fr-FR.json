@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
