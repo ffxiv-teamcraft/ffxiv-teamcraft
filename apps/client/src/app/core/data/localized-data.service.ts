@@ -260,15 +260,13 @@ export class LocalizedDataService {
 
   public getNotebookDivision(id: number): { name: I18nName, pages: number[] } {
     const row = this.getRow<{ name: I18nName, pages: number[] }>(this.lazyData.data.notebookDivision, id);
-    // TODO once notebook data is parsed in korean and chinese too
-    // this.tryFillExtendedLanguage(row.name, id, { zhKey: 'koNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
+    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivision', koKey: 'koNotebookDivision' });
     return row;
   }
 
   public getNotebookDivisionCategory(id: number): { name: I18nName, divisions: number[] } {
     const row = this.getRow<{ name: I18nName, divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
-    // TODO once notebook data is parsed in korean and chinese too
-    // this.tryFillExtendedLanguage(row.name, id, { zhKey: 'koNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
+    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
     return row;
   }
 
