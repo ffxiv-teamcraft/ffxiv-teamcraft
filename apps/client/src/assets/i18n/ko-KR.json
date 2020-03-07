@@ -602,6 +602,7 @@
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
