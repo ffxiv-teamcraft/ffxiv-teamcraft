@@ -1852,6 +1852,7 @@
       "HP": "HP",
       "Direct_hit_chances": "직격 확률",
       "Critical_hit_chances": "극대화 확률",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
       "GCD": "글쿨"
     }
   },
