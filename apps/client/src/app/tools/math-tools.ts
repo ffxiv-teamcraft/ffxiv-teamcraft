@@ -4,18 +4,16 @@ export class MathTools {
   // which results in a ceiled value of 2
   private static PRECISION = 1000000;
 
-  /**
-   * Rounds a number to the nearest absolute integer.
-   * Rounding 0.3 will return 1 while rounding -0.3 will return -1, not 0 like Math.ceil would.
-   * @param {number} n
-   * @returns {number}
-   */
-  public static absoluteCeil(n: number): number {
-    return n >= 0 ? Math.ceil(n) : Math.floor(n);
+  public static absoluteCeil(n: number, precision = 0): number {
+    const precisionEffect = Math.pow(10, precision);
+    const res = n >= 0 ? Math.ceil(n * precisionEffect) : Math.floor(n * precisionEffect);
+    return res / precisionEffect;
   }
 
-  public static absoluteFloor(n: number): number {
-    return n >= 0 ? Math.floor(n) : Math.ceil(n);
+  public static absoluteFloor(n: number, precision = 0): number {
+    const precisionEffect = Math.pow(10, precision);
+    const res = n >= 0 ? Math.floor(n * precisionEffect) : Math.ceil(n * precisionEffect);
+    return res / precisionEffect;
   }
 
   public static round(n: number): number {

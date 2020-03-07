@@ -6,8 +6,8 @@ import { MathTools } from '../../tools/math-tools';
 })
 export class FloorPipe implements PipeTransform {
 
-  transform(value: number, args?: any): number {
-    return MathTools.absoluteFloor(value);
+  transform(value: number, precision?: number): number {
+    return MathTools.absoluteFloor(value, precision);
   }
 
 }

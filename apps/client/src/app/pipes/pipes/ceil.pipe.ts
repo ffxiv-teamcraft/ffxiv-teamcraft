@@ -6,8 +6,8 @@ import { MathTools } from '../../tools/math-tools';
 })
 export class CeilPipe implements PipeTransform {
 
-  transform(value: number, args?: any): number {
-    return MathTools.absoluteCeil(value);
+  transform(value: number, precision?: number): number {
+    return MathTools.absoluteCeil(value, precision);
   }
 
 }
