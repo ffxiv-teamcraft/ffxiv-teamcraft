@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
