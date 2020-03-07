@@ -1,5 +1,8 @@
 <nz-input-group [nzAddOnAfter]="suffix">
-  <input #searchInput (keyup)="query$.next(searchInput.value)" nz-input nzAutoFocus
+  <input #searchInput (keyup)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
+         (keydown.enter)="query$.next(searchInput.value)"
+         (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null"
+         [ngModel]="query$.value" nz-input nzAutoFocus
          placeholder="{{'ITEMS.Item_name' | translate}}" type="text">
   <ng-template #suffix>
     <label nz-checkbox [(ngModel)]="onlyCraftable" (ngModelChange)="settings.onlyRecipesInPicker = $event">{{'ITEMS.Only_craftable' | translate}}</label>

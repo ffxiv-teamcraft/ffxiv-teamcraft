@@ -34,7 +34,7 @@ export class ItemPickerComponent implements OnInit {
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
               private customItemsFacade: CustomItemsFacade, private translate: TranslateService,
-              private settings: SettingsService) {
+              public settings: SettingsService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
       filter(query => {
