@@ -82,4 +82,8 @@ export class InventorySynthesisPopupComponent implements OnInit {
     );
   }
 
+  trackByRow(index: number, row: { containerName: string, isRetainer: boolean, items: any[] }): string {
+    return row.containerName;
+  }
+
 }
