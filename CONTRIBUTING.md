@@ -54,12 +54,30 @@ We're using gitflow for this, more informations on [https://github.com/nvie/gitf
   - simulator
   - profile
   - search
-  - commissions
   - alarms
   - gathering-location
   - list-details
   - crafting-log
   - pricing
+  - desktop
+  - favorites
+  - gearsets
+  - inventory
+  - db
+  - lists
+  - list-overlay
+  - fishing-reporter
+  - teams
+  - workshop
+  - rotations
+  - log-tracker
+  - macro-translator
+  - core
+  - comments
+  - layouts
+  - list-picker
+  - rotation-picker
+  - 
  
  Examples:
  
