@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Handwerkssimulator",
-    "Include_stats": "Attribute einbeziehen",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
