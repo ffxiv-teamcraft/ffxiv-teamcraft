@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "制作シミュレーター",
-    "Include_stats": "Include stats",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
