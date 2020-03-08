@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Симулятор крафта",
-    "Include_stats": "Включает статы",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
