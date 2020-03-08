@@ -58,6 +58,7 @@ import {
   StepState
 } from '../../../../core/simulation/simulation.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { RouteConsumables } from '../../model/route-consumables';
 
 @Component({
   selector: 'app-simulator',
@@ -88,6 +89,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   @Input()
   public routeStats: { craftsmanship: number, control: number, cp: number, spec: boolean, level: number };
+
+  @Input()
+  public routeConsumables: RouteConsumables;
 
   public safeMode$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(localStorage.getItem('simulator:safe-mode') === 'true');
 
@@ -297,7 +301,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     });
   }
 
-  openSharePopup(rotation: CraftingRotation): void {
+  openSharePopup(rotation: CraftingRotation, stats: CrafterStats): void {
     this.simulation$.pipe(
       first()
     ).subscribe(simulation => {
@@ -306,7 +310,10 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         nzContent: SimulationSharePopupComponent,
         nzComponentParams: {
           rotation: rotation,
-          simulation: simulation
+          stats: stats,
+          food: this.selectedFood,
+          medicine: this.selectedMedicine,
+          freeCompanyActions: this.selectedFreeCompanyActions
         },
         nzTitle: this.translate.instant('SIMULATOR.Share_button_tooltip')
       });
@@ -873,14 +880,23 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.actions$.next(this.registry.deserializeRotation(rotation.rotation));
         this.stepStates$.next({});
       }
-      if (rotation.food && this.selectedFood === undefined && !this.routeStats) {
-        this.selectedFood = this.foods.find(f => rotation.food && f.itemId === rotation.food.id && f.hq === rotation.food.hq);
+
+      let food, medicine, fcActions = null;
+
+      if (this.routeConsumables) {
+        food = this.routeConsumables.food || rotation.food;
+        medicine = this.routeConsumables.medicine || rotation.medicine;
+        fcActions = this.routeConsumables.freeCompanyActions || rotation.freeCompanyActions;
       }
-      if (rotation.medicine && this.selectedMedicine === undefined && !this.routeStats) {
-        this.selectedMedicine = this.medicines.find(m => rotation.medicine && m.itemId === rotation.medicine.id && m.hq === rotation.medicine.hq);
+
+      if (food) {
+        this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
       }
-      if (rotation.freeCompanyActions && this.selectedFreeCompanyActions.length === 0 && !this.routeStats) {
-        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => rotation.freeCompanyActions.indexOf(action.actionId) > -1);
+      if (medicine) {
+        this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
+      }
+      if (freeCompanyActions) {
+        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
       }
       this.applyConsumables(stats);
     });

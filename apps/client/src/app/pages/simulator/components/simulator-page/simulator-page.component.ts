@@ -11,26 +11,25 @@ import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { hwdSupplies } from '../../../../core/data/sources/hwd-supplies';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
+import { AbstractSimulationPage } from '../../abstract-simulation-page';
 
 @Component({
   selector: 'app-simulator-page',
   templateUrl: './simulator-page.component.html',
   styleUrls: ['./simulator-page.component.less']
 })
-export class SimulatorPageComponent extends SeoPageComponent {
+export class SimulatorPageComponent extends AbstractSimulationPage {
 
   recipe$: Observable<Craft>;
 
   item$: Observable<Item>;
 
-  stats$: Observable<{ craftsmanship: number, control: number, cp: number, spec: boolean, level: number }>;
-
   thresholds$: Observable<number[]>;
 
-  constructor(private route: ActivatedRoute, private dataService: DataService,
+  constructor(protected route: ActivatedRoute, private dataService: DataService,
               private rotationsFacade: RotationsFacade, private router: Router,
               protected seo: SeoService, private lazyData: LazyDataService) {
-    super(seo);
+    super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {
@@ -49,23 +48,6 @@ export class SimulatorPageComponent extends SeoPageComponent {
       }),
       map(itemData => itemData.item),
       shareReplay(1)
-    );
-
-    this.stats$ = this.route.queryParamMap.pipe(
-      map(query => {
-        return query.get('stats');
-      }),
-      filter(stats => stats !== null),
-      map(statsStr => {
-        const split = statsStr.split('/');
-        return {
-          craftsmanship: +split[0],
-          control: +split[1],
-          cp: +split[2],
-          level: +split[3],
-          spec: +split[3] === 1
-        };
-      })
     );
 
     this.thresholds$ = this.item$.pipe(

@@ -5,27 +5,25 @@ import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
-import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { AbstractSimulationPage } from '../../abstract-simulation-page';
 
 @Component({
   selector: 'app-custom-simulator-page',
   templateUrl: './custom-simulator-page.component.html',
   styleUrls: ['./custom-simulator-page.component.less']
 })
-export class CustomSimulatorPageComponent extends SeoPageComponent {
+export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   public recipeForm: FormGroup;
 
   public recipe$: Observable<Partial<Craft>>;
 
-  stats$: Observable<{ craftsmanship: number, control: number, cp: number, spec: boolean, level: number }>;
-
-  constructor(private fb: FormBuilder, private route: ActivatedRoute,
+  constructor(private fb: FormBuilder, protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService) {
-    super(seo);
+    super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {
@@ -89,23 +87,6 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           suggCraft: recipe.suggestedCraftsmanship,
           suggCtrl: recipe.suggestedControl
         }, { emitEvent: false });
-      })
-    );
-
-    this.stats$ = this.route.queryParamMap.pipe(
-      map(query => {
-        return query.get('stats');
-      }),
-      filter(stats => stats !== null),
-      map(statsStr => {
-        const split = statsStr.split('/');
-        return {
-          craftsmanship: +split[0],
-          control: +split[1],
-          cp: +split[2],
-          level: +split[3],
-          spec: +split[3] === 1
-        };
       })
     );
   }
