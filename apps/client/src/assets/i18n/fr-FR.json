@@ -602,7 +602,7 @@
     "Fill_with_inventory": "Remplir avec l'inventaire (utilise uniquement l'inventaire personnel)",
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
-    "X_needed": "{{amount}} needed",
+    "X_needed": "{{amount}} requis",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Simulateur de crafts",
-    "Include_stats": "Inclure les stats",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
@@ -1727,11 +1727,11 @@
     "Ignore_item": "Ignorer cette astuce pour cet objet",
     "Remove_ignore_item": "Ne plus ignorer cette astuce pour cet objet",
     "Ignore_container": "Ignorer cette astuce pour cet inventaire",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "Masquer cet optimiseur",
+    "Unhide_optimizer": "Ne plus masquer cet optimiseur",
     "Remove_ignore_container": "Ne plus ignorer cette astuce pour cet inventaire",
     "Show_ignored": "Afficher les objets ignorés",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "Afficher les optimiseurs masqués",
     "No_optimizations": "Aucune optimisation disponible",
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
@@ -1853,7 +1853,7 @@
       "HP": "Points de vie",
       "Direct_hit_chances": "Champs de coup net",
       "Critical_hit_chances": "Chances de coup critique",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Critical_hit_multiplier": "Mult. de coups critiques",
       "GCD": "GCD"
     }
   },
