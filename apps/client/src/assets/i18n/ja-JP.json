@@ -37,7 +37,7 @@
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "レシピのみ"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -147,15 +147,15 @@
     "Pie_charts": "円グラフ",
     "Read_more_on_wiki": "ウィキで詳しく見る",
     "Apply": "適用",
-    "Open_link": "Open website link",
-    "Unknown": "Unknown",
-    "Minimum": "Minimum",
-    "Maximum": "Maximum",
-    "Average": "Average",
+    "Open_link": "ウェブリンクを開く",
+    "Unknown": "未詳",
+    "Minimum": "最低",
+    "Maximum": "最高",
+    "Average": "平均",
     "Hq": "HQ",
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
-    "Copy": "Copy",
+    "Copy": "コピー",
     "Open_in_main_window": "Open in main window"
   },
   "ALARMS": {
