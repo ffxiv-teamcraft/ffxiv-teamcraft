@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Crafting simulator",
-    "Include_stats": "Include stats",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Notificação fixa",
     "Starting_echo_number": "Notificação #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
