@@ -13,7 +13,7 @@
       <div (cbOnSuccess)="copied('Item_name_copied', {itemname: $event.content})"
            *ngIf="slot !== undefined" cbContent="/isearch &quot;{{slot?.id | itemName | i18n}}&quot;" class="item-container"
            ngxClipboard>
-        <img src="{{slot.icon | icon}}">
+        <img src="{{slot.id | lazyIcon}}">
         <span class="amount">{{slot.amount}}</span>
       </div>
     </div>
