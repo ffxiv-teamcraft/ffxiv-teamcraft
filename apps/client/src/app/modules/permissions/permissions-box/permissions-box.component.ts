@@ -49,8 +49,6 @@ export class PermissionsBoxComponent implements OnInit {
 
   canAddFc$: Observable<boolean>;
 
-  hasTeam: boolean;
-
   constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService,
               private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade) {
@@ -59,6 +57,10 @@ export class PermissionsBoxComponent implements OnInit {
 
   ngOnInit(): void {
     if ((this.data as any).teamId !== undefined && this.data.registry[`team:${(this.data as any).teamId}`] === undefined) {
+      // Cleanup possible previous teams
+      Object.keys(this.data.registry).filter(key => key.startsWith('team:')).forEach(key => {
+        delete this.data.registry[key];
+      });
       this.data.registry[`team:${(this.data as any).teamId}`] = PermissionLevel.PARTICIPATE;
     }
     this.changes$.next(this.data);
