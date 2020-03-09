@@ -1854,6 +1854,7 @@
       "Direct_hit_chances": "ダイレクト発生",
       "Critical_hit_chances": "クリティカル発生",
       "Critical_hit_multiplier": "クリティカル増加",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },
