@@ -18,7 +18,7 @@ import {
   UpdateItem,
   UpdateList,
   UpdateListAtomic,
-  UpdateListIndex
+  UpdateListIndexes
 } from './lists.actions';
 import {
   catchError,
@@ -203,14 +203,24 @@ export class ListsEffects {
   );
 
   @Effect()
-  persistUpdateListIndex$ = this.actions$.pipe(
-    ofType<UpdateListIndex>(ListsActionTypes.UpdateListIndex),
+  persistUpdateListIndexes$ = this.actions$.pipe(
+    ofType<UpdateListIndexes>(ListsActionTypes.UpdateListIndexes),
     mergeMap(action => {
-      if (action.payload.offline) {
-        this.saveToLocalstorage(action.payload, false);
+      const todo = action.lists.reduce((acc, list) => {
+        if (list.offline) {
+          acc.offline.push(list);
+        } else {
+          acc.online.push(list);
+        }
+        return acc;
+      }, { offline: [], online: [] });
+      todo.offline.forEach(list => {
+        this.saveToLocalstorage(list, false);
+      });
+      if (todo.online.length === 0) {
         return EMPTY;
       }
-      return this.listService.pureUpdate(action.payload.$key, { index: action.payload.index });
+      return this.listService.updateIndexes(todo.online);
     }),
     switchMap(() => EMPTY)
   );

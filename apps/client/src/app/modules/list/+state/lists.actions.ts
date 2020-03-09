@@ -29,7 +29,7 @@ export enum ListsActionTypes {
   UpdateList = '[Lists] Update List',
   PureUpdateList = '[Lists] Pure Update List',
   UpdateListAtomic = '[Lists] Update List Atomic',
-  UpdateListIndex = '[Lists] Update List Index',
+  UpdateListIndexes = '[Lists] Update List Indexes',
   DeleteList = '[Lists] Delete List',
   ConvertLists = '[Lists] Convert Lists',
   OfflineListsLoaded = '[Lists] Offline lists loaded',
@@ -190,10 +190,10 @@ export class UpdateListAtomic implements Action {
   }
 }
 
-export class UpdateListIndex implements Action {
-  readonly type = ListsActionTypes.UpdateListIndex;
+export class UpdateListIndexes implements Action {
+  readonly type = ListsActionTypes.UpdateListIndexes;
 
-  constructor(public readonly payload: List) {
+  constructor(public readonly lists: List[]) {
   }
 }
 
@@ -232,7 +232,7 @@ export type ListsAction =
   | SelectList
   | SetItemDone
   | ListDetailsLoaded
-  | UpdateListIndex
+  | UpdateListIndexes
   | LoadSharedLists
   | SharedListsLoaded
   | UpdateItem

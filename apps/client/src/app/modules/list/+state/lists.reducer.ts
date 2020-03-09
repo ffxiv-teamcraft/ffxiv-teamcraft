@@ -140,7 +140,7 @@ export function listsReducer(
       break;
     }
 
-    case ListsActionTypes.UpdateListIndex: {
+    case ListsActionTypes.UpdateListIndexes: {
       state = {
         ...state,
         listDetails: [

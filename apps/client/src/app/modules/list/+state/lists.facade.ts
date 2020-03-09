@@ -24,7 +24,7 @@ import {
   UnPinList,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndexes
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -279,7 +279,7 @@ export class ListsFacade {
   }
 
   updateListIndex(list: List): void {
-    this.store.dispatch(new UpdateListIndex(list));
+    this.store.dispatch(new UpdateListIndexes(list));
   }
 
   loadMyLists(): void {
