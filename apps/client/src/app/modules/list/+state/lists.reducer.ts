@@ -9,6 +9,7 @@ export interface ListsState {
   completionNotificationEnabled?: boolean;
   listsConnected: boolean;
   needsVerification: boolean;
+  connectedTeams: string[];
   deleted: string[];
   pinned: string;
 }
@@ -18,6 +19,7 @@ export const initialState: ListsState = {
   listsConnected: false,
   needsVerification: false,
   deleted: [],
+  connectedTeams: [],
   pinned: 'none'
 };
 
@@ -80,6 +82,17 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => !list.offline),
           ...action.payload
+        ]
+      };
+      break;
+    }
+
+    case ListsActionTypes.LoadTeamLists: {
+      state = {
+        ...state,
+        connectedTeams: [
+          ...state.connectedTeams,
+          action.teamId
         ]
       };
       break;

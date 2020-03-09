@@ -10,6 +10,7 @@ import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Query } from '@angular/fire/firestore/interfaces';
+import { Team } from 'apps/client/src/app/model/team/team';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -56,7 +57,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     }
     const foreignPropertyKey = foreignPropertyEntry.property;
     if (this.foreignKeyCache[foreignKeyValue + cacheSuffix] === undefined) {
-      this.foreignKeyCache[foreignKeyValue] = this.firestore.collection(this.getBaseUri(), ref => {
+      this.foreignKeyCache[foreignKeyValue + cacheSuffix] = this.firestore.collection(this.getBaseUri(), ref => {
         let query = ref.where(foreignPropertyKey, '==', foreignKeyValue);
         if (queryModifier) {
           query = queryModifier(query);
@@ -66,13 +67,13 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
         .snapshotChanges()
         .pipe(
           map((snaps: DocumentChangeAction<T>[]) => {
-            const rotations = snaps
+            const elements = snaps
               .map((snap: DocumentChangeAction<any>) => {
                 const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
                 delete snap.payload;
                 return valueWithKey;
               });
-            return this.serializer.deserialize<T>(rotations, [this.getClass()]);
+            return this.serializer.deserialize<T>(elements, [this.getClass()]);
           }),
           map(elements => {
             return elements.map(el => {
@@ -89,6 +90,6 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           })
         );
     }
-    return this.foreignKeyCache[foreignKeyValue];
+    return this.foreignKeyCache[foreignKeyValue + cacheSuffix];
   }
 }

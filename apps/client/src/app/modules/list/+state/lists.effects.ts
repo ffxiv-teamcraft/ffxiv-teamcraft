@@ -93,6 +93,9 @@ export class ListsEffects {
   @Effect()
   loadTeamLists$ = this.actions$.pipe(
     ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
+    withLatestFrom(this.listsFacade.connectedTeams$),
+    filter(([action, teams]) => teams.indexOf(action.teamId) === -1),
+    map(([action]) => action),
     mergeMap((action) => {
       return this.listService.getByForeignKey(Team, action.teamId)
         .pipe(
@@ -132,15 +135,6 @@ export class ListsEffects {
       );
     }),
     map(lists => new SharedListsLoaded(lists))
-  );
-
-  @Effect()
-  loadListsForTeam$ = this.teamsFacade.myTeams$.pipe(
-    switchMap((teams) => {
-      return combineLatest(teams.map(team => this.listService.getByForeignKey(Team, team.$key)));
-    }),
-    map(listsArrays => [].concat.apply([], ...listsArrays)),
-    map(lists => new ListsForTeamsLoaded(lists))
   );
 
   @Effect()

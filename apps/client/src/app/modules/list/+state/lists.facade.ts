@@ -50,6 +50,7 @@ declare const gtag: Function;
 })
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
+  connectedTeams$ = this.store.select(listsQuery.getConnectedTeams);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails)
     .pipe(
       map(lists => {

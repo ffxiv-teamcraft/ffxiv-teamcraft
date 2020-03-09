@@ -85,7 +85,6 @@ export class UserInventory extends DataModel {
       return null;
     }
     let item = this.items[containerKey][packet.slot];
-    console.log('updateInventorySlot', item);
     const previousQuantity = item ? item.quantity : 0;
     if (packet.quantity === 0 && packet.catalogId === 0) {
       delete this.items[containerKey][packet.slot];
