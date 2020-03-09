@@ -278,8 +278,8 @@ export class ListsFacade {
     this.store.dispatch(new LoadTeamLists(teamId));
   }
 
-  updateListIndex(list: List): void {
-    this.store.dispatch(new UpdateListIndexes(list));
+  updateListIndexes(lists: List[]): void {
+    this.store.dispatch(new UpdateListIndexes(lists));
   }
 
   loadMyLists(): void {

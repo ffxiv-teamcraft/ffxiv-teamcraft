@@ -1,4 +1,4 @@
-import { ArchivedListsLoaded, ListsAction, ListsActionTypes } from './lists.actions';
+import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 
 
@@ -135,16 +135,6 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => list.$key !== action.payload.$key),
           <List>action.payload
-        ]
-      };
-      break;
-    }
-
-    case ListsActionTypes.UpdateListIndexes: {
-      state = {
-        ...state,
-        listDetails: [
-          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       break;
