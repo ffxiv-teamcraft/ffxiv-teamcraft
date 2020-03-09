@@ -453,6 +453,12 @@ export class StatsService {
           suffix: '%'
         },
         {
+          baseParamIds: [BaseParam.DETERMINATION],
+          name: 'Determination_bonus',
+          value: this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value),
+          suffix: '%'
+        },
+        {
           baseParamIds: [BaseParam.SKILL_SPEED, BaseParam.SPELL_SPEED],
           name: 'GCD',
           value: this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value),
@@ -512,5 +518,11 @@ export class StatsService {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
     return Math.floor(Math.floor(200 * (critical - levelModSub) / levelModDiv + 1400) / 10);
+  }
+
+  private getDeterminationBonus(level: number, determination: number): number {
+    const levelModMain = StatsService.LEVEL_TABLE[level][0];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor(Math.floor(130 * (determination - levelModMain) / levelModDiv + 1000) / 10);
   }
 }
