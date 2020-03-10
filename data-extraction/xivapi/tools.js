@@ -5,9 +5,28 @@ const path = require('path');
 const fs = require('fs');
 const Multiprogress = require('multi-progress');
 const multi = new Multiprogress(process.stdout);
+const cliProgress = require('cli-progress');
 
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
 const assetOutputFolder = path.join(__dirname, '../../apps/client/src/assets/data/');
+
+const multibar = new cliProgress.MultiBar({
+  format: ' {bar} | {label} | {eta}s | {value}/{total}',
+  hideCursor: true,
+  barCompleteChar: '\u2588',
+  barIncompleteChar: '\u2591',
+  clearOnComplete: false,
+  stopOnComplete: true
+}, cliProgress.Presets.shades_grey);
+
+const barsRegistry = {};
+
+function updateProgress(name, max) {
+  if (barsRegistry[name] === undefined) {
+    barsRegistry[name] = multibar.create(max, 0, { label: name });
+  }
+  barsRegistry[name].increment();
+}
 
 const queue = [];
 
@@ -82,7 +101,6 @@ function addQueryParam(url, paramName, paramValue) {
 }
 
 const getAllPages = (endpoint, body, label) => {
-  let progress;
   const page$ = new BehaviorSubject(1);
   const complete$ = new Subject();
   return page$.pipe(
@@ -99,18 +117,10 @@ const getAllPages = (endpoint, body, label) => {
             console.error('Error', url);
             console.error(result);
           }
-          if (progress === undefined) {
-            if (label === undefined) {
-              label = `${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
-            }
-            progress = multi.newBar(`[:bar] :current/:total :etas - ${label}`, {
-              complete: '=',
-              incomplete: ' ',
-              width: 50,
-              total: result.Pagination.PageTotal
-            });
+          if (label === undefined) {
+            label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
           }
-          progress.tick();
+          updateProgress(label, result.Pagination.PageTotal);
           if (result.Pagination.PageNext > page) {
             page$.next(result.Pagination.PageNext);
           } else {
@@ -140,8 +150,7 @@ const aggregateAllPages = (endpoint, body, label) => {
 };
 
 
-module.exports.getAllEntries = (endpoint, startsAt0) => {
-  let progress;
+module.exports.getAllEntries = (endpoint, startsAt0, label) => {
   const allIds = startsAt0 ? ['0'] : [];
   const index$ = new Subject();
   getAllPages(addQueryParam(endpoint, 'columns', 'ID')).subscribe(page => {
@@ -154,15 +163,10 @@ module.exports.getAllEntries = (endpoint, startsAt0) => {
     switchMap(index => {
       return get(`${endpoint}/${allIds[index]}`).pipe(
         tap(result => {
-          if (progress === undefined) {
-            progress = multi.newBar(`[:bar] :current/:total :etas - ${endpoint.substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`, {
-              complete: '=',
-              incomplete: ' ',
-              width: 50,
-              total: allIds.length
-            });
+          if (label === undefined) {
+            label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
           }
-          progress.tick();
+          updateProgress(label, allIds.length);
           completeFetch.push(result);
           if (allIds[index + 1] !== undefined) {
             index$.next(index + 1);

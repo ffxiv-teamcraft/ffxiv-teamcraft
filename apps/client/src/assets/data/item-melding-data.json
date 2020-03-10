@@ -134427,6 +134427,62 @@
     "overmeld": false,
     "canBeHq": false
   },
+  "30047": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30048": {
+    "modifier": 0,
+    "prop": "Chest%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30049": {
+    "modifier": 0,
+    "prop": "Legs%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30050": {
+    "modifier": 0,
+    "prop": "Feet%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30051": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30052": {
+    "modifier": 0,
+    "prop": "Chest%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30053": {
+    "modifier": 0,
+    "prop": "Legs%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30054": {
+    "modifier": 0,
+    "prop": "Feet%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
   "30055": {
     "modifier": 0,
     "prop": "Chest%",

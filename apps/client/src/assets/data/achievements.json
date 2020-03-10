@@ -5304,7 +5304,7 @@
     "fr": "Cartographe du continent : Dédale antique"
   },
   "885": {
-    "en": "The Kindness of Strangers",
+    "en": "The Kindness of Strangers I",
     "de": "Der gute Samariter I",
     "ja": "通りすがりの聖者様：ランク1",
     "fr": "Bon Samaritain I"
@@ -5964,7 +5964,7 @@
     "fr": "Foudroyer le Patriarche fulgurant"
   },
   "995": {
-    "en": "Life is a Syrcus",
+    "en": "Life Is a Syrcus",
     "de": "Syrcus-Turmsteiger",
     "ja": "シルクスの塔を制覇せし者",
     "fr": "Qu'est-ce que c'est que ce Syrcus !?"
@@ -6060,7 +6060,7 @@
     "fr": "Démontage en règle V"
   },
   "1011": {
-    "en": "You're Tearing Me Apart",
+    "en": "You're Tearing Me Apart I",
     "de": "In alle Bestandteile zerlegt",
     "ja": "分解、分解、また分解",
     "fr": "Manie du désassemblement"
@@ -6972,7 +6972,7 @@
     "fr": "Aux quatre vents : Azys Lla"
   },
   "1163": {
-    "en": "Frequent Flyer",
+    "en": "Frequent Flyer I",
     "de": "Vielflieger",
     "ja": "蒼天の風を知る者",
     "fr": "Navigateur des cieux du nord"
@@ -12318,13 +12318,13 @@
     "fr": "Parure céleste"
   },
   "2054": {
-    "en": "Heaven is a Lonely Place I",
+    "en": "Heaven Is a Lonely Place I",
     "de": "Einsamer Himmelssäulenstürmer I",
     "ja": "孤高なる挑戦者：ランク1",
     "fr": "Des sommets de solitude I"
   },
   "2055": {
-    "en": "Heaven is a Lonely Place II",
+    "en": "Heaven Is a Lonely Place II",
     "de": "Einsamer Himmelssäulenstürmer II",
     "ja": "孤高なる挑戦者：ランク2",
     "fr": "Des sommets de solitude II"
@@ -12954,7 +12954,7 @@
     "fr": "Pionnier d'Eurêka Pyros"
   },
   "2160": {
-    "en": "What Is it Good For",
+    "en": "What Is It Good For",
     "de": "Held der Grenzschlacht",
     "ja": "開戦のとき",
     "fr": "L'enfer de la guerre"
@@ -14916,400 +14916,400 @@
     "fr": "Pêcheur de légendes itinérant I"
   },
   "2487": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Divine Ascension",
+    "de": "Heiliger der Himmelsstadt",
+    "ja": "蒼天街の聖者",
+    "fr": "Saint d'Azurée"
   },
   "2488": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Minor Miracle",
+    "de": "Seliger der Himmelsstadt",
+    "ja": "蒼天街の福者",
+    "fr": "Bienheureux d'Azurée"
   },
   "2489": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Saw I",
+    "de": "Zimmerer der Himmelsstadt I",
+    "ja": "蒼天街の木工師：ランク1",
+    "fr": "Scie d'Azurée I"
   },
   "2490": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Saw II",
+    "de": "Zimmerer der Himmelsstadt II",
+    "ja": "蒼天街の木工師：ランク2",
+    "fr": "Scie d'Azurée II"
   },
   "2491": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Saw III",
+    "de": "Zimmerer der Himmelsstadt III",
+    "ja": "蒼天街の木工マスター",
+    "fr": "Scie d'Azurée III"
   },
   "2492": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Smithy I",
+    "de": "Grobschmied der Himmelsstadt I",
+    "ja": "蒼天街の鍛冶師：ランク1",
+    "fr": "Enclume d'Azurée I"
   },
   "2493": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Smithy II",
+    "de": "Grobschmied der Himmelsstadt II",
+    "ja": "蒼天街の鍛冶師：ランク2",
+    "fr": "Enclume d'Azurée II"
   },
   "2494": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Smithy III",
+    "de": "Grobschmied der Himmelsstadt III",
+    "ja": "蒼天街の鍛冶マスター",
+    "fr": "Enclume d'Azurée III"
   },
   "2495": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Hammer I",
+    "de": "Plattner der Himmelsstadt I",
+    "ja": "蒼天街の甲冑師：ランク1",
+    "fr": "Marteau d'Azurée I"
   },
   "2496": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Hammer II",
+    "de": "Plattner der Himmelsstadt II",
+    "ja": "蒼天街の甲冑師：ランク2",
+    "fr": "Marteau d'Azurée II"
   },
   "2497": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Hammer III",
+    "de": "Plattner der Himmelsstadt III",
+    "ja": "蒼天街の甲冑マスター",
+    "fr": "Marteau d'Azurée III"
   },
   "2498": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Gemstone I",
+    "de": "Goldschmied der Himmelsstadt I",
+    "ja": "蒼天街の彫金師：ランク1",
+    "fr": "Joyau d'Azurée I"
   },
   "2499": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Gemstone II",
+    "de": "Goldschmied der Himmelsstadt II",
+    "ja": "蒼天街の彫金師：ランク2",
+    "fr": "Joyau d'Azurée II"
   },
   "2500": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Gemstone III",
+    "de": "Goldschmied der Himmelsstadt III",
+    "ja": "蒼天街の彫金マスター",
+    "fr": "Joyau d'Azurée III"
   },
   "2501": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Knife I",
+    "de": "Gerber der Himmelsstadt I",
+    "ja": "蒼天街の革細工師：ランク1",
+    "fr": "Couteau d'Azurée I"
   },
   "2502": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Knife II",
+    "de": "Gerber der Himmelsstadt II",
+    "ja": "蒼天街の革細工師：ランク2",
+    "fr": "Couteau d'Azurée II"
   },
   "2503": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Knife III",
+    "de": "Gerber der Himmelsstadt III",
+    "ja": "蒼天街の革細工マスター",
+    "fr": "Couteau d'Azurée III"
   },
   "2504": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Needle I",
+    "de": "Weber der Himmelsstadt I",
+    "ja": "蒼天街の裁縫師：ランク1",
+    "fr": "Aiguille d'Azurée I"
   },
   "2505": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Needle II",
+    "de": "Weber der Himmelsstadt II",
+    "ja": "蒼天街の裁縫師：ランク2",
+    "fr": "Aiguille d'Azurée II"
   },
   "2506": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Needle III",
+    "de": "Weber der Himmelsstadt III",
+    "ja": "蒼天街の裁縫マスター",
+    "fr": "Aiguille d'Azurée III"
   },
   "2507": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Science I",
+    "de": "Alchemist der Himmelsstadt I",
+    "ja": "蒼天街の錬金術師：ランク1",
+    "fr": "Alambic d'Azurée I"
   },
   "2508": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Science II",
+    "de": "Alchemist der Himmelsstadt II",
+    "ja": "蒼天街の錬金術師：ランク2",
+    "fr": "Alambic d'Azurée II"
   },
   "2509": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Science III",
+    "de": "Alchemist der Himmelsstadt III",
+    "ja": "蒼天街の錬金術マスター",
+    "fr": "Alambic d'Azurée III"
   },
   "2510": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Skillet I",
+    "de": "Gourmet der Himmelsstadt I",
+    "ja": "蒼天街の調理師：ランク1",
+    "fr": "Poêle d'Azurée I"
   },
   "2511": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Skillet II",
+    "de": "Gourmet der Himmelsstadt II",
+    "ja": "蒼天街の調理師：ランク2",
+    "fr": "Poêle d'Azurée II"
   },
   "2512": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Skillet III",
+    "de": "Gourmet der Himmelsstadt III",
+    "ja": "蒼天街の調理マスター",
+    "fr": "Poêle d'Azurée III"
   },
   "2513": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Sledgehammer I",
+    "de": "Minenarbeiter der Himmelsstadt I",
+    "ja": "蒼天街の採掘師：ランク1",
+    "fr": "Pioche d'Azurée I"
   },
   "2514": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Sledgehammer II",
+    "de": "Minenarbeiter der Himmelsstadt II",
+    "ja": "蒼天街の採掘師：ランク2",
+    "fr": "Pioche d'Azurée II"
   },
   "2515": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Sledgehammer III",
+    "de": "Minenarbeiter der Himmelsstadt III",
+    "ja": "蒼天街の採掘マスター",
+    "fr": "Pioche d'Azurée III"
   },
   "2516": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Scythe I",
+    "de": "Gärtner der Himmelsstadt I",
+    "ja": "蒼天街の園芸師：ランク1",
+    "fr": "Faucille d'Azurée I"
   },
   "2517": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Scythe II",
+    "de": "Gärtner der Himmelsstadt II",
+    "ja": "蒼天街の園芸師：ランク2",
+    "fr": "Faucille d'Azurée II"
   },
   "2518": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Scythe III",
+    "de": "Gärtner der Himmelsstadt III",
+    "ja": "蒼天街の園芸マスター",
+    "fr": "Faucille d'Azurée III"
   },
   "2519": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Rod I",
+    "de": "Fischer der Himmelsstadt I",
+    "ja": "蒼天街の漁師：ランク1",
+    "fr": "Hameçon d'Azurée I"
   },
   "2520": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Rod II",
+    "de": "Fischer der Himmelsstadt II",
+    "ja": "蒼天街の漁師：ランク2",
+    "fr": "Hameçon d'Azurée II"
   },
   "2521": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Skyward Rod III",
+    "de": "Fischer der Himmelsstadt III",
+    "ja": "蒼天街の漁師マスター",
+    "fr": "Hameçon d'Azurée III"
   },
   "2522": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Crafting in the Air",
+    "de": "Handwerksmeister der Himmelsstadt",
+    "ja": "蒼天街の製作マスター",
+    "fr": "Maître artisan d'Azurée"
   },
   "2523": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Gathering in the Air",
+    "de": "Sammlermeister der Himmelsstadt",
+    "ja": "蒼天街の採集マスター",
+    "fr": "Maître récolteur d'Azurée"
   },
   "2524": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Handking of the World",
+    "de": "Handwerkskönig der Himmelsstadt",
+    "ja": "蒼天街の製作王",
+    "fr": "Artisan en chef d'Azurée"
   },
   "2525": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Landking of the World",
+    "de": "Sammlerkönig der Himmelsstadt",
+    "ja": "蒼天街の採集王",
+    "fr": "Récolteur en chef d'Azurée"
   },
   "2526": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Castle in the Sky",
+    "de": "Schöpfer der Himmelsstadt",
+    "ja": "蒼天街の復興王",
+    "fr": "Légende de la reconstruction"
   },
   "2527": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Carpentry",
+    "de": "Zimmerer des Genists",
+    "ja": "ニューネスト居住区の木工師",
+    "fr": "Menuisier du Nichoir"
   },
   "2528": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Smithing",
+    "de": "Grobschmied des Genists",
+    "ja": "ニューネスト居住区の鍛冶師",
+    "fr": "Forgeron du Nichoir"
   },
   "2529": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Armorcraft",
+    "de": "Plattner des Genists",
+    "ja": "ニューネスト居住区の甲冑師",
+    "fr": "Armurier du Nichoir"
   },
   "2530": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Gemcraft",
+    "de": "Goldschmied des Genists",
+    "ja": "ニューネスト居住区の彫金師",
+    "fr": "Orfèvre du Nichoir"
   },
   "2531": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Leathercraft",
+    "de": "Gerber des Genists",
+    "ja": "ニューネスト居住区の革細工師",
+    "fr": "Tanneur du Nichoir"
   },
   "2532": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Clothcraft",
+    "de": "Weber des Genists",
+    "ja": "ニューネスト居住区の裁縫師",
+    "fr": "Couturier du Nichoir"
   },
   "2533": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Alchemy",
+    "de": "Alchemist des Genists",
+    "ja": "ニューネスト居住区の錬金術師",
+    "fr": "Alchimiste du Nichoir"
   },
   "2534": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Cuisine",
+    "de": "Gourmet des Genists",
+    "ja": "ニューネスト居住区の調理師",
+    "fr": "Cuisinier du Nichoir"
   },
   "2535": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Mining",
+    "de": "Minenarbeiter des Genists",
+    "ja": "ニューネスト居住区の採掘師",
+    "fr": "Mineur du Nichoir"
   },
   "2536": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Botany",
+    "de": "Gärtner des Genists",
+    "ja": "ニューネスト居住区の園芸師",
+    "fr": "Botaniste du Nichoir"
   },
   "2537": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Height of Angling",
+    "de": "Fischer des Genists",
+    "ja": "ニューネスト居住区の漁師",
+    "fr": "Pêcheur du Nichoir"
   },
   "2538": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Let Luck Be a Moogle I",
+    "de": "Glücks-Mogry I",
+    "ja": "クポフォーチュンに導かれし者：ランク1",
+    "fr": "Fortuné du kupo I"
   },
   "2539": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Let Luck Be a Moogle II",
+    "de": "Glücks-Mogry II",
+    "ja": "クポフォーチュンに導かれし者：ランク2",
+    "fr": "Fortuné du kupo II"
   },
   "2540": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Let Luck Be a Moogle III",
+    "de": "Glücks-Mogry III",
+    "ja": "クポフォーチュンに導かれし者：ランク3",
+    "fr": "Fortuné du kupo III"
   },
   "2541": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Mines Unclouded I",
+    "de": "Enthüllungsminenarbeiter I",
+    "ja": "幻の採掘師：ランク1",
+    "fr": "Mineur des illusions I"
   },
   "2542": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Mines Unclouded II",
+    "de": "Enthüllungsminenarbeiter II",
+    "ja": "幻の採掘師：ランク2",
+    "fr": "Mineur des illusions II"
   },
   "2543": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Mines Unclouded III",
+    "de": "Enthüllungsminenarbeiter III",
+    "ja": "幻の採掘師：ランク3",
+    "fr": "Mineur des illusions III"
   },
   "2544": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Scythes Unclouded I",
+    "de": "Enthüllungsgärtner I",
+    "ja": "幻の園芸師：ランク1",
+    "fr": "Botaniste des illusions I"
   },
   "2545": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Scythes Unclouded II",
+    "de": "Enthüllungsgärtner II",
+    "ja": "幻の園芸師：ランク2",
+    "fr": "Botaniste des illusions II"
   },
   "2546": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "With Scythes Unclouded III",
+    "de": "Enthüllungsgärtner III",
+    "ja": "幻の園芸師：ランク3",
+    "fr": "Botaniste des illusions III"
   },
   "2547": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dauntless Treader I",
+    "de": "Vom Winde gefischt I",
+    "ja": "属性を知る漁師：ランク1",
+    "fr": "Pêcheur des éléments I"
   },
   "2548": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dauntless Treader II",
+    "de": "Vom Winde gefischt II",
+    "ja": "属性を知る漁師：ランク2",
+    "fr": "Pêcheur des éléments II"
   },
   "2549": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dauntless Treader III",
+    "de": "Vom Winde gefischt III",
+    "ja": "属性を知る漁師：ランク3",
+    "fr": "Pêcheur des éléments III"
   },
   "2550": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Force of Nature I",
+    "de": "Ätherschütze Erster Stufe",
+    "ja": "エーテルで穿つ者：ランク1",
+    "fr": "Perforateur de l'archipel I"
   },
   "2551": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Force of Nature II",
+    "de": "Ätherschütze Zweiter Stufe",
+    "ja": "エーテルで穿つ者：ランク2",
+    "fr": "Perforateur de l'archipel II"
   },
   "2552": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Force of Nature III",
+    "de": "Ätherschütze Dritter Stufe",
+    "ja": "エーテルで穿つ者：ランク3",
+    "fr": "Perforateur de l'archipel III"
   },
   "2553": {
     "en": "Denizens of Galadion",
@@ -15396,10 +15396,10 @@
     "fr": "Fièvre de cheval des mers"
   },
   "2567": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Second Chances",
+    "de": "Diener der Himmelsstadt",
+    "ja": "それでも一歩、前へ",
+    "fr": "Il n'est jamais trop tard"
   },
   "2568": {
     "en": "",
@@ -15606,8 +15606,8 @@
     "fr": "Les petites copines"
   },
   "2602": {
-    "en": "タマゴを運ぶスーツアクター",
-    "de": "タマゴを運ぶスーツアクター",
+    "en": "Egg-hunter and Egg-hunted",
+    "de": "Auf den Hasen gekommen",
     "ja": "タマゴを運ぶスーツアクター",
     "fr": "Candeur surprise"
   },

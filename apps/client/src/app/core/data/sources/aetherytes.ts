@@ -650,6 +650,16 @@ export const aetherytes = [
     "type": 0
   },
   {
+    "id": 44,
+    "zoneid": 3470,
+    "map": 591,
+    "placenameid": 3470,
+    "nameid": 0,
+    "x": 0.5,
+    "y": 7.8,
+    "type": 1
+  },
+  {
     "id": 144,
     "zoneid": 2956,
     "map": 494,
@@ -1070,13 +1080,33 @@ export const aetherytes = [
     "type": 1
   },
   {
+    "id": 64,
+    "zoneid": 1484,
+    "map": 196,
+    "placenameid": 1484,
+    "nameid": 0,
+    "x": 7.3,
+    "y": 7.4,
+    "type": 1
+  },
+  {
     "id": 37,
     "zoneid": 41,
-    "map": 73,
+    "map": 14,
     "placenameid": 41,
     "nameid": 0,
     "x": 9.3,
     "y": 13,
+    "type": 1
+  },
+  {
+    "id": 65,
+    "zoneid": 1484,
+    "map": 196,
+    "placenameid": 1484,
+    "nameid": 0,
+    "x": 6.1,
+    "y": 7.3,
     "type": 1
   },
   {

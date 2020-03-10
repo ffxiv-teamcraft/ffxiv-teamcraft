@@ -444,9 +444,13 @@ if (hasTodo('craftingLog')) {
         })
         .forEach(key => {
           const entry = page[key];
-          entry.RecipeLevelTable = rlvlTable[entry.RecipeLevelTable];
-          craftingLog[entry.CraftType].push(entry.ID);
-          addToCraftingLogPage(entry, page.ID);
+          try {
+            craftingLog[entry.CraftTypeTargetID].push(entry.ID);
+            addToCraftingLogPage(entry, page.ID);
+          } catch (e) {
+            console.log(e);
+            console.log(entry);
+          }
         });
     });
     persistToJsonAsset('crafting-log', craftingLog);
@@ -1379,7 +1383,7 @@ if (hasTodo('recipes')) {
               quality: (ingredient.ilvl / totalIlvl) * totalContrib
             };
           }),
-        expert: recipe.IsExpert || false
+        expert: recipe.IsExpert === 1
       });
     });
   }, null, () => {

@@ -55830,70 +55830,70 @@
     "fr": "système d'auralithe factice"
   },
   "9306": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem golem",
+    "ja": "ディアデム・ゴーレム",
+    "de": "Diadem-Golem",
+    "fr": "golem du Diadème"
   },
   "9307": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "islekeeper",
+    "ja": "アイルキーパー",
+    "de": "Inselhüter",
+    "fr": "insulagardien"
   },
   "9308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem beast",
+    "ja": "ディアデム・ビースト",
+    "de": "Diadem-Bestie",
+    "fr": "bête du Diadème"
   },
   "9309": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem urolith",
+    "ja": "ディアデム・ウロリス",
+    "de": "Diadem-Urolith",
+    "fr": "urolithe du Diadème"
   },
   "9310": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem coblyn",
+    "ja": "ディアデム・コブラン",
+    "de": "Diadem-Kobalos",
+    "fr": "coblyn du Diadème"
   },
   "9311": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "ageless melia",
+    "ja": "エイジレス・メリアエ",
+    "de": "alterslos[a] Meliade",
+    "fr": "mélia intemporelle"
   },
   "9312": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "proto-noctilucale",
+    "ja": "プロト・ノクチルカ",
+    "de": "Proto-Noctiluca",
+    "fr": "proto-noctilucale"
   },
   "9313": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem wood golem",
+    "ja": "ディアデム・ウッドゴーレム",
+    "de": "Diadem-Holzgolem",
+    "fr": "golem sylvestre du Diadème"
   },
   "9314": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Diadem bulb",
+    "ja": "ディアデム・バルブ",
+    "de": "Diadem-Knolle",
+    "fr": "bulbe du Diadème"
   },
   "9315": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "cloudtrap",
+    "ja": "クラウドトラップ",
+    "de": "Wolkenfalle",
+    "fr": "piège-nuage"
   },
   "9316": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "corrupted sprite",
+    "ja": "コラプテッドスプライト",
+    "de": "denaturiert[a] Exergon",
+    "fr": "élémentaire corrompu"
   },
   "9317": {
     "en": "frozen mirror",
@@ -56052,63 +56052,63 @@
     "fr": ""
   },
   "9343": {
-    "en": "ニワトリ",
+    "en": "chicken",
     "ja": "ニワトリ",
-    "de": "ニワトリ",
+    "de": "Huhn",
     "fr": "poule"
   },
   "9344": {
     "en": "Hatching-tide helpmeet",
     "ja": "エッグハント実行委員",
-    "de": "エッグハント実行委員",
+    "de": "Eiersuchkomitee-Vorstandsmitglied",
     "fr": "organisateur de la chasse aux Prœufs"
   },
   "9345": {
-    "en": "森都の子ども",
+    "en": "Gridanian child",
     "ja": "森都の子ども",
-    "de": "森都の子ども",
+    "de": "gridanisch[a] Kind",
     "fr": "enfant de Gridania"
   },
   "9346": {
     "en": "Alphinaud",
     "ja": "アルフィノ",
     "de": "Alphinaud",
-    "fr": "アルフィノ"
+    "fr": "Alphinaud"
   },
   "9347": {
     "en": "Ryne",
     "ja": "リーン",
     "de": "Ryne",
-    "fr": "リーン"
+    "fr": "Ryne"
   },
   "9348": {
     "en": "Thancred",
     "ja": "サンクレッド",
     "de": "Thancred",
-    "fr": "サンクレッド"
+    "fr": "Thancred"
   },
   "9349": {
     "en": "Urianger",
     "ja": "ウリエンジェ",
     "de": "Urianger",
-    "fr": "ウリエンジェ"
+    "fr": "Urianger"
   },
   "9350": {
     "en": "Moonstone Carbuncle",
     "ja": "カーバンクル・ムーンストーン",
     "de": "Mondstein-Karfunkel",
-    "fr": "カーバンクル・ムーンストーン"
+    "fr": "Carbuncle hécatolite"
   },
   "9351": {
-    "en": "武具職人らしきウサギ",
+    "en": "weaponsmith rabbit",
     "ja": "武具職人らしきウサギ",
-    "de": "武具職人らしきウサギ",
+    "de": "Hase[p] mit Schwielen an den Händen",
     "fr": "lapin à l'allure de forgeron"
   },
   "9352": {
-    "en": "商魂たくましいウサギ",
+    "en": "trader rabbit",
     "ja": "商魂たくましいウサギ",
-    "de": "商魂たくましいウサギ",
+    "de": "geschäftstüchtig[a] Hase",
     "fr": "lapine dure en affaires"
   },
   "9353": {

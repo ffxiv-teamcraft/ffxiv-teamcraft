@@ -29790,719 +29790,719 @@
   },
   "1550": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 1st Stage",
+      "ja": "十字鍬通り：第一期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Erste Phase",
+      "fr": "Le Hoyau, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1551": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 2nd Stage",
+      "ja": "十字鍬通り：第二期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Zweite Phase",
+      "fr": "Le Hoyau, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1552": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 3rd Stage: First Shift",
+      "ja": "十字鍬通り：第三期整備計画着工",
+      "de": "Kreuzkarst-Spalier: Dritte Phase - Beginn",
+      "fr": "Le Hoyau, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1553": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 3rd Stage: Last Shift",
+      "ja": "十字鍬通り：第三期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Dritte Phase - Abschluss",
+      "fr": "Le Hoyau, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern die Hauptstraße des Genists. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Le pavage est sacrément esquinté alors on doit le retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1554": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 4th Stage: First Shift",
+      "ja": "十字鍬通り：第四期整備計画着工",
+      "de": "Kreuzkarst-Spalier: Vierte Phase - Beginn",
+      "fr": "Le Hoyau, phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Hauptstraße des Genists wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einem ordentlichen Baustein und führe diesen dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1555": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 4th Stage: Last Shift",
+      "ja": "十字鍬通り：第四期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Vierte Phase - Abschluss",
+      "fr": "Le Hoyau, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Hauptstraße des Genists wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1556": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 1st Stage",
+      "ja": "聖ロエル広場：第一期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Erste Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Scaffolds are being built for works on the plaza area. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Als Erstes benötigen wir stabile Gerüste. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1557": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 2nd Stage",
+      "ja": "聖ロエル広場：第二期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Zweite Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1558": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 3rd Stage: First Shift",
+      "ja": "聖ロエル広場：第三期整備計画着工",
+      "de": "Estrade der Sankt Roelle: Dritte Phase - Beginn",
+      "fr": "L'estrade de Sainte Roelle, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1559": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 3rd Stage: Last Shift",
+      "ja": "聖ロエル広場：第三期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Dritte Phase - Abschluss",
+      "fr": "L'estrade de Sainte Roelle, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the plaza area adjoining the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern die Estrade. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Le pavage est sacrément esquinté alors on doit le retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1560": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 4th Stage",
+      "ja": "聖ロエル広場：第四期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Vierte Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the plaza area adjoining the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Estrade der Sankt Roelle wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einem ordentlichen Baustein und führe diesen dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1561": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 1st Stage",
+      "ja": "ニューネスト居住区：第一期整備計画完工",
+      "de": "Das Genist: Erste Phase",
+      "fr": "Le Nichoir, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1562": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 2nd Stage",
+      "ja": "ニューネスト居住区：第二期整備計画完工",
+      "de": "Das Genist: Zweite Phase",
+      "fr": "Le Nichoir, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1563": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 3rd Stage",
+      "ja": "ニューネスト居住区：第三期整備計画完工",
+      "de": "Das Genist: Dritte Phase",
+      "fr": "Le Nichoir, phase 3"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1564": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 4th Stage: First Shift",
+      "ja": "ニューネスト居住区：第四期整備計画着工",
+      "de": "Das Genist: Vierte Phase - Beginn",
+      "fr": "Le Nichoir, phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1565": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 4th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第四期整備計画完工",
+      "de": "Das Genist: Vierte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das Genist. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1566": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 5th Stage: First Shift",
+      "ja": "ニューネスト居住区：第五期整備計画着工",
+      "de": "Das Genist: Fünfte Phase - Beginn",
+      "fr": "Le Nichoir, phase 5: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1567": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 5th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第五期整備計画完工",
+      "de": "Das Genist: Fünfte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 5: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1568": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 6th Stage: First Shift",
+      "ja": "ニューネスト居住区：第六期整備計画着工",
+      "de": "Das Genist: Sechste Phase - Beginn",
+      "fr": "Le Nichoir, phase 6: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1569": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 6th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第六期整備計画完工",
+      "de": "Das Genist: Sechste Phase - Abschluss",
+      "fr": "Le Nichoir, phase 6: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1570": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 7th Stage: First Shift",
+      "ja": "ニューネスト居住区：第七期整備計画着工",
+      "de": "Das Genist: Siebte Phase - Beginn",
+      "fr": "Le Nichoir, phase 7: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1571": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 7th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第七期整備計画完工",
+      "de": "Das Genist: Siebte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 7: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1572": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 1st Stage",
+      "ja": "十字鍬通り：第一期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Erste Phase",
+      "fr": "Le Hoyau, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1573": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 2nd Stage",
+      "ja": "十字鍬通り：第二期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Zweite Phase",
+      "fr": "Le Hoyau, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1574": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 3rd Stage: First Shift",
+      "ja": "十字鍬通り：第三期整備計画着工",
+      "de": "Kreuzkarst-Spalier: Dritte Phase - Beginn",
+      "fr": "Le Hoyau, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1575": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 3rd Stage: Last Shift",
+      "ja": "十字鍬通り：第三期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Dritte Phase - Abschluss",
+      "fr": "Le Hoyau, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern die Hauptstraße des Genists. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Le pavage est sacrément esquinté alors on doit le retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1576": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 4th Stage: First Shift",
+      "ja": "十字鍬通り：第四期整備計画着工",
+      "de": "Kreuzkarst-Spalier: Vierte Phase - Beginn",
+      "fr": "Le Hoyau, phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Hauptstraße des Genists wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einem ordentlichen Baustein und führe diesen dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1577": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mattock, 4th Stage: Last Shift",
+      "ja": "十字鍬通り：第四期整備計画完工",
+      "de": "Kreuzkarst-Spalier: Vierte Phase - Abschluss",
+      "fr": "Le Hoyau, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare connecting the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Hauptstraße des Genists wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1578": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 1st Stage",
+      "ja": "聖ロエル広場：第一期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Erste Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Scaffolds are being built for works on the plaza area. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Als Erstes benötigen wir stabile Gerüste. Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1579": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 2nd Stage",
+      "ja": "聖ロエル広場：第二期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Zweite Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1580": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 3rd Stage: First Shift",
+      "ja": "聖ロエル広場：第三期整備計画着工",
+      "de": "Estrade der Sankt Roelle: Dritte Phase - Beginn",
+      "fr": "L'estrade de Sainte Roelle, phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1581": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 3rd Stage: Last Shift",
+      "ja": "聖ロエル広場：第三期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Dritte Phase - Abschluss",
+      "fr": "L'estrade de Sainte Roelle, phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the plaza area adjoining the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern die Estrade. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Le pavage est sacrément esquinté alors on doit le retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1582": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Saint Roelle's Dais, 4th Stage",
+      "ja": "聖ロエル広場：第四期整備計画完工",
+      "de": "Estrade der Sankt Roelle: Vierte Phase",
+      "fr": "L'estrade de Sainte Roelle, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the plaza area adjoining the New Nest. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Estrade der Sankt Roelle wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einem ordentlichen Baustein und führe diesen dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1583": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 1st Stage",
+      "ja": "ニューネスト居住区：第一期整備計画完工",
+      "de": "Das Genist: Erste Phase",
+      "fr": "Le Nichoir, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1584": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 2nd Stage",
+      "ja": "ニューネスト居住区：第二期整備計画完工",
+      "de": "Das Genist: Zweite Phase",
+      "fr": "Le Nichoir, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1585": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 3rd Stage",
+      "ja": "ニューネスト居住区：第三期整備計画完工",
+      "de": "Das Genist: Dritte Phase",
+      "fr": "Le Nichoir, phase 3"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n砕いた瓦礫片を選別して、\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1586": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 4th Stage: First Shift",
+      "ja": "ニューネスト居住区：第四期整備計画着工",
+      "de": "Das Genist: Vierte Phase - Beginn",
+      "fr": "Le Nichoir, phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1587": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 4th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第四期整備計画完工",
+      "de": "Das Genist: Vierte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Repairs are being carried out on the New Nest. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das Genist. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1588": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 5th Stage: First Shift",
+      "ja": "ニューネスト居住区：第五期整備計画着工",
+      "de": "Das Genist: Fünfte Phase - Beginn",
+      "fr": "Le Nichoir, phase 5: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1589": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 5th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第五期整備計画完工",
+      "de": "Das Genist: Fünfte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 5: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1590": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 6th Stage: First Shift",
+      "ja": "ニューネスト居住区：第六期整備計画着工",
+      "de": "Das Genist: Sechste Phase - Beginn",
+      "fr": "Le Nichoir, phase 6: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1591": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 6th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第六期整備計画完工",
+      "de": "Das Genist: Sechste Phase - Abschluss",
+      "fr": "Le Nichoir, phase 6: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1592": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 7th Stage: First Shift",
+      "ja": "ニューネスト居住区：第七期整備計画着工",
+      "de": "Das Genist: Siebte Phase - Beginn",
+      "fr": "Le Nichoir, phase 7: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1593": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The New Nest, 7th Stage: Last Shift",
+      "ja": "ニューネスト居住区：第七期整備計画完工",
+      "de": "Das Genist: Siebte Phase - Abschluss",
+      "fr": "Le Nichoir, phase 7: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Houses are being built in the New Nest. Obtain raw material from a supply pile, process it at a work station, and see it assembled.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Werkbank zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1
   },
   "1594": {
     "name": {
-      "en": "エッグハント「トリモチトリトリ」",
+      "en": "A Cluckin' Catastrophe",
       "ja": "エッグハント「トリモチトリトリ」",
-      "de": "エッグハント「トリモチトリトリ」",
+      "de": "Fröhliche Hühnerjagd",
       "fr": "Poules parties"
     },
     "description": {
-      "en": "祝祭用のニワトリが逃げ出した\n\nエッグハント実行委員に着ぐるみを借り\n\n「トリモチ」で動きを鈍らせ「捕獲」せよ",
+      "en": "The Dreamers' precious chickens have flown the coop, placing this year's Hatching–tide in grave peril. Procure a rabbit suit from the helpmeet, then use sticky birdlime to slow their frantic flapping before seizing them and returning them to their rightful home.",
       "ja": "祝祭用のニワトリが逃げ出した\n\nエッグハント実行委員に着ぐるみを借り\n\n「トリモチ」で動きを鈍らせ「捕獲」せよ",
-      "de": "祝祭用のニワトリが逃げ出した\n\nエッグハント実行委員に着ぐるみを借り\n\n「トリモチ」で動きを鈍らせ「捕獲」せよ",
+      "de": "Die Hühner, die die Eier für die Wundereiersuche legen sollen, sind ausgerissen. Leih dir ein Hasenkostüm von einem Eiersuchkomitee-Vorstandsmitglied aus und bremse die aufgescheuchten Hühner mit Vogelleim, bevor du sie einfängst.",
       "fr": "Les poules pondeuses élevées spécialement pour la chasse aux Prœufs se sont échappées de leur cage! Enfilez un costume de lapin(e), armez vos boules de glu et tâchez de les rattraper de gré ou de force!"
     },
     "icon": "/i/060000/060508.png",
@@ -30510,16 +30510,16 @@
   },
   "1595": {
     "name": {
-      "en": "エッグハント「祝祭のパレード」",
+      "en": "Rabbits in a Row",
       "ja": "エッグハント「祝祭のパレード」",
-      "de": "エッグハント「祝祭のパレード」",
+      "de": "Wunderbare Hasenparade",
       "fr": "La parade des léporidés"
     },
     "description": {
-      "en": "エッグハントのパレードが始まった\n\nF.A.T.E.参加状態になって\n\n森都の子どもたちに「プレゼント」せよ",
+      "en": "The highlight of the Hatching–tide festivities draws nigh! Join your fellow revelers to bring joy in the form of lovingly decorated eggs to the children of Gridania.",
       "ja": "エッグハントのパレードが始まった\n\nF.A.T.E.参加状態になって\n\n森都の子どもたちに「プレゼント」せよ",
-      "de": "エッグハントのパレードが始まった\n\nF.A.T.E.参加状態になって\n\n森都の子どもたちに「プレゼント」せよ",
-      "fr": "La grande parade des Prœufs a démarré! Déguisé(e) en lapin(e), allez distribuer un maximum d'œufs colorés aux enfants de Gridania!"
+      "de": "Die Hasenparade hat begonnen! Nimm am FATE teil und beglücke die gridanischen Kinder mit einem wunderbaren Wundereier-Geschenk!",
+      "fr": "La parade de la chasse aux Prœufs a démarré! Après avoir cliqué sur “Participer”, suivez le cortège de lapins et distribuez un maximum d'œufs colorés aux enfants de Gridania!"
     },
     "icon": "/i/060000/060508.png",
     "level": 15
