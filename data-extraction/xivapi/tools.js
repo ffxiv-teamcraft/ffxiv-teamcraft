@@ -13,13 +13,15 @@ const queue = [];
 
 const emptyQueue$ = new Subject();
 
+const key = process.env.XIVAPI_KEY;
+
 const stopInterval$ = emptyQueue$.pipe(
   distinctUntilChanged(),
   debounceTime(30000),
   filter(empty => empty)
 );
 
-interval(250).pipe(
+interval(key ? 2 : 250).pipe(
   tap(() => {
     emptyQueue$.next(queue.length === 0);
   }),
@@ -64,7 +66,7 @@ interval(250).pipe(
 const get = (url, body) => {
   const res$ = new Subject();
   queue.push({
-    url: url,
+    url: key ? addQueryParam(url, 'private_key', key) : url,
     body: body,
     res$: res$
   });
