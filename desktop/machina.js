@@ -25,7 +25,6 @@ function filterPacketSessionID(packet) {
     'eventStart',
     'eventFinish',
     'eventPlay4',
-    'eventPlay8',
     'someDirectorUnk4'
   ];
   return packetsFromOthers.indexOf(packet.type) === -1
@@ -83,7 +82,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventStart',
         'eventFinish',
         'eventPlay4',
-        'eventPlay8',
         'someDirectorUnk4',
         'actorControlSelf',
         'useMooch',
