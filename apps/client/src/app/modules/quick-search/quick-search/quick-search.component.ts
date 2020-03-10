@@ -24,7 +24,7 @@ export class QuickSearchComponent extends TeamcraftComponent {
   public cleanResults$: Subject<SearchResult[]> = new Subject<SearchResult[]>();
 
   public searchType$: BehaviorSubject<SearchType> =
-    new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ANY);
+    new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
 
   public results$ = merge(this.cleanResults$, combineLatest([this.query$.pipe(debounceTime(800)), this.searchType$]).pipe(
     filter(([query]) => query.length > 1),
