@@ -84,7 +84,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventPlay4',
         'someDirectorUnk4',
         'actorControlSelf',
-        'useMooch',
         'retainerInformation'
       ];
 
