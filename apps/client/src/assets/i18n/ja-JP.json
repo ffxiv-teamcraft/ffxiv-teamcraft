@@ -876,6 +876,9 @@
       "Good": "高品質",
       "Poor": "低品質",
       "Fail": "失敗",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "普通"
     },
     "SOLVER": {
