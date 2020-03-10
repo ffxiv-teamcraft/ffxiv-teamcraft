@@ -24,7 +24,7 @@ import {
   UnPinList,
   UpdateItem,
   UpdateList,
-  UpdateListIndex
+  UpdateListIndexes
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
@@ -50,6 +50,7 @@ declare const gtag: Function;
 })
 export class ListsFacade {
   loadingMyLists$ = this.store.select(listsQuery.getListsLoading);
+  connectedTeams$ = this.store.select(listsQuery.getConnectedTeams);
   allListDetails$ = this.store.select(listsQuery.getAllListDetails)
     .pipe(
       map(lists => {
@@ -278,8 +279,8 @@ export class ListsFacade {
     this.store.dispatch(new LoadTeamLists(teamId));
   }
 
-  updateListIndex(list: List): void {
-    this.store.dispatch(new UpdateListIndex(list));
+  updateListIndexes(lists: List[]): void {
+    this.store.dispatch(new UpdateListIndexes(lists));
   }
 
   loadMyLists(): void {

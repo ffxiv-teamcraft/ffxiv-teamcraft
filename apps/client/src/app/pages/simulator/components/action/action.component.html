@@ -23,9 +23,20 @@
     <li (click)="setState(states.GOOD)" [nzSelected]="state === states.GOOD"
         nz-menu-item>{{'SIMULATOR.STATE.Good' | translate}}</li>
     <li (click)="setState(states.EXCELLENT)" [nzSelected]="state === states.EXCELLENT"
+        *ngIf="!simulation.recipe.expert"
         nz-menu-item>{{'SIMULATOR.STATE.Excellent' | translate}}</li>
     <li (click)="setState(states.POOR)" [nzSelected]="state === states.POOR"
+        *ngIf="!simulation.recipe.expert"
         nz-menu-item>{{'SIMULATOR.STATE.Poor' | translate}}</li>
+    <li (click)="setState(states.CENTERED)" [nzSelected]="state === states.CENTERED"
+        *ngIf="simulation.recipe.expert"
+        nz-menu-item>{{'SIMULATOR.STATE.Centered' | translate}}</li>
+    <li (click)="setState(states.STURDY)" [nzSelected]="state === states.STURDY"
+        *ngIf="simulation.recipe.expert"
+        nz-menu-item>{{'SIMULATOR.STATE.Sturdy' | translate}}</li>
+    <li (click)="setState(states.PLIANT)" [nzSelected]="state === states.PLIANT"
+        *ngIf="simulation.recipe.expert"
+        nz-menu-item>{{'SIMULATOR.STATE.Pliant' | translate}}</li>
     <li (click)="setState(states.FAILED)" [nzSelected]="state === states.FAILED"
         nz-menu-item>{{'SIMULATOR.STATE.Fail' | translate}}</li>
   </ul>

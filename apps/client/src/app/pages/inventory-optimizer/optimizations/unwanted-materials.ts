@@ -1,7 +1,7 @@
 import { InventoryOptimizer } from './inventory-optimizer';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
-import { ListRow, getItemSource } from '../../../modules/list/model/list-row';
+import { ListRow } from '../../../modules/list/model/list-row';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { environment } from '../../../../environments/environment';
 
@@ -17,7 +17,7 @@ export class UnwantedMaterials extends InventoryOptimizer {
     const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
     if (!cache || appVersion !== cache.version) {
       this.rebuildCache(appVersion);
-    } 
+    }
   }
 
   //This just caches a list of materials used in all recipes, including ilvl, and company workshop usage
@@ -32,18 +32,18 @@ export class UnwantedMaterials extends InventoryOptimizer {
 
       //We make a recursive function so we can get all the way to base materials to update their ilvls
       //The "ilvl" parameter here takes the highest ilvl we've found so far, and brings it down though the recipe trees
-      const spanAllMaterials = (ingredientId: number, ilvl: number): void => {        
+      const spanAllMaterials = (ingredientId: number, ilvl: number): void => {
         //Grab the material from the cache if it already exists
         const materialIlvl: number = cache.materials[ingredientId];
         if (materialIlvl) {
           //if this new recipe had a higher ilvl, we update the cache
           const newilvl: number = this.lazyData.data.ilvls[ingredientId];
-          const highilvl: number = ilvl > newilvl ? ilvl : newilvl
+          const highilvl: number = ilvl > newilvl ? ilvl : newilvl;
           cache.materials[ingredientId] = materialIlvl > highilvl ? materialIlvl : highilvl;
         }
         //Add material to cache if we don't have it yet
         else {
-          cache.materials[ingredientId] = ilvl
+          cache.materials[ingredientId] = ilvl;
         }
         //Now we go through any recipes that make this ingredient, and update them, and so on...
         recipes.filter(r => r.result === ingredientId).forEach(subRecipe => {
@@ -51,7 +51,7 @@ export class UnwantedMaterials extends InventoryOptimizer {
             spanAllMaterials(subIngredient.id, ilvl);
           });
         });
-      }    
+      };
 
       //Cycle through every recipe's ingredients
       recipe.ingredients.forEach(ingredient => {
@@ -59,16 +59,16 @@ export class UnwantedMaterials extends InventoryOptimizer {
       });
     });
 
-    localStorage.setItem(UnwantedMaterials.UNWANTED_CACHE_KEY, JSON.stringify(cache));    
+    localStorage.setItem(UnwantedMaterials.UNWANTED_CACHE_KEY, JSON.stringify(cache));
   }
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } {
     const wantedIlvl: number = parseInt(localStorage.getItem(UnwantedMaterials.RECIPE_ILVL_KEY), 10);
-    const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY)); 
-    
+    const cache: any = JSON.parse(localStorage.getItem(UnwantedMaterials.UNWANTED_CACHE_KEY));
+
     const materialIlvl: number = cache.materials[item.itemId];
     if (materialIlvl && materialIlvl < wantedIlvl) {
-      return {ilvl: materialIlvl}
+      return { ilvl: materialIlvl };
     }
     return null;
   }

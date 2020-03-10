@@ -5,27 +5,25 @@ import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, startWith, tap } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
-import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { AbstractSimulationPage } from '../../abstract-simulation-page';
 
 @Component({
   selector: 'app-custom-simulator-page',
   templateUrl: './custom-simulator-page.component.html',
   styleUrls: ['./custom-simulator-page.component.less']
 })
-export class CustomSimulatorPageComponent extends SeoPageComponent {
+export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
   public recipeForm: FormGroup;
 
   public recipe$: Observable<Partial<Craft>>;
 
-  stats$: Observable<{ craftsmanship: number, control: number, cp: number, spec: boolean, level: number }>;
-
-  constructor(private fb: FormBuilder, private route: ActivatedRoute,
+  constructor(private fb: FormBuilder, protected route: ActivatedRoute,
               private rotationsFacade: RotationsFacade, protected seo: SeoService) {
-    super(seo);
+    super(route, seo);
     this.route.paramMap.pipe(
       map(params => params.get('rotationId'))
     ).subscribe(id => {
@@ -38,13 +36,14 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [480, Validators.required],
+      rlvl: [481, Validators.required],
       level: [80, Validators.required],
-      progress: [5654, Validators.required],
-      quality: [37440, Validators.required],
-      durability: [70, Validators.required],
-      suggCraft: [2140, Validators.required],
-      suggCtrl: [1990, Validators.required]
+      progress: [9181, Validators.required],
+      quality: [64862, Validators.required],
+      durability: [60, Validators.required],
+      suggCraft: [2484, Validators.required],
+      suggCtrl: [2206, Validators.required],
+      expert: [true]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
       filter(rotation => {
@@ -57,13 +56,14 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
 
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 450,
+        rlvl: 481,
         level: 80,
-        progress: 5654,
-        quality: 37440,
-        durability: 70,
-        suggCraft: 2140,
-        suggCtrl: 1990
+        progress: 9181,
+        quality: 64862,
+        durability: 60,
+        suggCraft: 2484,
+        suggCtrl: 2206,
+        expert: true
       }),
       map(form => {
         return {
@@ -73,7 +73,8 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           quality: form.quality,
           progress: form.progress,
           suggestedCraftsmanship: form.suggCraft,
-          suggestedControl: form.suggCtrl
+          suggestedControl: form.suggCtrl,
+          expert: form.expert
         };
       })
     );
@@ -87,25 +88,9 @@ export class CustomSimulatorPageComponent extends SeoPageComponent {
           quality: recipe.quality,
           durability: recipe.durability,
           suggCraft: recipe.suggestedCraftsmanship,
-          suggCtrl: recipe.suggestedControl
+          suggCtrl: recipe.suggestedControl,
+          expert: recipe.expert
         }, { emitEvent: false });
-      })
-    );
-
-    this.stats$ = this.route.queryParamMap.pipe(
-      map(query => {
-        return query.get('stats');
-      }),
-      filter(stats => stats !== null),
-      map(statsStr => {
-        const split = statsStr.split('/');
-        return {
-          craftsmanship: +split[0],
-          control: +split[1],
-          cp: +split[2],
-          level: +split[3],
-          spec: +split[3] === 1
-        };
       })
     );
   }

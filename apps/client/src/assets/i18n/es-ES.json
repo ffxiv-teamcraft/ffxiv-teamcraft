@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Llenar con inventario (sólo cuenta lo que tiene en el inventario personal)",
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Simulador de fabricación",
-    "Include_stats": "Incluir atributos",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -875,6 +876,9 @@
       "Good": "Bueno",
       "Poor": "Pobre",
       "Fail": "Fallo",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1726,8 +1730,11 @@
     "Ignore_item": "Ignorar este consejo para este artículo",
     "Remove_ignore_item": "Ya no ignorar este consejo para este objeto",
     "Ignore_container": "Ignorar este consejo para este contenedor",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Ya no ignorar este consejo para este contenedor",
     "Show_ignored": "Mostrar artículos ignorados",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
@@ -1849,6 +1856,8 @@
       "HP": "Hit Points",
       "Direct_hit_chances": "Direct Hit Chances",
       "Critical_hit_chances": "Critical Hit Chances",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },

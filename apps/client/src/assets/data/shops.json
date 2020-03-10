@@ -1944,7 +1944,7 @@
     "fr": ""
   },
   "1769873": {
-    "en": "Totem Gear (Ultima Weapon)",
+    "en": "Totem Gear (The Ultima Weapon)",
     "ja": "報酬武器の取引（アルテマウェポン）",
     "de": "Ultima-Ausrüstung",
     "fr": "Équipements totémiques (Ultima Arma)"
@@ -2798,7 +2798,7 @@
   "1770015": {
     "en": "Glorious Gewgaws",
     "ja": "アイテムの取引",
-    "de": "Waren",
+    "de": "Gegenstände",
     "fr": "Objets"
   },
   "1770016": {
@@ -2898,10 +2898,10 @@
     "fr": "Marques de loup (Shadowbringers)"
   },
   "1770032": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Exchange Allied Seals",
+    "ja": "報酬を交換する",
+    "de": "Jagdabzeichen",
+    "fr": "Échange d'insignes alliés"
   },
   "1770033": {
     "en": "",
@@ -2952,6 +2952,162 @@
     "fr": "Échange d'objets tribaux"
   },
   "1770041": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770042": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770043": {
+    "en": "Token Reclamation",
+    "ja": "不要アイテムの回収",
+    "de": "Gegenstände entsorgen",
+    "fr": "Récupération d'objets désuets"
+  },
+  "1770044": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear) II",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備その2）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung II)",
+    "fr": "Assignats blancs d'artisan II (équipements/Nv 80)"
+  },
+  "1770045": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear) II",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備その2）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung II)",
+    "fr": "Assignats blancs de récolteur II (équipements/Nv 80)"
+  },
+  "1770046": {
+    "en": "Qitari Compliment Exchange",
+    "ja": "キタリ団栗貨の取引",
+    "de": "Qitari-Kastanienkreuzer",
+    "fr": "Échange de pièces-châtaignes qitari"
+  },
+  "1770047": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770048": {
+    "en": "Ceremony Attire Exchange",
+    "ja": "セレモニー衣装の交換",
+    "de": "Zeremoniekleidung",
+    "fr": "Tenues de cérémonie"
+  },
+  "1770049": {
+    "en": "Ronkan Gear Exchange (DoW)",
+    "ja": "「ロンカ装備」の取引（ファイター）",
+    "de": "Ronka-Ausrüstung (Krieger)",
+    "fr": "Échange d'équipements ronka (guerre)"
+  },
+  "1770050": {
+    "en": "Ronkan Gear Exchange (DoM)",
+    "ja": "「ロンカ装備」の取引（ソーサラー）",
+    "de": "Ronka-Ausrüstung (Magier)",
+    "fr": "Échange d'équipements ronka (magie)"
+  },
+  "1770051": {
+    "en": "Allagan Tomestones of Allegory (DoW)",
+    "ja": "アラガントームストーン:奇譚の取引（ファイター）",
+    "de": "Allagische Steine der Fantastik (Krieger)",
+    "fr": "Mémoquartz allagois fabuleux (guerre)"
+  },
+  "1770052": {
+    "en": "Allagan Tomestones of Allegory (DoM)",
+    "ja": "アラガントームストーン:奇譚の取引（ソーサラー）",
+    "de": "Allagische Steine der Fantastik (Magier)",
+    "fr": "Mémoquartz allagois fabuleux (magie)"
+  },
+  "1770053": {
+    "en": "Allagan Tomestones of Allegory (Other)",
+    "ja": "アラガントームストーン:奇譚の取引（その他）",
+    "de": "Allagische Steine der Fantastik (Anderes)",
+    "fr": "Mémoquartz allagois fabuleux (divers)"
+  },
+  "1770054": {
+    "en": "Crystarium Gear Exchange",
+    "ja": "「クリスタリウム装備」の交換",
+    "de": "Crystarium-Ausrüstung",
+    "fr": "Échange d'équipements cristariens"
+  },
+  "1770055": {
+    "en": "Crystarium Gear Augmentation (DoW) I",
+    "ja": "「クリスタリウム装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Crystarium-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements cristariens (guerre 1)"
+  },
+  "1770056": {
+    "en": "Crystarium Gear Augmentation (DoW) II",
+    "ja": "「クリスタリウム装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Crystarium-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements cristariens (guerre 2)"
+  },
+  "1770057": {
+    "en": "Crystarium Gear Augmentation (DoM)",
+    "ja": "「クリスタリウム装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Crystarium-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements cristariens (magie)"
+  },
+  "1770058": {
+    "en": "Eden's Verse Antique Exchange (DoW) I",
+    "ja": "古びた装備【共】の取引（ファイターその1）",
+    "de": "Edenruf-Ausrüstung (Krieger I)",
+    "fr": "Équipements antiques des Accords (guerre 1)"
+  },
+  "1770059": {
+    "en": "Eden's Verse Antique Exchange (DoW) II",
+    "ja": "古びた装備【共】の取引（ファイターその2）",
+    "de": "Edenruf-Ausrüstung (Krieger II)",
+    "fr": "Équipements antiques des Accords (guerre 2)"
+  },
+  "1770060": {
+    "en": "Eden's Verse Antique Exchange (DoM)",
+    "ja": "古びた装備【共】の取引（ソーサラー）",
+    "de": "Edenruf-Ausrüstung (Magier)",
+    "fr": "Équipements antiques des Accords (magie)"
+  },
+  "1770061": {
+    "en": "Eden's Verse Apocrypha Exchange (DoW) I",
+    "ja": "共鳴の断章の取引（ファイターその1）",
+    "de": "Edenchor-Ausrüstung (Krieger I)",
+    "fr": "Codex des Accords (guerre 1)"
+  },
+  "1770062": {
+    "en": "Eden's Verse Apocrypha Exchange (DoW) II",
+    "ja": "共鳴の断章の取引（ファイターその2）",
+    "de": "Edenchor-Ausrüstung (Krieger II)",
+    "fr": "Codex des Accords (guerre 2)"
+  },
+  "1770063": {
+    "en": "Eden's Verse Apocrypha Exchange (DoM)",
+    "ja": "共鳴の断章の取引（ソーサラー）",
+    "de": "Edenchor-Ausrüstung (Magier)",
+    "fr": "Codex des Accords (magie)"
+  },
+  "1770064": {
+    "en": "Totem Gear (Ruby Weapon)",
+    "ja": "報酬装備の取引（ルビーウェポン）",
+    "de": "Rubin-Ausrüstung",
+    "fr": "Équipements totémiques (Arme Rubis)"
+  },
+  "1770065": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770066": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770067": {
     "en": "",
     "ja": "",
     "de": "",

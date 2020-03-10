@@ -26,6 +26,7 @@ export class TeamcraftGearset extends DataWithPermissions {
 
   crystal: EquipmentPiece;
 
+  // See foods.json
   food: any;
 
   isCombatSet(): boolean {

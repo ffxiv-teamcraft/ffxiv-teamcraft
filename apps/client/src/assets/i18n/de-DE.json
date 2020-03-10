@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Handwerkssimulator",
-    "Include_stats": "Attribute einbeziehen",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
@@ -875,6 +876,9 @@
       "Good": "Gut",
       "Poor": "Minderwertig",
       "Fail": "Fehlgeschlagen",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1726,8 +1730,11 @@
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
     "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
@@ -1849,6 +1856,8 @@
       "HP": "Hit Points",
       "Direct_hit_chances": "Direct Hit Chances",
       "Critical_hit_chances": "Critical Hit Chances",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },

@@ -9,6 +9,11 @@ const getListsLoading = createSelector(
   (state: ListsState) => !state.listsConnected
 );
 
+const getConnectedTeams = createSelector(
+  getListsState,
+  (state: ListsState) => state.connectedTeams
+);
+
 const getNeedsVerification = createSelector(
   getListsState,
   (state: ListsState) => state.needsVerification
@@ -58,5 +63,6 @@ export const listsQuery = {
   getNeedsVerification,
   getAutocompleteEnabled,
   getCompletionNotificationEnabled,
-  getListsLoading
+  getListsLoading,
+  getConnectedTeams
 };

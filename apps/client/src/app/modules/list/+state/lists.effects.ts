@@ -18,7 +18,7 @@ import {
   UpdateItem,
   UpdateList,
   UpdateListAtomic,
-  UpdateListIndex
+  UpdateListIndexes
 } from './lists.actions';
 import {
   catchError,
@@ -93,6 +93,9 @@ export class ListsEffects {
   @Effect()
   loadTeamLists$ = this.actions$.pipe(
     ofType<LoadTeamLists>(ListsActionTypes.LoadTeamLists),
+    withLatestFrom(this.listsFacade.connectedTeams$),
+    filter(([action, teams]) => teams.indexOf(action.teamId) === -1),
+    map(([action]) => action),
     mergeMap((action) => {
       return this.listService.getByForeignKey(Team, action.teamId)
         .pipe(
@@ -132,15 +135,6 @@ export class ListsEffects {
       );
     }),
     map(lists => new SharedListsLoaded(lists))
-  );
-
-  @Effect()
-  loadListsForTeam$ = this.teamsFacade.myTeams$.pipe(
-    switchMap((teams) => {
-      return combineLatest(teams.map(team => this.listService.getByForeignKey(Team, team.$key)));
-    }),
-    map(listsArrays => [].concat.apply([], ...listsArrays)),
-    map(lists => new ListsForTeamsLoaded(lists))
   );
 
   @Effect()
@@ -203,14 +197,24 @@ export class ListsEffects {
   );
 
   @Effect()
-  persistUpdateListIndex$ = this.actions$.pipe(
-    ofType<UpdateListIndex>(ListsActionTypes.UpdateListIndex),
+  persistUpdateListIndexes$ = this.actions$.pipe(
+    ofType<UpdateListIndexes>(ListsActionTypes.UpdateListIndexes),
     mergeMap(action => {
-      if (action.payload.offline) {
-        this.saveToLocalstorage(action.payload, false);
+      const todo = action.lists.reduce((acc, list) => {
+        if (list.offline) {
+          acc.offline.push(list);
+        } else {
+          acc.online.push(list);
+        }
+        return acc;
+      }, { offline: [], online: [] });
+      todo.offline.forEach(list => {
+        this.saveToLocalstorage(list, false);
+      });
+      if (todo.online.length === 0) {
         return EMPTY;
       }
-      return this.listService.pureUpdate(action.payload.$key, { index: action.payload.index });
+      return this.listService.updateIndexes(todo.online);
     }),
     switchMap(() => EMPTY)
   );

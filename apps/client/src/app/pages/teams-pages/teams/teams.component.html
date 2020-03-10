@@ -29,7 +29,7 @@
           <div *ngIf="(userId$ | async) === team.leader" fxLayout="column" fxLayoutGap="5px">
             <div class="team-settings" fxLayout="row" fxLayoutGap="10px">
               <button (nzOnConfirm)="clearHook(team)" *ngIf="team.webhook" nz-button
-                      nz-popconfirm nzType="danger">
+                      nz-popconfirm [nzTitle]="'Confirmation' | translate" nzType="danger">
                 {{'TEAMS.Disable_discord_updates' | translate}}
               </button>
               <button (click)="discordOauth(team)" *ngIf="team.webhook === undefined" nz-button nzType="primary">
@@ -42,7 +42,7 @@
                 <nz-option [nzLabel]="'de'" [nzValue]="'de'"></nz-option>
                 <nz-option [nzLabel]="'ja'" [nzValue]="'ja'"></nz-option>
                 <nz-option [nzLabel]="'pt'" [nzValue]="'pt'"></nz-option>
-                <nz-option [nzLabel]="'br'" [nzValue]="'es'"></nz-option>
+                <nz-option [nzLabel]="'br'" [nzValue]="'br'"></nz-option>
                 <nz-option [nzLabel]="'es'" [nzValue]="'es'"></nz-option>
                 <nz-option [nzLabel]="'ko'" [nzValue]="'ko'"></nz-option>
                 <nz-option [nzLabel]="'zh'" [nzValue]="'zh'"></nz-option>

@@ -204,6 +204,12 @@ export class GearsetsFacade {
         gearset.ring1 = this.getAriyalaEquipmentPiece(dataset, 'ringLeft');
         gearset.ring2 = this.getAriyalaEquipmentPiece(dataset, 'ringRight');
         gearset.crystal = this.getAriyalaEquipmentPiece(dataset, 'soulCrystal');
+        if (dataset.normal.items.food) {
+          gearset.food = this.lazyData.data.foods.find(food => food.ID === dataset.normal.items.food);
+          if (gearset.food) {
+            gearset.food.HQ = true;
+          }
+        }
         return gearset;
       }),
       catchError(() => of(null))

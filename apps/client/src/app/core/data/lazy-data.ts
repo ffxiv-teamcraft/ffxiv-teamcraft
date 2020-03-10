@@ -37,6 +37,8 @@ export interface LazyData {
   mobs: any;
   monsters: any;
   nodePositions: any;
+  notebookDivisionCategory: any;
+  notebookDivision: any;
   npcs: any;
   paramGrow: any;
   patchContent: any;
@@ -82,6 +84,8 @@ export interface LazyData {
   koLeves: any;
   koMaps: any;
   koMobs: any;
+  koNotebookDivisionCategory: any;
+  koNotebookDivision: any;
   koNpcTitles: any;
   koNpcs: any;
   koPatchs: any;
@@ -129,6 +133,8 @@ export interface LazyData {
   zhLeves: any;
   zhMaps: any;
   zhMobs: any;
+  zhNotebookDivisionCategory: any;
+  zhNotebookDivision: any;
   zhNpcTitles: any;
   zhNpcs: any;
   zhPatchs: any;

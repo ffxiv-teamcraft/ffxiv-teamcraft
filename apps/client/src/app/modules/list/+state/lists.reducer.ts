@@ -1,4 +1,4 @@
-import { ArchivedListsLoaded, ListsAction, ListsActionTypes } from './lists.actions';
+import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 
 
@@ -9,6 +9,7 @@ export interface ListsState {
   completionNotificationEnabled?: boolean;
   listsConnected: boolean;
   needsVerification: boolean;
+  connectedTeams: string[];
   deleted: string[];
   pinned: string;
 }
@@ -18,6 +19,7 @@ export const initialState: ListsState = {
   listsConnected: false,
   needsVerification: false,
   deleted: [],
+  connectedTeams: [],
   pinned: 'none'
 };
 
@@ -85,6 +87,17 @@ export function listsReducer(
       break;
     }
 
+    case ListsActionTypes.LoadTeamLists: {
+      state = {
+        ...state,
+        connectedTeams: [
+          ...state.connectedTeams,
+          action.teamId
+        ]
+      };
+      break;
+    }
+
     case ListsActionTypes.TeamListsLoaded: {
       state = {
         ...state,
@@ -135,16 +148,6 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => list.$key !== action.payload.$key),
           <List>action.payload
-        ]
-      };
-      break;
-    }
-
-    case ListsActionTypes.UpdateListIndex: {
-      state = {
-        ...state,
-        listDetails: [
-          ...state.listDetails.map(list => list.$key === action.payload.$key ? action.payload : list)
         ]
       };
       break;

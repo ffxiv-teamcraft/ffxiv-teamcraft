@@ -58,6 +58,7 @@ export class Item implements I18nData {
     seals: number;
   };
   unlocks?: number[];
+  unlockId: number;
   mount?: any;
   minion?: any;
   furniture?: any;

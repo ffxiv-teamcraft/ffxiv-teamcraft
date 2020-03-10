@@ -20,6 +20,7 @@ import { NavigationObjective } from '../../../modules/map/navigation-objective';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { List } from '../../../modules/list/model/list';
+import { Memoized } from '../../../core/decorators/memoized';
 
 @Component({
   selector: 'app-log-tracker',
@@ -34,7 +35,7 @@ export class LogTrackerComponent extends TrackerComponent {
   public dohTabs: any[];
   public dolTabs: any[];
 
-  private dohPageNameCache: { [index: number]: string } = {};
+  private dohDivisionIdCache: { [index: number]: number } = {};
   private dolPageNameCache: { [index: number]: string } = {};
 
   public userCompletion: { [index: number]: boolean } = {};
@@ -209,11 +210,12 @@ export class LogTrackerComponent extends TrackerComponent {
     });
   }
 
-  public getDohPageName(page: any): string {
-    if (this.dohPageNameCache[page.id] === undefined) {
-      this.dohPageNameCache[page.id] = this._getDohPageName(page);
-    }
-    return this.dohPageNameCache[page.id];
+  @Memoized()
+  public getDohDivisionId(pageId: number): number {
+    return +Object.keys(this.lazyData.data.notebookDivision).find(key => {
+      const division = this.lazyData.data.notebookDivision[key];
+      return division.pages.indexOf(pageId) > -1;
+    });
   }
 
   public getDolPageName(page: any): string {
@@ -331,33 +333,6 @@ export class LogTrackerComponent extends TrackerComponent {
         }
       });
     return finalNodes.slice(0, 3);
-  }
-
-  private _getDohPageName(page: any): string {
-    if (page.masterbook > 0) {
-      const masterbookIndex = this.getMasterbookIndex(page);
-      if (masterbookIndex === -7) {
-        return this.translate.instant('LOG_TRACKER.PAGE.Other_master_recipes');
-      }
-      const masterbookNumber = Math.floor((page.id - 1000) / 8) + 1;
-      return `${this.translate.instant('LOG_TRACKER.PAGE.Master_recipes', { number: masterbookNumber })}`;
-    }
-    if (page.id > 1063 && page.id < 1080) {
-      return `${this.translate.instant('LOG_TRACKER.PAGE.Housing_items', { number: page.id < 1072 ? 1 : 2 })}`;
-    }
-    if (page.id >= 1088 && page.id <= 1095) {
-      return this.translate.instant('LOG_TRACKER.PAGE.Quests');
-    }
-    if (page.id >= 1096) {
-      return this.translate.instant('LOG_TRACKER.PAGE.Deliveries');
-    }
-    if (page.startLevel.ClassJobLevel === 50) {
-      return this.translate.instant('LOG_TRACKER.PAGE.Others');
-    }
-    if (page.startLevel.ClassJobLevel === 30) {
-      return this.translate.instant('LOG_TRACKER.PAGE.Dyes');
-    }
-    return `${page.startLevel.ClassJobLevel} - ${page.startLevel.ClassJobLevel + 4}`;
   }
 
   private _getDolPageName(page: any): string {

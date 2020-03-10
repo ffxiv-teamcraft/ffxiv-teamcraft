@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, of, ReplaySubject } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
@@ -17,7 +17,7 @@ import { SettingsService } from '../../settings/settings.service';
 })
 export class ItemPickerComponent implements OnInit {
 
-  public query$: ReplaySubject<string> = new ReplaySubject<string>();
+  public query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   public results$: Observable<SearchResult[]>;
 
@@ -34,7 +34,7 @@ export class ItemPickerComponent implements OnInit {
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
               private customItemsFacade: CustomItemsFacade, private translate: TranslateService,
-              private settings: SettingsService) {
+              public settings: SettingsService) {
     this.results$ = this.query$.pipe(
       debounceTime(500),
       filter(query => {

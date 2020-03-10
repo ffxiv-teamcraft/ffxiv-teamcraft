@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Симулятор крафта",
-    "Include_stats": "Включает статы",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -875,6 +876,9 @@
       "Good": "Хорошее",
       "Poor": "Плохое",
       "Fail": "Провал",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Обычное"
     },
     "SOLVER": {
@@ -1726,8 +1730,11 @@
     "Ignore_item": "Игнорировать этот совет для этого предмета",
     "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
     "Ignore_container": "Игнорировать этот совет для этого контейнера",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
@@ -1849,6 +1856,8 @@
       "HP": "Hit Points",
       "Direct_hit_chances": "Direct Hit Chances",
       "Critical_hit_chances": "Critical Hit Chances",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },

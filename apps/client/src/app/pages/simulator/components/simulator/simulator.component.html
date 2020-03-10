@@ -65,14 +65,16 @@
               nzType="primary">
         <i nz-icon nzType="ordered-list"></i>
       </button>
-      <button (click)="openSharePopup(rotation)"
-              *ngIf="rotation.$key"
-              [nzShape]="'circle'"
-              [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
-              [nzType]="'primary'"
-              nz-button nz-tooltip>
-        <i nz-icon nzType="share-alt"></i>
-      </button>
+      <ng-container *ngIf="crafterStats$ | async as stats">
+        <button (click)="openSharePopup(rotation, stats)"
+                *ngIf="rotation.$key"
+                [nzShape]="'circle'"
+                [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                [nzType]="'primary'"
+                nz-button nz-tooltip>
+          <i nz-icon nzType="share-alt"></i>
+        </button>
+      </ng-container>
       <button (click)="openRotationSolver()" [nzShape]="'circle'"
               [nzTitle]="'SIMULATOR.Rotation_solver' | translate"
               [nzType]="'primary'"

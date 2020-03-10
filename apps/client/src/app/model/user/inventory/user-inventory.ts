@@ -159,6 +159,8 @@ export class UserInventory extends DataModel {
         fromItem.slot = toItem.slot;
         toItem.containerId = fromContainerId;
         toItem.slot = fromSlot;
+        this.items[fromContainerKey][packet.fromSlot] = toItem;
+        this.items[toContainerKey][packet.toSlot] = fromItem;
         return null;
       case 'merge':
         delete this.items[fromContainerKey][packet.fromSlot];
@@ -170,19 +172,19 @@ export class UserInventory extends DataModel {
           quantity: toItem.quantity - packet.splitCount
         } : null;
       case 'split':
-          fromItem.quantity -= packet.splitCount;
-          const newStack: InventoryItem = {
-            quantity: packet.splitCount,
-            containerId: packet.toContainer,
-            itemId: fromItem.itemId,
-            hq: fromItem.hq,
-            slot: packet.toSlot,
-            spiritBond: fromItem.spiritBond
-          };
-          if (isToRetainer) {
-            newStack.retainerName = lastSpawnedRetainer;
-          }
-          this.items[toContainerKey][packet.toSlot] = newStack;
+        fromItem.quantity -= packet.splitCount;
+        const newStack: InventoryItem = {
+          quantity: packet.splitCount,
+          containerId: packet.toContainer,
+          itemId: fromItem.itemId,
+          hq: fromItem.hq,
+          slot: packet.toSlot,
+          spiritBond: fromItem.spiritBond
+        };
+        if (isToRetainer) {
+          newStack.retainerName = lastSpawnedRetainer;
+        }
+        this.items[toContainerKey][packet.toSlot] = newStack;
         return null;
       case 'discard':
         delete this.items[fromContainerKey][packet.fromSlot];

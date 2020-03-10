@@ -28,44 +28,7 @@ const monsters = {};
 const npcs = {};
 const aetheryteNameIds = {};
 
-let todo = [
-  'gatheringLog',
-  'map',
-  'craftingLog',
-  'weather-rate',
-  'fishingLog',
-  'itemIcons',
-  'spearFishingLog',
-  'aetherstream',
-  'maps',
-  'tripleTriadRules',
-  'quests',
-  'fates',
-  'instances',
-  'shops',
-  'leves',
-  'jobCategories',
-  'mobs',
-  'hunts',
-  'gatheringBonuses',
-  'cdGroups',
-  'combos',
-  'statuses',
-  'traits',
-  'items',
-  'aetherytes',
-  'achievements',
-  'recipes',
-  'actions',
-  'monsterDrops',
-  'voyages',
-  'worlds',
-  'territories',
-  'actionTimeline',
-  'suggestedValues',
-  'patchContent',
-  'places'
-];
+let todo = [];
 
 const onlyIndex = process.argv.indexOf('--only');
 if (onlyIndex > -1) {
@@ -82,7 +45,7 @@ try {
 const everything = process.argv.indexOf('--everything') > -1;
 
 function hasTodo(operation) {
-  let matches = todo.indexOf(operation) > -1 && cache.indexOf(operation) === -1;
+  let matches = todo.indexOf(operation) > -1;
   if (everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
@@ -413,23 +376,23 @@ const gatheringLogPages = [
 
 
 function addToCraftingLogPage(entry, pageId) {
-  craftingLogPages[entry.CraftType] = craftingLogPages[entry.CraftType] || [];
-  let page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
+  craftingLogPages[entry.CraftTypeTargetID] = craftingLogPages[entry.CraftTypeTargetID] || [];
+  let page = craftingLogPages[entry.CraftTypeTargetID].find(page => page.id === pageId);
   if (page === undefined) {
-    craftingLogPages[entry.CraftType].push({
+    craftingLogPages[entry.CraftTypeTargetID].push({
       id: pageId,
       masterbook: entry.SecretRecipeBook,
       startLevel: entry.RecipeLevelTable,
       recipes: []
     });
-    page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
+    page = craftingLogPages[entry.CraftTypeTargetID].find(page => page.id === pageId);
   }
   if (page.recipes.some(r => r.recipeId === entry.ID)) {
     return;
   }
   page.recipes.push({
     recipeId: entry.ID,
-    itemId: entry.ItemResult,
+    itemId: entry.ItemResultTargetID,
     rlvl: entry.RecipeLevelTable.ID
   });
 }
@@ -481,9 +444,13 @@ if (hasTodo('craftingLog')) {
         })
         .forEach(key => {
           const entry = page[key];
-          entry.RecipeLevelTable = rlvlTable[entry.RecipeLevelTable];
-          craftingLog[entry.CraftType].push(entry.ID);
-          addToCraftingLogPage(entry, page.ID);
+          try {
+            craftingLog[entry.CraftTypeTargetID].push(entry.ID);
+            addToCraftingLogPage(entry, page.ID);
+          } catch (e) {
+            console.log(e);
+            console.log(entry);
+          }
         });
     });
     persistToJsonAsset('crafting-log', craftingLog);
@@ -492,6 +459,49 @@ if (hasTodo('craftingLog')) {
   });
 }
 
+if (hasTodo('notebookDivision')) {
+  const notebookDivision = {};
+  getAllEntries('https://xivapi.com/NotebookDivision', true).subscribe(completeFetch => {
+    completeFetch.forEach(row => {
+      notebookDivision[row.ID] = {
+        name: {
+          en: row.Name_en,
+          ja: row.Name_ja,
+          de: row.Name_de,
+          fr: row.Name_fr
+        },
+        pages: [0, 1, 2, 3, 4, 5, 6, 7].map(index => {
+          if (row.ID < 1000) {
+            return 40 * index + row.ID;
+          }
+          return 1000 + 8 * (row.ID - 1000) + index;
+        })
+      };
+    });
+    persistToJsonAsset('notebook-division', notebookDivision);
+    done('notebookDivision');
+  });
+}
+
+if (hasTodo('notebookDivisionCategory')) {
+  const notebookDivisionCategory = {};
+  getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
+    page.Results.forEach(row => {
+      notebookDivisionCategory[row.ID] = {
+        name: {
+          en: row.Name_en,
+          ja: row.Name_ja,
+          de: row.Name_de,
+          fr: row.Name_fr
+        },
+        divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
+    done('notebookDivisionCategory');
+  });
+}
 
 if (hasTodo('gatheringLog')) {
 
@@ -1329,7 +1339,7 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9').subscribe(page => {
+  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert').subscribe(page => {
     page.Results.forEach(recipe => {
       if (recipe.RecipeLevelTable === null) {
         return;
@@ -1372,7 +1382,8 @@ if (hasTodo('recipes')) {
               amount: ingredient.amount,
               quality: (ingredient.ilvl / totalIlvl) * totalContrib
             };
-          })
+          }),
+        expert: recipe.IsExpert === 1
       });
     });
   }, null, () => {

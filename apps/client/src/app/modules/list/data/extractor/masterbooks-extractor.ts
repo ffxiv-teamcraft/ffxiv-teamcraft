@@ -45,11 +45,11 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
       }
     }
     if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
-      const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
+      const folklore = itemData.item.unlockId;
       if (folklore !== undefined) {
         res.push({
           id: +folklore,
-          icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.CRAFTED_BY, true).type]
+          icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
         });
       }
     }

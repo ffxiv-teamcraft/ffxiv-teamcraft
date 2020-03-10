@@ -258,6 +258,18 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('statuses', id);
   }
 
+  public getNotebookDivision(id: number): { name: I18nName, pages: number[] } {
+    const row = this.getRow<{ name: I18nName, pages: number[] }>(this.lazyData.data.notebookDivision, id);
+    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivision', koKey: 'koNotebookDivision' });
+    return row;
+  }
+
+  public getNotebookDivisionCategory(id: number): { name: I18nName, divisions: number[] } {
+    const row = this.getRow<{ name: I18nName, divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
+    this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
+    return row;
+  }
+
   private getRow<T = I18nName>(array: any, id: number | string): T {
     if (array === undefined) {
       return undefined;

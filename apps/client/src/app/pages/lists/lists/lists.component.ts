@@ -240,16 +240,12 @@ export class ListsComponent {
     // Insert it at new index
     lists.splice(index, 0, list);
     // Update indexes and persist
-    lists
-      .map((l, i) => {
-        if (l.index !== i) {
-          l.index = i;
-        }
-        return l;
-      })
-      .forEach(l => {
-        this.listsFacade.updateListIndex(l);
-      });
+    this.listsFacade.updateListIndexes(lists.map((l, i) => {
+      if (l.index !== i) {
+        l.index = i;
+      }
+      return l;
+    }));
   }
 
   setWorkshopIndex(workshop: Workshop, index: number, workshopDisplays: WorkshopDisplay[]): void {

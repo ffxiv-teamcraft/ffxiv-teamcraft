@@ -419,7 +419,7 @@ export class StatsService {
 
   public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, suffix?: string }[] {
     const stats = this.getStats(set, level, tribe, food);
-    const display: {  baseParamIds: number[], name: string, value: number, suffix?: string }[] = [
+    const display: { baseParamIds: number[], name: string, value: number, suffix?: string }[] = [
       {
         baseParamIds: [0],
         name: 'Ilvl',
@@ -444,6 +444,18 @@ export class StatsService {
           baseParamIds: [BaseParam.CRITICAL_HIT],
           name: 'Critical_hit_chances',
           value: this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value),
+          suffix: '%'
+        },
+        {
+          baseParamIds: [BaseParam.CRITICAL_HIT],
+          name: 'Critical_hit_multiplier',
+          value: this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value),
+          suffix: '%'
+        },
+        {
+          baseParamIds: [BaseParam.DETERMINATION],
+          name: 'Determination_bonus',
+          value: this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value),
           suffix: '%'
         },
         {
@@ -500,5 +512,17 @@ export class StatsService {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
     return Math.floor((1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5) / 1000;
+  }
+
+  private getCriticalMultiplier(level: number, critical: number): number {
+    const levelModSub = StatsService.LEVEL_TABLE[level][1];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor(Math.floor(200 * (critical - levelModSub) / levelModDiv + 1400) / 10);
+  }
+
+  private getDeterminationBonus(level: number, determination: number): number {
+    const levelModMain = StatsService.LEVEL_TABLE[level][0];
+    const levelModDiv = StatsService.LEVEL_TABLE[level][2];
+    return Math.floor(Math.floor(130 * (determination - levelModMain) / levelModDiv + 1000) / 10);
   }
 }

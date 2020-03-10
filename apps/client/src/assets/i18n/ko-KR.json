@@ -602,6 +602,7 @@
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
+    "X_needed": "{{amount}} 개 필요",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "제작 시뮬레이터",
-    "Include_stats": "능력치 포함",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
@@ -875,6 +876,9 @@
       "Good": "고품질",
       "Poor": "저품질",
       "Fail": "실패",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "보통"
     },
     "SOLVER": {
@@ -1693,7 +1697,7 @@
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
     "Please_update_inventory_popup": "소지품 업데이트를 위하여 지역을 이동해주세요. 이 팝업은 지역을 이동하면 사라집니다. (텔레포를 사용하거나 하우징에 들어가세요)",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
-    "Outdated_description": "현재 게임버젼에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
+    "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -1726,8 +1730,11 @@
     "Ignore_item": "해당 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "해당 아이템에는 더이상 이 팁을 무시하지 않기",
     "Ignore_container": "해당 집사는 이 팁 무시하기",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "해당 집사는 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
@@ -1745,8 +1752,8 @@
     "CONSOLIDATE_STACKS": {
       "Title": "품질하향을 이용하여 정리할 수 있는 HQ아이템",
       "Message": "NQ재료와 합치기: {{containers}}",
-      "Filter": "해당 버젼 재료만 표시: ",
-      "Placeholder": "게임 버젼 선택"
+      "Filter": "해당 버전 재료만 표시: ",
+      "Placeholder": "게임 버전 선택"
     },
     "UNWANTED_MATERIALS": {
       "Title": "낮은 ilvl(아이템레벨) 아이템만을 만들 수 있는 오래된 재료들",
@@ -1756,8 +1763,8 @@
     }
   },
   "VERSION_LOCK": {
-    "Outdated": "현재 팀크래프트 구버젼을 사용중이기 때문에 일부 기능이 정상적으로 작동하지 않을 수 있습니다",
-    "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버젼을 해당 링크에서 다운 받을 수 있습니다: "
+    "Outdated": "현재 팀크래프트 구버전을 사용중이기 때문에 일부 기능이 정상적으로 작동하지 않을 수 있습니다",
+    "Refresh_or_download_latest": "만약 팀크래프트를 웹페이지에서 사용중이면 Ctrl + F5키를 눌러 완전히 새로고침 해주세요. 데스크톱 앱을 사용중이라면 최신버전을 해당 링크에서 다운 받을 수 있습니다: "
   },
   "GEARSETS": {
     "Title": "장비 세트",
@@ -1849,6 +1856,8 @@
       "HP": "HP",
       "Direct_hit_chances": "직격 확률",
       "Critical_hit_chances": "극대화 확률",
+      "Critical_hit_multiplier": "극대화 배율",
+      "Determination_bonus": "Determination bonus",
       "GCD": "글쿨"
     }
   },
