@@ -876,6 +876,9 @@
       "Good": "고품질",
       "Poor": "저품질",
       "Fail": "실패",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "보통"
     },
     "SOLVER": {
