@@ -376,23 +376,23 @@ const gatheringLogPages = [
 
 
 function addToCraftingLogPage(entry, pageId) {
-  craftingLogPages[entry.CraftType] = craftingLogPages[entry.CraftType] || [];
-  let page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
+  craftingLogPages[entry.CraftTypeTargetID] = craftingLogPages[entry.CraftTypeTargetID] || [];
+  let page = craftingLogPages[entry.CraftTypeTargetID].find(page => page.id === pageId);
   if (page === undefined) {
-    craftingLogPages[entry.CraftType].push({
+    craftingLogPages[entry.CraftTypeTargetID].push({
       id: pageId,
       masterbook: entry.SecretRecipeBook,
       startLevel: entry.RecipeLevelTable,
       recipes: []
     });
-    page = craftingLogPages[entry.CraftType].find(page => page.id === pageId);
+    page = craftingLogPages[entry.CraftTypeTargetID].find(page => page.id === pageId);
   }
   if (page.recipes.some(r => r.recipeId === entry.ID)) {
     return;
   }
   page.recipes.push({
     recipeId: entry.ID,
-    itemId: entry.ItemResult,
+    itemId: entry.ItemResultTargetID,
     rlvl: entry.RecipeLevelTable.ID
   });
 }
