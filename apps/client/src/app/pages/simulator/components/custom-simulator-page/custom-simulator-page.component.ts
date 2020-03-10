@@ -36,13 +36,14 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [480, Validators.required],
+      rlvl: [481, Validators.required],
       level: [80, Validators.required],
-      progress: [5654, Validators.required],
-      quality: [37440, Validators.required],
-      durability: [70, Validators.required],
-      suggCraft: [2140, Validators.required],
-      suggCtrl: [1990, Validators.required]
+      progress: [9181, Validators.required],
+      quality: [64862, Validators.required],
+      durability: [60, Validators.required],
+      suggCraft: [2484, Validators.required],
+      suggCtrl: [2206, Validators.required],
+      expert: [true]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
       filter(rotation => {
@@ -55,13 +56,14 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
     const recipeFromForm$ = this.recipeForm.valueChanges.pipe(
       startWith({
-        rlvl: 450,
+        rlvl: 481,
         level: 80,
-        progress: 5654,
-        quality: 37440,
-        durability: 70,
-        suggCraft: 2140,
-        suggCtrl: 1990
+        progress: 9181,
+        quality: 64862,
+        durability: 60,
+        suggCraft: 2484,
+        suggCtrl: 2206,
+        expert: true
       }),
       map(form => {
         return {
@@ -71,7 +73,8 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           quality: form.quality,
           progress: form.progress,
           suggestedCraftsmanship: form.suggCraft,
-          suggestedControl: form.suggCtrl
+          suggestedControl: form.suggCtrl,
+          expert: form.expert
         };
       })
     );
@@ -85,7 +88,8 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
           quality: recipe.quality,
           durability: recipe.durability,
           suggCraft: recipe.suggestedCraftsmanship,
-          suggCtrl: recipe.suggestedControl
+          suggCtrl: recipe.suggestedControl,
+          expert: recipe.expert
         }, { emitEvent: false });
       })
     );

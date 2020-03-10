@@ -895,7 +895,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       if (medicine) {
         this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
       }
-      if (freeCompanyActions) {
+      if (fcActions) {
         this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
       }
       this.applyConsumables(stats);

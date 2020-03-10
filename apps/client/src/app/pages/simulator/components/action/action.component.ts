@@ -103,6 +103,12 @@ export class ActionComponent {
         return 'cyan';
       case StepState.GOOD:
         return 'orange';
+      case StepState.STURDY:
+        return 'blue';
+      case StepState.PLIANT:
+        return 'green';
+      case StepState.CENTERED:
+        return 'yellow';
       case StepState.POOR:
         return 'purple';
       case StepState.FAILED:
