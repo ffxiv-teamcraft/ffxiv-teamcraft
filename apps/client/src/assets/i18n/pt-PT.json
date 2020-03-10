@@ -602,6 +602,7 @@
     "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
     "Filter_items_done": "Ignore completed items",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
+    "X_needed": "{{amount}} needed",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Crafting simulator",
-    "Include_stats": "Include stats",
+    "Include_stats": "Include stats and consumables",
     "Fixed_notification_number": "Notificação fixa",
     "Starting_echo_number": "Notificação #",
     "Break_on_reclaim": "Split macros on Reclaim point-of-no-return",
@@ -875,6 +876,9 @@
       "Good": "Good",
       "Poor": "Poor",
       "Fail": "Fail",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1726,8 +1730,11 @@
     "Ignore_item": "Ignore this tip for this item",
     "Remove_ignore_item": "Don't ignore this tip for this item anymore",
     "Ignore_container": "Ignore this tip for this container",
+    "Hide_optimizer": "Hide this optimizer",
+    "Unhide_optimizer": "Don't hide this optimizer anymore",
     "Remove_ignore_container": "Don't ignore this tip for this container anymore",
     "Show_ignored": "Show ignored items",
+    "Show_hidden": "Show hidden optimizers",
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
@@ -1849,6 +1856,8 @@
       "HP": "Hit Points",
       "Direct_hit_chances": "Direct Hit Chances",
       "Critical_hit_chances": "Critical Hit Chances",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },

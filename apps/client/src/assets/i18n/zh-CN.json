@@ -156,7 +156,7 @@
     "Nq": "NQ",
     "Share_link_copied": "分享链接已复制到剪贴板",
     "Copy": "复制",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "在主页面打开"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -198,7 +198,7 @@
       "Spawns_twice_description": "每艾欧泽亚日出现 2 次 (上午，下午)",
       "Duration": "存在时间（艾欧泽亚小时）",
       "Slot": "栏位",
-      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
+      "Slot_description": "物品在游戏采集界面中的栏位（1-8，在 5.1 版本后无需关注）",
       "Type": "采集类型",
       "Map": "地图",
       "Weather": "天气",
@@ -602,6 +602,7 @@
     "Fill_with_inventory": "使用物品栏信息填充（只会使用个人物品栏的内容）",
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
+    "X_needed": "需要 {{amount}} 个",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -799,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "生产模拟器",
-    "Include_stats": "包含属性值",
+    "Include_stats": "包括统计数据和消耗品",
     "Fixed_notification_number": "固定提示音",
     "Starting_echo_number": "提示音",
     "Break_on_reclaim": "在无法使用回收前拆分宏",
@@ -875,6 +876,9 @@
       "Good": "高品质",
       "Poor": "低品质",
       "Fail": "制作失败",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "通常"
     },
     "SOLVER": {
@@ -1427,10 +1431,10 @@
         "Last_report": "最近一次垂钓记录",
         "Fish": "鱼",
         "Size": "尺寸",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "抛竿以来的时间",
         "ERRORS": {
           "No_bait": "未检测到钓饵，请重新“选饵”",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "未检测到属性，请尝试重新切换到捕鱼人进行修复。"
         }
       }
     },
@@ -1633,7 +1637,7 @@
     "Add_item": "添加物品",
     "Clipboard_content_malformed": "剪贴板内容格式不正确",
     "Import_from_clipboard": "从剪切板导入",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "从物品栏导入",
     "Extension_tip": "针对国际服玩家：您可以使用 Lodestone inventory grabber 插件将雇员的背包复制到剪贴板： ",
     "Extension_link": "从Chrome商店获取该插件",
     "Clear": "清空物品列表",
@@ -1726,8 +1730,11 @@
     "Ignore_item": "忽略对此物品的提示",
     "Remove_ignore_item": "不再忽略对此物品的提示",
     "Ignore_container": "忽略对此物品栏的提示",
+    "Hide_optimizer": "隐藏此优化器",
+    "Unhide_optimizer": "不再隐藏此优化器",
     "Remove_ignore_container": "不再忽略对此物品栏的提示",
     "Show_ignored": "显示被忽略的物品",
+    "Show_hidden": "显示隐藏的优化器",
     "No_optimizations": "没有可用的优化",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
@@ -1811,7 +1818,7 @@
     "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "不需要兑换",
     "Stats_caps": "属性上限",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -1845,10 +1852,12 @@
       "Avg_melding_chances": "平均禁忌镶嵌成功率"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
+      "Ilvl": "平均品级",
       "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
+      "Direct_hit_chances": "直击率",
+      "Critical_hit_chances": "暴击率",
+      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
   },
