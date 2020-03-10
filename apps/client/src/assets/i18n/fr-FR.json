@@ -876,6 +876,9 @@
       "Good": "Bon",
       "Poor": "Mauvais",
       "Fail": "Echec",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Normal"
     },
     "SOLVER": {
