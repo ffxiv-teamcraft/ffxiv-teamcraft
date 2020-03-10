@@ -876,6 +876,9 @@
       "Good": "Хорошее",
       "Poor": "Плохое",
       "Fail": "Провал",
+      "Pliant": "Pliant",
+      "Sturdy": "Sturdy",
+      "Centered": "Centered",
       "Normal": "Обычное"
     },
     "SOLVER": {
