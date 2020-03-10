@@ -156,7 +156,7 @@
     "Nq": "NQ",
     "Share_link_copied": "分享链接已复制到剪贴板",
     "Copy": "复制",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "在主页面打开"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -1730,11 +1730,11 @@
     "Ignore_item": "忽略对此物品的提示",
     "Remove_ignore_item": "不再忽略对此物品的提示",
     "Ignore_container": "忽略对此物品栏的提示",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "隐藏此优化器",
+    "Unhide_optimizer": "不再隐藏此优化器",
     "Remove_ignore_container": "不再忽略对此物品栏的提示",
     "Show_ignored": "显示被忽略的物品",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "显示隐藏的优化器",
     "No_optimizations": "没有可用的优化",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
@@ -1818,7 +1818,7 @@
     "Optimize_materias": "优化魔晶石顺序",
     "No_trades_needed": "不需要兑换",
     "Stats_caps": "属性上限",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -1852,10 +1852,10 @@
       "Avg_melding_chances": "平均禁忌镶嵌成功率"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
+      "Ilvl": "平均品级",
       "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
+      "Direct_hit_chances": "直击率",
+      "Critical_hit_chances": "暴击率",
       "Critical_hit_multiplier": "Critical Hit Mult.",
       "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
