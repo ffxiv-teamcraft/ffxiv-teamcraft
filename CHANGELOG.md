@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.13"></a>
+## [7.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.12...v7.0.13) (2020-03-10)
+
+
+### Bug Fixes
+
+* **desktop:** fixed packet capture for 5.21 ([bba1ff0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bba1ff0))
+* **gearsets:** also import food in ariyala set import ([e0e773c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0e773c))
+* **gearsets:** fixed incorrect rounding for skill speed display ([aa7b24d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa7b24d))
+* **inventory:** fixed tracking of item slot swaps ([8d46d50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d46d50))
+* **items:** fixed an issue with masterbooks not being extracted properly ([5b9d120](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b9d120))
+* **list-details:** fixed inventory view icons being wrong ([a1790da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1790da))
+* **lists:** fixed performance issues with lists reordering ([12066f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12066f3))
+* **log-tracker:** changed DoH page names to match the exact ingame ones ([90f72f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90f72f8))
+* **log-tracker:** fixed page name for Quests and housing items ([9ac4598](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ac4598))
+* **search:** search type now defaults to Item ([f0c024f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0c024f))
+* **settings:** disable debounce now also works in item picker ([052ca03](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/052ca03))
+* **simulator:** better implementation for sturdy condition ([a38a59c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a38a59c))
+* **teams:** fixed "disable discord updates" disabling nothing at all ([193450a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/193450a))
+* **teams:** fixed an issue with team lists not loading properly ([ce412c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce412c8))
+* **teams:** fixed discord updates BR language outputting ES messages instead ([8549b50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8549b50))
+
+
+### Features
+
+* **data:** added 5.21 patch content ([44b619e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44b619e))
+* **db:** add NotebookDivision & NotebookDivisionCategory for CN/KR ([f961b5b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f961b5b))
+* **db:** add recipe data for CN 5.11 ([20a55b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/20a55b7))
+* **db:** handle NotebookDivision id shift between 5.11/5.2 ([96b3157](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96b3157))
+* **db:** merge ko/zh common tasks ([28e4c84](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/28e4c84))
+* **db:** update CN 5.1 patch name ([c1f02c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1f02c0))
+* **gearsets:** added critical damage multiplier to computed stats ([51e6adf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51e6adf))
+* **gearsets:** added determination bonus to gearset display and editor ([d891ef4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d891ef4))
+* **list-details:** added needed amounts to inventory synthesis popup ([d980ea2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d980ea2))
+* **optimizers:** Allowing hiding optimizers ([83481f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/83481f3))
+* **simulator:** added support for new conditions and expert recipes ([7ab8d97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ab8d97))
+* **simulator:** Share consumables with rotations ([945ad33](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/945ad33))
+
+
+### Performance Improvements
+
+* **inventory-synthesis:** added trackBy for better rendering perfs ([63445d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63445d8))
+* **lazy:** upgraded data fetcher by adding private key support ([59cb41a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59cb41a))
+
+
+
 <a name="7.0.12"></a>
 ## [7.0.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.11...v7.0.12) (2020-03-05)
 
