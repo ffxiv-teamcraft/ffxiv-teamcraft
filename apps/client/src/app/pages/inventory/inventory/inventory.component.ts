@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { uniq } from 'lodash';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -11,6 +12,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-inventory',
@@ -87,7 +89,41 @@ export class InventoryComponent {
               if (search === '' || !search) {
                 return true;
               }
-              return search.split(' ').every(fragment => {
+
+              let processedSearch: string = search;
+              //Expansion token filtering
+              //Object for expansion abbreviations, 'abbrv': 'Full Expansion Name', keep abbreviations lower case for less headaches
+              const expacAbbreviations: any = {
+                'arr': 'A Realm Reborn',
+                'hw': 'Heavensward',
+                'sb': 'Stormblood',
+                'shb': 'Shadowbringers'
+              };
+              const allExpansions = uniq(this.lazyData.patches.map(p => p.ExName));
+              console.log(allExpansions)
+              //Condense the above object into 'ARR|A Realm Reborn|HW|Heavensward' etc...
+              const expansionsRegex: string = [].concat.apply([], Object.entries(expacAbbreviations)).join('|');
+              const regexString: RegExp = new RegExp(`(expac|expansion):(${expansionsRegex})`, 'i');
+              const expacMatches: string[] = regexString.exec(search);
+              if (expacMatches && expacMatches[2]) {
+                processedSearch = search.replace(regexString, '');
+                const expansion: any = this.lazyData.patches.find(p => {
+                  return p.ExName.toLowerCase() === expacMatches[2].toLowerCase() || p.ExName === expacAbbreviations[expacMatches[2].toLowerCase()];
+                });
+                if (expansion) {
+                  const itemExpansion: number = this.lazyData.patches.find(p => {
+                    return p.ID === this.lazyData.data.itemPatch[item.itemId]
+                  }).ExVersion
+
+                  //We test if false and return false here instead of the inverse so that we can continue through the rest of our search
+                  if (itemExpansion !== expansion.ExVersion) {
+                    return false;
+                  }
+                }
+              }
+
+
+              return processedSearch.split(' ').every(fragment => {
                 return this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase().indexOf(fragment.toLowerCase()) > -1;
               });
             });
@@ -100,7 +136,7 @@ export class InventoryComponent {
   constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService) {
   }
 
   public computePrices(inventory: InventoryDisplay): void {
