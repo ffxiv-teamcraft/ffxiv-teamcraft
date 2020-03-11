@@ -21,6 +21,8 @@ export interface LazyData {
   gatheringItems: any;
   gatheringLogPages: any;
   hunts: any;
+  hwdInspections: any;
+  hwdPhases: any;
   ilvls: any;
   instances: any;
   itemEquipSlotCategory: any;

@@ -13,7 +13,7 @@ export class I18nPipe implements PipeTransform {
   constructor(private i18n: I18nToolsService, private translate: TranslateService) {
   }
 
-  transform(value: any): string {
+  transform(value: any, fallback?:string): string {
     if (this.cache === undefined
       || this.cache.input !== value
       || this.cache.lang !== this.translate.currentLang) {
@@ -34,7 +34,7 @@ export class I18nPipe implements PipeTransform {
         lang: this.translate.currentLang
       };
     }
-    return this.cache.value;
+    return this.cache.value || fallback;
   }
 
   isI18nEntry(data: any): boolean {

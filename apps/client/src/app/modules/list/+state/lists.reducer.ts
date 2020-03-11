@@ -89,11 +89,7 @@ export function listsReducer(
 
     case ListsActionTypes.LoadTeamLists: {
       state = {
-        ...state,
-        connectedTeams: [
-          ...state.connectedTeams,
-          action.teamId
-        ]
+        ...state
       };
       break;
     }
@@ -104,6 +100,10 @@ export function listsReducer(
         listDetails: [
           ...state.listDetails.filter(list => list.teamId !== action.teamId),
           ...action.payload
+        ],
+        connectedTeams: [
+          ...state.connectedTeams,
+          action.teamId
         ]
       };
       break;

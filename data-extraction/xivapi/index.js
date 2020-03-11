@@ -49,9 +49,6 @@ function hasTodo(operation) {
   if (everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
-  if (matches) {
-    console.log(`========== ${operation} ========== `);
-  }
   return matches;
 }
 
@@ -67,22 +64,22 @@ fs.existsSync('output') || fs.mkdirSync('output');
 
 let emptyBnpcNames = 0;
 
-if (hasTodo('missingNodes')) {
-  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
-  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
-  let count = 0;
-  Object.values(nodes).forEach((node) => {
-    if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
-      console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
-      console.log(`| Level: ${node.level}`);
-      console.log(`| Limited: ${node.limited}`);
-      count++;
-    }
-  });
-  console.log(`
-
-  **Total**: ${count}`);
-}
+// if (hasTodo('missingNodes')) {
+//   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
+//   const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+//   let count = 0;
+//   Object.values(nodes).forEach((node) => {
+//     if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
+//       console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
+//       console.log(`| Level: ${node.level}`);
+//       console.log(`| Limited: ${node.limited}`);
+//       count++;
+//     }
+//   });
+//   console.log(`
+//
+//   **Total**: ${count}`);
+// }
 
 if (hasTodo('mappy')) {
   // MapData extraction
@@ -100,7 +97,7 @@ if (hasTodo('mappy')) {
       parsedMemoryData.push(memoryRow);
     })
     .on('end', () => {
-      console.log('Extracted memory data, size: ', parsedMemoryData.length);
+      // console.log('Extracted memory data, size: ', parsedMemoryData.length);
       memoryData$.next(parsedMemoryData);
     });
 
@@ -213,13 +210,13 @@ if (hasTodo('mappy')) {
         .on('end', function() {
           // Write data that needs to be joined with game data first
           persistToJsonAsset('node-positions', nodes);
-          console.log('nodes written');
+          // console.log('nodes written');
           persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-          console.log('aetherytes written');
+          // console.log('aetherytes written');
           persistToJsonAsset('monsters', monsters);
-          console.log('monsters written', emptyBnpcNames);
+          // console.log('monsters written', emptyBnpcNames);
           persistToJsonAsset('npcs', npcs);
-          console.log('npcs written');
+          // console.log('npcs written');
           done('mappy');
         });
     });
@@ -1461,13 +1458,13 @@ if (hasTodo('reductions')) {
         const itemReductions = [];
         const itemId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row.Item.toLowerCase());
         if (isNaN(itemId)) {
-          console.log('Invalid row', index, row);
+          // console.log('Invalid row', index, row);
         } else {
           for (let i = 0; i < 5; i++) {
             if (row[`r${i}`] && row[`r${i}`].length > 0) {
               const reductionId = +Object.keys(items).find(key => items[key].en.toLowerCase() === row[`r${i}`].toLowerCase());
               if (isNaN(reductionId)) {
-                console.log('Invalid row reduction', index, i, row);
+                // console.log('Invalid row reduction', index, i, row);
               } else {
                 itemReductions.push(reductionId);
               }
@@ -1497,7 +1494,7 @@ if (hasTodo('monsterDrops')) {
       sheetRows.forEach((row, index) => {
         const monsterId = +Object.keys(monsters).find(key => monsters[key].en.toLowerCase() === row.Monster.toLowerCase());
         if (isNaN(monsterId)) {
-          console.log('Invalid row', index, row);
+          // console.log('Invalid row', index, row);
         } else {
           const dropNames = row.Drops.split(',');
           const monsterDrops = [];
@@ -1505,7 +1502,7 @@ if (hasTodo('monsterDrops')) {
             const name = dropName.trim();
             const itemId = +Object.keys(items).find(key => items[key].en.toLowerCase() === name.toLowerCase());
             if (isNaN(itemId)) {
-              console.log('Invalid row drop', index, row, name);
+              // console.log('Invalid row drop', index, row, name);
             } else {
               monsterDrops.push(itemId);
             }
@@ -1640,7 +1637,7 @@ if (hasTodo('territories')) {
 //   });
 // }
 
-if (hasTodo('HWDData')) {
+if (hasTodo('HWDCrafter')) {
   const supplies = {};
   getAllEntries('https://xivapi.com/HWDCrafterSupply').subscribe(completeFetch => {
     completeFetch.forEach(supply => {
@@ -1667,7 +1664,48 @@ if (hasTodo('HWDData')) {
       }
     });
     persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
-    done('HWDData');
+    done('HWDCrafter');
+  });
+}
+
+
+if (hasTodo('HWDGatherer')) {
+  const inspections = [];
+  getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
+    completeFetch.forEach(inspection => {
+      for (let i = 0; i < 32; i++) {
+        if (inspection[`ItemRequired${i}`] === null) {
+          return;
+        }
+        inspections.push({
+          requiredItem: inspection[`ItemRequired${i}`].Item,
+          amount: inspection[`AmountRequired${i}`],
+          receivedItem: inspection[`ItemReceived${i}`].ID,
+          scrips: inspection[`Reward1${i}`].Scrips,
+          points: inspection[`Reward1${i}`].Points,
+          phase: inspection[`Phase${i}TargetID`]
+        });
+      }
+    });
+    persistToJsonAsset('hwd-inspections', inspections);
+    done('HWDGatherer');
+  });
+}
+
+if (hasTodo('HWDPhases')) {
+  const gathererInspectTerm = {};
+  getAllPages(`https://xivapi.com/HWDGathereInspectTerm?columns=ID,Name_*`).subscribe(page => {
+    page.Results.forEach(entry => {
+      gathererInspectTerm[entry.ID] = {
+        en: entry.Name_en,
+        ja: entry.Name_ja,
+        de: entry.Name_de,
+        fr: entry.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('hwd-phases', gathererInspectTerm);
+    done('HWDPhases');
   });
 }
 
@@ -1924,10 +1962,6 @@ if (hasTodo('tribes')) {
       delete entry.NameFemale_ja;
       delete entry.Patch;
       delete entry.Url;
-      const VIT = entry.DEX;
-      const DEX = entry.VIT;
-      entry.VIT = VIT;
-      entry.DEX = DEX;
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);
