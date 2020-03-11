@@ -24,10 +24,46 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
   }
 
   protected canExtract(item: Item): boolean {
-    return item.tradeShops !== undefined;
+    return item.tradeShops !== undefined || this.lazyData.data.hwdInspections.some(row => {
+      return row.receivedItem === item.id;
+    });
   }
 
   protected doExtract(item: Item, itemData: ItemData): TradeSource[] {
+    const inspection = this.lazyData.data.hwdInspections.find(row => {
+      return row.receivedItem === item.id;
+    });
+    if (inspection) {
+      const npc: TradeNpc = { id: 1031693 };
+      const npcEntry = this.lazyData.data.npcs[npc.id];
+      if (npcEntry && npcEntry.position) {
+        npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
+        npc.zoneId = npcEntry.position.zoneid;
+        npc.mapId = npcEntry.position.map;
+      }
+      return [{
+        npcs: [npc],
+        shopName: '',
+        trades: [{
+          currencies: [
+            {
+              id: inspection.requiredItem,
+              amount: inspection.amount,
+              hq: false,
+              icon: this.lazyData.data.itemIcons[inspection.requiredItem]
+            }
+          ],
+          items: [
+            {
+              id: inspection.receivedItem,
+              amount: inspection.amount,
+              hq: false,
+              icon: this.lazyData.data.itemIcons[inspection.receivedItem]
+            }
+          ]
+        }]
+      }];
+    }
     return item.tradeShops.map(ts => {
       return {
         npcs: ts.npcs.map(npcId => {

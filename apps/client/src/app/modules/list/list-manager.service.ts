@@ -1,7 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ListRow, getItemSource } from './model/list-row';
+import { getItemSource, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { Ingredient } from '../../model/garland-tools/ingredient';
@@ -16,6 +16,7 @@ import { environment } from '../../../environments/environment';
 import { CustomItemsFacade } from '../custom-items/+state/custom-items.facade';
 import { CustomItem } from '../custom-items/model/custom-item';
 import { DataType } from './data/data-type';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -31,7 +32,8 @@ export class ListManagerService {
               private zone: NgZone,
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
-              private customItemsFacade: CustomItemsFacade) {
+              private customItemsFacade: CustomItemsFacade,
+              private lazyDataService: LazyDataService) {
 
     this.customItemsFacade.loadAll();
     this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
@@ -105,7 +107,7 @@ export class ListManagerService {
     itemClone.used = 0;
     itemClone.usePrice = true;
     itemClone.id = itemClone.$key;
-    const added = addition.addToFinalItems(itemClone);
+    const added = addition.addToFinalItems(itemClone, this.lazyDataService.data);
     if (itemClone.requires.length > 0) {
       return addition.addCraft([
         {
@@ -113,7 +115,7 @@ export class ListManagerService {
           data: itemClone,
           item: null
         }
-      ], this.gt, this.customItemsSync, this.db, this);
+      ], this.gt, this.customItemsSync, this.db, this, this.lazyDataService.data);
     }
     return of(addition);
   }
@@ -164,6 +166,16 @@ export class ListManagerService {
         usePrice: true
       });
     } else {
+      const inspection = this.lazyDataService.data.hwdInspections.find(row => {
+        return row.receivedItem === data.item.id;
+      });
+      if (inspection) {
+        toAdd.requires = [{
+          id: inspection.requiredItem,
+          amount: 1,
+          batches: inspection.amount
+        }];
+      }
       // If it's not a recipe, add as item
       Object.assign(toAdd, {
         id: data.item.id,
@@ -178,7 +190,7 @@ export class ListManagerService {
 
     toAdd = this.extractor.addDataToItem(toAdd, data);
     // We add the row to recipes.
-    const added = addition.addToFinalItems(toAdd);
+    const added = addition.addToFinalItems(toAdd, this.lazyDataService.data);
     let addition$: Observable<List>;
     if (data.isCraft()) {
       // Then we add the craft to the addition list.
@@ -186,7 +198,7 @@ export class ListManagerService {
         item: data.item,
         data: data,
         amount: added
-      }], this.gt, this.customItemsSync, this.db, this, recipeId.toString());
+      }], this.gt, this.customItemsSync, this.db, this, this.lazyDataService.data, recipeId.toString());
     } else {
       addition$ = of(addition);
     }
@@ -199,11 +211,7 @@ export class ListManagerService {
 
   public addDetails(list: List, data: ItemData, recipeId?: string | number): List {
     list.forEach(item => {
-      // If it's not inside data and it isn't a crystal, we can already skip.
-      if (item.id > 20 && data.item.id !== item.id && !data.ingredients.some(i => i.id === item.id)) {
-        return;
-      }
-      item = this.extractor.addDataToItem(item, data);
+      Object.assign(item, this.lazyDataService.extracts.find(ex => ex.id === item.id));
       if (data.isCraft()) {
         const craftedBy = item.sources.find(s => s.type === DataType.CRAFTED_BY);
         if (recipeId !== undefined && data.item.id === item.id) {

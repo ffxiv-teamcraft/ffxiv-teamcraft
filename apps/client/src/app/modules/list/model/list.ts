@@ -21,6 +21,7 @@ import { ListColor } from './list-color';
 import * as firebase from 'firebase/app';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
+import { LazyData } from '../../../core/data/lazy-data';
 
 declare const gtag: Function;
 
@@ -66,7 +67,7 @@ export class List extends DataWithPermissions {
 
   archived = false;
 
-  constructor(settings? : SettingsService) {
+  constructor(settings?: SettingsService) {
     super();
     if (!this.createdAt) {
       this.createdAt = firebase.firestore.Timestamp.fromDate(new Date());
@@ -142,7 +143,24 @@ export class List extends DataWithPermissions {
     (this.finalItems || []).filter(row => row.requires !== undefined && row.requires.length > 0).forEach(method);
   }
 
-  public addToFinalItems(data: ListRow): number {
+  public addToFinalItems(data: ListRow, lazyData: LazyData): number {
+    if (getItemSource(data, DataType.CRAFTED_BY).length === 0) {
+      (data.requires || []).forEach(row => {
+        let amount = row.amount * data.amount_needed;
+        if (row.batches) {
+          amount = Math.ceil(amount / row.batches) * row.batches;
+        }
+        this.add(this.items, {
+          id: row.id,
+          icon: lazyData.itemIcons[row.id],
+          amount: amount,
+          done: 0,
+          used: 0,
+          yield: 1,
+          usePrice: true
+        });
+      });
+    }
     return this.add(this.finalItems, data, true);
   }
 
@@ -410,7 +428,7 @@ export class List extends DataWithPermissions {
     }
   }
 
-  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, recipeId?: string): Observable<List> {
+  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, lazyData: LazyData, recipeId?: string): Observable<List> {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
       expand(additions => {
@@ -421,7 +439,7 @@ export class List extends DataWithPermissions {
         return concat(
           ...additions.map(addition => {
             if (addition.data instanceof ItemData) {
-              return of(this.addNormalCraft(addition, gt, listManager, recipeId));
+              return of(this.addNormalCraft(addition, gt, listManager, lazyData, recipeId));
             } else {
               return this.addCustomCraft(addition, gt, customItems, dataService, listManager);
             }
@@ -439,7 +457,7 @@ export class List extends DataWithPermissions {
     );
   }
 
-  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, listManager: ListManagerService, recipeId?: string): CraftAddition[] {
+  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, listManager: ListManagerService, lazyData: LazyData, recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
     let craft: Craft;
     if (recipeId !== undefined) {
@@ -481,9 +499,21 @@ export class List extends DataWithPermissions {
             amount: added
           });
         } else {
+          const inspection = lazyData.hwdInspections.find(row => {
+            return row.receivedItem === element.id;
+          });
+          let rowToAdd: Partial<ListRow> = {
+            id: elementDetails.id,
+            icon: elementDetails.icon,
+            amount: element.amount * addition.amount,
+            done: 0,
+            used: 0,
+            yield: 1,
+            usePrice: true
+          };
           if (elementDetails === undefined) {
             const partial = (<ItemData>addition.data).getPartial(element.id.toString(), 'item');
-            this.add(this.items, {
+            rowToAdd = {
               id: partial.obj.i,
               icon: partial.obj.c,
               amount: element.amount * addition.amount,
@@ -491,18 +521,28 @@ export class List extends DataWithPermissions {
               used: 0,
               yield: 1,
               usePrice: true
-            });
-          } else {
+            };
+          }
+          // Handle inspections just like crafts, as they add a requirement
+          // TODO maybe convert requirements to an extractor, to allow more stuff like this.
+          if (inspection) {
+            rowToAdd.requires = [{
+              id: inspection.requiredItem,
+              amount: 1,
+              batches: inspection.amount
+            }];
+            const reqAmount = element.amount * addition.amount;
             this.add(this.items, {
-              id: elementDetails.id,
-              icon: elementDetails.icon,
-              amount: element.amount * addition.amount,
+              id: inspection.requiredItem,
+              icon: lazyData.itemIcons[inspection.requiredItem],
+              amount: Math.ceil(reqAmount / inspection.amount) * inspection.amount,
               done: 0,
               used: 0,
               yield: 1,
               usePrice: true
             });
           }
+          this.add(this.items, rowToAdd as ListRow);
         }
         listManager.addDetails(this, <ItemData>addition.data);
       }
@@ -649,7 +689,9 @@ export class List extends DataWithPermissions {
       const requirements = (craft.requires || []).filter(req => req.id === item.id || +req.id === item.id);
       if (requirements.length > 0) {
         requirements.forEach(requirement => {
-          count += craft.amount_needed * requirement.amount;
+          const amount = (craft.amount_needed || craft.amount) * requirement.amount;
+          const batches = requirement.batches || 1;
+          count += Math.ceil(amount / batches) * batches;
         });
       }
     });

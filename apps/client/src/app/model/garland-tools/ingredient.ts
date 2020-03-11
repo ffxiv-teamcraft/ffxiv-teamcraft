@@ -6,4 +6,5 @@ export interface Ingredient {
   part?: string;
   phase?: number
   custom?: boolean;
+  batches?: number;
 }
