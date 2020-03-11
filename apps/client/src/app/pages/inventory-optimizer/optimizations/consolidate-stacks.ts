@@ -29,7 +29,7 @@ export class ConsolidateStacks extends InventoryOptimizer {
 
     // If no patch is defined for this patch that the item is assigned to, do not filter it.
     const patch = this.getPatch(itemPatch);
-    if (patch === null) {
+    if (!patch) {
       return true;
     }
 
