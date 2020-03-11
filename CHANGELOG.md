@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.14"></a>
+## [7.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.13...v7.0.14) (2020-03-11)
+
+
+### Bug Fixes
+
+* **data:** added missing data from 5.21 ([098c107](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/098c107))
+* **desktop:** better firewall rules cleanup ([c559f9d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c559f9d))
+* **desktop:** fixed some inventory interactions (drag and drop ingame) ([62e6c8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62e6c8a))
+* **gearsets:** removed import from packet capture on web version ([06733a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06733a8))
+* **inventory-optimizer:** fixed an crash happening when you have new items that have no patch data ([4e23d64](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e23d64))
+* **navigation-map:** navigation arrows now show on top of aetherytes ([a25a27f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a25a27f))
+* **teams:** fixed teams lists not loading properly ([422f4e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/422f4e6))
+
+
+### Features
+
+* **list:** add support for approved items in lists ([120ea2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/120ea2e))
+* **pricing:** Add server name to text export ([e43d305](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e43d305))
+
+
+
 <a name="7.0.13"></a>
 ## [7.0.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.12...v7.0.13) (2020-03-10)
 
