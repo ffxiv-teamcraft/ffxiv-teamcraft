@@ -34,13 +34,14 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
       return row.receivedItem === item.id;
     });
     if (inspection) {
-      const npc: TradeNpc = { id: 1031693 };
-      const npcEntry = this.lazyData.data.npcs[npc.id];
-      if (npcEntry && npcEntry.position) {
-        npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
-        npc.zoneId = npcEntry.position.zoneid;
-        npc.mapId = npcEntry.position.map;
-      }
+      const npc: TradeNpc = { id: 1031693,
+        zoneId: 1647,
+        mapId: 584,
+        coords: {
+          x: 10.8,
+          y: 14.0
+        }
+      };
       return [{
         npcs: [npc],
         shopName: '',
@@ -67,7 +68,9 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
     return item.tradeShops.map(ts => {
       return {
         npcs: ts.npcs.map(npcId => {
-          const npc: TradeNpc = { id: npcId };
+          const npc: TradeNpc = {
+            id: npcId
+          };
           const npcEntry = this.lazyData.data.npcs[npcId];
           if (npcEntry && npcEntry.position) {
             npc.coords = { x: npcEntry.position.x, y: npcEntry.position.y };
