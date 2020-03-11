@@ -1962,10 +1962,6 @@ if (hasTodo('tribes')) {
       delete entry.NameFemale_ja;
       delete entry.Patch;
       delete entry.Url;
-      const VIT = entry.DEX;
-      const DEX = entry.VIT;
-      entry.VIT = VIT;
-      entry.DEX = DEX;
       tribes[entry.ID] = entry;
     });
     persistToJsonAsset('tribes', tribes);
