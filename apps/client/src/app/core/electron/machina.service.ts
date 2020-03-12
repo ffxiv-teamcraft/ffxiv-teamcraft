@@ -246,10 +246,17 @@ export class MachinaService {
     ]).subscribe(([packet, data]) => {
       const realZoneId = territories[packet.zoneID.toString()];
       this.eorzeaFacade.setZone(realZoneId);
+      this.eorzeaFacade.setPcapWeather(packet.weatherID, true);
       this.eorzeaFacade.setMap(+Object.keys(data.maps)
         .find(key => {
           return realZoneId === data.maps[+key].placename_id;
         }));
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('weatherChange')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setPcapWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(

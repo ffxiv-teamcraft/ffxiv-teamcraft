@@ -10,6 +10,7 @@ export interface LazyData {
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;
+  diademTerritory: any;
   equipSlotCategories: any;
   fates: any;
   fishParameter: any;

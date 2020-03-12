@@ -56,7 +56,7 @@
             ></app-map>
           </nz-card>
 
-          <nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" class="card-with-list" fxFlex="1 1 auto">
+          <nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" class="card-with-list" fxFlex="1 1 auto" *ngIf="data.weathers.length > 0">
             <div fxLayout="column" fxLayoutAlign="center center">
               <div *ngFor="let row of data.weathers;let last = last"
                    fxLayout="row" fxLayoutAlign="space-between center"
@@ -76,7 +76,7 @@
             </div>
           </nz-card>
 
-          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list">
+          <nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" fxFlex="1 1 auto" class="card-with-list" *ngIf="data.weathers.length > 0">
             <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.weatherTransitions; let last = last"
                  [class.border-bottom]="!last"
                  [style.background-color]="row.active?getColor(0.5):''"
