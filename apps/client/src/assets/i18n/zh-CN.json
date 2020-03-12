@@ -1715,6 +1715,7 @@
     "Reset_inventory": "重置此物品栏",
     "Clean_all": "重置所有物品栏",
     "Search_for_an_item": "搜索物品",
+    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
     "In_x_containers": "在 {{amount}} 个物品栏中",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
