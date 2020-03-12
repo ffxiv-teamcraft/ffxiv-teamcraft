@@ -28,7 +28,6 @@ import { UsedForType } from '../model/used-for-type';
 import { TradeNpc } from '../../../modules/list/model/trade-npc';
 import { Trade } from '../../../modules/list/model/trade';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
-import { Craft } from '../../../model/garland-tools/craft';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -36,7 +35,6 @@ import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
-import { CraftedBy } from '../../../modules/list/model/crafted-by';
 import { Memoized } from '../../../core/decorators/memoized';
 
 @Component({

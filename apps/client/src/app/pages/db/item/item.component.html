@@ -481,8 +481,13 @@
                           <ng-container *ngIf="recipe.job !== 0">
                             <div class="recipe-title" fxLayout="column">
                               <div fxLayout="row" fxLayoutGap="5px">
+                                <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
                                 <div>{{recipe.job | jobAbbr | i18n}}</div>
                                 <div>{{recipe.lvl}}{{recipe.stars_tooltip}}</div>
+                              </div>
+                              <div *ngIf="recipeSource.masterbook" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                                <app-item-icon [itemId]="recipeSource.masterbook.id" width="24"></app-item-icon>
+                                <div>{{recipeSource.masterbook.id | itemName | i18n}}</div>
                               </div>
                               <div fxLayout="row" fxLayoutGap="5px">
                                 <b>rlvl</b>:
