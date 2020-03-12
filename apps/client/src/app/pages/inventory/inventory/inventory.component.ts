@@ -106,7 +106,7 @@ export class InventoryComponent {
               const expacRegexString: string = allExpansions.concat(Object.keys(expacAbbreviations)).join('|');
               const expacRegex: RegExp = new RegExp(`(expac|expansion):(${expacRegexString})`, 'i');
 
-              const expacMatches: string[] = expacRegex.exec(search);
+              const expacMatches: string[] = expacRegex.exec(processedSearch);
               if (expacMatches && expacMatches[2]) {
                 processedSearch = processedSearch.replace(expacRegex, '');
                 //Find data matching either a full expansion's name, or an abbreviation we defined above
