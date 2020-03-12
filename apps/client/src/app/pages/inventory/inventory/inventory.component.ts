@@ -91,6 +91,7 @@ export class InventoryComponent {
               }
 
               let processedSearch: string = search;
+
               //Expansion token filtering
               //Object for expansion abbreviations, 'abbrv': 'Full Expansion Name', keep abbreviations lower case for less headaches
               const expacAbbreviations: any = {
@@ -99,18 +100,21 @@ export class InventoryComponent {
                 'sb': 'Stormblood',
                 'shb': 'Shadowbringers'
               };
-              const allExpansions = uniq(this.lazyData.patches.map(p => p.ExName));
-              console.log(allExpansions)
-              //Condense the above object into 'ARR|A Realm Reborn|HW|Heavensward' etc...
-              const expansionsRegex: string = [].concat.apply([], Object.entries(expacAbbreviations)).join('|');
-              const regexString: RegExp = new RegExp(`(expac|expansion):(${expansionsRegex})`, 'i');
-              const expacMatches: string[] = regexString.exec(search);
+              //A minor bit of future proofing; if new expansions are added they can be filtered without an abbreviation
+              const allExpansions: string[] = uniq(this.lazyData.patches.map(p => p.ExName));
+              //Condense the above object's keys and the array into a string 'ARR|A Realm Reborn|HW|Heavensward' etc...
+              const expacRegexString: string = allExpansions.concat(Object.keys(expacAbbreviations)).join('|');
+              const expacRegex: RegExp = new RegExp(`(expac|expansion):(${expacRegexString})`, 'i');
+
+              const expacMatches: string[] = expacRegex.exec(search);
               if (expacMatches && expacMatches[2]) {
-                processedSearch = search.replace(regexString, '');
+                processedSearch = processedSearch.replace(expacRegex, '');
+                //Find data matching either a full expansion's name, or an abbreviation we defined above
                 const expansion: any = this.lazyData.patches.find(p => {
                   return p.ExName.toLowerCase() === expacMatches[2].toLowerCase() || p.ExName === expacAbbreviations[expacMatches[2].toLowerCase()];
                 });
                 if (expansion) {
+                  //Find the patch this item was released in, and then get that patch's expansion
                   const itemExpansion: number = this.lazyData.patches.find(p => {
                     return p.ID === this.lazyData.data.itemPatch[item.itemId]
                   }).ExVersion
@@ -122,7 +126,7 @@ export class InventoryComponent {
                 }
               }
 
-
+              //Return if item matches all search criteria
               return processedSearch.split(' ').every(fragment => {
                 return this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase().indexOf(fragment.toLowerCase()) > -1;
               });
