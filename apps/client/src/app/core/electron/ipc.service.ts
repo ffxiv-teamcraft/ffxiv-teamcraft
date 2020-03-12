@@ -71,6 +71,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
   }
 
+  public get updatePositionHandlerPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('updatePositionHandler'));
+  }
+
   public get playerStatsPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('playerStats'));
   }
@@ -144,7 +148,7 @@ export class IpcService {
     }
   }
 
-  public openOverlay(url: string, registrationUri: string, defaultDimensions?: Vector2): void {
+  public openOverlay(url: string, registrationUri: string = url, defaultDimensions?: Vector2): void {
     this.send('overlay', {
       url: url,
       registrationUri: registrationUri,

@@ -49,6 +49,7 @@ import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
 import { Region } from './modules/settings/region.enum';
+import { MappyReporterService } from './core/electron/mappy-reporter';
 
 declare const gtag: Function;
 
@@ -164,7 +165,8 @@ export class AppComponent implements OnInit {
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
-              private quickSearch: QuickSearchService, apollo: Apollo, httpLink: HttpLink) {
+              private quickSearch: QuickSearchService, private mappy: MappyReporterService,
+              apollo: Apollo, httpLink: HttpLink) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -393,6 +395,7 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
+      this.mappy.start();
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
@@ -606,15 +609,19 @@ export class AppComponent implements OnInit {
   }
 
   public openAlarmsOverlay(): void {
-    this.ipc.openOverlay('/alarms-overlay', '/alarms-overlay');
+    this.ipc.openOverlay('/alarms-overlay');
   }
 
   public openFishingOverlay(): void {
-    this.ipc.openOverlay('/fishing-reporter-overlay', '/fishing-reporter-overlay');
+    this.ipc.openOverlay('/fishing-reporter-overlay');
+  }
+
+  public openMappyOverlay(): void {
+    this.ipc.openOverlay('/mappy-overlay');
   }
 
   public openListPanelOverlay(): void {
-    this.ipc.openOverlay('/list-panel-overlay', '/list-panel-overlay');
+    this.ipc.openOverlay('/list-panel-overlay');
   }
 
   @HostListener('window:beforeunload', ['$event'])

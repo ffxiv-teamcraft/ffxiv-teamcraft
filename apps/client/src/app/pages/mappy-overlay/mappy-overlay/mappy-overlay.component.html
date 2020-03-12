@@ -1,0 +1,18 @@
+<app-overlay-container uri="/mappy-overlay">
+  <ng-container *ngIf="display$ | async as display">
+<!--    <div *ngIf="display.mapId; else noMap" class="mappy-overlay-container">-->
+<!--      <div class="map-container" [ngStyle]="display.mapStyle">-->
+<!--        <img [src]="display.map.image" alt="">-->
+<!--      </div>-->
+<!--      <div class="user-marker">-->
+<!--        <pre>{{display$ | async | json}}</pre>-->
+<!--      </div>-->
+<!--    </div>-->
+    <pre>{{display$ | async | json}}</pre>
+    <ng-template #noMap>
+      <app-fullpage-message>
+        {{'MAPPY_OVERLAY.ERRORS.No_map' | translate}}
+      </app-fullpage-message>
+    </ng-template>
+  </ng-container>
+</app-overlay-container>

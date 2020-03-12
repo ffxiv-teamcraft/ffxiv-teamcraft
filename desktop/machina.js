@@ -85,7 +85,8 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'someDirectorUnk4',
         'actorControlSelf',
         'retainerInformation',
-        'weatherChange'
+        'weatherChange',
+        'updatePositionHandler'
       ];
 
       Machina = new MachinaFFXIV(options);

@@ -423,6 +423,18 @@ ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
 });
 
+let mappyState = {};
+ipcMain.on('mappy-state:set', (_, data) => {
+  mappyState = data;
+  if (openedOverlays['/mappy-overlay'] !== undefined) {
+    openedOverlays['/mappy-overlay'].webContents.send('mappy-state', data);
+  }
+});
+
+ipcMain.on('mappy-state:get', (event) => {
+  event.sender.send('mappy-state', mappyState);
+});
+
 
 let appState = {};
 const overlaysNeedingState = [
