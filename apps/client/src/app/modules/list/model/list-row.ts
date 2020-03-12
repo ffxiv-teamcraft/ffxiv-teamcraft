@@ -5,6 +5,13 @@ import { CompactMasterbook } from '../../../model/common/compact-masterbook';
 import { ItemSource } from './item-source';
 import { DataType } from '../data/data-type';
 
+export function isListRow(obj: any): obj is ListRow {
+  return typeof obj === 'object'
+  && obj.sources
+  && obj.id !== undefined
+  && obj.authorId === undefined
+}
+
 export class ListRow extends DataModel {
   icon?: number;
   id: any; // can be string or number, but we use any so less refactoring is needed.
