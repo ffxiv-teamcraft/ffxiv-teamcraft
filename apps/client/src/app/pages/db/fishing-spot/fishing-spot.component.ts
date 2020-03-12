@@ -101,6 +101,9 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       }),
       map(spot => {
         spot.customData = this.lazyData.data.fishingSpots.find(s => s.id === spot.ID);
+        if (spot.TerritoryType === null && spot.ID >= 10000) {
+          spot.TerritoryType = this.lazyData.data.diademTerritory;
+        }
         return spot;
       }),
       shareReplay(1)
@@ -179,7 +182,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               });
           });
         return {
-          weathers: weatherIndex[spot.TerritoryType.WeatherRate]
+          weathers: (weatherIndex[spot.TerritoryType.WeatherRate] || [])
             .map(row => {
               return {
                 chances: 100 * this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId),
@@ -197,7 +200,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               }
               return a.next - b.next;
             }),
-          weatherTransitions: [].concat.apply([], weatherIndex[spot.TerritoryType.WeatherRate]
+          weatherTransitions: [].concat.apply([], (weatherIndex[spot.TerritoryType.WeatherRate] || [])
             .map(row => {
               return weatherIndex[spot.TerritoryType.WeatherRate].map(from => {
                 return {

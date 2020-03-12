@@ -11,6 +11,7 @@
     <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
             (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
   </div>
+  <div class="search-tip" fxLayout="row" fxLayoutAlign="left center">{{'INVENTORY.Search_tip' | translate}}</div>
   <div nz-row>
     <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
       <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">

@@ -251,9 +251,11 @@ export class FishingReporter implements DataReporter {
         mooch$
       ),
       filter(([fish, , throwData, biteData, , spot, , mooch]) => {
-        return fish.id === -1 || (biteData.tug !== null &&
-          spot.fishes.indexOf(fish.id) > -1
-          && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1));
+        return fish.id === -1
+          || (biteData.tug !== null
+            && spot.fishes.indexOf(fish.id) > -1
+            && (!mooch || spot.fishes.indexOf(throwData.mooch) > -1)
+          ) && throwData.weatherId !== null;
       }),
       map(([fish, baitId, throwData, biteData, hookset, spot, stats, mooch]) => {
         const entry = {

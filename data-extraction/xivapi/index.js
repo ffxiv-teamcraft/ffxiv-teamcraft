@@ -543,14 +543,50 @@ if (hasTodo('gatheringLog')) {
 
 if (hasTodo('fishingLog')) {
 
+  const diademTerritory = require('./input/diadem-territory.json');
+
+  const diademFishingSpotCoords = {
+    10001: {
+      x: 12,
+      y: 36
+    },
+    10002: {
+      x: 11,
+      y: 29
+    },
+    10003: {
+      x: 10.5,
+      y: 9.1
+    },
+    10004: {
+      x: 32.4,
+      y: 9.5
+    },
+    10005: {
+      x: 29,
+      y: 33
+    },
+    10006: {
+      x: 12.2,
+      y: 24.4
+    },
+    10007: {
+      x: 26,
+      y: 16
+    }
+  };
+
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter', true).pipe(
+  getAllEntries('https://xivapi.com/FishParameter').pipe(
     map(completeFetch => {
       const fishParameter = {};
       completeFetch
         .filter(fish => fish.Item !== null && fish.IsInLog === 1)
         .forEach(fish => {
+          if (fish.TerritoryType === null) {
+            throw new Error(`No territory for FishParameter#${fish.ID}`);
+          }
           const entry = {
             id: fish.ID,
             itemId: fish.Item.ID,
@@ -581,15 +617,19 @@ if (hasTodo('fishingLog')) {
     const spots = [];
     const fishes = [];
     completeFetch
-      .filter(spot => spot.Item0 !== null && spot.TerritoryType !== null && spot.PlaceName !== null)
+      .filter(spot => spot.Item0 !== null && spot.PlaceName !== null && (spot.TerritoryType !== null || spot.ID >= 10000))
       .forEach(spot => {
+        // Let's check if this is diadem
+        if (spot.TerritoryType === null && spot.ID >= 10000) {
+          spot.TerritoryType = diademTerritory;
+        }
         const c = spot.TerritoryType.Map.SizeFactor / 100.0;
         spots.push({
           id: spot.ID,
           mapId: spot.TerritoryType.Map.ID,
           placeId: spot.TerritoryType.PlaceName.ID,
           zoneId: spot.PlaceName.ID,
-          coords: {
+          coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
             x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
             y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
           },

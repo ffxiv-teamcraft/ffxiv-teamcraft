@@ -3,7 +3,7 @@ import { Action } from '@ngrx/store';
 export enum EorzeaActionTypes {
   SetZone = '[Eorzea] Set Zone',
   SetMap = '[Eorzea] Set Map',
-  SetWeather = '[Eorzea] Set Weather',
+  SetPcapWeather = '[Eorzea] Set Weather',
   SetBait = '[Eorzea] Set Bait',
   RemoveStatus = '[Eorzea] Remove Status',
   AddStatus = '[Eorzea] Add Status',
@@ -24,10 +24,10 @@ export class SetMap implements Action {
   }
 }
 
-export class SetWeather implements Action {
-  readonly type = EorzeaActionTypes.SetWeather;
+export class SetPcapWeather implements Action {
+  readonly type = EorzeaActionTypes.SetPcapWeather;
 
-  constructor(public payload: number) {
+  constructor(public weatherId: number, public newZone: boolean) {
   }
 }
 
@@ -59,4 +59,4 @@ export class SetStatuses implements Action {
   }
 }
 
-export type EorzeaAction = SetZone | SetMap | SetWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;
+export type EorzeaAction = SetZone | SetMap | SetPcapWeather | SetBait | RemoveStatus | AddStatus | SetStatuses;
