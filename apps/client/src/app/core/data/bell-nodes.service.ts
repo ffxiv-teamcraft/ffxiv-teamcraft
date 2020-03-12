@@ -202,8 +202,8 @@ export class BellNodesService {
       return [];
     }).filter(res => res !== undefined));
 
-    const results = [...nodesFromGarlandBell,
-      ...nodesFromPositions,
+    const results = [...nodesFromPositions,
+      ...nodesFromGarlandBell,
       ...nodesFromFishing];
 
     //Once we have the resulting nodes, we need to remove the ones that appear twice or more for the same item.
@@ -243,10 +243,14 @@ export class BellNodesService {
             });
           }
         }
-        if (row.mapId === undefined && this.l12n.getPlace(row.zoneid)) {
-          row.mapId = this.l12n.getMapId(this.l12n.getPlace(row.zoneid).en);
+        const placeName = this.l12n.getPlace(row.zoneid);
+        if (placeName) {
+          const mapId = this.l12n.getMapId(placeName.en);
+          if (placeName && placeName.en && mapId !== row.mapId) {
+            row.mapId = mapId;
+          }
         }
-        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.zoneid === row.zoneid && node.type === row.type) && row.mapId !== undefined) {
+        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && node.type === row.type) && row.mapId !== undefined) {
           finalNodes.push(row);
         }
       });
