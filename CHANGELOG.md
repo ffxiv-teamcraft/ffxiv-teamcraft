@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.15"></a>
+## [7.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.14...v7.0.15) (2020-03-12)
+
+
+### Bug Fixes
+
+* **data:** various positions fixes ([4ea3f4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ea3f4b))
+* **dekstop:** stop windows from asking about firewall on every single startup ([eac9276](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eac9276))
+* **gathering:** fixed wrong positions for Duskblooms ([7698b6d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7698b6d))
+
+
+### Features
+
+* **db:** added masterbook to recipe block in item pages ([16b9973](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16b9973))
+* **db:** support for diadem fishing and reporting ([5bd9c4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bd9c4c))
+* **inventory:** added "expansion:" filter tag to filter inventory by expansion ([01219f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01219f3))
+
+
+
 <a name="7.0.14"></a>
 ## [7.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.13...v7.0.14) (2020-03-11)
 
