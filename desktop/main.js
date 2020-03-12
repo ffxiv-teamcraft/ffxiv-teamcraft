@@ -46,7 +46,8 @@ function handleSquirrelEvent() {
       // - Add your .exe to the PATH
       // - Write to the registry for things like file associations and
       //   explorer context menus
-
+      // Remove previous firewall rules
+      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
