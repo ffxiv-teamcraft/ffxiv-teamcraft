@@ -1,7 +1,7 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
@@ -24,6 +24,8 @@ export class MappyOverlayComponent {
     y: 48
   };
 
+  trackPlayer = true;
+
   public state$: ReplaySubject<any> = new ReplaySubject<any>();
 
   public display$ = this.state$.pipe(
@@ -32,8 +34,19 @@ export class MappyOverlayComponent {
       return {
         ...state,
         map: mapData,
-        player: this.getPosition(mapData, state.playerCoords)
+        player: this.getPosition(mapData, state.playerCoords),
+        absolutePlayer: this.getPosition(mapData, state.playerCoords, false)
       };
+    }),
+    tap(state => {
+      if (this.trackPlayer) {
+        // TODO proper player tracking by adding current window size offset
+        this.editedPan = { x: 0, y: 0 };
+        this.pan = {
+          x: -1 * state.absolutePlayer.x * 2048 / 100,
+          y: -1 * state.absolutePlayer.y * 2048 / 100
+        };
+      }
     })
   );
 
@@ -42,17 +55,25 @@ export class MappyOverlayComponent {
 
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
               private sanitizer: DomSanitizer) {
+    this.state$.next({
+      mapId: 72,
+      playerCoords: {
+        x: 114.27716827392578,
+        y: -89.11632537841797,
+        z: 43.99612045288086
+      }
+    });
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });
     this.ipc.send('mappy-state:get');
   }
 
-  public getPosition(mapData: MapData, coords: Vector2): any {
+  public getPosition(mapData: MapData, coords: Vector2, centered = true): Vector2 {
     const c = mapData.size_factor / 100;
     const raw = {
-      x: (41 / c) * ((coords.x + 1024) / 2048) + 1,
-      y: (41 / c) * ((coords.y + 1024) / 2048) + 1
+      x: (41 / c) * ((coords.x + (centered ? 1024 : 0)) / 2048) + 1,
+      y: (41 / c) * ((coords.y + (centered ? 1024 : 0)) / 2048) + 1
     };
     return this.mapService.getPositionOnMap(mapData, raw);
   }
