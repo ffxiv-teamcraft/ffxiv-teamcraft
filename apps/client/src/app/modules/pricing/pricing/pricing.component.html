@@ -75,12 +75,6 @@
           <div class="panel-header" fxLayout="row" fxLayoutAlign="space-between center">
             <div>{{'Pre_crafts' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
-              <button (click)="$event.stopPropagation();checkPrices(preCrafts)" *ngIf="preCrafts.length > 0"
-                      [nzTitle]="'PRICING.Check_precraft_prices' | translate" nz-button
-                      nz-tooltip
-                      nzShape="circle">
-                <i iconfont="icon-dollar" nz-icon></i>
-              </button>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
                       [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}"
                       class="fill-prices-button"
