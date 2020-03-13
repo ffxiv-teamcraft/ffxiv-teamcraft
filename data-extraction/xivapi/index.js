@@ -630,8 +630,8 @@ if (hasTodo('fishingLog')) {
           placeId: spot.TerritoryType.PlaceName.ID,
           zoneId: spot.PlaceName.ID,
           coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
-            x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
-            y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+            x: (41.0 / c) * (((spot.X * c)) / 2048.0) + 1,
+            y: (41.0 / c) * (((spot.Z * c)) / 2048.0) + 1
           },
           fishes: Object.keys(spot)
             .filter(key => /Item\dTargetID/.test(key))
@@ -660,8 +660,8 @@ if (hasTodo('fishingLog')) {
               spot: {
                 id: spot.ID,
                 coords: {
-                  x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
-                  y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+                  x: (41.0 / c) * ((spot.X * c) / 2048.0) + 1,
+                  y: (41.0 / c) * ((spot.Z * c) / 2048.0) + 1
                 }
               }
             };
@@ -704,8 +704,8 @@ if (hasTodo('spearFishingLog')) {
                   placeId: entry.TerritoryType.PlaceName.ID,
                   zoneId: entry.PlaceName.ID,
                   coords: {
-                    x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
-                    y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
+                    x: (41.0 / c) * ((entry.X * c) / 2048.0) + 1,
+                    y: (41.0 / c) * ((entry.Y * c) / 2048.0) + 1
                   }
                 };
               });
@@ -968,8 +968,8 @@ if (hasTodo('fates')) {
       const c = mapData[location.Map].size_factor / 100;
       fates[key].position = {
         zoneid: +mapData[location.Map].placename_id,
-        x: Math.floor(10 * (41.0 / c) * ((location.X) / 2048.0) + 1) / 10,
-        y: Math.floor(10 * (41.0 / c) * ((location.Z) / 2048.0) + 1) / 10
+        x: Math.floor(10 * (41.0 / c) * ((location.X * c) / 2048.0) + 1) / 10,
+        y: Math.floor(10 * (41.0 / c) * ((location.Z * c) / 2048.0) + 1) / 10
       };
       delete fates[key].location;
     });

@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../../../modules/map/map-data';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
+import { MappyReporterState } from '../../../core/electron/mappy-reporter';
 
 @Component({
   selector: 'app-mappy-overlay',
@@ -20,22 +21,26 @@ export class MappyOverlayComponent {
   editedPan = { x: 0, y: 0 };
 
   playerMarkerSize: Vector2 = {
-    x: 48,
-    y: 48
+    x: 300,
+    y: 300
   };
 
-  trackPlayer = true;
+  trackPlayer = false;
 
-  public state$: ReplaySubject<any> = new ReplaySubject<any>();
+  public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 
   public display$ = this.state$.pipe(
     map(state => {
       const mapData = this.lazyData.data.maps[state.mapId];
-      return {
+      return <any>{
         ...state,
         map: mapData,
-        player: this.getPosition(mapData, state.playerCoords),
-        absolutePlayer: this.getPosition(mapData, state.playerCoords, false)
+        player: mapData ? this.getPosition(mapData, state.playerCoords) : {},
+        playerRotationTransform: `rotate(${(state.playerRotation - Math.PI) * -1}rad)`,
+        absolutePlayer: mapData ? this.getPosition(mapData, state.playerCoords, false) : {},
+        debug: {
+          player: mapData ? this.getCoords(mapData, state.playerCoords, true) : {}
+        }
       };
     }),
     tap(state => {
@@ -50,31 +55,26 @@ export class MappyOverlayComponent {
     })
   );
 
-  @ViewChild('canvasElement', { static: false })
-  public canvasElement: TemplateRef<HTMLCanvasElement>;
-
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
               private sanitizer: DomSanitizer) {
-    this.state$.next({
-      mapId: 72,
-      playerCoords: {
-        x: 114.27716827392578,
-        y: -89.11632537841797,
-        z: 43.99612045288086
-      }
-    });
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });
     this.ipc.send('mappy-state:get');
   }
 
-  public getPosition(mapData: MapData, coords: Vector2, centered = true): Vector2 {
+  public getCoords(mapData: MapData, coords: Vector2, centered: boolean): Vector2 {
     const c = mapData.size_factor / 100;
-    const raw = {
-      x: (41 / c) * ((coords.x + (centered ? 1024 : 0)) / 2048) + 1,
-      y: (41 / c) * ((coords.y + (centered ? 1024 : 0)) / 2048) + 1
+    const x = (coords.x + mapData.offset_x) * c;
+    const y = (coords.y + mapData.offset_y) * c;
+    return {
+      x: (41 / c) * ((x + (centered ? 1024 : 0)) / 2048) + 1,
+      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1
     };
+  }
+
+  public getPosition(mapData: MapData, coords: Vector2, centered = true): Vector2 {
+    const raw = this.getCoords(mapData, coords, centered);
     return this.mapService.getPositionOnMap(mapData, raw);
   }
 

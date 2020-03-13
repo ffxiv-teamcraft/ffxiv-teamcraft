@@ -6,6 +6,7 @@
         <img src="./assets/icons/mappy/player.png"
              alt="You"
              class="marker"
+             [style.transform]="display.playerRotationTransform"
              [style.width.px]="playerMarkerSize.x"
              [style.height.px]="playerMarkerSize.y"
              [style.margin-left.px]="-playerMarkerSize.x/2"
@@ -13,8 +14,12 @@
              [style.top.%]="display.player.y"
              [style.left.%]="display.player.x">
       </div>
+      <div class="debug-box">
+        Map: {{display.mapId}}<br>
+        X: {{display.debug.player.x | number:'1.1-1'}}<br>
+        Y: {{display.debug.player.y | number:'1.1-1'}}<br>
+      </div>
     </div>
-    <!--    <app-map [mapId]="display.mapId" [markers]="[display.mapStyle.raw]"></app-map>-->
     <ng-template #noMap>
       <app-fullpage-message>
         {{'MAPPY_OVERLAY.ERRORS.No_map' | translate}}
