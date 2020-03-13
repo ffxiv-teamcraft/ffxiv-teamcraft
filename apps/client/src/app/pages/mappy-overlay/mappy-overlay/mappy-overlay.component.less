@@ -2,15 +2,35 @@
   position: relative;
   height: ~"calc(100vh - 43px)";
   width: 100%;
-  overflow: scroll;
+  overflow: hidden;
 
-  .user-marker {
+  .map-background {
+    cursor: crosshair;
     position: absolute;
-    left: 49%;
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 2048px;
+    height: 2048px;
   }
 
-  .map-container {
+  .layer {
+    pointer-events: none;
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 2048px;
+    height: 2048px;
+  }
+
+  .marker {
+    position: absolute;
+    z-index: 5;
+
+    &.player {
+      height: 48px;
+      width: 48px;
+      margin-left: -50%;
+      margin-top: -50%;
+    }
   }
 }
