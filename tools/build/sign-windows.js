@@ -7,7 +7,7 @@ const {
   TIMESTAMP_SERVER = 'http://timestamp.digicert.com'
 } = process.env;
 
-const SITE = 'https://ffxivteamcraft.com.com';
+const SITE = 'https://teamcraft.ffxivita.it';
 
 const importPfx = (certPath, password) => {
   const command = [
