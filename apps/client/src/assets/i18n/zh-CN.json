@@ -173,8 +173,8 @@
     "Add_note": "添加备注",
     "Volume": "音量",
     "Macro_copied": "宏已复制到剪贴板",
-    "Open_overlay": "打开悬浮窗",
-    "Open_alarms_overlay": "打开闹钟悬浮窗",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "还有 {{amount}} 个…",
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
@@ -642,7 +642,7 @@
       "Tag_filter": "标签筛选"
     },
     "OVERLAY": {
-      "Open": "打开清单悬浮窗",
+      "Open": "Toggle list overlay",
       "No_display": "请在主窗口中打开一个清单",
       "No_panel_selected": "使用上面的按钮选择一个面板"
     }
@@ -1413,7 +1413,7 @@
         "Big": "重杆 (!!!)"
       },
       "OVERLAY": {
-        "Open": "打开钓鱼悬浮窗",
+        "Open": "Toggle fishing report overlay",
         "Bait": "当前钓饵",
         "Tug": "咬饵",
         "Hookset": "捉钩",
