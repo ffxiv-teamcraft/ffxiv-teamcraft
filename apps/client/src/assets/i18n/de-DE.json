@@ -173,8 +173,8 @@
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
-    "Open_overlay": "Overlay öffnen",
-    "Open_alarms_overlay": "Alarm-Overlay öffnen",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "und {{amount}} mehr...",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
@@ -642,7 +642,7 @@
       "Tag_filter": "Markierungs-Filter"
     },
     "OVERLAY": {
-      "Open": "Listen-Overlay öffnen",
+      "Open": "Toggle list overlay",
       "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     }
@@ -1413,7 +1413,7 @@
         "Big": "Stark (!!!)"
       },
       "OVERLAY": {
-        "Open": "Meldungsoverlay öffnen",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Verwendeter Köder",
         "Tug": "Spitze",
         "Hookset": "Anschlag",
