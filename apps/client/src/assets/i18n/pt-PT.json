@@ -173,8 +173,8 @@
     "Add_note": "Adicionar uma nota",
     "Volume": "Volume de som",
     "Macro_copied": "Macro copiado para a área de transferência",
-    "Open_overlay": "Abrir overlay",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "e mais {{amount}}...",
     "Node_content": "Conteúdo do node",
     "Toggle_collapse": "Alternar fecho dos grupos",
@@ -642,7 +642,7 @@
       "Tag_filter": "Filtro de tags"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
+      "Open": "Toggle list overlay",
       "No_display": "Open a list in main window to get started",
       "No_panel_selected": "Select a panel using the buttons above"
     }
@@ -1413,7 +1413,7 @@
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Attached bait",
         "Tug": "Tug",
         "Hookset": "Hookset",
