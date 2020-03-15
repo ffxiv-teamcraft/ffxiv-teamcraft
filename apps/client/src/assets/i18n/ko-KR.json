@@ -173,8 +173,8 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
-    "Open_overlay": "오버레이 열기",
-    "Open_alarms_overlay": "알람 오버레이 열기",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -642,7 +642,7 @@
       "Tag_filter": "태그 필터"
     },
     "OVERLAY": {
-      "Open": "목록 오버레이 열기",
+      "Open": "Toggle list overlay",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     }
@@ -1413,7 +1413,7 @@
         "Big": "대형 (!!)"
       },
       "OVERLAY": {
-        "Open": "낚시 보고용 오버레이 열기",
+        "Open": "Toggle fishing report overlay",
         "Bait": "현재 미끼",
         "Tug": "입질",
         "Hookset": "낚아채기",
