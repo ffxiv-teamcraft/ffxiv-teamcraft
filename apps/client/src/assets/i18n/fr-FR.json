@@ -1820,6 +1820,7 @@
     "No_trades_needed": "Aucun échange nécessaire",
     "Stats_caps": "Max stats",
     "Stat_computing_diclaimer": "Les résultats ne sont pas 100% exacts, ils sont issus de joueurs (the allagan studies) comme vous et moi qui ont passé beaucoup de temps à essayer de trouver les formules, ne signalez pas les inexactitudes comme un bug.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
