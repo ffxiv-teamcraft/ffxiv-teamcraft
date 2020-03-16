@@ -173,8 +173,8 @@
     "Add_note": "Ajouter une note",
     "Volume": "Volume",
     "Macro_copied": "Macro copiée dans votre presse-papiers",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "Ouvrir/fermer l'overlay",
+    "Open_alarms_overlay": "Ouvrir/fermer l'overlay des alarmes",
     "More_available": "et {{amount}} autres...",
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
@@ -642,7 +642,7 @@
       "Tag_filter": "Filtre de tags"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "Ouvrir/fermer l'overlay de liste",
       "No_display": "Ouvrir une liste dans la fenêtre principale pour commencer",
       "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
     }
@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "Simulateur de crafts",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "Inclure les stats et consommables",
     "Fixed_notification_number": "Notification fixe",
     "Starting_echo_number": "Numéro de référence",
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
@@ -876,9 +876,9 @@
       "Good": "Bon",
       "Poor": "Mauvais",
       "Fail": "Echec",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Pliant": "Modulable",
+      "Sturdy": "Robuste",
+      "Centered": "Stable",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1413,7 +1413,7 @@
         "Big": "Puissante (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "Ouvrir/fermer l'overlay de pêche",
         "Bait": "Appât utilisé",
         "Tug": "Touche",
         "Hookset": "Ferrage",
@@ -1715,7 +1715,7 @@
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
     "Search_for_an_item": "Rechercher un objet",
-    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
+    "Search_tip": "Vous pouvez filtrer par extension, essayez de rechercher avec expansion:Shadowbringers ou expac:ShB",
     "In_x_containers": "Dans {{amount}} inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
@@ -1858,7 +1858,7 @@
       "Direct_hit_chances": "Champs de coup net",
       "Critical_hit_chances": "Chances de coup critique",
       "Critical_hit_multiplier": "Mult. de coups critiques",
-      "Determination_bonus": "Determination bonus",
+      "Determination_bonus": "Bonus de détermination",
       "GCD": "GCD"
     }
   },
