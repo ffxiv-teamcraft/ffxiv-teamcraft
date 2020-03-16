@@ -1820,6 +1820,7 @@
     "No_trades_needed": "不需要兑换",
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
