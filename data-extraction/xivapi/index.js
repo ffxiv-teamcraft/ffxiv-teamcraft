@@ -44,9 +44,17 @@ try {
 
 const everything = process.argv.indexOf('--everything') > -1;
 
-function hasTodo(operation) {
+function getCoords(coords, mapData) {
+  const c = mapData.size_factor / 100;
+  return {
+    x: Math.floor(10 * (41.0 / c) * ((((coords.x + mapData.offset_x) * c) + 1024) / 2048.0) + 1) / 10,
+    y: Math.floor(10 * (41.0 / c) * ((((coords.y + mapData.offset_y) * c) + 1024) / 2048.0) + 1) / 10
+  };
+}
+
+function hasTodo(operation, specific = false) {
   let matches = todo.indexOf(operation) > -1;
-  if (everything && cache.indexOf(operation) === -1) {
+  if (!specific && everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
   return matches;
@@ -924,7 +932,6 @@ if (hasTodo('quests')) {
 
 if (hasTodo('fates')) {
   const fates = {};
-  const fatesDone$ = new Subject();
   getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel,Location').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
@@ -946,35 +953,35 @@ if (hasTodo('fates')) {
       };
     });
   }, null, () => {
-    fatesDone$.next();
+    persistToJsonAsset('fates', fates);
   });
+}
 
+if (hasTodo('levelLGB', true)) {
+  console.log('STARTING LevelLGB extraction');
   const mapData = require('../../apps/client/src/assets/data/maps.json');
+  const fates = require('../../apps/client/src/assets/data/fates.json');
 
   const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
-  fatesDone$.pipe(
-    switchMap(() => {
-      return levelLGB$.pipe(
-        buffer(levelLGB$.pipe(debounceTime(500)))
-      );
-    })
+
+  levelLGB$.pipe(
+    buffer(levelLGB$.pipe(debounceTime(500)))
   ).subscribe(csvData => {
     Object.keys(fates).forEach(key => {
       const location = csvData.find(row => +row.LocationID === fates[key].location);
       if (!location) {
-        delete fates[key].location;
         return;
       }
-      const c = mapData[location.Map].size_factor / 100;
       fates[key].position = {
         zoneid: +mapData[location.Map].placename_id,
-        x: Math.floor(10 * (41.0 / c) * ((location.X * c) / 2048.0) + 1) / 10,
-        y: Math.floor(10 * (41.0 / c) * ((location.Z * c) / 2048.0) + 1) / 10
+        ...getCoords({
+          x: location.X,
+          y: location.Z
+        }, mapData[location.Map])
       };
-      delete fates[key].location;
     });
     persistToJsonAsset('fates', fates);
-    done('fates');
+    process.exit(0);
   });
 }
 
