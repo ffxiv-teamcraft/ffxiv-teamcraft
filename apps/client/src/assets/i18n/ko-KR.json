@@ -1820,6 +1820,7 @@
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
