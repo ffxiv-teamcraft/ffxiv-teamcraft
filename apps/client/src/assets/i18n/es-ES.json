@@ -173,8 +173,8 @@
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
-    "Open_overlay": "Abrir capa sobrepuesta",
-    "Open_alarms_overlay": "Abrir capa sobrepuesta de alarmas",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "y {{amount}} más...",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
@@ -642,7 +642,7 @@
       "Tag_filter": "Filtro de etiquetas"
     },
     "OVERLAY": {
-      "Open": "Abrir capa sobrepuesta de listas",
+      "Open": "Toggle list overlay",
       "No_display": "Abra una lista en la ventana principal para empezar",
       "No_panel_selected": "Seleccione un panel usando los botones de arriba"
     }
@@ -1413,7 +1413,7 @@
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Abrir capa sobrepuesta de reporte de pesca",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Cebo equipado",
         "Tug": "Jalón",
         "Hookset": "Anzuelo",
@@ -1820,6 +1820,7 @@
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
