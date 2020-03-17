@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.16"></a>
+## [7.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.15...v7.0.16) (2020-03-17)
+
+
+### Bug Fixes
+
+* **alarms:** fixed wrong node icon for some items ([7112828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7112828))
+* **autofill:** set minimum volume to 0 instead of 1 so it can be muted ([bc72681](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc72681))
+* **data:** fixed missing aetherytes ([9e6140a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e6140a))
+* **gathering-location:** fixed an issue with some fishes not having proper map id, breaking alarms ([6b31857](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b31857))
+* **inventory:** fixed expansion search for some items that were breaking it ([2735a3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2735a3b))
+* **log-tracker:** fixed an issue with the halo fishing spot ([e5112a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e5112a3))
+* **simulator:** fixed an issue with patient touch's fail implementation ([7e268d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e268d8))
+* **simulator:** fixed an issue with XIVAPI when hovering remove final appraisal action ([687c6d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/687c6d0))
+* **universalis:** possible fix for wrong server used for report ([c5c6c08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5c6c08)), closes [#1451](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1451)
+
+
+### Features
+
+* **desktop:** you can now close overlays by clicking on the opening button again ([a23a0ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a23a0ea))
+* **gearsets:** changed display for a more verbose mode ([0a1ed0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a1ed0d))
+* **gearsets:** display message when filters are missing some slots ([fb46c53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb46c53))
+* **map:** added gathering type icon in navigation maps ([f41f359](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f41f359))
+
+
+
 <a name="7.0.15"></a>
 ## [7.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.14...v7.0.15) (2020-03-12)
 
