@@ -22,8 +22,7 @@ export class UniversalisService {
   private worldId$: Observable<number> = this.authFacade.user$.pipe(
     map(user => user.world),
     filter(cid => cid !== undefined),
-    distinctUntilChanged(),
-    shareReplay(1)
+    distinctUntilChanged()
   );
 
   constructor(private http: HttpClient, private lazyData: LazyDataService, private authFacade: AuthFacade,
