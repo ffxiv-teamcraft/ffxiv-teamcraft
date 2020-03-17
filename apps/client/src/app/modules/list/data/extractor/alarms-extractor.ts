@@ -95,7 +95,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             if (folklore !== undefined) {
               alarm.folklore = {
                 id: +folklore,
-                icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
+                icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
               };
             }
             return alarm;
