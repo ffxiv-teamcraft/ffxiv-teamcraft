@@ -378,7 +378,8 @@ export class LogTrackerComponent extends TrackerComponent {
               total_item_amount: 1,
               type: 'Gathering',
               x: node.x,
-              y: node.y
+              y: node.y,
+              gatheringType: node.type
             };
           });
       })

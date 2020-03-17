@@ -40,8 +40,11 @@
   <nz-list [nzDataSource]="currentPath.steps" [nzHeader]="'NAVIGATION.Steps' | translate" [nzRenderItem]="stepTemplate">
     <ng-template #stepTemplate let-step>
       <nz-list-item [nzContent]="rowContent">
-        <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="step.name | i18n"
+        <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
                            nzDescription="X: {{step.x}} - Y: {{step.y}}">
+          <ng-template #stepTitle>
+            {{step.name | i18n}} <img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
+          </ng-template>
           <ng-template #rowContent>
             <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
               <div *ngIf="step.type !== undefined && markedAsDone.indexOf(step) === -1">
