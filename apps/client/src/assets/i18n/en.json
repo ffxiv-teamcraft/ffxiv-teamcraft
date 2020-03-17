@@ -173,8 +173,8 @@
     "Add_note": "Add a note",
     "Volume": "Volume",
     "Macro_copied": "Macro copied to your clipboard",
-    "Open_overlay": "Open overlay",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "and {{amount}} more...",
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
@@ -642,7 +642,7 @@
       "Tag_filter": "Tag filter"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
+      "Open": "Toggle list overlay",
       "No_display": "Open a list in main window to get started",
       "No_panel_selected": "Select a panel using the buttons above"
     }
@@ -1413,7 +1413,7 @@
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Attached bait",
         "Tug": "Tug",
         "Hookset": "Hookset",
@@ -1820,6 +1820,7 @@
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

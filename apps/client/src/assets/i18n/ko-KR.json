@@ -173,8 +173,8 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
-    "Open_overlay": "오버레이 열기",
-    "Open_alarms_overlay": "알람 오버레이 열기",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -642,7 +642,7 @@
       "Tag_filter": "태그 필터"
     },
     "OVERLAY": {
-      "Open": "목록 오버레이 열기",
+      "Open": "Toggle list overlay",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     }
@@ -1413,7 +1413,7 @@
         "Big": "대형 (!!)"
       },
       "OVERLAY": {
-        "Open": "낚시 보고용 오버레이 열기",
+        "Open": "Toggle fishing report overlay",
         "Bait": "현재 미끼",
         "Tug": "입질",
         "Hookset": "낚아채기",
@@ -1820,6 +1820,7 @@
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",

@@ -365,7 +365,7 @@
         </nz-select>
       </nz-form-item>
       <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
-                 [nzMax]="100" [nzMin]="1"
+                 [nzMax]="100" [nzMin]="0"
                  [nzStep]="1"></nz-slider>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
       <nz-card>

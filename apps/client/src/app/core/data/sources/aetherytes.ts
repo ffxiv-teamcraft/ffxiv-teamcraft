@@ -1078,5 +1078,305 @@ export const aetherytes = [
     "x": 14.6,
     "y": 13,
     "type": 1
+  },
+  {
+    "id": 64,
+    "zoneid": 1484,
+    "map": 196,
+    "placenameid": 1484,
+    "nameid": 0,
+    "x": 7.3,
+    "y": 7.4,
+    "type": 1
+  },
+  {
+    "id": 37,
+    "zoneid": 41,
+    "map": 14,
+    "placenameid": 41,
+    "nameid": 0,
+    "x": 9.3,
+    "y": 13,
+    "type": 1
+  },
+  {
+    "id": 65,
+    "zoneid": 1484,
+    "map": 196,
+    "placenameid": 1484,
+    "nameid": 0,
+    "x": 6.1,
+    "y": 7.3,
+    "type": 1
+  },
+  {
+    "id": 20,
+    "zoneid": 45,
+    "map": 23,
+    "placenameid": 45,
+    "nameid": 323,
+    "x": 15,
+    "y": 29.6,
+    "type": 0
+  },
+  {
+    "id": 90,
+    "zoneid": 2082,
+    "map": 257,
+    "placenameid": 2082,
+    "nameid": 0,
+    "x": 4.6,
+    "y": 5.7,
+    "type": 1
+  },
+  {
+    "id": 136,
+    "zoneid": 2953,
+    "map": 491,
+    "placenameid": 2953,
+    "nameid": 3057,
+    "x": 6.8,
+    "y": 16.9,
+    "type": 0
+  },
+  {
+    "id": 115,
+    "zoneid": 2404,
+    "map": 370,
+    "placenameid": 2404,
+    "nameid": 0,
+    "x": 11.8,
+    "y": 12.7,
+    "type": 1
+  },
+  {
+    "id": 51,
+    "zoneid": 41,
+    "map": 73,
+    "placenameid": 41,
+    "nameid": 0,
+    "x": 11.4,
+    "y": 10.8,
+    "type": 1
+  },
+  {
+    "id": 85,
+    "zoneid": 2301,
+    "map": 219,
+    "placenameid": 2301,
+    "nameid": 0,
+    "x": 9.7,
+    "y": 8.7,
+    "type": 1
+  },
+  {
+    "id": 70,
+    "zoneid": 2300,
+    "map": 218,
+    "placenameid": 2300,
+    "nameid": 2300,
+    "x": 10,
+    "y": 12.1,
+    "type": 0
+  },
+  {
+    "id": 145,
+    "zoneid": 2956,
+    "map": 494,
+    "placenameid": 2956,
+    "nameid": 3156,
+    "x": 20,
+    "y": 4.3,
+    "type": 0
+  },
+  {
+    "id": 29,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 5,
+    "y": 7.7,
+    "type": 1
+  },
+  {
+    "id": 104,
+    "zoneid": 2403,
+    "map": 366,
+    "placenameid": 2403,
+    "nameid": 2403,
+    "x": 12.8,
+    "y": 13.2,
+    "type": 0
+  },
+  {
+    "id": 159,
+    "zoneid": 2952,
+    "map": 498,
+    "placenameid": 2952,
+    "nameid": 0,
+    "x": 11.4,
+    "y": 10.1,
+    "type": 1
+  },
+  {
+    "id": 81,
+    "zoneid": 2300,
+    "map": 218,
+    "placenameid": 2300,
+    "nameid": 0,
+    "x": 9,
+    "y": 10.7,
+    "type": 1
+  },
+  {
+    "id": 30,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 9.8,
+    "y": 8.4,
+    "type": 1
+  },
+  {
+    "id": 100,
+    "zoneid": 2407,
+    "map": 368,
+    "placenameid": 2407,
+    "nameid": 2646,
+    "x": 23.8,
+    "y": 6.5,
+    "type": 0
+  },
+  {
+    "id": 138,
+    "zoneid": 2954,
+    "map": 492,
+    "placenameid": 2954,
+    "nameid": 3094,
+    "x": 16.6,
+    "y": 29.2,
+    "type": 0
+  },
+  {
+    "id": 133,
+    "zoneid": 2951,
+    "map": 497,
+    "placenameid": 2951,
+    "nameid": 2951,
+    "x": 9.9,
+    "y": 11.3,
+    "type": 0
+  },
+  {
+    "id": 16,
+    "zoneid": 350,
+    "map": 30,
+    "placenameid": 350,
+    "nameid": 237,
+    "x": 19.1,
+    "y": 17.2,
+    "type": 0
+  },
+  {
+    "id": 107,
+    "zoneid": 2410,
+    "map": 354,
+    "placenameid": 2410,
+    "nameid": 2793,
+    "x": 30.2,
+    "y": 19.7,
+    "type": 0
+  },
+  {
+    "id": 21,
+    "zoneid": 46,
+    "map": 24,
+    "placenameid": 46,
+    "nameid": 325,
+    "x": 21.9,
+    "y": 30.6,
+    "type": 0
+  },
+  {
+    "id": 76,
+    "zoneid": 2000,
+    "map": 212,
+    "placenameid": 2000,
+    "nameid": 2018,
+    "x": 33.2,
+    "y": 23.2,
+    "type": 0
+  },
+  {
+    "id": 80,
+    "zoneid": 2300,
+    "map": 218,
+    "placenameid": 2300,
+    "nameid": 0,
+    "x": 12.2,
+    "y": 11.3,
+    "type": 1
+  },
+  {
+    "id": 99,
+    "zoneid": 2406,
+    "map": 367,
+    "placenameid": 2406,
+    "nameid": 2634,
+    "x": 29.8,
+    "y": 26.4,
+    "type": 0
+  },
+  {
+    "id": 101,
+    "zoneid": 2407,
+    "map": 368,
+    "placenameid": 2407,
+    "nameid": 2660,
+    "x": 16.1,
+    "y": 36.5,
+    "type": 0
+  },
+  {
+    "id": 30,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 9.8,
+    "y": 8.4,
+    "type": 1
+  },
+  {
+    "id": 27,
+    "zoneid": 53,
+    "map": 3,
+    "placenameid": 53,
+    "nameid": 0,
+    "x": 13.7,
+    "y": 6.7,
+    "type": 1
+  },
+  {
+    "id": 116,
+    "zoneid": 2404,
+    "map": 370,
+    "placenameid": 2404,
+    "nameid": 0,
+    "x": 9.7,
+    "y": 8,
+    "type": 1
+  },
+  {
+    "id": 34,
+    "zoneid": 40,
+    "map": 13,
+    "placenameid": 40,
+    "nameid": 0,
+    "x": 8.2,
+    "y": 12.7,
+    "type": 1
   }
 ];

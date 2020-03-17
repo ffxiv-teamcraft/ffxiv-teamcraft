@@ -243,11 +243,13 @@ export class BellNodesService {
             });
           }
         }
-        const placeName = this.l12n.getPlace(row.zoneid);
-        if (placeName) {
-          const mapId = this.l12n.getMapId(placeName.en);
-          if (placeName && placeName.en && mapId !== row.mapId) {
-            row.mapId = mapId;
+        if (row.mapId === -1) {
+          const placeName = this.l12n.getPlace(row.zoneid);
+          if (placeName) {
+            const mapId = this.l12n.getMapId(placeName.en);
+            if (placeName && placeName.en && mapId !== row.mapId) {
+              row.mapId = mapId;
+            }
           }
         }
         if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && node.type === row.type) && row.mapId !== undefined) {

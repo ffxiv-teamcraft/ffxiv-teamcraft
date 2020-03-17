@@ -283,11 +283,16 @@ function createWindow() {
 
   win.webContents.on('will-navigate', handleRedirect);
   win.webContents.on('new-window', handleRedirect);
-  (config.get('overlays') || []).forEach(overlayUri => openOverlay({ url: overlayUri }));
+  (config.get('overlays') || []).forEach(overlayUri => toggleOverlay({ url: overlayUri }));
 }
 
-function openOverlay(overlayConfig) {
+function toggleOverlay(overlayConfig) {
   const url = overlayConfig.url;
+  if (openedOverlays[url]) {
+    openedOverlays[url].close();
+    afterOverlayClose(url);
+    return;
+  }
   const dimensions = overlayConfig.defaultDimensions || { x: 800, y: 600 };
   let opts = {
     title: `FFXIV Teamcraft overlay - ${url}`,
@@ -314,17 +319,25 @@ function openOverlay(overlayConfig) {
 
   // save window size and position
   overlay.on('close', () => {
-    config.set(`overlay:${url}:bounds`, overlay.getBounds());
-    config.set(`overlay:${url}:opacity`, overlay.getOpacity());
-    config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
-    delete openedOverlays[url];
-    openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
+    afterOverlayClose(url);
   });
 
 
   overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
   openedOverlays[url] = overlay;
   openedOverlayUris.push(url);
+}
+
+function afterOverlayClose(url) {
+  const overlay = openedOverlays[url];
+  if (!overlay) {
+    return;
+  }
+  config.set(`overlay:${url}:bounds`, overlay.getBounds());
+  config.set(`overlay:${url}:opacity`, overlay.getOpacity());
+  config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
+  delete openedOverlays[url];
+  openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
 }
 
 function createTray() {
@@ -348,14 +361,14 @@ function createTray() {
       label: 'Fishing Overlay',
       type: 'normal',
       click: () => {
-        openOverlay({ url: '/fishing-reporter-overlay' });
+        toggleOverlay({ url: '/fishing-reporter-overlay' });
       }
     },
     {
       label: 'Alarm Overlay',
       type: 'normal',
       click: () => {
-        openOverlay({ url: '/alarms-overlay' });
+        toggleOverlay({ url: '/alarms-overlay' });
       }
     },
     {
@@ -556,7 +569,7 @@ ipcMain.on('start-minimized:get', (event) => {
 });
 
 ipcMain.on('overlay', (event, data) => {
-  openOverlay(data);
+  toggleOverlay(data);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {

@@ -115,12 +115,12 @@ export class InventoryComponent {
                 });
                 if (expansion) {
                   //Find the patch this item was released in, and then get that patch's expansion
-                  const itemExpansion: number = this.lazyData.patches.find(p => {
-                    return p.ID === this.lazyData.data.itemPatch[item.itemId]
-                  }).ExVersion
+                  const itemExpansion: any = this.lazyData.patches.find(p => {
+                    return p.ID === this.lazyData.data.itemPatch[item.itemId];
+                  });
 
                   //We test if false and return false here instead of the inverse so that we can continue through the rest of our search
-                  if (itemExpansion !== expansion.ExVersion) {
+                  if (!itemExpansion || itemExpansion.ExVersion !== expansion.ExVersion) {
                     return false;
                   }
                 }
