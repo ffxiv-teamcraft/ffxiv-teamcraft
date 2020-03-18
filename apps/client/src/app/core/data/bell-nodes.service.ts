@@ -29,12 +29,21 @@ export class BellNodesService {
       const itemReductions = reductions[id] || [];
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id || itemReductions.indexOf(item.id) > -1);
+        const nodePosition = this.lazyData.data.nodePositions[node.id];
         if (match !== undefined) {
-          const nodePosition = this.lazyData.data.nodePositions[node.id];
+          if (!nodePosition) {
+            const placeName = this.l12n.getPlace(node.zone);
+            if (placeName) {
+              const mapId = this.l12n.getMapId(placeName.en);
+              if (placeName && placeName.en && mapId !== node.mapId) {
+                node.zoneid = mapId;
+              }
+            }
+          }
           const nodeCopy = { ...node };
           nodeCopy.icon = match.icon;
           nodeCopy.itemId = match.id;
-          nodeCopy.mapid = nodePosition ? nodePosition.map : node.zoneid;
+          nodeCopy.mapid = (nodePosition && nodePosition.map) || node.zoneid;
           if (match.slot !== '?' && match.slot !== undefined) {
             nodeCopy.slot = +match.slot;
           }
@@ -243,7 +252,7 @@ export class BellNodesService {
             });
           }
         }
-        if (row.mapId === -1) {
+        if (row.mapId < 0 || !row.mapId) {
           const placeName = this.l12n.getPlace(row.zoneid);
           if (placeName) {
             const mapId = this.l12n.getMapId(placeName.en);
