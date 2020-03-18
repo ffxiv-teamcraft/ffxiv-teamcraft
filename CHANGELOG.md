@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.17"></a>
+## [7.0.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.16...v7.0.17) (2020-03-18)
+
+
+### Bug Fixes
+
+* **desktop:** fixed stats tracking using packet capture ([5f36641](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f36641))
+* **gathering:** fixed missing gathering data for some ephemeral items ([8b8d22e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b8d22e))
+* **simulator:** fixed an issue with groundwork and waste not combo ([d64ee50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d64ee50))
+
+
+
 <a name="7.0.16"></a>
 ## [7.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.15...v7.0.16) (2020-03-17)
 
