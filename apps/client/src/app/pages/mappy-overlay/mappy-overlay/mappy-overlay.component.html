@@ -3,6 +3,18 @@
     <div *ngIf="display.mapId; else noMap" class="mappy-overlay-container">
       <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform()" (wheel)="onScroll($event)" (pan)="onPan($event)">
       <div class="layer" [style.transform]="imageTransform()">
+        <img src="./assets/icons/mappy/enemy.png"
+             class="marker hover"
+             *ngFor="let bnpc of display.bnpcs; trackBy: trackByNpc"
+             [style.width.px]="bnpcMarkerSize.x"
+             [style.height.px]="bnpcMarkerSize.y"
+             [style.margin-left.px]="-bnpcMarkerSize.x/2"
+             [style.margin-top.px]="-bnpcMarkerSize.y/2"
+             [style.top.%]="bnpc.displayPosition.y"
+             [style.left.%]="bnpc.displayPosition.x"
+             nz-tooltip [nzTitle]="bnpc.nameId | mobName | i18n">
+      </div>
+      <div class="layer" [style.transform]="imageTransform()">
         <img src="./assets/icons/mappy/player.png"
              alt="You"
              class="marker"

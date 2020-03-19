@@ -27,10 +27,15 @@
     z-index: 5;
 
     &.player {
+      pointer-events: none;
       height: 48px;
       width: 48px;
       margin-left: -50%;
       margin-top: -50%;
+    }
+
+    &.hover {
+      pointer-events: all;
     }
   }
 

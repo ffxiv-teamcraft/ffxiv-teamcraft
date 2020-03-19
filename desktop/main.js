@@ -83,6 +83,7 @@ handleSquirrelEvent();
  */
 
 const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog, shell } = require('electron');
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
@@ -298,7 +299,8 @@ function openOverlay(overlayConfig) {
     width: dimensions.x,
     height: dimensions.y,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      backgroundThrottling: false
     }
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));

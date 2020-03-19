@@ -12,7 +12,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule, NzToolTipModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MapModule } from '../../modules/map/map.module';
 

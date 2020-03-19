@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, auditTime } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../../../modules/map/map-data';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { MappyReporterState } from '../../../core/electron/mappy-reporter';
+import { MappyReporterState, NpcEntry } from '../../../core/electron/mappy-reporter';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-mappy-overlay',
@@ -25,16 +26,29 @@ export class MappyOverlayComponent {
     y: 300
   };
 
+  bnpcMarkerSize: Vector2 = {
+    x: 32,
+    y: 32
+  };
+
   trackPlayer = false;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 
   public display$ = this.state$.pipe(
+    auditTime(100),
     map(state => {
       const mapData = this.lazyData.data.maps[state.mapId];
       return <any>{
         ...state,
         map: mapData,
+        bnpcs: uniqBy(state.bnpcs
+          .map(bnpc => {
+            return {
+              ...bnpc,
+              displayPosition: this.getPosition(mapData, bnpc.position)
+            };
+          }), row => `${row.nameId}-${Math.floor(row.displayPosition.x)}/${Math.floor(row.displayPosition.y)}`),
         player: mapData ? this.getPosition(mapData, state.playerCoords) : {},
         playerRotationTransform: `rotate(${(state.playerRotation - Math.PI) * -1}rad)`,
         absolutePlayer: mapData ? this.getPosition(mapData, state.playerCoords, false) : {},
@@ -56,7 +70,7 @@ export class MappyOverlayComponent {
   );
 
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer, private cdref: ChangeDetectorRef) {
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });
@@ -74,6 +88,12 @@ export class MappyOverlayComponent {
   }
 
   public getPosition(mapData: MapData, coords: Vector2, centered = true): Vector2 {
+    if (mapData === undefined) {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
     const raw = this.getCoords(mapData, coords, centered);
     return this.mapService.getPositionOnMap(mapData, raw);
   }
@@ -119,6 +139,10 @@ export class MappyOverlayComponent {
     if (e['deltaY'] > 0) {
       this.onZoomM();
     }
+  }
+
+  trackByNpc(index:number, entry: NpcEntry): string {
+    return `${entry.nameId} ${entry.baseId}`;
   }
 
 }
