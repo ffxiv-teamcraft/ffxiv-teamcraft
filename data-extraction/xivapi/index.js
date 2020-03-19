@@ -185,6 +185,7 @@ if (hasTodo('mappy')) {
         linkedPoints.forEach(point => {
           gatheringPointToBaseId[point] = node.ID;
         });
+        persistToJsonAsset('gathering-point-base-to-node-id', gatheringPointToBaseId);
       }
     });
     if (page.Pagination.Page === page.Pagination.PageTotal) {
@@ -224,7 +225,7 @@ if (hasTodo('mappy')) {
           persistToJsonAsset('monsters', monsters);
           // console.log('monsters written', emptyBnpcNames);
           persistToJsonAsset('npcs', npcs);
-          // console.log('npcs written');
+          console.log('npcs written');
           done('mappy');
         });
     });

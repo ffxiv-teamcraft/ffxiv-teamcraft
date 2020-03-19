@@ -15,7 +15,7 @@
              nz-tooltip [nzTitle]="bnpc.nameId | mobName | i18n">
       </div>
       <div class="layer" [style.transform]="imageTransform()">
-        <img src="./assets/icons/mappy/unknown.png"
+        <img [src]="obj.icon || './assets/icons/mappy/unknown.png'"
              class="marker hover"
              *ngFor="let obj of display.objs; trackBy: trackByObj"
              [style.width.px]="objMarkerSize.x"
@@ -40,8 +40,10 @@
       </div>
       <div class="debug-box">
         Map: {{display.mapId}}<br>
-        X: {{display.debug.player.x | number:'1.1-1'}}<br>
-        Y: {{display.debug.player.y | number:'1.1-1'}}<br>
+        X: {{display.player.x | number:'1.1-1'}}<br>
+        Y: {{display.player.y | number:'1.1-1'}}<br>
+        Objs: {{display.objs.length}}<br>
+        BNPCs: {{display.bnpcs.length}}
       </div>
     </div>
     <ng-template #noMap>

@@ -42,33 +42,6 @@ export class MappyOverlayComponent {
 
   public display$ = this.state$.pipe(
     auditTime(100),
-    map(state => {
-      const mapData = this.lazyData.data.maps[state.mapId];
-      return <any>{
-        ...state,
-        map: mapData,
-        bnpcs: uniqBy(state.bnpcs
-          .map(bnpc => {
-            return {
-              ...bnpc,
-              displayPosition: this.getPosition(mapData, bnpc.position)
-            };
-          }), row => `${row.nameId}-${Math.floor(row.displayPosition.x)}/${Math.floor(row.displayPosition.y)}`),
-        objs: uniqBy(state.objs
-          .map(obj => {
-            return {
-              ...obj,
-              displayPosition: this.getPosition(mapData, obj.position)
-            };
-          }), row => `${row.id}-${Math.floor(row.displayPosition.x)}/${Math.floor(row.displayPosition.y)}`),
-        player: mapData ? this.getPosition(mapData, state.playerCoords) : {},
-        playerRotationTransform: `rotate(${(state.playerRotation - Math.PI) * -1}rad)`,
-        absolutePlayer: mapData ? this.getPosition(mapData, state.playerCoords, false) : {},
-        debug: {
-          player: mapData ? this.getCoords(mapData, state.playerCoords, true) : {}
-        }
-      };
-    }),
     tap(state => {
       if (this.trackPlayer) {
         // TODO proper player tracking by adding current window size offset
@@ -82,32 +55,11 @@ export class MappyOverlayComponent {
   );
 
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
-              private sanitizer: DomSanitizer, private cdref: ChangeDetectorRef) {
+              private sanitizer: DomSanitizer) {
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });
     this.ipc.send('mappy-state:get');
-  }
-
-  public getCoords(mapData: MapData, coords: Vector2, centered: boolean): Vector2 {
-    const c = mapData.size_factor / 100;
-    const x = (coords.x + mapData.offset_x) * c;
-    const y = (coords.y + mapData.offset_y) * c;
-    return {
-      x: (41 / c) * ((x + (centered ? 1024 : 0)) / 2048) + 1,
-      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1
-    };
-  }
-
-  public getPosition(mapData: MapData, coords: Vector2, centered = true): Vector2 {
-    if (mapData === undefined) {
-      return {
-        x: 0,
-        y: 0
-      };
-    }
-    const raw = this.getCoords(mapData, coords, centered);
-    return this.mapService.getPositionOnMap(mapData, raw);
   }
 
   /* Method which adds style to the image */

@@ -21,6 +21,7 @@ export interface LazyData {
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
+  gatheringPointBaseToNodeId: any;
   hunts: any;
   hwdInspections: any;
   hwdPhases: any;

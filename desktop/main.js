@@ -83,10 +83,10 @@ handleSquirrelEvent();
  */
 
 const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpdater, dialog, shell } = require('electron');
-app.commandLine.appendSwitch('disable-renderer-backgrounding');
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
 

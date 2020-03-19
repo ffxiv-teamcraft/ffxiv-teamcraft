@@ -150,6 +150,7 @@ export class LazyDataService {
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 

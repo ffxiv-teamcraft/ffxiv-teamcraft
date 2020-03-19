@@ -6,26 +6,38 @@ import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { combineLatest } from 'rxjs';
 import { Vector2 } from '../tools/vector2';
 import { distinctUntilChanged } from 'rxjs/operators';
+import { MapData } from '../../modules/map/map-data';
+import { MapService } from '../../modules/map/map.service';
+import { NodeTypeIconPipe } from '../../pipes/pipes/node-type-icon.pipe';
 
-export interface NpcEntry {
-  nameId: number;
-  baseId: number;
+export interface MappyMarker {
   position: Vector2;
+  displayPosition: Vector2;
+  uniqId: string;
 }
 
-export interface ObjEntry {
+export interface NpcEntry extends MappyMarker {
+  nameId: number;
+  baseId: number;
+}
+
+export interface ObjEntry extends MappyMarker {
   id: number;
   kind: number;
-  position: Vector2;
+  icon?: string;
 }
 
 export interface MappyReporterState {
   mapId: number;
+  map: MapData;
   zoneId: number;
   playerCoords: Vector2;
-  playerRotation: number;
+  player: Vector2;
+  playerRotationTransform: string;
   bnpcs: NpcEntry[];
   objs: ObjEntry[];
+  absolutePlayer: Vector2;
+  debug: any;
 }
 
 @Injectable({
@@ -36,7 +48,12 @@ export class MappyReporterService {
   private state: MappyReporterState;
 
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private authFacade: AuthFacade,
-              private eorzeaFacade: EorzeaFacade) {
+              private eorzeaFacade: EorzeaFacade, private mapService: MapService) {
+    setInterval(() => {
+      if (this.state) {
+        this.ipc.send('mappy-state:set', this.state);
+      }
+    }, 200);
   }
 
   public start(): void {
@@ -45,33 +62,49 @@ export class MappyReporterService {
     // Player tracking
     combineLatest([
       this.eorzeaFacade.mapId$,
-      this.eorzeaFacade.zoneId$,
-      this.ipc.updatePositionHandlerPackets$
-    ])
-      .subscribe(([mapId, zoneId, position]) => {
-        this.setState({
-          mapId: mapId,
-          zoneId: zoneId,
-          playerCoords: {
-            x: position.pos.x,
-            y: position.pos.z
-          },
-          playerRotation: position.rotation
-        });
+      this.eorzeaFacade.zoneId$
+    ]).subscribe(([mapId, zoneId]) => {
+      this.setState({
+        mapId: mapId,
+        zoneId: zoneId,
+        map: this.lazyData.data.maps[mapId]
       });
+    });
+
+
+    this.ipc.updatePositionHandlerPackets$.subscribe(position => {
+      const pos ={
+        x: position.pos.x,
+        y: position.pos.z
+      };
+      this.setState({
+        playerCoords: this.getCoords(pos, true),
+        player: this.getPosition(pos),
+        playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
+        absolutePlayer: this.getPosition(pos, false)
+      });
+    });
 
     // Monsters
     this.ipc.npcSpawnPackets$.subscribe(packet => {
+      const position = {
+        x: packet.pos.x,
+        y: packet.pos.z
+      };
+      const coords = this.getCoords(position, true);
+      const uniqId = `${packet.bNPCName}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
+      if (this.state.bnpcs.some(row => row.uniqId === uniqId)) {
+        return;
+      }
       this.setState({
         bnpcs: [
           ...this.state.bnpcs,
           {
             nameId: packet.bNPCName,
             baseId: packet.bNPCBase,
-            position: {
-              x: packet.pos.x,
-              y: packet.pos.z
-            }
+            position: position,
+            displayPosition: this.getPosition(position),
+            uniqId: uniqId
           }
         ]
       });
@@ -79,17 +112,29 @@ export class MappyReporterService {
 
     // Objects
     this.ipc.objectSpawnPackets$.subscribe(packet => {
+      const position = {
+        x: packet.position.x,
+        y: packet.position.z
+      };
+      const coords = this.getCoords(position, true);
+      const uniqId = `${packet.objId}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
+      if (this.state.objs.some(row => row.uniqId === uniqId)) {
+        return;
+      }
+      const obj: ObjEntry = {
+        id: packet.objId,
+        kind: packet.objKind,
+        position: position,
+        displayPosition: this.getPosition(position),
+        uniqId: uniqId
+      };
+      if (obj.kind === 6) {
+        obj.icon = this.getNodeIcon(obj.id);
+      }
       this.setState({
         objs: [
           ...this.state.objs,
-          {
-            id: packet.objId,
-            kind: packet.objKind,
-            position: {
-              x: packet.pos.x,
-              y: packet.pos.z
-            }
-          }
+          obj
         ]
       });
     });
@@ -103,11 +148,46 @@ export class MappyReporterService {
     }));
   }
 
+  getNodeIcon(gatheringPointBaseId: number): string {
+    const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
+    const node = this.lazyData.data.nodePositions[nodeId];
+    if (node.limited) {
+      return NodeTypeIconPipe.timed_icons[node.type];
+    }
+    return NodeTypeIconPipe.icons[node.type];
+  }
+
+  public getCoords(coords: Vector2, centered: boolean): Vector2 {
+    if (this.state.map === undefined) {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+    const c = this.state.map.size_factor / 100;
+    const x = (coords.x + this.state.map.offset_x) * c;
+    const y = (coords.y + this.state.map.offset_y) * c;
+    return {
+      x: (41 / c) * ((x + (centered ? 1024 : 0)) / 2048) + 1,
+      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1
+    };
+  }
+
+  public getPosition(coords: Vector2, centered = true): Vector2 {
+    if (this.state.map === undefined) {
+      return {
+        x: 0,
+        y: 0
+      };
+    }
+    const raw = this.getCoords(coords, centered);
+    return this.mapService.getPositionOnMap(this.state.map, raw);
+  }
+
   private setState(newState: Partial<MappyReporterState>): void {
     this.state = {
       ...(this.state || {}),
       ...(newState as MappyReporterState)
     };
-    this.ipc.send('mappy-state:set', this.state);
   }
 }

@@ -66,7 +66,9 @@ export class AppComponent implements OnInit {
 
   version = environment.version;
 
-  public overlay = false;
+  public get overlay() {
+    return window.location.href.indexOf('?overlay') > -1;
+  }
 
   public windowDecorator = false;
 
@@ -332,7 +334,6 @@ export class AppComponent implements OnInit {
           })
         ).subscribe((event: any) => {
         this.seoService.resetConfig();
-        this.overlay = event.url.indexOf('?overlay') > -1;
         this.ipc.send('navigated', event.url);
         this.ipc.on('window-decorator', (e, value) => {
           this.windowDecorator = value;
@@ -395,7 +396,16 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
-      this.mappy.start();
+      if (!this.overlay) {
+        this.lazyData.data$
+          .pipe(
+            filter(data => data !== undefined),
+            first()
+          )
+          .subscribe(() => {
+            this.mappy.start();
+          });
+      }
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
