@@ -73,6 +73,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'playerSpawn',
         'inventoryModifyHandler',
         'npcSpawn',
+        'objectSpawn',
         'playerStats',
         'updateClassInfo',
         'actorControl',

@@ -67,6 +67,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('npcSpawn'));
   }
 
+  public get objectSpawnPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('objectSpawn'));
+  }
+
   public get retainerInformationPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
   }

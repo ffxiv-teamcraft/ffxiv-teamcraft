@@ -13,12 +13,19 @@ export interface NpcEntry {
   position: Vector2;
 }
 
+export interface ObjEntry {
+  id: number;
+  kind: number;
+  position: Vector2;
+}
+
 export interface MappyReporterState {
   mapId: number;
   zoneId: number;
   playerCoords: Vector2;
   playerRotation: number;
   bnpcs: NpcEntry[];
+  objs: ObjEntry[];
 }
 
 @Injectable({
@@ -70,11 +77,29 @@ export class MappyReporterService {
       });
     });
 
+    // Objects
+    this.ipc.objectSpawnPackets$.subscribe(packet => {
+      this.setState({
+        objs: [
+          ...this.state.objs,
+          {
+            id: packet.objId,
+            kind: packet.objKind,
+            position: {
+              x: packet.pos.x,
+              y: packet.pos.z
+            }
+          }
+        ]
+      });
+    });
+
     // Reset some stuff on map change
     this.eorzeaFacade.mapId$.pipe(
       distinctUntilChanged()
     ).subscribe(() => this.setState({
-      bnpcs: []
+      bnpcs: [],
+      objs: []
     }));
   }
 

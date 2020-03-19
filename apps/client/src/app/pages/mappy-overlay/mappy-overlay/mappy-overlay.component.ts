@@ -7,7 +7,7 @@ import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { MapData } from '../../../modules/map/map-data';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { MappyReporterState, NpcEntry } from '../../../core/electron/mappy-reporter';
+import { MappyReporterState, NpcEntry, ObjEntry } from '../../../core/electron/mappy-reporter';
 import { uniqBy } from 'lodash';
 
 @Component({
@@ -31,6 +31,11 @@ export class MappyOverlayComponent {
     y: 32
   };
 
+  objMarkerSize: Vector2 = {
+    x: 32,
+    y: 32
+  };
+
   trackPlayer = false;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
@@ -49,6 +54,13 @@ export class MappyOverlayComponent {
               displayPosition: this.getPosition(mapData, bnpc.position)
             };
           }), row => `${row.nameId}-${Math.floor(row.displayPosition.x)}/${Math.floor(row.displayPosition.y)}`),
+        objs: uniqBy(state.objs
+          .map(obj => {
+            return {
+              ...obj,
+              displayPosition: this.getPosition(mapData, obj.position)
+            };
+          }), row => `${row.id}-${Math.floor(row.displayPosition.x)}/${Math.floor(row.displayPosition.y)}`),
         player: mapData ? this.getPosition(mapData, state.playerCoords) : {},
         playerRotationTransform: `rotate(${(state.playerRotation - Math.PI) * -1}rad)`,
         absolutePlayer: mapData ? this.getPosition(mapData, state.playerCoords, false) : {},
@@ -143,6 +155,10 @@ export class MappyOverlayComponent {
 
   trackByNpc(index:number, entry: NpcEntry): string {
     return `${entry.nameId} ${entry.baseId}`;
+  }
+
+  trackByObj(index:number, entry: ObjEntry): string {
+    return `${entry.id} ${entry.kind}`;
   }
 
 }

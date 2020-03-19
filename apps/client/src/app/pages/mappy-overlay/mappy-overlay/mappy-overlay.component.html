@@ -15,6 +15,18 @@
              nz-tooltip [nzTitle]="bnpc.nameId | mobName | i18n">
       </div>
       <div class="layer" [style.transform]="imageTransform()">
+        <img src="./assets/icons/mappy/unknown.png"
+             class="marker hover"
+             *ngFor="let obj of display.objs; trackBy: trackByObj"
+             [style.width.px]="objMarkerSize.x"
+             [style.height.px]="objMarkerSize.y"
+             [style.margin-left.px]="-objMarkerSize.x/2"
+             [style.margin-top.px]="-objMarkerSize.y/2"
+             [style.top.%]="obj.displayPosition.y"
+             [style.left.%]="obj.displayPosition.x"
+             nz-tooltip [nzTitle]="obj.kind">
+      </div>
+      <div class="layer" [style.transform]="imageTransform()">
         <img src="./assets/icons/mappy/player.png"
              alt="You"
              class="marker"
