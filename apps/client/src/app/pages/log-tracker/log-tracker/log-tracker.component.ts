@@ -248,13 +248,13 @@ export class LogTrackerComponent extends TrackerComponent {
 
   private _getNodeData(itemId: number, pageId: number): any {
     const tab = Math.floor(pageId / 40);
-    const availableNodeIds = Object.keys(this.lazyData.data.nodePositions)
+    const availableNodeIds = Object.keys(this.lazyData.data.nodes)
       .filter(key => {
-        return this.lazyData.data.nodePositions[key].items.indexOf(itemId) > -1;
+        return this.lazyData.data.nodes[key].items.indexOf(itemId) > -1;
       });
     const nodesFromPositions = availableNodeIds
       .map(key => {
-        return { ...this.lazyData.data.nodePositions[key], nodeId: key };
+        return { ...this.lazyData.data.nodes[key], nodeId: key };
       })
       .filter(node => {
         return tab > 10 || node.type === tab;
@@ -288,7 +288,7 @@ export class LogTrackerComponent extends TrackerComponent {
         return tab > 10 || node.type === tab;
       })
       .map(node => {
-        const nodePosition = this.lazyData.data.nodePositions[node.id];
+        const nodePosition = this.lazyData.data.nodes[node.id];
         const result: any = {
           nodeId: node.id,
           zoneid: this.l12n.getAreaIdByENName(node.zone),

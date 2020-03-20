@@ -3,6 +3,17 @@
     <div *ngIf="display.mapId; else noMap" class="mappy-overlay-container">
       <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform()" (wheel)="onScroll($event)" (pan)="onPan($event)">
       <div class="layer" [style.transform]="imageTransform()">
+        <img src="./assets/icons/mappy/trail.png"
+             class="marker"
+             *ngFor="let snap of display.trail; trackBy: trackBySnap"
+             [style.width.px]="playerMarkerSize.x"
+             [style.height.px]="playerMarkerSize.y"
+             [style.margin-left.px]="-playerMarkerSize.x/2"
+             [style.margin-top.px]="-playerMarkerSize.y/2"
+             [style.top.%]="snap.y"
+             [style.left.%]="snap.x">
+      </div>
+      <div class="layer" [style.transform]="imageTransform()">
         <img src="./assets/icons/mappy/enemy.png"
              class="marker hover"
              *ngFor="let bnpc of display.bnpcs; trackBy: trackByNpc"
@@ -23,8 +34,7 @@
              [style.margin-left.px]="-objMarkerSize.x/2"
              [style.margin-top.px]="-objMarkerSize.y/2"
              [style.top.%]="obj.displayPosition.y"
-             [style.left.%]="obj.displayPosition.x"
-             nz-tooltip [nzTitle]="obj.kind">
+             [style.left.%]="obj.displayPosition.x">
       </div>
       <div class="layer" [style.transform]="imageTransform()">
         <img src="./assets/icons/mappy/player.png"
@@ -40,8 +50,8 @@
       </div>
       <div class="debug-box">
         Map: {{display.mapId}}<br>
-        X: {{display.player.x | number:'1.1-1'}}<br>
-        Y: {{display.player.y | number:'1.1-1'}}<br>
+        X: {{display.playerCoords.x | number:'1.1-1'}}<br>
+        Y: {{display.playerCoords.y | number:'1.1-1'}}<br>
         Objs: {{display.objs.length}}<br>
         BNPCs: {{display.bnpcs.length}}
       </div>

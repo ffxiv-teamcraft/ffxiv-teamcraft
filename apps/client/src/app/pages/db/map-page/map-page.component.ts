@@ -280,9 +280,9 @@ export class MapPageComponent extends TeamcraftPageComponent {
   }
 
   private getNodes(placeNameId: number): MapRelatedElement[] {
-    const fromNodePositions = Object.keys(this.lazyData.data.nodePositions)
+    const fromNodePositions = Object.keys(this.lazyData.data.nodes)
       .map(key => {
-        return { ...this.lazyData.data.nodePositions[key], id: +key };
+        return { ...this.lazyData.data.nodes[key], id: +key };
       })
       .filter(node => node !== null && node.zoneid === placeNameId && !node.items.some(i => i > 2000000))
       .map(node => {

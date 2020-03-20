@@ -40,7 +40,7 @@ export interface LazyData {
   materias: any;
   mobs: any;
   monsters: any;
-  nodePositions: any;
+  nodes: any;
   notebookDivisionCategory: any;
   notebookDivision: any;
   npcs: any;

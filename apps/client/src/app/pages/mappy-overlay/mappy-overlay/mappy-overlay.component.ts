@@ -1,14 +1,12 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
-import { map, tap, auditTime } from 'rxjs/operators';
+import { auditTime, tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
-import { MapData } from '../../../modules/map/map-data';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
 import { MappyReporterState, NpcEntry, ObjEntry } from '../../../core/electron/mappy-reporter';
-import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-mappy-overlay',
@@ -105,12 +103,16 @@ export class MappyOverlayComponent {
     }
   }
 
-  trackByNpc(index:number, entry: NpcEntry): string {
+  trackByNpc(index: number, entry: NpcEntry): string {
     return `${entry.nameId} ${entry.baseId}`;
   }
 
-  trackByObj(index:number, entry: ObjEntry): string {
+  trackByObj(index: number, entry: ObjEntry): string {
     return `${entry.id} ${entry.kind}`;
+  }
+
+  trackBySnap(index: number): number {
+    return index;
   }
 
 }

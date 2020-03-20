@@ -5,7 +5,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { combineLatest } from 'rxjs';
 import { Vector2 } from '../tools/vector2';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
 import { MapData } from '../../modules/map/map-data';
 import { MapService } from '../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../pipes/pipes/node-type-icon.pipe';
@@ -19,6 +19,8 @@ export interface MappyMarker {
 export interface NpcEntry extends MappyMarker {
   nameId: number;
   baseId: number;
+  level: number;
+  HP: number;
 }
 
 export interface ObjEntry extends MappyMarker {
@@ -36,6 +38,7 @@ export interface MappyReporterState {
   playerRotationTransform: string;
   bnpcs: NpcEntry[];
   objs: ObjEntry[];
+  trail: Vector2[];
   absolutePlayer: Vector2;
   debug: any;
 }
@@ -72,18 +75,33 @@ export class MappyReporterService {
     });
 
 
-    this.ipc.updatePositionHandlerPackets$.subscribe(position => {
-      const pos ={
-        x: position.pos.x,
-        y: position.pos.z
-      };
-      this.setState({
-        playerCoords: this.getCoords(pos, true),
-        player: this.getPosition(pos),
-        playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
-        absolutePlayer: this.getPosition(pos, false)
+    let positionTicks = 0;
+    this.ipc.updatePositionHandlerPackets$
+      .pipe(
+        tap(() => {
+          positionTicks++;
+          if (positionTicks % 50 === 0) {
+            this.setState({
+              trail: [
+                ...this.state.trail,
+                { ...this.state.player }
+              ]
+            });
+          }
+        })
+      )
+      .subscribe(position => {
+        const pos = {
+          x: position.pos.x,
+          y: position.pos.z
+        };
+        this.setState({
+          playerCoords: this.getCoords(pos, true),
+          player: this.getPosition(pos),
+          playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
+          absolutePlayer: this.getPosition(pos, false)
+        });
       });
-    });
 
     // Monsters
     this.ipc.npcSpawnPackets$.subscribe(packet => {
@@ -96,6 +114,8 @@ export class MappyReporterService {
       if (this.state.bnpcs.some(row => row.uniqId === uniqId)) {
         return;
       }
+
+      // TODO filter out pets and chocobos
       this.setState({
         bnpcs: [
           ...this.state.bnpcs,
@@ -104,7 +124,9 @@ export class MappyReporterService {
             baseId: packet.bNPCBase,
             position: position,
             displayPosition: this.getPosition(position),
-            uniqId: uniqId
+            uniqId: uniqId,
+            level: packet.level,
+            HP: packet.hPMax
           }
         ]
       });
@@ -144,13 +166,14 @@ export class MappyReporterService {
       distinctUntilChanged()
     ).subscribe(() => this.setState({
       bnpcs: [],
-      objs: []
+      objs: [],
+      trail: []
     }));
   }
 
   getNodeIcon(gatheringPointBaseId: number): string {
     const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
-    const node = this.lazyData.data.nodePositions[nodeId];
+    const node = this.lazyData.data.nodes[nodeId];
     if (node.limited) {
       return NodeTypeIconPipe.timed_icons[node.type];
     }

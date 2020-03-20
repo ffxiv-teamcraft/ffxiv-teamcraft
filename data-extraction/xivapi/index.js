@@ -93,39 +93,9 @@ if (hasTodo('mappy')) {
   // MapData extraction
   const memoryData$ = new Subject();
   const mapData$ = new Subject();
-  const npcs$ = new Subject();
   const aetherytes$ = new Subject();
   const nodes$ = new Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
-
-  const parsedMemoryData = [];
-
-  fs.createReadStream(path.join(__dirname, 'input/memory_data.csv'), 'utf-8').pipe(csv())
-    .on('data', function(memoryRow) {
-      parsedMemoryData.push(memoryRow);
-    })
-    .on('end', () => {
-      // console.log('Extracted memory data, size: ', parsedMemoryData.length);
-      memoryData$.next(parsedMemoryData);
-    });
-
-  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
-    page.Results.forEach(npc => {
-      npcs[npc.ID] = {
-        ...npcs[npc.ID],
-        en: npc.Name_en,
-        ja: npc.Name_ja,
-        de: npc.Name_de,
-        fr: npc.Name_fr,
-        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
-      };
-      if (npc.BalloonTargetID > 0) {
-        npcs[npc.ID].balloon = npc.BalloonTargetID;
-      }
-    });
-  }, null, () => {
-    npcs$.next(npcs);
-  });
 
   getAllPages('https://xivapi.com/Aetheryte?columns=ID,PlaceNameTargetID').subscribe(page => {
     page.Results.forEach(aetheryte => {
@@ -136,7 +106,9 @@ if (hasTodo('mappy')) {
   });
 
   const gatheringItems$ = new Subject();
+  const gatheringPoints$ = new Subject();
   const gatheringItems = {};
+  const gatheringPoints = {};
 
   getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
     page.Results
@@ -153,19 +125,52 @@ if (hasTodo('mappy')) {
     persistToJsonAsset('gathering-items', gatheringItems);
     gatheringItems$.next(gatheringItems);
   });
-  gatheringItems$.pipe(
-    switchMap(gatheringItems => {
+
+  getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType').subscribe(page => {
+    page.Results
+      .forEach(point => {
+        gatheringPoints[point.ID] = {
+          legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
+          ephemeral: point.EphemeralStartTime < 65535,
+          spawns: [],
+          duration: 0,
+          zoneid: point.PlaceNameTargetID
+        };
+        if (point.TerritoryType) {
+          gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
+        }
+        if (gatheringPoints[point.ID].ephemeral) {
+          let duration = Math.abs(point.EphemeralEndTime - point.EphemeralStartTime) / 100;
+          if (point.EphemeralEndTime < point.EphemeralStartTime) {
+            duration = Math.abs(point.EphemeralEndTime - 2400 - point.EphemeralStartTime) / 100;
+          }
+          gatheringPoints[point.ID].spawns = [point.EphemeralStartTime / 100];
+          gatheringPoints[point.ID].duration = duration;
+        } else if (gatheringPoints[point.ID].legendary) {
+          gatheringPoints[point.ID].spawns = [0, 1, 2].map(index => {
+            return point.GatheringPointTransient.GatheringRarePopTimeTable[`StartTime${index}`];
+          }).filter(start => start < 65535).map(start => start / 100);
+          gatheringPoints[point.ID].duration = point.GatheringPointTransient.GatheringRarePopTimeTable.DurationM0;
+        }
+      });
+  }, null, () => {
+    gatheringPoints$.next(gatheringPoints);
+  });
+
+  combineLatest([gatheringItems$, gatheringPoints$]).pipe(
+    switchMap(([gatheringItems, gatheringPoints]) => {
       return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
         .pipe(
-          map((page) => [page, gatheringItems])
+          map((page) => [page, gatheringItems, gatheringPoints])
         );
     })
-  ).subscribe(([page, items]) => {
+  ).subscribe(([page, items, gatheringPoints]) => {
     page.Results.forEach(node => {
       let linkedPoints = [];
       if (node.GameContentLinks.GatheringPoint) {
         linkedPoints = node.GameContentLinks.GatheringPoint.GatheringPointBase;
       }
+      const point = gatheringPoints[linkedPoints[0]];
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
@@ -177,55 +182,44 @@ if (hasTodo('mappy')) {
           .map(gatheringItemId => {
             return items[gatheringItemId].itemId;
           }),
-        limited: node.IsLimited,
+        limited: point && (point.legendary || point.ephemeral),
         level: node.GatheringLevel,
         type: node.GatheringTypeTargetID
       };
+      if (point) {
+        nodes[node.ID] = {
+          ...nodes[node.ID],
+          ...point
+        };
+      }
       if (linkedPoints.length > 0) {
         linkedPoints.forEach(point => {
           gatheringPointToBaseId[point] = node.ID;
         });
-        persistToJsonAsset('gathering-point-base-to-node-id', gatheringPointToBaseId);
       }
     });
     if (page.Pagination.Page === page.Pagination.PageTotal) {
       nodes$.next(nodes);
+      persistToJsonAsset('gathering-point-base-to-node-id', gatheringPointToBaseId);
     }
   });
 
-  combineLatest([memoryData$, mapData$, nodes$, npcs$, aetherytes$])
-    .subscribe(([memoryData, mapData]) => {
+  combineLatest([mapData$, nodes$])
+    .subscribe(([mapData]) => {
       mapData.setEncoding('utf8');
       mapData.pipe(csv())
         .on('data', function(row) {
           if (row.ContentIndex === 'BNPC') {
-            handleMonster(row, memoryData);
-          } else {
-            switch (row.Type) {
-              case 'NPC':
-                handleNpc(row);
-                break;
-              case 'Gathering':
-                handleNode(row);
-                break;
-              case 'Aetheryte':
-                handleAetheryte(row);
-                break;
-              default:
-                break;
-            }
+            handleMonster(row);
+          } else if (row.Type === 'Gathering') {
+            handleNode(row);
           }
         })
         .on('end', function() {
           // Write data that needs to be joined with game data first
-          persistToJsonAsset('node-positions', nodes);
+          persistToJsonAsset('nodes', nodes);
           // console.log('nodes written');
-          persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-          // console.log('aetherytes written');
           persistToJsonAsset('monsters', monsters);
-          // console.log('monsters written', emptyBnpcNames);
-          persistToJsonAsset('npcs', npcs);
-          console.log('npcs written');
           done('mappy');
         });
     });
@@ -237,49 +231,15 @@ handleNode = (row) => {
   if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
-      map: +row.MapID,
-      zoneid: +row.PlaceNameID,
+      map: nodes[baseId].map || +row.MapID,
+      zoneid: nodes[baseId].zoneid || +row.PlaceNameID,
       x: Math.round(+row.PosX * 10) / 10,
       y: Math.round(+row.PosY * 10) / 10
     };
   }
 };
 
-handleAetheryte = (row) => {
-  const isShard = row.Name.indexOf('Shard') > -1 || row.Name.indexOf('Urbaine') > -1;
-  // Remove shards from maps where they don't belong.
-  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953 || +row.PlaceNameID === 2000) && isShard) {
-    return;
-  }
-  // Eulmore plaza appears in lakeland, gotta remove that.
-  if (+row.PlaceNameID === 2953 && row.ENpcResidentID === 134) {
-    return;
-  }
-
-  // Ok'Zundu is handled by hand.
-  if (+row.ENpcResidentID === 73) {
-    return;
-  }
-
-  // Tailfeather needs a fix for its map id
-  if (+row.ENpcResidentID === 76) {
-    row.PlaceNameID = 2000;
-    row.MapID = 212;
-  }
-
-  aetherytes.push({
-    id: row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID,
-    zoneid: +row.PlaceNameID,
-    map: +row.MapID,
-    placenameid: +row.PlaceNameID,
-    nameid: aetheryteNameIds[row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID],
-    x: Math.round(+row.PosX * 10) / 10,
-    y: Math.round(+row.PosY * 10) / 10,
-    type: isShard ? 1 : 0
-  });
-};
-
-handleMonster = (row, memoryData) => {
+handleMonster = (row) => {
   let bnpcNameID = +row.BNpcNameID;
   if (bnpcNameID === 0) {
     const nameFromData = Object.keys(allMobs)
@@ -296,7 +256,7 @@ handleMonster = (row, memoryData) => {
       return;
     }
   }
-  const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
+  // const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
     positions: []
@@ -308,22 +268,9 @@ handleMonster = (row, memoryData) => {
     y: Math.round(+row.PosY * 10) / 10
   };
   if (monsterMemoryRow !== undefined) {
-    newEntry.level = +monsterMemoryRow.Level;
+    // newEntry.level = +monsterMemoryRow.Level;
   }
   monsters[bnpcNameID].positions.push(newEntry);
-};
-
-handleNpc = (row) => {
-  npcs[+row.ENpcResidentID] = {
-    ...npcs[+row.ENpcResidentID],
-    position:
-      {
-        map: +row.MapID,
-        zoneid: +row.PlaceNameID,
-        x: Math.round(+row.PosX * 10) / 10,
-        y: Math.round(+row.PosY * 10) / 10
-      }
-  };
 };
 
 // Map ids extraction
