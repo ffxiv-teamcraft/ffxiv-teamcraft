@@ -84,6 +84,7 @@
             <ng-container *ngIf="amountInInventory.length <= 3; else compactAmountInInventory">
               <nz-tag (click)="add(entry.amount, item)"
                       *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
+                      class="inventory-tag"
                       [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
                 {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
                 : {{entry.amount}}
