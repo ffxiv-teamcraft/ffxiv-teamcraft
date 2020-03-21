@@ -39,7 +39,6 @@ export interface MappyReporterState {
   bnpcs: NpcEntry[];
   objs: ObjEntry[];
   trail: Vector2[];
-  absolutePlayer: Vector2;
   debug: any;
 }
 
@@ -50,13 +49,16 @@ export class MappyReporterService {
 
   private state: MappyReporterState;
 
+  private dirty = false;
+
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService) {
     setInterval(() => {
-      if (this.state) {
+      if (this.state && this.dirty) {
         this.ipc.send('mappy-state:set', this.state);
+        this.dirty = false;
       }
-    }, 200);
+    }, 100);
   }
 
   public start(): void {
@@ -98,13 +100,15 @@ export class MappyReporterService {
         this.setState({
           playerCoords: this.getCoords(pos, true),
           player: this.getPosition(pos),
-          playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
-          absolutePlayer: this.getPosition(pos, false)
+          playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`
         });
       });
 
     // Monsters
     this.ipc.npcSpawnPackets$.subscribe(packet => {
+      if (packet.displayFlags === 262184) {
+        return;
+      }
       const position = {
         x: packet.pos.x,
         y: packet.pos.z
@@ -212,5 +216,6 @@ export class MappyReporterService {
       ...(this.state || {}),
       ...(newState as MappyReporterState)
     };
+    this.dirty = true;
   }
 }

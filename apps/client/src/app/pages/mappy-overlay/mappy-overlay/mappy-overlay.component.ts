@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
-import { auditTime, tap } from 'rxjs/operators';
+import { distinctUntilChanged, tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
@@ -13,9 +13,9 @@ import { MappyReporterState, NpcEntry, ObjEntry } from '../../../core/electron/m
   templateUrl: './mappy-overlay.component.html',
   styleUrls: ['./mappy-overlay.component.less']
 })
-export class MappyOverlayComponent {
+export class MappyOverlayComponent implements OnInit {
 
-  scale = 1;
+  scale = 1.5;
   pan: Vector2 = { x: -1024, y: -1024 };
   editedPan = { x: 0, y: 0 };
 
@@ -34,19 +34,19 @@ export class MappyOverlayComponent {
     y: 32
   };
 
+  windowSize: Vector2;
+
   trackPlayer = false;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 
   public display$ = this.state$.pipe(
-    auditTime(100),
     tap(state => {
-      if (this.trackPlayer) {
-        // TODO proper player tracking by adding current window size offset
+      if (this.trackPlayer && state.player) {
         this.editedPan = { x: 0, y: 0 };
         this.pan = {
-          x: -1 * state.absolutePlayer.x * 2048 / 100,
-          y: -1 * state.absolutePlayer.y * 2048 / 100
+          x: (-1 * state.player.x * 2048 / 100) + this.windowSize.x / 2,
+          y: (-1 * state.player.y * 2048 / 100) + this.windowSize.y / 2
         };
       }
     })
@@ -64,7 +64,7 @@ export class MappyOverlayComponent {
   imageTransform(): SafeStyle {
     return this.sanitizer.bypassSecurityTrustStyle(`translate(${this.pan['x'] + this.editedPan['x']}px,${
       this.pan['y'] + this.editedPan['y']
-    }px) rotate(0deg) scale(${this.scale})`);
+    }px) scale(${this.scale}) rotate(0deg)`);
   }
 
   /* Method will be called on pan image */
@@ -81,7 +81,7 @@ export class MappyOverlayComponent {
 
   /* Method will be called when user zooms image */
   onZoomP(): void {
-    this.scale = this.scale + 0.1;
+    this.scale = Math.floor(10 * (this.scale + 0.1)) / 10;
   }
 
   /* Method will be called when user zooms out image */
@@ -89,7 +89,7 @@ export class MappyOverlayComponent {
     if (this.scale <= 0.5) {
       return;
     } else {
-      this.scale = this.scale - 0.1;
+      this.scale = Math.floor(10 * (this.scale - 0.1)) / 10;
     }
   }
 
@@ -113,6 +113,26 @@ export class MappyOverlayComponent {
 
   trackBySnap(index: number): number {
     return index;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.windowSize = {
+      x: event.target.innerWidth,
+      y: event.target.innerHeight - 44
+    };
+  }
+
+  ngOnInit(): void {
+    this.windowSize = {
+      x: window.innerWidth,
+      y: window.innerHeight - 44
+    };
+    const mock = { x: 63, y: 40 };
+    this.pan = {
+      x: -1 * (mock.x * 2048 / 100),
+      y: -1 * (mock.y * 2048 / 100)
+    };
   }
 
 }

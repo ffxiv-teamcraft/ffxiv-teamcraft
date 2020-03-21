@@ -49,11 +49,13 @@
              [style.left.%]="display.player.x">
       </div>
       <div class="debug-box">
-        Map: {{display.mapId}}<br>
+        {{display.zoneId | placeName | i18n}}<br>
         X: {{display.playerCoords.x | number:'1.1-1'}}<br>
         Y: {{display.playerCoords.y | number:'1.1-1'}}<br>
         Objs: {{display.objs.length}}<br>
-        BNPCs: {{display.bnpcs.length}}
+        BNPCs: {{display.bnpcs.length}}<br>
+        Scale: {{scale}}<br>
+        Pan: {{pan | json}}
       </div>
     </div>
     <ng-template #noMap>
