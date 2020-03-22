@@ -406,6 +406,7 @@
     "Change_email_success": "Email changed",
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",

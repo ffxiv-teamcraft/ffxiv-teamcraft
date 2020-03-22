@@ -148,24 +148,28 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
-      return this.inventoryService.inventory$.pipe(
-        map((inventory: UserInventory) => {
-          return inventory.getItem(item.id).map(entry => {
-            return {
-              isRetainer: entry.retainerName !== undefined,
-              containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
-              amount: entry.quantity,
-              hq: entry.hq
-            };
-          }).reduce((res, entry) => {
-            const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
-            if (resEntry !== undefined) {
-              resEntry.amount += entry.amount;
-            } else {
-              res.push(entry);
-            }
-            return res;
-          }, []);
+      return combineLatest(([this.settings.settingsChange$.pipe(startWith(0)), this.inventoryService.inventory$])).pipe(
+        map(([, inventory]) => {
+          return inventory.getItem(item.id)
+            .filter(entry => {
+              return this.settings.ignoredInventories.indexOf(this.inventoryService.getContainerDisplayName(entry)) === -1;
+            })
+            .map(entry => {
+              return {
+                isRetainer: entry.retainerName !== undefined,
+                containerName: this.inventoryService.getContainerDisplayName(entry),
+                amount: entry.quantity,
+                hq: entry.hq
+              };
+            }).reduce((res, entry) => {
+              const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
+              if (resEntry !== undefined) {
+                resEntry.amount += entry.amount;
+              } else {
+                res.push(entry);
+              }
+              return res;
+            }, []);
         })
       );
     })

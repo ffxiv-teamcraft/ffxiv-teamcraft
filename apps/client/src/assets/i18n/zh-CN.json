@@ -406,6 +406,7 @@
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",

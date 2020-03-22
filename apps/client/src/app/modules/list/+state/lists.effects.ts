@@ -7,7 +7,6 @@ import {
   DeleteList,
   ListDetailsLoaded,
   ListsActionTypes,
-  ListsForTeamsLoaded,
   LoadListDetails,
   LoadTeamLists,
   MyListsLoaded,

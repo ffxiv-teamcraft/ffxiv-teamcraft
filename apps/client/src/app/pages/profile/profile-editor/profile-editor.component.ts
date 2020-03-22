@@ -9,7 +9,6 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
 import { UserPickerService } from '../../../modules/user-picker/user-picker.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { VerificationPopupComponent } from './verification-popup/verification-popup.component';
-import { CharacterResponse } from '@xivapi/angular-client';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { AutofillStatsPopupComponent } from './autofill-stats-popup/autofill-stats-popup.component';
 

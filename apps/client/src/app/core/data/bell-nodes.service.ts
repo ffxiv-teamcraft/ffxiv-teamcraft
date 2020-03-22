@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { LocalizedDataService } from './localized-data.service';
-import { reductions } from './sources/reductions';
 import { folklores } from './sources/folklores';
 import { fishEyes } from './sources/fish-eyes';
 import { spearFishingNodes } from './sources/spear-fishing-nodes';
 import { GarlandToolsService } from '../api/garland-tools.service';
 import { LazyDataService } from './lazy-data.service';
+import { getItemSource } from '../../modules/list/model/list-row';
+import { DataType } from '../../modules/list/data/data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,10 @@ export class BellNodesService {
   getNodesByItemId(id: number): any[] {
     if (this.cache[id] === undefined) {
       const results = [];
-      const itemReductions = reductions[id] || [];
+      const extract = this.lazyData.extracts.find(e => e.id === id);
+      const reductions = getItemSource(extract, DataType.REDUCED_FROM).map(r => r.obj.i);
       this.nodes.forEach(node => {
-        const match = node.items.find(item => item.id === id || itemReductions.indexOf(item.id) > -1);
+        const match = node.items.find(item => item.id === id || reductions.indexOf(item.id) > -1);
         const nodePosition = this.lazyData.data.nodePositions[node.id];
         if (match !== undefined) {
           if (!nodePosition) {
@@ -69,6 +71,7 @@ export class BellNodesService {
   }
 
   getAllNodes(...items: any[]): any[] {
+
     const nodesFromPositions = [].concat.apply([], items.map(item => {
       const availableNodeIds = item.nodes && item.nodes.length > 0 ? item.nodes : Object.keys(this.lazyData.data.nodePositions)
         .filter(key => {
@@ -107,8 +110,10 @@ export class BellNodesService {
 
     const nodesFromGarlandBell = [].concat.apply([], items
       .map(item => {
+        const extract = this.lazyData.extracts.find(e => e.id === item.obj.i);
+        const reductions = getItemSource(extract, DataType.REDUCED_FROM).map(r => r.obj.i);
         return [].concat.apply([],
-          [item.obj.i, ...reductions[item.obj.i]].map(itemId => {
+          [item.obj.i, ...reductions].map(itemId => {
             return this.getNodesByItemId(itemId)
               .map(node => {
                 const nodePosition = this.lazyData.data.nodePositions[node.id];
@@ -127,7 +132,7 @@ export class BellNodesService {
                   uptime: node.uptime,
                   slot: node.slot,
                   timed: true,
-                  reduction: reductions[item.obj.i] && reductions[item.obj.i].indexOf(node.itemId) > -1,
+                  reduction: reductions.indexOf(node.itemId) > -1,
                   ephemeral: node.name === 'Ephemeral',
                   items: node.items
                 };

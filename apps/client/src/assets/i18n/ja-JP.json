@@ -406,6 +406,7 @@
     "Change_email_success": "メールが変更されました",
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
