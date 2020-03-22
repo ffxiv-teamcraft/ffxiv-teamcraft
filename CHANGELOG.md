@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.19"></a>
+## [7.0.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.18...v7.0.19) (2020-03-22)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an issue with simulator page not opening at all ([08ce1f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08ce1f5)), closes [#1475](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1475)
+
+
+
 <a name="7.0.18"></a>
 ## [7.0.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.17...v7.0.18) (2020-03-22)
 
