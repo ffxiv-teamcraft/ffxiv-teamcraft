@@ -46,7 +46,7 @@
             [fallbackItemName]="item.name"
             [overlay]="overlay"
             [isCraft]="item.craftedBy && item.craftedBy.length > 0"
-            [hasAlarms]="item.alarms !== undefined && item.alarms.length > 0"
+            [hasAlarms]="alarms.length > 0"
             [attachedRotation]="item.attachedRotation"
             [userId]="userId"
             [loggedIn]="loggedIn$ | async"

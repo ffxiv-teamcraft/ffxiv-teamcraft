@@ -16,7 +16,7 @@ export class DataExtractorService {
   addDataToItem(item: ListRow, data: ItemData, skipCraft = false): ListRow {
     item.sources = [];
     Object.values(DataType)
-      .filter(value => value !== DataType.ALARMS && +value === value)
+      .filter(value => +value === value)
       .forEach(value => {
         if (value === DataType.CRAFTED_BY && skipCraft) {
           return;
@@ -26,10 +26,6 @@ export class DataExtractorService {
           item.sources.push(extract);
         }
       });
-    const alarms = this.extract(DataType.ALARMS, item.id, data, item);
-    if (alarms) {
-      item.alarms = alarms.data;
-    }
     return item;
   }
 

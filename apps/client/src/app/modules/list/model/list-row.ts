@@ -17,7 +17,10 @@ export class ListRow extends DataModel {
   requires?: Ingredient[] = [];
   recipeId?: string;
   yield = 1;
+
+  /** @deprecated use getItemSource instead, with DataType.ALARMS; **/
   alarms?: Alarm[] = [];
+
   masterbooks?: CompactMasterbook[] = [];
 
   sources?: ItemSource[] = [];
@@ -62,7 +65,11 @@ export function getItemSource<T = any>(item: ListRow, type: DataType, isObject =
   if (!cache[key]) {
     const source = item.sources.find(s => s.type === type);
     if (source === undefined) {
-      cache[key] = isObject ? {} : [];
+      if (type === DataType.ALARMS && item.alarms && item.alarms.length > 0) {
+        cache[key] = item.alarms;
+      } else {
+        cache[key] = isObject ? {} : [];
+      }
     } else {
       cache[key] = source.data;
     }

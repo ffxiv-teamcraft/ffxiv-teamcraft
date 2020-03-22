@@ -5,6 +5,7 @@ import { AlarmsFacade } from './+state/alarms.facade';
 import { combineLatest, Observable, of } from 'rxjs';
 import { EorzeanTimeService } from '../eorzea/eorzean-time.service';
 import { map } from 'rxjs/operators';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Pipe({
   name: 'alarmDisplay',
@@ -12,7 +13,8 @@ import { map } from 'rxjs/operators';
 })
 export class AlarmDisplayPipe implements PipeTransform {
 
-  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService) {
+  constructor(private alarmsFacade: AlarmsFacade, private etime: EorzeanTimeService,
+              private lazyData: LazyDataService) {
   }
 
   transform(alarm: Partial<Alarm>): Observable<AlarmDisplay> {
@@ -25,6 +27,9 @@ export class AlarmDisplayPipe implements PipeTransform {
       ]
     ).pipe(
       map(([registeredAlarm, date]) => {
+        if (alarm.mapId === undefined && alarm.zoneId !== undefined) {
+          alarm.mapId = this.lazyData.getMapIdByZoneId(alarm.zoneId);
+        }
         const display = this.alarmsFacade.createDisplay(<Alarm>alarm, date);
         display.registered = registeredAlarm !== undefined;
         if (display.registered) {
