@@ -406,6 +406,7 @@
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",

@@ -406,6 +406,7 @@
     "Change_email_success": "E-Mail-Adresse wurde geändert",
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
