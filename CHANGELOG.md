@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.18"></a>
+## [7.0.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.17...v7.0.18) (2020-03-22)
+
+
+### Bug Fixes
+
+* **data:** fixed wrong coordinates for various nodes ([45318e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45318e4))
+* **db:** fixed position for several gathering nodes ([637ec42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/637ec42))
+* **desktop:** fixed weather tracking in diadem ([f33a409](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f33a409))
+* **desynth:** fixed desynth guide not finding anything ([7fc4d15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fc4d15))
+* **gathering-location:** fixed aethersand search results ([36b0173](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36b0173))
+* **list:** fixed an issue with large-ish lists updating ([366d639](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/366d639))
+* **list:** fixed inventory tag sometimes derping its height ([a083b40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a083b40))
+* **profile:** fixed cancel button not resetting display ([f213e14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f213e14))
+* **simulator:** fixed an issue with consumables not being reset properly ([bfd4910](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bfd4910))
+
+
+### Features
+
+* **inventory:** you can now ignore individual containers in settings ([c4ad66e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4ad66e)), closes [#1461](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1461)
+* patreon new goddess of the hand ([c967eda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c967eda))
+
+
+
 <a name="7.0.17"></a>
 ## [7.0.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.16...v7.0.17) (2020-03-18)
 
