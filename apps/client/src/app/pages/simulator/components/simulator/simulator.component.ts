@@ -898,7 +898,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       if (fcActions) {
         this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
       } else {
-        delete this.selectedFreeCompanyActions;
+        this.selectedFreeCompanyActions = [];
       }
       this.applyConsumables(stats);
     });
