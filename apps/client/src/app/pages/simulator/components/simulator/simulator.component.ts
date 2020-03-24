@@ -887,17 +887,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
       if (food) {
         this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
-      } else {
+      } else if (rotationChanged) {
         delete this.selectedFood;
       }
       if (medicine) {
         this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
-      } else {
+      } else if (rotationChanged) {
         delete this.selectedMedicine;
       }
       if (fcActions) {
         this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
-      } else {
+      } else if (rotationChanged) {
         this.selectedFreeCompanyActions = [];
       }
       this.applyConsumables(stats);
