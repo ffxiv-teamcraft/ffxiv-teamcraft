@@ -5,6 +5,7 @@ export interface LazyData {
   actionIcons: any;
   actionTimeline: any;
   actions: any;
+  aetherytes: any;
   baseParams: any;
   classJobsModifiers: any;
   craftActions: any;

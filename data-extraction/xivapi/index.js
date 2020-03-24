@@ -4,28 +4,13 @@ const fs = require('fs');
 const http = require('https');
 const { map, switchMap, first, buffer, debounceTime } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
-const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
-const Multiprogress = require('multi-progress');
-const multi = new Multiprogress(process.stdout);
+const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
 const fileStreamObservable = require('./file-stream-observable');
 
 const nodes = {};
 const gatheringPointToBaseId = {};
-const aetherytes = [
-  {
-    'id': 73,
-    'zoneid': 2100,
-    'map': 215,
-    'placenameid': 2100,
-    'x': 11,
-    'y': 14,
-    'type': 0,
-    'nameid': 2123
-  }
-];
 const monsters = {};
-const npcs = {};
 const aetheryteNameIds = {};
 
 let todo = [];
@@ -46,10 +31,14 @@ const everything = process.argv.indexOf('--everything') > -1;
 
 function getCoords(coords, mapData) {
   const c = mapData.size_factor / 100;
-  return {
+  const res = {
     x: Math.floor(10 * (41.0 / c) * ((((coords.x + mapData.offset_x) * c) + 1024) / 2048.0) + 1) / 10,
     y: Math.floor(10 * (41.0 / c) * ((((coords.y + mapData.offset_y) * c) + 1024) / 2048.0) + 1) / 10
   };
+  if (coords.z) {
+    res.z = Math.floor(10 * (41.0 / c) * ((coords.z * c) / 2048.0) + 1) / 10;
+  }
+  return res;
 }
 
 function hasTodo(operation, specific = false) {
@@ -91,19 +80,9 @@ let emptyBnpcNames = 0;
 
 if (hasTodo('mappy')) {
   // MapData extraction
-  const memoryData$ = new Subject();
   const mapData$ = new Subject();
-  const aetherytes$ = new Subject();
   const nodes$ = new Subject();
   http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
-
-  getAllPages('https://xivapi.com/Aetheryte?columns=ID,PlaceNameTargetID').subscribe(page => {
-    page.Results.forEach(aetheryte => {
-      aetheryteNameIds[aetheryte.ID] = aetheryte.PlaceNameTargetID;
-    });
-  }, null, () => {
-    aetherytes$.next(aetheryteNameIds);
-  });
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();
@@ -905,32 +884,82 @@ if (hasTodo('fates')) {
   });
 }
 
-if (hasTodo('levelLGB', true)) {
-  console.log('STARTING LevelLGB extraction');
+if (hasTodo('LGB', true)) {
   const mapData = require('../../apps/client/src/assets/data/maps.json');
   const fates = require('../../apps/client/src/assets/data/fates.json');
+  const lgbFolder = './input/lgb';
 
-  const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
+  const aetherytes = [];
 
-  levelLGB$.pipe(
-    buffer(levelLGB$.pipe(debounceTime(500)))
-  ).subscribe(csvData => {
-    Object.keys(fates).forEach(key => {
-      const location = csvData.find(row => +row.LocationID === fates[key].location);
-      if (!location) {
-        return;
-      }
-      fates[key].position = {
-        zoneid: +mapData[location.Map].placename_id,
-        ...getCoords({
-          x: location.X,
-          y: location.Z
-        }, mapData[location.Map])
-      };
+  combineLatest([aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes')])
+    .subscribe(([xivapiAetherytes]) => {
+      const allLgbFiles = fs.readdirSync(path.join(__dirname, lgbFolder));
+
+      const allLgbs = allLgbFiles.map(filename => {
+        const split = filename.split('_');
+        const mapKey = split[0];
+        const mapId = Object.keys(mapData).find(key => mapData[key].image.indexOf(mapKey) > -1);
+        return {
+          mapId: +mapId,
+          type: split[1].split('.')[0],
+          content: JSON.parse(fs.readFileSync(path.join(__dirname, lgbFolder, filename), 'utf8'))
+        };
+      });
+
+      allLgbs.forEach(lgbEntry => {
+        lgbEntry.content.forEach(lgbLayer => {
+
+          // Handle aetherytes
+          if (lgbLayer.strName === 'LVD_Aetheryte') {
+            lgbLayer.InstanceObjects.forEach(object => {
+              const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
+                return aetheryte.MapTargetID === lgbEntry.mapId && aetheryte.Level0TargetID === object.InstanceID;
+              });
+              if (xivapiAetheryte) {
+                const coords = getCoords({
+                  x: object.Transform.Translation.x,
+                  y: object.Transform.Translation.z,
+                  z: object.Transform.Translation.y
+                }, mapData[lgbEntry.mapId.toString()]);
+                const aetheryteEntry = {
+                  id: xivapiAetheryte.ID,
+                  zoneid: mapData[lgbEntry.mapId.toString()].placename_id,
+                  map: xivapiAetheryte.MapTargetID,
+                  ...coords,
+                  type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
+                  nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
+                };
+                aetherytes.push(aetheryteEntry);
+              }
+            });
+          }
+        });
+      });
+
+      persistToJsonAsset('aetherytes', aetherytes);
     });
-    persistToJsonAsset('fates', fates);
-    process.exit(0);
-  });
+
+  // const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
+  //
+  // levelLGB$.pipe(
+  //   buffer(levelLGB$.pipe(debounceTime(500)))
+  // ).subscribe(csvData => {
+  //   Object.keys(fates).forEach(key => {
+  //     const location = csvData.find(row => +row.LocationID === fates[key].location);
+  //     if (!location) {
+  //       return;
+  //     }
+  //     fates[key].position = {
+  //       zoneid: +mapData[location.Map].placename_id,
+  //       ...getCoords({
+  //         x: location.X,
+  //         y: location.Z
+  //       }, mapData[location.Map])
+  //     };
+  //   });
+  //   persistToJsonAsset('fates', fates);
+  //   process.exit(0);
+  // });
 }
 
 if (hasTodo('instances')) {

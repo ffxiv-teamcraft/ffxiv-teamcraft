@@ -106,7 +106,7 @@ const getAllPages = (endpoint, body, label) => {
   return page$.pipe(
     mergeMap(page => {
       let url = endpoint;
-      if (body !== undefined) {
+      if (body) {
         body.page = page;
       } else {
         url = addQueryParam(endpoint, 'page', page);
