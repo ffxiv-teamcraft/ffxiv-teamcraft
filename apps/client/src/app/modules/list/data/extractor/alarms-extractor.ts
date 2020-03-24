@@ -41,7 +41,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             zoneId: node.zoneid,
             mapId: node.mapid,
             slot: +node.slot,
-            type: getItemSource(row, DataType.GATHERED_BY, true).type,
+            type: node.type,
             ephemeral: node.limitType && node.limitType.en === 'Ephemeral',
             coords: {
               x: node.coords[0],
@@ -61,7 +61,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           if (folklore !== undefined) {
             alarm.folklore = {
               id: +folklore,
-              icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
+              icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
             };
           }
           return alarm;
@@ -70,36 +70,36 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
     }
     if (getItemSource(row, DataType.REDUCED_FROM).length > 0) {
       alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)
-        .filter(reduction => reduction.obj !== undefined && this.bellNodes.getNodesByItemId(reduction.obj.i).length > 0)
+        .filter(reduction => reduction.obj !== undefined)
         .map(reduction => {
           const nodes = this.bellNodes.getNodesByItemId(reduction.obj.i);
           return nodes
             .filter(node => node.coords)
             .map(node => {
-            const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
-            const nodePosition = this.lazyData.data.nodes[node.id];
-            const alarm: Partial<Alarm> = {
-              itemId: node.itemId,
-              icon: node.icon,
-              duration: node.uptime / 60,
-              zoneId: node.zoneid,
-              mapId: nodePosition ? nodePosition.map : node.zoneid,
-              slot: +node.slot,
-              type: node.type,
-              spawns: node.time,
-              coords: {
-                x: node.coords[0],
-                y: node.coords[1]
-              }
-            };
-            if (folklore !== undefined) {
-              alarm.folklore = {
-                id: +folklore,
-                icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
+              const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
+              const nodePosition = this.lazyData.data.nodes[node.id];
+              const alarm: Partial<Alarm> = {
+                itemId: node.itemId,
+                icon: node.icon,
+                duration: node.uptime / 60,
+                zoneId: node.zoneid,
+                mapId: nodePosition ? nodePosition.map : node.mapid,
+                slot: +node.slot,
+                type: node.type,
+                spawns: node.time,
+                coords: {
+                  x: node.coords[0],
+                  y: node.coords[1]
+                }
               };
-            }
-            return alarm;
-          });
+              if (folklore !== undefined) {
+                alarm.folklore = {
+                  id: +folklore,
+                  icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+                };
+              }
+              return alarm;
+            });
         })
       ));
     }

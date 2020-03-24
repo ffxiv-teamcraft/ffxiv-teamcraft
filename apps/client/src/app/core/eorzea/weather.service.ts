@@ -39,7 +39,10 @@ export class WeatherService {
     return 1;
   }
 
-  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, weatherRate?: any): Date | null {
+  public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, weatherRate?: any, iterations = 0): Date | null {
+    if (iterations >= 100) {
+      return null;
+    }
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
     if (this.getWeather(mapId, timestamp, weatherRate) === weatherId) {
       const resultDate = new Date(timestamp);
@@ -47,7 +50,7 @@ export class WeatherService {
       resultDate.setUTCMinutes(0);
       return resultDate;
     }
-    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate);
+    return this.getNextWeatherStart(mapId, weatherId, this.nextWeatherTime(timestamp), weatherRate, iterations + 1);
   }
 
   public getNextWeatherTransition(mapId: number, fromWeatherIds: number[], weatherId: number, timestamp: number, weatherRate?: any, iteration = 0): Date | null {

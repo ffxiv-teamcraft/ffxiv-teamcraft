@@ -25,7 +25,6 @@ import { NameQuestionPopupComponent } from '../../../modules/name-question-popup
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
-import { StatsPopupComponent } from '../../../modules/gearsets/stats-popup/stats-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -60,6 +59,8 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     'FingerR',
     'SoulCrystal'
   ];
+
+  missingItems: boolean;
 
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
@@ -280,6 +281,25 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
             });
         })
       );
+    }),
+    tap(categories => {
+      const mandatory = [
+        'MainHand',
+        'Head',
+        'Body',
+        'Gloves',
+        'Waist',
+        'Legs',
+        'Feet',
+        'Ears',
+        'Neck',
+        'Wrists',
+        'FingerL',
+        'FingerR'
+      ];
+      if (mandatory.some(name => !categories.some(c => c.name === name))) {
+        this.missingItems = true;
+      }
     }),
     map(categories => {
       return chunk(categories, 2);

@@ -186,6 +186,10 @@ export class LocalizedDataService {
       if (name.startsWith('Eulmore - ')) {
         return 498;
       }
+      // Diadem
+      if (name === 'The Diadem') {
+        return 538;
+      }
       return -1;
     }
     return result.id;

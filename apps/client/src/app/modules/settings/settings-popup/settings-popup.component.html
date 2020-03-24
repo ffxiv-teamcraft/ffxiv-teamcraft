@@ -162,7 +162,7 @@
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.alwaysAllDeliveries"
-                nz-checkbox>{{'SETTINGS.Always_all_deliveries' | translate}}</label>
+                 nz-checkbox>{{'SETTINGS.Always_all_deliveries' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
@@ -365,7 +365,7 @@
         </nz-select>
       </nz-form-item>
       <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
-                 [nzMax]="100" [nzMin]="1"
+                 [nzMax]="100" [nzMin]="0"
                  [nzStep]="1"></nz-slider>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
       <nz-card>
@@ -398,6 +398,14 @@
               {{'SETTINGS.Enable_autofill_hq_filter' | translate}}
             </label>
           </div>
+          <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
+            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
+            <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"
+                       class="ignored-inventories" id="ignored-inventories" nzShowSearch nzMode="multiple" nzAllowClear>
+              <nz-option *ngFor="let inventory of inventories" [nzLabel]="inventory | translate" [nzValue]="inventory">
+              </nz-option>
+            </nz-select>
+          </nz-form-item>
         </div>
       </nz-card>
       <button (click)="openDesktopConsole()" nz-button>

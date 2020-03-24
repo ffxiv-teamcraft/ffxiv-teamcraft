@@ -17,8 +17,8 @@ export class ZoneBreakdown {
         getItemSource(row, DataType.DROPS).forEach(drop => {
           this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates);
         });
-      } else if (row.alarms !== undefined && row.alarms.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
-        row.alarms.forEach(alarm => {
+      } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
+        getItemSource(row, DataType.ALARMS).forEach(alarm => {
           this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates);
         });
       } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {

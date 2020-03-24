@@ -133,6 +133,14 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
+  public get ignoredInventories(): string[] {
+    return JSON.parse(this.getSetting('ignored-inventories', '[]'));
+  }
+
+  public set ignoredInventories(ignored: string[]) {
+    this.setSetting('ignored-inventories', JSON.stringify(ignored));
+  }
+
   public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,

@@ -16,6 +16,8 @@ import { CustomLink } from '../../../core/database/custom-links/custom-link';
 import { Theme } from '../theme';
 import { aetherytes } from '../../../core/data/sources/aetherytes';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
+import { InventoryFacade } from '../../inventory/+state/inventory.facade';
+import { uniq } from 'lodash';
 
 @Component({
   selector: 'app-settings-popup',
@@ -81,7 +83,17 @@ export class SettingsPopupComponent {
 
   public allAetherytes = aetherytes.filter(a => a.nameid !== 0);
 
-  public favoriteAetherytes = this.settings.favoriteAetherytes;
+  public favoriteAetherytes = [...this.settings.favoriteAetherytes];
+
+  public ignoredInventories = [...this.settings.ignoredInventories];
+
+  public inventories$ = this.inventoryFacade.inventory$.pipe(
+    map(inventory => {
+      return uniq(inventory
+        .toArray()
+        .map(item => this.inventoryFacade.getContainerDisplayName(item)));
+    })
+  );
 
   public get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
@@ -96,7 +108,7 @@ export class SettingsPopupComponent {
               private af: AngularFireAuth, private message: NzMessageService,
               private ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
-              private dialog: NzModalService) {
+              private dialog: NzModalService, private inventoryFacade: InventoryFacade) {
 
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;

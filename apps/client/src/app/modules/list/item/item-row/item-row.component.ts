@@ -44,7 +44,6 @@ import { ConsumablesService } from '../../../../pages/simulator/model/consumable
 import { FreeCompanyActionsService } from '../../../../pages/simulator/model/free-company-actions.service';
 import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popup/marketboard-popup.component';
 import { InventoryFacade } from '../../../inventory/+state/inventory.facade';
-import { UserInventory } from '../../../../model/user/inventory/user-inventory';
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
@@ -148,24 +147,28 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   amountInInventory$: Observable<{ containerName: string, amount: number, hq: boolean, isRetainer: boolean }[]> = this.item$.pipe(
     switchMap(item => {
-      return this.inventoryService.inventory$.pipe(
-        map((inventory: UserInventory) => {
-          return inventory.getItem(item.id).map(entry => {
-            return {
-              isRetainer: entry.retainerName !== undefined,
-              containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
-              amount: entry.quantity,
-              hq: entry.hq
-            };
-          }).reduce((res, entry) => {
-            const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
-            if (resEntry !== undefined) {
-              resEntry.amount += entry.amount;
-            } else {
-              res.push(entry);
-            }
-            return res;
-          }, []);
+      return combineLatest(([this.settings.settingsChange$.pipe(startWith(0)), this.inventoryService.inventory$])).pipe(
+        map(([, inventory]) => {
+          return inventory.getItem(item.id)
+            .filter(entry => {
+              return this.settings.ignoredInventories.indexOf(this.inventoryService.getContainerDisplayName(entry)) === -1;
+            })
+            .map(entry => {
+              return {
+                isRetainer: entry.retainerName !== undefined,
+                containerName: this.inventoryService.getContainerDisplayName(entry),
+                amount: entry.quantity,
+                hq: entry.hq
+              };
+            }).reduce((res, entry) => {
+              const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
+              if (resEntry !== undefined) {
+                resEntry.amount += entry.amount;
+              } else {
+                res.push(entry);
+              }
+              return res;
+            }, []);
         })
       );
     })
@@ -585,9 +588,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   private handleAlarms(item: ListRow): void {
+    const alarms = getItemSource<Alarm[]>(item, DataType.ALARMS);
     // We don't want to display more than 6 alarms, else it becomes a large shitfest
-    if (!item.alarms || item.alarms.length < 8 || this.settings.showAllAlarms) {
-      this.alarms = (item.alarms || []).sort((a, b) => {
+    if (!alarms || alarms.length < 8 || this.settings.showAllAlarms) {
+      this.alarms = (alarms || []).sort((a, b) => {
         if (a.spawns === undefined || b.spawns === undefined) {
           return a.zoneId - b.zoneId;
         }
@@ -597,8 +601,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         return a.spawns[0] - b.spawns[0];
       });
     } else {
-      this.alarms = _.uniqBy(item.alarms, alarm => alarm.zoneId).slice(0, 8);
-      this.moreAlarmsAvailable = item.alarms.length - 8;
+      this.alarms = _.uniqBy(alarms, alarm => alarm.zoneId).slice(0, 8);
+      this.moreAlarmsAvailable = alarms.length - 8;
     }
   }
 
@@ -606,7 +610,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.alarmsFacade.allAlarms$
       .pipe(first())
       .subscribe(allAlarms => {
-        const alarmsToAdd = item.alarms.filter(a => {
+        const alarmsToAdd = getItemSource<Alarm[]>(item, DataType.ALARMS).filter(a => {
           return allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });

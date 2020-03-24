@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -15,6 +15,7 @@ import { HasTooFew } from '../optimizations/has-too-few';
 import { ListRow } from '../../../modules/list/model/list-row';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -30,17 +31,18 @@ export class InventoryOptimizerComponent {
 
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
     switchMap((extracts: ListRow[]) => {
-      return this.resultsReloader$.pipe(
+      return combineLatest([this.settings.settingsChange$.pipe(startWith(0)),this.resultsReloader$]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
             return this.optimizers
               .map(optimizer => {
                 const entries = inventory.toArray()
                   .filter(item => {
-                    return [
-                      ContainerType.RetainerMarket,
-                      ContainerType.RetainerEquippedGear
-                    ].indexOf(item.containerId) === -1;
+                    return this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
+                      && [
+                        ContainerType.RetainerMarket,
+                        ContainerType.RetainerEquippedGear
+                      ].indexOf(item.containerId) === -1;
                   })
                   .map(item => {
                     return {
@@ -129,9 +131,9 @@ export class InventoryOptimizerComponent {
     }
   }
 
-  constructor(private inventoryFacade: InventoryFacade,
-    @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
-    private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
+  constructor(private inventoryFacade: InventoryFacade, private settings: SettingsService,
+              @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
+              private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
   }
 
   private getContainerName(item: InventoryItem): string {
@@ -140,7 +142,7 @@ export class InventoryOptimizerComponent {
 
   public getExpansions(): string[] {
     const expansions: any[] = this.lazyData.patches.map(p => {
-      return { name: p.ExName, version: p.ExVersion }
+      return { name: p.ExName, version: p.ExVersion };
     });
 
     return uniqBy(expansions, 'name');
@@ -154,8 +156,7 @@ export class InventoryOptimizerComponent {
   public set selectedExpansion(selection: number) {
     if (selection !== null) {
       localStorage.setItem(ConsolidateStacks.SELECTION_KEY, selection.toString());
-    }
-    else {
+    } else {
       localStorage.removeItem(ConsolidateStacks.SELECTION_KEY);
     }
 
@@ -194,7 +195,7 @@ export class InventoryOptimizerComponent {
     this.reloader$.next();
   }
 
-  private setHiddenArray(array: {optimizerId: string}[]): void {
+  private setHiddenArray(array: { optimizerId: string }[]): void {
     localStorage.setItem('optimizations:hidden', JSON.stringify(array));
   }
 
