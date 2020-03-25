@@ -9,5 +9,6 @@ export interface Fate {
     zoneid: number;
     x: number;
     y: number;
+    z: number;
   }
 }

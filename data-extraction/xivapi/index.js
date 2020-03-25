@@ -891,8 +891,11 @@ if (hasTodo('LGB', true)) {
 
   const aetherytes = [];
 
-  combineLatest([aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes')])
-    .subscribe(([xivapiAetherytes]) => {
+  combineLatest([
+    aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes'),
+    aggregateAllPages('https://xivapi.com/HousingAethernet?columns=ID,LevelTargetID,TerritoryType.MapTargetID,PlaceNameTargetID', null, 'LGB Housing Aetherytes')
+  ])
+    .subscribe(([xivapiAetherytes, xivapiHousingAetherytes]) => {
       const allLgbFiles = fs.readdirSync(path.join(__dirname, lgbFolder));
 
       const allLgbs = allLgbFiles.map(filename => {
@@ -902,64 +905,63 @@ if (hasTodo('LGB', true)) {
         return {
           mapId: +mapId,
           type: split[1].split('.')[0],
+          filename: filename,
           content: JSON.parse(fs.readFileSync(path.join(__dirname, lgbFolder, filename), 'utf8'))
         };
       });
 
       allLgbs.forEach(lgbEntry => {
         lgbEntry.content.forEach(lgbLayer => {
-
-          // Handle aetherytes
-          if (lgbLayer.strName === 'LVD_Aetheryte') {
-            lgbLayer.InstanceObjects.forEach(object => {
-              const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
-                return aetheryte.MapTargetID === lgbEntry.mapId && aetheryte.Level0TargetID === object.InstanceID;
-              });
-              if (xivapiAetheryte) {
-                const coords = getCoords({
-                  x: object.Transform.Translation.x,
-                  y: object.Transform.Translation.z,
-                  z: object.Transform.Translation.y
-                }, mapData[lgbEntry.mapId.toString()]);
-                const aetheryteEntry = {
-                  id: xivapiAetheryte.ID,
-                  zoneid: mapData[lgbEntry.mapId.toString()].placename_id,
-                  map: xivapiAetheryte.MapTargetID,
-                  ...coords,
-                  type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
-                  nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
+          lgbLayer.InstanceObjects.forEach(object => {
+            const mapEntry = mapData[lgbEntry.mapId.toString()];
+            if (!mapEntry) {
+              return;
+            }
+            const coords = getCoords({
+              x: object.Transform.Translation.x,
+              y: object.Transform.Translation.z,
+              z: object.Transform.Translation.y
+            }, mapEntry);
+            switch (object.AssetType) {
+              // Aetherytes
+              case 40:
+                const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
+                    return aetheryte.MapTargetID === lgbEntry.mapId && aetheryte.Level0TargetID === object.InstanceID;
+                  })
+                  || xivapiHousingAetherytes.find(aetheryte => {
+                    return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === lgbEntry.mapId && aetheryte.LevelTargetID === object.InstanceID;
+                  });
+                if (xivapiAetheryte) {
+                  const aetheryteEntry = {
+                    id: xivapiAetheryte.ID,
+                    zoneid: mapData[lgbEntry.mapId.toString()].placename_id,
+                    map: lgbEntry.mapId,
+                    ...coords,
+                    type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
+                    nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
+                  };
+                  aetherytes.push(aetheryteEntry);
+                }
+                break;
+              // FATEs
+              case 49:
+                const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
+                if (fateId === undefined) {
+                  return;
+                }
+                fates[fateId].position = {
+                  zoneid: +mapData[lgbEntry.mapId].placename_id,
+                  ...coords
                 };
-                aetherytes.push(aetheryteEntry);
-              }
-            });
-          }
+            }
+
+          });
         });
       });
 
       persistToJsonAsset('aetherytes', aetherytes);
+      persistToJsonAsset('fates', fates);
     });
-
-  // const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
-  //
-  // levelLGB$.pipe(
-  //   buffer(levelLGB$.pipe(debounceTime(500)))
-  // ).subscribe(csvData => {
-  //   Object.keys(fates).forEach(key => {
-  //     const location = csvData.find(row => +row.LocationID === fates[key].location);
-  //     if (!location) {
-  //       return;
-  //     }
-  //     fates[key].position = {
-  //       zoneid: +mapData[location.Map].placename_id,
-  //       ...getCoords({
-  //         x: location.X,
-  //         y: location.Z
-  //       }, mapData[location.Map])
-  //     };
-  //   });
-  //   persistToJsonAsset('fates', fates);
-  //   process.exit(0);
-  // });
 }
 
 if (hasTodo('instances')) {
