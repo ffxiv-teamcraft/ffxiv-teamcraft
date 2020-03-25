@@ -46,7 +46,7 @@
             [fallbackItemName]="item.name"
             [overlay]="overlay"
             [isCraft]="item.craftedBy && item.craftedBy.length > 0"
-            [hasAlarms]="item.alarms !== undefined && item.alarms.length > 0"
+            [hasAlarms]="alarms.length > 0"
             [attachedRotation]="item.attachedRotation"
             [userId]="userId"
             [loggedIn]="loggedIn$ | async"
@@ -86,8 +86,7 @@
                       *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                       class="inventory-tag"
                       [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
-                {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
-                : {{entry.amount}}
+                {{entry.containerName | translate}}: {{entry.amount}}
                 <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
               </nz-tag>
             </ng-container>
@@ -104,8 +103,7 @@
                         (click)="tooltip.hide();add(entry.amount, item)"
                         #tooltip="nzTooltip"
                         nz-tooltip [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
-                      {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
-                      : {{entry.amount}}
+                      {{entry.containerName | translate}}: {{entry.amount}}
                       <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
                     </li>
                   </ul>

@@ -37,7 +37,14 @@ export class CharacterLinkPopupComponent {
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
-  private chineseServers = ['拉诺西亚', '紫水栈桥', '幻影群岛', '摩杜纳', '神意之地', '静语庄园', '萌芽池', '延夏', '红玉海', '潮风亭', '神拳痕', '白银乡', '白金幻象', '龙巢神殿', '旅人栈桥', '拂晓之间'];
+  private chineseServers = [
+    // 陆行鸟 (China 1)
+    '红玉海', '神意之地', '拉诺西亚', '幻影群岛', '萌芽池', '宇宙和音', '晨曦王座',
+    // 莫古力 (China 2)
+    '白金幻象', '白银乡', '神拳痕', '潮风亭', '旅人栈桥', '拂晓之间', '龙巢神殿',
+    // 猫小胖 (China 3)
+    '延夏', '摩杜纳', '紫水栈桥', '静语庄园', '海猫茶屋', '琥珀原'
+  ];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(

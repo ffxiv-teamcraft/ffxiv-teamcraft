@@ -6,7 +6,7 @@ import { DataType } from '../../modules/list/data/data-type';
 
 export class ZoneBreakdown {
 
-  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false) {
+  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false, private finalItems = false) {
     rows.forEach(row => {
       if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
@@ -17,8 +17,8 @@ export class ZoneBreakdown {
         getItemSource(row, DataType.DROPS).forEach(drop => {
           this.addToBreakdown(drop.zoneid, drop.mapid, row, hideZoneDuplicates);
         });
-      } else if (row.alarms !== undefined && row.alarms.length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
-        row.alarms.forEach(alarm => {
+      } else if (getItemSource(row, DataType.ALARMS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TIMED, LayoutRowFilter.IS_REDUCTION)) {
+        getItemSource(row, DataType.ALARMS).forEach(alarm => {
           this.addToBreakdown(alarm.zoneId, alarm.mapId, row, hideZoneDuplicates);
         });
       } else if (getItemSource(row, DataType.VENDORS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.CAN_BE_BOUGHT)) {
@@ -50,9 +50,12 @@ export class ZoneBreakdown {
   }
 
   private hasOneFilter(chain: string, ...filters: LayoutRowFilter[]): boolean {
-    return chain.indexOf('ANYTHING') > -1 || filters.reduce((match, f) => {
-      return match || chain.indexOf(f.name) > -1;
-    }, false);
+    if (this.finalItems) {
+      return true;
+    }
+    return chain.indexOf('ANYTHING') > -1 || filters.some((f) => {
+      return chain.indexOf(f.name) > -1;
+    });
   }
 
   /**

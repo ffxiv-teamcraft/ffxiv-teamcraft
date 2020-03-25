@@ -6,7 +6,7 @@ import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } 
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { ListRow, getItemSource } from '../../../modules/list/model/list-row';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
@@ -40,6 +40,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { DataType } from '../../../modules/list/data/data-type';
 
 @Component({
   selector: 'app-list-details',
@@ -278,7 +279,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           if (row.id < 20) {
             return;
           }
-          listAlarms.push(...(row.alarms || []).filter(alarm => {
+          listAlarms.push(...(getItemSource(row, DataType.ALARMS)).filter(alarm => {
             // Avoid duplicates.
             return listAlarms.find(a => a.itemId === alarm.itemId && a.zoneId === alarm.zoneId) === undefined;
           }));
