@@ -31,12 +31,14 @@ const everything = process.argv.indexOf('--everything') > -1;
 
 function getCoords(coords, mapData) {
   const c = mapData.size_factor / 100;
+  const x = (coords.x + mapData.offset_x) * c;
+  const y = (coords.y + mapData.offset_y) * c;
   const res = {
-    x: Math.floor(10 * (41.0 / c) * ((((coords.x + mapData.offset_x) * c) + 1024) / 2048.0) + 1) / 10,
-    y: Math.floor(10 * (41.0 / c) * ((((coords.y + mapData.offset_y) * c) + 1024) / 2048.0) + 1) / 10
+    x: ((41.0 / c) * ((x + 1024.0) / 2048.0) + 1),
+    y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1)
   };
   if (coords.z) {
-    res.z = Math.floor(10 * (41.0 / c) * ((coords.z * c) / 2048.0) + 1) / 10;
+    res.z = (41.0 / c) * ((coords.z * c) / 2048.0);
   }
   return res;
 }
@@ -887,6 +889,7 @@ if (hasTodo('fates')) {
 if (hasTodo('LGB', true)) {
   const mapData = require('../../apps/client/src/assets/data/maps.json');
   const fates = require('../../apps/client/src/assets/data/fates.json');
+  const npcs = require('../../apps/client/src/assets/data/npcs.json');
   const lgbFolder = './input/lgb';
 
   const aetherytes = [];
@@ -922,7 +925,20 @@ if (hasTodo('LGB', true)) {
               y: object.Transform.Translation.z,
               z: object.Transform.Translation.y
             }, mapEntry);
+            if (coords.x < 0 || coords.y < 0) {
+              return;
+            }
+            const zoneId = mapData[lgbEntry.mapId.toString()].placename_id;
             switch (object.AssetType) {
+              // ENpcResidents
+              case 8:
+                const npc = npcs[object.Object.ParentData.ParentData.BaseId];
+                npc.position = {
+                  zoneid: zoneId,
+                  map: lgbEntry.mapId,
+                  ...coords
+                };
+                break;
               // Aetherytes
               case 40:
                 const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
@@ -934,7 +950,7 @@ if (hasTodo('LGB', true)) {
                 if (xivapiAetheryte) {
                   const aetheryteEntry = {
                     id: xivapiAetheryte.ID,
-                    zoneid: mapData[lgbEntry.mapId.toString()].placename_id,
+                    zoneid: zoneId,
                     map: lgbEntry.mapId,
                     ...coords,
                     type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
@@ -950,7 +966,7 @@ if (hasTodo('LGB', true)) {
                   return;
                 }
                 fates[fateId].position = {
-                  zoneid: +mapData[lgbEntry.mapId].placename_id,
+                  zoneid: zoneId,
                   ...coords
                 };
             }
@@ -961,6 +977,7 @@ if (hasTodo('LGB', true)) {
 
       persistToJsonAsset('aetherytes', aetherytes);
       persistToJsonAsset('fates', fates);
+      persistToJsonAsset('npcs', npcs);
     });
 }
 
@@ -1005,6 +1022,28 @@ if (hasTodo('shops')) {
   }, null, () => {
     persistToJsonAsset('shops', shops);
     done('shops');
+  });
+}
+
+if (hasTodo('npcs')) {
+  const npcs = {};
+  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
+    page.Results.forEach(npc => {
+      npcs[npc.ID] = {
+        ...npcs[npc.ID],
+        en: npc.Name_en,
+        ja: npc.Name_ja,
+        de: npc.Name_de,
+        fr: npc.Name_fr,
+        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
+      };
+      if (npc.BalloonTargetID > 0) {
+        npcs[npc.ID].balloon = npc.BalloonTargetID;
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('npcs', npcs);
+    done('npcs');
   });
 }
 

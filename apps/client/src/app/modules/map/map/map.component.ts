@@ -53,9 +53,15 @@ export class MapComponent implements OnInit {
 
   getMarkerStyle(map: MapData, marker: MapMarker, offset = { x: 0, y: 0 }): any {
     const positionPercents = this.mapService.getPositionOnMap(map, marker);
+    marker.size = marker.size || {
+      x: 32,
+      y: 32
+    };
     return {
       top: `${positionPercents.y + offset.y}%`,
       left: `${positionPercents.x + offset.y}%`,
+      'margin-top': `-${marker.size.y / 2}px`,
+      'margin-left': `-${marker.size.x / 2}px`,
       'z-index': marker.zIndex || 5,
       ...(marker.additionalStyle || {})
     };
