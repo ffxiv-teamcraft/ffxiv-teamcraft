@@ -148,7 +148,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates());
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
