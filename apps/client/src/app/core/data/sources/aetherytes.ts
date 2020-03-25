@@ -1,4 +1,6 @@
-export const aetherytes = [
+import { Aetheryte } from '../aetheryte';
+
+export const aetherytes: Aetheryte[] = [
   {
     "id": 72,
     "zoneid": 2100,
