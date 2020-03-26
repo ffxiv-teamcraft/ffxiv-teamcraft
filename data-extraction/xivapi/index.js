@@ -890,6 +890,7 @@ if (hasTodo('LGB', true)) {
   const mapData = require('../../apps/client/src/assets/data/maps.json');
   const fates = require('../../apps/client/src/assets/data/fates.json');
   const npcs = require('../../apps/client/src/assets/data/npcs.json');
+  const mapRanges = {};
   const lgbFolder = './input/lgb';
 
   const aetherytes = [];
@@ -959,6 +960,27 @@ if (hasTodo('LGB', true)) {
                   aetherytes.push(aetheryteEntry);
                 }
                 break;
+              // Map ranges (markers you go through to move from a zone to another)
+              case 43:
+                mapRanges[lgbEntry.mapId] = [
+                  ...(mapRanges[lgbEntry.mapId] || []),
+                  {
+                    position: coords,
+                    targetMap: object.Object.Map,
+                    targetPlaceName: object.Object.PlaceNameBlock,
+                    scale: {
+                      x: object.Transform.Scale.x,
+                      y: object.Transform.Scale.z,
+                      z: object.Transform.Scale.y
+                    },
+                    rotation: {
+                      x: object.Transform.Rotation.x,
+                      y: object.Transform.Rotation.z,
+                      z: object.Transform.Rotation.y
+                    }
+                  }
+                ];
+                break;
               // FATEs
               case 49:
                 const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
@@ -978,6 +1000,7 @@ if (hasTodo('LGB', true)) {
       persistToJsonAsset('aetherytes', aetherytes);
       persistToJsonAsset('fates', fates);
       persistToJsonAsset('npcs', npcs);
+      persistToJsonAsset('map-ranges', mapRanges);
     });
 }
 
