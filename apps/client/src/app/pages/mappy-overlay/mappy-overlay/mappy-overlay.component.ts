@@ -6,7 +6,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { MappyReporterState, NpcEntry, ObjEntry } from '../../../core/electron/mappy-reporter';
+import { MappyReporterState, BNpcEntry, ObjEntry, MappyMarker } from '../../../core/electron/mappy-reporter';
 
 @Component({
   selector: 'app-mappy-overlay',
@@ -15,28 +15,37 @@ import { MappyReporterState, NpcEntry, ObjEntry } from '../../../core/electron/m
 })
 export class MappyOverlayComponent implements OnInit {
 
-  scale = 1.5;
+  scale = 1;
   pan: Vector2 = { x: -1024, y: -1024 };
   editedPan = { x: 0, y: 0 };
+  showDebugBox = true;
 
-  playerMarkerSize: Vector2 = {
-    x: 300,
-    y: 300
-  };
-
-  bnpcMarkerSize: Vector2 = {
-    x: 32,
-    y: 32
-  };
-
-  objMarkerSize: Vector2 = {
-    x: 32,
-    y: 32
+  markerSizes = {
+    player: {
+      x: 300,
+      y: 300
+    },
+    bnpc: {
+      x: 32,
+      y: 32
+    },
+    aetheryte: {
+      x: 32,
+      y: 32
+    },
+    enpc: {
+      x: 32,
+      y: 32
+    },
+    obj: {
+      x: 32,
+      y: 32
+    }
   };
 
   windowSize: Vector2;
 
-  trackPlayer = false;
+  trackPlayer = true;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 
@@ -44,6 +53,7 @@ export class MappyOverlayComponent implements OnInit {
     tap(state => {
       if (this.trackPlayer && state.player) {
         this.editedPan = { x: 0, y: 0 };
+        this.scale = 1;
         this.pan = {
           x: (-1 * state.player.x * 2048 / 100) + this.windowSize.x / 2,
           y: (-1 * state.player.y * 2048 / 100) + this.windowSize.y / 2
@@ -103,12 +113,8 @@ export class MappyOverlayComponent implements OnInit {
     }
   }
 
-  trackByNpc(index: number, entry: NpcEntry): string {
-    return `${entry.nameId} ${entry.baseId}`;
-  }
-
-  trackByObj(index: number, entry: ObjEntry): string {
-    return `${entry.id} ${entry.kind}`;
+  trackByUid(index: number, entry: MappyMarker): string {
+    return entry.uniqId;
   }
 
   trackBySnap(index: number): number {

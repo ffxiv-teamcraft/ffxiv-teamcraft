@@ -5,28 +5,36 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { combineLatest } from 'rxjs';
 import { Vector2 } from '../tools/vector2';
-import { distinctUntilChanged, tap } from 'rxjs/operators';
+import { distinctUntilChanged, tap, filter } from 'rxjs/operators';
 import { MapData } from '../../modules/map/map-data';
 import { MapService } from '../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../pipes/pipes/node-type-icon.pipe';
+import { Aetheryte } from '../data/aetheryte';
+import { Npc } from '../../pages/db/model/npc/npc';
 
 export interface MappyMarker {
   position: Vector2;
   displayPosition: Vector2;
   uniqId: string;
+  fromGameData?: boolean;
 }
 
-export interface NpcEntry extends MappyMarker {
+export interface BNpcEntry extends MappyMarker {
   nameId: number;
   baseId: number;
   level: number;
   HP: number;
+  fateId: number;
 }
 
 export interface ObjEntry extends MappyMarker {
   id: number;
   kind: number;
   icon?: string;
+}
+
+export interface GameDataEntry<T> extends MappyMarker {
+  data: T;
 }
 
 export interface MappyReporterState {
@@ -36,8 +44,10 @@ export interface MappyReporterState {
   playerCoords: Vector2;
   player: Vector2;
   playerRotationTransform: string;
-  bnpcs: NpcEntry[];
+  bnpcs: BNpcEntry[];
   objs: ObjEntry[];
+  aetherytes: GameDataEntry<Aetheryte>[];
+  enpcs: GameDataEntry<Npc>[];
   trail: Vector2[];
   debug: any;
 }
@@ -130,7 +140,8 @@ export class MappyReporterService {
             displayPosition: this.getPosition(position),
             uniqId: uniqId,
             level: packet.level,
-            HP: packet.hPMax
+            HP: packet.hPMax,
+            fateId: packet.fateID
           }
         ]
       });
@@ -144,7 +155,7 @@ export class MappyReporterService {
       };
       const coords = this.getCoords(position, true);
       const uniqId = `${packet.objId}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
-      if (this.state.objs.some(row => row.uniqId === uniqId)) {
+      if (this.state.objs.some(row => row.uniqId === uniqId) || packet.objKind !== 6) {
         return;
       }
       const obj: ObjEntry = {
@@ -152,11 +163,9 @@ export class MappyReporterService {
         kind: packet.objKind,
         position: position,
         displayPosition: this.getPosition(position),
-        uniqId: uniqId
+        uniqId: uniqId,
+        icon: this.getNodeIcon(packet.objId)
       };
-      if (obj.kind === 6) {
-        obj.icon = this.getNodeIcon(obj.id);
-      }
       this.setState({
         objs: [
           ...this.state.objs,
@@ -166,13 +175,41 @@ export class MappyReporterService {
     });
 
     // Reset some stuff on map change
-    this.eorzeaFacade.mapId$.pipe(
-      distinctUntilChanged()
-    ).subscribe(() => this.setState({
-      bnpcs: [],
-      objs: [],
-      trail: []
-    }));
+    combineLatest([this.eorzeaFacade.mapId$, this.lazyData.data$]).pipe(
+      distinctUntilChanged((a, b) => a[0] === b[0])
+    ).subscribe(([mapId, data]) => {
+      const enpcs = Object.keys(data.npcs).map(key => data.npcs[key]).filter(npc => npc.position && npc.position.map === mapId);
+      const aetherytes = Object.keys(data.aetherytes).map(key => data.aetherytes[key]).filter(aetheryte => aetheryte.map === mapId);
+      this.setState({
+        bnpcs: [],
+        objs: [],
+        trail: [],
+        enpcs: enpcs.map(row => {
+          return {
+            uniqId: row.en,
+            fromGameData: true,
+            position: row.position,
+            data: row,
+            displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], row.position)
+          };
+        }),
+        aetherytes: aetherytes.map(row => {
+          return {
+            uniqId: row.id.toString(),
+            fromGameData: true,
+            position: {
+              x: row.x,
+              y: row.y
+            },
+            data: row,
+            displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], {
+              x: row.x,
+              y: row.y
+            })
+          };
+        })
+      });
+    });
   }
 
   getNodeIcon(gatheringPointBaseId: number): string {

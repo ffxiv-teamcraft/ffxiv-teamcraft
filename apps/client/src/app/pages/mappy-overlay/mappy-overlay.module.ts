@@ -15,6 +15,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { NgZorroAntdModule, NzToolTipModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MapModule } from '../../modules/map/map.module';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -42,7 +43,8 @@ const routes: Routes = [
     MapModule,
 
     NgZorroAntdModule,
-    OverlayContainerModule
+    OverlayContainerModule,
+    FormsModule
   ],
   declarations: [MappyOverlayComponent]
 })
