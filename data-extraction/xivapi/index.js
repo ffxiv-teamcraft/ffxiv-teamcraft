@@ -38,9 +38,15 @@ function getCoords(coords, mapData) {
     y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1)
   };
   if (coords.z) {
-    res.z = (41.0 / c) * ((coords.z * c) / 2048.0);
+    res.z = (41.0 / c) * ((coords.z * c) / 2048.0) + 1;
   }
   return res;
+}
+
+function isInLayerBounds(point, layer) {
+  return (point.x >= layer.x.min && point.x <= layer.x.max)
+    && (point.y >= layer.y.min && point.y <= layer.y.max)
+    && (point.z >= layer.z.min && point.z <= layer.z.max);
 }
 
 function hasTodo(operation, specific = false) {
@@ -779,7 +785,7 @@ if (hasTodo('aetherstream')) {
 
 if (hasTodo('maps')) {
   const maps = {};
-  getAllPages('https://xivapi.com/Map?columns=ID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID').subscribe(page => {
+  getAllPages('https://xivapi.com/Map?columns=ID,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID').subscribe(page => {
     page.Results.forEach(mapData => {
       maps[mapData.ID] = {
         id: mapData.ID,
@@ -789,10 +795,12 @@ if (hasTodo('maps')) {
         offset_y: mapData.OffsetY,
         map_marker_range: mapData.MapMarkerRange,
         placename_id: mapData.PlaceNameTargetID,
+        placename_sub_id: mapData.PlaceNameSubTargetID,
         region_id: mapData.PlaceNameRegionTargetID,
         zone_id: mapData.PlaceNameSubTargetID,
         size_factor: mapData.SizeFactor,
-        territory_id: mapData.TerritoryTypeTargetID
+        territory_id: mapData.TerritoryTypeTargetID,
+        index: mapData.MapIndex
       };
     });
   }, null, () => {
@@ -890,11 +898,48 @@ if (hasTodo('LGB', true)) {
   const mapData = require('../../apps/client/src/assets/data/maps.json');
   const fates = require('../../apps/client/src/assets/data/fates.json');
   const npcs = require('../../apps/client/src/assets/data/npcs.json');
-  const mapRanges = {};
+  const territoryLayers = require('../../apps/client/src/assets/data/territory-layers.json');
+  const places = require('../../apps/client/src/assets/data/places.json');
   const lgbFolder = './input/lgb';
 
   const aetherytes = [];
 
+  // First things first, let's build the list of territories with multiple maps included.
+  Object.values(mapData).forEach(map => {
+    if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
+      return entry.mapId === map.id;
+    }))
+      territoryLayers[map.territory_id] = [
+        ...(territoryLayers[map.territory_id] || []),
+        {
+          mapId: map.id,
+          index: map.index,
+          placeNameId: map.placename_sub_id,
+          bounds: {
+            x: {
+              min: 0,
+              max: 0
+            },
+            y: {
+              min: 0,
+              max: 0
+            },
+            z: {
+              min: 0,
+              max: 0
+            }
+          }
+        }
+      ].sort((a, b) => a.index - b.index);
+  });
+  // Removing territories with only one map from the layers list.
+  Object.keys(territoryLayers).forEach(key => {
+    if (territoryLayers[key].length === 1) {
+      delete territoryLayers[key];
+    }
+  });
+
+  // Then, let's work on lgb files
   combineLatest([
     aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes'),
     aggregateAllPages('https://xivapi.com/HousingAethernet?columns=ID,LevelTargetID,TerritoryType.MapTargetID,PlaceNameTargetID', null, 'LGB Housing Aetherytes')
@@ -906,18 +951,36 @@ if (hasTodo('LGB', true)) {
         const split = filename.split('_');
         const mapKey = split[0];
         const mapId = Object.keys(mapData).find(key => mapData[key].image.indexOf(mapKey) > -1);
+        if (!mapData[mapId]) {
+          return;
+        }
+        const territoryId = mapData[mapId].territory_id;
         return {
-          mapId: +mapId,
+          territoryId: +territoryId,
+          defaultMapId: +mapId,
           type: split[1].split('.')[0],
           filename: filename,
           content: JSON.parse(fs.readFileSync(path.join(__dirname, lgbFolder, filename), 'utf8'))
         };
-      });
+      }).filter(entry => entry);
 
       allLgbs.forEach(lgbEntry => {
         lgbEntry.content.forEach(lgbLayer => {
           lgbLayer.InstanceObjects.forEach(object => {
-            const mapEntry = mapData[lgbEntry.mapId.toString()];
+            let mapId = lgbEntry.defaultMapId;
+            if (territoryLayers[lgbEntry.territoryId]) {
+              const mapLayer = territoryLayers[lgbEntry.territoryId].find(layer => {
+                const localMapEntry = mapData[layer.mapId];
+                const localCoords = getCoords({
+                  x: object.Transform.Translation.x,
+                  y: object.Transform.Translation.z,
+                  z: object.Transform.Translation.y
+                }, localMapEntry);
+                return isInLayerBounds(localCoords, layer.bounds);
+              });
+              mapId = mapLayer ? mapLayer.mapId : lgbEntry.defaultMapId;
+            }
+            const mapEntry = mapData[mapId.toString()];
             if (!mapEntry) {
               return;
             }
@@ -929,30 +992,30 @@ if (hasTodo('LGB', true)) {
             if (coords.x < 0 || coords.y < 0) {
               return;
             }
-            const zoneId = mapData[lgbEntry.mapId.toString()].placename_id;
+            const zoneId = mapData[mapId.toString()].placename_id;
             switch (object.AssetType) {
               // ENpcResidents
               case 8:
                 const npc = npcs[object.Object.ParentData.ParentData.BaseId];
                 npc.position = {
                   zoneid: zoneId,
-                  map: lgbEntry.mapId,
+                  map: mapId,
                   ...coords
                 };
                 break;
               // Aetherytes
               case 40:
                 const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
-                    return aetheryte.MapTargetID === lgbEntry.mapId && aetheryte.Level0TargetID === object.InstanceID;
+                    return aetheryte.Level0TargetID === object.InstanceID;
                   })
                   || xivapiHousingAetherytes.find(aetheryte => {
-                    return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === lgbEntry.mapId && aetheryte.LevelTargetID === object.InstanceID;
+                    return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === mapId && aetheryte.LevelTargetID === object.InstanceID;
                   });
                 if (xivapiAetheryte) {
                   const aetheryteEntry = {
                     id: xivapiAetheryte.ID,
                     zoneid: zoneId,
-                    map: lgbEntry.mapId,
+                    map: mapId,
                     ...coords,
                     type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
                     nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
@@ -960,26 +1023,42 @@ if (hasTodo('LGB', true)) {
                   aetherytes.push(aetheryteEntry);
                 }
                 break;
-              // Map ranges (markers you go through to move from a zone to another)
+
+              // MapRanges
               case 43:
-                mapRanges[lgbEntry.mapId] = [
-                  ...(mapRanges[lgbEntry.mapId] || []),
-                  {
-                    position: coords,
-                    targetMap: object.Object.Map,
-                    targetPlaceName: object.Object.PlaceNameBlock,
-                    scale: {
-                      x: object.Transform.Scale.x,
-                      y: object.Transform.Scale.z,
-                      z: object.Transform.Scale.y
-                    },
-                    rotation: {
-                      x: object.Transform.Rotation.x,
-                      y: object.Transform.Rotation.z,
-                      z: object.Transform.Rotation.y
+                if (object.Object.Map) {
+                  const mapEntry = mapData[object.Object.Map];
+                  if (territoryLayers[mapEntry.territory_id]) {
+                    const mapLayer = territoryLayers[mapEntry.territory_id].find(layer => layer.mapId === object.Object.Map);
+                    const scaledPosition = getCoords({
+                      x: object.Transform.Translation.x,
+                      y: object.Transform.Translation.z,
+                      z: object.Transform.Translation.y
+                    }, mapEntry);
+                    const c = mapEntry.size_factor / 100;
+                    const xSize = (41.0 / c) * ((object.Transform.Scale.y * c) / 2048.0);
+                    const ySize = (41.0 / c) * ((object.Transform.Scale.z * c) / 2048.0);
+                    const zSize = (41.0 / c) * ((object.Transform.Scale.y * c) / 2048.0);
+                    if (mapLayer.bounds.x.min === 0 && mapLayer.bounds.x.max === 0) {
+                      mapLayer.bounds.x = {
+                        min: scaledPosition.x - xSize / 2,
+                        max: scaledPosition.x + xSize / 2
+                      };
+                    }
+                    if (mapLayer.bounds.y.min === 0 && mapLayer.bounds.y.max === 0) {
+                      mapLayer.bounds.y = {
+                        min: scaledPosition.y - ySize / 2,
+                        max: scaledPosition.y + ySize / 2
+                      };
+                    }
+                    if (mapLayer.bounds.z.min === 0 && mapLayer.bounds.z.max === 0) {
+                      mapLayer.bounds.z = {
+                        min: scaledPosition.z - zSize / 2,
+                        max: scaledPosition.z + zSize / 2
+                      };
                     }
                   }
-                ];
+                }
                 break;
               // FATEs
               case 49:
@@ -1000,7 +1079,7 @@ if (hasTodo('LGB', true)) {
       persistToJsonAsset('aetherytes', aetherytes);
       persistToJsonAsset('fates', fates);
       persistToJsonAsset('npcs', npcs);
-      persistToJsonAsset('map-ranges', mapRanges);
+      persistToJsonAsset('territory-layers', territoryLayers);
     });
 }
 

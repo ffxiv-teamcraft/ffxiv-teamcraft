@@ -55,6 +55,7 @@ export interface LazyData {
   shops: any;
   stackSizes: any;
   statuses: any;
+  territoryLayers: any;
   traits: any;
   tribes: any;
   ventures: any;

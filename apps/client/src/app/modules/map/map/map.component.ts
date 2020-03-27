@@ -33,7 +33,7 @@ export class MapComponent implements OnInit {
   @Input()
   hideDbButton = false;
 
-  mapData: Observable<MapData>;
+  mapData$: Observable<MapData>;
 
   position: Vector2 = { x: 0, y: 0 };
 
@@ -44,7 +44,7 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mapData = this.mapId$.pipe(
+    this.mapData$ = this.mapId$.pipe(
       switchMap(mapId => {
         return this.mapService.getMapById(mapId);
       })
@@ -64,6 +64,15 @@ export class MapComponent implements OnInit {
       'margin-left': `-${marker.size.x / 2}px`,
       'z-index': marker.zIndex || 5,
       ...(marker.additionalStyle || {})
+    };
+  }
+
+  getMapRangeStyle(map: MapData, mapRange: any): any {
+    const positionPercents = this.mapService.getPositionOnMap(map, mapRange.position);
+    return {
+      top: `${positionPercents.y}%`,
+      left: `${positionPercents.x}%`,
+      'z-index': 10
     };
   }
 

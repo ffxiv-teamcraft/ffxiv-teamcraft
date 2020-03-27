@@ -3,14 +3,14 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../+state/auth.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
-import { combineLatest } from 'rxjs';
 import { Vector2 } from '../tools/vector2';
-import { distinctUntilChanged, tap, filter } from 'rxjs/operators';
+import { filter, tap } from 'rxjs/operators';
 import { MapData } from '../../modules/map/map-data';
 import { MapService } from '../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../pipes/pipes/node-type-icon.pipe';
 import { Aetheryte } from '../data/aetheryte';
 import { Npc } from '../../pages/db/model/npc/npc';
+import { Vector3 } from '../tools/vector3';
 
 export interface MappyMarker {
   position: Vector2;
@@ -41,7 +41,7 @@ export interface MappyReporterState {
   mapId: number;
   map: MapData;
   zoneId: number;
-  playerCoords: Vector2;
+  playerCoords: Vector3;
   player: Vector2;
   playerRotationTransform: string;
   bnpcs: BNpcEntry[];
@@ -68,22 +68,15 @@ export class MappyReporterService {
         this.ipc.send('mappy-state:set', this.state);
         this.dirty = false;
       }
-    }, 100);
+    }, 10);
   }
 
   public start(): void {
     // TODO check permission to run mappy
 
-    // Player tracking
-    combineLatest([
-      this.eorzeaFacade.mapId$,
-      this.eorzeaFacade.zoneId$
-    ]).subscribe(([mapId, zoneId]) => {
-      this.setState({
-        mapId: mapId,
-        zoneId: zoneId,
-        map: this.lazyData.data.maps[mapId]
-      });
+    // Base map tracker
+    this.eorzeaFacade.mapId$.subscribe((mapId) => {
+      this.setMap(mapId);
     });
 
 
@@ -105,17 +98,33 @@ export class MappyReporterService {
       .subscribe(position => {
         const pos = {
           x: position.pos.x,
-          y: position.pos.z
+          y: position.pos.z,
+          z: position.pos.y
         };
+        const playerCoords = this.getCoords(pos, true);
+        let mapId = this.state.mapId;
+        const possibleLayers = this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id];
+        if (possibleLayers) {
+          const currentLayer = possibleLayers.find(layer => {
+            return playerCoords.z >= layer.minZ && playerCoords.z <= layer.maxZ;
+          });
+          mapId = currentLayer ? currentLayer.mapId : this.state.mapId;
+        }
+        if (mapId !== this.state.mapId) {
+          this.setMap(mapId);
+        }
+
         this.setState({
-          playerCoords: this.getCoords(pos, true),
+          playerCoords: playerCoords,
           player: this.getPosition(pos),
           playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`
         });
       });
 
     // Monsters
-    this.ipc.npcSpawnPackets$.subscribe(packet => {
+    this.ipc.npcSpawnPackets$.pipe(
+      filter(() => this.state !== undefined)
+    ).subscribe(packet => {
       if (packet.displayFlags === 262184) {
         return;
       }
@@ -129,7 +138,6 @@ export class MappyReporterService {
         return;
       }
 
-      // TODO filter out pets and chocobos
       this.setState({
         bnpcs: [
           ...this.state.bnpcs,
@@ -148,10 +156,13 @@ export class MappyReporterService {
     });
 
     // Objects
-    this.ipc.objectSpawnPackets$.subscribe(packet => {
+    this.ipc.objectSpawnPackets$.pipe(
+      filter(() => this.state !== undefined)
+    ).subscribe(packet => {
       const position = {
         x: packet.position.x,
-        y: packet.position.z
+        y: packet.position.z,
+        z: packet.position.y
       };
       const coords = this.getCoords(position, true);
       const uniqId = `${packet.objId}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
@@ -173,42 +184,47 @@ export class MappyReporterService {
         ]
       });
     });
+  }
 
-    // Reset some stuff on map change
-    combineLatest([this.eorzeaFacade.mapId$, this.lazyData.data$]).pipe(
-      distinctUntilChanged((a, b) => a[0] === b[0])
-    ).subscribe(([mapId, data]) => {
-      const enpcs = Object.keys(data.npcs).map(key => data.npcs[key]).filter(npc => npc.position && npc.position.map === mapId);
-      const aetherytes = Object.keys(data.aetherytes).map(key => data.aetherytes[key]).filter(aetheryte => aetheryte.map === mapId);
-      this.setState({
-        bnpcs: [],
-        objs: [],
-        trail: [],
-        enpcs: enpcs.map(row => {
-          return {
-            uniqId: row.en,
-            fromGameData: true,
-            position: row.position,
-            data: row,
-            displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], row.position)
-          };
-        }),
-        aetherytes: aetherytes.map(row => {
-          return {
-            uniqId: row.id.toString(),
-            fromGameData: true,
-            position: {
-              x: row.x,
-              y: row.y
-            },
-            data: row,
-            displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], {
-              x: row.x,
-              y: row.y
-            })
-          };
-        })
-      });
+  private setMap(mapId: number): void {
+    console.log('SET MAP', mapId);
+    if (!mapId) {
+      return;
+    }
+    const data = this.lazyData.data;
+    const enpcs = Object.keys(data.npcs).map(key => data.npcs[key]).filter(npc => npc.position && npc.position.map === mapId);
+    const aetherytes = Object.keys(data.aetherytes).map(key => data.aetherytes[key]).filter(aetheryte => aetheryte.map === mapId);
+    this.setState({
+      mapId: mapId,
+      zoneId: this.lazyData.data.maps[mapId].placename_id,
+      map: this.lazyData.data.maps[mapId],
+      bnpcs: [],
+      objs: [],
+      trail: [],
+      enpcs: enpcs.map(row => {
+        return {
+          uniqId: row.en,
+          fromGameData: true,
+          position: row.position,
+          data: row,
+          displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], row.position)
+        };
+      }),
+      aetherytes: aetherytes.map(row => {
+        return {
+          uniqId: row.id.toString(),
+          fromGameData: true,
+          position: {
+            x: row.x,
+            y: row.y
+          },
+          data: row,
+          displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], {
+            x: row.x,
+            y: row.y
+          })
+        };
+      })
     });
   }
 
@@ -221,20 +237,26 @@ export class MappyReporterService {
     return NodeTypeIconPipe.icons[node.type];
   }
 
-  public getCoords(coords: Vector2, centered: boolean): Vector2 {
-    if (this.state.map === undefined) {
+  public getCoords(coords: Vector2 | Vector3, centered: boolean): Vector3 {
+    if (!(this.state && this.state.map)) {
       return {
         x: 0,
-        y: 0
+        y: 0,
+        z: 0
       };
     }
     const c = this.state.map.size_factor / 100;
     const x = (coords.x + this.state.map.offset_x) * c;
     const y = (coords.y + this.state.map.offset_y) * c;
-    return {
+    const res = {
       x: (41 / c) * ((x + (centered ? 1024 : 0)) / 2048) + 1,
-      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1
+      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1,
+      z: 0
     };
+    if ((<Vector3>coords).z) {
+      res.z = (41.0 / c) * (((<Vector3>coords).z * c) / 2048) + 1;
+    }
+    return res;
   }
 
   public getPosition(coords: Vector2, centered = true): Vector2 {

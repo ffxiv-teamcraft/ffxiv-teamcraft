@@ -75,8 +75,7 @@
           {{display.zoneId | placeName | i18n}}<br>
           X: {{display.playerCoords.x | number:'1.1-1'}}<br>
           Y: {{display.playerCoords.y | number:'1.1-1'}}<br>
-          Objs: {{display.objs.length}}<br>
-          BNPCs: {{display.bnpcs.length}}<br>
+          Z: {{display.playerCoords.z | number:'1.1-1'}}<br>
           <label nz-checkbox [(ngModel)]="trackPlayer">Follow player</label>
         </div>
         <div class="debug-toggle">
