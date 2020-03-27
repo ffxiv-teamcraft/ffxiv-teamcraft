@@ -106,7 +106,9 @@ export class MappyReporterService {
         const possibleLayers = this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id];
         if (possibleLayers) {
           const currentLayer = possibleLayers.find(layer => {
-            return playerCoords.z >= layer.minZ && playerCoords.z <= layer.maxZ;
+            return (playerCoords.x >= layer.x.min && playerCoords.x <= layer.x.max)
+              && (playerCoords.y >= layer.y.min && playerCoords.y <= layer.y.max)
+              && (playerCoords.z >= layer.z.min && playerCoords.z <= layer.z.max);
           });
           mapId = currentLayer ? currentLayer.mapId : this.state.mapId;
         }
