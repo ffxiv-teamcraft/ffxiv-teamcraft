@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.20"></a>
+## [7.0.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.19...v7.0.20) (2020-03-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed missing alarm map ids on several alarms ([b005143](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b005143))
+* **data:** added all the missing aetherytes ([79339f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79339f4))
+* **inventory:** fixed inventory name display in list details ([eb5522e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb5522e))
+* **layout:** fixed end items zone breakdown ([22eba70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22eba70))
+* **log-tracker:** removed NaN position markers ([7391991](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7391991))
+* **simulator:** fixed an issue with foods reset when applying stats on unsaved rotation ([f84b0ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f84b0ed))
+
+
+### Features
+
+* **core:** update server names for cn ([8a7e2ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a7e2ec))
+* **db:** support for korean v5.1 update ([32c448d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32c448d))
+* **desktop:** packet capture support for korean 5.1 ([941b831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/941b831))
+* **simulator:** support for korean v5.1 update ([99c361c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99c361c))
+
+
+
 <a name="7.0.19"></a>
 ## [7.0.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.18...v7.0.19) (2020-03-22)
 

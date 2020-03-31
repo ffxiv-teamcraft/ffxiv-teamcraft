@@ -6,7 +6,7 @@ import { DataType } from '../../modules/list/data/data-type';
 
 export class ZoneBreakdown {
 
-  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false) {
+  constructor(rows: ListRow[], filterChain?: string, hideZoneDuplicates = false, private finalItems = false) {
     rows.forEach(row => {
       if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
@@ -50,9 +50,12 @@ export class ZoneBreakdown {
   }
 
   private hasOneFilter(chain: string, ...filters: LayoutRowFilter[]): boolean {
-    return chain.indexOf('ANYTHING') > -1 || filters.reduce((match, f) => {
-      return match || chain.indexOf(f.name) > -1;
-    }, false);
+    if (this.finalItems) {
+      return true;
+    }
+    return chain.indexOf('ANYTHING') > -1 || filters.some((f) => {
+      return chain.indexOf(f.name) > -1;
+    });
   }
 
   /**
