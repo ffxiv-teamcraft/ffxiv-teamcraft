@@ -122,7 +122,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.35.19"
+    "node-machina-ffxiv": "^2.35.27"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^8.4.1",

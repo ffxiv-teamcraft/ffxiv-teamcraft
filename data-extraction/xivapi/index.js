@@ -33,20 +33,16 @@ function getCoords(coords, mapData) {
   const c = mapData.size_factor / 100;
   const x = (coords.x + mapData.offset_x) * c;
   const y = (coords.y + mapData.offset_y) * c;
-  const res = {
+  return {
     x: ((41.0 / c) * ((x + 1024.0) / 2048.0) + 1),
-    y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1)
+    y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1),
+    z: Math.floor((coords.z - mapData.offset_z)) / 100
   };
-  if (coords.z) {
-    res.z = (41.0 / c) * ((coords.z * c) / 2048.0) + 1;
-  }
-  return res;
 }
 
-function isInLayerBounds(point, layer) {
-  return (point.x >= layer.x.min && point.x <= layer.x.max)
-    && (point.y >= layer.y.min && point.y <= layer.y.max)
-    && (point.z >= layer.z.min && point.z <= layer.z.max);
+function isInLayerBounds(point, bounds) {
+  // Only checking Z axis for now (which is Y using ingame naming) because bounding boxes are far from being accurate on X and Y axis, due to how map ranges work.
+  return (point.z >= bounds.z.min && point.z <= bounds.z.max);
 }
 
 function hasTodo(operation, specific = false) {
@@ -785,14 +781,21 @@ if (hasTodo('aetherstream')) {
 
 if (hasTodo('maps')) {
   const maps = {};
-  getAllPages('https://xivapi.com/Map?columns=ID,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID').subscribe(page => {
-    page.Results.forEach(mapData => {
+  combineLatest([
+    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
+    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ', null, 'LGB Territories')
+  ]).subscribe(([xivapiMaps, territories]) => {
+    xivapiMaps.forEach(mapData => {
+      const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
+      const offsetZ = territory && +territory.OffsetZ;
       maps[mapData.ID] = {
         id: mapData.ID,
         hierarchy: mapData.Hierarchy,
+        priority_ui: mapData.PriorityUI,
         image: `https://xivapi.com${mapData.MapFilename}`,
-        offset_x: mapData.OffsetX,
-        offset_y: mapData.OffsetY,
+        offset_x: +mapData.OffsetX,
+        offset_y: +mapData.OffsetY,
+        offset_z: offsetZ === -10000 ? 0 : offsetZ,
         map_marker_range: mapData.MapMarkerRange,
         placename_id: mapData.PlaceNameTargetID,
         placename_sub_id: mapData.PlaceNameSubTargetID,
@@ -905,39 +908,64 @@ if (hasTodo('LGB', true)) {
   const aetherytes = [];
 
   // First things first, let's build the list of territories with multiple maps included.
-  Object.values(mapData).forEach(map => {
-    if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
-      return entry.mapId === map.id;
-    }))
-      territoryLayers[map.territory_id] = [
-        ...(territoryLayers[map.territory_id] || []),
-        {
-          mapId: map.id,
-          index: map.index,
-          placeNameId: map.placename_sub_id,
-          bounds: {
-            x: {
-              min: 0,
-              max: 0
-            },
-            y: {
-              min: 0,
-              max: 0
-            },
-            z: {
-              min: 0,
-              max: 0
+  Object.values(mapData)
+    .filter(map => map.priority_ui > 0)
+    .forEach(map => {
+      if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
+        return map.priority_ui > 0 && entry.mapId === map.id;
+      })) {
+        territoryLayers[map.territory_id] = [
+          ...(territoryLayers[map.territory_id] || []),
+          {
+            mapId: map.id,
+            index: map.index,
+            placeNameId: map.placename_sub_id,
+            bounds: {
+              x: {
+                min: 0,
+                max: 0
+              },
+              y: {
+                min: 0,
+                max: 0
+              },
+              z: {
+                min: 0,
+                max: 0
+              }
             }
           }
-        }
-      ].sort((a, b) => a.index - b.index);
-  });
+        ].sort((a, b) => a.index - b.index);
+      }
+    });
   // Removing territories with only one map from the layers list.
   Object.keys(territoryLayers).forEach(key => {
     if (territoryLayers[key].length === 1) {
       delete territoryLayers[key];
     }
   });
+
+  const todoTerritories = Object.keys(territoryLayers)
+    .filter(key => {
+      const layers = territoryLayers[key].filter(layer => !layer.ignored);
+      return +key > 0
+        && layers.length > 0
+        && layers.some(layer => {
+          return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
+            && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
+            && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
+        });
+    })
+    .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
+    .map(key => {
+      return territoryLayers[key].reduce((acc, layer) => {
+        return `${acc}
+    - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
+      }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
+    })
+    .join('\n');
+
+  fs.writeFileSync('./TODO.md', todoTerritories);
 
   // Then, let's work on lgb files
   combineLatest([
@@ -1024,42 +1052,45 @@ if (hasTodo('LGB', true)) {
                 }
                 break;
 
-              // MapRanges
-              case 43:
-                if (object.Object.Map) {
-                  const mapEntry = mapData[object.Object.Map];
-                  if (territoryLayers[mapEntry.territory_id]) {
-                    const mapLayer = territoryLayers[mapEntry.territory_id].find(layer => layer.mapId === object.Object.Map);
-                    const scaledPosition = getCoords({
-                      x: object.Transform.Translation.x,
-                      y: object.Transform.Translation.z,
-                      z: object.Transform.Translation.y
-                    }, mapEntry);
-                    const c = mapEntry.size_factor / 100;
-                    const xSize = (41.0 / c) * ((object.Transform.Scale.y * c) / 2048.0);
-                    const ySize = (41.0 / c) * ((object.Transform.Scale.z * c) / 2048.0);
-                    const zSize = (41.0 / c) * ((object.Transform.Scale.y * c) / 2048.0);
-                    if (mapLayer.bounds.x.min === 0 && mapLayer.bounds.x.max === 0) {
-                      mapLayer.bounds.x = {
-                        min: scaledPosition.x - xSize / 2,
-                        max: scaledPosition.x + xSize / 2
-                      };
-                    }
-                    if (mapLayer.bounds.y.min === 0 && mapLayer.bounds.y.max === 0) {
-                      mapLayer.bounds.y = {
-                        min: scaledPosition.y - ySize / 2,
-                        max: scaledPosition.y + ySize / 2
-                      };
-                    }
-                    if (mapLayer.bounds.z.min === 0 && mapLayer.bounds.z.max === 0) {
-                      mapLayer.bounds.z = {
-                        min: scaledPosition.z - zSize / 2,
-                        max: scaledPosition.z + zSize / 2
-                      };
-                    }
-                  }
-                }
-                break;
+              // MapRanges, used to automatically detect thresholds for each map in a given territory.
+              // case 43:
+              //   if (object.Object.Map) {
+              //     const mapEntry = mapData[object.Object.Map];
+              //     if (territoryLayers[mapEntry.territory_id]) {
+              //       const mapLayer = territoryLayers[mapEntry.territory_id].find(layer => layer.mapId === object.Object.Map);
+              //       if (!mapLayer) {
+              //         break;
+              //       }
+              //       const scaledPosition = getCoords({
+              //         x: object.Transform.Translation.x,
+              //         y: object.Transform.Translation.z,
+              //         z: object.Transform.Translation.y
+              //       }, mapEntry);
+              //       const c = mapEntry.size_factor / 100;
+              //       const xSize = (41.0 / c) * ((object.Transform.Scale.x * c) / 2048.0);
+              //       const ySize = (41.0 / c) * ((object.Transform.Scale.z * c) / 2048.0);
+              //       const zSize = object.Transform.Scale.y / 100;
+              //       if (mapLayer.bounds.x.min === 0 && mapLayer.bounds.x.max === 0) {
+              //         mapLayer.bounds.x = {
+              //           min: scaledPosition.x - xSize / 2,
+              //           max: scaledPosition.x + xSize / 2
+              //         };
+              //       }
+              //       if (mapLayer.bounds.y.min === 0 && mapLayer.bounds.y.max === 0) {
+              //         mapLayer.bounds.y = {
+              //           min: scaledPosition.y - ySize / 2,
+              //           max: scaledPosition.y + ySize / 2
+              //         };
+              //       }
+              //       if (mapLayer.bounds.z.min === 0 && mapLayer.bounds.z.max === 0) {
+              //         mapLayer.bounds.z = {
+              //           min: scaledPosition.z - zSize / 2,
+              //           max: scaledPosition.z + zSize / 2
+              //         };
+              //       }
+              //     }
+              //   }
+              //   break;
               // FATEs
               case 49:
                 const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
@@ -1067,6 +1098,7 @@ if (hasTodo('LGB', true)) {
                   return;
                 }
                 fates[fateId].position = {
+                  map: mapId,
                   zoneid: zoneId,
                   ...coords
                 };

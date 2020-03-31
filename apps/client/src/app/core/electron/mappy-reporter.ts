@@ -5,15 +5,19 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { Vector2 } from '../tools/vector2';
 import { filter, tap } from 'rxjs/operators';
+import { merge } from 'rxjs';
 import { MapData } from '../../modules/map/map-data';
 import { MapService } from '../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../pipes/pipes/node-type-icon.pipe';
 import { Aetheryte } from '../data/aetheryte';
 import { Npc } from '../../pages/db/model/npc/npc';
 import { Vector3 } from '../tools/vector3';
+import { TerritoryLayer } from '../data/model/territory-layer';
+import { uniqBy } from 'lodash';
 
 export interface MappyMarker {
-  position: Vector2;
+  position: Vector3;
+  ingameCoords: Vector3;
   displayPosition: Vector2;
   uniqId: string;
   fromGameData?: boolean;
@@ -40,12 +44,17 @@ export interface GameDataEntry<T> extends MappyMarker {
 export interface MappyReporterState {
   mapId: number;
   map: MapData;
+  layersNotConfigured: boolean;
+  territoryMaps: { mapId: number, subZoneId: number }[];
   zoneId: number;
+  subZoneId: number;
   playerCoords: Vector3;
   player: Vector2;
   playerRotationTransform: string;
   bnpcs: BNpcEntry[];
+  outOfBoundsBnpcs: BNpcEntry[];
   objs: ObjEntry[];
+  outOfBoundsObjs: ObjEntry[];
   aetherytes: GameDataEntry<Aetheryte>[];
   enpcs: GameDataEntry<Npc>[];
   trail: Vector2[];
@@ -57,7 +66,25 @@ export interface MappyReporterState {
 })
 export class MappyReporterService {
 
-  private state: MappyReporterState;
+  private state: MappyReporterState = {
+    aetherytes: [],
+    bnpcs: [],
+    debug: undefined,
+    enpcs: [],
+    map: undefined,
+    layersNotConfigured: false,
+    territoryMaps: [],
+    mapId: 0,
+    objs: [],
+    outOfBoundsBnpcs: [],
+    outOfBoundsObjs: [],
+    player: undefined,
+    playerCoords: undefined,
+    playerRotationTransform: '',
+    subZoneId: 0,
+    trail: [],
+    zoneId: 0
+  };
 
   private dirty = false;
 
@@ -71,90 +98,155 @@ export class MappyReporterService {
     }, 10);
   }
 
+  private isInLayer(coords: Vector3, layerBounds: Vector3<{ min: number, max: number }>): boolean {
+    let matches = true;
+    if (layerBounds.z.min || layerBounds.z.max) {
+      matches = matches && (coords.z >= layerBounds.z.min && coords.z <= layerBounds.z.max);
+    }
+    if (layerBounds.y.min || layerBounds.y.max) {
+      matches = matches && (coords.y >= layerBounds.y.min && coords.y <= layerBounds.y.max);
+    }
+    if (layerBounds.x.min || layerBounds.x.max) {
+      matches = matches && (coords.x >= layerBounds.x.min && coords.x <= layerBounds.x.max);
+    }
+    return matches
+  }
+
   public start(): void {
     // TODO check permission to run mappy
 
     // Base map tracker
     this.eorzeaFacade.mapId$.subscribe((mapId) => {
-      this.setMap(mapId);
+      this.setMap(mapId, true);
     });
 
 
     let positionTicks = 0;
-    this.ipc.updatePositionHandlerPackets$
-      .pipe(
-        tap(() => {
-          positionTicks++;
-          if (positionTicks % 50 === 0) {
-            this.setState({
-              trail: [
-                ...this.state.trail,
-                { ...this.state.player }
-              ]
-            });
-          }
-        })
-      )
-      .subscribe(position => {
-        const pos = {
-          x: position.pos.x,
-          y: position.pos.z,
-          z: position.pos.y
-        };
-        const playerCoords = this.getCoords(pos, true);
-        let mapId = this.state.mapId;
-        const possibleLayers = this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id];
-        if (possibleLayers) {
-          const currentLayer = possibleLayers.find(layer => {
-            return (playerCoords.x >= layer.x.min && playerCoords.x <= layer.x.max)
-              && (playerCoords.y >= layer.y.min && playerCoords.y <= layer.y.max)
-              && (playerCoords.z >= layer.z.min && playerCoords.z <= layer.z.max);
+    merge(
+      this.ipc.updatePositionHandlerPackets$,
+      this.ipc.updatePositionInstancePackets$,
+      this.ipc.initZonePackets$
+    ).pipe(
+      filter(() => {
+        return !!this.state.mapId;
+      }),
+      tap((p) => {
+        positionTicks++;
+        if (positionTicks % 50 === 0) {
+          this.setState({
+            trail: [
+              ...this.state.trail,
+              { ...this.state.player }
+            ]
           });
-          mapId = currentLayer ? currentLayer.mapId : this.state.mapId;
         }
-        if (mapId !== this.state.mapId) {
-          this.setMap(mapId);
-        }
-
-        this.setState({
-          playerCoords: playerCoords,
-          player: this.getPosition(pos),
-          playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`
+      })
+    ).subscribe(position => {
+      const pos = {
+        x: position.pos.x,
+        y: position.pos.z,
+        z: position.pos.y
+      };
+      const playerCoords = this.getCoords(pos);
+      let mapId = this.state.mapId;
+      const possibleLayers = (this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id] || []).filter(layer => !layer.ignored);
+      if (possibleLayers.length > 0) {
+        const currentLayer = possibleLayers.length === 1 ? possibleLayers[0] : possibleLayers.find(layer => {
+          return this.isInLayer(playerCoords, layer.bounds);
         });
+        const hasUnconfiguredLayer = possibleLayers.length > 1 && possibleLayers.some(layer => {
+          return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
+            && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
+            && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
+        });
+        if (hasUnconfiguredLayer) {
+          this.setState({
+            layersNotConfigured: true,
+            territoryMaps: possibleLayers.map(layer => {
+              return {
+                mapId: layer.mapId,
+                subZoneId: this.lazyData.data.maps[layer.mapId].placename_sub_id || this.lazyData.data.maps[layer.mapId].placename_id
+              };
+            })
+          });
+        } else {
+          this.setState({
+            layersNotConfigured: false,
+            territoryMaps: possibleLayers.map(layer => {
+              return {
+                mapId: layer.mapId,
+                subZoneId: this.lazyData.data.maps[layer.mapId].placename_sub_id || this.lazyData.data.maps[layer.mapId].placename_id
+              };
+            })
+          });
+        }
+        mapId = currentLayer ? currentLayer.mapId : this.state.mapId;
+      } else {
+        this.setState({
+          layersNotConfigured: false
+        });
+      }
+
+      if (mapId !== this.state.mapId) {
+        this.setMap(mapId, false);
+      }
+
+      this.setState({
+        playerCoords: playerCoords,
+        player: this.getPosition(pos),
+        playerRotationTransform: `rotate(${(position.rotation - Math.PI) * -1}rad)`,
+        debug: {
+          currentLayer: this.getCurrentLayer()
+        }
       });
+    });
 
     // Monsters
-    this.ipc.npcSpawnPackets$.pipe(
-      filter(() => this.state !== undefined)
-    ).subscribe(packet => {
-      if (packet.displayFlags === 262184) {
+    this.ipc.npcSpawnPackets$.subscribe(packet => {
+      const isPet = packet.bNPCName >= 1398 && packet.bNPCName <= 1404;
+      const isChocobo = packet.bNPCName === 780;
+      if (isPet || isChocobo) {
         return;
       }
       const position = {
         x: packet.pos.x,
-        y: packet.pos.z
+        y: packet.pos.z,
+        z: packet.pos.z
       };
-      const coords = this.getCoords(position, true);
+      const coords = this.getCoords(position);
       const uniqId = `${packet.bNPCName}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
-      if (this.state.bnpcs.some(row => row.uniqId === uniqId)) {
+      if (this.state.bnpcs.some(row => row.uniqId === uniqId)
+        || this.state.outOfBoundsBnpcs.some(row => row.uniqId === uniqId)) {
         return;
       }
 
-      this.setState({
-        bnpcs: [
-          ...this.state.bnpcs,
-          {
-            nameId: packet.bNPCName,
-            baseId: packet.bNPCBase,
-            position: position,
-            displayPosition: this.getPosition(position),
-            uniqId: uniqId,
-            level: packet.level,
-            HP: packet.hPMax,
-            fateId: packet.fateID
-          }
-        ]
-      });
+      const newEntry: BNpcEntry = {
+        nameId: packet.bNPCName,
+        baseId: packet.bNPCBase,
+        position: position,
+        ingameCoords: coords,
+        displayPosition: this.getPosition(position),
+        uniqId: uniqId,
+        level: packet.level,
+        HP: packet.hPMax,
+        fateId: packet.fateID
+      };
+
+      if (this.isInLayer(coords, this.getCurrentLayer().bounds)) {
+        this.setState({
+          bnpcs: [
+            ...this.state.bnpcs,
+            newEntry
+          ]
+        });
+      } else {
+        this.setState({
+          outOfBoundsBnpcs: [
+            ...this.state.outOfBoundsBnpcs,
+            newEntry
+          ]
+        });
+      }
     });
 
     // Objects
@@ -166,48 +258,99 @@ export class MappyReporterService {
         y: packet.position.z,
         z: packet.position.y
       };
-      const coords = this.getCoords(position, true);
+      const coords = this.getCoords(position);
       const uniqId = `${packet.objId}-${Math.floor(coords.x / 2)}/${Math.floor(coords.y / 2)}`;
-      if (this.state.objs.some(row => row.uniqId === uniqId) || packet.objKind !== 6) {
+      if (this.state.objs.some(row => row.uniqId === uniqId)
+        || this.state.outOfBoundsObjs.some(row => row.uniqId === uniqId)
+        || packet.objKind !== 6) {
         return;
       }
       const obj: ObjEntry = {
         id: packet.objId,
         kind: packet.objKind,
         position: position,
+        ingameCoords: coords,
         displayPosition: this.getPosition(position),
         uniqId: uniqId,
         icon: this.getNodeIcon(packet.objId)
       };
-      this.setState({
-        objs: [
-          ...this.state.objs,
-          obj
-        ]
-      });
+
+      if (this.isInLayer(coords, this.getCurrentLayer().bounds)) {
+        this.setState({
+          objs: [
+            ...this.state.objs,
+            obj
+          ]
+        });
+      } else {
+        this.setState({
+          outOfBoundsObjs: [
+            ...this.state.outOfBoundsObjs,
+            obj
+          ]
+        });
+      }
     });
   }
 
-  private setMap(mapId: number): void {
-    console.log('SET MAP', mapId);
+  private getCurrentLayer(): TerritoryLayer {
+    const placeholderLayer = {
+      mapId: this.state.mapId,
+      index: 0,
+      placeNameId: this.state.zoneId,
+      bounds: {
+        x: {
+          min: -50,
+          max: 999
+        },
+        y: {
+          min: -50,
+          max: 999
+        },
+        z: {
+          min: -50,
+          max: 999
+        }
+      }
+    };
+
+    // This case only happens when we're loading a new map
+    if (!this.state.mapId) {
+      return placeholderLayer;
+    }
+    const possibleLayers = this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id];
+    if (!possibleLayers) {
+      return placeholderLayer;
+    }
+    return possibleLayers.find(layer => {
+      return layer.mapId === this.state.mapId;
+    });
+  }
+
+  private setMap(mapId: number, territoryChanged: boolean): void {
     if (!mapId) {
       return;
     }
     const data = this.lazyData.data;
     const enpcs = Object.keys(data.npcs).map(key => data.npcs[key]).filter(npc => npc.position && npc.position.map === mapId);
     const aetherytes = Object.keys(data.aetherytes).map(key => data.aetherytes[key]).filter(aetheryte => aetheryte.map === mapId);
-    this.setState({
+
+    const newState: Partial<MappyReporterState> = {
       mapId: mapId,
       zoneId: this.lazyData.data.maps[mapId].placename_id,
+      subZoneId: this.lazyData.data.maps[mapId].placename_sub_id || this.lazyData.data.maps[mapId].placename_id,
       map: this.lazyData.data.maps[mapId],
       bnpcs: [],
+      outOfBoundsBnpcs: [],
       objs: [],
+      outOfBoundsObjs: [],
       trail: [],
       enpcs: enpcs.map(row => {
         return {
           uniqId: row.en,
           fromGameData: true,
           position: row.position,
+          ingameCoords: this.getCoords(row.position),
           data: row,
           displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], row.position)
         };
@@ -218,8 +361,10 @@ export class MappyReporterService {
           fromGameData: true,
           position: {
             x: row.x,
-            y: row.y
+            y: row.y,
+            z: row.z
           },
+          ingameCoords: this.getCoords(row),
           data: row,
           displayPosition: this.mapService.getPositionOnMap(data.maps[mapId], {
             x: row.x,
@@ -227,10 +372,39 @@ export class MappyReporterService {
           })
         };
       })
-    });
+    };
+
+
+    /**
+     *  If we just changed layer, keep everything, just filter for display purpose.
+     *  Else, all the arrays will be reset as we can't have out of bounds stuff.
+     */
+    if (!territoryChanged) {
+      const newBnpcs = this.state.outOfBoundsBnpcs.filter(bnpc => {
+        return this.isInLayer(bnpc.ingameCoords, this.getCurrentLayer().bounds);
+      });
+
+      const newObjs = this.state.outOfBoundsObjs.filter(obj => {
+        return this.isInLayer(obj.ingameCoords, this.getCurrentLayer().bounds);
+      });
+
+      newState.outOfBoundsBnpcs = uniqBy([
+        ...this.state.bnpcs,
+        ...this.state.outOfBoundsBnpcs
+      ], 'uniqId');
+
+      newState.outOfBoundsObjs = uniqBy([
+        ...this.state.objs,
+        ...this.state.outOfBoundsObjs
+      ], 'uniqId');
+
+      newState.bnpcs = newBnpcs;
+      newState.objs = newObjs;
+    }
+    this.setState(newState);
   }
 
-  getNodeIcon(gatheringPointBaseId: number): string {
+  private getNodeIcon(gatheringPointBaseId: number): string {
     const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
     if (node.limited) {
@@ -239,7 +413,7 @@ export class MappyReporterService {
     return NodeTypeIconPipe.icons[node.type];
   }
 
-  public getCoords(coords: Vector2 | Vector3, centered: boolean): Vector3 {
+  private getCoords(coords: Vector2 | Vector3): Vector3 {
     if (!(this.state && this.state.map)) {
       return {
         x: 0,
@@ -250,25 +424,21 @@ export class MappyReporterService {
     const c = this.state.map.size_factor / 100;
     const x = (coords.x + this.state.map.offset_x) * c;
     const y = (coords.y + this.state.map.offset_y) * c;
-    const res = {
-      x: (41 / c) * ((x + (centered ? 1024 : 0)) / 2048) + 1,
-      y: (41 / c) * ((y + (centered ? 1024 : 0)) / 2048) + 1,
-      z: 0
+    return {
+      x: (41 / c) * ((x + 1024) / 2048) + 1,
+      y: (41 / c) * ((y + 1024) / 2048) + 1,
+      z: Math.floor(((<Vector3>coords).z - this.state.map.offset_z)) / 100
     };
-    if ((<Vector3>coords).z) {
-      res.z = (41.0 / c) * (((<Vector3>coords).z * c) / 2048) + 1;
-    }
-    return res;
   }
 
-  public getPosition(coords: Vector2, centered = true): Vector2 {
+  private getPosition(coords: Vector2): Vector2 {
     if (this.state.map === undefined) {
       return {
         x: 0,
         y: 0
       };
     }
-    const raw = this.getCoords(coords, centered);
+    const raw = this.getCoords(coords);
     return this.mapService.getPositionOnMap(this.state.map, raw);
   }
 

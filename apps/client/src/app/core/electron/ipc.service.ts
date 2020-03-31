@@ -79,6 +79,14 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('updatePositionHandler'));
   }
 
+  public get updatePositionInstancePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('updatePositionInstance'));
+  }
+
+  public get initZonePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('initZone'));
+  }
+
   public get playerStatsPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('playerStats'));
   }
