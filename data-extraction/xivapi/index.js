@@ -4,28 +4,13 @@ const fs = require('fs');
 const http = require('https');
 const { map, switchMap, first, buffer, debounceTime } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
-const { aggregateAllPages, getAllPages, persistToJson, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
-const Multiprogress = require('multi-progress');
-const multi = new Multiprogress(process.stdout);
+const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
 const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
 const fileStreamObservable = require('./file-stream-observable');
 
 const nodes = {};
 const gatheringPointToBaseId = {};
-const aetherytes = [
-  {
-    'id': 73,
-    'zoneid': 2100,
-    'map': 215,
-    'placenameid': 2100,
-    'x': 11,
-    'y': 14,
-    'type': 0,
-    'nameid': 2123
-  }
-];
 const monsters = {};
-const npcs = {};
 const aetheryteNameIds = {};
 
 let todo = [];
@@ -44,9 +29,25 @@ try {
 
 const everything = process.argv.indexOf('--everything') > -1;
 
-function hasTodo(operation) {
+function getCoords(coords, mapData) {
+  const c = mapData.size_factor / 100;
+  const x = (coords.x + mapData.offset_x) * c;
+  const y = (coords.y + mapData.offset_y) * c;
+  return {
+    x: ((41.0 / c) * ((x + 1024.0) / 2048.0) + 1),
+    y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1),
+    z: Math.floor((coords.z - mapData.offset_z)) / 100
+  };
+}
+
+function isInLayerBounds(point, bounds) {
+  // Only checking Z axis for now (which is Y using ingame naming) because bounding boxes are far from being accurate on X and Y axis, due to how map ranges work.
+  return (point.z >= bounds.z.min && point.z <= bounds.z.max);
+}
+
+function hasTodo(operation, specific = false) {
   let matches = todo.indexOf(operation) > -1;
-  if (everything && cache.indexOf(operation) === -1) {
+  if (!specific && everything && cache.indexOf(operation) === -1) {
     matches = true;
   }
   return matches;
@@ -61,8 +62,6 @@ function done(operation) {
 }
 
 fs.existsSync('output') || fs.mkdirSync('output');
-
-let emptyBnpcNames = 0;
 
 // if (hasTodo('missingNodes')) {
 //   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
@@ -83,52 +82,14 @@ let emptyBnpcNames = 0;
 
 if (hasTodo('mappy')) {
   // MapData extraction
-  const memoryData$ = new Subject();
   const mapData$ = new Subject();
-  const npcs$ = new Subject();
-  const aetherytes$ = new Subject();
   const nodes$ = new Subject();
-  http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
-
-  const parsedMemoryData = [];
-
-  fs.createReadStream(path.join(__dirname, 'input/memory_data.csv'), 'utf-8').pipe(csv())
-    .on('data', function(memoryRow) {
-      parsedMemoryData.push(memoryRow);
-    })
-    .on('end', () => {
-      // console.log('Extracted memory data, size: ', parsedMemoryData.length);
-      memoryData$.next(parsedMemoryData);
-    });
-
-  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
-    page.Results.forEach(npc => {
-      npcs[npc.ID] = {
-        ...npcs[npc.ID],
-        en: npc.Name_en,
-        ja: npc.Name_ja,
-        de: npc.Name_de,
-        fr: npc.Name_fr,
-        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
-      };
-      if (npc.BalloonTargetID > 0) {
-        npcs[npc.ID].balloon = npc.BalloonTargetID;
-      }
-    });
-  }, null, () => {
-    npcs$.next(npcs);
-  });
-
-  getAllPages('https://xivapi.com/Aetheryte?columns=ID,PlaceNameTargetID').subscribe(page => {
-    page.Results.forEach(aetheryte => {
-      aetheryteNameIds[aetheryte.ID] = aetheryte.PlaceNameTargetID;
-    });
-  }, null, () => {
-    aetherytes$.next(aetheryteNameIds);
-  });
+  http.get('https://staging.xivapi.com/mappy/json', (res) => mapData$.next(res));
 
   const gatheringItems$ = new Subject();
+  const gatheringPoints$ = new Subject();
   const gatheringItems = {};
+  const gatheringPoints = {};
 
   getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
     page.Results
@@ -145,19 +106,52 @@ if (hasTodo('mappy')) {
     persistToJsonAsset('gathering-items', gatheringItems);
     gatheringItems$.next(gatheringItems);
   });
-  gatheringItems$.pipe(
-    switchMap(gatheringItems => {
+
+  getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType').subscribe(page => {
+    page.Results
+      .forEach(point => {
+        gatheringPoints[point.ID] = {
+          legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
+          ephemeral: point.EphemeralStartTime < 65535,
+          spawns: [],
+          duration: 0,
+          zoneid: point.PlaceNameTargetID
+        };
+        if (point.TerritoryType) {
+          gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
+        }
+        if (gatheringPoints[point.ID].ephemeral) {
+          let duration = Math.abs(point.EphemeralEndTime - point.EphemeralStartTime) / 100;
+          if (point.EphemeralEndTime < point.EphemeralStartTime) {
+            duration = Math.abs(point.EphemeralEndTime - 2400 - point.EphemeralStartTime) / 100;
+          }
+          gatheringPoints[point.ID].spawns = [point.EphemeralStartTime / 100];
+          gatheringPoints[point.ID].duration = duration;
+        } else if (gatheringPoints[point.ID].legendary) {
+          gatheringPoints[point.ID].spawns = [0, 1, 2].map(index => {
+            return point.GatheringPointTransient.GatheringRarePopTimeTable[`StartTime${index}`];
+          }).filter(start => start < 65535).map(start => start / 100);
+          gatheringPoints[point.ID].duration = point.GatheringPointTransient.GatheringRarePopTimeTable.DurationM0;
+        }
+      });
+  }, null, () => {
+    gatheringPoints$.next(gatheringPoints);
+  });
+
+  combineLatest([gatheringItems$, gatheringPoints$]).pipe(
+    switchMap(([gatheringItems, gatheringPoints]) => {
       return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
         .pipe(
-          map((page) => [page, gatheringItems])
+          map((page) => [page, gatheringItems, gatheringPoints])
         );
     })
-  ).subscribe(([page, items]) => {
+  ).subscribe(([page, items, gatheringPoints]) => {
     page.Results.forEach(node => {
       let linkedPoints = [];
       if (node.GameContentLinks.GatheringPoint) {
         linkedPoints = node.GameContentLinks.GatheringPoint.GatheringPointBase;
       }
+      const point = gatheringPoints[linkedPoints[0]];
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
@@ -169,10 +163,16 @@ if (hasTodo('mappy')) {
           .map(gatheringItemId => {
             return items[gatheringItemId].itemId;
           }),
-        limited: node.IsLimited,
+        limited: point && (point.legendary || point.ephemeral),
         level: node.GatheringLevel,
         type: node.GatheringTypeTargetID
       };
+      if (point) {
+        nodes[node.ID] = {
+          ...nodes[node.ID],
+          ...point
+        };
+      }
       if (linkedPoints.length > 0) {
         linkedPoints.forEach(point => {
           gatheringPointToBaseId[point] = node.ID;
@@ -181,42 +181,27 @@ if (hasTodo('mappy')) {
     });
     if (page.Pagination.Page === page.Pagination.PageTotal) {
       nodes$.next(nodes);
+      persistToJsonAsset('gathering-point-base-to-node-id', gatheringPointToBaseId);
     }
   });
 
-  combineLatest([memoryData$, mapData$, nodes$, npcs$, aetherytes$])
-    .subscribe(([memoryData, mapData]) => {
+  combineLatest([mapData$, nodes$])
+    .subscribe(([mapData]) => {
       mapData.setEncoding('utf8');
       mapData.pipe(csv())
         .on('data', function(row) {
-          if (row.ContentIndex === 'BNPC') {
-            handleMonster(row, memoryData);
-          } else {
-            switch (row.Type) {
-              case 'NPC':
-                handleNpc(row);
-                break;
-              case 'Gathering':
-                handleNode(row);
-                break;
-              case 'Aetheryte':
-                handleAetheryte(row);
-                break;
-              default:
-                break;
-            }
+          if (row.Type === 'BNPC') {
+            handleMonster(row);
+          }
+          if (row.Type === 'Node') {
+            handleNode(row);
           }
         })
         .on('end', function() {
           // Write data that needs to be joined with game data first
-          persistToJsonAsset('node-positions', nodes);
+          persistToJsonAsset('nodes', nodes);
           // console.log('nodes written');
-          persistToTypescript('aetherytes', 'aetherytes', aetherytes);
-          // console.log('aetherytes written');
           persistToJsonAsset('monsters', monsters);
-          // console.log('monsters written', emptyBnpcNames);
-          persistToJsonAsset('npcs', npcs);
-          // console.log('npcs written');
           done('mappy');
         });
     });
@@ -228,66 +213,18 @@ handleNode = (row) => {
   if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
-      map: +row.MapID,
-      zoneid: +row.PlaceNameID,
+      map: nodes[baseId].map || +row.MapID,
+      zoneid: nodes[baseId].zoneid || +row.PlaceNameID,
       x: Math.round(+row.PosX * 10) / 10,
-      y: Math.round(+row.PosY * 10) / 10
+      y: Math.round(+row.PosY * 10) / 10,
+      z: Math.round(+row.PosZ * 10) / 10
     };
   }
 };
 
-handleAetheryte = (row) => {
-  const isShard = row.Name.indexOf('Shard') > -1 || row.Name.indexOf('Urbaine') > -1;
-  // Remove shards from maps where they don't belong.
-  if ((+row.PlaceNameID === 2411 || +row.PlaceNameID === 2953 || +row.PlaceNameID === 2000) && isShard) {
-    return;
-  }
-  // Eulmore plaza appears in lakeland, gotta remove that.
-  if (+row.PlaceNameID === 2953 && row.ENpcResidentID === 134) {
-    return;
-  }
-
-  // Ok'Zundu is handled by hand.
-  if (+row.ENpcResidentID === 73) {
-    return;
-  }
-
-  // Tailfeather needs a fix for its map id
-  if (+row.ENpcResidentID === 76) {
-    row.PlaceNameID = 2000;
-    row.MapID = 212;
-  }
-
-  aetherytes.push({
-    id: row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID,
-    zoneid: +row.PlaceNameID,
-    map: +row.MapID,
-    placenameid: +row.PlaceNameID,
-    nameid: aetheryteNameIds[row.ENpcResidentID === '2147483647' ? 12 : +row.ENpcResidentID],
-    x: Math.round(+row.PosX * 10) / 10,
-    y: Math.round(+row.PosY * 10) / 10,
-    type: isShard ? 1 : 0
-  });
-};
-
-handleMonster = (row, memoryData) => {
+handleMonster = (row) => {
   let bnpcNameID = +row.BNpcNameID;
-  if (bnpcNameID === 0) {
-    const nameFromData = Object.keys(allMobs)
-      .find(key => {
-        return allMobs[key].en.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].ja.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].de.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].fr.toLowerCase() === row.Name.toLowerCase();
-      });
-    if (nameFromData !== undefined) {
-      bnpcNameID = +nameFromData;
-    } else {
-      emptyBnpcNames++;
-      return;
-    }
-  }
-  const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
+  // const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
     positions: []
@@ -295,26 +232,13 @@ handleMonster = (row, memoryData) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
+    level: +row.Level,
+    hp: +row.HP,
     x: Math.round(+row.PosX * 10) / 10,
-    y: Math.round(+row.PosY * 10) / 10
+    y: Math.round(+row.PosY * 10) / 10,
+    z: Math.round(+row.PosZ * 10) / 10
   };
-  if (monsterMemoryRow !== undefined) {
-    newEntry.level = +monsterMemoryRow.Level;
-  }
   monsters[bnpcNameID].positions.push(newEntry);
-};
-
-handleNpc = (row) => {
-  npcs[+row.ENpcResidentID] = {
-    ...npcs[+row.ENpcResidentID],
-    position:
-      {
-        map: +row.MapID,
-        zoneid: +row.PlaceNameID,
-        x: Math.round(+row.PosX * 10) / 10,
-        y: Math.round(+row.PosY * 10) / 10
-      }
-  };
 };
 
 // Map ids extraction
@@ -630,8 +554,8 @@ if (hasTodo('fishingLog')) {
           placeId: spot.TerritoryType.PlaceName.ID,
           zoneId: spot.PlaceName.ID,
           coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
-            x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
-            y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+            x: (41.0 / c) * (((spot.X * c)) / 2048.0) + 1,
+            y: (41.0 / c) * (((spot.Z * c)) / 2048.0) + 1
           },
           fishes: Object.keys(spot)
             .filter(key => /Item\dTargetID/.test(key))
@@ -660,8 +584,8 @@ if (hasTodo('fishingLog')) {
               spot: {
                 id: spot.ID,
                 coords: {
-                  x: (41.0 / c) * ((spot.X) / 2048.0) + 1,
-                  y: (41.0 / c) * ((spot.Z) / 2048.0) + 1
+                  x: (41.0 / c) * ((spot.X * c) / 2048.0) + 1,
+                  y: (41.0 / c) * ((spot.Z * c) / 2048.0) + 1
                 }
               }
             };
@@ -704,8 +628,8 @@ if (hasTodo('spearFishingLog')) {
                   placeId: entry.TerritoryType.PlaceName.ID,
                   zoneId: entry.PlaceName.ID,
                   coords: {
-                    x: (41.0 / c) * ((entry.X) / 2048.0) + 1,
-                    y: (41.0 / c) * ((entry.Y) / 2048.0) + 1
+                    x: (41.0 / c) * ((entry.X * c) / 2048.0) + 1,
+                    y: (41.0 / c) * ((entry.Y * c) / 2048.0) + 1
                   }
                 };
               });
@@ -842,20 +766,29 @@ if (hasTodo('aetherstream')) {
 
 if (hasTodo('maps')) {
   const maps = {};
-  getAllPages('https://xivapi.com/Map?columns=ID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID').subscribe(page => {
-    page.Results.forEach(mapData => {
+  combineLatest([
+    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
+    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ', null, 'LGB Territories')
+  ]).subscribe(([xivapiMaps, territories]) => {
+    xivapiMaps.forEach(mapData => {
+      const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
+      const offsetZ = territory && +territory.OffsetZ;
       maps[mapData.ID] = {
         id: mapData.ID,
         hierarchy: mapData.Hierarchy,
+        priority_ui: mapData.PriorityUI,
         image: `https://xivapi.com${mapData.MapFilename}`,
-        offset_x: mapData.OffsetX,
-        offset_y: mapData.OffsetY,
+        offset_x: +mapData.OffsetX,
+        offset_y: +mapData.OffsetY,
+        offset_z: offsetZ === -10000 ? 0 : offsetZ,
         map_marker_range: mapData.MapMarkerRange,
         placename_id: mapData.PlaceNameTargetID,
+        placename_sub_id: mapData.PlaceNameSubTargetID,
         region_id: mapData.PlaceNameRegionTargetID,
         zone_id: mapData.PlaceNameSubTargetID,
         size_factor: mapData.SizeFactor,
-        territory_id: mapData.TerritoryTypeTargetID
+        territory_id: mapData.TerritoryTypeTargetID,
+        index: mapData.MapIndex
       };
     });
   }, null, () => {
@@ -924,7 +857,6 @@ if (hasTodo('quests')) {
 
 if (hasTodo('fates')) {
   const fates = {};
-  const fatesDone$ = new Subject();
   getAllPages('https://xivapi.com/Fate?columns=ID,Name_*,Description_*,IconMap,ClassJobLevel,Location').subscribe(page => {
     page.Results.forEach(fate => {
       fates[fate.ID] = {
@@ -946,36 +878,226 @@ if (hasTodo('fates')) {
       };
     });
   }, null, () => {
-    fatesDone$.next();
-  });
-
-  const mapData = require('../../apps/client/src/assets/data/maps.json');
-
-  const levelLGB$ = fileStreamObservable(path.join(__dirname, 'input/LevelLGB.csv'));
-  fatesDone$.pipe(
-    switchMap(() => {
-      return levelLGB$.pipe(
-        buffer(levelLGB$.pipe(debounceTime(500)))
-      );
-    })
-  ).subscribe(csvData => {
-    Object.keys(fates).forEach(key => {
-      const location = csvData.find(row => +row.LocationID === fates[key].location);
-      if (!location) {
-        delete fates[key].location;
-        return;
-      }
-      const c = mapData[location.Map].size_factor / 100;
-      fates[key].position = {
-        zoneid: +mapData[location.Map].placename_id,
-        x: Math.floor(10 * (41.0 / c) * ((location.X) / 2048.0) + 1) / 10,
-        y: Math.floor(10 * (41.0 / c) * ((location.Z) / 2048.0) + 1) / 10
-      };
-      delete fates[key].location;
-    });
     persistToJsonAsset('fates', fates);
-    done('fates');
   });
+}
+
+if (hasTodo('LGB', true)) {
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+  const fates = require('../../apps/client/src/assets/data/fates.json');
+  const npcs = require('../../apps/client/src/assets/data/npcs.json');
+  const territoryLayers = require('../../apps/client/src/assets/data/territory-layers.json');
+  const places = require('../../apps/client/src/assets/data/places.json');
+  const lgbFolder = './input/lgb';
+
+  const aetherytes = [];
+
+  // First things first, let's build the list of territories with multiple maps included.
+  Object.values(mapData)
+    .filter(map => map.priority_ui > 0)
+    .forEach(map => {
+      if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
+        return map.priority_ui > 0 && entry.mapId === map.id;
+      })) {
+        territoryLayers[map.territory_id] = [
+          ...(territoryLayers[map.territory_id] || []),
+          {
+            mapId: map.id,
+            index: map.index,
+            placeNameId: map.placename_sub_id,
+            bounds: {
+              x: {
+                min: 0,
+                max: 0
+              },
+              y: {
+                min: 0,
+                max: 0
+              },
+              z: {
+                min: 0,
+                max: 0
+              }
+            }
+          }
+        ].sort((a, b) => a.index - b.index);
+      }
+    });
+  // Removing territories with only one map from the layers list.
+  Object.keys(territoryLayers).forEach(key => {
+    if (territoryLayers[key].length === 1) {
+      delete territoryLayers[key];
+    }
+  });
+
+  const todoTerritories = Object.keys(territoryLayers)
+    .filter(key => {
+      const layers = territoryLayers[key].filter(layer => !layer.ignored);
+      return +key > 0
+        && layers.length > 0
+        && layers.some(layer => {
+          return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
+            && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
+            && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
+        });
+    })
+    .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
+    .map(key => {
+      return territoryLayers[key].reduce((acc, layer) => {
+        return `${acc}
+    - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
+      }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
+    })
+    .join('\n');
+
+  fs.writeFileSync('./TODO.md', todoTerritories);
+
+  // Then, let's work on lgb files
+  combineLatest([
+    aggregateAllPages('https://xivapi.com/Aetheryte?columns=ID,Level0TargetID,MapTargetID,IsAetheryte,AethernetNameTargetID,PlaceNameTargetID', null, 'LGB Aetherytes'),
+    aggregateAllPages('https://xivapi.com/HousingAethernet?columns=ID,LevelTargetID,TerritoryType.MapTargetID,PlaceNameTargetID', null, 'LGB Housing Aetherytes')
+  ])
+    .subscribe(([xivapiAetherytes, xivapiHousingAetherytes]) => {
+      const allLgbFiles = fs.readdirSync(path.join(__dirname, lgbFolder));
+
+      const allLgbs = allLgbFiles.map(filename => {
+        const split = filename.split('_');
+        const mapKey = split[0];
+        const mapId = Object.keys(mapData).find(key => mapData[key].image.indexOf(mapKey) > -1);
+        if (!mapData[mapId]) {
+          return;
+        }
+        const territoryId = mapData[mapId].territory_id;
+        return {
+          territoryId: +territoryId,
+          defaultMapId: +mapId,
+          type: split[1].split('.')[0],
+          filename: filename,
+          content: JSON.parse(fs.readFileSync(path.join(__dirname, lgbFolder, filename), 'utf8'))
+        };
+      }).filter(entry => entry);
+
+      allLgbs.forEach(lgbEntry => {
+        lgbEntry.content.forEach(lgbLayer => {
+          lgbLayer.InstanceObjects.forEach(object => {
+            let mapId = lgbEntry.defaultMapId;
+            if (territoryLayers[lgbEntry.territoryId]) {
+              const mapLayer = territoryLayers[lgbEntry.territoryId].find(layer => {
+                const localMapEntry = mapData[layer.mapId];
+                const localCoords = getCoords({
+                  x: object.Transform.Translation.x,
+                  y: object.Transform.Translation.z,
+                  z: object.Transform.Translation.y
+                }, localMapEntry);
+                return isInLayerBounds(localCoords, layer.bounds);
+              });
+              mapId = mapLayer ? mapLayer.mapId : lgbEntry.defaultMapId;
+            }
+            const mapEntry = mapData[mapId.toString()];
+            if (!mapEntry) {
+              return;
+            }
+            const coords = getCoords({
+              x: object.Transform.Translation.x,
+              y: object.Transform.Translation.z,
+              z: object.Transform.Translation.y
+            }, mapEntry);
+            if (coords.x < 0 || coords.y < 0) {
+              return;
+            }
+            const zoneId = mapData[mapId.toString()].placename_id;
+            switch (object.AssetType) {
+              // ENpcResidents
+              case 8:
+                const npc = npcs[object.Object.ParentData.ParentData.BaseId];
+                npc.position = {
+                  zoneid: zoneId,
+                  map: mapId,
+                  ...coords
+                };
+                break;
+              // Aetherytes
+              case 40:
+                const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
+                    return aetheryte.Level0TargetID === object.InstanceID;
+                  })
+                  || xivapiHousingAetherytes.find(aetheryte => {
+                    return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === mapId && aetheryte.LevelTargetID === object.InstanceID;
+                  });
+                if (xivapiAetheryte) {
+                  const aetheryteEntry = {
+                    id: xivapiAetheryte.ID,
+                    zoneid: zoneId,
+                    map: mapId,
+                    ...coords,
+                    type: xivapiAetheryte.IsAetheryte === 1 ? 0 : 1,
+                    nameid: xivapiAetheryte.PlaceNameTargetID || xivapiAetheryte.AethernetNameTargetID
+                  };
+                  aetherytes.push(aetheryteEntry);
+                }
+                break;
+
+              // MapRanges, used to automatically detect thresholds for each map in a given territory.
+              // case 43:
+              //   if (object.Object.Map) {
+              //     const mapEntry = mapData[object.Object.Map];
+              //     if (territoryLayers[mapEntry.territory_id]) {
+              //       const mapLayer = territoryLayers[mapEntry.territory_id].find(layer => layer.mapId === object.Object.Map);
+              //       if (!mapLayer) {
+              //         break;
+              //       }
+              //       const scaledPosition = getCoords({
+              //         x: object.Transform.Translation.x,
+              //         y: object.Transform.Translation.z,
+              //         z: object.Transform.Translation.y
+              //       }, mapEntry);
+              //       const c = mapEntry.size_factor / 100;
+              //       const xSize = (41.0 / c) * ((object.Transform.Scale.x * c) / 2048.0);
+              //       const ySize = (41.0 / c) * ((object.Transform.Scale.z * c) / 2048.0);
+              //       const zSize = object.Transform.Scale.y / 100;
+              //       if (mapLayer.bounds.x.min === 0 && mapLayer.bounds.x.max === 0) {
+              //         mapLayer.bounds.x = {
+              //           min: scaledPosition.x - xSize / 2,
+              //           max: scaledPosition.x + xSize / 2
+              //         };
+              //       }
+              //       if (mapLayer.bounds.y.min === 0 && mapLayer.bounds.y.max === 0) {
+              //         mapLayer.bounds.y = {
+              //           min: scaledPosition.y - ySize / 2,
+              //           max: scaledPosition.y + ySize / 2
+              //         };
+              //       }
+              //       if (mapLayer.bounds.z.min === 0 && mapLayer.bounds.z.max === 0) {
+              //         mapLayer.bounds.z = {
+              //           min: scaledPosition.z - zSize / 2,
+              //           max: scaledPosition.z + zSize / 2
+              //         };
+              //       }
+              //     }
+              //   }
+              //   break;
+              // FATEs
+              case 49:
+                const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
+                if (fateId === undefined) {
+                  return;
+                }
+                fates[fateId].position = {
+                  map: mapId,
+                  zoneid: zoneId,
+                  ...coords
+                };
+            }
+
+          });
+        });
+      });
+
+      persistToJsonAsset('aetherytes', aetherytes);
+      persistToJsonAsset('fates', fates);
+      persistToJsonAsset('npcs', npcs);
+      persistToJsonAsset('territory-layers', territoryLayers);
+    });
 }
 
 if (hasTodo('instances')) {
@@ -1019,6 +1141,28 @@ if (hasTodo('shops')) {
   }, null, () => {
     persistToJsonAsset('shops', shops);
     done('shops');
+  });
+}
+
+if (hasTodo('npcs')) {
+  const npcs = {};
+  getAllPages('https://xivapi.com/ENpcResident?columns=ID,Name_*,DefaultTalk').subscribe(page => {
+    page.Results.forEach(npc => {
+      npcs[npc.ID] = {
+        ...npcs[npc.ID],
+        en: npc.Name_en,
+        ja: npc.Name_ja,
+        de: npc.Name_de,
+        fr: npc.Name_fr,
+        defaultTalks: (npc.DefaultTalk || []).map(talk => talk.ID)
+      };
+      if (npc.BalloonTargetID > 0) {
+        npcs[npc.ID].balloon = npc.BalloonTargetID;
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('npcs', npcs);
+    done('npcs');
   });
 }
 
@@ -1653,9 +1797,9 @@ if (hasTodo('worlds')) {
 
 if (hasTodo('territories')) {
   const territories = {};
-  getAllPages('https://xivapi.com/TerritoryType?columns=ID,PlaceName.ID').subscribe(page => {
+  getAllPages('https://xivapi.com/TerritoryType?columns=ID,MapTargetID').subscribe(page => {
     page.Results.forEach(territory => {
-      territories[territory.ID] = territory.PlaceName.ID;
+      territories[territory.ID] = territory.MapTargetID;
     });
   }, null, () => {
     persistToTypescript('territories', 'territories', territories);

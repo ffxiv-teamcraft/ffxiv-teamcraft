@@ -44,7 +44,7 @@
               <nz-option [nzLabel]="('DB.DATA_TYPE.' + type) | translate" [nzValue]="type"></nz-option>
             </ng-container>
           </nz-select>
-          <app-map [hideDbButton]="true" [mapId]="mapData.ID" [markers]="markers$ | async"></app-map>
+          <app-map [hideDbButton]="true" [mapId]="mapData.ID" [markers]="markers$ | async" [aetheryteZIndex]="100"></app-map>
         </div>
       </nz-card>
       <nz-card *ngIf="relatedDisplay$ | async as relatedElements" [nzTitle]="'DB.Details' | translate"

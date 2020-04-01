@@ -1,0 +1,92 @@
+.mappy-overlay-container {
+  position: relative;
+  height: ~"calc(100vh - 44px)";
+  width: 100%;
+  overflow: hidden;
+
+  .map-background {
+    cursor: crosshair;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2048px;
+    height: 2048px;
+  }
+
+  .layer {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2048px;
+    height: 2048px;
+  }
+
+  .marker {
+    position: absolute;
+    z-index: 5;
+
+    &.player {
+      pointer-events: none;
+      height: 48px;
+      width: 48px;
+      margin-left: -50%;
+      margin-top: -50%;
+    }
+
+    &.hover {
+      pointer-events: all;
+    }
+
+    &.trail {
+      opacity: .5;
+    }
+  }
+
+  .debug-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    height: 240px;
+    width: 200px;
+    background: rgba(0, 0, 0, .5);
+    transition: all .1s ease-in-out;
+
+    .debug-box-content {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.hidden {
+      height: 0;
+      width: 0;
+      padding: 0;
+    }
+
+    .debug-toggle {
+      position: absolute;
+      top: 0;
+      right: -32px;
+
+      > .ant-btn {
+        border-radius: 0;
+      }
+    }
+  }
+
+  .mappy-reloader {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    > .ant-btn {
+      border-radius: 0;
+    }
+  }
+
+  .no-layers {
+    margin-top: 40%;
+  }
+}

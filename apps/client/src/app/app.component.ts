@@ -49,6 +49,7 @@ import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
 import { Region } from './modules/settings/region.enum';
+import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 
 declare const gtag: Function;
 
@@ -65,7 +66,9 @@ export class AppComponent implements OnInit {
 
   version = environment.version;
 
-  public overlay = false;
+  public get overlay() {
+    return window.location.href.indexOf('?overlay') > -1;
+  }
 
   public windowDecorator = false;
 
@@ -164,7 +167,8 @@ export class AppComponent implements OnInit {
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
-              private quickSearch: QuickSearchService, apollo: Apollo, httpLink: HttpLink) {
+              private quickSearch: QuickSearchService, public mappy: MappyReporterService,
+              apollo: Apollo, httpLink: HttpLink) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -330,7 +334,6 @@ export class AppComponent implements OnInit {
           })
         ).subscribe((event: any) => {
         this.seoService.resetConfig();
-        this.overlay = event.url.indexOf('?overlay') > -1;
         this.ipc.send('navigated', event.url);
         this.ipc.on('window-decorator', (e, value) => {
           this.windowDecorator = value;
@@ -393,6 +396,18 @@ export class AppComponent implements OnInit {
       this.ipc.on('apply-language', (e, newLang) => {
         this.use(newLang, true);
       });
+      if (!this.overlay) {
+        this.lazyData.data$
+          .pipe(
+            filter(data => data !== undefined),
+            first()
+          )
+          .subscribe(() => {
+            if (this.settings.xivapiKey) {
+              this.mappy.start();
+            }
+          });
+      }
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
@@ -606,15 +621,19 @@ export class AppComponent implements OnInit {
   }
 
   public openAlarmsOverlay(): void {
-    this.ipc.openOverlay('/alarms-overlay', '/alarms-overlay');
+    this.ipc.openOverlay('/alarms-overlay');
   }
 
   public openFishingOverlay(): void {
-    this.ipc.openOverlay('/fishing-reporter-overlay', '/fishing-reporter-overlay');
+    this.ipc.openOverlay('/fishing-reporter-overlay');
+  }
+
+  public openMappyOverlay(): void {
+    this.ipc.openOverlay('/mappy-overlay');
   }
 
   public openListPanelOverlay(): void {
-    this.ipc.openOverlay('/list-panel-overlay', '/list-panel-overlay');
+    this.ipc.openOverlay('/list-panel-overlay');
   }
 
   @HostListener('window:beforeunload', ['$event'])

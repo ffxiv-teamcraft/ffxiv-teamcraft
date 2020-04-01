@@ -9,4 +9,5 @@ export interface MapMarker extends Vector2 {
   tooltip?: string;
   zIndex?: number;
   link?: string;
+  size?: Vector2;
 }

@@ -56,7 +56,7 @@ export class NodeComponent extends TeamcraftPageComponent {
         return this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id);
       }),
       map(base => {
-        base.mappyData = this.lazyData.data.nodePositions[base.ID];
+        base.mappyData = this.lazyData.data.nodes[base.ID];
         base.gtNode = this.gtBell.getNode(base.ID);
         if (base.gtNode) {
           base.gtNode.items.forEach(item => {

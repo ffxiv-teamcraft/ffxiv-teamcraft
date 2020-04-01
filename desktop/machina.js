@@ -73,6 +73,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'playerSpawn',
         'inventoryModifyHandler',
         'npcSpawn',
+        'objectSpawn',
         'playerStats',
         'updateClassInfo',
         'actorControl',
@@ -85,7 +86,10 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'someDirectorUnk4',
         'actorControlSelf',
         'retainerInformation',
-        'weatherChange'
+        'weatherChange',
+        'updatePositionHandler',
+        'updatePositionInstance',
+        'prepareZoning'
       ];
 
       Machina = new MachinaFFXIV(options);

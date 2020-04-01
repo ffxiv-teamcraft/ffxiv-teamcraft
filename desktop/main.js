@@ -86,6 +86,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
 
@@ -303,7 +304,8 @@ function toggleOverlay(overlayConfig) {
     width: dimensions.x,
     height: dimensions.y,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      backgroundThrottling: false
     }
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
@@ -434,6 +436,22 @@ ipcMain.on('fishing-state:set', (_, data) => {
 
 ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
+});
+
+let mappyState = {};
+ipcMain.on('mappy-state:set', (_, data) => {
+  mappyState = data;
+  if (openedOverlays['/mappy-overlay'] !== undefined) {
+    openedOverlays['/mappy-overlay'].webContents.send('mappy-state', data);
+  }
+});
+
+ipcMain.on('mappy-state:get', (event) => {
+  event.sender.send('mappy-state', mappyState);
+});
+
+ipcMain.on('mappy:reload', (event) => {
+  win.webContents.send('mappy:reload');
 });
 
 
