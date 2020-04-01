@@ -388,8 +388,8 @@
               <img src="./assets/icons/classjob/fisher.png" alt="">
             </button>
             <button nz-button nzShape="circle"
-                    *ngIf="ipc.machinaToggle"
-                    nz-tooltip [nzTitle]="'MAPPY_OVERLAY.Open' | translate"
+                    *ngIf="ipc.machinaToggle && mappy.available"
+                    nz-tooltip nzTitle="Open mappy overlay"
                     (click)="openMappyOverlay()">
               <i nz-icon nzType="scan" nzTheme="outline"></i>
             </button>

@@ -6,7 +6,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { MappyReporterState, BNpcEntry, ObjEntry, MappyMarker } from '../../../core/electron/mappy-reporter';
+import { MappyReporterState, BNpcEntry, ObjEntry, MappyMarker } from '../../../core/electron/mappy/mappy-reporter';
 
 @Component({
   selector: 'app-mappy-overlay',

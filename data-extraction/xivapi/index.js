@@ -86,7 +86,7 @@ if (hasTodo('mappy')) {
   // MapData extraction
   const mapData$ = new Subject();
   const nodes$ = new Subject();
-  http.get('https://xivapi.com/download?data=map_data', (res) => mapData$.next(res));
+  http.get('https://xivapi.com/mappy/json', (res) => mapData$.next(res));
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();
@@ -192,9 +192,10 @@ if (hasTodo('mappy')) {
       mapData.setEncoding('utf8');
       mapData.pipe(csv())
         .on('data', function(row) {
-          if (row.ContentIndex === 'BNPC') {
+          if (row.Type === 'BNPC') {
             handleMonster(row);
-          } else if (row.Type === 'Gathering') {
+          }
+          if (row.Type === 'Node') {
             handleNode(row);
           }
         })
@@ -217,28 +218,14 @@ handleNode = (row) => {
       map: nodes[baseId].map || +row.MapID,
       zoneid: nodes[baseId].zoneid || +row.PlaceNameID,
       x: Math.round(+row.PosX * 10) / 10,
-      y: Math.round(+row.PosY * 10) / 10
+      y: Math.round(+row.PosY * 10) / 10,
+      z: Math.round(+row.PosZ * 10) / 10
     };
   }
 };
 
 handleMonster = (row) => {
   let bnpcNameID = +row.BNpcNameID;
-  if (bnpcNameID === 0) {
-    const nameFromData = Object.keys(allMobs)
-      .find(key => {
-        return allMobs[key].en.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].ja.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].de.toLowerCase() === row.Name.toLowerCase()
-          || allMobs[key].fr.toLowerCase() === row.Name.toLowerCase();
-      });
-    if (nameFromData !== undefined) {
-      bnpcNameID = +nameFromData;
-    } else {
-      emptyBnpcNames++;
-      return;
-    }
-  }
   // const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
     baseid: +row.BNpcBaseID,
@@ -247,12 +234,12 @@ handleMonster = (row) => {
   const newEntry = {
     map: +row.MapID,
     zoneid: +row.PlaceNameID,
+    level: +row.Level,
+    hp: +row.HP,
     x: Math.round(+row.PosX * 10) / 10,
-    y: Math.round(+row.PosY * 10) / 10
+    y: Math.round(+row.PosY * 10) / 10,
+    z: Math.round(+row.PosZ * 10) / 10
   };
-  if (monsterMemoryRow !== undefined) {
-    // newEntry.level = +monsterMemoryRow.Level;
-  }
   monsters[bnpcNameID].positions.push(newEntry);
 };
 
@@ -1812,9 +1799,9 @@ if (hasTodo('worlds')) {
 
 if (hasTodo('territories')) {
   const territories = {};
-  getAllPages('https://xivapi.com/TerritoryType?columns=ID,PlaceName.ID').subscribe(page => {
+  getAllPages('https://xivapi.com/TerritoryType?columns=ID,MapTargetID').subscribe(page => {
     page.Results.forEach(territory => {
-      territories[territory.ID] = territory.PlaceName.ID;
+      territories[territory.ID] = territory.MapTargetID;
     });
   }, null, () => {
     persistToTypescript('territories', 'territories', territories);

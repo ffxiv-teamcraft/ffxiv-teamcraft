@@ -18,6 +18,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { MappyReporterService, MappyReporterState } from '../../../core/electron/mappy/mappy-reporter';
 
 @Component({
   selector: 'app-settings-popup',
@@ -109,7 +110,7 @@ export class SettingsPopupComponent {
               private ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryFacade,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private mappy: MappyReporterService) {
 
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
@@ -148,6 +149,12 @@ export class SettingsPopupComponent {
 
   alwaysQuitChange(value: boolean): void {
     this.ipc.send('always-quit', value);
+  }
+
+  startMappy(): void {
+    if (!this.mappy.available) {
+      this.mappy.start();
+    }
   }
 
   machinaToggleChange(value: boolean): void {

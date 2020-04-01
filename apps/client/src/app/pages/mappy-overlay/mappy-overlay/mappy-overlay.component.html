@@ -75,9 +75,10 @@
       <div class="debug-box" [class.hidden]="!showDebugBox">
         <div class="debug-box-content">
           <span *ngIf="!display.layersNotConfigured">{{display.mapId}} - {{display.zoneId | placeName | i18n}}<br></span>
-          X: {{display.playerCoords.x | number:'1.1-1'}}<br>
-          Y: {{display.playerCoords.y | number:'1.1-1'}}<br>
-          Z: {{display.playerCoords.z | number:'1.1-1'}}<br>
+          X: {{display.playerCoords.x | number:'1.1-2'}}<br>
+          Y: {{display.playerCoords.y | number:'1.1-2'}}<br>
+          Z: {{display.playerCoords.z | number:'1.1-2'}}<br>
+          Reports: {{display.reports | number:'1.0'}}
           <label nz-checkbox *ngIf="!display.layersNotConfigured" [(ngModel)]="trackPlayer">Follow player</label>
         </div>
         <div class="debug-toggle">

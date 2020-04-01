@@ -49,7 +49,7 @@ import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
 import { Region } from './modules/settings/region.enum';
-import { MappyReporterService } from './core/electron/mappy-reporter';
+import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 
 declare const gtag: Function;
 
@@ -167,7 +167,7 @@ export class AppComponent implements OnInit {
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
-              private quickSearch: QuickSearchService, private mappy: MappyReporterService,
+              private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink) {
 
 
@@ -403,7 +403,9 @@ export class AppComponent implements OnInit {
             first()
           )
           .subscribe(() => {
-            this.mappy.start();
+            if (this.settings.xivapiKey) {
+              this.mappy.start();
+            }
           });
       }
     }

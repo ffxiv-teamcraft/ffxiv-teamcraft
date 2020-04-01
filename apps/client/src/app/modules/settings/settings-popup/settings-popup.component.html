@@ -414,6 +414,17 @@
       <button (click)="clearCache()" nz-button>
         {{'SETTINGS.Clear_cache' | translate}}
       </button>
+      <ng-container *ngIf="(user$ | async)?.sekrit">
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Sekrit' | translate"></nz-divider>
+        <nz-input-group nzSearch nzSize="default" [nzAddOnAfter]="suffixButton">
+          <input [(ngModel)]="settings.xivapiKey" nz-input
+                 placeholder="XIVAPI Private key (saved in localstorage, not database, never database)"
+                 type="text">
+        </nz-input-group>
+        <ng-template #suffixButton>
+          <button nz-button nzType="primary" nzSize="default" (click)="startMappy()" nzSearch>{{'COMMON.Apply' | translate}}</button>
+        </ng-template>
+      </ng-container>
     </div>
   </nz-tab>
 </nz-tabset>

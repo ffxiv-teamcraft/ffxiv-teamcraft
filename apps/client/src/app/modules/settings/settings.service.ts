@@ -460,6 +460,14 @@ export class SettingsService {
     this.setSetting('macroLock', lock.toString());
   }
 
+  public get xivapiKey(): string {
+    return this.getSetting('xivapiKey', '');
+  }
+
+  public set xivapiKey(key: string) {
+    this.setSetting('xivapiKey', key);
+  }
+
   public get macroConsumables(): boolean {
     return this.getSetting('macroConsumables', 'true') === 'true';
   }
