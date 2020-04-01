@@ -450,6 +450,10 @@ ipcMain.on('mappy-state:get', (event) => {
   event.sender.send('mappy-state', mappyState);
 });
 
+ipcMain.on('mappy:reload', (event) => {
+  win.webContents.send('mappy:reload');
+});
+
 
 let appState = {};
 const overlaysNeedingState = [

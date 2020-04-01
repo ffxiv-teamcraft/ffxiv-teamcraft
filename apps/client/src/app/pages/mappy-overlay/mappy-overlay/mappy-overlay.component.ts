@@ -46,6 +46,10 @@ export class MappyOverlayComponent implements OnInit {
   windowSize: Vector2;
 
   trackPlayer = true;
+  showMappyLayers = false;
+  watchMappy = false;
+  showLocalLayers = true;
+  showLGBLayers = true;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 
@@ -68,6 +72,15 @@ export class MappyOverlayComponent implements OnInit {
       this.state$.next(data);
     });
     this.ipc.send('mappy-state:get');
+    setInterval(() => {
+      if (this.watchMappy) {
+        this.reloadMappyData();
+      }
+    }, 2000);
+  }
+
+  reloadMappyData(): void {
+    this.ipc.send('mappy:reload');
   }
 
   /* Method which adds style to the image */

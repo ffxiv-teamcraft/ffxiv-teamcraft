@@ -63,8 +63,6 @@ function done(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-let emptyBnpcNames = 0;
-
 // if (hasTodo('missingNodes')) {
 //   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
 //   const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
@@ -86,7 +84,7 @@ if (hasTodo('mappy')) {
   // MapData extraction
   const mapData$ = new Subject();
   const nodes$ = new Subject();
-  http.get('https://xivapi.com/mappy/json', (res) => mapData$.next(res));
+  http.get('https://staging.xivapi.com/mappy/json', (res) => mapData$.next(res));
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();

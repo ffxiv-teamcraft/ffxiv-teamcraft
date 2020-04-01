@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { Vector2 } from '../../tools/vector2';
-import { filter, tap } from 'rxjs/operators';
-import { merge } from 'rxjs';
+import { filter, tap, delayWhen } from 'rxjs/operators';
+import { merge, interval } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
@@ -17,6 +17,7 @@ import { uniqBy } from 'lodash';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { XivapiReportEntry } from './xivapi-report-entry';
+import { territories } from '../../data/sources/territories';
 
 export interface MappyMarker {
   position: Vector3;
@@ -57,14 +58,17 @@ export interface MappyReporterState {
   player: Vector2;
   playerRotationTransform: string;
   bnpcs: BNpcEntry[];
+  mappyBnpcs: BNpcEntry[];
   outOfBoundsBnpcs: BNpcEntry[];
   objs: ObjEntry[];
+  mappyObjs: ObjEntry[];
   outOfBoundsObjs: ObjEntry[];
   aetherytes: GameDataEntry<Aetheryte>[];
   enpcs: GameDataEntry<Npc>[];
   trail: Vector2[];
   reports: number;
   debug: any;
+  zoning: boolean;
 }
 
 @Injectable({
@@ -77,8 +81,10 @@ export class MappyReporterService {
   private reportedUntil = Date.now();
 
   private state: MappyReporterState = {
+    zoning: false,
     aetherytes: [],
     bnpcs: [],
+    mappyBnpcs: [],
     debug: undefined,
     enpcs: [],
     map: undefined,
@@ -87,6 +93,7 @@ export class MappyReporterService {
     mapId: 0,
     objs: [],
     outOfBoundsBnpcs: [],
+    mappyObjs: [],
     outOfBoundsObjs: [],
     player: undefined,
     playerCoords: undefined,
@@ -133,6 +140,10 @@ export class MappyReporterService {
   }
 
   private initReporter(): void {
+    this.ipc.on('mappy:reload', () => {
+      this.addMappyData(this.state.mapId);
+    });
+
     setInterval(() => {
       if (this.state && this.dirty) {
         this.ipc.send('mappy-state:set', this.state);
@@ -148,6 +159,12 @@ export class MappyReporterService {
       this.setMap(mapId, true);
     });
 
+
+    this.ipc.prepareZoningPackets$.subscribe((packet) => {
+      this.setState({
+        zoning: true
+      })
+    });
 
     let positionTicks = 0;
     merge(
@@ -221,7 +238,11 @@ export class MappyReporterService {
     });
 
     // Monsters
-    this.ipc.npcSpawnPackets$.subscribe(packet => {
+    this.ipc.npcSpawnPackets$.pipe(
+      delayWhen(() => {
+        return this.state.zoning ? interval(1000) : interval(0);
+      })
+    ).subscribe(packet => {
       const isPet = packet.bNPCName >= 1398 && packet.bNPCName <= 1404;
       const isChocobo = packet.bNPCName === 780;
       if (isPet || isChocobo) {
@@ -272,6 +293,9 @@ export class MappyReporterService {
 
     // Objects
     this.ipc.objectSpawnPackets$.pipe(
+      delayWhen(() => {
+        return this.state.zoning ? interval(1000) : interval(0);
+      }),
       filter(() => this.state !== undefined)
     ).subscribe(packet => {
       const position = {
@@ -355,12 +379,14 @@ export class MappyReporterService {
     }
     // Start by pushing current reports
     this.pushReports();
+    this.addMappyData(mapId);
 
     const data = this.lazyData.data;
     const enpcs = Object.keys(data.npcs).map(key => data.npcs[key]).filter(npc => npc.position && npc.position.map === mapId);
     const aetherytes = Object.keys(data.aetherytes).map(key => data.aetherytes[key]).filter(aetheryte => aetheryte.map === mapId);
 
     const newState: Partial<MappyReporterState> = {
+      zoning: false,
       mapId: mapId,
       zoneId: this.lazyData.data.maps[mapId].placename_id,
       subZoneId: this.lazyData.data.maps[mapId].placename_sub_id || this.lazyData.data.maps[mapId].placename_id,
@@ -445,6 +471,65 @@ export class MappyReporterService {
     this.setState(newState);
   }
 
+  private addMappyData(mapId: number): void {
+    this.http.get<XivapiReportEntry[]>(`https://${MappyReporterService.XIVAPI_URL}/mappy/map/${mapId}`).subscribe(reports => {
+      this.setState({
+        mappyBnpcs: reports
+          .filter(report => report.Type === 'BNPC')
+          .map(report => {
+            return {
+              nameId: report.BNpcNameID,
+              baseId: report.BNpcBaseID,
+              level: report.Level,
+              HP: report.HP,
+              fateId: report.FateID,
+              timestamp: 0,
+              position: {
+                x: report.CoordinateX,
+                y: report.CoordinateY,
+                z: report.CoordinateZ
+              },
+              ingameCoords: {
+                x: report.PosX,
+                y: report.PosY,
+                z: report.PosZ
+              },
+              displayPosition: {
+                x: report.PixelX / 20.48,
+                y: report.PixelY / 20.48
+              },
+              uniqId: ''
+            };
+          }),
+        mappyObjs: reports
+          .filter(report => report.Type === 'Node')
+          .map(report => {
+            return {
+              id: report.NodeID,
+              kind: 6,
+              icon: this.getNodeIcon(report.NodeID),
+              timestamp: 0,
+              position: {
+                x: report.CoordinateX,
+                y: report.CoordinateY,
+                z: report.CoordinateZ
+              },
+              ingameCoords: {
+                x: report.PosX,
+                y: report.PosY,
+                z: report.PosZ
+              },
+              displayPosition: {
+                x: report.PixelX / 20.48,
+                y: report.PixelY / 20.48
+              },
+              uniqId: ''
+            };
+          })
+      });
+    });
+  }
+
   private getNodeIcon(gatheringPointBaseId: number): string {
     const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
@@ -513,8 +598,8 @@ export class MappyReporterService {
           MapID: snapshot.mapId,
           MapTerritoryID: snapshot.map.territory_id,
           NodeID: 0,
-          PixelX: bnpc.displayPosition.x,
-          PixelY: bnpc.displayPosition.y,
+          PixelX: bnpc.displayPosition.x * 20.48,
+          PixelY: bnpc.displayPosition.y * 20.48,
           PlaceNameID: snapshot.map.placename_id,
           PosX: bnpc.ingameCoords.x,
           PosY: bnpc.ingameCoords.y,
@@ -538,8 +623,8 @@ export class MappyReporterService {
           MapID: snapshot.mapId,
           MapTerritoryID: snapshot.map.territory_id,
           NodeID: obj.id,
-          PixelX: obj.displayPosition.x,
-          PixelY: obj.displayPosition.y,
+          PixelX: obj.displayPosition.x * 20.48,
+          PixelY: obj.displayPosition.y * 20.48,
           PlaceNameID: snapshot.map.placename_id,
           PosX: obj.ingameCoords.x,
           PosY: obj.ingameCoords.y,

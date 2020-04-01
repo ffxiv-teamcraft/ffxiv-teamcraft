@@ -103,6 +103,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('actorControl'));
   }
 
+  public get prepareZoningPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('prepareZoning'));
+  }
+
   public packets$: Subject<any> = new Subject<any>();
 
   public machinaToggle: boolean;
