@@ -407,6 +407,7 @@
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "Ignored inventories",
+    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -425,6 +426,7 @@
       "Packet_capture": "数据包捕获",
       "Theme": "界面主题",
       "Search": "搜索",
+      "Sekrit": "Sekrit",
       "Other": "其他"
     },
     "REGIONS": {
