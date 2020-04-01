@@ -407,6 +407,7 @@
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
     "Ignored_inventories": "Ignored inventories",
+    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -425,6 +426,7 @@
       "Packet_capture": "패킷 캡처",
       "Theme": "테마",
       "Search": "검색",
+      "Sekrit": "Sekrit",
       "Other": "기타"
     },
     "REGIONS": {
