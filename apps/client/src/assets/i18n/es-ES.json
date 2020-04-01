@@ -407,6 +407,7 @@
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
+    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -425,6 +426,7 @@
       "Packet_capture": "Captura de paquetes",
       "Theme": "Tema",
       "Search": "Búsqueda",
+      "Sekrit": "Sekrit",
       "Other": "Otros"
     },
     "REGIONS": {
