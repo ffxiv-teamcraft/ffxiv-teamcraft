@@ -407,6 +407,7 @@
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
+    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -425,6 +426,7 @@
       "Packet_capture": "Paketerfassung",
       "Theme": "Theme",
       "Search": "Suche",
+      "Sekrit": "Sekrit",
       "Other": "Anderes"
     },
     "REGIONS": {
