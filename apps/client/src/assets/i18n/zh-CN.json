@@ -407,7 +407,6 @@
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
-    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1858,10 +1857,10 @@
     },
     "STAT_DISPLAY": {
       "Ilvl": "平均品级",
-      "HP": "Hit Points",
+      "HP": "体力",
       "Direct_hit_chances": "直击率",
       "Critical_hit_chances": "暴击率",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Critical_hit_multiplier": "暴击倍率",
       "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }
