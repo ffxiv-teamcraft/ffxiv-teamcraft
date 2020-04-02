@@ -20,6 +20,11 @@ export class LayoutRowFilter {
     return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0;
   }, 'CAN_BE_BOUGHT');
 
+  static IS_ONLY_FROM_VENDOR = new LayoutRowFilter(row => {
+    return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0
+      && LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length === 0;
+  }, 'IS_ONLY_FROM_VENDOR');
+
   static IS_HQ = new LayoutRowFilter((row, list) => {
     const recipesNeedingItem = list.finalItems
       .filter(item => item.requires !== undefined)
