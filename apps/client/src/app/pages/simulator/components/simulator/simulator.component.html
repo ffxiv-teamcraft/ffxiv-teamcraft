@@ -129,7 +129,7 @@
         <button (click)="changeRotation()" [nzTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small">
-          <i iconfont="icon-exchange" nz-icon></i>
+          <i nzIconfont="icon-exchange" nz-icon></i>
         </button>
         <div [nzTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px"
@@ -408,7 +408,7 @@
                   <button (click)="changeRecipe(rotation)" [nzTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
                           nz-tooltip nzShape="circle"
                           nzSize="small">
-                    <i iconfont="icon-exchange" nz-icon></i>
+                    <i nzIconfont="icon-exchange" nz-icon></i>
                   </button>
                 </div>
                 <div>{{resultData.simulation.recipe.lvl}} {{getStars(resultData.simulation.recipe.stars)}}</div>
@@ -437,7 +437,7 @@
                         [nzTitle]="'SIMULATOR.Toggle_snapshot_mode' | translate"
                         [nzType]="snapshotMode?'primary':'default'"
                         nz-button nz-tooltip>
-                  <i [iconfont]="'icon-debug'" nz-icon></i>
+                  <i [nzIconfont]="'icon-debug'" nz-icon></i>
                 </button>
               </div>
             </div>

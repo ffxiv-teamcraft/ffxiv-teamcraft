@@ -103,7 +103,7 @@
             <button (click)="pricingMode = true" [disabled]="(permissionLevel$ | async) < 40"
                     [nzTitle]="'Pricing_mode' | translate" nz-button
                     nz-tooltip nzShape="circle">
-              <i iconfont="icon-dollar" nz-icon></i>
+              <i nzIconfont="icon-dollar" nz-icon></i>
             </button>
             <button (click)="openInventorySynthesisPopup(list)" [nzTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
                     *ngIf="platform.isDesktop()"

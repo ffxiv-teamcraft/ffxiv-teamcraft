@@ -102,7 +102,7 @@
           <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)" *ngIf="displayRow.zoneBreakdown"
                   [nzTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
                   nzSize="small">
-            <i iconfont="icon-map" nz-icon></i>
+            <i nzIconfont="icon-map" nz-icon></i>
           </button>
           <button (click)="$event.stopPropagation();openTotalPricePopup()" *ngIf="hasTrades"
                   [nzTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"

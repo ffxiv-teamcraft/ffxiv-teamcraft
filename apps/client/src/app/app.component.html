@@ -67,7 +67,7 @@
           <li *ngIf="!platformService.isDesktop()" [nzTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom">
             <a (click)="openedApp()" [href]="desktopUrl">
-              <i iconfont="icon-openinapp" nz-icon></i>
+              <i nzIconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
           <li *ngIf="platformService.isDesktop()" [nzTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
@@ -297,7 +297,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/log-tracker"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-book" nz-icon></i>
+                      <i nzIconfont="icon-book" nz-icon></i>
                       <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
                   </span>
                 </a>
@@ -311,7 +311,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/desynth"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-vectorcombine" nz-icon></i>
+                      <i nzIconfont="icon-vectorcombine" nz-icon></i>
                       <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
                   </span>
                 </a>
@@ -332,7 +332,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/custom-items"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-custom" nz-icon></i>
+                      <i nzIconfont="icon-custom" nz-icon></i>
                       <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
                   </span>
                 </a>

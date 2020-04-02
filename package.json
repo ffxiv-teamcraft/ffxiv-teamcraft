@@ -231,6 +231,7 @@
     "ngrx-store-freeze": "^0.2.4",
     "ngx-clipboard": "^13.0.0",
     "ngx-color-picker": "^9.0.0",
+    "ngx-markdown": "^9.0.0",
     "prettier": "1.13.7",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",

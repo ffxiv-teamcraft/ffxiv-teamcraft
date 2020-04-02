@@ -1,14 +1,13 @@
 <div *ngIf="!inProgress; else loader">
   <nz-form-item>
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extra">
       <input [(ngModel)]="importLink" (ngModelChange)="updateLinkSupport()" [placeholder]="'LISTS.IMPORT.Paste_link_step_title' | translate" nz-input
              type="text">
-      <nz-form-explain
-        *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</nz-form-explain>
-      <nz-form-explain
-        *ngIf="importLinkSupported === false">{{'LISTS.IMPORT.Link_not_supported' | translate}}</nz-form-explain>
-      <nz-form-explain
-        *ngIf="importLinkSupported === true">{{'LISTS.IMPORT.Link_recognized' | translate: { type: linkType } }}</nz-form-explain>
+      <ng-template #extra>
+        <i *ngIf="importLinkSupported === undefined">{{'LISTS.IMPORT.Links_supported' | translate: { links: linkTypes } }}</i>
+        <i *ngIf="importLinkSupported === false">{{'LISTS.IMPORT.Link_not_supported' | translate}}</i>
+        <i *ngIf="importLinkSupported === true">{{'LISTS.IMPORT.Link_recognized' | translate: { type: linkType } }}</i>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item *ngIf="linkType === 'Ariyala'">

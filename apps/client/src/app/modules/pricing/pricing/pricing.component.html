@@ -79,7 +79,7 @@
                       [nzTitle]="'PRICING.Check_precraft_prices' | translate" nz-button
                       nz-tooltip
                       nzShape="circle">
-                <i iconfont="icon-dollar" nz-icon></i>
+                <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
                       [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}"
