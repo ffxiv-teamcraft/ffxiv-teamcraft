@@ -173,8 +173,8 @@
     "Add_note": "添加备注",
     "Volume": "音量",
     "Macro_copied": "宏已复制到剪贴板",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "显示/隐藏悬浮窗",
+    "Open_alarms_overlay": "显示/隐藏闹钟悬浮窗",
     "More_available": "还有 {{amount}} 个…",
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
@@ -406,7 +406,7 @@
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
-    "Ignored_inventories": "Ignored inventories",
+    "Ignored_inventories": "已忽略的物品栏",
     "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "背景颜色",
@@ -645,7 +645,7 @@
       "Tag_filter": "标签筛选"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "显示/隐藏清单悬浮窗",
       "No_display": "请在主窗口中打开一个清单",
       "No_panel_selected": "使用上面的按钮选择一个面板"
     }
@@ -1416,7 +1416,7 @@
         "Big": "重杆 (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "显示/隐藏钓鱼悬浮窗",
         "Bait": "当前钓饵",
         "Tug": "咬饵",
         "Hookset": "捉钩",
