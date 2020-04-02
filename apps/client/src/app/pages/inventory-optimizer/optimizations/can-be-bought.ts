@@ -4,7 +4,9 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { beastTribeNpcs } from '../../../core/data/sources/beast-tribe-npcs';
 import { DataType } from '../../../modules/list/data/data-type';
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class CanBeBought extends InventoryOptimizer {
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {

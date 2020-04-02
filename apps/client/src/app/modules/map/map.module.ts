@@ -41,7 +41,7 @@ import { RouterModule } from '@angular/router';
 })
 export class MapModule {
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<MapModule> {
     return {
       ngModule: MapModule,
       providers: [
