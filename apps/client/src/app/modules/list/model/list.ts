@@ -10,7 +10,6 @@ import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { CustomItem } from '../../custom-items/model/custom-item';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { BehaviorSubject, concat, EMPTY, Observable, of, Subject } from 'rxjs';
 import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
