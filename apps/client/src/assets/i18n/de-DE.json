@@ -588,10 +588,9 @@
     "Amount_craftable": "Du kannst {{amount}} herstellen",
     "Add_item": "Gegenstand hinzufügen",
     "List_large": "Dies ist eine große Liste",
-    "Enable_performance_mode": "Möglicherweise möchtest du den Leistungsmodus in den Einstellungen aktivieren, um schneller zu rendern",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "Liste zu lang",
-    "List_too_large_description": "Diese Liste ist zu groß und stößt möglicherweise an die Datenbanklimitierungen aufgrund der vielen Informationen. Du darfst keine weiteren Gegenstände hinzufügen, um zu verhindern, dass du die Liste verlierst.",
-    "Add_to_another_list": "Zu einer anderen Liste hinzufügen",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "Neue Markierung",
     "Amount_ilvl": "Betrag (ilvl)",
     "Contributions_popup": "Beitragsstatistiken",
@@ -1662,7 +1661,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "Mit der Option {{tool}} gibt es momentan ein Problem. Schaue für Informationen in den Discord-Kanal #announcements oder mache einen neuen Bug-Report im Kanal #bugs",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft konnte die Datenbank nicht erreichen. Scheinbar wird der Zugriff blockiert oder du hast keine Internetverbindung."
   },
   "SEARCH": {
@@ -1697,7 +1696,7 @@
     "No_character_id": "Keine Charakter-ID gesetzt",
     "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
     "Inventory_outdated": "Dein Inventar ist veraltet",
-    "Please_update_inventory_popup": "Bitte wechsle die Zone (z. B. durch Teleportation oder indem du ein Haus betrittst), um dein Inventar zu aktualisieren. Diese Einblendung wird automatisch geschlossen, sobald dies geschehen ist.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Die Paketerfassung funktioniert nicht",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben."
   },
