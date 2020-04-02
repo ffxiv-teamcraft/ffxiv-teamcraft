@@ -67,6 +67,10 @@ export class LazyDataService {
     }
   }
 
+  public getMapIdByZoneId(zoneId: number): number {
+    return +Object.keys(this.data.maps).find(key => this.data.maps[key].placename_id === zoneId);
+  }
+
   public getRecipe(id: string): Observable<Craft> {
     return this.settings.regionChange$.pipe(
       map(change => change.next),
@@ -172,6 +176,7 @@ export class LazyDataService {
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 

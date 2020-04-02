@@ -58,6 +58,8 @@
         </nz-collapse-panel>
       </nz-collapse>
 
+      <nz-alert nzType="warning" [nzMessage]="'GEARSETS.Missing_items' | translate" nzCloseable="true" *ngIf="missingItems" class="missing-items"></nz-alert>
+
       <div fxLayout="column" fxLayoutGap="10px" *ngIf="items$ | async as chunks">
         <div nz-row *ngFor="let categories of chunks; trackBy: trackByChunk">
           <div nz-col [nzMd]="stats.length > 3 ? 24 : 12" nzSm="24" class="category-card" [class.full]="stats.length > 3" [class.last]="last"

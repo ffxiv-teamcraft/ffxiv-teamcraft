@@ -148,7 +148,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.generateTiers(this.displayRow.reverseTiers);
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
-      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates());
+      this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
@@ -188,7 +188,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                 itemId: item.id,
                 total_item_amount: item.amount,
                 item_amount: item.amount_needed - item.done,
-                type: partial.type
+                type: partial.type,
+                gatheringType: partial.gatheringType
               };
             }
             return undefined;
@@ -220,7 +221,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                       itemId: item.id,
                       total_item_amount: item.amount,
                       item_amount: item.amount_needed - item.done,
-                      type: partial.type
+                      type: partial.type,
+                      gatheringType: partial.gatheringType
                     };
                   }
                   return undefined;
@@ -268,7 +270,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       return {
         x: node.coords[0],
         y: node.coords[1],
-        type: 'Gathering'
+        type: 'Gathering',
+        gatheringType: node.type
       };
     }
     if (drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {

@@ -173,8 +173,8 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
-    "Open_overlay": "오버레이 열기",
-    "Open_alarms_overlay": "알람 오버레이 열기",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -406,6 +406,7 @@
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -642,7 +643,7 @@
       "Tag_filter": "태그 필터"
     },
     "OVERLAY": {
-      "Open": "목록 오버레이 열기",
+      "Open": "Toggle list overlay",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     }
@@ -1413,7 +1414,7 @@
         "Big": "대형 (!!)"
       },
       "OVERLAY": {
-        "Open": "낚시 보고용 오버레이 열기",
+        "Open": "Toggle fishing report overlay",
         "Bait": "현재 미끼",
         "Tug": "입질",
         "Hookset": "낚아채기",
@@ -1715,6 +1716,7 @@
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
+    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "BAG": {
       "SaddleBag": "초코보 가방",
@@ -1730,11 +1732,11 @@
     "Ignore_item": "해당 아이템에는 이 팁 무시하기",
     "Remove_ignore_item": "해당 아이템에는 더이상 이 팁을 무시하지 않기",
     "Ignore_container": "해당 집사는 이 팁 무시하기",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "숨기기",
+    "Unhide_optimizer": "숨기기 해제",
     "Remove_ignore_container": "해당 집사는 이 팁을 무시하지 않기",
     "Show_ignored": "무시된 항목 보여주기",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "숨긴 항목 표시",
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
@@ -1819,6 +1821,7 @@
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1857,7 +1860,7 @@
       "Direct_hit_chances": "직격 확률",
       "Critical_hit_chances": "극대화 확률",
       "Critical_hit_multiplier": "극대화 배율",
-      "Determination_bonus": "Determination bonus",
+      "Determination_bonus": "의지력 배율",
       "GCD": "글쿨"
     }
   },

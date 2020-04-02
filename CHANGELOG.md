@@ -2,6 +2,120 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.0.20"></a>
+## [7.0.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.19...v7.0.20) (2020-03-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed missing alarm map ids on several alarms ([b005143](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b005143))
+* **data:** added all the missing aetherytes ([79339f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79339f4))
+* **inventory:** fixed inventory name display in list details ([eb5522e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb5522e))
+* **layout:** fixed end items zone breakdown ([22eba70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22eba70))
+* **log-tracker:** removed NaN position markers ([7391991](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7391991))
+* **simulator:** fixed an issue with foods reset when applying stats on unsaved rotation ([f84b0ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f84b0ed))
+
+
+### Features
+
+* **core:** update server names for cn ([8a7e2ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a7e2ec))
+* **db:** support for korean v5.1 update ([32c448d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32c448d))
+* **desktop:** packet capture support for korean 5.1 ([941b831](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/941b831))
+* **simulator:** support for korean v5.1 update ([99c361c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99c361c))
+
+
+
+<a name="7.0.19"></a>
+## [7.0.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.18...v7.0.19) (2020-03-22)
+
+
+### Bug Fixes
+
+* **simulator:** fixed an issue with simulator page not opening at all ([08ce1f5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08ce1f5)), closes [#1475](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1475)
+
+
+
+<a name="7.0.18"></a>
+## [7.0.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.17...v7.0.18) (2020-03-22)
+
+
+### Bug Fixes
+
+* **data:** fixed wrong coordinates for various nodes ([45318e4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45318e4))
+* **db:** fixed position for several gathering nodes ([637ec42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/637ec42))
+* **desktop:** fixed weather tracking in diadem ([f33a409](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f33a409))
+* **desynth:** fixed desynth guide not finding anything ([7fc4d15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fc4d15))
+* **gathering-location:** fixed aethersand search results ([36b0173](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36b0173))
+* **list:** fixed an issue with large-ish lists updating ([366d639](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/366d639))
+* **list:** fixed inventory tag sometimes derping its height ([a083b40](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a083b40))
+* **profile:** fixed cancel button not resetting display ([f213e14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f213e14))
+* **simulator:** fixed an issue with consumables not being reset properly ([bfd4910](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bfd4910))
+
+
+### Features
+
+* **inventory:** you can now ignore individual containers in settings ([c4ad66e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c4ad66e)), closes [#1461](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1461)
+* patreon new goddess of the hand ([c967eda](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c967eda))
+
+
+
+<a name="7.0.17"></a>
+## [7.0.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.16...v7.0.17) (2020-03-18)
+
+
+### Bug Fixes
+
+* **desktop:** fixed stats tracking using packet capture ([5f36641](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f36641))
+* **gathering:** fixed missing gathering data for some ephemeral items ([8b8d22e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8b8d22e))
+* **simulator:** fixed an issue with groundwork and waste not combo ([d64ee50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d64ee50))
+
+
+
+<a name="7.0.16"></a>
+## [7.0.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.15...v7.0.16) (2020-03-17)
+
+
+### Bug Fixes
+
+* **alarms:** fixed wrong node icon for some items ([7112828](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7112828))
+* **autofill:** set minimum volume to 0 instead of 1 so it can be muted ([bc72681](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bc72681))
+* **data:** fixed missing aetherytes ([9e6140a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e6140a))
+* **gathering-location:** fixed an issue with some fishes not having proper map id, breaking alarms ([6b31857](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b31857))
+* **inventory:** fixed expansion search for some items that were breaking it ([2735a3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2735a3b))
+* **log-tracker:** fixed an issue with the halo fishing spot ([e5112a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e5112a3))
+* **simulator:** fixed an issue with patient touch's fail implementation ([7e268d8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e268d8))
+* **simulator:** fixed an issue with XIVAPI when hovering remove final appraisal action ([687c6d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/687c6d0))
+* **universalis:** possible fix for wrong server used for report ([c5c6c08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c5c6c08)), closes [#1451](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1451)
+
+
+### Features
+
+* **desktop:** you can now close overlays by clicking on the opening button again ([a23a0ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a23a0ea))
+* **gearsets:** changed display for a more verbose mode ([0a1ed0d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a1ed0d))
+* **gearsets:** display message when filters are missing some slots ([fb46c53](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb46c53))
+* **map:** added gathering type icon in navigation maps ([f41f359](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f41f359))
+
+
+
+<a name="7.0.15"></a>
+## [7.0.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.14...v7.0.15) (2020-03-12)
+
+
+### Bug Fixes
+
+* **data:** various positions fixes ([4ea3f4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4ea3f4b))
+* **dekstop:** stop windows from asking about firewall on every single startup ([eac9276](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eac9276))
+* **gathering:** fixed wrong positions for Duskblooms ([7698b6d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7698b6d))
+
+
+### Features
+
+* **db:** added masterbook to recipe block in item pages ([16b9973](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16b9973))
+* **db:** support for diadem fishing and reporting ([5bd9c4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bd9c4c))
+* **inventory:** added "expansion:" filter tag to filter inventory by expansion ([01219f3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01219f3))
+
+
+
 <a name="7.0.14"></a>
 ## [7.0.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.13...v7.0.14) (2020-03-11)
 

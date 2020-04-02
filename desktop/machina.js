@@ -35,7 +35,6 @@ module.exports.start = function(win, config, verbose, winpcap) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft"', () => {
         exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
       });
@@ -74,6 +73,7 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'playerSpawn',
         'inventoryModifyHandler',
         'npcSpawn',
+        'objectSpawn',
         'playerStats',
         'updateClassInfo',
         'actorControl',
@@ -85,7 +85,11 @@ module.exports.start = function(win, config, verbose, winpcap) {
         'eventPlay4',
         'someDirectorUnk4',
         'actorControlSelf',
-        'retainerInformation'
+        'retainerInformation',
+        'weatherChange',
+        'updatePositionHandler',
+        'updatePositionInstance',
+        'prepareZoning'
       ];
 
       Machina = new MachinaFFXIV(options);

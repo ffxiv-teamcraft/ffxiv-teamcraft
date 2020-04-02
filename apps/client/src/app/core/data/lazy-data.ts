@@ -5,11 +5,13 @@ export interface LazyData {
   actionIcons: any;
   actionTimeline: any;
   actions: any;
+  aetherytes: any;
   baseParams: any;
   classJobsModifiers: any;
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;
+  diademTerritory: any;
   equipSlotCategories: any;
   fates: any;
   fishParameter: any;
@@ -20,6 +22,7 @@ export interface LazyData {
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
+  gatheringPointBaseToNodeId: any;
   hunts: any;
   hwdInspections: any;
   hwdPhases: any;
@@ -38,7 +41,7 @@ export interface LazyData {
   materias: any;
   mobs: any;
   monsters: any;
-  nodePositions: any;
+  nodes: any;
   notebookDivisionCategory: any;
   notebookDivision: any;
   npcs: any;
@@ -52,6 +55,7 @@ export interface LazyData {
   shops: any;
   stackSizes: any;
   statuses: any;
+  territoryLayers: any;
   traits: any;
   tribes: any;
   ventures: any;

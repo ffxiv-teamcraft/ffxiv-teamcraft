@@ -133,6 +133,14 @@ export class SettingsService {
     this.setSetting('compact-sidebar', compact.toString());
   }
 
+  public get ignoredInventories(): string[] {
+    return JSON.parse(this.getSetting('ignored-inventories', '[]'));
+  }
+
+  public set ignoredInventories(ignored: string[]) {
+    this.setSetting('ignored-inventories', JSON.stringify(ignored));
+  }
+
   public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,
@@ -450,6 +458,14 @@ export class SettingsService {
 
   public set macroLock(lock: boolean) {
     this.setSetting('macroLock', lock.toString());
+  }
+
+  public get xivapiKey(): string {
+    return this.getSetting('xivapiKey', '');
+  }
+
+  public set xivapiKey(key: string) {
+    this.setSetting('xivapiKey', key);
   }
 
   public get macroConsumables(): boolean {

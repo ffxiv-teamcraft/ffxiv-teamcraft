@@ -49,7 +49,7 @@
                 *ngIf="npc.mapId | closestAetheryte: npc.coords | async as aetheryte"
                 class="closest-tp">
                 <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
-                {{(aetheryte.nameid || aetheryte.placenameid) | placeName | i18n}}
+                {{(aetheryte.nameid) | placeName | i18n}}
               </div>
             </div>
           </ng-template>

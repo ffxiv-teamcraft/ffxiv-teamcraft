@@ -110,10 +110,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   public actions$ = new BehaviorSubject<CraftingAction[]>([]);
 
-  private draggedAction$: CraftingAction;
-
-  private draggedIndex$: number;
-
   public crafterStats$: Observable<CrafterStats>;
 
   public stats$: Observable<CrafterStats>;
@@ -891,12 +887,18 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
       if (food) {
         this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
+      } else if (rotationChanged) {
+        delete this.selectedFood;
       }
       if (medicine) {
         this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
+      } else if (rotationChanged) {
+        delete this.selectedMedicine;
       }
       if (fcActions) {
         this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
+      } else if (rotationChanged) {
+        this.selectedFreeCompanyActions = [];
       }
       this.applyConsumables(stats);
     });

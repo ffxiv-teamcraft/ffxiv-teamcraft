@@ -1,12 +1,10 @@
+import { Vector3 } from '../tools/vector3';
 import { Vector2 } from '../tools/vector2';
 
-export interface Aetheryte {
+export interface Aetheryte extends Vector3 {
   id: number;
   zoneid: number;
-  placenameid: number;
   map: number;
-  x: number;
-  y: number;
   type: number;
   nameid: number;
   aethernetCoords?: Vector2;

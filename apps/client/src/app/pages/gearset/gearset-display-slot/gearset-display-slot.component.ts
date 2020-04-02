@@ -15,6 +15,9 @@ export class GearsetDisplaySlotComponent {
   @Input()
   propertyName: keyof TeamcraftGearset;
 
+  @Input()
+  verbose = false;
+
   get equipmentPiece(): EquipmentPiece {
     return this.gearset[this.propertyName] as EquipmentPiece;
   }

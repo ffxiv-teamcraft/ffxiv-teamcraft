@@ -150,6 +150,7 @@
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                               <div>
                                 <app-map-position [mapId]="node.mapId"
+                                                  *ngIf="node.x !== undefined"
                                                   [marker]="{x: node.x, y: node.y}"
                                                   [showZoneName]="true"
                                                   [zoneId]="node.zoneid"

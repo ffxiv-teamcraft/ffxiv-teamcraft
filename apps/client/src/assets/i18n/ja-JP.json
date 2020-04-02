@@ -173,8 +173,8 @@
     "Add_note": "メモを追加する",
     "Volume": "ボリューム",
     "Macro_copied": "マクロがクリップボードにコピーされました",
-    "Open_overlay": "オーバーレイ開く",
-    "Open_alarms_overlay": "Open alarms overlay",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "{{amount}} 回 もっと",
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
@@ -406,6 +406,7 @@
     "Change_email_success": "メールが変更されました",
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -642,7 +643,7 @@
       "Tag_filter": "タグフィルター"
     },
     "OVERLAY": {
-      "Open": "Open list overlay",
+      "Open": "Toggle list overlay",
       "No_display": "Open a list in main window to get started",
       "No_panel_selected": "Select a panel using the buttons above"
     }
@@ -1413,7 +1414,7 @@
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Open fishing report overlay",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Attached bait",
         "Tug": "Tug",
         "Hookset": "Hookset",
@@ -1715,6 +1716,7 @@
     "Reset_inventory": "所持品の初期化",
     "Clean_all": "全所持品の初期化",
     "Search_for_an_item": "所持状況を確認",
+    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "チョコボかばん",
@@ -1819,6 +1821,7 @@
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",

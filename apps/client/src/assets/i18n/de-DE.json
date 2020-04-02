@@ -173,8 +173,8 @@
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
-    "Open_overlay": "Overlay öffnen",
-    "Open_alarms_overlay": "Alarm-Overlay öffnen",
+    "Open_overlay": "Toggle overlay",
+    "Open_alarms_overlay": "Toggle alarms overlay",
     "More_available": "und {{amount}} mehr...",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
@@ -406,6 +406,7 @@
     "Change_email_success": "E-Mail-Adresse wurde geändert",
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
+    "Ignored_inventories": "Ignored inventories",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -642,7 +643,7 @@
       "Tag_filter": "Markierungs-Filter"
     },
     "OVERLAY": {
-      "Open": "Listen-Overlay öffnen",
+      "Open": "Toggle list overlay",
       "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     }
@@ -1413,7 +1414,7 @@
         "Big": "Stark (!!!)"
       },
       "OVERLAY": {
-        "Open": "Meldungsoverlay öffnen",
+        "Open": "Toggle fishing report overlay",
         "Bait": "Verwendeter Köder",
         "Tug": "Spitze",
         "Hookset": "Anschlag",
@@ -1715,6 +1716,7 @@
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
     "Search_for_an_item": "Nach Gegenstand suchen",
+    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
     "In_x_containers": "In {{amount}} Inventaren",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
@@ -1819,6 +1821,7 @@
     "No_trades_needed": "Keine Handel benötigt",
     "Stats_caps": "Attributlimits",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
+    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",

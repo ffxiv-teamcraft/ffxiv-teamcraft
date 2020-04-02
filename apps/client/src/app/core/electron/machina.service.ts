@@ -244,12 +244,16 @@ export class MachinaService {
       ),
       this.lazyData.data$
     ]).subscribe(([packet, data]) => {
-      const realZoneId = territories[packet.zoneID.toString()];
-      this.eorzeaFacade.setZone(realZoneId);
-      this.eorzeaFacade.setMap(+Object.keys(data.maps)
-        .find(key => {
-          return realZoneId === data.maps[+key].placename_id;
-        }));
+      const mapId = territories[packet.zoneID.toString()];
+      this.eorzeaFacade.setZone(this.lazyData.data.maps[mapId].placename_id);
+      this.eorzeaFacade.setPcapWeather(packet.weatherID, true);
+      this.eorzeaFacade.setMap(mapId);
+    });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('weatherChange')
+    ).subscribe(packet => {
+      this.eorzeaFacade.setPcapWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(

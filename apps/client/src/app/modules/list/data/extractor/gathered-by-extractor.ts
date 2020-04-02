@@ -73,7 +73,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             areaid: this.localized.getAreaIdByENName(partial.n),
             type: partial.t
           };
-          const lazyNode = this.lazyData.data.nodePositions[partial.i.toString()];
+          const lazyNode = this.lazyData.data.nodes[partial.i.toString()];
           if (lazyNode && !lazyNode.items.some(row => row === item.id)) {
             storedNode.hidden = true;
           }
@@ -86,12 +86,12 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             storedNode.coords = details.coords;
           }
           // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.
-          if (this.lazyData.data.nodePositions[node] !== undefined && this.lazyData.data.nodePositions[node].x && this.lazyData.data.nodePositions[node].y) {
-            storedNode.coords = [this.lazyData.data.nodePositions[node].x, this.lazyData.data.nodePositions[node].y];
+          if (this.lazyData.data.nodes[node] !== undefined && this.lazyData.data.nodes[node].x && this.lazyData.data.nodes[node].y) {
+            storedNode.coords = [this.lazyData.data.nodes[node].x, this.lazyData.data.nodes[node].y];
           }
           // Set proper map id based on informations we have
-          if (this.lazyData.data.nodePositions[node] && this.lazyData.data.nodePositions[node].map) {
-            storedNode.mapid = this.lazyData.data.nodePositions[node].map;
+          if (this.lazyData.data.nodes[node] && this.lazyData.data.nodes[node].map) {
+            storedNode.mapid = this.lazyData.data.nodes[node].map;
           } else {
             storedNode.mapid = this.localized.getMapId(this.localized.getPlace(partial.z).en);
           }

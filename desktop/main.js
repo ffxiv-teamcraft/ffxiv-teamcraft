@@ -46,7 +46,8 @@ function handleSquirrelEvent() {
       // - Add your .exe to the PATH
       // - Write to the registry for things like file associations and
       //   explorer context menus
-
+      // Remove previous firewall rules
+      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
@@ -85,6 +86,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
+app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
 
@@ -282,11 +284,16 @@ function createWindow() {
 
   win.webContents.on('will-navigate', handleRedirect);
   win.webContents.on('new-window', handleRedirect);
-  (config.get('overlays') || []).forEach(overlayUri => openOverlay({ url: overlayUri }));
+  (config.get('overlays') || []).forEach(overlayUri => toggleOverlay({ url: overlayUri }));
 }
 
-function openOverlay(overlayConfig) {
+function toggleOverlay(overlayConfig) {
   const url = overlayConfig.url;
+  if (openedOverlays[url]) {
+    openedOverlays[url].close();
+    afterOverlayClose(url);
+    return;
+  }
   const dimensions = overlayConfig.defaultDimensions || { x: 800, y: 600 };
   let opts = {
     title: `FFXIV Teamcraft overlay - ${url}`,
@@ -297,7 +304,8 @@ function openOverlay(overlayConfig) {
     width: dimensions.x,
     height: dimensions.y,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      backgroundThrottling: false
     }
   };
   Object.assign(opts, config.get(`overlay:${url}:bounds`));
@@ -313,17 +321,25 @@ function openOverlay(overlayConfig) {
 
   // save window size and position
   overlay.on('close', () => {
-    config.set(`overlay:${url}:bounds`, overlay.getBounds());
-    config.set(`overlay:${url}:opacity`, overlay.getOpacity());
-    config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
-    delete openedOverlays[url];
-    openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
+    afterOverlayClose(url);
   });
 
 
   overlay.loadURL(`file://${BASE_APP_PATH}/index.html#${url}?overlay=true`);
   openedOverlays[url] = overlay;
   openedOverlayUris.push(url);
+}
+
+function afterOverlayClose(url) {
+  const overlay = openedOverlays[url];
+  if (!overlay) {
+    return;
+  }
+  config.set(`overlay:${url}:bounds`, overlay.getBounds());
+  config.set(`overlay:${url}:opacity`, overlay.getOpacity());
+  config.set(`overlay:${url}:on-top`, overlay.isAlwaysOnTop());
+  delete openedOverlays[url];
+  openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
 }
 
 function createTray() {
@@ -347,14 +363,14 @@ function createTray() {
       label: 'Fishing Overlay',
       type: 'normal',
       click: () => {
-        openOverlay({ url: '/fishing-reporter-overlay' });
+        toggleOverlay({ url: '/fishing-reporter-overlay' });
       }
     },
     {
       label: 'Alarm Overlay',
       type: 'normal',
       click: () => {
-        openOverlay({ url: '/alarms-overlay' });
+        toggleOverlay({ url: '/alarms-overlay' });
       }
     },
     {
@@ -420,6 +436,22 @@ ipcMain.on('fishing-state:set', (_, data) => {
 
 ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
+});
+
+let mappyState = {};
+ipcMain.on('mappy-state:set', (_, data) => {
+  mappyState = data;
+  if (openedOverlays['/mappy-overlay'] !== undefined) {
+    openedOverlays['/mappy-overlay'].webContents.send('mappy-state', data);
+  }
+});
+
+ipcMain.on('mappy-state:get', (event) => {
+  event.sender.send('mappy-state', mappyState);
+});
+
+ipcMain.on('mappy:reload', (event) => {
+  win.webContents.send('mappy:reload');
 });
 
 
@@ -555,7 +587,7 @@ ipcMain.on('start-minimized:get', (event) => {
 });
 
 ipcMain.on('overlay', (event, data) => {
-  openOverlay(data);
+  toggleOverlay(data);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {

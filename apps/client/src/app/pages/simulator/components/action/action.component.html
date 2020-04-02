@@ -2,7 +2,7 @@
   <div (click)="ignoreDisabled || (!disabled && !notEnoughCp)?actionclick.emit():null"
        (contextmenu)="showStateMenu?contextMenu($event, template):null"
        class="action-container">
-    <div [appXivdbActionTooltipDisabled]="tooltipDisabled"
+    <div [appXivdbActionTooltipDisabled]="tooltipDisabled || action.getId(getJobId()) < 0"
          [appXivdbActionTooltip]="action.getId(getJobId())"
          [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
          class="action">

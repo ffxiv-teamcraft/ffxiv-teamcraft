@@ -135,10 +135,10 @@
     "ko": "성목과 약초밭에서 획득 개수에 관한 특수한 성질을 발견할 수 있게 됩니다."
   },
   "46": {
-    "ko": "크리스탈에 속성 가호 효과가 적용됩니다."
+    "ko": "크리스탈 채집 시에도 열두 신의 가호가 적용됩니다."
   },
   "47": {
-    "ko": "클러스터에 속성 가호 효과가 적용됩니다."
+    "ko": "클러스터 채집 시에도 열두 신의 가호가 적용됩니다."
   },
   "48": {
     "ko": "광맥과 바위터에서 획득률에 관한 특수한 성질을 발견할 수 있게 됩니다."
@@ -153,10 +153,10 @@
     "ko": "광맥과 바위터에서 획득 개수에 관한 특수한 성질을 발견할 수 있게 됩니다."
   },
   "52": {
-    "ko": "크리스탈에 속성 가호 효과가 적용됩니다."
+    "ko": "크리스탈 채집 시에도 열두 신의 가호가 적용됩니다."
   },
   "53": {
-    "ko": "클러스터에 속성 가호 효과가 적용됩니다."
+    "ko": "클러스터 채집 시에도 열두 신의 가호가 적용됩니다."
   },
   "54": {
     "ko": "모래바다에서 낚시할 수 있게 됩니다."
@@ -492,7 +492,7 @@
     "ko": "자동 공격을 제외한 기술 사용으로 주는 물리 피해량이 5% 증가합니다."
   },
   "165": {
-    "ko": "무기 기술이 명중하거나 콤보 공격에 성공하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인법<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 6씩 증가합니다."
+    "ko": "무기 기술이 명중하거나 콤보 공격에 성공하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인법<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 5씩 증가합니다."
   },
   "166": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>화둔술<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>뇌둔술<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>빙둔술<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행하면 축지법의 재사용 대기 시간이 초기화됩니다.\n일부 적 대상으로는 효과가 발휘되지 않습니다."
@@ -573,16 +573,16 @@
     "ko": "60레벨 이하의 채집 지점에서 채집을 시작하면, 모든 도달 게이지가 즉시 0이 됩니다."
   },
   "192": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 1 증가합니다."
   },
   "193": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 1 증가합니다."
   },
   "194": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 1 증가합니다."
   },
   "195": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>졸트라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다.\n또한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버선더<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버에어로<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 350으로, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버파이어<UIGlow>01</UIGlow><UIForeground>01</UIForeground>와 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>버스톤<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 300으로 증가합니다."
   },
   "196": {
     "ko": "자신이 전투 상태에 돌입하면 30초마다 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>치유의 백합<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 발생합니다.\n치유의 백합은 최대 3개까지 누적됩니다."
@@ -705,13 +705,13 @@
     "ko": "레벨 80 이하의 숨은 명당 낚시터를 찾을 수 있습니다."
   },
   "236": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 2 증가하며, 채집 성공 시 GP 회복량이 기본 수치에서 1 증가합니다."
   },
   "237": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 2 증가하며, 채집 성공 시 GP 회복량이 기본 수치에서 1 증가합니다."
   },
   "238": {
-    "ko": "GP의 자연 회복량이 증가합니다."
+    "ko": "GP의 자연 회복량이 기본 수치에서 2 증가합니다."
   },
   "245": {
     "ko": "자신의 무기 기술이 극대화되면 70% 확률로 투기가 부여됩니다."
@@ -810,10 +810,10 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>진풍<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 주는 피해량 증가 효과량과 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>사풍<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 자동 공격 주기, 무기 기술, 마법 시전 시간, 재사용 대기 시간 감소 효과량이 각각 13%로 향상됩니다."
   },
   "279": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>축지<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 2회 사용 가능한 누적 기술로 변화합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>축지법<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 2회 사용 가능한 누적 기술로 변화합니다."
   },
   "280": {
-    "ko": "무기 기술이 명중하거나 콤보에 성공하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인법<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 8 증가합니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>그림자 송곳니<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 명중하거나 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>칼날 선풍<UIGlow>01</UIGlow><UIForeground>01</UIForeground>, <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>갑각파황격<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 콤보에 성공하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>인법<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 10 증가합니다."
   },
   "282": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>직선 사격<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>찬란한 화살<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
@@ -858,7 +858,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>프리즈<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 시전 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>얼어붙은 마음<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 1개가 부여됩니다."
   },
   "296": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 최대 단계일 때, 반대 속성 마법의 소비 MP가 0이 됩니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>천상의 화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 또는 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>저승의 냉기<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 최대 단계일 때, 반대 속성 마법의 소비 MP가 0이 됩니다.\n단 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>플레어<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 에는 적용되지 않습니다."
   },
   "297": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>언어 통달<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 최대 2단계까지 중첩됩니다."
@@ -873,7 +873,7 @@
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루인 계열 취약<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 지속시간이 30초로 늘어납니다."
   },
   "301": {
-    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>전염<UIGlow>01</UIGlow><UIForeground>01</UIForeground> 실행 시 자신이 부여한 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>루인 계열 취약<UIGlow>01</UIGlow><UIForeground>01</UIForeground>도 확산됩니다."
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>전염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 추가 효과가 반드시 발동됩니다."
   },
   "302": {
     "ko": "20초 동안 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>데미피닉스<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 소환합니다.\n데미피닉스는 출현 시 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>불사조의 날개<UIGlow>01</UIGlow><UIForeground>01</UIForeground>를 실행하며, 소환사가 적에게 공격 마법을 사용하면 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>화염<UIGlow>01</UIGlow><UIForeground>01</UIForeground>을 실행합니다.\n데미피닉스 소환 시간이 끝나면 직전에 소환했던 에기가 다시 나타납니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 소환수 생존 및 피닉스 빙의 실행 시"
@@ -940,5 +940,98 @@
   },
   "324": {
     "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바이오<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>바이오라<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+  },
+  "325": {
+    "ko": "광부로 클래스 체인지했을 때, 자동으로 광산의 탐구자 효과를 받습니다."
+  },
+  "326": {
+    "ko": "원예가로 클래스 체인지했을 때, 자동으로 숲의 탐구자 효과를 받습니다."
+  },
+  "327": {
+    "ko": "어부로 클래스 체인지했을 때, 자동으로 바다의 탐구자 효과를 받습니다."
+  },
+  "328": {
+    "ko": "광부로 클래스 체인지했을 때, 자동으로 살금걸음 효과를 받습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건: 살금걸음을 실행할 수 있는 장소<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "329": {
+    "ko": "원예가로 클래스 체인지했을 때, 자동으로 살금걸음 효과를 받습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건: 살금걸음을 실행할 수 있는 장소<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "330": {
+    "ko": "어부로 클래스 체인지했을 때, 자동으로 살금걸음 효과를 받습니다.\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>발동 조건: 살금걸음을 실행할 수 있는 장소<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "331": {
+    "ko": "열두 신의 가호를 받아 획득 수가 1개 증가합니다."
+  },
+  "332": {
+    "ko": "열두 신의 가호를 받아 획득 수가 1개 증가합니다."
+  },
+  "333": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>막대한 수익<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>막대한 수익 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+  },
+  "334": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발굴 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발굴 3<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
+  },
+  "335": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>직감적 선별<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>직감적 선별 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+  },
+  "336": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>막대한 수확<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>막대한 수확 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+  },
+  "337": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>잎갈이 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>가 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>잎갈이 3<UIGlow>01</UIGlow><UIForeground>01</UIForeground>으로 변화합니다."
+  },
+  "338": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>직감적 선별<UIGlow>01</UIGlow><UIForeground>01</UIForeground>이 <UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>직감적 선별 2<UIGlow>01</UIGlow><UIForeground>01</UIForeground>로 변화합니다."
+  },
+  "339": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "340": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "341": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "342": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "343": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "344": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "345": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "346": {
+    "ko": "작업 효율이 120으로 증가합니다."
+  },
+  "347": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "348": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "349": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "350": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "351": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "352": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "353": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "354": {
+    "ko": "강행 작업 효율이 500으로 증가합니다."
+  },
+  "355": {
+    "ko": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>발산<UIGlow>01</UIGlow><UIForeground>01</UIForeground>의 위력이 90으로 증가합니다."
   }
 }
