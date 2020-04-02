@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { combineLatest, Observable, of } from 'rxjs';
 import { MapData } from './map-data';
 import { Aetheryte } from '../../core/data/aetheryte';
-import { aetherytes } from '../../core/data/sources/aetherytes';
 import { Vector2 } from '../../core/tools/vector2';
 import { MathToolsService } from '../../core/tools/math-tools';
 import { NavigationStep } from './navigation-step';
@@ -169,7 +168,7 @@ export class MapService {
     if (id === 213) {
       id = 257;
     }
-    return aetherytes
+    return this.lazyData.data.aetherytes
       .filter((aetheryte) => aetheryte.map === id)
       .map((aetheryte: Aetheryte) => {
         aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };

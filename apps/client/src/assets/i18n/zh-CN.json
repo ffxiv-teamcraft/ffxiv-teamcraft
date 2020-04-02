@@ -173,8 +173,8 @@
     "Add_note": "添加备注",
     "Volume": "音量",
     "Macro_copied": "宏已复制到剪贴板",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "显示/隐藏悬浮窗",
+    "Open_alarms_overlay": "显示/隐藏闹钟悬浮窗",
     "More_available": "还有 {{amount}} 个…",
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
@@ -406,7 +406,7 @@
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
-    "Ignored_inventories": "Ignored inventories",
+    "Ignored_inventories": "已忽略的物品栏",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -425,6 +425,7 @@
       "Packet_capture": "数据包捕获",
       "Theme": "界面主题",
       "Search": "搜索",
+      "Sekrit": "Sekrit",
       "Other": "其他"
     },
     "REGIONS": {
@@ -587,10 +588,9 @@
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "List_large": "这个清单太长了",
-    "Enable_performance_mode": "您可以在设置中启用性能模式来加快渲染速度",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "清单过长",
-    "List_too_large_description": "该清单过长，携带了太多信息，可能会受到数据库大小限制。为确保你不会丢失信息，该清单无法再添加物品了。",
-    "Add_to_another_list": "添加到另一个清单",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "新标签",
     "Amount_ilvl": "数量 (ilvl)",
     "Contributions_popup": "贡献统计",
@@ -643,7 +643,7 @@
       "Tag_filter": "标签筛选"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "显示/隐藏清单悬浮窗",
       "No_display": "请在主窗口中打开一个清单",
       "No_panel_selected": "使用上面的按钮选择一个面板"
     }
@@ -1414,7 +1414,7 @@
         "Big": "重杆 (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "显示/隐藏钓鱼悬浮窗",
         "Bait": "当前钓饵",
         "Tug": "咬饵",
         "Hookset": "捉钩",
@@ -1661,7 +1661,7 @@
     "Title": "博客"
   },
   "ERRORS": {
-    "Http_request_error": "{{tool}} 发生了错误。请到 Discord 的 #announcements 频道查看公告，或是到 #bugs 频道反馈。",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
@@ -1696,7 +1696,7 @@
     "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
-    "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容。操作完成后此提示会自动关闭。",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。"
   },
@@ -1856,10 +1856,10 @@
     },
     "STAT_DISPLAY": {
       "Ilvl": "平均品级",
-      "HP": "Hit Points",
+      "HP": "体力",
       "Direct_hit_chances": "直击率",
       "Critical_hit_chances": "暴击率",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
+      "Critical_hit_multiplier": "暴击倍率",
       "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
     }

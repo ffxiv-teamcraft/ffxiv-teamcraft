@@ -6,8 +6,10 @@ export interface Fate {
   icon: string;
   level: number;
   position?: {
+    map: number;
     zoneid: number;
     x: number;
     y: number;
+    z: number;
   }
 }

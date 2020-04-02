@@ -77,7 +77,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             .filter(node => node.coords)
             .map(node => {
               const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
-              const nodePosition = this.lazyData.data.nodePositions[node.id];
+              const nodePosition = this.lazyData.data.nodes[node.id];
               const alarm: Partial<Alarm> = {
                 itemId: node.itemId,
                 icon: node.icon,

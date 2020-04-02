@@ -425,6 +425,7 @@
       "Packet_capture": "Packet capture",
       "Theme": "Theme",
       "Search": "Search",
+      "Sekrit": "Sekrit",
       "Other": "Other"
     },
     "REGIONS": {
@@ -587,10 +588,9 @@
     "Amount_craftable": "Você pode criar {{amount}}",
     "Add_item": "Adicionar um item",
     "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
-    "Add_to_another_list": "Add to another list",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "New tag",
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "Contributions stats",
@@ -1661,7 +1661,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
   },
   "SEARCH": {
@@ -1696,7 +1696,7 @@
     "No_character_id": "No ingame character id set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
     "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },

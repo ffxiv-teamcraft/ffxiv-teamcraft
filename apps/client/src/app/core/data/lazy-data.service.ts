@@ -12,6 +12,7 @@ import { lazyFilesList } from './lazy-files-list';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { Region } from '../../modules/settings/region.enum';
+import { Memoized } from '../decorators/memoized';
 
 @Injectable({
   providedIn: 'root'
@@ -89,7 +90,28 @@ export class LazyDataService {
           || this.data.recipes.find(r => r.id.toString() === id.toString());
       })
     );
+  }
 
+  public getRecipeSync(id: string): Craft {
+    let recipes: Craft[];
+    switch (this.settings.region) {
+      case Region.China:
+        recipes = this.data.zhRecipes;
+        break;
+      case Region.Korea:
+        recipes = this.data.koRecipes;
+        break;
+      default:
+        recipes = this.data.recipes;
+        break;
+    }
+    return recipes.find(r => r.id.toString() === id.toString())
+      || this.data.recipes.find(r => r.id.toString() === id.toString());
+  }
+
+  @Memoized()
+  public getExtract(id: number): ListRow {
+    return this.extracts.find(ex => ex.id === id);
   }
 
   public get allItems(): any {
@@ -154,6 +176,7 @@ export class LazyDataService {
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
       this.loaded$.next(true);
+      this.loaded$.complete();
     });
   }
 

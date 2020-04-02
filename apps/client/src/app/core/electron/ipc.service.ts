@@ -67,8 +67,24 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('npcSpawn'));
   }
 
+  public get objectSpawnPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('objectSpawn'));
+  }
+
   public get retainerInformationPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
+  }
+
+  public get updatePositionHandlerPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('updatePositionHandler'));
+  }
+
+  public get updatePositionInstancePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('updatePositionInstance'));
+  }
+
+  public get initZonePackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('initZone'));
   }
 
   public get playerStatsPackets$(): Observable<any> {
@@ -85,6 +101,10 @@ export class IpcService {
 
   public get actorControlPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('actorControl'));
+  }
+
+  public get prepareZoningPackets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('prepareZoning'));
   }
 
   public packets$: Subject<any> = new Subject<any>();
@@ -144,7 +164,7 @@ export class IpcService {
     }
   }
 
-  public openOverlay(url: string, registrationUri: string, defaultDimensions?: Vector2): void {
+  public openOverlay(url: string, registrationUri: string = url, defaultDimensions?: Vector2): void {
     this.send('overlay', {
       url: url,
       registrationUri: registrationUri,

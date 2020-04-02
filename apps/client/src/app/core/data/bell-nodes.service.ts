@@ -31,7 +31,7 @@ export class BellNodesService {
       const reductions = getItemSource(extract, DataType.REDUCED_FROM).map(r => r.obj.i);
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id || reductions.indexOf(item.id) > -1);
-        const nodePosition = this.lazyData.data.nodePositions[node.id];
+        const nodePosition = this.lazyData.data.nodes[node.id];
         if (match !== undefined) {
           if (!nodePosition) {
             const placeName = this.l12n.getPlace(node.zone);
@@ -73,13 +73,13 @@ export class BellNodesService {
   getAllNodes(...items: any[]): any[] {
 
     const nodesFromPositions = [].concat.apply([], items.map(item => {
-      const availableNodeIds = item.nodes && item.nodes.length > 0 ? item.nodes : Object.keys(this.lazyData.data.nodePositions)
+      const availableNodeIds = item.nodes && item.nodes.length > 0 ? item.nodes : Object.keys(this.lazyData.data.nodes)
         .filter(key => {
-          return this.lazyData.data.nodePositions[key].items.indexOf(item.obj.i) > -1;
+          return this.lazyData.data.nodes[key].items.indexOf(item.obj.i) > -1;
         });
       return availableNodeIds
         .map(key => {
-          return { ...item, ...this.lazyData.data.nodePositions[key], nodeId: key };
+          return { ...item, ...this.lazyData.data.nodes[key], nodeId: key };
         })
         .map(node => {
           const bellNode = this.getNode(+node.nodeId);
@@ -116,7 +116,7 @@ export class BellNodesService {
           [item.obj.i, ...reductions].map(itemId => {
             return this.getNodesByItemId(itemId)
               .map(node => {
-                const nodePosition = this.lazyData.data.nodePositions[node.id];
+                const nodePosition = this.lazyData.data.nodes[node.id];
                 const result = {
                   ...item,
                   nodeId: node.id,

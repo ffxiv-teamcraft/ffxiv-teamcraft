@@ -33,7 +33,10 @@ export class MapComponent implements OnInit {
   @Input()
   hideDbButton = false;
 
-  mapData: Observable<MapData>;
+  @Input()
+  aetheryteZIndex = 5;
+
+  mapData$: Observable<MapData>;
 
   position: Vector2 = { x: 0, y: 0 };
 
@@ -44,20 +47,35 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mapData = this.mapId$.pipe(
+    this.mapData$ = this.mapId$.pipe(
       switchMap(mapId => {
         return this.mapService.getMapById(mapId);
       })
     );
   }
 
-  getMarkerStyle(map: MapData, marker: MapMarker, offset = { x: 0, y: 0 }): any {
+  getMarkerStyle(map: MapData, marker: MapMarker, aetheryte = false): any {
     const positionPercents = this.mapService.getPositionOnMap(map, marker);
+    marker.size = marker.size || {
+      x: 32,
+      y: 32
+    };
     return {
-      top: `${positionPercents.y + offset.y}%`,
-      left: `${positionPercents.x + offset.y}%`,
-      'z-index': marker.zIndex || 5,
+      top: `${positionPercents.y}%`,
+      left: `${positionPercents.x}%`,
+      'margin-top': `-${marker.size.y / 2}px`,
+      'margin-left': `-${marker.size.x / 2}px`,
+      'z-index': marker.zIndex || aetheryte?this.aetheryteZIndex:5,
       ...(marker.additionalStyle || {})
+    };
+  }
+
+  getMapRangeStyle(map: MapData, mapRange: any): any {
+    const positionPercents = this.mapService.getPositionOnMap(map, mapRange.position);
+    return {
+      top: `${positionPercents.y}%`,
+      left: `${positionPercents.x}%`,
+      'z-index': 10
     };
   }
 

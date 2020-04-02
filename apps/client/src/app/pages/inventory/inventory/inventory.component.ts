@@ -37,7 +37,11 @@ export class InventoryComponent {
               .map(slot => inventory.items[key][slot]);
           })
       )
-        .filter(item => {
+        .filter((item: InventoryItem) => {
+          // Happens if you add an item that you never had in your inventory before (in an empty slot)
+          if (item.retainerName && item.containerId < 10000) {
+            return false;
+          }
           return UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
         })
         .reduce((bags: InventoryDisplay[], item: InventoryItem) => {

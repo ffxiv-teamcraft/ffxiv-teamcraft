@@ -141,7 +141,7 @@ export class DiscordWebhookService {
     ).subscribe();
   }
 
-  notifyCustomItemAddition(itemName: string, itemId: number, amount: number, list: List, team: Team): void {
+  notifyCustomItemAddition(itemName: string, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_ADDED)) {
       return;
     }
@@ -150,10 +150,10 @@ export class DiscordWebhookService {
       itemName: itemName,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, this.getIcon(itemId));
+    }, undefined);
   }
 
-  notifyCustomItemDeletion(itemName: string, itemId: number, amount: number, list: List, team: Team): void {
+  notifyCustomItemDeletion(itemName: string, amount: number, list: List, team: Team): void {
     if (!team.hasSettingEnabled(WebhookSettingType.ITEM_REMOVED)) {
       return;
     }
@@ -162,7 +162,7 @@ export class DiscordWebhookService {
       itemName: itemName,
       listName: list.name,
       listUrl: this.linkTools.getLink(`/list/${list.$key}`)
-    }, this.getIcon(itemId));
+    }, undefined);
   }
 
   notifyCustomItemChecked(team: Team, itemId: number, list: List, memberId: string, amount: number, itemName: string): void {

@@ -9,6 +9,7 @@ export interface CraftedBy {
   stars_tooltip: string;
   id: string;
   job: number;
+  yield: number;
   masterbook?: CompactMasterbook;
   rlvl?: number;
   durability?: number;
@@ -19,6 +20,5 @@ export interface CraftedBy {
   controlReq?: number;
   craftsmanshipReq?: number;
   unlockId?: number;
-  ingredients?: Ingredient[];
   complexity?: Complexity;
 }

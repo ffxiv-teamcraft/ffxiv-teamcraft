@@ -425,6 +425,7 @@
       "Packet_capture": "Capture de paquets",
       "Theme": "Thème",
       "Search": "Recherche",
+      "Sekrit": "Sekrit",
       "Other": "Autre"
     },
     "REGIONS": {
@@ -587,10 +588,9 @@
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
     "Add_item": "Ajouter un objet",
     "List_large": "Ceci est une grande liste",
-    "Enable_performance_mode": "Vous pouvez activer le mode hautes performances dans les paramètres afin d'obtenir un rendu plus rapide",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "Liste trop longue",
-    "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
-    "Add_to_another_list": "Ajouter à une autre liste",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "Nouveau tag",
     "Amount_ilvl": "Montant (ilvl)",
     "Contributions_popup": "Statistiques des contributions",
@@ -1661,7 +1661,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "Il y a un problème avec {{tool}}, veuillez vérifier le salon #announcements sur discord ou signaler le soucis dans le salon #bugs",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft n'a pas réussi à se connecter à la base de données, il semble que quelque chose ne fonctionne pas ou vous n'avez pas accès à internet."
   },
   "SEARCH": {
@@ -1696,7 +1696,7 @@
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
-    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette popup se fermera une fois que ce sera effectué.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "La capture de paquets ne fonctionne pas",
     "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour."
   },
