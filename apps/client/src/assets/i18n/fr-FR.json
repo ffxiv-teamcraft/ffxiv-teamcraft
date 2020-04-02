@@ -407,7 +407,6 @@
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "Ignored_inventories": "Ignored inventories",
-    "Dev_category_description": "This is where specific configurations for devs happen, do not fill this unless asked by Miu, if you do, nothing will ha",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
