@@ -13,10 +13,6 @@
           <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                      [nzValue]="locale"></nz-option>
         </nz-select>
-        <a [nzTitle]="'WIKI.Title' | translate" class="wiki-link" href="https://wiki.ffxivteamcraft.com"
-           nz-tooltip target="_blank">
-          <i nz-icon nzType="question-circle"></i>
-        </a>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
@@ -135,10 +131,6 @@
               <i nz-icon nzType="idcard"></i>
               {{'Profile' | translate}}
             </a>
-              <a nz-menu-item routerLink="/inventory">
-              <i nz-icon nzType="appstore"></i>
-                {{'INVENTORY.Title' | translate}}
-            </a>
             <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/teams">
               <i nz-icon nzType="team"></i>
               {{'TEAMS.Title' | translate}}
@@ -227,6 +219,11 @@
                       <span class="companion-svg svg-icon">&#x0F202;</span>
                       <span class="nav-text">{{'GEARSETS.Title' | translate}}</span>
                   </span>
+                </a>
+                <a nz-menu-item (click)="onNavLinkClick()" class="menu-link" routerLink="/inventory"
+                   routerLinkActive="ant-menu-item-selected" *ngIf="ipc.machinaToggle">
+                  <i nz-icon nzType="appstore"></i>
+                  <span class="nav-text">{{'INVENTORY.Title' | translate}}</span>
                 </a>
               </li>
 
@@ -357,12 +354,10 @@
                   <i nz-icon nzType="info-circle"></i>
                   <span>{{'SIDEBAR.Other' | translate}}</span>
                 </span>
-                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/blog"
-                   routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="file-text"></i>
-                      <span class="nav-text">{{'BLOG.Title' | translate}}</span>
-                  </span>
+                <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
+                   nz-tooltip target="_blank">
+                  <i nz-icon nzType="question-circle"></i>
+                  <span class="nav-text">{{'WIKI.Title' | translate}}</span>
                 </a>
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
                    routerLinkActive="ant-menu-item-selected">
@@ -487,8 +482,7 @@
                   {{'PACKET_CAPTURE.Button_label' | translate}}
                 </button>
                 <div>{{'Or' | translate}}</div>
-                <a
-                  href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
+                <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
               </div>
             </ng-template>
           </nz-alert>
