@@ -64,6 +64,12 @@ export class UserInventory extends DataModel {
           if (onlyUserInventory) {
             matches = matches && +key < 10;
           }
+          // In some cases, items are registered as retainer while they aren't, just remove them from the output.
+          if (key.indexOf(':') > -1) {
+            if (+key.split(':')[1] < 10000) {
+              return false;
+            }
+          }
           const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
           if (localStorage.getItem('trackItemsOnSale') === 'true') {
             return matches;
