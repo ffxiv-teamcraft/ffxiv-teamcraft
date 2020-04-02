@@ -18,7 +18,6 @@ import { FormsModule } from '@angular/forms';
     TranslateModule
   ],
   declarations: [ListPickerDrawerComponent],
-  entryComponents: [ListPickerDrawerComponent],
   providers: [ListPickerService]
 })
 export class ListPickerModule {

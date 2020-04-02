@@ -19,8 +19,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [CommentsService],
   declarations: [CommentsPopupComponent],
-  exports: [CommentsPopupComponent],
-  entryComponents: [CommentsPopupComponent]
+  exports: [CommentsPopupComponent]
 })
 export class CommentsModule {
 }

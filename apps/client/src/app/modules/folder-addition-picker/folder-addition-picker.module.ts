@@ -7,7 +7,6 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 @NgModule({
   declarations: [FolderAdditionPickerComponent],
-  entryComponents: [FolderAdditionPickerComponent],
   imports: [
     CommonModule,
     TranslateModule,

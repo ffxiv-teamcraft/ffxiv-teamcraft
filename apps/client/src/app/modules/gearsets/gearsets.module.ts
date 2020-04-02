@@ -52,15 +52,6 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     ItemCapsTableComponent,
     StatsPopupComponent
   ],
-  entryComponents: [
-    GearsetCreationPopupComponent,
-    AriyalaImportPopupComponent,
-    LodestoneImportPopupComponent,
-    GearsetComparatorPopupComponent,
-    ImportFromPcapPopupComponent,
-    GearsetCostPopupComponent,
-    StatsPopupComponent
-  ],
   imports: [
     CommonModule,
 

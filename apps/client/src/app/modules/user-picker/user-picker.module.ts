@@ -26,7 +26,6 @@ import { PipesModule } from '../../pipes/pipes.module';
   ],
   declarations: [UserPickerComponent],
   exports: [UserPickerComponent],
-  entryComponents: [UserPickerComponent],
   providers: [UserPickerService]
 })
 export class UserPickerModule {

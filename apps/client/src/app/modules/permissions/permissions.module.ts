@@ -27,7 +27,6 @@ import { FreecompanyPickerModule } from '../freecompany-picker/freecompany-picke
     FreecompanyPickerModule
   ],
   declarations: [PermissionsBoxComponent],
-  entryComponents: [PermissionsBoxComponent],
   exports: [PermissionsBoxComponent]
 })
 export class PermissionsModule {

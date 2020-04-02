@@ -160,16 +160,6 @@ const routes: Routes = [
     RotationFolderPanelComponent,
     ActionComponent
   ],
-  entryComponents: [
-    MacroPopupComponent,
-    SimulationMinStatsPopupComponent,
-    RecipeChoicePopupComponent,
-    StepByStepReportComponent,
-    RotationTipsPopupComponent,
-    CommunityRotationPopupComponent,
-    SolverPopupComponent,
-    SimulationSharePopupComponent
-  ],
   providers: [
     ConsumablesService,
     FreeCompanyActionsService

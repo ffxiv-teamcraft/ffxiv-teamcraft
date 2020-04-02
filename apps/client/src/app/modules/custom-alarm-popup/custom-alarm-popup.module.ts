@@ -11,7 +11,6 @@ import { ItemIconModule } from '../item-icon/item-icon.module';
 
 @NgModule({
   declarations: [CustomAlarmPopupComponent],
-  entryComponents: [CustomAlarmPopupComponent],
   imports: [
     CommonModule,
     FormsModule,

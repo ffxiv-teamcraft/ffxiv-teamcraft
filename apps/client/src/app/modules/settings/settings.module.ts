@@ -24,9 +24,6 @@ import { CoreModule } from '../../core/core.module';
   declarations: [
     SettingsPopupComponent
   ],
-  entryComponents: [
-    SettingsPopupComponent
-  ],
   providers: [
     SettingsPopupService
   ]
