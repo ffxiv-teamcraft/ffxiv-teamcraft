@@ -425,6 +425,7 @@
       "Packet_capture": "Настройка захвата пакетов",
       "Theme": "Тема",
       "Search": "Поиск",
+      "Sekrit": "Sekrit",
       "Other": "Прочее"
     },
     "REGIONS": {
@@ -587,10 +588,9 @@
     "Amount_craftable": "Вы можете сделать {{amount}}",
     "Add_item": "Добавить предмет",
     "List_large": "Это большой список",
-    "Enable_performance_mode": "Вы можете включить режим производительности в настройках для ускорения рендеринга",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "Список слишком большой",
-    "List_too_large_description": "Этот список слишком велик и может достичь ограничений размера базы данных из-за всей информации, которую он несет. Вы не можете добавить больше предметов, дабы избежать потери списка.",
-    "Add_to_another_list": "Добавить в другой список",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "Новый тег",
     "Amount_ilvl": "Сумма (ilvl)",
     "Contributions_popup": "Статистика взносов",
@@ -1661,7 +1661,7 @@
     "Title": "Блог"
   },
   "ERRORS": {
-    "Http_request_error": "Возникла проблема с {{tool}}, пожалуйста, посмотрите канал #announcements в дискорде, либо сообщите об этой проблеме на канал #bugs",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft не смог достучаться к базе данных. Похоже, что-то блокирует её, либо у вас нет доступа в интернет."
   },
   "SEARCH": {
@@ -1696,7 +1696,7 @@
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
-    "Please_update_inventory_popup": "Пожалуйста, измените зону (или телепортом или войдите в дом) для обновления инвентаря. Это всплывающее окно будет закрыто после завершения.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
