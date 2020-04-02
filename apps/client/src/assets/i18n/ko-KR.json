@@ -588,10 +588,9 @@
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
     "List_large": "큰 목록입니다",
-    "Enable_performance_mode": "더 빠른 랜더링을 위해 성능모드 켜기",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "너무 큰 목록",
-    "List_too_large_description": "이 목록의 내용은 데이터베이스의 제한에 도달할 정도로 매우 큽니다. 목록이 삭제되는 것을 막기 위해서 목록에 아이템을 더 추가할 수 없습니다.",
-    "Add_to_another_list": "다른 목록에 추가",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "새 태그",
     "Amount_ilvl": "수량 (ilvl 기준)",
     "Contributions_popup": "해당 목록의 기여도 통계",
@@ -1662,7 +1661,7 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "{{tool}}에 문제점이 존재합니다. #announcements 디스코드 채널을 확인하거나 #bugs 채널에 제보해주세요.",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
@@ -1697,7 +1696,7 @@
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
-    "Please_update_inventory_popup": "소지품 업데이트를 위하여 지역을 이동해주세요. 이 팝업은 지역을 이동하면 사라집니다. (텔레포를 사용하거나 하우징에 들어가세요)",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
