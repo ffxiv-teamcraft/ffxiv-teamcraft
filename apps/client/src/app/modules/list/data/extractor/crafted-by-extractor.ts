@@ -37,7 +37,8 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
         rlvl: craft.rlvl,
         durability: craft.durability,
         progression: craft.progress,
-        quality: craft.quality
+        quality: craft.quality,
+        yield: craft.yield
       };
       if (craft.job === 0) {
         craftedBy.icon = '';

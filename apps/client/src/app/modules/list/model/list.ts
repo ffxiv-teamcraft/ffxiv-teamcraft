@@ -3,7 +3,6 @@ import { CraftAddition } from './craft-addition';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
-import { Craft } from '../../../model/garland-tools/craft';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { ModificationEntry } from './modification-entry';
 import { MathTools } from '../../../tools/math-tools';
@@ -11,7 +10,6 @@ import { environment } from '../../../../environments/environment';
 import { Team } from '../../../model/team/team';
 import { ForeignKey } from '../../../core/database/relational/foreign-key';
 import { CustomItem } from '../../custom-items/model/custom-item';
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { BehaviorSubject, concat, EMPTY, Observable, of, Subject } from 'rxjs';
 import { bufferCount, debounceTime, expand, map, skip, skipUntil, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
@@ -22,6 +20,8 @@ import * as firebase from 'firebase/app';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
 import { LazyData } from '../../../core/data/lazy-data';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { CraftedBy } from './crafted-by';
 
 declare const gtag: Function;
 
@@ -428,7 +428,7 @@ export class List extends DataWithPermissions {
     }
   }
 
-  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, lazyData: LazyData, recipeId?: string): Observable<List> {
+  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, lazyDataService: LazyDataService, recipeId?: string): Observable<List> {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
       expand(additions => {
@@ -438,10 +438,10 @@ export class List extends DataWithPermissions {
         }
         return concat(
           ...additions.map(addition => {
-            if (addition.data instanceof ItemData) {
-              return of(this.addNormalCraft(addition, gt, listManager, lazyData, recipeId));
+            if (addition.data instanceof CustomItem) {
+              return this.addCustomCraft(addition, customItems, dataService, listManager, lazyDataService);
             } else {
-              return this.addCustomCraft(addition, gt, customItems, dataService, listManager);
+              return of(this.addNormalCraft(addition, listManager, lazyDataService, recipeId));
             }
           })
         ).pipe(
@@ -457,37 +457,39 @@ export class List extends DataWithPermissions {
     );
   }
 
-  private addNormalCraft(addition: CraftAddition, gt: GarlandToolsService, listManager: ListManagerService, lazyData: LazyData, recipeId?: string): CraftAddition[] {
+  private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
-    let craft: Craft;
+    let craft: CraftedBy;
+    const crafts = getItemSource<CraftedBy[]>(addition.item, DataType.CRAFTED_BY);
     if (recipeId !== undefined) {
-      craft = addition.item.craft.find(c => c.id.toString() === recipeId.toString()) || addition.item.craft[0];
+      craft = crafts.find(c => c.id.toString() === recipeId.toString()) || crafts[0];
     } else {
-      craft = addition.item.craft[0];
+      craft = crafts[0];
     }
-    for (const element of craft.ingredients) {
+    const ingredients = lazyDataService.getRecipeSync(craft.id).ingredients;
+    for (const element of ingredients) {
       // If this is a crystal
       if (element.id < 20 && element.id > 1) {
-        const crystal = gt.getCrystalDetails(+element.id);
         this.add(this.items, {
           id: +element.id,
-          icon: crystal.item.icon,
+          icon: lazyDataService.data.itemIcons[+element.id],
           amount: element.amount * addition.amount,
           done: 0,
           used: 0,
           yield: 1,
           usePrice: true
         });
-        listManager.addDetails(this, crystal);
+        listManager.addDetails(this);
       } else {
-        const elementDetails = (<ItemData>addition.data).getIngredient(+element.id);
-        if (elementDetails && elementDetails.isCraft()) {
-          const yields = elementDetails.craft[0].yield || 1;
+        const elementDetails = lazyDataService.getExtract(+element.id);
+        const craftedBy = getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY);
+        if (elementDetails && getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY).length > 0) {
+          const yields = craftedBy[0].yield || 1;
           const added = this.add(this.items, {
             id: elementDetails.id,
             icon: elementDetails.icon,
             amount: element.amount * addition.amount,
-            requires: elementDetails.craft[0].ingredients,
+            requires: lazyDataService.getRecipeSync(craftedBy[0].id).ingredients,
             done: 0,
             used: 0,
             yield: yields,
@@ -499,10 +501,10 @@ export class List extends DataWithPermissions {
             amount: added
           });
         } else {
-          const inspection = lazyData.hwdInspections.find(row => {
+          const inspection = lazyDataService.data.hwdInspections.find(row => {
             return row.receivedItem === element.id;
           });
-          let rowToAdd: Partial<ListRow> = {
+          const rowToAdd: Partial<ListRow> = {
             id: elementDetails.id,
             icon: elementDetails.icon,
             amount: element.amount * addition.amount,
@@ -511,18 +513,6 @@ export class List extends DataWithPermissions {
             yield: 1,
             usePrice: true
           };
-          if (elementDetails === undefined) {
-            const partial = (<ItemData>addition.data).getPartial(element.id.toString(), 'item');
-            rowToAdd = {
-              id: partial.obj.i,
-              icon: partial.obj.c,
-              amount: element.amount * addition.amount,
-              done: 0,
-              used: 0,
-              yield: 1,
-              usePrice: true
-            };
-          }
           // Handle inspections just like crafts, as they add a requirement
           // TODO maybe convert requirements to an extractor, to allow more stuff like this.
           if (inspection) {
@@ -534,7 +524,7 @@ export class List extends DataWithPermissions {
             const reqAmount = element.amount * addition.amount;
             this.add(this.items, {
               id: inspection.requiredItem,
-              icon: lazyData.itemIcons[inspection.requiredItem],
+              icon: lazyDataService.data.itemIcons[inspection.requiredItem],
               amount: Math.ceil(reqAmount / inspection.amount) * inspection.amount,
               done: 0,
               used: 0,
@@ -544,13 +534,13 @@ export class List extends DataWithPermissions {
           }
           this.add(this.items, rowToAdd as ListRow);
         }
-        listManager.addDetails(this, <ItemData>addition.data);
+        listManager.addDetails(this);
       }
     }
     return nextIteration;
   }
 
-  private addCustomCraft(addition: CraftAddition, gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService): Observable<CraftAddition[]> {
+  private addCustomCraft(addition: CraftAddition, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, lazyDataService: LazyDataService): Observable<CraftAddition[]> {
     const item: CustomItem = addition.data as CustomItem;
     const nextIteration: CraftAddition[] = [];
     let index = 0;
@@ -558,17 +548,16 @@ export class List extends DataWithPermissions {
     return queue$.pipe(
       switchMap(element => {
         if (element.id < 20 && element.id > 1) {
-          const crystal = gt.getCrystalDetails(+element.id);
           this.add(this.items, {
             id: +element.id,
-            icon: crystal.item.icon,
+            icon: lazyDataService.data.itemIcons[+element.id],
             amount: element.amount * addition.amount,
             done: 0,
             used: 0,
             yield: 1,
             usePrice: true
           });
-          listManager.addDetails(this, crystal);
+          listManager.addDetails(this);
           return of(null);
         } else {
           if (element.custom) {
@@ -620,7 +609,7 @@ export class List extends DataWithPermissions {
                     usePrice: true
                   });
                 }
-                listManager.addDetails(this, elementItemData);
+                listManager.addDetails(this);
               })
             );
           }

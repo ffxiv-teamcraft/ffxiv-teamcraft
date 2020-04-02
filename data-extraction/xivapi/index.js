@@ -1520,8 +1520,11 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert').subscribe(page => {
-    page.Results.forEach(recipe => {
+  combineLatest([
+    getAllEntries('https://xivapi.com/CompanyCraftSequence'),
+    aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert')
+  ]).subscribe(([companyCrafts, xivapiRecipes]) => {
+    xivapiRecipes.forEach(recipe => {
       if (recipe.RecipeLevelTable === null) {
         return;
       }
@@ -1567,7 +1570,50 @@ if (hasTodo('recipes')) {
         expert: recipe.IsExpert === 1
       });
     });
-  }, null, () => {
+
+    companyCrafts.forEach(companyCraftSequence => {
+      const recipe = {
+        id: `fc${companyCraftSequence.ID}`,
+        job: 0,
+        lvl: 1,
+        yields: 1,
+        result: companyCraftSequence.ResultItemTargetID,
+        stars: 0,
+        qs: false,
+        hq: false,
+        ingredients: []
+      };
+      if (companyCraftSequence.CompanyCraftDraftTargetID > 0) {
+        recipe.masterbook = {
+          id: `draft${companyCraftSequence.CompanyCraftDraftTargetID}`,
+          name: companyCraftSequence.CompanyCraftDraft && companyCraftSequence.CompanyCraftDraft.Name_en
+        };
+      }
+      for (let partIndex = 0; partIndex < 8; partIndex++) {
+        if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`] === 0) {
+          break;
+        }
+        for (let processIndex = 0; processIndex < 3; processIndex++) {
+          if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
+            break;
+          }
+          for (let i = 0; i < 12; i++) {
+            if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0
+              || companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}TargetID`] === 0) {
+              break;
+            }
+            recipe.ingredients.push({
+              id: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}`].Item,
+              amount: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetQuantity${i}`],
+              quality: 0,
+              phase: processIndex + 1
+            });
+          }
+        }
+      }
+      recipes.push(recipe);
+    });
+
     persistToJsonAsset('recipes', recipes);
     done('recipes');
   });
