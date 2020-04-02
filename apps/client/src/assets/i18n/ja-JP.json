@@ -588,10 +588,9 @@
     "Amount_craftable": "{{amount}} 個 作られます",
     "Add_item": "アイテムを追加する",
     "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "リストが大き過ぎます",
-    "List_too_large_description": "このリストの内容はデータベースの制限に到達するほど大き過ぎます。リストが削除するのを防ぐためには、リストにアイテムを追加することはできません。",
-    "Add_to_another_list": "別のリストに追加",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "新しいタグ",
     "Amount_ilvl": "本数（ilvl）",
     "Contributions_popup": "このリストの寄与度の統計",
@@ -1662,7 +1661,7 @@
     "Title": "ブログ"
   },
   "ERRORS": {
-    "Http_request_error": "{{tool}} には問題があります。 #announcements ディスコードチャンネルを確認するとか #bugs チャンネルに情報提供してください。",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "データベースにアクセスできません。何か問題があるか、インターネットが切断される場合があります。"
   },
   "SEARCH": {
@@ -1697,7 +1696,7 @@
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
-    "Please_update_inventory_popup": "所持品の更新のために、地域を移動してください。このポップアップは、地域を移動すると消えます。（テレポを使用するか、ハウジングに入って行ってください）",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
