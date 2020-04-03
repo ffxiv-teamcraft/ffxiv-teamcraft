@@ -85,7 +85,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       alarm.weathersFrom = data.weathersFrom;
     }
     if (data.x !== undefined || data.y !== undefined) {
-      alarm.coords = { x: data.x || 0, y: data.y || 0 };
+      alarm.coords = { x: data.x || 0, y: data.y || 0, z: data.z || 0 };
     }
     if (this.returnAlarm) {
       this.modalRef.close(<Alarm>alarm);

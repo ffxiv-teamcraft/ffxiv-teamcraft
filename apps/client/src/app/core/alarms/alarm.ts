@@ -6,6 +6,7 @@ import { Aetheryte } from '../data/aetheryte';
 import { AlarmGroup } from './alarm-group';
 import { CompactMasterbook } from '../../model/common/compact-masterbook';
 import { FishingBait } from '../../modules/list/model/fishing-bait';
+import { Vector3 } from '../tools/vector3';
 
 export class Alarm extends DataModel {
 
@@ -24,7 +25,7 @@ export class Alarm extends DataModel {
   slot: number | string;
   zoneId: number;
   mapId: number;
-  coords: Vector2;
+  coords: Vector3;
   /**
    * Type of the node.
    * 0,1 = MIN

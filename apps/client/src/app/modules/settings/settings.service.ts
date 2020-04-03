@@ -468,6 +468,14 @@ export class SettingsService {
     this.setSetting('xivapiKey', key);
   }
 
+  public get enableMappy(): boolean {
+    return this.getSetting('enableMappy', 'true') === 'true';
+  }
+
+  public set enableMappy(enabled: boolean) {
+    this.setSetting('enableMappy', enabled.toString());
+  }
+
   public get macroConsumables(): boolean {
     return this.getSetting('macroConsumables', 'true') === 'true';
   }

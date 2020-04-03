@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { Vector2 } from '../../tools/vector2';
-import { filter, tap, delayWhen } from 'rxjs/operators';
-import { merge, interval } from 'rxjs';
+import { filter, tap, delayWhen, takeUntil } from 'rxjs/operators';
+import { merge, interval, Subject } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
@@ -108,6 +108,10 @@ export class MappyReporterService {
 
   public available = false;
 
+  private intervals: any[] = [];
+
+  private stop$ = new Subject<void>();
+
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private authFacade: AuthFacade,
               private eorzeaFacade: EorzeaFacade, private mapService: MapService,
               private http: HttpClient, private settings: SettingsService) {
@@ -139,31 +143,40 @@ export class MappyReporterService {
     });
   }
 
+  stop(): void {
+    this.intervals.forEach(i => clearInterval(i));
+    this.intervals = [];
+    this.stop$.next();
+  }
+
   private initReporter(): void {
     this.ipc.on('mappy:reload', () => {
       this.addMappyData(this.state.mapId);
     });
 
-    setInterval(() => {
+    this.intervals.push(setInterval(() => {
       if (this.state && this.dirty) {
         this.ipc.send('mappy-state:set', this.state);
         this.dirty = false;
       }
-    }, 200);
+    }, 200));
 
-    setInterval(() => {
+    this.intervals.push(setInterval(() => {
       this.pushReports();
-    }, 10000);
+    }, 10000));
     // Base map tracker
     this.eorzeaFacade.mapId$.subscribe((mapId) => {
       this.setMap(mapId, true);
     });
 
 
-    this.ipc.prepareZoningPackets$.subscribe((packet) => {
+    this.ipc.prepareZoningPackets$
+      .pipe(
+        takeUntil(this.stop$)
+      ).subscribe((packet) => {
       this.setState({
         zoning: true
-      })
+      });
     });
 
     let positionTicks = 0;
@@ -172,6 +185,7 @@ export class MappyReporterService {
       this.ipc.updatePositionInstancePackets$,
       this.ipc.initZonePackets$
     ).pipe(
+      takeUntil(this.stop$),
       filter(() => {
         return !!this.state.mapId;
       }),
@@ -239,6 +253,7 @@ export class MappyReporterService {
 
     // Monsters
     this.ipc.npcSpawnPackets$.pipe(
+      takeUntil(this.stop$),
       delayWhen(() => {
         return this.state.zoning ? interval(1000) : interval(0);
       })
@@ -293,6 +308,7 @@ export class MappyReporterService {
 
     // Objects
     this.ipc.objectSpawnPackets$.pipe(
+      takeUntil(this.stop$),
       delayWhen(() => {
         return this.state.zoning ? interval(1000) : interval(0);
       }),
@@ -533,6 +549,9 @@ export class MappyReporterService {
   private getNodeIcon(gatheringPointBaseId: number): string {
     const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
+    if (!node) {
+      return './assets/icons/mappy/highlight.png';
+    }
     if (node.limited) {
       return NodeTypeIconPipe.timed_icons[node.type];
     }
@@ -609,7 +628,7 @@ export class MappyReporterService {
       });
 
     const objReports: XivapiReportEntry[] = snapshot.objs
-      .filter(obj => obj.timestamp > this.reportedUntil)
+      .filter(obj => obj.timestamp > this.reportedUntil && obj.id !== undefined)
       .map(obj => {
         return {
           BNpcBaseID: 0,

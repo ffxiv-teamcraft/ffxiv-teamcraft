@@ -63,28 +63,47 @@ function done(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-// if (hasTodo('missingNodes')) {
-//   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
-//   const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
-//   let count = 0;
-//   Object.values(nodes).forEach((node) => {
-//     if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
-//       console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
-//       console.log(`| Level: ${node.level}`);
-//       console.log(`| Limited: ${node.limited}`);
-//       count++;
-//     }
-//   });
-//   console.log(`
-//
-//   **Total**: ${count}`);
-// }
+if (hasTodo('missingNodes', true)) {
+  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/nodes.json'));
+  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+  let count = 0;
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+  const places = require('../../apps/client/src/assets/data/places.json');
+  const data = {};
+  Object.values(nodes)
+    .filter(node => node.items.filter(i => i < 100000).length > 0 && node.x === undefined && node.map > 0)
+    .filter(node => node.items.map(item => itemNames[item.toString()].en).join(', ').indexOf('Skybuilders') === -1)
+    .forEach((node) => {
+      data[node.map] = [
+        ...(data[node.map] || []),
+        {
+          items: node.items.map(item => itemNames[item.toString()].en).join(', '),
+          level: node.level,
+          limited: node.limited
+        }
+      ];
+      count++;
+    });
+  Object.keys(data)
+    .forEach((mapId) => {
+      console.log(`## ${places[mapData[mapId].placename_id].en}`);
+      data[mapId].forEach(node => {
+        console.log(` - [ ] Items: ${node.items}`);
+        console.log(`| Level: ${node.level}`);
+        console.log(`| Limited: ${node.limited}`);
+      });
+      console.log('\n');
+    });
+
+  console.log(`
+
+  **Total**: ${count}`);
+}
 
 if (hasTodo('mappy')) {
   // MapData extraction
-  const mapData$ = new Subject();
+  const mapData$ = get('https://xivapi.com/mappy/json');
   const nodes$ = new Subject();
-  http.get('https://staging.xivapi.com/mappy/json', (res) => mapData$.next(res));
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();
@@ -110,6 +129,9 @@ if (hasTodo('mappy')) {
   getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType').subscribe(page => {
     page.Results
       .forEach(point => {
+        if (point.PlaceNameTargetID === 0 && point.TerritoryType) {
+          point.PlaceNameTargetID = point.TerritoryType.PlaceNameTargetID;
+        }
         gatheringPoints[point.ID] = {
           legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
           ephemeral: point.EphemeralStartTime < 65535,
@@ -187,29 +209,25 @@ if (hasTodo('mappy')) {
 
   combineLatest([mapData$, nodes$])
     .subscribe(([mapData]) => {
-      mapData.setEncoding('utf8');
-      mapData.pipe(csv())
-        .on('data', function(row) {
-          if (row.Type === 'BNPC') {
-            handleMonster(row);
-          }
-          if (row.Type === 'Node') {
-            handleNode(row);
-          }
-        })
-        .on('end', function() {
-          // Write data that needs to be joined with game data first
-          persistToJsonAsset('nodes', nodes);
-          // console.log('nodes written');
-          persistToJsonAsset('monsters', monsters);
-          done('mappy');
-        });
+      mapData.forEach(row => {
+        if (row.Type === 'BNPC') {
+          handleMonster(row);
+        }
+        if (row.Type === 'Node') {
+          handleNode(row);
+        }
+      });
+      // Write data that needs to be joined with game data first
+      persistToJsonAsset('nodes', nodes);
+      // console.log('nodes written');
+      persistToJsonAsset('monsters', monsters);
+      done('mappy');
     });
 }
 
 
 handleNode = (row) => {
-  const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
+  const baseId = gatheringPointToBaseId[+row.NodeID];
   if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
@@ -1604,7 +1622,7 @@ if (hasTodo('recipes')) {
             }
             recipe.ingredients.push({
               id: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}`].Item,
-              amount: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetQuantity${i}`],
+              amount: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetQuantity${i}`] * companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetsRequired${i}`],
               quality: 0,
               phase: processIndex + 1
             });

@@ -16,6 +16,7 @@ import { aetherstream } from '../../core/data/sources/aetherstream';
 import { SettingsService } from '../settings/settings.service';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EorzeaFacade } from '../eorzea/+state/eorzea.facade';
+import { Vector3 } from '../../core/tools/vector3';
 
 @Injectable()
 export class MapService {
@@ -48,7 +49,7 @@ export class MapService {
     return this.cache[mapId];
   }
 
-  public getNearestAetheryte(mapData: MapData, coords: Vector2): Aetheryte {
+  public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Aetheryte {
     let nearest = mapData.aetherytes[0];
     for (const aetheryte of mapData.aetherytes.filter(ae => ae.type === 0)) {
       if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {

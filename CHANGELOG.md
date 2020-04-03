@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.1"></a>
+## [7.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.20...v7.1.1) (2020-04-03)
+
+
+### Bug Fixes
+
+* **lists:** fixed an issue with list generation using multiple items ([4d1e42a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d1e42a))
+* **lists:** fixed company crafts having wrong required amounts ([4b28bbd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b28bbd))
+
+
+### Features
+
+* **gathering:** added X/Y/Z position for every single node in the game ([4066c6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4066c6b))
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.20...v7.1.0) (2020-04-02)
 

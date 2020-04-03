@@ -87,7 +87,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
           }
           // If we don't have position for this node in data provided by garlandtools,w e might have it inside our data.
           if (this.lazyData.data.nodes[node] !== undefined && this.lazyData.data.nodes[node].x && this.lazyData.data.nodes[node].y) {
-            storedNode.coords = [this.lazyData.data.nodes[node].x, this.lazyData.data.nodes[node].y];
+            storedNode.coords = [this.lazyData.data.nodes[node].x, this.lazyData.data.nodes[node].y, this.lazyData.data.nodes[node].z];
           }
           // Set proper map id based on informations we have
           if (this.lazyData.data.nodes[node] && this.lazyData.data.nodes[node].map) {

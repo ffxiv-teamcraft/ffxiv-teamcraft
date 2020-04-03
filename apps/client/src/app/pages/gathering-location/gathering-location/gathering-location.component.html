@@ -35,7 +35,7 @@
       </ng-template>
     </nz-card>
     <ng-template #map>
-      <app-map [mapId]="node.mapId" [markers]="[{x: node.x, y: node.y}]"></app-map>
+      <app-map [mapId]="node.mapId" [markers]="[{x: node.x, y: node.y, size: {x:0, y:0}}]"></app-map>
     </ng-template>
 
     <ng-template #title>

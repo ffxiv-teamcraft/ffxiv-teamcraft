@@ -424,6 +424,7 @@
         <ng-template #suffixButton>
           <button nz-button nzType="primary" nzSize="default" (click)="startMappy()" nzSearch>{{'COMMON.Apply' | translate}}</button>
         </ng-template>
+        <label nz-checkbox [(ngModel)]="settings.enableMappy" (ngModelChange)="onMappyEnableChange($event)">Enable mappy</label>
       </ng-container>
     </div>
   </nz-tab>
