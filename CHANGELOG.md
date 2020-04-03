@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.1"></a>
+## [7.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.20...v7.1.1) (2020-04-03)
+
+
+### Bug Fixes
+
+* **i18n:** some EN troubleshooting clarifications ([531b803](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/531b803))
+* **inventory:** fixed an issue with retainer inventory loading gearsets ([aefc27b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aefc27b))
+* **lists:** fixed an issue with list generation using multiple items ([4d1e42a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d1e42a))
+* **lists:** fixed company crafts having wrong required amounts ([4b28bbd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b28bbd))
+
+
+### Features
+
+* **app:** moved inventory to general menu and wiki to about ([42f2fd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42f2fd5))
+* **gathering:** added X/Y/Z position for every single node in the game ([4066c6b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4066c6b))
+* **layout:** new filter: IS_ONLY_FROM_VENDOR ([833b556](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/833b556))
+
+
+
 <a name="7.1.0"></a>
 # [7.1.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.20...v7.1.0) (2020-04-02)
 
