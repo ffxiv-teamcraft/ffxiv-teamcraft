@@ -46,10 +46,10 @@ export class MappyOverlayComponent implements OnInit {
   windowSize: Vector2;
 
   trackPlayer = true;
-  showMappyLayers = false;
-  watchMappy = false;
-  showLocalLayers = true;
-  showLGBLayers = true;
+  showMappyLayers = true;
+  watchMappy = true;
+  showLocalLayers = false;
+  showLGBLayers = false;
 
   public state$: ReplaySubject<MappyReporterState> = new ReplaySubject<MappyReporterState>();
 

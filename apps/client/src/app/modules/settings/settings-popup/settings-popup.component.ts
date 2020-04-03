@@ -282,4 +282,12 @@ export class SettingsPopupComponent {
     this.previewSound();
   }
 
+  public onMappyEnableChange(enabled: boolean): void {
+    if (enabled) {
+      this.mappy.start();
+    } else {
+      this.mappy.stop();
+    }
+  }
+
 }
