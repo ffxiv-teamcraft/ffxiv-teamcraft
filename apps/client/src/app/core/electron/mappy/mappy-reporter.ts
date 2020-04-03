@@ -549,6 +549,9 @@ export class MappyReporterService {
   private getNodeIcon(gatheringPointBaseId: number): string {
     const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
+    if (!node) {
+      return './assets/icons/mappy/highlight.png';
+    }
     if (node.limited) {
       return NodeTypeIconPipe.timed_icons[node.type];
     }
@@ -625,7 +628,7 @@ export class MappyReporterService {
       });
 
     const objReports: XivapiReportEntry[] = snapshot.objs
-      .filter(obj => obj.timestamp > this.reportedUntil)
+      .filter(obj => obj.timestamp > this.reportedUntil && obj.id !== undefined)
       .map(obj => {
         return {
           BNpcBaseID: 0,

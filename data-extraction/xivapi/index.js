@@ -63,22 +63,42 @@ function done(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-// if (hasTodo('missingNodes')) {
-//   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
-//   const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
-//   let count = 0;
-//   Object.values(nodes).forEach((node) => {
-//     if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
-//       console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
-//       console.log(`| Level: ${node.level}`);
-//       console.log(`| Limited: ${node.limited}`);
-//       count++;
-//     }
-//   });
-//   console.log(`
-//
-//   **Total**: ${count}`);
-// }
+if (hasTodo('missingNodes', true)) {
+  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/nodes.json'));
+  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+  let count = 0;
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+  const places = require('../../apps/client/src/assets/data/places.json');
+  const data = {};
+  Object.values(nodes)
+    .filter(node => node.items.filter(i => i < 100000).length > 0 && node.x === undefined && node.map > 0)
+    .filter(node => node.items.map(item => itemNames[item.toString()].en).join(', ').indexOf('Skybuilders') === -1)
+    .forEach((node) => {
+      data[node.map] = [
+        ...(data[node.map] || []),
+        {
+          items: node.items.map(item => itemNames[item.toString()].en).join(', '),
+          level: node.level,
+          limited: node.limited
+        }
+      ];
+      count++;
+    });
+  Object.keys(data)
+    .forEach((mapId) => {
+      console.log(`## ${places[mapData[mapId].placename_id].en}`);
+      data[mapId].forEach(node => {
+        console.log(` - [ ] Items: ${node.items}`);
+        console.log(`| Level: ${node.level}`);
+        console.log(`| Limited: ${node.limited}`);
+      });
+      console.log('\n');
+    });
+
+  console.log(`
+
+  **Total**: ${count}`);
+}
 
 if (hasTodo('mappy')) {
   // MapData extraction

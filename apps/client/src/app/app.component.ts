@@ -403,7 +403,7 @@ export class AppComponent implements OnInit {
             first()
           )
           .subscribe(() => {
-            if (this.settings.xivapiKey) {
+            if (this.settings.xivapiKey && this.settings.enableMappy) {
               this.mappy.start();
             }
           });
