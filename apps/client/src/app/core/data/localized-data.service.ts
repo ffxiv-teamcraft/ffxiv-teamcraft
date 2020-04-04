@@ -313,12 +313,23 @@ export class LocalizedDataService {
     // If an item doesn't exist yet inside zh and ko items, use english name instead.
     if (zhKey) {
       const zhRow = this.getRow(this.lazyData.data[zhKey], id);
-      row.zh = zhRow !== undefined ? zhRow.zh : row.en;
+      row.zh = zhRow !== undefined ? zhRow.zh : (row.zh || row.en);
     }
 
     if (koKey) {
       const koRow = this.getRow(this.lazyData.data[koKey], id);
-      row.ko = koRow !== undefined ? koRow.ko : row.en;
+      row.ko = koRow !== undefined ? koRow.ko : (row.ko || row.en);
+    }
+  }
+
+  public i18nToXivapi(value: I18nName, fieldName = 'Name') {
+    return {
+      [`${fieldName}_en`]: value.en,
+      [`${fieldName}_fr`]: value.fr,
+      [`${fieldName}_de`]: value.de,
+      [`${fieldName}_ja`]: value.ja,
+      [`${fieldName}_ko`]: value.ko || value.en,
+      [`${fieldName}_chs`]: value.zh || value.en
     }
   }
 
@@ -327,7 +338,9 @@ export class LocalizedDataService {
       en: value[`${fieldName}_en`],
       fr: value[`${fieldName}_fr`],
       de: value[`${fieldName}_de`],
-      ja: value[`${fieldName}_ja`]
+      ja: value[`${fieldName}_ja`],
+      ko: value[`${fieldName}_ko`],
+      zh: value[`${fieldName}_chs`]
     };
 
     if (key !== null) {

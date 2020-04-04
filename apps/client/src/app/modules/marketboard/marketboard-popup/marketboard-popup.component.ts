@@ -3,7 +3,7 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { MarketboardItem } from '@xivapi/angular-client/src/model/schema/market/marketboard-item';
+import { MarketboardItem } from '../../../core/api/market/marketboard-item';
 import { SettingsService } from '../../settings/settings.service';
 import { HttpClient } from '@angular/common/http';
 import { UniversalisService } from '../../../core/api/universalis.service';
