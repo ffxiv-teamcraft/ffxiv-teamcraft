@@ -587,9 +587,9 @@
     "Amount_craftable": "你可以制作 {{amount}} 个",
     "Add_item": "添加物品",
     "List_large": "这个清单太长了",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
+    "Enable_performance_mode": "您可以在设置中启用性能模式来加快渲染速度。请不要将此问题上报为 Bug。",
     "List_too_large": "清单过长",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "该清单过长，可能会受到数据库大小限制或使您的电脑卡顿。为确保不会丢失信息，在已有移除现有物品前无法在该清单中继续添加物品。",
     "New_tag": "新标签",
     "Amount_ilvl": "数量 (ilvl)",
     "Contributions_popup": "贡献统计",
@@ -1660,7 +1660,7 @@
     "Title": "博客"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "{{tool}} 存在问题，请稍后重试。如果问题仍然存在，请到 Discord 关注 Teamcraft 的 #announcements 频道。",
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
@@ -1695,7 +1695,7 @@
     "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容，操作完成后此提示会自动关闭。如上述操作无效，请查看 https://www.yuque.com/ffcafe/tc/debugpackets",
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。"
   },

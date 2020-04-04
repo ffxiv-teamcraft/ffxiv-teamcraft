@@ -1609,16 +1609,16 @@ if (hasTodo('recipes')) {
       }
       for (let partIndex = 0; partIndex < 8; partIndex++) {
         if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`] === 0) {
-          break;
+          continue;
         }
         for (let processIndex = 0; processIndex < 3; processIndex++) {
           if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
-            break;
+            continue;
           }
           for (let i = 0; i < 12; i++) {
             if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0
               || companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}TargetID`] === 0) {
-              break;
+              continue;
             }
             recipe.ingredients.push({
               id: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}`].Item,

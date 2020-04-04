@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.2"></a>
+## [7.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.1...v7.1.2) (2020-04-04)
+
+
+### Bug Fixes
+
+* **data:** fixed company craft recipes ([db866b1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db866b1))
+* **data:** fixed wrong marker position for some npcs and various other data ([50a0d24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50a0d24))
+* **db:** fixed fish pages not loading properly ([59dd567](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/59dd567))
+* **list:** Missing translation for "Add item to another list" ([ab3f0ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab3f0ce))
+
+
+
 <a name="7.1.1"></a>
 ## [7.1.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.0.20...v7.1.1) (2020-04-03)
 

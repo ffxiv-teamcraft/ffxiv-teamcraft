@@ -9,6 +9,7 @@ import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { MapService } from '../../map/map.service';
 import { StoredNode } from '../../list/model/stored-node';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { Vector3 } from '../../../core/tools/vector3';
 
 @Component({
   selector: 'app-gathered-by',
@@ -75,6 +76,15 @@ export class GatheredByComponent extends ItemDetailsPopup {
       return null;
     }
     const nodeData = this.lazyData.data.nodes[node.id];
+    const coords = nodeData ? {
+      x: nodeData.x,
+      y: nodeData.y,
+      z: nodeData.z
+    } : {
+      x: node.coords[0],
+      y: node.coords[1],
+      z: 0
+    };
     const bellNodes = this.bell.getAllNodes({ obj: { i: this.item.id, c: this.item.icon } });
     const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,
@@ -86,11 +96,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
       snagging: node.snagging,
       fishEyes: node.fishEyes,
       predators: node.predators || [],
-      coords: {
-        x: nodeData.x,
-        y: nodeData.y,
-        z: nodeData.z
-      },
+      coords: coords,
       icon: this.item.icon,
       itemId: this.item.id,
       type: this.details.type,

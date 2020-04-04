@@ -169,7 +169,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)">
-    <button (click)="addToList.emit()" [nzTitle]="'LIST_DETAILS.Add_to_another_list' | translate" nz-button
+    <button (click)="addToList.emit()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate" nz-button
             nz-tooltip
             nzShape="circle"
             nzSize="small">
@@ -330,7 +330,7 @@
         </ng-container>
         <ng-container *ngIf="!isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)">
           <li (click)="addToList.emit()" nz-menu-item>
-            {{'LIST_DETAILS.Add_to_another_list' | translate}}
+            {{'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate}}
           </li>
         </ng-container>
         <ng-container
