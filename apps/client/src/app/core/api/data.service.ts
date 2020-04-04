@@ -173,7 +173,6 @@ export class DataService {
     // Filter HQ and Collectable Symbols from search
     query = query.replace(/[\ue03a-\ue03d]/g, '');
 
-    let lang = this.getSearchLang();
     const xivapiFilters: XivapiSearchFilter[] = [].concat.apply([], filters
       .filter(f => {
         return f.value !== null;
