@@ -1660,7 +1660,7 @@
     "Title": "博客"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "{{tool}} 存在问题，请稍后重试。如果问题仍然存在，请到 Discord 关注 Teamcraft 的 #announcements 频道。",
     "Firebase_blocked": "Teamcraft 无法访问数据库。可能是访问请求被拦截，或者网络已断开。"
   },
   "SEARCH": {
