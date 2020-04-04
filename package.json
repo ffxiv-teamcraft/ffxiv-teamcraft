@@ -180,7 +180,7 @@
     "@types/lodash": "^4.14.123",
     "@types/node": "~8.9.4",
     "@types/semver": "^5.4.0",
-    "@xivapi/angular-client": "1.4.1",
+    "@xivapi/angular-client": "1.6.0",
     "angular-feather": "^5.3.0",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",
