@@ -72,6 +72,7 @@ export interface LazyData {
   koCraftActions: any;
   koCraftDescriptions: any;
   koEventItems: any;
+  koExVersions: any;
   koFates: any;
   koFreeCompanyActions: any;
   koGatheringBonuses: any;
