@@ -11,6 +11,7 @@ output('content-types', () => db('ContentType').simpleObject('Name'))
 output('craft-actions', () => db('CraftAction').simpleObject('Name'))
 output('craft-descriptions', () => db('CraftAction').simpleObject('Description'))
 output('event-items', () => db('EventItem').simpleObject('Singular'))
+output('ex-versions', () => db('ExVersion').simpleObject('Name'))
 output('fates', () => db('Fate').toObject(row => {
   if (!row.Name) return
 

@@ -274,6 +274,19 @@ export class LocalizedDataService {
     return row;
   }
 
+  public getExpansions(): ({ exVersion: number, majorVersion: number, name: I18nName })[] {
+    return Object.entries(this.lazyData.data.exVersions).map(([exVersion, name]) => {
+      this.tryFillExtendedLanguage(name as I18nName, exVersion, { zhKey: 'zhExVersions' });
+
+      const exVersionNum = +exVersion;
+      return {
+        exVersion: exVersionNum,
+        majorVersion: exVersionNum + 2, // Not sure if this is guaranteed
+        name: name as I18nName
+      };
+    });
+  }
+
   private getRow<T = I18nName>(array: any, id: number | string): T {
     if (array === undefined) {
       return undefined;

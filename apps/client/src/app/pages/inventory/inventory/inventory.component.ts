@@ -21,6 +21,16 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 })
 export class InventoryComponent {
 
+  public get selectedExpansion() {
+    return this.selectedExpansion$.value;
+  }
+
+  public set selectedExpansion(value) {
+    this.selectedExpansion$.next(value);
+  }
+
+  public selectedExpansion$: BehaviorSubject<number> = new BehaviorSubject<number>(null);
+
   public search$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   private prices$: BehaviorSubject<{ itemId: number, price: number }[]> = new BehaviorSubject([]);
@@ -78,8 +88,8 @@ export class InventoryComponent {
     })
   );
 
-  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$, this.search$]).pipe(
-    map(([inventories, prices, search]) => {
+  public display$: Observable<InventoryDisplay[]> = combineLatest([this.inventory$, this.prices$, this.search$, this.selectedExpansion$]).pipe(
+    map(([inventories, prices, search, selectedExpansion]) => {
       return inventories
         .map(inventory => {
           const clone = { ...inventory };
@@ -90,49 +100,26 @@ export class InventoryComponent {
               return item;
             })
             .filter(item => {
-              if (search === '' || !search) {
-                return true;
-              }
-
-              let processedSearch: string = search;
-
-              //Expansion token filtering
-              //Object for expansion abbreviations, 'abbrv': 'Full Expansion Name', keep abbreviations lower case for less headaches
-              const expacAbbreviations: any = {
-                'arr': 'A Realm Reborn',
-                'hw': 'Heavensward',
-                'sb': 'Stormblood',
-                'shb': 'Shadowbringers'
-              };
-              //A minor bit of future proofing; if new expansions are added they can be filtered without an abbreviation
-              const allExpansions: string[] = uniq(this.lazyData.patches.map(p => p.ExName));
-              //Condense the above object's keys and the array into a string 'ARR|A Realm Reborn|HW|Heavensward' etc...
-              const expacRegexString: string = allExpansions.concat(Object.keys(expacAbbreviations)).join('|');
-              const expacRegex: RegExp = new RegExp(`(expac|expansion):(${expacRegexString})`, 'i');
-
-              const expacMatches: string[] = expacRegex.exec(processedSearch);
-              if (expacMatches && expacMatches[2]) {
-                processedSearch = processedSearch.replace(expacRegex, '');
-                //Find data matching either a full expansion's name, or an abbreviation we defined above
-                const expansion: any = this.lazyData.patches.find(p => {
-                  return p.ExName.toLowerCase() === expacMatches[2].toLowerCase() || p.ExName === expacAbbreviations[expacMatches[2].toLowerCase()];
+              if (selectedExpansion !== null && selectedExpansion >= 0) {
+                // Find the patch this item was released in, and then get that patch's expansion
+                const itemExpansion: any = this.lazyData.patches.find(p => {
+                  return p.ID === this.lazyData.data.itemPatch[item.itemId];
                 });
-                if (expansion) {
-                  //Find the patch this item was released in, and then get that patch's expansion
-                  const itemExpansion: any = this.lazyData.patches.find(p => {
-                    return p.ID === this.lazyData.data.itemPatch[item.itemId];
-                  });
 
-                  //We test if false and return false here instead of the inverse so that we can continue through the rest of our search
-                  if (!itemExpansion || itemExpansion.ExVersion !== expansion.ExVersion) {
-                    return false;
-                  }
+                // We test if false and return false here instead of the inverse so that we can continue through the rest of our search
+                if (!itemExpansion || itemExpansion.ExVersion !== selectedExpansion) {
+                  return false;
                 }
               }
 
-              //Return if item matches all search criteria
-              return processedSearch.split(' ').every(fragment => {
-                return this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase().indexOf(fragment.toLowerCase()) > -1;
+              if (!search) {
+                return true;
+              }
+
+              // Return if item matches all search criteria
+              const itemName = this.i18n.getName(this.l12n.getItem(item.itemId)).toLowerCase();
+              return search.split(' ').every(fragment => {
+                return itemName.includes(fragment.toLowerCase());
               });
             });
           clone.totalPrice = inventory.items.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -145,6 +132,10 @@ export class InventoryComponent {
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private lazyData: LazyDataService) {
+  }
+
+  public getExpansions() {
+    return this.l12n.getExpansions();
   }
 
   public computePrices(inventory: InventoryDisplay): void {

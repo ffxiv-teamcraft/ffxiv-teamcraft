@@ -13,6 +13,7 @@ export interface LazyData {
   craftingLog: any;
   diademTerritory: any;
   equipSlotCategories: any;
+  exVersions: any;
   fates: any;
   fishParameter: any;
   fishes: any;
@@ -120,6 +121,7 @@ export interface LazyData {
   zhCraftActions: any;
   zhCraftDescriptions: any;
   zhEventItems: any;
+  zhExVersions: any;
   zhFates: any;
   zhFreeCompanyActions: any;
   zhGatheringBonuses: any;
