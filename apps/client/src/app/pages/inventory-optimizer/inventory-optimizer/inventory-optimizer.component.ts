@@ -16,6 +16,7 @@ import { ListRow } from '../../../modules/list/model/list-row';
 import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -131,7 +132,7 @@ export class InventoryOptimizerComponent {
     }
   }
 
-  constructor(private inventoryFacade: InventoryFacade, private settings: SettingsService,
+  constructor(private inventoryFacade: InventoryFacade, private settings: SettingsService, private l12n: LocalizedDataService,
               @Inject(INVENTORY_OPTIMIZER) private optimizers: InventoryOptimizer[],
               private lazyData: LazyDataService, private message: NzMessageService, private translate: TranslateService) {
   }
@@ -140,12 +141,8 @@ export class InventoryOptimizerComponent {
     return item.retainerName || this.inventoryFacade.getContainerName(item.containerId);
   }
 
-  public getExpansions(): string[] {
-    const expansions: any[] = this.lazyData.patches.map(p => {
-      return { name: p.ExName, version: p.ExVersion };
-    });
-
-    return uniqBy(expansions, 'name');
+  public getExpansions() {
+    return this.l12n.getExpansions();
   }
 
   public get selectedExpansion(): number {
