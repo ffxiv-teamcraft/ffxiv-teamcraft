@@ -800,7 +800,7 @@
   },
   "SIMULATOR": {
     "Title": "제작 시뮬레이터",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "능력치와 소모품 적용",
     "Fixed_notification_number": "고정된 알림",
     "Starting_echo_number": "Echo 시간",
     "Break_on_reclaim": "'재활용'을 사용할 수 있는 부분에서 매크로 나누기",
