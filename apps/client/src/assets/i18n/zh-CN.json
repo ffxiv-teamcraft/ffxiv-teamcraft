@@ -85,7 +85,7 @@
     "title": "关于",
     "Created_by": "FFXIV Teamcraft 由 Louisoix, Chaos 服务器的 Miu Asakura 创作。",
     "Copyright_notice_title": "版权声明",
-    "Copyright_notice_content": "最终幻想是Square Enix控股有限公司<br>FINAL FANTASY XIV © 2010 - 2019 SQUARE ENIX CO., LTD. 旗下注册商标。版权声明<br>。FFXIV Teamcraft并不隶属于Square Enix.",
+    "Copyright_notice_content": "最终幻想 (FINAL FANTASY) 是史克威尔艾尼克斯控股有限公司的注册商标。<br>FINAL FANTASY XIV © 2010 - 2019 史克威尔艾尼克斯有限公司 (SQUARE ENIX CO., LTD.) 版权所有。<br>FFXIV Teamcraft 与 Square Enix 没有任何关系。",
     "Thanks_title": "鸣谢",
     "Data_sources": "数据来源",
     "Patreon_supporters": "Patreon 支持者",
@@ -1820,7 +1820,7 @@
     "No_trades_needed": "不需要兑换",
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -1859,7 +1859,7 @@
       "Direct_hit_chances": "直击率",
       "Critical_hit_chances": "暴击率",
       "Critical_hit_multiplier": "暴击倍率",
-      "Determination_bonus": "Determination bonus",
+      "Determination_bonus": "信念加成",
       "GCD": "GCD"
     }
   },
