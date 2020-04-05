@@ -1550,7 +1550,7 @@ if (hasTodo('recipes')) {
       const ingredients = Object.keys(recipe)
         .filter(k => /ItemIngredient\d/.test(k))
         .sort((a, b) => a < b ? -1 : 1)
-        .filter(key => recipe[key] && recipe[key].ID > 19)
+        .filter(key => recipe[key] && recipe[key].ID > 0)
         .map((key, index) => {
           return {
             id: recipe[key].ID,
