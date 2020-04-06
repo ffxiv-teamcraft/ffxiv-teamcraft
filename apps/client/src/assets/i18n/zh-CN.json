@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "分享链接已复制到剪贴板",
     "Copy": "复制",
-    "Open_in_main_window": "在主页面打开"
+    "Open_in_main_window": "在主页面打开",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -350,6 +351,9 @@
     "Link_base": "物品链接",
     "Region": "区域",
     "Region_explain": "数据源和基于特定游戏版本的功能将根据区域而做调整。在特定区域下某些功能可能无法使用。",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "界面主题",
     "no_panel_borders": "隐藏面板边框",
     "Desktop": "客户端",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "自动填充完成提示音",
       "Packet_capture": "数据包捕获",
+      "Networking": "Networking",
       "Theme": "界面主题",
       "Search": "搜索",
       "Other": "其他"
