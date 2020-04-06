@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
     "Copy": "복사",
-    "Open_in_main_window": "메인 창에서 열기"
+    "Open_in_main_window": "메인 창에서 열기",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "알람",
@@ -350,6 +351,9 @@
     "Link_base": "아이템 링크",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "자동채우기 완료음",
       "Packet_capture": "패킷 캡처",
+      "Networking": "Networking",
       "Theme": "테마",
       "Search": "검색",
       "Other": "기타"
