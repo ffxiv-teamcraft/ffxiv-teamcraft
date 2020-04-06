@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "Copy",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -350,6 +351,9 @@
     "Link_base": "Item links",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Theme",
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Autofill completion sound",
       "Packet_capture": "Packet capture",
+      "Networking": "Networking",
       "Theme": "Theme",
       "Search": "Search",
       "Other": "Other"
