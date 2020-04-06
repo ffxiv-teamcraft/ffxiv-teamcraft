@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Teilbarer-Link wurde in die Zwischenablage kopiert",
     "Copy": "Kopieren",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -350,6 +351,9 @@
     "Link_base": "Gegenstandslink-Quelle",
     "Region": "Region",
     "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Design",
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Sound bei Auto-Vervollständigung",
       "Packet_capture": "Paketerfassung",
+      "Networking": "Networking",
       "Theme": "Theme",
       "Search": "Suche",
       "Other": "Anderes"
