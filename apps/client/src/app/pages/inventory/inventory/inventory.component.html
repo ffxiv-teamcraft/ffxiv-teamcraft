@@ -1,5 +1,11 @@
 <ng-container *ngIf="display$ | async as display">
   <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <nz-select nzAllowClear
+               (click)="$event.stopPropagation();"
+               [nzPlaceHolder]="'INVENTORY.Filter_by_expansion' | translate"
+               [(ngModel)]="selectedExpansion">
+      <nz-option *ngFor="let e of getExpansions()" [nzValue]="e.exVersion" [nzLabel]="e.name | i18n"></nz-option>
+    </nz-select>
     <nz-input-group [nzSuffix]="suffixIconSearch">
       <input type="text" nz-input [placeholder]="'INVENTORY.Search_for_an_item' | translate"
              #searchInput
@@ -11,7 +17,6 @@
     <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
             (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
   </div>
-  <div class="search-tip" fxLayout="row" fxLayoutAlign="left center">{{'INVENTORY.Search_tip' | translate}}</div>
   <div nz-row>
     <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
       <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
