@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "コピー",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -350,6 +351,9 @@
     "Link_base": "アイテムリンク",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "テーマカラー",
     "no_panel_borders": "パネルの枠線を無効にする",
     "Desktop": "PC版",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "オートフィル完了音",
       "Packet_capture": "パケットキャプチャ",
+      "Networking": "Networking",
       "Theme": "テーマ",
       "Search": "検索",
       "Other": "その他"
