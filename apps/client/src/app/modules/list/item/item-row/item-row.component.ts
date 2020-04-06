@@ -212,8 +212,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  itemRowTypes = ItemRowMenuElement;
-
   showLogCompletionButton$ = combineLatest([this.authFacade.user$, this.item$]).pipe(
     map(([user, item]) => {
       const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
