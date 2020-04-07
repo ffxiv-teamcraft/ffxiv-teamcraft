@@ -372,10 +372,10 @@
               </nz-select>
             </div>
             <div nz-col [nzSpan]="18">
-              <input nz-input [(ngModel)]="proxyValue" (blur)="commitProxy()">
+              <input *ngIf="proxyType !== ''" nz-input [(ngModel)]="proxyValue" (blur)="commitProxy()">
             </div>
           </div>
-          <span class="proxy-help" [innerHTML]="('COMMON.Example' | translate) + ': ' + proxyExample"></span>
+          <span *ngIf="proxyType !== ''" class="proxy-help" [innerHTML]="('COMMON.Example' | translate) + ': ' + proxyExample"></span>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
