@@ -358,9 +358,24 @@
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Networking' | translate"></nz-divider>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Proxy' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzValidateStatus="validating"
-          [nzValidatingTip]="('COMMON.Example' | translate) + ': socks5://127.0.0.1:1080 or http://127.0.0.1:1080'">
-          <input nz-input [(ngModel)]="proxyRule" (blur)="ipc.send('proxy-rule', proxyRule)">
+        <nz-form-control [nzSpan]="12">
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="6">
+              <nz-select [(ngModel)]="proxyType" class="proxy-type" (ngModelChange)="commitProxy()">
+                <nz-option nzLabel="None" nzValue=""></nz-option>
+                <nz-option nzLabel="HTTP" nzValue="http"></nz-option>
+                <nz-option nzLabel="HTTPS" nzValue="https"></nz-option>
+                <nz-option nzLabel="Socks v4" nzValue="socks4"></nz-option>
+                <nz-option nzLabel="Socks v5" nzValue="socks5"></nz-option>
+                <nz-option nzLabel="PAC" nzValue="pac"></nz-option>
+                <nz-option nzLabel="Custom" nzValue="custom"></nz-option>
+              </nz-select>
+            </div>
+            <div nz-col [nzSpan]="18">
+              <input nz-input [(ngModel)]="proxyValue" (blur)="commitProxy()">
+            </div>
+          </div>
+          <span class="proxy-help" [innerHTML]="('COMMON.Example' | translate) + ': ' + proxyExample"></span>
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
@@ -372,12 +387,13 @@
       </nz-form-item>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
       <nz-form-item>
-        <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>
-        <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.autofillCompletionSound" class="select-box"
-                   id="sound">
-          <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound">
-          </nz-option>
-        </nz-select>
+        <nz-form-label [nzSpan]="5">{{'Sound' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.autofillCompletionSound" class="select-box"
+                    id="sound">
+            <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound"></nz-option>
+          </nz-select>
+        </nz-form-control>
       </nz-form-item>
       <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
                  [nzMax]="100" [nzMin]="0"

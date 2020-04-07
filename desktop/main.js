@@ -213,11 +213,13 @@ function createWindow() {
     Machina.start(win, config, options.verbose, options.winpcap);
   }
 
-  const ses = win.webContents.session;
   const proxyRule = config.get('proxy-rule', '');
-  const proxyBypass = config.get('proxy-bypass', '');
-  if (proxyRule) {
-    setProxy(proxyRule, proxyBypass)
+  const proxyPac = config.get('proxy-pac', '');
+  if (proxyRule || proxyPac) {
+    setProxy({
+      rule: proxyRule,
+      pac: proxyPac
+    })
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -411,11 +413,12 @@ function broadcast(eventName, data) {
   });
 }
 
-function setProxy(rule, bypass) {
+function setProxy({ rule, pac, bypass }) {
   const ses = win.webContents.session;
   ses.setProxy({
-    proxyRules: rule,
-    proxyBypassRules: bypass
+    proxyRules: rule || config.get('proxy-rule'),
+    proxyBypassRules: bypass || config.get('proxy-bypass'),
+    pacScript: pac || config.get('proxy-pac')
   });
 }
 
@@ -443,7 +446,9 @@ ipcMain.on('proxy-rule', (event, value) => {
   config.set('proxy-rule', value);
   event.sender.send('proxy-rule:value', value);
 
-  setProxy(value, config.get('proxy-bypass', ''));
+  setProxy({
+    rule: value
+  });
 });
 
 ipcMain.on('proxy-rule:get', (event) => {
@@ -454,11 +459,26 @@ ipcMain.on('proxy-bypass', (event, value) => {
   config.set('proxy-bypass', value);
   event.sender.send('proxy-bypass:value', value);
 
-  setProxy(config.get('proxy-rule', ''), value);
+  setProxy({
+    bypass: value
+  });
 });
 
 ipcMain.on('proxy-bypass:get', (event) => {
   event.sender.send('proxy-bypass:value', config.get('proxy-bypass'));
+});
+
+ipcMain.on('proxy-pac', (event, value) => {
+  config.set('proxy-pac', value);
+  event.sender.send('proxy-pac:value', value);
+
+  setProxy({
+    pac: value
+  });
+});
+
+ipcMain.on('proxy-pac:get', (event) => {
+  event.sender.send('proxy-pac:value', config.get('proxy-pac'));
 });
 
 let fishingState = {};
