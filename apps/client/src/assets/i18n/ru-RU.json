@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Ссылка скопирована в буфер обмена",
     "Copy": "Копировать",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -350,6 +351,9 @@
     "Link_base": "Ссылка на предмет",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Тема",
     "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Звук завершения автозаполнения",
       "Packet_capture": "Настройка захвата пакетов",
+      "Networking": "Networking",
       "Theme": "Тема",
       "Search": "Поиск",
       "Other": "Прочее"
@@ -1715,7 +1720,7 @@
     "Reset_inventory": "Сбросить этот инвентарь",
     "Clean_all": "Сбросить все ваши инвентари",
     "Search_for_an_item": "Поиск предмета",
-    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
+    "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
