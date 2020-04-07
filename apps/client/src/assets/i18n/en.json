@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "Copy",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -350,6 +351,9 @@
     "Link_base": "Item links",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_explain": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Theme",
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
@@ -423,6 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Autofill completion sound",
       "Packet_capture": "Packet capture",
+      "Networking": "Networking",
       "Theme": "Theme",
       "Search": "Search",
       "Other": "Other"
@@ -1715,7 +1720,7 @@
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
     "Search_for_an_item": "Search for an item",
-    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
+    "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",

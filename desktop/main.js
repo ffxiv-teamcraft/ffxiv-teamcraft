@@ -94,6 +94,9 @@ const oauth = require('./oauth.js');
 
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 
+/**
+ * @type {BrowserWindow}
+ */
 let win;
 let tray;
 let nativeIcon;
@@ -208,6 +211,13 @@ function createWindow() {
 
   if (config.get('machina') === true) {
     Machina.start(win, config, options.verbose, options.winpcap);
+  }
+
+  const ses = win.webContents.session;
+  const proxyRule = config.get('proxy-rule', '');
+  const proxyBypass = config.get('proxy-bypass', '');
+  if (proxyRule) {
+    setProxy(proxyRule, proxyBypass)
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -401,6 +411,14 @@ function broadcast(eventName, data) {
   });
 }
 
+function setProxy(rule, bypass) {
+  const ses = win.webContents.session;
+  ses.setProxy({
+    proxyRules: rule,
+    proxyBypassRules: bypass
+  });
+}
+
 ipcMain.on('app-ready', (event) => {
   if (options.nativeDecorator) {
     event.sender.send('window-decorator', false);
@@ -419,6 +437,28 @@ ipcMain.on('toggle-machina', (event, enabled) => {
 
 ipcMain.on('toggle-machina:get', (event) => {
   event.sender.send('toggle-machina:value', config.get('machina'));
+});
+
+ipcMain.on('proxy-rule', (event, value) => {
+  config.set('proxy-rule', value);
+  event.sender.send('proxy-rule:value', value);
+
+  setProxy(value, config.get('proxy-bypass', ''));
+});
+
+ipcMain.on('proxy-rule:get', (event) => {
+  event.sender.send('proxy-rule:value', config.get('proxy-rule'));
+});
+
+ipcMain.on('proxy-bypass', (event, value) => {
+  config.set('proxy-bypass', value);
+  event.sender.send('proxy-bypass:value', value);
+
+  setProxy(config.get('proxy-rule', ''), value);
+});
+
+ipcMain.on('proxy-bypass:get', (event) => {
+  event.sender.send('proxy-bypass:value', config.get('proxy-bypass'));
 });
 
 let fishingState = {};

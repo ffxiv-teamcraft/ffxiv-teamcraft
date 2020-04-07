@@ -100,7 +100,7 @@ if (hasTodo('missingNodes', true)) {
   **Total**: ${count}`);
 }
 
-if (hasTodo('mappy')) {
+if (hasTodo('mappy', true)) {
   // MapData extraction
   const mapData$ = get('https://xivapi.com/mappy/json');
   const nodes$ = new Subject();
@@ -948,27 +948,27 @@ if (hasTodo('LGB', true)) {
     }
   });
 
-  const todoTerritories = Object.keys(territoryLayers)
-    .filter(key => {
-      const layers = territoryLayers[key].filter(layer => !layer.ignored);
-      return +key > 0
-        && layers.length > 0
-        && layers.some(layer => {
-          return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
-            && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
-            && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
-        });
-    })
-    .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
-    .map(key => {
-      return territoryLayers[key].reduce((acc, layer) => {
-        return `${acc}
-    - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
-      }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
-    })
-    .join('\n');
+  // const todoTerritories = Object.keys(territoryLayers)
+  //   .filter(key => {
+  //     const layers = territoryLayers[key].filter(layer => !layer.ignored);
+  //     return +key > 0
+  //       && layers.length > 0
+  //       && layers.some(layer => {
+  //         return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
+  //           && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
+  //           && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
+  //       });
+  //   })
+  //   .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
+  //   .map(key => {
+  //     return territoryLayers[key].reduce((acc, layer) => {
+  //       return `${acc}
+  //   - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
+  //     }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
+  //   })
+  //   .join('\n');
 
-  fs.writeFileSync('./TODO.md', todoTerritories);
+  // fs.writeFileSync('./TODO.md', todoTerritories);
 
   // Then, let's work on lgb files
   combineLatest([
@@ -1550,7 +1550,7 @@ if (hasTodo('recipes')) {
       const ingredients = Object.keys(recipe)
         .filter(k => /ItemIngredient\d/.test(k))
         .sort((a, b) => a < b ? -1 : 1)
-        .filter(key => recipe[key] && recipe[key].ID > 19)
+        .filter(key => recipe[key] && recipe[key].ID > 0)
         .map((key, index) => {
           return {
             id: recipe[key].ID,

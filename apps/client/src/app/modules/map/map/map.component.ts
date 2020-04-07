@@ -61,7 +61,7 @@ export class MapComponent implements OnInit {
       y: 32
     };
 
-    if (!marker.iconType) {
+    if (!marker.iconType && !aetheryte) {
       marker.size = {
         x: 0,
         y: 0
@@ -74,15 +74,6 @@ export class MapComponent implements OnInit {
       'margin-left': `-${marker.size.x / 2}px`,
       'z-index': marker.zIndex || aetheryte ? this.aetheryteZIndex : 5,
       ...(marker.additionalStyle || {})
-    };
-  }
-
-  getMapRangeStyle(map: MapData, mapRange: any): any {
-    const positionPercents = this.mapService.getPositionOnMap(map, mapRange.position);
-    return {
-      top: `${positionPercents.y}%`,
-      left: `${positionPercents.x}%`,
-      'z-index': 10
     };
   }
 

@@ -19102,7 +19102,7 @@
       "en": "Elite and Dangerous",
       "ja": "イシュガルドのリスキーモブ",
       "de": "Hochwild im Hochland",
-      "fr": "Cibles d'élite du grand nord"
+      "fr": "Cibles d'élite du Grand Nord"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -34507,28 +34507,28 @@
   },
   "69370": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hail to the Queen",
+      "ja": "失われた聖遺物",
+      "de": "Lang lebe die Königin",
+      "fr": "La relique perdue"
     },
     "icon": "/i/071000/071221.png"
   },
   "69371": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Path to the Past",
+      "ja": "グンヒルドの剣と「紡ぎ手」",
+      "de": "Ein Blick in die Vergangenheit",
+      "fr": "Les lames de Gunnhildr et les fileurs de songes"
     },
     "icon": "/i/071000/071221.png"
   },
   "69372": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Bozja Incident",
+      "ja": "シタデル・ボズヤ蒸発事変",
+      "de": "Der Bozja-Vorfall",
+      "fr": "Prélude à la catastrophe"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -34597,19 +34597,19 @@
   },
   "69380": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Fire in the Forge",
+      "ja": " 「グンヒルドの剣」の複刻",
+      "de": " Die Rückkehr der Königinnenwache",
+      "fr": " Une nouvelle lame pour Gunnhildr"
     },
     "icon": "/i/071000/071221.png"
   },
   "69381": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": " Resistance Is (Not) Futile",
+      "ja": " 新たな「レジスタンス・ウェポン」の製造",
+      "de": " Eine neue Waffe für den Widerstand",
+      "fr": " L'arsenal des résistants"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -34633,19 +34633,19 @@
   },
   "69384": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Mislaid Plans",
+      "ja": "工房に眠っていた古道具",
+      "de": "Altes Wissen aus der Werkstätte",
+      "fr": "Un projet en acier trempé"
     },
     "icon": "/i/071000/071221.png"
   },
   "69385": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Work It Harder, Make It Better",
+      "ja": "「スカイスチールツール」を改良せよ！",
+      "de": "Himmelsstahlsche Werkzeug-Werkeleien",
+      "fr": "Les outils rivés au ciel"
     },
     "icon": "/i/071000/071221.png"
   },

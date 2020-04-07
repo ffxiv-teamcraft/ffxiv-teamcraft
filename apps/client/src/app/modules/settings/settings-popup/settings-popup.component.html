@@ -355,6 +355,21 @@
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
       </div>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Networking' | translate"></nz-divider>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Proxy' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating"
+          [nzValidatingTip]="('COMMON.Example' | translate) + ': socks5://127.0.0.1:1080 or http://127.0.0.1:1080'">
+          <input nz-input [(ngModel)]="proxyRule" (blur)="ipc.send('proxy-rule', proxyRule)">
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Proxy_bypass' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating"
+          [nzValidatingTip]="('COMMON.Example' | translate) + ': xivapi.com,www.garlandtools.org'">
+          <input nz-input [(ngModel)]="proxyBypass" (blur)="ipc.send('proxy-bypass', proxyBypass)">
+        </nz-form-control>
+      </nz-form-item>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
       <nz-form-item>
         <nz-form-label nzFor="sound">{{'Sound' | translate}}</nz-form-label>

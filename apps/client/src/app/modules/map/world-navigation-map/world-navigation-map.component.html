@@ -41,7 +41,7 @@
     <ng-template #stepTemplate let-step>
       <nz-list-item [nzContent]="rowContent">
         <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="stepTitle"
-                           nzDescription="X: {{step.x}} - Y: {{step.y}}">
+                           nzDescription="X: {{step.x | number:'1.1-1'}} - Y: {{step.y | number:'1.1-1'}}">
           <ng-template #stepTitle>
             {{step.name | i18n}} <img *ngIf="step.type === 'Gathering'" class="node-type-icon" [src]="step.gatheringType | nodeTypeIcon">
           </ng-template>

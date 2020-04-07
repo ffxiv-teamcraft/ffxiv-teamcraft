@@ -51,6 +51,10 @@ export class SettingsPopupComponent {
 
   noShortcut = false;
 
+  proxyRule = '';
+
+  proxyBypass = '';
+
   customTheme: Theme;
 
   public sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
@@ -127,11 +131,19 @@ export class SettingsPopupComponent {
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
+    this.ipc.once('proxy-rule:value', (event, value) => {
+      this.proxyRule = value;
+    });
+    this.ipc.once('proxy-bypass:value', (event, value) => {
+      this.proxyBypass = value;
+    });
     this.ipc.send('always-on-top:get');
     this.ipc.send('no-shortcut:get');
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('always-quit:get');
+    this.ipc.send('proxy-rule:get');
+    this.ipc.send('proxy-bypass:get');
     this.customTheme = this.settings.customTheme;
   }
 

@@ -199,7 +199,7 @@ export class ListManagerService {
       Object.assign(item, this.lazyDataService.getExtract(item.id));
       if (getItemSource<CraftedBy[]>(item, DataType.CRAFTED_BY).length > 0) {
         const craftedBy = item.sources.find(s => s.type === DataType.CRAFTED_BY);
-        if (recipeId !== undefined) {
+        if (recipeId !== undefined && craftedBy.data.some(row => row.id.toString() === recipeId.toString())) {
           craftedBy.data = craftedBy.data.filter(row => {
             return row.id.toString() === recipeId.toString();
           });
