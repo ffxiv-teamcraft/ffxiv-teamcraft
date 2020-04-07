@@ -1551,7 +1551,8 @@ if (hasTodo('recipes')) {
         .filter(k => /ItemIngredient\d/.test(k))
         .sort((a, b) => a < b ? -1 : 1)
         .filter(key => recipe[key] && recipe[key].ID > 0)
-        .map((key, index) => {
+        .map((key) => {
+          const index = +/ItemIngredient(\d)/.exec(key)[1];
           return {
             id: recipe[key].ID,
             amount: +recipe[`AmountIngredient${index}`],
