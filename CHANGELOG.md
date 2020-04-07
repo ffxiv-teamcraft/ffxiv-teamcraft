@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.4"></a>
+## [7.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.2...v7.1.4) (2020-04-07)
+
+
+### Bug Fixes
+
+* **lists:** fixed lists not adding crystals properly ([9a0b5c4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a0b5c4))
+* **lists:** fixed oddly specific items not adding properly ([1a13b52](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a13b52))
+
+
+
+
 <a name="7.1.3"></a>
 ## [7.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.2...v7.1.3) (2020-04-07)
 
