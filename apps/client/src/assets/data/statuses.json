@@ -15715,11 +15715,11 @@
     "icon": "/i/015000/015252.png"
   },
   "2246": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Slow",
+    "de": "Gemach",
+    "ja": "スロウ",
+    "fr": "Lenteur",
+    "icon": "/i/015000/015009.png"
   },
   "2247": {
     "en": "Waymark",
@@ -15974,11 +15974,11 @@
     "icon": "/i/018000/018921.png"
   },
   "2283": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Collective Unconscious",
+    "de": "Numinosum",
+    "ja": "運命の輪",
+    "fr": "Inconscient collectif",
+    "icon": "/i/013000/013227.png"
   },
   "2284": {
     "en": "",
@@ -15988,11 +15988,11 @@
     "icon": ""
   },
   "2285": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fetters",
+    "de": "Fesselung",
+    "ja": "拘束",
+    "fr": "Attache",
+    "icon": "/i/015000/015545.png"
   },
   "2286": {
     "en": "Fetters",

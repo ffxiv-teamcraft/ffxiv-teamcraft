@@ -4794,10 +4794,10 @@ export const mapIds = [
   {
     "id": 600,
     "zone": 3479,
-    "name": "",
+    "name": "Cid's Memory",
     "territory": 911,
     "scale": 100,
-    "weatherRate": 0
+    "weatherRate": 123
   },
   {
     "id": 601,
@@ -4818,7 +4818,7 @@ export const mapIds = [
   {
     "id": 603,
     "zone": 3478,
-    "name": "",
+    "name": "Gangos",
     "territory": 915,
     "scale": 400,
     "weatherRate": 0
@@ -4850,9 +4850,9 @@ export const mapIds = [
   {
     "id": 607,
     "zone": 3486,
-    "name": "",
+    "name": "Transmission Control",
     "territory": 913,
     "scale": 400,
-    "weatherRate": 0
+    "weatherRate": 123
   }
 ];
