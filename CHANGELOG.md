@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.3"></a>
+## [7.1.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.2...v7.1.3) (2020-04-07)
+
+
+### Bug Fixes
+
+* **desynth:** fixed an issue with german intro covering input fields ([0ca65c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0ca65c0))
+* **lists:** fixed an issue with crystals not properly added to lists ([e9a341d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9a341d))
+* **lists:** fixed an issue with recipe data not showing properly in precrafts panel ([609be25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/609be25))
+* **map:** fixed accuracy display for aetherytes in navigation maps ([b0f843d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0f843d))
+* **simulator:** removed solver for now, as it's not updated at all ([e9d92c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9d92c0))
+
+
+### Features
+
+* **data:** 5.25 content update ([50170fa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50170fa))
+* **desktop:** packet capture for 5.25 ([035b1a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/035b1a8))
+* **inventory:** add Korean ExVersions ([824bab0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/824bab0))
+* **inventory:** move ExVersion filter to select for better l12n support ([1f140ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f140ac))
+* **inventory-optimizer:** i18n for expansion select ([b27eb48](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b27eb48))
+* **settings:** add proxy setting ([836246b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/836246b))
+
+
+
 <a name="7.1.2"></a>
 ## [7.1.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.1...v7.1.2) (2020-04-04)
 
