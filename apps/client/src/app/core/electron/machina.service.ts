@@ -233,7 +233,7 @@ export class MachinaService {
         const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
         if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
           this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
-        } else if (!itemsEntry && finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
+        } else if (finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
           this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
         }
       });
