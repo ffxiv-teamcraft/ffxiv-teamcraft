@@ -92,7 +92,7 @@
      fxLayoutAlign.lt-md="center center"
      fxLayoutGap="5px">
   <a routerLink="/db/{{currentLang}}/quest/{{row.id}}">
-    <img *ngIf="row.banner" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
+    <img *ngIf="row.banner && row.banner !== row.icon" [src]="row.banner | xivapiIcon" alt="" class="instance-banner">
   </a>
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

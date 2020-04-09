@@ -17,7 +17,7 @@
             </div>
           </div>
         </div>
-        <img *ngIf="xivapiQuest.Banner && xivapiQuest.Banner !== '/071000/071221.png'"
+        <img *ngIf="xivapiQuest.Banner && xivapiQuest.Banner !== '/071000/071221.png' && xivapiQuest.Banner !== xivapiQuest.Icon"
              [src]="xivapiQuest.Banner | xivapiIcon" alt="" class="instance-banner">
         <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px">

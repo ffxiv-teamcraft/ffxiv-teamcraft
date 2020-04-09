@@ -216,6 +216,8 @@ export class BellNodesService {
       return [];
     }).filter(res => res !== undefined));
 
+    console.log(nodesFromPositions, nodesFromGarlandBell);
+
     const results = [...nodesFromPositions,
       ...nodesFromGarlandBell,
       ...nodesFromFishing];
@@ -266,7 +268,7 @@ export class BellNodesService {
             }
           }
         }
-        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && node.type === row.type) && row.mapId !== undefined) {
+        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && row.x === node.x && row.y === node.y) && row.mapId !== undefined) {
           finalNodes.push(row);
         }
       });

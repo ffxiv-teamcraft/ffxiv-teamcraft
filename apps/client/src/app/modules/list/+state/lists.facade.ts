@@ -398,7 +398,7 @@ export class ListsFacade {
    */
   public buildProgression(items: ListRow[]): number {
     if (items.length === 0) {
-      return 100;
+      return 0;
     }
     return 100 * items.reduce((acc, item) => {
       acc += item.done / item.amount;
