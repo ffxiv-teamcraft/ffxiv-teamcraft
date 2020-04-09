@@ -9,7 +9,6 @@ import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { MapService } from '../../map/map.service';
 import { StoredNode } from '../../list/model/stored-node';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { Vector3 } from '../../../core/tools/vector3';
 
 @Component({
   selector: 'app-gathered-by',
