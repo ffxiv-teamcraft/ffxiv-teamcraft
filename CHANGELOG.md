@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.5"></a>
+## [7.1.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.4...v7.1.5) (2020-04-09)
+
+
+### Bug Fixes
+
+* **data:** fixed missing location for several fishing nodes ([025cecc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/025cecc))
+* **db:** fixed quest icons duplication ([72d7412](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72d7412))
+* **desktop:** fixed packet capture for some inventory events ([e45fefd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e45fefd))
+* **desktop:** fixed specific case on autofill when item is in both Items and Final items arrays ([6aa8709](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6aa8709))
+* **gathering-locations:** fixed duplicate (and false) position for some nodes ([e36241f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e36241f))
+* **list:** consider 0 materials as 0% done, not 100% ([762ad25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/762ad25))
+* **simulator:** fixed a bug with food not reset properly on community rotations ([7b533c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b533c3))
+
+
+
 <a name="7.1.4"></a>
 ## [7.1.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.2...v7.1.4) (2020-04-07)
 
