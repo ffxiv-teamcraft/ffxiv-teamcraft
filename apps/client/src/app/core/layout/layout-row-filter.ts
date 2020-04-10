@@ -12,6 +12,8 @@ export class LayoutRowFilter {
 
   static IS_CRAFT = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.CRAFTED_BY).length > 0, 'IS_CRAFT');
 
+  static IS_CRYSTAL = new LayoutRowFilter(row => row.id > 1 && row.id < 20, 'IS_CRYSTAL');
+
   static IS_GATHERING = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING');
 
   static IS_TRADE = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');
