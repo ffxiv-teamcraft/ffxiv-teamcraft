@@ -352,7 +352,6 @@
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Proxy": "Proxy",
-    "Proxy_explain": "Proxy",
     "Proxy_bypass": "No proxy for",
     "Theme": "Tema",
     "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
