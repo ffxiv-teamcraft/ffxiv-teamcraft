@@ -352,7 +352,6 @@
     "Region": "区域",
     "Region_explain": "数据源和基于特定游戏版本的功能将根据区域而做调整。在特定区域下某些功能可能无法使用。",
     "Proxy": "代理",
-    "Proxy_explain": "Proxy",
     "Proxy_bypass": "不使用代理",
     "Theme": "界面主题",
     "no_panel_borders": "隐藏面板边框",

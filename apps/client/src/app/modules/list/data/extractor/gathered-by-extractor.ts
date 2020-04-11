@@ -182,7 +182,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
       // If we don't have some complete spots from gt, let's get some partials.
       if (spots.length === 0) {
         for (const spotId of item.fishingSpots) {
-          const spot = this.lazyData.data.fishingSpots.find(s => s.id = spotId);
+          const spot = this.lazyData.data.fishingSpots.find(s => s.id === spotId);
           const partial = itemData.getPartial(spotId.toString(), 'fishing');
           if (partial !== undefined) {
             const node: StoredNode = {

@@ -11,6 +11,7 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-gathering-location',
@@ -38,7 +39,7 @@ export class GatheringLocationComponent {
 
   constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
-              private router: Router, private route: ActivatedRoute) {
+              private router: Router, private route: ActivatedRoute, public translate: TranslateService) {
 
     this.compactDisplay = localStorage.getItem('gathering-location:compact') === 'true';
 

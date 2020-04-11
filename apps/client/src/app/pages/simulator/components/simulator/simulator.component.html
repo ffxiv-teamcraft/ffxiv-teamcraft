@@ -231,7 +231,7 @@
                  fxFlex="1 1 30%" fxLayout="column">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
-                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
+                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality | floor}})</span>
               </h3>
               <nz-list [nzDataSource]="hqIngredientsData"
                        [nzRenderItem]="hqIngredientTemplate">

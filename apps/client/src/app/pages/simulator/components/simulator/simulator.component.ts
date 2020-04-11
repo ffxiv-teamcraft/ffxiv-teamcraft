@@ -240,7 +240,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
-              private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
+              private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService) {

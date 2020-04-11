@@ -7,6 +7,9 @@
         {{panel.title | translate}}
       </button>
     </div>
+    <div>
+      <label nz-checkbox [ngModel]="hideCompleted$ | async" (ngModelChange)="hideCompletedChange($event)">{{'Hide_completed' | translate}}</label>
+    </div>
     <div *ngIf="selectedPanelDisplay$ | async as panelDisplay; else noPanel">
       <app-list-details-panel [displayRow]="panelDisplay" [overlay]="true" [finalItems]="(selectedPanel$ | async) === 'Items'"></app-list-details-panel>
     </div>

@@ -1560,7 +1560,7 @@ if (hasTodo('recipes')) {
           };
         });
       const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
-      const totalIlvl = ingredients.reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
+      const totalIlvl = ingredients.filter(i => i.id > 19).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
       recipes.push({
         id: recipe.ID,
         job: recipe.ClassJob.ID,
@@ -1583,7 +1583,7 @@ if (hasTodo('recipes')) {
             return {
               id: ingredient.id,
               amount: ingredient.amount,
-              quality: (ingredient.ilvl / totalIlvl) * totalContrib
+              quality: ingredient.id > 19 ? (ingredient.ilvl / totalIlvl) * totalContrib : 0
             };
           }),
         expert: recipe.IsExpert === 1
