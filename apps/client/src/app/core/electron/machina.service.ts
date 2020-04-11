@@ -184,7 +184,7 @@ export class MachinaService {
     });
 
     const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
-      filter(packet => packet.flag === 746)
+      filter(packet => packet.flag === 383)
     );
 
     merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(
@@ -208,7 +208,6 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
