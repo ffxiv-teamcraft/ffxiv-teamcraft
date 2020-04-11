@@ -52,7 +52,7 @@
           <div>{{node.zoneid | placeName | i18n}}
             <app-db-button [id]="node.nodeId" type="node"></app-db-button>
           </div>
-          <div>X: {{node.x}}, Y: {{node.y}}</div>
+          <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
           <div>
             {{getNodeSpawns(node)}} <i *ngIf="node.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
                                        nzType="clock-circle"></i>

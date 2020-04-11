@@ -77,7 +77,8 @@ export class BellNodesService {
         .filter(key => {
           return this.lazyData.data.nodes[key].items.indexOf(item.obj.i) > -1;
         });
-      return availableNodeIds
+
+      const nodes = availableNodeIds
         .map(key => {
           return { ...item, ...this.lazyData.data.nodes[key], nodeId: key };
         })
@@ -105,6 +106,29 @@ export class BellNodesService {
           }
           return node;
         });
+
+      const fishingSpots = this.lazyData.data.fishingSpots
+        .filter(spot => spot.fishes.indexOf(item.obj.i) > -1)
+        .map(spot => {
+          return { ...item, ...spot, ...spot.coords, nodeId: spot.id };
+        })
+        .map(node => {
+          node.itemId = node.obj.i;
+          node.icon = item.obj.c;
+          node.items = node.fishes;
+          node.type = 4;
+          node.zoneid = node.zoneId;
+          const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
+          if (folklore !== undefined) {
+            node.folklore = {
+              id: +folklore,
+              icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+            };
+          }
+          return node;
+        });
+
+      return [...nodes, ...fishingSpots];
     }));
 
     const nodesFromGarlandBell = [].concat.apply([], items
@@ -215,8 +239,6 @@ export class BellNodesService {
       }
       return [];
     }).filter(res => res !== undefined));
-
-    console.log(nodesFromPositions, nodesFromGarlandBell);
 
     const results = [...nodesFromPositions,
       ...nodesFromGarlandBell,
