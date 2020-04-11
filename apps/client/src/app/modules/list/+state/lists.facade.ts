@@ -375,7 +375,7 @@ export class ListsFacade {
     return lists
       .sort((a, b) => {
         if (a.index === b.index) {
-          return b.createdAt.toMillis() - a.createdAt.toMillis();
+          return b.createdAt.seconds- a.createdAt.seconds;
         }
         return a.index - b.index;
       });

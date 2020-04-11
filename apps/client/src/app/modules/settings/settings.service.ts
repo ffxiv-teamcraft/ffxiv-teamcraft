@@ -68,6 +68,14 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get hideOverlayCompleted(): boolean {
+    return this.getSetting('hideOverlayCompleted', 'false') === 'true';
+  }
+
+  public set hideOverlayCompleted(hide: boolean) {
+    this.setSetting('hideOverlayCompleted', hide.toString());
+  }
+
   public get removeDoneInInventorSynthesis(): boolean {
     return this.getSetting('remove-done-in-synthesis', 'false') === 'true';
   }
