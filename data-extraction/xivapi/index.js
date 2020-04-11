@@ -281,6 +281,7 @@ if (hasTodo('map')) {
   });
 }
 
+
 // Crafting log extraction
 const craftingLog = [
   [],
