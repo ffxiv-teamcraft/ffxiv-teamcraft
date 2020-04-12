@@ -156,8 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Teilbarer-Link wurde in die Zwischenablage kopiert",
     "Copy": "Kopieren",
-    "Open_in_main_window": "Open in main window",
-    "Example": "Example"
+    "Open_in_main_window": "Im Hauptfenster öffnen",
+    "Example": "Beispiel"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -174,8 +174,8 @@
     "Add_note": "Notiz hinzufügen",
     "Volume": "Lautstärke",
     "Macro_copied": "Makro wurde in die Zwischenablage kopiert",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "Overlay umschalten",
+    "Open_alarms_overlay": "Alarme-Overlay umschalten",
     "More_available": "und {{amount}} mehr...",
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
@@ -197,7 +197,7 @@
       "Spawn": "Spawn (Eorzean Time)",
       "Spawns_twice": "Erscheint zweimal",
       "Spawns_twice_description": "Erscheint zweimal pro eorzischen Tag (je einmal vor- und nachmittags)",
-      "Duration": "Duration (Eorzean hours)",
+      "Duration": "Dauer (Eorzea-Stunden)",
       "Slot": "Position",
       "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
       "Type": "Art des Vorkommens",
