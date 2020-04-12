@@ -199,7 +199,7 @@
       "Spawns_twice_description": "Erscheint zweimal pro eorzischen Tag (je einmal vor- und nachmittags)",
       "Duration": "Dauer (Eorzea-Stunden)",
       "Slot": "Position",
-      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
+      "Slot_description": "Platz (1-8), in dem der Gegenstand im Ingame-Interface auftaucht (Seit Patch 5.1 nicht mehr sonderlich wichtig)",
       "Type": "Art des Vorkommens",
       "Map": "Karte",
       "Weather": "Wetter",
@@ -352,7 +352,7 @@
     "Region": "Region",
     "Region_explain": "Datenquelle und Funktionen, die auf einer bestimmten Spielversion basieren, werden pro Region angepasst. Einige davon sind in bestimmten Regionen möglicherweise nicht verfügbar.",
     "Proxy": "Proxy",
-    "Proxy_bypass": "No proxy for",
+    "Proxy_bypass": "Kein Proxy für",
     "Theme": "Design",
     "no_panel_borders": "Ränder um diverse Elemente deaktivieren",
     "Desktop": "Desktop",
@@ -408,8 +408,8 @@
     "Change_email": "E-Mail Adresse ändern",
     "Change_email_success": "E-Mail-Adresse wurde geändert",
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
-    "Ignored_inventories": "Ignored inventories",
+    "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
+    "Ignored_inventories": "Inventare ignorieren",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -529,8 +529,8 @@
     "Set_color": "Listenfarbe festlegen",
     "Go_to_pinned": "Zu angepinnter Liste springen (Rechtsklick zum entpinnen)",
     "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "Erhaltene Materialien: {{amount}}%",
+    "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
     "COLORS": {
       "RED": "Rot",
       "GREEN": "Grün",
@@ -593,7 +593,7 @@
     "List_large": "Dies ist eine große Liste",
     "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "Liste zu lang",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "Diese Liste ist zu groß und könnte den Computer verlangsamen oder auf Limitierungen in der Datenbank treffen. Um sicherzustellen, dass die Liste nicht verloren geht, können keine weiteren Gegenstände mehr hinzugefügt werden, solange nicht Vorhandene entfernt werden.",
     "New_tag": "Neue Markierung",
     "Amount_ilvl": "Betrag (ilvl)",
     "Contributions_popup": "Beitragsstatistiken",
@@ -606,7 +606,7 @@
     "Fill_with_inventory": "Mit Inventar füllen (gilt nur für Gegenstände aus dem persönlichen Inventar)",
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
-    "X_needed": "{{amount}} needed",
+    "X_needed": "{{amount}} benötigt",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -646,7 +646,7 @@
       "Tag_filter": "Markierungs-Filter"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "Listen-Overlay umschalten",
       "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     }
@@ -804,7 +804,7 @@
   },
   "SIMULATOR": {
     "Title": "Handwerkssimulator",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "Attribute und Verbrauchsgegenstände einbeziehen",
     "Fixed_notification_number": "Konstanter Klangeffekt",
     "Starting_echo_number": "Klangeffekt #",
     "Break_on_reclaim": "Makros am letzten möglichen Schritt für Reklamation teilen",
@@ -1033,7 +1033,7 @@
   "LEVEQUESTS": {
     "Title": "Freibriefe",
     "Levequest_name": "Name des Freibriefs",
-    "Level_range": "Level range",
+    "Level_range": "Stufenbereich",
     "No_results": "Keine Freibriefe gefunden",
     "Add_to_list": "Füge die Gegenstände für den Freibrief einer Liste hinzu",
     "Quantity": "Anzahl",
@@ -1417,7 +1417,7 @@
         "Big": "Stark (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "Meldungsoverlay für Fischer umschalten",
         "Bait": "Verwendeter Köder",
         "Tug": "Spitze",
         "Hookset": "Anschlag",
@@ -1435,10 +1435,10 @@
         "Last_report": "Letzte Meldung",
         "Fish": "Fisch",
         "Size": "Größe",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "Zeit seit Wurf",
         "ERRORS": {
           "No_bait": "Kein Köder erkannt. Zur Behebung Köder einmal wechseln.",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "Keine Attribute gefunden. Wechsel erneut zum Fischer, um dies zu beheben."
         }
       }
     },
@@ -1641,7 +1641,7 @@
     "Add_item": "Gegenstand hinzufügen",
     "Clipboard_content_malformed": "Der Inhalt in deiner Zwischenablage ist fehlerhaft",
     "Import_from_clipboard": "Aus Zwischenablage importieren",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "Aus Inventar importieren",
     "Extension_tip": "Du kannst das Inventar deines Gehilfen in deine Zwischenablage kopieren, indem du die \"Inventory grabber\"-Erweiterung benutzt.",
     "Extension_link": "Installiere die Erweiterung aus dem Chrome Web Store",
     "Clear": "Gegenstandsliste löschen",
@@ -1664,7 +1664,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "Es gibt ein Problem mit {{tool}}. Bitte warte einen Moment und versuche es erneut. Wenn das Problem weiterhin besteht, überprüfe #announcements im Teamcraft-Discord für Server-Updates.",
     "Firebase_blocked": "Teamcraft konnte die Datenbank nicht erreichen. Scheinbar wird der Zugriff blockiert oder du hast keine Internetverbindung."
   },
   "SEARCH": {
@@ -1699,7 +1699,7 @@
     "No_character_id": "Keine Charakter-ID gesetzt",
     "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
     "Inventory_outdated": "Dein Inventar ist veraltet",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "Bitte ändere die Zone (durch Teleportieren oder Betreten eines Hauses), um dein Inventar zu aktualisieren. Dieses Popup wird geschlossen, sobald der Vorgang fertig ist. Falls dieses Problem weiterhin besteht, probiere den Leitfaden zur Fehlerbehebung von Paketen in den angehefteten Nachrichten von #troubleshooting auf dem Teamcraft-Discord.",
     "Outdated": "Die Paketerfassung funktioniert nicht",
     "Outdated_description": "Deine Version von Teamcraft funktioniert nicht korrekt mit der aktuellen Spielversion, sie wird bearbeitet und wird in einem zukünftigen Update behoben."
   },
@@ -1719,7 +1719,7 @@
     "Reset_inventory": "Dieses Inventar zurücksetzen",
     "Clean_all": "Alle Inventare zurücksetzen",
     "Search_for_an_item": "Nach Gegenstand suchen",
-    "Filter_by_expansion": "Filter by expansion",
+    "Filter_by_expansion": "Nach Erweiterung filtern",
     "In_x_containers": "In {{amount}} Inventaren",
     "BAG": {
       "SaddleBag": "Chocobo-Satteltasche",
@@ -1735,11 +1735,11 @@
     "Ignore_item": "Diesen Tipp für diesen Gegenstand ignorieren",
     "Remove_ignore_item": "Diesen Tipp für diesen Gegenstand nicht mehr ignorieren",
     "Ignore_container": "Diesen Tipp für dieses Inventar ignorieren",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "Diesen Optimierer ausblenden",
+    "Unhide_optimizer": "Dieses Optimierer nicht länger ausblenden",
     "Remove_ignore_container": "Diesen Tipp nicht länger für dieses Inventar ignorieren",
     "Show_ignored": "Ignorierte Gegenstände zeigen",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "Ausgeblendete Optimierer anzeigen",
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
@@ -1761,8 +1761,8 @@
       "Placeholder": "Erweiterung wählen"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Title": "Alte Materialien, die nur für Gegenstände von niedriger Stufe benötigt werden",
+      "Message": "Das höchste ilvl beim Herstellen, in dem dieser Gegenstand benutzt werden kann, ist {{ilvl}}",
       "Recipe_ilvl": "Min Resulting iLvl",
       "Company_workshop": "Company Workshop"
     }
@@ -1823,8 +1823,8 @@
     "Optimize_materias": "Materialreihenfolge optimieren",
     "No_trades_needed": "Keine Handel benötigt",
     "Stats_caps": "Attributlimits",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Stat_computing_diclaimer": "Ergebnisse sind nicht 100% genau, da sie von Spielern wie dir und mir sind, die viel Zeit damit verbringen, die Formeln zu bestimmen. Bitte melde Ungenauigkeiten nicht als Fehler.",
+    "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
