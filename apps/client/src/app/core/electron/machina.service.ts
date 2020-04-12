@@ -208,6 +208,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
+      inventory.lastZone = firebase.firestore.Timestamp.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
