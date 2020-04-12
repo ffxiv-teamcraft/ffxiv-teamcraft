@@ -8,19 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **db:** fixed position for several fishing spots ([0f402b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f402b7))
 * **desktop:** fixed inventory tracking for some missing actions ([b151e70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b151e70))
-* **desktop:** fixed npc trades tracking ([27ddd15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/27ddd15))
-* **desktop:** fixed retainer inventory tracking for chinese players ([f0b7528](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f0b7528))
-* **recipe-finder:** fixed an issue with crystals being accounted for missing ingredients ([6c2f238](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6c2f238))
-* **simulator:** fixed wrong HQ ingredients quality contribution ([1f45695](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f45695))
-
-
-### Features
-
-* **desktop:** new "hide completed rows" toggle in list panel overlay ([5d5362b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d5362b))
-* **inventory:** show unit price as well as total price ([ad29750](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ad29750))
-* **layout:** added IS_CRYSTAL filter ([0c66a2e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0c66a2e))
 
 
 
