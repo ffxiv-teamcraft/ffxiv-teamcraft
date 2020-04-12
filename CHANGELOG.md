@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.7"></a>
+## [7.1.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.5...v7.1.7) (2020-04-12)
+
+
+### Bug Fixes
+
+* **desktop:** fixed inventory tracking for some missing actions ([b151e70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b151e70))
+
+
+
 <a name="7.1.6"></a>
 ## [7.1.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.5...v7.1.6) (2020-04-11)
 
