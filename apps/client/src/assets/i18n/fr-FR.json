@@ -157,7 +157,7 @@
     "Share_link_copied": "Lien copié dans le presse-papiers",
     "Copy": "Copier",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
-    "Example": "Example"
+    "Example": "Exemple"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -352,7 +352,7 @@
     "Region": "Région",
     "Region_explain": "La source de données et les fonctions basées sur une version spécifique du jeu seront ajustées par région. Certaines d'entre elles peuvent ne pas être disponibles dans certaines régions.",
     "Proxy": "Proxy",
-    "Proxy_bypass": "No proxy for",
+    "Proxy_bypass": "Pas de proxy pour",
     "Theme": "Thème",
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
