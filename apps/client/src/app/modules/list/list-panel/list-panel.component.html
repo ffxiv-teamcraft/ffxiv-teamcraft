@@ -139,6 +139,13 @@
                 nz-menu-item>
               {{'Remove_ephemeral' | translate}}
             </li>
+            <ng-container *ngIf="authFacade.userId$ | async as userId">
+              <ng-container *ngIf="userId !== _list.authorId && !publicDisplay">
+                <li [nzDisabled]="!_list.registry[userId]" nz-tooltip [nzTooltipTitle]="_list.registry[userId]?null:('LIST_DETAILS.Cannot_leave' | translate)" (click)="leaveList(_list, userId)" nz-menu-item>
+                  {{'LIST_DETAILS.Leave_list' | translate}}
+                </li>
+              </ng-container>
+            </ng-container>
             <ng-container *ngIf="!publicDisplay">
               <ng-container *ngIf="teams$ | async as teams">
                 <li *ngIf="_list.teamId === undefined" nz-submenu>
