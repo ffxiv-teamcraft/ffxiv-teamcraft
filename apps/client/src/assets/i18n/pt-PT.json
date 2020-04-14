@@ -607,6 +607,8 @@
     "Filter_items_done": "Ignore completed items",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "X_needed": "{{amount}} needed",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",

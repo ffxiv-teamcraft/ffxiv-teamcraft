@@ -155,6 +155,11 @@ export class ListPanelComponent {
     }
   }
 
+  leaveList(list: List, userId: string): void {
+    delete list.registry[userId];
+    this.listsFacade.updateList(list);
+  }
+
   cloneList(compact: List): void {
     // Connect with store to get full list details before cloning
     this.listsFacade.load(compact.$key);

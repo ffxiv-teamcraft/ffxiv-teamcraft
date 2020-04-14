@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.1.8"></a>
+## [7.1.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.7...v7.1.8) (2020-04-14)
+
+
+### Bug Fixes
+
+* **desynth-guide:** fixed search always returning 0 results ([62b84ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62b84ba))
+* **fishing-overlay:** better filtering of statuses ([c827b67](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c827b67))
+* **inventory:** fixed stack split tracking ([e0fc8ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0fc8ec))
+
+
+### Features
+
+* **lists:** new list panel menu entry to leave the list ([5b8ff65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b8ff65))
+* support for chinese v5.15 update ([fe0464b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe0464b))
+* support for korean v5.11 update ([a542052](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a542052))
+
+
+
 <a name="7.1.7"></a>
 ## [7.1.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.5...v7.1.7) (2020-04-12)
 
