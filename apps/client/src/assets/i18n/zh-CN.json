@@ -607,6 +607,8 @@
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",

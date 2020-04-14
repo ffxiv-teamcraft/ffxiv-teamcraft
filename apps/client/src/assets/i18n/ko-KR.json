@@ -607,6 +607,8 @@
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}} 개 필요",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
