@@ -101,15 +101,14 @@ output('recipes', () => db('Recipe', false).map(recipe => {
     const id = +recipe[`Item{Ingredient}[${index}]`]
     const amount = +recipe[`Amount{Ingredient}[${index}]`]
 
-    // Remove crystals
-    if (!id || !amount || id < 20) {
+    if (!id || !amount) {
       return null
     }
 
     return {
       id,
       amount,
-      ilvl: +db('Item', null, true).findById(id)['Level{Item}']
+      ilvl: id < 20 ? 0 : +db('Item', null, true).findById(id)['Level{Item}']
     }
   }).filter(a => a)
   const totalIlvl = ingredients.reduce((sum, { amount, ilvl }) => sum + amount * ilvl, 0)
