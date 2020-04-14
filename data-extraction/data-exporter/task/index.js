@@ -101,8 +101,7 @@ output('recipes', () => db('Recipe', false).map(recipe => {
     const id = +recipe[`Item{Ingredient}[${index}]`]
     const amount = +recipe[`Amount{Ingredient}[${index}]`]
 
-    // Remove crystals
-    if (!id || !amount || id < 20) {
+    if (!id || !amount) {
       return null
     }
 
