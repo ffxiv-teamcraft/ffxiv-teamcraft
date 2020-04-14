@@ -302,7 +302,11 @@ export class MachinaService {
         return packet.sourceActorSessionID === packet.targetActorSessionID;
       })
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.statusEntries[0].id);
+      for (let i = 0; i < packet.entryCount; i++) {
+        if (packet.statusEntries[i].sourceActorID === packet.actorID) {
+          this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
+        }
+      }
     });
   }
 }
