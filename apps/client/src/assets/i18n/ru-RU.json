@@ -365,6 +365,7 @@
     "Install_update": "Установить обновление",
     "Preferred_copy_type": "Предпочитаемый тип копирования",
     "Auto_open_in_desktop": "Открывать ссылки в десктопном приложении, когда оно запущено",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Аккаунт",
     "Reset_password": "Сбросить пароль",
     "Reset_password_warning": "Вы уверены, что хотите сбросить пароль?",
