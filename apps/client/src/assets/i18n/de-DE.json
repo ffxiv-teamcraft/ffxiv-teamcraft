@@ -365,6 +365,7 @@
     "Install_update": "Aktualisierung installieren",
     "Preferred_copy_type": "Bevorzugte Kopiermethode",
     "Auto_open_in_desktop": "Öffne Links in Desktop-App, wenn sie gestartet ist",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Konto",
     "Reset_password": "Passwort zurücksetzen",
     "Reset_password_warning": "Bist du sicher, dass du dein Passwort zurücksetzen möchtest?",
