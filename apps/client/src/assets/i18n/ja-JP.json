@@ -365,6 +365,7 @@
     "Install_update": "アップデートをインストール",
     "Preferred_copy_type": "優先コピータイプ",
     "Auto_open_in_desktop": "PCアプリでリンクを開く",
+    "Auto_download_update": "Download update when it's available",
     "Account": "アカウント",
     "Reset_password": "パスワードをリセットする",
     "Reset_password_warning": "本当にパスワードを再設定しますか？",
