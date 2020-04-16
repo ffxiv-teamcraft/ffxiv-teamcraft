@@ -365,6 +365,7 @@
     "Install_update": "업데이트 설치",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
+    "Auto_download_update": "Download update when it's available",
     "Account": "계정",
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
