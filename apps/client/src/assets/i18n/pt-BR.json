@@ -365,6 +365,7 @@
     "Install_update": "Instalar atualização",
     "Preferred_copy_type": "Tipo de cópia preferida",
     "Auto_open_in_desktop": "Abrir links na aplicação quando estiver iniciada",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Conta",
     "Reset_password": "Redefinir palavra-passe",
     "Reset_password_warning": "Tem certeza que quer resetar sua senha?",
