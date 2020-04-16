@@ -365,6 +365,7 @@
     "Install_update": "安装更新",
     "Preferred_copy_type": "默认复制模式",
     "Auto_open_in_desktop": "当客户端开启时，自动在使用客户端打开链接",
+    "Auto_download_update": "Download update when it's available",
     "Account": "帐户",
     "Reset_password": "重置密码",
     "Reset_password_warning": "你确定要重置密码吗？",
