@@ -365,6 +365,7 @@
     "Install_update": "Installer la mise à jour",
     "Preferred_copy_type": "Type de copie préférée",
     "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Compte",
     "Reset_password": "Réinitialiser le mot de passe",
     "Reset_password_warning": "Êtes-vous sûr de vouloir réinitialiser votre mot de passe ?",
