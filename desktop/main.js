@@ -41,6 +41,9 @@ function handleSquirrelEvent() {
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
     case '--squirrel-install':
+      spawnUpdate(['--createShortcut', exeName]);
+      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      break;
     case '--squirrel-updated':
       // Optionally do things such as:
       // - Add your .exe to the PATH

@@ -257,6 +257,11 @@ export class AppComponent implements OnInit {
       this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
         map((value: string) => {
           return semver.ltr(environment.version, value);
+        }),
+        tap(update => {
+          if (update && this.settings.autoDownloadUpdate) {
+            this.updateDesktopApp();
+          }
         })
       );
 

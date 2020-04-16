@@ -68,6 +68,14 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get autoDownloadUpdate(): boolean {
+    return this.getSetting('auto-download-update', 'true') === 'true';
+  }
+
+  public set autoDownloadUpdate(dl: boolean) {
+    this.setSetting('auto-download-update', dl.toString());
+  }
+
   public get hideOverlayCompleted(): boolean {
     return this.getSetting('hideOverlayCompleted', 'false') === 'true';
   }

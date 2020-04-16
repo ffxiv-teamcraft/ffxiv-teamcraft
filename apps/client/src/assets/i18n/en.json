@@ -365,6 +365,7 @@
     "Install_update": "Install update",
     "Preferred_copy_type": "Preferred copy type",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Account",
     "Reset_password": "Reset password",
     "Reset_password_warning": "Are you sure you want to reset your password?",

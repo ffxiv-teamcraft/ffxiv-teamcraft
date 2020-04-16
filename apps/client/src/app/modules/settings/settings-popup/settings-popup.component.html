@@ -346,6 +346,11 @@
         </label>
       </div>
       <div>
+        <label [(ngModel)]="settings.autoDownloadUpdate" nz-checkbox>
+          {{'SETTINGS.Auto_download_update' | translate}}
+        </label>
+      </div>
+      <div>
         <label [(ngModel)]="alwaysQuit" (ngModelChange)="alwaysQuitChange($event)" nz-checkbox>
           {{'SETTINGS.Always_quit' | translate}}
         </label>
