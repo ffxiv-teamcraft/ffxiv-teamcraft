@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5 {
   color: black !important;
 }
 
+.ant-dropdown-button.ant-btn-group > .ant-btn:last-child:not(:first-child) {
+  padding: 0 !important;
+}
+
 .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item,
 .ant-menu-inline .ant-menu-item, .ant-menu-vertical .ant-menu-submenu-title,
 .ant-menu-vertical-left .ant-menu-submenu-title, .ant-menu-vertical-right .ant-menu-submenu-title,
@@ -205,21 +209,10 @@ nz-alert.dark {
   }
 
   &-circle {
-    font-size: 20px;
     box-shadow: 0 0 .5px 0 white;
 
     &:not(.ant-btn-primary) {
       box-shadow: 0 0 .5px 0 white inset;
-    }
-
-    > i.material-icons {
-      margin-top: 6px;
-    }
-
-    &.ant-btn-sm {
-      > i.material-icons {
-        margin-top: 2px;
-      }
     }
   }
 }

@@ -21,10 +21,11 @@
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSpan]="7" nzRequired>Message</nz-form-label>
-    <nz-form-control [nzSpan]="12" nzHasFeedback>
+    <nz-form-control [nzSpan]="12" nzHasFeedback [nzExtra]="extra">
       <textarea formControlName="message" nz-input rows="20"></textarea>
-      <nz-form-explain><a href="https://jfcere.github.io/ngx-markdown/" target="_blank">Cheat sheet</a>
-      </nz-form-explain>
+      <ng-template #extra>
+        <a href="https://jfcere.github.io/ngx-markdown/" target="_blank">Cheat sheet</a>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>

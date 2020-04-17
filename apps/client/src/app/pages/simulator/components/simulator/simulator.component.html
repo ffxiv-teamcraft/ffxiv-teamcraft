@@ -48,7 +48,7 @@
               nz-button
               nz-tooltip
               nzShape="circle"
-              nzType="primary">
+              nzType="primary" class="text-icon">
         <span class="text-icon">XIV</span>
       </button>
       <button (click)="openMinStatsPopup(simulation)" *ngIf="simulation$ | async as simulation"
@@ -129,7 +129,7 @@
         <button (click)="changeRotation()" [nzTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small">
-          <i iconfont="icon-exchange" nz-icon></i>
+          <i nzIconfont="icon-exchange" nz-icon></i>
         </button>
         <div [nzTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px"
@@ -219,12 +219,16 @@
                 </div>
               </form>
               <div class="apply" fxLayout="column" fxLayoutGap="5px">
-                <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
-                  {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
-                </button>
-                <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
-                  {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
-                </button>
+                <div>
+                  <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
+                    {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
+                    {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
+                  </button>
+                </div>
               </div>
             </div>
             <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData; else hqInput" class="ingredients"
@@ -246,13 +250,15 @@
                             ngxClipboard>{{ingredient.id | itemName | i18n}}</span>
                     </ng-template>
                     <ng-template #content>
-                      <nz-form-control>
-                        <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
-                          <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
-                                           [nzMin]="0"
-                                           class="input-number-with-addon"></nz-input-number>
-                        </nz-input-group>
-                      </nz-form-control>
+                      <div>
+                        <nz-form-control>
+                          <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
+                            <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
+                                             [nzMin]="0"
+                                             class="input-number-with-addon"></nz-input-number>
+                          </nz-input-group>
+                        </nz-form-control>
+                      </div>
                     </ng-template>
                   </nz-list-item>
                 </ng-template>
@@ -361,15 +367,19 @@
                 </div>
               </div>
               <div class="apply" fxFlexAlign="flex-end flex-end" fxLayout="column" fxLayoutGap="5px">
-                <button
-                  (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-                  nz-button nzBlock
-                  nzType="primary">
-                  {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
-                </button>
-                <button (click)="saveDefaultConsumables()" nz-button nzBlock>
-                  {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
-                </button>
+                <div>
+                  <button
+                    (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
+                    nz-button nzBlock
+                    nzType="primary">
+                    {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="saveDefaultConsumables()" nz-button nzBlock>
+                    {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -408,7 +418,7 @@
                   <button (click)="changeRecipe(rotation)" [nzTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
                           nz-tooltip nzShape="circle"
                           nzSize="small">
-                    <i iconfont="icon-exchange" nz-icon></i>
+                    <i nzIconfont="icon-exchange" nz-icon></i>
                   </button>
                 </div>
                 <div>{{resultData.simulation.recipe.lvl}} {{getStars(resultData.simulation.recipe.stars)}}</div>
@@ -437,7 +447,7 @@
                         [nzTitle]="'SIMULATOR.Toggle_snapshot_mode' | translate"
                         [nzType]="snapshotMode?'primary':'default'"
                         nz-button nz-tooltip>
-                  <i [iconfont]="'icon-debug'" nz-icon></i>
+                  <i [nzIconfont]="'icon-debug'" nz-icon></i>
                 </button>
               </div>
             </div>

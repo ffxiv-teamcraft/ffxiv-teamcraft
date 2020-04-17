@@ -11,8 +11,7 @@ import {
   NzFormModule,
   NzIconModule,
   NzInputModule,
-  NzMessageModule,
-  NzModalServiceModule,
+  NzMessageModule, NzModalModule,
   NzPopconfirmModule,
   NzSelectModule,
   NzToolTipModule
@@ -52,15 +51,6 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     ItemCapsTableComponent,
     StatsPopupComponent
   ],
-  entryComponents: [
-    GearsetCreationPopupComponent,
-    AriyalaImportPopupComponent,
-    LodestoneImportPopupComponent,
-    GearsetComparatorPopupComponent,
-    ImportFromPcapPopupComponent,
-    GearsetCostPopupComponent,
-    StatsPopupComponent
-  ],
   imports: [
     CommonModule,
 
@@ -70,7 +60,7 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     NzButtonModule,
     NzAlertModule,
     NzDividerModule,
-    NzModalServiceModule,
+    NzModalModule,
     NzToolTipModule,
     NzPopconfirmModule,
     NzIconModule,

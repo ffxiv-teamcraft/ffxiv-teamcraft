@@ -65,7 +65,7 @@
                          [nzLabel]="spot.spotData.zoneId | placeName | i18n"
                          [nzValue]="spot.spot"></nz-option>
             </nz-select>
-            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
+            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTooltipTitle]="'DB.FISH.Refresh_data' | translate"
                     (click)="loading = true;reloader$.next(null)">
               <i nz-icon nzType="reload" nzTheme="outline"></i>
             </button>

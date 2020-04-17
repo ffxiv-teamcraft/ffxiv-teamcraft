@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { distanceInWords } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 @Pipe({
   name: 'duration'
@@ -7,7 +7,7 @@ import { distanceInWords } from 'date-fns';
 export class DurationPipe implements PipeTransform {
 
   transform(value: number): string {
-    return distanceInWords(new Date(), new Date(value));
+    return formatDistance(new Date(), new Date(value));
   }
 
 }

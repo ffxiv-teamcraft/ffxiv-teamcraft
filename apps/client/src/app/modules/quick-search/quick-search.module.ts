@@ -21,7 +21,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TranslateModule,
     NgZorroAntdModule
   ],
-  entryComponents: [QuickSearchComponent],
   exports: [QuickSearchComponent]
 })
 export class QuickSearchModule {

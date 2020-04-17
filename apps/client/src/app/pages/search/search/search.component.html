@@ -76,11 +76,11 @@
       || searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT">
       <nz-collapse-panel [nzHeader]="'Filters' | translate">
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" [formGroup]="itemFiltersform"
-              nz-form>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+              nz-form fxLayout="column">
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <!--Ilvl filter-->
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -93,7 +93,7 @@
               </nz-form-control>
             </nz-form-item>
             <!--Elvl filter (equipment level)-->
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -106,7 +106,7 @@
               </nz-form-control>
             </nz-form-item>
             <!--Clvl filter (crafter level)-->
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="clvl">{{'filters/craft_lvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -119,14 +119,14 @@
               </nz-form-control>
             </nz-form-item>
           </div>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategories" nzAllowClear nzMode="multiple"
                            nzShowSearch>
-                  <nz-option *ngFor="let jobId of availableJobs" [nzLabel]="jobId | jobName | i18n"
+                  <nz-option *ngFor="let jobId of availableJobs" [nzLabel]="jobId | jobAbbr | i18n"
                              [nzValue]="jobId" nzCustomContent>
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                       <div class="companion-svg job-icon" [innerHtml]="jobId | jobUnicode"></div>
@@ -136,7 +136,7 @@
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="craftJob" nzAllowClear nzShowSearch>
@@ -150,7 +150,7 @@
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="itemCategories" nzAllowClear nzMode="multiple"
@@ -169,7 +169,7 @@
                  fxLayoutGap="10px">
               <nz-form-label>{{'filters/stats' | translate}}</nz-form-label>
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
-                            [formGroupName]="i" [nzFlex]="true" class="stat-filter-row" fxFlex="1 1 auto"
+                            [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
                 <nz-form-control>
                   <nz-select class="filter-select" formControlName="name"
@@ -197,7 +197,7 @@
                  fxLayoutGap="10px">
               <nz-form-label>{{'filters/bonuses' | translate}}</nz-form-label>
               <nz-form-item *ngFor="let item of itemFiltersform.get('bonuses').controls; let i = index;"
-                            [formGroupName]="i" [nzFlex]="true" class="stat-filter-row" fxFlex="1 1 auto"
+                            [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
                 <nz-form-control>
                   <nz-select class="filter-select" formControlName="name"
@@ -233,9 +233,9 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.INSTANCE" [formGroup]="instanceFiltersForm"
               nz-form>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="reqlvl">{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -259,9 +259,9 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.LEVE" [formGroup]="leveFiltersForm"
               nz-form>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Leve_level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -273,7 +273,7 @@
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Leve_job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear nzShowSearch>
@@ -295,9 +295,9 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.ACTION" [formGroup]="actionFilterForm"
               nz-form>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -309,7 +309,7 @@
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear
@@ -332,9 +332,9 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.TRAIT" [formGroup]="traitFilterForm"
               nz-form>
-          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
@@ -346,7 +346,7 @@
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear nzShowSearch>

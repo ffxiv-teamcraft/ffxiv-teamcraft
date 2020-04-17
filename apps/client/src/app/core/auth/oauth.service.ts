@@ -29,14 +29,14 @@ export class OauthService {
         this.http.get(authorizationUrl)
           .pipe(
             switchMap((res: { access_token: string }) => {
-              return from(this.af.auth.signInWithCredential(<any>auth.GoogleAuthProvider.credential(null, res.access_token)));
+              return from(this.af.signInWithCredential(<any>auth.GoogleAuthProvider.credential(null, res.access_token)));
             })
           )
           .subscribe((res) => (<Subject<UserCredential>>signIn$).next(<any>res));
       });
       this._ipc.send('oauth', provider.providerId);
     } else {
-      signIn$ = from(this.af.auth.signInWithPopup(provider) as Promise<any>);
+      signIn$ = from(this.af.signInWithPopup(provider) as Promise<any>);
     }
     return signIn$;
   }

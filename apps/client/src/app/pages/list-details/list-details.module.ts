@@ -93,13 +93,6 @@ const routes: Routes = [
     TotalPanelPricePopupComponent,
     ListContributionsComponent,
     InventorySynthesisPopupComponent
-  ],
-  entryComponents: [
-    ListHistoryPopupComponent,
-    InventoryViewComponent,
-    TotalPanelPricePopupComponent,
-    ListContributionsComponent,
-    InventorySynthesisPopupComponent
   ]
 })
 export class ListDetailsModule {

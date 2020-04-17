@@ -20,7 +20,7 @@
         </a>
         <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
-                nz-tooltip [nzTitle]="'FOLDERS.Delete_folder' | translate"
+                nz-tooltip [nzTooltipTitle]="'FOLDERS.Delete_folder' | translate"
                 (click)="$event.stopPropagation()"
                 (nzOnConfirm)="deleteFolder(display.folder)">
           <i nz-icon nzType="delete" nzTheme="outline"></i>

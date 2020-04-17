@@ -17,8 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
     NgZorroAntdModule
   ],
-  declarations: [NumberQuestionPopupComponent],
-  entryComponents: [NumberQuestionPopupComponent]
+  declarations: [NumberQuestionPopupComponent]
 })
 export class NumberQuestionPopupModule {
 }

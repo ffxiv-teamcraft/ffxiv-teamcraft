@@ -24,15 +24,12 @@ import { CoreModule } from '../../core/core.module';
   declarations: [
     SettingsPopupComponent
   ],
-  entryComponents: [
-    SettingsPopupComponent
-  ],
   providers: [
     SettingsPopupService
   ]
 })
 export class SettingsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SettingsModule> {
     return {
       ngModule: SettingsModule,
       providers: []

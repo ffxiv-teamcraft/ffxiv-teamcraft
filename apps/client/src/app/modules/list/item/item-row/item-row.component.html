@@ -102,7 +102,7 @@
                     <li nz-menu-item *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                         (click)="tooltip.hide();add(entry.amount, item)"
                         #tooltip="nzTooltip"
-                        nz-tooltip [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
+                        nz-tooltip [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
                       {{entry.containerName | translate}}: {{entry.amount}}
                       <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
                     </li>

@@ -238,7 +238,6 @@ const routes: Routes = [
     FishingSpotComponent,
     FishingMissesPopupComponent
   ],
-  entryComponents: [ModelViewerComponent, FishingMissesPopupComponent],
   imports: [
     CommonModule,
 

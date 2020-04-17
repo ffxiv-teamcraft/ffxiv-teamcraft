@@ -15,8 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     NgZorroAntdModule
   ],
-  declarations: [TextQuestionPopupComponent],
-  entryComponents: [TextQuestionPopupComponent]
+  declarations: [TextQuestionPopupComponent]
 })
 export class TextQuestionPopupModule {
 }
