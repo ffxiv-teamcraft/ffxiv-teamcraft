@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { TutorialStepEntry } from './tutorial-step-entry';
-import { Overlay } from '@angular/cdk/overlay';
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -11,31 +10,57 @@ export class TutorialService {
 
   private steps: TutorialStepEntry[] = [];
 
-  constructor(private router: Router) {
-    router.events.pipe(
-      filter(e => e instanceof NavigationEnd)
+  private play$ = new Subject<void>();
+
+  private get stepsDone(): string[] {
+    return JSON.parse(localStorage.getItem('tutorial') || '[]');
+  }
+
+  private set stepsDone(steps: string[]) {
+    localStorage.setItem('tutorial', JSON.stringify(steps));
+  }
+
+  constructor() {
+    this.play$.pipe(
+      debounceTime(3000)
     ).subscribe(() => {
-      this.reset();
+      this.play();
     });
   }
 
   public register(step: TutorialStepEntry): void {
-    this.steps.push(step);
+    if (!this.steps.some(s => s.key === step.key)) {
+      this.steps.push(step);
+      this.play$.next();
+    }
+  }
+
+  public unregister(key: string): void {
+    this.steps = this.steps.filter(step => {
+      return step.key !== key;
+    });
   }
 
   public play(): void {
-    console.log('START', this.steps);
-    this.steps = this.steps.sort((a, b) => a.index - b.index);
+    const done = this.stepsDone;
+    this.steps = this.steps
+      .filter(step => done.indexOf(step.key) === -1)
+      .sort((a, b) => a.index - b.index);
     this.nextStep();
   }
 
-  public nextStep(): void {
-    const step = this.steps.shift();
-    console.log('Step', step);
+  public nextStep(index = 0): void {
+    const step = this.steps[index];
     if (step) {
-      step.play().subscribe(() => {
-        this.nextStep();
+      step.play(index + 1, this.steps.length).subscribe(() => {
+        this.stepsDone = [
+          ...this.stepsDone,
+          step.key
+        ];
+        this.nextStep(index + 1);
       });
+    } else {
+      this.reset();
     }
   }
 

@@ -12,6 +12,12 @@ export class TutorialStepComponent {
   @Input()
   stepKey: string;
 
+  align: string;
+
+  stepIndex: number;
+
+  totalSteps: number;
+
   done$: Subject<void> = new Subject<void>();
 
   public next(): void {

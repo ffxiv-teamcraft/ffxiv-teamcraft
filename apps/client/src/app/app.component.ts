@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2, AfterViewInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -50,6 +50,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { QuickSearchService } from './modules/quick-search/quick-search.service';
 import { Region } from './modules/settings/region.enum';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
+import { TutorialService } from './core/tutorial/tutorial.service';
 
 declare const gtag: Function;
 
@@ -58,7 +59,7 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -168,7 +169,7 @@ export class AppComponent implements OnInit {
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
-              apollo: Apollo, httpLink: HttpLink) {
+              apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -646,5 +647,9 @@ export class AppComponent implements OnInit {
     if (this.dirty && !this.platformService.isDesktop()) {
       $event.returnValue = true;
     }
+  }
+
+  ngAfterViewInit(): void {
+    this.tutorialService.play();
   }
 }

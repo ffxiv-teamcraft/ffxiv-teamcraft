@@ -26,7 +26,6 @@ import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
-import { TutorialService } from '../../../core/tutorial/tutorial.service';
 
 @Component({
   selector: 'app-search',
@@ -209,7 +208,7 @@ export class SearchComponent implements OnInit {
               private progressService: ProgressPopupService, private fb: FormBuilder, private xivapi: XivapiService,
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
-              @Inject(PLATFORM_ID) private platform: Object, private tutorialService: TutorialService) {
+              @Inject(PLATFORM_ID) private platform: Object) {
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -324,9 +323,6 @@ export class SearchComponent implements OnInit {
         this.sortOrder$.next(params.order);
       }
     });
-    setTimeout(() => {
-      this.tutorialService.play();
-    }, 2000);
   }
 
   addFilter(type: 'stats' | 'bonuses'): void {

@@ -1,51 +1,98 @@
-import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
-import { Overlay, OverlayPositionBuilder, OverlayRef } from '@angular/cdk/overlay';
+import { Overlay, OverlayPositionBuilder } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { tap } from 'rxjs/operators';
+import { ConnectedPosition } from '@angular/cdk/overlay/position/flexible-connected-position-strategy';
 
 @Directive({
   selector: '[tutorialStep]'
 })
-export class TutorialStepDirective implements OnInit {
+export class TutorialStepDirective implements OnInit, OnDestroy {
 
   @Input('tutorialStep')
   translationKey: string;
 
   @Input('tutorialStepIndex')
-  index: number;
+  index = 0;
+
+  @Input('tutorialStepAlign')
+  align: 'top' | 'bottom' | 'left' | 'right' = 'top';
 
   constructor(private tutorialService: TutorialService, private overlayPositionBuilder: OverlayPositionBuilder,
               private elementRef: ElementRef, private overlay: Overlay) {
   }
 
-  play(): Observable<void> {
+  play(stepIndex: number, totalSteps: number): Observable<void> {
     const positionStrategy = this.overlayPositionBuilder
       .flexibleConnectedTo(this.elementRef)
-      .withPositions([{
-        originX: 'center',
-        originY: 'top',
-        overlayX: 'center',
-        overlayY: 'bottom'
-      }]);
-    const overlayRef = this.overlay.create({ positionStrategy });
+      .withPositions([this.getPlacement()]);
+    const overlayRef = this.overlay.create({
+      positionStrategy: positionStrategy,
+      hasBackdrop: true
+    });
+    // Make the host element show on top of the backdrop
+    this.elementRef.nativeElement.style.zIndex = '1001';
+    this.elementRef.nativeElement.style.boxShadow = '0px 0px 5px 1px var(--highlight-color)';
     const portal = new ComponentPortal(TutorialStepComponent);
     const componentRef = overlayRef.attach(portal);
     componentRef.instance.stepKey = this.translationKey;
+    componentRef.instance.align = this.align;
+    componentRef.instance.stepIndex = stepIndex;
+    componentRef.instance.totalSteps = totalSteps;
     return componentRef.instance.done$.pipe(
       tap(() => {
         overlayRef.detach();
         overlayRef.dispose();
+        this.elementRef.nativeElement.style.zIndex = null;
+        this.elementRef.nativeElement.style.boxShadow = null;
       })
     );
   }
 
+  getPlacement(): ConnectedPosition {
+    switch (this.align) {
+      case 'top':
+        return {
+          originX: 'center',
+          originY: 'top',
+          overlayX: 'center',
+          overlayY: 'bottom'
+        };
+      case 'bottom':
+        return {
+          originX: 'center',
+          originY: 'bottom',
+          overlayX: 'center',
+          overlayY: 'top'
+        };
+      case 'right':
+        return {
+          originX: 'start',
+          originY: 'center',
+          overlayX: 'end',
+          overlayY: 'center'
+        };
+      case 'left':
+        return {
+          originX: 'end',
+          originY: 'center',
+          overlayX: 'start',
+          overlayY: 'center'
+        };
+    }
+  }
+
   ngOnInit(): void {
-    const step = new TutorialStepEntry(this.index, () => this.play());
+    const step = new TutorialStepEntry(+this.index, this.translationKey, (index, total) => this.play(index, total));
     this.tutorialService.register(step);
+  }
+
+  ngOnDestroy(): void {
+    this.tutorialService.unregister(this.translationKey);
   }
 
 }

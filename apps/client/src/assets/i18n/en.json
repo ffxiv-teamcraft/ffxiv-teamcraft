@@ -1879,5 +1879,21 @@
     "Folder_not_found": "Folder not found",
     "Your_folders": "Your folders",
     "Favorite_folders": "Favorite folders"
+  },
+  "TUTORIAL": {
+    "Next": "Next",
+    "Done": "Done",
+    "APP": {
+      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+    },
+    "SEARCH": {
+      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
+      "Share": "Use this button to get your search results as a shareable link."
+    },
+    "LIST_PANEL": {
+      "Share": "Click here to copy a link to this list, to easily share it",
+      "Open": "Click here to open the list's detail, you can also double click list's name.",
+      "More": "Click this menu to rename the list, manage permissions, and more."
+    }
   }
 }
