@@ -38,7 +38,7 @@
                 <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                   <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
                     <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
-                       nz-tooltip [nzTitle]="'NAVIGATION.You_are_here' | translate"></i>
+                       nz-tooltip [nzTooltipTitle]="'NAVIGATION.You_are_here' | translate"></i>
                   </span>
                   <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMap && !overlay"
                           [nzTitle]="'NAVIGATION.Title' | translate" nz-button

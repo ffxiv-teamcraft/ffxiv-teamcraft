@@ -24,4 +24,8 @@ export class ResetTimersComponent {
     localStorage.setItem('alarms:irl', JSON.stringify(enabledAlarms));
   }
 
+  trackByTimer(index: number): number {
+    return index;
+  }
+
 }

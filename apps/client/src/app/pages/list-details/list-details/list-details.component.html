@@ -14,7 +14,7 @@
                     nz-dropdown
                     nz-tooltip
                     nzShape="circle">
-              <i nz-icon nzType="interation"></i>
+              <i nz-icon nzType="format-painter" nzTheme="outline"></i>
             </button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul *ngIf="selectedLayout$ | async as selectedLayout" nz-menu>
@@ -121,7 +121,7 @@
                     [nzTitle]="'LIST.History' | translate" nz-button
                     nz-tooltip
                     nzShape="circle">
-              <i class="material-icons">history</i>
+              <i nz-icon nzType="field-time" nzTheme="outline"></i>
             </button>
           </div>
         </div>

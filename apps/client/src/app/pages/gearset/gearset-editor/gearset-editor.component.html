@@ -4,17 +4,17 @@
       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" class="page-title">
         <span class="gearset-name">{{gearset.name}}</span>
         <span class="companion-svg job-icon" [innerHTML]="gearset.job | jobUnicode"></span>
-        <button nz-button nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+        <button nz-button nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Rename_gearset' | translate">
           <i nz-icon nzType="edit"></i>
         </button>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle" nzType="primary"
                 *ngIf="machinaToggle"
-                (click)="updateFromPcap(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Update_from_pcap' | translate">
+                (click)="updateFromPcap(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Update_from_pcap' | translate">
           <i nz-icon nzType="api"></i>
         </button>
         <a nz-button nzShape="circle" nzType="primary"
-           nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate"
+           nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}">
           <i nz-icon nzType="eye"></i>
         </a>
@@ -122,11 +122,11 @@
           </nz-select>
           <nz-input-number [nzMin]="1" [nzMax]="maxLevel" [ngModel]="level$ | async" (ngModelChange)="level$.next($event)" nzSize="small"></nz-input-number>
         </div>
-        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'GEARSETS.Total_materias_needed' | translate"
+        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'GEARSETS.Total_materias_needed' | translate"
                 (click)="openTotalNeededPopup(gearset)">
           <i nz-icon nzType="calculator" nzTheme="outline"></i>
         </button>
-        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'GEARSETS.Total_cost' | translate"
+        <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'GEARSETS.Total_cost' | translate"
                 (click)="openTotalCostPopup(gearset)">
           <i nzIconfont="icon-dollar" nz-icon></i>
         </button>
@@ -136,8 +136,9 @@
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
         <b>{{stat.value | number:'1.0-0':translate.currentLang}}
           <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
-          <span  *ngFor="let statDisplay of statDisplays" nz-tooltip
-                 [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
+          <span *ngFor="let statDisplay of statDisplays" nz-tooltip
+                [class.multiple-stats-display]="statDisplays.length > 1"
+                [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
             ({{statDisplay.value | floor:2 | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
           </span>
           </ng-container>

@@ -241,7 +241,15 @@ const nzConfig: NzConfig = {
     NgDragDropModule.forRoot(),
     NgxDnDModule,
 
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateSerializability: false,
+        strictActionSerializability: false,
+        strictStateImmutability: false,
+        strictActionImmutability: false,
+        strictActionWithinNgZone: true
+      }
+    }),
     !environment.production ? StoreDevtoolsModule.instrument({
       name: 'FFXIV Teamcraft'
     }) : [],

@@ -15,7 +15,7 @@
   <nz-spin [nzSpinning]="loading">
     <div fxLayout="column">
       <nz-collapse *ngFor="let optimization of optimizations; trackBy: trackByTip">
-        <nz-collapse-panel 
+        <nz-collapse-panel
           *ngIf="showHidden || !optimization.hidden"
           [nzHeader]="header" [nzExtra]="extraTpl">
           <ng-template #header>
@@ -69,14 +69,14 @@
                 <button nz-button
                         *ngIf="!optimization.hidden; else removeHidden"
                         (click)="$event.stopPropagation();setHideOptimizer(optimization.type, true)"
-                        nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Hide_optimizer' | translate"
+                        nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Hide_optimizer' | translate"
                         nzType="danger">
                   <i nz-icon nzType="eye-invisible"></i>
                 </button>
                 <ng-template #removeHidden>
                   <button nz-button
                           (click)="$event.stopPropagation();setHideOptimizer(optimization.type, false)"
-                          nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Unhide_optimizer' | translate"
+                          nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Unhide_optimizer' | translate"
                           nzType="primary">
                     <i nz-icon nzType="eye"></i>
                   </button>
@@ -99,7 +99,7 @@
                       <button nz-button
                               *ngIf="!container.ignored; else removeIgnore"
                               (click)="$event.stopPropagation();setIgnoreContainer(container.containerName, optimization.type, true)"
-                              nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Ignore_container' | translate"
+                              nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Ignore_container' | translate"
                               nzType="danger">
                         <i nz-icon nzType="eye-invisible"></i>
                       </button>
@@ -122,7 +122,7 @@
                         <ng-template #ignore>
                           <button nz-button
                                   (click)="setIgnoreItemOptimization(entry.item.itemId, optimization.type, true)"
-                                  nzShape="circle" nz-tooltip [nzTitle]="'INVENTORY_OPTIMIZER.Ignore_item' | translate"
+                                  nzShape="circle" nz-tooltip [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Ignore_item' | translate"
                                   nzType="danger">
                             <i nz-icon nzType="eye-invisible"></i>
                           </button>

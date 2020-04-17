@@ -46,7 +46,7 @@
                [style.margin-top.px]="-markerSizes.bnpc.y/2"
                [style.top.%]="bnpc.displayPosition.y"
                [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTitle]="bnpc.nameId | mobName | i18n">
+               nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
         </div>
         <div class="layer" [style.transform]="imageTransform()" *ngIf="showMappyLayers">
           <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
@@ -58,7 +58,7 @@
                [style.margin-top.px]="-markerSizes.bnpc.y/2"
                [style.top.%]="bnpc.displayPosition.y"
                [style.left.%]="bnpc.displayPosition.x"
-               nz-tooltip [nzTitle]="bnpc.nameId | mobName | i18n">
+               nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
         </div>
         <div class="layer" [style.transform]="imageTransform()" *ngIf="showLocalLayers">
           <img class="marker hover"
@@ -116,7 +116,7 @@
       </div>
 
       <div class="mappy-reloader">
-        <button *ngIf="!watchMappy" nz-button (click)="reloadMappyData()" nz-tooltip nzTitle="Reload mappy data">
+        <button *ngIf="!watchMappy" nz-button (click)="reloadMappyData()" nz-tooltip nzTooltipTitle="Reload mappy data">
           <i nz-icon nzType="reload" nzTheme="outline"></i>
         </button>
       </div>

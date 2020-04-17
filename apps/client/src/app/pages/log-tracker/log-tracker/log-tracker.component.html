@@ -53,14 +53,16 @@
                       <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
                     </div>
                     <div>
-                      <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]" [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                      <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"
                               nzSize="small">
                         <i nz-icon nzType="check"></i>
                       </button>
-                      <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]" [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                      <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]"
+                              [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"
@@ -85,15 +87,13 @@
           <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
           <div>{{'LOG_TRACKER.Hide_completed_items' | translate}}</div>
         </div>
-        <button (click)="showOptimizedMap(0)" [nzTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
-                nz-tooltip
-                nzType="primary">
+        <button (click)="showOptimizedMap(0)" [nzTooltipTitle]="'LOG_TRACKER.MIN_optimized_path' | translate" nz-button
+                nz-tooltip nzType="primary" class="path-button">
           <i nzIconfont="icon-map" nz-icon></i>
           <img alt="MIN" class="job-icon" src="./assets/icons/MIN.png">
         </button>
-        <button (click)="showOptimizedMap(2)" [nzTitle]="'LOG_TRACKER.BTN_optimized_path' | translate" nz-button
-                nz-tooltip
-                nzType="primary">
+        <button (click)="showOptimizedMap(2)" [nzTooltipTitle]="'LOG_TRACKER.BTN_optimized_path' | translate" nz-button
+                nz-tooltip nzType="primary" class="path-button">
           <i nzIconfont="icon-map" nz-icon></i>
           <img alt="BTN" class="job-icon" src="./assets/icons/BTN.png">
         </button>
@@ -195,14 +195,16 @@
                       </div>
                       <div [nzMd]="4" nz-col></div>
                       <div [nzMd]="2" nz-col>
-                        <button (click)="markDolAsDone(item.itemId, true)" *ngIf="!userGatheringCompletion[item.itemId]" [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                        <button (click)="markDolAsDone(item.itemId, true)" *ngIf="!userGatheringCompletion[item.itemId]"
+                                [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"
                                 nzType="primary">
                           <i nz-icon nzType="check"></i>
                         </button>
-                        <button (click)="markDolAsDone(item.itemId, false)" *ngIf="userGatheringCompletion[item.itemId]" [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                        <button (click)="markDolAsDone(item.itemId, false)" *ngIf="userGatheringCompletion[item.itemId]"
+                                [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"

@@ -21,7 +21,7 @@ export class DataExtractorService {
         if (value === DataType.CRAFTED_BY && skipCraft) {
           return;
         }
-        const extract = this.extract(value, item.id, data, item);
+        const extract = this.extract(value as DataType, item.id, data, item);
         if (extract) {
           item.sources.push(extract);
         }
