@@ -966,9 +966,9 @@ export const jobCategories = {
     "fr": "GLA PGL MRD HAS ARC PLD MOI GUE DRG BRD SUR NIN MCH CHN SAM PSB DNS"
   },
   "162": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 \n\n忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子",
+    "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN",
+    "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS"
   }
 };

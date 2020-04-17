@@ -375,7 +375,7 @@ export class ListsFacade {
     return lists
       .sort((a, b) => {
         if (a.index === b.index) {
-          return b.createdAt.toMillis() - a.createdAt.toMillis();
+          return b.createdAt.seconds- a.createdAt.seconds;
         }
         return a.index - b.index;
       });
@@ -398,7 +398,7 @@ export class ListsFacade {
    */
   public buildProgression(items: ListRow[]): number {
     if (items.length === 0) {
-      return 100;
+      return 0;
     }
     return 100 * items.reduce((acc, item) => {
       acc += item.done / item.amount;

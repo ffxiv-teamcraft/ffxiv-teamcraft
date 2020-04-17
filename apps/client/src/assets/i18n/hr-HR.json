@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "Copy",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -350,6 +351,8 @@
     "Link_base": "Item links",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Theme",
     "no_panel_borders": "Disable borders around various panels",
     "Desktop": "Desktop",
@@ -423,6 +426,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Autofill completion sound",
       "Packet_capture": "Packet capture",
+      "Networking": "Networking",
       "Theme": "Theme",
       "Search": "Search",
       "Other": "Other"
@@ -587,10 +591,9 @@
     "Amount_craftable": "You can craft {{amount}}",
     "Add_item": "Add an item",
     "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "List too large",
-    "List_too_large_description": "This list is too large and might hit database size limitations because of all the informations it carries. You aren't allowed to add more items to make sure you won't lose the list.",
-    "Add_to_another_list": "Add to another list",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "New tag",
     "Amount_ilvl": "Amount (ilvl)",
     "Contributions_popup": "Contributions stats",
@@ -604,6 +607,8 @@
     "Filter_items_done": "Ignore completed items",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "X_needed": "{{amount}} needed",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -1661,7 +1666,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please check #announcements discord channel or report it in the #bugs channel",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft could not reach the database, it seems like something is blocking it or you don't have access to internet."
   },
   "SEARCH": {
@@ -1696,7 +1701,7 @@
     "No_character_id": "No ingame character id set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
     "Inventory_outdated": "Your inventory is outdated",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
@@ -1716,7 +1721,7 @@
     "Reset_inventory": "Reset this inventory",
     "Clean_all": "Reset all your inventories",
     "Search_for_an_item": "Search for an item",
-    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
+    "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",

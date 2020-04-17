@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Workshop } from '../../../model/other/workshop';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { WorkshopsFacade } from '../+state/workshops.facade';
@@ -24,7 +24,7 @@ import { FolderAdditionPickerComponent } from '../../folder-addition-picker/fold
   styleUrls: ['./workshop-panel.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WorkshopPanelComponent implements OnChanges {
+export class WorkshopPanelComponent {
 
   @Input()
   public set workshop(l: Workshop) {
@@ -197,18 +197,5 @@ export class WorkshopPanelComponent implements OnChanges {
 
   trackByList(index: number, list: List): string {
     return list.$key;
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    // Filter the lists we are missing and we need to load
-    this._workshop.listIds
-      .filter(id => {
-        return this.lists.find(l => l.$key === id) === undefined
-          && !this.listsLoaded.includes(id);
-      })
-      .forEach((missingList) => {
-        this.listsFacade.load(missingList);
-        this.listsLoaded.push(missingList);
-      });
   }
 }

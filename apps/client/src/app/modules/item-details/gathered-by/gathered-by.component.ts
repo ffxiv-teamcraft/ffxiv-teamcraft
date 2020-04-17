@@ -8,6 +8,7 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { MapService } from '../../map/map.service';
 import { StoredNode } from '../../list/model/stored-node';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-gathered-by',
@@ -25,7 +26,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
   constructor(private alarmsFacade: AlarmsFacade, private mapService: MapService,
-              private bell: BellNodesService) {
+              private bell: BellNodesService, private lazyData: LazyDataService) {
     super();
   }
 
@@ -73,6 +74,16 @@ export class GatheredByComponent extends ItemDetailsPopup {
     if (!node.uptime && !node.weathers) {
       return null;
     }
+    const nodeData = this.lazyData.data.nodes[node.id];
+    const coords = nodeData ? {
+      x: nodeData.x,
+      y: nodeData.y,
+      z: nodeData.z
+    } : {
+      x: node.coords[0],
+      y: node.coords[1],
+      z: 0
+    };
     const bellNodes = this.bell.getAllNodes({ obj: { i: this.item.id, c: this.item.icon } });
     const alarm: Partial<Alarm> = {
       duration: node.uptime / 60,
@@ -84,10 +95,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
       snagging: node.snagging,
       fishEyes: node.fishEyes,
       predators: node.predators || [],
-      coords: {
-        x: node.coords[0],
-        y: node.coords[1]
-      },
+      coords: coords,
       icon: this.item.icon,
       itemId: this.item.id,
       type: this.details.type,

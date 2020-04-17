@@ -93,7 +93,7 @@
                [nzTotal]="totalLength" fxLayout="row"
                fxLayoutAlign="center center"></nz-pagination>
 
-<app-fullpage-message *ngIf="pristine" height="300px">
+<app-fullpage-message *ngIf="pristine" height="300px" fontSize="3rem">
   {{'DESYNTH.Intro' | translate}}
 </app-fullpage-message>
 <app-page-loader *ngIf="loading" [message]="'DESYNTH.Loading_message' | translate"></app-page-loader>

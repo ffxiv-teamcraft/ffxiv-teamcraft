@@ -1,8 +1,8 @@
-import { ItemData } from '../../../model/garland-tools/item-data';
 import { CustomItem } from '../../custom-items/model/custom-item';
+import { ListRow } from './list-row';
 
 export interface CraftAddition {
-  item: any;
-  data: ItemData | CustomItem;
+  item: ListRow;
+  data?: CustomItem;
   amount: number;
 }

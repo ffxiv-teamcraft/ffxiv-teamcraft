@@ -21,7 +21,7 @@ export class ProgressPopupService {
       nzClosable: false,
       nzMaskClosable: false,
       nzContent: ProgressPopupComponent,
-      nzComponentParams: { operation$: operation$.pipe(shareReplay(1)), count: operationsCount }
+      nzComponentParams: { operation$: operation$.pipe(shareReplay()), count: operationsCount }
     }).afterClose;
   }
 }

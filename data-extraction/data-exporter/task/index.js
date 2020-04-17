@@ -11,6 +11,7 @@ output('content-types', () => db('ContentType').simpleObject('Name'))
 output('craft-actions', () => db('CraftAction').simpleObject('Name'))
 output('craft-descriptions', () => db('CraftAction').simpleObject('Description'))
 output('event-items', () => db('EventItem').simpleObject('Singular'))
+output('ex-versions', () => db('ExVersion').simpleObject('Name'))
 output('fates', () => db('Fate').toObject(row => {
   if (!row.Name) return
 
@@ -100,15 +101,14 @@ output('recipes', () => db('Recipe', false).map(recipe => {
     const id = +recipe[`Item{Ingredient}[${index}]`]
     const amount = +recipe[`Amount{Ingredient}[${index}]`]
 
-    // Remove crystals
-    if (!id || !amount || id < 20) {
+    if (!id || !amount) {
       return null
     }
 
     return {
       id,
       amount,
-      ilvl: +db('Item', null, true).findById(id)['Level{Item}']
+      ilvl: id < 20 ? 0 : +db('Item', null, true).findById(id)['Level{Item}']
     }
   }).filter(a => a)
   const totalIlvl = ingredients.reduce((sum, { amount, ilvl }) => sum + amount * ilvl, 0)

@@ -156,7 +156,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Enlace para compartir copiado al portapapeles",
     "Copy": "Copiar",
-    "Open_in_main_window": "Open in main window"
+    "Open_in_main_window": "Open in main window",
+    "Example": "Example"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -350,6 +351,8 @@
     "Link_base": "Vínculos de artículos",
     "Region": "Region",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Proxy": "Proxy",
+    "Proxy_bypass": "No proxy for",
     "Theme": "Tema",
     "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
@@ -423,6 +426,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Sonido de autorellenado",
       "Packet_capture": "Captura de paquetes",
+      "Networking": "Networking",
       "Theme": "Tema",
       "Search": "Búsqueda",
       "Other": "Otros"
@@ -587,10 +591,9 @@
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "List_large": "Esta es una lista larga",
-    "Enable_performance_mode": "Tal vez quiera activar el modo de rendimiento en ajustes para tener un procesamiento más rápido",
+    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
     "List_too_large": "Lista demasiado larga",
-    "List_too_large_description": "Esta lista es muy larga y puede llegar al limite de tamaño de la base de datos debido a toda la información que lleva. No le será permitido añadir más elementos para asegurar que no pierda la lista.",
-    "Add_to_another_list": "Añadir a otra lista",
+    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "Nueva etiqueta",
     "Amount_ilvl": "Cantidad (ilvl)",
     "Contributions_popup": "Estadísticas de contribuciones",
@@ -604,6 +607,8 @@
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
     "X_needed": "{{amount}} needed",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -1661,7 +1666,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "Hay un problema con {{tool}}, por favor comprueba en el canal #announcements o repórtalo en el canal #bugs de discord",
+    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
     "Firebase_blocked": "Teamcraft no pudo acceder a la base de datos, parece que algo lo está bloqueando o no tiene acceso a Internet."
   },
   "SEARCH": {
@@ -1696,7 +1701,7 @@
     "No_character_id": "No hay un id de personaje establecido",
     "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez.",
     "Inventory_outdated": "Su inventario está desactualizado",
-    "Please_update_inventory_popup": "Por favor, cambie de zona (ya sea teletransportandose o entrando a una casa) para actualizar su inventario. Esta ventana se cerrará una vez terminado.",
+    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Packet capture isn't working",
     "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
   },
@@ -1716,7 +1721,7 @@
     "Reset_inventory": "Restablecer este inventario",
     "Clean_all": "Restablecer todos sus inventarios",
     "Search_for_an_item": "Buscar un artículo",
-    "Search_tip": "You can filter by expansion, try searching with expansion:Shadowbringers or expac:ShB",
+    "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "Alforja de Chocobo",

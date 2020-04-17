@@ -35,7 +35,7 @@
       </ng-template>
     </nz-card>
     <ng-template #map>
-      <app-map [mapId]="node.mapId" [markers]="[{x: node.x, y: node.y}]"></app-map>
+      <app-map [mapId]="node.mapId" [markers]="[{x: node.x, y: node.y, size: {x:0, y:0}}]"></app-map>
     </ng-template>
 
     <ng-template #title>
@@ -52,7 +52,7 @@
           <div>{{node.zoneid | placeName | i18n}}
             <app-db-button [id]="node.nodeId" type="node"></app-db-button>
           </div>
-          <div>X: {{node.x}}, Y: {{node.y}}</div>
+          <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
           <div>
             {{getNodeSpawns(node)}} <i *ngIf="node.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
                                        nzType="clock-circle"></i>

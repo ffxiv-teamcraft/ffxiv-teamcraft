@@ -63,28 +63,47 @@ function done(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-// if (hasTodo('missingNodes')) {
-//   const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/node-positions.json'));
-//   const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
-//   let count = 0;
-//   Object.values(nodes).forEach((node) => {
-//     if (node.items.filter(i => i < 100000).length > 0 && node.x === undefined) {
-//       console.log(` - [ ] Items: ${node.items.map(item => itemNames[item.toString()].en).join(', ')}`);
-//       console.log(`| Level: ${node.level}`);
-//       console.log(`| Limited: ${node.limited}`);
-//       count++;
-//     }
-//   });
-//   console.log(`
-//
-//   **Total**: ${count}`);
-// }
+if (hasTodo('missingNodes', true)) {
+  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/nodes.json'));
+  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
+  let count = 0;
+  const mapData = require('../../apps/client/src/assets/data/maps.json');
+  const places = require('../../apps/client/src/assets/data/places.json');
+  const data = {};
+  Object.values(nodes)
+    .filter(node => node.items.filter(i => i < 100000).length > 0 && node.x === undefined && node.map > 0)
+    .filter(node => node.items.map(item => itemNames[item.toString()].en).join(', ').indexOf('Skybuilders') === -1)
+    .forEach((node) => {
+      data[node.map] = [
+        ...(data[node.map] || []),
+        {
+          items: node.items.map(item => itemNames[item.toString()].en).join(', '),
+          level: node.level,
+          limited: node.limited
+        }
+      ];
+      count++;
+    });
+  Object.keys(data)
+    .forEach((mapId) => {
+      console.log(`## ${places[mapData[mapId].placename_id].en}`);
+      data[mapId].forEach(node => {
+        console.log(` - [ ] Items: ${node.items}`);
+        console.log(`| Level: ${node.level}`);
+        console.log(`| Limited: ${node.limited}`);
+      });
+      console.log('\n');
+    });
 
-if (hasTodo('mappy')) {
+  console.log(`
+
+  **Total**: ${count}`);
+}
+
+if (hasTodo('mappy', true)) {
   // MapData extraction
-  const mapData$ = new Subject();
+  const mapData$ = get('https://xivapi.com/mappy/json');
   const nodes$ = new Subject();
-  http.get('https://staging.xivapi.com/mappy/json', (res) => mapData$.next(res));
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();
@@ -110,6 +129,9 @@ if (hasTodo('mappy')) {
   getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType').subscribe(page => {
     page.Results
       .forEach(point => {
+        if (point.PlaceNameTargetID === 0 && point.TerritoryType) {
+          point.PlaceNameTargetID = point.TerritoryType.PlaceNameTargetID;
+        }
         gatheringPoints[point.ID] = {
           legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
           ephemeral: point.EphemeralStartTime < 65535,
@@ -187,29 +209,25 @@ if (hasTodo('mappy')) {
 
   combineLatest([mapData$, nodes$])
     .subscribe(([mapData]) => {
-      mapData.setEncoding('utf8');
-      mapData.pipe(csv())
-        .on('data', function(row) {
-          if (row.Type === 'BNPC') {
-            handleMonster(row);
-          }
-          if (row.Type === 'Node') {
-            handleNode(row);
-          }
-        })
-        .on('end', function() {
-          // Write data that needs to be joined with game data first
-          persistToJsonAsset('nodes', nodes);
-          // console.log('nodes written');
-          persistToJsonAsset('monsters', monsters);
-          done('mappy');
-        });
+      mapData.forEach(row => {
+        if (row.Type === 'BNPC') {
+          handleMonster(row);
+        }
+        if (row.Type === 'Node') {
+          handleNode(row);
+        }
+      });
+      // Write data that needs to be joined with game data first
+      persistToJsonAsset('nodes', nodes);
+      // console.log('nodes written');
+      persistToJsonAsset('monsters', monsters);
+      done('mappy');
     });
 }
 
 
 handleNode = (row) => {
-  const baseId = gatheringPointToBaseId[+row.ENpcResidentID];
+  const baseId = gatheringPointToBaseId[+row.NodeID];
   if (baseId && +row.MapID) {
     nodes[baseId] = {
       ...nodes[baseId],
@@ -262,6 +280,7 @@ if (hasTodo('map')) {
     done('map');
   });
 }
+
 
 // Crafting log extraction
 const craftingLog = [
@@ -930,27 +949,27 @@ if (hasTodo('LGB', true)) {
     }
   });
 
-  const todoTerritories = Object.keys(territoryLayers)
-    .filter(key => {
-      const layers = territoryLayers[key].filter(layer => !layer.ignored);
-      return +key > 0
-        && layers.length > 0
-        && layers.some(layer => {
-          return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
-            && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
-            && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
-        });
-    })
-    .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
-    .map(key => {
-      return territoryLayers[key].reduce((acc, layer) => {
-        return `${acc}
-    - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
-      }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
-    })
-    .join('\n');
+  // const todoTerritories = Object.keys(territoryLayers)
+  //   .filter(key => {
+  //     const layers = territoryLayers[key].filter(layer => !layer.ignored);
+  //     return +key > 0
+  //       && layers.length > 0
+  //       && layers.some(layer => {
+  //         return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
+  //           && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
+  //           && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
+  //       });
+  //   })
+  //   .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
+  //   .map(key => {
+  //     return territoryLayers[key].reduce((acc, layer) => {
+  //       return `${acc}
+  //   - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
+  //     }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
+  //   })
+  //   .join('\n');
 
-  fs.writeFileSync('./TODO.md', todoTerritories);
+  // fs.writeFileSync('./TODO.md', todoTerritories);
 
   // Then, let's work on lgb files
   combineLatest([
@@ -1520,8 +1539,11 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
-  getAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert').subscribe(page => {
-    page.Results.forEach(recipe => {
+  combineLatest([
+    getAllEntries('https://xivapi.com/CompanyCraftSequence'),
+    aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert')
+  ]).subscribe(([companyCrafts, xivapiRecipes]) => {
+    xivapiRecipes.forEach(recipe => {
       if (recipe.RecipeLevelTable === null) {
         return;
       }
@@ -1529,8 +1551,9 @@ if (hasTodo('recipes')) {
       const ingredients = Object.keys(recipe)
         .filter(k => /ItemIngredient\d/.test(k))
         .sort((a, b) => a < b ? -1 : 1)
-        .filter(key => recipe[key] && recipe[key].ID > 19)
-        .map((key, index) => {
+        .filter(key => recipe[key] && recipe[key].ID > 0)
+        .map((key) => {
+          const index = +/ItemIngredient(\d)/.exec(key)[1];
           return {
             id: recipe[key].ID,
             amount: +recipe[`AmountIngredient${index}`],
@@ -1538,7 +1561,7 @@ if (hasTodo('recipes')) {
           };
         });
       const totalContrib = maxQuality * recipe.MaterialQualityFactor / 100;
-      const totalIlvl = ingredients.reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
+      const totalIlvl = ingredients.filter(i => i.id > 19).reduce((acc, cur) => acc + cur.ilvl * cur.amount, 0);
       recipes.push({
         id: recipe.ID,
         job: recipe.ClassJob.ID,
@@ -1561,13 +1584,56 @@ if (hasTodo('recipes')) {
             return {
               id: ingredient.id,
               amount: ingredient.amount,
-              quality: (ingredient.ilvl / totalIlvl) * totalContrib
+              quality: ingredient.id > 19 ? (ingredient.ilvl / totalIlvl) * totalContrib : 0
             };
           }),
         expert: recipe.IsExpert === 1
       });
     });
-  }, null, () => {
+
+    companyCrafts.forEach(companyCraftSequence => {
+      const recipe = {
+        id: `fc${companyCraftSequence.ID}`,
+        job: 0,
+        lvl: 1,
+        yields: 1,
+        result: companyCraftSequence.ResultItemTargetID,
+        stars: 0,
+        qs: false,
+        hq: false,
+        ingredients: []
+      };
+      if (companyCraftSequence.CompanyCraftDraftTargetID > 0) {
+        recipe.masterbook = {
+          id: `draft${companyCraftSequence.CompanyCraftDraftTargetID}`,
+          name: companyCraftSequence.CompanyCraftDraft && companyCraftSequence.CompanyCraftDraft.Name_en
+        };
+      }
+      for (let partIndex = 0; partIndex < 8; partIndex++) {
+        if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`] === 0) {
+          continue;
+        }
+        for (let processIndex = 0; processIndex < 3; processIndex++) {
+          if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
+            continue;
+          }
+          for (let i = 0; i < 12; i++) {
+            if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0
+              || companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}TargetID`] === 0) {
+              continue;
+            }
+            recipe.ingredients.push({
+              id: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SupplyItem${i}`].Item,
+              amount: companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetQuantity${i}`] * companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}`][`SetsRequired${i}`],
+              quality: 0,
+              phase: processIndex + 1
+            });
+          }
+        }
+      }
+      recipes.push(recipe);
+    });
+
     persistToJsonAsset('recipes', recipes);
     done('recipes');
   });

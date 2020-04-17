@@ -562,5 +562,11 @@ export const aetheryteNames = {
     "de": "Fähranleger",
     "ja": "船着場",
     "fr": "Embarcadère"
+  },
+  "163": {
+    "en": "Gangos",
+    "de": "Gangos",
+    "ja": "ガンゴッシュ",
+    "fr": "Gangos"
   }
 };

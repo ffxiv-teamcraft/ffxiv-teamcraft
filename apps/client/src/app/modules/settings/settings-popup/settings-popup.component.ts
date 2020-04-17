@@ -52,6 +52,12 @@ export class SettingsPopupComponent {
 
   noShortcut = false;
 
+  proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
+
+  proxyValue = '';
+
+  proxyBypass = '';
+
   customTheme: Theme;
 
   public sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
@@ -105,6 +111,20 @@ export class SettingsPopupComponent {
     localStorage.setItem('trackItemsOnSale', trackItemsOnSale.toString());
   }
 
+  public get proxyExample(): string {
+    switch (this.proxyType) {
+      case '':
+        return '';
+      case 'pac':
+        return 'http://127.0.0.1:1080/pac';
+      case 'custom':
+        const help = 'https://www.electronjs.org/docs/api/session#sessetproxyconfig';
+        return `<a href="${help}" target="_blank">${help}</a>`;
+      default:
+        return '127.0.0.1:8080';
+    }
+  }
+
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
@@ -128,12 +148,83 @@ export class SettingsPopupComponent {
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
+    this.ipc.once('proxy-rule:value', (event, value: string) => {
+      if (!value) {
+        if (this.proxyType !== 'pac') {
+          this.proxyType = '';
+          this.proxyValue = '';
+        }
+
+        return;
+      }
+
+      // https://www.electronjs.org/docs/api/session#sessetproxyconfig
+      if ([';', '=', ','].some(chr => value.includes(chr))) {
+        this.proxyType = 'custom';
+        this.proxyValue = value;
+        return;
+      }
+
+      let [scheme, host] = value.split('://');
+      if (!host) {
+        host = scheme;
+        scheme = 'http';
+      } else if (!['http', 'https', 'socks4', 'socks5'].includes(scheme)) {
+        this.proxyType = 'custom';
+        this.proxyValue = value;
+        return;
+      }
+
+      this.proxyType = scheme as any;
+      this.proxyValue = host;
+    });
+    this.ipc.once('proxy-bypass:value', (event, value) => {
+      this.proxyBypass = value;
+    });
+    this.ipc.once('proxy-pac:value', (event, value) => {
+      if (value) {
+        this.proxyType = 'pac'
+        this.proxyValue = value
+      }
+    });
     this.ipc.send('always-on-top:get');
     this.ipc.send('no-shortcut:get');
     this.ipc.send('toggle-machina:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('always-quit:get');
+    this.ipc.send('proxy-rule:get');
+    this.ipc.send('proxy-bypass:get');
+    this.ipc.send('proxy-pac:get');
     this.customTheme = this.settings.customTheme;
+  }
+
+  setProxy({ rule = '', pac = '' } = {}): void {
+    this.ipc.send('proxy-rule', rule || '');
+    this.ipc.send('proxy-pac', pac || '');
+  }
+
+  commitProxy(): void {
+    if (this.proxyType === '') {
+      this.setProxy();
+      return;
+    }
+
+    if (!this.proxyValue) {
+      // Wait for value changes
+      return;
+    }
+
+    switch (this.proxyType) {
+      case 'custom':
+        this.setProxy({ rule: this.proxyValue });
+        break;
+      case 'pac':
+        this.setProxy({ pac: this.proxyValue });
+        break;
+      default:
+        this.setProxy({ rule: `${this.proxyType}://${this.proxyValue}` });
+        break;
+    }
   }
 
   alwaysOnTopChange(value: boolean): void {
@@ -287,6 +378,14 @@ export class SettingsPopupComponent {
   public setSound(sound: string): void {
     this.settings.autofillCompletionSound = sound;
     this.previewSound();
+  }
+
+  public onMappyEnableChange(enabled: boolean): void {
+    if (enabled) {
+      this.mappy.start();
+    } else {
+      this.mappy.stop();
+    }
   }
 
 }

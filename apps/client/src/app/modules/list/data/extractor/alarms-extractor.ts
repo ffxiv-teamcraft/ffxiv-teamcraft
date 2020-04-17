@@ -45,7 +45,8 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             ephemeral: node.limitType && node.limitType.en === 'Ephemeral',
             coords: {
               x: node.coords[0],
-              y: node.coords[1]
+              y: node.coords[1],
+              z: node.coords[2]
             },
             spawns: node.time,
             snagging: node.snagging,
@@ -88,8 +89,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
                 type: node.type,
                 spawns: node.time,
                 coords: {
-                  x: node.coords[0],
-                  y: node.coords[1]
+                  x: node.x,
+                  y: node.y,
+                  z: node.z
                 }
               };
               if (folklore !== undefined) {

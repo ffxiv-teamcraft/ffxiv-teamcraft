@@ -129,6 +129,9 @@ export class FishComponent implements OnInit {
     const index = weatherIndex[mapIds.find(m => m.id === mapId).weatherRate];
     const maxRate = index[index.length - 1].rate;
     const matchingIndex = index.findIndex(row => row.weatherId === weatherId);
+    if (matchingIndex === -1) {
+      return 0;
+    }
     if (matchingIndex === 0) {
       return index[matchingIndex].rate / maxRate;
     }

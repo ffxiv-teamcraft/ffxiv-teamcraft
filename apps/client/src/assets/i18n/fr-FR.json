@@ -156,7 +156,8 @@
     "Nq": "QN",
     "Share_link_copied": "Lien copié dans le presse-papiers",
     "Copy": "Copier",
-    "Open_in_main_window": "Ouvrir dans la fenêtre principale"
+    "Open_in_main_window": "Ouvrir dans la fenêtre principale",
+    "Example": "Exemple"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -350,6 +351,8 @@
     "Link_base": "Liens des objets",
     "Region": "Région",
     "Region_explain": "La source de données et les fonctions basées sur une version spécifique du jeu seront ajustées par région. Certaines d'entre elles peuvent ne pas être disponibles dans certaines régions.",
+    "Proxy": "Proxy",
+    "Proxy_bypass": "Pas de proxy pour",
     "Theme": "Thème",
     "no_panel_borders": "Désactiver les bordures autour des panneaux dans les pages du site",
     "Desktop": "Appli",
@@ -406,7 +409,7 @@
     "Change_email_success": "Email modifié",
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
-    "Ignored_inventories": "Ignored inventories",
+    "Ignored_inventories": "Inventaires ignorés",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -423,6 +426,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Son de notification de complétion",
       "Packet_capture": "Capture de paquets",
+      "Networking": "Networking",
       "Theme": "Thème",
       "Search": "Recherche",
       "Other": "Autre"
@@ -587,10 +591,9 @@
     "Amount_craftable": "Vous pouvez fabriquer {{amount}}",
     "Add_item": "Ajouter un objet",
     "List_large": "Ceci est une grande liste",
-    "Enable_performance_mode": "Vous pouvez activer le mode hautes performances dans les paramètres afin d'obtenir un rendu plus rapide",
+    "Enable_performance_mode": "Vous pouvez activer le mode hautes performances dans les options afin d'améliorer la rapidité d'affichage. Ne signalez pas les problèmes de performance qui affichent cette erreur comme un bug, cela ne sera pas pris en comte.",
     "List_too_large": "Liste trop longue",
-    "List_too_large_description": "Cette liste est trop longue et pourrait être supprimée automatiquement par le système de base de données en raison de quotas imposés si vous y ajoutez plus d'objets.",
-    "Add_to_another_list": "Ajouter à une autre liste",
+    "List_too_large_description": "Cette liste est trop volumineuse et peut ralentir votre ordinateur ou atteindre limitations de la base de données. Pour vous assurer de ne pas perdre la liste, vous n'êtes plus en mesure d'y ajouter d'autres éléments, à moins que des éléments existants ne soient supprimés.",
     "New_tag": "Nouveau tag",
     "Amount_ilvl": "Montant (ilvl)",
     "Contributions_popup": "Statistiques des contributions",
@@ -604,6 +607,8 @@
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
     "X_needed": "{{amount}} requis",
+    "Leave_list": "Leave this list",
+    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -1661,7 +1666,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "Il y a un problème avec {{tool}}, veuillez vérifier le salon #announcements sur discord ou signaler le soucis dans le salon #bugs",
+    "Http_request_error": "Il y a un problème avec {{tool}}, veuillez patienter un instant et réessayer. Si le problème persiste, consultez #announcements sur le serveur Discord de Teamcraft pour suivre les mises à jour.",
     "Firebase_blocked": "Teamcraft n'a pas réussi à se connecter à la base de données, il semble que quelque chose ne fonctionne pas ou vous n'avez pas accès à internet."
   },
   "SEARCH": {
@@ -1696,7 +1701,7 @@
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
-    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette popup se fermera une fois que ce sera effectué.",
+    "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette fenêtre se fermera automatiquement. Si le problème persiste, essayez de suivre le guide de dépannage de capture de paquets dans les messages épinglés de #troubleshooting sur le serveur Discord de Teamcraft.",
     "Outdated": "La capture de paquets ne fonctionne pas",
     "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour."
   },
@@ -1716,7 +1721,7 @@
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
     "Search_for_an_item": "Rechercher un objet",
-    "Search_tip": "Vous pouvez filtrer par extension, essayez de rechercher avec expansion:Shadowbringers ou expac:ShB",
+    "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "Dans {{amount}} inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
@@ -1821,7 +1826,7 @@
     "No_trades_needed": "Aucun échange nécessaire",
     "Stats_caps": "Max stats",
     "Stat_computing_diclaimer": "Les résultats ne sont pas 100% exacts, ils sont issus de joueurs (the allagan studies) comme vous et moi qui ont passé beaucoup de temps à essayer de trouver les formules, ne signalez pas les inexactitudes comme un bug.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Missing_items": "Il semble qu'il vous manque certains éléments, assurez-vous que vos filtres sont correctement définis",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",

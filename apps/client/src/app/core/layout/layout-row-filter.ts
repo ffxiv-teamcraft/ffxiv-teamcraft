@@ -12,6 +12,8 @@ export class LayoutRowFilter {
 
   static IS_CRAFT = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.CRAFTED_BY).length > 0, 'IS_CRAFT');
 
+  static IS_CRYSTAL = new LayoutRowFilter(row => row.id > 1 && row.id < 20, 'IS_CRYSTAL');
+
   static IS_GATHERING = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.GATHERED_BY, true).type !== undefined, 'IS_GATHERING');
 
   static IS_TRADE = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');
@@ -19,6 +21,11 @@ export class LayoutRowFilter {
   static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
     return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0;
   }, 'CAN_BE_BOUGHT');
+
+  static IS_ONLY_FROM_VENDOR = new LayoutRowFilter(row => {
+    return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0
+      && LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length === 0;
+  }, 'IS_ONLY_FROM_VENDOR');
 
   static IS_HQ = new LayoutRowFilter((row, list) => {
     const recipesNeedingItem = list.finalItems

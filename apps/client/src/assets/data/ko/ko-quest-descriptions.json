@@ -10625,6 +10625,9 @@
   "69207": {
     "ko": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>특수 규칙:  레벨 보정<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n톰라 마을의 소문 좋아하는 드워프는 모험가에게 부탁할 일이 있는 듯하다."
   },
+  "69208": {
+    "ko": "이슈가르드 하층 거리에 낯선 <Sheet(EObj,2010850,0)/><13>FF1002280CFF05454F626AF61EAEE20103FF04EAB080FF04EC9DB4</13> 붙어 있다."
+  },
   "69209": {
     "ko": "돌의 집에 있는 타타루는 모험가에게 묻고 싶은 것이 있는 듯하다."
   },

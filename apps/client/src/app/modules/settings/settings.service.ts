@@ -68,6 +68,22 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get autoDownloadUpdate(): boolean {
+    return this.getSetting('auto-download-update', 'true') === 'true';
+  }
+
+  public set autoDownloadUpdate(dl: boolean) {
+    this.setSetting('auto-download-update', dl.toString());
+  }
+
+  public get hideOverlayCompleted(): boolean {
+    return this.getSetting('hideOverlayCompleted', 'false') === 'true';
+  }
+
+  public set hideOverlayCompleted(hide: boolean) {
+    this.setSetting('hideOverlayCompleted', hide.toString());
+  }
+
   public get removeDoneInInventorSynthesis(): boolean {
     return this.getSetting('remove-done-in-synthesis', 'false') === 'true';
   }
@@ -466,6 +482,14 @@ export class SettingsService {
 
   public set xivapiKey(key: string) {
     this.setSetting('xivapiKey', key);
+  }
+
+  public get enableMappy(): boolean {
+    return this.getSetting('enableMappy', 'true') === 'true';
+  }
+
+  public set enableMappy(enabled: boolean) {
+    this.setSetting('enableMappy', enabled.toString());
   }
 
   public get macroConsumables(): boolean {

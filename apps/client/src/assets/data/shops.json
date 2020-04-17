@@ -3090,27 +3090,27 @@
     "fr": "Codex des Accords (magie)"
   },
   "1770064": {
-    "en": "Totem Gear (Ruby Weapon)",
+    "en": "Totem Gear (The Ruby Weapon)",
     "ja": "報酬装備の取引（ルビーウェポン）",
     "de": "Rubin-Ausrüstung",
     "fr": "Équipements totémiques (Arme Rubis)"
   },
   "1770065": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Idol Gear (Bozja Citadel)",
+    "ja": "報酬装備の取引（シタデル・ボズヤ）",
+    "de": "Bozja-Ausrüstung",
+    "fr": "Équipements de Bozja"
   },
   "1770066": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Skysteel Prototype Augmentation",
+    "ja": "スカイスチールツール第2段階への改良",
+    "de": "Verstärkung zu Himmelsstahl-Werkzeug Stufe II",
+    "fr": "Amélioration d'outils de Cielacier (niveau 2)"
   },
   "1770067": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Skysteel Prototype +1 Augmentation",
+    "ja": "スカイスチールツール第3段階への改良",
+    "de": "Verstärkung zu Himmelsstahl-Werkzeug Stufe III",
+    "fr": "Amélioration d'outils de Cielacier (niveau 3)"
   }
 }

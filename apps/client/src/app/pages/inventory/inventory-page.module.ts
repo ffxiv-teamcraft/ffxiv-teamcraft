@@ -14,6 +14,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
   declarations: [InventoryComponent],
   imports: [
     CommonModule,
+    FormsModule,
     CoreModule,
     RouterModule.forChild(routes),
     TranslateModule,

@@ -17,6 +17,7 @@ import { OverlayContainerModule } from '../../modules/overlay-container/overlay-
 import { ListPanelOverlayComponent } from './list-panel-overlay/list-panel-overlay.component';
 import { ListModule } from '../../modules/list/list.module';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
     ItemPickerModule,
 
     NgZorroAntdModule,
-    OverlayContainerModule
+    OverlayContainerModule,
+    FormsModule
   ],
   declarations: [ListPanelOverlayComponent]
 })

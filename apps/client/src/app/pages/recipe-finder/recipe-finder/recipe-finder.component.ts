@@ -111,7 +111,10 @@ export class RecipeFinderComponent implements OnDestroy {
         const finalRecipes = uniquified.map(recipe => {
           const jobSet = sets.find(set => recipe.job === set.jobId);
           recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
-          recipe.missing = recipe.ingredients.filter(i => {
+          recipe.missing = recipe.ingredients
+            // Ignore crystals
+            .filter(i => i.id > 19)
+            .filter(i => {
             const poolItem = this.pool.find(item => item.id === i.id);
             return !poolItem || poolItem.amount < i.amount;
           });
@@ -155,7 +158,10 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public canCraft(recipe: LazyRecipe, amount: number): boolean {
     const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
-    const neededIngredients = allAvailableIngredients.map(i => {
+    const neededIngredients = allAvailableIngredients
+      // Ignore crystals
+      .filter(i => i.id > 19)
+      .map(i => {
       return {
         ...i,
         amount: i.amount * amount / recipe.yields

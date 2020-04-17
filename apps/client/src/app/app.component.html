@@ -13,10 +13,6 @@
           <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
                      [nzValue]="locale"></nz-option>
         </nz-select>
-        <a [nzTitle]="'WIKI.Title' | translate" class="wiki-link" href="https://wiki.ffxivteamcraft.com"
-           nz-tooltip target="_blank">
-          <i nz-icon nzType="question-circle"></i>
-        </a>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
@@ -109,68 +105,71 @@
             </ng-template>
           </li>
           <li [class.accent]="!(loggedIn$ | async)" class="user-menu" nz-submenu>
-          <span title>
-            <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
-            <ng-template #authDetails>
-              <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
-                <nz-avatar [nzText]="'A'">
-                </nz-avatar>
-                {{'COMMON.Anonymous' | translate}}
-              </span>
+            <span title class="user-menu-title">
+              <nz-spin *ngIf="loading$ | async; else authDetails"></nz-spin>
+              <ng-template #authDetails>
+                <span *ngIf="!(loggedIn$ | async); else userLoggedIn">
+                  <nz-avatar [nzText]="'A'">
+                  </nz-avatar>
+                  {{'COMMON.Anonymous' | translate}}
+                </span>
+              </ng-template>
               <ng-template #userLoggedIn>
-                <ng-container *ngIf="character$ | async as character">
-                <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
-                                 [userId]="userId$ | async"
-                                 [width]="32"></app-user-avatar>
-                <ng-template #krAvatar>
-                  <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
-                </ng-template>
+                <ng-container *ngIf="character$ | async as character; else emptyCharacter">
+                  <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
+                                  [userId]="userId$ | async"
+                                  [width]="32"></app-user-avatar>
+                  <ng-template #krAvatar>
+                    <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
+                  </ng-template>
                   {{character.Name | ifMobile:''}}
                 </ng-container>
-                </ng-template>
-            </ng-template>
-          </span>
+              </ng-template>
+              <ng-template #emptyCharacter>
+                <span>
+                  <nz-avatar [nzText]="'U'">
+                  </nz-avatar>
+                  {{'COMMON.Unknown' | translate}}
+                </span>
+              </ng-template>
+            </span>
             <span>
-            <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/profile">
-              <i nz-icon nzType="idcard"></i>
-              {{'Profile' | translate}}
-            </a>
-              <a nz-menu-item routerLink="/inventory">
-              <i nz-icon nzType="appstore"></i>
-                {{'INVENTORY.Title' | translate}}
-            </a>
-            <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/teams">
-              <i nz-icon nzType="team"></i>
-              {{'TEAMS.Title' | translate}}
-            </a>
-            <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/favorites">
-              <i nz-icon nzType="heart"></i>
-              {{'Favorites' | translate}}
-            </a>
-            <ng-container *ngIf="user$ | async as user">
-              <a *ngIf="user.patron || user.admin" nz-menu-item routerLink="/custom-links">
-                <i nz-icon nzType="link"></i>
-                {{'CUSTOM_LINKS.Title' | translate}}
+              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/profile">
+                <i nz-icon nzType="idcard"></i>
+                {{'Profile' | translate}}
               </a>
-            </ng-container>
-            <a (click)="openSettings()" nz-menu-item>
-              <i nz-icon nzType="setting"></i>
-              {{'SETTINGS.Title' | translate}}
-            </a>
-            <span nz-menu-divider></span>
-            <a (click)="logOut()" *ngIf="loggedIn$ | async" nz-menu-item>
-              <i nz-icon nzType="logout"></i>
-              {{'Disconnect' | translate}}
-            </a>
-            <a (click)="openRegisterPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
-              <i nz-icon nzType="form"></i>
-              {{'Registration' | translate}}
-            </a>
-            <a (click)="openLoginPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
-              <i nz-icon nzType="login"></i>
-              {{'Login' | translate}}
-            </a>
-          </span>
+              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/teams">
+                <i nz-icon nzType="team"></i>
+                {{'TEAMS.Title' | translate}}
+              </a>
+              <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/favorites">
+                <i nz-icon nzType="heart"></i>
+                {{'Favorites' | translate}}
+              </a>
+              <ng-container *ngIf="user$ | async as user">
+                <a *ngIf="user.patron || user.admin" nz-menu-item routerLink="/custom-links">
+                  <i nz-icon nzType="link"></i>
+                  {{'CUSTOM_LINKS.Title' | translate}}
+                </a>
+              </ng-container>
+              <a (click)="openSettings()" nz-menu-item>
+                <i nz-icon nzType="setting"></i>
+                {{'SETTINGS.Title' | translate}}
+              </a>
+              <span nz-menu-divider></span>
+              <a (click)="logOut()" *ngIf="loggedIn$ | async" nz-menu-item>
+                <i nz-icon nzType="logout"></i>
+                {{'Disconnect' | translate}}
+              </a>
+              <a (click)="openRegisterPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
+                <i nz-icon nzType="form"></i>
+                {{'Registration' | translate}}
+              </a>
+              <a (click)="openLoginPopup()" *ngIf="!(loggedIn$ | async)" nz-menu-item>
+                <i nz-icon nzType="login"></i>
+                {{'Login' | translate}}
+              </a>
+            </span>
           </li>
         </ul>
       </nz-header>
@@ -227,6 +226,11 @@
                       <span class="companion-svg svg-icon">&#x0F202;</span>
                       <span class="nav-text">{{'GEARSETS.Title' | translate}}</span>
                   </span>
+                </a>
+                <a nz-menu-item (click)="onNavLinkClick()" class="menu-link" routerLink="/inventory"
+                   routerLinkActive="ant-menu-item-selected" *ngIf="ipc.machinaToggle">
+                  <i nz-icon nzType="appstore"></i>
+                  <span class="nav-text">{{'INVENTORY.Title' | translate}}</span>
                 </a>
               </li>
 
@@ -357,12 +361,10 @@
                   <i nz-icon nzType="info-circle"></i>
                   <span>{{'SIDEBAR.Other' | translate}}</span>
                 </span>
-                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/blog"
-                   routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="file-text"></i>
-                      <span class="nav-text">{{'BLOG.Title' | translate}}</span>
-                  </span>
+                <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
+                   nz-tooltip target="_blank">
+                  <i nz-icon nzType="question-circle"></i>
+                  <span class="nav-text">{{'WIKI.Title' | translate}}</span>
                 </a>
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
                    routerLinkActive="ant-menu-item-selected">
@@ -487,8 +489,7 @@
                   {{'PACKET_CAPTURE.Button_label' | translate}}
                 </button>
                 <div>{{'Or' | translate}}</div>
-                <a
-                  href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
+                <a href="https://wiki.ffxivteamcraft.com/advanced-features/packet-capture">{{'COMMON.Read_more_on_wiki' | translate}}</a>
               </div>
             </ng-template>
           </nz-alert>

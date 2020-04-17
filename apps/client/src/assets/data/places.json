@@ -17604,10 +17604,10 @@
     "fr": "Embarcadère"
   },
   "2935": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gangos",
+    "ja": "ガンゴッシュ",
+    "de": "Gangos",
+    "fr": "Gangos"
   },
   "2936": {
     "en": "",
@@ -19952,7 +19952,7 @@
   "3326": {
     "en": "The Norvrandt Slope",
     "ja": "ノルヴラント大陸斜面",
-    "de": "Caliban-Furche",
+    "de": "Norvrandt-Hang",
     "fr": "Marge continentale de Norvrandt"
   },
   "3327": {
@@ -20862,58 +20862,58 @@
     "fr": "L'Ambition"
   },
   "3478": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gangos",
+    "ja": "ガンゴッシュ",
+    "de": "Gangos",
+    "fr": "Gangos"
   },
   "3479": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cid's Memory",
+    "ja": "シドの記憶空間",
+    "de": "Cids Gedächtnis",
+    "fr": "Mémoire de Cid"
   },
   "3480": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Cardo Maximus",
+    "ja": "シタデル・ボズヤ大通り",
+    "de": "Cardo Maximus",
+    "fr": "Cardo maximus"
   },
   "3481": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Insulae",
+    "ja": "シタデル・ボズヤ居住区",
+    "de": "Insulae",
+    "fr": "Insulae"
   },
   "3482": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bozja Forum",
+    "ja": "シタデル・ボズヤ広場",
+    "de": "Bozja-Forum",
+    "fr": "Forum bozjien"
   },
   "3483": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Praetentura",
+    "ja": "プリンシピア前",
+    "de": "Praetentura",
+    "fr": "Praetentura"
   },
   "3484": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Principia",
+    "ja": "プリンシピア",
+    "de": "Principia",
+    "fr": "Principia"
   },
   "3485": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lunar Transmitter",
+    "ja": "交信雷波塔",
+    "de": "Lunare Sendeanlage",
+    "fr": "Tour de transmission"
   },
   "3486": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Transmission Control",
+    "ja": "交信雷波塔管制室",
+    "de": "Signalkontrollstation",
+    "fr": "Salle de contrôle"
   },
   "3487": {
     "en": "Great Glacier",

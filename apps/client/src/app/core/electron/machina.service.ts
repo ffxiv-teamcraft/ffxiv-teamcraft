@@ -184,7 +184,7 @@ export class MachinaService {
     });
 
     const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
-      filter(packet => packet.flag === 746)
+      filter(packet => packet.flag === 383)
     );
 
     merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(
@@ -233,7 +233,7 @@ export class MachinaService {
         const finalItemsEntry = list.finalItems.find(i => i.id === patch.itemId);
         if (itemsEntry && itemsEntry.done < itemsEntry.amount) {
           this.listsFacade.setItemDone(patch.itemId, itemsEntry.icon, false, patch.quantity, itemsEntry.recipeId, itemsEntry.amount, false, true, patch.hq);
-        } else if (!itemsEntry && finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
+        } else if (finalItemsEntry && finalItemsEntry.done < finalItemsEntry.amount) {
           this.listsFacade.setItemDone(patch.itemId, finalItemsEntry.icon, true, patch.quantity, finalItemsEntry.recipeId, finalItemsEntry.amount, false, true, patch.hq);
         }
       });
@@ -302,7 +302,11 @@ export class MachinaService {
         return packet.sourceActorSessionID === packet.targetActorSessionID;
       })
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.statusEntries[0].id);
+      for (let i = 0; i < packet.entryCount; i++) {
+        if (packet.statusEntries[i].sourceActorID === packet.actorID) {
+          this.eorzeaFacade.addStatus(packet.statusEntries[i].id);
+        }
+      }
     });
   }
 }

@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "7.0.20",
+  "version": "7.1.8",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -122,7 +122,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.36.1",
+    "node-machina-ffxiv": "^2.36.11",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
@@ -181,7 +181,7 @@
     "@types/lodash": "^4.14.123",
     "@types/node": "^12.11.1",
     "@types/semver": "^5.4.0",
-    "@xivapi/angular-client": "1.4.1",
+    "@xivapi/angular-client": "1.6.0",
     "angular-feather": "^5.3.0",
     "apollo-angular": "^1.8.0",
     "apollo-angular-link-http": "^1.9.0",

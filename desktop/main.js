@@ -41,6 +41,9 @@ function handleSquirrelEvent() {
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
     case '--squirrel-install':
+      spawnUpdate(['--createShortcut', exeName]);
+      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      break;
     case '--squirrel-updated':
       // Optionally do things such as:
       // - Add your .exe to the PATH
@@ -94,6 +97,9 @@ const oauth = require('./oauth.js');
 
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 
+/**
+ * @type {BrowserWindow}
+ */
 let win;
 let tray;
 let nativeIcon;
@@ -208,6 +214,15 @@ function createWindow() {
 
   if (config.get('machina') === true) {
     Machina.start(win, config, options.verbose, options.winpcap);
+  }
+
+  const proxyRule = config.get('proxy-rule', '');
+  const proxyPac = config.get('proxy-pac', '');
+  if (proxyRule || proxyPac) {
+    setProxy({
+      rule: proxyRule,
+      pac: proxyPac
+    })
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -401,6 +416,15 @@ function broadcast(eventName, data) {
   });
 }
 
+function setProxy({ rule, pac, bypass }) {
+  const ses = win.webContents.session;
+  ses.setProxy({
+    proxyRules: rule || config.get('proxy-rule'),
+    proxyBypassRules: bypass || config.get('proxy-bypass'),
+    pacScript: pac || config.get('proxy-pac')
+  });
+}
+
 ipcMain.on('app-ready', (event) => {
   if (options.nativeDecorator) {
     event.sender.send('window-decorator', false);
@@ -419,6 +443,45 @@ ipcMain.on('toggle-machina', (event, enabled) => {
 
 ipcMain.on('toggle-machina:get', (event) => {
   event.sender.send('toggle-machina:value', config.get('machina'));
+});
+
+ipcMain.on('proxy-rule', (event, value) => {
+  config.set('proxy-rule', value);
+  event.sender.send('proxy-rule:value', value);
+
+  setProxy({
+    rule: value
+  });
+});
+
+ipcMain.on('proxy-rule:get', (event) => {
+  event.sender.send('proxy-rule:value', config.get('proxy-rule'));
+});
+
+ipcMain.on('proxy-bypass', (event, value) => {
+  config.set('proxy-bypass', value);
+  event.sender.send('proxy-bypass:value', value);
+
+  setProxy({
+    bypass: value
+  });
+});
+
+ipcMain.on('proxy-bypass:get', (event) => {
+  event.sender.send('proxy-bypass:value', config.get('proxy-bypass'));
+});
+
+ipcMain.on('proxy-pac', (event, value) => {
+  config.set('proxy-pac', value);
+  event.sender.send('proxy-pac:value', value);
+
+  setProxy({
+    pac: value
+  });
+});
+
+ipcMain.on('proxy-pac:get', (event) => {
+  event.sender.send('proxy-pac:value', config.get('proxy-pac'));
 });
 
 let fishingState = {};

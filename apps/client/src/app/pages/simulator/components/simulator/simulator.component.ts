@@ -240,7 +240,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private authFacade: AuthFacade, private fb: FormBuilder, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private i18nTools: I18nToolsService,
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
-              private route: ActivatedRoute, private dialog: NzModalService, private translate: TranslateService,
+              private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService) {
@@ -877,28 +877,31 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         this.stepStates$.next({});
       }
 
-      let food, medicine, fcActions = null;
+      if (rotationChanged) {
 
-      if (this.routeConsumables) {
-        food = this.routeConsumables.food || rotation.food;
-        medicine = this.routeConsumables.medicine || rotation.medicine;
-        fcActions = this.routeConsumables.freeCompanyActions || rotation.freeCompanyActions;
-      }
+        let food, medicine, fcActions = null;
 
-      if (food) {
-        this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
-      } else if (rotationChanged) {
-        delete this.selectedFood;
-      }
-      if (medicine) {
-        this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
-      } else if (rotationChanged) {
-        delete this.selectedMedicine;
-      }
-      if (fcActions) {
-        this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
-      } else if (rotationChanged) {
-        this.selectedFreeCompanyActions = [];
+        if (this.routeConsumables) {
+          food = this.routeConsumables.food || rotation.food;
+          medicine = this.routeConsumables.medicine || rotation.medicine;
+          fcActions = this.routeConsumables.freeCompanyActions || rotation.freeCompanyActions;
+        }
+
+        if (food) {
+          this.selectedFood = this.foods.find(f => f.itemId === food.id && f.hq === food.hq);
+        } else {
+          delete this.selectedFood;
+        }
+        if (medicine) {
+          this.selectedMedicine = this.medicines.find(m => m.itemId === medicine.id && m.hq === medicine.hq);
+        } else {
+          delete this.selectedMedicine;
+        }
+        if (fcActions) {
+          this.selectedFreeCompanyActions = this.freeCompanyActions.filter(action => fcActions.indexOf(action.actionId) > -1);
+        } else {
+          this.selectedFreeCompanyActions = [];
+        }
       }
       this.applyConsumables(stats);
     });

@@ -75,13 +75,13 @@
           <i nz-icon nzType="share-alt"></i>
         </button>
       </ng-container>
-      <button (click)="openRotationSolver()" [nzShape]="'circle'"
-              [nzTitle]="'SIMULATOR.Rotation_solver' | translate"
-              [nzType]="'primary'"
-              nz-button
-              nz-tooltip>
-        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>
-      </button>
+<!--      <button (click)="openRotationSolver()" [nzShape]="'circle'"-->
+<!--              [nzTitle]="'SIMULATOR.Rotation_solver' | translate"-->
+<!--              [nzType]="'primary'"-->
+<!--              nz-button-->
+<!--              nz-tooltip>-->
+<!--        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>-->
+<!--      </button>-->
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
@@ -235,7 +235,7 @@
                  fxFlex="1 1 30%" fxLayout="column">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
-                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality}})</span>
+                <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality | floor}})</span>
               </h3>
               <nz-list [nzDataSource]="hqIngredientsData"
                        [nzRenderItem]="hqIngredientTemplate">

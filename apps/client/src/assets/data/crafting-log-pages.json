@@ -4919,6 +4919,11 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4618,
+          "itemId": 29680,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4609,
           "itemId": 28991,
           "rlvl": 430
@@ -6107,6 +6112,32 @@
           "recipeId": 33753,
           "itemId": 29832,
           "rlvl": 481
+        }
+      ]
+    },
+    {
+      "id": 1224,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33761,
+          "itemId": 29645,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33769,
+          "itemId": 29653,
+          "rlvl": 450
         }
       ]
     }
@@ -11949,6 +11980,11 @@
           "recipeId": 4611,
           "itemId": 29683,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4616,
+          "itemId": 28973,
+          "rlvl": 430
         }
       ]
     },
@@ -13139,6 +13175,32 @@
           "recipeId": 33754,
           "itemId": 29833,
           "rlvl": 481
+        }
+      ]
+    },
+    {
+      "id": 1225,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33762,
+          "itemId": 29646,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33770,
+          "itemId": 29654,
+          "rlvl": 450
         }
       ]
     }
@@ -19506,6 +19568,32 @@
           "recipeId": 33755,
           "itemId": 29834,
           "rlvl": 481
+        }
+      ]
+    },
+    {
+      "id": 1226,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33763,
+          "itemId": 29647,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33771,
+          "itemId": 29655,
+          "rlvl": 450
         }
       ]
     }
@@ -28365,6 +28453,32 @@
           "rlvl": 481
         }
       ]
+    },
+    {
+      "id": 1227,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33764,
+          "itemId": 29648,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33772,
+          "itemId": 29656,
+          "rlvl": 450
+        }
+      ]
     }
   ],
   [
@@ -36580,6 +36694,32 @@
           "recipeId": 33757,
           "itemId": 29836,
           "rlvl": 481
+        }
+      ]
+    },
+    {
+      "id": 1228,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33765,
+          "itemId": 29649,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33773,
+          "itemId": 29657,
+          "rlvl": 450
         }
       ]
     }
@@ -44834,6 +44974,32 @@
           "rlvl": 481
         }
       ]
+    },
+    {
+      "id": 1229,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33766,
+          "itemId": 29650,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33774,
+          "itemId": 29658,
+          "rlvl": 450
+        }
+      ]
     }
   ],
   [
@@ -51006,6 +51172,32 @@
           "rlvl": 481
         }
       ]
+    },
+    {
+      "id": 1230,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33767,
+          "itemId": 29651,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33775,
+          "itemId": 29659,
+          "rlvl": 450
+        }
+      ]
     }
   ],
   [
@@ -54178,6 +54370,11 @@
           "recipeId": 4605,
           "itemId": 28977,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4615,
+          "itemId": 28978,
+          "rlvl": 430
         }
       ]
     },
@@ -55322,6 +55519,32 @@
           "recipeId": 33760,
           "itemId": 29839,
           "rlvl": 481
+        }
+      ]
+    },
+    {
+      "id": 1231,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 80,
+        "Difficulty": 3943,
+        "Durability": 80,
+        "ID": 430,
+        "Quality": 18262,
+        "Stars": 0,
+        "SuggestedControl": 1733,
+        "SuggestedCraftsmanship": 1866
+      },
+      "recipes": [
+        {
+          "recipeId": 33768,
+          "itemId": 29652,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 33776,
+          "itemId": 29660,
+          "rlvl": 450
         }
       ]
     }

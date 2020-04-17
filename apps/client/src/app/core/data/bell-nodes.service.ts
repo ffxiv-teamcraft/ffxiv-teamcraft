@@ -77,7 +77,8 @@ export class BellNodesService {
         .filter(key => {
           return this.lazyData.data.nodes[key].items.indexOf(item.obj.i) > -1;
         });
-      return availableNodeIds
+
+      const nodes = availableNodeIds
         .map(key => {
           return { ...item, ...this.lazyData.data.nodes[key], nodeId: key };
         })
@@ -87,7 +88,6 @@ export class BellNodesService {
           node.itemId = node.obj.i;
           node.icon = item.obj.c;
           if (node.timed) {
-            node.type = ['Rocky Outcropping', 'Mineral Deposit', 'Mature Tree', 'Lush Vegetation'].indexOf(bellNode.type);
             const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
             node.spawnTimes = bellNode.time;
             node.uptime = bellNode.uptime;
@@ -106,6 +106,29 @@ export class BellNodesService {
           }
           return node;
         });
+
+      const fishingSpots = this.lazyData.data.fishingSpots
+        .filter(spot => spot.fishes.indexOf(item.obj.i) > -1)
+        .map(spot => {
+          return { ...item, ...spot, ...spot.coords, nodeId: spot.id };
+        })
+        .map(node => {
+          node.itemId = node.obj.i;
+          node.icon = item.obj.c;
+          node.items = node.fishes;
+          node.type = 4;
+          node.zoneid = node.zoneId;
+          const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(item.obj.i) > -1);
+          if (folklore !== undefined) {
+            node.folklore = {
+              id: +folklore,
+              icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
+            };
+          }
+          return node;
+        });
+
+      return [...nodes, ...fishingSpots];
     }));
 
     const nodesFromGarlandBell = [].concat.apply([], items
@@ -122,8 +145,9 @@ export class BellNodesService {
                   nodeId: node.id,
                   zoneid: this.l12n.getAreaIdByENName(node.zone),
                   mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
-                  x: node.coords[0],
-                  y: node.coords[1],
+                  x: nodePosition ? nodePosition.x : 0,
+                  y: nodePosition ? nodePosition.y : 0,
+                  z: nodePosition ? nodePosition.z : 0,
                   level: node.lvl,
                   type: node.type,
                   itemId: node.itemId,
@@ -266,7 +290,7 @@ export class BellNodesService {
             }
           }
         }
-        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && node.type === row.type) && row.mapId !== undefined) {
+        if (!(finalNodes || []).some(node => node.itemId === row.itemId && node.mapId === row.mapId && row.x === node.x && row.y === node.y) && row.mapId !== undefined) {
           finalNodes.push(row);
         }
       });

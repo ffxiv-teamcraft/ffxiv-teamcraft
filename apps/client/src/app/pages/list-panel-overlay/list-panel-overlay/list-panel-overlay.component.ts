@@ -3,8 +3,9 @@ import { IpcService } from '../../../core/electron/ipc.service';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
-import { combineLatest, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, ReplaySubject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-list-panel-overlay',
@@ -13,10 +14,12 @@ import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 })
 export class ListPanelOverlayComponent {
 
-  public display$ = this.listsFacade.selectedList$.pipe(
-    switchMap(list => {
+  public hideCompleted$ = new BehaviorSubject<boolean>(this.settings.hideOverlayCompleted);
+
+  public display$ = combineLatest([this.listsFacade.selectedList$, this.hideCompleted$]).pipe(
+    switchMap(([list, hideCompletedOverride]) => {
       return combineLatest([
-        this.layoutsFacade.getDisplay(list, false),
+        this.layoutsFacade.getDisplay(list, false, hideCompletedOverride),
         this.layoutsFacade.getFinalItemsDisplay(list, false)
       ]);
     }),
@@ -33,7 +36,7 @@ export class ListPanelOverlayComponent {
   );
 
   constructor(private ipc: IpcService, private listsFacade: ListsFacade,
-              private layoutsFacade: LayoutsFacade) {
+              private layoutsFacade: LayoutsFacade, private settings: SettingsService) {
     this.ipc.mainWindowState$.pipe(
       filter(state => {
         return state.lists && state.lists.selectedId && state.layouts;
@@ -43,6 +46,11 @@ export class ListPanelOverlayComponent {
       this.listsFacade.select(state.lists.selectedId);
       this.layoutsFacade.selectFromOverlay(state.layouts.selectedKey);
     });
+  }
+
+  hideCompletedChange(newValue: boolean): void {
+    this.settings.hideOverlayCompleted = newValue;
+    this.hideCompleted$.next(newValue);
   }
 
   trackByPanel(index: number, panel: LayoutRowDisplay): string {

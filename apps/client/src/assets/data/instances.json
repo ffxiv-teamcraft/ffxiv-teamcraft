@@ -1239,11 +1239,15 @@
     ]
   },
   "5037": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "the Bozja Incident",
+    "ja": "シタデル・ボズヤ蒸発事変",
+    "de": "Der Bozja-Vorfall",
+    "fr": "Prélude à la catastrophe",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      24391,
+      24300
+    ]
   },
   "5038": {
     "en": "A Sleep Disturbed",
@@ -2368,11 +2372,15 @@
     ]
   },
   "20070": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Memoria Misera (Extreme)",
+    "ja": "極シタデル・ボズヤ追憶戦",
+    "de": "Memoria Misera (extrem)",
+    "fr": "Memoria Misera (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      24385,
+      24300
+    ]
   },
   "20071": {
     "en": null,
