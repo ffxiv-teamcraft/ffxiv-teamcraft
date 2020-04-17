@@ -77,12 +77,12 @@ export class DesynthComponent {
           indexes: [SearchIndex.ITEM],
           filters: [
             {
-              column: 'Salvage',
+              column: 'Salvage.OptimalSkill',
               operator: '>=',
               value: Math.max(dlvl - 10, 0)
             },
             {
-              column: 'Salvage',
+              column: 'Salvage.OptimalSkill',
               operator: '<=',
               value: dlvl + 10
             },
