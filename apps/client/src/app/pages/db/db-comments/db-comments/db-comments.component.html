@@ -110,7 +110,7 @@
             <nz-form-item>
               <textarea *ngIf="!edition" [(ngModel)]="newCommentContent" nz-input rows="4"></textarea>
               <textarea *ngIf="edition" [(ngModel)]="edition.message" nz-input rows="4"></textarea>
-              <nz-form-explain>{{'DB.COMMENTS.Editor_tip' | translate}}</nz-form-explain>
+              <i>{{'DB.COMMENTS.Editor_tip' | translate}}</i>
             </nz-form-item>
           </nz-form-item>
           <nz-form-item>

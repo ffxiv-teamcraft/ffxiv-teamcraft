@@ -77,20 +77,6 @@ import { CoreModule } from '../../core/core.module';
     FatesComponent,
     DesynthsComponent,
     RelationshipsComponent
-  ],
-  entryComponents: [
-    GatheredByComponent,
-    HuntingComponent,
-    InstancesComponent,
-    ReducedFromComponent,
-    VendorsComponent,
-    VoyagesComponent,
-    VenturesComponent,
-    TradesComponent,
-    TreasuresComponent,
-    FatesComponent,
-    DesynthsComponent,
-    RelationshipsComponent
   ]
 })
 export class ItemDetailsPopupsModule {

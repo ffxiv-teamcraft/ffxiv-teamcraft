@@ -30,7 +30,6 @@ const routes: Routes = [{
 
 @NgModule({
   declarations: [CustomItemsComponent, NpcPickerComponent, CustomItemsImportPopupComponent, CustomItemsExportPopupComponent],
-  entryComponents: [NpcPickerComponent, CustomItemsImportPopupComponent, CustomItemsExportPopupComponent],
   imports: [
     CommonModule,
     FormsModule,

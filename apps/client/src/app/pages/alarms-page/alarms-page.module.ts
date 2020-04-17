@@ -60,8 +60,7 @@ const routes: Routes = [
     NgZorroAntdModule,
     NgDragDropModule
   ],
-  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent],
-  entryComponents: [AlarmsOptionsPopupComponent]
+  declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })
 export class AlarmsPageModule {
 }

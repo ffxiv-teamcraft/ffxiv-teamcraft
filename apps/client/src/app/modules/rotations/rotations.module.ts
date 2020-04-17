@@ -29,7 +29,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     EffectsModule.forFeature([RotationsEffects])
   ],
   declarations: [RotationPickerDrawerComponent],
-  entryComponents: [RotationPickerDrawerComponent],
   providers: [RotationsFacade]
 })
 export class RotationsModule {

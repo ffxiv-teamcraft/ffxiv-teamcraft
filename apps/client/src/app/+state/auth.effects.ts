@@ -66,7 +66,7 @@ export class AuthEffects {
   @Effect()
   loginAsAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
-    mergeMap(() => from(this.af.auth.signInAnonymously())),
+    mergeMap(() => from(this.af.signInAnonymously())),
     map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
   );
 

@@ -37,16 +37,11 @@ import { RouterModule } from '@angular/router';
   exports: [
     MapPositionComponent,
     MapComponent
-  ],
-  entryComponents: [
-    MapComponent,
-    NavigationMapComponent,
-    WorldNavigationMapComponent
   ]
 })
 export class MapModule {
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<MapModule> {
     return {
       ngModule: MapModule,
       providers: [

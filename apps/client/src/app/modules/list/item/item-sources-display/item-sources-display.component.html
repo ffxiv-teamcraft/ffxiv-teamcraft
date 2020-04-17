@@ -32,7 +32,7 @@
       <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
               nz-button
               nz-tooltip nzShape="circle" nzTitle="{{'Desynth' | translate}}">
-        <i iconfont="icon-vectorcombine" nz-icon></i>
+        <i nzIconfont="icon-vectorcombine" nz-icon></i>
       </button>
       <button (click)="openVendorsPopup(item)" *ngSwitchCase="dataTypes.VENDORS"
               [nzTitle]="'Vendors' | translate"

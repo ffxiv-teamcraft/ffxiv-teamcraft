@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import * as freeCompanyActions from './sources/free-company-actions.json';
-import * as jobNames from './sources/job-name.json';
-import * as jobAbbrs from './sources/job-abbr.json';
+import freeCompanyActions from './sources/free-company-actions.json';
+import jobNames from './sources/job-name.json';
+import jobAbbrs from './sources/job-abbr.json';
 import { Language } from './language';
 import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';

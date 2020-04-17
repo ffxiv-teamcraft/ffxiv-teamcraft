@@ -20,7 +20,6 @@ import { FreecompanyPickerComponent } from './user-picker/freecompany-picker.com
   ],
   declarations: [FreecompanyPickerComponent],
   exports: [FreecompanyPickerComponent],
-  entryComponents: [FreecompanyPickerComponent],
   providers: [FreecompanyPickerService]
 })
 export class FreecompanyPickerModule {

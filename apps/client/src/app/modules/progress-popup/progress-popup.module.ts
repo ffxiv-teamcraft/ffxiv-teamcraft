@@ -13,8 +13,7 @@ import { ProgressPopupService } from './progress-popup.service';
   providers: [
     ProgressPopupService
   ],
-  declarations: [ProgressPopupComponent],
-  entryComponents: [ProgressPopupComponent]
+  declarations: [ProgressPopupComponent]
 })
 export class ProgressPopupModule {
 }

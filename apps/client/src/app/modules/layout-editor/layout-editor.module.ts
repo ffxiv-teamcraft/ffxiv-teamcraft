@@ -37,8 +37,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NgZorroAntdModule
   ],
   declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent],
-  exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent],
-  entryComponents: [LayoutEditorComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent]
+  exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
 })
 export class LayoutEditorModule {
 }

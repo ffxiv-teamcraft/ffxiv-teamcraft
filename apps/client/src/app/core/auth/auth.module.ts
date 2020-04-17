@@ -22,8 +22,7 @@ import { OauthService } from './oauth.service';
     NgZorroAntdModule
   ],
   providers: [OauthService],
-  declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent],
-  entryComponents: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]
+  declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]
 })
 export class AuthModule {
 }

@@ -14,7 +14,7 @@
                     nz-dropdown
                     nz-tooltip
                     nzShape="circle">
-              <i nz-icon nzType="interation"></i>
+              <i nz-icon nzType="format-painter" nzTheme="outline"></i>
             </button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul *ngIf="selectedLayout$ | async as selectedLayout" nz-menu>
@@ -103,7 +103,7 @@
             <button (click)="pricingMode = true" [disabled]="(permissionLevel$ | async) < 40"
                     [nzTitle]="'Pricing_mode' | translate" nz-button
                     nz-tooltip nzShape="circle">
-              <i iconfont="icon-dollar" nz-icon></i>
+              <i nzIconfont="icon-dollar" nz-icon></i>
             </button>
             <button (click)="openInventorySynthesisPopup(list)" [nzTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
                     *ngIf="platform.isDesktop()"
@@ -121,7 +121,7 @@
                     [nzTitle]="'LIST.History' | translate" nz-button
                     nz-tooltip
                     nzShape="circle">
-              <i class="material-icons">history</i>
+              <i nz-icon nzType="field-time" nzTheme="outline"></i>
             </button>
           </div>
         </div>

@@ -7,22 +7,24 @@
   </nz-select>
 
   <nz-form-item *ngIf="comparisonType === 'Ariyala'">
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraAriyala">
       <input [disabled]="loading" [(ngModel)]="ariyalaLink" (ngModelChange)="updateLinkSupport()"
              [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
              type="text">
-      <nz-form-explain
-        *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</nz-form-explain>
+      <ng-template #extraAriyala>
+        <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
 
   <nz-form-item *ngIf="comparisonType === 'External_gearset'">
-    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" nzHasFeedback>
+    <nz-form-control [nzValidateStatus]="importLinkSupported === false?'error':null" [nzExtra]="extraExternal">
       <input [disabled]="loading" [(ngModel)]="externalGearsetLink" (ngModelChange)="updateGearsetLinkSupported()"
              [placeholder]="'GEARSETS.COMPARISON.Paste_link_step_title' | translate" nz-input
              type="text">
-      <nz-form-explain
-        *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</nz-form-explain>
+      <ng-template #extraExternal>
+        <i *ngIf="importLinkSupported === false">{{'GEARSETS.Link_not_supported' | translate}}</i>
+      </ng-template>
     </nz-form-control>
   </nz-form-item>
 

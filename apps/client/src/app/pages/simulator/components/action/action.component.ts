@@ -1,9 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
-import { NzDropdownContextComponent, NzDropdownService } from 'ng-zorro-antd';
-import { TranslateService } from '@ngx-translate/core';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-action',
@@ -63,8 +62,6 @@ export class ActionComponent {
 
   public states = StepState;
 
-  private dropdown: NzDropdownContextComponent;
-
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
   }
@@ -73,7 +70,7 @@ export class ActionComponent {
     return this.simulator.CraftingActionsRegistry;
   }
 
-  constructor(private nzDropdownService: NzDropdownService, private settings: SettingsService,
+  constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,
               private simulationService: SimulationService) {
   }
 
@@ -85,8 +82,8 @@ export class ActionComponent {
     return this.simulation !== undefined ? this.simulation.crafterStats.jobId : this.jobId;
   }
 
-  contextMenu($event: MouseEvent, template: TemplateRef<void>): void {
-    this.dropdown = this.nzDropdownService.create($event, template);
+  contextMenu($event: MouseEvent, template: NzDropdownMenuComponent): void {
+    this.nzDropdownService.create($event, template);
   }
 
   setState(state: StepState): void {
@@ -94,7 +91,7 @@ export class ActionComponent {
   }
 
   close(): void {
-    this.dropdown.close();
+    this.nzDropdownService.close();
   }
 
   getColor(state: StepState): string {
