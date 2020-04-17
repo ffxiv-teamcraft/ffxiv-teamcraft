@@ -26,7 +26,7 @@
       </ng-template>
     </nz-input-group>
     <button (cbOnSuccess)="afterShareLinkCopied()" [cbContent]="getShareUrl()" [nzTitle]="'ITEMS.Share_url' | translate" ngxClipboard nz-button
-            nz-tooltip>
+            nz-tooltip [tutorialStep]="'TODO'" tutorialStepIndex="0">
       <i nz-icon nzType="share-alt"></i>
     </button>
     <nz-autocomplete #emptyFill></nz-autocomplete>
@@ -38,7 +38,7 @@
     <ng-template #searchType>
       <nz-select (ngModelChange)="searchType$.next($event);resetFilters()" [ngModel]="searchType$ | async"
                  class="search-type"
-                 nzShowSearch>
+                 nzShowSearch [tutorialStep]="'TODO'" tutorialStepIndex="1">
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                    [nzValue]="searchTypes.ANY"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
@@ -142,7 +142,7 @@
                 <nz-select class="filter-select" formControlName="craftJob" nzAllowClear nzShowSearch>
                   <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
                              [nzValue]="job.id" nzCustomContent>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center"  fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                       <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
                       <div>{{job.id | jobAbbr | i18n}}</div>
                     </div>

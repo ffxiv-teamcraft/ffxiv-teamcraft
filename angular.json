@@ -7,9 +7,9 @@
       "root": "apps/client/",
       "sourceRoot": "apps/client/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "",
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@schematics/angular:component": {
           "prefix": "app",
           "styleext": "less",
           "changeDetection": "OnPush",
