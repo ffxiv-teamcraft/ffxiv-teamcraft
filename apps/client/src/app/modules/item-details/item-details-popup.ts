@@ -1,7 +1,6 @@
-import { Input, Directive } from '@angular/core';
+import { Input } from '@angular/core';
 import { ListRow } from '../list/model/list-row';
 
-@Directive()
 export class ItemDetailsPopup {
   @Input()
   public item: ListRow;
