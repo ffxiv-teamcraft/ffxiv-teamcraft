@@ -97,7 +97,7 @@
            nz-button
            nz-tooltip
            routerLink="/list/{{_list.$key}}"
-           tutorialStep="TUTORIAL.LIST_PANEL.Open_list" tutorialStepIndex="1">
+           tutorialStep="TUTORIAL.LIST_PANEL.Open_list" >
           <i nz-icon nzType="folder-open"></i>
         </a>
         <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10"
@@ -109,7 +109,7 @@
         <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
                 nz-button
                 nz-dropdown nzTrigger="click"
-                tutorialStep="TUTORIAL.LIST_PANEL.More" tutorialStepIndex="2">
+                tutorialStep="TUTORIAL.LIST_PANEL.More" >
           <i nz-icon nzType="ellipsis"></i>
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
@@ -11,16 +11,15 @@ import { ConnectedPosition } from '@angular/cdk/overlay/position/flexible-connec
 @Directive({
   selector: '[tutorialStep]'
 })
-export class TutorialStepDirective implements OnInit, OnDestroy {
+export class TutorialStepDirective implements AfterViewInit, OnDestroy {
 
   @Input('tutorialStep')
   translationKey: string;
 
-  @Input('tutorialStepIndex')
-  index = 0;
-
   @Input('tutorialStepAlign')
-  align: 'top' | 'bottom' | 'left' | 'right' = 'top';
+  align: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
+
+  private registered = false;
 
   constructor(private tutorialService: TutorialService, private overlayPositionBuilder: OverlayPositionBuilder,
               private elementRef: ElementRef, private overlay: Overlay) {
@@ -86,13 +85,15 @@ export class TutorialStepDirective implements OnInit, OnDestroy {
     }
   }
 
-  ngOnInit(): void {
-    const step = new TutorialStepEntry(+this.index, this.translationKey, (index, total) => this.play(index, total));
-    this.tutorialService.register(step);
+  ngAfterViewInit(): void {
+    const step = new TutorialStepEntry(this.translationKey, (index, total) => this.play(index, total));
+    this.registered = this.tutorialService.register(step);
   }
 
   ngOnDestroy(): void {
-    this.tutorialService.unregister(this.translationKey);
+    if (this.registered) {
+      this.tutorialService.unregister(this.translationKey);
+    }
   }
 
 }

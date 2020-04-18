@@ -26,7 +26,7 @@
       </ng-template>
     </nz-input-group>
     <button (cbOnSuccess)="afterShareLinkCopied()" [cbContent]="getShareUrl()" [nzTitle]="'ITEMS.Share_url' | translate" ngxClipboard nz-button
-            nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepAlign="bottom" tutorialStepIndex="1">
+            nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepAlign="bottom" >
       <i nz-icon nzType="share-alt"></i>
     </button>
     <nz-autocomplete #emptyFill></nz-autocomplete>
@@ -38,7 +38,7 @@
     <ng-template #searchType>
       <nz-select (ngModelChange)="searchType$.next($event);resetFilters()" [ngModel]="searchType$ | async"
                  class="search-type"
-                 nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" tutorialStepIndex="0">
+                 nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" >
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                    [nzValue]="searchTypes.ANY"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>

@@ -147,7 +147,8 @@
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-evenly"
                fxLayoutAlign.lt-md="center center"
                fxLayoutGap="16px" fxLayoutGap.lt-md="16px">
-            <div fxFlex="1 0 30%" fxLayout="column">
+            <div fxFlex="1 0 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.Character_configuration">
               <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
               <nz-select (ngModelChange)="customJob$.next($event)" [ngModel]="(stats$ | async)?.jobId"
                          [nzDisabled]="!custom" class="job-selector">
@@ -232,7 +233,8 @@
               </div>
             </div>
             <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData; else hqInput" class="ingredients"
-                 fxFlex="1 1 30%" fxLayout="column">
+                 fxFlex="1 1 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.HQ_ingredients">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
                 <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality | floor}})</span>
@@ -283,7 +285,8 @@
                 </nz-form-control>
               </div>
             </ng-template>
-            <div *ngIf="crafterStats$ | async as crafterStats" fxFlex="1 0 30%" fxLayout="column">
+            <div *ngIf="crafterStats$ | async as crafterStats" fxFlex="1 0 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.Consumables">
 
               <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
               <div>
@@ -567,6 +570,7 @@
                  [cdkDragData]="step.action" [cdkDragDisabled]="!step.action.canBeMoved(i)"
                  class="action-container rotation-action" cdkDrag>
               <app-action (actionclick)="removeAction(i)"
+                          tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
                           (stepstate)="setState(i, $event)"
                           [action]="step.action"
                           [cpCost]="step.cpDifference"

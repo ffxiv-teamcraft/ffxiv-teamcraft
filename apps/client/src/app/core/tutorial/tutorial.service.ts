@@ -22,17 +22,19 @@ export class TutorialService {
 
   constructor() {
     this.play$.pipe(
-      debounceTime(3000)
+      debounceTime(1000)
     ).subscribe(() => {
       this.play();
     });
   }
 
-  public register(step: TutorialStepEntry): void {
+  public register(step: TutorialStepEntry): boolean {
     if (!this.steps.some(s => s.key === step.key)) {
       this.steps.push(step);
       this.play$.next();
+      return true;
     }
+    return false;
   }
 
   public unregister(key: string): void {
@@ -44,8 +46,7 @@ export class TutorialService {
   public play(): void {
     const done = this.stepsDone;
     this.steps = this.steps
-      .filter(step => done.indexOf(step.key) === -1)
-      .sort((a, b) => a.index - b.index);
+      .filter(step => done.indexOf(step.key) === -1);
     this.nextStep();
   }
 

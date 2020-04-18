@@ -116,7 +116,7 @@
               </ng-template>
               <ng-template #userLoggedIn>
                 <div *ngIf="character$ | async as character; else emptyCharacter"
-                     tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="0" tutorialStepAlign="bottom">
+                     tutorialStep="TUTORIAL.APP.Profile"  tutorialStepAlign="bottom">
                   <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
                                    [userId]="userId$ | async"
                                    [width]="32"></app-user-avatar>
