@@ -174,8 +174,8 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "오버레이 켜기/끄기",
+    "Open_alarms_overlay": "알람 오버레이 켜기/끄기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -410,7 +410,7 @@
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
-    "Ignored_inventories": "Ignored inventories",
+    "Ignored_inventories": "무시할 가방",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -649,7 +649,7 @@
       "Tag_filter": "태그 필터"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "목록 오버레이 켜기/끄기",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     }
@@ -1420,7 +1420,7 @@
         "Big": "대형 (!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "낚시 보고용 오버레이 켜기/끄기",
         "Bait": "현재 미끼",
         "Tug": "입질",
         "Hookset": "낚아채기",
