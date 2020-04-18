@@ -15,9 +15,6 @@ jobs:
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
-      - run:
-          name: Install yarn globally
-          command: sudo npm i -g yarn
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "package.json" }
