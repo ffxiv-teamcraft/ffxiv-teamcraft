@@ -73,7 +73,8 @@
         <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) > 10" [cbContent]="getLink()"
                 [nzShape]="'circle'"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                ngxClipboard nz-button nz-tooltip>
+                ngxClipboard nz-button nz-tooltip
+                tutorialStep="TUTORIAL.LIST_PANEL.Share">
           <i nz-icon nzType="share-alt"></i>
         </button>
         <nz-badge *ngIf="_list.public; else copyNoCount"
@@ -95,7 +96,8 @@
            [nzType]="'primary'"
            nz-button
            nz-tooltip
-           routerLink="/list/{{_list.$key}}">
+           routerLink="/list/{{_list.$key}}"
+           tutorialStep="TUTORIAL.LIST_PANEL.Open_list" >
           <i nz-icon nzType="folder-open"></i>
         </a>
         <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10"
@@ -106,7 +108,8 @@
           <i nz-icon nzType="delete"></i></button>
         <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
                 nz-button
-                nz-dropdown nzTrigger="click">
+                nz-dropdown nzTrigger="click"
+                tutorialStep="TUTORIAL.LIST_PANEL.More" >
           <i nz-icon nzType="ellipsis"></i>
         </button>
         <nz-dropdown-menu #menu="nzDropdownMenu">
@@ -141,7 +144,8 @@
             </li>
             <ng-container *ngIf="authFacade.userId$ | async as userId">
               <ng-container *ngIf="userId !== _list.authorId && !publicDisplay">
-                <li [nzDisabled]="!_list.registry[userId]" nz-tooltip [nzTooltipTitle]="_list.registry[userId]?null:('LIST_DETAILS.Cannot_leave' | translate)" (click)="leaveList(_list, userId)" nz-menu-item>
+                <li [nzDisabled]="!_list.registry[userId]" nz-tooltip [nzTooltipTitle]="_list.registry[userId]?null:('LIST_DETAILS.Cannot_leave' | translate)"
+                    (click)="leaveList(_list, userId)" nz-menu-item>
                   {{'LIST_DETAILS.Leave_list' | translate}}
                 </li>
               </ng-container>

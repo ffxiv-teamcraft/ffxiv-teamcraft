@@ -12,11 +12,13 @@
         <i nz-icon nzType="folder-add"></i>
       </button>
       <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip>
+              nz-tooltip
+              tutorialStep="TUTORIAL.LISTS.Merge">
         <i nzIconfont="icon-merge" nz-icon></i>
       </button>
       <button (click)="importList()" [nzShape]="'circle'" [nzTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
-              nz-tooltip>
+              nz-tooltip
+              tutorialStep="TUTORIAL.LISTS.Import">
         <i nz-icon nzType="download"></i>
       </button>
       <div class="spacer">

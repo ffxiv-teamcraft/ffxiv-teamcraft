@@ -28,6 +28,7 @@
       </span>
             <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
         <img [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
+             tutorialStep="TUTORIAL.LIST.HQ_mark"
              src="./assets/icons/HQ.png"/>
       </span>
             <span *ngIf="item.amount > item.done" class="needed">x{{item.amount - item.done}}<span

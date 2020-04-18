@@ -8,6 +8,7 @@
       </nz-list-item-meta>
       <ng-template #toggle>
         <nz-switch [(ngModel)]="timer.enabled"
+                   tutorialStep="TUTORIAL.RESET_TIMERS.Toggle"
                    (ngModelChange)="setEnabled(timer.label, $event)"></nz-switch>
       </ng-template>
     </nz-list-item>

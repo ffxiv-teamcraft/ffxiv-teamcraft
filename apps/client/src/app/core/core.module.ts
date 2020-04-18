@@ -43,6 +43,7 @@ import { DevGuard } from './guard/dev.guard';
 import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
+import { TutorialModule } from './tutorial/tutorial.module';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { LazyComponentDirective } from './tools/lazy-component';
     MaintenanceModule,
     VersionLockModule,
     NgZorroAntdModule,
-    RouterModule
+    RouterModule,
+    TutorialModule
   ],
   providers: [
     PendingChangesService,
@@ -110,7 +112,8 @@ import { LazyComponentDirective } from './tools/lazy-component';
     TimerPipe,
     DbButtonComponent,
     ItemRarityDirective,
-    LazyComponentDirective
+    LazyComponentDirective,
+    TutorialModule
   ]
 })
 export class CoreModule {

@@ -1,0 +1,11 @@
+<div class="step-container" fxLayout="column" fxLayoutGap="10px">
+  <div class="step-content">
+    {{stepKey | translate}}
+  </div>
+  <div class="step-footer" fxLayout="row" fxLayoutAlign="space-between center">
+    <button nz-button nzSize="small" nzType="primary" (click)="next()" *ngIf="stepIndex < totalSteps">{{'TUTORIAL.Next' | translate}} ({{stepIndex}}
+      / {{totalSteps}})
+    </button>
+    <button nz-button nzSize="small" nzType="primary" (click)="next()" *ngIf="stepIndex >= totalSteps">{{'TUTORIAL.Done' | translate}}</button>
+  </div>
+</div>

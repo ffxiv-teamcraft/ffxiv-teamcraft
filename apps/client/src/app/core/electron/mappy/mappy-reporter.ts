@@ -4,8 +4,8 @@ import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { Vector2 } from '../../tools/vector2';
-import { filter, tap, delayWhen, takeUntil } from 'rxjs/operators';
-import { merge, interval, Subject } from 'rxjs';
+import { delayWhen, filter, takeUntil, tap } from 'rxjs/operators';
+import { interval, merge, Subject } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
 import { NodeTypeIconPipe } from '../../../pipes/pipes/node-type-icon.pipe';
@@ -17,7 +17,6 @@ import { uniqBy } from 'lodash';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { XivapiReportEntry } from './xivapi-report-entry';
-import { territories } from '../../data/sources/territories';
 
 export interface MappyMarker {
   position: Vector3;
