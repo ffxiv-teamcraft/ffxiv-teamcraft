@@ -365,7 +365,7 @@
     "Install_update": "업데이트 설치",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
-    "Auto_download_update": "가능할때 업데이트 다운로드 하기",
+    "Auto_download_update": "가능할 때 업데이트 다운로드 하기",
     "Account": "계정",
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
@@ -594,7 +594,7 @@
     "List_large": "큰 목록입니다",
     "Enable_performance_mode": "더 빠른 렌더링을 위하여 성능모드를 활성화 하셨다면 성능 문제 에러가 버그라고 표기되는 경우가 있습니다. 해당 문제를 버그로 보고하지 말아주세요. 지금은 지원되지 않는 기능입니다.",
     "List_too_large": "너무 큰 목록",
-    "List_too_large_description": "이 목록의 크기가 커서 컴퓨터가 느려지거나 데이터베이스의 한계에 도달했습니다. 리스트가 삭제되지 않기를 원한다면 아이템을 더이상 추가하지 마시고 목록 내 존재하는 아이템을 정리해주세요.",
+    "List_too_large_description": "이 목록의 크기가 커서 컴퓨터가 느려지거나 데이터베이스의 한계에 도달했습니다. 리스트가 삭제되지 않기를 원한다면 아이템을 더 이상 추가하지 마시고 목록 내 존재하는 아이템을 정리 해주세요.",
     "New_tag": "새 태그",
     "Amount_ilvl": "수량 (ilvl 기준)",
     "Contributions_popup": "해당 목록의 기여도 통계",
@@ -607,9 +607,9 @@
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
-    "X_needed": "{{amount}} 개 필요",
+    "X_needed": "{{amount}}개 필요",
     "Leave_list": "이 목록 나가기",
-    "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날수 없습니다.\n이 목록이 자유부대(이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
+    "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -1667,7 +1667,7 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "{{tool}} 에 문제가 있으며, 다시 한번 시도해주시기 바랍니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #announcements 채널에 고정된 메세지를 참고하세요.",
+    "Http_request_error": "{{tool}} 에 문제가 있으며, 다시 한번 시도 해주시기 바랍니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #announcements 채널에 고정된 메세지를 참고하세요.",
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
@@ -1826,7 +1826,7 @@
     "Optimize_materias": "마테리아 순서 최적화",
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
-    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
+    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
     "Missing_items": "몇몇 슬롯이 비어있는 것 처럼 보인다면 필터를 정확하게 세팅해주세요.",
     "SLOT": {
       "Body": "몸통",
