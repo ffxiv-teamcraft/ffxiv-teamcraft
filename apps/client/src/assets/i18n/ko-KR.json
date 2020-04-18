@@ -594,7 +594,7 @@
     "List_large": "큰 목록입니다",
     "Enable_performance_mode": "더 빠른 렌더링을 위하여 성능모드를 활성화 하셨다면 성능 문제 에러가 버그라고 표기되는 경우가 있습니다. 해당 문제를 버그로 보고하지 말아주세요. 지금은 지원되지 않는 기능입니다.",
     "List_too_large": "너무 큰 목록",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "이 목록의 크기가 커서 컴퓨터가 느려지거나 데이터베이스의 한계에 도달했습니다. 리스트가 삭제되지 않기를 원한다면 아이템을 더이상 추가하지 마시고 목록 내 존재하는 아이템을 정리해주세요.",
     "New_tag": "새 태그",
     "Amount_ilvl": "수량 (ilvl 기준)",
     "Contributions_popup": "해당 목록의 기여도 통계",
@@ -1722,7 +1722,7 @@
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
-    "Filter_by_expansion": "Filter by expansion",
+    "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "BAG": {
       "SaddleBag": "초코보 가방",
