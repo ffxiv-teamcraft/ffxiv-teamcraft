@@ -16,14 +16,14 @@ jobs:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
       - run:
-          name: Update npm
-          command: sudo npm i -g npm
+          name: Install yarn globally
+          command: sudo npm i -g yarn
       - restore_cache:
           keys:
             - v2-deps-{ .Branch }-{ checksum "package.json" }
       - run:
           name: Install local dependencies
-          command: npm ci
+          command: yarn install --frozen-lockfile
       - run:
           name: Install functions dependencies
           command: cd functions && npm install && cd ../
