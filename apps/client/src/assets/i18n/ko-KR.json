@@ -352,7 +352,7 @@
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
     "Proxy": "프록시",
-    "Proxy_bypass": "No proxy for",
+    "Proxy_bypass": "프록시를 쓰지 않을 주소",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -592,7 +592,7 @@
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
     "List_large": "큰 목록입니다",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
+    "Enable_performance_mode": "더 빠른 렌더링을 위하여 성능모드를 활성화 하셨다면 성능 문제 에러가 버그라고 표기되는 경우가 있습니다. 해당 문제를 버그로 보고하지 말아주세요. 지금은 지원되지 않는 기능입니다.",
     "List_too_large": "너무 큰 목록",
     "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
     "New_tag": "새 태그",
@@ -1667,7 +1667,7 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "{{tool}} 에 문제가 있으며, 다시 한번 시도해주시기 바랍니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #announcements 채널에 고정된 메세지를 참고하세요.",
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
@@ -1702,7 +1702,7 @@
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
