@@ -351,7 +351,7 @@
     "Link_base": "아이템 링크",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
-    "Proxy": "Proxy",
+    "Proxy": "프록시",
     "Proxy_bypass": "No proxy for",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
@@ -365,7 +365,7 @@
     "Install_update": "업데이트 설치",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
-    "Auto_download_update": "Download update when it's available",
+    "Auto_download_update": "가능할때 업데이트 다운로드 하기",
     "Account": "계정",
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
@@ -427,7 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "자동채우기 완료음",
       "Packet_capture": "패킷 캡처",
-      "Networking": "Networking",
+      "Networking": "네트워크",
       "Theme": "테마",
       "Search": "검색",
       "Other": "기타"
@@ -608,8 +608,8 @@
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
     "X_needed": "{{amount}} 개 필요",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Leave_list": "이 목록 나가기",
+    "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날수 없습니다.\n이 목록이 자유부대(이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
