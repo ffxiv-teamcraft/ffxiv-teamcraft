@@ -1768,6 +1768,10 @@
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
       "Recipe_ilvl": "Min Resulting iLvl",
       "Company_workshop": "Company Workshop"
+    },
+    "NOT_USED_IN_LISTS": {
+      "Title": "Materials not used in any of your lists",
+      "Message": "This material is not used in any of your lists."
     }
   },
   "VERSION_LOCK": {

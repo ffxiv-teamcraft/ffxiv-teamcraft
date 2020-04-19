@@ -22,6 +22,8 @@ import { HasTooFew } from './optimizations/has-too-few';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ConsolidateStacks } from './optimizations/consolidate-stacks';
 import { UnwantedMaterials } from './optimizations/unwanted-materials';
+import { NotUsedInLists } from './optimizations/not-used-in-lists';
+import { ListsFacade } from '../../modules/list/+state/lists.facade';
 
 const optimisations: Provider[] = [
   {
@@ -52,6 +54,12 @@ const optimisations: Provider[] = [
     useClass: UnwantedMaterials,
     multi: true,
     deps: [LazyDataService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: NotUsedInLists,
+    multi: true,
+    deps: [LazyDataService, ListsFacade]
   }
 ];
 
