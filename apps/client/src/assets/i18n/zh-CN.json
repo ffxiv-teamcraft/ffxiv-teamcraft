@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "安全模式下有不安全技能",
       "DURABILITY_REACHED_ZERO": "耐久在进度满之前归零",
       "NOT_ENOUGH_CP": "制作力不足",
-      "MISSING_LEVEL_REQUIREMENT": "等级不够",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
