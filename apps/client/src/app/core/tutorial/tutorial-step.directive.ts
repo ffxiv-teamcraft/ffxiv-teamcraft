@@ -16,6 +16,9 @@ export class TutorialStepDirective implements AfterViewInit, OnDestroy {
   @Input('tutorialStep')
   translationKey: string;
 
+  @Input('tutorialStepIndex')
+  index = 0;
+
   @Input('tutorialStepAlign')
   align: 'top' | 'bottom' | 'left' | 'right' = 'bottom';
 
@@ -31,7 +34,8 @@ export class TutorialStepDirective implements AfterViewInit, OnDestroy {
       .withPositions([this.getPlacement()]);
     const overlayRef = this.overlay.create({
       positionStrategy: positionStrategy,
-      hasBackdrop: true
+      hasBackdrop: true,
+      backdropClass: 'tutorial-backdrop'
     });
     // Make the host element show on top of the backdrop
     this.elementRef.nativeElement.style.zIndex = '1001';
@@ -86,8 +90,10 @@ export class TutorialStepDirective implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-    const step = new TutorialStepEntry(this.translationKey, (index, total) => this.play(index, total));
-    this.registered = this.tutorialService.register(step);
+    if (this.elementRef.nativeElement.offsetParent !== null) {
+      const step = new TutorialStepEntry(+this.index, this.translationKey, (index, total) => this.play(index, total));
+      this.registered = this.tutorialService.register(step);
+    }
   }
 
   ngOnDestroy(): void {

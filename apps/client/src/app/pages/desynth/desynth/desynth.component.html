@@ -7,6 +7,7 @@
                    class="job-filter"
                    name="job"
                    tutorialStep="TUTORIAL.DESYNTH.Job"
+                   tutorialStepIndex="0"
                    nzShowSearch>
           <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
             <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
@@ -20,14 +21,16 @@
       <nz-form-control>
         <input (ngModelChange)="level$.next($event)" [ngModel]="level$ | async" min="0" name="minCraft"
                nz-input type="number"
-               tutorialStep="TUTORIAL.DESYNTH.Level"/>
+               tutorialStep="TUTORIAL.DESYNTH.Level"
+               tutorialStepIndex="1"/>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
       <nz-form-control>
         <button (click)="search$.next()" [disabled]="((job$ | async) === null) || ((level$ | async) === null)" nz-button
                 nzType="primary"
-                tutorialStep="TUTORIAL.DESYNTH.Search">
+                tutorialStep="TUTORIAL.DESYNTH.Search"
+                tutorialStepIndex="2">
           <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
         </button>
       </nz-form-control>

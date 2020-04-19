@@ -52,6 +52,14 @@ export class SettingsService {
     this.setSetting('region:hide-banner', hide.toString());
   }
 
+  public get configurationPanelExpanded(): boolean {
+    return this.getSetting('simulation:configuration:expanded', 'true') === 'true';
+  }
+
+  public set configurationPanelExpanded(expanded: boolean) {
+    this.setSetting('simulation:configuration:expanded', expanded.toString());
+  }
+
   public get timeFormat(): '24H' | '12H' {
     return this.getSetting('time-format', '24H') as '24H' | '12H';
   }

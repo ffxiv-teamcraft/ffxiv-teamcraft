@@ -46,6 +46,7 @@ export class TutorialService {
   public play(): void {
     const done = this.stepsDone;
     this.steps = this.steps
+      .sort((a, b) => a.index - b.index)
       .filter(step => done.indexOf(step.key) === -1);
     this.nextStep();
   }
