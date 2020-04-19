@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
       "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
       "NOT_ENOUGH_CP": "Недостаточно CP",
-      "MISSING_LEVEL_REQUIREMENT": "Ваш уровень слишком низок",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "Ротация специалиста, но вы не являетесь специалистом",
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet",
       "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
