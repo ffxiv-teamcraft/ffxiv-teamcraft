@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "Ação insegura com modo seguro habilitado",
       "DURABILITY_REACHED_ZERO": "Durabilidade chegou a 0 antes do progresso chegar ao máximo",
       "NOT_ENOUGH_CP": "CP insuficiente",
-      "MISSING_LEVEL_REQUIREMENT": "Você não tem nível requerido",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "Rotação de Especialista, mas você não é especialista",
       "NO_INNER_QUIET": "Tentativa de usar Inner Quiet sem o buff do Inner Quiet ativo",
       "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
