@@ -365,7 +365,7 @@
     "Install_update": "Installer la mise à jour",
     "Preferred_copy_type": "Type de copie préférée",
     "Auto_open_in_desktop": "Ouvrir des liens dans l’application bureau lorsqu’elle est démarrée",
-    "Auto_download_update": "Download update when it's available",
+    "Auto_download_update": "Télécharger les mises à jour automatiquement",
     "Account": "Compte",
     "Reset_password": "Réinitialiser le mot de passe",
     "Reset_password_warning": "Êtes-vous sûr de vouloir réinitialiser votre mot de passe ?",
@@ -427,7 +427,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Son de notification de complétion",
       "Packet_capture": "Capture de paquets",
-      "Networking": "Networking",
+      "Networking": "Réseau",
       "Theme": "Thème",
       "Search": "Recherche",
       "Other": "Autre"
@@ -608,8 +608,8 @@
     "Filter_items_done": "Ignorer les objets complétés",
     "Inventory_synthesis": "Synthèse de l'inventaire (éléments par inventaire)",
     "X_needed": "{{amount}} requis",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Leave_list": "Quitter cette liste",
+    "Cannot_leave": "Vous ne pouvez pas quitter cette liste car elle est partagée à l'ensemble de votre CL (dans ce cas, vous devez demander au propriétaire de la supprimer) ou à l'une de vos équipes (dans ce cas, vous pouvez quitter l'équipe).",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "Action non garantie avec le mode garanti activé",
       "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
       "NOT_ENOUGH_CP": "Pas assez de PS",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis pour fabriquer cet objet.",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
       "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
@@ -1722,7 +1722,7 @@
     "Reset_inventory": "Réinitialiser cet inventaire",
     "Clean_all": "Réinitialiser tous vos inventaires",
     "Search_for_an_item": "Rechercher un objet",
-    "Filter_by_expansion": "Filter by expansion",
+    "Filter_by_expansion": "Filtrer par extension",
     "In_x_containers": "Dans {{amount}} inventaires",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
@@ -1881,47 +1881,47 @@
     "Favorite_folders": "Dossiers favoris"
   },
   "TUTORIAL": {
-    "Next": "Next",
-    "Done": "Done",
+    "Next": "Suivant",
+    "Done": "Terminé",
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "Passez votre souris ici pour accéder aux menu de profil pour configurer vos jobs, vos stats, et plus encore."
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link."
+      "Search_type": "Vous pouvez changer le type de recherche ici (objet, quête, carte, nœud, PNJ, etc).",
+      "Share": "Utilisez ce bouton pour obtenir un lien de partage de cette recherche."
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "Cliquez ici pour obtenir un lien vers cette liste afin de la partager facilement.",
+      "Open_list": "Cliquez ici pour ouvrir les détails de la liste, vous pouvez aussi double-cliquer sur le nom de la liste.",
+      "More": "Cliquez sur ce menu pour renommer la liste, gérer les permissions, et plus encore."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode."
+      "HQ_mark": "Cette icône signifie que cet élément est requis pour une recette finale, vous pouvez vouloir le HQ mais il n'est pas requis en HQ.",
+      "Layout": "Vous pouvez modifier l'affichage entièrement, changer les panneaux et les données qu'ils contiennent en ouvrant l'éditeur de layout. Le bouton à gauche de celui-ci sert à changer rapidement entre les layouts.",
+      "Permissions": "Vous pouvez modifier les permissions, ajouter d'autres utilisateurs, configurer votre liste en lecture seule, la partager à une CL, et plus encore, en ouvrant l'éditeur de permissions.",
+      "Fill_with_inventory": "Vous pouvez ajouter tout ce qui se trouve dans votre inventaire à cette liste.",
+      "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices."
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Merge": "Vous pouvez fusionner deux listes en utilisant le bouton de fusion.",
+      "Import": "Vous pouvez importer des listes à partir de différents sites Web tels que ariyala, craftingaservce et garlandtools."
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "Cliquer sur ce bouton d'information ouvre la page de la base de données contenant les détails de l'élément qui se trouve à côté (nom d'un pnj, carte, objet, monstre, etc.). Pour les objets, cliquer sur l'icône ouvre également la page de la base de données."
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
-      "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Job": "Sélectionnez le job que vous souhaitez pex.",
+      "Level": "Entrez le niveau de recyclage du job",
+      "Search": "Cliquez sur Recherche, et c'est fait !"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "Activer les alarmes pour un minuteur donné en réglant ce bouton sur ON."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results."
+      "Character_configuration": "Configurez votre niveau et vos statistiques ici.",
+      "HQ_ingredients": "Entrez ici les ingrédients HQ pour définir une qualité de départ.",
+      "Consumables": "Configurer les consommables et les buffs de CL ici.",
+      "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats."
     }
   }
 }
