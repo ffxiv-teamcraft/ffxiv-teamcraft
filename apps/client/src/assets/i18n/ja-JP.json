@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
       "DURABILITY_REACHED_ZERO": "作業完了の直前に耐久度が0になった",
       "NOT_ENOUGH_CP": "CP不足",
-      "MISSING_LEVEL_REQUIREMENT": "レベル不足",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
       "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
