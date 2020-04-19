@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "Unsicheres Kommando bei sicherem Modus",
       "DURABILITY_REACHED_ZERO": "Belastbarkeit hat 0 erreicht, bevor Synthese vollendet wurde",
       "NOT_ENOUGH_CP": "Nicht genug HP",
-      "MISSING_LEVEL_REQUIREMENT": "Du hast die erforderliche Stufe nicht erreicht",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "Spezialist-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
       "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
