@@ -8,7 +8,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let row of getDisplay()">
-      <td><b>{{('GEARSETS.STAT_DISPLAY.' + row.name) | translate}}</b></td>
+      <td>{{('GEARSETS.STAT_DISPLAY.' + row.name) | translate}}</td>
       <td>{{row.value | floor:2 | number:'1.0-2':translate.currentLang}}{{row.suffix}}</td>
     </tr>
     </tbody>
