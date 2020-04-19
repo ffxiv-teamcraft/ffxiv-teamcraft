@@ -131,7 +131,7 @@ export class MateriasPopupComponent implements OnInit {
           });
           menuRow = acc[acc.length - 1];
         }
-        menuRow.materias.push(materia.itemId);
+        menuRow.materias.unshift(materia.itemId);
         return acc;
       }, []);
   }
