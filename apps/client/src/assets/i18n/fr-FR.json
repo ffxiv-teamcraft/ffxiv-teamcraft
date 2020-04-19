@@ -992,7 +992,7 @@
       "UNSAFE_ACTION": "Action non garantie avec le mode garanti activé",
       "DURABILITY_REACHED_ZERO": "La solidité a atteint 0 avant que la progression soit terminée",
       "NOT_ENOUGH_CP": "Pas assez de PS",
-      "MISSING_LEVEL_REQUIREMENT": "Vous n'avez pas le niveau requis",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "Rotation de spécialiste, mais vous n'êtes pas spécialiste",
       "NO_INNER_QUIET": "Essayé d'utiliser une action qui requiert Calme Intérieur sans avoir le bonus Calme Intérieur activé",
       "MISSING_STATS_REQUIREMENT": "Vous n'avez pas les statistiques minimales requises pour cette recette"
