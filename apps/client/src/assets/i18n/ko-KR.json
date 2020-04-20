@@ -411,6 +411,7 @@
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
     "Ignored_inventories": "무시할 가방",
+    "Enable_tutorials": "Enable tutorial system",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -1881,8 +1882,14 @@
     "Favorite_folders": "즐겨찾기 폴더"
   },
   "TUTORIAL": {
+    "Start": "Start tutorial for this page",
     "Next": "Next",
     "Done": "Done",
+    "POPUP": {
+      "Title": "Welcome to FFXIV Teamcraft",
+      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Question": "Would you like to enable this functionality?"
+    },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
     },
