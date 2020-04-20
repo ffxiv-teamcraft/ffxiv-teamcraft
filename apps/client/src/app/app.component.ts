@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2, AfterViewInit } from '@angular/core';
+import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -59,7 +59,7 @@ declare const gtag: Function;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.less']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
   public availableLanguages = this.settings.availableLocales;
 
@@ -253,7 +253,12 @@ export class AppComponent implements OnInit, AfterViewInit {
           }
         });
 
-      this.lazyData.loaded$.subscribe(loaded => this.dataLoaded = loaded);
+      this.lazyData.loaded$.subscribe(loaded => {
+        this.dataLoaded = loaded;
+        if (loaded) {
+          this.tutorialService.applicationReady();
+        }
+      });
 
       this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
         map((value: string) => {
@@ -339,6 +344,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             return true;
           })
         ).subscribe((event: any) => {
+        this.tutorialService.reset();
         this.seoService.resetConfig();
         this.ipc.send('navigated', event.url);
         this.ipc.on('window-decorator', (e, value) => {
@@ -614,6 +620,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
   }
 
+  startTutorial(): void {
+    this.tutorialService.play(true);
+  }
+
   public back(): void {
     window.history.back();
   }
@@ -647,9 +657,5 @@ export class AppComponent implements OnInit, AfterViewInit {
     if (this.dirty && !this.platformService.isDesktop()) {
       $event.returnValue = true;
     }
-  }
-
-  ngAfterViewInit(): void {
-    this.tutorialService.play();
   }
 }

@@ -7,17 +7,24 @@
         <a class="logo" routerLink="/">
           {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
         </a>
-        <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang" class="language-swap"
-                   fxFlex="0 0 auto"
-                   fxLayout="row">
-          <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
-                     [nzValue]="locale"></nz-option>
-        </nz-select>
+        <div class="language-swap">
+          <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+                     fxFlex="0 0 auto"
+                     fxLayout="row">
+            <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                       [nzValue]="locale"></nz-option>
+          </nz-select>
+        </div>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
+        </div>
+        <div>
+          <i nz-icon nzType="question-circle" nzTheme="outline"
+             (click)="startTutorial()" class="tutorial-start"
+             nz-tooltip [nzTitle]="'TUTORIAL.Start' | translate"></i>
         </div>
         <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
@@ -116,7 +123,7 @@
               </ng-template>
               <ng-template #userLoggedIn>
                 <div *ngIf="character$ | async as character; else emptyCharacter"
-                     tutorialStep="TUTORIAL.APP.Profile"  tutorialStepAlign="bottom">
+                     tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
                   <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
                                    [userId]="userId$ | async"
                                    [width]="32"></app-user-avatar>

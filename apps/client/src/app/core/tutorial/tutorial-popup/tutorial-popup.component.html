@@ -1,0 +1,10 @@
+<p>{{'TUTORIAL.POPUP.Explanation' | translate}}</p>
+<p>{{'TUTORIAL.POPUP.Question' | translate}}</p>
+<div fxLayout="row" fxLayoutGap="5px">
+  <div>
+    <button nz-button nzType="primary" (click)="close(true)">{{'Yes' | translate}}</button>
+  </div>
+  <div>
+    <button nz-button (click)="close(false)">{{'No' | translate}}</button>
+  </div>
+</div>

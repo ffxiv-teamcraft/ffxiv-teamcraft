@@ -92,6 +92,13 @@
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.tutorialEnabled"
+                 nz-checkbox>{{'SETTINGS.Enable_tutorials' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.noPanelBorders"
                  nz-checkbox>{{'SETTINGS.no_panel_borders' | translate}}</label>
         </nz-form-control>

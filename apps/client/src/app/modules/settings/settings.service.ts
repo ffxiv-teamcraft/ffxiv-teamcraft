@@ -76,6 +76,22 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get tutorialEnabled(): boolean {
+    return this.getSetting('tutorial:enabled', 'false') === 'true';
+  }
+
+  public set tutorialEnabled(enabled: boolean) {
+    this.setSetting('tutorial:enabled', enabled.toString());
+  }
+
+  public get tutorialQuestionAsked(): boolean {
+    return this.getSetting('tutorial:asked', 'false') === 'true';
+  }
+
+  public set tutorialQuestionAsked(asked: boolean) {
+    this.setSetting('tutorial:asked', asked.toString());
+  }
+
   public get autoDownloadUpdate(): boolean {
     return this.getSetting('auto-download-update', 'true') === 'true';
   }

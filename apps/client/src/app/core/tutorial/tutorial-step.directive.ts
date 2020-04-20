@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TutorialStepEntry } from './tutorial-step-entry';
 import { TutorialService } from './tutorial.service';
@@ -11,7 +11,7 @@ import { ConnectedPosition } from '@angular/cdk/overlay/position/flexible-connec
 @Directive({
   selector: '[tutorialStep]'
 })
-export class TutorialStepDirective implements AfterViewInit, OnDestroy {
+export class TutorialStepDirective implements OnInit, OnDestroy {
 
   @Input('tutorialStep')
   translationKey: string;
@@ -89,11 +89,14 @@ export class TutorialStepDirective implements AfterViewInit, OnDestroy {
     }
   }
 
-  ngAfterViewInit(): void {
-    if (this.elementRef.nativeElement.offsetParent !== null) {
-      const step = new TutorialStepEntry(+this.index, this.translationKey, (index, total) => this.play(index, total));
-      this.registered = this.tutorialService.register(step);
-    }
+  ngOnInit(): void {
+    // We have to abouse the setTimeout trick to push this in zonejs's microtask queue, making it execute after first rendering happens.
+    setTimeout(() => {
+      if (this.elementRef.nativeElement.offsetParent !== null) {
+        const step = new TutorialStepEntry(+this.index, this.translationKey, (index, total) => this.play(index, total));
+        this.registered = this.tutorialService.register(step);
+      }
+    }, 0);
   }
 
   ngOnDestroy(): void {

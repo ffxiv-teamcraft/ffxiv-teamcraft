@@ -231,7 +231,7 @@
     "multi-progress": "^2.0.0",
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
-    "ng-zorro-antd": "^9.0.0",
+    "ng-zorro-antd": "9.0.0",
     "ngx-clipboard": "^13.0.0",
     "ngx-color-picker": "^9.0.0",
     "ngx-markdown": "^9.0.0",

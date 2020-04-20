@@ -5,8 +5,9 @@ import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { RouterModule } from '@angular/router';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzButtonModule, NzDividerModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzDividerModule, NzModalModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.component';
 
 
 @NgModule({
@@ -17,11 +18,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TranslateModule,
     NzButtonModule,
     FlexLayoutModule,
-    NzDividerModule
+    NzDividerModule,
+    NzModalModule
   ],
   declarations: [
     TutorialStepDirective,
-    TutorialStepComponent
+    TutorialStepComponent,
+    TutorialPopupComponent
   ],
   entryComponents: [
     TutorialStepComponent
