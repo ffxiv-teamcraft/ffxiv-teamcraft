@@ -411,6 +411,7 @@
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "Ignored_inventories": "Inventaires ignorés",
+    "Enable_tutorials": "Enable tutorial system",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1881,8 +1882,14 @@
     "Favorite_folders": "Dossiers favoris"
   },
   "TUTORIAL": {
+    "Start": "Start tutorial for this page",
     "Next": "Suivant",
     "Done": "Terminé",
+    "POPUP": {
+      "Title": "Welcome to FFXIV Teamcraft",
+      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Question": "Would you like to enable this functionality?"
+    },
     "APP": {
       "Profile": "Passez votre souris ici pour accéder aux menu de profil pour configurer vos jobs, vos stats, et plus encore."
     },
