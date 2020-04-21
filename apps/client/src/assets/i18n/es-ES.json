@@ -1747,7 +1747,8 @@
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
-      "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias."
+      "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias.",
+      "Max_price": "Maximum price"
     },
     "DUPLICATES": {
       "Title": "Artículos duplicados en múltiples contenedores",
