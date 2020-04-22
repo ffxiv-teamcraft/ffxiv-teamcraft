@@ -170,6 +170,11 @@ export class ListPanelComponent {
       switchMap(list => {
         const clone = list.clone();
         this.listsFacade.updateList(list);
+        return this.listManager.upgradeList(clone).pipe(
+          first()
+        );
+      }),
+      switchMap(clone => {
         this.listsFacade.addList(clone);
         return this.listsFacade.myLists$
           .pipe(
