@@ -365,7 +365,7 @@
     "Install_update": "安装更新",
     "Preferred_copy_type": "默认复制模式",
     "Auto_open_in_desktop": "当客户端开启时，自动在使用客户端打开链接",
-    "Auto_download_update": "Download update when it's available",
+    "Auto_download_update": "自动下载更新",
     "Account": "帐户",
     "Reset_password": "重置密码",
     "Reset_password_warning": "你确定要重置密码吗？",
@@ -411,7 +411,7 @@
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
-    "Enable_tutorials": "Enable tutorial system",
+    "Enable_tutorials": "启用教程",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -609,8 +609,8 @@
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Leave_list": "离开此清单",
+    "Cannot_leave": "无法离开此清单，因为此清单是分享给您的部队或某个团队的。请联系创建者移除清单或退出相应的团队。",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -993,7 +993,7 @@
       "UNSAFE_ACTION": "安全模式下有不安全技能",
       "DURABILITY_REACHED_ZERO": "耐久在进度满之前归零",
       "NOT_ENOUGH_CP": "制作力不足",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
@@ -1748,7 +1748,7 @@
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
       "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。",
-      "Max_price": "Maximum price"
+      "Max_price": "最高价格"
     },
     "DUPLICATES": {
       "Title": "存放在多个物品栏的物品",
@@ -1887,9 +1887,9 @@
     "Next": "Next",
     "Done": "Done",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?"
+      "Title": "欢迎使用 FFXIV Teamcraft",
+      "Explanation": "Teamcraft 有一个关于如何使用它的基本特性和功能的小教程。它将以小窗口和浮层的形式出现在应用的各个页面上。",
+      "Question": "您想要启用此功能吗？"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
