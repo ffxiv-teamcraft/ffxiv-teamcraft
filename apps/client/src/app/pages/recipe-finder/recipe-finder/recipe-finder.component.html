@@ -144,10 +144,16 @@
                       [class.odd]="index % 2 === 1" [nzContent]="content"
                       class="recipe-result-row">
           <ng-template #content>
-            <button (click)="addToBasket(recipe)" [nzTitle]="'RECIPE_FINDER.Add_to_basket' | translate" nz-button nz-tooltip
-                    nzShape="circle">
-              <i nz-icon nzTheme="outline" nzType="shopping-cart"></i>
-            </button>
+            <div fxLayout="row" fxLayoutGap="5px">
+              <button (click)="addToBasket(recipe, 1)" [nzTitle]="'RECIPE_FINDER.Add_one_to_basket' | translate" nz-button nz-tooltip
+                      nzShape="circle">
+                +1
+              </button>
+              <button (click)="addToBasket(recipe, recipe.possibleAmount)" [nzTitle]="'RECIPE_FINDER.Add_to_basket' | translate" nz-button nz-tooltip
+                      nzShape="circle">
+                <i nz-icon nzTheme="outline" nzType="shopping-cart"></i>
+              </button>
+            </div>
           </ng-template>
           <nz-list-item-meta
             [nzAvatar]="avatar | ifMobile:null"
@@ -203,7 +209,8 @@
       </ng-template>
       <ng-template #basketRecipe let-index="index" let-row>
         <nz-list-item [class.odd]="index % 2 === 1"
-                      [nzContent]="content">
+                      [nzContent]="content"
+                      class="recipe-result-row">
           <ng-template #content>
             <button (click)="removeFromBasket(row)" [nzTitle]="'RECIPE_FINDER.Remove_from_basket' | translate" nz-button nz-tooltip nzShape="circle"
                     nzType="danger">
@@ -243,7 +250,7 @@
       </ng-template>
     </nz-list>
     <button (click)="generateList()" [disabled]="basket.length === 0" nz-button nzBlock
-            nzType="primary">{{'RECIPE_FINDER.Generate_list' | translate}}</button>
+            nzType="primary" class="generate-list-button">{{'RECIPE_FINDER.Generate_list' | translate}}</button>
   </div>
 </div>
 

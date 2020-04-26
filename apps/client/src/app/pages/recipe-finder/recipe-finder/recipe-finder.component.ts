@@ -363,10 +363,10 @@ export class RecipeFinderComponent implements OnDestroy {
     });
   }
 
-  addToBasket(recipe: any): void {
+  addToBasket(recipe: any, amount: number): void {
     const newEntry = {
       recipe: recipe,
-      amount: recipe.possibleAmount,
+      amount: amount,
       ingredients: recipe.ingredients
         .map(ingredient => {
           const poolItem = this.pool.find(item => item.id === ingredient.id);
@@ -375,7 +375,7 @@ export class RecipeFinderComponent implements OnDestroy {
           } else {
             return {
               id: poolItem.id,
-              amount: ingredient.amount * recipe.possibleAmount / recipe.yields
+              amount: ingredient.amount * amount / recipe.yields
             };
           }
         })
