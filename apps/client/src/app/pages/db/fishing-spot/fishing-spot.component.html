@@ -1,5 +1,5 @@
 <ng-container *ngIf="xivapiFishingSpot$ | async as spot; else loader">
-  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+  <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
 
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
@@ -192,7 +192,7 @@
 
         <nz-card [nzTitle]="'DB.FISH.Bite_times' | translate" [nzExtra]="baitSelector">
           <ng-template #baitSelector>
-            <nz-select [(ngModel)]="selectedBait" nzShowSearch>
+            <nz-select [(ngModel)]="selectedBait" nzShowSearch class="bait-selector">
               <nz-option [nzValue]="0" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
               <nz-option *ngFor="let bait of data.biteTimesPerBait.baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
             </nz-select>
