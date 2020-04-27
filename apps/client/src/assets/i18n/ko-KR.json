@@ -1415,6 +1415,9 @@
       "Refresh_data": "새로고침",
       "Bite_times": "입질 시간",
       "All_baits": "필터링 없음",
+      "Ranking": "Ranking",
+      "Top_users": "Top rankings",
+      "Your_ranking": "Your ranking",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -1888,49 +1891,49 @@
     "Next": "Next",
     "Done": "Done",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
+      "Title": "FFXIV 팀크래프트에 어서오십시오!",
       "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?"
+      "Question": "이 기능을 활성화하시겠습니까?"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
+      "Search_type": "여기에서 설정(아이템, 퀘스트, 지도, 노드, npc등)을 변경할 수 있습니다.",
       "Share": "Use this button to get your search results as a shareable link."
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
+      "Open_list": "자세한 정보를 보려면 여기를 클릭하세요. (더블클릭 가능)",
+      "More": "여기를 눌러서 권한을 관리하고 목록 이름을 변경할 수 있습니다."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
+      "HQ_mark": "이 아이콘은 이 아이템이 최종 레시피에 필요하다는 뜻입니다. HQ가 필요한 상황이 생길 수 있지만 필수는 아닙니다.",
       "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
+      "Permissions": "권한 편집기에서는 사용 권한 편집, 다른 사용자 추가, 읽기 전용 목록으로 변경, 자유부대에 공유등의 일을 할 수 있습니다.",
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
       "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode."
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
+      "Import": "아리얄라,  갈론드툴, craftingasaservce에서도 목록을 가져올 수 있습니다."
     },
     "DB": {
       "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
     },
     "DESYNTH": {
       "Job": "Select the job you want to level",
-      "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Level": "분해 레벨 입력(직업 레벨 아님)",
+      "Search": "검색을 클릭하면 끝입니다!"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "스위치를 켜서 타이머 알람을 활성화 시키세요."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results."
+      "Character_configuration": "레벨과 스탯을 설정하세요.",
+      "HQ_ingredients": "HQ재료를 입력하세요. 시작 품질에 영향을 줍니다.",
+      "Consumables": "여기에서 소모품 및 자유부대 버프를 설정하세요.",
+      "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하고(양호, 우수, 불량, 실패 등) 결과를 예측하십시오."
     }
   }
 }
