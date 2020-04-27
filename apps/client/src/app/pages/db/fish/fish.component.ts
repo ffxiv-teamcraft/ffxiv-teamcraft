@@ -1,16 +1,17 @@
 import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { distinctUntilChanged, map, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import { mapIds } from '../../../core/data/sources/map-ids';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Component({
   selector: 'app-fish',
@@ -52,12 +53,12 @@ export class FishComponent implements OnInit {
   public spot$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              private translate: TranslateService, private lazyData: LazyDataService,
+              public translate: TranslateService, private lazyData: LazyDataService,
               public settings: SettingsService, private apollo: Apollo,
-              private etime: EorzeanTimeService) {
+              private etime: EorzeanTimeService, private authFacade: AuthFacade) {
   }
 
-  private getGraphQLQuery(fishId: number, spotId: number): any {
+  private getGraphQLQuery(fishId: number, spotId: number, userId: string): any {
     const spotIdFilter = `spot: {_eq: ${spotId}}, `;
     return gql`
           query fishData {
@@ -121,6 +122,19 @@ export class FishComponent implements OnInit {
             used_for_mooch:baits_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}baitId: {_eq: ${fishId}}}) {
               itemId
             }
+            fish_rankings(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, rank: {_lte: 3}}, limit: 10) {
+              size,
+              userId,
+              date,
+              baitId,
+              rank
+            }
+            user_ranking:fish_rankings(where:{${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, userId:{_eq: "${userId}"}}, order_by:{rank: asc}, limit: 1) {
+              size,
+              date,
+              rank,
+              baitId
+            }
           }
         `;
   }
@@ -138,14 +152,21 @@ export class FishComponent implements OnInit {
     return (index[matchingIndex].rate - index[matchingIndex - 1].rate) / maxRate;
   }
 
+  getRankIcon(rank: number): string {
+    if (rank < 1 || rank > 3) {
+      return '';
+    }
+    return ['gold', 'silver', 'bronze'][rank - 1];
+  }
+
   ngOnInit(): void {
     const fishId$ = this.xivapiFish$.pipe(map(fish => fish.ID));
     this.gubalData$ = this.reloader$.pipe(
-      switchMapTo(fishId$),
-      switchMap((fishId) => {
+      switchMapTo(combineLatest([fishId$, this.authFacade.userId$])),
+      switchMap(([fishId, userId]) => {
         return this.spot$.pipe(
           switchMap(spotId => {
-            return this.apollo.query<any>({ query: this.getGraphQLQuery(fishId, spotId), fetchPolicy: 'no-cache' })
+            return this.apollo.query<any>({ query: this.getGraphQLQuery(fishId, spotId, userId), fetchPolicy: 'no-cache' })
               .pipe(
                 map(result => {
                   Object.keys(result.data)
@@ -276,7 +297,9 @@ export class FishComponent implements OnInit {
           minSize: result.data.fishingresults_aggregate.aggregate.min.size,
           maxSize: result.data.fishingresults_aggregate.aggregate.max.size,
           avgSize: result.data.fishingresults_aggregate.aggregate.avg.size,
-          minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering
+          minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering,
+          rankings: result.data.fish_rankings,
+          user_ranking: result.data.user_ranking[0]
         };
       }),
       tap((data) => {

@@ -1,6 +1,6 @@
 <ng-container *ngIf="garlandToolsItem$ | async as gtData; else loader">
   <ng-container *ngIf="data$ | async as data">
-    <div *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 50px' | ifMobile: '0'"
+    <div *ngIf="xivapiItem$ | async as xivapiItem" [style.padding]="'0 25px' | ifMobile: '0'"
          fxLayout="column" fxLayoutGap="10px">
       <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
            fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">

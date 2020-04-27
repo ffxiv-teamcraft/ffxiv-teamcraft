@@ -1,6 +1,6 @@
 @import '../common-db';
 
-::ng-deep {
+:host ::ng-deep {
   .ngx-charts {
     text {
       fill: var(--text-color) !important;
@@ -42,6 +42,10 @@
       }
     }
   }
+
+  .ant-list-item {
+    padding: 10px !important;
+  }
 }
 
 .border-bottom {
@@ -74,4 +78,22 @@
 
 .bite-times {
   width: 200px;
+}
+
+.rank-star {
+  width: 24px;
+  height: 24px;
+}
+
+.your-rank {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.rank-size {
+  font-size: 24px;
+}
+
+.ranking-container {
+  height: 100%;
 }
