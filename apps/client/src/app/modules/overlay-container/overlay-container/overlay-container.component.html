@@ -3,15 +3,24 @@
     <div class="drag-handle">
       <i nz-icon nzType="drag"></i>
     </div>
-    <i nz-icon nzType="eye"></i>
-    <nz-slider (ngModelChange)="setOverlayOpacity($event)" [ngModel]="overlayOpacity" [nzMax]="100" [nzMin]="20"
-               fxFlex="1 1 auto"></nz-slider>
-    <i (click)="settings.alarmsMuted = true" *ngIf="!settings.alarmsMuted && uri === '/alarms-overlay'" nz-icon
-       nzType="sound"></i>
-    <i (click)="settings.alarmsMuted = false" *ngIf="settings.alarmsMuted && uri === '/alarms-overlay'" nzIconfont="icon-mute"
-       nz-icon></i>
-    <i (click)="alwaysOnTop = !alwaysOnTop;setAlwaysOnTop(alwaysOnTop)" [nzTwotoneColor]="alwaysOnTop?settings.theme.primary:'white'" nz-icon nzTheme="twotone"
-       nzType="pushpin"></i>
+    <div>
+      <i nz-icon nzType="eye"></i>
+    </div>
+    <div>
+      <nz-slider (ngModelChange)="setOverlayOpacity($event)" [ngModel]="overlayOpacity" [nzMax]="100" [nzMin]="20"
+                 fxFlex="1 1 auto"></nz-slider>
+    </div>
+    <div>
+      <i (click)="settings.alarmsMuted = true" *ngIf="!settings.alarmsMuted && uri === '/alarms-overlay'" nz-icon
+         nzType="sound"></i>
+      <i (click)="settings.alarmsMuted = false" *ngIf="settings.alarmsMuted && uri === '/alarms-overlay'" nzIconfont="icon-mute"
+         nz-icon></i>
+    </div>
+    <div>
+      <i (click)="alwaysOnTop = !alwaysOnTop;setAlwaysOnTop(alwaysOnTop)" [nzTwotoneColor]="alwaysOnTop?settings.theme.primary:'white'" nz-icon
+         nzTheme="twotone"
+         nzType="pushpin"></i>
+    </div>
   </div>
   <div class="close-button">
     <i (click)="close()" nz-icon nzType="close"></i>
