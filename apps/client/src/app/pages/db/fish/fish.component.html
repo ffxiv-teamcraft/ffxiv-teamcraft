@@ -220,8 +220,8 @@
                   </ng-template>
                   <ng-template #title>
                     <div fxLayout="row" fxLayoutGap="5px">
-                      <img src="./assets/icons/stars/{{getRankIcon(row.rank)}}.png"
-                           alt="" *ngIf="row.rank <= 3">
+                      <img src="./assets/icons/stars/{{getRankIcon(row.ranking.rank)}}.png"
+                           alt="" *ngIf="row.ranking.rank <= 3">
                       <div>{{row.userId | characterName | async}}</div>
                     </div>
                   </ng-template>
@@ -237,8 +237,8 @@
           </nz-card>
           <nz-card [nzTitle]="'DB.FISH.Your_ranking' | translate" class="card-with-list" fxFlex="1 1 auto">
             <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="data.user_ranking; else noRanking" class="ranking-container">
-              <div class="your-rank">#{{data.user_ranking.rank}}</div>
-              <div class="rank-size">{{data.user_ranking.size}}ilm</div>
+              <div class="your-rank">#{{data.user_ranking.ranking.rank}}</div>
+              <div class="rank-size">{{data.user_ranking.size / 10}}ilm</div>
               <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                 <app-item-icon [itemId]="data.user_ranking.baitId" width="32"></app-item-icon>
                 <div>{{data.user_ranking.baitId | itemName | i18n}}</div>
