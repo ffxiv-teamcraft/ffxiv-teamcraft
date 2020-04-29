@@ -411,7 +411,7 @@
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
     "Ignored_inventories": "무시할 가방",
-    "Enable_tutorials": "Enable tutorial system",
+    "Enable_tutorials": "튜토리얼 시스템 켜기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -993,7 +993,7 @@
       "UNSAFE_ACTION": "안전모드에 맞지 않는 스킬이 사용됨",
       "DURABILITY_REACHED_ZERO": "작업 완료 전에 내구도가 0이 됨",
       "NOT_ENOUGH_CP": "CP부족",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "이 아이템을 제작하기에는 레벨이 부족합니다",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
       "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다"
@@ -1415,9 +1415,9 @@
       "Refresh_data": "새로고침",
       "Bite_times": "입질 시간",
       "All_baits": "필터링 없음",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Ranking": "순위",
+      "Top_users": "최고 순위",
+      "Your_ranking": "당신의 순위",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -1639,8 +1639,8 @@
     "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "모두 제작 목록에 추가",
+    "Add_one_to_basket": "제작 목록에 하나 넣기",
     "Remove_from_basket": "제작 목록에서 제거",
     "Search": "제작법 찾기",
     "Generate_list": "목록에 추가",
@@ -1752,7 +1752,7 @@
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
       "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
-      "Max_price": "Maximum price"
+      "Max_price": "최고 가격"
     },
     "DUPLICATES": {
       "Title": "여러 곳에 분산된 아이템",
@@ -1887,20 +1887,20 @@
     "Favorite_folders": "즐겨찾기 폴더"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "이 페이지의 튜토리얼 시작하기",
+    "Next": "다음",
+    "Done": "완료",
     "POPUP": {
       "Title": "FFXIV 팀크래프트에 어서오십시오!",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러페이지로 구성되어 있습니다.",
       "Question": "이 기능을 활성화하시겠습니까?"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "이름위에 마우스를 올리면 프로필 에디터와 레벨, 능력치 등을 수정할 수 있는 드롭다운 메뉴가 나타납니다."
     },
     "SEARCH": {
       "Search_type": "여기에서 설정(아이템, 퀘스트, 지도, 노드, npc등)을 변경할 수 있습니다.",
-      "Share": "Use this button to get your search results as a shareable link."
+      "Share": "공유 가능한 링크를 만드려면 이 버튼을 클릭해주세요."
     },
     "LIST_PANEL": {
       "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
@@ -1909,20 +1909,20 @@
     },
     "LIST": {
       "HQ_mark": "이 아이콘은 이 아이템이 최종 레시피에 필요하다는 뜻입니다. HQ가 필요한 상황이 생길 수 있지만 필수는 아닙니다.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
+      "Layout": "레이아웃 편집기를 열고 전체적인 데이터의 필터링 방식과 패널을 변경할 수 있습니다. 좌측에 있는 버튼은 레이아웃을 빠르게 스위칭할 때 사용합니다.",
       "Permissions": "권한 편집기에서는 사용 권한 편집, 다른 사용자 추가, 읽기 전용 목록으로 변경, 자유부대에 공유등의 일을 할 수 있습니다.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode."
+      "Fill_with_inventory": "가방에 들고있는 아이템을 목록에 자동으로 추가할 수 있습니다.",
+      "Pricing_mode_button": "가격전략 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다."
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
       "Import": "아리얄라,  갈론드툴, craftingasaservce에서도 목록을 가져올 수 있습니다."
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "인포메이션 버튼을 눌러 상세정보(NPC 이름, 지도, 아이템, 몬스터 등)를 포함한 데이터베이스 페이지를 열수 있습니다. 아이템들은 아이콘을 눌러서도 열수 있습니다."
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
+      "Job": "원하는 직업과 분해레벨을 입력하세요.",
       "Level": "분해 레벨 입력(직업 레벨 아님)",
       "Search": "검색을 클릭하면 끝입니다!"
     },
