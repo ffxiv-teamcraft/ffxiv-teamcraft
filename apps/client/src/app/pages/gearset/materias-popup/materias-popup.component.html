@@ -50,7 +50,7 @@
         <ul nz-menu>
           <li nz-menu-item (click)="resetMaterias(i)">{{'GEARSETS.No_materia' | translate}}</li>
           <li nz-submenu *ngFor="let row of materiaMenu" [nzTitle]="row.baseParamId | baseParamName | i18n">
-            <ul>
+            <ul style="width: 300px; height: 200px; overflow: auto">
               <li nz-menu-item
                   (click)="setMateria(i, materia)"
                   [nzDisabled]="getMeldingChances(materia, i) === 0"
