@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Kopiranje popisa na vaš račun...",
   "Network_error_logged_out": "Greška u mreži detektirana, odjavljeni ste. Ako se problem nastavi, molimo kontaktirajte Miu na Discord serveru.",
   "Hide_zone_duplicates": "Hide zone duplicated (items that are in multiple zones are shown only once)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Račun se već koristi",
     "auth/email-already-in-use": "Email se već koristi",
