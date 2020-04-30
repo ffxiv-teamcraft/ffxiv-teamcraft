@@ -1,4 +1,5 @@
-@import "common";
+@import 'common';
+@import '../../../node_modules/@angular/cdk/overlay-prebuilt.css';
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -113,26 +114,12 @@ h1, h2, h3, h4, h5 {
     position: relative;
 
     > img {
-      width: 200px;
+      width: 400px;
     }
   }
 
-  #logo:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 154.5px;
-    left: 23px;
-    height: 1px;
-    width: 180px;
-    transform-origin: top left;
-    transform: rotate(-45deg);
-    animation: glow 1.5s infinite ease-in-out;
-    border-radius: 30%;
-  }
-
   .brought-to-you {
-    padding-top: 40px;
+    padding-top: 20px;
     font-size: 20px;
     color: darkgrey;
     opacity: .7;
