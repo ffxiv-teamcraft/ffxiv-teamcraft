@@ -106,6 +106,7 @@ export class TutorialService {
       });
     } else {
       this.isPlaying = false;
+      document.body.scrollTop = 0;
     }
   }
 

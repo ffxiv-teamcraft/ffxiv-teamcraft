@@ -37,8 +37,9 @@ export class TutorialStepDirective implements OnInit, OnDestroy {
       hasBackdrop: true,
       backdropClass: 'tutorial-backdrop'
     });
+    this.elementRef.nativeElement.scrollIntoView(false);
     // Make the host element show on top of the backdrop
-    this.elementRef.nativeElement.style.zIndex = '1001';
+    this.elementRef.nativeElement.style.zIndex = '10000';
     this.elementRef.nativeElement.style.boxShadow = '0px 0px 5px 1px var(--highlight-color)';
     const portal = new ComponentPortal(TutorialStepComponent);
     const componentRef = overlayRef.attach(portal);
@@ -74,16 +75,16 @@ export class TutorialStepDirective implements OnInit, OnDestroy {
         };
       case 'right':
         return {
-          originX: 'start',
+          originX: 'end',
           originY: 'center',
-          overlayX: 'end',
+          overlayX: 'start',
           overlayY: 'center'
         };
       case 'left':
         return {
-          originX: 'end',
+          originX: 'start',
           originY: 'center',
-          overlayX: 'start',
+          overlayX: 'end',
           overlayY: 'center'
         };
     }

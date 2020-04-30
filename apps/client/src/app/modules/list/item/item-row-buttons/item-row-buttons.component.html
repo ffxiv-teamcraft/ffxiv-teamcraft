@@ -199,6 +199,8 @@
 
   <ng-container *ngIf="!settings.performanceMode && !overlay">
     <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
+            tutorialStep="TUTORIAL.LIST.More_actions_button"
+            tutorialStepIndex="10"
             [nzDropdownMenu]="menu"
             [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
             [nzTrigger]="'click'"

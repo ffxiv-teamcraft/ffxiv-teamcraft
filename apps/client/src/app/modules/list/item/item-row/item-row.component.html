@@ -28,7 +28,6 @@
       </span>
             <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
         <img [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
-             tutorialStep="TUTORIAL.LIST.HQ_mark"
              src="./assets/icons/HQ.png"/>
       </span>
             <span *ngIf="item.amount > item.done" class="needed">x{{item.amount - item.done}}<span
@@ -145,7 +144,9 @@
   </div>
   <div class="block center-block" nz-col nzMd="7" nzSm="12" nzXs="24" *ngIf="!overlay">
     <div class="timers" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-      <div *ngFor="let alarm of alarms; trackBy: trackByAlarm">
+      <div *ngFor="let alarm of alarms; trackBy: trackByAlarm"
+           tutorialStep="TUTORIAL.LIST.Alarm_button"
+           tutorialStepIndex="20">
         <app-alarm-button [alarm]="alarm" [alarmGroups]="alarmGroups" (toggleAlarm)="toggleAlarm($event)"
                           (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
       </div>

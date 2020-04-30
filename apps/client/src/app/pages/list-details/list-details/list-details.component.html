@@ -27,6 +27,7 @@
           <button (click)="openLayoutOptions()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate" nz-button
                   nz-tooltip nzShape="circle"
                   tutorialStep="TUTORIAL.LIST.Layout"
+                  tutorialStepIndex="0"
                   nzType="primary">
             <i nz-icon nzType="layout"></i>
           </button>
@@ -34,6 +35,7 @@
                   [disabled]="(permissionLevel$ | async) < 40" [nzTitle]="'PERMISSIONS.Title' | translate" nz-button
                   nz-tooltip
                   tutorialStep="TUTORIAL.LIST.Permissions"
+                  tutorialStepIndex="1"
                   nzShape="circle" nzType="primary">
             <i nz-icon nzType="lock"></i>
           </button>
@@ -73,6 +75,7 @@
           <button nz-button nzType="primary" nzShape="circle" (click)="fillWithInventory(list)" nz-tooltip
                   *ngIf="platform.isDesktop()"
                   tutorialStep="TUTORIAL.LIST.Fill_with_inventory"
+                  tutorialStepIndex="2"
                   [nzTitle]="'LIST_DETAILS.Fill_with_inventory' | translate">
             <i nz-icon nzType="shopping" nzTheme="outline"></i>
           </button>
@@ -106,6 +109,7 @@
             <button (click)="pricingMode = true" [disabled]="(permissionLevel$ | async) < 40"
                     [nzTitle]="'Pricing_mode' | translate" nz-button
                     tutorialStep="TUTORIAL.LIST.Pricing_mode_button"
+                    tutorialStepIndex="3"
                     nz-tooltip nzShape="circle">
               <i nzIconfont="icon-dollar" nz-icon></i>
             </button>
