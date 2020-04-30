@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
   "Hide_zone_duplicates": "Ocultar zonas duplicadas (artículos que se encuentran en varias zonas se muestran sólo una vez)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
