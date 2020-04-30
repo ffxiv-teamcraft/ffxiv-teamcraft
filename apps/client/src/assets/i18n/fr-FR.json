@@ -1893,7 +1893,8 @@
     "POPUP": {
       "Title": "Welcome to FFXIV Teamcraft",
       "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?"
+      "Question": "Would you like to enable this functionality?",
+      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
     },
     "APP": {
       "Profile": "Passez votre souris ici pour accéder aux menu de profil pour configurer vos jobs, vos stats, et plus encore."
@@ -1912,7 +1913,9 @@
       "Layout": "Vous pouvez modifier l'affichage entièrement, changer les panneaux et les données qu'ils contiennent en ouvrant l'éditeur de layout. Le bouton à gauche de celui-ci sert à changer rapidement entre les layouts.",
       "Permissions": "Vous pouvez modifier les permissions, ajouter d'autres utilisateurs, configurer votre liste en lecture seule, la partager à une CL, et plus encore, en ouvrant l'éditeur de permissions.",
       "Fill_with_inventory": "Vous pouvez ajouter tout ce qui se trouve dans votre inventaire à cette liste.",
-      "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices."
+      "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices.",
+      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
       "Merge": "Vous pouvez fusionner deux listes en utilisant le bouton de fusion.",
@@ -1933,7 +1936,11 @@
       "Character_configuration": "Configurez votre niveau et vos statistiques ici.",
       "HQ_ingredients": "Entrez ici les ingrédients HQ pour définir une qualité de départ.",
       "Consumables": "Configurer les consommables et les buffs de CL ici.",
-      "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats."
+      "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats.",
+      "Save_as_new": "Click here to save a copy of this list in your account.",
+      "Import_ingame_macro": "Click here to import from ingame macro.",
+      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
+      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
     }
   }
 }
