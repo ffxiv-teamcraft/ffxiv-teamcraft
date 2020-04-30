@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
