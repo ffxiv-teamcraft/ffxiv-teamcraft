@@ -14,6 +14,7 @@
   "List_fork_in_progress": "De lijst naar uw account aan het kopiëren...",
   "Network_error_logged_out": "Er is een netwerkfout gedetecteerd, u bent uitgelogd. Als dit probleem zich blijft voordoen, neem dan contact op met Miu op de discord server.",
   "Hide_zone_duplicates": "Verberg dubbele zones (items die zich in meerdere zones bevinden worden maar één keer getoond)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account is al in gebruik",
     "auth/email-already-in-use": "E-mailadres is al in gebruik",
