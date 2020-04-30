@@ -1893,7 +1893,8 @@
     "POPUP": {
       "Title": "FFXIV 팀크래프트에 어서오십시오!",
       "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러페이지로 구성되어 있습니다.",
-      "Question": "이 기능을 활성화하시겠습니까?"
+      "Question": "이 기능을 활성화하시겠습니까?",
+      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
     },
     "APP": {
       "Profile": "이름위에 마우스를 올리면 프로필 에디터와 레벨, 능력치 등을 수정할 수 있는 드롭다운 메뉴가 나타납니다."
@@ -1912,7 +1913,9 @@
       "Layout": "레이아웃 편집기를 열고 전체적인 데이터의 필터링 방식과 패널을 변경할 수 있습니다. 좌측에 있는 버튼은 레이아웃을 빠르게 스위칭할 때 사용합니다.",
       "Permissions": "권한 편집기에서는 사용 권한 편집, 다른 사용자 추가, 읽기 전용 목록으로 변경, 자유부대에 공유등의 일을 할 수 있습니다.",
       "Fill_with_inventory": "가방에 들고있는 아이템을 목록에 자동으로 추가할 수 있습니다.",
-      "Pricing_mode_button": "가격전략 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다."
+      "Pricing_mode_button": "가격전략 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다.",
+      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
       "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
@@ -1933,7 +1936,11 @@
       "Character_configuration": "레벨과 스탯을 설정하세요.",
       "HQ_ingredients": "HQ재료를 입력하세요. 시작 품질에 영향을 줍니다.",
       "Consumables": "여기에서 소모품 및 자유부대 버프를 설정하세요.",
-      "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하면(양호, 우수, 불량, 실패 등) 결과를 예측할 수 있습니다."
+      "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하면(양호, 우수, 불량, 실패 등) 결과를 예측할 수 있습니다.",
+      "Save_as_new": "Click here to save a copy of this list in your account.",
+      "Import_ingame_macro": "Click here to import from ingame macro.",
+      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
+      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
     }
   }
 }
