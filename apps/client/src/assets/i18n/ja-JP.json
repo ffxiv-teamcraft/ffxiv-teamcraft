@@ -14,6 +14,7 @@
   "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
