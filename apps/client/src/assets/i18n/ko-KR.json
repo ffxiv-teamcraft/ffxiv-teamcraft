@@ -14,6 +14,7 @@
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
