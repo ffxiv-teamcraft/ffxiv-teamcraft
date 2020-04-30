@@ -100,6 +100,7 @@ import { GraphQLModule } from './graphql.module';
 import { ApolloInterceptor } from './apollo-interceptor';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
+import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -214,6 +215,8 @@ const nzConfig: NzConfig = {
     PageLoaderModule,
     LoadingScreenModule,
     GearsetsModule,
+
+    ChangelogPopupModule,
 
     AlarmsModule,
     AlarmsSidebarModule,

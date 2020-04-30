@@ -51,6 +51,8 @@ import { QuickSearchService } from './modules/quick-search/quick-search.service'
 import { Region } from './modules/settings/region.enum';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 import { TutorialService } from './core/tutorial/tutorial.service';
+import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
+import { version } from '../environments/version';
 
 declare const gtag: Function;
 
@@ -247,18 +249,37 @@ export class AppComponent implements OnInit {
         .pipe(
           isPlatformServer(this.platform) ? first() : tap()
         )
-        .subscribe(version => {
-          if (semver.ltr(environment.version, version)) {
+        .subscribe(v => {
+          if (semver.ltr(environment.version, v)) {
             this.router.navigate(['version-lock']);
           }
         });
 
-      this.lazyData.loaded$.subscribe(loaded => {
-        this.dataLoaded = loaded;
-        if (loaded) {
+      this.lazyData.loaded$
+        .pipe(
+          filter(loaded => loaded),
+          switchMap(() => {
+            this.dataLoaded = true;
+            const lastChangesSeen = this.settings.lastChangesSeen;
+            if (semver.gt(version, lastChangesSeen)) {
+              return this.dialog.create({
+                nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
+                nzContent: ChangelogPopupComponent,
+                nzFooter: null
+              }).afterClose
+                .pipe(
+                  tap(() => {
+                    this.settings.lastChangesSeen = version;
+                  })
+                );
+            } else {
+              return of(null);
+            }
+          })
+        )
+        .subscribe(loaded => {
           this.tutorialService.applicationReady();
-        }
-      });
+        });
 
       this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
         map((value: string) => {

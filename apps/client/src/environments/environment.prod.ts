@@ -1,9 +1,11 @@
 import { version } from './version';
 import { gameEnv } from './game-env';
+import { patchNotes } from './patch-notes';
 
 export const environment = {
   production: true,
   version: version,
+  patchNotes: patchNotes,
   ssrHost: 'https://ffxivteamcraft.com',
   startTimestamp: Date.now(),
   ...gameEnv,

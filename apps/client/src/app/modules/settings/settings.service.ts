@@ -116,13 +116,20 @@ export class SettingsService {
     this.setSetting('remove-done-in-synthesis', remove.toString());
   }
 
-
   public get preferredCopyType(): string {
     return this.getSetting('copy-type', 'classic');
   }
 
   public set preferredCopyType(copyType: string) {
     this.setSetting('copy-type', copyType);
+  }
+
+  public get lastChangesSeen(): string {
+    return this.getSetting('last-changes-seen', '1.0.0');
+  }
+
+  public set lastChangesSeen(version: string) {
+    this.setSetting('last-changes-seen', version);
   }
 
   public get dbCommentsPosition(): string {
