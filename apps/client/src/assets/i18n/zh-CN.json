@@ -1893,7 +1893,8 @@
     "POPUP": {
       "Title": "欢迎使用 FFXIV Teamcraft",
       "Explanation": "Teamcraft 有一个关于如何使用它的基本特性和功能的小教程。它将以小窗口和浮层的形式出现在应用的各个页面上。",
-      "Question": "您想要启用此功能吗？"
+      "Question": "您想要启用此功能吗？",
+      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
@@ -1912,7 +1913,9 @@
       "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
       "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode."
+      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
+      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
       "Merge": "You can merge two lists using the merge button.",
@@ -1933,7 +1936,11 @@
       "Character_configuration": "Configure your level and your stats here.",
       "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
       "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results."
+      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
+      "Save_as_new": "Click here to save a copy of this list in your account.",
+      "Import_ingame_macro": "Click here to import from ingame macro.",
+      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
+      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
     }
   }
 }
