@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Copiando a lista para sua conta...",
   "Network_error_logged_out": "Um erro de rede foi detectado, você foi desconectado. Se este problema persistir, entre em contato com Miu no servidor do discord.",
   "Hide_zone_duplicates": "Ocultar zona duplicada (itens que estão em várias zonas são exibidos apenas uma vez)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já em uso",
     "auth/email-already-in-use": "E-mail já em uso",
