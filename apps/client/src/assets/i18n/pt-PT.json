@@ -14,6 +14,7 @@
   "List_fork_in_progress": "A copiar a lista para a sua conta...",
   "Network_error_logged_out": "Foi detectado um erro de ligação, portanto foi desligado. Se o problema persistir contacte Miu no Discord.",
   "Hide_zone_duplicates": "Esconder zonas duplicada (itens que estão em várias zonas são exibidos apenas uma vez)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
