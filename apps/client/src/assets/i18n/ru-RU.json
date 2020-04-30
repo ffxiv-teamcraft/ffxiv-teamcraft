@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
