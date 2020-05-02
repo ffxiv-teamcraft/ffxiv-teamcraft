@@ -1942,6 +1942,11 @@
       "Import_ingame_macro": "Click here to import from ingame macro.",
       "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
       "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+    },
+    "ALARMS": {
+      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
+      "Custom": "Click here to create a custom alarm.",
+      "Compact": "Click here to toggle alarms' compact display."
     }
   }
 }

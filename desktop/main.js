@@ -179,6 +179,28 @@ ipcMain.on('update:check', () => {
  * End autoupdater
  */
 
+const gotTheLock = app.requestSingleInstanceLock();
+
+if (!gotTheLock) {
+  app.quit();
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
+    if (win) {
+      if (win.isMinimized()) {
+        win.restore();
+      }
+      win.focus();
+    }
+  });
+
+  // Create window on electron intialization
+  app.on('ready', () => {
+    createWindow();
+    createTray();
+  });
+}
+
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
@@ -222,7 +244,7 @@ function createWindow() {
     setProxy({
       rule: proxyRule,
       pac: proxyPac
-    })
+    });
   }
 
   win.loadURL(`file://${BASE_APP_PATH}/index.html#${deepLink}`);
@@ -533,13 +555,6 @@ ipcMain.on('app-state:set', (_, data) => {
 
 ipcMain.on('app-state:get', (event) => {
   event.sender.send('app-state', appState);
-});
-
-
-// Create window on electron intialization
-app.on('ready', () => {
-  createWindow();
-  createTray();
 });
 
 // Quit when all windows are closed.
