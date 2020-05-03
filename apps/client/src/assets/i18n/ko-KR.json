@@ -1902,7 +1902,8 @@
     },
     "SEARCH": {
       "Search_type": "여기에서 설정(아이템, 퀘스트, 지도, 노드, npc등)을 변경할 수 있습니다.",
-      "Share": "공유 가능한 링크를 만드려면 이 버튼을 클릭해주세요."
+      "Share": "공유 가능한 링크를 만드려면 이 버튼을 클릭해주세요.",
+      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
     },
     "LIST_PANEL": {
       "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
