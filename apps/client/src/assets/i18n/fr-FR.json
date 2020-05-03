@@ -1902,7 +1902,8 @@
     },
     "SEARCH": {
       "Search_type": "Vous pouvez changer le type de recherche ici (objet, quête, carte, nœud, PNJ, etc).",
-      "Share": "Utilisez ce bouton pour obtenir un lien de partage de cette recherche."
+      "Share": "Utilisez ce bouton pour obtenir un lien de partage de cette recherche.",
+      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
     },
     "LIST_PANEL": {
       "Share": "Cliquez ici pour obtenir un lien vers cette liste afin de la partager facilement.",
@@ -1915,8 +1916,8 @@
       "Permissions": "Vous pouvez modifier les permissions, ajouter d'autres utilisateurs, configurer votre liste en lecture seule, la partager à une CL, et plus encore, en ouvrant l'éditeur de permissions.",
       "Fill_with_inventory": "Vous pouvez ajouter tout ce qui se trouve dans votre inventaire à cette liste.",
       "Pricing_mode_button": "Préparez et prévoyez facilement vos bénéfices pour cette liste en utilisant le calcul de bénéfices.",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "More_actions_button": "Ce bouton ouvre un menu avec de nombreuses actions différentes pour la ligne courante. Vous pouvez convertir ces actions en boutons à l'aide de l'éditeur de mise en page.",
+      "Alarm_button": "Cliquez ici pour créer une alarme pour cet objet, pour être alerté lorsqu'il apparaît."
     },
     "LISTS": {
       "Merge": "Vous pouvez fusionner deux listes en utilisant le bouton de fusion.",
@@ -1938,25 +1939,25 @@
       "HQ_ingredients": "Entrez ici les ingrédients HQ pour définir une qualité de départ.",
       "Consumables": "Configurer les consommables et les buffs de CL ici.",
       "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats.",
-      "Save_as_new": "Click here to save a copy of this list in your account.",
-      "Import_ingame_macro": "Click here to import from ingame macro.",
-      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+      "Save_as_new": "Cliquez ici pour enregistrer une copie de cette liste sur votre compte.",
+      "Import_ingame_macro": "Cliquez ici pour importer depuis une macro ingame.",
+      "Generate_ingame_macro": "Cliquez ici pour générer une macro en jeu pour cette rotation.",
+      "Share_with_stats": "Cliquez ici pour ouvrir la popup de partage, vous permettant de partager la simulation avec vos statistiques et consommables."
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
-      "Compact": "Click here to toggle alarms' compact display."
+      "Settings": "Cliquez ici pour modifier les paramètres des alarmes (son, volume, etc).",
+      "Custom": "Cliquez ici pour créer une alarme personnalisée.",
+      "Compact": "Cliquez ici pour activer/désactiver l'affichage compact des alarmes."
     },
     "COMMUNITY_ROTATIONS": {
-      "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only recipes with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only recipes with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only recipes with required cp < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+      "Text_filter": "Utilisez ce champ de saisie pour trouver une rotation en utilisant son nom",
+      "Tags_filter": "Filtrer par tags en utilisant cette case de sélection",
+      "Rlvl_filter": "Filtrer par niveau de recette en utilisant cette case de sélection",
+      "Durability_filter": "Filtrer par durabilité en utilisant cette case de sélection",
+      "Min_craftsmanship": "Filtrer par le minimum d'habileté requis ici, cela ne trouvera que des recettes avec habileté requise < votre valeur.",
+      "Min_control": "Filtrer par contrôle minimum requis ici, cela ne trouvera que des recettes avec le contrôle requis < votre valeur.",
+      "Min_cp": "Filtrer par PS minimum requis ici, cela ne trouvera que des recettes avec PS requis < votre valeur.",
+      "Set_selector": "Sélectionnez le job à utiliser pour les simulations utilisées pour montrer le taux de réussite des rotation des résultats."
     }
   }
 }
