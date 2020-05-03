@@ -1942,6 +1942,21 @@
       "Import_ingame_macro": "Click here to import from ingame macro.",
       "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
       "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+    },
+    "ALARMS": {
+      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
+      "Custom": "Click here to create a custom alarm.",
+      "Compact": "Click here to toggle alarms' compact display."
+    },
+    "COMMUNITY_ROTATIONS": {
+      "Text_filter": "Use this input field to find a rotation using its name",
+      "Tags_filter": "Filter by tags using this select box",
+      "Rlvl_filter": "Filter by recipe level using this select box",
+      "Durability_filter": "Filter by durability using this select box",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only recipes with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only recipes with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only recipes with required cp < your value.",
+      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
     }
   }
 }
