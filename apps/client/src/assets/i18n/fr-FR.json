@@ -14,7 +14,7 @@
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
-  "Patch_notes": "{{version}} changes",
+  "Patch_notes": "Patch notes de la version {{version}}",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -412,7 +412,7 @@
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "Ignored_inventories": "Inventaires ignorés",
-    "Enable_tutorials": "Enable tutorial system",
+    "Enable_tutorials": "Activer le système de tutoriels",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1416,9 +1416,9 @@
       "Refresh_data": "Actualiser les données",
       "Bite_times": "Temps entre le lancé et la touche",
       "All_baits": "Aucun filtre d'appât",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Ranking": "Classement",
+      "Top_users": "Meilleurs classements",
+      "Your_ranking": "Votre classement",
       "TUG": {
         "Light": "Légère (!)",
         "Medium": "Normale (!!)",
@@ -1640,8 +1640,8 @@
     "Missing": "Manque",
     "Results": "Recettes possibles",
     "Basket": "Panier",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "Ajouter tout au panier",
+    "Add_one_to_basket": "Ajouter un seul au panier",
     "Remove_from_basket": "Retirer du panier",
     "Search": "Trouver des recettes",
     "Generate_list": "Ajouter à une liste",
@@ -1753,7 +1753,7 @@
     "CAN_BE_BOUGHT": {
       "Title": "Objets qui peuvent être achetés avec des gils",
       "Message": "Cet objet peut être acheté aux PNJ avec des gils et n'a pas besoin de réputation de tribu.",
-      "Max_price": "Maximum price"
+      "Max_price": "Prix maximum"
     },
     "DUPLICATES": {
       "Title": "Éléments qui sont dupliqués à travers plusieurs conteneurs",
@@ -1888,14 +1888,14 @@
     "Favorite_folders": "Dossiers favoris"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
+    "Start": "Démarrer le tutoriel pour cette page",
     "Next": "Suivant",
     "Done": "Terminé",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Title": "Bienvenue dans FFXIV Teamcraft",
+      "Explanation": "Teamcraft a un tutoriel sur la façon d'utiliser ses fonctionnalités de base. Il apparaîtra sous la forme de petites fenêtres et de pop-ups sur différentes pages au sein de l'application.",
+      "Question": "Souhaitez-vous activer cette fonctionnalité ?",
+      "Can_be_changed_in_settings": "Peut être activé et désactivé dans les paramètres"
     },
     "APP": {
       "Profile": "Passez votre souris ici pour accéder aux menu de profil pour configurer vos jobs, vos stats, et plus encore."
