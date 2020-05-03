@@ -1902,7 +1902,8 @@
     },
     "SEARCH": {
       "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link."
+      "Share": "Use this button to get your search results as a shareable link.",
+      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
     },
     "LIST_PANEL": {
       "Share": "Click here to copy a link to this list, to easily share it",
