@@ -1,13 +1,18 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   <h2>{{'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate}}</h2>
-  <input (ngModelChange)="nameFilter$.next($event)" [ngModel]="nameFilter$ | async" [placeholder]="'SIMULATOR.COMMUNITY_ROTATIONS.Name_filter_placeholder' | translate"
+  <input (ngModelChange)="nameFilter$.next($event)" [ngModel]="nameFilter$ | async"
+         [placeholder]="'SIMULATOR.COMMUNITY_ROTATIONS.Name_filter_placeholder' | translate"
          autofocus
+         tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Text_filter"
+         tutorialStepIndex="0"
          class="filter-input" nz-input type="text">
   <div class="filter-input" fxLayout="row" fxLayoutAlign="center flex-start" fxLayoutGap="10px">
     <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
       <nz-select (ngModelChange)="tagsFilter$.next($event)" [ngModel]="tagsFilter$ | async"
                  [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Tags_filter_placeholder' | translate"
                  fxFlex="1 1 auto"
+                 tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Tags_filter"
+                 tutorialStepIndex="1"
                  nzMode="multiple">
         <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
       </nz-select>
@@ -16,6 +21,8 @@
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate}}:</div>
           <nz-select (ngModelChange)="rlvlFilter$.next($event)"
                      [ngModel]="rlvlFilter$ | async"
+                     tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Rlvl_filter"
+                     tutorialStepIndex="2"
                      [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Rlvl_filter_placeholder' | translate"
                      fxFlex="0 0 150px"
                      nzAllowClear
@@ -27,6 +34,8 @@
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate}}:</div>
           <nz-select (ngModelChange)="durabilityFilter$.next($event)"
                      [ngModel]="durabilityFilter$ | async"
+                     tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Durability_filter"
+                     tutorialStepIndex="3"
                      [nzPlaceHolder]="'SIMULATOR.COMMUNITY_ROTATIONS.Durability_filter_placeholder' | translate"
                      fxFlex="0 0 120px"
                      nzAllowClear
@@ -43,18 +52,24 @@
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}:</div>
           <nz-input-number (ngModelChange)="craftsmanshipFilter$.next($event)" [ngModel]="craftsmanshipFilter$ | async"
                            [nzMin]="1"
+                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_craftsmanship"
+                           tutorialStepIndex="4"
                            [nzStep]="1" name="minCraft"></nz-input-number>
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}:</div>
           <nz-input-number (ngModelChange)="controlFilter$.next($event)" [ngModel]="controlFilter$ | async"
                            [nzMin]="1"
+                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_control"
+                           tutorialStepIndex="5"
                            [nzStep]="1" name="minCraft"></nz-input-number>
         </div>
         <div class="filter-element" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}:</div>
           <nz-input-number (ngModelChange)="cpFilter$.next($event)" [ngModel]="cpFilter$ | async"
                            [nzMin]="1"
+                           tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Min_cp"
+                           tutorialStepIndex="6"
                            [nzStep]="1" name="minCraft"></nz-input-number>
         </div>
         <div *ngIf="sets$ | async as sets" class="filter-element" fxLayout="row" fxLayoutAlign="center center"
@@ -63,6 +78,8 @@
           <nz-select (ngModelChange)="setIndex$.next($event)"
                      [ngModel]="setIndex$ | async"
                      fxFlex="0 0 200px"
+                     tutorialStep="TUTORIAL.COMMUNITY_ROTATIONS.Set_selector"
+                     tutorialStepIndex="7"
                      nzShowSearch>
             <nz-option *ngFor="let set of sets; let index = index"
                        [nzValue]="index"
