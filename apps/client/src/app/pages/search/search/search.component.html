@@ -71,6 +71,8 @@
   <div class="search-tip" fxLayout="row" fxLayoutAlign="center center">{{'SEARCH.Search_tip' | translate}}</div>
   <div *ngIf="searchType$ | async as searchType" class="filters">
     <nz-collapse
+      tutorialStep="TUTORIAL.SEARCH.Filters"
+      tutorialStepIndex="2"
       *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE
       || searchType === searchTypes.INSTANCE || searchType === searchTypes.LEVE
       || searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT">
