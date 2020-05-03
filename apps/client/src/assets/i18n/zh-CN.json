@@ -14,7 +14,7 @@
   "List_fork_in_progress": "正在将清单复制到你的账户",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
-  "Patch_notes": "{{version}} changes",
+  "Patch_notes": "{{version}} 更新",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -1023,7 +1023,7 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅限此服务器)",
+    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅当前服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
@@ -1888,46 +1888,46 @@
     "Favorite_folders": "收藏文件夹"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "开始本页面的教程",
+    "Next": "继续",
+    "Done": "完成",
     "POPUP": {
       "Title": "欢迎使用 FFXIV Teamcraft",
       "Explanation": "Teamcraft 有一个关于如何使用它的基本特性和功能的小教程。它将以小窗口和浮层的形式出现在应用的各个页面上。",
       "Question": "您想要启用此功能吗？",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Can_be_changed_in_settings": "可以在设置中开启或关闭"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "在用户名处悬浮并访问个人资料，可以对职业等级、属性等进行设置"
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Search_type": "你可以在这里修改要查找的数据类型（例如物品、任务、地图、采集点、NPC）",
+      "Share": "点击此按钮可以获取搜索结果的链接并与他人分享",
+      "Filters": "展开此面板可以使用高级过滤器，通过属性、加成、物品品级等进行过滤"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "点击此处拷贝清单链接并轻松进行分享",
+      "Open_list": "点击这里或双击清单名打开清单详情",
+      "More": "点击此菜单可以进行重命名、权限管理等操作"
     },
     "LIST": {
       "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
+      "Layout": "你可以在布局编辑器中任意编辑布局、修改面板样式及其过滤条件。页面左侧的此按钮用于快速切换布局",
+      "Permissions": "点击这里可以进行权限设置，例如添加其他用户、将清单设置为只读、共享到部队等等",
       "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
+      "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
+      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知"
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Merge": "可以使用“合并清单”按钮合并两个清单",
+      "Import": "你可以从 Ariyala、Crafting as a Service、Garland Tools 等网站导入清单"
     },
     "DB": {
       "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
+      "Job": "选择你想要提升等级的职业",
       "Level": "Input the desynth level (not the actual job level)",
       "Search": "Click search, and it's done !"
     },
@@ -1935,29 +1935,29 @@
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
-      "Save_as_new": "Click here to save a copy of this list in your account.",
-      "Import_ingame_macro": "Click here to import from ingame macro.",
-      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+      "Character_configuration": "在这里设置你的等级和属性",
+      "HQ_ingredients": "在这里选择 HQ 材料以设置起始品质",
+      "Consumables": "在这里设置消耗品和部队特效",
+      "Right_click_condition": "右键点击技能可以设定其发动条件（高品质、最高品质、低品质、制作失败等）并预测结果",
+      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Import_ingame_macro": "点击这里导入游戏中的用户宏",
+      "Generate_ingame_macro": "点击这里生成手法对应的游戏宏",
+      "Share_with_stats": "点击这里打开分享对话框，你可以选择是否分享你的属性和消耗品"
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
-      "Compact": "Click here to toggle alarms' compact display."
+      "Settings": "点击这里修改闹钟设置（例如提示音和音量）",
+      "Custom": "点击这里创建一个自定义闹钟",
+      "Compact": "在这里设置闹钟是否紧凑显示"
     },
     "COMMUNITY_ROTATIONS": {
-      "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only recipes with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only recipes with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only recipes with required cp < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+      "Text_filter": "使用此输入框检索手法名称",
+      "Tags_filter": "在这里通过标签过滤手法",
+      "Rlvl_filter": "在这里通过配方等级过滤手法",
+      "Durability_filter": "在这里通过配方耐久过滤手法",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     }
   }
 }
