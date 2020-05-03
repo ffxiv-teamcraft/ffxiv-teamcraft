@@ -1903,7 +1903,7 @@
     "SEARCH": {
       "Search_type": "Vous pouvez changer le type de recherche ici (objet, quête, carte, nœud, PNJ, etc).",
       "Share": "Utilisez ce bouton pour obtenir un lien de partage de cette recherche.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Filters": "Ouvrez ce panneau pour utiliser des filtres avancés, pour filtrer par stat, bonus, ilvl, et plus encore"
     },
     "LIST_PANEL": {
       "Share": "Cliquez ici pour obtenir un lien vers cette liste afin de la partager facilement.",
@@ -1939,7 +1939,7 @@
       "HQ_ingredients": "Entrez ici les ingrédients HQ pour définir une qualité de départ.",
       "Consumables": "Configurer les consommables et les buffs de CL ici.",
       "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats.",
-      "Save_as_new": "Cliquez ici pour enregistrer une copie de cette liste sur votre compte.",
+      "Save_as_new": "Click here to save a copy of this rotation in your account.",
       "Import_ingame_macro": "Cliquez ici pour importer depuis une macro ingame.",
       "Generate_ingame_macro": "Cliquez ici pour générer une macro en jeu pour cette rotation.",
       "Share_with_stats": "Cliquez ici pour ouvrir la popup de partage, vous permettant de partager la simulation avec vos statistiques et consommables."
@@ -1954,9 +1954,9 @@
       "Tags_filter": "Filtrer par tags en utilisant cette case de sélection",
       "Rlvl_filter": "Filtrer par niveau de recette en utilisant cette case de sélection",
       "Durability_filter": "Filtrer par durabilité en utilisant cette case de sélection",
-      "Min_craftsmanship": "Filtrer par le minimum d'habileté requis ici, cela ne trouvera que des recettes avec habileté requise < votre valeur.",
-      "Min_control": "Filtrer par contrôle minimum requis ici, cela ne trouvera que des recettes avec le contrôle requis < votre valeur.",
-      "Min_cp": "Filtrer par PS minimum requis ici, cela ne trouvera que des recettes avec PS requis < votre valeur.",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
       "Set_selector": "Sélectionnez le job à utiliser pour les simulations utilisées pour montrer le taux de réussite des rotation des résultats."
     }
   }
