@@ -14,6 +14,7 @@
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
+  "Patch_notes": "{{version}} 변경점",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -157,7 +158,7 @@
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
     "Copy": "복사",
     "Open_in_main_window": "메인 창에서 열기",
-    "Example": "Example"
+    "Example": "예제"
   },
   "ALARMS": {
     "Title": "알람",
@@ -174,8 +175,8 @@
     "Add_note": "메모 추가",
     "Volume": "볼륨",
     "Macro_copied": "매크로가 클립보드에 복사되었습니다",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "오버레이 켜기/끄기",
+    "Open_alarms_overlay": "알람 오버레이 켜기/끄기",
     "More_available": "{{amount}}번 더...",
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
@@ -351,8 +352,8 @@
     "Link_base": "아이템 링크",
     "Region": "지역",
     "Region_explain": "특정 게임 버전에 따라 데이터 소스와 기능이 맞춰집니다. 일부 소스나 기능은 지역에 따라서 이용 못할 수도 있습니다",
-    "Proxy": "Proxy",
-    "Proxy_bypass": "No proxy for",
+    "Proxy": "프록시",
+    "Proxy_bypass": "프록시를 쓰지 않을 주소",
     "Theme": "테마",
     "no_panel_borders": "패널의 테두리를 사용하지 않도록 설정",
     "Desktop": "데스크톱",
@@ -365,6 +366,7 @@
     "Install_update": "업데이트 설치",
     "Preferred_copy_type": "기본 복사 유형",
     "Auto_open_in_desktop": "시작시 데스크톱 앱에서 링크 열기",
+    "Auto_download_update": "가능할 때 업데이트 다운로드 하기",
     "Account": "계정",
     "Reset_password": "비밀번호 재설정",
     "Reset_password_warning": "비밀번호를 재설정 하시겠습니까?",
@@ -409,7 +411,8 @@
     "Change_email_success": "메일 주소가 변경되었습니다",
     "No_shortcut": "업데이트시 바로가기 만들지 않기",
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
-    "Ignored_inventories": "Ignored inventories",
+    "Ignored_inventories": "무시할 가방",
+    "Enable_tutorials": "튜토리얼 시스템 켜기",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -426,7 +429,7 @@
     "CATEGORIES": {
       "Autofill_completion": "자동채우기 완료음",
       "Packet_capture": "패킷 캡처",
-      "Networking": "Networking",
+      "Networking": "네트워크",
       "Theme": "테마",
       "Search": "검색",
       "Other": "기타"
@@ -591,9 +594,9 @@
     "Amount_craftable": "{{amount}}개 제작 가능합니다",
     "Add_item": "아이템 추가",
     "List_large": "큰 목록입니다",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
+    "Enable_performance_mode": "더 빠른 렌더링을 위하여 성능모드를 활성화 하셨다면 성능 문제 에러가 버그라고 표기되는 경우가 있습니다. 해당 문제를 버그로 보고하지 말아주세요. 지금은 지원되지 않는 기능입니다.",
     "List_too_large": "너무 큰 목록",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "이 목록의 크기가 커서 컴퓨터가 느려지거나 데이터베이스의 한계에 도달했습니다. 리스트가 삭제되지 않기를 원한다면 아이템을 더 이상 추가하지 마시고 목록 내 존재하는 아이템을 정리 해주세요.",
     "New_tag": "새 태그",
     "Amount_ilvl": "수량 (ilvl 기준)",
     "Contributions_popup": "해당 목록의 기여도 통계",
@@ -606,9 +609,9 @@
     "Fill_with_inventory": "소지품에서 채우기 (계정에 연동되어 있는 소지품에서만 채워집니다)",
     "Filter_items_done": "완료된 아이템 무시",
     "Inventory_synthesis": "소지품 통합(각 소지품별 아이템)",
-    "X_needed": "{{amount}} 개 필요",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "X_needed": "{{amount}}개 필요",
+    "Leave_list": "이 목록 나가기",
+    "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -648,7 +651,7 @@
       "Tag_filter": "태그 필터"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "목록 오버레이 켜기/끄기",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
     }
@@ -991,7 +994,7 @@
       "UNSAFE_ACTION": "안전모드에 맞지 않는 스킬이 사용됨",
       "DURABILITY_REACHED_ZERO": "작업 완료 전에 내구도가 0이 됨",
       "NOT_ENOUGH_CP": "CP부족",
-      "MISSING_LEVEL_REQUIREMENT": "레벨이 부족함",
+      "MISSING_LEVEL_REQUIREMENT": "이 아이템을 제작하기에는 레벨이 부족합니다",
       "NOT_SPECIALIST": "비전문장인은 사용할 수 없는 전문장인 로테이션",
       "NO_INNER_QUIET": "정신 집중을 사용하지 않고 정신 집중을 요구하는 스킬을 사용함",
       "MISSING_STATS_REQUIREMENT": "현재 스탯이 제작에 필요한 최저스탯에 도달하지 못했습니다"
@@ -1413,13 +1416,16 @@
       "Refresh_data": "새로고침",
       "Bite_times": "입질 시간",
       "All_baits": "필터링 없음",
+      "Ranking": "순위",
+      "Top_users": "최고 순위",
+      "Your_ranking": "당신의 순위",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
         "Big": "대형 (!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "낚시 보고용 오버레이 켜기/끄기",
         "Bait": "현재 미끼",
         "Tug": "입질",
         "Hookset": "낚아채기",
@@ -1634,7 +1640,8 @@
     "Missing": "부족한 재료 : ",
     "Results": "제작 가능한 품목",
     "Basket": "제작 목록",
-    "Add_to_basket": "제작 목록에 추가",
+    "Add_to_basket": "모두 제작 목록에 추가",
+    "Add_one_to_basket": "제작 목록에 하나 넣기",
     "Remove_from_basket": "제작 목록에서 제거",
     "Search": "제작법 찾기",
     "Generate_list": "목록에 추가",
@@ -1666,7 +1673,7 @@
     "Title": "블로그"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "{{tool}} 에 문제가 있으며, 다시 한번 시도 해주시기 바랍니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #announcements 채널에 고정된 메세지를 참고하세요.",
     "Firebase_blocked": "데이터베이스에 접근할 수 없습니다. 무언가 문제가 있거나 인터넷이 끊겼을 수 있습니다."
   },
   "SEARCH": {
@@ -1701,7 +1708,7 @@
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
   },
@@ -1721,7 +1728,7 @@
     "Reset_inventory": "소지품 초기화",
     "Clean_all": "모든 소지품 초기화",
     "Search_for_an_item": "아이템 검색",
-    "Filter_by_expansion": "Filter by expansion",
+    "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
     "BAG": {
       "SaddleBag": "초코보 가방",
@@ -1745,7 +1752,8 @@
     "No_optimizations": "최적화가 가능하지 않습니다",
     "CAN_BE_BOUGHT": {
       "Title": "구매가능: 길",
-      "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈"
+      "Message": "구매가능: 길 / 구매조건: 야만족퀘스트 오픈",
+      "Max_price": "최고 가격"
     },
     "DUPLICATES": {
       "Title": "여러 곳에 분산된 아이템",
@@ -1825,8 +1833,8 @@
     "Optimize_materias": "마테리아 순서 최적화",
     "No_trades_needed": "교환으로 얻는 장비가 없습니다",
     "Stats_caps": "능력치",
-    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지마시길 바랍니다.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
+    "Missing_items": "몇몇 슬롯이 비어있는 것처럼 보인다면 필터를 정확하게 세팅해 주세요.",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1878,5 +1886,78 @@
     "Folder_not_found": "폴더를 찾을 수 없습니다",
     "Your_folders": "내 폴더",
     "Favorite_folders": "즐겨찾기 폴더"
+  },
+  "TUTORIAL": {
+    "Start": "이 페이지의 튜토리얼 시작하기",
+    "Next": "다음",
+    "Done": "완료",
+    "POPUP": {
+      "Title": "FFXIV 팀크래프트에 어서오십시오!",
+      "Explanation": "팀크래프트는 기본적인 인터페이스와 형태에 대한 튜토리얼이 제공됩니다. 튜토리얼은 작은 윈도우가 팝업되며 여러페이지로 구성되어 있습니다.",
+      "Question": "이 기능을 활성화하시겠습니까?",
+      "Can_be_changed_in_settings": "설정에서 켜고 끌수 있습니다."
+    },
+    "APP": {
+      "Profile": "이름위에 마우스를 올리면 프로필 에디터와 레벨, 능력치 등을 수정할 수 있는 드롭다운 메뉴가 나타납니다."
+    },
+    "SEARCH": {
+      "Search_type": "여기에서 설정(아이템, 퀘스트, 지도, 노드, npc등)을 변경할 수 있습니다.",
+      "Share": "공유 가능한 링크를 만드려면 이 버튼을 클릭해주세요.",
+      "Filters": "스탯, 보너스, 아이템레벨 등, 확장된 필터기능을 사용하려면 이 패널을 여세요"
+    },
+    "LIST_PANEL": {
+      "Share": "여기를 누르면 링크를 복사하고 공유할 수 있습니다.",
+      "Open_list": "자세한 정보를 보려면 여기를 클릭하세요. (더블클릭 가능)",
+      "More": "여기를 눌러서 권한을 관리하고 목록 이름을 변경할 수 있습니다."
+    },
+    "LIST": {
+      "HQ_mark": "이 아이콘은 이 아이템이 최종 레시피에 필요하다는 뜻입니다. HQ가 필요한 상황이 생길 수 있지만 필수는 아닙니다.",
+      "Layout": "레이아웃 편집기를 열고 전체적인 데이터의 필터링 방식과 패널을 변경할 수 있습니다. 좌측에 있는 버튼은 레이아웃을 빠르게 스위칭할 때 사용합니다.",
+      "Permissions": "권한 편집기에서는 사용 권한 편집, 다른 사용자 추가, 읽기 전용 목록으로 변경, 자유부대에 공유 등의 일을 할 수 있습니다.",
+      "Fill_with_inventory": "가방에 들고있는 아이템을 목록에 자동으로 추가할 수 있습니다.",
+      "Pricing_mode_button": "가격계산 모드를 사용하면 이 목록에서 얻을 수 있는 이익을 쉽게 예측하고 준비할 수 있습니다.",
+      "More_actions_button": "이 버튼으로 지금 목록에서 할 수 있는 여러 다른 액션 메뉴를 열수 있습니다. 여러분들은 레이아웃 에디터를 통해 이 액션 버튼들을 편집할 수 있습니다.",
+      "Alarm_button": "여기를 눌러 이 아이템을 위한 알람을 설정하세요, 알람을 설정하시면 이 아이템이 스폰될 때 알려드립니다."
+    },
+    "LISTS": {
+      "Merge": "병합 버튼을 이용해서 리스트를 병합할 수 있습니다.",
+      "Import": "Ariyala, garlandtools, craftingasaservce에서도 목록을 가져올 수 있습니다."
+    },
+    "DB": {
+      "Button": "인포메이션 버튼을 눌러 상세정보(NPC 이름, 지도, 아이템, 몬스터 등)를 포함한 데이터베이스 페이지를 열수 있습니다. 아이템들은 아이콘을 눌러서도 열수 있습니다."
+    },
+    "DESYNTH": {
+      "Job": "원하는 직업과 분해레벨을 입력하세요.",
+      "Level": "분해 레벨 입력(직업 레벨 아님)",
+      "Search": "검색을 클릭하면 끝입니다!"
+    },
+    "RESET_TIMERS": {
+      "Toggle": "스위치를 켜서 타이머 알람을 활성화 시키세요."
+    },
+    "SIMULATOR": {
+      "Character_configuration": "레벨과 스탯을 설정하세요.",
+      "HQ_ingredients": "HQ재료를 입력하세요. 시작 품질에 영향을 줍니다.",
+      "Consumables": "여기에서 소모품 및 자유부대 버프를 설정하세요.",
+      "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하면(고품질, 최고품질, 저품질, 실패 등) 결과를 예측할 수 있습니다.",
+      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Import_ingame_macro": "여기를 눌러 인게임 매크로를 입력하세요.",
+      "Generate_ingame_macro": "여기를 눌러 이 로테이션의 인게임 매크로를 생성하세요.",
+      "Share_with_stats": "여기를 눌러 공유팝업을 여세요, 여러분의 능력치와 소모품들까지 공유가 가능합니다."
+    },
+    "ALARMS": {
+      "Settings": "알람을 설정할려면 여기를 클릭하세요(알람소리, 볼륨 등).",
+      "Custom": "사용자 지정 알람을 생성할려면 여기를 클릭하세요.",
+      "Compact": "알람 토글창을 띄울려면 여기를 클릭하세요."
+    },
+    "COMMUNITY_ROTATIONS": {
+      "Text_filter": "입력란을 이용하여 이름으로 로테이션을 찾을 수 있습니다",
+      "Tags_filter": "선택 박스를 이용하여 태그 별로 필터링할 수 있습니다",
+      "Rlvl_filter": "선택 박스를 이용하여 레시피 레벨 별로 필터링할 수 있습니다",
+      "Durability_filter": "선택 박스를 이용하여 내구도 별로 필터링할 수 있습니다",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
+    }
   }
 }

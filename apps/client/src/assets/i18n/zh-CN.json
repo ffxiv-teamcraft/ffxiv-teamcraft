@@ -14,6 +14,7 @@
   "List_fork_in_progress": "正在将清单复制到你的账户",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
+  "Patch_notes": "{{version}} 更新",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -365,6 +366,7 @@
     "Install_update": "安装更新",
     "Preferred_copy_type": "默认复制模式",
     "Auto_open_in_desktop": "当客户端开启时，自动在使用客户端打开链接",
+    "Auto_download_update": "自动下载更新",
     "Account": "帐户",
     "Reset_password": "重置密码",
     "Reset_password_warning": "你确定要重置密码吗？",
@@ -410,6 +412,7 @@
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
+    "Enable_tutorials": "启用教程",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -607,8 +610,8 @@
     "Filter_items_done": "忽略已完成的物品",
     "Inventory_synthesis": "物品栏聚合（查看每个物品栏中已有的物品）",
     "X_needed": "需要 {{amount}} 个",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Leave_list": "离开此清单",
+    "Cannot_leave": "无法离开此清单，因为此清单是分享给您的部队或某个团队的。请联系创建者移除清单或退出相应的团队。",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -991,7 +994,7 @@
       "UNSAFE_ACTION": "安全模式下有不安全技能",
       "DURABILITY_REACHED_ZERO": "耐久在进度满之前归零",
       "NOT_ENOUGH_CP": "制作力不足",
-      "MISSING_LEVEL_REQUIREMENT": "等级不够",
+      "MISSING_LEVEL_REQUIREMENT": "您的职业等级无法制作此物品。",
       "NOT_SPECIALIST": "使用了专家手法，但你不是专家",
       "NO_INNER_QUIET": "没有内静 buff 但使用了内静技能",
       "MISSING_STATS_REQUIREMENT": "您不满足此配方所需要的最低属性"
@@ -1020,7 +1023,7 @@
     "From_crafting": "制作价格",
     "Expect_to_sell_everything": "计划出售",
     "Autofill_panel_prices": "基于市场物价填充价格",
-    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅限此服务器)",
+    "Autofill_panel_prices_your_server": "依据市场价填充材料价格 (仅当前服务器)",
     "Autofill_panel_prices_warning": "本操作为耗时操作，大约需要 {{time}} 秒来完成，确定吗？",
     "Copy_earnings_as_text": "复制为文本",
     "Content_copied": "已复制",
@@ -1413,6 +1416,9 @@
       "Refresh_data": "更新数据",
       "Bite_times": "咬钩次数",
       "All_baits": "未过滤钓饵",
+      "Ranking": "Ranking",
+      "Top_users": "Top rankings",
+      "Your_ranking": "Your ranking",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1634,7 +1640,8 @@
     "Missing": "缺少",
     "Results": "可能的配方",
     "Basket": "愿望篮",
-    "Add_to_basket": "添加到愿望篮",
+    "Add_to_basket": "Add all to basket",
+    "Add_one_to_basket": "Add one to basket",
     "Remove_from_basket": "从愿望篮中删除",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
@@ -1745,7 +1752,8 @@
     "No_optimizations": "没有可用的优化",
     "CAN_BE_BOUGHT": {
       "Title": "可使用金币购买的物品",
-      "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。"
+      "Message": "此物品可从 NPC 处购买，且没有蛮族声望限制。",
+      "Max_price": "最高价格"
     },
     "DUPLICATES": {
       "Title": "存放在多个物品栏的物品",
@@ -1878,5 +1886,78 @@
     "Folder_not_found": "找不到文件夹",
     "Your_folders": "您的文件夹",
     "Favorite_folders": "收藏文件夹"
+  },
+  "TUTORIAL": {
+    "Start": "开始本页面的教程",
+    "Next": "继续",
+    "Done": "完成",
+    "POPUP": {
+      "Title": "欢迎使用 FFXIV Teamcraft",
+      "Explanation": "Teamcraft 有一个关于如何使用它的基本特性和功能的小教程。它将以小窗口和浮层的形式出现在应用的各个页面上。",
+      "Question": "您想要启用此功能吗？",
+      "Can_be_changed_in_settings": "可以在设置中开启或关闭"
+    },
+    "APP": {
+      "Profile": "在用户名处悬浮并访问个人资料，可以对职业等级、属性等进行设置"
+    },
+    "SEARCH": {
+      "Search_type": "你可以在这里修改要查找的数据类型（例如物品、任务、地图、采集点、NPC）",
+      "Share": "点击此按钮可以获取搜索结果的链接并与他人分享",
+      "Filters": "展开此面板可以使用高级过滤器，通过属性、加成、物品品级等进行过滤"
+    },
+    "LIST_PANEL": {
+      "Share": "点击此处拷贝清单链接并轻松进行分享",
+      "Open_list": "点击这里或双击清单名打开清单详情",
+      "More": "点击此菜单可以进行重命名、权限管理等操作"
+    },
+    "LIST": {
+      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
+      "Layout": "你可以在布局编辑器中任意编辑布局、修改面板样式及其过滤条件。页面左侧的此按钮用于快速切换布局",
+      "Permissions": "点击这里可以进行权限设置，例如添加其他用户、将清单设置为只读、共享到部队等等",
+      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
+      "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
+      "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
+      "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知"
+    },
+    "LISTS": {
+      "Merge": "可以使用“合并清单”按钮合并两个清单",
+      "Import": "你可以从 Ariyala、Crafting as a Service、Garland Tools 等网站导入清单"
+    },
+    "DB": {
+      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+    },
+    "DESYNTH": {
+      "Job": "选择你想要提升等级的职业",
+      "Level": "Input the desynth level (not the actual job level)",
+      "Search": "Click search, and it's done !"
+    },
+    "RESET_TIMERS": {
+      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+    },
+    "SIMULATOR": {
+      "Character_configuration": "在这里设置你的等级和属性",
+      "HQ_ingredients": "在这里选择 HQ 材料以设置起始品质",
+      "Consumables": "在这里设置消耗品和部队特效",
+      "Right_click_condition": "右键点击技能可以设定其发动条件（高品质、最高品质、低品质、制作失败等）并预测结果",
+      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Import_ingame_macro": "点击这里导入游戏中的用户宏",
+      "Generate_ingame_macro": "点击这里生成手法对应的游戏宏",
+      "Share_with_stats": "点击这里打开分享对话框，你可以选择是否分享你的属性和消耗品"
+    },
+    "ALARMS": {
+      "Settings": "点击这里修改闹钟设置（例如提示音和音量）",
+      "Custom": "点击这里创建一个自定义闹钟",
+      "Compact": "在这里设置闹钟是否紧凑显示"
+    },
+    "COMMUNITY_ROTATIONS": {
+      "Text_filter": "使用此输入框检索手法名称",
+      "Tags_filter": "在这里通过标签过滤手法",
+      "Rlvl_filter": "在这里通过配方等级过滤手法",
+      "Durability_filter": "在这里通过配方耐久过滤手法",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
+    }
   }
 }
