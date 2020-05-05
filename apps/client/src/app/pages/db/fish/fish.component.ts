@@ -4,7 +4,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { distinctUntilChanged, map, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
@@ -122,7 +122,7 @@ export class FishComponent implements OnInit {
             used_for_mooch:baits_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}baitId: {_eq: ${fishId}}}) {
               itemId
             }
-            fish_rankings:fishingresults(where:itemId: {_eq: ${fishId}}, ranking:{ rank: {_lte: 3}}}, order_by:{ ranking: {rank: asc}}, limit: 10) {
+            fish_rankings:fishingresults(where:{itemId: {_eq: ${fishId}}, ranking:{ rank: {_lte: 3}}}, order_by:{ ranking: {rank: asc}}, limit: 10) {
               size,
               userId,
               date,

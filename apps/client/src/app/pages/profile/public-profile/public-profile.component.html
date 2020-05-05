@@ -3,7 +3,7 @@
        fxLayoutGap="10px">
     <img [class.avatar]="false |ifMobile:true" [class.portrait]="true | ifMobile: false"
          [src]="characterEntry.character.Portrait | ifMobile: characterEntry.character.Avatar " alt="">
-    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center">
+    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="10px">
       <h2>
         {{characterEntry.character.Name}}
         <i *ngIf="!characterEntry.verified" [nzTitle]="'Not_verified' | translate" nz-icon nz-tooltip
@@ -25,18 +25,53 @@
           <div>{{set.level}}</div>
         </div>
       </div>
-      <nz-list [nzDataSource]="communityLists$ | async" [nzHeader]="'Public_lists' | translate" [nzRenderItem]="list">
-        <ng-template #list let-list>
-          <app-list-panel [hideAvatar]="true" [list]="list" [publicDisplay]="true"></app-list-panel>
-        </ng-template>
-      </nz-list>
-      <nz-list [nzDataSource]="communityRotations$ | async"
-               [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate"
-               [nzRenderItem]="rotation">
-        <ng-template #rotation let-rotation>
-          <app-rotation-panel [publicDisplay]="true" [rotation]="rotation"></app-rotation-panel>
-        </ng-template>
-      </nz-list>
+      <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Community_contributions' | translate"></nz-divider>
+      <nz-collapse>
+        <nz-collapse-panel [nzHeader]="'Public_lists' | translate">
+          <nz-list [nzDataSource]="communityLists$ | async" [nzRenderItem]="list">
+            <ng-template #list let-list>
+              <app-list-panel [hideAvatar]="true" [list]="list" [publicDisplay]="true"></app-list-panel>
+            </ng-template>
+          </nz-list>
+        </nz-collapse-panel>
+        <nz-collapse-panel [nzHeader]="'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate">
+          <nz-list [nzDataSource]="communityRotations$ | async"
+                   [nzRenderItem]="rotation">
+            <ng-template #rotation let-rotation>
+              <app-rotation-panel [publicDisplay]="true" [rotation]="rotation"></app-rotation-panel>
+            </ng-template>
+          </nz-list>
+        </nz-collapse-panel>
+      </nz-collapse>
+      <ng-container *ngIf="fishingRankings$ | async as fishingRankings; else loadingFishRankings">
+        <nz-divider nzType="horizontal" nzOrientation="left" [nzText]="'PROFILE.Fishing_rankings' | translate"></nz-divider>
+        <nz-list [nzHeader]="summary">
+          <ng-template #summary>{{'PROFILE.Total_rankings' | translate}}: #1: {{fishingRankings.summary[1]}}, #2: {{fishingRankings.summary[2]}},
+            #3: {{fishingRankings.summary[3]}}</ng-template>
+          <cdk-virtual-scroll-viewport itemSize="73" class="fish-rankings-viewport">
+            <nz-list-item *cdkVirtualFor="let row of fishingRankings.data" [nzContent]="row.date | date:'short':undefined:translate.currentLang">
+              <nz-skeleton *ngIf="!row" [nzAvatar]="true" [nzParagraph]="{ rows: 1 }"></nz-skeleton>
+              <nz-list-item-meta [nzAvatar]="avatar"
+                                 nzTitle="#{{row.ranking.rank}} - {{row.itemId | itemName | i18n}}"
+                                 [nzDescription]="description">
+                <ng-template #avatar>
+                  <app-item-icon [itemId]="row.itemId" width="32"></app-item-icon>
+                </ng-template>
+                <ng-template #description>
+                  {{row.size / 10}}ilm -
+                  {{row.baitId | itemName | i18n}}
+                </ng-template>
+              </nz-list-item-meta>
+            </nz-list-item>
+          </cdk-virtual-scroll-viewport>
+          <nz-list-empty *ngIf="fishingRankings.length === 0"></nz-list-empty>
+        </nz-list>
+      </ng-container>
+      <ng-template #loadingFishRankings>
+        <div fxLayout="row" fxLayoutAlign="center center" class="fish-rankings-loader">
+          <nz-spin nzSimple [nzTip]="'PROFILE.Loading_fish_rankings' | translate"></nz-spin>
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>

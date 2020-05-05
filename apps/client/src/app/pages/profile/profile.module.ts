@@ -21,6 +21,8 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { SimulatorModule } from '../simulator/simulator.module';
 import { AutofillStatsPopupComponent } from './profile-editor/autofill-stats-popup/autofill-stats-popup.component';
+import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const routes: Routes = [
   {
@@ -51,7 +53,9 @@ const routes: Routes = [
     UserAvatarModule,
 
     RouterModule.forChild(routes),
-    SimulatorModule
+    SimulatorModule,
+    ItemIconModule,
+    ScrollingModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })
