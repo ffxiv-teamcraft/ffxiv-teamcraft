@@ -8,6 +8,7 @@
              (keydown.enter)="query$.next(searchInput.value)"
              (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
              [nzAutocomplete]="settings.disableSearchHistory?emptyFill:auto"
+             [nzDefaultActiveFirstOption]="false"
              autofocus
              class="search-input"
              nz-input
