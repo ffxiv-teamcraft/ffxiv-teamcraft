@@ -458,6 +458,7 @@
     "Veteran": "Veteran",
     "Autofill_from_packets": "Autofill stats using packet capture",
     "Autofill_stats_explain": "Switch to the desired job in order to update it, close this popup once you're done. Please make sure you don't have any active food, else it'll save your stats with the food active.",
+    "Open_public_profile": "Open public profile",
     "VERIFICATION": {
       "Title": "Character verification",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",

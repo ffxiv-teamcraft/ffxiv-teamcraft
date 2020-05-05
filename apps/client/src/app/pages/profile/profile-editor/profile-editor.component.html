@@ -35,13 +35,14 @@
                 nzType="danger">
           <i nz-icon nzType="delete"></i>
         </button>
-        <a *ngIf="mainCharacter.character.ID > 0" [nzTitle]="'PROFILE.View_on_apkallu_falls' | translate" href="https://apkallufalls.com/character/{{mainCharacter.character.ID}}"
-           nz-tooltip
-           target="_blank">
-          <img
-            alt=""
-            class="apkallu-logo" src="https://camo.githubusercontent.com/77266c191911dcb4d3f5c6d68f9629b13cde635b/68747470733a2f2f61706b616c6c7566616c6c732e636f6d2f69636f6e2f61706b616c6c752d7370656369616c2e706e67">
-        </a>
+<!--        <a *ngIf="mainCharacter.character.ID > 0" [nzTitle]="'PROFILE.View_on_apkallu_falls' | translate" href="https://apkallufalls.com/character/{{mainCharacter.character.ID}}"-->
+<!--           nz-tooltip-->
+<!--           target="_blank">-->
+<!--          <img-->
+<!--            alt=""-->
+<!--            class="apkallu-logo" src="https://camo.githubusercontent.com/77266c191911dcb4d3f5c6d68f9629b13cde635b/68747470733a2f2f61706b616c6c7566616c6c732e636f6d2f69636f6e2f61706b616c6c752d7370656369616c2e706e67">-->
+<!--        </a>-->
+        <a routerLink="/profile/{{user.$key}}">{{'PROFILE.Open_public_profile' | translate}}</a>
       </div>
     </div>
     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
