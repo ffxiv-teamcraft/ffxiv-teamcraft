@@ -71,7 +71,7 @@
                 <ng-template #content>
                   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                     <i *ngIf="set.specialist" [nzTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate" nz-icon nz-tooltip
-                       type="star"></i>
+                       nzType="star"></i>
                     <div>
                       {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
                       {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}} -
