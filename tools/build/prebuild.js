@@ -12,7 +12,7 @@ const src = `export const version = '${appVersion}';
 `;
 
 // ensure version module pulls value from package.json
-fs.writeFile(versionFilePath, src, { flat: 'w' }, function(err) {
+fs.writeFileSync(versionFilePath, src, { flat: 'w' }, function(err) {
   if (err) {
     return console.log(colors.red(err));
   }
@@ -23,10 +23,10 @@ fs.writeFile(versionFilePath, src, { flat: 'w' }, function(err) {
 
 const changelog = fs.readFileSync(path.join(__dirname, '../../CHANGELOG.md'), 'utf8');
 
-const section = changelog.split('## [')[1].split('\n');
+const section = changelog.split('# [')[1].split('\n');
 const changes = section.slice(3, -5).join('\n').replace(/\s\(\[.+/gm, '.');
 
-fs.writeFile(patchNotesFilePath, `export const patchNotes = \`${changes}\`;
+fs.writeFileSync(patchNotesFilePath, `export const patchNotes = \`${changes}\`;
 `, { flat: 'w' }, function(err) {
   if (err) {
     return console.log(colors.red(err));
