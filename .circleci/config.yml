@@ -45,7 +45,7 @@ jobs:
           at: ~/
       - run:
           name: Lint code and JSON
-          command: npm run lint
+          command: yarn run lint
 
 
   test:
@@ -55,10 +55,10 @@ jobs:
           at: ~/
       - run:
           name: Testing
-          command: npm run test
+          command: yarn run test
       - run:
           name: Codecov upload
-          command: npm run codecov
+          command: yarn run codecov
 
   e2e:
     <<: *defaults
@@ -67,7 +67,7 @@ jobs:
           at: ~/
       - run:
           name: Testing
-          command: npm run e2e:ci
+          command: yarn run e2e:ci
 
 
   build:
@@ -81,9 +81,9 @@ jobs:
           name: Building
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-                npm run build:prod
+                yarn run build:prod
             else
-                npm run build:beta
+                yarn run build:beta
             fi
       - persist_to_workspace:
           root: ~/
@@ -135,7 +135,7 @@ jobs:
             - v2-deps-win-{ .Branch }-{ checksum "package.json" }
       - run:
           name: Reinstalling dependencies for windows
-          command: npm ci
+          command: yarn install --frozen-lockfile
       - save_cache:
           key: v2-deps-win-{ .Branch }-{ checksum "package.json" }
           paths:
@@ -143,7 +143,7 @@ jobs:
             - ~/.npm
       - run:
           name: Deploying desktop on github
-          command: npm run electron:setup:publish
+          command: yarn run electron:setup:publish
       - persist_to_workspace:
           root: ~/
           paths:
