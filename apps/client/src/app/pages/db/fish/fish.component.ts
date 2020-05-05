@@ -122,7 +122,7 @@ export class FishComponent implements OnInit {
             used_for_mooch:baits_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}baitId: {_eq: ${fishId}}}) {
               itemId
             }
-            fish_rankings:fishingresults(where:{${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, ranking:{ rank: {_lte: 3}}}, order_by:{ ranking: {rank: asc}}, limit: 10) {
+            fish_rankings:fishingresults(where:itemId: {_eq: ${fishId}}, ranking:{ rank: {_lte: 3}}}, order_by:{ ranking: {rank: asc}}, limit: 10) {
               size,
               userId,
               date,
@@ -131,7 +131,7 @@ export class FishComponent implements OnInit {
                 rank
               }
             }
-            user_ranking:fishingresults(where:{${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, userId: {_eq: "${userId}"}}, order_by:{ ranking: {rank: asc}}, limit: 1) {
+            user_ranking:fishingresults(where:{itemId: {_eq: ${fishId}}, userId: {_eq: "${userId}"}}, order_by:{ ranking: {rank: asc}}, limit: 1) {
               size,
               userId,
               date,
