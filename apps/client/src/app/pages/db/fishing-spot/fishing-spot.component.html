@@ -1,5 +1,5 @@
 <ng-container *ngIf="xivapiFishingSpot$ | async as spot; else loader">
-  <div [style.padding]="'0 50px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+  <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
 
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
@@ -31,7 +31,7 @@
       </div>
       <div fxFlex="1 1 auto"></div>
       <button nz-button (click)="showMissesPopup(spot.ID)">{{'DB.FISH.Show_misses' | translate}}</button>
-      <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
+      <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTooltipTitle]="'DB.FISH.Refresh_data' | translate"
               (click)="loading = true;reloader$.next(null)">
         <i nz-icon nzType="reload" nzTheme="outline"></i>
       </button>
@@ -142,7 +142,7 @@
 
           <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_weather' | translate" class="card-with-list expanded">
             <ng-template #weatherSider let-weather>
-              <img [src]="weather | weatherIcon" alt="" nz-tooltip [nzTitle]="weather | weatherName | i18n">
+              <img [src]="weather | weatherIcon" alt="" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n">
             </ng-template>
             <ng-container *ngTemplateOutlet="dataGrid; context:{$implicit: data.fishesPerWeather, siderTpl: weatherSider}"></ng-container>
           </nz-card>
@@ -178,7 +178,7 @@
                   [style.background-color]="getColor((useGlobalTotal ? cell / grid.total: cell / grid.totals[i]))"
                   (mouseenter)="highlightedFish$.next(grid.headers[headerIndex])"
                   (mouseleave)="highlightedFish$.next(-1)">
-                <span *ngIf="cell" nz-tooltip [nzTitle]="amountTooltip">
+                <span *ngIf="cell" nz-tooltip [nzTooltipTitle]="amountTooltip">
                   <ng-template #amountTooltip>
                     {{cell | number:'1.0-2':translate.currentLang}} / {{grid.totals[i] | number:'1.0-1':translate.currentLang}}
                   </ng-template>
@@ -192,7 +192,7 @@
 
         <nz-card [nzTitle]="'DB.FISH.Bite_times' | translate" [nzExtra]="baitSelector">
           <ng-template #baitSelector>
-            <nz-select [(ngModel)]="selectedBait" nzShowSearch>
+            <nz-select [(ngModel)]="selectedBait" nzShowSearch class="bait-selector">
               <nz-option [nzValue]="0" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
               <nz-option *ngFor="let bait of data.biteTimesPerBait.baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
             </nz-select>

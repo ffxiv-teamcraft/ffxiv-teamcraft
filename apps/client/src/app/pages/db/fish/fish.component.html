@@ -65,7 +65,7 @@
                          [nzLabel]="spot.spotData.zoneId | placeName | i18n"
                          [nzValue]="spot.spot"></nz-option>
             </nz-select>
-            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTitle]="'DB.FISH.Refresh_data' | translate"
+            <button nz-button nzType="primary" nzShape="circle" nz-tooltip [nzTooltipTitle]="'DB.FISH.Refresh_data' | translate"
                     (click)="loading = true;reloader$.next(null)">
               <i nz-icon nzType="reload" nzTheme="outline"></i>
             </button>
@@ -206,6 +206,51 @@
           </div>
         </div>
 
+        <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>
+
+        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
+          <nz-card [nzTitle]="'DB.FISH.Top_users' | translate" class="card-with-list" fxFlex="1 1 auto">
+            <nz-list>
+              <nz-list-item *ngFor="let row of data.rankings" [nzContent]="row.date | date:'short':undefined:translate.currentLang">
+                <nz-list-item-meta [nzAvatar]="avatar"
+                                   [nzTitle]="title"
+                                   [nzDescription]="description">
+                  <ng-template #avatar>
+                    <app-user-avatar [userId]="row.userId" width="32"></app-user-avatar>
+                  </ng-template>
+                  <ng-template #title>
+                    <div fxLayout="row" fxLayoutGap="5px">
+                      <img src="./assets/icons/stars/{{getRankIcon(row.ranking.rank)}}.png"
+                           alt="" *ngIf="row.ranking.rank <= 3">
+                      <div>{{row.userId | characterName | async}}</div>
+                    </div>
+                  </ng-template>
+                  <ng-template #description>
+                    {{row.size / 10}}ilm -
+                    <app-item-icon [itemId]="row.baitId" width="16"></app-item-icon>
+                    {{row.baitId | itemName | i18n}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+              <nz-list-empty *ngIf="data.rankings.length === 0"></nz-list-empty>
+            </nz-list>
+          </nz-card>
+          <nz-card [nzTitle]="'DB.FISH.Your_ranking' | translate" class="card-with-list" fxFlex="1 1 auto">
+            <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="data.user_ranking; else noRanking" class="ranking-container">
+              <div class="your-rank">#{{data.user_ranking.ranking.rank}}</div>
+              <div class="rank-size">{{data.user_ranking.size / 10}}ilm</div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                <app-item-icon [itemId]="data.user_ranking.baitId" width="32"></app-item-icon>
+                <div>{{data.user_ranking.baitId | itemName | i18n}}</div>
+              </div>
+              <div class="rank-date">{{data.user_ranking.date | date:'short':undefined:translate.currentLang}}</div>
+            </div>
+            <ng-template #noRanking>
+              <nz-list-empty></nz-list-empty>
+            </ng-template>
+          </nz-card>
+        </div>
+
         <ng-container *ngIf="obtentionTpl">
           <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
         </ng-container>
@@ -215,6 +260,7 @@
         </ng-container>
 
         <app-db-comments [id]="xivapiFish.ID" type="item"></app-db-comments>
+
       </ng-container>
     </app-page-loader>
   </ng-container>

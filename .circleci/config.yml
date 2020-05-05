@@ -10,28 +10,27 @@ orbs:
 jobs:
   setup:
     <<: *defaults
+    resource_class: large
     steps:
       - checkout
       - run:
           name: Show current branch
           command: echo ${CIRCLE_BRANCH}
-      - run:
-          name: Update npm
-          command: sudo npm i -g npm
       - restore_cache:
+          name: Restore Yarn Package Cache
           keys:
-            - v2-deps-{ .Branch }-{ checksum "package.json" }
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install local dependencies
-          command: npm ci
+          command: yarn install --frozen-lockfile
       - run:
           name: Install functions dependencies
           command: cd functions && npm install && cd ../
       - save_cache:
-          key: v2-deps-{ .Branch }-{ checksum "package.json" }
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache
-            - ~/.npm
+            - ~/.cache/yar
       - persist_to_workspace:
           root: ~/
           paths:

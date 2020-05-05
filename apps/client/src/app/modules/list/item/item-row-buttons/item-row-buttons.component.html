@@ -199,6 +199,8 @@
 
   <ng-container *ngIf="!settings.performanceMode && !overlay">
     <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
+            tutorialStep="TUTORIAL.LIST.More_actions_button"
+            tutorialStepIndex="10"
             [nzDropdownMenu]="menu"
             [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
             [nzTrigger]="'click'"
@@ -361,7 +363,7 @@
           nzGhost
           nzShape="circle" nzSize="small"
           nzType="danger">
-    <i nz-icon nzType="warning"></i>
+    <i nz-icon nzType="warning" nzTheme="outline"></i>
   </button>
   <ng-container *ngIf="attachedRotation">
     <nz-tag (click)="openRotationMacroPopup.emit(rotation)"

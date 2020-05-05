@@ -18,7 +18,8 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { MappyReporterService, MappyReporterState } from '../../../core/electron/mappy/mappy-reporter';
+import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-settings-popup',
@@ -298,21 +299,27 @@ export class SettingsPopupComponent {
   }
 
   resetPassword(): void {
-    this.af.auth.sendPasswordResetEmail(this.af.auth.currentUser.email).then(() => {
+    this.af.user.pipe(
+      switchMap(user => {
+        return from(this.af.sendPasswordResetEmail(user.email));
+      })).subscribe(() => {
       this.message.success(this.translate.instant('SETTINGS.Password_reset_mail_sent'));
     });
   }
 
   updateEmail(): void {
-    this.dialog.create({
-      nzContent: NameQuestionPopupComponent,
-      nzComponentParams: {
-        type: 'email',
-        baseName: this.af.auth.currentUser.email
-      },
-      nzFooter: null,
-      nzTitle: this.translate.instant('SETTINGS.Change_email')
-    }).afterClose.pipe(
+    this.af.user.pipe(
+      switchMap(user => {
+        return this.dialog.create({
+          nzContent: NameQuestionPopupComponent,
+          nzComponentParams: {
+            type: 'email',
+            baseName: user.email
+          },
+          nzFooter: null,
+          nzTitle: this.translate.instant('SETTINGS.Change_email')
+        }).afterClose;
+      }),
       filter(email => email !== undefined),
       switchMap(email => this.authFacade.changeEmail(email))
     ).subscribe(() => {

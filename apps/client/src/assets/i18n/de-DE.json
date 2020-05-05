@@ -14,6 +14,7 @@
   "List_fork_in_progress": "Die Liste wird in dein Konto kopiert...",
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
+  "Patch_notes": "{{version}} Änderungen",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -365,6 +366,7 @@
     "Install_update": "Aktualisierung installieren",
     "Preferred_copy_type": "Bevorzugte Kopiermethode",
     "Auto_open_in_desktop": "Öffne Links in Desktop-App, wenn sie gestartet ist",
+    "Auto_download_update": "Update herunterladen, sobald es verfügbar ist",
     "Account": "Konto",
     "Reset_password": "Passwort zurücksetzen",
     "Reset_password_warning": "Bist du sicher, dass du dein Passwort zurücksetzen möchtest?",
@@ -410,6 +412,7 @@
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
     "Ignored_inventories": "Inventare ignorieren",
+    "Enable_tutorials": "Tutorialsystem aktivieren",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -426,7 +429,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Sound bei Auto-Vervollständigung",
       "Packet_capture": "Paketerfassung",
-      "Networking": "Networking",
+      "Networking": "Netzwerk",
       "Theme": "Theme",
       "Search": "Suche",
       "Other": "Anderes"
@@ -607,8 +610,8 @@
     "Filter_items_done": "Fertige Gegenstände ignorieren",
     "Inventory_synthesis": "Inventar-Synthese (Gegenstände pro Inventar)",
     "X_needed": "{{amount}} benötigt",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Leave_list": "Diese Liste verlassen",
+    "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -882,9 +885,9 @@
       "Good": "Gut",
       "Poor": "Minderwertig",
       "Fail": "Fehlgeschlagen",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Pliant": "Ergiebig",
+      "Sturdy": "Robust",
+      "Centered": "Stabil",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -991,7 +994,7 @@
       "UNSAFE_ACTION": "Unsicheres Kommando bei sicherem Modus",
       "DURABILITY_REACHED_ZERO": "Belastbarkeit hat 0 erreicht, bevor Synthese vollendet wurde",
       "NOT_ENOUGH_CP": "Nicht genug HP",
-      "MISSING_LEVEL_REQUIREMENT": "Du hast die erforderliche Stufe nicht erreicht",
+      "MISSING_LEVEL_REQUIREMENT": "Du hast nicht das benötigte Level, um diesen Gegenstand herzustellen.",
       "NOT_SPECIALIST": "Spezialist-Rotation, aber du bist kein Spezialist",
       "NO_INNER_QUIET": "Innere Ruhe-Kommando verwendet, ohne Innere Ruhe-Statuseffekt zu haben",
       "MISSING_STATS_REQUIREMENT": "Du hast nicht die benötigten Werte, um diesen Gegenstand zu bauen"
@@ -1413,6 +1416,9 @@
       "Refresh_data": "Daten aktualisieren",
       "Bite_times": "Zeit zum Anbeißen",
       "All_baits": "Kein Köder-Filter",
+      "Ranking": "Rangliste",
+      "Top_users": "Bestplatzierte",
+      "Your_ranking": "Dein Rang",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -1634,7 +1640,8 @@
     "Missing": "Fehlt",
     "Results": "Mögliche Rezepte",
     "Basket": "Korb",
-    "Add_to_basket": "Zum Korb hinzufügen",
+    "Add_to_basket": "Alle zum Warenkorb hinzufügen",
+    "Add_one_to_basket": "Eins zum Warenkorb hinzufügen",
     "Remove_from_basket": "Aus Korb entfernen",
     "Search": "Rezept suchen",
     "Generate_list": "Zur Liste hinzufügen",
@@ -1745,7 +1752,8 @@
     "No_optimizations": "Keine Optimierungen verfügbar",
     "CAN_BE_BOUGHT": {
       "Title": "Gegenstände, die mit Gil gekauft werden können",
-      "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen."
+      "Message": "Dieser Gegenstand kann bei NPCs mit Gil gekauft werden und erfordert keinen Ruf von Wilden Stämmen.",
+      "Max_price": "Höchstpreis"
     },
     "DUPLICATES": {
       "Title": "Gegenstände, die in mehreren Inventaren enthalten sind",
@@ -1878,5 +1886,78 @@
     "Folder_not_found": "Ordner nicht gefunden",
     "Your_folders": "Deine Ordner",
     "Favorite_folders": "Favoritenordner"
+  },
+  "TUTORIAL": {
+    "Start": "Tutorial für diese Seite beginnen",
+    "Next": "Weiter",
+    "Done": "Fertig",
+    "POPUP": {
+      "Title": "Willkommen bei FFXIV Teamcraft",
+      "Explanation": "Teamcraft hat ein kleines Tutorial, das erklärt, wie man die grundlegenden Funktionen nutzen kann. Dieses erscheint in Form von kleinen Fenstern und Pop-ups auf verschiedenen Seiten in der gesamten App.",
+      "Question": "Möchtest du diese Funktion aktivieren?",
+      "Can_be_changed_in_settings": "Kann in den Einstellungen ein- oder ausgeschaltet werden"
+    },
+    "APP": {
+      "Profile": "Bewege die Maus über deinen Namen, um den Profileditior zu öffnen und deine Stufen, Attribute und andere Dinge einzustellen."
+    },
+    "SEARCH": {
+      "Search_type": "Du kannst die Art der Daten, die du suchst, ändern (Gegenstand, Quest, Karte, Vorkommen, NPC, etc).",
+      "Share": "Verwende diesen Knopf, um die Suchergebnisse als teilbaren Link zu erhalten.",
+      "Filters": "Öffne dieses Fenster, um erweiterte Filter einzublenden, die dabei helfen, nach Attribut, Bonus, ilvl und mehr zu filtern"
+    },
+    "LIST_PANEL": {
+      "Share": "Klicke hier, um den Link dieser Liste zu kopieren und ihn einfach zu teilen",
+      "Open_list": "Klicke hier, um die Listendetails zu öffnen. Du kannst den Namen der Liste auch doppelklicken.",
+      "More": "Klicke auf dieses Menü, um die Liste umzubenennen, Berechtigungen zu verwalten und mehr."
+    },
+    "LIST": {
+      "HQ_mark": "Dieses Symbol bedeutet, dass dieses Element für das endgültiges Rezept benötigt wird und du es daher eventuell gerne in HQ haben möchtest.",
+      "Layout": "Du kannst die Anzeige komplett anpassen, die Felder ändern und die Art und Weise ändern, wie Daten gefiltert werden, indem du den Layout-Editor öffnest. Die Schaltfläche auf der linken Seite kann dabei als Schalter zum schnellen Layout-Wechsel benutzt werden.",
+      "Permissions": "Du kannst Berechtigungen bearbeiten, andere Benutzer hinzufügen, die Liste auf nur lesbar setzen, sie mit deiner FG teilen und vieles mehr, indem du den Berechtigungen-Editor öffnest.",
+      "Fill_with_inventory": "Du kannst alles, was in deinem Inventar ist, zu dieser Liste hinzufügen.",
+      "Pricing_mode_button": "Du kannst den Nutzen einer Liste einfach über den Preismodus einsehen.",
+      "More_actions_button": "Dies öffnet ein Menü mit vielen verschiedenen Aktionen für die aktuelle Listenzeile. Du kannst diese Aktionen mit Hilfe des Layout-Editors in Schaltflächen umwandeln.",
+      "Alarm_button": "Klicke hier, um einen Alarm für dieses Element zu erstellen, der dich benachrichtigt, wenn es auftritt."
+    },
+    "LISTS": {
+      "Merge": "Du kannst zwei Listen mit \"Zusammenfassen\" kombinieren.",
+      "Import": "Du kannst Listen von verschiedenen Websites wie Ariyala, Craftingaservce und Garlandtools importieren."
+    },
+    "DB": {
+      "Button": "Mit einem Klick auf diese Informationen-Schaltfläche öffnet sich die Datenbankseite mit Informationen über das, was der Schaltfläche am nächsten ist (Npc Name, Karte, Gegenstand, Monster, etc). Für Gegenstände öffnet ein Klick auf das Symbol ebenfalls die Datenbankseite."
+    },
+    "DESYNTH": {
+      "Job": "Wähle einen Beruf, den du aufstufen möchtest",
+      "Level": "Gib die Desynthese-Stufe ein (nicht die Stufe des Berufs)",
+      "Search": "Klicke auf suchen und es ist fertig!"
+    },
+    "RESET_TIMERS": {
+      "Toggle": "Aktiviere die Alarme für einen bestimmten Timer, indem du diesen Schalter auf AN setzt."
+    },
+    "SIMULATOR": {
+      "Character_configuration": "Konfiguriere hier deine Stufe und deine Attribute.",
+      "HQ_ingredients": "Gib hier HQ-Materialien an, um die Anfangsqualität zu bestimmen.",
+      "Consumables": "Konfiguriere hier Verbrauchsgegenstände und FG-Buffs.",
+      "Right_click_condition": "Klicke mit der rechten Maustaste auf eine Aktion, um seine Bedingung zu setzen (gut, ausgezeichnet, schlecht, Fehlschlag, usw.) und sag so die Ergebnisse voraus.",
+      "Save_as_new": "Klicke hier, um eine Kopie dieser Liste in deinem Account zu speichern.",
+      "Import_ingame_macro": "Klicke hier, um ein Makro aus dem Spiel zu importieren.",
+      "Generate_ingame_macro": "Klicke hier, um aus dieser Rotation ein Makro für das Spiel zu generieren.",
+      "Share_with_stats": "Klicke hier, um das Teilen-Popup zu öffnen, mit dessen Hilfe du deine Attribute und Verbrauchsgegenstände teilen kannst."
+    },
+    "ALARMS": {
+      "Settings": "Klicke hier, um die Einstellungen für Erinnerungen zu bearbeiten (Ton, Lautstärke, usw.).",
+      "Custom": "Klicke hier, um einen benutzerdefinierten Alarm zu erstellen.",
+      "Compact": "Klicke hier, um die Kompaktanzeige von Alarmen umzuschalten."
+    },
+    "COMMUNITY_ROTATIONS": {
+      "Text_filter": "Verwende dieses Eingabefeld, um eine Rotation unter Verwendung ihres Namens zu finden",
+      "Tags_filter": "Filtere mit dieser Auswahlbox nach Tags",
+      "Rlvl_filter": "Filtere mit dieser Auswahlbox nach Rezeptstufe",
+      "Durability_filter": "Filtere mit dieser Auswahlbox nach Belastbarkeit",
+      "Min_craftsmanship": "Filtert nach minimaler Kunstfertigkeit. Hier werden nur Rotationen gefunden, bei denen die benötigte Kunstfertigkeit kleiner als der von dir angegebene Wert ist.",
+      "Min_control": "Filtert nach minimaler Kontrolle. Hier werden nur Rotationen gefunden, bei denen die benötigte Kontrolle kleiner als der von dir angegebene Wert ist.",
+      "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
+      "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
+    }
   }
 }

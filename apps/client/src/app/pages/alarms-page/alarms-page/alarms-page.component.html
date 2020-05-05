@@ -10,11 +10,11 @@
                 nzType="primary">
           <i nz-icon nzType="folder-add"></i>
         </button>
-        <button (click)="showSettings()" nz-button nz-tooltip nzShape="circle" nzTitle="{{'Timer_options' | translate}}"
+        <button (click)="showSettings()" tutorialStep="TUTORIAL.ALARMS.Settings" tutorialStepIndex="0" nz-button nz-tooltip nzShape="circle" nzTitle="{{'Timer_options' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="setting"></i>
         </button>
-        <button (click)="newCustomAlarm()" nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
+        <button (click)="newCustomAlarm()" tutorialStep="TUTORIAL.ALARMS.Custom" tutorialStepIndex="1" nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="form"></i>
         </button>
@@ -35,7 +35,7 @@
             <nz-switch [(ngModel)]="settings.alarmsMuted"></nz-switch>
             <div>{{'Mute_alarms' | translate}} </div>
           </div>
-          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayoutAlign="flex-start center" tutorialStep="TUTORIAL.ALARMS.Compact" tutorialStepIndex="2" fxLayoutGap="5px">
             <nz-switch [(ngModel)]="settings.compactAlarms"></nz-switch>
             <div>{{'Compact_display' | translate}} </div>
           </div>

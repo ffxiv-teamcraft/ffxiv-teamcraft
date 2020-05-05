@@ -29,8 +29,8 @@ import { Memoized } from '../../../core/decorators/memoized';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
 import { HttpClient } from '@angular/common/http';
 import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
-import * as jobNames from '../../../core/data/sources/job-name.json';
-import * as jobAbbrs from '../../../core/data/sources/job-abbr.json';
+import jobNames from '../../../core/data/sources/job-name.json';
+import jobAbbrs from '../../../core/data/sources/job-abbr.json';
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 

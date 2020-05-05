@@ -29,7 +29,7 @@ import { ListModule } from './modules/list/list.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { TranslationsLoaderFactory } from './translations-loader';
@@ -100,6 +100,7 @@ import { GraphQLModule } from './graphql.module';
 import { ApolloInterceptor } from './apollo-interceptor';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
+import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -166,7 +167,6 @@ const nzConfig: NzConfig = {
       provide: NZ_CONFIG,
       useValue: nzConfig
     },
-    { provide: FirestoreSettingsToken, useValue: {} },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true }
@@ -216,6 +216,8 @@ const nzConfig: NzConfig = {
     LoadingScreenModule,
     GearsetsModule,
 
+    ChangelogPopupModule,
+
     AlarmsModule,
     AlarmsSidebarModule,
 
@@ -242,7 +244,15 @@ const nzConfig: NzConfig = {
     NgDragDropModule.forRoot(),
     NgxDnDModule,
 
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({}, {
+      runtimeChecks: {
+        strictStateSerializability: false,
+        strictActionSerializability: false,
+        strictStateImmutability: false,
+        strictActionImmutability: false,
+        strictActionWithinNgZone: true
+      }
+    }),
     !environment.production ? StoreDevtoolsModule.instrument({
       name: 'FFXIV Teamcraft'
     }) : [],

@@ -14,6 +14,7 @@
   "List_fork_in_progress": "De lijst naar uw account aan het kopiëren...",
   "Network_error_logged_out": "Er is een netwerkfout gedetecteerd, u bent uitgelogd. Als dit probleem zich blijft voordoen, neem dan contact op met Miu op de discord server.",
   "Hide_zone_duplicates": "Verberg dubbele zones (items die zich in meerdere zones bevinden worden maar één keer getoond)",
+  "Patch_notes": "{{version}} changes",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account is al in gebruik",
     "auth/email-already-in-use": "E-mailadres is al in gebruik",
@@ -365,6 +366,7 @@
     "Install_update": "Install update",
     "Preferred_copy_type": "Preferred copy type",
     "Auto_open_in_desktop": "Open links in desktop app when it is started",
+    "Auto_download_update": "Download update when it's available",
     "Account": "Account",
     "Reset_password": "Reset password",
     "Reset_password_warning": "Are you sure you want to reset your password?",
@@ -410,6 +412,7 @@
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
+    "Enable_tutorials": "Enable tutorial system",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -991,7 +994,7 @@
       "UNSAFE_ACTION": "Unsafe action with safe mode enabled",
       "DURABILITY_REACHED_ZERO": "Durability reached 0 before progression reached max",
       "NOT_ENOUGH_CP": "Not enough CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level",
+      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
       "NOT_SPECIALIST": "Specialist rotation but you're not specialist",
       "NO_INNER_QUIET": "Tried to use Inner Quiet action without Inner Quiet buff enabled",
       "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
@@ -1413,6 +1416,9 @@
       "Refresh_data": "Refresh data",
       "Bite_times": "Bite times",
       "All_baits": "No bait filter",
+      "Ranking": "Ranking",
+      "Top_users": "Top rankings",
+      "Your_ranking": "Your ranking",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -1634,7 +1640,8 @@
     "Missing": "Missing",
     "Results": "Possible crafts",
     "Basket": "Basket",
-    "Add_to_basket": "Add to basket",
+    "Add_to_basket": "Add all to basket",
+    "Add_one_to_basket": "Add one to basket",
     "Remove_from_basket": "Remove from basket",
     "Search": "Find recipes",
     "Generate_list": "Add to list",
@@ -1745,7 +1752,8 @@
     "No_optimizations": "No optimizations available",
     "CAN_BE_BOUGHT": {
       "Title": "Items that can be bought with gil",
-      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation."
+      "Message": "This item can be bought from NPCs with gil and does not require beast tribe reputation.",
+      "Max_price": "Maximum price"
     },
     "DUPLICATES": {
       "Title": "Items that are duplicated across multiple containers",
@@ -1878,5 +1886,78 @@
     "Folder_not_found": "Folder not found",
     "Your_folders": "Your folders",
     "Favorite_folders": "Favorite folders"
+  },
+  "TUTORIAL": {
+    "Start": "Start tutorial for this page",
+    "Next": "Next",
+    "Done": "Done",
+    "POPUP": {
+      "Title": "Welcome to FFXIV Teamcraft",
+      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Question": "Would you like to enable this functionality?",
+      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+    },
+    "APP": {
+      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+    },
+    "SEARCH": {
+      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
+      "Share": "Use this button to get your search results as a shareable link.",
+      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+    },
+    "LIST_PANEL": {
+      "Share": "Click here to copy a link to this list, to easily share it",
+      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
+      "More": "Click this menu to rename the list, manage permissions, and more."
+    },
+    "LIST": {
+      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
+      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
+      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
+      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
+      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
+      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
+      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+    },
+    "LISTS": {
+      "Merge": "You can merge two lists using the merge button.",
+      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+    },
+    "DB": {
+      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+    },
+    "DESYNTH": {
+      "Job": "Select the job you want to level",
+      "Level": "Input the desynth level (not the actual job level)",
+      "Search": "Click search, and it's done !"
+    },
+    "RESET_TIMERS": {
+      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+    },
+    "SIMULATOR": {
+      "Character_configuration": "Configure your level and your stats here.",
+      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
+      "Consumables": "Configure consumables and FC buffs here.",
+      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
+      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Import_ingame_macro": "Click here to import from ingame macro.",
+      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
+      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+    },
+    "ALARMS": {
+      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
+      "Custom": "Click here to create a custom alarm.",
+      "Compact": "Click here to toggle alarms' compact display."
+    },
+    "COMMUNITY_ROTATIONS": {
+      "Text_filter": "Use this input field to find a rotation using its name",
+      "Tags_filter": "Filter by tags using this select box",
+      "Rlvl_filter": "Filter by recipe level using this select box",
+      "Durability_filter": "Filter by durability using this select box",
+      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
+      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
+      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+    }
   }
 }

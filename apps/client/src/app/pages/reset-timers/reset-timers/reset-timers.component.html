@@ -1,17 +1,16 @@
 <div class="container">
-  <nz-list *ngIf="timers$ | async as timers" [nzDataSource]="timers" [nzRenderItem]="timerRef">
-    <ng-template #timerRef let-timer>
-      <nz-list-item [nzActions]="[toggle]" [nzContent]="timer.time | timer:true">
-        <nz-list-item-meta
-          [nzDescription]="('ALARMS.REALTIME.' + timer.label + '_DESCRIPTION') | translate"
-          [nzTitle]="('ALARMS.REALTIME.' + timer.label) | translate"
-          nzAvatar="./assets/icons/notice.png">
-        </nz-list-item-meta>
-        <ng-template #toggle>
-          <nz-switch [(ngModel)]="timer.enabled"
-                     (ngModelChange)="setEnabled(timer.label, $event)"></nz-switch>
-        </ng-template>
-      </nz-list-item>
-    </ng-template>
+  <nz-list *ngIf="timers$ | async as timers">
+    <nz-list-item [nzActions]="[toggle]" *ngFor="let timer of timers; trackBy: trackByTimer" [nzContent]="timer.time | timer:true">
+      <nz-list-item-meta
+        [nzDescription]="('ALARMS.REALTIME.' + timer.label + '_DESCRIPTION') | translate"
+        [nzTitle]="('ALARMS.REALTIME.' + timer.label) | translate"
+        nzAvatar="./assets/icons/notice.png">
+      </nz-list-item-meta>
+      <ng-template #toggle>
+        <nz-switch [(ngModel)]="timer.enabled"
+                   tutorialStep="TUTORIAL.RESET_TIMERS.Toggle"
+                   (ngModelChange)="setEnabled(timer.label, $event)"></nz-switch>
+      </ng-template>
+    </nz-list-item>
   </nz-list>
 </div>

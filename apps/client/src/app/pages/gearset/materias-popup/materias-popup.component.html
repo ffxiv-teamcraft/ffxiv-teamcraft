@@ -68,7 +68,11 @@
   <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="10px">
     <button nz-button nzType="primary" (click)="optimize()">{{'GEARSETS.Optimize_materias' | translate}}</button>
     <div fxFlex="1 1 auto"></div>
-    <button nz-button nzType="primary" (click)="apply()">{{'COMMON.Apply' | translate}}</button>
-    <button nz-button nzType="default" (click)="cancel()">{{'Cancel' | translate}}</button>
+    <div>
+      <button nz-button nzType="primary" (click)="apply()">{{'COMMON.Apply' | translate}}</button>
+    </div>
+    <div>
+      <button nz-button nzType="default" (click)="cancel()">{{'Cancel' | translate}}</button>
+    </div>
   </div>
 </div>

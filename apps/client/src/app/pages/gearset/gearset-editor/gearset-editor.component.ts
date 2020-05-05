@@ -70,17 +70,26 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     tap(gearset => {
       // We're removing Spearfishing gig from the lowest ilvl filter.
       const ilvls = this.gearsetsFacade.toArray(gearset).filter(piece => piece.itemId !== 17726).map(piece => this.lazyData.data.ilvls[piece.itemId]);
-      const lowestIlvl = Math.min(...ilvls);
-      const highestIlvl = Math.max(...ilvls);
+      let lowestIlvl = Math.min(...ilvls);
+      let highestIlvl = Math.max(...ilvls);
+      let usedDefaultValues = false;
+      if (lowestIlvl === Infinity) {
+        lowestIlvl = 460;
+        usedDefaultValues = true;
+      }
+      if (highestIlvl === -Infinity) {
+        highestIlvl = 999;
+        usedDefaultValues = true;
+      }
       let didChange = false;
-      if (!this.appliedFiltersFromGearset) {
+      if (!this.appliedFiltersFromGearset && !usedDefaultValues) {
         if (lowestIlvl !== Infinity) {
           this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
           this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
         }
         didChange = true;
         this.appliedFiltersFromGearset = true;
-      } else {
+      } else if (!usedDefaultValues) {
         if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
           this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
           didChange = true;

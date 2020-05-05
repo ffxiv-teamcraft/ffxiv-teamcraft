@@ -22,7 +22,6 @@ import { PipesModule } from '../../pipes/pipes.module';
     PipesModule
   ],
   declarations: [ItemPickerComponent],
-  entryComponents: [ItemPickerComponent],
   providers: [
     ItemPickerService
   ]

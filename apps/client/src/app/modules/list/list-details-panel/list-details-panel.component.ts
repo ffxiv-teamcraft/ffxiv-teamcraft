@@ -248,40 +248,60 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     const tradeSources = this.getData(row, DataType.TRADE_SOURCES);
     const gatheredBy = this.getData(row, DataType.GATHERED_BY);
     const drops = this.getData(row, DataType.DROPS);
+    const positions = [];
     if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
-      return {
+      positions.push({
         x: vendor.coords.x,
         y: vendor.coords.y,
         type: 'Vendor'
-      };
+      });
     }
     if (tradeSources.some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && npc.zoneId === zoneBreakdownRow.zoneId))) {
       const trade = tradeSources.find(d => d.npcs.some(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId));
       const npc = trade.npcs.find(n => n.coords && n.coords.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
-      return {
+      positions.push({
         x: npc.coords.x,
         y: npc.coords.y,
         type: 'Trade'
-      };
+      });
     }
     if ((gatheredBy.nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId)) {
       const node = gatheredBy.nodes.find(n => n.coords !== undefined && n.coords.length > 0 && n.zoneid === zoneBreakdownRow.zoneId);
-      return {
+      positions.push({
         x: node.coords[0],
         y: node.coords[1],
         type: 'Gathering',
         gatheringType: node.type
-      };
+      });
     }
     if (drops.some(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId)) {
       const drop = drops.find(d => d.position && (d.position.x !== undefined) && d.position.zoneid === zoneBreakdownRow.zoneId);
-      return {
+      positions.push({
         x: drop.position.x,
         y: drop.position.y,
         type: 'Hunting'
-      };
+      });
     }
+    const isGathering = this.displayRow.filterChain.indexOf('IS_GATHERING') > -1;
+    const isVendor = this.displayRow.filterChain.indexOf('CAN_BE_BOUGHT') > -1;
+    const isTrade = this.displayRow.filterChain.indexOf('TRADE') > -1;
+    const isHunting = this.displayRow.filterChain.indexOf('_DROP') > -1;
+    const preferredPosition = positions.find(p => {
+      if (isGathering) {
+        return p.type === 'Gathering';
+      }
+      if (isVendor) {
+        return p.type === 'Vendor';
+      }
+      if (isTrade) {
+        return p.type === 'Trade';
+      }
+      if (isHunting) {
+        return p.type === 'Hunting';
+      }
+    });
+    return preferredPosition || positions[0];
   }
 
   public generateTiers(reverse = false): void {

@@ -12,7 +12,7 @@
         </ng-container>
         <div fxFlex="1 1 auto"></div>
         <button nz-button nzShape="circle" nzType="primary"
-                nz-tooltip [nzTitle]="'GEARSETS.Use_in_simulator' | translate"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Use_in_simulator' | translate"
                 (click)="openSimulator(gearset)"
                 *ngIf="gearset.job >= 8 && gearset.job <=15">
           <i class="companion-svg link-icon">
@@ -20,29 +20,29 @@
           </i>
         </button>
         <button nz-button nzShape="circle" nzType="primary"
-                nz-tooltip [nzTitle]="'GEARSETS.Generate_list' | translate"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Generate_list' | translate"
                 (click)="generateList(gearset)">
           <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle" nzType="primary"
-                nz-tooltip [nzTitle]="'GEARSETS.Compare_gearset' | translate"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Compare_gearset' | translate"
                 (click)="compare(gearset)">
           <i nz-icon nzType="diff" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle" nzType="primary"
-                nz-tooltip [nzTitle]="'GEARSETS.Clone_gearset' | translate"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Clone_gearset' | translate"
                 (click)="clone(gearset)">
           <i nz-icon nzType="copy" nzTheme="outline"></i>
         </button>
         <button nz-button nzShape="circle" nzType="primary"
-                nz-tooltip [nzTitle]="'GEARSETS.Copy_as_text' | translate"
+                nz-tooltip [nzTooltipTitle]="'GEARSETS.Copy_as_text' | translate"
                 ngxClipboard
                 [cbContent]="getString(gearset)"
                 (cbOnSuccess)="afterStringCopy()">
           <i nz-icon nzType="snippets" nzTheme="outline"></i>
         </button>
         <a nz-button nzShape="circle" nzType="primary"
-           nz-tooltip [nzTitle]="'GEARSETS.Edit_gearset' | translate"
+           nz-tooltip [nzTooltipTitle]="'GEARSETS.Edit_gearset' | translate"
            routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="permissionLevel >= 30">
           <i nz-icon nzType="edit"></i>
         </a>
@@ -52,10 +52,17 @@
         <div fxLayout="row" fxLayoutAlign="space-evenly flex-start" fxLayout.lt-md="column" fxLayoutAlign.lt-md="flex-start center">
           <div fxFlexOrder="1" fxLayout="row" fxLayoutAlign="center center">
             <div fxLayout="column">
-              <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[0]" [verbose]="true"></app-gearset-display-slot>
+              <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[0]"
+                                        [verbose]="true"></app-gearset-display-slot>
             </div>
           </div>
-          <div [fxFlexOrder]="2 | ifMobile: 3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <div fxFlexOrder="2" fxLayout="row" fxLayoutAlign="center center">
+            <div fxLayout="column">
+              <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[1]"
+                                        [verbose]="true"></app-gearset-display-slot>
+            </div>
+          </div>
+          <div fxFlexOrder="3" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="gearset.job < 8 || gearset.job > 18">
               <nz-select [ngModel]="tribe$ | async" (ngModelChange)="tribe$.next($event)" [style.width.px]="150">
                 <nz-option-group *ngFor="let row of tribesMenu" [nzLabel]="row.race | raceName | i18n">
@@ -75,12 +82,12 @@
                 </div>
               </nz-option>
             </nz-select>
-            <div fxLayout="row" fxLayoutAlign="center center">
-              <table>
+            <div fxLayout="row" fxLayoutAlign="center center" class="full-width-table">
+              <table fxFlex="1 1 auto">
                 <thead>
                 <tr>
                   <th class="table-cell">{{'GEARSETS.Stat_name' | translate}}</th>
-                  <th class="table-cell">{{'GEARSETS.Value' | translate}}</th>
+                  <th class="table-cell amount">{{'GEARSETS.Value' | translate}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -95,14 +102,9 @@
                 </tbody>
               </table>
             </div>
-            <app-stats-popup [gearset]="gearset" [food]="food$ | async" [level]="level$ | async" [tribe]="tribe$ | async"></app-stats-popup>
-            <app-materias-needed-popup [gearset]="gearset" [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
-            <app-gearset-cost-popup [gearset]="gearset"></app-gearset-cost-popup>
-          </div>
-          <div [fxFlexOrder]="3 | ifMobile: 2" fxLayout="row" fxLayoutAlign="center center">
-            <div fxLayout="column">
-              <app-gearset-display-slot *ngFor="let row of gearsetSlotProperties" [gearset]="gearset" [propertyName]="row[1]" [verbose]="true"></app-gearset-display-slot>
-            </div>
+            <app-stats-popup class="full-width-table" [gearset]="gearset" [food]="food$ | async" [level]="level$ | async" [tribe]="tribe$ | async"></app-stats-popup>
+            <app-materias-needed-popup class="full-width-table" [gearset]="gearset" [(includeAllTools)]="includeAllTools"></app-materias-needed-popup>
+            <app-gearset-cost-popup class="full-width-table" [gearset]="gearset"></app-gearset-cost-popup>
           </div>
         </div>
       </div>

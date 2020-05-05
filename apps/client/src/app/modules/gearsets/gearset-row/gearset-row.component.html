@@ -1,7 +1,7 @@
 <div class="gearset-row" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
   <div [innerHTML]="gearset.job | jobUnicode" class="companion-svg job-icon"></div>
   <div>{{gearset.name}}</div>
-  <button nz-button nzSize="small" nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTitle]="'GEARSETS.Rename_gearset' | translate">
+  <button nz-button nzSize="small" nzShape="circle" (click)="rename(gearset)" nz-tooltip [nzTooltipTitle]="'GEARSETS.Rename_gearset' | translate">
     <i nz-icon nzType="edit"></i>
   </button>
   <div fxFlex="1 1 auto"></div>
@@ -11,7 +11,7 @@
           ngxClipboard nz-button nz-tooltip nzType="primary">
     <i nz-icon nzType="share-alt"></i>
   </button>
-  <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTitle]="'GEARSETS.View_gearset' | translate">
+  <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate">
     <i nz-icon nzType="eye" nzTheme="outline"></i>
   </a>
   <a nz-button routerLink="/gearset/{{gearset.$key}}/edit" *ngIf="gearset.authorId === userId" nzShape="circle" nzType="primary" nz-tooltip
@@ -20,7 +20,7 @@
   </a>
   <button nz-button *ngIf="gearset.authorId === userId" nzType="danger"
           nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzShape="circle"
-          nz-tooltip [nzTitle]="'GEARSETS.Delete_gearset' | translate"
+          nz-tooltip [nzTooltipTitle]="'GEARSETS.Delete_gearset' | translate"
           (nzOnConfirm)="deleteGearset(gearset.$key)">
     <i nz-icon nzType="delete" nzTheme="outline"></i>
   </button>

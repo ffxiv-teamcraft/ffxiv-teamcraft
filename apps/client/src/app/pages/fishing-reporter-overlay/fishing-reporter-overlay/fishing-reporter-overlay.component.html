@@ -31,7 +31,7 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Spot' | translate}}</div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" *ngIf="state.spot; else unknown">
-          <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTitle]="'COMMON.Open_in_main_window' | translate"
+          <button nz-button nzShape="circle" nzSize="small" nz-tooltip [nzTooltipTitle]="'COMMON.Open_in_main_window' | translate"
                   (click)="openSpotInMainWindow(state.spot)">
             <i nz-icon nzType="info"></i>
           </button>
@@ -63,7 +63,7 @@
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'DB.FISH.OVERLAY.Statuses' | translate}}</div>
         <div *ngIf="state.statuses; else unknown" fxLayout="row" fxLayoutGap="5px">
-          <img *ngFor="let status of state.statuses" src="{{status | statusIcon | xivapiIcon}}" nz-tooltip [nzTitle]="status | statusName | i18n"
+          <img *ngFor="let status of state.statuses" src="{{status | statusIcon | xivapiIcon}}" nz-tooltip [nzTooltipTitle]="status | statusName | i18n"
                alt="{{status}}">
           <span *ngIf="state.statuses.length === 0">
             {{'DB.FISH.OVERLAY.No_statuses' | translate}}

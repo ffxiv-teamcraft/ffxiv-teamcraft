@@ -4,7 +4,7 @@ import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { NzDrawerRef } from 'ng-zorro-antd';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
-import { debounceTime, filter, map, shareReplay, first } from 'rxjs/operators';
+import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 
@@ -56,7 +56,7 @@ export class ListPickerDrawerComponent {
                   return list;
                 })
                 .filter(l => l !== undefined)
-                .filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
+                .filter(l => !l.notFound && !l.archived && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf((query || '').toLowerCase()) > -1)
             };
           })
           .sort((a, b) => a.workshop.index - b.workshop.index);
@@ -71,7 +71,7 @@ export class ListPickerDrawerComponent {
         // lists category shows only lists that have no workshop.
         return lists
           .filter(l => {
-            return workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
+            return !l.archived && workshops.find(w => w.workshop.listIds.indexOf(l.$key) > -1) === undefined;
           })
           .filter(l => !l.notFound && !l.isTooLarge() && l.name !== undefined && l.name.toLowerCase().indexOf(query.toLowerCase()) > -1)
           .map(l => {

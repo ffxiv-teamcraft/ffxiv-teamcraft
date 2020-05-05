@@ -14,7 +14,7 @@
                     nz-dropdown
                     nz-tooltip
                     nzShape="circle">
-              <i nz-icon nzType="interation"></i>
+              <i nz-icon nzType="format-painter" nzTheme="outline"></i>
             </button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
               <ul *ngIf="selectedLayout$ | async as selectedLayout" nz-menu>
@@ -26,12 +26,16 @@
           </ng-container>
           <button (click)="openLayoutOptions()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Title' | translate" nz-button
                   nz-tooltip nzShape="circle"
+                  tutorialStep="TUTORIAL.LIST.Layout"
+                  tutorialStepIndex="0"
                   nzType="primary">
             <i nz-icon nzType="layout"></i>
           </button>
           <button (click)="openPermissionsPopup(list)" *ngIf="!list.offline"
                   [disabled]="(permissionLevel$ | async) < 40" [nzTitle]="'PERMISSIONS.Title' | translate" nz-button
                   nz-tooltip
+                  tutorialStep="TUTORIAL.LIST.Permissions"
+                  tutorialStepIndex="1"
                   nzShape="circle" nzType="primary">
             <i nz-icon nzType="lock"></i>
           </button>
@@ -70,6 +74,8 @@
           </div>
           <button nz-button nzType="primary" nzShape="circle" (click)="fillWithInventory(list)" nz-tooltip
                   *ngIf="platform.isDesktop()"
+                  tutorialStep="TUTORIAL.LIST.Fill_with_inventory"
+                  tutorialStepIndex="2"
                   [nzTitle]="'LIST_DETAILS.Fill_with_inventory' | translate">
             <i nz-icon nzType="shopping" nzTheme="outline"></i>
           </button>
@@ -102,8 +108,10 @@
             </button>
             <button (click)="pricingMode = true" [disabled]="(permissionLevel$ | async) < 40"
                     [nzTitle]="'Pricing_mode' | translate" nz-button
+                    tutorialStep="TUTORIAL.LIST.Pricing_mode_button"
+                    tutorialStepIndex="3"
                     nz-tooltip nzShape="circle">
-              <i iconfont="icon-dollar" nz-icon></i>
+              <i nzIconfont="icon-dollar" nz-icon></i>
             </button>
             <button (click)="openInventorySynthesisPopup(list)" [nzTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
                     *ngIf="platform.isDesktop()"
@@ -121,7 +129,7 @@
                     [nzTitle]="'LIST.History' | translate" nz-button
                     nz-tooltip
                     nzShape="circle">
-              <i class="material-icons">history</i>
+              <i nz-icon nzType="field-time" nzTheme="outline"></i>
             </button>
           </div>
         </div>

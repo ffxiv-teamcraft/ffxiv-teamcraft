@@ -17,6 +17,7 @@ import { ConsolidateStacks } from '../optimizations/consolidate-stacks';
 import { UnwantedMaterials } from '../optimizations/unwanted-materials';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { CanBeBought } from '../optimizations/can-be-bought';
 
 @Component({
   selector: 'app-inventory-optimizer',
@@ -127,6 +128,18 @@ export class InventoryOptimizerComponent {
   public set stackSizeThreshold(size: number) {
     if (size > 0) {
       localStorage.setItem(HasTooFew.THRESHOLD_KEY, size.toString());
+      this.loading = true;
+      this.resultsReloader$.next(null);
+    }
+  }
+
+  public get maximumVendorPrice(): number {
+    return +(localStorage.getItem(CanBeBought.MAXIMUM_PRICE_KEY) || 50000);
+  }
+
+  public set maximumVendorPrice(price: number) {
+    if (price > 0) {
+      localStorage.setItem(CanBeBought.MAXIMUM_PRICE_KEY, price.toString());
       this.loading = true;
       this.resultsReloader$.next(null);
     }

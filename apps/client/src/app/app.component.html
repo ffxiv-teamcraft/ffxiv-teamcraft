@@ -7,19 +7,26 @@
         <a class="logo" routerLink="/">
           {{'FFXIV Teamcraft' | ifMobile:'TC'}} <i>v{{version}}</i>
         </a>
-        <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang" class="language-swap"
-                   fxFlex="0 0 auto"
-                   fxLayout="row">
-          <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
-                     [nzValue]="locale"></nz-option>
-        </nz-select>
+        <div class="language-swap">
+          <nz-select (ngModelChange)="use($event)" *ngIf="true | ifMobile: false" [ngModel]="translate.currentLang"
+                     fxFlex="0 0 auto"
+                     fxLayout="row">
+            <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                       [nzValue]="locale"></nz-option>
+          </nz-select>
+        </div>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
         </div>
-        <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTitle]="'UPDATE.Downloading_update' | translate">
+        <div>
+          <i nz-icon nzType="question-circle" nzTheme="outline"
+             (click)="startTutorial()" class="tutorial-start"
+             nz-tooltip [nzTitle]="'TUTORIAL.Start' | translate"></i>
+        </div>
+        <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
         </div>
         <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
@@ -48,7 +55,7 @@
                 class="ant-menu-item"
                 nzPlacement="bottom"
                 (contextmenu)="$event.preventDefault();listsFacade.unpin()"
-                nz-tooltip [nzTitle]="'LIST.Go_to_pinned' | translate"
+                nz-tooltip [nzTooltipTitle]="'LIST.Go_to_pinned' | translate"
                 routerLink="/list/{{pinnedList}}">
               <i nz-icon nzType="pushpin" nzTheme="outline"></i>
             </li>
@@ -63,7 +70,7 @@
           <li *ngIf="!platformService.isDesktop()" [nzTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom">
             <a (click)="openedApp()" [href]="desktopUrl">
-              <i iconfont="icon-openinapp" nz-icon></i>
+              <i nzIconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
           <li *ngIf="platformService.isDesktop()" [nzTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
@@ -115,15 +122,16 @@
                 </span>
               </ng-template>
               <ng-template #userLoggedIn>
-                <ng-container *ngIf="character$ | async as character; else emptyCharacter">
+                <div *ngIf="character$ | async as character; else emptyCharacter"
+                     tutorialStep="TUTORIAL.APP.Profile" tutorialStepIndex="999" tutorialStepAlign="bottom">
                   <app-user-avatar *ngIf="character.ID > 0; else krAvatar" [flex]="false" [ignoreVerification]="true"
-                                  [userId]="userId$ | async"
-                                  [width]="32"></app-user-avatar>
+                                   [userId]="userId$ | async"
+                                   [width]="32"></app-user-avatar>
                   <ng-template #krAvatar>
                     <nz-avatar [nzText]="character.Name[0]"></nz-avatar>
                   </ng-template>
                   {{character.Name | ifMobile:''}}
-                </ng-container>
+                </div>
               </ng-template>
               <ng-template #emptyCharacter>
                 <span>
@@ -301,7 +309,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/log-tracker"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-book" nz-icon></i>
+                      <i nzIconfont="icon-book" nz-icon></i>
                       <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
                   </span>
                 </a>
@@ -315,7 +323,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/desynth"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-vectorcombine" nz-icon></i>
+                      <i nzIconfont="icon-vectorcombine" nz-icon></i>
                       <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
                   </span>
                 </a>
@@ -336,7 +344,7 @@
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/custom-items"
                    routerLinkActive="ant-menu-item-selected">
                   <span>
-                      <i iconfont="icon-custom" nz-icon></i>
+                      <i nzIconfont="icon-custom" nz-icon></i>
                       <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
                   </span>
                 </a>
@@ -380,23 +388,23 @@
           <div fxFlex="1 1 auto"></div>
 
           <div [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons" *ngIf="desktop">
-            <button nz-button nzShape="circle" nz-tooltip [nzTitle]="'ALARMS.Open_alarms_overlay' | translate" (click)="openAlarmsOverlay()">
+            <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate" (click)="openAlarmsOverlay()">
               <i nz-icon nzType="bell"></i>
             </button>
             <button nz-button nzShape="circle"
                     *ngIf="ipc.machinaToggle"
-                    nz-tooltip [nzTitle]="'DB.FISH.OVERLAY.Open' | translate"
+                    nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
                     (click)="openFishingOverlay()" class="button-with-img">
               <img src="./assets/icons/classjob/fisher.png" alt="">
             </button>
             <button nz-button nzShape="circle"
                     *ngIf="ipc.machinaToggle && mappy.available"
-                    nz-tooltip nzTitle="Open mappy overlay"
+                    nz-tooltip nzTooltipTitle="Open mappy overlay"
                     (click)="openMappyOverlay()">
               <i nz-icon nzType="scan" nzTheme="outline"></i>
             </button>
             <button nz-button nzShape="circle"
-                    nz-tooltip [nzTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
+                    nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
                     (click)="openListPanelOverlay()">
               <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
             </button>

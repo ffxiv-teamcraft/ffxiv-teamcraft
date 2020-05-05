@@ -4,6 +4,9 @@
       <button (click)="saveRotationAsNew(rotation)" *ngIf="rotation.$key !== undefined"
               [nzTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
               nz-tooltip
+              tutorialStep="TUTORIAL.SIMULATOR.Save_as_new"
+              tutorialStepAlign="right"
+              tutorialStepIndex="0"
               nzShape="circle" nzType="primary">
         <i nz-icon nzType="copy"></i>
       </button>
@@ -40,6 +43,9 @@
       </button>
       <button (click)="importFromXIVMacro()" [nzTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
               nzShape="circle"
+              tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
+              tutorialStepAlign="right"
+              tutorialStepIndex="1"
               nzType="primary">
         <i nz-icon nzType="select"></i>
       </button>
@@ -48,7 +54,10 @@
               nz-button
               nz-tooltip
               nzShape="circle"
-              nzType="primary">
+              tutorialStep="TUTORIAL.SIMULATOR.Generate_ingame_macro"
+              tutorialStepAlign="right"
+              tutorialStepIndex="2"
+              nzType="primary" class="text-icon">
         <span class="text-icon">XIV</span>
       </button>
       <button (click)="openMinStatsPopup(simulation)" *ngIf="simulation$ | async as simulation"
@@ -70,18 +79,21 @@
                 *ngIf="rotation.$key"
                 [nzShape]="'circle'"
                 [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
+                tutorialStepAlign="right"
+                tutorialStepIndex="3"
                 [nzType]="'primary'"
                 nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
       </ng-container>
-<!--      <button (click)="openRotationSolver()" [nzShape]="'circle'"-->
-<!--              [nzTitle]="'SIMULATOR.Rotation_solver' | translate"-->
-<!--              [nzType]="'primary'"-->
-<!--              nz-button-->
-<!--              nz-tooltip>-->
-<!--        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>-->
-<!--      </button>-->
+      <!--      <button (click)="openRotationSolver()" [nzShape]="'circle'"-->
+      <!--              [nzTitle]="'SIMULATOR.Rotation_solver' | translate"-->
+      <!--              [nzType]="'primary'"-->
+      <!--              nz-button-->
+      <!--              nz-tooltip>-->
+      <!--        <i nz-icon nzTheme="outline" nzType="reconciliation"></i>-->
+      <!--      </button>-->
       <ng-container *ngIf="tips$ | async as tips">
         <nz-badge [nzCount]="tips.length">
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
@@ -129,7 +141,7 @@
         <button (click)="changeRotation()" [nzTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small">
-          <i iconfont="icon-exchange" nz-icon></i>
+          <i nzIconfont="icon-exchange" nz-icon></i>
         </button>
         <div [nzTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px"
@@ -142,12 +154,14 @@
         </div>
       </div>
       <nz-collapse>
-        <nz-collapse-panel [nzActive]="custom || (loggedIn$ | async) === false"
+        <nz-collapse-panel [(nzActive)]="settings.configurationPanelExpanded"
                            [nzHeader]="'SIMULATOR.Configuration' | translate">
           <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-evenly"
                fxLayoutAlign.lt-md="center center"
                fxLayoutGap="16px" fxLayoutGap.lt-md="16px">
-            <div fxFlex="1 0 30%" fxLayout="column">
+            <div fxFlex="1 0 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.Character_configuration"
+                 tutorialStepIndex="4">
               <h3>{{'SIMULATOR.CONFIGURATION.Job' | translate}}</h3>
               <nz-select (ngModelChange)="customJob$.next($event)" [ngModel]="(stats$ | async)?.jobId"
                          [nzDisabled]="!custom" class="job-selector">
@@ -219,16 +233,22 @@
                 </div>
               </form>
               <div class="apply" fxLayout="column" fxLayoutGap="5px">
-                <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
-                  {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
-                </button>
-                <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
-                  {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
-                </button>
+                <div>
+                  <button form="ngForm" nz-button nzBlock nzType="primary" type="submit">
+                    {{'SIMULATOR.CONFIGURATION.Apply_stats' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="saveSet()" *ngIf="loggedIn$ | async" [disabled]="savedSet" nz-button nzBlock>
+                    {{'SIMULATOR.CONFIGURATION.Save_on_profile' | translate}}
+                  </button>
+                </div>
               </div>
             </div>
             <div *ngIf="!custom && hqIngredientsData$ | async as hqIngredientsData; else hqInput" class="ingredients"
-                 fxFlex="1 1 30%" fxLayout="column">
+                 fxFlex="1 1 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.HQ_ingredients"
+                 tutorialStepIndex="5">
               <h3>
                 {{'SIMULATOR.CONFIGURATION.Ingredients' | translate}}
                 <span *ngIf="startingQuality$ | async as startingQuality">({{startingQuality | floor}})</span>
@@ -246,13 +266,15 @@
                             ngxClipboard>{{ingredient.id | itemName | i18n}}</span>
                     </ng-template>
                     <ng-template #content>
-                      <nz-form-control>
-                        <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
-                          <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
-                                           [nzMin]="0"
-                                           class="input-number-with-addon"></nz-input-number>
-                        </nz-input-group>
-                      </nz-form-control>
+                      <div>
+                        <nz-form-control>
+                          <nz-input-group nzAddOnAfter="/ {{ingredient.max}}">
+                            <nz-input-number [(ngModel)]="ingredient.amount" [nzMax]="ingredient.max"
+                                             [nzMin]="0"
+                                             class="input-number-with-addon"></nz-input-number>
+                          </nz-input-group>
+                        </nz-form-control>
+                      </div>
                     </ng-template>
                   </nz-list-item>
                 </ng-template>
@@ -277,7 +299,9 @@
                 </nz-form-control>
               </div>
             </ng-template>
-            <div *ngIf="crafterStats$ | async as crafterStats" fxFlex="1 0 30%" fxLayout="column">
+            <div *ngIf="crafterStats$ | async as crafterStats" fxFlex="1 0 30%" fxLayout="column"
+                 tutorialStep="TUTORIAL.SIMULATOR.Consumables"
+                 tutorialStepIndex="6">
 
               <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
               <div>
@@ -361,15 +385,19 @@
                 </div>
               </div>
               <div class="apply" fxFlexAlign="flex-end flex-end" fxLayout="column" fxLayoutGap="5px">
-                <button
-                  (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-                  nz-button nzBlock
-                  nzType="primary">
-                  {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
-                </button>
-                <button (click)="saveDefaultConsumables()" nz-button nzBlock>
-                  {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
-                </button>
+                <div>
+                  <button
+                    (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
+                    nz-button nzBlock
+                    nzType="primary">
+                    {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
+                  </button>
+                </div>
+                <div>
+                  <button (click)="saveDefaultConsumables()" nz-button nzBlock>
+                    {{'SIMULATOR.CONFIGURATION.Save_consumables' | translate}}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -408,7 +436,7 @@
                   <button (click)="changeRecipe(rotation)" [nzTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
                           nz-tooltip nzShape="circle"
                           nzSize="small">
-                    <i iconfont="icon-exchange" nz-icon></i>
+                    <i nzIconfont="icon-exchange" nz-icon></i>
                   </button>
                 </div>
                 <div>{{resultData.simulation.recipe.lvl}} {{getStars(resultData.simulation.recipe.stars)}}</div>
@@ -437,7 +465,7 @@
                         [nzTitle]="'SIMULATOR.Toggle_snapshot_mode' | translate"
                         [nzType]="snapshotMode?'primary':'default'"
                         nz-button nz-tooltip>
-                  <i [iconfont]="'icon-debug'" nz-icon></i>
+                  <i [nzIconfont]="'icon-debug'" nz-icon></i>
                 </button>
               </div>
             </div>
@@ -557,6 +585,8 @@
                  [cdkDragData]="step.action" [cdkDragDisabled]="!step.action.canBeMoved(i)"
                  class="action-container rotation-action" cdkDrag>
               <app-action (actionclick)="removeAction(i)"
+                          tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
+                          tutorialStepIndex="6"
                           (stepstate)="setState(i, $event)"
                           [action]="step.action"
                           [cpCost]="step.cpDifference"

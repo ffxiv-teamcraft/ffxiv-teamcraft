@@ -52,6 +52,14 @@ export class SettingsService {
     this.setSetting('region:hide-banner', hide.toString());
   }
 
+  public get configurationPanelExpanded(): boolean {
+    return this.getSetting('simulation:configuration:expanded', 'true') === 'true';
+  }
+
+  public set configurationPanelExpanded(expanded: boolean) {
+    this.setSetting('simulation:configuration:expanded', expanded.toString());
+  }
+
   public get timeFormat(): '24H' | '12H' {
     return this.getSetting('time-format', '24H') as '24H' | '12H';
   }
@@ -66,6 +74,30 @@ export class SettingsService {
 
   public set autoOpenInDesktop(open: boolean) {
     this.setSetting('auto-open-in-desktop', open.toString());
+  }
+
+  public get tutorialEnabled(): boolean {
+    return this.getSetting('tutorial:enabled', 'false') === 'true';
+  }
+
+  public set tutorialEnabled(enabled: boolean) {
+    this.setSetting('tutorial:enabled', enabled.toString());
+  }
+
+  public get tutorialQuestionAsked(): boolean {
+    return this.getSetting('tutorial:asked', 'false') === 'true';
+  }
+
+  public set tutorialQuestionAsked(asked: boolean) {
+    this.setSetting('tutorial:asked', asked.toString());
+  }
+
+  public get autoDownloadUpdate(): boolean {
+    return this.getSetting('auto-download-update', 'true') === 'true';
+  }
+
+  public set autoDownloadUpdate(dl: boolean) {
+    this.setSetting('auto-download-update', dl.toString());
   }
 
   public get hideOverlayCompleted(): boolean {
@@ -84,13 +116,20 @@ export class SettingsService {
     this.setSetting('remove-done-in-synthesis', remove.toString());
   }
 
-
   public get preferredCopyType(): string {
     return this.getSetting('copy-type', 'classic');
   }
 
   public set preferredCopyType(copyType: string) {
     this.setSetting('copy-type', copyType);
+  }
+
+  public get lastChangesSeen(): string {
+    return this.getSetting('last-changes-seen', '1.0.0');
+  }
+
+  public set lastChangesSeen(version: string) {
+    this.setSetting('last-changes-seen', version);
   }
 
   public get dbCommentsPosition(): string {

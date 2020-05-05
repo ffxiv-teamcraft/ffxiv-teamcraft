@@ -10,7 +10,10 @@
     "**/*.worker.ts",
     "karma.conf.ts"
   ],
-  "include": [
-    "**/*.ts"
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts",
+    "src/types/json-module.d.ts",
+    "src/types/window.d.ts"
   ]
 }

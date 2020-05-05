@@ -6,6 +6,8 @@
         <nz-select (ngModelChange)="job$.next($event)" [ngModel]="job$.value" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
                    class="job-filter"
                    name="job"
+                   tutorialStep="TUTORIAL.DESYNTH.Job"
+                   tutorialStepIndex="0"
                    nzShowSearch>
           <nz-option *ngFor="let job of jobList" [nzLabel]="job.id | jobAbbr | i18n" [nzValue]="job.id" nzCustomContent>
             <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{job.abbreviation}}.png">
@@ -18,13 +20,17 @@
       <nz-form-label>{{'DESYNTH.Level' | translate}}</nz-form-label>
       <nz-form-control>
         <input (ngModelChange)="level$.next($event)" [ngModel]="level$ | async" min="0" name="minCraft"
-               nz-input type="number"/>
+               nz-input type="number"
+               tutorialStep="TUTORIAL.DESYNTH.Level"
+               tutorialStepIndex="1"/>
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
       <nz-form-control>
         <button (click)="search$.next()" [disabled]="((job$ | async) === null) || ((level$ | async) === null)" nz-button
-                nzType="primary">
+                nzType="primary"
+                tutorialStep="TUTORIAL.DESYNTH.Search"
+                tutorialStepIndex="2">
           <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
         </button>
       </nz-form-control>
@@ -68,14 +74,13 @@
         </div>
       </div>
       <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
-           fxLayoutGap="10px" fxLayoutGap.lt-md="10px" nz-row>
-        <div [nzMd]="15" [nzXs]="24" class="input-box" fxLayout="row" fxLayoutAlign="center center" nz-col>
+           fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
+        <div class="input-box" fxLayout="row" fxLayoutAlign="center center">
           <nz-input-group [nzCompact]="true" class="amount-input">
             <input [(ngModel)]="row.amount" nz-input type="number">
           </nz-input-group>
         </div>
-        <div [nzMd]="9" [nzXs]="24" class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"
-             nz-col>
+        <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <button (click)="addItemsToList([row])" [nzShape]="'circle'" [nzTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
                   nz-button nz-tooltip>
             <i nz-icon nzType="plus"></i>

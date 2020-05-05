@@ -129,7 +129,6 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemRowButtonsComponent,
     ListProgressbarComponent
   ],
-  entryComponents: [TagsPopupComponent, ListCompletionPopupComponent],
   exports: [ListPanelComponent, ListDetailsPanelComponent]
 })
 export class ListModule {

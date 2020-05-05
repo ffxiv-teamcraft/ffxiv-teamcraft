@@ -28,7 +28,6 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [RecipeFinderComponent, ClipboardImportPopupComponent, InventoryImportPopupComponent],
-  entryComponents: [ClipboardImportPopupComponent, InventoryImportPopupComponent],
   imports: [
     CommonModule,
     FormsModule,

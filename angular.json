@@ -7,9 +7,9 @@
       "root": "apps/client/",
       "sourceRoot": "apps/client/src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "",
       "schematics": {
-        "@nrwl/schematics:component": {
+        "@schematics/angular:component": {
           "prefix": "app",
           "styleext": "less",
           "changeDetection": "OnPush",
@@ -45,7 +45,9 @@
               "apps/client/src/styles.less",
               "apps/client/src/theme.less"
             ],
-            "scripts": ["node_modules/marked/lib/marked.js"],
+            "scripts": [
+              "node_modules/marked/lib/marked.js"
+            ],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
@@ -181,9 +183,14 @@
             "polyfills": "apps/client/src/polyfills.ts",
             "tsConfig": "apps/client/tsconfig.spec.json",
             "karmaConfig": "apps/client/karma.conf.js",
-            "styles": ["apps/client/src/styles.less"],
+            "styles": [
+              "apps/client/src/styles.less"
+            ],
             "scripts": [],
-            "assets": ["apps/client/src/favicon.ico", "apps/client/src/assets"]
+            "assets": [
+              "apps/client/src/favicon.ico",
+              "apps/client/src/assets"
+            ]
           }
         },
         "lint": {
@@ -193,7 +200,9 @@
               "apps/client/tsconfig.app.json",
               "apps/client/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "server": {
@@ -228,7 +237,9 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/client-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
@@ -239,7 +250,8 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "client",
   "schematics": {

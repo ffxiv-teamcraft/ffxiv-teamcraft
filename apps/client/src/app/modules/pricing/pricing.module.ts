@@ -40,9 +40,6 @@ import { PriceCheckResultComponent } from './price-check-result/price-check-resu
   ],
   exports: [
     PricingComponent
-  ],
-  entryComponents: [
-    PriceCheckResultComponent
   ]
 })
 export class PricingModule {

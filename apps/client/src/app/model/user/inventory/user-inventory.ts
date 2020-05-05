@@ -171,7 +171,7 @@ export class UserInventory extends DataModel {
       case 'merge':
         delete this.items[fromContainerKey][packet.fromSlot];
         toItem.quantity += fromItem.quantity;
-        return fromItem.containerId !== toItem.containerId ? {
+        return Math.floor(fromItem.containerId / 1000) !== Math.floor(toItem.containerId / 1000) ? {
           itemId: toItem.itemId,
           containerId: toItem.containerId,
           hq: toItem.hq,

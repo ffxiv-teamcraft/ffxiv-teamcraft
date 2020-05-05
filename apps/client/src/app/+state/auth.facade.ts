@@ -210,7 +210,7 @@ export class AuthFacade {
   }
 
   resetPassword(email: string): void {
-    this.af.auth.sendPasswordResetEmail(email);
+    this.af.sendPasswordResetEmail(email);
   }
 
   changeEmail(newEmail: string): Observable<void> {
@@ -270,14 +270,14 @@ export class AuthFacade {
   }
 
   public login(email: string, password: string): Promise<UserCredential> {
-    return this.af.auth.signInWithEmailAndPassword(email, password);
+    return this.af.signInWithEmailAndPassword(email, password);
   }
 
   public register(email: string, password: string): Promise<any> {
     return this.user$.pipe(
       first(),
       switchMap((user) => {
-        return from(this.af.auth.createUserWithEmailAndPassword(email, password)).pipe(
+        return from(this.af.createUserWithEmailAndPassword(email, password)).pipe(
           tap(a => {
             this.store.dispatch(new RegisterUser(a.user.uid, user));
             this.store.dispatch(new ConvertLists(a.user.uid));
@@ -296,7 +296,7 @@ export class AuthFacade {
   }
 
   public logout(): void {
-    this.af.auth.signOut().then(() => {
+    this.af.signOut().then(() => {
       this.store.dispatch(new Logout());
       window.location.reload();
     });

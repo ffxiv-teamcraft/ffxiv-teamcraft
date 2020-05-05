@@ -1,4 +1,5 @@
-@import "common";
+@import 'common';
+@import '../../../node_modules/@angular/cdk/overlay-prebuilt.css';
 
 h1, h2, h3, h4, h5 {
   margin: 0;
@@ -19,6 +20,10 @@ h1, h2, h3, h4, h5 {
 
 .ant-alert-close-icon .anticon-close {
   color: black !important;
+}
+
+.ant-dropdown-button.ant-btn-group > .ant-btn:last-child:not(:first-child) {
+  padding: 0 !important;
 }
 
 .ant-menu-vertical .ant-menu-item, .ant-menu-vertical-left .ant-menu-item, .ant-menu-vertical-right .ant-menu-item,
@@ -109,26 +114,12 @@ h1, h2, h3, h4, h5 {
     position: relative;
 
     > img {
-      width: 200px;
+      width: 400px;
     }
   }
 
-  #logo:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 154.5px;
-    left: 23px;
-    height: 1px;
-    width: 180px;
-    transform-origin: top left;
-    transform: rotate(-45deg);
-    animation: glow 1.5s infinite ease-in-out;
-    border-radius: 30%;
-  }
-
   .brought-to-you {
-    padding-top: 40px;
+    padding-top: 20px;
     font-size: 20px;
     color: darkgrey;
     opacity: .7;
@@ -205,21 +196,10 @@ nz-alert.dark {
   }
 
   &-circle {
-    font-size: 20px;
     box-shadow: 0 0 .5px 0 white;
 
     &:not(.ant-btn-primary) {
       box-shadow: 0 0 .5px 0 white inset;
-    }
-
-    > i.material-icons {
-      margin-top: 6px;
-    }
-
-    &.ant-btn-sm {
-      > i.material-icons {
-        margin-top: 2px;
-      }
     }
   }
 }

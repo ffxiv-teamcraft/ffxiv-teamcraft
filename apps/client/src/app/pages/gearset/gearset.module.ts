@@ -66,10 +66,6 @@ const routes: Routes = [
 
     RouterModule.forChild(routes),
     FavoritesModule
-  ],
-  entryComponents: [
-    MateriasPopupComponent,
-    MateriasNeededPopupComponent
   ]
 })
 export class GearsetModule {

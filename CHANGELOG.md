@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.0"></a>
+# [7.2.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.8...v7.2.0) (2020-05-05)
+
+
+### Bug Fixes
+
+* **db:** fixed bait filter in fishing-spot page's bite time graph ([7ef0bfa](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ef0bfa))
+* **desktop:** fixed merge from different inventory panels counting for autofill ([3f2d358](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f2d358))
+* **favorites:** fixed infinite loading for workshops ([1aba512](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1aba512)), closes [#1510](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1510)
+* **gearset:** fixed search input for minimum ilvl not being updated properly ([1cfe4ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1cfe4ce))
+* **list:** navigation optimizer now takes panel type into account ([4e5e20a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e5e20a))
+* **lists:** copying a list now updates it automatically ([dc08c3f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc08c3f))
+* **lists:** hide archived lists in list picker ([c26177f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c26177f))
+
+
+### Features
+
+* new patch notes popup ([920afba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/920afba))
+* **core:** new loading gif ([f1a81d5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1a81d5))
+* **db:** added ranking in fish details page ([3a884cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a884cc))
+* **desktop:** new toggle to download update when available, defaults to yes ([4cff4d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4cff4d3))
+* **gearset:** changed layout in display ([a4e97c0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a4e97c0))
+* **gearset:** changed materia order in materia popup ([72cfc39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72cfc39))
+* **gearset:** changed size of the stats tables to match the largest one ([3862193](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3862193))
+* **inventory-optimizer:** maximum price filter for vendors optimizer ([6103d8c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6103d8c))
+* **patreon:** new patron: Kittie Purry ([53c34ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53c34ec))
+* **recipe-finder:** added +1 button to add only one recipe ([8d4218b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d4218b))
+* added an interactive tour system for various pages ([0169a08](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0169a08))
+
+
+
 <a name="7.1.8"></a>
 ## [7.1.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.1.7...v7.1.8) (2020-04-14)
 

@@ -164,6 +164,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
         const biteTimeBaits = Object.keys(groupedBaits).map(key => +key);
         Object.entries<any>(groupedBaits)
+          .filter(([baitId]) => +baitId > 0)
           .forEach(([baitId, baitRow]) => {
             biteTimeGraphs[+baitId] = spot.customData.fishes
               .filter(fish => fish > 0)
@@ -172,10 +173,10 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
                   name: this.i18n.getName(this.l12n.getItem(fish)),
                   series: Object.keys(groupBy(baitRow, 'biteTime'))
                     .map(biteTime => {
-                      const row = gubalData.data.bite_time_per_fish_per_spot.find(r => r.itemId === fish && r.biteTime === +biteTime);
+                      const rows = gubalData.data.bite_time_per_fish_per_spot_per_bait.filter(r => r.itemId === fish && r.biteTime === +biteTime && r.baitId === +baitId);
                       return {
                         name: biteTime,
-                        value: row ? row.occurences : 0
+                        value: rows.reduce((acc, row) => acc + row.occurences, 0)
                       };
                     })
                 };
@@ -245,7 +246,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               })
           },
           biteTimesPerBait: {
-            baits: [0, ...biteTimeBaits],
+            baits: [...biteTimeBaits],
             graphs: biteTimeGraphs
           },
           fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
@@ -304,12 +305,12 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               occurences,
               itemId
             }
-            bite_time_per_fish_per_spot(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
+            bite_time_per_fish_per_spot(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 3}}) {
               biteTime,
               occurences,
               itemId
             }
-            bite_time_per_fish_per_spot_per_bait(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 5}}) {
+            bite_time_per_fish_per_spot_per_bait(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 3}}) {
               biteTime,
               occurences,
               itemId,

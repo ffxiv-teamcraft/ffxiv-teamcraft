@@ -1,4 +1,4 @@
 <button (click)="toggleFavorite()" [nzSize]="size" [nzTitle]="'Favorite' | translate" nz-button nz-tooltip nzShape="circle"
         nzType="primary">
-  <i [theme]="(isFavorite$ | async) ? 'fill' : 'outline'" nz-icon nzType="heart"></i>
+  <i [nzTheme]="(isFavorite$ | async) ? 'fill' : 'outline'" nz-icon nzType="heart"></i>
 </button>
