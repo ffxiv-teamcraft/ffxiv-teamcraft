@@ -1939,7 +1939,7 @@
       "HQ_ingredients": "HQ재료를 입력하세요. 시작 품질에 영향을 줍니다.",
       "Consumables": "여기에서 소모품 및 자유부대 버프를 설정하세요.",
       "Right_click_condition": "오른쪽 마우스 버튼으로 작업 아이콘을 클릭하여 상태를 설정하면(고품질, 최고품질, 저품질, 실패 등) 결과를 예측할 수 있습니다.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Save_as_new": "여기를 눌러 이 로테이션을 여러분의 계정에 복사하세요.",
       "Import_ingame_macro": "여기를 눌러 인게임 매크로를 입력하세요.",
       "Generate_ingame_macro": "여기를 눌러 이 로테이션의 인게임 매크로를 생성하세요.",
       "Share_with_stats": "여기를 눌러 공유팝업을 여세요, 여러분의 능력치와 소모품들까지 공유가 가능합니다."
@@ -1954,9 +1954,9 @@
       "Tags_filter": "선택 박스를 이용하여 태그 별로 필터링할 수 있습니다",
       "Rlvl_filter": "선택 박스를 이용하여 레시피 레벨 별로 필터링할 수 있습니다",
       "Durability_filter": "선택 박스를 이용하여 내구도 별로 필터링할 수 있습니다",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Min_craftsmanship": "필요한 최소 작업 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 작업 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
+      "Min_control": "필요한 최소 가공 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 가공 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
+      "Min_cp": "필요한 최소 CP를 입력하면 해당 로테이션에 맞는 [필요한 CP < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
       "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
     }
   }

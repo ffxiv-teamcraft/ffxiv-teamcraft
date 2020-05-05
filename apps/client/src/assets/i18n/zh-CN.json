@@ -150,7 +150,7 @@
     "Apply": "应用",
     "Open_link": "打开网页链接",
     "Unknown": "未知",
-    "Minimum": "最小",
+    "Minimum": "最低",
     "Maximum": "最大",
     "Average": "平均",
     "Hq": "HQ",
@@ -1416,9 +1416,9 @@
       "Refresh_data": "更新数据",
       "Bite_times": "咬钩次数",
       "All_baits": "未过滤钓饵",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Ranking": "排名",
+      "Top_users": "排行榜",
+      "Your_ranking": "你的排名",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1640,8 +1640,8 @@
     "Missing": "缺少",
     "Results": "可能的配方",
     "Basket": "愿望篮",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "全部添加到愿望篮",
+    "Add_one_to_basket": "添加一个到愿望篮",
     "Remove_from_basket": "从愿望篮中删除",
     "Search": "查找配方",
     "Generate_list": "添加到清单",
@@ -1911,10 +1911,10 @@
       "More": "点击此菜单可以进行重命名、权限管理等操作"
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
+      "HQ_mark": "此图标意味着此物品是最终配方必须的。你可能需要 HQ，但并不强制",
       "Layout": "你可以在布局编辑器中任意编辑布局、修改面板样式及其过滤条件。页面左侧的此按钮用于快速切换布局",
       "Permissions": "点击这里可以进行权限设置，例如添加其他用户、将清单设置为只读、共享到部队等等",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
+      "Fill_with_inventory": "你可以将物品栏中已有的物品填充至清单",
       "Pricing_mode_button": "使用定价模式可以轻松进行准备并预测清单的收益",
       "More_actions_button": "点击此按钮可以打开菜单并对此物品进行一系列操作。你可以在布局编辑器中修改菜单内容",
       "Alarm_button": "点击这里为此物品设置闹钟，这样可以在其刷新时收到通知"
@@ -1924,22 +1924,22 @@
       "Import": "你可以从 Ariyala、Crafting as a Service、Garland Tools 等网站导入清单"
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "点击 NPC 名称、地图、物品、怪物等内容旁边的信息按钮或物品图标，可以在数据库中打开其详情页"
     },
     "DESYNTH": {
       "Job": "选择你想要提升等级的职业",
-      "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Level": "输入分解技能值（而非职业等级）",
+      "Search": "点击搜索即可"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "打开此开关可以为对应的计时器设置闹钟"
     },
     "SIMULATOR": {
       "Character_configuration": "在这里设置你的等级和属性",
       "HQ_ingredients": "在这里选择 HQ 材料以设置起始品质",
       "Consumables": "在这里设置消耗品和部队特效",
       "Right_click_condition": "右键点击技能可以设定其发动条件（高品质、最高品质、低品质、制作失败等）并预测结果",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Save_as_new": "点击这里将手法保存到你的账号下",
       "Import_ingame_macro": "点击这里导入游戏中的用户宏",
       "Generate_ingame_macro": "点击这里生成手法对应的游戏宏",
       "Share_with_stats": "点击这里打开分享对话框，你可以选择是否分享你的属性和消耗品"
@@ -1954,9 +1954,9 @@
       "Tags_filter": "在这里通过标签过滤手法",
       "Rlvl_filter": "在这里通过配方等级过滤手法",
       "Durability_filter": "在这里通过配方耐久过滤手法",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Min_craftsmanship": "在这里通过最低作业精度过滤手法，过滤后只会显示所需作业精度低于设定值的手法",
+      "Min_control": "在这里通过最低加工精度过滤手法，过滤后只会显示所需加工精度低于设定值的手法",
+      "Min_cp": "在这里通过最低制作力过滤手法，过滤后只会显示所需制作力低于设定值的手法",
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     }
   }

@@ -429,7 +429,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Sound bei Auto-Vervollständigung",
       "Packet_capture": "Paketerfassung",
-      "Networking": "Networking",
+      "Networking": "Netzwerk",
       "Theme": "Theme",
       "Search": "Suche",
       "Other": "Anderes"
@@ -885,9 +885,9 @@
       "Good": "Gut",
       "Poor": "Minderwertig",
       "Fail": "Fehlgeschlagen",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Pliant": "Ergiebig",
+      "Sturdy": "Robust",
+      "Centered": "Stabil",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1640,8 +1640,8 @@
     "Missing": "Fehlt",
     "Results": "Mögliche Rezepte",
     "Basket": "Korb",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "Alle zum Warenkorb hinzufügen",
+    "Add_one_to_basket": "Eins zum Warenkorb hinzufügen",
     "Remove_from_basket": "Aus Korb entfernen",
     "Search": "Rezept suchen",
     "Generate_list": "Zur Liste hinzufügen",
@@ -1939,7 +1939,7 @@
       "HQ_ingredients": "Gib hier HQ-Materialien an, um die Anfangsqualität zu bestimmen.",
       "Consumables": "Konfiguriere hier Verbrauchsgegenstände und FG-Buffs.",
       "Right_click_condition": "Klicke mit der rechten Maustaste auf eine Aktion, um seine Bedingung zu setzen (gut, ausgezeichnet, schlecht, Fehlschlag, usw.) und sag so die Ergebnisse voraus.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Save_as_new": "Klicke hier, um eine Kopie dieser Liste in deinem Account zu speichern.",
       "Import_ingame_macro": "Klicke hier, um ein Makro aus dem Spiel zu importieren.",
       "Generate_ingame_macro": "Klicke hier, um aus dieser Rotation ein Makro für das Spiel zu generieren.",
       "Share_with_stats": "Klicke hier, um das Teilen-Popup zu öffnen, mit dessen Hilfe du deine Attribute und Verbrauchsgegenstände teilen kannst."
@@ -1954,9 +1954,9 @@
       "Tags_filter": "Filtere mit dieser Auswahlbox nach Tags",
       "Rlvl_filter": "Filtere mit dieser Auswahlbox nach Rezeptstufe",
       "Durability_filter": "Filtere mit dieser Auswahlbox nach Belastbarkeit",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Min_craftsmanship": "Filtert nach minimaler Kunstfertigkeit. Hier werden nur Rotationen gefunden, bei denen die benötigte Kunstfertigkeit kleiner als der von dir angegebene Wert ist.",
+      "Min_control": "Filtert nach minimaler Kontrolle. Hier werden nur Rotationen gefunden, bei denen die benötigte Kontrolle kleiner als der von dir angegebene Wert ist.",
+      "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
       "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
     }
   }

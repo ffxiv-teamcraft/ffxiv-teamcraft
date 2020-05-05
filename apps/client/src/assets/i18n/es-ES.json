@@ -14,7 +14,7 @@
   "List_fork_in_progress": "Copiando la lista a su cuenta...",
   "Network_error_logged_out": "Se ha detectado un error de red. Se ha cerrado su sesión. Si este problema persiste, póngase en contacto con Miu en el servidor de Discord.",
   "Hide_zone_duplicates": "Ocultar zonas duplicadas (artículos que se encuentran en varias zonas se muestran sólo una vez)",
-  "Patch_notes": "{{version}} changes",
+  "Patch_notes": "Cambios en {{version}}",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -97,8 +97,8 @@
   "No_favorites": "No hay favoritos",
   "Ephemeral_list": "Será borrada al completarse",
   "Ephemeral_tag": "Efímero",
-  "Archived_list": "Archived list (not loaded by default)",
-  "Archived_tag": "Archived",
+  "Archived_list": "Lista archivada (no cargada por defecto)",
+  "Archived_tag": "Archivada",
   "Remove_ephemeral": "Convertir a lista permanente",
   "Quick_list_create": "Crear lista rápida (borrada al completarse)",
   "Tag_filter": "Etiquetas",
@@ -157,8 +157,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Enlace para compartir copiado al portapapeles",
     "Copy": "Copiar",
-    "Open_in_main_window": "Open in main window",
-    "Example": "Example"
+    "Open_in_main_window": "Abrir en la ventana principal",
+    "Example": "Ejemplo"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -175,8 +175,8 @@
     "Add_note": "Agregar una nota",
     "Volume": "Volumen",
     "Macro_copied": "Macro copiada al portapapeles",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "Alternar capa sobrepuesta",
+    "Open_alarms_overlay": "Alternar capa sobrepuesta de alarmas",
     "More_available": "y {{amount}} más...",
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
@@ -195,12 +195,12 @@
     "CUSTOM": {
       "Title": "Agregar alarma personalizada",
       "Name": "Nombre",
-      "Spawn": "Spawn (Eorzean Time)",
+      "Spawn": "Aparición (Tiempo de Eorzea)",
       "Spawns_twice": "Aparece dos veces",
       "Spawns_twice_description": "Aparece dos veces por día eorzeano (Una aparición AM y otra PM)",
-      "Duration": "Duration (Eorzean hours)",
+      "Duration": "Duración (horas Eorzeanas)",
       "Slot": "Ranura",
-      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
+      "Slot_description": "El número de ranura (1-8) que el artículo aparece en la interfaz de recolección del juego (no es súper importante desde el parche 5.1)",
       "Type": "Tipo de nodo",
       "Map": "Mapa",
       "Weather": "Clima",
@@ -350,10 +350,10 @@
     "Title": "Ajustes",
     "General": "General",
     "Link_base": "Vínculos de artículos",
-    "Region": "Region",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
+    "Region": "Región",
+    "Region_explain": "La fuente de datos y las funciones basadas en una versión específica del juego se ajustarán por región. Algunas de ellas pueden no estar disponibles en cierta región.",
     "Proxy": "Proxy",
-    "Proxy_bypass": "No proxy for",
+    "Proxy_bypass": "Sin proxy para",
     "Theme": "Tema",
     "no_panel_borders": "Deshabilitar bordes alrededor de varios paneles",
     "Desktop": "Escritorio",
@@ -366,7 +366,7 @@
     "Install_update": "Instalar actualización",
     "Preferred_copy_type": "Tipo de copia preferida",
     "Auto_open_in_desktop": "Abrir vínculos en aplicación de escritorio cuando se inicie",
-    "Auto_download_update": "Download update when it's available",
+    "Auto_download_update": "Descargar actualización cuando esté disponible",
     "Account": "Cuenta",
     "Reset_password": "Restablecer contraseña",
     "Reset_password_warning": "¿Está seguro que desea restablecer la contraseña?",
@@ -394,7 +394,7 @@
     "Auto_mark_as_done_in_log": "Marcar elementos como completados en el registro cuando se hacen en una lista",
     "Db_comments_position": "Posición de comentarios de base de datos",
     "Always_HQ_leves": "Siempre contar la experiencia de leves con artículos HQ",
-    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
+    "Always_all_deliveries": "Haz que el botón 'Todas las 3 entregas' de la página de levequests esté activado por defecto",
     "Clickthrough_overlay": "Permitir hacer clic a través de la capa sobrepuesta",
     "Disable_search_history": "Deshabilitar historial de búsqueda",
     "Disable_search_debounce": "Deshabilitar la búsqueda en tiempo real (sólo pulsar entrar activará la búsqueda)",
@@ -409,10 +409,10 @@
     "Performance_mode_explain": "Remueve las imágenes de los artículos en las listas, así como menús (sólo quedan los botones) para tener menos carga en el navegador y la aplicación",
     "Change_email": "Cambiar correo electrónico",
     "Change_email_success": "Correo electrónico cambiado",
-    "No_shortcut": "Don't create shortcut on update",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
-    "Ignored_inventories": "Ignored inventories",
-    "Enable_tutorials": "Enable tutorial system",
+    "No_shortcut": "No crear acceso directo al actualizar",
+    "Always_disable_hq_suggestions": "Siempre desactivar las sugerencias automáticas de HQ en las listas",
+    "Ignored_inventories": "Inventarios ignorados",
+    "Enable_tutorials": "Activar tutoriales",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -429,7 +429,7 @@
     "CATEGORIES": {
       "Autofill_completion": "Sonido de autorellenado",
       "Packet_capture": "Captura de paquetes",
-      "Networking": "Networking",
+      "Networking": "Redes",
       "Theme": "Tema",
       "Search": "Búsqueda",
       "Other": "Otros"
@@ -437,7 +437,7 @@
     "REGIONS": {
       "Global": "Global",
       "CN": "China",
-      "KR": "Korea"
+      "KR": "Corea"
     }
   },
   "PROFILE": {
@@ -467,7 +467,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "Cargar listas archivadas",
     "Needs_verification": "Por favor verifique su personaje para tener acceso a las listas compartidas de su FC",
     "Regenerate_all": "Regenerar todas las listas",
     "Regenerated_all": "Sus listas están actualizadas",
@@ -506,8 +506,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "Archivar",
+    "Unarchive": "Desarchivar",
     "Regenerate": "Actualizar lista a la última versión de Teamcraft",
     "Rename": "Renombrar lista",
     "Copied_x_times": "Copiado {{count}} veces",
@@ -532,8 +532,8 @@
     "Set_color": "Establecer color de lista",
     "Go_to_pinned": "Ir a la lista anclada (clic derecho para quitar)",
     "Reset_panel": "Restablecer todos los artículos de este panel",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "Materiales obtenidos: {{amount}}%",
+    "Progression_tooltip_items": "Artículos fabricados: {{amount}}%",
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
@@ -559,7 +559,7 @@
       "Delete": "Borrar la lista",
       "Clear": "Vaciar la lista",
       "Reset": "Restablecer la lista",
-      "Archive": "Archive the list",
+      "Archive": "Archivar la lista",
       "Nothing": "Nada"
     },
     "BUTTONS": {
@@ -594,9 +594,9 @@
     "Amount_craftable": "Puede crear {{amount}}",
     "Add_item": "Agregar un artículo",
     "List_large": "Esta es una lista larga",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
+    "Enable_performance_mode": "Puede que desee activar el modo de rendimiento en ajustes para obtener un procesamiento más rápido. No reporte problemas de rendimiento con este error como un defecto, no será arreglado.",
     "List_too_large": "Lista demasiado larga",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "Esta lista es demasiado grande y podría alentar su computadora o llegar a los limites de la base de datos. Para asegurarse de no perder la lista, ya no podrá añadir más artículos a menos que se eliminen artículos existentes.",
     "New_tag": "Nueva etiqueta",
     "Amount_ilvl": "Cantidad (ilvl)",
     "Contributions_popup": "Estadísticas de contribuciones",
@@ -609,9 +609,9 @@
     "Fill_with_inventory": "Llenar con inventario (sólo cuenta lo que tiene en el inventario personal)",
     "Filter_items_done": "Ignorar artículos completados",
     "Inventory_synthesis": "Síntesis de inventario (artículos por inventario)",
-    "X_needed": "{{amount}} needed",
-    "Leave_list": "Leave this list",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "X_needed": "{{amount}} necesitados",
+    "Leave_list": "Dejar esta lista",
+    "Cannot_leave": "No puede dejar esta lista porque está compartida con todo su FC (en cuyo caso tiene que pedir al propietario que la elimine) o con uno de sus equipos (en cuyo caso puede abandonar el equipo).",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -651,7 +651,7 @@
       "Tag_filter": "Filtro de etiquetas"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "Alternar capa sobrepuesta de listas",
       "No_display": "Abra una lista en la ventana principal para empezar",
       "No_panel_selected": "Seleccione un panel usando los botones de arriba"
     }
@@ -809,7 +809,7 @@
   },
   "SIMULATOR": {
     "Title": "Simulador de fabricación",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "Incluir atributos y consumibles",
     "Fixed_notification_number": "Notificación fija",
     "Starting_echo_number": "# de notificación",
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
@@ -885,9 +885,9 @@
       "Good": "Bueno",
       "Poor": "Pobre",
       "Fail": "Fallo",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Pliant": "Flexible",
+      "Sturdy": "Robusto",
+      "Centered": "Centrado",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -994,10 +994,10 @@
       "UNSAFE_ACTION": "Acción no segura con modo seguro habilitado",
       "DURABILITY_REACHED_ZERO": "La durabilidad alcanzó 0 antes de llegar a la progresión máxima",
       "NOT_ENOUGH_CP": "CP Insuficiente",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "No tiene el nivel necesario para fabricar este artículo.",
       "NOT_SPECIALIST": "Rotación de especialista pero no especialista",
       "NO_INNER_QUIET": "Intento de usar acción de Inner Quiet sin tener Inner Quiet habilitado",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "No tiene los atributos mínimos necesarios para fabricar esto"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Casi todas las rotaciones deberían incluir \"Inner Quiet\" si su objetivo es un objeto HQ. Proporciona un buen impulso de calidad y permite acciones como \"Byregot's Blessing\".",
@@ -1038,7 +1038,7 @@
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
     "Levequest_name": "Nombre de misión leve",
-    "Level_range": "Level range",
+    "Level_range": "Rango de nivel",
     "No_results": "No se encontraron misiones leve",
     "Add_to_list": "Agregar artículos de esta misión leve a la lista",
     "Quantity": "Cantidad",
@@ -1414,18 +1414,18 @@
       "Weather_chances": "Probabilidades para que cada clima aparezca",
       "Bait": "Cebo de pezca",
       "Refresh_data": "Actualizar datos",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Bite_times": "Número de mordidas",
+      "All_baits": "Sin filtro de cebo",
+      "Ranking": "Clasificación",
+      "Top_users": "Mejores clasificaciones",
+      "Your_ranking": "Su clasificación",
       "TUG": {
-        "Light": "Light (!)",
-        "Medium": "Medium (!!)",
-        "Big": "Big (!!!)"
+        "Light": "Liviano (!)",
+        "Medium": "Mediano (!!)",
+        "Big": "Grande (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "Alternar capa sobrepuesta de reporte de pesca",
         "Bait": "Cebo equipado",
         "Tug": "Jalón",
         "Hookset": "Anzuelo",
@@ -1443,10 +1443,10 @@
         "Last_report": "Último reporte",
         "Fish": "Pez",
         "Size": "Tamaño",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "Tiempo desde el lanzamiento",
         "ERRORS": {
           "No_bait": "No se detecta cebo, cambie el cebo una vez para arreglarlo.",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "No se detectaron atributos, cambie a pescador de nuevo para arreglarlo."
         }
       }
     },
@@ -1630,7 +1630,7 @@
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
     "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
     "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta"
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
@@ -1640,8 +1640,8 @@
     "Missing": "Faltante",
     "Results": "Posibles artesanías",
     "Basket": "Cesta",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "Agregar todo a la cesta",
+    "Add_one_to_basket": "Añadir uno a la cesta",
     "Remove_from_basket": "Eliminar de la cesta",
     "Search": "Buscar recetas",
     "Generate_list": "Agregar a la lista",
@@ -1650,7 +1650,7 @@
     "Add_item": "Agregar artículo",
     "Clipboard_content_malformed": "Contenido del portapapeles incorrecto",
     "Import_from_clipboard": "Importar desde el portapapeles",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "Importar del inventario",
     "Extension_tip": "Puede copiar el inventario de su siervo a su portapapeles usando la extensión capturadora de inventario: ",
     "Extension_link": "Obtenga la extensión en la tienda web de chrome",
     "Clear": "Borrar lista de artículos",
@@ -1673,7 +1673,7 @@
     "Title": "Blog"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "Hay un problema con {{tool}}, por favor espere un momento e inténtelo de nuevo. Si el problema persiste, revise #announcements en el servidor de Discord de Teamcraft para obtener actualizaciones.",
     "Firebase_blocked": "Teamcraft no pudo acceder a la base de datos, parece que algo lo está bloqueando o no tiene acceso a Internet."
   },
   "SEARCH": {
@@ -1708,14 +1708,14 @@
     "No_character_id": "No hay un id de personaje establecido",
     "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez.",
     "Inventory_outdated": "Su inventario está desactualizado",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
-    "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
+    "Please_update_inventory_popup": "Por favor cambie de zona (ya sea teletransportandose o entrando en una casa) para actualizar su inventario. Esta ventana se cerrará una vez que haya terminado. Si este problema persiste, pruebe la guía de solución de problemas de paquetes en los mensajes anclados de #troubleshooting en el servidor de Discord de Teamcraft.",
+    "Outdated": "La captura de paquetes no está funcionando",
+    "Outdated_description": "Su versión de Teamcraft no funciona correctamente con la versión actual del juego, se está trabajando y se arreglará en una actualización futura."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_title": "Sugerir cambio de región a {{region}}",
+    "Banner_description": "Puede cambiar la región en la que ha jugado para una mejor experiencia en la base de datos, simulador, captura de paquetes, etc.",
+    "Button_label": "Cambiar región"
   },
   "INVENTORY": {
     "Title": "Inventario",
@@ -1728,8 +1728,8 @@
     "Reset_inventory": "Restablecer este inventario",
     "Clean_all": "Restablecer todos sus inventarios",
     "Search_for_an_item": "Buscar un artículo",
-    "Filter_by_expansion": "Filter by expansion",
-    "In_x_containers": "In {{amount}} containers",
+    "Filter_by_expansion": "Filtrar por expansión",
+    "In_x_containers": "En {{amount}} contenedores",
     "BAG": {
       "SaddleBag": "Alforja de Chocobo",
       "FC_chest": "Cofre FC",
@@ -1744,16 +1744,16 @@
     "Ignore_item": "Ignorar este consejo para este artículo",
     "Remove_ignore_item": "Ya no ignorar este consejo para este objeto",
     "Ignore_container": "Ignorar este consejo para este contenedor",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "Ocultar este optimizador",
+    "Unhide_optimizer": "No ocultar más este optimizador",
     "Remove_ignore_container": "Ya no ignorar este consejo para este contenedor",
     "Show_ignored": "Mostrar artículos ignorados",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "Mostrar optimizadores ocultos",
     "No_optimizations": "No hay optimizaciones disponibles",
     "CAN_BE_BOUGHT": {
       "Title": "Artículos que se pueden comprar con gil",
       "Message": "Este artículo se puede comprar a PNJ con gil y no requiere reputación de tribu de bestias.",
-      "Max_price": "Maximum price"
+      "Max_price": "Precio máximo"
     },
     "DUPLICATES": {
       "Title": "Artículos duplicados en múltiples contenedores",
@@ -1765,16 +1765,16 @@
       "Threshold_amount": "Valor del umbral"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Title": "Pilas de artículos de HQ pueden ser bajados de calidad",
+      "Message": "Combinar con la pila de NQ en: {{containers}}",
+      "Filter": "Mostrar sólo materiales hasta: ",
+      "Placeholder": "Elegir expansión"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
-      "Company_workshop": "Company Workshop"
+      "Title": "Materiales antiguos que sólo se utilizan para crear artículos de iLvl bajo",
+      "Message": "El ilvl resultante más alto que este material puede ser usado para fabricar es {{ilvl}}",
+      "Recipe_ilvl": "iLvl Min. Resultante",
+      "Company_workshop": "Taller de la Compañía"
     }
   },
   "VERSION_LOCK": {
@@ -1789,7 +1789,7 @@
     "generate_list": "Generar una lista",
     "Content": "Contenido",
     "Stat_name": "Atributo",
-    "Current_value": "Current",
+    "Current_value": "Actual",
     "Cap_value": "Límite Máx.",
     "Add_materia": "Añadir materia",
     "No_materia": "Sin materia",
@@ -1798,7 +1798,7 @@
     "Filters": "Filtros",
     "Total_stats": "Atributos totales",
     "Total_materias_needed": "Materias totales necesarias",
-    "Total_cost": "Total cost (trades, gil, etc)",
+    "Total_cost": "Costo total (intercambios, gil, etc.)",
     "Materia": "Materia",
     "Amount_needed": "Cantidad",
     "Modal_editor": "Materias para {{itemName}}",
@@ -1827,14 +1827,14 @@
     "Copy_as_text": "Copiar este conjunto de equipo como texto",
     "Include_all_tools": "Incluir también herramientas para otras profesiones",
     "Use_in_simulator": "Usar estos atributos en el simulador",
-    "Please_input_lodestone_id": "Please input lodestone id",
-    "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
-    "No_trades_needed": "No trades needed",
-    "Stats_caps": "Stats caps",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Please_input_lodestone_id": "Por favor ingrese el id de lodestone",
+    "Paste_lodestone_id": "Pegar id de lodestone",
+    "Currency": "Divisa",
+    "Optimize_materias": "Optimizar el orden de materias",
+    "No_trades_needed": "No se necesitan intercambios",
+    "Stats_caps": "Límite de atributos",
+    "Stat_computing_diclaimer": "Los resultados no son 100% exactos, son de jugadores (los estudios de allagan) como usted y yo que dedicamos mucho tiempo a tratar de encontrar las fórmulas, por favor no informe inexactitudes como un defecto.",
+    "Missing_items": "Parece que le faltan algunas ranuras, asegúrese de que sus filtros estén correctamente configurados",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
@@ -1868,12 +1868,12 @@
       "Avg_melding_chances": "Prom. de probabilidades de sobremeldeado"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
-      "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
-      "Determination_bonus": "Determination bonus",
+      "Ilvl": "ilvl Prom.",
+      "HP": "Puntos de vida",
+      "Direct_hit_chances": "Probabilidad de Golpe Directo",
+      "Critical_hit_chances": "Probabilidad de Golpe Crítico",
+      "Critical_hit_multiplier": "Mult. de Golpe Crítico",
+      "Determination_bonus": "Bono de determinación",
       "GCD": "GCD"
     }
   },
@@ -1888,76 +1888,76 @@
     "Favorite_folders": "Carpetas favoritas"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "Iniciar tutorial para esta página",
+    "Next": "Siguiente",
+    "Done": "Finalizado",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Title": "Bienvenido a FFXIV Teamcraft",
+      "Explanation": "Teamcraft tiene un pequeño tutorial sobre cómo utilizar sus características básicas y funcionalidad. Aparecerá en forma de pequeñas ventanas en varias páginas a lo largo de la aplicación.",
+      "Question": "¿Le gustaría activar esta funcionalidad?",
+      "Can_be_changed_in_settings": "Puede ser activado o desactivado en ajustes"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "Pase el mouse sobre su nombre para acceder al editor de perfiles y configurar sus niveles, sus atributos y más."
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Search_type": "Puede cambiar el tipo de datos que esté buscando aquí (artículo, misión, mapa, nodo, PNJ, etc).",
+      "Share": "Utilice este botón para obtener los resultados de la búsqueda como un enlace compartible.",
+      "Filters": "Abra este panel para usar filtros avanzados, filtrar por atributo, bonos, ilvl y más"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "Haga clic aquí para copiar un enlace a esta lista, para compartirlo fácilmente",
+      "Open_list": "Haga clic aquí para abrir los detalles de la lista, también puede hacer doble clic en el nombre de la lista.",
+      "More": "Haga clic en este menú para renombrar la lista, administrar permisos y más."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "HQ_mark": "Este icono significa que este artículo es necesario para una receta final, es posible que lo quiera HQ, pero no es obligatorio.",
+      "Layout": "Puede editar la pantalla completamente, cambiar paneles y cómo filtran los datos abriendo el editor de diseños. El botón a la izquierda de este se utiliza como un cambio de diseño rápido.",
+      "Permissions": "Puede editar permisos, añadir otros usuarios, hacer su lista de sólo lectura, compartirla con un FC, y más, abriendo el editor de permisos.",
+      "Fill_with_inventory": "Puede añadir todo lo que esté dentro de su inventario dentro de esta lista.",
+      "Pricing_mode_button": "Prepare y prevea fácilmente sus ganancias para esta lista usando el modo de precios.",
+      "More_actions_button": "Este botón abre un menú con muchas acciones diferentes para la fila actual de la lista. Puede convertir estas acciones en botones usando el editor de diseño.",
+      "Alarm_button": "Haga clic aquí para crear una alarma para este artículo, para ser alertado cuando aparezca."
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Merge": "Puede combinar dos listas usando el botón de mezclar.",
+      "Import": "Puede importar listas de varios sitios web como ariyala, craftingasaservice y garlandtools."
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "Hacer clic en este botón de información abre la página de la base de datos conteniendo detalles sobre lo que está al lado (nombre de pnj, mapa, objeto, monstruo, etc). Para los artículos, hacer clic en el icono también abre la página de la base de datos."
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
-      "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Job": "Seleccione la profesión que desea subir de nivel",
+      "Level": "Ingrese el nivel de desíntesis (no el nivel de profesión)",
+      "Search": "Haga clic en búsqueda, y listo!"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "Active alarmas para un temporizador determinado ajustando este interruptor a Activado."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
-      "Import_ingame_macro": "Click here to import from ingame macro.",
-      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+      "Character_configuration": "Configure su nivel y sus atributos aquí.",
+      "HQ_ingredients": "Ingrese aquí los ingredientes de HQ para establecer una calidad inicial.",
+      "Consumables": "Configure los consumibles y los bonos de Gremio Independiente (FC) aquí.",
+      "Right_click_condition": "Haga clic derecho en una acción para establecer su condición (buena, excelente, pobre, falla, etc) y predecir los resultados.",
+      "Save_as_new": "Haga clic aquí para guardar una copia de esta rotación en su cuenta.",
+      "Import_ingame_macro": "Haga clic aquí para importar desde una macro del juego.",
+      "Generate_ingame_macro": "Haga clic aquí para generar una macro para esta rotación.",
+      "Share_with_stats": "Haga clic aquí para abrir la ventana de compartir, permitiéndole compartir con sus atributos y consumibles."
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
-      "Compact": "Click here to toggle alarms' compact display."
+      "Settings": "Haga clic aquí para editar la configuración de las alarmas (sonido, volumen, etc).",
+      "Custom": "Haga clic aquí para crear una alarma personalizada.",
+      "Compact": "Haga clic aquí para activar la modo compacto de las alarmas."
     },
     "COMMUNITY_ROTATIONS": {
-      "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+      "Text_filter": "Utilice este campo para encontrar una rotación usando su nombre",
+      "Tags_filter": "Filtre por etiquetas usando este cuadro de selección",
+      "Rlvl_filter": "Filtrar por nivel de receta usando este cuadro de selección",
+      "Durability_filter": "Filtrar por durabilidad usando este cuadro de selección",
+      "Min_craftsmanship": "Filtre por Artesanía mínima requerida aquí, esto sólo encontrará rotaciones con Artesanía requerida < su valor.",
+      "Min_control": "Filtrar por Control mínimo requerido aquí, esto sólo encontrará rotaciones con el Control requerido < su valor.",
+      "Min_cp": "Filtrar por CP mínimo requerido aquí, esto sólo encontrará rotaciones con el CP requerido < su valor.",
+      "Set_selector": "Seleccione qué profesión debe utilizarse para las simulaciones. Usado para mostrar la tasa de éxito de las rotaciones resultantes."
     }
   }
 }
