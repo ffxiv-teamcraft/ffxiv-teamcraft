@@ -6,6 +6,6 @@
                      [itemId]="bait.id" [tooltipDisabled]="true" [width]="32"></app-item-icon>
       <div *ngIf="!hideNames">{{bait.id | itemName | i18n}}</div>
     </div>
-    <i *ngIf="!last" [type]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>
+    <i *ngIf="!last" [nzType]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>
   </div>
 </div>
