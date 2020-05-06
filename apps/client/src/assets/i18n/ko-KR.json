@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "직업",
-      "Job_not_configured": "아직 이 직업을 설정하지 않은 것 같습니다. 프로필 페이지에서 직업 설정이 되었는지 확인한 뒤 능력치를 설정해주세요.",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "정확한 시뮬레이션을 위해 능력치를 입력하거나 계정에 로그인 해 주시길 바랍니다",
       "Select_job": "직업 선택",
       "Craftsmanship": "작업 숙련도",
