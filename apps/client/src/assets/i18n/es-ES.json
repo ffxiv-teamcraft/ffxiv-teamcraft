@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "Profesión",
-      "Job_not_configured": "Parece que no ha configurado esta profesión aun, vaya a la página de su perfil para configurarla correctamente y establecer atributos",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Por favor ingrese sus atributos para tener una simulación precisa o inicie sesión",
       "Select_job": "Seleccione una profesión",
       "Craftsmanship": "Artesanía",
