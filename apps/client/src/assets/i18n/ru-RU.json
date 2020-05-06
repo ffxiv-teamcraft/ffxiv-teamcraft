@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "Профессия",
-      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",
