@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "职业",
-      "Job_not_configured": "似乎你还没有设置该职业的属性，请去资料页面设置你的属性。",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "请输入你的属性或登录帐号以准确模拟",
       "Select_job": "选择职业",
       "Craftsmanship": "作业精度",
