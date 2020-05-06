@@ -458,6 +458,11 @@
     "Veteran": "Veterano",
     "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
     "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus estadísticas con la comida activa.",
+    "Open_public_profile": "Open public profile",
+    "Community_contributions": "Community contributions",
+    "Fishing_rankings": "Fishing rankings",
+    "Total_rankings": "Total rankings",
+    "Loading_fish_rankings": "Loading fishing rankings",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",

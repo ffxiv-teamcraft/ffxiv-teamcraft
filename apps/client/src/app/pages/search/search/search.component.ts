@@ -26,6 +26,7 @@ import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
+import jobAbbrs from '../../../core/data/sources/job-abbr.json';
 
 @Component({
   selector: 'app-search',
@@ -348,7 +349,7 @@ export class SearchComponent implements OnInit {
       elvlMax: 80,
       clvlMin: 0,
       clvlMax: 80,
-      jobCategory: [],
+      jobCategories: [],
       craftJob: null,
       itemCategories: [],
       stats: [],
@@ -415,8 +416,9 @@ export class SearchComponent implements OnInit {
   }
 
   private filtersToForm(filters: SearchFilter[], form: FormGroup): { [key: string]: any } {
-    const formRawValue = {};
+    const formRawValue: any = {};
     (filters || []).forEach(f => {
+      const formFieldName = this.getFormFieldName(f.name);
       if (f.value !== null) {
         if (f.formArray) {
           if (form.get(f.formArray) === null) {
@@ -440,14 +442,36 @@ export class SearchComponent implements OnInit {
             }
           ];
         } else if (f.value.min !== undefined) {
-          formRawValue[`${f.name}Min`] = f.value.min;
-          formRawValue[`${f.name}Max`] = f.value.max;
+          formRawValue[`${formFieldName}Min`] = f.value.min;
+          formRawValue[`${formFieldName}Max`] = f.value.max;
         } else {
-          formRawValue[f.name] = f.value;
+          formRawValue[formFieldName] = f.value;
         }
       }
     });
+    formRawValue.jobCategories = filters
+      .filter(f => f.name.startsWith('ClassJobCategory'))
+      .map(f => {
+        return +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === f.name.split('.')[1]);
+      });
     return formRawValue;
+  }
+
+  private getFormFieldName(filterName: string): string {
+    switch (filterName) {
+      case 'LevelEquip':
+        return 'elvl';
+      case 'LevelItem':
+        return 'ilvl';
+      case 'Recipes.Level':
+        return 'clvl';
+      case 'Recipes.ClassJobID':
+        return 'craftJob';
+      case 'ItemUICategoryTargetID':
+        return 'itemCategories';
+      default:
+        return filterName;
+    }
   }
 
   private getItemFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {

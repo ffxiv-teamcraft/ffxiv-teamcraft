@@ -8,6 +8,7 @@
              (keydown.enter)="query$.next(searchInput.value)"
              (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
              [nzAutocomplete]="settings.disableSearchHistory?emptyFill:auto"
+             [nzDefaultActiveFirstOption]="false"
              autofocus
              class="search-input"
              nz-input
@@ -26,7 +27,7 @@
       </ng-template>
     </nz-input-group>
     <button (cbOnSuccess)="afterShareLinkCopied()" [cbContent]="getShareUrl()" [nzTitle]="'ITEMS.Share_url' | translate" ngxClipboard nz-button
-            nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepIndex="1" tutorialStepAlign="bottom" >
+            nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepIndex="1" tutorialStepAlign="bottom">
       <i nz-icon nzType="share-alt"></i>
     </button>
     <nz-autocomplete #emptyFill></nz-autocomplete>
@@ -38,7 +39,7 @@
     <ng-template #searchType>
       <nz-select (ngModelChange)="searchType$.next($event);resetFilters()" [ngModel]="searchType$ | async"
                  class="search-type"
-                 nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" tutorialStepIndex="0"  >
+                 nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" tutorialStepIndex="0">
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                    [nzValue]="searchTypes.ANY"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
@@ -173,7 +174,6 @@
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
                             [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
-                <nz-form-control>
                   <nz-select class="filter-select" formControlName="name"
                              nzShowSearch>
                     <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
@@ -190,7 +190,6 @@
                   <button (click)="$event.preventDefault();removeFilter('stats', i)" [nzBlock]="false | ifMobile:true" nz-button
                           nzType="danger"><i nz-icon nzType="delete"></i>
                   </button>
-                </nz-form-control>
               </nz-form-item>
               <button (click)="$event.preventDefault();addFilter('stats')" nz-button
                       nzBlock>{{'SEARCH.Add_stat_filter' | translate}}</button>

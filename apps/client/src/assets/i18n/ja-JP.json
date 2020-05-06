@@ -458,6 +458,11 @@
     "Veteran": "ベテラン",
     "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
+    "Open_public_profile": "Open public profile",
+    "Community_contributions": "Community contributions",
+    "Fishing_rankings": "Fishing rankings",
+    "Total_rankings": "Total rankings",
+    "Loading_fish_rankings": "Loading fishing rankings",
     "VERIFICATION": {
       "Title": "キャラクター認証",
       "Guide": "アカウント認証のためにLodestone Profileに\"{{userId}}\"を貼り付け、下の認証ボタンを押してください。詳細については、<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\"> wikiの</a>を参照してください。",

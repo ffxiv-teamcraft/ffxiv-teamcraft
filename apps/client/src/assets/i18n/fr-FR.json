@@ -458,6 +458,11 @@
     "Veteran": "Vétéran",
     "Autofill_from_packets": "Auto-remplir les statistiques en utilisant la capture de paquets",
     "Autofill_stats_explain": "Passez à la tâche souhaitée pour la mettre à jour, fermez cette popup une fois que vous avez terminé. Assurez-vous que vous n'avez pas de nourriture active, sinon cela sauvera vos statistiques avec la nourriture active.",
+    "Open_public_profile": "Afficher le profil public",
+    "Community_contributions": "Contributions communautaires",
+    "Fishing_rankings": "Classement de Pêche",
+    "Total_rankings": "Meilleurs classements",
+    "Loading_fish_rankings": "Chargement des classements de pêche",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -1408,7 +1413,7 @@
       "Max_size": "Taille max",
       "Avg_size": "Taille moy",
       "Used_as_mooch_for": "Utilisé comme vif pour",
-      "No_known_mooch_usage": "Aucune utilisation en tant que vif connue",
+      "No_known_mooch_usage": "Aucune utilisation en tant que vif connue pour ce poisson",
       "No_spot_filter": "Aucun filtre de spot",
       "Chances_for_transition": "Chances que cette transition se produise",
       "Weather_chances": "Chances pour chaque météo d'apparaître",
@@ -1939,7 +1944,7 @@
       "HQ_ingredients": "Entrez ici les ingrédients HQ pour définir une qualité de départ.",
       "Consumables": "Configurer les consommables et les buffs de CL ici.",
       "Right_click_condition": "Faites un clic droit sur une action pour définir son état (bon, excellent, pauvre, échoué, etc) et prédire les résultats.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Save_as_new": "Cliquez ici pour enregistrer une copie de cette rotation dans votre compte.",
       "Import_ingame_macro": "Cliquez ici pour importer depuis une macro ingame.",
       "Generate_ingame_macro": "Cliquez ici pour générer une macro en jeu pour cette rotation.",
       "Share_with_stats": "Cliquez ici pour ouvrir la popup de partage, vous permettant de partager la simulation avec vos statistiques et consommables."
@@ -1954,9 +1959,9 @@
       "Tags_filter": "Filtrer par tags en utilisant cette case de sélection",
       "Rlvl_filter": "Filtrer par niveau de recette en utilisant cette case de sélection",
       "Durability_filter": "Filtrer par durabilité en utilisant cette case de sélection",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Min_craftsmanship": "Filtrer par le minimum d'habileté requis ici, cela ne trouvera que des rotations avec habileté requise < votre valeur.",
+      "Min_control": "Filtrer par contrôle minimum requis ici, cela ne trouvera que des rotations avec le contrôle requis < votre valeur.",
+      "Min_cp": "Filtrer par PS minimum requis ici, cela ne trouvera que des rotations avec PS requis < votre valeur.",
       "Set_selector": "Sélectionnez le job à utiliser pour les simulations utilisées pour montrer le taux de réussite des rotation des résultats."
     }
   }
