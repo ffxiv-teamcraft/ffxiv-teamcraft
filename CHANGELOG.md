@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.2"></a>
+## [7.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.0...v7.2.2) (2020-05-06)
+
+
+### Bug Fixes
+
+* **core:** fixed a build issue preventing proper release ([164fb8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/164fb8b))
+* **db:** fish rankings are no longer affected by spot filter ([5553afe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5553afe))
+* **desktop:** fixed an issue with auto updater not having single instance lock ([fb4040d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb4040d))
+* **profile:** fixed jobs panel display ([0a4f48d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a4f48d))
+* **search:** better handling of search filters and overall form display ([4d1051d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d1051d))
+* **search:** first option in history isn't automatically selected anymore ([06c4f47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06c4f47))
+* **tutorial-popup:** fixed missing translation ([fe2e49f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe2e49f))
+
+
+### Features
+
+* **profile:** added a public profile link in place of the removed apkallu falls button ([99fcb6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99fcb6c))
+* **profile:** added fishing rankings summary in public profile ([fe7c413](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fe7c413))
+
+
+
 <a name="7.2.1"></a>
 ## [7.2.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.0...v7.2.1) (2020-05-06)
 
