@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "ジョブ",
-      "Job_not_configured": "このジョブはまだ設定されていないようです。プロフィールページで確認してから, サブステを設定してください。",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "正確なシミュレーションのためにサブステの入力やアカウントにログインをしてください",
       "Select_job": "ジョブを選び出します",
       "Craftsmanship": "作業精度",
