@@ -7,7 +7,7 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
 import { TagsPopupComponent } from '../tags-popup/tags-popup.component';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -28,6 +28,7 @@ import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { SettingsService } from '../../settings/settings.service';
 import { ListColor } from '../model/list-color';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-list-panel',
@@ -35,7 +36,7 @@ import { ListColor } from '../model/list-color';
   styleUrls: ['./list-panel.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListPanelComponent {
+export class ListPanelComponent extends TeamcraftComponent {
 
   @Input()
   public set list(l: List) {
@@ -114,6 +115,7 @@ export class ListPanelComponent {
               private discordWebhookService: DiscordWebhookService, private teamsFacade: TeamsFacade,
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
               private cd: ChangeDetectorRef, public settings: SettingsService) {
+    super();
     this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
@@ -294,25 +296,14 @@ export class ListPanelComponent {
       nzContent: PermissionsBoxComponent,
       nzComponentParams: { data: list, ready$: modalReady$ }
     });
-    this.listsFacade.load(list.$key);
     modalReady$.pipe(
       first(),
       switchMap(() => {
         return modalRef.getContentComponent().changes$;
       }),
-      switchMap(() => {
-        return this.listsFacade.allListDetails$.pipe(
-          map(details => details.find(l => l.$key === list.$key)),
-          filter(l => l !== undefined),
-          first(),
-          map(changes => {
-            Object.assign(list, changes);
-            return list;
-          })
-        );
-      })
-    ).subscribe((res) => {
-      this.listsFacade.updateList(res);
+      takeUntil(this.onDestroy$)
+    ).subscribe(() => {
+      this.listsFacade.updateList(list);
     });
   }
 
