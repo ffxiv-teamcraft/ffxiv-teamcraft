@@ -718,5 +718,869 @@ export const hwdSupplies = {
       "exp": 5647825,
       "scrip": 58
     }
+  },
+  "29792": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29793": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29794": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29795": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29796": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29797": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29798": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29799": {
+    "level": 20,
+    "base": {
+      "rating": 50,
+      "exp": 57826,
+      "scrip": 3
+    },
+    "mid": {
+      "rating": 80,
+      "exp": 102715,
+      "scrip": 4
+    },
+    "high": {
+      "rating": 105,
+      "exp": 146796,
+      "scrip": 5
+    }
+  },
+  "29800": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29801": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29802": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29803": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29804": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29805": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29806": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29807": {
+    "level": 40,
+    "base": {
+      "rating": 90,
+      "exp": 220477,
+      "scrip": 7
+    },
+    "mid": {
+      "rating": 150,
+      "exp": 433478,
+      "scrip": 8
+    },
+    "high": {
+      "rating": 380,
+      "exp": 875604,
+      "scrip": 9
+    }
+  },
+  "29808": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29809": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29810": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29811": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29812": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29813": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29814": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29815": {
+    "level": 60,
+    "base": {
+      "rating": 300,
+      "exp": 1301116,
+      "scrip": 11
+    },
+    "mid": {
+      "rating": 850,
+      "exp": 1438130,
+      "scrip": 13
+    },
+    "high": {
+      "rating": 1320,
+      "exp": 1792967,
+      "scrip": 15
+    }
+  },
+  "29816": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29817": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29818": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29819": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29820": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29821": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29822": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29823": {
+    "level": 70,
+    "base": {
+      "rating": 480,
+      "exp": 2084005,
+      "scrip": 16
+    },
+    "mid": {
+      "rating": 2180,
+      "exp": 2876447,
+      "scrip": 18
+    },
+    "high": {
+      "rating": 2880,
+      "exp": 4113234,
+      "scrip": 20
+    }
+  },
+  "29824": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29825": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29826": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29827": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29828": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29829": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29830": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29831": {
+    "level": 80,
+    "base": {
+      "rating": 1350,
+      "exp": 4905155,
+      "scrip": 30
+    },
+    "mid": {
+      "rating": 1890,
+      "exp": 5395671,
+      "scrip": 45
+    },
+    "high": {
+      "rating": 3150,
+      "exp": 5886186,
+      "scrip": 60
+    }
+  },
+  "29832": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29833": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29834": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29835": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29836": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29837": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29838": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
+  },
+  "29839": {
+    "level": 80,
+    "base": {
+      "rating": 4500,
+      "exp": 4905155,
+      "scrip": 63
+    },
+    "mid": {
+      "rating": 5100,
+      "exp": 5395671,
+      "scrip": 69
+    },
+    "high": {
+      "rating": 6000,
+      "exp": 5886186,
+      "scrip": 76
+    }
   }
 };

@@ -99,10 +99,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           didChange = true;
         }
       }
-      if (!gearset.isCombatSet() && this.itemFiltersform.value.ilvlMin > 430) {
-        this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-        didChange = true;
-      }
       if (didChange) {
         this.submitFilters();
       }
@@ -119,20 +115,28 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public items$: Observable<any[]> = combineLatest([this.filters$, this.job$]).pipe(
     switchMap(([filters, job]) => {
+      const xivapiFilters: XivapiSearchFilter[] = [
+        ...filters,
+        {
+          column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
+          operator: '=',
+          value: 1
+        }
+      ];
+      if (job >= 8 && job <= 15) {
+        xivapiFilters.push({
+          column: `ClassJobCategoryTargetID`,
+          operator: '>',
+          value: 1
+        });
+      }
       const requests = [
         this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           string_algo: SearchAlgo.QUERY_STRING,
           string: '-Dated*',
           string_column: 'Name_en',
-          filters: [
-            ...filters,
-            {
-              column: `ClassJobCategory.${this.l12n.getJobAbbr(job).en}`,
-              operator: '=',
-              value: 1
-            }
-          ],
+          filters: xivapiFilters,
           columns: [
             'ID',
             'Name_*',

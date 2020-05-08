@@ -46,35 +46,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public update(uid: string, data: Partial<List>, uriParams?: any): Observable<void> {
-    // TODO update this to use batch or transaction to properly update the list, large lists are just not updating properly with this behavior.
-    // if (!data.isLarge()) {
     return super.set(uid, data as List);
-    // }
-    // const preparedCache = this.prepareData(this.syncCache[uid]);
-    // const preparedNew = this.prepareData(data);
-    // let diff = compare(preparedCache, preparedNew);
-    // diff = diff.map(entry => {
-    //   if ((entry.path.startsWith('/items') || entry.path.startsWith('/finalItems'))
-    //     && entry.op === 'replace'
-    //     && typeof entry.value === 'number') {
-    //     return {
-    //       ...entry,
-    //       offset: getValueByPointer(preparedNew, entry.path) - getValueByPointer(preparedCache, entry.path),
-    //       custom: true
-    //     };
-    //   }
-    //   return entry;
-    // });
-    // this.syncCache[uid] = data as List;
-    // this.zone.runOutsideAngular(() => {
-    //   this.fns.httpsCallable('updateList')(
-    //     {
-    //       diff: JSON.stringify(diff),
-    //       uid: uid
-    //     }
-    //   );
-    // });
-    // return of(null);
   }
 
   protected prepareData(list: Partial<List>): List {

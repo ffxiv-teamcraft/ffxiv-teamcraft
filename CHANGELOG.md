@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.3"></a>
+## [7.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.2...v7.2.3) (2020-05-08)
+
+
+### Bug Fixes
+
+* **db:** fixed a bug preventing collectability markers from showing on G2 skybuilders items ([f8b7b0e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f8b7b0e))
+* **gearset:** fixed an issue with filters getting too few items for levels < 60 ([d6432da](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d6432da))
+* **list:** fixed "mark as done in log" button for precrafts ([6174466](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6174466))
+* **workshop:** fixed permissions propagation ([7fbc543](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7fbc543))
+
+
+
 <a name="7.2.2"></a>
 ## [7.2.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.0...v7.2.2) (2020-05-06)
 

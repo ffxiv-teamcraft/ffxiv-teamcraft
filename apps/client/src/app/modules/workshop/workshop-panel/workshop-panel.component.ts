@@ -174,7 +174,7 @@ export class WorkshopPanelComponent {
       })
     ).subscribe((updatedLists: List[]) => {
       updatedLists.forEach(list => {
-        this.listsFacade.updateList(list, true, true);
+        this.listsFacade.pureUpdateList(list.$key, { 'registry': list.registry, 'everyone': list.everyone });
       });
       this.message.success(this.translate.instant('PERMISSIONS.Propagate_changes_done'));
     });

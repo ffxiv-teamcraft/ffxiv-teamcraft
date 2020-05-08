@@ -1891,7 +1891,10 @@ if (hasTodo('HWDCrafter')) {
   const supplies = {};
   getAllEntries('https://xivapi.com/HWDCrafterSupply').subscribe(completeFetch => {
     completeFetch.forEach(supply => {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 16; i++) {
+        if (!supply[`ItemTradeIn${i}TargetID`]) {
+          continue;
+        }
         const baseReward = supply[`BaseCollectableReward${i}`];
         supplies[supply[`ItemTradeIn${i}TargetID`]] = {
           level: supply[`Level${i}`],
