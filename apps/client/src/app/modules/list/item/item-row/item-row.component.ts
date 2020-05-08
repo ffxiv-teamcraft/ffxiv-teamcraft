@@ -48,6 +48,7 @@ import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-row',
@@ -217,7 +218,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
       const gatheredBy = getItemSource(item, DataType.GATHERED_BY, true);
       if (craftedBy.length > 0) {
-        return user.logProgression.indexOf(+item.recipeId || +craftedBy[0].recipeId) === -1;
+        return user.logProgression.indexOf(+item.recipeId || +craftedBy[0].id) === -1;
       } else if (gatheredBy.type !== undefined) {
         return user.gatheringLogProgression.indexOf(+item.id) === -1;
       }
@@ -253,7 +254,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade,
-              private simulationService: SimulationService) {
+              private simulationService: SimulationService,
+              private lazyData: LazyDataService) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -384,7 +386,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       if (craftedBy.length > 0) {
         user.logProgression = _.uniq([
           ...user.logProgression,
-          +(item.recipeId || craftedBy[0].recipeId)
+          +(item.recipeId || craftedBy[0].id)
         ]);
       } else if (gatheredBy.type !== undefined) {
         user.gatheringLogProgression = _.uniq([
