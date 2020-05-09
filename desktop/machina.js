@@ -31,7 +31,7 @@ function filterPacketSessionID(packet) {
     || packet.sourceActorSessionID === packet.targetActorSessionID;
 }
 
-module.exports.start = function(win, config, verbose, winpcap) {
+module.exports.start = function(win, config, verbose, winpcap, pid) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
@@ -57,6 +57,10 @@ module.exports.start = function(win, config, verbose, winpcap) {
 
       if (verbose) {
         options.logger = log.log;
+      }
+
+      if (pid) {
+        options.pid = pid;
       }
 
       const acceptedPackets = [

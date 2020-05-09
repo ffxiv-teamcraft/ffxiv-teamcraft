@@ -121,6 +121,9 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--winpcap' || argv[i] === '-wp') {
     options.winpcap = true;
   }
+  if (argv[i] === '-pid') {
+    options.pid = +argv[i + 1];
+  }
 }
 
 if (!isDev) {
@@ -218,7 +221,7 @@ function createWindow() {
   win = new BrowserWindow(opts);
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.verbose, options.winpcap);
+    Machina.start(win, config, options.verbose, options.winpcap, options.pid);
   }
 
   const proxyRule = config.get('proxy-rule', '');
