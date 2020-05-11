@@ -24,11 +24,13 @@ function handleSquirrelEvent() {
   const exeName = path.basename(process.execPath);
 
   const spawn = function(command, args) {
-    let spawnedProcess, error;
+    let spawnedProcess;
+    log.log('Spawn update', args);
 
     try {
       spawnedProcess = ChildProcess.spawn(command, args, { detached: true });
     } catch (error) {
+      log.log('ERROR Spawning update.exe', error);
     }
 
     return spawnedProcess;
@@ -41,8 +43,11 @@ function handleSquirrelEvent() {
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
     case '--squirrel-install':
-      spawnUpdate(['--createShortcut', exeName]);
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+    case '--squirrel-firstrun':
+      if (!config.get('setup:noShortcut')) {
+        spawnUpdate(['--createShortcut', exeName]);
+      }
+      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -50,7 +55,7 @@ function handleSquirrelEvent() {
       // - Write to the registry for things like file associations and
       //   explorer context menus
       // Remove previous firewall rules
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
