@@ -64,6 +64,7 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
       }
 
       const acceptedPackets = [
+        'actorCast',
         'itemInfo',
         'updateInventorySlot',
         'inventoryTransaction',

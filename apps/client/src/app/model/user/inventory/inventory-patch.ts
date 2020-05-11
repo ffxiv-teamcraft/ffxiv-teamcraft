@@ -3,5 +3,8 @@ export interface InventoryPatch {
   quantity: number;
   hq: boolean;
   containerId: number;
+  retainerName?: string;
   spiritBond?: number;
+  emptied?: boolean;
+  moved?: boolean;
 }
