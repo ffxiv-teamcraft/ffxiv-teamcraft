@@ -610,7 +610,7 @@ ipcMain.on('metrics:persist', (event, data) => {
   if (month < 10) {
     month = `0${month}`;
   }
-  let day = now.getDay();
+  let day = now.getUTCDate();
   if (day < 10) {
     day = `0${day}`;
   }
@@ -623,13 +623,16 @@ ipcMain.on('metrics:persist', (event, data) => {
 });
 
 ipcMain.on('metrics:load', (event, { from, to }) => {
+  if (to === undefined) {
+    to = Date.now();
+  }
   const files = fs.readdirSync(METRICS_FOLDER);
   const loadedFiles = files
     .filter(fileName => {
       const date = +fileName.split('.')[0];
       return date >= from && date <= to;
     })
-    .map(fileName => fs.readFileSync(path.join(METRICS_FOLDER, fileName)));
+    .map(fileName => fs.readFileSync(path.join(METRICS_FOLDER, fileName), 'utf8'));
   event.sender.send('metrics:loaded', loadedFiles);
 });
 // End metrics system

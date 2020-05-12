@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { merge, Subject } from 'rxjs';
+import { BehaviorSubject, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PLAYER_METRICS_PROBES, PlayerMetricProbe } from './probes/player-metric-probe';
 import { takeUntil } from 'rxjs/operators';
 import { ProbeReport } from './model/probe-report';
@@ -12,11 +12,11 @@ export class PlayerMetricsService {
 
   private stop$ = new Subject<void>();
 
-  private _logs: ProbeReport[] = [];
+  private _logs$: Subject<ProbeReport[]> = new ReplaySubject<ProbeReport[]>();
 
-  public get logs(): ProbeReport[] {
-    return this._logs;
-  }
+  public readonly logs$: Observable<ProbeReport[]> = this._logs$.asObservable();
+
+  public loading$ = new BehaviorSubject<boolean>(false);
 
   private buffer: ProbeReport[] = [];
 
@@ -26,16 +26,20 @@ export class PlayerMetricsService {
     setInterval(() => {
       this.saveLogs();
     }, 60000);
-    this.ipc.on('metrics:loaded', (e, data) => {
-      this._logs = data.split('|')
-        .map(row => {
-          const parsed = row.split(';');
-          return {
-            timestamp: +parsed[0],
-            type: +parsed[1],
-            data: parsed[2].split(',').map(n => +n)
-          };
-        });
+    this.ipc.on('metrics:loaded', (e, files: string[]) => {
+      const logs = [].concat.apply([], files.map(data => {
+        return data.split('|')
+          .map(row => {
+            const parsed = row.split(';');
+            return {
+              timestamp: +parsed[0],
+              type: +parsed[1],
+              data: parsed[2].split(',').map(n => +n)
+            };
+          });
+      }));
+      this._logs$.next(logs);
+      this.loading$.next(false);
     });
   }
 
@@ -58,14 +62,26 @@ export class PlayerMetricsService {
     this.started = false;
   }
 
-  public load(from: Date, to: Date): void {
-    this.ipc.send('metrics:load', { from, to });
+  public load(from: Date, to: Date = new Date()): void {
+    this.ipc.send('metrics:load', { from: this.dateToFileName(from), to: this.dateToFileName(to) });
+    this.loading$.next(true);
+  }
+
+  private dateToFileName(date: Date): string {
+    let month = date.getMonth().toString();
+    if (+month < 10) {
+      month = `0${month}`;
+    }
+    let day = date.getUTCDate().toString();
+    if (+day < 10) {
+      day = `0${day}`;
+    }
+    return `${date.getFullYear()}${month}${day}`;
   }
 
   private handleReport(report: ProbeReport): void {
     report.timestamp = Math.floor(Date.now() / 1000);
     this.buffer.push(report);
-    this.logs.push(report);
   }
 
   private saveLogs(): void {

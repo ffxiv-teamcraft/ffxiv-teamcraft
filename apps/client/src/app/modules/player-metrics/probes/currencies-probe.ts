@@ -18,7 +18,7 @@ export class CurrenciesProbe extends PlayerMetricProbe {
       filter(patch => patch.containerId === ContainerType.Currency || patch.containerId === ContainerType.RetainerGil),
       withLatestFrom(this.source$),
       map(([event, source]) => {
-        if (event.amount > 0 && source === ProbeSource.TELEPORT) {
+        if (event.amount > 0 && (source === ProbeSource.TELEPORT || source === ProbeSource.MARKETBOARD)) {
           source = ProbeSource.UNKNOWN;
         }
         return {

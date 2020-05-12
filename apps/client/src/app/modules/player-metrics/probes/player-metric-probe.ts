@@ -29,6 +29,8 @@ export abstract class PlayerMetricProbe {
           return ProbeSource.GATHERING;
         case EventHandlerType.Shop:
           return ProbeSource.VENDOR;
+        case EventHandlerType.CustomTalk:
+          return (packet.eventId & 0xFFFF) === 0x2E ? ProbeSource.MARKETBOARD : ProbeSource.UNKNOWN;
       }
     })
   );

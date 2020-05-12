@@ -102,6 +102,7 @@ import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
 import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
 import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.module';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -263,7 +264,8 @@ const nzConfig: NzConfig = {
     ClipboardModule,
     GraphQLModule,
 
-    PlayerMetricsModule
+    PlayerMetricsModule,
+    NzSpaceModule
   ],
   bootstrap: [AppComponent]
 })

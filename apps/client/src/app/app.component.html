@@ -31,7 +31,7 @@
         </div>
         <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
           <ng-container *ngIf="platformService.isDesktop()">
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <nz-space nzSize="small">
               <button (click)="back()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-left"></i>
               </button>
@@ -43,7 +43,7 @@
               <button (click)="forward()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-right"></i>
               </button>
-            </div>
+            </nz-space>
           </ng-container>
           <div class="tips" fxHide.lt-lg fxShow>
             <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
@@ -360,6 +360,13 @@
                   <span>
                       <i nz-icon nzType="hourglass"></i>
                       <span class="nav-text">{{'ALARMS.REALTIME.Reset_timers' | translate}}</span>
+                  </span>
+                </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
+                   routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="stock"></i>
+                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>
                   </span>
                 </a>
               </li>

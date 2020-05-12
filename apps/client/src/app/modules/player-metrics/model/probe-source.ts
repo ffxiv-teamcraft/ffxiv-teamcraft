@@ -4,5 +4,6 @@ export enum ProbeSource {
   CRAFTING,
   FISHING,
   VENDOR,
-  TELEPORT
+  TELEPORT,
+  MARKETBOARD
 }
