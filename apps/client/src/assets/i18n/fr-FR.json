@@ -967,7 +967,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
+      "Job_not_configured": "Il semble que vous n’avez pas configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses caractéristiques.",
       "Job_not_configured_anonymous": "Veuillez entrer vos statistiques pour avoir une simulation précise ou connectez-vous à votre compte",
       "Select_job": "Sélectionner un job",
       "Craftsmanship": "Habileté",
