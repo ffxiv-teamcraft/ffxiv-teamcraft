@@ -405,8 +405,6 @@
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
-    "Performance_mode": "Режим производительности",
-    "Performance_mode_explain": "Удаляет изображения в списках, а также в меню (сохраняет только кнопки) для снижения нагрузки в браузере и приложении",
     "Change_email": "Изменить email",
     "Change_email_success": "Email успешно изменен",
     "No_shortcut": "Don't create shortcut on update",
