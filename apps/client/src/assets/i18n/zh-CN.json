@@ -405,8 +405,6 @@
     "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
-    "Performance_mode": "性能模式",
-    "Performance_mode_explain": "移除列表中的物品图标和菜单（仅保留按钮）以降低浏览器及应用的压力。",
     "Change_email": "修改电子邮箱",
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
