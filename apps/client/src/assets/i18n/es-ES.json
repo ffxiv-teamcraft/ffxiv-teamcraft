@@ -405,8 +405,6 @@
     "Enable_autofill_hq_filter": "Solo autocompletar usando elementos HQ cuando el artículo es requerido como HQ",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
-    "Performance_mode": "Modo de rendimiento",
-    "Performance_mode_explain": "Remueve las imágenes de los artículos en las listas, así como menús (sólo quedan los botones) para tener menos carga en el navegador y la aplicación",
     "Change_email": "Cambiar correo electrónico",
     "Change_email_success": "Correo electrónico cambiado",
     "No_shortcut": "No crear acceso directo al actualizar",
