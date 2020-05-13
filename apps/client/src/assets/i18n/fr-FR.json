@@ -405,8 +405,6 @@
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
-    "Performance_mode": "Mode hautes perfs",
-    "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
