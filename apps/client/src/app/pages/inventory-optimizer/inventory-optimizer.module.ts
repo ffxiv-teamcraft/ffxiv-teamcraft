@@ -22,6 +22,7 @@ import { HasTooFew } from './optimizations/has-too-few';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ConsolidateStacks } from './optimizations/consolidate-stacks';
 import { UnwantedMaterials } from './optimizations/unwanted-materials';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 const optimisations: Provider[] = [
   {
@@ -79,7 +80,8 @@ const routes: Routes = [
     PageLoaderModule,
     FullpageMessageModule,
     ItemIconModule,
-    ClipboardModule
+    ClipboardModule,
+    ScrollingModule
   ],
   providers: [
     ...optimisations
