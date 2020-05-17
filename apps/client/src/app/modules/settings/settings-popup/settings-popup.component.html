@@ -143,6 +143,61 @@
                  nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
+      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Lists' | translate"></nz-divider>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Scrolling_behavior' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Scrolling_behavior_explain' | translate">
+          <nz-select [(ngModel)]="settings.listScrollingMode">
+            <nz-option [nzLabel]="'LIST.SCROLLING.Default' | translate" nzValue="default"></nz-option>
+            <nz-option [nzLabel]="'LIST.SCROLLING.Only_large' | translate" nzValue="large"></nz-option>
+            <nz-option [nzLabel]="'LIST.SCROLLING.Never' | translate" nzValue="never"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-switch
+            [(ngModel)]="settings.displayRemaining"
+            [nzCheckedChildren]="checkedTemplate"
+            [nzUnCheckedChildren]="unCheckedTemplate"
+          ></nz-switch>
+          <ng-template #checkedTemplate>{{'SETTINGS.Amount_display_mode_remaining' | translate}}</ng-template>
+          <ng-template #unCheckedTemplate>{{'SETTINGS.Amount_display_mode_total' | translate}}</ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">{{'PERMISSIONS.Default_permission_level' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <nz-select [(ngModel)]="settings.defaultPermissionLevel">
+            <nz-option [nzLabel]="'NONE' | translate" [nzValue]="1"></nz-option>
+            <nz-option [nzLabel]="'READ' | translate" [nzValue]="10"></nz-option>
+            <nz-option [nzLabel]="'PARTICIPATE' | translate" [nzValue]="20"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.autoMarkAsCompleted"
+                 nz-checkbox>{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.showCopyOnOwnList"
+                 nz-checkbox>{{'SETTINGS.Show_copy_list_own_list' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.itemTagsEnabled"
+                 nz-checkbox>{{'SETTINGS.Enable_item_tags' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
@@ -166,33 +221,11 @@
         </nz-form-control>
       </nz-form-item>
       <nz-form-item>
-        <nz-form-label [nzSpan]="5">{{'SETTINGS.Amount_display_mode' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <nz-switch
-            [(ngModel)]="settings.displayRemaining"
-            [nzCheckedChildren]="checkedTemplate"
-            [nzUnCheckedChildren]="unCheckedTemplate"
-          ></nz-switch>
-          <ng-template #checkedTemplate>{{'SETTINGS.Amount_display_mode_remaining' | translate}}</ng-template>
-          <ng-template #unCheckedTemplate>{{'SETTINGS.Amount_display_mode_total' | translate}}</ng-template>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Preferred_copy_type' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
           <nz-select [(ngModel)]="settings.preferredCopyType">
             <nz-option [nzLabel]="'SETTINGS.COPY_TYPE.Classic' | translate" [nzValue]="'classic'"></nz-option>
             <nz-option [nzLabel]="'SETTINGS.COPY_TYPE.Isearch' | translate" [nzValue]="'isearch'"></nz-option>
-          </nz-select>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item>
-        <nz-form-label [nzSpan]="5">{{'PERMISSIONS.Default_permission_level' | translate}}</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <nz-select [(ngModel)]="settings.defaultPermissionLevel">
-            <nz-option [nzLabel]="'NONE' | translate" [nzValue]="1"></nz-option>
-            <nz-option [nzLabel]="'READ' | translate" [nzValue]="10"></nz-option>
-            <nz-option [nzLabel]="'PARTICIPATE' | translate" [nzValue]="20"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
@@ -204,33 +237,11 @@
           </label>
         </nz-form-control>
       </nz-form-item>
-      <nz-form-item class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.autoMarkAsCompleted"
-                 nz-checkbox>{{'SETTINGS.Auto_mark_as_done_in_log' | translate}}</label>
-        </nz-form-control>
-      </nz-form-item>
       <nz-form-item *ngIf="!platform.isDesktop()" class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
           <label [(ngModel)]="settings.autoOpenInDesktop"
                  nz-checkbox>{{'SETTINGS.Auto_open_in_desktop' | translate}}</label>
-        </nz-form-control>
-      </nz-form-item>
-      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.itemTagsEnabled"
-                 nz-checkbox>{{'SETTINGS.Enable_item_tags' | translate}}</label>
-        </nz-form-control>
-      </nz-form-item>
-
-      <nz-form-item *ngIf="loggedIn$ | async" class="empty-label">
-        <nz-form-label [nzSpan]="5"></nz-form-label>
-        <nz-form-control [nzSpan]="12">
-          <label [(ngModel)]="settings.showCopyOnOwnList"
-                 nz-checkbox>{{'SETTINGS.Show_copy_list_own_list' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
 

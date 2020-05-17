@@ -68,11 +68,11 @@ export class SettingsService {
     this.setSetting('time-format', format);
   }
 
-  public get listScrollingMode(): 'full' | 'large' | 'none' {
-    return this.getSetting('list-scrolling-mode', 'full') as 'full' | 'large' | 'none';
+  public get listScrollingMode(): 'default' | 'large' | 'never' {
+    return this.getSetting('list-scrolling-mode', 'default') as 'default' | 'large' | 'never';
   }
 
-  public set listScrollingMode(format: 'full' | 'large' | 'none') {
+  public set listScrollingMode(format: 'default' | 'large' | 'never') {
     this.setSetting('list-scrolling-mode', format);
   }
 

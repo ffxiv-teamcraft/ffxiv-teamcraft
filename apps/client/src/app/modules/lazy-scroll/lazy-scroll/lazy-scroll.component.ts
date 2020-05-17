@@ -21,5 +21,8 @@ export class LazyScrollComponent {
   displayedRows = 8;
 
   @Input()
+  noScroll = false;
+
+  @Input()
   trackBy: TrackByFunction<any> = (row) => row;
 }
