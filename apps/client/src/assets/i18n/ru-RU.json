@@ -411,6 +411,8 @@
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -430,6 +432,7 @@
       "Networking": "Networking",
       "Theme": "Тема",
       "Search": "Поиск",
+      "Lists": "Lists",
       "Other": "Прочее"
     },
     "REGIONS": {
@@ -537,6 +540,11 @@
     "Reset_panel": "Сбросить все предметы этой панели",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Красный",
       "GREEN": "Зеленый",
