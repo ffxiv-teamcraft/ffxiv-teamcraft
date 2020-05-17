@@ -184,7 +184,7 @@ export class LazyDataService {
       if (languageToLoad === 'en') {
         return entry.fileName.split('/').length === 1;
       } else {
-        return entry.fileName.startsWith(`/${languageToLoad}`);
+        return entry.fileName.startsWith(`/${languageToLoad}`) || entry.fileName.split('/').length === 1;
       }
     });
 
