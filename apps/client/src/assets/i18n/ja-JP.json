@@ -411,6 +411,8 @@
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -430,6 +432,7 @@
       "Networking": "Networking",
       "Theme": "テーマ",
       "Search": "検索",
+      "Lists": "Lists",
       "Other": "その他"
     },
     "REGIONS": {
@@ -537,6 +540,11 @@
     "Reset_panel": "Reset all the items of this panel",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "赤",
       "GREEN": "緑",
