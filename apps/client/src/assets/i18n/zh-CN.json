@@ -411,6 +411,8 @@
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
     "Enable_tutorials": "启用教程",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -430,6 +432,7 @@
       "Networking": "网络设置",
       "Theme": "界面主题",
       "Search": "搜索",
+      "Lists": "Lists",
       "Other": "其他"
     },
     "REGIONS": {
@@ -537,6 +540,11 @@
     "Reset_panel": "重置此面板的所有物品",
     "Progression_tooltip_materials": "已获得材料：{{amount}}%",
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "红色",
       "GREEN": "绿色",
