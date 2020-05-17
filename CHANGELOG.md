@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.4"></a>
+## [7.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.3...v7.2.4) (2020-05-17)
+
+
+### Bug Fixes
+
+* **data:** fixed wrong aetheryte link for most npcs in cities ([82f1ea7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82f1ea7))
+* **desktop:** fixed overlay slider not displaying properly ([caf4870](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/caf4870)), closes [#1529](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1529)
+* **desktop:** fixed shortcut creation and firewall entries management ([a86f079](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a86f079)), closes [#1528](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1528)
+* **desktop:** fixed updater spawning error on application patching ([dd753ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd753ef))
+* **list:** fixed permissions popup when opened from list panel ([5d712e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d712e5))
+* **log-tracker:** log tracking is now tied to character, not account ([ced89b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ced89b4))
+* **profile:** fixed layout issue for non-verified characters ([7aa192c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7aa192c))
+* **search:** disabled history if debounce is disabled while waiting for fix from antd ([1963236](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1963236))
+* **web:** removed inventory optimizer from menu in web app ([a52608f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a52608f))
+
+
+### Features
+
+* **core:** zh and ko files are now loaded only if needed ([2314bc2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2314bc2))
+* **desktop:** added `-pid` option flag to specify pid to attach to for packet capture ([c6a101c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6a101c))
+* **list:** removed performance mode and added automatic virtual scrolling ([82968a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/82968a0))
+
+
+
 <a name="7.2.3"></a>
 ## [7.2.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.2...v7.2.3) (2020-05-08)
 

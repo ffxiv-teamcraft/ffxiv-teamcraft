@@ -1,17 +1,23 @@
 <span [class.overlay]="overlay" *ngIf="displayRow">
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
+    <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems">
+    <app-lazy-scroll [data]="items" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow" [trackBy]="trackByItem">
+      <ng-template #itemRow let-item let-odd="odd">
+        <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
+                      [overlay]="overlay"
+                      [finalItem]="finalItems"
+                      [alarmGroups]="alarmGroups"
+                      [item]="item"
+                      [layout]="displayRow.layout"
+                      [odd]="odd"></app-item-row>
+      </ng-template>
+    </app-lazy-scroll>
+    </ng-template>
     <ng-template #display>
       <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed">
         <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
-          <app-item-row *ngFor="let item of displayRow.rows; trackBy: trackByItem; let odd = odd"
-                        [permissionLevel]="overlay ? 10 : permissionLevel"
-                        [overlay]="overlay"
-                        [finalItem]="finalItems"
-                        [alarmGroups]="alarmGroups"
-                        [item]="item"
-                        [layout]="displayRow.layout"
-                        [odd]="odd"></app-item-row>
+            <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: displayRow.rows, displayedItems: 8}"></ng-container>
         </div>
         <div *ngIf="displayRow.tiers || displayRow.reverseTiers">
           <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
@@ -21,14 +27,7 @@
               *ngIf="displayRow.reverseTiers">{{tiers.length - index}}</span>
             </ng-template>
             <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
-            <app-item-row *ngFor="let item of tier; trackBy: trackByItem; let odd = odd"
-                          [permissionLevel]="overlay ? 10 : permissionLevel"
-                          [overlay]="overlay"
-                          [finalItem]="finalItems"
-                          [alarmGroups]="alarmGroups"
-                          [item]="item"
-                          [layout]="displayRow.layout"
-                          [odd]="odd"></app-item-row>
+            <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: tier, displayedItems: 6}"></ng-container>
           </div>
         </div>
         <div *ngIf="displayRow.zoneBreakdown">
@@ -49,14 +48,7 @@
                 </div>
               </ng-template>
               <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
-              <app-item-row *ngFor="let item of row.items; trackBy: trackByItem; let odd = odd"
-                            [permissionLevel]="overlay ? 10 : permissionLevel"
-                            [overlay]="overlay"
-                            [finalItem]="finalItems"
-                            [alarmGroups]="alarmGroups"
-                            [item]="item"
-                            [layout]="displayRow.layout"
-                            [odd]="odd"></app-item-row>
+              <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: row.items, displayedItems: 6}"></ng-container>
             </div>
           </div>
         </div>

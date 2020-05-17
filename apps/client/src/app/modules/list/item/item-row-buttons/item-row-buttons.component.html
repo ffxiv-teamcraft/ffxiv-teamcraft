@@ -197,7 +197,7 @@
     </button>
   </ng-container>
 
-  <ng-container *ngIf="!settings.performanceMode && !overlay">
+  <ng-container *ngIf="!overlay">
     <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
             tutorialStep="TUTORIAL.LIST.More_actions_button"
             tutorialStepIndex="10"

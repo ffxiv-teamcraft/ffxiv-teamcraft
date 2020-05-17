@@ -13,6 +13,8 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { Region } from '../../modules/settings/region.enum';
 import { Memoized } from '../decorators/memoized';
+import { Language } from './language';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -58,12 +60,17 @@ export class LazyDataService {
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
+  private loadedLangs: Language[] = [];
+
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
-              private platformService: PlatformService, private settings: SettingsService) {
+              private platformService: PlatformService, private settings: SettingsService, private translate: TranslateService) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
     } else {
-      this.load();
+      this.load(translate.currentLang as Language);
+      translate.onLangChange.subscribe(change => {
+        this.load(change.lang);
+      });
     }
   }
 
@@ -150,7 +157,7 @@ export class LazyDataService {
     }, {});
   }
 
-  protected load(): void {
+  protected load(lang: Language): void {
     combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
@@ -159,7 +166,23 @@ export class LazyDataService {
         this.extracts$.next(extracts);
       });
 
-    combineLatest(lazyFilesList.map(row => {
+    const languageToLoad = ['ko', 'zh'].indexOf(lang) > -1 ? lang : 'en';
+
+    if (this.loadedLangs.indexOf(languageToLoad) > -1) {
+      return;
+    }
+
+    this.loadedLangs.push(languageToLoad);
+
+    const filesToLoad = lazyFilesList.filter(entry => {
+      if (languageToLoad === 'en') {
+        return entry.fileName.split('/').length === 1;
+      } else {
+        return entry.fileName.startsWith(`/${languageToLoad}`);
+      }
+    });
+
+    combineLatest(filesToLoad.map(row => {
       return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
         map(data => {
           return {
@@ -177,6 +200,7 @@ export class LazyDataService {
       this.data$.next(this.data);
       this.loaded$.next(true);
       this.loaded$.complete();
+      this.loadedLangs.push(languageToLoad);
     });
   }
 

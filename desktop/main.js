@@ -24,11 +24,13 @@ function handleSquirrelEvent() {
   const exeName = path.basename(process.execPath);
 
   const spawn = function(command, args) {
-    let spawnedProcess, error;
+    let spawnedProcess;
+    log.log('Spawn update', args);
 
     try {
       spawnedProcess = ChildProcess.spawn(command, args, { detached: true });
     } catch (error) {
+      log.log('ERROR Spawning update.exe', error);
     }
 
     return spawnedProcess;
@@ -41,8 +43,11 @@ function handleSquirrelEvent() {
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
     case '--squirrel-install':
-      spawnUpdate(['--createShortcut', exeName]);
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+    case '--squirrel-firstrun':
+      if (!config.get('setup:noShortcut')) {
+        spawnUpdate(['--createShortcut', exeName]);
+      }
+      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -50,7 +55,7 @@ function handleSquirrelEvent() {
       // - Write to the registry for things like file associations and
       //   explorer context menus
       // Remove previous firewall rules
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
@@ -121,6 +126,9 @@ for (let i = 0; i < argv.length; i++) {
   if (argv[i] === '--winpcap' || argv[i] === '-wp') {
     options.winpcap = true;
   }
+  if (argv[i] === '-pid') {
+    options.pid = +argv[i + 1];
+  }
 }
 
 if (!isDev) {
@@ -178,28 +186,11 @@ ipcMain.on('update:check', () => {
 /**
  * End autoupdater
  */
-
-const gotTheLock = app.requestSingleInstanceLock();
-
-if (!gotTheLock) {
-  app.quit();
-} else {
-  app.on('second-instance', (event, commandLine, workingDirectory) => {
-    // Someone tried to run a second instance, we should focus our window.
-    if (win) {
-      if (win.isMinimized()) {
-        win.restore();
-      }
-      win.focus();
-    }
-  });
-
-  // Create window on electron intialization
-  app.on('ready', () => {
-    createWindow();
-    createTray();
-  });
-}
+// Create window on electron intialization
+app.on('ready', () => {
+  createWindow();
+  createTray();
+});
 
 function createWindow() {
   app.setAsDefaultProtocolClient('teamcraft');
@@ -235,7 +226,7 @@ function createWindow() {
   win = new BrowserWindow(opts);
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.verbose, options.winpcap);
+    Machina.start(win, config, options.verbose, options.winpcap, options.pid);
   }
 
   const proxyRule = config.get('proxy-rule', '');
