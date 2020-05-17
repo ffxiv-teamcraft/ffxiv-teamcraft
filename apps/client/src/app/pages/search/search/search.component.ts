@@ -216,17 +216,20 @@ export class SearchComponent implements OnInit {
     }).pipe(
       map(contentList => {
         return contentList.Results.map(result => {
-          return {
+          const res: any = {
             id: result.ID,
             name: {
               en: result.Name_en,
               fr: result.Name_fr,
               de: result.Name_de,
-              ja: result.Name_ja,
-              zh: this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en,
-              ko: this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en
+              ja: result.Name_ja
             }
           };
+          if (this.lazyData.data.zhItemUiCategories) {
+            res.name.zh = this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en;
+            res.name.ko = this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en;
+          }
+          return res;
         });
       })
     );

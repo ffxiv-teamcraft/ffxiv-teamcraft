@@ -125,20 +125,24 @@ export class LazyDataService {
 
   public get allItems(): any {
     const res = { ...this.data.items };
-    Object.keys(this.data.koItems).forEach(koKey => {
-      if (res[koKey] !== undefined) {
-        res[koKey].ko = this.data.koItems[koKey].ko;
-      } else {
-        res[koKey] = this.data.koItems[koKey];
-      }
-    });
-    Object.keys(this.data.zhItems).forEach(zhKey => {
-      if (res[zhKey] !== undefined) {
-        res[zhKey].zh = this.data.zhItems[zhKey].zh;
-      } else {
-        res[zhKey] = this.data.zhItems[zhKey];
-      }
-    });
+    if (this.data.koItems) {
+      Object.keys(this.data.koItems).forEach(koKey => {
+        if (res[koKey] !== undefined) {
+          res[koKey].ko = this.data.koItems[koKey].ko;
+        } else {
+          res[koKey] = this.data.koItems[koKey];
+        }
+      });
+    }
+    if (this.data.zhItems) {
+      Object.keys(this.data.zhItems).forEach(zhKey => {
+        if (res[zhKey] !== undefined) {
+          res[zhKey].zh = this.data.zhItems[zhKey].zh;
+        } else {
+          res[zhKey] = this.data.zhItems[zhKey];
+        }
+      });
+    }
     return res;
   }
 
@@ -159,7 +163,7 @@ export class LazyDataService {
     }, {});
   }
 
-  protected load(lang: Language): void {
+  public load(lang: Language): void {
     combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
@@ -174,13 +178,14 @@ export class LazyDataService {
       return;
     }
 
+    this.loaded$.next(false);
     this.loadedLangs.push(languageToLoad);
 
     const filesToLoad = lazyFilesList.filter(entry => {
       if (languageToLoad === 'en') {
-        return entry.fileName.split('/').length === 1;
+        return entry.fileName.split('/').length === 1 || entry.fileName.indexOf('items') > -1;
       } else {
-        return entry.fileName.startsWith(`/${languageToLoad}`);
+        return entry.fileName.startsWith(`/${languageToLoad}`) || entry.fileName.split('/').length === 1;
       }
     });
 
@@ -194,14 +199,13 @@ export class LazyDataService {
         })
       );
     })).subscribe((results) => {
-      const lazyData: Partial<LazyData> = {};
+      const lazyData: Partial<LazyData> = this.data || {};
       results.forEach(row => {
         lazyData[row.propertyName] = row.data;
       });
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
       this.loaded$.next(true);
-      this.loaded$.complete();
       this.loadedLangs.push(languageToLoad);
     });
   }

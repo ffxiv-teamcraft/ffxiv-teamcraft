@@ -46,6 +46,17 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return this._displayRow;
   }
 
+  public get noScroll(): boolean {
+    switch(this.settings.listScrollingMode){
+      case 'default':
+        return false;
+      case 'large':
+        return !this.largeList;
+      case 'never':
+        return true;
+    }
+  }
+
   @Input()
   finalItems = false;
 
@@ -54,6 +65,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   @Input()
   overlay = false;
+
+  @Input()
+  largeList = false;
 
   progression: number;
 

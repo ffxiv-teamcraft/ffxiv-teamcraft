@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-macro-translator',
@@ -30,7 +31,9 @@ export class MacroTranslatorComponent {
   private findActionsAutoTranslatedRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+([^<]+)?.*/, 'i');
 
-  constructor(private localizedDataService: LocalizedDataService) {
+  constructor(private localizedDataService: LocalizedDataService, private lazyData: LazyDataService) {
+    this.lazyData.load('zh');
+    this.lazyData.load('ko');
   }
 
   translateMacro() {
