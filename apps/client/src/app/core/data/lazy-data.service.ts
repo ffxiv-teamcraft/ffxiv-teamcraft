@@ -178,11 +178,12 @@ export class LazyDataService {
       return;
     }
 
+    this.loaded$.next(false);
     this.loadedLangs.push(languageToLoad);
 
     const filesToLoad = lazyFilesList.filter(entry => {
       if (languageToLoad === 'en') {
-        return entry.fileName.split('/').length === 1;
+        return entry.fileName.split('/').length === 1 || entry.fileName.indexOf('items') > -1;
       } else {
         return entry.fileName.startsWith(`/${languageToLoad}`) || entry.fileName.split('/').length === 1;
       }
@@ -205,7 +206,6 @@ export class LazyDataService {
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
       this.loaded$.next(true);
-      this.loaded$.complete();
       this.loadedLangs.push(languageToLoad);
     });
   }

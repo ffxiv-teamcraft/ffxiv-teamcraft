@@ -68,6 +68,14 @@ export class SettingsService {
     this.setSetting('time-format', format);
   }
 
+  public get listScrollingMode(): 'full' | 'large' | 'none' {
+    return this.getSetting('list-scrolling-mode', 'full') as 'full' | 'large' | 'none';
+  }
+
+  public set listScrollingMode(format: 'full' | 'large' | 'none') {
+    this.setSetting('list-scrolling-mode', format);
+  }
+
   public get autoOpenInDesktop(): boolean {
     return this.getSetting('auto-open-in-desktop', 'true') === 'true';
   }
