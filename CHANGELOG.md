@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.5"></a>
+## [7.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.4...v7.2.5) (2020-05-17)
+
+
+### Bug Fixes
+
+* **data:** fixed data loading for KO and ZH languages ([8d929d3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8d929d3))
+* **data:** fixed item names loading when switching to ZH/KO ([0129a55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0129a55))
+* **data:** fixed lazy loaded data not loading some elements properly ([f736d47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f736d47))
+* **recipe-finder:** fixed recipe finder not loading properly ([fb94195](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fb94195))
+* **search:** fixed item type filter not showing any values ([1cd4534](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1cd4534))
+
+
+### Features
+
+* **settings:** added a new setting to change scrolling behavior in list panels ([b9a8b7b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b9a8b7b))
+
+
+
 <a name="7.2.4"></a>
 ## [7.2.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.3...v7.2.4) (2020-05-17)
 
