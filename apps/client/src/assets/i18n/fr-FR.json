@@ -411,6 +411,8 @@
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "Ignored_inventories": "Inventaires ignorés",
     "Enable_tutorials": "Activer le système de tutoriels",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -430,6 +432,7 @@
       "Networking": "Réseau",
       "Theme": "Thème",
       "Search": "Recherche",
+      "Lists": "Lists",
       "Other": "Autre"
     },
     "REGIONS": {
@@ -537,6 +540,11 @@
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
     "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
