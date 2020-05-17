@@ -125,20 +125,24 @@ export class LazyDataService {
 
   public get allItems(): any {
     const res = { ...this.data.items };
-    Object.keys(this.data.koItems).forEach(koKey => {
-      if (res[koKey] !== undefined) {
-        res[koKey].ko = this.data.koItems[koKey].ko;
-      } else {
-        res[koKey] = this.data.koItems[koKey];
-      }
-    });
-    Object.keys(this.data.zhItems).forEach(zhKey => {
-      if (res[zhKey] !== undefined) {
-        res[zhKey].zh = this.data.zhItems[zhKey].zh;
-      } else {
-        res[zhKey] = this.data.zhItems[zhKey];
-      }
-    });
+    if (this.data.koItems) {
+      Object.keys(this.data.koItems).forEach(koKey => {
+        if (res[koKey] !== undefined) {
+          res[koKey].ko = this.data.koItems[koKey].ko;
+        } else {
+          res[koKey] = this.data.koItems[koKey];
+        }
+      });
+    }
+    if (this.data.zhItems) {
+      Object.keys(this.data.zhItems).forEach(zhKey => {
+        if (res[zhKey] !== undefined) {
+          res[zhKey].zh = this.data.zhItems[zhKey].zh;
+        } else {
+          res[zhKey] = this.data.zhItems[zhKey];
+        }
+      });
+    }
     return res;
   }
 
