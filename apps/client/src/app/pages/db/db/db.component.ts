@@ -6,6 +6,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
 import { DataService } from '../../../core/api/data.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-db',
@@ -18,7 +19,8 @@ export class DbComponent extends TeamcraftComponent {
 
   constructor(private route: ActivatedRoute, private settings: SettingsService,
               private translate: TranslateService, private router: Router,
-              private data: DataService, @Inject(PLATFORM_ID) private platform: Object) {
+              private data: DataService, @Inject(PLATFORM_ID) private platform: Object,
+              private lazyData: LazyDataService) {
     super();
     this.route.paramMap.pipe(
       map(params => params.get('language')),
@@ -32,6 +34,9 @@ export class DbComponent extends TeamcraftComponent {
         this.translate.use(lang);
       }
     });
+
+    this.lazyData.load('zh');
+    this.lazyData.load('ko');
 
     this.translate.onLangChange.pipe(
       takeUntil(this.onDestroy$)

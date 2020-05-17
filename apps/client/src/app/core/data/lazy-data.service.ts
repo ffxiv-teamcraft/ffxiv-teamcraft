@@ -163,7 +163,7 @@ export class LazyDataService {
     }, {});
   }
 
-  protected load(lang: Language): void {
+  public load(lang: Language): void {
     combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
@@ -198,7 +198,7 @@ export class LazyDataService {
         })
       );
     })).subscribe((results) => {
-      const lazyData: Partial<LazyData> = {};
+      const lazyData: Partial<LazyData> = this.data || {};
       results.forEach(row => {
         lazyData[row.propertyName] = row.data;
       });
