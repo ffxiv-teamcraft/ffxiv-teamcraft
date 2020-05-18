@@ -290,7 +290,6 @@ function createWindow() {
       win.hide();
       return false;
     }
-    app.releaseSingleInstanceLock();
     if (config.get('machina') === true) {
       Machina.stop();
     }
