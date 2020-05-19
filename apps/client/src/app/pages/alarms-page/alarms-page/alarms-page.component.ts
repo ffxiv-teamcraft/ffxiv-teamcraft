@@ -168,7 +168,7 @@ export class AlarmsPageComponent implements OnInit {
       ko: '반복'
     };
     return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
-      }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
+    }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
   }
 
@@ -183,7 +183,7 @@ export class AlarmsPageComponent implements OnInit {
             elements: display.noGroup.map(row => {
               return {
                 $key: row.alarm.$key,
-                name: this.i18n.getName(this.l12n.getItem(row.alarm.itemId)) || row.alarm.name
+                name: row.alarm.itemId ? this.i18n.getName(this.l12n.getItem(row.alarm.itemId)) : row.alarm.name
               };
             })
           },
