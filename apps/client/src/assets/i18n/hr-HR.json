@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
-    "Performance_mode": "Performance mode",
-    "Performance_mode_explain": "Removes item images in lists, as well as menus (only keeps buttons) for less stress on the browser and the app",
     "Change_email": "Change email",
     "Change_email_success": "Email changed",
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -432,6 +432,7 @@
       "Networking": "Networking",
       "Theme": "Theme",
       "Search": "Search",
+      "Lists": "Lists",
       "Other": "Other"
     },
     "REGIONS": {
@@ -539,6 +540,11 @@
     "Reset_panel": "Reset all the items of this panel",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Red",
       "GREEN": "Green",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you don't have configured this job yet, go to your profile page to configure it properly and set stats",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Please enter your stats to have an accurate simulation or log in to your account",
       "Select_job": "Select a job",
       "Craftsmanship": "Craftsmanship",

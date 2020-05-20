@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
-    "Performance_mode": "Режим производительности",
-    "Performance_mode_explain": "Удаляет изображения в списках, а также в меню (сохраняет только кнопки) для снижения нагрузки в браузере и приложении",
     "Change_email": "Изменить email",
     "Change_email_success": "Email успешно изменен",
     "No_shortcut": "Don't create shortcut on update",
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -432,6 +432,7 @@
       "Networking": "Networking",
       "Theme": "Тема",
       "Search": "Поиск",
+      "Lists": "Lists",
       "Other": "Прочее"
     },
     "REGIONS": {
@@ -539,6 +540,11 @@
     "Reset_panel": "Сбросить все предметы этой панели",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Красный",
       "GREEN": "Зеленый",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Профессия",
-      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",

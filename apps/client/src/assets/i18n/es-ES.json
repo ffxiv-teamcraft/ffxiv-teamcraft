@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "Solo autocompletar usando elementos HQ cuando el artículo es requerido como HQ",
     "Contribute_to_universalis": "Contribuir a Universalis",
     "Track_items_on_sale": "Rastrear artículos a la venta en sus retenedores (requiere reiniciar/actualizar)",
-    "Performance_mode": "Modo de rendimiento",
-    "Performance_mode_explain": "Remueve las imágenes de los artículos en las listas, así como menús (sólo quedan los botones) para tener menos carga en el navegador y la aplicación",
     "Change_email": "Cambiar correo electrónico",
     "Change_email_success": "Correo electrónico cambiado",
     "No_shortcut": "No crear acceso directo al actualizar",
     "Always_disable_hq_suggestions": "Siempre desactivar las sugerencias automáticas de HQ en las listas",
     "Ignored_inventories": "Inventarios ignorados",
     "Enable_tutorials": "Activar tutoriales",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -432,6 +432,7 @@
       "Networking": "Redes",
       "Theme": "Tema",
       "Search": "Búsqueda",
+      "Lists": "Lists",
       "Other": "Otros"
     },
     "REGIONS": {
@@ -539,6 +540,11 @@
     "Reset_panel": "Restablecer todos los artículos de este panel",
     "Progression_tooltip_materials": "Materiales obtenidos: {{amount}}%",
     "Progression_tooltip_items": "Artículos fabricados: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Rojo",
       "GREEN": "Verde",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Profesión",
-      "Job_not_configured": "Parece que no ha configurado esta profesión aun, vaya a la página de su perfil para configurarla correctamente y establecer atributos",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Por favor ingrese sus atributos para tener una simulación precisa o inicie sesión",
       "Select_job": "Seleccione una profesión",
       "Craftsmanship": "Artesanía",
