@@ -411,8 +411,8 @@
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
     "Enable_tutorials": "启用教程",
-    "Scrolling_behavior": "Scrolling behavior",
-    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
+    "Scrolling_behavior": "滚动行为",
+    "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -432,7 +432,7 @@
       "Networking": "网络设置",
       "Theme": "界面主题",
       "Search": "搜索",
-      "Lists": "Lists",
+      "Lists": "清单",
       "Other": "其他"
     },
     "REGIONS": {
@@ -460,9 +460,9 @@
     "Autofill_from_packets": "使用数据包捕获自动填充状态",
     "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
     "Open_public_profile": "打开公开档案",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
+    "Community_contributions": "社区贡献",
+    "Fishing_rankings": "垂钓排名",
+    "Total_rankings": "总排名",
     "Loading_fish_rankings": "正在加载垂钓排行",
     "VERIFICATION": {
       "Title": "角色验证",
