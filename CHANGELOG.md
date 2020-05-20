@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.6"></a>
+## [7.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.5...v7.2.6) (2020-05-20)
+
+
+### Bug Fixes
+
+* **alarms:** fixed custom alarm names in alarms picker ([9831516](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9831516))
+* **inventory-optimizer:** fixed scrolling in details panels with < 10 items ([69b9584](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/69b9584))
+
+
+### Features
+
+* **data:** cn 5.18 ([b01ecf3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b01ecf3))
+* **desktop:** support for 5.18 chinese packet capture ([e9e38be](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e9e38be))
+
+
+
 <a name="7.2.5"></a>
 ## [7.2.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.4...v7.2.5) (2020-05-17)
 
