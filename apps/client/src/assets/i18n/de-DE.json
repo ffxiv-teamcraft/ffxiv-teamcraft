@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
-    "Performance_mode": "Leistungsmodus",
-    "Performance_mode_explain": "Entfernt Gegenstandsbilder in Listen und Menüs (Nur Schalter bleiben übrig) für weniger Stress im Browser und in der App",
     "Change_email": "E-Mail Adresse ändern",
     "Change_email_success": "E-Mail-Adresse wurde geändert",
     "No_shortcut": "Keine Verknüpfung bei Update erstellen",
     "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
     "Ignored_inventories": "Inventare ignorieren",
     "Enable_tutorials": "Tutorialsystem aktivieren",
+    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -432,6 +432,7 @@
       "Networking": "Netzwerk",
       "Theme": "Theme",
       "Search": "Suche",
+      "Lists": "Lists",
       "Other": "Anderes"
     },
     "REGIONS": {
@@ -539,6 +540,11 @@
     "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
     "Progression_tooltip_materials": "Erhaltene Materialien: {{amount}}%",
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
+    "SCROLLING": {
+      "Default": "Default",
+      "Only_large": "Only large lists",
+      "Never": "Never"
+    },
     "COLORS": {
       "RED": "Rot",
       "GREEN": "Grün",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "Du hast diesen Job noch nicht konfiguriert. Gehe in dein Profil, um ihn zu konfigurieren und die Attribute zu speichern",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Bitte gib für eine akkurate Simulation deine Attribute an oder melde dich mit deinem Konto an",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",

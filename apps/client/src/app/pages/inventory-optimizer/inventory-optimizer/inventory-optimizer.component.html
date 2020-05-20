@@ -131,9 +131,9 @@
                     </div>
                   </ng-template>
                   <ng-container *ngIf="panel.nzActive">
-                    <nz-list [nzDataSource]="container.items" [nzRenderItem]="entry" [nzItemLayout]="'horizontal'">
-                      <cdk-virtual-scroll-viewport class="panel-content" itemSize="73">
-                        <ng-container *cdkVirtualFor="let entry of container.items">
+                    <nz-list [nzItemLayout]="'horizontal'">
+                      <app-lazy-scroll rowSize="73" [rowTemplate]="rowTemplate" [displayedRows]="6" [data]="container.items">
+                        <ng-template #rowTemplate let-entry>
                           <nz-list-item [nzActions]="(showIgnored && entry.ignored)?[removeIgnore]:[ignore]"
                                         *ngIf="showIgnored || !entry.ignored">
                             <ng-template #ignore>
@@ -176,8 +176,8 @@
                               </ng-template>
                             </nz-list-item-meta>
                           </nz-list-item>
-                        </ng-container>
-                      </cdk-virtual-scroll-viewport>
+                        </ng-template>
+                      </app-lazy-scroll>
                     </nz-list>
                   </ng-container>
                 </nz-collapse-panel>
