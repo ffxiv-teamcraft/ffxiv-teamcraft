@@ -412,7 +412,7 @@
     "Ignored_inventories": "무시할 가방",
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Scrolling_behavior": "스크롤 설정",
-    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
+    "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -542,8 +542,8 @@
     "Progression_tooltip_items": "아이템 완성: {{amount}}%",
     "SCROLLING": {
       "Default": "기본 설정",
-      "Only_large": "Only large lists",
-      "Never": "Never"
+      "Only_large": "초과 되었을 때만 하기",
+      "Never": "하지 않음"
     },
     "COLORS": {
       "RED": "빨강",
