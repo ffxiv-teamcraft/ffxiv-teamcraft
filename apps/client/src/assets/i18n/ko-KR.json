@@ -411,7 +411,7 @@
     "Always_disable_hq_suggestions": "목록에서 자동으로 HQ아이템을 제안하는 것을 비활성화",
     "Ignored_inventories": "무시할 가방",
     "Enable_tutorials": "튜토리얼 시스템 켜기",
-    "Scrolling_behavior": "Scrolling behavior",
+    "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "배경 색상",
@@ -432,7 +432,7 @@
       "Networking": "네트워크",
       "Theme": "테마",
       "Search": "검색",
-      "Lists": "Lists",
+      "Lists": "목록",
       "Other": "기타"
     },
     "REGIONS": {
@@ -541,7 +541,7 @@
     "Progression_tooltip_materials": "재료 수집: {{amount}}%",
     "Progression_tooltip_items": "아이템 완성: {{amount}}%",
     "SCROLLING": {
-      "Default": "Default",
+      "Default": "기본 설정",
       "Only_large": "Only large lists",
       "Never": "Never"
     },
