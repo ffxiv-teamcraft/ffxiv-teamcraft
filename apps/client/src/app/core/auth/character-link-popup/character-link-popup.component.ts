@@ -39,11 +39,11 @@ export class CharacterLinkPopupComponent {
 
   private chineseServers = [
     // 陆行鸟 (China 1)
-    '红玉海', '神意之地', '拉诺西亚', '幻影群岛', '萌芽池', '宇宙和音', '晨曦王座',
+    '红玉海', '神意之地', '拉诺西亚', '幻影群岛', '萌芽池', '宇宙和音', '沃仙曦染', '晨曦王座',
     // 莫古力 (China 2)
-    '白金幻象', '白银乡', '神拳痕', '潮风亭', '旅人栈桥', '拂晓之间', '龙巢神殿',
+    '白银乡', '白金幻象', '神拳痕', '潮风亭', '旅人栈桥', '拂晓之间', '龙巢神殿','梦羽宝境',
     // 猫小胖 (China 3)
-    '延夏', '摩杜纳', '紫水栈桥', '静语庄园', '海猫茶屋', '琥珀原'
+    '紫水栈桥', '延夏', '静语庄园', '摩杜纳', '海猫茶屋', '柔风海湾', '琥珀原'
   ];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
