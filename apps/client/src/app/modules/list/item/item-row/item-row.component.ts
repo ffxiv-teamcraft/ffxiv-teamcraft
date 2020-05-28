@@ -254,8 +254,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade,
-              private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private simulationService: SimulationService) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
