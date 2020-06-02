@@ -22,15 +22,52 @@
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(~"100vh - 220px");
+  // width: 400px !important;
+  margin-right: 20px !important;
+
+  .ant-menu-item {
+    padding-left: 38px !important;
+    &:after {
+      left: 0 !important;
+      border-right: 5px solid rgba(255, 255, 255, 0.85) !important;
+      right: auto !important;
+      
+    }
+
+}
+
+  .fsh-area-box {
+      border-bottom: 1px dashed var(--primary-color) !important;
+      .fsh-area-title {
+        font-weight: 500;
+      }
+    .fsh-area-list {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+  }
+
+
+
 }
 
 h2 {
   text-align: center;
+  &.spot-title {
+    margin-bottom: 20px !important;    
+  }
 }
 
-.ant-menu {
-  width: 300px;
+.fish-list {
+    margin-left: 15px;
 }
+
+
+.ant-menu {
+  width: 400px;
+}
+
+
 
 .job-icon {
   width: 32px;
