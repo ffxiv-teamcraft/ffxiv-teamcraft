@@ -6,7 +6,7 @@ import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { map, startWith } from 'rxjs/operators';
+import { filter, first, map, startWith } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -73,6 +73,26 @@ export class LazyDataService {
           this.load(change.lang);
         });
       }
+
+      this.settings.regionChange$.subscribe(change => {
+        this.loadForRegion(change.next);
+      });
+
+      this.loadForRegion(this.settings.region);
+    }
+  }
+
+  private loadForRegion(region: Region): void {
+    switch (region) {
+      case Region.Global:
+        this.load('en');
+        break;
+      case Region.Korea:
+        this.load('ko');
+        break;
+      case Region.China:
+        this.load('zh');
+        break;
     }
   }
 
@@ -81,23 +101,23 @@ export class LazyDataService {
   }
 
   public getRecipe(id: string): Observable<Craft> {
-    return this.settings.regionChange$.pipe(
-      map(change => change.next),
-      startWith(this.settings.region),
-      map(region => {
-        switch (region) {
+    return combineLatest([this.settings.regionChange$.pipe(startWith({ next: this.settings.region, previous: null })), this.data$]).pipe(
+      map(([change, data]) => {
+        switch (change.next) {
           case Region.China:
-            return this.data.zhRecipes;
+            return data.zhRecipes;
           case Region.Korea:
-            return this.data.koRecipes;
+            return data.koRecipes;
           default:
-            return this.data.recipes;
+            return data.recipes;
         }
       }),
+      filter(recipes => recipes !== undefined),
       map(recipes => {
         return recipes.find(r => r.id.toString() === id.toString())
           || this.data.recipes.find(r => r.id.toString() === id.toString());
-      })
+      }),
+      first()
     );
   }
 
