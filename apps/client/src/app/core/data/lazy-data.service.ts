@@ -6,7 +6,7 @@ import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { filter, first, map, startWith } from 'rxjs/operators';
+import { filter, map, startWith } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -116,8 +116,7 @@ export class LazyDataService {
       map(recipes => {
         return recipes.find(r => r.id.toString() === id.toString())
           || this.data.recipes.find(r => r.id.toString() === id.toString());
-      }),
-      first()
+      })
     );
   }
 
