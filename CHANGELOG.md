@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.7"></a>
+## [7.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.6...v7.2.7) (2020-06-13)
+
+
+### Bug Fixes
+
+* **log-tracking:** fixed unreliable save system with slower connections ([96020b8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96020b8))
+* fixed an issue with close button not showing on tips blocks ([95923c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95923c8))
+* **desktop:** you can now properly hide the packet capture banner ([f48aa39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f48aa39))
+* **gearset:** materia selector now properly works with smaller displays ([25d3e7f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25d3e7f)), closes [#1538](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1538)
+* **list:** item comments popup now opens properly ([9e44f49](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9e44f49))
+* **simulator:** fixed infinite loading for korean region with english language ([5582d7a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5582d7a))
+* **universalis:** fixed wrong world change detection ([ccda3ba](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ccda3ba)), closes [#1451](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1451)
+
+
+
 <a name="7.2.6"></a>
 ## [7.2.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.5...v7.2.6) (2020-05-20)
 
