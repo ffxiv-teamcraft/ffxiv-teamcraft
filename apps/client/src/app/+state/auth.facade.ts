@@ -7,7 +7,7 @@ import { authQuery } from './auth.selectors';
 import {
   GetUser,
   LinkingCharacter,
-  Logout,
+  Logout, MarkAsDoneInLog,
   RegisterUser,
   RemoveCharacter,
   SaveDefaultConsumables,
@@ -41,6 +41,7 @@ import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
 import { UserService } from '../core/database/user.service';
 import { AngularFireFunctions } from '@angular/fire/functions';
+import { LogTracking } from '../model/user/log-tracking';
 
 @Injectable({
   providedIn: 'root'
@@ -312,6 +313,10 @@ export class AuthFacade {
 
   public setWorld(world: number): void {
     this.store.dispatch(new SetWorld(world));
+  }
+
+  public markAsDoneInLog(log: keyof LogTracking, itemId: number, done: boolean): void {
+    this.store.dispatch(new MarkAsDoneInLog(log, itemId, done));
   }
 
   private oauthPopup(provider: any): Observable<UserCredential> {

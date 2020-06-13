@@ -21,7 +21,7 @@ export class UniversalisService {
 
   private worldId$: Observable<number> = this.authFacade.user$.pipe(
     map(user => user.world),
-    filter(cid => cid !== undefined),
+    filter(world => world !== undefined),
     distinctUntilChanged()
   );
 

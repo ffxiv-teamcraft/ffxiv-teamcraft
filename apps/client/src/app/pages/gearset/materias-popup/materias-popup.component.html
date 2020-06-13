@@ -37,7 +37,7 @@
                 *ngIf="true | ifMobile: false"
                 [nzDisabled]="i > 0 && equipmentPiece.materias[i - 1] === 0">{{'GEARSETS.Add_materia' | translate}}</button>
 
-        <nz-select *ngIf="false | ifMobile: true" [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="setMateria(i, materia); mobileEdit = -1"
+        <nz-select *ngIf="false | ifMobile: true" [ngModel]="equipmentPiece.materias[i]" (ngModelChange)="setMateria(i, $event); mobileEdit = -1"
                    nzShowSearch [nzPlaceHolder]="'GEARSETS.Add_materia' | translate" [style.width.px]="200">
           <nz-option-group *ngFor="let row of materiaMenu" [nzLabel]="row.baseParamId | baseParamName | i18n">
             <nz-option *ngFor="let materia of row.materias" [nzValue]="materia" [nzLabel]="materia | itemName | i18n" nzCustomContent>

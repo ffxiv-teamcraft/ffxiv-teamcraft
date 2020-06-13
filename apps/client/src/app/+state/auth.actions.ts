@@ -5,6 +5,7 @@ import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
+import { LogTracking } from '../model/user/log-tracking';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -46,6 +47,8 @@ export enum AuthActionTypes {
   AnonymousWarningShown = '[Auth] Anonyous warning shown',
 
   AuthError = '[Auth] Error',
+
+  MarkAsDoneInLog = '[Auth] Mark as done in log'
 }
 
 /// Get User AuthState
@@ -240,6 +243,13 @@ export class SaveDefaultConsumables implements Action {
   }
 }
 
+export class MarkAsDoneInLog implements Action {
+  readonly type = AuthActionTypes.MarkAsDoneInLog;
+
+  constructor(public readonly log: keyof LogTracking, public readonly itemId: number, public readonly done: boolean) {
+  }
+}
+
 // Just an action to be sent once user is persisted properly
 export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
@@ -279,4 +289,5 @@ export type AuthActions = GetUser
   | UpdateUser
   | RegisterUser
   | SetCID
-  | SetWorld;
+  | SetWorld
+  | MarkAsDoneInLog;

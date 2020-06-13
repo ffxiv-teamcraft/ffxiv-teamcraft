@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
@@ -118,7 +118,7 @@ export class IpcService {
   private stateSubscription: Subscription;
 
   constructor(private platformService: PlatformService, private router: Router,
-              private store: Store<any>) {
+              private store: Store<any>, private zone: NgZone) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
@@ -148,13 +148,17 @@ export class IpcService {
 
   public on(channel: string, cb: EventCallback): void {
     if (this._ipc !== undefined) {
-      this._ipc.on(channel, cb);
+      this._ipc.on(channel, (event, ...args) => {
+        this.zone.run(() => cb(event, ...args))
+      });
     }
   }
 
   public once(channel: string, cb: EventCallback): void {
     if (this._ipc !== undefined) {
-      this._ipc.once(channel, cb);
+      this._ipc.once(channel, (event, ...args) => {
+        this.zone.run(() => cb(event, ...args))
+      });
     }
   }
 
