@@ -463,17 +463,11 @@ export class ListsEffects {
   }
 
   private markAsDoneInDoHLog(recipeId: number): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      user.logProgression.push(recipeId);
-      this.authFacade.updateUser(user);
-    });
+    this.authFacade.markAsDoneInLog('crafting', recipeId, true);
   }
 
   private markAsDoneInDoLLog(itemId: number): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      user.gatheringLogProgression.push(itemId);
-      this.authFacade.updateUser(user);
-    });
+    this.authFacade.markAsDoneInLog('gathering', itemId, true);
   }
 
   private saveToLocalstorage(list: List, newList: boolean): void {

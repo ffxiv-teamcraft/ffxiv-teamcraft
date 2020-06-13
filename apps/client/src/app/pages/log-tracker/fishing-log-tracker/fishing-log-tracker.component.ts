@@ -63,14 +63,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
   }
 
   public markAsDone(itemId: number, done: boolean): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      if (done) {
-        user.gatheringLogProgression.push(itemId);
-      } else {
-        user.gatheringLogProgression = user.gatheringLogProgression.filter(entry => entry !== itemId);
-      }
-      this.authFacade.updateUser(user);
-    });
+    this.authFacade.markAsDoneInLog('gathering', itemId, done);
   }
 
   public getFshData(fish: any): any[] {

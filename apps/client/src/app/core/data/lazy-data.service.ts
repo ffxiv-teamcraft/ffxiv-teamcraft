@@ -1,12 +1,12 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { filter, map, startWith } from 'rxjs/operators';
+import { filter, map, startWith, first } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
 import { SettingsService } from '../../modules/settings/settings.service';
@@ -183,12 +183,23 @@ export class LazyDataService {
   }
 
   public load(lang: Language): void {
+    const xivapiAndExtractsReady$ = new Subject();
+    const lazyFilesReady$ = new Subject();
+
+    combineLatest([xivapiAndExtractsReady$, lazyFilesReady$])
+      .pipe(first())
+      .subscribe(() => {
+        this.loaded$.next(true);
+      });
+
     combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches as any[];
         this.extracts = extracts;
         this.extracts$.next(extracts);
+        xivapiAndExtractsReady$.next();
+        xivapiAndExtractsReady$.complete();
       });
 
     const languageToLoad = ['ko', 'zh'].indexOf(lang) > -1 ? lang : 'en';
@@ -224,7 +235,7 @@ export class LazyDataService {
       });
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
-      this.loaded$.next(true);
+      lazyFilesReady$.next();
       this.loadedLangs.push(languageToLoad);
     });
   }

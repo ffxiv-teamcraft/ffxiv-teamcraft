@@ -1,18 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import {
-  catchError,
-  debounceTime,
-  distinctUntilChanged,
-  exhaustMap,
-  filter,
-  map,
-  mergeMap,
-  switchMap,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -22,6 +11,7 @@ import {
   LinkingCharacter,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
+  MarkAsDoneInLog,
   NoLinkedCharacter,
   RegisterUser,
   SetDefaultCharacter,
@@ -40,6 +30,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
+import { LogTrackingService } from '../core/database/log-tracking.service';
 
 @Injectable()
 export class AuthEffects {
@@ -108,7 +99,8 @@ export class AuthEffects {
         return EMPTY;
       }
     }),
-    map(user => new UserFetched(user))
+    map(user => new UserFetched(user)),
+    debounceTime(250)
   );
 
   private nickNameWarningShown = false;
@@ -205,10 +197,19 @@ export class AuthEffects {
     map(() => new LoadAlarms())
   );
 
+  @Effect({ dispatch: false })
+  markAsDoneInLog$ = this.actions$.pipe(
+    ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
+    withLatestFrom(this.authFacade.user$),
+    switchMap(([action, user]) => {
+      return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, action.itemId, action.log, action.done);
+    })
+  );
+
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private patreonService: PatreonService) {
+              private patreonService: PatreonService, private logTrackingService: LogTrackingService) {
   }
 }

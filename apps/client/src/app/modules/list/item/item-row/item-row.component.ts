@@ -377,24 +377,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDoneInLog(item: ListRow): void {
-    this.authFacade.user$.pipe(
-      first()
-    ).subscribe(user => {
       const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
       const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
       if (craftedBy.length > 0) {
-        user.logProgression = _.uniq([
-          ...user.logProgression,
-          +(item.recipeId || craftedBy[0].id)
-        ]);
+        this.authFacade.markAsDoneInLog('crafting', +(item.recipeId || craftedBy[0].id), true);
       } else if (gatheredBy.type !== undefined) {
-        user.gatheringLogProgression = _.uniq([
-          ...user.gatheringLogProgression,
-          +item.id
-        ]);
+        this.authFacade.markAsDoneInLog('gathering',  +item.id, true);
       }
-      this.authFacade.updateUser(user);
-    });
   }
 
   addTag(item: ListRow): void {
