@@ -135,6 +135,18 @@ exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, con
   });
 });
 
+exports.getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.auth().getUserByEmail(data.email)
+    .then(res => {
+      return {
+        record: res
+      };
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
+
 exports.setCustomUserClaims = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   // Check if user meets role criteria:
   // Your custom logic here: to decide what roles and other `x-hasura-*` should the user get
