@@ -1,5 +1,4 @@
 import { TeamcraftUser } from '../model/user/teamcraft-user';
-import { CharacterResponse } from '@xivapi/angular-client';
 import { AuthActions, AuthActionTypes } from './auth.actions';
 
 /**
@@ -233,6 +232,28 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
 
     case AuthActionTypes.Logout:
       return { ...initialState, loading: true };
+
+    case AuthActionTypes.MarkAsDoneInLog:
+      const newUser: TeamcraftUser = { ...state.user };
+      if (action.log === 'crafting') {
+        if (action.done) {
+          newUser.logProgression.push(action.itemId);
+        } else {
+          newUser.logProgression = newUser.logProgression.filter(e => e !== action.itemId);
+        }
+      }
+
+      if (action.log === 'gathering') {
+        if (action.done) {
+          newUser.gatheringLogProgression.push(action.itemId);
+        } else {
+          newUser.gatheringLogProgression = newUser.gatheringLogProgression.filter(e => e !== action.itemId);
+        }
+      }
+      return {
+        ...state,
+        user: newUser
+      };
 
     default:
       return state;
