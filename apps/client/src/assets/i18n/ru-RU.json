@@ -410,8 +410,8 @@
     "No_shortcut": "Не создавать ярлык при обновлении",
     "Always_disable_hq_suggestions": "Всегда отключать автоматические предложения HQ в списках",
     "Ignored_inventories": "Ignored inventories",
-    "Enable_tutorials": "Enable tutorial system",
-    "Scrolling_behavior": "Scrolling behavior",
+    "Enable_tutorials": "Включить систему обучения",
+    "Scrolling_behavior": "Режим прокрутки",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Цвет фона",
@@ -429,16 +429,16 @@
     "CATEGORIES": {
       "Autofill_completion": "Звук завершения автозаполнения",
       "Packet_capture": "Настройка захвата пакетов",
-      "Networking": "Networking",
+      "Networking": "Сеть",
       "Theme": "Тема",
       "Search": "Поиск",
-      "Lists": "Lists",
+      "Lists": "Списки",
       "Other": "Прочее"
     },
     "REGIONS": {
-      "Global": "Global",
-      "CN": "China",
-      "KR": "Korea"
+      "Global": "Общий",
+      "CN": "Китай",
+      "KR": "Корея"
     }
   },
   "PROFILE": {
@@ -459,11 +459,11 @@
     "Veteran": "Ветеран",
     "Autofill_from_packets": "Заполнить статы используя захват пакетов",
     "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
-    "Open_public_profile": "Open public profile",
+    "Open_public_profile": "Открыть профиль",
     "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Fishing_rankings": "Рейтинг Рыбалки",
+    "Total_rankings": "Общий рейтинг",
+    "Loading_fish_rankings": "Загрузка рейтинга рыбалки",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
@@ -473,7 +473,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "Загрузить архивные списки",
     "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
@@ -512,8 +512,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "Архив",
+    "Unarchive": "Вернуть из архива",
     "Regenerate": "Обновить список до последней версии Teamcraft",
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
