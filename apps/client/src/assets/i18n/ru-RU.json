@@ -1725,8 +1725,8 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_description": "Вы можете изменить регион в котором играете для лучшего опыта в базе данных, симуляторе, захвате пакетов и т.д.",
+    "Button_label": "Изменить регион"
   },
   "INVENTORY": {
     "Title": "Инвентарь",
@@ -1739,8 +1739,8 @@
     "Reset_inventory": "Сбросить этот инвентарь",
     "Clean_all": "Сбросить все ваши инвентари",
     "Search_for_an_item": "Поиск предмета",
-    "Filter_by_expansion": "Filter by expansion",
-    "In_x_containers": "In {{amount}} containers",
+    "Filter_by_expansion": "Фильтр по дополнению",
+    "In_x_containers": "В {{amount}} инвентарях",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
@@ -1755,16 +1755,16 @@
     "Ignore_item": "Игнорировать этот совет для этого предмета",
     "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
     "Ignore_container": "Игнорировать этот совет для этого контейнера",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "Скрыть этот оптимизатор",
+    "Unhide_optimizer": "Больше не скрывать этот оптимизатор",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
-      "Max_price": "Maximum price"
+      "Max_price": "Максимальная цена"
     },
     "DUPLICATES": {
       "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
@@ -1777,14 +1777,14 @@
     },
     "CONSOLIDATE_STACKS": {
       "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Message": "Комбинировать со стаком NQ в: {{containers}}",
+      "Filter": "Показывать материалы только до: ",
+      "Placeholder": "Выберите дополнение"
     },
     "UNWANTED_MATERIALS": {
       "Title": "Old materials that are only used to make low iLvl items",
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
+      "Recipe_ilvl": "Мин. iLvl",
       "Company_workshop": "Company Workshop"
     }
   },
@@ -1800,7 +1800,7 @@
     "generate_list": "Создать список",
     "Content": "Содержимое",
     "Stat_name": "Статы",
-    "Current_value": "Current",
+    "Current_value": "Текущее",
     "Cap_value": "Макс.",
     "Add_materia": "Добавить материю",
     "No_materia": "Нет материи",
@@ -1840,7 +1840,7 @@
     "Use_in_simulator": "Использовать эти статы в симуляторе",
     "Please_input_lodestone_id": "Please input lodestone id",
     "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
+    "Currency": "Валюта",
     "Optimize_materias": "Optimize materias order",
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
@@ -1879,12 +1879,12 @@
       "Avg_melding_chances": "Средний шанс овермелда"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
-      "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
-      "Determination_bonus": "Determination bonus",
+      "Ilvl": "Средний ilvl",
+      "HP": "Здоровье",
+      "Direct_hit_chances": "Шанс прямого попадания",
+      "Critical_hit_chances": "Шанс критического удара",
+      "Critical_hit_multiplier": "Мультипликатор крит. урона",
+      "Determination_bonus": "Determination бонус",
       "GCD": "GCD"
     }
   },
@@ -1899,14 +1899,14 @@
     "Favorite_folders": "Избранные папки"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "Начать обучение для этой страницы",
+    "Next": "Далее",
+    "Done": "Готово",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
+      "Title": "Добро пожаловать в FFXIV Teamcraft",
       "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Question": "Вы хотите включить эту функцию?",
+      "Can_be_changed_in_settings": "Можно включить или выключить в настройках"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
