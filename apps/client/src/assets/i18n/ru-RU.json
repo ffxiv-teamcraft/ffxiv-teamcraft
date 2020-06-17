@@ -460,7 +460,7 @@
     "Autofill_from_packets": "Заполнить статы используя захват пакетов",
     "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
     "Open_public_profile": "Открыть профиль",
-    "Community_contributions": "Community contributions",
+    "Community_contributions": "Вклад в сообщество",
     "Fishing_rankings": "Рейтинг Рыбалки",
     "Total_rankings": "Общий рейтинг",
     "Loading_fish_rankings": "Загрузка рейтинга рыбалки",
@@ -538,12 +538,12 @@
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
     "Reset_panel": "Сбросить все предметы этой панели",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "Собрано материалов: {{amount}}%",
+    "Progression_tooltip_items": "Предметов сделано: {{amount}}%",
     "SCROLLING": {
-      "Default": "Default",
-      "Only_large": "Only large lists",
-      "Never": "Never"
+      "Default": "По умолчанию",
+      "Only_large": "Только крупные списки",
+      "Never": "Никогда"
     },
     "COLORS": {
       "RED": "Красный",
@@ -570,7 +570,7 @@
       "Delete": "Удалить список",
       "Clear": "Очистить список",
       "Reset": "Обновить список",
-      "Archive": "Archive the list",
+      "Archive": "Архивировать список",
       "Nothing": "Ничего"
     },
     "BUTTONS": {
@@ -620,8 +620,8 @@
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
-    "X_needed": "{{amount}} needed",
-    "Leave_list": "Leave this list",
+    "X_needed": "{{amount}} требуется",
+    "Leave_list": "Покинуть этот список",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
@@ -662,7 +662,7 @@
       "Tag_filter": "Фильтр по тегам"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "Открыть оверлей списка",
       "No_display": "Открыть список в главном окне для начала",
       "No_panel_selected": "Выберите панель, используя кнопки выше"
     }
