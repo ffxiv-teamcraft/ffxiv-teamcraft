@@ -820,7 +820,7 @@
   },
   "SIMULATOR": {
     "Title": "Симулятор крафта",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "Включить параметры и расходные материалы",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -1049,7 +1049,7 @@
   "LEVEQUESTS": {
     "Title": "Ливквесты",
     "Levequest_name": "Название ливквеста",
-    "Level_range": "Level range",
+    "Level_range": "Диапазон уровней",
     "No_results": "Ливквест не найден",
     "Add_to_list": "Добавить предмет ливквеста в список",
     "Quantity": "Количество",
@@ -1425,18 +1425,18 @@
       "Weather_chances": "Шансы на появление каждой погоды",
       "Bait": "Рыболовная приманка",
       "Refresh_data": "Обновить данные",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Bite_times": "Время клева",
+      "All_baits": "Без фильтра наживки",
+      "Ranking": "Рейтинг",
+      "Top_users": "Топ рейтинг",
+      "Your_ranking": "Ваш рейтинг",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "Открыть оверлей по рыбалке",
         "Bait": "Приманка",
         "Tug": "Tug",
         "Hookset": "Hookset",
@@ -1454,10 +1454,10 @@
         "Last_report": "Последний отчет",
         "Fish": "Рыба",
         "Size": "Размер",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "Время с момента броска",
         "ERRORS": {
           "No_bait": "Не обнаружено наживки, смените наживку один раз.",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "Параметры не обнаружены, переключитесь снова на рыбака."
         }
       }
     },
@@ -1641,7 +1641,7 @@
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
     "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
     "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1651,8 +1651,8 @@
     "Missing": "Отсутствует",
     "Results": "Возможные рецепты для крафта",
     "Basket": "Корзина",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "Добавить все в корзину",
+    "Add_one_to_basket": "Добавить один в корзину",
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
@@ -1661,7 +1661,7 @@
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
     "Import_from_clipboard": "Импорт из ретейнера",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "Импорт из инвентаря",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
     "Clear": "Очистить список",
@@ -1720,11 +1720,11 @@
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
     "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
-    "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
+    "Outdated": "Захват пакетов не работает",
+    "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
+    "Banner_title": "Предлагается изменить регион на {{region}}",
     "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
     "Button_label": "Change region"
   },
