@@ -89,9 +89,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
                 type: node.type,
                 spawns: node.time,
                 coords: {
-                  x: node.x,
-                  y: node.y,
-                  z: node.z
+                  x: nodePosition.x,
+                  y: nodePosition.y,
+                  z: nodePosition.z
                 }
               };
               if (folklore !== undefined) {

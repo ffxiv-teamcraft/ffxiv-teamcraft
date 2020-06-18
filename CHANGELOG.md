@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.8"></a>
+## [7.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.7...v7.2.8) (2020-06-18)
+
+
+### Bug Fixes
+
+* **desynth:** fixed salvage level search ([1558f47](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1558f47))
+* **list:** fixed an issue with alarms from lists sometimes not having coords ([16c304d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/16c304d))
+* **list:** fixed an issue with the add item button with WRITE team permission ([32a06e9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/32a06e9))
+* **lists:** deleting the value in amount input won't treat it as 0 anymore ([25ae1f0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25ae1f0))
+* **log-tracker:** fixed fishing log entries display not updating properly ([6729c62](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6729c62))
+* **pricing:** removed price filling warning when too few items ([3e06a42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3e06a42))
+
+
+### Features
+
+* **desktop:** support for korean 5.15 packets ([4e27fa4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e27fa4))
+* support for korean v5.15 update ([5f5d9ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f5d9ef))
+
+
+
 <a name="7.2.7"></a>
 ## [7.2.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.6...v7.2.7) (2020-06-13)
 

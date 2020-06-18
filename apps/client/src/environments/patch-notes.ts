@@ -1,9 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **log-tracking:** fixed unreliable save system with slower connections.
-* fixed an issue with close button not showing on tips blocks.
-* **desktop:** you can now properly hide the packet capture banner.
-* **gearset:** materia selector now properly works with smaller displays.
-* **list:** item comments popup now opens properly.
-* **simulator:** fixed infinite loading for korean region with english language.
-* **universalis:** fixed wrong world change detection.`;
+* **desynth:** fixed salvage level search.
+* **list:** fixed an issue with alarms from lists sometimes not having coords.
+* **list:** fixed an issue with the add item button with WRITE team permission.
+* **lists:** deleting the value in amount input won't treat it as 0 anymore.
+* **log-tracker:** fixed fishing log entries display not updating properly.
+* **pricing:** removed price filling warning when too few items.
+
+
+### Features
+
+* **desktop:** support for korean 5.15 packets.
+* support for korean v5.15 update.`;

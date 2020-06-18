@@ -77,12 +77,12 @@ export class DesynthComponent {
           indexes: [SearchIndex.ITEM],
           filters: [
             {
-              column: 'Salvage.OptimalSkill',
+              column: 'LevelItem',
               operator: '>=',
               value: Math.max(dlvl - 10, 0)
             },
             {
-              column: 'Salvage.OptimalSkill',
+              column: 'LevelItem',
               operator: '<=',
               value: dlvl + 10
             },
@@ -94,7 +94,7 @@ export class DesynthComponent {
           ],
           limit: 250,
           columns: [
-            'Icon', 'Salvage.OptimalSkill', 'ID', 'GameContentLinks'
+            'Icon', 'LevelItem', 'ID', 'GameContentLinks'
           ]
         });
       }),
@@ -123,7 +123,7 @@ export class DesynthComponent {
             return {
               itemId: item.ID,
               icon: item.Icon,
-              dlvl: item.Salvage.OptimalSkill,
+              dlvl: item.LevelItem,
               score: score,
               amount: 1
             };

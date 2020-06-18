@@ -22,7 +22,7 @@
             <div>{{'Crystals' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(crystals)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}"
+                      [nzTitle]="crystals.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}) : null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -50,7 +50,7 @@
             <div>{{'Other' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(items)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}"
+                      [nzTitle]="items.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -78,7 +78,7 @@
             <div>{{'Pre_crafts' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}"
+                      [nzTitle]="time: (preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -132,14 +132,14 @@
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(list.finalItems)"
                       *ngIf="loggedIn$ | async"
-                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}"
+                      [nzTitle]="list.finalItems > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm>
                 {{'PRICING.Autofill_panel_prices' | translate}}
               </button>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="'PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}"
+                      [nzTitle]="list.finalItems > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm

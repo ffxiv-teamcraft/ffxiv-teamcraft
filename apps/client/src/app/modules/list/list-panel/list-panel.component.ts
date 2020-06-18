@@ -191,6 +191,9 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   updateAmount(item: ListRow, inputValue: number): void {
+    if (inputValue.toString().length === 0) {
+      return;
+    }
     let updateSubject = this.updateAmountDebounces[item.id];
     if (updateSubject === undefined) {
       updateSubject = new Subject<number>();

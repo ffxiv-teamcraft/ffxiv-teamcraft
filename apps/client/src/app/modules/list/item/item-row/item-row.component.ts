@@ -377,13 +377,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDoneInLog(item: ListRow): void {
-      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-      const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
-      if (craftedBy.length > 0) {
-        this.authFacade.markAsDoneInLog('crafting', +(item.recipeId || craftedBy[0].id), true);
-      } else if (gatheredBy.type !== undefined) {
-        this.authFacade.markAsDoneInLog('gathering',  +item.id, true);
-      }
+    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+    const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+    if (craftedBy.length > 0) {
+      this.authFacade.markAsDoneInLog('crafting', +(item.recipeId || craftedBy[0].id), true);
+    } else if (gatheredBy.type !== undefined) {
+      this.authFacade.markAsDoneInLog('gathering', +item.id, true);
+    }
   }
 
   addTag(item: ListRow): void {
@@ -503,6 +503,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number, item: ListRow): void {
+    if (newValue.toString().length === 0) {
+      return;
+    }
     if (this.settings.displayRemaining) {
       newValue += item.used;
     }
