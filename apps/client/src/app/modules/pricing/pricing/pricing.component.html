@@ -78,7 +78,7 @@
             <div>{{'Pre_crafts' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="time: (preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
+                      [nzTitle]="preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -139,7 +139,7 @@
                 {{'PRICING.Autofill_panel_prices' | translate}}
               </button>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="list.finalItems > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
+                      [nzTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm
