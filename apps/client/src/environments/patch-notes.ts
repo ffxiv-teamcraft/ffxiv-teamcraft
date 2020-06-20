@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 * **gearset:** materia selector now properly works with smaller displays.
 * **list:** item comments popup now opens properly.
 * **simulator:** fixed infinite loading for korean region with english language.
-* **universalis:** fixed wrong world change detection.`;
+* **universalis:** fixed wrong world change detection.`;
