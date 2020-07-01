@@ -1,9 +1,15 @@
 import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, merge, Observable, ReplaySubject, Subject } from 'rxjs';
 import { PLAYER_METRICS_PROBES, PlayerMetricProbe } from './probes/player-metric-probe';
-import { takeUntil } from 'rxjs/operators';
+import { filter, takeUntil } from 'rxjs/operators';
 import { ProbeReport } from './model/probe-report';
 import { IpcService } from '../../core/electron/ipc.service';
+import { SettingsService } from '../settings/settings.service';
+import { MetricType } from './model/metric-type';
+import { AuthFacade } from '../../+state/auth.facade';
+import { ProbeSource } from './model/probe-source';
+import { LogTracking } from '../../model/user/log-tracking';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +28,13 @@ export class PlayerMetricsService {
 
   private started = false;
 
-  constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[]) {
+  private _events$: ReplaySubject<ProbeReport> = new ReplaySubject<ProbeReport>();
+
+  public events$: Observable<ProbeReport> = this._events$.asObservable();
+
+  constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[],
+              private settings: SettingsService, private authFacade: AuthFacade,
+              private lazyData: LazyDataService) {
     setInterval(() => {
       this.saveLogs();
     }, 60000);
@@ -54,7 +66,45 @@ export class PlayerMetricsService {
       .subscribe(report => {
         this.handleReport(report);
       });
+
+    // Auto fill log completion on item crafted or gathered.
+    this.events$
+      .pipe(
+        filter(event => {
+          return event.type === MetricType.ITEM && event.data[1] > 0;
+        })
+      )
+      .subscribe(event => {
+        // If user disabled automated log completion, skip this
+        if (!this.settings.pcapLogEnabled) {
+          return;
+        }
+        const source = event.data[2] as ProbeSource;
+        const logName = this.getLogName(source);
+        if (logName === null) {
+          return;
+        }
+        let id = event.data[0];
+        // If it's a crafting event, get the recipe id instead
+        if (logName === 'crafting') {
+          id = event.data[3];
+        }
+        this.authFacade.markAsDoneInLog(logName, id, true);
+      });
+
     this.started = true;
+  }
+
+  public getLogName(source: ProbeSource): keyof LogTracking {
+    switch (source) {
+      case ProbeSource.CRAFTING:
+        return 'crafting';
+      case ProbeSource.FISHING:
+      case ProbeSource.GATHERING:
+        return 'gathering';
+      default:
+        return null;
+    }
   }
 
   public stop(): void {
@@ -81,10 +131,18 @@ export class PlayerMetricsService {
 
   private handleReport(report: ProbeReport): void {
     report.timestamp = Math.floor(Date.now() / 1000);
-    this.buffer.push(report);
+    // If metrics aren't enabled, we don't save anything, not even in memory.
+    if (this.settings.playerMetricsEnabled) {
+      this.buffer.push(report);
+    }
+    this._events$.next(report);
   }
 
   private saveLogs(): void {
+    // If metrics aren't enabled, we don't save anything.
+    if (!this.settings.playerMetricsEnabled) {
+      return;
+    }
     // prepare a clone to work on, so we don't overwrite data registered while saving.
     const logs = [...this.buffer];
     this.buffer = [];

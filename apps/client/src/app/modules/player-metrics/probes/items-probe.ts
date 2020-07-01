@@ -17,14 +17,19 @@ export class ItemsProbe extends PlayerMetricProbe {
   getReports(): Observable<ProbeReport> {
     return this.machina.inventoryEvents$.pipe(
       filter(patch => patch.containerId <= 10006 && [ContainerType.Currency, ContainerType.RetainerGil].indexOf(patch.containerId) === -1),
-      withLatestFrom(this.source$),
-      map(([event, source]) => {
+      withLatestFrom(this.source$, this.ipc.eventPlay4Packets$.pipe(filter(e => e.actionTimeline === 2))),
+      map(([event, source, eventPlay4]) => {
         if (source === ProbeSource.TELEPORT) {
           source = ProbeSource.UNKNOWN;
         }
+        const data = [event.itemId, event.amount, source];
+        if (source === ProbeSource.CRAFTING) {
+          console.log(eventPlay4);
+          data.push(eventPlay4.param1);
+        }
         return {
           type: MetricType.ITEM,
-          data: [event.itemId, event.amount, source]
+          data: data
         };
       })
     );

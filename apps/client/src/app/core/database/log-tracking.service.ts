@@ -28,11 +28,11 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
             newLog[log].push(itemId);
             transaction.set(docRef, newLog);
           } else {
-            if (done) {
+            if (done && (doc.get(log) || []).indexOf(itemId) === -1) {
               transaction.update(docRef, {
                 [log]: firebase.firestore.FieldValue.arrayUnion(itemId)
               });
-            } else {
+            } else if (!done) {
               transaction.update(docRef, {
                 [log]: firebase.firestore.FieldValue.arrayRemove(itemId)
               });

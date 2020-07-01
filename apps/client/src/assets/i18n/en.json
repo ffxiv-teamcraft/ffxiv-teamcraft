@@ -413,6 +413,7 @@
     "Enable_tutorials": "Enable tutorial system",
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
