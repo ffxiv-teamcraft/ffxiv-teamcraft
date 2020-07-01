@@ -1,18 +1,20 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { isPlatformServer } from '@angular/common';
 import { PlatformService } from '../tools/platform.service';
 import { environment } from '../../../environments/environment';
 import { ListRow } from '../../modules/list/model/list-row';
-import { map, startWith } from 'rxjs/operators';
+import { filter, first, map, startWith } from 'rxjs/operators';
 import { LazyData } from './lazy-data';
 import { lazyFilesList } from './lazy-files-list';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { Region } from '../../modules/settings/region.enum';
 import { Memoized } from '../decorators/memoized';
+import { Language } from './language';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -58,12 +60,39 @@ export class LazyDataService {
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
+  private loadedLangs: Language[] = [];
+
   constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
-              private platformService: PlatformService, private settings: SettingsService) {
+              private platformService: PlatformService, private settings: SettingsService, private translate: TranslateService) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
     } else {
-      this.load();
+      this.load(translate.currentLang as Language);
+      if (translate.onLangChange) {
+        translate.onLangChange.subscribe(change => {
+          this.load(change.lang);
+        });
+      }
+
+      this.settings.regionChange$.subscribe(change => {
+        this.loadForRegion(change.next);
+      });
+
+      this.loadForRegion(this.settings.region);
+    }
+  }
+
+  private loadForRegion(region: Region): void {
+    switch (region) {
+      case Region.Global:
+        this.load('en');
+        break;
+      case Region.Korea:
+        this.load('ko');
+        break;
+      case Region.China:
+        this.load('zh');
+        break;
     }
   }
 
@@ -72,19 +101,18 @@ export class LazyDataService {
   }
 
   public getRecipe(id: string): Observable<Craft> {
-    return this.settings.regionChange$.pipe(
-      map(change => change.next),
-      startWith(this.settings.region),
-      map(region => {
-        switch (region) {
+    return combineLatest([this.settings.regionChange$.pipe(startWith({ next: this.settings.region, previous: null })), this.data$]).pipe(
+      map(([change, data]) => {
+        switch (change.next) {
           case Region.China:
-            return this.data.zhRecipes;
+            return data.zhRecipes;
           case Region.Korea:
-            return this.data.koRecipes;
+            return data.koRecipes;
           default:
-            return this.data.recipes;
+            return data.recipes;
         }
       }),
+      filter(recipes => recipes !== undefined),
       map(recipes => {
         return recipes.find(r => r.id.toString() === id.toString())
           || this.data.recipes.find(r => r.id.toString() === id.toString());
@@ -116,20 +144,24 @@ export class LazyDataService {
 
   public get allItems(): any {
     const res = { ...this.data.items };
-    Object.keys(this.data.koItems).forEach(koKey => {
-      if (res[koKey] !== undefined) {
-        res[koKey].ko = this.data.koItems[koKey].ko;
-      } else {
-        res[koKey] = this.data.koItems[koKey];
-      }
-    });
-    Object.keys(this.data.zhItems).forEach(zhKey => {
-      if (res[zhKey] !== undefined) {
-        res[zhKey].zh = this.data.zhItems[zhKey].zh;
-      } else {
-        res[zhKey] = this.data.zhItems[zhKey];
-      }
-    });
+    if (this.data.koItems) {
+      Object.keys(this.data.koItems).forEach(koKey => {
+        if (res[koKey] !== undefined) {
+          res[koKey].ko = this.data.koItems[koKey].ko;
+        } else {
+          res[koKey] = this.data.koItems[koKey];
+        }
+      });
+    }
+    if (this.data.zhItems) {
+      Object.keys(this.data.zhItems).forEach(zhKey => {
+        if (res[zhKey] !== undefined) {
+          res[zhKey].zh = this.data.zhItems[zhKey].zh;
+        } else {
+          res[zhKey] = this.data.zhItems[zhKey];
+        }
+      });
+    }
     return res;
   }
 
@@ -150,16 +182,44 @@ export class LazyDataService {
     }, {});
   }
 
-  protected load(): void {
+  public load(lang: Language): void {
+    const xivapiAndExtractsReady$ = new Subject();
+    const lazyFilesReady$ = new Subject();
+
+    combineLatest([xivapiAndExtractsReady$, lazyFilesReady$])
+      .pipe(first())
+      .subscribe(() => {
+        this.loaded$.next(true);
+      });
+
     combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches as any[];
         this.extracts = extracts;
         this.extracts$.next(extracts);
+        xivapiAndExtractsReady$.next();
+        xivapiAndExtractsReady$.complete();
       });
 
-    combineLatest(lazyFilesList.map(row => {
+    const languageToLoad = ['ko', 'zh'].indexOf(lang) > -1 ? lang : 'en';
+
+    if (this.loadedLangs.indexOf(languageToLoad) > -1) {
+      return;
+    }
+
+    this.loaded$.next(false);
+    this.loadedLangs.push(languageToLoad);
+
+    const filesToLoad = lazyFilesList.filter(entry => {
+      if (languageToLoad === 'en') {
+        return entry.fileName.split('/').length === 1 || entry.fileName.indexOf('items') > -1;
+      } else {
+        return entry.fileName.startsWith(`/${languageToLoad}`) || entry.fileName.split('/').length === 1;
+      }
+    });
+
+    combineLatest(filesToLoad.map(row => {
       return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
         map(data => {
           return {
@@ -169,14 +229,14 @@ export class LazyDataService {
         })
       );
     })).subscribe((results) => {
-      const lazyData: Partial<LazyData> = {};
+      const lazyData: Partial<LazyData> = this.data || {};
       results.forEach(row => {
         lazyData[row.propertyName] = row.data;
       });
       this.data = lazyData as LazyData;
       this.data$.next(this.data);
-      this.loaded$.next(true);
-      this.loaded$.complete();
+      lazyFilesReady$.next();
+      this.loadedLangs.push(languageToLoad);
     });
   }
 

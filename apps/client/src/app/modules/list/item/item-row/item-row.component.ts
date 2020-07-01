@@ -254,8 +254,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade,
-              private simulationService: SimulationService,
-              private lazyData: LazyDataService) {
+              private simulationService: SimulationService) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -378,24 +377,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   markAsDoneInLog(item: ListRow): void {
-    this.authFacade.user$.pipe(
-      first()
-    ).subscribe(user => {
-      const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-      const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
-      if (craftedBy.length > 0) {
-        user.logProgression = _.uniq([
-          ...user.logProgression,
-          +(item.recipeId || craftedBy[0].id)
-        ]);
-      } else if (gatheredBy.type !== undefined) {
-        user.gatheringLogProgression = _.uniq([
-          ...user.gatheringLogProgression,
-          +item.id
-        ]);
-      }
-      this.authFacade.updateUser(user);
-    });
+    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+    const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+    if (craftedBy.length > 0) {
+      this.authFacade.markAsDoneInLog('crafting', +(item.recipeId || craftedBy[0].id), true);
+    } else if (gatheredBy.type !== undefined) {
+      this.authFacade.markAsDoneInLog('gathering', +item.id, true);
+    }
   }
 
   addTag(item: ListRow): void {
@@ -515,6 +503,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   itemDoneChanged(newValue: number, item: ListRow): void {
+    if (newValue.toString().length === 0) {
+      return;
+    }
     if (this.settings.displayRemaining) {
       newValue += item.used;
     }

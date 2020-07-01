@@ -259,9 +259,11 @@ export class AppComponent implements OnInit {
 
       this.lazyData.loaded$
         .pipe(
-          filter(loaded => loaded),
-          switchMap(() => {
-            this.dataLoaded = true;
+          switchMap((loaded) => {
+            this.dataLoaded = loaded;
+            if (!loaded) {
+              return of(false);
+            }
             const lastChangesSeen = this.settings.lastChangesSeen;
             if (semver.gt(version, lastChangesSeen)) {
               return this.dialog.create({
@@ -279,8 +281,10 @@ export class AppComponent implements OnInit {
             }
           })
         )
-        .subscribe(loaded => {
-          this.tutorialService.applicationReady();
+        .subscribe((loaded) => {
+          if (loaded) {
+            this.tutorialService.applicationReady();
+          }
         });
 
       this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(

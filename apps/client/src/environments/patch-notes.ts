@@ -1,6 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed a bug preventing collectability markers from showing on G2 skybuilders items.
-* **gearset:** fixed an issue with filters getting too few items for levels < 60.
-* **list:** fixed "mark as done in log" button for precrafts.
-* **workshop:** fixed permissions propagation.`;
+* **desynth:** fixed salvage level search.
+* **list:** fixed an issue with alarms from lists sometimes not having coords.
+* **list:** fixed an issue with the add item button with WRITE team permission.
+* **lists:** deleting the value in amount input won't treat it as 0 anymore.
+* **log-tracker:** fixed fishing log entries display not updating properly.
+* **pricing:** removed price filling warning when too few items.
+
+
+### Features
+
+* **desktop:** support for korean 5.15 packets.
+* support for korean v5.15 update.`;

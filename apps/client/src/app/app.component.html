@@ -488,13 +488,15 @@
               </button>
             </ng-template>
           </nz-alert>
-          <nz-alert (nzOnClose)="settings.hideMachinaBanner = true" *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
+          <nz-alert (nzOnClose)="settings.hideMachinaBanner = true"
+                    *ngIf="platformService.isDesktop() && !settings.hideMachinaBanner && !ipc.machinaToggle"
                     [nzCloseText]="'Close' | translate"
                     [nzDescription]="description"
                     [nzMessage]="'PACKET_CAPTURE.Banner_title' | translate"
                     class="new-version-alert"
                     nzBanner
                     nzShowIcon
+                    nzCloseable
                     nzType="info">
             <ng-template #description>
               {{'PACKET_CAPTURE.Banner_description' | translate}}<br>

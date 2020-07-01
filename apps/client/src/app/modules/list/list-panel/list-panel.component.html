@@ -1,26 +1,30 @@
 <nz-collapse [style.background-color]="publicDisplay?null:_list?.color">
   <nz-collapse-panel #listContentPanel (nzActiveChange)="openStateChange()" [nzHeader]="panelHeader">
-    <div *ngIf="listContentPanel.nzActive" fxLayout="column" fxLayoutGap="10px">
-      <div *ngFor="let item of listContent$ | async; trackBy: trackByItem; let odd = odd" [class.odd]="odd" fxLayout="row"
-           fxLayoutAlign="flex-start center"
-           fxLayoutGap="5px">
-        <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
-        <div>{{item.id | itemName:item | i18n}}</div>
-        <div class="spacer"></div>
-        <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
-                         (ngModelChange)="updateAmount(item, $event)"
-                         *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
-                         [disabled]="(permissionLevel$ | async) < 30"
-                         [ngModel]="item.amount"
-                         class="amount-input"
-                         type="number"></nz-input-number>
-        <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
-        <button (click)="updateAmount(item, 0)" *ngIf="(permissionLevel$ | async) > 10" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
-                [nzType]="'danger'" nz-button>
-          <i nz-icon nzType="delete"></i>
-        </button>
-      </div>
-    </div>
+    <ng-container *ngIf="listContentPanel.nzActive">
+      <ng-container *ngIf="permissionLevel$ | async as permissionLevel">
+        <app-lazy-scroll [data]="listContent$ | async" [displayedRows]="8" rowSize="42" [rowTemplate]="itemRow" [trackBy]="trackByItem">
+          <ng-template #itemRow let-item let-odd="odd" let-last="last">
+            <div class="list-item-row" [class.odd]="odd" [class.last]="last" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
+              <div>{{item.id | itemName:item | i18n}}</div>
+              <div class="spacer"></div>
+              <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
+                               (ngModelChange)="updateAmount(item, $event)"
+                               *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
+                               [disabled]="(permissionLevel$ | async) < 30"
+                               [ngModel]="item.amount"
+                               class="amount-input"
+                               type="number"></nz-input-number>
+              <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>
+              <button (click)="updateAmount(item, 0)" *ngIf="permissionLevel > 10" [disabled]="permissionLevel < 30" [nzShape]="'circle'"
+                      [nzType]="'danger'" nz-button>
+                <i nz-icon nzType="delete"></i>
+              </button>
+            </div>
+          </ng-template>
+        </app-lazy-scroll>
+      </ng-container>
+    </ng-container>
   </nz-collapse-panel>
   <ng-template #panelHeader>
     <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>

@@ -4,13 +4,13 @@ import { lazyFilesList } from '../app/core/data/lazy-files-list';
 import { map } from 'rxjs/operators';
 import { LazyData } from '../app/core/data/lazy-data';
 import { patchList } from './patchlist';
-import { Region } from '../app/modules/settings/region.enum';
 import { SettingsService } from '../app/modules/settings/settings.service';
+import { TranslateService } from '@ngx-translate/core';
 
 export class LazyDataTestService extends LazyDataService {
 
   constructor() {
-    super(null, null, null, null, new SettingsService(null));
+    super(null, null, null, null, new SettingsService(null), { currentLang: 'en' } as TranslateService);
   }
 
   load(): void {

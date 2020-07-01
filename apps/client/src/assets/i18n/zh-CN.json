@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
-    "Performance_mode": "性能模式",
-    "Performance_mode_explain": "移除列表中的物品图标和菜单（仅保留按钮）以降低浏览器及应用的压力。",
     "Change_email": "修改电子邮箱",
     "Change_email_success": "电子邮箱已更改",
     "No_shortcut": "不要在更新时创建快捷方式",
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
     "Enable_tutorials": "启用教程",
+    "Scrolling_behavior": "滚动行为",
+    "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -432,6 +432,7 @@
       "Networking": "网络设置",
       "Theme": "界面主题",
       "Search": "搜索",
+      "Lists": "清单",
       "Other": "其他"
     },
     "REGIONS": {
@@ -458,11 +459,11 @@
     "Veteran": "老玩家",
     "Autofill_from_packets": "使用数据包捕获自动填充状态",
     "Autofill_stats_explain": "切换到相应的职业以更新其属性，更新完成后可关闭此弹窗。请确保当前没有正在生效的食物效果，否则记录的属性中会包含食物的加成。",
-    "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Open_public_profile": "打开公开档案",
+    "Community_contributions": "社区贡献",
+    "Fishing_rankings": "垂钓排名",
+    "Total_rankings": "总排名",
+    "Loading_fish_rankings": "正在加载垂钓排行",
     "VERIFICATION": {
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
@@ -539,6 +540,11 @@
     "Reset_panel": "重置此面板的所有物品",
     "Progression_tooltip_materials": "已获得材料：{{amount}}%",
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
+    "SCROLLING": {
+      "Default": "默认",
+      "Only_large": "仅限超长清单",
+      "Never": "从不"
+    },
     "COLORS": {
       "RED": "红色",
       "GREEN": "绿色",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "职业",
-      "Job_not_configured": "似乎你还没有设置该职业的属性，请去资料页面设置你的属性。",
+      "Job_not_configured": "你似乎还没有设置该职业的属性，请去资料页面设置你的属性。",
       "Job_not_configured_anonymous": "请输入你的属性或登录帐号以准确模拟",
       "Select_job": "选择职业",
       "Craftsmanship": "作业精度",

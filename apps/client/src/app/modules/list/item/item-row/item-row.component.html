@@ -3,7 +3,7 @@
      fxLayout="row wrap" nz-row *ngIf="item$ | async as item">
   <div [nzSm]="item.alarms && item.alarms.length > 0?12:6" class="block left-block" nz-col nzMd="8" [nzXs]="overlay?12:24">
     <div *ngIf="!item.custom" class="icon">
-      <app-item-icon *ngIf="!settings.performanceMode" [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
+      <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName: item | i18n"
                      [width]="24"></app-item-icon>
     </div>
     <div fxLayout="column" fxLayoutGap="5px">
@@ -37,47 +37,48 @@
         </div>
         <app-user-avatar *ngFor="let user of item.workingOnIt" [userId]="user" [width]="24"
                          class="working-on-it" messageKey="Is_working_on_it"></app-user-avatar>
-
-        <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId">
-          <app-item-row-buttons
-            [buttonsCache]="buttonsCache"
-            [finalItem]="finalItem$ | async"
-            [itemId]="item.id"
-            [fallbackItemName]="item.name"
-            [overlay]="overlay"
-            [isCraft]="item.craftedBy && item.craftedBy.length > 0"
-            [hasAlarms]="alarms.length > 0"
-            [attachedRotation]="item.attachedRotation"
-            [userId]="userId"
-            [loggedIn]="loggedIn$ | async"
-            [commentBadge]="commentBadge$ | async"
-            [team]="team$ | async"
-            [workingOnIt]="item.workingOnIt"
-            [requiredForFinalCraft]="requiredForFinalCraft$ | async"
-            [permissionLevel]="permissionLevel"
-            [showLogCompletionButton]="showLogCompletionButton$ | async"
-            [missingBooks]="missingBooks$ | async"
-            [masterbooks]="item.masterbooks"
-            (attachRotation)="attachRotation(item)"
-            (detachRotation)="detachRotation(item)"
-            (openCommentsPopup)="openCommentsPopup(list.authorId === userId, item)"
-            (checkMasterbooks)="checkMasterbooks($event)"
-            (openMarketboardDialog)="openMarketboardDialog(item)"
-            (addAllAlarms)="addAllAlarms(item)"
-            (openRequirementsPopup)="openRequirementsPopup(item)"
-            (openRotationMacroPopup)="openRotationMacroPopup($event, item)"
-            (showTagInput)="showTagInput()"
-            (changeAmount)="changeAmount(item)"
-            (addToList)="addToList(item)"
-            (removeItem)="removeItem(item)"
-            (markAsDoneInLog)="markAsDoneInLog(item)"
-            (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
-            (setWorkingOnIt)="setWorkingOnIt($event, item)"
-            (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
-            [(requiredAsHQ)]="item.requiredAsHQ"
-            (requiredAsHQChange)="saveItem(item)"
-          ></app-item-row-buttons>
-        </div>
+        <ng-container *ngIf="list$ | async as list">
+          <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId">
+            <app-item-row-buttons
+              [buttonsCache]="buttonsCache"
+              [finalItem]="finalItem$ | async"
+              [itemId]="item.id"
+              [fallbackItemName]="item.name"
+              [overlay]="overlay"
+              [isCraft]="item.craftedBy && item.craftedBy.length > 0"
+              [hasAlarms]="alarms.length > 0"
+              [attachedRotation]="item.attachedRotation"
+              [userId]="userId"
+              [loggedIn]="loggedIn$ | async"
+              [commentBadge]="commentBadge$ | async"
+              [team]="team$ | async"
+              [workingOnIt]="item.workingOnIt"
+              [requiredForFinalCraft]="requiredForFinalCraft$ | async"
+              [permissionLevel]="permissionLevel"
+              [showLogCompletionButton]="showLogCompletionButton$ | async"
+              [missingBooks]="missingBooks$ | async"
+              [masterbooks]="item.masterbooks"
+              (attachRotation)="attachRotation(item)"
+              (detachRotation)="detachRotation(item)"
+              (openCommentsPopup)="openCommentsPopup(list.authorId === userId, item)"
+              (checkMasterbooks)="checkMasterbooks($event)"
+              (openMarketboardDialog)="openMarketboardDialog(item)"
+              (addAllAlarms)="addAllAlarms(item)"
+              (openRequirementsPopup)="openRequirementsPopup(item)"
+              (openRotationMacroPopup)="openRotationMacroPopup($event, item)"
+              (showTagInput)="showTagInput()"
+              (changeAmount)="changeAmount(item)"
+              (addToList)="addToList(item)"
+              (removeItem)="removeItem(item)"
+              (markAsDoneInLog)="markAsDoneInLog(item)"
+              (assignTeamMember)="assignTeamMember($event.team, $event.userId, item)"
+              (setWorkingOnIt)="setWorkingOnIt($event, item)"
+              (removeWorkingOnIt)="removeWorkingOnIt($event, item)"
+              [(requiredAsHQ)]="item.requiredAsHQ"
+              (requiredAsHQChange)="saveItem(item)"
+            ></app-item-row-buttons>
+          </div>
+        </ng-container>
         <ng-container *ngIf="!overlay">
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">

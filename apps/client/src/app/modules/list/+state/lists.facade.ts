@@ -161,7 +161,11 @@ export class ListsFacade {
       if (list.notFound) {
         return 20;
       }
-      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), (team !== undefined && list.teamId === team.$key) ? 20 : 0);
+      let teamPermissionLevel = 0;
+      if (team !== undefined && list.teamId === team.$key) {
+        teamPermissionLevel = list.getPermissionLevel(`team:${list.teamId}`) || 20;
+      }
+      return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), teamPermissionLevel);
     }),
     distinctUntilChanged(),
     shareReplay(1)
@@ -375,7 +379,7 @@ export class ListsFacade {
     return lists
       .sort((a, b) => {
         if (a.index === b.index) {
-          return b.createdAt.seconds- a.createdAt.seconds;
+          return b.createdAt.seconds - a.createdAt.seconds;
         }
         return a.index - b.index;
       });

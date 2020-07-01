@@ -14,7 +14,7 @@
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
-  "Patch_notes": "{{version}} changes",
+  "Patch_notes": "{{version}} изменения",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -97,8 +97,8 @@
   "No_favorites": "Нет избранного",
   "Ephemeral_list": "Будут удалены после завершения",
   "Ephemeral_tag": "Эфемерный",
-  "Archived_list": "Archived list (not loaded by default)",
-  "Archived_tag": "Archived",
+  "Archived_list": "Архивный список (не загружен по умолчанию)",
+  "Archived_tag": "В архиве",
   "Remove_ephemeral": "Преобразовать в постоянный список",
   "Quick_list_create": "Создать быстрый список (удаляется после завершения)",
   "Tag_filter": "Теги",
@@ -157,8 +157,8 @@
     "Nq": "NQ",
     "Share_link_copied": "Ссылка скопирована в буфер обмена",
     "Copy": "Копировать",
-    "Open_in_main_window": "Open in main window",
-    "Example": "Example"
+    "Open_in_main_window": "Открыть в главном окне",
+    "Example": "Пример"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -175,8 +175,8 @@
     "Add_note": "Добавить заметку",
     "Volume": "Громкость",
     "Macro_copied": "Макрос скопирован в буфер обмена",
-    "Open_overlay": "Toggle overlay",
-    "Open_alarms_overlay": "Toggle alarms overlay",
+    "Open_overlay": "Включить оверлей",
+    "Open_alarms_overlay": "Открыть оверлей оповещений",
     "More_available": "добавить ещё {{amount}}...",
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
@@ -195,12 +195,12 @@
     "CUSTOM": {
       "Title": "Добавить настраиваемое оповещение",
       "Name": "Название",
-      "Spawn": "Spawn (Eorzean Time)",
+      "Spawn": "Время появления (Eorzean time)",
       "Spawns_twice": "Двойной спавн",
       "Spawns_twice_description": "Спавнится дважды за внутриигровой день (Один днем, второй ночью)",
-      "Duration": "Duration (Eorzean hours)",
+      "Duration": "Продолжительность (Eorzean часов)",
       "Slot": "Слот",
-      "Slot_description": "The slot number (1-8) that the item appears in inside the in-game gathering interface (Not super important as of patch 5.1)",
+      "Slot_description": "Ячейка (1-8), где появляется предмет внутри интерфейса сбора (Не супер важно из-за патча 5.1)",
       "Type": "Тип узла",
       "Map": "Карта",
       "Weather": "Погода",
@@ -350,10 +350,10 @@
     "Title": "Настройки",
     "General": "Главное",
     "Link_base": "Ссылка на предмет",
-    "Region": "Region",
-    "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
-    "Proxy": "Proxy",
-    "Proxy_bypass": "No proxy for",
+    "Region": "Регион",
+    "Region_explain": "Источник данных и функции, основанные на конкретной версии игры, будут корректироваться в зависимости от региона. Некоторые из них могут быть недоступны в определенных регионах.",
+    "Proxy": "Прокси",
+    "Proxy_bypass": "Нет прокси для",
     "Theme": "Тема",
     "no_panel_borders": "Отключить рамки вокруг различных панелей",
     "Desktop": "Рабочий стол",
@@ -366,7 +366,7 @@
     "Install_update": "Установить обновление",
     "Preferred_copy_type": "Предпочитаемый тип копирования",
     "Auto_open_in_desktop": "Открывать ссылки в десктопном приложении, когда оно запущено",
-    "Auto_download_update": "Download update when it's available",
+    "Auto_download_update": "Загрузить обновление, когда оно доступно",
     "Account": "Аккаунт",
     "Reset_password": "Сбросить пароль",
     "Reset_password_warning": "Вы уверены, что хотите сбросить пароль?",
@@ -394,7 +394,7 @@
     "Auto_mark_as_done_in_log": "Пометить предметы как выполненные в журнале, когда они сделаны в списке",
     "Db_comments_position": "Положение комментариев в базе данных",
     "Always_HQ_leves": "Всегда учитывать опыт ливквестов с предметами HQ",
-    "Always_all_deliveries": "Have the 'All 3 deliveries' button on the levequests page checked by default",
+    "Always_all_deliveries": "Кнопка «Все 3 доставки» на странице «Ливквесты» отмечена по умолчанию",
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
     "Disable_search_history": "Отключить историю поиска",
     "Disable_search_debounce": "Отключить автопоиск (только нажатие enter вызовет поиск)",
@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
-    "Performance_mode": "Режим производительности",
-    "Performance_mode_explain": "Удаляет изображения в списках, а также в меню (сохраняет только кнопки) для снижения нагрузки в браузере и приложении",
     "Change_email": "Изменить email",
     "Change_email_success": "Email успешно изменен",
-    "No_shortcut": "Don't create shortcut on update",
-    "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
-    "Ignored_inventories": "Ignored inventories",
-    "Enable_tutorials": "Enable tutorial system",
+    "No_shortcut": "Не создавать ярлык при обновлении",
+    "Always_disable_hq_suggestions": "Всегда отключать автоматические предложения HQ в списках",
+    "Ignored_inventories": "Игнорируемые инвентари",
+    "Enable_tutorials": "Включить систему обучения",
+    "Scrolling_behavior": "Режим прокрутки",
+    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -429,15 +429,16 @@
     "CATEGORIES": {
       "Autofill_completion": "Звук завершения автозаполнения",
       "Packet_capture": "Настройка захвата пакетов",
-      "Networking": "Networking",
+      "Networking": "Сеть",
       "Theme": "Тема",
       "Search": "Поиск",
+      "Lists": "Списки",
       "Other": "Прочее"
     },
     "REGIONS": {
-      "Global": "Global",
-      "CN": "China",
-      "KR": "Korea"
+      "Global": "Общий",
+      "CN": "Китай",
+      "KR": "Корея"
     }
   },
   "PROFILE": {
@@ -458,11 +459,11 @@
     "Veteran": "Ветеран",
     "Autofill_from_packets": "Заполнить статы используя захват пакетов",
     "Autofill_stats_explain": "Переключитесь на нужную профессию, чтобы обновить ее. Закройте это всплывающее окно, как только вы закончите. Пожалуйста, убедитесь, что у вас нет никакой активной еды, иначе ваша статистика сохранится с этой едой.",
-    "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Open_public_profile": "Открыть профиль",
+    "Community_contributions": "Вклад в сообщество",
+    "Fishing_rankings": "Рейтинг Рыбалки",
+    "Total_rankings": "Общий рейтинг",
+    "Loading_fish_rankings": "Загрузка рейтинга рыбалки",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
@@ -472,7 +473,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "Загрузить архивные списки",
     "Needs_verification": "Пожалуйста, подтвердите персонажа чтоб иметь доступ к спискам вашей FC",
     "Regenerate_all": "Пересоздать все списки",
     "Regenerated_all": "Ваши списки обновлены",
@@ -511,8 +512,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "Архив",
+    "Unarchive": "Вернуть из архива",
     "Regenerate": "Обновить список до последней версии Teamcraft",
     "Rename": "Переименовать список",
     "Copied_x_times": "Скопировано {{count}} раз",
@@ -537,8 +538,13 @@
     "Set_color": "Установить цвет списка",
     "Go_to_pinned": "Перейти в закрепленный список (щелкните пкм, чтобы открепить его)",
     "Reset_panel": "Сбросить все предметы этой панели",
-    "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
-    "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Progression_tooltip_materials": "Собрано материалов: {{amount}}%",
+    "Progression_tooltip_items": "Предметов сделано: {{amount}}%",
+    "SCROLLING": {
+      "Default": "По умолчанию",
+      "Only_large": "Только крупные списки",
+      "Never": "Никогда"
+    },
     "COLORS": {
       "RED": "Красный",
       "GREEN": "Зеленый",
@@ -564,7 +570,7 @@
       "Delete": "Удалить список",
       "Clear": "Очистить список",
       "Reset": "Обновить список",
-      "Archive": "Archive the list",
+      "Archive": "Архивировать список",
       "Nothing": "Ничего"
     },
     "BUTTONS": {
@@ -614,8 +620,8 @@
     "Fill_with_inventory": "Заполнить из инвентаря (только предметами, которые есть у вас в личном инвентаре)",
     "Filter_items_done": "Скрыть завершенные предметы",
     "Inventory_synthesis": "Анализ запасов в инвентаре",
-    "X_needed": "{{amount}} needed",
-    "Leave_list": "Leave this list",
+    "X_needed": "{{amount}} требуется",
+    "Leave_list": "Покинуть этот список",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
@@ -656,7 +662,7 @@
       "Tag_filter": "Фильтр по тегам"
     },
     "OVERLAY": {
-      "Open": "Toggle list overlay",
+      "Open": "Открыть оверлей списка",
       "No_display": "Открыть список в главном окне для начала",
       "No_panel_selected": "Выберите панель, используя кнопки выше"
     }
@@ -814,7 +820,7 @@
   },
   "SIMULATOR": {
     "Title": "Симулятор крафта",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "Включить параметры и расходные материалы",
     "Fixed_notification_number": "Фиксированное уведомление",
     "Starting_echo_number": "Уведомление #",
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Профессия",
-      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию, перейдите на страницу профиля, чтобы настроить ее и установить характеристики",
+      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",
@@ -1043,11 +1049,11 @@
   "LEVEQUESTS": {
     "Title": "Ливквесты",
     "Levequest_name": "Название ливквеста",
-    "Level_range": "Level range",
+    "Level_range": "Диапазон уровней",
     "No_results": "Ливквест не найден",
     "Add_to_list": "Добавить предмет ливквеста в список",
     "Quantity": "Количество",
-    "All_deliveries": "Все {{value}} доставлено",
+    "All_deliveries": "Все {{value}} доставки",
     "Compute_exp": "Показать влияние на xp",
     "Global_exp": "Суммировать опыт",
     "More_on_gamerescape": "Подробнее на gamerescape",
@@ -1419,18 +1425,18 @@
       "Weather_chances": "Шансы на появление каждой погоды",
       "Bait": "Рыболовная приманка",
       "Refresh_data": "Обновить данные",
-      "Bite_times": "Bite times",
-      "All_baits": "No bait filter",
-      "Ranking": "Ranking",
-      "Top_users": "Top rankings",
-      "Your_ranking": "Your ranking",
+      "Bite_times": "Время клева",
+      "All_baits": "Без фильтра наживки",
+      "Ranking": "Рейтинг",
+      "Top_users": "Топ рейтинг",
+      "Your_ranking": "Ваш рейтинг",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
         "Big": "Big (!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
+        "Open": "Открыть оверлей по рыбалке",
         "Bait": "Приманка",
         "Tug": "Tug",
         "Hookset": "Hookset",
@@ -1448,10 +1454,10 @@
         "Last_report": "Последний отчет",
         "Fish": "Рыба",
         "Size": "Размер",
-        "Time_since_thrown": "Time since throw",
+        "Time_since_thrown": "Время с момента броска",
         "ERRORS": {
           "No_bait": "Не обнаружено наживки, смените наживку один раз.",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_stats": "Параметры не обнаружены, переключитесь снова на рыбака."
         }
       }
     },
@@ -1635,7 +1641,7 @@
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
     "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
     "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места"
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1645,8 +1651,8 @@
     "Missing": "Отсутствует",
     "Results": "Возможные рецепты для крафта",
     "Basket": "Корзина",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "Добавить все в корзину",
+    "Add_one_to_basket": "Добавить один в корзину",
     "Remove_from_basket": "Убрать из корзины",
     "Search": "Найти рецепты",
     "Generate_list": "Добавить в список",
@@ -1655,7 +1661,7 @@
     "Add_item": "Добавить предмет",
     "Clipboard_content_malformed": "Неправильный контент буфера обмена",
     "Import_from_clipboard": "Импорт из ретейнера",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "Импорт из инвентаря",
     "Extension_tip": "Вы можете скопировать инвентарь вашего ретейнера в буфер обмена с помощью расширения: ",
     "Extension_link": "Получить расширение в chrome",
     "Clear": "Очистить список",
@@ -1714,13 +1720,13 @@
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
     "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
-    "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update."
+    "Outdated": "Захват пакетов не работает",
+    "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях."
   },
   "SUGGESTED_REGION": {
-    "Banner_title": "Suggest changing region to {{region}}",
-    "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Banner_title": "Предлагается изменить регион на {{region}}",
+    "Banner_description": "Вы можете изменить регион в котором играете для лучшего опыта в базе данных, симуляторе, захвате пакетов и т.д.",
+    "Button_label": "Изменить регион"
   },
   "INVENTORY": {
     "Title": "Инвентарь",
@@ -1733,8 +1739,8 @@
     "Reset_inventory": "Сбросить этот инвентарь",
     "Clean_all": "Сбросить все ваши инвентари",
     "Search_for_an_item": "Поиск предмета",
-    "Filter_by_expansion": "Filter by expansion",
-    "In_x_containers": "In {{amount}} containers",
+    "Filter_by_expansion": "Фильтр по дополнению",
+    "In_x_containers": "В {{amount}} инвентарях",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
@@ -1749,16 +1755,16 @@
     "Ignore_item": "Игнорировать этот совет для этого предмета",
     "Remove_ignore_item": "Больше не игнорировать этот совет для этого предмета",
     "Ignore_container": "Игнорировать этот совет для этого контейнера",
-    "Hide_optimizer": "Hide this optimizer",
-    "Unhide_optimizer": "Don't hide this optimizer anymore",
+    "Hide_optimizer": "Скрыть этот оптимизатор",
+    "Unhide_optimizer": "Больше не скрывать этот оптимизатор",
     "Remove_ignore_container": "Больше не игнорировать этот совет для этого контейнера",
     "Show_ignored": "Показать игнорируемые предметы",
-    "Show_hidden": "Show hidden optimizers",
+    "Show_hidden": "Показать скрытые оптимизаторы",
     "No_optimizations": "Оптимизация недоступна",
     "CAN_BE_BOUGHT": {
       "Title": "Предметы, которые можно купить за gil",
       "Message": "Этот предмет можно купить у нпс за gil и не требует репутации с beast tribe.",
-      "Max_price": "Maximum price"
+      "Max_price": "Максимальная цена"
     },
     "DUPLICATES": {
       "Title": "Элементы, дублирующиеся по нескольким ретейнерам",
@@ -1771,14 +1777,14 @@
     },
     "CONSOLIDATE_STACKS": {
       "Title": "HQ stacks of items that can have their quality lowered",
-      "Message": "Combine with NQ stack in: {{containers}}",
-      "Filter": "Only show materials up to: ",
-      "Placeholder": "Pick Expansion"
+      "Message": "Комбинировать со стаком NQ в: {{containers}}",
+      "Filter": "Показывать материалы только до: ",
+      "Placeholder": "Выберите дополнение"
     },
     "UNWANTED_MATERIALS": {
       "Title": "Old materials that are only used to make low iLvl items",
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
-      "Recipe_ilvl": "Min Resulting iLvl",
+      "Recipe_ilvl": "Мин. iLvl",
       "Company_workshop": "Company Workshop"
     }
   },
@@ -1794,7 +1800,7 @@
     "generate_list": "Создать список",
     "Content": "Содержимое",
     "Stat_name": "Статы",
-    "Current_value": "Current",
+    "Current_value": "Текущее",
     "Cap_value": "Макс.",
     "Add_materia": "Добавить материю",
     "No_materia": "Нет материи",
@@ -1832,10 +1838,10 @@
     "Copy_as_text": "Копировать этот набор как текст",
     "Include_all_tools": "Добавить орудия для других профессий тоже",
     "Use_in_simulator": "Использовать эти статы в симуляторе",
-    "Please_input_lodestone_id": "Please input lodestone id",
-    "Paste_lodestone_id": "Paste lodestone id",
-    "Currency": "Currency",
-    "Optimize_materias": "Optimize materias order",
+    "Please_input_lodestone_id": "Пожалуйста, введите Lodestone ID",
+    "Paste_lodestone_id": "Вставить Lodestone ID",
+    "Currency": "Валюта",
+    "Optimize_materias": "Оптимизировать порядок материй",
     "No_trades_needed": "No trades needed",
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
@@ -1873,12 +1879,12 @@
       "Avg_melding_chances": "Средний шанс овермелда"
     },
     "STAT_DISPLAY": {
-      "Ilvl": "Avg. ilvl",
-      "HP": "Hit Points",
-      "Direct_hit_chances": "Direct Hit Chances",
-      "Critical_hit_chances": "Critical Hit Chances",
-      "Critical_hit_multiplier": "Critical Hit Mult.",
-      "Determination_bonus": "Determination bonus",
+      "Ilvl": "Средний ilvl",
+      "HP": "Здоровье",
+      "Direct_hit_chances": "Шанс прямого попадания",
+      "Critical_hit_chances": "Шанс критического удара",
+      "Critical_hit_multiplier": "Мультипликатор крит. урона",
+      "Determination_bonus": "Determination бонус",
       "GCD": "GCD"
     }
   },
@@ -1893,14 +1899,14 @@
     "Favorite_folders": "Избранные папки"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Start": "Начать обучение для этой страницы",
+    "Next": "Далее",
+    "Done": "Готово",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
+      "Title": "Добро пожаловать в FFXIV Teamcraft",
       "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
-      "Question": "Would you like to enable this functionality?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Question": "Вы хотите включить эту функцию?",
+      "Can_be_changed_in_settings": "Можно включить или выключить в настройках"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."

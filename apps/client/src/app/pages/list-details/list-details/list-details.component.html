@@ -267,14 +267,6 @@
                   nzType="warning">
         </nz-alert>
       </div>
-      <div *ngIf="list.isLarge() && !settings.hideLargeListMessage && !settings.performanceMode" class="alert">
-        <nz-alert [nzDescription]="'LIST_DETAILS.Enable_performance_mode' | translate"
-                  [nzMessage]="'LIST_DETAILS.List_large' | translate" nzShowIcon
-                  nzCloseable="true"
-                  (nzOnClose)="settings.hideLargeListMessage = true"
-                  nzType="warning">
-        </nz-alert>
-      </div>
       <div *ngIf="(outDated$ | async) && (permissionLevel$ | async) < 40" class="alert">
         <nz-alert [nzMessage]="'Not_own_list_outdated' | translate" nzShowIcon nzType="error"></nz-alert>
       </div>
@@ -284,8 +276,10 @@
                                    [crystals]="crystals$ | async"></app-list-crystals-panel>
           <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
                                   [collapsed]="listIsLarge"
+                                  [largeList]="listIsLarge"
                                   [displayRow]="displayRow"></app-list-details-panel>
-          <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"></app-list-details-panel>
+          <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"
+                                  [largeList]="listIsLarge"></app-list-details-panel>
         </div>
         <div *ngIf="listDisplay.showInventory | ifMobile: false" class="inventory">
           <app-inventory-view [list]="list"></app-inventory-view>

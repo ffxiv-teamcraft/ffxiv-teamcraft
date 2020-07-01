@@ -51,7 +51,7 @@ export class MapService {
 
   public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Aetheryte {
     let nearest = mapData.aetherytes[0];
-    for (const aetheryte of mapData.aetherytes.filter(ae => ae.type === 0)) {
+    for (const aetheryte of mapData.aetherytes) {
       if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
         nearest = aetheryte;
       }

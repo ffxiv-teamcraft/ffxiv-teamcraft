@@ -405,14 +405,14 @@
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
-    "Performance_mode": "Mode hautes perfs",
-    "Performance_mode_explain": "Supprime les images des éléments dans les listes, ainsi que les menus (conserve uniquement les boutons) pour réduire le stress sur le navigateur et l'application",
     "Change_email": "Changer votre email",
     "Change_email_success": "Email modifié",
     "No_shortcut": "Ne pas créer de raccourci lors de la mise à jour",
     "Always_disable_hq_suggestions": "Toujours désactiver les suggestions automatiques de HQ sur les listes",
     "Ignored_inventories": "Inventaires ignorés",
     "Enable_tutorials": "Activer le système de tutoriels",
+    "Scrolling_behavior": "Comportement de défilement",
+    "Scrolling_behavior_explain": "Configurer comment le défilement dans les panneaux de listes se comporte, par défaut, autorise jusqu'à 12 éléments par panneau avant de faire défiler.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -432,6 +432,7 @@
       "Networking": "Réseau",
       "Theme": "Thème",
       "Search": "Recherche",
+      "Lists": "Listes",
       "Other": "Autre"
     },
     "REGIONS": {
@@ -539,6 +540,11 @@
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
     "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
+    "SCROLLING": {
+      "Default": "Défaut",
+      "Only_large": "Seulement les grandes listes",
+      "Never": "Jamais"
+    },
     "COLORS": {
       "RED": "Rouge",
       "GREEN": "Vert",
@@ -967,7 +973,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "Il semble que vous n’avez pas configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses caractéristiques",
+      "Job_not_configured": "Il semble que vous n’avez pas configuré ce job, allez sur votre page de profil pour configurer correctement et définir ses caractéristiques.",
       "Job_not_configured_anonymous": "Veuillez entrer vos statistiques pour avoir une simulation précise ou connectez-vous à votre compte",
       "Select_job": "Sélectionner un job",
       "Craftsmanship": "Habileté",

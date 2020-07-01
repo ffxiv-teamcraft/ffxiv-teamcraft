@@ -167,27 +167,13 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public markDohAsDone(recipeId: number, done: boolean): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      if (done) {
-        user.logProgression.push(recipeId);
-      } else {
-        user.logProgression = user.logProgression.filter(entry => entry !== recipeId);
-      }
-      this.userCompletion[recipeId] = done;
-      this.authFacade.updateUser(user);
-    });
+    this.authFacade.markAsDoneInLog('crafting', recipeId, done);
+    this.userCompletion[recipeId] = done;
   }
 
-  public markDolAsDone(recipeId: number, done: boolean): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      if (done) {
-        user.gatheringLogProgression.push(recipeId);
-      } else {
-        user.gatheringLogProgression = user.gatheringLogProgression.filter(entry => entry !== recipeId);
-      }
-      this.userGatheringCompletion[recipeId] = done;
-      this.authFacade.updateUser(user);
-    });
+  public markDolAsDone(itemId: number, done: boolean): void {
+    this.authFacade.markAsDoneInLog('gathering', itemId, done);
+    this.userGatheringCompletion[itemId] = done;
   }
 
   public markDohPageAsDone(page: any): void {

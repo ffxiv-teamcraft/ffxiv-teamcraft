@@ -92,12 +92,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
                 });
               }),
               map(logTracking => {
-                if (logTracking.crafting.length > 0) {
-                  user.logProgression = logTracking.crafting;
-                }
-                if (logTracking.gathering.length > 0) {
-                  user.gatheringLogProgression = logTracking.gathering;
-                }
+                user.logProgression = logTracking.crafting;
+                user.gatheringLogProgression = logTracking.gathering;
                 return user;
               })
             );
