@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../../../core/database/user.service';
 import { combineLatest, merge, Observable, of } from 'rxjs';
 import { CharacterSearchResult, XivapiService } from '@xivapi/angular-client';
@@ -7,14 +7,20 @@ import { debounceTime, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { FormControl, Validators } from '@angular/forms';
+import { UserSearchMode } from './user-search-mode.enum';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./users.component.less']
 })
 export class UsersComponent {
+
+  userSearchModes = Object.values(UserSearchMode);
+
+  UserSearchMode = UserSearchMode;
+
+  searchMode: UserSearchMode = UserSearchMode.UID;
 
   uidFilter = new FormControl('');
 
@@ -54,7 +60,7 @@ export class UsersComponent {
         return this.gcf.httpsCallable('getUserByEmail')({ email: email });
       }),
       switchMap(res => {
-        if (!res.record) {
+        if (!res?.record) {
           return of({ notFound: true });
         }
         return this.userService.get(res.record.uid);

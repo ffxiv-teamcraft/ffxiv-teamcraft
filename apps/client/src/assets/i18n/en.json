@@ -1970,5 +1970,23 @@
       "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
       "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
     }
+  },
+  "ADMIN": {
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      }
+    }
   }
 }
