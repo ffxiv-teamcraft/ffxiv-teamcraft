@@ -445,6 +445,12 @@
               {{'SETTINGS.Enable_auto_log_check' | translate}}
             </label>
           </div>
+          <div>
+            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Enable_metrics_capture' | translate}}
+            </label>
+            <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>
+          </div>
           <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
             <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
             <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"

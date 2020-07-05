@@ -33,8 +33,7 @@ export class PlayerMetricsService {
   public events$: Observable<ProbeReport> = this._events$.asObservable();
 
   constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[],
-              private settings: SettingsService, private authFacade: AuthFacade,
-              private lazyData: LazyDataService) {
+              private settings: SettingsService, private authFacade: AuthFacade) {
     setInterval(() => {
       this.saveLogs();
     }, 60000);

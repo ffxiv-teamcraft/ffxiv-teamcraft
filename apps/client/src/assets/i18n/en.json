@@ -414,6 +414,8 @@
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -434,7 +436,8 @@
       "Theme": "Theme",
       "Search": "Search",
       "Lists": "Lists",
-      "Other": "Other"
+      "Other": "Other",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "Global",
