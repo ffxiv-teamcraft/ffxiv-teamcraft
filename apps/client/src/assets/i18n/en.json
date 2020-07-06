@@ -540,7 +540,7 @@
     "Reset_panel": "Reset all the items of this panel",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
-    "SCROLLING":{
+    "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
       "Never": "Never"
@@ -1972,11 +1972,13 @@
     }
   },
   "ADMIN": {
+    "Autofix_error": "Autofix this error",
     "USERS": {
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Email",
       "Uid": "UID",
       "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
       "SEARCH_MODE": {
         "Label": "Search mode",
         "UID": "UID",
@@ -1986,6 +1988,9 @@
       "ACTIONS": {
         "Profile": "Open profile",
         "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
       }
     }
   }

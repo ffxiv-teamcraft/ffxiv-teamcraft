@@ -8,6 +8,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { FormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
+import { NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { IntegrityCheckPopupComponent } from './integrity-check-popup/integrity-check-popup.component';
 
 @Component({
   selector: 'app-users',
@@ -41,7 +44,8 @@ export class UsersComponent {
   results$: Observable<TeamcraftUser[]>;
 
   constructor(private userService: UserService, private xivapi: XivapiService,
-              private angularFireAuth: AngularFireAuth, private gcf: AngularFireFunctions) {
+              private angularFireAuth: AngularFireAuth, private gcf: AngularFireFunctions,
+              private modal: NzModalService, private translate: TranslateService) {
 
     // From UID
     const usersFromUid$ = this.uidFilter.valueChanges.pipe(
@@ -113,6 +117,17 @@ export class UsersComponent {
       usersFromCharName$,
       usersFromLodestoneID$
     );
+  }
+
+  runIntegrityCheck(user: TeamcraftUser): void {
+    this.modal.create({
+      nzTitle: this.translate.instant('ADMIN.USERS.Integrity_check'),
+      nzContent: IntegrityCheckPopupComponent,
+      nzFooter: null,
+      nzComponentParams: {
+        user: user
+      }
+    });
   }
 
 }
