@@ -1970,5 +1970,28 @@
       "Min_cp": "在这里通过最低制作力过滤手法，过滤后只会显示所需制作力低于设定值的手法",
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
+    }
   }
 }
