@@ -1,0 +1,16 @@
+<ul *ngIf="results$ | async as results" class="result-list">
+  <li *ngFor="let row of results" fxLayout="row" fxLayoutGap="5px">
+    <div [ngSwitch]="row.result">
+      <i *ngSwitchCase="'loading'" nz-icon nzType="loading"></i>
+      <i *ngSwitchCase="null" nz-icon nzType="check-circle" nzTheme="twotone" nzTwotoneColor="#52c41a"></i>
+      <i *ngSwitchDefault nz-icon nzType="close-circle" nzTheme="twotone" nzTwotoneColor="#eb2f96"></i>
+    </div>
+    <div>{{('ADMIN.USERS.INTEGRITY_CHECK.' + row.label) | translate}}</div>
+    <button nz-button nzSize="small" nzShape="circle" nzType="primary"
+            nz-tooltip [nzTooltipTitle]="'ADMIN.Autofix_error' | translate"
+            *ngIf="!row.fixing && row.result !== null && row.result !== 'loading'"
+            (click)="row.fixing = true;fix(row.check, row.result)">
+      <i nz-icon nzType="tool"></i>
+    </button>
+  </li>
+</ul>

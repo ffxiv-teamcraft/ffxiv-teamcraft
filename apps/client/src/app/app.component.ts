@@ -176,10 +176,19 @@ export class AppComponent implements OnInit {
 
     fromEvent(document, 'keypress').pipe(
       filter((event: KeyboardEvent) => {
-        return event.ctrlKey && event.shiftKey && event.code === 'KeyF';
+        return event.ctrlKey && event.shiftKey && event.keyCode === 6;
       })
     ).subscribe(() => {
       this.quickSearch.openQuickSearch();
+    });
+
+    fromEvent(document, 'keypress').pipe(
+      filter((event: KeyboardEvent) => {
+        console.log(event);
+        return event.ctrlKey && event.shiftKey && event.keyCode === 1;
+      })
+    ).subscribe(() => {
+      this.router.navigateByUrl('/admin/users');
     });
 
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
