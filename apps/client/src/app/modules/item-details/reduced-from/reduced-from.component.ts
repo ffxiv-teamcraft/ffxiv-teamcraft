@@ -29,10 +29,10 @@ export class ReducedFromComponent extends ItemDetailsPopup {
   }
 
   getNodes(reduction: any): any[] {
-    if (this.nodes[reduction.obj.i] === undefined) {
-      this.nodes[reduction.obj.i] = this.bell.getAllNodes(reduction);
+    if (this.nodes[reduction] === undefined) {
+      this.nodes[reduction] = this.bell.getAllNodes({ obj: { i: reduction } });
     }
-    return this.nodes[reduction.obj.i] || [];
+    return this.nodes[reduction] || [];
   }
 
   public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {

@@ -11,6 +11,7 @@ export interface LazyData {
   craftActions: any;
   craftingLogPages: any;
   craftingLog: any;
+  desynth: any;
   diademTerritory: any;
   equipSlotCategories: any;
   exVersions: any;
@@ -53,6 +54,7 @@ export interface LazyData {
   races: any;
   rarities: any;
   recipes: any;
+  reduction: any;
   shops: any;
   stackSizes: any;
   statuses: any;

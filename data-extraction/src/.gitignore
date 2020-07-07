@@ -1,0 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+output
+input/memory_data.csv
+input/lgb/*
+progress.json

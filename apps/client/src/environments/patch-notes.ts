@@ -11,4 +11,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **desktop:** support for korean 5.15 packets.
-* support for korean v5.15 update.`;
+* support for korean v5.15 update.`;

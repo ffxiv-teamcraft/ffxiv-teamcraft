@@ -2,11 +2,11 @@
   <nz-card *ngFor="let reduction of details" fxFlex="1 1 auto">
     <nz-card-meta [nzAvatar]="itemIcon" [nzTitle]="title">
       <ng-template #title>
-        <span [appItemRarity]="reduction.obj.i">{{reduction.obj.i | itemName | i18n}}</span>
+        <span [appItemRarity]="reduction">{{reduction | itemName | i18n}}</span>
       </ng-template>
       <ng-template #itemIcon>
-        <app-item-icon [icon]="reduction.obj.c" [itemId]="reduction.obj.i"
-                       [itemName]="reduction.obj.i | itemName | i18n" [width]="32"></app-item-icon>
+        <app-item-icon [icon]="reduction | lazyIcon" [itemId]="reduction"
+                       [itemName]="reduction | itemName | i18n" [width]="32"></app-item-icon>
       </ng-template>
     </nz-card-meta>
     <nz-list [nzDataSource]="getNodes(reduction)" [nzRenderItem]="nodeTemplate">
