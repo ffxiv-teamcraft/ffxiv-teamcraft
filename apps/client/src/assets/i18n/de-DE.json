@@ -1970,5 +1970,28 @@
       "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
       "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
     }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
+    }
   }
 }
