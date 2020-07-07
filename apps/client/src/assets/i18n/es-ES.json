@@ -1970,5 +1970,28 @@
       "Min_cp": "Filtrar por CP mínimo requerido aquí, esto sólo encontrará rotaciones con el CP requerido < su valor.",
       "Set_selector": "Seleccione qué profesión debe utilizarse para las simulaciones. Usado para mostrar la tasa de éxito de las rotaciones resultantes."
     }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
+    }
   }
 }
