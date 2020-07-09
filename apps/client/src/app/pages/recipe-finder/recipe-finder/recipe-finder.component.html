@@ -160,7 +160,7 @@
             [nzDescription]="description"
             [nzTitle]="nzTitle">
             <ng-template #description>
-              <span>{{recipe.job | jobAbbr | i18n}} lvl {{recipe.level}} {{recipe.stars | ingameStars}}</span>
+              <span>{{recipe.job | jobAbbr | i18n}} lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}</span>
               <span *ngIf="recipe.missing.length > 0">
               {{'RECIPE_FINDER.Missing' | translate}}
                 <span *ngFor="let missing of recipe.missing;let last=last">{{missing.id | itemName | i18n}}
