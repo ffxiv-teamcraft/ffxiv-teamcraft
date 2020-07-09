@@ -392,7 +392,7 @@
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Proxy_bypass' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" nzValidateStatus="validating"
-          [nzValidatingTip]="('COMMON.Example' | translate) + ': xivapi.com,www.garlandtools.org'">
+                         [nzValidatingTip]="('COMMON.Example' | translate) + ': xivapi.com,www.garlandtools.org'">
           <input nz-input [(ngModel)]="proxyBypass" (blur)="ipc.send('proxy-bypass', proxyBypass)">
         </nz-form-control>
       </nz-form-item>
@@ -401,12 +401,12 @@
         <nz-form-label [nzSpan]="5">{{'Sound' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
           <nz-select (ngModelChange)="setSound($event)" [ngModel]="settings.autofillCompletionSound" class="select-box"
-                    id="sound">
+                     id="sound">
             <nz-option *ngFor="let sound of sounds" [nzLabel]="sound" [nzValue]="sound"></nz-option>
           </nz-select>
           <nz-slider (nzOnAfterChange)="setVolume($event/100)" [ngModel]="settings.autofillCompletionVolume * 100"
-                    [nzMax]="100" [nzMin]="0"
-                    [nzStep]="1"></nz-slider>
+                     [nzMax]="100" [nzMin]="0"
+                     [nzStep]="1"></nz-slider>
         </nz-form-control>
       </nz-form-item>
       <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
@@ -446,7 +446,8 @@
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
+                   [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
               {{'SETTINGS.Enable_metrics_capture' | translate}}
             </label>
             <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>
