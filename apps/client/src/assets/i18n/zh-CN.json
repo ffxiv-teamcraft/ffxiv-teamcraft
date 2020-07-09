@@ -413,6 +413,10 @@
     "Enable_tutorials": "启用教程",
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -433,7 +437,8 @@
       "Theme": "界面主题",
       "Search": "搜索",
       "Lists": "清单",
-      "Other": "其他"
+      "Other": "其他",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "国际服",
