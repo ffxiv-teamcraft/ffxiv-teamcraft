@@ -413,6 +413,10 @@
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -433,7 +437,8 @@
       "Theme": "테마",
       "Search": "검색",
       "Lists": "목록",
-      "Other": "기타"
+      "Other": "기타",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "글로벌서버",
