@@ -21,6 +21,8 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
+import { InventoryEvent } from '../../model/user/inventory/inventory-event';
+import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +36,19 @@ export class MachinaService {
   public get inventoryPatches$(): Observable<InventoryPatch> {
     return this._inventoryPatches$.asObservable();
   }
+
+  public readonly inventoryEvents$ = this.inventoryPatches$.pipe(
+    filter(patch => !patch.moved),
+    map(patch => {
+      return {
+        type: this.getEventType(patch),
+        itemId: patch.itemId,
+        amount: patch.quantity,
+        containerId: patch.containerId,
+        retainerName: patch.retainerName
+      };
+    })
+  );
 
   private retainerInformationsSync = {};
 
@@ -308,5 +323,13 @@ export class MachinaService {
         }
       }
     });
+  }
+
+  private getEventType(patch: InventoryPatch): InventoryEventType {
+    if (patch.quantity > 0) {
+      return InventoryEventType.ADDED;
+    } else {
+      return InventoryEventType.REMOVED;
+    }
   }
 }

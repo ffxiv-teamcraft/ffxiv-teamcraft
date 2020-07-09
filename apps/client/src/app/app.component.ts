@@ -53,6 +53,7 @@ import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
 import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
 import { version } from '../environments/version';
+import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 
 declare const gtag: Function;
 
@@ -171,7 +172,8 @@ export class AppComponent implements OnInit {
               private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
-              apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService) {
+              apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
+              private playerMetricsService: PlayerMetricsService) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -452,6 +454,7 @@ export class AppComponent implements OnInit {
             if (this.settings.xivapiKey && this.settings.enableMappy) {
               this.mappy.start();
             }
+            this.playerMetricsService.start();
           });
       }
     }

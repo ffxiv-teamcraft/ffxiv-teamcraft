@@ -94,6 +94,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
+const fs = require('fs');
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
@@ -596,6 +597,49 @@ ipcMain.on('language', (event, lang) => {
     // Window already destroyed, so we don't care :)
   }
 });
+
+// Metrics system
+const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
+const METRICS_FOLDER = path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
+
+ipcMain.on('metrics:persist', (event, data) => {
+  if (data.length === 0) {
+    return;
+  }
+  if (!fs.existsSync(METRICS_FOLDER)) {
+    fs.mkdirSync(METRICS_FOLDER);
+  }
+  const now = new Date();
+  let month = now.getMonth();
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let day = now.getUTCDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
+  const filename = `${now.getFullYear()}${month}${day}.tcmetrics`;
+  const filePath = path.join(METRICS_FOLDER, filename);
+  if (fs.existsSync(filePath)) {
+    data = `|${data}`;
+  }
+  fs.appendFileSync(filePath, data);
+});
+
+ipcMain.on('metrics:load', (event, { from, to }) => {
+  if (to === undefined) {
+    to = Date.now();
+  }
+  const files = fs.readdirSync(METRICS_FOLDER);
+  const loadedFiles = files
+    .filter(fileName => {
+      const date = +fileName.split('.')[0];
+      return date >= from && date <= to;
+    })
+    .map(fileName => fs.readFileSync(path.join(METRICS_FOLDER, fileName), 'utf8'));
+  event.sender.send('metrics:loaded', loadedFiles);
+});
+// End metrics system
 
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();

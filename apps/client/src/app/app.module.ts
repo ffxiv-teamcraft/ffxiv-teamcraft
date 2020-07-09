@@ -101,6 +101,8 @@ import { ApolloInterceptor } from './apollo-interceptor';
 import { QuickSearchModule } from './modules/quick-search/quick-search.module';
 import { GearsetsModule } from './modules/gearsets/gearsets.module';
 import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
+import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.module';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -250,7 +252,7 @@ const nzConfig: NzConfig = {
         strictActionSerializability: false,
         strictStateImmutability: false,
         strictActionImmutability: false,
-        strictActionWithinNgZone: true
+        strictActionWithinNgZone: false
       }
     }),
     !environment.production ? StoreDevtoolsModule.instrument({
@@ -260,7 +262,10 @@ const nzConfig: NzConfig = {
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects]),
     ClipboardModule,
-    GraphQLModule
+    GraphQLModule,
+
+    PlayerMetricsModule,
+    NzSpaceModule
   ],
   bootstrap: [AppComponent]
 })

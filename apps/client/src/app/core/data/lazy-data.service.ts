@@ -121,20 +121,19 @@ export class LazyDataService {
   }
 
   public getRecipeSync(id: string): Craft {
-    let recipes: Craft[];
+    return this.getRecipes().find(r => r.id.toString() === id.toString())
+      || this.data.recipes.find(r => r.id.toString() === id.toString());
+  }
+
+  public getRecipes(): Craft[] {
     switch (this.settings.region) {
       case Region.China:
-        recipes = this.data.zhRecipes;
-        break;
+        return this.data.zhRecipes;
       case Region.Korea:
-        recipes = this.data.koRecipes;
-        break;
+        return this.data.koRecipes;
       default:
-        recipes = this.data.recipes;
-        break;
+        return this.data.recipes;
     }
-    return recipes.find(r => r.id.toString() === id.toString())
-      || this.data.recipes.find(r => r.id.toString() === id.toString());
   }
 
   @Memoized()

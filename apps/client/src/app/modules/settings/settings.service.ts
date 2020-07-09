@@ -383,6 +383,22 @@ export class SettingsService {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get playerMetricsEnabled(): boolean {
+    return this.getSetting('playerMetricsEnabled', 'false') === 'true';
+  }
+
+  public set playerMetricsEnabled(enabled: boolean) {
+    this.setSetting('playerMetricsEnabled', enabled.toString());
+  }
+
+  public get pcapLogEnabled(): boolean {
+    return this.getSetting('pcapLogEnabled', 'true') === 'true';
+  }
+
+  public set pcapLogEnabled(enabled: boolean) {
+    this.setSetting('pcapLogEnabled', enabled.toString());
+  }
+
   public get showAllAlarms(): boolean {
     return this.getSetting('showAllAlarms', 'false') === 'true';
   }
