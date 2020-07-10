@@ -1982,20 +1982,20 @@
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Email",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "Aucun utilisateur trouvé",
+      "Integrity_check": "Contrôle d'intégrité",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "Mode de recherche",
         "UID": "UID",
         "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "CHARACTER": "Personnage"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "Ouvrir le profil",
+        "Check": "Exécuter le contrôle d'intégrité"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "Tous les personnages liés sont valides"
       }
     }
   }
