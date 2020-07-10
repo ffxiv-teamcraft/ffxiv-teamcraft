@@ -413,10 +413,10 @@
     "Enable_tutorials": "Activer le système de tutoriels",
     "Scrolling_behavior": "Comportement de défilement",
     "Scrolling_behavior_explain": "Configurer comment le défilement dans les panneaux de listes se comporte, par défaut, autorise jusqu'à 12 éléments par panneau avant de faire défiler.",
-    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
-    "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Enable_auto_log_check": "Vérifier automatiquement les objets comme terminés dans le journal quand ils sont collectés/fabriqués",
+    "Enable_metrics_capture": "Activer la capture des métriques",
+    "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
+    "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1162,7 +1162,7 @@
     "Lists_created_counter": "{{amount}} listes créées avec FFXIV Teamcraft",
     "Support_patreon": "Soutenez-nous sur patreon",
     "Donation_button": "Faites un don unique",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Acheter un objet Teamcraft",
     "Features_header": "Par où commencer !",
     "DESCRIPTION": {
       "Lists": "Créer des listes pour obtenir des informations sur tous les matériaux, partagez-les avec vos amis, tout commence ici ! Il suffit de chercher un objet, ouvrez le panneau filtres pour obtenir des objets précis et commencer à fabriquer.",
@@ -1977,9 +1977,9 @@
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "Correction auto",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
+      "X_characters_linked": "{{amount}} personnage(s) lié(s)",
       "Email": "Email",
       "Uid": "UID",
       "No_users_found": "Aucun utilisateur trouvé",
