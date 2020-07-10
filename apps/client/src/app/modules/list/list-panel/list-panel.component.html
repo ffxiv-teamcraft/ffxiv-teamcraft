@@ -9,10 +9,12 @@
               <div>{{item.id | itemName:item | i18n}}</div>
               <div class="spacer"></div>
               <nz-input-number #amountModifierInput (keypress.enter)="updateAmount(item, amountModifierInput.displayValue); amountModifierInput.blur()"
+                               mouseWheel (mouseWheelUp)="mouseWheelUpAmount($event, item)" (mouseWheelDown)="mouseWheelDownAmount($event, item)"
                                (ngModelChange)="updateAmount(item, $event)"
                                *ngIf="(permissionLevel$ | async) > 10; else publicAmountDisplay"
                                [disabled]="(permissionLevel$ | async) < 30"
                                [ngModel]="item.amount"
+                               [nzMin]="0"
                                class="amount-input"
                                type="number"></nz-input-number>
               <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>

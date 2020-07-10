@@ -7,7 +7,7 @@
       <input #searchInput (input)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
              (keydown.enter)="query$.next(searchInput.value)"
              (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
-             [nzAutocomplete]="settings.disableSearchHistory||settings.disableSearchDebounce?emptyFill:auto"
+             [nzAutocomplete]="settings.disableSearchHistory?emptyFill:auto"
              autofocus
              class="search-input"
              nz-input
@@ -26,11 +26,11 @@
       </ng-template>
     </nz-input-group>
     <button (cbOnSuccess)="afterShareLinkCopied()" [cbContent]="getShareUrl()" [nzTitle]="'ITEMS.Share_url' | translate" ngxClipboard nz-button
-            nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepIndex="1" tutorialStepAlign="bottom">
+            nz-tooltip>
       <i nz-icon nzType="share-alt"></i>
     </button>
     <nz-autocomplete #emptyFill></nz-autocomplete>
-    <nz-autocomplete #auto nzBackfill [nzDefaultActiveFirstOption]="false">
+    <nz-autocomplete #auto nzBackfill>
       <nz-auto-option *ngFor="let option of autocomplete$ | async" [nzValue]="option">
         {{ option }}
       </nz-auto-option>
@@ -38,7 +38,7 @@
     <ng-template #searchType>
       <nz-select (ngModelChange)="searchType$.next($event);resetFilters()" [ngModel]="searchType$ | async"
                  class="search-type"
-                 nzShowSearch tutorialStep="TUTORIAL.SEARCH.Search_type" tutorialStepAlign="bottom" tutorialStepIndex="0">
+                 nzShowSearch>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ANY) | translate"
                    [nzValue]="searchTypes.ANY"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.ITEM) | translate" [nzValue]="searchTypes.ITEM"></nz-option>
@@ -71,64 +71,68 @@
   <div class="search-tip" fxLayout="row" fxLayoutAlign="center center">{{'SEARCH.Search_tip' | translate}}</div>
   <div *ngIf="searchType$ | async as searchType" class="filters">
     <nz-collapse
-      tutorialStep="TUTORIAL.SEARCH.Filters"
-      tutorialStepIndex="2"
       *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE
       || searchType === searchTypes.INSTANCE || searchType === searchTypes.LEVE
       || searchType === searchTypes.ACTION || searchType === searchTypes.TRAIT">
       <nz-collapse-panel [nzHeader]="'Filters' | translate">
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE" [formGroup]="itemFiltersform"
-              nz-form fxLayout="column">
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+              nz-form>
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
             <!--Ilvl filter-->
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="ilvl">{{'filters/ilvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="999" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin"
-                                   id="ilvl"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="maxilvlFilter" [nzMin]="0" [nzPrecision]="0" formControlName="ilvlMin" id="ilvl"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'ilvlMin', 1, 0, maxilvlFilter)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'ilvlMin', -1, 0, maxilvlFilter)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="999" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="ilvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="maxilvlFilter" [nzMin]="1" [nzPrecision]="0" formControlName="ilvlMax"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'ilvlMax', 1, 1, maxilvlFilter)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'ilvlMax', -1, 1, maxilvlFilter)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
             <!--Elvl filter (equipment level)-->
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="elvl">{{'filters/lvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin"
-                                   id="elvl"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="elvlMin" id="elvl"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'elvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'elvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="elvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="elvlMax"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'elvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'elvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
             <!--Clvl filter (crafter level)-->
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="clvl">{{'filters/craft_lvl' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="clvlMin"
-                                   id="clvl"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="clvlMin" id="clvl"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'clvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'clvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="clvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="clvlMax"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'clvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'clvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
           </div>
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/worn_by' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategories" nzAllowClear nzMode="multiple"
                            nzShowSearch>
-                  <nz-option *ngFor="let jobId of availableJobs" [nzLabel]="jobId | jobAbbr | i18n"
+                  <nz-option *ngFor="let jobId of availableJobs" [nzLabel]="jobId | jobName | i18n"
                              [nzValue]="jobId" nzCustomContent>
                     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                       <div class="companion-svg job-icon" [innerHtml]="jobId | jobUnicode"></div>
@@ -138,13 +142,13 @@
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/crafted_by' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="craftJob" nzAllowClear nzShowSearch>
                   <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
                              [nzValue]="job.id" nzCustomContent>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center"  fxLayoutGap="5px">
                       <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
                       <div>{{job.id | jobAbbr | i18n}}</div>
                     </div>
@@ -152,7 +156,7 @@
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'filters/item_category' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="itemCategories" nzAllowClear nzMode="multiple"
@@ -171,33 +175,7 @@
                  fxLayoutGap="10px">
               <nz-form-label>{{'filters/stats' | translate}}</nz-form-label>
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
-                            [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
-                            fxLayout="row" fxLayoutAlign="center center">
-                <nz-select class="filter-select" formControlName="name"
-                           nzShowSearch>
-                  <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
-                             [nzValue]="stat.filterName">
-                  </nz-option>
-                </nz-select>
-                <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMin]="0" [nzPrecision]="0" class="min-input"
-                                   formControlName="min"></nz-input-number>
-                  <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="max"></nz-input-number>
-                </nz-input-group>
-                <button (click)="$event.preventDefault();removeFilter('stats', i)" [nzBlock]="false | ifMobile:true" nz-button
-                        nzType="danger"><i nz-icon nzType="delete"></i>
-                </button>
-              </nz-form-item>
-              <button (click)="$event.preventDefault();addFilter('stats')" nz-button
-                      nzBlock>{{'SEARCH.Add_stat_filter' | translate}}</button>
-            </div>
-            <div formArrayName="bonuses" fxFlex="1 0 45%" fxLayout="column" fxLayoutAlign="center center"
-                 fxLayoutGap="10px">
-              <nz-form-label>{{'filters/bonuses' | translate}}</nz-form-label>
-              <nz-form-item *ngFor="let item of itemFiltersform.get('bonuses').controls; let i = index;"
-                            [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
+                            [formGroupName]="i" [nzFlex]="true" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
                 <nz-form-control>
                   <nz-select class="filter-select" formControlName="name"
@@ -207,11 +185,43 @@
                     </nz-option>
                   </nz-select>
                   <nz-input-group class="level-range" nzCompact>
-                    <nz-input-number [nzMin]="0" [nzPrecision]="0" class="min-input"
-                                     formControlName="min"></nz-input-number>
+                    <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
+                                     (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'stats', i)"
+                                     (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'stats', i)"></nz-input-number>
                     <input disabled nz-input placeholder="-" type="text">
-                    <nz-input-number [nzMin]="1" [nzPrecision]="0"
-                                     formControlName="max"></nz-input-number>
+                    <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                                     (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'stats', i)"
+                                     (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'stats', i)"></nz-input-number>
+                  </nz-input-group>
+                  <button (click)="$event.preventDefault();removeFilter('stats', i)" [nzBlock]="false | ifMobile:true" nz-button
+                          nzType="danger"><i nz-icon nzType="delete"></i>
+                  </button>
+                </nz-form-control>
+              </nz-form-item>
+              <button (click)="$event.preventDefault();addFilter('stats')" nz-button
+                      nzBlock>{{'SEARCH.Add_stat_filter' | translate}}</button>
+            </div>
+            <div formArrayName="bonuses" fxFlex="1 0 45%" fxLayout="column" fxLayoutAlign="center center"
+                 fxLayoutGap="10px">
+              <nz-form-label>{{'filters/bonuses' | translate}}</nz-form-label>
+              <nz-form-item *ngFor="let item of itemFiltersform.get('bonuses').controls; let i = index;"
+                            [formGroupName]="i" [nzFlex]="true" class="stat-filter-row" fxFlex="1 1 auto"
+                            fxLayout="row" fxLayoutAlign="center center">
+                <nz-form-control>
+                  <nz-select class="filter-select" formControlName="name"
+                             nzShowSearch>
+                    <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
+                               [nzValue]="stat.filterName">
+                    </nz-option>
+                  </nz-select>
+                  <nz-input-group class="level-range" nzCompact>
+                    <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
+                                     (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'bonuses', i)"
+                                     (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'bonuses', i)"></nz-input-number>
+                    <input disabled nz-input placeholder="-" type="text">
+                    <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                                     (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'bonuses', i)"
+                                     (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'bonuses', i)"></nz-input-number>
                   </nz-input-group>
                   <button (click)="$event.preventDefault();removeFilter('bonuses', i)" [nzBlock]="false | ifMobile:true" nz-button
                           nzType="danger"><i nz-icon nzType="delete"></i>
@@ -233,17 +243,19 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.INSTANCE" [formGroup]="instanceFiltersForm"
               nz-form>
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label nzFor="reqlvl">{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0" formControlName="lvlMin"
-                                   id="reqlvl"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="lvlMin" id="reqlvl"
+                                   (mouseWheelUp)="adjust('instanceFiltersForm', 'lvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('instanceFiltersForm', 'lvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="lvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="lvlMax"
+                                   (mouseWheelUp)="adjust('instanceFiltersForm', 'lvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('instanceFiltersForm', 'lvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
@@ -259,21 +271,23 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.LEVE" [formGroup]="leveFiltersForm"
               nz-form>
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Leve_level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0"
-                                   formControlName="lvlMin"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="lvlMin"
+                                   (mouseWheelUp)="adjust('leveFiltersForm', 'lvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('leveFiltersForm', 'lvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="lvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="lvlMax"
+                                   (mouseWheelUp)="adjust('leveFiltersForm', 'lvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('leveFiltersForm', 'lvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Leve_job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear nzShowSearch>
@@ -295,21 +309,23 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.ACTION" [formGroup]="actionFilterForm"
               nz-form>
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0"
-                                   formControlName="lvlMin"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="lvlMin"
+                                   (mouseWheelUp)="adjust('actionFilterForm', 'lvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('actionFilterForm', 'lvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="lvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="lvlMax"
+                                   (mouseWheelUp)="adjust('actionFilterForm', 'lvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('actionFilterForm', 'lvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear
@@ -332,21 +348,23 @@
         </form>
         <form (ngSubmit)="submitFilters()" *ngIf="searchType === searchTypes.TRAIT" [formGroup]="traitFilterForm"
               nz-form>
-          <div fxLayout="row" class="form-row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+          <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
                fxLayoutAlign.lt-md="center center">
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Level' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number [nzMax]="80" [nzMin]="0" [nzPrecision]="0"
-                                   formControlName="lvlMin"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="0" [nzPrecision]="0" formControlName="lvlMin"
+                                   (mouseWheelUp)="adjust('traitFilterForm', 'lvlMin', 1, 0, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('traitFilterForm', 'lvlMin', -1, 0, curMaxLevel)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number [nzMax]="80" [nzMin]="1" [nzPrecision]="0"
-                                   formControlName="lvlMax"></nz-input-number>
+                  <nz-input-number mouseWheel [nzMax]="curMaxLevel" [nzMin]="1" [nzPrecision]="0" formControlName="lvlMax"
+                                   (mouseWheelUp)="adjust('traitFilterForm', 'lvlMax', 1, 1, curMaxLevel)"
+                                   (mouseWheelDown)="adjust('traitFilterForm', 'lvlMax', -1, 1, curMaxLevel)"></nz-input-number>
                 </nz-input-group>
               </nz-form-control>
             </nz-form-item>
-            <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+            <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
               <nz-form-label>{{'SEARCH_FILTERS.Job' | translate}}</nz-form-label>
               <nz-form-control>
                 <nz-select class="filter-select" formControlName="jobCategory" nzAllowClear nzShowSearch>

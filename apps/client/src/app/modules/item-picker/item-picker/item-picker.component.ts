@@ -74,7 +74,7 @@ export class ItemPickerComponent implements OnInit {
   }
 
   /**
-   * Gets job informations from a given job id.
+   * Gets job information from a given job id.
    * @param {number} id
    * @returns {any}
    */

@@ -35,6 +35,11 @@ import jobAbbrs from '../../../core/data/sources/job-abbr.json';
 })
 export class SearchComponent implements OnInit {
 
+  //Minimum and Maximum values for various nz-input-number elements
+  curMaxLevel = 80; //max player level; 80 for Shadowbringers
+  maxilvlFilter = 999;
+  maxStatFilter = 99999;
+
   searchTypes = SearchType;
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
@@ -64,9 +69,9 @@ export class SearchComponent implements OnInit {
     ilvlMin: [0],
     ilvlMax: [999],
     elvlMin: [0],
-    elvlMax: [80],
+    elvlMax: [this.curMaxLevel],
     clvlMin: [0],
-    clvlMax: [80],
+    clvlMax: [this.curMaxLevel],
     jobCategories: [[]],
     craftJob: [null],
     itemCategories: [[]],
@@ -76,25 +81,25 @@ export class SearchComponent implements OnInit {
 
   instanceFiltersForm: FormGroup = this.fb.group({
     lvlMin: [0],
-    lvlMax: [80],
+    lvlMax: [this.curMaxLevel],
     maxPlayers: [24]
   });
 
   leveFiltersForm: FormGroup = this.fb.group({
     lvlMin: [0],
-    lvlMax: [80],
+    lvlMax: [this.curMaxLevel],
     jobCategory: [1]
   });
 
   actionFilterForm: FormGroup = this.fb.group({
     lvlMin: [0],
-    lvlMax: [80],
+    lvlMax: [this.curMaxLevel],
     jobCategory: [1]
   });
 
   traitFilterForm: FormGroup = this.fb.group({
     lvlMin: [0],
-    lvlMax: [80],
+    lvlMax: [this.curMaxLevel],
     jobCategory: [1]
   });
 
@@ -349,9 +354,9 @@ export class SearchComponent implements OnInit {
       ilvlMin: 0,
       ilvlMax: 999,
       elvlMin: 0,
-      elvlMax: 80,
+      elvlMax: this.curMaxLevel,
       clvlMin: 0,
-      clvlMax: 80,
+      clvlMax: this.curMaxLevel,
       jobCategories: [],
       craftJob: null,
       itemCategories: [],
@@ -361,24 +366,24 @@ export class SearchComponent implements OnInit {
 
     this.instanceFiltersForm.reset({
       lvlMin: 0,
-      lvlMax: 80
+      lvlMax: this.curMaxLevel
     });
 
     this.leveFiltersForm.reset({
       lvlMin: 0,
-      lvlMax: 80,
+      lvlMax: this.curMaxLevel,
       jobCategory: 1
     });
 
     this.actionFilterForm.reset({
       lvlMin: 0,
-      lvlMax: 80,
+      lvlMax: this.curMaxLevel,
       jobCategory: 0
     });
 
     this.traitFilterForm.reset({
       lvlMin: 0,
-      lvlMax: 80,
+      lvlMax: this.curMaxLevel,
       jobCategory: 0
     });
 
@@ -540,7 +545,7 @@ export class SearchComponent implements OnInit {
         };
       }));
     }
-    if (controls.elvlMax.value < 80 || controls.elvlMin.value > 0) {
+    if (controls.elvlMax.value < this.curMaxLevel || controls.elvlMin.value > 0) {
       filters.push({
         minMax: true,
         name: 'LevelEquip',
@@ -550,7 +555,7 @@ export class SearchComponent implements OnInit {
         }
       });
     }
-    if (controls.clvlMax.value < 80 || controls.clvlMin.value > 0) {
+    if (controls.clvlMax.value < this.curMaxLevel || controls.clvlMin.value > 0) {
       filters.push({
         minMax: true,
         name: 'Recipes.Level',
@@ -587,7 +592,7 @@ export class SearchComponent implements OnInit {
 
   private getInstanceFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
     const filters = [];
-    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
         name: 'ContentFinderCondition.ClassJobLevelRequired',
@@ -602,7 +607,7 @@ export class SearchComponent implements OnInit {
 
   private getLeveFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
     const filters = [];
-    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
         name: 'ClassJobLevel',
@@ -623,7 +628,7 @@ export class SearchComponent implements OnInit {
 
   private getActionFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
     const filters = [];
-    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
         name: 'ClassJobLevel',
@@ -644,7 +649,7 @@ export class SearchComponent implements OnInit {
 
   private getTraitFilters(controls: { [key: string]: AbstractControl }): SearchFilter[] {
     const filters = [];
-    if (controls.lvlMin.value > 0 || controls.lvlMax.value < 80) {
+    if (controls.lvlMin.value > 0 || controls.lvlMax.value < this.curMaxLevel) {
       filters.push({
         minMax: true,
         name: 'Level',
@@ -754,5 +759,19 @@ export class SearchComponent implements OnInit {
 
   trackByItem(index: number, item: SearchResult): number {
     return +item.itemId;
+  }
+
+  public adjust(form: string, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+    //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
+    //If we aren't given an arrayIndex, (we assume) it isn't necessary
+    if (arrayName === undefined || arrayIndex === undefined) {
+      const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
+      this[form].patchValue({[prop]: newValue});
+    } else {
+      const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
+      const newArray: any = this[form].value[arrayName].slice();
+      newArray[arrayIndex][prop] = newValue;
+      this[form].patchValue({[arrayName]: newArray});
+    }
   }
 }

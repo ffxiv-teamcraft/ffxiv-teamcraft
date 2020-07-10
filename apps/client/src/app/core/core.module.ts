@@ -45,6 +45,7 @@ import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
 import { TutorialModule } from './tutorial/tutorial.module';
 import { ModeratorGuard } from './guard/moderator.guard';
+import { MouseWheelDirective } from "./event/mouse-wheel/mouse-wheel.directive";
 
 
 @NgModule({
@@ -101,7 +102,8 @@ import { ModeratorGuard } from './guard/moderator.guard';
     TimerPipe,
     DbButtonComponent,
     ItemRarityDirective,
-    LazyComponentDirective
+    LazyComponentDirective,
+    MouseWheelDirective
   ],
   exports: [
     I18nPipe,
@@ -115,7 +117,8 @@ import { ModeratorGuard } from './guard/moderator.guard';
     DbButtonComponent,
     ItemRarityDirective,
     LazyComponentDirective,
-    TutorialModule
+    TutorialModule,
+    MouseWheelDirective
   ]
 })
 export class CoreModule {

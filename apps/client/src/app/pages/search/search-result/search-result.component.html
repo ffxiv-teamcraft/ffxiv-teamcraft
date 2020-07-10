@@ -35,7 +35,11 @@
     <div class="input-box" fxLayout="row" fxLayoutAlign="center center" nz-col>
       <nz-input-group [nzAddOnBefore]="row.recipe !== undefined?addCrafts:null" [nzCompact]="true"
                       class="amount-input">
-        <nz-input-number [(ngModel)]="row.amount" [class.amount-input-field]="row.recipe !== undefined"></nz-input-number>
+        <nz-input-number mouseWheel [(ngModel)]="row.amount" [class.amount-input-field]="row.recipe !== undefined"
+                         [nzMin]="minAmount" [nzMax]="maxAmount"
+                         (mouseWheelUp)="adjust(1)"
+                         (mouseWheelDown)="adjust(-1)">
+        </nz-input-number>
         <ng-template #addCrafts>
           <label [(ngModel)]="row.addCrafts" nz-checkbox>
             {{'Collectable_flag' | translate}}

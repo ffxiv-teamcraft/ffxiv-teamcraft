@@ -405,4 +405,13 @@ export class ListPanelComponent extends TeamcraftComponent {
     return item.id;
   }
 
+  mouseWheelUpAmount(event: any, item: ListRow): void {
+    this.updateAmount(item, ++item.amount);
+  }
+
+  mouseWheelDownAmount(event: any, item: ListRow): void {
+    if (item.amount > 0) {
+      this.updateAmount(item, --item.amount);
+    }
+  }
 }
