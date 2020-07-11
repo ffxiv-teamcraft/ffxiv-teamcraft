@@ -1,1 +1,23 @@
-<pre>{{gil$ | async | json}}</pre>
+<div *ngIf="display$ | async as display" fxLayout="column" fxLayoutGap="10px">
+  <nz-card>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <nz-range-picker [ngModel]="timeRange$ | async" (ngModelChange)="timeRange$.next($event)" [nzRanges]="ranges"></nz-range-picker>
+      <div fxLayout="row" fxLayoutGap="5px">
+        <button nz-button nzShape="circle">
+          <i nz-icon nzType="edit"></i>
+        </button>
+        <button nz-button nzType="primary" nzShape="circle" [disabled]="display.grid.length >= 5" (click)="addColumn()">
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
+  </nz-card>
+
+  <div fxLayout="row" fxLayoutGap="10px">
+    <div *ngFor="let column of display.grid" fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="metrics-column">
+      <div *ngFor="let row of column">
+        <app-metric-display [title]="row.title" [data]="row.data" [component]="row.component" [params]="row.params"></app-metric-display>
+      </div>
+    </div>
+  </div>
+</div>

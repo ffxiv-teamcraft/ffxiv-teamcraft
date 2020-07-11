@@ -1998,5 +1998,19 @@
         "All_characters_valid": "All characters linked are valid"
       }
     }
+  },
+  "METRICS": {
+    "Today": "Today",
+    "This_week": "This week",
+    "This_month": "This month",
+    "SOURCES":  {
+      "UNKNOWN":  "Unknown",
+      "GATHERING":  "Gathering",
+      "CRAFTING":  "Crafting",
+      "FISHING":  "Fishing",
+      "VENDOR":  "Vendor",
+      "TELEPORT":  "Teleport",
+      "MARKETBOARD":  "Marketboard"
+    }
   }
 }

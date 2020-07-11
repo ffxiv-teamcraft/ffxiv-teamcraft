@@ -1,41 +1,79 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { PlayerMetricsService } from '../../../modules/player-metrics/player-metrics.service';
-import { map } from 'rxjs/operators';
-import { ProbeReport } from '../../../modules/player-metrics/model/probe-report';
-import { MetricType } from '../../../modules/player-metrics/model/metric-type';
-import { groupBy, sum } from 'lodash';
-import { ProbeSource } from '../../../modules/player-metrics/model/probe-source';
+import { TranslateService } from '@ngx-translate/core';
+import { startOfDay, startOfMonth, startOfWeek } from 'date-fns';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
+import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
+import { SeoService } from '../../../core/seo/seo.service';
+import { map, takeUntil } from 'rxjs/operators';
+import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
+import { MetricsDisplay } from '../metrics-display';
+import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
 
 @Component({
   selector: 'app-metrics',
   templateUrl: './metrics.component.html',
-  styleUrls: ['./metrics.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./metrics.component.less']
 })
-export class MetricsComponent implements OnInit {
+export class MetricsComponent extends TeamcraftPageComponent {
 
-  public gil$ = this.metricsService.logs$.pipe(
-    map((entries: ProbeReport[]) => {
-      const expenses = entries.filter(e => e.type === MetricType.CURRENCY && e.data[0] === 1 && e.data[1] > 0);
-      const bySource = groupBy(expenses, row => row.data[2]);
-      return Object.entries<ProbeReport[]>(bySource)
-        .map(([key, value]) => {
-          return {
-            source: ProbeSource[key],
-            total: sum(value.map(v => v.data[1]))
-          };
-        });
+  // Date picker premade ranges
+  ranges: any;
 
+  timeRange$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>([startOfDay(new Date()), new Date()]);
+
+  // TODO
+  layout$ = new BehaviorSubject(MetricsDashboardLayout.DEFAULT);
+
+  display$: Observable<MetricsDisplay> = combineLatest([this.metricsService.logs$, this.layout$]).pipe(
+    map(([logs, layout]) => {
+      return {
+        layout: layout,
+        grid: layout.grid.map(column => {
+          return column.map(row => {
+            const filterEntry = this.filters.find(f => f.getName() === row.filter.name);
+            if (filterEntry === undefined) {
+              console.warn(`Missing filter function for name ${row.filter.name}`);
+              return null;
+            }
+            return {
+              title: row.title,
+              component: row.component,
+              params: row.params,
+              data: logs.filter(log => {
+                return log !== undefined && log.type === row.type && filterEntry.matches(log, row.filter.args);
+              })
+            };
+          }).filter(row => row !== null);
+        })
+      };
     })
   );
 
-  constructor(private metricsService: PlayerMetricsService) {
+  constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
+              protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[]) {
+    super(seoService);
+    this.ranges = {};
+    this.ranges[this.translate.instant('METRICS.Today')] = [startOfDay(new Date()), new Date()];
+    this.ranges[this.translate.instant('METRICS.This_week')] = [startOfWeek(new Date()), new Date()];
+    this.ranges[this.translate.instant('METRICS.This_month')] = [startOfMonth(new Date()), new Date()];
+
+    this.timeRange$.pipe(
+      takeUntil(this.onDestroy$)
+    ).subscribe(([start, end]) => {
+      this.metricsService.load(start, end);
+    });
   }
 
-  ngOnInit(): void {
-    const from = new Date();
-    from.setDate(0);
-    this.metricsService.load(from);
+  addColumn(): void {
+    const layout = this.layout$.value;
+    layout.addColumn();
+    this.layout$.next(layout);
+  }
+
+  protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
+    return of({});
   }
 
 }

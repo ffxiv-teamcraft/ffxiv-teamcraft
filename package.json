@@ -171,7 +171,7 @@
     "@nrwl/node": "^9.2.1",
     "@nrwl/workspace": "^9.2.1",
     "@swimlane/dragula": "^3.8.0",
-    "@swimlane/ngx-charts": "^13.0.2",
+    "@swimlane/ngx-charts": "^14.0.0",
     "@swimlane/ngx-dnd": "^8.1.0",
     "@types/electron": "^1.6.10",
     "@types/express-serve-static-core": "^4.17.5",
