@@ -593,7 +593,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: [this.lazyData.getRecipe(itemId)]
+                  recipes: [this.lazyData.getItemRecipeSync(itemId)]
                 };
               })
           });
