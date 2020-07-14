@@ -240,7 +240,7 @@
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "semver": "^5.4.1",
-    "standard-version": "^4.4.0",
+    "standard-version": "^8.0.1",
     "terser-webpack-plugin": "^1.2.3",
     "ts-loader": "^5.2.0",
     "ts-node": "~5.0.1",
