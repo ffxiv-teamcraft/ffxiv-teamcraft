@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { PlayerMetricsService } from '../../../modules/player-metrics/player-metrics.service';
 import { TranslateService } from '@ngx-translate/core';
-import { startOfDay, startOfMonth, startOfWeek } from 'date-fns';
+import { endOfDay, startOfDay, startOfMonth, startOfWeek } from 'date-fns';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
@@ -10,6 +10,7 @@ import { map, takeUntil } from 'rxjs/operators';
 import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
+import { MetricsDisplayEntry } from '../../../modules/player-metrics/display/metrics-display-entry';
 
 @Component({
   selector: 'app-metrics',
@@ -21,7 +22,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
   // Date picker premade ranges
   ranges: any;
 
-  timeRange$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>([startOfDay(new Date()), new Date()]);
+  timeRange$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>([startOfDay(new Date()), endOfDay(new Date())]);
 
   // TODO
   layout$ = new BehaviorSubject(MetricsDashboardLayout.DEFAULT);
@@ -70,6 +71,14 @@ export class MetricsComponent extends TeamcraftPageComponent {
     const layout = this.layout$.value;
     layout.addColumn();
     this.layout$.next(layout);
+  }
+
+  trackByColumn(index: number): number {
+    return index;
+  }
+
+  trackByRow(index: number, row: MetricsDisplayEntry): string {
+    return row.component;
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

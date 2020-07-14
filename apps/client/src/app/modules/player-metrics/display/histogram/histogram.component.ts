@@ -16,7 +16,7 @@ export class HistogramComponent extends AbstractMetricDisplayComponent {
         name: '',
         series: reports.map(report => {
           return {
-            name: new Date(report.timestamp),
+            name: new Date(report.timestamp * 1000),
             value: report.data[1]
           };
         })

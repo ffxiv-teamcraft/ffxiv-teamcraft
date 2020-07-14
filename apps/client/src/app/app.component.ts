@@ -186,7 +186,6 @@ export class AppComponent implements OnInit {
 
     fromEvent(document, 'keypress').pipe(
       filter((event: KeyboardEvent) => {
-        console.log(event);
         return event.ctrlKey && event.shiftKey && event.keyCode === 1;
       })
     ).subscribe(() => {

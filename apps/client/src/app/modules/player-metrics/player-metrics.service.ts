@@ -11,6 +11,7 @@ import { ProbeSource } from './model/probe-source';
 import { LogTracking } from '../../model/user/log-tracking';
 import { environment } from 'apps/client/src/environments/environment';
 import { devMock } from './dev-mock';
+import { endOfDay, startOfDay } from 'date-fns';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class PlayerMetricsService {
 
   private stop$ = new Subject<void>();
 
-  private _logs$: Subject<ProbeReport[]> = new ReplaySubject<ProbeReport[]>();
+  private _logs$: BehaviorSubject<ProbeReport[]> = new BehaviorSubject<ProbeReport[]>([]);
 
   public readonly logs$: Observable<ProbeReport[]> = this._logs$.asObservable();
 
@@ -32,6 +33,11 @@ export class PlayerMetricsService {
   private _events$: ReplaySubject<ProbeReport> = new ReplaySubject<ProbeReport>();
 
   public events$: Observable<ProbeReport> = this._events$.asObservable();
+
+  loadedPeriod = {
+    from: startOfDay(new Date()),
+    to: endOfDay(new Date())
+  };
 
   constructor(private ipc: IpcService, @Inject(PLAYER_METRICS_PROBES) private probes: PlayerMetricProbe[],
               private settings: SettingsService, private authFacade: AuthFacade) {
@@ -121,6 +127,8 @@ export class PlayerMetricsService {
   }
 
   public load(from: Date, to: Date = new Date()): void {
+    this.loadedPeriod.from = from;
+    this.loadedPeriod.to = to;
     if (!environment.production && !this.ipc.ready) {
       this._logs$.next(this.parseLogRows(devMock));
     } else {
@@ -146,6 +154,9 @@ export class PlayerMetricsService {
     // If metrics aren't enabled, we don't save anything, not even in memory.
     if (this.settings.playerMetricsEnabled) {
       this.buffer.push(report);
+      if (report.timestamp >= this.loadedPeriod.from.getTime() / 1000 && report.timestamp <= this.loadedPeriod.to.getTime() / 1000) {
+        this._logs$.next([...this._logs$.value, report]);
+      }
     }
     this._events$.next(report);
   }
