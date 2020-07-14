@@ -1977,15 +1977,15 @@
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "自动修复此错误",
     "USERS": {
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Email",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "找不到用户",
+      "Integrity_check": "完整性检查",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "搜索模式",
         "UID": "UID",
         "EMAIL": "Email",
         "CHARACTER": "Character"
