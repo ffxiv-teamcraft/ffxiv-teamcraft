@@ -233,7 +233,7 @@
   "No": "否",
   "Crystals": "水晶",
   "Gathering": "采集中",
-  "Drops_or_GC": "秘境/掉落或军团",
+  "Drops_or_GC": "副本/掉落/大国防联军",
   "Other": "其他",
   "Pre_crafts": "半成品",
   "Items": "物品",
@@ -413,6 +413,10 @@
     "Enable_tutorials": "启用教程",
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -433,7 +437,8 @@
       "Theme": "界面主题",
       "Search": "搜索",
       "Lists": "清单",
-      "Other": "其他"
+      "Other": "其他",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "国际服",
@@ -1157,7 +1162,7 @@
     "Lists_created_counter": "FFXIV Teamcraft 上现有 {{amount}} 个清单",
     "Support_patreon": "在 Patreon 上支持我们",
     "Donation_button": "进行一次性捐赠",
-    "Buy_a_tshirt": "购买 Teamcraft 的T恤",
+    "Buy_merch": "Get Teamcraft merch",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
@@ -1969,6 +1974,29 @@
       "Min_control": "在这里通过最低加工精度过滤手法，过滤后只会显示所需加工精度低于设定值的手法",
       "Min_cp": "在这里通过最低制作力过滤手法，过滤后只会显示所需制作力低于设定值的手法",
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
+    }
+  },
+  "ADMIN": {
+    "Autofix_error": "自动修复此错误",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "找不到用户",
+      "Integrity_check": "完整性检查",
+      "SEARCH_MODE": {
+        "Label": "搜索模式",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
     }
   }
 }

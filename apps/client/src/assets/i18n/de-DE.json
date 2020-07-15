@@ -413,6 +413,10 @@
     "Enable_tutorials": "Tutorialsystem aktivieren",
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -433,7 +437,8 @@
       "Theme": "Theme",
       "Search": "Suche",
       "Lists": "Lists",
-      "Other": "Anderes"
+      "Other": "Anderes",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "Global",
@@ -1157,7 +1162,7 @@
     "Lists_created_counter": "{{amount}} Listen wurden mit FFXIV Teamcraft erstellt",
     "Support_patreon": "Unterstütze uns auf Patreon",
     "Donation_button": "Mach eine einmalige Spende",
-    "Buy_a_tshirt": "Kaufe ein Teamcraft T-Shirt",
+    "Buy_merch": "Get Teamcraft merch",
     "Features_header": "Lege los!",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fang an Dinge herzustellen.",
@@ -1969,6 +1974,29 @@
       "Min_control": "Filtert nach minimaler Kontrolle. Hier werden nur Rotationen gefunden, bei denen die benötigte Kontrolle kleiner als der von dir angegebene Wert ist.",
       "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
       "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
+    }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
     }
   }
 }
