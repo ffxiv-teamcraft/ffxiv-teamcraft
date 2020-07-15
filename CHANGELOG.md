@@ -1,24 +1,6 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
-
-### [7.2.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.8...v7.2.9) (2020-07-15)
-
-
-### Features
-
-* **desktop:** support for korean 5.18 packet capture ([1300b25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1300b251a6202b5f5b6dd2b00cb2e6ae28cb132b))
-* support for korean v5.18 update ([00251ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00251ef6f59227bd4b376b5a12795c3615784727))
-* **data:** added a lot of data for reductions and desynth ([4a65145](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a65145bebec41bfa74a6ff85d5c16337d785676))
-* **desktop:** automated log completion as you gather/craft items ([ff6b53a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff6b53ae311b175f4457a1df6dce07aabf47e416))
-* new home page link to redbubble shop to get merch ([f7f50a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7f50a8198138be24efa22d48b4a43bbbd4f9c62))
-
-### Bug Fixes
-
-* **currency-spending:** filter out shop listings with no npc ([06f5c65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06f5c6510934a3562b31a4283259f97a6d6d78ae))
-* **db:** fixed recipe level in masterbook pages ([854e7a6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/854e7a683a1b18cbfdb725c224e1ef18e9d2a74a))
-* **pricing:** fixed MB cost fill not working on smaller lists ([2599454](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25994547f824269372781986980306fad5f61b89))
-* **recipe-finder:** fixed an issue with recipe level not being displayed properly ([346f106](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/346f1066055228752ee7353e860a11934c9bc476))
 
 <a name="7.2.8"></a>
 ## [7.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.7...v7.2.8) (2020-06-18)
