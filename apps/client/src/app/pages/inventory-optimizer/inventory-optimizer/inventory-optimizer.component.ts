@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
@@ -33,7 +33,7 @@ export class InventoryOptimizerComponent {
 
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
     switchMap((extracts: ListRow[]) => {
-      return combineLatest([this.settings.settingsChange$.pipe(startWith(0)),this.resultsReloader$]).pipe(
+      return combineLatest([this.settings.settingsChange$.pipe(startWith(0)), this.resultsReloader$]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
             return this.optimizers
@@ -87,6 +87,8 @@ export class InventoryOptimizerComponent {
                   return ignored.itemId === item.item.itemId && ignored.id === opt.type;
                 });
                 return item;
+              }).filter(item => {
+                return this.showIgnored || !item.ignored;
               });
               if (this.showIgnored) {
                 entry.totalLength = entry.items.length;

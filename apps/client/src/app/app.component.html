@@ -362,13 +362,14 @@
                       <span class="nav-text">{{'ALARMS.REALTIME.Reset_timers' | translate}}</span>
                   </span>
                 </a>
-                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
-                   routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="stock"></i>
-                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>
-                  </span>
-                </a>
+                <!--          TODO: uncomment this once metrics feature is ready-->
+<!--                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"-->
+<!--                   routerLinkActive="ant-menu-item-selected">-->
+<!--                  <span>-->
+<!--                      <i nz-icon nzType="stock"></i>-->
+<!--                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>-->
+<!--                  </span>-->
+<!--                </a>-->
               </li>
 
               <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
