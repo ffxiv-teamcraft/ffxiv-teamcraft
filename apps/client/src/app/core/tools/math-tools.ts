@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { Vector2 } from './vector2';
 import { Vector3 } from './vector3';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MathToolsService {
 
   public distance(start: Vector2 | Vector3, target: Vector2 | Vector3): number {

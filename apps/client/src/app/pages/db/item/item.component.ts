@@ -36,6 +36,7 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
 import { Memoized } from '../../../core/decorators/memoized';
+import { uniq } from 'lodash';
 
 @Component({
   selector: 'app-item',
@@ -403,13 +404,15 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
-        if (data.item.reducesTo !== undefined) {
+        const lazyReductions = Object.keys(this.lazyData.data.reduction).filter(key => this.lazyData.data.reduction[key].indexOf(data.item.id) > -1).map(key => +key);
+        const reductions = uniq([...(data.item.reducesTo || []), ...(lazyReductions || [])]);
+        if (reductions.length > 0) {
           usedFor.push({
             type: UsedForType.REDUCTION,
             flex: '1 1 auto',
             title: 'DB.Reduces_to',
             icon: 'https://www.garlandtools.org/db/images/Reduce.png',
-            links: data.item.reducesTo
+            links: reductions
               .map(itemId => {
                 return {
                   itemId: +itemId
@@ -435,13 +438,15 @@ export class ItemComponent extends TeamcraftPageComponent {
             ishgardRestoration: hwdSupplies[data.item.id]
           });
         }
-        if (data.item.desynthedTo !== undefined) {
+        const lazyDesynths = Object.keys(this.lazyData.data.desynth).filter(key => this.lazyData.data.desynth[key].indexOf(data.item.id) > -1).map(key => +key);
+        const desynths = uniq([...(data.item.desynthedTo || []), ...(lazyDesynths || [])]);
+        if (desynths.length > 0) {
           usedFor.push({
             type: UsedForType.DESYNTH,
             flex: '1 1 auto',
             title: 'DB.Desynths_to',
             icon: './assets/icons/desynth.png',
-            links: data.item.desynthedTo
+            links: desynths
               .map(itemId => {
                 return {
                   itemId: +itemId
@@ -588,7 +593,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: [this.lazyData.getRecipe(itemId)]
+                  recipes: [this.lazyData.getItemRecipeSync(itemId)]
                 };
               })
           });

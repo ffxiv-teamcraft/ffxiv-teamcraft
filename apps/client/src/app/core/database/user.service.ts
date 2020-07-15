@@ -120,8 +120,8 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     );
   }
 
-  public set(uid: string, user: TeamcraftUser): Observable<void> {
-    if (user.defaultLodestoneId && (user.logProgression.length > 0 || user.gatheringLogProgression.length > 0)) {
+  public set(uid: string, user: TeamcraftUser, ignoreLog = false): Observable<void> {
+    if (!ignoreLog && user.defaultLodestoneId && (user.logProgression.length > 0 || user.gatheringLogProgression.length > 0)) {
       return this.logTrackingService.set(`${user.$key}:${user.defaultLodestoneId.toString()}`, {
         crafting: user.logProgression,
         gathering: user.gatheringLogProgression

@@ -1,17 +1,13 @@
 const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
-const http = require('https');
-const { map, switchMap, first, buffer, debounceTime } = require('rxjs/operators');
+const { map, switchMap, first } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
-const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get } = require('./tools.js');
-const allMobs = require('../../apps/client/src/assets/data/mobs') || {};
-const fileStreamObservable = require('./file-stream-observable');
+const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get, gubalRequest } = require('./tools.js');
 
 const nodes = {};
 const gatheringPointToBaseId = {};
 const monsters = {};
-const aetheryteNameIds = {};
 
 let todo = [];
 
@@ -2262,5 +2258,33 @@ if (hasTodo('paramGrow')) {
   }, null, () => {
     persistToJsonAsset('param-grow', paramGrow);
     done('paramGrow');
+  });
+}
+
+if (hasTodo('gubal')) {
+
+  function gubalToObject(rows) {
+    return rows.reduce((res, row) => {
+      return {
+        ...res,
+        [row.resultItemId]: [...(res[row.resultItemId] || []), row.itemId]
+      };
+    }, {});
+  }
+
+  gubalRequest(`query desynthAndReductionStats {
+  desynthresults_stats(where: {occurences: {_gte: 10}}) {
+    itemId
+    resultItemId
+  }
+  reductionresults_stats(where: {occurences: {_gte: 10}}) {
+    itemId
+    resultItemId
+  }
+}
+`).subscribe(res => {
+    persistToJsonAsset('desynth', gubalToObject(res.data.desynthresults_stats));
+    persistToJsonAsset('reduction', gubalToObject(res.data.reductionresults_stats));
+    done('gubal');
   });
 }

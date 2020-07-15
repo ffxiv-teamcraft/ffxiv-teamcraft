@@ -1,10 +1,8 @@
 const request = require('request');
 const { BehaviorSubject, Subject, interval } = require('rxjs');
-const { shareReplay, mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged } = require('rxjs/operators');
+const { mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged, of } = require('rxjs/operators');
 const path = require('path');
 const fs = require('fs');
-const Multiprogress = require('multi-progress');
-const multi = new Multiprogress(process.stdout);
 const cliProgress = require('cli-progress');
 
 const outputFolder = path.join(__dirname, '../../apps/client/src/app/core/data/sources/');
@@ -177,6 +175,32 @@ module.exports.getAllEntries = (endpoint, startsAt0, label) => {
     skip(allIds.length - 1),
     map(() => completeFetch)
   );
+};
+
+module.exports.gubalRequest = (gql) => {
+  const res$ = new Subject();
+  if (process.env.HASURA_SECRET === undefined) {
+    console.error(`Missing hasura secret, skipping request`);
+    return res$;
+  }
+  request.post({
+    url: 'http://35.236.87.103/v1/graphql',
+    json: true,
+    headers: {
+      'content-type': 'application/json',
+      'x-hasura-admin-secret': process.env.HASURA_SECRET
+    },
+    body: {
+      query: gql
+    }
+  }, (err, _, res) => {
+    if (err) {
+      console.error(err);
+    } else {
+      res$.next(res);
+    }
+  });
+  return res$;
 };
 
 module.exports.getOnePage = (endpoint) => {

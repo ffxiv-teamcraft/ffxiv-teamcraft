@@ -28,7 +28,7 @@ export class BellNodesService {
     if (this.cache[id] === undefined) {
       const results = [];
       const extract = this.lazyData.extracts.find(e => e.id === id);
-      const reductions = getItemSource(extract, DataType.REDUCED_FROM).map(r => r.obj.i);
+      const reductions = getItemSource(extract, DataType.REDUCED_FROM);
       this.nodes.forEach(node => {
         const match = node.items.find(item => item.id === id || reductions.indexOf(item.id) > -1);
         const nodePosition = this.lazyData.data.nodes[node.id];
@@ -134,7 +134,7 @@ export class BellNodesService {
     const nodesFromGarlandBell = [].concat.apply([], items
       .map(item => {
         const extract = this.lazyData.extracts.find(e => e.id === item.obj.i);
-        const reductions = getItemSource(extract, DataType.REDUCED_FROM).map(r => r.obj.i);
+        const reductions = getItemSource(extract, DataType.REDUCED_FROM);
         return [].concat.apply([],
           [item.obj.i, ...reductions].map(itemId => {
             return this.getNodesByItemId(itemId)

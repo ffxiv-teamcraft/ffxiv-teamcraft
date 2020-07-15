@@ -100,7 +100,8 @@ export class UserInventory extends DataModel {
           quantity: -1 * item.quantity,
           containerId: packet.containerId,
           hq: item.hq,
-          spiritBond: item.spiritBond
+          spiritBond: item.spiritBond,
+          retainerName: isRetainer ? lastSpawnedRetainer : null
         };
       }
       return null;
@@ -113,7 +114,8 @@ export class UserInventory extends DataModel {
         hq: packet.hqFlag === 1,
         slot: packet.slot,
         containerId: packet.containerId,
-        spiritBond: +packet.spiritBond
+        spiritBond: +packet.spiritBond,
+        retainerName: isRetainer ? lastSpawnedRetainer : null
       };
       if (isRetainer) {
         entry.retainerName = lastSpawnedRetainer;
@@ -128,7 +130,8 @@ export class UserInventory extends DataModel {
         itemId: packet.catalogId,
         quantity: packet.quantity - previousQuantity,
         containerId: packet.containerId,
-        hq: packet.hqFlag === 1
+        hq: packet.hqFlag === 1,
+        retainerName: isRetainer ? lastSpawnedRetainer : null
       };
     }
     return null;
@@ -175,7 +178,9 @@ export class UserInventory extends DataModel {
           itemId: toItem.itemId,
           containerId: toItem.containerId,
           hq: toItem.hq,
-          quantity: toItem.quantity - packet.splitCount
+          quantity: toItem.quantity - packet.splitCount,
+          retainerName: isFromRetainer ? lastSpawnedRetainer : null,
+          moved: true
         } : null;
       case 'split':
         fromItem.quantity -= packet.splitCount;
@@ -198,7 +203,9 @@ export class UserInventory extends DataModel {
           itemId: fromItem.itemId,
           containerId: fromItem.containerId,
           hq: fromItem.hq,
-          quantity: -packet.splitCount
+          quantity: -packet.splitCount,
+          retainerName: isFromRetainer ? lastSpawnedRetainer : null,
+          emptied: true
         };
       case 'move':
         const moved = {
@@ -207,10 +214,11 @@ export class UserInventory extends DataModel {
           slot: packet.toSlot
         };
         delete this.items[fromContainerKey][packet.fromSlot];
+        let retainerName;
         if (isFromRetainer && !isToRetainer) {
-          delete moved.retainerName;
+          retainerName = null;
         } else if (!isFromRetainer && isToRetainer) {
-          moved.retainerName = lastSpawnedRetainer;
+          retainerName = lastSpawnedRetainer;
         }
         this.items[toContainerKey][packet.toSlot] = moved;
         if (packet.toContainer === ContainerType.HandIn
@@ -218,7 +226,11 @@ export class UserInventory extends DataModel {
           || (packet.fromContainer < 10 && packet.toContainer < 10)) {
           return null;
         }
-        return moved;
+        return {
+          ...moved,
+          moved: true,
+          retainerName: retainerName
+        };
     }
   }
 

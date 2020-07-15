@@ -44,6 +44,7 @@ import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
 import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
 import { TutorialModule } from './tutorial/tutorial.module';
+import { ModeratorGuard } from './guard/moderator.guard';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { TutorialModule } from './tutorial/tutorial.module';
     PatreonService,
     WeatherService,
     AdminGuard,
+    ModeratorGuard,
     DevGuard,
     ...DATA_REPORTERS,
     { provide: ErrorHandler, useClass: TeamcraftErrorHandler }

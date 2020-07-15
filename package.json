@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "7.2.8",
+  "version": "7.2.9",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -122,7 +122,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.36.15",
+    "node-machina-ffxiv": "^2.36.19",
     "tslib": "^1.10.0"
   },
   "devDependencies": {
@@ -145,7 +145,7 @@
     "@angular/platform-browser-dynamic": "9.1.2",
     "@angular/router": "9.1.2",
     "@ffxiv-teamcraft/crafting-solver": "^1.3.2",
-    "@ffxiv-teamcraft/simulator": "^2.4.1",
+    "@ffxiv-teamcraft/simulator": "^2.5.2",
     "@ffxiv-teamcraft/simulator-cn": "npm:@ffxiv-teamcraft/simulator@2.3.1",
     "@ffxiv-teamcraft/simulator-kr": "npm:@ffxiv-teamcraft/simulator@2.3.1",
     "@firebase/auth-types": "^0.7.0",
@@ -240,7 +240,7 @@
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "semver": "^5.4.1",
-    "standard-version": "^4.4.0",
+    "standard-version": "^8.0.1",
     "terser-webpack-plugin": "^1.2.3",
     "ts-loader": "^5.2.0",
     "ts-node": "~5.0.1",

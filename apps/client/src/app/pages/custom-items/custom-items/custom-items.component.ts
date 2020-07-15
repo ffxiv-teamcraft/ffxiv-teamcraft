@@ -656,12 +656,7 @@ export class CustomItemsComponent {
       )
       .subscribe((res: SearchResult) => {
         const reducedFrom = getItemSource(item, DataType.REDUCED_FROM);
-        const data = {
-          obj: {
-            i: res.itemId,
-            c: res.icon
-          }
-        };
+        const data = res.itemId;
         if (reducedFrom.length === 0) {
           item.sources.push({
             type: DataType.REDUCED_FROM,

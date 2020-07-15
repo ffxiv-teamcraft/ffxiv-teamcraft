@@ -17,7 +17,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError((err: HttpErrorResponse) => {
         if (req.url.toLowerCase().indexOf('xivapi.com/search') > -1) {
           this.message.error(this.translate.instant('ERRORS.Http_request_error', { tool: 'XIVAPI Search' }));
-        } else if (req.url.toLowerCase().indexOf('xivapi.com') > -1) {
+        } else if (req.url.toLowerCase().indexOf('xivapi.com') > -1 && req.url.indexOf('character') === -1) {
           this.message.error(this.translate.instant('ERRORS.Http_request_error', { tool: 'XIVAPI' }));
         } else if (req.url.toLowerCase().indexOf('garlandtools.com') > -1) {
           this.message.error(this.translate.instant('ERRORS.Http_request_error', { tool: 'Garlandtools' }));

@@ -413,6 +413,10 @@
     "Enable_tutorials": "Activar tutoriales",
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -433,7 +437,8 @@
       "Theme": "Tema",
       "Search": "Búsqueda",
       "Lists": "Lists",
-      "Other": "Otros"
+      "Other": "Otros",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "Global",
@@ -1157,7 +1162,7 @@
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
     "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
-    "Buy_a_tshirt": "Comprar una camiseta de Teamcraft",
+    "Buy_merch": "Get Teamcraft merch",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",
@@ -1969,6 +1974,29 @@
       "Min_control": "Filtrar por Control mínimo requerido aquí, esto sólo encontrará rotaciones con el Control requerido < su valor.",
       "Min_cp": "Filtrar por CP mínimo requerido aquí, esto sólo encontrará rotaciones con el CP requerido < su valor.",
       "Set_selector": "Seleccione qué profesión debe utilizarse para las simulaciones. Usado para mostrar la tasa de éxito de las rotaciones resultantes."
+    }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "Email",
+      "Uid": "UID",
+      "No_users_found": "No users found",
+      "Integrity_check": "Integrity check",
+      "SEARCH_MODE": {
+        "Label": "Search mode",
+        "UID": "UID",
+        "EMAIL": "Email",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "Open profile",
+        "Check": "Run integrity check"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "All characters linked are valid"
+      }
     }
   }
 }

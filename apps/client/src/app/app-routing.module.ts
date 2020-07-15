@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DevGuard } from './core/guard/dev.guard';
+import { ModeratorGuard } from './core/guard/moderator.guard';
 
 const routes: Routes = [
   {
@@ -175,9 +176,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gearsets-page/gearsets-page.module').then(m => m.GearsetsPageModule)
   },
   {
+    path: 'metrics',
+    loadChildren: () => import('./pages/metrics/metrics.module').then(m => m.MetricsModule)
+  },
+  {
     path: 'extractor',
     loadChildren: () => import('./pages/extractor/extractor.module').then(m => m.ExtractorModule),
     canLoad: [DevGuard]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule),
+    canLoad: [ModeratorGuard]
   }
 ];
 

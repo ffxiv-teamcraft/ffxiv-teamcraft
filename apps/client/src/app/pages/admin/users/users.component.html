@@ -1,0 +1,73 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <div class="search-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <nz-form-item>
+      <nz-form-label nzFor="searchMode">{{'ADMIN.USERS.SEARCH_MODE.Label' | translate}}
+      </nz-form-label>
+      <nz-select [(ngModel)]="searchMode">
+        <nz-option *ngFor="let mode of userSearchModes" [nzValue]="mode" id="searchMode" [nzLabel]="('ADMIN.USERS.SEARCH_MODE.' + mode) | translate"></nz-option>
+      </nz-select>
+    </nz-form-item>
+    <form nz-form [ngSwitch]="searchMode">
+      <ng-container *ngSwitchCase="UserSearchMode.UID">
+        <nz-form-item>
+          <nz-form-label nzFor="uid">{{'ADMIN.USERS.Uid' | translate}}
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input [formControl]="uidFilter" name="uid" type="string" id="uid">
+          </nz-form-control>
+        </nz-form-item>
+      </ng-container>
+      <ng-container *ngSwitchCase="UserSearchMode.EMAIL">
+        <nz-form-item>
+          <nz-form-label nzFor="email">{{'ADMIN.USERS.Email' | translate}}
+          </nz-form-label>
+          <nz-form-control>
+            <input nz-input [formControl]="emailFilter" name="email" type="email" id="email">
+          </nz-form-control>
+        </nz-form-item>
+      </ng-container>
+      <ng-container *ngSwitchCase="UserSearchMode.CHARACTER">
+        <nz-form-item>
+          <nz-form-label nzFor="serverName">{{'Server_name' | translate}}</nz-form-label>
+          <input [formControl]="selectedServer" [nzAutocomplete]="auto" id="serverName" nz-input type="text">
+          <nz-autocomplete #auto>
+            <nz-auto-option *ngFor="let server of autoCompleteRows$ | async" [nzValue]="server">
+              {{server}}
+            </nz-auto-option>
+          </nz-autocomplete>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-label nzFor="characterName">{{'Character_name' | translate}}
+          </nz-form-label>
+          <input [formControl]="characterName" id="characterName" nz-input type="text">
+        </nz-form-item>
+      </ng-container>
+    </form>
+  </div>
+</div>
+
+<nz-list [nzLoading]="loadingResults" *ngIf="results$ | async as results">
+  <app-fullpage-message *ngIf="results.length === 0">
+    {{'ADMIN.USERS.No_users_found' | translate}}
+  </app-fullpage-message>
+  <nz-list-item *ngFor="let user of results">
+    <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="user.$key">
+      <ng-template #avatar>
+        <app-user-avatar [userId]="user.$key"></app-user-avatar>
+      </ng-template>
+      <nz-list-item-meta-title>
+        {{user.$key | characterName | async}}
+      </nz-list-item-meta-title>
+    </nz-list-item-meta>
+    <div>{{'ADMIN.USERS.X_characters_linked' | translate:{amount: user.lodestoneIds.length} }}</div>
+    <ul nz-list-item-actions>
+      <nz-list-item-action>
+        <a routerLink="/profile/{{user.$key}}">{{'ADMIN.USERS.ACTIONS.Profile' | translate}}</a>
+      </nz-list-item-action>
+      <nz-list-item-action>
+        <a (click)="runIntegrityCheck(user)">{{'ADMIN.USERS.ACTIONS.Check' | translate}}</a>
+      </nz-list-item-action>
+    </ul>
+  </nz-list-item>
+</nz-list>
