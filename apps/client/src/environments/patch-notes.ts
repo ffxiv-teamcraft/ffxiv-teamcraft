@@ -1,14 +1,14 @@
-export const patchNotes = `### Bug Fixes
+export const patchNotes = `### Features
 
-* **desynth:** fixed salvage level search.
-* **list:** fixed an issue with alarms from lists sometimes not having coords.
-* **list:** fixed an issue with the add item button with WRITE team permission.
-* **lists:** deleting the value in amount input won't treat it as 0 anymore.
-* **log-tracker:** fixed fishing log entries display not updating properly.
-* **pricing:** removed price filling warning when too few items.
+* **desktop:** support for korean 5.18 packet capture.
+* support for korean v5.18 update.
+* **data:** added a lot of data for reductions and desynth.
+* **desktop:** automated log completion as you gather/craft items.
+* new home page link to redbubble shop to get merch.
+* new home page link to redbubble shop to get merch.
 
 
-### Features
+### Bug Fixes
 
-* **desktop:** support for korean 5.15 packets.
-* support for korean v5.15 update.`;
+* **currency-spending:** filter out shop listings with no npc.
+* **db:** fixed recipe level in masterbook pages.`;
