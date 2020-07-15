@@ -13,4 +13,4 @@ export const patchNotes = `### Features
 * **currency-spending:** filter out shop listings with no npc.
 * **db:** fixed action costs for gatherers actions.
 * **db:** fixed recipe level in masterbook pages.
-* **inventory-optimizer:** fixed an issue with scrollbars displayed when they shouldn't.`;
+* **inventory-optimizer:** fixed an issue with scrollbars displayed when they shouldn't.`;
