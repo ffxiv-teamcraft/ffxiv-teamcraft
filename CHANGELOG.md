@@ -12,8 +12,6 @@ All notable changes to this project will be documented in this file. See [standa
 * **data:** added a lot of data for reductions and desynth ([4a65145](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a65145bebec41bfa74a6ff85d5c16337d785676))
 * **desktop:** automated log completion as you gather/craft items ([ff6b53a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ff6b53ae311b175f4457a1df6dce07aabf47e416))
 * new home page link to redbubble shop to get merch ([f7f50a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f7f50a8198138be24efa22d48b4a43bbbd4f9c62))
-* new home page link to redbubble shop to get merch ([6787e2a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6787e2af4dd09061e34a8b85d4029ff093e924d6))
-
 
 ### Bug Fixes
 

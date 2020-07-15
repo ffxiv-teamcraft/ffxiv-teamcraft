@@ -5,10 +5,8 @@ export const patchNotes = `### Features
 * **data:** added a lot of data for reductions and desynth.
 * **desktop:** automated log completion as you gather/craft items.
 * new home page link to redbubble shop to get merch.
-* new home page link to redbubble shop to get merch.
-
 
 ### Bug Fixes
 
 * **currency-spending:** filter out shop listings with no npc.
-* **db:** fixed recipe level in masterbook pages.`;
+* **db:** fixed recipe level in masterbook pages.`;
