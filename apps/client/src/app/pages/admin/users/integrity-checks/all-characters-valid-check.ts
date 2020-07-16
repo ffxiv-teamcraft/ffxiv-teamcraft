@@ -46,6 +46,9 @@ export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
       delete user.lodestoneIds[index];
     });
     user.lodestoneIds = user.lodestoneIds.filter(e => e);
+    if (user.lodestoneIds.length === 0) {
+      delete user.defaultLodestoneId;
+    }
     return user;
   }
 
