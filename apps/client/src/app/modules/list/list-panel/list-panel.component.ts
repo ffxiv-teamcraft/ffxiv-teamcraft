@@ -38,6 +38,10 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 })
 export class ListPanelComponent extends TeamcraftComponent {
 
+  //Bounds for number of a single item in a list
+  maxAmount = 999;
+  minAmount = 1;
+
   @Input()
   public set list(l: List) {
     this._list = l;
@@ -406,11 +410,13 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   mouseWheelUpAmount(event: any, item: ListRow): void {
-    this.updateAmount(item, ++item.amount);
+    if (item.amount < this.maxAmount) {
+      this.updateAmount(item, ++item.amount);
+    }
   }
 
   mouseWheelDownAmount(event: any, item: ListRow): void {
-    if (item.amount > 0) {
+    if (item.amount > this.minAmount) {
       this.updateAmount(item, --item.amount);
     }
   }
