@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "7.2.9",
+  "version": "7.2.10",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -240,7 +240,7 @@
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "semver": "^5.4.1",
-    "standard-version": "^8.0.1",
+    "standard-version": "^4.4.0",
     "terser-webpack-plugin": "^1.2.3",
     "ts-loader": "^5.2.0",
     "ts-node": "~5.0.1",
