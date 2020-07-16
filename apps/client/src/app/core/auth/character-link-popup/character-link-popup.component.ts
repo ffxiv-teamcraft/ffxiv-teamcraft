@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { uniq } from 'lodash';
 
 @Component({
   selector: 'app-character-link-popup',
@@ -38,21 +39,52 @@ export class CharacterLinkPopupComponent {
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
   private chineseServers = [
-    // 陆行鸟 (China 1)
-    '红玉海', '神意之地', '拉诺西亚', '幻影群岛', '萌芽池', '宇宙和音', '沃仙曦染', '晨曦王座',
-    // 莫古力 (China 2)
-    '白银乡', '白金幻象', '神拳痕', '潮风亭', '旅人栈桥', '拂晓之间', '龙巢神殿','梦羽宝境',
-    // 猫小胖 (China 3)
-    '紫水栈桥', '延夏', '静语庄园', '摩杜纳', '海猫茶屋', '柔风海湾', '琥珀原'
+    'HongYuHai',
+    'ShenYiZhiDi',
+    'LaNuoXiYa',
+    'HuanYingQunDao',
+    'MengYaChi',
+    'YuZhouHeYin',
+    'WoXianXiRan',
+    'ChenXiWangZuo',
+    'ZiShuiZhanQiao',
+    'YanXia',
+    'JingYuZhuangYuan',
+    'MoDuNa',
+    'HaiMaoChaWu',
+    'RouFengHaiWan',
+    'HuPoYuan',
+    'HongYuHai',
+    'ShenYiZhiDi',
+    'LaNuoXiYa',
+    'HuanYingQunDao',
+    'MengYaChi',
+    'YuZhouHeYin',
+    'WoXianXiRan',
+    'ChenXiWangZuo',
+    'BaiYinXiang',
+    'BaiJinHuanXiang',
+    'ShenQuanHen',
+    'ChaoFengTing',
+    'LvRenZhanQiao',
+    'FuXiaoZhiJian',
+    'Longchaoshendian',
+    'MengYuBaoJing',
+    'ZiShuiZhanQiao',
+    'YanXia',
+    'JingYuZhuangYuan',
+    'MoDuNa',
+    'HaiMaoChaWu',
+    'RouFengHaiWan',
+    'HuPoYuan'
   ];
 
   constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
         return [
-          ...servers,
-          ...this.koreanServers.map(server => `Korean Server (${server})`),
-          ...this.chineseServers.map(server => `Chinese Server (${server})`)
+          ...uniq(servers),
+          ...this.koreanServers.map(server => `Korean Server (${server})`)
         ].sort();
       })
     );
@@ -88,9 +120,10 @@ export class CharacterLinkPopupComponent {
 
   setKoreanCharacter(): void {
     const fakeLodestoneId = -1 * Math.floor((Math.random() * 999999999));
-    const customCharacter = {
+    const customCharacter: Partial<Character> = {
       ID: fakeLodestoneId,
-      Name: this.characterName.value
+      Name: this.characterName.value,
+      Server: this.selectedServer.value
     };
     this.store.dispatch(new AddCharacter(fakeLodestoneId, this.useAsDefault));
     this.store.dispatch(new AddCustomCharacter(fakeLodestoneId, customCharacter));

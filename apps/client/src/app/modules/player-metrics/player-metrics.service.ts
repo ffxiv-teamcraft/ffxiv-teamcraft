@@ -9,7 +9,6 @@ import { MetricType } from './model/metric-type';
 import { AuthFacade } from '../../+state/auth.facade';
 import { ProbeSource } from './model/probe-source';
 import { LogTracking } from '../../model/user/log-tracking';
-import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
