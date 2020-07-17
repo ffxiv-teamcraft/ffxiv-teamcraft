@@ -2261,7 +2261,7 @@ if (hasTodo('paramGrow')) {
   });
 }
 
-if (hasTodo('gubal')) {
+if (hasTodo('gubal', true)) {
 
   function gubalToObject(rows) {
     return rows.reduce((res, row) => {
