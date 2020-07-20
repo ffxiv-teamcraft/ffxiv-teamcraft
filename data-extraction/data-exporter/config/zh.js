@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   dbPath: (name) => path.join(
     __dirname,
-    '../../../../library/5.18/',
+    '../../../../library/',
     `${name}.csv`
   ),
   outputPath: (name) => path.join(
@@ -13,6 +13,6 @@ module.exports = {
   ),
   languages: [{
     output: 'zh',
-    file: 'chs'
+    file: ''
   }]
 }

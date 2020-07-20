@@ -1054,5 +1054,29 @@
   },
   "100402": {
     "zh": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>专家专用技能<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n变更一次作业状态\n使用时需消耗道具“能工巧匠图纸”\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>使用本技能不会消耗一次作业时间<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>一次制作最多可使用3次<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100403": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100404": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100405": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100406": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100407": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100408": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100409": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
+  },
+  "100410": {
+    "zh": "大量消耗耐久以推动作业进展\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>在剩余耐久不足的情况下使用时，效率会减半<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n效率：300\n成功率：100%\n耐久消耗：20"
   }
 }
