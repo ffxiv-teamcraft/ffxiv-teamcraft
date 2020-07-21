@@ -1980,22 +1980,22 @@
     "Autofix_error": "Autofix this error",
     "USERS": {
       "X_characters_linked": "{{amount}} character(s) linked",
-      "Email": "Email",
+      "Email": "이메일",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "검색 결과 없음",
+      "Integrity_check": "무결성 검사",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "검색 조건",
         "UID": "UID",
-        "EMAIL": "Email",
+        "EMAIL": "이메일",
         "CHARACTER": "Character"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "프로필 보기",
+        "Check": "무결성 검사 실행"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "이상없음"
       }
     }
   }
