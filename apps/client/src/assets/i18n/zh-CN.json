@@ -413,10 +413,10 @@
     "Enable_tutorials": "启用教程",
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
-    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
-    "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Enable_auto_log_check": "在物品被采集或制作后在日志中自动标记完成",
+    "Enable_metrics_capture": "启用计量捕获",
+    "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
+    "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1979,23 +1979,23 @@
   "ADMIN": {
     "Autofix_error": "自动修复此错误",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
-      "Email": "Email",
+      "X_characters_linked": "已关联 {{amount}} 个角色",
+      "Email": "电子邮箱",
       "Uid": "UID",
       "No_users_found": "找不到用户",
       "Integrity_check": "完整性检查",
       "SEARCH_MODE": {
         "Label": "搜索模式",
         "UID": "UID",
-        "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "EMAIL": "电子邮箱",
+        "CHARACTER": "角色"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "打开个人资料",
+        "Check": "运行完整性检查"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "所有关联的角色均有效"
       }
     }
   }
