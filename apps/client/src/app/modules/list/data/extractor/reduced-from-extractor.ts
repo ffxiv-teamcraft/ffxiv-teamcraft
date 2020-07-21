@@ -5,6 +5,7 @@ import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { uniq } from 'lodash';
+import { reductions } from 'apps/client/src/app/core/data/sources/reductions';
 
 export class ReducedFromExtractor extends AbstractExtractor<number[]> {
 
@@ -25,7 +26,8 @@ export class ReducedFromExtractor extends AbstractExtractor<number[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): any[] {
-    return uniq([...(item.reducedFrom || []), ...(this.lazyData.data.reduction[item.id] || [])]);
+    const fromTsSource = Object.keys(reductions).filter(key => reductions[key].indexOf(item.id) > -1).map(key => +key);
+    return uniq([...(item.reducedFrom || []), ...(this.lazyData.data.reduction[item.id] || []), ...fromTsSource]);
   }
 
 }

@@ -30,7 +30,7 @@
         <p [innerHTML]="getDescription(xivapiQuest) | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="xivapiQuest.ID | questName"></app-i18n-display>
+                        [value]="xivapiQuest.ID | questName"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
@@ -62,7 +62,9 @@
       </div>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiQuest.ID" type="quest"></app-db-comments>
-    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div>
+      <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    </div>
     <div fxLayout="column" fxLayoutGap="10px">
       <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
         <nz-card *ngIf="textData$ | async as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
@@ -95,7 +97,8 @@
             </ng-template>
           </nz-list>
         </nz-card>
-        <nz-card *ngIf="gtData.quest.reqs && gtData.quest.reqs.quests && gtData.quest.reqs.quests.length > 0" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
+        <nz-card *ngIf="gtData.quest.reqs && gtData.quest.reqs.quests && gtData.quest.reqs.quests.length > 0" [nzTitle]="title" class="details-card"
+                 fxFlex="1 1 auto"
                  nzBordered="false">
           <ng-template #title>
             <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -240,7 +243,9 @@
       </div>
     </div>
 
-    <nz-divider [nzText]="'DB.RP_Details' | translate" nzOrientation="left"></nz-divider>
+    <div>
+      <nz-divider [nzText]="'DB.RP_Details' | translate" nzOrientation="left"></nz-divider>
+    </div>
     <div fxLayout="column" fxLayoutGap="10px">
       <nz-card *ngIf="textData$ | async as textData" [nzTitle]="title" class="details-card" fxFlex="1 1 100%"
                nzBordered="false">

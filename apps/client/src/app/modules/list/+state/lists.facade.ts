@@ -163,7 +163,7 @@ export class ListsFacade {
       }
       let teamPermissionLevel = 0;
       if (team !== undefined && list.teamId === team.$key) {
-        teamPermissionLevel = list.getPermissionLevel(`team:${list.teamId}`) || 20;
+        teamPermissionLevel = Math.max(list.getPermissionLevel(`team:${list.teamId}`), 20);
       }
       return Math.max(list.getPermissionLevel(userId), list.getPermissionLevel(fcId), teamPermissionLevel);
     }),

@@ -602,7 +602,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       .pipe(first())
       .subscribe(allAlarms => {
         const alarmsToAdd = getItemSource<Alarm[]>(item, DataType.ALARMS).filter(a => {
-          return allAlarms.some(alarm => {
+          return !allAlarms.some(alarm => {
             return alarm.itemId === a.itemId && alarm.spawns === a.spawns && alarm.zoneId === a.zoneId;
           });
         });
