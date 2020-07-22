@@ -1162,7 +1162,7 @@
     "Lists_created_counter": "FFXIV Teamcraft 上现有 {{amount}} 个清单",
     "Support_patreon": "在 Patreon 上支持我们",
     "Donation_button": "进行一次性捐赠",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "购买 Teamcraft 周边",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
@@ -1324,7 +1324,7 @@
     "PATREON_BENEFITS": {
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
-      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 ({{price}})",
+      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
       "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
       "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     }
