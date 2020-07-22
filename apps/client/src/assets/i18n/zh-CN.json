@@ -1698,7 +1698,7 @@
     "Sort_desc": "降序",
     "Add_stat_filter": "添加属性过滤器",
     "Add_bonus_stat_filter": "添加奖励属性过滤器",
-    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
+    "Search_tip": "在输入框中输入：“patch:xx” 可以查看某个版本的更新内容，如：patch:5.01",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
