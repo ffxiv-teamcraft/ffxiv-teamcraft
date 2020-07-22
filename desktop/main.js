@@ -194,6 +194,7 @@ app.on('ready', () => {
 });
 
 function createWindow() {
+  app.releaseSingleInstanceLock();
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
