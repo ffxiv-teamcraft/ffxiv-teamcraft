@@ -94,7 +94,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
-const fs = require('fs');
+const fs = require('fs-extra');
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
@@ -600,7 +600,7 @@ ipcMain.on('language', (event, lang) => {
 
 // Metrics system
 const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
-const METRICS_FOLDER = path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
+let METRICS_FOLDER = config.get('metrics:folder') || path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
 
 ipcMain.on('metrics:persist', (event, data) => {
   if (data.length === 0) {
@@ -638,6 +638,28 @@ ipcMain.on('metrics:load', (event, { from, to }) => {
     })
     .map(fileName => fs.readFileSync(path.join(METRICS_FOLDER, fileName), 'utf8'));
   event.sender.send('metrics:loaded', loadedFiles);
+});
+
+ipcMain.on('metrics:path:get', (event) => {
+  event.sender.send('metrics:path:value', METRICS_FOLDER);
+});
+
+ipcMain.on('metrics:path:set', (event, value) => {
+  const folderPickerOptions = {
+    // See place holder 2 in above image
+    defaultPath: METRICS_FOLDER,
+    properties: ['openDirectory']
+  };
+  dialog.showOpenDialog(win, folderPickerOptions).then((result) => {
+    if (result.canceled) {
+      return;
+    }
+    const value = result.filePaths[0];
+    fs.moveSync(METRICS_FOLDER, value);
+    METRICS_FOLDER = value;
+    config.set('metrics:folder', value);
+    event.sender.send('metrics:path:value', METRICS_FOLDER);
+  });
 });
 // End metrics system
 
