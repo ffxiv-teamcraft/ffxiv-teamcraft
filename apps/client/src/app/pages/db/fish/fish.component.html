@@ -107,7 +107,9 @@
             <nz-card [nzTitle]="'DB.FISH.Hookset_and_tug' | translate" class="no-graph">
               <div fxLayout="column" fxLayoutGap="20px">
                 <div fxLayout="column" fxLayoutGap="10px">
-                  <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
+                  <div>
+                    <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
+                  </div>
                   <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of data.hooksets">
                     <img src="{{row.hookset | actionIcon | xivapiIcon}}" alt="" class="round-icon">
                     <div>
