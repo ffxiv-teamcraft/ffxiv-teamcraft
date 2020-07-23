@@ -27,7 +27,7 @@ function filterPacketSessionID(packet) {
     'eventPlay4',
     'someDirectorUnk4'
   ];
-  return packetsFromOthers.indexOf(packet.type) === -1
+  return packetsFromOthers.indexOf(packet.type) > -1
     || packet.sourceActorSessionID === packet.targetActorSessionID;
 }
 
