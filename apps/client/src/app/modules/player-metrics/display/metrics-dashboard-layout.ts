@@ -23,7 +23,7 @@ export class MetricsDashboardLayout {
         component: 'histogram',
         type: MetricType.CURRENCY,
         filter: {
-          name: 'NoFilter',
+          name: 'ObtentionFilter',
           args: []
         },
         params: {},

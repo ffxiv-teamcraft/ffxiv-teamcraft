@@ -6,7 +6,7 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
-import { map, takeUntil } from 'rxjs/operators';
+import { filter, map, takeUntil } from 'rxjs/operators';
 import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
@@ -24,7 +24,6 @@ export class MetricsComponent extends TeamcraftPageComponent {
 
   timeRange$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>([startOfDay(new Date()), endOfDay(new Date())]);
 
-  // TODO
   layout$ = new BehaviorSubject(MetricsDashboardLayout.DEFAULT);
 
   display$: Observable<MetricsDisplay> = combineLatest([this.metricsService.logs$, this.layout$]).pipe(
@@ -61,7 +60,8 @@ export class MetricsComponent extends TeamcraftPageComponent {
     this.ranges[this.translate.instant('METRICS.This_month')] = [startOfMonth(new Date()), new Date()];
 
     this.timeRange$.pipe(
-      takeUntil(this.onDestroy$)
+      takeUntil(this.onDestroy$),
+      filter(([start, end]) => !!start && !!end)
     ).subscribe(([start, end]) => {
       this.metricsService.load(start, end);
     });

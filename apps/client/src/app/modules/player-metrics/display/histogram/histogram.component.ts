@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
 import { map } from 'rxjs/operators';
+import { SettingsService } from '../../../settings/settings.service';
 
 @Component({
   selector: 'app-histogram',
@@ -9,6 +10,10 @@ import { map } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HistogramComponent extends AbstractMetricDisplayComponent {
+
+  constructor(public settings: SettingsService) {
+    super();
+  }
 
   results$ = this.data$.pipe(
     map(reports => {

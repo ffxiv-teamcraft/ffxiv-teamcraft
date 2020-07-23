@@ -6,6 +6,7 @@ import { ProbeSource } from '../../model/probe-source';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { TranslateService } from '@ngx-translate/core';
+import { SettingsService } from '../../../settings/settings.service';
 
 @Component({
   selector: 'app-pie-chart',
@@ -41,9 +42,9 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
     })
   );
 
-  constructor(private i18n: I18nToolsService, private l12n: LocalizedDataService, private translate: TranslateService) {
+  constructor(private i18n: I18nToolsService, private l12n: LocalizedDataService, private translate: TranslateService,
+              public settings: SettingsService) {
     super();
-
   }
 
 
