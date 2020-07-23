@@ -31,7 +31,7 @@
         <p *ngIf="xivapiInstance.Description" [innerHTML]="xivapiInstance | xivapiL12n: 'instanceDescriptions':'Description' | i18n | xivUIText"></p>
       </div>
       <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
-           [value]="xivapiInstance | instanceName"></app-i18n-display>
+                        [value]="xivapiInstance | instanceName"></app-i18n-display>
     </div>
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
@@ -68,7 +68,9 @@
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiInstance.ID"
                      type="instance"></app-db-comments>
-    <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
+    <div>
+      <nz-divider [nzText]="'DB.Fights' | translate" nzOrientation="left"></nz-divider>
+    </div>
     <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
       <nz-card *ngFor="let fight of gtData.instance.fights" [nzTitle]="title" class="details-card" fxFlex="1 1 auto"
                nzBordered="false">
@@ -111,7 +113,9 @@
         </div>
       </nz-card>
     </div>
-    <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
+    <div>
+      <nz-divider [nzText]="'DB.Instance_details' | translate" nzOrientation="left"></nz-divider>
+    </div>
     <div *ngIf="xivapiInstance.ContentFinderCondition.TerritoryType.Map" fxLayout="row wrap" fxLayout.lt-md="column"
          fxLayoutGap="10px">
       <nz-card [nzTitle]="mapTitle" class="details-card" fxFlex="1 1 auto" nzBordered="false">
