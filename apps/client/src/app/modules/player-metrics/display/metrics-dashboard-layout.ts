@@ -8,14 +8,20 @@ export class MetricsDashboardLayout {
         component: 'total',
         type: MetricType.CURRENCY,
         filter: {
-          name: 'NoFilter',
-          args: []
+          name: 'NoFilter'
         },
         params: {
           currencyName: 'Gil',
           fontSize: '24px'
         },
         title: 'Total Gil benefit'
+      },
+      {
+        component: 'table',
+        filter: {
+          name: 'NoFilter'
+        },
+        title: 'Events recorded'
       }
     ],
     [
@@ -23,10 +29,8 @@ export class MetricsDashboardLayout {
         component: 'histogram',
         type: MetricType.CURRENCY,
         filter: {
-          name: 'ObtentionFilter',
-          args: []
+          name: 'ObtentionFilter'
         },
-        params: {},
         title: 'Gains over time'
       }],
     [
@@ -34,20 +38,16 @@ export class MetricsDashboardLayout {
         component: 'pie-chart',
         type: MetricType.CURRENCY,
         filter: {
-          name: 'SpendingFilter',
-          args: []
+          name: 'SpendingFilter'
         },
-        params: {},
         title: 'Spendings'
       },
       {
         component: 'pie-chart',
         type: MetricType.CURRENCY,
         filter: {
-          name: 'ObtentionFilter',
-          args: []
+          name: 'ObtentionFilter'
         },
-        params: {},
         title: 'Earning Sources'
       }
     ]

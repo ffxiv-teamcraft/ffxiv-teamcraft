@@ -53,7 +53,7 @@ export class PieChartComponent extends AbstractMetricDisplayComponent {
   }
 
   private getMetricName(report: ProbeReport): string {
-    switch (this.params.metric) {
+    switch (this.params?.metric) {
       case 'amount':
         // TODO once we have reports with more than itemId at index 0, handle properly here
         return this.i18n.getName(this.l12n.getItem(report.data[0]));

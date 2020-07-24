@@ -14,7 +14,7 @@
   </nz-card>
 
   <div fxLayout="row" fxLayoutGap="10px">
-    <div *ngFor="let column of display.grid; trackBy: trackByColumn" fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 auto" class="metrics-column">
+    <div *ngFor="let column of display.grid; trackBy: trackByColumn" fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 {{100 / display.grid.length}}%" class="metrics-column">
       <div *ngFor="let row of column; trackBy: trackByRow">
         <app-metric-display [title]="row.title" [data]="row.data" [component]="row.component" [params]="row.params"></app-metric-display>
       </div>

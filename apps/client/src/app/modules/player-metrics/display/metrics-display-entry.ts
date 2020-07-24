@@ -3,11 +3,11 @@ import { MetricType } from '../model/metric-type';
 export interface MetricsDisplayEntry {
   title: string;
   component: string;
-  type: MetricType;
+  type?: MetricType;
   filter: {
     name: string;
-    args: any[];
+    args?: any[];
   }
-  params: any;
+  params?: any;
   width?: string;
 }

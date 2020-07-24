@@ -15,6 +15,7 @@ import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { HistogramComponent } from '../histogram/histogram.component';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
+import { TableComponent } from '../table/table.component';
 
 @Component({
   selector: 'app-metric-display',
@@ -27,7 +28,8 @@ export class MetricDisplayComponent extends AbstractMetricDisplayComponent imple
   public static readonly COMPONENTS_REGISTRY = {
     'total': TotalComponent,
     'histogram': HistogramComponent,
-    'pie-chart': PieChartComponent
+    'pie-chart': PieChartComponent,
+    'table': TableComponent
   };
 
   private onDestroy$ = new Subject<void>();

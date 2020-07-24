@@ -13,12 +13,16 @@ import { SourceFilter } from './filters/source-filter';
 import { SpendingFilter } from './filters/spending-filter';
 import { TypeFilter } from './filters/type-filter';
 import { MetricDisplayComponent } from './display/metric-display/metric-display.component';
-import { NzCardModule } from 'ng-zorro-antd';
+import { NzCardModule, NzTableModule } from 'ng-zorro-antd';
 import { NoFilter } from './filters/no-filter';
 import { TranslateModule } from '@ngx-translate/core';
 import { HistogramComponent } from './display/histogram/histogram.component';
 import { LineChartModule, PieChartModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './display/pie-chart/pie-chart.component';
+import { TableComponent } from './display/table/table.component';
+import { PipesModule } from '../../pipes/pipes.module';
+import { CoreModule } from '../../core/core.module';
+import { RouterModule } from '@angular/router';
 
 
 const probes: Provider[] = [
@@ -75,7 +79,11 @@ const filters: Provider[] = [
     NzCardModule,
     TranslateModule,
     LineChartModule,
-    PieChartModule
+    PieChartModule,
+    NzTableModule,
+    PipesModule,
+    CoreModule,
+    RouterModule
   ],
   providers: [
     ...probes,
@@ -84,7 +92,7 @@ const filters: Provider[] = [
   exports: [
     MetricDisplayComponent
   ],
-  declarations: [TotalComponent, MetricDisplayComponent, HistogramComponent, PieChartComponent]
+  declarations: [TotalComponent, MetricDisplayComponent, HistogramComponent, PieChartComponent, TableComponent]
 })
 export class PlayerMetricsModule {
 }

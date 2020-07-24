@@ -42,7 +42,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
               component: row.component,
               params: row.params,
               data: logs.filter(log => {
-                return log !== undefined && log.type === row.type && filterEntry.matches(log, row.filter.args);
+                return log !== undefined && (!log.type || log.type === row.type) && filterEntry.matches(log, row.filter.args);
               })
             };
           }).filter(row => row !== null);
