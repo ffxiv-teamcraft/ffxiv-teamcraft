@@ -80,7 +80,7 @@ export class ListsFacade {
           map(([compacts, userId]) => {
             return compacts.filter(c => {
               return !c.notFound
-                && c.getPermissionLevel(userId) >= PermissionLevel.PARTICIPATE
+                && c.getPermissionLevel(userId) >= PermissionLevel.READ
                 && c.hasExplicitPermissions(userId)
                 && c.authorId !== userId;
             });
@@ -99,7 +99,7 @@ export class ListsFacade {
           return this.sortLists(
             compacts.filter(c => {
               return !c.notFound
-                && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
+                && Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.READ
                 && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
                 && c.authorId !== userId;
             })

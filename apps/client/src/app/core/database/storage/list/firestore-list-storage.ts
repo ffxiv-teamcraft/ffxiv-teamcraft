@@ -14,6 +14,7 @@ import { Class } from '@kaiu/serializer';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { compare, getValueByPointer } from 'fast-json-patch';
 import * as firebase from 'firebase/app';
+import { PermissionLevel } from '../../permissions/permission-level.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -124,7 +125,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getShared(userId: string): Observable<List[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', PermissionLevel.READ))
       .snapshotChanges()
       .pipe(
         switchMap((snaps: DocumentChangeAction<List>[]) => {
