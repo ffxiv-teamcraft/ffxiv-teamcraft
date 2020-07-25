@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AbstractMetricDisplayComponent } from '../abstract-metric-display-component';
-import { MetricType } from '../../model/metric-type';
 import { ProbeSource } from '../../model/probe-source';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,7 +10,6 @@ import { TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TableComponent extends AbstractMetricDisplayComponent {
-  MetricType = MetricType;
   ProbeSource = ProbeSource;
 
   constructor(public translate: TranslateService) {
