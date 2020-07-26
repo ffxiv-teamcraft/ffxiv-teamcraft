@@ -1,7 +1,8 @@
 import { MetricsDisplayEntry } from './metrics-display-entry';
 import { MetricType } from '../model/metric-type';
+import { DataModel } from '../../../core/database/storage/data-model';
 
-export class MetricsDashboardLayout {
+export class MetricsDashboardLayout extends DataModel {
 
   public static get DEFAULT(): MetricsDashboardLayout {
     return new MetricsDashboardLayout([
@@ -9,10 +10,10 @@ export class MetricsDashboardLayout {
         {
           component: 'total',
           type: MetricType.CURRENCY,
-          filter: {
+          filters: [{
             name: 'ItemFilter',
             args: [1, 2, 3, 4, 5, 6]
-          },
+          }],
           params: {
             currencyName: 'Gil',
             fontSize: '24px'
@@ -22,10 +23,10 @@ export class MetricsDashboardLayout {
         {
           component: 'table',
           type: MetricType.ANY,
-          filter: {
+          filters: [{
             name: 'SourceFilter',
             args: [0, 1, 2, 3]
-          },
+          }],
           title: 'Events recorded'
         }
       ],
@@ -33,32 +34,31 @@ export class MetricsDashboardLayout {
         {
           component: 'histogram',
           type: MetricType.CURRENCY,
-          filter: {
+          filters: [{
             name: 'ObtentionFilter',
             args: []
-          },
+          }],
           title: 'Gains over time'
         }],
       [
         {
-          component: 'pie-chart',
+          component: 'table',
           type: MetricType.CURRENCY,
-          filter: {
-            name: 'SpendingFilter',
-            args: []
-          },
-          title: 'Spendings',
-          params: {
-            metric: 'source'
-          }
+          filters: [
+            {
+              name: 'SpendingFilter',
+              args: []
+            }
+          ],
+          title: 'Spendings'
         },
         {
           component: 'pie-chart',
           type: MetricType.CURRENCY,
-          filter: {
+          filters: [{
             name: 'ObtentionFilter',
             args: []
-          },
+          }],
           title: 'Earning Sources',
           params: {
             metric: 'source'
@@ -69,6 +69,7 @@ export class MetricsDashboardLayout {
   }
 
   constructor(public grid: MetricsDisplayEntry[][] = [[]]) {
+    super();
   }
 
   public addColumn(index?: number): void {

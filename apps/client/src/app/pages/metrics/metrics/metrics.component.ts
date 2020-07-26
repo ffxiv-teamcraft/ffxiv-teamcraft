@@ -11,6 +11,9 @@ import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
 import { MetricsDisplayEntry } from '../../../modules/player-metrics/display/metrics-display-entry';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { MetricType } from '../../../modules/player-metrics/model/metric-type';
+import { ProbeReport } from '../../../modules/player-metrics/model/probe-report';
 
 @Component({
   selector: 'app-metrics',
@@ -32,17 +35,13 @@ export class MetricsComponent extends TeamcraftPageComponent {
         layout: layout,
         grid: layout.grid.map(column => {
           return column.map(row => {
-            const filterEntry = this.filters.find(f => f.getName() === row.filter.name);
-            if (filterEntry === undefined) {
-              console.warn(`Missing filter function for name ${row.filter.name}`);
-              return null;
-            }
+            const filterFn = this.buildFilterFn(row);
             return {
               title: row.title,
               component: row.component,
               params: row.params,
               data: logs.filter(log => {
-                return log !== undefined && (!log.type || log.type === row.type) && filterEntry.matches(log, ...row.filter.args);
+                return log !== undefined && (!log.type || log.type === row.type) && filterFn(log);
               })
             };
           }).filter(row => row !== null);
@@ -71,6 +70,28 @@ export class MetricsComponent extends TeamcraftPageComponent {
     });
   }
 
+  buildFilterFn(entry: MetricsDisplayEntry): (report: ProbeReport) => boolean {
+    return entry.filters.reduce((fn, filterRow) => {
+      const filterEntry = this.filters.find(f => f.getName() === filterRow.name);
+      if (filterEntry === undefined) {
+        console.warn(`Missing filter function for name ${filterRow.name}`);
+        return fn;
+      }
+      return (report) => {
+        let filterCall = filterEntry.matches(report, ...filterRow.args);
+        if (filterRow.not) {
+          filterCall = !filterCall;
+        }
+        switch (filterRow.gate) {
+          case 'OR':
+            return fn(report) || filterCall;
+          case 'AND':
+          default:
+            return fn(report) && filterCall;
+        }
+      };
+    }, (report) => true);
+  }
 
   startEdit(layout: MetricsDashboardLayout): void {
     this.editMode = true;
@@ -101,6 +122,33 @@ export class MetricsComponent extends TeamcraftPageComponent {
   deleteEntry(layout: MetricsDashboardLayout, columnIndex: number, rowIndex: number): void {
     layout.grid[columnIndex].splice(rowIndex, 1);
     this.layout$.next(new MetricsDashboardLayout(JSON.parse(JSON.stringify(layout.grid))));
+  }
+
+  addEntry(layout: MetricsDashboardLayout, columnIndex: number): void {
+    layout.grid[columnIndex].push({
+      component: 'table',
+      type: MetricType.ANY,
+      filters: [{
+        name: 'NoFilter',
+        args: []
+      }],
+      title: 'New card'
+    });
+    this.layout$.next(layout);
+  }
+
+  moveEntry(layout: MetricsDashboardLayout, columnIndex: number, event: CdkDragDrop<any[]>): void {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(layout.grid[columnIndex], event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        layout.grid[event.item.data.columnIndex],
+        layout.grid[columnIndex],
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
+    this.layout$.next(layout);
   }
 
   trackByColumn(index: number): number {

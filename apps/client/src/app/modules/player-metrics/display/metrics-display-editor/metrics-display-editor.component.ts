@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, Output
 import { MetricsDisplayEntry } from '../metrics-display-entry';
 import { MetricType } from '../../model/metric-type';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../filters/metrics-display-filter';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { I18nName } from '../../../../model/common/i18n-name';
-import { debounceTime, map } from 'rxjs/operators';
+import { debounceTime, map, startWith } from 'rxjs/operators';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { ProbeSource } from '../../model/probe-source';
@@ -36,18 +36,10 @@ export class MetricsDisplayEditorComponent {
 
   itemName$ = new BehaviorSubject<string>('');
 
-  itemNameCompletion$: Observable<{ id: number, name: I18nName }[]> = this.itemName$.pipe(
-    debounceTime(500),
-    map(value => {
-      if (value.length < 2) {
-        return this.entry.filter.args.map(arg => {
-          return this.items.find(i => i.id === arg);
-        });
-      } else {
-        return this.items.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
-      }
-    })
-  );
+  completionCache = {
+    name: '',
+    completion: of([])
+  };
 
   // SourceFilter params
   sources: { value: number, label: string }[] = Object.keys(ProbeSource).filter(k => !isNaN(+k)).map(k => ({ value: +k, label: ProbeSource[k] }));
@@ -65,6 +57,42 @@ export class MetricsDisplayEditorComponent {
           name: allItems[key]
         };
       });
+  }
+
+  getItemNameCompletion(name: string, itemIds: number[]): Observable<{ id: number, name: I18nName }[]> {
+    if (this.completionCache.name !== name) {
+      this.completionCache.name = name;
+      this.completionCache.completion = this.itemName$.pipe(
+        debounceTime(500),
+        map(value => {
+          if (value.length < 2) {
+            return itemIds.map(id => {
+              return this.items.find(i => i.id === id);
+            });
+          } else {
+            return this.items.filter(i => this.i18n.getName(i.name).toLowerCase().indexOf(value.toLowerCase()) > -1);
+          }
+        }),
+        startWith(itemIds.map(id => {
+          return this.items.find(i => i.id === id);
+        }))
+      );
+    }
+    return this.completionCache.completion;
+  }
+
+  addFilter(): void {
+    this.entry.filters.push({
+      gate: 'AND',
+      name: 'NoFilter',
+      args: []
+    });
+    this.entryChange.emit(this.entry);
+  }
+
+  removeFilter(index: number): void {
+    this.entry.filters.splice(index, 1);
+    this.entryChange.emit(this.entry);
   }
 
   componentChange(entry: MetricsDisplayEntry): void {

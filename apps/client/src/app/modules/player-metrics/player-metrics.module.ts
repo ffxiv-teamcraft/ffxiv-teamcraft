@@ -15,7 +15,7 @@ import { MetricDisplayComponent } from './display/metric-display/metric-display.
 import {
   NzAutocompleteModule,
   NzButtonModule,
-  NzCardModule,
+  NzCardModule, NzCheckboxModule,
   NzDividerModule,
   NzFormModule,
   NzIconModule,
@@ -38,6 +38,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishFilter } from './filters/fish-filter';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 
 const probes: Provider[] = [
@@ -110,7 +111,9 @@ const filters: Provider[] = [
     NzIconModule,
     FlexLayoutModule,
     NzAutocompleteModule,
-    NzInputNumberModule
+    NzInputNumberModule,
+    DragDropModule,
+    NzCheckboxModule
   ],
   providers: [
     ...probes,

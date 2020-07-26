@@ -8,6 +8,7 @@ import { NzButtonModule, NzCardModule, NzDatePickerModule, NzIconModule, NzPopco
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes: Routes = [
   {
@@ -33,7 +34,8 @@ const routes: Routes = [
     NzButtonModule,
     NzIconModule,
     TranslateModule,
-    NzPopconfirmModule
+    NzPopconfirmModule,
+    DragDropModule
   ]
 })
 export class MetricsModule {
