@@ -2005,6 +2005,7 @@
     "Today": "Today",
     "This_week": "This week",
     "This_month": "This month",
+    "Add_new_column": "Add a new column (max 5)",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
@@ -2015,6 +2016,7 @@
       "MARKETBOARD": "Marketboard"
     },
     "TYPES": {
+      "ANY": "Any",
       "CURRENCY": "Currency",
       "ITEM": "Item"
     },
@@ -2024,6 +2026,37 @@
       "Value": "Value",
       "Source": "Source",
       "Timestamp": "Timestamp"
+    },
+    "PIE_METRICS": {
+      "Amount": "Amount per item",
+      "Source": "Amount per source"
+    },
+    "EDITOR": {
+      "Data": "Data",
+      "Data_type": "Type",
+      "Filter": "Filter",
+      "Accepted_items": "Accepted items",
+      "Accepted_sources": "Accepted sources",
+      "Display": "Display",
+      "Display_type": "Display component",
+      "Title": "Title",
+      "Font_size": "Font size",
+      "Value_label": "Value label",
+      "Pie_metric": "Metric",
+      "FILTER_TIPS": {
+        "FishFilter": "Accept only fishes coming from fishing spots",
+        "ItemFilter": "Accepts only a given set of items",
+        "NoFilter": "Accepts everything",
+        "ObtentionFilter": "Accepts only values > 0",
+        "SourceFilter": "Accepts only a given set of sources",
+        "SpendingFilter": "Accepts only values < 0"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Aggregated value",
+        "histogram": "Evolution over time",
+        "pie-chart": "Pie chart",
+        "table": "Table of all matching entries"
+      }
     }
   }
 }

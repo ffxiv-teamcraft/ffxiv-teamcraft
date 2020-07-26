@@ -1,22 +1,42 @@
 <div *ngIf="display$ | async as display" fxLayout="column" fxLayoutGap="10px">
   <nz-card>
     <div fxLayout="row" fxLayoutAlign="space-between center">
-      <nz-range-picker [ngModel]="timeRange$ | async" (ngModelChange)="timeRange$.next($event)" [nzRanges]="ranges"></nz-range-picker>
+      <nz-range-picker [nzDisabled]="editMode" [ngModel]="timeRange$ | async" (ngModelChange)="timeRange$.next($event)" [nzRanges]="ranges"></nz-range-picker>
       <div fxLayout="row" fxLayoutGap="5px">
-        <button nz-button nzShape="circle">
+        <button *ngIf="editMode" nz-button nzType="primary" [disabled]="display.grid.length >= 5" (click)="addColumn(display.layout)">
+          <i nz-icon nzType="plus" nzTheme="outline"></i>
+          {{'METRICS.Add_new_column' | translate}}
+        </button>
+        <button nz-button nzShape="circle" nzType="primary" *ngIf="!editMode" (click)="startEdit(display.layout);">
           <i nz-icon nzType="edit"></i>
         </button>
-        <button nz-button nzType="primary" nzShape="circle" [disabled]="display.grid.length >= 5" (click)="addColumn()">
-          <i nz-icon nzType="plus" nzTheme="outline"></i>
+        <button nz-button nzShape="circle" nzType="primary" *ngIf="editMode" (click)="saveLayout(display.layout);">
+          <i nz-icon nzType="save" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzShape="circle" *ngIf="editMode" (click)="cancelEditMode(display.layout);">
+          <i nz-icon nzType="rollback" nzTheme="outline"></i>
         </button>
       </div>
     </div>
   </nz-card>
 
   <div fxLayout="row" fxLayoutGap="10px">
-    <div *ngFor="let column of display.grid; trackBy: trackByColumn" fxLayout="column" fxLayoutGap="10px" fxFlex="1 1 {{100 / display.grid.length}}%" class="metrics-column">
-      <div *ngFor="let row of column; trackBy: trackByRow">
-        <app-metric-display [title]="row.title" [data]="row.data" [component]="row.component" [params]="row.params"></app-metric-display>
+    <div *ngFor="let column of display.grid; let columnIndex = index; trackBy: trackByColumn" fxLayout="column" fxLayoutGap="10px"
+         fxFlex="1 1 {{100 / display.grid.length}}%"
+         class="metrics-column">
+      <button class="delete-column-button" *ngIf="editMode && display.grid.length > 1" nz-button nzType="danger" nzShape="circle" nzSize="small" nz-popconfirm
+              [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteColumn(display.layout, columnIndex)">
+        <i nz-icon nzType="delete-column" nzTheme="outline"></i>
+      </button>
+      <div *ngFor="let row of column; let rowIndex=index; trackBy: trackByRow">
+        <app-metric-display *ngIf="!editMode; else editor" [title]="row.title" [data]="row.data" [component]="row.component"
+                            [params]="row.params"></app-metric-display>
+        <ng-template #editor>
+          <app-metrics-display-editor [(entry)]="display.layout.grid[columnIndex][rowIndex]"
+                                      (entryChange)="layout$.next(display.layout)"
+                                      (removeEntry)="deleteEntry(display.layout, columnIndex, rowIndex)">
+          </app-metrics-display-editor>
+        </ng-template>
       </div>
     </div>
   </div>

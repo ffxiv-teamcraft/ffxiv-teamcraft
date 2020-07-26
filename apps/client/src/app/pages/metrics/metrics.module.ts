@@ -4,9 +4,10 @@ import { MetricsComponent } from './metrics/metrics.component';
 import { PlayerMetricsModule } from '../../modules/player-metrics/player-metrics.module';
 import { RouterModule, Routes } from '@angular/router';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
-import { NzButtonModule, NzCardModule, NzDatePickerModule, NzIconModule } from 'ng-zorro-antd';
+import { NzButtonModule, NzCardModule, NzDatePickerModule, NzIconModule, NzPopconfirmModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -30,7 +31,9 @@ const routes: Routes = [
     NzCardModule,
     NzDatePickerModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    TranslateModule,
+    NzPopconfirmModule
   ]
 })
 export class MetricsModule {

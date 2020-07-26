@@ -11,9 +11,19 @@ import { ItemFilter } from './filters/item-filter';
 import { ObtentionFilter } from './filters/obtention-filter';
 import { SourceFilter } from './filters/source-filter';
 import { SpendingFilter } from './filters/spending-filter';
-import { TypeFilter } from './filters/type-filter';
 import { MetricDisplayComponent } from './display/metric-display/metric-display.component';
-import { NzCardModule, NzTableModule } from 'ng-zorro-antd';
+import {
+  NzAutocompleteModule,
+  NzButtonModule,
+  NzCardModule,
+  NzDividerModule,
+  NzFormModule,
+  NzIconModule,
+  NzInputModule, NzInputNumberModule,
+  NzPopconfirmModule,
+  NzSelectModule,
+  NzTableModule
+} from 'ng-zorro-antd';
 import { NoFilter } from './filters/no-filter';
 import { TranslateModule } from '@ngx-translate/core';
 import { HistogramComponent } from './display/histogram/histogram.component';
@@ -23,6 +33,11 @@ import { TableComponent } from './display/table/table.component';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
+import { MetricsDisplayEditorComponent } from './display/metrics-display-editor/metrics-display-editor.component';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FishFilter } from './filters/fish-filter';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 
 const probes: Provider[] = [
@@ -63,12 +78,13 @@ const filters: Provider[] = [
   },
   {
     provide: METRICS_DISPLAY_FILTERS,
-    useClass: TypeFilter,
+    useClass: NoFilter,
     multi: true
   },
   {
     provide: METRICS_DISPLAY_FILTERS,
-    useClass: NoFilter,
+    useClass: FishFilter,
+    deps: [LazyDataService],
     multi: true
   }
 ];
@@ -83,16 +99,28 @@ const filters: Provider[] = [
     NzTableModule,
     PipesModule,
     CoreModule,
-    RouterModule
+    RouterModule,
+    NzDividerModule,
+    NzSelectModule,
+    FormsModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    NzPopconfirmModule,
+    NzIconModule,
+    FlexLayoutModule,
+    NzAutocompleteModule,
+    NzInputNumberModule
   ],
   providers: [
     ...probes,
     ...filters
   ],
   exports: [
-    MetricDisplayComponent
+    MetricDisplayComponent,
+    MetricsDisplayEditorComponent
   ],
-  declarations: [TotalComponent, MetricDisplayComponent, HistogramComponent, PieChartComponent, TableComponent]
+  declarations: [TotalComponent, MetricDisplayComponent, HistogramComponent, PieChartComponent, TableComponent, MetricsDisplayEditorComponent]
 })
 export class PlayerMetricsModule {
 }

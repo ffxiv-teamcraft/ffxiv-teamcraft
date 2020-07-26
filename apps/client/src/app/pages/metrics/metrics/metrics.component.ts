@@ -42,7 +42,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
               component: row.component,
               params: row.params,
               data: logs.filter(log => {
-                return log !== undefined && (!log.type || log.type === row.type) && filterEntry.matches(log, row.filter.args);
+                return log !== undefined && (!log.type || log.type === row.type) && filterEntry.matches(log, ...row.filter.args);
               })
             };
           }).filter(row => row !== null);
@@ -50,6 +50,10 @@ export class MetricsComponent extends TeamcraftPageComponent {
       };
     })
   );
+
+  editMode = false;
+
+  layoutBackup: MetricsDashboardLayout;
 
   constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
               protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[]) {
@@ -67,10 +71,36 @@ export class MetricsComponent extends TeamcraftPageComponent {
     });
   }
 
-  addColumn(): void {
-    const layout = this.layout$.value;
+
+  startEdit(layout: MetricsDashboardLayout): void {
+    this.editMode = true;
+    this.layoutBackup = new MetricsDashboardLayout(JSON.parse(JSON.stringify(layout.grid)));
+  }
+
+  saveLayout(layout: MetricsDashboardLayout): void {
+    //TODO
+    this.editMode = false;
+  }
+
+  cancelEditMode(layout: MetricsDashboardLayout): void {
+    this.editMode = false;
+    this.layout$.next(this.layoutBackup);
+    delete this.layoutBackup;
+  }
+
+  addColumn(layout: MetricsDashboardLayout): void {
     layout.addColumn();
     this.layout$.next(layout);
+  }
+
+  deleteColumn(layout: MetricsDashboardLayout, index: number): void {
+    layout.removeColumn(index);
+    this.layout$.next(layout);
+  }
+
+  deleteEntry(layout: MetricsDashboardLayout, columnIndex: number, rowIndex: number): void {
+    layout.grid[columnIndex].splice(rowIndex, 1);
+    this.layout$.next(new MetricsDashboardLayout(JSON.parse(JSON.stringify(layout.grid))));
   }
 
   trackByColumn(index: number): number {
