@@ -126,6 +126,16 @@ export class ItemComponent extends TeamcraftPageComponent {
             })
           );
         }
+        // If it's a fish, add the ingame drawing image link
+        item.ingameDrawing = item.Icon
+          .split('/')
+          .map(fragment => {
+            if (+fragment > 0 || fragment.endsWith('.png')) {
+              return `07${fragment.slice(2)}`;
+            }
+            return fragment;
+          })
+          .join('/');
         return of(item);
       }),
       shareReplay(1)
@@ -593,7 +603,7 @@ export class ItemComponent extends TeamcraftPageComponent {
               .map(itemId => {
                 return {
                   itemId: +itemId,
-                  recipes: [this.lazyData.getRecipe(itemId)]
+                  recipes: [this.lazyData.getItemRecipeSync(itemId)]
                 };
               })
           });

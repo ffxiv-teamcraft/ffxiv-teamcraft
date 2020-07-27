@@ -1761,7 +1761,7 @@
     "zh": "若斯佩尔被古菩猩猩身上的植物感动了。"
   },
   "66174": {
-    "zh": "狼烟丘的斯维因布鲁斯想要推广魔晶石化的技术。"
+    "zh": "狼烟丘的斯维因布鲁斯想要推广精制魔晶石的技术。"
   },
   "66175": {
     "zh": "狼烟丘的芙·霍芭丝可以传授给冒险者镶嵌魔晶石的手法。"
@@ -7524,7 +7524,7 @@
     "zh": "制革匠行会附近的阿特鲁纳想要制作新标本。"
   },
   "68150": {
-    "zh": "制革匠行会附近的阿鲁特纳想要把标本的评价告诉冒险者。"
+    "zh": "制革匠行会附近的阿特鲁纳想要把标本的评价告诉冒险者。"
   },
   "68151": {
     "zh": "制革匠行会附近的阿特鲁纳想要再次委托给冒险者一件工作。"
@@ -10629,7 +10629,7 @@
     "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的魔城挑战登记负责人正在等待永夏魔城的参加者。"
   },
   "69202": {
-    "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的红莲节烹调委员希尔德拉娜正在等待着烹调大会的参加者。"
+    "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的红莲节食品专员希尔德拉娜正在等待着烹调大会的参加者。"
   },
   "69203": {
     "zh": "※本任务是特定期间内的任务。\n\n太阳海岸的红莲节钓鱼负责人嘉·喃歌正在等待着钓鱼大会的参加者。"
@@ -10855,5 +10855,200 @@
   },
   "69294": {
     "zh": "※本任务是特定期间内的任务。\n　另外只有在罗德里戈被投票选中的服务器中才可以进行此任务。\n\n米·凯特露天剧场的莉赛特·德·瓦伦提昂想把投票结果告诉冒险者。"
+  },
+  "69297": {
+    "zh": "石之家的可露儿有事要告诉冒险者。"
+  },
+  "69298": {
+    "zh": "阿拉米格人居住区的可露儿正在等待冒险者做出决定。"
+  },
+  "69299": {
+    "zh": "观星室的阿尔菲诺想和冒险者同行。"
+  },
+  "69300": {
+    "zh": "北方集合地的莱楠十分感谢冒险者。"
+  },
+  "69301": {
+    "zh": "观星室的水晶公正在考虑下一步的行动。"
+  },
+  "69302": {
+    "zh": "法诺村的雅·修特拉想要顺路去个地方。"
+  },
+  "69303": {
+    "zh": "结誓洞窟的雅·修特拉想要出发前往黑风海。"
+  },
+  "69304": {
+    "zh": "鳍人潮池的于里昂热想要前往俾斯麦那里。"
+  },
+  "69305": {
+    "zh": "迷途羊倌之森的于里昂热想要前往珂露西亚岛。"
+  },
+  "69306": {
+    "zh": "珂露西亚岛的于里昂热想要进行下一步行动。"
+  },
+  "69319": {
+    "zh": "解放军军官在等待着冒险者。"
+  },
+  "69320": {
+    "zh": "古姆拉村的矮人族老爹有事情想要拜托冒险者。"
+  },
+  "69321": {
+    "zh": "机械遗迹坑道的阿诺古想要继续刚才的话题。"
+  },
+  "69323": {
+    "zh": "鼹灵集市的雅尔福特有话想对冒险者说。"
+  },
+  "69324": {
+    "zh": "空无大地的盖娅正在凝视伊甸。"
+  },
+  "69325": {
+    "zh": "空无大地的于里昂热正在考虑接下来要激活的属性。"
+  },
+  "69326": {
+    "zh": "空无大地的桑克瑞德感受到了作战的成果。"
+  },
+  "69327": {
+    "zh": "伊甸内核的盖娅显得有些尴尬。"
+  },
+  "69328": {
+    "zh": "空无大地的琳感动至极。"
+  },
+  "69329": {
+    "zh": "鼹灵集市的雅尔福特好像有话要对冒险者说。"
+  },
+  "69330": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n蛇行枝的担心的母亲很担心儿子的去向。"
+  },
+  "69331": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的茶咕卢利·柯呫栌，想要开始进行洞窟遗迹的第一次调查。"
+  },
+  "69332": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奇塔利的水蛇大人？想要给与冒险者新的启示……好像。"
+  },
+  "69333": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奇塔利的水蛇大人？想要授予冒险者新的启示……好像。"
+  },
+  "69334": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n奇塔利的水蛇大人？想要给与冒险者新的启示……好像。"
+  },
+  "69335": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的茶咕卢利·柯呫栌想要缅怀隆卡的历史。"
+  },
+  "69336": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的其嗒卢利·那嗵栌，主张隆卡皇帝“征服奇塔利族学说”。"
+  },
+  "69337": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的茶咕卢利·柯呫栌，主张隆卡皇帝“保护奇塔利族学说”。"
+  },
+  "69338": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的其嗒卢利·那嗵栌，主张维斯族“狩猎奇塔利族学说”。"
+  },
+  "69339": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的茶咕卢利·柯呫栌，主张奇塔利族“欢迎维斯族学说”。"
+  },
+  "69340": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的其嗒卢利·那嗵栌，主张“鲶鱼兽人灭亡学说”。"
+  },
+  "69341": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n霍啪栌古盘的茶咕卢利·柯呫栌，主张奇塔利族“救助鲶鱼兽人学说”。"
+  },
+  "69342": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙收集挖掘道具的素材。"
+  },
+  "69343": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙收集光源的素材。"
+  },
+  "69344": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙整备据点。"
+  },
+  "69345": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙收集食材。"
+  },
+  "69346": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙在蛇行枝做些事。"
+  },
+  "69347": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要准备些食物给去地下探索的同伴。"
+  },
+  "69348": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙收集香水的素材。"
+  },
+  "69349": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想送东西给维斯族。"
+  },
+  "69350": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，为以防万一想要请冒险者帮忙做准备。"
+  },
+  "69351": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要伤药。"
+  },
+  "69352": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，想要请冒险者帮忙收集传统织物的染料素材。"
+  },
+  "69353": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要清洗污渍。"
+  },
+  "69354": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要修复遗物。"
+  },
+  "69355": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要利用守护石像。"
+  },
+  "69356": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸很在意素材的库存量。"
+  },
+  "69357": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要制作能长期保存的食物。"
+  },
+  "69358": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸很在意采掘队的进展。"
+  },
+  "69359": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸有些在意采掘队。"
+  },
+  "69360": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸很在意石碑上刻着的内容。"
+  },
+  "69361": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸想要维护石碑。"
+  },
+  "69362": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸好像拿到了宝物地图。"
+  },
+  "69363": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸有件事想试一试。"
+  },
+  "69364": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸，非常担心采掘队员的身体状况。"
+  },
+  "69365": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸有些坐立不安。"
+  },
+  "69366": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸很在意道具的强度。"
+  },
+  "69367": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸很在意地底湖。"
+  },
+  "69368": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸有事要告诉冒险者。"
+  },
+  "69369": {
+    "zh": "<UIForeground>F201FC</UIForeground><UIGlow>F201FD</UIGlow>特殊规则： 等级调整（限定职业）<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n※本任务进行时需要与接受任务时的职业相同才可继续进行任务。\n\n霍啪栌古盘的柯呫卢利·帕嗦梸有想要制作的东西。"
+  },
+  "69379": {
+    "zh": "捕鱼人行会的菲尔斯努有小道消息要告诉冒险者。"
+  },
+  "69382": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的干劲十足的兔子想要谈谈彩蛋狩猎的话题。"
+  },
+  "69383": {
+    "zh": "※本任务是特定期间内的任务。\n\n米·凯特露天剧场的吉莉·阿里亚珀很是期待彩蛋狩猎活动的正式开始。"
+  },
+  "69386": {
+    "zh": "※本任务是特定期间内的任务。\n\n乌尔达哈的管家之王正在招募愿意参加活动的人。"
+  },
+  "69387": {
+    "zh": "※本任务是特定期间内的任务。\n\n福隆戴尔药学院的达米利奥好像有什么烦恼。"
   }
 }

@@ -148,6 +148,7 @@ if (options.noHA) {
  * Autoupdater
  */
 
+let autoUpdaterRunning = false
 autoUpdater.on('checking-for-update', () => {
   log.log('Checking for update');
   win && win.webContents.send('checking-for-update', true);
@@ -160,11 +161,19 @@ autoUpdater.on('update-available', () => {
 
 autoUpdater.on('update-not-available', () => {
   log.log('No update found');
+  autoUpdaterRunning = false;
+  win && win.webContents.send('update-available', false);
+});
+
+autoUpdater.on('error', (err) => {
+  log.log('Updater Error', err);
+  autoUpdaterRunning = false;
   win && win.webContents.send('update-available', false);
 });
 
 autoUpdater.on('update-downloaded', () => {
   log.log('Update downloaded');
+  autoUpdaterRunning = false;
   dialog.showMessageBox({
     type: 'info',
     title: 'FFXIV Teamcraft - Update available',
@@ -180,7 +189,12 @@ autoUpdater.on('update-downloaded', () => {
 
 
 ipcMain.on('update:check', () => {
+  if (autoUpdaterRunning) {
+    return;
+  }
+
   log.log('Run update setup');
+  autoUpdaterRunning = true;
   autoUpdater.checkForUpdates();
 });
 
@@ -194,6 +208,7 @@ app.on('ready', () => {
 });
 
 function createWindow() {
+  app.releaseSingleInstanceLock();
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);

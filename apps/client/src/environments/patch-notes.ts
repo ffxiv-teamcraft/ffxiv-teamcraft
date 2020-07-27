@@ -1,14 +1,13 @@
 export const patchNotes = `### Bug Fixes
 
-* **desynth:** fixed salvage level search.
-* **list:** fixed an issue with alarms from lists sometimes not having coords.
-* **list:** fixed an issue with the add item button with WRITE team permission.
-* **lists:** deleting the value in amount input won't treat it as 0 anymore.
-* **log-tracker:** fixed fishing log entries display not updating properly.
-* **pricing:** removed price filling warning when too few items.
+* **db:** fixed reduction results reporter and reduction data.
+* **db:** fixed small display issue in details pages.
+* **list:** fixed "add all alarms for this item" button.
+* **marketboard:** enabled marketboard button for chinese servers accross the entire app.
+* **teams:** fixed default team permission level on lists (Participate).
 
 
 ### Features
 
-* **desktop:** support for korean 5.15 packets.
-* support for korean v5.15 update.`;
+* **data:** update for cn patch-5.2.
+* **desktop:** support for chinese 5.2 update.`;

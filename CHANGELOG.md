@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.2.11"></a>
+## [7.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.10...v7.2.11) (2020-07-21)
+
+
+### Bug Fixes
+
+* **db:** fixed reduction results reporter and reduction data ([2393a99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2393a99))
+* **db:** fixed small display issue in details pages ([a7dbbe4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7dbbe4))
+* **list:** fixed "add all alarms for this item" button ([e4d7708](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4d7708))
+* **marketboard:** enabled marketboard button for chinese servers accross the entire app ([e327f2c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e327f2c))
+* **teams:** fixed default team permission level on lists (Participate) ([4e1e709](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4e1e709))
+
+
+### Features
+
+* **data:** update for cn patch-5.2 ([a5b6888](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5b6888))
+* **desktop:** support for chinese 5.2 update ([b4b679a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4b679a))
+
+
+
+<a name="7.2.10"></a>
+## [7.2.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.9...v7.2.10) (2020-07-16)
+
+
+### Bug Fixes
+
+* **chinese-mb:** fixed pricing autofill, **requires you to link your character again** ([d76ca06](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d76ca06))
+* **desktop:** fixed log autofill not filling in some cases ([49c9872](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49c9872))
+* **pricing:** fixed missing icon in marketboard fill buttons ([cbfc70a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cbfc70a))
+
+
+
 <a name="7.2.8"></a>
 ## [7.2.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.7...v7.2.8) (2020-06-18)
 

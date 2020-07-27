@@ -413,6 +413,10 @@
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
+    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -433,7 +437,8 @@
       "Theme": "테마",
       "Search": "검색",
       "Lists": "목록",
-      "Other": "기타"
+      "Other": "기타",
+      "Sekrit": "Sekrit"
     },
     "REGIONS": {
       "Global": "글로벌서버",
@@ -1157,7 +1162,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
-    "Buy_a_tshirt": "Teamcraft 티셔츠 구매하기",
+    "Buy_merch": "Get Teamcraft merch",
     "Features_header": "시작하기 !",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
@@ -1969,6 +1974,29 @@
       "Min_control": "필요한 최소 가공 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 가공 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
       "Min_cp": "필요한 최소 CP를 입력하면 해당 로테이션에 맞는 [필요한 CP < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
       "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
+    }
+  },
+  "ADMIN": {
+    "Autofix_error": "Autofix this error",
+    "USERS": {
+      "X_characters_linked": "{{amount}} character(s) linked",
+      "Email": "이메일",
+      "Uid": "UID",
+      "No_users_found": "검색 결과 없음",
+      "Integrity_check": "무결성 검사",
+      "SEARCH_MODE": {
+        "Label": "검색 조건",
+        "UID": "UID",
+        "EMAIL": "이메일",
+        "CHARACTER": "Character"
+      },
+      "ACTIONS": {
+        "Profile": "프로필 보기",
+        "Check": "무결성 검사 실행"
+      },
+      "INTEGRITY_CHECK": {
+        "All_characters_valid": "이상없음"
+      }
     }
   }
 }
