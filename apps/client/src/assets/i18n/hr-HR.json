@@ -158,7 +158,8 @@
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "Copy",
     "Open_in_main_window": "Open in main window",
-    "Example": "Example"
+    "Example": "Example",
+    "Change": "Change"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -417,6 +418,7 @@
     "Enable_metrics_capture": "Enable metrics capture",
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Metrics_capture_folder": "Metrics log folder",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1974,6 +1976,27 @@
       "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
       "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
       "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+    },
+    "METRICS": {
+      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
+      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
+      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
+      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
+      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "EDITOR": {
+        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
+        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
+        "Delete_column": "Want to remove a column? Here it is !",
+        "Add_panel": "Click here to add a new panel.",
+        "Reorder": "You can use drag and drop to move panels anywhere you want.",
+        "Data_type": "First of all, select the metric type you want to use.",
+        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Title": "Set a title for your panel",
+        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+      }
     }
   },
   "ADMIN": {
@@ -1996,6 +2019,77 @@
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "All characters linked are valid"
+      }
+    }
+  },
+  "METRICS": {
+    "Title": "Metrics dashboard",
+    "Today": "Today",
+    "This_week": "This week",
+    "This_month": "This month",
+    "Add_new_column": "Add a new column (max 5)",
+    "Default_dashboard": "Default dashboard",
+    "Copy_to_clipboard": "Copy export code to clipboard",
+    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Import_dashboard": "Import a dashboard",
+    "Export_code": "Dashboard export code",
+    "Import_failed": "Dashboard import failed, the code is invalid",
+    "Import_success": "Dashboard imported and selected",
+    "SOURCES": {
+      "UNKNOWN": "Unknown",
+      "GATHERING": "Gathering",
+      "CRAFTING": "Crafting",
+      "FISHING": "Fishing",
+      "VENDOR": "Vendor",
+      "TELEPORT": "Teleport",
+      "MARKETBOARD": "Marketboard"
+    },
+    "TYPES": {
+      "ANY": "Any",
+      "CURRENCY": "Currency",
+      "ITEM": "Item"
+    },
+    "TABLE": {
+      "Type": "Type",
+      "Entry_label": "Label",
+      "Value": "Value",
+      "Source": "Source",
+      "Timestamp": "Timestamp"
+    },
+    "PIE_METRICS": {
+      "Amount": "Amount per item",
+      "Source": "Amount per source"
+    },
+    "EDITOR": {
+      "Data": "Data",
+      "Data_type": "Type",
+      "Filter": "Filter",
+      "Accepted_items": "Accepted items",
+      "Accepted_sources": "Accepted sources",
+      "Display": "Display",
+      "Display_type": "Display component",
+      "Title": "Title",
+      "Font_size": "Font size",
+      "Value_label": "Value label",
+      "Pie_metric": "Metric",
+      "Add_filter": "Add filter",
+      "Operator": "Operator",
+      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
+      "Cannot_delete_default": "You can't delete default layout",
+      "FILTER_TIPS": {
+        "FishFilter": "Accept only fishes coming from fishing spots",
+        "ItemFilter": "Accepts only a given set of items",
+        "NoFilter": "Accepts everything",
+        "ObtentionFilter": "Accepts only values > 0",
+        "SourceFilter": "Accepts only a given set of sources",
+        "SpendingFilter": "Accepts only values < 0",
+        "GilFilter": "Accepts only Gil entries"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Aggregated value",
+        "histogram": "Evolution over time",
+        "pie-chart": "Pie chart",
+        "table": "Table of all matching entries"
       }
     }
   }
