@@ -230,6 +230,10 @@ export class MetricsComponent extends TeamcraftPageComponent {
     return JSON.stringify(row);
   }
 
+  trackByEditorRow(index: number, row: MetricsDisplayEntry): number {
+    return index;
+  }
+
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return of({});
   }

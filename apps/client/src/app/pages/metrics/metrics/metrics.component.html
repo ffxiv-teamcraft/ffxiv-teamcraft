@@ -63,7 +63,7 @@
            fxLayout="column" fxLayoutGap="10px"
            [cdkDropListData]="column"
            (cdkDropListDropped)="moveEntry(editedLayout, columnIndex, $event)">
-        <div *ngFor="let row of column; let rowIndex=index; trackBy: trackByRow">
+        <div *ngFor="let row of column; let rowIndex=index; trackBy: trackByEditorRow">
           <app-metrics-display-editor [(entry)]="editedLayout.grid[columnIndex][rowIndex]"
                                       (removeEntry)="deleteEntry(editedLayout, columnIndex, rowIndex)"
                                       cdkDrag [cdkDragData]="{entry: editedLayout.grid[columnIndex][rowIndex], columnIndex: columnIndex}">
