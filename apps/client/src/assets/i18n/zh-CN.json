@@ -1793,6 +1793,10 @@
       "Message": "此材料能制造的最高物品等级是 {{ilvl}}",
       "Recipe_ilvl": "最低产物等级",
       "Company_workshop": "部队工房"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Items that can be gathered easily",
+      "Message": "Can be gathered at level {{level}} on a non-timed node"
     }
   },
   "VERSION_LOCK": {
@@ -2035,6 +2039,7 @@
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
+    "Nothing_to_show": "No data to display",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
