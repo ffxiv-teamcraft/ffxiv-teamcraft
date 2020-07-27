@@ -18,6 +18,9 @@ export class NameQuestionPopupComponent implements OnInit {
   @Input()
   showOfflineCheckbox = false;
 
+  @Input()
+  placeholder = 'Please_enter_a_name';
+
   public type = 'text';
 
   public control: FormGroup;

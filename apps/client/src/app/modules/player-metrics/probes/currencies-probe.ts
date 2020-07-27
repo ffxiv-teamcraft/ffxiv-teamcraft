@@ -23,7 +23,8 @@ export class CurrenciesProbe extends PlayerMetricProbe {
         }
         return {
           type: MetricType.CURRENCY,
-          data: [event.itemId, event.amount, source]
+          data: [event.itemId, event.amount],
+          source: source
         };
       })
     );

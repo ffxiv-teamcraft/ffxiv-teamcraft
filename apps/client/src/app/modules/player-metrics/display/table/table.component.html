@@ -1,0 +1,19 @@
+<nz-table #dataTable [nzData]="data$ | async">
+  <thead>
+  <tr>
+    <th>{{'METRICS.TABLE.Entry_label' | translate}}</th>
+    <th>{{'METRICS.TABLE.Value' | translate}}</th>
+    <th>{{'METRICS.TABLE.Source' | translate}}</th>
+    <th>{{'METRICS.TABLE.Timestamp' | translate}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of dataTable.data">
+    <!-- TODO: if we ever support other probes than currency and item, this will need a switch/case system -->
+    <td [nzEllipsis]="true"><a routerLink="/db/{{translate.currentLang}}/item/{{row.data[0]}}"></a>{{row.data[0] | itemName | i18n}}</td>
+    <td>{{row.data[1]}}</td>
+    <td>{{('METRICS.SOURCES.' + ProbeSource[row.source]) | translate}}</td>
+    <td>{{(row.timestamp * 1000) | date:'medium'}}</td>
+  </tr>
+  </tbody>
+</nz-table>

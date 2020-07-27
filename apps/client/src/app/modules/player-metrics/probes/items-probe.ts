@@ -22,13 +22,14 @@ export class ItemsProbe extends PlayerMetricProbe {
         if (source === ProbeSource.TELEPORT) {
           source = ProbeSource.UNKNOWN;
         }
-        const data = [event.itemId, event.amount, source];
+        const data = [event.itemId, event.amount];
         if (source === ProbeSource.CRAFTING) {
           data.push(eventPlay4.param1);
         }
         return {
           type: MetricType.ITEM,
-          data: data
+          data: data,
+          source: source
         };
       })
     );

@@ -12,6 +12,9 @@ export class TextQuestionPopupComponent implements OnInit {
   @Input()
   baseText = '';
 
+  @Input()
+  placeholder = '';
+
   public control: FormControl;
 
   constructor(private modalRef: NzModalRef) {

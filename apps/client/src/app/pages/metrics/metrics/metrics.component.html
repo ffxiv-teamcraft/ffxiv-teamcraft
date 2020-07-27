@@ -1,1 +1,93 @@
-<pre>{{gil$ | async | json}}</pre>
+<div *ngIf="display$ | async as display" fxLayout="column" fxLayoutGap="10px">
+  <nz-card>
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <nz-range-picker [nzDisabled]="editMode" [ngModel]="timeRange$ | async" (ngModelChange)="timeRange$.next($event)" [nzRanges]="ranges" tutorialStep="TUTORIAL.METRICS.Welcome_time_range"></nz-range-picker>
+      <div fxLayout="row" fxLayoutGap="5px">
+        <ng-container *ngIf="editMode">
+          <input nz-input [(ngModel)]="editedLayout.name" type="text">
+          <button nz-button nzType="primary" [disabled]="display.grid.length >= 5" (click)="addColumn(editedLayout)" tutorialStep="TUTORIAL.METRICS.EDITOR.Welcome_add_column">
+            <i nz-icon nzType="plus" nzTheme="outline"></i>
+            {{'METRICS.Add_new_column' | translate}}
+          </button>
+          <button nz-button nzShape="circle" nzType="primary" (click)="saveLayout(editedLayout);" tutorialStep="TUTORIAL.METRICS.EDITOR.Save">
+            <i nz-icon nzType="save" nzTheme="outline"></i>
+          </button>
+          <button nz-button nzShape="circle" (click)="cancelEditMode();" tutorialStep="TUTORIAL.METRICS.EDITOR.Revert">
+            <i nz-icon nzType="rollback" nzTheme="outline"></i>
+          </button>
+        </ng-container>
+        <ng-container *ngIf="!editMode">
+          <ng-container *ngIf="layout$ | async as layout">
+            <nz-select [ngModel]="layout.$key" (ngModelChange)="selectLayout($event)" class="select-box" nzShowSearch tutorialStep="TUTORIAL.METRICS.Select_dashboard">
+              <nz-option *ngFor="let layout of allDashboardLayouts$ | async" [nzValue]="layout.$key" [nzLabel]="layout.name | translate"></nz-option>
+            </nz-select>
+            <div nz-tooltip [nzTooltipTitle]="display.layout.isDefault?('METRICS.EDITOR.Cannot_edit_default' | translate):null">
+              <button nz-button nzShape="circle" nzType="primary" [disabled]="display.layout.isDefault" (click)="startEdit(display.layout);" tutorialStep="TUTORIAL.METRICS.Edit_dashboard">
+                <i nz-icon nzType="edit"></i>
+              </button>
+            </div>
+            <button nz-button nzShape="circle" nzType="primary" (click)="createNewLayout();" tutorialStep="TUTORIAL.METRICS.Create_dashboard">
+              <i nz-icon nzType="plus" nzTheme="outline"></i>
+            </button>
+            <div nz-tooltip [nzTooltipTitle]="display.layout.isDefault?('METRICS.EDITOR.Cannot_delete_default' | translate):null">
+              <button nz-button nzShape="circle" nzType="danger" nz-popconfirm [disabled]="display.layout.isDefault"
+                      [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteLayout(layout.$key)"
+                      tutorialStep="TUTORIAL.METRICS.Delete_layout">
+                <i nz-icon nzType="delete" nzTheme="outline"></i>
+              </button>
+            </div>
+            <button nz-tooltip [nzTooltipTitle]="'METRICS.Copy_to_clipboard' | translate" nz-button nzShape="circle" nzType="primary"
+                    [cdkCopyToClipboard]="layout.exportCode" [disabled]="layout.isDefault" (cdkCopyToClipboardCopied)="afterExportCopied()"
+                    tutorialStep="TUTORIAL.METRICS.Export_layout">
+              <i nz-icon nzType="download" nzTheme="outline"></i>
+            </button>
+            <button nz-tooltip [nzTooltipTitle]="'METRICS.Import_dashboard' | translate" nz-button nzShape="circle" (click)="importLayout()"
+                    tutorialStep="TUTORIAL.METRICS.Import_layout">
+              <i nz-icon nzType="upload" nzTheme="outline"></i>
+            </button>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </nz-card>
+
+  <div fxLayout="row" fxLayoutGap="10px" cdkDropListGroup *ngIf="editMode; else readonlyDisplay">
+    <div *ngFor="let column of editedLayout.grid; let columnIndex = index; trackBy: trackByColumn"
+         fxFlex="1 1 {{100 / editedLayout.grid.length}}%"
+         class="metrics-column">
+      <button class="delete-column-button" *ngIf="editedLayout.grid.length > 1" nz-button nzType="danger" nzShape="circle" nzSize="small" nz-popconfirm
+              [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="deleteColumn(editedLayout, columnIndex)" tutorialStep="TUTORIAL.METRICS.EDITOR.Delete_column">
+        <i nz-icon nzType="delete-column" nzTheme="outline"></i>
+      </button>
+      <div cdkDropList
+           fxLayout="column" fxLayoutGap="10px"
+           [cdkDropListData]="column"
+           (cdkDropListDropped)="moveEntry(editedLayout, columnIndex, $event)">
+        <div *ngFor="let row of column; let rowIndex=index; trackBy: trackByEditorRow">
+          <app-metrics-display-editor [(entry)]="editedLayout.grid[columnIndex][rowIndex]"
+                                      (removeEntry)="deleteEntry(editedLayout, columnIndex, rowIndex)"
+                                      cdkDrag [cdkDragData]="{entry: editedLayout.grid[columnIndex][rowIndex], columnIndex: columnIndex}">
+          </app-metrics-display-editor>
+        </div>
+        <div class="new-entry" (click)="addEntry(editedLayout, columnIndex)" fxLayout="row" fxLayoutAlign="center center" tutorialStep="TUTORIAL.METRICS.EDITOR.Add_panel"  tutorialStepAlign="top">
+          <i nz-icon nzType="appstore-add" nzTheme="outline"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #readonlyDisplay>
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div *ngFor="let column of display.grid; trackBy: trackByColumn"
+           fxFlex="1 1 {{100 / display.grid.length}}%"
+           class="metrics-column">
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div *ngFor="let row of column; trackBy: trackByRow">
+            <app-metric-display [title]="row.title" [data]="row.data" [component]="row.component"
+                                [params]="row.params"></app-metric-display>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

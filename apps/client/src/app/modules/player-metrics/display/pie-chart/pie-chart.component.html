@@ -1,0 +1,6 @@
+<ng-container *ngIf="settings.theme as theme">
+  <ngx-charts-advanced-pie-chart
+    [scheme]="{domain: [theme.highlight, theme.primary, theme.trigger]}"
+    [results]="results$ | async">
+  </ngx-charts-advanced-pie-chart>
+</ng-container>

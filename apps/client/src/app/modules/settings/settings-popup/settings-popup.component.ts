@@ -52,6 +52,8 @@ export class SettingsPopupComponent {
 
   noShortcut = false;
 
+  metricsPath = '';
+
   proxyType: '' | 'http' | 'https' | 'socks4' | 'socks5' | 'pac' | 'custom' = '';
 
   proxyValue = '';
@@ -148,6 +150,9 @@ export class SettingsPopupComponent {
     this.ipc.once('no-shortcut:value', (event, value) => {
       this.noShortcut = value;
     });
+    this.ipc.on('metrics:path:value', (event, value) => {
+      this.metricsPath = value;
+    });
     this.ipc.once('proxy-rule:value', (event, value: string) => {
       if (!value) {
         if (this.proxyType !== 'pac') {
@@ -183,8 +188,8 @@ export class SettingsPopupComponent {
     });
     this.ipc.once('proxy-pac:value', (event, value) => {
       if (value) {
-        this.proxyType = 'pac'
-        this.proxyValue = value
+        this.proxyType = 'pac';
+        this.proxyValue = value;
       }
     });
     this.ipc.send('always-on-top:get');
@@ -195,7 +200,12 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-rule:get');
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
+    this.ipc.send('metrics:path:get');
     this.customTheme = this.settings.customTheme;
+  }
+
+  changeMetricsPath(): void {
+    this.ipc.send('metrics:path:set');
   }
 
   setProxy({ rule = '', pac = '' } = {}): void {
