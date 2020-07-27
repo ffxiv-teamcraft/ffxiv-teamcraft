@@ -1793,6 +1793,10 @@
       "Message": "Das höchste iLvl beim Herstellen, in dem dieser Gegenstand benutzt werden kann, ist {{ilvl}}",
       "Recipe_ilvl": "Min. resultierendes iLvl",
       "Company_workshop": "FG-Werkstätte"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Items that can be gathered easily",
+      "Message": "Can be gathered at level {{level}} on a non-timed node"
     }
   },
   "VERSION_LOCK": {
@@ -2035,6 +2039,7 @@
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
+    "Nothing_to_show": "No data to display",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
