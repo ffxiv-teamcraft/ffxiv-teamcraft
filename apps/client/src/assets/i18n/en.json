@@ -2023,6 +2023,7 @@
     }
   },
   "METRICS": {
+    "Title": "Metrics dashboard",
     "Today": "Today",
     "This_week": "This week",
     "This_month": "This month",
