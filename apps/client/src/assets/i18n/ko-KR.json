@@ -1793,6 +1793,10 @@
       "Message": "해당 재료를 사용해서 만들 수 있는 아이템의 최대 아이템레벨은 {{ilvl}} 입니다",
       "Recipe_ilvl": "최소 ilvl(아이템레벨) 결과",
       "Company_workshop": "부대 제작 설비"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Items that can be gathered easily",
+      "Message": "Can be gathered at level {{level}} on a non-timed node"
     }
   },
   "VERSION_LOCK": {
@@ -2035,6 +2039,7 @@
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
+    "Nothing_to_show": "No data to display",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
