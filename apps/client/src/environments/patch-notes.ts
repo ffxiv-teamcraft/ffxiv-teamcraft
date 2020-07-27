@@ -10,4 +10,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **data:** update for cn patch-5.2.
-* **desktop:** support for chinese 5.2 update.`;
+* **desktop:** support for chinese 5.2 update.`;
