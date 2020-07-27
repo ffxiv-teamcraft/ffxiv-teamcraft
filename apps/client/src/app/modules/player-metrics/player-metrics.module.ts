@@ -15,11 +15,13 @@ import { MetricDisplayComponent } from './display/metric-display/metric-display.
 import {
   NzAutocompleteModule,
   NzButtonModule,
-  NzCardModule, NzCheckboxModule,
+  NzCardModule,
+  NzCheckboxModule,
   NzDividerModule,
   NzFormModule,
   NzIconModule,
-  NzInputModule, NzInputNumberModule,
+  NzInputModule,
+  NzInputNumberModule,
   NzPopconfirmModule,
   NzSelectModule,
   NzTableModule
@@ -39,7 +41,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishFilter } from './filters/fish-filter';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import * as fromMetricsDashboards from './+state/metrics-dashboards.reducer';
+import { MetricsDashboardsEffects } from './+state/metrics-dashboards.effects';
+import { MetricsDashboardsFacade } from './+state/metrics-dashboards.facade';
+import { GilFilter } from './filters/gil-filter';
 
 const probes: Provider[] = [
   {
@@ -84,6 +91,11 @@ const filters: Provider[] = [
   },
   {
     provide: METRICS_DISPLAY_FILTERS,
+    useClass: GilFilter,
+    multi: true
+  },
+  {
+    provide: METRICS_DISPLAY_FILTERS,
     useClass: FishFilter,
     deps: [LazyDataService],
     multi: true
@@ -113,17 +125,23 @@ const filters: Provider[] = [
     NzAutocompleteModule,
     NzInputNumberModule,
     DragDropModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    StoreModule.forFeature(
+      fromMetricsDashboards.METRICSDASHBOARDS_FEATURE_KEY,
+      fromMetricsDashboards.reducer
+    ),
+    EffectsModule.forFeature([MetricsDashboardsEffects])
   ],
-  providers: [
-    ...probes,
-    ...filters
-  ],
-  exports: [
+  providers: [...probes, ...filters, MetricsDashboardsFacade],
+  exports: [MetricDisplayComponent, MetricsDisplayEditorComponent],
+  declarations: [
+    TotalComponent,
     MetricDisplayComponent,
+    HistogramComponent,
+    PieChartComponent,
+    TableComponent,
     MetricsDisplayEditorComponent
-  ],
-  declarations: [TotalComponent, MetricDisplayComponent, HistogramComponent, PieChartComponent, TableComponent, MetricsDisplayEditorComponent]
+  ]
 })
 export class PlayerMetricsModule {
 }

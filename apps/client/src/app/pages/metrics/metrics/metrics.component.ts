@@ -6,7 +6,7 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
@@ -14,6 +14,12 @@ import { MetricsDisplayEntry } from '../../../modules/player-metrics/display/met
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MetricType } from '../../../modules/player-metrics/model/metric-type';
 import { ProbeReport } from '../../../modules/player-metrics/model/probe-report';
+import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
+import { MetricsDashboardsFacade } from '../../../modules/player-metrics/+state/metrics-dashboards.facade';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
+import { MetricsDashboardsService } from '../../../core/database/metrics-dashboards.service';
+import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 
 @Component({
   selector: 'app-metrics',
@@ -27,7 +33,11 @@ export class MetricsComponent extends TeamcraftPageComponent {
 
   timeRange$: BehaviorSubject<Date[]> = new BehaviorSubject<Date[]>([startOfDay(new Date()), endOfDay(new Date())]);
 
-  layout$ = new BehaviorSubject(MetricsDashboardLayout.DEFAULT);
+  layout$: Observable<MetricsDashboardLayout> = this.metricsDashboardsFacade.selectedMetricsDashboard$;
+
+  allDashboardLayouts$ = this.metricsDashboardsFacade.allMetricsDashboards$;
+
+  editedLayout: MetricsDashboardLayout;
 
   display$: Observable<MetricsDisplay> = combineLatest([this.metricsService.logs$, this.layout$]).pipe(
     map(([logs, layout]) => {
@@ -55,7 +65,9 @@ export class MetricsComponent extends TeamcraftPageComponent {
   layoutBackup: MetricsDashboardLayout;
 
   constructor(private metricsService: PlayerMetricsService, private translate: TranslateService,
-              protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[]) {
+              protected seoService: SeoService, @Inject(METRICS_DISPLAY_FILTERS) private filters: MetricsDisplayFilter<any>[],
+              private pendingChangesService: PendingChangesService, private metricsDashboardsFacade: MetricsDashboardsFacade,
+              private message: NzMessageService, private dialog: NzModalService) {
     super(seoService);
     this.ranges = {};
     this.ranges[this.translate.instant('METRICS.Today')] = [startOfDay(new Date()), new Date()];
@@ -67,6 +79,44 @@ export class MetricsComponent extends TeamcraftPageComponent {
       filter(([start, end]) => !!start && !!end)
     ).subscribe(([start, end]) => {
       this.metricsService.load(start, end);
+    });
+
+    this.metricsDashboardsFacade.loadAll();
+  }
+
+  afterExportCopied(): void {
+    this.message.success(this.translate.instant('METRICS.Export_copied_to_clipboard'));
+  }
+
+  importLayout(): void {
+    this.dialog.create({
+      nzContent: TextQuestionPopupComponent,
+      nzComponentParams: {
+        placeholder: 'METRICS.Export_code'
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('METRICS.Import_dashboard')
+    }).afterClose
+      .pipe(
+        filter(code => code && code.length > 0),
+        map(code => {
+          const parsed = JSON.parse(code);
+          if (parsed && parsed.grid && parsed.name && Array.isArray(parsed.grid)) {
+            return new MetricsDashboardLayout(parsed.name, parsed.grid);
+          } else {
+            return false;
+          }
+        }),
+        catchError(() => {
+          return of(false);
+        })
+      ).subscribe(layout => {
+      if (!layout) {
+        this.message.error('METRICS.Import_failed');
+      } else {
+        this.metricsDashboardsFacade.createLayout(layout as MetricsDashboardLayout);
+        this.message.success(this.translate.instant('METRICS.Import_success'));
+      }
     });
   }
 
@@ -94,34 +144,55 @@ export class MetricsComponent extends TeamcraftPageComponent {
   }
 
   startEdit(layout: MetricsDashboardLayout): void {
+    if (layout.isDefault) {
+      return;
+    }
+    this.layoutBackup = layout.clone();
+    this.editedLayout = layout;
+    this.pendingChangesService.addPendingChange('metrics-dashboard-edit');
     this.editMode = true;
-    this.layoutBackup = new MetricsDashboardLayout(JSON.parse(JSON.stringify(layout.grid)));
+  }
+
+  selectLayout(key: string): void {
+    this.metricsDashboardsFacade.selectLayout(key);
+  }
+
+  createNewLayout(): void {
+    const newLayout = new MetricsDashboardLayout('New dashboard', MetricsDashboardLayout.DEFAULT.grid);
+    this.metricsDashboardsFacade.createLayout(newLayout);
+  }
+
+  deleteLayout(key: string): void {
+    this.metricsDashboardsFacade.deleteLayout(key);
   }
 
   saveLayout(layout: MetricsDashboardLayout): void {
-    //TODO
     this.editMode = false;
+    this.metricsDashboardsFacade.updateLayout(layout);
+    this.pendingChangesService.removePendingChange('metrics-dashboard-edit');
   }
 
-  cancelEditMode(layout: MetricsDashboardLayout): void {
+  cancelEditMode(): void {
     this.editMode = false;
-    this.layout$.next(this.layoutBackup);
+    this.editedLayout = this.layoutBackup;
     delete this.layoutBackup;
+    this.pendingChangesService.removePendingChange('metrics-dashboard-edit');
   }
 
   addColumn(layout: MetricsDashboardLayout): void {
     layout.addColumn();
-    this.layout$.next(layout);
+    this.editedLayout = layout;
   }
 
   deleteColumn(layout: MetricsDashboardLayout, index: number): void {
     layout.removeColumn(index);
-    this.layout$.next(layout);
+    this.editedLayout = layout;
   }
 
   deleteEntry(layout: MetricsDashboardLayout, columnIndex: number, rowIndex: number): void {
-    layout.grid[columnIndex].splice(rowIndex, 1);
-    this.layout$.next(new MetricsDashboardLayout(JSON.parse(JSON.stringify(layout.grid))));
+    const clone = layout.clone();
+    clone.grid[columnIndex].splice(rowIndex, 1);
+    this.editedLayout = clone;
   }
 
   addEntry(layout: MetricsDashboardLayout, columnIndex: number): void {
@@ -134,7 +205,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
       }],
       title: 'New card'
     });
-    this.layout$.next(layout);
+    this.editedLayout = layout;
   }
 
   moveEntry(layout: MetricsDashboardLayout, columnIndex: number, event: CdkDragDrop<any[]>): void {
@@ -148,7 +219,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
         event.currentIndex
       );
     }
-    this.layout$.next(layout);
+    this.editedLayout = layout;
   }
 
   trackByColumn(index: number): number {
@@ -156,7 +227,7 @@ export class MetricsComponent extends TeamcraftPageComponent {
   }
 
   trackByRow(index: number, row: MetricsDisplayEntry): string {
-    return row.component;
+    return JSON.stringify(row);
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

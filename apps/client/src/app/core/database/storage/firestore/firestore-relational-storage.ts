@@ -10,7 +10,6 @@ import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Query } from '@angular/fire/firestore/interfaces';
-import { Team } from 'apps/client/src/app/model/team/team';
 
 @Injectable()
 export abstract class FirestoreRelationalStorage<T extends DataModel> extends FirestoreStorage<T> {
@@ -40,7 +39,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
         map((snaps: DocumentChangeAction<T>[]) => {
           const rows = snaps
             .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+              const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
               delete snap.payload;
               return valueWithKey;
             });
@@ -69,7 +68,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
           map((snaps: DocumentChangeAction<T>[]) => {
             const elements = snaps
               .map((snap: DocumentChangeAction<any>) => {
-                const valueWithKey: T = <T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+                const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id });
                 delete snap.payload;
                 return valueWithKey;
               });

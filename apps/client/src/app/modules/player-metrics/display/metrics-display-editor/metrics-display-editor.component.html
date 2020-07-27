@@ -1,4 +1,4 @@
-<nz-card [nzTitle]="title">
+<nz-card [nzTitle]="title" tutorialStep="TUTORIAL.METRICS.EDITOR.Reorder" tutorialStepAlign="right">
   <ng-template #title>
     <div fxLayout="row" fxLayoutAlign="space-between center">
       <div>{{entry.title | translate}}</div>
@@ -11,13 +11,13 @@
     <nz-divider nzOrientation="left" [nzText]="'METRICS.EDITOR.Data' | translate"></nz-divider>
     <nz-form-item class="form-row">
       <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Data_type' | translate}}</nz-form-label>
-      <nz-form-control nzSpan="16">
+      <nz-form-control nzSpan="16" tutorialStep="TUTORIAL.METRICS.EDITOR.Data_type">
         <nz-select [(ngModel)]="entry.type" (ngModelChange)="entryChange.emit(entry)">
           <nz-option *ngFor="let type of metricTypes" [nzValue]="type.value" [nzLabel]="('METRICS.TYPES.' + type.label) | translate"></nz-option>
         </nz-select>
       </nz-form-control>
     </nz-form-item>
-    <nz-card *ngFor="let filter of entry.filters; let first = first; let i = index">
+    <nz-card *ngFor="let filter of entry.filters; let first = first; let i = index" tutorialStep="TUTORIAL.METRICS.EDITOR.Filters">
       <div fxLayout="row" fxLayoutAlign="flex-end center" class="delete-filter-div">
         <button nz-button nzType="danger" nzShape="circle" nzSize="small"
                 nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="removeFilter(i)"
@@ -83,13 +83,13 @@
     <nz-divider nzOrientation="left" [nzText]="'METRICS.EDITOR.Display' | translate"></nz-divider>
     <nz-form-item class="form-row">
       <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Title' | translate}}</nz-form-label>
-      <nz-form-control nzSpan="16">
+      <nz-form-control nzSpan="16" tutorialStep="TUTORIAL.METRICS.EDITOR.Title">
         <input nz-input type="text" [(ngModel)]="entry.title" (ngModelChange)="entryChange.emit(entry)">
       </nz-form-control>
     </nz-form-item>
     <nz-form-item class="form-row">
       <nz-form-label nzSpan="8">{{'METRICS.EDITOR.Display_type' | translate}}</nz-form-label>
-      <nz-form-control nzSpan="16">
+      <nz-form-control nzSpan="16" tutorialStep="TUTORIAL.METRICS.EDITOR.Display_type" tutorialStepAlign="top">
         <nz-select [(ngModel)]="entry.component" (ngModelChange)="componentChange(entry)">
           <nz-option *ngFor="let component of components" [nzValue]="component"
                      [nzLabel]="('METRICS.EDITOR.DISPLAY_TYPES.' + component) | translate"></nz-option>

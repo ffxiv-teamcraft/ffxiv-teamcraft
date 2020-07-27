@@ -11,8 +11,6 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
-import { AngularFireFunctions } from '@angular/fire/functions';
-import { compare, getValueByPointer } from 'fast-json-patch';
 import * as firebase from 'firebase/app';
 
 @Injectable({
@@ -40,8 +38,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService,
-              private fns: AngularFireFunctions) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
     super(af, serializer, zone, pendingChangesService);
   }
 
