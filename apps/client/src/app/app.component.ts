@@ -688,6 +688,10 @@ export class AppComponent implements OnInit {
     this.ipc.openOverlay('/list-panel-overlay');
   }
 
+  public openItemSearchOverlay(): void {
+    this.ipc.openOverlay('/item-search-overlay');
+  }
+
   @HostListener('window:beforeunload', ['$event'])
   onBeforeUnload($event: Event): void {
     if (this.dirty && !this.platformService.isDesktop()) {

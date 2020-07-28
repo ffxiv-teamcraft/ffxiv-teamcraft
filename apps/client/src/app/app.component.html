@@ -415,6 +415,11 @@
                     (click)="openListPanelOverlay()">
               <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
             </button>
+            <button nz-button nzShape="circle"
+                    nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
+                    (click)="openItemSearchOverlay()">
+              <i nz-icon nzType="search" nzTheme="outline"></i>
+            </button>
           </div>
 
           <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"

@@ -40,7 +40,7 @@ export class MarketboardPopupComponent implements OnInit {
   });
 
   constructor(private authFacade: AuthFacade, private http: HttpClient, private lazyData: LazyDataService,
-              private settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
+              public settings: SettingsService, private universalis: UniversalisService, private translate: TranslateService) {
   }
 
   ngOnInit() {

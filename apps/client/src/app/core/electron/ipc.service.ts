@@ -151,7 +151,9 @@ export class IpcService {
 
   public set overlayUri(uri: string) {
     this._overlayUri = uri;
-    this.handleOverlayChange();
+    if (this.ready) {
+      this.handleOverlayChange();
+    }
   }
 
   public on(channel: string, cb: EventCallback): void {

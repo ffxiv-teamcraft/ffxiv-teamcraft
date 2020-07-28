@@ -24,8 +24,8 @@ export class MarketboardIconComponent {
   @Input()
   size: NzSizeLDSType = 'small';
 
-  disabled$ = combineLatest([this.authFacade.loggedIn$, this.authFacade.mainCharacter$]).pipe(
-    map(([loggedIn, character]) => !loggedIn)
+  disabled$ = this.authFacade.loggedIn$.pipe(
+    map((loggedIn) => !loggedIn)
   );
 
   constructor(private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,

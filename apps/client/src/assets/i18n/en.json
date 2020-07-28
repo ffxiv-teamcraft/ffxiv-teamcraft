@@ -2097,5 +2097,13 @@
         "table": "Table of all matching entries"
       }
     }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "Open item search overlay",
+    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Placeholder": "Item name",
+    "None_inside_inventory": "This item is not in any inventories.",
+    "Open_in_main_window": "Open in main window",
+    "Marketboard_informations": "Marketboard informations"
   }
 }

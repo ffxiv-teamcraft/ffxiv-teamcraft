@@ -40,6 +40,7 @@ export interface LazyData {
   items: any;
   leves: any;
   maps: any;
+  marketItems: any;
   materias: any;
   mobs: any;
   monsters: any;

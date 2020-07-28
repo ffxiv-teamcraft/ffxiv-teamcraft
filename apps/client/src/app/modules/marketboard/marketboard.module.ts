@@ -21,7 +21,7 @@ import { MarketboardPopupComponent } from './marketboard-popup/marketboard-popup
     NgZorroAntdModule
   ],
   declarations: [MarketboardIconComponent, MarketboardPopupComponent],
-  exports: [MarketboardIconComponent]
+  exports: [MarketboardIconComponent, MarketboardPopupComponent]
 })
 export class MarketboardModule {
 }

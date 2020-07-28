@@ -132,7 +132,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemRowButtonsComponent,
     ListProgressbarComponent
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
 })
 export class ListModule {
 

@@ -749,6 +749,7 @@ ipcMain.on('overlay:set-opacity', (event, data) => {
 
 ipcMain.on('overlay:open-page', (event, data) => {
   win.webContents.send('navigate', data);
+  win.focus();
 });
 
 ipcMain.on('overlay:get-opacity', (event, data) => {

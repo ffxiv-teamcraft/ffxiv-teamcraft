@@ -1,4 +1,4 @@
-<div class="obtentions-container" fxFlex="0 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start flex-start" fxLayoutGap="2px">
+<div class="obtentions-container" [fxFlex]="flex" fxLayout="row wrap" [fxLayoutAlign]="layoutAlign" fxLayoutGap="2px">
   <ng-container *ngFor="let source of sources; trackBy: trackByItemSource">
     <ng-container [ngSwitch]="source.type">
       <a *ngSwitchCase="dataTypes.GARDENING"
