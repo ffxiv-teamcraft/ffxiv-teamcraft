@@ -234,35 +234,38 @@ export class DataService {
     );
 
     if (this.isCompatible) {
-      results$ = this.xivapi.getList(
-        XivapiEndpoint.Item,
-        {
-          ids: this.mapToItemIds(query, this.translate.currentLang as 'ko' | 'zh'),
-          columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
-        }
-      ).pipe(
-        map(items => {
-          return items.Results.filter(item => {
-            if (!onlyCraftable) return true;
+      const ids = this.mapToItemIds(query, this.translate.currentLang as 'ko' | 'zh');
+      if (ids.length > 0) {
+        results$ = this.xivapi.getList(
+          XivapiEndpoint.Item,
+          {
+            ids: ids,
+            columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
+          }
+        ).pipe(
+          map(items => {
+            return items.Results.filter(item => {
+              if (!onlyCraftable) return true;
 
-            const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
-            return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
-              switch (filter.operator) {
-                case '>=':
-                  return matches && item[filter.column] >= filter.value;
-                case '<=':
-                  return matches && item[filter.column] <= filter.value;
-                case '=':
-                  return matches && item[filter.column] === filter.value;
-                case '<':
-                  return matches && item[filter.column] < filter.value;
-                case '>':
-                  return matches && item[filter.column] > filter.value;
-              }
-            }, true);
-          });
-        })
-      );
+              const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
+              return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
+                switch (filter.operator) {
+                  case '>=':
+                    return matches && item[filter.column] >= filter.value;
+                  case '<=':
+                    return matches && item[filter.column] <= filter.value;
+                  case '=':
+                    return matches && item[filter.column] === filter.value;
+                  case '<':
+                    return matches && item[filter.column] < filter.value;
+                  case '>':
+                    return matches && item[filter.column] > filter.value;
+                }
+              }, true);
+            });
+          })
+        );
+      }
     }
 
     const baseUrl = this.baseUrl;
@@ -409,7 +412,7 @@ export class DataService {
     // If the lang is korean, handle it properly to map to item ids.
     if (isKoOrZh) {
       const ids = this.mapToItemIds(name, this.translate.currentLang as 'ko' | 'zh');
-      params = params.set('ids', ids.join(','));
+      params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
     } else {
       params = params.set('text', name);
     }
