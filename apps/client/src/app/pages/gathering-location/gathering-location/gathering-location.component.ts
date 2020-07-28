@@ -117,7 +117,7 @@ export class GatheringLocationComponent {
     const alarm: any = {
       itemId: node.itemId,
       icon: node.icon,
-      duration: node.uptime / 60,
+      duration: node.uptime ? node.uptime / 60 : 0,
       mapId: node.mapId,
       zoneId: node.zoneid,
       type: node.type,

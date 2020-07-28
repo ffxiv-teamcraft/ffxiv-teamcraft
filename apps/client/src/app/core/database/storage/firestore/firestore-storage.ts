@@ -49,7 +49,6 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   }
 
   add(data: T, uriParams?: any): Observable<string> {
-    console.log(data);
     return from(this.firestore.collection(this.getBaseUri(uriParams)).add(this.prepareData(data))).pipe(
       map(res => res.id)
     );
