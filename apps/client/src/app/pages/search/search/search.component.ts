@@ -27,6 +27,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import jobAbbrs from '../../../core/data/sources/job-abbr.json';
+import { KeysOfType } from '../../../core/tools/key-of-type';
 
 @Component({
   selector: 'app-search',
@@ -761,17 +762,17 @@ export class SearchComponent implements OnInit {
     return +item.itemId;
   }
 
-  public adjust(form: keyof FormGroup, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+  public adjust(form: KeysOfType<SearchComponent, FormGroup>, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
     //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
     //If we aren't given an arrayIndex, (we assume) it isn't necessary
     if (arrayName === undefined || arrayIndex === undefined) {
       const newValue: number = Math.min(Math.max(this[form].value[prop] + amount, min), max);
-      this[form].patchValue({[prop]: newValue});
+      this[form].patchValue({ [prop]: newValue });
     } else {
       const newValue: number = Math.min(Math.max(this[form].value[arrayName][arrayIndex][prop] + amount, min), max);
       const newArray: any = this[form].value[arrayName].slice();
       newArray[arrayIndex][prop] = newValue;
-      this[form].patchValue({[arrayName]: newArray});
+      this[form].patchValue({ [arrayName]: newArray });
     }
   }
 }
