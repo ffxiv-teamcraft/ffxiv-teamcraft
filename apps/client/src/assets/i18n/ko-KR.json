@@ -2061,7 +2061,7 @@
       "Type": "유형",
       "Entry_label": "라벨",
       "Value": "값",
-      "Source": "Source",
+      "Source": "출처",
       "Timestamp": "타임 스탬프"
     },
     "PIE_METRICS": {
@@ -2078,31 +2078,31 @@
       "Display_type": "Display component",
       "Title": "제목",
       "Font_size": "글꼴 크기",
-      "Value_label": "Value label",
-      "Pie_metric": "Metric",
+      "Value_label": "라벨 값",
+      "Pie_metric": "통계방식",
       "Add_filter": "필터 추가",
       "Operator": "Operator",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Cannot_edit_default": "기본 레이아웃은 수정할 수 없으며, 새로운 레이아웃은 커스텀 마이징 할 수 있습니다",
+      "Cannot_delete_default": "기본 레이아웃은 삭제할 수 없습니다",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
+        "FishFilter": "낚싯터에서 낚은 물고기만 허용",
         "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
+        "NoFilter": "모두 허용",
+        "ObtentionFilter": "0이상의 값만 허용",
         "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
+        "SpendingFilter": "0이하의 값만 허용",
         "GilFilter": "Accepts only Gil entries"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
-        "histogram": "Evolution over time",
+        "total": "집계값",
+        "histogram": "시간 경과에 따른 변화",
         "pie-chart": "파이 차트",
         "table": "Table of all matching entries"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
+    "Open": "아이템검색 오버레이 열기",
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
     "Placeholder": "아이템 이름",
     "None_inside_inventory": "인벤토리 내에 해당 아이템이 없습니다",
