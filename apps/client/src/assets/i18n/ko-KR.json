@@ -418,7 +418,7 @@
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
-    "Metrics_capture_folder": "Metrics log folder",
+    "Metrics_capture_folder": "메트릭스 로그 폴더",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -1984,11 +1984,11 @@
       "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
+      "Welcome_time_range": "메트릭스 대시보드 페이지에 어서오세요. 여기서 원하는 기간을 설정할 수 있습니다. 기본값은 '당일' 입니다",
+      "Select_dashboard": "여러 대시보드를 동시에 운용하면서 중요한 내용들을 확인할 수 있습니다",
+      "Edit_dashboard": "해당 버튼을 사용하면 편집모드를 사용할 수 있습니다. 이 기능은 기본 대시보드가 아닐 때에만 사용가능합니다",
+      "Create_dashboard": "자신만의 대시보드를 만들고 수정하는 것을 잊지마세요. 수정하지 않으면 그저 기본 대시보드와 똑같을 뿐입니다",
+      "Delete_layout": "만약 대시보드를 삭제하기 원한다면 해당 버튼을 누르세요(꼭 확인할 것! 삭제된 데이터는 되돌릴 수 없습니다).",
       "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
       "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
       "EDITOR": {
