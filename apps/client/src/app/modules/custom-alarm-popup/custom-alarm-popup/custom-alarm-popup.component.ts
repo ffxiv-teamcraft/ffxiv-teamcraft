@@ -18,6 +18,36 @@ export class CustomAlarmPopupComponent implements OnInit {
 
   form: FormGroup;
 
+  /** Spawn are limited to hours (0 to 23) **/
+  private SPAWN_VALIDATOR = {
+    min: 0,
+    max: 23
+  };
+
+  /** Slot are limited from 0 to 8 **/
+  private SLOT_VALIDATOR = {
+    min: 0,
+    max: 8
+  };
+
+  /** Duration is only limited to hours (0 to 23) **/
+  private DURATION_VALIDATOR = {
+    min: 0,
+    max: 23
+  };
+
+  /** X is only limited from 0 to 99 **/
+  private X_VALIDATOR = {
+    min: 0,
+    max: 99
+  };
+
+  /** Y is only limited from 0 to 99 **/
+  private Y_VALIDATOR = {
+    min: 0,
+    max: 99
+  };
+
   public maps$: Observable<any[]>;
 
   /**
@@ -85,7 +115,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       alarm.weathersFrom = data.weathersFrom;
     }
     if (data.x !== undefined || data.y !== undefined) {
-      alarm.coords = { x: data.x || 0, y: data.y || 0, z: data.z || 0 };
+      alarm.coords = {x: data.x || 0, y: data.y || 0, z: data.z || 0};
     }
     if (this.returnAlarm) {
       this.modalRef.close(<Alarm>alarm);
@@ -98,14 +128,14 @@ export class CustomAlarmPopupComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       name: [this.name, Validators.required],
-      spawn: [this.spawn, [Validators.min(0), Validators.max(24)]],
+      spawn: [this.spawn, [Validators.min(this.SPAWN_VALIDATOR.min), Validators.max(this.SPAWN_VALIDATOR.max)]],
       spawnsTwice: [this.spawnsTwice],
-      duration: [this.duration],
-      slot: [this.slot],
+      duration: [this.duration, [Validators.min(this.DURATION_VALIDATOR.min), Validators.max(this.DURATION_VALIDATOR.max)]],
+      slot: [this.slot, [Validators.min(this.SLOT_VALIDATOR.min), Validators.max(this.SLOT_VALIDATOR.max)]],
       type: [this.type, [Validators.min(0), Validators.max(4)]],
       mapId: [this.mapId, Validators.required],
-      x: [this.x],
-      y: [this.y],
+      x: [this.x, [Validators.min(this.X_VALIDATOR.min), Validators.max(this.X_VALIDATOR.max)]],
+      y: [this.y, [Validators.min(this.Y_VALIDATOR.min), Validators.max(this.Y_VALIDATOR.max)]],
       weathers: [this.weathers],
       weathersFrom: [this.weathersFrom]
     });
@@ -122,4 +152,14 @@ export class CustomAlarmPopupComponent implements OnInit {
     );
   }
 
+  public adjust(prop: string, amount: number): void {
+    const oldValue = this.form.value[prop];
+    const newValue = this.form.value[prop] + amount;
+
+    this.form.patchValue({[prop]: newValue});
+
+    if (this.form.controls[prop].invalid) {
+      this.form.patchValue({[prop]: oldValue})
+    }
+  }
 }

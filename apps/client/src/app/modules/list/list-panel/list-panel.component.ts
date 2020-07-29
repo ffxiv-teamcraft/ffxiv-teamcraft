@@ -38,6 +38,9 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 })
 export class ListPanelComponent extends TeamcraftComponent {
 
+  //Bound for number of a single item in a list
+  minAmount = 1;
+
   @Input()
   public set list(l: List) {
     this._list = l;
@@ -405,4 +408,13 @@ export class ListPanelComponent extends TeamcraftComponent {
     return item.id;
   }
 
+  mouseWheelUpAmount(event: any, item: ListRow): void {
+      this.updateAmount(item, ++item.amount);
+  }
+
+  mouseWheelDownAmount(event: any, item: ListRow): void {
+    if (item.amount > this.minAmount) {
+      this.updateAmount(item, --item.amount);
+    }
+  }
 }

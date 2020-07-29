@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MuscleMemory, Simulation } from '@ffxiv-teamcraft/simulator';
-import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { RotationTag } from '../community-rotations-page/rotation-tag';
-import { CommunityRotationsPageComponent } from '../community-rotations-page/community-rotations-page.component';
+import {Component, OnInit} from '@angular/core';
+import {MuscleMemory, Simulation} from '@ffxiv-teamcraft/simulator';
+import {CraftingRotation} from '../../../../model/other/crafting-rotation';
+import {RotationTag} from '../community-rotations-page/rotation-tag';
+import {CommunityRotationsPageComponent} from '../community-rotations-page/community-rotations-page.component';
 
 @Component({
   selector: 'app-community-rotation-popup',
@@ -60,4 +60,7 @@ export class CommunityRotationPopupComponent implements OnInit {
     }
   }
 
+  public adjust(prop: string, amount: number, min: number): void {
+    this.rotation.community[prop] = Math.max(this.rotation.community[prop] + amount, min);
+  }
 }

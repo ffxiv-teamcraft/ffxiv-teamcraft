@@ -5,47 +5,50 @@
         <nz-form-item>
           <nz-form-label nzFor="rlvl">rlvl</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="rlvl" id="rlvl" name="rlvl" type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="rlvl" id="rlvl" name="rlvl" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('rlvl', 1)" (mouseWheelDown)="adjust('rlvl', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="durability">lvl</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="level" id="level"
-                             name="level"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="level" id="level" name="level" [nzMin]="1" [nzMax]="curMaxLevel"
+                             (mouseWheelUp)="adjust('level', 1)" (mouseWheelDown)="adjust('level', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="progress">progress</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="progress" id="progress" name="progress" type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="progress" id="progress" name="progress" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('progress', 1)" (mouseWheelDown)="adjust('progress', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="quality">quality</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="quality" id="quality" name="quality" type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="quality" id="quality" name="quality" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('quality', 1)" (mouseWheelDown)="adjust('quality', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="durability">durability</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="durability" id="durability" name="durability"
-                             type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="durability" id="durability" name="durability" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('durability', 1)" (mouseWheelDown)="adjust('durability', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="suggCraft">Suggested Craftsmanship</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="suggCraft" id="suggCraft" name="suggCraft"
-                             type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="suggCraft" id="suggCraft" name="suggCraft" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('suggCraft', 1)" (mouseWheelDown)="adjust('suggCraft', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-label nzFor="suggCtrl">Suggested Control</nz-form-label>
           <nz-form-control>
-            <nz-input-number formControlName="suggCtrl" id="suggCtrl" name="suggCtrl"
-                             type="text"></nz-input-number>
+            <nz-input-number mouseWheel formControlName="suggCtrl" id="suggCtrl" name="suggCtrl" type="text" [nzMin]="1"
+                             (mouseWheelUp)="adjust('suggCtrl', 1)" (mouseWheelDown)="adjust('suggCtrl', -1)"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
