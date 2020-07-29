@@ -416,7 +416,7 @@
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
-    "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하며 절대 서버에 업로드되지 않으며, 오직 사용자만을 위해 사용됩니다)",
+    "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
     "COLORS": {
@@ -1146,7 +1146,7 @@
     "Purchase_date": "날짜",
     "More_on_universalis": "universalis에서 자세히 보기",
     "Server": "서버",
-    "Last_updated": "Last update"
+    "Last_updated": "최근 갱신"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1797,8 +1797,8 @@
       "Company_workshop": "부대 제작 설비"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Title": "쉽게 채집할 수 있는 아이템",
+      "Message": "{{level}} 레벨 일반 채집노드에서 채집할 수 있습니다"
     }
   },
   "VERSION_LOCK": {
