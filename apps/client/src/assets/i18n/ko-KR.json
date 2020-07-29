@@ -547,8 +547,8 @@
     "Reset_panel": "이 패널에 있는 모든 아이템 초기화하기",
     "Progression_tooltip_materials": "재료 수집: {{amount}}%",
     "Progression_tooltip_items": "아이템 완성: {{amount}}%",
-    "Final_item": "Final item",
-    "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Final_item": "최종 아이템",
+    "Include_final_items_in_main_layout": "기본 레이아웃에 최종 아이템을 포함",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -2017,7 +2017,7 @@
         "Label": "검색 조건",
         "UID": "UID",
         "EMAIL": "이메일",
-        "CHARACTER": "Character"
+        "CHARACTER": "캐릭터"
       },
       "ACTIONS": {
         "Profile": "프로필 보기",
@@ -2040,9 +2040,9 @@
     "Import_dashboard": "대시보드 가져오기",
     "Export_code": "대시보드 내보내기 코드",
     "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
+    "Import_success": "대시보드 선택 및 가져오기",
     "Nothing_to_show": "표시할 데이터가 없습니다",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "TC에서 데이터를 캡쳐한 기간을 선택하고 (설정 -> 데스크탑 -> 메트릭스 캡쳐) 옵션을 활성화시켰는지 확인하세요",
     "SOURCES": {
       "UNKNOWN": "알 수 없음",
       "GATHERING": "채집",
@@ -2074,7 +2074,7 @@
       "Filter": "필터",
       "Accepted_items": "Accepted items",
       "Accepted_sources": "Accepted sources",
-      "Display": "Display",
+      "Display": "표시방식",
       "Display_type": "Display component",
       "Title": "제목",
       "Font_size": "글꼴 크기",
