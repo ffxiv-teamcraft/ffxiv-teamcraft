@@ -415,8 +415,8 @@
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
-    "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
+    "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하며 절대 서버에 업로드되지 않으며, 오직 사용자만을 위해 사용됩니다)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
     "COLORS": {
