@@ -761,7 +761,7 @@ export class SearchComponent implements OnInit {
     return +item.itemId;
   }
 
-  public adjust(form: string, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
+  public adjust(form: keyof FormGroup, prop: string, amount: number, min: number, max: number, arrayName?: string, arrayIndex?: number): void {
     //The arrayName and arrayIndex is for things such as the stat filters, where there can be multiple input rows
     //If we aren't given an arrayIndex, (we assume) it isn't necessary
     if (arrayName === undefined || arrayIndex === undefined) {

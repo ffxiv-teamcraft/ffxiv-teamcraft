@@ -15,7 +15,6 @@
                                [disabled]="(permissionLevel$ | async) < 30"
                                [ngModel]="item.amount"
                                [nzMin]="minAmount"
-                               [nzMax]="maxAmount"
                                class="amount-input"
                                type="number"></nz-input-number>
               <ng-template #publicAmountDisplay>x{{item.amount}}</ng-template>

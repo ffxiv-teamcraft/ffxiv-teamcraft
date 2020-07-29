@@ -36,7 +36,7 @@
       <nz-input-group [nzAddOnBefore]="row.recipe !== undefined?addCrafts:null" [nzCompact]="true"
                       class="amount-input">
         <nz-input-number mouseWheel [(ngModel)]="row.amount" [class.amount-input-field]="row.recipe !== undefined"
-                         [nzMin]="minAmount" [nzMax]="maxAmount"
+                         [nzMin]="minAmount"
                          (mouseWheelUp)="adjust(1)"
                          (mouseWheelDown)="adjust(-1)">
         </nz-input-number>
