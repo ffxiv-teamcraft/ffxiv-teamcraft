@@ -467,10 +467,10 @@
     "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
     "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Community_contributions": "Community-Beiträge",
+    "Fishing_rankings": "Fischer-Ranglisten",
+    "Total_rankings": "Gesamtrangliste",
+    "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -547,12 +547,12 @@
     "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
     "Progression_tooltip_materials": "Erhaltene Materialien: {{amount}}%",
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
-    "Final_item": "Final item",
-    "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Final_item": "Endprodukt",
+    "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
     "SCROLLING": {
-      "Default": "Default",
-      "Only_large": "Only large lists",
-      "Never": "Never"
+      "Default": "Standard",
+      "Only_large": "Nur große Listen",
+      "Never": "Niemals"
     },
     "COLORS": {
       "RED": "Rot",
@@ -982,7 +982,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
+      "Job_not_configured": "Du hast diesen Job noch nicht konfiguriert. Gehe in dein Profil, um ihn zu konfigurieren und die Attribute zu speichern.",
       "Job_not_configured_anonymous": "Bitte gib für eine akkurate Simulation deine Attribute an oder melde dich mit deinem Konto an",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
@@ -1146,7 +1146,7 @@
     "Purchase_date": "Datum",
     "More_on_universalis": "Weitere Infos zu Universalis",
     "Server": "Welt",
-    "Last_updated": "Last update"
+    "Last_updated": "Letzte Aktualisierung"
   },
   "COMMENTS": {
     "Title": "Kommentare"
@@ -1166,7 +1166,7 @@
     "Lists_created_counter": "{{amount}} Listen wurden mit FFXIV Teamcraft erstellt",
     "Support_patreon": "Unterstütze uns auf Patreon",
     "Donation_button": "Mach eine einmalige Spende",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Lege los!",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fang an Dinge herzustellen.",
@@ -1797,8 +1797,8 @@
       "Company_workshop": "FG-Werkstätte"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Title": "Gegenstände die leicht gesammelt werden können",
+      "Message": "Kann auf Stufe {{level}} in einer nicht zeitgebundenen Abbaustelle gesammelt werden"
     }
   },
   "VERSION_LOCK": {
@@ -1984,11 +1984,11 @@
       "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
+      "Welcome_time_range": "Willkommen auf der Metriken-Übersichtsseite. Hier kannst du Zeiträume auswählen, für die die angezeigten Daten angezeigt werden sollen. Standardmäßig geht dieser bis heute.",
+      "Select_dashboard": "Du kannst mehrere Übersichtsseiten haben und leicht zwischen ihnen wechseln, um schnell die Informationen zu sehen, die für dich wichtig sind.",
+      "Edit_dashboard": "Mit dieser Schaltfläche kannst du in den Bearbeitungsmodus wechseln (Nur für Nicht-Standard-Übersichtsseiten verfügbar).",
+      "Create_dashboard": "Erstelle damit einfach deine eigenen Übersichtsseiten. Vergesse aber nicht, diese nach der Erstellung auch zu bearbeiten, denn sonst ist es nur eine Kopie der Standard-Übersichtsseite.",
+      "Delete_layout": "Um eine Übersichtsseite loszuwerden, klicke auf diese Schaltfläche, bestätige und Simsalabim, sie ist weg (Löschung kann nicht rückgängig gemacht werden).",
       "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
       "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
       "EDITOR": {
