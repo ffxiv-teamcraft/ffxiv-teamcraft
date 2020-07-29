@@ -2041,24 +2041,24 @@
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "No data to display",
+    "Nothing_to_show": "표시할 데이터가 없습니다",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
-      "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
-      "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "UNKNOWN": "알 수 없음",
+      "GATHERING": "채집",
+      "CRAFTING": "제작",
+      "FISHING": "낚시",
+      "VENDOR": "상인",
+      "TELEPORT": "텔레포",
+      "MARKETBOARD": "장터게시판"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "모두",
+      "CURRENCY": "화폐",
+      "ITEM": "아이템"
     },
     "TABLE": {
-      "Type": "Type",
+      "Type": "유형",
       "Entry_label": "Label",
       "Value": "Value",
       "Source": "Source",
@@ -2106,7 +2106,7 @@
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
     "Placeholder": "Item name",
     "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Open_in_main_window": "메인 창에서 열기",
+    "Marketboard_informations": "장터게시판 정보"
   }
 }
