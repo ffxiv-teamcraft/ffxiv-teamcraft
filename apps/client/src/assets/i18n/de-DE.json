@@ -1989,32 +1989,32 @@
       "Edit_dashboard": "Mit dieser Schaltfläche kannst du in den Bearbeitungsmodus wechseln (Nur für Nicht-Standard-Übersichtsseiten verfügbar).",
       "Create_dashboard": "Erstelle damit einfach deine eigenen Übersichtsseiten. Vergesse aber nicht, diese nach der Erstellung auch zu bearbeiten, denn sonst ist es nur eine Kopie der Standard-Übersichtsseite.",
       "Delete_layout": "Um eine Übersichtsseite loszuwerden, klicke auf diese Schaltfläche, bestätige und Simsalabim, sie ist weg (Löschung kann nicht rückgängig gemacht werden).",
-      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
-      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "Export_layout": "Du möchtest deine verdammt gut gelungene Übersichtsseite mit deinen Freunden teilen? Dann klicke auf diese Schaltfläche, um den Exportcode für die aktuell ausgewählte Übersichtsseite zu kopieren.",
+      "Import_layout": "Wenn jemand eine Übersichtsseite mit dir durch einen Exportcode teilt, verwende diese Schaltfläche, um sie zu importieren.",
       "EDITOR": {
-        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
-        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Welcome_add_column": "Willkommen beim Übersichtsseiten-Editor. Mit dieser Schaltfläche kannst du Spalten hinzufügen (bis zu 5).",
+        "Save": "Vergiss nicht die Änderungen zu speichern, nachdem du deine Übersichtsseite bearbeitet hast.",
+        "Revert": "Oder, sollt dir nicht gefallen, was du geändert hast, verwende diese Schaltfläche, um zum ursprünglichen Layout zurückzukehren, dass du hattest, bevor du es bearbeitet hast.",
+        "Delete_column": "Möchtest du eine Spalte entfernen? Hier kannst du es!",
+        "Add_panel": "Klicke hier, um ein neues Element zu erstellen.",
+        "Reorder": "Per Drag & Drop kannst du die Elemente überall dahin schieben, wo du sie haben willst.",
+        "Data_type": "Wähle zuerst den Typ der Metrik aus, den du verwenden möchtest.",
+        "Filters": "Filtere anschließend die Daten, damit nur das angezeigt wird, was du auch sehen möchtest. Hierbei hast du auch die Möglichkeit Filter zu kombinieren und zu invertieren.",
+        "Title": "Lege einen Titel für das Element fest",
+        "Display_type": "Wähle die Komponente aus, die du verwenden möchtest, um deine Daten anzuzeigen und füge entsprechend die Eingaben hinzu."
       }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "Diesen Fehler automatisch korrigieren",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
-      "Email": "Email",
+      "X_characters_linked": "{{amount}} Charakter(e) verknüpft",
+      "Email": "E-Mail",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "Keine Benutzer gefunden",
+      "Integrity_check": "Integritätsprüfung",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "Suchmodus",
         "UID": "UID",
         "EMAIL": "Email",
         "CHARACTER": "Character"
