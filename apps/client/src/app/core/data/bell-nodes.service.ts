@@ -71,7 +71,6 @@ export class BellNodesService {
   }
 
   getAllNodes(...items: any[]): any[] {
-
     const nodesFromPositions = [].concat.apply([], items.map(item => {
       const availableNodeIds = item.nodes && item.nodes.length > 0 ? item.nodes : Object.keys(this.lazyData.data.nodes)
         .filter(key => {
@@ -231,6 +230,13 @@ export class BellNodesService {
             if (spot.transition) {
               result.weathersFrom = spot.transition.map(w => this.l12n.getWeatherId(w));
             }
+
+            if (+result.id === result.itemId) {
+              const fromPos = nodesFromPositions.find(n => n.zoneid === result.zoneid);
+              result.id = fromPos?.id;
+              result.nodeId = fromPos?.id;
+            }
+
             return result;
           }
           return undefined;
@@ -293,8 +299,8 @@ export class BellNodesService {
         }
         if (!(finalNodes || []).some(node => node.itemId === row.itemId
           && node.mapId === row.mapId
-          && Math.floor(row.x) === Math.floor(node.x)
-          && Math.floor(row.y) === Math.floor(node.y))
+          && Math.floor(row.x / 5) === Math.floor(node.x / 5)
+          && Math.floor(row.y / 5) === Math.floor(node.y / 5))
           && row.mapId !== undefined) {
           finalNodes.push(row);
         }
