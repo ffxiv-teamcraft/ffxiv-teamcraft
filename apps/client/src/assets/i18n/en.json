@@ -547,6 +547,8 @@
     "Reset_panel": "Reset all the items of this panel",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Final_item": "Final item",
+    "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",

@@ -18,7 +18,8 @@
         <i nz-icon nzType="delete"></i>
       </button>
       <div class="spacer"></div>
-      <button (cbOnSuccess)="layoutCopied()" [cbContent]="layout.base64" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate" ngxClipboard nz-button
+      <button (cbOnSuccess)="layoutCopied()" [cbContent]="layout.base64" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate" ngxClipboard
+              nz-button
               nz-tooltip>
         <i nz-icon nzType="upload"></i>
       </button>
@@ -50,6 +51,12 @@
         </label>
       </div>
       <div fxLayout="column" fxLayoutGap="10px">
+        <label [(ngModel)]="layout.includeRecipesInItems" (ngModelChange)="dirty = true"
+               [nzDisabled]="layout.default" nz-checkbox>
+          {{"LIST.Include_final_items_in_main_layout" | translate}}
+        </label>
+      </div>
+      <div fxLayout="column" fxLayoutGap="10px">
         <label [(ngModel)]="layout.showInventory" (ngModelChange)="dirty = true"
                [nzDisabled]="layout.default" nz-checkbox>
           {{"LIST.Always_show_inventory" | translate}}
@@ -68,7 +75,7 @@
         </label>
       </div>
     </nz-card>
-    <nz-card [nzTitle]="'Items' | translate">
+    <nz-card [nzTitle]="'Items' | translate" *ngIf="!layout.includeRecipesInItems">
       <div fxLayout="column" fxLayoutGap="10px">
         <div class="final-items-ordering">
           {{'LIST_DETAILS.LAYOUT.Order_by' | translate}}

@@ -52,17 +52,19 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
     }
-    clone.items = (clone.items || []).map(item => {
-      if (item.custom) {
-        return item;
-      }
-      return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
-        if (property in item) {
-          cleanedItem[property] = item[property];
+    clone.items = (clone.items || [])
+      .filter(item => !item.finalItem)
+      .map(item => {
+        if (item.custom) {
+          return item;
         }
-        return cleanedItem;
-      }, {}) as ListRow;
-    });
+        return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
+          if (property in item) {
+            cleanedItem[property] = item[property];
+          }
+          return cleanedItem;
+        }, {}) as ListRow;
+      });
     clone.finalItems = (clone.finalItems || []).map(item => {
       if (item.custom) {
         return item;

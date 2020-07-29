@@ -60,9 +60,16 @@ export class LayoutsFacade {
           } else {
             unfilteredRows = (list.items || []).filter(row => row.hidden !== true);
           }
+          if (layout.includeRecipesInItems) {
+            unfilteredRows.push(...list.finalItems.map(i => {
+              i.finalItem = true;
+              return i;
+            }));
+          }
           return {
             crystalsPanel: !layout.considerCrystalsAsItems,
             showInventory: layout.showInventory,
+            showFinalItemsPanel: !layout.includeRecipesInItems,
             rows: layout.rows
               .filter(row => row !== undefined)
               .sort((a, b) => {

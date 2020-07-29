@@ -4,7 +4,7 @@ import { ListsFacade } from '../../+state/lists.facade';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
-import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
@@ -48,7 +48,6 @@ import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-row',
@@ -60,9 +59,10 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   private buttonsCache = {};
 
-  private _item$: Subject<ListRow> = new Subject<ListRow>();
+  private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
 
   public item$: Observable<ListRow> = this._item$.pipe(
+    filter(item => item !== null),
     map(item => {
       const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
       const vendors = getItemSource(item, DataType.VENDORS);
@@ -82,13 +82,17 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.handleAlarms(item);
   }
 
+  get item(): ListRow {
+    return this._item$.value;
+  }
+
   @Input()
   public set finalItem(final: boolean) {
     this.finalItem$.next(final);
   }
 
   public get finalItem(): boolean {
-    return this.finalItem$.value;
+    return this.finalItem$.value || this.item.finalItem;
   }
 
   @Input()
