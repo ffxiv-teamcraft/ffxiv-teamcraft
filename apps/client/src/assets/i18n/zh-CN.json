@@ -547,6 +547,8 @@
     "Reset_panel": "重置此面板的所有物品",
     "Progression_tooltip_materials": "已获得材料：{{amount}}%",
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
+    "Final_item": "Final item",
+    "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -1142,9 +1144,9 @@
     "Unit_price": "单价",
     "History": "历史记录",
     "Purchase_date": "日期",
-    "More_on_mogboard": "在 MogBoard 上查看",
     "More_on_universalis": "更多信息请见universalis",
-    "Server": "服务器"
+    "Server": "服务器",
+    "Last_updated": "Last update"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -2040,6 +2042,7 @@
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
     "Nothing_to_show": "No data to display",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
