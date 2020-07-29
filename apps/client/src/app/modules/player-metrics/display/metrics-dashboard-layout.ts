@@ -5,67 +5,32 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 export class MetricsDashboardLayout extends DataWithPermissions {
 
   public static get DEFAULT(): MetricsDashboardLayout {
-    return new MetricsDashboardLayout('METRICS.Default_dashboard', [
-      [
-        {
-          component: 'total',
-          type: MetricType.CURRENCY,
-          filters: [{
-            name: 'ItemFilter',
-            args: [1, 2, 3, 4, 5, 6]
-          }],
-          params: {
-            currencyName: 'Gil',
-            fontSize: '24px'
-          },
-          title: 'Total Gil benefit'
-        },
-        {
-          component: 'table',
-          type: MetricType.ANY,
-          filters: [{
-            name: 'SourceFilter',
-            args: [0, 1, 2, 3]
-          }],
-          title: 'Events recorded'
-        }
-      ],
-      [
-        {
-          component: 'histogram',
-          type: MetricType.CURRENCY,
-          filters: [{
-            name: 'ObtentionFilter',
-            args: []
-          }],
-          title: 'Gains over time'
-        }],
-      [
-        {
-          component: 'table',
-          type: MetricType.CURRENCY,
-          filters: [
-            {
-              name: 'SpendingFilter',
-              args: []
-            }
-          ],
-          title: 'Spendings'
-        },
-        {
-          component: 'pie-chart',
-          type: MetricType.CURRENCY,
-          filters: [{
-            name: 'ObtentionFilter',
-            args: []
-          }],
-          title: 'Earning Sources',
-          params: {
-            metric: 'source'
-          }
-        }
-      ]
-    ], true);
+    return new MetricsDashboardLayout('METRICS.Default_dashboard', [[{
+        component: 'total',
+        type: 0,
+        filters: [{ name: 'GilFilter', args: [] }],
+        params: { currencyName: 'Gil', fontSize: '24px' },
+        title: 'Total Gil benefit'
+      }, {
+        component: 'pie-chart',
+        type: 0,
+        filters: [{ name: 'SpendingFilter', args: [] }, { gate: 'AND', name: 'GilFilter', args: [] }],
+        title: 'Gil Spendings',
+        params: { metric: 'source' }
+      }, { component: 'table', type: -1, filters: [{ name: 'NoFilter', args: [] }], title: 'Full entries record' }], [{
+        component: 'pie-chart',
+        type: 1,
+        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [1, 3] }],
+        title: 'Items gathered',
+        params: { metric: 'amount' }
+      }, {
+        component: 'pie-chart',
+        type: 1,
+        filters: [{ name: 'SpendingFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [2] }],
+        title: 'Items crafted',
+        params: { metric: 'amount' }
+      }]]
+      , true);
   }
 
   constructor(public name: string, public grid: MetricsDisplayEntry[][] = [[]], public isDefault = false) {

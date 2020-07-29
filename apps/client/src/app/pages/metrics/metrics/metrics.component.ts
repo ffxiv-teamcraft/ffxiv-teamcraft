@@ -6,7 +6,7 @@ import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
-import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
+import { catchError, filter, map, takeUntil } from 'rxjs/operators';
 import { MetricsDashboardLayout } from '../../../modules/player-metrics/display/metrics-dashboard-layout';
 import { MetricsDisplay } from '../metrics-display';
 import { METRICS_DISPLAY_FILTERS, MetricsDisplayFilter } from '../../../modules/player-metrics/filters/metrics-display-filter';
@@ -17,8 +17,6 @@ import { ProbeReport } from '../../../modules/player-metrics/model/probe-report'
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
 import { MetricsDashboardsFacade } from '../../../modules/player-metrics/+state/metrics-dashboards.facade';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { MetricsDashboardsService } from '../../../core/database/metrics-dashboards.service';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 
 @Component({
@@ -55,7 +53,8 @@ export class MetricsComponent extends TeamcraftPageComponent {
               })
             };
           }).filter(row => row !== null);
-        })
+        }),
+        empty: logs.length === 0
       };
     })
   );

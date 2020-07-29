@@ -32,6 +32,8 @@ export class MarketboardPopupComponent implements OnInit {
 
   server$: Observable<string>;
 
+  lastUpdated$: Observable<number>;
+
   error = false;
 
   sort$: BehaviorSubject<{ key: string, value: 'ascend' | 'descend' }> = new BehaviorSubject<{ key: string, value: any }>({
@@ -122,6 +124,10 @@ export class MarketboardPopupComponent implements OnInit {
           });
       }),
       shareReplay(1)
+    );
+
+    this.lastUpdated$ = data$.pipe(
+      map(res => res.Updated)
     );
   }
 

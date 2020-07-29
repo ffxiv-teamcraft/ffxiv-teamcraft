@@ -5,6 +5,7 @@ import { PlayerMetricsModule } from '../../modules/player-metrics/player-metrics
 import { RouterModule, Routes } from '@angular/router';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import {
+  NzAlertModule,
   NzButtonModule,
   NzCardModule,
   NzDatePickerModule,
@@ -51,7 +52,8 @@ const routes: Routes = [
     NzSelectModule,
     NzInputModule,
     ClipboardModule,
-    TutorialModule
+    TutorialModule,
+    NzAlertModule
   ]
 })
 export class MetricsModule {

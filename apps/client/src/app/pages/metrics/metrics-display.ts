@@ -9,4 +9,5 @@ export interface MetricsDisplay {
     data: ProbeReport[];
     params: any;
   }[][];
+  empty: boolean;
 }

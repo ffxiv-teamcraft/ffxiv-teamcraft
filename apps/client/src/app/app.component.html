@@ -240,6 +240,13 @@
                   <i nz-icon nzType="appstore"></i>
                   <span class="nav-text">{{'INVENTORY.Title' | translate}}</span>
                 </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
+                   routerLinkActive="ant-menu-item-selected" *ngIf="platformService.isDesktop()">
+                  <span>
+                      <i nz-icon nzType="stock"></i>
+                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>
+                  </span>
+                </a>
               </li>
 
               <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
@@ -360,13 +367,6 @@
                   <span>
                       <i nz-icon nzType="hourglass"></i>
                       <span class="nav-text">{{'ALARMS.REALTIME.Reset_timers' | translate}}</span>
-                  </span>
-                </a>
-                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
-                   routerLinkActive="ant-menu-item-selected" *ngIf="platformService.isDesktop()">
-                  <span>
-                      <i nz-icon nzType="stock"></i>
-                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>
                   </span>
                 </a>
               </li>

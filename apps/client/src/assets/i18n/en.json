@@ -1144,9 +1144,9 @@
     "Unit_price": "Unit price",
     "History": "History",
     "Purchase_date": "Date",
-    "More_on_mogboard": "More details on mogboard",
     "More_on_universalis": "More details on universalis",
-    "Server": "Server"
+    "Server": "Server",
+    "Last_updated": "Last update"
   },
   "COMMENTS": {
     "Title": "Comments"
@@ -2042,6 +2042,7 @@
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
     "Nothing_to_show": "No data to display",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",

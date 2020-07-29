@@ -1,6 +1,7 @@
 <nz-alert *ngIf="error; else content" [nzMessage]="'MARKETBOARD.Error' | translate" nzShowIcon
           nzType="error"></nz-alert>
 <ng-template #content>
+  <div *ngIf="lastUpdated$ | async as lastUpdated" class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium'}}</i></div>
   <div fxLayout="column" fxLayoutGap="15px">
     <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
       <thead (nzSortChange)="sort($event)" nzSingleSort>

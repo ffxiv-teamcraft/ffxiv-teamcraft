@@ -39,7 +39,8 @@ export class UniversalisService {
               ID: res.worldID,
               ItemId: res.itemID,
               History: [],
-              Prices: []
+              Prices: [],
+              Updated: res.lastUploadTime
             };
             item.Prices = res.listings.map(listing => {
               return {
