@@ -782,9 +782,10 @@ if (hasTodo('aetherstream')) {
 if (hasTodo('maps')) {
   const maps = {};
   combineLatest([
-    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
-    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ', null, 'LGB Territories')
-  ]).subscribe(([xivapiMaps, territories]) => {
+    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
+    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ'),
+    aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name'),
+  ]).subscribe(([xivapiMaps, territories, contentFinderConditions]) => {
     xivapiMaps.forEach(mapData => {
       const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
       const offsetZ = territory && +territory.OffsetZ;
@@ -803,7 +804,8 @@ if (hasTodo('maps')) {
         zone_id: mapData.PlaceNameSubTargetID,
         size_factor: mapData.SizeFactor,
         territory_id: mapData.TerritoryTypeTargetID,
-        index: mapData.MapIndex
+        index: mapData.MapIndex,
+        dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name))
       };
     });
   }, null, () => {

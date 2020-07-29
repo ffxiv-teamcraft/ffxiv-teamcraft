@@ -25,6 +25,8 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
+import { Drop } from '../model/drop';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -47,7 +49,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public get noScroll(): boolean {
-    switch(this.settings.listScrollingMode){
+    switch (this.settings.listScrollingMode) {
       case 'default':
         return false;
       case 'large':
@@ -79,6 +81,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasNavigationMap = false;
 
+  hasNavigationMapForZone: { [index: number]: boolean } = {};
+
   permissionLevel$: Observable<PermissionLevel> = this.listsFacade.selectedListPermissionLevel$;
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
@@ -93,7 +97,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
               private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService) {
+              public settings: SettingsService, private lazyData: LazyDataService) {
   }
 
   addItems(): void {
@@ -150,8 +154,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
   }
 
-  getData(row: ListRow, type: DataType, isObject = false): any {
-    return getItemSource(row, type, isObject);
+  getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
+    return getItemSource<T>(row, type, isObject);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -163,15 +167,30 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
     if (this.displayRow && this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
+      this.hasNavigationMapForZone = this.zoneBreakdown.rows.reduce((res, zbRow) => {
+        return {
+          ...res,
+          [zbRow.zoneId]: this.hasPositionsInRows(zbRow.items, zbRow.zoneId)
+        };
+      }, {});
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
-    this.hasNavigationMap = this.displayRow.rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = this.getData(row, DataType.DROPS).some(d => d.position && (d.position.x !== undefined));
-      const hasNodesWithPosition = (this.getData(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0);
-      const hasVendorsWithPosition = this.getData(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined));
-      const hasTradesWithPosition = this.getData(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined));
+    this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
+  }
+
+  private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
+    return rows.reduce((hasMap, row) => {
+      const hasMonstersWithPosition = this.getData<Drop[]>(row, DataType.DROPS).some(d => {
+        return d.position
+          && (d.position.x !== undefined)
+          && !this.lazyData.data.maps[d.mapid].dungeon
+          && (!zoneId || d.zoneid === zoneId);
+      });
+      const hasNodesWithPosition = (this.getData(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId));
+      const hasVendorsWithPosition = this.getData(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
+      const hasTradesWithPosition = this.getData(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId)));
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
     }, false);
   }
