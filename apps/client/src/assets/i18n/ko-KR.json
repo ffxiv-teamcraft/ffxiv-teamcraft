@@ -2091,19 +2091,19 @@
         "ObtentionFilter": "0이상의 값만 허용",
         "SourceFilter": "Accepts only a given set of sources",
         "SpendingFilter": "0이하의 값만 허용",
-        "GilFilter": "Accepts only Gil entries"
+        "GilFilter": "길(Gil) 만 허용"
       },
       "DISPLAY_TYPES": {
         "total": "집계값",
         "histogram": "시간 경과에 따른 변화",
         "pie-chart": "파이 차트",
-        "table": "Table of all matching entries"
+        "table": "일치하는 모든 항목의 표"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
     "Open": "아이템검색 오버레이 열기",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Intro_message": "소지품이나 장터게시판에 있는 아이템의 정보를 검색할 수 있습니다",
     "Placeholder": "아이템 이름",
     "None_inside_inventory": "인벤토리 내에 해당 아이템이 없습니다",
     "Open_in_main_window": "메인 창에서 열기",
