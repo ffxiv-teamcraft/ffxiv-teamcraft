@@ -440,7 +440,7 @@
       "Search": "Suche",
       "Lists": "Listen",
       "Other": "Anderes",
-      "Sekrit": "Sekrit"
+      "Sekrit": "Geheim"
     },
     "REGIONS": {
       "Global": "Global",
@@ -466,7 +466,7 @@
     "Veteran": "Veteran",
     "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
-    "Open_public_profile": "Open public profile",
+    "Open_public_profile": "Öffentliches Profil öffnen",
     "Community_contributions": "Community-Beiträge",
     "Fishing_rankings": "Fischer-Ranglisten",
     "Total_rankings": "Gesamtrangliste",
@@ -2016,71 +2016,71 @@
       "SEARCH_MODE": {
         "Label": "Suchmodus",
         "UID": "UID",
-        "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "EMAIL": "E-Mail",
+        "CHARACTER": "Charakter"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "Profil öffnen",
+        "Check": "Integrität prüfen"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "Alle verlinkten Charaktere sind gültig"
       }
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
-    "Add_new_column": "Add a new column (max 5)",
-    "Default_dashboard": "Default dashboard",
-    "Copy_to_clipboard": "Copy export code to clipboard",
-    "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "No data to display",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Title": "Metriken-Übersicht",
+    "Today": "Heute",
+    "This_week": "Diese Woche",
+    "This_month": "Dieser Monat",
+    "Add_new_column": "Neue Spalte hinzufügen (max 5)",
+    "Default_dashboard": "Standard-Übersichtsseite",
+    "Copy_to_clipboard": "Exportcode in die Zwischenablage kopieren",
+    "Export_copied_to_clipboard": "Exportcode wurde in die Zwischenablage kopiert",
+    "Import_dashboard": "Übersichtsseite importieren",
+    "Export_code": "Übersichtsseiten-Exportcode",
+    "Import_failed": "Import der Übersichtsseite fehlgeschlagen. Der Code ist ungültig.",
+    "Import_success": "Übersichtsseite importiert und ausgewählt",
+    "Nothing_to_show": "Keine anzuzeigenden Daten",
+    "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
-      "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
-      "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "UNKNOWN": "Unbekannt",
+      "GATHERING": "Sammeln",
+      "CRAFTING": "Herstellen",
+      "FISHING": "Fischen",
+      "VENDOR": "Verkäufer",
+      "TELEPORT": "Teleportieren",
+      "MARKETBOARD": "Marktbrett"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "Alle",
+      "CURRENCY": "Währung",
+      "ITEM": "Gegenstand"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
-      "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Type": "Typ",
+      "Entry_label": "Bezeichner",
+      "Value": "Wert",
+      "Source": "Quelle",
+      "Timestamp": "Zeitpunkt"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "Anzahl pro Gegenstand",
+      "Source": "Anzahl pro Quelle"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
+      "Data": "Daten",
+      "Data_type": "Typ",
       "Filter": "Filter",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
-      "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
+      "Accepted_items": "Akzeptierte Gegenstände",
+      "Accepted_sources": "Akzeptierte Quellen",
+      "Display": "Anzeige",
+      "Display_type": "Anzeige-Komponente",
+      "Title": "Titel",
+      "Font_size": "Schriftgröße",
+      "Value_label": "Werte-Bezeichnung",
+      "Pie_metric": "Metrik",
+      "Add_filter": "Filter hinzufügen",
       "Operator": "Operator",
       "Cannot_edit_default": "Du kannst das Standardlayout nicht bearbeiten. Erstelle stattdessen ein neues Layout, um dieses anzupassen",
       "Cannot_delete_default": "Das Standardlayout kann nicht gelöscht werden",
@@ -2095,18 +2095,18 @@
       },
       "DISPLAY_TYPES": {
         "total": "Aggregierte Werte",
-        "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
-        "table": "Table of all matching entries"
+        "histogram": "Entwicklung im Laufe der Zeit",
+        "pie-chart": "Kuchendiagramm",
+        "table": "Tabelle aller passenden Einträge"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Open": "Overlay für die Gegenstände-Suche öffnen",
+    "Intro_message": "Suche nach einem Gegenstand, um Detail-, Inventar- und Marktbrett-Informationen anzusehen",
+    "Placeholder": "Gegenstandsname",
+    "None_inside_inventory": "Dieser Gegenstand ist in keinem Inventar.",
+    "Open_in_main_window": "Im Hauptfenster öffnen",
+    "Marketboard_informations": "Marktbrett-Informationen"
   }
 }
