@@ -2082,19 +2082,19 @@
       "Pie_metric": "Metric",
       "Add_filter": "Add filter",
       "Operator": "Operator",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Cannot_edit_default": "Du kannst das Standardlayout nicht bearbeiten. Erstelle stattdessen ein neues Layout, um dieses anzupassen",
+      "Cannot_delete_default": "Das Standardlayout kann nicht gelöscht werden",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "FishFilter": "Nur Fische akzeptieren, die aus Fischvorkommen stammen",
+        "ItemFilter": "Nur eine bestimmte Gruppe von Gegenständen akzeptieren",
+        "NoFilter": "Alles akzeptieren",
+        "ObtentionFilter": "Nur Werte > 0 akzeptieren",
+        "SourceFilter": "Nur eine bestimmte Gruppe von Quellen akzeptieren",
+        "SpendingFilter": "Nur Werte < 0 akzeptieren",
+        "GilFilter": "Nur Gil-Einträge akzeptieren"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
+        "total": "Aggregierte Werte",
         "histogram": "Evolution over time",
         "pie-chart": "Pie chart",
         "table": "Table of all matching entries"
