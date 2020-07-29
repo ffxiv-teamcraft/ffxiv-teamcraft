@@ -547,6 +547,8 @@
     "Reset_panel": "Сбросить все предметы этой панели",
     "Progression_tooltip_materials": "Собрано материалов: {{amount}}%",
     "Progression_tooltip_items": "Предметов сделано: {{amount}}%",
+    "Final_item": "Final item",
+    "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "По умолчанию",
       "Only_large": "Только крупные списки",
@@ -1142,9 +1144,9 @@
     "Unit_price": "Цена единицы",
     "History": "История",
     "Purchase_date": "Дата",
-    "More_on_mogboard": "Подробнее на mogboard'е",
     "More_on_universalis": "Подробнее на Universalis",
-    "Server": "Сервер"
+    "Server": "Сервер",
+    "Last_updated": "Last update"
   },
   "COMMENTS": {
     "Title": "Комментарии"
@@ -2040,6 +2042,7 @@
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
     "Nothing_to_show": "No data to display",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
       "UNKNOWN": "Unknown",
       "GATHERING": "Gathering",
