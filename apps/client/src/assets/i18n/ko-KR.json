@@ -417,7 +417,7 @@
     "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
     "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
     "COLORS": {
       "Background": "배경 색상",
@@ -1999,7 +1999,7 @@
         "Add_panel": "새 패널을 추가하고 싶다면 이걸 클릭하세요.",
         "Reorder": "드래그 앤 드롭으로 패널을 원하는 곳으로 이동시킬 수 있습니다.",
         "Data_type": "먼저, 사용할 메트릭스 유형을 선택하세요.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Filters": "그런 다음, 필터를 통합하거나 반전시키는 기능을 사용하여 원하는 내용만 볼 수 있도록 설정하세요.",
         "Title": "패널의 제목을 정하세요",
         "Display_type": "데이터를 표시할 때 사용할 구성요소들을 선택한 후, 원하는 설정값들을 입력하세요"
       }
@@ -2065,8 +2065,8 @@
       "Timestamp": "타임 스탬프"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "아이템별 집계",
+      "Source": "출처별 집계"
     },
     "EDITOR": {
       "Data": "데이터",
@@ -2075,7 +2075,7 @@
       "Accepted_items": "허용된 아이템",
       "Accepted_sources": "허용된 출처",
       "Display": "표시방식",
-      "Display_type": "Display component",
+      "Display_type": "표시할 구성요소",
       "Title": "제목",
       "Font_size": "글꼴 크기",
       "Value_label": "라벨 값",
