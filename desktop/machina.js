@@ -25,7 +25,8 @@ function filterPacketSessionID(packet) {
     'eventStart',
     'eventFinish',
     'eventPlay4',
-    'someDirectorUnk4'
+    'someDirectorUnk4',
+    'npcSpawn'
   ];
   return packetsFromOthers.indexOf(packet.type) > -1
     || packet.sourceActorSessionID === packet.targetActorSessionID;
