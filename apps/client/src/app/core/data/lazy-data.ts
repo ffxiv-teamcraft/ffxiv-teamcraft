@@ -15,6 +15,7 @@ export interface LazyData {
   diademTerritory: any;
   equipSlotCategories: any;
   exVersions: any;
+  extractableItems: any;
   fates: any;
   fishParameter: any;
   fishes: any;

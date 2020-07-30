@@ -784,7 +784,7 @@ if (hasTodo('maps')) {
   combineLatest([
     aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
     aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ'),
-    aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name'),
+    aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name')
   ]).subscribe(([xivapiMaps, territories, contentFinderConditions]) => {
     xivapiMaps.forEach(mapData => {
       const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
@@ -1451,7 +1451,8 @@ if (hasTodo('items')) {
   const equipSlotCategoryId = {};
   const itemPatch = {};
   const marketItems = [];
-  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
+  const extractableItems = {};
+  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1468,6 +1469,9 @@ if (hasTodo('items')) {
         itemPatch[item.ID] = item.Patch;
         if (item.ItemSearchCategoryTargetID > 9) {
           marketItems.push(item.ID);
+        }
+        if (item.MaterializeType > 0) {
+          extractableItems[item.ID] = 1;
         }
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
@@ -1495,6 +1499,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
       persistToJsonAsset('item-patch', itemPatch);
       persistToJsonAsset('market-items', marketItems);
+      persistToJsonAsset('extractable-items', extractableItems);
       done('items');
     });
 }

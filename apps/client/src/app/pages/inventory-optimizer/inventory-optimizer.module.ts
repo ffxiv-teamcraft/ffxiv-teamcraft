@@ -25,6 +25,7 @@ import { UnwantedMaterials } from './optimizations/unwanted-materials';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { CanBeGatheredEasily } from './optimizations/can-be-gathered-easily';
+import { CanExtractMateria } from './optimizations/can-extract-materia';
 
 const optimisations: Provider[] = [
   {
@@ -58,9 +59,14 @@ const optimisations: Provider[] = [
   },
   {
     provide: INVENTORY_OPTIMIZER,
-    useClass: CanBeGatheredEasily,
+    useClass: CanExtractMateria,
     multi: true,
-    deps: []
+    deps: [LazyDataService]
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: CanBeGatheredEasily,
+    multi: true
   }
 ];
 
