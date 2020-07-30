@@ -1799,6 +1799,10 @@
     "CAN_BE_GATHERED_EASILY": {
       "Title": "Gegenstände die leicht gesammelt werden können",
       "Message": "Kann auf Stufe {{level}} in einer nicht zeitgebundenen Abbaustelle gesammelt werden"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Message": "You can extract a materia from this gear piece"
     }
   },
   "VERSION_LOCK": {
