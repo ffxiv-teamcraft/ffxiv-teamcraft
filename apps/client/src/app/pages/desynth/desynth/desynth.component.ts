@@ -77,6 +77,11 @@ export class DesynthComponent {
           indexes: [SearchIndex.ITEM],
           filters: [
             {
+              column: 'Salvage.ID',
+              operator: '>=',
+              value: 0
+            },
+            {
               column: 'LevelItem',
               operator: '>=',
               value: Math.max(dlvl - 10, 0)
