@@ -2054,7 +2054,7 @@
       "FISHING": "Pêche",
       "VENDOR": "Vendeur",
       "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "MARKETBOARD": "Tableau des ventes"
     },
     "TYPES": {
       "ANY": "Tout",
@@ -2063,23 +2063,23 @@
     },
     "TABLE": {
       "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
+      "Entry_label": "Nom",
+      "Value": "Valeur",
       "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Timestamp": "Horodatage"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
+      "Amount": "Prix par item",
       "Source": "Amount per source"
     },
     "EDITOR": {
-      "Data": "Data",
+      "Data": "Données",
       "Data_type": "Type",
-      "Filter": "Filter",
+      "Filter": "Filtre",
       "Accepted_items": "Accepted items",
       "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
+      "Display": "Afficher",
+      "Display_type": "Afficher le composant",
       "Title": "Title",
       "Font_size": "Font size",
       "Value_label": "Value label",
@@ -2108,9 +2108,9 @@
   "ITEM_SEARCH_OVERLAY": {
     "Open": "Open item search overlay",
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Placeholder": "Nom de l'objet",
+    "None_inside_inventory": "Cet objet ne se trouve dans aucun inventaire.",
+    "Open_in_main_window": "Ouvrir dans la fenêtre principale",
+    "Marketboard_informations": "Informations de l'hôtel des ventes"
   }
 }
