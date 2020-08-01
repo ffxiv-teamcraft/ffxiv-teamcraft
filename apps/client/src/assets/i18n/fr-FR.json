@@ -159,7 +159,7 @@
     "Copy": "Copier",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
     "Example": "Exemple",
-    "Change": "Change"
+    "Change": "Changer"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -418,7 +418,7 @@
     "Enable_metrics_capture": "Activer la capture des métriques",
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
-    "Metrics_capture_folder": "Metrics log folder",
+    "Metrics_capture_folder": "Dossier de log des métriques",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -548,7 +548,7 @@
     "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
     "Final_item": "Item final",
-    "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Include_final_items_in_main_layout": "Inclure les éléments finaux dans la mise en page principale",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
@@ -1797,11 +1797,11 @@
       "Company_workshop": "Craft de CL"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Title": "Objets qui peuvent être collectés facilement",
+      "Message": "Peut être collecté au niveau {{level}} sur un nœud non timé"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Title": "Équipement dont vous pouvez extraire des matérias (100% de symbiose)",
       "Message": "Vous pouvez extraire une matéria de cette pièce d'équipement"
     }
   },
@@ -2082,32 +2082,32 @@
       "Display_type": "Afficher le composant",
       "Title": "Titre",
       "Font_size": "Taille de la police",
-      "Value_label": "Value label",
+      "Value_label": "Libellé des valeurs",
       "Pie_metric": "Métrique",
       "Add_filter": "Ajouter un filtre",
       "Operator": "Opérateur",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Cannot_edit_default": "Vous ne pouvez pas modifier la disposition par défaut, créer une nouvelle mise en page pour la personnaliser à la place",
+      "Cannot_delete_default": "Vous ne pouvez pas supprimer la disposition par défaut",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "FishFilter": "Accepter uniquement les poissons provenant des points de pêche",
+        "ItemFilter": "N'accepte qu'un ensemble d'articles donné",
+        "NoFilter": "Tout accepter",
+        "ObtentionFilter": "Accepte uniquement les valeurs > 0",
+        "SourceFilter": "N'accepte qu'un ensemble de sources donné",
+        "SpendingFilter": "N'accepte que les valeurs < 0",
+        "GilFilter": "N'accepte que les entrées Gil"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
-        "histogram": "Evolution over time",
+        "total": "Valeur agrégée",
+        "histogram": "Évolution au fil du temps",
         "pie-chart": "Diagramme circulaire",
         "table": "Table de toutes les entrées correspondantes"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Open": "Ouvrir l'overlay de recherche d'articles",
+    "Intro_message": "Recherchez un article pour voir les détails à son sujet, les informations de l'inventaire et du tableau des ventes",
     "Placeholder": "Nom de l'objet",
     "None_inside_inventory": "Cet objet ne se trouve dans aucun inventaire.",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
