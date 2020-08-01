@@ -413,8 +413,8 @@
     "Ignored_inventories": "Inventarios ignorados",
     "Enable_tutorials": "Activar tutoriales",
     "Scrolling_behavior": "Comportamiento de desplazamiento",
-    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
-    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
+    "Scrolling_behavior_explain": "Configurar cómo se comporta el desplazamiento en los paneles de la lista, por defecto es permitir hasta 12 elementos por panel antes de desplazarse.",
+    "Enable_auto_log_check": "Marcar automáticamente los artículos como completados en el registro cuando sean recolectados/elaborados",
     "Enable_metrics_capture": "Activar captura de métricas",
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
@@ -466,11 +466,11 @@
     "Veteran": "Veterano",
     "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
     "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus estadísticas con la comida activa.",
-    "Open_public_profile": "Open public profile",
+    "Open_public_profile": "Abrir perfil público",
     "Community_contributions": "Contribuciones de la comunidad",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Fishing_rankings": "Clasificaciones de pesca",
+    "Total_rankings": "Clasificaciones totales",
+    "Loading_fish_rankings": "Cargando clasificaciones de pesca",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -547,8 +547,8 @@
     "Reset_panel": "Restablecer todos los artículos de este panel",
     "Progression_tooltip_materials": "Materiales obtenidos: {{amount}}%",
     "Progression_tooltip_items": "Artículos fabricados: {{amount}}%",
-    "Final_item": "Final item",
-    "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Final_item": "Artículo final",
+    "Include_final_items_in_main_layout": "Incluir artículos finales en el diseño principal",
     "SCROLLING": {
       "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
@@ -1166,7 +1166,7 @@
     "Lists_created_counter": "{{amount}} listas creadas usando FFXIV Teamcraft",
     "Support_patreon": "Apóyenos en patreon",
     "Donation_button": "Haga una donación por única vez",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Obtener mercancía de Teamcraft",
     "Features_header": "¡Comience!",
     "DESCRIPTION": {
       "Lists": "Cree listas para obtener información de los materiales, compártala con sus amigos, ¡todo empieza aquí! Solo busque un artículo, expanda los filtros para buscar artículos específicos y empiece a elaborar cosas.",
@@ -1802,7 +1802,7 @@
     },
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
-      "Message": "You can extract a materia from this gear piece"
+      "Message": "Puede extraer una materia de esta pieza de equipo"
     }
   },
   "VERSION_LOCK": {
@@ -1999,7 +1999,7 @@
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
+        "Delete_column": "¿Quiere eliminar una columna? ¡Aquí está!",
         "Add_panel": "Click here to add a new panel.",
         "Reorder": "You can use drag and drop to move panels anywhere you want.",
         "Data_type": "First of all, select the metric type you want to use.",
@@ -2040,7 +2040,7 @@
     "Add_new_column": "Añadir una nueva columna (máx. 5)",
     "Default_dashboard": "Panel predeterminado",
     "Copy_to_clipboard": "Copy export code to clipboard",
-    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Export_copied_to_clipboard": "Código de exportación copiado al portapapeles",
     "Import_dashboard": "Importar un panel",
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
