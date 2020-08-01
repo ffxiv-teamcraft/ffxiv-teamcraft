@@ -550,7 +550,7 @@
     "Final_item": "Final item",
     "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
-      "Default": "Default",
+      "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
       "Never": "Nunca"
     },
@@ -2024,7 +2024,7 @@
         "CHARACTER": "Character"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
+        "Profile": "Abrir perfil",
         "Check": "Run integrity check"
       },
       "INTEGRITY_CHECK": {
@@ -2033,15 +2033,15 @@
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
+    "Title": "Panel de métricas",
     "Today": "Hoy",
     "This_week": "Esta semana",
     "This_month": "Este mes",
     "Add_new_column": "Añadir una nueva columna (máx. 5)",
-    "Default_dashboard": "Default dashboard",
+    "Default_dashboard": "Panel predeterminado",
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
+    "Import_dashboard": "Importar un panel",
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
@@ -2050,7 +2050,7 @@
     "SOURCES": {
       "UNKNOWN": "Desconocido",
       "GATHERING": "Forrajeo",
-      "CRAFTING": "Crafting",
+      "CRAFTING": "Elaboración",
       "FISHING": "Pesca",
       "VENDOR": "Vendedor",
       "TELEPORT": "Teletrasportar",
@@ -2093,12 +2093,12 @@
         "ItemFilter": "Accepts only a given set of items",
         "NoFilter": "Acepta todo",
         "ObtentionFilter": "Sólo acepta valores > 0",
-        "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "SourceFilter": "Acepta sólo un conjunto determinado de fuentes",
+        "SpendingFilter": "Sólo acepta valores < 0",
+        "GilFilter": "Acepta sólo entradas de Gil"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
+        "total": "Valor total",
         "histogram": "Evolución con el tiempo",
         "pie-chart": "Gráfica circular",
         "table": "Tabla de todas las entradas coincidentes"
