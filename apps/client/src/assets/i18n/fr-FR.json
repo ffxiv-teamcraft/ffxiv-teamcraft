@@ -1988,24 +1988,24 @@
       "Set_selector": "Sélectionnez le job à utiliser pour les simulations utilisées pour montrer le taux de réussite des rotation des résultats."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
-      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
-      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
-      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "Welcome_time_range": "Bienvenue sur la page du tableau de bord des métriques, ici vous pouvez sélectionner la plage de temps pour laquelle vous souhaitez voir les données affichées, elle est par défaut à aujourd'hui.",
+      "Select_dashboard": "Vous pouvez avoir plusieurs tableaux de bord et facilement faire un cycle entre eux pour voir ce qui est important pour vous.",
+      "Edit_dashboard": "Vous pouvez entrer en mode édition en utilisant ce bouton, il n'est disponible que pour les tableaux de bord, hors ceux par défaut.",
+      "Create_dashboard": "Créez facilement vos propres tableaux de bord, n'oubliez pas de les modifier après les avoir créés, sinon ce sera juste une copie du tableau de bord par défaut.",
+      "Delete_layout": "Vous voulez vous débarrasser d'un tableau de bord, appuyez sur ce bouton, confirmez et pouf (la suppression ne peut pas être annulée).",
+      "Export_layout": "Vous voulez partager votre tableau de bord avec vos amis ? Cliquez sur ce bouton pour copier le code d'exportation de votre tableau de bord actuellement sélectionné.",
+      "Import_layout": "Si quelqu'un partage un tableau de bord avec vous en utilisant le code d'exportation, utilisez ce bouton pour l'importer.",
       "EDITOR": {
-        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
-        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
+        "Welcome_add_column": "Bienvenue dans l'éditeur de mise en page du tableau de bord, vous pouvez ajouter des colonnes en utilisant ce bouton (jusqu'à 5 colonnes).",
+        "Save": "N'oubliez pas d'enregistrer vos modifications après avoir modifié votre tableau de bord.",
+        "Revert": "Ou si vous n'aimez pas ce que vous avez fait, utilisez ceci pour revenir à la mise en page originale que vous aviez avant de l'éditer.",
+        "Delete_column": "Vous voulez supprimer une colonne ? C'est ici !",
         "Add_panel": "Cliquer ici pour créer un nouveau panneau.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Reorder": "Vous pouvez utiliser le drag and drop pour déplacer des panneaux où vous voulez.",
+        "Data_type": "Tout d'abord, sélectionnez le type de métrique que vous souhaitez utiliser.",
+        "Filters": "Ensuite, filtrez les données pour n'utiliser que ce que vous voulez montrer, avec la possibilité de combiner et d'inverser des filtres.",
         "Title": "Définir un titre pour votre panneau",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Display_type": "Sélectionnez le composant que vous souhaitez utiliser pour représenter vos données, et ajoutez les entrées en conséquence."
       }
     }
   },
@@ -2033,27 +2033,27 @@
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
+    "Title": "Tableau de bord des métriques",
     "Today": "Aujourd'hui",
     "This_week": "Cette semaine",
     "This_month": "Ce mois",
-    "Add_new_column": "Add a new column (max 5)",
+    "Add_new_column": "Ajouter une nouvelle colonne (max 5)",
     "Default_dashboard": "Tableau de bord par défaut",
-    "Copy_to_clipboard": "Copy export code to clipboard",
-    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Copy_to_clipboard": "Copier le code d'export dans le presse-papiers",
+    "Export_copied_to_clipboard": "Exporter le code copié dans le presse-papiers",
     "Import_dashboard": "Importer un tableau de bord",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
+    "Export_code": "Code d'exportation du tableau de bord",
+    "Import_failed": "L'importation du tableau de bord a échoué, le code est invalide",
+    "Import_success": "Tableau de bord importé et sélectionné",
     "Nothing_to_show": "Aucune donnée à afficher",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "Assurez-vous d'avoir sélectionnée une période au cours de laquelle TC a capturé des données et vérifiez que cette option est activée (dans les Paramètres -> Bureau -> Activer la capture des métriques)",
     "SOURCES": {
       "UNKNOWN": "Inconnu",
       "GATHERING": "Récolte",
       "CRAFTING": "Artisanat",
       "FISHING": "Pêche",
       "VENDOR": "Vendeur",
-      "TELEPORT": "Teleport",
+      "TELEPORT": "Téléporter",
       "MARKETBOARD": "Tableau des ventes"
     },
     "TYPES": {
@@ -2070,22 +2070,22 @@
     },
     "PIE_METRICS": {
       "Amount": "Prix par item",
-      "Source": "Amount per source"
+      "Source": "Montant par origine"
     },
     "EDITOR": {
       "Data": "Données",
       "Data_type": "Type",
       "Filter": "Filtre",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
+      "Accepted_items": "Éléments acceptés",
+      "Accepted_sources": "Sources acceptées",
       "Display": "Afficher",
       "Display_type": "Afficher le composant",
-      "Title": "Title",
-      "Font_size": "Font size",
+      "Title": "Titre",
+      "Font_size": "Taille de la police",
       "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
-      "Operator": "Operator",
+      "Pie_metric": "Métrique",
+      "Add_filter": "Ajouter un filtre",
+      "Operator": "Opérateur",
       "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
       "Cannot_delete_default": "You can't delete default layout",
       "FILTER_TIPS": {
@@ -2100,8 +2100,8 @@
       "DISPLAY_TYPES": {
         "total": "Aggregated value",
         "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
-        "table": "Table of all matching entries"
+        "pie-chart": "Diagramme circulaire",
+        "table": "Table de toutes les entrées correspondantes"
       }
     }
   },
