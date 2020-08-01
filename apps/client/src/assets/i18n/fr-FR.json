@@ -547,7 +547,7 @@
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
     "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
-    "Final_item": "Final item",
+    "Final_item": "Item final",
     "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "Défaut",
@@ -1146,7 +1146,7 @@
     "Purchase_date": "Date",
     "More_on_universalis": "Plus de détails sur Universalis",
     "Server": "Serveur",
-    "Last_updated": "Last update"
+    "Last_updated": "Dernière mise à jour"
   },
   "COMMENTS": {
     "Title": "Commentaires"
@@ -1802,7 +1802,7 @@
     },
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
-      "Message": "You can extract a materia from this gear piece"
+      "Message": "Vous pouvez extraire une matéria de cette pièce d'équipement"
     }
   },
   "VERSION_LOCK": {
@@ -2000,11 +2000,11 @@
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
         "Delete_column": "Want to remove a column? Here it is !",
-        "Add_panel": "Click here to add a new panel.",
+        "Add_panel": "Cliquer ici pour créer un nouveau panneau.",
         "Reorder": "You can use drag and drop to move panels anywhere you want.",
         "Data_type": "First of all, select the metric type you want to use.",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
+        "Title": "Définir un titre pour votre panneau",
         "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
       }
     }
@@ -2034,32 +2034,32 @@
   },
   "METRICS": {
     "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
+    "Today": "Aujourd'hui",
+    "This_week": "Cette semaine",
+    "This_month": "Ce mois",
     "Add_new_column": "Add a new column (max 5)",
-    "Default_dashboard": "Default dashboard",
+    "Default_dashboard": "Tableau de bord par défaut",
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
+    "Import_dashboard": "Importer un tableau de bord",
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "No data to display",
+    "Nothing_to_show": "Aucune donnée à afficher",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
-      "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
-      "VENDOR": "Vendor",
+      "UNKNOWN": "Inconnu",
+      "GATHERING": "Récolte",
+      "CRAFTING": "Artisanat",
+      "FISHING": "Pêche",
+      "VENDOR": "Vendeur",
       "TELEPORT": "Teleport",
       "MARKETBOARD": "Marketboard"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "Tout",
+      "CURRENCY": "Devise",
+      "ITEM": "Objet"
     },
     "TABLE": {
       "Type": "Type",
