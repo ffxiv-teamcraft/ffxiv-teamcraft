@@ -2018,7 +2018,7 @@
       "No_users_found": "No se encontraron usuarios",
       "Integrity_check": "Verificación de integridad",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "Modo de búsqueda",
         "UID": "UID",
         "EMAIL": "Correo electrónico",
         "CHARACTER": "Character"
@@ -2057,9 +2057,9 @@
       "MARKETBOARD": "Marketboard"
     },
     "TYPES": {
-      "ANY": "Any",
+      "ANY": "Cualquiera",
       "CURRENCY": "Divisa",
-      "ITEM": "Item"
+      "ITEM": "Artículo"
     },
     "TABLE": {
       "Type": "Tipo",
@@ -2070,16 +2070,16 @@
     },
     "PIE_METRICS": {
       "Amount": "Cantidad por artículo",
-      "Source": "Amount per source"
+      "Source": "Cantidad por fuente"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
-      "Filter": "Filter",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
+      "Data": "Datos",
+      "Data_type": "Tipo",
+      "Filter": "Filtro",
+      "Accepted_items": "Artículos aceptados",
+      "Accepted_sources": "Fuentes aceptadas",
+      "Display": "Mostrar",
+      "Display_type": "Mostrar componente",
       "Title": "Título",
       "Font_size": "Tamaño de letra",
       "Value_label": "Value label",
