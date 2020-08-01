@@ -418,7 +418,7 @@
     "Enable_metrics_capture": "Activar captura de métricas",
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
-    "Metrics_capture_folder": "Metrics log folder",
+    "Metrics_capture_folder": "Carpeta de registro de métricas",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -467,7 +467,7 @@
     "Autofill_from_packets": "Autocompletar estadísticas usando captura de paquetes",
     "Autofill_stats_explain": "Cambie a la profesión deseada para actualizarla, cierre esta ventana cuando haya terminado. Por favor, asegúrese de no tener comida activa, de lo contrario guardará sus estadísticas con la comida activa.",
     "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
+    "Community_contributions": "Contribuciones de la comunidad",
     "Fishing_rankings": "Fishing rankings",
     "Total_rankings": "Total rankings",
     "Loading_fish_rankings": "Loading fishing rankings",
@@ -551,7 +551,7 @@
     "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "Default",
-      "Only_large": "Only large lists",
+      "Only_large": "Sólo listas grandes",
       "Never": "Nunca"
     },
     "COLORS": {
@@ -1797,7 +1797,7 @@
       "Company_workshop": "Taller de la Compañía"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
+      "Title": "Artículos que pueden ser recolectados fácilmente",
       "Message": "Can be gathered at level {{level}} on a non-timed node"
     },
     "CAN_EXTRACT_MATERIA": {
@@ -2010,17 +2010,17 @@
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "Autocorregir este error",
     "USERS": {
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Correo electrónico",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "No se encontraron usuarios",
+      "Integrity_check": "Verificación de integridad",
       "SEARCH_MODE": {
         "Label": "Search mode",
         "UID": "UID",
-        "EMAIL": "Email",
+        "EMAIL": "Correo electrónico",
         "CHARACTER": "Character"
       },
       "ACTIONS": {
@@ -2034,10 +2034,10 @@
   },
   "METRICS": {
     "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
-    "Add_new_column": "Add a new column (max 5)",
+    "Today": "Hoy",
+    "This_week": "Esta semana",
+    "This_month": "Este mes",
+    "Add_new_column": "Añadir una nueva columna (máx. 5)",
     "Default_dashboard": "Default dashboard",
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Export code copied to clipboard",
@@ -2045,31 +2045,31 @@
     "Export_code": "Dashboard export code",
     "Import_failed": "Dashboard import failed, the code is invalid",
     "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "No data to display",
+    "Nothing_to_show": "Sin datos para mostrar",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
+      "UNKNOWN": "Desconocido",
+      "GATHERING": "Forrajeo",
       "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
-      "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
+      "FISHING": "Pesca",
+      "VENDOR": "Vendedor",
+      "TELEPORT": "Teletrasportar",
       "MARKETBOARD": "Marketboard"
     },
     "TYPES": {
       "ANY": "Any",
-      "CURRENCY": "Currency",
+      "CURRENCY": "Divisa",
       "ITEM": "Item"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
-      "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Type": "Tipo",
+      "Entry_label": "Etiqueta",
+      "Value": "Valor",
+      "Source": "Fuente",
+      "Timestamp": "Marca de tiempo"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
+      "Amount": "Cantidad por artículo",
       "Source": "Amount per source"
     },
     "EDITOR": {
@@ -2080,12 +2080,12 @@
       "Accepted_sources": "Accepted sources",
       "Display": "Display",
       "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
+      "Title": "Título",
+      "Font_size": "Tamaño de letra",
       "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
-      "Operator": "Operator",
+      "Pie_metric": "Métrica",
+      "Add_filter": "Añadir filtro",
+      "Operator": "Operador",
       "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
       "Cannot_delete_default": "You can't delete default layout",
       "FILTER_TIPS": {
@@ -2100,7 +2100,7 @@
       "DISPLAY_TYPES": {
         "total": "Aggregated value",
         "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
+        "pie-chart": "Gráfica circular",
         "table": "Table of all matching entries"
       }
     }
@@ -2108,9 +2108,9 @@
   "ITEM_SEARCH_OVERLAY": {
     "Open": "Open item search overlay",
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Placeholder": "Nombre del artículo",
+    "None_inside_inventory": "Este artículo no está en ningún inventario.",
+    "Open_in_main_window": "Abrir en la ventana principal",
+    "Marketboard_informations": "Información del mercado"
   }
 }
