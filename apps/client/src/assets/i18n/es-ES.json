@@ -2000,12 +2000,12 @@
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
         "Delete_column": "¿Quiere eliminar una columna? ¡Aquí está!",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Add_panel": "Haga clic aquí para añadir un nuevo panel.",
+        "Reorder": "Puede arrastrar y soltar para mover paneles donde quiera.",
+        "Data_type": "Primero seleccione el tipo de métrica que desea utilizar.",
+        "Filters": "Luego, filtre los datos para usar sólo lo que desee mostrar, con la capacidad de combinar e invertir filtros.",
         "Title": "Dele un título a su panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Display_type": "Seleccione qué componente desea utilizar para representar sus datos, y añada las entradas en consecuencia."
       }
     }
   },
@@ -2025,7 +2025,7 @@
       },
       "ACTIONS": {
         "Profile": "Abrir perfil",
-        "Check": "Run integrity check"
+        "Check": "Comprobar integridad"
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "Todos los personajes vinculados son válidos"
