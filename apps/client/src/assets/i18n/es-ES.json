@@ -2012,7 +2012,7 @@
   "ADMIN": {
     "Autofix_error": "Autocorregir este error",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
+      "X_characters_linked": "{{amount}} personaje(s) enlazado(s)",
       "Email": "Correo electrónico",
       "Uid": "UID",
       "No_users_found": "No se encontraron usuarios",
@@ -2028,7 +2028,7 @@
         "Check": "Run integrity check"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "Todos los personajes vinculados son válidos"
       }
     }
   },
