@@ -1990,7 +1990,7 @@
     "METRICS": {
       "Welcome_time_range": "Bienvenido a la página de métricas, aquí puede seleccionar el intervalo de tiempo para el que desea ver los datos mostrados, por defecto es hoy.",
       "Select_dashboard": "Puede tener múltiples paneles y fácilmente ciclar entre ellos para ver lo que es importante para usted.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
+      "Edit_dashboard": "Puede entrar en modo edición usando este botón, sólo está disponible para los paneles no predeterminados.",
       "Create_dashboard": "Cree sus propios paneles fácilmente, no olvide editarlos después de crearlos, de lo contrario solo será una copia del panel predeterminado.",
       "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
       "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
