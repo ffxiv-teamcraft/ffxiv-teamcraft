@@ -1798,7 +1798,7 @@
     },
     "CAN_BE_GATHERED_EASILY": {
       "Title": "Artículos que pueden ser recolectados fácilmente",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Message": "Puede ser recolectado en nivel {{level}} en un nodo no temporizado"
     },
     "CAN_EXTRACT_MATERIA": {
       "Title": "Equipo del que puede extraer materia (100% spiritbond)",
@@ -1988,7 +1988,7 @@
       "Set_selector": "Seleccione qué profesión debe utilizarse para las simulaciones. Usado para mostrar la tasa de éxito de las rotaciones resultantes."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Welcome_time_range": "Bienvenido a la página de métricas, aquí puede seleccionar el intervalo de tiempo para el que desea ver los datos mostrados, por defecto es hoy.",
       "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
       "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
       "Create_dashboard": "Cree sus propios paneles fácilmente, no olvide editarlos después de crearlos, de lo contrario solo será una copia del panel predeterminado.",
