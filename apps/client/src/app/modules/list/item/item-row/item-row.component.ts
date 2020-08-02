@@ -615,7 +615,15 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   public openRequirementsPopup(item: ListRow): void {
-    this.openDetailsPopup(RelationshipsComponent, item, DataType.NONE);
+    this.modal.create({
+      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
+      nzContent: RelationshipsComponent,
+      nzComponentParams: {
+        item: item,
+        finalItem: this.finalItem
+      },
+      nzFooter: null
+    });
   }
 
   private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
