@@ -19,31 +19,31 @@ export class CustomAlarmPopupComponent implements OnInit {
   form: FormGroup;
 
   /** Spawn are limited to hours (0 to 23) **/
-  private SPAWN_VALIDATOR = {
+  public SPAWN_VALIDATOR = {
     min: 0,
     max: 23
   };
 
   /** Slot are limited from 0 to 8 **/
-  private SLOT_VALIDATOR = {
+  public SLOT_VALIDATOR = {
     min: 0,
     max: 8
   };
 
   /** Duration is only limited to hours (0 to 23) **/
-  private DURATION_VALIDATOR = {
+  public DURATION_VALIDATOR = {
     min: 0,
     max: 23
   };
 
   /** X is only limited from 0 to 99 **/
-  private X_VALIDATOR = {
+  public X_VALIDATOR = {
     min: 0,
     max: 99
   };
 
   /** Y is only limited from 0 to 99 **/
-  private Y_VALIDATOR = {
+  public Y_VALIDATOR = {
     min: 0,
     max: 99
   };
