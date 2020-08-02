@@ -2004,7 +2004,7 @@
         "Reorder": "You can use drag and drop to move panels anywhere you want.",
         "Data_type": "First of all, select the metric type you want to use.",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
+        "Title": "Dele un título a su panel",
         "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
       }
     }
@@ -2021,7 +2021,7 @@
         "Label": "Modo de búsqueda",
         "UID": "UID",
         "EMAIL": "Correo electrónico",
-        "CHARACTER": "Character"
+        "CHARACTER": "Personaje"
       },
       "ACTIONS": {
         "Profile": "Abrir perfil",
@@ -2042,9 +2042,9 @@
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Código de exportación copiado al portapapeles",
     "Import_dashboard": "Importar un panel",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
+    "Export_code": "Código de exportación de panel",
+    "Import_failed": "Error al importar el panel, el código es inválido",
+    "Import_success": "Panel importado y seleccionado",
     "Nothing_to_show": "Sin datos para mostrar",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
