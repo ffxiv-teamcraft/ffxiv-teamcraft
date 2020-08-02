@@ -416,7 +416,7 @@
     "Scrolling_behavior_explain": "Configurar cómo se comporta el desplazamiento en los paneles de la lista, por defecto es permitir hasta 12 elementos por panel antes de desplazarse.",
     "Enable_auto_log_check": "Marcar automáticamente los artículos como completados en el registro cuando sean recolectados/elaborados",
     "Enable_metrics_capture": "Activar captura de métricas",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Enable_metrics_capture_explain": "(permite capturar analíticas de su gil y los ingresos de artículos, nunca son subidos al servidor, esto es sólo para usted)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Carpeta de registro de métricas",
     "COLORS": {
@@ -1801,7 +1801,7 @@
       "Message": "Can be gathered at level {{level}} on a non-timed node"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Title": "Equipo del que puede extraer materia (100% spiritbond)",
       "Message": "Puede extraer una materia de esta pieza de equipo"
     }
   },
@@ -1991,7 +1991,7 @@
       "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
       "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
       "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Create_dashboard": "Cree sus propios paneles fácilmente, no olvide editarlos después de crearlos, de lo contrario solo será una copia del panel predeterminado.",
       "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
       "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
       "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
@@ -2039,14 +2039,14 @@
     "This_month": "Este mes",
     "Add_new_column": "Añadir una nueva columna (máx. 5)",
     "Default_dashboard": "Panel predeterminado",
-    "Copy_to_clipboard": "Copy export code to clipboard",
+    "Copy_to_clipboard": "Copiar código de exportación al portapapeles",
     "Export_copied_to_clipboard": "Código de exportación copiado al portapapeles",
     "Import_dashboard": "Importar un panel",
     "Export_code": "Código de exportación de panel",
     "Import_failed": "Error al importar el panel, el código es inválido",
     "Import_success": "Panel importado y seleccionado",
     "Nothing_to_show": "Sin datos para mostrar",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "Asegúrese de seleccionar un período en el que TC capturó los datos y compruebe que esta opción está activada (dentro de ajustes -> escritorio -> Activar captura de métricas)",
     "SOURCES": {
       "UNKNOWN": "Desconocido",
       "GATHERING": "Forrajeo",
@@ -2054,7 +2054,7 @@
       "FISHING": "Pesca",
       "VENDOR": "Vendedor",
       "TELEPORT": "Teletrasportar",
-      "MARKETBOARD": "Marketboard"
+      "MARKETBOARD": "Mercado"
     },
     "TYPES": {
       "ANY": "Cualquiera",
@@ -2087,10 +2087,10 @@
       "Add_filter": "Añadir filtro",
       "Operator": "Operador",
       "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Cannot_delete_default": "No se puede eliminar el diseño predeterminado",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
+        "FishFilter": "Aceptar sólo peces procedentes de zonas pesqueras",
+        "ItemFilter": "Acepta sólo un conjunto determinado de artículos",
         "NoFilter": "Acepta todo",
         "ObtentionFilter": "Sólo acepta valores > 0",
         "SourceFilter": "Acepta sólo un conjunto determinado de fuentes",
