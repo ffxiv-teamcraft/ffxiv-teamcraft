@@ -1996,8 +1996,8 @@
       "Export_layout": "¿Quiere compartir su asombroso panel con sus compañeros? Haga clic en este botón para copiar el código de exportación del panel seleccionado.",
       "Import_layout": "Si alguien comparte un panel con usted usando el código de exportación, utilice este botón para importarlo.",
       "EDITOR": {
-        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Welcome_add_column": "Bienvenido al editor de diseño de panel, puede añadir columnas usando este botón (hasta 5 columnas).",
+        "Save": "No olvide guardar sus modificaciones después de editar el panel.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
         "Delete_column": "¿Quiere eliminar una columna? ¡Aquí está!",
         "Add_panel": "Haga clic aquí para añadir un nuevo panel.",
