@@ -1994,7 +1994,7 @@
       "Create_dashboard": "Cree sus propios paneles fácilmente, no olvide editarlos después de crearlos, de lo contrario solo será una copia del panel predeterminado.",
       "Delete_layout": "Si quiere deshacerte de un panel, presione este botón, confirme y poof (no se puede revertir).",
       "Export_layout": "¿Quiere compartir su asombroso panel con sus compañeros? Haga clic en este botón para copiar el código de exportación del panel seleccionado.",
-      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "Import_layout": "Si alguien comparte un panel con usted usando el código de exportación, utilice este botón para importarlo.",
       "EDITOR": {
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
