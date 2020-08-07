@@ -1998,7 +1998,7 @@
       "EDITOR": {
         "Welcome_add_column": "Bienvenido al editor de diseño de panel, puede añadir columnas usando este botón (hasta 5 columnas).",
         "Save": "No olvide guardar sus modificaciones después de editar el panel.",
-        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
+        "Revert": "O si no le gusta lo que ha hecho, use esto para volver al diseño original que tenía antes de editarlo.",
         "Delete_column": "¿Quiere eliminar una columna? ¡Aquí está!",
         "Add_panel": "Haga clic aquí para añadir un nuevo panel.",
         "Reorder": "Puede arrastrar y soltar para mover paneles donde quiera.",
@@ -2086,7 +2086,7 @@
       "Pie_metric": "Métrica",
       "Add_filter": "Añadir filtro",
       "Operator": "Operador",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
+      "Cannot_edit_default": "No puede editar el diseño predeterminado, cree un nuevo diseño para personalizarlo en su lugar",
       "Cannot_delete_default": "No se puede eliminar el diseño predeterminado",
       "FILTER_TIPS": {
         "FishFilter": "Aceptar sólo peces procedentes de zonas pesqueras",
@@ -2106,8 +2106,8 @@
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Open": "Abrir capa de búsqueda de artículos",
+    "Intro_message": "Busque un artículo para ver detalles sobre él, información de inventario y de la tienda",
     "Placeholder": "Nombre del artículo",
     "None_inside_inventory": "Este artículo no está en ningún inventario.",
     "Open_in_main_window": "Abrir en la ventana principal",
