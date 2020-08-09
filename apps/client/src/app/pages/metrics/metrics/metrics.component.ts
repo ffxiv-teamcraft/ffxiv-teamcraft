@@ -226,7 +226,8 @@ export class MetricsComponent extends TeamcraftPageComponent {
   }
 
   trackByRow(index: number, row: MetricsDisplayEntry): string {
-    return JSON.stringify(row);
+    const { data, ...structure } = row;
+    return JSON.stringify(structure);
   }
 
   trackByEditorRow(index: number, row: MetricsDisplayEntry): number {

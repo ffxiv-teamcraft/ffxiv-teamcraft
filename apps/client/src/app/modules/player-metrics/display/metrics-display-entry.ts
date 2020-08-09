@@ -1,4 +1,5 @@
 import { MetricType } from '../model/metric-type';
+import { ProbeReport } from '../model/probe-report';
 
 export interface MetricsDisplayEntry {
   title: string;
@@ -12,4 +13,5 @@ export interface MetricsDisplayEntry {
     args: any[];
   }[];
   params?: any;
+  data?: ProbeReport[];
 }
