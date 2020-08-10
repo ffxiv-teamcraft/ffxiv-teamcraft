@@ -15,6 +15,7 @@
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -47,6 +48,7 @@
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制物品检索宏",
@@ -1325,6 +1327,8 @@
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
     "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
