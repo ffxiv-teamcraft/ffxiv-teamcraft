@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChangelogPopupComponent } from './changelog-popup/changelog-popup.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { NzDividerModule } from 'ng-zorro-antd';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 
@@ -10,7 +12,9 @@ import { MarkdownModule } from 'ngx-markdown';
   exports: [ChangelogPopupComponent],
   imports: [
     CommonModule,
-    MarkdownModule
+    MarkdownModule,
+    NzDividerModule,
+    TranslateModule
   ]
 })
 export class ChangelogPopupModule { }
