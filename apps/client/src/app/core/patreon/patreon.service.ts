@@ -4,11 +4,15 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { NzModalService } from 'ng-zorro-antd';
+import { TranslateService } from '@ngx-translate/core';
+import { SupportUsPopupComponent } from './support-us-popup/support-us-popup.component';
 
 @Injectable()
 export class PatreonService {
 
-  constructor(private http: HttpClient, private authFacade: AuthFacade) {
+  constructor(private http: HttpClient, private authFacade: AuthFacade,
+              private dialog: NzModalService, private translate: TranslateService) {
   }
 
   public refreshToken(user: TeamcraftUser): void {
@@ -28,5 +32,13 @@ export class PatreonService {
         }
         this.authFacade.updateUser(user);
       });
+  }
+
+  public showSupportUsPopup(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('Like_the_tool'),
+      nzContent: SupportUsPopupComponent,
+      nzFooter: null
+    });
   }
 }

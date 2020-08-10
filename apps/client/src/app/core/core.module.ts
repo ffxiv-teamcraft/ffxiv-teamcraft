@@ -46,10 +46,12 @@ import { LazyComponentDirective } from './tools/lazy-component';
 import { TutorialModule } from './tutorial/tutorial.module';
 import { ModeratorGuard } from './guard/moderator.guard';
 import { MouseWheelDirective } from "./event/mouse-wheel/mouse-wheel.directive";
+import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
 
 
 @NgModule({
   imports: [
+    TranslateModule,
     HttpClientModule,
     NgSerializerModule.forChild([
       {
@@ -70,7 +72,6 @@ import { MouseWheelDirective } from "./event/mouse-wheel/mouse-wheel.directive";
         }
       }
     ]),
-    TranslateModule,
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     PushNotificationsModule,
@@ -103,7 +104,8 @@ import { MouseWheelDirective } from "./event/mouse-wheel/mouse-wheel.directive";
     DbButtonComponent,
     ItemRarityDirective,
     LazyComponentDirective,
-    MouseWheelDirective
+    MouseWheelDirective,
+    SupportUsPopupComponent
   ],
   exports: [
     I18nPipe,
