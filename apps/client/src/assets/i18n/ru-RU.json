@@ -15,6 +15,7 @@
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -47,6 +48,7 @@
   "See_code_github": "Просмотреть код на github",
   "Support_on_patreon": "Поддержите проект в patreon",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "По умолчанию",
   "Delete": "Удалить",
   "Copy_isearch": "Копирование макроса isearch",
@@ -1325,6 +1327,8 @@
     "Contribute_description": "Вы можете найти нас на github чтоб поучаствовать в проекте. Даже если вы новичок, мы рады всем!\n\nУчастие может проявляться не только лишь в коде. Запросы фич и отчёты об ошибках так же очень помогают доставлять наилучшее качество для всех благодаря тем, кто проверяет и находит ошибки.",
     "Patreon_title": "Поддержать нас в Patreon",
     "Patreon_description": "Patreon - это платформа где вы можете внести деньги для поддержки проекта каждый месяц. Эти деньги используются на сервера, сертификаты, раздачи и для освобождения большего времени разработчику на работу над проектом.\n\nЗависимо от суммы, вы можете получить кое-какие приятные преимущества в качестве благодарности за вклад:",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "Особые ранги на дискорд-сервере, дающие доступ на канал для поддержавших, где можно увидеть, над чем сейчас идёт работа (${{price}})",
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
