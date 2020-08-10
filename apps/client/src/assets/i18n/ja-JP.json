@@ -15,6 +15,7 @@
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
   "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
   "Patch_notes": "{{version}} changes",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -47,6 +48,7 @@
   "See_code_github": "Githubでコードを見る",
   "Support_on_patreon": "Patreonでサポートする",
   "Access_patreon_page": "Patreon ページへ移動",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "デフォルト",
   "Delete": "削除",
   "Copy_isearch": "/isearchマクロをコピーする",
@@ -1325,6 +1327,8 @@
     "Contribute_description": "Githubでこのプロジェクトに貢献することができます。初心者もいつでも歓迎です!\n\nコードの貢献のみならず、機能要請とバグ報告は皆に最上の機能を提供するのに、役に立ちます。時間をかけてテストし、バグを探してくださる皆さんに感謝しております。",
     "Patreon_title": "Patreonにサポートする",
     "Patreon_description": "Patreonは毎月プロジェクトを寄付できるプラットフォームです。この寄付金はサーバー、認証書、分かち合いに使用され、プロジェクトを作業する開発者たちがもっと多くの時間を割くところに使われます。\n\n寄付金に応じて、寄付金に対する謝礼として、いくつかの素晴らしい特典が得られます。",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
       "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
