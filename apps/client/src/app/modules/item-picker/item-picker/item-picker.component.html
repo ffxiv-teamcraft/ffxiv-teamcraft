@@ -31,7 +31,7 @@
         </nz-list-item-meta>
         <ng-template #content>
           <div fxLayout="row" fxLayoutGap="5px">
-            <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="result.recipe !== undefined?addCrafts:null"
+            <nz-input-group *ngIf="!hideAmount" [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(result.recipe !== undefined?addCrafts:null)"
                             [nzCompact]="true">
               <input [(ngModel)]="result.amount" class="amount-input" nz-input type="number">
               <ng-template #addCrafts>

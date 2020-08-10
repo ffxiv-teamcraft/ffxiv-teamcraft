@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
 import {SearchType} from '../search-type';
 import {SearchResult} from '../../../model/search/search-result';
 import {HtmlToolsService} from '../../../core/tools/html-tools.service';
+import { Region } from '../../../modules/settings/region.enum';
 
 @Component({
   selector: 'app-search-result',
@@ -39,6 +40,8 @@ export class SearchResultComponent {
   selected: boolean;
 
   searchTypes = SearchType;
+
+  public Region = Region;
 
   constructor(private htmlTools: HtmlToolsService) {
   }

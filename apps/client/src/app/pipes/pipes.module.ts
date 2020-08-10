@@ -65,6 +65,7 @@ import { TribeNamePipe } from './pipes/tribe-name.pipe';
 import { FoodBonusesPipePipe } from './pipes/food-bonuses.pipe';
 import { NotebookDivisionCategoryNamePipe } from './pipes/notebook-division-category-name.pipe';
 import { NotebookDivisionNamePipe } from './pipes/notebook-division-name.pipe';
+import { IfRegionsPipe } from './pipes/if-regions';
 
 @NgModule({
   declarations: [
@@ -134,7 +135,8 @@ import { NotebookDivisionNamePipe } from './pipes/notebook-division-name.pipe';
     TribeNamePipe,
     FoodBonusesPipePipe,
     NotebookDivisionNamePipe,
-    NotebookDivisionCategoryNamePipe
+    NotebookDivisionCategoryNamePipe,
+    IfRegionsPipe
   ],
   exports: [
     ItemNamePipe,
@@ -204,7 +206,7 @@ import { NotebookDivisionNamePipe } from './pipes/notebook-division-name.pipe';
     FoodBonusesPipePipe,
     NotebookDivisionNamePipe,
     NotebookDivisionCategoryNamePipe,
-    NotebookDivisionNamePipe
+    IfRegionsPipe
   ]
 })
 export class PipesModule {

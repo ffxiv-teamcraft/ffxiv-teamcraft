@@ -33,7 +33,7 @@
   <div class="inputs-container" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center"
        fxLayoutGap="10px" fxLayoutGap.lt-md="10px">
     <div class="input-box" fxLayout="row" fxLayoutAlign="center center" nz-col>
-      <nz-input-group [nzAddOnBefore]="row.recipe !== undefined?addCrafts:null" [nzCompact]="true"
+      <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(row.recipe !== undefined?addCrafts:null)" [nzCompact]="true"
                       class="amount-input">
         <nz-input-number mouseWheel [(ngModel)]="row.amount" [class.amount-input-field]="row.recipe !== undefined"
                          [nzMin]="minAmount"
