@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, of, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
 import { NzModalRef } from 'ng-zorro-antd';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
@@ -9,6 +9,7 @@ import { SearchResult } from '../../../model/search/search-result';
 import { CustomItemsFacade } from '../../custom-items/+state/custom-items.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../settings/settings.service';
+import { Region } from '../../settings/region.enum';
 
 @Component({
   selector: 'app-item-picker',
@@ -30,6 +31,8 @@ export class ItemPickerComponent implements OnInit {
   public loading = false;
 
   public multi = false;
+
+  public Region = Region;
 
   constructor(private dataService: DataService, private dialogRef: NzModalRef,
               private gt: GarlandToolsService, private htmlTools: HtmlToolsService,
