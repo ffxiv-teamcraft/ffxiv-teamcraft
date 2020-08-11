@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.1"></a>
+## [7.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.0...v7.3.1) (2020-08-11)
+
+
+### Bug Fixes
+
+* **alarms:** fixed an issue with new items crashing alarms page ([47f251b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47f251b))
+* **list:** fixed an issue preventing some items from being added to a list ([02e7d9f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02e7d9f))
+
+
+
 <a name="7.3.0"></a>
 # [7.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.11...v7.3.0) (2020-08-11)
 
