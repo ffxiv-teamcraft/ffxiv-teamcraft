@@ -668,7 +668,7 @@
   "112": {
     "en": "lesser kalong",
     "ja": "カロング",
-    "de": "klein[a] Kalong",
+    "de": "Kalong",
     "fr": "kalong"
   },
   "113": {
@@ -9111,7 +9111,7 @@
     "en": "Oannes",
     "ja": "オアンネス",
     "de": "Oannes",
-    "fr": "Oannes"
+    "fr": "Oannès"
   },
   "1520": {
     "en": "Karkinos",
@@ -43515,13 +43515,13 @@
     "en": "wounded Popularis",
     "ja": "民衆派の負傷兵",
     "de": "verletzt[a] Soldat",
-    "fr": "populares blessé"
+    "fr": "Populares blessé"
   },
   "7254": {
     "en": "helmsman",
     "ja": "民衆派の飛空士",
     "de": "Steuermann[p]",
-    "fr": "pilote populares"
+    "fr": "pilote Populares"
   },
   "7255": {
     "en": "Maxima the Neoteric",
@@ -50251,7 +50251,7 @@
   },
   "8376": {
     "en": "Uimet",
-    "ja": "ニ葉斬りのウィメ",
+    "ja": "二葉斬りのウィメ",
     "de": "Uimet",
     "fr": "Uimet"
   },
@@ -56172,16 +56172,16 @@
     "fr": "Ventus Est"
   },
   "9363": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "G'raha Tia",
+    "ja": "グ・ラハ・ティア",
+    "de": "G'raha Tia",
+    "fr": "G'raha Tia"
   },
   "9364": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "724P-operated superior flight unit (A-lpha)",
+    "ja": "７２４Ｐ：強化型飛行ユニット［A-lpha］",
+    "de": "724P: Flugeinheit[p] A-lpha",
+    "fr": "724P : avec module de vol renforcé [A-lpha]"
   },
   "9365": {
     "en": "phantom Varis",
@@ -56694,6 +56694,1506 @@
     "fr": ""
   },
   "9450": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9451": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9452": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9453": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9454": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9455": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9456": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9457": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9458": {
+    "en": "the Sapphire Weapon",
+    "ja": "サファイアウェポン",
+    "de": "Saphir-Waffe",
+    "fr": "Arme Saphir"
+  },
+  "9459": {
+    "en": "Regula's image",
+    "ja": "レグラの幻影",
+    "de": "Regula-Phantom",
+    "fr": "spectre de Regula"
+  },
+  "9460": {
+    "en": "magitek turret",
+    "ja": "魔導タレット",
+    "de": "Magitek-Geschütz",
+    "fr": "tourelle magitek"
+  },
+  "9461": {
+    "en": "guidance system",
+    "ja": "標的システム",
+    "de": "Zielsystem",
+    "fr": "système de visée"
+  },
+  "9462": {
+    "en": "Warrior of Light",
+    "ja": "ウォーリア・オブ・ライト",
+    "de": "Krieger[p] des Lichts",
+    "fr": "Guerrier de la Lumière primordial"
+  },
+  "9463": {
+    "en": "aetherial ward",
+    "ja": "魔法障壁",
+    "de": "magisch[a] Barriere",
+    "fr": "barrière magique"
+  },
+  "9464": {
+    "en": "hero's rift",
+    "ja": "次元の切れ目",
+    "de": "Dimensionsriss",
+    "fr": "déchirure dimensionnelle"
+  },
+  "9465": {
+    "en": "spectral ninja",
+    "ja": "幻光の忍者",
+    "de": "Phantom-Ninja",
+    "fr": "ninja spectral"
+  },
+  "9466": {
+    "en": "spectral white mage",
+    "ja": "幻光の白魔道士",
+    "de": "Phantom-Weißmagier",
+    "fr": "mage blanc spectral"
+  },
+  "9467": {
+    "en": "spectral black mage",
+    "ja": "幻光の黒魔道士",
+    "de": "Phantom-Schwarzmagier",
+    "fr": "mage noir spectral"
+  },
+  "9468": {
+    "en": "spectral dark knight",
+    "ja": "幻光の暗黒騎士",
+    "de": "Phantom-Dunkelritter",
+    "fr": "chevalier noir spectral"
+  },
+  "9469": {
+    "en": "spectral bard",
+    "ja": "幻光の吟遊詩人",
+    "de": "Phantom-Barde",
+    "fr": "barde spectral"
+  },
+  "9470": {
+    "en": "spectral warrior",
+    "ja": "幻光の狂戦士",
+    "de": "Phantom-Berserker",
+    "fr": "berserker spectral"
+  },
+  "9471": {
+    "en": "spectral summoner",
+    "ja": "幻光の召喚士",
+    "de": "Phantom-Beschwörer",
+    "fr": "invocatrice spectrale"
+  },
+  "9472": {
+    "en": "Wyrm of Light",
+    "ja": "ウィルム・オブ・ライト",
+    "de": "Wyrm[p] des Lichts",
+    "fr": "wyrm de Lumière"
+  },
+  "9473": {
+    "en": "spectral egi",
+    "ja": "幻光の召喚獣",
+    "de": "Phantom-Primae",
+    "fr": "Egi spectral"
+  },
+  "9474": {
+    "en": "spectral blade",
+    "ja": "幻光の聖剣",
+    "de": "Phantom-Paladin",
+    "fr": "épée sacrée spectrale"
+  },
+  "9475": {
+    "en": "spectral paladin",
+    "ja": "幻光の聖騎士",
+    "de": "Phantom-Tempelritter",
+    "fr": "chevalier sacré spectral"
+  },
+  "9476": {
+    "en": "spectral monk",
+    "ja": "幻光の武道家",
+    "de": "Phantom-Budoka",
+    "fr": "lutteur spectral"
+  },
+  "9477": {
+    "en": "spectral dragoon",
+    "ja": "幻光の竜騎士",
+    "de": "Phantom-Dragoon",
+    "fr": "chevalier dragon spectral"
+  },
+  "9478": {
+    "en": "spectral samurai",
+    "ja": "幻光の侍",
+    "de": "Phantom-Samurai",
+    "fr": "samouraï spectral"
+  },
+  "9479": {
+    "en": "spectral bard",
+    "ja": "幻光の吟遊詩人",
+    "de": "Phantom-Barde",
+    "fr": "barde spectral"
+  },
+  "9480": {
+    "en": "spectral black mage",
+    "ja": "幻光の黒魔道士",
+    "de": "Phantom-Schwarzmagier",
+    "fr": "mage noir spectral"
+  },
+  "9481": {
+    "en": "spectral ink mage",
+    "ja": "幻光の裏魔道士",
+    "de": "Phantom-Okkultistin",
+    "fr": "mystagogue spectrale"
+  },
+  "9482": {
+    "en": "spectral white mage",
+    "ja": "幻光の白魔道士",
+    "de": "Phantom-Weißmagierin",
+    "fr": "mage blanc spectral"
+  },
+  "9483": {
+    "en": "Ghen Gen",
+    "ja": "ゲーンゲン",
+    "de": "Ghen Gen",
+    "fr": "Ghen Gen"
+  },
+  "9484": {
+    "en": "Ghun Gun",
+    "ja": "グーングン",
+    "de": "Ghun Gun",
+    "fr": "Ghun Gun"
+  },
+  "9485": {
+    "en": "Cassard",
+    "ja": "カサード",
+    "de": "Cassard",
+    "fr": "Cassard"
+  },
+  "9486": {
+    "en": "Magnus",
+    "ja": "マグヌス",
+    "de": "Magnus",
+    "fr": "Magnus"
+  },
+  "9487": {
+    "en": "Thaffe",
+    "ja": "サーフ",
+    "de": "Thaffe",
+    "fr": "Thaffe"
+  },
+  "9488": {
+    "en": "Jeryk",
+    "ja": "ジェリック",
+    "de": "Jeryk",
+    "fr": "Jeryk"
+  },
+  "9489": {
+    "en": "Mighty Talos",
+    "ja": "マイティタロース",
+    "de": "Schwerlast-Thalos",
+    "fr": "talos surpuissant"
+  },
+  "9490": {
+    "en": "Feo Ul",
+    "ja": "フェオ＝ウル",
+    "de": "Feo Ul",
+    "fr": "Feo Ul"
+  },
+  "9491": {
+    "en": "Titania",
+    "ja": "ティターニア",
+    "de": "Titania",
+    "fr": "Titania"
+  },
+  "9492": {
+    "en": "Aenc Thon, Lord of the Lengthsome Gait",
+    "ja": "楽聖のインク＝ゾン",
+    "de": "Aenc Thon [t] Langbeinig[a]",
+    "fr": "Aenc Thon le virtuose"
+  },
+  "9493": {
+    "en": "Nu Mou",
+    "ja": "ン・モゥ",
+    "de": "Nu Mou",
+    "fr": "Nu Mou"
+  },
+  "9494": {
+    "en": "Tupaq Amaro",
+    "ja": "トゥパク・アマロ",
+    "de": "Tupaq-Amaro",
+    "fr": "amaro toupak"
+  },
+  "9495": {
+    "en": "Mustardseed",
+    "ja": "マスタードシード",
+    "de": "Senfsamen",
+    "fr": "Pousse-de-moutarde"
+  },
+  "9496": {
+    "en": "Peaseblossom",
+    "ja": "ピーズブロッサム",
+    "de": "Bohnenblüte",
+    "fr": "Fleur-de-pois"
+  },
+  "9497": {
+    "en": "Giott the Aleforged",
+    "ja": "最強のジオット",
+    "de": "Giott [t] Härtest[a] Hammer",
+    "fr": "Giott l'invincible"
+  },
+  "9498": {
+    "en": "Steelarm Cerigg",
+    "ja": "鋼腕のケリッグ",
+    "de": "Cerigg Eisenarm",
+    "fr": "Cerigg les bras d'acier"
+  },
+  "9499": {
+    "en": "Granson of the Mournful Blade",
+    "ja": "孤剣のグランソン",
+    "de": "Granson [t] einsam[a] Schwert",
+    "fr": "Granson la lame solitaire"
+  },
+  "9500": {
+    "en": "Lue-Reeq of the Gilded Bow",
+    "ja": "金矢のルー・リーク",
+    "de": "Lue-Reeq Goldpfeil",
+    "fr": "Lue-Reeq la flèche dorée"
+  },
+  "9501": {
+    "en": "spectral monk",
+    "ja": "幻光の武道家",
+    "de": "Phantom-Budoka",
+    "fr": "lutteuse spectrale"
+  },
+  "9502": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9503": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9504": {
+    "en": "G-Warrior",
+    "ja": "Gウォリアー",
+    "de": "G-Krieger",
+    "fr": "Guerrier-G"
+  },
+  "9505": {
+    "en": "spectral thief",
+    "ja": "幻光のシーフ",
+    "de": "Phantom-Dieb",
+    "fr": "voleur spectral"
+  },
+  "9506": {
+    "en": "spectral thief",
+    "ja": "幻光のシーフ",
+    "de": "Phantom-Dieb",
+    "fr": "voleur spectral"
+  },
+  "9507": {
+    "en": "chicken knife",
+    "ja": "チキンナイフ",
+    "de": "Hühnermesser",
+    "fr": "couteau de poltron"
+  },
+  "9508": {
+    "en": "spectral necromancer",
+    "ja": "幻光のネクロマンサー",
+    "de": "Phantom-Nekromantin",
+    "fr": "nécromancienne spectrale"
+  },
+  "9509": {
+    "en": "necrobomb",
+    "ja": "ネクロボム",
+    "de": "Nekrobomber",
+    "fr": "bombe nécrotique"
+  },
+  "9510": {
+    "en": "necrobomb",
+    "ja": "ネクロボム",
+    "de": "Nekrobomber",
+    "fr": "bombe nécrotique"
+  },
+  "9511": {
+    "en": "spectral berserker",
+    "ja": "幻光のバーサーカー",
+    "de": "Phantom-Berserker",
+    "fr": "berserker spectral"
+  },
+  "9512": {
+    "en": "rubble",
+    "ja": "瓦礫",
+    "de": "Trümmerhaufen",
+    "fr": "éboulis"
+  },
+  "9513": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9514": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9515": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9516": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9517": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9518": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9519": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9520": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9521": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9522": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9523": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9524": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9525": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9526": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9527": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9528": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9529": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9530": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9531": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9532": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9533": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9534": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9535": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9536": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9537": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9538": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9539": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9540": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9541": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9542": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9544": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9545": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9546": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9547": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9548": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9550": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9551": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9552": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9553": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9554": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9555": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9556": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9557": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9558": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9559": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9560": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9561": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9562": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9563": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9565": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9566": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9567": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9568": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9569": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9570": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9571": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9572": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9573": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9574": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9575": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9576": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9577": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9578": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9579": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9580": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9581": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9582": {
+    "en": "vampire bat",
+    "ja": "ヴァンパイアバット",
+    "de": "Vampirfledermaus",
+    "fr": "chauve-souris vampire"
+  },
+  "9583": {
+    "en": "wandering wolverine",
+    "ja": "ワンダリング・ウルヴァリン",
+    "de": "streunend[a] Vielfraß",
+    "fr": "wolvérène errant"
+  },
+  "9584": {
+    "en": "wandering hoptrap",
+    "ja": "ワンダリング・ホップトラップ",
+    "de": "streunend[a] Sprungfalle",
+    "fr": "saute-piège errant"
+  },
+  "9585": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9586": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9587": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9588": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9589": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9590": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9591": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9592": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9593": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9594": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9595": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9596": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9597": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9598": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9599": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9600": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9601": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9602": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9603": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9604": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9605": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9606": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9607": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9610": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9611": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9612": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9613": {
+    "en": "'Bold Bombard",
+    "ja": "人工ボンバード",
+    "de": "Künstlich[a] Knallomat",
+    "fr": "bombardo artificiel"
+  },
+  "9614": {
+    "en": "supershark",
+    "ja": "スーパーシャーク",
+    "de": "Superhai",
+    "fr": "super squale"
+  },
+  "9615": {
+    "en": "Bombardier",
+    "ja": "ASU隊員",
+    "de": "Aquadeur",
+    "fr": "membre de la B.A.R."
+  },
+  "9616": {
+    "en": "summering shark",
+    "ja": "サマーシャーク",
+    "de": "Sommerhai",
+    "fr": "squale estival"
+  },
+  "9617": {
+    "en": "767P-operated superior flight unit (B-eta)",
+    "ja": "７６７Ｐ：強化型飛行ユニット［B-eta］",
+    "de": "767P: Flugeinheit[p] B-eta",
+    "fr": "767P : avec module de vol renforcé [B-êta]"
+  },
+  "9618": {
+    "en": "772P-operated superior flight unit (C-hi)",
+    "ja": "７７２Ｐ：強化型飛行ユニット［C-hi］",
+    "de": "772P: Flugeinheit[p] C-hi",
+    "fr": "772P : avec module de vol renforcé [C-hi]"
+  },
+  "9619": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9620": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9621": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9622": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9623": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9624": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9625": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9626": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9627": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9628": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9629": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9630": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9631": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9632": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9633": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9634": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9635": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9637": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9638": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9639": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9641": {
+    "en": "spectral samurai",
+    "ja": "幻光の侍",
+    "de": "Phantom-Samurai",
+    "fr": "samouraï spectrale"
+  },
+  "9642": {
+    "en": "813P-operated aegis unit",
+    "ja": "８１３Ｐ：拠点防衛ユニット装備",
+    "de": "813P: Bollwerk",
+    "fr": "813P : avec unité rempart"
+  },
+  "9643": {
+    "en": "mine",
+    "ja": "地雷",
+    "de": "Mine",
+    "fr": "mine"
+  },
+  "9644": {
+    "en": "Compound 2P",
+    "ja": "２Ｐ：融合体",
+    "de": "2P: Fusion",
+    "fr": "2P : amalgame"
+  },
+  "9645": {
+    "en": "Puppet 2P",
+    "ja": "２Ｐ：分裂体",
+    "de": "2P: Spaltung",
+    "fr": "clone"
+  },
+  "9646": {
+    "en": "the Compound",
+    "ja": "融合シタ人形タチ",
+    "de": "Puppenklumpen",
+    "fr": "agglomérat de pantins"
+  },
+  "9647": {
+    "en": "the Puppets",
+    "ja": "分裂シタ人形タチ",
+    "de": "abgespalten[a] Klumpen",
+    "fr": "sous-agglomérat de pantins"
+  },
+  "9648": {
+    "en": "Compound pod",
+    "ja": "ポッド：融合体",
+    "de": "Pod: Fusion",
+    "fr": "pod : amalgame"
+  },
+  "9649": {
+    "en": "2B",
+    "ja": "２Ｂ",
+    "de": "2B",
+    "fr": "2B"
+  },
+  "9650": {
+    "en": "905P-operated heavy artillery unit",
+    "ja": "９０５Ｐ：重陸戦ユニット装備",
+    "de": "905P: Läufer",
+    "fr": "905P : avec unité terrestre lourde"
+  },
+  "9651": {
+    "en": "pod",
+    "ja": "ポッド",
+    "de": "Pod",
+    "fr": "pod"
+  },
+  "9652": {
+    "en": "light artillery unit",
+    "ja": "軽陸戦ユニット",
+    "de": "leicht[a] Infanterieeinheit",
+    "fr": "unité terrestre légère"
+  },
+  "9653": {
+    "en": "YoRHa close-combat unit: martial",
+    "ja": "ヨルハ：重装備（格）",
+    "de": "schwer[a] YoRHa-Standardeinheit",
+    "fr": "unité YoRHa lourdement équipée (cestes)"
+  },
+  "9654": {
+    "en": "YoRHa close-combat unit: blade",
+    "ja": "ヨルハ：重装備（剣）",
+    "de": "schwer[a] YoRHa-Schwerteinheit",
+    "fr": "unité YoRHa lourdement équipée (sabre)"
+  },
+  "9655": {
+    "en": "YoRHa close-combat unit: spear",
+    "ja": "ヨルハ：重装備（槍）",
+    "de": "schwer[a] YoRHa-Lanzeneinheit",
+    "fr": "unité YoRHa lourdement équipée (lance)"
+  },
+  "9656": {
+    "en": "heavy artillery unit",
+    "ja": "重陸戦ユニット",
+    "de": "leicht[a] Läufer",
+    "fr": "unité terrestre lourde"
+  },
+  "9657": {
+    "en": "barricade",
+    "ja": "バリケード",
+    "de": "Barrikade",
+    "fr": "barricade"
+  },
+  "9658": {
+    "en": "21O self-consciousness data",
+    "ja": "２１Ｏ：自我データ",
+    "de": "21O: Erinnerungsdaten",
+    "fr": "21O : données de conscience"
+  },
+  "9659": {
+    "en": "813P",
+    "ja": "８１３Ｐ",
+    "de": "813P",
+    "fr": "813P"
+  },
+  "9660": {
+    "en": "767P",
+    "ja": "７６７Ｐ",
+    "de": "767P",
+    "fr": "767P"
+  },
+  "9661": {
+    "en": "772P",
+    "ja": "７７２Ｐ",
+    "de": "772P",
+    "fr": "772P"
+  },
+  "9662": {
+    "en": "724P",
+    "ja": "７２４Ｐ",
+    "de": "724P",
+    "fr": "724P"
+  },
+  "9663": {
+    "en": "905P",
+    "ja": "９０５Ｐ",
+    "de": "905P",
+    "fr": "905P"
+  },
+  "9664": {
+    "en": "energy",
+    "ja": "エネルギー弾",
+    "de": "energetisch[a] Geschoss",
+    "fr": "balle d'énergie"
+  },
+  "9665": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9666": {
+    "en": "Papalymo",
+    "ja": "パパリモ",
+    "de": "Papalymo",
+    "fr": "Papalymo"
+  },
+  "9667": {
+    "en": "Terminus Est",
+    "ja": "ターミナス・エスト",
+    "de": "Terminus Est",
+    "fr": "Terminus Est"
+  },
+  "9668": {
+    "en": "Elidibus",
+    "ja": "エリディブス",
+    "de": "Elidibus",
+    "fr": "Elidibus"
+  },
+  "9669": {
+    "en": "corrupted creation",
+    "ja": "不浄な創造生物",
+    "de": "verderbt[a] Kreatur",
+    "fr": "création corrompue"
+  },
+  "9670": {
+    "en": "creation magick",
+    "ja": "創造魔法",
+    "de": "Erschaffungsmagie",
+    "fr": "cercle de magie créatrice"
+  },
+  "9671": {
+    "en": "Yuyuhase",
+    "ja": "ユユハセ",
+    "de": "Yuyuhase",
+    "fr": "Yuyuhase"
+  },
+  "9672": {
+    "en": "Laurentius",
+    "ja": "ローレンティス",
+    "de": "Laurentius",
+    "fr": "Laurentius"
+  },
+  "9673": {
+    "en": "dimensional tear",
+    "ja": "次元裂傷",
+    "de": "Dimensionsriss",
+    "fr": "déchirure dimensionnelle"
+  },
+  "9674": {
+    "en": "Ilberd",
+    "ja": "イルベルド",
+    "de": "Ilberd",
+    "fr": "Ilberd"
+  },
+  "9675": {
+    "en": "Lucia",
+    "ja": "ルキア",
+    "de": "Lucia",
+    "fr": "Lucia"
+  },
+  "9676": {
+    "en": "Magnai",
+    "ja": "マグナイ",
+    "de": "Magnai",
+    "fr": "Magnai"
+  },
+  "9677": {
+    "en": "Sadu",
+    "ja": "サドゥ",
+    "de": "Sadu",
+    "fr": "Sadu"
+  },
+  "9678": {
+    "en": "Yugiri",
+    "ja": "ユウギリ",
+    "de": "Yugiri",
+    "fr": "Yugiri"
+  },
+  "9679": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9680": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9681": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9682": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9683": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9684": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9685": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9686": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9687": {
+    "en": "man's determined voice",
+    "ja": "決然とした男性の声",
+    "de": "entschlossen[a] Männerstimme",
+    "fr": "voix d'homme déterminé"
+  },
+  "9688": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9689": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9690": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9691": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9692": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9693": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9694": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9695": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9696": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9697": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9698": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9699": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9700": {
     "en": "",
     "ja": "",
     "de": "",

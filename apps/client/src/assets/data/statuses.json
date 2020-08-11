@@ -2919,11 +2919,11 @@
     "icon": "/i/010000/010405.png"
   },
   "418": {
-    "en": "Physical Vulnerability Down",
-    "de": "Verringerte physische Verwundbarkeit",
-    "ja": "",
-    "fr": "Vulnérabilité physique diminuée",
-    "icon": ""
+    "en": "Transcendent",
+    "de": "Temporäre Unverwundbarkeit",
+    "ja": "生還",
+    "fr": "Résurrection récente",
+    "icon": "/i/015000/015273.png"
   },
   "419": {
     "en": "Misty Veil",
@@ -8722,11 +8722,11 @@
     "icon": ""
   },
   "1247": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Diurnal Balance",
+    "de": "Neutral (Diurnal)",
+    "ja": "ニュートラルセクト［日］",
+    "fr": "Adepte de la neutralité (diurne)",
+    "icon": "/i/013000/013254.png"
   },
   "1248": {
     "en": "Giant Dominance",
@@ -11508,10 +11508,10 @@
     "icon": "/i/016000/016640.png"
   },
   "1645": {
-    "en": "Rapid Recast L",
-    "de": "Logos-Velocitas",
-    "ja": "ロゴス・ファストリキャスト",
-    "fr": "Évocation Logos: Recharge rapide",
+    "en": "Rapid Recast",
+    "de": "Velocitas",
+    "ja": "ファストリキャスト",
+    "fr": "Recharge rapide",
     "icon": "/i/016000/016641.png"
   },
   "1646": {
@@ -11522,17 +11522,17 @@
     "icon": "/i/016000/016642.png"
   },
   "1647": {
-    "en": "Solid Shield L",
-    "de": "Logos-Schild",
-    "ja": "ロゴス・フィジカルシールド",
-    "fr": "Évocation Logos: Protection physique",
+    "en": "Solid Shield",
+    "de": "Physisches Schild",
+    "ja": "フィジカルシールド",
+    "fr": "Protection physique",
     "icon": "/i/016000/016643.png"
   },
   "1648": {
-    "en": "Spell Shield L",
-    "de": "Logos-Magieschild",
-    "ja": "ロゴス・マジックシールド",
-    "fr": "Évocation Logos: Protection magique",
+    "en": "Spell Shield",
+    "de": "Magisches Schild",
+    "ja": "マジックシールド",
+    "fr": "Protection magique",
     "icon": "/i/016000/016644.png"
   },
   "1649": {
@@ -15582,11 +15582,11 @@
     "icon": "/i/016000/016126.png"
   },
   "2227": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Nascent Flash",
+    "de": "Urflackern",
+    "ja": "原初の猛り",
+    "fr": "Exaltation naissante",
+    "icon": "/i/012000/012558.png"
   },
   "2228": {
     "en": "Surge Protection",
@@ -16002,32 +16002,32 @@
     "icon": "/i/015000/015545.png"
   },
   "2287": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "True Hallowed Ground",
+    "de": "Vollkommene Unbesiegbarkeit",
+    "ja": "トゥルー・インビンシブル",
+    "fr": "Invincibilité véritable",
+    "icon": "/i/012000/012504.png"
   },
   "2288": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shield Protocol A",
+    "de": "Schutzsysteme A",
+    "ja": "防御プログラムA",
+    "fr": "Programme défensif A",
+    "icon": "/i/015000/015263.png"
   },
   "2289": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shield Protocol B",
+    "de": "Schutzsysteme B",
+    "ja": "防御プログラムB",
+    "fr": "Programme défensif B",
+    "icon": "/i/015000/015264.png"
   },
   "2290": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shield Protocol C",
+    "de": "Schutzsysteme C",
+    "ja": "防御プログラムC",
+    "fr": "Programme défensif C",
+    "icon": "/i/015000/015265.png"
   },
   "2291": {
     "en": "",
@@ -16044,25 +16044,25 @@
     "icon": ""
   },
   "2293": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Dash",
+    "de": "Sprint",
+    "ja": "ダッシュ",
+    "fr": "Élan",
+    "icon": "/i/015000/015266.png"
   },
   "2294": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Pyretic Booster",
+    "de": "Übermodus",
+    "ja": "ブーストモード",
+    "fr": "Mode turbo",
+    "icon": "/i/015000/015257.png"
   },
   "2295": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Aetherial Aegis",
+    "de": "Ätherbarriere",
+    "ja": "エーテルバリア",
+    "fr": "Barrière éthérée",
+    "icon": "/i/015000/015258.png"
   },
   "2296": {
     "en": "",
@@ -16114,11 +16114,11 @@
     "icon": ""
   },
   "2303": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "True Walking Dead",
+    "de": "Absoluter Erweckter",
+    "ja": "トゥルー・ウォーキングデッド",
+    "fr": "Marcheur des limbes véritable",
+    "icon": "/i/015000/015270.png"
   },
   "2304": {
     "en": "",
@@ -16142,27 +16142,797 @@
     "icon": ""
   },
   "2307": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Safety Lock: Pyretic Booster",
+    "de": "Beschränkung: Übermodus",
+    "ja": "兵装制限：ブーストモード",
+    "fr": "Restriction: mode turbo",
+    "icon": "/i/015000/015259.png"
   },
   "2308": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Safety Lock: Aetherial Aegis",
+    "de": "Beschränkung: Ätherbarriere",
+    "ja": "兵装制限：エーテルバリア",
+    "fr": "Restriction: barrière éthérée",
+    "icon": "/i/015000/015260.png"
   },
   "2309": {
+    "en": "A Bit Berserk",
+    "de": "Unbändiger Zorn",
+    "ja": "徐々にバーサク",
+    "fr": "Métamorphose berserker",
+    "icon": "/i/017000/017251.png"
+  },
+  "2310": {
+    "en": "Truly Berserk",
+    "de": "Berserkerwut",
+    "ja": "トゥルー・バーサク",
+    "fr": "Berserker véritable",
+    "icon": "/i/015000/015276.png"
+  },
+  "2311": {
     "en": "",
     "de": "",
     "ja": "",
     "fr": "",
     "icon": ""
   },
-  "2310": {
+  "2312": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2313": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2314": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2315": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2316": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2317": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2318": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2319": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2320": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2321": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2322": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2323": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2324": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2325": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2326": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2327": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2328": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2329": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2330": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2331": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2332": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2333": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2334": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2335": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2336": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2337": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2338": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2339": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2340": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2341": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2342": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2343": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2344": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2345": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2346": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2347": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2348": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2349": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2350": {
+    "en": "Hastilude",
+    "de": "Hastiludia",
+    "ja": "ハスティルード",
+    "fr": "Hastilude",
+    "icon": "/i/012000/012512.png"
+  },
+  "2351": {
+    "en": "Hastilude Heartened",
+    "de": "Hastiludia",
+    "ja": "ハスティルード：効果",
+    "fr": "Hastilude (effet)",
+    "icon": "/i/012000/012513.png"
+  },
+  "2352": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2353": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2354": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2355": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2356": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2357": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2358": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2359": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2360": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2361": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2362": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2363": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2364": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2365": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2366": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2367": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2368": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2369": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2370": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2371": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2372": {
+    "en": "Absolute Protect",
+    "de": "Absolutes Protes",
+    "ja": "アブソリュートプロテス",
+    "fr": "Bouclier absolu",
+    "icon": "/i/010000/010405.png"
+  },
+  "2373": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2374": {
+    "en": "EP Penalty",
+    "de": "EP-Regeneration unwirksam",
+    "ja": "ＥＰ自然回復無効",
+    "fr": "Auto-récupération des PE désactivée",
+    "icon": "/i/016000/016705.png"
+  },
+  "2375": {
+    "en": "Feelin' Hot",
+    "de": "Bombenhitze",
+    "ja": "熱量向上",
+    "fr": "Gain explosif",
+    "icon": "/i/017000/017821.png"
+  },
+  "2376": {
+    "en": "Quintuplecast",
+    "de": "Fünffachzauber",
+    "ja": "五連魔",
+    "fr": "Quintuple sort",
+    "icon": "/i/017000/017211.png"
+  },
+  "2377": {
+    "en": "Imbued Saber",
+    "de": "Magieklinge",
+    "ja": "魔法剣",
+    "fr": "Magilame",
+    "icon": "/i/017000/017016.png"
+  },
+  "2378": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2379": {
+    "en": "Fresh Perspective",
+    "de": "Spezialangriff",
+    "ja": "特殊戦闘",
+    "fr": "Combat spécial",
+    "icon": "/i/015000/015111.png"
+  },
+  "2380": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2381": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2382": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2383": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2384": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2385": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2386": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2387": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2388": {
+    "en": "Nausea",
+    "de": "Nausea",
+    "ja": "吐き気",
+    "fr": "Nausée",
+    "icon": "/i/015000/015274.png"
+  },
+  "2389": {
+    "en": "Pain",
+    "de": "Blutung",
+    "ja": "ペイン",
+    "fr": "Saignement",
+    "icon": "/i/015000/015530.png"
+  },
+  "2390": {
+    "en": "Hover",
+    "de": "Schweben",
+    "ja": "滞空",
+    "fr": "Élévation",
+    "icon": "/i/015000/015683.png"
+  },
+  "2391": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2392": {
+    "en": "Lightning Shot",
+    "de": "Donnerkugel",
+    "ja": "サンダーバレット",
+    "fr": "Barillet tonnerre",
+    "icon": "/i/014000/014886.png"
+  },
+  "2393": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2394": {
+    "en": "Damage Up",
+    "de": "Schaden +",
+    "ja": "ダメージ上昇",
+    "fr": "Bonus de dégâts",
+    "icon": "/i/015000/015519.png"
+  },
+  "2395": {
+    "en": "Vulnerability Down",
+    "de": "Verringerte Verwundbarkeit",
+    "ja": "被ダメージ低下",
+    "fr": "Vulnérabilité diminuée",
+    "icon": "/i/015000/015021.png"
+  },
+  "2396": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2397": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2398": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2399": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2400": {
+    "en": "孤独感",
+    "de": "孤独感",
+    "ja": "孤独感",
+    "fr": "孤独感",
+    "icon": "/i/015000/015649.png"
+  },
+  "2401": {
+    "en": "Burns",
+    "de": "Brandwunde",
+    "ja": "火傷",
+    "fr": "Brûlure",
+    "icon": "/i/015000/015524.png"
+  },
+  "2402": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2403": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2404": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2405": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2406": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2407": {
+    "en": "Fetters",
+    "de": "Granitgefängnis",
+    "ja": "拘束",
+    "fr": "Attache",
+    "icon": "/i/015000/015545.png"
+  },
+  "2408": {
+    "en": "Down for the Count",
+    "de": "Am Boden",
+    "ja": "ノックダウン",
+    "fr": "Au tapis",
+    "icon": "/i/015000/015044.png"
+  },
+  "2409": {
+    "en": "Process of Elimination A",
+    "de": "Vernichtungsprogramm A",
+    "ja": "殲滅プログラムA",
+    "fr": "Programme d'extermination A",
+    "icon": "/i/015000/015277.png"
+  },
+  "2410": {
+    "en": "Process of Elimination B",
+    "de": "Vernichtungsprogramm B",
+    "ja": "殲滅プログラムB",
+    "fr": "Programme d'extermination B",
+    "icon": "/i/015000/015278.png"
+  },
+  "2411": {
+    "en": "Process of Elimination C",
+    "de": "Vernichtungsprogramm C",
+    "ja": "殲滅プログラムC",
+    "fr": "Programme d'extermination C",
+    "icon": "/i/015000/015279.png"
+  },
+  "2412": {
+    "en": "Cover",
+    "de": "Deckung",
+    "ja": "かばう",
+    "fr": "Couverture",
+    "icon": "/i/012000/012501.png"
+  },
+  "2413": {
+    "en": "Covered",
+    "de": "Gedeckt",
+    "ja": "かばう［被］",
+    "fr": "Couvert",
+    "icon": "/i/012000/012502.png"
+  },
+  "2414": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": "/i/015000/015545.png"
+  },
+  "2415": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2416": {
+    "en": "Light Beyond Darkness",
+    "de": "Unzähmbares Licht",
+    "ja": "光の解放[強]",
+    "fr": "Lumière salvatrice+",
+    "icon": "/i/015000/015988.png"
+  },
+  "2417": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2418": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2419": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2420": {
     "en": "",
     "de": "",
     "ja": "",

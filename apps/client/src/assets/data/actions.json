@@ -3776,7 +3776,7 @@
   "631": {
     "en": "Eye of the Beholder",
     "de": "Auge des Betrachters",
-    "ja": "アイ・オブ・ビボルダー",
+    "ja": "アイ・オブ・ビホルダー",
     "fr": "Œil de l'observateur"
   },
   "632": {
@@ -12476,7 +12476,7 @@
   "2081": {
     "en": "Eye of the Beholder",
     "de": "Auge des Betrachters",
-    "ja": "アイ・オブ・ビボルダー",
+    "ja": "アイ・オブ・ビホルダー",
     "fr": "Œil de l'observateur"
   },
   "2082": {
@@ -14504,7 +14504,7 @@
   "2419": {
     "en": "Eye of the Beholder",
     "de": "Auge des Betrachters",
-    "ja": "アイ・オブ・ビボルダー",
+    "ja": "アイ・オブ・ビホルダー",
     "fr": "Œil de l'observateur"
   },
   "2420": {
@@ -16616,7 +16616,7 @@
   "2771": {
     "en": "Eye of the Beholder",
     "de": "Auge des Betrachters",
-    "ja": "アイ・オブ・ビボルダー",
+    "ja": "アイ・オブ・ビホルダー",
     "fr": "Œil de l'observateur"
   },
   "2772": {
@@ -41822,7 +41822,7 @@
   "6972": {
     "en": "Eye of the Beholder",
     "de": "Auge des Betrachters",
-    "ja": "アイ・オブ・ビボルダー",
+    "ja": "アイ・オブ・ビホルダー",
     "fr": "Œil de l'observateur"
   },
   "6973": {
@@ -102411,7 +102411,7 @@
     "en": "Shadow Bastion",
     "de": "Manawand",
     "ja": "マナウォール",
-    "fr": "Mur de mana"
+    "fr": "Bastion de l'ombre"
   },
   "17071": {
     "en": "Aetheric Sever",
@@ -109555,7 +109555,7 @@
   },
   "18261": {
     "en": "Diffuse Laser",
-    "de": "Diffusionslaser",
+    "de": "Diffraktiver Laser",
     "ja": "拡散レーザー",
     "fr": "Laser diffractif"
   },
@@ -112597,7 +112597,7 @@
   },
   "18768": {
     "en": "Ode to Fallen Petals",
-    "de": "Stimme des Blumensturms",
+    "de": "Lied des Blütensturms",
     "ja": "花嵐の歌声",
     "fr": "Mélodie florale"
   },
@@ -114285,13 +114285,13 @@
     "en": "Balanced Edge",
     "de": "Horizontalhieb",
     "ja": "水平重撃",
-    "fr": "Coup fort horizontal"
+    "fr": "Grand coup horizontal"
   },
   "19050": {
     "en": "Whirling Assault",
     "de": "Rigoroser Ringangriff",
     "ja": "重撃転回斬",
-    "fr": "Coup fort tournoyant"
+    "fr": "Grand coup tournoyant"
   },
   "19051": {
     "en": "Doom Impending",
@@ -117264,13 +117264,13 @@
     "fr": "Murmuration du crépuscule"
   },
   "19546": {
-    "en": "Dark's Course",
+    "en": "Light's Course",
     "de": "Weißer Strom des Lichts",
     "ja": "白光の奔流",
     "fr": "Déferlement immaculé"
   },
   "19547": {
-    "en": "Light's Course",
+    "en": "Dark's Course",
     "de": "Schwarzer Strom der Finsternis",
     "ja": "黒闇の奔流",
     "fr": "Déferlement ténébreux"
@@ -120354,10 +120354,10 @@
     "fr": ""
   },
   "20061": {
-    "en": "Parasol",
-    "de": "Sonnenschirm",
-    "ja": "パラソル",
-    "fr": "Ombrelle"
+    "en": "Accessorize",
+    "de": "Modeaccessoire",
+    "ja": "ファッションアクセサリー",
+    "fr": "Accessoire de mode"
   },
   "20062": {
     "en": "",
@@ -120714,16 +120714,16 @@
     "fr": ""
   },
   "20121": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cannonfire",
+    "de": "Feuer frei!",
+    "ja": "砲撃",
+    "fr": "Tir de canon"
   },
   "20122": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cannonfire",
+    "de": "Feuer frei!",
+    "ja": "砲撃",
+    "fr": "Tir de canon"
   },
   "20123": {
     "en": "",
@@ -121200,40 +121200,40 @@
     "fr": ""
   },
   "20202": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Holy",
+    "de": "Absolutes Sanctus",
+    "ja": "アブソリュートホーリー",
+    "fr": "Miracle absolu"
   },
   "20203": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Stone III",
+    "de": "Absolutes Steinga",
+    "ja": "アブソリュートストンガ",
+    "fr": "Méga Terre absolue"
   },
   "20204": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Blizzard III",
+    "de": "Absolutes Eisga",
+    "ja": "アブソリュートブリザガ",
+    "fr": "Méga Glace absolue"
   },
   "20205": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Fire III",
+    "de": "Absolutes Feuga",
+    "ja": "アブソリュートファイガ",
+    "fr": "Méga Feu absolu"
   },
   "20206": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Flash",
+    "de": "Absolutes Blitzlicht",
+    "ja": "アブソリュートフラッシュ",
+    "fr": "Magilame Flash"
   },
   "20207": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Quintuplecast",
+    "de": "Fünffachzauber",
+    "ja": "五連魔",
+    "fr": "Quintuple sort"
   },
   "20208": {
     "en": "",
@@ -121242,214 +121242,214 @@
     "fr": ""
   },
   "20209": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coruscant Saber",
+    "de": "Gleißender Säbel",
+    "ja": "ブライトセイバー",
+    "fr": "Fureur flamboyante"
   },
   "20210": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coruscant Saber",
+    "de": "Gleißender Säbel",
+    "ja": "ブライトセイバー",
+    "fr": "Fureur flamboyante"
   },
   "20211": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Saber",
+    "de": "Magieklinge",
+    "ja": "魔法剣",
+    "fr": "Magilame"
   },
   "20212": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Saber",
+    "de": "Magieklinge",
+    "ja": "魔法剣",
+    "fr": "Magilame"
   },
   "20213": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Saber",
+    "de": "Magieklinge",
+    "ja": "魔法剣",
+    "fr": "Magilame"
   },
   "20214": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Saber",
+    "de": "Magieklinge",
+    "ja": "魔法剣",
+    "fr": "Magilame"
   },
   "20215": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Braver",
+    "de": "Gleißende Gerechtigkeit",
+    "ja": "ブライトブレイバー",
+    "fr": "Âme brave flamboyante"
   },
   "20216": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Braver",
+    "de": "Gleißende Gerechtigkeit",
+    "ja": "ブライトブレイバー",
+    "fr": "Âme brave flamboyante"
   },
   "20217": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Desperado",
+    "de": "Gleißender Desperado",
+    "ja": "ブライトデスペラード",
+    "fr": "Desperado flamboyant"
   },
   "20218": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Desperado",
+    "de": "Gleißender Desperado",
+    "ja": "ブライトデスペラード",
+    "fr": "Desperado flamboyant"
   },
   "20219": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Limit Break",
+    "de": "Limitrausch",
+    "ja": "リミットブレイク",
+    "fr": "Transcendance"
   },
   "20220": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Meteor",
+    "de": "Gleißender Meteor",
+    "ja": "ブライトメテオ",
+    "fr": "Météore flamboyant"
   },
   "20221": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Suiton: San ",
+    "de": "Suiton: San ",
+    "ja": "水遁の術：参",
+    "fr": "Suiton : San"
   },
   "20222": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Katon: San ",
+    "de": "Katon: San ",
+    "ja": "火遁の術：参",
+    "fr": "Katon : San"
   },
   "20223": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Brimstone Earth",
+    "de": "Schwefelerde",
+    "ja": "ブリムストーンアース",
+    "fr": "Terre de soufre"
   },
   "20224": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Brimstone Earth",
+    "de": "Schwefelerde",
+    "ja": "ブリムストーンアース",
+    "fr": "Terre de soufre"
   },
   "20225": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fire and Brimstone",
+    "de": "Feuer und Schwefel",
+    "ja": "ファイア・アンド・ブリムストーン",
+    "fr": "Du feu et du soufre"
   },
   "20226": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Deluge of Death",
+    "de": "Tödlicher Sturzregen",
+    "ja": "ヘビーレイン・オブ・デス",
+    "fr": "Averse mortelle"
   },
   "20227": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Meteor Impact",
+    "de": "Meteoreinschlag",
+    "ja": "メテオインパクト",
+    "fr": "Impact de météore"
   },
   "20228": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Meteoric Burst",
+    "de": "Meteorexplosion",
+    "ja": "メテオバースト",
+    "fr": "Rafale de Météore"
   },
   "20229": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Perfect Decimation",
+    "de": "Perfektes Dezimieren",
+    "ja": "パーフェクトデシメート",
+    "fr": "Décimation parfaite"
   },
   "20230": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Flare Breath",
+    "de": "Flare-Atem",
+    "ja": "フレアブレス",
+    "fr": "Souffle brasier"
   },
   "20231": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cauterize",
+    "de": "Kauterisieren",
+    "ja": "カータライズ",
+    "fr": "Cautérisation"
   },
   "20232": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Shining Wave",
+    "de": "Leuchtwelle",
+    "ja": "シャイニングウェーブ",
+    "fr": "Épée flamboyante"
   },
   "20233": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Terror Unleashed",
+    "de": "Entfesselter Terror",
+    "ja": "アンリーシュ・テラー",
+    "fr": "Déchaînement de la terreur"
   },
   "20234": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Bitter End",
+    "de": "Schwertschimmer",
+    "ja": "エンドオール",
+    "fr": "Éradication"
   },
   "20235": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Elddragon Dive",
+    "de": "Altdrachensturz",
+    "ja": "エンシェントドラゴンダイブ",
+    "fr": "Piqué du dragon ancien"
   },
   "20236": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Solemn Confiteor",
+    "de": "Feierlicher Confiteor",
+    "ja": "ソーレムコンフィテオル",
+    "fr": "Confiteor solennel"
   },
   "20237": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Holy",
+    "de": "Absolutes Sanctus",
+    "ja": "アブソリュートホーリー",
+    "fr": "Miracle absolu"
   },
   "20238": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Blizzard III",
+    "de": "Absolutes Eisga",
+    "ja": "アブソリュートブリザガ",
+    "fr": "Méga Glace absolue"
   },
   "20239": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Fire III",
+    "de": "Absolutes Feuga",
+    "ja": "アブソリュートファイガ",
+    "fr": "Méga Feu absolu"
   },
   "20240": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coruscant Saber",
+    "de": "Gleißender Säbel",
+    "ja": "ブライトセイバー",
+    "fr": "Fureur flamboyante"
   },
   "20241": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coruscant Saber",
+    "de": "Gleißender Säbel",
+    "ja": "ブライトセイバー",
+    "fr": "Fureur flamboyante"
   },
   "20242": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Absolute Fire III",
+    "de": "Magieklinge des absoluten Feuga",
+    "ja": "魔法剣アブソリュートファイガ",
+    "fr": "Magilame Méga Feu absolu"
   },
   "20243": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Absolute Blizzard III",
+    "de": "Magieklinge des absoluten Eisga",
+    "ja": "魔法剣アブソリュートブリザガ",
+    "fr": "Magilame Méga Glace absolue"
   },
   "20244": {
     "en": "",
@@ -121458,292 +121458,292 @@
     "fr": ""
   },
   "20245": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Earthshatter",
+    "de": "Erdzersplitterung",
+    "ja": "アースシャッター",
+    "fr": "Éclat tellurique"
   },
   "20246": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Braver",
+    "de": "Gleißende Gerechtigkeit",
+    "ja": "ブライトブレイバー",
+    "fr": "Âme brave flamboyante"
   },
   "20247": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Braver",
+    "de": "Gleißende Gerechtigkeit",
+    "ja": "ブライトブレイバー",
+    "fr": "Âme brave flamboyante"
   },
   "20248": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Desperado",
+    "de": "Gleißender Desperado",
+    "ja": "ブライトデスペラード",
+    "fr": "Desperado flamboyant"
   },
   "20249": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Desperado",
+    "de": "Gleißender Desperado",
+    "ja": "ブライトデスペラード",
+    "fr": "Desperado flamboyant"
   },
   "20250": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Meteor",
+    "de": "Gleißender Meteor",
+    "ja": "ブライトメテオ",
+    "fr": "Météore flamboyant"
   },
   "20251": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Meteor",
+    "de": "Gleißender Meteor",
+    "ja": "ブライトメテオ",
+    "fr": "Météore flamboyant"
   },
   "20252": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Suiton: San ",
+    "de": "Suiton: San ",
+    "ja": "水遁の術：参",
+    "fr": "Suiton : San"
   },
   "20253": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Katon: San ",
+    "de": "Katon: San ",
+    "ja": "火遁の術：参",
+    "fr": "Katon : San"
   },
   "20254": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Brimstone Earth",
+    "de": "Schwefelerde",
+    "ja": "ブリムストーンアース",
+    "fr": "Terre de soufre"
   },
   "20255": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Brimstone Earth",
+    "de": "Schwefelerde",
+    "ja": "ブリムストーンアース",
+    "fr": "Terre de soufre"
   },
   "20256": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Deluge of Death",
+    "de": "Tödlicher Sturzregen",
+    "ja": "ヘビーレイン・オブ・デス",
+    "fr": "Averse mortelle"
   },
   "20257": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Meteor Impact",
+    "de": "Meteoreinschlag",
+    "ja": "メテオインパクト",
+    "fr": "Impact de météore"
   },
   "20258": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Meteoric Burst",
+    "de": "Meteorexplosion",
+    "ja": "メテオバースト",
+    "fr": "Rafale de Météore"
   },
   "20259": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Perfect Decimation",
+    "de": "Perfektes Dezimieren",
+    "ja": "パーフェクトデシメート",
+    "fr": "Décimation parfaite"
   },
   "20260": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Flare Breath",
+    "de": "Flare-Atem",
+    "ja": "フレアブレス",
+    "fr": "Souffle brasier"
   },
   "20261": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Cauterize",
+    "de": "Kauterisieren",
+    "ja": "カータライズ",
+    "fr": "Cautérisation"
   },
   "20262": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Shining Wave",
+    "de": "Leuchtwelle",
+    "ja": "シャイニングウェーブ",
+    "fr": "Épée flamboyante"
   },
   "20263": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Terror Unleashed",
+    "de": "Entfesselter Terror",
+    "ja": "アンリーシュ・テラー",
+    "fr": "Déchaînement de la terreur"
   },
   "20264": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "The Bitter End",
+    "de": "Schwertschimmer",
+    "ja": "エンドオール",
+    "fr": "Éradication"
   },
   "20265": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Elddragon Dive",
+    "de": "Drachensturz",
+    "ja": "エンシェントドラゴンダイブ",
+    "fr": "Piqué du dragon ancien"
   },
   "20266": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Solemn Confiteor",
+    "de": "Feierlicher Confiteor",
+    "ja": "ソーレムコンフィテオル",
+    "fr": "Confiteor solennel"
   },
   "20267": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Holy",
+    "de": "Absolutes Sanctus",
+    "ja": "アブソリュートホーリー",
+    "fr": "Miracle absolu"
   },
   "20268": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Stone III",
+    "de": "Absolutes Steinga",
+    "ja": "アブソリュートストンガ",
+    "fr": "Méga Terre absolue"
   },
   "20269": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Blizzard III",
+    "de": "Absolutes Eisga",
+    "ja": "アブソリュートブリザガ",
+    "fr": "Méga Glace absolue"
   },
   "20270": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Fire III",
+    "de": "Absolutes Feuga",
+    "ja": "アブソリュートファイガ",
+    "fr": "Méga Feu absolu"
   },
   "20271": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Flash",
+    "de": "Absolutes Blitzlicht",
+    "ja": "アブソリュートフラッシュ",
+    "fr": "Magilame Flash"
   },
   "20272": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Toad Choir",
+    "de": "Froschchor",
+    "ja": "カエルの調べ",
+    "fr": "Mélodie du crapeau"
   },
   "20273": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Kick",
+    "de": "Tritt",
+    "ja": "キック",
+    "fr": "Coup de sabot"
   },
   "20274": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fire Magick",
+    "de": "Feuermagie",
+    "ja": "火の魔法",
+    "fr": "Magie de feu"
   },
   "20275": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Canopy",
+    "de": "Baldachin",
+    "ja": "カノピー",
+    "fr": "Canopée"
   },
   "20276": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "To the Limit",
+    "de": "Bis ans Limit",
+    "ja": "リミットチャージ",
+    "fr": "Pas vers la transcendance"
   },
   "20277": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "To the Limit",
+    "de": "Bis ans Limit",
+    "ja": "リミットチャージ",
+    "fr": "Pas vers la transcendance"
   },
   "20278": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "To the Limit",
+    "de": "Bis ans Limit",
+    "ja": "リミットチャージ",
+    "fr": "Pas vers la transcendance"
   },
   "20279": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Specter of Light",
+    "de": "Heldenruf",
+    "ja": "幻光召喚",
+    "fr": "Sommation des braves"
   },
   "20280": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Suiton: San ",
+    "de": "Suiton: San ",
+    "ja": "水遁の術：参",
+    "fr": "Suiton : San"
   },
   "20281": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Katon: San ",
+    "de": "Katon: San ",
+    "ja": "火遁の術：参",
+    "fr": "Katon : San"
   },
   "20282": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Brimstone Earth",
+    "de": "Schwefelerde",
+    "ja": "ブリムストーンアース",
+    "fr": "Terre de soufre"
   },
   "20283": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Deluge of Death",
+    "de": "Tödlicher Sturzregen",
+    "ja": "ヘビーレイン・オブ・デス",
+    "fr": "Averse mortelle"
   },
   "20284": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Twincast",
+    "de": "Dualzauber",
+    "ja": "ふたりがけ",
+    "fr": "Tandem"
   },
   "20285": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Twincast",
+    "de": "Dualzauber",
+    "ja": "ふたりがけ",
+    "fr": "Tandem"
   },
   "20286": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Perfect Decimation",
+    "de": "Perfektes Dezimieren",
+    "ja": "パーフェクトデシメート",
+    "fr": "Décimation parfaite"
   },
   "20287": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Summon",
+    "de": "Beschwörung",
+    "ja": "召喚",
+    "fr": "Invocation"
   },
   "20288": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Flare Breath",
+    "de": "Flare-Atem",
+    "ja": "フレアブレス",
+    "fr": "Souffle brasier"
   },
   "20289": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Summon Wyrm",
+    "de": "Drachenbeschwörung",
+    "ja": "サモン・ウィルム",
+    "fr": "Invocation de wyrm"
   },
   "20290": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sword of Light",
+    "de": "Schwert des Lichts",
+    "ja": "ソード・オブ・ライト",
+    "fr": "Lame de Lumière"
   },
   "20291": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Solemn Confiteor",
+    "de": "Feierlicher Confiteor",
+    "ja": "ソーレムコンフィテオル",
+    "fr": "Confiteor solennel"
   },
   "20292": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "True Hallowed Ground",
+    "de": "Vollkommene Unbesiegbarkeit",
+    "ja": "トゥルー・インビンシブル",
+    "fr": "Invincibilité véritable"
   },
   "20293": {
     "en": "",
@@ -121758,10 +121758,10 @@
     "fr": ""
   },
   "20295": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Verdant Tornado",
+    "de": "Laubtornado",
+    "ja": "リーフトルネード",
+    "fr": "Tornade de feuilles"
   },
   "20296": {
     "en": "",
@@ -121770,28 +121770,28 @@
     "fr": ""
   },
   "20297": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Coruscance",
+    "de": "Magieklingentechnik: Gleißender Säbel",
+    "ja": "魔法剣技：ブライトセイバー",
+    "fr": "Magilame Fureur flamboyante"
   },
   "20298": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Coruscance",
+    "de": "Magieklingentechnik: Gleißender Säbel",
+    "ja": "魔法剣技：ブライトセイバー",
+    "fr": "Magilame Fureur flamboyante"
   },
   "20299": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Coruscance",
+    "de": "Magieklingentechnik: Gleißender Säbel",
+    "ja": "魔法剣技：ブライトセイバー",
+    "fr": "Magilame Fureur flamboyante"
   },
   "20300": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Imbued Coruscance",
+    "de": "Magieklingentechnik: Gleißender Säbel",
+    "ja": "魔法剣技：ブライトセイバー",
+    "fr": "Magilame Fureur flamboyante"
   },
   "20301": {
     "en": "Judgment Jolt",
@@ -121818,10 +121818,10 @@
     "fr": "Pinceau chocobo : noir"
   },
   "20305": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fell Forces",
+    "de": "Magieangriff",
+    "ja": "魔撃",
+    "fr": "Frappe maléfique"
   },
   "20306": {
     "en": "",
@@ -121854,52 +121854,52 @@
     "fr": ""
   },
   "20311": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Necromancy",
+    "de": "Nekromantie",
+    "ja": "ネクロマンシー",
+    "fr": "Nécromancie"
   },
   "20312": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Necromancy",
+    "de": "Nekromantie",
+    "ja": "ネクロマンシー",
+    "fr": "Nécromancie"
   },
   "20313": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Necroburst",
+    "de": "Nekro-Explosion",
+    "ja": "ネクロバースト",
+    "fr": "Salve nécrotique"
   },
   "20314": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Necroburst",
+    "de": "Nekro-Explosion",
+    "ja": "ネクロバースト",
+    "fr": "Salve nécrotique"
   },
   "20315": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "黒い雫",
+    "de": "Dunkler Tropfen",
+    "ja": "黒い雫",
+    "fr": "黒い雫"
   },
   "20316": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dark Deluge",
+    "de": "Finsterwelle",
+    "ja": "黒い波",
+    "fr": "Vague noire"
   },
   "20317": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dark Deluge",
+    "de": "Finsterwelle",
+    "ja": "黒い波",
+    "fr": "Vague noire"
   },
   "20318": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Twisted Touch",
+    "de": "Verseuchte Finger",
+    "ja": "穢れた指先",
+    "fr": "Toucher purulent"
   },
   "20319": {
     "en": "",
@@ -121908,82 +121908,82 @@
     "fr": ""
   },
   "20320": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Chaos Storm",
+    "de": "Chaossturm",
+    "ja": "カオスストーム",
+    "fr": "Tempête de chaos"
   },
   "20321": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Absolute Dark II",
+    "de": "Absolutes Negra",
+    "ja": "アブソリュートダーラ",
+    "fr": "Extra Ténèbres absolues"
   },
   "20322": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
   },
   "20323": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Death Throes",
+    "de": "Agonales Klammern",
+    "ja": "道連れ",
+    "fr": "Affres de la mort"
   },
   "20324": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
   },
   "20325": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Optimized Judgment",
+    "de": "Magitek-Urteil",
+    "ja": "魔導ジャッジメント",
+    "fr": "Jugement magitek"
   },
   "20326": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tail Swing",
+    "de": "Schwanzfeger",
+    "ja": "テールスイング",
+    "fr": "Queue balayante"
   },
   "20327": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sapphire Ray",
+    "de": "Saphir-Strahl",
+    "ja": "サファイアレイ",
+    "fr": "Rayon Saphir"
   },
   "20328": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Siderays",
+    "de": "Seitenstrahl",
+    "ja": "サイドレイ",
+    "fr": "Rayon latéral"
   },
   "20329": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Siderays",
+    "de": "Seitenstrahl",
+    "ja": "サイドレイ",
+    "fr": "Rayon latéral"
   },
   "20330": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Swiftbreach",
+    "de": "Blitzauftauchen",
+    "ja": "急浮上",
+    "fr": "Remontée subite"
   },
   "20331": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Turret",
+    "de": "Magitek-Geschütz",
+    "ja": "タレット射出",
+    "fr": "Éjection des tourelles"
   },
   "20332": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Magitek Ray",
+    "de": "Magitek-Laser",
+    "ja": "魔導レーザー",
+    "fr": "Rayon magitek"
   },
   "20333": {
     "en": "",
@@ -121992,22 +121992,22 @@
     "fr": ""
   },
   "20334": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Self-destruct",
+    "de": "Selbstzerstörung",
+    "ja": "自爆",
+    "fr": "Auto-destruction"
   },
   "20335": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Activate",
+    "de": "Aktivierung",
+    "ja": "起動",
+    "fr": "Activation"
   },
   "20336": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Magitek Spread",
+    "de": "Magitek-Streuschuss",
+    "ja": "魔導バックショット",
+    "fr": "Ensemencement magitek"
   },
   "20337": {
     "en": "",
@@ -122016,52 +122016,52 @@
     "fr": ""
   },
   "20338": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Flood Ray",
+    "de": "Flutstrahl",
+    "ja": "フラッドレイ",
+    "fr": "Déluge de rayons"
   },
   "20339": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Servant Roar",
+    "de": "Flammenschrei",
+    "ja": "サーヴァントロア",
+    "fr": "Rugissement servile"
   },
   "20340": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Plasma Shot",
+    "de": "Plasmaschuss",
+    "ja": "プラズマショット",
+    "fr": "Tir de plasma"
   },
   "20341": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Plasma Cannon",
+    "de": "Plasmakanone",
+    "ja": "プラズマカノン",
+    "fr": "Canon plasma"
   },
   "20342": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Optimized Ultima",
+    "de": "Ultima-System",
+    "ja": "魔導アルテマ",
+    "fr": "Ultima magitek"
   },
   "20343": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Inescapable Blast",
+    "de": "Flächenangriff",
+    "ja": "広範囲攻撃",
+    "fr": "Attaque circulaire"
   },
   "20344": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Inescapable Blast",
+    "de": "Flächenangriff",
+    "ja": "広範囲攻撃",
+    "fr": "Attaque circulaire"
   },
   "20345": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Attack",
+    "de": "Angriff",
+    "ja": "攻撃",
+    "fr": "Attaque"
   },
   "20346": {
     "en": "",
@@ -122298,10 +122298,10 @@
     "fr": "Malédiction du Seigneur des flammes"
   },
   "20385": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Frost Breath",
+    "de": "Frostiger Atem",
+    "ja": "フロストブレス",
+    "fr": "Souffle glacé"
   },
   "20386": {
     "en": "",
@@ -122310,118 +122310,118 @@
     "fr": ""
   },
   "20387": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Pain Mire",
+    "de": "Schmerzmoor",
+    "ja": "ペインボグ",
+    "fr": "Marécage de souffrance"
   },
   "20388": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Pain Mire",
+    "de": "Schmerzmoor",
+    "ja": "ペインボグ",
+    "fr": "Marécage de souffrance"
   },
   "20389": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "True Hallowed Ground",
+    "de": "Vollkommene Unbesiegbarkeit",
+    "ja": "トゥルー・インビンシブル",
+    "fr": "Invincibilité véritable"
   },
   "20390": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Apply Shield Protocol",
+    "de": "Schutzsysteme aktivieren",
+    "ja": "防御プログラム適用",
+    "fr": "Activation du programme défensif"
   },
   "20391": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Apply Shield Protocol",
+    "de": "Schutzsysteme aktivieren",
+    "ja": "防御プログラム適用",
+    "fr": "Activation du programme défensif"
   },
   "20392": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Apply Shield Protocol",
+    "de": "Schutzsysteme aktivieren",
+    "ja": "防御プログラム適用",
+    "fr": "Activation du programme défensif"
   },
   "20393": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
   },
   "20394": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
   },
   "20395": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Formation: Sharp Turn",
+    "de": "Synchronität: Rotationsangriff",
+    "ja": "連携：転回斬撃",
+    "fr": "Combo : taillade en triangle"
   },
   "20396": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
   },
   "20397": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
   },
   "20398": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Formation: Sliding Swipe",
+    "de": "Synchronität: Sturmangriff",
+    "ja": "連携：突進斬撃",
+    "fr": "Combo : taillade propulsée"
   },
   "20399": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Incendiary Barrage",
+    "de": "Schwere Brandraketen",
+    "ja": "大型焼尽ミサイル",
+    "fr": "Gros missiles incendiaires"
   },
   "20400": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Formation: Air Raid",
+    "de": "Synchronität: Luftschlag",
+    "ja": "連携：急襲爆撃",
+    "fr": "Combo : ruée explosive féroce"
   },
   "20401": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Standard Surface Missile",
+    "de": "Mittelraketen",
+    "ja": "中型対地ミサイル",
+    "fr": "Missile terrestre moyen"
   },
   "20402": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Standard Surface Missile",
+    "de": "Mittelraketen",
+    "ja": "中型対地ミサイル",
+    "fr": "Missile terrestre moyen"
   },
   "20403": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Lethal Revolution",
+    "de": "Aureolenschlag",
+    "ja": "旋回斬撃",
+    "fr": "Taillade circulaire"
   },
   "20404": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-powered Laser",
+    "de": "Offensive: Hochleistungslaser",
+    "ja": "攻撃：高出力レーザー",
+    "fr": "Attaque : laser surpuissant"
   },
   "20405": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-powered Laser",
+    "de": "Offensive: Hochleistungslaser",
+    "ja": "攻撃：高出力レーザー",
+    "fr": "Attaque : laser surpuissant"
   },
   "20406": {
     "en": "",
@@ -122430,70 +122430,70 @@
     "fr": ""
   },
   "20407": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Area Bombardment",
+    "de": "Offensive: Blindraketen",
+    "ja": "攻撃：ミサイル乱射",
+    "fr": "Attaque : déluge de missiles"
   },
   "20408": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Guided Missile",
+    "de": "Lenkraketen",
+    "ja": "誘導ミサイル",
+    "fr": "Missile à tête chercheuse"
   },
   "20409": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Incendiary Bombing",
+    "de": "Brandraketen",
+    "ja": "焼尽ミサイル",
+    "fr": "Missiles incendiaires"
   },
   "20410": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Surface Missile",
+    "de": "Raketenschlag",
+    "ja": "対地ミサイル",
+    "fr": "Missile terrestre"
   },
   "20411": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Anti-personnel Missile",
+    "de": "Abwehrraketen",
+    "ja": "対人ミサイル",
+    "fr": "Missile antipersonnel"
   },
   "20412": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Superior Mobility",
+    "de": "Blitzmanöver",
+    "ja": "急速移動",
+    "fr": "Déplacement éclair"
   },
   "20413": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Missile Command",
+    "de": "Offensive: Raketenkommando",
+    "ja": "攻撃：ミサイル全弾発射",
+    "fr": "Attaque : tirs de missiles en chaîne"
   },
   "20414": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Barrage Impact",
+    "de": "Ballistisches Dauerfeuer",
+    "ja": "ミサイル連続着弾",
+    "fr": "Tirs de missiles en chaîne"
   },
   "20415": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-order Explosive Blast",
+    "de": "Offensive: Explosivsprengköpfe",
+    "ja": "攻撃：爆風効果弾頭",
+    "fr": "Attaque : ogive déflagrante"
   },
   "20416": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "High-order Explosive Blast",
+    "de": "Explosivsprengköpfe",
+    "ja": "爆風効果弾頭",
+    "fr": "Ogive déflagrante"
   },
   "20417": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "High-order Explosive Blast",
+    "de": "Explosivsprengköpfe",
+    "ja": "爆風効果弾頭",
+    "fr": "Ogive déflagrante"
   },
   "20418": {
     "en": "",
@@ -122502,22 +122502,22 @@
     "fr": ""
   },
   "20419": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Incendiary Bombing",
+    "de": "Offensive: Brandraketen",
+    "ja": "攻撃：焼尽ミサイル",
+    "fr": "Attaque : missiles incendiaires"
   },
   "20420": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Precision Guided Missile",
+    "de": "Offensive: Schwere Lenkrakete",
+    "ja": "攻撃：高性能誘導ミサイル",
+    "fr": "Attaque : missiles à tête chercheuse ultraprécise"
   },
   "20421": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Precision Guided Missile",
+    "de": "Schwere Lenkrakete",
+    "ja": "高性能誘導ミサイル",
+    "fr": "Missiles à tête chercheuse ultraprécise"
   },
   "20422": {
     "en": "",
@@ -122526,10 +122526,10 @@
     "fr": ""
   },
   "20423": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Facet Potion",
+    "de": "Manufaktur-Trank",
+    "ja": "ミーンポーション",
+    "fr": "Potion de la halle"
   },
   "20424": {
     "en": "Rush",
@@ -122550,16 +122550,16 @@
     "fr": ""
   },
   "20427": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Spectral Dream",
+    "de": "Phantom-Tripple",
+    "ja": "幻光三段",
+    "fr": "Troïka spectrale"
   },
   "20428": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Spectral Whirlwind",
+    "de": "Phantom-Windhose",
+    "ja": "幻光大旋風",
+    "fr": "Grand tourbillon spectral"
   },
   "20429": {
     "en": "",
@@ -122586,28 +122586,28 @@
     "fr": ""
   },
   "20433": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Papercutter",
+    "de": "Tanzakugiri",
+    "ja": "短冊斬り",
+    "fr": "Julienne de chair"
   },
   "20434": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Papercutter",
+    "de": "Tanzakugiri",
+    "ja": "短冊斬り",
+    "fr": "Julienne de chair"
   },
   "20435": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dash",
+    "de": "Sprint",
+    "ja": "ダッシュ",
+    "fr": "Élan"
   },
   "20436": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Shadowdash",
+    "de": "Schattenspaltungssprint",
+    "ja": "分身ダッシュ",
+    "fr": "Élan d'ombre"
   },
   "20437": {
     "en": "",
@@ -122616,16 +122616,16 @@
     "fr": ""
   },
   "20438": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Chicken Knife",
+    "de": "Hühnermesserwurf",
+    "ja": "チキンナイフ投げ",
+    "fr": "Lancer de couteau de poltron"
   },
   "20439": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Coward's Cunning",
+    "de": "Feiger Angriff",
+    "ja": "臆病者の一撃",
+    "fr": "Frappe en traître"
   },
   "20440": {
     "en": "Joyless Dragonsong",
@@ -122730,136 +122730,136 @@
     "fr": ""
   },
   "20457": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Support: Pod",
+    "de": "Unterstützung: Pod-Schuss",
+    "ja": "支援：ポッド射出",
+    "fr": "Déploiement : pods"
   },
   "20458": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Operation: Pod Program",
+    "de": "Ausführen: Pod-Programm",
+    "ja": "オペレート：ポッドプログラム",
+    "fr": "Déploiement : programme de pod"
   },
   "20459": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "オペレート：強化プログラム",
+    "de": "Ausführen: Verstärkungsprogramm",
+    "ja": "オペレート：強化プログラム",
+    "fr": "Déploiement : programme de renforcement"
   },
   "20460": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Operation: Synthesize Compound",
+    "de": "Ausführen: Explosive Verbindung",
+    "ja": "オペレート：爆発性化合物",
+    "fr": "Déploiement : composés explosifs"
   },
   "20461": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Operation: Activate Laser Turret",
+    "de": "Ausführen: Lasergeschütz",
+    "ja": "オペレート：レーザータレット",
+    "fr": "Déploiement : tourelle laser"
   },
   "20462": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Operation: Activate Suppressive Unit",
+    "de": "Ausführen: Ringgeschütz",
+    "ja": "オペレート：環状銃撃ユニット",
+    "fr": "Déploiement : unité de tir annulaire"
   },
   "20463": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Operation: Access Self-consciousness Data",
+    "de": "Ausführen: Pseudo-21O",
+    "ja": "オペレート：２１Ｏ自我データ",
+    "fr": "Déploiement : données de conscience de 21O"
   },
   "20464": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R010: Laser",
+    "de": "R010: Laser",
+    "ja": "R010：レーザー",
+    "fr": "R010 : Laser"
   },
   "20465": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R030: Hammer",
+    "de": "R030: Hammer",
+    "ja": "R030：ハンマー",
+    "fr": "R030 : Marteau"
   },
   "20466": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "強化プログラム：ブレード",
+    "de": "Verstärkungsprogramm: Klinge",
+    "ja": "強化プログラム：ブレード",
+    "fr": "Programme de renforcement : Lame"
   },
   "20467": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "強化プログラム：シールド",
+    "de": "Verstärkungsprogramm: Schild",
+    "ja": "強化プログラム：シールド",
+    "fr": "Programme de renforcement : Égide"
   },
   "20468": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Chemical Burn",
+    "de": "Chemische Explosion",
+    "ja": "化合物爆発",
+    "fr": "Explosion chimique"
   },
   "20469": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Chemical Conflagration",
+    "de": "Chemische Detonation",
+    "ja": "化合物大爆発",
+    "fr": "Grande explosion chimique"
   },
   "20470": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Lower Laser",
+    "de": "Unterlaser",
+    "ja": "下部レーザー",
+    "fr": "Laser inférieur"
   },
   "20471": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20472": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20473": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20474": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Energy Bomb",
+    "de": "Energieexplosion",
+    "ja": "エネルギー爆発",
+    "fr": "Explosion de balle"
   },
   "20475": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Energy Bombardment",
+    "de": "Energiemörser",
+    "ja": "迫撃エネルギー弾",
+    "fr": "Tirs courbes"
   },
   "20476": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Energy Bombardment",
+    "de": "Energiemörser",
+    "ja": "迫撃エネルギー弾",
+    "fr": "Tirs courbes"
   },
   "20477": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Impact Crusher",
+    "de": "Offensive: Bodenlanze",
+    "ja": "攻撃：地穿潰砕",
+    "fr": "Attaque : marteau-piqueur"
   },
   "20478": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Impact Crusher",
+    "de": "Offensive: Bodenlanze",
+    "ja": "攻撃：地穿潰砕",
+    "fr": "Attaque : marteau-piqueur"
   },
   "20479": {
     "en": "",
@@ -122868,34 +122868,34 @@
     "fr": ""
   },
   "20480": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Revolving Laser",
+    "de": "Offensive: Rotationslaser",
+    "ja": "攻撃：回転レーザー",
+    "fr": "Attaque : laser rotatif"
   },
   "20481": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-powered Laser",
+    "de": "Offensive: Hochleistungslaser",
+    "ja": "攻撃：高出力レーザー",
+    "fr": "Attaque : laser surpuissant"
   },
   "20482": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-powered Laser",
+    "de": "Offensive: Hochleistungslaser",
+    "ja": "攻撃：高出力レーザー",
+    "fr": "Attaque : laser surpuissant"
   },
   "20483": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Unconventional Voltage",
+    "de": "Offensive: Konvergenzspannung",
+    "ja": "攻撃：収束ヴォルト",
+    "fr": "Attaque : arcs convergents"
   },
   "20484": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Unconventional Voltage",
+    "de": "Konvergenzspannung",
+    "ja": "収束ヴォルト",
+    "fr": "Arcs convergents"
   },
   "20485": {
     "en": "",
@@ -122904,94 +122904,94 @@
     "fr": ""
   },
   "20486": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Volt Array",
+    "de": "Offensive: Diffusionsspannung",
+    "ja": "攻撃：拡散ヴォルト",
+    "fr": "Attaque : arcs divergents"
   },
   "20487": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "攻撃：ミサイル斉射",
+    "de": "Offensive: Raketensalve",
+    "ja": "攻撃：ミサイル斉射",
+    "fr": "Attaque : salve de missiles"
   },
   "20488": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "ミサイル着弾",
+    "de": "Raketeneinschlag",
+    "ja": "ミサイル着弾",
+    "fr": "Impact de missile"
   },
   "20489": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aether Cannon",
+    "de": "Äthergeschoss",
+    "ja": "エーテルカノン",
+    "fr": "Canon éthéré"
   },
   "20490": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aethersaber",
+    "de": "Äthersäbel",
+    "ja": "エーテルサーベル",
+    "fr": "Sabre éthéré"
   },
   "20491": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aethercut",
+    "de": "Ätherschnitt",
+    "ja": "エーテルスラッシュ",
+    "fr": "Taillade éthérée"
   },
   "20492": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Final Flourish",
+    "de": "Finaler Hieb",
+    "ja": "ファイナルフラリッシュ",
+    "fr": "Apogée final"
   },
   "20493": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ultima Buster",
+    "de": "Ultima-Bezwinger",
+    "ja": "アルテマバスター",
+    "fr": "Ultima destructrice"
   },
   "20494": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Pyretic Booster",
+    "de": "Übermodus",
+    "ja": "ブーストモード",
+    "fr": "Mode turbo"
   },
   "20495": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aetherial Aegis",
+    "de": "Ätherbarriere",
+    "ja": "エーテルバリア",
+    "fr": "Barrière éthérée"
   },
   "20496": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aether Mine",
+    "de": "Äthergranate",
+    "ja": "エーテルマイン",
+    "fr": "Mine éthérée"
   },
   "20497": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "ミサイル着弾",
+    "de": "Raketeneinschlag",
+    "ja": "ミサイル着弾",
+    "fr": "Impact de missile"
   },
   "20498": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "ミサイル着弾",
+    "de": "Raketeneinschlag",
+    "ja": "ミサイル着弾",
+    "fr": "Impact de missile"
   },
   "20499": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "自爆攻撃",
+    "de": "Selbstsprengung",
+    "ja": "自爆攻撃",
+    "fr": "Autodestruction"
   },
   "20500": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "光刃大斬機",
+    "de": "Lichtklingenhieb",
+    "ja": "光刃大斬機",
+    "fr": "Grande lame éclair"
   },
   "20501": {
     "en": "",
@@ -123450,16 +123450,16 @@
     "fr": ""
   },
   "20577": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Vacuum Blade",
+    "de": "Vakuum-Klinge",
+    "ja": "真空刃",
+    "fr": "Lame de vide"
   },
   "20578": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Vacuum Blade",
+    "de": "Vakuum-Klinge",
+    "ja": "真空刃",
+    "fr": "Lame de vide"
   },
   "20579": {
     "en": "",
@@ -123522,28 +123522,28 @@
     "fr": ""
   },
   "20589": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
   },
   "20590": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
   },
   "20591": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
   },
   "20592": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
   },
   "20593": {
     "en": "",
@@ -123558,28 +123558,28 @@
     "fr": ""
   },
   "20595": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Beam Cannons",
+    "de": "Offensive: Konvergenzgeschütze",
+    "ja": "攻撃：収束粒子砲",
+    "fr": "Attaque : canons à particules chargés"
   },
   "20596": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beam Cannons",
+    "de": "Konvergenzgeschütze",
+    "ja": "収束粒子砲",
+    "fr": "Canons à particules chargés"
   },
   "20597": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beam Cannons",
+    "de": "Konvergenzgeschütze",
+    "ja": "収束粒子砲",
+    "fr": "Canons à particules chargés"
   },
   "20598": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Beam Cannons",
+    "de": "Konvergenzgeschütze",
+    "ja": "収束粒子砲",
+    "fr": "Canons à particules chargés"
   },
   "20599": {
     "en": "",
@@ -123606,46 +123606,46 @@
     "fr": ""
   },
   "20603": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Collider Cannons",
+    "de": "Offensive: Rotationsgeschütze",
+    "ja": "攻撃：旋回粒子砲",
+    "fr": "Attaque : canons à particules rotatifs"
   },
   "20604": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Collider Cannons",
+    "de": "Offensive: Rotationsgeschütze",
+    "ja": "攻撃：旋回粒子砲",
+    "fr": "Attaque : canons à particules rotatifs"
   },
   "20605": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Collider Cannons",
+    "de": "Offensive: Rotationsgeschütze",
+    "ja": "攻撃：旋回粒子砲",
+    "fr": "Attaque : canons à particules rotatifs"
   },
   "20606": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Collider Cannons",
+    "de": "Rotationsgeschütze",
+    "ja": "旋回粒子砲",
+    "fr": "Canons à particules rotatifs"
   },
   "20607": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Refraction Cannons",
+    "de": "Offensive: Coriolisgeschütze",
+    "ja": "攻撃：偏向粒子砲",
+    "fr": "Attaque : canons à particules défléchissants"
   },
   "20608": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Refraction Cannons",
+    "de": "Offensive: Coriolisgeschütze",
+    "ja": "攻撃：偏向粒子砲",
+    "fr": "Attaque : canons à particules défléchissants"
   },
   "20609": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Refraction Cannons",
+    "de": "Coriolisgeschütze",
+    "ja": "偏向粒子砲",
+    "fr": "Canons à particules défléchissants"
   },
   "20610": {
     "en": "",
@@ -123660,40 +123660,40 @@
     "fr": ""
   },
   "20612": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Stone",
+    "de": "Stein",
+    "ja": "ストーン",
+    "fr": "Terre"
   },
   "20613": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fire",
+    "de": "Feuer",
+    "ja": "ファイア",
+    "fr": "Feu"
   },
   "20614": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Lower Laser",
+    "de": "Unterlaser",
+    "ja": "下部レーザー",
+    "fr": "Laser inférieur"
   },
   "20615": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20616": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20617": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Upper Laser",
+    "de": "Hauptlaser",
+    "ja": "上部レーザー",
+    "fr": "Laser supérieur"
   },
   "20618": {
     "en": "",
@@ -123708,52 +123708,52 @@
     "fr": ""
   },
   "20620": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Flight Path",
+    "de": "Sturmmanöver",
+    "ja": "突撃機動",
+    "fr": "Manœuvre d'assaut"
   },
   "20621": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Firing Order: Anti-personnel Laser",
+    "de": "Feuerbefehl: Antipersonenlaser",
+    "ja": "砲撃命令：対人レーザー",
+    "fr": "Ordre de tir : lasers antipersonnels"
   },
   "20622": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Firing Order: Surface Laser",
+    "de": "Feuerbefehl: Laserschlag",
+    "ja": "砲撃命令：対地レーザー",
+    "fr": "Ordre de tir : lasers terrestres"
   },
   "20623": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Firing Order: High-powered Laser",
+    "de": "Feuerbefehl: Hochleistungslaser",
+    "ja": "砲撃命令：高出力レーザー",
+    "fr": "Ordre de tir : laser surpuissant"
   },
   "20624": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Anti-personnel Laser",
+    "de": "Antipersonenlaser",
+    "ja": "対人レーザー",
+    "fr": "Laser antipersonnel"
   },
   "20625": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Surface Laser",
+    "de": "Laserschlag",
+    "ja": "対地レーザー",
+    "fr": "Laser terrestre"
   },
   "20626": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Surface Laser",
+    "de": "Laserschlag",
+    "ja": "対地レーザー",
+    "fr": "Laser terrestre"
   },
   "20627": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "High-powered Laser",
+    "de": "Hochleistungslaser",
+    "ja": "高出力レーザー",
+    "fr": "Laser surpuissant"
   },
   "20628": {
     "en": "",
@@ -123774,22 +123774,22 @@
     "fr": ""
   },
   "20631": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Saturation Bombing",
+    "de": "Feuerbefehl: Omnidirektionalrakete",
+    "ja": "攻撃：全方位ミサイル",
+    "fr": "Attaque : tir de missiles multidirectionnel"
   },
   "20632": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Meteor Impact",
+    "de": "Meteoreinschlag",
+    "ja": "メテオインパクト",
+    "fr": "Impact de météore"
   },
   "20633": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: Diffusion Cannon",
+    "de": "Offensive: Diffusions-Geschütze",
+    "ja": "攻撃：拡散粒子砲",
+    "fr": "Attaque : canons à particules diffractifs"
   },
   "20634": {
     "en": "",
@@ -123930,16 +123930,16 @@
     "fr": ""
   },
   "20657": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Maneuver: High-powered Laser",
+    "de": "Offensive: Hochleistungslaser",
+    "ja": "攻撃：高出力レーザー",
+    "fr": "Attaque : laser surpuissant"
   },
   "20658": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Energy Bomb",
+    "de": "Energieexplosion",
+    "ja": "エネルギー爆発",
+    "fr": "Explosion de balle"
   },
   "20659": {
     "en": "",
@@ -124122,22 +124122,22 @@
     "fr": ""
   },
   "20689": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "高圧拡散ヴォルト",
+    "de": "Hochspannungs-Streuschlag",
+    "ja": "高圧拡散ヴォルト",
+    "fr": "Arcs divergents à haute tension"
   },
   "20690": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aerial Support: Swoop",
+    "de": "Luftunterstützung: Sturmangriff",
+    "ja": "航空支援：突撃",
+    "fr": "Soutien aérien : assaut"
   },
   "20691": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Aerial Support: Bombardment",
+    "de": "Luftunterstützung: Bombardement",
+    "ja": "航空支援：爆撃",
+    "fr": "Soutien aérien : pilonnage"
   },
   "20692": {
     "en": "",
@@ -124896,22 +124896,22 @@
     "fr": ""
   },
   "20818": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
   },
   "20819": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
   },
   "20820": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Fatal Cleave",
+    "de": "Fatales Niedermähen",
+    "ja": "フェイタルクリーヴ",
+    "fr": "Fendoir fatal"
   },
   "20821": {
     "en": "",
@@ -124920,22 +124920,22 @@
     "fr": ""
   },
   "20822": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Berserk",
+    "de": "Tollwut",
+    "ja": "バーサク",
+    "fr": "Berserk"
   },
   "20823": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Blade of Shadow",
+    "de": "Magische Schattenklinge",
+    "ja": "漆黒の魔剣",
+    "fr": "Tranchant maléfique d'ombre"
   },
   "20824": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Deep Darkside",
+    "de": "Totale Finsternis",
+    "ja": "真暗黒",
+    "fr": "Ténèbres intérieures absolues"
   },
   "20825": {
     "en": "",
@@ -124944,28 +124944,28 @@
     "fr": ""
   },
   "20826": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
   },
   "20827": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Specter of Light",
+    "de": "Heldenruf",
+    "ja": "幻光召喚",
+    "fr": "Sommation des braves"
   },
   "20828": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Limit Break",
+    "de": "Limitrausch",
+    "ja": "リミットブレイク",
+    "fr": "Transcendance"
   },
   "20829": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Radiant Desperado",
+    "de": "Gleißender Desperado",
+    "ja": "ブライトデスペラード",
+    "fr": "Desperado flamboyant"
   },
   "20830": {
     "en": "",
@@ -125298,88 +125298,88 @@
     "fr": ""
   },
   "20885": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Truedragon Dive",
+    "de": "Vollkommener Wyrmodem",
+    "ja": "トゥルー・ドラゴンダイブ",
+    "fr": "Piqué du dragon véritable"
   },
   "20886": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Hastilude",
+    "de": "Hastiludia",
+    "ja": "ハスティルード",
+    "fr": "Hastilude"
   },
   "20887": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Dwarven Decking",
+    "de": "Zwergischer Kinnhaken",
+    "ja": "ドワーフパンチ",
+    "fr": "Bourre-pif nain"
   },
   "20888": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
   },
   "20889": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
   },
   "20890": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
   },
   "20891": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Three Parts Disdain",
+    "de": "Dreifache Hiebsequenz",
+    "ja": "三連衝撃斬",
+    "fr": "Triple impact tailladant"
   },
   "20892": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Three Parts Disdain",
+    "de": "Dreifache Hiebsequenz",
+    "ja": "三連衝撃斬",
+    "fr": "Triple impact tailladant"
   },
   "20893": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Three Parts Disdain",
+    "de": "Dreifache Hiebsequenz",
+    "ja": "三連衝撃斬",
+    "fr": "Triple impact tailladant"
   },
   "20894": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Four Parts Resolve",
+    "de": "Vierfache Hiebsequenz",
+    "ja": "四連断重撃",
+    "fr": "Grand impact tailladant"
   },
   "20895": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Four Parts Resolve",
+    "de": "Vierfache Hiebsequenz",
+    "ja": "四連断重撃",
+    "fr": "Grand impact tailladant"
   },
   "20896": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Four Parts Resolve",
+    "de": "Vierfache Finalsequenz",
+    "ja": "四連重撃斬",
+    "fr": "Quadruple enchaînement de grands coups"
   },
   "20897": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Reproduce",
+    "de": "Teilung des Selbsts",
+    "ja": "分体生成",
+    "fr": "Clonage"
   },
   "20898": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Forced Transfer",
+    "de": "Erzwungener Teleport",
+    "ja": "強制転送",
+    "fr": "Téléportation forcée"
   },
   "20899": {
     "en": "",
@@ -125388,130 +125388,130 @@
     "fr": ""
   },
   "20900": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Compound Pod: R011",
+    "de": "Pod-Fusion: Programm R011",
+    "ja": "ポッド融合体：R011",
+    "fr": "Pods amalgames : R011"
   },
   "20901": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R011: Laser",
+    "de": "R011: Laser",
+    "ja": "R011：レーザー",
+    "fr": "R011 : Laser"
   },
   "20902": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Energy Compression",
+    "de": "Energetische Kondensation",
+    "ja": "エネルギー凝縮",
+    "fr": "Condensation énergétique"
   },
   "20903": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Explosion",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
   },
   "20904": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Big Explosion",
+    "de": "Detonation",
+    "ja": "大爆発",
+    "fr": "Grosse explosion"
   },
   "20905": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Relentless Spiral",
+    "de": "Partikelspirale",
+    "ja": "渦状光維奔突",
+    "fr": "Spirale rémanente"
   },
   "20906": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Relentless Spiral",
+    "de": "Partikelspirale",
+    "ja": "渦状光維奔突",
+    "fr": "Spirale rémanente"
   },
   "20907": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Compound Pod: R012",
+    "de": "Pod-Fusion: Programm R012",
+    "ja": "ポッド融合体：R012",
+    "fr": "Pods amalgames : R012"
   },
   "20908": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R012: Laser",
+    "de": "R012: Laser",
+    "ja": "R012：レーザー",
+    "fr": "R012 : Laser"
   },
   "20909": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R012: Laser",
+    "de": "R012: Laser",
+    "ja": "R012：レーザー",
+    "fr": "R012 : Laser"
   },
   "20910": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R012: Laser",
+    "de": "R012: Laser",
+    "ja": "R012：レーザー",
+    "fr": "R012 : Laser"
   },
   "20911": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "R012: Laser",
+    "de": "R012: Laser",
+    "ja": "R012：レーザー",
+    "fr": "R012 : Laser"
   },
   "20912": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Centrifugal Slice",
+    "de": "Spiralklinge",
+    "ja": "全面斬機",
+    "fr": "Brise-machine étendu"
   },
   "20913": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Incongruous Spin",
+    "de": "Laterale Rotation",
+    "ja": "逆断震回転",
+    "fr": "Rotation calcinante"
   },
   "20914": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Incongruous Spin",
+    "de": "Laterale Rotation",
+    "ja": "逆断震回転",
+    "fr": "Rotation calcinante"
   },
   "20915": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Dissection",
+    "de": "Linearlaser",
+    "ja": "断機光撃",
+    "fr": "Rayons découpants"
   },
   "20916": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Decapitation",
+    "de": "Zirkularlaser",
+    "ja": "斬機光撃",
+    "fr": "Rayons tailladants"
   },
   "20917": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Contusion",
+    "de": "Suchlaser",
+    "ja": "砕機光撃",
+    "fr": "Rayons fracassants"
   },
   "20918": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Contusion",
+    "de": "Suchlaser",
+    "ja": "砕機光撃",
+    "fr": "Rayons fracassants"
   },
   "20919": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Contusion",
+    "de": "Suchlaser",
+    "ja": "砕機光撃",
+    "fr": "Rayons fracassants"
   },
   "20920": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Mechanical Laceration",
+    "de": "Omnilaser",
+    "ja": "制圧光撃",
+    "fr": "Rayons multidirectionnels"
   },
   "20921": {
     "en": "",
@@ -125532,10 +125532,10 @@
     "fr": ""
   },
   "20924": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
   },
   "20925": {
     "en": "",
@@ -125622,16 +125622,16 @@
     "fr": ""
   },
   "20939": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Relentless Spiral",
+    "de": "Partikelspirale",
+    "ja": "渦状光維奔突",
+    "fr": "Spirale rémanente"
   },
   "20940": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Auto Restoration",
+    "de": "Selbstheilung",
+    "ja": "自己修復",
+    "fr": "Auto-réparation"
   },
   "20941": {
     "en": "",
@@ -125952,42 +125952,7842 @@
     "fr": ""
   },
   "20994": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wild Rage",
+    "de": "Bestialischer Zorn",
+    "ja": "獣魂の怒り",
+    "fr": "Colère bestiale"
   },
   "20995": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wild Rage",
+    "de": "Bestialischer Zorn",
+    "ja": "獣魂の怒り",
+    "fr": "Colère bestiale"
   },
   "20996": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wild Rage",
+    "de": "Bestialischer Zorn",
+    "ja": "獣魂の怒り",
+    "fr": "Colère bestiale"
   },
   "20997": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Falling Rock",
+    "de": "Steinschlag",
+    "ja": "落石",
+    "fr": "Chute de pierre"
   },
   "20998": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Wild Rampage",
+    "de": "Bestialische Raserei",
+    "ja": "獣魂の猛り",
+    "fr": "Rage bestiale"
   },
   "20999": {
+    "en": "Wild Rampage",
+    "de": "Bestialische Raserei",
+    "ja": "獣魂の猛り",
+    "fr": "Rage bestiale"
+  },
+  "21000": {
+    "en": "Wild Anguish",
+    "de": "Bestialischer Schmerz",
+    "ja": "獣魂の痛み",
+    "fr": "Soubresaut bestiale"
+  },
+  "21001": {
+    "en": "Wild Anguish",
+    "de": "Bestialischer Schmerz",
+    "ja": "獣魂の痛み",
+    "fr": "Soubresaut bestiale"
+  },
+  "21002": {
+    "en": "Raging Slice",
+    "de": "Tobsüchtiger Sichelschnitt",
+    "ja": "レイジングスライス",
+    "fr": "Déchiquetage enragé"
+  },
+  "21003": {
+    "en": "Raging Slice",
+    "de": "Tobsüchtiger Sichelschnitt",
+    "ja": "レイジングスライス",
+    "fr": "Déchiquetage enragé"
+  },
+  "21004": {
+    "en": "Beastly Fury",
+    "de": "Animalischer Zorn",
+    "ja": "ビーストフューリー",
+    "fr": "Bête en furie"
+  },
+  "21005": {
     "en": "",
     "de": "",
     "ja": "",
     "fr": ""
   },
-  "21000": {
+  "21006": {
+    "en": "Authorization: No Restrictions",
+    "de": "Verstärkung: Entsichern",
+    "ja": "拡張：武装ロック解除",
+    "fr": "Extension : déverrouillage de l'armement"
+  },
+  "21007": {
+    "en": "Surface Missile Impact",
+    "de": "Raketeneinschlag",
+    "ja": "対地ミサイル着弾",
+    "fr": "Impact de missile terrestre"
+  },
+  "21008": {
+    "en": "Homing Missile Impact",
+    "de": "Suchraketeneinschlag",
+    "ja": "追尾ミサイル着弾",
+    "fr": "Impact de missile à tête chercheuse"
+  },
+  "21009": {
+    "en": "Maneuver: Volt Array",
+    "de": "Offensive: Diffusionsspannung",
+    "ja": "攻撃：拡散ヴォルト",
+    "fr": "Attaque : arcs divergents"
+  },
+  "21010": {
+    "en": "Maneuver: Long-barreled Laser",
+    "de": "Offensive: Langlauf-Laser",
+    "ja": "攻撃：長砲身レーザー",
+    "fr": "Attaque : canon laser long"
+  },
+  "21011": {
+    "en": "Maneuver: Martial Arm",
+    "de": "Offensive: Nahkampf-Arm",
+    "ja": "攻撃：格闘アーム",
+    "fr": "Attaque : bras de combat"
+  },
+  "21012": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21013": {
+    "en": "Initiate Self-destruct",
+    "de": "Selbstsprengungsysteme",
+    "ja": "自爆システム起動",
+    "fr": "Autodestruction"
+  },
+  "21014": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21015": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21016": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21017": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21018": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21019": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21020": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21021": {
+    "en": "Siderays",
+    "de": "Seitenstrahl",
+    "ja": "サイドレイ",
+    "fr": "Rayon latéral"
+  },
+  "21022": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21023": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21024": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21025": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21026": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21027": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21028": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21029": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21030": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21031": {
+    "en": "Lunar Eclipse",
+    "de": "Lunare Eklipse",
+    "ja": "ルナエクリプス",
+    "fr": "Éclipse lunaire"
+  },
+  "21032": {
+    "en": "Blade's Benison",
+    "de": "Gesegnete Klinge",
+    "ja": "ベニゾンブレード",
+    "fr": "Embrochage"
+  },
+  "21033": {
+    "en": "Rage of the Valkyries",
+    "de": "Zorn der Walküren",
+    "ja": "レイジ・オブ・ワルキューレ",
+    "fr": "Rage des valkyries"
+  },
+  "21034": {
+    "en": "Recompense",
+    "de": "Rekompensation",
+    "ja": "リコムペンス",
+    "fr": "Juste dû"
+  },
+  "21035": {
+    "en": "Heavens Tackle",
+    "de": "Lunarer Nadir",
+    "ja": "月天衝",
+    "fr": "Frappe lunaire"
+  },
+  "21036": {
+    "en": "Whip Kick",
+    "de": "Harnischberster",
+    "ja": "強甲破点蹴",
+    "fr": "Serpes de vent"
+  },
+  "21037": {
+    "en": "Whole Self",
+    "de": "Allumfassende Erleuchtung",
+    "ja": "森羅闘気圏",
+    "fr": "Réalisation"
+  },
+  "21038": {
+    "en": "Bootshine",
+    "de": "Schlag auf Schlag",
+    "ja": "連撃",
+    "fr": "Volée de coups"
+  },
+  "21039": {
+    "en": "Tiger Kick",
+    "de": "Tigerpranken",
+    "ja": "双虎脚",
+    "fr": "Tigres jumeaux"
+  },
+  "21040": {
+    "en": "Disintegrate",
+    "de": "Sprengfäuste",
+    "ja": "爆砕拳",
+    "fr": "Démolissage"
+  },
+  "21041": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21042": {
+    "en": "Randgrith",
+    "de": "Randgrith",
+    "ja": "ランドグリース",
+    "fr": "Randgrith"
+  },
+  "21043": {
+    "en": "Moondiver",
+    "de": "Mondsturz",
+    "ja": "ムーンダイバー",
+    "fr": "Piqué lunaire"
+  },
+  "21044": {
+    "en": "Thunder Dive",
+    "de": "Donnersturz",
+    "ja": "サンダーダイヴ",
+    "fr": "Piqué foudroyant"
+  },
+  "21045": {
+    "en": "Spiral Drive",
+    "de": "Spiralpfähler",
+    "ja": "スパイラルドライヴ",
+    "fr": "Pulsion incontrôlable"
+  },
+  "21046": {
+    "en": "Ring of Death",
+    "de": "Ring des Todes",
+    "ja": "リング・オブ・デス",
+    "fr": "Anneau de mort"
+  },
+  "21047": {
+    "en": "Jump",
+    "de": "Sprung",
+    "ja": "ジャンプ",
+    "fr": "Saut"
+  },
+  "21048": {
+    "en": "Hyper Jump",
+    "de": "Hypersprung",
+    "ja": "ハイパージャンプ",
+    "fr": "Hyper Saut"
+  },
+  "21049": {
+    "en": "Dooming Force",
+    "de": "Todesmacht",
+    "ja": "ドゥームフォース",
+    "fr": "Astriction du destin"
+  },
+  "21050": {
+    "en": "Fast Thrust",
+    "de": "Erststoß",
+    "ja": "ファストスラスト",
+    "fr": "Percée rapide"
+  },
+  "21051": {
+    "en": "Full Thrust",
+    "de": "Ungebremster Stoß",
+    "ja": "フルスラスト",
+    "fr": "Percée totale"
+  },
+  "21052": {
+    "en": "Hissatsu: Tasogare",
+    "de": "Hissatsu: Tasogare",
+    "ja": "必殺剣・黄昏",
+    "fr": "Hissatsu : Tasogare"
+  },
+  "21053": {
+    "en": "Hissatsu: Goka",
+    "de": "Hissatsu: Goka",
+    "ja": "必殺剣・劫火",
+    "fr": "Hissatsu : Gôka"
+  },
+  "21054": {
+    "en": "Tenka Gojin",
+    "de": "Tenka Gojin",
+    "ja": "天下五刃",
+    "fr": "Tenka Gojin"
+  },
+  "21055": {
+    "en": "Kaeshi: Gojin",
+    "de": "Kaeshi Gojin",
+    "ja": "返し五刃",
+    "fr": "Kaeshi Gojin"
+  },
+  "21056": {
+    "en": "Yama Arashi",
+    "de": "Yamaarashi",
+    "ja": "山嵐",
+    "fr": "Yamaarashi"
+  },
+  "21057": {
+    "en": "Hana Arashi",
+    "de": "Hanaarashi",
+    "ja": "花嵐",
+    "fr": "Hanaarashi"
+  },
+  "21058": {
+    "en": "Rain of Light",
+    "de": "Lichtregen",
+    "ja": "レイン・オブ・ライト",
+    "fr": "Pluie de lumière"
+  },
+  "21059": {
+    "en": "Quick Shot",
+    "de": "Blitzschuss",
+    "ja": "クイックショット",
+    "fr": "Tir à l'arc brutal"
+  },
+  "21060": {
+    "en": "Celestial Arrow",
+    "de": "Himmlischer Pfeil",
+    "ja": "セレスティアルアロー",
+    "fr": "Flèche céleste"
+  },
+  "21061": {
+    "en": "Absolute Thunder IV",
+    "de": "Absolutes Blitzka",
+    "ja": "アブソリュートサンダジャ",
+    "fr": "Giga Foudre absolue"
+  },
+  "21062": {
+    "en": "Absolute Blizzard IV",
+    "de": "Absolutes Eiska",
+    "ja": "アブソリュートブリザジャ",
+    "fr": "Giga Glace absolue"
+  },
+  "21063": {
+    "en": "Absolute Fire IV",
+    "de": "Absolutes Feuka",
+    "ja": "アブソリュートファイジャ",
+    "fr": "Giga Feu absolu"
+  },
+  "21064": {
+    "en": "Absolute Gravity",
+    "de": "Absolute Gravitas",
+    "ja": "アブソリュートグラビデ",
+    "fr": "Gravité absolue"
+  },
+  "21065": {
+    "en": "Flambé II",
+    "de": "Phantom-Bravade",
+    "ja": "幻炎法",
+    "fr": "Loi de l'ébullition - corollaire"
+  },
+  "21066": {
+    "en": "Absolute Ruin III",
+    "de": "Absolutes Ruinga",
+    "ja": "アブソリュートルインガ",
+    "fr": "Méga Ruine absolue"
+  },
+  "21067": {
+    "en": "Absolute Holy",
+    "de": "Absolutes Sanctus",
+    "ja": "アブソリュートホーリー",
+    "fr": "Miracle absolu"
+  },
+  "21068": {
+    "en": "Absolute Cure II",
+    "de": "Absolutes Vitra",
+    "ja": "アブソリュートケアルラ",
+    "fr": "Extra Soin absolu"
+  },
+  "21069": {
+    "en": "Absolute Protect",
+    "de": "Absolutes Protes",
+    "ja": "アブソリュートプロテス",
+    "fr": "Bouclier absolu"
+  },
+  "21070": {
+    "en": "Absolute Stone IV",
+    "de": "Absolutes Steinka",
+    "ja": "アブソリュートストンジャ",
+    "fr": "Giga Terre absolue"
+  },
+  "21071": {
+    "en": "Absolute Glare",
+    "de": "Absolute Blendung",
+    "ja": "アブソリュートグレア",
+    "fr": "Chatoiement absolu"
+  },
+  "21072": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21073": {
+    "en": "Flare Breath",
+    "de": "Flare-Atem",
+    "ja": "フレアブレス",
+    "fr": "Souffle brasier"
+  },
+  "21074": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21075": {
+    "en": "Cure",
+    "de": "Vita",
+    "ja": "ケアル",
+    "fr": "Soin"
+  },
+  "21076": {
+    "en": "Radiant Braver",
+    "de": "Gleißende Gerechtigkeit",
+    "ja": "ブライトブレイバー",
+    "fr": "Fureur flamboyante"
+  },
+  "21077": {
+    "en": "Fire II",
+    "de": "Feura",
+    "ja": "ファイラ",
+    "fr": "Extra Feu"
+  },
+  "21078": {
+    "en": "Delta Trance",
+    "de": "Delta-Trance",
+    "ja": "デルタトランス",
+    "fr": "Transe delta"
+  },
+  "21079": {
+    "en": "Gate of Tartarus",
+    "de": "Tor des Tartarus",
+    "ja": "タルタロスゲート",
+    "fr": "Porte de Tartarus"
+  },
+  "21080": {
+    "en": "Augmented Suffering",
+    "de": "Verschlimmertes Leid",
+    "ja": "オーバードライブ",
+    "fr": "Intense souffrance"
+  },
+  "21081": {
+    "en": "Innocence",
+    "de": "Unschuld",
+    "ja": "イノセンス",
+    "fr": "Innocence"
+  },
+  "21082": {
+    "en": "Terminus Est",
+    "de": "Terminus Est",
+    "ja": "ターミナス・エスト",
+    "fr": "Terminus Est"
+  },
+  "21083": {
+    "en": "Terminus Est",
+    "de": "Terminus Est",
+    "ja": "ターミナス・エスト",
+    "fr": "Terminus Est"
+  },
+  "21084": {
+    "en": "Sanguine Blade",
+    "de": "Sanguis-Klinge",
+    "ja": "サングインブレード",
+    "fr": "Lame sanguine"
+  },
+  "21085": {
+    "en": "Bloodstain",
+    "de": "Befleckung",
+    "ja": "ブラッドステイン",
+    "fr": "Tache de sang"
+  },
+  "21086": {
+    "en": "Hyperdimensional Slash",
+    "de": "Hyperdimensionsschlag",
+    "ja": "ハイパーディメンション",
+    "fr": "Lacération hyperdimensionnelle"
+  },
+  "21087": {
+    "en": "Fire",
+    "de": "Feuer",
+    "ja": "ファイア",
+    "fr": "Feu"
+  },
+  "21088": {
+    "en": "Altar Candle",
+    "de": "Altarkerze",
+    "ja": "アルターキャンドル",
+    "fr": "Cierge funéraire"
+  },
+  "21089": {
+    "en": "Sacred Cross",
+    "de": "Heiliges Kreuz",
+    "ja": "セイクリッドクロス",
+    "fr": "Croix sacrée"
+  },
+  "21090": {
+    "en": "the Dragon's Gaze",
+    "de": "Blick des Drachen",
+    "ja": "竜の邪眼",
+    "fr": "Regard du dragon"
+  },
+  "21091": {
+    "en": "Ascalon's Might",
+    "de": "Macht von Askalon",
+    "ja": "アスカロンマイト",
+    "fr": "Puissance d'Ascalon"
+  },
+  "21092": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21093": {
+    "en": "Flaming Tizona",
+    "de": "Flammen Tizonas",
+    "ja": "ティソーナフレイム",
+    "fr": "Flamme de Tizona"
+  },
+  "21094": {
+    "en": "Flaming Tizona",
+    "de": "Flammen Tizonas",
+    "ja": "ティソーナフレイム",
+    "fr": "Flamme de Tizona"
+  },
+  "21095": {
+    "en": "Holy Bladedance",
+    "de": "Geweihter Schwerttanz",
+    "ja": "ホーリーブレードダンス",
+    "fr": "Danse de la lame céleste"
+  },
+  "21096": {
+    "en": "Holy Bladedance",
+    "de": "Geweihter Schwerttanz",
+    "ja": "ホーリーブレードダンス",
+    "fr": "Danse de la lame céleste"
+  },
+  "21097": {
+    "en": "Drachenlance",
+    "de": "Drachenlanze",
+    "ja": "ドラッケンランス",
+    "fr": "Drachenlance"
+  },
+  "21098": {
+    "en": "Geirskogul",
+    "de": "Geirskogul",
+    "ja": "ゲイルスコグル",
+    "fr": "Geirskögul"
+  },
+  "21099": {
+    "en": "High Jump",
+    "de": "Hochsprung",
+    "ja": "ハイジャンプ",
+    "fr": "Grand saut"
+  },
+  "21100": {
+    "en": "Augmented Uprising",
+    "de": "Verschärfte Erhebung",
+    "ja": "ブーストアッパー",
+    "fr": "Intense soulèvement"
+  },
+  "21101": {
+    "en": "Augmented Suffering",
+    "de": "Verschlimmertes Leid",
+    "ja": "オーバードライブ",
+    "fr": "Intense souffrance"
+  },
+  "21102": {
+    "en": "Violent Earth",
+    "de": "Leidenschaft des Lands",
+    "ja": "大地の熱情",
+    "fr": "Ardeur de la terre"
+  },
+  "21103": {
+    "en": "Aero",
+    "de": "Wind",
+    "ja": "エアロ",
+    "fr": "Vent"
+  },
+  "21104": {
+    "en": "Dispelling Wind",
+    "de": "Steppenwind",
+    "ja": "魔を払う草風",
+    "fr": "Vent dissipateur"
+  },
+  "21105": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21106": {
+    "en": "Shadowkeep",
+    "de": "Schattensog",
+    "ja": "影寄せ",
+    "fr": "Kageyose"
+  },
+  "21107": {
+    "en": "Hyoton",
+    "de": "Hyoton",
+    "ja": "氷遁の術",
+    "fr": "Hyôton"
+  },
+  "21108": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21109": {
+    "en": "Hyoton",
+    "de": "Hyoton",
+    "ja": "氷遁の術",
+    "fr": "Hyôton"
+  },
+  "21110": {
+    "en": "Hellfrog Medium",
+    "de": "Krötenmedium",
+    "ja": "口寄せの術・大蝦蟇",
+    "fr": "Kuchiyose Ogama"
+  },
+  "21111": {
+    "en": "Hissatsu: Gyoten",
+    "de": "Hissatsu: Gyoten",
+    "ja": "必殺剣・暁天",
+    "fr": "Hissatsu : Gyôten"
+  },
+  "21112": {
+    "en": "Crush Weapon",
+    "de": "Jenseitsschrei",
+    "ja": "冥界恐叫打",
+    "fr": "Cri de l'au-delà"
+  },
+  "21113": {
+    "en": "Crush Weapon",
+    "de": "Jenseitsschrei",
+    "ja": "冥界恐叫打",
+    "fr": "Cri de l'au-delà"
+  },
+  "21114": {
+    "en": "Crush Weapon",
+    "de": "Jenseitsschrei",
+    "ja": "冥界恐叫打",
+    "fr": "Cri de l'au-delà"
+  },
+  "21115": {
+    "en": "Tenka Goken",
+    "de": "Tenka Goken",
+    "ja": "天下五剣",
+    "fr": "Tenka Goken"
+  },
+  "21116": {
+    "en": "Entropic Flame",
+    "de": "Entropische Flamme",
+    "ja": "エントロピックフレイム",
+    "fr": "Flamme entropique"
+  },
+  "21117": {
+    "en": "Entropic Flame",
+    "de": "Entropische Flamme",
+    "ja": "エントロピックフレイム",
+    "fr": "Flamme entropique"
+  },
+  "21118": {
+    "en": "Vein Splitter",
+    "de": "Erdader-Spalter",
+    "ja": "地脈断ち",
+    "fr": "Fendeur du sol"
+  },
+  "21119": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21120": {
+    "en": "the Final Art",
+    "de": "Wind, Sturm, Schwert",
+    "ja": "絶剣風雷妖",
+    "fr": "Précellence de tempête, d'orage et d'épée"
+  },
+  "21121": {
+    "en": "the Final Art",
+    "de": "Wind, Sturm, Schwert",
+    "ja": "絶剣風雷妖",
+    "fr": "Précellence de tempête, d'orage et d'épée"
+  },
+  "21122": {
+    "en": "Darkblight",
+    "de": "Dunkler Pesthauch",
+    "ja": "ダーククラウダ",
+    "fr": "Supplice sombre"
+  },
+  "21123": {
+    "en": "Heavy Swing",
+    "de": "Gewaltiger Hieb",
+    "ja": "ヘヴィスウィング",
+    "fr": "Coup puissant"
+  },
+  "21124": {
+    "en": "Maim",
+    "de": "Verstümmelung",
+    "ja": "メイム",
+    "fr": "Mutilation"
+  },
+  "21125": {
+    "en": "Stormwind",
+    "de": "Schwingensturm",
+    "ja": "ストームウィンド",
+    "fr": "Vent orageux"
+  },
+  "21126": {
+    "en": "Overcome",
+    "de": "Überkommen",
+    "ja": "オーバーカム",
+    "fr": "Surpassement"
+  },
+  "21127": {
+    "en": "Skydrive",
+    "de": "Himmelsschub",
+    "ja": "スカイドライブ",
+    "fr": "Offensive céleste"
+  },
+  "21128": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21129": {
+    "en": "Overcome All Odds",
+    "de": "Unbändiger Siegeswille",
+    "ja": "オーバーカム・オール・オッズ",
+    "fr": "Envers et contre tout"
+  },
+  "21130": {
+    "en": "Overcome All Odds",
+    "de": "Unbändiger Siegeswille",
+    "ja": "オーバーカム・オール・オッズ",
+    "fr": "Envers et contre tout"
+  },
+  "21131": {
+    "en": "チャージ",
+    "de": "Sturm",
+    "ja": "チャージ",
+    "fr": "Charge"
+  },
+  "21132": {
+    "en": "Soul's Release",
+    "de": "Entfesselung des Ahnen",
+    "ja": "古魂の解放",
+    "fr": "Relâchement des éternels"
+  },
+  "21133": {
+    "en": "Shockwave",
+    "de": "Schockwelle",
+    "ja": "衝撃波",
+    "fr": "Onde de choc"
+  },
+  "21134": {
+    "en": "Shockwave",
+    "de": "Schockwelle",
+    "ja": "衝撃波",
+    "fr": "Onde de choc"
+  },
+  "21135": {
+    "en": "Soulflash",
+    "de": "Zorn des Ahnen",
+    "ja": "古魂の猛り",
+    "fr": "Exaltation des éternels"
+  },
+  "21136": {
+    "en": "Soulflash",
+    "de": "Zorn des Ahnen",
+    "ja": "古魂の猛り",
+    "fr": "Exaltation des éternels"
+  },
+  "21137": {
+    "en": "Soulflash",
+    "de": "Zorn des Ahnen",
+    "ja": "古魂の猛り",
+    "fr": "Exaltation des éternels"
+  },
+  "21138": {
+    "en": "Sky-high Drive",
+    "de": "Himmelspfählung",
+    "ja": "スカイハイドライヴ",
+    "fr": "Tourbillon vertigineux"
+  },
+  "21139": {
+    "en": "Sky-high Drive",
+    "de": "Himmelspfählung",
+    "ja": "スカイハイドライヴ",
+    "fr": "Tourbillon vertigineux"
+  },
+  "21140": {
+    "en": "Sky-high Drive",
+    "de": "Himmelspfählung",
+    "ja": "スカイハイドライヴ",
+    "fr": "Tourbillon vertigineux"
+  },
+  "21141": {
+    "en": "Sky-high Drive",
+    "de": "Himmelspfählung",
+    "ja": "スカイハイドライヴ",
+    "fr": "Tourbillon vertigineux"
+  },
+  "21142": {
+    "en": "Avalanche Axe",
+    "de": "Lawinenaxt",
+    "ja": "アバランチアクス",
+    "fr": "Avalancheuse"
+  },
+  "21143": {
+    "en": "Avalanche Axe",
+    "de": "Lawinenaxt",
+    "ja": "アバランチアクス",
+    "fr": "Avalancheuse"
+  },
+  "21144": {
+    "en": "Avalanche Axe",
+    "de": "Lawinenaxt",
+    "ja": "アバランチアクス",
+    "fr": "Avalancheuse"
+  },
+  "21145": {
+    "en": "Avalanche Axe",
+    "de": "Lawinenaxt",
+    "ja": "アバランチアクス",
+    "fr": "Avalancheuse"
+  },
+  "21146": {
+    "en": "Etesian Axe",
+    "de": "Etesien-Axt",
+    "ja": "エテジアンアクス",
+    "fr": "Hache de l'étésien"
+  },
+  "21147": {
+    "en": "Etesian Axe",
+    "de": "Etesien-Axt",
+    "ja": "エテジアンアクス",
+    "fr": "Hache de l'étésien"
+  },
+  "21148": {
+    "en": "Lands of Old",
+    "de": "Antikes Beben",
+    "ja": "古代の大地",
+    "fr": "Terre primordiale"
+  },
+  "21149": {
+    "en": "Lands of Old",
+    "de": "Antikes Beben",
+    "ja": "古代の大地",
+    "fr": "Terre primordiale"
+  },
+  "21150": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21151": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21152": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21153": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21154": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21155": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21156": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21157": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21158": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21159": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21160": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21161": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21162": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21163": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21164": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21165": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21166": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21167": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21168": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21169": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21170": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21171": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21172": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21173": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21174": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21175": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21176": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21177": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21178": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21179": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21180": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21181": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21182": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21183": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21184": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21185": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21186": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21187": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21188": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21189": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21190": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21191": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21192": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21193": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21194": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21195": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21196": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21197": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21198": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21199": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21200": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21201": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21202": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21203": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21204": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21205": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21206": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21207": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21208": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21209": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21210": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21211": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21212": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21213": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21214": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21215": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21216": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21217": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21218": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21219": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21220": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21221": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21222": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21223": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21224": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21225": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21226": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21227": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21228": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21229": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21230": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21231": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21232": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21233": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21234": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21235": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21236": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21237": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21238": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21239": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21240": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21241": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21242": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21243": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21244": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21245": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21246": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21247": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21248": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21249": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21250": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21251": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21252": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21253": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21254": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21255": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21256": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21257": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21258": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21259": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21260": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21261": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21262": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21263": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21264": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21265": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21266": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21267": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21268": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21269": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21270": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21271": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21272": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21273": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21274": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21275": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21276": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21277": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21278": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21279": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21280": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21281": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21282": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21283": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21284": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21285": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21286": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21287": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21288": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21289": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21290": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21291": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21292": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21293": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21294": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21295": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21296": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21297": {
+    "en": "Ascendance",
+    "de": "Himmelstanz",
+    "ja": "アセンダンス",
+    "fr": "Ascendance"
+  },
+  "21298": {
+    "en": "Absolute Teleport",
+    "de": "Absoluter Teleport",
+    "ja": "アブソリュートテレポ",
+    "fr": "Téléportation absolue"
+  },
+  "21299": {
+    "en": "High Jump",
+    "de": "Hochsprung",
+    "ja": "ハイジャンプ",
+    "fr": "Grand saut"
+  },
+  "21300": {
+    "en": "Heavy Swing",
+    "de": "Gewaltiger Hieb",
+    "ja": "ヘヴィスウィング",
+    "fr": "Coup puissant"
+  },
+  "21301": {
+    "en": "Skull Sunder",
+    "de": "Schädelspalter",
+    "ja": "スカルサンダー",
+    "fr": "Brise-crâne"
+  },
+  "21302": {
+    "en": "Mistral Blow",
+    "de": "Mistral-Hammer",
+    "ja": "ミストラルハンマー",
+    "fr": "Marteau mistral"
+  },
+  "21303": {
+    "en": "Venomous Bite",
+    "de": "Giftbiss",
+    "ja": "ベノムバイト",
+    "fr": "Morsure venimeuse"
+  },
+  "21304": {
+    "en": "Windbite",
+    "de": "Beißender Wind",
+    "ja": "ウィンドバイト",
+    "fr": "Morsure du vent"
+  },
+  "21305": {
+    "en": "Heavy Shot",
+    "de": "Gewaltiger Schuss",
+    "ja": "ヘヴィショット",
+    "fr": "Tir à l'arc puissant"
+  },
+  "21306": {
+    "en": "Second Wind",
+    "de": "Chakra",
+    "ja": "内丹",
+    "fr": "Second souffle"
+  },
+  "21307": {
+    "en": "Hard Slash",
+    "de": "Harter Schlitzer",
+    "ja": "ハードスラッシュ",
+    "fr": "Taillade violente"
+  },
+  "21308": {
+    "en": "Hard Strike",
+    "de": "Harter Hieb",
+    "ja": "ハードトライク",
+    "fr": "Frappe violente"
+  },
+  "21309": {
+    "en": "Manaeater",
+    "de": "Manafresser",
+    "ja": "マナイーター",
+    "fr": "Mange-mana"
+  },
+  "21310": {
+    "en": "Shadow Bastion",
+    "de": "Manawand",
+    "ja": "マナウォール",
+    "fr": "Bastion de l'ombre"
+  },
+  "21311": {
+    "en": "Feral Lunge",
+    "de": "Wilder Angriff",
+    "ja": "急襲",
+    "fr": "Ruée féroce"
+  },
+  "21312": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21313": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21314": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21315": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21316": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21317": {
+    "en": "Heavy Shot",
+    "de": "Gewaltiger Schuss",
+    "ja": "ヘヴィショット",
+    "fr": "Tir à l'arc puissant"
+  },
+  "21318": {
+    "en": "Hunter's Arrow",
+    "de": "Jagdpfeil",
+    "ja": "ハンティングアロー",
+    "fr": "Flèche traqueuse"
+  },
+  "21319": {
+    "en": "Radiant Arrow",
+    "de": "Strahlenpfeil",
+    "ja": "レディアントアロー",
+    "fr": "Flèche radiante"
+  },
+  "21320": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21321": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21322": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21323": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21324": {
+    "en": "Enkindling Flame Dance",
+    "de": "Lodernder Flammentanz",
+    "ja": "フレイムダンス：燃焼の舞",
+    "fr": "Danse des flammes : pas d'ignition"
+  },
+  "21325": {
+    "en": "Invigorating Flame Dance",
+    "de": "Lindernder Flammentanz",
+    "ja": "フレイムダンス：青燐の舞 ",
+    "fr": "Danse des flammes : valse céruléenne"
+  },
+  "21326": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21327": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21328": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21329": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21330": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21331": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21332": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21333": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21334": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21335": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21336": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21337": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21338": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21339": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21340": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21341": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21342": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21343": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21344": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21345": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21346": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21347": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21348": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21349": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21350": {
+    "en": "Frost Blade",
+    "de": "Frostklinge",
+    "ja": "凍てつく剣",
+    "fr": "Lame glaciale"
+  },
+  "21351": {
+    "en": "Frost Staff",
+    "de": "Froststab",
+    "ja": "凍てつく杖",
+    "fr": "Bâton glacial"
+  },
+  "21352": {
+    "en": "Frost Bow",
+    "de": "Frostbogen",
+    "ja": "凍てつく弓",
+    "fr": "Arc glacial"
+  },
+  "21353": {
+    "en": "Permafrost",
+    "de": "Permafrost",
+    "ja": "パーマフロスト",
+    "fr": "Permafrost"
+  },
+  "21354": {
+    "en": "Dreams of Ice",
+    "de": "Eisige Träume",
+    "ja": "氷結の幻想",
+    "fr": "Illusions glacées"
+  },
+  "21355": {
+    "en": "Diamond Dust",
+    "de": "Diamantenstaub",
+    "ja": "ダイアモンドダスト",
+    "fr": "Poussière de diamant"
+  },
+  "21356": {
+    "en": "Diamond Dust",
+    "de": "Diamantenstaub",
+    "ja": "ダイアモンドダスト",
+    "fr": "Poussière de diamant"
+  },
+  "21357": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21358": {
+    "en": "Hailstorm",
+    "de": "Hagelsturm",
+    "ja": "ヘイルストーム",
+    "fr": "Averse de grêle"
+  },
+  "21359": {
+    "en": "Hailstorm",
+    "de": "Hagelsturm",
+    "ja": "ヘイルストーム",
+    "fr": "Averse de grêle"
+  },
+  "21360": {
+    "en": "Absolute Zero",
+    "de": "Absoluter Nullpunkt",
+    "ja": "絶対零度",
+    "fr": "Zéro absolu"
+  },
+  "21361": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21362": {
+    "en": "Melt",
+    "de": "Schmelzen",
+    "ja": "ウェポンメルト",
+    "fr": "Fonte"
+  },
+  "21363": {
+    "en": "Icebrand",
+    "de": "Eisbrand",
+    "ja": "アイスブランド",
+    "fr": "Épée de glace"
+  },
+  "21364": {
+    "en": "Heavenly Strike",
+    "de": "Himmelszorn",
+    "ja": "ヘヴンリーストライク",
+    "fr": "Frappe céleste"
+  },
+  "21365": {
+    "en": "Glacier Bash",
+    "de": "Gletscherlauf",
+    "ja": "グレイシャーバッシュ",
+    "fr": "Effondrement de glacier"
+  },
+  "21366": {
+    "en": "Whiteout",
+    "de": "Schneeblindheit",
+    "ja": "ホワイトアウト",
+    "fr": "Fusion Glaciation"
+  },
+  "21367": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21368": {
+    "en": "Glass Dance",
+    "de": "Gläserner Tanz ",
+    "ja": "氷雪乱舞",
+    "fr": "Danse de glace"
+  },
+  "21369": {
+    "en": "Avalanche",
+    "de": "Lawine",
+    "ja": "アバランチ",
+    "fr": "Avalanche"
+  },
+  "21370": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21371": {
+    "en": "Icicle Impact",
+    "de": "Eiszapfen-Schlag",
+    "ja": "アイシクルインパクト",
+    "fr": "Impact de stalactite"
+  },
+  "21372": {
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
+  },
+  "21373": {
+    "en": "Aquatic Lance",
+    "de": "Aquaspeer",
+    "ja": "アクアランス",
+    "fr": "Lance aquatique"
+  },
+  "21374": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21375": {
+    "en": "Tidal Guillotine",
+    "de": "Gezeitenguillotine",
+    "ja": "タイダルギロチン",
+    "fr": "Marée-guillotine"
+  },
+  "21376": {
+    "en": "Pelagic Cleaver",
+    "de": "Pelagische Pein",
+    "ja": "ペラジッククリーヴ",
+    "fr": "Fendoir pélagique"
+  },
+  "21377": {
+    "en": "Shout",
+    "de": "Lockruf",
+    "ja": "呼び声",
+    "fr": "Appel"
+  },
+  "21378": {
+    "en": "Moonfireworks",
+    "de": "Feuermond-Bombe",
+    "ja": "紅蓮爆",
+    "fr": "Explosion écarlate"
+  },
+  "21379": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21380": {
+    "en": "Summer's Heat",
+    "de": "Feuermond-Flammenstachel",
+    "ja": "紅蓮の爆炎",
+    "fr": "Bombe incendiaire écarlate"
+  },
+  "21381": {
+    "en": "Summer's Flame",
+    "de": "Feuermond-Flamme",
+    "ja": "紅蓮の火焔",
+    "fr": "Brasier écarlate"
+  },
+  "21382": {
+    "en": "Summer's Heat",
+    "de": "Feuermond-Flammenstachel",
+    "ja": "紅蓮の爆炎",
+    "fr": "Bombe incendiaire écarlate"
+  },
+  "21383": {
+    "en": "Bite and Run",
+    "de": "Biss dann",
+    "ja": "バイト・アンド・ラン",
+    "fr": "Charge mordante"
+  },
+  "21384": {
+    "en": "Aquatic Lance",
+    "de": "Aquaspeer",
+    "ja": "アクアランス",
+    "fr": "Lance aquatique"
+  },
+  "21385": {
+    "en": "Tidal Guillotine",
+    "de": "Gezeitenguillotine",
+    "ja": "タイダルギロチン",
+    "fr": "Marée-guillotine"
+  },
+  "21386": {
+    "en": "Summer's Flame",
+    "de": "Feuermond-Flamme",
+    "ja": "紅蓮の火焔",
+    "fr": "Brasier écarlate"
+  },
+  "21387": {
+    "en": "Tidal Stream",
+    "de": "Gezeitenstrom",
+    "ja": "タイダルストリーム",
+    "fr": "Vague torrentielle"
+  },
+  "21388": {
+    "en": "Tidal Shift",
+    "de": "Gezeitenverschiebung",
+    "ja": "タイダルシフト",
+    "fr": "Changement de marée"
+  },
+  "21389": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21390": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21391": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21392": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21393": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21394": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21395": {
+    "en": "Simultaneous Activation",
+    "de": "Multiaktivierung",
+    "ja": "多重起動",
+    "fr": "Activations multiples"
+  },
+  "21396": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21397": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21398": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21399": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21400": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21401": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21402": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21403": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21404": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21405": {
+    "en": "Spear Jab",
+    "de": "Lanzenstoß",
+    "ja": "槍突",
+    "fr": "Coup de lance"
+  },
+  "21406": {
+    "en": "Spear Sequence",
+    "de": "Lanzensturm",
+    "ja": "連槍突",
+    "fr": "Combo de lance"
+  },
+  "21407": {
+    "en": "Seamless Form",
+    "de": "Lanzentritt",
+    "ja": "槍斬転撃",
+    "fr": "Taillade renversante"
+  },
+  "21408": {
+    "en": "Pointed Spearing",
+    "de": "Lanzenhieb",
+    "ja": "重撃槍突",
+    "fr": "Grand coup de lance"
+  },
+  "21409": {
+    "en": "Striking Blow",
+    "de": "Schmetterhieb",
+    "ja": "砕撃打",
+    "fr": "Coup briseur contondant"
+  },
+  "21410": {
+    "en": "Sequential Blows",
+    "de": "Schmettertritt",
+    "ja": "連続砕撃",
+    "fr": "Combo briseur"
+  },
+  "21411": {
+    "en": "Palm Quake",
+    "de": "Schmetterhaken",
+    "ja": "震砕",
+    "fr": "Ébranlement"
+  },
+  "21412": {
+    "en": "Toppling Strike",
+    "de": "Schmettersturm",
+    "ja": "重砕撃",
+    "fr": "Grand coup briseur"
+  },
+  "21413": {
+    "en": "Blade Flurry",
+    "de": "Klingenschnitt",
+    "ja": "斬機連撃",
+    "fr": "Combo de lame"
+  },
+  "21414": {
+    "en": "Dancing Blade",
+    "de": "Klingensturm",
+    "ja": "転進斬機",
+    "fr": "Taillade en épingle"
+  },
+  "21415": {
+    "en": "Balanced Edge",
+    "de": "Horizontalhieb",
+    "ja": "水平重撃",
+    "fr": "Grand coup horizontal"
+  },
+  "21416": {
+    "en": "Whirling Assault",
+    "de": "Klingentritt",
+    "ja": "重撃転回斬",
+    "fr": "Grand coup tournoyant"
+  },
+  "21417": {
+    "en": "Weighted Blade",
+    "de": "Klingenhieb",
+    "ja": "斬機重撃",
+    "fr": "Retombée tranchante"
+  },
+  "21418": {
+    "en": "Swiftbreach",
+    "de": "Blitzauftauchen",
+    "ja": "急浮上",
+    "fr": "Remontée subite"
+  },
+  "21419": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21420": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21421": {
+    "en": "Melt",
+    "de": "Schmelzen",
+    "ja": "ウェポンメルト",
+    "fr": "Fonte"
+  },
+  "21422": {
+    "en": "Melt",
+    "de": "Schmelzen",
+    "ja": "ウェポンメルト",
+    "fr": "Fonte"
+  },
+  "21423": {
+    "en": "攻撃",
+    "de": "攻撃",
+    "ja": "攻撃",
+    "fr": "攻撃"
+  },
+  "21424": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21425": {
+    "en": "Lethal Revolution",
+    "de": "Aureolenschlag",
+    "ja": "旋回斬撃",
+    "fr": "Taillade rotative"
+  },
+  "21426": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21427": {
+    "en": "Life's Last Song",
+    "de": "Finale Kantate",
+    "ja": "終焉ノ歌",
+    "fr": "Ultime Cantate"
+  },
+  "21428": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21429": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21430": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21431": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21432": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21433": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21434": {
+    "en": "Burst",
+    "de": "Explosion",
+    "ja": "爆発",
+    "fr": "Explosion"
+  },
+  "21435": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21436": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21437": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21438": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21439": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21440": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21441": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21442": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21443": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21444": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21445": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21446": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21447": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21448": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21449": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21450": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21451": {
+    "en": "Limit Break",
+    "de": "Limitrausch",
+    "ja": "リミットブレイク",
+    "fr": "Transcendance"
+  },
+  "21452": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21453": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21454": {
+    "en": "Spectral Gust",
+    "de": "Phantom-Böe",
+    "ja": "幻光旋風",
+    "fr": "Bourrasque spectrale"
+  },
+  "21455": {
+    "en": "Spectral Gust",
+    "de": "Phantom-Böe",
+    "ja": "幻光旋風",
+    "fr": "Bourrasque spectrale"
+  },
+  "21456": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21457": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21458": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21459": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21460": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21461": {
+    "en": "Mechanical Laceration",
+    "de": "Omnilaser",
+    "ja": "制圧光撃",
+    "fr": "Rayons multidirectionnels"
+  },
+  "21462": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21463": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21464": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21465": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21466": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21467": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21468": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21469": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21470": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21471": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21472": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21473": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21474": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21475": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21476": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21477": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21478": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21479": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21480": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21481": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21482": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21483": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21484": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21485": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21486": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21487": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21488": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21489": {
+    "en": "Self-destruct",
+    "de": "Selbstzerstörung",
+    "ja": "自爆",
+    "fr": "Auto-destruction"
+  },
+  "21490": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21491": {
+    "en": "Aerial Bombardment",
+    "de": "Dauerangriff",
+    "ja": "連続攻撃",
+    "fr": "Attaque continue"
+  },
+  "21492": {
+    "en": "Aerial Bombardment",
+    "de": "Dauerangriff",
+    "ja": "連続攻撃",
+    "fr": "Attaque continue"
+  },
+  "21493": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21494": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21495": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21496": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21497": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21498": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21499": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21500": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21501": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21502": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21503": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21504": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21505": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21506": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21507": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21508": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21509": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21510": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21511": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21512": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21513": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21514": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21515": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21516": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21517": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21518": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21519": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21520": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21521": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21522": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21523": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21524": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21525": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21526": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21527": {
+    "en": "Perfect Decimation",
+    "de": "Perfektes Dezimieren",
+    "ja": "パーフェクトデシメート",
+    "fr": "Décimation parfaite"
+  },
+  "21528": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21529": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21530": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21531": {
+    "en": "R011: Laser",
+    "de": "R011: Laser",
+    "ja": "R011：レーザー",
+    "fr": "R011 : Laser"
+  },
+  "21532": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21533": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21534": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21535": {
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
+  },
+  "21536": {
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
+  },
+  "21537": {
+    "en": "Prime Blade",
+    "de": "Klingensequenz",
+    "ja": "斬機撃：充填",
+    "fr": "Brise-machine : coup chargé"
+  },
+  "21538": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21539": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21540": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21541": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21542": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21543": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21544": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21545": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21546": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21547": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21548": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21549": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21550": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21551": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21552": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21553": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21554": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21555": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21556": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21557": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21558": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21559": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21560": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21561": {
+    "en": "attack",
+    "de": "Attacke",
+    "ja": "攻撃",
+    "fr": "Attaque"
+  },
+  "21562": {
+    "en": "Forced Transfer",
+    "de": "Erzwungener Teleport",
+    "ja": "強制転送",
+    "fr": "Téléportation forcée"
+  },
+  "21563": {
+    "en": "Groundbreaker",
+    "de": "Bodenbrecher",
+    "ja": "グラウンドブレイカー",
+    "fr": "Brise-terre"
+  },
+  "21564": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21565": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21566": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21567": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21568": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21569": {
+    "en": "Flood Ray",
+    "de": "Flutstrahl",
+    "ja": "フラッドレイ",
+    "fr": "Déluge de rayons"
+  },
+  "21570": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21571": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21572": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21573": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21574": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21575": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21576": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21577": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21578": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21579": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21580": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21581": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21582": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21583": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21584": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21585": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21586": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21587": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21588": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21589": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21590": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21591": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21592": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21593": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21594": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21595": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21596": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21597": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21598": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21599": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21600": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21601": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21602": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21603": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21604": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21605": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21606": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21607": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21608": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21609": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21610": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21611": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21612": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21613": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21614": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21615": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21616": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21617": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21618": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21619": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21620": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21621": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21622": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21623": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21624": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21625": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21626": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21627": {
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
+  },
+  "21628": {
+    "en": "Ultimate Crossover",
+    "de": "Ultimative Kreuzigung",
+    "ja": "アルティメット・クロスオーバー",
+    "fr": "Taillade croisée ultime"
+  },
+  "21629": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21630": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21631": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21632": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21633": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21634": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21635": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21636": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21637": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21638": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21639": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21640": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21641": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21642": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21643": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21644": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21645": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21646": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21647": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21648": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21649": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21650": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21651": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21652": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21653": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21654": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21655": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21656": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21657": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21658": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21659": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21660": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21661": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21662": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21663": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21664": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21665": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21666": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21667": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21668": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21669": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21670": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21671": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21672": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21673": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21674": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21675": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21676": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21677": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21678": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21679": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21680": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21681": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21682": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21683": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21684": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21685": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21686": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21687": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21688": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21689": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21690": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21691": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21692": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21693": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21694": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21695": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21696": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21697": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21698": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21699": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21700": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21701": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21702": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21703": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21704": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21705": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21706": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21707": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21708": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21709": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21710": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21711": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21712": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21713": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21714": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21715": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21716": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21717": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21718": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21719": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21720": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21721": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21722": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21723": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21724": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21725": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21726": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21727": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21728": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21729": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21730": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21731": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21732": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21733": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21734": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21735": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21736": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21737": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21738": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21739": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21740": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21741": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21742": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21743": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21744": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21745": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21746": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21747": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21748": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21749": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21750": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21751": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21752": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21753": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21754": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21755": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21756": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21757": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21758": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21759": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21760": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21761": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21762": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21763": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21764": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21765": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21766": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21767": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21768": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21769": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21770": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21771": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21772": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21773": {
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
+  },
+  "21774": {
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
+  },
+  "21775": {
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
+  },
+  "21776": {
+    "en": "Sliding Swipe",
+    "de": "Sturmangriff",
+    "ja": "突進斬撃",
+    "fr": "Taillade propulsée"
+  },
+  "21777": {
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
+  },
+  "21778": {
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
+  },
+  "21779": {
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
+  },
+  "21780": {
+    "en": "Sharp Turn",
+    "de": "Rotationsangriff",
+    "ja": "転回斬撃",
+    "fr": "Taillade en triangle"
+  },
+  "21781": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21782": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21783": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21784": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21785": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21786": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21787": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21788": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21789": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21790": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21791": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21792": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21793": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21794": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21795": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21796": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21797": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21798": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21799": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21800": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21801": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21802": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21803": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21804": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21805": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21806": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21807": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21808": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21809": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21810": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21811": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21812": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21813": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21814": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21815": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21816": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21817": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21818": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21819": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21820": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21821": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21822": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21823": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21824": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21825": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21826": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21827": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21828": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21829": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21830": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21831": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21832": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21833": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21834": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21835": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21836": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21837": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21838": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21839": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21840": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21841": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21842": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21843": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21844": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21845": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21846": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21847": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21848": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21849": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21850": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21851": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21852": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21853": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21854": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21855": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21856": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21857": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21858": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21859": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21860": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21861": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21862": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21863": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21864": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21865": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21866": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21867": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21868": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21869": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21870": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21871": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21872": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21873": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21874": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21875": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21876": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21877": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21878": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21879": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21880": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21881": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21882": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21883": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21884": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21885": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21886": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21887": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21888": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21889": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21890": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21891": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21892": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21893": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21894": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21895": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21896": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21897": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21898": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21899": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21900": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21901": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21902": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21903": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21904": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21905": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21906": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21907": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21908": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21909": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21910": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21911": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21912": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21913": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21914": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21915": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21916": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21917": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21918": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21919": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21920": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21921": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21922": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21923": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21924": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21925": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21926": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21927": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21928": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21929": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21930": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21931": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21932": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21933": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21934": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21935": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21936": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21937": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21938": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21939": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21940": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21941": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21942": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21943": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21944": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21945": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21946": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21947": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21948": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21949": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21950": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21951": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21952": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21953": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21954": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21955": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21956": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21957": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21958": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21959": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21960": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21961": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21962": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21963": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21964": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21965": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21966": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21967": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21968": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21969": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21970": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21971": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21972": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21973": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21974": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21975": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21976": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21977": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21978": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21979": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21980": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21981": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21982": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21983": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21984": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21985": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21986": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21987": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21988": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21989": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21990": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21991": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21992": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21993": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21994": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21995": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21996": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21997": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21998": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "21999": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22000": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22001": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22002": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22003": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22004": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22005": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22006": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22007": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22008": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22009": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22010": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22011": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22012": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22013": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22014": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22015": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22016": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22017": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22018": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22019": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22020": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22021": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22022": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22023": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22024": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22025": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22026": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22027": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22028": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22029": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22030": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22031": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22032": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22033": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22034": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22035": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22036": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22037": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22038": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22039": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22040": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22041": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22042": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22043": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22044": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22045": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22046": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22047": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22048": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22049": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22050": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22051": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22052": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22053": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22054": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22055": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22056": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22057": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22058": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22059": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22060": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22061": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22062": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22063": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22064": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22065": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22066": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22067": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22068": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22069": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22070": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22071": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22072": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22073": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22074": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22075": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22076": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22077": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22078": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22079": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22080": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22081": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22082": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22083": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22084": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22085": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22086": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22087": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22088": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22089": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22090": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22091": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22092": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22093": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22094": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22095": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22096": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22097": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22098": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22099": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22100": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22101": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22102": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22103": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22104": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22105": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22106": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22107": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22108": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22109": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22110": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22111": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22112": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22113": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22114": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22115": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22116": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22117": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22118": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22119": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22120": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22121": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22122": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22123": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22124": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22125": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22126": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22127": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22128": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22129": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22130": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22131": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22132": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22133": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22134": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22135": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22136": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22137": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22138": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22139": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22140": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22141": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22142": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22143": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22144": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22145": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22146": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22147": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22148": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22149": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22150": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22151": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22152": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22153": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22154": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22155": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22156": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22157": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22158": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22159": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22160": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22161": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22162": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22163": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22164": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22165": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22166": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22167": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22168": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22169": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22170": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22171": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22172": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22173": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22174": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22175": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22176": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22177": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22178": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22179": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22180": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22181": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22182": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22183": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22184": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22185": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22186": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22187": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22188": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22189": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22190": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22191": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22192": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22193": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22194": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22195": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22196": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22197": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22198": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22199": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22200": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22201": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22202": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22203": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22204": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22205": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22206": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22207": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22208": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22209": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22210": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22211": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22212": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22213": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22214": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22215": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22216": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22217": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22218": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22219": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22220": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22221": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22222": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22223": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22224": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22225": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22226": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22227": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22228": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22229": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22230": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22231": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22232": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22233": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22234": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22235": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22236": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22237": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22238": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22239": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22240": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22241": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22242": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22243": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22244": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22245": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22246": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22247": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22248": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22249": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22250": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22251": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22252": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22253": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22254": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22255": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22256": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22257": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22258": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22259": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22260": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22261": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22262": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22263": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22264": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22265": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22266": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22267": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22268": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22269": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22270": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22271": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22272": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22273": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22274": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22275": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22276": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22277": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22278": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22279": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22280": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22281": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22282": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22283": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22284": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22285": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22286": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22287": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22288": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22289": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22290": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22291": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22292": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22293": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22294": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22295": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22296": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22297": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22298": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22299": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "22300": {
     "en": "",
     "de": "",
     "ja": "",

@@ -38,7 +38,7 @@ const stopInterval$ = emptyQueue$.pipe(
   filter(empty => empty)
 );
 
-interval(key ? 2 : 250).pipe(
+interval(key ? 10 : 250).pipe(
   tap(() => {
     emptyQueue$.next(queue.length === 0);
   }),

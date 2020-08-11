@@ -419,25 +419,25 @@ if (hasTodo('notebookDivision')) {
   });
 }
 
-if (hasTodo('notebookDivisionCategory')) {
-  const notebookDivisionCategory = {};
-  getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
-    page.Results.forEach(row => {
-      notebookDivisionCategory[row.ID] = {
-        name: {
-          en: row.Name_en,
-          ja: row.Name_ja,
-          de: row.Name_de,
-          fr: row.Name_fr
-        },
-        divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
-      };
-    });
-  }, null, () => {
-    persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
-    done('notebookDivisionCategory');
-  });
-}
+// if (hasTodo('notebookDivisionCategory')) {
+//   const notebookDivisionCategory = {};
+//   getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
+//     page.Results.forEach(row => {
+//       notebookDivisionCategory[row.ID] = {
+//         name: {
+//           en: row.Name_en,
+//           ja: row.Name_ja,
+//           de: row.Name_de,
+//           fr: row.Name_fr
+//         },
+//         divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
+//       };
+//     });
+//   }, null, () => {
+//     persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
+//     done('notebookDivisionCategory');
+//   });
+// }
 
 if (hasTodo('gatheringLog')) {
 
@@ -1930,28 +1930,28 @@ if (hasTodo('HWDCrafter')) {
 }
 
 
-if (hasTodo('HWDGatherer')) {
-  const inspections = [];
-  getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
-    completeFetch.forEach(inspection => {
-      for (let i = 0; i < 32; i++) {
-        if (inspection[`ItemRequired${i}`] === null) {
-          return;
-        }
-        inspections.push({
-          requiredItem: inspection[`ItemRequired${i}`].Item,
-          amount: inspection[`AmountRequired${i}`],
-          receivedItem: inspection[`ItemReceived${i}`].ID,
-          scrips: inspection[`Reward1${i}`].Scrips,
-          points: inspection[`Reward1${i}`].Points,
-          phase: inspection[`Phase${i}TargetID`]
-        });
-      }
-    });
-    persistToJsonAsset('hwd-inspections', inspections);
-    done('HWDGatherer');
-  });
-}
+// if (hasTodo('HWDGatherer')) {
+//   const inspections = [];
+//   getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
+//     completeFetch.forEach(inspection => {
+//       for (let i = 0; i < 52; i++) {
+//         if (inspection[`ItemRequired${i}`] === null) {
+//           return;
+//         }
+//         inspections.push({
+//           requiredItem: inspection[`ItemRequired${i}`].Item,
+//           amount: inspection[`AmountRequired${i}`],
+//           receivedItem: inspection[`ItemReceived${i}`].ID,
+//           scrips: inspection[`Reward1${i}`].Scrips,
+//           points: inspection[`Reward1${i}`].Points,
+//           phase: inspection[`Phase${i}TargetID`]
+//         });
+//       }
+//     });
+//     persistToJsonAsset('hwd-inspections', inspections);
+//     done('HWDGatherer');
+//   });
+// }
 
 if (hasTodo('HWDPhases')) {
   const gathererInspectTerm = {};

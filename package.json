@@ -122,7 +122,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.36.22",
+    "node-machina-ffxiv": "^2.36.31",
     "tslib": "^1.10.0",
     "fs-extra": "^7.0.1"
   },

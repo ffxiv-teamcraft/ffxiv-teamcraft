@@ -9228,7 +9228,7 @@
     "fr": "Arme-toi d'un Yo-kai : poings"
   },
   "1539": {
-    "en": "More Inventory Slots, Please",
+    "en": "More Inventory Slots, Please I",
     "de": "Kuriositäten einer fremden Welt",
     "ja": "妖怪武器コレクター",
     "fr": "Collectionneur d'armes Yo-kai"
@@ -9432,10 +9432,10 @@
     "fr": "Festin collectif : diamant"
   },
   "1573": {
-    "en": "You Must Needs Befriend Them All",
+    "en": "You Must Needs Befriend Them All I",
     "de": "Multimedailleur",
     "ja": "妖怪のともだち",
-    "fr": "Les Yo-kai sont nos amis♪"
+    "fr": "Les Yo-kai sont nos amis !♪"
   },
   "1574": {
     "en": "Ex Mhachina",
@@ -14916,16 +14916,16 @@
     "fr": "Pêcheur de légendes itinérant I"
   },
   "2487": {
-    "en": "Divine Ascension",
-    "de": "Heiliger der Himmelsstadt",
-    "ja": "蒼天街の聖者",
-    "fr": "Saint d'Azurée"
+    "en": "Phase II Divine Ascension",
+    "de": "Heiliger des Genists",
+    "ja": "蒼天街の聖者：第二次復興事業",
+    "fr": "Saint d'Azurée (2e phase)"
   },
   "2488": {
-    "en": "Minor Miracle",
-    "de": "Seliger der Himmelsstadt",
-    "ja": "蒼天街の福者",
-    "fr": "Bienheureux d'Azurée"
+    "en": "Phase II Minor Miracle",
+    "de": "Seliger des Genists",
+    "ja": "蒼天街の福者：第二次復興事業",
+    "fr": "Bienheureux d'Azurée (2e phase)"
   },
   "2489": {
     "en": "Skyward Saw I",
@@ -15410,103 +15410,103 @@
   "2569": {
     "en": "Pièce de Résistance: Honorbound & Tenacity",
     "de": "Waffen des Widerstands: Rechtschaffen und Hartnacken",
-    "ja": "レジスタンスウェポン：オナーバウンド＆テナシティ",
+    "ja": "レジスタンス・ウェポン：オナーバウンド＆テナシティ",
     "fr": "Armes de la résistance : Lien d'honneur et Ténacité"
   },
   "2570": {
     "en": "Pièce de Résistance: Skullrender",
     "de": "Waffen des Widerstands: Schädelmalmer",
-    "ja": "レジスタンスウェポン：スカルレンダー",
+    "ja": "レジスタンス・ウェポン：スカルレンダー",
     "fr": "Armes de la résistance : Arrache-crânes"
   },
   "2571": {
     "en": "Pièce de Résistance: Woeborn",
     "de": "Waffen des Widerstands: Finsterdorn",
-    "ja": "レジスタンスウェポン：ウォウボーン",
+    "ja": "レジスタンス・ウェポン：ウォウボーン",
     "fr": "Armes de la résistance : Mal-née"
   },
   "2572": {
     "en": "Pièce de Résistance: Crownsblade",
     "de": "Waffen des Widerstands: Kronenklinge",
-    "ja": "レジスタンスウェポン：クラウンブレード",
+    "ja": "レジスタンス・ウェポン：クラウンブレード",
     "fr": "Armes de la résistance : Protectrice de la couronne"
   },
   "2573": {
     "en": "Pièce de Résistance: Dreizack",
     "de": "Waffen des Widerstands: Dreizack",
-    "ja": "レジスタンスウェポン：ドライツァック",
+    "ja": "レジスタンス・ウェポン：ドライツァック",
     "fr": "Armes de la résistance : Dreizack"
   },
   "2574": {
     "en": "Pièce de Résistance: Samsara",
     "de": "Waffen des Widerstands: Samsara",
-    "ja": "レジスタンスウェポン：サンサーラ",
+    "ja": "レジスタンス・ウェポン：サンサーラ",
     "fr": "Armes de la résistance : Samsara"
   },
   "2575": {
     "en": "Pièce de Résistance: Honeshirazu",
     "de": "Waffen des Widerstands: Honeshirazu",
-    "ja": "レジスタンスウェポン：骨不知",
+    "ja": "レジスタンス・ウェポン：骨不知",
     "fr": "Armes de la résistance : Honeshirazu"
   },
   "2576": {
     "en": "Pièce de Résistance: Hoshikiri",
     "de": "Waffen des Widerstands: Hoshikiri",
-    "ja": "レジスタンスウェポン：星切",
+    "ja": "レジスタンス・ウェポン：星切",
     "fr": "Armes de la résistance : Hoshikiri"
   },
   "2577": {
     "en": "Pièce de Résistance: Brilliance",
     "de": "Waffen des Widerstands: Brillanz",
-    "ja": "レジスタンスウェポン：ブリリアンス",
+    "ja": "レジスタンス・ウェポン：ブリリアンス",
     "fr": "Armes de la résistance : Brillance"
   },
   "2578": {
     "en": "Pièce de Résistance: Lawman",
     "de": "Waffen des Widerstands: Gesetzeshüter",
-    "ja": "レジスタンスウェポン：ローマン",
+    "ja": "レジスタンス・ウェポン：ローマン",
     "fr": "Armes de la résistance : Garde-loi"
   },
   "2579": {
     "en": "Pièce de Résistance: Enchufla",
     "de": "Waffen des Widerstands: Enchufla",
-    "ja": "レジスタンスウェポン：エンチュフラ",
+    "ja": "レジスタンス・ウェポン：エンチュフラ",
     "fr": "Armes de la résistance : Enchufla"
   },
   "2580": {
     "en": "Pièce de Résistance: Soulscourge",
     "de": "Waffen des Widerstands: Seelenpein",
-    "ja": "レジスタンスウェポン：ソウルスカージ",
+    "ja": "レジスタンス・ウェポン：ソウルスカージ",
     "fr": "Armes de la résistance : Discipline de l'âme"
   },
   "2581": {
     "en": "Pièce de Résistance: Espiritus",
     "de": "Waffen des Widerstands: Espiritus",
-    "ja": "レジスタンスウェポン：エスピリトゥス",
+    "ja": "レジスタンス・ウェポン：エスピリトゥス",
     "fr": "Armes de la résistance : Espiritus"
   },
   "2582": {
     "en": "Pièce de Résistance: Talekeeper",
     "de": "Waffen des Widerstands: Legendenwächter",
-    "ja": "レジスタンスウェポン：テイルキーパー",
+    "ja": "レジスタンス・ウェポン：テイルキーパー",
     "fr": "Armes de la résistance : Gardien-de-légende"
   },
   "2583": {
     "en": "Pièce de Résistance: Ingrimm",
     "de": "Waffen des Widerstands: Ingrimm",
-    "ja": "レジスタンスウェポン：イングリム",
+    "ja": "レジスタンス・ウェポン：イングリム",
     "fr": "Armes de la résistance : Ingrimm"
   },
   "2584": {
     "en": "Pièce de Résistance: Akademos",
     "de": "Waffen des Widerstands: Akademos",
-    "ja": "レジスタンスウェポン：アカデモス",
+    "ja": "レジスタンス・ウェポン：アカデモス",
     "fr": "Armes de la résistance : Akademos"
   },
   "2585": {
     "en": "Pièce de Résistance: Solstice",
     "de": "Waffen des Widerstands: Sonnenwende",
-    "ja": "レジスタンスウェポン：ソールスティス",
+    "ja": "レジスタンス・ウェポン：ソールスティス",
     "fr": "Armes de la résistance : Solstice"
   },
   "2586": {
@@ -15640,5 +15640,641 @@
     "de": "Zerstörte Zitadelle",
     "ja": "シタデル・ボズヤ蒸発事変",
     "fr": "Passé élucidé"
+  },
+  "2608": {
+    "en": "Watch Me if You Can: Lord Enma",
+    "de": "Watschel mir nach, Meister Enma",
+    "ja": "エンマのともだち",
+    "fr": "Ami du baron Enma"
+  },
+  "2609": {
+    "en": "Watch Me if You Can: Zazel",
+    "de": "Watschel mir nach, Sasel",
+    "ja": "ぬらりひょんのともだち",
+    "fr": "Ami de Zazel"
+  },
+  "2610": {
+    "en": "Watch Me if You Can: Lord Ananta",
+    "de": "Watschel mir nach, Meister Ananta",
+    "ja": "蛇王カイラのともだち",
+    "fr": "Ami du baron Ananta"
+  },
+  "2611": {
+    "en": "Watch Me if You Can: Damona",
+    "de": "Watschel mir nach, Dämona",
+    "ja": "百鬼姫のともだち",
+    "fr": "Ami de Damona"
+  },
+  "2612": {
+    "en": "You Must Needs Befriend Them All II",
+    "de": "Watschelt mir nach, ihr Yo-kais",
+    "ja": "妖怪の親友",
+    "fr": "Ami des Yo-kai pour la vie !♪"
+  },
+  "2613": {
+    "en": "Otherworldly Gunblade",
+    "de": "Revolverklinge einer fremden Welt",
+    "ja": "妖怪武器：エンマガンブレード",
+    "fr": "Arme-toi d'un Yo-kai : pistolame"
+  },
+  "2614": {
+    "en": "Otherworldly Katana",
+    "de": "Katana einer fremden Welt",
+    "ja": "妖怪武器：怪刀・浮世丸",
+    "fr": "Arme-toi d'un Yo-kai : katana"
+  },
+  "2615": {
+    "en": "Otherworldly Rapier",
+    "de": "Rapier einer fremden Welt",
+    "ja": "妖怪武器：蛇王のレイピア",
+    "fr": "Arme-toi d'un Yo-kai : rapière"
+  },
+  "2616": {
+    "en": "Otherworldly Glaives",
+    "de": "Chakram einer fremden Welt",
+    "ja": "妖怪武器：百鬼円陣",
+    "fr": "Arme-toi d'un Yo-kai : armes de jet"
+  },
+  "2617": {
+    "en": "More Inventory Slots, Please II",
+    "de": "Arsenal einer fremden Welt",
+    "ja": "妖怪武器フリーク",
+    "fr": "Fana d'armes Yo-kai"
+  },
+  "2618": {
+    "en": "Mapping the Realm: The Heroes' Gauntlet",
+    "de": "Kartograph: Schlacht um Norvrandt",
+    "ja": "ノルヴラントを踏破せし者",
+    "fr": "Cartographe du continent : La Traversée de Norvrandt"
+  },
+  "2619": {
+    "en": "Mapping the Realm: The Puppets' Bunker",
+    "de": "Kartograph: Puppenfestung ",
+    "ja": "人形タチノ軍事基地を踏破せし者",
+    "fr": "Cartographe du continent : base militaire des Pantins"
+  },
+  "2620": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2621": {
+    "en": "Bravest Warriors",
+    "de": "Helden aller Welten, vereinigt euch",
+    "ja": "ウォーリア・オブ・ライトを狩りし者",
+    "fr": "Surclasser son alter ego"
+  },
+  "2622": {
+    "en": "Uncanny Valley",
+    "de": "Strippenzieher",
+    "ja": "人形タチノ軍事基地を制覇せし者",
+    "fr": "Pantins désarticulés"
+  },
+  "2623": {
+    "en": "Satisfaction Guaranteed: Ehll Tou I",
+    "de": "Drachenbesänftigung I",
+    "ja": "エル・トゥ：ランク1",
+    "fr": "Chant artisanal I"
+  },
+  "2624": {
+    "en": "Satisfaction Guaranteed: Ehll Tou II",
+    "de": "Drachenbesänftigung II",
+    "ja": "エル・トゥ：ランク2",
+    "fr": "Chant artisanal II"
+  },
+  "2625": {
+    "en": "Satisfaction Guaranteed: Ehll Tou III",
+    "de": "Drachenbesänftigung III",
+    "ja": "エル・トゥ：ランク3",
+    "fr": "Chant artisanal III"
+  },
+  "2626": {
+    "en": "Satisfaction Guaranteed: Ehll Tou IV",
+    "de": "Drachenbesänftigung IV",
+    "ja": "エル・トゥ：ランク4",
+    "fr": "Chant artisanal IV"
+  },
+  "2627": {
+    "en": "Satisfaction Guaranteed: Ehll Tou V",
+    "de": "Drachenbesänftigung V",
+    "ja": "エル・トゥ：ランク5",
+    "fr": "Chant artisanal V"
+  },
+  "2628": {
+    "en": "The Customer Is Always Right: Ehll Tou I",
+    "de": "Der Kunde ist Drache I",
+    "ja": "エル・トゥの得意先：ランク1",
+    "fr": "Fournisseur officiel d'Ehll Tou I"
+  },
+  "2629": {
+    "en": "The Customer Is Always Right: Ehll Tou II",
+    "de": "Der Kunde ist Drache II",
+    "ja": "エル・トゥの得意先：ランク2",
+    "fr": "Fournisseur officiel d'Ehll Tou II"
+  },
+  "2630": {
+    "en": "The Customer Is Always Right: Ehll Tou III",
+    "de": "Der Kunde ist Drache III",
+    "ja": "エル・トゥの得意先：ランク3",
+    "fr": "Fournisseur officiel d'Ehll Tou III"
+  },
+  "2631": {
+    "en": "The Customer Is Always Right: Ehll Tou IV",
+    "de": "Der Kunde ist Drache IV",
+    "ja": "エル・トゥの得意先：ランク4",
+    "fr": "Fournisseur officiel d'Ehll Tou IV"
+  },
+  "2632": {
+    "en": "The Customer Is Always Right: Ehll Tou V",
+    "de": "Der Kunde ist Drache V",
+    "ja": "エル・トゥの得意先：ランク5",
+    "fr": "Fournisseur officiel d'Ehll Tou V"
+  },
+  "2633": {
+    "en": "The Customer Is Always Right: Ehll Tou VI",
+    "de": "Der Kunde ist Drache VI",
+    "ja": "エル・トゥの得意先：ランク6",
+    "fr": "Fournisseur officiel d'Ehll Tou VI"
+  },
+  "2634": {
+    "en": "Friend or Faux I",
+    "de": "Reinekes Teestube I",
+    "ja": "ソーチョーの茶飲み友達：ランク1",
+    "fr": "Renard sacripant I"
+  },
+  "2635": {
+    "en": "Friend or Faux II",
+    "de": "Reinekes Teestube II",
+    "ja": "ソーチョーの茶飲み友達：ランク2",
+    "fr": "Renard sacripant II"
+  },
+  "2636": {
+    "en": "Friend or Faux III",
+    "de": "Reinekes Teestube III",
+    "ja": "ソーチョーの茶飲み友達：ランク3",
+    "fr": "Renard sacripant III"
+  },
+  "2637": {
+    "en": "Friend or Faux IV",
+    "de": "Reinekes Teestube IV",
+    "ja": "ソーチョーの茶飲み友達：ランク4",
+    "fr": "Renard sacripant IV"
+  },
+  "2638": {
+    "en": "Dwarven Crafts I",
+    "de": "Ein Zwerg will Großes erreichen I",
+    "ja": "ドワーフ族：ランク1",
+    "fr": "Ronitt : automatank I"
+  },
+  "2639": {
+    "en": "Dwarven Crafts II",
+    "de": "Ein Zwerg will Großes erreichen II",
+    "ja": "ドワーフ族：ランク2",
+    "fr": "Ronitt : automatank II"
+  },
+  "2640": {
+    "en": "Dwarven Crafts III",
+    "de": "Ein Zwerg will Großes erreichen III",
+    "ja": "ドワーフ族：ランク3",
+    "fr": "Ronitt : automatank III"
+  },
+  "2641": {
+    "en": "Beard Science",
+    "de": "Hammerstarke Freunde",
+    "ja": "ガレージのマブダチ",
+    "fr": "La bande du Garage"
+  },
+  "2642": {
+    "en": "Hope's Legacy",
+    "de": "Sieg der Hoffnung",
+    "ja": "クリスタルの残光",
+    "fr": "Rémanences de cristal"
+  },
+  "2643": {
+    "en": "Triple-decker X",
+    "de": "Tripledecker X",
+    "ja": "カードコレクター：ランク10",
+    "fr": "Porte-cartes X"
+  },
+  "2644": {
+    "en": "Go Big Far from Home III",
+    "de": "Kapitalbeschaffung im ersten Splitter III",
+    "ja": "第一世界の太公望：ランク3",
+    "fr": "Pêcheur de légendes itinérant III"
+  },
+  "2645": {
+    "en": "Service with a Smile",
+    "de": "Sehen und gesehen werden",
+    "ja": "ゴールドソーサーの名物キャスト",
+    "fr": "Membre du personnel doré"
+  },
+  "2646": {
+    "en": "Smile, You Son of a...",
+    "de": "Wie eine Flamme im Wind",
+    "ja": "常夏の舞手",
+    "fr": "Onduleur de croupe"
+  },
+  "2647": {
+    "en": "Magnificent Seven",
+    "de": "Sieben Jahre in Eorzea",
+    "ja": "ありがとう七周年！",
+    "fr": "Assistant d'orfèvre"
+  },
+  "2648": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2649": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2650": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2651": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2652": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2653": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2654": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2655": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2656": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2657": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2658": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2659": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2660": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2661": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2662": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2663": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2664": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2665": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2666": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2667": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2668": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2669": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2670": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2671": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2672": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2673": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2674": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2675": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2676": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2677": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2678": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2679": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2680": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2681": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2682": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2683": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2684": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2685": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2686": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2687": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2688": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2689": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2690": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2691": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2692": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2693": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2694": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2695": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2696": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2697": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2698": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2699": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2700": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2701": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2702": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2703": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2704": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2705": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2706": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2707": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2708": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2709": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2710": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2711": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2712": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2713": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
   }
 }

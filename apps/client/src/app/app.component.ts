@@ -522,14 +522,17 @@ export class AppComponent implements OnInit {
       this.layoutsFacade.loadAll();
       this.customItemsFacade.loadAll();
 
+      let increasedPageViews = false;
+
       this.user$.subscribe(user => {
         if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
         }
-        if (!user.patron) {
+        if (!user.patron && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
           if (this.settings.pageViews < viewTriggersForPatreonPopup[viewTriggersForPatreonPopup.length - 1]) {
             this.settings.pageViews++;
+            increasedPageViews = true;
           }
           if (viewTriggersForPatreonPopup.indexOf(this.settings.pageViews) > -1) {
             this.patreonService.showSupportUsPopup();

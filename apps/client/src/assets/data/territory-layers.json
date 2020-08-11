@@ -3575,5 +3575,142 @@
         }
       }
     }
+  ],
+  "916": [
+    {
+      "mapId": 592,
+      "index": 1,
+      "placeNameId": 3512,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 593,
+      "index": 2,
+      "placeNameId": 3513,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 594,
+      "index": 3,
+      "placeNameId": 3514,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
+  ],
+  "917": [
+    {
+      "mapId": 608,
+      "index": 1,
+      "placeNameId": 3493,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 609,
+      "index": 2,
+      "placeNameId": 3494,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 610,
+      "index": 3,
+      "placeNameId": 3495,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    {
+      "mapId": 611,
+      "index": 4,
+      "placeNameId": 3496,
+      "bounds": {
+        "x": {
+          "min": 0,
+          "max": 0
+        },
+        "y": {
+          "min": 0,
+          "max": 0
+        },
+        "z": {
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
   ]
 }

@@ -7631,5 +7631,51 @@
     "ID": 29506,
     "LevelEquip": 1,
     "LevelItem": 480
+  },
+  {
+    "Bonuses": {
+      "GP": {
+        "ID": 10,
+        "Max": 44,
+        "MaxHQ": 55,
+        "Relative": true,
+        "Value": 23,
+        "ValueHQ": 29
+      },
+      "Perception": {
+        "ID": 73,
+        "Max": 38,
+        "MaxHQ": 47,
+        "Relative": true,
+        "Value": 2,
+        "ValueHQ": 3
+      }
+    },
+    "ID": 30481,
+    "LevelEquip": 1,
+    "LevelItem": 480
+  },
+  {
+    "Bonuses": {
+      "CP": {
+        "ID": 11,
+        "Max": 57,
+        "MaxHQ": 72,
+        "Relative": true,
+        "Value": 21,
+        "ValueHQ": 26
+      },
+      "Control": {
+        "ID": 71,
+        "Max": 56,
+        "MaxHQ": 70,
+        "Relative": true,
+        "Value": 5,
+        "ValueHQ": 6
+      }
+    },
+    "ID": 30482,
+    "LevelEquip": 1,
+    "LevelItem": 480
   }
 ]

@@ -7776,10 +7776,10 @@
     "fr": "Sertissage"
   },
   "1297": {
-    "en": "Khloe Aliapoh",
-    "ja": "クロ・アリアポー",
+    "en": "Wondrous Tails",
+    "ja": "クロの空想帳",
     "de": "Khloe Aliapoh",
-    "fr": "Khloe Aliapoh"
+    "fr": "Comptoir des Aventures imaginaires de Khloe"
   },
   "1298": {
     "en": "Custom Deliveries",
@@ -7795,9 +7795,9 @@
   },
   "1300": {
     "en": "Aethernet Shard",
-    "ja": "島内エーテライト",
-    "de": "Insel-Ätheryt",
-    "fr": "Éthérite insulaire"
+    "ja": "コンテンツ内エーテライト",
+    "de": "Ätheryt",
+    "fr": "Éthérite"
   },
   "1301": {
     "en": "Dalamud's Shadow",
@@ -14197,7 +14197,7 @@
   },
   "2367": {
     "en": "The Drowned City of Skalla",
-    "ja": "水没遺構 スカラ",
+    "ja": "スカラ",
     "de": "Die versunkene Stadt Skalla",
     "fr": "Cité engloutie de Skalla"
   },
@@ -15360,16 +15360,16 @@
     "fr": "Guichet du Kupo de la fortune"
   },
   "2561": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Faux Hollows",
+    "ja": "ソーチョーの幻想盤",
+    "de": "Traumtafel",
+    "fr": "Comptoir de Touché-tourné"
   },
   "2562": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sundry Splendors",
+    "ja": "総合ショップ",
+    "de": "Tauschhaus der Wunder",
+    "fr": "Commise aux objets de classe/job"
   },
   "2563": {
     "en": "",
@@ -20944,5 +20944,653 @@
     "ja": "遺構深層",
     "de": "Versunkene Hallen",
     "fr": "Vestiges dormants"
+  },
+  "3492": {
+    "en": "The Puppets' Bunker",
+    "ja": "人形タチノ軍事基地",
+    "de": "Die Puppenfestung",
+    "fr": "Base militaire des Pantins"
+  },
+  "3493": {
+    "en": "The Duergar Mountains",
+    "ja": "ドヴェルガル山脈",
+    "de": "Duergar-Gebirge",
+    "fr": "Lisière des montagnes des Duergars"
+  },
+  "3494": {
+    "en": "Bunker",
+    "ja": "バンカー",
+    "de": "Der Bunker",
+    "fr": "La Base"
+  },
+  "3495": {
+    "en": "Elevator",
+    "ja": "エレベーター",
+    "de": "Aufzug",
+    "fr": "Ascenseur"
+  },
+  "3496": {
+    "en": "Alien Ship",
+    "ja": "エイリアンシップ",
+    "de": "Alien-Schiff",
+    "fr": "Vaisseau extraterrestre"
+  },
+  "3497": {
+    "en": "Crater",
+    "ja": "クレーター",
+    "de": "Krater",
+    "fr": "Cratère"
+  },
+  "3498": {
+    "en": "Hangar",
+    "ja": "格納庫",
+    "de": "Hangar",
+    "fr": "Hangar"
+  },
+  "3499": {
+    "en": "Corridor",
+    "ja": "通路",
+    "de": "Korridor",
+    "fr": "Coursive"
+  },
+  "3500": {
+    "en": "Command Room",
+    "ja": "司令室",
+    "de": "Kommando",
+    "fr": "Salle de commandement"
+  },
+  "3501": {
+    "en": "Shaft",
+    "ja": "縦坑",
+    "de": "Schacht",
+    "fr": "Cage d'ascenseur"
+  },
+  "3502": {
+    "en": "Sector A",
+    "ja": "A区画",
+    "de": "Sektor A",
+    "fr": "Secteur A"
+  },
+  "3503": {
+    "en": "Sector B",
+    "ja": "B区画",
+    "de": "Sektor B",
+    "fr": "Secteur B"
+  },
+  "3504": {
+    "en": "Elevated Detritus",
+    "ja": "残骸A",
+    "de": "Wrackteil A",
+    "fr": "Plate-forme A"
+  },
+  "3505": {
+    "en": "Sunken Detritus",
+    "ja": "残骸B",
+    "de": "Wrackteil B",
+    "fr": "Plate-forme B"
+  },
+  "3506": {
+    "en": "Launch Deck",
+    "ja": "射出デッキ",
+    "de": "Abschussdeck",
+    "fr": "Aire de lancement"
+  },
+  "3507": {
+    "en": "Core Command",
+    "ja": "第二司令室",
+    "de": "Kommando-II",
+    "fr": "Salle de commandement n°2"
+  },
+  "3508": {
+    "en": "Passage",
+    "ja": "通路",
+    "de": "Korridor",
+    "fr": "Couloir"
+  },
+  "3509": {
+    "en": "Bridge",
+    "ja": "艦橋",
+    "de": "Brücke",
+    "fr": "Passerelle"
+  },
+  "3510": {
+    "en": "2B's Room",
+    "ja": "２Ｂの部屋",
+    "de": "2Bs Zimmer",
+    "fr": "Quartiers de 2B"
+  },
+  "3511": {
+    "en": "The Heroes' Gauntlet",
+    "ja": "漆黒決戦 ノルヴラント",
+    "de": "Schlacht um Norvrandt",
+    "fr": "Traversée de Norvrandt"
+  },
+  "3512": {
+    "en": "Amh Araeng",
+    "ja": "アム・アレーン",
+    "de": "Amh Araeng",
+    "fr": "Amh Araeng"
+  },
+  "3513": {
+    "en": "Il Mheg",
+    "ja": "イル・メグ",
+    "de": "Il Mheg",
+    "fr": "Il Mheg"
+  },
+  "3514": {
+    "en": "Lakeland",
+    "ja": "レイクランド",
+    "de": "Seenland",
+    "fr": "Grand-Lac"
+  },
+  "3515": {
+    "en": "Mount Argai Mines",
+    "ja": "アルゲ鉱山",
+    "de": "Minen des Argai",
+    "fr": "Mines du mont Argai"
+  },
+  "3516": {
+    "en": "Summer Ballroom",
+    "ja": "草人たちの踊り場",
+    "de": "Ballsaal der Grasgrummel",
+    "fr": "Bal des enfeuillés"
+  },
+  "3517": {
+    "en": "Illuminated Plaza",
+    "ja": "大聖堂前広場",
+    "de": "Platz der Erleuchteten",
+    "fr": "Carré de l'Aurore"
+  },
+  "3518": {
+    "en": "Lost Track",
+    "ja": "放棄された鉱山軌道",
+    "de": "Verfallene Lorenspur",
+    "fr": "Rails abandonnés"
+  },
+  "3519": {
+    "en": "Amber Valley",
+    "ja": "アンバーバレー",
+    "de": "Bernsteintal",
+    "fr": "Vallée d'Ambre"
+  },
+  "3520": {
+    "en": "A' Milran",
+    "ja": "ア・ミルラン",
+    "de": "A' Milran",
+    "fr": "A' Milran"
+  },
+  "3521": {
+    "en": "Sunken Skyway",
+    "ja": "水没した空中回廊",
+    "de": "Versunkener Himmelspfad",
+    "fr": "Passerelle noyée"
+  },
+  "3522": {
+    "en": "Staoigh Creach",
+    "ja": "ストーイ・クリッヒ",
+    "de": "Staoigh Creach",
+    "fr": "Staoigh Creach"
+  },
+  "3523": {
+    "en": "Sleepless Vigil",
+    "ja": "不寝の野営地",
+    "de": "Schlaflose Wacht",
+    "fr": "Guet recru"
+  },
+  "3524": {
+    "en": "The Luminous Sanctuary",
+    "ja": "光耀大聖堂跡",
+    "de": "Erleuchtetes Refugium",
+    "fr": "Sanctuaire de l'Aurore"
+  },
+  "3525": {
+    "en": "Featherfall",
+    "ja": "フェザーフォール商業区",
+    "de": "Federfall-Quartier",
+    "fr": "Tombeplume"
+  },
+  "3526": {
+    "en": "Skysteel Workshop",
+    "ja": "スカイスチール機工房分館",
+    "de": "Nebengebäude der Himmelsstahl-Werkstätte",
+    "fr": "Annexe de la manufacture de Cielacier"
+  },
+  "3527": {
+    "en": "The Abacus",
+    "ja": "アバカス通り",
+    "de": "Allee des Abakus",
+    "fr": "L'Abaque"
+  },
+  "3528": {
+    "en": "Hoarfrost Hall",
+    "ja": "ホアフロスト官舎",
+    "de": "Raureif-Refugium",
+    "fr": "Retraite de Givreglacé"
+  },
+  "3529": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3530": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3531": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3532": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3533": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3534": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3535": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3536": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3537": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3538": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3539": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3540": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3541": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3542": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3543": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3544": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3545": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3546": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3547": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3548": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3549": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3550": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3551": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3552": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3553": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3554": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3555": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3556": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3557": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3558": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3559": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3560": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3561": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3562": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3563": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3564": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3565": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3566": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3567": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3568": {
+    "en": "The Seat of Sacrifice",
+    "ja": "始皇帝の玉座",
+    "de": "Der Kaiserliche Thron",
+    "fr": "Le Trône du Sacrifice"
+  },
+  "3569": {
+    "en": "The Rift",
+    "ja": "次元の狭間",
+    "de": "Interdimensionaler Riss",
+    "fr": "Interstice dimensionnel"
+  },
+  "3570": {
+    "en": "Terncliff Bay",
+    "ja": "ターンクリフ沖",
+    "de": "Wendeklipp-Küste",
+    "fr": "Large de Rocasternes"
+  },
+  "3571": {
+    "en": "Terncliff",
+    "ja": "ターンクリフ",
+    "de": "Wendeklipp",
+    "fr": "Rocasternes"
+  },
+  "3572": {
+    "en": "Anogg's Lair",
+    "ja": "アノッグの部屋",
+    "de": "Anoggs Zimmer",
+    "fr": "Chambre dérobée"
+  },
+  "3573": {
+    "en": "Dawn's Respite",
+    "ja": "未明の間",
+    "de": "Zwielichtsaal",
+    "fr": "Chambre de l'Aube"
+  },
+  "3574": {
+    "en": "Watts's Anvil",
+    "ja": "ワッツハンマー・ガレージ",
+    "de": "Watts-Werkstatt für Hammerprojekte",
+    "fr": "Garage Watts"
+  },
+  "3575": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3576": {
+    "en": "The Puppets' Bunker",
+    "ja": "人形タチノ軍事基地",
+    "de": "Die Puppenfestung",
+    "fr": "Base militaire des Pantins"
+  },
+  "3577": {
+    "en": "The Duergar Mountains",
+    "ja": "ドヴェルガル山脈",
+    "de": "Duergar-Gebirge",
+    "fr": "Lisière des montagnes des Duergars"
+  },
+  "3578": {
+    "en": "Bunker",
+    "ja": "バンカー",
+    "de": "Der Bunker",
+    "fr": "La Base"
+  },
+  "3579": {
+    "en": "Elevator",
+    "ja": "エレベーター",
+    "de": "Aufzug",
+    "fr": "Ascenseur"
+  },
+  "3580": {
+    "en": "Alien Ship",
+    "ja": "エイリアンシップ",
+    "de": "Alien-Schiff",
+    "fr": "Vaisseau extraterrestre"
+  },
+  "3581": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3582": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3583": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3584": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3585": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3586": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3587": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3588": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3589": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3590": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3591": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3592": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3593": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3594": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3595": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3596": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3597": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3598": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3599": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }
