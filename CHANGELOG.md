@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.0"></a>
+# [7.3.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.11...v7.3.0) (2020-08-11)
+
+
+### Bug Fixes
+
+* **alarms:** fixed some broken fishing alarms ([1c567e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c567e6))
+* **desktop:** better firewall rule cleanup and lock management ([984c574](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/984c574))
+* **desktop:** fix "cannot acquire lock" error ([68a1695](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68a1695))
+* **desynth:** filter only desynthesizable ([9bf4d42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bf4d42))
+* **gathering:** fix redundant weather content if weather is not present ([895fa98](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/895fa98))
+* **list:** fixed position detection for optimized path on drops ([73ef7e5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73ef7e5))
+* **list:** fixed wrong zone label for some fishing nodes ([e3051ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e3051ea))
+* **log-tracker:** better detection for pages required for achievements ([fc302ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc302ec))
+* **marketboard:** removed marketboard button from items that cannot be sold ([89531cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89531cc))
+
+
+### Features
+
+* **core:** adding support for mouse scrolling in various number inputs ([c3edd54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3edd54))
+* **data:** full 5.3 patch support ([fbbaf2a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbbaf2a))
+* **db:** added ingame fishing drawing to fish db pages (thanks hez) ([f04f235](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f04f235))
+* **desktop:** new item search overlay to wuickly find item details ([467dfe4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/467dfe4))
+* **desktop:** new player metrics system (opt-in, you have to enable it inside the settings page) ([fd0508d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd0508d))
+* **inventory-optimizer:** new optimizer for 100% spiritbond gear pieces ([f70913a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f70913a))
+* **inventory-optimizer:** new optimizer for items easily gatherable ([cfdf45d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfdf45d))
+* **list:** you can now include final items in the main layout (new layout option) ([00b22b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/00b22b3))
+* **list:** you can now mark items as done from the requirements popup ([ebaf1f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebaf1f7))
+* **lists:** lists shared with read access now show up in shared list category ([174399a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/174399a))
+* **marketboard:** added last update to marketboard details ([76acbc8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/76acbc8))
+* **search:** removed collectable flag on search results for global region ([778e02f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/778e02f))
+* **search:** search in English if search in Korean has no results ([c29df17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c29df17))
+
+
+
 <a name="7.2.11"></a>
 ## [7.2.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.2.10...v7.2.11) (2020-07-21)
 
