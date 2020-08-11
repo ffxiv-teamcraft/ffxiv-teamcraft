@@ -419,25 +419,25 @@ if (hasTodo('notebookDivision')) {
   });
 }
 
-if (hasTodo('notebookDivisionCategory')) {
-  const notebookDivisionCategory = {};
-  getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
-    page.Results.forEach(row => {
-      notebookDivisionCategory[row.ID] = {
-        name: {
-          en: row.Name_en,
-          ja: row.Name_ja,
-          de: row.Name_de,
-          fr: row.Name_fr
-        },
-        divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
-      };
-    });
-  }, null, () => {
-    persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
-    done('notebookDivisionCategory');
-  });
-}
+// if (hasTodo('notebookDivisionCategory')) {
+//   const notebookDivisionCategory = {};
+//   getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
+//     page.Results.forEach(row => {
+//       notebookDivisionCategory[row.ID] = {
+//         name: {
+//           en: row.Name_en,
+//           ja: row.Name_ja,
+//           de: row.Name_de,
+//           fr: row.Name_fr
+//         },
+//         divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
+//       };
+//     });
+//   }, null, () => {
+//     persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
+//     done('notebookDivisionCategory');
+//   });
+// }
 
 if (hasTodo('gatheringLog')) {
 
@@ -782,9 +782,10 @@ if (hasTodo('aetherstream')) {
 if (hasTodo('maps')) {
   const maps = {};
   combineLatest([
-    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
-    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ', null, 'LGB Territories')
-  ]).subscribe(([xivapiMaps, territories]) => {
+    aggregateAllPages('https://xivapi.com/Map?columns=ID,PriorityUI,MapFilenameId,MapIndex,PlaceNameSubTargetID,Hierarchy,MapFilename,OffsetX,OffsetY,MapMarkerRange,PlaceNameTargetID,PlaceNameRegionTargetID,PlaceNameSubTargetID,SizeFactor,TerritoryTypeTargetID'),
+    aggregateAllPages('https://xivapi.com/TerritoryType?columns=ID,OffsetZ'),
+    aggregateAllPages('https://xivapi.com/ContentFinderCondition?columns=TerritoryType.Name')
+  ]).subscribe(([xivapiMaps, territories, contentFinderConditions]) => {
     xivapiMaps.forEach(mapData => {
       const territory = territories.find(t => t.ID === mapData.TerritoryTypeTargetID);
       const offsetZ = territory && +territory.OffsetZ;
@@ -803,7 +804,8 @@ if (hasTodo('maps')) {
         zone_id: mapData.PlaceNameSubTargetID,
         size_factor: mapData.SizeFactor,
         territory_id: mapData.TerritoryTypeTargetID,
-        index: mapData.MapIndex
+        index: mapData.MapIndex,
+        dungeon: contentFinderConditions.some(c => mapData.MapFilenameId.startsWith(c.TerritoryType.Name))
       };
     });
   }, null, () => {
@@ -1448,7 +1450,9 @@ if (hasTodo('items')) {
   const itemMeldingData = {};
   const equipSlotCategoryId = {};
   const itemPatch = {};
-  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted')
+  const marketItems = [];
+  const extractableItems = {};
+  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1463,6 +1467,12 @@ if (hasTodo('items')) {
         stackSizes[item.ID] = item.StackSize;
         itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
         itemPatch[item.ID] = item.Patch;
+        if (item.ItemSearchCategoryTargetID > 9) {
+          marketItems.push(item.ID);
+        }
+        if (item.MaterializeType > 0) {
+          extractableItems[item.ID] = 1;
+        }
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
         }
@@ -1488,6 +1498,8 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
       persistToJsonAsset('item-patch', itemPatch);
+      persistToJsonAsset('market-items', marketItems);
+      persistToJsonAsset('extractable-items', extractableItems);
       done('items');
     });
 }
@@ -1918,28 +1930,28 @@ if (hasTodo('HWDCrafter')) {
 }
 
 
-if (hasTodo('HWDGatherer')) {
-  const inspections = [];
-  getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
-    completeFetch.forEach(inspection => {
-      for (let i = 0; i < 32; i++) {
-        if (inspection[`ItemRequired${i}`] === null) {
-          return;
-        }
-        inspections.push({
-          requiredItem: inspection[`ItemRequired${i}`].Item,
-          amount: inspection[`AmountRequired${i}`],
-          receivedItem: inspection[`ItemReceived${i}`].ID,
-          scrips: inspection[`Reward1${i}`].Scrips,
-          points: inspection[`Reward1${i}`].Points,
-          phase: inspection[`Phase${i}TargetID`]
-        });
-      }
-    });
-    persistToJsonAsset('hwd-inspections', inspections);
-    done('HWDGatherer');
-  });
-}
+// if (hasTodo('HWDGatherer')) {
+//   const inspections = [];
+//   getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
+//     completeFetch.forEach(inspection => {
+//       for (let i = 0; i < 52; i++) {
+//         if (inspection[`ItemRequired${i}`] === null) {
+//           return;
+//         }
+//         inspections.push({
+//           requiredItem: inspection[`ItemRequired${i}`].Item,
+//           amount: inspection[`AmountRequired${i}`],
+//           receivedItem: inspection[`ItemReceived${i}`].ID,
+//           scrips: inspection[`Reward1${i}`].Scrips,
+//           points: inspection[`Reward1${i}`].Points,
+//           phase: inspection[`Phase${i}TargetID`]
+//         });
+//       }
+//     });
+//     persistToJsonAsset('hwd-inspections', inspections);
+//     done('HWDGatherer');
+//   });
+// }
 
 if (hasTodo('HWDPhases')) {
   const gathererInspectTerm = {};

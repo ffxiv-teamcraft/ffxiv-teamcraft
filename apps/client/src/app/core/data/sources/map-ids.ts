@@ -4729,27 +4729,27 @@ export const mapIds = [
   },
   {
     "id": 592,
-    "zone": 0,
-    "name": null,
+    "zone": 3511,
+    "name": "The Heroes' Gauntlet",
     "territory": 916,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 125
   },
   {
     "id": 593,
-    "zone": 0,
-    "name": null,
+    "zone": 3511,
+    "name": "The Heroes' Gauntlet",
     "territory": 916,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 125
   },
   {
     "id": 594,
-    "zone": 0,
-    "name": null,
+    "zone": 3511,
+    "name": "The Heroes' Gauntlet",
     "territory": 916,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 125
   },
   {
     "id": 595,
@@ -4841,8 +4841,8 @@ export const mapIds = [
   },
   {
     "id": 606,
-    "zone": 0,
-    "name": null,
+    "zone": 3534,
+    "name": "",
     "territory": 920,
     "scale": 100,
     "weatherRate": 0
@@ -4854,5 +4854,157 @@ export const mapIds = [
     "territory": 913,
     "scale": 400,
     "weatherRate": 123
+  },
+  {
+    "id": 608,
+    "zone": 3492,
+    "name": "The Puppets' Bunker",
+    "territory": 917,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 609,
+    "zone": 3492,
+    "name": "The Puppets' Bunker",
+    "territory": 917,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 610,
+    "zone": 3492,
+    "name": "The Puppets' Bunker",
+    "territory": 917,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 611,
+    "zone": 3492,
+    "name": "The Puppets' Bunker",
+    "territory": 917,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 612,
+    "zone": 3568,
+    "name": "The Seat of Sacrifice",
+    "territory": 922,
+    "scale": 400,
+    "weatherRate": 125
+  },
+  {
+    "id": 613,
+    "zone": 3569,
+    "name": "The Rift",
+    "territory": 922,
+    "scale": 400,
+    "weatherRate": 125
+  },
+  {
+    "id": 614,
+    "zone": 3572,
+    "name": "Anogg's Lair",
+    "territory": 895,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 615,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 616,
+    "zone": 3535,
+    "name": "",
+    "territory": 920,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 617,
+    "zone": 3571,
+    "name": "Terncliff",
+    "territory": 919,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 618,
+    "zone": 3570,
+    "name": "Terncliff Bay",
+    "territory": 926,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 619,
+    "zone": 481,
+    "name": "The Rising Stones",
+    "territory": 351,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 620,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 621,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 622,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 623,
+    "zone": 3576,
+    "name": "The Puppets' Bunker",
+    "territory": 928,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 624,
+    "zone": 3576,
+    "name": "The Puppets' Bunker",
+    "territory": 928,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 625,
+    "zone": 3576,
+    "name": "The Puppets' Bunker",
+    "territory": 928,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 626,
+    "zone": 3576,
+    "name": "The Puppets' Bunker",
+    "territory": 928,
+    "scale": 200,
+    "weatherRate": 0
   }
 ];

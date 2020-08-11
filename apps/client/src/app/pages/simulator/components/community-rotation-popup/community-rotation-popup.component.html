@@ -40,26 +40,31 @@
     <nz-form-label
       [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_craftsmanship_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <nz-input-number [(ngModel)]="rotation.community.minCraftsmanship" [nzDisabled]="!rotation.public" [nzMin]="1"
-                       [nzStep]="1" name="minCraft"></nz-input-number>
+      <nz-input-number mouseWheel [(ngModel)]="rotation.community.minCraftsmanship"
+                       [nzDisabled]="!rotation.public"  [nzMin]="1" [nzStep]="1" name="minCraft"
+                       (mouseWheelUp)="adjust('minCraftsmanship', 1, 1)"
+                       (mouseWheelDown)="adjust('minCraftsmanship', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
       [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_control_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <nz-input-number [(ngModel)]="rotation.community.minControl" [nzDisabled]="!rotation.public" [nzMin]="1"
-                       [nzStep]="1" name="minControl"></nz-input-number>
+      <nz-input-number mouseWheel [(ngModel)]="rotation.community.minControl"
+                       [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minControl"
+                       (mouseWheelUp)="adjust('minControl', 1, 1)"
+                       (mouseWheelDown)="adjust('minControl', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label
       [nzSpan]="6">{{'SIMULATOR.COMMUNITY_ROTATIONS.Min_cp_filter_placeholder' | translate}}</nz-form-label>
     <nz-form-control [nzSpan]="12">
-      <nz-input-number [(ngModel)]="rotation.community.minCp" [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1"
-                       name="minCP"></nz-input-number>
+      <nz-input-number mouseWheel [(ngModel)]="rotation.community.minCp"
+                       [nzDisabled]="!rotation.public" [nzMin]="1" [nzStep]="1" name="minCP"
+                       (mouseWheelUp)="adjust('minCp', 1, 1)"
+                       (mouseWheelDown)="adjust('minCp', -1, 1)"></nz-input-number>
     </nz-form-control>
   </nz-form-item>
 </form>
-
 

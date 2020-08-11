@@ -14,7 +14,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 1,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "2": {
     "id": 2,
@@ -31,7 +32,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 132,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "3": {
     "id": 3,
@@ -48,7 +50,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 133,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "4": {
     "id": 4,
@@ -57,7 +60,7 @@
     "image": "https://xivapi.com/m/f1f1/f1f1.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -40,
     "map_marker_range": 5,
     "placename_id": 54,
     "placename_sub_id": 0,
@@ -65,7 +68,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 148,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "5": {
     "id": 5,
@@ -74,7 +78,7 @@
     "image": "https://xivapi.com/m/f1f2/f1f2.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -36,
     "map_marker_range": 6,
     "placename_id": 55,
     "placename_sub_id": 0,
@@ -82,7 +86,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 152,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "6": {
     "id": 6,
@@ -91,7 +96,7 @@
     "image": "https://xivapi.com/m/f1f3/f1f3.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -4,
     "map_marker_range": 7,
     "placename_id": 56,
     "placename_sub_id": 0,
@@ -99,7 +104,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 153,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "7": {
     "id": 7,
@@ -108,7 +114,7 @@
     "image": "https://xivapi.com/m/f1f4/f1f4.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -82,
     "map_marker_range": 8,
     "placename_id": 57,
     "placename_sub_id": 0,
@@ -116,7 +122,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 154,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "8": {
     "id": 8,
@@ -133,7 +140,8 @@
     "zone_id": 0,
     "size_factor": 300,
     "territory_id": 164,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "9": {
     "id": 9,
@@ -150,7 +158,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 169,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "10": {
     "id": 10,
@@ -167,7 +176,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 728,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "11": {
     "id": 11,
@@ -184,7 +194,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 128,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "12": {
     "id": 12,
@@ -201,7 +212,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 129,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "13": {
     "id": 13,
@@ -218,7 +230,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 130,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "14": {
     "id": 14,
@@ -235,7 +248,8 @@
     "zone_id": 373,
     "size_factor": 200,
     "territory_id": 131,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "15": {
     "id": 15,
@@ -244,7 +258,7 @@
     "image": "https://xivapi.com/m/s1f1/s1f1.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -1,
     "map_marker_range": 74,
     "placename_id": 30,
     "placename_sub_id": 0,
@@ -252,7 +266,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 134,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "16": {
     "id": 16,
@@ -261,7 +276,7 @@
     "image": "https://xivapi.com/m/s1f2/s1f2.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -1,
     "map_marker_range": 75,
     "placename_id": 31,
     "placename_sub_id": 0,
@@ -269,7 +284,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 135,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "17": {
     "id": 17,
@@ -278,7 +294,7 @@
     "image": "https://xivapi.com/m/s1f3/s1f3.01.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": 7,
     "map_marker_range": 76,
     "placename_id": 32,
     "placename_sub_id": 0,
@@ -286,7 +302,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 137,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "18": {
     "id": 18,
@@ -295,7 +312,7 @@
     "image": "https://xivapi.com/m/s1f4/s1f4.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -44,
     "map_marker_range": 77,
     "placename_id": 33,
     "placename_sub_id": 0,
@@ -303,7 +320,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 138,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "19": {
     "id": 19,
@@ -312,7 +330,7 @@
     "image": "https://xivapi.com/m/s1f5/s1f5.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -15,
     "map_marker_range": 78,
     "placename_id": 34,
     "placename_sub_id": 0,
@@ -320,7 +338,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 139,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "20": {
     "id": 20,
@@ -329,7 +348,7 @@
     "image": "https://xivapi.com/m/w1f1/w1f1.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": 12,
     "map_marker_range": 40,
     "placename_id": 42,
     "placename_sub_id": 0,
@@ -337,7 +356,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 140,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "21": {
     "id": 21,
@@ -346,7 +366,7 @@
     "image": "https://xivapi.com/m/w1f2/w1f2.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -32,
     "map_marker_range": 39,
     "placename_id": 43,
     "placename_sub_id": 0,
@@ -354,7 +374,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 141,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "22": {
     "id": 22,
@@ -363,7 +384,7 @@
     "image": "https://xivapi.com/m/w1f3/w1f3.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -66,
     "map_marker_range": 41,
     "placename_id": 44,
     "placename_sub_id": 0,
@@ -371,7 +392,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 145,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "23": {
     "id": 23,
@@ -380,7 +402,7 @@
     "image": "https://xivapi.com/m/w1f4/w1f4.01.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -23,
     "map_marker_range": 42,
     "placename_id": 45,
     "placename_sub_id": 0,
@@ -388,7 +410,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 146,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "24": {
     "id": 24,
@@ -397,7 +420,7 @@
     "image": "https://xivapi.com/m/w1f5/w1f5.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -39,
     "map_marker_range": 43,
     "placename_id": 46,
     "placename_sub_id": 0,
@@ -405,7 +428,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 147,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "25": {
     "id": 25,
@@ -414,7 +438,7 @@
     "image": "https://xivapi.com/m/l1f1/l1f1.01.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -30,
     "map_marker_range": 108,
     "placename_id": 67,
     "placename_sub_id": 0,
@@ -422,7 +446,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 156,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "26": {
     "id": 26,
@@ -439,7 +464,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 177,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "27": {
     "id": 27,
@@ -456,7 +482,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 178,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "28": {
     "id": 28,
@@ -473,7 +500,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 179,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "29": {
     "id": 29,
@@ -490,7 +518,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 22,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "30": {
     "id": 30,
@@ -499,7 +528,7 @@
     "image": "https://xivapi.com/m/s1f6/s1f6.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -10,
     "map_marker_range": 79,
     "placename_id": 350,
     "placename_sub_id": 0,
@@ -507,7 +536,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 180,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "31": {
     "id": 31,
@@ -524,7 +554,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 157,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "32": {
     "id": 32,
@@ -541,7 +572,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 159,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "33": {
     "id": 33,
@@ -558,7 +590,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 206,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "34": {
     "id": 34,
@@ -575,7 +608,8 @@
     "zone_id": 849,
     "size_factor": 200,
     "territory_id": 161,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "35": {
     "id": 35,
@@ -592,7 +626,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 202,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "36": {
     "id": 36,
@@ -609,7 +644,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 207,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "37": {
     "id": 37,
@@ -626,7 +662,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 168,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "38": {
     "id": 38,
@@ -643,7 +680,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 172,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "39": {
     "id": 39,
@@ -660,7 +698,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 208,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "40": {
     "id": 40,
@@ -677,7 +716,8 @@
     "zone_id": 850,
     "size_factor": 200,
     "territory_id": 161,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "41": {
     "id": 41,
@@ -694,7 +734,8 @@
     "zone_id": 372,
     "size_factor": 200,
     "territory_id": 161,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "42": {
     "id": 42,
@@ -711,7 +752,8 @@
     "zone_id": 854,
     "size_factor": 200,
     "territory_id": 163,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "43": {
     "id": 43,
@@ -728,7 +770,8 @@
     "zone_id": 855,
     "size_factor": 200,
     "territory_id": 163,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "44": {
     "id": 44,
@@ -745,7 +788,8 @@
     "zone_id": 856,
     "size_factor": 200,
     "territory_id": 163,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "45": {
     "id": 45,
@@ -762,7 +806,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 158,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "46": {
     "id": 46,
@@ -779,7 +824,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 162,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "47": {
     "id": 47,
@@ -796,7 +842,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 217,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "48": {
     "id": 48,
@@ -813,7 +860,8 @@
     "zone_id": 599,
     "size_factor": 200,
     "territory_id": 166,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "49": {
     "id": 49,
@@ -830,7 +878,8 @@
     "zone_id": 873,
     "size_factor": 200,
     "territory_id": 167,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "50": {
     "id": 50,
@@ -847,7 +896,8 @@
     "zone_id": 922,
     "size_factor": 200,
     "territory_id": 171,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "51": {
     "id": 51,
@@ -864,7 +914,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 250,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "52": {
     "id": 52,
@@ -881,7 +932,8 @@
     "zone_id": 838,
     "size_factor": 200,
     "territory_id": 170,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "53": {
     "id": 53,
@@ -890,7 +942,7 @@
     "image": "https://xivapi.com/m/r1f1/r1f1.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": 133,
     "map_marker_range": 102,
     "placename_id": 63,
     "placename_sub_id": 0,
@@ -898,7 +950,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 155,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "54": {
     "id": 54,
@@ -915,7 +968,8 @@
     "zone_id": 600,
     "size_factor": 200,
     "territory_id": 166,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "55": {
     "id": 55,
@@ -932,7 +986,8 @@
     "zone_id": 601,
     "size_factor": 200,
     "territory_id": 166,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "56": {
     "id": 56,
@@ -949,7 +1004,8 @@
     "zone_id": 441,
     "size_factor": 200,
     "territory_id": 224,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "57": {
     "id": 57,
@@ -966,7 +1022,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 241,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "58": {
     "id": 58,
@@ -983,7 +1040,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 242,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "59": {
     "id": 59,
@@ -1000,7 +1058,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 244,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "60": {
     "id": 60,
@@ -1017,7 +1076,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 245,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "61": {
     "id": 61,
@@ -1034,7 +1094,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 247,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "62": {
     "id": 62,
@@ -1051,7 +1112,8 @@
     "zone_id": 924,
     "size_factor": 200,
     "territory_id": 243,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "63": {
     "id": 63,
@@ -1068,7 +1130,8 @@
     "zone_id": 925,
     "size_factor": 200,
     "territory_id": 243,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "64": {
     "id": 64,
@@ -1085,7 +1148,8 @@
     "zone_id": 926,
     "size_factor": 200,
     "territory_id": 243,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "65": {
     "id": 65,
@@ -1102,7 +1166,8 @@
     "zone_id": 1315,
     "size_factor": 200,
     "territory_id": 357,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "66": {
     "id": 66,
@@ -1119,7 +1184,8 @@
     "zone_id": 1314,
     "size_factor": 200,
     "territory_id": 357,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "67": {
     "id": 67,
@@ -1136,7 +1202,8 @@
     "zone_id": 1313,
     "size_factor": 200,
     "territory_id": 357,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "68": {
     "id": 68,
@@ -1153,7 +1220,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 204,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "69": {
     "id": 69,
@@ -1170,7 +1238,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 205,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "70": {
     "id": 70,
@@ -1187,7 +1256,8 @@
     "zone_id": 654,
     "size_factor": 200,
     "territory_id": 130,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "71": {
     "id": 71,
@@ -1204,7 +1274,8 @@
     "zone_id": 479,
     "size_factor": 200,
     "territory_id": 174,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "72": {
     "id": 72,
@@ -1221,7 +1292,8 @@
     "zone_id": 1161,
     "size_factor": 200,
     "territory_id": 339,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "73": {
     "id": 73,
@@ -1238,7 +1310,8 @@
     "zone_id": 698,
     "size_factor": 200,
     "territory_id": 131,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "74": {
     "id": 74,
@@ -1255,7 +1328,8 @@
     "zone_id": 725,
     "size_factor": 200,
     "territory_id": 128,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "75": {
     "id": 75,
@@ -1272,7 +1346,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 198,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "76": {
     "id": 76,
@@ -1288,7 +1363,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "77": {
     "id": 77,
@@ -1304,7 +1380,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "78": {
     "id": 78,
@@ -1321,7 +1398,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 210,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "79": {
     "id": 79,
@@ -1337,7 +1415,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "80": {
     "id": 80,
@@ -1354,7 +1433,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 212,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "81": {
     "id": 81,
@@ -1371,7 +1451,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 175,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "82": {
     "id": 82,
@@ -1388,7 +1469,8 @@
     "zone_id": 1165,
     "size_factor": 200,
     "territory_id": 340,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "83": {
     "id": 83,
@@ -1405,7 +1487,8 @@
     "zone_id": 1163,
     "size_factor": 200,
     "territory_id": 341,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "84": {
     "id": 84,
@@ -1422,7 +1505,8 @@
     "zone_id": 874,
     "size_factor": 200,
     "territory_id": 167,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "85": {
     "id": 85,
@@ -1439,7 +1523,8 @@
     "zone_id": 875,
     "size_factor": 200,
     "territory_id": 167,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "86": {
     "id": 86,
@@ -1456,7 +1541,8 @@
     "zone_id": 923,
     "size_factor": 200,
     "territory_id": 171,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "87": {
     "id": 87,
@@ -1472,7 +1558,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "88": {
     "id": 88,
@@ -1488,7 +1575,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "89": {
     "id": 89,
@@ -1504,7 +1592,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "90": {
     "id": 90,
@@ -1520,7 +1609,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "91": {
     "id": 91,
@@ -1536,7 +1626,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "92": {
     "id": 92,
@@ -1552,7 +1643,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "93": {
     "id": 93,
@@ -1561,7 +1653,7 @@
     "image": "https://xivapi.com/m/w1f4/w1f4.02.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -23,
     "map_marker_range": 291,
     "placename_id": 45,
     "placename_sub_id": 255,
@@ -1569,7 +1661,8 @@
     "zone_id": 255,
     "size_factor": 100,
     "territory_id": 146,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "94": {
     "id": 94,
@@ -1586,7 +1679,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 212,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "95": {
     "id": 95,
@@ -1602,7 +1696,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "96": {
     "id": 96,
@@ -1619,7 +1714,8 @@
     "zone_id": 839,
     "size_factor": 200,
     "territory_id": 170,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "97": {
     "id": 97,
@@ -1636,7 +1732,8 @@
     "zone_id": 840,
     "size_factor": 200,
     "territory_id": 170,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "98": {
     "id": 98,
@@ -1653,7 +1750,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 331,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "99": {
     "id": 99,
@@ -1670,7 +1768,8 @@
     "zone_id": 442,
     "size_factor": 200,
     "territory_id": 224,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "100": {
     "id": 100,
@@ -1687,7 +1786,8 @@
     "zone_id": 443,
     "size_factor": 200,
     "territory_id": 224,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "101": {
     "id": 101,
@@ -1704,7 +1804,8 @@
     "zone_id": 444,
     "size_factor": 200,
     "territory_id": 224,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "102": {
     "id": 102,
@@ -1721,7 +1822,8 @@
     "zone_id": 445,
     "size_factor": 200,
     "territory_id": 224,
-    "index": 5
+    "index": 5,
+    "dungeon": true
   },
   "103": {
     "id": 103,
@@ -1738,7 +1840,8 @@
     "zone_id": 446,
     "size_factor": 100,
     "territory_id": 224,
-    "index": 6
+    "index": 6,
+    "dungeon": true
   },
   "104": {
     "id": 104,
@@ -1755,7 +1858,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 224,
-    "index": 7
+    "index": 7,
+    "dungeon": true
   },
   "105": {
     "id": 105,
@@ -1764,7 +1868,7 @@
     "image": "https://xivapi.com/m/l1f1/l1f1.02.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -30,
     "map_marker_range": 0,
     "placename_id": 67,
     "placename_sub_id": 19,
@@ -1772,7 +1876,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 156,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "106": {
     "id": 106,
@@ -1789,7 +1894,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 338,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "107": {
     "id": 107,
@@ -1806,7 +1912,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 212,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "108": {
     "id": 108,
@@ -1823,7 +1930,8 @@
     "zone_id": 940,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "109": {
     "id": 109,
@@ -1840,7 +1948,8 @@
     "zone_id": 1147,
     "size_factor": 400,
     "territory_id": 282,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "110": {
     "id": 110,
@@ -1857,7 +1966,8 @@
     "zone_id": 1109,
     "size_factor": 400,
     "territory_id": 283,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "111": {
     "id": 111,
@@ -1874,7 +1984,8 @@
     "zone_id": 1110,
     "size_factor": 400,
     "territory_id": 283,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "112": {
     "id": 112,
@@ -1891,7 +2002,8 @@
     "zone_id": 1111,
     "size_factor": 400,
     "territory_id": 283,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "113": {
     "id": 113,
@@ -1908,7 +2020,8 @@
     "zone_id": 1112,
     "size_factor": 400,
     "territory_id": 284,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "114": {
     "id": 114,
@@ -1925,7 +2038,8 @@
     "zone_id": 1113,
     "size_factor": 400,
     "territory_id": 284,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "115": {
     "id": 115,
@@ -1942,7 +2056,8 @@
     "zone_id": 1114,
     "size_factor": 400,
     "territory_id": 284,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "116": {
     "id": 116,
@@ -1959,7 +2074,8 @@
     "zone_id": 1147,
     "size_factor": 400,
     "territory_id": 342,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "117": {
     "id": 117,
@@ -1976,7 +2092,8 @@
     "zone_id": 1109,
     "size_factor": 400,
     "territory_id": 343,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "118": {
     "id": 118,
@@ -1993,7 +2110,8 @@
     "zone_id": 1110,
     "size_factor": 400,
     "territory_id": 343,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "119": {
     "id": 119,
@@ -2010,7 +2128,8 @@
     "zone_id": 1111,
     "size_factor": 400,
     "territory_id": 343,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "120": {
     "id": 120,
@@ -2027,7 +2146,8 @@
     "zone_id": 1112,
     "size_factor": 400,
     "territory_id": 344,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "121": {
     "id": 121,
@@ -2044,7 +2164,8 @@
     "zone_id": 1113,
     "size_factor": 400,
     "territory_id": 344,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "122": {
     "id": 122,
@@ -2061,7 +2182,8 @@
     "zone_id": 1114,
     "size_factor": 400,
     "territory_id": 344,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "123": {
     "id": 123,
@@ -2078,7 +2200,8 @@
     "zone_id": 1147,
     "size_factor": 400,
     "territory_id": 345,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "124": {
     "id": 124,
@@ -2095,7 +2218,8 @@
     "zone_id": 1109,
     "size_factor": 400,
     "territory_id": 346,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "125": {
     "id": 125,
@@ -2112,7 +2236,8 @@
     "zone_id": 1110,
     "size_factor": 400,
     "territory_id": 346,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "126": {
     "id": 126,
@@ -2129,7 +2254,8 @@
     "zone_id": 1111,
     "size_factor": 400,
     "territory_id": 346,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "127": {
     "id": 127,
@@ -2146,7 +2272,8 @@
     "zone_id": 1112,
     "size_factor": 400,
     "territory_id": 347,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "128": {
     "id": 128,
@@ -2163,7 +2290,8 @@
     "zone_id": 1113,
     "size_factor": 400,
     "territory_id": 347,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "129": {
     "id": 129,
@@ -2180,7 +2308,8 @@
     "zone_id": 1114,
     "size_factor": 400,
     "territory_id": 347,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "130": {
     "id": 130,
@@ -2197,7 +2326,8 @@
     "zone_id": 939,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "131": {
     "id": 131,
@@ -2214,7 +2344,8 @@
     "zone_id": 938,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "132": {
     "id": 132,
@@ -2231,7 +2362,8 @@
     "zone_id": 937,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "133": {
     "id": 133,
@@ -2248,7 +2380,8 @@
     "zone_id": 936,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 5
+    "index": 5,
+    "dungeon": true
   },
   "134": {
     "id": 134,
@@ -2265,7 +2398,8 @@
     "zone_id": 935,
     "size_factor": 200,
     "territory_id": 160,
-    "index": 6
+    "index": 6,
+    "dungeon": true
   },
   "135": {
     "id": 135,
@@ -2282,13 +2416,14 @@
     "zone_id": 480,
     "size_factor": 200,
     "territory_id": 174,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "136": {
     "id": 136,
     "hierarchy": 1,
     "priority_ui": 0,
-    "image": "https://xivapi.com/m/l1e1/l1e1.00.jpg",
+    "image": "https://xivapi.com/m/l1e1/l1e1.01.jpg",
     "offset_x": 0,
     "offset_y": 0,
     "offset_z": 0,
@@ -2299,7 +2434,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 351,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "137": {
     "id": 137,
@@ -2316,7 +2452,8 @@
     "zone_id": 599,
     "size_factor": 200,
     "territory_id": 350,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "138": {
     "id": 138,
@@ -2333,7 +2470,8 @@
     "zone_id": 600,
     "size_factor": 200,
     "territory_id": 350,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "139": {
     "id": 139,
@@ -2350,7 +2488,8 @@
     "zone_id": 601,
     "size_factor": 200,
     "territory_id": 350,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "140": {
     "id": 140,
@@ -2367,7 +2506,8 @@
     "zone_id": 849,
     "size_factor": 200,
     "territory_id": 349,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "141": {
     "id": 141,
@@ -2384,7 +2524,8 @@
     "zone_id": 850,
     "size_factor": 200,
     "territory_id": 349,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "142": {
     "id": 142,
@@ -2401,7 +2542,8 @@
     "zone_id": 372,
     "size_factor": 200,
     "territory_id": 349,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "143": {
     "id": 143,
@@ -2418,7 +2560,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 348,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "144": {
     "id": 144,
@@ -2435,7 +2578,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 366,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "145": {
     "id": 145,
@@ -2452,7 +2596,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 360,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "146": {
     "id": 146,
@@ -2469,7 +2614,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 362,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "147": {
     "id": 147,
@@ -2486,7 +2632,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 281,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "148": {
     "id": 148,
@@ -2503,7 +2650,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 355,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "149": {
     "id": 149,
@@ -2520,7 +2668,8 @@
     "zone_id": 1353,
     "size_factor": 200,
     "territory_id": 356,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "150": {
     "id": 150,
@@ -2537,7 +2686,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 358,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "151": {
     "id": 151,
@@ -2554,7 +2704,8 @@
     "zone_id": 1335,
     "size_factor": 200,
     "territory_id": 363,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "152": {
     "id": 152,
@@ -2571,7 +2722,8 @@
     "zone_id": 1336,
     "size_factor": 200,
     "territory_id": 363,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "153": {
     "id": 153,
@@ -2588,7 +2740,8 @@
     "zone_id": 1148,
     "size_factor": 400,
     "territory_id": 282,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "154": {
     "id": 154,
@@ -2605,7 +2758,8 @@
     "zone_id": 1148,
     "size_factor": 400,
     "territory_id": 342,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "155": {
     "id": 155,
@@ -2622,7 +2776,8 @@
     "zone_id": 1148,
     "size_factor": 400,
     "territory_id": 345,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "156": {
     "id": 156,
@@ -2639,7 +2794,8 @@
     "zone_id": 1354,
     "size_factor": 200,
     "territory_id": 356,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "157": {
     "id": 157,
@@ -2656,7 +2812,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 365,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "158": {
     "id": 158,
@@ -2673,7 +2830,8 @@
     "zone_id": 485,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "159": {
     "id": 159,
@@ -2690,7 +2848,8 @@
     "zone_id": 486,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "160": {
     "id": 160,
@@ -2707,7 +2866,8 @@
     "zone_id": 487,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "161": {
     "id": 161,
@@ -2724,7 +2884,8 @@
     "zone_id": 488,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "162": {
     "id": 162,
@@ -2741,7 +2902,8 @@
     "zone_id": 489,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 5
+    "index": 5,
+    "dungeon": true
   },
   "163": {
     "id": 163,
@@ -2758,7 +2920,8 @@
     "zone_id": 490,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 6
+    "index": 6,
+    "dungeon": true
   },
   "164": {
     "id": 164,
@@ -2775,7 +2938,8 @@
     "zone_id": 491,
     "size_factor": 200,
     "territory_id": 372,
-    "index": 7
+    "index": 7,
+    "dungeon": true
   },
   "165": {
     "id": 165,
@@ -2792,7 +2956,8 @@
     "zone_id": 0,
     "size_factor": 300,
     "territory_id": 373,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "166": {
     "id": 166,
@@ -2809,7 +2974,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 374,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "167": {
     "id": 167,
@@ -2826,7 +2992,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 376,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "168": {
     "id": 168,
@@ -2843,7 +3010,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 361,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "169": {
     "id": 169,
@@ -2860,7 +3028,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 387,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "170": {
     "id": 170,
@@ -2877,7 +3046,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 384,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "171": {
     "id": 171,
@@ -2894,7 +3064,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 385,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "172": {
     "id": 172,
@@ -2911,7 +3082,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 386,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "173": {
     "id": 173,
@@ -2928,7 +3100,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 377,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "174": {
     "id": 174,
@@ -2945,7 +3118,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 371,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "175": {
     "id": 175,
@@ -2962,7 +3136,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 193,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "176": {
     "id": 176,
@@ -2979,7 +3154,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 194,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "177": {
     "id": 177,
@@ -2996,7 +3172,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 195,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "178": {
     "id": 178,
@@ -3013,7 +3190,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 196,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "179": {
     "id": 179,
@@ -3030,7 +3208,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 395,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "180": {
     "id": 180,
@@ -3039,7 +3218,7 @@
     "image": "https://xivapi.com/m/f1e6/f1e6.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -36,
     "map_marker_range": 0,
     "placename_id": 55,
     "placename_sub_id": 112,
@@ -3047,7 +3226,8 @@
     "zone_id": 112,
     "size_factor": 200,
     "territory_id": 152,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "181": {
     "id": 181,
@@ -3056,7 +3236,7 @@
     "image": "https://xivapi.comnull",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": 7,
     "map_marker_range": 0,
     "placename_id": 56,
     "placename_sub_id": 1428,
@@ -3064,7 +3244,8 @@
     "zone_id": 1428,
     "size_factor": 100,
     "territory_id": 137,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "182": {
     "id": 182,
@@ -3081,7 +3262,8 @@
     "zone_id": 855,
     "size_factor": 200,
     "territory_id": 367,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "183": {
     "id": 183,
@@ -3098,7 +3280,8 @@
     "zone_id": 856,
     "size_factor": 200,
     "territory_id": 367,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "184": {
     "id": 184,
@@ -3115,7 +3298,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 151,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "185": {
     "id": 185,
@@ -3132,7 +3316,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 151,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "186": {
     "id": 186,
@@ -3149,7 +3334,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 143,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "187": {
     "id": 187,
@@ -3166,7 +3352,8 @@
     "zone_id": 133,
     "size_factor": 100,
     "territory_id": 394,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "188": {
     "id": 188,
@@ -3183,7 +3370,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 188,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "189": {
     "id": 189,
@@ -3200,7 +3388,8 @@
     "zone_id": 1528,
     "size_factor": 200,
     "territory_id": 189,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "190": {
     "id": 190,
@@ -3217,7 +3406,8 @@
     "zone_id": 1529,
     "size_factor": 200,
     "territory_id": 189,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "191": {
     "id": 191,
@@ -3234,7 +3424,8 @@
     "zone_id": 1530,
     "size_factor": 200,
     "territory_id": 189,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "192": {
     "id": 192,
@@ -3251,7 +3442,8 @@
     "zone_id": 1162,
     "size_factor": 200,
     "territory_id": 339,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "193": {
     "id": 193,
@@ -3268,7 +3460,8 @@
     "zone_id": 1166,
     "size_factor": 200,
     "territory_id": 340,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "194": {
     "id": 194,
@@ -3285,7 +3478,8 @@
     "zone_id": 1164,
     "size_factor": 200,
     "territory_id": 341,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "195": {
     "id": 195,
@@ -3302,7 +3496,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 142,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "196": {
     "id": 196,
@@ -3319,7 +3514,8 @@
     "zone_id": 1484,
     "size_factor": 400,
     "territory_id": 144,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "197": {
     "id": 197,
@@ -3336,7 +3532,8 @@
     "zone_id": 1500,
     "size_factor": 400,
     "territory_id": 388,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "198": {
     "id": 198,
@@ -3353,7 +3550,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 389,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "199": {
     "id": 199,
@@ -3370,7 +3568,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 390,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "200": {
     "id": 200,
@@ -3387,7 +3586,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 391,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "201": {
     "id": 201,
@@ -3404,7 +3604,8 @@
     "zone_id": 1525,
     "size_factor": 200,
     "territory_id": 150,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "202": {
     "id": 202,
@@ -3421,7 +3622,8 @@
     "zone_id": 1526,
     "size_factor": 200,
     "territory_id": 150,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "203": {
     "id": 203,
@@ -3438,7 +3640,8 @@
     "zone_id": 1527,
     "size_factor": 200,
     "territory_id": 150,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "204": {
     "id": 204,
@@ -3455,7 +3658,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 423,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "205": {
     "id": 205,
@@ -3472,7 +3676,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 424,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "206": {
     "id": 206,
@@ -3489,7 +3694,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 425,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "207": {
     "id": 207,
@@ -3506,7 +3712,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 426,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "208": {
     "id": 208,
@@ -3523,7 +3730,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 426,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "209": {
     "id": 209,
@@ -3532,7 +3740,7 @@
     "image": "https://xivapi.com/m/default/default.00.jpg",
     "offset_x": 0,
     "offset_y": 0,
-    "offset_z": 0,
+    "offset_z": -36,
     "map_marker_range": 0,
     "placename_id": 112,
     "placename_sub_id": 0,
@@ -3540,7 +3748,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 152,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "210": {
     "id": 210,
@@ -3557,7 +3766,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 167,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "211": {
     "id": 211,
@@ -3574,7 +3784,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 397,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "212": {
     "id": 212,
@@ -3591,7 +3802,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 398,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "213": {
     "id": 213,
@@ -3608,7 +3820,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 399,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "214": {
     "id": 214,
@@ -3625,7 +3838,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 400,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "215": {
     "id": 215,
@@ -3642,7 +3856,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 401,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "216": {
     "id": 216,
@@ -3659,7 +3874,8 @@
     "zone_id": 0,
     "size_factor": 95,
     "territory_id": 402,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "217": {
     "id": 217,
@@ -3676,7 +3892,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 417,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "218": {
     "id": 218,
@@ -3693,7 +3910,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 418,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "219": {
     "id": 219,
@@ -3710,7 +3928,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 419,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "220": {
     "id": 220,
@@ -3727,7 +3946,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 427,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "221": {
     "id": 221,
@@ -3744,7 +3964,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 428,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "222": {
     "id": 222,
@@ -3761,7 +3982,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 433,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "223": {
     "id": 223,
@@ -3778,7 +4000,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 429,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "224": {
     "id": 224,
@@ -3795,7 +4018,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 439,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "225": {
     "id": 225,
@@ -3812,7 +4036,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 440,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "226": {
     "id": 226,
@@ -3829,7 +4054,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 462,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "227": {
     "id": 227,
@@ -3846,7 +4072,8 @@
     "zone_id": 1616,
     "size_factor": 200,
     "territory_id": 441,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "228": {
     "id": 228,
@@ -3863,7 +4090,8 @@
     "zone_id": 1615,
     "size_factor": 200,
     "territory_id": 441,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "229": {
     "id": 229,
@@ -3880,7 +4108,8 @@
     "zone_id": 1614,
     "size_factor": 200,
     "territory_id": 441,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "230": {
     "id": 230,
@@ -3897,7 +4126,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 420,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "231": {
     "id": 231,
@@ -3914,7 +4144,8 @@
     "zone_id": 1603,
     "size_factor": 200,
     "territory_id": 438,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "232": {
     "id": 232,
@@ -3931,7 +4162,8 @@
     "zone_id": 1604,
     "size_factor": 200,
     "territory_id": 438,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "233": {
     "id": 233,
@@ -3948,7 +4180,8 @@
     "zone_id": 1626,
     "size_factor": 200,
     "territory_id": 438,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "234": {
     "id": 234,
@@ -3965,7 +4198,8 @@
     "zone_id": 1605,
     "size_factor": 200,
     "territory_id": 438,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "235": {
     "id": 235,
@@ -3982,7 +4216,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 436,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "236": {
     "id": 236,
@@ -3999,7 +4234,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 437,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "237": {
     "id": 237,
@@ -4016,7 +4252,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 442,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "238": {
     "id": 238,
@@ -4033,7 +4270,8 @@
     "zone_id": 1648,
     "size_factor": 200,
     "territory_id": 443,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "239": {
     "id": 239,
@@ -4050,7 +4288,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 444,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "240": {
     "id": 240,
@@ -4067,7 +4306,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 445,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "241": {
     "id": 241,
@@ -4084,7 +4324,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 416,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "242": {
     "id": 242,
@@ -4101,7 +4342,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 431,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "243": {
     "id": 243,
@@ -4118,7 +4360,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 434,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "244": {
     "id": 244,
@@ -4135,7 +4378,8 @@
     "zone_id": 1555,
     "size_factor": 200,
     "territory_id": 430,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "245": {
     "id": 245,
@@ -4152,7 +4396,8 @@
     "zone_id": 1556,
     "size_factor": 200,
     "territory_id": 430,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "246": {
     "id": 246,
@@ -4169,7 +4414,8 @@
     "zone_id": 1557,
     "size_factor": 200,
     "territory_id": 430,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "247": {
     "id": 247,
@@ -4186,7 +4432,8 @@
     "zone_id": 1576,
     "size_factor": 200,
     "territory_id": 430,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "248": {
     "id": 248,
@@ -4203,7 +4450,8 @@
     "zone_id": 1558,
     "size_factor": 200,
     "territory_id": 421,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "249": {
     "id": 249,
@@ -4220,7 +4468,8 @@
     "zone_id": 1559,
     "size_factor": 200,
     "territory_id": 421,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "250": {
     "id": 250,
@@ -4237,7 +4486,8 @@
     "zone_id": 1560,
     "size_factor": 200,
     "territory_id": 421,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "251": {
     "id": 251,
@@ -4254,7 +4504,8 @@
     "zone_id": 1561,
     "size_factor": 200,
     "territory_id": 421,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "252": {
     "id": 252,
@@ -4271,7 +4522,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 435,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "253": {
     "id": 253,
@@ -4288,7 +4540,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 463,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "254": {
     "id": 254,
@@ -4305,7 +4558,8 @@
     "zone_id": 1605,
     "size_factor": 200,
     "territory_id": 438,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "255": {
     "id": 255,
@@ -4322,7 +4576,8 @@
     "zone_id": 1649,
     "size_factor": 200,
     "territory_id": 443,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "256": {
     "id": 256,
@@ -4339,7 +4594,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 432,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "257": {
     "id": 257,
@@ -4356,7 +4612,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 478,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "258": {
     "id": 258,
@@ -4372,7 +4629,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "259": {
     "id": 259,
@@ -4388,7 +4646,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "260": {
     "id": 260,
@@ -4405,7 +4664,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 505,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "261": {
     "id": 261,
@@ -4422,7 +4682,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 507,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "262": {
     "id": 262,
@@ -4439,7 +4700,8 @@
     "zone_id": 1668,
     "size_factor": 200,
     "territory_id": 510,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "263": {
     "id": 263,
@@ -4456,7 +4718,8 @@
     "zone_id": 1669,
     "size_factor": 200,
     "territory_id": 510,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "264": {
     "id": 264,
@@ -4473,7 +4736,8 @@
     "zone_id": 1670,
     "size_factor": 200,
     "territory_id": 510,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "265": {
     "id": 265,
@@ -4490,7 +4754,8 @@
     "zone_id": 1671,
     "size_factor": 200,
     "territory_id": 510,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "266": {
     "id": 266,
@@ -4507,7 +4772,8 @@
     "zone_id": 1430,
     "size_factor": 200,
     "territory_id": 510,
-    "index": 5
+    "index": 5,
+    "dungeon": true
   },
   "267": {
     "id": 267,
@@ -4524,7 +4790,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 504,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "268": {
     "id": 268,
@@ -4541,7 +4808,8 @@
     "zone_id": 1685,
     "size_factor": 200,
     "territory_id": 511,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "269": {
     "id": 269,
@@ -4558,7 +4826,8 @@
     "zone_id": 2196,
     "size_factor": 200,
     "territory_id": 508,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "270": {
     "id": 270,
@@ -4575,7 +4844,8 @@
     "zone_id": 2199,
     "size_factor": 200,
     "territory_id": 508,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "271": {
     "id": 271,
@@ -4592,7 +4862,8 @@
     "zone_id": 2197,
     "size_factor": 200,
     "territory_id": 508,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "272": {
     "id": 272,
@@ -4609,7 +4880,8 @@
     "zone_id": 2198,
     "size_factor": 200,
     "territory_id": 508,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "273": {
     "id": 273,
@@ -4626,7 +4898,8 @@
     "zone_id": 1686,
     "size_factor": 200,
     "territory_id": 511,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "274": {
     "id": 274,
@@ -4643,7 +4916,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 515,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "275": {
     "id": 275,
@@ -4660,7 +4934,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 514,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "276": {
     "id": 276,
@@ -4677,7 +4952,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 512,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "277": {
     "id": 277,
@@ -4694,7 +4970,8 @@
     "zone_id": 1691,
     "size_factor": 200,
     "territory_id": 516,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "278": {
     "id": 278,
@@ -4711,7 +4988,8 @@
     "zone_id": 1692,
     "size_factor": 200,
     "territory_id": 516,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "279": {
     "id": 279,
@@ -4728,7 +5006,8 @@
     "zone_id": 1693,
     "size_factor": 200,
     "territory_id": 516,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "280": {
     "id": 280,
@@ -4745,7 +5024,8 @@
     "zone_id": 1701,
     "size_factor": 200,
     "territory_id": 519,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "281": {
     "id": 281,
@@ -4762,7 +5042,8 @@
     "zone_id": 1702,
     "size_factor": 200,
     "territory_id": 519,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "282": {
     "id": 282,
@@ -4779,7 +5060,8 @@
     "zone_id": 1703,
     "size_factor": 200,
     "territory_id": 519,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "283": {
     "id": 283,
@@ -4796,7 +5078,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 517,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "284": {
     "id": 284,
@@ -4813,7 +5096,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 518,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "285": {
     "id": 285,
@@ -4830,7 +5114,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 518,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "286": {
     "id": 286,
@@ -4847,7 +5132,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 520,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "287": {
     "id": 287,
@@ -4864,7 +5150,8 @@
     "zone_id": 1715,
     "size_factor": 200,
     "territory_id": 521,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "288": {
     "id": 288,
@@ -4881,7 +5168,8 @@
     "zone_id": 1716,
     "size_factor": 200,
     "territory_id": 521,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "289": {
     "id": 289,
@@ -4898,7 +5186,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 522,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "290": {
     "id": 290,
@@ -4915,7 +5204,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 523,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "291": {
     "id": 291,
@@ -4932,7 +5222,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 505,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "292": {
     "id": 292,
@@ -4949,7 +5240,8 @@
     "zone_id": 1705,
     "size_factor": 200,
     "territory_id": 555,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "293": {
     "id": 293,
@@ -4966,7 +5258,8 @@
     "zone_id": 1706,
     "size_factor": 200,
     "territory_id": 555,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "294": {
     "id": 294,
@@ -4983,7 +5276,8 @@
     "zone_id": 1707,
     "size_factor": 200,
     "territory_id": 555,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "295": {
     "id": 295,
@@ -5000,7 +5294,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 579,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "296": {
     "id": 296,
@@ -5017,7 +5312,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 554,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "297": {
     "id": 297,
@@ -5034,7 +5330,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 557,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "298": {
     "id": 298,
@@ -5051,7 +5348,8 @@
     "zone_id": 1743,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "299": {
     "id": 299,
@@ -5068,7 +5366,8 @@
     "zone_id": 1744,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "300": {
     "id": 300,
@@ -5085,7 +5384,8 @@
     "zone_id": 1745,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "301": {
     "id": 301,
@@ -5102,7 +5402,8 @@
     "zone_id": 1746,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "302": {
     "id": 302,
@@ -5119,7 +5420,8 @@
     "zone_id": 1747,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "303": {
     "id": 303,
@@ -5136,7 +5438,8 @@
     "zone_id": 1748,
     "size_factor": 200,
     "territory_id": 556,
-    "index": 6
+    "index": 6,
+    "dungeon": true
   },
   "304": {
     "id": 304,
@@ -5153,7 +5456,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 559,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "305": {
     "id": 305,
@@ -5170,7 +5474,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 567,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "306": {
     "id": 306,
@@ -5187,7 +5492,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 568,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "307": {
     "id": 307,
@@ -5204,7 +5510,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 569,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "308": {
     "id": 308,
@@ -5221,7 +5528,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 534,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "309": {
     "id": 309,
@@ -5238,7 +5546,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 535,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "310": {
     "id": 310,
@@ -5255,7 +5564,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 536,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "311": {
     "id": 311,
@@ -5272,7 +5582,8 @@
     "zone_id": 1784,
     "size_factor": 200,
     "territory_id": 578,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "312": {
     "id": 312,
@@ -5289,7 +5600,8 @@
     "zone_id": 1785,
     "size_factor": 200,
     "territory_id": 578,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "313": {
     "id": 313,
@@ -5306,7 +5618,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 572,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "314": {
     "id": 314,
@@ -5323,7 +5636,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 570,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "315": {
     "id": 315,
@@ -5340,7 +5654,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 558,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "316": {
     "id": 316,
@@ -5357,7 +5672,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 353,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "317": {
     "id": 317,
@@ -5374,7 +5690,8 @@
     "zone_id": 599,
     "size_factor": 200,
     "territory_id": 571,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "318": {
     "id": 318,
@@ -5391,7 +5708,8 @@
     "zone_id": 600,
     "size_factor": 200,
     "territory_id": 571,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "319": {
     "id": 319,
@@ -5408,7 +5726,8 @@
     "zone_id": 601,
     "size_factor": 200,
     "territory_id": 571,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "320": {
     "id": 320,
@@ -5425,7 +5744,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 573,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "321": {
     "id": 321,
@@ -5442,7 +5762,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 574,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "322": {
     "id": 322,
@@ -5459,7 +5780,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 575,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "323": {
     "id": 323,
@@ -5476,7 +5798,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 608,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "324": {
     "id": 324,
@@ -5493,7 +5816,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 609,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "325": {
     "id": 325,
@@ -5510,7 +5834,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 610,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "326": {
     "id": 326,
@@ -5527,7 +5852,8 @@
     "zone_id": 1836,
     "size_factor": 200,
     "territory_id": 580,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "327": {
     "id": 327,
@@ -5544,7 +5870,8 @@
     "zone_id": 1837,
     "size_factor": 200,
     "territory_id": 580,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "328": {
     "id": 328,
@@ -5561,7 +5888,8 @@
     "zone_id": 1725,
     "size_factor": 200,
     "territory_id": 581,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "329": {
     "id": 329,
@@ -5578,7 +5906,8 @@
     "zone_id": 1842,
     "size_factor": 200,
     "territory_id": 581,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "330": {
     "id": 330,
@@ -5595,7 +5924,8 @@
     "zone_id": 1848,
     "size_factor": 200,
     "territory_id": 582,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "331": {
     "id": 331,
@@ -5612,7 +5942,8 @@
     "zone_id": 1849,
     "size_factor": 200,
     "territory_id": 582,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "332": {
     "id": 332,
@@ -5629,7 +5960,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 583,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "333": {
     "id": 333,
@@ -5646,7 +5978,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 583,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "334": {
     "id": 334,
@@ -5663,7 +5996,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 576,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "335": {
     "id": 335,
@@ -5680,7 +6014,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 611,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "336": {
     "id": 336,
@@ -5697,7 +6032,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 616,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "337": {
     "id": 337,
@@ -5714,7 +6050,8 @@
     "zone_id": 1858,
     "size_factor": 200,
     "territory_id": 615,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "338": {
     "id": 338,
@@ -5731,7 +6068,8 @@
     "zone_id": 1859,
     "size_factor": 200,
     "territory_id": 615,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "339": {
     "id": 339,
@@ -5748,7 +6086,8 @@
     "zone_id": 1860,
     "size_factor": 200,
     "territory_id": 615,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "340": {
     "id": 340,
@@ -5765,7 +6104,8 @@
     "zone_id": 1861,
     "size_factor": 200,
     "territory_id": 615,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "341": {
     "id": 341,
@@ -5782,7 +6122,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 588,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "342": {
     "id": 342,
@@ -5799,7 +6140,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 588,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "343": {
     "id": 343,
@@ -5816,7 +6158,8 @@
     "zone_id": 1869,
     "size_factor": 200,
     "territory_id": 627,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "344": {
     "id": 344,
@@ -5833,7 +6176,8 @@
     "zone_id": 1870,
     "size_factor": 200,
     "territory_id": 627,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "345": {
     "id": 345,
@@ -5850,7 +6194,8 @@
     "zone_id": 1871,
     "size_factor": 200,
     "territory_id": 627,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "346": {
     "id": 346,
@@ -5867,7 +6212,8 @@
     "zone_id": 1872,
     "size_factor": 200,
     "territory_id": 627,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "347": {
     "id": 347,
@@ -5884,7 +6230,8 @@
     "zone_id": 1873,
     "size_factor": 200,
     "territory_id": 627,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "348": {
     "id": 348,
@@ -5901,7 +6248,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 631,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "349": {
     "id": 349,
@@ -5918,7 +6266,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 632,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "350": {
     "id": 350,
@@ -5935,7 +6284,8 @@
     "zone_id": 1614,
     "size_factor": 200,
     "territory_id": 617,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "351": {
     "id": 351,
@@ -5952,7 +6302,8 @@
     "zone_id": 1615,
     "size_factor": 200,
     "territory_id": 617,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "352": {
     "id": 352,
@@ -5969,7 +6320,8 @@
     "zone_id": 1889,
     "size_factor": 200,
     "territory_id": 617,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "353": {
     "id": 353,
@@ -5986,7 +6338,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 637,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "354": {
     "id": 354,
@@ -6003,7 +6356,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 614,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "355": {
     "id": 355,
@@ -6020,7 +6374,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 636,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "356": {
     "id": 356,
@@ -6037,7 +6392,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 656,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "357": {
     "id": 357,
@@ -6054,7 +6410,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 633,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "358": {
     "id": 358,
@@ -6071,7 +6428,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 656,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "359": {
     "id": 359,
@@ -6088,7 +6446,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 626,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "360": {
     "id": 360,
@@ -6105,7 +6464,8 @@
     "zone_id": 1974,
     "size_factor": 200,
     "territory_id": 662,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "361": {
     "id": 361,
@@ -6122,7 +6482,8 @@
     "zone_id": 1975,
     "size_factor": 200,
     "territory_id": 662,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "362": {
     "id": 362,
@@ -6139,7 +6500,8 @@
     "zone_id": 1931,
     "size_factor": 200,
     "territory_id": 663,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "363": {
     "id": 363,
@@ -6156,7 +6518,8 @@
     "zone_id": 1932,
     "size_factor": 200,
     "territory_id": 663,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "364": {
     "id": 364,
@@ -6173,7 +6536,8 @@
     "zone_id": 2341,
     "size_factor": 200,
     "territory_id": 641,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "365": {
     "id": 365,
@@ -6190,7 +6554,8 @@
     "zone_id": 2342,
     "size_factor": 200,
     "territory_id": 641,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "366": {
     "id": 366,
@@ -6207,7 +6572,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 635,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "367": {
     "id": 367,
@@ -6224,7 +6590,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 612,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "368": {
     "id": 368,
@@ -6241,7 +6608,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 620,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "369": {
     "id": 369,
@@ -6258,7 +6626,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 621,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "370": {
     "id": 370,
@@ -6275,7 +6644,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 628,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "371": {
     "id": 371,
@@ -6292,7 +6662,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 613,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "372": {
     "id": 372,
@@ -6309,7 +6680,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 622,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "373": {
     "id": 373,
@@ -6326,7 +6698,8 @@
     "zone_id": 2293,
     "size_factor": 200,
     "territory_id": 689,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "374": {
     "id": 374,
@@ -6343,7 +6716,8 @@
     "zone_id": 2294,
     "size_factor": 200,
     "territory_id": 689,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "375": {
     "id": 375,
@@ -6360,7 +6734,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 623,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "376": {
     "id": 376,
@@ -6377,7 +6752,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 680,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "377": {
     "id": 377,
@@ -6394,7 +6770,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 639,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "378": {
     "id": 378,
@@ -6411,7 +6788,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 681,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "379": {
     "id": 379,
@@ -6428,7 +6806,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 682,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "380": {
     "id": 380,
@@ -6445,7 +6824,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 629,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "381": {
     "id": 381,
@@ -6462,7 +6842,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 683,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "382": {
     "id": 382,
@@ -6479,7 +6860,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 684,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "383": {
     "id": 383,
@@ -6496,7 +6878,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 727,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "384": {
     "id": 384,
@@ -6512,7 +6895,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "385": {
     "id": 385,
@@ -6528,7 +6912,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "386": {
     "id": 386,
@@ -6544,7 +6929,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "387": {
     "id": 387,
@@ -6560,7 +6946,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "388": {
     "id": 388,
@@ -6577,7 +6964,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 654,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "389": {
     "id": 389,
@@ -6594,7 +6982,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 690,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "390": {
     "id": 390,
@@ -6611,7 +7000,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 691,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "391": {
     "id": 391,
@@ -6628,7 +7018,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 692,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "392": {
     "id": 392,
@@ -6645,7 +7036,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 693,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "393": {
     "id": 393,
@@ -6662,7 +7054,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 693,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "394": {
     "id": 394,
@@ -6679,7 +7072,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 694,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "395": {
     "id": 395,
@@ -6696,7 +7090,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 724,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "396": {
     "id": 396,
@@ -6713,7 +7108,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 660,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "397": {
     "id": 397,
@@ -6730,7 +7126,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 661,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "398": {
     "id": 398,
@@ -6747,7 +7144,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 724,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "399": {
     "id": 399,
@@ -6764,7 +7162,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 719,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "400": {
     "id": 400,
@@ -6781,7 +7180,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 674,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "401": {
     "id": 401,
@@ -6798,7 +7198,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 292,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "402": {
     "id": 402,
@@ -6815,7 +7216,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 294,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "403": {
     "id": 403,
@@ -6832,7 +7234,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 293,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "404": {
     "id": 404,
@@ -6849,7 +7252,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 446,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "405": {
     "id": 405,
@@ -6866,7 +7270,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 679,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "406": {
     "id": 406,
@@ -6883,7 +7288,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 679,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "407": {
     "id": 407,
@@ -6900,7 +7306,8 @@
     "zone_id": 19,
     "size_factor": 400,
     "territory_id": 447,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "408": {
     "id": 408,
@@ -6917,7 +7324,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 712,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "409": {
     "id": 409,
@@ -6934,7 +7342,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 725,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "410": {
     "id": 410,
@@ -6951,7 +7360,8 @@
     "zone_id": 19,
     "size_factor": 200,
     "territory_id": 659,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "411": {
     "id": 411,
@@ -6968,7 +7378,8 @@
     "zone_id": 19,
     "size_factor": 200,
     "territory_id": 665,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "412": {
     "id": 412,
@@ -6985,7 +7396,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 729,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "413": {
     "id": 413,
@@ -7002,7 +7414,8 @@
     "zone_id": 2368,
     "size_factor": 200,
     "territory_id": 731,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "414": {
     "id": 414,
@@ -7019,7 +7432,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 732,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "415": {
     "id": 415,
@@ -7036,7 +7450,8 @@
     "zone_id": 2369,
     "size_factor": 200,
     "territory_id": 731,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "416": {
     "id": 416,
@@ -7053,7 +7468,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 733,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "417": {
     "id": 417,
@@ -7070,7 +7486,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 737,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "418": {
     "id": 418,
@@ -7086,7 +7503,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "419": {
     "id": 419,
@@ -7103,7 +7521,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 738,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "420": {
     "id": 420,
@@ -7120,7 +7539,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 735,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "421": {
     "id": 421,
@@ -7137,7 +7557,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 736,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "422": {
     "id": 422,
@@ -7154,7 +7575,8 @@
     "zone_id": 2373,
     "size_factor": 200,
     "territory_id": 734,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "423": {
     "id": 423,
@@ -7171,7 +7593,8 @@
     "zone_id": 2374,
     "size_factor": 200,
     "territory_id": 734,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "424": {
     "id": 424,
@@ -7188,7 +7611,8 @@
     "zone_id": 2375,
     "size_factor": 200,
     "territory_id": 734,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "425": {
     "id": 425,
@@ -7205,7 +7629,8 @@
     "zone_id": 1147,
     "size_factor": 400,
     "territory_id": 649,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "426": {
     "id": 426,
@@ -7222,7 +7647,8 @@
     "zone_id": 1148,
     "size_factor": 400,
     "territory_id": 649,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "427": {
     "id": 427,
@@ -7239,7 +7665,8 @@
     "zone_id": 1109,
     "size_factor": 400,
     "territory_id": 650,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "428": {
     "id": 428,
@@ -7256,7 +7683,8 @@
     "zone_id": 1110,
     "size_factor": 400,
     "territory_id": 650,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "429": {
     "id": 429,
@@ -7273,7 +7701,8 @@
     "zone_id": 1111,
     "size_factor": 400,
     "territory_id": 650,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "430": {
     "id": 430,
@@ -7290,7 +7719,8 @@
     "zone_id": 1112,
     "size_factor": 400,
     "territory_id": 651,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "431": {
     "id": 431,
@@ -7307,7 +7737,8 @@
     "zone_id": 1113,
     "size_factor": 400,
     "territory_id": 651,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "432": {
     "id": 432,
@@ -7324,7 +7755,8 @@
     "zone_id": 1114,
     "size_factor": 400,
     "territory_id": 651,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "433": {
     "id": 433,
@@ -7341,7 +7773,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 652,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "434": {
     "id": 434,
@@ -7358,7 +7791,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 653,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "435": {
     "id": 435,
@@ -7375,7 +7809,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 730,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "436": {
     "id": 436,
@@ -7392,7 +7827,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 730,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "437": {
     "id": 437,
@@ -7409,7 +7845,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 739,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "438": {
     "id": 438,
@@ -7426,7 +7863,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 655,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "439": {
     "id": 439,
@@ -7443,7 +7881,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 742,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "440": {
     "id": 440,
@@ -7460,7 +7899,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 745,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "441": {
     "id": 441,
@@ -7477,7 +7917,8 @@
     "zone_id": 1576,
     "size_factor": 200,
     "territory_id": 743,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "442": {
     "id": 442,
@@ -7494,7 +7935,8 @@
     "zone_id": 1557,
     "size_factor": 200,
     "territory_id": 743,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "443": {
     "id": 443,
@@ -7511,7 +7953,8 @@
     "zone_id": 2399,
     "size_factor": 200,
     "territory_id": 743,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "444": {
     "id": 444,
@@ -7528,7 +7971,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 756,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "445": {
     "id": 445,
@@ -7545,7 +7989,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 658,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "446": {
     "id": 446,
@@ -7562,7 +8007,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "447": {
     "id": 447,
@@ -7579,7 +8025,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 749,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "448": {
     "id": 448,
@@ -7596,7 +8043,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 750,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "449": {
     "id": 449,
@@ -7613,7 +8061,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 751,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "450": {
     "id": 450,
@@ -7630,7 +8079,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 746,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "451": {
     "id": 451,
@@ -7647,7 +8097,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 741,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "452": {
     "id": 452,
@@ -7664,7 +8115,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "453": {
     "id": 453,
@@ -7681,7 +8133,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "454": {
     "id": 454,
@@ -7698,7 +8151,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "455": {
     "id": 455,
@@ -7715,7 +8169,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "456": {
     "id": 456,
@@ -7732,7 +8187,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "457": {
     "id": 457,
@@ -7749,7 +8205,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "458": {
     "id": 458,
@@ -7766,7 +8223,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "459": {
     "id": 459,
@@ -7783,7 +8241,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "460": {
     "id": 460,
@@ -7800,7 +8259,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 748,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "461": {
     "id": 461,
@@ -7817,7 +8277,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 744,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "462": {
     "id": 462,
@@ -7834,7 +8295,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 764,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "463": {
     "id": 463,
@@ -7851,7 +8313,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 759,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "464": {
     "id": 464,
@@ -7868,7 +8331,8 @@
     "zone_id": 2437,
     "size_factor": 200,
     "territory_id": 768,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "465": {
     "id": 465,
@@ -7885,7 +8349,8 @@
     "zone_id": 2438,
     "size_factor": 200,
     "territory_id": 768,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "466": {
     "id": 466,
@@ -7902,7 +8367,8 @@
     "zone_id": 2439,
     "size_factor": 200,
     "territory_id": 768,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "467": {
     "id": 467,
@@ -7919,7 +8385,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 763,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "468": {
     "id": 468,
@@ -7936,7 +8403,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 761,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "469": {
     "id": 469,
@@ -7953,7 +8421,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 781,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "470": {
     "id": 470,
@@ -7970,7 +8439,8 @@
     "zone_id": 2451,
     "size_factor": 200,
     "territory_id": 776,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "471": {
     "id": 471,
@@ -7987,7 +8457,8 @@
     "zone_id": 2452,
     "size_factor": 200,
     "territory_id": 776,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "472": {
     "id": 472,
@@ -8004,7 +8475,8 @@
     "zone_id": 2453,
     "size_factor": 200,
     "territory_id": 776,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "473": {
     "id": 473,
@@ -8021,7 +8493,8 @@
     "zone_id": 2454,
     "size_factor": 200,
     "territory_id": 776,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "474": {
     "id": 474,
@@ -8038,7 +8511,8 @@
     "zone_id": 2455,
     "size_factor": 200,
     "territory_id": 776,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "475": {
     "id": 475,
@@ -8055,7 +8529,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 777,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "476": {
     "id": 476,
@@ -8072,7 +8547,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 778,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "477": {
     "id": 477,
@@ -8089,7 +8565,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 780,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "478": {
     "id": 478,
@@ -8106,7 +8583,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 769,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "479": {
     "id": 479,
@@ -8123,7 +8601,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 786,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "480": {
     "id": 480,
@@ -8140,7 +8619,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 789,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "481": {
     "id": 481,
@@ -8157,7 +8637,8 @@
     "zone_id": 1685,
     "size_factor": 200,
     "territory_id": 788,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "482": {
     "id": 482,
@@ -8174,7 +8655,8 @@
     "zone_id": 1686,
     "size_factor": 200,
     "territory_id": 788,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "483": {
     "id": 483,
@@ -8191,7 +8673,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 787,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "484": {
     "id": 484,
@@ -8208,7 +8691,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 795,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "485": {
     "id": 485,
@@ -8225,7 +8709,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 798,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "486": {
     "id": 486,
@@ -8242,7 +8727,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 800,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "487": {
     "id": 487,
@@ -8259,7 +8745,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 790,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "488": {
     "id": 488,
@@ -8276,7 +8763,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 791,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "489": {
     "id": 489,
@@ -8293,7 +8781,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 806,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "490": {
     "id": 490,
@@ -8310,7 +8799,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 796,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "491": {
     "id": 491,
@@ -8327,7 +8817,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 813,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "492": {
     "id": 492,
@@ -8344,7 +8835,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 814,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "493": {
     "id": 493,
@@ -8361,7 +8853,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 815,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "494": {
     "id": 494,
@@ -8378,7 +8871,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 816,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "495": {
     "id": 495,
@@ -8395,7 +8889,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 817,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "496": {
     "id": 496,
@@ -8412,7 +8907,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 818,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "497": {
     "id": 497,
@@ -8429,7 +8925,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 819,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "498": {
     "id": 498,
@@ -8446,7 +8943,8 @@
     "zone_id": 3259,
     "size_factor": 200,
     "territory_id": 820,
-    "index": 1
+    "index": 1,
+    "dungeon": false
   },
   "499": {
     "id": 499,
@@ -8463,7 +8961,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 794,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "500": {
     "id": 500,
@@ -8480,7 +8979,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 793,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "501": {
     "id": 501,
@@ -8497,7 +8997,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 799,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "502": {
     "id": 502,
@@ -8514,7 +9015,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 801,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "503": {
     "id": 503,
@@ -8531,7 +9033,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 810,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "504": {
     "id": 504,
@@ -8548,7 +9051,8 @@
     "zone_id": 599,
     "size_factor": 200,
     "territory_id": 809,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "505": {
     "id": 505,
@@ -8565,7 +9069,8 @@
     "zone_id": 600,
     "size_factor": 200,
     "territory_id": 809,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "506": {
     "id": 506,
@@ -8582,7 +9087,8 @@
     "zone_id": 601,
     "size_factor": 200,
     "territory_id": 809,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "507": {
     "id": 507,
@@ -8599,7 +9105,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 792,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "508": {
     "id": 508,
@@ -8616,7 +9123,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 807,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "509": {
     "id": 509,
@@ -8633,7 +9141,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 808,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "510": {
     "id": 510,
@@ -8650,7 +9159,8 @@
     "zone_id": 3018,
     "size_factor": 200,
     "territory_id": 823,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "511": {
     "id": 511,
@@ -8667,7 +9177,8 @@
     "zone_id": 3024,
     "size_factor": 200,
     "territory_id": 823,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "512": {
     "id": 512,
@@ -8684,7 +9195,8 @@
     "zone_id": 2865,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "513": {
     "id": 513,
@@ -8701,7 +9213,8 @@
     "zone_id": 2866,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "514": {
     "id": 514,
@@ -8718,7 +9231,8 @@
     "zone_id": 2867,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "515": {
     "id": 515,
@@ -8735,7 +9249,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "516": {
     "id": 516,
@@ -8752,7 +9267,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 824,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "517": {
     "id": 517,
@@ -8769,7 +9285,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 829,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "518": {
     "id": 518,
@@ -8786,7 +9303,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 829,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "519": {
     "id": 519,
@@ -8803,7 +9321,8 @@
     "zone_id": 2873,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "520": {
     "id": 520,
@@ -8820,7 +9339,8 @@
     "zone_id": 2880,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "521": {
     "id": 521,
@@ -8837,7 +9357,8 @@
     "zone_id": 2881,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "522": {
     "id": 522,
@@ -8854,7 +9375,8 @@
     "zone_id": 2874,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "523": {
     "id": 523,
@@ -8871,7 +9393,8 @@
     "zone_id": 2875,
     "size_factor": 200,
     "territory_id": 826,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "524": {
     "id": 524,
@@ -8888,7 +9411,8 @@
     "zone_id": 2882,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "525": {
     "id": 525,
@@ -8905,7 +9429,8 @@
     "zone_id": 2883,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "526": {
     "id": 526,
@@ -8922,7 +9447,8 @@
     "zone_id": 2884,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "527": {
     "id": 527,
@@ -8939,7 +9465,8 @@
     "zone_id": 2885,
     "size_factor": 200,
     "territory_id": 827,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "528": {
     "id": 528,
@@ -8956,7 +9483,8 @@
     "zone_id": 2980,
     "size_factor": 200,
     "territory_id": 821,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "529": {
     "id": 529,
@@ -8973,7 +9501,8 @@
     "zone_id": 2981,
     "size_factor": 200,
     "territory_id": 821,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "530": {
     "id": 530,
@@ -8990,7 +9519,8 @@
     "zone_id": 2983,
     "size_factor": 200,
     "territory_id": 840,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "531": {
     "id": 531,
@@ -9007,7 +9537,8 @@
     "zone_id": 2984,
     "size_factor": 200,
     "territory_id": 840,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "532": {
     "id": 532,
@@ -9024,7 +9555,8 @@
     "zone_id": 2986,
     "size_factor": 100,
     "territory_id": 838,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "533": {
     "id": 533,
@@ -9041,7 +9573,8 @@
     "zone_id": 2987,
     "size_factor": 100,
     "territory_id": 838,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "534": {
     "id": 534,
@@ -9057,7 +9590,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "535": {
     "id": 535,
@@ -9073,7 +9607,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "536": {
     "id": 536,
@@ -9090,7 +9625,8 @@
     "zone_id": 3005,
     "size_factor": 200,
     "territory_id": 822,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "537": {
     "id": 537,
@@ -9107,7 +9643,8 @@
     "zone_id": 3006,
     "size_factor": 200,
     "territory_id": 822,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "538": {
     "id": 538,
@@ -9124,7 +9661,8 @@
     "zone_id": 3015,
     "size_factor": 200,
     "territory_id": 841,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "539": {
     "id": 539,
@@ -9141,7 +9679,8 @@
     "zone_id": 3016,
     "size_factor": 200,
     "territory_id": 841,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "540": {
     "id": 540,
@@ -9158,7 +9697,8 @@
     "zone_id": 3032,
     "size_factor": 200,
     "territory_id": 836,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "541": {
     "id": 541,
@@ -9175,7 +9715,8 @@
     "zone_id": 3033,
     "size_factor": 200,
     "territory_id": 836,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "542": {
     "id": 542,
@@ -9192,7 +9733,8 @@
     "zone_id": 3034,
     "size_factor": 200,
     "territory_id": 836,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "543": {
     "id": 543,
@@ -9208,7 +9750,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 0,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "544": {
     "id": 544,
@@ -9225,7 +9768,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 837,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "545": {
     "id": 545,
@@ -9242,7 +9786,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 842,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "546": {
     "id": 546,
@@ -9259,7 +9804,8 @@
     "zone_id": 0,
     "size_factor": 800,
     "territory_id": 843,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "547": {
     "id": 547,
@@ -9276,7 +9822,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 844,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "548": {
     "id": 548,
@@ -9293,7 +9840,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 129,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "549": {
     "id": 549,
@@ -9302,7 +9850,7 @@
     "image": "https://xivapi.com/m/s1f3/s1f3.02.jpg",
     "offset_x": 25,
     "offset_y": -258,
-    "offset_z": 0,
+    "offset_z": 7,
     "map_marker_range": 0,
     "placename_id": 1428,
     "placename_sub_id": 0,
@@ -9310,7 +9858,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 137,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "550": {
     "id": 550,
@@ -9327,7 +9876,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 815,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "551": {
     "id": 551,
@@ -9344,7 +9894,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 817,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "552": {
     "id": 552,
@@ -9361,7 +9912,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 880,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "553": {
     "id": 553,
@@ -9378,7 +9930,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 859,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "554": {
     "id": 554,
@@ -9395,7 +9948,8 @@
     "zone_id": 3260,
     "size_factor": 200,
     "territory_id": 820,
-    "index": 2
+    "index": 2,
+    "dungeon": false
   },
   "555": {
     "id": 555,
@@ -9412,7 +9966,8 @@
     "zone_id": 3261,
     "size_factor": 200,
     "territory_id": 820,
-    "index": 3
+    "index": 3,
+    "dungeon": false
   },
   "556": {
     "id": 556,
@@ -9429,7 +9984,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 845,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "557": {
     "id": 557,
@@ -9446,7 +10002,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 846,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "558": {
     "id": 558,
@@ -9463,7 +10020,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 847,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "559": {
     "id": 559,
@@ -9480,7 +10038,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 849,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "560": {
     "id": 560,
@@ -9497,7 +10056,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 850,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "561": {
     "id": 561,
@@ -9514,7 +10074,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 851,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "562": {
     "id": 562,
@@ -9531,7 +10092,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 852,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "563": {
     "id": 563,
@@ -9548,7 +10110,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 879,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "564": {
     "id": 564,
@@ -9565,7 +10128,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 857,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "565": {
     "id": 565,
@@ -9582,7 +10146,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 878,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "566": {
     "id": 566,
@@ -9599,7 +10164,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 885,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "567": {
     "id": 567,
@@ -9616,7 +10182,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 884,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "568": {
     "id": 568,
@@ -9633,7 +10200,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 888,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "569": {
     "id": 569,
@@ -9650,7 +10218,8 @@
     "zone_id": 3395,
     "size_factor": 200,
     "territory_id": 882,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "570": {
     "id": 570,
@@ -9667,7 +10236,8 @@
     "zone_id": 3396,
     "size_factor": 200,
     "territory_id": 882,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "571": {
     "id": 571,
@@ -9684,7 +10254,8 @@
     "zone_id": 3397,
     "size_factor": 200,
     "territory_id": 882,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "572": {
     "id": 572,
@@ -9701,7 +10272,8 @@
     "zone_id": 3398,
     "size_factor": 200,
     "territory_id": 882,
-    "index": 4
+    "index": 4,
+    "dungeon": true
   },
   "573": {
     "id": 573,
@@ -9718,7 +10290,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 887,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "574": {
     "id": 574,
@@ -9735,13 +10308,14 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "575": {
     "id": 575,
     "hierarchy": 1,
     "priority_ui": 0,
-    "image": "https://xivapi.com/m/n4e8/n4e8.00.jpg",
+    "image": "https://xivapi.com/m/n4e8/n4e8.01.jpg",
     "offset_x": 0,
     "offset_y": 0,
     "offset_z": 0,
@@ -9752,7 +10326,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 895,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "576": {
     "id": 576,
@@ -9769,7 +10344,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 889,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "577": {
     "id": 577,
@@ -9786,7 +10362,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 893,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "578": {
     "id": 578,
@@ -9803,7 +10380,8 @@
     "zone_id": 3437,
     "size_factor": 200,
     "territory_id": 896,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "579": {
     "id": 579,
@@ -9820,7 +10398,8 @@
     "zone_id": 3438,
     "size_factor": 200,
     "territory_id": 896,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "580": {
     "id": 580,
@@ -9837,7 +10416,8 @@
     "zone_id": 3439,
     "size_factor": 200,
     "territory_id": 896,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "581": {
     "id": 581,
@@ -9854,7 +10434,8 @@
     "zone_id": 3440,
     "size_factor": 200,
     "territory_id": 896,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "582": {
     "id": 582,
@@ -9871,7 +10452,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 892,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "583": {
     "id": 583,
@@ -9888,7 +10470,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 897,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "584": {
     "id": 584,
@@ -9905,7 +10488,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 901,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "585": {
     "id": 585,
@@ -9922,7 +10506,8 @@
     "zone_id": 3466,
     "size_factor": 200,
     "territory_id": 898,
-    "index": 1
+    "index": 1,
+    "dungeon": true
   },
   "586": {
     "id": 586,
@@ -9939,7 +10524,8 @@
     "zone_id": 3490,
     "size_factor": 200,
     "territory_id": 898,
-    "index": 2
+    "index": 2,
+    "dungeon": true
   },
   "587": {
     "id": 587,
@@ -9956,7 +10542,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "588": {
     "id": 588,
@@ -9973,7 +10560,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "589": {
     "id": 589,
@@ -9990,7 +10578,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 902,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "590": {
     "id": 590,
@@ -10007,7 +10596,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 903,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "591": {
     "id": 591,
@@ -10024,58 +10614,62 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 904,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "592": {
     "id": 592,
     "hierarchy": 1,
-    "priority_ui": 0,
+    "priority_ui": 21,
     "image": "https://xivapi.com/m/n4db/n4db.01.jpg",
-    "offset_x": 0,
-    "offset_y": 0,
+    "offset_x": 626,
+    "offset_y": -611,
     "offset_z": 0,
     "map_marker_range": 403,
-    "placename_id": 0,
-    "placename_sub_id": 0,
+    "placename_id": 3511,
+    "placename_sub_id": 3512,
     "region_id": 2950,
-    "zone_id": 0,
+    "zone_id": 3512,
     "size_factor": 200,
     "territory_id": 916,
-    "index": 0
+    "index": 1,
+    "dungeon": true
   },
   "593": {
     "id": 593,
     "hierarchy": 1,
-    "priority_ui": 0,
+    "priority_ui": 21,
     "image": "https://xivapi.com/m/n4db/n4db.02.jpg",
-    "offset_x": 0,
-    "offset_y": 0,
+    "offset_x": 608,
+    "offset_y": 648,
     "offset_z": 0,
     "map_marker_range": 404,
-    "placename_id": 0,
-    "placename_sub_id": 0,
+    "placename_id": 3511,
+    "placename_sub_id": 3513,
     "region_id": 2950,
-    "zone_id": 0,
+    "zone_id": 3513,
     "size_factor": 200,
     "territory_id": 916,
-    "index": 0
+    "index": 2,
+    "dungeon": true
   },
   "594": {
     "id": 594,
     "hierarchy": 1,
-    "priority_ui": 0,
+    "priority_ui": 21,
     "image": "https://xivapi.com/m/n4db/n4db.03.jpg",
-    "offset_x": 0,
-    "offset_y": 0,
+    "offset_x": -567,
+    "offset_y": -488,
     "offset_z": 0,
     "map_marker_range": 405,
-    "placename_id": 0,
-    "placename_sub_id": 0,
+    "placename_id": 3511,
+    "placename_sub_id": 3514,
     "region_id": 2950,
-    "zone_id": 0,
+    "zone_id": 3514,
     "size_factor": 200,
     "territory_id": 916,
-    "index": 0
+    "index": 3,
+    "dungeon": true
   },
   "595": {
     "id": 595,
@@ -10092,7 +10686,8 @@
     "zone_id": 3491,
     "size_factor": 200,
     "territory_id": 898,
-    "index": 3
+    "index": 3,
+    "dungeon": true
   },
   "596": {
     "id": 596,
@@ -10109,7 +10704,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "597": {
     "id": 597,
@@ -10126,7 +10722,8 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "598": {
     "id": 598,
@@ -10143,7 +10740,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 914,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "599": {
     "id": 599,
@@ -10160,7 +10758,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 905,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "600": {
     "id": 600,
@@ -10177,7 +10776,8 @@
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 911,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "601": {
     "id": 601,
@@ -10194,7 +10794,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 899,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "602": {
     "id": 602,
@@ -10211,7 +10812,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 905,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "603": {
     "id": 603,
@@ -10228,7 +10830,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 915,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "604": {
     "id": 604,
@@ -10245,7 +10848,8 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 900,
-    "index": 0
+    "index": 0,
+    "dungeon": true
   },
   "605": {
     "id": 605,
@@ -10262,24 +10866,26 @@
     "zone_id": 0,
     "size_factor": 200,
     "territory_id": 886,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "606": {
     "id": 606,
     "hierarchy": 1,
     "priority_ui": 0,
-    "image": "https://xivapi.com/m/n4b4/n4b4.00.jpg",
-    "offset_x": 0,
-    "offset_y": 0,
+    "image": "https://xivapi.com/m/n4b4/n4b4.01.jpg",
+    "offset_x": -127,
+    "offset_y": -424,
     "offset_z": 0,
-    "map_marker_range": 0,
-    "placename_id": 0,
+    "map_marker_range": 418,
+    "placename_id": 3534,
     "placename_sub_id": 0,
     "region_id": 2405,
     "zone_id": 0,
     "size_factor": 100,
     "territory_id": 920,
-    "index": 0
+    "index": 0,
+    "dungeon": false
   },
   "607": {
     "id": 607,
@@ -10296,6 +10902,349 @@
     "zone_id": 0,
     "size_factor": 400,
     "territory_id": 913,
-    "index": 0
+    "index": 0,
+    "dungeon": true
+  },
+  "608": {
+    "id": 608,
+    "hierarchy": 1,
+    "priority_ui": 22,
+    "image": "https://xivapi.com/m/n4r2/n4r2.01.jpg",
+    "offset_x": 290,
+    "offset_y": -190,
+    "offset_z": 0,
+    "map_marker_range": 424,
+    "placename_id": 3492,
+    "placename_sub_id": 3493,
+    "region_id": 2950,
+    "zone_id": 3493,
+    "size_factor": 200,
+    "territory_id": 917,
+    "index": 1,
+    "dungeon": true
+  },
+  "609": {
+    "id": 609,
+    "hierarchy": 1,
+    "priority_ui": 22,
+    "image": "https://xivapi.com/m/n4r2/n4r2.02.jpg",
+    "offset_x": 290,
+    "offset_y": 200,
+    "offset_z": 0,
+    "map_marker_range": 425,
+    "placename_id": 3492,
+    "placename_sub_id": 3494,
+    "region_id": 2950,
+    "zone_id": 3494,
+    "size_factor": 200,
+    "territory_id": 917,
+    "index": 2,
+    "dungeon": true
+  },
+  "610": {
+    "id": 610,
+    "hierarchy": 1,
+    "priority_ui": 22,
+    "image": "https://xivapi.com/m/n4r2/n4r2.03.jpg",
+    "offset_x": -200,
+    "offset_y": 100,
+    "offset_z": 0,
+    "map_marker_range": 426,
+    "placename_id": 3492,
+    "placename_sub_id": 3495,
+    "region_id": 2950,
+    "zone_id": 3495,
+    "size_factor": 200,
+    "territory_id": 917,
+    "index": 3,
+    "dungeon": true
+  },
+  "611": {
+    "id": 611,
+    "hierarchy": 1,
+    "priority_ui": 22,
+    "image": "https://xivapi.com/m/n4r2/n4r2.04.jpg",
+    "offset_x": -200,
+    "offset_y": 460,
+    "offset_z": 0,
+    "map_marker_range": 427,
+    "placename_id": 3492,
+    "placename_sub_id": 3496,
+    "region_id": 2950,
+    "zone_id": 3496,
+    "size_factor": 200,
+    "territory_id": 917,
+    "index": 4,
+    "dungeon": true
+  },
+  "612": {
+    "id": 612,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4ff/n4ff.01.jpg",
+    "offset_x": -100,
+    "offset_y": -100,
+    "offset_z": 0,
+    "map_marker_range": 0,
+    "placename_id": 3568,
+    "placename_sub_id": 0,
+    "region_id": 2405,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 922,
+    "index": 0,
+    "dungeon": true
+  },
+  "613": {
+    "id": 613,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/default/default.00.jpg",
+    "offset_x": -100,
+    "offset_y": -800,
+    "offset_z": 0,
+    "map_marker_range": 0,
+    "placename_id": 3569,
+    "placename_sub_id": 0,
+    "region_id": 2405,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 922,
+    "index": 0,
+    "dungeon": false
+  },
+  "614": {
+    "id": 614,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4e8/n4e8.02.jpg",
+    "offset_x": 50,
+    "offset_y": 118,
+    "offset_z": 0,
+    "map_marker_range": 419,
+    "placename_id": 3572,
+    "placename_sub_id": 0,
+    "region_id": 2950,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 895,
+    "index": 0,
+    "dungeon": false
+  },
+  "615": {
+    "id": 615,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/r1hx/r1hx.31.jpg",
+    "offset_x": 0,
+    "offset_y": 0,
+    "offset_z": 0,
+    "map_marker_range": 422,
+    "placename_id": 3435,
+    "placename_sub_id": 0,
+    "region_id": 25,
+    "zone_id": 0,
+    "size_factor": 200,
+    "territory_id": 886,
+    "index": 0,
+    "dungeon": false
+  },
+  "616": {
+    "id": 616,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4b4/n4b4.02.jpg",
+    "offset_x": -80,
+    "offset_y": 492,
+    "offset_z": 0,
+    "map_marker_range": 420,
+    "placename_id": 3535,
+    "placename_sub_id": 0,
+    "region_id": 2405,
+    "zone_id": 0,
+    "size_factor": 200,
+    "territory_id": 920,
+    "index": 0,
+    "dungeon": false
+  },
+  "617": {
+    "id": 617,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4eb/n4eb.01.jpg",
+    "offset_x": 2,
+    "offset_y": -27,
+    "offset_z": 0,
+    "map_marker_range": 421,
+    "placename_id": 3571,
+    "placename_sub_id": 0,
+    "region_id": 2405,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 919,
+    "index": 0,
+    "dungeon": false
+  },
+  "618": {
+    "id": 618,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4eb/n4eb.02.jpg",
+    "offset_x": 15,
+    "offset_y": -610,
+    "offset_z": 0,
+    "map_marker_range": 0,
+    "placename_id": 3570,
+    "placename_sub_id": 0,
+    "region_id": 2405,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 926,
+    "index": 0,
+    "dungeon": false
+  },
+  "619": {
+    "id": 619,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/l1e1/l1e1.02.jpg",
+    "offset_x": 60,
+    "offset_y": -20,
+    "offset_z": 0,
+    "map_marker_range": 423,
+    "placename_id": 481,
+    "placename_sub_id": 0,
+    "region_id": 26,
+    "zone_id": 0,
+    "size_factor": 400,
+    "territory_id": 351,
+    "index": 0,
+    "dungeon": false
+  },
+  "620": {
+    "id": 620,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/r1hx/r1hx.32.jpg",
+    "offset_x": 0,
+    "offset_y": 0,
+    "offset_z": 0,
+    "map_marker_range": 422,
+    "placename_id": 3435,
+    "placename_sub_id": 0,
+    "region_id": 25,
+    "zone_id": 0,
+    "size_factor": 200,
+    "territory_id": 886,
+    "index": 0,
+    "dungeon": false
+  },
+  "621": {
+    "id": 621,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/r1hx/r1hx.33.jpg",
+    "offset_x": 0,
+    "offset_y": 0,
+    "offset_z": 0,
+    "map_marker_range": 422,
+    "placename_id": 3435,
+    "placename_sub_id": 0,
+    "region_id": 25,
+    "zone_id": 0,
+    "size_factor": 200,
+    "territory_id": 886,
+    "index": 0,
+    "dungeon": false
+  },
+  "622": {
+    "id": 622,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/r1hx/r1hx.34.jpg",
+    "offset_x": 0,
+    "offset_y": 0,
+    "offset_z": 0,
+    "map_marker_range": 422,
+    "placename_id": 3435,
+    "placename_sub_id": 0,
+    "region_id": 25,
+    "zone_id": 0,
+    "size_factor": 200,
+    "territory_id": 886,
+    "index": 0,
+    "dungeon": false
+  },
+  "623": {
+    "id": 623,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4r2/n4r2.01.jpg",
+    "offset_x": 290,
+    "offset_y": -190,
+    "offset_z": 0,
+    "map_marker_range": 414,
+    "placename_id": 3576,
+    "placename_sub_id": 3493,
+    "region_id": 2950,
+    "zone_id": 3493,
+    "size_factor": 200,
+    "territory_id": 928,
+    "index": 1,
+    "dungeon": true
+  },
+  "624": {
+    "id": 624,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4r2/n4r2.02.jpg",
+    "offset_x": 290,
+    "offset_y": 200,
+    "offset_z": 0,
+    "map_marker_range": 415,
+    "placename_id": 3576,
+    "placename_sub_id": 3494,
+    "region_id": 2950,
+    "zone_id": 3494,
+    "size_factor": 200,
+    "territory_id": 928,
+    "index": 2,
+    "dungeon": true
+  },
+  "625": {
+    "id": 625,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4r2/n4r2.03.jpg",
+    "offset_x": -200,
+    "offset_y": 100,
+    "offset_z": 0,
+    "map_marker_range": 416,
+    "placename_id": 3576,
+    "placename_sub_id": 3495,
+    "region_id": 2950,
+    "zone_id": 3495,
+    "size_factor": 200,
+    "territory_id": 928,
+    "index": 3,
+    "dungeon": true
+  },
+  "626": {
+    "id": 626,
+    "hierarchy": 1,
+    "priority_ui": 0,
+    "image": "https://xivapi.com/m/n4r2/n4r2.04.jpg",
+    "offset_x": -200,
+    "offset_y": 460,
+    "offset_z": 0,
+    "map_marker_range": 417,
+    "placename_id": 3576,
+    "placename_sub_id": 3496,
+    "region_id": 2950,
+    "zone_id": 3496,
+    "size_factor": 200,
+    "territory_id": 928,
+    "index": 4,
+    "dungeon": true
   }
 }

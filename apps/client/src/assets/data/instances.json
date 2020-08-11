@@ -822,13 +822,24 @@
     ]
   },
   "75": {
+    "en": "the Heroes' Gauntlet",
+    "ja": "漆黒決戦 ノルヴラント",
+    "de": "Schlacht um Norvrandt",
+    "fr": "La Traversée de Norvrandt",
+    "icon": "/i/061000/061801.png",
+    "contentText": [
+      25042,
+      25000
+    ]
+  },
+  "76": {
     "en": null,
     "ja": null,
     "de": null,
     "fr": null,
     "icon": null
   },
-  "76": {
+  "77": {
     "en": null,
     "ja": null,
     "de": null,
@@ -1261,6 +1272,39 @@
     ]
   },
   "5039": {
+    "en": "Sleep Now in Sapphire",
+    "ja": "飛べ！ ウェルリトへ ",
+    "de": "Luftangriff auf Werlyt",
+    "fr": "Sur la mer de saphir",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      25233,
+      25200
+    ]
+  },
+  "5040": {
+    "en": "Sleep Now in Sapphire",
+    "ja": "飛べ！ ウェルリトへ ",
+    "de": "Luftangriff auf Werlyt",
+    "fr": "Sur la mer de saphir",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      25315,
+      25300
+    ]
+  },
+  "5041": {
+    "en": "Faded Memories",
+    "ja": "色あせた記憶",
+    "de": "Verblasste Erinnerungen",
+    "fr": "Souvenir périssable",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      25753,
+      25700
+    ]
+  },
+  "5042": {
     "en": null,
     "ja": null,
     "de": null,
@@ -2383,6 +2427,28 @@
     ]
   },
   "20071": {
+    "en": "the Seat of Sacrifice",
+    "ja": "ウォーリア・オブ・ライト討滅戦",
+    "de": "Krieger des Lichts",
+    "fr": "Le Trône du Sacrifice",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      25440,
+      25400
+    ]
+  },
+  "20072": {
+    "en": "the Seat of Sacrifice (Extreme)",
+    "ja": "極ウォーリア・オブ・ライト討滅戦",
+    "de": "Krieger des Lichts (extrem)",
+    "fr": "Le Trône du Sacrifice (extrême)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      25440,
+      25400
+    ]
+  },
+  "20073": {
     "en": null,
     "ja": null,
     "de": null,
@@ -3350,7 +3416,7 @@
     "en": "The Copied Factory",
     "ja": "複製サレタ工場廃墟",
     "de": "Die kopierte Fabrik",
-    "fr": "Réplique de l'usine désaffectée",
+    "fr": "La réplique de l'usine désaffectée",
     "icon": "/i/061000/061802.png",
     "contentText": [
       23611,
@@ -3446,11 +3512,15 @@
     ]
   },
   "30096": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "the Puppets' Bunker",
+    "ja": "人形タチノ軍事基地",
+    "de": "Die Puppenfestung",
+    "fr": "La base militaire des Pantins",
+    "icon": "/i/061000/061802.png",
+    "contentText": [
+      25564,
+      25500
+    ]
   },
   "30097": {
     "en": null,
@@ -4062,6 +4132,13 @@
     "fr": null,
     "icon": null
   },
+  "55009": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
   "60000": {
     "en": null,
     "ja": null,
@@ -4418,6 +4495,31 @@
       24914,
       24900
     ]
+  },
+  "64000": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
+  },
+  "64001": {
+    "en": "the Akh Afah Amphitheatre (Unreal)",
+    "ja": "幻シヴァ討滅戦",
+    "de": "Traumprüfung - Shiva",
+    "fr": "l'Amphithéâtre d'Akh Afah (irréel)",
+    "icon": "/i/061000/061804.png",
+    "contentText": [
+      7104,
+      7100
+    ]
+  },
+  "64002": {
+    "en": null,
+    "ja": null,
+    "de": null,
+    "fr": null,
+    "icon": null
   },
   "65000": {
     "en": null,

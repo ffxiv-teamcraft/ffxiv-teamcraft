@@ -130,9 +130,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemSourcesDisplayComponent,
     AlarmButtonComponent,
     ItemRowButtonsComponent,
-    ListProgressbarComponent
+    ListProgressbarComponent,
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
 })
 export class ListModule {
 

@@ -278,7 +278,8 @@
                                   [collapsed]="listIsLarge"
                                   [largeList]="listIsLarge"
                                   [displayRow]="displayRow"></app-list-details-panel>
-          <app-list-details-panel [displayRow]="finalItemsRow$ | async" [finalItems]="true"
+          <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"
+                                  [displayRow]="finalItemsRow$ | async" [finalItems]="true"
                                   [largeList]="listIsLarge"></app-list-details-panel>
         </div>
         <div *ngIf="listDisplay.showInventory | ifMobile: false" class="inventory">

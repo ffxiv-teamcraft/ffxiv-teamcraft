@@ -21,6 +21,10 @@ export class RelationshipsComponent implements OnInit {
 
   public requiredBy$: Observable<ListRow[]>;
 
+  public finalItem = false;
+
+  public markedAsDone: { [index: number]: boolean } = {};
+
   constructor(private listsFacade: ListsFacade, private inventoryService: InventoryFacade) {
     this.list$ = this.listsFacade.selectedList$;
   }
@@ -77,6 +81,11 @@ export class RelationshipsComponent implements OnInit {
         return requiredBy;
       })
     );
+  }
+
+  markAsDone(item: ListRow, amount: number): void {
+    this.markedAsDone[item.id] = true;
+    this.listsFacade.setItemDone(item.id, item.icon, this.finalItem, +amount, item.recipeId, item.amount);
   }
 
   public trackByInventoryEntry(index: number, entry: { containerName: string, amount: number, hq: boolean }): string {

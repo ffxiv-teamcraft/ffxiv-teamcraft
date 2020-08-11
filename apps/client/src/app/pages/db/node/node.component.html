@@ -57,7 +57,9 @@
       </div>
     </div>
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiNode.ID" type="node"></app-db-comments>
-    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    <div>
+      <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    </div>
     <div *ngIf="xivapiNode.mappyData as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
       <nz-card *ngIf="data.zoneid" [nzTitle]="title"
                class="details-card"

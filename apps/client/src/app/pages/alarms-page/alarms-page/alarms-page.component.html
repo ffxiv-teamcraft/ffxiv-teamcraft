@@ -191,17 +191,17 @@
             </div>
           </div>
           <br>
-          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-            <div *ngIf="row.alarm.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="row.alarm.weathersFrom && row.alarm.weathersFrom.length > 0">
+            <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathersFrom">
                 <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                      nz-tooltip>
               </div>
             </div>
-            <div *ngIf="row.alarm.weathersFrom !== undefined">
+            <div>
               <i nz-icon nzType="right" theme="outline"></i>
             </div>
-            <div *ngIf="row.alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+            <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathers">
                 <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                      nz-tooltip>

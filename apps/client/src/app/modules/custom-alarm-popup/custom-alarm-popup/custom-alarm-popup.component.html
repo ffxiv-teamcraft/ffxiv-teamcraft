@@ -9,7 +9,8 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawn' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-input-group class="spawn-input" nzAddOnAfter=":00">
-        <nz-input-number [nzMax]="23" [nzMin]="0" [nzStep]="1" class="input-number-with-addon" formControlName="spawn"
+        <nz-input-number mouseWheel [nzMax]="SPAWN_VALIDATOR.max" [nzMin]="SPAWN_VALIDATOR.min" [nzStep]="1" class="input-number-with-addon" formControlName="spawn"
+                         (mouseWheelUp)="adjust('spawn', 1)" (mouseWheelDown)="adjust('spawn', -1)"
                          id="spawn"></nz-input-number>
       </nz-input-group>
     </nz-form-control>
@@ -24,7 +25,9 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Duration' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number [nzMin]="0" [nzStep]="1" formControlName="duration"></nz-input-number>
+      <nz-input-number mouseWheel [nzMax]="DURATION_VALIDATOR.max" [nzMin]="DURATION_VALIDATOR.min" formControlName="duration"
+                       (mouseWheelUp)="adjust('duration', 1)" (mouseWheelDown)="adjust('duration', -1)">
+      </nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -34,10 +37,12 @@
         <div [nzTitle]="'ALARMS.CUSTOM.Slot_description' | translate" nz-tooltip>
           <i nz-icon nzType="question-circle" theme="outline"></i>
         </div>
-      </div>      
+      </div>
     </nz-form-label>
-    <nz-form-control [nzSm]="16" [nzXs]="24"> 
-      <nz-input-number [nzMax]="8" [nzMin]="0" [nzStep]="1" formControlName="slot"></nz-input-number>
+    <nz-form-control [nzSm]="16" [nzXs]="24">
+      <nz-input-number mouseWheel [nzMax]="SLOT_VALIDATOR.max" [nzMin]="SLOT_VALIDATOR.min" [nzStep]="1" formControlName="slot"
+                       (mouseWheelUp)="adjust('slot', 1)" (mouseWheelDown)="adjust('slot', -1)">
+      </nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
@@ -90,13 +95,17 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">X</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number [nzMin]="0" formControlName="x"></nz-input-number>
+      <nz-input-number mouseWheel [nzMax]="X_VALIDATOR.max"  [nzMin]="X_VALIDATOR.min" formControlName="x"
+                       (mouseWheelUp)="adjust('x', 1)" (mouseWheelDown)="adjust('x', -1)">
+      </nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">Y</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number [nzMin]="0" formControlName="y"></nz-input-number>
+      <nz-input-number mouseWheel [nzMax]="Y_VALIDATOR.max" [nzMin]="Y_VALIDATOR.min" formControlName="y"
+                       (mouseWheelUp)="adjust('y', 1)" (mouseWheelDown)="adjust('y', -1)">
+      </nz-input-number>
     </nz-form-control>
   </nz-form-item>
   <button [disabled]="!form.valid" nz-button nzType="primary" type="submit">

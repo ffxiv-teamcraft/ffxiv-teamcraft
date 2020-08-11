@@ -13,12 +13,22 @@
         </ng-template>
       </nz-list-item>
       <ng-template #inventoryInformations>
-        <div class="amount-in-inventories" fxLayout="row wrap"     fxLayoutGap="5px">
-          <nz-tag *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry">
-            {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
-            : {{entry.amount}}
-            <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-          </nz-tag>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
+            <nz-tag *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry">
+              {{entry.isRetainer ? entry.containerName : (('INVENTORY.BAG.' + entry.containerName) | translate)}}
+              : {{entry.amount}}
+              <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+            </nz-tag>
+          </div>
+          <ng-container *ngIf="req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil) as requiredAmount">
+            <button *ngIf="!markedAsDone[req.id] && req.amount > req.done" (click)="markAsDone(req, requiredAmount)" nz-button
+                    nzShape="circle"
+                    nzSize="small"
+                    nzType="primary">
+              <i nz-icon nzType="check"></i>
+            </button>
+          </ng-container>
         </div>
       </ng-template>
     </ng-template>

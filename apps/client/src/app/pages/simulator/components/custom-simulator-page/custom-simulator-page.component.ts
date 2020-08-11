@@ -17,6 +17,8 @@ import { AbstractSimulationPage } from '../../abstract-simulation-page';
 })
 export class CustomSimulatorPageComponent extends AbstractSimulationPage {
 
+  curMaxLevel = 80; //max player level; 80 for Shadowbringers
+
   public recipeForm: FormGroup;
 
   public recipe$: Observable<Partial<Craft>>;
@@ -36,13 +38,13 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
       }
     });
     this.recipeForm = this.fb.group({
-      rlvl: [481, Validators.required],
-      level: [80, Validators.required],
-      progress: [9181, Validators.required],
-      quality: [64862, Validators.required],
-      durability: [60, Validators.required],
-      suggCraft: [2484, Validators.required],
-      suggCtrl: [2206, Validators.required],
+      rlvl: [481, [Validators.min(1), Validators.required]],
+      level: [this.curMaxLevel, [Validators.min(1), Validators.max(this.curMaxLevel), Validators.required]],
+      progress: [9181, [Validators.min(1), Validators.required]],
+      quality: [64862, [Validators.min(1), Validators.required]],
+      durability: [60, [Validators.min(1), Validators.required]],
+      suggCraft: [2484, [Validators.min(1), Validators.required]],
+      suggCtrl: [2206, [Validators.min(1), Validators.required]],
       expert: [true]
     });
     const recipeFromRotation$ = this.rotationsFacade.selectedRotation$.pipe(
@@ -105,5 +107,16 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
         };
       })
     );
+  }
+
+  public adjust(prop: string, amount: number): void {
+    const oldValue = this.recipeForm.value[prop];
+    const newValue = this.recipeForm.value[prop] + amount;
+
+    this.recipeForm.patchValue({[prop]: newValue});
+
+    if (this.recipeForm.controls[prop].invalid) {
+      this.recipeForm.patchValue({[prop]: oldValue})
+    }
   }
 }

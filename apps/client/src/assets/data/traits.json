@@ -3712,7 +3712,7 @@
     "icon": "/i/005000/005314.png",
     "description": {
       "en": "While under the effect of <span style=\"color:#ffff66;\">Army's Paeon</span> with at least one stack of <span style=\"color:#ffff66;\">Repertoire</span>, singing <span style=\"color:#ffff66;\">Mage's Ballad</span> or the <span style=\"color:#ffff66;\">Wanderer's Minuet</span> will grant <span style=\"color:#ffff66;\">Army's Muse</span>, reducing weaponskill cast time and recast time, spell cast time and recast time, and auto-attack delay.\n\n<span style=\"color:#00cc22;\">Duration: </span>10s\n\nAllowing the effect of <span style=\"color:#ffff66;\">Army's Paeon</span> and accumulated stacks of <span style=\"color:#ffff66;\">Repertoire</span> to expire without singing <span style=\"color:#ffff66;\">Mage's Ballad</span> or the <span style=\"color:#ffff66;\">Wanderer's Minuet</span> will grant <span style=\"color:#ffff66;\">Army's Ethos</span>. \n\n<span style=\"color:#00cc22;\">Duration: </span>30s\n\nWhile under the effect of <span style=\"color:#ffff66;\">Army's Ethos</span>, singing <span style=\"color:#ffff66;\">Mage's Ballad</span> or the <span style=\"color:#ffff66;\">Wanderer's Minuet</span> will grant <span style=\"color:#ffff66;\">Army's Muse</span>. Both <span style=\"color:#ffff66;\">Army's Ethos</span> and <span style=\"color:#ffff66;\">Army's Muse</span> require stacks of <span style=\"color:#ffff66;\">Repertoire</span>, the number of which will determine the potency of the latter.\n\n<span style=\"color:#00cc22;\">1 Repertoire: </span> 1%\n\n<span style=\"color:#00cc22;\">2 Repertoire: </span> 2%\n\n<span style=\"color:#00cc22;\">3 Repertoire: </span> 4%\n\n<span style=\"color:#00cc22;\">4 Repertoire: </span> 12%",
-      "de": "Ist <span style=\"color:#ffff66;\">Hymne der Krieger</span> mit mindestens einem Virtuose aktiv, gewährt das Ausführen von <span style=\"color:#40bfff;\">Ballade des Weisen</span> oder Menuett den Effekt <span style=\"color:#ffff66;\">Gunst des Schlachtensängers</span>. Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.\n\nDauer: 10 Sekunden\n\nWenn <span style=\"color:#ffff66;\">Hymne der Krieger</span> ausläuft, ohne dass <span style=\"color:#40bfff;\">Ballade des Weisen</span> oder <span style=\"color:#40bfff;\">Menuett des Wanderers</span> ausgeführt werden, tritt <span style=\"color:#ffff66;\">Beistand des Schlachtensängers</span> in Kraft, sofern mindestens ein Virtuose vorhanden ist.\n\nDauer: 30 Sekunden\n\nBei 1 Virtuose: 1 %\n\nBei 2 Virtuose: 2 %\n\nBei 3 Virtuose: 4 %\n\nBei 4 Virtuose: 12 %",
+      "de": "Ist <span style=\"color:#ffff66;\">Hymne der Krieger</span> mit mindestens einem Virtuose aktiv, gewährt das Ausführen von <span style=\"color:#40bfff;\">Ballade des Weisen</span> oder <span style=\"color:#40bfff;\">Menuett des Wanderers</span> den Effekt <span style=\"color:#ffff66;\">Gunst des Schlachtensängers</span>. Intervalle zwischen Auto-Attacken und die (Re-)Aktivierungszeiten von Waffenfertigkeiten und Magie sind verkürzt.\n\nDauer: 10 Sekunden\n\nWenn <span style=\"color:#ffff66;\">Hymne der Krieger</span> ausläuft, ohne dass <span style=\"color:#40bfff;\">Ballade des Weisen</span> oder <span style=\"color:#40bfff;\">Menuett des Wanderers</span> ausgeführt werden, tritt <span style=\"color:#ffff66;\">Beistand des Schlachtensängers</span> in Kraft, sofern mindestens ein Virtuose vorhanden ist.\n\nDauer: 30 Sekunden\n\nBei 1 Virtuose: 1 %\n\nBei 2 Virtuose: 2 %\n\nBei 3 Virtuose: 4 %\n\nBei 4 Virtuose: 12 %",
       "ja": "軍神のパイオンの効果中かつ自身に<span style=\"color:#ff7b1a;\">「詩心」</span>が付与されている状態で、賢人のバラードか旅神のメヌエットを実行すると、自身に<span style=\"color:#ff7b1a;\">「軍神の加護」</span>を付与する。　<span style=\"color:#00cc22;\">効果時間：</span>10秒\n\n<span style=\"color:#00cc22;\">軍神の加護効果：</span>オートアタックの攻撃間隔と、ウェポンスキルおよび魔法のキャストタイムとリキャストタイムを短縮させる。\n\n\n\nまた、軍神のパイオンの効果中かつ自身に<span style=\"color:#ff7b1a;\">「詩心」</span>が付与されている状態で、賢人のバラードか旅神のメヌエットを実行することなく軍神のパイオンの効果時間が経過した場合、自身に<span style=\"color:#ff7b1a;\">「軍神の契約」</span>を付与する。　<span style=\"color:#00cc22;\">効果時間：</span>30秒\n\n<span style=\"color:#00cc22;\">軍神の契約効果：</span>賢人のバラード、軍神のパイオン、旅神のメヌエットを実行すると、自身に<span style=\"color:#ff7b1a;\">「軍神の加護」</span>を付与する。\n\nどちらの場合も、効果量は<span style=\"color:#ff7b1a;\">「軍神の加護」</span>および<span style=\"color:#ff7b1a;\">「軍神の契約」</span>が付与されたときの<span style=\"color:#ff7b1a;\">「詩心」</span>の数により異なる。\n\n\n\n<span style=\"color:#00cc22;\">詩心が1つのとき：</span>1％\n\n<span style=\"color:#00cc22;\">詩心が2つのとき：</span>2％\n\n<span style=\"color:#00cc22;\">詩心が3つのとき：</span>4％\n\n<span style=\"color:#00cc22;\">詩心が4つのとき：</span>12％",
       "fr": "<span style=\"color:#ff7b1a;\">Bénédiction martiale</span> vous est octroyée lorsque vous utilisez <span style=\"color:#ff7b1a;\">Ballade du mage</span> ou <span style=\"color:#ff7b1a;\">Menuet du Vagabond</span>, sous les effets de <span style=\"color:#ff7b1a;\">Péan martial</span> et d'<span style=\"color:#ff7b1a;\">Inspiration poétique</span>.\n\n<span style=\"color:#ffff66;\">Durée:</span> 10s\n\n<span style=\"color:#ffff66;\">Bénédiction martiale:</span> réduit le délai des attaques automatiques et les temps de lancement et de recharge des techniques d'arme et des sorts de magie.\n\n\n\nSi <span style=\"color:#ff7b1a;\">Péan martial</span> prend fin sans que <span style=\"color:#ff7b1a;\">Ballade du mage</span> ou <span style=\"color:#ff7b1a;\">Menuet du Vagabond</span> n'aient été utilisés et que vous bénéficiez d'<span style=\"color:#ff7b1a;\">Inspiration poétique</span>, <span style=\"color:#ff7b1a;\">Pacte martial</span> vous est octroyé.\n\n<span style=\"color:#ffff66;\">Durée:</span> 30s\n\n<span style=\"color:#ffff66;\">Pacte martial:</span> vous octroie <span style=\"color:#ff7b1a;\">Bénédiction martiale</span> lorsque vous utilisez <span style=\"color:#ff7b1a;\">Ballade du mage</span>, <span style=\"color:#ff7b1a;\">Péan martial</span> ou <span style=\"color:#ff7b1a;\">Menuet du Vagabond</span>.\n\n\n\nLe degré d'<span style=\"color:#ff7b1a;\">Inspiration poétique</span> au moment de l'activation de <span style=\"color:#ff7b1a;\">Bénédiction martiale</span> et de <span style=\"color:#ff7b1a;\">Péan martial</span> détermine la puissance de l'effet.\n\n<span style=\"color:#ffff66;\">1 degré:</span> 1%\n\n<span style=\"color:#ffff66;\">2 degrés:</span> 2%\n\n<span style=\"color:#ffff66;\">3 degrés:</span> 4%\n\n<span style=\"color:#ffff66;\">4 degrés:</span> 12%"
     }
@@ -3959,7 +3959,7 @@
     "icon": "/i/006000/006205.png",
     "description": {
       "en": "Reduces <span style=\"color:#ff7b1a;\">Manafication</span> recast timer to 110 seconds and adds an additional effect that increases magic damage dealt by 5%.",
-      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#40bfff;\">Manifizierung</span> auf 110 Sekunden und erhöht bei Ausführung den eigenen ausgeteilten Schaden um 5%.\n\nDauer: 10 Sekunden",
+      "de": "Verkürzt die Reaktivierungszeit von <span style=\"color:#40bfff;\">Manafizierung</span> auf 110 Sekunden und erhöht bei Ausführung den eigenen ausgeteilten Schaden um 5%.\n\nDauer: 10 Sekunden",
       "ja": "マナフィケーションのリキャストタイムを110秒に短縮させる。\n\nさらに、「自身の与魔法ダメージを5％上昇させる効果」が付与される。",
       "fr": "Réduit le temps de recharge de <span style=\"color:#ff7b1a;\">Manafication</span> à 110s.\n\nOctroie un effet augmentant de 5% vos dégâts magiques."
     }
@@ -4257,10 +4257,10 @@
     "fr": "Auto Discrétion",
     "icon": "/i/005000/005428.png",
     "description": {
-      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to miner.",
-      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Minenarbeiter automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
-      "ja": "採掘師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
-      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez mineur, si l'endroit le permet."
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to miner. Effect is also automatically activated upon changing areas.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Minenarbeiter beziehungsweise beim Wechsel in ein neues Areal automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "採掘師にクラスチェンジした際、またはエリア移動した際に、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez mineur ou lorsque vous changez de zone, si l'endroit le permet."
     }
   },
   "329": {
@@ -4270,10 +4270,10 @@
     "fr": "Auto Discrétion",
     "icon": "/i/005000/005453.png",
     "description": {
-      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to botanist.",
-      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Gärtner automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
-      "ja": "園芸師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
-      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez botaniste, si l'endroit le permet."
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to botanist. Effect is also automatically activated upon changing areas.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Gärtner beziehungsweise beim Wechsel in ein neues Areal automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "園芸師にクラスチェンジした際、またはエリア移動した際に、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez botaniste ou lorsque vous changez de zone, si l'endroit le permet."
     }
   },
   "330": {
@@ -4283,10 +4283,10 @@
     "fr": "Auto Discrétion",
     "icon": "/i/005000/005477.png",
     "description": {
-      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to fisher.",
-      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Fischer automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
-      "ja": "漁師にクラスチェンジした際、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
-      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez pêcheur, si l'endroit le permet."
+      "en": "Automatically activates <span style=\"color:#ffff66;\">Sneak</span> upon changing your class to fisher. Effect is also automatically activated upon changing areas.",
+      "de": "<span style=\"color:#ffff66;\">Verstohlenheit</span> wird beim Klassenwechsel zu Fischer beziehungsweise beim Wechsel in ein neues Areal automatisch aktiviert, sofern dies am momentanen Ort möglich ist.",
+      "ja": "漁師にクラスチェンジした際、またはエリア移動した際に、自動でスニークの効果を得る。\n\n<span style=\"color:#00cc22;\">発動条件：スニークが実行できる場所</span>",
+      "fr": "Vous bénéficiez automatiquement de l'effet Discrétion lorsque vous devenez pêcheur ou lorsque vous changez de zone, si l'endroit le permet."
     }
   },
   "331": {
@@ -4615,107 +4615,107 @@
     }
   },
   "356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "357": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "358": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "359": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "360": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "361": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "362": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "363": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": "",
+    "en": "Practice Makes Perfect",
+    "de": "Übung macht den Meister",
+    "ja": "製作練習",
+    "fr": "Synthèse d'essai",
+    "icon": "/i/006000/006987.png",
     "description": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "Allows you to execute trial synthesis.",
+      "de": "Erlaubt die Ausführung von Testsynthese.",
+      "ja": "製作練習が実行可能になる。",
+      "fr": "Permet d'effectuer des synthèses d'essai."
     }
   },
   "364": {

@@ -60,6 +60,7 @@ export class ListRow extends DataModel {
   hasAllBaseIngredients?: boolean;
 
   craftableAmount?: number;
+  finalItem?: boolean;
 }
 
 const cache = {};

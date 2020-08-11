@@ -231,7 +231,7 @@ export class List extends DataWithPermissions {
   }
 
   public getItemById(id: number | string, excludeFinalItems: boolean = false, onlyFinalItems = false, recipeId?: string): ListRow {
-    let array = this.items;
+    let array = this.items.filter(i => !i.finalItem);
     if (!excludeFinalItems && !onlyFinalItems) {
       array = array.concat(this.finalItems);
     }

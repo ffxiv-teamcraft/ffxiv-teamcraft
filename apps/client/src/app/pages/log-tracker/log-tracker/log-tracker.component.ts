@@ -212,14 +212,8 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public isRequiredForAchievement(page: any): boolean {
-    return !page.masterbook
-      && (
-        (page.startLevel.ClassJobLevel !== 50
-          && page.startLevel.ClassJobLevel !== 30
-        )
-        || (page.id > 1055 && page.id < 1072)
-      ) &&
-      page.id < 1088;
+    const division = this.l12n.getNotebookDivision(this.getDohDivisionId(page.id));
+    return /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
   }
 
   public getNodeData(itemId: number, tab: number): any {
@@ -329,17 +323,6 @@ export class LogTrackerComponent extends TrackerComponent {
       return `36-40`;
     }
     return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
-  }
-
-  private getMasterbookIndex(page: any): number {
-    const baseValue = ((page.startLevel.ClassJobLevel - 50) / 5) + page.startLevel.Stars / 2;
-    if (baseValue === 1.6) {
-      return 3;
-    }
-    if (baseValue > 2) {
-      return baseValue + 1;
-    }
-    return baseValue;
   }
 
   public showOptimizedMap(index: number): void {

@@ -365,59 +365,59 @@ export const submarineVoyages = [
   },
   {
     "id": 53,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Isle of Sacrament",
+    "de": "Insel des Sakraments (A)",
+    "ja": "A　祭壇島",
+    "fr": "Île du Sacrement (A)"
   },
   {
     "id": 54,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Kraken's Tomb",
+    "de": "Grab des Kraken (B)",
+    "ja": "B　蛸壺入江",
+    "fr": "Tombe du Kraken (B)"
   },
   {
     "id": 55,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sea of Jade 1",
+    "de": "Jademeer 1 (C)",
+    "ja": "C　翠浪海01",
+    "fr": "Mer de Jade 1 (C)"
   },
   {
     "id": 56,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Rogo-Tumu-Here's Haunt",
+    "de": "Revier des Rogo-Tumu-Here (D)",
+    "ja": "D　ロゴトゥムヘレの狩場",
+    "fr": "Chasse de Rogo-Tumu-Here (D)"
   },
   {
     "id": 57,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Stone Barbs",
+    "de": "Steinerne Dornen (E)",
+    "ja": "E　吸盤礁",
+    "fr": "Ventouse de pierre (E)"
   },
   {
     "id": 58,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Rogo-Tumu-Here's Repose",
+    "de": "Schlafplatz des Rogo-Tumu-Here (F)",
+    "ja": "F　ロゴトゥムヘレの寝蔵",
+    "fr": "Repos de Rogo-Tumu-Here (F)"
   },
   {
     "id": 59,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tangaroa's Prow",
+    "de": "Tangaroas Angelhaken (G)",
+    "ja": "G　タナロアの釣針",
+    "fr": "Hameçon de Tangaroa (G)"
   },
   {
     "id": 60,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sea of Jade 2",
+    "de": "Jademeer 2 (H)",
+    "ja": "H　翠浪海02",
+    "fr": "Mer de Jade 2 (H)"
   },
   {
     "id": 61,

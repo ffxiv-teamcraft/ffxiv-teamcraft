@@ -1,4 +1,4 @@
 <button (click)="openDialog()" [disabled]="disabled$ | async" [nzSize]="size" [nzTitle]="'MARKETBOARD.Title' | translate" nz-button
-        nz-tooltip nzShape="circle">
+        nz-tooltip nzShape="circle" *ngIf="itemCanBeSold">
   <i nz-icon nzType="line-chart"></i>
 </button>

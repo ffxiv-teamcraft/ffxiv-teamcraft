@@ -156,6 +156,14 @@ export class SettingsService {
     this.setSetting('default-permission-level', level.toString());
   }
 
+  public get pageViews(): number {
+    return +this.getSetting('page-views', '0');
+  }
+
+  public set pageViews(views: number) {
+    this.setSetting('page-views', views.toString());
+  }
+
   public get startingPlace(): number {
     return +this.getSetting('startingPlace', '12');
   }

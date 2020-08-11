@@ -54,6 +54,7 @@ import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
+import { PatreonService } from './core/patreon/patreon.service';
 
 declare const gtag: Function;
 
@@ -173,7 +174,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -369,7 +370,7 @@ export class AppComponent implements OnInit {
         }
       });
 
-      // Google Analytics
+      // Google Analytics & patreon popup stuff
       router.events
         .pipe(
           distinctUntilChanged((previous: any, current: any) => {
@@ -521,9 +522,21 @@ export class AppComponent implements OnInit {
       this.layoutsFacade.loadAll();
       this.customItemsFacade.loadAll();
 
+      let increasedPageViews = false;
+
       this.user$.subscribe(user => {
         if (!user.patron && !user.admin && this.settings.theme.name === 'CUSTOM') {
           this.settings.theme = Theme.DEFAULT;
+        }
+        if (!user.patron && !increasedPageViews) {
+          const viewTriggersForPatreonPopup = [20, 200, 500];
+          if (this.settings.pageViews < viewTriggersForPatreonPopup[viewTriggersForPatreonPopup.length - 1]) {
+            this.settings.pageViews++;
+            increasedPageViews = true;
+          }
+          if (viewTriggersForPatreonPopup.indexOf(this.settings.pageViews) > -1) {
+            this.patreonService.showSupportUsPopup();
+          }
         }
       });
 
@@ -534,6 +547,7 @@ export class AppComponent implements OnInit {
       this.settings.themeChange$.subscribe((change => {
         this.applyTheme(change.next);
       }));
+
     } else {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
@@ -686,6 +700,10 @@ export class AppComponent implements OnInit {
 
   public openListPanelOverlay(): void {
     this.ipc.openOverlay('/list-panel-overlay');
+  }
+
+  public openItemSearchOverlay(): void {
+    this.ipc.openOverlay('/item-search-overlay');
   }
 
   @HostListener('window:beforeunload', ['$event'])

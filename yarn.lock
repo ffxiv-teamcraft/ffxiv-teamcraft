@@ -1822,10 +1822,10 @@
     contra "1.9.4"
     crossvent "1.5.4"
 
-"@swimlane/ngx-charts@^13.0.2":
-  version "13.0.4"
-  resolved "https://registry.yarnpkg.com/@swimlane/ngx-charts/-/ngx-charts-13.0.4.tgz#d63a8ae2fbb6ec77ff7bf8e1b9db424cfea6043e"
-  integrity sha512-4EvwclbctVQ5VzPBC63DJsg+jwQU/NlR/yQ9ObVH5acefEbS8kupn3cp/gaWftLTQ0jdXqRqycHNkLOQZfa3XQ==
+"@swimlane/ngx-charts@^14.0.0":
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/@swimlane/ngx-charts/-/ngx-charts-14.0.0.tgz#396b600cd2e9eedbc17cfba0b36f7b77e68615df"
+  integrity sha512-UiAleBA4Hs7IEB+5mSmn1ojntD32lpfR7BokuVUNkhWiX4CsljKsXgm1EwIw2A14JBu4g8EDjKrdbED79eShEA==
   dependencies:
     d3-array "^2.4.0"
     d3-brush "^1.1.5"
@@ -10949,15 +10949,16 @@ ng-push@^0.2.1:
   resolved "https://registry.yarnpkg.com/ng-push/-/ng-push-0.2.2.tgz#61c16c3ef8590947d3bef8e19d84682017c05127"
   integrity sha512-ch7qHGNWUBa1pJvdmzGpG7PbFCP3T78FCmBzELh21o4HRDFKlJgKTbchzz0i+MeexNbD3/pD1kevM0tY/2RVAg==
 
-ng-zorro-antd@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-9.1.0.tgz#83afda582f73b75f71836e9ad3f2a7444e205daa"
-  integrity sha512-eLi9rq4lfsHR8gZd1+o+9YA/HwB9MOSukB9nIuifFUZEv3zRRPbNx6jXZpXhcrb6HCgUeMujmi6P6w3acic4Zg==
+ng-zorro-antd@9.3.0:
+  version "9.3.0"
+  resolved "https://registry.yarnpkg.com/ng-zorro-antd/-/ng-zorro-antd-9.3.0.tgz#f80dbe2715e578c475728773449442f0099f152c"
+  integrity sha512-O7uRCnsFTGHn/74ly8VCUoaMlED3cWLJfvbD0FLzDjBlnz77kcuM5qd+yGMT2hAYXmXYWu2ZRRJWLx5QUGLHkA==
   dependencies:
     "@angular/cdk" "^9.0.0"
     "@ant-design/icons-angular" "^9.0.0"
     date-fns "^2.10.0"
     resize-observer-polyfill "^1.5.1"
+    tslib "^1.10.0"
 
 ngx-clipboard@^13.0.0:
   version "13.0.0"
@@ -11067,10 +11068,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.36.22:
-  version "2.36.22"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.36.22.tgz#e9147527aa0f45e3392d699ff2ebb71922464ebb"
-  integrity sha512-TX98hzXM1bk67KNi2t/JSM/88CfRI7GWSAOWNR/kTxlll+mVnGUZHlE8cL5DVXQgOstZh+H+k5pPS9BN16KW6Q==
+node-machina-ffxiv@^2.36.31:
+  version "2.36.31"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.36.31.tgz#c6d809626f7ca83784ff27b7aaf8ebf6b988e31c"
+  integrity sha512-COepQpcHfPhbTdCh/lSjcJYoefpwX8vpqxL5VgzuRdWn6RjSfn1XVK3W3tYm9DqsJAXBKuMSNXis3NdfYjIXXg==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"

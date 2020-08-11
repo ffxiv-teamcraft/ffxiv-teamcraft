@@ -4,4 +4,5 @@ export interface ListDisplay {
   rows: LayoutRowDisplay[];
   crystalsPanel?: boolean;
   showInventory: boolean;
+  showFinalItemsPanel: boolean;
 }

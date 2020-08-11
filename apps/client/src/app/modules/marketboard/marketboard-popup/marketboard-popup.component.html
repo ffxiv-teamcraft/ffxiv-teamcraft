@@ -1,12 +1,13 @@
 <nz-alert *ngIf="error; else content" [nzMessage]="'MARKETBOARD.Error' | translate" nzShowIcon
           nzType="error"></nz-alert>
 <ng-template #content>
+  <div *ngIf="lastUpdated$ | async as lastUpdated" class="last-updated"><i>{{'MARKETBOARD.Last_updated' | translate}}: {{lastUpdated | date:'medium'}}</i></div>
   <div fxLayout="column" fxLayoutGap="15px">
     <nz-table #pricesTable *ngIf="prices$ | async as prices" [nzData]="prices" [nzLoading]="loading" nzSize="small">
       <thead (nzSortChange)="sort($event)" nzSingleSort>
       <tr>
         <th nzShowSort nzSortKey="Quantity">{{'MARKETBOARD.Amount' | translate}}</th>
-        <th nzShowSort nzSortKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
+        <th nzShowSort *ngIf="!settings.disableCrossWorld" nzSortKey="Server">{{'MARKETBOARD.Server' | translate}}</th>
         <th nzShowSort nzSortKey="IsHQ">{{'MARKETBOARD.HQ' | translate}}</th>
         <th nzShowSort nzSortKey="PriceTotal">{{'MARKETBOARD.Total_price' | translate}}</th>
         <th nzShowSort nzSortKey="PricePerUnit">{{'MARKETBOARD.Unit_price' | translate}}</th>
@@ -15,7 +16,7 @@
       <tbody>
       <tr *ngFor="let row of pricesTable.data">
         <td>{{row.Quantity}}</td>
-        <td>{{row.Server}}</td>
+        <td *ngIf="!settings.disableCrossWorld">{{row.Server}}</td>
         <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
         <td>{{row.PriceTotal | number}}</td>
         <td>{{row.PricePerUnit | number}}</td>
@@ -30,7 +31,7 @@
         <tr>
           <th>{{'MARKETBOARD.Purchase_date' | translate}}</th>
           <th>{{'MARKETBOARD.Amount' | translate}}</th>
-          <th>{{'MARKETBOARD.Server' | translate}}</th>
+          <th *ngIf="!settings.disableCrossWorld">{{'MARKETBOARD.Server' | translate}}</th>
           <th>{{'MARKETBOARD.HQ' | translate}}</th>
           <th>{{'MARKETBOARD.Total_price' | translate}}</th>
           <th>{{'MARKETBOARD.Unit_price' | translate}}</th>
@@ -40,7 +41,7 @@
         <tr *ngFor="let row of historyTable.data">
           <td>{{row.PurchaseDate | date:'short':undefined:getLocale()}}</td>
           <td>{{row.Quantity}}</td>
-          <td>{{row.Server}}</td>
+          <td *ngIf="!settings.disableCrossWorld">{{row.Server}}</td>
           <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
           <td>{{row.PriceTotal | number}}</td>
           <td>{{row.PricePerUnit | number}}</td>

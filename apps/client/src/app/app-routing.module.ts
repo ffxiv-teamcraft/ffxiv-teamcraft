@@ -76,6 +76,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/rotation-overlay/rotation-overlay.module').then(m => m.RotationOverlayModule)
   },
   {
+    path: 'item-search-overlay',
+    loadChildren: () => import('./pages/item-search-overlay/item-search-overlay.module').then(m => m.ItemSearchOverlayModule)
+  },
+  {
     path: 'community-lists',
     loadChildren: () => import('./pages/community-lists/community-lists.module').then(m => m.CommunityListsModule)
   },

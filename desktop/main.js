@@ -94,7 +94,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
-const fs = require('fs');
+const fs = require('fs-extra');
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
@@ -148,6 +148,7 @@ if (options.noHA) {
  * Autoupdater
  */
 
+let autoUpdaterRunning = false
 autoUpdater.on('checking-for-update', () => {
   log.log('Checking for update');
   win && win.webContents.send('checking-for-update', true);
@@ -160,11 +161,19 @@ autoUpdater.on('update-available', () => {
 
 autoUpdater.on('update-not-available', () => {
   log.log('No update found');
+  autoUpdaterRunning = false;
+  win && win.webContents.send('update-available', false);
+});
+
+autoUpdater.on('error', (err) => {
+  log.log('Updater Error', err);
+  autoUpdaterRunning = false;
   win && win.webContents.send('update-available', false);
 });
 
 autoUpdater.on('update-downloaded', () => {
   log.log('Update downloaded');
+  autoUpdaterRunning = false;
   dialog.showMessageBox({
     type: 'info',
     title: 'FFXIV Teamcraft - Update available',
@@ -180,7 +189,12 @@ autoUpdater.on('update-downloaded', () => {
 
 
 ipcMain.on('update:check', () => {
+  if (autoUpdaterRunning) {
+    return;
+  }
+
   log.log('Run update setup');
+  autoUpdaterRunning = true;
   autoUpdater.checkForUpdates();
 });
 
@@ -194,6 +208,7 @@ app.on('ready', () => {
 });
 
 function createWindow() {
+  app.releaseSingleInstanceLock();
   app.setAsDefaultProtocolClient('teamcraft');
   protocol.registerFileProtocol('teamcraft', function(request) {
     deepLink = request.url.substr(12);
@@ -600,7 +615,7 @@ ipcMain.on('language', (event, lang) => {
 
 // Metrics system
 const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
-const METRICS_FOLDER = path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
+let METRICS_FOLDER = config.get('metrics:folder') || path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
 
 ipcMain.on('metrics:persist', (event, data) => {
   if (data.length === 0) {
@@ -638,6 +653,28 @@ ipcMain.on('metrics:load', (event, { from, to }) => {
     })
     .map(fileName => fs.readFileSync(path.join(METRICS_FOLDER, fileName), 'utf8'));
   event.sender.send('metrics:loaded', loadedFiles);
+});
+
+ipcMain.on('metrics:path:get', (event) => {
+  event.sender.send('metrics:path:value', METRICS_FOLDER);
+});
+
+ipcMain.on('metrics:path:set', (event, value) => {
+  const folderPickerOptions = {
+    // See place holder 2 in above image
+    defaultPath: METRICS_FOLDER,
+    properties: ['openDirectory']
+  };
+  dialog.showOpenDialog(win, folderPickerOptions).then((result) => {
+    if (result.canceled) {
+      return;
+    }
+    const value = result.filePaths[0];
+    fs.moveSync(METRICS_FOLDER, value);
+    METRICS_FOLDER = value;
+    config.set('metrics:folder', value);
+    event.sender.send('metrics:path:value', METRICS_FOLDER);
+  });
 });
 // End metrics system
 
@@ -712,6 +749,7 @@ ipcMain.on('overlay:set-opacity', (event, data) => {
 
 ipcMain.on('overlay:open-page', (event, data) => {
   win.webContents.send('navigate', data);
+  win.focus();
 });
 
 ipcMain.on('overlay:get-opacity', (event, data) => {

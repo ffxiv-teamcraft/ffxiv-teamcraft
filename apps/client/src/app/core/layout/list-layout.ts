@@ -32,6 +32,8 @@ export class ListLayout extends DataModel {
 
   public recipeHideZoneDuplicates = false;
 
+  public includeRecipesInItems = false;
+
   public name: string;
 
   public default = false;

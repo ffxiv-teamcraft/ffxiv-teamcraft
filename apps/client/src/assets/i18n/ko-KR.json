@@ -15,6 +15,7 @@
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "Patch_notes": "{{version}} 변경점",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -47,6 +48,7 @@
   "See_code_github": "Github에서 코드 보기",
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
   "Access_patreon_page": "Patreon 페이지로 이동",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "기본 설정",
   "Delete": "삭제",
   "Copy_isearch": "아이템검색 매크로 복사",
@@ -158,7 +160,8 @@
     "Share_link_copied": "클립보드에 공유링크가 복사되었습니다",
     "Copy": "복사",
     "Open_in_main_window": "메인 창에서 열기",
-    "Example": "예제"
+    "Example": "예제",
+    "Change": "변경"
   },
   "ALARMS": {
     "Title": "알람",
@@ -413,10 +416,11 @@
     "Enable_tutorials": "튜토리얼 시스템 켜기",
     "Scrolling_behavior": "스크롤 설정",
     "Scrolling_behavior_explain": "리스트 패널의 스크롤 방식을 설정합니다. 기본 설정은 패널 당 12개의 아이템을 보여줍니다.",
-    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
-    "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Enable_auto_log_check": "채집/제작 시에 자동으로 수첩 트래커를 채우기",
+    "Enable_metrics_capture": "메트릭스 캡쳐 활성화",
+    "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
+    "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
+    "Metrics_capture_folder": "메트릭스 로그 폴더",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -545,6 +549,8 @@
     "Reset_panel": "이 패널에 있는 모든 아이템 초기화하기",
     "Progression_tooltip_materials": "재료 수집: {{amount}}%",
     "Progression_tooltip_items": "아이템 완성: {{amount}}%",
+    "Final_item": "최종 아이템",
+    "Include_final_items_in_main_layout": "기본 레이아웃에 최종 아이템을 포함",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
@@ -1140,9 +1146,9 @@
     "Unit_price": "개당 가격",
     "History": "최근 기록",
     "Purchase_date": "날짜",
-    "More_on_mogboard": "Mogboard에서 자세한 정보 보기(한국서버 미지원)",
     "More_on_universalis": "universalis에서 자세히 보기",
-    "Server": "서버"
+    "Server": "서버",
+    "Last_updated": "최근 갱신"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1162,7 +1168,7 @@
     "Lists_created_counter": "{{amount}}개의 목록이 FFXIV Teamcraft를 사용하여 만들어졌습니다",
     "Support_patreon": "Patreon으로 후원하기",
     "Donation_button": "후원하기[1회]",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "팀크래프트 상품 구매하기",
     "Features_header": "시작하기 !",
     "DESCRIPTION": {
       "Lists": "목록을 만들어 제작에 필요한 모든 재료를 확인하고, 친구들에게 공유할 수 있습니다. 아이템 검색에서 필터를 적용해 특정 아이템을 선택한 뒤 제작을 시작할 수 있습니다.",
@@ -1321,6 +1327,8 @@
     "Contribute_description": "Github에서 이 프로젝트에 기여할 수 있습니다. 초보자여도 언제든 환영합니다!\n\n코드 기여뿐만 아니라, 기능 요청과 버그 제보는 모두에게 최상의 기능을 제공하는데 큰 도움을 줍니다. 시간을 들여 테스트를 하고 버그를 찾아 주시는 모든 분들께 감사드립니다.",
     "Patreon_title": "Patreon으로 후원하기",
     "Patreon_description": "Patreon은 매달 프로젝트를 후원할 수 있는 플랫폼입니다. 이 후원금은 서버, 인증서, 나눔에 사용되고 프로젝트를 작업하는 개발자들이 더 많은 시간을 할애하는 데 사용됩니다.\n\n후원금에 따라 이에 보답하기 위한 몇몇 좋은 혜택을 받을 수 있습니다:",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "현재 진행 중인 작업을 볼 수 있는 후원자 채널에 접근 가능한 Discord서버 특별 등급 (${{price}})",
       "Profile_badge": "Teamcraft 프로필에 특별한 배지 부여 (${{price}})",
@@ -1791,6 +1799,14 @@
       "Message": "해당 재료를 사용해서 만들 수 있는 아이템의 최대 아이템레벨은 {{ilvl}} 입니다",
       "Recipe_ilvl": "최소 ilvl(아이템레벨) 결과",
       "Company_workshop": "부대 제작 설비"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "쉽게 채집할 수 있는 아이템",
+      "Message": "{{level}} 레벨 일반 채집노드에서 채집할 수 있습니다"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Message": "You can extract a materia from this gear piece"
     }
   },
   "VERSION_LOCK": {
@@ -1974,10 +1990,31 @@
       "Min_control": "필요한 최소 가공 숙련도를 입력하면 해당 로테이션에 맞는 [필요한 가공 숙련도 < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
       "Min_cp": "필요한 최소 CP를 입력하면 해당 로테이션에 맞는 [필요한 CP < 자신의 스탯] 을 기준으로 로테이션을 필터링할 수 있습니다.",
       "Set_selector": "로테이션 성공 확률을 표시하는데 사용할 직업을 선택하세요."
+    },
+    "METRICS": {
+      "Welcome_time_range": "메트릭스 대시보드 페이지에 어서오세요. 여기서 원하는 기간을 설정할 수 있습니다. 기본값은 '오늘' 입니다.",
+      "Select_dashboard": "여러 대시보드를 동시에 운용하면서 중요한 내용들을 확인할 수 있습니다.",
+      "Edit_dashboard": "해당 버튼을 사용하면 편집모드를 사용할 수 있습니다. 이 기능은 기본 대시보드가 아닐 때에만 사용가능합니다.",
+      "Create_dashboard": "자신만의 대시보드를 만들고 수정하는 것을 잊지마세요. 수정하지 않으면 그저 기본 대시보드와 똑같을 뿐입니다.",
+      "Delete_layout": "만약 대시보드를 삭제하기 원한다면 해당 버튼을 누르세요(꼭 확인할 것! 삭제된 데이터는 되돌릴 수 없습니다).",
+      "Export_layout": "자신이 만든 멋진 대시보드를 다른 친구들에게 공유하고 싶나요? 현재 대시보드의 내보내기 코드를 복사하고 싶다면 이 버튼을 클릭하세요.",
+      "Import_layout": "다른 사람이 공유한 대시보드를 사용하고 싶다면, 이 버튼을 클릭하고 내보내기 코드를 입력하세요.",
+      "EDITOR": {
+        "Welcome_add_column": "대시보드 레이아웃 편집창에 어서오세요. 해당 버튼을 사용하여 최대 5열까지 추가할 수 있습니다.",
+        "Save": "대시보드를 편집하고 저장하는 것을 잊지마세요.",
+        "Revert": "만약 편집한 대시보드가 마음에 들지 않는다면, 이전 페이지로 돌아가서 편집 전 레이아웃으로 되돌리세요.",
+        "Delete_column": "추가한 열을 삭제하고 싶나요? 이걸 누르세요!",
+        "Add_panel": "새 패널을 추가하고 싶다면 이걸 클릭하세요.",
+        "Reorder": "드래그 앤 드롭으로 패널을 원하는 곳으로 이동시킬 수 있습니다.",
+        "Data_type": "먼저, 사용할 메트릭스 유형을 선택하세요.",
+        "Filters": "그런 다음, 필터를 통합하거나 반전시키는 기능을 사용하여 원하는 내용만 볼 수 있도록 설정하세요.",
+        "Title": "패널의 제목을 정하세요",
+        "Display_type": "데이터를 표시할 때 사용할 구성요소들을 선택한 후, 원하는 설정값들을 입력하세요"
+      }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "오류 자동수정",
     "USERS": {
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "이메일",
@@ -1988,7 +2025,7 @@
         "Label": "검색 조건",
         "UID": "UID",
         "EMAIL": "이메일",
-        "CHARACTER": "Character"
+        "CHARACTER": "캐릭터"
       },
       "ACTIONS": {
         "Profile": "프로필 보기",
@@ -1998,5 +2035,86 @@
         "All_characters_valid": "이상없음"
       }
     }
+  },
+  "METRICS": {
+    "Title": "메트릭스 대시보드",
+    "Today": "오늘",
+    "This_week": "이번 주",
+    "This_month": "이번 달",
+    "Add_new_column": "새로운 열 추가하기(최대 5열)",
+    "Default_dashboard": "기본 대시보드",
+    "Copy_to_clipboard": "내보내기 코드를 클릭보드로 복사",
+    "Export_copied_to_clipboard": "클립보드에 내보내기 코드가 복사되었습니다",
+    "Import_dashboard": "대시보드 가져오기",
+    "Export_code": "대시보드 내보내기 코드",
+    "Import_failed": "대시보드 가져오기 실패(잘못된 코드)",
+    "Import_success": "대시보드 선택 및 가져오기",
+    "Nothing_to_show": "표시할 데이터가 없습니다",
+    "Nothing_to_show_description": "TC에서 데이터를 캡쳐한 기간을 선택하고 (설정 -> 데스크탑 -> 메트릭스 캡쳐) 옵션을 활성화시켰는지 확인하세요",
+    "SOURCES": {
+      "UNKNOWN": "알 수 없음",
+      "GATHERING": "채집",
+      "CRAFTING": "제작",
+      "FISHING": "낚시",
+      "VENDOR": "상인",
+      "TELEPORT": "텔레포",
+      "MARKETBOARD": "장터게시판"
+    },
+    "TYPES": {
+      "ANY": "모두",
+      "CURRENCY": "화폐",
+      "ITEM": "아이템"
+    },
+    "TABLE": {
+      "Type": "유형",
+      "Entry_label": "라벨",
+      "Value": "값",
+      "Source": "출처",
+      "Timestamp": "타임 스탬프"
+    },
+    "PIE_METRICS": {
+      "Amount": "아이템별 집계",
+      "Source": "출처별 집계"
+    },
+    "EDITOR": {
+      "Data": "데이터",
+      "Data_type": "유형",
+      "Filter": "필터",
+      "Accepted_items": "허용된 아이템",
+      "Accepted_sources": "허용된 출처",
+      "Display": "표시방식",
+      "Display_type": "표시할 구성요소",
+      "Title": "제목",
+      "Font_size": "글꼴 크기",
+      "Value_label": "라벨 값",
+      "Pie_metric": "통계방식",
+      "Add_filter": "필터 추가",
+      "Operator": "Operator",
+      "Cannot_edit_default": "기본 레이아웃은 수정할 수 없으며, 새로운 레이아웃은 커스텀 마이징 할 수 있습니다",
+      "Cannot_delete_default": "기본 레이아웃은 삭제할 수 없습니다",
+      "FILTER_TIPS": {
+        "FishFilter": "낚싯터에서 낚은 물고기만 허용",
+        "ItemFilter": "정해진 아이템만 허용",
+        "NoFilter": "모두 허용",
+        "ObtentionFilter": "0이상의 값만 허용",
+        "SourceFilter": "정해진 출처만 허용",
+        "SpendingFilter": "0이하의 값만 허용",
+        "GilFilter": "길(Gil) 만 허용"
+      },
+      "DISPLAY_TYPES": {
+        "total": "집계값",
+        "histogram": "시간 경과에 따른 변화",
+        "pie-chart": "파이 차트",
+        "table": "일치하는 모든 항목의 표"
+      }
+    }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "아이템검색 오버레이 열기",
+    "Intro_message": "소지품이나 장터게시판에 있는 아이템의 정보를 검색할 수 있습니다",
+    "Placeholder": "아이템 이름",
+    "None_inside_inventory": "인벤토리 내에 해당 아이템이 없습니다",
+    "Open_in_main_window": "메인 창에서 열기",
+    "Marketboard_informations": "장터게시판 정보"
   }
 }

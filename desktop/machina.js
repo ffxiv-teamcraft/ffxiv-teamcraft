@@ -25,9 +25,10 @@ function filterPacketSessionID(packet) {
     'eventStart',
     'eventFinish',
     'eventPlay4',
-    'someDirectorUnk4'
+    'someDirectorUnk4',
+    'npcSpawn'
   ];
-  return packetsFromOthers.indexOf(packet.type) === -1
+  return packetsFromOthers.indexOf(packet.type) > -1
     || packet.sourceActorSessionID === packet.targetActorSessionID;
 }
 
@@ -36,7 +37,9 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
     log.info('elevated', elevated);
     if (elevated) {
       exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft"', () => {
-        exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"', () => {
+          exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        });
       });
 
       const region = config.get('region', null);

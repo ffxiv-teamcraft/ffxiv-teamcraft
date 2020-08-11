@@ -10,14 +10,15 @@
       <div fxLayout="row">
         <div fxLayout="column" fxLayoutAlign="center flex-start">
           <div>
-      <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
-            *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName: item | i18n"
-            [nzTitle]="'Copy_item_name_to_clipboard' | translate"
-            class="item-name"
-            ngxClipboard
-            nz-tooltip>
-        {{item.id | itemName: item | i18n}}
-      </span>
+            <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate" *ngIf="item.finalItem && !this.finalItem$.value"></i>
+            <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
+                  *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName: item | i18n"
+                  [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+                  class="item-name"
+                  ngxClipboard
+                  nz-tooltip>
+              {{item.id | itemName: item | i18n}}
+            </span>
             <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
                   *ngIf="settings.preferredCopyType === 'isearch'" [nzTitle]="'Copy_isearch' | translate"
                   cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"

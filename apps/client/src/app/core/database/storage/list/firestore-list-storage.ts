@@ -11,9 +11,8 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
-import { AngularFireFunctions } from '@angular/fire/functions';
-import { compare, getValueByPointer } from 'fast-json-patch';
 import * as firebase from 'firebase/app';
+import { PermissionLevel } from '../../permissions/permission-level.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -40,8 +39,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   ];
 
   constructor(protected af: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService,
-              private fns: AngularFireFunctions) {
+              protected pendingChangesService: PendingChangesService, private lazyData: LazyDataService) {
     super(af, serializer, zone, pendingChangesService);
   }
 
@@ -54,17 +52,19 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     if (typeof clone.createdAt === 'string') {
       clone.createdAt = firebase.firestore.Timestamp.fromDate(new Date(clone.createdAt));
     }
-    clone.items = (clone.items || []).map(item => {
-      if (item.custom) {
-        return item;
-      }
-      return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
-        if (property in item) {
-          cleanedItem[property] = item[property];
+    clone.items = (clone.items || [])
+      .filter(item => !item.finalItem)
+      .map(item => {
+        if (item.custom) {
+          return item;
         }
-        return cleanedItem;
-      }, {}) as ListRow;
-    });
+        return FirestoreListStorage.PERSISTED_LIST_ROW_PROPERTIES.reduce((cleanedItem, property) => {
+          if (property in item) {
+            cleanedItem[property] = item[property];
+          }
+          return cleanedItem;
+        }, {}) as ListRow;
+      });
     clone.finalItems = (clone.finalItems || []).map(item => {
       if (item.custom) {
         return item;
@@ -124,7 +124,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   }
 
   public getShared(userId: string): Observable<List[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
+    return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', PermissionLevel.READ))
       .snapshotChanges()
       .pipe(
         switchMap((snaps: DocumentChangeAction<List>[]) => {

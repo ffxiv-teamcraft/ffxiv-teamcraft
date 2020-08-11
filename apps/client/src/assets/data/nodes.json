@@ -243,8 +243,8 @@
     "duration": 0,
     "zoneid": 70,
     "map": 4,
-    "x": 18.4,
-    "y": 18.9,
+    "x": 19.1,
+    "y": 20,
     "z": 0
   },
   "20": {
@@ -1352,7 +1352,7 @@
     "zoneid": 32,
     "map": 17,
     "x": 29.1,
-    "y": 31.4,
+    "y": 30.2,
     "z": 0.2
   },
   "80": {
@@ -1527,8 +1527,8 @@
     "zoneid": 67,
     "map": 25,
     "x": 24.6,
-    "y": 10.5,
-    "z": 0
+    "y": 9.2,
+    "z": 0.2
   },
   "90": {
     "items": [
@@ -2015,8 +2015,8 @@
     "duration": 0,
     "zoneid": 32,
     "map": 17,
-    "x": 25.8,
-    "y": 30.1,
+    "x": 25.9,
+    "y": 30.5,
     "z": 0.5
   },
   "118": {
@@ -2049,9 +2049,9 @@
     "duration": 0,
     "zoneid": 32,
     "map": 17,
-    "x": 30.7,
-    "y": 23.4,
-    "z": 0.1
+    "x": 30.4,
+    "y": 25.5,
+    "z": 0.2
   },
   "120": {
     "items": [
@@ -3245,9 +3245,9 @@
     "duration": 0,
     "zoneid": 167,
     "map": 17,
-    "x": 28.8,
-    "y": 33.4,
-    "z": 0.3
+    "x": 26.8,
+    "y": 33,
+    "z": 0.5
   },
   "185": {
     "items": [
@@ -9336,9 +9336,9 @@
     "duration": 160,
     "zoneid": 2757,
     "map": 372,
-    "x": 27,
-    "y": 16.5,
-    "z": 0.2
+    "x": 27.4,
+    "y": 16.1,
+    "z": 0.3
   },
   "524": {
     "items": [
@@ -9797,8 +9797,8 @@
     "duration": 0,
     "zoneid": 2411,
     "map": 372,
-    "x": 33.7,
-    "y": 32.9,
+    "x": 33,
+    "y": 33.2,
     "z": -0.2
   },
   "548": {
@@ -10383,8 +10383,8 @@
     "duration": 0,
     "zoneid": 2956,
     "map": 494,
-    "x": 11.1,
-    "y": 25.1,
+    "x": 11,
+    "y": 24.4,
     "z": 0.4
   },
   "580": {
@@ -10676,6 +10676,7 @@
   "597": {
     "items": [
       27805,
+      30591,
       19
     ],
     "limited": false,
@@ -10714,6 +10715,7 @@
   "599": {
     "items": [
       27806,
+      30591,
       18
     ],
     "limited": false,
@@ -10750,6 +10752,7 @@
   },
   "601": {
     "items": [
+      30591,
       27807,
       14
     ],
@@ -10781,9 +10784,9 @@
     "duration": 0,
     "zoneid": 3132,
     "map": 493,
-    "x": 15.3,
-    "y": 10.1,
-    "z": 1.2
+    "x": 15.5,
+    "y": 13.1,
+    "z": 1.3
   },
   "603": {
     "items": [
@@ -11163,6 +11166,7 @@
   "622": {
     "items": [
       27810,
+      30592,
       17
     ],
     "limited": false,
@@ -11201,6 +11205,7 @@
   "624": {
     "items": [
       27809,
+      30592,
       16
     ],
     "limited": false,
@@ -11239,6 +11244,7 @@
   },
   "626": {
     "items": [
+      30592,
       27808,
       15
     ],
@@ -12108,6 +12114,7 @@
   },
   "681": {
     "items": [
+      30486,
       29968
     ],
     "limited": true,
@@ -12168,6 +12175,7 @@
   },
   "684": {
     "items": [
+      30485,
       29978
     ],
     "limited": true,
@@ -12917,5 +12925,280 @@
     "x": 25.8,
     "y": 28.7,
     "z": 1.3
+  },
+  "723": {
+    "items": [
+      30498,
+      10
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2035,
+    "map": 213
+  },
+  "724": {
+    "items": [
+      30498,
+      9
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2220,
+    "map": 211
+  },
+  "725": {
+    "items": [
+      30499,
+      8
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2019,
+    "map": 212
+  },
+  "726": {
+    "items": [
+      30499,
+      11
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2079,
+    "map": 214
+  },
+  "727": {
+    "items": [
+      30500,
+      12
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2119,
+    "map": 215
+  },
+  "728": {
+    "items": [
+      30500,
+      13
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2159,
+    "map": 215
+  },
+  "729": {
+    "items": [
+      30501,
+      11
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2651,
+    "map": 368
+  },
+  "730": {
+    "items": [
+      30501,
+      13
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 1,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2781,
+    "map": 371
+  },
+  "731": {
+    "items": [
+      30502,
+      10
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 3,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2800,
+    "map": 354
+  },
+  "732": {
+    "items": [
+      30502,
+      9
+    ],
+    "limited": false,
+    "level": 75,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2692,
+    "map": 369
+  },
+  "733": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "734": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "735": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "736": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "737": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "738": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "739": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "740": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "741": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "742": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "743": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "744": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "745": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "746": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "747": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "748": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "749": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "750": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "751": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "752": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "753": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "754": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "755": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "756": {
+    "items": [],
+    "level": 0,
+    "type": 0
+  },
+  "757": {
+    "items": [],
+    "level": 0,
+    "type": 0
   }
 }

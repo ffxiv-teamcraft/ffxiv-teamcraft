@@ -2874,10 +2874,10 @@
     "fr": "Amélioration d'accessoires de la halle"
   },
   "1770028": {
-    "en": "Kholusian Rain Exchange",
-    "ja": "コルシアの強霊薬の取引",
-    "de": "Kholusia-Kondensat",
-    "fr": "Échange de lymphe quintessenciée de Kholusia"
+    "en": "Rain Exchange",
+    "ja": "強霊薬の取引",
+    "de": "Kondensat",
+    "fr": "Échange de lymphe quintessenciée"
   },
   "1770029": {
     "en": "Delineation Collection",
@@ -3112,5 +3112,1445 @@
     "ja": "スカイスチールツール第3段階への改良",
     "de": "Verstärkung zu Himmelsstahl-Werkzeug Stufe III",
     "fr": "Amélioration d'outils de Cielacier (niveau 3)"
+  },
+  "1770068": {
+    "en": "Yellow Crafters' Scrip Exchange (Master Recipes)",
+    "ja": "クラフタースクリップ:黄貨の取引（秘伝書）",
+    "de": "Gelbe Handwerkerscheine (Meisterrezeptbücher)",
+    "fr": "Assignats jaunes d'artisan (recettes expertes)"
+  },
+  "1770069": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 50)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 50)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 50)"
+  },
+  "1770070": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 61)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Handwerkerscheine (ab St. 61)",
+    "fr": "Assignats jaunes d'artisan (Nv ≧ 61)"
+  },
+  "1770071": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes d'artisan (équipements/Nv ≧ 70)"
+  },
+  "1770072": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes d'artisan II (équipements/Nv ≧ 70)"
+  },
+  "1770073": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes d'artisan (améliorations/Nv ≧ 70)"
+  },
+  "1770074": {
+    "en": "Yellow Crafters' Scrip Exchange (Lv. 70 Items)",
+    "ja": "クラフタースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Handwerkerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes d'artisan (divers/Nv ≧ 70)"
+  },
+  "1770075": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs d'artisan (équipements/Nv 80)"
+  },
+  "1770076": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear) II",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備その2）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung II)",
+    "fr": "Assignats blancs d'artisan II (équipements/Nv 80)"
+  },
+  "1770077": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Items)",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs d'artisan (divers/Nv 80)"
+  },
+  "1770078": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 50)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv50～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 50)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 50)"
+  },
+  "1770079": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 61)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv61～向け）",
+    "de": "Gelbe Sammlerscheine (ab St. 61)",
+    "fr": "Assignats jaunes de récolteur (Nv ≧ 61)"
+  },
+  "1770080": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung)",
+    "fr": "Assignats jaunes de récolteur (équipements/Nv ≧ 70)"
+  },
+  "1770081": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Gear) II",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備その2）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Ausrüstung II)",
+    "fr": "Assignats jaunes de récolteur II (équipements/Nv ≧ 70)"
+  },
+  "1770082": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Augmentation)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・装備強化）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Verstärkung)",
+    "fr": "Assignats jaunes de récolteur (améliorations/Nv ≧ 70)"
+  },
+  "1770083": {
+    "en": "Yellow Gatherers' Scrip Exchange (Lv. 70 Items)",
+    "ja": "ギャザラースクリップ:黄貨の取引（Lv70～向け・その他）",
+    "de": "Gelbe Sammlerscheine (ab St. 70, Anderes)",
+    "fr": "Assignats jaunes de récolteur (divers/Nv ≧ 70)"
+  },
+  "1770084": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung)",
+    "fr": "Assignats blancs de récolteur (équipements/Nv 80)"
+  },
+  "1770085": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear) II",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備その2）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung II)",
+    "fr": "Assignats blancs de récolteur II (équipements/Nv 80)"
+  },
+  "1770086": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Items)",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・その他）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Anderes)",
+    "fr": "Assignats blancs de récolteur (divers/Nv 80)"
+  },
+  "1770087": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770088": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770089": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770090": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770091": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770092": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770093": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770094": {
+    "en": "Primal Gear (IL 100-115)",
+    "ja": "【ILv100～115】蛮神装備",
+    "de": "[G.-St. 100-115] Primae-Ausrüstung",
+    "fr": "[NvObj 100-115] Équipement des Primordiaux"
+  },
+  "1770095": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770096": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770097": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770098": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770099": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770100": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770101": {
+    "en": "Gerolt's Masterworks (IL 110)",
+    "ja": "【ILv110】ゲロルトの名品",
+    "de": "[G.-St. 110] Gerolts Meisterwerke",
+    "fr": "[NvObj 110] Chefs-d'œuvre de Gerolt"
+  },
+  "1770102": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770103": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770104": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770105": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770106": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770107": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770108": {
+    "en": "Ironworks Gear (IL 130)",
+    "ja": "【ILv130】ガーロンド装備",
+    "de": "[G.-St. 130] Garlond-Ausrüstung",
+    "fr": "[NvObj 130] Équipement des Forges"
+  },
+  "1770109": {
+    "en": "Special Arms Materials",
+    "ja": "特殊武器関連アイテム",
+    "de": "Materialien für Spezialwaffen",
+    "fr": "Matériaux pour armes spéciales"
+  },
+  "1770110": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "1770111": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770112": {
+    "en": "Crafter Gear (IL 55)",
+    "ja": "【ILv55】職人向け装備",
+    "de": "[G.-St. 55] Ausrüstung für Handwerker",
+    "fr": "[NvObj 55] Équipement pour vétérans"
+  },
+  "1770113": {
+    "en": "Master Recipes",
+    "ja": "秘伝書",
+    "de": "Meisterrezeptbücher",
+    "fr": "Recettes expertes"
+  },
+  "1770114": {
+    "en": "Gatherer Gear (IL 55)",
+    "ja": "【ILv55】職人向け装備",
+    "de": "[G.-St. 55] Ausrüstung für Sammler",
+    "fr": "[NvObj 55] Équipement pour vétérans"
+  },
+  "1770115": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770116": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770117": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770118": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770119": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770120": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770121": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770122": {
+    "en": "Primal Gear (IL 175-265)",
+    "ja": "【ILv175～265】蛮神装備",
+    "de": "[G.-St. 175-265] Primae-Ausrüstung",
+    "fr": "[NvObj 175-265] Équipement primordial"
+  },
+  "1770123": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770124": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770125": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770126": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770127": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770128": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770129": {
+    "en": "Prototype Gordian Gear (IL 190)",
+    "ja": "【ILv190】プロトゴルド装備",
+    "de": "[G.-St. 190] Gordische Prototyp-Ausrüstung",
+    "fr": "[NvObj 190] Équipement proto-gordien"
+  },
+  "1770130": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770131": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770132": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770133": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770134": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770135": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770136": {
+    "en": "Gordian Gear (IL 210)",
+    "ja": "【ILv210】ゴルディオン装備",
+    "de": "[G.-St. 210] Gordische Ausrüstung",
+    "fr": "[NvObj 210] Équipement gordien"
+  },
+  "1770137": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770138": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770139": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770140": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770141": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770142": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770143": {
+    "en": "Prototype Midan Gear (IL 220)",
+    "ja": "【ILv220】プロトミダース装備",
+    "de": "[G.-St. 220] Midische Prototyp-Ausrüstung",
+    "fr": "[NvObj 220] Équipement proto-midin"
+  },
+  "1770144": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770145": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770146": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770147": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770148": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770149": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770150": {
+    "en": "Primal Gear (IL 240)",
+    "ja": "【ILv240】蛮神風装備",
+    "de": "[G.-St. 240] Ikonen-Ausrüstung",
+    "fr": "[NvObj 240] Équipement primordial"
+  },
+  "1770151": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770152": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770153": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770154": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770155": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770156": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770157": {
+    "en": "Midan Gear (IL 240-245)",
+    "ja": "【ILv240～245】ミダース装備",
+    "de": "[G.-St. 240-245] Midische Ausrüstung",
+    "fr": "[NvObj 240-245] Équipement midin"
+  },
+  "1770158": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770159": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770160": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770161": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770162": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770163": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770164": {
+    "en": "Prototype Alexandrian Gear (IL 250)",
+    "ja": "【ILv250】プロトアレキ装備",
+    "de": "[G.-St. 250] Alexandrische Prototyp-Ausrüstung",
+    "fr": "[NvObj 250] Équipement proto-alexandrin"
+  },
+  "1770165": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770166": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770167": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770168": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770169": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770170": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770171": {
+    "en": "Shire Gear (IL 270)",
+    "ja": "【ILv270】イディルシャイア製装備",
+    "de": "[G.-St. 270] Hinterländische Ausrüstung",
+    "fr": "[NvObj 270] Équipement idylléen"
+  },
+  "1770172": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770173": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770174": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770175": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770176": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770177": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770178": {
+    "en": "Alexandrian Gear (IL 270-275)",
+    "ja": "【ILv270～275】アレキサンダー装備",
+    "de": "[G.-St. 270-275] Alexandrische Ausrüstung",
+    "fr": "[NvObj 270-275] Équipement alexandrin"
+  },
+  "1770179": {
+    "en": "Special Arms Materials",
+    "ja": "特殊武器関連アイテム",
+    "de": "Materialien für Spezialwaffen",
+    "fr": "Matériaux pour armes spéciales"
+  },
+  "1770180": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770181": {
+    "en": "Mounts/Miscellany",
+    "ja": "マウント・雑貨",
+    "de": "Reittiere & Verschiedenes",
+    "fr": "Montures et autres"
+  },
+  "1770182": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770183": {
+    "en": "Adept Gear (IL 130)",
+    "ja": "【ILv130】アデプト装備",
+    "de": "[G.-St. 130] Experten-Ausrüstung",
+    "fr": "[NvObj 130] Équipement d'adepte"
+  },
+  "1770184": {
+    "en": "Tradecraft Keep Tools (IL 200)",
+    "ja": "【ILv200】キープ装備（道具）",
+    "de": "[G.-St. 200] Artefakt-Werkzeuge für Handwerker",
+    "fr": "[NvObj 200] Équipement pour artisans émérites (outils)"
+  },
+  "1770185": {
+    "en": "Tradecraft Keep Gear (IL 200)",
+    "ja": "【ILv200】キープ装備（防具）",
+    "de": "[G.-St. 200] Artefakt-Rüstungen für Handwerker",
+    "fr": "[NvObj 200] Équipement pour artisans émérites (armure)"
+  },
+  "1770186": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "1770187": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770188": {
+    "en": "Master Recipes",
+    "ja": "秘伝書",
+    "de": "Meisterrezeptbücher",
+    "fr": "Recettes expertes"
+  },
+  "1770189": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770190": {
+    "en": "Trailblazer Gear (IL 130)",
+    "ja": "【ILv130】トレイル装備",
+    "de": "[G.-St. 130] Pionier-Ausrüstung",
+    "fr": "[NvObj 130] Équipement de pionnier"
+  },
+  "1770191": {
+    "en": "Fieldcraft Keep Tools (IL 200)",
+    "ja": "【ILv200】キープ装備（道具）",
+    "de": "[G.-St. 200] Artefakt-Werkzeuge für Sammler",
+    "fr": "[NvObj 200] Équipement pour récolteurs émérites (outils)"
+  },
+  "1770192": {
+    "en": "Fieldcraft Keep Gear (IL 200)",
+    "ja": "【ILv200】キープ装備（防具）",
+    "de": "[G.-St. 200] Artefakt-Rüstungen für Sammler",
+    "fr": "[NvObj 200] Équipement pour récolteurs émérites (armure)"
+  },
+  "1770193": {
+    "en": "Bait/Miscellany",
+    "ja": "雑貨・釣り餌",
+    "de": "Köder & Verschiedenes",
+    "fr": "Appât et autres"
+  },
+  "1770194": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770195": {
+    "en": "Folklore Items",
+    "ja": "伝承禄",
+    "de": "Almanachen",
+    "fr": "Recettes expertes"
+  },
+  "1770196": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770197": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770198": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770199": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770200": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770201": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770202": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770203": {
+    "en": "Primal/Auspice Gear (IL 320-395)",
+    "ja": "【ILv320～395】蛮神・四聖獣装備",
+    "de": "[G.-St. 320-395] Primae & Tierheiligen-Ausrüstung",
+    "fr": "[NvObj 320-395] Équipement primordial et des animaux sacrés"
+  },
+  "1770204": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770205": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770206": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770207": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770208": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770209": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770210": {
+    "en": "Genta Gear (IL 320)",
+    "ja": "【ILv320】源太装備",
+    "de": "[G.-St. 320] Genta-Ausrüstung",
+    "fr": "[NvObj 320] Équipement Genta"
+  },
+  "1770211": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770212": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770213": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770214": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770215": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770216": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770217": {
+    "en": "Genji Gear (IL 340-345)",
+    "ja": "【ILv340～345】源氏装備",
+    "de": "[G.-St. 340-345] Genji-Ausrüstung",
+    "fr": "[NvObj 340-345] Équipement Genji"
+  },
+  "1770218": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770219": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770220": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770221": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770222": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770223": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770224": {
+    "en": "Carborundum Gear (IL 350)",
+    "ja": "【ILv350】カーボランダム装備",
+    "de": "[G.-St. 350] Karborund-Ausrüstung",
+    "fr": "[NvObj 350] Équipement en carborundum"
+  },
+  "1770225": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770226": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770227": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770228": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770229": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770230": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770231": {
+    "en": "Ryumyaku Gear (IL 370)",
+    "ja": "【ILv370】龍脈装備",
+    "de": "[G.-St. 370] Ryumyaku-Ausrüstung",
+    "fr": "[NvObj 370] Équipement Ryûmyaku"
+  },
+  "1770232": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770233": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770234": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770235": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770236": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770237": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770238": {
+    "en": "Diamond Gear (IL 370-375)",
+    "ja": "【ILv370～375】ダイヤ装備",
+    "de": "[G.-St. 370-375] Diamant-Ausrüstung",
+    "fr": "[NvObj 370-375] Équipement en diamant"
+  },
+  "1770239": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770240": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770241": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770242": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770243": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770244": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770245": {
+    "en": "Omicron Gear (IL 380)",
+    "ja": "【ILv380】オミクロン装備",
+    "de": "[G.-St. 380] Omikron-Ausrüstung",
+    "fr": "[NvObj 380] Équipement d'Omicron"
+  },
+  "1770246": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770247": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770248": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770249": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770250": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770251": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770252": {
+    "en": "Scaevan Gear (IL 400)",
+    "ja": "【ILv400】スカエウァ装備",
+    "de": "[G.-St. 400] Scaeva-Ausrüstung",
+    "fr": "[NvObj 400] Équipement Scaeva"
+  },
+  "1770253": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770254": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770255": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770256": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770257": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770258": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770259": {
+    "en": "Omega Gear (IL 400-405)",
+    "ja": "【ILv400～405】オメガ装備",
+    "de": "[G.-St. 405] Omega-Ausrüstung",
+    "fr": "[NvObj 400-405] Équipement d'Oméga"
+  },
+  "1770260": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770261": {
+    "en": "Mounts/Miscellany",
+    "ja": "マウント・雑貨",
+    "de": "Reittiere & Verschiedenes",
+    "fr": "Montures et autres"
+  },
+  "1770262": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770263": {
+    "en": "Crafter Gear (IL 220-230)",
+    "ja": "【ILv220～230】上級職人向け装備",
+    "de": "[G.-St. 220-230] Ausrüstung für Meister-Handwerker",
+    "fr": "[NvObj 220-230] Équipement pour artisans chevronnés"
+  },
+  "1770264": {
+    "en": "Tradecraft King Tools (IL 330)",
+    "ja": "【ILv330】キング装備（道具）",
+    "de": "[G.-St. 330] Königs-Werkzeuge",
+    "fr": "[NvObj 330] Équipement royal (outils)"
+  },
+  "1770265": {
+    "en": "Tradecraft King Gear (IL 330)",
+    "ja": "【ILv330】キング装備（防具）",
+    "de": "[G.-St. 330] Königs-Rüstungen",
+    "fr": "[NvObj 330] Équipement royal (armure)"
+  },
+  "1770266": {
+    "en": "Handking Gear (IL 330-350)",
+    "ja": "【ILv330～350】キングハンド装備",
+    "de": "[G.-St. 330-350] Handwerkerkönig-Ausrüstung",
+    "fr": "[NvObj 330-350] Équipement royal"
+  },
+  "1770267": {
+    "en": "Miscellany",
+    "ja": "雑貨",
+    "de": "Verschiedenes",
+    "fr": "Divers"
+  },
+  "1770268": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770269": {
+    "en": "Master Recipes",
+    "ja": "秘伝書",
+    "de": "Meisterrezeptbücher",
+    "fr": "Recettes expertes"
+  },
+  "1770270": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770271": {
+    "en": "Gatherer Gear (IL 220-230)",
+    "ja": "【ILv220～230】上級職人向け装備",
+    "de": "[G.-St. 220-230] Ausrüstung für Meister-Sammler",
+    "fr": "[NvObj 220-230] Équipement pour récolteurs chevronnés"
+  },
+  "1770272": {
+    "en": "Fieldcraft King Tools (IL 330)",
+    "ja": "【ILv330】キング装備道具",
+    "de": "[G.-St. 330] Königs-Werkzeuge",
+    "fr": "[NvObj 330] Équipement royal (outils)"
+  },
+  "1770273": {
+    "en": "Fieldcraft King Gear (IL 330)",
+    "ja": "【ILv330】キング装備防具",
+    "de": "[G.-St. 330] Königs-Rüstungen",
+    "fr": "[NvObj 330] Équipement royal (armure)"
+  },
+  "1770274": {
+    "en": "Landking Gear (IL 330-350)",
+    "ja": "【ILv330～350】キングランド装備防具",
+    "de": "[G.-St. 330-350] Sammlerkönig-Ausrüstung",
+    "fr": "[NvObj 330-350] Équipement royal"
+  },
+  "1770275": {
+    "en": "Bait/Miscellany",
+    "ja": "雑貨・釣り餌",
+    "de": "Köder & Verschiedenes",
+    "fr": "Appât et autres"
+  },
+  "1770276": {
+    "en": "Materials",
+    "ja": "素材",
+    "de": "Materialien",
+    "fr": "Matériaux"
+  },
+  "1770277": {
+    "en": "Folklore Items",
+    "ja": "伝承禄",
+    "de": "Almanachen",
+    "fr": "Recettes expertes"
+  },
+  "1770278": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770279": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770280": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770281": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770282": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770283": {
+    "en": "Seasonal Event Prizes I",
+    "ja": "シーズナルイベント報酬の交換（その1）",
+    "de": "Saisonale Gegenstände I",
+    "fr": "Récompenses d'événements saisonniers (1)"
+  },
+  "1770284": {
+    "en": "Seasonal Event Prizes II",
+    "ja": "シーズナルイベント報酬の交換（その2）",
+    "de": "Saisonale Gegenstände II",
+    "fr": "Récompenses d'événements saisonniers (2)"
+  },
+  "1770285": {
+    "en": "Hammered Frogments Exchange",
+    "ja": "ドワーフ緑硬貨の取引",
+    "de": "Zwergenmünzen",
+    "fr": "Échange de médailles naines"
+  },
+  "1770286": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770287": {
+    "en": "Totem Gear (Warrior of Light)",
+    "ja": "報酬装備の取引（ウォーリア・オブ・ライト）",
+    "de": "Krieger des Lichts (Belohnungen)",
+    "fr": "Équipements totémiques (Guerrier de la Lumière primordial)"
+  },
+  "1770288": {
+    "en": "Eulmoran Certificate of Novelty (Weapons)",
+    "ja": "ユールモアの手形G2との交換（武器）",
+    "de": "Eulmore-Marken II (Waffen)",
+    "fr": "Avoirs d'Eulmore II (armes)"
+  },
+  "1770289": {
+    "en": "Eulmoran Certificate of Novelty (Gear)",
+    "ja": "ユールモアの手形G2との交換（防具）",
+    "de": "Eulmore-Marken II (Rüstungen)",
+    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+  },
+  "1770290": {
+    "en": "Eulmoran Certificate of Novelty (Accessories)",
+    "ja": "ユールモアの手形G2との交換（アクセサリー）",
+    "de": "Eulmore-Marken II (Accessoires)",
+    "fr": "Avoirs d'Eulmore II (accessoires)"
+  },
+  "1770291": {
+    "en": "Eulmoran Certificate of Novelty (Weapons)",
+    "ja": "ユールモアの手形G2との交換（武器）",
+    "de": "Eulmore-Marken II (Waffen)",
+    "fr": "Avoirs d'Eulmore II (armes)"
+  },
+  "1770292": {
+    "en": "Eulmoran Certificate of Novelty (Gear)",
+    "ja": "ユールモアの手形G2との交換（防具）",
+    "de": "Eulmore-Marken II (Rüstungen)",
+    "fr": "Avoirs d'Eulmore II (pièces d'armure)"
+  },
+  "1770293": {
+    "en": "Eulmoran Certificate of Novelty (Accessories)",
+    "ja": "ユールモアの手形G2との交換（アクセサリー）",
+    "de": "Eulmore-Marken II (Accessoires)",
+    "fr": "Avoirs d'Eulmore II (accessoires)"
+  },
+  "1770294": {
+    "en": "Augmented Neo-Ishgardian Equipment (Weapons)",
+    "ja": "ネオイシュガルディアン強化装備の取引（武器）",
+    "de": "Neo-Ishgarder Verstärkungen (Waffen)",
+    "fr": "Amélioration d'armes néo-ishgardaises"
+  },
+  "1770295": {
+    "en": "Augmented Neo-Ishgardian Equipment (Gear)",
+    "ja": "ネオイシュガルディアン強化装備の取引（防具）",
+    "de": "Neo-Ishgarder Verstärkungen (Rüstungen)",
+    "fr": "Amélioration de pièces d'armure néo-ishgardaises"
+  },
+  "1770296": {
+    "en": "Augmented Neo-Ishgardian Equipment (Accessories)",
+    "ja": "ネオイシュガルディアン強化装備の取引（アクセサリー）",
+    "de": "Neo-Ishgarder Verstärkungen (Accessoires)",
+    "fr": "Amélioration d'accessoires néo-ishgardais"
+  },
+  "1770297": {
+    "en": "Wolf Mark Weapons (IL 55)",
+    "ja": "ILv55武器の交換",
+    "de": "[G.-St. 55] Waffen",
+    "fr": "Armes (NvObj 55)"
+  },
+  "1770298": {
+    "en": "Wolf Mark Weapons (IL 55)",
+    "ja": "ILv55武器の交換",
+    "de": "[G.-St. 55] Waffen",
+    "fr": "Armes (NvObj 55)"
+  },
+  "1770299": {
+    "en": "Wolf Mark Gear (IL 55)",
+    "ja": "ILv55防具の交換",
+    "de": "[G.-St. 55] Rüstungen",
+    "fr": "Armures (NvObj 55)"
+  },
+  "1770300": {
+    "en": "Wolf Mark Gear (IL 55)",
+    "ja": "ILv55防具の交換",
+    "de": "[G.-St. 55] Rüstungen",
+    "fr": "Armures (NvObj 55)"
+  },
+  "1770301": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770302": {
+    "en": "Materia",
+    "ja": "マテリア",
+    "de": "Materia",
+    "fr": "Matérias"
+  },
+  "1770303": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770304": {
+    "en": "Shire Gear Augmentation (IL 270 DoW)",
+    "ja": "【ILv270】イディルシャイア製装備の強化（ファイター）",
+    "de": "[G.-St. 270] Verstärkung von hinterländischer Ausrüstung (Krieger)",
+    "fr": "[NvObj 270] Amélioration d'équipements idylléens (guerre)"
+  },
+  "1770305": {
+    "en": "Shire Gear Augmentation (IL 270 DoM)",
+    "ja": "【ILv270】イディルシャイア製装備の強化（ソーサラー）",
+    "de": "[G.-St. 270] Verstärkung von hinterländischer Ausrüstung (Magier)",
+    "fr": "[NvObj 270] Amélioration d'équipements idylléens (magie)"
+  },
+  "1770306": {
+    "en": "Scaevan Gear Augmentation (IL 400 DoW)",
+    "ja": "【ILv400】スカエウァ装備の強化（ファイター）",
+    "de": "[G.-St. 400] Verstärkung von Scaeva-Ausrüstung (Krieger)",
+    "fr": "[NvObj 400] Amélioration d'équipements Scaeva (guerre)"
+  },
+  "1770307": {
+    "en": "Scaevan Gear Augmentation (IL 400 DoM)",
+    "ja": "【ILv400】スカエウァ装備の強化（ソーサラー）",
+    "de": "[G.-St. 400] Verstärkung von Scaeva-Ausrüstung (Magier)",
+    "fr": "[NvObj 400] Amélioration d'équipements Scaeva (magie)"
   }
 }

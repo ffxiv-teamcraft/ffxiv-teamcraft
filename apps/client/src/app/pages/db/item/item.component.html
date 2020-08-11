@@ -59,6 +59,7 @@
             <source src="https://www.garlandtools.org/files/orchestrion/{{xivapiItem.ItemAction.Data0}}.ogg"
                     type="audio/ogg">
           </audio>
+          <img *ngIf="xivapiItem.IsFish" [src]="xivapiItem.ingameDrawing | xivapiIcon" alt="Ingame drawing">
         </div>
         <app-i18n-display fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column" fxLayoutGap="5px"
                           [value]="xivapiItem | xivapiL12n: 'items'"></app-i18n-display>

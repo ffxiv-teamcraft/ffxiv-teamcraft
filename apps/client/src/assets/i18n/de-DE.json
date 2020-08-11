@@ -15,6 +15,7 @@
   "Network_error_logged_out": "Du wurdest abgemeldet, weil ein Netzwerkfehler aufgetreten ist. Wenn das Problem weiterhin besteht, kontaktiere bitte Miu#1568 auf dem Discord-Server.",
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
   "Patch_notes": "{{version}} Änderungen",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -47,6 +48,7 @@
   "See_code_github": "Quellcode auf Github ansehen",
   "Support_on_patreon": "Unterstütze das Projekt auf Patreon",
   "Access_patreon_page": "Gehe zu unserer Patreon-Seite",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "Standard",
   "Delete": "Löschen",
   "Copy_isearch": "isearch Makro kopieren",
@@ -158,7 +160,8 @@
     "Share_link_copied": "Teilbarer-Link wurde in die Zwischenablage kopiert",
     "Copy": "Kopieren",
     "Open_in_main_window": "Im Hauptfenster öffnen",
-    "Example": "Beispiel"
+    "Example": "Beispiel",
+    "Change": "Ändern"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -411,12 +414,13 @@
     "Always_disable_hq_suggestions": "Automatische HQ-Vorschläge in Listen immer deaktivieren",
     "Ignored_inventories": "Inventare ignorieren",
     "Enable_tutorials": "Tutorialsystem aktivieren",
-    "Scrolling_behavior": "Scrolling behavior",
-    "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
-    "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
-    "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
-    "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Scrolling_behavior": "Scrollverhalten",
+    "Scrolling_behavior_explain": "Legt fest, wann in Listen-Elementen eine Scrollbar erscheint. \"Standard\" bedeutet, dass nach 12 Gegenständen eine Scrollbar erscheint.",
+    "Enable_auto_log_check": "Gegenstände automatisch im Notizbuch als erledigt markieren, sobald sie gesammelt/hergestellt wurden",
+    "Enable_metrics_capture": "Metrikerfassung aktivieren",
+    "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
+    "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
+    "Metrics_capture_folder": "Metrik-Logordner",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -436,9 +440,9 @@
       "Networking": "Netzwerk",
       "Theme": "Theme",
       "Search": "Suche",
-      "Lists": "Lists",
+      "Lists": "Listen",
       "Other": "Anderes",
-      "Sekrit": "Sekrit"
+      "Sekrit": "Geheim"
     },
     "REGIONS": {
       "Global": "Global",
@@ -464,11 +468,11 @@
     "Veteran": "Veteran",
     "Autofill_from_packets": "Attribute durch Paketerfassung automatisch ausfüllen",
     "Autofill_stats_explain": "Wechsel zum gewünschten Job, um diesen zu aktualisieren. Schließe diese Einblendung, wenn du damit fertig bist. Bitte achte darauf, dass du kein aktives Bufffood hast, ansonsten werden deine Werte mit diesem gespeichert und dadurch verfälscht.",
-    "Open_public_profile": "Open public profile",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
+    "Open_public_profile": "Öffentliches Profil öffnen",
+    "Community_contributions": "Community-Beiträge",
+    "Fishing_rankings": "Fischer-Ranglisten",
+    "Total_rankings": "Gesamtrangliste",
+    "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -545,10 +549,12 @@
     "Reset_panel": "Alle Elemente dieses Panels zurücksetzen",
     "Progression_tooltip_materials": "Erhaltene Materialien: {{amount}}%",
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
+    "Final_item": "Endprodukt",
+    "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
     "SCROLLING": {
-      "Default": "Default",
-      "Only_large": "Only large lists",
-      "Never": "Never"
+      "Default": "Standard",
+      "Only_large": "Nur große Listen",
+      "Never": "Niemals"
     },
     "COLORS": {
       "RED": "Rot",
@@ -978,7 +984,7 @@
     },
     "CONFIGURATION": {
       "Job": "Job",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
+      "Job_not_configured": "Du hast diesen Job noch nicht konfiguriert. Gehe in dein Profil, um ihn zu konfigurieren und die Attribute zu speichern.",
       "Job_not_configured_anonymous": "Bitte gib für eine akkurate Simulation deine Attribute an oder melde dich mit deinem Konto an",
       "Select_job": "Wähle einen Job",
       "Craftsmanship": "Kunstfertigkeit",
@@ -1140,9 +1146,9 @@
     "Unit_price": "Einzelpreis",
     "History": "Historie",
     "Purchase_date": "Datum",
-    "More_on_mogboard": "Mehr Details auf mogboard.com",
     "More_on_universalis": "Weitere Infos zu Universalis",
-    "Server": "Welt"
+    "Server": "Welt",
+    "Last_updated": "Letzte Aktualisierung"
   },
   "COMMENTS": {
     "Title": "Kommentare"
@@ -1162,7 +1168,7 @@
     "Lists_created_counter": "{{amount}} Listen wurden mit FFXIV Teamcraft erstellt",
     "Support_patreon": "Unterstütze uns auf Patreon",
     "Donation_button": "Mach eine einmalige Spende",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Teamcraft-Merch kaufen",
     "Features_header": "Lege los!",
     "DESCRIPTION": {
       "Lists": "Erstelle Listen um Informationen über alle Materialien zu erhalten, Teile sie mit deinen Freunden, alles startet hier! Suche einfach nach einem Gegenstand, filtere nach spezifischen Gegenstände, und fang an Dinge herzustellen.",
@@ -1321,6 +1327,8 @@
     "Contribute_description": "Du findest uns auf GitHub um dich am Projekt zu beteiligen. Auch Anfänger sind willkommen!\n\nIhr könnt aber nicht nur mit Code beitragen. Ideen für neue Features und Fehlermeldungen helfen ebenso um den bestmöglichen Inhalt für jeden zu liefern. Ein Danke an alle, welche sich Zeit zum testen und Fehler-finden nehmen.",
     "Patreon_title": "Unterstütze uns auf Patreon",
     "Patreon_description": "Patreon ist eine Plattform, auf der du monatlich Geld spenden kannst, um ein Projekt zu unterstützen. Dieses Geld für für die Bezahlung von Servern, Zertifikaten und Geschenken benutzt und ermöglicht es dem Entwickler mehr Zeit in das Projekt zu investieren.\n\nBasierend an dem Betrag den du gespendet hast, erhältst du einige nette Boni als Dank für deine Unterstützung:",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "Spezieller Rang auf dem Discord-Server mit Zugang zu den Unterstützer-Bereichen, in denen du sehen kannst, an was wir grade arbeiten (${{price}})",
       "Profile_badge": "Spezielles Abzeichen auf deinem Teamcraft-Profil (${{price}})",
@@ -1791,6 +1799,14 @@
       "Message": "Das höchste iLvl beim Herstellen, in dem dieser Gegenstand benutzt werden kann, ist {{ilvl}}",
       "Recipe_ilvl": "Min. resultierendes iLvl",
       "Company_workshop": "FG-Werkstätte"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Gegenstände die leicht gesammelt werden können",
+      "Message": "Kann auf Stufe {{level}} in einer nicht zeitgebundenen Abbaustelle gesammelt werden"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Message": "You can extract a materia from this gear piece"
     }
   },
   "VERSION_LOCK": {
@@ -1974,29 +1990,131 @@
       "Min_control": "Filtert nach minimaler Kontrolle. Hier werden nur Rotationen gefunden, bei denen die benötigte Kontrolle kleiner als der von dir angegebene Wert ist.",
       "Min_cp": "Filtert nach minimaler HP. Hier werden nur Rotationen gefunden, bei denen die benötigte HP kleiner als der von dir angegebene Wert ist.",
       "Set_selector": "Wähle aus, welcher Beruf für die Simulation verwendet werden soll, um die Erfolgsrate der Rotation anzuzeigen."
+    },
+    "METRICS": {
+      "Welcome_time_range": "Willkommen auf der Metriken-Übersichtsseite. Hier kannst du Zeiträume auswählen, für die die angezeigten Daten angezeigt werden sollen. Standardmäßig geht dieser bis heute.",
+      "Select_dashboard": "Du kannst mehrere Übersichtsseiten haben und leicht zwischen ihnen wechseln, um schnell die Informationen zu sehen, die für dich wichtig sind.",
+      "Edit_dashboard": "Mit dieser Schaltfläche kannst du in den Bearbeitungsmodus wechseln (Nur für Nicht-Standard-Übersichtsseiten verfügbar).",
+      "Create_dashboard": "Erstelle damit einfach deine eigenen Übersichtsseiten. Vergesse aber nicht, diese nach der Erstellung auch zu bearbeiten, denn sonst ist es nur eine Kopie der Standard-Übersichtsseite.",
+      "Delete_layout": "Um eine Übersichtsseite loszuwerden, klicke auf diese Schaltfläche, bestätige und Simsalabim, sie ist weg (Löschung kann nicht rückgängig gemacht werden).",
+      "Export_layout": "Du möchtest deine verdammt gut gelungene Übersichtsseite mit deinen Freunden teilen? Dann klicke auf diese Schaltfläche, um den Exportcode für die aktuell ausgewählte Übersichtsseite zu kopieren.",
+      "Import_layout": "Wenn jemand eine Übersichtsseite mit dir durch einen Exportcode teilt, verwende diese Schaltfläche, um sie zu importieren.",
+      "EDITOR": {
+        "Welcome_add_column": "Willkommen beim Übersichtsseiten-Editor. Mit dieser Schaltfläche kannst du Spalten hinzufügen (bis zu 5).",
+        "Save": "Vergiss nicht die Änderungen zu speichern, nachdem du deine Übersichtsseite bearbeitet hast.",
+        "Revert": "Oder, sollt dir nicht gefallen, was du geändert hast, verwende diese Schaltfläche, um zum ursprünglichen Layout zurückzukehren, dass du hattest, bevor du es bearbeitet hast.",
+        "Delete_column": "Möchtest du eine Spalte entfernen? Hier kannst du es!",
+        "Add_panel": "Klicke hier, um ein neues Element zu erstellen.",
+        "Reorder": "Per Drag & Drop kannst du die Elemente überall dahin schieben, wo du sie haben willst.",
+        "Data_type": "Wähle zuerst den Typ der Metrik aus, den du verwenden möchtest.",
+        "Filters": "Filtere anschließend die Daten, damit nur das angezeigt wird, was du auch sehen möchtest. Hierbei hast du auch die Möglichkeit Filter zu kombinieren und zu invertieren.",
+        "Title": "Lege einen Titel für das Element fest",
+        "Display_type": "Wähle die Komponente aus, die du verwenden möchtest, um deine Daten anzuzeigen und füge entsprechend die Eingaben hinzu."
+      }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "Diesen Fehler automatisch korrigieren",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
-      "Email": "Email",
+      "X_characters_linked": "{{amount}} Charakter(e) verknüpft",
+      "Email": "E-Mail",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "Keine Benutzer gefunden",
+      "Integrity_check": "Integritätsprüfung",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "Suchmodus",
         "UID": "UID",
-        "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "EMAIL": "E-Mail",
+        "CHARACTER": "Charakter"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "Profil öffnen",
+        "Check": "Integrität prüfen"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "Alle verlinkten Charaktere sind gültig"
       }
     }
+  },
+  "METRICS": {
+    "Title": "Metriken-Übersicht",
+    "Today": "Heute",
+    "This_week": "Diese Woche",
+    "This_month": "Dieser Monat",
+    "Add_new_column": "Neue Spalte hinzufügen (max 5)",
+    "Default_dashboard": "Standard-Übersichtsseite",
+    "Copy_to_clipboard": "Exportcode in die Zwischenablage kopieren",
+    "Export_copied_to_clipboard": "Exportcode wurde in die Zwischenablage kopiert",
+    "Import_dashboard": "Übersichtsseite importieren",
+    "Export_code": "Übersichtsseiten-Exportcode",
+    "Import_failed": "Import der Übersichtsseite fehlgeschlagen. Der Code ist ungültig.",
+    "Import_success": "Übersichtsseite importiert und ausgewählt",
+    "Nothing_to_show": "Keine anzuzeigenden Daten",
+    "Nothing_to_show_description": "Stelle sicher, dass du einen Zeitraum ausgewählt hast, in dem TC Daten erfasst hat und stelle sicher, dass diese Option aktiviert ist (Einstellungen -> Desktop -> Metriken erfassen aktivieren)",
+    "SOURCES": {
+      "UNKNOWN": "Unbekannt",
+      "GATHERING": "Sammeln",
+      "CRAFTING": "Herstellen",
+      "FISHING": "Fischen",
+      "VENDOR": "Verkäufer",
+      "TELEPORT": "Teleportieren",
+      "MARKETBOARD": "Marktbrett"
+    },
+    "TYPES": {
+      "ANY": "Alle",
+      "CURRENCY": "Währung",
+      "ITEM": "Gegenstand"
+    },
+    "TABLE": {
+      "Type": "Typ",
+      "Entry_label": "Bezeichner",
+      "Value": "Wert",
+      "Source": "Quelle",
+      "Timestamp": "Zeitpunkt"
+    },
+    "PIE_METRICS": {
+      "Amount": "Anzahl pro Gegenstand",
+      "Source": "Anzahl pro Quelle"
+    },
+    "EDITOR": {
+      "Data": "Daten",
+      "Data_type": "Typ",
+      "Filter": "Filter",
+      "Accepted_items": "Akzeptierte Gegenstände",
+      "Accepted_sources": "Akzeptierte Quellen",
+      "Display": "Anzeige",
+      "Display_type": "Anzeige-Komponente",
+      "Title": "Titel",
+      "Font_size": "Schriftgröße",
+      "Value_label": "Werte-Bezeichnung",
+      "Pie_metric": "Metrik",
+      "Add_filter": "Filter hinzufügen",
+      "Operator": "Operator",
+      "Cannot_edit_default": "Du kannst das Standardlayout nicht bearbeiten. Erstelle stattdessen ein neues Layout, um dieses anzupassen",
+      "Cannot_delete_default": "Das Standardlayout kann nicht gelöscht werden",
+      "FILTER_TIPS": {
+        "FishFilter": "Nur Fische akzeptieren, die aus Fischvorkommen stammen",
+        "ItemFilter": "Nur eine bestimmte Gruppe von Gegenständen akzeptieren",
+        "NoFilter": "Alles akzeptieren",
+        "ObtentionFilter": "Nur Werte > 0 akzeptieren",
+        "SourceFilter": "Nur eine bestimmte Gruppe von Quellen akzeptieren",
+        "SpendingFilter": "Nur Werte < 0 akzeptieren",
+        "GilFilter": "Nur Gil-Einträge akzeptieren"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Aggregierte Werte",
+        "histogram": "Entwicklung im Laufe der Zeit",
+        "pie-chart": "Kuchendiagramm",
+        "table": "Tabelle aller passenden Einträge"
+      }
+    }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "Overlay für die Gegenstände-Suche öffnen",
+    "Intro_message": "Suche nach einem Gegenstand, um Detail-, Inventar- und Marktbrett-Informationen anzusehen",
+    "Placeholder": "Gegenstandsname",
+    "None_inside_inventory": "Dieser Gegenstand ist in keinem Inventar.",
+    "Open_in_main_window": "Im Hauptfenster öffnen",
+    "Marketboard_informations": "Marktbrett-Informationen"
   }
 }

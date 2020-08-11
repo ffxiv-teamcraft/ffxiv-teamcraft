@@ -38,6 +38,12 @@ export class ItemSourcesDisplayComponent {
   @Input()
   overlay = false;
 
+  @Input()
+  layoutAlign = 'flex-start flex-start';
+
+  @Input()
+  flex = '0 1 auto';
+
   dataTypes = DataType;
 
   constructor(private modal: NzModalService, private i18n: I18nToolsService,

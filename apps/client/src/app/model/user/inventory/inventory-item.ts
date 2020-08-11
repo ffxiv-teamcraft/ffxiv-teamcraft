@@ -6,6 +6,7 @@ export interface InventoryItem {
   slot: number;
   hq: boolean;
   // Can also contain collectability for when the item can't be bound.
-  spiritBond:number;
+  spiritBond: number;
   price?: number;
+  containerName?: string;
 }

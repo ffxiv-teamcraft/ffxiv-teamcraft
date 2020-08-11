@@ -19,7 +19,9 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
+      </div>
       <ng-container *ngIf="user$ | async as user">
         <nz-form-item>
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
@@ -113,7 +115,9 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Search' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Search' | translate"></nz-divider>
+      </div>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -143,7 +147,9 @@
                  nz-checkbox>{{'SETTINGS.Show_all_alarms' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Lists' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Lists' | translate"></nz-divider>
+      </div>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Scrolling_behavior' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Scrolling_behavior_explain' | translate">
@@ -198,7 +204,9 @@
                  nz-checkbox>{{'SETTINGS.Enable_item_tags' | translate}}</label>
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
+      </div>
       <nz-form-item class="empty-label">
         <nz-form-label [nzSpan]="5"></nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -335,7 +343,9 @@
   </nz-tab>
   <nz-tab *ngIf="platform.isDesktop()" [nzTitle]="'SETTINGS.Desktop' | translate">
     <div fxLayout="column" fxLayoutGap="5px">
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.General' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.General' | translate"></nz-divider>
+      </div>
       <div>
         <label [(ngModel)]="alwaysOnTop" (ngModelChange)="alwaysOnTopChange($event)" nz-checkbox>
           {{'SETTINGS.Always_on_top' | translate}}
@@ -366,7 +376,9 @@
           {{'SETTINGS.Clickthrough_overlay' | translate}}
         </label>
       </div>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Networking' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Networking' | translate"></nz-divider>
+      </div>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'SETTINGS.Proxy' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -396,7 +408,9 @@
           <input nz-input [(ngModel)]="proxyBypass" (blur)="ipc.send('proxy-bypass', proxyBypass)">
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Autofill_completion' | translate"></nz-divider>
+      </div>
       <nz-form-item>
         <nz-form-label [nzSpan]="5">{{'Sound' | translate}}</nz-form-label>
         <nz-form-control [nzSpan]="12">
@@ -409,7 +423,9 @@
                      [nzStep]="1"></nz-slider>
         </nz-form-control>
       </nz-form-item>
-      <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Packet_capture' | translate"></nz-divider>
+      </div>
       <nz-card>
         <div fxLayout="column">
           <div>
@@ -445,14 +461,21 @@
               {{'SETTINGS.Enable_auto_log_check' | translate}}
             </label>
           </div>
-<!--          TODO: uncomment this once metrics feature is ready-->
-<!--          <div>-->
-<!--            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip-->
-<!--                   [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">-->
-<!--              {{'SETTINGS.Enable_metrics_capture' | translate}}-->
-<!--            </label>-->
-<!--            <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>-->
-<!--          </div>-->
+          <div>
+            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
+                   [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
+              {{'SETTINGS.Enable_metrics_capture' | translate}}
+            </label>
+            <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>
+          </div>
+          <nz-form-item nzFlex *ngIf="settings.playerMetricsEnabled" fxLayoutAlign="flex-start center">
+            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Metrics_capture_folder' | translate}}</nz-form-label>
+            <nz-form-control>
+              <nz-input-group [nzAddOnBefore]="metricsPath">
+                <button nz-button nzType="primary" (click)="changeMetricsPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
           <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
             <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
             <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"
@@ -470,7 +493,9 @@
         {{'SETTINGS.Clear_cache' | translate}}
       </button>
       <ng-container *ngIf="(user$ | async)?.sekrit">
-        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Sekrit' | translate"></nz-divider>
+        <div>
+          <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Sekrit' | translate"></nz-divider>
+        </div>
         <nz-input-group nzSearch nzSize="default" [nzAddOnAfter]="suffixButton">
           <input [(ngModel)]="settings.xivapiKey" nz-input
                  placeholder="XIVAPI Private key (saved in localstorage, not database, never database)"

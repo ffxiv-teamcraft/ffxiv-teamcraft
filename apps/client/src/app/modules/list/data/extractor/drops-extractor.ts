@@ -33,7 +33,7 @@ export class DropsExtractor extends AbstractExtractor<Drop[]> {
         if (partial !== undefined) {
           const monsterId: string = Math.floor(d % 1000000).toString();
           const zoneid = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? this.lazyData.data.monsters[monsterId].positions[0].zoneid : partial.obj.z;
-          const mapid = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? this.lazyData.data.monsters[monsterId].positions[0].map : partial.obj.z;
+          const mapid = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? this.lazyData.data.monsters[monsterId].positions[0].map : this.lazyData.getMapIdByZoneId(partial.obj.z);
           const position = this.lazyData.data.monsters[monsterId] !== undefined && this.lazyData.data.monsters[monsterId].positions[0] ? {
               zoneid: zoneid,
               x: +this.lazyData.data.monsters[monsterId].positions[0].x,

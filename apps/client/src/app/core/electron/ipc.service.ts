@@ -19,6 +19,10 @@ export class IpcService {
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
 
+  public get ready(): boolean {
+    return this._ipc !== undefined;
+  }
+
   public get itemInfoPackets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('itemInfo'));
   }
@@ -147,27 +151,29 @@ export class IpcService {
 
   public set overlayUri(uri: string) {
     this._overlayUri = uri;
-    this.handleOverlayChange();
+    if (this.ready) {
+      this.handleOverlayChange();
+    }
   }
 
   public on(channel: string, cb: EventCallback): void {
-    if (this._ipc !== undefined) {
+    if (this.ready) {
       this._ipc.on(channel, (event, ...args) => {
-        this.zone.run(() => cb(event, ...args))
+        this.zone.run(() => cb(event, ...args));
       });
     }
   }
 
   public once(channel: string, cb: EventCallback): void {
-    if (this._ipc !== undefined) {
+    if (this.ready) {
       this._ipc.once(channel, (event, ...args) => {
-        this.zone.run(() => cb(event, ...args))
+        this.zone.run(() => cb(event, ...args));
       });
     }
   }
 
   public send(channel: string, data?: any): void {
-    if (this._ipc !== undefined) {
+    if (this.ready) {
       return this._ipc.send(channel, data);
     }
   }

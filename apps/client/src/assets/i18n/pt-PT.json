@@ -15,6 +15,7 @@
   "Network_error_logged_out": "Foi detectado um erro de ligação, portanto foi desligado. Se o problema persistir contacte Miu no Discord.",
   "Hide_zone_duplicates": "Esconder zonas duplicada (itens que estão em várias zonas são exibidos apenas uma vez)",
   "Patch_notes": "{{version}} changes",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Conta já está a ser utilizada",
     "auth/email-already-in-use": "Email já está a ser utilizado",
@@ -47,6 +48,7 @@
   "See_code_github": "Veja o código-fonte no github",
   "Support_on_patreon": "Apoiar o projeto em patreon",
   "Access_patreon_page": "Vá á nossa página do Patreon",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "Por defeito",
   "Delete": "Eliminar",
   "Copy_isearch": "Copiar o macro isearch",
@@ -158,7 +160,8 @@
     "Share_link_copied": "Share link copied to clipboard",
     "Copy": "Copy",
     "Open_in_main_window": "Open in main window",
-    "Example": "Example"
+    "Example": "Example",
+    "Change": "Change"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -417,6 +420,7 @@
     "Enable_metrics_capture": "Enable metrics capture",
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
+    "Metrics_capture_folder": "Metrics log folder",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -545,6 +549,8 @@
     "Reset_panel": "Reset all the items of this panel",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
+    "Final_item": "Final item",
+    "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
@@ -1140,9 +1146,9 @@
     "Unit_price": "Preço unitário",
     "History": "Histórico",
     "Purchase_date": "Data",
-    "More_on_mogboard": "Mais detalhes no mogboard",
     "More_on_universalis": "More details on universalis",
-    "Server": "Server"
+    "Server": "Server",
+    "Last_updated": "Last update"
   },
   "COMMENTS": {
     "Title": "Comentários"
@@ -1321,6 +1327,8 @@
     "Contribute_description": "You can find us on github to contribute to the project, even if you're a beginner, everybody is welcome !\n\nBut contributing isn't only about the code, feature requests and bug reports help the tool a lot by providing best quality content possible for everyone, thank to the people who take some time to stress test it and find bugs.",
     "Patreon_title": "Support us on patreon",
     "Patreon_description": "Patreon is a platform where you can give a money to support a project every month. This money is used to pay for servers, certificates, giveaways and to free more and more time for the developer to work on the project.\n\nDepending on the amount you pledge, you can get some nice benefits in order to thank your contribution:",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "Special rank on the discord server, giving you access to supporters channel to see what's we're working on (${{price}})",
       "Profile_badge": "Special badge on your Teamcraft profile (${{price}})",
@@ -1791,6 +1799,14 @@
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
       "Recipe_ilvl": "Min Resulting iLvl",
       "Company_workshop": "Company Workshop"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Items that can be gathered easily",
+      "Message": "Can be gathered at level {{level}} on a non-timed node"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Message": "You can extract a materia from this gear piece"
     }
   },
   "VERSION_LOCK": {
@@ -1974,6 +1990,27 @@
       "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
       "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
       "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+    },
+    "METRICS": {
+      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
+      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
+      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
+      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
+      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "EDITOR": {
+        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
+        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
+        "Delete_column": "Want to remove a column? Here it is !",
+        "Add_panel": "Click here to add a new panel.",
+        "Reorder": "You can use drag and drop to move panels anywhere you want.",
+        "Data_type": "First of all, select the metric type you want to use.",
+        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Title": "Set a title for your panel",
+        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+      }
     }
   },
   "ADMIN": {
@@ -1998,5 +2035,86 @@
         "All_characters_valid": "All characters linked are valid"
       }
     }
+  },
+  "METRICS": {
+    "Title": "Metrics dashboard",
+    "Today": "Today",
+    "This_week": "This week",
+    "This_month": "This month",
+    "Add_new_column": "Add a new column (max 5)",
+    "Default_dashboard": "Default dashboard",
+    "Copy_to_clipboard": "Copy export code to clipboard",
+    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Import_dashboard": "Import a dashboard",
+    "Export_code": "Dashboard export code",
+    "Import_failed": "Dashboard import failed, the code is invalid",
+    "Import_success": "Dashboard imported and selected",
+    "Nothing_to_show": "No data to display",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "SOURCES": {
+      "UNKNOWN": "Unknown",
+      "GATHERING": "Gathering",
+      "CRAFTING": "Crafting",
+      "FISHING": "Fishing",
+      "VENDOR": "Vendor",
+      "TELEPORT": "Teleport",
+      "MARKETBOARD": "Marketboard"
+    },
+    "TYPES": {
+      "ANY": "Any",
+      "CURRENCY": "Currency",
+      "ITEM": "Item"
+    },
+    "TABLE": {
+      "Type": "Type",
+      "Entry_label": "Label",
+      "Value": "Value",
+      "Source": "Source",
+      "Timestamp": "Timestamp"
+    },
+    "PIE_METRICS": {
+      "Amount": "Amount per item",
+      "Source": "Amount per source"
+    },
+    "EDITOR": {
+      "Data": "Data",
+      "Data_type": "Type",
+      "Filter": "Filter",
+      "Accepted_items": "Accepted items",
+      "Accepted_sources": "Accepted sources",
+      "Display": "Display",
+      "Display_type": "Display component",
+      "Title": "Title",
+      "Font_size": "Font size",
+      "Value_label": "Value label",
+      "Pie_metric": "Metric",
+      "Add_filter": "Add filter",
+      "Operator": "Operator",
+      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
+      "Cannot_delete_default": "You can't delete default layout",
+      "FILTER_TIPS": {
+        "FishFilter": "Accept only fishes coming from fishing spots",
+        "ItemFilter": "Accepts only a given set of items",
+        "NoFilter": "Accepts everything",
+        "ObtentionFilter": "Accepts only values > 0",
+        "SourceFilter": "Accepts only a given set of sources",
+        "SpendingFilter": "Accepts only values < 0",
+        "GilFilter": "Accepts only Gil entries"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Aggregated value",
+        "histogram": "Evolution over time",
+        "pie-chart": "Pie chart",
+        "table": "Table of all matching entries"
+      }
+    }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "Open item search overlay",
+    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Placeholder": "Item name",
+    "None_inside_inventory": "This item is not in any inventories.",
+    "Open_in_main_window": "Open in main window",
+    "Marketboard_informations": "Marketboard informations"
   }
 }
