@@ -15,6 +15,7 @@
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
+  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -47,6 +48,7 @@
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
+  "Like_the_tool": "Are you enjoying the tool so far?",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制物品检索宏",
@@ -158,7 +160,8 @@
     "Share_link_copied": "分享链接已复制到剪贴板",
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
-    "Example": "示例"
+    "Example": "示例",
+    "Change": "Change"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -391,7 +394,7 @@
     "Favorite_aetherytes": "收藏传送点",
     "Disable_cross_world_prices": "仅使用当前服务器的市场价格",
     "Clear_search_history": "清除搜索记录",
-    "Auto_mark_as_done_in_log": "在列表项完成时标记为已完成",
+    "Auto_mark_as_done_in_log": "在完成清单项时标记采集（制作）笔记",
     "Db_comments_position": "数据库评论位置",
     "Always_HQ_leves": "默认以提交HQ物品计算理符经验",
     "Always_all_deliveries": "在理符任务工具中默认选中“共可交付 3 次”",
@@ -413,10 +416,11 @@
     "Enable_tutorials": "启用教程",
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
-    "Enable_auto_log_check": "在物品被采集或制作后在日志中自动标记完成",
+    "Enable_auto_log_check": "采集（制作）物品后自动标记采集（制作）笔记",
     "Enable_metrics_capture": "启用计量捕获",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
+    "Metrics_capture_folder": "Metrics log folder",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -545,6 +549,8 @@
     "Reset_panel": "重置此面板的所有物品",
     "Progression_tooltip_materials": "已获得材料：{{amount}}%",
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
+    "Final_item": "Final item",
+    "Include_final_items_in_main_layout": "Include final items in main layout",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -1140,9 +1146,9 @@
     "Unit_price": "单价",
     "History": "历史记录",
     "Purchase_date": "日期",
-    "More_on_mogboard": "在 MogBoard 上查看",
     "More_on_universalis": "更多信息请见universalis",
-    "Server": "服务器"
+    "Server": "服务器",
+    "Last_updated": "Last update"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -1162,7 +1168,7 @@
     "Lists_created_counter": "FFXIV Teamcraft 上现有 {{amount}} 个清单",
     "Support_patreon": "在 Patreon 上支持我们",
     "Donation_button": "进行一次性捐赠",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "购买 Teamcraft 周边",
     "Features_header": "开始吧！",
     "DESCRIPTION": {
       "Lists": "查看所有配方、材料并与您的朋友分享，一切都从创建清单开始！只需要搜索并选中物品就可以开始搓搓搓了。",
@@ -1321,10 +1327,12 @@
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
     "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
+    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
-      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 ({{price}})",
+      "Custom_theme": "更强的自定义主题功能，可以输入自定义的颜色值 (${{price}})",
       "Pins_badge": "邮寄给你的限定的 Teamcraft 别针徽章 (${{price}}) (需要你在 Patreon 上填写收货地址)",
       "Loading_screen_message": "在加载界面的 \"Brought to you by ...\" 载入信息里，添加你的名字、部队名字、通讯贝名字或者任何你想加的信息！(${{price}})"
     }
@@ -1698,7 +1706,7 @@
     "Sort_desc": "降序",
     "Add_stat_filter": "添加属性过滤器",
     "Add_bonus_stat_filter": "添加奖励属性过滤器",
-    "Search_tip": "您可以键入版本号：“patch #” 来查看特定版本的内容，如：patch 5.01",
+    "Search_tip": "在输入框中输入：“patch:xx” 可以查看某个版本的更新内容，如：patch:5.01",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
@@ -1791,6 +1799,14 @@
       "Message": "此材料能制造的最高物品等级是 {{ilvl}}",
       "Recipe_ilvl": "最低产物等级",
       "Company_workshop": "部队工房"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Items that can be gathered easily",
+      "Message": "Can be gathered at level {{level}} on a non-timed node"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Message": "You can extract a materia from this gear piece"
     }
   },
   "VERSION_LOCK": {
@@ -1974,6 +1990,27 @@
       "Min_control": "在这里通过最低加工精度过滤手法，过滤后只会显示所需加工精度低于设定值的手法",
       "Min_cp": "在这里通过最低制作力过滤手法，过滤后只会显示所需制作力低于设定值的手法",
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
+    },
+    "METRICS": {
+      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
+      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
+      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
+      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
+      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "EDITOR": {
+        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
+        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
+        "Delete_column": "Want to remove a column? Here it is !",
+        "Add_panel": "Click here to add a new panel.",
+        "Reorder": "You can use drag and drop to move panels anywhere you want.",
+        "Data_type": "First of all, select the metric type you want to use.",
+        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Title": "Set a title for your panel",
+        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+      }
     }
   },
   "ADMIN": {
@@ -1998,5 +2035,86 @@
         "All_characters_valid": "所有关联的角色均有效"
       }
     }
+  },
+  "METRICS": {
+    "Title": "Metrics dashboard",
+    "Today": "Today",
+    "This_week": "This week",
+    "This_month": "This month",
+    "Add_new_column": "Add a new column (max 5)",
+    "Default_dashboard": "Default dashboard",
+    "Copy_to_clipboard": "Copy export code to clipboard",
+    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Import_dashboard": "Import a dashboard",
+    "Export_code": "Dashboard export code",
+    "Import_failed": "Dashboard import failed, the code is invalid",
+    "Import_success": "Dashboard imported and selected",
+    "Nothing_to_show": "No data to display",
+    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "SOURCES": {
+      "UNKNOWN": "Unknown",
+      "GATHERING": "Gathering",
+      "CRAFTING": "Crafting",
+      "FISHING": "Fishing",
+      "VENDOR": "Vendor",
+      "TELEPORT": "Teleport",
+      "MARKETBOARD": "Marketboard"
+    },
+    "TYPES": {
+      "ANY": "Any",
+      "CURRENCY": "Currency",
+      "ITEM": "Item"
+    },
+    "TABLE": {
+      "Type": "Type",
+      "Entry_label": "Label",
+      "Value": "Value",
+      "Source": "Source",
+      "Timestamp": "Timestamp"
+    },
+    "PIE_METRICS": {
+      "Amount": "Amount per item",
+      "Source": "Amount per source"
+    },
+    "EDITOR": {
+      "Data": "Data",
+      "Data_type": "Type",
+      "Filter": "Filter",
+      "Accepted_items": "Accepted items",
+      "Accepted_sources": "Accepted sources",
+      "Display": "Display",
+      "Display_type": "Display component",
+      "Title": "Title",
+      "Font_size": "Font size",
+      "Value_label": "Value label",
+      "Pie_metric": "Metric",
+      "Add_filter": "Add filter",
+      "Operator": "Operator",
+      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
+      "Cannot_delete_default": "You can't delete default layout",
+      "FILTER_TIPS": {
+        "FishFilter": "Accept only fishes coming from fishing spots",
+        "ItemFilter": "Accepts only a given set of items",
+        "NoFilter": "Accepts everything",
+        "ObtentionFilter": "Accepts only values > 0",
+        "SourceFilter": "Accepts only a given set of sources",
+        "SpendingFilter": "Accepts only values < 0",
+        "GilFilter": "Accepts only Gil entries"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Aggregated value",
+        "histogram": "Evolution over time",
+        "pie-chart": "Pie chart",
+        "table": "Table of all matching entries"
+      }
+    }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "Open item search overlay",
+    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Placeholder": "Item name",
+    "None_inside_inventory": "This item is not in any inventories.",
+    "Open_in_main_window": "Open in main window",
+    "Marketboard_informations": "Marketboard informations"
   }
 }

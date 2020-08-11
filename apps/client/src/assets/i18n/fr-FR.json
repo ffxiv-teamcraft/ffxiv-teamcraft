@@ -15,6 +15,7 @@
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
   "Hide_zone_duplicates": "Masquer les duplicatas dans le résumé par zones",
   "Patch_notes": "Patch notes de la version {{version}}",
+  "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -47,6 +48,7 @@
   "See_code_github": "Voir le code sur github",
   "Support_on_patreon": "Soutenir le projet sur patreon",
   "Access_patreon_page": "Rendez-vous sur notre page Patreon",
+  "Like_the_tool": "Vous appréciez cet outil jusqu'à présent ?",
   "Default": "Défaut",
   "Delete": "Supprimer",
   "Copy_isearch": "Copier la macro de recherche en jeu",
@@ -158,7 +160,8 @@
     "Share_link_copied": "Lien copié dans le presse-papiers",
     "Copy": "Copier",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
-    "Example": "Exemple"
+    "Example": "Exemple",
+    "Change": "Changer"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -417,6 +420,7 @@
     "Enable_metrics_capture": "Activer la capture des métriques",
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
+    "Metrics_capture_folder": "Dossier de log des métriques",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -545,6 +549,8 @@
     "Reset_panel": "Réinitialiser tous les objets de ce panneau",
     "Progression_tooltip_materials": "Matériaux obtenus : {{amount}}%",
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
+    "Final_item": "Item final",
+    "Include_final_items_in_main_layout": "Inclure les éléments finaux dans la mise en page principale",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
@@ -1140,9 +1146,9 @@
     "Unit_price": "Prix unitaire",
     "History": "Historique",
     "Purchase_date": "Date",
-    "More_on_mogboard": "Plus de détails sur mogboard",
     "More_on_universalis": "Plus de détails sur Universalis",
-    "Server": "Serveur"
+    "Server": "Serveur",
+    "Last_updated": "Dernière mise à jour"
   },
   "COMMENTS": {
     "Title": "Commentaires"
@@ -1321,6 +1327,8 @@
     "Contribute_description": "Vous pouvez nous trouver sur github pour contribuer au projet, même si vous êtes débutant, tout le monde est le bienvenu !\n\nMais contribuer n'est pas seulement développer, c'est aussi des demandes de fonctionnalités et des rapports de bug qui aident beaucoup l'outil en fournissant un contenu de meilleure qualité, grâce à ceux qui prennent un certain temps pour le tester et trouver des bugs.",
     "Patreon_title": "Soutenez-nous sur patreon",
     "Patreon_description": "Patreon est une plate-forme où vous pouvez donner pour soutenir un projet chaque mois. Cet argent est utilisé pour payer des serveurs, les certificats, les concours et pour libérer de plus en plus de temps pour que le développeur travaille sur le projet.\n\nSelon le montant que vous donnez par mois, vous pouvez obtenir des avantages intéressants pour vous remercier de votre contribution :",
+    "Popup_introduction": "Bonjour, je suis Miu, le développeur de l'outil que vous utilisez actuellement.<br/> Teamcraft est un passe-temps pour moi depuis quelques années et mon rêve est de faire de cela mon travail à plein temps. <br/><br/>Avec votre aide, ce rêve pourrait devenir une réalité. vous pouvez soutenir le projet sur patreon, chaque euro compte et m'aide à atteindre cet objectif. <br/><br/> Soutenir le projet sur patreon vous donne également quelques avantages sympas:",
+    "Already_supporting": "Déjà un supporteur sur patreon? Assurez-vous de lier votre compte à patreon dans les paramètres",
     "PATREON_BENEFITS": {
       "Discord_rank": "Rang spécial sur le serveur discord, vous donnant accès au canal des supporters pour voir ce que nous travaillons sur (${{price}})",
       "Profile_badge": "Badge spécial sur votre profil Teamcraft (${{price}})",
@@ -1791,6 +1799,14 @@
       "Message": "L'ilvl de résultat le plus élevé que ce matériau puisse fabriquer est {{ilvl}}",
       "Recipe_ilvl": "Ilvl minimum",
       "Company_workshop": "Craft de CL"
+    },
+    "CAN_BE_GATHERED_EASILY": {
+      "Title": "Objets qui peuvent être collectés facilement",
+      "Message": "Peut être collecté au niveau {{level}} sur un nœud non timé"
+    },
+    "CAN_EXTRACT_MATERIA": {
+      "Title": "Équipement dont vous pouvez extraire des matérias (100% de symbiose)",
+      "Message": "Vous pouvez extraire une matéria de cette pièce d'équipement"
     }
   },
   "VERSION_LOCK": {
@@ -1974,6 +1990,27 @@
       "Min_control": "Filtrer par contrôle minimum requis ici, cela ne trouvera que des rotations avec le contrôle requis < votre valeur.",
       "Min_cp": "Filtrer par PS minimum requis ici, cela ne trouvera que des rotations avec PS requis < votre valeur.",
       "Set_selector": "Sélectionnez le job à utiliser pour les simulations utilisées pour montrer le taux de réussite des rotation des résultats."
+    },
+    "METRICS": {
+      "Welcome_time_range": "Bienvenue sur la page du tableau de bord des métriques, ici vous pouvez sélectionner la plage de temps pour laquelle vous souhaitez voir les données affichées, elle est par défaut à aujourd'hui.",
+      "Select_dashboard": "Vous pouvez avoir plusieurs tableaux de bord et facilement faire un cycle entre eux pour voir ce qui est important pour vous.",
+      "Edit_dashboard": "Vous pouvez entrer en mode édition en utilisant ce bouton, il n'est disponible que pour les tableaux de bord, hors ceux par défaut.",
+      "Create_dashboard": "Créez facilement vos propres tableaux de bord, n'oubliez pas de les modifier après les avoir créés, sinon ce sera juste une copie du tableau de bord par défaut.",
+      "Delete_layout": "Vous voulez vous débarrasser d'un tableau de bord, appuyez sur ce bouton, confirmez et pouf (la suppression ne peut pas être annulée).",
+      "Export_layout": "Vous voulez partager votre tableau de bord avec vos amis ? Cliquez sur ce bouton pour copier le code d'exportation de votre tableau de bord actuellement sélectionné.",
+      "Import_layout": "Si quelqu'un partage un tableau de bord avec vous en utilisant le code d'exportation, utilisez ce bouton pour l'importer.",
+      "EDITOR": {
+        "Welcome_add_column": "Bienvenue dans l'éditeur de mise en page du tableau de bord, vous pouvez ajouter des colonnes en utilisant ce bouton (jusqu'à 5 colonnes).",
+        "Save": "N'oubliez pas d'enregistrer vos modifications après avoir modifié votre tableau de bord.",
+        "Revert": "Ou si vous n'aimez pas ce que vous avez fait, utilisez ceci pour revenir à la mise en page originale que vous aviez avant de l'éditer.",
+        "Delete_column": "Vous voulez supprimer une colonne ? C'est ici !",
+        "Add_panel": "Cliquer ici pour créer un nouveau panneau.",
+        "Reorder": "Vous pouvez utiliser le drag and drop pour déplacer des panneaux où vous voulez.",
+        "Data_type": "Tout d'abord, sélectionnez le type de métrique que vous souhaitez utiliser.",
+        "Filters": "Ensuite, filtrez les données pour n'utiliser que ce que vous voulez montrer, avec la possibilité de combiner et d'inverser des filtres.",
+        "Title": "Définir un titre pour votre panneau",
+        "Display_type": "Sélectionnez le composant que vous souhaitez utiliser pour représenter vos données, et ajoutez les entrées en conséquence."
+      }
     }
   },
   "ADMIN": {
@@ -1998,5 +2035,86 @@
         "All_characters_valid": "Tous les personnages liés sont valides"
       }
     }
+  },
+  "METRICS": {
+    "Title": "Tableau de bord des métriques",
+    "Today": "Aujourd'hui",
+    "This_week": "Cette semaine",
+    "This_month": "Ce mois",
+    "Add_new_column": "Ajouter une nouvelle colonne (max 5)",
+    "Default_dashboard": "Tableau de bord par défaut",
+    "Copy_to_clipboard": "Copier le code d'export dans le presse-papiers",
+    "Export_copied_to_clipboard": "Exporter le code copié dans le presse-papiers",
+    "Import_dashboard": "Importer un tableau de bord",
+    "Export_code": "Code d'exportation du tableau de bord",
+    "Import_failed": "L'importation du tableau de bord a échoué, le code est invalide",
+    "Import_success": "Tableau de bord importé et sélectionné",
+    "Nothing_to_show": "Aucune donnée à afficher",
+    "Nothing_to_show_description": "Assurez-vous d'avoir sélectionnée une période au cours de laquelle TC a capturé des données et vérifiez que cette option est activée (dans les Paramètres -> Bureau -> Activer la capture des métriques)",
+    "SOURCES": {
+      "UNKNOWN": "Inconnu",
+      "GATHERING": "Récolte",
+      "CRAFTING": "Artisanat",
+      "FISHING": "Pêche",
+      "VENDOR": "Vendeur",
+      "TELEPORT": "Téléporter",
+      "MARKETBOARD": "Tableau des ventes"
+    },
+    "TYPES": {
+      "ANY": "Tout",
+      "CURRENCY": "Devise",
+      "ITEM": "Objet"
+    },
+    "TABLE": {
+      "Type": "Type",
+      "Entry_label": "Nom",
+      "Value": "Valeur",
+      "Source": "Source",
+      "Timestamp": "Horodatage"
+    },
+    "PIE_METRICS": {
+      "Amount": "Prix par item",
+      "Source": "Montant par origine"
+    },
+    "EDITOR": {
+      "Data": "Données",
+      "Data_type": "Type",
+      "Filter": "Filtre",
+      "Accepted_items": "Éléments acceptés",
+      "Accepted_sources": "Sources acceptées",
+      "Display": "Afficher",
+      "Display_type": "Afficher le composant",
+      "Title": "Titre",
+      "Font_size": "Taille de la police",
+      "Value_label": "Libellé des valeurs",
+      "Pie_metric": "Métrique",
+      "Add_filter": "Ajouter un filtre",
+      "Operator": "Opérateur",
+      "Cannot_edit_default": "Vous ne pouvez pas modifier la disposition par défaut, créer une nouvelle mise en page pour la personnaliser à la place",
+      "Cannot_delete_default": "Vous ne pouvez pas supprimer la disposition par défaut",
+      "FILTER_TIPS": {
+        "FishFilter": "Accepter uniquement les poissons provenant des points de pêche",
+        "ItemFilter": "N'accepte qu'un ensemble d'articles donné",
+        "NoFilter": "Tout accepter",
+        "ObtentionFilter": "Accepte uniquement les valeurs > 0",
+        "SourceFilter": "N'accepte qu'un ensemble de sources donné",
+        "SpendingFilter": "N'accepte que les valeurs < 0",
+        "GilFilter": "N'accepte que les entrées Gil"
+      },
+      "DISPLAY_TYPES": {
+        "total": "Valeur agrégée",
+        "histogram": "Évolution au fil du temps",
+        "pie-chart": "Diagramme circulaire",
+        "table": "Table de toutes les entrées correspondantes"
+      }
+    }
+  },
+  "ITEM_SEARCH_OVERLAY": {
+    "Open": "Ouvrir l'overlay de recherche d'articles",
+    "Intro_message": "Recherchez un article pour voir les détails à son sujet, les informations de l'inventaire et du tableau des ventes",
+    "Placeholder": "Nom de l'objet",
+    "None_inside_inventory": "Cet objet ne se trouve dans aucun inventaire.",
+    "Open_in_main_window": "Ouvrir dans la fenêtre principale",
+    "Marketboard_informations": "Informations de l'hôtel des ventes"
   }
 }
