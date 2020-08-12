@@ -617,12 +617,13 @@ ipcMain.on('language', (event, lang) => {
 const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
 let METRICS_FOLDER = config.get('metrics:folder') || path.join(APP_DATA, `ffxiv-teamcraft-metrics${isDev ? '-dev' : ''}`);
 
+if (!fs.existsSync(METRICS_FOLDER)) {
+  fs.mkdirSync(METRICS_FOLDER);
+}
+
 ipcMain.on('metrics:persist', (event, data) => {
   if (data.length === 0) {
     return;
-  }
-  if (!fs.existsSync(METRICS_FOLDER)) {
-    fs.mkdirSync(METRICS_FOLDER);
   }
   const now = new Date();
   let month = now.getMonth();
