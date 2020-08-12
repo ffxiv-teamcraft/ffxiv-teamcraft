@@ -9,7 +9,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
 import { Consumable } from '../../model/consumable';
-import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
 import { FreeCompanyAction } from '../../model/free-company-action';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
@@ -59,6 +58,7 @@ import {
 } from '../../../../core/simulation/simulation.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { RouteConsumables } from '../../model/route-consumables';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-simulator',
@@ -243,7 +243,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
               private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
-              private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService) {
+              private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
+              private lazyData: LazyDataService) {
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)
@@ -266,7 +267,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       specialist: [false]
     });
 
-    this.foods = consumablesService.fromData(foods)
+    this.foods = consumablesService.fromLazyData(this.lazyData.data.foods)
       .sort(this.consumablesSortFn);
     this.medicines = consumablesService.fromData(medicines)
       .sort(this.consumablesSortFn);

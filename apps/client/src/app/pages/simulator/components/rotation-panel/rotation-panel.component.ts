@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
-import { CrafterStats, CraftingAction, GearSet, Simulation, SimulationResult } from '../../../../core/simulation/simulation.service';
+import { CraftingAction, GearSet, Simulation, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
 import { filter, map, shareReplay, tap } from 'rxjs/operators';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
@@ -15,7 +15,6 @@ import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { CustomLinksFacade } from '../../../../modules/custom-links/+state/custom-links.facade';
 import { Router } from '@angular/router';
 import { MacroPopupComponent } from '../macro-popup/macro-popup.component';
-import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../model/consumables.service';
@@ -26,8 +25,8 @@ import { BonusType } from '../../model/consumable-bonus';
 import { Craft } from '../../../../model/garland-tools/craft';
 import { IpcService } from '../../../../core/electron/ipc.service';
 import { PlatformService } from '../../../../core/tools/platform.service';
-import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-rotation-panel',
@@ -90,7 +89,7 @@ export class RotationPanelComponent implements OnInit {
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
               public platformService: PlatformService, private simulationService: SimulationService,
-              private settings: SettingsService) {
+              private settings: SettingsService, private lazyData: LazyDataService) {
     this.actions$ = this.rotation$.pipe(
       filter(rotation => rotation !== null),
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
@@ -103,7 +102,7 @@ export class RotationPanelComponent implements OnInit {
       shareReplay(1)
     );
 
-    this.foods = consumablesService.fromData(foods);
+    this.foods = consumablesService.fromLazyData(this.lazyData.data.foods);
     this.medicines = consumablesService.fromData(medicines);
     this.freeCompanyActions = freeCompanyActionsService.fromData(freeCompanyActions);
 
