@@ -22,7 +22,7 @@ export class ZoneBreakdown {
           if (node.type === 4) {
             this.addToBreakdown(mapIds.find(m => m.id === node.mapid)?.zone, node.mapid, row, hideZoneDuplicates, { x: node.coords[0], y: node.coords[1] });
           } else {
-            this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates, { x: node.coords[0], y: node.coords[1] });
+            this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates, node.coords ? { x: node.coords[0], y: node.coords[1] } : { x: 0, y: 0 });
           }
         });
       } else if (getItemSource<Drop[]>(row, DataType.DROPS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
