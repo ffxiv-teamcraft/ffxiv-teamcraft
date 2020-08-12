@@ -12,7 +12,7 @@ import {
   updateMetricsDashboard
 } from './metrics-dashboards.actions';
 import { MetricsDashboardLayout } from '../display/metrics-dashboard-layout';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, shareReplay } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 
 @Injectable()
@@ -30,7 +30,8 @@ export class MetricsDashboardsFacade {
     filter(([, loaded]) => loaded),
     map(([layout]) => {
       return layout || MetricsDashboardLayout.DEFAULT;
-    })
+    }),
+    shareReplay(1)
   );
 
   constructor(
