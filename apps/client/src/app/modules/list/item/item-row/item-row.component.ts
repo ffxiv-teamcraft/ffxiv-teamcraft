@@ -37,7 +37,6 @@ import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { MacroPopupComponent } from '../../../../pages/simulator/components/macro-popup/macro-popup.component';
-import { foods } from '../../../../core/data/sources/foods';
 import { medicines } from '../../../../core/data/sources/medicines';
 import { freeCompanyActions } from '../../../../core/data/sources/free-company-actions';
 import { ConsumablesService } from '../../../../pages/simulator/model/consumables.service';
@@ -48,6 +47,7 @@ import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-row',
@@ -258,7 +258,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
               private inventoryService: InventoryFacade,
-              private simulationService: SimulationService) {
+              private simulationService: SimulationService,
+              private lazyData: LazyDataService) {
     super();
 
     combineLatest([this.settings.settingsChange$, this.item$]).pipe(takeUntil(this.onDestroy$)).subscribe(([, item]) => {
@@ -270,7 +271,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
         return getItemSource(item, DataType.MASTERBOOKS)
-          // Ignore string ids, as they are draft ids
+        // Ignore string ids, as they are draft ids
           .filter(book => Number.isInteger(book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
@@ -356,7 +357,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   openRotationMacroPopup(rotation: CraftingRotation, item: ListRow): void {
-    const foodsData = this.consumablesService.fromData(foods);
+    const foodsData = this.consumablesService.fromLazyData(this.lazyData.data.foods);
     const medicinesData = this.consumablesService.fromData(medicines);
     const freeCompanyActionsData = this.freeCompanyActionsService.fromData(freeCompanyActions);
     this.modal.create({
