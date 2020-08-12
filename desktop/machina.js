@@ -37,7 +37,7 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
     log.info('elevated', elevated);
     if (elevated) {
       exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"', () => {
-        exec('netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft"', ([...output]) => {
+        exec('netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft"', (...output) => {
           if (output[1].split('\n').length < 10) {
             exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
           }
