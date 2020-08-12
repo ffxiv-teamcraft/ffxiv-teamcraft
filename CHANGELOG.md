@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.2"></a>
+## [7.3.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.1...v7.3.2) (2020-08-12)
+
+
+### Bug Fixes
+
+* **data:** added missing data for 5.3 nodes and items ([6f94344](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f94344))
+* **desktop:** fix for endless firewall rule creation popup ([90b4730](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90b4730))
+* **list:** fixed an issue with some skybuilders materials breaking panels ([2960247](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2960247))
+* **metrics:** fixed dashboard only opening once ([78725cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78725cb))
+* **simulator:** added missing foods ([48c4d90](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/48c4d90))
+
+
+
 <a name="7.3.1"></a>
 ## [7.3.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.0...v7.3.1) (2020-08-11)
 
