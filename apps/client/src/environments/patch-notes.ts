@@ -1,4 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed an issue with new items crashing alarms page.
-* **list:** fixed an issue preventing some items from being added to a list.`;
+* **data:** added missing data for 5.3 nodes and items.
+* **desktop:** fix for endless firewall rule creation popup.
+* **list:** fixed an issue with some skybuilders materials breaking panels.
+* **metrics:** fixed dashboard only opening once.
+* **simulator:** added missing foods.`;
