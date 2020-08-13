@@ -45,4 +45,8 @@ fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-
 }`.replace(/"/g, '\'')
 );
 
+const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/extracts.json')] });
+fs.writeFileSync(path.join(__dirname + '/../../apps/client/src/environments/extracts-hash.ts'), `export const extractsHash = \`${extractsHash}\`;
+`);
+
 console.log(colors.green(`Lazy loaded data interface updated`));
