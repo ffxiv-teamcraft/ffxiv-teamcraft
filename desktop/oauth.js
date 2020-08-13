@@ -37,7 +37,7 @@ module.exports = function(config) {
         useContentSize: true
       });
 
-      authWindow.loadURL(url);
+      authWindow.loadURL(url, { userAgent: 'Chrome' });
       authWindow.show();
 
       authWindow.on('closed', () => {
@@ -49,8 +49,6 @@ module.exports = function(config) {
         let query = url_parts.query;
         let code = query.code;
         let error = query.error;
-
-        console.log(error, code);
 
         if (error !== undefined) {
           reject(error);

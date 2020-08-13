@@ -26,7 +26,7 @@ export class MetricsDashboardLayout extends DataWithPermissions {
       }, {
         component: 'pie-chart',
         type: 1,
-        filters: [{ name: 'SpendingFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [2] }],
+        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [2] }],
         title: 'Items crafted',
         params: { metric: 'amount' }
       }]]

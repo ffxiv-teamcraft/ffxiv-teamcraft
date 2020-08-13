@@ -4,7 +4,6 @@ const path = require('path');
 const { app } = require('electron');
 const log = require('electron-log');
 const isElevated = require('is-elevated');
-const { exec } = require('child_process');
 
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
@@ -36,14 +35,6 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
-      exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"', () => {
-        exec('netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft"', (...output) => {
-          if (output[1].split('\n').length < 10) {
-            exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft" dir=in action=allow program="${machinaExePath}" enable=yes`);
-          }
-        });
-      });
-
       const region = config.get('region', null);
       const options = isDev ?
         {

@@ -10,15 +10,19 @@ import { GatheredBy } from '../../../modules/list/model/gathered-by';
 export class CanBeGatheredEasily extends InventoryOptimizer {
 
   _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {
-    const gatheredBy = getItemSource<GatheredBy>(data, DataType.GATHERED_BY);
-    if (gatheredBy && gatheredBy.nodes) {
-      if (gatheredBy.nodes.some(node => {
-        return !node.uptime && !node.hidden && !node.limitType && !node.time && !node.weathers && !node.weathersFrom;
-      })) {
-        return { level: gatheredBy.level };
+    try {
+      const gatheredBy = getItemSource<GatheredBy>(data, DataType.GATHERED_BY);
+      if (gatheredBy && gatheredBy.nodes) {
+        if (gatheredBy.nodes.some(node => {
+          return !node.uptime && !node.hidden && !node.limitType && !node.time && !node.weathers && !node.weathersFrom;
+        })) {
+          return { level: gatheredBy.level };
+        }
       }
+      return null;
+    } catch (_) {
+      return null;
     }
-    return null;
 
   }
 

@@ -15,6 +15,7 @@ import { Region } from '../../modules/settings/region.enum';
 import { Memoized } from '../decorators/memoized';
 import { Language } from './language';
 import { TranslateService } from '@ngx-translate/core';
+import { extractsHash } from '../../../environments/extracts-hash';
 
 @Injectable({
   providedIn: 'root'
@@ -196,7 +197,9 @@ export class LazyDataService {
         this.loaded$.next(true);
       });
 
-    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData('/assets/extracts.json')])
+    const extractsPath = `/assets/extracts${environment.production ? '.' + extractsHash : ''}.json`;
+
+    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData(extractsPath)])
       .subscribe(([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches as any[];

@@ -22,6 +22,12 @@ const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
     fs.renameSync(filePath, path.join(__dirname, '../../dist/apps/client/assets/data/', `${row.replace('.json', '')}.${hash}.json`));
   });
 
+// Extracts
+const extractsPath = path.join(__dirname, '../../dist/apps/client/assets/extracts.json');
+const extractsHash = hashFiles.sync({ files: [extractsPath] });
+fs.renameSync(extractsPath, extractsPath.replace('.json', `.${extractsHash}.json`));
+
+
 console.log(colors.green('\nGame assets hashed successfully!'));
 
 
