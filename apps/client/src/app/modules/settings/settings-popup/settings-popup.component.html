@@ -303,7 +303,7 @@
   </nz-tab>
   <nz-tab *ngIf="loggedIn$ | async" [nzTitle]="'SETTINGS.Account' | translate">
     <div class="account-buttons" fxLayout="column" fxLayoutGap="10px">
-      <button (nzOnConfirm)="resetPassword()" [nzTitle]="'SETTINGS.Reset_password_warning'" nz-button nz-popconfirm>
+      <button (nzOnConfirm)="resetPassword()" [nzTitle]="'SETTINGS.Reset_password_warning' | translate" nz-button nz-popconfirm>
         {{'SETTINGS.Reset_password' | translate}}
       </button>
       <button (click)="updateEmail()" nz-button nz-popconfirm>
