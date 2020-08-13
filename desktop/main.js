@@ -40,6 +40,8 @@ function handleSquirrelEvent() {
     return spawn(updateDotExe, args);
   };
 
+  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
     case '--squirrel-install':
@@ -48,6 +50,7 @@ function handleSquirrelEvent() {
         spawnUpdate(['--createShortcut', exeName]);
       }
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -56,6 +59,9 @@ function handleSquirrelEvent() {
       //   explorer context menus
       // Remove previous firewall rules
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
+      ChildProcess.exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
+        ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+      });
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
@@ -83,8 +89,6 @@ function handleSquirrelEvent() {
       return true;
   }
 }
-
-handleSquirrelEvent();
 
 /**
  * End of squirrel stuff
@@ -148,7 +152,7 @@ if (options.noHA) {
  * Autoupdater
  */
 
-let autoUpdaterRunning = false
+let autoUpdaterRunning = false;
 autoUpdater.on('checking-for-update', () => {
   log.log('Checking for update');
   win && win.webContents.send('checking-for-update', true);
@@ -203,6 +207,7 @@ ipcMain.on('update:check', () => {
  */
 // Create window on electron intialization
 app.on('ready', () => {
+  handleSquirrelEvent();
   createWindow();
   createTray();
 });
