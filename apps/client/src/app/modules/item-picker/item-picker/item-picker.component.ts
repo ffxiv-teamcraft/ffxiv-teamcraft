@@ -106,6 +106,10 @@ export class ItemPickerComponent implements OnInit {
     this.dialogRef.close(results.filter(r => r.selected));
   }
 
+  nothingSelected(results: SearchResult[]): boolean {
+    return results.every(r => !r.selected);
+  }
+
   ngOnInit(): void {
     if (this.includeCustomItems) {
       this.customItemsFacade.loadAll();
