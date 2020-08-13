@@ -15,7 +15,7 @@
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
   "Hide_zone_duplicates": "중복 영역 숨기기(여러 영역에 있는 아이템의 경우 한 번만 표시됩니다)",
   "Patch_notes": "{{version}} 변경점",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
+  "Patch_notes_footer": "새로운 기능에 만족하시나요? 그렇다면 저희의 프로젝트를 patreon으로 후원하는 것을 고려해보세요.",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "이 계정은 이미 사용중입니다",
     "auth/email-already-in-use": "이 이메일은 이미 사용중입니다",
@@ -48,7 +48,7 @@
   "See_code_github": "Github에서 코드 보기",
   "Support_on_patreon": "Patreon에서 프로젝트 후원",
   "Access_patreon_page": "Patreon 페이지로 이동",
-  "Like_the_tool": "Are you enjoying the tool so far?",
+  "Like_the_tool": "해당 기능에 만족하셨나요?",
   "Default": "기본 설정",
   "Delete": "삭제",
   "Copy_isearch": "아이템검색 매크로 복사",
