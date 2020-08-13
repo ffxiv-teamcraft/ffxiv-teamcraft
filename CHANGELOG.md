@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.4"></a>
+## [7.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.3...v7.3.4) (2020-08-13)
+
+
+### Bug Fixes
+
+* **core:** fixed extracts file staying in cache and not clearing properly ([99b597d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/99b597d))
+* **currency-spending:** page now works properly ([1eb976f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1eb976f))
+* **desktop:** fix for firewall rule not created properly ([70bd038](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70bd038))
+* **desktop:** fixed firewall rules management for packet capture ([f985c91](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f985c91))
+* **desktop:** fixed google oauth ([3288ef1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3288ef1)), closes [#1269](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1269)
+* **inventory-optimizer:** fixed optimizer not loading in specific cases ([228ef43](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/228ef43))
+* **list:** item picker's button is now disabled if nothing is selected ([f4a907f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4a907f))
+* **metrics:** changed filter for "Items crafted" to make it show what it's supposed to ([e941c05](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e941c05))
+* **settings:** fixed missing translation for reset password confirmation tooltip ([94667f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94667f7))
+
+
+
 <a name="7.3.3"></a>
 ## [7.3.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.2...v7.3.3) (2020-08-12)
 
