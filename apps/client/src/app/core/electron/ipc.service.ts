@@ -129,7 +129,7 @@ export class IpcService {
     bufferCount(100),
     first(),
     map(packets => {
-      return packets.every(packet => packet.type.endsWith('Handler'));
+      return packets.every(packet => packet.operation === 'send');
     }),
     shareReplay(1)
   );
