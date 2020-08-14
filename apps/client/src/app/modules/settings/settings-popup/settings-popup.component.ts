@@ -274,6 +274,13 @@ export class SettingsPopupComponent {
     this.ipc.send('clear-cache');
   }
 
+  addFirewallRule(): void {
+    this.ipc.once('machina:firewall:rule-set', () => {
+      this.message.success(this.translate.instant('PACKET_CAPTURE.Firewall_rule_set'));
+    });
+    this.ipc.send('machina:firewall:set-rule');
+  }
+
   clearSearchHistory(): void {
     localStorage.removeItem('search:history');
   }
