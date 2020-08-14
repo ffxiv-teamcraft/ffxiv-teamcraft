@@ -1734,7 +1734,12 @@
     "Inventory_outdated": "Votre inventaire est obsolète",
     "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette fenêtre se fermera automatiquement. Si le problème persiste, essayez de suivre le guide de dépannage de capture de paquets dans les messages épinglés de #troubleshooting sur le serveur Discord de Teamcraft.",
     "Outdated": "La capture de paquets ne fonctionne pas",
-    "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour."
+    "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour.",
+    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
+    "Add_firewall_rule": "Add the firewall rule"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
