@@ -381,6 +381,7 @@
     "No_nickname_warning": "Por favor, navegue para a página de configurações e configure um apelido para poder usar os recursos exclusivos do patreon corretamente.",
     "Show_devtools": "Mostrar ferramentas de desenvolvimento",
     "Clear_cache": "Clear cache (will restart the app)",
+    "Add_firewall_rule": "Add packet capture firewall rule",
     "Enable_item_tags": "Enable item tags",
     "Show_copy_list_own_list": "Show copy button on own list panels",
     "Custom_theme": "Custom theme",
