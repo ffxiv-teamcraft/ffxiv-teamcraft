@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 * **inventory-optimizer:** fixed optimizer not loading in specific cases.
 * **list:** item picker's button is now disabled if nothing is selected.
 * **metrics:** changed filter for "Items crafted" to make it show what it's supposed to.
-* **settings:** fixed missing translation for reset password confirmation tooltip.`;
+* **settings:** fixed missing translation for reset password confirmation tooltip.`;

@@ -27,7 +27,7 @@
   </nz-form-item>
 </form>
 <nz-alert *ngIf="errorMessageCode !== undefined" nzMessage="{{('AUTH_ERRORS.'+errorMessageCode) | translate}}"
-          nzType="error"></nz-alert>
+          nzType="error" class="dark"></nz-alert>
 <nz-divider [nzText]="'Or' | translate"></nz-divider>
 <div class="oauth-buttons">
   <button (click)="googleOauth()" nz-button nzType="primary">{{'Google_login' | translate}}</button>
