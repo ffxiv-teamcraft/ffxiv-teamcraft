@@ -1,21 +1,22 @@
 /**
  * Squirrel stuff
  */
-
 const log = require('electron-log');
 const argv = process.argv.slice(1);
 log.transports.file.level = 'debug';
 log.log(argv);
 const Config = require('electron-config');
 const config = new Config();
-if (require('electron-squirrel-startup')) return;
+const ChildProcess = require('child_process');
+
+function addMachinaFirewallRule() {
+  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+}
 
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
     return false;
   }
-
-  const ChildProcess = require('child_process');
   const path = require('path');
 
   const appFolder = path.resolve(process.execPath, '..');
@@ -50,7 +51,7 @@ function handleSquirrelEvent() {
         spawnUpdate(['--createShortcut', exeName]);
       }
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
-      ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+      addMachinaFirewallRule();
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -60,7 +61,7 @@ function handleSquirrelEvent() {
       // Remove previous firewall rules
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       ChildProcess.exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
-        ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+        addMachinaFirewallRule();
       });
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
@@ -744,6 +745,11 @@ ipcMain.on('start-minimized:get', (event) => {
 
 ipcMain.on('overlay', (event, data) => {
   toggleOverlay(data);
+});
+
+ipcMain.on('machina:firewall:set-rule', (event) => {
+  addMachinaFirewallRule();
+  event.sender.send('machina:firewall:rule-set', true);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {

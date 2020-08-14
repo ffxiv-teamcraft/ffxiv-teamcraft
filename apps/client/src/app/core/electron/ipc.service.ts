@@ -4,7 +4,7 @@ import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { debounce, debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
+import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
 
@@ -124,6 +124,15 @@ export class IpcService {
   public mainWindowState$: ReplaySubject<any> = new ReplaySubject<any>();
 
   private stateSubscription: Subscription;
+
+  public possibleMissingFirewallRule$ = this.packets$.pipe(
+    bufferCount(100),
+    first(),
+    map(packets => {
+      return packets.every(packet => packet.type.endsWith('Handler'));
+    }),
+    shareReplay(1)
+  );
 
   constructor(private platformService: PlatformService, private router: Router,
               private store: Store<any>, private zone: NgZone) {
