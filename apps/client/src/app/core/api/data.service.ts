@@ -171,7 +171,7 @@ export class DataService {
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
     // Filter HQ and Collectable Symbols from search
-    query = query.replace(/[\ue03a-\ue03d]/g, '');
+    query = query.replace(/[\ue03a-\ue03d]/g, '').toLowerCase();
 
     const xivapiFilters: XivapiSearchFilter[] = [].concat.apply([], filters
       .filter(f => {
