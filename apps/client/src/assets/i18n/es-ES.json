@@ -381,6 +381,7 @@
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
+    "Add_firewall_rule": "Add packet capture firewall rule",
     "Enable_item_tags": "Habilitar etiquetas de artículo",
     "Show_copy_list_own_list": "Mostrar botón de copia en mis propias listas",
     "Custom_theme": "Tema personalizado",
