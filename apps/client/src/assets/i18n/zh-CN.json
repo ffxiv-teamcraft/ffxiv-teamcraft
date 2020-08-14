@@ -1734,7 +1734,12 @@
     "Inventory_outdated": "您的物品栏尚未更新",
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容，操作完成后此提示会自动关闭。如上述操作无效，请查看 https://www.yuque.com/ffcafe/tc/debugpackets",
     "Outdated": "数据包捕获功能不可用",
-    "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。"
+    "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。",
+    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
+    "Add_firewall_rule": "Add the firewall rule"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
