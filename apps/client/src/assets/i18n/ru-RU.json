@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "Прогресс при 100% эффективности: {{value}}",
     "Quality_action_100_potency": "Качество при 100% эффективности: {{value}}",
     "Current_control": "Текущее значение контроля: {{value}}",
-    "Current_control_bonus": "Текущий бонус (лимит - 3000)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "Добавить блокировку макроса",
     "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Генератор ротаций",
