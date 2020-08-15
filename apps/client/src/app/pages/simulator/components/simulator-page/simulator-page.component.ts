@@ -57,8 +57,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
             return item.satisfaction[0].rating.map(r => r * 10);
           } else if (item.masterpiece !== undefined) {
             return item.masterpiece.rating.map(r => r * 10);
-          } else if (this.lazyData.collectables[item.id] !== undefined) {
-            const supply = this.lazyData.collectables[item.id];
+          } else if (this.lazyData.data.collectables[item.id] !== undefined) {
+            const supply = this.lazyData.data.collectables[item.id];
             return [
               supply.base.rating * 10,
               supply.mid.rating * 10,
