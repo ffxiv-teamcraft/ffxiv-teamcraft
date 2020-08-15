@@ -381,6 +381,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
+    "Add_firewall_rule": "Add packet capture firewall rule",
     "Enable_item_tags": "아이템 태그 사용",
     "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
@@ -894,7 +895,7 @@
     "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
     "Quality_action_100_potency": "가공 효율 100% 스킬 사용시 품질량: {{value}}",
     "Current_control": "현재 가공 숙련도: {{value}}",
-    "Current_control_bonus": "현재 추가 가공 숙련도 (최대 3000)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
@@ -1734,7 +1735,12 @@
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
     "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
-    "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다."
+    "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다.",
+    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
+    "Add_firewall_rule": "Add the firewall rule"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",

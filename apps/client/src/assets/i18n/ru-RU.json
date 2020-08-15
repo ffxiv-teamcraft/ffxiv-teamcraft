@@ -381,6 +381,7 @@
     "No_nickname_warning": "Пожалуйста, перейдите на страницу настроек и установите ник, чтобы иметь возможность использовать эксклюзивные функции Patreon'а.",
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
+    "Add_firewall_rule": "Add packet capture firewall rule",
     "Enable_item_tags": "Включить теги предметов",
     "Show_copy_list_own_list": "Показать кнопку копирования на панели своих списков",
     "Custom_theme": "Пользовательская тема",
@@ -894,7 +895,7 @@
     "Progress_action_100_potency": "Прогресс при 100% эффективности: {{value}}",
     "Quality_action_100_potency": "Качество при 100% эффективности: {{value}}",
     "Current_control": "Текущее значение контроля: {{value}}",
-    "Current_control_bonus": "Текущий бонус (лимит - 3000)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "Добавить блокировку макроса",
     "Solve_rotation": "\"Решить\" ротацию",
     "Rotation_solver": "Генератор ротаций",
@@ -1734,7 +1735,12 @@
     "Inventory_outdated": "Ваш инвентарь устарел",
     "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
     "Outdated": "Захват пакетов не работает",
-    "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях."
+    "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях.",
+    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
+    "Add_firewall_rule": "Add the firewall rule"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",

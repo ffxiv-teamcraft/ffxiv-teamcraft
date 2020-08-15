@@ -381,6 +381,7 @@
     "No_nickname_warning": "Por favor vaya a la página de configuración y configure un apodo para poder usar correctamente las características exclusivas de patron.",
     "Show_devtools": "Mostrar herramientas de desarrollador",
     "Clear_cache": "Borrar caché (reiniciará la aplicación)",
+    "Add_firewall_rule": "Add packet capture firewall rule",
     "Enable_item_tags": "Habilitar etiquetas de artículo",
     "Show_copy_list_own_list": "Mostrar botón de copia en mis propias listas",
     "Custom_theme": "Tema personalizado",
@@ -894,7 +895,7 @@
     "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
     "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
     "Current_control": "Control actual: {{value}}",
-    "Current_control_bonus": "Bono actual (limitado a 3000)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "Incluir bloqueo de macro",
     "Solve_rotation": "Solucionar esta rotación",
     "Rotation_solver": "Resolvedor de rotación",
@@ -1734,7 +1735,12 @@
     "Inventory_outdated": "Su inventario está desactualizado",
     "Please_update_inventory_popup": "Por favor cambie de zona (ya sea teletransportandose o entrando en una casa) para actualizar su inventario. Esta ventana se cerrará una vez que haya terminado. Si este problema persiste, pruebe la guía de solución de problemas de paquetes en los mensajes anclados de #troubleshooting en el servidor de Discord de Teamcraft.",
     "Outdated": "La captura de paquetes no está funcionando",
-    "Outdated_description": "Su versión de Teamcraft no funciona correctamente con la versión actual del juego, se está trabajando y se arreglará en una actualización futura."
+    "Outdated_description": "Su versión de Teamcraft no funciona correctamente con la versión actual del juego, se está trabajando y se arreglará en una actualización futura.",
+    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
+    "Add_firewall_rule": "Add the firewall rule"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Sugerir cambio de región a {{region}}",
