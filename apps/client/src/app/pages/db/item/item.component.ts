@@ -31,7 +31,6 @@ import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { SettingsService } from '../../../modules/settings/settings.service';
-import { hwdSupplies } from '../../../core/data/sources/hwd-supplies';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { DataType } from '../../../modules/list/data/data-type';
@@ -439,13 +438,13 @@ export class ItemComponent extends TeamcraftPageComponent {
             masterpiece: data.item.masterpiece
           });
         }
-        if (hwdSupplies[data.item.id] !== undefined) {
+        if (this.lazyData.data.collectables[data.item.id] !== undefined) {
           usedFor.push({
             type: UsedForType.ISHGARD_RESTORATION,
             flex: '1 1 auto',
             title: 'DB.Ishgard_restoration',
             icon: './assets/icons/status/collectors_glove.png',
-            ishgardRestoration: hwdSupplies[data.item.id]
+            ishgardRestoration: this.lazyData.data.collectables[data.item.id]
           });
         }
         const lazyDesynths = Object.keys(this.lazyData.data.desynth).filter(key => this.lazyData.data.desynth[key].indexOf(data.item.id) > -1).map(key => +key);

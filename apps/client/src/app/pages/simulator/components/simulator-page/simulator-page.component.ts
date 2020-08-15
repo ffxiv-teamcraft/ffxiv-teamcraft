@@ -2,13 +2,11 @@ import { Component } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Item } from '../../../../model/garland-tools/item';
-import { filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { DataService } from '../../../../core/api/data.service';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
-import { SeoPageComponent } from '../../../../core/seo/seo-page-component';
 import { SeoService } from '../../../../core/seo/seo.service';
 import { SeoMetaConfig } from '../../../../core/seo/seo-meta-config';
-import { hwdSupplies } from '../../../../core/data/sources/hwd-supplies';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { Craft } from '@ffxiv-teamcraft/simulator';
 import { AbstractSimulationPage } from '../../abstract-simulation-page';
@@ -59,8 +57,8 @@ export class SimulatorPageComponent extends AbstractSimulationPage {
             return item.satisfaction[0].rating.map(r => r * 10);
           } else if (item.masterpiece !== undefined) {
             return item.masterpiece.rating.map(r => r * 10);
-          } else if (hwdSupplies[item.id] !== undefined) {
-            const supply = hwdSupplies[item.id];
+          } else if (this.lazyData.collectables[item.id] !== undefined) {
+            const supply = this.lazyData.collectables[item.id];
             return [
               supply.base.rating * 10,
               supply.mid.rating * 10,
