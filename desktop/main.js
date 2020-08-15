@@ -9,9 +9,7 @@ const Config = require('electron-config');
 const config = new Config();
 const ChildProcess = require('child_process');
 
-function addMachinaFirewallRule() {
-  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
-}
+
 
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
@@ -41,7 +39,7 @@ function handleSquirrelEvent() {
     return spawn(updateDotExe, args);
   };
 
-  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+
 
   const squirrelEvent = process.argv[1];
   switch (squirrelEvent) {
@@ -618,6 +616,13 @@ ipcMain.on('language', (event, lang) => {
     // Window already destroyed, so we don't care :)
   }
 });
+
+// Add machina to firewall stuffs
+const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+
+function addMachinaFirewallRule() {
+  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - test" dir=in action=allow program="${machinaExePath}" enable=yes`);
+}
 
 // Metrics system
 const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
