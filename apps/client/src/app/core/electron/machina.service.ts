@@ -199,7 +199,7 @@ export class MachinaService {
     });
 
     const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
-      filter(packet => packet.flag === 383)
+      filter(packet => packet.flag === 286)
     );
 
     merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(

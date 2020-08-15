@@ -156,6 +156,10 @@ export class AppComponent implements OnInit {
     isPlatformServer(this.platform) ? first() : tap()
   );
 
+  public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
+
+  public firewallRuleApplied = false;
+
   get desktopUrl(): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
   }
@@ -466,6 +470,14 @@ export class AppComponent implements OnInit {
     this.ipc.machinaToggle = true;
     this.settings.enableUniversalisSourcing = true;
     this.ipc.send('toggle-machina', true);
+  }
+
+  applyFirewallRule(): void {
+    this.ipc.once('machina:firewall:rule-set', () => {
+      this.firewallRuleApplied = true;
+      this.message.success(this.translate.instant('PACKET_CAPTURE.Firewall_rule_set'));
+    });
+    this.ipc.send('machina:firewall:set-rule');
   }
 
   changeToSuggestedRegion(): void {

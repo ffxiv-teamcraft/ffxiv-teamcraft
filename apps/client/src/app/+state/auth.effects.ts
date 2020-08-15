@@ -201,6 +201,7 @@ export class AuthEffects {
   markAsDoneInLog$ = this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
     withLatestFrom(this.authFacade.user$),
+    filter(([, user]) => user.defaultLodestoneId !== undefined),
     switchMap(([action, user]) => {
       return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, action.itemId, action.log, action.done);
     })

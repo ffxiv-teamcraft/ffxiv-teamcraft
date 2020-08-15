@@ -40,11 +40,19 @@ export class ZoneBreakdown {
       } else if (getItemSource(row, DataType.TRADE_SOURCES).length > 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_TRADE, LayoutRowFilter.IS_TOKEN_TRADE, LayoutRowFilter.IS_TOME_TRADE, LayoutRowFilter.IS_GC_TRADE, LayoutRowFilter.IS_SCRIPT_TRADE)
       ) {
-        getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES).forEach(source => {
-          source.npcs.forEach(npc => {
-            this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates, npc.coords);
-          });
+        const allNpcs = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES)
+          .reduce((acc, source) => {
+            return [
+              ...acc,
+              ...source.npcs
+            ];
+          }, []);
+        allNpcs.forEach(npc => {
+          this.addToBreakdown(npc.zoneId, npc.mapId, row, hideZoneDuplicates, npc.coords);
         });
+        if (allNpcs.length === 0) {
+          this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
+        }
       } else {
         this.addToBreakdown(-1, -1, row, hideZoneDuplicates, null);
       }

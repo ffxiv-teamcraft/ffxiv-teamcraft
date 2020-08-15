@@ -1881,52 +1881,41 @@ if (hasTodo('territories')) {
   });
 }
 
-// if (hasTodo('suggestedValues')) {
-//   const suggested = {};
-//   getAllPages('https://xivapi.com/RecipeLevelTable?columns=ID,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
-//     page.Results.forEach(entry => {
-//       suggested[entry.ID] = {
-//         craftsmanship: entry.SuggestedCraftsmanship,
-//         control: entry.SuggestedControl
-//       };
-//     });
-//   }, null, () => {
-//     persistToTypescript('suggested', 'suggested', suggested);
-//   });
-// }
-
-if (hasTodo('HWDCrafter')) {
-  const supplies = {};
-  getAllEntries('https://xivapi.com/HWDCrafterSupply').subscribe(completeFetch => {
-    completeFetch.forEach(supply => {
-      for (let i = 0; i < 16; i++) {
-        if (!supply[`ItemTradeIn${i}TargetID`]) {
-          continue;
-        }
-        const baseReward = supply[`BaseCollectableReward${i}`];
-        supplies[supply[`ItemTradeIn${i}TargetID`]] = {
-          level: supply[`Level${i}`],
-          base: {
-            rating: supply[`BaseCollectableRating${i}`],
-            exp: baseReward ? baseReward.ExpReward : 0,
-            scrip: baseReward ? baseReward.ScriptRewardAmount : 0
-          },
-          mid: {
-            rating: supply[`MidBaseCollectableRating${i}`],
-            exp: supply[`MidCollectableReward${i}`].ExpReward,
-            scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
-          },
-          high: {
-            rating: supply[`HighBaseCollectableRating${i}`],
-            exp: supply[`HighCollectableReward${i}`].ExpReward,
-            scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
+if (hasTodo('collectables')) {
+  const collectables = {};
+  combineLatest([
+    getAllEntries('https://xivapi.com/HWDCrafterSupply')
+  ])
+    .subscribe(([completeFetch]) => {
+      completeFetch.forEach(supply => {
+        for (let i = 0; i < 16; i++) {
+          if (!supply[`ItemTradeIn${i}TargetID`]) {
+            continue;
           }
-        };
-      }
+          const baseReward = supply[`BaseCollectableReward${i}`];
+          collectables[supply[`ItemTradeIn${i}TargetID`]] = {
+            level: supply[`Level${i}`],
+            base: {
+              rating: supply[`BaseCollectableRating${i}`],
+              exp: baseReward ? baseReward.ExpReward : 0,
+              scrip: baseReward ? baseReward.ScriptRewardAmount : 0
+            },
+            mid: {
+              rating: supply[`MidBaseCollectableRating${i}`],
+              exp: supply[`MidCollectableReward${i}`].ExpReward,
+              scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
+            },
+            high: {
+              rating: supply[`HighBaseCollectableRating${i}`],
+              exp: supply[`HighCollectableReward${i}`].ExpReward,
+              scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
+            }
+          };
+        }
+      });
+      persistToJsonAsset('collectables', collectables);
+      done('collectables');
     });
-    persistToTypescript('hwd-supplies', 'hwdSupplies', supplies);
-    done('HWDCrafter');
-  });
 }
 
 

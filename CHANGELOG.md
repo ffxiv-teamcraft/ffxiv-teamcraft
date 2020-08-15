@@ -2,6 +2,34 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.5"></a>
+## [7.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.4...v7.3.5) (2020-08-15)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with log completion on characterless accounts ([89c01a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89c01a8))
+* **db:** fixed missing nodes for levinstrike reduction ([09fedd3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09fedd3))
+* **db:** fixed npc->shop links for scrip shops ([ab7bf39](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ab7bf39))
+* **desktop:** fixed an issue with item search overlay's opacity not being applied properly ([2962d21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2962d21))
+* **desktop:** fixed vendor exchanges not recorded properly with inventory tracker ([e4ac68d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4ac68d)), closes [#1578](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1578)
+* **list:** fixed an issue sometimes hiding items in zone breakdown ([e6a556f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6a556f))
+* **lists:** you can now open favorite community lists ([66b7069](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66b7069))
+* **search:** fixed an issue with DE search and Ä character ([0b2aa70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0b2aa70))
+* **simulator:** removed label for the 3000 control bonus cap ([d622689](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d622689))
+* **ux:** fixed font color for login error alert ([68fd3f6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68fd3f6))
+
+
+### Features
+
+* **db:** 5.3 patch content for patch search & page ([5d84e27](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5d84e27))
+* **db:** spot list is now in first line of fish details page ([86490ac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/86490ac))
+* **desktop:** added button to create firewall rule in settings ([b51c9c7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b51c9c7))
+* **desktop:** new automated missing firewall rule detector with one click fixer ([e8acf99](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8acf99))
+* **inventory-optimizer:** don't process hidden optimizers anymore ([8cf91dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8cf91dc))
+
+
+
 <a name="7.3.4"></a>
 ## [7.3.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.3...v7.3.4) (2020-08-13)
 

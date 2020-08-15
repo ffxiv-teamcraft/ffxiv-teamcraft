@@ -1,4 +1,4 @@
-export const hwdSupplies = {
+{
   "28725": {
     "level": 20,
     "base": {
@@ -1583,4 +1583,4 @@ export const hwdSupplies = {
       "scrip": 76
     }
   }
-};
+}

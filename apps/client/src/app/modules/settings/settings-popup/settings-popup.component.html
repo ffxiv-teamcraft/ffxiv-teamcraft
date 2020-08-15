@@ -492,6 +492,9 @@
       <button (click)="clearCache()" nz-button>
         {{'SETTINGS.Clear_cache' | translate}}
       </button>
+      <button (click)="addFirewallRule()" nz-button>
+        {{'SETTINGS.Add_firewall_rule' | translate}}
+      </button>
       <ng-container *ngIf="(user$ | async)?.sekrit">
         <div>
           <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Sekrit' | translate"></nz-divider>

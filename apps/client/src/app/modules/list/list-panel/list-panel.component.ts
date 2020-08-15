@@ -78,28 +78,40 @@ export class ListPanelComponent extends TeamcraftComponent {
     };
   });
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.teamsFacade.myTeams$, this.authFacade.loggedIn$).pipe(
+  isFavorite$: Observable<{ value: boolean }> = combineLatest([this.authFacade.favorites$, this.list$]).pipe(
+    map(([favorites, list]) => {
+      return {
+        value: favorites.lists.indexOf(list.$key) > -1
+      };
+    })
+  );
+
+  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
     switchMap(([teams, loggedIn]) => {
-      return combineLatest(
+      return combineLatest([
         this.authFacade.userId$,
         loggedIn ? this.authFacade.user$ : of(null),
-        this.list$
-      ).pipe(
-        map(([userId, user, list]) => {
+        this.list$,
+        this.isFavorite$
+      ]).pipe(
+        map(([userId, user, list, isFavorite]) => {
           if (user !== null) {
             const isTeamList = list.teamId && teams.some(team => list.teamId === team.$key);
             const teamLeader = isTeamList && (teams.find(team => list.teamId === team.$key).leader === userId);
-            return Math.max(
+            return [Math.max(
               list.getPermissionLevel(userId),
               list.getPermissionLevel(user.currentFcId),
               isTeamList ? PermissionLevel.PARTICIPATE : PermissionLevel.NONE,
               teamLeader ? PermissionLevel.WRITE : PermissionLevel.NONE
-            );
+            ), isFavorite.value];
           } else {
-            return list.getPermissionLevel(userId);
+            return [list.getPermissionLevel(userId), isFavorite.value];
           }
         }),
-        map(permissionLevel => {
+        map(([permissionLevel, isFavorite]: [PermissionLevel, boolean]) => {
+          if (isFavorite) {
+            return Math.max(10, permissionLevel);
+          }
           if (this.publicDisplay && permissionLevel < 40) {
             return 0;
           }
@@ -154,8 +166,8 @@ export class ListPanelComponent extends TeamcraftComponent {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
   }
 
-  openList(): void {
-    if (!this.publicDisplay) {
+  openList(favorite: boolean): void {
+    if (!this.publicDisplay || favorite) {
       this.router.navigate(['/list', this._list.$key]);
     }
   }
@@ -409,7 +421,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   mouseWheelUpAmount(event: any, item: ListRow): void {
-      this.updateAmount(item, ++item.amount);
+    this.updateAmount(item, ++item.amount);
   }
 
   mouseWheelDownAmount(event: any, item: ListRow): void {

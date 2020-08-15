@@ -515,6 +515,17 @@
               </div>
             </ng-template>
           </nz-alert>
+          <nz-alert *ngIf="!firewallRuleApplied && platformService.isDesktop() && ipc.machinaToggle && (possibleMissingFirewallRule$ | async)  && !(pcapOutDated$ | async)"
+                    class="new-version-alert"
+                    [nzMessage]="'PACKET_CAPTURE.Possible_missing_firewall_rule' | translate"
+                    nzBanner nzCloseable nzType="warning" [nzCloseText]="'Close' | translate"
+                    [nzDescription]="pcapFirewallRuleDescription">
+            <ng-template #pcapFirewallRuleDescription>
+              {{'PACKET_CAPTURE.Possible_missing_firewall_rule_description' | translate}}<br>
+              <i>{{'PACKET_CAPTURE.Possible_missing_firewall_rule_check' | translate}}</i><br>
+              <button nz-button (click)="applyFirewallRule()">{{'PACKET_CAPTURE.Add_firewall_rule' | translate}}</button>
+            </ng-template>
+          </nz-alert>
           <ng-container *ngIf="platformService.isDesktop() && ipc.machinaToggle && !overlay">
             <nz-alert *ngIf="emptyInventory$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone' | translate"
                       [nzMessage]="'PACKET_CAPTURE.Empty_inventory' | translate"
