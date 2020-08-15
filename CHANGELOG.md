@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.6"></a>
+## [7.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.5...v7.3.6) (2020-08-15)
+
+
+### Bug Fixes
+
+* **desktop:** fixed possible firewall error after update ([dc685d1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc685d1))
+
+
+
 <a name="7.3.5"></a>
 ## [7.3.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.4...v7.3.5) (2020-08-15)
 
