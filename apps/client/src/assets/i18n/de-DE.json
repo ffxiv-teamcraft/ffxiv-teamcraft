@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "Fortschritt bei 100% Effizienz: {{value}}",
     "Quality_action_100_potency": "Qualität bei 100% Effizienz: {{value}}",
     "Current_control": "Aktuelle Kontrolle: {{value}}",
-    "Current_control_bonus": "Aktueller Bonus (auf 3000 begrenzt)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "Makro-Sperre (/mlock) hinzufügen",
     "Solve_rotation": "Rotation automatisch erstellen",
     "Rotation_solver": "Rotations-Löser",
