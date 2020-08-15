@@ -127,19 +127,15 @@
                 </div>
               </div>
             </nz-card>
-            <nz-card [nzTitle]="'DB.FISH.Used_as_mooch_for' | translate" class="card-with-list" fxFlex="1 1 auto">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.usedAsMoochFor; let last = last"
-                   [class.border-bottom]="!last" class="list-row">
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                  <app-item-icon [itemId]="row.itemId" [icon]="row.itemId | lazyIcon" width="32"></app-item-icon>
-                  <span>{{row.itemId | itemName | i18n}}</span>
-                </div>
-              </div>
-              <div class="no-data">
-                <nz-empty *ngIf="data.usedAsMoochFor.length === 0" [nzNotFoundContent]="contentTpl"></nz-empty>
-                <ng-template #contentTpl>
-                  <span>{{'DB.FISH.No_known_mooch_usage' | translate}}</span>
-                </ng-template>
+            <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
+              <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row" fxLayout="column"
+                   fxLayoutAlign="center center" fxLayoutGap="5px">
+                <app-map-position [mapId]="spot.spotData.mapId"
+                                  [zoneId]="spot.spotData.zoneId"
+                                  showMapName="true"
+                                  showZoneName="true"
+                                  [marker]="spot.spotData.coords"></app-map-position>
+                <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
               </div>
             </nz-card>
           </div>
@@ -194,15 +190,19 @@
                 </div>
               </div>
             </nz-card>
-            <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
-              <div *ngFor="let spot of data.spots;let last = last" [class.border-bottom]="!last" class="list-row" fxLayout="column"
-                   fxLayoutAlign="center center" fxLayoutGap="5px">
-                <app-map-position [mapId]="spot.spotData.mapId"
-                                  [zoneId]="spot.spotData.zoneId"
-                                  showMapName="true"
-                                  showZoneName="true"
-                                  [marker]="spot.spotData.coords"></app-map-position>
-                <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
+            <nz-card [nzTitle]="'DB.FISH.Used_as_mooch_for' | translate" class="card-with-list" fxFlex="1 1 auto">
+              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of data.usedAsMoochFor; let last = last"
+                   [class.border-bottom]="!last" class="list-row">
+                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+                  <app-item-icon [itemId]="row.itemId" [icon]="row.itemId | lazyIcon" width="32"></app-item-icon>
+                  <span>{{row.itemId | itemName | i18n}}</span>
+                </div>
+              </div>
+              <div class="no-data">
+                <nz-empty *ngIf="data.usedAsMoochFor.length === 0" [nzNotFoundContent]="contentTpl"></nz-empty>
+                <ng-template #contentTpl>
+                  <span>{{'DB.FISH.No_known_mooch_usage' | translate}}</span>
+                </ng-template>
               </div>
             </nz-card>
           </div>
