@@ -8,6 +8,7 @@ log.log(argv);
 const Config = require('electron-config');
 const config = new Config();
 const ChildProcess = require('child_process');
+if (require('electron-squirrel-startup')) return;
 
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
@@ -105,9 +106,8 @@ const oauth = require('./oauth.js');
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 
 // Add machina to firewall stuffs
-const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
-
 function addMachinaFirewallRule() {
+  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
   ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
 }
 
