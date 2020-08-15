@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "Progreso por 100% de eficiencia: {{value}}",
     "Quality_action_100_potency": "Calidad por 100% de eficiencia: {{value}}",
     "Current_control": "Control actual: {{value}}",
-    "Current_control_bonus": "Bono actual (limitado a 3000)",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "Incluir bloqueo de macro",
     "Solve_rotation": "Solucionar esta rotación",
     "Rotation_solver": "Resolvedor de rotación",
