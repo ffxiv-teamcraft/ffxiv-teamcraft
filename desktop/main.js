@@ -9,8 +9,6 @@ const Config = require('electron-config');
 const config = new Config();
 const ChildProcess = require('child_process');
 
-
-
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
     return false;
@@ -105,6 +103,13 @@ ipcMain.setMaxListeners(0);
 const oauth = require('./oauth.js');
 
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
+
+// Add machina to firewall stuffs
+const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+
+function addMachinaFirewallRule() {
+  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+}
 
 /**
  * @type {BrowserWindow}
@@ -616,13 +621,6 @@ ipcMain.on('language', (event, lang) => {
     // Window already destroyed, so we don't care :)
   }
 });
-
-// Add machina to firewall stuffs
-const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
-
-function addMachinaFirewallRule() {
-  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
-}
 
 // Metrics system
 const APP_DATA = process.env.APPDATA || (process.platform === 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + '/.local/share');
