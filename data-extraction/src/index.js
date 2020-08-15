@@ -1886,7 +1886,7 @@ if (hasTodo('collectables')) {
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply')
   ])
-    .subscribe(completeFetch => {
+    .subscribe(([completeFetch]) => {
       completeFetch.forEach(supply => {
         for (let i = 0; i < 16; i++) {
           if (!supply[`ItemTradeIn${i}TargetID`]) {
