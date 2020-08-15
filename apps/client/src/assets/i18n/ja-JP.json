@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "作業効率100％スキル使用時の作業量: {{value}}",
     "Quality_action_100_potency": "加工効率100％スキル使用時の品質量: {{value}}",
     "Current_control": "現在加工熟練度: {{value}}",
-    "Current_control_bonus": "現在追加加工熟練度（最大3000）",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "マクロロックを含む（マクロをキャンセルすることはできない/ mlockコマンド）",
     "Solve_rotation": "ローテーションの作成",
     "Rotation_solver": "ローテーションの作成機",
