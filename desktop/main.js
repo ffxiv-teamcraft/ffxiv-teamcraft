@@ -621,7 +621,7 @@ ipcMain.on('language', (event, lang) => {
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
 function addMachinaFirewallRule() {
-  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - test" dir=in action=allow program="${machinaExePath}" enable=yes`);
+  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
 }
 
 // Metrics system
