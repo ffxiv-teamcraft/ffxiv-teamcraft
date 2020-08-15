@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "100%效率下的进展：{{value}}",
     "Quality_action_100_potency": "100%效率下的品质：{{value}}",
     "Current_control": "当前加工精度：{{value}}",
-    "Current_control_bonus": "当前品质奖励（最高3000）",
+    "Current_control_bonus": "Current bonus",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Solve_rotation": "求解其手法",
     "Rotation_solver": "手法求解器",
