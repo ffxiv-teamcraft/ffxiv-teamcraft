@@ -202,6 +202,8 @@ export class AuthEffects {
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
     withLatestFrom(this.authFacade.user$),
     switchMap(([action, user]) => {
+      //TODO debug cannot read property toString of undefined, desktop, when gathering new item
+      console.log(user);
       return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, action.itemId, action.log, action.done);
     })
   );

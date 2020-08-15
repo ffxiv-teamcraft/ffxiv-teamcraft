@@ -559,8 +559,7 @@
             <div *ngIf="true | ifMobile: false">|</div>
             <div [nzTitle]="'SIMULATOR.Current_control_bonus' | translate" nz-tooltip>
               {{'SIMULATOR.Current_control' | translate: { value: (resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) } }}
-              ({{resultData.simulation.crafterStats._control}} + <span
-              [style.font-weight]="(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control === 3000? 'bold': 'default'">{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
+              ({{resultData.simulation.crafterStats._control}} + <span>{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
             </div>
           </div>
         </nz-card>
