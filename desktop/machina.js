@@ -4,6 +4,7 @@ const path = require('path');
 const { app } = require('electron');
 const log = require('electron-log');
 const isElevated = require('is-elevated');
+const { exec } = require('child_process');
 
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
@@ -31,16 +32,36 @@ function filterPacketSessionID(packet) {
     || packet.sourceActorSessionID === packet.targetActorSessionID;
 }
 
+// Add machina to firewall stuffs
+function addMachinaFirewallRule() {
+  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+  exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+}
+
+module.exports.addMachinaFirewallRule = addMachinaFirewallRule;
+
 module.exports.start = function(win, config, verbose, winpcap, pid) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
+      if (!isDev) {
+        const appPath = app.getAppPath();
+        const appVersion = /\d\.\d\.\d/.exec(appPath);
+        exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
+          if (output[1].indexOf(appVersion) === -1) {
+            exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
+              addMachinaFirewallRule();
+            });
+          }
+        });
+      }
+
       const region = config.get('region', null);
       const options = isDev ?
         {
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
           parseAlgorithm: 'PacketSpecific',
-          region: region
+          region: region,
         } : {
           parseAlgorithm: 'PacketSpecific',
           noData: true,
