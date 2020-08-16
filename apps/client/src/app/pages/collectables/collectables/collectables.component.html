@@ -1,0 +1,31 @@
+<form (ngSubmit)="applyNewLevels(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
+  <nz-form-item *ngFor="let control of form.controls | keys">
+    <nz-form-control>
+      <nz-input-group [nzPrefix]="jobIcon">
+        <input [formControlName]="control" [nzTooltipTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
+               nz-tooltip
+               required type="number"/>
+      </nz-input-group>
+      <ng-template #jobIcon>
+        <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(+control | jobAbbr)?.en}}.png">
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control>
+      <button [disabled]="!form.valid" nz-button nzType="primary">
+        <i nz-icon nzType="search"></i>{{'COMMON.Apply' | translate}}
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+
+<nz-tabset *ngIf="results$ | async as results">
+  <nz-tab *ngFor="let row of results" [nzTitle]="row.job | jobName | i18n">
+    <nz-collapse>
+      <nz-collapse-panel [nzHeader]="group | collectablesShopGroupName | i18n" *ngFor="let group of row.groups">
+        <pre>{{group | json}}</pre>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </nz-tab>
+</nz-tabset>

@@ -1885,7 +1885,7 @@ if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
-    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
     aggregateAllPages('https://xivapi.com/Currency?columns=ID,ItemTargetID')
   ])
     .subscribe(([hwdCompleteFetch, collectablesCompleteFetch, currenciesCompleteFetch]) => {
@@ -1927,6 +1927,7 @@ if (hasTodo('collectables')) {
             levelMin: collectable.LevelMin,
             levelMax: collectable.LevelMax,
             group: collectable.CollectablesShopItemGroupTargetID,
+            shopId: +collectable.ID.split('.')[0],
             reward: currenciesCompleteFetch.find(c => c.ID === collectable.CollectablesShopRewardScrip.Currency).ItemTargetID,
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,

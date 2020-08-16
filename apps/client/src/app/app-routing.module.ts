@@ -184,6 +184,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/metrics/metrics.module').then(m => m.MetricsModule)
   },
   {
+    path: 'collectables',
+    loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
+  },
+  {
     path: 'extractor',
     loadChildren: () => import('./pages/extractor/extractor.module').then(m => m.ExtractorModule),
     canLoad: [DevGuard]
