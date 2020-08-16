@@ -429,23 +429,25 @@ export class ItemComponent extends TeamcraftPageComponent {
               })
           });
         }
-        if (data.item.masterpiece !== undefined) {
-          usedFor.push({
-            type: UsedForType.ROWENA_SPLENDOR,
-            flex: '1 1 auto',
-            title: 'DB.Rowena_splendor',
-            icon: './assets/icons/status/collectors_glove.png',
-            masterpiece: data.item.masterpiece
-          });
-        }
-        if (this.lazyData.data.collectables[data.item.id] !== undefined) {
-          usedFor.push({
-            type: UsedForType.ISHGARD_RESTORATION,
-            flex: '1 1 auto',
-            title: 'DB.Ishgard_restoration',
-            icon: './assets/icons/status/collectors_glove.png',
-            ishgardRestoration: this.lazyData.data.collectables[data.item.id]
-          });
+        const collectable = this.lazyData.data.collectables[data.item.id];
+        if (collectable !== undefined) {
+          if (collectable.reward === 28063) {
+            usedFor.push({
+              type: UsedForType.ISHGARD_RESTORATION,
+              flex: '1 1 auto',
+              title: 'DB.Ishgard_restoration',
+              icon: './assets/icons/status/collectors_glove.png',
+              ishgardRestoration: this.lazyData.data.collectables[data.item.id]
+            });
+          } else {
+            usedFor.push({
+              type: UsedForType.ROWENA_SPLENDOR,
+              flex: '1 1 auto',
+              title: 'DB.Rowena_splendor',
+              icon: './assets/icons/status/collectors_glove.png',
+              masterpiece: this.lazyData.data.collectables[data.item.id]
+            });
+          }
         }
         const lazyDesynths = Object.keys(this.lazyData.data.desynth).filter(key => this.lazyData.data.desynth[key].indexOf(data.item.id) > -1).map(key => +key);
         const desynths = uniq([...(data.item.desynthedTo || []), ...(lazyDesynths || [])]);

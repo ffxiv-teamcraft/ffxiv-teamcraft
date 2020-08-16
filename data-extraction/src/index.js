@@ -1884,10 +1884,12 @@ if (hasTodo('territories')) {
 if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
-    getAllEntries('https://xivapi.com/HWDCrafterSupply')
+    getAllEntries('https://xivapi.com/HWDCrafterSupply'),
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin'),
+    aggregateAllPages('https://xivapi.com/Currency?columns=ID,ItemTargetID')
   ])
-    .subscribe(([completeFetch]) => {
-      completeFetch.forEach(supply => {
+    .subscribe(([hwdCompleteFetch, collectablesCompleteFetch, currenciesCompleteFetch]) => {
+      hwdCompleteFetch.forEach(supply => {
         for (let i = 0; i < 16; i++) {
           if (!supply[`ItemTradeIn${i}TargetID`]) {
             continue;
@@ -1895,6 +1897,7 @@ if (hasTodo('collectables')) {
           const baseReward = supply[`BaseCollectableReward${i}`];
           collectables[supply[`ItemTradeIn${i}TargetID`]] = {
             level: supply[`Level${i}`],
+            reward: 28063,
             base: {
               rating: supply[`BaseCollectableRating${i}`],
               exp: baseReward ? baseReward.ExpReward : 0,
@@ -1913,6 +1916,31 @@ if (hasTodo('collectables')) {
           };
         }
       });
+      collectablesCompleteFetch
+        .filter(collectable => {
+          return collectable.CollectablesShopRewardScrip !== null;
+        })
+        .forEach(collectable => {
+          collectables[collectable.ItemTargetID] = {
+            level: collectable.LevelMin,
+            reward: currenciesCompleteFetch.find(c => c.ID === collectable.CollectablesShopRewardScrip.Currency).ItemTargetID,
+            base: {
+              rating: collectable.CollectablesShopRefine.LowCollectability,
+              exp: 0,
+              scrip: collectable.CollectablesShopRewardScrip.LowReward
+            },
+            mid: {
+              rating: collectable.CollectablesShopRefine.MidCollectability,
+              exp: 0,
+              scrip: collectable.CollectablesShopRewardScrip.MidReward
+            },
+            high: {
+              rating: collectable.CollectablesShopRefine.HighCollectability,
+              exp: 0,
+              scrip: collectable.CollectablesShopRewardScrip.HighReward
+            }
+          };
+        });
       persistToJsonAsset('collectables', collectables);
       done('collectables');
     });
