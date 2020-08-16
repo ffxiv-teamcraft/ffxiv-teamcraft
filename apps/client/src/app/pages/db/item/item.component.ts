@@ -431,7 +431,7 @@ export class ItemComponent extends TeamcraftPageComponent {
         }
         const collectable = this.lazyData.data.collectables[data.item.id];
         if (collectable !== undefined) {
-          if (collectable.reward === 28063) {
+          if (collectable.hwd) {
             usedFor.push({
               type: UsedForType.ISHGARD_RESTORATION,
               flex: '1 1 auto',

@@ -1885,7 +1885,7 @@ if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
-    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin'),
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
     aggregateAllPages('https://xivapi.com/Currency?columns=ID,ItemTargetID')
   ])
     .subscribe(([hwdCompleteFetch, collectablesCompleteFetch, currenciesCompleteFetch]) => {
@@ -1896,6 +1896,7 @@ if (hasTodo('collectables')) {
           }
           const baseReward = supply[`BaseCollectableReward${i}`];
           collectables[supply[`ItemTradeIn${i}TargetID`]] = {
+            hwd: true,
             level: supply[`Level${i}`],
             reward: 28063,
             base: {
@@ -1923,6 +1924,9 @@ if (hasTodo('collectables')) {
         .forEach(collectable => {
           collectables[collectable.ItemTargetID] = {
             level: collectable.LevelMin,
+            levelMin: collectable.LevelMin,
+            levelMax: collectable.LevelMax,
+            group: collectable.CollectablesShopItemGroupTargetID,
             reward: currenciesCompleteFetch.find(c => c.ID === collectable.CollectablesShopRewardScrip.Currency).ItemTargetID,
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
@@ -1944,6 +1948,23 @@ if (hasTodo('collectables')) {
       persistToJsonAsset('collectables', collectables);
       done('collectables');
     });
+}
+
+if (hasTodo('collectables-shop-item-group')) {
+  const collectablesShopItemGroup = {};
+  getAllPages(`https://xivapi.com/CollectablesShopItemGroup?columns=ID,Name_*`).subscribe(page => {
+    page.Results.forEach(entry => {
+      collectablesShopItemGroup[entry.ID] = {
+        en: entry.Name_en,
+        ja: entry.Name_ja,
+        de: entry.Name_de,
+        fr: entry.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('collectables-shop-item-group', collectablesShopItemGroup);
+    done('collectables-shop-item-group');
+  });
 }
 
 
