@@ -31,7 +31,7 @@ module.exports = function(config) {
         autoHideMenuBar: true,
         webPreferences: {
           contextIsolation: false,
-          nodeIntegration: true,
+          nodeIntegration: config.authorize_url.indexOf('discordapp.com') === -1,
           webviewTag: true
         },
         useContentSize: true
