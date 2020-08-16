@@ -87,6 +87,11 @@ export class DesynthComponent {
               value: dlvl + 10
             },
             {
+              column: 'Desynth',
+              operator: '>',
+              value: 0
+            },
+            {
               column: 'ClassJobRepairTargetID',
               operator: '=',
               value: job
