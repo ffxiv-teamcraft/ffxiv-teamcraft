@@ -1881,6 +1881,8 @@ if (hasTodo('territories')) {
   });
 }
 
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
 if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
@@ -1931,17 +1933,17 @@ if (hasTodo('collectables')) {
             reward: currenciesCompleteFetch.find(c => c.ID === collectable.CollectablesShopRewardScrip.Currency).ItemTargetID,
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
-              exp: 0,
+              exp: collectable.CollectablesShopRefine.ExpRatioLow,
               scrip: collectable.CollectablesShopRewardScrip.LowReward
             },
             mid: {
               rating: collectable.CollectablesShopRefine.MidCollectability,
-              exp: 0,
+              exp: collectable.CollectablesShopRefine.ExpRatioMid,
               scrip: collectable.CollectablesShopRewardScrip.MidReward
             },
             high: {
               rating: collectable.CollectablesShopRefine.HighCollectability,
-              exp: 0,
+              exp: collectable.CollectablesShopRefine.ExpRatioHigh,
               scrip: collectable.CollectablesShopRewardScrip.HighReward
             }
           };

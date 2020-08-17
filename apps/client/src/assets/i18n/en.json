@@ -1411,8 +1411,7 @@
     "Jump_to_page": "Quick jump to another page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "Hour of the day",
