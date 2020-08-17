@@ -2121,5 +2121,9 @@
     "None_inside_inventory": "This item is not in any inventories.",
     "Open_in_main_window": "Open in main window",
     "Marketboard_informations": "Marketboard informations"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }

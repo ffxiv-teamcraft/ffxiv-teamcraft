@@ -1885,10 +1885,9 @@ if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
-    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID'),
-    aggregateAllPages('https://xivapi.com/Currency?columns=ID,ItemTargetID')
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
   ])
-    .subscribe(([hwdCompleteFetch, collectablesCompleteFetch, currenciesCompleteFetch]) => {
+    .subscribe(([hwdCompleteFetch, collectablesCompleteFetch]) => {
       hwdCompleteFetch.forEach(supply => {
         for (let i = 0; i < 16; i++) {
           if (!supply[`ItemTradeIn${i}TargetID`]) {
@@ -1928,20 +1927,20 @@ if (hasTodo('collectables')) {
             levelMax: collectable.LevelMax,
             group: collectable.CollectablesShopItemGroupTargetID,
             shopId: +collectable.ID.split('.')[0],
-            reward: currenciesCompleteFetch.find(c => c.ID === collectable.CollectablesShopRewardScrip.Currency).ItemTargetID,
+            reward: collectable.CollectablesShopRewardScrip.Currency.ItemTargetID,
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
-              exp: collectable.CollectablesShopRefine.ExpRatioLow,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
               scrip: collectable.CollectablesShopRewardScrip.LowReward
             },
             mid: {
               rating: collectable.CollectablesShopRefine.MidCollectability,
-              exp: collectable.CollectablesShopRefine.ExpRatioMid,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioMid,
               scrip: collectable.CollectablesShopRewardScrip.MidReward
             },
             high: {
               rating: collectable.CollectablesShopRefine.HighCollectability,
-              exp: collectable.CollectablesShopRefine.ExpRatioHigh,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioHigh,
               scrip: collectable.CollectablesShopRewardScrip.HighReward
             }
           };
@@ -1972,6 +1971,10 @@ if (hasTodo('collectables-shops')) {
   const collectablesShops = {};
   getAllEntries('https://xivapi.com/CollectablesShop').subscribe(collectablesShopCompleteFetch => {
     collectablesShopCompleteFetch.forEach(entry => {
+      // Skip the revenant's toll NPC, only accepts old stuff that we don't want to list
+      if (entry.ID === 3866627) {
+        return;
+      }
       for (let i = 0; i < 11; i++) {
         if (entry[`ShopItems${i}TargetID`] === 0) {
           continue;
