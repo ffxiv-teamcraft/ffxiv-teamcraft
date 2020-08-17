@@ -23,7 +23,7 @@
 <nz-tabset *ngIf="results$ | async as results">
   <nz-tab *ngFor="let row of results" [nzTitle]="row.job | jobName | i18n">
     <nz-collapse>
-      <nz-collapse-panel [nzHeader]="group | collectablesShopGroupName | i18n" *ngFor="let group of row.groups">
+      <nz-collapse-panel [nzHeader]="group.groupId | collectablesShopGroupName | i18n" *ngFor="let group of row.groups">
         <pre>{{group | json}}</pre>
       </nz-collapse-panel>
     </nz-collapse>

@@ -63,19 +63,23 @@ export class CollectablesComponent {
         if (collectableEntry.hwd) {
           return false;
         }
-        return collectableEntry.levelMin <= level && collectableEntry.levelMax >= level;
+        const job = +Object.keys(this.lazyData.data.collectablesShops).find(sKey => {
+          return this.lazyData.data.collectablesShops[sKey].indexOf(collectableEntry.shopId) > -1;
+        });
+        return (job + 8) === jobId && collectableEntry.levelMin <= level && collectableEntry.levelMax >= level;
       })
       .map(key => this.lazyData.data.collectables[key])
       .reduce((acc, row) => {
-        let group = acc.find(accRow => accRow.group = row.group);
+        let group = acc.find(accRow => accRow.groupId = row.group);
         if (group === undefined) {
           acc.push({
-            group: row.group,
+            groupId: row.group,
             collectables: []
           });
           group = acc[acc.length - 1];
         }
         group.collectables.push(row);
+        return acc;
       }, []);
   }
 

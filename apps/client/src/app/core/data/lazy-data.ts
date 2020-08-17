@@ -9,6 +9,7 @@ export interface LazyData {
   baseParams: any;
   classJobsModifiers: any;
   collectablesShopItemGroup: any;
+  collectablesShops: any;
   collectables: any;
   craftActions: any;
   craftingLogPages: any;

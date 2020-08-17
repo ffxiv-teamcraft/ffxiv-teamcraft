@@ -1881,8 +1881,6 @@ if (hasTodo('territories')) {
   });
 }
 
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-
 if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
@@ -1967,6 +1965,26 @@ if (hasTodo('collectables-shop-item-group')) {
   }, null, () => {
     persistToJsonAsset('collectables-shop-item-group', collectablesShopItemGroup);
     done('collectables-shop-item-group');
+  });
+}
+
+if (hasTodo('collectables-shops')) {
+  const collectablesShops = {};
+  getAllEntries('https://xivapi.com/CollectablesShop').subscribe(collectablesShopCompleteFetch => {
+    collectablesShopCompleteFetch.forEach(entry => {
+      for (let i = 0; i < 11; i++) {
+        if (entry[`ShopItems${i}TargetID`] === 0) {
+          continue;
+        }
+        collectablesShops[i] = [
+          ...(collectablesShops[i] || []),
+          entry[`ShopItems${i}TargetID`]
+        ];
+      }
+    });
+
+    persistToJsonAsset('collectables-shops', collectablesShops);
+    done('collectables-shops');
   });
 }
 
