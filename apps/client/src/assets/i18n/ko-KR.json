@@ -1411,8 +1411,7 @@
     "Jump_to_page": "빠른 검색",
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
-      "Masterpiece_base": "기본",
-      "Masterpiece_bonus": "보너스"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "인벤토리 내에 해당 아이템이 없습니다",
     "Open_in_main_window": "메인 창에서 열기",
     "Marketboard_informations": "장터게시판 정보"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }
