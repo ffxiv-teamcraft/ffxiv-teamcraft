@@ -1411,8 +1411,7 @@
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "奖励"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "此物品不在任何物品栏中。",
     "Open_in_main_window": "在主页面打开",
     "Marketboard_informations": "交易板信息"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }

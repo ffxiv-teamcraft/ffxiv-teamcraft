@@ -1411,8 +1411,7 @@
     "Jump_to_page": "Schnellwechsel zu anderer Seite",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
-      "Masterpiece_base": "Basis",
-      "Masterpiece_bonus": "Bonus"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "Dieser Gegenstand ist in keinem Inventar.",
     "Open_in_main_window": "Im Hauptfenster öffnen",
     "Marketboard_informations": "Marktbrett-Informationen"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }

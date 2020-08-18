@@ -1411,8 +1411,7 @@
     "Jump_to_page": "Saltar rápido a otra página",
     "Ishgard_restoration": "Restauración Ishgardiana",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "Hora del día",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "Este artículo no está en ningún inventario.",
     "Open_in_main_window": "Abrir en la ventana principal",
     "Marketboard_informations": "Información del mercado"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }
