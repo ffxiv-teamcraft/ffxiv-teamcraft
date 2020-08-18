@@ -46,7 +46,7 @@
     </div>
   </div>
   <button (click)="generateList()" [disabled]="selection.length === 0" nz-button
-          nzBlock>{{'GC_SUPPLY.Generate_list' | translate}}</button>
+          nzBlock nzType="primary">{{'GC_SUPPLY.Generate_list' | translate}}</button>
 </div>
 <app-fullpage-message *ngIf="pristine" height="300px">
   {{'GC_SUPPLY.Intro' | translate}}
