@@ -2015,7 +2015,7 @@
         "Data_type": "首先，请选择您想要使用的计量方式。",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
         "Title": "为您的面板设置标题",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Display_type": "选择您想要使用哪个组件来表示您的数据，然后添加相应的输入。"
       }
     }
   },
