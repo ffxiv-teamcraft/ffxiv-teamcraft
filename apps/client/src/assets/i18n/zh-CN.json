@@ -2068,33 +2068,33 @@
     },
     "TYPES": {
       "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "CURRENCY": "货币",
+      "ITEM": "物品"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
+      "Type": "类型",
+      "Entry_label": "标签",
       "Value": "Value",
-      "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Source": "来源:",
+      "Timestamp": "时间信息"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "每项物品的总数",
+      "Source": "每个来源的总数"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
-      "Filter": "Filter",
+      "Data": "数据",
+      "Data_type": "类型",
+      "Filter": "筛选",
       "Accepted_items": "Accepted items",
       "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
+      "Display": "显示",
+      "Display_type": "显示组件",
+      "Title": "标题",
+      "Font_size": "字体大小",
       "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
+      "Pie_metric": "计量",
+      "Add_filter": "添加筛选器",
       "Operator": "Operator",
       "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
       "Cannot_delete_default": "You can't delete default layout",
@@ -2119,8 +2119,8 @@
     "Open": "Open item search overlay",
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
     "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "None_inside_inventory": "此物品不在任何物品栏中。",
+    "Open_in_main_window": "在主页面打开",
+    "Marketboard_informations": "交易板信息"
   }
 }
