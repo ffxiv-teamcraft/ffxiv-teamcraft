@@ -1,0 +1,135 @@
+<app-page-loader [loading]="loading$ | async">
+  <form (ngSubmit)="applyNewLevels(form)" *ngIf="form$ | async as form" [formGroup]="form" [nzLayout]="'inline'" nz-form>
+    <nz-form-item *ngFor="let control of form.controls | keys">
+      <nz-form-control>
+        <nz-input-group [nzPrefix]="jobIcon">
+          <input [formControlName]="control" [nzTooltipTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
+                 nz-tooltip
+                 required type="number"/>
+        </nz-input-group>
+        <ng-template #jobIcon>
+          <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(+control | jobAbbr)?.en}}.png">
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button [disabled]="!form.valid" nz-button nzType="primary">
+          <i nz-icon nzType="search"></i>{{'COMMON.Apply' | translate}}
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  <nz-tabset *ngIf="results$ | async as results" [nzAnimated]="false">
+    <nz-tab *ngFor="let row of results" [nzTitle]="title">
+      <ng-template #title>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(row.job | jobAbbr)?.en}}.png">
+          <div>{{row.job | jobName | i18n}}</div>
+        </div>
+      </ng-template>
+      <nz-collapse *ngIf="row.groups.length > 0; else noCollectables">
+        <nz-collapse-panel [nzHeader]="group.groupId | collectablesShopGroupName | i18n" [nzActive]="first" *ngFor="let group of row.groups; first as first">
+          <div fxLayout="column" fxLayoutGap="10px">
+            <div *ngFor="let collectable of group.collectables" nz-row>
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="12">
+                <label nz-checkbox [ngModel]="isItemSelected(group.groupId, collectable.itemId)"
+                       (ngModelChange)="selectItem(group.groupId, collectable.itemId, $event)"></label>
+                <app-item-icon [itemId]="collectable.itemId" [width]="32"></app-item-icon>
+                <div fxLayout="column">
+                  <div>{{collectable.itemId | itemName | i18n}}</div>
+                  <div>{{'Level' | translate}} {{collectable.levelMax}}</div>
+                </div>
+              </div>
+              <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
+                <div><b>{{collectable.base.rating}} - {{collectable.mid.rating - 1}}</b></div>
+                <div>
+                  <app-item-icon [width]="24" [itemId]="collectable.reward"></app-item-icon>
+                  x {{collectable.base.scrip}}
+                </div>
+                <div>
+                  <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                  {{getExp(row.level, collectable, collectable.base.exp) | number}}
+                </div>
+              </div>
+              <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
+                <div><b>{{collectable.mid.rating}} - {{collectable.high.rating - 1}}</b></div>
+                <div>
+                  <app-item-icon [width]="24" [itemId]="collectable.reward"></app-item-icon>
+                  x {{collectable.mid.scrip}}
+                </div>
+                <div>
+                  <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                  {{getExp(row.level, collectable, collectable.mid.exp) | number}}
+                </div>
+              </div>
+              <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
+                <div><b>{{collectable.high.rating}}+</b></div>
+                <div>
+                  <app-item-icon [width]="24" [itemId]="collectable.reward"></app-item-icon>
+                  x {{collectable.high.scrip}}
+                </div>
+                <div>
+                  <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                  {{getExp(row.level, collectable, collectable.high.exp) | number}}
+                </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="6">
+                <nz-input-number [(ngModel)]="collectable.amount"></nz-input-number>
+                <button (click)="addItemsToList([{itemId: collectable.itemId, amount: collectable.amount}])" [nzShape]="'circle'"
+                        [nzTitle]="'ITEMS.Add_to_list' | translate"
+                        [nzType]="'primary'"
+                        nz-button nz-tooltip>
+                  <i nz-icon nzType="plus"></i>
+                </button>
+                <button (click)="createQuickList({itemId: collectable.itemId, amount: collectable.amount})" [nzShape]="'circle'"
+                        [nzTitle]="'Quick_list_create' | translate"
+                        [nzType]="'primary'"
+                        nz-button nz-tooltip>
+                  <i nz-icon nzType="clock-circle-o"></i>
+                </button>
+                <button *ngIf="row.job < 16" (click)="openInSimulator(collectable.itemId)" [nzShape]="'circle'"
+                        [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
+                        nz-button
+                        nz-tooltip>
+                  <i class="material-icons">gavel</i>
+                </button>
+              </div>
+            </div>
+            <button nz-button nzBlock nzType="primary"
+                    (click)="addSelectionToList(group.groupId, group.collectables)"
+                    [disabled]="!selectedItems[group.groupId] || selectedItems[group.groupId].length === 0">{{'LISTS.Add_selection' | translate}}</button>
+          </div>
+        </nz-collapse-panel>
+      </nz-collapse>
+      <ng-template #noCollectables>
+        <app-fullpage-message>
+          {{'COLLECTABLES.No_collectables_for_this_level' | translate}}
+        </app-fullpage-message>
+      </ng-template>
+    </nz-tab>
+  </nz-tabset>
+</app-page-loader>
+
+<ng-template #notificationRef let-notification>
+  <div class="ant-notification-notice-content ant-notification-notice-with-icon">
+    <span class="ant-notification-notice-icon"><i class="ant-notification-notice-icon-success" nz-icon
+                                                  nzType="check-circle"></i></span>
+    <div>
+      <div class="ant-notification-notice-message">{{'COMMON.Success' | translate}}</div>
+      <div class="ant-notification-notice-description">
+        <span *ngIf="itemsAdded === 1">{{'Recipe_Added' | translate: { listname: modifiedList.name } }}</span>
+        <span *ngIf="itemsAdded !== 1">{{'Recipes_Added' | translate: {
+          itemcount: itemsAdded,
+          listname: modifiedList.name
+        } }}</span>
+      </div>
+      <span class="ant-notification-notice-btn">
+            <a (click)="notification.close();" nz-button nzType="primary" routerLink="/list/{{modifiedList.$key}}">
+              <span>{{'Open' | translate}}</span>
+            </a>
+          </span>
+    </div>
+  </div>
+</ng-template>

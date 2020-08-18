@@ -191,55 +191,55 @@
                 </div>
               </div>
               <div *ngIf="row.masterpiece" fxLayout="row wrap" fxLayoutGap="10px">
-                <div class="masterpiece-entry">
-                  <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_base' | translate}}</div>
-                  <div fxLayout="column" fxLayoutAlign="center center">
-                    <div class="masterpiece-rating">{{row.masterpiece.rating[0]}}
-                      - {{row.masterpiece.rating[1] - 1}}</div>
+                <div class="masterpiece-entry rowena">
+                  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <div class="masterpiece-rating">{{row.masterpiece.base.rating}}
+                      - {{row.masterpiece.mid.rating - 1}}</div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
                                        [itemId]="row.masterpiece.reward"
                                        width="32"></app-item-icon>
-                        <div>x{{row.masterpiece.rewardAmount[0] | number}}</div>
+                        <div>x{{row.masterpiece.base.scrip | number}}</div>
                       </div>
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                        <div>x{{row.masterpiece.xp[0] | number}}</div>
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.base.exp / 1000 | number}}%</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="masterpiece-entry" fxLayout="row" fxLayoutGap="20px">
-                  <div class="masterpiece-entry-title">{{'DB.ITEM.Masterpiece_bonus' | translate}}</div>
-                  <div fxLayout="column" fxLayoutAlign="center center">
-                    <div class="masterpiece-rating">{{row.masterpiece.rating[1]}}
-                      - {{row.masterpiece.rating[2] - 1}}</div>
+                <div class="masterpiece-entry rowena">
+                  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <div class="masterpiece-rating">{{row.masterpiece.mid.rating}}
+                      - {{row.masterpiece.high.rating - 1}}</div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
                                        [itemId]="row.masterpiece.reward"
                                        width="32"></app-item-icon>
-                        <div>x{{row.masterpiece.rewardAmount[1] | number}}</div>
+                        <div>x{{row.masterpiece.mid.scrip | number}}</div>
                       </div>
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                        <div>x{{row.masterpiece.xp[1] | number}}</div>
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.mid.exp / 1000 | number}}%</div>
                       </div>
                     </div>
                   </div>
-                  <div fxLayout="column" fxLayoutAlign="center center">
-                    <div class="masterpiece-rating">{{row.masterpiece.rating[2]}}+</div>
+                </div>
+                <div class="masterpiece-entry rowena">
+                  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <div class="masterpiece-rating">{{row.masterpiece.high.rating}} +</div>
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <app-item-icon [icon]="row.masterpiece.reward | lazyIcon"
                                        [itemId]="row.masterpiece.reward"
                                        width="32"></app-item-icon>
-                        <div>x{{row.masterpiece.rewardAmount[2] | number}}</div>
+                        <div>x{{row.masterpiece.high.scrip | number}}</div>
                       </div>
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
-                        <div>x{{row.masterpiece.xp[2] | number}}</div>
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.high.exp / 1000 | number}}%</div>
                       </div>
                     </div>
                   </div>

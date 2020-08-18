@@ -1406,13 +1406,12 @@
     "3d_model_help": "Preview 3D model",
     "Achievements": "Achievements",
     "Currencies": "Currencies",
-    "Rowena_splendor": "Rowena's splendors (Starred = +20% bonus)",
+    "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Unlocks",
     "Jump_to_page": "Quick jump to another page",
     "Ishgard_restoration": "Ishgardian restoration",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "Hour of the day",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "This item is not in any inventories.",
     "Open_in_main_window": "Open in main window",
     "Marketboard_informations": "Marketboard informations"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }

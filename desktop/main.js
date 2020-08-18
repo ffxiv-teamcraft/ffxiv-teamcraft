@@ -48,7 +48,7 @@ function handleSquirrelEvent() {
         spawnUpdate(['--createShortcut', exeName]);
       }
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
-      addMachinaFirewallRule();
+      Machina.addMachinaFirewallRule();
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -57,9 +57,7 @@ function handleSquirrelEvent() {
       //   explorer context menus
       // Remove previous firewall rules
       ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
-      ChildProcess.exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
-        addMachinaFirewallRule();
-      });
+      Machina.addMachinaFirewallRule();
       // Install desktop and start menu shortcuts
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
@@ -104,12 +102,6 @@ ipcMain.setMaxListeners(0);
 const oauth = require('./oauth.js');
 
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
-
-// Add machina to firewall stuffs
-function addMachinaFirewallRule() {
-  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
-  ChildProcess.exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
-}
 
 /**
  * @type {BrowserWindow}
@@ -751,7 +743,7 @@ ipcMain.on('overlay', (event, data) => {
 });
 
 ipcMain.on('machina:firewall:set-rule', (event) => {
-  addMachinaFirewallRule();
+  Machina.addMachinaFirewallRule();
   event.sender.send('machina:firewall:rule-set', true);
 });
 

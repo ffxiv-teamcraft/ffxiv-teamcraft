@@ -1884,17 +1884,20 @@ if (hasTodo('territories')) {
 if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
-    getAllEntries('https://xivapi.com/HWDCrafterSupply')
+    getAllEntries('https://xivapi.com/HWDCrafterSupply'),
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
   ])
-    .subscribe(([completeFetch]) => {
-      completeFetch.forEach(supply => {
+    .subscribe(([hwdCompleteFetch, collectablesCompleteFetch]) => {
+      hwdCompleteFetch.forEach(supply => {
         for (let i = 0; i < 16; i++) {
           if (!supply[`ItemTradeIn${i}TargetID`]) {
             continue;
           }
           const baseReward = supply[`BaseCollectableReward${i}`];
           collectables[supply[`ItemTradeIn${i}TargetID`]] = {
+            hwd: true,
             level: supply[`Level${i}`],
+            reward: 28063,
             base: {
               rating: supply[`BaseCollectableRating${i}`],
               exp: baseReward ? baseReward.ExpReward : 0,
@@ -1913,9 +1916,79 @@ if (hasTodo('collectables')) {
           };
         }
       });
+      collectablesCompleteFetch
+        .filter(collectable => {
+          return collectable.CollectablesShopRewardScrip !== null;
+        })
+        .forEach(collectable => {
+          collectables[collectable.ItemTargetID] = {
+            level: collectable.LevelMin,
+            levelMin: collectable.LevelMin,
+            levelMax: collectable.LevelMax,
+            group: collectable.CollectablesShopItemGroupTargetID,
+            shopId: +collectable.ID.split('.')[0],
+            reward: collectable.CollectablesShopRewardScrip.Currency.ItemTargetID,
+            base: {
+              rating: collectable.CollectablesShopRefine.LowCollectability,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
+              scrip: collectable.CollectablesShopRewardScrip.LowReward
+            },
+            mid: {
+              rating: collectable.CollectablesShopRefine.MidCollectability,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioMid,
+              scrip: collectable.CollectablesShopRewardScrip.MidReward
+            },
+            high: {
+              rating: collectable.CollectablesShopRefine.HighCollectability,
+              exp: collectable.CollectablesShopRewardScrip.ExpRatioHigh,
+              scrip: collectable.CollectablesShopRewardScrip.HighReward
+            }
+          };
+        });
       persistToJsonAsset('collectables', collectables);
       done('collectables');
     });
+}
+
+if (hasTodo('collectables-shop-item-group')) {
+  const collectablesShopItemGroup = {};
+  getAllPages(`https://xivapi.com/CollectablesShopItemGroup?columns=ID,Name_*`).subscribe(page => {
+    page.Results.forEach(entry => {
+      collectablesShopItemGroup[entry.ID] = {
+        en: entry.Name_en,
+        ja: entry.Name_ja,
+        de: entry.Name_de,
+        fr: entry.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('collectables-shop-item-group', collectablesShopItemGroup);
+    done('collectables-shop-item-group');
+  });
+}
+
+if (hasTodo('collectables-shops')) {
+  const collectablesShops = {};
+  getAllEntries('https://xivapi.com/CollectablesShop').subscribe(collectablesShopCompleteFetch => {
+    collectablesShopCompleteFetch.forEach(entry => {
+      // Skip the revenant's toll NPC, only accepts old stuff that we don't want to list
+      if (entry.ID === 3866627) {
+        return;
+      }
+      for (let i = 0; i < 11; i++) {
+        if (entry[`ShopItems${i}TargetID`] === 0) {
+          continue;
+        }
+        collectablesShops[i] = [
+          ...(collectablesShops[i] || []),
+          entry[`ShopItems${i}TargetID`]
+        ];
+      }
+    });
+
+    persistToJsonAsset('collectables-shops', collectablesShops);
+    done('collectables-shops');
+  });
 }
 
 

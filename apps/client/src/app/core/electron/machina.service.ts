@@ -89,6 +89,16 @@ export class MachinaService {
     );
   }
 
+  private getInventoryTransactionFlag():number{
+    switch(this.settings.region){
+      case Region.China:
+        return 108;
+      case Region.Global:
+      default:
+        return 286
+    }
+  }
+
   public init(): void {
     const isCrafting$ = merge(
       this.ipc.packets$.pipe(ofPacketType('eventStart')),
@@ -199,7 +209,7 @@ export class MachinaService {
     });
 
     const temporaryAdditions$ = this.ipc.inventoryTransactionPackets$.pipe(
-      filter(packet => packet.flag === 286)
+      filter(packet => packet.flag === this.getInventoryTransactionFlag())
     );
 
     merge(this.ipc.updateInventorySlotPackets$, temporaryAdditions$).pipe(

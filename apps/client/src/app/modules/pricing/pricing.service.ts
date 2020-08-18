@@ -4,6 +4,7 @@ import { Price } from './model/price';
 import { ItemAmount } from './model/item-amount';
 import { Subject } from 'rxjs';
 import { DataType } from '../list/data/data-type';
+import { LazyDataService } from '../../core/data/lazy-data.service';
 
 @Injectable()
 export class PricingService {
@@ -25,7 +26,7 @@ export class PricingService {
 
   public priceChanged$ = new Subject<void>();
 
-  constructor() {
+  constructor(private lazyData: LazyDataService) {
     this.prices = this.parsePrices(localStorage.getItem('prices'));
     this.amounts = JSON.parse(localStorage.getItem('amounts')) || {};
     this.customPrices = JSON.parse(localStorage.getItem('customPrices')) || [];
@@ -137,7 +138,7 @@ export class PricingService {
         return storedValue;
       }
     }
-    if (hq) {
+    if (hq && this.lazyData.data.itemMeldingData[item.id].canBeHq) {
       return { nq: 0, hq: item.amount };
     }
     return { nq: item.amount, hq: 0 };

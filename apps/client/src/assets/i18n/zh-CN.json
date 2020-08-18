@@ -15,7 +15,7 @@
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
   "Hide_zone_duplicates": "隐藏重复地图 (来自多个地图的物品只显示一次)",
   "Patch_notes": "{{version}} 更新",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
+  "Patch_notes_footer": "您喜欢新的功能吗？考虑下在patreon支持这个项目？",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "该用户已被其它帐号绑定",
     "auth/email-already-in-use": "电子邮箱已被使用",
@@ -48,7 +48,7 @@
   "See_code_github": "查看 Github 上的代码",
   "Support_on_patreon": "在 Patreon 上支持我们的项目",
   "Access_patreon_page": "打开我们的 Patreon 页",
-  "Like_the_tool": "Are you enjoying the tool so far?",
+  "Like_the_tool": "您现在是否喜欢这个工具？",
   "Default": "默认",
   "Delete": "删除",
   "Copy_isearch": "复制物品检索宏",
@@ -161,7 +161,7 @@
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
-    "Change": "Change"
+    "Change": "变化"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -381,7 +381,7 @@
     "No_nickname_warning": "请到设置页面设置昵称以使用赞助人专属功能",
     "Show_devtools": "显示开发者工具",
     "Clear_cache": "清除缓存 (将重新启动应用程序)",
-    "Add_firewall_rule": "Add packet capture firewall rule",
+    "Add_firewall_rule": "添加封包捕获防火墙规则",
     "Enable_item_tags": "启用物品标签",
     "Show_copy_list_own_list": "在自己的清单页也显示复制清单按钮",
     "Custom_theme": "自定义主题",
@@ -421,7 +421,7 @@
     "Enable_metrics_capture": "启用计量捕获",
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
-    "Metrics_capture_folder": "Metrics log folder",
+    "Metrics_capture_folder": "计量日志文件夹",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -550,8 +550,8 @@
     "Reset_panel": "重置此面板的所有物品",
     "Progression_tooltip_materials": "已获得材料：{{amount}}%",
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
-    "Final_item": "Final item",
-    "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Final_item": "终产物",
+    "Include_final_items_in_main_layout": "在主布局中包含终产物",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -895,7 +895,7 @@
     "Progress_action_100_potency": "100%效率下的进展：{{value}}",
     "Quality_action_100_potency": "100%效率下的品质：{{value}}",
     "Current_control": "当前加工精度：{{value}}",
-    "Current_control_bonus": "Current bonus",
+    "Current_control_bonus": "现有加成",
     "Macrolock": "包含“锁定宏指令（/macrolock）”",
     "Solve_rotation": "求解其手法",
     "Rotation_solver": "手法求解器",
@@ -910,7 +910,7 @@
       "Fail": "制作失败",
       "Pliant": "Pliant",
       "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Centered": "居中对齐",
       "Normal": "通常"
     },
     "SOLVER": {
@@ -1149,7 +1149,7 @@
     "Purchase_date": "日期",
     "More_on_universalis": "更多信息请见universalis",
     "Server": "服务器",
-    "Last_updated": "Last update"
+    "Last_updated": "上一次更新"
   },
   "COMMENTS": {
     "Title": "评论"
@@ -1328,8 +1328,8 @@
     "Contribute_description": "你可以在 Github 上找到本项目并进行贡献。即使你是初学者也没有关系，我们欢迎每一个人！\n\n贡献不仅仅是说写代码。请求添加功能或者是报告 Bug 也能帮助我们为每个人提供质量最好的工具。感谢每一个愿意花时间测试本工具并找到 Bug 的人。",
     "Patreon_title": "在 Patreon 上支持我们",
     "Patreon_description": "Patreon 是一个可以每个月固定捐助一定数额的钱帮助项目开发的平台。这些钱会用来支付服务器、证书、抽奖的费用，而且作者也能有更多的时间用来开发这个工具。\n\n根据你捐赠的金额，为了感谢你的贡献你可以获得一些福利：",
-    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
-    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
+    "Popup_introduction": "您好，我是 Miu ，您正在使用的工具的开发者。<br/> 自过去几年以来，Teamcraft对我来说一直是一个爱好，我的梦想是使这成为我的全职工作。 <br/><br/>在您的帮助下，这个梦想可能成为一个现实。 您可以在patreon上赞助这个工具，每一美元都很重要，并将帮助我实现这一目标。 <br/><br/> 在patreon赞助这个项目也给您一些好处：",
+    "Already_supporting": "已经是一个patreon赞助者？请确保您将您的帐户在设置中链接到怕patreon",
     "PATREON_BENEFITS": {
       "Discord_rank": "在 Discord 上获得一个特殊的权限，可以查看支持者频道并了解我们正在做什么。(${{price}})",
       "Profile_badge": "在你的 Teamcraft 个人资料上显示一个特殊的徽章 (${{price}})",
@@ -1406,13 +1406,12 @@
     "3d_model_help": "预览 3D 模型",
     "Achievements": "成就",
     "Currencies": "货币",
-    "Rowena_splendor": "罗薇娜显赫商会（带星=奖励+20%）",
+    "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "解锁",
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "奖励"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1736,11 +1735,11 @@
     "Please_update_inventory_popup": "请切换区域（传送或进入房间）以更新物品栏内容，操作完成后此提示会自动关闭。如上述操作无效，请查看 https://www.yuque.com/ffcafe/tc/debugpackets",
     "Outdated": "数据包捕获功能不可用",
     "Outdated_description": "您所使用的 Teamcraft 无法在当前游戏版本下正常工作。我们正在处理此问题，并将在后续更新中修复。",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
-    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
-    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
-    "Add_firewall_rule": "Add the firewall rule"
+    "Possible_missing_firewall_rule": "数据包捕获功能不可用",
+    "Possible_missing_firewall_rule_description": "Teamcraft只能捕获到一部分数据包，丢失了与物品栏、 统计、装备等相关的数据包，可能是由于您的 PC 上缺少防火墙规则。",
+    "Possible_missing_firewall_rule_check": "如果此消息不会在你传送到新区域后消失， 防火墙规则缺失或封包捕获因某种原因根本无法工作(如果是这种情况，请加入Discord 服务器，前往 #troubleshooting 频道解决)。",
+    "Firewall_rule_set": "防火墙规则已经应用，您的物品栏现在应该被正确检测了。",
+    "Add_firewall_rule": "添加防火墙规则"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
@@ -1998,24 +1997,24 @@
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Welcome_time_range": "欢迎来到计量表盘页面，在这里您可以选择您想要看到数据显示的时间范围，默认本日。",
+      "Select_dashboard": "您可以有多个表盘，并且可以轻松地在它们之间切换看到对您来说什么是重要的。",
+      "Edit_dashboard": "您可以使用此按钮进入编辑模式，它只适用于非默认表盘。",
+      "Create_dashboard": "轻松创建您自己的表盘，不要忘记在您创建它们后编辑它们，否则它将只是默认表盘的副本。",
       "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
-      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
-      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "Export_layout": "想要将您精心制作的表盘与您的好友分享吗？点击此按钮复制您当前选定表盘的导出代码。",
+      "Import_layout": "如果有人使用导出代码向您分享一个表盘，请使用此按钮导入它。",
       "EDITOR": {
-        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
-        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
+        "Welcome_add_column": "欢迎来到表盘布局编辑器，您可以使用此按钮添加列 (最多5列)。",
+        "Save": "在您编辑表盘后不要忘记保存您的修改。",
+        "Revert": "又或者，如果你不喜欢这么做，请在编辑之前用这个回到原来的布局。",
+        "Delete_column": "想要删除一列吗？这里！",
+        "Add_panel": "点击此处添加一个新面板。",
+        "Reorder": "您可以使用拖放来移动任何您想要的面板。",
+        "Data_type": "首先，请选择您想要使用的计量方式。",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Title": "为您的面板设置标题",
+        "Display_type": "选择您想要使用哪个组件来表示您的数据，然后添加相应的输入。"
       }
     }
   },
@@ -2043,59 +2042,59 @@
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
-    "Add_new_column": "Add a new column (max 5)",
-    "Default_dashboard": "Default dashboard",
-    "Copy_to_clipboard": "Copy export code to clipboard",
-    "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
+    "Title": "计量表盘",
+    "Today": "本日",
+    "This_week": "本周",
+    "This_month": "本月",
+    "Add_new_column": "添加新的纵列(最多5个)",
+    "Default_dashboard": "默认表盘",
+    "Copy_to_clipboard": "复制导出代码到剪贴板",
+    "Export_copied_to_clipboard": "导出代码已复制到剪贴板",
+    "Import_dashboard": "导入一个表盘",
+    "Export_code": "表盘导出代码",
+    "Import_failed": "表盘导入失败，代码无效",
     "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "No data to display",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show": "没有数据可展示",
+    "Nothing_to_show_description": "请确保您选择了一个您启用了TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端-> 启用计量捕获)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
-      "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
+      "UNKNOWN": "未知",
+      "GATHERING": "采集",
+      "CRAFTING": "制作",
+      "FISHING": "钓鱼",
       "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "TELEPORT": "传送",
+      "MARKETBOARD": "交易板"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "任何",
+      "CURRENCY": "货币",
+      "ITEM": "物品"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
+      "Type": "类型",
+      "Entry_label": "标签",
       "Value": "Value",
-      "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Source": "来源:",
+      "Timestamp": "时间信息"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "每项物品的总数",
+      "Source": "每个来源的总数"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
-      "Filter": "Filter",
+      "Data": "数据",
+      "Data_type": "类型",
+      "Filter": "筛选",
       "Accepted_items": "Accepted items",
       "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
+      "Display": "显示",
+      "Display_type": "显示组件",
+      "Title": "标题",
+      "Font_size": "字体大小",
       "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
-      "Operator": "Operator",
+      "Pie_metric": "计量",
+      "Add_filter": "添加筛选器",
+      "Operator": "操作员",
       "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
       "Cannot_delete_default": "You can't delete default layout",
       "FILTER_TIPS": {
@@ -2110,17 +2109,21 @@
       "DISPLAY_TYPES": {
         "total": "Aggregated value",
         "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
+        "pie-chart": "饼图",
         "table": "Table of all matching entries"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Open": "打开物品搜索悬浮框",
+    "Intro_message": "搜索一个物品以查看关于它的详细信息，库存和交易板信息",
+    "Placeholder": "物品名称",
+    "None_inside_inventory": "此物品不在任何物品栏中。",
+    "Open_in_main_window": "在主页面打开",
+    "Marketboard_informations": "交易板信息"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }
