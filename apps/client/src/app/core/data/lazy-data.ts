@@ -8,6 +8,8 @@ export interface LazyData {
   aetherytes: any;
   baseParams: any;
   classJobsModifiers: any;
+  collectablesShopItemGroup: any;
+  collectablesShops: any;
   collectables: any;
   craftActions: any;
   craftingLogPages: any;

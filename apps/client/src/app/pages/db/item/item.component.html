@@ -202,10 +202,10 @@
                                        width="32"></app-item-icon>
                         <div>x{{row.masterpiece.base.scrip | number}}</div>
                       </div>
-<!--                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">-->
-<!--                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">-->
-<!--                        <div>x{{row.masterpiece.xp[0] | number}}</div>-->
-<!--                      </div>-->
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.base.exp / 1000 | number}}%</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -220,6 +220,10 @@
                                        width="32"></app-item-icon>
                         <div>x{{row.masterpiece.mid.scrip | number}}</div>
                       </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.mid.exp / 1000 | number}}%</div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -232,6 +236,10 @@
                                        [itemId]="row.masterpiece.reward"
                                        width="32"></app-item-icon>
                         <div>x{{row.masterpiece.high.scrip | number}}</div>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                        <img alt="exp" class="img-icon" src="./assets/icons/exp.png">
+                        <div nz-tooltip [nzTooltipTitle]="'DB.ITEM.Masterpiece_exp_tooltip' | translate">{{row.masterpiece.high.exp / 1000 | number}}%</div>
                       </div>
                     </div>
                   </div>
