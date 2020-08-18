@@ -1406,13 +1406,12 @@
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
     "Currencies": "Devises",
-    "Rowena_splendor": "Splendeurs de Rowena",
+    "Rowena_splendor": "Rowena's splendors",
     "Unlocks": "Déverrouille",
     "Jump_to_page": "Accès rapide à une autre page",
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
-      "Masterpiece_base": "BASE",
-      "Masterpiece_bonus": "BONUS"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -2122,5 +2121,9 @@
     "None_inside_inventory": "Cet objet ne se trouve dans aucun inventaire.",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
     "Marketboard_informations": "Informations de l'hôtel des ventes"
+  },
+  "COLLECTABLES": {
+    "Title": "Collectables",
+    "No_collectables_for_this_level": "No collectables available"
   }
 }
