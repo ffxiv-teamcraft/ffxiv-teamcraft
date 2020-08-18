@@ -3684,7 +3684,7 @@
     "zh": "向自身前方发动无属性扇形范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>200\n攻击复数敌人时，对第一个之外的敌人威力降低50%\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>失明　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>30秒"
   },
   "11423": {
-    "zh": "对目标发动无属性物理攻撃　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中断目标的技能咏唱"
+    "zh": "对目标发动无属性物理攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>中断目标的技能咏唱"
   },
   "11424": {
     "zh": "一定时间内，将自身所受的伤害减轻90%，同时除特定攻击之外其他所有击退与吸引效果失效\n但是持续时间内无法移动或使用技能　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>持续时间：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>10秒\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>追加效果：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>解除自身的<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>狂战士化<UIGlow>01</UIGlow><UIForeground>01</UIForeground>状态\n此技能发动后无法主动中断"
@@ -5497,6 +5497,9 @@
   },
   "19304": {
     "zh": "推动作业进展的技能效率提高50%，4次作业内有效"
+  },
+  "19700": {
+    "zh": "启动以太钻孔机，发射高压以太"
   },
   "19731": {
     "zh": "脱下目前穿着的特殊玩偶装"
