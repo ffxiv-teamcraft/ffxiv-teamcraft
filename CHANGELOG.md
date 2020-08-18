@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.7"></a>
+## [7.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.6...v7.3.7) (2020-08-18)
+
+
+### Bug Fixes
+
+* **desktop:** better automated firewall rule ([4d73802](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4d73802))
+* **desktop:** fixed discord webhook creation for teams ([5f09bd8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f09bd8))
+* **desynth:** added better filtering for desynth leveling guide ([2ad7254](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2ad7254))
+* **gc-supply:** changed list generation button's color to primary ([cfe273b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfe273b))
+* **pricing:** do not use HQ price for items that cannot be HQ ([cfe2a03](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfe2a03))
+* **simulator:** fixed a bug with buffs ticking on some failed actions ([fcf8fe9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fcf8fe9))
+* **user:** possible fix for account having network issues ([526e6ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/526e6ca))
+
+
+### Features
+
+* **data:** update for cn patch-5.21 ([e4581d6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e4581d6))
+* **db:** added new collectable thresholds inside simulator ([70b9a3c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/70b9a3c))
+* **helpers:** new collectables listing page ([02be833](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/02be833))
+* **pcap:** support for inventoryTransaction in CN region ([fbb18a1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fbb18a1))
+
+
+
 <a name="7.3.6"></a>
 ## [7.3.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.5...v7.3.6) (2020-08-15)
 
