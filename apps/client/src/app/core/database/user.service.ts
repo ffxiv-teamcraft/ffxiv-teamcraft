@@ -103,8 +103,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         map(user => {
           if (typeof user.createdAt !== 'object') {
             user.createdAt = firebase.firestore.Timestamp.fromDate(new Date(user.createdAt));
-          } else if (!(user.createdAt instanceof firebase.firestore.Timestamp)) {
+          } else if (!(user.createdAt instanceof firebase.firestore.Timestamp) && user.createdAt !== null) {
             user.createdAt = new firebase.firestore.Timestamp((user.createdAt as any).seconds, (user.createdAt as any).nanoseconds);
+          } else {
+            const probableDate = new Date();
+            probableDate.setFullYear(2019);
+            user.createdAt = firebase.firestore.Timestamp.fromDate(probableDate);
           }
           return user;
         }),
