@@ -165,7 +165,7 @@ export class AppComponent implements OnInit {
   }
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
-              private ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
+              public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
               private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
