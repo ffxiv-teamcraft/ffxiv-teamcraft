@@ -21,7 +21,7 @@
     </nz-form-item>
   </form>
 
-  <nz-tabset *ngIf="results$ | async as results" [nzAnimated]="false">
+  <nz-tabset *ngIf="results$ | async as results" [nzAnimated]="false" [nzSelectedIndex]="selectedTab$ | async" (nzSelectedIndexChange)="selectTab($event)">
     <nz-tab *ngFor="let row of results" [nzTitle]="title">
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">

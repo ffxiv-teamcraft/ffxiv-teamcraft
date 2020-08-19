@@ -1224,6 +1224,31 @@ if (hasTodo('jobCategories')) {
   });
 }
 
+if (hasTodo('jobs')) {process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+  const jobAbbrs = {};
+  const jobNames = {};
+  getAllPages('https://xivapi.com/ClassJob?columns=ID,Abbreviation_*,Name_*').subscribe(page => {
+    page.Results.forEach(job => {
+      jobNames[job.ID] = {
+        en: job.Name_en,
+        ja: job.Name_ja,
+        de: job.Name_de,
+        fr: job.Name_fr
+      };
+      jobAbbrs[job.ID] = {
+        en: job.Abbreviation_en,
+        ja: job.Abbreviation_ja,
+        de: job.Abbreviation_de,
+        fr: job.Abbreviation_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('job-name', jobNames);
+    persistToJsonAsset('job-abbr', jobAbbrs);
+    done('jobs');
+  });
+}
+
 if (hasTodo('mobs')) {
   const mobs = {};
   getAllPages('https://xivapi.com/BNpcName?columns=ID,Name_*').subscribe(page => {

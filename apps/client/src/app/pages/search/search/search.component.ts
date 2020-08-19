@@ -26,7 +26,6 @@ import { SearchType } from '../search-type';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
-import jobAbbrs from '../../../core/data/sources/job-abbr.json';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 
 @Component({
@@ -461,7 +460,7 @@ export class SearchComponent implements OnInit {
     formRawValue.jobCategories = filters
       .filter(f => f.name.startsWith('ClassJobCategory'))
       .map(f => {
-        return +Object.keys(jobAbbrs).find(k => jobAbbrs[k].en === f.name.split('.')[1]);
+        return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
       });
     return formRawValue;
   }
