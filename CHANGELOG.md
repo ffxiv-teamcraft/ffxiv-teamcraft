@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.8"></a>
+## [7.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.7...v7.3.8) (2020-08-19)
+
+
+### Bug Fixes
+
+* **desktop:** fixed packet capture not starting at all ([c28e2fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c28e2fe))
+* **pricing:** fixed an issue with some items not listed properly ([cb1d675](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cb1d675))
+
+
+
 <a name="7.3.7"></a>
 ## [7.3.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.6...v7.3.7) (2020-08-18)
 
