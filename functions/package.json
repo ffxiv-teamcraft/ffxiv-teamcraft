@@ -3,7 +3,7 @@
   "description": "Firebase cloud function to count the amount of list created",
   "private": true,
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "dependencies": {
     "express": "^4.16.4",
