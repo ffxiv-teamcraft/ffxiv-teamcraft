@@ -563,14 +563,15 @@ if (hasTodo('fishingLog')) {
           spot.TerritoryType = diademTerritory;
         }
         const c = spot.TerritoryType.Map.SizeFactor / 100.0;
+
         spots.push({
           id: spot.ID,
           mapId: spot.TerritoryType.Map.ID,
           placeId: spot.TerritoryType.PlaceName.ID,
           zoneId: spot.PlaceName.ID,
           coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
-            x: (41.0 / c) * (((spot.X * c)) / 2048.0) + 1,
-            y: (41.0 / c) * (((spot.Z * c)) / 2048.0) + 1
+            x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
+            y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
           },
           fishes: Object.keys(spot)
             .filter(key => /Item\dTargetID/.test(key))
@@ -588,7 +589,6 @@ if (hasTodo('fishingLog')) {
             if (fishes.indexOf(fish.ID) === -1) {
               fishes.push(fish.ID);
             }
-            const c = spot.TerritoryType.Map.SizeFactor / 100.0;
             const entry = {
               itemId: fish.ID,
               level: spot.GatheringLevel,
@@ -599,8 +599,8 @@ if (hasTodo('fishingLog')) {
               spot: {
                 id: spot.ID,
                 coords: {
-                  x: (41.0 / c) * ((spot.X * c) / 2048.0) + 1,
-                  y: (41.0 / c) * ((spot.Z * c) / 2048.0) + 1
+                  x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
+                  y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
                 }
               }
             };
@@ -1224,7 +1224,7 @@ if (hasTodo('jobCategories')) {
   });
 }
 
-if (hasTodo('jobs')) {process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+if (hasTodo('jobs')) {
   const jobAbbrs = {};
   const jobNames = {};
   getAllPages('https://xivapi.com/ClassJob?columns=ID,Abbreviation_*,Name_*').subscribe(page => {

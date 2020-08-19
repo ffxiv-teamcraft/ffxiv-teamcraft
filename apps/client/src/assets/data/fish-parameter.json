@@ -1,20 +1,20 @@
 {
   "undefined": {
-    "id": 907,
+    "id": 924,
     "level": {
-      "GatheringItemLevel": 80,
-      "ID": 445,
-      "Stars": 2
+      "GatheringItemLevel": 75,
+      "ID": 380,
+      "Stars": 0
     },
-    "mapId": 604,
-    "zoneId": 3477,
-    "timed": 1,
+    "mapId": 213,
+    "zoneId": 2001,
+    "timed": 0,
     "weathered": 0,
     "recordType": {
-      "en": "Deep Sea",
-      "de": "Hochsee",
-      "ja": "沖合",
-      "fr": "Pleine mer"
+      "en": "Rivers",
+      "de": "Flüsse",
+      "ja": "河川",
+      "fr": "Rivières"
     }
   }
 }
