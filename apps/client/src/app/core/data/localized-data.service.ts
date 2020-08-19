@@ -12,6 +12,7 @@ import { Npc } from '../../pages/db/model/npc/npc';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
+import { zhWorlds } from './sources/zh-worlds';
 import { ExtendedLanguageKeys } from './extended-language-keys';
 import { LazyData } from './lazy-data';
 import { Trait } from '../../pages/db/model/trait/trait';
@@ -22,6 +23,21 @@ export class LocalizedDataService {
   indentRegexp = new RegExp('<Indent/>', 'i');
 
   constructor(private lazyData: LazyDataService) {
+  }
+
+  public getWorldName(world: string): I18nName {
+    const i18nName: I18nName = {
+      fr: world,
+      en: world,
+      de: world,
+      ja: world,
+    };
+
+    if (zhWorlds[world]) {
+      i18nName.zh = zhWorlds[world];
+    }
+
+    return i18nName;
   }
 
   public getItem(id: number): I18nName {

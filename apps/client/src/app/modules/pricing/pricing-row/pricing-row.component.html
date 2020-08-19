@@ -43,8 +43,8 @@
       <div fxLayout="row">
         <nz-input-group [nzAddOnBefore]="addonBeforeNQ" nzCompact nzSize="small">
           <ng-template #addonBeforeNQ>
-            <div class="server-span" nz-tooltip>NQ<span *ngIf="price.fromMB && price.nqServer"> ({{price.nqServer}}
-              )</span></div>
+            <div class="server-span" nz-tooltip>NQ<span *ngIf="price.fromMB && price.nqServer">
+              ({{price.nqServer | worldName | i18n}})</span></div>
           </ng-template>
           <input [(ngModel)]="price.nq" (ngModelChange)="savePrice()" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
                  nz-input type="number">
@@ -58,8 +58,8 @@
       <div *ngIf="!isCrystal()" fxLayout="row">
         <nz-input-group [nzAddOnBefore]="addonBeforeHQ" nzCompact nzSize="small">
           <ng-template #addonBeforeHQ>
-            <div class="server-span" nz-tooltip>HQ<span *ngIf="price.fromMB && price.hqServer"> ({{price.hqServer}}
-              )</span></div>
+            <div class="server-span" nz-tooltip>HQ<span *ngIf="price.fromMB && price.hqServer"> 
+              ({{price.hqServer | worldName | i18n}})</span></div>
           </ng-template>
           <input [(ngModel)]="price.hq" (ngModelChange)="savePrice()" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"
                  nz-input type="number">

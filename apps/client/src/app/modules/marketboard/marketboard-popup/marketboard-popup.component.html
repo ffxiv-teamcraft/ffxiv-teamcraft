@@ -16,7 +16,7 @@
       <tbody>
       <tr *ngFor="let row of pricesTable.data">
         <td>{{row.Quantity}}</td>
-        <td *ngIf="!settings.disableCrossWorld">{{row.Server}}</td>
+        <td *ngIf="!settings.disableCrossWorld">{{row.Server | worldName | i18n}}</td>
         <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
         <td>{{row.PriceTotal | number}}</td>
         <td>{{row.PricePerUnit | number}}</td>
@@ -41,7 +41,7 @@
         <tr *ngFor="let row of historyTable.data">
           <td>{{row.PurchaseDate | date:'short':undefined:getLocale()}}</td>
           <td>{{row.Quantity}}</td>
-          <td *ngIf="!settings.disableCrossWorld">{{row.Server}}</td>
+          <td *ngIf="!settings.disableCrossWorld">{{row.Server | worldName | i18n}}</td>
           <td><img *ngIf="row.IsHQ" alt="HQ" class="hq-icon" src="./assets/icons/HQ.png"></td>
           <td>{{row.PriceTotal | number}}</td>
           <td>{{row.PricePerUnit | number}}</td>

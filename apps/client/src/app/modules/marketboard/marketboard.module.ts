@@ -8,11 +8,13 @@ import { XivapiClientModule } from '@xivapi/angular-client';
 import { PageLoaderModule } from '../page-loader/page-loader.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarketboardPopupComponent } from './marketboard-popup/marketboard-popup.component';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     CoreModule,
+    PipesModule,
     TranslateModule,
     XivapiClientModule,
     PageLoaderModule,
