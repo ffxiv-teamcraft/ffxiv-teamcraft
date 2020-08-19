@@ -1411,7 +1411,7 @@
     "Jump_to_page": "Schnellwechsel zu anderer Seite",
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -2123,7 +2123,7 @@
     "Marketboard_informations": "Marktbrett-Informationen"
   },
   "COLLECTABLES": {
-    "Title": "Collectables",
-    "No_collectables_for_this_level": "No collectables available"
+    "Title": "Sammlerstücke",
+    "No_collectables_for_this_level": "Keine Sammlerstücke verfügbar"
   }
 }
