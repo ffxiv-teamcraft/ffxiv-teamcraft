@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "7.3.7",
+  "version": "7.3.8",
   "license": "MIT",
   "main": "desktop/main.js",
   "build": {
@@ -122,7 +122,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.36.36",
+    "node-machina-ffxiv": "^2.36.40",
     "tslib": "^1.10.0",
     "fs-extra": "^7.0.1"
   },
