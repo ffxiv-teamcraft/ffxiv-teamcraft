@@ -11,7 +11,6 @@ export class WorldNamePipe implements PipeTransform {
   }
 
   transform(world: string): I18nName {
-    console.log('world', world)
     return this.data.getWorldName(world);
   }
 
