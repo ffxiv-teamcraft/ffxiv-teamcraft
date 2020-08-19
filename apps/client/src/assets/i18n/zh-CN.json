@@ -1411,7 +1411,7 @@
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "下一等级所需经验的百分比"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -2054,14 +2054,14 @@
     "Export_code": "表盘导出代码",
     "Import_failed": "表盘导入失败，代码无效",
     "Import_success": "Dashboard imported and selected",
-    "Nothing_to_show": "没有数据可展示",
-    "Nothing_to_show_description": "请确保您选择了一个您启用了TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端-> 启用计量捕获)",
+    "Nothing_to_show": "没有可展示的数据",
+    "Nothing_to_show_description": "请确保您选择了一个您启用了TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端 中勾选启用计量捕获)",
     "SOURCES": {
       "UNKNOWN": "未知",
       "GATHERING": "采集",
       "CRAFTING": "制作",
       "FISHING": "钓鱼",
-      "VENDOR": "Vendor",
+      "VENDOR": "商人",
       "TELEPORT": "传送",
       "MARKETBOARD": "交易板"
     },
@@ -2074,7 +2074,7 @@
       "Type": "类型",
       "Entry_label": "标签",
       "Value": "Value",
-      "Source": "来源:",
+      "Source": "来源",
       "Timestamp": "时间信息"
     },
     "PIE_METRICS": {
@@ -2115,7 +2115,7 @@
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "打开物品搜索悬浮框",
+    "Open": "显示/隐藏物品搜索悬浮框",
     "Intro_message": "搜索一个物品以查看关于它的详细信息，库存和交易板信息",
     "Placeholder": "物品名称",
     "None_inside_inventory": "此物品不在任何物品栏中。",
