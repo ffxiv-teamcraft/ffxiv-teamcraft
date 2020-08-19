@@ -84,6 +84,8 @@ export class MacroTranslatorComponent {
               });
             }
           } catch (ignoredAgain) {
+            // console.log(ignored);
+            // console.log(ignoredAgain);
             this.invalidInputs = true;
             break;
           }

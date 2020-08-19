@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.9"></a>
+## [7.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.8...v7.3.9) (2020-08-19)
+
+
+### Bug Fixes
+
+* **auth:** removed facebook auth as it just doesn't work on desktop ([3f9b0f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f9b0f7))
+* **db:** fixed position for several fishing nodes ([6021dcd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6021dcd))
+* **desktop:** fixed packet capture for chinese region ([79a6b8e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/79a6b8e))
+* **inventory-optimizer:** fixed an issue with "show ignored items" not working ([2b9342a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2b9342a))
+* **macro-translator:** partial fix for KO language ([74bd89c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/74bd89c))
+* **simulator:** accept basicSynth2 as Basic Synthesis import ([e6fe5a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e6fe5a8))
+
+
+### Features
+
+* **collectables:** current focused tab is now included in the url ([8575df7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8575df7))
+* **inventory:** hide empty containers when searching for an item ([b957966](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b957966))
+* **overlays:** added toggle for the clock bottom bar ([85d8e3d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/85d8e3d))
+* **pricing:** better world name displaying for cn servers ([c052257](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c052257))
+
+
+
 <a name="7.3.8"></a>
 ## [7.3.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.7...v7.3.8) (2020-08-19)
 

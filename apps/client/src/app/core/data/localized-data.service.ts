@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
 import freeCompanyActions from './sources/free-company-actions.json';
-import jobNames from './sources/job-name.json';
-import jobAbbrs from './sources/job-abbr.json';
 import { Language } from './language';
-import { koActions } from './sources/ko-actions';
 import { mapIds } from './sources/map-ids';
 import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
@@ -12,6 +9,7 @@ import { Npc } from '../../pages/db/model/npc/npc';
 import { Quest } from '../../pages/db/model/quest/quest';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
+import { zhWorlds } from './sources/zh-worlds';
 import { ExtendedLanguageKeys } from './extended-language-keys';
 import { LazyData } from './lazy-data';
 import { Trait } from '../../pages/db/model/trait/trait';
@@ -22,6 +20,21 @@ export class LocalizedDataService {
   indentRegexp = new RegExp('<Indent/>', 'i');
 
   constructor(private lazyData: LazyDataService) {
+  }
+
+  public getWorldName(world: string): I18nName {
+    const i18nName: I18nName = {
+      fr: world,
+      en: world,
+      de: world,
+      ja: world,
+    };
+
+    if (zhWorlds[world]) {
+      i18nName.zh = zhWorlds[world];
+    }
+
+    return i18nName;
   }
 
   public getItem(id: number): I18nName {
@@ -79,14 +92,14 @@ export class LocalizedDataService {
   }
 
   public getJobName(id: number): I18nName {
-    const row = this.getRow(jobNames, id);
+    const row = this.getRow(this.lazyData.data.jobName, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobName', koKey: 'koJobName' });
 
     return row;
   }
 
   public getJobAbbr(id: number): I18nName {
-    const row = this.getRow(jobAbbrs, id);
+    const row = this.getRow(this.lazyData.data.jobAbbr, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhJobAbbr', koKey: 'koJobAbbr' });
 
     return row;
@@ -197,9 +210,9 @@ export class LocalizedDataService {
 
   public getCraftingActionIdByName(name: string, language: Language): number {
     if (language === 'ko') {
-      const koRow = koActions.find(a => a.ko === name);
-      if (koRow !== undefined) {
-        name = koRow.en;
+      const enRow = this.getEnActionFromKoActionName(name);
+      if (enRow) {
+        name = enRow.en;
         language = 'en';
       }
     }
@@ -213,12 +226,24 @@ export class LocalizedDataService {
     return res;
   }
 
+  private getEnActionFromKoActionName(name: string): I18nName {
+    const craftActionId = Object.keys(this.lazyData.data.koCraftActions).find(key => this.lazyData.data.koCraftActions[key].ko.toLowerCase() === name.toLowerCase());
+    if (craftActionId) {
+      return this.lazyData.data.craftActions[craftActionId];
+    }
+    const actionId = Object.keys(this.lazyData.data.koActions).find(key => this.lazyData.data.koActions[key].ko.toLowerCase() === name.toLowerCase());
+    if (actionId) {
+      return this.lazyData.data.actions[actionId];
+    }
+    return null;
+  }
+
   public getCraftingActionByName(name: string, language: Language): I18nName {
     const koData: any[] = Object.values({ ...this.lazyData.data.koActions, ...this.lazyData.data.koCraftActions });
     if (language === 'ko') {
-      const koRow = koData.find(a => a.ko === name);
-      if (koRow !== undefined) {
-        name = koRow.en;
+      const enRow = this.getEnActionFromKoActionName(name);
+      if (enRow) {
+        name = enRow.en;
         language = 'en';
       }
     }
@@ -235,7 +260,7 @@ export class LocalizedDataService {
     }
     const result = this.lazyData.data.craftActions[resultIndex] || this.lazyData.data.actions[resultIndex];
     if (resultIndex === -1) {
-      throw new Error('Data row not found.');
+      throw new Error(`Data row not found for crafting action ${name}`);
     }
     const koResultRow = koData[resultIndex];
     if (koResultRow !== undefined) {
@@ -343,7 +368,7 @@ export class LocalizedDataService {
       [`${fieldName}_ja`]: value.ja,
       [`${fieldName}_ko`]: value.ko || value.en,
       [`${fieldName}_chs`]: value.zh || value.en
-    }
+    };
   }
 
   public xivapiToI18n(value: any, key: any, fieldName = 'Name'): I18nName {

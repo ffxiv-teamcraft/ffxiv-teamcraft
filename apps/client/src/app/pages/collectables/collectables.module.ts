@@ -26,9 +26,14 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':jobAbbr',
     component: CollectablesComponent,
     canActivate: [MaintenanceGuard, VersionLockGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'CRP',
+    pathMatch: 'full'
   }
 ];
 

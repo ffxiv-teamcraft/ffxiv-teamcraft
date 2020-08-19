@@ -13,7 +13,8 @@ import { List } from '../../../modules/list/model/list';
 import { NzNotificationService } from 'ng-zorro-antd';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-collectables',
@@ -49,12 +50,31 @@ export class CollectablesComponent {
 
   loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
 
+  selectedTabFromRoute$: Observable<number> = this.activeRoute.paramMap.pipe(
+    map(params => {
+      const jobAbbr = params.get('jobAbbr') || 'CRP';
+      return this.lazyData.getJobIdByAbbr(jobAbbr);
+    }),
+    map(id => {
+      if (id > 18) {
+        return 0;
+      }
+      return Math.max(0, id - 8);
+    }),
+    first()
+  );
+
+  selectedTabFromTabset$ = new Subject<number>();
+
+  selectedTab$: Observable<number> = merge(this.selectedTabFromRoute$, this.selectedTabFromTabset$);
+
   constructor(private fb: FormBuilder, private authFacade: AuthFacade,
               private lazyData: LazyDataService, private rotationPicker: RotationPickerService,
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private progressService: ProgressPopupService, private notificationService: NzNotificationService,
               private listsFacade: ListsFacade, private i18n: I18nToolsService, private l12n: LocalizedDataService,
-              private router: Router) {
+              private router: Router, private activeRoute: ActivatedRoute, private location: Location) {
+
     this.form$ = this.levels$.pipe(
       map(levels => {
         const groupConfig = Object.keys(levels).reduce((group, key) => {
@@ -75,6 +95,12 @@ export class CollectablesComponent {
         }, []);
       })
     );
+  }
+
+  selectTab(index: number): void {
+    const newLocation = this.router.createUrlTree(['..', this.l12n.getJobAbbr(index + 8).en], { relativeTo: this.activeRoute });
+    this.location.go(newLocation.toString());
+    this.selectedTabFromTabset$.next(index);
   }
 
   public applyNewLevels(form: FormGroup): void {

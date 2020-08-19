@@ -42,6 +42,8 @@ export interface LazyData {
   itemSlots: any;
   itemStats: any;
   items: any;
+  jobAbbr: any;
+  jobName: any;
   leves: any;
   maps: any;
   marketItems: any;

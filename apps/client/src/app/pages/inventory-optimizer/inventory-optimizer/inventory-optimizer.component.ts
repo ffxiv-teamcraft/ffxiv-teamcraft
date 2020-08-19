@@ -3,7 +3,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { delay, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -22,8 +22,7 @@ import { CanBeBought } from '../optimizations/can-be-bought';
 @Component({
   selector: 'app-inventory-optimizer',
   templateUrl: './inventory-optimizer.component.html',
-  styleUrls: ['./inventory-optimizer.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./inventory-optimizer.component.less']
 })
 export class InventoryOptimizerComponent {
 
@@ -76,8 +75,9 @@ export class InventoryOptimizerComponent {
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
     switchMap(optimizations => {
       return this.reloader$.pipe(
+        delay(20),
         map(() => {
-          return optimizations.map(opt => {
+          return JSON.parse(JSON.stringify(optimizations)).map(opt => {
             const total: number[] = [];
             opt.entries = opt.entries.map(entry => {
               entry.ignored = this.ignoreArray.some(ignored => {

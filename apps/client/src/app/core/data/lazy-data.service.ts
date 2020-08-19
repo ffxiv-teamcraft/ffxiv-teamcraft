@@ -16,6 +16,7 @@ import { Memoized } from '../decorators/memoized';
 import { Language } from './language';
 import { TranslateService } from '@ngx-translate/core';
 import { extractsHash } from '../../../environments/extracts-hash';
+import { I18nName } from '../../model/common/i18n-name';
 
 @Injectable({
   providedIn: 'root'
@@ -99,6 +100,26 @@ export class LazyDataService {
 
   public getMapIdByZoneId(zoneId: number): number {
     return +Object.keys(this.data.maps).find(key => this.data.maps[key].placename_id === zoneId);
+  }
+
+  public getJobAbbrs(): Record<number, I18nName> {
+    return Object.keys(this.data.jobAbbr).reduce((acc, key) => {
+      return {
+        ...acc,
+        [key]: {
+          ...this.data.jobAbbr[key],
+          ko: this.data.koJobAbbr[key]?.ko || this.data.jobAbbr[key].en,
+          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en
+        }
+      };
+    }, {});
+  }
+
+  public getJobIdByAbbr(abbr: string): number {
+    const abbrs = this.getJobAbbrs();
+    return +(Object.keys(abbrs).find(key => {
+      return abbrs[key].en.toLowerCase() === abbr.toLowerCase();
+    }) || -1);
   }
 
   public getRecipe(id: string): Observable<Craft> {
@@ -218,7 +239,12 @@ export class LazyDataService {
     this.loaded$.next(false);
     this.loadedLangs.push(languageToLoad);
 
+    const mandatoryForeignFiles = ['job-abbr.json'];
+
     const filesToLoad = lazyFilesList.filter(entry => {
+      if (mandatoryForeignFiles.some(file => entry.fileName.toLowerCase().endsWith(file))) {
+        return true;
+      }
       if (languageToLoad === 'en') {
         return entry.fileName.split('/').length === 1 || entry.fileName.indexOf('items') > -1;
       } else {

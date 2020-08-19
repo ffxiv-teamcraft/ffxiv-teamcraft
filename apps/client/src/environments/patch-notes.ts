@@ -1,19 +1,16 @@
-export const patchNotes = `### Features
+export const patchNotes = `### Bug Fixes
 
-* **data:** update for cn patch-5.21.
-* **db:** added new collectable thresholds inside simulator.
-* **helpers:** new collectables listing page.
-* **pcap:** support for inventoryTransaction in CN region.
+* **auth:** removed facebook auth as it just doesn't work on desktop.
+* **db:** fixed position for several fishing nodes.
+* **desktop:** fixed packet capture for chinese region.
+* **inventory-optimizer:** fixed an issue with "show ignored items" not working.
+* **macro-translator:** partial fix for KO language.
+* **simulator:** accept basicSynth2 as Basic Synthesis import.
 
 
-### Bug Fixes
+### Features
 
-* **desktop:** better automated firewall rule.
-* **desktop:** fixed discord webhook creation for teams.
-* **desynth:** added better filtering for desynth leveling guide.
-* **gc-supply:** changed list generation button's color to primary.
-* **pricing:** do not use HQ price for items that cannot be HQ.
-* **simulator:** fixed a bug with buffs ticking on some failed actions.
-* **user:** possible fix for account having network issues.
-* **desktop:** fixed packet capture not starting at all.
-* **pricing:** fixed an issue with some items not listed properly.`;
+* **collectables:** current focused tab is now included in the url.
+* **inventory:** hide empty containers when searching for an item.
+* **overlays:** added toggle for the clock bottom bar.
+* **pricing:** better world name displaying for cn servers.`;

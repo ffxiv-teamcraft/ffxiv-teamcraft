@@ -571,6 +571,14 @@ export class SettingsService {
     this.setSetting('macroBreakBeforeByregot', breakBeforeByregot.toString());
   }
 
+  public setOverlayClockDisplay(overlay: string, show: boolean): void {
+    this.setSetting(`overlay:clock:${overlay}`, show.toString());
+  }
+
+  public getOverlayClockDisplay(overlay: string): boolean {
+    return this.getSetting(`overlay:clock:${overlay}`, 'true') === 'true';
+  }
+
   private getSetting(name: string, defaultValue: string): string {
     return this.cache[name] || defaultValue;
   }
