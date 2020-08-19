@@ -31,5 +31,7 @@
 <nz-divider [nzText]="'Or' | translate"></nz-divider>
 <div class="oauth-buttons">
   <button (click)="googleOauth()" nz-button nzType="primary">{{'Google_login' | translate}}</button>
-  <button (click)="facebookOauth()" nz-button nzType="primary">{{'Facebook_login' | translate}}</button>
+  <div>
+    <i class="facebook-sucks">{{'Facebook_notice' | translate}}</i>
+  </div>
 </div>
