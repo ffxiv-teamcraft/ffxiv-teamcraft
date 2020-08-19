@@ -19,7 +19,7 @@
   </div>
   <div nz-row>
     <div *ngFor="let inventory of display; trackBy: trackByInventory" class="bag-container" nz-col nzMd="12" nzSm="24">
-      <nz-spin [nzSpinning]="computingPrices[inventory.containerName]">
+      <nz-spin [nzSpinning]="computingPrices[inventory.containerName]" *ngIf="inventory.items.length > 0">
         <nz-card [nzExtra]="extraTemplate"
                  [nzTitle]="title">
           <ng-template #title>
