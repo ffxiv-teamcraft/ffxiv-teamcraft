@@ -1,6 +1,6 @@
 {
   "Quests": "퀘스트",
-  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
+  "Facebook_notice": "페이스북 로그인은 더이상 지원하지 않습니다. '비밀번호 재설정' 을 통해 비밀번호를 변경하시거나, 팀크래프트 디스코드에서 Miu에게 비밀번호 변경을 요청할 수 있습니다.",
   "Search_placeholder": "{{type}} 검색",
   "Pick_a_list": "목록 선택",
   "Pick_a_user": "유저 선택",
@@ -382,7 +382,7 @@
     "No_nickname_warning": "후원자 전용 기능들을 사용하기 위해 설정 페이지에서 닉네임을 설정하시기 바랍니다.",
     "Show_devtools": "개발 도구 표시",
     "Clear_cache": "캐시 지우기(프로그램이 다시 시작됩니다)",
-    "Add_firewall_rule": "Add packet capture firewall rule",
+    "Add_firewall_rule": "방화벽 규칙에 패킷 캡처를 추가",
     "Enable_item_tags": "아이템 태그 사용",
     "Show_copy_list_own_list": "내 목록 패널에 복사 버튼 표시",
     "Custom_theme": "사용자 지정 테마",
@@ -896,7 +896,7 @@
     "Progress_action_100_potency": "작업 효율 100% 스킬 사용시 작업량: {{value}}",
     "Quality_action_100_potency": "가공 효율 100% 스킬 사용시 품질량: {{value}}",
     "Current_control": "현재 가공 숙련도: {{value}}",
-    "Current_control_bonus": "Current bonus",
+    "Current_control_bonus": "현재 추가된 능력치",
     "Macrolock": "매크로 잠금을 포함(매크로를 취소할 수 없는 /mlock 명령어)",
     "Solve_rotation": "로테이션 생성",
     "Rotation_solver": "로테이션 생성기",
@@ -1412,7 +1412,7 @@
     "Jump_to_page": "빠른 검색",
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다."
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -1736,11 +1736,11 @@
     "Please_update_inventory_popup": "가방 업데이트를 위해 위치를 변경(다른 지역으로 텔레포트하거나 건물에 입장) 해주세요. 이 팝업은 해당 작업이 완료되면 자동으로 닫힙니다. 만약 계속 문제가 해결되지 않는다면, 팀크래프트 공식 디스코드 서버의 #troubleshooting 채널에 고정된 메세지를 참고하세요.",
     "Outdated": "패킷캡쳐가 작동하지 않습니다",
     "Outdated_description": "현재 게임버전에서 팀크래프트가 정상적으로 작동되지 않을 수 있습니다. 현재 작업중이며 추후 업데이트를 통해 수정될 예정입니다.",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
-    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
-    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
-    "Add_firewall_rule": "Add the firewall rule"
+    "Possible_missing_firewall_rule": "패킷 캡처가 제대로 작동하지 않고 있습니다",
+    "Possible_missing_firewall_rule_description": "현재 사용하시는 PC의 방화벽 규칙에 패킷 캡처가 없기 때문에 수집된 소지품, 능력치, 장비 등의 데이터가 일부 누락되었습니다.",
+    "Possible_missing_firewall_rule_check": "새로운 지역으로 이동하셔도 패킷 캡처가 작동하지 않는다면 방화벽 규칙이 추가되지 않았거나 패킷 캡처가 알 수 없는 이유로 작동하지 않는 중입니다 (만약 이런 경우에는 팀크래프트 디스코드 #troubleshooting 채널을 통해 문의해주세요).",
+    "Firewall_rule_set": "방화벽 규칙이 적용되었습니다. 동기화 기능이 정상적으로 작동할 것입니다.",
+    "Add_firewall_rule": "방화벽 규칙 추가"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2124,7 +2124,7 @@
     "Marketboard_informations": "장터게시판 정보"
   },
   "COLLECTABLES": {
-    "Title": "Collectables",
-    "No_collectables_for_this_level": "No collectables available"
+    "Title": "소장품",
+    "No_collectables_for_this_level": "소장품 제작이 가능한 레벨이 아닙니다"
   }
 }
