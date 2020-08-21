@@ -2,6 +2,8 @@ import { ListsAction, ListsActionTypes } from './lists.actions';
 import { List } from '../model/list';
 
 
+const PINNED_LIST_LS_KEY = 'lists:pinned';
+
 export interface ListsState {
   listDetails: List[];
   selectedId?: string; // which Lists record has been selected
@@ -20,7 +22,7 @@ export const initialState: ListsState = {
   needsVerification: false,
   deleted: [],
   connectedTeams: [],
-  pinned: 'none'
+  pinned: localStorage.getItem(PINNED_LIST_LS_KEY) || 'none'
 };
 
 export function listsReducer(
@@ -177,6 +179,7 @@ export function listsReducer(
         ...state,
         pinned: action.uid
       };
+      localStorage.setItem(PINNED_LIST_LS_KEY, action.uid);
       break;
     }
 
@@ -185,6 +188,7 @@ export function listsReducer(
         ...state,
         pinned: 'none'
       };
+      localStorage.setItem(PINNED_LIST_LS_KEY, 'none');
       break;
     }
   }
