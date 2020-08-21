@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "Copiar inventario al portapapeles",
     "Pool_copied": "Inventario copiado a su portapapeles",
     "Sort_alphabetically": "Ordenar alfabéticamente",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Guía de Gastos de Monedas",
