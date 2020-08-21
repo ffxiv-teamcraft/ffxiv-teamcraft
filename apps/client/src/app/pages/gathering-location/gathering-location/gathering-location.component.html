@@ -49,7 +49,7 @@
     <ng-template #description>
       <div fxLayout="row" fxLayoutAlign="space-between flex-start">
         <div fxLayout="column">
-          <div>{{node.zoneid | placeName | i18n}}
+          <div>{{node.mapId | mapName | i18n}} - {{node.zoneid | placeName | i18n}}
             <app-db-button [id]="node.nodeId" type="node"></app-db-button>
           </div>
           <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
