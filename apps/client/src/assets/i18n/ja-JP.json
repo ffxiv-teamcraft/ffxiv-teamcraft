@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "アイテム名をクリップボードにコピーする",
     "Pool_copied": "所持品の名称がクリップボードにコピーされました。",
     "Sort_alphabetically": "アルファベット順",
-    "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム"
+    "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
