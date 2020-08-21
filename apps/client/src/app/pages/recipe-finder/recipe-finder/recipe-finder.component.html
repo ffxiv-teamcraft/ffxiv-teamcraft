@@ -64,6 +64,30 @@
       <i nz-icon nzType="search"></i> {{'RECIPE_FINDER.Search' | translate}}
     </button>
   </div>
+  <div class="filters-sorters" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <div>
+        {{'RECIPE_FINDER.Recipe_level' | translate}}:
+      </div>
+      <nz-input-group class="level-range" nzCompact>
+        <nz-input-number mouseWheel [nzMax]="0" [nzMin]="0" [nzPrecision]="0" [ngModel]="clvlMin$ | async"
+                         (ngModelChange)="clvlMin$.next($event)" (mouseWheelDown)="clvlMin$.next(clvlMin$.value - 1)"
+                         (mouseWheelUp)="clvlMin$.next(clvlMin$.value + 1)"></nz-input-number>
+        <input disabled nz-input placeholder="-" type="text">
+        <nz-input-number mouseWheel [nzMax]="maxLevel" [nzMin]="1" [nzPrecision]="0" [ngModel]="clvlMax$ | async"
+                         (ngModelChange)="clvlMax$.next($event)" (mouseWheelDown)="clvlMax$.next(clvlMax$.value - 1)"
+                         (mouseWheelUp)="clvlMax$.next(clvlMax$.value + 1)"></nz-input-number>
+      </nz-input-group>
+    </div>
+    <div>
+      <label nz-checkbox [ngModel]="onlyCraftable$ | async"
+             (ngModelChange)="onlyCraftable$.next($event)">{{'RECIPE_FINDER.Shown_only_craftable' | translate}}</label>
+    </div>
+    <div>
+      <label nz-checkbox [ngModel]="onlyCollectables$ | async"
+             (ngModelChange)="onlyCollectables$.next($event)">{{'RECIPE_FINDER.Shown_only_collectables' | translate}}</label>
+    </div>
+  </div>
 </div>
 <nz-collapse class="inventory-panel">
   <nz-collapse-panel

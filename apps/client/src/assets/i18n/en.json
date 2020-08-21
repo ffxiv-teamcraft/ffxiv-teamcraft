@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Pool_copied": "Inventory copied to your clipboard",
     "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
