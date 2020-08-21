@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "소지품 내역을 클립보드에 복사",
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
     "Sort_alphabetically": "가나다순으로 정렬",
-    "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템"
+    "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
