@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "Копировать инвентарь в буфер обмена",
     "Pool_copied": "Инвентарь скопирован в буфер обмена",
     "Sort_alphabetically": "Сортировать по алфавиту",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
