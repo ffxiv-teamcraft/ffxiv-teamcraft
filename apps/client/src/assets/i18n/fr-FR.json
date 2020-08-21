@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
     "Sort_alphabetically": "Trier par ordre alphabétique",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",
