@@ -1684,7 +1684,10 @@
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Pool_copied": "物品栏已复制到剪贴板",
     "Sort_alphabetically": "按字母顺序整理",
-    "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}"
+    "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
