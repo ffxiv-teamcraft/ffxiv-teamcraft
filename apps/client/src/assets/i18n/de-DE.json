@@ -1685,9 +1685,9 @@
     "Pool_copied": "Inventar wurde in die Zwischenablage kopiert",
     "Sort_alphabetically": "Alphabetisch sortieren",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} von {{ total }} Gegenständen",
-    "Shown_only_craftable": "Only what I have level for",
-    "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Shown_only_craftable": "Nur wo ich das Level für habe",
+    "Shown_only_collectables": "Nur Sammlerstücke",
+    "Recipe_level": "Rezeptstufe"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
