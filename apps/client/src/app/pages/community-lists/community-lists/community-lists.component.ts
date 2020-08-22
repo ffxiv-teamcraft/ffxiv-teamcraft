@@ -20,6 +20,8 @@ export class CommunityListsComponent implements OnDestroy {
 
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
+  public excludeFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   public page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
@@ -40,22 +42,23 @@ export class CommunityListsComponent implements OnDestroy {
         label: `LIST_TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest([this.nameFilter$, this.tagsFilter$]).pipe(
-      tap(([name, tags]) => {
+    this.filters$ = combineLatest([this.nameFilter$, this.tagsFilter$, this.excludeFilter$]).pipe(
+      tap(([name, tags, exclude]) => {
         this.page$.next(1);
         const queryParams = {};
         if (name !== '') {
           queryParams['name'] = name;
         }
         queryParams['tags'] = tags.join(',');
+        queryParams['exclude'] = exclude.join(',');
         router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
           relativeTo: route
         });
       }),
-      map(([name, tags]) => {
-        return { name: name, tags: tags };
+      map(([name, tags, exclude]) => {
+        return { name: name, tags: tags, exclude: exclude };
       })
     );
     route.queryParamMap
@@ -64,6 +67,9 @@ export class CommunityListsComponent implements OnDestroy {
         this.nameFilter$.next(query.get('name') || '');
         if (query.get('tags') !== null) {
           this.tagsFilter$.next(query.get('tags').split(',').filter(tag => tag !== ''));
+        }
+        if (query.get('exclude') !== null) {
+          this.excludeFilter$.next(query.get('exclude').split(',').filter(exclude => exclude !== ''));
         }
       });
     this.filteredLists$ = this.filters$.pipe(
