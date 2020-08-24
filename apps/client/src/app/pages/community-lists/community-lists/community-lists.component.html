@@ -14,6 +14,18 @@
       <i nz-icon nzType="reload"></i>
     </button>
   </div>
+  <div class="filter-input" fxLayout="row" fxLayoutGap="5px">
+    <nz-select (ngModelChange)="excludeFilter$.next($event)" [ngModel]="excludeFilter$ | async"
+               [nzPlaceHolder]="'COMMUNITY_LISTS.Exclude_filter_placeholder' | translate"
+               fxFlex="1 1 auto"
+               nzMode="multiple">
+      <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
+    </nz-select>
+    <button (click)="excludeFilter$.next([])" [nzTitle]="'COMMUNITY_LISTS.Exclude_filter_reset' | translate" nz-button
+            nz-tooltip>
+      <i nz-icon nzType="reload"></i>
+    </button>
+  </div>
   <app-page-loader [loading]="loading" class="lists-container">
     <div *ngIf="filteredLists$ | async as lists" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="5px">
       <app-list-panel *ngFor="let list of lists; trackBy: trackByList" [list]="list"

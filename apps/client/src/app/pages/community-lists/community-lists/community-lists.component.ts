@@ -16,9 +16,11 @@ export class CommunityListsComponent implements OnDestroy {
 
   public tags: any[];
 
-  private filters$: Observable<{ tags: string[], name: string }>;
+  private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
+
+  public excludeFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
   public nameFilter$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -40,22 +42,23 @@ export class CommunityListsComponent implements OnDestroy {
         label: `LIST_TAGS.${key}`
       };
     });
-    this.filters$ = combineLatest([this.nameFilter$, this.tagsFilter$]).pipe(
-      tap(([name, tags]) => {
+    this.filters$ = combineLatest([this.nameFilter$, this.tagsFilter$, this.excludeFilter$]).pipe(
+      tap(([name, tags, exclude]) => {
         this.page$.next(1);
         const queryParams = {};
         if (name !== '') {
           queryParams['name'] = name;
         }
         queryParams['tags'] = tags.join(',');
+        queryParams['exclude'] = exclude.join(',');
         router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
           relativeTo: route
         });
       }),
-      map(([name, tags]) => {
-        return { name: name, tags: tags };
+      map(([name, tags, exclude]) => {
+        return { name: name, tags: tags, exclude: exclude };
       })
     );
     route.queryParamMap
@@ -65,12 +68,18 @@ export class CommunityListsComponent implements OnDestroy {
         if (query.get('tags') !== null) {
           this.tagsFilter$.next(query.get('tags').split(',').filter(tag => tag !== ''));
         }
+        if (query.get('exclude') !== null) {
+          this.excludeFilter$.next(query.get('exclude').split(',').filter(exclude => exclude !== ''));
+        }
       });
     this.filteredLists$ = this.filters$.pipe(
       tap(() => this.loading = true),
       debounceTime(250),
       switchMap((filters) => {
         return this.listService.getCommunityLists(filters.tags, filters.name).pipe(
+          map(lists => {
+            return lists.filter(list => !list.tags.some(tags => filters.exclude.includes(tags)));
+          }),
           tap(lists => {
             this.totalLength = lists.length;
           }),
