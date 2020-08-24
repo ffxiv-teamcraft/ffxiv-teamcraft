@@ -1844,6 +1844,7 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
+    "Cost": "Cost",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
     "Job_cannot_be_changed": "Ne peut pas être modifié après la création",
