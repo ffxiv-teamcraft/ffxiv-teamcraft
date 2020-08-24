@@ -1844,6 +1844,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Материя",
     "Amount_needed": "Количество",
+    "Cost": "Cost",
     "Modal_editor": "Материи для {{itemName}}",
     "Unavailable_slot": "Слот не доступен",
     "Job_cannot_be_changed": "Не может быть изменено после создания",
