@@ -1844,6 +1844,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Amount",
+    "Cost": "Cost",
     "Modal_editor": "Materias for {{itemName}}",
     "Unavailable_slot": "Slot not available",
     "Job_cannot_be_changed": "Cannot be changed after creation",
