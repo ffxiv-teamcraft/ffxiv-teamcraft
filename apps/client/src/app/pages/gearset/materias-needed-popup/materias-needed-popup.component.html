@@ -7,6 +7,7 @@
     <tr>
       <th>{{'GEARSETS.Materia' | translate}}</th>
       <th>{{'GEARSETS.Amount_needed' | translate}}</th>
+      <th>{{'GEARSETS.Cost' | translate}}</th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +18,13 @@
       </td>
       <td class="amount">
         {{row.amount}}
+      </td>
+      <td class="amount">
+        <div *ngIf="row.scrip; else costUnknown" fxLayout="row" fxLayoutAlign="flex-end center">
+          <app-item-icon [width]="24" [itemId]="row.scrip.id"></app-item-icon>
+          <div>x {{row.amount * row.scrip.amount}}</div>
+        </div>
+        <ng-template #costUnknown>???</ng-template>
       </td>
     </tr>
     </tbody>

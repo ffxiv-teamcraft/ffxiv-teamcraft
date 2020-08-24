@@ -18,7 +18,7 @@ export class MateriasNeededPopupComponent implements OnInit {
   @Output()
   includeAllToolsChange = new EventEmitter<boolean>();
 
-  totalNeeded: { id: number, amount: number }[] = [];
+  totalNeeded: { id: number, amount: number, scrip?: { id: number, amount: number } }[] = [];
 
   constructor(private materiaService: MateriaService) {
   }

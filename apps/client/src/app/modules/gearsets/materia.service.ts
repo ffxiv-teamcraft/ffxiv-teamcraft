@@ -3,6 +3,9 @@ import { LazyDataService } from '../../core/data/lazy-data.service';
 import { EquipmentPiece } from '../../model/gearset/equipment-piece';
 import { Memoized } from '../../core/decorators/memoized';
 import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
+import { getItemSource } from '../list/model/list-row';
+import { DataType } from '../list/data/data-type';
+import { TradeSource } from '../list/model/trade-source';
 
 @Injectable({
   providedIn: 'root'
@@ -99,7 +102,7 @@ export class MateriaService {
     return this.lazyData.dohdolMeldingRates[equipmentPiece.hq ? 'hq' : 'nq'][materia.tier - 1][overmeldSlot];
   }
 
-  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean): { id: number, amount: number }[] {
+  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean): { id: number, amount: number, scrip?: { id: number, amount: number } }[] {
     const materias = [];
     Object.keys(gearset)
       .filter(key => gearset[key] && gearset[key].itemId !== undefined)
@@ -150,6 +153,37 @@ export class MateriaService {
         return a.tier - b.tier;
       }
       return a.baseParamId - b.baseParamId;
+    }).map(materia => {
+      const extract = this.lazyData.getExtract(materia.id);
+      const trades = getItemSource<TradeSource[]>(extract, DataType.TRADE_SOURCES);
+      const scripIds = [
+        17833,
+        17834,
+        25199,
+        25200
+      ];
+      const scripTrade = {
+        id: -1,
+        amount: 0
+      };
+      trades.forEach(t => {
+        t.trades.forEach(trade => {
+          if (scripTrade.id > -1) {
+            return;
+          }
+          const scripRow = trade.currencies.find(c => {
+            return scripIds.includes(+c.id);
+          });
+          if (scripRow !== undefined) {
+            scripTrade.id = +scripRow.id;
+            scripTrade.amount = scripRow.amount;
+          }
+        });
+      });
+      if (scripTrade.id > -1) {
+        materia.scrip = scripTrade;
+      }
+      return materia;
     });
   }
 
