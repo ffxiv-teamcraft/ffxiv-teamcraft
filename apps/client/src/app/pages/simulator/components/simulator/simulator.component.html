@@ -303,11 +303,13 @@
                  tutorialStep="TUTORIAL.SIMULATOR.Consumables"
                  tutorialStepIndex="6">
 
-              <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}}</h3>
+              <h3>{{'SIMULATOR.CONFIGURATION.Consumables' | translate}} <b *ngIf="dirtyConsumables" nz-tooltip
+                                                                           [nzTooltipTitle]="'COMMON.Dirty_changes' | translate">*</b></h3>
               <div>
                 <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
                   <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
-                    <nz-select [(ngModel)]="selectedFood" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
+                    <nz-select [(ngModel)]="selectedFood" (ngModelChange)="dirtyConsumables = true"
+                               [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
                                nzAllowClear nzShowSearch>
                       <nz-option *ngFor="let food of foods" [nzValue]="food"
                                  nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
@@ -331,7 +333,7 @@
                     </ng-template>
                   </div>
                   <div class="consumable-col" fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
-                    <nz-select [(ngModel)]="selectedMedicine"
+                    <nz-select [(ngModel)]="selectedMedicine" (ngModelChange)="dirtyConsumables = true"
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate"
                                nzAllowClear nzShowSearch>
                       <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
@@ -356,7 +358,7 @@
                   </div>
                 </div>
                 <div class="consumable-col" fxLayout="column" fxLayoutGap="10px">
-                  <nz-select [(ngModel)]="selectedFreeCompanyActions"
+                  <nz-select [(ngModel)]="selectedFreeCompanyActions" (ngModelChange)="dirtyConsumables = true"
                              [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Action' | translate"
                              nzAllowClear nzMode="multiple">
                     <nz-option-group *ngFor="let type of ['Control', 'Craftsmanship']"
@@ -389,7 +391,7 @@
                   <button
                     (click)="applyConsumables(crafterStats);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
                     nz-button nzBlock
-                    nzType="primary">
+                    [nzType]="dirtyConsumables ? 'primary' : 'default'">
                     {{'SIMULATOR.CONFIGURATION.Apply_foods' | translate}}
                   </button>
                 </div>
@@ -559,7 +561,8 @@
             <div *ngIf="true | ifMobile: false">|</div>
             <div [nzTitle]="'SIMULATOR.Current_control_bonus' | translate" nz-tooltip>
               {{'SIMULATOR.Current_control' | translate: { value: (resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) } }}
-              ({{resultData.simulation.crafterStats._control}} + <span>{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
+              ({{resultData.simulation.crafterStats._control}} +
+              <span>{{(resultData.simulation.crafterStats.getControl(resultData.simulation) | floor) - resultData.simulation.crafterStats._control}}</span>)
             </div>
           </div>
         </nz-card>
