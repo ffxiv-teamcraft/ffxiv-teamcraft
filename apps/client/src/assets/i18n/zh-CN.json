@@ -1844,6 +1844,7 @@
     "Total_cost": "总成本 (兑换、金币等)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
+    "Cost": "Cost",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
     "Job_cannot_be_changed": "配装创建后职业无法修改",
