@@ -164,7 +164,8 @@
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
-    "Change": "变化"
+    "Change": "变化",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "闹钟",
