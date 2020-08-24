@@ -1844,6 +1844,7 @@
     "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
+    "Cost": "Cost",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
     "Job_cannot_be_changed": "생성 후 변경할 수 없습니다",
