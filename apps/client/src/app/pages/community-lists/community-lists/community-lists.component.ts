@@ -16,7 +16,7 @@ export class CommunityListsComponent implements OnDestroy {
 
   public tags: any[];
 
-  private filters$: Observable<{ tags: string[], name: string }>;
+  private filters$: Observable<{ tags: string[], name: string, exclude: string[] }>;
 
   public tagsFilter$: BehaviorSubject<string[]> = new BehaviorSubject<string[]>([]);
 
@@ -77,6 +77,9 @@ export class CommunityListsComponent implements OnDestroy {
       debounceTime(250),
       switchMap((filters) => {
         return this.listService.getCommunityLists(filters.tags, filters.name).pipe(
+          map(lists => {
+            return lists.filter(list => !list.tags.some(tags => filters.exclude.indexOf(tags) > -1));
+          }),
           tap(lists => {
             this.totalLength = lists.length;
           }),
