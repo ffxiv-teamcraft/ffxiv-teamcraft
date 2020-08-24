@@ -1844,6 +1844,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "マテリア",
     "Amount_needed": "数量",
+    "Cost": "Cost",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "Slot not available",
     "Job_cannot_be_changed": "Cannot be changed after creation",
