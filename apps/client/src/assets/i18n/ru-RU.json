@@ -117,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Фильтр по названию",
     "No_lists_matching": "По данному фильтру ничего не найдено"
   },
