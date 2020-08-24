@@ -1844,6 +1844,7 @@
     "Total_cost": "Costo total (intercambios, gil, etc.)",
     "Materia": "Materia",
     "Amount_needed": "Cantidad",
+    "Cost": "Cost",
     "Modal_editor": "Materias para {{itemName}}",
     "Unavailable_slot": "Ranura no disponible",
     "Job_cannot_be_changed": "No se puede cambiar después de creado",
