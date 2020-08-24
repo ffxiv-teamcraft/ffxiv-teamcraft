@@ -164,7 +164,8 @@
     "Copy": "Copiar",
     "Open_in_main_window": "Abrir en la ventana principal",
     "Example": "Ejemplo",
-    "Change": "Cambio"
+    "Change": "Cambio",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "Alarmas",
