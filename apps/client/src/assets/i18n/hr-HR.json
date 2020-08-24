@@ -117,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtriranje pomoću oznaka",
     "Tags_filter_reset": "Resetiranje filtera oznaka",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filtriranje po nazivu",
     "No_lists_matching": "Nema odgovorajućih popisa vašim oznakama"
   },
