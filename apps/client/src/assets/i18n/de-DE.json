@@ -1844,6 +1844,7 @@
     "Total_cost": "Gesamtkosten (Handel, Gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
+    "Cost": "Cost",
     "Modal_editor": "Materia für {{itemName}}",
     "Unavailable_slot": "Platz nicht verfügbar",
     "Job_cannot_be_changed": "Kann nach der Erstellung nicht geändert werden",
