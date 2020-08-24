@@ -164,7 +164,8 @@
     "Copy": "복사",
     "Open_in_main_window": "메인 창에서 열기",
     "Example": "예제",
-    "Change": "변경"
+    "Change": "변경",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "알람",
