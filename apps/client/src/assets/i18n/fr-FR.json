@@ -188,6 +188,9 @@
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
