@@ -1,5 +1,6 @@
 {
   "Quests": "Misiones",
+  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
   "Search_placeholder": "Nombre de {{type}}",
   "Pick_a_list": "Escoja una lista",
   "Pick_a_user": "Escoja un usuario",
@@ -116,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrar usando etiquetas",
     "Tags_filter_reset": "Quitar filtro de etiquetas",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filtrar usando nombre",
     "No_lists_matching": "No hay listas que coincidan con sus filtros"
   },
@@ -161,7 +164,8 @@
     "Copy": "Copiar",
     "Open_in_main_window": "Abrir en la ventana principal",
     "Example": "Ejemplo",
-    "Change": "Cambio"
+    "Change": "Cambio",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -184,6 +188,9 @@
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Restablecer temporizadores",
       "WEEKLY_RESETS": "Semanales",
@@ -1683,7 +1690,10 @@
     "Copy_to_clipboard": "Copiar inventario al portapapeles",
     "Pool_copied": "Inventario copiado a su portapapeles",
     "Sort_alphabetically": "Ordenar alfabéticamente",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Guía de Gastos de Monedas",
@@ -1838,6 +1848,7 @@
     "Total_cost": "Costo total (intercambios, gil, etc.)",
     "Materia": "Materia",
     "Amount_needed": "Cantidad",
+    "Cost": "Cost",
     "Modal_editor": "Materias para {{itemName}}",
     "Unavailable_slot": "Ranura no disponible",
     "Job_cannot_be_changed": "No se puede cambiar después de creado",
