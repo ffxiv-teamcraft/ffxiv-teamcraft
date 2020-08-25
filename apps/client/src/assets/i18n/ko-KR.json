@@ -188,6 +188,9 @@
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
