@@ -16,13 +16,14 @@ import { TextQuestionPopupModule } from '../../modules/text-question-popup/text-
 import { AlarmsOptionsPopupComponent } from './alarms-options-popup/alarms-options-popup.component';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { ClipboardModule } from 'ngx-clipboard';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { ListModule } from '../../modules/list/list.module';
 
 const routes: Routes = [
   {
@@ -42,7 +43,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
 
     TranslateModule,
-    ClipboardModule,
 
     MapModule,
     CoreModule,
@@ -58,7 +58,9 @@ const routes: Routes = [
     CustomAlarmPopupModule,
 
     NgZorroAntdModule,
-    NgDragDropModule
+    NgDragDropModule,
+    ClipboardModule,
+    ListModule
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })

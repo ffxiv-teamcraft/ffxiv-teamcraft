@@ -22,6 +22,7 @@ import { CustomAlarmPopupComponent } from '../../../modules/custom-alarm-popup/c
 import { I18nName } from '../../../model/common/i18n-name';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { FolderAdditionPickerComponent } from '../../../modules/folder-addition-picker/folder-addition-picker/folder-addition-picker.component';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-alarms-page',
@@ -41,7 +42,7 @@ export class AlarmsPageComponent implements OnInit {
               private translate: TranslateService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private etime: EorzeanTimeService,
               private message: NzMessageService, private ipc: IpcService,
-              public platform: PlatformService) {
+              public platform: PlatformService, private linkService: LinkToolsService) {
   }
 
   public get settings(): SettingsService {
@@ -148,6 +149,14 @@ export class AlarmsPageComponent implements OnInit {
       group.name = name;
       this.alarmsFacade.updateGroup(group);
     });
+  }
+
+  getGroupLink(key: string): string {
+    return this.linkService.getLink(`/alarm-group/${key}`);
+  }
+
+  afterGroupLinkCopy(): void {
+    this.message.success(this.translate.instant('ALARMS.Group_link_copied'));
   }
 
   deleteGroup(group: AlarmGroup): void {

@@ -13,4 +13,4 @@ export const patchNotes = `### Bug Fixes
 * **collectables:** current focused tab is now included in the url.
 * **inventory:** hide empty containers when searching for an item.
 * **overlays:** added toggle for the clock bottom bar.
-* **pricing:** better world name displaying for cn servers.`;
+* **pricing:** better world name displaying for cn servers.`;
