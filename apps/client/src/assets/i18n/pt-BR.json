@@ -188,6 +188,9 @@
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
     "Add_alarms_to_group": "Add alarms to this group",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Reset timers",
       "WEEKLY_RESETS": "Weeklies",
