@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.10"></a>
+## [7.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.9...v7.3.10) (2020-08-25)
+
+
+### Bug Fixes
+
+* **metrics:** filtering undefined source out of display ([50d627a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/50d627a))
+* **pricing:** fixed an issue with mb filling sometimes stopping ([1256fc3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1256fc3))
+
+
+### Features
+
+* **alarms:** you can now share alarm groups ([a7885f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7885f4))
+* **community-lists:** added tag exclusion filter ([b8afef9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b8afef9))
+* **core:** support for 5.3 hotfix update ([2d53109](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d53109))
+* **gearsets:** added scrip cost to materias table ([a1b7a86](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1b7a86))
+* **lists:** pinned list now persists over sessions ([1ee183f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1ee183f))
+* **recipe-finder:** added filters to the finder ([ee637cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee637cb))
+* **simulator:** better indicator for unapplied consumables settings ([cfd18bb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfd18bb))
+* Add zone name to Gathering Items result card ([1449099](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1449099))
+
+
+
 <a name="7.3.9"></a>
 ## [7.3.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.8...v7.3.9) (2020-08-19)
 
