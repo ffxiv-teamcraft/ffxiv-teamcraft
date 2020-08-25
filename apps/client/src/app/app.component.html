@@ -570,7 +570,7 @@
         <app-alarms-sidebar *ngIf="!(loading$ | async)" appLazyComponent></app-alarms-sidebar>
       </nz-sider>
     </nz-layout>
-    <nz-footer [fxHide]="!overlay || !settings.getOverlayClockDisplay(ipc.overlayUri)" class="footer" fxShow.lt-sm>
+    <nz-footer *ngIf="settings.getOverlayClockDisplay(ipc.overlayUri)" [fxHide]="!overlay" class="footer" fxShow.lt-sm>
       <span (click)="toggleTimeFormat()" class="timer">{{time$ | async}}</span>
     </nz-footer>
   </nz-layout>
