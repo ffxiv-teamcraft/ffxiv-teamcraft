@@ -52,6 +52,22 @@ export class SettingsService {
     this.setSetting('region:hide-banner', hide.toString());
   }
 
+  public get showOnlyCraftableInRecipeFinder(): boolean {
+    return this.getSetting('recipe-finder:only-craftable', 'false') === 'true';
+  }
+
+  public set showOnlyCraftableInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:only-craftable', show.toString());
+  }
+
+  public get showOnlyCollectablesInRecipeFinder(): boolean {
+    return this.getSetting('recipe-finder:only-collectables', 'false') === 'true';
+  }
+
+  public set showOnlyCollectablesInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:only-collectables', show.toString());
+  }
+
   public get configurationPanelExpanded(): boolean {
     return this.getSetting('simulation:configuration:expanded', 'true') === 'true';
   }

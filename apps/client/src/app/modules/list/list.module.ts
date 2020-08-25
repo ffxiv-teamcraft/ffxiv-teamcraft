@@ -57,7 +57,6 @@ import { ItemSourcesDisplayComponent } from './item/item-sources-display/item-so
 import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component';
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
-import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 
 
@@ -130,9 +129,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemSourcesDisplayComponent,
     AlarmButtonComponent,
     ItemRowButtonsComponent,
-    ListProgressbarComponent,
+    ListProgressbarComponent
   ],
-  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent]
+  exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
 })
 export class ListModule {
 

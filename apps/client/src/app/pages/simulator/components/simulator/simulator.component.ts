@@ -207,6 +207,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     })
   );
 
+  public dirtyConsumables = false;
+
   private consumablesSortFn = (a, b) => {
     const aName = this.i18nTools.getName(this.localizedDataService.getItem(a.itemId));
     const bName = this.i18nTools.getName(this.localizedDataService.getItem(b.itemId));
@@ -637,6 +639,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   applyConsumables(crafterStats: CrafterStats): void {
+    this.dirtyConsumables = false;
     this.bonuses$.next({
       craftsmanship: this.getBonusValue('Craftsmanship', crafterStats.craftsmanship),
       control: this.getBonusValue('Control', crafterStats._control),

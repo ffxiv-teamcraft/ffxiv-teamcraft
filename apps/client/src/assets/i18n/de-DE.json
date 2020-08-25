@@ -1,5 +1,6 @@
 {
   "Quests": "Aufträge",
+  "Facebook_notice": "Facebook-Login ist nicht länger verfügbar. Du kannst entweder deinem Konto durch \"Passwort zurücksetzen\" ein Passwort hinzufügen oder Miu auf Discord fragen.",
   "Search_placeholder": "Name von {{type}} eingeben",
   "Pick_a_list": "Wähle eine Liste",
   "Pick_a_user": "Wähle einen Benutzer",
@@ -116,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Nach Markierungen filtern",
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Nach Name filtern",
     "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
   },
@@ -150,7 +153,7 @@
     "Pie_charts": "Kuchendiagramm",
     "Read_more_on_wiki": "Details im Wiki ansehen",
     "Apply": "Übernehmen",
-    "Open_link": "Webseite öffnen",
+    "Open_link": "Webadresse in App öffnen",
     "Unknown": "Unbekannt",
     "Minimum": "Minimum",
     "Maximum": "Maximum",
@@ -161,7 +164,8 @@
     "Copy": "Kopieren",
     "Open_in_main_window": "Im Hauptfenster öffnen",
     "Example": "Beispiel",
-    "Change": "Ändern"
+    "Change": "Ändern",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -184,6 +188,9 @@
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
@@ -1683,7 +1690,10 @@
     "Copy_to_clipboard": "Inventar in Zwischenablage kopieren",
     "Pool_copied": "Inventar wurde in die Zwischenablage kopiert",
     "Sort_alphabetically": "Alphabetisch sortieren",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} von {{ total }} Gegenständen"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} von {{ total }} Gegenständen",
+    "Shown_only_craftable": "Nur wo ich das Level für habe",
+    "Shown_only_collectables": "Nur Sammlerstücke",
+    "Recipe_level": "Rezeptstufe"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1838,6 +1848,7 @@
     "Total_cost": "Gesamtkosten (Handel, Gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Anzahl",
+    "Cost": "Cost",
     "Modal_editor": "Materia für {{itemName}}",
     "Unavailable_slot": "Platz nicht verfügbar",
     "Job_cannot_be_changed": "Kann nach der Erstellung nicht geändert werden",

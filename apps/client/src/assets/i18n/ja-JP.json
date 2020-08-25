@@ -1,5 +1,6 @@
 {
   "Quests": "クエスト",
+  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
   "Search_placeholder": "{{type}} 検索",
   "Pick_a_list": "リストを選択する",
   "Pick_a_user": "ユーザーを選択する",
@@ -116,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "名前を使用してフィルタリング",
     "No_lists_matching": "フィルターに一致するリストがありません"
   },
@@ -161,7 +164,8 @@
     "Copy": "コピー",
     "Open_in_main_window": "Open in main window",
     "Example": "Example",
-    "Change": "Change"
+    "Change": "Change",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -184,6 +188,9 @@
     "Node_content": "採集物情報",
     "Toggle_collapse": "グループ表示切り替わり",
     "Add_alarms_to_group": "グループにアラームを追加",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
@@ -1683,7 +1690,10 @@
     "Copy_to_clipboard": "アイテム名をクリップボードにコピーする",
     "Pool_copied": "所持品の名称がクリップボードにコピーされました。",
     "Sort_alphabetically": "アルファベット順",
-    "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム"
+    "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
@@ -1838,6 +1848,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "マテリア",
     "Amount_needed": "数量",
+    "Cost": "Cost",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "Slot not available",
     "Job_cannot_be_changed": "Cannot be changed after creation",

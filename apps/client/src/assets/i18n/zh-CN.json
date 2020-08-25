@@ -1,5 +1,6 @@
 {
   "Quests": "任务",
+  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
   "Search_placeholder": "{{type}}名",
   "Pick_a_list": "选择清单",
   "Pick_a_user": "选择用户",
@@ -116,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "清单名筛选",
     "No_lists_matching": "没有符合的搜索结果"
   },
@@ -161,7 +164,8 @@
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
-    "Change": "变化"
+    "Change": "变化",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -184,6 +188,9 @@
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
     "Add_alarms_to_group": "增加闹钟到本组",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
@@ -1683,7 +1690,10 @@
     "Copy_to_clipboard": "将物品栏复制到剪贴板",
     "Pool_copied": "物品栏已复制到剪贴板",
     "Sort_alphabetically": "按字母顺序整理",
-    "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}"
+    "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
@@ -1838,6 +1848,7 @@
     "Total_cost": "总成本 (兑换、金币等)",
     "Materia": "魔晶石",
     "Amount_needed": "数量",
+    "Cost": "Cost",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
     "Job_cannot_be_changed": "配装创建后职业无法修改",

@@ -17,6 +17,9 @@ export enum AlarmsActionTypes {
   UpdateAlarmGroup = '[Alarms] Update Group',
   DeleteAlarmGroup = '[Alarms] Delete Group',
   AssignGroupToAlarm = '[Alarms] Assign Group To Alarm',
+
+  LoadAlarmGroup = '[Alarms] Load external alarm group',
+  AlarmGroupLoaded = '[Alarms] External alarm group Loaded'
 }
 
 export class LoadAlarms implements Action {
@@ -91,6 +94,20 @@ export class AssignGroupToAlarm implements Action {
   }
 }
 
+export class LoadAlarmGroup implements Action {
+  readonly type = AlarmsActionTypes.LoadAlarmGroup;
+
+  constructor(public readonly key: string) {
+  }
+}
+
+export class AlarmGroupLoaded implements Action {
+  readonly type = AlarmsActionTypes.AlarmGroupLoaded;
+
+  constructor(public readonly group: AlarmGroup, public readonly alarms: Alarm[]) {
+  }
+}
+
 export type AlarmsAction =
   LoadAlarms
   | AlarmsLoaded
@@ -102,18 +119,6 @@ export type AlarmsAction =
   | UpdateAlarmGroup
   | DeleteAlarmGroup
   | AssignGroupToAlarm
-  | AlarmsCreated;
-
-export const fromAlarmsActions = {
-  LoadAlarms,
-  AlarmsLoaded,
-  AddAlarms,
-  UpdateAlarm,
-  PersistAlarms,
-  RemoveAlarm,
-  CreateAlarmGroup,
-  UpdateAlarmGroup,
-  DeleteAlarmGroup,
-  AssignGroupToAlarm,
-  AlarmsCreated
-};
+  | AlarmsCreated
+  | LoadAlarmGroup
+  | AlarmGroupLoaded;

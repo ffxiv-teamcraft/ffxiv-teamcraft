@@ -1,16 +1,16 @@
 export const patchNotes = `### Bug Fixes
 
-* **auth:** removed facebook auth as it just doesn't work on desktop.
-* **db:** fixed position for several fishing nodes.
-* **desktop:** fixed packet capture for chinese region.
-* **inventory-optimizer:** fixed an issue with "show ignored items" not working.
-* **macro-translator:** partial fix for KO language.
-* **simulator:** accept basicSynth2 as Basic Synthesis import.
+* **metrics:** filtering undefined source out of display.
+* **pricing:** fixed an issue with mb filling sometimes stopping.
 
 
 ### Features
 
-* **collectables:** current focused tab is now included in the url.
-* **inventory:** hide empty containers when searching for an item.
-* **overlays:** added toggle for the clock bottom bar.
-* **pricing:** better world name displaying for cn servers.`;
+* **alarms:** you can now share alarm groups.
+* **community-lists:** added tag exclusion filter.
+* **core:** support for 5.3 hotfix update.
+* **gearsets:** added scrip cost to materias table.
+* **lists:** pinned list now persists over sessions.
+* **recipe-finder:** added filters to the finder.
+* **simulator:** better indicator for unapplied consumables settings.
+* Add zone name to Gathering Items result card.`;

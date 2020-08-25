@@ -14,9 +14,19 @@ const getAllGroups = createSelector(getAlarmsState, getLoaded, (state: AlarmsSta
   return isLoaded ? state.groups : [];
 });
 
+const getExternalGroup = createSelector(getAlarmsState, getLoaded, (state: AlarmsState) => {
+  return state.externalGroup;
+});
+
+const getExternalGroupAlarms = createSelector(getAlarmsState, getLoaded, (state: AlarmsState) => {
+  return state.externalGroupAlarms;
+});
+
 
 export const alarmsQuery = {
   getLoaded,
   getAllAlarms,
-  getAllGroups
+  getAllGroups,
+  getExternalGroup,
+  getExternalGroupAlarms
 };

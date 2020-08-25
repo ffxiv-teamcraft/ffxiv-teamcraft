@@ -17,10 +17,11 @@ import { List } from '../../../modules/list/model/list';
 import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { InventoryImportPopupComponent } from '../inventory-import-popup/inventory-import-popup.component';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -29,9 +30,17 @@ import { PlatformService } from '../../../core/tools/platform.service';
 })
 export class RecipeFinderComponent implements OnDestroy {
 
+  public maxLevel = environment.maxLevel;
+
   private tipKey = 'recipe-finder:tip';
 
   public query: string;
+
+  public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
+  public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
+
+  public clvlMin$ = new BehaviorSubject(0);
+  public clvlMax$ = new BehaviorSubject(environment.maxLevel);
 
   public input$: Subject<string> = new Subject<string>();
 
@@ -82,7 +91,7 @@ export class RecipeFinderComponent implements OnDestroy {
               private router: Router, private l12n: LocalizedDataService, private listPicker: ListPickerService,
               private notificationService: NzNotificationService, private message: NzMessageService,
               private dialog: NzModalService, private authFacade: AuthFacade,
-              public platform: PlatformService) {
+              public platform: PlatformService, private settings: SettingsService) {
     const allItems = this.lazyData.allItems;
     this.items = Object.keys(this.lazyData.data.items)
       .filter(key => +key > 19)
@@ -95,9 +104,17 @@ export class RecipeFinderComponent implements OnDestroy {
     this.pool = JSON.parse(localStorage.getItem('recipe-finder:pool') || '[]');
     const results$ = this.search$.pipe(
       switchMap(() => {
-        return this.authFacade.gearSets$.pipe(first());
+        return combineLatest([
+          this.authFacade.gearSets$.pipe(first()),
+          this.onlyCraftable$,
+          this.onlyCollectables$,
+          this.clvlMin$,
+          this.clvlMax$
+        ]);
       }),
-      map((sets: GearSet[]) => {
+      map(([sets, onlyCraftable, onlyCollectables, clvlMin, clvlMax]) => {
+        this.settings.showOnlyCraftableInRecipeFinder = onlyCraftable;
+        this.settings.showOnlyCollectablesInRecipeFinder = onlyCollectables;
         const possibleRecipes = [];
         for (const item of this.pool) {
           possibleRecipes.push(...this.lazyData.data.recipes.filter(r => {
@@ -112,12 +129,12 @@ export class RecipeFinderComponent implements OnDestroy {
           const jobSet = sets.find(set => recipe.job === set.jobId);
           recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
           recipe.missing = recipe.ingredients
-            // Ignore crystals
+          // Ignore crystals
             .filter(i => i.id > 19)
             .filter(i => {
-            const poolItem = this.pool.find(item => item.id === i.id);
-            return !poolItem || poolItem.amount < i.amount;
-          });
+              const poolItem = this.pool.find(item => item.id === i.id);
+              return !poolItem || poolItem.amount < i.amount;
+            });
           recipe.possibleAmount = recipe.yields;
           while (this.canCraft(recipe, recipe.possibleAmount)) {
             recipe.possibleAmount += recipe.yields;
@@ -126,23 +143,31 @@ export class RecipeFinderComponent implements OnDestroy {
           recipe.possibleAmount -= recipe.yields;
           return recipe;
         });
-        return finalRecipes.sort((a, b) => {
-          const missingDiff = a.missing.length - b.missing.length;
-          if (missingDiff !== 0) {
-            return missingDiff;
-          }
-          if (a.missingLevel && !b.missingLevel) {
-            return 1;
-          }
-          if (b.missingLevel && !a.missingLevel) {
-            return -1;
-          }
-          const jobDiff = a.job - b.job;
-          if (jobDiff !== 0) {
-            return jobDiff;
-          }
-          return a.level - b.level;
-        });
+        return finalRecipes
+          .filter(recipe => {
+            let match = !onlyCraftable || !recipe.missingLevel;
+            if (onlyCollectables) {
+              match = match && this.lazyData.data.collectables[recipe.result] !== undefined;
+            }
+            return match && (recipe.lvl >= clvlMin && recipe.lvl <= clvlMax);
+          })
+          .sort((a, b) => {
+            const missingDiff = a.missing.length - b.missing.length;
+            if (missingDiff !== 0) {
+              return missingDiff;
+            }
+            if (a.missingLevel && !b.missingLevel) {
+              return 1;
+            }
+            if (b.missingLevel && !a.missingLevel) {
+              return -1;
+            }
+            const jobDiff = a.job - b.job;
+            if (jobDiff !== 0) {
+              return jobDiff;
+            }
+            return a.level - b.level;
+          });
       }),
       tap(results => {
         this.totalItems = results.length;
@@ -159,14 +184,14 @@ export class RecipeFinderComponent implements OnDestroy {
   public canCraft(recipe: LazyRecipe, amount: number): boolean {
     const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
     const neededIngredients = allAvailableIngredients
-      // Ignore crystals
+    // Ignore crystals
       .filter(i => i.id > 19)
       .map(i => {
-      return {
-        ...i,
-        amount: i.amount * amount / recipe.yields
-      };
-    });
+        return {
+          ...i,
+          amount: i.amount * amount / recipe.yields
+        };
+      });
     return !neededIngredients.some(i => {
       const poolItem = this.pool.find(item => item.id === i.id);
       return poolItem.amount < i.amount;

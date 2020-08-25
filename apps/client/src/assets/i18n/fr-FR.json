@@ -1,5 +1,6 @@
 {
   "Quests": "Quests",
+  "Facebook_notice": "La connexion à Facebook n'est plus disponible, vous pouvez ajouter un mot de passe à votre compte en utilisant le système \"réinitialiser le mot de passe\", ou en demandant à Miu sur discord.",
   "Search_placeholder": "Nom de l'élément à chercher",
   "Pick_a_list": "Choisissez une liste",
   "Pick_a_user": "Choisissez un utilisateur",
@@ -116,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filtrer par nom",
     "No_lists_matching": "Aucune liste correspondant à vos filtres"
   },
@@ -161,7 +164,8 @@
     "Copy": "Copier",
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
     "Example": "Exemple",
-    "Change": "Changer"
+    "Change": "Changer",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -184,6 +188,9 @@
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -381,7 +388,7 @@
     "No_nickname_warning": "Accédez à la page paramètres et configurer un pseudo pour pouvoir utiliser les fonctionnalités exclusives aux supporters patron correctement.",
     "Show_devtools": "Afficher les outils de debug",
     "Clear_cache": "Vider le cache (l'application va redémarrer)",
-    "Add_firewall_rule": "Add packet capture firewall rule",
+    "Add_firewall_rule": "Ajouter une règle de pare-feu pour la capture de paquets",
     "Enable_item_tags": "Activer les tags d'objets",
     "Show_copy_list_own_list": "Afficher le bouton copie sur les panneaux de mes listes",
     "Custom_theme": "Thème personnalisé",
@@ -895,7 +902,7 @@
     "Progress_action_100_potency": "Progression par tranche de 100 efficacité : {{value}}",
     "Quality_action_100_potency": "Qualité par tranche de 100 efficacité : {{value}}",
     "Current_control": "Contrôle actuel : {{value}}",
-    "Current_control_bonus": "Current bonus",
+    "Current_control_bonus": "Bonus actuel",
     "Macrolock": "Inclure macrolock",
     "Solve_rotation": "Résoudre cette rotation",
     "Rotation_solver": "Résolveur de rotations",
@@ -1406,12 +1413,12 @@
     "3d_model_help": "Aperçu du modèle 3D",
     "Achievements": "Haut-faits",
     "Currencies": "Devises",
-    "Rowena_splendor": "Rowena's splendors",
+    "Rowena_splendor": "Les splendeurs de Rowena",
     "Unlocks": "Déverrouille",
     "Jump_to_page": "Accès rapide à une autre page",
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -1683,7 +1690,10 @@
     "Copy_to_clipboard": "Copier l'inventaire dans le presse-papiers",
     "Pool_copied": "Inventaire copié dans votre presse-papiers",
     "Sort_alphabetically": "Trier par ordre alphabétique",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments",
+    "Shown_only_craftable": "Uniquement avec niveau requis respecté",
+    "Shown_only_collectables": "Collectionnables uniquement",
+    "Recipe_level": "Niveau de la recette"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",
@@ -1735,11 +1745,11 @@
     "Please_update_inventory_popup": "Veuillez changer de zone (en vous téléportant ou en entrant dans une maison) afin de mettre à jour votre inventaire. Cette fenêtre se fermera automatiquement. Si le problème persiste, essayez de suivre le guide de dépannage de capture de paquets dans les messages épinglés de #troubleshooting sur le serveur Discord de Teamcraft.",
     "Outdated": "La capture de paquets ne fonctionne pas",
     "Outdated_description": "Votre version de Teamcraft ne fonctionne pas correctement avec la version actuelle du jeu, elle est en cours de développement et sera corrigée dans une prochaine mise à jour.",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
-    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
-    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
-    "Add_firewall_rule": "Add the firewall rule"
+    "Possible_missing_firewall_rule": "La capture de paquets ne fonctionne pas correctement",
+    "Possible_missing_firewall_rule_description": "Teamcraft ne voit que certains des paquets et pas ceux liés aux inventaires, stats, gear, etc, cela peut être dû à une règle de pare-feu manquante sur votre PC.",
+    "Possible_missing_firewall_rule_check": "Si ce message ne disparaît pas après que vous vous soyez téléporté dans une nouvelle zone, soit la règle de pare-feu est manquante ou la capture de paquets ne fonctionne pas du tout pour une autre raison (si c'est le cas, rejoignez le serveur discord et allez sur le canal #troubleshooting).",
+    "Firewall_rule_set": "La règle du pare-feu a été appliquée, votre inventaire devrait maintenant être détecté correctement.",
+    "Add_firewall_rule": "Ajouter la règle de pare-feu"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
@@ -1838,6 +1848,7 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
+    "Cost": "Cost",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
     "Job_cannot_be_changed": "Ne peut pas être modifié après la création",
@@ -2123,7 +2134,7 @@
     "Marketboard_informations": "Informations de l'hôtel des ventes"
   },
   "COLLECTABLES": {
-    "Title": "Collectables",
-    "No_collectables_for_this_level": "No collectables available"
+    "Title": "Collectionnables",
+    "No_collectables_for_this_level": "Aucun collectionnable possible"
   }
 }

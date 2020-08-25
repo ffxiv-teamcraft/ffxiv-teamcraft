@@ -66,6 +66,9 @@ export class PlayerMetricsService {
           source: +parsed[2],
           data: parsed[3].split(',').map(n => +n)
         };
+      })
+      .filter(row => {
+        return row.source !== undefined;
       });
   }
 

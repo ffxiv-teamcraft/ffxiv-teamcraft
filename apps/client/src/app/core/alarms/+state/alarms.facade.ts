@@ -4,7 +4,17 @@ import { Store } from '@ngrx/store';
 
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
-import { AddAlarms, AssignGroupToAlarm, CreateAlarmGroup, DeleteAlarmGroup, LoadAlarms, RemoveAlarm, UpdateAlarm, UpdateAlarmGroup } from './alarms.actions';
+import {
+  AddAlarms,
+  AssignGroupToAlarm,
+  CreateAlarmGroup,
+  DeleteAlarmGroup,
+  LoadAlarmGroup,
+  LoadAlarms,
+  RemoveAlarm,
+  UpdateAlarm,
+  UpdateAlarmGroup
+} from './alarms.actions';
 import { Alarm } from '../alarm';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
@@ -27,6 +37,9 @@ export class AlarmsFacade {
   loaded$ = this.store.select(alarmsQuery.getLoaded);
   allAlarms$ = this.store.select(alarmsQuery.getAllAlarms);
   allGroups$ = this.store.select(alarmsQuery.getAllGroups);
+
+  externalGroup$ = this.store.select(alarmsQuery.getExternalGroup);
+  externalGroupAlarms$ = this.store.select(alarmsQuery.getExternalGroupAlarms);
 
   alarmsPageDisplay$ = combineLatest([this.etime.getEorzeanTime(), this.allAlarms$, this.allGroups$]).pipe(
     map(([date, alarms, groups]) => {
@@ -113,6 +126,10 @@ export class AlarmsFacade {
 
   public assignAlarmGroup(alarm: Alarm, groupKey: string): void {
     this.store.dispatch(new AssignGroupToAlarm(alarm, groupKey));
+  }
+
+  public loadExternalGroup(key: string): void {
+    this.store.dispatch(new LoadAlarmGroup(key));
   }
 
   /**

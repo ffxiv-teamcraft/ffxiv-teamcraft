@@ -2,27 +2,20 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
   AddAlarms,
+  AlarmGroupLoaded,
   AlarmsActionTypes,
   AlarmsCreated,
   AlarmsLoaded,
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
+  LoadAlarmGroup,
   RemoveAlarm,
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import {
-  bufferTime,
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-  tap,
-  withLatestFrom
-} from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { bufferTime, catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { combineLatest, of } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { Alarm } from '../alarm';
@@ -53,6 +46,26 @@ export class AlarmsEffects {
     }),
     debounceTime(500),
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
+  );
+
+  @Effect()
+  loadAlarmGroup$ = this.actions$.pipe(
+    ofType<LoadAlarmGroup>(AlarmsActionTypes.LoadAlarmGroup),
+    switchMap((action) => {
+      return combineLatest([
+        this.alarmGroupsService.get(action.key).pipe(
+          catchError(() => {
+            const notFound = new AlarmGroup('', 0);
+            notFound.notFound = true;
+            return of(notFound);
+          })
+        ),
+        this.alarmsService.getByForeignKey(AlarmGroup, action.key)
+      ]);
+    }),
+    map(([group, alarms]) => {
+      return new AlarmGroupLoaded(group, alarms);
+    })
   );
 
   @Effect()

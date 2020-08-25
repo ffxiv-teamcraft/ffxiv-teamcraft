@@ -117,6 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filter using tags",
     "Tags_filter_reset": "Reset tags filter",
+    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "Filter using name",
     "No_lists_matching": "No lists matching your filters"
   },
@@ -162,7 +164,8 @@
     "Copy": "Copy",
     "Open_in_main_window": "Open in main window",
     "Example": "Example",
-    "Change": "Change"
+    "Change": "Change",
+    "Dirty_changes": "You have unapplied changes"
   },
   "ALARMS": {
     "Title": "Alarms",
@@ -185,6 +188,9 @@
     "Node_content": "Node content",
     "Toggle_collapse": "Toggle groups collapse",
     "Add_alarms_to_group": "Add alarms to this group",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Reset timers",
       "WEEKLY_RESETS": "Weeklies",
@@ -1684,7 +1690,10 @@
     "Copy_to_clipboard": "Copy inventory to clipboard",
     "Pool_copied": "Inventory copied to your clipboard",
     "Sort_alphabetically": "Sort alphabetically",
-    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items"
+    "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items",
+    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_collectables": "Only collectables",
+    "Recipe_level": "Recipe level"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
@@ -1839,6 +1848,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "Materia",
     "Amount_needed": "Amount",
+    "Cost": "Cost",
     "Modal_editor": "Materias for {{itemName}}",
     "Unavailable_slot": "Slot not available",
     "Job_cannot_be_changed": "Cannot be changed after creation",
