@@ -188,6 +188,9 @@
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Таймеры сброса",
       "WEEKLY_RESETS": "Еженедельное",
