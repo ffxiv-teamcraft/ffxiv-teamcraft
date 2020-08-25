@@ -188,6 +188,9 @@
     "Node_content": "Contenido del nodo",
     "Toggle_collapse": "Colapsar/Expandir grupos",
     "Add_alarms_to_group": "Agregar alarmas a este grupo",
+    "Group_link_copied": "Alarm group link copied",
+    "Group_not_found": "Alarm group not found",
+    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
       "Reset_timers": "Restablecer temporizadores",
       "WEEKLY_RESETS": "Semanales",
