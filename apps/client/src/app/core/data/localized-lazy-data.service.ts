@@ -80,8 +80,8 @@ export class LocalizedLazyDataService {
       de: of(world),
       ja: of(world),
       zh: of(zhWorlds[world]),
-      ko: of(undefined),
-      ru: of(undefined),
+      ko: of(world),
+      ru: of(world),
     };
 
     return i18nName;
