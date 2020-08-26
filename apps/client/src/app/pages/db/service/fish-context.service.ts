@@ -5,10 +5,20 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { switchMap, map } from 'rxjs/operators';
 import { ApolloQueryResult } from 'apollo-client';
 
-export type Occurrence = { id: number; occurrences: number };
-export type Occurrences<T = Occurrence, K extends string | number = number> = { total: number; byId: Record<K, T> };
+export interface Occurrence {
+  id: number;
+  occurrences: number;
+}
+export interface Occurrences<T = Occurrence, K extends string | number = number> {
+  total: number;
+  byId: Record<K, T>;
+}
 export type OccurrencesResult<T = Occurrence, K extends string | number = number> = ApolloQueryResult<Occurrences<T, K>>;
-export type WeatherTransitionOccurrence = { fromId: number; toId: number; occurrences: number };
+export interface WeatherTransitionOccurrence {
+  fromId: number;
+  toId: number;
+  occurrences: number;
+}
 
 const occurrenceResultMapper = <T extends string, I extends string>(key: T, innerKey: I) => (
   res: ApolloQueryResult<Record<T, Array<Record<I | 'occurences', number>>>>
@@ -52,8 +62,8 @@ export class FishContextService {
     switchMap(([fishId, spotId]) => this.data.getHoursByFishId(fishId, spotId)),
     map((res) => {
       const data = res.data?.etimes.reduce(
-        ({ total, byId: byHour }, val) => {
-          const next = { ...byHour, [val.etime]: byHour[val.etime] + val.occurences };
+        ({ total, byId }, val) => {
+          const next = { ...byId, [val.etime]: byId[val.etime] + val.occurences };
           return { total: total + val.occurences, byId: next };
         },
         { total: 0, byId: this.makeHoursDict() }

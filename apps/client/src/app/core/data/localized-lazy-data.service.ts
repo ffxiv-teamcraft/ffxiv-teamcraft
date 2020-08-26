@@ -263,7 +263,7 @@ export class LocalizedLazyDataService {
   // }
 
   private getMapId(name: string): number {
-    const result = mapIds.find((map) => map.name === name);
+    const result = mapIds.find((m) => m.name === name);
     if (result === undefined) {
       if (name === 'Gridania') {
         return 2;
@@ -354,7 +354,7 @@ export class LocalizedLazyDataService {
     const craftAction = this.getRow('craftActions', id);
     const action = this.getRow('actions', id);
     return Object.entries(craftAction).reduce((acc, [lang, val]: [Language, Observable<string | undefined>]) => {
-      return { ...acc, [lang]: val.pipe(switchMap((val) => (val ? of(val) : action[lang]))) };
+      return { ...acc, [lang]: val.pipe(switchMap((v) => (v ? of(v) : action[lang]))) };
     }, {} as I18nNameLazy);
   }
 
