@@ -7,6 +7,7 @@ import { MachinaService } from '../../../core/electron/machina.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ProbeSource } from '../model/probe-source';
+import { InventoryEventType } from '../../../model/user/inventory/inventory-event-type';
 
 export class CurrenciesProbe extends PlayerMetricProbe {
   constructor(protected ipc: IpcService, private machina: MachinaService) {
@@ -15,7 +16,7 @@ export class CurrenciesProbe extends PlayerMetricProbe {
 
   getReports(): Observable<ProbeReport> {
     return this.machina.inventoryEvents$.pipe(
-      filter(patch => patch.containerId === ContainerType.Currency || patch.containerId === ContainerType.RetainerGil),
+      filter(patch => patch.type !== InventoryEventType.MOVED && (patch.containerId === ContainerType.Currency || patch.containerId === ContainerType.RetainerGil)),
       withLatestFrom(this.source$),
       map(([event, source]) => {
         if (event.amount > 0 && (source === ProbeSource.TELEPORT || source === ProbeSource.MARKETBOARD)) {
