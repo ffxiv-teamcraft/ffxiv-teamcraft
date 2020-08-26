@@ -6,10 +6,12 @@ import { LazyData } from '../app/core/data/lazy-data';
 import { patchList } from './patchlist';
 import { SettingsService } from '../app/modules/settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LazyDataProviderService } from '../app/core/data/lazy-data-provider.service';
 
 export class LazyDataTestService extends LazyDataService {
+  static mockLazyDataProvider = { getLazyData(...args: any[]) {} } as LazyDataProviderService;
   constructor() {
-    super(null, null, null, null, new SettingsService(null), null, { currentLang: 'en' } as TranslateService);
+    super(null, null, null, null, new SettingsService(null), LazyDataTestService.mockLazyDataProvider, { currentLang: 'en' } as TranslateService);
   }
 
   load(): void {
