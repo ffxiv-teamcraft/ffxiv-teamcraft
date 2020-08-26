@@ -60,7 +60,7 @@ export class LocalizedLazyDataService {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
       koKey: this.guessExtendedLanguageKey('ko', key),
-      ruKey: this.guessExtendedLanguageKey('ko', key),
+      ruKey: this.guessExtendedLanguageKey('ru', key),
     };
   }
 
