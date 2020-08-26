@@ -1,4 +1,6 @@
-export interface LazyData { 
+export type LazyDataKey = keyof LazyData;
+
+  export interface LazyData { 
   achievementIcons: any;
   achievements: any;
   actionCdGroups: any;
