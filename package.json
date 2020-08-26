@@ -236,7 +236,7 @@
     "ngx-color-picker": "^9.0.0",
     "ngx-markdown": "^9.0.0",
     "papaparse": "^5.2.0",
-    "prettier": "1.13.7",
+    "prettier": "^2.0.5",
     "rxjs": "^6.5.4",
     "rxjs-compat": "^6.5.4",
     "semver": "^5.4.1",
