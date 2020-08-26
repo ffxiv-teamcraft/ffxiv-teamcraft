@@ -13,4 +13,4 @@ export const patchNotes = `### Bug Fixes
 * **lists:** pinned list now persists over sessions.
 * **recipe-finder:** added filters to the finder.
 * **simulator:** better indicator for unapplied consumables settings.
-* Add zone name to Gathering Items result card.`;
+* Add zone name to Gathering Items result card.`;
