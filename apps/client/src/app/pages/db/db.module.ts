@@ -45,6 +45,9 @@ import { QuickSearchModule } from '../../modules/quick-search/quick-search.modul
 import { ItemDetailsPopupsModule } from '../../modules/item-details/item-details-popups.module';
 import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
 import { I18nDisplayModule } from '../../modules/i18n-display/i18n-display.module';
+import * as FishGQLProviders from './service/fish-data.gql';
+import { FishDataService } from './service/fish-data.service';
+import { FishContextService } from './service/fish-context.service';
 
 const routes: Routes = [
   {
@@ -54,164 +57,164 @@ const routes: Routes = [
       {
         path: 'item/:itemId',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'item/:itemId/:slug',
         component: ItemComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'instance/:instanceId',
         component: InstanceComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'instance/:instanceId/:slug',
         component: InstanceComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'quest/:questId',
         component: QuestComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'quest/:questId/:slug',
         component: QuestComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'npc/:npcId',
         component: NpcComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'npc/:npcId/:slug',
         component: NpcComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'leve/:leveId',
         component: LeveComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'leve/:leveId/:slug',
         component: LeveComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'mob/:mobId',
         component: MobComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'mob/:mobId/:slug',
         component: MobComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'fate/:fateId',
         component: FateComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'fate/:fateId/:slug',
         component: FateComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'map/:mapId',
         component: MapPageComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'map/:mapId/:slug',
         component: MapPageComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'node/:nodeId',
         component: NodeComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'action/:actionId',
         component: ActionComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'action/:actionId/:slug',
         component: ActionComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'status/:statusId',
         component: StatusComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'status/:statusId/:slug',
         component: StatusComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'trait/:traitId',
         component: TraitComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'trait/:traitId/:slug',
         component: TraitComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'achievement/:achievementId',
         component: AchievementComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'achievement/:achievementId/:slug',
         component: AchievementComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'patch/:patchId',
         component: PatchComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'patch/:patchId/:slug',
         component: PatchComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
 
       {
         path: 'fishing-spot/:spotId',
         component: FishingSpotComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
+        canActivate: [MaintenanceGuard, VersionLockGuard],
       },
       {
         path: 'fishing-spot/:spotId/:slug',
         component: FishingSpotComponent,
-        canActivate: [MaintenanceGuard, VersionLockGuard]
-      }
-    ]
-  }
+        canActivate: [MaintenanceGuard, VersionLockGuard],
+      },
+    ],
+  },
 ];
 
 @NgModule({
@@ -236,21 +239,16 @@ const routes: Routes = [
     PatchComponent,
     FishComponent,
     FishingSpotComponent,
-    FishingMissesPopupComponent
+    FishingMissesPopupComponent,
   ],
   imports: [
     CommonModule,
-
     RouterModule.forChild(routes),
-
     CoreModule,
     FlexLayoutModule,
     FormsModule,
-
     TranslateModule,
-
     NgxChartsModule,
-
     MapModule,
     PipesModule,
     ItemIconModule,
@@ -267,8 +265,8 @@ const routes: Routes = [
 
     NgZorroAntdModule,
     UserAvatarModule,
-    QuickSearchModule
-  ]
+    QuickSearchModule,
+  ],
+  providers: [FishDataService, FishContextService, ...Object.values(FishGQLProviders)],
 })
-export class DbModule {
-}
+export class DbModule {}

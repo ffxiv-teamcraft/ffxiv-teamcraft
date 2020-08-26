@@ -1,153 +1,175 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { Component, Input, TemplateRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { mapValues } from 'lodash';
+import { BehaviorSubject, combineLatest, forkJoin, of } from 'rxjs';
+import { distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { distinctUntilChanged, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
-import { SettingsService } from '../../../modules/settings/settings.service';
-import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
-import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
-import { weatherIndex } from '../../../core/data/sources/weather-index';
+import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { mapIds } from '../../../core/data/sources/map-ids';
-import { AuthFacade } from '../../../+state/auth.facade';
+import { weatherIndex } from '../../../core/data/sources/weather-index';
+import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
+import { FishContextService } from '../service/fish-context.service';
 
 @Component({
   selector: 'app-fish',
   templateUrl: './fish.component.html',
-  styleUrls: ['./fish.component.less']
+  styleUrls: ['./fish.component.less'],
 })
-export class FishComponent implements OnInit {
-
-  public loading = true;
-
-  public xivapiFish$: ReplaySubject<any> = new ReplaySubject<any>();
+export class FishComponent {
+  public loading$ = new BehaviorSubject<boolean>(false);
 
   @Input()
-  public set xivapiFish(fish: any) {
-    this.loading = true;
-    this.xivapiFish$.next(fish);
+  public set xivapiFish(fish: { ID?: number }) {
+    if (fish?.ID >= 0) this.fishCtx.setFishId(fish.ID);
   }
 
-  @Input()
-  usedForTpl: TemplateRef<any>;
+  @Input() usedForTpl: TemplateRef<any>;
 
-  @Input()
-  obtentionTpl: TemplateRef<any>;
+  @Input() obtentionTpl: TemplateRef<any>;
 
-  public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
+  public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
 
-  public gubalData$: Observable<any>;
-
-  public highlightTime$ = this.etime.getEorzeanTime().pipe(
-    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
-    map(time => {
-      return [{
-        name: `${time.getUTCHours()}:00`,
-        value: this.settings.theme.highlight
-      }];
+  public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(
+    map((res) => {
+      if (!res.data) return undefined;
+      return Object.entries(res.data.byId).map(([key, value]) => ({ name: `${key.toString().padStart(2, '0')}:00`, value }));
     })
   );
 
-  public spot$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  public readonly baitsChartData$ = this.fishCtx.baitsByFish$.pipe(
+    switchMap((res) => {
+      if (!res.data) return of(undefined);
+      const baitNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getItem(key.id)));
+      return forkJoin(baitNames).pipe(
+        map((names) => {
+          return Object.values(res.data.byId).map((bait) => ({ name: names[bait.id] ?? '--', value: bait.occurrences, baitId: bait.id }));
+        })
+      );
+    })
+  );
 
-  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService,
-              public translate: TranslateService, private lazyData: LazyDataService,
-              public settings: SettingsService, private apollo: Apollo,
-              private etime: EorzeanTimeService, private authFacade: AuthFacade) {
-  }
+  public readonly hooksets$ = this.fishCtx.hooksetsByFish$.pipe(
+    map((res) => {
+      if (!res.data) return undefined;
+      return Object.values(res.data.byId)
+        .sort((a, b) => b.occurrences - a.occurrences)
+        .map((entry) => ({
+          hookset: entry.id === 1 ? 4103 : 4179,
+          percent: (100 * entry.occurrences) / res.data.total,
+        }));
+    })
+  );
 
-  private getGraphQLQuery(fishId: number, spotId: number, userId: string): any {
-    const spotIdFilter = `spot: {_eq: ${spotId}}, `;
-    return gql`
-          query fishData {
-            etimes_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              etime
-              occurences
-            }
-            baits_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              baitId
-              occurences
-            }
-            hooksets_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, hookset: {_neq: 0}}) {
-              hookset,
-              occurences
-            }
-            tug_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              tug,
-              occurences
-            }
-            bite_time_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}, biteTime: {_gt: 1}}) {
-              biteTime,
-              occurences
-            }
-            snagging_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              snagging,
-              occurences
-            }
-            fish_eyes_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              fishEyes,
-              occurences
-            }
-            weathers_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              weatherId,
-              occurences
-            }
-            weather_transitions_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              previousWeatherId,
-              weatherId,
-              occurences
-            }
-            spots_per_fish(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              spot
-            }
-            every_spots:spots_per_fish(where: {itemId: {_eq: ${fishId}}}) {
-              spot
-            }
-            fishingresults_aggregate(where: {${spotId > 0 ? spotIdFilter : ''}itemId: {_eq: ${fishId}}}) {
-              aggregate {
-                min {
-                  size
-                  gathering
-                }
-                max {
-                  size
-                }
-                avg {
-                  size
-                }
-              }
-            }
-            used_for_mooch:baits_per_fish${spotId > 0 ? '_per_spot' : ''}(where: {${spotId > 0 ? spotIdFilter : ''}baitId: {_eq: ${fishId}}}) {
-              itemId
-            }
-            fish_rankings:fishingresults(where:{itemId: {_eq: ${fishId}}, ranking:{ rank: {_lte: 3}}}, order_by:{ ranking: {rank: asc}}, limit: 10) {
-              size,
-              userId,
-              date,
-              baitId,
-              ranking {
-                rank
-              }
-            }
-            user_ranking:fishingresults(where:{itemId: {_eq: ${fishId}}, userId: {_eq: "${userId}"}}, order_by:{ ranking: {rank: asc}}, limit: 1) {
-              size,
-              userId,
-              date,
-              baitId,
-              ranking {
-                rank
-              }
-            }
-          }
-        `;
-  }
+  public readonly tugs$ = this.fishCtx.tugsByFish$.pipe(
+    map((res) => {
+      if (!res.data) return undefined;
+      return Object.values(res.data.byId)
+        .sort((a, b) => b.occurrences - a.occurrences)
+        .map((entry) => ({
+          tugName: ['Medium', 'Big', 'Light'][entry.id],
+          percent: (100 * entry.occurrences) / res.data.total,
+        }));
+    })
+  );
+
+  public readonly biteTimeChart$ = this.fishCtx.biteTimesByFish$.pipe(
+    map((res) => {
+      if (!res.data) return undefined;
+      const sortedBiteTimes = Object.values(res.data.byId).sort((a, b) => a.id - b.id);
+      return {
+        min: (sortedBiteTimes[0] || { id: 0 }).id,
+        max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { id: 0 }).id,
+        avg: sortedBiteTimes.reduce((acc, entry) => entry.id * entry.occurrences + acc, 0) / res.data.total,
+      };
+    })
+  );
+
+  public readonly weathersChartView$ = this.fishCtx.spotId$.pipe(
+    map((id) => [500, id === -1 ? 300 : 200]),
+    startWith([500, 200])
+  );
+
+  public readonly weathersChartData$ = this.fishCtx.weathersByFish$.pipe(
+    switchMap((res) => {
+      if (!res.data) return of(undefined);
+      const weatherNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getItem(key.id)));
+      return forkJoin(weatherNames).pipe(
+        map((names) => {
+          return Object.values(res.data.byId)
+            .map((weather) => ({ name: names[weather.id] ?? '--', value: weather.occurrences, weatherId: weather.id }))
+            .sort((a, b) => b.value - a.value);
+        })
+      );
+    })
+  );
+
+  public readonly weathersChances$ = combineLatest(this.fishCtx.weathersByFish$, this.fishCtx.spotId$, this.lazyData.fishingSpots$).pipe(
+    map(([res, spotId, fishingSpots]) => {
+      if (!res.data || spotId === undefined) return undefined;
+      return Object.values(res.data.byId)
+        .sort((a, b) => b.occurrences - a.occurrences)
+        .map((entry) => {
+          const spotData = fishingSpots.find((row) => row.id === spotId);
+          return {
+            chances: 100 * this.getWeatherChances(spotData.mapId, entry.id),
+            weatherId: entry.id,
+          };
+        });
+    })
+  );
+
+  public readonly weatherTransitions$ = combineLatest(this.fishCtx.weatherTransitionsByFish$, this.fishCtx.spotId$).pipe(
+    map(([res, spotId]) => {
+      if (!res.data) return undefined;
+      return Object.values(res.data.byId).map((entry) => {
+        let transitionChances: number | undefined;
+        if (spotId !== undefined) {
+          const spotData = this.lazyData.data.fishingSpots.find((row) => row.id === spotId);
+          const weatherChances = this.getWeatherChances(spotData.mapId, entry.toId);
+          const previousWeatherChances = this.getWeatherChances(spotData.mapId, entry.fromId);
+          transitionChances = 100 * weatherChances * previousWeatherChances;
+        }
+        return {
+          ...entry,
+          transitionChances,
+          percent: (100 * entry.occurrences) / res.data.total,
+        };
+      });
+    })
+  );
+
+  public readonly rankings$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.data?.rankings ?? undefined));
+
+  public readonly userRanking$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.data?.userRanking?.[0] ?? undefined));
+
+  public highlightTime$ = this.etime.getEorzeanTime().pipe(
+    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
+    map((time) => {
+      return [
+        {
+          name: `${time.getUTCHours()}:00`,
+          value: this.settings.theme.highlight,
+        },
+      ];
+    })
+  );
+
+  constructor(
+    private l12n: LocalizedLazyDataService,
+    private i18n: I18nToolsService,
+    public translate: TranslateService,
+    private lazyData: LazyDataService,
+    public settings: SettingsService,
+    private etime: EorzeanTimeService,
+    public readonly fishCtx: FishContextService
+  ) {}
 
   private getWeatherChances(mapId: number, weatherId: number): number {
-    const index = weatherIndex[mapIds.find(m => m.id === mapId).weatherRate];
+    const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];
     const maxRate = index[index.length - 1].rate;
-    const matchingIndex = index.findIndex(row => row.weatherId === weatherId);
+    const matchingIndex = index.findIndex((row) => row.weatherId === weatherId);
     if (matchingIndex === -1) {
       return 0;
     }
@@ -164,155 +186,7 @@ export class FishComponent implements OnInit {
     return ['gold', 'silver', 'bronze'][rank - 1];
   }
 
-  ngOnInit(): void {
-    const fishId$ = this.xivapiFish$.pipe(map(fish => fish.ID));
-    this.gubalData$ = this.reloader$.pipe(
-      switchMapTo(combineLatest([fishId$, this.authFacade.userId$])),
-      switchMap(([fishId, userId]) => {
-        return this.spot$.pipe(
-          switchMap(spotId => {
-            return this.apollo.query<any>({ query: this.getGraphQLQuery(fishId, spotId, userId), fetchPolicy: 'no-cache' })
-              .pipe(
-                map(result => {
-                  Object.keys(result.data)
-                    .filter(key => key.endsWith('_per_spot'))
-                    .forEach(key => {
-                      result.data[key.substring(0, key.length - 9)] = result.data[key];
-                      delete result.data[key];
-                    });
-                  return result;
-                })
-              );
-          })
-        );
-      }),
-      map(result => {
-        const hours = Array.from(Array(24).keys());
-        const totalHooksets = result.data.hooksets_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const totalTugs = result.data.tug_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const totalSnagging = result.data.snagging_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const snaggingPercent = 100 * (result.data.snagging_per_fish.find(entry => {
-          return entry.snagging === true;
-        }) || { occurences: 0 }).occurences / totalSnagging;
-        const totalFishEyes = result.data.fish_eyes_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const fishEyesPercent = 100 * (result.data.fish_eyes_per_fish.find(entry => {
-          return entry.fishEyes === true;
-        }) || { occurences: 0 }).occurences / totalFishEyes;
-        const totalWeatherTransitions = result.data.weather_transitions_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const totalBiteTimes = result.data.bite_time_per_fish.reduce((acc, row) => acc + row.occurences, 0);
-        const sortedBiteTimes = result.data.bite_time_per_fish
-          .sort((a, b) => a.biteTime - b.biteTime);
-        const sortedWeathers = result.data.weathers_per_fish.sort((a, b) => b.occurences - a.occurences);
-        const sortedBaits = result.data.baits_per_fish
-          .filter(entry => {
-            return this.l12n.getItem(entry.baitId) !== undefined;
-          })
-          .sort((a, b) => {
-            return b.occurences - a.occurences;
-          });
-        return {
-          etimesChart: {
-            view: [600, 300],
-            data: hours.map(hour => {
-              const match = result.data.etimes_per_fish.find(fish => fish.etime === hour);
-              return match ? {
-                name: `${match.etime}:00`,
-                value: match.occurences
-              } : {
-                name: `${hour}:00`,
-                value: 0
-              };
-            })
-          },
-          baitsChart: {
-            view: [400, 250],
-            data: sortedBaits
-              .map(entry => {
-                return {
-                  itemId: entry.baitId,
-                  name: this.i18n.getName(this.l12n.getItem(entry.baitId)),
-                  value: entry.occurences
-                };
-              }),
-            raw: sortedBaits
-          },
-          biteTimeChart: {
-            min: (sortedBiteTimes[0] || { biteTime: 0 }).biteTime,
-            max: (sortedBiteTimes[sortedBiteTimes.length - 1] || { biteTime: 0 }).biteTime,
-            avg: sortedBiteTimes
-              .reduce((acc, entry) => {
-                return entry.biteTime * entry.occurences + acc;
-              }, 0) / totalBiteTimes
-          },
-          weathersChart: {
-            view: [500, this.spot$.value === -1 ? 300 : 200],
-            data: sortedWeathers.map(entry => {
-              return {
-                name: this.i18n.getName(this.l12n.getWeather(entry.weatherId)),
-                value: entry.occurences
-              };
-            }),
-            chances: this.spot$.value === -1 ? [] : sortedWeathers.map(entry => {
-              const spotData = this.lazyData.data.fishingSpots.find(row => row.id === this.spot$.value);
-              return {
-                chances: 100 * this.getWeatherChances(spotData.mapId, entry.weatherId),
-                weatherId: entry.weatherId
-              };
-            })
-          },
-          usedAsMoochFor: result.data.used_for_mooch,
-          weatherTransitions: result.data.weather_transitions_per_fish
-            .sort((a, b) => b.occurences - a.occurences)
-            .map(entry => {
-              if (this.spot$.value > -1) {
-                const spotData = this.lazyData.data.fishingSpots.find(row => row.id === this.spot$.value);
-                const weatherChances = this.getWeatherChances(spotData.mapId, entry.weatherId);
-                const previousWeatherChances = this.getWeatherChances(spotData.mapId, entry.previousWeatherId);
-                entry.transitionChances = 100 * weatherChances * previousWeatherChances;
-              }
-              entry.percent = 100 * entry.occurences / totalWeatherTransitions;
-              return entry;
-            }),
-          hooksets: result.data.hooksets_per_fish
-            .sort((a, b) => b.occurences - a.occurences)
-            .map(entry => {
-              entry.hookset = entry.hookset === 1 ? 4103 : 4179;
-              entry.percent = 100 * entry.occurences / totalHooksets;
-              return entry;
-            }),
-          tugs: result.data.tug_per_fish
-            .sort((a, b) => b.occurences - a.occurences)
-            .map(entry => {
-              entry.tugName = ['Medium', 'Big', 'Light'][entry.tug];
-              entry.percent = 100 * entry.occurences / totalTugs;
-              return entry;
-            }),
-          snagging: snaggingPercent,
-          fishEyes: fishEyesPercent,
-          spots: result.data.spots_per_fish
-            .map(entry => {
-              entry.spotData = this.lazyData.data.fishingSpots.find(row => row.id === entry.spot);
-              return entry;
-            }),
-          everySpots: result.data.every_spots
-            .map(entry => {
-              entry.spotData = this.lazyData.data.fishingSpots.find(row => row.id === entry.spot);
-              return entry;
-            }),
-          minSize: result.data.fishingresults_aggregate.aggregate.min.size,
-          maxSize: result.data.fishingresults_aggregate.aggregate.max.size,
-          avgSize: result.data.fishingresults_aggregate.aggregate.avg.size,
-          minGathering: result.data.fishingresults_aggregate.aggregate.min.gathering,
-          rankings: result.data.fish_rankings,
-          user_ranking: result.data.user_ranking[0]
-        };
-      }),
-      tap((data) => {
-        if (this.spot$.value === -1 && data.everySpots.length === 1) {
-          this.spot$.next(data.everySpots[0].spot);
-        }
-        this.loading = false;
-      })
-    );
+  public setSpotIdFilter(spotId: number) {
+    this.fishCtx.setSpotId(spotId === -1 ? undefined : spotId);
   }
 }
