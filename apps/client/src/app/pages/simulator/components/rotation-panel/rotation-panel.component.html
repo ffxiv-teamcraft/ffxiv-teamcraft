@@ -7,7 +7,7 @@
           <div>{{rotation.getName()}}</div>
           <app-user-avatar *ngIf="publicDisplay" [userId]="rotation.authorId" [width]="24"></app-user-avatar>
         </div>
-        <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div fxFlex="1 1 auto" fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <ng-container *ngIf="rotation.public">
             <nz-tag *ngIf="rotation.public && !publicDisplay" [style.border-color]="'#108ee9'" class="custom-tag">
               {{'SIMULATOR.COMMUNITY_ROTATIONS.Community_rotation' | translate}}
