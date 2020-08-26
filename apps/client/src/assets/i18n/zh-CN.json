@@ -1,6 +1,6 @@
 {
   "Quests": "任务",
-  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
+  "Facebook_notice": "Facebook登录已不可用，您可以通过\"重置密码\"系统添加密码到您的帐户，也可以通过在 Discord 上询问Miu 。",
   "Search_placeholder": "{{type}}名",
   "Pick_a_list": "选择清单",
   "Pick_a_user": "选择用户",
@@ -165,7 +165,7 @@
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
     "Change": "变化",
-    "Dirty_changes": "You have unapplied changes"
+    "Dirty_changes": "有尚未保存的修改"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -188,9 +188,9 @@
     "Node_content": "采集点物品",
     "Toggle_collapse": "折叠/展开分组",
     "Add_alarms_to_group": "增加闹钟到本组",
-    "Group_link_copied": "Alarm group link copied",
-    "Group_not_found": "Alarm group not found",
-    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Group_link_copied": "已复制闹钟组链接",
+    "Group_not_found": "未找到闹钟组",
+    "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
