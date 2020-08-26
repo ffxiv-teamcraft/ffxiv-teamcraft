@@ -5,12 +5,16 @@ import { AlarmGroup } from '../alarm-group';
 export interface AlarmsState {
   alarms: Alarm[];
   groups: AlarmGroup[];
+  externalGroup: AlarmGroup;
+  externalGroupAlarms: Alarm[];
   loaded: boolean;
 }
 
 export const initialState: AlarmsState = {
   alarms: [],
   groups: [],
+  externalGroup: null,
+  externalGroupAlarms: [],
   loaded: false
 };
 
@@ -25,6 +29,15 @@ export function alarmsReducer(
         groups: action.groups,
         loaded: true
       };
+
+
+    case AlarmsActionTypes.AlarmGroupLoaded:
+      return {
+        ...state,
+        externalGroup: action.group,
+        externalGroupAlarms: action.alarms
+      };
+
 
     case AlarmsActionTypes.AddAlarms:
       return {

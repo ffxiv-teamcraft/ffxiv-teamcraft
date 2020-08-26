@@ -56,6 +56,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/alarms-page/alarms-page.module').then(m => m.AlarmsPageModule)
   },
   {
+    path: 'alarm-group',
+    loadChildren: () => import('./pages/alarm-group/alarm-group.module').then(m => m.AlarmGroupModule)
+  },
+  {
     path: 'alarms-overlay',
     loadChildren: () => import('./pages/alarms-overlay/alarms-overlay.module').then(m => m.AlarmsOverlayModule)
   },
