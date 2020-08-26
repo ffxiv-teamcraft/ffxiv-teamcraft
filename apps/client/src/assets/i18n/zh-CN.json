@@ -1697,7 +1697,7 @@
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
-    "Description": "货币太多了吗？选择币种并填写数目、服务器，自动为您推荐当前最卖的上价的物品！",
+    "Description": "货币快满了吗？选择货币种类、数量和服务器，这里将自动推荐最畅销的物品来换取金币！",
     "Pick_currency": "选择一个币种",
     "You_can_buy": "您可以购买 {{amount}}",
     "Disabled": "货币消费指南已失效",
