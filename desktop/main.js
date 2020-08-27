@@ -10,6 +10,8 @@ const config = new Config();
 const ChildProcess = require('child_process');
 if (require('electron-squirrel-startup')) return;
 
+const mainWindowPort = 14500;
+
 function handleSquirrelEvent() {
   if (process.argv.length === 1) {
     return false;
@@ -37,7 +39,6 @@ function handleSquirrelEvent() {
   const spawnUpdate = function(args) {
     return spawn(updateDotExe, args);
   };
-
 
 
   const squirrelEvent = process.argv[1];
@@ -94,6 +95,9 @@ const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
 const fs = require('fs-extra');
+const net = require('net');
+const http = require('http');
+const request = require('request');
 app.commandLine.appendSwitch('disable-renderer-backgrounding');
 
 ipcMain.setMaxListeners(0);
@@ -103,11 +107,30 @@ const oauth = require('./oauth.js');
 const BASE_APP_PATH = path.join(__dirname, '../dist/apps/client');
 
 /**
+ * Port tooling
+ */
+const isPortTaken = (port, fn) => {
+  const tester = net.createServer()
+    .once('error', function(err) {
+      if (err.code !== 'EADDRINUSE') return fn(err);
+      fn(null, true);
+    })
+    .once('listening', function() {
+      tester.once('close', function() {
+        fn(null, false);
+      })
+        .close();
+    })
+    .listen(port);
+};
+
+/**
  * @type {BrowserWindow}
  */
 let win;
 let tray;
 let nativeIcon;
+let httpServer;
 
 let openedOverlays = {};
 let openedOverlayUris = [];
@@ -197,14 +220,34 @@ ipcMain.on('update:check', () => {
   autoUpdater.checkForUpdates();
 });
 
+function sendToAlreadyOpenedTC(url) {
+  request(`http://localhost:${mainWindowPort}${url}`);
+}
+
 /**
  * End autoupdater
  */
 // Create window on electron intialization
 app.on('ready', () => {
   handleSquirrelEvent();
-  createWindow();
-  createTray();
+
+  isPortTaken(mainWindowPort, (err, taken) => {
+    if (taken) {
+      sendToAlreadyOpenedTC((argv[0] || '').replace('teamcraft://', ''));
+    } else {
+      createWindow();
+      createTray();
+      httpServer = http.createServer((req, res) => {
+        win.focus();
+        win.show();
+        if (req.url.length > 1) {
+          win.webContents.send('navigate', req.url);
+        }
+        res.writeHead(200);
+        res.end();
+      }).listen(mainWindowPort);
+    }
+  });
 });
 
 function createWindow() {
@@ -262,6 +305,7 @@ function createWindow() {
   // Event when the window is closed.
   win.on('closed', function() {
     win = null;
+    httpServer
     try {
       forEachOverlay(overlay => {
         if (overlay) {
