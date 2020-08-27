@@ -424,7 +424,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       first(),
       map(inventory => {
         list.items.forEach(item => {
-          const inventoryItems = inventory.getItem(item.id, true);
+          let inventoryItems = inventory.getItem(item.id, true);
+          if (this.settings.enableAutofillHQFilter && item.requiredAsHQ) {
+            inventoryItems = inventoryItems.filter(i => i.hq);
+          }
           if (inventoryItems.length > 0) {
             let totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
             if (item.done + totalAmount > item.amount) {
@@ -434,7 +437,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
           }
         });
         list.finalItems.forEach(item => {
-          const inventoryItems = inventory.getItem(item.id, true);
+          let inventoryItems = inventory.getItem(item.id, true);
+          if (this.settings.enableAutofillHQFilter && item.requiredAsHQ) {
+            inventoryItems = inventoryItems.filter(i => i.hq);
+          }
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
             list.setDone(item.id, Math.min(item.done + totalAmount, item.amount), false, true);
