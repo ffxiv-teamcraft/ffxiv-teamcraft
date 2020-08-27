@@ -1413,7 +1413,7 @@
     "3d_model_help": "3D 모델링 미리보기",
     "Achievements": "업적",
     "Currencies": "화폐",
-    "Rowena_splendor": "Rowena's splendors",
+    "Rowena_splendor": "로웨나 거래",
     "Unlocks": "개방",
     "Jump_to_page": "빠른 검색",
     "Ishgard_restoration": "이슈가르드 부흥",
@@ -1691,9 +1691,9 @@
     "Pool_copied": "소지품 내역이 클립보드에 복사되었습니다",
     "Sort_alphabetically": "가나다순으로 정렬",
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템",
-    "Shown_only_craftable": "Only what I have level for",
-    "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
+    "Shown_only_collectables": "소장품만 표시하기",
+    "Recipe_level": "제작법 레벨"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1848,7 +1848,7 @@
     "Total_cost": "총 소비재화(화폐, 길, 기타 등등)",
     "Materia": "마테리아",
     "Amount_needed": "필요수량",
-    "Cost": "Cost",
+    "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
     "Job_cannot_be_changed": "생성 후 변경할 수 없습니다",
