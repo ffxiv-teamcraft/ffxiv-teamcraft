@@ -1753,7 +1753,7 @@
   },
   "SUGGESTED_REGION": {
     "Banner_title": "建议将区域更改为 {{region}}",
-    "Banner_description": "您可以设置您正在游玩的区域，以在数据库、模拟器、数据包捕获等功能中获得更佳体验。",
+    "Banner_description": "您可以设置您正在游戏的区服，以在数据库、模拟器、数据包捕获等功能中获得更佳体验。",
     "Button_label": "更改区域"
   },
   "INVENTORY": {
