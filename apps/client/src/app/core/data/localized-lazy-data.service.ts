@@ -30,7 +30,12 @@ export class LocalizedLazyDataService {
     );
   }
 
-  private getFallbackResolver(extKey: LazyDataKey | undefined, fallbackKey: LazyDataKey, accessor: number | string, lang: Language) {
+  private getFallbackResolver(
+    extKey: LazyDataKey | undefined,
+    fallbackKey: LazyDataKey,
+    accessor: number | string,
+    lang: Language
+  ): Observable<string | undefined> {
     const fallbackResolver = this.getResolver(fallbackKey, accessor, lang).pipe(
       switchMap((val) => (val ? of(val) : this.getResolver(fallbackKey, accessor, 'en')))
     );

@@ -2,8 +2,10 @@ import { Injectable } from '@angular/core';
 import { FishDataService } from './fish-data.service';
 import { ReplaySubject, BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { switchMap, map } from 'rxjs/operators';
+import { switchMap, map, distinctUntilChanged, shareReplay, tap } from 'rxjs/operators';
 import { ApolloQueryResult } from 'apollo-client';
+import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 export interface Occurrence {
   id: number;
@@ -48,17 +50,18 @@ export class FishContextService {
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
-    switchMap((fishId) => combineLatest(this.data.getSpotsByFishId(fishId), this.lazyData.fishingSpots$)),
+    switchMap((fishId) => combineLatest([this.data.getSpotsByFishId(fishId), this.lazyData.fishingSpots$])),
     map(([res, spotData]) => {
       return {
         ...res,
         data: res.data?.spots.map(({ spot }) => ({ spot, spotData: spotData.find((row) => row.id === spot) })),
       };
-    })
+    }),
+    shareReplay(1)
   );
 
   /** An observable containing the number of recorded occurrences at each Eorzean hour. */
-  public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest(this.fishId$, this.spotId$).pipe(
+  public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest([this.fishId$, this.spotId$]).pipe(
     switchMap(([fishId, spotId]) => this.data.getHoursByFishId(fishId, spotId)),
     map((res) => {
       const data = res.data?.etimes.reduce(
@@ -69,15 +72,16 @@ export class FishContextService {
         { total: 0, byId: this.makeHoursDict() }
       );
       return { ...res, data };
-    })
+    }),
+    shareReplay(1)
   );
 
-  private readonly baitMoochesByFish$ = combineLatest(this.fishId$, this.spotId$).pipe(
+  private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     switchMap(([fishId, spotId]) => this.data.getBaitMoochesByFishId(fishId, spotId))
   );
 
   /** An observable containing information about the baits used to catch the active fish. */
-  public readonly baitsByFish$: Observable<OccurrencesResult> = this.baitMoochesByFish$.pipe(map(occurrenceResultMapper('baits', 'baitId')));
+  public readonly baitsByFish$: Observable<OccurrencesResult> = this.baitMoochesByFish$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay(1));
 
   /** An observable containing information about the fishes that can be mooched with the active fish. */
   public readonly moochesByFish$: Observable<ApolloQueryResult<number[]>> = this.baitMoochesByFish$.pipe(
@@ -85,31 +89,41 @@ export class FishContextService {
       const moochList = res.data?.mooches.map((val) => val.itemId);
       const data = moochList ? [...new Set(moochList)] : undefined;
       return { ...res, data };
-    })
+    }),
+    shareReplay(1)
   );
 
-  private readonly hooksetTugsByFish$ = combineLatest(this.fishId$, this.spotId$).pipe(
+  private readonly hooksetTugsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     switchMap(([fishId, spotId]) => this.data.getHooksetsByFishId(fishId, spotId))
   );
 
   /** An observable containing information about the hooksets used to catch the active fish. */
-  public readonly hooksetsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(map(occurrenceResultMapper('hooksets', 'hookset')));
-
-  /** An observable containing information about the tugs used to catch the active fish. */
-  public readonly tugsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(map(occurrenceResultMapper('tugs', 'tug')));
-
-  /** An observable containing the bite times recorded to catch the active fish. */
-  public readonly biteTimesByFish$ = combineLatest(this.fishId$, this.spotId$).pipe(
-    switchMap(([fishId, spotId]) => this.data.getBiteTimesByFishId(fishId, spotId)),
-    map(occurrenceResultMapper('biteTimes', 'biteTime'))
+  public readonly hooksetsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(
+    tap(console.log),
+    map(occurrenceResultMapper('hooksets', 'hookset')),
+    shareReplay(1)
   );
 
-  private readonly weatherAndTransitionsByFish$ = combineLatest(this.fishId$, this.spotId$).pipe(
-    switchMap(([fishId, spotId]) => this.data.getWeatherByFishId(fishId, spotId))
+  /** An observable containing information about the tugs used to catch the active fish. */
+  public readonly tugsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(map(occurrenceResultMapper('tugs', 'tug')), shareReplay(1));
+
+  /** An observable containing the bite times recorded to catch the active fish. */
+  public readonly biteTimesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    switchMap(([fishId, spotId]) => this.data.getBiteTimesByFishId(fishId, spotId)),
+    map(occurrenceResultMapper('biteTimes', 'biteTime')),
+    shareReplay(1)
+  );
+
+  private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    switchMap(([fishId, spotId]) => this.data.getWeatherByFishId(fishId, spotId)),
+    shareReplay(1)
   );
 
   /** An observable containing information about the weathers recorded to catch the active fish. */
-  public readonly weathersByFish$: Observable<OccurrencesResult> = this.weatherAndTransitionsByFish$.pipe(map(occurrenceResultMapper('weathers', 'weatherId')));
+  public readonly weathersByFish$: Observable<OccurrencesResult> = this.weatherAndTransitionsByFish$.pipe(
+    map(occurrenceResultMapper('weathers', 'weatherId')),
+    shareReplay(1)
+  );
 
   /** An observable containing information about the weathers recorded to catch the active fish. */
   public readonly weatherTransitionsByFish$ = this.weatherAndTransitionsByFish$.pipe(
@@ -124,11 +138,12 @@ export class FishContextService {
         { total: 0, byId: {} as Occurrences<WeatherTransitionOccurrence, string>['byId'] }
       );
       return { ...res, data };
-    })
+    }),
+    shareReplay(1)
   );
 
   /** An observable containing statistics about the active fish. */
-  public readonly statisticsByFish$ = combineLatest(this.fishId$, this.spotId$).pipe(
+  public readonly statisticsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     switchMap(([fishId, spotId]) => this.data.getStatisticsByFishId(fishId, spotId)),
     map((res) => {
       if (!res.data) return res;
@@ -137,13 +152,32 @@ export class FishContextService {
       const totalFishEyes = res.data.fishEyes.reduce((acc, row) => acc + row.occurences, 0);
       const fishEyes = (100 * (res.data.fishEyes.find((entry) => entry.fishEyes === true) ?? { occurences: 0 }).occurences) / totalFishEyes;
       return { ...res, data: { ...res.data, snagging, fishEyes } };
-    })
+    }),
+    shareReplay(1)
   );
 
   /** An observable containing user rankings about the active fish. */
-  public readonly rankingsByFish$ = this.fishId$.pipe(switchMap(this.data.getRankingByFishId));
+  public readonly rankingsByFish$ = this.fishId$.pipe(switchMap(this.data.getRankingByFishId), shareReplay(1));
 
-  constructor(private readonly data: FishDataService, private readonly lazyData: LazyDataService) {}
+  public highlightTime$ = this.etime.getEorzeanTime().pipe(
+    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
+    map((time) => {
+      return [
+        {
+          name: `${time.getUTCHours()}:00`,
+          value: this.settings.theme.highlight,
+        },
+      ];
+    }),
+    shareReplay(1)
+  );
+
+  constructor(
+    private readonly settings: SettingsService,
+    private readonly etime: EorzeanTimeService,
+    private readonly data: FishDataService,
+    private readonly lazyData: LazyDataService
+  ) {}
 
   /** Sets the currently active fish. */
   public setFishId(fishId: number) {

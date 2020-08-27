@@ -65,164 +65,112 @@
 
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
 
-      <div fxLayout="column" fxLayoutGap="24px">
-        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          <nz-card [nzTitle]="'DB.FISH.Hour' | translate" [style.width.px]="600 + 48">
-            <ngx-charts-bar-vertical
-              [view]="[600, 300]"
-              [scheme]="{ domain: [theme.primary] }"
-              [customColors]="highlightTime$ | async"
-              [gradient]="false"
-              [xAxis]="true"
-              [yAxis]="true"
-              [legend]="false"
-              [showXAxisLabel]="false"
-              [showYAxisLabel]="false"
-              barPadding="5"
-              [results]="etimesChartData$ | async"
-            ></ngx-charts-bar-vertical>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Baits' | translate" [style.width.px]="400 + 48">
-            <div fxLayout="row wrap" fxLayoutAlign="center center">
-              <div *ngFor="let row of (baitsChartData$ | async) || []; let last = last">
-                <app-item-icon [itemId]="row.baitId" [icon]="row.baitId" width="32"></app-item-icon>
-                <nz-divider nzType="vertical" *ngIf="!last"></nz-divider>
-              </div>
-            </div>
-            <ngx-charts-advanced-pie-chart
-              [view]="[400, 250]"
-              [scheme]="{ domain: [theme.highlight, theme.primary, theme.trigger] }"
-              [results]="baitsChartData$ | async"
-            ></ngx-charts-advanced-pie-chart>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Hookset_and_tug' | translate" class="no-graph">
-            <div fxLayout="column" fxLayoutGap="20px">
-              <div fxLayout="column" fxLayoutGap="10px">
-                <div>
-                  <nz-divider [nzText]="'DB.FISH.Hooksets' | translate" nzOrientation="left"></nz-divider>
-                </div>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center" *ngFor="let row of (hooksets$ | async) || []">
-                  <img src="{{ row.hookset | actionIcon | xivapiIcon }}" alt="" class="round-icon" />
-                  <div>
-                    <div>{{ row.hookset | actionName | i18n }}</div>
-                    <div>{{ row.percent | number: '1.0-1' }}%</div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <nz-divider [nzText]="'DB.FISH.Tugs' | translate" nzOrientation="left"></nz-divider>
-                <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center" *ngFor="let row of (tugs$ | async) || []">
-                  <div>{{ 'DB.FISH.TUG.' + row.tugName | translate }}</div>
-                  <div>{{ row.percent | number: '1.0-1' }}%</div>
-                </div>
-              </div>
-            </div>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
-            <div
-              *ngFor="let spot of (fishCtx.spotsByFish$ | async)?.data || []; let last = last"
-              [class.border-bottom]="!last"
-              class="list-row"
-              fxLayout="column"
-              fxLayoutAlign="center center"
-              fxLayoutGap="5px"
-            >
-              <app-map-position
-                [mapId]="spot.spotData.mapId"
-                [zoneId]="spot.spotData.zoneId"
-                showMapName="true"
-                showZoneName="true"
-                [marker]="spot.spotData.coords"
-              ></app-map-position>
-              <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
-            </div>
-          </nz-card>
-        </div>
-        <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-          <nz-card [nzTitle]="'DB.FISH.Bite_time' | translate" class="bite-times">
-            <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.min | number: '1.0-1'" [nzTitle]="'COMMON.Minimum' | translate"></nz-statistic>
-            <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.max | number: '1.0-1'" [nzTitle]="'COMMON.Maximum' | translate"></nz-statistic>
-            <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.avg | number: '1.0-1'" [nzTitle]="'COMMON.Average' | translate"></nz-statistic>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="(weathersChartView$ | async)[0] + 48">
-            <ngx-charts-advanced-pie-chart
-              [view]="weathersChartView$ | async"
-              [scheme]="{ domain: [theme.highlight, theme.primary, theme.trigger] }"
-              [results]="weathersChartData$ | async"
-            ></ngx-charts-advanced-pie-chart>
-            <div fxLayout="column" *ngIf="weathersChances$ | async as weathersChances" class="weathers-list-block">
-              <h4>{{ 'DB.FISH.Weather_chances' | translate }}</h4>
-              <div fxLayout="column" fxLayoutAlign="center center">
-                <div
-                  *ngFor="let row of weathersChances; let last = last"
-                  fxLayout="row"
-                  fxLayoutAlign="space-between center"
-                  class="list-row"
-                  [class.border-bottom]="!last"
-                >
-                  <div>
-                    <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
-                    <span>{{ row.weatherId | weatherName | i18n }}</span>
-                  </div>
-                  <div>{{ row.chances | number: '1.0-1' }}%</div>
-                </div>
-              </div>
-            </div>
-          </nz-card>
-          <nz-card
-            [nzTitle]="'DB.FISH.Weather_transitions' | translate"
-            fxFlex="1 1 auto"
-            class="card-with-list"
-            [class.expanded]="(fishCtx.spotId$ | async) !== undefined"
+      <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-md="column">
+        <app-fish-hours fxFlex="none"></app-fish-hours>
+        <app-fish-baits fxFlex="none"></app-fish-baits>
+        <app-fish-hooksets fxFlex="40" fxFlex.gt-md="20"></app-fish-hooksets>
+        <nz-card [nzTitle]="'DB.FISH.Spots' | translate" fxFlex="1 1 auto" class="card-with-list">
+          <div
+            *ngFor="let spot of (fishCtx.spotsByFish$ | async)?.data || []; let last = last"
+            [class.border-bottom]="!last"
+            class="list-row"
+            fxLayout="column"
+            fxLayoutAlign="center center"
+            fxLayoutGap="5px"
           >
-            <div
-              fxLayout="row"
-              fxLayoutGap="10px"
-              fxLayoutAlign="space-between center"
-              *ngFor="let row of (weatherTransitions$ | async) || []; let last = last"
-              [class.border-bottom]="!last"
-              class="list-row"
-            >
-              <div fxLayout="column" fxFlex="1 1 auto">
-                <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
-                  <div>
-                    <img src="{{ row.fromId | weatherIcon | xivapiIcon }}" alt="" />
-                    <span>{{ row.fromId | weatherName | i18n }}</span>
-                  </div>
-                  <i nz-icon nzType="right" nzTheme="outline"></i>
-                  <div>
-                    <img src="{{ row.toId | weatherIcon | xivapiIcon }}" alt="" />
-                    <span>{{ row.toId | weatherName | i18n }}</span>
-                  </div>
-                  <div fxFlex="1 1 auto"></div>
-                  <div>{{ row.percent | number: '1.0-1' }} %</div>
+            <app-map-position
+              [mapId]="spot.spotData.mapId"
+              [zoneId]="spot.spotData.zoneId"
+              showMapName="true"
+              showZoneName="true"
+              [marker]="spot.spotData.coords"
+            ></app-map-position>
+            <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
+          </div>
+        </nz-card>
+        <nz-card [nzTitle]="'DB.FISH.Bite_time' | translate" class="bite-times">
+          <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.min | number: '1.0-1'" [nzTitle]="'COMMON.Minimum' | translate"></nz-statistic>
+          <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.max | number: '1.0-1'" [nzTitle]="'COMMON.Maximum' | translate"></nz-statistic>
+          <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.avg | number: '1.0-1'" [nzTitle]="'COMMON.Average' | translate"></nz-statistic>
+        </nz-card>
+        <nz-card [nzTitle]="'DB.FISH.Weathers' | translate" [style.width.px]="(weathersChartView$ | async)[0] + 48">
+          <ngx-charts-advanced-pie-chart
+            [view]="weathersChartView$ | async"
+            [scheme]="{ domain: [theme.highlight, theme.primary, theme.trigger] }"
+            [results]="weathersChartData$ | async"
+          ></ngx-charts-advanced-pie-chart>
+          <div fxLayout="column" *ngIf="weathersChances$ | async as weathersChances" class="weathers-list-block">
+            <h4>{{ 'DB.FISH.Weather_chances' | translate }}</h4>
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div
+                *ngFor="let row of weathersChances; let last = last"
+                fxLayout="row"
+                fxLayoutAlign="space-between center"
+                class="list-row"
+                [class.border-bottom]="!last"
+              >
+                <div>
+                  <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
+                  <span>{{ row.weatherId | weatherName | i18n }}</span>
                 </div>
-                <div *ngIf="row.transitionChances">{{ 'DB.FISH.Chances_for_transition' | translate }}: {{ row.transitionChances | number: '1.0-2' }}%</div>
+                <div>{{ row.chances | number: '1.0-1' }}%</div>
               </div>
             </div>
-          </nz-card>
-          <nz-card [nzTitle]="'DB.FISH.Used_as_mooch_for' | translate" class="card-with-list" fxFlex="1 1 auto">
-            <div
-              fxLayout="row"
-              fxLayoutGap="10px"
-              fxLayoutAlign="space-between center"
-              *ngFor="let itemId of (fishCtx.moochesByFish$ | async)?.data || []; let last = last"
-              [class.border-bottom]="!last"
-              class="list-row"
-            >
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                <app-item-icon [itemId]="itemId" [icon]="itemId | lazyIcon" width="32"></app-item-icon>
-                <span>{{ itemId | itemName | i18n }}</span>
+          </div>
+        </nz-card>
+        <nz-card
+          [nzTitle]="'DB.FISH.Weather_transitions' | translate"
+          fxFlex="1 1 auto"
+          class="card-with-list"
+          [class.expanded]="(fishCtx.spotId$ | async) !== undefined"
+        >
+          <div
+            fxLayout="row"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between center"
+            *ngFor="let row of (weatherTransitions$ | async) || []; let last = last"
+            [class.border-bottom]="!last"
+            class="list-row"
+          >
+            <div fxLayout="column" fxFlex="1 1 auto">
+              <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                <div>
+                  <img src="{{ row.fromId | weatherIcon | xivapiIcon }}" alt="" />
+                  <span>{{ row.fromId | weatherName | i18n }}</span>
+                </div>
+                <i nz-icon nzType="right" nzTheme="outline"></i>
+                <div>
+                  <img src="{{ row.toId | weatherIcon | xivapiIcon }}" alt="" />
+                  <span>{{ row.toId | weatherName | i18n }}</span>
+                </div>
+                <div fxFlex="1 1 auto"></div>
+                <div>{{ row.percent | number: '1.0-1' }} %</div>
               </div>
+              <div *ngIf="row.transitionChances">{{ 'DB.FISH.Chances_for_transition' | translate }}: {{ row.transitionChances | number: '1.0-2' }}%</div>
             </div>
-            <div class="no-data">
-              <nz-empty *ngIf="!(fishCtx.moochesByFish$ | async)?.data" [nzNotFoundContent]="contentTpl"></nz-empty>
-              <ng-template #contentTpl>
-                <span>{{ 'DB.FISH.No_known_mooch_usage' | translate }}</span>
-              </ng-template>
+          </div>
+        </nz-card>
+        <nz-card [nzTitle]="'DB.FISH.Used_as_mooch_for' | translate" class="card-with-list" fxFlex="1 1 auto">
+          <div
+            fxLayout="row"
+            fxLayoutGap="10px"
+            fxLayoutAlign="space-between center"
+            *ngFor="let itemId of (fishCtx.moochesByFish$ | async)?.data || []; let last = last"
+            [class.border-bottom]="!last"
+            class="list-row"
+          >
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+              <app-item-icon [itemId]="itemId" [icon]="itemId | lazyIcon" width="32"></app-item-icon>
+              <span>{{ itemId | itemName | i18n }}</span>
             </div>
-          </nz-card>
-        </div>
+          </div>
+          <div class="no-data">
+            <nz-empty *ngIf="!(fishCtx.moochesByFish$ | async)?.data" [nzNotFoundContent]="contentTpl"></nz-empty>
+            <ng-template #contentTpl>
+              <span>{{ 'DB.FISH.No_known_mooch_usage' | translate }}</span>
+            </ng-template>
+          </div>
+        </nz-card>
       </div>
 
       <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>

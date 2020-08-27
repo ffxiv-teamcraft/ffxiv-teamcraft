@@ -48,6 +48,9 @@ import { I18nDisplayModule } from '../../modules/i18n-display/i18n-display.modul
 import * as FishGQLProviders from './service/fish-data.gql';
 import { FishDataService } from './service/fish-data.service';
 import { FishContextService } from './service/fish-context.service';
+import { FishHoursComponent } from './fish/fish-hours/fish-hours.component';
+import { FishBaitsComponent } from './fish/fish-baits/fish-baits.component';
+import { FishHooksetsComponent } from './fish/fish-hooksets/fish-hooksets.component';
 
 const routes: Routes = [
   {
@@ -240,6 +243,9 @@ const routes: Routes = [
     FishComponent,
     FishingSpotComponent,
     FishingMissesPopupComponent,
+    FishHoursComponent,
+    FishBaitsComponent,
+    FishHooksetsComponent,
   ],
   imports: [
     CommonModule,
@@ -262,7 +268,6 @@ const routes: Routes = [
     ItemDetailsPopupsModule,
     I18nDisplayModule,
     MarketboardModule,
-
     NgZorroAntdModule,
     UserAvatarModule,
     QuickSearchModule,

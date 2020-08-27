@@ -2,7 +2,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { mapValues } from 'lodash';
 import { BehaviorSubject, combineLatest, forkJoin, of } from 'rxjs';
-import { distinctUntilChanged, map, startWith, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, startWith, switchMap, shareReplay } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
 import { mapIds } from '../../../core/data/sources/map-ids';
@@ -30,49 +30,6 @@ export class FishComponent {
   @Input() obtentionTpl: TemplateRef<any>;
 
   public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
-
-  public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(
-    map((res) => {
-      if (!res.data) return undefined;
-      return Object.entries(res.data.byId).map(([key, value]) => ({ name: `${key.toString().padStart(2, '0')}:00`, value }));
-    })
-  );
-
-  public readonly baitsChartData$ = this.fishCtx.baitsByFish$.pipe(
-    switchMap((res) => {
-      if (!res.data) return of(undefined);
-      const baitNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getItem(key.id)));
-      return forkJoin(baitNames).pipe(
-        map((names) => {
-          return Object.values(res.data.byId).map((bait) => ({ name: names[bait.id] ?? '--', value: bait.occurrences, baitId: bait.id }));
-        })
-      );
-    })
-  );
-
-  public readonly hooksets$ = this.fishCtx.hooksetsByFish$.pipe(
-    map((res) => {
-      if (!res.data) return undefined;
-      return Object.values(res.data.byId)
-        .sort((a, b) => b.occurrences - a.occurrences)
-        .map((entry) => ({
-          hookset: entry.id === 1 ? 4103 : 4179,
-          percent: (100 * entry.occurrences) / res.data.total,
-        }));
-    })
-  );
-
-  public readonly tugs$ = this.fishCtx.tugsByFish$.pipe(
-    map((res) => {
-      if (!res.data) return undefined;
-      return Object.values(res.data.byId)
-        .sort((a, b) => b.occurrences - a.occurrences)
-        .map((entry) => ({
-          tugName: ['Medium', 'Big', 'Light'][entry.id],
-          percent: (100 * entry.occurrences) / res.data.total,
-        }));
-    })
-  );
 
   public readonly biteTimeChart$ = this.fishCtx.biteTimesByFish$.pipe(
     map((res) => {
@@ -144,25 +101,12 @@ export class FishComponent {
 
   public readonly userRanking$ = this.fishCtx.rankingsByFish$.pipe(map((res) => res.data?.userRanking?.[0] ?? undefined));
 
-  public highlightTime$ = this.etime.getEorzeanTime().pipe(
-    distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
-    map((time) => {
-      return [
-        {
-          name: `${time.getUTCHours()}:00`,
-          value: this.settings.theme.highlight,
-        },
-      ];
-    })
-  );
-
   constructor(
     private l12n: LocalizedLazyDataService,
     private i18n: I18nToolsService,
     public translate: TranslateService,
     private lazyData: LazyDataService,
     public settings: SettingsService,
-    private etime: EorzeanTimeService,
     public readonly fishCtx: FishContextService
   ) {}
 

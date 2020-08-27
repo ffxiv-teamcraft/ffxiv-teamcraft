@@ -126,7 +126,7 @@ interface FishHooksetTugResult {
 export class HooksetTugsPerFishQuery extends Query<FishHooksetTugResult, FishIdVariable> {
   public document = gql`
     query HooksetTugsPerFishQuery($fishId: Int!) {
-      hooksets: hooksets_per_fish(where: { itemId: { _eq: $fishId } }) {
+      hooksets: hooksets_per_fish(where: { itemId: { _eq: $fishId }, hookset: { _neq: 0 } }) {
         hookset
         occurences
       }
@@ -142,7 +142,7 @@ export class HooksetTugsPerFishQuery extends Query<FishHooksetTugResult, FishIdV
 export class HooksetTugsPerFishPerSpotQuery extends Query<FishHooksetTugResult, FishIdSpotIdVariable> {
   public document = gql`
     query HooksetTugsPerFishPerSpotQuery($fishId: Int!, $spotId: Int!) {
-      hooksets: hooksets_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      hooksets: hooksets_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, hookset: { _neq: 0 } }) {
         hookset
         occurences
       }
@@ -167,7 +167,7 @@ interface FishBiteTimeResult {
 export class BiteTimesPerFishQuery extends Query<FishBiteTimeResult, FishIdVariable> {
   public document = gql`
     query BiteTimesPerFishQuery($fishId: Int!) {
-      biteTimes: bite_time_per_fish(where: { itemId: { _eq: $fishId } }) {
+      biteTimes: bite_time_per_fish(where: { itemId: { _eq: $fishId }, biteTime: { _gt: 1 } }) {
         biteTime
         occurences
       }
@@ -179,7 +179,7 @@ export class BiteTimesPerFishQuery extends Query<FishBiteTimeResult, FishIdVaria
 export class BiteTimesPerFishPerSpotQuery extends Query<FishBiteTimeResult, FishIdSpotIdVariable> {
   public document = gql`
     query BiteTimesPerFishPerSpotQuery($fishId: Int!, $spotId: Int!) {
-      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      biteTimes: bite_time_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, biteTime: { _gt: 1 } }) {
         biteTime
         occurences
       }
