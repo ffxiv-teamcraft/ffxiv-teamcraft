@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -27,7 +27,7 @@ import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
 import { BehaviorSubject, combineLatest, fromEvent, interval, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
 import { MediaObserver } from '@angular/flex-layout';
 import { LayoutsFacade } from './core/layout/+state/layouts.facade';
@@ -159,10 +159,6 @@ export class AppComponent implements OnInit {
   public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
 
   public firewallRuleApplied = false;
-
-  get desktopUrl(): SafeUrl {
-    return this.sanitizer.bypassSecurityTrustUrl(`teamcraft://${window.location.pathname}`);
-  }
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -642,8 +638,18 @@ export class AppComponent implements OnInit {
     this.authFacade.logout();
   }
 
-  openedApp(): void {
+  openInApp(): void {
     if (isPlatformBrowser(this.platform)) {
+      this.http.get(`http://localhost:14500${window.location.pathname}`).pipe(
+        mapTo(true),
+        catchError(() => {
+          return of(false);
+        })
+      ).subscribe(opened => {
+        if (!opened) {
+          window.open(`teamcraft://${window.location.pathname}`);
+        }
+      });
       setTimeout(() => {
         this.hasDesktopReloader$.next(null);
       }, 30000);

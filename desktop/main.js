@@ -238,6 +238,15 @@ app.on('ready', () => {
       createWindow();
       createTray();
       httpServer = http.createServer((req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Request-Method', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+        res.setHeader('Access-Control-Allow-Headers', '*');
+        if (req.method === 'OPTIONS') {
+          res.writeHead(200);
+          res.end();
+          return;
+        }
         win.focus();
         win.show();
         if (req.url.length > 1) {
@@ -305,7 +314,7 @@ function createWindow() {
   // Event when the window is closed.
   win.on('closed', function() {
     win = null;
-    httpServer
+    httpServer;
     try {
       forEachOverlay(overlay => {
         if (overlay) {

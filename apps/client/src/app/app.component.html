@@ -69,7 +69,7 @@
           </li>
           <li *ngIf="!platformService.isDesktop()" [nzTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom">
-            <a (click)="openedApp()" [href]="desktopUrl">
+            <a (click)="openInApp()">
               <i nzIconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
