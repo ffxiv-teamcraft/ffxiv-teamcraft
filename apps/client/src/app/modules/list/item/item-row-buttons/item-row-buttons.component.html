@@ -56,7 +56,7 @@
     </button>
   </ng-container>
 
-  <ng-container *ngIf="!isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
+  <ng-container *ngIf="isButton(itemRowTypes.ASSIGN_TEAM_MEMBER)">
     <ng-container *ngIf="team">
       <button (click)="$event.stopPropagation()"
               *ngIf="team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))"
