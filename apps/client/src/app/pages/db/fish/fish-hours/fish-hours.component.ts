@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 
@@ -10,8 +10,6 @@ import { SettingsService } from 'apps/client/src/app/modules/settings/settings.s
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FishHoursComponent {
-  public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
-
   public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
 
   public readonly etimesChartData$ = this.fishCtx.hoursByFish$.pipe(

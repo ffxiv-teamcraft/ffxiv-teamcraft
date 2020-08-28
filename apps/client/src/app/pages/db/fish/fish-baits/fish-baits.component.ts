@@ -4,7 +4,7 @@ import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.serv
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { mapValues } from 'lodash';
 import { forkJoin, of } from 'rxjs';
-import { map, shareReplay, switchMap, tap, take } from 'rxjs/operators';
+import { map, shareReplay, switchMap, take, startWith } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 
 @Component({
@@ -14,13 +14,11 @@ import { FishContextService } from '../../service/fish-context.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FishBaitsComponent {
-  public readonly spotIdFilter$ = this.fishCtx.spotId$.pipe(map((spotId) => spotId ?? -1));
-
   public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
 
   public readonly baitsChartData$ = this.fishCtx.baitsByFish$.pipe(
     switchMap((res) => {
-      if (!res.data) return of(undefined);
+      if (!res.data) return of([]);
       const baitNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getItem(key.id)).pipe(take(1)));
       return forkJoin(baitNames).pipe(
         map((names) => {
@@ -28,6 +26,7 @@ export class FishBaitsComponent {
         })
       );
     }),
+    startWith([]),
     shareReplay(1)
   );
 

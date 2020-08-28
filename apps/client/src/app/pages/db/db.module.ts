@@ -51,6 +51,11 @@ import { FishContextService } from './service/fish-context.service';
 import { FishHoursComponent } from './fish/fish-hours/fish-hours.component';
 import { FishBaitsComponent } from './fish/fish-baits/fish-baits.component';
 import { FishHooksetsComponent } from './fish/fish-hooksets/fish-hooksets.component';
+import { FishSpotsListComponent } from './fish/fish-spots-list/fish-spots-list.component';
+import { FishBiteTimesComponent } from './fish/fish-bite-times/fish-bite-times.component';
+import { FishWeathersComponent } from './fish/fish-weathers/fish-weathers.component';
+import { FishWeatherTransitionsComponent } from './fish/fish-weather-transitions/fish-weather-transitions.component';
+import { FishMoochesComponent } from './fish/fish-mooches/fish-mooches.component';
 
 const routes: Routes = [
   {
@@ -246,6 +251,11 @@ const routes: Routes = [
     FishHoursComponent,
     FishBaitsComponent,
     FishHooksetsComponent,
+    FishSpotsListComponent,
+    FishBiteTimesComponent,
+    FishWeathersComponent,
+    FishWeatherTransitionsComponent,
+    FishMoochesComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,27 @@
+<nz-card [nzTitle]="'DB.FISH.Weather_transitions' | translate" [nzLoading]="loading$ | async" fxFlex="1 1 auto" [class.card-with-list]="!(loading$ | async)">
+  <div
+    fxLayout="row"
+    fxLayoutGap="10px"
+    fxLayoutAlign="space-between center"
+    *ngFor="let row of weatherTransitions$ | async; let last = last"
+    [class.border-bottom]="!last"
+    class="list-row"
+  >
+    <div fxLayout="column" fxFlex="1 1 auto">
+      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <div>
+          <img src="{{ row.fromId | weatherIcon | xivapiIcon }}" alt="" />
+          <span>{{ row.fromId | weatherName | i18n }}</span>
+        </div>
+        <i nz-icon nzType="right" nzTheme="outline"></i>
+        <div>
+          <img src="{{ row.toId | weatherIcon | xivapiIcon }}" alt="" />
+          <span>{{ row.toId | weatherName | i18n }}</span>
+        </div>
+        <div fxFlex="1 1 auto"></div>
+        <div>{{ row.percent | number: '1.0-1' }} %</div>
+      </div>
+      <div *ngIf="row.transitionChances">{{ 'DB.FISH.Chances_for_transition' | translate }}: {{ row.transitionChances | number: '1.0-2' }}%</div>
+    </div>
+  </div>
+</nz-card>

@@ -99,7 +99,6 @@ export class FishContextService {
 
   /** An observable containing information about the hooksets used to catch the active fish. */
   public readonly hooksetsByFish$: Observable<OccurrencesResult> = this.hooksetTugsByFish$.pipe(
-    tap(console.log),
     map(occurrenceResultMapper('hooksets', 'hookset')),
     shareReplay(1)
   );
@@ -115,8 +114,7 @@ export class FishContextService {
   );
 
   private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    switchMap(([fishId, spotId]) => this.data.getWeatherByFishId(fishId, spotId)),
-    shareReplay(1)
+    switchMap(([fishId, spotId]) => this.data.getWeatherByFishId(fishId, spotId))
   );
 
   /** An observable containing information about the weathers recorded to catch the active fish. */
@@ -132,6 +130,7 @@ export class FishContextService {
         ({ total, byId }, { weatherId, previousWeatherId, occurences }) => {
           const key = `${previousWeatherId}_${weatherId}`;
           const next: WeatherTransitionOccurrence = byId[key] ?? { fromId: previousWeatherId, toId: weatherId, occurrences: 0 };
+          next.occurrences += occurences;
           const nextById = { ...byId, [key]: next };
           return { total: total + occurences, byId: nextById };
         },

@@ -1,0 +1,19 @@
+<nz-card [nzTitle]="'DB.FISH.Spots' | translate" [nzLoading]="loading$ | async" fxFlex="1 1 auto" [class.card-with-list]="!(loading$ | async)">
+  <div
+    *ngFor="let spot of spots$ | async; let last = last"
+    [class.border-bottom]="!last"
+    class="list-row"
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="5px"
+  >
+    <app-map-position
+      [mapId]="spot.spotData.mapId"
+      [zoneId]="spot.spotData.zoneId"
+      showMapName="true"
+      showZoneName="true"
+      [marker]="spot.spotData.coords"
+    ></app-map-position>
+    <app-db-button [id]="spot.spot" type="fishing-spot"></app-db-button>
+  </div>
+</nz-card>

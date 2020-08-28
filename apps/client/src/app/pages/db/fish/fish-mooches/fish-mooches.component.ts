@@ -1,0 +1,22 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { map, startWith, shareReplay } from 'rxjs/operators';
+import { FishContextService } from '../../service/fish-context.service';
+
+@Component({
+  selector: 'app-fish-mooches',
+  templateUrl: './fish-mooches.component.html',
+  styleUrls: ['./fish-mooches.component.less', '../../common-db.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+})
+export class FishMoochesComponent {
+  public readonly loading$ = this.fishCtx.moochesByFish$.pipe(map((res) => res.loading));
+
+  public readonly mooches$ = this.fishCtx.moochesByFish$.pipe(
+    map((res) => res.data ?? []),
+    startWith([]),
+    shareReplay(1)
+  );
+
+  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {}
+}

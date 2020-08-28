@@ -26,7 +26,7 @@ export class LazyDataProviderService {
    * @param key The key of the lazy data to retrieve.
    * @returns An observable that will emit the lazy data associated with the specified key, then completes.
    */
-  public readonly getLazyData = <T extends LazyDataKey>(key: T): Observable<LazyData[T]> => {
+  public getLazyData<T extends LazyDataKey>(key: T): Observable<LazyData[T]> {
     if (this.lazyLoaderCache.has(key)) return this.lazyLoaderCache.get(key);
     const entry = lazyFilesList[key];
     const filename = `/assets/data/${environment.production ? entry.hashedFileName : entry.fileName}`;
@@ -34,7 +34,7 @@ export class LazyDataProviderService {
     const data = this.http.get(url).pipe(take(1), shareReplay(1));
     this.lazyLoaderCache.set(key, data);
     return data;
-  };
+  }
 
   private readonly getUrl = (path: string): string => {
     if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
