@@ -38,7 +38,7 @@
 
     &.card-with-list {
       .ant-card-body {
-        overflow-y: scroll;
+        overflow-y: auto;
         padding: 0 !important;
       }
     }
@@ -46,6 +46,12 @@
 
   .ant-list-item {
     padding: 10px !important;
+  }
+
+  .obtain-template-container {
+    .ant-card {
+      height: unset;
+    }
   }
 }
 

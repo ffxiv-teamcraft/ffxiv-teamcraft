@@ -1,145 +1,102 @@
-<ng-container *ngIf="fishCtx.fishId$ | async">
-  <ng-container *ngIf="settings.theme as theme">
-    <app-page-loader [loading]="loading$ | async">
-      <div class="details-container" fxLayout="column">
-        <div class="details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
-          <div class="details-block no-icon">
-            <div class="detail-name">
-              {{ 'DB.FISH.Min_gathering' | translate }}
-            </div>
-            <div class="detail-value">
-              {{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.min.gathering | number: '1.0-1' }}
-            </div>
+<ng-container *ngIf="settings.theme as theme">
+  <app-page-loader [loading]="!(fishCtx.fishId$ | async)">
+    <div class="details-container" fxLayout="column">
+      <div class="details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
+        <div class="details-block no-icon">
+          <div class="detail-name">
+            {{ 'DB.FISH.Min_gathering' | translate }}
           </div>
-          <div class="details-block no-icon">
-            <div class="detail-name">
-              {{ 'DB.FISH.Min_size' | translate }}
-            </div>
-            <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.min.size / 10 | number: '1.0-1' }} ilm</div>
-          </div>
-          <div class="details-block no-icon">
-            <div class="detail-name">
-              {{ 'DB.FISH.Max_size' | translate }}
-            </div>
-            <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.max.size / 10 | number: '1.0-1' }} ilm</div>
-          </div>
-          <div class="details-block no-icon">
-            <div class="detail-name">
-              {{ 'DB.FISH.Avg_size' | translate }}
-            </div>
-            <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.avg.size / 10 | number: '1.0-1' }} ilm</div>
-          </div>
-          <div class="details-block">
-            <div class="detail-name">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                <img src="{{ 761 | statusIcon | xivapiIcon }}" alt="" />
-                <span>{{ 761 | statusName | i18n }}</span>
-              </div>
-            </div>
-            <div class="detail-value">
-              <div>{{ (fishCtx.statisticsByFish$ | async)?.data?.snagging | number: '1.0-1' }}%</div>
-            </div>
-          </div>
-          <div class="details-block">
-            <div class="detail-name">
-              <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-                <img src="{{ 762 | statusIcon | xivapiIcon }}" alt="" />
-                <span>{{ 762 | statusName | i18n }}</span>
-              </div>
-            </div>
-            <div class="detail-value">
-              <div>{{ (fishCtx.statisticsByFish$ | async)?.data?.fishEyes | number: '1.0-1' }}%</div>
-            </div>
-          </div>
-          <div fxFlex="1 1 auto"></div>
-          <div fxFlex="0 0 auto">
-            <nz-select nzShowSearch [ngModel]="spotIdFilter$ | async" (ngModelChange)="setSpotIdFilter($event)">
-              <nz-option [nzLabel]="'DB.FISH.No_spot_filter' | translate" [nzValue]="-1"></nz-option>
-              <ng-container *ngIf="(fishCtx.spotsByFish$ | async)?.data as allSpots">
-                <nz-option *ngFor="let spot of allSpots" [nzLabel]="spot.spotData.zoneId | placeName | i18n" [nzValue]="spot.spot"></nz-option>
-              </ng-container>
-            </nz-select>
+          <div class="detail-value">
+            {{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.min.gathering | number: '1.0-1' }}
           </div>
         </div>
-      </div>
-
-      <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
-
-      <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
-        <app-fish-hours fxFlexOrder="1" fxFlex="none"></app-fish-hours>
-        <app-fish-baits fxFlexOrder="2" fxFlexOrder.gt-sm="3" fxFlexOrder.gt-md="4" fxFlexOrder.gt-lg="3" fxFlex="none"></app-fish-baits>
-        <app-fish-hooksets fxFlexOrder="3" fxFlexOrder.gt-sm="2" fxFlex="30" fxFlex.gt-md="22" fxFlex.gt-lg="15"></app-fish-hooksets>
-        <app-fish-spots-list fxFlexOrder="4" fxFlexOrder.gt-md="5" fxFlexOrder.gt-lg="4" fxFlex="35" fxFlex.gt-md="25" fxFlex.gt-lg="15"></app-fish-spots-list>
-        <app-fish-bite-times fxFlexOrder="5" fxFlexOrder.gt-md="3" fxFlexOrder.gt-lg="7" fxFlex="25" fxFlex.gt-md="15" fxFlex.gt-lg="10"></app-fish-bite-times>
-        <app-fish-weathers fxFlexOrder="6" fxFlexOrder.gt-md="7" fxFlexOrder.gt-lg="6" fxFlex="none"></app-fish-weathers>
-        <app-fish-weather-transitions
-          fxFlexOrder="7"
-          fxFlexOrder.gt-md="6"
-          fxFlexOrder.gt-lg="5"
-          fxFlex
-          fxFlex.gt-sm="50"
-          fxFlex.gt-md="27"
-        ></app-fish-weather-transitions>
-        <app-fish-mooches fxFlexOrder="8" fxFlex fxFlex.gt-sm="40" fxFlex.gt-md="22" fxFlex.gt-lg="28"></app-fish-mooches>
-      </div>
-
-      <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>
-
-      <div fxLayout="row wrap" fxLayoutGap="24px" fxLayout.lt-md="column">
-        <nz-card [nzTitle]="'DB.FISH.Top_users' | translate" class="card-with-list" fxFlex="1 1 auto">
-          <nz-list *ngIf="rankings$ | async as rankings">
-            <nz-list-item *ngFor="let row of rankings" [nzContent]="row.date | date: 'short':undefined:translate.currentLang">
-              <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="title" [nzDescription]="description">
-                <ng-template #avatar>
-                  <app-user-avatar [userId]="row.userId" width="32"></app-user-avatar>
-                </ng-template>
-                <ng-template #title>
-                  <div fxLayout="row" fxLayoutGap="5px">
-                    <img src="./assets/icons/stars/{{ getRankIcon(row.ranking.rank) }}.png" alt="" *ngIf="row.ranking.rank <= 3" />
-                    <div>{{ row.userId | characterName | async }}</div>
-                  </div>
-                </ng-template>
-                <ng-template #description>
-                  {{ row.size / 10 }}ilm -
-                  <app-item-icon [itemId]="row.baitId" width="16"></app-item-icon>
-                  {{ row.baitId | itemName | i18n }}
-                </ng-template>
-              </nz-list-item-meta>
-            </nz-list-item>
-            <nz-list-empty *ngIf="!rankings.length"></nz-list-empty>
-          </nz-list>
-        </nz-card>
-        <nz-card [nzTitle]="'DB.FISH.Your_ranking' | translate" class="card-with-list" fxFlex="1 1 auto">
-          <div
-            fxLayout="column"
-            fxLayoutAlign="center center"
-            fxLayoutGap="5px"
-            *ngIf="userRanking$ | async as userRanking; else noRanking"
-            class="ranking-container"
-          >
-            <div class="your-rank">#{{ userRanking.ranking.rank }}</div>
-            <div class="rank-size">{{ userRanking.size / 10 }}ilm</div>
-            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-              <app-item-icon [itemId]="userRanking.baitId" width="32"></app-item-icon>
-              <div>{{ userRanking.baitId | itemName | i18n }}</div>
-            </div>
-            <div class="rank-date">{{ userRanking.date | date: 'short':undefined:translate.currentLang }}</div>
+        <div class="details-block no-icon">
+          <div class="detail-name">
+            {{ 'DB.FISH.Min_size' | translate }}
           </div>
-          <ng-template #noRanking>
-            <nz-list-empty></nz-list-empty>
-          </ng-template>
-        </nz-card>
+          <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.min.size / 10 | number: '1.0-1' }} ilm</div>
+        </div>
+        <div class="details-block no-icon">
+          <div class="detail-name">
+            {{ 'DB.FISH.Max_size' | translate }}
+          </div>
+          <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.max.size / 10 | number: '1.0-1' }} ilm</div>
+        </div>
+        <div class="details-block no-icon">
+          <div class="detail-name">
+            {{ 'DB.FISH.Avg_size' | translate }}
+          </div>
+          <div class="detail-value">{{ (fishCtx.statisticsByFish$ | async)?.data?.stats.aggregate.avg.size / 10 | number: '1.0-1' }} ilm</div>
+        </div>
+        <div class="details-block">
+          <div class="detail-name">
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+              <img src="{{ 761 | statusIcon | xivapiIcon }}" alt="" />
+              <span>{{ 761 | statusName | i18n }}</span>
+            </div>
+          </div>
+          <div class="detail-value">
+            <div>{{ (fishCtx.statisticsByFish$ | async)?.data?.snagging | number: '1.0-1' }}%</div>
+          </div>
+        </div>
+        <div class="details-block">
+          <div class="detail-name">
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+              <img src="{{ 762 | statusIcon | xivapiIcon }}" alt="" />
+              <span>{{ 762 | statusName | i18n }}</span>
+            </div>
+          </div>
+          <div class="detail-value">
+            <div>{{ (fishCtx.statisticsByFish$ | async)?.data?.fishEyes | number: '1.0-1' }}%</div>
+          </div>
+        </div>
+        <div fxFlex="1 1 auto"></div>
+        <div fxFlex="0 0 auto">
+          <nz-select nzShowSearch [ngModel]="spotIdFilter$ | async" (ngModelChange)="setSpotIdFilter($event)">
+            <nz-option [nzLabel]="'DB.FISH.No_spot_filter' | translate" [nzValue]="-1"></nz-option>
+            <ng-container *ngIf="(fishCtx.spotsByFish$ | async)?.data as allSpots">
+              <nz-option *ngFor="let spot of allSpots" [nzLabel]="spot.spotData.zoneId | placeName | i18n" [nzValue]="spot.spot"></nz-option>
+            </ng-container>
+          </nz-select>
+        </div>
       </div>
+    </div>
 
-      <ng-container *ngIf="obtentionTpl">
-        <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
-      </ng-container>
+    <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
 
-      <ng-container *ngIf="usedForTpl">
-        <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
-      </ng-container>
+    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
+      <app-fish-hours fxFlexOrder="1" fxFlex="none"></app-fish-hours>
+      <app-fish-baits fxFlexOrder="2" fxFlexOrder.gt-sm="3" fxFlexOrder.gt-md="4" fxFlexOrder.gt-lg="3" fxFlex="none"></app-fish-baits>
+      <app-fish-hooksets fxFlexOrder="3" fxFlexOrder.gt-sm="2" fxFlex="30" fxFlex.gt-md="22" fxFlex.gt-lg="15"></app-fish-hooksets>
+      <app-fish-spots-list fxFlexOrder="4" fxFlexOrder.gt-md="5" fxFlexOrder.gt-lg="4" fxFlex="35" fxFlex.gt-md="25" fxFlex.gt-lg="15"></app-fish-spots-list>
+      <app-fish-bite-times fxFlexOrder="5" fxFlexOrder.gt-md="3" fxFlexOrder.gt-lg="7" fxFlex="25" fxFlex.gt-md="15" fxFlex.gt-lg="10"></app-fish-bite-times>
+      <app-fish-weathers fxFlexOrder="6" fxFlexOrder.gt-md="7" fxFlexOrder.gt-lg="6" fxFlex="none"></app-fish-weathers>
+      <app-fish-weather-transitions
+        fxFlexOrder="7"
+        fxFlexOrder.gt-md="6"
+        fxFlexOrder.gt-lg="5"
+        fxFlex
+        fxFlex.gt-sm="50"
+        fxFlex.gt-md="27"
+      ></app-fish-weather-transitions>
+      <app-fish-mooches fxFlexOrder="8" fxFlex fxFlex.gt-sm="40" fxFlex.gt-md="22" fxFlex.gt-lg="28"></app-fish-mooches>
+    </div>
 
-      <app-db-comments *ngIf="fishCtx.fishId$ | async as fishId" [id]="fishId" type="item"></app-db-comments>
-    </app-page-loader>
-  </ng-container>
+    <nz-divider [nzText]="'DB.FISH.Ranking' | translate" nzOrientation="left"></nz-divider>
+
+    <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
+      <app-fish-top-users fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-top-users>
+      <app-fish-user-ranking fxFlex fxFlex.gt-sm="50" fxFlex.gt-md="40" fxFlex.gt-lg="30"></app-fish-user-ranking>
+    </div>
+
+    <div class="obtain-template-container" *ngIf="obtentionTpl">
+      <ng-container *ngTemplateOutlet="obtentionTpl"></ng-container>
+    </div>
+
+    <ng-container *ngIf="usedForTpl">
+      <ng-container *ngTemplateOutlet="usedForTpl"></ng-container>
+    </ng-container>
+
+    <app-db-comments *ngIf="fishCtx.fishId$ | async as fishId" [id]="fishId" type="item"></app-db-comments>
+  </app-page-loader>
 </ng-container>
