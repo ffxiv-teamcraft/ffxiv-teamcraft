@@ -58,6 +58,7 @@ import * as FishGQLProviders from './service/fish-data.gql';
 import { FishDataService } from './service/fish-data.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
+import { FishDetailsContainerComponent } from './fish/fish-details-container/fish-details-container.component';
 
 const routes: Routes = [
   {
@@ -260,6 +261,7 @@ const routes: Routes = [
     FishMoochesComponent,
     FishTopUsersComponent,
     FishUserRankingComponent,
+    FishDetailsContainerComponent,
   ],
   imports: [
     CommonModule,

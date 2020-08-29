@@ -1,0 +1,67 @@
+<div class="details-container" fxLayout="column">
+  <div class="details" fxLayoutAlign="flex-start center" fxLayout="row wrap" fxLayoutGap="5px">
+    <div class="details-block no-icon" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        {{ 'DB.FISH.Min_gathering' | translate }}
+      </div>
+      <div class="detail-value">
+        {{ (stats$ | async).gathering | number: '1.0-1' }}
+      </div>
+    </div>
+    <div class="details-block no-icon" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        {{ 'DB.FISH.Min_size' | translate }}
+      </div>
+      <div class="detail-value">{{ (stats$ | async).min | number: '1.0-1' }} ilm</div>
+    </div>
+    <div class="details-block no-icon" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        {{ 'DB.FISH.Max_size' | translate }}
+      </div>
+      <div class="detail-value">{{ (stats$ | async).max / 10 | number: '1.0-1' }} ilm</div>
+    </div>
+    <div class="details-block no-icon" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        {{ 'DB.FISH.Avg_size' | translate }}
+      </div>
+      <div class="detail-value">{{ (stats$ | async).avg / 10 | number: '1.0-1' }} ilm</div>
+    </div>
+    <div class="details-block" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+          <img src="{{ 761 | statusIcon | xivapiIcon }}" alt="" />
+          <span>{{ 761 | statusName | i18n }}</span>
+        </div>
+      </div>
+      <div class="detail-value">
+        <div>{{ (stats$ | async).snagging | number: '1.0-1' }}%</div>
+      </div>
+    </div>
+    <div class="details-block" [class.loading]="loading$ | async">
+      <div class="detail-name">
+        <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+          <img src="{{ 762 | statusIcon | xivapiIcon }}" alt="" />
+          <span>{{ 762 | statusName | i18n }}</span>
+        </div>
+      </div>
+      <div class="detail-value">
+        <div>{{ (stats$ | async).fishEyes | number: '1.0-1' }}%</div>
+      </div>
+    </div>
+    <div fxFlex="1 1 auto"></div>
+    <div fxFlex="0 0 auto">
+      <nz-select
+        [nzLoading]="spotsLoading$ | async"
+        [nzDisabled]="spotsLoading$ | async"
+        nzShowSearch
+        [ngModel]="spotIdFilter$ | async"
+        (ngModelChange)="setSpotIdFilter($event)"
+      >
+        <nz-option [nzLabel]="'DB.FISH.No_spot_filter' | translate" [nzValue]="-1"></nz-option>
+        <ng-container *ngIf="spots$ | async as allSpots">
+          <nz-option *ngFor="let spot of allSpots" [nzLabel]="spot.spotData.zoneId | placeName | i18n" [nzValue]="spot.spot"></nz-option>
+        </ng-container>
+      </nz-select>
+    </div>
+  </div>
+</div>

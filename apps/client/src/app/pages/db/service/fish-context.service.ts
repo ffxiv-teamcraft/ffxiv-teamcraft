@@ -145,7 +145,7 @@ export class FishContextService {
   public readonly statisticsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     switchMap(([fishId, spotId]) => this.data.getStatisticsByFishId(fishId, spotId)),
     map((res) => {
-      if (!res.data) return res;
+      if (!res.data) return { ...res, data: undefined };
       const totalSnagging = res.data.snagging.reduce((acc, row) => acc + row.occurences, 0);
       const snagging = (100 * (res.data.snagging.find((entry) => entry.snagging === true) ?? { occurences: 0 }).occurences) / totalSnagging;
       const totalFishEyes = res.data.fishEyes.reduce((acc, row) => acc + row.occurences, 0);
