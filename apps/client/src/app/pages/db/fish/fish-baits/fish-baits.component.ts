@@ -4,7 +4,7 @@ import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.serv
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 import { mapValues } from 'lodash';
 import { forkJoin, of } from 'rxjs';
-import { map, shareReplay, switchMap, take, startWith } from 'rxjs/operators';
+import { map, shareReplay, startWith, switchMap, take } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 
 @Component({
