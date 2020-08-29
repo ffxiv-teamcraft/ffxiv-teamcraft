@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { FishDataService } from './fish-data.service';
-import { ReplaySubject, BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { switchMap, map, distinctUntilChanged, shareReplay, tap } from 'rxjs/operators';
 import { ApolloQueryResult } from 'apollo-client';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
+import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { FishDataService } from './fish-data.service';
 
 export interface Occurrence {
   id: number;
@@ -39,6 +39,10 @@ const occurrenceResultMapper = <T extends string, I extends string>(key: T, inne
   return { ...res, data };
 };
 
+/**
+ * A service that has a concept of a "current" fish and fishing spot,
+ * and provides observables containing information about those "current" entities.
+ */
 @Injectable()
 export class FishContextService {
   private readonly fishIdSub$ = new ReplaySubject<number>();
