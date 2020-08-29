@@ -1,10 +1,10 @@
 <nz-card
   [nzTitle]="'DB.FISH.Weathers' | translate"
   [nzLoading]="loading$ | async"
-  [style.width.px]="(weathersChartView$ | async)[0] + 48"
+  [style.width.px]="(weathersChartView$ | async)[0]"
   [class.card-with-list]="!(loading$ | async)"
 >
-  <div [style.minHeight.px]="(weathersChartView$ | async)[1] + 24">
+  <div [style.minHeight.px]="(weathersChartView$ | async)[1] + 24" [style.overflowX]="'hidden'">
     <ngx-charts-advanced-pie-chart
       [view]="weathersChartView$ | async"
       [scheme]="{ domain: [settings.theme.highlight, settings.theme.primary, settings.theme.trigger] }"
