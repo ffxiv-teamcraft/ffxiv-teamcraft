@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.11"></a>
+## [7.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.10...v7.3.11) (2020-08-26)
+
+
+### Bug Fixes
+
+* **community-rotations:** fixed tags taking too much space in some browsers ([90bd053](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/90bd053))
+* **desktop:** possible fix for shortcut creation, will be effective on next patch ([e49f1c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e49f1c2))
+* **metrics:** fixed retainer gil gains counted twice ([b04450b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b04450b))
+* **recipe-finder:** fixed an issue with min lvl filter being readonly ([a437960](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a437960))
+* **trade:** changed icon priority for Allied Seals ([408d9d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/408d9d0))
+
+
+### Features
+
+* **data:** support for 5.3 hotfix price changes ([4eadeb1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4eadeb1))
+
+
+
 <a name="7.3.10"></a>
 ## [7.3.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.9...v7.3.10) (2020-08-25)
 

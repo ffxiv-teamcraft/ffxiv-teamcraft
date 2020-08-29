@@ -47,7 +47,6 @@ function handleSquirrelEvent() {
       if (!config.get('setup:noShortcut')) {
         spawnUpdate(['--createShortcut', exeName]);
       }
-      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
       Machina.addMachinaFirewallRule();
       break;
     case '--squirrel-updated':
@@ -719,7 +718,7 @@ ipcMain.on('no-shortcut', (event, noShortcut) => {
 });
 
 ipcMain.on('no-shortcut:get', (event) => {
-  event.sender.send('always-on-top:value', config.get('setup:noShortcut') || false);
+  event.sender.send('no-shortcut:value', config.get('setup:noShortcut') || false);
 });
 
 ipcMain.on('always-quit', (event, flag) => {

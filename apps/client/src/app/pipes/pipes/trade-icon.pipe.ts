@@ -12,7 +12,7 @@ export class TradeIconPipe implements PipeTransform {
     20: 30, // Storm
     21: 30, // Serpent
     22: 30, // Flame
-    27: 30, // Allied
+    27: 29, // Allied
     10307: 30, // Centurio
     26533: 30, // Sack of nuts (lol)
     // Scripts

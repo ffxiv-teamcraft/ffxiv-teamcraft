@@ -1,4 +1,5 @@
 export enum InventoryEventType {
   REMOVED,
-  ADDED
+  ADDED,
+  MOVED
 }

@@ -21,7 +21,6 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
-import { InventoryEvent } from '../../model/user/inventory/inventory-event';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 
 @Injectable({
@@ -338,7 +337,9 @@ export class MachinaService {
   private getEventType(patch: InventoryPatch): InventoryEventType {
     if (patch.quantity > 0) {
       return InventoryEventType.ADDED;
-    } else {
+    } else if(patch.moved) {
+      return InventoryEventType.MOVED;
+    } else{
       return InventoryEventType.REMOVED;
     }
   }

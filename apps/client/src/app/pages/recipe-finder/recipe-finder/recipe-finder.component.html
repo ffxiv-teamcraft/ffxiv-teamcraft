@@ -70,7 +70,7 @@
         {{'RECIPE_FINDER.Recipe_level' | translate}}:
       </div>
       <nz-input-group class="level-range" nzCompact>
-        <nz-input-number mouseWheel [nzMax]="0" [nzMin]="0" [nzPrecision]="0" [ngModel]="clvlMin$ | async"
+        <nz-input-number mouseWheel [nzMax]="maxLevel" [nzMin]="0" [nzPrecision]="0" [ngModel]="clvlMin$ | async"
                          (ngModelChange)="clvlMin$.next($event)" (mouseWheelDown)="clvlMin$.next(clvlMin$.value - 1)"
                          (mouseWheelUp)="clvlMin$.next(clvlMin$.value + 1)"></nz-input-number>
         <input disabled nz-input placeholder="-" type="text">
