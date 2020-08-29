@@ -22,7 +22,10 @@ export class LocalizedLazyDataService {
   private getResolver(key: LazyDataKey, accessor: number | string, lang: Language): Observable<string | undefined> {
     return this.lazyDataProvider.getLazyData(key).pipe(
       map((data) => {
-        if (!get(data, accessor)) console.warn(`Lazy data could not be resolved for key [${key}], accessor [${accessor}]`);
+        if (!get(data, accessor)) {
+          console.warn(`Lazy data could not be resolved for key [${key}], accessor [${accessor}]`);
+          return undefined;
+        }
         const baseValue = get(data, `${accessor}.${lang}`, undefined);
         if (lang === 'fr') return baseValue?.replace(this.indentRegexp, '');
         return baseValue;
