@@ -1,15 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'icon'
+  name: 'icon',
 })
 export class IconPipe implements PipeTransform {
-
   transform(id: number, fallback?: string): string {
-    if (id === 0) {
+    if (!id) {
       return fallback;
     }
     return `https://www.garlandtools.org/files/icons/item/${id}.png`;
   }
-
 }
