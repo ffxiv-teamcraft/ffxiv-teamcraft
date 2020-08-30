@@ -1,13 +1,17 @@
 import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
 import { isNil } from 'lodash';
-import { isObservable, Subject, Subscription } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { isObservable, Subscription } from 'rxjs';
 import { I18nName } from '../model/common/i18n-name';
 import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
 
 type I18nInput = { name: I18nName } | I18nName | I18nNameLazy;
 
+/**
+ * A pipe that coerces an I18nName object into a string matching the user's preferred language.
+ * If the input is an I18nNameLazy (where the values are observables instead of raw strings),
+ * the value matching the user's language will be asyncronously unwrapped.
+ */
 @Pipe({
   name: 'i18n',
   pure: false,
@@ -23,7 +27,7 @@ export class I18nPipe implements PipeTransform, OnDestroy {
     this.sub?.unsubscribe();
   }
 
-  transform<T extends I18nInput>(input?: T | null, fallback?: string): string {
+  transform<T extends I18nInput>(input?: T | null, fallback?: string): string | undefined {
     if (!this.i18nEquals(this.input, input)) {
       this.sub?.unsubscribe();
       if (this.isI18nWithName(input)) {
@@ -73,7 +77,11 @@ export class I18nPipe implements PipeTransform, OnDestroy {
   }
 
   private setCurrentValue = (val?: string) => {
-    this.currentValue = this.uppercaseFirst(val);
-    this.cd.markForCheck();
+    const next = this.uppercaseFirst(val);
+    const didUpdate = this.currentValue !== next;
+    this.currentValue = next;
+    if (didUpdate) {
+      this.cd.markForCheck();
+    }
   };
 }

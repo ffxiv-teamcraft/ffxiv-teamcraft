@@ -9,7 +9,6 @@ import { Language } from './language';
 import { LazyData, LazyDataKey } from './lazy-data';
 import { LazyDataProviderService } from './lazy-data-provider.service';
 import { LazyDataService } from './lazy-data.service';
-import freeCompanyActions from './sources/free-company-actions.json';
 import { mapIds } from './sources/map-ids';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
@@ -183,7 +182,7 @@ export class LocalizedDataService {
   }
 
   public getFreeCompanyAction(id: number): I18nName {
-    const row = this.getRow(freeCompanyActions, id);
+    const row = this.getRow(this.lazyData.data.freeCompanyActions, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhFreeCompanyActions', koKey: 'koFreeCompanyActions' });
 
     return row;
