@@ -11068,14 +11068,15 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.36.44:
-  version "2.36.44"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.36.44.tgz#f4971b0ec35972a680fcc2e9ed04a9c5e73b8952"
-  integrity sha512-jUqXKVwjLSyAwLQ9I/5tTR5UuUrv32gKE9mpB355rnmAqi0n0/ng0x3O4sA5nswascTGresQkR3408X56fuiJA==
+node-machina-ffxiv@^2.36.47:
+  version "2.36.47"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.36.47.tgz#99e587732c0edde90b9c3c3a4fa6914626df5d88"
+  integrity sha512-QpHF9eLwEnvpMu/C9H0GFP0LaTBNprySkDNRxo7PlCS8Rt0MLFsDESfnY1IKrfK8mZf+HlzkoLrh5pFmJh/uug==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"
     request-promise "^4.2.4"
+    ws "^7.3.1"
 
 node-releases@^1.1.53:
   version "1.1.53"
@@ -16005,6 +16006,11 @@ ws@^7.2.3:
   version "7.2.3"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.2.3.tgz#a5411e1fb04d5ed0efee76d26d5c46d830c39b46"
   integrity sha512-HTDl9G9hbkNDk98naoR/cHDws7+EyYMOdL1BmjsZXRUjf7d+MficC4B7HLUPlSiho0vg+CWKrGIt/VJBd1xunQ==
+
+ws@^7.3.1:
+  version "7.3.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
+  integrity sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
 
 ws@~3.3.1:
   version "3.3.3"
