@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { get } from 'lodash';
-import { Observable, of, combineLatest } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { I18nLazy, I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { Fate } from '../../pages/db/model/fate/fate';
@@ -42,12 +42,11 @@ export class LocalizedLazyDataService {
     const fallbackResolver = this.getResolver(fallbackKey, accessor, lang).pipe(
       switchMap((val) => (val ? of(val) : this.getResolver(fallbackKey, accessor, 'en')))
     );
-    return of(extKey).pipe(
-      switchMap((key) => {
-        if (!key) return fallbackResolver;
-        return this.getResolver(extKey, accessor, lang).pipe(switchMap((val) => (val ? of(val) : fallbackResolver)));
-      })
-    );
+    if (extKey) {
+      return this.getResolver(extKey, accessor, lang).pipe(switchMap((val) => (val ? of(val) : fallbackResolver)));
+    } else {
+      return fallbackResolver;
+    }
   }
 
   private getRow(key: LazyDataKey, accessor: number | string): I18nNameLazy {
@@ -157,12 +156,12 @@ export class LocalizedLazyDataService {
   }
 
   public getShopName(englishName: string): I18nNameLazy {
+    const { koKey, ruKey, zhKey } = this.guessExtendedLanguageKeys('shops');
     const resolver = (lang: Language, extKey?: LazyDataKey) =>
       this.lazyDataProvider.getLazyData('shops').pipe(
         switchMap((shops) => {
           const id = +Object.keys(shops).find((k) => shops[k].en === englishName);
-          if (extKey) return this.getFallbackResolver(extKey, 'shops', id, lang);
-          return this.getResolver('shops', id, lang);
+          return this.getFallbackResolver(extKey, 'shops', id, lang);
         })
       );
     return {
@@ -170,9 +169,9 @@ export class LocalizedLazyDataService {
       de: resolver('de'),
       ja: resolver('ja'),
       fr: resolver('fr'),
-      ko: resolver('ko', 'koShops'),
-      ru: resolver('ru', 'ruShops' as any),
-      zh: resolver('zh', 'zhShops'),
+      ko: resolver('ko', koKey),
+      ru: resolver('ru', ruKey),
+      zh: resolver('zh', zhKey),
     };
   }
 

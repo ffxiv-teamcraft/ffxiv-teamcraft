@@ -109,7 +109,6 @@ describe('LocalizedLazyDataService', () => {
     const enNpc = await import('../../../assets/data/' + lazyFilesList['npcs'].fileName);
     expect(npc.defaultTalks).toBeTruthy();
     const name = await forkJoin({ en: npc.en, de: npc.de, fr: npc.fr, ja: npc.ja, ko: npc.ko, zh: npc.zh }).toPromise();
-    console.log(name);
     for (const l of languages) {
       switch (l) {
         case 'ko':
@@ -120,6 +119,27 @@ describe('LocalizedLazyDataService', () => {
           break;
         default:
           expect(name[l]).toBe(enNpc[id][l]);
+      }
+    }
+  }));
+
+  it('should get i18n shops', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
+    const id = '1769474';
+    const koShop = await import('../../../assets/data' + lazyFilesList['koShops'].fileName);
+    const zhShop = await import('../../../assets/data' + lazyFilesList['zhShops'].fileName);
+    const enShop = await import('../../../assets/data/' + lazyFilesList['shops'].fileName);
+    const name = enShop[id].en;
+    const shop = await forkJoin(service.getShopName(name)).toPromise();
+    for (const l of languages) {
+      switch (l) {
+        case 'ko':
+          expect(shop[l]).toBe(koShop[id][l]);
+          break;
+        case 'zh':
+          expect(shop[l]).toBe(zhShop[id][l]);
+          break;
+        default:
+          expect(shop[l]).toBe(enShop[id][l]);
       }
     }
   }));
