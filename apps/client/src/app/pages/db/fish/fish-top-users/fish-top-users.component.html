@@ -1,0 +1,23 @@
+<nz-card [nzTitle]="'DB.FISH.Top_users' | translate" [nzLoading]="loading$ | async" [class.card-with-list]="!(loading$ | async)" fxFlex="1 1 auto">
+  <nz-list *ngIf="rankings$ | async as rankings">
+    <nz-list-item *ngFor="let row of rankings" [nzContent]="row.date | date: 'short':undefined:translate.currentLang">
+      <nz-list-item-meta [nzAvatar]="avatar" [nzTitle]="title" [nzDescription]="description">
+        <ng-template #avatar>
+          <app-user-avatar [userId]="row.userId" width="32"></app-user-avatar>
+        </ng-template>
+        <ng-template #title>
+          <div fxLayout="row" fxLayoutGap="5px">
+            <img src="./assets/icons/stars/{{ getRankIcon(row.ranking.rank) }}.png" alt="" *ngIf="row.ranking.rank <= 3" />
+            <div>{{ row.userId | characterName | async }}</div>
+          </div>
+        </ng-template>
+        <ng-template #description>
+          {{ row.size / 10 }}ilm -
+          <app-item-icon [itemId]="row.baitId" width="16"></app-item-icon>
+          {{ row.baitId | itemName | i18n }}
+        </ng-template>
+      </nz-list-item-meta>
+    </nz-list-item>
+    <nz-list-empty *ngIf="!rankings.length"></nz-list-empty>
+  </nz-list>
+</nz-card>

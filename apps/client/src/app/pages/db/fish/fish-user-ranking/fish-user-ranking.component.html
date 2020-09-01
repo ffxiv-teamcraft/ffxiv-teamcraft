@@ -1,0 +1,14 @@
+<nz-card [nzTitle]="'DB.FISH.Your_ranking' | translate" [nzLoading]="loading$ | async" [class.card-with-list]="!(loading$ | async)" fxFlex="1 1 auto">
+  <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="userRanking$ | async as userRanking; else noRanking" class="ranking-container">
+    <div class="your-rank">#{{ userRanking.ranking.rank }}</div>
+    <div class="rank-size">{{ userRanking.size / 10 }}ilm</div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+      <app-item-icon [itemId]="userRanking.baitId" width="32"></app-item-icon>
+      <div>{{ userRanking.baitId | itemName | i18n }}</div>
+    </div>
+    <div class="rank-date">{{ userRanking.date | date: 'short':undefined:translate.currentLang }}</div>
+  </div>
+  <ng-template #noRanking>
+    <nz-list-empty></nz-list-empty>
+  </ng-template>
+</nz-card>

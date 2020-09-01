@@ -1,48 +1,87 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import { ChangeDetectorRef, OnDestroy, Pipe, PipeTransform } from '@angular/core';
+import { isNil } from 'lodash';
+import { isObservable, Subscription } from 'rxjs';
+import { I18nName } from '../model/common/i18n-name';
+import { I18nNameLazy } from '../model/common/i18n-name-lazy';
 import { I18nToolsService } from './tools/i18n-tools.service';
-import { TranslateService } from '@ngx-translate/core';
 
+type I18nInput = { name: I18nName } | I18nName | I18nNameLazy;
+
+/**
+ * A pipe that coerces an I18nName object into a string matching the user's preferred language.
+ * If the input is an I18nNameLazy (where the values are observables instead of raw strings),
+ * the value matching the user's language will be asyncronously unwrapped.
+ */
 @Pipe({
   name: 'i18n',
-  pure: false
+  pure: false,
 })
-export class I18nPipe implements PipeTransform {
+export class I18nPipe implements PipeTransform, OnDestroy {
+  private currentValue?: string;
+  private input?: I18nInput;
+  private sub?: Subscription;
 
-  private cache: { input: any, lang: string, value: string };
+  constructor(private readonly i18n: I18nToolsService, private readonly cd: ChangeDetectorRef) {}
 
-  constructor(private i18n: I18nToolsService, private translate: TranslateService) {
+  ngOnDestroy() {
+    this.sub?.unsubscribe();
   }
 
-  transform(value: any, fallback?:string): string {
-    if (this.cache === undefined
-      || this.cache.input !== value
-      || this.cache.lang !== this.translate.currentLang) {
-      if (!value) {
-        return value;
-      }
-      let res: string;
-      if (this.isI18nEntry(value.name)) {
-        res = this.i18n.getName(value.name);
-      } else if (this.isI18nEntry(value)) {
-        res = this.i18n.getName(value);
+  transform<T extends I18nInput>(input?: T | null, fallback?: string): string | undefined {
+    if (!this.i18nEquals(this.input, input)) {
+      this.sub?.unsubscribe();
+      if (this.isI18nWithName(input)) {
+        this.setCurrentValue(this.i18n.getName(input.name));
+      } else if (this.isI18nEntry(input)) {
+        this.setCurrentValue(this.i18n.getName(input));
+      } else if (this.isI18nLazy(input)) {
+        this.sub = this.i18n.resolveName(input).subscribe(this.setCurrentValue);
       } else {
-        res = value.name;
+        this.setCurrentValue(undefined);
       }
-      this.cache = {
-        input: value,
-        value: res && (res.charAt(0).toUpperCase() + res.slice(1)),
-        lang: this.translate.currentLang
-      };
+      this.input = input;
     }
-    return this.cache.value || fallback;
+    return this.currentValue || fallback;
   }
 
-  isI18nEntry(data: any): boolean {
-    return data !== undefined &&
-      data.en !== undefined
-      && data.de !== undefined
-      && data.ja !== undefined
-      && data.fr !== undefined;
+  private isI18nWithName(data: any): data is { name: I18nName } {
+    return !isNil(data) && this.isI18nEntry(data.name);
   }
 
+  private isI18nEntry(data: any): data is I18nName {
+    return !isNil(data) && typeof data.en === 'string' && typeof data.de === 'string' && typeof data.ja === 'string' && typeof data.fr === 'string';
+  }
+
+  private isI18nLazy(data: any): data is I18nNameLazy {
+    return !isNil(data) && isObservable(data.en) && isObservable(data.de) && isObservable(data.ja) && isObservable(data.fr);
+  }
+
+  private uppercaseFirst(val?: string) {
+    if (!val) return undefined;
+    return val.charAt(0).toUpperCase() + val.slice(1);
+  }
+
+  private i18nEquals(current: any, next: any) {
+    if (current === next) return true;
+    if ((!current && !!next) || (!!current && !next)) return false;
+    if (this.isI18nWithName(next)) {
+      return (
+        next?.name?.de === current?.name?.de &&
+        next?.name?.en === current?.name?.en &&
+        next?.name?.ja === current?.name?.ja &&
+        next?.name?.fr === current?.name?.fr
+      );
+    } else {
+      return next?.de === current?.de && next?.en === current?.en && next?.ja === current?.ja && next?.fr === current?.fr;
+    }
+  }
+
+  private setCurrentValue = (val?: string) => {
+    const next = this.uppercaseFirst(val);
+    const didUpdate = this.currentValue !== next;
+    this.currentValue = next;
+    if (didUpdate) {
+      this.cd.markForCheck();
+    }
+  };
 }
