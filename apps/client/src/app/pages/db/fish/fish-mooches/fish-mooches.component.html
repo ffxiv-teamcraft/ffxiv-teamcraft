@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="no-data">
-    <nz-empty *ngIf="!(mooches$ | async)" [nzNotFoundContent]="contentTpl"></nz-empty>
+    <nz-empty *ngIf="!(mooches$ | async).length" [nzNotFoundContent]="contentTpl"></nz-empty>
     <ng-template #contentTpl>
       <span>{{ 'DB.FISH.No_known_mooch_usage' | translate }}</span>
     </ng-template>

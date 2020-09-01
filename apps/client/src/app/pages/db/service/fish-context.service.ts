@@ -167,7 +167,7 @@ export class FishContextService {
     map((time) => {
       return [
         {
-          name: `${time.getUTCHours()}:00`,
+          name: `${time.getUTCHours().toString().padStart(2, '0')}:00`,
           value: this.settings.theme.highlight,
         },
       ];
