@@ -1,28 +1,28 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { XivapiService } from '@xivapi/angular-client';
 import { isPlatformServer } from '@angular/common';
-import { PlatformService } from '../tools/platform.service';
-import { environment } from '../../../environments/environment';
-import { ListRow } from '../../modules/list/model/list-row';
-import { filter, first, map, startWith } from 'rxjs/operators';
-import { LazyData } from './lazy-data';
-import { lazyFilesList } from './lazy-files-list';
-import { SettingsService } from '../../modules/settings/settings.service';
+import { HttpClient } from '@angular/common/http';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Craft } from '@ffxiv-teamcraft/simulator';
-import { Region } from '../../modules/settings/region.enum';
-import { Memoized } from '../decorators/memoized';
-import { Language } from './language';
 import { TranslateService } from '@ngx-translate/core';
+import { XivapiService } from '@xivapi/angular-client';
+import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
+import { filter, first, map, startWith } from 'rxjs/operators';
+import { environment } from '../../../environments/environment';
 import { extractsHash } from '../../../environments/extracts-hash';
 import { I18nName } from '../../model/common/i18n-name';
+import { ListRow } from '../../modules/list/model/list-row';
+import { Region } from '../../modules/settings/region.enum';
+import { SettingsService } from '../../modules/settings/settings.service';
+import { Memoized } from '../decorators/memoized';
+import { PlatformService } from '../tools/platform.service';
+import { Language } from './language';
+import { LazyData } from './lazy-data';
+import { LazyDataProviderService } from './lazy-data-provider.service';
+import { lazyFilesList } from './lazy-files-list';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LazyDataService {
-
   public dohdolMeldingRates = {
     hq: [
       // Sockets
@@ -31,10 +31,10 @@ export class LazyDataService {
       [82, 44, 26, 16], // II
       [70, 38, 22, 14], // III
       [58, 32, 20, 12], // IV
-      [17, 10, 7, 5],   // V
-      [17, 0, 0, 0],    // VI
-      [17, 10, 7, 5],   // VII
-      [17, 0, 0, 0]     // VIII
+      [17, 10, 7, 5], // V
+      [17, 0, 0, 0], // VI
+      [17, 10, 7, 5], // VII
+      [17, 0, 0, 0], // VIII
     ],
     nq: [
       // Sockets
@@ -43,13 +43,12 @@ export class LazyDataService {
       [72, 36, 18, 10], // II
       [60, 30, 16, 8], // III
       [48, 24, 12, 6], // IV
-      [12, 6, 3, 2],   // V
-      [12, 0, 0, 0],    // VI
-      [12, 6, 3, 2],   // VII
-      [12, 0, 0, 0]     // VIII
-    ]
+      [12, 6, 3, 2], // V
+      [12, 0, 0, 0], // VI
+      [12, 6, 3, 2], // VII
+      [12, 0, 0, 0], // VIII
+    ],
   };
-
 
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
@@ -62,21 +61,30 @@ export class LazyDataService {
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
+  public readonly fishingSpots$ = this.lazyDataProvider.getLazyData('fishingSpots');
+
   private loadedLangs: Language[] = [];
 
-  constructor(private http: HttpClient, private xivapi: XivapiService, @Inject(PLATFORM_ID) private platform: Object,
-              private platformService: PlatformService, private settings: SettingsService, private translate: TranslateService) {
+  constructor(
+    private http: HttpClient,
+    private xivapi: XivapiService,
+    @Inject(PLATFORM_ID) private platform: Object,
+    private platformService: PlatformService,
+    private settings: SettingsService,
+    private readonly lazyDataProvider: LazyDataProviderService,
+    private readonly translate: TranslateService
+  ) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);
     } else {
       this.load(translate.currentLang as Language);
       if (translate.onLangChange) {
-        translate.onLangChange.subscribe(change => {
+        translate.onLangChange.subscribe((change) => {
           this.load(change.lang);
         });
       }
 
-      this.settings.regionChange$.subscribe(change => {
+      this.settings.regionChange$.subscribe((change) => {
         this.loadForRegion(change.next);
       });
 
@@ -99,7 +107,7 @@ export class LazyDataService {
   }
 
   public getMapIdByZoneId(zoneId: number): number {
-    return +Object.keys(this.data.maps).find(key => this.data.maps[key].placename_id === zoneId);
+    return +Object.keys(this.data.maps).find((key) => this.data.maps[key].placename_id === zoneId);
   }
 
   public getJobAbbrs(): Record<number, I18nName> {
@@ -109,17 +117,19 @@ export class LazyDataService {
         [key]: {
           ...this.data.jobAbbr[key],
           ko: this.data.koJobAbbr[key]?.ko || this.data.jobAbbr[key].en,
-          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en
-        }
+          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en,
+        },
       };
     }, {});
   }
 
   public getJobIdByAbbr(abbr: string): number {
     const abbrs = this.getJobAbbrs();
-    return +(Object.keys(abbrs).find(key => {
-      return abbrs[key].en.toLowerCase() === abbr.toLowerCase();
-    }) || -1);
+    return +(
+      Object.keys(abbrs).find((key) => {
+        return abbrs[key].en.toLowerCase() === abbr.toLowerCase();
+      }) || -1
+    );
   }
 
   public getRecipe(id: string): Observable<Craft> {
@@ -134,22 +144,19 @@ export class LazyDataService {
             return data.recipes;
         }
       }),
-      filter(recipes => recipes !== undefined),
-      map(recipes => {
-        return recipes.find(r => r.id.toString() === id.toString())
-          || this.data.recipes.find(r => r.id.toString() === id.toString());
+      filter((recipes) => recipes !== undefined),
+      map((recipes) => {
+        return recipes.find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
       })
     );
   }
 
   public getRecipeSync(id: string): Craft {
-    return this.getRecipes().find(r => r.id.toString() === id.toString())
-      || this.data.recipes.find(r => r.id.toString() === id.toString());
+    return this.getRecipes().find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
   }
 
   public getItemRecipeSync(id: string): Craft {
-    return this.getRecipes().find(r => (r as any).result.toString() === id.toString())
-      || this.data.recipes.find(r => r.id.toString() === id.toString());
+    return this.getRecipes().find((r) => (r as any).result.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
   }
 
   public getRecipes(): Craft[] {
@@ -165,13 +172,13 @@ export class LazyDataService {
 
   @Memoized()
   public getExtract(id: number): ListRow {
-    return this.extracts.find(ex => ex.id === id);
+    return this.extracts.find((ex) => ex.id === id);
   }
 
   public get allItems(): any {
     const res = { ...this.data.items };
     if (this.data.koItems) {
-      Object.keys(this.data.koItems).forEach(koKey => {
+      Object.keys(this.data.koItems).forEach((koKey) => {
         if (res[koKey] !== undefined) {
           res[koKey].ko = this.data.koItems[koKey].ko;
         } else {
@@ -180,7 +187,7 @@ export class LazyDataService {
       });
     }
     if (this.data.zhItems) {
-      Object.keys(this.data.zhItems).forEach(zhKey => {
+      Object.keys(this.data.zhItems).forEach((zhKey) => {
         if (res[zhKey] !== undefined) {
           res[zhKey].zh = this.data.zhItems[zhKey].zh;
         } else {
@@ -193,17 +200,15 @@ export class LazyDataService {
 
   public merge(...dataEntries: any[]): any {
     return dataEntries.reduce((merged, entry) => {
-      Object.keys(entry)
-        .forEach(key => {
-          if (merged[key] !== undefined) {
-            Object.keys(entry[key])
-              .forEach(lang => {
-                merged[key][lang] = entry[key][lang];
-              });
-          } else {
-            merged[key] = merged[key] || entry[key];
-          }
-        });
+      Object.keys(entry).forEach((key) => {
+        if (merged[key] !== undefined) {
+          Object.keys(entry[key]).forEach((lang) => {
+            merged[key][lang] = entry[key][lang];
+          });
+        } else {
+          merged[key] = merged[key] || entry[key];
+        }
+      });
       return merged;
     }, {});
   }
@@ -220,15 +225,16 @@ export class LazyDataService {
 
     const extractsPath = `/assets/extracts${environment.production ? '.' + extractsHash : ''}.json`;
 
-    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData(extractsPath)])
-      .subscribe(([dcList, patches, extracts]) => {
+    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData(extractsPath)]).subscribe(
+      ([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
         this.patches = patches as any[];
         this.extracts = extracts;
         this.extracts$.next(extracts);
         xivapiAndExtractsReady$.next();
         xivapiAndExtractsReady$.complete();
-      });
+      }
+    );
 
     const languageToLoad = ['ko', 'zh'].indexOf(lang) > -1 ? lang : 'en';
 
@@ -241,8 +247,8 @@ export class LazyDataService {
 
     const mandatoryForeignFiles = ['job-abbr.json'];
 
-    const filesToLoad = lazyFilesList.filter(entry => {
-      if (mandatoryForeignFiles.some(file => entry.fileName.toLowerCase().endsWith(file))) {
+    const filesToLoad = Object.entries(lazyFilesList).filter(([key, entry]) => {
+      if (mandatoryForeignFiles.some((file) => entry.fileName.toLowerCase().endsWith(file))) {
         return true;
       }
       if (languageToLoad === 'en') {
@@ -252,18 +258,21 @@ export class LazyDataService {
       }
     });
 
-    combineLatest(filesToLoad.map(row => {
-      return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
-        map(data => {
-          return {
-            ...row,
-            data: data
-          };
-        })
-      );
-    })).subscribe((results) => {
+    combineLatest(
+      filesToLoad.map(([key, row]) => {
+        return this.getData(`/assets/data/${environment.production ? row.hashedFileName : row.fileName}`).pipe(
+          map((data) => {
+            return {
+              ...row,
+              propertyName: key,
+              data: data,
+            };
+          })
+        );
+      })
+    ).subscribe((results) => {
       const lazyData: Partial<LazyData> = this.data || {};
-      results.forEach(row => {
+      results.forEach((row) => {
         lazyData[row.propertyName] = row.data;
       });
       this.data = lazyData as LazyData;

@@ -1,0 +1,86 @@
+{
+  "1": {
+    "en": "Roulette",
+    "ja": "ルーレット",
+    "de": "Zufällig",
+    "fr": "Roulette"
+  },
+  "2": {
+    "en": "All Open",
+    "ja": "オールオープン",
+    "de": "Alle offen",
+    "fr": "Toutes sur table"
+  },
+  "3": {
+    "en": "Three Open",
+    "ja": "スリーオープン",
+    "de": "Drei offen",
+    "fr": "Trois sur table"
+  },
+  "4": {
+    "en": "Same",
+    "ja": "セイム",
+    "de": "Gleich",
+    "fr": "Identique"
+  },
+  "5": {
+    "en": "Sudden Death",
+    "ja": "サドンデス",
+    "de": "Verlängerung",
+    "fr": "Mort subite"
+  },
+  "6": {
+    "en": "Plus",
+    "ja": "プラス",
+    "de": "Plus",
+    "fr": "Plus"
+  },
+  "7": {
+    "en": "Random",
+    "ja": "ランダムハンド",
+    "de": "Zufallshand",
+    "fr": "Aléatoire"
+  },
+  "8": {
+    "en": "Order",
+    "ja": "オーダー",
+    "de": "Ordnung",
+    "fr": "Ordre"
+  },
+  "9": {
+    "en": "Chaos",
+    "ja": "カオス",
+    "de": "Chaos",
+    "fr": "Chaos"
+  },
+  "10": {
+    "en": "Reverse",
+    "ja": "リバース",
+    "de": "Umkehrung",
+    "fr": "Inversion"
+  },
+  "11": {
+    "en": "Fallen Ace",
+    "ja": "エースキラー",
+    "de": "Assfresser",
+    "fr": "Tueur d'as"
+  },
+  "12": {
+    "en": "Ascension",
+    "ja": "タイプアセンド",
+    "de": "Bonus",
+    "fr": "Bonus"
+  },
+  "13": {
+    "en": "Descension",
+    "ja": "タイプディセンド",
+    "de": "Malus",
+    "fr": "Malus"
+  },
+  "14": {
+    "en": "Swap",
+    "ja": "スワップ",
+    "de": "Tauschen",
+    "fr": "Échange"
+  }
+}

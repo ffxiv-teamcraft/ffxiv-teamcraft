@@ -7,46 +7,57 @@ const hashFiles = require('hash-files');
 console.log(colors.cyan(`Updating lazy loaded files list`));
 
 const baseFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/'));
-const koFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/ko/')).map(row => `/ko/${row}`);
-const zhFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/zh/')).map(row => `/zh/${row}`);
+const koFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/ko/')).map((row) => `/ko/${row}`);
+const zhFiles = fs.readdirSync(path.join(__dirname, '../../apps/client/src/assets/data/zh/')).map((row) => `/zh/${row}`);
 
-fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-files-list.ts'),
-  `export const lazyFilesList = ${JSON.stringify([...baseFiles, ...koFiles, ...zhFiles]
-      .filter(row => {
+const getPropertyName = (filename) => _.camelCase(filename.replace('.json', '').replace(/\/\w+\//, ''));
+
+fs.writeFileSync(
+  path.join(__dirname, '../../apps/client/src/app/core/data/lazy-files-list.ts'),
+  `export const lazyFilesList = ${JSON.stringify(
+    [...baseFiles, ...koFiles, ...zhFiles]
+      .filter((row) => {
         return row.indexOf('.json') > -1;
       })
-      .map(row => {
+      .reduce((acc, row) => {
         const hash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/data/', row)] });
+        const propertyName = getPropertyName(row);
         return {
-          fileName: row,
-          hashedFileName: `${row.replace('.json', '')}.${hash}.json`,
-          propertyName: _.camelCase(row.replace('.json', '').replace(/\/\w+\//, ''))
+          ...acc,
+          [propertyName]: {
+            fileName: row,
+            hashedFileName: `${row.replace('.json', '')}.${hash}.json`,
+          },
         };
-      })
-    , null, 2)};`.replace(/"/g, '\'')
+      }, {}),
+    null,
+    2
+  )};`.replace(/"/g, "'")
 );
 
 console.log(colors.green('Lazy loaded files list updated'));
 
 console.log(colors.cyan(`Updating lazy loaded data interface`));
 
-fs.writeFileSync(path.join(__dirname, '../../apps/client/src/app/core/data/lazy-data.ts'),
-  `export interface LazyData { 
-  ${
-    [...baseFiles, ...koFiles, ...zhFiles]
-      .filter(row => {
-        return row.indexOf('.json') > -1;
-      })
-      .map(row => {
-        return `${_.camelCase(row.replace('.json', '').replace(/\/\w+\//, ''))}`;
-      })
-      .join(': any;\n  ')
-  }: any;
-}`.replace(/"/g, '\'')
+fs.writeFileSync(
+  path.join(__dirname, '../../apps/client/src/app/core/data/lazy-data.ts'),
+  `export type LazyDataKey = keyof LazyData;
+
+  export interface LazyData { 
+  ${[...baseFiles, ...koFiles, ...zhFiles]
+    .filter((row) => {
+      return row.indexOf('.json') > -1;
+    })
+    .map(getPropertyName)
+    .join(': any;\n  ')}: any;
+}`.replace(/"/g, "'")
 );
 
 const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/extracts.json')] });
-fs.writeFileSync(path.join(__dirname + '/../../apps/client/src/environments/extracts-hash.ts'), `export const extractsHash = \`${extractsHash}\`;
-`);
+fs.writeFileSync(
+  path.join(__dirname + '/../../apps/client/src/environments/extracts-hash.ts'),
+  `export const extractsHash = \`${extractsHash}\`;
+`
+);
 
 console.log(colors.green(`Lazy loaded data interface updated`));
