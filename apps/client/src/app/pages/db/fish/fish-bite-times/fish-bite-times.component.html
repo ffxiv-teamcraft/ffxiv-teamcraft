@@ -1,0 +1,5 @@
+<nz-card [nzTitle]="'DB.FISH.Bite_time' | translate" [nzLoading]="loading$ | async">
+  <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.min | number: '1.0-1'" [nzTitle]="'COMMON.Minimum' | translate"></nz-statistic>
+  <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.max | number: '1.0-1'" [nzTitle]="'COMMON.Maximum' | translate"></nz-statistic>
+  <nz-statistic [nzSuffix]="'s'" [nzValue]="(biteTimeChart$ | async)?.avg | number: '1.0-1'" [nzTitle]="'COMMON.Average' | translate"></nz-statistic>
+</nz-card>

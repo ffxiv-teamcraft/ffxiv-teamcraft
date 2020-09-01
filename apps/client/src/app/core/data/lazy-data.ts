@@ -1,4 +1,6 @@
-export interface LazyData { 
+export type LazyDataKey = keyof LazyData;
+
+  export interface LazyData { 
   achievementIcons: any;
   achievements: any;
   actionCdGroups: any;
@@ -25,6 +27,7 @@ export interface LazyData {
   fishingLog: any;
   fishingSpots: any;
   foods: any;
+  freeCompanyActions: any;
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
@@ -68,6 +71,7 @@ export interface LazyData {
   territoryLayers: any;
   traits: any;
   tribes: any;
+  tripleTriadRules: any;
   ventures: any;
   weathers: any;
   koAchievementDescriptions: any;

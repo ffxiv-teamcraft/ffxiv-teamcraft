@@ -1,0 +1,44 @@
+:host ::ng-deep {
+  .ngx-charts {
+    text {
+      fill: var(--text-color) !important;
+    }
+  }
+
+  .legend-item:hover {
+    color: var(--text-color) !important;
+    opacity: 0.8;
+  }
+
+  .chart-legend .legend-label .active .legend-label-text {
+    color: var(--text-color) !important;
+    opacity: 0.8;
+  }
+
+  .ant-card {
+    .ant-card-head {
+      max-height: 56px;
+    }
+
+    .ant-card-body {
+      border-top: 1px solid #444;
+    }
+
+    &.no-graph {
+      .ant-card-body {
+        padding: 12px 24px !important;
+      }
+    }
+
+    &.card-with-list {
+      .ant-card-body {
+        overflow-y: auto;
+        padding: 0 !important;
+      }
+    }
+  }
+
+  .ant-list-item {
+    padding: 10px !important;
+  }
+}

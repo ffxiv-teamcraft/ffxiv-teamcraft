@@ -1,5 +1,12 @@
-@import '../common-db';
-@import '../fish/fish.component.less';
+::ng-deep {
+  .ant-card {
+    &.card-with-list:not(.expanded) {
+      .ant-card-body {
+        height: 348px;
+      }
+    }
+  }
+}
 
 .grid-table {
   height: 100%;
@@ -27,10 +34,60 @@
   }
 
   .not-highlighted {
-    opacity: .3;
+    opacity: 0.3;
   }
 }
 
 .bait-selector {
   min-width: 200px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #444;
+}
+
+.card-list {
+  overflow-y: auto;
+  min-height: 348px;
+  height: 100%;
+  padding: 24px;
+}
+
+.list-row {
+  padding: 5px;
+  width: 100%;
+}
+
+.no-data {
+  padding-top: 24px;
+}
+
+.details-block.no-icon {
+  padding: 15.5px 10px;
+}
+
+.weathers-list-block {
+  margin-top: 10px;
+}
+
+.bite-times {
+  width: 200px;
+}
+
+.rank-star {
+  width: 24px;
+  height: 24px;
+}
+
+.your-rank {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.rank-size {
+  font-size: 24px;
+}
+
+.ranking-container {
+  height: 100%;
 }

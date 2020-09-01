@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { I18nName } from '../../model/common/i18n-name';
-import freeCompanyActions from './sources/free-company-actions.json';
-import { Language } from './language';
-import { mapIds } from './sources/map-ids';
-import { LazyDataService } from './lazy-data.service';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { Npc } from '../../pages/db/model/npc/npc';
 import { Quest } from '../../pages/db/model/quest/quest';
+import { Trait } from '../../pages/db/model/trait/trait';
+import { ExtendedLanguageKeys } from './extended-language-keys';
+import { Language } from './language';
+import { LazyData, LazyDataKey } from './lazy-data';
+import { LazyDataProviderService } from './lazy-data-provider.service';
+import { LazyDataService } from './lazy-data.service';
+import { mapIds } from './sources/map-ids';
 import { tripleTriadRules } from './sources/triple-triad-rules';
 import { zhActions } from './sources/zh-actions';
 import { zhWorlds } from './sources/zh-worlds';
-import { ExtendedLanguageKeys } from './extended-language-keys';
-import { LazyData } from './lazy-data';
-import { Trait } from '../../pages/db/model/trait/trait';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class LocalizedDataService {
-
   indentRegexp = new RegExp('<Indent/>', 'i');
 
-  constructor(private lazyData: LazyDataService) {
-  }
+  constructor(private lazyDataProvider: LazyDataProviderService, private lazyData: LazyDataService) {}
 
   public getWorldName(world: string): I18nName {
     const i18nName: I18nName = {
@@ -55,7 +53,7 @@ export class LocalizedDataService {
   }
 
   public getMapName(id: number): any {
-    const entry = mapIds.find(m => m.id === id);
+    const entry = mapIds.find((m) => m.id === id);
     return this.getPlace(entry ? entry.zone : 1);
   }
 
@@ -87,7 +85,7 @@ export class LocalizedDataService {
   }
 
   public getShopName(englishName: string): I18nName {
-    const id = +Object.keys(this.lazyData.data.shops).find(k => this.lazyData.data.shops[k].en === englishName);
+    const id = +Object.keys(this.lazyData.data.shops).find((k) => this.lazyData.data.shops[k].en === englishName);
     return this.getRowWithExtendedLanguage('shops', id);
   }
 
@@ -110,7 +108,7 @@ export class LocalizedDataService {
   }
 
   public getMobId(name: string): number {
-    return +Object.keys(this.lazyData.data.mobs).find(k => this.lazyData.data.mobs[k].en.toLowerCase() === name.toLowerCase());
+    return +Object.keys(this.lazyData.data.mobs).find((k) => this.lazyData.data.mobs[k].en.toLowerCase() === name.toLowerCase());
   }
 
   public getVenture(id: number): I18nName {
@@ -143,7 +141,7 @@ export class LocalizedDataService {
       en: lazyRow.Name_en,
       de: lazyRow.Name_de,
       ja: lazyRow.Name_ja,
-      fr: lazyRow.Name_fr
+      fr: lazyRow.Name_fr,
     };
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhTribes', koKey: 'koTribes' });
     return row;
@@ -162,7 +160,7 @@ export class LocalizedDataService {
       en: lazyRow.Name_en,
       de: lazyRow.Name_de,
       ja: lazyRow.Name_ja,
-      fr: lazyRow.Name_fr
+      fr: lazyRow.Name_fr,
     };
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhBaseParams', koKey: 'koBaseParams' });
 
@@ -184,14 +182,14 @@ export class LocalizedDataService {
   }
 
   public getFreeCompanyAction(id: number): I18nName {
-    const row = this.getRow(freeCompanyActions, id);
+    const row = this.getRow(this.lazyData.data.freeCompanyActions, id);
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhFreeCompanyActions', koKey: 'koFreeCompanyActions' });
 
     return row;
   }
 
   public getMapId(name: string): number {
-    const result = mapIds.find(map => map.name === name);
+    const result = mapIds.find((map) => map.name === name);
     if (result === undefined) {
       if (name === 'Gridania') {
         return 2;
@@ -227,11 +225,13 @@ export class LocalizedDataService {
   }
 
   private getEnActionFromKoActionName(name: string): I18nName {
-    const craftActionId = Object.keys(this.lazyData.data.koCraftActions).find(key => this.lazyData.data.koCraftActions[key].ko.toLowerCase() === name.toLowerCase());
+    const craftActionId = Object.keys(this.lazyData.data.koCraftActions).find(
+      (key) => this.lazyData.data.koCraftActions[key].ko.toLowerCase() === name.toLowerCase()
+    );
     if (craftActionId) {
       return this.lazyData.data.craftActions[craftActionId];
     }
-    const actionId = Object.keys(this.lazyData.data.koActions).find(key => this.lazyData.data.koActions[key].ko.toLowerCase() === name.toLowerCase());
+    const actionId = Object.keys(this.lazyData.data.koActions).find((key) => this.lazyData.data.koActions[key].ko.toLowerCase() === name.toLowerCase());
     if (actionId) {
       return this.lazyData.data.actions[actionId];
     }
@@ -248,7 +248,7 @@ export class LocalizedDataService {
       }
     }
     if (language === 'zh') {
-      const zhRow = zhActions.find(a => a.zh === name);
+      const zhRow = zhActions.find((a) => a.zh === name);
       if (zhRow !== undefined) {
         name = zhRow.en;
         language = 'en';
@@ -266,7 +266,7 @@ export class LocalizedDataService {
     if (koResultRow !== undefined) {
       result.ko = koResultRow.ko;
     }
-    const zhResultRow = zhActions.find(a => a.en === result.en);
+    const zhResultRow = zhActions.find((a) => a.en === result.en);
     if (zhResultRow !== undefined) {
       result.zh = zhResultRow.zh;
     }
@@ -287,19 +287,19 @@ export class LocalizedDataService {
     return this.getRowWithExtendedLanguage('statuses', id);
   }
 
-  public getNotebookDivision(id: number): { name: I18nName, pages: number[] } {
-    const row = this.getRow<{ name: I18nName, pages: number[] }>(this.lazyData.data.notebookDivision, id);
+  public getNotebookDivision(id: number): { name: I18nName; pages: number[] } {
+    const row = this.getRow<{ name: I18nName; pages: number[] }>(this.lazyData.data.notebookDivision, id);
     this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivision', koKey: 'koNotebookDivision' });
     return row;
   }
 
-  public getNotebookDivisionCategory(id: number): { name: I18nName, divisions: number[] } {
-    const row = this.getRow<{ name: I18nName, divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
+  public getNotebookDivisionCategory(id: number): { name: I18nName; divisions: number[] } {
+    const row = this.getRow<{ name: I18nName; divisions: number[] }>(this.lazyData.data.notebookDivisionCategory, id);
     this.tryFillExtendedLanguage(row.name, id, { zhKey: 'zhNotebookDivisionCategory', koKey: 'koNotebookDivisionCategory' });
     return row;
   }
 
-  public getExpansions(): ({ exVersion: number, majorVersion: number, name: I18nName })[] {
+  public getExpansions(): { exVersion: number; majorVersion: number; name: I18nName }[] {
     return Object.entries(this.lazyData.data.exVersions).map(([exVersion, name]) => {
       this.tryFillExtendedLanguage(name as I18nName, exVersion, { zhKey: 'zhExVersions', koKey: 'koExVersions' });
 
@@ -307,7 +307,7 @@ export class LocalizedDataService {
       return {
         exVersion: exVersionNum,
         majorVersion: exVersionNum + 2, // Not sure if this is guaranteed
-        name: name as I18nName
+        name: name as I18nName,
       };
     });
   }
@@ -319,7 +319,7 @@ export class LocalizedDataService {
     return array[id];
   }
 
-  private getRowWithExtendedLanguage<T extends I18nName = I18nName>(key: keyof LazyData, id: number | string): T {
+  private getRowWithExtendedLanguage<T extends I18nName = I18nName>(key: LazyDataKey, id: number | string): T {
     const row = this.getRow<T>(this.lazyData.data[key], id);
     if (row === undefined) {
       return undefined;
@@ -332,7 +332,7 @@ export class LocalizedDataService {
   private guessExtendedLanguageKeys(key: keyof LazyData) {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
-      koKey: this.guessExtendedLanguageKey('ko', key)
+      koKey: this.guessExtendedLanguageKey('ko', key),
     };
   }
 
@@ -351,12 +351,12 @@ export class LocalizedDataService {
     // If an item doesn't exist yet inside zh and ko items, use english name instead.
     if (zhKey) {
       const zhRow = this.getRow(this.lazyData.data[zhKey], id);
-      row.zh = zhRow !== undefined ? zhRow.zh : (row.zh || row.en);
+      row.zh = zhRow !== undefined ? zhRow.zh : row.zh || row.en;
     }
 
     if (koKey) {
       const koRow = this.getRow(this.lazyData.data[koKey], id);
-      row.ko = koRow !== undefined ? koRow.ko : (row.ko || row.en);
+      row.ko = koRow !== undefined ? koRow.ko : row.ko || row.en;
     }
   }
 
@@ -367,7 +367,7 @@ export class LocalizedDataService {
       [`${fieldName}_de`]: value.de,
       [`${fieldName}_ja`]: value.ja,
       [`${fieldName}_ko`]: value.ko || value.en,
-      [`${fieldName}_chs`]: value.zh || value.en
+      [`${fieldName}_chs`]: value.zh || value.en,
     };
   }
 
@@ -378,7 +378,7 @@ export class LocalizedDataService {
       de: value[`${fieldName}_de`],
       ja: value[`${fieldName}_ja`],
       ko: value[`${fieldName}_ko`],
-      zh: value[`${fieldName}_chs`]
+      zh: value[`${fieldName}_chs`],
     };
 
     if (key !== null) {

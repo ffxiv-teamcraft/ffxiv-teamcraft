@@ -1,0 +1,13 @@
+<nz-card [nzTitle]="'DB.FISH.Baits' | translate" [nzLoading]="loading$ | async" [style.width.px]="480 + 48">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div *ngFor="let row of baitsChartData$ | async; let last = last">
+      <app-item-icon [itemId]="row.baitId" [icon]="row.baitId" width="32"></app-item-icon>
+      <nz-divider nzType="vertical" *ngIf="!last"></nz-divider>
+    </div>
+  </div>
+  <ngx-charts-advanced-pie-chart
+    [view]="[480, 250]"
+    [scheme]="{ domain: [settings.theme.highlight, settings.theme.primary, settings.theme.trigger] }"
+    [results]="baitsChartData$ | async"
+  ></ngx-charts-advanced-pie-chart>
+</nz-card>

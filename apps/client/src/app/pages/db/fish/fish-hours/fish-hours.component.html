@@ -1,0 +1,15 @@
+<nz-card [nzTitle]="'DB.FISH.Hour' | translate" [nzLoading]="loading$ | async" [style.width.px]="600 + 48">
+  <ngx-charts-bar-vertical
+    [view]="[600, 300]"
+    [scheme]="{ domain: [settings.theme.primary] }"
+    [customColors]="fishCtx.highlightTime$ | async"
+    [gradient]="false"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="false"
+    [showXAxisLabel]="false"
+    [showYAxisLabel]="false"
+    barPadding="5"
+    [results]="etimesChartData$ | async"
+  ></ngx-charts-bar-vertical>
+</nz-card>

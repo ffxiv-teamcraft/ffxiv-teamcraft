@@ -25,7 +25,7 @@ import { groupBy } from 'lodash';
 @Component({
   selector: 'app-fishing-spot',
   templateUrl: './fishing-spot.component.html',
-  styleUrls: ['./fishing-spot.component.less']
+  styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less']
 })
 export class FishingSpotComponent extends TeamcraftPageComponent {
 
