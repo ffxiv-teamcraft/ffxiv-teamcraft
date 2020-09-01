@@ -397,7 +397,9 @@ export class AppComponent implements OnInit {
           this.use(event.url.substr(languageIndex + 6, 2), false, true);
         }
         gtag('set', 'page', event.url);
-        gtag('send', 'pageview');
+        gtag('event', 'page_view', {
+          page_path: event.urlAfterRedirects
+        })
       });
 
       // Custom protocol detection
