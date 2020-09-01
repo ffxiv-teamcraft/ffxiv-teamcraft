@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.12"></a>
+## [7.3.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.11...v7.3.12) (2020-09-01)
+
+
+### Bug Fixes
+
+* **db:** removed wrong coordinates for a spearfishing nodes ([b5f30f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5f30f8))
+* **desktop:** proper single instance management ([15c8bbd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/15c8bbd)), closes [#1607](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1607)
+* **gearsets:** fixed a possible bug with ariyala import ([3f8da46](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f8da46))
+* **layout:** fixed "assign team member" button not shown properly ([da82386](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da82386))
+* **list:** HQ filter is now properly applied to "fill with inventory" ([067e02e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/067e02e)), closes [#1608](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1608)
+
+
+### Features
+
+* **db:** way better fish data page loading experience ([#1611](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1611)) ([4b81f3c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4b81f3c))
+* support for korean v5.2 update ([5a17d1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a17d1f))
+* **community-lists:** new tags for airship and submarine lists ([8fe4ff6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8fe4ff6))
+
+
+
 <a name="7.3.11"></a>
 ## [7.3.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.10...v7.3.11) (2020-08-26)
 
