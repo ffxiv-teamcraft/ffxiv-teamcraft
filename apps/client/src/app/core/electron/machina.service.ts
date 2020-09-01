@@ -92,6 +92,8 @@ export class MachinaService {
     switch(this.settings.region){
       case Region.China:
         return 108;
+      case Region.Korea:
+        return 0xA9;
       case Region.Global:
       default:
         return 0x37F;
