@@ -118,7 +118,7 @@
     "Tags_filter_placeholder": "Nach Markierungen filtern",
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
     "Exclude_filter_placeholder": "Exclude using tags",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
     "Name_filter_placeholder": "Nach Name filtern",
     "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
   },
@@ -165,7 +165,7 @@
     "Open_in_main_window": "Im Hauptfenster öffnen",
     "Example": "Beispiel",
     "Change": "Ändern",
-    "Dirty_changes": "You have unapplied changes"
+    "Dirty_changes": "Du hast nicht gespeicherte Änderungen"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -188,9 +188,9 @@
     "Node_content": "Knoteninhalt",
     "Toggle_collapse": "Gruppen zusammenfalten umschalten",
     "Add_alarms_to_group": "Alarme für diese Gruppe hinzufügen",
-    "Group_link_copied": "Alarm group link copied",
-    "Group_not_found": "Alarm group not found",
-    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Group_link_copied": "Link zur Alarmgruppe kopiert",
+    "Group_not_found": "Alarmgruppe nicht gefunden",
+    "Add_group_and_alarms": "Diese Gruppe und alle darin enthaltenen Alarme zu den eigenen Alarmen hinzufügen",
     "REALTIME": {
       "Reset_timers": "Timer-Zurücksetzung",
       "WEEKLY_RESETS": "Wöchentliche",
