@@ -1,12 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **community-rotations:** fixed tags taking too much space in some browsers.
-* **desktop:** possible fix for shortcut creation, will be effective on next patch.
-* **metrics:** fixed retainer gil gains counted twice.
-* **recipe-finder:** fixed an issue with min lvl filter being readonly.
-* **trade:** changed icon priority for Allied Seals.
+* **db:** removed wrong coordinates for a spearfishing nodes.
+* **desktop:** proper single instance management.
+* **gearsets:** fixed a possible bug with ariyala import.
+* **layout:** fixed "assign team member" button not shown properly.
+* **list:** HQ filter is now properly applied to "fill with inventory".
 
 
 ### Features
 
-* **data:** support for 5.3 hotfix price changes.`;
+* **db:** way better fish data page loading experience.
+* support for korean v5.2 update.
+* **community-lists:** new tags for airship and submarine lists.`;
