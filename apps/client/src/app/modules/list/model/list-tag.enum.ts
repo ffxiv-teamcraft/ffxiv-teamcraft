@@ -13,6 +13,8 @@ export enum ListTag {
   LEVE = 'Leve',
   GLAMOUR = 'Glamour',
   HOUSING = 'Housing',
+  SUBMARINE = 'Submarine',
+  AIRSHIP = 'Airship',
   MISC = 'Misc',
   QUEST = 'Quest',
   SCRIPTS = 'Scripts',

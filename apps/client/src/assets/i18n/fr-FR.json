@@ -117,8 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Filtrer par tags",
     "Tags_filter_reset": "Réinitialiser le filtre par tags",
-    "Exclude_filter_placeholder": "Exclude using tags",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_placeholder": "Exclure les tags",
+    "Exclude_filter_reset": "Réinitialiser le filtre d'exclusion",
     "Name_filter_placeholder": "Filtrer par nom",
     "No_lists_matching": "Aucune liste correspondant à vos filtres"
   },
@@ -165,7 +165,7 @@
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
     "Example": "Exemple",
     "Change": "Changer",
-    "Dirty_changes": "You have unapplied changes"
+    "Dirty_changes": "Vous avez des modifications non enregistrées"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -188,9 +188,9 @@
     "Node_content": "Contenu du point de récolte",
     "Toggle_collapse": "Ouvrir/fermer tous les groupes",
     "Add_alarms_to_group": "Ajouter des alarmes à ce groupe",
-    "Group_link_copied": "Alarm group link copied",
-    "Group_not_found": "Alarm group not found",
-    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Group_link_copied": "Lien du groupe d'alarmes copié",
+    "Group_not_found": "Groupe d’alarmes introuvable",
+    "Add_group_and_alarms": "Ajouter ce groupe et toutes ses alarmes à vos alarmes",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -698,6 +698,8 @@
     "LEVE": "Mandat",
     "GLAMOUR": "Mirage",
     "HOUSING": "Logement",
+    "SUBMARINE": "Submarine",
+    "AIRSHIP": "Airship",
     "MISC": "Autre",
     "QUEST": "Quête",
     "TANK": "Tank",
@@ -1848,7 +1850,7 @@
     "Total_cost": "Coût total (échanges, gils, etc)",
     "Materia": "Matéria",
     "Amount_needed": "Quantité",
-    "Cost": "Cost",
+    "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
     "Job_cannot_be_changed": "Ne peut pas être modifié après la création",
