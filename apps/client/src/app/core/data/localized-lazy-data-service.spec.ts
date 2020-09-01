@@ -143,4 +143,60 @@ describe('LocalizedLazyDataService', () => {
       }
     }
   }));
+
+  it('should get i18n traits', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
+    const id = 33;
+    const koTrait = await import('../../../assets/data' + lazyFilesList['koTraits'].fileName);
+    const zhTrait = await import('../../../assets/data' + lazyFilesList['zhTraits'].fileName);
+    const koTraitDesc = await import('../../../assets/data' + lazyFilesList['koTraitDescriptions'].fileName);
+    const zhTraitDesc = await import('../../../assets/data' + lazyFilesList['zhTraitDescriptions'].fileName);
+    const enTrait = await import('../../../assets/data/' + lazyFilesList['traits'].fileName);
+    const trait = await service.getTrait(id).toPromise();
+    for (const l of [...languages, 'ru']) {
+      const name = await trait[l].toPromise();
+      const desc = await trait.description[l].toPromise();
+      expect(name).toBeTruthy();
+      expect(desc).toBeTruthy();
+      switch (l) {
+        case 'ko':
+          expect(name).toBe(koTrait[id][l]);
+          expect(desc).toBe(koTraitDesc[id][l]);
+          break;
+        case 'zh':
+          expect(name).toBe(zhTrait[id][l]);
+          expect(desc).toBe(zhTraitDesc[id][l]);
+          break;
+        case 'ru':
+          expect(name).toBe(enTrait[id]['en']);
+          expect(desc).toBe(enTrait[id].description['en']);
+          break;
+        default:
+          expect(name).toBe(enTrait[id][l]);
+          expect(desc).toBe(enTrait[id].description[l]);
+      }
+    }
+  }));
+
+  it('should get i18n quests', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
+    const id = 65537;
+    const koQuest = await import('../../../assets/data' + lazyFilesList['koQuests'].fileName);
+    const zhQuest = await import('../../../assets/data' + lazyFilesList['zhQuests'].fileName);
+    const enQuest = await import('../../../assets/data/' + lazyFilesList['quests'].fileName);
+    const quest = await service.getQuest(id).toPromise();
+    const name = await forkJoin(quest.name).toPromise();
+    expect(quest.icon).toBe(enQuest[id].icon);
+    for (const l of languages) {
+      expect(name[l]).toBeTruthy();
+      switch (l) {
+        case 'ko':
+          expect(name[l]).toBe(koQuest[id][l]);
+          break;
+        case 'zh':
+          expect(name[l]).toBe(zhQuest[id][l]);
+          break;
+        default:
+          expect(name[l]).toBe(enQuest[id].name[l]);
+      }
+    }
+  }));
 });

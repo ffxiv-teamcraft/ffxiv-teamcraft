@@ -196,9 +196,23 @@ export class LocalizedLazyDataService {
   }
 
   public getQuest(id: number): Observable<I18nLazy<Quest>> {
+    const { ruKey, koKey, zhKey } = this.guessExtendedLanguageKeys('quests');
     return this.lazyDataProvider.getLazyData('quests').pipe(
       map((quests) => {
-        return { ...quests[id], name: this.getRow('quests', `${id}.name`) };
+        const quest = quests[id];
+        const en = of(quest?.name?.en);
+        return {
+          ...quest,
+          name: {
+            en,
+            de: of(quest?.name?.de),
+            ja: of(quest?.name?.ja),
+            fr: of(quest?.name?.fr),
+            ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((res) => (res ? of(res) : en))) : en,
+            ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((res) => (res ? of(res) : en))) : en,
+            zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((res) => (res ? of(res) : en))) : en,
+          },
+        };
       })
     );
   }
@@ -304,6 +318,7 @@ export class LocalizedLazyDataService {
     }
     return result.id;
   }
+
   public getCraftingActionIdByName(name: string, lang: Language): Observable<number> {
     const { craftActions, actions } =
       lang === 'ko'
