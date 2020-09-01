@@ -1054,5 +1054,29 @@
   },
   "100402": {
     "ko": "<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>[전문화 기술]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>[제작 중 최대 3번 사용 가능]<UIGlow>01</UIGlow><UIForeground>01</UIForeground>상태를 공정 1회만큼 진행시킵니다.\n실행 시 '제작자의 제도용지'를 소비합니다.\n<UIForeground>F201FA</UIForeground><UIGlow>F201FB</UIGlow>※ 이 기술은 사용해도 제작 공정이 진행되지 않습니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>"
+  },
+  "100403": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100404": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100405": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100406": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100407": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100408": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100409": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
+  },
+  "100410": {
+    "ko": "내구도를 20 소비하여 작업을 진행합니다.\n<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>내구도가 20 미만일 때 사용하면 효율이 50% 감소합니다.<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>효율<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 300\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>성공률<UIGlow>01</UIGlow><UIForeground>01</UIForeground>: 100%"
   }
 }
