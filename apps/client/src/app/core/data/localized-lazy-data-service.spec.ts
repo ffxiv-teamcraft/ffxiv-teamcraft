@@ -8,13 +8,28 @@ import { LazyDataProviderService } from './lazy-data-provider.service';
 import { LocalizedLazyDataService } from './localized-lazy-data.service';
 import { zhWorlds } from './sources/zh-worlds';
 import { lazyFilesList } from './lazy-files-list';
+import { LazyDataKey } from './lazy-data';
 
 const languages = ['en', 'fr', 'ja', 'de', 'ko', 'zh'] as const; // Not testing ru consistently, as it is not widely availabe (and we'd be testing that it falls back to en)
 
 /**
- * Note about json imports in the following tests: we copy/paste the path each time (instead of using a helper),
- * because if the path name is not statically analyzable, it will not get included in the test bundle (and will produce false negatives).
+ * Loads a non-extended-language json resource.
+ * Note that this must remain separate from the other load function, as the path names must be statically analyzable for webpack to include the resources in the bundle.
+ * @param key The lazy data key to load data for.
  */
+const load = async (key: LazyDataKey) => {
+  return await import('../../../assets/data/' + lazyFilesList[key].fileName);
+};
+
+/**
+ * Loads an extended-language json resource.
+ * Note that this must remain separate from the other load function, as the path names must be statically analyzable for webpack to include the resources in the bundle.
+ * @param key The lazy data key to load data for.
+ */
+const loadExt = async (key: LazyDataKey) => {
+  return await import('../../../assets/data' + lazyFilesList[key].fileName);
+};
+
 describe('LocalizedLazyDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -47,9 +62,9 @@ describe('LocalizedLazyDataService', () => {
   it('should get i18n item', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 1;
     const item = await forkJoin(service.getItem(id)).toPromise();
-    const koItems = await import('../../../assets/data' + lazyFilesList['koItems'].fileName);
-    const zhItems = await import('../../../assets/data' + lazyFilesList['zhItems'].fileName);
-    const enItems = await import('../../../assets/data/' + lazyFilesList['items'].fileName);
+    const koItems = await loadExt('koItems');
+    const zhItems = await loadExt('zhItems');
+    const enItems = await load('items');
     for (const l of languages) {
       switch (l) {
         case 'ko':
@@ -67,7 +82,7 @@ describe('LocalizedLazyDataService', () => {
   it('should gracefully fallback to en when unavailabe', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 1;
     const item = await forkJoin(service.getItem(id)).toPromise();
-    const enItems = await import('../../../assets/data/' + lazyFilesList['items'].fileName);
+    const enItems = await load('items');
     expect(item['ru']).not.toBeUndefined();
     expect(item['ru']).toBe(enItems[id]['en']);
   }));
@@ -75,9 +90,9 @@ describe('LocalizedLazyDataService', () => {
   it('should get i18n fate', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 120;
     const fate = await service.getFate(id).toPromise();
-    const koFates = await import('../../../assets/data' + lazyFilesList['koFates'].fileName);
-    const zhFates = await import('../../../assets/data' + lazyFilesList['zhFates'].fileName);
-    const enFates = await import('../../../assets/data/' + lazyFilesList['fates'].fileName);
+    const koFates = await loadExt('koFates');
+    const zhFates = await loadExt('zhFates');
+    const enFates = await load('fates');
     expect(fate.icon).toBeTruthy();
     expect(fate.level).toBeTruthy();
     expect(fate.icon).toBe(enFates[id].icon);
@@ -104,9 +119,9 @@ describe('LocalizedLazyDataService', () => {
   it('should get i18n npc', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 1000236;
     const npc = await service.getNpc(id).toPromise();
-    const koNpc = await import('../../../assets/data' + lazyFilesList['koNpcs'].fileName);
-    const zhNpc = await import('../../../assets/data' + lazyFilesList['zhNpcs'].fileName);
-    const enNpc = await import('../../../assets/data/' + lazyFilesList['npcs'].fileName);
+    const koNpc = await loadExt('koNpcs');
+    const zhNpc = await loadExt('zhNpcs');
+    const enNpc = await load('npcs');
     expect(npc.defaultTalks).toBeTruthy();
     const name = await forkJoin({ en: npc.en, de: npc.de, fr: npc.fr, ja: npc.ja, ko: npc.ko, zh: npc.zh }).toPromise();
     for (const l of languages) {
@@ -125,9 +140,9 @@ describe('LocalizedLazyDataService', () => {
 
   it('should get i18n shops', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = '1769474';
-    const koShop = await import('../../../assets/data' + lazyFilesList['koShops'].fileName);
-    const zhShop = await import('../../../assets/data' + lazyFilesList['zhShops'].fileName);
-    const enShop = await import('../../../assets/data/' + lazyFilesList['shops'].fileName);
+    const koShop = await loadExt('koShops');
+    const zhShop = await loadExt('zhShops');
+    const enShop = await load('shops');
     const name = enShop[id].en;
     const shop = await forkJoin(service.getShopName(name)).toPromise();
     for (const l of languages) {
@@ -146,11 +161,11 @@ describe('LocalizedLazyDataService', () => {
 
   it('should get i18n traits', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 33;
-    const koTrait = await import('../../../assets/data' + lazyFilesList['koTraits'].fileName);
-    const zhTrait = await import('../../../assets/data' + lazyFilesList['zhTraits'].fileName);
-    const koTraitDesc = await import('../../../assets/data' + lazyFilesList['koTraitDescriptions'].fileName);
-    const zhTraitDesc = await import('../../../assets/data' + lazyFilesList['zhTraitDescriptions'].fileName);
-    const enTrait = await import('../../../assets/data/' + lazyFilesList['traits'].fileName);
+    const koTrait = await loadExt('koTraits');
+    const zhTrait = await loadExt('zhTraits');
+    const koTraitDesc = await loadExt('koTraitDescriptions');
+    const zhTraitDesc = await loadExt('zhTraitDescriptions');
+    const enTrait = await load('traits');
     const trait = await service.getTrait(id).toPromise();
     for (const l of [...languages, 'ru']) {
       const name = await trait[l].toPromise();
@@ -179,9 +194,9 @@ describe('LocalizedLazyDataService', () => {
 
   it('should get i18n quests', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
     const id = 65537;
-    const koQuest = await import('../../../assets/data' + lazyFilesList['koQuests'].fileName);
-    const zhQuest = await import('../../../assets/data' + lazyFilesList['zhQuests'].fileName);
-    const enQuest = await import('../../../assets/data/' + lazyFilesList['quests'].fileName);
+    const koQuest = await loadExt('koQuests');
+    const zhQuest = await loadExt('zhQuests');
+    const enQuest = await load('quests');
     const quest = await service.getQuest(id).toPromise();
     const name = await forkJoin(quest.name).toPromise();
     expect(quest.icon).toBe(enQuest[id].icon);
@@ -196,6 +211,48 @@ describe('LocalizedLazyDataService', () => {
           break;
         default:
           expect(name[l]).toBe(enQuest[id].name[l]);
+      }
+    }
+  }));
+
+  it('should get i18n tribe', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
+    const id = 1;
+    const ko = await loadExt('koTribes');
+    const zh = await loadExt('zhTribes');
+    const en = await load('tribes');
+    const data = await forkJoin(service.getTribeName(id)).toPromise();
+    for (const l of languages) {
+      expect(data[l]).toBeTruthy();
+      switch (l) {
+        case 'ko':
+          expect(data[l]).toBe(ko[id][l]);
+          break;
+        case 'zh':
+          expect(data[l]).toBe(zh[id][l]);
+          break;
+        default:
+          expect(data[l]).toBe(en[id][`Name_${l}`]);
+      }
+    }
+  }));
+
+  it('should get i18n base param names', inject([LocalizedLazyDataService], async (service: LocalizedLazyDataService) => {
+    const id = 1;
+    const ko = await loadExt('koBaseParams');
+    const zh = await loadExt('zhBaseParams');
+    const en = await load('baseParams');
+    const data = await forkJoin(service.getBaseParamName(id)).toPromise();
+    for (const l of languages) {
+      expect(data[l]).toBeTruthy();
+      switch (l) {
+        case 'ko':
+          expect(data[l]).toBe(ko[id][l]);
+          break;
+        case 'zh':
+          expect(data[l]).toBe(zh[id][l]);
+          break;
+        default:
+          expect(data[l]).toBe(en[id][`Name_${l}`]);
       }
     }
   }));
