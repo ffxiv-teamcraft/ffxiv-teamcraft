@@ -20,7 +20,7 @@ export class MetricsDashboardLayout extends DataWithPermissions {
       }, { component: 'table', type: -1, filters: [{ name: 'NoFilter', args: [] }], title: 'Full entries record' }], [{
         component: 'pie-chart',
         type: 1,
-        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [1, 3] }],
+        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [1, 3] }, { gate: 'AND', not: true, name: 'GilFilter', args: [] }],
         title: 'Items gathered',
         params: { metric: 'amount' }
       }, {
