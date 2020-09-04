@@ -17,18 +17,22 @@
               class="custom-tag">{{('SIMULATOR.COMMUNITY_ROTATIONS.TAGS.' + tag) | translate}}</nz-tag>
             <nz-tag [style.border-color]="'#bd0ef2'"
                     class="custom-tag">{{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}
-              : {{rotation.community.minCraftsmanship}}</nz-tag>
+              : {{rotation.community.minCraftsmanship | number:'1.0-0':translate.currentLang}}</nz-tag>
             <nz-tag [style.border-color]="'#bd0ef2'"
                     class="custom-tag">{{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}
-              : {{rotation.community.minControl}}</nz-tag>
+              : {{rotation.community.minControl | number:'1.0-0':translate.currentLang}}</nz-tag>
             <nz-tag [style.border-color]="'#bd0ef2'"
                     class="custom-tag">{{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}
-              : {{rotation.community.minCp}}</nz-tag>
+              : {{rotation.community.minCp | number:'1.0-0':translate.currentLang}}</nz-tag>
             <nz-tag
               [style.border-color]="'#108ee9'"
               class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Steps_count' | translate: { count: rotation.rotation.length } }}</nz-tag>
             <nz-tag [style.border-color]="'#f2b10e'" class="custom-tag">{{'SIMULATOR.Durability' | translate}}
-              : {{rotation.community.durability}}</nz-tag>
+              : {{rotation.community.durability | number:'1.0-0':translate.currentLang}}</nz-tag>
+            <nz-tag [style.border-color]="'#f2b10e'" class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Difficulty_filter_placeholder' | translate}}
+              : {{rotation.recipe.progress | number:'1.0-0':translate.currentLang}}</nz-tag>
+            <nz-tag [style.border-color]="'#f2b10e'" class="custom-tag">{{'SIMULATOR.Quality' | translate}}
+              : {{rotation.recipe.quality | number:'1.0-0':translate.currentLang}}</nz-tag>
           </ng-container>
         </div>
         <div fxLayout="row" fxLayoutGap="5px">

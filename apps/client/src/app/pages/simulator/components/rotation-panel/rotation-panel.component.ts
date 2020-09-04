@@ -84,7 +84,7 @@ export class RotationPanelComponent implements OnInit {
 
   constructor(private linkTools: LinkToolsService,
               private rotationsFacade: RotationsFacade, private message: NzMessageService,
-              private translate: TranslateService, private dialog: NzModalService,
+              public translate: TranslateService, private dialog: NzModalService,
               public authFacade: AuthFacade, private customLinksFacade: CustomLinksFacade,
               private router: Router, public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService, private ipc: IpcService,
