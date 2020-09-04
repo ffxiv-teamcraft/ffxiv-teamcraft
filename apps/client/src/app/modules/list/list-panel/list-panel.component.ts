@@ -235,7 +235,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   setColor(color: ListColor, list: List): void {
     list.color = color;
-    this.listsFacade.updateList(list);
+    this.listsFacade.pureUpdateList(list.$key, { color: color });
   }
 
   getTags(): string[] {
