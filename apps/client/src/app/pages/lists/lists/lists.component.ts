@@ -76,6 +76,7 @@ export class ListsComponent {
     );
 
     this.favoriteLists$ = this.authFacade.favorites$.pipe(
+      filter(favorites => favorites !== undefined),
       map(favorites => (favorites.lists || [])),
       tap(lists => lists.forEach(list => this.listsFacade.load(list))),
       mergeMap(lists => {
