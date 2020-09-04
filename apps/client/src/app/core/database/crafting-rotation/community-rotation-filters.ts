@@ -6,4 +6,6 @@ export interface CommunityRotationFilters {
   craftsmanship: number;
   control: number;
   cp: number;
+  difficulty: number;
+  quality: number;
 }
