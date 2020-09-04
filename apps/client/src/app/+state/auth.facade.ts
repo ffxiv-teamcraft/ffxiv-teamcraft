@@ -52,7 +52,7 @@ export class AuthFacade {
   linkingCharacter$ = this.store.select(authQuery.getLinkingCharacter);
   loggedIn$ = this.store.select(authQuery.getLoggedIn);
   userId$ = this.store.select(authQuery.getUserId).pipe(filter(uid => uid !== null));
-  user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null));
+  user$ = this.store.select(authQuery.getUser).pipe(filter(u => u !== undefined && u !== null && !u.notFound && u.$key !== undefined));
   favorites$ = this.user$.pipe(map(user => user.favorites));
 
   idToken$ = this.af.user.pipe(

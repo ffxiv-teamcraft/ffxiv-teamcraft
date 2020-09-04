@@ -102,7 +102,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   update(uid: string, data: Partial<T>, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
     if (uid === undefined || uid === null || uid === '') {
-      throw new Error('Empty uid');
+      throw new Error(`Empty uid ${this.getBaseUri(uriParams)}`);
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(this.prepareData(data))).pipe(
       tap(() => {
@@ -114,7 +114,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   set(uid: string, data: T, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
     if (uid === undefined || uid === null || uid === '') {
-      throw new Error('Empty uid');
+      throw new Error(`Empty uid ${this.getBaseUri(uriParams)}`);
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(this.prepareData(data))).pipe(
       tap(() => {
@@ -126,7 +126,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   remove(uid: string, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`remove ${this.getBaseUri(uriParams)}/${uid}`);
     if (uid === undefined || uid === null || uid === '') {
-      throw new Error('Empty uid');
+      throw new Error(`Empty uid ${this.getBaseUri(uriParams)}`);
     }
     // Delete subcollections before data, else we can't rely on parent data for permissions
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete()).pipe(

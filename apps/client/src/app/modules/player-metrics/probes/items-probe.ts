@@ -23,7 +23,7 @@ export class ItemsProbe extends PlayerMetricProbe {
           source = ProbeSource.UNKNOWN;
         }
         const data = [event.itemId, event.amount];
-        if (source === ProbeSource.CRAFTING) {
+        if (source === ProbeSource.CRAFTING && eventPlay4 !== null) {
           data.push(eventPlay4.param1);
         }
         return {

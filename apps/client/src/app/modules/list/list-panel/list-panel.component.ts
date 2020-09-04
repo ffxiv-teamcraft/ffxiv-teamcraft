@@ -79,6 +79,7 @@ export class ListPanelComponent extends TeamcraftComponent {
   });
 
   isFavorite$: Observable<{ value: boolean }> = combineLatest([this.authFacade.favorites$, this.list$]).pipe(
+    filter(([favorites]) => favorites !== undefined),
     map(([favorites, list]) => {
       return {
         value: favorites.lists.indexOf(list.$key) > -1
