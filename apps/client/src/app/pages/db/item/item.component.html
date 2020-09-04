@@ -137,7 +137,7 @@
         </div>
       </div>
       <ng-container *ngIf="xivapiItem.IsFish;else classicItemDetails">
-        <app-fish [xivapiFish]="xivapiItem" [usedForTpl]="usedForTpl" [obtentionTpl]="howToObtainTpl"></app-fish>
+        <app-fish [usedForTpl]="usedForTpl" [obtentionTpl]="howToObtainTpl"></app-fish>
       </ng-container>
       <ng-template #usedForTpl>
         <div *ngIf="usedFor$ | async as usedFor">

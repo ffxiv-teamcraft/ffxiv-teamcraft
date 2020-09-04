@@ -25,13 +25,12 @@ import { groupBy } from 'lodash';
 @Component({
   selector: 'app-fishing-spot',
   templateUrl: './fishing-spot.component.html',
-  styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less']
+  styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
 })
 export class FishingSpotComponent extends TeamcraftPageComponent {
-
   public xivapiFishingSpot$: Observable<any>;
 
-  public links$: Observable<{ title: string, icon: string, url: string }[]>;
+  public links$: Observable<{ title: string; icon: string; url: string }[]>;
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
@@ -46,61 +45,87 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   public activeEntries$: Observable<any[]> = this.highlightedFish$.pipe(
     distinctUntilChanged(),
     debounceTime(100),
-    map(fishId => {
+    map((fishId) => {
       if (fishId <= 0) {
         return [];
       }
       return [
         {
-          name: this.i18n.getName(this.l12n.getItem(fishId))
-        }
+          name: this.i18n.getName(this.l12n.getItem(fishId)),
+        },
       ];
     })
   );
 
   selectedBait = 0;
 
-  constructor(private route: ActivatedRoute, private xivapi: XivapiService,
-              private gt: DataService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, public translate: TranslateService,
-              private router: Router, private lazyData: LazyDataService, public settings: SettingsService,
-              private etime: EorzeanTimeService, private apollo: Apollo, private weatherService: WeatherService,
-              private dialog: NzModalService, seo: SeoService) {
+  constructor(
+    private route: ActivatedRoute,
+    private xivapi: XivapiService,
+    private gt: DataService,
+    private l12n: LocalizedDataService,
+    private i18n: I18nToolsService,
+    public translate: TranslateService,
+    private router: Router,
+    private lazyData: LazyDataService,
+    public settings: SettingsService,
+    private etime: EorzeanTimeService,
+    private apollo: Apollo,
+    private weatherService: WeatherService,
+    private dialog: NzModalService,
+    seo: SeoService
+  ) {
     super(seo);
 
-    this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const slug = params.get('slug');
       if (slug === null) {
         this.router.navigate(
-          [this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          [
+            this.i18n
+              .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
+              .split(' ')
+              .join('-'),
+          ],
           {
             relativeTo: this.route,
-            replaceUrl: true
+            replaceUrl: true,
           }
         );
-      } else if (slug !== this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')) {
+      } else if (
+        slug !==
+        this.i18n
+          .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
+          .split(' ')
+          .join('-')
+      ) {
         this.router.navigate(
-          ['../', this.i18n.getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find(s => s.id === +params.get('spotId')).zoneId)).split(' ').join('-')],
+          [
+            '../',
+            this.i18n
+              .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
+              .split(' ')
+              .join('-'),
+          ],
           {
             relativeTo: this.route,
-            replaceUrl: true
+            replaceUrl: true,
           }
         );
       }
     });
 
     const spotId$ = this.route.paramMap.pipe(
-      filter(params => params.get('slug') !== null),
-      map(params => params.get('spotId'))
+      filter((params) => params.get('slug') !== null),
+      map((params) => params.get('spotId'))
     );
 
-
     this.xivapiFishingSpot$ = spotId$.pipe(
-      switchMap(id => {
+      switchMap((id) => {
         return this.xivapi.get(XivapiEndpoint.FishingSpot, +id);
       }),
-      map(spot => {
-        spot.customData = this.lazyData.data.fishingSpots.find(s => s.id === spot.ID);
+      map((spot) => {
+        spot.customData = this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID);
         if (spot.TerritoryType === null && spot.ID >= 10000) {
           spot.TerritoryType = this.lazyData.data.diademTerritory;
         }
@@ -115,30 +140,29 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       })
     );
 
-    this.highlightColor = this.settings.theme.highlight.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-      , (m, r, g, b) => '#' + r + r + g + g + b + b)
-      .substring(1).match(/.{2}/g)
-      .map(x => parseInt(x, 16));
+    this.highlightColor = this.settings.theme.highlight
+      .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
+      .substring(1)
+      .match(/.{2}/g)
+      .map((x) => parseInt(x, 16));
 
     this.settings.themeChange$.subscribe(({ next }) => {
-      this.highlightColor = next.highlight.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i
-        , (m, r, g, b) => '#' + r + r + g + g + b + b)
-        .substring(1).match(/.{2}/g)
-        .map(x => parseInt(x, 16));
+      this.highlightColor = next.highlight
+        .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
+        .substring(1)
+        .match(/.{2}/g)
+        .map((x) => parseInt(x, 16));
     });
 
     this.gubalData$ = this.reloader$.pipe(
       switchMapTo(spotId$),
       switchMap((spotId) => {
-        return combineLatest([
-          this.xivapiFishingSpot$,
-          this.apollo.query<any>({ query: this.getGraphQLQuery(+spotId), fetchPolicy: 'no-cache' })
-        ]);
+        return combineLatest([this.xivapiFishingSpot$, this.apollo.query<any>({ query: this.getGraphQLQuery(+spotId), fetchPolicy: 'no-cache' })]);
       }),
       switchMap(([spot, gubalData]) => {
         return this.etime.getEorzeanTime().pipe(
           distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8),
-          map(time => {
+          map((time) => {
             return [spot, gubalData, time];
           })
         );
@@ -147,49 +171,49 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         const hours = Array.from(Array(24).keys());
         const biteTimeGraphs: { [index: number]: any[] } = {};
         biteTimeGraphs[0] = spot.customData.fishes
-          .filter(fish => fish > 0)
-          .map(fish => {
+          .filter((fish) => fish > 0)
+          .map((fish) => {
             return {
               name: this.i18n.getName(this.l12n.getItem(fish)),
-              series: Object.keys(groupBy(gubalData.data.bite_time_per_fish_per_spot, 'biteTime'))
-                .map(biteTime => {
-                  const row = gubalData.data.bite_time_per_fish_per_spot.find(r => r.itemId === fish && r.biteTime === +biteTime);
-                  return {
-                    name: biteTime,
-                    value: row ? row.occurences : 0
-                  };
-                })
+              series: Object.keys(groupBy(gubalData.data.bite_time_per_fish_per_spot, 'biteTime')).map((biteTime) => {
+                const row = gubalData.data.bite_time_per_fish_per_spot.find((r) => r.itemId === fish && r.biteTime === +biteTime);
+                return {
+                  name: biteTime,
+                  value: row ? row.occurences : 0,
+                };
+              }),
             };
           });
         const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
-        const biteTimeBaits = Object.keys(groupedBaits).map(key => +key);
+        const biteTimeBaits = Object.keys(groupedBaits).map((key) => +key);
         Object.entries<any>(groupedBaits)
           .filter(([baitId]) => +baitId > 0)
           .forEach(([baitId, baitRow]) => {
             biteTimeGraphs[+baitId] = spot.customData.fishes
-              .filter(fish => fish > 0)
-              .map(fish => {
+              .filter((fish) => fish > 0)
+              .map((fish) => {
                 return {
                   name: this.i18n.getName(this.l12n.getItem(fish)),
-                  series: Object.keys(groupBy(baitRow, 'biteTime'))
-                    .map(biteTime => {
-                      const rows = gubalData.data.bite_time_per_fish_per_spot_per_bait.filter(r => r.itemId === fish && r.biteTime === +biteTime && r.baitId === +baitId);
-                      return {
-                        name: biteTime,
-                        value: rows.reduce((acc, row) => acc + row.occurences, 0)
-                      };
-                    })
+                  series: Object.keys(groupBy(baitRow, 'biteTime')).map((biteTime) => {
+                    const rows = gubalData.data.bite_time_per_fish_per_spot_per_bait.filter(
+                      (r) => r.itemId === fish && r.biteTime === +biteTime && r.baitId === +baitId
+                    );
+                    return {
+                      name: biteTime,
+                      value: rows.reduce((acc, row) => acc + row.occurences, 0),
+                    };
+                  }),
                 };
               });
           });
         return {
           weathers: (weatherIndex[spot.TerritoryType.WeatherRate] || [])
-            .map(row => {
+            .map((row) => {
               return {
                 chances: 100 * this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId),
                 next: this.etime.toEarthDate(this.weatherService.getNextWeatherStart(spot.TerritoryType.MapTargetID, row.weatherId, time.getTime())),
                 weatherId: row.weatherId,
-                active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId
+                active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId,
               };
             })
             .sort((a, b) => {
@@ -201,72 +225,90 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
               }
               return a.next - b.next;
             }),
-          weatherTransitions: [].concat.apply([], (weatherIndex[spot.TerritoryType.WeatherRate] || [])
-            .map(row => {
-              return weatherIndex[spot.TerritoryType.WeatherRate].map(from => {
-                return {
-                  chances: 100 * this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId) * this.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
-                  next: this.etime.toEarthDate(this.weatherService.getNextWeatherTransition(
-                    spot.TerritoryType.MapTargetID,
-                    [from.weatherId],
-                    row.weatherId,
-                    time.getTime()
-                  )),
-                  weatherId: row.weatherId,
-                  previousWeatherId: from.weatherId,
-                  active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId
-                    && this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId
-                };
-              });
-            })
-          ).sort((a, b) => {
-            if (a.active) {
-              return -1;
-            }
-            if (b.active) {
-              return 1;
-            }
-            return a.next - b.next;
-          }),
+          weatherTransitions: [].concat
+            .apply(
+              [],
+              (weatherIndex[spot.TerritoryType.WeatherRate] || []).map((row) => {
+                return weatherIndex[spot.TerritoryType.WeatherRate].map((from) => {
+                  return {
+                    chances:
+                      100 *
+                      this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId) *
+                      this.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
+                    next: this.etime.toEarthDate(
+                      this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], row.weatherId, time.getTime())
+                    ),
+                    weatherId: row.weatherId,
+                    previousWeatherId: from.weatherId,
+                    active:
+                      this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId &&
+                      this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId,
+                  };
+                });
+              })
+            )
+            .sort((a, b) => {
+              if (a.active) {
+                return -1;
+              }
+              if (b.active) {
+                return 1;
+              }
+              return a.next - b.next;
+            }),
           fishesPerHourChart: {
             data: spot.customData.fishes
-              .filter(fish => fish > 0)
-              .map(fish => {
+              .filter((fish) => fish > 0)
+              .map((fish) => {
                 return {
                   name: this.i18n.getName(this.l12n.getItem(fish)),
-                  series: hours
-                    .map(hour => {
-                      const row = gubalData.data.etimes_per_fish_per_spot.find(r => r.itemId === fish && r.etime === hour);
-                      return {
-                        name: `${hour}:00`,
-                        value: row ? row.occurences : 0
-                      };
-                    })
+                  series: hours.map((hour) => {
+                    const row = gubalData.data.etimes_per_fish_per_spot.find((r) => r.itemId === fish && r.etime === hour);
+                    return {
+                      name: `${hour}:00`,
+                      value: row ? row.occurences : 0,
+                    };
+                  }),
                 };
-              })
+              }),
           },
           biteTimesPerBait: {
             baits: [...biteTimeBaits],
-            graphs: biteTimeGraphs
+            graphs: biteTimeGraphs,
           },
-          fishes: this.lazyData.data.fishingSpots.find(s => s.id === spot.ID).fishes.filter(f => f > 0),
-          fishesPerBait: this.dataToTable(gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }), 'itemId', 'baitId', 'occurences'),
-          fishesPerWeather: this.dataToTable(gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }), 'itemId', 'weatherId', 'occurences'),
-          fishesPerTug: this.dataToTable(gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }), 'itemId', 'tug', 'occurences')
+          fishes: this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID).fishes.filter((f) => f > 0),
+          fishesPerBait: this.dataToTable(
+            gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
+              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+            }),
+            'itemId',
+            'baitId',
+            'occurences'
+          ),
+          fishesPerWeather: this.dataToTable(
+            gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
+              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+            }),
+            'itemId',
+            'weatherId',
+            'occurences'
+          ),
+          fishesPerTug: this.dataToTable(
+            gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
+              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+            }),
+            'itemId',
+            'tug',
+            'occurences'
+          ),
         };
       }),
       switchMap((display: any) => {
         return this.highlightedFish$.pipe(
-          map(highlightedFish => {
+          map((highlightedFish) => {
             display.highlighted = highlightedFish;
             if (highlightedFish > -1) {
-              display.highlightedIndex = display.fishes.findIndex(h => h === highlightedFish);
+              display.highlightedIndex = display.fishes.findIndex((h) => h === highlightedFish);
             } else {
               display.highlightedIndex = -1;
             }
@@ -281,7 +323,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
   }
 
   public onChartHover(event: any, spot: any): void {
-    const itemId = spot.customData.fishes.find(fish => {
+    const itemId = spot.customData.fishes.find((fish) => {
       return this.i18n.getName(this.l12n.getItem(fish)) === event.value.name;
     });
     this.highlightedFish$.next(itemId);
@@ -325,26 +367,34 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         `;
   }
 
-  private dataToTable(data: any[], headerProperty: string, siderProperty: string, valueProperty: string): { headers: number[], siders: number[], total: number, totals: number[], data: number[][] } {
-    const res = data.reduce((result, row) => {
-      let headerIndex = result.headers.findIndex(r => r === row[headerProperty]);
-      if (headerIndex === -1) {
-        result.headers.push(row[headerProperty]);
-        headerIndex = result.headers.length - 1;
-      }
-      let siderIndex = result.siders.findIndex(r => r === row[siderProperty]);
-      if (siderIndex === -1) {
-        result.siders.push(row[siderProperty]);
-        siderIndex = result.siders.length - 1;
-      }
-      result.data[siderIndex] = result.data[siderIndex] || [];
-      result.data[siderIndex][headerIndex] = row[valueProperty];
-      result.total += row[valueProperty];
-      result.totals[siderIndex] = (result.totals[siderIndex] || 0) + row[valueProperty];
-      return result;
-    }, { headers: [], siders: [], data: [[]], total: 0, totals: [] });
+  private dataToTable(
+    data: any[],
+    headerProperty: string,
+    siderProperty: string,
+    valueProperty: string
+  ): { headers: number[]; siders: number[]; total: number; totals: number[]; data: number[][] } {
+    const res = data.reduce(
+      (result, row) => {
+        let headerIndex = result.headers.findIndex((r) => r === row[headerProperty]);
+        if (headerIndex === -1) {
+          result.headers.push(row[headerProperty]);
+          headerIndex = result.headers.length - 1;
+        }
+        let siderIndex = result.siders.findIndex((r) => r === row[siderProperty]);
+        if (siderIndex === -1) {
+          result.siders.push(row[siderProperty]);
+          siderIndex = result.siders.length - 1;
+        }
+        result.data[siderIndex] = result.data[siderIndex] || [];
+        result.data[siderIndex][headerIndex] = row[valueProperty];
+        result.total += row[valueProperty];
+        result.totals[siderIndex] = (result.totals[siderIndex] || 0) + row[valueProperty];
+        return result;
+      },
+      { headers: [], siders: [], data: [[]], total: 0, totals: [] }
+    );
 
-    res.data.forEach(row => {
+    res.data.forEach((row) => {
       if (row.length !== res.headers.length) {
         row.push(...new Array(res.headers.length - row.length));
       }
@@ -361,17 +411,17 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
       nzContent: FishingMissesPopupComponent,
       nzComponentParams: {
-        spotId: spotId
+        spotId: spotId,
       },
       nzFooter: null,
-      nzWidth: '80vw'
+      nzWidth: '80vw',
     });
   }
 
   private getWeatherChances(mapId: number, weatherId: number): number {
-    const index = weatherIndex[mapIds.find(m => m.id === mapId).weatherRate];
+    const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];
     const maxRate = index[index.length - 1].rate;
-    const matchingIndex = index.findIndex(row => row.weatherId === weatherId);
+    const matchingIndex = index.findIndex((row) => row.weatherId === weatherId);
     if (matchingIndex === 0) {
       return index[matchingIndex].rate / maxRate;
     }
@@ -385,15 +435,14 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
     return this.xivapiFishingSpot$.pipe(
-      map(fishingSpot => {
+      map((fishingSpot) => {
         return {
           title: this.getName(fishingSpot),
           description: '',
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fishing-spot/${fishingSpot.ID}/${this.getName(fishingSpot).split(' ').join('-')}`,
-          image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`
+          image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`,
         };
       })
     );
   }
-
 }

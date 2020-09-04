@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { ApolloQueryResult } from 'apollo-client';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { distinctUntilChanged, map, shareReplay, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, map, shareReplay, switchMap, filter } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishDataService } from './fish-data.service';
+import { ItemContextService } from './item-context.service';
 
 export interface Occurrence {
   id: number;
@@ -45,15 +46,17 @@ const occurrenceResultMapper = <T extends string, I extends string>(key: T, inne
  */
 @Injectable()
 export class FishContextService {
-  private readonly fishIdSub$ = new ReplaySubject<number>();
   /** The fish id that is currently active and being used to filter results by. */
-  public readonly fishId$ = this.fishIdSub$.asObservable();
-  private readonly spotIdSub$ = new BehaviorSubject<number>(undefined);
+  public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.fishes$]).pipe(
+    map(([itemId, fishes]) => (itemId >= 0 && fishes.includes(itemId) ? itemId : undefined))
+  );
+  private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
   /** The spot id that is currently active and being used to filter results by. */
   public readonly spotId$ = this.spotIdSub$.asObservable();
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
+    filter((fishId) => fishId >= 0),
     switchMap((fishId) => combineLatest([this.data.getSpotsByFishId(fishId), this.lazyData.fishingSpots$])),
     map(([res, spotData]) => {
       return {
@@ -66,6 +69,7 @@ export class FishContextService {
 
   /** An observable containing the number of recorded occurrences at each Eorzean hour. */
   public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getHoursByFishId(fishId, spotId)),
     map((res) => {
       const data = res.data?.etimes.reduce(
@@ -81,6 +85,7 @@ export class FishContextService {
   );
 
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getBaitMoochesByFishId(fishId, spotId))
   );
 
@@ -98,6 +103,7 @@ export class FishContextService {
   );
 
   private readonly hooksetTugsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getHooksetsByFishId(fishId, spotId))
   );
 
@@ -112,12 +118,14 @@ export class FishContextService {
 
   /** An observable containing the bite times recorded to catch the active fish. */
   public readonly biteTimesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getBiteTimesByFishId(fishId, spotId)),
     map(occurrenceResultMapper('biteTimes', 'biteTime')),
     shareReplay(1)
   );
 
   private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getWeatherByFishId(fishId, spotId))
   );
 
@@ -147,20 +155,25 @@ export class FishContextService {
 
   /** An observable containing statistics about the active fish. */
   public readonly statisticsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
+    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getStatisticsByFishId(fishId, spotId)),
     map((res) => {
       if (!res.data) return { ...res, data: undefined };
       const totalSnagging = res.data.snagging.reduce((acc, row) => acc + row.occurences, 0);
-      const snagging = (100 * (res.data.snagging.find((entry) => entry.snagging === true) ?? { occurences: 0 }).occurences) / totalSnagging;
+      const snagging = (100 * res.data.snagging.filter((entry) => entry.snagging === true).reduce((acc, row) => acc + row.occurences, 0)) / totalSnagging;
       const totalFishEyes = res.data.fishEyes.reduce((acc, row) => acc + row.occurences, 0);
-      const fishEyes = (100 * (res.data.fishEyes.find((entry) => entry.fishEyes === true) ?? { occurences: 0 }).occurences) / totalFishEyes;
+      const fishEyes = (100 * res.data.fishEyes.filter((entry) => entry.fishEyes === true).reduce((acc, row) => acc + row.occurences, 0)) / totalFishEyes;
       return { ...res, data: { ...res.data, snagging, fishEyes } };
     }),
     shareReplay(1)
   );
 
   /** An observable containing user rankings about the active fish. */
-  public readonly rankingsByFish$ = this.fishId$.pipe(switchMap(this.data.getRankingByFishId), shareReplay(1));
+  public readonly rankingsByFish$ = this.fishId$.pipe(
+    filter((fishId) => fishId >= 0),
+    switchMap(this.data.getRankingByFishId),
+    shareReplay(1)
+  );
 
   public highlightTime$ = this.etime.getEorzeanTime().pipe(
     distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
@@ -176,17 +189,12 @@ export class FishContextService {
   );
 
   constructor(
+    private readonly itemContext: ItemContextService,
     private readonly settings: SettingsService,
     private readonly etime: EorzeanTimeService,
     private readonly data: FishDataService,
     private readonly lazyData: LazyDataService
   ) {}
-
-  /** Sets the currently active fish. */
-  public setFishId(fishId: number) {
-    this.setSpotId(undefined);
-    this.fishIdSub$.next(fishId);
-  }
 
   /** Sets the currently active spot. */
   public setSpotId(spotId?: number) {

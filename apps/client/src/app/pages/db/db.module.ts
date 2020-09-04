@@ -32,6 +32,7 @@ import { DbComponent } from './db/db.component';
 import { FateComponent } from './fate/fate.component';
 import { FishBaitsComponent } from './fish/fish-baits/fish-baits.component';
 import { FishBiteTimesComponent } from './fish/fish-bite-times/fish-bite-times.component';
+import { FishDetailsContainerComponent } from './fish/fish-details-container/fish-details-container.component';
 import { FishHooksetsComponent } from './fish/fish-hooksets/fish-hooksets.component';
 import { FishHoursComponent } from './fish/fish-hours/fish-hours.component';
 import { FishMoochesComponent } from './fish/fish-mooches/fish-mooches.component';
@@ -56,9 +57,9 @@ import { QuestComponent } from './quest/quest.component';
 import { FishContextService } from './service/fish-context.service';
 import * as FishGQLProviders from './service/fish-data.gql';
 import { FishDataService } from './service/fish-data.service';
+import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
-import { FishDetailsContainerComponent } from './fish/fish-details-container/fish-details-container.component';
 
 const routes: Routes = [
   {
@@ -288,6 +289,6 @@ const routes: Routes = [
     UserAvatarModule,
     QuickSearchModule,
   ],
-  providers: [FishDataService, FishContextService, ...Object.values(FishGQLProviders)],
+  providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)],
 })
 export class DbModule {}
