@@ -99,7 +99,11 @@ export class UsersComponent {
             results.map(c => {
               return this.userService.getUsersByLodestoneId(c.ID);
             })
-          ).pipe(map(res => [].concat.apply([], ...res)));
+          ).pipe(
+            map(res => {
+              return [].concat.apply([], res)
+            })
+          );
         }),
         tap(() => this.loadingResults = false)
       );
