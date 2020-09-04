@@ -72,7 +72,7 @@ export class UserPickerComponent {
                   })
                 );
             })
-          ).pipe(map(res => [].concat.apply([], ...res)));
+          ).pipe(map(res => [].concat.apply([], res)));
         }),
         tap(() => this.loadingResults = false)
       );
