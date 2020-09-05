@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BehaviorSubject, combineLatest, Observable, forkJoin, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { DataService } from '../../../core/api/data.service';
@@ -9,7 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { SeoService } from '../../../core/seo/seo.service';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, switchMapTo, tap, takeUntil, first } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import gql from 'graphql-tag';
@@ -21,132 +21,244 @@ import { WeatherService } from '../../../core/eorzea/weather.service';
 import { NzModalService } from 'ng-zorro-antd';
 import { FishingMissesPopupComponent } from '../fishing-misses-popup/fishing-misses-popup.component';
 import { groupBy } from 'lodash';
+import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
+import { FishContextService } from '../service/fish-context.service';
 
 @Component({
   selector: 'app-fishing-spot',
   templateUrl: './fishing-spot.component.html',
   styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
 })
-export class FishingSpotComponent extends TeamcraftPageComponent {
-  public xivapiFishingSpot$: Observable<any>;
+export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
+  private readonly spotId$ = this.route.paramMap.pipe(
+    filter((params) => params.get('slug') !== null),
+    map((params) => params.get('spotId'))
+  );
 
-  public links$: Observable<{ title: string; icon: string; url: string }[]>;
+  public readonly xivapiFishingSpot$: Observable<any> = this.spotId$.pipe(
+    switchMap((id) => {
+      return this.xivapi.get(XivapiEndpoint.FishingSpot, +id);
+    }),
+    map((spot) => {
+      spot.customData = this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID);
+      if (spot.TerritoryType === null && spot.ID >= 10000) {
+        spot.TerritoryType = this.lazyData.data.diademTerritory;
+      }
+      return spot;
+    }),
+    shareReplay(1)
+  );
 
+  public links$: Observable<{ title: string; icon: string; url: string }[]> = this.xivapiFishingSpot$.pipe(
+    map(() => {
+      return [];
+    })
+  );
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-  public gubalData$: Observable<any>;
+  public gubalData$: Observable<any> = this.reloader$.pipe(
+    switchMapTo(this.spotId$),
+    switchMap((spotId) => {
+      return combineLatest([this.xivapiFishingSpot$, this.apollo.query<any>({ query: this.getGraphQLQuery(+spotId), fetchPolicy: 'no-cache' })]);
+    }),
+    switchMap(([spot, gubalData]) => {
+      return this.etime.getEorzeanTime().pipe(
+        distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8),
+        map((time) => {
+          return [spot, gubalData, time];
+        })
+      );
+    }),
+    map(([spot, gubalData, time]) => {
+      const hours = Array.from(Array(24).keys());
+      const biteTimeGraphs: { [index: number]: any[] } = {};
+      biteTimeGraphs[0] = spot.customData.fishes
+        .filter((fish) => fish > 0)
+        .map((fish) => {
+          return {
+            name: this.i18n.getName(this.l12n.getItem(fish)),
+            series: Object.keys(groupBy(gubalData.data.bite_time_per_fish_per_spot, 'biteTime')).map((biteTime) => {
+              const row = gubalData.data.bite_time_per_fish_per_spot.find((r) => r.itemId === fish && r.biteTime === +biteTime);
+              return {
+                name: biteTime,
+                value: row ? row.occurences : 0,
+              };
+            }),
+          };
+        });
+      const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
+      const biteTimeBaits = Object.keys(groupedBaits).map((key) => +key);
+      Object.entries<any>(groupedBaits)
+        .filter(([baitId]) => +baitId > 0)
+        .forEach(([baitId, baitRow]) => {
+          biteTimeGraphs[+baitId] = spot.customData.fishes
+            .filter((fish) => fish > 0)
+            .map((fish) => {
+              return {
+                name: this.i18n.getName(this.l12n.getItem(fish)),
+                series: Object.keys(groupBy(baitRow, 'biteTime')).map((biteTime) => {
+                  const rows = gubalData.data.bite_time_per_fish_per_spot_per_bait.filter(
+                    (r) => r.itemId === fish && r.biteTime === +biteTime && r.baitId === +baitId
+                  );
+                  return {
+                    name: biteTime,
+                    value: rows.reduce((acc, row) => acc + row.occurences, 0),
+                  };
+                }),
+              };
+            });
+        });
+      return {
+        weathers: (weatherIndex[spot.TerritoryType.WeatherRate] || [])
+          .map((row) => {
+            return {
+              chances: 100 * this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId),
+              next: this.etime.toEarthDate(this.weatherService.getNextWeatherStart(spot.TerritoryType.MapTargetID, row.weatherId, time.getTime())),
+              weatherId: row.weatherId,
+              active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId,
+            };
+          })
+          .sort((a, b) => {
+            if (a.active) {
+              return -1;
+            }
+            if (b.active) {
+              return 1;
+            }
+            return a.next - b.next;
+          }),
+        weatherTransitions: [].concat
+          .apply(
+            [],
+            (weatherIndex[spot.TerritoryType.WeatherRate] || []).map((row) => {
+              return weatherIndex[spot.TerritoryType.WeatherRate].map((from) => {
+                return {
+                  chances:
+                    100 *
+                    this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId) *
+                    this.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
+                  next: this.etime.toEarthDate(
+                    this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], row.weatherId, time.getTime())
+                  ),
+                  weatherId: row.weatherId,
+                  previousWeatherId: from.weatherId,
+                  active:
+                    this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId &&
+                    this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId,
+                };
+              });
+            })
+          )
+          .sort((a, b) => {
+            if (a.active) {
+              return -1;
+            }
+            if (b.active) {
+              return 1;
+            }
+            return a.next - b.next;
+          }),
+        fishesPerHourChart: {
+          data: spot.customData.fishes
+            .filter((fish) => fish > 0)
+            .map((fish) => {
+              return {
+                name: this.i18n.getName(this.l12n.getItem(fish)),
+                series: hours.map((hour) => {
+                  const row = gubalData.data.etimes_per_fish_per_spot.find((r) => r.itemId === fish && r.etime === hour);
+                  return {
+                    name: `${hour}:00`,
+                    value: row ? row.occurences : 0,
+                  };
+                }),
+              };
+            }),
+        },
+        biteTimesPerBait: {
+          baits: [...biteTimeBaits],
+          graphs: biteTimeGraphs,
+        },
+        fishes: this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID).fishes.filter((f) => f > 0),
+        fishesPerBait: this.dataToTable(
+          gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }),
+          'itemId',
+          'baitId',
+          'occurences'
+        ),
+        fishesPerWeather: this.dataToTable(
+          gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }),
+          'itemId',
+          'weatherId',
+          'occurences'
+        ),
+        fishesPerTug: this.dataToTable(
+          gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
+            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
+          }),
+          'itemId',
+          'tug',
+          'occurences'
+        ),
+      };
+    }),
+    switchMap((display: any) => {
+      return this.highlightedFish$.pipe(
+        map((highlightedFish) => {
+          display.highlighted = highlightedFish;
+          if (highlightedFish > -1) {
+            display.highlightedIndex = display.fishes.findIndex((h) => h === highlightedFish);
+          } else {
+            display.highlightedIndex = -1;
+          }
+          return display;
+        })
+      );
+    }),
+    tap(() => {
+      this.loading = false;
+    })
+  );
 
   public loading = true;
 
-  private highlightColor: number[] = [];
+  private highlightColor: number[] = this.settings.theme.highlight
+    .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
+    .substring(1)
+    .match(/.{2}/g)
+    .map((x) => parseInt(x, 16));
 
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
-
-  public activeEntries$: Observable<any[]> = this.highlightedFish$.pipe(
-    distinctUntilChanged(),
-    debounceTime(100),
-    map((fishId) => {
-      if (fishId <= 0) {
-        return [];
-      }
-      return [
-        {
-          name: this.i18n.getName(this.l12n.getItem(fishId)),
-        },
-      ];
-    })
-  );
 
   selectedBait = 0;
 
   constructor(
-    private route: ActivatedRoute,
-    private xivapi: XivapiService,
-    private gt: DataService,
-    private l12n: LocalizedDataService,
-    private i18n: I18nToolsService,
-    public translate: TranslateService,
-    private router: Router,
-    private lazyData: LazyDataService,
-    public settings: SettingsService,
-    private etime: EorzeanTimeService,
-    private apollo: Apollo,
-    private weatherService: WeatherService,
-    private dialog: NzModalService,
-    seo: SeoService
+    private readonly route: ActivatedRoute,
+    private readonly xivapi: XivapiService,
+    private readonly l12n: LocalizedDataService,
+    private readonly l12nLazy: LocalizedLazyDataService,
+    private readonly i18n: I18nToolsService,
+    public readonly translate: TranslateService,
+    private readonly router: Router,
+    private readonly lazyData: LazyDataService,
+    public readonly settings: SettingsService,
+    private readonly etime: EorzeanTimeService,
+    private readonly apollo: Apollo,
+    private readonly weatherService: WeatherService,
+    private readonly dialog: NzModalService,
+    private readonly fishContext: FishContextService,
+    readonly seo: SeoService
   ) {
     super(seo);
+  }
 
-    this.route.paramMap.subscribe((params) => {
-      const slug = params.get('slug');
-      if (slug === null) {
-        this.router.navigate(
-          [
-            this.i18n
-              .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
-              .split(' ')
-              .join('-'),
-          ],
-          {
-            relativeTo: this.route,
-            replaceUrl: true,
-          }
-        );
-      } else if (
-        slug !==
-        this.i18n
-          .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
-          .split(' ')
-          .join('-')
-      ) {
-        this.router.navigate(
-          [
-            '../',
-            this.i18n
-              .getName(this.l12n.getPlace(this.lazyData.data.fishingSpots.find((s) => s.id === +params.get('spotId')).zoneId))
-              .split(' ')
-              .join('-'),
-          ],
-          {
-            relativeTo: this.route,
-            replaceUrl: true,
-          }
-        );
-      }
-    });
+  ngOnInit() {
+    super.ngOnInit();
 
-    const spotId$ = this.route.paramMap.pipe(
-      filter((params) => params.get('slug') !== null),
-      map((params) => params.get('spotId'))
-    );
-
-    this.xivapiFishingSpot$ = spotId$.pipe(
-      switchMap((id) => {
-        return this.xivapi.get(XivapiEndpoint.FishingSpot, +id);
-      }),
-      map((spot) => {
-        spot.customData = this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID);
-        if (spot.TerritoryType === null && spot.ID >= 10000) {
-          spot.TerritoryType = this.lazyData.data.diademTerritory;
-        }
-        return spot;
-      }),
-      shareReplay(1)
-    );
-
-    this.links$ = this.xivapiFishingSpot$.pipe(
-      map(() => {
-        return [];
-      })
-    );
-
-    this.highlightColor = this.settings.theme.highlight
-      .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
-      .substring(1)
-      .match(/.{2}/g)
-      .map((x) => parseInt(x, 16));
-
-    this.settings.themeChange$.subscribe(({ next }) => {
+    this.settings.themeChange$.pipe(takeUntil(this.onDestroy$)).subscribe(({ next }) => {
       this.highlightColor = next.highlight
         .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
         .substring(1)
@@ -154,172 +266,28 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
         .map((x) => parseInt(x, 16));
     });
 
-    this.gubalData$ = this.reloader$.pipe(
-      switchMapTo(spotId$),
-      switchMap((spotId) => {
-        return combineLatest([this.xivapiFishingSpot$, this.apollo.query<any>({ query: this.getGraphQLQuery(+spotId), fetchPolicy: 'no-cache' })]);
-      }),
-      switchMap(([spot, gubalData]) => {
-        return this.etime.getEorzeanTime().pipe(
-          distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8),
-          map((time) => {
-            return [spot, gubalData, time];
-          })
-        );
-      }),
-      map(([spot, gubalData, time]) => {
-        const hours = Array.from(Array(24).keys());
-        const biteTimeGraphs: { [index: number]: any[] } = {};
-        biteTimeGraphs[0] = spot.customData.fishes
-          .filter((fish) => fish > 0)
-          .map((fish) => {
-            return {
-              name: this.i18n.getName(this.l12n.getItem(fish)),
-              series: Object.keys(groupBy(gubalData.data.bite_time_per_fish_per_spot, 'biteTime')).map((biteTime) => {
-                const row = gubalData.data.bite_time_per_fish_per_spot.find((r) => r.itemId === fish && r.biteTime === +biteTime);
-                return {
-                  name: biteTime,
-                  value: row ? row.occurences : 0,
-                };
-              }),
-            };
-          });
-        const groupedBaits = groupBy(gubalData.data.bite_time_per_fish_per_spot_per_bait, 'baitId');
-        const biteTimeBaits = Object.keys(groupedBaits).map((key) => +key);
-        Object.entries<any>(groupedBaits)
-          .filter(([baitId]) => +baitId > 0)
-          .forEach(([baitId, baitRow]) => {
-            biteTimeGraphs[+baitId] = spot.customData.fishes
-              .filter((fish) => fish > 0)
-              .map((fish) => {
-                return {
-                  name: this.i18n.getName(this.l12n.getItem(fish)),
-                  series: Object.keys(groupBy(baitRow, 'biteTime')).map((biteTime) => {
-                    const rows = gubalData.data.bite_time_per_fish_per_spot_per_bait.filter(
-                      (r) => r.itemId === fish && r.biteTime === +biteTime && r.baitId === +baitId
-                    );
-                    return {
-                      name: biteTime,
-                      value: rows.reduce((acc, row) => acc + row.occurences, 0),
-                    };
-                  }),
-                };
-              });
-          });
-        return {
-          weathers: (weatherIndex[spot.TerritoryType.WeatherRate] || [])
-            .map((row) => {
-              return {
-                chances: 100 * this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId),
-                next: this.etime.toEarthDate(this.weatherService.getNextWeatherStart(spot.TerritoryType.MapTargetID, row.weatherId, time.getTime())),
-                weatherId: row.weatherId,
-                active: this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId,
-              };
-            })
-            .sort((a, b) => {
-              if (a.active) {
-                return -1;
-              }
-              if (b.active) {
-                return 1;
-              }
-              return a.next - b.next;
-            }),
-          weatherTransitions: [].concat
-            .apply(
-              [],
-              (weatherIndex[spot.TerritoryType.WeatherRate] || []).map((row) => {
-                return weatherIndex[spot.TerritoryType.WeatherRate].map((from) => {
-                  return {
-                    chances:
-                      100 *
-                      this.getWeatherChances(spot.TerritoryType.MapTargetID, row.weatherId) *
-                      this.getWeatherChances(spot.TerritoryType.MapTargetID, from.weatherId),
-                    next: this.etime.toEarthDate(
-                      this.weatherService.getNextWeatherTransition(spot.TerritoryType.MapTargetID, [from.weatherId], row.weatherId, time.getTime())
-                    ),
-                    weatherId: row.weatherId,
-                    previousWeatherId: from.weatherId,
-                    active:
-                      this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime()) === row.weatherId &&
-                      this.weatherService.getWeather(spot.TerritoryType.MapTargetID, time.getTime() - 8 * 60 * 60 * 1000 - 1) === from.weatherId,
-                  };
-                });
-              })
-            )
-            .sort((a, b) => {
-              if (a.active) {
-                return -1;
-              }
-              if (b.active) {
-                return 1;
-              }
-              return a.next - b.next;
-            }),
-          fishesPerHourChart: {
-            data: spot.customData.fishes
-              .filter((fish) => fish > 0)
-              .map((fish) => {
-                return {
-                  name: this.i18n.getName(this.l12n.getItem(fish)),
-                  series: hours.map((hour) => {
-                    const row = gubalData.data.etimes_per_fish_per_spot.find((r) => r.itemId === fish && r.etime === hour);
-                    return {
-                      name: `${hour}:00`,
-                      value: row ? row.occurences : 0,
-                    };
-                  }),
-                };
-              }),
-          },
-          biteTimesPerBait: {
-            baits: [...biteTimeBaits],
-            graphs: biteTimeGraphs,
-          },
-          fishes: this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID).fishes.filter((f) => f > 0),
-          fishesPerBait: this.dataToTable(
-            gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
-              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-            }),
-            'itemId',
-            'baitId',
-            'occurences'
-          ),
-          fishesPerWeather: this.dataToTable(
-            gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
-              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-            }),
-            'itemId',
-            'weatherId',
-            'occurences'
-          ),
-          fishesPerTug: this.dataToTable(
-            gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
-              return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-            }),
-            'itemId',
-            'tug',
-            'occurences'
-          ),
-        };
-      }),
-      switchMap((display: any) => {
-        return this.highlightedFish$.pipe(
-          map((highlightedFish) => {
-            display.highlighted = highlightedFish;
-            if (highlightedFish > -1) {
-              display.highlightedIndex = display.fishes.findIndex((h) => h === highlightedFish);
-            } else {
-              display.highlightedIndex = -1;
-            }
-            return display;
-          })
-        );
-      }),
-      tap(() => {
-        this.loading = false;
-      })
-    );
+    combineLatest([this.route.paramMap, this.lazyData.fishingSpots$])
+      .pipe(
+        takeUntil(this.onDestroy$),
+        switchMap(([params, fishingSpots]) => {
+          const slug$ = of(params.get('slug') ?? undefined);
+          const _spotId = +params.get('spotId') >= 0 ? +params.get('spotId') : undefined;
+          const zoneId = fishingSpots.find((spot) => spot.id === _spotId)?.zoneId;
+          const spotId$ = of(_spotId);
+          const correctSlug$ =
+            zoneId >= 0 ? this.i18n.resolveName(this.l12nLazy.getPlace(zoneId)).pipe(map((name) => name.split(' ')?.join('-'))) : of(undefined);
+          return combineLatest([slug$, spotId$, correctSlug$]).pipe(
+            debounceTime(100),
+            map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug }))
+          );
+        })
+      )
+      .subscribe(this.onRouteParams);
+  }
+
+  ngOnDestroy() {
+    super.ngOnDestroy();
+    this.fishContext.setSpotId(undefined);
   }
 
   public onChartHover(event: any, spot: any): void {
@@ -445,4 +413,20 @@ export class FishingSpotComponent extends TeamcraftPageComponent {
       })
     );
   }
+
+  private readonly onRouteParams = ({ slug, spotId, correctSlug }: { slug?: string; spotId?: number; correctSlug?: string }) => {
+    this.fishContext.setSpotId(spotId);
+    if (!correctSlug) return;
+    if (slug === undefined) {
+      this.router.navigate([correctSlug], {
+        relativeTo: this.route,
+        replaceUrl: true,
+      });
+    } else if (slug !== correctSlug) {
+      this.router.navigate(['../', correctSlug], {
+        relativeTo: this.route,
+        replaceUrl: true,
+      });
+    }
+  };
 }

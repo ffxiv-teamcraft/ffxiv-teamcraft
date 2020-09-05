@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { from, of } from 'rxjs';
 import { Observable } from 'rxjs/Observable';
-import { map, startWith, switchMap } from 'rxjs/operators';
+import { map, startWith, switchMap, tap, shareReplay, distinctUntilChanged } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
@@ -11,15 +11,18 @@ import { Language } from '../data/language';
 
 @Injectable()
 export class I18nToolsService {
+  private readonly defaultLang = 'en' as const;
   public readonly currentLang$: Observable<Language> = from(this.translator.onLangChange as Observable<{ lang: Language }>).pipe(
     map((ev) => ev.lang),
-    startWith((this.translator.currentLang as Language) ?? 'en')
+    startWith((this.translator.currentLang as Language) ?? this.defaultLang),
+    distinctUntilChanged(),
+    shareReplay(1)
   );
 
   constructor(private translator: TranslateService) {}
 
   public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {
-    return this.currentLang$.pipe(switchMap((lang) => i18nName[lang] ?? of(undefined)));
+    return this.currentLang$.pipe(switchMap((lang) => i18nName[lang] ?? i18nName[this.defaultLang] ?? of(undefined)));
   };
 
   public getName(i18nName: I18nName, item?: CustomItem): string {

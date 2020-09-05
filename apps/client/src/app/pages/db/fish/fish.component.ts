@@ -1,4 +1,4 @@
-import { Component, Input, TemplateRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, TemplateRef, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishContextService } from '../service/fish-context.service';
@@ -9,10 +9,14 @@ import { FishContextService } from '../service/fish-context.service';
   styleUrls: ['../common-db.less', './fish.common.less', './fish.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FishComponent {
+export class FishComponent implements OnDestroy {
   @Input() usedForTpl: TemplateRef<any>;
 
   @Input() obtentionTpl: TemplateRef<any>;
 
   constructor(public translate: TranslateService, public settings: SettingsService, public readonly fishCtx: FishContextService) {}
+
+  ngOnDestroy() {
+    this.fishCtx.setSpotId(undefined);
+  }
 }

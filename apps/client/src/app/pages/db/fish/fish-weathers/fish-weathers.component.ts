@@ -1,14 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
-import { map, startWith, switchMap, take } from 'rxjs/operators';
-import { FishContextService } from '../../service/fish-context.service';
-import { of, forkJoin, combineLatest } from 'rxjs';
-import { mapValues } from 'lodash';
-import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
-import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
 import { LazyDataService } from 'apps/client/src/app/core/data/lazy-data.service';
-import { weatherIndex } from 'apps/client/src/app/core/data/sources/weather-index';
+import { LocalizedLazyDataService } from 'apps/client/src/app/core/data/localized-lazy-data.service';
 import { mapIds } from 'apps/client/src/app/core/data/sources/map-ids';
+import { weatherIndex } from 'apps/client/src/app/core/data/sources/weather-index';
+import { I18nToolsService } from 'apps/client/src/app/core/tools/i18n-tools.service';
+import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
+import { combineLatest, Observable, of } from 'rxjs';
+import { map, startWith, switchMap } from 'rxjs/operators';
+import { FishContextService } from '../../service/fish-context.service';
 
 @Component({
   selector: 'app-fish-weathers',
@@ -27,11 +26,16 @@ export class FishWeathersComponent {
   public readonly weathersChartData$ = this.fishCtx.weathersByFish$.pipe(
     switchMap((res) => {
       if (!res.data) return of(undefined);
-      const weatherNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getWeather(key.id)).pipe(take(1)));
-      return forkJoin(weatherNames).pipe(
+      const weatherNames: Array<Observable<{ id: number; name: string }>> = Object.values(res.data.byId).map((item) =>
+        this.i18n.resolveName(this.l12n.getWeather(item.id)).pipe(map((name) => ({ id: item.id, name })))
+      );
+      return combineLatest([...weatherNames]).pipe(
         map((names) => {
           return Object.values(res.data.byId)
-            .map((weather) => ({ name: names[weather.id] ?? '--', value: weather.occurrences, weatherId: weather.id }))
+            .map((weather) => {
+              const name = names.find((i) => i.id === weather.id)?.name ?? '--';
+              return { name, value: weather.occurrences, weatherId: weather.id };
+            })
             .sort((a, b) => b.value - a.value);
         })
       );

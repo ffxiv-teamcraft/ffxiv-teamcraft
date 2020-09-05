@@ -286,7 +286,18 @@ export class LocalizedLazyDataService {
   }
 
   public getWeather(id: number): I18nNameLazy {
-    return this.getRow('weathers', `${id}.name`);
+    const { koKey, ruKey, zhKey } = this.guessExtendedLanguageKeys('weathers');
+    const accessor = `${id}.name`;
+    const en = this.getResolver('weathers', accessor, 'en');
+    return {
+      en,
+      de: this.getResolver('weathers', accessor, 'de'),
+      fr: this.getResolver('weathers', accessor, 'fr'),
+      ja: this.getResolver('weathers', accessor, 'ja'),
+      ko: !koKey ? en : this.getResolver(koKey, id, 'ko').pipe(switchMap((p) => (p ? of(p) : en))),
+      ru: !ruKey ? en : this.getResolver(ruKey, id, 'ru').pipe(switchMap((p) => (p ? of(p) : en))),
+      zh: !zhKey ? en : this.getResolver(zhKey, id, 'zh').pipe(switchMap((p) => (p ? of(p) : en))),
+    };
   }
 
   public getWeatherId(name: string): Observable<number> {

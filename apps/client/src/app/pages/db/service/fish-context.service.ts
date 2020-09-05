@@ -175,7 +175,26 @@ export class FishContextService {
     shareReplay(1)
   );
 
-  public highlightTime$ = this.etime.getEorzeanTime().pipe(
+  public readonly hoursBySpot$ = this.spotId$.pipe(
+    filter((spotId) => spotId >= 0),
+    switchMap((spotId) => this.data.getHoursByFishId(undefined, spotId)),
+    map((res) => {
+      const data = res.data?.etimes.reduce<{ total: number; byFish: Record<number, { total: number; byTime: Record<number, number> }> }>(
+        ({ total, byFish }, val) => {
+          const fishEntry = byFish[val.itemId] ?? { total: 0, byTime: this.makeHoursDict() };
+          fishEntry.total += val.occurences;
+          fishEntry.byTime[val.etime] += val.occurences;
+          const next = { ...byFish, [val.itemId]: fishEntry };
+          return { total: total + val.occurences, byFish: next };
+        },
+        { total: 0, byFish: {} }
+      );
+      return { ...res, data };
+    }),
+    shareReplay(1)
+  );
+
+  public readonly highlightTime$ = this.etime.getEorzeanTime().pipe(
     distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
     map((time) => {
       return [

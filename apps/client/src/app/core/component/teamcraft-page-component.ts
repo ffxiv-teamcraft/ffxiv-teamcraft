@@ -12,6 +12,7 @@ export abstract class TeamcraftPageComponent extends SeoPageComponent implements
 
   ngOnDestroy(): void {
     this.onDestroy$.next();
+    this.onDestroy$.complete();
     super.ngOnDestroy();
   }
 }

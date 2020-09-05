@@ -7,7 +7,7 @@ import gql from 'graphql-tag';
 import { uniq } from 'lodash';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
 import { combineLatest, concat, forkJoin, Observable, of, Subject } from 'rxjs';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, debounceTime } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -565,8 +565,6 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   dataTypes = DataType;
 
-  private readonly unsubscribe$ = new Subject<void>();
-
   constructor(
     private readonly route: ActivatedRoute,
     private readonly xivapi: XivapiService,
@@ -595,26 +593,27 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   }
 
   ngOnInit() {
+    super.ngOnInit();
     this.route.paramMap
       .pipe(
-        takeUntil(this.unsubscribe$),
+        takeUntil(this.onDestroy$),
         switchMap((params) => {
-          const slug = params.get('slug');
-          const itemId = +params.get('itemId');
-          const correctSlug = this.i18n.resolveName(this.l12nLazy.getItem(itemId)).pipe(
-            map((name) => name.split(' ').join('-')),
-            first()
+          const slug$ = of(params.get('slug') ?? undefined);
+          const _itemId = +params.get('itemId') >= 0 ? +params.get('itemId') : undefined;
+          const itemId$ = of(_itemId);
+          const correctSlug$ = this.i18n.resolveName(this.l12nLazy.getItem(_itemId)).pipe(map((name) => name?.split(' ').join('-')));
+          return combineLatest([slug$, itemId$, correctSlug$]).pipe(
+            debounceTime(100),
+            map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug }))
           );
-          return forkJoin({ slug: of(slug ?? undefined), itemId: of(itemId >= 0 ? itemId : undefined), correctSlug });
         })
       )
       .subscribe(this.onRouteParams);
   }
 
   ngOnDestroy() {
+    super.ngOnDestroy();
     this.itemContext.setItemId(undefined);
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
   }
 
   @Memoized()
@@ -818,6 +817,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   private readonly onRouteParams = ({ slug, itemId, correctSlug }: { slug?: string; itemId?: number; correctSlug?: string }) => {
     this.itemContext.setItemId(itemId);
+    if (!correctSlug) return;
     if (slug === undefined) {
       this.router.navigate([correctSlug], {
         relativeTo: this.route,

@@ -20,6 +20,7 @@ export class FishBaitsComponent {
     switchMap((res) => {
       if (!res.data) return of([]);
       const baitNames = mapValues(res.data.byId, (key) => this.i18n.resolveName(this.l12n.getItem(key.id)).pipe(take(1)));
+      // TODO: Combinelatest instead of forkjoin
       return forkJoin(baitNames).pipe(
         map((names) => {
           return Object.values(res.data.byId).map((bait) => ({ name: names[bait.id] ?? '--', value: bait.occurrences, baitId: bait.id }));

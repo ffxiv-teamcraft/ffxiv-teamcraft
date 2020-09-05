@@ -60,6 +60,7 @@ import { FishDataService } from './service/fish-data.service';
 import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
+import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
 
 const routes: Routes = [
   {
@@ -263,6 +264,7 @@ const routes: Routes = [
     FishTopUsersComponent,
     FishUserRankingComponent,
     FishDetailsContainerComponent,
+    FishingSpotHoursComponent,
   ],
   imports: [
     CommonModule,
