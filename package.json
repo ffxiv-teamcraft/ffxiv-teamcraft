@@ -123,7 +123,7 @@
     "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
-    "node-machina-ffxiv": "^2.36.51",
+    "node-machina-ffxiv": "^2.37.9",
     "request": "^2.88.2",
     "tslib": "^1.10.0"
   },
@@ -199,6 +199,7 @@
     "core-js": "^2.5.4",
     "cypress": "^4.4.0",
     "cz-conventional-changelog": "^2.1.0",
+    "date-fns": "^2.12.0",
     "date-fns": "^2.12.0",
     "deep-diff": "^1.0.2",
     "del-cli": "^1.1.0",
