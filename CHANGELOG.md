@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.14"></a>
+## [7.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.12...v7.3.14) (2020-09-08)
+
+
+### Bug Fixes
+
+* **currency-spending:** fixed an issue with bicolor gemstones not loading properly ([adf7368](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/adf7368))
+* **db:** fixed missing foods ([eb6baab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb6baab))
+* **desktop:** fix for korean inventory tracking ([e3e74b6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e3e74b6))
+* **desktop:** fix inventory traking for KR ([c06da56](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c06da56))
+* **list:** fixed an issue preventing new items from being added to a list ([8cb04ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8cb04ea))
+* **list:** fixed color change on completed lists ([33d643a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/33d643a))
+* **list:** items on sale now properly labelled inside list ([302ade1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/302ade1))
+* **metrics:** excluded gils from gathered items ([d948e68](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d948e68))
+* **metrics:** fixed duplicate gil entry when selling items on MB ([412bad5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/412bad5))
+* **users:** fixed an issue with user picker sometimes not finding the user ([96cf5e7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96cf5e7))
+
+
+### Features
+
+* **community-rotations:** new quality and difficulty filters ([a6fffa0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a6fffa0))
+* **db:** support for 5.31 data ([c03dee2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c03dee2))
+* **desktop:** support for 5.31 packet capture ([d18772d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d18772d))
+
+
+
 <a name="7.3.13"></a>
 ## [7.3.13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.12...v7.3.13) (2020-09-08)
 

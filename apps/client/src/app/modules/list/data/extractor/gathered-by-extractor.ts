@@ -194,7 +194,7 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
               areaid: spot.zoneId,
               mapid: spot.mapId,
               level: partial.obj.l,
-              coords: [spot.coords.x, spot.coords.y],
+              coords: [spot.coords?.x ?? 0, spot.coords?.y ?? 0],
               type: 4
             };
             gatheredBy.level = (gatheredBy.level === 0 || gatheredBy.level > partial.obj.l) ? partial.obj.l : gatheredBy.level;
