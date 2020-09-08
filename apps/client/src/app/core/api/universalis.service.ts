@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MarketboardItem } from './market/marketboard-item';
-import { combineLatest, Observable } from 'rxjs';
-import { bufferCount, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
+import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../data/lazy-data.service';
 import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
@@ -32,6 +32,7 @@ export class UniversalisService {
   public getDCPrices(dc: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
     return this.http.get<any>(`https://universalis.app/api/${dc}/${itemIds.join(',')}`)
       .pipe(
+        catchError(() => of([])),
         map(response => {
           const data = response.items || [response];
           return data.map(res => {
@@ -76,6 +77,7 @@ export class UniversalisService {
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)
         .pipe(
+          catchError(() => of([])),
           map(response => {
             const data = response.items || [response];
             return data.map(res => {
