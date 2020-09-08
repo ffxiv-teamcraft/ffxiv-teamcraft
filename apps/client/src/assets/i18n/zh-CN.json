@@ -940,6 +940,8 @@
       "Min_craftsmanship_filter_placeholder": "最小作业精度",
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
+      "Difficulty_filter_placeholder": "Difficulty",
+      "Quality_filter_placeholder": "Quality",
       "Intro": "输入筛选条件",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",

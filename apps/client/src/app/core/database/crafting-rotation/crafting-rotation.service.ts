@@ -25,6 +25,8 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
       && filters.craftsmanship === null
       && filters.control === null
       && filters.cp === null
+      && filters.difficulty === null
+      && filters.quality === null
     ) {
       return of([]);
     }
@@ -70,6 +72,12 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
               }
               if (filters.cp) {
                 matches = matches && rotation.community.minCp <= filters.cp;
+              }
+              if (filters.difficulty) {
+                matches = matches && rotation.recipe.progress >= filters.difficulty;
+              }
+              if (filters.quality) {
+                matches = matches && rotation.recipe.quality >= filters.quality;
               }
               return matches;
             });

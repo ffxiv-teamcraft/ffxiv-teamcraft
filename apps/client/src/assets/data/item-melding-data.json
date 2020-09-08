@@ -136173,7 +136173,7 @@
   "30531": {
     "modifier": 1,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136215,7 +136215,7 @@
   "30537": {
     "modifier": 2,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136257,7 +136257,7 @@
   "30543": {
     "modifier": 3,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136299,7 +136299,7 @@
   "30549": {
     "modifier": 4,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136341,7 +136341,7 @@
   "30555": {
     "modifier": 11,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136383,7 +136383,7 @@
   "30561": {
     "modifier": 6,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -136425,147 +136425,147 @@
   "30567": {
     "modifier": 5,
     "prop": "Waist%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30568": {
     "modifier": 1,
     "prop": "Earring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30569": {
     "modifier": 10,
     "prop": "Earring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30570": {
     "modifier": 12,
     "prop": "Earring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30571": {
     "modifier": 6,
     "prop": "Earring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30572": {
     "modifier": 5,
     "prop": "Earring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30573": {
     "modifier": 1,
     "prop": "Necklace%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30574": {
     "modifier": 10,
     "prop": "Necklace%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30575": {
     "modifier": 12,
     "prop": "Necklace%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30576": {
     "modifier": 6,
     "prop": "Necklace%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30577": {
     "modifier": 5,
     "prop": "Necklace%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30578": {
     "modifier": 1,
     "prop": "Bracelet%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30579": {
     "modifier": 10,
     "prop": "Bracelet%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30580": {
     "modifier": 12,
     "prop": "Bracelet%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30581": {
     "modifier": 6,
     "prop": "Bracelet%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30582": {
     "modifier": 5,
     "prop": "Bracelet%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30583": {
     "modifier": 1,
     "prop": "Ring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30584": {
     "modifier": 10,
     "prop": "Ring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30585": {
     "modifier": 12,
     "prop": "Ring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30586": {
     "modifier": 6,
     "prop": "Ring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
   "30587": {
     "modifier": 5,
     "prop": "Ring%",
-    "slots": 1,
+    "slots": 2,
     "overmeld": false,
     "canBeHq": true
   },
@@ -137436,6 +137436,41 @@
     "slots": 0,
     "overmeld": false,
     "canBeHq": true
+  },
+  "30762": {
+    "modifier": 0,
+    "prop": "Head%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30763": {
+    "modifier": 0,
+    "prop": "Chest%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30764": {
+    "modifier": 0,
+    "prop": "Hands%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30765": {
+    "modifier": 0,
+    "prop": "Legs%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
+  },
+  "30766": {
+    "modifier": 0,
+    "prop": "Feet%",
+    "slots": 0,
+    "overmeld": false,
+    "canBeHq": false
   },
   "30807": {
     "modifier": 3,
