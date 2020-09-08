@@ -940,6 +940,8 @@
       "Min_craftsmanship_filter_placeholder": "Мин. Мастерство",
       "Min_control_filter_placeholder": "Мин. Контроль",
       "Min_cp_filter_placeholder": "Мин. CP",
+      "Difficulty_filter_placeholder": "Difficulty",
+      "Quality_filter_placeholder": "Quality",
       "Intro": "Добавьте фильтры, чтобы начать",
       "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
