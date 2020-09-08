@@ -1,14 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** removed wrong coordinates for a spearfishing nodes.
-* **desktop:** proper single instance management.
-* **gearsets:** fixed a possible bug with ariyala import.
-* **layout:** fixed "assign team member" button not shown properly.
-* **list:** HQ filter is now properly applied to "fill with inventory".
+* **currency-spending:** fixed an issue with bicolor gemstones not loading properly.
+* **desktop:** fix for korean inventory tracking.
+* **desktop:** fix inventory traking for KR.
+* **list:** fixed color change on completed lists.
+* **list:** items on sale now properly labelled inside list.
+* **metrics:** excluded gils from gathered items.
+* **metrics:** fixed duplicate gil entry when selling items on MB.
+* **users:** fixed an issue with user picker sometimes not finding the user.
 
 
 ### Features
 
-* **db:** way better fish data page loading experience.
-* support for korean v5.2 update.
-* **community-lists:** new tags for airship and submarine lists.`;
+* **community-rotations:** new quality and difficulty filters.
+* **db:** support for 5.31 data.
+* **desktop:** support for 5.31 packet capture.`;
