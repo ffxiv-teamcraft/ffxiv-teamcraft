@@ -29,7 +29,7 @@ export class InventoryFacade {
   }
 
   public getContainerDisplayName(item: InventoryItem): string {
-    if (item.retainerName) {
+    if (item.retainerName && item.containerId !== ContainerType.RetainerMarket) {
       return item.retainerName;
     }
     return `INVENTORY.BAG.${this.getContainerName(item.containerId)}`;
