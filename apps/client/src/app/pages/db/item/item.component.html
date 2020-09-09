@@ -488,6 +488,8 @@
                                   <div><span class="companion-svg job-svg" [innerHTML]="recipe.job | jobUnicode"></span></div>
                                   <div>{{recipe.job | jobAbbr | i18n}}</div>
                                   <div>{{recipe.lvl}}{{recipe.stars_tooltip}}</div>
+                                  <div *ngIf="recipe.craftsmanshipReq > 0">{{'DB.ITEM.Required_craftsmanship' | translate}}: {{recipe.craftsmanshipReq}}</div>
+                                  <div *ngIf="recipe.controlReq > 0">{{'DB.ITEM.Required_control' | translate}}: {{recipe.controlReq}}</div>
                                 </div>
                                 <div *ngIf="recipeSource.masterbook" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                                   <app-item-icon [itemId]="recipeSource.masterbook.id" width="24"></app-item-icon>

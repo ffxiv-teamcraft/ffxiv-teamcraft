@@ -172,7 +172,7 @@ export class MachinaService {
         return inventory !== null;
       })
     ).subscribe((inventory: UserInventory) => {
-      inventory.lastZone = firebase.firestore.Timestamp.now();
+      inventory.lastZone = Date.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -205,7 +205,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = firebase.firestore.Timestamp.now();
+      inventory.lastZone = Date.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
@@ -234,7 +234,7 @@ export class MachinaService {
         );
       })
     ).subscribe(inventory => {
-      inventory.lastZone = firebase.firestore.Timestamp.now();
+      inventory.lastZone = Date.now();
       this.userInventoryService.updateInventory(inventory);
     });
 
