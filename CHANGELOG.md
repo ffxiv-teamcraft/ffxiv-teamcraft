@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.3.15"></a>
+## [7.3.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.14...v7.3.15) (2020-09-09)
+
+
+### Bug Fixes
+
+* **db:** added missing coords for npcs, fates and some gathering nodes ([22692d9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/22692d9))
+* **desktop:** fixed an issue with log completion not filled properly ([fa168ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa168ec))
+* **inventory:** fixed an issue with last inventory update not being tracked properly ([c293f0b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c293f0b))
+
+
+### Features
+
+* **db:** added missing trade sources for Skybuilders approved items ([0a5bb68](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a5bb68))
+* **db:** added required stats to recipes when they have some ([8e2ab15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e2ab15))
+* **simulator:** added required stats in missing stats requirements error ([1b58ad3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1b58ad3))
+
+
+
 <a name="7.3.14"></a>
 ## [7.3.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.12...v7.3.14) (2020-09-08)
 
