@@ -16,4 +16,4 @@ export const patchNotes = `### Bug Fixes
 
 * **community-rotations:** new quality and difficulty filters.
 * **db:** support for 5.31 data.
-* **desktop:** support for 5.31 packet capture.`;
+* **desktop:** support for 5.31 packet capture.`;

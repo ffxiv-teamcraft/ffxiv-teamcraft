@@ -26,11 +26,7 @@ export class InventoryEffects {
         newInventory.characterId = user.defaultLodestoneId;
         return of(newInventory);
       }
-      const fromLS = this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory);
-      if (fromLS.$key === undefined) {
-        fromLS.$key = user.$key;
-      }
-      return of(fromLS);
+      return of(this.serializer.deserialize<UserInventory>(JSON.parse(fromLocalStorage), UserInventory));
     }),
     map(inventory => new InventoryLoaded(inventory))
   );
@@ -38,7 +34,6 @@ export class InventoryEffects {
   @Effect({ dispatch: false })
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
-    auditTime(30000),
     map(action => {
       localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
     })

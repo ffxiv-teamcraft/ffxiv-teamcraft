@@ -54,7 +54,7 @@ export class UserInventory extends DataModel {
 
   characterId: number;
 
-  lastZone: firebase.firestore.Timestamp;
+  lastZone: number;
 
   getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
     return [].concat.apply([],
@@ -251,13 +251,5 @@ export class UserInventory extends DataModel {
     clone.characterId = this.characterId;
     clone.lastZone = this.lastZone;
     return clone;
-  }
-
-  afterDeserialized(): void {
-    if (typeof this.lastZone !== 'object') {
-      this.lastZone = firebase.firestore.Timestamp.fromDate(new Date(this.lastZone));
-    } else if (!(this.lastZone instanceof firebase.firestore.Timestamp)) {
-      this.lastZone = new firebase.firestore.Timestamp((this.lastZone as any).seconds, (this.lastZone as any).nanoseconds);
-    }
   }
 }
