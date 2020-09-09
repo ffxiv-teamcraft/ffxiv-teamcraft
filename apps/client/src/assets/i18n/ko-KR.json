@@ -1422,7 +1422,9 @@
     "Jump_to_page": "빠른 검색",
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다."
+      "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "시간 통계",
