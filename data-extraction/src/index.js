@@ -2017,28 +2017,28 @@ if (hasTodo('collectables-shops')) {
 }
 
 
-// if (hasTodo('HWDGatherer')) {
-//   const inspections = [];
-//   getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
-//     completeFetch.forEach(inspection => {
-//       for (let i = 0; i < 52; i++) {
-//         if (inspection[`ItemRequired${i}`] === null) {
-//           return;
-//         }
-//         inspections.push({
-//           requiredItem: inspection[`ItemRequired${i}`].Item,
-//           amount: inspection[`AmountRequired${i}`],
-//           receivedItem: inspection[`ItemReceived${i}`].ID,
-//           scrips: inspection[`Reward1${i}`].Scrips,
-//           points: inspection[`Reward1${i}`].Points,
-//           phase: inspection[`Phase${i}TargetID`]
-//         });
-//       }
-//     });
-//     persistToJsonAsset('hwd-inspections', inspections);
-//     done('HWDGatherer');
-//   });
-// }
+if (hasTodo('HWDGatherer')) {
+  const inspections = [];
+  getAllEntries('https://xivapi.com/HWDGathererInspection').subscribe(completeFetch => {
+    completeFetch.forEach(inspection => {
+      for (let i = 0; i < 52; i++) {
+        if (inspection[`ItemRequired${i}`] === null) {
+          return;
+        }
+        inspections.push({
+          requiredItem: inspection[`ItemRequired${i}`].Item,
+          amount: inspection[`AmountRequired${i}`],
+          receivedItem: inspection[`ItemReceived${i}TargetID`],
+          scrips: inspection[`Reward1${i}`].Scrips,
+          points: inspection[`Reward1${i}`].Points,
+          phase: inspection[`Phase${i}TargetID`]
+        });
+      }
+    });
+    persistToJsonAsset('hwd-inspections', inspections);
+    done('HWDGatherer');
+  });
+}
 
 if (hasTodo('HWDPhases')) {
   const gathererInspectTerm = {};
