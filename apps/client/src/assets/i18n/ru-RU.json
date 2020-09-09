@@ -1422,7 +1422,9 @@
     "Jump_to_page": "Быстрый переход на другую страницу",
     "Ishgard_restoration": "Восстановление Ишгарда",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "Время",
