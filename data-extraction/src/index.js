@@ -30,8 +30,8 @@ function getCoords(coords, mapData) {
   const x = (coords.x + mapData.offset_x) * c;
   const y = (coords.y + mapData.offset_y) * c;
   return {
-    x: ((41.0 / c) * ((x + 1024.0) / 2048.0) + 1),
-    y: ((41.0 / c) * ((y + 1024.0) / 2048.0) + 1),
+    x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) /100,
+    y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) /100,
     z: Math.floor((coords.z - mapData.offset_z)) / 100
   };
 }
