@@ -537,7 +537,6 @@
     "Enable_crystals_tracking": "Enable crystals tracking",
     "Always_show_inventory": "Always show inventory (disabled on small screens, < 600px)",
     "Copy_as_text": "Copy as text",
-    "Copy_as_json": "Copy as json",
     "Copy_list_as_text": "Copy the whole list as text",
     "Copy_list_as_json": "Copy the whole list as json",
     "Copied_as_text": "Content copied in clipboard",

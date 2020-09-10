@@ -101,12 +101,12 @@
                   nzSize="small">
             <i class="material-icons">local_atm</i>
           </button>
-          <button (cbOnSuccess)="textCopied()" (click)="$event.stopPropagation();copyTextExport()"
+          <button (click)="$event.stopPropagation();copyTextExport()"
                   [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>
           </button>
-          <button (cbOnSuccess)="jsonCopied()" (click)="$event.stopPropagation();copyJSONExport()"
+          <button (click)="$event.stopPropagation();copyJSONExport()"
                   [nzTooltipTitle]="'LIST.Copy_as_json' | translate"
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="snippets"></i>

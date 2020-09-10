@@ -1,46 +1,56 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
-import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { MediaObserver } from '@angular/flex-layout';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+import * as _ from 'lodash';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { ClipboardService } from 'ngx-clipboard';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+
+import { AuthFacade } from '../../../+state/auth.facade';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { UniversalisService } from '../../../core/api/universalis.service';
+import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
+import { ListDisplay } from '../../../core/layout/list-display';
+import { ListLayout } from '../../../core/layout/list-layout';
+import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
+import { SeoService } from '../../../core/seo/seo.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
+import { PlatformService } from '../../../core/tools/platform.service';
+import { Team } from '../../../model/team/team';
+import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
+import { DataType } from '../../../modules/list/data/data-type';
+import { ListRowSerializationHelper } from '../../../modules/list/data/ListRowSerializationHelper';
+import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
-import { TranslateService } from '@ngx-translate/core';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
-import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { TagsPopupComponent } from '../../../modules/list/tags-popup/tags-popup.component';
-import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
-import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
+import {
+  NameQuestionPopupComponent,
+} from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { PermissionsBoxComponent } from '../../../modules/permissions/permissions-box/permissions-box.component';
-import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { ListDisplay } from '../../../core/layout/list-display';
-import { Team } from '../../../model/team/team';
-import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
-import { AuthFacade } from '../../../+state/auth.facade';
-import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
-import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { SeoService } from '../../../core/seo/seo.service';
-import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { ListLayout } from '../../../core/layout/list-layout';
-import { MediaObserver } from '@angular/flex-layout';
-import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
-import * as _ from 'lodash';
-import { IpcService } from '../../../core/electron/ipc.service';
-import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import {
+  TextQuestionPopupComponent,
+} from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
-import { PlatformService } from '../../../core/tools/platform.service';
-import { DataType } from '../../../modules/list/data/data-type';
+import { InventoryViewComponent } from '../inventory-view/inventory-view.component';
+import { ListContributionsComponent } from '../list-contributions/list-contributions.component';
+import { ListHistoryPopupComponent } from '../list-history-popup/list-history-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -98,16 +108,23 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   private regeneratingList = false;
 
+  private server$: BehaviorSubject<string> = new BehaviorSubject<string>(undefined);
+  serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
+
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
-              private activatedRoute: ActivatedRoute, private dialog: NzModalService,
-              private translate: TranslateService, private router: Router,
-              private alarmsFacade: AlarmsFacade, private message: NzMessageService,
-              private listManager: ListManagerService, private progressService: ProgressPopupService,
-              private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
-              private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
-              private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
-              private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
-              public settings: SettingsService, public platform: PlatformService) {
+    private activatedRoute: ActivatedRoute, private dialog: NzModalService,
+    private translate: TranslateService, private router: Router,
+    private alarmsFacade: AlarmsFacade, private message: NzMessageService,
+    private listManager: ListManagerService, private progressService: ProgressPopupService,
+    private teamsFacade: TeamsFacade, private authFacade: AuthFacade,
+    private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
+    private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
+    private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
+    public settings: SettingsService, public platform: PlatformService,
+    private lazyData: LazyDataService,
+    private gt: GarlandToolsService,
+    private _clipboardService: ClipboardService
+  ) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -166,6 +183,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         this.teamsFacade.select(list.teamId);
       }
     });
+    //hold onto server name once resolved
+    this.authFacade.mainCharacter$.pipe(
+      map(char => char.Server)
+    ).subscribe(this.server$);
   }
 
   ngOnInit() {
@@ -317,6 +338,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
+  public copyTextExport(display: ListDisplay, list: List) {
+    if (this._clipboardService.copyFromContent(this.getListTextExport(display, list)))
+      this.afterListTextCopied();
+  }
+
   public getListTextExport(display: ListDisplay, list: List): string {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
@@ -329,19 +355,27 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   }
 
+  afterListTextCopied(): void {
+    this.message.success(this.translate.instant('LIST.Copied_as_text'));
+  }
+
+  public copyJSONExport(display: ListDisplay, list: List) {
+    if (this._clipboardService.copyFromContent(this.getListJsonExport(display, list)))
+      this.afterListJSONCopied();
+  }
+
   public getListJsonExport(display: ListDisplay, list: List): string {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return display.rows.reduce((result, displayRow) => {
-      return result + displayRow.rows.reduce((exportString, row) => {
-        return this.appendExportStringWithRow(exportString, row);
-      }, `${displayRow.title} :\n`) + '\n';
-    }, seed);
-
+    return JSON.stringify(this.getSerializedRowData(list.items))//,null,2);
   }
 
-  afterListTextCopied(): void {
+  private getSerializedRowData(rows: ListRow[]): any {
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue()), this.server$.getValue(), rows);
+  }
+
+  afterListJSONCopied(): void {
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 

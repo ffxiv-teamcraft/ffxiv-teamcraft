@@ -1,36 +1,42 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
-import { getItemSource, ListRow } from '../model/list-row';
-import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nName } from '../../../model/common/i18n-name';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { ClipboardService } from 'ngx-clipboard';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+
+import { ListsFacade } from '../+state/lists.facade';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { UniversalisService } from '../../../core/api/universalis.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
+import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { I18nName } from '../../../model/common/i18n-name';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
-import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
+import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
+import {
+  TotalPanelPricePopupComponent,
+} from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
+import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
+import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.component';
 import { NavigationObjective } from '../../map/navigation-objective';
-import { ListsFacade } from '../+state/lists.facade';
-import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { ListManagerService } from '../list-manager.service';
-import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
-import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../map/world-navigation-map/world-navigation-map.component';
-import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
-import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { DataType } from '../data/data-type';
+import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { SettingsService } from '../../settings/settings.service';
+import { DataType } from '../data/data-type';
+import { ListRowSerializationHelper } from '../data/ListRowSerializationHelper';
+import { ListManagerService } from '../list-manager.service';
 import { Drop } from '../model/drop';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { ListRow } from '../model/list-row';
 import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
-import { AuthFacade } from '../../../+state/auth.facade';
-import { UniversalisService } from '../../../core/api/universalis.service';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
 
@@ -98,8 +104,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   hasAlreadyBeenOpened: boolean;
 
   private server$: BehaviorSubject<string> = new BehaviorSubject<string>(undefined);
+  serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
 
-  loggedIn$ = this.authFacade.loggedIn$;
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
     private message: NzMessageService, private translate: TranslateService,
     private dialog: NzModalService, private listsFacade: ListsFacade,
@@ -107,7 +113,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
     private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
     public settings: SettingsService, private lazyData: LazyDataService,
-    private universalis: UniversalisService,
     private authFacade: AuthFacade,
     private gt: GarlandToolsService,
     private _clipboardService: ClipboardService
@@ -172,9 +177,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     }
   }
 
-  getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
-    return getItemSource<T>(row, type, isObject);
-  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (!this.displayRow) {
@@ -194,8 +196,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return this.getData(row, DataType.TRADE_SOURCES).length > 0
-        || this.getData(row, DataType.VENDORS).length > 0
+      return ListRowSerializationHelper.getData(row, DataType.TRADE_SOURCES).length > 0
+        || ListRowSerializationHelper.getData(row, DataType.VENDORS).length > 0
         || hasTrades;
     }, false);
     this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
@@ -203,26 +205,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
     return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = this
-        .getData<Drop[]>(row, DataType.DROPS)
+      const hasMonstersWithPosition = ListRowSerializationHelper.getData<Drop[]>(row, DataType.DROPS)
         .some(d => {
           return d.position
             && (d.position.x !== undefined)
             && !this.lazyData.data.maps[d.mapid].dungeon
             && (!zoneId || d.zoneid === zoneId);
         });
-      const hasNodesWithPosition = (this
-        .getData(row, DataType.GATHERED_BY, true).nodes || [])
+      const hasNodesWithPosition = (ListRowSerializationHelper.getData(row, DataType.GATHERED_BY, true).nodes || [])
         .some((n: { coords: string | any[]; zoneid: number; }) =>
           n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId)
         );
-      const hasVendorsWithPosition = this
-        .getData(row, DataType.VENDORS)
+      const hasVendorsWithPosition = ListRowSerializationHelper.getData(row, DataType.VENDORS)
         .some((d: { coords: { x: any; }; zoneId: number; }) =>
           d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId)
         );
-      const hasTradesWithPosition = this
-        .getData(row, DataType.TRADE_SOURCES)
+      const hasTradesWithPosition = ListRowSerializationHelper.getData(row, DataType.TRADE_SOURCES)
         .some((d: { npcs: any[]; zoneId: number; }) =>
           d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId))
         );
@@ -510,183 +508,28 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
-  public applyItemName(obj) {
-    const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
-    return {
-      ...obj,
-      name: this.getItemName(id),
-      itemId: this.getItemName(obj.itemId)
-    };
-  }
-
-  private getItemName(id: any) {
-    const itemInfo = this.l12n.getItem(id);
-    return id ? this.getNameIfExists(itemInfo) : undefined;
-  }
-
-  private serializeCraftedBy(craftedBy: any) {
-    return craftedBy ? craftedBy.map((obj: any) => {
-      const retval = {
-        ...obj,
-        name: this.getItemName(obj.id),
-        job: this.getJob(obj.job)
-      };
-      return retval
-    }) : undefined;
-  }
-  private getJob(job: any) {
-    return this.getNameIfExists(this.l12n.getJobAbbr(job));
-  }
-
-  private getNameIfExists(itemName: I18nName) {
-    const name = this.i18nTools.getName(itemName);
-    return name && name != 'no name' ? name : undefined;
-  }
-
-  private serializeVoyages(voyages: any) {
-    return voyages && voyages.length > 0 ? voyages.map((r: any) => this.getNameIfExists(r)) : undefined;
-  }
-
-  public applyNpcName(obj) {
-    return {
-      ...obj,
-      npcName: this.getNameIfExists(this.l12n.getNpc(obj.npcId ? obj.npcId : obj.id)),
-      zoneName: this.getNameIfExists(this.l12n.getPlace(obj.zoneId) ? this.l12n.getPlace(obj.zoneId) : this.l12n.getMapName(obj.mapId)),
-    };
-  }
-
-  public serializeTrades(trades: any) {
-    return trades && trades.length > 0 ? trades.map((r: any) => this.serializeTradeData(r)) : undefined;
-  }
-
-  public serializeTrade(obj) {
-    return {
-      currencies: obj.currencies && obj.currencies.length > 0 ? obj.currencies.map(c => this.applyItemName(c)) : undefined,
-      items: obj.items && obj.items.length > 0 ? obj.items.map(i => this.applyItemName(i)) : undefined,
-    };
-  }
-
-  public serializeTradeData(obj) {
-    return {
-      ...obj,
-      npcs: this.serializeNPCs(obj.npcs),
-      trades: this.serializeTrade(obj.trades),
-    };
-  }
-
-  private getMonsterHuntData(monsterDrops: any) {
-    return monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyItemName(r)) : undefined;
-  }
-
-  public serializeNPCs(vendors: any) {
-    return vendors && vendors.length > 0 ? vendors.map((r: any) => this.applyNpcName(r)) : undefined;
-  }
-
-  private serializeVentures(item: any, ventures: any) {
-    return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
-      let retval = {
-        ...venture,
-        amountsDetails: VenturesComponent.ventureAmounts(venture)
-          .map(threshold => {
-            return {
-              ...threshold,
-              venturesRemaining: Math.ceil((item.amount - item.done) / threshold.quantity)
-            }
-          }),
-        name: this.getNameIfExists(this.l12n.getVenture(venture.id)),
-        job: this.getJob(venture.job),
-      };
-      delete retval.gathering;
-      delete retval.amounts;
-      delete retval.ilvl;
-      delete retval.jobs;
-      return retval;
-    }) : undefined;
-  }
-
   public copyJSONExport() {
-    if (this._clipboardService.copyFromContent(this.getJsonExport()))
+    let rows: ListRow[];
+    if (this.tiers) {
+      rows = this.tiers.reduce((res, tier) => {
+        return [...res, ...tier];
+      }, []);
+    } else {
+      rows = this.displayRow.rows;
+    };
+
+    if (this._clipboardService.copyFromContent(
+      JSON.stringify(this.getSerializedRowData(rows))//,null,2)
+    ))
       this.jsonCopied();
   }
-  public getJsonExport(): string {
-    if (!this.server$.getValue())
-      return JSON.stringify({});
-    else {
-      let rows: ListRow[];
-      if (this.tiers) {
-        rows = this.tiers.reduce((res, tier) => {
-          return [...res, ...tier];
-        }, []);
-      } else {
-        rows = this.displayRow.rows;
-      }
-      console.log(JSON.stringify(rows))
 
-      const perDCURL = `https://universalis.app/api/${
-        UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue())
-        }/${rows.map(r => r.id).join(',')}`
-
-      return JSON.stringify({
-        homeServer: this.server$.getValue(),
-        pricingURL: perDCURL,
-        items: rows
-          .map(row => this.applyItemName(row))
-          .map((item: ListRow) => {
-            const craftedBy = this.getData(item, DataType.CRAFTED_BY);
-            const trades = this.getData(item, DataType.TRADE_SOURCES);
-            const vendors = this.getData(item, DataType.VENDORS);
-            const reducedFrom = this.getData(item, DataType.REDUCED_FROM);
-            const desynths = this.getData(item, DataType.DESYNTHS);
-            const instances = this.getData(item, DataType.INSTANCES);
-            const gathering = this.getData(item, DataType.GATHERED_BY);
-            const gardening = this.getData(item, DataType.GARDENING);
-            const voyages = this.getData(item, DataType.VOYAGES);
-            const monsterDrops = this.getData(item, DataType.DROPS);
-            const masterbooks = this.getData(item, DataType.MASTERBOOKS);
-            const treasures = this.getData(item, DataType.TREASURES);
-            const fates = this.getData(item, DataType.FATES);
-            const ventures = this.getData(item, DataType.VENTURES);
-            const tripleTriadDuels = this.getData(item, DataType.TRIPLE_TRIAD_DUELS);
-            const tripleTriadPack = this.getData(item, DataType.TRIPLE_TRIAD_PACK);
-            const quests = this.getData(item, DataType.QUESTS);
-            const achievements = this.getData(item, DataType.ACHIEVEMENTS);
-            let retval: any = {
-              ...item,
-              done: item.done ? true : false,
-              amountNeeded: item.amount_needed,
-              used: item.used,
-              requires: item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined,
-              neededToCraft: this.serializeCraftedBy(craftedBy),
-              trades: this.serializeTrades(trades),
-              vendors: this.serializeNPCs(vendors),
-              reducedFrom: reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined,
-              desynths: desynths && desynths.length > 0 ? desynths.map((r: any) => this.applyItemName({ id: r })) : undefined,
-              instances: instances && instances.length > 0 ? instances.map((r: any) => this.applyItemName(r)) : undefined,
-              gathering: gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined,
-              gardening: gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined,
-              voyages: this.serializeVoyages(voyages),
-              hunting: this.getMonsterHuntData(monsterDrops),
-              masterbooks: masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined,
-              treasures: treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined,
-              fates: fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined,
-              ventures: this.serializeVentures(item, ventures),
-              tripleTriadDuels: tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined,
-              tripleTriadPack: tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined,
-              quests: quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined,
-              achievements: achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined,
-              marketBoardLink: `https://universalis.app/market/${item.id}`,
-            };
-            //get rid of fields that are confusing for an export layer
-            delete retval.sources;
-            delete retval.craftedBy;
-            return retval;
-          })
-      });//, null, 2);
-    }
+  private getSerializedRowData(rows: ListRow[]): any {
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue()), this.server$.getValue(), rows);
   }
 
   jsonCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_json'));
+    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   trackByItem(index: number, item: ListRow): number {
@@ -700,5 +543,4 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   trackByZone(index: number, item: ZoneBreakdownRow) {
     return item.zoneId;
   }
-
 }

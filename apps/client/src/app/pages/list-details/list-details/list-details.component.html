@@ -184,17 +184,17 @@
                     nz-tooltip nzSize="small">
               <i nz-icon nzType="share-alt"></i>
             </button>
-            <button (cbOnSuccess)="afterListTextCopied()" *ngIf="display$ | async as listDisplay"
-                    [cbContent]="getListTextExport(listDisplay, list)" [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
-                    ngxClipboard
+            <button (click)="$event.stopPropagation();copyTextExport(listDisplay, list)"
+                    *ngIf="display$ | async as listDisplay"
+                    [nzTitle]="'LIST.Copy_list_as_text' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">
               <i nz-icon nzType="copy"></i>
             </button>
-            <button (cbOnSuccess)="afterListTextCopied()" *ngIf="display$ | async as listDisplay"
-                    [cbContent]="getListJsonExport(listDisplay, list)" [nzTitle]="'LIST.Copy_list_as_json' | translate"
-                    ngxClipboard
+            <button (click)="$event.stopPropagation();copyJSONExport(listDisplay, list)"
+                    *ngIf="display$ | async as listDisplay"
+                    [nzTitle]="'LIST.Copy_list_as_json' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">
