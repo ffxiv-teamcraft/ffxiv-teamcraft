@@ -29,6 +29,8 @@ import { Drop } from '../model/drop';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { UniversalisService } from '../../../core/api/universalis.service';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
 
@@ -95,13 +97,21 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
+  private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
+    map(char => char.Server)
+  );
+
+  loggedIn$ = this.authFacade.loggedIn$;
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
-              private message: NzMessageService, public translate: TranslateService,
-              private dialog: NzModalService, private listsFacade: ListsFacade,
-              private itemPicker: ItemPickerService, private listManager: ListManagerService,
-              private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
-              private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
-              public settings: SettingsService, private lazyData: LazyDataService) {
+    private message: NzMessageService, private translate: TranslateService,
+    private dialog: NzModalService, private listsFacade: ListsFacade,
+    private itemPicker: ItemPickerService, private listManager: ListManagerService,
+    private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
+    private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
+    public settings: SettingsService, private lazyData: LazyDataService,
+    private universalis: UniversalisService,
+    private authFacade: AuthFacade
+  ) {
   }
 
   addItems(): void {
@@ -180,22 +190,38 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
+      return this.getData(row, DataType.TRADE_SOURCES).length > 0
+        || this.getData(row, DataType.VENDORS).length > 0
+        || hasTrades;
     }, false);
     this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
   }
 
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
     return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = this.getData<Drop[]>(row, DataType.DROPS).some(d => {
-        return d.position
-          && (d.position.x !== undefined)
-          && !this.lazyData.data.maps[d.mapid].dungeon
-          && (!zoneId || d.zoneid === zoneId);
-      });
-      const hasNodesWithPosition = (this.getData(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId));
-      const hasVendorsWithPosition = this.getData(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
-      const hasTradesWithPosition = this.getData(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId)));
+      const hasMonstersWithPosition = this
+        .getData<Drop[]>(row, DataType.DROPS)
+        .some(d => {
+          return d.position
+            && (d.position.x !== undefined)
+            && !this.lazyData.data.maps[d.mapid].dungeon
+            && (!zoneId || d.zoneid === zoneId);
+        });
+      const hasNodesWithPosition = (this
+        .getData(row, DataType.GATHERED_BY, true).nodes || [])
+        .some((n: { coords: string | any[]; zoneid: number; }) =>
+          n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId)
+        );
+      const hasVendorsWithPosition = this
+        .getData(row, DataType.VENDORS)
+        .some((d: { coords: { x: any; }; zoneId: number; }) =>
+          d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId)
+        );
+      const hasTradesWithPosition = this
+        .getData(row, DataType.TRADE_SOURCES)
+        .some((d: { npcs: any[]; zoneId: number; }) =>
+          d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId))
+        );
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
     }, false);
   }
@@ -473,6 +499,174 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   textCopied(): void {
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
+  }
+
+  public applyItemName(obj) {
+    const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
+    return {
+      ...obj,
+      name: this.getItemName(id),
+      itemId: this.getItemName(obj.itemId)
+    };
+  }
+
+  private getItemName(id: any) {
+    const itemInfo = this.l12n.getItem(id);
+    return id ? this.getNameIfExists(itemInfo) : undefined;
+  }
+
+  private serializeCraftedBy(craftedBy: any) {
+    return craftedBy ? craftedBy.map((obj: any) => {
+      const retval = {
+        ...obj,
+        name: this.getItemName(obj.id),
+        job: this.getNameIfExists(this.l12n.getJobAbbr(obj.job))
+      };
+      return retval
+    }) : undefined;
+  }
+  private getNameIfExists(itemName: I18nName) {
+    const name = this.i18nTools.getName(itemName);
+    return name && name != 'no name' ? name : undefined;
+  }
+
+  public idToName(id) {
+    const newLocal =
+      this.l12n.getInstanceName(id) ? this.l12n.getInstanceName(id)
+        : this.l12n.getAchievementName(id) ? this.l12n.getAchievementName(id)
+          : this.l12n.getMapName(id) ? this.l12n.getMapName(id)
+            : this.l12n.getPlace(id) ? this.l12n.getPlace(id)
+              : this.l12n.getFate(id) ? this.l12n.getFate(id)
+                : this.l12n.getLeve(id) ? this.l12n.getLeve(id)
+                  : this.l12n.getMob(id) ? this.l12n.getMob(id)
+                    : this.l12n.getVenture(id) ? this.l12n.getVenture(id)
+                      : this.l12n.getQuest(id) ? this.l12n.getQuest(id)
+                        : this.l12n.getJobAbbr(id) ? this.l12n.getJobAbbr(id)
+                          : undefined;
+    return this.getNameIfExists(newLocal);
+  }
+
+  public applyNpcName(obj) {
+    return {
+      ...obj,
+      npcName: this.getNameIfExists(this.l12n.getNpc(obj.npcId ? obj.npcId : obj.id)),
+      zoneName: this.getNameIfExists(this.l12n.getPlace(obj.zoneId) ? this.l12n.getPlace(obj.zoneId) : this.l12n.getMapName(obj.mapId)),
+    };
+  }
+
+  public serializeTrades(trades: any) {
+    return trades && trades.length > 0 ? trades.map((r: any) => this.serializeTradeData(r)) : undefined;
+  }
+
+  public serializeTrade(obj) {
+    return {
+      currencies: obj.currencies && obj.currencies.length > 0 ? obj.currencies.map(c => this.applyItemName(c)) : undefined,
+      items: obj.items && obj.items.length > 0 ? obj.items.map(i => this.applyItemName(i)) : undefined,
+    };
+  }
+
+  public serializeTradeData(obj) {
+    return {
+      ...obj,
+      npcs: this.serializeNPCs(obj.npcs),
+      trades: this.serializeTrade(obj.trades),
+    };
+  }
+
+  public serializeNPCs(vendors: any) {
+    return vendors && vendors.length > 0 ? vendors.map((r: any) => this.applyNpcName(r)) : undefined;
+  }
+
+  public getJsonExport(): string {
+    let rows: ListRow[];
+    if (this.tiers) {
+      rows = this.tiers.reduce((res, tier) => {
+        return [...res, ...tier];
+      }, []);
+    } else {
+      rows = this.displayRow.rows;
+    }
+    // TODO inject DC names?
+    const perDCURL = `https://universalis.app/api/{dc}/${rows.map(r => r.id).join(',')}`
+
+    return JSON.stringify({
+      PricingURL: perDCURL,
+      items: rows
+        .map((row: ListRow) => {
+          const craftedBy = this.getData(row, DataType.CRAFTED_BY);
+          const trades = this.getData(row, DataType.TRADE_SOURCES);
+          const vendors = this.getData(row, DataType.VENDORS);
+          const reducedFrom = this.getData(row, DataType.REDUCED_FROM);
+          const desynths = this.getData(row, DataType.DESYNTHS);
+          const instances = this.getData(row, DataType.INSTANCES);
+          const gathering = this.getData(row, DataType.GATHERED_BY);
+          const gardening = this.getData(row, DataType.GARDENING);
+          const voyages = this.getData(row, DataType.VOYAGES);
+          const monsterDrops = this.getData(row, DataType.DROPS);
+          const masterbooks = this.getData(row, DataType.MASTERBOOKS);
+          const treasures = this.getData(row, DataType.TREASURES);
+          const fates = this.getData(row, DataType.FATES);
+          const ventures = this.getData(row, DataType.VENTURES);
+          const tripleTriadDuels = this.getData(row, DataType.TRIPLE_TRIAD_DUELS);
+          const tripleTriadPack = this.getData(row, DataType.TRIPLE_TRIAD_PACK);
+          const quests = this.getData(row, DataType.QUESTS);
+          const achievements = this.getData(row, DataType.ACHIEVEMENTS);
+          let retval: any = {
+            ...row,
+            done: row.done ? true : false,
+            amountNeeded: row.amount_needed,
+            used: row.used,
+            requires: row.requires ? row.requires.map((r: any) => this.applyItemName(r)) : undefined,
+            neededToCraft: this.serializeCraftedBy(craftedBy),
+            trades: this.serializeTrades(trades),
+            vendors: this.serializeNPCs(vendors),
+            reducedFrom: reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined,
+            desynths: desynths && desynths.length > 0 ? desynths.map((r: any) => this.applyItemName({ id: r })) : undefined,
+            instances: instances && instances.length > 0 ? instances.map((r: any) => this.applyItemName(r)) : undefined,
+            gathering: gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined,
+            gardening: gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined,
+            voyages: voyages && voyages.length > 0 ? voyages.map((r: any) => this.applyItemName(r)) : undefined,
+            monsterDrops: monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyItemName(r)) : undefined,
+            masterbooks: masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined,
+            treasures: treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined,
+            fates: fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined,
+            ventures: ventures && ventures.length > 0 ? ventures.map((r: any) => this.applyItemName(r)) : undefined,
+            tripleTriadDuels: tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined,
+            tripleTriadPack: tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined,
+            quests: quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined,
+            achievements: achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined,
+            marketBoardLink: `https://universalis.app/market/${row.id}`,
+            /*
+            marketBoardInfo: this.universalis.getDCPrices(
+              UniversalisService.GetDCFromServerName(
+                this.lazyData.datacenters,
+                this.server$),
+                row.id)
+                .pipe(
+              map(result => {
+                const res = result[0];
+                if (this.settings.disableCrossWorld) {
+                  res.Prices = res.Prices.filter((price: any) => {
+                    return price.Server === this.server$;
+                  });
+                  res.History = res.History.filter((price: any) => {
+                    return price.Server === this.server$;
+                  });
+                }
+                return res;
+              })//*/
+          };
+          //get rid of fields that are confusing for an export layer
+          delete retval.sources;
+          delete retval.craftedBy;
+          return retval;
+        })
+        .map(row => this.applyItemName(row))
+    });//, null, 2);
+  }
+
+  jsonCopied(): void {
+    this.message.success(this.translate.instant('LIST.Copied_as_json'));
   }
 
   trackByItem(index: number, item: ListRow): number {

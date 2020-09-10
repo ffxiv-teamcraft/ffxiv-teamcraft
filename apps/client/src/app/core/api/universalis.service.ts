@@ -71,9 +71,7 @@ export class UniversalisService {
   }
 
   public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
-    const dc = Object.keys(this.lazyData.datacenters).find(key => {
-      return this.lazyData.datacenters[key].indexOf(server) > -1;
-    });
+    const dc = this.GetDCFromServerName(server);
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)
@@ -123,6 +121,12 @@ export class UniversalisService {
         return [].concat.apply([], res);
       })
     );
+  }
+
+  public static GetDCFromServerName(datacenters:{ [index: string]: string[] },server: string) {
+    return Object.keys(datacenters).find(key => {
+      return datacenters[key].indexOf(server) > -1;
+    });
   }
 
   public initCapture(): void {

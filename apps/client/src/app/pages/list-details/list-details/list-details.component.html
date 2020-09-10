@@ -192,6 +192,14 @@
                     nzSize="small">
               <i nz-icon nzType="copy"></i>
             </button>
+            <button (cbOnSuccess)="afterListTextCopied()" *ngIf="display$ | async as listDisplay"
+                    [cbContent]="getListJsonExport(listDisplay, list)" [nzTitle]="'LIST.Copy_list_as_json' | translate"
+                    ngxClipboard
+                    nz-button nz-tooltip
+                    nzShape="circle"
+                    nzSize="small">
+              <i nz-icon nzType="snippets"></i>
+            </button>
             <button (click)="regenerateList(list)" [disabled]="(permissionLevel$ | async) < 30"
                     [nzTooltipTitle]="'LIST.Regenerate' | translate" nz-button
                     nz-tooltip nzShape="circle"

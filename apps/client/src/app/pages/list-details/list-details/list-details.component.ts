@@ -329,6 +329,18 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   }
 
+  public getListJsonExport(display: ListDisplay, list: List): string {
+    const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
+      return this.appendExportStringWithRow(exportString, row);
+    }, `${this.translate.instant('Crystals')} :\n`) + '\n';
+    return display.rows.reduce((result, displayRow) => {
+      return result + displayRow.rows.reduce((exportString, row) => {
+        return this.appendExportStringWithRow(exportString, row);
+      }, `${displayRow.title} :\n`) + '\n';
+    }, seed);
+
+  }
+
   afterListTextCopied(): void {
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }

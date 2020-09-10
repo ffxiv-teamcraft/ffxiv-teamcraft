@@ -107,7 +107,13 @@
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>
           </button>
-          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
+          <button (cbOnSuccess)="jsonCopied()" (click)="$event.stopPropagation()" [cbContent]="getJsonExport()"
+                  [nzTitle]="'LIST.Copy_as_json' | translate"
+                  ngxClipboard
+                  nz-button nz-tooltip nzShape="circle" nzSize="small">
+            <i nz-icon nzType="snippets"></i>
+          </button>
+          <span [nzTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
                   [nzPopconfirmTitle]="'Confirmation' | translate"
                   nz-button
