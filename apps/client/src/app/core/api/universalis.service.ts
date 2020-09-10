@@ -71,7 +71,7 @@ export class UniversalisService {
   }
 
   public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
-    const dc = this.GetDCFromServerName(server);
+    const dc = UniversalisService.GetDCFromServerName(this.lazyData.datacenters,server);
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)

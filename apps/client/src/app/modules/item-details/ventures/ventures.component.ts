@@ -21,7 +21,7 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
     super();
   }
 
-  ventureAmounts(venture: Venture): any[] {
+  public static ventureAmounts(venture: Venture): any[] {
     let amounts = [];
 
     if (venture.amounts !== undefined) {
@@ -37,7 +37,7 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
 
   ngOnInit(): void {
     this.ventures = this.gt.getVentures(getItemSource(this.item, DataType.VENTURES)).map(venture => {
-      venture.amountsDetails = this.ventureAmounts(venture);
+      venture.amountsDetails = VenturesComponent.ventureAmounts(venture);
       return venture;
     });
   }

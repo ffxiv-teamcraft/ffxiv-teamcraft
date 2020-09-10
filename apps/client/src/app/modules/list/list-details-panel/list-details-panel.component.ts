@@ -97,9 +97,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  private server$: Observable<string> = this.authFacade.mainCharacter$.pipe(
-    map(char => char.Server)
-  );
+  private server$: BehaviorSubject<string> = new BehaviorSubject<string>(undefined);
 
   loggedIn$ = this.authFacade.loggedIn$;
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
@@ -110,8 +108,14 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
     public settings: SettingsService, private lazyData: LazyDataService,
     private universalis: UniversalisService,
-    private authFacade: AuthFacade
+    private authFacade: AuthFacade,
+    private gt: GarlandToolsService,
+    private _clipboardService: ClipboardService
   ) {
+    //hold onto server name once resolved
+    this.authFacade.mainCharacter$.pipe(
+      map(char => char.Server)
+    ).subscribe(this.server$);
   }
 
   addItems(): void {
@@ -483,6 +487,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
+  public copyTextExport() {
+    this._clipboardService.copyFromContent(this.getTextExport())
+  }
+
   public getTextExport(): string {
     let rows: ListRow[];
     if (this.tiers) {
@@ -520,30 +528,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       const retval = {
         ...obj,
         name: this.getItemName(obj.id),
-        job: this.getNameIfExists(this.l12n.getJobAbbr(obj.job))
+        job: this.getJob(obj.job)
       };
       return retval
     }) : undefined;
   }
+  private getJob(job: any) {
+    return this.getNameIfExists(this.l12n.getJobAbbr(job));
+  }
+
   private getNameIfExists(itemName: I18nName) {
     const name = this.i18nTools.getName(itemName);
     return name && name != 'no name' ? name : undefined;
   }
 
-  public idToName(id) {
-    const newLocal =
-      this.l12n.getInstanceName(id) ? this.l12n.getInstanceName(id)
-        : this.l12n.getAchievementName(id) ? this.l12n.getAchievementName(id)
-          : this.l12n.getMapName(id) ? this.l12n.getMapName(id)
-            : this.l12n.getPlace(id) ? this.l12n.getPlace(id)
-              : this.l12n.getFate(id) ? this.l12n.getFate(id)
-                : this.l12n.getLeve(id) ? this.l12n.getLeve(id)
-                  : this.l12n.getMob(id) ? this.l12n.getMob(id)
-                    : this.l12n.getVenture(id) ? this.l12n.getVenture(id)
-                      : this.l12n.getQuest(id) ? this.l12n.getQuest(id)
-                        : this.l12n.getJobAbbr(id) ? this.l12n.getJobAbbr(id)
-                          : undefined;
-    return this.getNameIfExists(newLocal);
+  private serializeVoyages(voyages: any) {
+    return voyages && voyages.length > 0 ? voyages.map((r: any) => this.getNameIfExists(r)) : undefined;
   }
 
   public applyNpcName(obj) {
@@ -573,96 +573,114 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     };
   }
 
+  private getMonsterHuntData(monsterDrops: any) {
+    return monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
   public serializeNPCs(vendors: any) {
     return vendors && vendors.length > 0 ? vendors.map((r: any) => this.applyNpcName(r)) : undefined;
   }
 
-  public getJsonExport(): string {
-    let rows: ListRow[];
-    if (this.tiers) {
-      rows = this.tiers.reduce((res, tier) => {
-        return [...res, ...tier];
-      }, []);
-    } else {
-      rows = this.displayRow.rows;
-    }
-    // TODO inject DC names?
-    const perDCURL = `https://universalis.app/api/{dc}/${rows.map(r => r.id).join(',')}`
+  private serializeVentures(item: any, ventures: any) {
+    return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
+      let retval = {
+        ...venture,
+        amountsDetails: VenturesComponent.ventureAmounts(venture)
+          .map(threshold => {
+            return {
+              ...threshold,
+              venturesRemaining: Math.ceil((item.amount - item.done) / threshold.quantity)
+            }
+          }),
+        name: this.getNameIfExists(this.l12n.getVenture(venture.id)),
+        job: this.getJob(venture.job),
+      };
+      delete retval.gathering;
+      delete retval.amounts;
+      delete retval.ilvl;
+      delete retval.jobs;
+      return retval;
+    }) : undefined;
+  }
 
-    return JSON.stringify({
-      PricingURL: perDCURL,
-      items: rows
-        .map((row: ListRow) => {
-          const craftedBy = this.getData(row, DataType.CRAFTED_BY);
-          const trades = this.getData(row, DataType.TRADE_SOURCES);
-          const vendors = this.getData(row, DataType.VENDORS);
-          const reducedFrom = this.getData(row, DataType.REDUCED_FROM);
-          const desynths = this.getData(row, DataType.DESYNTHS);
-          const instances = this.getData(row, DataType.INSTANCES);
-          const gathering = this.getData(row, DataType.GATHERED_BY);
-          const gardening = this.getData(row, DataType.GARDENING);
-          const voyages = this.getData(row, DataType.VOYAGES);
-          const monsterDrops = this.getData(row, DataType.DROPS);
-          const masterbooks = this.getData(row, DataType.MASTERBOOKS);
-          const treasures = this.getData(row, DataType.TREASURES);
-          const fates = this.getData(row, DataType.FATES);
-          const ventures = this.getData(row, DataType.VENTURES);
-          const tripleTriadDuels = this.getData(row, DataType.TRIPLE_TRIAD_DUELS);
-          const tripleTriadPack = this.getData(row, DataType.TRIPLE_TRIAD_PACK);
-          const quests = this.getData(row, DataType.QUESTS);
-          const achievements = this.getData(row, DataType.ACHIEVEMENTS);
-          let retval: any = {
-            ...row,
-            done: row.done ? true : false,
-            amountNeeded: row.amount_needed,
-            used: row.used,
-            requires: row.requires ? row.requires.map((r: any) => this.applyItemName(r)) : undefined,
-            neededToCraft: this.serializeCraftedBy(craftedBy),
-            trades: this.serializeTrades(trades),
-            vendors: this.serializeNPCs(vendors),
-            reducedFrom: reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined,
-            desynths: desynths && desynths.length > 0 ? desynths.map((r: any) => this.applyItemName({ id: r })) : undefined,
-            instances: instances && instances.length > 0 ? instances.map((r: any) => this.applyItemName(r)) : undefined,
-            gathering: gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined,
-            gardening: gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined,
-            voyages: voyages && voyages.length > 0 ? voyages.map((r: any) => this.applyItemName(r)) : undefined,
-            monsterDrops: monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyItemName(r)) : undefined,
-            masterbooks: masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined,
-            treasures: treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined,
-            fates: fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined,
-            ventures: ventures && ventures.length > 0 ? ventures.map((r: any) => this.applyItemName(r)) : undefined,
-            tripleTriadDuels: tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined,
-            tripleTriadPack: tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined,
-            quests: quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined,
-            achievements: achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined,
-            marketBoardLink: `https://universalis.app/market/${row.id}`,
-            /*
-            marketBoardInfo: this.universalis.getDCPrices(
-              UniversalisService.GetDCFromServerName(
-                this.lazyData.datacenters,
-                this.server$),
-                row.id)
-                .pipe(
-              map(result => {
-                const res = result[0];
-                if (this.settings.disableCrossWorld) {
-                  res.Prices = res.Prices.filter((price: any) => {
-                    return price.Server === this.server$;
-                  });
-                  res.History = res.History.filter((price: any) => {
-                    return price.Server === this.server$;
-                  });
-                }
-                return res;
-              })//*/
-          };
-          //get rid of fields that are confusing for an export layer
-          delete retval.sources;
-          delete retval.craftedBy;
-          return retval;
-        })
-        .map(row => this.applyItemName(row))
-    });//, null, 2);
+  public copyJSONExport() {
+    this._clipboardService.copyFromContent(this.getJsonExport())
+  }
+  public getJsonExport(): string {
+    if (!this.server$.getValue())
+      return JSON.stringify({});
+    else {
+      let rows: ListRow[];
+      if (this.tiers) {
+        rows = this.tiers.reduce((res, tier) => {
+          return [...res, ...tier];
+        }, []);
+      } else {
+        rows = this.displayRow.rows;
+      }
+      console.log(JSON.stringify(rows))
+
+      const perDCURL = `https://universalis.app/api/${
+        UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue())
+        }/${rows.map(r => r.id).join(',')}`
+
+      return JSON.stringify({
+        homeServer: this.server$.getValue(),
+        pricingURL: perDCURL,
+        items: rows
+          .map(row => this.applyItemName(row))
+          .map((item: ListRow) => {
+            const craftedBy = this.getData(item, DataType.CRAFTED_BY);
+            const trades = this.getData(item, DataType.TRADE_SOURCES);
+            const vendors = this.getData(item, DataType.VENDORS);
+            const reducedFrom = this.getData(item, DataType.REDUCED_FROM);
+            const desynths = this.getData(item, DataType.DESYNTHS);
+            const instances = this.getData(item, DataType.INSTANCES);
+            const gathering = this.getData(item, DataType.GATHERED_BY);
+            const gardening = this.getData(item, DataType.GARDENING);
+            const voyages = this.getData(item, DataType.VOYAGES);
+            const monsterDrops = this.getData(item, DataType.DROPS);
+            const masterbooks = this.getData(item, DataType.MASTERBOOKS);
+            const treasures = this.getData(item, DataType.TREASURES);
+            const fates = this.getData(item, DataType.FATES);
+            const ventures = this.getData(item, DataType.VENTURES);
+            const tripleTriadDuels = this.getData(item, DataType.TRIPLE_TRIAD_DUELS);
+            const tripleTriadPack = this.getData(item, DataType.TRIPLE_TRIAD_PACK);
+            const quests = this.getData(item, DataType.QUESTS);
+            const achievements = this.getData(item, DataType.ACHIEVEMENTS);
+            let retval: any = {
+              ...item,
+              done: item.done ? true : false,
+              amountNeeded: item.amount_needed,
+              used: item.used,
+              requires: item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined,
+              neededToCraft: this.serializeCraftedBy(craftedBy),
+              trades: this.serializeTrades(trades),
+              vendors: this.serializeNPCs(vendors),
+              reducedFrom: reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined,
+              desynths: desynths && desynths.length > 0 ? desynths.map((r: any) => this.applyItemName({ id: r })) : undefined,
+              instances: instances && instances.length > 0 ? instances.map((r: any) => this.applyItemName(r)) : undefined,
+              gathering: gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined,
+              gardening: gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined,
+              voyages: this.serializeVoyages(voyages),
+              hunting: this.getMonsterHuntData(monsterDrops),
+              masterbooks: masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined,
+              treasures: treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined,
+              fates: fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined,
+              ventures: this.serializeVentures(item, ventures),
+              tripleTriadDuels: tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined,
+              tripleTriadPack: tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined,
+              quests: quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined,
+              achievements: achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined,
+              marketBoardLink: `https://universalis.app/market/${item.id}`,
+            };
+            //get rid of fields that are confusing for an export layer
+            delete retval.sources;
+            delete retval.craftedBy;
+            return retval;
+          })
+      });//, null, 2);
+    }
   }
 
   jsonCopied(): void {
