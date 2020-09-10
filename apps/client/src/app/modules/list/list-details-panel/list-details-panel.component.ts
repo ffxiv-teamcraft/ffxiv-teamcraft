@@ -1,32 +1,40 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
-import { getItemSource, ListRow } from '../model/list-row';
-import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
-import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
-import { I18nName } from '../../../model/common/i18n-name';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { ClipboardService } from 'ngx-clipboard';
+import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+
+import { ListsFacade } from '../+state/lists.facade';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { UniversalisService } from '../../../core/api/universalis.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { LayoutOrderService } from '../../../core/layout/layout-order.service';
+import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { I18nName } from '../../../model/common/i18n-name';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
-import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
+import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
+import {
+  TotalPanelPricePopupComponent,
+} from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
+import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
+import { VenturesComponent } from '../../item-details/ventures/ventures.component';
+import { ItemPickerService } from '../../item-picker/item-picker.service';
 import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.component';
 import { NavigationObjective } from '../../map/navigation-objective';
-import { ListsFacade } from '../+state/lists.facade';
-import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, concat, Observable, of } from 'rxjs';
-import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { ListManagerService } from '../list-manager.service';
-import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
-import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { WorldNavigationMapComponent } from '../../map/world-navigation-map/world-navigation-map.component';
-import { EorzeaFacade } from '../../eorzea/+state/eorzea.facade';
-import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { DataType } from '../data/data-type';
+import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { SettingsService } from '../../settings/settings.service';
+import { DataType } from '../data/data-type';
+import { ListManagerService } from '../list-manager.service';
 import { Drop } from '../model/drop';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { getItemSource, ListRow } from '../model/list-row';
 
 @Component({
   selector: 'app-list-details-panel',
