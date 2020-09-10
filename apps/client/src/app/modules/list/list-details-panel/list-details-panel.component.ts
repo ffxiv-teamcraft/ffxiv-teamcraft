@@ -488,7 +488,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public copyTextExport() {
-    this._clipboardService.copyFromContent(this.getTextExport())
+    if (this._clipboardService.copyFromContent(this.getTextExport()))
+      this.textCopied();
   }
 
   public getTextExport(): string {
@@ -604,7 +605,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   public copyJSONExport() {
-    this._clipboardService.copyFromContent(this.getJsonExport())
+    if (this._clipboardService.copyFromContent(this.getJsonExport()))
+      this.jsonCopied();
   }
   public getJsonExport(): string {
     if (!this.server$.getValue())
