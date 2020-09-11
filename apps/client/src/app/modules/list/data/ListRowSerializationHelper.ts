@@ -2,6 +2,7 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
+import { MobNamePipe } from '../../../pipes/pipes/mob-name.pipe';
 import { VenturesComponent } from '../../item-details/ventures/ventures.component';
 import { DataType } from '../data/data-type';
 import { getItemSource, ListRow } from '../model/list-row';
@@ -16,8 +17,7 @@ export class ListRowSerializationHelper {
     private i18nTools: I18nToolsService,
     private l12n: LocalizedDataService,
     private gt: GarlandToolsService,
-  )
-  {
+  ) {
   }
   public applyItemName(obj) {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
@@ -47,9 +47,9 @@ export class ListRowSerializationHelper {
     return this.getNameIfExists(this.l12n.getJobAbbr(job));
   }
 
-  private getNameIfExists(itemName: I18nName) {
-    const name = this.i18nTools.getName(itemName);
-    return name && name !== 'no name' ? name : undefined;
+  private getNameIfExists(name: I18nName) {
+    const translatedName = this.i18nTools.getName(name);
+    return translatedName && translatedName !== 'no name' ? translatedName : undefined;
   }
 
   private serializeVoyages(voyages: any) {
@@ -60,8 +60,17 @@ export class ListRowSerializationHelper {
     return {
       ...obj,
       npcName: this.getNameIfExists(this.l12n.getNpc(obj.npcId ? obj.npcId : obj.id)),
-      zoneName: this.getNameIfExists(this.l12n.getPlace(obj.zoneId) ? this.l12n.getPlace(obj.zoneId) : this.l12n.getMapName(obj.mapId)),
+      zoneName: this.getZoneName(obj),
     };
+  }
+
+  private getZoneName(obj: any) {
+    if (!obj)
+      return undefined;
+    ///wat.. casing!?
+    const zoneName = this.l12n.getPlace(obj.zoneId?obj.zoneId:obj.zoneid);
+    const mapName = this.l12n.getMapName(obj.mapId);
+    return this.getNameIfExists(zoneName ? zoneName : mapName);
   }
 
   public serializeTrades(trades: any) {
@@ -83,8 +92,23 @@ export class ListRowSerializationHelper {
     };
   }
 
+  public applyMonsterInfo(obj) {
+    const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
+    const mobName = this.getMobNameFromId(id);
+    const retval = {
+      ...obj,
+      name: this.getNameIfExists(mobName),
+      zoneName: this.getZoneName(obj.position ? obj.position : obj),
+    };
+    return retval;
+  }
+
+  private getMobNameFromId(id: number) {
+    return this.l12n.getMob(MobNamePipe.GetActualMobId(id));
+  }
+
   private getMonsterHuntData(monsterDrops: any) {
-    return monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyItemName(r)) : undefined;
+    return monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyMonsterInfo(r)) : undefined;
   }
 
   public serializeNPCs(vendors: any) {
@@ -111,6 +135,18 @@ export class ListRowSerializationHelper {
       delete retval.jobs;
       return retval;
     }) : undefined;
+  }
+
+  private applyIntanceName(id: any) {
+    return id != null ? this.getNameIfExists(this.l12n.getInstanceName(id)) : undefined;
+  }
+
+  private serializeInstances(instances: any) {
+    return instances && instances.length > 0 ? instances.map((r: any) => this.applyIntanceName(r.id)) : undefined;
+  }
+
+  private serializeReducedFrom(reducedFrom: any) {
+    return reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
   public getJsonExport(dc: string, server: string, rows: ListRow[]): any {
@@ -156,33 +192,75 @@ export class ListRowSerializationHelper {
             done: item.done ? true : false,
             amountNeeded: item.amount_needed,
             used: item.used,
-            requires: item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined,
+            requires: this.serializeRequires(item),
             neededToCraft: this.serializeCraftedBy(craftedBy),
             trades: this.serializeTrades(trades),
             vendors: this.serializeNPCs(vendors),
-            reducedFrom: reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined,
+            reducedFrom: this.serializeReducedFrom(reducedFrom),
             desynths: desynths,
-            instances: instances && instances.length > 0 ? instances.map((r: any) => this.applyItemName(r)) : undefined,
-            gathering: gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined,
-            gardening: gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined,
+            instances: this.serializeInstances(instances),
+            gathering: this.serializeGathering(gathering),
+            gardening: this.serializeGardening(gardening),
             voyages: this.serializeVoyages(voyages),
             hunting: this.getMonsterHuntData(monsterDrops),
-            masterbooks: masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined,
-            treasures: treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined,
-            fates: fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined,
+            masterbooks: this.serializeMasterbooks(masterbooks),
+            treasures: this.serializeTreasures(treasures),
+            fates: this.serializeFates(fates),
             ventures: this.serializeVentures(item, ventures),
-            tripleTriadDuels: tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined,
-            tripleTriadPack: tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined,
-            quests: quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined,
-            achievements: achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined,
+            tripleTriadDuels: this.serializeTriadDuels(tripleTriadDuels),
+            tripleTriadPack: this.serializeTripleTriadPack(tripleTriadPack),
+            quests: this.serializeQuests(quests),
+            achievements: this.serializeAchievements(achievements),
             marketBoardLink: `https://universalis.app/market/${item.id}`,
           };
           //get rid of fields that are confusing for an export layer
           delete retval.sources;
           delete retval.craftedBy;
+          delete retval.amount_needed;
           return retval;
         }),
       desynthMap: desynthMap,
     };
+  }
+
+
+  private serializeAchievements(achievements: any) {
+    return achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeQuests(quests: any) {
+    return quests && quests.length > 0 ? quests.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeTripleTriadPack(tripleTriadPack: any) {
+    return tripleTriadPack && tripleTriadPack.length > 0 ? tripleTriadPack.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeTriadDuels(tripleTriadDuels: any) {
+    return tripleTriadDuels && tripleTriadDuels.length > 0 ? tripleTriadDuels.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeFates(fates: any) {
+    return fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeTreasures(treasures: any) {
+    return treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeMasterbooks(masterbooks: any) {
+    return masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeGardening(gardening: any) {
+    return gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeRequires(item: ListRow) {
+    return item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeGathering(gathering: any) {
+    return gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined;
   }
 }

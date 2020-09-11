@@ -3,15 +3,21 @@ import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.se
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 
 @Pipe({
-  name: 'mobName',
+  name: 'mobName'
 })
 export class MobNamePipe implements PipeTransform {
-  constructor(private data: LocalizedLazyDataService) {}
-
-  transform(id: number): I18nNameLazy {
+  public static GetActualMobId(id: number) {
     if (id > 1000000) {
       id = id % 1000000;
     }
+    return id;
+  }
+  constructor(private data: LocalizedLazyDataService) {
+  }
+
+  transform(id: number): any {
+    id = MobNamePipe.GetActualMobId(id);
     return this.data.getMob(id);
   }
+
 }
