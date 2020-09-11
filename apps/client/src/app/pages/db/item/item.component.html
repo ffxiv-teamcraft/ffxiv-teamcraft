@@ -180,8 +180,8 @@
                         <div *ngIf="link.recipes" fxLayout="row" fxLayoutAlign="flex-start center">
                           <div *ngFor="let recipe of link.recipes; let last=last" fxLayoutAlign="flex-start center"
                                fxLayoutGap="5px">
-                            <img alt="" class="smaller-img-icon"
-                                 src="https://garlandtools.org/db/images/{{(recipe.job | jobAbbr)?.en}}.png">
+                            <img *ngIf="((recipe.job | jobAbbr).en | async) as icon" alt="" class="smaller-img-icon"
+                                 src="https://garlandtools.org/db/images/{{icon}}.png">
                             <div>lvl {{recipe.lvl}} {{recipe.stars | ingameStars}}<span *ngIf="!last">,</span></div>
                           </div>
                         </div>

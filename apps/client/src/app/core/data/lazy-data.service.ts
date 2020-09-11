@@ -61,8 +61,10 @@ export class LazyDataService {
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
+  public readonly diademTerritory$: Observable<unknown> = this.lazyDataProvider.getLazyData('diademTerritory');
   public readonly fishes$: Observable<number[]> = this.lazyDataProvider.getLazyData('fishes');
   public readonly fishingSpots$ = this.lazyDataProvider.getLazyData('fishingSpots');
+  public readonly itemIcons$: Observable<Record<string, string>> = this.lazyDataProvider.getLazyData('itemIcons');
 
   private loadedLangs: Language[] = [];
 

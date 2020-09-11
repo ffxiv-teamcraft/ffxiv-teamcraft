@@ -158,6 +158,35 @@ export class BiteTimesPerFishPerSpotQuery extends Query<FishBiteTimeResult, Fish
   `;
 }
 
+interface FishBiteTimePerBait {
+  itemId: number;
+  spot: number;
+  baitId: number;
+  biteTime: number;
+  occurences: number;
+}
+
+interface FishBiteTimePerBaitResult {
+  biteTimes: FishBiteTimePerBait[];
+}
+
+@Injectable()
+export class BiteTimesPerFishPerSpotPerBaitQuery extends Query<FishBiteTimePerBaitResult, FishIdSpotIdVariable & { baitId?: number }> {
+  public document = gql`
+    query BiteTimesPerFishPerSpotPerBaitQuery($fishId: Int, $spotId: Int, $baitId: Int) {
+      biteTimes: bite_time_per_fish_per_spot_per_bait(
+        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1 }, occurences: { _gte: 1 } }
+      ) {
+        itemId
+        spot
+        baitId
+        biteTime
+        occurences
+      }
+    }
+  `;
+}
+
 interface FishSnagging {
   itemId: number;
   spot: number;

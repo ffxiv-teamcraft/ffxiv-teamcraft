@@ -43,6 +43,8 @@ import { FishWeatherTransitionsComponent } from './fish/fish-weather-transitions
 import { FishWeathersComponent } from './fish/fish-weathers/fish-weathers.component';
 import { FishComponent } from './fish/fish.component';
 import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
+import { FishingSpotBiteTimesComponent } from './fishing-spot/fishing-spot-bite-times/fishing-spot-bite-times.component';
+import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { InstanceComponent } from './instance/instance.component';
 import { ItemComponent } from './item/item.component';
@@ -60,7 +62,9 @@ import { FishDataService } from './service/fish-data.service';
 import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
-import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
+import { FishingSpotPositionComponent } from './fishing-spot/fishing-spot-position/fishing-spot-position.component';
+import { FishingSpotWeathersComponent } from './fishing-spot/fishing-spot-weathers/fishing-spot-weathers.component';
+import { FishingSpotWeatherTransitionsComponent } from './fishing-spot/fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
 
 const routes: Routes = [
   {
@@ -265,6 +269,10 @@ const routes: Routes = [
     FishUserRankingComponent,
     FishDetailsContainerComponent,
     FishingSpotHoursComponent,
+    FishingSpotBiteTimesComponent,
+    FishingSpotPositionComponent,
+    FishingSpotWeathersComponent,
+    FishingSpotWeatherTransitionsComponent,
   ],
   imports: [
     CommonModule,

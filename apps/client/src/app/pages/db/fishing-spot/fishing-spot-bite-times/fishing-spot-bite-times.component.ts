@@ -13,12 +13,12 @@ interface FishingSpotChartData {
 }
 
 @Component({
-  selector: 'app-fishing-spot-hours',
-  templateUrl: './fishing-spot-hours.component.html',
-  styleUrls: ['./fishing-spot-hours.component.less', '../../common-db.less'],
+  selector: 'app-fishing-spot-bite-times',
+  templateUrl: './fishing-spot-bite-times.component.html',
+  styleUrls: ['./fishing-spot-bite-times.component.less', '../../common-db.less'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FishingSpotHoursComponent implements OnInit, OnDestroy {
+export class FishingSpotBiteTimesComponent implements OnInit, OnDestroy {
   private readonly activeFish$ = new Subject<number | undefined>();
   @Input()
   public set activeFish(value: number | undefined) {
@@ -27,32 +27,45 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   @Output()
   public readonly activeFishChange = new EventEmitter<number | undefined>();
 
-  public readonly loading$ = this.fishCtx.hoursBySpot$.pipe(map((res) => res.loading));
+  public readonly baitFilter$ = this.fishCtx.baitId$.pipe(map((i) => (i >= 0 ? i : -1)));
 
-  public readonly hoursChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.hoursBySpot$.pipe(
+  public readonly loading$ = this.fishCtx.biteTimesBySpot$.pipe(map((res) => res.loading));
+
+  public readonly biteTimesChartData$: Observable<FishingSpotChartData[]> = this.fishCtx.biteTimesBySpot$.pipe(
     switchMap((res) => {
       if (!res.data) return of([]);
       const fishNames: Array<Observable<{ id: number; name: string }>> = Object.keys(res.data.byFish).map((id) =>
         this.i18n.resolveName(this.l12n.getItem(+id)).pipe(map((name) => ({ id: +id, name })))
       );
       return combineLatest([...fishNames]).pipe(
-        map((names) => {
-          return Object.entries(res.data.byFish).map(([fishId, entry]) => ({
-            id: +fishId,
-            name: names.find((name) => name.id === +fishId)?.name ?? '--',
-            series: Object.entries(entry.byTime)
-              .sort(([a], [b]) => +a - +b)
-              .map(([hour, value]) => ({
-                name: `${hour.padStart(2, '0')}:00`,
-                value: value ?? 0,
-              })),
-          }));
+        map(([...names]) => {
+          return Object.entries(res.data.byFish)
+            .map(([fishId, entry]) => ({
+              id: +fishId,
+              name: names.find((name) => name.id === +fishId)?.name ?? '--',
+              series: Object.entries(entry.byTime)
+                .map(([time, value]) => ({
+                  name: +time,
+                  value: value,
+                }))
+                .filter((i) => i.value > 1)
+                .sort((a, b) => a.name - b.name),
+            }))
+            .filter((i) => i.series.length > 0);
         }),
         debounceTime(100)
       );
     }),
     startWith([]),
     shareReplay(1)
+  );
+
+  public readonly baitIds$: Observable<number[] | undefined> = this.fishCtx.baitsBySpot$.pipe(
+    map((res) => {
+      if (!res.data) return undefined;
+      const uniq = new Set(Object.keys(res.data.byId).map((id) => +id));
+      return [...uniq];
+    })
   );
 
   public activeChartEntries$: Observable<Array<{ name: string }>> = this.activeFish$.pipe(
@@ -79,7 +92,7 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-    combineLatest([this.hoursChartData$, this.activeFishName$])
+    combineLatest([this.biteTimesChartData$, this.activeFishName$])
       .pipe(
         takeUntil(this.unsubscribe$),
         filter(([res]) => res.length > 0),
@@ -95,5 +108,9 @@ export class FishingSpotHoursComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+  }
+
+  public setBaitId(baitId: number) {
+    this.fishCtx.setBaitId(baitId === -1 ? undefined : baitId);
   }
 }

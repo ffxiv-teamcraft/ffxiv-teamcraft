@@ -9,8 +9,8 @@
       [showYAxisLabel]="false"
       [activeEntries]="activeChartEntries$ | async"
       [results]="hoursChartData$ | async"
-      (activate)="hoveredName$.next($event?.value?.name || undefined)"
-      (deactivate)="hoveredName$.next(undefined)"
+      (activate)="activeFishName$.next($event?.value?.name || undefined)"
+      (deactivate)="activeFishName$.next(undefined)"
     ></ngx-charts-area-chart-stacked>
   </div>
 </nz-card>

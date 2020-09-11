@@ -167,7 +167,7 @@
                          [nzDisabled]="!custom" class="job-selector">
                 <nz-option *ngFor="let job of [8,9,10,11,12,13,14,15]" [nzLabel]="job | jobAbbr | i18n"
                            [nzValue]="job" nzCustomContent>
-                  <img alt="" class="job-icon" src="https://garlandtools.org/db/images/{{(job | jobAbbr)?.en}}.png">
+                  <img *ngIf="((job | jobAbbr).en | async) as icon" alt="" class="job-icon" src="https://garlandtools.org/db/images/{{icon}}.png">
                   {{job | jobAbbr | i18n}}
                 </nz-option>
               </nz-select>

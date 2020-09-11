@@ -6,7 +6,7 @@ import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
   name: 'weatherName',
 })
 export class WeatherNamePipe implements PipeTransform {
-  constructor(private data: LocalizedLazyDataService) {}
+  constructor(private readonly data: LocalizedLazyDataService) {}
 
   transform(id: number): I18nNameLazy {
     return this.data.getWeather(id);

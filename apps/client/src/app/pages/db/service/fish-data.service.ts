@@ -10,6 +10,7 @@ import {
   RankingPerFishQuery,
   SpotsPerFishQuery,
   WeathersPerFishPerSpotQuery,
+  BiteTimesPerFishPerSpotPerBaitQuery,
 } from './fish-data.gql';
 
 const qOpts = { useInitialLoading: true };
@@ -26,6 +27,7 @@ export class FishDataService {
     private readonly baitFishSpotQuery: BaitsPerFishPerSpotQuery,
     private readonly hooksFishSpotQuery: HooksetTugsPerFishPerSpotQuery,
     private readonly biteFishSpotQuery: BiteTimesPerFishPerSpotQuery,
+    private readonly biteFishSpotBaitQuery: BiteTimesPerFishPerSpotPerBaitQuery,
     private readonly statFishSpotQuery: FishStatisticsPerFishPerSpotQuery,
     private readonly weathersFishSpotQuery: WeathersPerFishPerSpotQuery,
     private readonly rankingFishQuery: RankingPerFishQuery
@@ -48,7 +50,7 @@ export class FishDataService {
    * @param spotId The spot id to filter by.
    * @returns An apollo result observable containing information about hours that a fish can be caught at.
    */
-  public getHoursByFishId = (fishId: number, spotId?: number) => {
+  public getHours = (fishId?: number, spotId?: number) => {
     return this.etimeFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
   };
 
@@ -59,7 +61,7 @@ export class FishDataService {
    * @param spotId The spot id to filter by.
    * @returns An apollo result observable containing information about the baits used to catch a fish, and which fishes the given fish is (mooch) bait for.
    */
-  public getBaitMoochesByFishId = (fishId: number, spotId?: number) => {
+  public getBaitMooches = (fishId?: number, spotId?: number) => {
     return this.baitFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
   };
 
@@ -70,8 +72,20 @@ export class FishDataService {
    * @param spotId The spot id to filter by.
    * @returns An apollo result observable containing information about the hooksets and tugs used to catch the given fish.
    */
-  public getHooksetsByFishId = (fishId: number, spotId?: number) => {
+  public getHooksets = (fishId?: number, spotId?: number) => {
     return this.hooksFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
+  };
+
+  /**
+   * Creates an observable that contains information about bite times for the given fish.
+   *
+   * @param fishId The fish id to query for.
+   * @param spotId The spot id to filter by.
+   * @param baitId The bait id to filter by.
+   * @returns An apollo result observable containing information about bite times for the given fish.
+   */
+  public getBiteTimesByBait = (fishId?: number, spotId?: number, baitId?: number) => {
+    return this.biteFishSpotBaitQuery.watch({ fishId, spotId, baitId }, qOpts).valueChanges;
   };
 
   /**
@@ -81,7 +95,7 @@ export class FishDataService {
    * @param spotId The spot id to filter by.
    * @returns An apollo result observable containing information about bite times for the given fish.
    */
-  public getBiteTimesByFishId = (fishId: number, spotId?: number) => {
+  public getBiteTimes = (fishId?: number, spotId?: number) => {
     return this.biteFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
   };
 
@@ -103,7 +117,7 @@ export class FishDataService {
    * @param spotId The spot id to filter by.
    * @returns An apollo result observable containing information about the weathers a fish can be caught during.
    */
-  public getWeatherByFishId = (fishId: number, spotId?: number) => {
+  public getWeather = (fishId?: number, spotId?: number) => {
     return this.weathersFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
   };
 
