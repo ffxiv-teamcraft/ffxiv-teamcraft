@@ -16,8 +16,8 @@ export class ListRowSerializationHelper {
     private i18nTools: I18nToolsService,
     private l12n: LocalizedDataService,
     private gt: GarlandToolsService,
-  ) {
-
+  )
+  {
   }
   public applyItemName(obj) {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
