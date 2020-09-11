@@ -12,15 +12,10 @@ import { DataType } from '../../list/data/data-type';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VenturesComponent extends ItemDetailsPopup implements OnInit {
-
   DOWM = { 'en': 'Disciple of War/Magic', 'ja': '戦闘職', 'de': 'Krieger/Magier', 'fr': 'Combattant' };
 
   public ventures: Venture[] = [];
-
-  constructor(private gt: GarlandToolsService) {
-    super();
-  }
-
+  
   public static ventureAmounts(venture: Venture): any[] {
     let amounts = [];
 
@@ -33,6 +28,10 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
     }
 
     return amounts;
+  }
+
+  constructor(private gt: GarlandToolsService) {
+    super();
   }
 
   ngOnInit(): void {
