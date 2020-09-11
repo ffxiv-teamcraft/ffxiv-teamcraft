@@ -117,8 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "태그를 사용하여 필터링",
     "Tags_filter_reset": "필터 초기화",
-    "Exclude_filter_placeholder": "Exclude using tags",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_placeholder": "추가된 필터 제외",
+    "Exclude_filter_reset": "제외된 필터 초기화",
     "Name_filter_placeholder": "이름을 사용하여 필터링",
     "No_lists_matching": "필터와 일치하는 내용이 없습니다"
   },
@@ -165,7 +165,7 @@
     "Open_in_main_window": "메인 창에서 열기",
     "Example": "예제",
     "Change": "변경",
-    "Dirty_changes": "You have unapplied changes"
+    "Dirty_changes": "적용되지 않은 변경점이 있습니다"
   },
   "ALARMS": {
     "Title": "알람",
@@ -188,9 +188,9 @@
     "Node_content": "채집물 정보",
     "Toggle_collapse": "그룹 표시 전환",
     "Add_alarms_to_group": "이 그룹에 알람 추가",
-    "Group_link_copied": "Alarm group link copied",
-    "Group_not_found": "Alarm group not found",
-    "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Group_link_copied": "알람 그룹 링크 복사됨",
+    "Group_not_found": "알람 그룹을 찾을 수 없습니다",
+    "Add_group_and_alarms": "알람에 해당 그룹과 알람을 모두 추가하기",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
@@ -698,8 +698,8 @@
     "LEVE": "의뢰",
     "GLAMOUR": "투영",
     "HOUSING": "하우징",
-    "SUBMARINE": "Submarine",
-    "AIRSHIP": "Airship",
+    "SUBMARINE": "잠수정",
+    "AIRSHIP": "비공정",
     "MISC": "기타",
     "QUEST": "퀘스트",
     "TANK": "탱커",
@@ -940,8 +940,8 @@
       "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
-      "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Difficulty_filter_placeholder": "난이도",
+      "Quality_filter_placeholder": "품질",
       "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",
@@ -1423,8 +1423,8 @@
     "Ishgard_restoration": "이슈가르드 부흥",
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_craftsmanship": "필요 작업 숙련도",
+      "Required_control": "필요 가공 숙련도"
     },
     "FISH": {
       "Hour": "시간 통계",
