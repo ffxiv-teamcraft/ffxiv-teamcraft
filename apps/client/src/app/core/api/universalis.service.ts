@@ -13,6 +13,12 @@ import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearc
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
 
+  public static GetDCFromServerName(datacenters:{ [index: string]: string[] },server: string) {
+    return Object.keys(datacenters).find(key => {
+      return datacenters[key].indexOf(server) > -1;
+    });
+  }
+  
   private cid$: Observable<string> = this.authFacade.user$.pipe(
     map(user => user.cid),
     filter(cid => cid !== undefined),
@@ -121,12 +127,6 @@ export class UniversalisService {
         return [].concat.apply([], res);
       })
     );
-  }
-
-  public static GetDCFromServerName(datacenters:{ [index: string]: string[] },server: string) {
-    return Object.keys(datacenters).find(key => {
-      return datacenters[key].indexOf(server) > -1;
-    });
   }
 
   public initCapture(): void {
