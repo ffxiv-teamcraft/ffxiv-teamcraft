@@ -8,7 +8,7 @@ import { XivApiFishingSpot } from '../fishing-spot.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FishingSpotPositionComponent {
-  @Input() public loading: boolean = false;
+  @Input() public loading = false;
   @Input() public spot?: XivApiFishingSpot = undefined;
 
   constructor() {}
