@@ -16,7 +16,10 @@ export class CurrenciesProbe extends PlayerMetricProbe {
 
   getReports(): Observable<ProbeReport> {
     return this.machina.inventoryEvents$.pipe(
-      filter(patch => patch.type !== InventoryEventType.MOVED && (patch.containerId === ContainerType.Currency || patch.containerId === ContainerType.RetainerGil)),
+      filter(patch => {
+        return patch.type !== InventoryEventType.MOVED
+          && patch.containerId === ContainerType.Currency;
+      }),
       withLatestFrom(this.source$),
       map(([event, source]) => {
         if (event.amount > 0 && (source === ProbeSource.TELEPORT || source === ProbeSource.MARKETBOARD)) {

@@ -1,14 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** removed wrong coordinates for a spearfishing nodes.
-* **desktop:** proper single instance management.
-* **gearsets:** fixed a possible bug with ariyala import.
-* **layout:** fixed "assign team member" button not shown properly.
-* **list:** HQ filter is now properly applied to "fill with inventory".
+* **db:** added missing coords for npcs, fates and some gathering nodes.
+* **desktop:** fixed an issue with log completion not filled properly.
+* **inventory:** fixed an issue with last inventory update not being tracked properly.
 
 
 ### Features
 
-* **db:** way better fish data page loading experience.
-* support for korean v5.2 update.
-* **community-lists:** new tags for airship and submarine lists.`;
+* **db:** added missing trade sources for Skybuilders approved items.
+* **db:** added required stats to recipes when they have some.
+* **simulator:** added required stats in missing stats requirements error.`;

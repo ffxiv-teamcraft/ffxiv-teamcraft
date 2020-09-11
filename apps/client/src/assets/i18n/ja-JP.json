@@ -940,6 +940,8 @@
       "Min_craftsmanship_filter_placeholder": "最小作業精度",
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小CP",
+      "Difficulty_filter_placeholder": "Difficulty",
+      "Quality_filter_placeholder": "Quality",
       "Intro": "一部のフィルターを入力して開始",
       "Result_tooltip": "シミュレーションの結果は現在のスキル回しと自分のサブステをもとに導出されます。",
       "Fail": "失敗",

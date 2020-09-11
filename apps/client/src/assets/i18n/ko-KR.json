@@ -940,6 +940,8 @@
       "Min_craftsmanship_filter_placeholder": "최소 작업 숙련도",
       "Min_control_filter_placeholder": "최소 가공 숙련도",
       "Min_cp_filter_placeholder": "최소 CP",
+      "Difficulty_filter_placeholder": "Difficulty",
+      "Quality_filter_placeholder": "Quality",
       "Intro": "시작하기 위해 몇가지 필터를 입력하세요",
       "Result_tooltip": "시뮬레이션 결과는 현재 로테이션과 자신의 스탯을 바탕으로 도출됩니다",
       "Fail": "실패",

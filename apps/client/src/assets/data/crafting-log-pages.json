@@ -1526,7 +1526,6 @@
       "masterbook": {
         "ID": 1,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -1574,6 +1573,7 @@
           "Description_en": "This esoteric tome contains advanced woodworking recipes that can only be learned by highly skilled carpenters level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -1595,6 +1595,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -1739,7 +1740,6 @@
       "masterbook": {
         "ID": 24,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -1787,6 +1787,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced woodworking recipes that can only be learned by highly skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -1808,6 +1809,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -1912,7 +1914,6 @@
       "masterbook": {
         "ID": 32,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -1960,6 +1961,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced woodworking recipes that can only be learned by highly skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -1981,6 +1983,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -2200,7 +2203,6 @@
       "masterbook": {
         "ID": 40,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -2248,6 +2250,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by highly skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -2269,6 +2272,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -2633,7 +2637,6 @@
       "masterbook": {
         "ID": 48,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -2681,6 +2684,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -2702,6 +2706,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -2846,7 +2851,6 @@
       "masterbook": {
         "ID": 56,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -2894,6 +2898,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -2915,6 +2920,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -3244,7 +3250,6 @@
       "masterbook": {
         "ID": 64,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -3292,6 +3297,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -3313,6 +3319,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -3417,7 +3424,6 @@
       "masterbook": {
         "ID": 72,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -3465,6 +3471,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced woodworking recipes that can only be learned by esoterically skilled carpenters level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練木工師向け秘伝レシピ帳\n\n使用条件 : 木工師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -3486,6 +3493,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -3645,7 +3653,6 @@
       "masterbook": {
         "ID": 9,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -3693,6 +3700,7 @@
           "Description_en": "This esoteric tome contains advanced woodworking recipes that can only be learned by highly skilled carpenters level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "木工師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 木工師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -3714,6 +3722,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -6328,6 +6337,52 @@
           "recipeId": 33957,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1248,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34375,
+          "itemId": 31184,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34383,
+          "itemId": 31192,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34391,
+          "itemId": 31200,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34399,
+          "itemId": 31208,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34407,
+          "itemId": 31216,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34415,
+          "itemId": 31224,
+          "rlvl": 511
         }
       ]
     },
@@ -9477,7 +9532,6 @@
       "masterbook": {
         "ID": 2,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -9525,6 +9579,7 @@
           "Description_en": "This esoteric tome contains advanced smithing recipes that can only be learned by highly skilled blacksmiths level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -9546,6 +9601,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -9680,7 +9736,6 @@
       "masterbook": {
         "ID": 25,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -9728,6 +9783,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced smithing recipes that can only be learned by highly skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -9749,6 +9805,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -9878,7 +9935,6 @@
       "masterbook": {
         "ID": 33,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -9926,6 +9982,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced smithing recipes that can only be learned by highly skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -9947,6 +10004,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -10161,7 +10219,6 @@
       "masterbook": {
         "ID": 41,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -10209,6 +10266,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced smithing recipes that can only be learned by highly skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -10230,6 +10288,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -10724,7 +10783,6 @@
       "masterbook": {
         "ID": 49,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -10772,6 +10830,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -10793,6 +10852,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -10927,7 +10987,6 @@
       "masterbook": {
         "ID": 57,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -10975,6 +11034,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -10996,6 +11056,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -11400,7 +11461,6 @@
       "masterbook": {
         "ID": 65,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -11448,6 +11508,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -11469,6 +11530,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -11653,7 +11715,6 @@
       "masterbook": {
         "ID": 73,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -11701,6 +11762,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced smithing recipes that can only be learned by esoterically skilled blacksmiths level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練鍛冶師向け秘伝レシピ帳\n\n使用条件 : 鍛冶師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -11722,6 +11784,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -11911,7 +11974,6 @@
       "masterbook": {
         "ID": 10,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -11959,6 +12021,7 @@
           "Description_en": "This esoteric tome contains advanced smithing recipes that can only be learned by highly skilled blacksmiths level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "鍛冶師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 鍛冶師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -11980,6 +12043,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -13839,6 +13903,52 @@
           "recipeId": 33962,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1249,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34376,
+          "itemId": 31185,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34384,
+          "itemId": 31193,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34392,
+          "itemId": 31201,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34400,
+          "itemId": 31209,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34408,
+          "itemId": 31217,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34416,
+          "itemId": 31225,
+          "rlvl": 511
         }
       ]
     },
@@ -16353,7 +16463,6 @@
       "masterbook": {
         "ID": 3,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -16401,6 +16510,7 @@
           "Description_en": "This esoteric tome contains advanced armorcraft recipes that can only be learned by highly skilled armorers level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -16422,6 +16532,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -16571,7 +16682,6 @@
       "masterbook": {
         "ID": 26,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -16619,6 +16729,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by highly skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -16640,6 +16751,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -16754,7 +16866,6 @@
       "masterbook": {
         "ID": 34,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -16802,6 +16913,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by highly skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -16823,6 +16935,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -17082,7 +17195,6 @@
       "masterbook": {
         "ID": 42,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -17130,6 +17242,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by highly skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -17151,6 +17264,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -17665,7 +17779,6 @@
       "masterbook": {
         "ID": 50,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -17713,6 +17826,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -17734,6 +17848,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -17853,7 +17968,6 @@
       "masterbook": {
         "ID": 58,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -17901,6 +18015,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -17922,6 +18037,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -18141,7 +18257,6 @@
       "masterbook": {
         "ID": 66,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -18189,6 +18304,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -18210,6 +18326,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -18364,7 +18481,6 @@
       "masterbook": {
         "ID": 74,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -18412,6 +18528,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced armorcraft recipes that can only be learned by esoterically skilled armorers level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練甲冑師向け秘伝レシピ帳\n\n使用条件 : 甲冑師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -18433,6 +18550,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -18602,7 +18720,6 @@
       "masterbook": {
         "ID": 11,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -18650,6 +18767,7 @@
           "Description_en": "This esoteric tome contains advanced armorcraft recipes that can only be learned by highly skilled armorers level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "甲冑師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 甲冑師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -18671,6 +18789,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -20516,6 +20635,52 @@
           "recipeId": 33967,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1250,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34377,
+          "itemId": 31186,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34385,
+          "itemId": 31194,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34393,
+          "itemId": 31202,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34401,
+          "itemId": 31210,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34409,
+          "itemId": 31218,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34417,
+          "itemId": 31226,
+          "rlvl": 511
         }
       ]
     },
@@ -24620,7 +24785,6 @@
       "masterbook": {
         "ID": 4,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -24668,6 +24832,7 @@
           "Description_en": "This esoteric tome contains advanced goldsmithing recipes that can only be learned by highly skilled goldsmiths level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -24689,6 +24854,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -24828,7 +24994,6 @@
       "masterbook": {
         "ID": 27,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -24876,6 +25041,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by highly skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -24897,6 +25063,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -25091,7 +25258,6 @@
       "masterbook": {
         "ID": 35,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -25139,6 +25305,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by highly skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -25160,6 +25327,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -25449,7 +25617,6 @@
       "masterbook": {
         "ID": 43,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -25497,6 +25664,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by highly skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -25518,6 +25686,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -26012,7 +26181,6 @@
       "masterbook": {
         "ID": 51,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -26060,6 +26228,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -26081,6 +26250,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -26240,7 +26410,6 @@
       "masterbook": {
         "ID": 59,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -26288,6 +26457,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -26309,6 +26479,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -26698,7 +26869,6 @@
       "masterbook": {
         "ID": 67,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -26746,6 +26916,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -26767,6 +26938,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -26971,7 +27143,6 @@
       "masterbook": {
         "ID": 75,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -27019,6 +27190,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced goldsmithing recipes that can only be learned by esoterically skilled goldsmiths level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練彫金師向け秘伝レシピ帳\n\n使用条件 : 彫金師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -27040,6 +27212,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -27194,7 +27367,6 @@
       "masterbook": {
         "ID": 12,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -27242,6 +27414,7 @@
           "Description_en": "This esoteric tome contains advanced goldsmithing recipes that can only be learned by highly skilled goldsmiths level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "彫金師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 彫金師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -27263,6 +27436,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -29623,6 +29797,52 @@
           "recipeId": 33972,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1251,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34378,
+          "itemId": 31187,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34386,
+          "itemId": 31195,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34394,
+          "itemId": 31203,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34402,
+          "itemId": 31211,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34410,
+          "itemId": 31219,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34418,
+          "itemId": 31227,
+          "rlvl": 511
         }
       ]
     },
@@ -33317,7 +33537,6 @@
       "masterbook": {
         "ID": 5,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -33365,6 +33584,7 @@
           "Description_en": "This esoteric tome contains advanced leatherworking recipes that can only be learned by highly skilled leatherworkers level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -33386,6 +33606,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -33570,7 +33791,6 @@
       "masterbook": {
         "ID": 28,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -33618,6 +33838,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by highly skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -33639,6 +33860,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -33808,7 +34030,6 @@
       "masterbook": {
         "ID": 36,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -33856,6 +34077,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by highly skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -33877,6 +34099,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -34496,7 +34719,6 @@
       "masterbook": {
         "ID": 44,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -34544,6 +34766,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by highly skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -34565,6 +34788,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -35149,7 +35373,6 @@
       "masterbook": {
         "ID": 52,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -35197,6 +35420,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -35218,6 +35442,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -35392,7 +35617,6 @@
       "masterbook": {
         "ID": 60,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -35440,6 +35664,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -35461,6 +35686,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -35750,7 +35976,6 @@
       "masterbook": {
         "ID": 68,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -35798,6 +36023,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -35819,6 +36045,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -35993,7 +36220,6 @@
       "masterbook": {
         "ID": 76,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -36041,6 +36267,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced leatherworking recipes that can only be learned by esoterically skilled leatherworkers level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練革細工師向け秘伝レシピ帳\n\n使用条件 : 革細工師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -36062,6 +36289,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -36236,7 +36464,6 @@
       "masterbook": {
         "ID": 13,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -36284,6 +36511,7 @@
           "Description_en": "This esoteric tome contains advanced leatherworking recipes that can only be learned by highly skilled leatherworkers level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "革細工師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 革細工師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -36305,6 +36533,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -38125,6 +38354,52 @@
           "recipeId": 33977,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1252,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34379,
+          "itemId": 31188,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34387,
+          "itemId": 31196,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34395,
+          "itemId": 31204,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34403,
+          "itemId": 31212,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34411,
+          "itemId": 31220,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34419,
+          "itemId": 31228,
+          "rlvl": 511
         }
       ]
     },
@@ -41759,7 +42034,6 @@
       "masterbook": {
         "ID": 6,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -41807,6 +42081,7 @@
           "Description_en": "This esoteric tome contains advanced clothcraft recipes that can only be learned by highly skilled weavers level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -41828,6 +42103,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -41982,7 +42258,6 @@
       "masterbook": {
         "ID": 29,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -42030,6 +42305,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by highly skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -42051,6 +42327,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -42200,7 +42477,6 @@
       "masterbook": {
         "ID": 37,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -42248,6 +42524,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by highly skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -42269,6 +42546,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -42793,7 +43071,6 @@
       "masterbook": {
         "ID": 45,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -42841,6 +43118,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by highly skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -42862,6 +43140,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -43366,7 +43645,6 @@
       "masterbook": {
         "ID": 53,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -43414,6 +43692,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -43435,6 +43714,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -43624,7 +43904,6 @@
       "masterbook": {
         "ID": 61,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -43672,6 +43951,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -43693,6 +43973,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -44097,7 +44378,6 @@
       "masterbook": {
         "ID": 69,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -44145,6 +44425,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -44166,6 +44447,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -44350,7 +44632,6 @@
       "masterbook": {
         "ID": 77,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -44398,6 +44679,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced clothcraft recipes that can only be learned by esoterically skilled weavers level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練裁縫師向け秘伝レシピ帳\n\n使用条件 : 裁縫師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -44419,6 +44701,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -44598,7 +44881,6 @@
       "masterbook": {
         "ID": 14,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -44646,6 +44928,7 @@
           "Description_en": "This esoteric tome contains advanced clothcraft recipes that can only be learned by highly skilled weavers level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "裁縫師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 裁縫師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -44667,6 +44950,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -46666,6 +46950,52 @@
       ]
     },
     {
+      "id": 1253,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34380,
+          "itemId": 31189,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34388,
+          "itemId": 31197,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34396,
+          "itemId": 31205,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34404,
+          "itemId": 31213,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34412,
+          "itemId": 31221,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34420,
+          "itemId": 31229,
+          "rlvl": 511
+        }
+      ]
+    },
+    {
       "id": 1261,
       "masterbook": null,
       "startLevel": {
@@ -48301,7 +48631,6 @@
       "masterbook": {
         "ID": 7,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -48349,6 +48678,7 @@
           "Description_en": "This esoteric tome contains advanced alchemy recipes that can only be learned by highly skilled alchemists level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -48370,6 +48700,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -48664,7 +48995,6 @@
       "masterbook": {
         "ID": 30,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -48712,6 +49042,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced alchemy recipes that can only be learned by highly skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -48733,6 +49064,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -48882,7 +49214,6 @@
       "masterbook": {
         "ID": 38,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -48930,6 +49261,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced alchemy recipes that can only be learned by highly skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -48951,6 +49283,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -49195,7 +49528,6 @@
       "masterbook": {
         "ID": 46,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -49243,6 +49575,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by highly skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -49264,6 +49597,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -49558,7 +49892,6 @@
       "masterbook": {
         "ID": 54,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -49606,6 +49939,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -49627,6 +49961,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -49751,7 +50086,6 @@
       "masterbook": {
         "ID": 62,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -49799,6 +50133,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -49820,6 +50155,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -50114,7 +50450,6 @@
       "masterbook": {
         "ID": 70,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -50162,6 +50497,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -50183,6 +50519,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -50312,7 +50649,6 @@
       "masterbook": {
         "ID": 78,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -50360,6 +50696,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced alchemy recipes that can only be learned by esoterically skilled alchemists level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練錬金術師向け秘伝レシピ帳\n\n使用条件 : 錬金術師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -50381,6 +50718,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -50520,7 +50858,6 @@
       "masterbook": {
         "ID": 15,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -50568,6 +50905,7 @@
           "Description_en": "This esoteric tome contains advanced alchemy recipes that can only be learned by highly skilled alchemists level 15 and higher.",
           "Description_fr": "Une recette occulte permettant de fabriquer un prisme mirage.\n\nUtilisable à partir du niveau 15 dans la discipline.",
           "Description_ja": "錬金術師向け秘伝レシピ帳\n\n装備品の投影に必要なアイテムのレシピを修得する\n\n使用条件 : 錬金術師 Lv15～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -50589,6 +50927,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -52613,6 +52952,52 @@
           "recipeId": 33987,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1254,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34381,
+          "itemId": 31190,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34389,
+          "itemId": 31198,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34397,
+          "itemId": 31206,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34405,
+          "itemId": 31214,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34413,
+          "itemId": 31222,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34421,
+          "itemId": 31230,
+          "rlvl": 511
         }
       ]
     },
@@ -54833,7 +55218,6 @@
       "masterbook": {
         "ID": 8,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -54881,6 +55265,7 @@
           "Description_en": "This esoteric tome contains advanced cooking recipes that can only be learned by highly skilled culinarians level 50 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -54902,6 +55287,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55016,7 +55402,6 @@
       "masterbook": {
         "ID": 31,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55064,6 +55449,7 @@
           "Description_en": "This esoteric tome─the second in an equally esoteric series─contains advanced cooking recipes that can only be learned by highly skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 50 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv50～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -55085,6 +55471,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55164,7 +55551,6 @@
       "masterbook": {
         "ID": 39,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55212,6 +55598,7 @@
           "Description_en": "This esoteric tome─the third in an equally esoteric series─contains advanced cooking recipes that can only be learned by highly skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 55 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv55～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -55233,6 +55620,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55347,7 +55735,6 @@
       "masterbook": {
         "ID": 47,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55395,6 +55782,7 @@
           "Description_en": "This esoteric tome─the fourth in an equally esoteric series─contains advanced cooking recipes that can only be learned by highly skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 60 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv60～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -55416,6 +55804,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55560,7 +55949,6 @@
       "masterbook": {
         "ID": 55,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55608,6 +55996,7 @@
           "Description_en": "This esoteric tome─the fifth in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -55629,6 +56018,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55713,7 +56103,6 @@
       "masterbook": {
         "ID": 63,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55761,6 +56150,7 @@
           "Description_en": "This esoteric tome─the sixth in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 70 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv70～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -55782,6 +56172,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -55931,7 +56322,6 @@
       "masterbook": {
         "ID": 71,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -55979,6 +56369,7 @@
           "Description_en": "This esoteric tome─the seventh in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -56000,6 +56391,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -56119,7 +56511,6 @@
       "masterbook": {
         "ID": 79,
         "Item": {
-          "AddedIn5-3": 4000,
           "AdditionalData": 0,
           "Adjective": 0,
           "AetherialReduce": 0,
@@ -56167,6 +56558,7 @@
           "Description_en": "This esoteric tome─the eighth in an equally esoteric series─contains advanced cooking recipes that can only be learned by esoterically skilled culinarians level 80 and higher.",
           "Description_fr": "Des recettes occultes réservées aux plus grands ouvriers.\n\nUtilisable à partir du niveau 80 dans la discipline.",
           "Description_ja": "熟練調理師向け秘伝レシピ帳\n\n使用条件 : 調理師 Lv80～",
+          "Desynth": 0,
           "EquipRestriction": 0,
           "EquipSlotCategory": 0,
           "FilterGroup": 23,
@@ -56188,6 +56580,7 @@
           "ItemRepair": 0,
           "ItemSearchCategory": 0,
           "ItemSeries": 0,
+          "ItemSortCategory": 59,
           "ItemSpecialBonus": 0,
           "ItemSpecialBonusParam": 0,
           "ItemUICategory": 63,
@@ -57867,6 +58260,52 @@
           "recipeId": 33992,
           "itemId": 30497,
           "rlvl": 406
+        }
+      ]
+    },
+    {
+      "id": 1255,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34382,
+          "itemId": 31191,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34390,
+          "itemId": 31199,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34398,
+          "itemId": 31207,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34406,
+          "itemId": 31215,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34414,
+          "itemId": 31223,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34422,
+          "itemId": 31231,
+          "rlvl": 511
         }
       ]
     },

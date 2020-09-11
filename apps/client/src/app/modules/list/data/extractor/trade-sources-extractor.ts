@@ -34,7 +34,8 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
       return row.receivedItem === item.id;
     });
     if (inspection) {
-      const npc: TradeNpc = { id: 1031693,
+      const npc: TradeNpc = {
+        id: 1031693,
         zoneId: 1647,
         mapId: 584,
         coords: {
