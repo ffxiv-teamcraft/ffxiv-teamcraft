@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleCha
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { ClipboardService } from 'ngx-clipboard';
-import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { ListsFacade } from '../+state/lists.facade';
@@ -103,8 +103,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  private server$: BehaviorSubject<string> = new BehaviorSubject<string>(undefined);
-  serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
+  server$ = this.authFacade.mainCharacter$.pipe(
+    map(char => char.Server)
+  )
+  private serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
 
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
     private message: NzMessageService, private translate: TranslateService,
@@ -117,10 +119,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     private gt: GarlandToolsService,
     private _clipboardService: ClipboardService
   ) {
-    //hold onto server name once resolved
-    this.authFacade.mainCharacter$.pipe(
-      map(char => char.Server)
-    ).subscribe(this.server$);
   }
 
   addItems(): void {
@@ -508,7 +506,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
-  public copyJSONExport() {
+  // Done to reduce render-time perf of generating the whole string into the DOM. If there's a way to do it with [cdk directive](https://material.angular.io/cdk/clipboard/overview) that would be ideal
+  public copyJSONExport(serverName: string) {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -519,13 +518,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     };
 
     if (this._clipboardService.copyFromContent(
-      JSON.stringify(this.getSerializedRowData(rows))//,null,2)
+      JSON.stringify(this.getSerializedRowData(serverName, rows))//,null,2)
     ))
       this.jsonCopied();
   }
 
-  private getSerializedRowData(rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue()), this.server$.getValue(), rows);
+  private getSerializedRowData(serverName: string, rows: ListRow[]): any {
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows);
   }
 
   jsonCopied(): void {

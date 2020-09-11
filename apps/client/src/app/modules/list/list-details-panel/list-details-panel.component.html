@@ -106,7 +106,7 @@
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>
           </button>
-          <button (click)="$event.stopPropagation();copyJSONExport()"
+          <button (click)="$event.stopPropagation();copyJSONExport(server$ | async)"
                   [nzTooltipTitle]="'LIST.Copy_as_json' | translate"
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="snippets"></i>

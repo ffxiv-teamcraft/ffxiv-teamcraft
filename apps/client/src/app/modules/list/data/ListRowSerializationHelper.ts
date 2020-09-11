@@ -7,6 +7,11 @@ import { DataType } from '../data/data-type';
 import { getItemSource, ListRow } from '../model/list-row';
 
 export class ListRowSerializationHelper {
+
+  public static getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
+    return getItemSource<T>(row, type, isObject);
+  }
+
   constructor(
     private i18nTools: I18nToolsService,
     private l12n: LocalizedDataService,
@@ -44,7 +49,7 @@ export class ListRowSerializationHelper {
 
   private getNameIfExists(itemName: I18nName) {
     const name = this.i18nTools.getName(itemName);
-    return name && name != 'no name' ? name : undefined;
+    return name && name !== 'no name' ? name : undefined;
   }
 
   private serializeVoyages(voyages: any) {
@@ -88,7 +93,7 @@ export class ListRowSerializationHelper {
 
   private serializeVentures(item: any, ventures: any) {
     return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
-      let retval = {
+      const retval = {
         ...venture,
         amountsDetails: VenturesComponent.ventureAmounts(venture)
           .map(threshold => {
@@ -108,13 +113,9 @@ export class ListRowSerializationHelper {
     }) : undefined;
   }
 
-  public static getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
-    return getItemSource<T>(row, type, isObject);
-  }
-
   public getJsonExport(dc: string, server: string, rows: ListRow[]): any {
     //convert all the desynth data into a single key value pair/dictionary (effectively dedupes for large dumps)
-    let desynthMap = {}
+    const desynthMap = {}
     const desynthData = rows
       .map((item: ListRow) => {
         const desynths = ListRowSerializationHelper.getData(item, DataType.DESYNTHS);
@@ -122,7 +123,7 @@ export class ListRowSerializationHelper {
       })
       .filter(m => !!m)
       .reduce((pn, u) => [...pn, ...u], []);
-    for (var i = 0; i < desynthData.length; i++) {
+    for (let i = 0; i < desynthData.length; i++) {
       desynthMap[desynthData[i].id] = desynthData[i].name;
     }
 
@@ -150,7 +151,7 @@ export class ListRowSerializationHelper {
           const tripleTriadPack = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_PACK);
           const quests = ListRowSerializationHelper.getData(item, DataType.QUESTS);
           const achievements = ListRowSerializationHelper.getData(item, DataType.ACHIEVEMENTS);
-          let retval: any = {
+          const retval: any = {
             ...item,
             done: item.done ? true : false,
             amountNeeded: item.amount_needed,

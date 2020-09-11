@@ -107,9 +107,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   private regeneratingList = false;
-
-  private server$: BehaviorSubject<string> = new BehaviorSubject<string>(undefined);
-  serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
+  
+  server$ = this.authFacade.mainCharacter$.pipe(
+    map(char => char.Server)
+  )
+  private serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
 
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
     private activatedRoute: ActivatedRoute, private dialog: NzModalService,
@@ -183,10 +185,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         this.teamsFacade.select(list.teamId);
       }
     });
-    //hold onto server name once resolved
-    this.authFacade.mainCharacter$.pipe(
-      map(char => char.Server)
-    ).subscribe(this.server$);
   }
 
   ngOnInit() {
@@ -359,20 +357,20 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
-  public copyJSONExport(display: ListDisplay, list: List) {
-    if (this._clipboardService.copyFromContent(this.getListJsonExport(display, list)))
+  public copyJSONExport(serverName: string, display: ListDisplay, list: List) {
+    if (this._clipboardService.copyFromContent(this.getListJsonExport(serverName, display, list)))
       this.afterListJSONCopied();
   }
 
-  public getListJsonExport(display: ListDisplay, list: List): string {
+  public getListJsonExport(serverName: string, display: ListDisplay, list: List): string {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return JSON.stringify(this.getSerializedRowData(list.items))//,null,2);
+    return JSON.stringify(this.getSerializedRowData(serverName, list.items))//,null,2);
   }
 
-  private getSerializedRowData(rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, this.server$.getValue()), this.server$.getValue(), rows);
+  private getSerializedRowData(serverName: string, rows: ListRow[]): any {
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows);
   }
 
   afterListJSONCopied(): void {
