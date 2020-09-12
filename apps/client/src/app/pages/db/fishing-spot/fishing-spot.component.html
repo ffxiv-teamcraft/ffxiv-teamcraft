@@ -44,81 +44,32 @@
     </div>
 
     <div fxLayout="row wrap" fxLayoutGap="24px grid" fxLayoutGap.lt-md="12px grid" fxLayoutAlign="space-between stretch" fxLayout.lt-sm="column">
-      <app-fishing-spot-position fxFlex="0 0 360px" [spot]="xivapiFishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
+      <app-fishing-spot-position fxFlex="nogrow" [spot]="xivapiFishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
       <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weathers>
       <app-fishing-spot-weather-transitions fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weather-transitions>
       <app-fishing-spot-available-fishes fxFlex="1 1 auto"></app-fishing-spot-available-fishes>
       <app-fishing-spot-hours fxFlex="100" [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-hours>
       <app-fishing-spot-bait-datagrid
+        fxFlex="none"
         [activeFish]="highlightedFish$ | async"
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-bait-datagrid>
-      <!-- <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
-      <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate" class="card-with-list expanded">
-        <ng-template #baitSider let-bait>
-          <app-item-icon [itemId]="bait" width="32"></app-item-icon>
-        </ng-template>
-        <ng-container *ngTemplateOutlet="dataGrid; context: { $implicit: data.fishesPerBait, siderTpl: baitSider }"></ng-container>
-      </nz-card>
-
-      <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_weather' | translate" class="card-with-list expanded">
-        <ng-template #weatherSider let-weather>
-          <img [src]="weather | weatherIcon" alt="" nz-tooltip [nzTooltipTitle]="weather | weatherName | i18n" />
-        </ng-template>
-        <ng-container *ngTemplateOutlet="dataGrid; context: { $implicit: data.fishesPerWeather, siderTpl: weatherSider }"></ng-container>
-      </nz-card>
-
-      <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_tug' | translate" class="card-with-list expanded">
-        <ng-template #tugSider let-tug>
-          {{ 'DB.FISH.TUG.' + ['Medium', 'Big', 'Light'][tug] | translate }}
-        </ng-template>
-        <ng-container *ngTemplateOutlet="dataGrid; context: { $implicit: data.fishesPerTug, siderTpl: tugSider }"></ng-container>
-      </nz-card>
-    </div>
-
-    <ng-template #dataGrid let-grid let-siderTpl="siderTpl" let-useGlobalTotal="globalTotal">
-      <table class="grid-table">
-        <thead>
-          <tr class="grid-header-line">
-            <th class="empty-head"></th>
-            <th *ngFor="let header of grid.headers; let last = last; let i = index" class="grid-cell grid-header" [class.last]="last">
-              <app-item-icon [itemId]="header" width="32"></app-item-icon>
-            </th>
-          </tr>
-        </thead>
-        <tbody class="grid-body">
-          <tr *ngFor="let row of grid.data; let i = index">
-            <td class="grid-cell grid-sider">
-              <ng-container *ngTemplateOutlet="siderTpl; context: { $implicit: grid.siders[i] }"></ng-container>
-            </td>
-            <td
-              *ngFor="let cell of row; let headerIndex = index; let last = last"
-              class="grid-cell"
-              [class.not-highlighted]="data.highlighted > -1 && data.highlightedIndex !== headerIndex"
-              [class.last]="last"
-              [style.background-color]="getHighlightColor(useGlobalTotal ? cell / grid.total : cell / grid.totals[i]) | async"
-              (mouseenter)="highlightedFish$.next(grid.headers[headerIndex])"
-              (mouseleave)="highlightedFish$.next(-1)"
-            >
-              <span *ngIf="cell" nz-tooltip [nzTooltipTitle]="amountTooltip">
-                <ng-template #amountTooltip>
-                  {{ cell | number: '1.0-2':translate.currentLang }} / {{ grid.totals[i] | number: '1.0-1':translate.currentLang }}
-                </ng-template>
-                {{ 100 * (useGlobalTotal ? cell / grid.total : cell / grid.totals[i]) | number: '1.0-1':translate.currentLang }}%
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </ng-template> -->
-
+      <app-fishing-spot-weather-datagrid
+        fxFlex="none"
+        [activeFish]="highlightedFish$ | async"
+        (activeFishChange)="highlightedFish$.next($event)"
+      ></app-fishing-spot-weather-datagrid>
+      <app-fishing-spot-tug-datagrid
+        fxFlex="none"
+        [activeFish]="highlightedFish$ | async"
+        (activeFishChange)="highlightedFish$.next($event)"
+      ></app-fishing-spot-tug-datagrid>
       <app-fishing-spot-bite-times
         fxFlex="100"
         [activeFish]="highlightedFish$ | async"
         (activeFishChange)="highlightedFish$.next($event)"
       ></app-fishing-spot-bite-times>
     </div>
-
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.ID" type="fishing-spot"></app-db-comments>
   </div>
 </ng-container>

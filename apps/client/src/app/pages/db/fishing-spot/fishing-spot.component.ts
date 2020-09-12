@@ -2,19 +2,12 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { Apollo } from 'apollo-angular';
-import gql from 'graphql-tag';
 import { NzModalService } from 'ng-zorro-antd';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, map, shareReplay, switchMap, takeUntil, tap, filter } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
-import { mapIds } from '../../../core/data/sources/map-ids';
-import { weatherIndex } from '../../../core/data/sources/weather-index';
-import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
-import { WeatherService } from '../../../core/eorzea/weather.service';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
 import { SeoService } from '../../../core/seo/seo.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
@@ -52,81 +45,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     shareReplay(1)
   );
 
-  public gubalData$: Observable<any> = combineLatest([
-    this.xivapiFishingSpot$,
-    this.apollo.query<any>({ query: this.getGraphQLQuery(+1), fetchPolicy: 'no-cache' }),
-  ]).pipe(
-    switchMap(([spot, gubalData]) => {
-      return this.etime.getEorzeanTime().pipe(
-        distinctUntilChanged((a, b) => a.getUTCHours() % 8 === b.getUTCHours() % 8),
-        map((time) => {
-          return [spot, gubalData, time];
-        })
-      );
-    }),
-    map(([spot, gubalData, time]) => {
-      return {
-        fishes: this.lazyData.data.fishingSpots.find((s) => s.id === spot.ID).fishes.filter((f) => f > 0),
-        fishesPerBait: this.dataToTable(
-          gubalData.data.baits_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }),
-          'itemId',
-          'baitId',
-          'occurences'
-        ),
-        fishesPerWeather: this.dataToTable(
-          gubalData.data.weathers_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }),
-          'itemId',
-          'weatherId',
-          'occurences'
-        ),
-        fishesPerTug: this.dataToTable(
-          gubalData.data.tug_per_fish_per_spot.sort((a, b) => {
-            return spot.customData.fishes.indexOf(a.itemId) - spot.customData.fishes.indexOf(b.itemId);
-          }),
-          'itemId',
-          'tug',
-          'occurences'
-        ),
-      };
-    }),
-    switchMap((display: any) => {
-      return this.highlightedFish$.pipe(
-        map((highlightedFish) => {
-          display.highlighted = highlightedFish;
-          if (highlightedFish > -1) {
-            display.highlightedIndex = display.fishes.findIndex((h) => h === highlightedFish);
-          } else {
-            display.highlightedIndex = -1;
-          }
-          return display;
-        })
-      );
-    })
-  );
-
   public highlightedFish$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
-  private highlightColor$ = this.settings.themeChange$.pipe(
-    map(({ next }) => {
-      return next.highlight
-        .replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, (m, r, g, b) => '#' + r + r + g + g + b + b)
-        .substring(1)
-        .match(/.{2}/g)
-        .map((x) => parseInt(x, 16));
-    })
-  );
-
-  public getHighlightColor(weight: number = 10) {
-    return this.highlightColor$.pipe(
-      takeUntil(this.onDestroy$),
-      map((colors) => {
-        return `rgba(${colors[0]}, ${colors[1]}, ${colors[2]}, ${Math.floor(weight * 90) / 100})`;
-      })
-    );
-  }
 
   constructor(
     private readonly route: ActivatedRoute,
@@ -137,9 +56,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     private readonly router: Router,
     private readonly lazyData: LazyDataService,
     public readonly settings: SettingsService,
-    private readonly etime: EorzeanTimeService,
-    private readonly apollo: Apollo,
-    private readonly weatherService: WeatherService,
     private readonly dialog: NzModalService,
     private readonly fishContext: FishContextService,
     readonly seo: SeoService
@@ -175,79 +91,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     this.fishContext.setBaitId(undefined);
   }
 
-  private getGraphQLQuery(spotId: number): any {
-    return gql`
-          query fishData {
-            etimes_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              etime,
-              occurences,
-              itemId
-            }
-            baits_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              baitId,
-              occurences,
-              itemId
-            }
-            tug_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              tug,
-              occurences,
-              itemId
-            }
-            bite_time_per_fish_per_spot(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 3}}) {
-              biteTime,
-              occurences,
-              itemId
-            }
-            bite_time_per_fish_per_spot_per_bait(where: {spot: {_eq: ${spotId}}, biteTime: {_gt: 1}, occurences: {_gte: 3}}) {
-              biteTime,
-              occurences,
-              itemId,
-              baitId
-            }
-            weathers_per_fish_per_spot(where: {spot: {_eq: ${spotId}}}) {
-              weatherId,
-              occurences,
-              itemId
-            }
-          }
-        `;
-  }
-
-  private dataToTable(
-    data: any[],
-    headerProperty: string,
-    siderProperty: string,
-    valueProperty: string
-  ): { headers: number[]; siders: number[]; total: number; totals: number[]; data: number[][] } {
-    const res = data.reduce(
-      (result, row) => {
-        let headerIndex = result.headers.findIndex((r) => r === row[headerProperty]);
-        if (headerIndex === -1) {
-          result.headers.push(row[headerProperty]);
-          headerIndex = result.headers.length - 1;
-        }
-        let siderIndex = result.siders.findIndex((r) => r === row[siderProperty]);
-        if (siderIndex === -1) {
-          result.siders.push(row[siderProperty]);
-          siderIndex = result.siders.length - 1;
-        }
-        result.data[siderIndex] = result.data[siderIndex] || [];
-        result.data[siderIndex][headerIndex] = row[valueProperty];
-        result.total += row[valueProperty];
-        result.totals[siderIndex] = (result.totals[siderIndex] || 0) + row[valueProperty];
-        return result;
-      },
-      { headers: [], siders: [], data: [[]], total: 0, totals: [] }
-    );
-
-    res.data.forEach((row) => {
-      if (row.length !== res.headers.length) {
-        row.push(...new Array(res.headers.length - row.length));
-      }
-    });
-    return res;
-  }
-
   public showMissesPopup(spotId: number): void {
     this.dialog.create({
       nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
@@ -258,16 +101,6 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
       nzFooter: null,
       nzWidth: '80vw',
     });
-  }
-
-  private getWeatherChances(mapId: number, weatherId: number): number {
-    const index = weatherIndex[mapIds.find((m) => m.id === mapId).weatherRate];
-    const maxRate = index[index.length - 1].rate;
-    const matchingIndex = index.findIndex((row) => row.weatherId === weatherId);
-    if (matchingIndex === 0) {
-      return index[matchingIndex].rate / maxRate;
-    }
-    return (index[matchingIndex].rate - index[matchingIndex - 1].rate) / maxRate;
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {

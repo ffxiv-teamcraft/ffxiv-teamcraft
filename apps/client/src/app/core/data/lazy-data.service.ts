@@ -75,7 +75,7 @@ export class LazyDataService {
     private platformService: PlatformService,
     private settings: SettingsService,
     private readonly lazyDataProvider: LazyDataProviderService,
-    private readonly translate: TranslateService
+    readonly translate: TranslateService
   ) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);

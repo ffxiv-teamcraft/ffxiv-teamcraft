@@ -32,7 +32,5 @@ export class FishingSpotDatagridComponent<T extends string | number = number> {
     this.table$.next(value);
   }
 
-  constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {
-    this.activeFish$.subscribe(console.log);
-  }
+  constructor(public readonly util: FishingSpotUtilsService, public readonly translate: TranslateService) {}
 }

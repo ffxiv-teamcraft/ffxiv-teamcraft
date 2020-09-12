@@ -79,13 +79,13 @@ interface FishBaitResult {
 export class BaitsPerFishPerSpotQuery extends Query<FishBaitResult, FishIdSpotIdVariable> {
   public document = gql`
     query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gte: 1 } }) {
         itemId
         spot
         baitId
         occurences
       }
-      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId } }) {
+      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId }, occurences: { _gte: 1 } }) {
         itemId
         spot
         baitId

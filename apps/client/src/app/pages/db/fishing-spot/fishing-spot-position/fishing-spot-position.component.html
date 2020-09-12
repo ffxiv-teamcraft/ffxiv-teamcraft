@@ -1,4 +1,4 @@
-<nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" [nzLoading]="loading">
+<nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" [style.max-width.px]="360" [nzLoading]="loading">
   <app-map
     [hideDbButton]="true"
     [mapId]="spot.TerritoryType.MapTargetID"

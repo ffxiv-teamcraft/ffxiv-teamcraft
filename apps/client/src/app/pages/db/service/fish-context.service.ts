@@ -272,6 +272,30 @@ export class FishContextService {
     shareReplay(1)
   );
 
+  /** An observable containing the weathers at the active spot. */
+  private readonly weathersBySpot$ = this.spotId$.pipe(
+    filter((spotId) => spotId >= 0),
+    switchMap((spotId) => this.data.getWeather(undefined, spotId))
+  );
+
+  /** An observable containing information about the weathers during which to catch fish at the active spot. */
+  public readonly weathersBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.weathersBySpot$.pipe(
+    map(datagridResultMapper('weathers', 'itemId', 'weatherId')),
+    shareReplay(1)
+  );
+
+  /** An observable containing the tugs and hooksets used to catch fish at the active spot. */
+  private readonly hooksetTugsBySpot$ = this.spotId$.pipe(
+    filter((spotId) => spotId >= 0),
+    switchMap((spotId) => this.data.getHooksets(undefined, spotId))
+  );
+
+  /** An observable containing information about the weathers during which to catch fish at the active spot. */
+  public readonly tugsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.hooksetTugsBySpot$.pipe(
+    map(datagridResultMapper('tugs', 'itemId', 'tug')),
+    shareReplay(1)
+  );
+
   public readonly highlightTime$ = this.etime.getEorzeanTime().pipe(
     distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
     map((time) => {

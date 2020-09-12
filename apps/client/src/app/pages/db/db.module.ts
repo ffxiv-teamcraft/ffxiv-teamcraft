@@ -49,6 +49,8 @@ import { FishingSpotBiteTimesComponent } from './fishing-spot/fishing-spot-bite-
 import { FishingSpotDatagridComponent } from './fishing-spot/fishing-spot-datagrid/fishing-spot-datagrid.component';
 import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
 import { FishingSpotPositionComponent } from './fishing-spot/fishing-spot-position/fishing-spot-position.component';
+import { FishingSpotTugDatagridComponent } from './fishing-spot/fishing-spot-tug-datagrid/fishing-spot-tug-datagrid.component';
+import { FishingSpotWeatherDatagridComponent } from './fishing-spot/fishing-spot-weather-datagrid/fishing-spot-weather-datagrid.component';
 import { FishingSpotWeatherTransitionsComponent } from './fishing-spot/fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
 import { FishingSpotWeathersComponent } from './fishing-spot/fishing-spot-weathers/fishing-spot-weathers.component';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
@@ -279,6 +281,8 @@ const routes: Routes = [
     FishingSpotAvailableFishesComponent,
     FishingSpotDatagridComponent,
     FishingSpotBaitDatagridComponent,
+    FishingSpotWeatherDatagridComponent,
+    FishingSpotTugDatagridComponent,
   ],
   imports: [
     CommonModule,
