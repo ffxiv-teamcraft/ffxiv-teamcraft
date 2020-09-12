@@ -44,7 +44,8 @@ export class ListRowSerializationHelper {
     }) : undefined;
   }
   private getJob(job: any) {
-    return this.getNameIfExists(this.l12n.getJobAbbr(job));
+    const jobAbbr = this.getNameIfExists(this.l12n.getJobAbbr(job));
+    return jobAbbr != null && jobAbbr !== "missing name" ? jobAbbr : "DOWM"//;this.getNameIfExists(VenturesComponent.DOWM);
   }
 
   private getNameIfExists(name: I18nName) {
@@ -68,7 +69,7 @@ export class ListRowSerializationHelper {
     if (!obj)
       return undefined;
     ///wat.. casing!?
-    const zoneName = this.l12n.getPlace(obj.zoneId?obj.zoneId:obj.zoneid);
+    const zoneName = this.l12n.getPlace(obj.zoneId ? obj.zoneId : obj.zoneid);
     const mapName = this.l12n.getMapName(obj.mapId);
     return this.getNameIfExists(zoneName ? zoneName : mapName);
   }
@@ -119,7 +120,7 @@ export class ListRowSerializationHelper {
     return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
       const retval = {
         ...venture,
-        amountsDetails: VenturesComponent.ventureAmounts(venture)
+        ventureDetails: VenturesComponent.ventureAmounts(venture)
           .map(threshold => {
             return {
               ...threshold,
