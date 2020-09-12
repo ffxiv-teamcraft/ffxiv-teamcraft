@@ -47,27 +47,12 @@
       <app-fishing-spot-position fxFlex="0 0 360px" [spot]="xivapiFishingSpot$ | async" [loading]="loading$ | async"></app-fishing-spot-position>
       <app-fishing-spot-weathers fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weathers>
       <app-fishing-spot-weather-transitions fxFlex="1 1 auto" [spot]="xivapiFishingSpot$ | async"></app-fishing-spot-weather-transitions>
-      <!--
-      <nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 auto" class="card-with-list">
-        <div fxLayout="column" fxLayoutAlign="center center">
-          <div
-            *ngFor="let fishId of data.fishes; let last = last"
-            fxLayout="row"
-            fxLayoutAlign="flex-start center"
-            fxLayoutGap="5px"
-            class="list-row"
-            [class.border-bottom]="!last"
-          >
-            <app-item-icon [itemId]="fishId" [icon]="fishId | lazyIcon" width="32"></app-item-icon>
-            <span>{{ fishId | itemName | i18n }}</span>
-            <app-db-button [id]="fishId" type="item"></app-db-button>
-          </div>
-        </div>
-      </nz-card>
-    </div> -->
-
-      <app-fishing-spot-hours [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-hours>
-
+      <app-fishing-spot-available-fishes fxFlex="1 1 auto"></app-fishing-spot-available-fishes>
+      <app-fishing-spot-hours fxFlex="100" [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-hours>
+      <app-fishing-spot-bait-datagrid
+        [activeFish]="highlightedFish$ | async"
+        (activeFishChange)="highlightedFish$.next($event)"
+      ></app-fishing-spot-bait-datagrid>
       <!-- <div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutAlign="space-between" fxLayoutGap="10px">
       <nz-card [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate" class="card-with-list expanded">
         <ng-template #baitSider let-bait>
@@ -127,7 +112,11 @@
       </table>
     </ng-template> -->
 
-      <app-fishing-spot-bite-times [activeFish]="highlightedFish$ | async" (activeFishChange)="highlightedFish$.next($event)"></app-fishing-spot-bite-times>
+      <app-fishing-spot-bite-times
+        fxFlex="100"
+        [activeFish]="highlightedFish$ | async"
+        (activeFishChange)="highlightedFish$.next($event)"
+      ></app-fishing-spot-bite-times>
     </div>
 
     <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="spot.ID" type="fishing-spot"></app-db-comments>

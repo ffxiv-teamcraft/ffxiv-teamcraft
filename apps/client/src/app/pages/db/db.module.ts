@@ -43,8 +43,14 @@ import { FishWeatherTransitionsComponent } from './fish/fish-weather-transitions
 import { FishWeathersComponent } from './fish/fish-weathers/fish-weathers.component';
 import { FishComponent } from './fish/fish.component';
 import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
+import { FishingSpotAvailableFishesComponent } from './fishing-spot/fishing-spot-available-fishes/fishing-spot-available-fishes.component';
+import { FishingSpotBaitDatagridComponent } from './fishing-spot/fishing-spot-bait-datagrid/fishing-spot-bait-datagrid.component';
 import { FishingSpotBiteTimesComponent } from './fishing-spot/fishing-spot-bite-times/fishing-spot-bite-times.component';
+import { FishingSpotDatagridComponent } from './fishing-spot/fishing-spot-datagrid/fishing-spot-datagrid.component';
 import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
+import { FishingSpotPositionComponent } from './fishing-spot/fishing-spot-position/fishing-spot-position.component';
+import { FishingSpotWeatherTransitionsComponent } from './fishing-spot/fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
+import { FishingSpotWeathersComponent } from './fishing-spot/fishing-spot-weathers/fishing-spot-weathers.component';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { InstanceComponent } from './instance/instance.component';
 import { ItemComponent } from './item/item.component';
@@ -62,9 +68,6 @@ import { FishDataService } from './service/fish-data.service';
 import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
-import { FishingSpotPositionComponent } from './fishing-spot/fishing-spot-position/fishing-spot-position.component';
-import { FishingSpotWeathersComponent } from './fishing-spot/fishing-spot-weathers/fishing-spot-weathers.component';
-import { FishingSpotWeatherTransitionsComponent } from './fishing-spot/fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
 
 const routes: Routes = [
   {
@@ -273,6 +276,9 @@ const routes: Routes = [
     FishingSpotPositionComponent,
     FishingSpotWeathersComponent,
     FishingSpotWeatherTransitionsComponent,
+    FishingSpotAvailableFishesComponent,
+    FishingSpotDatagridComponent,
+    FishingSpotBaitDatagridComponent,
   ],
   imports: [
     CommonModule,

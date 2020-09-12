@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApolloQueryResult } from 'apollo-client';
-import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
-import { distinctUntilChanged, map, shareReplay, switchMap, filter, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -22,6 +22,18 @@ export interface WeatherTransitionOccurrence {
   toId: number;
   occurrences: number;
 }
+export interface DatagridColDef<T = number> {
+  colId: T;
+}
+export interface DatagridRow<T extends string | number = number> {
+  rowId: number;
+  valuesByColId: Record<T, number>;
+}
+export interface Datagrid<T extends string | number = number> {
+  colDefs: Array<DatagridColDef<T>>;
+  data: Array<DatagridRow<T>>;
+  totals: Record<T, number>;
+}
 
 const occurrenceResultMapper = <T extends string, I extends string>(key: T, innerKey: I) => (
   res: ApolloQueryResult<Record<T, Array<Record<I | 'occurences', number>>>>
@@ -37,6 +49,29 @@ const occurrenceResultMapper = <T extends string, I extends string>(key: T, inne
     },
     { total: 0, byId: {} as Occurrences['byId'] }
   );
+  return { ...res, data };
+};
+
+const datagridResultMapper = <DataKey extends string, RowKey extends string | number, ColKey extends string | number>(
+  dataKey: DataKey,
+  rowKey: RowKey,
+  colKey: ColKey
+) => (res: ApolloQueryResult<Record<DataKey, Array<Record<RowKey | ColKey | 'occurences', number>>>>): ApolloQueryResult<Datagrid<number>> => {
+  const rows = res.data?.[dataKey];
+  if (!rows) return { ...res, data: undefined };
+  const data: Datagrid<number> = { colDefs: [], data: [], totals: {} };
+  for (const row of Object.values(rows)) {
+    const colId = row[colKey];
+    if (!data.colDefs.find((i) => i.colId === colId)) data.colDefs.push({ colId: colId });
+    let agg = data.data.find((i) => i.rowId === row[rowKey]);
+    const rowId = row[rowKey];
+    if (!agg) {
+      agg = { rowId, valuesByColId: {} };
+      data.data.push(agg);
+    }
+    agg.valuesByColId[colId] = (agg.valuesByColId[colId] ?? 0) + row.occurences;
+    data.totals[colId] = (data.totals[colId] ?? 0) + row.occurences;
+  }
   return { ...res, data };
 };
 
@@ -228,8 +263,14 @@ export class FishContextService {
     switchMap((spotId) => this.data.getBaitMooches(undefined, spotId))
   );
 
-  /** An observable containing information about the baits used to catch the active fish. */
+  /** An observable containing information about the baits used to catch fish at the active spot. */
   public readonly baitsBySpot$: Observable<OccurrencesResult> = this.baitMoochesBySpot$.pipe(map(occurrenceResultMapper('baits', 'baitId')), shareReplay(1));
+
+  /** An observable containing information about the baits used to catch fish at the active spot. */
+  public readonly baitsBySpotByFish$: Observable<ApolloQueryResult<Datagrid>> = this.baitMoochesBySpot$.pipe(
+    map(datagridResultMapper('baits', 'itemId', 'baitId')),
+    shareReplay(1)
+  );
 
   public readonly highlightTime$ = this.etime.getEorzeanTime().pipe(
     distinctUntilChanged((a, b) => a.getUTCHours() === b.getUTCHours()),
