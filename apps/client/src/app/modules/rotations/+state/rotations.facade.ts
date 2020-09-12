@@ -23,7 +23,7 @@ import { DefaultConsumables } from '../../../model/user/default-consumables';
 export class RotationsFacade {
   loading$ = this.store.select(rotationsQuery.getLoading);
   allRotations$ = this.store.select(rotationsQuery.getAllRotations);
-  myRotations$ = combineLatest(this.allRotations$, this.authFacade.userId$).pipe(
+  myRotations$ = combineLatest([this.allRotations$, this.authFacade.userId$]).pipe(
     map(([rotations, userId]) => rotations.filter(r => r.authorId === userId)),
     map(rotations => rotations.sort((a, b) => a.index - b.index))
   );

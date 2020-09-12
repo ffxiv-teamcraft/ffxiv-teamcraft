@@ -28,7 +28,7 @@ export class CustomLinksFacade {
     select(customLinksQuery.getSelectedCustomLink),
     filter(rotation => rotation !== undefined)
   );
-  myCustomLinks$ = combineLatest(this.allCustomLinks$, this.authFacade.userId$).pipe(
+  myCustomLinks$ = combineLatest([this.allCustomLinks$, this.authFacade.userId$]).pipe(
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)),
     shareReplay(1)
   );

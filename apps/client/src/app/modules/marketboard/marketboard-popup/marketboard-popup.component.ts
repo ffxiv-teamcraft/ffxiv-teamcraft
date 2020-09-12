@@ -75,7 +75,7 @@ export class MarketboardPopupComponent implements OnInit {
       })
     );
 
-    this.prices$ = combineLatest(data$
+    this.prices$ = combineLatest([data$
         .pipe(
           map(item => item.Prices),
           tap(() => this.loading = false),
@@ -86,7 +86,7 @@ export class MarketboardPopupComponent implements OnInit {
           }),
           shareReplay(1)
         ),
-      this.sort$
+      this.sort$]
     ).pipe(
       map(([prices, sort]) => {
         return [...prices.sort((a, b) => {
