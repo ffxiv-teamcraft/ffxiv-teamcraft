@@ -149,7 +149,7 @@ export class ListRowSerializationHelper {
     return reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
-  public getJsonExport(dc: string, server: string, rows: ListRow[]): any {
+  public getJsonExport(dc: string, server: string, rows: ListRow[], finalItems: ListRow[]): any {
     //convert all the desynth data into a single key value pair/dictionary (effectively dedupes for large dumps)
     const desynthMap = {}
     const desynthData = rows
@@ -220,6 +220,7 @@ export class ListRowSerializationHelper {
           return retval;
         }),
       desynthMap: desynthMap,
+      finalItems: finalItems,
     };
   }
 

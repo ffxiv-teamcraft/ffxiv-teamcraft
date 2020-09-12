@@ -524,7 +524,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows);
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, undefined);
   }
 
   jsonCopied(): void {

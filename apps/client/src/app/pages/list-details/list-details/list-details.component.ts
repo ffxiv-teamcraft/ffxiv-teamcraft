@@ -107,7 +107,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   private regeneratingList = false;
-  
+
   server$ = this.authFacade.mainCharacter$.pipe(
     map(char => char.Server)
   )
@@ -366,11 +366,11 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return JSON.stringify(this.getSerializedRowData(serverName, list.items))//,null,2);
+    return JSON.stringify(this.getSerializedRowData(serverName, list.items, list.finalItems))//,null,2);
   }
 
-  private getSerializedRowData(serverName: string, rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows);
+  private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
+    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, finalItems);
   }
 
   afterListJSONCopied(): void {
