@@ -132,7 +132,7 @@ export class ListPanelComponent extends TeamcraftComponent {
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
               private cd: ChangeDetectorRef, public settings: SettingsService) {
     super();
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
@@ -140,7 +140,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
     this.teams$ = this.teamsFacade.myTeams$;
 
-    this.listTemplate$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+    this.listTemplate$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
       map(([links, list]) => {
         return <ListTemplate>links.find(link => {
           return link.type === 'template' && (<ListTemplate>link).originalListId === list.$key;
@@ -148,7 +148,7 @@ export class ListPanelComponent extends TeamcraftComponent {
       })
     );
 
-    this.listContent$ = combineLatest(this.list$, this.layoutsFacade.selectedLayout$).pipe(
+    this.listContent$ = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
       map(([list, layout]) => {
         return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
       })

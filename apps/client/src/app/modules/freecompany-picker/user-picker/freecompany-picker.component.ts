@@ -30,14 +30,14 @@ export class FreecompanyPickerComponent {
   constructor(private xivapi: XivapiService, private modalRef: NzModalRef) {
     this.servers$ = this.xivapi.getServerList().pipe(shareReplay(1));
 
-    this.autoCompleteRows$ = combineLatest(this.servers$, this.selectedServer.valueChanges)
+    this.autoCompleteRows$ = combineLatest([this.servers$, this.selectedServer.valueChanges])
       .pipe(
         map(([servers, inputValue]) => {
           return servers.filter(server => server.indexOf(inputValue) > -1);
         })
       );
 
-    this.result$ = combineLatest(this.selectedServer.valueChanges, this.fcName.valueChanges)
+    this.result$ = combineLatest([this.selectedServer.valueChanges, this.fcName.valueChanges])
       .pipe(
         tap(() => this.loadingResults = true),
         debounceTime(500),

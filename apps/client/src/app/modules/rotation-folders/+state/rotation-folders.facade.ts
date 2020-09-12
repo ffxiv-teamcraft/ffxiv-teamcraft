@@ -30,13 +30,13 @@ export class RotationFoldersFacade {
     select(rotationFoldersQuery.getSelectedRotationFolder),
     filter(rotation => rotation !== undefined)
   );
-  myRotationFolders$ = combineLatest(this.allRotationFolders$, this.authFacade.userId$).pipe(
+  myRotationFolders$ = combineLatest([this.allRotationFolders$, this.authFacade.userId$]).pipe(
     map(([folders, userId]) => folders.filter(folder => folder.authorId === userId)
       .sort((a, b) => a.index - b.index))
   );
 
   favoriteRotationFolders$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]> =
-    combineLatest(this.allRotationFolders$, this.authFacade.favorites$, this.rotationsFacade.allRotations$).pipe(
+    combineLatest([this.allRotationFolders$, this.authFacade.favorites$, this.rotationsFacade.allRotations$]).pipe(
       map(([folders, favorites, rotations]) => {
         (favorites.rotationFolders || []).forEach(folder => {
           if (folders.find(f => f.$key === folder) === undefined) {
