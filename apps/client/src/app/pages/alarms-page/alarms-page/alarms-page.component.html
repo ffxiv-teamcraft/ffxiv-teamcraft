@@ -135,7 +135,7 @@
                  [class.played]="row.played  && !row.spawned"
                  [class.spawned]="row.spawned"
                  [nzActions]="[delete, copyMacro]"
-                 [nzCover]="row.alarm.mapId === null?null:map"
+                 [nzCover]="row.alarm.mapId > 0 ? map : null"
                  class="alarm-card"
                  fxLayout="column">
           <nz-card-meta [nzAvatar]="itemIcon | ifMobile: null" [nzDescription]="cardDescription" [nzTitle]="cardTitle">
@@ -171,7 +171,7 @@
           <i *ngIf="row.alarm.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-            <app-map-position *ngIf="row.alarm.mapId"
+            <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
                               [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
@@ -256,7 +256,7 @@
           </ng-template>
         </ng-template>
         <ng-template #map>
-          <app-map *ngIf="row.alarm.mapId" [mapId]="row.alarm.mapId"
+          <app-map *ngIf="row.alarm.mapId > 0" [mapId]="row.alarm.mapId"
                    [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
         </ng-template>
         <ng-template #delete>
