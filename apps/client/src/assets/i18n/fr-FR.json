@@ -1422,7 +1422,9 @@
     "Jump_to_page": "Accès rapide à une autre page",
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant"
+      "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "Heure du jour",

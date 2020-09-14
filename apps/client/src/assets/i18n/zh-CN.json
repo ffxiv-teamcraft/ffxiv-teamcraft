@@ -1422,7 +1422,9 @@
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "下一等级所需经验的百分比"
+      "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "上钩时间",
