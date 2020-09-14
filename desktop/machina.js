@@ -61,7 +61,7 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
         {
           monitorType: winpcap ? 'WinPCap' : 'RawSocket',
           parseAlgorithm: 'PacketSpecific',
-          region: region,
+          region: region
         } : {
           parseAlgorithm: 'PacketSpecific',
           noData: true,
@@ -72,9 +72,13 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
           definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
         };
 
-      if (verbose) {
-        options.logger = log.log;
-      }
+      options.logger = message => {
+        if (message.level === 'info' && verbose) {
+          log.info(message.message);
+        } else if (message.level !== 'info') {
+          log[message.level || 'warn'](message.message);
+        }
+      };
 
       if (pid) {
         options.pid = pid;
@@ -105,6 +109,7 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
         'eventStart',
         'eventFinish',
         'eventPlay4',
+        'eventPlay32',
         'someDirectorUnk4',
         'actorControlSelf',
         'retainerInformation',

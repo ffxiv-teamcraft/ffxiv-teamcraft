@@ -188,6 +188,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/metrics/metrics.module').then(m => m.MetricsModule)
   },
   {
+    path: 'crafting-replays',
+    loadChildren: () => import('./pages/crafting-replays/crafting-replays.module').then(m => m.CraftingReplaysModule)
+  },
+  {
     path: 'collectables',
     loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
   },

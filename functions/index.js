@@ -1,7 +1,7 @@
-const { applyPatch } = require('fast-json-patch');
 const functions = require('firebase-functions');
 require('firebase/app');
 require('firebase/firestore');
+const crypto = require('crypto');
 const admin = require('firebase-admin');
 const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
@@ -10,8 +10,8 @@ const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
 
 const runtimeOpts = {
-  timeoutSeconds: 300,
-  memory: '1GB'
+  timeoutSeconds: 120,
+  memory: '256MB'
 };
 
 // Firestore counts
@@ -74,66 +74,36 @@ exports.solver = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
   }
 });
 
-function applyOffsets(data, entries) {
-  entries.forEach(customEntry => {
-    const explodedPath = customEntry.path.split('/');
-    explodedPath.shift();
-    let pointer = data;
-    for (let fragment of explodedPath.slice(0, -1)) {
-      pointer = pointer[fragment];
-    }
-    pointer[explodedPath[explodedPath.length - 1]] += customEntry.offset;
-  });
-  return data;
-}
+const hashReplay = (replay) => {
+  const hmac = crypto.createHmac('sha256', functions.config().replays.hmac.secret);
+  hmac.update(JSON.stringify(Object.entries(replay).sort((a, b) => {
+    return a[0] > b[0] ? 1 : -1;
+  })));
+  return hmac.digest('hex');
+};
 
-// exports.updateList = functions.runWith(runtimeOpts).https.onCall((data, context) => {
-//   const listRef = firestore.collection('lists').doc(data.uid);
-//   return firestore.runTransaction(transaction => {
-//     return transaction.get(listRef).then(listDoc => {
-//       const list = listDoc.data();
-//       try {
-//         const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
-//           if (entry.custom) {
-//             acc[1].push(entry);
-//           } else {
-//             acc[0].push(entry);
-//           }
-//           return acc;
-//         }, [[], []]);
-//         applyPatch(list, standard);
-//         applyOffsets(list, custom);
-//         transaction.set(listRef, list);
-//       } catch (e) {
-//         console.log(data.diff);
-//       }
-//     });
-//   });
-// });
-//
-// exports.updateInventory = functions.runWith(runtimeOpts).https.onCall((data, context) => {
-//   const ref = firestore.collection('user-inventories').doc(data.uid);
-//   return firestore.runTransaction(transaction => {
-//     return transaction.get(ref).then(doc => {
-//       const docData = doc.data() || {};
-//       try {
-//         const [standard, custom] = JSON.parse(data.diff).reduce((acc, entry) => {
-//           if (entry.custom) {
-//             acc[1].push(entry);
-//           } else {
-//             acc[0].push(entry);
-//           }
-//           return acc;
-//         }, [[], []]);
-//         applyPatch(docData, standard);
-//         applyOffsets(docData, custom);
-//         transaction.set(ref, docData);
-//       } catch (e) {
-//         console.log(data.diff);
-//       }
-//     });
-//   });
-// });
+exports.hashReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  if (context.auth.uid === undefined || context.auth.token === undefined) {
+    return { hash: 'nope' };
+  }
+  return { hash: hashReplay(data.replay) };
+});
+
+exports.saveReplay = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  const { hash, ...dataToHash } = data.replay;
+  const hashCheck = hashReplay(dataToHash);
+  if (hash === hashCheck) {
+    const { $key, ...dataToSave } = data.replay;
+    firestore.collection('crafting-replays').doc($key).set({
+      ...dataToSave,
+      authorId: context.auth.uid,
+      online: true
+    });
+  } else {
+    throw new functions.https.HttpsError('failed-precondition', 'Refusing to save forged replay');
+  }
+});
+
 
 exports.getUserByEmail = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   return admin.auth().getUserByEmail(data.email)

@@ -68,6 +68,7 @@ import { NotebookDivisionNamePipe } from './pipes/notebook-division-name.pipe';
 import { IfRegionsPipe } from './pipes/if-regions';
 import { CollectablesShopGroupNamePipe } from './pipes/collectables-shop-group-name.pipe';
 import { WorldNamePipe } from './pipes/world-name.pipe';
+import { CraftingActionPipe } from './pipes/crafting-action.pipe';
 
 @NgModule({
   declarations: [
@@ -141,6 +142,7 @@ import { WorldNamePipe } from './pipes/world-name.pipe';
     IfRegionsPipe,
     CollectablesShopGroupNamePipe,
     WorldNamePipe,
+    CraftingActionPipe,
   ],
   exports: [
     ItemNamePipe,
@@ -213,6 +215,7 @@ import { WorldNamePipe } from './pipes/world-name.pipe';
     IfRegionsPipe,
     CollectablesShopGroupNamePipe,
     WorldNamePipe,
+    CraftingActionPipe,
   ]
 })
 export class PipesModule {

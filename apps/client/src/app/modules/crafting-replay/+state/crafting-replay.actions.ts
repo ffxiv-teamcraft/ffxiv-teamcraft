@@ -1,0 +1,26 @@
+import { createAction, props } from '@ngrx/store';
+import { CraftingReplay } from '../model/crafting-replay';
+
+export const loadCraftingReplays = createAction(
+  '[CraftingReplay] Load CraftingReplays'
+);
+
+export const loadCraftingReplaysSuccess = createAction(
+  '[CraftingReplay] Load CraftingReplays Success',
+  props<{ craftingReplays: CraftingReplay[] }>()
+);
+
+export const addCraftingReplay = createAction(
+  '[CraftingReplay] Add CraftingReplay',
+  props<{ craftingReplay: CraftingReplay }>()
+);
+
+export const persistCraftingReplay = createAction(
+  '[CraftingReplay] Persist CraftingReplay',
+  props<{ craftingReplay: CraftingReplay }>()
+);
+
+export const deleteCraftingReplay = createAction(
+  '[CraftingReplay] Delete CraftingReplay',
+  props<{ key: string }>()
+);

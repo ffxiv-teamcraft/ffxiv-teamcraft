@@ -590,6 +590,7 @@
                           tutorialStep="TUTORIAL.SIMULATOR.Right_click_condition"
                           tutorialStepIndex="6"
                           (stepstate)="setState(i, $event)"
+                          (failChange)="setFail(i, $event)"
                           [action]="step.action"
                           [cpCost]="step.cpDifference"
                           [disabled]="!step.success || step.skipped"

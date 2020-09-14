@@ -4,6 +4,8 @@
        class="action-container">
     <div [appXivdbActionTooltipDisabled]="tooltipDisabled || action.getId(getJobId()) < 0"
          [appXivdbActionTooltip]="action.getId(getJobId())"
+         [appXivdbActionState]="state"
+         [appXivdbActionStateColor]="getColor(state)"
          [ngClass]="{'wasted': wasted, 'disabled': disabled || notEnoughCp || !safe, 'not-enough-cp': notEnoughCp}"
          class="action">
       <img alt="{{getAlt()}}" src="{{action.getId(getJobId()) | actionIcon | xivapiIcon}}">
@@ -37,7 +39,7 @@
     <li (click)="setState(states.PLIANT)" [nzSelected]="state === states.PLIANT"
         *ngIf="simulation.recipe.expert"
         nz-menu-item>{{'SIMULATOR.STATE.Pliant' | translate}}</li>
-    <li (click)="setState(states.FAILED)" [nzSelected]="state === states.FAILED"
+    <li (click)="failChange.next(!failed)" [nzSelected]="failed"
         nz-menu-item>{{'SIMULATOR.STATE.Fail' | translate}}</li>
   </ul>
 </nz-dropdown-menu>
