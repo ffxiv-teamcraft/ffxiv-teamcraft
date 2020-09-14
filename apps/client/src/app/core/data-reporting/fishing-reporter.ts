@@ -137,7 +137,7 @@ export class FishingReporter implements DataReporter {
     const actionTimeline$ = packets$.pipe(
       ofPacketType('eventPlay4'),
       map(packet => {
-        return this.lazyData.data.actionTimeline[packet.actionTimeline.toString()];
+        return this.lazyData.data.actionTimeline[packet.param1.toString()];
       }),
       filter(key => key !== undefined)
     );
