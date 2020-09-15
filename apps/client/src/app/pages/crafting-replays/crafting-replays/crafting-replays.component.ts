@@ -1,13 +1,18 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CraftingReplayFacade } from '../../../modules/crafting-replay/+state/crafting-replay.facade';
-import { map } from 'rxjs/operators';
+import { map, switchMap, startWith } from 'rxjs/operators';
 import { CraftingReplayService } from '../../../modules/crafting-replay/crafting-replay.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { ReplaySimulationComponent } from '../../../modules/crafting-replay/replay-simulation/replay-simulation.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { PlatformService } from '../../../core/tools/platform.service';
+import { FoldersFacade } from '../../../modules/folders/+state/folders.facade';
+import { FolderContentType } from '../../../model/folder/folder-content-type';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
+import { FolderDisplay } from '../../../model/folder/folder-display';
+import { Folder } from '../../../model/folder/folder';
+import { DataModel } from '../../../core/database/storage/data-model';
 
 @Component({
   selector: 'app-crafting-replays',
@@ -28,35 +33,61 @@ export class CraftingReplaysComponent {
   );
 
   public showStatWarning$ = this.craftingReplayService.stats$.pipe(
-    map(stats => !stats && this.ipc.machinaToggle)
+    startWith(false),
+    map(stats => !stats && this.ipc.machinaToggle),
   );
 
+  public userId$ = this.authFacade.userId$;
+
+  public onlineDisplay$ = this.userId$.pipe(
+    switchMap(userId => {
+      return this.foldersFacade.getDisplay<CraftingReplay>(
+        this.foldersFacade.getUserFolders<CraftingReplay>(FolderContentType.CRAFTING_REPLAY),
+        this.onlineReplays$,
+        key => this.craftingReplayFacade.loadReplay(key),
+        gearset => gearset.authorId === userId
+      );
+    })
+  );
+
+  public dndConnections = ['replays-root', 'folder-root'];
+
   constructor(private craftingReplayFacade: CraftingReplayFacade, private craftingReplayService: CraftingReplayService,
-              public translate: TranslateService, private message: NzMessageService, private dialog: NzModalService,
-              private ipc: IpcService, public platform: PlatformService) {
+              public translate: TranslateService, private ipc: IpcService, public platform: PlatformService, private foldersFacade: FoldersFacade,
+              private authFacade: AuthFacade) {
+    this.foldersFacade.loadFolders(FolderContentType.CRAFTING_REPLAY);
   }
 
-  openResultPopup(replay: CraftingReplay): void {
-    this.dialog.create({
-      nzTitle: this.translate.instant('CRAFTING_REPLAYS.Replay_result'),
-      nzContent: ReplaySimulationComponent,
-      nzComponentParams: {
-        replay: replay
-      },
-      nzFooter: null
+  newFolder(): void {
+    this.foldersFacade.createFolder(FolderContentType.CRAFTING_REPLAY);
+  }
+
+  canDropFolder(drag: CdkDrag): boolean {
+    return drag.data instanceof Folder;
+  }
+
+  canDropReplay(drag: CdkDrag): boolean {
+    return drag.data instanceof CraftingReplay;
+  }
+
+  addDnDConnections(id: string): void {
+    this.dndConnections = [
+      ...this.dndConnections,
+      id
+    ];
+  }
+
+  dropFolder(event: any, displays: FolderDisplay<CraftingReplay>[]): void {
+    const folders = displays.map(d => d.folder);
+    moveItemInArray(folders, event.previousIndex, event.currentIndex);
+    folders.forEach((row, i) => {
+      row.index = i;
     });
+    this.foldersFacade.saveIndexes(folders);
   }
 
-  saveReplay(replay: CraftingReplay): void {
-    this.craftingReplayFacade.saveReplay(replay);
-  }
-
-  afterLinkCopied(): void {
-    this.message.success(this.translate.instant('COMMON.Share_link_copied'));
-  }
-
-  deleteReplay(replay: CraftingReplay): void {
-    this.craftingReplayFacade.deleteReplay(replay.$key);
+  trackByKey(index: number, data: DataModel): string {
+    return data.$key;
   }
 
 }

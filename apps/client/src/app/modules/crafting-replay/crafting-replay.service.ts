@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from '../../core/electron/ipc.service';
 import { combineLatest, merge, Observable } from 'rxjs';
-import { filter, map, scan, withLatestFrom, shareReplay } from 'rxjs/operators';
+import { filter, map, scan, withLatestFrom, shareReplay, distinctUntilKeyChanged } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CraftingReplay } from './model/crafting-replay';
 import * as firebase from 'firebase/app';
@@ -73,7 +73,8 @@ export class CraftingReplayService {
           }
           return replay;
         }, null),
-        filter(replay => replay && !!replay.endTime && replay.steps.length > 0)
+        filter(replay => replay && !!replay.endTime && replay.steps.length > 0),
+        distinctUntilKeyChanged('$key')
       )
       .subscribe(replay => {
         this.craftingReplayFacade.addReplay(replay);

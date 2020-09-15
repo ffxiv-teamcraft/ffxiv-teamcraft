@@ -1,0 +1,42 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="space-between center">
+    <div>
+      {{(replay.startTime.seconds * 1000) | date:'short':translate.currentLang}} - {{replay.itemId | itemName | i18n}} - {{replay.playerStats.craftsmanship}}
+      /{{replay.playerStats._control}}/{{replay.playerStats.cp}}
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="5px">
+      <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Save_replay' | translate" nz-button nzShape="circle" nzType="primary"
+              (click)="saveReplay(replay)" *ngIf="!replay.online">
+        <i nz-icon nzType="save" nzTheme="outline"></i>
+      </button>
+
+      <a nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_replay_page' | translate" nz-button nzShape="circle" nzType="primary"
+         routerLink="/crafting-replay/{{replay.$key}}" *ngIf="replay.online">
+        <i nz-icon nzType="folder-open" nzTheme="outline"></i>
+      </a>
+
+      <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_result_modal' | translate" nz-button nzShape="circle" nzType="primary"
+              (click)="openResultPopup(replay)">
+        <i nz-icon nzType="eye" nzTheme="outline"></i>
+      </button>
+      <button *ngIf="replay.online" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle"
+              nzType="primary"
+              [cdkCopyToClipboard]="('/crafting-replay/' + replay.$key) | tcLink" (cdkCopyToClipboardCopied)="afterLinkCopied()">
+        <i nz-icon nzType="share-alt" nzTheme="outline"></i>
+      </button>
+      <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"
+              nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+              (nzOnConfirm)="deleteReplay(replay)" *ngIf="replay.online && replay.authorId === userId">
+        <i nz-icon nzType="delete" nzTheme="outline"></i>
+      </button>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+    <app-item-icon [itemId]="replay.itemId" width="40"></app-item-icon>
+    <app-action *ngFor="let step of replay.steps" [action]="step.action | craftingAction"
+                [state]="step.state"
+                [jobId]="replay.playerStats.jobId"
+                [failed]="!step.success"
+                [hideCost]="true"></app-action>
+  </div>
+</div>

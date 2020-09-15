@@ -2154,6 +2154,8 @@
     "No_online_replays": "No online replays",
     "No_offline_replays": "No offline replays",
     "Cannot_record": "Cannot record replays",
-    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything."
+    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
+    "Create_folder": "New folder",
+    "Save_replay": "Save replay in database"
   }
 }

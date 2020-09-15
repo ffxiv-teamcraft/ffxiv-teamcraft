@@ -30,7 +30,7 @@ export class CraftingReplayFacade {
       return this.store.pipe(
         select(CraftingReplaySelectors.getAllCraftingReplays),
         map(replays => {
-          return replays.filter(replay => replay.authorId === userId);
+          return replays.filter(replay => !replay.online || replay.authorId === userId);
         })
       );
     })

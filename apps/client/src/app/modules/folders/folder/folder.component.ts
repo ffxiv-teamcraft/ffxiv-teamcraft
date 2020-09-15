@@ -42,6 +42,9 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   @Output()
   connectDnD = new EventEmitter<string>();
 
+  @Input()
+  canDropElement: (drag: CdkDrag) => boolean;
+
   constructor(private foldersFacade: FoldersFacade, private translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService) {
   }
@@ -100,10 +103,6 @@ export class FolderComponent<T extends DataModel> implements OnInit {
   dropFolder(event: any): void {
     moveItemInArray(this.display.folder.subFolders, event.previousIndex, event.currentIndex);
     this.save();
-  }
-
-  canDropGearset(drag: CdkDrag): boolean {
-    return drag.data instanceof TeamcraftGearset;
   }
 
   canDropFolder(drag: CdkDrag): boolean {
