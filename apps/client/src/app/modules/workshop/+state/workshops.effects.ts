@@ -65,13 +65,13 @@ export class WorkshopsEffects {
     switchMap((action: LoadWorkshop) => {
       return this.authFacade.loggedIn$.pipe(
         switchMap(loggedIn => {
-          return combineLatest(
+          return combineLatest([
             of(action.key),
             loggedIn ? this.authFacade.user$ : of(null),
             this.authFacade.userId$,
             loggedIn ? this.authFacade.mainCharacter$.pipe(map(c => c.FreeCompanyId)) : of(null),
             this.workshopService.get(action.key).pipe(catchError(() => of(null)))
-          );
+          ]);
         })
       );
     }),

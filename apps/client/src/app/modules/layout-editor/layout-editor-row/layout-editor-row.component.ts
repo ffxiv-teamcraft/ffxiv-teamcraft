@@ -31,7 +31,7 @@ export class LayoutEditorRowComponent implements OnInit {
 
   tagInput$ = new BehaviorSubject<string>('');
 
-  availableTags$ = combineLatest(this.tagInput$, this.authFacade.user$).pipe(
+  availableTags$ = combineLatest([this.tagInput$, this.authFacade.user$]).pipe(
     map(([input, user]) => {
       return _.uniq(user.itemTags
         .filter(entry => entry.tag.toLowerCase().indexOf(input.toLowerCase()) > -1)

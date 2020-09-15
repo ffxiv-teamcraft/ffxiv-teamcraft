@@ -55,7 +55,7 @@ export class RotationPanelComponent implements OnInit {
 
   actions$: Observable<CraftingAction[]>;
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest(this.rotation$, this.authFacade.userId$).pipe(
+  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.rotation$, this.authFacade.userId$]).pipe(
     map(([rotation, userId]) => rotation.getPermissionLevel(userId))
   );
 
@@ -95,7 +95,7 @@ export class RotationPanelComponent implements OnInit {
       map(rotation => this.registry.deserializeRotation(rotation.rotation))
     );
 
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.rotation$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.rotation$]).pipe(
       filter(([, rotation]) => rotation !== null),
       map(([links, rotation]) => links.find(link => link.redirectTo === this.getRouterLink(rotation).substr(1))),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
@@ -109,7 +109,7 @@ export class RotationPanelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.simulation$ = combineLatest(this.rotation$, this.authFacade.gearSets$, this.simulationSet$).pipe(
+    this.simulation$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.simulationSet$]).pipe(
       filter(([rotation, , stats]) => rotation !== null && stats !== null),
       map(([rotation, gearSets, stats]) => {
         const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
