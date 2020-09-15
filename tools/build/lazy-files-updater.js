@@ -29,7 +29,7 @@ function generateBasicType(obj) {
 
 /**
  * Generates the contents of the lazy-data.ts file.
- * @param {Record<string, {fileName: string; hashedFileName: string; interfaceName: string; type: string;}>} fileDetails A record containing the information about all of the lazy data.
+ * @param {Record<string, {fileName: string; hashedFileName: string; interfaceName: string;}>} fileDetails A record containing the information about all of the lazy data.
  * @returns {string} The contents of the lazy data file to be written.
  */
 function generateLazyDataFileString(fileDetails) {
@@ -41,8 +41,8 @@ function generateLazyDataFileString(fileDetails) {
     .join('\n');
 
   const typeDefLines = Object.entries(fileDetails)
-    .map(([propertyName, { type }]) => {
-      return `  ${propertyName}: ${type};`;
+    .map(([propertyName, { interfaceName }]) => {
+      return `  ${propertyName}: ${interfaceName};`;
     })
     .join('\n');
 
@@ -56,7 +56,7 @@ ${typeDefLines}
 
 /**
  * Generates info about the lazy data files.
- * @return {Record<string, {fileName: string; hashedFileName: string; interfaceName?: string; type?: string;}>}
+ * @return {Record<string, {fileName: string; hashedFileName: string; interfaceName?: string;}>}
  */
 async function generateFileDetails() {
   const [baseFiles, koFiles, zhFiles] = await Promise.all([
@@ -111,14 +111,15 @@ async function execute() {
     const result = await quicktype({ inputData, rendererOptions: { ['just-types']: true, ['acronym-style']: 'original' } });
     const parsedJson = JSON.parse(json);
     let content;
+    const typeName = `${interfaceName}Data`;
     if (result.lines.length > 0) {
-      content = result.lines.join('\n');
-      fileDetails[propertyName].type = Array.isArray(parsedJson) ? `Array<${interfaceName}>` : `Record<string | number, ${interfaceName}>`;
+      const typeLine = `export type ${typeName} = ${Array.isArray(parsedJson) ? `Array<${interfaceName}>` : `Record<string | number, ${interfaceName}>`};`;
+      content = `${typeLine}\n\n${result.lines.join('\n')}`;
+      fileDetails[propertyName].interfaceName = typeName;
     } else {
-      content = `export type ${interfaceName} = ${generateBasicType(parsedJson)};`;
-      fileDetails[propertyName].type = interfaceName;
+      content = `export type ${typeName} = ${generateBasicType(parsedJson)};`;
+      fileDetails[propertyName].interfaceName = typeName;
     }
-    fileDetails[propertyName].interfaceName = interfaceName;
     await mkdir(path.parse(interfaceFile).dir, { recursive: true });
     await writeFile(interfaceFile, content);
   }
