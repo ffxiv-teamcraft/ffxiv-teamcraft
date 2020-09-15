@@ -27,11 +27,11 @@ export class LazyDataProviderService {
    * @returns An observable that will emit the lazy data associated with the specified key, then completes.
    */
   public getLazyData<T extends LazyDataKey>(key: T): Observable<LazyData[T]> {
-    if (this.lazyLoaderCache.has(key)) return this.lazyLoaderCache.get(key);
+    if (this.lazyLoaderCache.has(key)) return this.lazyLoaderCache.get(key) as Observable<LazyData[T]>;
     const entry = lazyFilesList[key];
     const filename = `/assets/data/${environment.production ? entry.hashedFileName : entry.fileName}`;
     const url = this.getUrl(filename);
-    const data = this.http.get(url).pipe(take(1), shareReplay(1));
+    const data = this.http.get(url).pipe(take(1), shareReplay(1)) as Observable<LazyData[T]>;
     this.lazyLoaderCache.set(key, data);
     return data;
   }

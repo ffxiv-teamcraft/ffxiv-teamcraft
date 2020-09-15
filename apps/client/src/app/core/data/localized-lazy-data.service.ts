@@ -327,7 +327,7 @@ export class LocalizedLazyDataService {
    * @param flip
    * @returns {number}
    */
-  private readonly getIndexByName = (name: string, language: string, flip = false) => (array: any[]): number => {
+  private readonly getIndexByName = (name: string, language: string, flip = false) => (array: any): number => {
     if (array === undefined) {
       return -1;
     }

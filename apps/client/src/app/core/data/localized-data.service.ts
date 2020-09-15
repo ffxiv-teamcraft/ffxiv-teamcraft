@@ -258,7 +258,7 @@ export class LocalizedDataService {
     if (resultIndex === -1) {
       resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language);
     }
-    const result = this.lazyData.data.craftActions[resultIndex] || this.lazyData.data.actions[resultIndex];
+    const result: I18nName = this.lazyData.data.craftActions[resultIndex] || this.lazyData.data.actions[resultIndex];
     if (resultIndex === -1) {
       throw new Error(`Data row not found for crafting action ${name}`);
     }

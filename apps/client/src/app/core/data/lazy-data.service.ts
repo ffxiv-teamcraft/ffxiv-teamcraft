@@ -18,6 +18,9 @@ import { Language } from './language';
 import { LazyData } from './lazy-data';
 import { LazyDataProviderService } from './lazy-data-provider.service';
 import { lazyFilesList } from './lazy-files-list';
+import { LazyItems } from './gen/items';
+import { LazyKoItems } from './gen/ko/ko-items';
+import { LazyZhItems } from './gen/zh/zh-items';
 
 @Injectable({
   providedIn: 'root',
@@ -146,27 +149,36 @@ export class LazyDataService {
       }),
       filter((recipes) => recipes !== undefined),
       map((recipes) => {
-        return recipes.find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+        return (
+          ((recipes as unknown) as Craft[]).find((r) => r.id.toString() === id.toString()) ||
+          ((this.data.recipes as unknown) as Craft[]).find((r) => r.id.toString() === id.toString())
+        );
       })
     );
   }
 
   public getRecipeSync(id: string): Craft {
-    return this.getRecipes().find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+    return (
+      this.getRecipes().find((r) => r.id.toString() === id.toString()) ||
+      ((this.data.recipes as unknown) as Craft[]).find((r) => r.id.toString() === id.toString())
+    );
   }
 
   public getItemRecipeSync(id: string): Craft {
-    return this.getRecipes().find((r) => (r as any).result.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+    return (
+      this.getRecipes().find((r) => (r as any).result.toString() === id.toString()) ||
+      ((this.data.recipes as unknown) as Craft[]).find((r) => r.id.toString() === id.toString())
+    );
   }
 
   public getRecipes(): Craft[] {
     switch (this.settings.region) {
       case Region.China:
-        return this.data.zhRecipes;
+        return (this.data.zhRecipes as unknown) as Craft[];
       case Region.Korea:
-        return this.data.koRecipes;
+        return (this.data.koRecipes as unknown) as Craft[];
       default:
-        return this.data.recipes;
+        return (this.data.recipes as unknown) as Craft[];
     }
   }
 
@@ -175,14 +187,14 @@ export class LazyDataService {
     return this.extracts.find((ex) => ex.id === id);
   }
 
-  public get allItems(): any {
-    const res = { ...this.data.items };
+  public get allItems() {
+    const res = { ...this.data.items } as Record<string | number, LazyItems & LazyKoItems & LazyZhItems>;
     if (this.data.koItems) {
       Object.keys(this.data.koItems).forEach((koKey) => {
         if (res[koKey] !== undefined) {
           res[koKey].ko = this.data.koItems[koKey].ko;
         } else {
-          res[koKey] = this.data.koItems[koKey];
+          (res[koKey] as any) = this.data.koItems[koKey];
         }
       });
     }
@@ -191,7 +203,7 @@ export class LazyDataService {
         if (res[zhKey] !== undefined) {
           res[zhKey].zh = this.data.zhItems[zhKey].zh;
         } else {
-          res[zhKey] = this.data.zhItems[zhKey];
+          (res[zhKey] as any) = this.data.zhItems[zhKey];
         }
       });
     }
