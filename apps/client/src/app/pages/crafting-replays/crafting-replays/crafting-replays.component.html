@@ -1,28 +1,35 @@
-<div fxLayout="column" fxLayoutGap="10px">
-  <nz-alert *ngIf="!(hasStats$ | async)"
-            nzBanner
-            [nzMessage]="'CRAFTING_REPLAYS.Cannot_record' | translate"
-            [nzDescription]="'CRAFTING_REPLAYS.Missing_stats' | translate"
-            nzType="warning"></nz-alert>
+<app-page-loader [loading]="loading$ | async">
+  <div fxLayout="column" fxLayoutGap="10px" class="replays-container">
+    <nz-alert *ngIf="showStatWarning$ | async"
+              nzBanner
+              [nzMessage]="'CRAFTING_REPLAYS.Cannot_record' | translate"
+              [nzDescription]="'CRAFTING_REPLAYS.Missing_stats' | translate"
+              nzType="warning"></nz-alert>
 
-  <div *ngIf="onlineReplays$ | async as onlineReplays" fxLayout="column">
-    <div>
-      <nz-divider [nzText]="'CRAFTING_REPLAYS.Online_replays' | translate" nzOrientation="left"></nz-divider>
+    <div *ngIf="onlineReplays$ | async as onlineReplays" fxLayout="column">
+      <div>
+        <nz-divider [nzText]="'CRAFTING_REPLAYS.Online_replays' | translate" nzOrientation="left"></nz-divider>
+      </div>
+      <app-fullpage-message *ngIf="onlineReplays.length === 0" height="100px"
+                            fontSize="30px">{{'CRAFTING_REPLAYS.No_online_replays' | translate}}</app-fullpage-message>
+      <ng-container *ngFor="let replay of onlineReplays">
+        <ng-container *ngTemplateOutlet="craftingReplay;context:{$implicit:replay}"></ng-container>
+      </ng-container>
     </div>
-    <ng-container *ngFor="let replay of onlineReplays">
-      <ng-container *ngTemplateOutlet="craftingReplay;context:{$implicit:replay}"></ng-container>
+    <ng-container *ngIf="platform.isDesktop()">
+      <div *ngIf="offlineReplays$ | async as offlineReplays" fxLayout="column">
+        <div>
+          <nz-divider [nzText]="'CRAFTING_REPLAYS.Offline_replays' | translate" nzOrientation="left"></nz-divider>
+        </div>
+        <app-fullpage-message *ngIf="onlineReplays.length === 0" height="100px"
+                              fontSize="30px">{{'CRAFTING_REPLAYS.No_offline_replays' | translate}}</app-fullpage-message>
+        <ng-container *ngFor="let replay of offlineReplays">
+          <ng-container *ngTemplateOutlet="craftingReplay;context:{$implicit:replay}"></ng-container>
+        </ng-container>
+      </div>
     </ng-container>
   </div>
-
-  <div *ngIf="offlineReplays$ | async as offlineReplays" fxLayout="column">
-    <div>
-      <nz-divider [nzText]="'CRAFTING_REPLAYS.Offline_replays' | translate" nzOrientation="left"></nz-divider>
-    </div>
-    <ng-container *ngFor="let replay of offlineReplays">
-      <ng-container *ngTemplateOutlet="craftingReplay;context:{$implicit:replay}"></ng-container>
-    </ng-container>
-  </div>
-</div>
+</app-page-loader>
 
 <ng-template #craftingReplay let-replay>
   <div fxLayout="column" fxLayoutGap="10px">
@@ -36,12 +43,22 @@
           <i nz-icon nzType="save" nzTheme="outline"></i>
         </button>
 
-        <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle" nzType="primary"
-                [cdkCopyToClipboard]="('/crafting-replay/' + replay.$key) | tcLink" (cdkCopyToClipboardCopied)="afterLinkCopied()"
-                tutorialStep="TUTORIAL.METRICS.Export_layout">
-          <i nz-icon nzType="download" nzTheme="outline"></i>
+        <a nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_replay_page' | translate" nz-button nzShape="circle" nzType="primary"
+           routerLink="/crafting-replay/{{replay.$key}}">
+          <i nz-icon nzType="folder-open" nzTheme="outline"></i>
+        </a>
+
+        <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Open_result_modal' | translate" nz-button nzShape="circle" nzType="primary"
+                (click)="openResultPopup(replay)">
+          <i nz-icon nzType="eye" nzTheme="outline"></i>
         </button>
-        <button nz-button nzSize="small" nzShape="circle" nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+        <button *ngIf="replay.online" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle"
+                nzType="primary"
+                [cdkCopyToClipboard]="('/crafting-replay/' + replay.$key) | tcLink" (cdkCopyToClipboardCopied)="afterLinkCopied()">
+          <i nz-icon nzType="share-alt" nzTheme="outline"></i>
+        </button>
+        <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"
+                nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                 (nzOnConfirm)="deleteReplay(replay)" *ngIf="replay.online">
           <i nz-icon nzType="delete" nzTheme="outline"></i>
         </button>

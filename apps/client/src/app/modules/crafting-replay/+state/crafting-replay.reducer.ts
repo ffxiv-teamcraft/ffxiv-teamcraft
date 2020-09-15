@@ -47,6 +47,19 @@ const craftingReplayReducer = createReducer(
     CraftingReplayActions.deleteCraftingReplay,
     (state, { key }) =>
       craftingReplayAdapter.removeOne(key, { ...state })
+  ),
+  on(
+    CraftingReplayActions.craftingReplayLoaded,
+    (state, { craftingReplay }) =>
+      craftingReplayAdapter.setOne(craftingReplay, { ...state })
+  ),
+  on(
+    CraftingReplayActions.selectCraftingReplay,
+    (state, { key }) =>
+      ({
+        ...state,
+        selectedId: key
+      })
   )
 );
 

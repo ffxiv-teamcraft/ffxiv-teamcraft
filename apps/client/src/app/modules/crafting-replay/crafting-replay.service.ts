@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from '../../core/electron/ipc.service';
 import { combineLatest, merge, Observable } from 'rxjs';
-import { filter, map, scan, withLatestFrom } from 'rxjs/operators';
+import { filter, map, scan, withLatestFrom, shareReplay } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CraftingReplay } from './model/crafting-replay';
 import * as firebase from 'firebase/app';
@@ -25,7 +25,8 @@ export class CraftingReplayService {
         updateClassInfo.level,
         [80, 80, 80, 80, 80, 80, 80, 80]
       );
-    })
+    }),
+    shareReplay(1)
   );
 
   constructor(private ipc: IpcService, private afs: AngularFirestore, private craftingReplayFacade: CraftingReplayFacade,

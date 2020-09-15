@@ -5,9 +5,15 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromCraftingReplay from './+state/crafting-replay.reducer';
 import { CraftingReplayEffects } from './+state/crafting-replay.effects';
 import { CraftingReplayFacade } from './+state/crafting-replay.facade';
+import { ReplaySimulationComponent } from './replay-simulation/replay-simulation.component';
+import { SimulatorModule } from '../../pages/simulator/simulator.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { NzCardModule } from 'ng-zorro-antd';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [],
+  declarations: [ReplaySimulationComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(
@@ -15,7 +21,16 @@ import { CraftingReplayFacade } from './+state/crafting-replay.facade';
       fromCraftingReplay.reducer
     ),
     EffectsModule.forFeature([CraftingReplayEffects]),
+    SimulatorModule,
+    PipesModule,
+    NzCardModule,
+    FlexLayoutModule,
+    TranslateModule
   ],
   providers: [CraftingReplayFacade],
+  exports: [
+    ReplaySimulationComponent
+  ]
 })
-export class CraftingReplayModule {}
+export class CraftingReplayModule {
+}

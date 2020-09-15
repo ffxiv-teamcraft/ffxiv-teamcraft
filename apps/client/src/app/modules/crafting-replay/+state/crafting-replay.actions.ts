@@ -24,3 +24,18 @@ export const deleteCraftingReplay = createAction(
   '[CraftingReplay] Delete CraftingReplay',
   props<{ key: string }>()
 );
+
+export const selectCraftingReplay = createAction(
+  '[CraftingReplay] Select CraftingReplay',
+  props<{ key: string }>()
+);
+
+export const loadCraftingReplay = createAction(
+  '[CraftingReplay] Load CraftingReplay',
+  props<{ key: string }>()
+);
+
+export const craftingReplayLoaded = createAction(
+  '[CraftingReplay] CraftingReplay Loaded',
+  props<{ craftingReplay: CraftingReplay }>()
+);

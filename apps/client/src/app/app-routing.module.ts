@@ -192,6 +192,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/crafting-replays/crafting-replays.module').then(m => m.CraftingReplaysModule)
   },
   {
+    path: 'crafting-replay',
+    loadChildren: () => import('./pages/crafting-replay/crafting-replay-page.module').then(m => m.CraftingReplayPageModule)
+  },
+  {
     path: 'collectables',
     loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
   },

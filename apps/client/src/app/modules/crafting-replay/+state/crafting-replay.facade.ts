@@ -5,7 +5,16 @@ import { select, Store } from '@ngrx/store';
 import * as fromCraftingReplay from './crafting-replay.reducer';
 import * as CraftingReplaySelectors from './crafting-replay.selectors';
 import { CraftingReplay } from '../model/crafting-replay';
-import { addCraftingReplay, deleteCraftingReplay, loadCraftingReplays, persistCraftingReplay } from './crafting-replay.actions';
+import {
+  addCraftingReplay,
+  deleteCraftingReplay,
+  loadCraftingReplay,
+  loadCraftingReplays,
+  persistCraftingReplay,
+  selectCraftingReplay
+} from './crafting-replay.actions';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { map, switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +25,15 @@ export class CraftingReplayFacade {
     select(CraftingReplaySelectors.getCraftingReplayLoaded)
   );
 
-  allCraftingReplays$ = this.store.pipe(
-    select(CraftingReplaySelectors.getAllCraftingReplays)
+  userCraftingReplays$ = this.authFacade.userId$.pipe(
+    switchMap(userId => {
+      return this.store.pipe(
+        select(CraftingReplaySelectors.getAllCraftingReplays),
+        map(replays => {
+          return replays.filter(replay => replay.authorId === userId);
+        })
+      );
+    })
   );
 
   selectedCraftingReplay$ = this.store.pipe(
@@ -25,7 +41,8 @@ export class CraftingReplayFacade {
   );
 
   constructor(
-    private store: Store<fromCraftingReplay.CraftingReplayPartialState>
+    private store: Store<fromCraftingReplay.CraftingReplayPartialState>,
+    private authFacade: AuthFacade
   ) {
   }
 
@@ -47,6 +64,14 @@ export class CraftingReplayFacade {
    */
   public saveReplay(replay: CraftingReplay): void {
     this.store.dispatch(persistCraftingReplay({ craftingReplay: replay }));
+  }
+
+  public selectReplay(key: string): void {
+    this.store.dispatch(selectCraftingReplay({ key: key }));
+  }
+
+  public loadReplay(key: string): void {
+    this.store.dispatch(loadCraftingReplay({ key: key }));
   }
 
   public deleteReplay(key: string): void {

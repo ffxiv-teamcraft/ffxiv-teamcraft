@@ -9,7 +9,6 @@ import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
-import { Favorites } from '../../../model/other/favorites';
 
 @Component({
   selector: 'app-folder',

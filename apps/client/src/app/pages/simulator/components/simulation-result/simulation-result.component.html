@@ -1,0 +1,159 @@
+<nz-card>
+  <div class="card-header" [fxLayout]="compact?'column':'row'" fxLayout.lt-md="column" fxLayoutAlign="space-between center"
+       fxLayoutGap.lt-md="10px">
+    <div *ngIf="!custom" fxLayout="row" fxLayoutGap="10px">
+      <div class="avatar">
+        <app-item-icon *ngIf="true | ifMobile: false" [itemId]="itemId"
+                       [width]="42"></app-item-icon>
+      </div>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div>
+            <span (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
+                  *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="itemId | itemName | i18n"
+                  [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+                  class="item-name"
+                  ngxClipboard
+                  nz-tooltip>
+              {{itemId | itemName | i18n}}
+            </span>
+          <span (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
+                *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
+                cbContent="/isearch &quot;{{itemId | itemName | i18n}}&quot;"
+                class="item-name"
+                ngxClipboard
+                nz-tooltip>
+                      {{itemId | itemName | i18n}}
+            </span>
+          <button *ngIf="!readonly" (click)="changeRecipe.emit()" [nzTooltipTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
+                  nz-tooltip nzShape="circle"
+                  nzSize="small">
+            <i nzIconfont="icon-exchange" nz-icon></i>
+          </button>
+        </div>
+        <div>{{result.simulation.recipe.lvl}} {{result.simulation.recipe.stars | ingameStars}}</div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div>{{'Level' | translate}} {{result.simulation.crafterStats.level}} {{result.simulation.crafterStats.jobId | jobName | i18n}}</div>
+      <div fxLayout="column">
+        <div>{{'SIMULATOR.CONFIGURATION.Craftsmanship' | translate}}:
+          {{result.simulation.crafterStats.craftsmanship}}
+        </div>
+        <div>{{'SIMULATOR.CONFIGURATION.Control' | translate}}: {{result.simulation.crafterStats._control}}
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div>
+        {{'SIMULATOR.Step_counter' | translate}}
+        <nz-input-number (ngModelChange)="snapshotStepChange.emit($event)"
+                         [ngModel]="result.simulation.steps.length"
+                         [nzDisabled]="!snapshotMode"
+                         [nzMin]="0"
+                         [nzStep]="1"
+                         class="step-counter"></nz-input-number>
+        <button (click)="snapshotMode = !snapshotMode; snapshotMode === false?snapshotStepChange.emit(9999):null;snapshotModeChange.emit(snapshotMode)"
+                [nzTooltipTitle]="'SIMULATOR.Toggle_snapshot_mode' | translate"
+                [nzType]="snapshotMode?'primary':'default'"
+                nzTooltipPlacement="top"
+                nz-button nz-tooltip>
+          <i [nzIconfont]="'icon-debug'" nz-icon></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div [fxLayout]="compact?'column':'row'" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <div class="durability" fxLayout="column" fxLayoutAlign="center center">
+      <h3>{{'SIMULATOR.Durability' | translate}}</h3>
+      <span
+        [class.durability-value-failed]="result.failCause === 'DURABILITY_REACHED_ZERO'"
+        class="durability-value">
+              {{result.simulation.durability}} / {{result.simulation.recipe.durability}}</span>
+    </div>
+    <div fxFlex="1 1 auto" fxLayout="column" fxLayoutGap="10px">
+      <div class="top-bars">
+        <div fxLayout="column">
+          <h3>{{'SIMULATOR.Progress' | translate}}</h3>
+          <div [fxLayout]="compact?'column':'row'" fxLayout.lt-md="column" fxLayoutGap="5px">
+            <nz-progress
+              [class.progress-progressbar-failed]="result.failCause === 'DURABILITY_REACHED_ZERO'"
+              [nzFormat]="barFormat(result.simulation.progression, result.simulation.recipe.progress)"
+              [nzPercent]="barPercent(result.simulation.progression,result.simulation.recipe.progress)"
+              [nzShowInfo]="false"
+              class="progress-progressbar"
+              fxFlex="1 1 auto">
+            </nz-progress>
+            <div
+              class="progress-value">{{barFormat(result.simulation.progression,
+              result.simulation.recipe.progress)()}}
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column">
+          <h3>{{'SIMULATOR.Quality' | translate}}</h3>
+          <div class="quality-display" fxLayout="column">
+            <div [fxLayout]="compact?'column':'row'" fxLayout.lt-md="column" fxLayoutGap="5px">
+              <div class="quality-bar" fxFlex="1 1 auto">
+                <div *ngFor="let threshold of thresholds"
+                     [ngStyle]="{left: 100 * threshold / result.simulation.recipe.quality + '%'}"
+                     class="threshold-marker" fxLayout="row" fxLayoutAlign="flex-start flex-start">
+                  <div class="marker"></div>
+                  <div class="value">{{(threshold / 10) | number: '1.0-0'}}</div>
+                </div>
+                <nz-progress
+                  [nzFormat]="barFormat(result.simulation.quality, result.simulation.recipe.quality)"
+                  [nzPercent]="barPercent(result.simulation.quality, result.simulation.recipe.quality)"
+                  [nzShowInfo]="false"
+                  fxFlex="1 1 auto"></nz-progress>
+              </div>
+              <div
+                class="progress-value">{{barFormat(result.simulation.quality,
+                result.simulation.recipe.quality)()}}
+              </div>
+            </div>
+            <div>{{ 'SIMULATOR.Quality_needed' | translate: { amount: result.simulation.recipe.quality - result.simulation.quality > 0 ? result.simulation.recipe.quality - result.simulation.quality : 0 } }}</div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row" [fxLayout]="compact?'column':'row'" fxLayout.lt-md="column" fxLayoutAlign="space-between center">
+        <div fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
+          <div class="hq-chances">
+            {{'SIMULATOR.Hq' | translate}}:
+            <span class="hq-chances-value">
+                  {{result.hqPercent}}%
+                </span>
+          </div>
+          <div class="cp-progress" fxFlex="1 1 300px" fxFlex.lt-md="1 1 auto">
+            <span>{{'SIMULATOR.Cp_amount' | translate}}</span>
+            <nz-progress
+              [nzFormat]="barFormat(result.simulation.availableCP,result.simulation.maxCP)"
+              [nzPercent]="100*result.simulation.availableCP/result.simulation.maxCP"
+              class="cp-amount"></nz-progress>
+          </div>
+        </div>
+        <div *ngIf="report" class="report" [fxFlex]="compact?'1 1 auto':'1 1 300px'" fxFlex.lt-md="1 1 auto"
+             fxLayoutGap="10px">
+                <span class="report-row">
+                    {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
+                </span>
+          <span class="report-row">
+                    {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+                </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nz-divider *ngIf="false | ifMobile: true:compact"></nz-divider>
+  <div class="simulator-footer" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center"
+       fxLayoutGap="5px">
+    <div [class.mobile-stats]="false | ifMobile:true:compact">{{'SIMULATOR.Progress_action_100_potency' | translate: { value: progressPer100 } }}</div>
+    <div>|</div>
+    <div [class.mobile-stats]="false | ifMobile:true:compact">{{'SIMULATOR.Quality_action_100_potency' | translate: { value: qualityPer100 } }}</div>
+    <div>|</div>
+    <div [class.mobile-stats]="false | ifMobile:true:compact" [nzTooltipTitle]="'SIMULATOR.Current_control_bonus' | translate" nz-tooltip>
+      {{'SIMULATOR.Current_control' | translate: { value: (result.simulation.crafterStats.getControl(result.simulation) | floor) } }}
+      ({{result.simulation.crafterStats._control}} +
+      <span>{{(result.simulation.crafterStats.getControl(result.simulation) | floor) - result.simulation.crafterStats._control}}</span>)
+    </div>
+  </div>
+</nz-card>

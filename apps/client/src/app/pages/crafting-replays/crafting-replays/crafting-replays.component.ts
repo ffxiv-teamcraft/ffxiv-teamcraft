@@ -4,7 +4,10 @@ import { map } from 'rxjs/operators';
 import { CraftingReplayService } from '../../../modules/crafting-replay/crafting-replay.service';
 import { TranslateService } from '@ngx-translate/core';
 import { CraftingReplay } from '../../../modules/crafting-replay/model/crafting-replay';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { ReplaySimulationComponent } from '../../../modules/crafting-replay/replay-simulation/replay-simulation.component';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-crafting-replays',
@@ -14,27 +17,41 @@ import { NzMessageService } from 'ng-zorro-antd';
 })
 export class CraftingReplaysComponent {
 
-  public loaded$ = this.craftingReplayFacade.loaded$;
+  public loading$ = this.craftingReplayFacade.loaded$.pipe(map(loaded => !loaded));
 
-  public offlineReplays$ = this.craftingReplayFacade.allCraftingReplays$.pipe(
+  public offlineReplays$ = this.craftingReplayFacade.userCraftingReplays$.pipe(
     map(replays => replays.filter(r => !r.online))
   );
 
-  public onlineReplays$ = this.craftingReplayFacade.allCraftingReplays$.pipe(
+  public onlineReplays$ = this.craftingReplayFacade.userCraftingReplays$.pipe(
     map(replays => replays.filter(r => r.online))
   );
 
-  public hasStats$ = this.craftingReplayService.stats$.pipe(map(stats => !!stats));
+  public showStatWarning$ = this.craftingReplayService.stats$.pipe(
+    map(stats => !stats && this.ipc.machinaToggle)
+  );
 
   constructor(private craftingReplayFacade: CraftingReplayFacade, private craftingReplayService: CraftingReplayService,
-              public translate: TranslateService, private message: NzMessageService) {
+              public translate: TranslateService, private message: NzMessageService, private dialog: NzModalService,
+              private ipc: IpcService, public platform: PlatformService) {
+  }
+
+  openResultPopup(replay: CraftingReplay): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('CRAFTING_REPLAYS.Replay_result'),
+      nzContent: ReplaySimulationComponent,
+      nzComponentParams: {
+        replay: replay
+      },
+      nzFooter: null
+    });
   }
 
   saveReplay(replay: CraftingReplay): void {
     this.craftingReplayFacade.saveReplay(replay);
   }
 
-  afterLinkCopied():void{
+  afterLinkCopied(): void {
     this.message.success(this.translate.instant('COMMON.Share_link_copied'));
   }
 

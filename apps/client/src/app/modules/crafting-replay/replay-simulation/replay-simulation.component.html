@@ -1,0 +1,45 @@
+<div *ngIf="result$ | async as result" fxLayout="column" fxLayoutGap="10px">
+  <app-simulation-result [result]="result"
+                         [itemId]="(replay$ | async)?.itemId"
+                         [progressPer100]="progressPer100$ | async"
+                         [qualityPer100]="qualityPer100$ | async"
+                         [report]="report$ | async"
+                         (snapshotStepChange)="snapshotStep$.next($event)"
+                         [compact]="ref !== null"
+                         [readonly]="true"></app-simulation-result>
+
+  <nz-card>
+    <div class="buffs-container" fxLayout="row" fxLayoutAlign="flex-start center">
+      <div *ngFor="let buff of result.simulation.buffs" class="buff-container">
+        <span *ngIf="buff.stacks > 0" class="stacks">{{buff.stacks}}</span>
+        <img [src]="getBuffIcon(buff)" alt="" class="buff-icon">
+        <span *ngIf="buff.duration.toString() !== 'Infinity'" class="duration">{{buff.duration}}</span>
+      </div>
+    </div>
+  </nz-card>
+
+
+  <nz-card [class.failed]="actionFailed" [class.success]="result.simulation.success" class="actions-card">
+    <div class="actions-container" fxLayout="row wrap">
+      <div *ngFor="let step of result.steps;let i = index; trackBy: trackByAction" class="action-container rotation-action">
+        <app-action [action]="step.action"
+                    [state]="step.state"
+                    [jobId]="result.simulation.crafterStats.jobId"
+                    [disabled]="step.skipped"
+                    [failed]="!step.success && !step.skipped"
+                    [hideCost]="true"></app-action>
+      </div>
+    </div>
+    <ng-container *ngIf="result.failCause !== undefined">
+      <div [ngSwitch]="result.failCause" class="fail-reason">
+        <ng-container *ngSwitchCase="'MISSING_STATS_REQUIREMENT'">
+          {{('SIMULATOR.FAIL_CAUSE.' + result.failCause) | translate}} ({{result.simulation.recipe.craftsmanshipReq}}
+          /{{result.simulation.recipe.controlReq}})
+        </ng-container>
+        <ng-container *ngSwitchDefault>
+          {{('SIMULATOR.FAIL_CAUSE.' + result.failCause) | translate}}
+        </ng-container>
+      </div>
+    </ng-container>
+  </nz-card>
+</div>

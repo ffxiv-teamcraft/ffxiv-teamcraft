@@ -63,6 +63,9 @@ export class ActionComponent {
   @Input()
   showStateMenu = false;
 
+  @Input()
+  readonly = false;
+
   public states = StepState;
 
   private get simulator() {

@@ -11,10 +11,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { CraftingReplayModule } from '../../modules/crafting-replay/crafting-replay.module';
 import { SimulatorModule } from '../simulator/simulator.module';
-import { NzAlertModule, NzButtonModule, NzDividerModule, NzIconModule, NzMessageModule, NzPopconfirmModule } from 'ng-zorro-antd';
+import { NzAlertModule, NzButtonModule, NzDividerModule, NzIconModule, NzMessageModule, NzPopconfirmModule, NzToolTipModule } from 'ng-zorro-antd';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 
 const routes: Routes = [
@@ -49,7 +50,9 @@ const routes: Routes = [
     NzButtonModule,
     NzIconModule,
     NzPopconfirmModule,
-    NzMessageModule
+    NzMessageModule,
+    NzToolTipModule,
+    ClipboardModule
   ]
 })
 export class CraftingReplaysModule {

@@ -41,6 +41,18 @@ export class CraftingReplayEffects {
     )
   );
 
+  loadCraftingReplay$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CraftingReplayActions.loadCraftingReplay),
+      switchMap(({ key }) => {
+        return this.craftingReplayDbService.get(key);
+      }),
+      map(replay => {
+        return CraftingReplayActions.craftingReplayLoaded({ craftingReplay: replay });
+      })
+    );
+  });
+
   addCraftingReplay$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CraftingReplayActions.addCraftingReplay),
