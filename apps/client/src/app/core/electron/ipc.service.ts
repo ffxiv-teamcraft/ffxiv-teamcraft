@@ -7,6 +7,7 @@ import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
+import { getInt32 } from 'node-machina-ffxiv/models/_MachinaModels';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -113,6 +114,10 @@ export class IpcService {
 
   public get eventPlay4Packets$(): Observable<any> {
     return this.packets$.pipe(ofPacketType('eventPlay4'));
+  }
+
+  public get eventPlay32Packets$(): Observable<any> {
+    return this.packets$.pipe(ofPacketType('eventPlay32'));
   }
 
   public packets$: Subject<any> = new Subject<any>();

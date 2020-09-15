@@ -4,7 +4,8 @@
       <img alt="{{action.ID | actionName | i18n}}" src="https://xivapi.com{{action.Icon}}">
     </div>
     <div class="name">
-      <p>{{action.ID | actionName | i18n}}</p>
+      <div>{{action.ID | actionName | i18n}}</div>
+      <i *ngIf="state > 1" class="state" [style.color]="stateColor">{{('SIMULATOR.STATE.' + stateName) | translate}}</i>
     </div>
   </div>
   <div class="description">

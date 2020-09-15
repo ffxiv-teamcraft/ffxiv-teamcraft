@@ -188,6 +188,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/metrics/metrics.module').then(m => m.MetricsModule)
   },
   {
+    path: 'crafting-replays',
+    loadChildren: () => import('./pages/crafting-replays/crafting-replays.module').then(m => m.CraftingReplaysModule)
+  },
+  {
+    path: 'crafting-replay',
+    loadChildren: () => import('./pages/crafting-replay/crafting-replay-page.module').then(m => m.CraftingReplayPageModule)
+  },
+  {
+    path: 'crafting-replay-folder',
+    loadChildren: () => import('./pages/crafting-replay-folder/crafting-replay-folder.module').then(m => m.CraftingReplayFolderModule)
+  },
+  {
     path: 'collectables',
     loadChildren: () => import('./pages/collectables/collectables.module').then(m => m.CollectablesModule)
   },

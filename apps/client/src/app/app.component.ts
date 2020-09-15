@@ -55,6 +55,7 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
+import { CraftingReplayFacade } from './modules/crafting-replay/+state/crafting-replay.facade';
 
 declare const gtag: Function;
 
@@ -174,7 +175,8 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
+              private craftingReplayFacade: CraftingReplayFacade) {
 
 
     fromEvent(document, 'keypress').pipe(
@@ -531,6 +533,7 @@ export class AppComponent implements OnInit {
       this.customLinksFacade.loadMyCustomLinks();
       this.layoutsFacade.loadAll();
       this.customItemsFacade.loadAll();
+      this.craftingReplayFacade.loadAll();
 
       let increasedPageViews = false;
 

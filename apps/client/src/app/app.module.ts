@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, PLATFORM_ID } from '@angular/core';
+import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
@@ -103,6 +103,8 @@ import { GearsetsModule } from './modules/gearsets/gearsets.module';
 import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
 import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.module';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { CraftingReplayService } from './modules/crafting-replay/crafting-replay.service';
+import { CraftingReplayModule } from './modules/crafting-replay/crafting-replay.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -171,7 +173,17 @@ const nzConfig: NzConfig = {
     },
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (craftingReplayService) => {
+        return () => {
+          craftingReplayService.init();
+        };
+      },
+      deps: [CraftingReplayService],
+      multi: true
+    }
   ],
   imports: [
     FlexLayoutModule,
@@ -217,6 +229,7 @@ const nzConfig: NzConfig = {
     PageLoaderModule,
     LoadingScreenModule,
     GearsetsModule,
+    CraftingReplayModule,
 
     ChangelogPopupModule,
 
