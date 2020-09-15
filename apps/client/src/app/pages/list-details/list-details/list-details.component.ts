@@ -425,7 +425,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(inventory => {
         list.items.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          if (this.settings.enableAutofillHQFilter && item.requiredAsHQ) {
+          if (this.settings.enableAutofillHQFilter && list.requiredAsHQ(item)) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }
           if (inventoryItems.length > 0) {
@@ -438,7 +438,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         });
         list.finalItems.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          if (this.settings.enableAutofillHQFilter && item.requiredAsHQ) {
+          if (this.settings.enableAutofillHQFilter && list.requiredAsHQ(item)) {
             inventoryItems = inventoryItems.filter(i => i.hq);
           }
           if (inventoryItems.length > 0) {
