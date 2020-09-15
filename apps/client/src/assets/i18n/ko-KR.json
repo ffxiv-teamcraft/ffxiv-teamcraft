@@ -2144,18 +2144,18 @@
     "No_collectables_for_this_level": "소장품 제작이 가능한 레벨이 아닙니다"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
-    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
-    "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Title": "제작 리플레이",
+    "Online_replays": "온라인 리플레이",
+    "Offline_replays": "오프라인 리플레이",
+    "Open_replay_page": "리플레이 페이지 열기",
+    "Open_result_modal": "결과창 팝업 열기",
+    "Copy_to_clipboard": "공유 링크 복사하기",
+    "Delete": "리플레이 삭제",
+    "No_online_replays": "온라인 리플레이가 없습니다",
+    "No_offline_replays": "오프라인 리플레이가 없습니다",
+    "Cannot_record": "리플레이를 기록할 수 없습니다",
+    "Missing_stats": "다른 제작 직업으로 변경하여 TC가 리플레이를 기록하기 전에 제작 능력치를 동기화할 수 있도록 해주세요.",
+    "Create_folder": "새 폴더",
+    "Save_replay": "데이터베이스에 리플레이 저장하기"
   }
 }
