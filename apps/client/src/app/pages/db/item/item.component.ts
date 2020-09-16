@@ -594,19 +594,17 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   ngOnInit() {
     super.ngOnInit();
-    this.route.paramMap
+    const slug$ = this.route.paramMap.pipe(map((params) => params.get('slug') ?? undefined));
+    const itemId$ = this.route.paramMap.pipe(map((params) => +params.get('itemId') || undefined));
+    const correctSlug$ = itemId$.pipe(
+      switchMap((itemId) => (!itemId ? of(undefined) : this.i18n.resolveName(this.l12nLazy.getItem(itemId)))),
+      map((name) => name?.split(' ').join('-'))
+    );
+
+    combineLatest([slug$, itemId$, correctSlug$])
       .pipe(
         takeUntil(this.onDestroy$),
-        switchMap((params) => {
-          const slug$ = of(params.get('slug') ?? undefined);
-          const _itemId = +params.get('itemId') >= 0 ? +params.get('itemId') : undefined;
-          const itemId$ = of(_itemId);
-          const correctSlug$ = this.i18n.resolveName(this.l12nLazy.getItem(_itemId)).pipe(map((name) => name?.split(' ').join('-')));
-          return combineLatest([slug$, itemId$, correctSlug$]).pipe(
-            debounceTime(100),
-            map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug }))
-          );
-        })
+        map(([slug, itemId, correctSlug]) => ({ slug, itemId, correctSlug }))
       )
       .subscribe(this.onRouteParams);
   }
@@ -816,7 +814,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
   }
 
   private readonly onRouteParams = ({ slug, itemId, correctSlug }: { slug?: string; itemId?: number; correctSlug?: string }) => {
-    this.itemContext.setItemId(itemId);
+    this.itemContext.setItemId(itemId || undefined);
     if (!correctSlug) return;
     if (slug === undefined) {
       this.router.navigate([correctSlug], {

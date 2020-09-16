@@ -3,7 +3,7 @@ import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformServer } from '@angular/common';
@@ -20,37 +20,32 @@ import { DbCommentReplyNotification } from '../../../../model/notification/db-co
 @Component({
   selector: 'app-db-comments',
   templateUrl: './db-comments.component.html',
-  styleUrls: ['./db-comments.component.less']
+  styleUrls: ['./db-comments.component.less'],
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
-
   @Input()
   public set type(t: string) {
-    this.type$.next(t);
-    this._type = t;
+    this.type$.next(t || undefined);
   }
 
-  private _type: string;
+  private readonly lang$ = new BehaviorSubject<string>(this.translate.currentLang);
 
-  private type$ = new ReplaySubject<string>();
+  private readonly type$ = new BehaviorSubject<string | undefined>(undefined);
 
   @Input()
   public set id(i: number) {
-    this.id$.next(i);
-    this._id = i;
+    this.id$.next(i || undefined);
   }
 
-  private _id: number;
-
-  private id$ = new ReplaySubject<number>();
+  private readonly id$ = new BehaviorSubject<number | undefined>(undefined);
 
   userLevels = UserLevel;
 
-  comments$: Observable<DbComment[]>;
+  readonly comments$: Observable<DbComment[]>;
 
-  user$: Observable<TeamcraftUser>;
+  readonly user$: Observable<TeamcraftUser> = this.authFacade.user$;
 
-  loggedIn$: Observable<boolean>;
+  readonly loggedIn$: Observable<boolean> = this.authFacade.loggedIn$;
 
   newCommentContent: string;
 
@@ -64,37 +59,27 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   submitting = false;
 
-  showMoreComments$ = new BehaviorSubject<boolean>(false);
+  readonly showMoreComments$ = new BehaviorSubject<boolean>(false);
 
-  hasMoreComments$: Observable<number>;
+  readonly hasMoreComments$: Observable<number>;
 
-  constructor(private commentsService: DbCommentsService, private authFacade: AuthFacade, public translate: TranslateService,
-              @Inject(PLATFORM_ID) private platform: Object, private router: Router, private lazyData: LazyDataService,
-              private notificationService: NotificationService) {
+  constructor(
+    private commentsService: DbCommentsService,
+    private authFacade: AuthFacade,
+    public translate: TranslateService,
+    private router: Router,
+    private lazyData: LazyDataService,
+    private notificationService: NotificationService
+  ) {
     super();
-    this.user$ = this.authFacade.user$;
-    this.loggedIn$ = this.authFacade.loggedIn$;
-  }
 
-  ngOnInit() {
-    const contentComments = combineLatest([this.type$, this.id$]).pipe(
+    const comments$ = combineLatest([this.type$, this.id$, this.loggedIn$]).pipe(
+      filter(([type, id, loggedIn]) => !!type && !!id && !!loggedIn),
       switchMap(([type, id]) => {
-        return this.commentsService.getComments(`${type}/${id}`);
+        return combineLatest([this.commentsService.getComments(`${type}/${id}`), this.lang$]);
       }),
-      takeUntil(this.onDestroy$),
-      isPlatformServer(this.platform) ? first() : tap()
-    );
-
-    const lang$ = new BehaviorSubject<string>(this.translate.currentLang);
-
-    this.translate.onLangChange.pipe(
-      takeUntil(this.onDestroy$)
-    ).subscribe((change) => {
-      lang$.next(change.lang);
-    });
-
-    const comments$ = combineLatest([contentComments, lang$]).pipe(
       map(([comments, lang]) => {
+        console.log(comments, lang);
         return comments.sort((a, b) => {
           if (a.language === lang && b.language === lang) {
             return this.compareComments(a, b);
@@ -120,7 +105,13 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
       })
     );
 
-    this.hasMoreComments$ = comments$.pipe(map(comments => Math.max(0, comments.length - 3)));
+    this.hasMoreComments$ = comments$.pipe(map((comments) => Math.max(0, comments.length - 3)));
+  }
+
+  ngOnInit() {
+    this.translate.onLangChange.pipe(takeUntil(this.onDestroy$)).subscribe((change) => {
+      this.lang$.next(change.lang);
+    });
   }
 
   getPatch(comment: DbComment): string {
@@ -137,8 +128,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
 
   handleClick(event: any): void {
     if (event.srcElement.tagName === 'A') {
-      if ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 ||
-        (<any>event.srcElement).href.indexOf('localhost') > -1) {
+      if ((<any>event.srcElement).href.indexOf('ffxivteamcraft.com') > -1 || (<any>event.srcElement).href.indexOf('localhost') > -1) {
         // If that's an anchor, intercept the click and handle it properly with router
         this.router.navigateByUrl((<HTMLAnchorElement>event.srcElement).pathname);
       } else {
@@ -171,19 +161,17 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     comment.author = userId;
     comment.language = this.translate.currentLang;
     comment.message = this.newCommentContent;
-    comment.resourceId = `${this._type}/${this._id}`;
+    comment.resourceId = `${this.type$.getValue()}/${this.id$.getValue()}`;
     if (parentComment) {
       comment.parent = parentComment.$key;
     }
-    this.commentsService.add(comment)
+    this.commentsService
+      .add(comment)
       .pipe(
         switchMap(() => {
           if (parentComment && parentComment.author && parentComment.author !== comment.author) {
             // If comment has parent, send a notification to the author of the parent
-            const parentNotification = new DbCommentReplyNotification(
-              comment.message,
-              comment.resourceId,
-              parentComment.author);
+            const parentNotification = new DbCommentReplyNotification(comment.message, comment.resourceId, parentComment.author);
             return this.notificationService.add(parentNotification);
           }
           return of(null);
@@ -193,7 +181,8 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
           const notification = new DbItemCommentNotification(
             comment.message,
             comment.resourceId,
-            environment.production ? 'N9iJj4tdcBOQpxH7qGdrRxJpxa32' : 'QxjvpGIgGUdWG6nLbOP6RgoswSC2');
+            environment.production ? 'N9iJj4tdcBOQpxH7qGdrRxJpxa32' : 'QxjvpGIgGUdWG6nLbOP6RgoswSC2'
+          );
           return this.notificationService.add(notification);
         })
       )
@@ -229,16 +218,16 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   }
 
   like(comment: DbComment, userId: string): void {
-    comment.dislikes = comment.dislikes.filter(id => id !== userId);
-    if (!comment.likes.some(id => id === userId)) {
+    comment.dislikes = comment.dislikes.filter((id) => id !== userId);
+    if (!comment.likes.some((id) => id === userId)) {
       comment.likes.push(userId);
       this.saveComment(comment);
     }
   }
 
   dislike(comment: DbComment, userId: string): void {
-    comment.likes = comment.likes.filter(id => id !== userId);
-    if (!comment.dislikes.some(id => id === userId)) {
+    comment.likes = comment.likes.filter((id) => id !== userId);
+    if (!comment.dislikes.some((id) => id === userId)) {
       comment.dislikes.push(userId);
       this.saveComment(comment);
     }
@@ -260,5 +249,4 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   trackByComment(index: number, comment: DbComment): string {
     return comment.$key;
   }
-
 }

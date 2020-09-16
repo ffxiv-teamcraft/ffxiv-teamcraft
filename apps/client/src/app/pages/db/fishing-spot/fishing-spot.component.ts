@@ -66,21 +66,18 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
   ngOnInit() {
     super.ngOnInit();
 
-    combineLatest([this.route.paramMap, this.lazyData.fishingSpots$])
+    const slug$ = this.route.paramMap.pipe(map((params) => params.get('slug') ?? undefined));
+    const spotId$ = this.route.paramMap.pipe(map((params) => +params.get('spotId') || undefined));
+    const correctSlug$ = combineLatest([spotId$, this.lazyData.fishingSpots$]).pipe(
+      map(([spotId, spots]) => spots.find((spot) => spot.id === spotId)?.zoneId),
+      switchMap((placeId) => (!placeId ? of(undefined) : this.i18n.resolveName(this.l12nLazy.getPlace(placeId)))),
+      map((name) => name?.split(' ').join('-'))
+    );
+
+    combineLatest([slug$, spotId$, correctSlug$])
       .pipe(
         takeUntil(this.onDestroy$),
-        switchMap(([params, fishingSpots]) => {
-          const slug$ = of(params.get('slug') ?? undefined);
-          const _spotId = +params.get('spotId') >= 0 ? +params.get('spotId') : undefined;
-          const zoneId = fishingSpots.find((spot) => spot.id === _spotId)?.zoneId;
-          const spotId$ = of(_spotId);
-          const correctSlug$ =
-            zoneId >= 0 ? this.i18n.resolveName(this.l12nLazy.getPlace(zoneId)).pipe(map((name) => name.split(' ')?.join('-'))) : of(undefined);
-          return combineLatest([slug$, spotId$, correctSlug$]).pipe(
-            debounceTime(100),
-            map(([slug, spotId, correctSlug]) => ({ slug, spotId, correctSlug }))
-          );
-        })
+        map(([slug, spotId, correctSlug]) => ({ slug, spotId, correctSlug }))
       )
       .subscribe(this.onRouteParams);
   }
@@ -118,7 +115,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
   }
 
   private readonly onRouteParams = ({ slug, spotId, correctSlug }: { slug?: string; spotId?: number; correctSlug?: string }) => {
-    this.fishContext.setSpotId(spotId);
+    this.fishContext.setSpotId(spotId ?? undefined);
     if (!correctSlug) return;
     if (slug === undefined) {
       this.router.navigate([correctSlug], {
