@@ -1,0 +1,8 @@
+<app-page-loader [loading]="loading">
+  <app-folder-page *ngIf="display$ | async as display" [display]="display" [userId]="userId$ | async" [elementTemplate]="replayTemplate"
+                   favoriteType="gearsetFolders">
+    <ng-template #replayTemplate let-replay>
+      <app-crafting-replay-row [replay]="replay" [userId]="userId$ | async"></app-crafting-replay-row>
+    </ng-template>
+  </app-folder-page>
+</app-page-loader>

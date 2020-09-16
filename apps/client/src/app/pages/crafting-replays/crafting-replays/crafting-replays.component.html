@@ -1,0 +1,78 @@
+<app-page-loader [loading]="loading$ | async">
+  <div fxLayout="column" fxLayoutGap="10px" class="replays-container">
+    <nz-alert *ngIf="showStatWarning$ | async"
+              nzBanner
+              [nzMessage]="'CRAFTING_REPLAYS.Cannot_record' | translate"
+              [nzDescription]="'CRAFTING_REPLAYS.Missing_stats' | translate"
+              nzType="warning"></nz-alert>
+
+    <ng-container *ngIf="userId$ | async as userId">
+      <div *ngIf="onlineDisplay$ | async as onlineDisplay" fxLayout="column">
+        <div>
+          <nz-divider [nzText]="dividerTpl" nzOrientation="left"></nz-divider>
+          <ng-template #dividerTpl>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div>{{'CRAFTING_REPLAYS.Online_replays' | translate}}</div>
+              <div>
+                <button nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Create_folder' | translate" nz-button nzType="primary" nzShape="circle" nzSize="small"
+                        (click)="newFolder()">
+                  <i nz-icon nzType="folder-add" nzTheme="outline"></i>
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+
+        <app-fullpage-message *ngIf="onlineDisplay.root.length === 0 && onlineDisplay.folders.length === 0" height="100px"
+                              fontSize="30px">{{'CRAFTING_REPLAYS.No_online_replays' | translate}}</app-fullpage-message>
+        <div fxLayout="column" fxLayoutGap="10px">
+          <div cdkDropList
+               id="replays-root"
+               [cdkDropListConnectedTo]="dndConnections"
+               class="replays-list"
+               fxLayout="column" fxLayoutGap="10px">
+            <div *ngFor="let replay of onlineDisplay.root" cdkDrag [cdkDragData]="replay">
+              <ng-container *ngTemplateOutlet="craftingReplay;context:{$implicit:replay}"></ng-container>
+            </div>
+          </div>
+          <div cdkDropList
+               fxLayout="column"
+               fxLayoutGap="10px"
+               id="folder-root"
+               (cdkDropListDropped)="dropFolder($event, onlineDisplay.folders)"
+               [cdkDropListConnectedTo]="dndConnections"
+               [cdkDropListEnterPredicate]="canDropFolder">
+            <div *ngFor="let folder of onlineDisplay.folders; let i = index;  trackBy: trackByKey"
+                 cdkDrag [cdkDragData]="folder.folder">
+              <app-folder [display]="folder"
+                          [userId]="userId"
+                          [elementTemplate]="craftingReplay"
+                          [dndConnections]="dndConnections"
+                          [canDropElement]="canDropReplay"
+                          folderPath="crafting-replay-folder"
+                          id="folder-{{i}}"
+                          (connectDnD)="addDnDConnections($event)">
+              </app-folder>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="platform.isDesktop()">
+      <div *ngIf="offlineReplays$ | async as offlineReplays" fxLayout="column">
+        <div>
+          <nz-divider [nzText]="'CRAFTING_REPLAYS.Offline_replays' | translate" nzOrientation="left"></nz-divider>
+        </div>
+        <app-fullpage-message *ngIf="offlineReplays.length === 0" height="100px"
+                              fontSize="30px">{{'CRAFTING_REPLAYS.No_offline_replays' | translate}}</app-fullpage-message>
+        <app-lazy-scroll [data]="offlineReplays" [displayedRows]="10" rowSize="82" [rowTemplate]="craftingReplay" [trackBy]="trackByKey">
+        </app-lazy-scroll>
+      </div>
+    </ng-container>
+  </div>
+</app-page-loader>
+
+<ng-template #craftingReplay let-replay>
+  <app-crafting-replay-row [replay]="replay" [userId]="userId$ | async"></app-crafting-replay-row>
+</ng-template>

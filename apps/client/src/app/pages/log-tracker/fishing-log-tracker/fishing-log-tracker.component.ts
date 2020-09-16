@@ -312,11 +312,11 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
       shareReplay(1)
     );
 
-    this.tabsDisplay$ = combineLatest(this.display$, this.type$).pipe(
+    this.tabsDisplay$ = combineLatest([this.display$, this.type$]).pipe(
       map(([display, type]) => display[type])
     );
 
-    this.pageDisplay$ = combineLatest(this.tabsDisplay$, this.spotId$).pipe(
+    this.pageDisplay$ = combineLatest([this.tabsDisplay$, this.spotId$]).pipe(
       map(([display, spotId]) => {
         const area = display.tabs.find(a => a.spots.some(spot => spot.id === spotId));
         if (area !== undefined) {

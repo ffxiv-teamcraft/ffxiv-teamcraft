@@ -132,7 +132,7 @@ export class ListPanelComponent extends TeamcraftComponent {
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
               private cd: ChangeDetectorRef, public settings: SettingsService) {
     super();
-    this.customLink$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
       map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
       tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
       shareReplay(1)
@@ -140,7 +140,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
     this.teams$ = this.teamsFacade.myTeams$;
 
-    this.listTemplate$ = combineLatest(this.customLinksFacade.myCustomLinks$, this.list$).pipe(
+    this.listTemplate$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
       map(([links, list]) => {
         return <ListTemplate>links.find(link => {
           return link.type === 'template' && (<ListTemplate>link).originalListId === list.$key;
@@ -148,7 +148,7 @@ export class ListPanelComponent extends TeamcraftComponent {
       })
     );
 
-    this.listContent$ = combineLatest(this.list$, this.layoutsFacade.selectedLayout$).pipe(
+    this.listContent$ = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
       map(([list, layout]) => {
         return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
       })
@@ -180,7 +180,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   cloneList(compact: List): void {
     // Connect with store to get full list details before cloning
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(lists => lists.find(l => l.$key === compact.$key)),
       filter(list => list !== undefined),
@@ -217,7 +216,6 @@ export class ListPanelComponent extends TeamcraftComponent {
       updateSubject.pipe(
         debounceTime(500),
         switchMap((newAmount: number) => {
-          this.listsFacade.load(this._list.$key);
           return this.listsFacade.allListDetails$.pipe(
             map(details => details.find(l => l.$key === this._list.$key)),
             filter(l => l !== undefined),
@@ -243,7 +241,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   assignTeam(compact: List, team: Team): void {
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === this._list.$key)),
       filter(l => l !== undefined),
@@ -262,7 +259,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   removeTeam(compact: List, teams: Team[]): void {
     const team = teams.find(t => t.$key === compact.teamId);
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === this._list.$key)),
       filter(l => l !== undefined),
@@ -285,7 +281,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   renameList(_list: List): void {
-    this.listsFacade.load(this._list.$key);
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzComponentParams: { baseName: _list.name },
@@ -327,7 +322,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   removeEphemeral(list: List): void {
-    this.listsFacade.load(list.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === list.$key)),
       filter(l => l !== undefined),

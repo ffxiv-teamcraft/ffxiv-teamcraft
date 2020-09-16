@@ -195,10 +195,6 @@ export class ListsComponent {
 
   regenerateLists(compacts: List[]): void {
     this.regenerating = true;
-    compacts.forEach(compact => {
-      this.listsFacade.load(compact.$key);
-    });
-
     const regenerations = compacts
       .filter(compact => compact.isOutDated())
       .map(compact => {

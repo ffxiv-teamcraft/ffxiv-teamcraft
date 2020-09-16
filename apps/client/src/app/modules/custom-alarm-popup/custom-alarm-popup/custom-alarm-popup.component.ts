@@ -140,7 +140,7 @@ export class CustomAlarmPopupComponent implements OnInit {
       weathersFrom: [this.weathersFrom]
     });
 
-    this.mapWeathers$ = combineLatest(this.form.valueChanges, this.maps$).pipe(
+    this.mapWeathers$ = combineLatest([this.form.valueChanges, this.maps$]).pipe(
       map(([form, maps]) => {
         return maps.find(m => m.ID === form.mapId);
       }),

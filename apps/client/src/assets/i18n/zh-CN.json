@@ -1422,7 +1422,9 @@
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "下一等级所需经验的百分比"
+      "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -2140,5 +2142,20 @@
   "COLLECTABLES": {
     "Title": "收藏品",
     "No_collectables_for_this_level": "No collectables available"
+  },
+  "CRAFTING_REPLAYS": {
+    "Title": "Crafting replays",
+    "Online_replays": "Online replays",
+    "Offline_replays": "Offline replays",
+    "Open_replay_page": "Open replay page",
+    "Open_result_modal": "Open result popup",
+    "Copy_to_clipboard": "Copy share link to your clipboard",
+    "Delete": "Delete replay",
+    "No_online_replays": "No online replays",
+    "No_offline_replays": "No offline replays",
+    "Cannot_record": "Cannot record replays",
+    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
+    "Create_folder": "New folder",
+    "Save_replay": "Save replay in database"
   }
 }

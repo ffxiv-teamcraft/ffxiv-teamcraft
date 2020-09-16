@@ -1,5 +1,5 @@
 <app-simulator *ngIf="recipe$ | async as recipe; else loading"
-  [item]="item$ | async"
+  [itemId]="(item$ | async)?.id"
   [recipe]="recipe"
   [thresholds]="thresholds$ | async"
   [routeStats]="stats$ | async"

@@ -3,7 +3,7 @@ import { CustomLink } from './custom-link';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Observable } from 'rxjs';
 import { PendingChangesService } from '../pending-changes/pending-changes.service';
-import { first, map } from 'rxjs/operators';
+import { first, map, tap } from 'rxjs/operators';
 import { FirestoreRelationalStorage } from '../storage/firestore/firestore-relational-storage';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 
@@ -20,6 +20,7 @@ export class CustomLinksService<T extends CustomLink = CustomLink> extends Fires
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('uri', '==', uri))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         first(),
         map((snaps: DocumentChangeAction<any>[]) => snaps
           .map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }))

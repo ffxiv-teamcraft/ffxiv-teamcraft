@@ -4,8 +4,6 @@ import { Observable } from 'rxjs';
 
 export abstract class ListStore extends DataStore<List> {
 
-  public abstract getPublicLists(): Observable<List[]>;
-
   public abstract byAuthor(uid: string): Observable<List[]>;
 
   public abstract deleteByAuthor(uid: string): Observable<void>;

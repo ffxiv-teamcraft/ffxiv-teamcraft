@@ -8,7 +8,7 @@ import { AddDirty, RemoveDirty } from './dirty.actions';
 import { map } from 'rxjs/operators';
 import { DirtyScope } from '../dirty-scope';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class DirtyFacade {
 
   allEntries$ = this.store.pipe(select(dirtyQuery.getAllDirty));

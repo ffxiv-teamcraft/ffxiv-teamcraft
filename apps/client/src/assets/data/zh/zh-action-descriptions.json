@@ -2019,7 +2019,7 @@
     "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>钓鱼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n前一次钓到的鱼将不再出现\n成功钓到鱼后会取消该状态\n对以小钓大钓上来的鱼及其他部分鱼类无效\n\n会覆盖专一垂钓的状态\n鱼上钩后15秒内有效\n在以小钓大的机会出现时发动此技能，机会自动取消"
   },
   "4596": {
-    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>钓鱼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可以钓到和前一次同样的鱼\n成功钓到鱼后会取消该状态，无法连续使用\n对以小钓大钓上来的鱼及其他部分鱼类无效\n\n会覆盖拍击水面的状态\n鱼上钩后15秒内有效\n在以小钓大的机会出现时发动此技能，机会自动取消"
+    "zh": "<UIForeground>F201F4</UIForeground><UIGlow>F201F5</UIGlow>钓鱼<UIGlow>01</UIGlow><UIForeground>01</UIForeground>\n可以钓到和前一次同样的鱼\n成功钓到鱼后或该鱼类不存在时会取消该状态，无法连续使用\n对以小钓大钓上来的鱼及其他部分鱼类无效\n\n会覆盖拍击水面的状态\n鱼上钩后15秒内有效\n在以小钓大的机会出现时发动此技能，机会自动取消"
   },
   "4597": {
     "zh": "仅在品质状态最大时有一定几率可以使用\n制作完成后会返还一部分素材"
@@ -4584,7 +4584,7 @@
     "zh": "释放有点可怕又不可怕的发光视线"
   },
   "17391": {
-    "zh": "释放有点可怕又不可怕的发光视线\n※演出技能，没有任何实际效果"
+    "zh": "释放有点可怕又不可怕的发光视线\n演出技能，没有任何实际效果"
   },
   "17596": {
     "zh": "恢复自身体力　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>恢复力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>1000\n恢复力与当前物理攻击力相关"
@@ -5046,7 +5046,7 @@
     "zh": "用超强的吸力将东西吸入"
   },
   "18188": {
-    "zh": "用超强的吸力将东西吸入\n※演出技能，没有任何实际效果"
+    "zh": "用超强的吸力将东西吸入\n演出技能，没有任何实际效果"
   },
   "18295": {
     "zh": "向目标所在方向发出风属性直线范围魔法攻击　<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>威力：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>220\n攻击复数敌人时，对第一个之外的敌人威力降低50%"

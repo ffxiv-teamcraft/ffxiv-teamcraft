@@ -120,6 +120,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   public getAllIds(): Observable<string[]> {
     return this.firestore.collection(this.getBaseUri()).get().pipe(
+      tap(() => this.recordOperation('read')),
       map(snap => snap.docs.map(doc => doc.id))
     );
   }
@@ -130,6 +131,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
         crafting: user.logProgression,
         gathering: user.gatheringLogProgression
       }).pipe(
+        tap(() => this.recordOperation('write')),
         switchMap(() => {
           return super.set(uid, { ...user, gatheringLogProgression: [], logProgression: [] });
         })
@@ -147,6 +149,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('nickname', '==', nickname))
       .valueChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         map(res => res.length === 0)
       );
   }
@@ -155,6 +158,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     return this.firestore.collection(this.getBaseUri(), ref => ref.where('defaultLodestoneId', '==', id))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         map((snaps: any[]) => {
           const valueWithKey: TeamcraftUser[] = snaps.map(snap => ({ ...snap.payload.doc.data(), $key: snap.payload.doc.id }));
           return this.serializer.deserialize<TeamcraftUser>(valueWithKey, [this.getClass()]);

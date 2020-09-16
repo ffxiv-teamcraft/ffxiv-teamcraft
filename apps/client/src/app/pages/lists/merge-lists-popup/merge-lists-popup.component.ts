@@ -35,7 +35,6 @@ export class MergeListsPopupComponent implements OnInit {
   public setSelection(list: List, selected: boolean): void {
     if (selected) {
       this.selectedLists.push(list);
-      this.listsFacade.load(list.$key);
     } else {
       this.selectedLists = this.selectedLists.filter(l => l.$key !== list.$key);
     }

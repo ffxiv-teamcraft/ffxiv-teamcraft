@@ -1422,7 +1422,9 @@
     "Jump_to_page": "Saltar rápido a otra página",
     "Ishgard_restoration": "Restauración Ishgardiana",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level"
+      "Masterpiece_exp_tooltip": "% of exp needed for next level",
+      "Required_craftsmanship": "Req. Craftsmanship",
+      "Required_control": "Req. Control"
     },
     "FISH": {
       "Hour": "Hora del día",
@@ -2140,5 +2142,20 @@
   "COLLECTABLES": {
     "Title": "Collectables",
     "No_collectables_for_this_level": "No collectables available"
+  },
+  "CRAFTING_REPLAYS": {
+    "Title": "Crafting replays",
+    "Online_replays": "Online replays",
+    "Offline_replays": "Offline replays",
+    "Open_replay_page": "Open replay page",
+    "Open_result_modal": "Open result popup",
+    "Copy_to_clipboard": "Copy share link to your clipboard",
+    "Delete": "Delete replay",
+    "No_online_replays": "No online replays",
+    "No_offline_replays": "No offline replays",
+    "Cannot_record": "Cannot record replays",
+    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
+    "Create_folder": "New folder",
+    "Save_replay": "Save replay in database"
   }
 }

@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { StepState } from '@ffxiv-teamcraft/simulator';
 
 @Component({
   selector: 'app-xivdb-tooltip-component',
@@ -10,12 +11,23 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 })
 export class XivapiActionTooltipComponent implements OnInit {
 
-  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService) {
-  }
-
   @Input() action: any;
 
+  @Input() state: StepState;
+
+  @Input() stateColor: string;
+
+  get stateName(): string {
+    if (!this.state) {
+      return 'Normal';
+    }
+    return `${StepState[this.state].charAt(0).toUpperCase()}${StepState[this.state].slice(1).toLowerCase()}`;
+  }
+
   details: { name: string, value: any, requiresPipe: boolean }[];
+
+  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService) {
+  }
 
   ngOnInit(): void {
     this.details = [];

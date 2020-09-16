@@ -37,7 +37,6 @@ export class TagsPopupComponent implements OnInit {
       map(lists => lists.find(l => l.$key === this.list.$key)),
       filter(list => list !== undefined)
     );
-    this.listsFacade.load(this.list.$key);
     this.tags = Object.keys(ListTag).map(key => {
       return {
         value: key,

@@ -240,6 +240,13 @@
                   <i nz-icon nzType="appstore"></i>
                   <span class="nav-text">{{'INVENTORY.Title' | translate}}</span>
                 </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/crafting-replays"
+                   routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="video-camera" nzTheme="outline"></i>
+                      <span class="nav-text">{{'CRAFTING_REPLAYS.Title' | translate}}</span>
+                  </span>
+                </a>
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
                    routerLinkActive="ant-menu-item-selected" *ngIf="platformService.isDesktop()">
                   <span>

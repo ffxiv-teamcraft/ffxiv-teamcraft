@@ -10,8 +10,8 @@ export class IfMobilePipe implements PipeTransform {
   constructor(private media: MediaObserver) {
   }
 
-  transform(nonMobileValue: any, mobileValue: any): any {
-    return (this.media.isActive('xs') || this.media.isActive('sm')) ? mobileValue : nonMobileValue;
+  transform<T, R>(nonMobileValue: T, mobileValue: R, forceMobile = false): T | R {
+    return (forceMobile || this.media.isActive('xs') || this.media.isActive('sm')) ? mobileValue : nonMobileValue;
   }
 
 }

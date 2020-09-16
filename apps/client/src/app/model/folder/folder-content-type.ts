@@ -1,3 +1,4 @@
 export enum FolderContentType {
-  GEARSET
+  GEARSET,
+  CRAFTING_REPLAY
 }

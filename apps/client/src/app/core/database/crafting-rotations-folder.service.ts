@@ -4,7 +4,7 @@ import { PendingChangesService } from './pending-changes/pending-changes.service
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
 import { FirestoreRelationalStorage } from './storage/firestore/firestore-relational-storage';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { CraftingRotationsFolder } from '../../model/other/crafting-rotations-folder';
 
 @Injectable()
@@ -19,6 +19,7 @@ export class CraftingRotationsFolderService extends FirestoreRelationalStorage<C
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 30))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         map((snaps: DocumentChangeAction<CraftingRotationsFolder>[]) => {
           const folders = snaps
             .map((snap: DocumentChangeAction<any>) => {

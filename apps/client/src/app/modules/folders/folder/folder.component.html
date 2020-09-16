@@ -2,7 +2,7 @@
   <nz-collapse-panel [nzHeader]="header">
     <ng-template #header>
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="header">
-        <div>{{display.folder.name}}</div>
+        <div>{{display.folder.name}} ({{display.content.length}})</div>
         <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();rename()" nz-tooltip
                 [nzTitle]="'FOLDERS.Rename_folder' | translate">
           <i nz-icon nzType="edit"></i>
@@ -29,7 +29,7 @@
     </ng-template>
     <div cdkDropList [cdkDropListConnectedTo]="dndConnections"
          [cdkDropListDisabled]="disableDnd"
-         [cdkDropListEnterPredicate]="canDropGearset"
+         [cdkDropListEnterPredicate]="canDropElement"
          [id]="id" [cdkDropListData]="display.folder"
          (cdkDropListExited)="exited($event)"
          (cdkDropListEntered)="entered($event)"

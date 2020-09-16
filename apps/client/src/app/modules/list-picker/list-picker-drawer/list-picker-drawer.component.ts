@@ -64,7 +64,7 @@ export class ListPickerDrawerComponent {
       shareReplay(1)
     );
 
-    this.lists$ = combineLatest(this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.query$).pipe(
+    this.lists$ = combineLatest([this.listsFacade.loadingMyLists$, this.listsFacade.myLists$, this.workshops$, this.query$]).pipe(
       filter(([loading]) => !loading),
       debounceTime(100),
       map(([, lists, workshops, query]: [boolean, List[], WorkshopDisplay[], string]) => {

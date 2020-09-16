@@ -1,0 +1,24 @@
+<ng-container *ngIf="replay$ | async as replay; else loading">
+  <app-fullpage-message *ngIf="replay.notFound; else display">
+    {{'CRAFTING_REPLAYS.Replay_not_found' | translate}}
+  </app-fullpage-message>
+  <ng-template #display>
+    <div fxLayout="column" fxLayoutGap="10px">
+      <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+        <app-user-avatar [userId]="replay.authorId"></app-user-avatar>
+        <div fxLayout="column">
+          <div>{{replay.authorId | characterName | async}}</div>
+          <div>
+            {{(replay.startTime.seconds * 1000) | date:'short':translate.currentLang}}
+            - {{replay.playerStats.craftsmanship}}
+            /{{replay.playerStats._control}}/{{replay.playerStats.cp}}
+          </div>
+        </div>
+      </div>
+      <app-replay-simulation [replay]="replay"></app-replay-simulation>
+    </div>
+  </ng-template>
+</ng-container>
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>
