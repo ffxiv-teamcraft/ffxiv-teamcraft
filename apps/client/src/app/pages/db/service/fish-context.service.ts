@@ -83,7 +83,7 @@ const datagridResultMapper = <DataKey extends string, RowKey extends string | nu
 export class FishContextService {
   /** The fish id that is currently active and being used to filter results by. */
   public readonly fishId$: Observable<number | undefined> = combineLatest([this.itemContext.itemId$, this.lazyData.fishes$]).pipe(
-    map(([itemId, fishes]) => (itemId >= 0 && fishes.includes(itemId) ? itemId : undefined)),
+    map(([itemId, fishes]) => (itemId > 0 && fishes.includes(itemId) ? itemId : undefined)),
     distinctUntilChanged()
   );
   private readonly spotIdSub$ = new BehaviorSubject<number | undefined>(undefined);
@@ -95,7 +95,7 @@ export class FishContextService {
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
-    filter((fishId) => fishId >= 0),
+    filter((fishId) => fishId > 0),
     switchMap((fishId) => combineLatest([this.data.getSpotsByFishId(fishId), this.lazyData.fishingSpots$])),
     map(([res, spotData]) => {
       return {
@@ -108,7 +108,7 @@ export class FishContextService {
 
   /** An observable containing the number of recorded occurrences at each Eorzean hour. */
   public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId > 0 || spotId >= 0),
     switchMap(([fishId, spotId]) => this.data.getHours(fishId, spotId)),
     map((res) => {
       const data = res.data?.etimes.reduce(
@@ -124,7 +124,7 @@ export class FishContextService {
   );
 
   private readonly baitMoochesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getBaitMooches(fishId, spotId))
   );
 
@@ -142,7 +142,7 @@ export class FishContextService {
   );
 
   private readonly hooksetTugsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getHooksets(fishId, spotId))
   );
 
@@ -157,14 +157,14 @@ export class FishContextService {
 
   /** An observable containing the bite times recorded to catch the active fish. */
   public readonly biteTimesByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getBiteTimes(fishId, spotId)),
     map(occurrenceResultMapper('biteTimes', 'biteTime')),
     shareReplay(1)
   );
 
   private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId >= 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getWeather(fishId, spotId))
   );
 
@@ -194,7 +194,7 @@ export class FishContextService {
 
   /** An observable containing statistics about the active fish. */
   public readonly statisticsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
-    filter(([fishId, spotId]) => fishId >= 0 || spotId >= 0),
+    filter(([fishId, spotId]) => fishId > 0 || spotId > 0),
     switchMap(([fishId, spotId]) => this.data.getStatisticsByFishId(fishId, spotId)),
     map((res) => {
       if (!res.data) return { ...res, data: undefined };
@@ -216,7 +216,7 @@ export class FishContextService {
 
   /** An observable containing the bite times recorded to catch fishes at the active spot. */
   public readonly hoursBySpot$ = this.spotId$.pipe(
-    filter((spotId) => spotId >= 0),
+    filter((spotId) => spotId > 0),
     switchMap((spotId) => this.data.getHours(undefined, spotId)),
     map((res) => {
       const data = res.data?.etimes.reduce<{ total: number; byFish: Record<number, { total: number; byTime: Record<number, number> }> }>(
@@ -236,7 +236,7 @@ export class FishContextService {
 
   /** An observable containing the bite times recorded to catch fishes at the active spot. */
   public readonly biteTimesBySpot$ = combineLatest([this.spotId$, this.baitId$]).pipe(
-    filter(([spotId]) => spotId >= 0),
+    filter(([spotId]) => spotId > 0),
     switchMap(([spotId, baitId]) => (baitId >= 0 ? this.data.getBiteTimesByBait(undefined, spotId, baitId) : this.data.getBiteTimes(undefined, spotId))),
     map((res) => {
       const data = res.data?.biteTimes.reduce<{
@@ -259,7 +259,7 @@ export class FishContextService {
 
   /** An observable containing the baits needed and mooches possible at the active spot. */
   private readonly baitMoochesBySpot$ = this.spotId$.pipe(
-    filter((spotId) => spotId >= 0),
+    filter((spotId) => spotId > 0),
     switchMap((spotId) => this.data.getBaitMooches(undefined, spotId))
   );
 
@@ -274,7 +274,7 @@ export class FishContextService {
 
   /** An observable containing the weathers at the active spot. */
   private readonly weathersBySpot$ = this.spotId$.pipe(
-    filter((spotId) => spotId >= 0),
+    filter((spotId) => spotId > 0),
     switchMap((spotId) => this.data.getWeather(undefined, spotId))
   );
 
@@ -286,7 +286,7 @@ export class FishContextService {
 
   /** An observable containing the tugs and hooksets used to catch fish at the active spot. */
   private readonly hooksetTugsBySpot$ = this.spotId$.pipe(
-    filter((spotId) => spotId >= 0),
+    filter((spotId) => spotId > 0),
     switchMap((spotId) => this.data.getHooksets(undefined, spotId))
   );
 

@@ -9,4 +9,4 @@ export const patchNotes = `### Bug Fixes
 
 * **db:** added missing trade sources for Skybuilders approved items.
 * **db:** added required stats to recipes when they have some.
-* **simulator:** added required stats in missing stats requirements error.`;
+* **simulator:** added required stats in missing stats requirements error.`;
