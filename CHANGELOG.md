@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.0"></a>
+# [7.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.15...v7.4.0) (2020-09-16)
+
+
+### Bug Fixes
+
+* **list:** fixed inventory fill not taking hq flag into account ([e618ed9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e618ed9)), closes [#1616](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1616)
+* do not display map in alarms with no mapId ([09e99e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/09e99e6))
+
+
+### Features
+
+* **desktop:** support for CN 5.25 packet capture ([a8a952f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8a952f))
+* new crafting replays system ([43513c9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43513c9))
+* **data:** update for cn patch-5.25 ([7febb54](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7febb54))
+
+
+
 <a name="7.3.15"></a>
 ## [7.3.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.14...v7.3.15) (2020-09-09)
 
