@@ -4,7 +4,7 @@ import { ListStore } from './list-store';
 import { combineLatest, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
@@ -127,6 +127,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', PermissionLevel.READ))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
@@ -156,6 +157,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
@@ -182,6 +184,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
             .map((snap: DocumentChangeAction<any>) => {
@@ -191,17 +194,6 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
             });
           return this.completeLists(this.serializer.deserialize<List>(lists, [this.getClass()]));
         })
-      );
-  }
-
-  getPublicLists(): Observable<List[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('public', '==', true))
-      .snapshotChanges()
-      .pipe(
-        switchMap((snaps: any[]) => combineLatest(snaps.map(snap => this.completeListData({ ...snap.payload.doc.data(), $key: snap.payload.doc.id })))),
-        map((lists: any[]) => this.serializer.deserialize<List>(lists, [List])),
-        map((lists: List[]) => lists.sort((a, b) => b.createdAt.toMillis() - a.createdAt.toMillis())),
-        first()
       );
   }
 
@@ -216,6 +208,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
   deleteByAuthor(uid: string): Observable<void> {
     return this.listsByAuthorRef(uid)
       .pipe(
+        tap(() => this.recordOperation('delete')),
         first(),
         map(lists => lists.map(list => list.$key)),
         switchMap(listIds => {
@@ -240,6 +233,7 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         map((snaps: any[]) => snaps.map(snap => {
           // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),
           // Because of that, we have to delete $key property from data snapshot, else the $key won't point to the correct list,

@@ -180,7 +180,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   cloneList(compact: List): void {
     // Connect with store to get full list details before cloning
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(lists => lists.find(l => l.$key === compact.$key)),
       filter(list => list !== undefined),
@@ -217,7 +216,6 @@ export class ListPanelComponent extends TeamcraftComponent {
       updateSubject.pipe(
         debounceTime(500),
         switchMap((newAmount: number) => {
-          this.listsFacade.load(this._list.$key);
           return this.listsFacade.allListDetails$.pipe(
             map(details => details.find(l => l.$key === this._list.$key)),
             filter(l => l !== undefined),
@@ -243,7 +241,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   assignTeam(compact: List, team: Team): void {
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === this._list.$key)),
       filter(l => l !== undefined),
@@ -262,7 +259,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   removeTeam(compact: List, teams: Team[]): void {
     const team = teams.find(t => t.$key === compact.teamId);
-    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === this._list.$key)),
       filter(l => l !== undefined),
@@ -285,7 +281,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   renameList(_list: List): void {
-    this.listsFacade.load(this._list.$key);
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,
       nzComponentParams: { baseName: _list.name },
@@ -327,7 +322,6 @@ export class ListPanelComponent extends TeamcraftComponent {
   }
 
   removeEphemeral(list: List): void {
-    this.listsFacade.load(list.$key);
     this.listsFacade.allListDetails$.pipe(
       map(details => details.find(l => l.$key === list.$key)),
       filter(l => l !== undefined),

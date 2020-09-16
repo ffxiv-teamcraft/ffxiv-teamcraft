@@ -36,6 +36,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
       .snapshotChanges()
       .pipe(
+        tap(() => this.recordOperation('read')),
         map((snaps: DocumentChangeAction<T>[]) => {
           const rows = snaps
             .map((snap: DocumentChangeAction<any>) => {
@@ -65,6 +66,7 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       })
         .snapshotChanges()
         .pipe(
+          tap(() => this.recordOperation('read')),
           map((snaps: DocumentChangeAction<T>[]) => {
             const elements = snaps
               .map((snap: DocumentChangeAction<any>) => {
