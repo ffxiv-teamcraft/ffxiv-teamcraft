@@ -79,7 +79,6 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
         return combineLatest([this.commentsService.getComments(`${type}/${id}`), this.lang$]);
       }),
       map(([comments, lang]) => {
-        console.log(comments, lang);
         return comments.sort((a, b) => {
           if (a.language === lang && b.language === lang) {
             return this.compareComments(a, b);

@@ -26,7 +26,6 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<DbComment>[]) => {
-          console.log(snaps);
           const comments = snaps.map((snap: DocumentChangeAction<any>) => {
             const valueWithKey: DbComment = <DbComment>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
             delete snap.payload;
@@ -35,7 +34,6 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
           return this.serializer.deserialize<DbComment>(comments, [this.getClass()]);
         }),
         map((comments) => {
-          console.log(comments);
           // Map comments array to a tree with replies etc
           return comments
             .sort((a, b) => {
