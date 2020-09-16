@@ -47,6 +47,7 @@ import { SolverPopupComponent } from './components/solver-popup/solver-popup.com
 import { SimulatorOpenerComponent } from './components/simulator-opener/simulator-opener.component';
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { SimulationResultComponent } from './components/simulation-result/simulation-result.component';
 
 const routes: Routes = [
   {
@@ -154,12 +155,15 @@ const routes: Routes = [
     CommunityRotationPopupComponent,
     SolverPopupComponent,
     SimulatorOpenerComponent,
-    SimulationSharePopupComponent
+    SimulationSharePopupComponent,
+    SimulationResultComponent
   ],
   exports: [
     RotationPanelComponent,
     RotationFolderPanelComponent,
-    ActionComponent
+    ActionComponent,
+    SimulatorComponent,
+    SimulationResultComponent
   ],
   providers: [
     ConsumablesService,

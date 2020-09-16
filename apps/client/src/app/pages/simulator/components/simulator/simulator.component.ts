@@ -82,7 +82,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   @Input()
-  public item: Item;
+  public itemId: number;
 
   @Input()
   public thresholds: number[] = [];
@@ -189,6 +189,8 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   private stepStates$: BehaviorSubject<{ [index: number]: StepState }> = new BehaviorSubject<{ [index: number]: StepState }>({});
 
+  private fails$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
+
   private findActionsRegex: RegExp =
     new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
 
@@ -244,7 +246,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private localizedDataService: LocalizedDataService, private rotationsFacade: RotationsFacade, private router: Router,
               private route: ActivatedRoute, private dialog: NzModalService, public translate: TranslateService,
               private message: NzMessageService, private linkTools: LinkToolsService, private rotationPicker: RotationPickerService,
-              private rotationTipsService: RotationTipsService, private dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
+              private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
               private lazyData: LazyDataService) {
     this.rotationsFacade.rotationCreated$.pipe(
@@ -255,7 +257,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       if (this.custom) {
         commands.push('custom', createdKey);
       } else {
-        commands.push(this.item.id.toString(), this._recipeId, createdKey);
+        commands.push(this.itemId.toString(), this._recipeId, createdKey);
       }
       this.router.navigate(commands);
     });
@@ -332,7 +334,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
   }
 
   changeRotation(): void {
-    this.rotationPicker.openInSimulator(this.item ? this.item.id : undefined, this._recipeId, true, this.custom);
+    this.rotationPicker.openInSimulator(this.itemId, this._recipeId, true, this.custom);
   }
 
   getCraftOptExportString(): string {
@@ -502,7 +504,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       if (this.custom) {
         // custom-specific behavior goes here if we find any.
       } else {
-        rotation.defaultItemId = this.item.id;
+        rotation.defaultItemId = this.itemId;
         rotation.defaultRecipeId = this._recipeId;
       }
       rotation.recipe = this._recipe;
@@ -593,6 +595,17 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       newStates[index - 1] = this.simulator.StepState.EXCELLENT;
     }
     this.stepStates$.next(newStates);
+  }
+
+  setFail(index: number, failed: boolean): void {
+    if (failed) {
+      this.fails$.next([
+        ...this.fails$.value,
+        index
+      ]);
+    } else {
+      this.fails$.next(this.fails$.value.filter(i => i !== index));
+    }
   }
 
   applyStats(): void {
@@ -861,9 +874,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       })
     );
 
-    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.forcedStartingQuality$]).pipe(
-      map(([recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality]) => {
-        return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, forcedStartingQuality);
+    this.simulation$ = combineLatest([this.recipe$, this.actions$, this.stats$, this.hqIngredients$, this.stepStates$, this.fails$, this.forcedStartingQuality$]).pipe(
+      map(([recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality]: any[]) => {
+        return new this.simulator.Simulation(recipe, actions, stats, hqIngredients, stepStates, fails, forcedStartingQuality);
       }),
       shareReplay(1)
     );

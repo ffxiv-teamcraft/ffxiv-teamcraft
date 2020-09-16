@@ -5,6 +5,7 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { XivapiActionTooltipComponent } from './xivapi-action-tooltip.component';
 import { Directionality } from '@angular/cdk/bidi';
+import { StepState } from '@ffxiv-teamcraft/simulator';
 
 /**
  * Directive that attaches a XivDB tooltip to the host element.
@@ -21,6 +22,10 @@ export class XivapiActionTooltipDirective implements OnDestroy {
 
   /* tslint:disable:no-input-rename */
   @Input('appXivdbActionTooltip') actionId: number;
+
+  @Input('appXivdbActionState') state: StepState;
+
+  @Input('appXivdbActionStateColor') stateColor: string;
 
   @Input('appXivdbActionTooltipDisabled') disabled = false;
   /* tslint:enable:no-input-rename */
@@ -65,6 +70,8 @@ export class XivapiActionTooltipDirective implements OnDestroy {
 
     // Set the innerHtml of our component with the html given by XivDB.
     tooltip.action = action;
+    tooltip.state = this.state;
+    tooltip.stateColor = this.stateColor;
     this._detectorRef.markForCheck();
   };
 

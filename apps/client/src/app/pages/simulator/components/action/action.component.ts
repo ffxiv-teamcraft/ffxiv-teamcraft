@@ -18,6 +18,9 @@ export class ActionComponent {
   @Output()
   stepstate: EventEmitter<StepState> = new EventEmitter<StepState>();
 
+  @Output()
+  failChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   @Input()
   action: CraftingAction;
 
@@ -59,6 +62,9 @@ export class ActionComponent {
 
   @Input()
   showStateMenu = false;
+
+  @Input()
+  readonly = false;
 
   public states = StepState;
 
@@ -108,8 +114,6 @@ export class ActionComponent {
         return 'yellow';
       case StepState.POOR:
         return 'purple';
-      case StepState.FAILED:
-        return 'red';
     }
   }
 }

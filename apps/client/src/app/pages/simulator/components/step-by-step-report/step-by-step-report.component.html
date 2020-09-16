@@ -13,7 +13,7 @@
   <tr *ngFor="let actionResult of basicTable.data; let i = index">
     <td>{{i}}</td>
     <td *ngIf="true|ifMobile:false">
-      <app-action [action]="actionResult.action" [hideCost]="true"></app-action>
+      <app-action [action]="actionResult.action | craftingAction" [hideCost]="true"></app-action>
     </td>
     <td>
       {{actionResult.cpDifference > 0 ? '+' : ''}}{{actionResult.cpDifference}}
