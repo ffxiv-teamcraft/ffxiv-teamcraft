@@ -10,7 +10,7 @@ import {
   UpdateRotation
 } from './rotations.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { catchError, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import { catchError, exhaustMap, filter, map, mergeMap, switchMap, withLatestFrom, distinctUntilChanged } from 'rxjs/operators';
 import { CraftingRotationService } from '../../../core/database/crafting-rotation/crafting-rotation.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { EMPTY, of } from 'rxjs';
@@ -22,7 +22,8 @@ export class RotationsEffects {
   loadMyRotations$ = this.actions$.pipe(
     ofType(RotationsActionTypes.LoadMyRotations),
     switchMap(() => this.authFacade.userId$),
-    switchMap(userId => {
+    distinctUntilChanged(),
+    exhaustMap(userId => {
       return this.rotationsService.getByForeignKey(TeamcraftUser, userId).pipe(
         map(rotations => new MyRotationsLoaded(rotations, userId))
       );

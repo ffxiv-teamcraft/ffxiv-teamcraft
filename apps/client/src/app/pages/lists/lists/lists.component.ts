@@ -52,6 +52,12 @@ export class ListsComponent {
               private translate: TranslateService, private dialog: NzModalService,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade,
               private authFacade: AuthFacade) {
+    this.listsFacade.loadMyLists();
+    this.listsFacade.loadListsWithWriteAccess();
+    this.workshopsFacade.loadMyWorkshops();
+    this.workshopsFacade.loadWorkshopsWithWriteAccess();
+    this.teamsFacade.loadMyTeams();
+
     this.workshops$ = combineLatest([this.workshopsFacade.myWorkshops$, this.listsFacade.allListDetails$]).pipe(
       debounceTime(100),
       map(([workshops, lists]) => {

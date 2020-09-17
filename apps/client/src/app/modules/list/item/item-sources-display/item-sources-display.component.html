@@ -4,58 +4,58 @@
       <a *ngSwitchCase="dataTypes.GARDENING"
          href="{{source.data | ffxivgardening | i18n}}"
          nz-tooltip
-         nzTitle="{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}"
+         nzTooltipTitle="{{'LIST_DETAILS.Open_in_ffxivgardening' | translate}}"
          target="_blank">
         <img class="img-icon gardening-icon" src="./assets/icons/Gardening.png">
       </a>
       <button (click)="openHuntingPopup(item)" *ngSwitchCase="dataTypes.DROPS" nz-button
               nz-tooltip
-              nzShape="circle" nzTitle="{{'Hunting' | translate}}">
+              nzShape="circle" nzTooltipTitle="{{'Hunting' | translate}}">
         <img alt="Drops" class="img-icon" src="https://www.garlandtools.org/db/images/Mob.png">
       </button>
       <button (click)="openTradesPopup(item)" *ngSwitchCase="dataTypes.TRADE_SOURCES"
               nz-button
-              nz-tooltip nzShape="circle" nzTitle="{{'Trade' | translate}}">
+              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Trade' | translate}}">
         <img [src]="source.data | tradeIcon | icon: 'https://www.garlandtools.org/db/images/Shop.png'"
              class="img-icon round-icon">
       </button>
       <button (click)="openInstancesPopup(item)" *ngSwitchCase="dataTypes.INSTANCES"
               nz-button
-              nz-tooltip nzShape="circle" nzTitle="{{source.data[0].name | i18n}}">
+              nz-tooltip nzShape="circle" nzTooltipTitle="{{source.data[0].name | i18n}}">
         <img [src]="source.data[0].icon | instanceIcon" class="img-icon round-icon">
       </button>
       <button (click)="openReducedFromPopup(item)" *ngSwitchCase="dataTypes.REDUCED_FROM"
               nz-button
-              nz-tooltip nzShape="circle" nzTitle="{{'Reduction' | translate}}">
+              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Reduction' | translate}}">
         <img class="img-icon round-icon" src="https://www.garlandtools.org/db/images/Reduce.png">
       </button>
       <button (click)="openDesynthsPopup(item)" *ngSwitchCase="dataTypes.DESYNTHS"
               nz-button
-              nz-tooltip nzShape="circle" nzTitle="{{'Desynth' | translate}}">
+              nz-tooltip nzShape="circle" nzTooltipTitle="{{'Desynth' | translate}}">
         <i nzIconfont="icon-vectorcombine" nz-icon></i>
       </button>
       <button (click)="openVendorsPopup(item)" *ngSwitchCase="dataTypes.VENDORS"
-              [nzTitle]="'Vendors' | translate"
+              [nzTooltipTitle]="'Vendors' | translate"
               nz-button nz-tooltip nzShape="circle">
         <img alt="Gil" class="img-icon" src="https://xivapi.com/i/065000/065002.png">
       </button>
       <button (click)="openVoyagesPopup(item)" *ngSwitchCase="dataTypes.VOYAGES"
-              [nzTitle]="'Voyages' | translate"
+              [nzTooltipTitle]="'Voyages' | translate"
               nz-button nz-tooltip nzShape="circle">
         <img alt="Voyages" class="img-icon" src="https://www.garlandtools.org/db/images/Voyage.png">
       </button>
       <button (click)="openVenturesPopup(item)" *ngSwitchCase="dataTypes.VENTURES"
-              [nzTitle]="'Retainer_ventures' | translate"
+              [nzTooltipTitle]="'Retainer_ventures' | translate"
               nz-button nz-tooltip nzShape="circle">
         <img [src]="21072 | lazyIcon" alt="Ventures" class="img-icon round-icon">
       </button>
       <button (click)="openTreasuresPopup(item)" *ngSwitchCase="dataTypes.TREASURES"
-              [nzTitle]="'Treasures' | translate"
+              [nzTooltipTitle]="'Treasures' | translate"
               nz-button nz-tooltip nzShape="circle">
         <img alt="Treasures" class="img-icon round-icon" src="./assets/icons/chest_open.png">
       </button>
       <button (click)="openFatesPopup(item)" *ngSwitchCase="dataTypes.FATES"
-              [nzTitle]="'Fates' | translate"
+              [nzTooltipTitle]="'Fates' | translate"
               nz-button nz-tooltip nzShape="circle">
         <img [src]="(source.data[0].id | fate).icon | xivapiIcon" alt="Fates" class="img-icon round-icon">
       </button>

@@ -1,0 +1,29 @@
+.grid-table {
+  height: 100%;
+  border-bottom: 1px solid #444;
+
+  .grid-cell {
+    border: 1px solid #444;
+    padding: 6px;
+
+    &.last {
+      border-right: none;
+    }
+
+    &.grid-header {
+      border-top: none;
+    }
+
+    &.grid-sider {
+      border-left: none;
+    }
+  }
+
+  .grid-body {
+    overflow: auto;
+  }
+
+  .not-highlighted {
+    opacity: 0.3;
+  }
+}

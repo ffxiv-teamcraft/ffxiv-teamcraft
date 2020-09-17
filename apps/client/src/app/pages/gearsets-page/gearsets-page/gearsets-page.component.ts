@@ -11,7 +11,7 @@ import { DataModel } from '../../../core/database/storage/data-model';
 import { Folder } from '../../../model/folder/folder';
 import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FolderDisplay } from '../../../model/folder/folder-display';
-import { switchMap, takeUntil } from 'rxjs/operators';
+import { switchMap, takeUntil, map } from 'rxjs/operators';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
@@ -21,7 +21,7 @@ import { TeamcraftComponent } from '../../../core/component/teamcraft-component'
 })
 export class GearsetsPageComponent extends TeamcraftComponent implements OnInit {
 
-  public loaded$: Observable<boolean> = this.gearsetsFacade.loaded$;
+  public loading$: Observable<boolean> = this.gearsetsFacade.loaded$.pipe(map(loaded => !loaded));
 
   public userId$: Observable<string> = this.authFacade.userId$;
 

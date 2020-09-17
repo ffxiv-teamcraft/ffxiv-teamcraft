@@ -1,33 +1,38 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
-import { I18nName } from '../../model/common/i18n-name';
+import { of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
+import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 
 @Pipe({
-  name: 'itemName'
+  name: 'itemName',
 })
 export class ItemNamePipe implements PipeTransform {
+  constructor(private readonly data: LocalizedLazyDataService) {}
 
-  constructor(private data: LocalizedDataService) {
-  }
-
-  transform(id: number, item?: { name?: string, custom?: boolean }, fallback?: string): I18nName {
+  transform(id: number, item?: { name?: string; custom?: boolean }, fallback?: string): I18nNameLazy {
     if (item && item.custom === true) {
       return {
-        fr: item.name,
-        en: item.name,
-        de: item.name,
-        ja: item.name,
-        ko: item.name
+        de: of(item.name),
+        en: of(item.name),
+        fr: of(item.name),
+        ja: of(item.name),
+        ko: of(item.name),
+        ru: of(item.name),
+        zh: of(item.name),
       };
     }
     const fromData = this.data.getItem(id);
-    return fromData || {
-      fr: fallback,
-      en: fallback,
-      de: fallback,
-      ja: fallback,
-      ko: fallback
-    }
+    return {
+      de: fromData.de.pipe(map(this.fallbackMapper(fallback))),
+      en: fromData.en.pipe(map(this.fallbackMapper(fallback))),
+      fr: fromData.fr.pipe(map(this.fallbackMapper(fallback))),
+      ja: fromData.ja.pipe(map(this.fallbackMapper(fallback))),
+      ko: fromData.ko.pipe(map(this.fallbackMapper(fallback))),
+      ru: fromData.ru.pipe(map(this.fallbackMapper(fallback))),
+      zh: fromData.zh.pipe(map(this.fallbackMapper(fallback))),
+    };
   }
 
+  private readonly fallbackMapper = (fallback?: string) => (val?: string) => val ?? fallback;
 }

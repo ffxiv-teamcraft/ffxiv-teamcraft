@@ -1,0 +1,22 @@
+<nz-card [nzTitle]="'DB.FISH.Bite_times' | translate" [nzExtra]="baitSelector" [nzLoading]="loading$ | async">
+  <ng-template #baitSelector>
+    <nz-select *ngIf="baitIds$ | async as baits" [ngModel]="baitFilter$ | async" (ngModelChange)="setBaitId($event)" nzShowSearch class="bait-selector">
+      <nz-option [nzValue]="-1" [nzLabel]="'DB.FISH.All_baits' | translate"></nz-option>
+      <nz-option *ngFor="let bait of baits" [nzValue]="bait" [nzLabel]="bait | itemName | i18n"></nz-option>
+    </nz-select>
+  </ng-template>
+  <div [style.height]="'400px'">
+    <ngx-charts-area-chart-stacked
+      [gradient]="true"
+      [xAxis]="true"
+      [yAxis]="true"
+      [legend]="true"
+      [showXAxisLabel]="false"
+      [showYAxisLabel]="false"
+      [activeEntries]="activeChartEntries$ | async"
+      [results]="biteTimesChartData$ | async"
+      (activate)="activeFishName$.next($event?.value?.name || undefined)"
+      (deactivate)="activeFishName$.next(undefined)"
+    ></ngx-charts-area-chart-stacked>
+  </div>
+</nz-card>

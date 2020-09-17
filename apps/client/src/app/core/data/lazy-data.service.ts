@@ -61,7 +61,10 @@ export class LazyDataService {
   public data: LazyData;
   public data$: ReplaySubject<LazyData> = new ReplaySubject<LazyData>();
 
+  public readonly diademTerritory$: Observable<unknown> = this.lazyDataProvider.getLazyData('diademTerritory');
+  public readonly fishes$: Observable<number[]> = this.lazyDataProvider.getLazyData('fishes');
   public readonly fishingSpots$ = this.lazyDataProvider.getLazyData('fishingSpots');
+  public readonly itemIcons$: Observable<Record<string, string>> = this.lazyDataProvider.getLazyData('itemIcons');
 
   private loadedLangs: Language[] = [];
 
@@ -72,7 +75,7 @@ export class LazyDataService {
     private platformService: PlatformService,
     private settings: SettingsService,
     private readonly lazyDataProvider: LazyDataProviderService,
-    private readonly translate: TranslateService
+    readonly translate: TranslateService
   ) {
     if (isPlatformServer(platform)) {
       this.loaded$.next(true);

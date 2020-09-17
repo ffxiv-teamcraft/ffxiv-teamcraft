@@ -69,7 +69,7 @@ export class CustomItemsFacade {
     this.store.dispatch(new DeleteCustomItem(key));
   }
 
-  loadAll() {
+  loadAll(): void {
     this.store.dispatch(new LoadCustomItems());
   }
 

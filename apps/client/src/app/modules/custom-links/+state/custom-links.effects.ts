@@ -10,7 +10,7 @@ import {
   UpdateCustomLink
 } from './custom-links.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import { exhaustMap, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { EMPTY } from 'rxjs';
 import { CustomLinksFacade } from './custom-links.facade';
@@ -23,8 +23,12 @@ export class CustomLinksEffects {
   @Effect()
   loadMyCustomLinks$ = this.actions$.pipe(
     ofType(CustomLinksActionTypes.LoadMyCustomLinks),
-    switchMap(() => this.authFacade.userId$),
-    switchMap(userId => {
+    switchMap(() => this.authFacade.user$),
+    filter(user => {
+      return user.patron || user.moderator || user.admin;
+    }),
+    map(user => user.$key),
+    exhaustMap(userId => {
       return this.customLinksService.getByForeignKey(TeamcraftUser, userId).pipe(
         map(links => new MyCustomLinksLoaded(links, userId))
       );

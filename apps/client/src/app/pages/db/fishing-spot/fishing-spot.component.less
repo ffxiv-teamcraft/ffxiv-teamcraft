@@ -1,4 +1,8 @@
 ::ng-deep {
+  .mw-300 {
+    min-width: 300;
+  }
+
   .ant-card {
     &.card-with-list:not(.expanded) {
       .ant-card-body {
@@ -6,88 +10,4 @@
       }
     }
   }
-}
-
-.grid-table {
-  height: 100%;
-  border-bottom: 1px solid #444;
-
-  .grid-cell {
-    border: 1px solid #444;
-    padding: 6px;
-
-    &.last {
-      border-right: none;
-    }
-
-    &.grid-header {
-      border-top: none;
-    }
-
-    &.grid-sider {
-      border-left: none;
-    }
-  }
-
-  .grid-body {
-    overflow: auto;
-  }
-
-  .not-highlighted {
-    opacity: 0.3;
-  }
-}
-
-.bait-selector {
-  min-width: 200px;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #444;
-}
-
-.card-list {
-  overflow-y: auto;
-  min-height: 348px;
-  height: 100%;
-  padding: 24px;
-}
-
-.list-row {
-  padding: 5px;
-  width: 100%;
-}
-
-.no-data {
-  padding-top: 24px;
-}
-
-.details-block.no-icon {
-  padding: 15.5px 10px;
-}
-
-.weathers-list-block {
-  margin-top: 10px;
-}
-
-.bite-times {
-  width: 200px;
-}
-
-.rank-star {
-  width: 24px;
-  height: 24px;
-}
-
-.your-rank {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-.rank-size {
-  font-size: 24px;
-}
-
-.ranking-container {
-  height: 100%;
 }

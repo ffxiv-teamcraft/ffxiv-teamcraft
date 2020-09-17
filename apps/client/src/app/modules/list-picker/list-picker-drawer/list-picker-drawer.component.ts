@@ -28,6 +28,10 @@ export class ListPickerDrawerComponent {
   constructor(private listsFacade: ListsFacade, private drawerRef: NzDrawerRef<List>,
               private workshopsFacade: WorkshopsFacade, private teamsFacade: TeamsFacade) {
 
+    this.listsFacade.loadMyLists();
+    this.listsFacade.loadListsWithWriteAccess();
+    this.workshopsFacade.loadMyWorkshops();
+    this.workshopsFacade.loadWorkshopsWithWriteAccess();
     this.teamsFacade.loadMyTeams();
     this.teamsFacade.allTeams$.pipe(
       filter(teams => teams.length > 0),

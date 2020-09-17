@@ -32,6 +32,7 @@ import { DbComponent } from './db/db.component';
 import { FateComponent } from './fate/fate.component';
 import { FishBaitsComponent } from './fish/fish-baits/fish-baits.component';
 import { FishBiteTimesComponent } from './fish/fish-bite-times/fish-bite-times.component';
+import { FishDetailsContainerComponent } from './fish/fish-details-container/fish-details-container.component';
 import { FishHooksetsComponent } from './fish/fish-hooksets/fish-hooksets.component';
 import { FishHoursComponent } from './fish/fish-hours/fish-hours.component';
 import { FishMoochesComponent } from './fish/fish-mooches/fish-mooches.component';
@@ -42,6 +43,16 @@ import { FishWeatherTransitionsComponent } from './fish/fish-weather-transitions
 import { FishWeathersComponent } from './fish/fish-weathers/fish-weathers.component';
 import { FishComponent } from './fish/fish.component';
 import { FishingMissesPopupComponent } from './fishing-misses-popup/fishing-misses-popup.component';
+import { FishingSpotAvailableFishesComponent } from './fishing-spot/fishing-spot-available-fishes/fishing-spot-available-fishes.component';
+import { FishingSpotBaitDatagridComponent } from './fishing-spot/fishing-spot-bait-datagrid/fishing-spot-bait-datagrid.component';
+import { FishingSpotBiteTimesComponent } from './fishing-spot/fishing-spot-bite-times/fishing-spot-bite-times.component';
+import { FishingSpotDatagridComponent } from './fishing-spot/fishing-spot-datagrid/fishing-spot-datagrid.component';
+import { FishingSpotHoursComponent } from './fishing-spot/fishing-spot-hours/fishing-spot-hours.component';
+import { FishingSpotPositionComponent } from './fishing-spot/fishing-spot-position/fishing-spot-position.component';
+import { FishingSpotTugDatagridComponent } from './fishing-spot/fishing-spot-tug-datagrid/fishing-spot-tug-datagrid.component';
+import { FishingSpotWeatherDatagridComponent } from './fishing-spot/fishing-spot-weather-datagrid/fishing-spot-weather-datagrid.component';
+import { FishingSpotWeatherTransitionsComponent } from './fishing-spot/fishing-spot-weather-transitions/fishing-spot-weather-transitions.component';
+import { FishingSpotWeathersComponent } from './fishing-spot/fishing-spot-weathers/fishing-spot-weathers.component';
 import { FishingSpotComponent } from './fishing-spot/fishing-spot.component';
 import { InstanceComponent } from './instance/instance.component';
 import { ItemComponent } from './item/item.component';
@@ -56,9 +67,9 @@ import { QuestComponent } from './quest/quest.component';
 import { FishContextService } from './service/fish-context.service';
 import * as FishGQLProviders from './service/fish-data.gql';
 import { FishDataService } from './service/fish-data.service';
+import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
-import { FishDetailsContainerComponent } from './fish/fish-details-container/fish-details-container.component';
 
 const routes: Routes = [
   {
@@ -262,6 +273,16 @@ const routes: Routes = [
     FishTopUsersComponent,
     FishUserRankingComponent,
     FishDetailsContainerComponent,
+    FishingSpotHoursComponent,
+    FishingSpotBiteTimesComponent,
+    FishingSpotPositionComponent,
+    FishingSpotWeathersComponent,
+    FishingSpotWeatherTransitionsComponent,
+    FishingSpotAvailableFishesComponent,
+    FishingSpotDatagridComponent,
+    FishingSpotBaitDatagridComponent,
+    FishingSpotWeatherDatagridComponent,
+    FishingSpotTugDatagridComponent,
   ],
   imports: [
     CommonModule,
@@ -288,6 +309,6 @@ const routes: Routes = [
     UserAvatarModule,
     QuickSearchModule,
   ],
-  providers: [FishDataService, FishContextService, ...Object.values(FishGQLProviders)],
+  providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)],
 })
 export class DbModule {}

@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.1"></a>
+## [7.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.0...v7.4.1) (2020-09-17)
+
+
+### Bug Fixes
+
+* **crafting-replay:** offline replays can now be saved properly ([af8ca36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af8ca36))
+* **crafting-replays:** fixed an issue with careful synthesis not handled properly ([73f88f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73f88f4))
+* **perf:** better database reading operations optimization ([8af2e6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8af2e6c))
+* **community-lists:** fixed an issue with community lists not copied properly ([34011dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34011dd))
+
+
+### Features
+
+* **core:** fishing spot ui fixes and i18n data enhancement ([25dcfb1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25dcfb1))
+
+
+
 <a name="7.4.0"></a>
 # [7.4.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.3.15...v7.4.0) (2020-09-16)
 

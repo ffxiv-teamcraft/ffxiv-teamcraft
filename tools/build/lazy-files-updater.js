@@ -43,7 +43,7 @@ fs.writeFileSync(
   path.join(__dirname, '../../apps/client/src/app/core/data/lazy-data.ts'),
   `export type LazyDataKey = keyof LazyData;
 
-  export interface LazyData { 
+export interface LazyData {
   ${[...baseFiles, ...koFiles, ...zhFiles]
     .filter((row) => {
       return row.indexOf('.json') > -1;

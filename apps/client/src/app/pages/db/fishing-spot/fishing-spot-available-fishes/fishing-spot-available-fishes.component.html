@@ -1,0 +1,16 @@
+<nz-card [nzTitle]="'DB.FISHING_SPOT.Available_fishes' | translate" fxFlex="1 1 auto" [nzLoading]="!(fishes$ | async)" [class.card-with-list]="fishes$ | async">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div
+      *ngFor="let fishId of (fishes$ | async) || []; let last = last"
+      fxLayout="row"
+      fxLayoutAlign="flex-start center"
+      fxLayoutGap="5px"
+      class="list-row"
+      [class.border-bottom]="!last"
+    >
+      <app-item-icon [itemId]="fishId" [icon]="fishId | lazyIcon" width="32"></app-item-icon>
+      <span>{{ fishId | itemName | i18n }}</span>
+      <app-db-button [id]="fishId" type="item"></app-db-button>
+    </div>
+  </div>
+</nz-card>

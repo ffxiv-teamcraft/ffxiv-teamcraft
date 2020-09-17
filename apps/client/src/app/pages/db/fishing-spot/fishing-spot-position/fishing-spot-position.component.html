@@ -1,0 +1,12 @@
+<nz-card [nzTitle]="'DB.Position' | translate" class="card-with-list expanded" [style.max-width.px]="360" [nzLoading]="loading">
+  <app-map
+    [hideDbButton]="true"
+    [mapId]="spot.TerritoryType.MapTargetID"
+    [markers]="[
+      {
+        x: spot.customData.coords.x,
+        y: spot.customData.coords.y
+      }
+    ]"
+  ></app-map>
+</nz-card>

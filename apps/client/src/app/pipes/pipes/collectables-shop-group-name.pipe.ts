@@ -1,18 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
-import { I18nName } from '../../model/common/i18n-name';
-import { LazyDataService } from '../../core/data/lazy-data.service';
+import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
+import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 
 @Pipe({
-  name: 'collectablesShopGroupName'
+  name: 'collectablesShopGroupName',
 })
 export class CollectablesShopGroupNamePipe implements PipeTransform {
+  constructor(private l12n: LocalizedLazyDataService) {}
 
-  constructor(private l12n: LocalizedDataService, private lazyData: LazyDataService) {
+  transform(id: number): I18nNameLazy {
+    return this.l12n.getCollectablesShopItemGroup(id);
   }
-
-  transform(id: number, fallback?: string): I18nName {
-    return this.lazyData.data.collectablesShopItemGroup[id] || fallback;
-  }
-
 }

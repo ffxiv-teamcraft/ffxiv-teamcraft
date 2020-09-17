@@ -1,0 +1,23 @@
+<nz-card [nzTitle]="'DB.FISHING_SPOT.Possible_weathers' | translate" [nzLoading]="!(weathers$ | async)" [class.card-with-list]="weathers$ | async">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div
+      *ngFor="let row of (weathers$ | async) || []; let last = last"
+      fxLayout="row"
+      fxLayoutAlign="space-between center"
+      class="list-row"
+      [class.border-bottom]="!last"
+      [style.background-color]="row.active ? highlightColor : ''"
+    >
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <img src="{{ row.weatherId | weatherIcon | xivapiIcon }}" alt="" />
+        <div fxLayout="column">
+          <div>{{ row.weatherId | weatherName | i18n }}</div>
+          <div>
+            <span>{{ 'DB.FISHING_SPOT.Next' | translate }}: {{ row.next | date: 'short':undefined:translate.currentLang }}</span>
+          </div>
+        </div>
+      </div>
+      <div>{{ row.chances | number: '1.0-1' }}%</div>
+    </div>
+  </div>
+</nz-card>

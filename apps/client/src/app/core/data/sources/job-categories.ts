@@ -1,3 +1,4 @@
+// TODO: This has been moved to lazy data. Refactor references to this.
 export const jobCategories = {
   "1": {
     "en": "All Classes",

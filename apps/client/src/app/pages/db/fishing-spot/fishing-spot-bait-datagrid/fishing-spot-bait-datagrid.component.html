@@ -1,0 +1,16 @@
+<nz-card
+  [nzTitle]="'DB.FISHING_SPOT.Fish_per_bait' | translate"
+  class="expanded mw-300"
+  [nzLoading]="loading$ | async"
+  [class.card-with-list]="!(loading$ | async)"
+>
+  <ng-template #iconRender let-id>
+    <app-item-icon [itemId]="id" width="32"></app-item-icon>
+  </ng-template>
+  <app-fishing-spot-datagrid
+    [activeFish]="activeFish"
+    (activeFishChange)="activeFishChange.next($event)"
+    [rowIconRender]="iconRender"
+    [table]="table$ | async"
+  ></app-fishing-spot-datagrid>
+</nz-card>

@@ -1164,10 +1164,10 @@
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz#92a9ff1793e9cd3e91d1c49e1f5f2e49400920d4"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.6.0", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.6.0", "@ffxiv-teamcraft/simulator@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.6.0.tgz#60d0a5b8e61b8c31e169b28d84b31d9b2e9dfbb3"
-  integrity sha512-LNB8kP+/gynuBUTvHIN/i5Hgn0Z6vL88/zPCa7sOzv3QksvmBg4H1Aq0fOkJxZ3vWT7FrqnKqMsKLQybsi+2Ew==
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.7.1.tgz#320c0dd8fce3abafd0abb5384504e0fdbecd31ee"
+  integrity sha512-lOUAhHLAmNnYkTTLN57MKuBL0PwewIIEMRAB291VP2xigpfFg6XWMx6kykPb6KAux2z0h0Ho/hc2nbQo65iXiQ==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
