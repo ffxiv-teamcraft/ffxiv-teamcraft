@@ -7,7 +7,7 @@ import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
-import { getInt32 } from 'node-machina-ffxiv/models/_MachinaModels';
+import { BasePacket } from '../../model/pcap/BasePacket';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -206,7 +206,7 @@ export class IpcService {
       this.machinaToggle = value;
     });
     this.send('toggle-machina:get');
-    this.on('packet', (event, packet: any) => {
+    this.on('packet', (event, packet: BasePacket) => {
       this.handlePacket(packet);
     });
     this.on('navigate', (event, url: string) => {
@@ -253,7 +253,7 @@ export class IpcService {
     }
   }
 
-  private handlePacket(packet: any): void {
+  private handlePacket(packet: BasePacket): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     if (!this.overlayUri) {
       this.packets$.next(packet);

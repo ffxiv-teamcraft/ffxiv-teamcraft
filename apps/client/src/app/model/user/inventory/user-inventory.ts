@@ -4,6 +4,7 @@ import { InventoryContainer } from './inventory-container';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
 import * as firebase from 'firebase/app';
+import { BasePacket } from '../../pcap/BasePacket';
 
 export class UserInventory extends DataModel {
 
@@ -84,7 +85,7 @@ export class UserInventory extends DataModel {
     ).filter(item => item.itemId === itemId);
   }
 
-  updateInventorySlot(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
+  updateInventorySlot(packet: BasePacket, lastSpawnedRetainer: string): InventoryPatch | null {
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     if (this.items[containerKey] === undefined) {
@@ -137,7 +138,7 @@ export class UserInventory extends DataModel {
     return null;
   }
 
-  operateTransaction(packet: any, lastSpawnedRetainer: string): InventoryPatch | null {
+  operateTransaction(packet: BasePacket, lastSpawnedRetainer: string): InventoryPatch | null {
     const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
     const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.fromContainer}` : `${packet.fromContainer}`;
