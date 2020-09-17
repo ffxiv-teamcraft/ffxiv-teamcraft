@@ -11,7 +11,7 @@
             <app-user-avatar [userId]="comment.authorId" [width]="32"></app-user-avatar>
           </ng-template>
           <ng-template #delete>
-            <button (nzOnConfirm)="deleteComment(comment.$key)" [nzTitle]="'Confirmation' | translate" nz-button
+            <button (nzOnConfirm)="deleteComment(comment.$key)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                     nz-popconfirm nzShape="circle" nzType="danger">
               <i nz-icon nzType="delete"></i>
             </button>

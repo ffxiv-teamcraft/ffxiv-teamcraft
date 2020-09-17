@@ -14,7 +14,7 @@
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
-    <button nz-button nzType="danger" nz-popconfirm [nzTitle]="'Confirmation' | translate"
+    <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
             (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
   </div>
   <div nz-row>

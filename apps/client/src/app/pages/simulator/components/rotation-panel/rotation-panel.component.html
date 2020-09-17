@@ -81,7 +81,7 @@
                   nz-tooltip>
             <i nz-icon nzType="desktop"></i>
           </button>
-          <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.Confirm_delete' | translate"
+          <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'" [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
                   [nzType]="'danger'" nz-button
                   nz-popconfirm>
             <i nz-icon nzType="delete"></i>

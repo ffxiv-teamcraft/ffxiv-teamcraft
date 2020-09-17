@@ -199,7 +199,9 @@
               <i class="material-icons">update</i>
             </button>
             <button (nzOnConfirm)="resetList(list)" [disabled]="(permissionLevel$ | async) < 20"
-                    [nzTooltipTitle]="'Reset_progression' | translate" nz-button
+                    [nzTooltipTitle]="'Reset_progression' | translate"
+                    [nzPopconfirmTitle]="'Confirm' | translate"
+                    nz-button
                     nz-popconfirm nz-tooltip nzShape="circle"
                     nzSize="small">
               <i nz-icon nzType="reload"></i>

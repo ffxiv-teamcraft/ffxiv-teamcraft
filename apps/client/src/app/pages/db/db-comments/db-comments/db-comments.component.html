@@ -72,7 +72,7 @@
 
         <nz-comment-action
           *ngIf="!comment.deleted && user.$key && ((comment.author === user.$key) || user.admin || user.moderator)">
-          <span (nzOnConfirm)="deleteComment(comment)" [nzTitle]="'Confirmation' | translate"
+          <span (nzOnConfirm)="deleteComment(comment)" [nzPopconfirmTitle]="'Confirmation' | translate"
                 nz-popconfirm>{{'Delete' | translate}}</span>
         </nz-comment-action>
 

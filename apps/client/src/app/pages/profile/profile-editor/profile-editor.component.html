@@ -109,7 +109,7 @@
                   <nz-list-item-meta [nzAvatar]="avatar" [nzDescription]="contact"
                                      [nzTitle]="contact | characterName | async">
                     <ng-template #delete>
-                      <button (nzOnConfirm)="removeContact(user, contact)" [nzTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzShape="circle"
+                      <button (nzOnConfirm)="removeContact(user, contact)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nzShape="circle"
                               nzSize="small" nzType="danger">
                         <i nz-icon nzType="delete"></i>
                       </button>

@@ -85,7 +85,7 @@
                       nzSize="small">
                 <i nz-icon nzType="edit"></i>
               </button>
-              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroup(group.group)" [nzTitle]="'ALARMS.Confirm_group_delete' | translate"
+              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroup(group.group)" [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
                       nz-button nz-popconfirm
                       nzGhost
                       nzShape="circle" nzSize="small">
@@ -99,7 +99,7 @@
               </button>
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
-                      [nzTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                      [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
                       nz-button
                       nz-popconfirm
                       nzSize="small"
@@ -260,7 +260,7 @@
                    [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
         </ng-template>
         <ng-template #delete>
-          <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTitle]="'Confirmation' | translate" nz-icon nz-popconfirm
+          <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-icon nz-popconfirm
              nzType="delete"></i>
         </ng-template>
         <ng-template #copyMacro>
@@ -384,7 +384,7 @@
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="1">
           <span [nzTitle]="'Delete' | translate" nz-tooltip>
-            <button (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTitle]="'Confirmation' | translate" nz-button
+            <button (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                     nz-popconfirm nzShape="circle"
                     nzType="danger">
               <i nz-icon nzType="delete"></i>
