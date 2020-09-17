@@ -80,7 +80,7 @@
                   </div>
                 </ng-template>
                 <nz-list-item-meta
-                  [nzAvatar]="'./assets/icons/classjob/'+(set.jobId | jobName)?.en?.toLowerCase()+'.png' | ifMobile: null"
+                  [nzAvatar]="'./assets/icons/classjob/'+ ((set.jobId | jobName)?.en | async)?.toLowerCase()+'.png' | ifMobile: null"
                   [nzTitle]="set.jobId | jobName | i18n"
                   nzDescription="lvl {{set.level}}"></nz-list-item-meta>
                 <ng-template #masterbooks>
