@@ -3,7 +3,7 @@
           [nzType]="display.spawned?'primary':'default'"
           nz-button
           nz-tooltip
-          nzTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}">
+          nzTooltipTitle="{{(display.alarm.mapId | closestAetheryte: display.alarm.coords  | async)?.nameid | placeName | i18n}} - {{display.alarm.zoneId | placeName | i18n}}">
     <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
     <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
     {{display.remainingTime | timer}}

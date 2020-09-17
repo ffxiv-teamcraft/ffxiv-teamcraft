@@ -13,14 +13,14 @@
             <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate" *ngIf="item.finalItem && !this.finalItem$.value"></i>
             <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
                   *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName: item | i18n"
-                  [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+                  [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
                   class="item-name"
                   ngxClipboard
                   nz-tooltip>
               {{item.id | itemName: item | i18n}}
             </span>
             <span (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
-                  *ngIf="settings.preferredCopyType === 'isearch'" [nzTitle]="'Copy_isearch' | translate"
+                  *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
                   cbContent="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
                   class="item-name"
                   ngxClipboard
@@ -28,7 +28,7 @@
         {{item.id | itemName: item | i18n}}
       </span>
             <span *ngIf="requiredForFinalCraft$ | async as requiredForFinal">
-        <img [nzTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
+        <img [nzTooltipTitle]="'Required_for_final_craft' | translate:{amount: requiredForFinal}" alt="" nz-tooltip
              src="./assets/icons/HQ.png"/>
       </span>
             <span *ngIf="item.amount > item.done" class="needed">x{{item.amount - item.done}}<span
@@ -87,7 +87,7 @@
               <nz-tag (click)="add(entry.amount, item)"
                       *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                       class="inventory-tag"
-                      [nzTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
+                      [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
                 {{entry.containerName | translate}}: {{entry.amount}}
                 <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
               </nz-tag>
@@ -180,12 +180,12 @@
                      [tooltipDisabled]="+item.masterbooks[0].id !== item.masterbooks[0].id"
                      [icon]="masterbook.id | lazyIcon" [itemId]="masterbook.id"
                      [itemName]="masterbook.id | itemName| i18n"
-                     [nzTitle]="masterbook.id | itemName:null:masterbook.name | i18n"
+                     [nzTooltipTitle]="masterbook.id | itemName:null:masterbook.name | i18n"
                      [width]="24" nz-tooltip></app-item-icon>
     </div>
     <div class="amount-input">
       <span *ngIf="item.requires !== undefined && item.requires.length > 0"
-            [nzTitle]="'LIST_DETAILS.Add_from_external' | translate"
+            [nzTooltipTitle]="'LIST_DETAILS.Add_from_external' | translate"
             nz-tooltip>
         <button [disabled]="permissionLevel < 20" *ngIf="!overlay" [nzContent]="externalCalc" nz-button
                 nz-popover
@@ -200,10 +200,10 @@
           </ng-template>
         </button>
       </span>
-      <span [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
+      <span [nzTooltipTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
         <button [disabled]="permissionLevel < 20" [nzContent]="calculator"
                 *ngIf="!overlay"
-                [nzTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
+                [nzPopoverTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
                 nz-popover
                 nzSize="small" nzTrigger="click">
           <i nz-icon nzType="calculator"></i>

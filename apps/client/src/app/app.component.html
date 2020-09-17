@@ -16,7 +16,7 @@
           </nz-select>
         </div>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
-          <button (click)="updateDesktopApp()" [nzTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
+          <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
                   nzPlacement="bottom"
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
@@ -24,7 +24,7 @@
         <div>
           <i nz-icon nzType="question-circle" nzTheme="outline"
              (click)="startTutorial()" class="tutorial-start"
-             nz-tooltip [nzTitle]="'TUTORIAL.Start' | translate"></i>
+             nz-tooltip [nzTooltipTitle]="'TUTORIAL.Start' | translate"></i>
         </div>
         <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
@@ -67,13 +67,13 @@
           <li (click)="toggleTimeFormat()" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow>
             {{time$ | async}}
           </li>
-          <li *ngIf="!platformService.isDesktop()" [nzTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
+          <li *ngIf="!platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom">
             <a (click)="openInApp()">
               <i nzIconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
-          <li *ngIf="platformService.isDesktop()" [nzTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
+          <li *ngIf="platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
               nz-tooltip nzPlacement="bottom" (click)="openLink()">
             <i nz-icon nzType="laptop" nzTheme="outline"></i>
           </li>
@@ -92,7 +92,7 @@
                   <nz-list-item [nzActions]="[actionOpen, actionClose]">
                     <nz-list-item-meta [nzAvatar]="icon"
                                        [nzDescription]="notification.route.join('/')"
-                                       [nzTitle]="notification.content">
+                                       [nzTooltipTitle]="notification.content">
                       <ng-template #icon>
                         <i nz-icon nzType="{{notification.icon}}"></i>
                       </ng-template>
@@ -441,31 +441,31 @@
             <a *ngIf="!collapsedSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
                nz-tooltip
                nzShape="circle"
-               nzTitle="{{'Find_us_on_twitter' | translate}}" target="_blank">
+               nzTooltipTitle="{{'Find_us_on_twitter' | translate}}" target="_blank">
               <i class="fab fa-twitter"></i>
             </a>
             <a *ngIf="!collapsedSidebar" class="social-fab discord" href="https://discord.gg/r6qxt6P" nz-button nz-tooltip
                nzShape="circle"
-               nzTitle="{{'Join_discord_server' | translate}}"
+               nzTooltipTitle="{{'Join_discord_server' | translate}}"
                target="_blank">
               <i class="fab fa-discord"></i>
             </a>
             <a *ngIf="!desktop && !collapsedSidebar" href="https://ffxivteamcraft.com/desktop" nz-button nz-tooltip
                nzShape="circle"
-               nzTitle="{{'Download_desktop_app' | translate}}"
+               nzTooltipTitle="{{'Download_desktop_app' | translate}}"
                target="_blank">
               <i nz-icon nzType="desktop"></i>
             </a>
             <a *ngIf="!collapsedSidebar" class="social-fab github" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-button
                nz-tooltip
                nzShape="circle"
-               nzTitle="{{'See_code_github' | translate}}"
+               nzTooltipTitle="{{'See_code_github' | translate}}"
                target="_blank"><i class="fab fa-github"></i>
             </a>
             <a *ngIf="!collapsedSidebar" class="social-fab patreon" href="https://www.patreon.com/ffxivteamcraft" nz-button
                nz-tooltip
                nzShape="circle"
-               nzTitle="{{'Support_on_patreon' | translate}}"
+               nzTooltipTitle="{{'Support_on_patreon' | translate}}"
                target="_blank">
               <i class="fab fa-patreon"></i>
             </a>

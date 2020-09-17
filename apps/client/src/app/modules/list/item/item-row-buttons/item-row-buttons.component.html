@@ -3,7 +3,7 @@
                         [showHistory]="finalItem"></app-marketboard-icon>
   <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
     <button (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
-            *ngIf="settings.preferredCopyType === 'classic'" [nzTitle]="'Copy_isearch' | translate"
+            *ngIf="settings.preferredCopyType === 'classic'" [nzTooltipTitle]="'Copy_isearch' | translate"
             cbContent="/isearch &quot;{{itemId | itemName: ({name: fallbackItemName}) | i18n}}&quot;"
             ngxClipboard
             nz-button
@@ -13,7 +13,7 @@
     </button>
     <button (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
             *ngIf="settings.preferredCopyType === 'isearch'" [cbContent]="itemId | itemName: ({name: fallbackItemName}) | i18n"
-            [nzTitle]="'Copy_item_name_to_clipboard' | translate" ngxClipboard
+            [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate" ngxClipboard
             nz-button
             nz-tooltip nzShape="circle"
             nzSize="small">
@@ -23,13 +23,13 @@
 
   <ng-container *ngIf="!overlay && isButton(itemRowTypes.ATTACH_ROTATION) && isCraft">
     <button (click)="attachRotation.emit()" *ngIf="!attachedRotation; else detachRotationRef"
-            [nzTitle]="'LIST.ROTATION.Attach' | translate" nz-button
+            [nzTooltipTitle]="'LIST.ROTATION.Attach' | translate" nz-button
             nz-tooltip nzShape="circle"
             nzSize="small">
       <i nz-icon nzType="link"></i>
     </button>
     <ng-template #detachRotationRef>
-      <button (click)="detachRotation.emit()" [nzTitle]="'LIST.ROTATION.Detach' | translate" nz-button nz-tooltip
+      <button (click)="detachRotation.emit()" [nzTooltipTitle]="'LIST.ROTATION.Detach' | translate" nz-button nz-tooltip
               nzShape="circle" nzSize="small"
               nzType="danger">
         <i nz-icon nzType="disconnect"></i>
@@ -38,7 +38,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.COMMENTS)">
-    <button (click)="openCommentsPopup.emit()" [nzTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
+    <button (click)="openCommentsPopup.emit()" [nzTooltipTitle]="'COMMENTS.Title' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">
       <nz-badge [nzDot]="commentBadge">
@@ -49,7 +49,7 @@
 
   <ng-container *ngIf="isButton(itemRowTypes.ADD_ALL_ALARMS)">
     <button (click)="addAllAlarms.emit()" *ngIf="hasAlarms"
-            [nzTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate" nz-button
+            [nzTooltipTitle]="'LIST_DETAILS.Add_all_item_alarms' | translate" nz-button
             nz-tooltip
             nzShape="circle" nzSize="small">
       <i nz-icon nzType="bell"></i>
@@ -63,7 +63,7 @@
               [nzBackdrop]="false"
               [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'"
-              [nzShape]="'circle'" [nzTitle]="'TEAMS.Assign_team_member' | translate"
+              [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Assign_team_member' | translate"
               [nzTrigger]="'click'"
               nz-button nz-dropdown
               nz-tooltip nzSize="small">
@@ -87,7 +87,7 @@
   <ng-container *ngIf="isButton(itemRowTypes.WORK_ON_IT)">
     <button (click)="setWorkingOnIt.emit(userId)"
             *ngIf="(workingOnIt || [])?.indexOf(userId) === -1 && loggedIn"
-            [nzTitle]="'Work_on_it' | translate" nz-button nz-tooltip
+            [nzTooltipTitle]="'Work_on_it' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">
       <i nz-icon nzType="user-add"></i>
@@ -95,7 +95,7 @@
     <ng-container *ngIf="team; else removeSingleAssignment">
       <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
-              [nzTitle]="'Remove_work_on_it' | translate"
+              [nzTooltipTitle]="'Remove_work_on_it' | translate"
               [nzTrigger]="'click'"
               nz-button nz-dropdown
               nz-tooltip nzSize="small">
@@ -116,7 +116,7 @@
       <button (click)="removeWorkingOnIt.emit(userId)"
               *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn" [nzBackdrop]="false"
               [nzShape]="'circle'"
-              [nzTitle]="'Remove_work_on_it' | translate"
+              [nzTooltipTitle]="'Remove_work_on_it' | translate"
               nz-button nz-dropdown
               nz-tooltip nzSize="small">
         <i nz-icon nzType="user-delete"></i>
@@ -125,7 +125,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.REQUIREMENTS)">
-    <button (click)="openRequirementsPopup.emit()" [nzTitle]="'Requirements_for_craft' | translate" nz-button
+    <button (click)="openRequirementsPopup.emit()" [nzTooltipTitle]="'Requirements_for_craft' | translate" nz-button
             nz-tooltip nzShape="circle"
             nzSize="small">
       <i nz-icon nzType="bars"></i>
@@ -133,7 +133,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.ADD_TAG) && settings.itemTagsEnabled">
-    <button (click)="showTagInput.emit()" [nzTitle]="'LIST_DETAILS.New_tag' | translate" nz-button nz-tooltip
+    <button (click)="showTagInput.emit()" [nzTooltipTitle]="'LIST_DETAILS.New_tag' | translate" nz-button nz-tooltip
             nzShape="circle"
             nzSize="small">
       <i nz-icon nzType="tag"></i>
@@ -142,7 +142,7 @@
 
   <ng-container *ngIf="isButton(itemRowTypes.EDIT_AMOUNT)">
     <button (click)="changeAmount.emit()" *ngIf="finalItem && permissionLevel >= 30"
-            [nzTitle]="'Edit_amount' | translate" nz-button
+            [nzTooltipTitle]="'Edit_amount' | translate" nz-button
             nz-tooltip nzShape="circle" nzSize="small">
       <i nz-icon nzType="diff"></i>
     </button>
@@ -151,7 +151,7 @@
   <ng-container *ngIf="isButton(itemRowTypes.MARK_HQ)">
     <button (click)="requiredAsHQ = true; requiredAsHQChange.emit(requiredAsHQ)"
             *ngIf="permissionLevel >= 30 && requiredForFinalCraft === 0 && !requiredAsHQ"
-            [nzTitle]="'Mark_HQ' | translate"
+            [nzTooltipTitle]="'Mark_HQ' | translate"
             nz-button
             nz-tooltip
             nzShape="circle" nzSize="small">
@@ -160,7 +160,7 @@
 
     <button (click)="requiredAsHQ = false; requiredAsHQChange.emit(requiredAsHQ)"
             *ngIf="(requiredForFinalCraft > 0 || requiredAsHQ) && permissionLevel >= 30"
-            [nzTitle]="'Unmark_HQ' | translate" nz-button
+            [nzTooltipTitle]="'Unmark_HQ' | translate" nz-button
             nz-tooltip
             nzShape="circle"
             nzSize="small" nzType="danger">
@@ -169,7 +169,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.ADD_TO_ANOTHER_LIST)">
-    <button (click)="addToList.emit()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate" nz-button
+    <button (click)="addToList.emit()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.ITEMS.ADD_TO_ANOTHER_LIST' | translate" nz-button
             nz-tooltip
             nzShape="circle"
             nzSize="small">
@@ -178,7 +178,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30">
-    <button (nzOnConfirm)="removeItem.emit()" [nzTitle]="'Confirmation' | translate" nz-button
+    <button (nzOnConfirm)="removeItem.emit()" [nzTooltipTitle]="'Confirmation' | translate" nz-button
             nz-popconfirm
             nzShape="circle"
             nzSize="small"
@@ -188,7 +188,7 @@
   </ng-container>
   <ng-container *ngIf="showLogCompletionButton">
     <button (click)="markAsDoneInLog.emit()" *ngIf="isButton(itemRowTypes.MARK_AS_DONE_IN_LOG)"
-            [nzTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
+            [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done_external' | translate"
             nz-button
             nz-tooltip
             nzShape="circle"
@@ -358,7 +358,7 @@
   </ng-container>
   <button (click)="checkMasterbooks.emit(missingBooks)"
           *ngIf="missingBooks?.length > 0 && missingBooks?.length === masterbooks?.length"
-          [nzTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
+          [nzTooltipTitle]="'LIST_DETAILS.Missing_masterbook' | translate" class="missing-masterbooks" nz-button
           nz-tooltip
           nzGhost
           nzShape="circle" nzSize="small"
@@ -368,7 +368,7 @@
   <ng-container *ngIf="attachedRotation">
     <nz-tag (click)="openRotationMacroPopup.emit(rotation)"
             *ngIf="attachedRotation | rotation | async as rotation"
-            [nzTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
+            [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
             nz-tooltip>
       {{rotation.getName()}}
     </nz-tag>

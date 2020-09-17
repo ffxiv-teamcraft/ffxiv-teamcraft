@@ -40,7 +40,7 @@
                        nz-tooltip [nzTooltipTitle]="'NAVIGATION.You_are_here' | translate"></i>
                   </span>
                   <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMapForZone[row.zoneId] && !overlay"
-                          [nzTitle]="'NAVIGATION.Title' | translate" nz-button
+                          [nzTooltipTitle]="'NAVIGATION.Title' | translate" nz-button
                           nz-tooltip
                           nzShape="circle" nzSize="small">
                     <i nz-icon nzType="gateway"></i>
@@ -77,7 +77,7 @@
         </div>
         <nz-progress nz-tooltip
                      fxFlex="1 1 auto"
-                     nzTitle="{{progression | number:'1.0-1':translate.currentLang}}%"
+                     nzTooltipTitle="{{progression | number:'1.0-1':translate.currentLang}}%"
                      [nzStrokeColor]="settings.theme.primary"
                      [nzPercent]="progression"
                      [nzShowInfo]="false"></nz-progress>
@@ -92,24 +92,24 @@
             <i nz-icon nzType="reload"></i>
           </button>
           <button (click)="$event.stopPropagation();openFullPathPopup(zoneBreakdown)" *ngIf="displayRow.zoneBreakdown"
-                  [nzTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
+                  [nzTooltipTitle]="'LIST.Optimized_full_path' | translate" nz-button nz-tooltip nzShape="circle"
                   nzSize="small">
             <i nzIconfont="icon-map" nz-icon></i>
           </button>
           <button (click)="$event.stopPropagation();openTotalPricePopup()" *ngIf="hasTrades"
-                  [nzTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
+                  [nzTooltipTitle]="'LIST.Total_price' | translate" nz-button nz-tooltip nzShape="circle"
                   nzSize="small">
             <i class="material-icons">local_atm</i>
           </button>
           <button (cbOnSuccess)="textCopied()" (click)="$event.stopPropagation()" [cbContent]="getTextExport()"
-                  [nzTitle]="'LIST.Copy_as_text' | translate"
+                  [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
                   ngxClipboard
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>
           </button>
-          <span [nzTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
+          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
-                  [nzTitle]="'Confirmation' | translate"
+                  [nzPopConfirmTitle]="'Confirmation' | translate"
                   nz-button
                   nz-popconfirm
                   nzShape="circle" nzSize="small">

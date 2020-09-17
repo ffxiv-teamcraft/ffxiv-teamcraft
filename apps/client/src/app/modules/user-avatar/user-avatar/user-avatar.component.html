@@ -2,7 +2,7 @@
   <nz-badge [nzCount]="(user.moderator || user.admin)?iconTemplate:null">
     <a (click)="$event.stopPropagation()" routerLink="/profile/{{userId}}">
       <ng-container *ngIf="character$ | async as character; else anonymous">
-        <img *ngIf="character.ID > 0; else krAvatar" [class.gray]="(status$ | async)?.verified === false && !ignoreVerification" [nzTitle]="tooltip"
+        <img *ngIf="character.ID > 0; else krAvatar" [class.gray]="(status$ | async)?.verified === false && !ignoreVerification" [nzTooltipTitle]="tooltip"
              [src]="character.Avatar"
              [style.width.px]="width"
              alt=""

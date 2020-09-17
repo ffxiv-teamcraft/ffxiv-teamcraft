@@ -4,18 +4,18 @@
       <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="header">
         <div>{{display.folder.name}} ({{display.content.length}})</div>
         <button nz-button nzShape="circle" nzSize="small" (click)="$event.stopPropagation();rename()" nz-tooltip
-                [nzTitle]="'FOLDERS.Rename_folder' | translate">
+                [nzTooltipTitle]="'FOLDERS.Rename_folder' | translate">
           <i nz-icon nzType="edit"></i>
         </button>
         <div fxFlex="1 1 auto"></div>
         <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()"
                 [nzShape]="'circle'"
-                [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
                 ngxClipboard nz-button nz-tooltip nzType="primary">
           <i nz-icon nzType="share-alt"></i>
         </button>
         <a nz-button *ngIf="folderPath" (click)="$event.stopPropagation()" routerLink="/{{folderPath}}/{{display.folder.$key}}" nzShape="circle" nz-tooltip
-           [nzTitle]="'FOLDERS.View_folder' | translate" nzType="primary">
+           [nzTooltipTitle]="'FOLDERS.View_folder' | translate" nzType="primary">
           <i nz-icon nzType="folder-open"></i>
         </a>
         <button nz-button *ngIf="display.folder.authorId === userId" nzType="danger"

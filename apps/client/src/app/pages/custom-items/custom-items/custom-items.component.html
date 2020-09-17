@@ -3,19 +3,19 @@
 <ng-template #pageContent>
   <div *ngIf="display$ | async as display">
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-      <button (click)="createCustomItem()" [nzShape]="'circle'" [nzTitle]="'CUSTOM_ITEMS.New_item' | translate" [nzType]="'primary'" nz-button
+      <button (click)="createCustomItem()" [nzShape]="'circle'" [nzTooltipTitle]="'CUSTOM_ITEMS.New_item' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="file-add"></i>
       </button>
-      <button (click)="createFolder()" [nzShape]="'circle'" [nzTitle]="'CUSTOM_ITEMS.New_folder' | translate" [nzType]="'primary'" nz-button
+      <button (click)="createFolder()" [nzShape]="'circle'" [nzTooltipTitle]="'CUSTOM_ITEMS.New_folder' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="folder-add"></i>
       </button>
-      <button (click)="importItems()" [nzShape]="'circle'" [nzTitle]="'CUSTOM_ITEMS.Import_items' | translate" [nzType]="'primary'" nz-button
+      <button (click)="importItems()" [nzShape]="'circle'" [nzTooltipTitle]="'CUSTOM_ITEMS.Import_items' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="download"></i>
       </button>
-      <button (click)="exportMultipleItems(display)" [nzShape]="'circle'" [nzTitle]="'CUSTOM_ITEMS.Export_items' | translate" [nzType]="'primary'" nz-button
+      <button (click)="exportMultipleItems(display)" [nzShape]="'circle'" [nzTooltipTitle]="'CUSTOM_ITEMS.Export_items' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="upload"></i>
       </button>
@@ -48,7 +48,7 @@
                       <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                         <i nz-icon nzType="folder"></i>
                         <div>{{folderDisplay.folder.name}}</div>
-                        <button (click)="$event.stopPropagation();renameFolder(folderDisplay.folder)" [nzTitle]="'CUSTOM_ITEMS.Rename_folder' | translate"
+                        <button (click)="$event.stopPropagation();renameFolder(folderDisplay.folder)" [nzTooltipTitle]="'CUSTOM_ITEMS.Rename_folder' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"
@@ -57,7 +57,7 @@
                         </button>
                       </div>
                       <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
-                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)" [nzTitle]="'Confirm' | translate"
+                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)" [nzPopconfirmTitle]="'Confirm' | translate"
                                 nz-button
                                 nz-popconfirm
                                 nzShape="circle"
@@ -91,12 +91,12 @@
             <div fxLayout="row" fxLayoutAlign="space-between center">
               <div>{{item.name}}<span *ngIf="item.dirty">*</span></div>
               <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
-                <button (click)="$event.stopPropagation();exportItems([item], display)" [nzTitle]="'CUSTOM_ITEMS.Export_item' | translate" nz-button
+                <button (click)="$event.stopPropagation();exportItems([item], display)" [nzTooltipTitle]="'CUSTOM_ITEMS.Export_item' | translate" nz-button
                         nz-tooltip
                         nzShape="circle">
                   <i nz-icon nzType="export"></i>
                 </button>
-                <button (click)="$event.stopPropagation()" [nzContent]="calculator" [nzTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
+                <button (click)="$event.stopPropagation()" [nzContent]="calculator" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
                         nz-button nz-popover
                         nzShape="circle"
                         nzTrigger="click" nzType="primary">
@@ -113,7 +113,7 @@
                     </div>
                   </ng-template>
                 </button>
-                <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItem(item.$key)" [nzTitle]="'Confirm' | translate"
+                <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItem(item.$key)" [nzPopconfirmTitle]="'Confirm' | translate"
                         nz-button
                         nz-popconfirm
                         nzShape="circle"
@@ -127,7 +127,7 @@
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
               <div>
-                <button [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
+                <button [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
                         nz-dropdown nz-tooltip nzShape="circle"
                         nzSize="small">
                   <i nz-icon nzType="plus"></i>

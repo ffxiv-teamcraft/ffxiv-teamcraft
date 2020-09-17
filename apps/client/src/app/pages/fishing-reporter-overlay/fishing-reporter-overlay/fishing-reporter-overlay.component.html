@@ -136,7 +136,7 @@
               <img class="fish-icon" *ngIf="report.weatherId > 0"
                    src="{{report.weatherId | weatherIcon | xivapiIcon}}"
                    nz-tooltip
-                   [nzTitle]="report.weatherId | weatherName | i18n"
+                   [nzTooltipTitle]="report.weatherId | weatherName | i18n"
                    alt="{{report.weatherId | weatherName | i18n}}">
               <div>{{report.weatherId | weatherName | i18n}}</div>
             </div>
@@ -147,7 +147,7 @@
               <img class="fish-icon" *ngIf="report.previousWeatherId > 0"
                    src="{{report.previousWeatherId | weatherIcon | xivapiIcon}}"
                    nz-tooltip
-                   [nzTitle]="report.previousWeatherId | weatherName | i18n"
+                   [nzTooltipTitle]="report.previousWeatherId | weatherName | i18n"
                    alt="{{report.previousWeatherId | weatherName | i18n}}">
               <div>{{report.previousWeatherId | weatherName | i18n}}</div>
             </div>

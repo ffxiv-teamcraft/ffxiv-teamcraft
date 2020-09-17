@@ -123,7 +123,7 @@
                           <button nz-button
                                   (click)="$event.stopPropagation();setIgnoreContainer(container.containerName, optimization.type, false)"
                                   nzShape="circle" nz-tooltip nzType="primary"
-                                  [nzTitle]="'INVENTORY_OPTIMIZER.Remove_ignore_container' | translate">
+                                  [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Remove_ignore_container' | translate">
                             <i nz-icon nzType="eye"></i>
                           </button>
                         </ng-template>
@@ -148,7 +148,7 @@
                               <button nz-button
                                       (click)="setIgnoreItemOptimization(entry.item.itemId, optimization.type, false)"
                                       nzShape="circle" nz-tooltip nzType="primary"
-                                      [nzTitle]="'INVENTORY_OPTIMIZER.Remove_ignore_item' | translate">
+                                      [nzTooltipTitle]="'INVENTORY_OPTIMIZER.Remove_ignore_item' | translate">
                                 <i nz-icon nzType="eye"></i>
                               </button>
                             </ng-template>
@@ -166,7 +166,7 @@
                               </ng-template>
                               <ng-template #nzTitle>
                       <span (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
-                            [nzTitle]="'Copy_isearch' | translate"
+                            [nzTooltipTitle]="'Copy_isearch' | translate"
                             nz-tooltip
                             cbContent="/isearch &quot;{{entry.item.itemId | itemName | i18n}}&quot;"
                             class="item-name"

@@ -3,13 +3,13 @@
     <label [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()" nz-checkbox></label>
     <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName| i18n"
                    [width]="24"></app-item-icon>
-    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName | i18n" [nzTitle]="'Copy_item_name_to_clipboard' | translate"
+    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName | i18n" [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
           class="item-name"
           ngxClipboard
           nz-tooltip>
         {{item.id | itemName | i18n}}
       </span>
-    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'isearch'" [nzTitle]="'Copy_isearch' | translate" cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate" cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
           class="item-name"
           ngxClipboard
           nz-tooltip>
@@ -18,7 +18,7 @@
     <i *ngIf="_craftCost !== undefined"
        class="material-icons"
        nz-tooltip
-       nzTitle="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil">
+       nzTooltipTitle="{{'Minimal_craft_cost' | translate}}: {{_craftCost | number:'1.0-0'}} gil">
       attach_money
     </i>
     <i *ngIf="price.fromVendor" class="from-vendor material-icons" nz-tooltip
@@ -58,7 +58,7 @@
       <div *ngIf="!isCrystal()" fxLayout="row">
         <nz-input-group [nzAddOnBefore]="addonBeforeHQ" nzCompact nzSize="small">
           <ng-template #addonBeforeHQ>
-            <div class="server-span" nz-tooltip>HQ<span *ngIf="price.fromMB && price.hqServer"> 
+            <div class="server-span" nz-tooltip>HQ<span *ngIf="price.fromMB && price.hqServer">
               ({{price.hqServer | worldName | i18n}})</span></div>
           </ng-template>
           <input [(ngModel)]="price.hq" (ngModelChange)="savePrice()" [disabled]="preCraft && !customPrice" class="price" lang="en-150" min="0"

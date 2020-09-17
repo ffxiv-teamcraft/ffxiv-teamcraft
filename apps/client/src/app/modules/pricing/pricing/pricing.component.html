@@ -22,7 +22,7 @@
             <div>{{'Crystals' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();crystals.length > 10?null:fillMbCosts(crystals)" (nzOnConfirm)="fillMbCosts(crystals)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="crystals.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}) : null"
+                      [nzTooltipTitle]="crystals.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (crystals.length / 2 | ceil)}) : null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -30,7 +30,7 @@
                       nzShape="circle">
                 <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
-              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(crystals, list)" [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(crystals, list)" [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
                       ngxClipboard
                       nz-button
                       nz-tooltip nzShape="circle">
@@ -50,7 +50,7 @@
             <div>{{'Other' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();items.length > 10?null:fillMbCosts(items)" (nzOnConfirm)="fillMbCosts(items)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="items.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}): null"
+                      [nzPopconfirmTitle]="items.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (items.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -58,7 +58,7 @@
                       nzShape="circle">
                 <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
-              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(items, list)" [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(items, list)" [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
                       ngxClipboard
                       nz-button
                       nz-tooltip nzShape="circle">
@@ -78,7 +78,7 @@
             <div>{{'Pre_crafts' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();preCrafts.length > 10?null:fillMbCosts(preCrafts)" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
+                      [nzPopConfirmTitle]="preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -86,7 +86,7 @@
                       nzShape="circle">
                 <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
-              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(preCrafts, list)" [nzTitle]="'PRICING.Copy_panel_as_text' | translate"
+              <button (cbOnSuccess)="afterCopy()" (click)="$event.stopPropagation()" [cbContent]="getSpendingText(preCrafts, list)" [nzTooltipTitle]="'PRICING.Copy_panel_as_text' | translate"
                       ngxClipboard
                       nz-button
                       nz-tooltip nzShape="circle">
@@ -117,7 +117,7 @@
     <ng-template #title>
       <div fxLayout="row" fxLayoutAlign="space-between center">
         <div>{{'Earning' | translate}}</div>
-        <button (cbOnSuccess)="afterCopy()" [cbContent]="getEarningText(list.finalItems, list)" [nzTitle]="'PRICING.Copy_earnings_as_text' | translate" ngxClipboard
+        <button (cbOnSuccess)="afterCopy()" [cbContent]="getEarningText(list.finalItems, list)" [nzTooltipTitle]="'PRICING.Copy_earnings_as_text' | translate" ngxClipboard
                 nz-button
                 nz-tooltip nzShape="circle">
           <i nz-icon nzType="copy"></i>
@@ -132,14 +132,14 @@
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems)" (nzOnConfirm)="fillMbCosts(list.finalItems)"
                       *ngIf="loggedIn$ | async"
-                      [nzTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
+                      [nzPopConfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm>
                 {{'PRICING.Autofill_panel_prices' | translate}}
               </button>
               <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems)" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
-                      [nzTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
+                      [nzPopConfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm

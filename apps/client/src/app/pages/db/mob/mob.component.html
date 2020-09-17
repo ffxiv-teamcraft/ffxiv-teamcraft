@@ -17,7 +17,7 @@
         </div>
         <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
             <img [alt]="link.title" [src]="link.icon" class="link-icon">
           </a>
         </div>
