@@ -39,7 +39,7 @@ const craftingReplayReducer = createReducer(
       craftingReplayAdapter.setAll(craftingReplays, { ...state, loaded: true })
   ),
   on(
-    CraftingReplayActions.addCraftingReplay,
+    CraftingReplayActions.addHashedCraftingReplay,
     (state, { craftingReplay }) =>
       craftingReplayAdapter.setOne(craftingReplay, { ...state })
   ),

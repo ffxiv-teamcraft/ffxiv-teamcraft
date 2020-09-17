@@ -57,20 +57,26 @@ export class CraftingReplayEffects {
     return this.actions$.pipe(
       ofType(CraftingReplayActions.addCraftingReplay),
       switchMap(action => {
-        const localstore = this.getLocalstore();
-        const newLength = localstore.unshift(action.craftingReplay);
-        if (newLength > CraftingReplayEffects.MAX_LOG_SIZE) {
-          localstore.pop();
-        }
         return this.afs.httpsCallable('hashReplay')({ replay: action.craftingReplay }).pipe(
-          tap(res => {
+          map(res => {
             action.craftingReplay.hash = res.hash;
+            return action.craftingReplay;
+          }),
+          tap(replay => {
+            const localstore = this.getLocalstore();
+            const newLength = localstore.unshift(replay);
+            if (newLength > CraftingReplayEffects.MAX_LOG_SIZE) {
+              localstore.pop();
+            }
             this.setLocalstore(localstore);
+          }),
+          map(replay => {
+            return CraftingReplayActions.addHashedCraftingReplay({ craftingReplay: replay });
           })
         );
       })
     );
-  }, { dispatch: false });
+  });
 
   persistCraftingReplay$ = createEffect(() => {
     return this.actions$.pipe(

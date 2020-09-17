@@ -15,6 +15,11 @@ export const addCraftingReplay = createAction(
   props<{ craftingReplay: CraftingReplay }>()
 );
 
+export const addHashedCraftingReplay = createAction(
+  '[CraftingReplay] Add Hashed CraftingReplay',
+  props<{ craftingReplay: CraftingReplay }>()
+);
+
 export const persistCraftingReplay = createAction(
   '[CraftingReplay] Persist CraftingReplay',
   props<{ craftingReplay: CraftingReplay }>()
