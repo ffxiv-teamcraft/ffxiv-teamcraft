@@ -78,7 +78,7 @@
             <div>{{'Pre_crafts' | translate}}</div>
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();preCrafts.length > 10?null:fillMbCosts(preCrafts)" (nzOnConfirm)="fillMbCosts(preCrafts)" *ngIf="loggedIn$ | async"
-                      [nzPopConfirmTitle]="preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
+                      [nzPopconfirmTitle]="preCrafts.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (preCrafts.length / 2 | ceil)}): null"
                       nz-button
                       nz-popconfirm
                       nz-tooltip
@@ -132,14 +132,14 @@
             <div fxLayout="row" fxLayoutGap="10px">
               <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems)" (nzOnConfirm)="fillMbCosts(list.finalItems)"
                       *ngIf="loggedIn$ | async"
-                      [nzPopConfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
+                      [nzPopconfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm>
                 {{'PRICING.Autofill_panel_prices' | translate}}
               </button>
               <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems)" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
-                      [nzPopConfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
+                      [nzPopconfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
                       nz-popconfirm

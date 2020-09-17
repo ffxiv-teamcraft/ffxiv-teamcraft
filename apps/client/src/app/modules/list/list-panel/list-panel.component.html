@@ -111,7 +111,7 @@
           </a>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async) > 10"
                   [disabled]="(permissionLevel$ | async) < 40" [nzShape]="'circle'"
-                  [nzPopConfirmTitle]="'LIST.BUTTONS.Delete_warning' | translate"
+                  [nzPopconfirmTitle]="'LIST.BUTTONS.Delete_warning' | translate"
                   [nzType]="'danger'"
                   nz-button nz-popconfirm>
             <i nz-icon nzType="delete"></i></button>
