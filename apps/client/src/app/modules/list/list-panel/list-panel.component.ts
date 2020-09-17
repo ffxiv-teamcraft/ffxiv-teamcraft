@@ -180,6 +180,7 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   cloneList(compact: List): void {
     // Connect with store to get full list details before cloning
+    this.listsFacade.load(compact.$key);
     this.listsFacade.allListDetails$.pipe(
       map(lists => lists.find(l => l.$key === compact.$key)),
       filter(list => list !== undefined),
