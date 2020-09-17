@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **crafting-replay:** offline replays can now be saved properly ([af8ca36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/af8ca36))
 * **crafting-replays:** fixed an issue with careful synthesis not handled properly ([73f88f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/73f88f4))
 * **perf:** better database reading operations optimization ([8af2e6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8af2e6c))
+* **community-lists:** fixed an issue with community lists not copied properly ([34011dd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34011dd))
 
 
 ### Features
