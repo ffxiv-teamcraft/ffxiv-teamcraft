@@ -3,12 +3,13 @@ import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { buffer, debounceTime, map, tap } from 'rxjs/operators';
 import { DataReporter } from './data-reporter';
 import { Injectable } from "@angular/core";
+import { ActorControl, DesynthOrReductionResult } from '../../model/pcap';
 
 @Injectable()
 export class DesynthResultReporter implements DataReporter {
 
-  getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const desynthResult$ = packets$.pipe(
+  getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {
+    const desynthResult$ = packets$.pipe<DesynthOrReductionResult>(
       ofPacketSubType('desynthOrReductionResult')
     );
 

@@ -11,5 +11,8 @@ export interface BasePacket {
   segmentType: number;
   data?: Uint8Array;
 
+  sourceActorSessionID: number;
+  targetActorSessionID: number;
+
   [property: string]: any;
 }

@@ -2,11 +2,11 @@ import { OperatorFunction } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { BasePacket } from '../../model/pcap/BasePacket';
 
-export function ofPacketType(
+export function ofPacketType<R extends BasePacket>(
   type: string,
   subType?: string
-): OperatorFunction<any, any> {
-  return filter((packet: BasePacket) => {
+): OperatorFunction<BasePacket, R> {
+  return filter<R>((packet: BasePacket) => {
       let matches = type === packet.type;
       if (packet.superType) {
         matches = matches || type === packet.superType;

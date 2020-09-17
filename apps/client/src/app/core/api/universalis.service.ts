@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BasePacket } from '../../model/pcap/BasePacket';
 import { MarketboardItem } from './market/marketboard-item';
 import { combineLatest, Observable, of } from 'rxjs';
 import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
@@ -9,6 +8,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import * as _ from 'lodash';
+import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '../../model/pcap';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -159,7 +159,7 @@ export class UniversalisService {
     });
   }
 
-  public handleMarketboardSearchResult(packet: BasePacket): void {
+  public handleMarketboardSearchResult(packet: MarketBoardSearchResult): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -182,7 +182,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingPackets(packets: BasePacket[]): void {
+  public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -225,7 +225,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingHistory(packet: BasePacket): void {
+  public handleMarketboardListingHistory(packet: MarketBoardItemListingHistory): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -251,7 +251,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public uploadMarketTaxRates(packet: BasePacket): void {
+  public uploadMarketTaxRates(packet: MarketTaxRates): void {
     /**
      * Doing some light client-side validation is less work than going
      * around and versioning to block this packet. This isn't retroactive,
@@ -289,7 +289,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public uploadCid(packet: BasePacket): void {
+  public uploadCid(packet: PlayerSetup): void {
     const data = {
       contentID: packet.contentID,
       characterName: packet.name
