@@ -1,11 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **list:** fixed inventory fill not taking hq flag into account.
-* do not display map in alarms with no mapId.
+* **crafting-replay:** offline replays can now be saved properly.
+* **crafting-replays:** fixed an issue with careful synthesis not handled properly.
+* **perf:** better database reading operations optimization.
 
 
 ### Features
 
-* **desktop:** support for CN 5.25 packet capture.
-* new crafting replays system.
-* **data:** update for cn patch-5.25.`;
+* **core:** fishing spot ui fixes and i18n data enhancement.`;
