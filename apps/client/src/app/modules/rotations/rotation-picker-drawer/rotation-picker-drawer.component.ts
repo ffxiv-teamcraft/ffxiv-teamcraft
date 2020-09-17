@@ -43,6 +43,7 @@ export class RotationPickerDrawerComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private authFacade: AuthFacade,
               private rotationFoldersFacade: RotationFoldersFacade, public ref: NzDrawerRef<CraftingRotation>) {
+    this.rotationsFacade.loadMyRotations();
 
     this.rotationFoldersDisplay$ = combineLatest([this.rotationFoldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$, this.query$]).pipe(
       map(([folders, rotations, query]) => {

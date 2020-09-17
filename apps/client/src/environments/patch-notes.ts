@@ -8,4 +8,4 @@ export const patchNotes = `### Bug Fixes
 
 * **desktop:** support for CN 5.25 packet capture.
 * new crafting replays system.
-* **data:** update for cn patch-5.25.`;
+* **data:** update for cn patch-5.25.`;

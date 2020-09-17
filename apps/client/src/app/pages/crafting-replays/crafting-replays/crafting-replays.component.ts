@@ -56,6 +56,7 @@ export class CraftingReplaysComponent {
               public translate: TranslateService, private ipc: IpcService, public platform: PlatformService, private foldersFacade: FoldersFacade,
               private authFacade: AuthFacade) {
     this.foldersFacade.loadFolders(FolderContentType.CRAFTING_REPLAY);
+    this.craftingReplayFacade.loadAll();
   }
 
   newFolder(): void {

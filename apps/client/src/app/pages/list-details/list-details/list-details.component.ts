@@ -172,6 +172,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     super.ngOnInit();
     this.layoutsFacade.loadAll();
     this.teamsFacade.loadMyTeams();
+    this.layoutsFacade.loadAll();
     this.activatedRoute.paramMap
       .pipe(
         map(params => params.get('listId')),

@@ -524,16 +524,7 @@ export class AppComponent implements OnInit {
       this.loggedIn$ = this.authFacade.loggedIn$;
       this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
       this.notificationsFacade.loadAll();
-      this.listsFacade.loadMyLists();
-      this.workshopsFacade.loadMyWorkshops();
-      this.listsFacade.loadListsWithWriteAccess();
-      this.workshopsFacade.loadWorkshopsWithWriteAccess();
-      this.teamsFacade.loadMyTeams();
-      this.rotationsFacade.loadMyRotations();
       this.customLinksFacade.loadMyCustomLinks();
-      this.layoutsFacade.loadAll();
-      this.customItemsFacade.loadAll();
-      this.craftingReplayFacade.loadAll();
 
       let increasedPageViews = false;
 

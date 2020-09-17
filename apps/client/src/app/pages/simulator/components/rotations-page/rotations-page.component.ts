@@ -24,6 +24,7 @@ export class RotationsPageComponent {
 
   constructor(private rotationsFacade: RotationsFacade, private dialog: NzModalService, private translate: TranslateService,
               private foldersFacade: RotationFoldersFacade) {
+    this.rotationsFacade.loadMyRotations();
     this.rotationFoldersDisplay$ = combineLatest([this.foldersFacade.myRotationFolders$, this.rotationsFacade.myRotations$]).pipe(
       tap(([folders, rotations]) => {
         const fixedFolders = folders
