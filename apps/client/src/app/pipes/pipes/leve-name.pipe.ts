@@ -1,17 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { I18nName } from '../../model/common/i18n-name';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
+import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
+import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 
 @Pipe({
-  name: 'leveName'
+  name: 'leveName',
 })
 export class LeveNamePipe implements PipeTransform {
+  constructor(private l12n: LocalizedLazyDataService) {}
 
-  constructor(private l12n: LocalizedDataService) {
-  }
-
-  transform(id: number): I18nName {
+  transform(id: number): I18nNameLazy {
     return this.l12n.getLeve(id);
   }
-
 }

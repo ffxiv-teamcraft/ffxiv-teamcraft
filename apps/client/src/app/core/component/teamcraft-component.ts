@@ -6,5 +6,6 @@ export abstract class TeamcraftComponent implements OnDestroy {
 
   ngOnDestroy(): void {
     this.onDestroy$.next();
+    this.onDestroy$.complete();
   }
 }

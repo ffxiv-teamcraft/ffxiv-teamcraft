@@ -29,7 +29,7 @@
     <div class="details-block" [class.loading]="loading$ | async">
       <div class="detail-name">
         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-          <img src="{{ 761 | statusIcon | xivapiIcon }}" alt="" />
+          <img [src]="761 | statusIcon | xivapiIcon" alt="" />
           <span>{{ 761 | statusName | i18n }}</span>
         </div>
       </div>
@@ -40,7 +40,7 @@
     <div class="details-block" [class.loading]="loading$ | async">
       <div class="detail-name">
         <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-          <img src="{{ 762 | statusIcon | xivapiIcon }}" alt="" />
+          <img [src]="762 | statusIcon | xivapiIcon" alt="" />
           <span>{{ 762 | statusName | i18n }}</span>
         </div>
       </div>

@@ -1,21 +1,22 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { I18nName } from '../../../model/common/i18n-name';
+import { I18nNameLazy } from '../../../model/common/i18n-name-lazy';
 
 @Component({
   selector: 'app-i18n-display',
   templateUrl: './i18n-display.component.html',
   styleUrls: ['./i18n-display.component.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class I18nDisplayComponent implements OnChanges {
-
   /**
    * I18nName to display
    */
   @Input()
-  value: I18nName;
+  value: I18nName | I18nNameLazy;
 
-  languages = []
+  languages = [];
 
   ngOnChanges(changes) {
     if (changes.value) {
@@ -31,9 +32,9 @@ export class I18nDisplayComponent implements OnChanges {
     }
   }
 
-  getValue({ key }) {
-    if (!this.value) return '';
-    return this.value[key] || '';
+  getValue({ key }): Observable<string> {
+    if (!this.value || !this.value[key]) return of('');
+    return typeof this.value[key] === 'string' ? of(this.value[key]) : this.value[key];
   }
 
   isExists({ key }) {

@@ -120,6 +120,10 @@ export class LocalizedLazyDataService {
     return this.getRow('places', id);
   }
 
+  public getJobCategory(id: number): I18nNameLazy {
+    return this.getRow('jobCategories', id);
+  }
+
   public getFate(id: number): Observable<I18nLazy<Fate>> {
     return this.lazyDataProvider.getLazyData('fates').pipe(
       map((fates) => {
@@ -195,26 +199,37 @@ export class LocalizedLazyDataService {
     return this.getRow('ventures', id);
   }
 
-  public getQuest(id: number): Observable<I18nLazy<Quest>> {
+  public getQuestName(id: number): I18nNameLazy {
     const { ruKey, koKey, zhKey } = this.guessExtendedLanguageKeys('quests');
+    const en = this.getResolver('quests', `${id}.name`, 'en');
+    return {
+      en,
+      de: this.getResolver('quests', `${id}.name`, 'de'),
+      fr: this.getResolver('quests', `${id}.name`, 'fr'),
+      ja: this.getResolver('quests', `${id}.name`, 'ja'),
+      ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+    };
+  }
+
+  public getQuest(id: number): Observable<I18nLazy<Quest>> {
     return this.lazyDataProvider.getLazyData('quests').pipe(
       map((quests) => {
-        const quest = quests[id];
-        const en = of(quest?.name?.en);
         return {
-          ...quest,
-          name: {
-            en,
-            de: of(quest?.name?.de),
-            ja: of(quest?.name?.ja),
-            fr: of(quest?.name?.fr),
-            ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((res) => (res ? of(res) : en))) : en,
-            ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((res) => (res ? of(res) : en))) : en,
-            zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((res) => (res ? of(res) : en))) : en,
-          },
+          ...quests[id],
+          name: this.getQuestName(id),
         };
       })
     );
+  }
+
+  public getTraitIcon(id: number): Observable<string> {
+    return this.lazyDataProvider.getLazyData('traits').pipe(map((all) => all[id]?.icon));
+  }
+
+  public getTraitName(id: number): I18nNameLazy {
+    return this.getRow('traits', id);
   }
 
   public getTrait(id: number): Observable<I18nLazy<Trait>> {
@@ -286,7 +301,18 @@ export class LocalizedLazyDataService {
   }
 
   public getWeather(id: number): I18nNameLazy {
-    return this.getRow('weathers', `${id}.name`);
+    const { koKey, ruKey, zhKey } = this.guessExtendedLanguageKeys('weathers');
+    const accessor = `${id}.name`;
+    const en = this.getResolver('weathers', accessor, 'en');
+    return {
+      en,
+      de: this.getResolver('weathers', accessor, 'de'),
+      fr: this.getResolver('weathers', accessor, 'fr'),
+      ja: this.getResolver('weathers', accessor, 'ja'),
+      ko: !koKey ? en : this.getResolver(koKey, id, 'ko').pipe(switchMap((p) => (p ? of(p) : en))),
+      ru: !ruKey ? en : this.getResolver(ruKey, id, 'ru').pipe(switchMap((p) => (p ? of(p) : en))),
+      zh: !zhKey ? en : this.getResolver(zhKey, id, 'zh').pipe(switchMap((p) => (p ? of(p) : en))),
+    };
   }
 
   public getWeatherId(name: string): Observable<number> {
@@ -301,7 +327,7 @@ export class LocalizedLazyDataService {
     return this.getRow('freeCompanyActions', id);
   }
 
-  private getMapId(name: string): number {
+  public getMapId(name: string): number {
     const result = mapIds.find((m) => m.name === name);
     if (result === undefined) {
       if (name === 'Gridania') {
@@ -317,6 +343,159 @@ export class LocalizedLazyDataService {
       return -1;
     }
     return result.id;
+  }
+
+  public getCraftingActionIdByName(name: string, lang: Language): Observable<number> {
+    const { craftActions, actions } =
+      lang === 'ko'
+        ? {
+            craftActions: this.lazyDataProvider.getLazyData('koCraftActions'),
+            actions: this.lazyDataProvider.getLazyData('koActions'),
+          }
+        : lang === 'zh'
+        ? {
+            craftActions: this.lazyDataProvider.getLazyData('zhCraftActions'),
+            actions: this.lazyDataProvider.getLazyData('zhActions'),
+          }
+        : {
+            craftActions: this.lazyDataProvider.getLazyData('craftActions'),
+            actions: this.lazyDataProvider.getLazyData('actions'),
+          };
+    return craftActions.pipe(
+      map(this.getIndexByName(name, lang, true)),
+      switchMap((res) => (res !== -1 ? of(res) : actions.pipe(map(this.getIndexByName(name, lang, true)))))
+    );
+  }
+
+  public getCraftingActionByName(name: string, lang: Language): I18nNameLazy {
+    const resolver = (l: Language): Observable<string> => {
+      return this.getCraftingActionIdByName(name, lang).pipe(
+        switchMap((id) => {
+          const craftAction = this.getRow('craftActions', id);
+          const action = this.getRow('actions', id);
+          return craftAction[l].pipe(switchMap((act) => (act ? of(act) : action[l])));
+        })
+      );
+    };
+
+    return {
+      en: resolver('en'),
+      de: resolver('de'),
+      fr: resolver('fr'),
+      ja: resolver('ja'),
+      ko: resolver('ko'),
+      ru: resolver('ru'),
+      zh: resolver('zh'),
+    };
+  }
+
+  public getAction(id: number): I18nNameLazy {
+    const craftAction = this.getRow('craftActions', id);
+    const action = this.getRow('actions', id);
+    return Object.entries(craftAction).reduce((acc, [lang, val]: [Language, Observable<string | undefined>]) => {
+      return { ...acc, [lang]: val.pipe(switchMap((v) => (v ? of(v) : action[lang]))) };
+    }, {} as I18nNameLazy);
+  }
+
+  public getStatus(id: number): I18nNameLazy {
+    return this.getRow('statuses', id);
+  }
+
+  public getStatusIcon(id: number): Observable<string> {
+    return this.lazyDataProvider.getLazyData('statuses').pipe(map((statuses) => statuses[id]?.icon));
+  }
+
+  public getNotebookDivisionName(id: number): I18nNameLazy {
+    const { ruKey, koKey, zhKey } = this.guessExtendedLanguageKeys('notebookDivision');
+    const en = this.getResolver('notebookDivision', `${id}.name`, 'en');
+    return {
+      en,
+      de: this.getResolver('notebookDivision', `${id}.name`, 'de'),
+      fr: this.getResolver('notebookDivision', `${id}.name`, 'fr'),
+      ja: this.getResolver('notebookDivision', `${id}.name`, 'ja'),
+      ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+    };
+  }
+
+  public getNotebookDivision(id: number): Observable<{ name: I18nNameLazy; pages: number[] }> {
+    return this.lazyDataProvider.getLazyData('notebookDivision').pipe(
+      map((divisions) => {
+        return {
+          ...divisions[id],
+          name: this.getNotebookDivisionName(id),
+        };
+      })
+    );
+  }
+
+  public getNotebookDivisionCategoryName(id: number): I18nNameLazy {
+    const { ruKey, koKey, zhKey } = this.guessExtendedLanguageKeys('notebookDivisionCategory');
+    const en = this.getResolver('notebookDivisionCategory', `${id}.name`, 'en');
+    return {
+      en,
+      de: this.getResolver('notebookDivisionCategory', `${id}.name`, 'de'),
+      fr: this.getResolver('notebookDivisionCategory', `${id}.name`, 'fr'),
+      ja: this.getResolver('notebookDivisionCategory', `${id}.name`, 'ja'),
+      ko: koKey ? this.getResolver(koKey, id, 'ko').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      ru: ruKey ? this.getResolver(ruKey, id, 'ru').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+      zh: zhKey ? this.getResolver(zhKey, id, 'zh').pipe(switchMap((s) => (s ? of(s) : en))) : en,
+    };
+  }
+
+  public getNotebookDivisionCategory(id: number): Observable<{ name: I18nNameLazy; pages: number[] }> {
+    return this.lazyDataProvider.getLazyData('notebookDivisionCategory').pipe(
+      map((cat) => {
+        return {
+          ...cat[id],
+          name: this.getNotebookDivisionCategoryName(id),
+        };
+      })
+    );
+  }
+
+  // TODO:
+  // public getExpansions(): { exVersion: number; majorVersion: number; name: I18nName }[] {
+  //   return Object.entries(this.lazyData.data.exVersions).map(([exVersion, name]) => {
+  //     this.tryFillExtendedLanguage(name as I18nName, exVersion, { zhKey: 'zhExVersions', koKey: 'koExVersions' });
+  //     const exVersionNum = +exVersion;
+  //     return {
+  //       exVersion: exVersionNum,
+  //       majorVersion: exVersionNum + 2, // Not sure if this is guaranteed
+  //       name: name as I18nName,
+  //     };
+  //   });
+  // }
+
+  public getCollectablesShopItemGroup(id: number): I18nNameLazy {
+    return this.getRow('collectablesShopItemGroup', id);
+  }
+
+  // TODO:
+  // public i18nToXivapi(value: I18nName, fieldName = 'Name') {
+  //   return {
+  //     [`${fieldName}_en`]: value.en,
+  //     [`${fieldName}_fr`]: value.fr,
+  //     [`${fieldName}_de`]: value.de,
+  //     [`${fieldName}_ja`]: value.ja,
+  //     [`${fieldName}_ko`]: value.ko || value.en,
+  //     [`${fieldName}_chs`]: value.zh || value.en,
+  //   };
+  // }
+
+  public xivapiToI18n(value: any, key?: LazyDataKey, fieldName = 'Name'): I18nNameLazy {
+    const { ruKey, zhKey, koKey } = this.guessExtendedLanguageKeys(key);
+    const en = of(value[`${fieldName}_en`]);
+    return {
+      en: of(value[`${fieldName}_en`]),
+      fr: of(value[`${fieldName}_fr`]),
+      de: of(value[`${fieldName}_de`]),
+      ja: of(value[`${fieldName}_ja`]),
+      ko: of(value[`${fieldName}_ko`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(koKey, key, value.ID, 'ko') : en))),
+      zh: of(value[`${fieldName}_chs`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(zhKey, key, value.ID, 'zh') : en))),
+      ru: of(value[`${fieldName}_ru`]).pipe(switchMap((i) => (!!i ? of(i) : key ? this.getFallbackResolver(ruKey, key, value.ID, 'ru') : en))),
+    };
   }
 
   /**

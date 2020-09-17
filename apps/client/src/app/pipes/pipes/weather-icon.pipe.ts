@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'weatherIcon'
+  name: 'weatherIcon',
 })
 export class WeatherIconPipe implements PipeTransform {
-
-  transform(id: number): string {
+  transform(id: number): string | undefined {
+    if (isNaN(+id)) return undefined;
     const icon = this.getWeatherIcon(id);
-    return `./assets/icons/weather/0602${icon < 10 ? '0' + icon.toString() : icon}.png`;
+    return `./assets/icons/weather/0602${icon.toString().padStart(2, '0')}.png`;
   }
 
   private getWeatherIcon(id: number): number {
@@ -219,5 +219,4 @@ export class WeatherIconPipe implements PipeTransform {
         return 1;
     }
   }
-
 }

@@ -1,6 +1,6 @@
 export type LazyDataKey = keyof LazyData;
 
-  export interface LazyData { 
+export interface LazyData {
   achievementIcons: any;
   achievements: any;
   actionCdGroups: any;
@@ -46,6 +46,7 @@ export type LazyDataKey = keyof LazyData;
   itemStats: any;
   items: any;
   jobAbbr: any;
+  jobCategories: any;
   jobName: any;
   leves: any;
   maps: any;

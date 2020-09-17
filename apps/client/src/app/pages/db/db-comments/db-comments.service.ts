@@ -8,29 +8,32 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DbCommentsService extends FirestoreStorage<DbComment> {
-
-  protected constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-                        protected pendingChangesService: PendingChangesService) {
+  protected constructor(
+    protected firestore: AngularFirestore,
+    protected serializer: NgSerializerService,
+    protected zone: NgZone,
+    protected pendingChangesService: PendingChangesService
+  ) {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
   public getComments(resourceId: string): Observable<DbComment[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('resourceId', '==', resourceId))
+    return this.firestore
+      .collection(this.getBaseUri(), (ref) => ref.where('resourceId', '==', resourceId))
       .snapshotChanges()
       .pipe(
         map((snaps: DocumentChangeAction<DbComment>[]) => {
-          const comments = snaps
-            .map((snap: DocumentChangeAction<any>) => {
-              const valueWithKey: DbComment = <DbComment>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
-              delete snap.payload;
-              return valueWithKey;
-            });
+          const comments = snaps.map((snap: DocumentChangeAction<any>) => {
+            const valueWithKey: DbComment = <DbComment>{ ...snap.payload.doc.data(), $key: snap.payload.doc.id };
+            delete snap.payload;
+            return valueWithKey;
+          });
           return this.serializer.deserialize<DbComment>(comments, [this.getClass()]);
         }),
-        map(comments => {
+        map((comments) => {
           // Map comments array to a tree with replies etc
           return comments
             .sort((a, b) => {
@@ -58,11 +61,18 @@ export class DbCommentsService extends FirestoreStorage<DbComment> {
   }
 
   private getCommentById(tree: DbComment[], key: string, occurences = 0): DbComment {
-    const finding = tree.find(c => c.$key === key);
+    const finding = tree.find((c) => c.$key === key);
     if (finding) {
       return finding;
     } else if (occurences < 10) {
-      return this.getCommentById([].concat.apply([], tree.map(c => c.replies)), key, occurences + 1);
+      return this.getCommentById(
+        [].concat.apply(
+          [],
+          tree.map((c) => c.replies)
+        ),
+        key,
+        occurences + 1
+      );
     }
     return null;
   }

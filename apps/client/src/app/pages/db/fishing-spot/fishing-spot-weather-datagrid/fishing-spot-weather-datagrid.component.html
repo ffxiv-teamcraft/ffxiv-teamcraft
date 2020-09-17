@@ -1,0 +1,16 @@
+<nz-card
+  [nzTitle]="'DB.FISHING_SPOT.Fish_per_weather' | translate"
+  class="expanded mw-300"
+  [nzLoading]="loading$ | async"
+  [class.card-with-list]="!(loading$ | async)"
+>
+  <ng-template #iconRender let-id>
+    <img [src]="id | weatherIcon" alt="" nz-tooltip [nzTooltipTitle]="id | weatherName | i18n" />
+  </ng-template>
+  <app-fishing-spot-datagrid
+    [activeFish]="activeFish"
+    (activeFishChange)="activeFishChange.next($event)"
+    [rowIconRender]="iconRender"
+    [table]="table$ | async"
+  ></app-fishing-spot-datagrid>
+</nz-card>
