@@ -241,6 +241,7 @@ export class ListsFacade {
   }
 
   newEphemeralList(itemName: string): List {
+    this.loadMyLists();
     const list = new List(this.settings);
     list.ephemeral = true;
     list.name = itemName;
