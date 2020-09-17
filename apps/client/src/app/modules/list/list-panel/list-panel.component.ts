@@ -258,22 +258,14 @@ export class ListPanelComponent extends TeamcraftComponent {
     });
   }
 
-  removeTeam(compact: List, teams: Team[]): void {
-    const team = teams.find(t => t.$key === compact.teamId);
-    this.listsFacade.allListDetails$.pipe(
-      map(details => details.find(l => l.$key === this._list.$key)),
-      filter(l => l !== undefined),
-      first(),
-      map(list => {
-        delete list.teamId;
-        return list;
-      })
-    ).subscribe(list => {
-      this.listsFacade.updateList(list, true, true);
-      if (team.webhook !== undefined) {
-        this.discordWebhookService.notifyListRemovedFromTeam(team, list);
-      }
-    });
+  removeTeam(list: List, teams: Team[]): void {
+    const team = teams.find(t => t.$key === list.teamId);
+    delete list.teamId;
+    if (team.webhook !== undefined) {
+      this.discordWebhookService.notifyListRemovedFromTeam(team, list);
+    }
+    this.listsFacade.updateList(list, true, true);
+
   }
 
   archiveList(list: List, archived: boolean): void {

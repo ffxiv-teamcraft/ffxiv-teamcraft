@@ -158,7 +158,7 @@
     </div>
     <ng-container *ngIf="layout?.showCraftableAmount && item.craftedBy.length > 0">
       <div *ngIf="item.craftableAmount">
-        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }}
+        {{'LIST_DETAILS.Amount_craftable' | translate:{ amount: item.craftableAmount } }} &nbsp;
       </div>
     </ng-container>
     <div *ngIf="layout?.showVendors && (item.vendors || []).length > 0" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
