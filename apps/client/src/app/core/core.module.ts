@@ -86,7 +86,6 @@ import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-p
     PlatformService,
     DataService,
     MathToolsService,
-    I18nToolsService,
     HtmlToolsService,
     LinkToolsService,
     DiscordWebhookService,
