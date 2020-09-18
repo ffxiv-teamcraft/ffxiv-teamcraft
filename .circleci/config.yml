@@ -85,6 +85,7 @@ jobs:
             else
                 yarn run build:beta
             fi
+          no_output_timeout: 30m
       - persist_to_workspace:
           root: ~/
           paths:
