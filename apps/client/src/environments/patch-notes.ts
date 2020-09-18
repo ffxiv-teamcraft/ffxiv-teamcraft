@@ -1,11 +1,16 @@
 export const patchNotes = `### Bug Fixes
 
-* **crafting-replay:** offline replays can now be saved properly.
-* **crafting-replays:** fixed an issue with careful synthesis not handled properly.
-* **perf:** better database reading operations optimization.
-* **community-lists:** fixed an issue with community lists not copied properly.
+* **community-lists:** fixed community lists content not showing.
+* **list:** fixed an issue with ephemeral lists not being created properly.
+* **list:** fixed zone breakdown rows not showing item name.
+* **list-overlay:** fixed list panel overlay not using selected layout.
+* **profile:** fixed an issue with profile not loading properly.
+* **recipe-picker:** fixed result names always showing in english.
+* **rotations:** fixed loading screen not showing properly.
+* **simulator:** fixed a bug with simulator not opening properly.
+* **teams:** fixed team detach from lists page.
 
 
 ### Features
 
-* **core:** fishing spot ui fixes and i18n data enhancement.`;
+* **patreon:** new supporter: Coss Collaborative..`;
