@@ -16,12 +16,12 @@ import { ofPacketType } from '../rxjs/of-packet-type';
 import { territories } from '../data/sources/territories';
 import { debounceBufferTime } from '../rxjs/debounce-buffer-time';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
-import * as firebase from 'firebase/app';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
+import { ActorControl, EffectResult, FishingBaitMsg, InitZone, PlayerSetup, UpdateClassInfo, WeatherChange } from '../../model/pcap';
 
 @Injectable({
   providedIn: 'root'
@@ -266,7 +266,7 @@ export class MachinaService {
 
     combineLatest([
       this.ipc.packets$.pipe(
-        ofPacketType('initZone')
+        ofPacketType<InitZone>('initZone')
       ),
       this.lazyData.data$
     ]).subscribe(([packet, data]) => {
@@ -277,53 +277,53 @@ export class MachinaService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('weatherChange')
+      ofPacketType<WeatherChange>('weatherChange')
     ).subscribe(packet => {
       this.eorzeaFacade.setPcapWeather(packet.weatherID);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketSubType('fishingBaitMsg')
+      ofPacketSubType<FishingBaitMsg>('fishingBaitMsg')
     ).subscribe(packet => {
       this.eorzeaFacade.setBait(packet.baitID);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketSubType('playerSetup')
+      ofPacketType<PlayerSetup>('playerSetup')
     ).subscribe(packet => {
       this.eorzeaFacade.setBait(packet.useBaitCatalogId);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketSubType('statusEffectLose'),
+      ofPacketSubType<ActorControl>('statusEffectLose'),
       filter(packet => packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('actorControl'),
+      ofPacketType<ActorControl>('actorControl'),
       filter(packet => packet.category === 21 && packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
       this.eorzeaFacade.removeStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('updateClassInfo'),
+      ofPacketType<UpdateClassInfo>('updateClassInfo'),
       distinctUntilChanged((a, b) => a.classId === b.classId)
     ).subscribe(packet => {
       this.eorzeaFacade.resetStatuses();
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('actorControl'),
+      ofPacketType<ActorControl>('actorControl'),
       filter(packet => packet.category === 20 && packet.sourceActorSessionID === packet.targetActorSessionID)
     ).subscribe(packet => {
       this.eorzeaFacade.addStatus(packet.param1);
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType('effectResult'),
+      ofPacketType<EffectResult>('effectResult'),
       filter(packet => {
         return packet.sourceActorSessionID === packet.targetActorSessionID;
       })
