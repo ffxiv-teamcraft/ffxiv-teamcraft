@@ -7,7 +7,8 @@ import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
-import { getInt32 } from 'node-machina-ffxiv/models/_MachinaModels';
+import * as pcap from '../../model/pcap';
+import { PlayerSpawn } from '../../model/pcap';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -24,103 +25,103 @@ export class IpcService {
     return this._ipc !== undefined;
   }
 
-  public get itemInfoPackets$(): Observable<any> {
+  public get itemInfoPackets$(): Observable<pcap.ItemInfo> {
     return this.packets$.pipe(ofPacketType('itemInfo'));
   }
 
-  public get updateInventorySlotPackets$(): Observable<any> {
+  public get updateInventorySlotPackets$(): Observable<pcap.UpdateInventorySlot> {
     return this.packets$.pipe(ofPacketType('updateInventorySlot'));
   }
 
-  public get inventoryTransactionPackets$(): Observable<any> {
+  public get inventoryTransactionPackets$(): Observable<pcap.InventoryTransaction> {
     return this.packets$.pipe(ofPacketType('inventoryTransaction'));
   }
 
-  public get cid$(): Observable<any> {
+  public get cid$(): Observable<pcap.PlayerSetup> {
     return this.packets$.pipe(ofPacketType('playerSetup'));
   }
 
-  public get worldId$(): Observable<any> {
-    return this.packets$.pipe(ofPacketType('playerSpawn'), map(packet => packet.currentWorldId));
+  public get worldId$(): Observable<number> {
+    return this.packets$.pipe(ofPacketType<PlayerSpawn>('playerSpawn'), map(packet => packet.currentWorldId));
   }
 
-  public get marketTaxRatePackets$(): Observable<any> {
+  public get marketTaxRatePackets$(): Observable<pcap.MarketTaxRates> {
     return this.packets$.pipe(ofPacketType('marketTaxRates'));
   }
 
-  public get marketBoardSearchResult$(): Observable<any> {
+  public get marketBoardSearchResult$(): Observable<pcap.MarketBoardSearchResult> {
     return this.packets$.pipe(ofPacketType('marketBoardSearchResult'));
   }
 
-  public get marketboardListingCount$(): Observable<any> {
+  public get marketboardListingCount$(): Observable<pcap.MarketBoardItemListingCount> {
     return this.packets$.pipe(ofPacketType('marketBoardItemListingCount'));
   }
 
-  public get marketboardListing$(): Observable<any> {
+  public get marketboardListing$(): Observable<pcap.MarketBoardItemListing> {
     return this.packets$.pipe(ofPacketType('marketBoardItemListing'));
   }
 
-  public get marketboardListingHistory$(): Observable<any> {
+  public get marketboardListingHistory$(): Observable<pcap.MarketBoardItemListingHistory> {
     return this.packets$.pipe(ofPacketType('marketBoardItemListingHistory'));
   }
 
-  public get inventoryModifyHandlerPackets$(): Observable<any> {
+  public get inventoryModifyHandlerPackets$(): Observable<pcap.InventoryModifyHandler> {
     return this.packets$.pipe(ofPacketType('inventoryModifyHandler'));
   }
 
-  public get npcSpawnPackets$(): Observable<any> {
+  public get npcSpawnPackets$(): Observable<pcap.NpcSpawn> {
     return this.packets$.pipe(ofPacketType('npcSpawn'));
   }
 
-  public get objectSpawnPackets$(): Observable<any> {
+  public get objectSpawnPackets$(): Observable<pcap.ObjectSpawn> {
     return this.packets$.pipe(ofPacketType('objectSpawn'));
   }
 
-  public get retainerInformationPackets$(): Observable<any> {
+  public get retainerInformationPackets$(): Observable<pcap.RetainerInformation> {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
   }
 
-  public get updatePositionHandlerPackets$(): Observable<any> {
+  public get updatePositionHandlerPackets$(): Observable<pcap.UpdatePositionHandler> {
     return this.packets$.pipe(ofPacketType('updatePositionHandler'));
   }
 
-  public get updatePositionInstancePackets$(): Observable<any> {
+  public get updatePositionInstancePackets$(): Observable<pcap.UpdatePositionInstance> {
     return this.packets$.pipe(ofPacketType('updatePositionInstance'));
   }
 
-  public get initZonePackets$(): Observable<any> {
+  public get initZonePackets$(): Observable<pcap.InitZone> {
     return this.packets$.pipe(ofPacketType('initZone'));
   }
 
-  public get playerStatsPackets$(): Observable<any> {
+  public get playerStatsPackets$(): Observable<pcap.PlayerStats> {
     return this.packets$.pipe(ofPacketType('playerStats'));
   }
 
-  public get updateClassInfoPackets$(): Observable<any> {
+  public get updateClassInfoPackets$(): Observable<pcap.UpdateClassInfo> {
     return this.packets$.pipe(ofPacketType('updateClassInfo'));
   }
 
-  public get currencyCrystalInfoPackets$(): Observable<any> {
+  public get currencyCrystalInfoPackets$(): Observable<pcap.CurrencyCrystalInfo> {
     return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
   }
 
-  public get actorControlPackets$(): Observable<any> {
+  public get actorControlPackets$(): Observable<pcap.ActorControl> {
     return this.packets$.pipe(ofPacketType('actorControl'));
   }
 
-  public get prepareZoningPackets$(): Observable<any> {
+  public get prepareZoningPackets$(): Observable<pcap.PrepareZoning> {
     return this.packets$.pipe(ofPacketType('prepareZoning'));
   }
 
-  public get eventPlay4Packets$(): Observable<any> {
+  public get eventPlay4Packets$(): Observable<pcap.EventPlay4> {
     return this.packets$.pipe(ofPacketType('eventPlay4'));
   }
 
-  public get eventPlay32Packets$(): Observable<any> {
+  public get eventPlay32Packets$(): Observable<pcap.EventPlay32> {
     return this.packets$.pipe(ofPacketType('eventPlay32'));
   }
 
-  public packets$: Subject<any> = new Subject<any>();
+  public packets$: Subject<pcap.BasePacket> = new Subject<pcap.BasePacket>();
 
   public machinaToggle: boolean;
 
@@ -206,7 +207,7 @@ export class IpcService {
       this.machinaToggle = value;
     });
     this.send('toggle-machina:get');
-    this.on('packet', (event, packet: any) => {
+    this.on('packet', (event, packet: pcap.BasePacket) => {
       this.handlePacket(packet);
     });
     this.on('navigate', (event, url: string) => {
@@ -253,7 +254,7 @@ export class IpcService {
     }
   }
 
-  private handlePacket(packet: any): void {
+  private handlePacket(packet: pcap.BasePacket): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     if (!this.overlayUri) {
       this.packets$.next(packet);

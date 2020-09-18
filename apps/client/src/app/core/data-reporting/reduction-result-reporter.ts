@@ -2,11 +2,12 @@ import { Observable } from 'rxjs';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
 import { map } from 'rxjs/operators';
+import { AetherReductionDlg, ActorControl } from '../../model/pcap';
 
 export class ReductionResultReporter implements DataReporter {
 
-  getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const reductionResults$ = packets$.pipe(
+  getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {
+    const reductionResults$ = packets$.pipe<AetherReductionDlg>(
       ofPacketSubType('aetherReductionDlg')
     );
 

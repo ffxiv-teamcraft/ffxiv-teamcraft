@@ -249,6 +249,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
               private rotationTipsService: RotationTipsService, public dirtyFacade: DirtyFacade, private cd: ChangeDetectorRef,
               private ipc: IpcService, public platformService: PlatformService, private simulationService: SimulationService,
               private lazyData: LazyDataService) {
+    this.rotationsFacade.loadMyRotations();
     this.rotationsFacade.rotationCreated$.pipe(
       takeUntil(this.onDestroy$),
       filter(key => key !== undefined)

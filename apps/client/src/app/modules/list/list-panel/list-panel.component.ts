@@ -59,13 +59,27 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   public user$ = this.authFacade.user$;
 
-  public listTemplate$: Observable<ListTemplate>;
+  public listTemplate$: Observable<ListTemplate> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
+    map(([links, list]) => {
+      return <ListTemplate>links.find(link => {
+        return link.type === 'template' && (<ListTemplate>link).originalListId === list.$key;
+      });
+    })
+  );
 
-  public customLink$: Observable<CustomLink>;
+  public customLink$: Observable<CustomLink> = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
+    map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
+    tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
+    shareReplay(1)
+  );
 
-  public teams$: Observable<Team[]>;
+  public teams$: Observable<Team[]> = this.teamsFacade.myTeams$;
 
-  public listContent$: Observable<ListRow[]>;
+  public listContent$: Observable<ListRow[]> = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
+    map(([list, layout]) => {
+      return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
+    })
+  );
 
   private syncLinkUrl: string;
 
@@ -87,7 +101,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     })
   );
 
-  permissionLevel$: Observable<PermissionLevel> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
+  permissionLevel$: Observable<{value: PermissionLevel}> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
     switchMap(([teams, loggedIn]) => {
       return combineLatest([
         this.authFacade.userId$,
@@ -121,6 +135,11 @@ export class ListPanelComponent extends TeamcraftComponent {
         distinctUntilChanged(),
         shareReplay(1)
       );
+    }),
+    map(level => {
+      return {
+        value: level
+      }
     })
   );
 
@@ -132,27 +151,6 @@ export class ListPanelComponent extends TeamcraftComponent {
               private router: Router, private layoutsFacade: LayoutsFacade, private layoutOrderService: LayoutOrderService,
               private cd: ChangeDetectorRef, public settings: SettingsService) {
     super();
-    this.customLink$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
-      map(([links, list]) => links.find(link => link.redirectTo === `list/${list.$key}`)),
-      tap(link => link !== undefined ? this.syncLinkUrl = link.getUrl() : null),
-      shareReplay(1)
-    );
-
-    this.teams$ = this.teamsFacade.myTeams$;
-
-    this.listTemplate$ = combineLatest([this.customLinksFacade.myCustomLinks$, this.list$]).pipe(
-      map(([links, list]) => {
-        return <ListTemplate>links.find(link => {
-          return link.type === 'template' && (<ListTemplate>link).originalListId === list.$key;
-        });
-      })
-    );
-
-    this.listContent$ = combineLatest([this.list$, this.layoutsFacade.selectedLayout$]).pipe(
-      map(([list, layout]) => {
-        return this.layoutOrderService.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder);
-      })
-    );
   }
 
   public outDated(): boolean {
@@ -258,22 +256,14 @@ export class ListPanelComponent extends TeamcraftComponent {
     });
   }
 
-  removeTeam(compact: List, teams: Team[]): void {
-    const team = teams.find(t => t.$key === compact.teamId);
-    this.listsFacade.allListDetails$.pipe(
-      map(details => details.find(l => l.$key === this._list.$key)),
-      filter(l => l !== undefined),
-      first(),
-      map(list => {
-        delete list.teamId;
-        return list;
-      })
-    ).subscribe(list => {
-      this.listsFacade.updateList(list, true, true);
-      if (team.webhook !== undefined) {
-        this.discordWebhookService.notifyListRemovedFromTeam(team, list);
-      }
-    });
+  removeTeam(list: List, teams: Team[]): void {
+    const team = teams.find(t => t.$key === list.teamId);
+    delete list.teamId;
+    if (team.webhook !== undefined) {
+      this.discordWebhookService.notifyListRemovedFromTeam(team, list);
+    }
+    this.listsFacade.updateList(list, true, true);
+
   }
 
   archiveList(list: List, archived: boolean): void {

@@ -6,6 +6,8 @@ import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { debounceTime, first, map, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
+import { TeamsFacade } from '../../../modules/teams/+state/teams.facade';
+import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 
 @Component({
   selector: 'app-community-lists',
@@ -35,7 +37,10 @@ export class CommunityListsComponent implements OnDestroy {
   filteredLists$: Observable<List[]>;
 
   constructor(private listsFacade: ListsFacade, private listService: FirestoreListStorage,
+              private teamsFacade: TeamsFacade, private layoutsFacade: LayoutsFacade,
               route: ActivatedRoute, router: Router) {
+    this.teamsFacade.loadMyTeams();
+    this.layoutsFacade.loadAll();
     this.tags = Object.keys(ListTag).map(key => {
       return {
         value: key,

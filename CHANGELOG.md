@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.2"></a>
+## [7.4.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.1...v7.4.2) (2020-09-18)
+
+
+### Bug Fixes
+
+* **community-lists:** fixed community lists content not showing ([53b7041](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53b7041))
+* **list:** fixed an issue with ephemeral lists not being created properly ([b5b684b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5b684b))
+* **list:** fixed zone breakdown rows not showing item name ([6090ec9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6090ec9))
+* **list-overlay:** fixed list panel overlay not using selected layout ([6a1d123](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a1d123))
+* **profile:** fixed an issue with profile not loading properly ([8f53d28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8f53d28))
+* **recipe-picker:** fixed result names always showing in english ([b3d4048](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b3d4048))
+* **rotations:** fixed loading screen not showing properly ([c18d304](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c18d304))
+* **simulator:** fixed a bug with simulator not opening properly ([c2ecda8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c2ecda8))
+* **teams:** fixed team detach from lists page ([2a52917](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a52917))
+
+
+### Features
+
+* **patreon:** new supporter: Coss Collaborative. ([45ff045](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/45ff045))
+
+
+
 <a name="7.4.1"></a>
 ## [7.4.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.0...v7.4.1) (2020-09-17)
 

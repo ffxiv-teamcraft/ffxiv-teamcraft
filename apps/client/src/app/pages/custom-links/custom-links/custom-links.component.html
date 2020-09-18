@@ -24,7 +24,7 @@
           </button>
         </ng-template>
         <ng-template #delete>
-          <button (nzOnConfirm)="deleteLink(linkDisplay.link.$key)" [nzTitle]="'Confirmation' | translate" nz-button
+          <button (nzOnConfirm)="deleteLink(linkDisplay.link.$key)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                   nz-popconfirm
                   nzShape="circle" nzType="danger">
             <i nz-icon nzType="delete"></i>

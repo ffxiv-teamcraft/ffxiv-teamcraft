@@ -19,7 +19,7 @@
               </button>
               <div class="spacer"></div>
               <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteTeam(team)" *ngIf="team.leader === (userId$ | async)" [nzShape]="'circle'"
-                      [nzTitle]="'TEAMS.Delete_confirmation' | translate"
+                      [nzPopconfirmTitle]="'TEAMS.Delete_confirmation' | translate"
                       [nzType]="'danger'"
                       nz-button nz-popconfirm>
                 <i nz-icon nzType="delete"></i>
@@ -29,7 +29,7 @@
           <div *ngIf="(userId$ | async) === team.leader" fxLayout="column" fxLayoutGap="5px">
             <div class="team-settings" fxLayout="row" fxLayoutGap="10px">
               <button (nzOnConfirm)="clearHook(team)" *ngIf="team.webhook" nz-button
-                      nz-popconfirm [nzTitle]="'Confirmation' | translate" nzType="danger">
+                      nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" nzType="danger">
                 {{'TEAMS.Disable_discord_updates' | translate}}
               </button>
               <button (click)="discordOauth(team)" *ngIf="team.webhook === undefined" nz-button nzType="primary">
@@ -79,7 +79,7 @@
                         <div>{{'TEAMS.Invite_expires' | translate}}: {{invite.expires === undefined ? ('Never' |
                           translate) : invite.expires | date:'short'}}
                         </div>
-                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteInvite(invite)" [nzShape]="'circle'" [nzTitle]="'Confirmation' | translate"
+                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteInvite(invite)" [nzShape]="'circle'" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 [nzType]="'danger'" nz-button
                                 nz-popconfirm nzSize="small">
                           <i nz-icon nzType="delete"></i>
@@ -134,7 +134,7 @@
                         <nz-divider *ngIf="userId === team.leader && !team.notFound && !team.isOfficer(member) && member !== team.leader"
                                     nzType="vertical"></nz-divider>
                         <button (nzOnConfirm)="removeMember(team, member)" *ngIf="userId === team.leader || userId === member" [nzShape]="'circle'"
-                                [nzTitle]="'Confirmation' | translate" [nzType]="'danger'" nz-button
+                                [nzPopconfirmTitle]="'Confirmation' | translate" [nzType]="'danger'" nz-button
                                 nz-popconfirm
                                 nzSize="small">
                           <i nz-icon nzType="delete"></i>

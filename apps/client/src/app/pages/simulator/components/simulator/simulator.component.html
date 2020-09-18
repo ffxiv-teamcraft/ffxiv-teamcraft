@@ -22,7 +22,7 @@
         <i nz-icon nzType="redo"></i>
       </button>
       <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-              [nzTitle]="'SIMULATOR.Reset' | translate" nz-button nz-popconfirm nz-tooltip
+              [nzTooltipTitle]="'SIMULATOR.Reset' | translate" nz-button nz-popconfirm nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="reload"></i>
@@ -121,7 +121,7 @@
         </ng-container>
       </ng-container>
       <button (nzOnConfirm)="openOverlay(rotation)" *ngIf="platformService.isDesktop() && rotation.$key"
-              [nzShape]="'circle'" [nzTitle]="'ALARMS.Open_overlay' | translate"
+              [nzShape]="'circle'" [nzPopconfirmTitle]="'ALARMS.Open_overlay' | translate"
               [nzType]="'danger'" nz-button
               nz-popconfirm>
         <i nz-icon nzType="desktop"></i>

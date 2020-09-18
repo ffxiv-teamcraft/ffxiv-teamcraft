@@ -40,7 +40,7 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
           const itemMeldingData = this.lazyData.data.itemMeldingData[packet.catalogId];
-          const materias = (packet.materia || []).map(m => +m);
+          const materias = (packet.materia || <number[]>[]).map(m => +m);
           while (materias.length < itemMeldingData.slots) {
             materias.push(0);
           }

@@ -37,6 +37,7 @@ export class ListPanelOverlayComponent {
 
   constructor(private ipc: IpcService, private listsFacade: ListsFacade,
               private layoutsFacade: LayoutsFacade, private settings: SettingsService) {
+    this.layoutsFacade.loadAll();
     this.ipc.mainWindowState$.pipe(
       filter(state => {
         return state.lists && state.lists.selectedId && state.layouts;

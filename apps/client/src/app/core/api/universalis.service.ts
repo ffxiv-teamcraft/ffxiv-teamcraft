@@ -8,6 +8,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { IpcService } from '../electron/ipc.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import * as _ from 'lodash';
+import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '../../model/pcap';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -158,7 +159,7 @@ export class UniversalisService {
     });
   }
 
-  public handleMarketboardSearchResult(packet: any): void {
+  public handleMarketboardSearchResult(packet: MarketBoardSearchResult): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -181,7 +182,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingPackets(packets: any[]): void {
+  public handleMarketboardListingPackets(packets: MarketBoardItemListing[]): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -224,7 +225,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public handleMarketboardListingHistory(packet: any): void {
+  public handleMarketboardListingHistory(packet: MarketBoardItemListingHistory): void {
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -250,7 +251,22 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public uploadMarketTaxRates(packet: any): void {
+  public uploadMarketTaxRates(packet: MarketTaxRates): void {
+    /**
+     * Doing some light client-side validation is less work than going
+     * around and versioning to block this packet. This isn't retroactive,
+     * but will hopefully reduce incidences of bad tax rate data getting
+     * through in the future.
+     */
+    if (packet.packetSize !== 72 ||
+        packet.limsaLominsa > 7 ||
+        packet.gridania > 7 ||
+        packet.uldah > 7 ||
+        packet.ishgard > 7 ||
+        packet.kugane > 7 ||
+        packet.crystarium > 7)
+      return;
+
     combineLatest([this.cid$, this.worldId$]).pipe(
       first(),
       switchMap(([cid, worldId]) => {
@@ -273,7 +289,7 @@ export class UniversalisService {
     ).subscribe();
   }
 
-  public uploadCid(packet: any): void {
+  public uploadCid(packet: PlayerSetup): void {
     const data = {
       contentID: packet.contentID,
       characterName: packet.name

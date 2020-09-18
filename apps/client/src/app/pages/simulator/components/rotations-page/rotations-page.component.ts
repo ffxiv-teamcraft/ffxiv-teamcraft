@@ -18,6 +18,8 @@ import { combineLatest } from 'rxjs';
 })
 export class RotationsPageComponent {
 
+  public loading$ = this.rotationsFacade.loading$;
+
   public rotations$: Observable<CraftingRotation[]>;
 
   public rotationFoldersDisplay$: Observable<{ folder: CraftingRotationsFolder, rotations: CraftingRotation[] }[]>;

@@ -10,34 +10,34 @@
   </button>
 </div>
 <ng-container></ng-container>
-<div *ngIf="rotations$ | async as rotations; else loader" class="rotations-container">
-  <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0; else noRotations" class="ngx-dnd-container"
-       fxLayout="column" fxLayoutGap="5px"
-       ngxDroppable="rotation">
-    <div *ngFor="let rotation of rotations; trackBy: trackByKey" [model]="rotation" class="ngx-dnd-item"
-         ngxDraggable="rotation">
-      <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
-    </div>
-  </div>
-  <ng-container *ngIf="rotationFoldersDisplay$ | async as folders">
-    <div *ngIf="folders.length > 0" class="folders" fxLayout="column" fxLayoutGap="10px">
-      <h2>{{'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate}}</h2>
-      <div (drop)="setRotationFolderIndex($event.value, $event.dropIndex, folders)" class="ngx-dnd-container"
-           fxLayout="column" fxLayoutGap="5px"
-           ngxDroppable="folder">
-        <div *ngFor="let folderDisplay of folders; trackBy: trackByKey" [model]="folderDisplay"
-             class="ngx-dnd-item" ngxDraggable="folder">
-          <app-rotation-folder-panel [folder]="folderDisplay.folder"
-                                     [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
-        </div>
+
+<app-page-loader [loading]="loading$ | async">
+  <div *ngIf="rotations$ | async as rotations" class="rotations-container">
+    <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0; else noRotations" class="ngx-dnd-container"
+         fxLayout="column" fxLayoutGap="5px"
+         ngxDroppable="rotation">
+      <div *ngFor="let rotation of rotations; trackBy: trackByKey" [model]="rotation" class="ngx-dnd-item"
+           ngxDraggable="rotation">
+        <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
       </div>
     </div>
-  </ng-container>
-</div>
-<app-fullpage-message *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0"
-                      height="200px">
-  {{'SIMULATOR.No_rotations' | translate}}
-</app-fullpage-message>
-<ng-template #loader>
-  <app-page-loader></app-page-loader>
-</ng-template>
+    <ng-container *ngIf="rotationFoldersDisplay$ | async as folders">
+      <div *ngIf="folders.length > 0" class="folders" fxLayout="column" fxLayoutGap="10px">
+        <h2>{{'SIMULATOR.ROTATIONS.FOLDERS.Folders' | translate}}</h2>
+        <div (drop)="setRotationFolderIndex($event.value, $event.dropIndex, folders)" class="ngx-dnd-container"
+             fxLayout="column" fxLayoutGap="5px"
+             ngxDroppable="folder">
+          <div *ngFor="let folderDisplay of folders; trackBy: trackByKey" [model]="folderDisplay"
+               class="ngx-dnd-item" ngxDraggable="folder">
+            <app-rotation-folder-panel [folder]="folderDisplay.folder"
+                                       [rotations]="folderDisplay.rotations"></app-rotation-folder-panel>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <app-fullpage-message *ngIf="(rotations$ | async)?.length === 0 && (rotationFoldersDisplay$ | async)?.length === 0"
+                        height="200px">
+    {{'SIMULATOR.No_rotations' | translate}}
+  </app-fullpage-message>
+</app-page-loader>

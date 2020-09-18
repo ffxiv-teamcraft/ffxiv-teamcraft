@@ -1,28 +1,31 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { from, of } from 'rxjs';
+import { BehaviorSubject, of } from 'rxjs';
 import { Observable } from 'rxjs/Observable';
-import { map, startWith, switchMap, tap, shareReplay, distinctUntilChanged } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { I18nData } from '../../model/common/i18n-data';
 import { I18nName } from '../../model/common/i18n-name';
 import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 import { CustomItem } from '../../modules/custom-items/model/custom-item';
 import { Language } from '../data/language';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class I18nToolsService {
   private readonly defaultLang = 'en' as const;
-  public readonly currentLang$: Observable<Language> = from(this.translator.onLangChange as Observable<{ lang: Language }>).pipe(
-    map((ev) => ev.lang),
-    startWith((this.translator.currentLang as Language) ?? this.defaultLang),
-    distinctUntilChanged(),
-    shareReplay(1)
-  );
+  public readonly currentLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.defaultLang);
 
-  constructor(private translator: TranslateService) {}
+  constructor(private translator: TranslateService) {
+    // I know, subscriptions are devil, but since we're inside a `providedIn: "root"` service, we know only one instance of this will run at a time, meaning
+    // No memory leaks :)
+    this.translator.onLangChange.subscribe(ev => this.currentLang$.next(ev.lang));
+  }
 
   public resolveName = (i18nName: I18nNameLazy): Observable<string | undefined> => {
-    return this.currentLang$.pipe(switchMap((lang) => i18nName[lang] ?? i18nName[this.defaultLang] ?? of(undefined)));
+    return this.currentLang$.pipe(
+      switchMap((lang) => {
+        return i18nName[lang] ?? i18nName[this.defaultLang] ?? of(undefined);
+      })
+    );
   };
 
   public getName(i18nName: I18nName, item?: CustomItem): string {
@@ -42,7 +45,7 @@ export class I18nToolsService {
       de: str,
       ja: str,
       zh: str,
-      ko: str,
+      ko: str
     };
   }
 
@@ -53,7 +56,7 @@ export class I18nToolsService {
       de: item.de.name,
       ja: item.ja.name,
       zh: item.zh.name,
-      ko: item.ko.name,
+      ko: item.ko.name
     };
   }
 

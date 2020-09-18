@@ -178,7 +178,7 @@
   </ng-container>
 
   <ng-container *ngIf="isButton(itemRowTypes.REMOVE_ITEM) && finalItem && permissionLevel >= 30">
-    <button (nzOnConfirm)="removeItem.emit()" [nzTooltipTitle]="'Confirmation' | translate" nz-button
+    <button (nzOnConfirm)="removeItem.emit()" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
             nz-popconfirm
             nzShape="circle"
             nzSize="small"
