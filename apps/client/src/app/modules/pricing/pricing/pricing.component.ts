@@ -185,7 +185,7 @@ export class PricingComponent implements AfterViewInit {
       });
   }
 
-  private updateCosts(list: List): void {
+  public updateCosts(list: List): void {
     const items = this.topologicalSort(list.items);
     items.forEach(item => {
       this.costs[item.id] = this._getCraftCost(item, list);
