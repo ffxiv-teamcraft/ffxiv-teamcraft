@@ -27,6 +27,10 @@ import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
 import { Drop } from '../model/drop';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { Alarm } from '../../../core/alarms/alarm';
+import { GatheredBy } from '../model/gathered-by';
+import { TradeSource } from '../model/trade-source';
+import { Vendor } from '../model/vendor';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -92,7 +96,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   hasAlreadyBeenOpened: boolean;
 
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
-              private message: NzMessageService, private translate: TranslateService,
+              private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
               private itemPicker: ItemPickerService, private listManager: ListManagerService,
               private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
@@ -173,6 +177,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           [zbRow.zoneId]: this.hasPositionsInRows(zbRow.items, zbRow.zoneId)
         };
       }, {});
+      this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
@@ -233,36 +238,40 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
+  public getZoneBreakdownPathRows(zoneBreakdown: ZoneBreakdown): NavigationObjective[] {
+    return <NavigationObjective[]>[].concat
+      .apply([],
+        zoneBreakdown.rows.map(zoneBreakdownRow => {
+          return zoneBreakdownRow.items.filter(item => item.done < item.amount)
+            .map(item => {
+              const partial = this.getPosition(item, zoneBreakdownRow);
+              if (partial !== undefined) {
+                return <NavigationObjective>{
+                  mapId: zoneBreakdownRow.mapId,
+                  x: partial.x,
+                  y: partial.y,
+                  name: this.l12n.getItem(item.id),
+                  iconid: item.icon,
+                  itemId: item.id,
+                  total_item_amount: item.amount,
+                  item_amount: item.amount_needed - item.done,
+                  type: partial.type,
+                  gatheringType: partial.gatheringType
+                };
+              }
+              return undefined;
+            })
+            .filter(row => row !== undefined);
+        })
+      );
+  }
+
   public openFullPathPopup(zoneBreakdown: ZoneBreakdown): void {
     const ref = this.dialog.create({
       nzTitle: this.translate.instant('LIST.Optimized_full_path'),
       nzContent: WorldNavigationMapComponent,
       nzComponentParams: {
-        points: <NavigationObjective[]>[].concat
-          .apply([],
-            zoneBreakdown.rows.map(zoneBreakdownRow => {
-              return zoneBreakdownRow.items.filter(item => item.done < item.amount)
-                .map(item => {
-                  const partial = this.getPosition(item, zoneBreakdownRow);
-                  if (partial !== undefined) {
-                    return <NavigationObjective>{
-                      mapId: zoneBreakdownRow.mapId,
-                      x: partial.x,
-                      y: partial.y,
-                      name: this.l12n.getItem(item.id),
-                      iconid: item.icon,
-                      itemId: item.id,
-                      total_item_amount: item.amount,
-                      item_amount: item.amount_needed - item.done,
-                      type: partial.type,
-                      gatheringType: partial.gatheringType
-                    };
-                  }
-                  return undefined;
-                })
-                .filter(row => row !== undefined);
-            })
-          )
+        points: this.getZoneBreakdownPathRows(zoneBreakdown)
       },
       nzFooter: null
     });
@@ -277,10 +286,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    const vendors = this.getData(row, DataType.VENDORS);
-    const tradeSources = this.getData(row, DataType.TRADE_SOURCES);
-    const gatheredBy = this.getData(row, DataType.GATHERED_BY);
-    const drops = this.getData(row, DataType.DROPS);
+    const vendors = this.getData<Vendor[]>(row, DataType.VENDORS);
+    const tradeSources = this.getData<TradeSource[]>(row, DataType.TRADE_SOURCES);
+    const gatheredBy = this.getData<GatheredBy>(row, DataType.GATHERED_BY);
+    const drops = this.getData<Drop[]>(row, DataType.DROPS);
+    const alarms = this.getData<Alarm[]>(row, DataType.ALARMS);
     const positions = [];
     if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
@@ -316,6 +326,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         type: 'Hunting'
       });
     }
+    if (alarms.some(a => a.coords && a.coords.x && a.zoneId === zoneBreakdownRow.zoneId)) {
+      const alarm = alarms.find(a => a.coords && a.coords.x && a.zoneId === zoneBreakdownRow.zoneId);
+      positions.push({
+        x: alarm.coords.x,
+        y: alarm.coords.y,
+        type: 'Gathering',
+        gatheringType: alarm.type
+      });
+    }
     const isGathering = this.displayRow.filterChain.indexOf('IS_GATHERING') > -1;
     const isVendor = this.displayRow.filterChain.indexOf('CAN_BE_BOUGHT') > -1;
     const isTrade = this.displayRow.filterChain.indexOf('TRADE') > -1;
@@ -333,6 +352,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       if (isHunting) {
         return p.type === 'Hunting';
       }
+      return true;
     });
     return preferredPosition || positions[0];
   }
