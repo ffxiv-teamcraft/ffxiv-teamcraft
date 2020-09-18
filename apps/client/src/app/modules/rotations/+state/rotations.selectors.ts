@@ -13,7 +13,7 @@ const getAllRotations = createSelector(
   getRotationsState,
   getLoading,
   (state: RotationsState, isLoading) => {
-    return isLoading ? [] : state.rotations;
+    return state.rotations;
   }
 );
 const getSelectedId = createSelector(

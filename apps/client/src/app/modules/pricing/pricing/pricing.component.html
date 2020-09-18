@@ -138,7 +138,7 @@
                       nz-popconfirm>
                 {{'PRICING.Autofill_panel_prices' | translate}}
               </button>
-              <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems)" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
+              <button (click)="$event.stopPropagation();list.finalItems.length > 10?null:fillMbCosts(list.finalItems, true)" (nzOnConfirm)="fillMbCosts(list.finalItems, true)" *ngIf="loggedIn$ | async"
                       [nzPopconfirmTitle]="list.finalItems.length > 10 ? ('PRICING.Autofill_panel_prices_warning' | translate: {time: (list.finalItems.length / 2 | ceil)}):null"
                       class="fill-prices-button"
                       nz-button
