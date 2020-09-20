@@ -37,6 +37,13 @@ exports.firestoreCountGearsetsCreate = functions.runWith(runtimeOpts).firestore.
   }).then(() => null);
 });
 
+exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.document('/crafting-replays/{uid}').onCreate(() => {
+  const creationsRef = admin.database().ref('/crafting_replays_created');
+  return creationsRef.transaction(current => {
+    return current + 1;
+  }).then(() => null);
+});
+
 validatedCache = {};
 
 exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
