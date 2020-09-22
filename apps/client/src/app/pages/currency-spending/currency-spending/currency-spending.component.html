@@ -7,7 +7,7 @@
     <h2>{{'CURRENCY_SPENDING.Title' | translate}}</h2>
     <i>{{'CURRENCY_SPENDING.Description' | translate}}</i>
   </div>
-  <div fxLayout="row" fxLayoutGap="5px">
+  <div fxLayout="row" fxLayoutGap="5px" class="currency-select">
     <nz-select
       (ngModelChange)="currency$.next($event)"
       [ngModel]="null"
