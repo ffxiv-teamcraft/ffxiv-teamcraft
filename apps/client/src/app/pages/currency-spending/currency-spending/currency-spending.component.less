@@ -1,3 +1,5 @@
+@mobile: ~"screen and (max-width: 575px)";
+
 .currency-picker {
   min-width: 200px;
 }
@@ -12,4 +14,10 @@
 
 .result-item {
   padding-right: 20px;
+}
+
+.currency-select {
+  @media @mobile {
+    flex-wrap: wrap-reverse;
+  }
 }
