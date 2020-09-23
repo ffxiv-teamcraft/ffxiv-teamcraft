@@ -29,4 +29,8 @@ export class Commission extends DataWithPermissions {
   tags: CommissionTag[] = [];
 
   ratedBy: Record<string, boolean> = {};
+
+  dataCenter: string;
+
+  server: string;
 }

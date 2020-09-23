@@ -19,11 +19,6 @@ export const getCommissionsLoaded = createSelector(
   (state: State) => state.loaded
 );
 
-export const getCommissionsError = createSelector(
-  getCommissionsState,
-  (state: State) => state.error
-);
-
 export const getAllCommissions = createSelector(
   getCommissionsState,
   (state: State) => selectAll(state)
