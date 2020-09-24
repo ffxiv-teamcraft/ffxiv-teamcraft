@@ -137,8 +137,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
-    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
-      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
+    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
+      mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
     this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
