@@ -231,8 +231,7 @@ export class ListsFacade {
     }).afterClose.pipe(
       filter(res => res && res.name !== undefined),
       map(res => {
-        const list = new List(this.settings);
-        list.name = res.name;
+        const list = this.newListWithName(res);
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
         return list;
@@ -242,9 +241,14 @@ export class ListsFacade {
 
   newEphemeralList(itemName: string): List {
     this.loadMyLists();
-    const list = new List(this.settings);
+    const list = this.newListWithName(itemName);
     list.ephemeral = true;
-    list.name = itemName;
+    return list;
+  }
+
+  newListWithName(name: string): List {
+    const list = new List(this.settings);
+    list.name = name;
     return list;
   }
 

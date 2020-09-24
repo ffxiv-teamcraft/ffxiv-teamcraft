@@ -5,6 +5,9 @@ import { EffectsModule } from '@ngrx/effects';
 import * as fromCommissions from './+state/commissions.reducer';
 import { CommissionsEffects } from './+state/commissions.effects';
 import { CommissionsFacade } from './+state/commissions.facade';
+import { NzModalModule } from 'ng-zorro-antd';
+import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [],
@@ -15,6 +18,10 @@ import { CommissionsFacade } from './+state/commissions.facade';
       fromCommissions.reducer
     ),
     EffectsModule.forFeature([CommissionsEffects]),
+    TranslateModule,
+
+    NzModalModule,
+    NameQuestionPopupModule
   ],
   providers: [CommissionsFacade],
 })

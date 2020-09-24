@@ -5,6 +5,8 @@ import { CommissionTag } from './commission-tag';
 
 export class Commission extends DataWithPermissions {
 
+  name: string;
+
   /**
    * The $key of the list is the $key of the commission,
    * this is meant to make permissions easier to compute, as we can say that a list cannot be deleted

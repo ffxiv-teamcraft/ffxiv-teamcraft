@@ -20,7 +20,7 @@ import { LazyDataProviderService } from './lazy-data-provider.service';
 import { lazyFilesList } from './lazy-files-list';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LazyDataService {
   public dohdolMeldingRates = {
@@ -34,7 +34,7 @@ export class LazyDataService {
       [17, 10, 7, 5], // V
       [17, 0, 0, 0], // VI
       [17, 10, 7, 5], // VII
-      [17, 0, 0, 0], // VIII
+      [17, 0, 0, 0] // VIII
     ],
     nq: [
       // Sockets
@@ -46,13 +46,13 @@ export class LazyDataService {
       [12, 6, 3, 2], // V
       [12, 0, 0, 0], // VI
       [12, 6, 3, 2], // VII
-      [12, 0, 0, 0], // VIII
-    ],
+      [12, 0, 0, 0] // VIII
+    ]
   };
 
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  public datacenters: { [index: string]: string[] } = {};
+  public datacenters: Record<string, string[]> = {};
   public patches: any[] = [];
 
   public extracts: ListRow[];
@@ -95,6 +95,13 @@ export class LazyDataService {
     }
   }
 
+  public getDataCenter(serverName: string): string {
+    return Object.keys(this.datacenters)
+      .find(dc => {
+        return this.datacenters[dc].includes(serverName);
+      });
+  }
+
   private loadForRegion(region: Region): void {
     switch (region) {
       case Region.Global:
@@ -120,8 +127,8 @@ export class LazyDataService {
         [key]: {
           ...this.data.jobAbbr[key],
           ko: this.data.koJobAbbr[key]?.ko || this.data.jobAbbr[key].en,
-          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en,
-        },
+          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en
+        }
       };
     }, {});
   }
@@ -268,7 +275,7 @@ export class LazyDataService {
             return {
               ...row,
               propertyName: key,
-              data: data,
+              data: data
             };
           })
         );

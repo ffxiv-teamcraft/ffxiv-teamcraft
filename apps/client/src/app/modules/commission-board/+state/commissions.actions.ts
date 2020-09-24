@@ -7,3 +7,8 @@ export const loadCommissionsSuccess = createAction(
   '[Commissions] Load Commissions Success',
   props<{ commissions: Commission[] }>()
 );
+
+export const createCommission = createAction(
+  '[Commissions] Create Commission',
+  props<{ name: string, listKey?: string }>()
+);

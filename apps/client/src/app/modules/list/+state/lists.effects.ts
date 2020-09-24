@@ -247,6 +247,9 @@ export class ListsEffects {
           this.saveToLocalstorage(list, true);
           return EMPTY;
         }
+        if (list.$key) {
+          return this.listService.set(list.$key, list);
+        }
         return this.listService.add(list);
       }
     )
