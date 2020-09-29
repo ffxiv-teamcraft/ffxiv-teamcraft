@@ -1889,6 +1889,8 @@
     "Stats_caps": "Max stats",
     "Stat_computing_diclaimer": "Les résultats ne sont pas 100% exacts, ils sont issus de joueurs (the allagan studies) comme vous et moi qui ont passé beaucoup de temps à essayer de trouver les formules, ne signalez pas les inexactitudes comme un bug.",
     "Missing_items": "Il semble qu'il vous manque certains éléments, assurez-vous que vos filtres sont correctement définis",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
