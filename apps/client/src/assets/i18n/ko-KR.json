@@ -1889,6 +1889,8 @@
     "Stats_caps": "능력치",
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
     "Missing_items": "몇몇 슬롯이 비어있는 것처럼 보인다면 필터를 정확하게 세팅해 주세요.",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
