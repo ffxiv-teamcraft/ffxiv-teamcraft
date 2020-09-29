@@ -1889,6 +1889,8 @@
     "Stats_caps": "Attributlimits",
     "Stat_computing_diclaimer": "Ergebnisse sind nicht 100% genau, da sie von Spielern wie dir und mir sind, die viel Zeit damit verbringen, die Formeln zu bestimmen. Bitte melde Ungenauigkeiten nicht als Fehler.",
     "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
