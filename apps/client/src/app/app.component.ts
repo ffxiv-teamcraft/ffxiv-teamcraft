@@ -401,7 +401,7 @@ export class AppComponent implements OnInit {
         gtag('set', 'page', event.url);
         gtag('event', 'page_view', {
           page_path: event.urlAfterRedirects
-        })
+        });
       });
 
       // Custom protocol detection
@@ -534,10 +534,8 @@ export class AppComponent implements OnInit {
         }
         if (!user.patron && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
-          if (this.settings.pageViews < viewTriggersForPatreonPopup[viewTriggersForPatreonPopup.length - 1]) {
-            this.settings.pageViews++;
-            increasedPageViews = true;
-          }
+          this.settings.pageViews++;
+          increasedPageViews = true;
           if (viewTriggersForPatreonPopup.indexOf(this.settings.pageViews) > -1) {
             this.patreonService.showSupportUsPopup();
           }
