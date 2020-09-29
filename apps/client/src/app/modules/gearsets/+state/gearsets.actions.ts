@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 export enum GearsetsActionTypes {
   CreateGearset = '[Gearsets] Create Gearset',
@@ -12,6 +13,10 @@ export enum GearsetsActionTypes {
 
   LoadGearset = '[Gearsets] Load Gearset',
   GearsetLoaded = '[Gearsets] Gearset Loaded',
+
+  SaveGearsetProgression = '[Gearsets] Save Gearset Progression',
+  LoadGearsetProgression = '[Gearsets] Load Gearset Progression',
+  GearsetProgressionLoaded = '[Gearsets] Gearset Progression Loaded',
 
   SelectGearset = '[Gearsets] Select Gearset',
   UpdateGearset = '[Gearsets] Update Gearset',
@@ -71,6 +76,27 @@ export class GearsetLoaded implements Action {
   }
 }
 
+export class SaveGearsetProgression implements Action {
+  readonly type = GearsetsActionTypes.SaveGearsetProgression;
+
+  constructor(public key: string, public progression: GearsetProgression) {
+  }
+}
+
+export class LoadGearsetProgression implements Action {
+  readonly type = GearsetsActionTypes.LoadGearsetProgression;
+
+  constructor(public key: string) {
+  }
+}
+
+export class GearsetProgressionLoaded implements Action {
+  readonly type = GearsetsActionTypes.GearsetProgressionLoaded;
+
+  constructor(public key: string, public payload: GearsetProgression) {
+  }
+}
+
 export class SelectGearset implements Action {
   readonly type = GearsetsActionTypes.SelectGearset;
 
@@ -112,5 +138,8 @@ export type GearsetsAction =
   | ImportLodestoneGearset
   | ImportFromPcap
   | PureUpdateGearset
-  | UpdateGearsetIndexes;
+  | UpdateGearsetIndexes
+  | GearsetProgressionLoaded
+  | LoadGearsetProgression
+  | SaveGearsetProgression;
 

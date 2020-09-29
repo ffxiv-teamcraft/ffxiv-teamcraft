@@ -6,18 +6,21 @@ import {
   CreateGearset,
   DeleteGearset,
   GearsetLoaded,
+  GearsetProgressionLoaded,
   GearsetsActionTypes,
   GearsetsLoaded,
   ImportAriyalaGearset,
   ImportFromPcap,
   ImportLodestoneGearset,
   LoadGearset,
+  LoadGearsetProgression,
   LoadGearsets,
   PureUpdateGearset,
   UpdateGearset,
-  UpdateGearsetIndexes
+  UpdateGearsetIndexes,
+  SaveGearsetProgression
 } from './gearsets.actions';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, switchMap, switchMapTo, tap, mergeMap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, mergeMap, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { NzModalService } from 'ng-zorro-antd';
@@ -30,6 +33,7 @@ import { LodestoneImportPopupComponent } from '../lodestone-import-popup/lodesto
 import { ImportFromPcapPopupComponent } from '../import-from-pcap-popup/import-from-pcap-popup.component';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { GearsetsFacade } from './gearsets.facade';
+import { GearsetProgression, newEmptyProgression } from '../../../model/gearset/gearset-progression';
 
 @Injectable()
 export class GearsetsEffects {
@@ -57,6 +61,29 @@ export class GearsetsEffects {
         .pipe(catchError(() => of({ $key: action.key, notFound: true } as TeamcraftGearset)));
     }),
     map(gearset => new GearsetLoaded(gearset))
+  );
+
+  @Effect()
+  loadGearsetProgression$ = this.actions$.pipe(
+    ofType<LoadGearsetProgression>(GearsetsActionTypes.LoadGearsetProgression),
+    map(action => {
+      const rawString = localStorage.getItem(`gp:${action.key}`);
+      let res: GearsetProgression;
+      if (rawString) {
+        res = JSON.parse(rawString);
+      } else {
+        res = newEmptyProgression();
+      }
+      return new GearsetProgressionLoaded(action.key, res);
+    })
+  );
+
+  @Effect({ dispatch: false })
+  saveGearsetProgression$ = this.actions$.pipe(
+    ofType<SaveGearsetProgression>(GearsetsActionTypes.SaveGearsetProgression),
+    map(action => {
+      localStorage.setItem(`gp:${action.key}`, JSON.stringify(action.progression));
+    })
   );
 
   @Effect({
@@ -241,6 +268,6 @@ export class GearsetsEffects {
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private gearsetService: GearsetService, private dialog: NzModalService,
               private translate: TranslateService, private router: Router,
-private gearsetsFacade: GearsetsFacade) {
+              private gearsetsFacade: GearsetsFacade) {
   }
 }
