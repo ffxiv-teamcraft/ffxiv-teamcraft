@@ -31,8 +31,17 @@ const getSelectedGearset = createSelector(
   }
 );
 
+const getSelectedGearsetProgression = createSelector(
+  getGearsetsState,
+  getSelectedId,
+  (state, id) => {
+    return state.progression[id];
+  }
+);
+
 export const gearsetsQuery = {
   getLoaded,
   getAllGearsets,
-  getSelectedGearset
+  getSelectedGearset,
+  getSelectedGearsetProgression
 };

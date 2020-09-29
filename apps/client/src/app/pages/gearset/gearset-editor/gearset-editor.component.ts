@@ -69,7 +69,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
   public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
     tap(gearset => {
       // We're removing Spearfishing gig from the lowest ilvl filter.
-      const ilvls = this.gearsetsFacade.toArray(gearset).filter(piece => piece.itemId !== 17726).map(piece => this.lazyData.data.ilvls[piece.itemId]);
+      const ilvls = this.gearsetsFacade.toArray(gearset).filter(entry => entry.piece.itemId !== 17726).map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
       let lowestIlvl = Math.min(...ilvls);
       let highestIlvl = Math.max(...ilvls);
       let usedDefaultValues = false;

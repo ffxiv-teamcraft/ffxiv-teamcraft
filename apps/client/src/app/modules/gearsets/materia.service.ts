@@ -6,6 +6,7 @@ import { TeamcraftGearset } from '../../model/gearset/teamcraft-gearset';
 import { getItemSource } from '../list/model/list-row';
 import { DataType } from '../list/data/data-type';
 import { TradeSource } from '../list/model/trade-source';
+import { GearsetProgression } from '../../model/gearset/gearset-progression';
 
 @Injectable({
   providedIn: 'root'
@@ -102,7 +103,7 @@ export class MateriaService {
     return this.lazyData.dohdolMeldingRates[equipmentPiece.hq ? 'hq' : 'nq'][materia.tier - 1][overmeldSlot];
   }
 
-  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean): { id: number, amount: number, scrip?: { id: number, amount: number } }[] {
+  getTotalNeededMaterias(gearset: TeamcraftGearset, includeAllTools: boolean, progression?: GearsetProgression): { id: number, amount: number, scrip?: { id: number, amount: number } }[] {
     const materias = [];
     Object.keys(gearset)
       .filter(key => gearset[key] && gearset[key].itemId !== undefined)
@@ -111,6 +112,9 @@ export class MateriaService {
         piece.materias
           .filter((itemId) => itemId > 0)
           .forEach((itemId, index) => {
+            if (progression && progression[key].materias[index]) {
+              return;
+            }
             let materiaRow = materias.find(m => m.id === itemId);
             const materia = this.getMateria(itemId);
             if (materiaRow === undefined) {
