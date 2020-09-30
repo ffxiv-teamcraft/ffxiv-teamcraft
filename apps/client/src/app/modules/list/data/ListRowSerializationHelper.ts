@@ -47,7 +47,7 @@ export class ListRowSerializationHelper {
   }
   private getJob(job: any) {
     const jobAbbr = this.getNameIfExists(this.l12n.getJobAbbr(job));
-    return jobAbbr != null && jobAbbr !== "missing name" ? jobAbbr : "DOWM"//;this.getNameIfExists(VenturesComponent.DOWM);
+    return jobAbbr != null && jobAbbr !== "missing name" ? jobAbbr : "DOWM";
   }
 
   private getNameIfExists(name: I18nName) {
@@ -107,7 +107,7 @@ export class ListRowSerializationHelper {
   }
 
   private getMobNameFromId(id: number) {
-    return this.l12n.getMob(MobNamePipe.GetActualMobId(id));
+    return this.l12n.getMob(MobNamePipe.getActualMobId(id));
   }
 
   private getMonsterHuntData(monsterDrops: any) {
@@ -152,6 +152,28 @@ export class ListRowSerializationHelper {
     return reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
+  private serializeTreasures(treasures: any) {
+    return treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeMasterbooks(masterbooks: any) {
+    return masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeGardening(gardening: any) {
+    if (gardening)
+      console.log({ gardening: gardening, thingy: this.applyItemName({ id: gardening }) })
+    return gardening  && gardening.length>0? gardening.map((r: any) => this.applyItemName({ id: r })) : undefined;
+  }
+
+  private serializeRequires(item: ListRow) {
+    return item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
+  private serializeGathering(gathering: any) {
+    return gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined;
+  }
+
   public getJsonExport(dc: string, server: string, rows: ListRow[], finalItems: ListRow[]): any {
     //convert all the desynth data into a single key value pair/dictionary (effectively dedupes for large dumps)
     const desynthMap = {}
@@ -171,62 +193,65 @@ export class ListRowSerializationHelper {
       pricingURL: `https://universalis.app/api/${dc ? dc : '<DataCenter>'}/${rows.map(r => r.id).join(',')}`,
       items: rows
         .map(row => this.applyItemName(row))
-        .map((item: ListRow) => {
-          const craftedBy = ListRowSerializationHelper.getData(item, DataType.CRAFTED_BY);
-          const trades = ListRowSerializationHelper.getData(item, DataType.TRADE_SOURCES);
-          const vendors = ListRowSerializationHelper.getData(item, DataType.VENDORS);
-          const reducedFrom = ListRowSerializationHelper.getData(item, DataType.REDUCED_FROM);
-          const desynths = ListRowSerializationHelper.getData(item, DataType.DESYNTHS);
-          const instances = ListRowSerializationHelper.getData(item, DataType.INSTANCES);
-          const gathering = ListRowSerializationHelper.getData(item, DataType.GATHERED_BY);
-          const gardening = ListRowSerializationHelper.getData(item, DataType.GARDENING);
-          const voyages = ListRowSerializationHelper.getData(item, DataType.VOYAGES);
-          const monsterDrops = ListRowSerializationHelper.getData(item, DataType.DROPS);
-          const masterbooks = ListRowSerializationHelper.getData(item, DataType.MASTERBOOKS);
-          const treasures = ListRowSerializationHelper.getData(item, DataType.TREASURES);
-          const fates = ListRowSerializationHelper.getData(item, DataType.FATES);
-          const ventures = ListRowSerializationHelper.getData(item, DataType.VENTURES);
-          const tripleTriadDuels = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_DUELS);
-          const tripleTriadPack = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_PACK);
-          const quests = ListRowSerializationHelper.getData(item, DataType.QUESTS);
-          const achievements = ListRowSerializationHelper.getData(item, DataType.ACHIEVEMENTS);
-          const retval: any = {
-            ...item,
-            done: item.done ? true : false,
-            amountNeeded: item.amount_needed,
-            used: item.used,
-            requires: this.serializeRequires(item),
-            neededToCraft: this.serializeCraftedBy(craftedBy),
-            trades: this.serializeTrades(trades),
-            vendors: this.serializeNPCs(vendors),
-            reducedFrom: this.serializeReducedFrom(reducedFrom),
-            desynths: desynths,
-            instances: this.serializeInstances(instances),
-            gathering: this.serializeGathering(gathering),
-            gardening: this.serializeGardening(gardening),
-            voyages: this.serializeVoyages(voyages),
-            hunting: this.getMonsterHuntData(monsterDrops),
-            masterbooks: this.serializeMasterbooks(masterbooks),
-            treasures: this.serializeTreasures(treasures),
-            fates: this.serializeFates(fates),
-            ventures: this.serializeVentures(item, ventures),
-            tripleTriadDuels: this.serializeTriadDuels(tripleTriadDuels),
-            tripleTriadPack: this.serializeTripleTriadPack(tripleTriadPack),
-            quests: this.serializeQuests(quests),
-            achievements: this.serializeAchievements(achievements),
-            marketBoardLink: `https://universalis.app/market/${item.id}`,
-          };
-          //get rid of fields that are confusing for an export layer
-          delete retval.sources;
-          delete retval.craftedBy;
-          delete retval.amount_needed;
-          return retval;
-        }),
+        .map(row => this.serializeDataRow(row)),
       desynthMap: desynthMap,
-      finalItems: finalItems,
+      finalItems: finalItems
+        .map(row => this.applyItemName(row))
+        .map(row => this.serializeDataRow(row)),
     };
   }
 
+  private serializeDataRow(item: ListRow) {
+    const craftedBy = ListRowSerializationHelper.getData(item, DataType.CRAFTED_BY);
+    const trades = ListRowSerializationHelper.getData(item, DataType.TRADE_SOURCES);
+    const vendors = ListRowSerializationHelper.getData(item, DataType.VENDORS);
+    const reducedFrom = ListRowSerializationHelper.getData(item, DataType.REDUCED_FROM);
+    const desynths = ListRowSerializationHelper.getData(item, DataType.DESYNTHS);
+    const instances = ListRowSerializationHelper.getData(item, DataType.INSTANCES);
+    const gathering = ListRowSerializationHelper.getData(item, DataType.GATHERED_BY);
+    const gardening = ListRowSerializationHelper.getData(item, DataType.GARDENING);
+    const voyages = ListRowSerializationHelper.getData(item, DataType.VOYAGES);
+    const monsterDrops = ListRowSerializationHelper.getData(item, DataType.DROPS);
+    const masterbooks = ListRowSerializationHelper.getData(item, DataType.MASTERBOOKS);
+    const treasures = ListRowSerializationHelper.getData(item, DataType.TREASURES);
+    const fates = ListRowSerializationHelper.getData(item, DataType.FATES);
+    const ventures = ListRowSerializationHelper.getData(item, DataType.VENTURES);
+    const tripleTriadDuels = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_DUELS);
+    const tripleTriadPack = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_PACK);
+    const quests = ListRowSerializationHelper.getData(item, DataType.QUESTS);
+    const achievements = ListRowSerializationHelper.getData(item, DataType.ACHIEVEMENTS);
+    const retval: any = {
+      ...item,
+      done: item.done ? true : false,
+      amountNeeded: item.amount_needed,
+      used: item.used,
+      requires: this.serializeRequires(item),
+      neededToCraft: this.serializeCraftedBy(craftedBy),
+      trades: this.serializeTrades(trades),
+      vendors: this.serializeNPCs(vendors),
+      reducedFrom: this.serializeReducedFrom(reducedFrom),
+      desynths: desynths,
+      instances: this.serializeInstances(instances),
+      gathering: this.serializeGathering(gathering),
+      gardening: this.serializeGardening(gardening),
+      voyages: this.serializeVoyages(voyages),
+      hunting: this.getMonsterHuntData(monsterDrops),
+      masterbooks: this.serializeMasterbooks(masterbooks),
+      treasures: this.serializeTreasures(treasures),
+      fates: this.serializeFates(fates),
+      ventures: this.serializeVentures(item, ventures),
+      tripleTriadDuels: this.serializeTriadDuels(tripleTriadDuels),
+      tripleTriadPack: this.serializeTripleTriadPack(tripleTriadPack),
+      quests: this.serializeQuests(quests),
+      achievements: this.serializeAchievements(achievements),
+      marketBoardLink: `https://universalis.app/market/${item.id}`,
+    };
+    //get rid of fields that are confusing for an export layer
+    delete retval.sources;
+    delete retval.craftedBy;
+    delete retval.amount_needed;
+    return retval;
+  }
 
   private serializeAchievements(achievements: any) {
     return achievements && achievements.length > 0 ? achievements.map((r: any) => this.applyItemName(r)) : undefined;
@@ -248,23 +273,4 @@ export class ListRowSerializationHelper {
     return fates && fates.length > 0 ? fates.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
-  private serializeTreasures(treasures: any) {
-    return treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined;
-  }
-
-  private serializeMasterbooks(masterbooks: any) {
-    return masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined;
-  }
-
-  private serializeGardening(gardening: any) {
-    return gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName(r)) : undefined;
-  }
-
-  private serializeRequires(item: ListRow) {
-    return item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined;
-  }
-
-  private serializeGathering(gathering: any) {
-    return gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined;
-  }
 }

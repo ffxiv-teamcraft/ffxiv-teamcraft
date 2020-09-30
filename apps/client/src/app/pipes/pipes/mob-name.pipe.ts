@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
+
 import { LocalizedLazyDataService } from '../../core/data/localized-lazy-data.service';
-import { I18nNameLazy } from '../../model/common/i18n-name-lazy';
 
 @Pipe({
   name: 'mobName'
 })
 export class MobNamePipe implements PipeTransform {
-  public static GetActualMobId(id: number) {
+  public static getActualMobId(id: number) {
     if (id > 1000000) {
       id = id % 1000000;
     }
@@ -16,7 +16,7 @@ export class MobNamePipe implements PipeTransform {
   }
 
   transform(id: number): any {
-    id = MobNamePipe.GetActualMobId(id);
+    id = MobNamePipe.getActualMobId(id);
     return this.data.getMob(id);
   }
 

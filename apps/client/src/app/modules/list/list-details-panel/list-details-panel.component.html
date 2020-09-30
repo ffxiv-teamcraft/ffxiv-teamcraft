@@ -113,7 +113,7 @@
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="snippets"></i>
           </button>
-          <span [nzTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
+          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
                   [nzPopconfirmTitle]="'Confirmation' | translate"
                   nz-button
