@@ -507,7 +507,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   // Done to reduce render-time perf of generating the whole string into the DOM. If there's a way to do it with [cdk directive](https://material.angular.io/cdk/clipboard/overview) that would be ideal
-  public copyJSONExport(serverName: string) {
+  public copyJSONExport(serverName: string): void{
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
