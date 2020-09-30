@@ -192,7 +192,7 @@
                     nzSize="small">
               <i nz-icon nzType="copy"></i>
             </button>
-          <ng-container *ngIf="server$ | async as server">
+            <ng-container *ngIf="server$ | async as server">
             <button (click)="$event.stopPropagation();copyJSONExport(server, listDisplay, list)"
                     *ngIf="display$ | async as listDisplay"
                     [nzTooltipTitle]="'LIST.Copy_list_as_json' | translate"
@@ -201,7 +201,7 @@
                     nzSize="small">
               <i nz-icon nzType="snippets"></i>
             </button>
-          </ng-container>
+            </ng-container>
             <button (click)="regenerateList(list)" [disabled]="(permissionLevel$ | async) < 30"
                     [nzTooltipTitle]="'LIST.Regenerate' | translate" nz-button
                     nz-tooltip nzShape="circle"
