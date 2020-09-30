@@ -19,12 +19,14 @@ export class ListRowSerializationHelper {
     private gt: GarlandToolsService,
   ) {
   }
-  public applyItemName(obj) {
+
+  // guesses the name based off potential paths
+  public applyItemName(obj): any {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
     return {
       ...obj,
       name: this.getItemName(id),
-      itemId: this.getItemName(obj.itemId)
+      itemIdName: this.getItemName(obj.itemId)
     };
   }
 
