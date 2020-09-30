@@ -25,8 +25,8 @@ export class ListRowSerializationHelper {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
     return {
       ...obj,
-      name: this.getItemName(id),
-      itemIdName: this.getItemName(obj.itemId)
+      name: id ? this.getItemName(id) : undefined,
+      itemIdName: obj.itemId ? this.getItemName(obj.itemId) : undefined
     };
   }
 
@@ -163,7 +163,7 @@ export class ListRowSerializationHelper {
   private serializeGardening(gardening: any) {
     if (gardening)
       console.log({ gardening: gardening, thingy: this.applyItemName({ id: gardening }) })
-    return gardening  && gardening.length>0? gardening.map((r: any) => this.applyItemName({ id: r })) : undefined;
+    return gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName({ id: r })) : undefined;
   }
 
   private serializeRequires(item: ListRow) {
@@ -195,9 +195,9 @@ export class ListRowSerializationHelper {
         .map(row => this.applyItemName(row))
         .map(row => this.serializeDataRow(row)),
       desynthMap: desynthMap,
-      finalItems: finalItems
+      finalItems: finalItems ? finalItems
         .map(row => this.applyItemName(row))
-        .map(row => this.serializeDataRow(row)),
+        .map(row => this.serializeDataRow(row)) : undefined,
     };
   }
 
