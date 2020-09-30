@@ -192,9 +192,8 @@
                     nzSize="small">
               <i nz-icon nzType="copy"></i>
             </button>
-            <!-- cannot have async pipes in a template action https://stackoverflow.com/questions/40300115/how-to-pass-async-variable-in-template-action-function -->
-            <input  #servername [value]="server$ | async" type="hidden" />
-            <button (click)="$event.stopPropagation();copyJSONExport(servername.value, listDisplay, list)"
+          <ng-container *ngIf="server$ | async as server">
+            <button (click)="$event.stopPropagation();copyJSONExport(server, listDisplay, list)"
                     *ngIf="display$ | async as listDisplay"
                     [nzTitle]="'LIST.Copy_list_as_json' | translate"
                     nz-button nz-tooltip
@@ -202,6 +201,7 @@
                     nzSize="small">
               <i nz-icon nzType="snippets"></i>
             </button>
+          </ng-container>
             <button (click)="regenerateList(list)" [disabled]="(permissionLevel$ | async) < 30"
                     [nzTooltipTitle]="'LIST.Regenerate' | translate" nz-button
                     nz-tooltip nzShape="circle"
