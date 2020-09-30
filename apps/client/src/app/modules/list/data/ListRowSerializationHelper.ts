@@ -182,9 +182,12 @@ export class ListRowSerializationHelper {
   }
 
   private serializeGardening(gardening: any) {
-    if (gardening && gardening.length > 0)
-      console.log({ gardening: gardening, thingy: this.applyItemName({ id: gardening }) })
-    return gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName({ id: r })) : undefined;
+    if (!Number.isInteger(gardening))
+      return undefined;
+    return {
+      ...this.applyItemName({ id: gardening }),
+      url: `http://ffxivgardening.com/seed-details.php?SeedID=${gardening}`,
+    };
   }
 
   private serializeRequires(item: ListRow): ItemNameHolder[] {
