@@ -336,7 +336,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
-  public copyTextExport(display: ListDisplay, list: List) {
+  public copyTextExport(display: ListDisplay, list: List): void {
     if (this._clipboardService.copyFromContent(this.getListTextExport(display, list)))
       this.afterListTextCopied();
   }
