@@ -8,6 +8,7 @@ import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/op
 import { ListsFacade } from '../+state/lists.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { UniversalisService } from '../../../core/api/universalis.service';
@@ -34,9 +35,8 @@ import { DataType } from '../data/data-type';
 import { ListRowSerializationHelper } from '../data/ListRowSerializationHelper';
 import { ListManagerService } from '../list-manager.service';
 import { Drop } from '../model/drop';
-import { ListRow } from '../model/list-row';
-import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
+import { getItemSource, ListRow } from '../model/list-row';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
 
@@ -312,11 +312,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    const vendors = this.getData<Vendor[]>(row, DataType.VENDORS);
-    const tradeSources = this.getData<TradeSource[]>(row, DataType.TRADE_SOURCES);
-    const gatheredBy = this.getData<GatheredBy>(row, DataType.GATHERED_BY);
-    const drops = this.getData<Drop[]>(row, DataType.DROPS);
-    const alarms = this.getData<Alarm[]>(row, DataType.ALARMS);
+    const vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
+    const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
+    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
+    const drops = getItemSource<Drop[]>(row, DataType.DROPS);
+    const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
     const positions = [];
     if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
