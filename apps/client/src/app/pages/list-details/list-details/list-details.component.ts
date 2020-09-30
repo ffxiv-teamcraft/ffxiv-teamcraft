@@ -366,7 +366,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return JSON.stringify(this.getSerializedRowData(serverName, list.items, list.finalItems))//,null,2);
+    return JSON.stringify(this.getSerializedRowData(serverName, list.items, list.finalItems));
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
