@@ -1,14 +1,21 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { MarketboardItem } from './market/marketboard-item';
+import { Injectable } from '@angular/core';
+import * as _ from 'lodash';
 import { combineLatest, Observable, of } from 'rxjs';
 import { bufferCount, catchError, distinctUntilChanged, filter, first, map, shareReplay, switchMap } from 'rxjs/operators';
-import { LazyDataService } from '../data/lazy-data.service';
+
 import { AuthFacade } from '../../+state/auth.facade';
-import { IpcService } from '../electron/ipc.service';
+import {
+  MarketBoardItemListing,
+  MarketBoardItemListingHistory,
+  MarketBoardSearchResult,
+  MarketTaxRates,
+  PlayerSetup,
+} from '../../model/pcap';
 import { SettingsService } from '../../modules/settings/settings.service';
-import * as _ from 'lodash';
-import { MarketBoardItemListing, MarketBoardItemListingHistory, MarketBoardSearchResult, MarketTaxRates, PlayerSetup } from '../../model/pcap';
+import { LazyDataService } from '../data/lazy-data.service';
+import { IpcService } from '../electron/ipc.service';
+import { MarketboardItem } from './market/marketboard-item';
 
 @Injectable({ providedIn: 'root' })
 export class UniversalisService {
@@ -26,7 +33,7 @@ export class UniversalisService {
     distinctUntilChanged()
   );
 
-  public static GetDCFromServerName(datacenters:{ [index: string]: string[] },server: string) {
+  public static getDCFromServerName(datacenters:{ [index: string]: string[] },server: string) {
     return Object.keys(datacenters).find(key => {
       return datacenters[key].indexOf(server) > -1;
     });
@@ -77,7 +84,7 @@ export class UniversalisService {
   }
 
   public getServerPrices(server: string, ...itemIds: number[]): Observable<MarketboardItem[]> {
-    const dc = UniversalisService.GetDCFromServerName(this.lazyData.datacenters,server);
+    const dc = UniversalisService.getDCFromServerName(this.lazyData.datacenters,server);
     const chunks = _.chunk(itemIds, 100);
     return combineLatest(chunks.map(chunk => {
       return this.http.get<any>(`https://universalis.app/api/${dc}/${chunk.join(',')}`)

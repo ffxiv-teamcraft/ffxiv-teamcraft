@@ -370,7 +370,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.GetDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, finalItems);
+    return this.serializationHelper.getJsonExport(UniversalisService.getDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, finalItems);
   }
 
   afterListJSONCopied(): void {
