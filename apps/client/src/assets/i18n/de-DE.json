@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "Fortschritt für Kristalle aktivieren",
     "Always_show_inventory": "Inventar immer anzeigen (auf Geräten <600px Breite deaktiviert)",
     "Copy_as_text": "Als Text kopieren",
+    "Copy_as_json": "Als Json kopieren",
     "Copy_list_as_text": "Gesamte Liste als Text kopieren",
     "Copied_as_text": "Inhalt in die Zwischenablage kopiert",
     "Total_price": "Gesamtausgaben (Gil und andere Währungen)",

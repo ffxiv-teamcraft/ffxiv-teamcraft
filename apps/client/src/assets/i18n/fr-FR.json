@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "Activer le suivi des cristaux",
     "Always_show_inventory": "Toujours afficher l'inventaire (désactivé pour les petits écrans, < 600px)",
     "Copy_as_text": "Copier au format texte",
+    "Copy_as_json": "Copier au format json",
     "Copy_list_as_text": "Copier la liste en format textuel",
     "Copied_as_text": "Contenu copié dans le presse-papiers",
     "Total_price": "Prix total (échanges et gils)",

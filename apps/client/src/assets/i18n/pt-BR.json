@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "Habilitar rastreamento de cristais",
     "Always_show_inventory": "Sempre mostrar inventário (desativado em telas pequenas, < 600px)",
     "Copy_as_text": "Copiar como texto",
+    "Copy_as_json": "Copiar como json",
     "Copy_list_as_text": "Copie toda a lista como texto",
     "Copied_as_text": "Conteúdo copiado para a área de transferências",
     "Total_price": "Total de compras (gil e outras moeadas)",

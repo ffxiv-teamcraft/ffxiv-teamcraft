@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "启用水晶跟踪",
     "Always_show_inventory": "始终显示背包 (在 < 600px 的小屏幕上无法使用)",
     "Copy_as_text": "复制为文本",
+    "Copy_as_json": "复制为json",
     "Copy_list_as_text": "将整个清单复制为文本",
     "Copied_as_text": "内容已复制到剪贴板",
     "Total_price": "总费用(金币+其他货币)",

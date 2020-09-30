@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "필요 크리스탈 즉시계산 활성화",
     "Always_show_inventory": "소지품 항상 보이기(600px이하의 화면에서는 비활성화)",
     "Copy_as_text": "텍스트로 복사",
+    "Copy_as_json": "json으로 복사",
     "Copy_list_as_text": "전체 목록을 텍스트로 복사",
     "Copied_as_text": "클립보드로 내용이 복사되었습니다",
     "Total_price": "총 비용 (길 및 화폐)",

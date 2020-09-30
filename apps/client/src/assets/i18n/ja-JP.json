@@ -537,6 +537,7 @@
     "Enable_crystals_tracking": "必要なクリスタルを即時計算してから活性化する",
     "Always_show_inventory": "常に所持品を表示する (600px以下では使用できません)",
     "Copy_as_text": "テキストにコピーする",
+    "Copy_as_json": "ジェイソンにコピーする",
     "Copy_list_as_text": "全てこのリストをテキストにコピーする",
     "Copied_as_text": "テキストがクリップボードにコピーされました",
     "Total_price": "総費用(ギルや各種通貨)",
