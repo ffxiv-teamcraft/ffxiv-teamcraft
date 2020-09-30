@@ -357,7 +357,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
-  public copyJSONExport(serverName: string, display: ListDisplay, list: List) {
+  public copyJSONExport(serverName: string, display: ListDisplay, list: List) : void {
     if (this._clipboardService.copyFromContent(this.getListJsonExport(serverName, display, list)))
       this.afterListJSONCopied();
   }
