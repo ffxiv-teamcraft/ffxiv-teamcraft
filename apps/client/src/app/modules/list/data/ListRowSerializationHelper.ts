@@ -13,18 +13,18 @@ import { getItemSource, ListRow } from '../model/list-row';
 import { StoredNode } from '../model/stored-node';
 import { Vendor } from '../model/vendor';
 
-type NameHolder = { name: string, itemIdName?: string }
-type ItemNameHolder = { id: number | string, itemId?: string, name?: string, itemIdName?: string };
-type NPCNameHolder = { id: number, npcId?: number, npcName?: string, zoneName?: string };
-type ZoneInfo = { id?: number; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
-type MapInfo = { zoneId?: any; zoneid?: any; mapId?: any; };
-type CurrencyInfo = { currencies: any[]; items: any[]; };
-type NpcTradeData = { npcs: any; trades: CurrencyInfo[]; };
-type MonsterInfo = { id: any; itemId?: any; position?: any; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
-type MonsterInfoWithMobName = MonsterInfo & NameHolder
-type VendorWithName = Vendor & NameHolder
-type InstanceWithName = Instance & NameHolder
-type GatherWithName = GatheredBy & NameHolder
+interface NameHolder { name: string, itemIdName?: string }
+interface ItemNameHolder { id: number | string, itemId?: string, name?: string, itemIdName?: string };
+interface NPCNameHolder { id: number, npcId?: number, npcName?: string, zoneName?: string };
+interface ZoneInfo { id?: number; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
+interface MapInfo { zoneId?: any; zoneid?: any; mapId?: any; };
+interface CurrencyInfo { currencies: any[]; items: any[]; };
+interface NpcTradeData { npcs: any; trades: CurrencyInfo[]; };
+interface MonsterInfo { id: any; itemId?: any; position?: any; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
+interface MonsterInfoWithMobName extends MonsterInfo, NameHolder { }
+interface VendorWithName extends Vendor, NameHolder { }
+interface InstanceWithName extends Instance, NameHolder { }
+interface GatherWithName extends GatheredBy, NameHolder { }
 
 export class ListRowSerializationHelper {
 
@@ -159,7 +159,7 @@ export class ListRowSerializationHelper {
   }
 
   private applyIntanceName(instance: Instance): Instance {
-    let retval = { ...instance }
+    const retval = { ...instance }
     if (instance != null && !instance.name)
       retval.name = this.getNameIfExists(this.l12n.getInstanceName(instance.id))
     return retval;
@@ -192,7 +192,7 @@ export class ListRowSerializationHelper {
   }
 
   private serializeGathering(gathering: GatheredBy): GatherWithName {
-    let retval = gathering ? {
+    const retval = gathering ? {
       ...gathering,
       //name: this.getJobAbbreviationFromId(LayoutOrderService.getJobIdFromGather(gathering.type)),
       //unclear what Id to use/convert to... 
@@ -224,7 +224,7 @@ export class ListRowSerializationHelper {
     for (let i = 0; i < desynthData.length; i++) {
       desynthMap[desynthData[i].id] = desynthData[i].name;
     }
-    let retval = {
+    const retval = {
       homeServer: server ? server : undefined,
       pricingURL: `https://universalis.app/api/${dc ? dc : '<DataCenter>'}/${rows.map(r => r.id).join(',')}`,
       items: rows
