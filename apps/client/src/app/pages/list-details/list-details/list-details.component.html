@@ -186,7 +186,7 @@
             </button>
             <button (click)="$event.stopPropagation();copyTextExport(listDisplay, list)"
                     *ngIf="display$ | async as listDisplay"
-                    [nzTitle]="'LIST.Copy_list_as_text' | translate"
+                    [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">
@@ -195,7 +195,7 @@
           <ng-container *ngIf="server$ | async as server">
             <button (click)="$event.stopPropagation();copyJSONExport(server, listDisplay, list)"
                     *ngIf="display$ | async as listDisplay"
-                    [nzTitle]="'LIST.Copy_list_as_json' | translate"
+                    [nzTooltipTitle]="'LIST.Copy_list_as_json' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">
