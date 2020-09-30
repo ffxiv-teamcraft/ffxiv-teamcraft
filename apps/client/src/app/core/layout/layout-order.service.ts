@@ -1,11 +1,13 @@
-import { LayoutRowOrder } from './layout-row-order.enum';
 import { Injectable } from '@angular/core';
-import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
+
+import { DataType } from '../../modules/list/data/data-type';
+import { GatheredBy } from '../../modules/list/model/gathered-by';
+import { getItemSource, ListRow } from '../../modules/list/model/list-row';
+import { LazyDataService } from '../data/lazy-data.service';
 import { LocalizedDataService } from '../data/localized-data.service';
 import { I18nToolsService } from '../tools/i18n-tools.service';
-import { DataType } from '../../modules/list/data/data-type';
-import { LazyDataService } from '../data/lazy-data.service';
+import { LayoutRowOrder } from './layout-row-order.enum';
 
 @Injectable()
 export class LayoutOrderService {
@@ -69,7 +71,7 @@ export class LayoutOrderService {
   };
 
   constructor(private translate: TranslateService, private localizedData: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService) {
+    private i18n: I18nToolsService, private lazyData: LazyDataService) {
   }
 
   public order(data: ListRow[], orderBy: string, order: LayoutRowOrder): ListRow[] {
@@ -98,28 +100,36 @@ export class LayoutOrderService {
 
   private getJobId(row: ListRow): number {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
-    const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
+    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
     if (craftedBy.length > 0) {
-      // Returns the lowest level available for the craft.
-      const jobName = LayoutOrderService.JOBS.find(job => craftedBy[0].icon.indexOf(job) > -1);
-      if (jobName !== undefined) {
-        return LayoutOrderService.JOBS.indexOf(jobName);
-      }
-      return 0;
+      return LayoutOrderService.getJobIdFromCraft(craftedBy);
     }
     if (gatheredBy.type !== undefined) {
-      const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][gatheredBy.type];
-      if (jobName !== undefined) {
-        return LayoutOrderService.JOBS.indexOf(jobName);
-      }
-      return 0;
+      return LayoutOrderService.getJobIdFromGather(gatheredBy.type);
+    }
+    return 0;
+  }
+
+  public static getJobIdFromCraft(craftedBy: any[]) {
+    // Returns the lowest level available for the craft.
+    const jobName = LayoutOrderService.JOBS.find(job => craftedBy[0].icon.indexOf(job) > -1);
+    if (jobName !== undefined) {
+      return LayoutOrderService.JOBS.indexOf(jobName);
+    }
+    return 0;
+  }
+  
+  public static getJobIdFromGather(id: number) {
+    const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][id];
+    if (jobName !== undefined) {
+      return LayoutOrderService.JOBS.indexOf(jobName);
     }
     return 0;
   }
 
   private getLevel(row: ListRow): number {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
-    const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
+    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
     if (craftedBy.length > 0) {
       // Returns the lowest level available for the craft.
       return craftedBy.map(craft => craft.lvl).sort((a, b) => a - b)[0];

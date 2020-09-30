@@ -2,10 +2,29 @@ import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
+import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { MobNamePipe } from '../../../pipes/pipes/mob-name.pipe';
 import { VenturesComponent } from '../../item-details/ventures/ventures.component';
 import { DataType } from '../data/data-type';
+import { CraftedBy } from '../model/crafted-by';
+import { GatheredBy } from '../model/gathered-by';
+import { Instance } from '../model/instance';
 import { getItemSource, ListRow } from '../model/list-row';
+import { StoredNode } from '../model/stored-node';
+import { Vendor } from '../model/vendor';
+
+type NameHolder = { name: string, itemIdName?: string }
+type ItemNameHolder = { id: number | string, itemId?: string, name?: string, itemIdName?: string };
+type NPCNameHolder = { id: number, npcId?: number, npcName?: string, zoneName?: string };
+type ZoneInfo = { id?: number; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
+type MapInfo = { zoneId?: any; zoneid?: any; mapId?: any; };
+type CurrencyInfo = { currencies: any[]; items: any[]; };
+type NpcTradeData = { npcs: any; trades: CurrencyInfo[]; };
+type MonsterInfo = { id: any; itemId?: any; position?: any; npcId?: number; npcName?: string; zoneName?: string; zoneId?: any; zoneid?: any; mapId?: any; };
+type MonsterInfoWithMobName = MonsterInfo & NameHolder
+type VendorWithName = Vendor & NameHolder
+type InstanceWithName = Instance & NameHolder
+type GatherWithName = GatheredBy & NameHolder
 
 export class ListRowSerializationHelper {
 
@@ -19,9 +38,8 @@ export class ListRowSerializationHelper {
     private gt: GarlandToolsService,
   ) {
   }
-
   // guesses the name based off potential paths
-  public applyItemName(obj): any {
+  public applyItemName(obj: ItemNameHolder): ItemNameHolder {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
     return {
       ...obj,
@@ -30,44 +48,44 @@ export class ListRowSerializationHelper {
     };
   }
 
-  private getItemName(id: any) {
+  private getItemName(id: any): string {
     const itemInfo = this.l12n.getItem(id);
     return id ? this.getNameIfExists(itemInfo) : undefined;
   }
 
-  private serializeCraftedBy(craftedBy: any) {
+  private serializeCraftedBy(craftedBy: any[]): any {
     return craftedBy ? craftedBy.map((obj: any) => {
       const retval = {
         ...obj,
         name: this.getItemName(obj.id),
-        job: this.getJob(obj.job)
+        job: this.getJobAbbreviationFromId(obj.job)
       };
       return retval
     }) : undefined;
   }
-  private getJob(job: any) {
+  private getJobAbbreviationFromId(job: number): string {
     const jobAbbr = this.getNameIfExists(this.l12n.getJobAbbr(job));
     return jobAbbr != null && jobAbbr !== "missing name" ? jobAbbr : "DOWM";
   }
 
-  private getNameIfExists(name: I18nName) {
+  private getNameIfExists(name: I18nName): string {
     const translatedName = this.i18nTools.getName(name);
     return translatedName && translatedName !== 'no name' ? translatedName : undefined;
   }
 
-  private serializeVoyages(voyages: any) {
+  private serializeVoyages(voyages: any): string {
     return voyages && voyages.length > 0 ? voyages.map((r: any) => this.getNameIfExists(r)) : undefined;
   }
 
-  public applyNpcName(obj) {
+  public applyNpcName(obj: Vendor): any {
     return {
       ...obj,
-      npcName: this.getNameIfExists(this.l12n.getNpc(obj.npcId ? obj.npcId : obj.id)),
+      npcName: this.getNameIfExists(this.l12n.getNpc(obj.npcId)),
       zoneName: this.getZoneName(obj),
     };
   }
 
-  private getZoneName(obj: any) {
+  private getZoneName(obj: MapInfo): string {
     if (!obj)
       return undefined;
     ///wat.. casing!?
@@ -76,26 +94,26 @@ export class ListRowSerializationHelper {
     return this.getNameIfExists(zoneName ? zoneName : mapName);
   }
 
-  public serializeTrades(trades: any) {
+  public serializeTrades(trades: NpcTradeData[]): NpcTradeData[] {
     return trades && trades.length > 0 ? trades.map((r: any) => this.serializeTradeData(r)) : undefined;
   }
 
-  public serializeTrade(obj) {
+  public serializeTrade(obj: CurrencyInfo): CurrencyInfo {
     return {
       currencies: obj.currencies && obj.currencies.length > 0 ? obj.currencies.map(c => this.applyItemName(c)) : undefined,
       items: obj.items && obj.items.length > 0 ? obj.items.map(i => this.applyItemName(i)) : undefined,
     };
   }
 
-  public serializeTradeData(obj) {
+  public serializeTradeData(obj: NpcTradeData): NpcTradeData {
     return {
       ...obj,
       npcs: this.serializeNPCs(obj.npcs),
-      trades: this.serializeTrade(obj.trades),
+      trades: obj.trades ? obj.trades.map(t => this.serializeTrade(t)) : undefined,
     };
   }
 
-  public applyMonsterInfo(obj) {
+  public applyMonsterInfo(obj: MonsterInfo): MonsterInfoWithMobName {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;
     const mobName = this.getMobNameFromId(id);
     const retval = {
@@ -106,19 +124,19 @@ export class ListRowSerializationHelper {
     return retval;
   }
 
-  private getMobNameFromId(id: number) {
+  private getMobNameFromId(id: number): I18nName {
     return this.l12n.getMob(MobNamePipe.getActualMobId(id));
   }
 
-  private getMonsterHuntData(monsterDrops: any) {
+  private getMonsterHuntData(monsterDrops: MonsterInfo[]): MonsterInfoWithMobName[] {
     return monsterDrops && monsterDrops.length > 0 ? monsterDrops.map((r: any) => this.applyMonsterInfo(r)) : undefined;
   }
 
-  public serializeNPCs(vendors: any) {
-    return vendors && vendors.length > 0 ? vendors.map((r: any) => this.applyNpcName(r)) : undefined;
+  public serializeNPCs(vendors: Vendor[]): VendorWithName[] {
+    return vendors && vendors.length > 0 ? vendors.map((r: Vendor) => this.applyNpcName(r)) : undefined;
   }
 
-  private serializeVentures(item: any, ventures: any) {
+  private serializeVentures(item: ListRow, ventures: number[]) {
     return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
       const retval = {
         ...venture,
@@ -130,7 +148,7 @@ export class ListRowSerializationHelper {
             }
           }),
         name: this.getNameIfExists(this.l12n.getVenture(venture.id)),
-        job: this.getJob(venture.job),
+        job: this.getJobAbbreviationFromId(venture.job),
       };
       delete retval.gathering;
       delete retval.amounts;
@@ -140,38 +158,57 @@ export class ListRowSerializationHelper {
     }) : undefined;
   }
 
-  private applyIntanceName(id: any) {
-    return id != null ? this.getNameIfExists(this.l12n.getInstanceName(id)) : undefined;
+  private applyIntanceName(instance: Instance): Instance {
+    let retval = { ...instance }
+    if (instance != null && !instance.name)
+      retval.name = this.getNameIfExists(this.l12n.getInstanceName(instance.id))
+    return retval;
   }
 
-  private serializeInstances(instances: any) {
-    return instances && instances.length > 0 ? instances.map((r: any) => this.applyIntanceName(r.id)) : undefined;
+  private serializeInstances(instances: Instance[]): InstanceWithName[] {
+    return instances && instances.length > 0 ? instances.map((r: Instance) => this.applyIntanceName(r)) : undefined;
   }
 
-  private serializeReducedFrom(reducedFrom: any) {
+  private serializeReducedFrom(reducedFrom: ItemNameHolder[]): ItemNameHolder[] {
     return reducedFrom && reducedFrom.length > 0 ? reducedFrom.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
-  private serializeTreasures(treasures: any) {
+  private serializeTreasures(treasures: ItemNameHolder[]): ItemNameHolder[] {
     return treasures && treasures.length > 0 ? treasures.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
-  private serializeMasterbooks(masterbooks: any) {
+  private serializeMasterbooks(masterbooks: ItemNameHolder[]): ItemNameHolder[] {
     return masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
   private serializeGardening(gardening: any) {
-    if (gardening)
+    if (gardening && gardening.length > 0)
       console.log({ gardening: gardening, thingy: this.applyItemName({ id: gardening }) })
     return gardening && gardening.length > 0 ? gardening.map((r: any) => this.applyItemName({ id: r })) : undefined;
   }
 
-  private serializeRequires(item: ListRow) {
-    return item.requires ? item.requires.map((r: any) => this.applyItemName(r)) : undefined;
+  private serializeRequires(item: ListRow): ItemNameHolder[] {
+    return item.requires ? item.requires.map((r: Ingredient) => this.applyItemName(r)) : undefined;
   }
 
-  private serializeGathering(gathering: any) {
-    return gathering && gathering.length > 0 ? gathering.map((r: any) => this.applyItemName(r)) : undefined;
+  private serializeGathering(gathering: GatheredBy): GatherWithName {
+    let retval = gathering ? {
+      ...gathering,
+      //name: this.getJobAbbreviationFromId(LayoutOrderService.getJobIdFromGather(gathering.type)),
+      //unclear what Id to use/convert to... 
+      name: gathering.icon ? gathering.icon.substr(gathering.icon.lastIndexOf("/"), 3) : undefined,
+      nodes: gathering.nodes ? gathering.nodes.map((n: StoredNode) => this.serializeGatheringNode(n)) : []
+    } : undefined;
+    return retval;
+  }
+
+  private serializeGatheringNode(n: StoredNode): any {
+    return {
+      ...n,
+      limitType: n.limitType ? this.i18nTools.getName(n.limitType) : undefined,
+      zoneName: this.getZoneName(n),
+      coords: n.coords ? { x: n.coords[0], y: n.coords[1] } : undefined
+    };
   }
 
   public getJsonExport(dc: string, server: string, rows: ListRow[], finalItems: ListRow[]): any {
@@ -187,28 +224,26 @@ export class ListRowSerializationHelper {
     for (let i = 0; i < desynthData.length; i++) {
       desynthMap[desynthData[i].id] = desynthData[i].name;
     }
-
-    return {
+    let retval = {
       homeServer: server ? server : undefined,
       pricingURL: `https://universalis.app/api/${dc ? dc : '<DataCenter>'}/${rows.map(r => r.id).join(',')}`,
       items: rows
-        .map(row => this.applyItemName(row))
         .map(row => this.serializeDataRow(row)),
       desynthMap: desynthMap,
       finalItems: finalItems ? finalItems
-        .map(row => this.applyItemName(row))
         .map(row => this.serializeDataRow(row)) : undefined,
     };
+    return retval;
   }
 
   private serializeDataRow(item: ListRow) {
-    const craftedBy = ListRowSerializationHelper.getData(item, DataType.CRAFTED_BY);
-    const trades = ListRowSerializationHelper.getData(item, DataType.TRADE_SOURCES);
-    const vendors = ListRowSerializationHelper.getData(item, DataType.VENDORS);
+    const craftedBy = ListRowSerializationHelper.getData<CraftedBy[]>(item, DataType.CRAFTED_BY);
+    const trades = ListRowSerializationHelper.getData<NpcTradeData[]>(item, DataType.TRADE_SOURCES);
+    const vendors = ListRowSerializationHelper.getData<Vendor[]>(item, DataType.VENDORS);
     const reducedFrom = ListRowSerializationHelper.getData(item, DataType.REDUCED_FROM);
-    const desynths = ListRowSerializationHelper.getData(item, DataType.DESYNTHS);
-    const instances = ListRowSerializationHelper.getData(item, DataType.INSTANCES);
-    const gathering = ListRowSerializationHelper.getData(item, DataType.GATHERED_BY);
+    const desynths = ListRowSerializationHelper.getData<number[]>(item, DataType.DESYNTHS);
+    const instances = ListRowSerializationHelper.getData<Instance[]>(item, DataType.INSTANCES);
+    const gathering = ListRowSerializationHelper.getData<GatheredBy>(item, DataType.GATHERED_BY);
     const gardening = ListRowSerializationHelper.getData(item, DataType.GARDENING);
     const voyages = ListRowSerializationHelper.getData(item, DataType.VOYAGES);
     const monsterDrops = ListRowSerializationHelper.getData(item, DataType.DROPS);
@@ -220,8 +255,9 @@ export class ListRowSerializationHelper {
     const tripleTriadPack = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_PACK);
     const quests = ListRowSerializationHelper.getData(item, DataType.QUESTS);
     const achievements = ListRowSerializationHelper.getData(item, DataType.ACHIEVEMENTS);
+    const name = this.getItemName(item.id);
     const retval: any = {
-      ...item,
+      ...this.applyItemName(item),
       done: item.done ? true : false,
       amountNeeded: item.amount_needed,
       used: item.used,
