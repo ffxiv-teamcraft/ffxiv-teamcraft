@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TranslateModule } from '@ngx-translate/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+
 import { TutorialModule } from '../../core/tutorial/tutorial.module';
 
 const routes: Routes = [
@@ -51,7 +51,7 @@ const routes: Routes = [
     NzToolTipModule,
     NzSelectModule,
     NzInputModule,
-    ClipboardModule,
+
     TutorialModule,
     NzAlertModule
   ]

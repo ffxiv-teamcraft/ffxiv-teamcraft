@@ -176,17 +176,22 @@
                     nzShape="circle" nzSize="small">
               <i nz-icon nzType="bell"></i>
             </button>
-            <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()"
-                    *ngIf="(permissionLevel$ | async) > 10 && !list.offline" [cbContent]="getLink(list)"
+            <button (click)="$event.stopPropagation()"
+                    *ngIf="(permissionLevel$ | async) > 10 && !list.offline"
+                    [clipboard]="getLink"
+                    [clipboardFnArgs]="[list]"
+                    [clipboardSuccessMessage]="'Share_link_copied' | translate"
                     [nzShape]="'circle'"
                     [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-                    ngxClipboard nz-button
+                    nz-button
                     nz-tooltip nzSize="small">
               <i nz-icon nzType="share-alt"></i>
             </button>
-            <button (cbOnSuccess)="afterListTextCopied()" *ngIf="display$ | async as listDisplay"
-                    [cbContent]="getListTextExport(listDisplay, list)" [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
-                    ngxClipboard
+            <button *ngIf="display$ | async as listDisplay"
+                    [clipboard]="getListTextExport"
+                    [clipboardFnArgs]="[listDisplay, list]"
+                    [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
+                    [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">

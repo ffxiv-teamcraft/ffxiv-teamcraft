@@ -31,7 +31,6 @@ import { ItemIconModule } from '../item-icon/item-icon.module';
 import { ImportFromPcapPopupComponent } from './import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetRowComponent } from './gearset-row/gearset-row.component';
 import { RouterModule } from '@angular/router';
-import { ClipboardModule } from 'ngx-clipboard';
 import { GearsetCostPopupComponent } from './gearset-cost-popup/gearset-cost-popup.component';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.component';
@@ -66,7 +65,7 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     NzIconModule,
     NzMessageModule,
 
-    ClipboardModule,
+
 
     FormsModule,
     ReactiveFormsModule,

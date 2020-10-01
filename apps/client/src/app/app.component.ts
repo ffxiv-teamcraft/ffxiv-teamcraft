@@ -490,10 +490,6 @@ export class AppComponent implements OnInit {
     return this.router.url;
   }
 
-  afterPathNameCopy(): void {
-    this.message.success(this.translate.instant('Path_copied_to_clipboard'));
-  }
-
   getLang(): string {
     if (isPlatformBrowser(this.platform)) {
       const lang = localStorage.getItem('locale');

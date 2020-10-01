@@ -58,14 +58,19 @@
               </button>
             </div>
           </ng-container>
-          <button (click)="$event.stopPropagation();renameRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzTitle]="'SIMULATOR.Rename_rotation' | translate" nz-button
+          <button (click)="$event.stopPropagation();renameRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 40"
+                  [nzTitle]="'SIMULATOR.Rename_rotation' | translate" nz-button
                   nz-tooltip
                   nzShape="circle">
             <i nz-icon nzType="edit"></i>
           </button>
-          <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink(rotation)" [nzShape]="'circle'"
+          <button (click)="$event.stopPropagation()"
+                  [clipboard]="getLink(rotation)"
+                  [clipboardFnArgs]="[rotation]"
+                  [clipboardSuccessMessage]="'SIMULATOR.Share_link_copied' | translate"
+                  [nzShape]="'circle'"
                   [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
-                  ngxClipboard nz-button nz-tooltip>
+                  nz-button nz-tooltip>
             <i nz-icon nzType="share-alt"></i>
           </button>
           <a (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
@@ -81,7 +86,8 @@
                   nz-tooltip>
             <i nz-icon nzType="desktop"></i>
           </button>
-          <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'" [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
+          <button (click)="$event.stopPropagation()" (nzOnConfirm)="delete(rotation)" *ngIf="(permissionLevel$ | async) >= 40" [nzShape]="'circle'"
+                  [nzPopconfirmTitle]="'SIMULATOR.Confirm_delete' | translate"
                   [nzType]="'danger'" nz-button
                   nz-popconfirm>
             <i nz-icon nzType="delete"></i>
@@ -104,7 +110,9 @@
                       {{'CUSTOM_LINKS.Add_link' | translate}}
                     </li>
                     <ng-template #copyLink>
-                      <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                      <li *ngIf="customLink$ | async as link"
+                          [clipboard]="link.getUrl"
+                          [clipboardSuccessMessage]="'CUSTOM_LINKS.Share_link_copied' | translate"
                           nz-menu-item>
                         {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                       </li>

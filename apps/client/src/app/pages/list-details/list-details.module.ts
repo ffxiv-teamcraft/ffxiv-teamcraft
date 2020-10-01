@@ -12,7 +12,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-panel.component';
 import { FormsModule } from '@angular/forms';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { IconsModule } from '../../core/icons/icons.module';
@@ -62,7 +62,7 @@ const routes: Routes = [
     ItemIconModule,
     PipesModule,
     AlarmsModule,
-    ClipboardModule,
+
     PageLoaderModule,
     FullpageMessageModule,
     LayoutEditorModule,

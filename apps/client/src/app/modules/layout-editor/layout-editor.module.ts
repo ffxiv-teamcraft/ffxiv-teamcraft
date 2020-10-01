@@ -10,7 +10,7 @@ import { LayoutEditorRowComponent } from './layout-editor-row/layout-editor-row.
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { TextQuestionPopupModule } from '../text-question-popup/text-question-popup.module';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/layout-row-display-editor.component';
@@ -22,7 +22,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     CommonModule,
     FormsModule,
     FlexLayoutModule,
-    ClipboardModule,
+
     DragDropModule,
 
     CoreModule,

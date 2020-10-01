@@ -457,7 +457,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport(): string {
+  public getTextExport = () => {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -469,10 +469,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return rows.reduce((exportString, row) => {
       return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
     }, `${this.displayRow.title} :\n`);
-  }
-
-  textCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   trackByItem(index: number, item: ListRow): number {

@@ -23,7 +23,7 @@ import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
 import { MateriasNeededPopupComponent } from './materias-needed-popup/materias-needed-popup.component';
 import { GearsetEditorRowComponent } from './gearset-editor-row/gearset-editor-row.component';
 import { GearsetDisplaySlotComponent } from './gearset-display-slot/gearset-display-slot.component';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+
 import { FavoritesModule } from '../../modules/favorites/favorites.module';
 import { StatDisplayPipe } from './gearset-editor/stat-display.pipe';
 
@@ -62,7 +62,7 @@ const routes: Routes = [
     ItemIconModule,
     PageLoaderModule,
 
-    ClipboardModule,
+
 
     RouterModule.forChild(routes),
     FavoritesModule

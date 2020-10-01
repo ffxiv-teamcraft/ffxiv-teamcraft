@@ -31,11 +31,11 @@ export class SimulationSharePopupComponent {
       String(this.stats._control),
       String(this.stats.cp),
       String(this.stats.level),
-      this.stats.specialist ? '1' : '0',
+      this.stats.specialist ? '1' : '0'
     ];
   }
 
-  getLink(): string {
+  getLink = () => {
     let baseLink: string;
     if (this.rotation.custom) {
       baseLink = this.linkTools.getLink(`/simulator/custom/${this.rotation.$key}`);
@@ -47,7 +47,7 @@ export class SimulationSharePopupComponent {
       const makePair = (item: Consumable) => `${item.itemId},${item.hq ? 1 : 0}`;
 
       const params = [
-        `stats=${this.getStatsParam().join('/')}`,
+        `stats=${this.getStatsParam().join('/')}`
       ];
 
       if (this.food) {
@@ -66,7 +66,7 @@ export class SimulationSharePopupComponent {
     }
 
     return baseLink;
-  }
+  };
 
   afterLinkCopy(): void {
     this.message.success(this.translate.instant('SIMULATOR.Share_link_copied'));

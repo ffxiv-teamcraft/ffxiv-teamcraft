@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
@@ -27,7 +27,7 @@ const routes: Routes = [
     NgZorroAntdModule,
     CoreModule,
     TranslateModule,
-    ClipboardModule,
+
 
 
     RouterModule.forChild(routes)

@@ -13,7 +13,7 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
 import { TeamInviteComponent } from './team-invite/team-invite.component';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
@@ -35,7 +35,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
 
-    ClipboardModule,
+
     FlexLayoutModule,
     TranslateModule,
     TeamsModule,

@@ -182,10 +182,6 @@ export class RotationPanelComponent implements OnInit {
     this.customLinksFacade.createCustomLink(rotation.getName(), this.getRouterLink(rotation).substr(1), user);
   }
 
-  afterCustomLinkCopy(): void {
-    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
-  }
-
   getLink(rotation: CraftingRotation): string {
     return this.linkTools.getLink(this.getRouterLink(rotation));
   }
@@ -229,10 +225,6 @@ export class RotationPanelComponent implements OnInit {
     ).subscribe(r => {
       this.rotationsFacade.updateRotation(r);
     });
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('SIMULATOR.Share_link_copied'));
   }
 
   delete(rotation: CraftingRotation): void {

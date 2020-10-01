@@ -106,17 +106,13 @@ export class WorkshopPanelComponent {
     this.customLinksFacade.createCustomLink(workshop.name, `workshop/${workshop.$key}`, user);
   }
 
-  afterCustomLinkCopy(): void {
-    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
-  }
-
   deleteWorkshop(): void {
     this.workshopsFacade.deleteWorkshop(this._workshop.$key);
   }
 
-  getLink(): string {
+  getLink = () => {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/workshop/${this._workshop.$key}`);
-  }
+  };
 
   renameWorkshop(): void {
     this.dialog.create({
@@ -189,10 +185,6 @@ export class WorkshopPanelComponent {
   removeList(list: List): void {
     this._workshop.listIds = this._workshop.listIds.filter(key => key !== list.$key);
     this.workshopsFacade.updateWorkshop(this._workshop);
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('WORKSHOP.Share_link_copied'));
   }
 
   trackByList(index: number, list: List): string {

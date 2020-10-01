@@ -5,10 +5,11 @@
     <i nz-icon nzType="edit"></i>
   </button>
   <div fxFlex="1 1 auto"></div>
-  <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()"
+  <button (click)="$event.stopPropagation()" [clipboard]="getLink"
+          [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate"
           nzShape="circle"
           [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-          ngxClipboard nz-button nz-tooltip nzType="primary">
+          nz-button nz-tooltip nzType="primary">
     <i nz-icon nzType="share-alt"></i>
   </button>
   <a nz-button routerLink="/gearset/{{gearset.$key}}" nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'GEARSETS.View_gearset' | translate">
