@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreModule } from '../../core/core.module';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
   declarations: [SupportUsComponent],
   imports: [
     CommonModule,
+    CoreModule,
     TranslateModule,
 
     PipesModule,
