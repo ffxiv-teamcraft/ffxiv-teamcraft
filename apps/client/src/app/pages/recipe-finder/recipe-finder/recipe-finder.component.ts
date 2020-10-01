@@ -129,7 +129,7 @@ export class RecipeFinderComponent implements OnDestroy {
           const jobSet = sets.find(set => recipe.job === set.jobId);
           recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
           recipe.missing = recipe.ingredients
-          // Ignore crystals
+            // Ignore crystals
             .filter(i => i.id > 19)
             .filter(i => {
               const poolItem = this.pool.find(item => item.id === i.id);
@@ -184,7 +184,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public canCraft(recipe: LazyRecipe, amount: number): boolean {
     const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
     const neededIngredients = allAvailableIngredients
-    // Ignore crystals
+      // Ignore crystals
       .filter(i => i.id > 19)
       .map(i => {
         return {
@@ -253,19 +253,13 @@ export class RecipeFinderComponent implements OnDestroy {
     this.savePool();
   }
 
-  public getPoolJSON(): string {
+  public getPoolJSON = () => {
     return JSON.stringify(this.pool);
-  }
+  };
 
   public sortPool(): void {
     this.pool = this.pool.sort((a, b) => {
       return this.i18n.getName(this.l12n.getItem(a.id)) > this.i18n.getName(this.l12n.getItem(b.id)) ? 1 : -1;
-    });
-  }
-
-  public afterJSONCopied(): void {
-    this.message.success(this.translate.instant('RECIPE_FINDER.Pool_copied'), {
-      nzDuration: 3000
     });
   }
 

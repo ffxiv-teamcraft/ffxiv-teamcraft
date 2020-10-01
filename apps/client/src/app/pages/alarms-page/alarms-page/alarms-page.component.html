@@ -73,8 +73,9 @@
                 {{group.group.name}}
               </div>
               <button (click)="$event.stopPropagation()"
-                      [cdkCopyToClipboard]="getGroupLink(group.group.$key)"
-                      (cdkCopyToClipboardCopied)="afterGroupLinkCopy()"
+                      [clipboard]="getGroupLink(group.group.$key)"
+                      [clipboardFnArgs]="[group.group.$key]"
+                      [clipboardSuccessMessage]="'ALARMS.Group_link_copied' | translate"
                       nz-button
                       nzType="primary"
                       nzShape="circle"
@@ -85,7 +86,8 @@
                       nzSize="small">
                 <i nz-icon nzType="edit"></i>
               </button>
-              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroup(group.group)" [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
+              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroup(group.group)"
+                      [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
                       nz-button nz-popconfirm
                       nzGhost
                       nzShape="circle" nzSize="small">
@@ -264,7 +266,10 @@
              nzType="delete"></i>
         </ng-template>
         <ng-template #copyMacro>
-          <i (cdkCopyToClipboardCopied)="macroCopied()" [cdkCopyToClipboard]="getIngameAlarmMacro(row)" nz-icon nz-tooltip
+          <i [clipboard]="getIngameAlarmMacro"
+             [clipboardFnArgs]="[row]"
+             [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
+             nz-icon nz-tooltip
              nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
              nzType="copy"></i>
         </ng-template>
@@ -390,7 +395,10 @@
               <i nz-icon nzType="delete"></i>
             </button>
           </span>
-          <button (cdkCopyToClipboardCopied)="macroCopied()" [cdkCopyToClipboard]="getIngameAlarmMacro(row)" nz-button nz-tooltip
+          <button [clipboard]="getIngameAlarmMacro"
+                  [clipboardFnArgs]="[row]"
+                  [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
+                  nz-button nz-tooltip
                   nzShape="circle"
                   nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
             <i nz-icon nzType="copy"></i>

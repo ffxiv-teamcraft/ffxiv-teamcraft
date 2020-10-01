@@ -95,17 +95,13 @@ export class RotationFolderPanelComponent {
     this.customLinksFacade.createCustomLink(folder.name, `rotation-folder/${folder.$key}`, user);
   }
 
-  afterCustomLinkCopy(): void {
-    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
-  }
-
   deleteFolder(): void {
     this.foldersFacade.deleteFolder(this._folder.$key);
   }
 
-  getLink(): string {
+  getLink = () => {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/rotation-folder/${this._folder.$key}`);
-  }
+  };
 
   renameFolder(): void {
     this.dialog.create({
@@ -151,10 +147,6 @@ export class RotationFolderPanelComponent {
   removeCraftingRotation(rotation: CraftingRotation): void {
     this._folder.rotationIds = this._folder.rotationIds.filter(key => key !== rotation.$key);
     this.foldersFacade.updateFolder(this._folder);
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('SIMULATOR.ROTATIONS.FOLDERS.Share_link_copied'));
   }
 
   trackByCraftingRotation(index: number, rotation: CraftingRotation): string {

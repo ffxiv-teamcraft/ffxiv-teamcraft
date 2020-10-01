@@ -32,10 +32,6 @@ export class CraftingReplayRowComponent {
     this.craftingReplayFacade.saveReplay(replay);
   }
 
-  afterLinkCopied(): void {
-    this.message.success(this.translate.instant('COMMON.Share_link_copied'));
-  }
-
   deleteReplay(replay: CraftingReplay): void {
     this.craftingReplayFacade.deleteReplay(replay.$key);
   }

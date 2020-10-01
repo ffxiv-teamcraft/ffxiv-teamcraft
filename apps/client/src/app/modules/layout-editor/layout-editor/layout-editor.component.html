@@ -18,7 +18,9 @@
         <i nz-icon nzType="delete"></i>
       </button>
       <div class="spacer"></div>
-      <button (cbOnSuccess)="layoutCopied()" [cbContent]="layout.base64" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate" ngxClipboard
+      <button [clipboard]="layout.base64"
+              [clipboardSuccessMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied' | translate"
+              [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate"
               nz-button
               nz-tooltip>
         <i nz-icon nzType="upload"></i>

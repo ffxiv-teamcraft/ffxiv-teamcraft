@@ -21,7 +21,8 @@
       </button>
       <button *ngIf="replay.online" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Copy_to_clipboard' | translate" nz-button nzShape="circle"
               nzType="primary"
-              [cdkCopyToClipboard]="('/crafting-replay/' + replay.$key) | tcLink" (cdkCopyToClipboardCopied)="afterLinkCopied()">
+              [clipboard]="('/crafting-replay/' + replay.$key) | tcLink"
+              [clipboardSuccessMessage]="'COMMON.Share_link_copied' | translate">
         <i nz-icon nzType="share-alt" nzTheme="outline"></i>
       </button>
       <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'CRAFTING_REPLAYS.Delete' | translate"

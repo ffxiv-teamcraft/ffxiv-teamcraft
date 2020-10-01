@@ -338,7 +338,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
     this.rotationPicker.openInSimulator(this.itemId, this._recipeId, true, this.custom);
   }
 
-  getCraftOptExportString(): string {
+  getCraftOptExportString = () => {
     return this.registry.exportToCraftOpt(this.registry.serializeRotation(this.actions$.value));
   }
 
@@ -383,10 +383,6 @@ export class SimulatorComponent implements OnInit, OnDestroy {
       this.dirty = false;
       this.dirtyFacade.removeEntry('simulator', DirtyScope.PAGE);
     });
-  }
-
-  success(translationKey: string): void {
-    this.message.success(this.translate.instant(translationKey));
   }
 
   importFromCraftingOptimizer(): void {
