@@ -1889,6 +1889,8 @@
     "Stats_caps": "Límite de atributos",
     "Stat_computing_diclaimer": "Los resultados no son 100% exactos, son de jugadores (los estudios de allagan) como usted y yo que dedicamos mucho tiempo a tratar de encontrar las fórmulas, por favor no informe inexactitudes como un defecto.",
     "Missing_items": "Parece que le faltan algunas ranuras, asegúrese de que sus filtros estén correctamente configurados",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",

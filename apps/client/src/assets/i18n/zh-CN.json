@@ -1889,6 +1889,8 @@
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
