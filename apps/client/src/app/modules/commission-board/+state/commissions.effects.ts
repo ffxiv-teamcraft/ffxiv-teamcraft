@@ -4,15 +4,43 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
-import { first, map, switchMap } from 'rxjs/operators';
+import { commissionsLoaded } from './commissions.actions';
+import { distinctUntilChanged, first, map, switchMap, switchMapTo } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Character } from '@xivapi/angular-client';
 import { of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Injectable()
 export class CommissionsEffects {
+
+  loadCommissionsAsClient$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CommissionsActions.loadUserCommissionsAsClient),
+      switchMapTo(this.authFacade.userId$),
+      distinctUntilChanged(),
+      switchMap(userId => {
+        return this.commissionService.getByForeignKey(TeamcraftUser, userId);
+      }),
+      map(commissions => {
+        return commissionsLoaded({ commissions });
+      })
+    );
+  });
+
+  loadCommissionsAsCrafter$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CommissionsActions.loadUserCommissionsAsCrafter),
+      switchMap(({ userId }) => {
+        return this.commissionService.getByCrafterId(userId);
+      }),
+      map(commissions => {
+        return commissionsLoaded({ commissions });
+      })
+    );
+  });
 
   createCommission$ = createEffect(() => {
     return this.actions$.pipe(
@@ -28,7 +56,7 @@ export class CommissionsEffects {
       switchMap(([{ listKey, name }, character]: [any, Character]) => {
         const commission = new Commission();
         commission.server = character.Server;
-        commission.dataCenter = this.lazyData.getDataCenter(character.Server);
+        commission.datacenter = this.lazyData.getDataCenter(character.Server);
         commission.name = name;
         if (listKey) {
           commission.$key = listKey;

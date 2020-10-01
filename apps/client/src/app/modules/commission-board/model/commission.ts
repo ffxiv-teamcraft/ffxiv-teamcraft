@@ -7,6 +7,8 @@ export class Commission extends DataWithPermissions {
 
   name: string;
 
+  contactInformations: string;
+
   /**
    * The $key of the list is the $key of the commission,
    * this is meant to make permissions easier to compute, as we can say that a list cannot be deleted
@@ -32,7 +34,7 @@ export class Commission extends DataWithPermissions {
 
   ratedBy: Record<string, boolean> = {};
 
-  dataCenter: string;
+  datacenter: string;
 
   server: string;
 }

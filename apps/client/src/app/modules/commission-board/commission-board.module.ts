@@ -8,6 +8,7 @@ import { CommissionsFacade } from './+state/commissions.facade';
 import { NzModalModule } from 'ng-zorro-antd';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 @NgModule({
   declarations: [],
@@ -19,6 +20,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ),
     EffectsModule.forFeature([CommissionsEffects]),
     TranslateModule,
+    AngularFireMessagingModule,
 
     NzModalModule,
     NameQuestionPopupModule

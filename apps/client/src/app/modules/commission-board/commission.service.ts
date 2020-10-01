@@ -6,17 +6,25 @@ import { PendingChangesService } from '../../core/database/pending-changes/pendi
 import { map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Commission } from './model/commission';
+import { QueryFn } from '@angular/fire/firestore/interfaces';
+import { CommissionStatus } from './model/commission-status';
+import { AngularFireMessaging } from '@angular/fire/messaging';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionService extends FirestoreRelationalStorage<Commission> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService) {
+              protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging) {
     super(firestore, serializer, zone, pendingChangesService);
+    if (navigator && navigator.serviceWorker) {
+      navigator.serviceWorker.getRegistration().then(registration => {
+        this.afm.useServiceWorker(registration);
+      });
+    }
   }
 
-  public getByCrafterId(userId: string): Observable<Commission[]> {
-    return this.firestore.collection(this.getBaseUri(), ref => ref.where('crafterId', '==', userId))
+  private where(query: QueryFn): Observable<Commission[]> {
+    return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
         tap(() => this.recordOperation('read')),
@@ -43,6 +51,26 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
           });
         })
       );
+  }
+
+  public getByCrafterId(userId: string, allStatuses = false): Observable<Commission[]> {
+    return this.where(ref => {
+      const base = ref.where('crafterId', '==', userId);
+      if (allStatuses) {
+        return base;
+      }
+      return base.where('status', '==', CommissionStatus.OPENED);
+    });
+  }
+
+  public getByDatacenter(datacenter: string, allStatuses = false): Observable<Commission[]> {
+    return this.where(ref => {
+      const base = ref.where('datacenter', '==', datacenter);
+      if (allStatuses) {
+        return base;
+      }
+      return base.where('status', '==', CommissionStatus.OPENED);
+    });
   }
 
   protected getBaseUri(params?: any): string {

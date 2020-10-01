@@ -175,8 +175,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private craftingReplayFacade: CraftingReplayFacade) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
 
 
     fromEvent(document, 'keypress').pipe(

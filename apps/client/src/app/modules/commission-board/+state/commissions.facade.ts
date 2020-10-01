@@ -7,9 +7,10 @@ import * as CommissionsSelectors from './commissions.selectors';
 import { createCommission } from './commissions.actions';
 import { NzModalService } from 'ng-zorro-antd';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { filter } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { List } from '../../list/model/list';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthFacade } from '../../../+state/auth.facade';
 
 @Injectable()
 export class CommissionsFacade {
@@ -19,12 +20,34 @@ export class CommissionsFacade {
     select(CommissionsSelectors.getAllCommissions)
   );
 
+  userCommissionsAsClient$ = this.authFacade.userId$.pipe(
+    distinctUntilChanged(),
+    switchMap(userId => {
+      return this.allCommissions$.pipe(
+        map(commissions => {
+          return commissions.filter(c => c.authorId === userId);
+        })
+      );
+    })
+  );
+
+  userCommissionsAsCrafter$ = this.authFacade.userId$.pipe(
+    distinctUntilChanged(),
+    switchMap(userId => {
+      return this.allCommissions$.pipe(
+        map(commissions => {
+          return commissions.filter(c => c.crafterId === userId);
+        })
+      );
+    })
+  );
+
   selectedCommission$ = this.store.pipe(
     select(CommissionsSelectors.getSelected)
   );
 
   constructor(private store: Store<fromCommissions.CommissionsPartialState>, private dialog: NzModalService,
-              private translate: TranslateService) {
+              private translate: TranslateService, private authFacade: AuthFacade) {
   }
 
   create(list?: List): void {

@@ -26,12 +26,7 @@ export const initialState: State = commissionsAdapter.getInitialState({
 
 const commissionsReducer = createReducer(
   initialState,
-  on(CommissionsActions.loadCommissions, (state) => ({
-    ...state,
-    loaded: false,
-    error: null
-  })),
-  on(CommissionsActions.loadCommissionsSuccess, (state, { commissions }) =>
+  on(CommissionsActions.commissionsLoaded, (state, { commissions }) =>
     commissionsAdapter.setAll(commissions, { ...state, loaded: true })
   )
 );
