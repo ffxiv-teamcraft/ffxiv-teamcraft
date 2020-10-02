@@ -177,6 +177,7 @@
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "グループ内のすべてのアラームを消す",
     "Confirm_group_delete_with_alarms": "本当にこのグループや全てのアラームを削除しますか？",
     "Add_note": "メモを追加する",
