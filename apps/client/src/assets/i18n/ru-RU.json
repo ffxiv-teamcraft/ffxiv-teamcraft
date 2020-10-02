@@ -177,6 +177,7 @@
     "Custom_sound": "Настраиваемый звук",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Удалить группу со всеми оповещениями",
     "Confirm_group_delete_with_alarms": "Вы уверены, что хотите удалить эту группу и все её оповещения?",
     "Add_note": "Добавить заметку",
