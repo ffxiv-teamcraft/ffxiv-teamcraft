@@ -2348,6 +2348,20 @@ if (hasTodo('foods')) {
   });
 }
 
+if (hasTodo('medicines')) {
+  const medicines = [];
+  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemSearchCategory.ID=43&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
+    page.Results.forEach(entry => {
+      if (entry.Bonuses) {
+        medicines.push(entry);
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('medicines', medicines);
+    done('medicines');
+  });
+}
+
 if (hasTodo('paramGrow')) {
   const paramGrow = {};
   getAllPages('https://xivapi.com/Paramgrow?columns=AdditionalActions,ApplyAction,BaseSpeed,CraftingLevel,ExpToNext,GameContentLinks,HpModifier,HuntingLogExpReward,ID,ItemLevelSync,LevelModifier,MonsterNoteSeals,MpModifier,Patch,ProperDungeon,ProperGuildOrder,QuestExpModifier,ScaledQuestXP').subscribe(page => {
