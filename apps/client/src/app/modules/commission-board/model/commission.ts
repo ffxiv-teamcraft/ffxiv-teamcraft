@@ -37,4 +37,6 @@ export class Commission extends DataWithPermissions {
   datacenter: string;
 
   server: string;
+
+  items: number[];
 }

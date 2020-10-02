@@ -9,9 +9,11 @@ import { NzModalModule } from 'ng-zorro-antd';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { CommissionPanelComponent } from './commission-panel/commission-panel.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [CommissionPanelComponent],
+  exports: [CommissionPanelComponent],
   imports: [
     CommonModule,
     StoreModule.forFeature(

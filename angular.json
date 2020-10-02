@@ -11,7 +11,7 @@
       "schematics": {
         "@schematics/angular:component": {
           "prefix": "app",
-          "styleext": "less",
+          "style": "less",
           "changeDetection": "OnPush",
           "spec": false
         }

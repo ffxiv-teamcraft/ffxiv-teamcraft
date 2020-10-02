@@ -17,7 +17,7 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
               protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging) {
     super(firestore, serializer, zone, pendingChangesService);
     if (navigator && navigator.serviceWorker) {
-      navigator.serviceWorker.getRegistration().then(registration => {
+      navigator.serviceWorker.getRegistration('/firebase-messaging-sw.js').then(registration => {
         this.afm.useServiceWorker(registration);
       });
     }
