@@ -195,6 +195,13 @@ export class AppComponent implements OnInit {
       this.router.navigateByUrl('/admin/users');
     });
 
+    // Scuff Zoom Handling
+    document.addEventListener("keydown", event => {
+      if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
+        return this.ipc.send('zoom-in', event)
+      }
+    });
+
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
 
     apollo.create({
