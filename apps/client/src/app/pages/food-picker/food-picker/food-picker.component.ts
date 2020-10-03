@@ -26,14 +26,14 @@ export class FoodPickerComponent extends TeamcraftComponent {
     super();
 
     this.results$ = this.stats$.pipe(
-      filter(stats => {
-        return stats.length > 0 && stats.every(s => s !== null);
+      filter(pickedStats => {
+        return pickedStats.length > 0 && pickedStats.every(s => s !== null);
       }),
       debounceTime(500),
-      switchMap((stats) => {
+      switchMap((pickedStats) => {
         this.loading = true;
 
-        const filters = stats.map(stat => {
+        const filters = pickedStats.map(stat => {
           return {
             column: 'Bonuses.' + stat.filterName + '.ID',
             operator: '=' as XivapiSearchFilter['operator'],
