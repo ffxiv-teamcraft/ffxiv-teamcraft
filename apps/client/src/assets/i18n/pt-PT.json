@@ -1787,6 +1787,7 @@
       "Bag": "Inventory",
       "Other": "Other inventory",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     }
   },
