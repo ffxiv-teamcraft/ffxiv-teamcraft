@@ -1787,6 +1787,7 @@
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "En vente par les servants"
     }
   },
