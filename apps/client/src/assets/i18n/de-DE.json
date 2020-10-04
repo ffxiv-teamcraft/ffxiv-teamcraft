@@ -1787,6 +1787,7 @@
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "Im Verkauf bei Gehilfen"
     }
   },
