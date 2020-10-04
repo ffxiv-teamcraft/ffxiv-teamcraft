@@ -1710,6 +1710,11 @@
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "Blog"
   },
