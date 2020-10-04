@@ -1787,6 +1787,7 @@
       "Bag": "소지품",
       "Other": "다른 소지품",
       "Armory": "장비함",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "집사가 판매중"
     }
   },
