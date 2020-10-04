@@ -1787,6 +1787,7 @@
       "Bag": "Inventario",
       "Other": "Otro inventario",
       "Armory": "Armería",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "En venta por retenedores"
     }
   },
