@@ -282,7 +282,6 @@
           <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
                                    [crystals]="crystals$ | async"></app-list-crystals-panel>
           <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
-                                  [collapsed]="listIsLarge"
                                   [largeList]="listIsLarge"
                                   [displayRow]="displayRow"></app-list-details-panel>
           <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"
