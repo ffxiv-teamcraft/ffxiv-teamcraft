@@ -177,7 +177,7 @@
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
-    "Delete_group": "Gruppe löschen",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Gruppe mit allen Alarmen löschen",
     "Confirm_group_delete_with_alarms": "Möchtest du diese Gruppe und alle Alarme darin wirklich löschen?",
     "Add_note": "Notiz hinzufügen",
