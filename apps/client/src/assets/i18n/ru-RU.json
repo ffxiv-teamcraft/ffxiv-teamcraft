@@ -1787,6 +1787,7 @@
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "На продаже у ретейнеров"
     }
   },
