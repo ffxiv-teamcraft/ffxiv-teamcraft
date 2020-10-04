@@ -1787,6 +1787,7 @@
       "Bag": "背包",
       "Other": "其他物品栏",
       "Armory": "兵装库",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "雇员出售列表"
     }
   },
