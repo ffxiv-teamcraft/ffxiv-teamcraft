@@ -1710,6 +1710,11 @@
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "ブログ"
   },
@@ -1782,6 +1787,7 @@
       "Bag": "所持品",
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     }
   },
