@@ -854,6 +854,11 @@ ipcMain.on('navigated', (event, uri) => {
   deepLink = uri;
 });
 
+ipcMain.on('zoom-in', () => {
+    var currentzoom = win.webContents.getZoomLevel()
+    win.webContents.setZoomLevel(currentzoom++)
+})
+
 // Oauth stuff
 ipcMain.on('oauth', (event, providerId) => {
   if (providerId === 'google.com') {
