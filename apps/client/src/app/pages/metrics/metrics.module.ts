@@ -21,6 +21,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { TutorialModule } from '../../core/tutorial/tutorial.module';
+import { CoreModule } from '../../core/core.module';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     MetricsComponent
   ],
   imports: [
+    CoreModule,
     CommonModule,
     FormsModule,
     FlexLayoutModule,

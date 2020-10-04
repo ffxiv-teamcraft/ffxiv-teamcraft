@@ -84,6 +84,8 @@ export class InventoryFacade {
       case ContainerType.ArmorySoulCrystal:
       case ContainerType.ArmoryMain:
         return 'Armory';
+      case ContainerType.GearSet0:
+        return 'Current_Gear';
     }
     return 'Other';
   }
