@@ -29,7 +29,7 @@ export class MateriaService {
       };
     }
     const materia = this.getMateria(materiaId);
-    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
     const stat: any = itemStats.find((s: any) => s.ID === materia.baseParamId);
     let statValue = 0;
     if (stat) {

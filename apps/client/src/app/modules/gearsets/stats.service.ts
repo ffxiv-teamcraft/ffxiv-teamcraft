@@ -131,7 +131,7 @@ export class StatsService {
   }
 
   public getStartingValue(equipmentPiece: EquipmentPiece, baseParamId: number): number {
-    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+    const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
     const matchingStat: any = itemStats.find((stat: any) => stat.ID === baseParamId);
     if (matchingStat) {
       if (equipmentPiece.hq) {
@@ -154,7 +154,7 @@ export class StatsService {
     Object.values(set)
       .filter(value => value && value.itemId !== undefined)
       .forEach((equipmentPiece: EquipmentPiece) => {
-        const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId];
+        const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
         // If this item has no stats, return !
         if (!itemStats) {
           return;
