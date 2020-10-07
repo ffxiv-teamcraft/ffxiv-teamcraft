@@ -104,7 +104,7 @@ export class GearsetsFacade {
       { piece: gearset.bracelet, slot: 'bracelet' },
       { piece: gearset.ring1, slot: 'ring1' },
       { piece: gearset.ring2, slot: 'ring2' }
-    ].filter(p => p);
+    ].filter(p => !!p.piece);
   }
 
   loadAll(): void {
