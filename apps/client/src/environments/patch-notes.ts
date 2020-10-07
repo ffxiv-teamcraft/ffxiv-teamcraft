@@ -13,4 +13,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **patreon:** new supporter: Coss Collaborative..`;
+* **patreon:** new supporter: Coss Collaborative..`;
