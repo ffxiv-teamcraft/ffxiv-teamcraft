@@ -209,6 +209,10 @@ export class StatsService {
         }
       });
     }
+    if (set.job >= 8 && set.job <= 18) {
+      // Nobody cares about vitality for DoH/W and it lets us have more space if we take it out
+      return stats.filter(s => s.id !== BaseParam.VITALITY);
+    }
     return stats;
   }
 

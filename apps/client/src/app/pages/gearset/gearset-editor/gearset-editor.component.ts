@@ -64,46 +64,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   public filters$ = new ReplaySubject<XivapiSearchFilter[]>();
 
-  private appliedFiltersFromGearset = false;
-
-  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$.pipe(
-    tap(gearset => {
-      // We're removing Spearfishing gig from the lowest ilvl filter.
-      const ilvls = this.gearsetsFacade.toArray(gearset).filter(entry => entry.piece.itemId !== 17726).map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
-      let lowestIlvl = Math.min(...ilvls);
-      let highestIlvl = Math.max(...ilvls);
-      let usedDefaultValues = false;
-      if (lowestIlvl === Infinity) {
-        lowestIlvl = 460;
-        usedDefaultValues = true;
-      }
-      if (highestIlvl === -Infinity) {
-        highestIlvl = 999;
-        usedDefaultValues = true;
-      }
-      let didChange = false;
-      if (!this.appliedFiltersFromGearset && !usedDefaultValues) {
-        if (lowestIlvl !== Infinity) {
-          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
-          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-        }
-        didChange = true;
-        this.appliedFiltersFromGearset = true;
-      } else if (!usedDefaultValues) {
-        if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
-          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
-          didChange = true;
-        }
-        if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
-          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
-          didChange = true;
-        }
-      }
-      if (didChange) {
-        this.submitFilters();
-      }
-    })
-  );
+  public gearset$: Observable<TeamcraftGearset> = this.gearsetsFacade.selectedGearset$;
 
   private job$: Observable<number> = this.gearset$.pipe(
     filter(gearset => {
@@ -377,6 +338,45 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
               private i18n: I18nToolsService, private ipc: IpcService, private router: Router,
               private cd: ChangeDetectorRef) {
     super();
+    this.gearset$.pipe(
+      first()
+    ).subscribe(gearset => {
+      // We're removing Spearfishing gig from the lowest ilvl filter.
+      const ilvls = this.gearsetsFacade.toArray(gearset)
+        .filter(entry => entry.piece.itemId !== 17726)
+        .map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
+      let lowestIlvl = Math.min(...ilvls);
+      let highestIlvl = Math.max(...ilvls);
+      let usedDefaultValues = false;
+      if (lowestIlvl === Infinity) {
+        lowestIlvl = 460;
+        usedDefaultValues = true;
+      }
+      if (highestIlvl === -Infinity) {
+        highestIlvl = 999;
+        usedDefaultValues = true;
+      }
+      let didChange = false;
+      if (!usedDefaultValues) {
+        if (lowestIlvl !== Infinity) {
+          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+        }
+        didChange = true;
+      } else if (!usedDefaultValues) {
+        if (this.itemFiltersform.value.ilvlMin > lowestIlvl) {
+          this.itemFiltersform.controls.ilvlMin.patchValue(lowestIlvl);
+          didChange = true;
+        }
+        if (this.itemFiltersform.value.ilvlMax < highestIlvl) {
+          this.itemFiltersform.controls.ilvlMax.patchValue(highestIlvl);
+          didChange = true;
+        }
+      }
+      if (didChange) {
+        this.submitFilters();
+      }
+    });
     this.permissionLevel$.pipe(
       takeUntil(this.onDestroy$)
     ).subscribe(level => {
