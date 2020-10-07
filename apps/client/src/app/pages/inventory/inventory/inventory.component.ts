@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { uniq } from 'lodash';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { InventoryDisplay } from '../inventory-display';
 import { first, map, switchMap } from 'rxjs/operators';
@@ -160,15 +159,11 @@ export class InventoryComponent {
     });
   }
 
-  public getClipboardContent(inventory: InventoryDisplay): string {
+  public getClipboardContent = (inventory: InventoryDisplay) => {
     return JSON.stringify(inventory.items.reduce((content, item) => {
       return [...content, { id: item.itemId, amount: item.quantity }];
     }, []));
-  }
-
-  public inventoryCopied(): void {
-    this.message.success(this.translate.instant('INVENTORY.Copied_to_clipboard'));
-  }
+  };
 
   public deleteInventory(display: InventoryDisplay): void {
     this.inventoryService.inventory$.pipe(

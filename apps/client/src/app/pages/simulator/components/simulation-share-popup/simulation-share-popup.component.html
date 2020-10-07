@@ -4,6 +4,7 @@
     <input type="text" nz-input [ngModel]="getLink()" readonly/>
   </nz-input-group>
   <ng-template #addOnAfterTemplate>
-    <button nz-button nzSearch nzType="primary" ngxClipboard (cbOnSuccess)="afterLinkCopy()" [cbContent]="getLink()">{{'COMMON.Copy' | translate}}</button>
+    <button nz-button nzSearch nzType="primary" (clipboardCopySuccess)="afterLinkCopy()"
+            [clipboard]="getLink">{{'COMMON.Copy' | translate}}</button>
   </ng-template>
 </div>

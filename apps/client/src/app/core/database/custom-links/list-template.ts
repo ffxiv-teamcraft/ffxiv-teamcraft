@@ -9,7 +9,7 @@ export class ListTemplate extends CustomLink {
     return 'template';
   }
 
-  getUrl(): string {
+  getUrl = () => {
     // If we're inside Electron, create a direct Teamcraft link.
     if (navigator.userAgent.toLowerCase().indexOf('electron/') > -1) {
       return `https://ffxivteamcraft.com/template/${encodeURI(this.authorNickname)}/${encodeURI(this.uri)}`;

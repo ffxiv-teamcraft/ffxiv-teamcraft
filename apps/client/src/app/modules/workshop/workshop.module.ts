@@ -13,7 +13,7 @@ import { ListModule } from '../list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { CoreModule } from '../../core/core.module';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListPickerModule } from '../list-picker/list-picker.module';
 import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
@@ -27,7 +27,7 @@ import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-add
     FlexLayoutModule,
     NgxDnDModule,
     CoreModule,
-    ClipboardModule,
+
     CustomLinksModule,
     FolderAdditionPickerModule,
 

@@ -75,7 +75,7 @@ export class CraftingRotationService extends FirestoreRelationalStorage<Crafting
                 matches = matches && rotation.community.minCp <= filters.cp;
               }
               if (filters.difficulty) {
-                matches = matches && rotation.recipe.progress >= filters.difficulty;
+                matches = matches && rotation.recipe.progress === filters.difficulty;
               }
               if (filters.quality) {
                 matches = matches && rotation.recipe.quality >= filters.quality;

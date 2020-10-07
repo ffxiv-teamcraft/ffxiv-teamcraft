@@ -1,16 +1,24 @@
 export const patchNotes = `### Bug Fixes
 
-* **community-lists:** fixed community lists content not showing.
-* **list:** fixed an issue with ephemeral lists not being created properly.
-* **list:** fixed zone breakdown rows not showing item name.
-* **list-overlay:** fixed list panel overlay not using selected layout.
-* **profile:** fixed an issue with profile not loading properly.
-* **recipe-picker:** fixed result names always showing in english.
-* **rotations:** fixed loading screen not showing properly.
-* **simulator:** fixed a bug with simulator not opening properly.
-* **teams:** fixed team detach from lists page.
+* **alarms:** fixed an issue with sidebar not updating properly on firefox 81.0.
+* **community-rotations:** difficulty filter is now exact match.
+* **core:** fixed an issue with patreon support popup opening at each loading.
+* **desktop:** fixed an issue with armory and current gear tracking.
+* **list:** fixed an issue with manual HQ flags not cloned properly.
+* **list-details:** large panels are now collapsed by default, instead of entire list.
+* **macro-translator:** added support for smart quotes and added basic e2e test.
+* **metrics:** small clipboard interaction fix.
+* item gathering map and currency spending not displaying correctly on mobile.
+* **pricing:** fixed fill MB prices from your server.
+* **rotations:** fixed a bug with rotation folders not opening properly.
 
 
 ### Features
 
-* **patreon:** new supporter: Coss Collaborative..`;
+* **data:** support for korean v5.21 update.
+* **desktop:** support for KR v5.21 packets.
+* new food picker helper page to find a food from a list of stats.
+* proper zoom handling in desktop app.
+* **gearsets:** you can now input your own progression on any gearset, affecting costs estimates.
+* **list:** global hide completed toggle now affects final panel too.
+* **perf:** improved overall app performance by optimizing clipboard performances.`;

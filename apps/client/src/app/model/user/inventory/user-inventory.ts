@@ -47,7 +47,8 @@ export class UserInventory extends DataModel {
     ContainerType.ArmoryRing,
     ContainerType.ArmorySoulCrystal,
     ContainerType.ArmoryMain,
-    ContainerType.RetainerMarket
+    ContainerType.RetainerMarket,
+    ContainerType.GearSet0
   ];
 
   items: { [index: string]: InventoryContainer } = {};
@@ -107,7 +108,7 @@ export class UserInventory extends DataModel {
       return null;
     }
     // Happens if you add an item that you never had in your inventory before (in an empty slot)
-    if (item === undefined && packet.quantity > 0) {
+    if ((item === undefined || item.itemId !== packet.catalogId) && packet.quantity > 0) {
       const entry: InventoryItem = {
         itemId: packet.catalogId,
         quantity: packet.quantity,

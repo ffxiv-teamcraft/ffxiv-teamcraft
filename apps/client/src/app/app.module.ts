@@ -92,7 +92,6 @@ import es from '@angular/common/locales/es';
 import pt from '@angular/common/locales/pt';
 import hr from '@angular/common/locales/hr';
 import ko from '@angular/common/locales/ko';
-import { ClipboardModule } from 'ngx-clipboard';
 import { InventoryModule } from './modules/inventory/inventory.module';
 import { EorzeaModule } from './modules/eorzea/eorzea.module';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
@@ -274,7 +273,6 @@ const nzConfig: NzConfig = {
     EffectsModule.forRoot([]),
     StoreModule.forFeature('auth', authReducer, { initialState: authInitialState }),
     EffectsModule.forFeature([AuthEffects]),
-    ClipboardModule,
     GraphQLModule,
 
     PlayerMetricsModule,

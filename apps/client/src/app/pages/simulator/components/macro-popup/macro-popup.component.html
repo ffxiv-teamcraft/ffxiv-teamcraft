@@ -28,7 +28,7 @@
 </div>
 <div class="macro">
   <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-    <button [cbContent]="getText(macroFragment)" class="copy-macro" ngxClipboard nz-button nzShape="circle"
+    <button [clipboard]="getText(macroFragment)" class="copy-macro" nz-button nzShape="circle"
             nzSize="small">
         <i nz-icon nzType="copy"></i>
     </button>

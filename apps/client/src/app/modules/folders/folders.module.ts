@@ -16,7 +16,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FolderPageComponent } from './folder-page/folder-page.component';
 import { RouterModule } from '@angular/router';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
-import { ClipboardModule } from 'ngx-clipboard';
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { FavoritesModule } from '../favorites/favorites.module';
 
@@ -38,7 +37,7 @@ import { FavoritesModule } from '../favorites/favorites.module';
     NzPopconfirmModule,
     NzIconModule,
 
-    ClipboardModule,
+
 
     TranslateModule,
     CoreModule,

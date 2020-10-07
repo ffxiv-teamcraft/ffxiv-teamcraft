@@ -730,15 +730,11 @@ export class SearchComponent implements OnInit {
     });
   }
 
-  public getShareUrl(): string {
+  public getShareUrl = () => {
     if (isPlatformServer(this.platform)) {
       return 'https://ffxivteamcraft.com/search';
     }
     return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
-  }
-
-  public afterShareLinkCopied(): void {
-    this.message.success(this.translate.instant('ITEMS.Share_url_copied'));
   }
 
   public addSelectedItemsToList(items: SearchResult[]): void {

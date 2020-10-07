@@ -135,12 +135,12 @@ export class LayoutsFacade {
       );
   }
 
-  public getFinalItemsDisplay(list: List, adaptativeFilter: boolean): Observable<LayoutRowDisplay> {
+  public getFinalItemsDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<LayoutRowDisplay> {
     return this.selectedLayout$.pipe(
       withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
       map(([layout, characterEntry]) => {
         let rows = this.layoutOrder.order(list.finalItems, layout.recipeOrderBy, layout.recipeOrder)
-          .filter(row => layout.recipeHideCompleted ? row.done < row.amount : true);
+          .filter(row => (layout.recipeHideCompleted || overrideHideCompleted) ? row.done < row.amount : true);
         if (adaptativeFilter) {
           rows = rows.filter(item => {
             const gatheredBy = getItemSource(item, DataType.GATHERED_BY);

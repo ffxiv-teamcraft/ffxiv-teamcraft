@@ -12,7 +12,7 @@ import { ListModule } from '../list/list.module';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { MarketboardModule } from '../marketboard/marketboard.module';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { PriceCheckResultComponent } from './price-check-result/price-check-result.component';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { PriceCheckResultComponent } from './price-check-result/price-check-resu
     ItemIconModule,
     MarketboardModule,
     NgZorroAntdModule,
-    ClipboardModule,
+
 
     ListModule
   ],

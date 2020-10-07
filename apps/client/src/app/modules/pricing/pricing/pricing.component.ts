@@ -201,7 +201,7 @@ export class PricingComponent implements AfterViewInit {
     this.listsFacade.updateList(list);
   }
 
-  public getEarningText(rows: ListRow[], list: List): string {
+  public getEarningText = (rows: ListRow[], list: List) => {
     return rows.filter(row => row.usePrice)
       .reduce((total, row) => {
         const price = this.pricingService.getEarnings(row);
@@ -217,9 +217,9 @@ export class PricingComponent implements AfterViewInit {
         }
         return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
       }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
-  }
+  };
 
-  public getSpendingText(rows: ListRow[], list: List): string {
+  public getSpendingText = (rows: ListRow[], list: List) => {
     return rows.filter(row => row.usePrice)
       .reduce((total, row) => {
         const price = this.pricingService.getPrice(row);
@@ -235,11 +235,7 @@ export class PricingComponent implements AfterViewInit {
         }
         return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
       }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
-  }
-
-  public afterCopy(): void {
-    this.message.success(this.translate.instant('PRICING.Content_copied'));
-  }
+  };
 
   public getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {

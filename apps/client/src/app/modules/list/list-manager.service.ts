@@ -242,6 +242,7 @@ export class ListManagerService {
               }
               listRow.done = row.item.done || 0;
               listRow.used = row.item.used || 0;
+              listRow.requiredAsHQ = row.item.requiredAsHQ;
               if (getItemSource(row.item, DataType.CRAFTED_BY).length > 0) {
                 if (listRow.done > listRow.amount) {
                   listRow.done = listRow.amount;

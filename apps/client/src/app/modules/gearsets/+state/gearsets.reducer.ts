@@ -1,5 +1,6 @@
 import { GearsetsAction, GearsetsActionTypes } from './gearsets.actions';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 export const GEARSETS_FEATURE_KEY = 'gearsets';
 
@@ -12,6 +13,7 @@ export const GEARSETS_FEATURE_KEY = 'gearsets';
 
 export interface GearsetsState {
   list: TeamcraftGearset[]; // list of Gearsets; analogous to a sql normalized table
+  progression: Record<string, GearsetProgression>; // list of Gearset progressions; analogous to a sql normalized table
   selectedId?: string; // which Gearsets record has been selected
   loaded: boolean; // has the Gearsets list been loaded
 }
@@ -22,6 +24,7 @@ export interface GearsetsPartialState {
 
 export const initialState: GearsetsState = {
   list: [],
+  progression: {},
   loaded: false
 };
 
@@ -48,6 +51,26 @@ export function reducer(
           ...state.list.filter(g => g.$key !== action.payload.$key),
           action.payload
         ]
+      };
+    }
+
+    case GearsetsActionTypes.GearsetProgressionLoaded: {
+      return {
+        ...state,
+        progression: {
+          ...state.progression,
+          [action.key]: action.payload
+        }
+      };
+    }
+
+    case GearsetsActionTypes.SaveGearsetProgression: {
+      return {
+        ...state,
+        progression: {
+          ...state.progression,
+          [action.key]: action.progression
+        }
       };
     }
 

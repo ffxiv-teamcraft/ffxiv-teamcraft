@@ -35,7 +35,7 @@
               <button (click)="back()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-left"></i>
               </button>
-              <button (cbOnSuccess)="afterPathNameCopy()" cbContent="https://ffxivteamcraft.com{{getPathname()}}" ngxClipboard nz-button
+              <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}" nz-button
                       (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="share-alt"></i>
@@ -353,6 +353,13 @@
                   <span>
                       <i nz-icon nzTheme="outline" nzType="shopping"></i>
                       <span class="nav-text">{{'CURRENCY_SPENDING.Title' | translate}}</span>
+                  </span>
+                </a>
+                <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/food-picker"
+                  routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
+                      <span class="nav-text">{{'FOOD_PICKER.Title' | translate}}</span>
                   </span>
                 </a>
                 <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/custom-items"

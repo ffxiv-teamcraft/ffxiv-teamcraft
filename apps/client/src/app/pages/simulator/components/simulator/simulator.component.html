@@ -27,15 +27,17 @@
               nzType="primary">
         <i nz-icon nzType="reload"></i>
       </button>
-      <button (click)="importFromCraftingOptimizer()" [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
+      <button (click)="importFromCraftingOptimizer()"
+              [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
               nz-button nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="download"></i>
       </button>
-      <button (cbOnSuccess)="success('SIMULATOR.Export_copied')" [cbContent]="getCraftOptExportString()"
-              [disabled]="actions$.value.length === 0" [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
-              ngxClipboard
+      <button [clipboardSuccessMessage]="'SIMULATOR.Export_copied' | translate"
+              [clipboard]="getCraftOptExportString"
+              [disabled]="actions$.value.length === 0"
+              [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
               nz-button nz-tooltip
               nzShape="circle"
               nzType="primary">
@@ -260,10 +262,9 @@
                     <nz-list-item-meta [nzDescription]="ingredient.quality | floor"
                                        [nzTitle]="title"></nz-list-item-meta>
                     <ng-template #title>
-                      <span (cbOnSuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
-                            [cbContent]="ingredient.id | itemName | i18n"
-                            class="hq-ingredient-name"
-                            ngxClipboard>{{ingredient.id | itemName | i18n}}</span>
+                      <span (clipboardCopySuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
+                            [clipboard]="ingredient.id | itemName | i18n"
+                            class="hq-ingredient-name">{{ingredient.id | itemName | i18n}}</span>
                     </ng-template>
                     <ng-template #content>
                       <div>

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 @Component({
   selector: 'app-materias-needed-popup',
@@ -11,6 +12,19 @@ export class MateriasNeededPopupComponent implements OnInit {
 
   @Input()
   gearset: TeamcraftGearset;
+
+
+  private _progression: GearsetProgression;
+
+  @Input()
+  set progression(p: GearsetProgression) {
+    this._progression = p;
+    this.computeRequirements();
+  }
+
+  get progression(): GearsetProgression {
+    return this._progression;
+  }
 
   @Input()
   includeAllTools = false;
@@ -25,7 +39,7 @@ export class MateriasNeededPopupComponent implements OnInit {
 
   computeRequirements(): void {
     localStorage.setItem('gearsets:include-all-tools', this.includeAllTools.toString());
-    this.totalNeeded = this.materiaService.getTotalNeededMaterias(this.gearset, this.includeAllTools);
+    this.totalNeeded = this.materiaService.getTotalNeededMaterias(this.gearset, this.includeAllTools, this.progression);
   }
 
   ngOnInit(): void {

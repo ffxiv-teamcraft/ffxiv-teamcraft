@@ -177,6 +177,7 @@
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
     "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Eliminar grupo con todas las alarmas",
     "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
@@ -1709,6 +1710,11 @@
     "Disabled": "La guía de gasto de monedas no está funcionando más",
     "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "Blog"
   },
@@ -1781,6 +1787,7 @@
       "Bag": "Inventario",
       "Other": "Otro inventario",
       "Armory": "Armería",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "En venta por retenedores"
     }
   },
@@ -1889,6 +1896,8 @@
     "Stats_caps": "Límite de atributos",
     "Stat_computing_diclaimer": "Los resultados no son 100% exactos, son de jugadores (los estudios de allagan) como usted y yo que dedicamos mucho tiempo a tratar de encontrar las fórmulas, por favor no informe inexactitudes como un defecto.",
     "Missing_items": "Parece que le faltan algunas ranuras, asegúrese de que sus filtros estén correctamente configurados",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",

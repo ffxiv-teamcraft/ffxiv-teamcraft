@@ -36,9 +36,11 @@
           </ng-template>
           <ng-template #extraTemplate>
             <div fxLayout="row" fxLayoutGap="5px">
-              <button (cbOnSuccess)="inventoryCopied()" [cbContent]="getClipboardContent(inventory)"
+              <button [clipboard]="getClipboardContent"
+                      [clipboardFnArgs]="[inventory]"
+                      [clipboardSuccessMessage]="'INVENTORY.Copied_to_clipboard' | translate"
                       [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
-                      ngxClipboard nz-button nz-tooltip
+                      nz-button nz-tooltip
                       nzShape="circle"
                       nzSize="small">
                 <i nz-icon nzType="copy"></i>

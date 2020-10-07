@@ -12,7 +12,6 @@ import { ListCommentNotification } from '../model/notification/list-comment-noti
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';
 import { PlatformService } from './tools/platform.service';
 import { MathToolsService } from './tools/math-tools';
-import { I18nToolsService } from './tools/i18n-tools.service';
 import { EorzeanTimeService } from './eorzea/eorzean-time.service';
 import { TimerPipe } from './eorzea/timer.pipe';
 import { HtmlToolsService } from './tools/html-tools.service';
@@ -45,8 +44,10 @@ import { VersionLockModule } from '../pages/version-lock/version-lock.module';
 import { LazyComponentDirective } from './tools/lazy-component';
 import { TutorialModule } from './tutorial/tutorial.module';
 import { ModeratorGuard } from './guard/moderator.guard';
-import { MouseWheelDirective } from "./event/mouse-wheel/mouse-wheel.directive";
+import { MouseWheelDirective } from './event/mouse-wheel/mouse-wheel.directive';
 import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
+import { ClipboardDirective } from './clipboard.directive';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-p
     VersionLockModule,
     NgZorroAntdModule,
     RouterModule,
-    TutorialModule
+    TutorialModule,
+    ClipboardModule
   ],
   providers: [
     PendingChangesService,
@@ -104,7 +106,8 @@ import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-p
     ItemRarityDirective,
     LazyComponentDirective,
     MouseWheelDirective,
-    SupportUsPopupComponent
+    SupportUsPopupComponent,
+    ClipboardDirective
   ],
   exports: [
     I18nPipe,
@@ -119,7 +122,8 @@ import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-p
     ItemRarityDirective,
     LazyComponentDirective,
     TutorialModule,
-    MouseWheelDirective
+    MouseWheelDirective,
+    ClipboardDirective
   ]
 })
 export class CoreModule {

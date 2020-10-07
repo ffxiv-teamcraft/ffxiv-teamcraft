@@ -13,9 +13,7 @@
             rows="4"></textarea>
   </div>
 
-  <button (click)="translateMacro()" *ngIf="macroToTranslate" nz-button nzType="primary">
-    {{'MACRO_TRANSLATION.Do_translate' | translate}}
-  </button>
+  <button (click)="translateMacro()" *ngIf="macroToTranslate" nz-button nzType="primary">{{'MACRO_TRANSLATION.Do_translate' | translate}}</button>
 
   <nz-tabset *ngIf="!invalidInputs && translationDone">
     <nz-tab *ngFor="let macroTranslatedTab of macroTranslatedTabs" [nzTitle]="macroTranslatedTab.label">
