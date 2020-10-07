@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.4"></a>
+## [7.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.3...v7.4.4) (2020-10-07)
+
+
+### Bug Fixes
+
+* **food-picker:** fixed an issue with some items being ignored entirely ([ee9dddd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ee9dddd))
+* **gearset:** fixed an issue preventing new gearsets from being created ([0664c4e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0664c4e))
+* **gearset:** fixed an issue with BLU weapons melding ([dd5a865](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd5a865))
+
+
+
 <a name="7.4.3"></a>
 ## [7.4.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.2...v7.4.3) (2020-10-07)
 
