@@ -43,7 +43,7 @@ export class GearsetCostPopupComponent implements OnInit {
     Object.keys(this.gearset)
       .filter(key => {
         const validPiece = this.gearset[key] && this.gearset[key].itemId !== undefined;
-        const notDone = !this.progression || this.progression[key].item === false;
+        const notDone = !this.progression || !this.progression[key]?.item;
         return validPiece && notDone;
       })
       .forEach(key => {

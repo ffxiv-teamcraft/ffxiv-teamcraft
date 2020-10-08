@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.5"></a>
+## [7.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.4...v7.4.5) (2020-10-08)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms overlay being empty ([b07902a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b07902a))
+* **gearset:** progression is now properly saved for materias ([a07d1db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a07d1db))
+
+
+
 <a name="7.4.4"></a>
 ## [7.4.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.3...v7.4.4) (2020-10-07)
 

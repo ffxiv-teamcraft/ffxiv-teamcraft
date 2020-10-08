@@ -41,7 +41,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     })
   );
 
-  public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$.pipe(tap(console.log));
+  public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
 
   public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
     ['mainHand', 'offHand'],
