@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 
 @Component({
   selector: 'app-alarms-overlay',
@@ -6,4 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./alarms-overlay.component.less']
 })
 export class AlarmsOverlayComponent {
+
+  constructor(alarmsFacade: AlarmsFacade) {
+    alarmsFacade.loadAlarms();
+  }
 }

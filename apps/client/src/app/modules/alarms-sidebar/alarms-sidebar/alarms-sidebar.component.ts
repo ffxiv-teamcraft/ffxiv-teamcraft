@@ -31,7 +31,6 @@ export class AlarmsSidebarComponent implements OnInit {
               private dialog: NzModalService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, public settings: SettingsService,
               private cd: ChangeDetectorRef) {
-    this.cd.detach();
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {
