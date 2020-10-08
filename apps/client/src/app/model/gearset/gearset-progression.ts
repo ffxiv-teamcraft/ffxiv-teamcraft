@@ -27,19 +27,19 @@ export function newEmptyProgression(): GearsetProgression {
   };
 
   return {
-    mainHand: { ...noProgression },
-    offHand: { ...noProgression },
-    head: { ...noProgression },
-    chest: { ...noProgression },
-    gloves: { ...noProgression },
-    belt: { ...noProgression },
-    legs: { ...noProgression },
-    feet: { ...noProgression },
-    necklace: { ...noProgression },
-    earRings: { ...noProgression },
-    bracelet: { ...noProgression },
-    ring1: { ...noProgression },
-    ring2: { ...noProgression },
-    crystal: { ...noProgression }
+    mainHand: JSON.parse(JSON.stringify(noProgression)),
+    offHand: JSON.parse(JSON.stringify(noProgression)),
+    head: JSON.parse(JSON.stringify(noProgression)),
+    chest: JSON.parse(JSON.stringify(noProgression)),
+    gloves: JSON.parse(JSON.stringify(noProgression)),
+    belt: JSON.parse(JSON.stringify(noProgression)),
+    legs: JSON.parse(JSON.stringify(noProgression)),
+    feet: JSON.parse(JSON.stringify(noProgression)),
+    necklace: JSON.parse(JSON.stringify(noProgression)),
+    earRings: JSON.parse(JSON.stringify(noProgression)),
+    bracelet: JSON.parse(JSON.stringify(noProgression)),
+    ring1: JSON.parse(JSON.stringify(noProgression)),
+    ring2: JSON.parse(JSON.stringify(noProgression)),
+    crystal: JSON.parse(JSON.stringify(noProgression))
   };
 }
