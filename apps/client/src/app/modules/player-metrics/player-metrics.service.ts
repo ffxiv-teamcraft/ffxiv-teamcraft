@@ -135,7 +135,7 @@ export class PlayerMetricsService {
     if (!environment.production && !this.ipc.ready) {
       this._logs$.next(this.parseLogRows(devMock));
     } else {
-      this.ipc.send('metrics:load', { from: this.dateToFileName(from), to: this.dateToFileName(to) });
+      this.ipc.send('metrics:load', { from: this.dateToFileName(startOfDay(from)), to: this.dateToFileName(endOfDay(to)) });
       this.loading$.next(true);
     }
   }
@@ -145,7 +145,7 @@ export class PlayerMetricsService {
     if (+month < 10) {
       month = `0${month}`;
     }
-    let day = date.getUTCDate().toString();
+    let day = date.getDate().toString();
     if (+day < 10) {
       day = `0${day}`;
     }
