@@ -4842,10 +4842,10 @@ export const mapIds = [
   {
     "id": 606,
     "zone": 3534,
-    "name": "",
+    "name": "Bozjan Southern Front",
     "territory": 920,
     "scale": 100,
-    "weatherRate": 0
+    "weatherRate": 124
   },
   {
     "id": 607,
@@ -4922,10 +4922,10 @@ export const mapIds = [
   {
     "id": 616,
     "zone": 3535,
-    "name": "",
+    "name": "Castrum Lacus Litore",
     "territory": 920,
     "scale": 200,
-    "weatherRate": 0
+    "weatherRate": 124
   },
   {
     "id": 617,

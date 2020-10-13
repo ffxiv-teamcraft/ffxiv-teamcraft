@@ -1929,12 +1929,12 @@ if (hasTodo('collectables')) {
               scrip: baseReward ? baseReward.ScriptRewardAmount : 0
             },
             mid: {
-              rating: supply[`MidBaseCollectableRating${i}`],
+              rating: supply[`MidCollectableRating${i}`],
               exp: supply[`MidCollectableReward${i}`].ExpReward,
               scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
             },
             high: {
-              rating: supply[`HighBaseCollectableRating${i}`],
+              rating: supply[`HighCollectableRating${i}`],
               exp: supply[`HighCollectableReward${i}`].ExpReward,
               scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
             }

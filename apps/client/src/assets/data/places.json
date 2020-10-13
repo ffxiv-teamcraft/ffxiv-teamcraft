@@ -15372,16 +15372,16 @@
     "fr": "Commise aux objets de classe/job"
   },
   "2563": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lost Finds Cache",
+    "ja": "ロストボックス",
+    "de": "Kiste für Verschollenes",
+    "fr": "Malle du rappel"
   },
   "2564": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Resistance Secretariat",
+    "ja": "コンテンツ解説",
+    "de": "Informationen",
+    "fr": "Guide de la résistance"
   },
   "2565": {
     "en": "",
@@ -21168,22 +21168,22 @@
     "fr": "Retraite de Givreglacé"
   },
   "3529": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Utya's Aegis",
+    "ja": "ウトヤ前哨地",
+    "de": "Utya-Gemarkung",
+    "fr": "Avant-poste d'Utya"
   },
   "3530": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Olana's Stand",
+    "ja": "オランタ陣地",
+    "de": "Olana-Trutz",
+    "fr": "Camp avancé d'Olana"
   },
   "3531": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Lunya's Stand",
+    "ja": "ルンヤ陣地",
+    "de": "Lunya-Trutz",
+    "fr": "Camp avancé de Lunya"
   },
   "3532": {
     "en": "Windbreaking Cloudtop",
@@ -21198,208 +21198,208 @@
     "fr": "Mer de nuages agitée"
   },
   "3534": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bozjan Southern Front",
+    "ja": "南方ボズヤ戦線",
+    "de": "Bozja-Südfront",
+    "fr": "Front sud de Bozja"
   },
   "3535": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castrum Lacus Litore",
+    "ja": "カストルム・ラクスリトレ",
+    "de": "Castrum Lacus Litore",
+    "fr": "Castrum Lacus Litore"
   },
   "3536": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Southern Entrenchment",
+    "ja": "南方塹壕地帯",
+    "de": "Südschanze",
+    "fr": "Tranchées sud"
   },
   "3537": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Old Bozja",
+    "ja": "ボズヤ旧市街跡",
+    "de": "Ruinen von Alt-Bozja",
+    "fr": "Ancienne Bozja"
   },
   "3538": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Alermuc Climb",
+    "ja": "アラムート城下",
+    "de": "Burgstadt Alermuc",
+    "fr": "Bourg d'Alermuc"
   },
   "3539": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castrum Approach",
+    "ja": "城塞外",
+    "de": "Äußere des Castrums",
+    "fr": "Entrée du castrum"
   },
   "3540": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Inner Castrum",
+    "ja": "城塞内",
+    "de": "Innere des Castrums",
+    "fr": "Intérieur du castrum"
   },
   "3541": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bladesmeet",
+    "ja": "剣たちの大広間",
+    "de": "Hauptplatz der Wachen",
+    "fr": "Hall des Lames"
   },
   "3542": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Last Trace",
+    "ja": "失われた遺跡",
+    "de": "Verlorene Ruinen",
+    "fr": "Vestiges oubliés"
   },
   "3543": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Firelight's Coffin",
+    "ja": "冷灰の大穴",
+    "de": "Aschepfuhl",
+    "fr": "Cratère de Verre"
   },
   "3544": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Eaglesight",
+    "ja": "荒鷲の広場",
+    "de": "Platz des Kämpferischen Adlers",
+    "fr": "Perchoir des Aigles"
   },
   "3545": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Grand Gates",
+    "ja": "城門",
+    "de": "Haupttor",
+    "fr": "Porte du castrum"
   },
   "3546": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Airship Landing",
+    "ja": "飛空戦艦発着場",
+    "de": "Flugplatz",
+    "fr": "Aire d'atterrissage"
   },
   "3547": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Majesty's Auspice",
+    "ja": "円壇の間",
+    "de": "Halle des Bestienkönigs",
+    "fr": "Auditorium"
   },
   "3548": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Majesty's Place",
+    "ja": "王者の円壇",
+    "de": "Podest des Bestienkönigs",
+    "fr": "Tribune des Souverains"
   },
   "3549": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Orphaned Ruins",
+    "ja": "破壊された市街",
+    "de": "Ruinenstadt",
+    "fr": "Ruines orphelines"
   },
   "3550": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-I",
+    "ja": "DII-I号",
+    "de": "DII-I",
+    "fr": "DII-I"
   },
   "3551": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-II",
+    "ja": "DII-II号",
+    "de": "DII-II",
+    "fr": "DII-II"
   },
   "3552": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-III",
+    "ja": "DII-III号",
+    "de": "DII-III",
+    "fr": "DII-III"
   },
   "3553": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-IV",
+    "ja": "DII-IV号",
+    "de": "DII-IV",
+    "fr": "DII-IV"
   },
   "3554": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-V",
+    "ja": "DII-V号",
+    "de": "DII-V",
+    "fr": "DII-V"
   },
   "3555": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DII-VI",
+    "ja": "DII-VI号",
+    "de": "DII-VI",
+    "fr": "DII-VI"
   },
   "3556": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-I",
+    "ja": "SII-I号",
+    "de": "SII-I",
+    "fr": "SII-I"
   },
   "3557": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-II",
+    "ja": "SII-II号",
+    "de": "SII-II",
+    "fr": "SII-II"
   },
   "3558": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-III",
+    "ja": "SII-III号",
+    "de": "SII-III",
+    "fr": "SII-III"
   },
   "3559": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-IV",
+    "ja": "SII-IV号",
+    "de": "SII-IV",
+    "fr": "SII-IV"
   },
   "3560": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-V",
+    "ja": "SII-V号",
+    "de": "SII-V",
+    "fr": "SII-V"
   },
   "3561": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SII-VI",
+    "ja": "SII-VI号",
+    "de": "SII-VI",
+    "fr": "SII-VI"
   },
   "3562": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DI-I",
+    "ja": "DI-I号",
+    "de": "DI-I",
+    "fr": "DI-I"
   },
   "3563": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DI-II",
+    "ja": "DI-II号",
+    "de": "DI-II",
+    "fr": "DI-II"
   },
   "3564": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "DI-III",
+    "ja": "DI-III号",
+    "de": "DI-III",
+    "fr": "DI-III"
   },
   "3565": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SI-I",
+    "ja": "SI-I号",
+    "de": "SI-I",
+    "fr": "SI-I"
   },
   "3566": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SI-II",
+    "ja": "SI-II号",
+    "de": "SI-II",
+    "fr": "SI-II"
   },
   "3567": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "SI-III",
+    "ja": "SI-III号",
+    "de": "SI-III",
+    "fr": "SI-III"
   },
   "3568": {
     "en": "The Seat of Sacrifice",
@@ -21444,10 +21444,10 @@
     "fr": "Garage Watts"
   },
   "3575": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Camp Steva",
+    "ja": "ステヴァ野営地",
+    "de": "Steva-Feldposten",
+    "fr": "Campement de Steva"
   },
   "3576": {
     "en": "The Puppets' Bunker",

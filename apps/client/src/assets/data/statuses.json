@@ -11523,14 +11523,14 @@
   },
   "1647": {
     "en": "Solid Shield",
-    "de": "Physisches Schild",
+    "de": "Physischer Schild",
     "ja": "フィジカルシールド",
     "fr": "Protection physique",
     "icon": "/i/016000/016643.png"
   },
   "1648": {
     "en": "Spell Shield",
-    "de": "Magisches Schild",
+    "de": "Magischer Schild",
     "ja": "マジックシールド",
     "fr": "Protection magique",
     "icon": "/i/016000/016644.png"
@@ -15981,11 +15981,11 @@
     "icon": "/i/013000/013227.png"
   },
   "2284": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Running Wild",
+    "de": "Volle Kraft",
+    "ja": "ふりしぼれ",
+    "fr": "Déchaîne-toi!",
+    "icon": "/i/015000/015255.png"
   },
   "2285": {
     "en": "Fetters",
@@ -16100,18 +16100,18 @@
     "icon": ""
   },
   "2301": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Tender Anaphylaxis",
+    "de": "Geliebt",
+    "ja": "愛情",
+    "fr": "Affection",
+    "icon": "/i/015000/015268.png"
   },
   "2302": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Jealous Anaphylaxis",
+    "de": "Gehasst",
+    "ja": "憎悪",
+    "fr": "Antipathie",
+    "icon": "/i/015000/015269.png"
   },
   "2303": {
     "en": "True Walking Dead",
@@ -16128,18 +16128,18 @@
     "icon": ""
   },
   "2305": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Zombification",
+    "de": "Zombie",
+    "ja": "ゾンビー",
+    "fr": "Zombification",
+    "icon": "/i/015000/015559.png"
   },
   "2306": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Boot Camp Mode",
+    "de": "Lektionsmodul",
+    "ja": "鬼教官チップ",
+    "fr": "Module de serrage de vis",
+    "icon": "/i/015000/015875.png"
   },
   "2307": {
     "en": "Safety Lock: Pyretic Booster",
@@ -16170,277 +16170,277 @@
     "icon": "/i/015000/015276.png"
   },
   "2311": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Aetherweaver",
+    "de": "Trank des Veteranen",
+    "ja": "術士の薬",
+    "fr": "Breuvage de prêtre guerrier",
+    "icon": "/i/016000/016660.png"
   },
   "2312": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Martialist",
+    "de": "Trank des Kämpfers",
+    "ja": "闘士の薬",
+    "fr": "Breuvage de protecteur intrépide",
+    "icon": "/i/016000/016661.png"
   },
   "2313": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Savior",
+    "de": "Trank des Heilers",
+    "ja": "治癒者の薬",
+    "fr": "Breuvage de vivificateur",
+    "icon": "/i/016000/016662.png"
   },
   "2314": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Veteran",
+    "de": "Trank des Kampfmagiers",
+    "ja": "魔戦士の薬",
+    "fr": "Breuvage de mage guerrier",
+    "icon": "/i/016000/016663.png"
   },
   "2315": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Platebearer",
+    "de": "Trank des Ritters",
+    "ja": "重騎兵の薬",
+    "fr": "Breuvage de soldat cuirassé",
+    "icon": "/i/016000/016664.png"
   },
   "2316": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Guardian",
+    "de": "Trank des Beschützers",
+    "ja": "守護者の薬",
+    "fr": "Breuvage de gardien",
+    "icon": "/i/016000/016665.png"
   },
   "2317": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Ordained",
+    "de": "Trank des Priesters",
+    "ja": "司祭の薬",
+    "fr": "Breuvage de prêtre",
+    "icon": "/i/016000/016666.png"
   },
   "2318": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Skirmisher",
+    "de": "Trank des Kriegers",
+    "ja": "武人の薬",
+    "fr": "Breuvage de combattant",
+    "icon": "/i/016000/016667.png"
   },
   "2319": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Watcher",
+    "de": "Trank des Spähers",
+    "ja": "斥候の薬",
+    "fr": "Breuvage d'éclaireur",
+    "icon": "/i/016000/016668.png"
   },
   "2320": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Profane",
+    "de": "Trank des Mönchs",
+    "ja": "破戒僧の薬",
+    "fr": "Breuvage de prêtre hérétique",
+    "icon": "/i/016000/016669.png"
   },
   "2321": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Irregular",
+    "de": "Trank des Berserkers",
+    "ja": "狂戦士の薬",
+    "fr": "Breuvage de guerrier enragé",
+    "icon": "/i/016000/016670.png"
   },
   "2322": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Breathtaker",
+    "de": "Trank des Diebes",
+    "ja": "盗賊の薬",
+    "fr": "Breuvage de voleur",
+    "icon": "/i/016000/016671.png"
   },
   "2323": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Bloodsucker",
+    "de": "Trank des Blutsaugers",
+    "ja": "吸血鬼の薬",
+    "fr": "Breuvage de vampire",
+    "icon": "/i/016000/016672.png"
   },
   "2324": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Beast",
+    "de": "Trank der Wolfsleute",
+    "ja": "人狼の薬",
+    "fr": "Breuvage de Lupin",
+    "icon": "/i/016000/016673.png"
   },
   "2325": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spirit of the Templar",
+    "de": "Trank des Paladins",
+    "ja": "聖騎士の薬",
+    "fr": "Breuvage de chevalier sacré",
+    "icon": "/i/016000/016674.png"
   },
   "2326": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Noble Ends",
+    "de": "Gemüt der Verdrossenheit",
+    "ja": "背水の境地",
+    "fr": "Seuil de la frénésie",
+    "icon": "/i/016000/016690.png"
   },
   "2327": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Honored Sacrifice",
+    "de": "Gemüt der Ungehaltenheit",
+    "ja": "捨身の境地",
+    "fr": "Seuil de l'abnégation",
+    "icon": "/i/016000/016691.png"
   },
   "2328": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Tireless Conviction",
+    "de": "Gemüt der Beharrlichkeit",
+    "ja": "忍耐の境地",
+    "fr": "Seuil de la patience",
+    "icon": "/i/019000/019761.png"
   },
   "2329": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Firm Resolve",
+    "de": "Gemüt der Folgsamkeit",
+    "ja": "堅守の境地",
+    "fr": "Seuil de la préservation",
+    "icon": "/i/019000/019781.png"
   },
   "2330": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Solemn Clarity",
+    "de": "Gemüt der Besinnlichkeit",
+    "ja": "瞑想の境地",
+    "fr": "Seuil de la contemplation",
+    "icon": "/i/019000/019801.png"
   },
   "2331": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Honed Acuity",
+    "de": "Gemüt der Empfindsamkeit",
+    "ja": "鋭敏の境地",
+    "fr": "Seuil de la perception",
+    "icon": "/i/019000/019821.png"
   },
   "2332": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Font of Magic",
+    "de": "Verschollene Magiefontäne",
+    "ja": "ロスト・マジックフォント",
+    "fr": "Fontaine de magie oubliée",
+    "icon": "/i/016000/016675.png"
   },
   "2333": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Protect",
+    "de": "Verschollenes Protes",
+    "ja": "ロスト・プロテス",
+    "fr": "Bouclier oublié",
+    "icon": "/i/016000/016676.png"
   },
   "2334": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Shell",
+    "de": "Verschollenes Vallum",
+    "ja": "ロスト・シェル",
+    "fr": "Barrière oubliée",
+    "icon": "/i/016000/016677.png"
   },
   "2335": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Swift",
+    "de": "Verschollene Eile",
+    "ja": "ロスト・スウィフト",
+    "fr": "Vélocité oubliée",
+    "icon": "/i/016000/016678.png"
   },
   "2336": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Stealth",
+    "de": "Verschollene Coeurl-Pfoten",
+    "ja": "ロスト・ステルス",
+    "fr": "Furtivité oubliée",
+    "icon": "/i/016000/016679.png"
   },
   "2337": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Reflect",
+    "de": "Verschollene Reflektion",
+    "ja": "ロスト・リフレク",
+    "fr": "Miroir oublié",
+    "icon": "/i/016000/016680.png"
   },
   "2338": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Spellforge",
+    "de": "Verschollene Zauberschmiede",
+    "ja": "ロスト・スペルフォージ",
+    "fr": "Forgesort oublié",
+    "icon": "/i/016000/016696.png"
   },
   "2339": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Steelsting",
+    "de": "Verschollener Stahlstachel",
+    "ja": "ロスト・スチールスティング",
+    "fr": "Morsure de l'acier oubliée",
+    "icon": "/i/016000/016681.png"
   },
   "2340": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Banish",
+    "de": "Verschollenes Verbannga",
+    "ja": "ロスト・バニシュ",
+    "fr": "Bannissement oublié",
+    "icon": "/i/016000/016682.png"
   },
   "2341": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Bravery",
+    "de": "Verschollene Courage",
+    "ja": "ロスト・ブレイブ",
+    "fr": "Bravoure oubliée",
+    "icon": "/i/016000/016683.png"
   },
   "2342": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Auto-potion",
+    "de": "Auto-Heiltrank",
+    "ja": "オートポーション",
+    "fr": "Auto-potion",
+    "icon": "/i/016000/016684.png"
   },
   "2343": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Auto-ether",
+    "de": "Auto-Äther",
+    "ja": "オートエーテル",
+    "fr": "Auto-éther",
+    "icon": "/i/016000/016685.png"
   },
   "2344": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Auto-remedy",
+    "de": "Auto-Remedium",
+    "ja": "オートレメディ",
+    "fr": "Auto-remède",
+    "icon": "/i/016000/016686.png"
   },
   "2345": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Manawall",
+    "de": "Verschollene Mana-Wand",
+    "ja": "ロスト・ウォール",
+    "fr": "Mur de mana oublié",
+    "icon": "/i/016000/016687.png"
   },
   "2346": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Font of Power",
+    "de": "Verschollene Machtfontäne",
+    "ja": "ロスト・パワーフォント",
+    "fr": "Fontaine de puissance oubliée",
+    "icon": "/i/016000/016688.png"
   },
   "2347": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Vulnerability Up",
+    "de": "Erhöhte Verwundbarkeit",
+    "ja": "被ダメージ上昇",
+    "fr": "Vulnérabilité augmentée",
+    "icon": "/i/017000/017101.png"
   },
   "2348": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Reminiscence",
+    "de": "Verschollenes Wissen",
+    "ja": "ロストアクション継承",
+    "fr": "Rappel d'action oubliée",
+    "icon": "/i/016000/016626.png"
   },
   "2349": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Deep Essence of the Victor",
+    "de": "Wundertrank des Siegers",
+    "ja": "覇者の霊薬",
+    "fr": "Breuvage des conquérants",
+    "icon": "/i/016000/016659.png"
   },
   "2350": {
     "en": "Hastilude",
@@ -16457,102 +16457,102 @@
     "icon": "/i/012000/012513.png"
   },
   "2352": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Unyielding Defense",
+    "de": "Gemüt der Standhaftigkeit",
+    "ja": "鉄壁の境地",
+    "fr": "Seuil de l'indestructibilité",
+    "icon": "/i/016000/016692.png"
   },
   "2353": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Limitless Grace",
+    "de": "Gemüt der Selbstlosigkeit",
+    "ja": "無我の境地",
+    "fr": "Seuil de l'anatman",
+    "icon": "/i/016000/016693.png"
   },
   "2354": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Banner of Transcendent Finesse",
+    "de": "Gemüt der Vehemenz",
+    "ja": "神速の境地",
+    "fr": "Seuil de la célérité",
+    "icon": "/i/016000/016694.png"
   },
   "2355": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Resistance Reraiser",
+    "de": "Lebensfeder des Widerstands",
+    "ja": "レジスタンスリレイザー",
+    "fr": "Vitaplume de la résistance",
+    "icon": "/i/016000/016695.png"
   },
   "2356": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lost Incense",
+    "de": "Verschollener Hohn",
+    "ja": "ロスト・エンミティ",
+    "fr": "Incitation oubliée",
+    "icon": "/i/016000/016689.png"
   },
   "2357": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Fully Analyzed",
+    "de": "Vollständige Analyse",
+    "ja": "全解析",
+    "fr": "Décontruction totale",
+    "icon": "/i/015000/015254.png"
   },
   "2358": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders",
+    "de": "Hilfsgesuch",
+    "ja": "攻撃要請",
+    "fr": "Passe-droit d'interception",
+    "icon": "/i/016000/016697.png"
   },
   "2359": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: Vigil for the Lost",
+    "de": "Hilfsgesuch: Vigil, Feuerkraft hoch zehn",
+    "ja": "攻撃要請：高火力陸戦魔導兵器「ヴィジル」",
+    "fr": "Passe-droit d'interception: Vigile de feu",
+    "icon": "/i/016000/016697.png"
   },
   "2360": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: Kill It with Fire",
+    "de": "Hilfsgesuch: Peeriefool, das faule Gemüse",
+    "ja": "攻撃要請：腐乱野菜「ピーリフール」",
+    "fr": "Passe-droit d'interception: Grandeur et pestilence",
+    "icon": "/i/016000/016697.png"
   },
   "2361": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: The Hunt for Red Choctober",
+    "de": "Hilfsgesuch: Der Rote Meteor und seine Meute",
+    "ja": "攻撃要請：赤チョコボのヌシ「レッドコメット」",
+    "fr": "Passe-droit d'interception: Une ruée en rouge",
+    "icon": "/i/016000/016697.png"
   },
   "2362": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: The Final Furlong",
+    "de": "Hilfsgesuch: Spartoi der Gefürchtete",
+    "ja": "攻撃要請：怨念の死霊「スパルトイ」",
+    "fr": "Passe-droit d'interception: Menace spectrale",
+    "icon": "/i/016000/016697.png"
   },
   "2363": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: Rise of the Robots",
+    "de": "Hilfsgesuch: Im Schatten von Modell X",
+    "ja": "攻撃要請：新たなる鉄巨人「魔導レイバーX型」",
+    "fr": "Passe-droit d'interception: Le soulèvement des machines",
+    "icon": "/i/016000/016697.png"
   },
   "2364": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Marching Orders: Metal Fox Chaos",
+    "de": "Hilfsgesuch: Dáinsleif, Bestie aus Eisen",
+    "ja": "攻撃要請：鋼鉄の魔獣「ダーインスレイヴ」",
+    "fr": "Passe-droit d'interception: Le guerrier de métal",
+    "icon": "/i/016000/016697.png"
   },
   "2365": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "High Morale",
+    "de": "Kampfgeist",
+    "ja": "士気高揚",
+    "fr": "Clameur des vaillants",
+    "icon": "/i/016000/016698.png"
   },
   "2366": {
     "en": "",
@@ -16562,39 +16562,39 @@
     "icon": ""
   },
   "2367": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Pall of Darkness",
+    "de": "Stockfinster",
+    "ja": "薄暗闇",
+    "fr": "Légère cécité",
+    "icon": "/i/015000/015012.png"
   },
   "2368": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Warmonger",
+    "de": "Feuer der Schlacht",
+    "ja": "戦場の熱狂",
+    "fr": "Frénésie de la bataille",
+    "icon": "/i/015000/015267.png"
   },
   "2369": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Physical Aversion",
+    "de": "Physische Schwachstelle",
+    "ja": "物理に弱い",
+    "fr": "Faiblesse physique",
+    "icon": "/i/015000/015261.png"
   },
   "2370": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Magical Aversion",
+    "de": "Magische Schwachstelle",
+    "ja": "魔法に弱い",
+    "fr": "Faiblesse magique",
+    "icon": "/i/015000/015262.png"
   },
   "2371": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Lightning Resistance Down",
+    "de": "Blitzresistenz -",
+    "ja": "雷属性耐性低下",
+    "fr": "Résistance à la foudre réduite",
+    "icon": "/i/015000/015271.png"
   },
   "2372": {
     "en": "Absolute Protect",
@@ -16604,11 +16604,11 @@
     "icon": "/i/010000/010405.png"
   },
   "2373": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mark of Mortality",
+    "de": "Todessiegel",
+    "ja": "死の刻印",
+    "fr": "Marque de mort",
+    "icon": "/i/019000/019421.png"
   },
   "2374": {
     "en": "EP Penalty",
@@ -16639,11 +16639,11 @@
     "icon": "/i/017000/017016.png"
   },
   "2378": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Haste+",
+    "de": "Hast +",
+    "ja": "ヘイスト＋",
+    "fr": "Hâte +",
+    "icon": "/i/017000/017381.png"
   },
   "2379": {
     "en": "Fresh Perspective",
@@ -16653,39 +16653,39 @@
     "icon": "/i/015000/015111.png"
   },
   "2380": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Warmonger",
+    "de": "Feuer der Schlacht",
+    "ja": "戦場の熱狂",
+    "fr": "Frénésie de la bataille",
+    "icon": "/i/015000/015267.png"
   },
   "2381": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Forward March",
+    "de": "Geistlenkung vorwärts",
+    "ja": "移動命令：前",
+    "fr": "Contrainte mentale: avancer",
+    "icon": "/i/015000/015774.png"
   },
   "2382": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "About Face",
+    "de": "Geistlenkung rückwärts",
+    "ja": "移動命令：後",
+    "fr": "Contrainte mentale: reculer",
+    "icon": "/i/015000/015775.png"
   },
   "2383": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Left Face",
+    "de": "Geistlenkung links",
+    "ja": "移動命令：左",
+    "fr": "Contrainte mentale: virage à gauche",
+    "icon": "/i/015000/015776.png"
   },
   "2384": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Right Face",
+    "de": "Geistlenkung rechts",
+    "ja": "移動命令：右",
+    "fr": "Contrainte mentale: virage à droite",
+    "icon": "/i/015000/015777.png"
   },
   "2385": {
     "en": "",
@@ -16730,11 +16730,11 @@
     "icon": "/i/015000/015683.png"
   },
   "2391": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Heavy",
+    "de": "Gewicht",
+    "ja": "ヘヴィ",
+    "fr": "Pesanteur",
+    "icon": "/i/015000/015002.png"
   },
   "2392": {
     "en": "Lightning Shot",
@@ -16765,11 +16765,11 @@
     "icon": "/i/015000/015021.png"
   },
   "2396": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "At the Limit",
+    "de": "Limitrausch-Blockade",
+    "ja": "リミットブレイク不可",
+    "fr": "Transcendance scellée",
+    "icon": "/i/015000/015275.png"
   },
   "2397": {
     "en": "",
@@ -16779,18 +16779,18 @@
     "icon": ""
   },
   "2398": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Incurable",
+    "de": "Unheilbar",
+    "ja": "ＨＰ回復無効",
+    "fr": "Inguérissable",
+    "icon": "/i/015000/015851.png"
   },
   "2399": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Bleeding",
+    "de": "Blutung",
+    "ja": "ペイン",
+    "fr": "Saignement",
+    "icon": "/i/015000/015530.png"
   },
   "2400": {
     "en": "孤独感",
@@ -16807,39 +16807,39 @@
     "icon": "/i/015000/015524.png"
   },
   "2402": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Evasion Up",
+    "de": "Ausweich-Bonus",
+    "ja": "回避率アップ",
+    "fr": "Esquive augmentée",
+    "icon": "/i/015000/015062.png"
   },
   "2403": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Evasion Down",
+    "de": "Ausweich-Malus",
+    "ja": "回避率ダウン",
+    "fr": "Esquive réduite",
+    "icon": "/i/015000/015063.png"
   },
   "2404": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Damage Down",
+    "de": "Schaden -",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/i/015000/015520.png"
   },
   "2405": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Out of Control",
+    "de": "Keine Kontrolle",
+    "ja": "制御不能",
+    "fr": "Incontrôlable",
+    "icon": "/i/017000/017221.png"
   },
   "2406": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Shock Spikes",
+    "de": "Schockstachel",
+    "ja": "ショックスパイク",
+    "fr": "Pointes de foudre",
+    "icon": "/i/015000/015502.png"
   },
   "2407": {
     "en": "Fetters",
@@ -16898,11 +16898,11 @@
     "icon": "/i/015000/015545.png"
   },
   "2415": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Duties as Assigned",
+    "de": "Fester Job",
+    "ja": "ジョブチェンジ不可",
+    "fr": "Changement de job impossible",
+    "icon": "/i/016000/016236.png"
   },
   "2416": {
     "en": "Light Beyond Darkness",

@@ -13082,52 +13082,124 @@
     "type": 0
   },
   "734": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31125
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2754,
+    "map": 354
   },
   "735": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31127
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2812,
+    "map": 354
   },
   "736": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31125
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2687,
+    "map": 369
   },
   "737": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31127
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2681,
+    "map": 369
   },
   "738": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31130
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2173,
+    "map": 216
   },
   "739": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31132
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2172,
+    "map": 216
   },
   "740": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31130
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 2,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2177,
+    "map": 216
   },
   "741": {
-    "items": [],
-    "level": 0,
-    "type": 0
+    "items": [
+      31132
+    ],
+    "limited": false,
+    "level": 80,
+    "type": 0,
+    "legendary": false,
+    "ephemeral": false,
+    "spawns": [],
+    "duration": 0,
+    "zoneid": 2162,
+    "map": 216
   },
   "742": {
     "items": [
       31278,
       31291,
       31301,
-      29939,
-      31311
+      31311,
+      29939
     ],
     "limited": false,
     "level": 1,
@@ -13144,8 +13216,8 @@
       31283,
       31292,
       31302,
-      29940,
-      31312
+      31312,
+      29940
     ],
     "limited": false,
     "level": 1,
@@ -13162,8 +13234,8 @@
       31284,
       31293,
       31303,
-      29941,
-      31313
+      31313,
+      29941
     ],
     "limited": false,
     "level": 1,
@@ -13180,8 +13252,8 @@
       31279,
       31294,
       31304,
-      29942,
-      31314
+      31314,
+      29942
     ],
     "limited": false,
     "level": 1,
@@ -13198,8 +13270,8 @@
       31285,
       31295,
       31305,
-      29943,
-      31315
+      31315,
+      29943
     ],
     "limited": false,
     "level": 1,
@@ -13216,8 +13288,8 @@
       31285,
       31294,
       31305,
-      29943,
-      31315
+      31315,
+      29943
     ],
     "limited": false,
     "level": 1,
@@ -13234,8 +13306,8 @@
       31277,
       31288,
       31298,
-      29936,
-      31308
+      31308,
+      29936
     ],
     "limited": false,
     "level": 1,
@@ -13252,8 +13324,8 @@
       31281,
       31289,
       31300,
-      29937,
-      31309
+      31309,
+      29937
     ],
     "limited": false,
     "level": 1,
@@ -13270,8 +13342,8 @@
       31282,
       31290,
       31299,
-      29938,
-      31310
+      31310,
+      29938
     ],
     "limited": false,
     "level": 1,
@@ -13288,8 +13360,8 @@
       31276,
       31286,
       31297,
-      29934,
-      31306
+      31306,
+      29934
     ],
     "limited": false,
     "level": 1,
@@ -13306,8 +13378,8 @@
       31280,
       31287,
       31296,
-      29935,
-      31307
+      31307,
+      29935
     ],
     "limited": false,
     "level": 1,
@@ -13324,8 +13396,8 @@
       31280,
       31286,
       31296,
-      29935,
-      31307
+      31307,
+      29935
     ],
     "limited": false,
     "level": 1,
@@ -13339,8 +13411,8 @@
   },
   "754": {
     "items": [
-      29946,
-      31318
+      31318,
+      29946
     ],
     "limited": false,
     "level": 80,
@@ -13384,8 +13456,8 @@
   },
   "757": {
     "items": [
-      29945,
-      31317
+      31317,
+      29945
     ],
     "limited": false,
     "level": 80,
