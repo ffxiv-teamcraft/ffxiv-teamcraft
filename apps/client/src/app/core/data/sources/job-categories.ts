@@ -1,4 +1,3 @@
-// TODO: This has been moved to lazy data. Refactor references to this.
 export const jobCategories = {
   "1": {
     "en": "All Classes",
@@ -973,105 +972,105 @@ export const jobCategories = {
     "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS"
   },
   "163": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "MNK DRG BRD BLM SMN NIN MCH SAM RDM DNC",
+    "ja": "モンク 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 侍 赤魔道士 踊り子",
+    "de": "MÖN DRG BRD SMA BSW NIN MCH SAM RMA TÄN",
+    "fr": "MOI DRG BRD MNO INV NIN MCH SAM MRG DNS"
   },
   "164": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM DNC",
+    "ja": "モンク 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 占星術師 侍 赤魔道士 踊り子",
+    "de": "MÖN DRG BRD WMA SMA BSW GLT NIN MCH AST SAM RMA TÄN",
+    "fr": "MOI DRG BRD MBL MNO INV ÉRU NIN MCH AST SAM MRG DNS"
   },
   "165": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "WHM SCH AST",
+    "ja": "白魔道士 学者 占星術師",
+    "de": "WMA GLT AST",
+    "fr": "MBL ÉRU AST"
   },
   "166": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD WAR DRK GNB",
+    "ja": "ナイト 戦士 暗黒騎士 ガンブレイカー",
+    "de": "PLD KRG DKR REV",
+    "fr": "PLD GUE CHN PSB"
   },
   "167": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM GNB DNC",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 黒魔道士 召喚士 忍者 機工士 暗黒騎士 侍 赤魔道士 ガンブレイカー 踊り子",
+    "de": "PLD MÖN KRG DRG BRD SMA BSW NIN MCH DKR SAM RMA TÄN",
+    "fr": "PLD MOI GUE DRG BRD MNO INV NIN MCH CHN SAM MRG PSB DNS"
   },
   "168": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD WAR WHM SCH DRK AST GNB",
+    "ja": "ナイト 戦士 白魔道士 学者 暗黒騎士 占星術師 ガンブレイカー",
+    "de": "PLD KRG WMA GLT DKR AST REV",
+    "fr": "PLD GUE MBL ÉRU CHN AST PSB"
   },
   "169": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH NIN MCH DRK AST SAM RDM GNB DNC",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 忍者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子",
+    "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT NIN MCH DKR AST SAM RMA REV TÄN",
+    "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU NIN MCH CHN AST SAM MRG PSB DNS"
   },
   "170": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG NIN DRK SAM GNB",
+    "ja": "ナイト モンク 戦士 竜騎士 忍者 暗黒騎士 侍 ガンブレイカー",
+    "de": "PLD MÖN KRG DRG NIN DKR SAM REV",
+    "fr": "PLD MOI GUE DRG NIN CHN SAM PSB"
   },
   "171": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "BRD MCH DNC",
+    "ja": "吟遊詩人 機工士 踊り子",
+    "de": "BRD MCH TÄN",
+    "fr": "BRD MCH DNS"
   },
   "172": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "WHM BLM SMN SCH AST RDM",
+    "ja": "白魔道士 黒魔道士 召喚士 学者 占星術師 赤魔道士",
+    "de": "WMA SMA BSW GLT AST RMA",
+    "fr": "MBL MNO INV ÉRU AST MRG"
   },
   "173": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG BRD WHM BLM SMN SCH MCH DRK AST SAM RDM GNB DNC",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 白魔道士 黒魔道士 召喚士 学者 機工士 暗黒騎士 占星術師 侍 赤魔道士 ガンブレイカー 踊り子",
+    "de": "PLD MÖN KRG DRG BRD WMA SMA BSW GLT MCH DKR AST SAM RMA REV TÄN",
+    "fr": "PLD MOI GUE DRG BRD MBL MNO INV ÉRU MCH CHN AST SAM MRG PSB DNS"
   },
   "174": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD MNK WAR DRG BRD NIN MCH DRK SAM GNB DNC",
+    "ja": "ナイト モンク 戦士 竜騎士 吟遊詩人 忍者 機工士 暗黒騎士 侍 ガンブレイカー 踊り子",
+    "de": "PLD MÖN KRG DRG BRD NIN MCH DKR SAM REV TÄN",
+    "fr": "PLD MOI GUE DRG BRD NIN MCH CHN SAM PSB DNS"
   },
   "175": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "BLM SMN RDM",
+    "ja": "黒魔道士 召喚士 赤魔道士",
+    "de": "SMA BSW RMA",
+    "fr": "MNO INV MRG"
   },
   "176": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "MNK DRG NIN SAM",
+    "ja": "モンク 竜騎士 忍者 侍",
+    "de": "MÖN DRG NIN SAM",
+    "fr": "MOI DRG NIN SAM"
   },
   "177": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "MNK DRG BRD NIN MCH SAM DNC",
+    "ja": "モンク 竜騎士 吟遊詩人 忍者 機工士 侍 踊り子",
+    "de": "MÖN DRG BRD NIN MCH SAM TÄN",
+    "fr": "MOI DRG BRD NIN MCH SAM DNS"
   },
   "178": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "PLD WAR BLM SMN DRK RDM GNB",
+    "ja": "ナイト 戦士 黒魔道士 召喚士 暗黒騎士 赤魔道士 ガンブレイカー",
+    "de": "PLD KRG SMA BSW DKR RMA REV",
+    "fr": "PLD GUE MNO INV CHN MRG PSB"
   },
   "179": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "WHM SMN SCH AST RDM",
+    "ja": "白魔道士 召喚士 学者 占星術師 赤魔道士",
+    "de": "WMA BSW GLT AST RMA",
+    "fr": "MBL INV ÉRU AST MRG"
   }
 };

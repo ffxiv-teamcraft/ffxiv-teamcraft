@@ -1,7 +1,7 @@
 const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
-const { map, switchMap, first } = require('rxjs/operators');
+const { map, switchMap, first, mergeMap } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get, gubalRequest } = require('./tools.js');
 
@@ -30,8 +30,8 @@ function getCoords(coords, mapData) {
   const x = (coords.x + mapData.offset_x) * c;
   const y = (coords.y + mapData.offset_y) * c;
   return {
-    x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) /100,
-    y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) /100,
+    x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) / 100,
+    y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) / 100,
     z: Math.floor((coords.z - mapData.offset_z)) / 100
   };
 }
@@ -1929,12 +1929,12 @@ if (hasTodo('collectables')) {
               scrip: baseReward ? baseReward.ScriptRewardAmount : 0
             },
             mid: {
-              rating: supply[`MidBaseCollectableRating${i}`],
+              rating: supply[`MidCollectableRating${i}`],
               exp: supply[`MidCollectableReward${i}`].ExpReward,
               scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
             },
             high: {
-              rating: supply[`HighBaseCollectableRating${i}`],
+              rating: supply[`HighCollectableRating${i}`],
               exp: supply[`HighCollectableReward${i}`].ExpReward,
               scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
             }
@@ -2332,6 +2332,54 @@ if (hasTodo('races')) {
     persistToJsonAsset('races', races);
     done('races');
   });
+}
+
+if (hasTodo('ventures')) {
+  const ventures = {};
+  getAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task`, null, 'Ventures')
+    .pipe(
+      mergeMap(page => {
+        return combineLatest(page.Results.map(row => {
+          let req;
+          if (row.IsRandom) {
+            req = get(`https://xivapi.com/RetainerTaskRandom/${row.Task}`);
+          } else {
+            req = get(`https://xivapi.com/RetainerTaskNormal/${row.Task}`);
+          }
+          return req.pipe(
+            map(task => {
+              return {
+                ...task,
+                ID: row.ID,
+                IsRandom: row.IsRandom
+              };
+            })
+          );
+        }));
+      })
+    )
+    .subscribe(tasks => {
+      tasks.forEach(task => {
+        if (task.IsRandom) {
+          ventures[task.ID] = {
+            en: task.Name_en,
+            ja: task.Name_ja,
+            de: task.Name_de,
+            fr: task.Name_fr
+          };
+        } else if (task.Item) {
+          ventures[task.ID] = {
+            en: task.Item.Name_en,
+            ja: task.Item.Name_ja,
+            de: task.Item.Name_de,
+            fr: task.Item.Name_fr
+          };
+        }
+      });
+    }, null, () => {
+      persistToJsonAsset('ventures', ventures);
+      done('ventures');
+    });
 }
 
 if (hasTodo('foods')) {

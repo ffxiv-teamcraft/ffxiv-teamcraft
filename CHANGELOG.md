@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.4.6"></a>
+## [7.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.5...v7.4.6) (2020-10-13)
+
+
+### Bug Fixes
+
+* **metrics:** fixed an issue with single day data loading ([e0694dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e0694dc)), closes [#1622](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1622)
+* **workshops:** fixed duplicate workshops with some specific sharing conditions ([aa080cc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa080cc)), closes [#1661](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1661)
+
+
+### Features
+
+* **db:** support for 5.35 update ([b5b99c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5b99c3))
+
+
+
 <a name="7.4.5"></a>
 ## [7.4.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.4...v7.4.5) (2020-10-08)
 
