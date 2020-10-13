@@ -1,4 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed alarms overlay being empty.
-* **gearset:** progression is now properly saved for materias.`;
+* **metrics:** fixed an issue with single day data loading.
+* **workshops:** fixed duplicate workshops with some specific sharing conditions.
+
+
+### Features
+
+* **db:** support for 5.35 update.`;
