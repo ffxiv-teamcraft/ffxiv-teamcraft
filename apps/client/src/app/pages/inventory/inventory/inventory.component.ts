@@ -12,6 +12,8 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { SettingsService } from '../../../modules/settings/settings.service';
+import { ContainerType } from '../../../model/user/inventory/container-type';
 
 @Component({
   selector: 'app-inventory',
@@ -39,19 +41,17 @@ export class InventoryComponent {
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.inventory$.pipe(
     map(inventory => inventory.clone()),
     map(inventory => {
-      return [].concat.apply([],
-        Object.keys(inventory.items)
-          .map(key => {
-            return Object.keys(inventory.items[key])
-              .map(slot => inventory.items[key][slot]);
-          })
-      )
+      return inventory.toArray()
         .filter((item: InventoryItem) => {
           // Happens if you add an item that you never had in your inventory before (in an empty slot)
           if (item.retainerName && item.containerId < 10000) {
             return false;
           }
-          return UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
+          let matches = true;
+          if (!inventory.trackItemsOnSale) {
+            matches = matches && item.containerId !== ContainerType.RetainerMarket;
+          }
+          return matches && UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
         })
         .reduce((bags: InventoryDisplay[], item: InventoryItem) => {
           const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
@@ -76,7 +76,7 @@ export class InventoryComponent {
       return inventories
         .sort((a, b) => {
           if (a.containerIds[0] !== b.containerIds[0]) {
-            return a.containerIds[0] - b.containerIds[0];
+            return +a.containerIds[0] - +b.containerIds[0];
           }
           return a.containerName > b.containerName ? -1 : 1;
         })
@@ -130,7 +130,8 @@ export class InventoryComponent {
   constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService,
+              private settings: SettingsService) {
   }
 
   public getExpansions() {
