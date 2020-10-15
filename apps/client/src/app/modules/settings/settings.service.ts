@@ -330,6 +330,14 @@ export class SettingsService {
     this.setSetting('pricing:expect-sell-all', sellEverything.toString());
   }
 
+  public get ignoreCompletedItemInPricing(): boolean {
+    return this.getSetting('pricing:ignore-completed-items', 'false') === 'true';
+  }
+
+  public set ignoreCompletedItemInPricing(ignore: boolean) {
+    this.setSetting('pricing:ignore-completed-items', ignore.toString());
+  }
+
   public get theme(): Theme {
     const themeName = this.getSetting('theme', 'DEFAULT');
     if (themeName === 'CUSTOM') {
