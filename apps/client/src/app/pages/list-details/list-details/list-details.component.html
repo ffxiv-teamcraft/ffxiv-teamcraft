@@ -187,7 +187,8 @@
                     nz-tooltip nzSize="small">
               <i nz-icon nzType="share-alt"></i>
             </button>
-            <button *ngIf="display$ | async as listDisplay"
+            <button (click)="$event.stopPropagation()"
+                    *ngIf="display$ | async as listDisplay"
                     [clipboard]="getListTextExport"
                     [clipboardFnArgs]="[listDisplay, list]"
                     [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
@@ -198,8 +199,11 @@
               <i nz-icon nzType="copy"></i>
             </button>
             <ng-container *ngIf="server$ | async as server">
-            <button (click)="$event.stopPropagation();copyJSONExport(server, listDisplay, list)"
+            <button (click)="$event.stopPropagation()"
                     *ngIf="display$ | async as listDisplay"
+                    [clipboard]="getListJsonExport"
+                    [clipboardFnArgs]="[server, listDisplay, list]"
+                    [clipboardSuccessMessage]="'LIST.Copied_as_json' | translate"
                     [nzTooltipTitle]="'LIST.Copy_list_as_json' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"

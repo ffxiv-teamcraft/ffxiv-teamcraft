@@ -332,7 +332,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
-  public getListTextExport = (display: ListDisplay, list: List) => {
+  public getListTextExport = (display: ListDisplay, list: List) :string => {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
@@ -344,12 +344,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   };
 
-  public copyJSONExport(serverName: string, display: ListDisplay, list: List) : void {
-    if (this._clipboardService.copyFromContent(this.getListJsonExport(serverName, display, list)))
-      this.afterListJSONCopied();
-  }
-
-  public getListJsonExport(serverName: string, display: ListDisplay, list: List): string {
+  public getListJsonExport = (serverName: string, display: ListDisplay, list: List): string => {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
@@ -358,10 +353,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
     return this.serializationHelper.getJsonExport(UniversalisService.getDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, finalItems);
-  }
-
-  afterListJSONCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   regenerateList(list: List): void {

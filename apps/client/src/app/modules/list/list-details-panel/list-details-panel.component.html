@@ -109,10 +109,12 @@
             <i nz-icon nzType="copy"></i>
           </button>
           <ng-container *ngIf="server$ | async as server">
-          <button (click)="$event.stopPropagation();copyJSONExport(server)"
+          <button (click)="$event.stopPropagation()"
+                  [clipboard]="getJSONExport"
+                  [clipboardSuccessMessage]="'LIST.Copied_as_json' | translate"
                   [nzTooltipTitle]="'LIST.Copy_as_json' | translate"
-                  nz-button nz-tooltip nzShape="circle" nzSize="small">
-            <i nz-icon nzType="snippets"></i>
+                  nz-button nz-tooltip nzShape="snippets" nzSize="small">
+            <i nz-icon nzType="copy"></i>
           </button>
           </ng-container>
           <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>

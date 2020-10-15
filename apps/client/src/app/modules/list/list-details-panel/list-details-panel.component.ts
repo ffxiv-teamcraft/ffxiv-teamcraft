@@ -195,8 +195,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return ListRowSerializationHelper.getData(row, DataType.TRADE_SOURCES).length > 0
-        || ListRowSerializationHelper.getData(row, DataType.VENDORS).length > 0
+      return getItemSource(row, DataType.TRADE_SOURCES).length > 0
+        || getItemSource(row, DataType.VENDORS).length > 0
         || hasTrades;
     }, false);
     this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
@@ -204,22 +204,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
     return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = ListRowSerializationHelper.getData<Drop[]>(row, DataType.DROPS)
+      const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS)
         .some(d => {
           return d.position
             && (d.position.x !== undefined)
             && !this.lazyData.data.maps[d.mapid].dungeon
             && (!zoneId || d.zoneid === zoneId);
         });
-      const hasNodesWithPosition = (ListRowSerializationHelper.getData(row, DataType.GATHERED_BY, true).nodes || [])
+      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || [])
         .some((n: { coords: string | any[]; zoneid: number; }) =>
           n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId)
         );
-      const hasVendorsWithPosition = ListRowSerializationHelper.getData(row, DataType.VENDORS)
+      const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS)
         .some((d: { coords: { x: any; }; zoneId: number; }) =>
           d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId)
         );
-      const hasTradesWithPosition = ListRowSerializationHelper.getData(row, DataType.TRADE_SOURCES)
+      const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES)
         .some((d: { npcs: any[]; zoneId: number; }) =>
           d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId))
         );
@@ -484,7 +484,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport = () => {
+  public getTextExport = (): string => {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -499,7 +499,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   };
 
   // Done to reduce render-time perf of generating the whole string into the DOM. If there's a way to do it with [cdk directive](https://material.angular.io/cdk/clipboard/overview) that would be ideal
-  public copyJSONExport(serverName: string): void{
+  public getJSONExport = (serverName: string): string => {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -509,18 +509,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       rows = this.displayRow.rows;
     };
 
-    if (this._clipboardService.copyFromContent(
-      JSON.stringify(this.getSerializedRowData(serverName, rows))//,null,2)
-    ))
-      this.jsonCopied();
+    return JSON.stringify(this.getSerializedRowData(serverName, rows))
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[]): any {
     return this.serializationHelper.getJsonExport(UniversalisService.getDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, undefined);
-  }
-
-  jsonCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
   }
 
   trackByItem(index: number, item: ListRow): number {
