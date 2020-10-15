@@ -20,7 +20,7 @@ import { LazyDataProviderService } from './lazy-data-provider.service';
 import { lazyFilesList } from './lazy-files-list';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class LazyDataService {
   public dohdolMeldingRates = {
@@ -34,7 +34,7 @@ export class LazyDataService {
       [17, 10, 7, 5], // V
       [17, 0, 0, 0], // VI
       [17, 10, 7, 5], // VII
-      [17, 0, 0, 0], // VIII
+      [17, 0, 0, 0] // VIII
     ],
     nq: [
       // Sockets
@@ -46,8 +46,8 @@ export class LazyDataService {
       [12, 6, 3, 2], // V
       [12, 0, 0, 0], // VI
       [12, 6, 3, 2], // VII
-      [12, 0, 0, 0], // VIII
-    ],
+      [12, 0, 0, 0] // VIII
+    ]
   };
 
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -120,8 +120,8 @@ export class LazyDataService {
         [key]: {
           ...this.data.jobAbbr[key],
           ko: this.data.koJobAbbr[key]?.ko || this.data.jobAbbr[key].en,
-          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en,
-        },
+          zh: this.data.zhJobAbbr[key]?.zh || this.data.jobAbbr[key].en
+        }
       };
     }, {});
   }
@@ -133,6 +133,14 @@ export class LazyDataService {
         return abbrs[key].en.toLowerCase() === abbr.toLowerCase();
       }) || -1
     );
+  }
+
+  public getItemLeveIds(itemId: number): number[] {
+    return Object.entries<any>(this.data.leves)
+      .filter(([, leve]) => {
+        return leve.items.some(i => i.itemId === itemId);
+      })
+      .map(([id]) => +id);
   }
 
   public getRecipe(id: string): Observable<Craft> {
@@ -268,7 +276,7 @@ export class LazyDataService {
             return {
               ...row,
               propertyName: key,
-              data: data,
+              data: data
             };
           })
         );

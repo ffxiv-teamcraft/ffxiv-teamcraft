@@ -65,7 +65,15 @@ export class LogTrackerComponent extends TrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
-    this.dohTabs = [...this.lazyData.data.craftingLogPages];
+    this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
+      return page.map(tab => {
+        tab.recipes = tab.recipes.map(entry => {
+          entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
+          return entry;
+        });
+        return tab;
+      });
+    });
     this.dolTabs = [...this.lazyData.data.gatheringLogPages];
     this.authFacade.user$.pipe(
     ).subscribe(user => {

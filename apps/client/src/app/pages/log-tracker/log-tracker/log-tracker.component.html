@@ -46,8 +46,13 @@
                                    [width]="32"></app-item-icon>
                     <div fxLayout="column">
                       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                        <div [appItemRarity]="recipe.itemId"
-                             class="recipe-name">{{recipe.itemId | itemName | i18n}}</div>
+                        <div [appItemRarity]="recipe.itemId">
+                          {{recipe.itemId | itemName | i18n}}
+                          <img *ngFor="let leve of recipe.leves"
+                               src="./assets/icons/leve.png" alt="leves"
+                               class="leve-icon"
+                               nz-tooltip [nzTooltipTitle]="leve | leveName | i18n">
+                        </div>
                         <i *ngIf="userCompletion[recipe.recipeId]" nz-icon nzType="check"></i>
                       </div>
                       <div class="recipe-details">rlvl {{recipe.rlvl}}</div>
