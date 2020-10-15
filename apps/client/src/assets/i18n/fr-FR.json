@@ -1788,7 +1788,7 @@
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
-      "Current_Gear": "Current gear",
+      "Current_Gear": "Équipement actuel",
       "RetainerMarket": "En vente par les servants"
     }
   },
@@ -1897,8 +1897,8 @@
     "Stats_caps": "Max stats",
     "Stat_computing_diclaimer": "Les résultats ne sont pas 100% exacts, ils sont issus de joueurs (the allagan studies) comme vous et moi qui ont passé beaucoup de temps à essayer de trouver les formules, ne signalez pas les inexactitudes comme un bug.",
     "Missing_items": "Il semble qu'il vous manque certains éléments, assurez-vous que vos filtres sont correctement définis",
-    "Copied_as_string": "Gearset copied as string",
-    "Mark_as_done": "Mark as done",
+    "Copied_as_string": "Tenue copiée au format texte",
+    "Mark_as_done": "Marqué comme fait",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2154,18 +2154,18 @@
     "No_collectables_for_this_level": "Aucun collectionnable possible"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
-    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
-    "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Title": "Enregistrements d'artisanat",
+    "Online_replays": "Enregistrements en ligne",
+    "Offline_replays": "Enregistrements hors ligne",
+    "Open_replay_page": "Voir les détails",
+    "Open_result_modal": "Voir le résultat",
+    "Copy_to_clipboard": "Copier le lien de partage dans le presse-papiers",
+    "Delete": "Supprimer l'enregistrement",
+    "No_online_replays": "Aucun enregistrement en ligne",
+    "No_offline_replays": "Aucun enregistrement hors ligne",
+    "Cannot_record": "Impossible d'enregistrer",
+    "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
+    "Create_folder": "Nouveau dossier",
+    "Save_replay": "Enregistrer en ligne"
   }
 }
