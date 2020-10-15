@@ -10885,7 +10885,7 @@
     "size_factor": 100,
     "territory_id": 920,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "607": {
     "id": 607,
@@ -11065,7 +11065,7 @@
     "size_factor": 200,
     "territory_id": 920,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "617": {
     "id": 617,

@@ -10,12 +10,12 @@ Simply run `npm start` to start a live server with file watcher.
 
 ### Branch names
 
-When contributing to main repository, you'll notice that branche names follow a given pattern,
+When contributing to main repository, you'll notice that branch names follow a given pattern,
 this pattern is the following: `<branch-type>/<short-description>`.
 
 Example: `feat/commission-history-tab` would be a branch that adds a commission history tab.
 
-We're using gitflow for this, more informations on [https://github.com/nvie/gitflow](https://github.com/nvie/gitflow)
+We're using gitflow for this, more information on [https://github.com/nvie/gitflow](https://github.com/nvie/gitflow)
 
 ### Commit Messages
  The commit messages are checked by a pre-commit git hook, meaning that if they don't meet the requirements, 
@@ -93,7 +93,7 @@ We're using gitflow for this, more informations on [https://github.com/nvie/gitf
 
 Teamcraft has some tests to ensure non regression, you might want to implement more tests instead of creating some features, to help with application reliability, to make sure nothing breaks with a given update.
 
-Test are separated into two categories, Unit and End-to-End.
+Tests are separated into two categories, Unit and End-to-End.
 
 ### Unit tests
 
@@ -107,7 +107,7 @@ To run unit tests, use `npm test`.
 
 End-to-end tests (e2e) are here to make sure that the end user integration is good, they are here to reproduce user behavior and expect given results.
 
-They are pretty muched used as integration tests in our case, because implementing them properly is easier than doing integration tests using karma runner.
+They are pretty much used as integration tests in our case, because implementing them properly is easier than doing integration tests using karma runner.
 
 E2e tests are using [cypress](https://www.cypress.io/), a nice library that has some features such as time travelling for debugging purpose, video recording, selector generator (to find quickly how to match a given element) and is way faster than most of the selenium wrappers.
 

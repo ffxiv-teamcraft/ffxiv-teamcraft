@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { ClipboardModule } from 'ngx-clipboard';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HuntingComponent } from './hunting/hunting.component';
@@ -38,7 +37,7 @@ import { CoreModule } from '../../core/core.module';
     ItemIconModule,
     PipesModule,
     AlarmsModule,
-    ClipboardModule,
+
     MapModule,
     FishingBaitModule,
     LayoutModule,

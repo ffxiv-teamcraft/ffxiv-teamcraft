@@ -41,7 +41,9 @@
               </button>
             </div>
             <button nz-tooltip [nzTooltipTitle]="'METRICS.Copy_to_clipboard' | translate" nz-button nzShape="circle" nzType="primary"
-                    [cdkCopyToClipboard]="layout.exportCode" [disabled]="layout.isDefault" (cdkCopyToClipboardCopied)="afterExportCopied()"
+                    [clipboard]="layout.exportCode"
+                    [clipboardSuccessMessage]="'METRICS.Export_copied_to_clipboard' | translate"
+                    [disabled]="layout.isDefault"
                     tutorialStep="TUTORIAL.METRICS.Export_layout">
               <i nz-icon nzType="download" nzTheme="outline"></i>
             </button>

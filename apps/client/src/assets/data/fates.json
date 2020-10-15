@@ -34420,547 +34420,547 @@
   },
   "1597": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Sneak & Spell",
+      "ja": "術士大隊との会敵",
+      "de": "Taktisches Gemetzel",
+      "fr": "Les yeux de l'ennemi"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A unit of imperial mages has weaved their way across the battlefield and is now dangerously close to Utya's Aegis. They must be repelled before they can strike at the Resistance outpost.",
+      "ja": "術士大隊に所属する\n\n威力偵察部隊を発見した\n\n敵部隊をせん滅せよ",
+      "de": "Ein taktischer Trupp des Spezialbataillons der IV. Legion wurde gesichtet. Stell den Feind und metzel den Trupp nieder!",
+      "fr": "Vous avez repéré un groupe d'éclaireurs affilié à la cohorte des incantateurs. Interceptez-les avant qu'ils n'atteignent l'avant-poste de la résistance."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371396
   },
   "1598": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "None of Them Knew They Were Robots",
+      "ja": "無人魔導兵器との会敵",
+      "de": "Nichts als Schrott",
+      "fr": "Les araignées de fer"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion has deployed a detachment of unmanned warmachina with one simple objective: wreak as much havoc as possible.",
+      "ja": "機械化歩兵大隊が\n\n無人魔導兵器を戦場に送り出した\n\n敵部隊をせん滅せよ",
+      "de": "Unbemannte Magitek-Maschinen haben das Schlachtfeld betreten. Mach sie zu Altmetall!",
+      "fr": "La cohorte d'infanterie mécanisée a envoyé plusieurs armes magitek autonomes en reconnaissance. Détruisez-les jusqu'à la dernière."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371349
   },
   "1599": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Beasts Must Die",
+      "ja": "忠犬との遭遇",
+      "de": "Husch, ins Körbchen!",
+      "fr": "Museler le Chien"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hernais the Tenacious has a pack of trained beasts at his beck and call in addition to being a formidable opponent himself. His assault on Utya's Aegis must be halted at all costs.",
+      "ja": "魔獣大隊の伝令長\n\n忠犬のエルネイスの部隊を発見した\n\n忠犬のエルネイスと、その魔獣を倒せ",
+      "de": "Die persönliche Einheit von Hernais dem Hund, Kommandant des Bestientrupps, wurde gesichtet. Besiege die Einheit und bring Hernais Manieren bei.",
+      "fr": "Xeven et ses camarades sont aux prises avec l'unité de Hernais pyr Longus dit “le chien fidèle”, chef du service de renseignements de la cohorte bestiale. Aidez le résistant à triompher de son adversaire."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371397
   },
   "1600": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Unrest for the Wicked",
+      "ja": "術士大隊への奇襲",
+      "de": "Wer rastet, der blutet",
+      "fr": "Pas de quartier"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Scouts report that an enemy patrol has halted to rest in an easily assaulted position. Seize this opportunity to thin the imperials' ranks.",
+      "ja": "術士大隊に所属する部隊が\n\n小休止しているとの情報が寄せられた\n\n奇襲を仕掛け、敵戦力を削れ",
+      "de": "Der Nachrichtenoffizier meldet, dass ein Trupp des Spezialbataillons Rast im Gelände macht. Nutze den Moment der Überraschung und dezimiere die feindlichen Reihen!",
+      "fr": "Une patrouille de mages impériaux a eu la bonne idée de faire une halte au beau milieu du champ de bataille. Faites-leur regretter cette décision."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371431
   },
   "1601": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "More Machine Now than Man",
+      "ja": "有人魔導兵器の迎撃",
+      "de": "Auf zum Gegenangriff",
+      "fr": "Machines aux trousses"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The IVth Legion's advanced magitek soldiers are a terrifying amalgamation of man and machine. The Resistance's front line will surely suffer heavy losses if these hulking menaces are allowed to continue their rampage unabated.",
+      "ja": "レジスタンス部隊が、機械化歩兵大隊の\n\n有人魔導兵器の攻撃を受けている\n\n敵部隊をせん滅せよ",
+      "de": "Eine Gruppe Widerstandskämpfer wird von bemannten Magitek-Maschinen angegriffen. Schlage die Angreifer zurück!",
+      "fr": "Bajsaljen et plusieurs résistants sont pris en chasse par des soldats impériaux aux commandes de puissantes armes magitek. Volez à leur secours."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371432
   },
   "1602": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Can Carnivorous Plants Bloom Even on a Battlefield?",
+      "ja": "野生生物を排除せよ",
+      "de": "Linientreue um jeden Preis",
+      "fr": "Des racines et des crocs"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Drawn by the literal heat of battle, a host of blooming snapweeds has taken to feasting on hapless combatants. While your allies in the Resistance would be more than pleased if they were to thin the numbers of imperials, these voracious seedkin pay little attention to which faction they are devouring.",
+      "ja": "戦いの熱気で猛った野生生物が\n\n進軍ルートの脅威となっている\n\n危険な生物を排除せよ",
+      "de": "Vom Kampflärm aufgeschreckte Ungeheuer attackieren die Versorgungslinien. Beseitige die Gefahr - koste es, was es wolle!",
+      "fr": "L'agitation guerrière qui règne sur le Front sud de Bozja a rendu la flore locale agressive, au point qu'elle menace désormais l'avancée des résistants. Tranchez un maximum de balsamines fleuries."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371434
   },
   "1603": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Seeq and Destroy",
+      "ja": "豚面の魔獣使い",
+      "de": "Dem Rüpel seine Meute",
+      "fr": "Ménagerie guerrière"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Daguza, known not-so-affectionately as “Hamshanks” by his peers, has gained a reputation as a fearsome beastmaster. He and his horde will need to be eliminated to make way for the Resistance troops.",
+      "ja": "魔獣大隊の兵長\n\n無骨のダグザが魔獣を連れて現れた\n\n敵部隊をせん滅せよ",
+      "de": "Daguza, der rüpelhafte Hauptmann des Bestientrupps, betritt das Schlachtfeld in monströser Begleitung. Verpasse dem Mann und seiner Meute eine saftige Abreibung!",
+      "fr": "Affilié à la cohorte bestiale, Daguza oen Seeq dit “le butor” commande une horde de monstres plus belliqueux les uns que les autres. Débarrassez-vous-en."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371435
   },
   "1604": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "All Pets Are Off",
+      "ja": "華麗なる珍獣使い",
+      "de": "Ungeheuerlich!",
+      "fr": "Belles plantes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The imperial centurion Clarricie is known not only for her prowess in battle, but also for her collection of bizarre pets. Unfortunately for the Resistance, these creatures happen to be incredibly ferocious and hungry for warm flesh.",
+      "ja": "魔獣大隊の百人隊長\n\n華麗なるクラリシーが珍獣を放った\n\n敵部隊をせん滅せよ",
+      "de": "Die schillernde Clarricie vom Bestientrupp treibt seltene Ungeheuer über das Schlachtfeld. Mach dich auf die Jagd!",
+      "fr": "La centurio impériale Clarricie quo Priscus, surnommée “l'élégance incarnée”, a lâché contre les résistants une multitude de spirulines dressées pour tuer. Repoussez ces végétaux aussi mignons que pugnaces."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371395
   },
   "1605": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Conflicting with the First Law",
+      "ja": "労働十号破壊命令",
+      "de": "Schufter-10 wird verschrottet",
+      "fr": "Que des numéros dix"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Not only has the Empire excavated an ancient automaton, they have repurposed it for combat. While the Ironworks engineers would surely like to study it more closely, they will have to wait until after it has been smashed to pieces.",
+      "ja": "機械化歩兵大隊が\n\n古代兵器を戦場に投入した\n\n労働十号を破壊せよ",
+      "de": "Die mobile Infanterie schleudert alte Magitek-Maschinen in den Kampf. Verwandle die Altlasten zu wiederverwertbaren Metallschrott, einschließlich dem Schufter-10.",
+      "fr": "La cohorte d'infanterie mécanisée a transformé un automate antique en véritable machine de guerre. Venez à bout de cet ennemi géant."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371436
   },
   "1606": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Brought to Heal",
+      "ja": "恩徳の術士たち",
+      "de": "Nächstenliebe, Nächstenhiebe",
+      "fr": "Miséricorde impériale"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A detachment of conscripted mages led by Dyunbu the Blessed has been making a name for themselves as a particularly troublesome group of foes, least of all because of their commander's gift for healing. While the attacking of chirurgeons and other medics is generally frowned upon, her presence on the front line can no longer be tolerated.",
+      "ja": "術士大隊の選抜兵\n\n恩徳のユンブが術士を伴い現れた\n\n敵部隊をせん滅せよ",
+      "de": "Dyunbu die Freundliche, ihres Zeichens Elitesoldatin des Spezialbataillons, hat das Schlachtfeld betreten. Zeige ihr, was du unter Freundlichkeit verstehst.",
+      "fr": "Votre route a croisé celle d'un détachement impérial de mages dont fait partie Dyunbu pyr Potitus, aussi appelée “la miséricordieuse”. Affrontez-la ainsi que ses camarades."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371438
   },
   "1607": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Monster Mash",
+      "ja": "忠犬の逆襲",
+      "de": "Rache ist Blutwurst",
+      "fr": "Le retour du chien fidèle"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Hernais the Tenacious and his menagerie are poised to strike at Olana's Stand. They must be repelled before the Resistance outpost is overrun with fiends.",
+      "ja": "忠犬のエルネイスが\n\n新たな魔獣を従えて逆襲を狙っている\n\n敵部隊をせん滅せよ",
+      "de": "Jetzt geht's um die Wurst: Hernais der Hund hat ein neues Kuscheltier und holt zum Gegenschlag aus. Mach ihm einen blutigen Strich durch die Rechnung.",
+      "fr": "Hernais pyr Longus n'a pas dit son dernier mot: le voici de retour accompagné, entre autres, d'une manticore assoiffée de sang. Infligez-lui une nouvelle correction."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8402954
   },
   "1608": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Red (Chocobo) Alert",
+      "ja": "豚面と赤い馬鳥",
+      "de": "Großes Federlassen",
+      "fr": "Quand les chocobos voient rouge"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Daguza's collection of beasts includes the incredibly dangerous red chocobo. They are able to call forth flaming meteors with alarming accuracy, a far cry from other, more amicable breeds.",
+      "ja": "無骨のダグザが\n\n危険な赤チョコボを伴って現れた\n\n敵部隊をせん滅せよ",
+      "de": "Daguza ist auf den Chocobo gekommen und hat ein paar rote Exemplare mitgebracht. Rupf allen Beteiligten die Federn.",
+      "fr": "Daguza le butor pointe à nouveau le bout de son groin, accompagné d'une harde de chocobos prête à faire pleuvoir les choco-comètes sur la résistance. Volez-leur dans les plumes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371394
   },
   "1609": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Unicorn Flakes",
+      "ja": "潔白の脱走兵",
+      "de": "Llofii die Ausgebüxte",
+      "fr": "La licorne des plaines"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A summoner formerly in the employ of the Empire has decided to cut her ties and flee with an experimental creature. The Resistance has taken pity on her and the poor beast and has arranged for their escape, though as one might expect, imperial pursuers are not far behind.",
+      "ja": "術士大隊の選抜兵、潔白のロフィーが\n\n実験動物モノセロスを連れて脱走を図った\n\n両者を保護し、敵部隊をせん滅せよ",
+      "de": "Llofii die Unbefleckte, Elitesoldatin des Spezialbataillons, versucht, auf einem Monozeros zu entkommen. Aber sie hat die Rechnung ohne den Befreier gemacht.",
+      "fr": "Révulsée par les mauvais traitements infligés à un animal de laboratoire, une invocatrice du nom de Llofii a déserté les rangs de la 4e légion, emportant avec elle le spécimen en question. Protégez-la contre ses poursuivants."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060804.png",
+    "level": 80,
+    "location": 8371393
   },
   "1610": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Parts and Recreation",
+      "ja": "敵新兵器を調査せよ",
+      "de": "Aufräumen im Dienst der Wissenschaft",
+      "fr": "La bataille de l'innovation"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The imperials are using the battlefield as a testing site for the latest magitek weaponry. The Resistance would put a stop to these experiments and gather as many pieces of Garlean technology as possible for their research into the enemy.",
+      "ja": "機械化歩兵大隊が強化兵用魔導兵器の\n\n実働テストを行おうとしている\n\n「新兵器部材」を集め、輸送兵に手渡せ",
+      "de": "Die mobile Infanterie testet neues Gerät im Gelände. Sammle abgefallene Waffenteile ein und bring sie dem Militärlogistiker.",
+      "fr": "La cohorte d'infanterie mécanisée utilise le Front sud de Bozja comme terrain d'essai de ses derniers prototypes d'arme magitek. Détruisez ces modèles expérimentaux, et livrez un maximum de leurs composants à la résistance."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060803.png",
+    "level": 80,
+    "location": 8402961
   },
   "1611": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Element of Supplies",
+      "ja": "整備場奇襲作戦",
+      "de": "Verhinderte Wartung",
+      "fr": "Couper les vivres"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The imperial forces are planning to establish a refueling and repair station for their warmachina. They have even gone so far as to leave their supplies out in the open, though not entirely undefended.",
+      "ja": "機械化歩兵大隊の補給部隊が\n\n魔導兵器の整備場を構築しようとしている\n\n設置された帝国軍の整備物資を破壊せよ",
+      "de": "Die Pioniere der mobilen Infanterie sind dabei, neue Versorgungsstationen zu errichten. Zerstöre das von ihnen bereits platzierte Wartungsgerät.",
+      "fr": "Les troupes de ravitaillement de la cohorte d'infanterie mécanisée tentent d'établir un dépôt de matériel au cœur du champ de bataille. Tuez leur projet dans l'œuf."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371447
   },
   "1612": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Heavy Boots of Lead",
+      "ja": "魔導レイバー破壊命令",
+      "de": "Gewaltsame Arbeitsniederlegung",
+      "fr": "Force ouvrière"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Resistance had previously defeated an ancient automaton, only for it to reappear with improved combat capabilities. There is no telling the havoc it will wreak if left to its own devices.",
+      "ja": "破壊したはずの古代兵器が\n\n魔導技術により新たな兵器に生まれ変わった\n\n魔導レイバーを破壊せよ",
+      "de": "Alte Magitech-Maschinen wurden zu Waffen umfunktioniert. Besonders zuvor harmlose Arbeitsmaschinen machen dem Widerstand zu schaffen.",
+      "fr": "Une arme que la résistance pensait avoir détruite a été restaurée par le pouvoir de la technologie magitek, sous une forme encore plus terrifiante. Venez à bout du redoutable ouvrier magitek."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371448
   },
   "1613": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "No Camping Allowed",
+      "ja": "野営地への先制攻撃",
+      "de": "Unfreundlicher Besuch",
+      "fr": "Idéaux irréconciliables"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Dyunbu the Blessed and her troops have struck camp in a position of strategic significance, obstructing the advance of the Resistance. A swift assault should send them packing, opening a path for your allies.",
+      "ja": "恩徳のユンブが指揮する部隊が\n\n野営している姿が目撃された\n\n先制攻撃を仕掛け、敵部隊をせん滅せよ",
+      "de": "Die Einheit von Dyunbu der Freundlichen campiert auf dem Schlachtfeld. Störe ihre Ruhe aufs Empfindlichste.",
+      "fr": "Dyunbu la miséricordieuse et d'autres soldats ont été aperçus en train de prendre position dans les ruines de l'ancienne Bozja. Joignez-vous à Isolde, et prenez les Impériaux par surprise."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8402962
   },
   "1614": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Scavengers of Human Sorrow",
+      "ja": "魂喰いの妖異たち",
+      "de": "Zurück ins Nichts",
+      "fr": "Les dévoreurs d'âmes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Voidsent are invariably drawn to sites where blood is spilled, that they may feed on the aether of those fallen in battle. Though this poses as much of a threat to the Empire as it does the Resistance, the front line cannot advance until these fiends are eliminated.",
+      "ja": "戦場で散った魂の香りを嗅ぎ当て\n\n不浄なる妖異の群れが現れた\n\n危険な妖異をせん滅せよ",
+      "de": "Der Geruch von Tod und Verwesung hat einen Schwarm Nichtsgesandter angelockt. Die Störenfriede müssen dahin geschickt werden, wo sie herkommen: ins Nichts.",
+      "fr": "Alléchées par le parfum d'âmes fraîchement trépassées, des créatures du néant nécrophages ont envahi le champ de bataille. Repoussez ces êtres sordides."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371450
   },
   "1615": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Help Wanted",
+      "ja": "術士大隊の猛攻",
+      "de": "Jedes Leben zählt",
+      "fr": "Résister ou mourir"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Resistance unit has found itself swarmed by imperial forces. Without aid, they will surely be overwhelmed.",
+      "ja": "術士大隊の猛攻を受けた\n\nレジスタンスから救援要請が入った\n\nボズヤ・レジスタンスを守り、敵戦力を削れ",
+      "de": "Eine Einheit Widerstandskämpfer sendet einen Notruf: Das Spezialbataillon hat sie in die Zange genommen. Rette sie, jedes Leben zählt!",
+      "fr": "Encerclé par des Impériaux en surnombre, un groupe de résistants tente une ultime percée. Protégez-les au mieux de vos capacités."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060804.png",
+    "level": 80,
+    "location": 8371451
   },
   "1616": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Pyromancer Supreme",
+      "ja": "最強のパイロマンサー",
+      "de": "Der stärkste aller Pyromanten",
+      "fr": "Duel brûlant"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An influential centurion─and powerful pyromancer─has arrived to chastise the Resistance. Snuff Sartauvoir's flame before all are consumed in fiery devastation.",
+      "ja": "術士大隊の上級百人隊長にして\n\n最強のパイロマンサーが戦場に現れた\n\n鉄火のサルトヴォアールを倒せ",
+      "de": "Ein hochrangiger Anführer des Spezialbataillons, Sartauvoir Eisenfeuer, hat das Schlachtfeld betreten. Sieh zu, dass der stärkste aller Pyromanten es nicht mehr verlässt.",
+      "fr": "La ténacité des résistants a convaincu Sartauvoir quo Soranus, le plus puissant des pyromanciens de la 4e légion, de venir remettre les pendules à l'heure. Éteignez la flamme du centurio."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371452
   },
   "1617": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Waste the Rainbow",
+      "ja": "華麗なるお気に入り",
+      "de": "Das Ende einer schillernden Karriere",
+      "fr": "De toutes les couleurs"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Clarricie has brought several of her exotic pets for a leisurely stroll on the battlefield, and possibly to slay a few Resistance troops for good measure. Worst of all is her so-called “Feathered Rainbow,” which is not only a voracious predator, but offensively gaudy.",
+      "ja": "友軍部隊を救援し、敵を退けろ\n\n魔獣大隊の華麗なるクラリシーと\n\nお気に入りのバード・オブ・レインボーを倒せ",
+      "de": "Verbündete Einheiten haben Clarricie gestellt und fordern Unterstützung an. Besiege die Schillernde und ihren Lieblingsvogel.",
+      "fr": "Un groupe de résistants affronte Clarricie l'élégance incarnée et ses bêtes sauvages. Aidez vos alliés en terrassant l'oiseau arc-en-ciel, un volatile aussi voyant que puissant qui se trouve être l'animal fétiche de la centurio."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8372099
   },
   "1618": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Wild Bunch",
+      "ja": "暴走魔獣の排除",
+      "de": "Revierkämpfe",
+      "fr": "Sans maîtres ni loi"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "With their master having been slain in battle, a pack of trained beasts now roams the southern front, ravenously devouring anything unfortunate enough to draw too close.",
+      "ja": "敵軍のビーストマスターを倒したことにより\n\nその使役獣たちが野に放たれてしまった\n\n主を失った魔獣を排除せよ",
+      "de": "Ihr Bestienbändiger ist besiegt, doch nun machen abgerichtete Ungeheuer das Schlachtfeld zu ihrem Jagdrevier. Mach dem tierischen Treiben ein Ende.",
+      "fr": "Privées de leurs dresseurs tombés aux combat, des bêtes féroces rôdent dans le bourg d'Alermuc, guidées seulement par leur appétit vorace. Joignez-vous aux résistants et abattez-les."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372101
   },
   "1619": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "My Family and Other Animals",
+      "ja": "豚面の勧誘者",
+      "de": "Ein rüpelhaftes Großmaul",
+      "fr": "L'incorruptible"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Despite Daguza commanding an impressive assortment of beasts, he is not opposed to bolstering his ranks with more sentient beings. Your Bozjan allies strongly recommend ignoring his attempts to recruit you and simply pummeling his hideous face instead.",
+      "ja": "実力を認めれば敵さえ勧誘するという\n\n無骨のダグザが性懲りもなく現れた\n\n甘言に乗らず、敵部隊をせん滅せよ",
+      "de": "Daguza der Rüpelhafte fordert lauthals die besten Kämpfer des Widerstands heraus. Bring den überheblichen Rüpel zum Schweigen.",
+      "fr": "Ce félon de Daguza est de retour, et il y a fort à parier qu'il va de nouveau vous inciter à tourner casaque. Joignez-vous aux résistants et montrez-lui que vous ne mangez pas de ce pain-là."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372103
   },
   "1620": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "I'm a Mechanical Man",
+      "ja": "魔導レイバーB型破壊命令",
+      "de": "Gewaltsame Arbeitsniederlegung - Plan B",
+      "fr": "Plan B"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Once more, the ancient automaton has taken to the battlefield, deadlier than ever. Your Resistance allies can but hope it is still within their power to defeat it.",
+      "ja": "魔導レイバーが\n\n改良を経て、ふたたび戦場に現れた\n\n魔導レイバーB型を破壊せよ",
+      "de": "Die umgebauten Arbeitsmaschinen sind zurück, in einer neuen Ausführung. Zerstöre auch das Modell B.",
+      "fr": "Sicinius a déployé sur le champ de bataille la dernière itération de son géant de métal, le bien nommé “ouvrier magitek modèle B”. Voyez donc ce que vaut cette nouvelle version."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371392
   },
   "1621": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Murder Death Kill",
+      "ja": "強化兵部隊の襲撃",
+      "de": "Neu und besser",
+      "fr": "Des machines et des hommes"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Empire's magitek-enhanced soldiers continue to harry the Resistance's front line. A unit led by Dabog, the magitek-enhanced pilot, poses an immediate threat to your Bozjan allies and must be eliminated at all costs.",
+      "ja": "魔導兵器の操縦に最適化するために\n\n調整された強化兵たちの部隊が現れた\n\n敵部隊を率いるレウクロコタを倒せ",
+      "de": "Eine verbesserte mobile Einheit stampft auf das Schlachtfeld, geführt von einer Leucrocotta. Bezwinge das Biest.",
+      "fr": "Dabog et son unité de soldats aux capacités artificiellement décuplées débarquent en force aux commandes d'armes magitek, dont un puissant leucrocuta. Envoyez-les à la casse."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8372107
   },
   "1622": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Desperately Seeking Something",
+      "ja": "戦場の盗掘者",
+      "de": "... fällt selbst hinein",
+      "fr": "Ceux qui creusent"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A number of imperial soldiers have been seen attempting to excavate an unknown object from the battlefield. Whatever it may be, it likely spells trouble for the Resistance, so they must be prevented from locating the prize they seek.",
+      "ja": "不可解なことに戦場にて掘削を行い\n\n何かを探している敵部隊が発見された\n\n敵部隊をせん滅せよ",
+      "de": "Spione haben eine feindliche Einheit entdeckt, die aus unerklärlichen Gründen Grabungen auf dem Schlachtfeld vornimmt. Niemand weiß, was da vor sich geht, aber es kann nichts Gutes sein.",
+      "fr": "Vous avez surpris un groupe de soldats impériaux en train d'excaver le sol dans un but inconnu. Joignez-vous à Marsak et coupez court à cette curieuse opération."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372110
   },
   "1623": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Supplies Party",
+      "ja": "補給物資強奪作戦",
+      "de": "Deins wird meins",
+      "fr": "Casser la voie"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "An imperial detachment has been sighted transporting supplies across the battlefield, and the Resistance aims to requisition these valuable resources for themselves.",
+      "ja": "帝国軍の補給部隊を襲撃して物資を奪う\n\n一石二鳥の作戦が立案された\n\n「帝国軍の補給物資」を集め、小隊長に手渡せ",
+      "de": "Attackiere die Versorgungseinheit der IV. Legion, um zwei Dämonenfliegen mit einer Klappe zu schlagen: Feinddezimierung und Materialbeschaffung.",
+      "fr": "La résistance a repéré une unité de ravitaillement impériale en mouvement. Interceptez-la, et pillez sa cargaison au profit de vos alliés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060803.png",
+    "level": 80,
+    "location": 8372111
   },
   "1624": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Demonstrably Demonic",
+      "ja": "血の匂いに誘われて",
+      "de": "Der Geruch der Angst",
+      "fr": "Par l'hémoglobine alléchés"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "As the battle intensifies, so too does its power to draw forth fell creatures from the void. A horde of archaeodemons has descended upon the southern front, laying waste to all in their path.",
+      "ja": "術士大隊との戦闘中に\n\n血の匂いに誘われて妖異が現れた\n\nアルケオデーモンの群れをせん滅せよ",
+      "de": "Der Geruch von Angst und Verzweiflung, den die Kämpfe mit dem Spezialbataillon ausgelöst haben, hat einen Schwarm Nichtsgesandter angelockt. Vertreibe die Archaeodämonen!",
+      "fr": "Flairant l'odeur du sang, un groupe d'archéodémons s'est invité à une rixe entre résistants et mages impériaux. Aidez vos camarades à ne pas finir entre leurs griffes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372097
   },
   "1625": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "For Absent Friends",
+      "ja": "燃え上がる南方戦線",
+      "de": "Eine neue Unordnung",
+      "fr": "Miséricorde vengeresse"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The imperial mage detachment led by Dyunbu the Blessed has joined with other units after their previous defeats. Though some common ground may yet be found between their leader and the Resistance, it seems that for the time being, conflict is unavoidable.",
+      "ja": "帝国軍第IV軍団は劣勢を挽回すべく\n\n部隊を再編し、大規模攻勢を仕掛けてきた\n\n敵部隊をせん滅し、優勢を確保せよ",
+      "de": "Um ihre Kampfkraft wiederherzustellen, hat die IV. Legion begonnen, ihre Einheiten neu zu formieren. Vermiese dem Gegner den Plan und bringe ordentlich Unordnung in die neuen Reihen.",
+      "fr": "Rejoint par une Dyunbu vindicative, le restant des troupes de la cohorte bestiale s'oppose à l'ultime avancée des résistants. Faites pencher la balance en faveur de vos alliés."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8371391
   },
   "1626": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Of Steel and Flame",
+      "ja": "続・燃え上がる南方戦線",
+      "de": "Auf und ab",
+      "fr": "Le fer et le feu"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "As the Resistance prepares to strike directly at Castrum Lacus Litore, the way is barred by both Sartauvoir quo Soranus and Sicinius mal Vellutus, two of the deadliest opponents to grace the southern front. Though the elite members of Gunnhildr's Blades have entered the fray, even their considerable strength may not be enough to emerge victorious.",
+      "ja": "カストルム・ラクスリトレを守らんとする\n\n第IV軍団が徹底攻勢の構えを見せている\n\n敵部隊をせん滅し、勝利を勝ち取れ",
+      "de": "Die IV. Legion meint es ernst mit der Verteidigung von Castrum Lacus Litore. Sie hat sich neu formiert und aufgerüstet, doch du wirst sie nun wieder abrüsten.",
+      "fr": "Dans une ultime tentative de défendre Castrum Lacus Litore, la 4e légion a sorti l'artillerie lourde. Vainquez la création ultime de Sicinius, et tout autre ennemi qui tenterait de vous barrer la route."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060802.png",
+    "level": 80,
+    "location": 8371391
   },
   "1627": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Let Slip the Dogs of War",
+      "ja": "戦場の犬を解き放て",
+      "de": "Vor die Hunde gekommen",
+      "fr": "Brigade canine"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The subordinates of Hernais the Tenacious have unleashed their hounds to maul any Resistance troops that draw near to Castrum Lacus Litore. Your task is to send them running with their tails between their legs.",
+      "ja": "忠犬のエルネイスの部下たちが\n\n命がけで、弔い合戦を仕掛けてきた\n\n敵部隊をせん滅せよ",
+      "de": "Die Untergebenen von Hernais dem Hund riskieren alles für einen Vergeltungskampf. Zeig ihnen, dass ihr Opfer umsonst ist.",
+      "fr": "Dans une probable volonté de rendre hommage à leur supérieur, les hommes de feu Hernais le chien fidèle ont lâché contre les résistants une meute de molosses enragés. Renvoyez-les à leurs maîtres, la queue entre les pattes."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372118
   },
   "1628": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The War Against the Machines",
+      "ja": "シシニアスの実験場",
+      "de": "Ende Gelände",
+      "fr": "Cent mille guerriers de métal"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "It appears there is no end to Sicinius mal Vellutus's magitek monstrosities, as yet more of his unmanned warmachina take to the field. With each of his creations deadlier than the last, the Resistance will be hard-pressed to repel them without your aid.",
+      "ja": "魔導技師シシニアスが\n\n新型無人兵器を戦場に投入した\n\n敵部隊をせん滅せよ",
+      "de": "Magitechnicus Sicinius hat neuartige unbemannte Kampfmaschinen ins Gelände entsandt. Zeig ihm, wie viel dir seine aufwendigen Apparate wert sind.",
+      "fr": "Sicinius a décidé de mener un test à grande échelle en déployant une multitude de prototypes d'arme magitek contre une poignée de résistants. Offrez-lui une défaite cuisante pour tout résultat."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060801.png",
+    "level": 80,
+    "location": 8372098
   },
   "1629": {
     "name": {

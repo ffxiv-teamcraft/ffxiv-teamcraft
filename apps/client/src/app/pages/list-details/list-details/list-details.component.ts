@@ -156,8 +156,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
-    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
-      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
+    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
+      mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
     this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
@@ -221,13 +221,9 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.listsFacade.updateList(list);
   }
 
-  getLink(list: List): string {
+  getLink = (list: List) => {
     return this.linkTools.getLink(`/list/${list.$key}`);
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('Share_link_copied'));
-  }
+  };
 
   assignTeam(list: List, team: Team): void {
     list.teamId = team.$key;
@@ -336,12 +332,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
-  public copyTextExport(display: ListDisplay, list: List): void {
-    if (this._clipboardService.copyFromContent(this.getListTextExport(display, list)))
-      this.afterListTextCopied();
-  }
-
-  public getListTextExport(display: ListDisplay, list: List): string {
+  public getListTextExport = (display: ListDisplay, list: List) => {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
@@ -351,11 +342,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }, `${displayRow.title} :\n`) + '\n';
     }, seed);
 
-  }
-
-  afterListTextCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
-  }
+  };
 
   public copyJSONExport(serverName: string, display: ListDisplay, list: List) : void {
     if (this._clipboardService.copyFromContent(this.getListJsonExport(serverName, display, list)))

@@ -103,8 +103,8 @@ export class GearsetComparatorService {
         isDifferent = isDifferent && this.lazyData.data.ilvls[a[slot] && a[slot].itemId] !== this.lazyData.data.ilvls[b[slot] && b[slot].itemId];
       }
       if (isDifferent || (a[slot] && a[slot].hq) !== (b[slot] && b[slot].hq)) {
-        const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] : [];
-        const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] : [];
+        const aItemStats = a[slot] ? this.lazyData.data.itemStats[a[slot].itemId] || [] : [];
+        const bItemStats = b[slot] ? this.lazyData.data.itemStats[b[slot].itemId] || [] : [];
         const itemsStatsDiff = aItemStats.map(as => {
           const bs = bItemStats.find(s => s.ID === as.ID);
 

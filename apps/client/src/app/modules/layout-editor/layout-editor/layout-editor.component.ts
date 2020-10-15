@@ -63,10 +63,6 @@ export class LayoutEditorComponent {
       });
   }
 
-  layoutCopied(): void {
-    this.message.success(this.translate.instant('LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied'));
-  }
-
   getItemsLayoutType(layout: ListLayout): string {
     if (layout.recipeZoneBreakdown) {
       return 'zoneBreakdown';

@@ -177,6 +177,7 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Supprimer le groupe avec toutes les alarmes",
     "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
     "Add_note": "Ajouter une note",
@@ -1710,6 +1711,11 @@
     "Disabled": "Le guide de dépense de devises ne fonctionne plus",
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "Blog"
   },
@@ -1782,6 +1788,7 @@
       "Bag": "Inventaire",
       "Other": "Autre inventaire",
       "Armory": "Arsenal",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "En vente par les servants"
     }
   },
@@ -1890,6 +1897,8 @@
     "Stats_caps": "Max stats",
     "Stat_computing_diclaimer": "Les résultats ne sont pas 100% exacts, ils sont issus de joueurs (the allagan studies) comme vous et moi qui ont passé beaucoup de temps à essayer de trouver les formules, ne signalez pas les inexactitudes comme un bug.",
     "Missing_items": "Il semble qu'il vous manque certains éléments, assurez-vous que vos filtres sont correctement définis",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",

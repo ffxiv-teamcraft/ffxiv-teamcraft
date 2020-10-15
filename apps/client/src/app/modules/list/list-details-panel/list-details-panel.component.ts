@@ -75,13 +75,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   finalItems = false;
 
   @Input()
-  collapsed = false;
-
-  @Input()
   overlay = false;
 
   @Input()
   largeList = false;
+
+  collapsed = false;
 
   progression: number;
 
@@ -171,6 +170,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   ngOnInit(): void {
     if (this.displayRow && this.displayRow.collapsedByDefault) {
+      this.collapsed = true;
+    } else if (this.displayRow && this.displayRow.rows.length > 25) {
       this.collapsed = true;
     }
   }
@@ -483,12 +484,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public copyTextExport() {
-    if (this._clipboardService.copyFromContent(this.getTextExport()))
-      this.textCopied();
-  }
-
-  public getTextExport(): string {
+  public getTextExport = () => {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -500,11 +496,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return rows.reduce((exportString, row) => {
       return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
     }, `${this.displayRow.title} :\n`);
-  }
-
-  textCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
-  }
+  };
 
   // Done to reduce render-time perf of generating the whole string into the DOM. If there's a way to do it with [cdk directive](https://material.angular.io/cdk/clipboard/overview) that would be ideal
   public copyJSONExport(serverName: string): void{

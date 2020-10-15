@@ -25,7 +25,7 @@ export class MacroTranslatorComponent {
   ];
 
   private findActionsRegex: RegExp =
-    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|"[^"]+")?.*/, 'i');
+    new RegExp(/\/(ac|action|aaction|gaction|generalaction|statusoff)[\s]+((\w|[éàèç]|[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B)+|["”“][^"”“]+["”“])?.*/, 'i');
 
 
   private findActionsAutoTranslatedRegex: RegExp =
@@ -48,16 +48,18 @@ export class MacroTranslatorComponent {
 
     this.translationDone = false;
     this.invalidInputs = false;
-    for (const line of this.macroToTranslate.split('\n')) {
+    for (let line of this.macroToTranslate.split('\n')) {
       let match = this.findActionsRegex.exec(line);
       if (match !== null && match !== undefined) {
-        const skillName = match[2].replace(/"/g, '');
+        const skillName = match[2].replace(/["”“]/g, '');
         // Get translated skill
         try {
           const translatedSkill = this.localizedDataService.getCraftingActionByName(skillName, this.macroLanguage);
           // Push translated line to each language
           Object.keys(macroTranslated).forEach(key => {
             if (translatedSkill[key] !== undefined) {
+              // Get rid of smart quotes
+              line = line.replace(/[”“]/g, '"');
               if (((key === 'ko' || key === 'zh') && line.indexOf('"') === -1) || (translatedSkill[key].indexOf(' ') > -1 && line.indexOf('"') === -1)) {
                 macroTranslated[key].push(line.replace(skillName, `"${translatedSkill[key]}"`));
               } else {

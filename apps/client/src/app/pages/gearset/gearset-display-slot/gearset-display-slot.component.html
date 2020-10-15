@@ -11,6 +11,10 @@
   <div fxLayout="column" fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
       <ng-container *ngIf="equipmentPiece; else emptySlotName">
+        <div>
+          <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].item"
+                 (ngModelChange)="progressionChange.emit(progression)"></label>
+        </div>
         <div>{{equipmentPiece.itemId | itemName | i18n}}</div>
         <img *ngIf="equipmentPiece.hq" alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
         <ng-template #caps>
@@ -29,6 +33,10 @@
             <app-materia-slot-icon nz-tooltip
                                    [equipmentPiece]="equipmentPiece"
                                    [index]="i"></app-materia-slot-icon>
+            <div *ngIf="materia > 0">
+              <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].materias[i]"
+                     (ngModelChange)="progressionChange.emit(progression)"></label>
+            </div>
             <div class="verbose-materia-name">{{materia === 0 ? ('GEARSETS.No_materia' | translate) : materia | itemName | i18n}}</div>
           </div>
         </div>

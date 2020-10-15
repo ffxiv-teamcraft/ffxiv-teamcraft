@@ -12,7 +12,7 @@ import { RotationFoldersModule } from '../../modules/rotation-folders/rotation-f
 import { WorkshopModule } from '../../modules/workshop/workshop.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
@@ -32,7 +32,7 @@ const routes: Routes = [{
     DatabaseModule,
     FullpageMessageModule,
     PageLoaderModule,
-    ClipboardModule,
+
 
     ListModule,
     RotationsModule,

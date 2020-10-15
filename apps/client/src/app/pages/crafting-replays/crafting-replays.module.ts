@@ -15,7 +15,7 @@ import { NzAlertModule, NzButtonModule, NzDividerModule, NzIconModule, NzMessage
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+
 import { FoldersModule } from '../../modules/folders/folders.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';

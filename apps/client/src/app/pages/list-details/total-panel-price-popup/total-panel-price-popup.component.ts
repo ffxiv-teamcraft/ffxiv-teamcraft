@@ -4,6 +4,7 @@ import { TradeIconPipe } from '../../../pipes/pipes/trade-icon.pipe';
 import { TradeSource } from '../../../modules/list/model/trade-source';
 import { TradeEntry } from '../../../modules/list/model/trade-entry';
 import { DataType } from '../../../modules/list/data/data-type';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-total-panel-price-popup',
@@ -21,12 +22,21 @@ export class TotalPanelPricePopupComponent implements OnInit {
   getTradeSourceByPriority(tradeSources: TradeSource[]): TradeSource {
     return tradeSources
       .filter(source => {
-        return this.getFilteredCurrencies(source.trades[0].currencies).length > 0;
+        return this.getTradeEntries(source).length > 0;
       })
       .sort((a, b) => {
-        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(a.trades[0].currencies)[0].id]
-        > TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getFilteredCurrencies(b.trades[0].currencies)[0].id] ? 1 : -1;
+        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id]
+        > TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id] ? 1 : -1;
       })[0];
+  }
+
+  private getTradeEntries(tradeSource: TradeSource): TradeEntry[] {
+    return tradeSource.trades.reduce((acc, trade) => {
+      return [
+        ...acc,
+        ...this.getFilteredCurrencies(trade.currencies)
+      ];
+    }, []);
   }
 
   private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
@@ -35,7 +45,7 @@ export class TotalPanelPricePopupComponent implements OnInit {
     });
   }
 
-  private computePrice(): void {
+  public computePrice(): void {
     this.totalPrice = this.panelContent.reduce((result, row) => {
       const vendors = getItemSource(row, DataType.VENDORS);
       const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
@@ -72,11 +82,7 @@ export class TotalPanelPricePopupComponent implements OnInit {
               currencyId: currency.id,
               currencyIcon: currency.icon,
               costs: costs,
-              canIgnore: [].concat.apply([], tradeSources.filter(source => {
-                return source.trades.some(t => {
-                  return this.getFilteredCurrencies(t.currencies).length > 0;
-                });
-              })).length > 1
+              canIgnore: uniqBy(this.getTradeEntries(tradeSource), 'id').length > 1
             });
           } else {
             tradeRow.costs[0] = (tradeRow.costs[0] || 0) + costs[0];

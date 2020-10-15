@@ -15,18 +15,21 @@
         {{_workshop.name}} ({{lists.length}})
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
-        <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()" [nzShape]="'circle'"
+        <button (click)="$event.stopPropagation()" [clipboard]="getLink" [nzShape]="'circle'"
+                [clipboardSuccessMessage]="'WORKSHOP.Share_link_copied' | translate"
                 [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
-                ngxClipboard nz-button nz-tooltip>
+                nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
-        <button (click)="$event.stopPropagation(); addLists()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Add_lists' | translate"
+        <button (click)="$event.stopPropagation(); addLists()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
+                [nzTitle]="'WORKSHOP.Add_lists' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
           <i nz-icon nzType="plus"></i>
         </button>
-        <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Delete_message' | translate"
+        <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
+                [nzTitle]="'WORKSHOP.Delete_message' | translate"
                 [nzType]="'danger'" nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
@@ -52,7 +55,8 @@
                     {{'CUSTOM_LINKS.Add_link' | translate}}
                   </li>
                   <ng-template #copyLink>
-                    <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                    <li *ngIf="customLink$ | async as link" [clipboard]="link.getUrl"
+                        [clipboardSuccessMessage]="'CUSTOM_LINKS.Share_link_copied' | translate"
                         nz-menu-item>
                       {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                     </li>

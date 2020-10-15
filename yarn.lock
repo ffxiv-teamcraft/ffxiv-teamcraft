@@ -10953,13 +10953,6 @@ ng-zorro-antd@9.3.0:
     resize-observer-polyfill "^1.5.1"
     tslib "^1.10.0"
 
-ngx-clipboard@^13.0.0:
-  version "13.0.0"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-13.0.0.tgz#cbfc25b0fa5fbaaa76ee1229ebc7a6ed2ef0318b"
-  integrity sha512-dBSDTbmQ9saJLnFbTmQht2/s/GIvMTdEdFEBtIfKS6Xi9vOPurW7yxaTYYky2ON1FJq6LzYNjxEk/GEOZPz75w==
-  dependencies:
-    ngx-window-token ">= 3.0.0-beta01 || >= 3.0.0"
-
 ngx-color-picker@^9.0.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/ngx-color-picker/-/ngx-color-picker-9.1.0.tgz#402b18a527702f06e7aa9ca61de5f96990e40638"
@@ -10974,11 +10967,6 @@ ngx-markdown@^9.0.0:
     katex "^0.11.0"
     marked "^0.8.0"
     prismjs "^1.16.0"
-
-"ngx-window-token@>= 3.0.0-beta01 || >= 3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-3.0.0.tgz#a5419befb133c6226e3e570737a247e66c825ab7"
-  integrity sha512-MDVIQB2SqFCbpoTqEXhO2529hsvpCYyw/iogjU6uskKqUKh79XVKWSMpRH9S1yTr0Ucgh8nFeNcpv2DnFdikJA==
 
 nice-try@^1.0.4:
   version "1.0.5"
@@ -11061,10 +11049,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.37.14:
-  version "2.37.14"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.37.14.tgz#c117ad156ca0393428f300a6afa3950811283729"
-  integrity sha512-FJPaQjVHsuJfjILeABWqx5qJad+7+TAn+7kU/rVsg1ykdhJK1oP3zJvFwjIXS1Vt9Oxg67nKK2JuNUHg0psoBg==
+node-machina-ffxiv@^2.37.21:
+  version "2.37.21"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.37.21.tgz#0c98d1412680dbf8616927e228f784719d920101"
+  integrity sha512-B/foq812hjluTTUVVy37VTsThjZXppGTEhlvs22a/zz5gyHDCTq183W5AEZsz5p+PnFqdNpBwFcZ2PY/wSiRMA==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"

@@ -177,6 +177,7 @@
     "Custom_sound": "カスタムアラート音",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "グループ内のすべてのアラームを消す",
     "Confirm_group_delete_with_alarms": "本当にこのグループや全てのアラームを削除しますか？",
     "Add_note": "メモを追加する",
@@ -1710,6 +1711,11 @@
     "Disabled": "通貨の消費ガイドはもう利用できません。",
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "ブログ"
   },
@@ -1782,6 +1788,7 @@
       "Bag": "所持品",
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     }
   },
@@ -1890,6 +1897,8 @@
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",

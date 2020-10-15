@@ -177,6 +177,7 @@
     "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "删除该分组和分组下的所有闹钟",
     "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "添加备注",
@@ -1710,6 +1711,11 @@
     "Disabled": "货币消费指南已失效",
     "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "博客"
   },
@@ -1782,6 +1788,7 @@
       "Bag": "背包",
       "Other": "其他物品栏",
       "Armory": "兵装库",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "雇员出售列表"
     }
   },
@@ -1890,6 +1897,8 @@
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",

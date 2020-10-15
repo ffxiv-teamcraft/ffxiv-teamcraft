@@ -156,6 +156,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/currency-spending/currency-spending.module').then(m => m.CurrencySpendingModule)
   },
   {
+    path: 'food-picker',
+    loadChildren: () => import('./pages/food-picker/food-picker.module').then(m => m.FoodPickerModule)
+  },
+  {
     path: 'blog',
     loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule)
   },

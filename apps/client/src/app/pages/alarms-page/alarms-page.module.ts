@@ -22,7 +22,7 @@ import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.modul
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
-import { ClipboardModule } from '@angular/cdk/clipboard';
+
 import { ListModule } from '../../modules/list/list.module';
 
 const routes: Routes = [
@@ -59,7 +59,7 @@ const routes: Routes = [
 
     NgZorroAntdModule,
     NgDragDropModule,
-    ClipboardModule,
+
     ListModule
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]

@@ -11,7 +11,7 @@ import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { CustomSimulatorPageComponent } from './components/custom-simulator-page/custom-simulator-page.component';
 import { RotationsPageComponent } from './components/rotations-page/rotations-page.component';
 import { MacroPopupComponent } from './components/macro-popup/macro-popup.component';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { SimulationMinStatsPopupComponent } from './components/simulation-min-stats-popup/simulation-min-stats-popup.component';
@@ -127,7 +127,7 @@ const routes: Routes = [
     NgZorroAntdModule,
     NzIconModule,
 
-    ClipboardModule,
+
 
     // CustomLinksModule,
     TooltipModule,

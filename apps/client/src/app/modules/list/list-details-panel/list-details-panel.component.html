@@ -101,7 +101,9 @@
                   nzSize="small">
             <i class="material-icons">local_atm</i>
           </button>
-          <button (click)="$event.stopPropagation();copyTextExport()"
+          <button (click)="$event.stopPropagation()"
+                  [clipboard]="getTextExport"
+                  [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
                   [nzTooltipTitle]="'LIST.Copy_as_text' | translate"
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>

@@ -6,6 +6,7 @@ import { DataType } from '../../list/data/data-type';
 import { TradeSource } from '../../list/model/trade-source';
 import { TranslateService } from '@ngx-translate/core';
 import { TradeEntry } from '../../list/model/trade-entry';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 @Component({
   selector: 'app-gearset-cost-popup',
@@ -17,14 +18,34 @@ export class GearsetCostPopupComponent implements OnInit {
   @Input()
   gearset: TeamcraftGearset;
 
+  private _progression: GearsetProgression;
+
+  @Input()
+  set progression(p: GearsetProgression) {
+    this._progression = p;
+    this.computeCosts();
+  }
+
+  get progression(): GearsetProgression {
+    return this._progression;
+  }
+
   costs: { id: string | number, amount: number }[] = [];
 
   constructor(private lazyData: LazyDataService, public translate: TranslateService) {
   }
 
   ngOnInit(): void {
+    this.computeCosts();
+  }
+
+  private computeCosts(): void {
     Object.keys(this.gearset)
-      .filter(key => this.gearset[key] && this.gearset[key].itemId !== undefined)
+      .filter(key => {
+        const validPiece = this.gearset[key] && this.gearset[key].itemId !== undefined;
+        const notDone = !this.progression || !this.progression[key]?.item;
+        return validPiece && notDone;
+      })
       .forEach(key => {
         const gearPiece = this.gearset[key];
         const itemExtract = this.lazyData.extracts.find(row => row.id === gearPiece.itemId);

@@ -195,6 +195,13 @@ export class AppComponent implements OnInit {
       this.router.navigateByUrl('/admin/users');
     });
 
+    // Scuff Zoom Handling
+    document.addEventListener("keydown", event => {
+      if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
+        return this.ipc.send('zoom-in', event)
+      }
+    });
+
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
 
     apollo.create({
@@ -401,7 +408,7 @@ export class AppComponent implements OnInit {
         gtag('set', 'page', event.url);
         gtag('event', 'page_view', {
           page_path: event.urlAfterRedirects
-        })
+        });
       });
 
       // Custom protocol detection
@@ -490,10 +497,6 @@ export class AppComponent implements OnInit {
     return this.router.url;
   }
 
-  afterPathNameCopy(): void {
-    this.message.success(this.translate.instant('Path_copied_to_clipboard'));
-  }
-
   getLang(): string {
     if (isPlatformBrowser(this.platform)) {
       const lang = localStorage.getItem('locale');
@@ -534,10 +537,8 @@ export class AppComponent implements OnInit {
         }
         if (!user.patron && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
-          if (this.settings.pageViews < viewTriggersForPatreonPopup[viewTriggersForPatreonPopup.length - 1]) {
-            this.settings.pageViews++;
-            increasedPageViews = true;
-          }
+          this.settings.pageViews++;
+          increasedPageViews = true;
           if (viewTriggersForPatreonPopup.indexOf(this.settings.pageViews) > -1) {
             this.patreonService.showSupportUsPopup();
           }

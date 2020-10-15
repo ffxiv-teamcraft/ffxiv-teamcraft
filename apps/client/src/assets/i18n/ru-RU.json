@@ -177,6 +177,7 @@
     "Custom_sound": "Настраиваемый звук",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Удалить группу со всеми оповещениями",
     "Confirm_group_delete_with_alarms": "Вы уверены, что хотите удалить эту группу и все её оповещения?",
     "Add_note": "Добавить заметку",
@@ -1710,6 +1711,11 @@
     "Disabled": "Гид по трате валют более не работает",
     "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи."
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "Блог"
   },
@@ -1782,6 +1788,7 @@
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "На продаже у ретейнеров"
     }
   },
@@ -1890,6 +1897,8 @@
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",

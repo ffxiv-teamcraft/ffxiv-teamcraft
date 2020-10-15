@@ -177,6 +177,7 @@
     "Custom_sound": "Custom alarm sound",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Delete group with all alarms",
     "Confirm_group_delete_with_alarms": "Are you sure you want to delete this group and all the alarms inside of it?",
     "Add_note": "Add a note",
@@ -1710,6 +1711,11 @@
     "Disabled": "The currency spending guide isn't working anymore",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
   },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
+  },
   "BLOG": {
     "Title": "Blog"
   },
@@ -1782,6 +1788,7 @@
       "Bag": "Inventory",
       "Other": "Other inventory",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     }
   },
@@ -1890,6 +1897,8 @@
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",

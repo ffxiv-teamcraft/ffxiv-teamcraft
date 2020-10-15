@@ -101,7 +101,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     })
   );
 
-  permissionLevel$: Observable<{value: PermissionLevel}> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
+  permissionLevel$: Observable<{ value: PermissionLevel }> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
     switchMap(([teams, loggedIn]) => {
       return combineLatest([
         this.authFacade.userId$,
@@ -139,7 +139,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     map(level => {
       return {
         value: level
-      }
+      };
     })
   );
 
@@ -161,9 +161,9 @@ export class ListPanelComponent extends TeamcraftComponent {
     this.listsFacade.deleteList(list.$key, list.offline);
   }
 
-  getLink(): string {
+  getLink = () => {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
-  }
+  };
 
   openList(favorite: boolean): void {
     if (!this.publicDisplay || favorite) {
@@ -342,14 +342,6 @@ export class ListPanelComponent extends TeamcraftComponent {
     });
   }
 
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('Share_link_copied'));
-  }
-
-  afterTemplateUrlCopy(): void {
-    this.message.success(this.translate.instant('LIST_TEMPLATE.Share_link_copied'));
-  }
-
   openTagsPopup(list: List): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
@@ -361,10 +353,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   createCustomLink(list: List, user: TeamcraftUser): void {
     this.customLinksFacade.createCustomLink(list.name, `list/${list.$key}`, user);
-  }
-
-  afterCustomLinkCopy(): void {
-    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   createTemplate(list: List, user: TeamcraftUser): void {

@@ -1,5 +1,4 @@
 import { MetricsDisplayEntry } from './metrics-display-entry';
-import { MetricType } from '../model/metric-type';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 
 export class MetricsDashboardLayout extends DataWithPermissions {
@@ -20,13 +19,23 @@ export class MetricsDashboardLayout extends DataWithPermissions {
       }, { component: 'table', type: -1, filters: [{ name: 'NoFilter', args: [] }], title: 'Full entries record' }], [{
         component: 'pie-chart',
         type: 1,
-        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [1, 3] }, { gate: 'AND', not: true, name: 'GilFilter', args: [] }],
+        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [1, 3] }, {
+          gate: 'AND',
+          not: true,
+          name: 'GilFilter',
+          args: []
+        }],
         title: 'Items gathered',
         params: { metric: 'amount' }
       }, {
         component: 'pie-chart',
         type: 1,
-        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [2] }, { gate: 'AND', not: true, name: 'GilFilter', args: [] }],
+        filters: [{ name: 'ObtentionFilter', args: [] }, { gate: 'AND', name: 'SourceFilter', args: [2] }, {
+          gate: 'AND',
+          not: true,
+          name: 'GilFilter',
+          args: []
+        }],
         title: 'Items crafted',
         params: { metric: 'amount' }
       }]]
@@ -63,7 +72,7 @@ export class MetricsDashboardLayout extends DataWithPermissions {
     return clone;
   }
 
-  public get exportCode(): string {
+  public exportCode = () => {
     return JSON.stringify({ name: this.name, grid: this.grid });
-  }
+  };
 }

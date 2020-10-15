@@ -25,7 +25,9 @@
         ></i>
       </ng-template>
     </nz-input-group>
-    <button (cbOnSuccess)="afterShareLinkCopied()" [cbContent]="getShareUrl()" [nzTitle]="'ITEMS.Share_url' | translate" ngxClipboard nz-button
+    <button [clipboard]="getShareUrl"
+            [clipboardSuccessMessage]="'ITEMS.Share_url_copied' | translate"
+            [nzTitle]="'ITEMS.Share_url' | translate" nz-button
             nz-tooltip tutorialStep="TUTORIAL.SEARCH.Share" tutorialStepIndex="1" tutorialStepAlign="bottom">
       <i nz-icon nzType="share-alt"></i>
     </button>
@@ -150,7 +152,7 @@
                 <nz-select class="filter-select" formControlName="craftJob" nzAllowClear nzShowSearch>
                   <nz-option *ngFor="let job of availableCraftJobs" [nzLabel]="job.id | jobAbbr | i18n"
                              [nzValue]="job.id" nzCustomContent>
-                    <div fxLayout="row" fxLayoutAlign="flex-start center"  fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                       <div class="companion-svg job-icon" [innerHtml]="job.id | jobUnicode"></div>
                       <div>{{job.id | jobAbbr | i18n}}</div>
                     </div>
@@ -179,24 +181,24 @@
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
                             [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
-                  <nz-select class="filter-select" formControlName="name"
-                             nzShowSearch>
-                    <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
-                               [nzValue]="stat.filterName">
-                    </nz-option>
-                  </nz-select>
-                  <nz-input-group class="level-range" nzCompact>
-                    <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
-                                     (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'stats', i)"
-                                     (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'stats', i)"></nz-input-number>
-                    <input disabled nz-input placeholder="-" type="text">
-                    <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
-                                     (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'stats', i)"
-                                     (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'stats', i)"></nz-input-number>
-                  </nz-input-group>
-                  <button (click)="$event.preventDefault();removeFilter('stats', i)" [nzBlock]="false | ifMobile:true" nz-button
-                          nzType="danger"><i nz-icon nzType="delete"></i>
-                  </button>
+                <nz-select class="filter-select" formControlName="name"
+                           nzShowSearch>
+                  <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
+                             [nzValue]="stat.filterName">
+                  </nz-option>
+                </nz-select>
+                <nz-input-group class="level-range" nzCompact>
+                  <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'stats', i)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'stats', i)"></nz-input-number>
+                  <input disabled nz-input placeholder="-" type="text">
+                  <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                                   (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'stats', i)"
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'stats', i)"></nz-input-number>
+                </nz-input-group>
+                <button (click)="$event.preventDefault();removeFilter('stats', i)" [nzBlock]="false | ifMobile:true" nz-button
+                        nzType="danger"><i nz-icon nzType="delete"></i>
+                </button>
               </nz-form-item>
               <button (click)="$event.preventDefault();addFilter('stats')" nz-button
                       nzBlock>{{'SEARCH.Add_stat_filter' | translate}}</button>
