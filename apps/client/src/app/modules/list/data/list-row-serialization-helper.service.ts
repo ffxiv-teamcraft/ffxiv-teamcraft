@@ -1,15 +1,18 @@
+import { Injectable } from '@angular/core';
+
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { DataType } from '../data/data-type';
 import { CraftedBy } from '../model/crafted-by';
 import { GatheredBy } from '../model/gathered-by';
 import { Instance } from '../model/instance';
 import { getItemSource, ListRow } from '../model/list-row';
 import { StoredNode } from '../model/stored-node';
 import { Vendor } from '../model/vendor';
+import { DataType } from './data-type';
 
 interface NameHolder { name: string, itemIdName?: string }
 interface ItemNameHolder { id: number | string, itemId?: string, name?: string, itemIdName?: string };
@@ -24,13 +27,24 @@ interface VendorWithName extends Vendor, NameHolder { }
 interface InstanceWithName extends Instance, NameHolder { }
 interface GatherWithName extends GatheredBy, NameHolder { }
 
+@Injectable({ providedIn: 'root' })
 export class ListRowSerializationHelper {
+
   constructor(
     private i18nTools: I18nToolsService,
     private l12n: LocalizedDataService,
     private gt: GarlandToolsService,
+    private lazyData: LazyDataService,
   ) {
   }
+  public getSerializedRowData(
+    serverName: string,
+    rows: ListRow[],
+    finalItems: ListRow[]=undefined
+  ): any {
+    return this.getJsonExport(this.lazyData.getDCFromServerName(serverName), serverName, rows, finalItems);
+  }
+
   // guesses the name based off potential paths
   public applyItemName(obj: ItemNameHolder): ItemNameHolder {
     const id = obj.id ? obj.id : obj.itemId ? obj.itemId : undefined;

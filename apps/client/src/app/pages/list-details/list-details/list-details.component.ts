@@ -4,15 +4,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { ClipboardService } from 'ngx-clipboard';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
@@ -31,7 +28,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { LayoutEditorComponent } from '../../../modules/layout-editor/layout-editor/layout-editor.component';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { DataType } from '../../../modules/list/data/data-type';
-import { ListRowSerializationHelper } from '../../../modules/list/data/ListRowSerializationHelper';
+import { ListRowSerializationHelper } from '../../../modules/list/data/list-row-serialization-helper.service';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
 import { List } from '../../../modules/list/model/list';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
@@ -107,11 +104,6 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
 
   private regeneratingList = false;
 
-  server$ = this.authFacade.mainCharacter$.pipe(
-    map(char => char.Server)
-  )
-  private serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
-
   constructor(private layoutsFacade: LayoutsFacade, public listsFacade: ListsFacade,
     private activatedRoute: ActivatedRoute, private dialog: NzModalService,
     private translate: TranslateService, private router: Router,
@@ -122,9 +114,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
     private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
     public settings: SettingsService, public platform: PlatformService,
-    private lazyData: LazyDataService,
-    private gt: GarlandToolsService,
-    private _clipboardService: ClipboardService
+    private serializationHelper:ListRowSerializationHelper
   ) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
@@ -347,11 +337,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
-    return JSON.stringify(this.getSerializedRowData(serverName, list.items, list.finalItems));
-  }
-
-  private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(this.lazyData.getDCFromServerName(serverName), serverName, rows, finalItems);
+    return JSON.stringify(this.serializationHelper.getSerializedRowData(serverName, list.items, list.finalItems));
   }
 
   regenerateList(list: List): void {

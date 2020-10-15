@@ -1,16 +1,13 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { ClipboardService } from 'ngx-clipboard';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 
 import { ListsFacade } from '../+state/lists.facade';
-import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -31,7 +28,7 @@ import { WorldNavigationMapComponent } from '../../map/world-navigation-map/worl
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { SettingsService } from '../../settings/settings.service';
 import { DataType } from '../data/data-type';
-import { ListRowSerializationHelper } from '../data/ListRowSerializationHelper';
+import { ListRowSerializationHelper } from '../data/list-row-serialization-helper.service';
 import { ListManagerService } from '../list-manager.service';
 import { Drop } from '../model/drop';
 import { GatheredBy } from '../model/gathered-by';
@@ -101,11 +98,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  server$ = this.authFacade.mainCharacter$.pipe(
-    map(char => char.Server)
-  )
-  private serializationHelper = new ListRowSerializationHelper(this.i18nTools, this.l12n, this.gt);
-
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
     private message: NzMessageService, private translate: TranslateService,
     private dialog: NzModalService, private listsFacade: ListsFacade,
@@ -113,9 +105,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     private progress: ProgressPopupService, private layoutOrderService: LayoutOrderService,
     private eorzeaFacade: EorzeaFacade, private alarmsFacade: AlarmsFacade,
     public settings: SettingsService, private lazyData: LazyDataService,
-    private authFacade: AuthFacade,
-    private gt: GarlandToolsService,
-    private _clipboardService: ClipboardService
+    private serializationHelper:ListRowSerializationHelper
   ) {
   }
 
@@ -508,11 +498,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       rows = this.displayRow.rows;
     };
 
-    return JSON.stringify(this.getSerializedRowData(serverName, rows))
-  }
-
-  private getSerializedRowData(serverName: string, rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(this.lazyData.getDCFromServerName(serverName), serverName, rows, undefined);
+    return JSON.stringify(this.serializationHelper.getSerializedRowData(serverName, rows))
   }
 
   trackByItem(index: number, item: ListRow): number {
