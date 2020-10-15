@@ -1068,7 +1068,8 @@
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
-    "Enter_total_earnings": "총 수익"
+    "Enter_total_earnings": "총 수익",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
