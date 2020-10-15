@@ -1,61 +1,75 @@
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
-import { environment } from '../environments/environment';
-import { GarlandToolsService } from './core/api/garland-tools.service';
-import { TranslateService } from '@ngx-translate/core';
-import { IpcService } from './core/electron/ipc.service';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { MediaObserver } from '@angular/flex-layout';
+import { DomSanitizer } from '@angular/platform-browser';
 import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterEvent } from '@angular/router';
+import fontawesome from '@fortawesome/fontawesome';
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
-import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs/Observable';
-import { AuthFacade } from './+state/auth.facade';
-import { Character } from '@xivapi/angular-client';
-import { NzIconService, NzMessageService, NzModalService } from 'ng-zorro-antd';
-import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
-import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
-import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
-import { ListsFacade } from './modules/list/+state/lists.facade';
-import { AngularFireDatabase } from '@angular/fire/database';
-import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
-import { SettingsService } from './modules/settings/settings.service';
-import { TeamsFacade } from './modules/teams/+state/teams.facade';
-import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
-import { AbstractNotification } from './core/notification/abstract-notification';
-import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
-import { PlatformService } from './core/tools/platform.service';
-import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, combineLatest, fromEvent, interval, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
-import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
-import { MediaObserver } from '@angular/flex-layout';
-import { LayoutsFacade } from './core/layout/+state/layouts.facade';
-import { LazyDataService } from './core/data/lazy-data.service';
-import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
-import { DirtyFacade } from './core/dirty/+state/dirty.facade';
-import { SeoService } from './core/seo/seo.service';
-import { Theme } from './modules/settings/theme';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
-import * as semver from 'semver';
-import { MachinaService } from './core/electron/machina.service';
-import { UniversalisService } from './core/api/universalis.service';
-import { GubalService } from './core/api/gubal.service';
-import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
-import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { TranslateService } from '@ngx-translate/core';
+import { Character } from '@xivapi/angular-client';
 import { Apollo } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { QuickSearchService } from './modules/quick-search/quick-search.service';
-import { Region } from './modules/settings/region.enum';
+import { NzIconService, NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { BehaviorSubject, combineLatest, fromEvent, interval, of } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import {
+  catchError,
+  delay,
+  distinctUntilChanged,
+  filter,
+  first,
+  map,
+  mapTo,
+  shareReplay,
+  startWith,
+  switchMap,
+  tap,
+} from 'rxjs/operators';
+import * as semver from 'semver';
+
+import { environment } from '../environments/environment';
+import { version } from '../environments/version';
+import { AuthFacade } from './+state/auth.facade';
+import { GarlandToolsService } from './core/api/garland-tools.service';
+import { GubalService } from './core/api/gubal.service';
+import { UniversalisService } from './core/api/universalis.service';
+import { LoginPopupComponent } from './core/auth/login-popup/login-popup.component';
+import { RegisterPopupComponent } from './core/auth/register-popup/register-popup.component';
+import { LazyDataService } from './core/data/lazy-data.service';
+import { DirtyFacade } from './core/dirty/+state/dirty.facade';
+import { IpcService } from './core/electron/ipc.service';
+import { MachinaService } from './core/electron/machina.service';
 import { MappyReporterService } from './core/electron/mappy/mappy-reporter';
+import { EorzeanTimeService } from './core/eorzea/eorzean-time.service';
+import { LayoutsFacade } from './core/layout/+state/layouts.facade';
+import { AbstractNotification } from './core/notification/abstract-notification';
+import { PatreonService } from './core/patreon/patreon.service';
+import { SeoService } from './core/seo/seo.service';
+import { PlatformService } from './core/tools/platform.service';
 import { TutorialService } from './core/tutorial/tutorial.service';
 import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-popup/changelog-popup.component';
-import { version } from '../environments/version';
-import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
-import { PatreonService } from './core/patreon/patreon.service';
 import { CraftingReplayFacade } from './modules/crafting-replay/+state/crafting-replay.facade';
+import { CustomItemsFacade } from './modules/custom-items/+state/custom-items.facade';
+import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
+import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
+import { ListsFacade } from './modules/list/+state/lists.facade';
+import { ListRowSerializationHelper } from './modules/list/data/list-row-serialization-helper.service';
+import { NotificationsFacade } from './modules/notifications/+state/notifications.facade';
+import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
+import { QuickSearchService } from './modules/quick-search/quick-search.service';
+import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
+import { Region } from './modules/settings/region.enum';
+import { SettingsPopupService } from './modules/settings/settings-popup.service';
+import { SettingsService } from './modules/settings/settings.service';
+import { Theme } from './modules/settings/theme';
+import { TeamsFacade } from './modules/teams/+state/teams.facade';
+import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
+import { WorkshopsFacade } from './modules/workshop/+state/workshops.facade';
 
 declare const gtag: Function;
 
@@ -176,7 +190,8 @@ export class AppComponent implements OnInit {
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private craftingReplayFacade: CraftingReplayFacade) {
+              private craftingReplayFacade: CraftingReplayFacade,
+              private serializationHelper: ListRowSerializationHelper) {
 
 
     fromEvent(document, 'keypress').pipe(

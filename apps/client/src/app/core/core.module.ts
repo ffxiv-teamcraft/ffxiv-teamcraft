@@ -1,54 +1,55 @@
-import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { GarlandToolsService } from './api/garland-tools.service';
-import { DataService } from './api/data.service';
-import { NgSerializerModule } from '@kaiu/ng-serializer';
-import { I18nPipe } from './i18n.pipe';
-import { TranslateModule } from '@ngx-translate/core';
-import { LocalizedDataService } from './data/localized-data.service';
-import { PushNotificationsModule } from 'ng-push';
-import { AbstractNotification } from './notification/abstract-notification';
-import { ListCommentNotification } from '../model/notification/list-comment-notification';
-import { PendingChangesService } from './database/pending-changes/pending-changes.service';
-import { PlatformService } from './tools/platform.service';
-import { MathToolsService } from './tools/math-tools';
-import { EorzeanTimeService } from './eorzea/eorzean-time.service';
-import { TimerPipe } from './eorzea/timer.pipe';
-import { HtmlToolsService } from './tools/html-tools.service';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { ErrorHandler, ModuleWithProviders, NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { LinkToolsService } from './tools/link-tools.service';
-import { CharacterService } from './api/character.service';
-import { DiscordWebhookService } from './discord/discord-webhook.service';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { RouterModule } from '@angular/router';
+import { NgSerializerModule } from '@kaiu/ng-serializer';
+import { TranslateModule } from '@ngx-translate/core';
+import { PushNotificationsModule } from 'ng-push';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+
+import { BlogPostNotification } from '../model/notification/blog-post-notification';
+import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
+import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
+import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
+import { ListRowSerializationHelper } from '../modules/list/data/list-row-serialization-helper.service';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
-import { PatreonService } from './patreon/patreon.service';
+import { VersionLockModule } from '../pages/version-lock/version-lock.module';
+import { CharacterService } from './api/character.service';
+import { DataService } from './api/data.service';
+import { GarlandToolsService } from './api/garland-tools.service';
+import { ClipboardDirective } from './clipboard.directive';
+import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
+import { LocalizedDataService } from './data/localized-data.service';
 import { CustomLink } from './database/custom-links/custom-link';
 import { ListTemplate } from './database/custom-links/list-template';
-import { WeatherService } from './eorzea/weather.service';
+import { PendingChangesService } from './database/pending-changes/pending-changes.service';
 import { DbButtonComponent } from './db-button/db-button.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { RouterModule } from '@angular/router';
-import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
-import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
-import { DbCommentReplyNotification } from '../model/notification/db-comment-reply-notification';
-import { AdminGuard } from './guard/admin.guard';
-import { BlogPostNotification } from '../model/notification/blog-post-notification';
-import { ErrorInterceptor } from './interceptor/error-interceptor';
+import { DiscordWebhookService } from './discord/discord-webhook.service';
+import { EorzeanTimeService } from './eorzea/eorzean-time.service';
+import { TimerPipe } from './eorzea/timer.pipe';
+import { WeatherService } from './eorzea/weather.service';
 import { TeamcraftErrorHandler } from './error-handler/teamcraft-error-handler';
-import { DevGuard } from './guard/dev.guard';
-import { DATA_REPORTERS } from './data-reporting/data-reporters-index';
-import { VersionLockModule } from '../pages/version-lock/version-lock.module';
-import { LazyComponentDirective } from './tools/lazy-component';
-import { TutorialModule } from './tutorial/tutorial.module';
-import { ModeratorGuard } from './guard/moderator.guard';
 import { MouseWheelDirective } from './event/mouse-wheel/mouse-wheel.directive';
+import { AdminGuard } from './guard/admin.guard';
+import { DevGuard } from './guard/dev.guard';
+import { ModeratorGuard } from './guard/moderator.guard';
+import { I18nPipe } from './i18n.pipe';
+import { ErrorInterceptor } from './interceptor/error-interceptor';
+import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
+import { AbstractNotification } from './notification/abstract-notification';
+import { PatreonService } from './patreon/patreon.service';
 import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
-import { ClipboardDirective } from './clipboard.directive';
-import { ClipboardModule } from '@angular/cdk/clipboard';
-
+import { HtmlToolsService } from './tools/html-tools.service';
+import { LazyComponentDirective } from './tools/lazy-component';
+import { LinkToolsService } from './tools/link-tools.service';
+import { MathToolsService } from './tools/math-tools';
+import { PlatformService } from './tools/platform.service';
+import { TutorialModule } from './tutorial/tutorial.module';
 
 @NgModule({
   imports: [
@@ -135,6 +136,7 @@ export class CoreModule {
         EorzeanTimeService,
         CharacterService,
         LocalizedDataService,
+        ListRowSerializationHelper,
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]
     };
