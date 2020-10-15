@@ -1068,7 +1068,8 @@
     "Craft_price": "Precio de fabricación",
     "Marketboard_price": "Precio NQ",
     "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Ingrese ganancias totales"
+    "Enter_total_earnings": "Ingrese ganancias totales",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",

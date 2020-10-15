@@ -1068,7 +1068,8 @@
     "Craft_price": "Prix de fabrication",
     "Marketboard_price": "Prix NQ",
     "Marketboard_price_hq": "Prix HQ",
-    "Enter_total_earnings": "Entrez les gains totaux"
+    "Enter_total_earnings": "Entrez les gains totaux",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",

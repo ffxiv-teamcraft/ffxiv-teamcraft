@@ -1068,7 +1068,8 @@
     "Craft_price": "製作単価",
     "Marketboard_price": "NQ 値段",
     "Marketboard_price_hq": "HQ 値段",
-    "Enter_total_earnings": "総収入"
+    "Enter_total_earnings": "総収入",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
