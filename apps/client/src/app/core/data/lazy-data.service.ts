@@ -6,6 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
 import { filter, first, map, startWith } from 'rxjs/operators';
+
 import { environment } from '../../../environments/environment';
 import { extractsHash } from '../../../environments/extracts-hash';
 import { I18nName } from '../../model/common/i18n-name';
@@ -297,5 +298,11 @@ export class LazyDataService {
       }
     }
     return this.http.get(url);
+  }
+
+  public getDCFromServerName(server: string) {
+    return Object.keys(this.datacenters).find(key => {
+      return this.datacenters[key].indexOf(server) > -1;
+    });
   }
 }

@@ -11,7 +11,6 @@ import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } 
 import { AuthFacade } from '../../../+state/auth.facade';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { UniversalisService } from '../../../core/api/universalis.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
@@ -332,7 +331,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
-  public getListTextExport = (display: ListDisplay, list: List) :string => {
+  public getListTextExport = (display: ListDisplay, list: List): string => {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
@@ -352,7 +351,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[], finalItems: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.getDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, finalItems);
+    return this.serializationHelper.getJsonExport(this.lazyData.getDCFromServerName(serverName), serverName, rows, finalItems);
   }
 
   regenerateList(list: List): void {

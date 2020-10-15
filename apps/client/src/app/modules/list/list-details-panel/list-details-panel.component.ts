@@ -11,7 +11,6 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { UniversalisService } from '../../../core/api/universalis.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -513,7 +512,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getSerializedRowData(serverName: string, rows: ListRow[]): any {
-    return this.serializationHelper.getJsonExport(UniversalisService.getDCFromServerName(this.lazyData.datacenters, serverName), serverName, rows, undefined);
+    return this.serializationHelper.getJsonExport(this.lazyData.getDCFromServerName(serverName), serverName, rows, undefined);
   }
 
   trackByItem(index: number, item: ListRow): number {
