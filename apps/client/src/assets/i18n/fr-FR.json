@@ -177,7 +177,7 @@
     "Custom_sound": "Son d'alarme personnalisé",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
-    "Delete_group": "Delete group",
+    "Delete_group": "Supprimer le groupe",
     "Delete_group_and_alarms": "Supprimer le groupe avec toutes les alarmes",
     "Confirm_group_delete_with_alarms": "Êtes-vous sûr de vouloir supprimer ce groupe et toutes les alarmes à l’intérieur ?",
     "Add_note": "Ajouter une note",
@@ -941,8 +941,8 @@
       "Min_craftsmanship_filter_placeholder": "Habileté min",
       "Min_control_filter_placeholder": "Contrôle min",
       "Min_cp_filter_placeholder": "PS min",
-      "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Difficulty_filter_placeholder": "Difficulté",
+      "Quality_filter_placeholder": "Qualité",
       "Intro": "Saisir quelques filtres pour commencer",
       "Result_tooltip": "Résultat d'une simulation exécutée en utilisant cette rotation et vos statistiques",
       "Fail": "Echec",
@@ -1069,7 +1069,7 @@
     "Marketboard_price": "Prix NQ",
     "Marketboard_price_hq": "Prix HQ",
     "Enter_total_earnings": "Entrez les gains totaux",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Ignorer les objets complétés"
   },
   "LEVEQUESTS": {
     "Title": "Mandats",
@@ -1425,8 +1425,8 @@
     "Ishgard_restoration": "Restauration d'Ishgard",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_craftsmanship": "Habileté requise",
+      "Required_control": "Contrôle requis"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -1712,9 +1712,9 @@
     "Disabled_description": "Ceci est dû au fait que Square Enix refuse de discuter afin de convenir d'un moyen de récupérer les données dont nous avons besoin sans être banni sans arrêt, nous ne pouvons malheureusement pas continuer sans cela. Si vous souhaitez vous plaindre, veuillez le faire auprès de Square Enix."
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
-    "Pick_stat": "Choose an attribute"
+    "Title": "Sélecteur de nourriture",
+    "Description": "Vous voulez savoir quels aliments donneront les statistiques que vous voulez ? Ne cherchez pas plus loin, vous êtes là où vous devez être !",
+    "Pick_stat": "Choisissez un attribut"
   },
   "BLOG": {
     "Title": "Blog"
