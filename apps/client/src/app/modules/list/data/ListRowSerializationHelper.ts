@@ -3,7 +3,6 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { VenturesComponent } from '../../item-details/ventures/ventures.component';
 import { DataType } from '../data/data-type';
 import { CraftedBy } from '../model/crafted-by';
 import { GatheredBy } from '../model/gathered-by';
@@ -134,7 +133,7 @@ export class ListRowSerializationHelper {
     return ventures && ventures.length > 0 ? this.gt.getVentures(ventures).map(venture => {
       const retval = {
         ...venture,
-        ventureDetails: VenturesComponent.ventureAmounts(venture)
+        ventureDetails: this.gt.ventureAmounts(venture)
           .map(threshold => {
             return {
               ...threshold,

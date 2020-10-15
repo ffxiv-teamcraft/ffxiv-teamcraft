@@ -1,20 +1,42 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { GarlandToolsData } from '../../model/common/garland-tools-data';
-import { Item } from '../../model/garland-tools/item';
-import { JobCategory } from '../../model/garland-tools/job-category';
-import { Venture } from '../../model/garland-tools/venture';
-import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
-import { ItemData } from '../../model/garland-tools/item-data';
-import { filter, map } from 'rxjs/operators';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { NgSerializerService } from '@kaiu/ng-serializer';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
+import { filter, map } from 'rxjs/operators';
+
+import { GarlandToolsData } from '../../model/common/garland-tools-data';
+import { Item } from '../../model/garland-tools/item';
+import { ItemData } from '../../model/garland-tools/item-data';
+import { JobCategory } from '../../model/garland-tools/job-category';
+import { Venture } from '../../model/garland-tools/venture';
 import { jobCategories } from '../data/sources/job-categories';
+
+export interface VentureResult {
+  name: string,
+  stat: number,
+  quantity: number,
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class GarlandToolsService {
+  ventureAmounts(venture: Venture): VentureResult[] {
+    let amounts: VentureResult[] = [];
+
+    if (venture.amounts !== undefined) {
+      const stats = venture.ilvl || venture.gathering;
+      const name = venture.ilvl ? 'filters/ilvl' : 'Gathering';
+      if (stats) {
+        amounts = stats.map((stat, i) => {
+          return { name: name, stat: stat, quantity: venture.amounts[i] };
+        });
+      }
+    }
+
+    return amounts;
+  }
 
   private gt: GarlandToolsData = (<any>window).gt || {};
   private gItemIndex: any[] = (<any>window).gItemIndex || [];
@@ -26,7 +48,7 @@ export class GarlandToolsService {
 
   public onceLoaded$: Observable<boolean> = this.loaded$.pipe(filter(loaded => loaded));
 
-  constructor(private serializer: NgSerializerService, private http: HttpClient, @Inject(PLATFORM_ID)platform: Object) {
+  constructor(private serializer: NgSerializerService, private http: HttpClient, @Inject(PLATFORM_ID) platform: Object) {
     this.preload();
   }
 
@@ -152,7 +174,7 @@ export class GarlandToolsService {
   getJobCategories(jobs: number[]): number[] {
     // Get all keys of the given object.
     return Object.keys(this.gt.jobCategories)
-    // Get only the ones that are made for our job id.
+      // Get only the ones that are made for our job id.
       .filter(categoryId => {
         let match = true;
         jobs.forEach(job => {

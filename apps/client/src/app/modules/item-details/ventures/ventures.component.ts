@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ItemDetailsPopup } from '../item-details-popup';
-import { Venture } from '../../../model/garland-tools/venture';
+
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
-import { getItemSource } from '../../list/model/list-row';
+import { Venture } from '../../../model/garland-tools/venture';
 import { DataType } from '../../list/data/data-type';
+import { getItemSource } from '../../list/model/list-row';
+import { ItemDetailsPopup } from '../item-details-popup';
 
 @Component({
   selector: 'app-ventures',
@@ -16,27 +17,13 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
 
   public ventures: Venture[] = [];
   
-  public static ventureAmounts(venture: Venture): any[] {
-    let amounts = [];
-
-    if (venture.amounts !== undefined) {
-      const stats = venture.ilvl || venture.gathering;
-      const name = venture.ilvl ? 'filters/ilvl' : 'Gathering';
-      if (stats) {
-        amounts = stats.map((stat, i) => ({ name: name, stat: stat, quantity: venture.amounts[i] }));
-      }
-    }
-
-    return amounts;
-  }
-
   constructor(private gt: GarlandToolsService) {
     super();
   }
 
   ngOnInit(): void {
     this.ventures = this.gt.getVentures(getItemSource(this.item, DataType.VENTURES)).map(venture => {
-      venture.amountsDetails = VenturesComponent.ventureAmounts(venture);
+      venture.amountsDetails = this.gt.ventureAmounts(venture);
       return venture;
     });
   }
