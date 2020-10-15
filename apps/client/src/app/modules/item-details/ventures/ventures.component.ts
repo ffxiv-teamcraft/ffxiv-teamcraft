@@ -16,7 +16,7 @@ export class VenturesComponent extends ItemDetailsPopup implements OnInit {
   DOWM = { 'en': 'Disciple of War/Magic', 'ja': '戦闘職', 'de': 'Krieger/Magier', 'fr': 'Combattant' };
 
   public ventures: Venture[] = [];
-  
+
   constructor(private gt: GarlandToolsService) {
     super();
   }
