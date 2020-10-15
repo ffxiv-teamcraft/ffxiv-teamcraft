@@ -1068,7 +1068,8 @@
     "Craft_price": "制作价格",
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ 价格",
-    "Enter_total_earnings": "输入总收入"
+    "Enter_total_earnings": "输入总收入",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
