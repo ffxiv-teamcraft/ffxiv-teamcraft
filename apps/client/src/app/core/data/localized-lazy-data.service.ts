@@ -188,6 +188,9 @@ export class LocalizedLazyDataService {
   }
 
   public getMob(id: number): I18nNameLazy {
+    if (id > 1000000) {
+      id = id % 1000000;
+    }
     return this.getRow('mobs', id);
   }
 

@@ -3,7 +3,6 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
-import { MobNamePipe } from '../../../pipes/pipes/mob-name.pipe';
 import { VenturesComponent } from '../../item-details/ventures/ventures.component';
 import { DataType } from '../data/data-type';
 import { CraftedBy } from '../model/crafted-by';
@@ -27,11 +26,6 @@ interface InstanceWithName extends Instance, NameHolder { }
 interface GatherWithName extends GatheredBy, NameHolder { }
 
 export class ListRowSerializationHelper {
-
-  public static getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
-    return getItemSource<T>(row, type, isObject);
-  }
-
   constructor(
     private i18nTools: I18nToolsService,
     private l12n: LocalizedDataService,
@@ -125,7 +119,7 @@ export class ListRowSerializationHelper {
   }
 
   private getMobNameFromId(id: number): I18nName {
-    return this.l12n.getMob(MobNamePipe.getActualMobId(id));
+    return this.l12n.getMob(id);
   }
 
   private getMonsterHuntData(monsterDrops: MonsterInfo[]): MonsterInfoWithMobName[] {
@@ -181,7 +175,7 @@ export class ListRowSerializationHelper {
     return masterbooks && masterbooks.length > 0 ? masterbooks.map((r: any) => this.applyItemName(r)) : undefined;
   }
 
-  private serializeGardening(gardening: any) {
+  private serializeGardening(gardening: any): any {
     if (!Number.isInteger(gardening))
       return undefined;
     return {
@@ -219,7 +213,7 @@ export class ListRowSerializationHelper {
     const desynthMap = {}
     const desynthData = rows
       .map((item: ListRow) => {
-        const desynths = ListRowSerializationHelper.getData(item, DataType.DESYNTHS);
+        const desynths = getItemSource(item, DataType.DESYNTHS);
         return desynths && desynths.length > 0 ? desynths.map((r: any) => this.applyItemName({ id: r })) : undefined
       })
       .filter(m => !!m)
@@ -240,24 +234,24 @@ export class ListRowSerializationHelper {
   }
 
   private serializeDataRow(item: ListRow) {
-    const craftedBy = ListRowSerializationHelper.getData<CraftedBy[]>(item, DataType.CRAFTED_BY);
-    const trades = ListRowSerializationHelper.getData<NpcTradeData[]>(item, DataType.TRADE_SOURCES);
-    const vendors = ListRowSerializationHelper.getData<Vendor[]>(item, DataType.VENDORS);
-    const reducedFrom = ListRowSerializationHelper.getData(item, DataType.REDUCED_FROM);
-    const desynths = ListRowSerializationHelper.getData<number[]>(item, DataType.DESYNTHS);
-    const instances = ListRowSerializationHelper.getData<Instance[]>(item, DataType.INSTANCES);
-    const gathering = ListRowSerializationHelper.getData<GatheredBy>(item, DataType.GATHERED_BY);
-    const gardening = ListRowSerializationHelper.getData(item, DataType.GARDENING);
-    const voyages = ListRowSerializationHelper.getData(item, DataType.VOYAGES);
-    const monsterDrops = ListRowSerializationHelper.getData(item, DataType.DROPS);
-    const masterbooks = ListRowSerializationHelper.getData(item, DataType.MASTERBOOKS);
-    const treasures = ListRowSerializationHelper.getData(item, DataType.TREASURES);
-    const fates = ListRowSerializationHelper.getData(item, DataType.FATES);
-    const ventures = ListRowSerializationHelper.getData(item, DataType.VENTURES);
-    const tripleTriadDuels = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_DUELS);
-    const tripleTriadPack = ListRowSerializationHelper.getData(item, DataType.TRIPLE_TRIAD_PACK);
-    const quests = ListRowSerializationHelper.getData(item, DataType.QUESTS);
-    const achievements = ListRowSerializationHelper.getData(item, DataType.ACHIEVEMENTS);
+    const craftedBy = getItemSource<CraftedBy[]>(item, DataType.CRAFTED_BY);
+    const trades = getItemSource<NpcTradeData[]>(item, DataType.TRADE_SOURCES);
+    const vendors = getItemSource<Vendor[]>(item, DataType.VENDORS);
+    const reducedFrom = getItemSource(item, DataType.REDUCED_FROM);
+    const desynths = getItemSource<number[]>(item, DataType.DESYNTHS);
+    const instances = getItemSource<Instance[]>(item, DataType.INSTANCES);
+    const gathering = getItemSource<GatheredBy>(item, DataType.GATHERED_BY);
+    const gardening = getItemSource(item, DataType.GARDENING);
+    const voyages = getItemSource(item, DataType.VOYAGES);
+    const monsterDrops = getItemSource(item, DataType.DROPS);
+    const masterbooks = getItemSource(item, DataType.MASTERBOOKS);
+    const treasures = getItemSource(item, DataType.TREASURES);
+    const fates = getItemSource(item, DataType.FATES);
+    const ventures = getItemSource(item, DataType.VENTURES);
+    const tripleTriadDuels = getItemSource(item, DataType.TRIPLE_TRIAD_DUELS);
+    const tripleTriadPack = getItemSource(item, DataType.TRIPLE_TRIAD_PACK);
+    const quests = getItemSource(item, DataType.QUESTS);
+    const achievements = getItemSource(item, DataType.ACHIEVEMENTS);
     const name = this.getItemName(item.id);
     const retval: any = {
       ...this.applyItemName(item),

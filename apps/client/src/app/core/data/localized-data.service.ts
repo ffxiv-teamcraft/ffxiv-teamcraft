@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { I18nName } from '../../model/common/i18n-name';
 import { Fate } from '../../pages/db/model/fate/fate';
 import { Npc } from '../../pages/db/model/npc/npc';
@@ -104,6 +105,9 @@ export class LocalizedDataService {
   }
 
   public getMob(id: number): I18nName {
+    if (id > 1000000) {
+      id = id % 1000000;
+    }
     return this.getRowWithExtendedLanguage('mobs', id);
   }
 
