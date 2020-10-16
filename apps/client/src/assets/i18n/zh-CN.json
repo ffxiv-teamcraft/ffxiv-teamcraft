@@ -699,8 +699,8 @@
     "LEVE": "理符",
     "GLAMOUR": "投影",
     "HOUSING": "住房",
-    "SUBMARINE": "Submarine",
-    "AIRSHIP": "Airship",
+    "SUBMARINE": "潜水艇",
+    "AIRSHIP": "飞空艇",
     "MISC": "其它",
     "QUEST": "任务",
     "TANK": "坦克",
@@ -942,7 +942,7 @@
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
       "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Quality_filter_placeholder": "品质",
       "Intro": "输入筛选条件",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
@@ -2154,7 +2154,7 @@
     "No_collectables_for_this_level": "No collectables available"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
+    "Title": "工序重现",
     "Online_replays": "Online replays",
     "Offline_replays": "Offline replays",
     "Open_replay_page": "Open replay page",
