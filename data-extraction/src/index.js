@@ -910,8 +910,9 @@ if (hasTodo('LGB', true)) {
   const aetherytes = [];
 
   // First things first, let's build the list of territories with multiple maps included.
-  Object.values(mapData)
-    .filter(map => map.priority_ui > 0)
+  const everyMaps = Object.values(mapData);
+  everyMaps
+    .filter(map => everyMaps.filter(m => m.territory_id === map.territory_id).length > 1)
     .forEach(map => {
       if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
         return map.priority_ui > 0 && entry.mapId === map.id;
