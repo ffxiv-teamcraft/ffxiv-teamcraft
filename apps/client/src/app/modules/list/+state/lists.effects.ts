@@ -21,6 +21,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  debounce,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -35,7 +36,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, from, of } from 'rxjs';
+import { combineLatest, EMPTY, from, of, timer } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -271,7 +272,7 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
-    debounceTime(2000),
+    debounce(action => action.fromPacket ? timer(10000) : timer(2000)),
     filter(action => {
       return !(action.payload.ephemeral && action.payload.isComplete());
     }),
@@ -387,7 +388,7 @@ export class ListsEffects {
           this.markAsDoneInDoLLog(action.itemId);
         }
       }
-      return new UpdateListAtomic(list);
+      return new UpdateListAtomic(list, action.fromPacket);
     })
   );
 

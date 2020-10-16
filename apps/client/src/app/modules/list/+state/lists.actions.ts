@@ -186,7 +186,7 @@ export class PureUpdateList implements Action {
 export class UpdateListAtomic implements Action {
   readonly type = ListsActionTypes.UpdateListAtomic;
 
-  constructor(public readonly payload: List) {
+  constructor(public readonly payload: List, public readonly fromPacket = false) {
   }
 }
 

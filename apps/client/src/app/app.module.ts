@@ -203,7 +203,9 @@ const nzConfig: NzConfig = {
 
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence({
+      synchronizeTabs: true
+    }),
     AngularFireFunctionsModule,
 
     XivapiClientModule.forRoot(),
