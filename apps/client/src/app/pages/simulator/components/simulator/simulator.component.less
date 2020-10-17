@@ -180,28 +180,36 @@
   }
 }
 
-.category-row {
-  display: flex;
-  flex-wrap: wrap;
+.actions-card-content {
 
-  h4 {
-    padding-left: 15px;
+  position: relative;
+
+  .detailed-toggle {
+    position: absolute;
+    top: 5px;
+    right: 5px;
   }
 
-  .actions-row {
+  .category-row {
     display: flex;
-    justify-content: flex-start;
     flex-wrap: wrap;
-    padding: 5px;
-    background: rgba(0, 0, 0, .3);
-    margin: 10px;
 
-    .gu-transit {
-      display: none;
+    h4 {
+      padding-left: 15px;
     }
 
-    app-action {
-      margin: 5px;
+    .actions-row {
+      padding: 5px;
+      background: rgba(0, 0, 0, .3);
+      margin: 10px;
+
+      app-action {
+        display: block;
+      }
+
+      .gu-transit {
+        display: none;
+      }
     }
   }
 }
