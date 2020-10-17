@@ -913,6 +913,8 @@
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
