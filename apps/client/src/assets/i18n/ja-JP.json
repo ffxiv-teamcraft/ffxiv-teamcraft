@@ -913,6 +913,8 @@
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
     "Total_macro_duration": "Total macro duration: {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "最高品質",
       "Good": "高品質",
