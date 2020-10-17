@@ -469,103 +469,148 @@
         </nz-card>
 
         <nz-card [class.mobile-actions]="false | ifMobile: true">
-          <div class="category-row">
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
-              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
-                <app-action (actionclick)="addAction(action)"
-                            cdkDrag
-                            (cdkDragEnded)="tooltipsDisabled = false"
-                            (cdkDragStarted)="tooltipsDisabled = true"
-                            [cdkDragData]="action"
-                            [cdkDragStartDelay]="50"
-                            [cdkDragDisabled]="snapshotMode"
-                            *ngFor="let action of getProgressActions()"
-                            [action]="action"
-                            [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
+          <div class="actions-card-content">
+            <div class="detailed-toggle">
+              <nz-switch [(ngModel)]="settings.detailedSimulatorActions"
+                         [nzUnCheckedChildren]="'SIMULATOR.Compact' | translate"
+                         [nzCheckedChildren]="'SIMULATOR.Detailed' | translate"></nz-switch>
+            </div>
+            <div class="category-row">
+              <div>
+                <h4>{{'SIMULATOR.CATEGORY.Progression' | translate}}</h4>
+                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap"
+                     [fxLayoutGap]="settings.detailedSimulatorActions ? '10px' : '5px'"
+                     fxLayoutAlign="flex-start center" class="actions-row">
+                  <ng-container *ngFor="let action of getProgressActions()">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-action (actionclick)="addAction(action)"
+                                  cdkDrag
+                                  (cdkDragEnded)="tooltipsDisabled = false"
+                                  (cdkDragStarted)="tooltipsDisabled = true"
+                                  [cdkDragData]="action"
+                                  [cdkDragStartDelay]="50"
+                                  [cdkDragDisabled]="snapshotMode"
+                                  [action]="action"
+                                  [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                                  [simulation]="resultData.simulation"
+                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
+                      <div *ngIf="settings.detailedSimulatorActions">
+                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div>
+                <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
+                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center" class="actions-row">
+                  <ng-container *ngFor="let action of getQualityActions()">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-action (actionclick)="addAction(action)"
+                                  cdkDrag
+                                  (cdkDragEnded)="tooltipsDisabled = false"
+                                  (cdkDragStarted)="tooltipsDisabled = true"
+                                  [cdkDragData]="action"
+                                  [cdkDragStartDelay]="50"
+                                  [cdkDragDisabled]="snapshotMode"
+                                  [action]="action"
+                                  [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                                  [simulation]="resultData.simulation"
+                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
+                      <div *ngIf="settings.detailedSimulatorActions">
+                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
               </div>
             </div>
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Quality' | translate}}</h4>
-              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
-                <app-action (actionclick)="addAction(action)"
-                            cdkDrag
-                            (cdkDragEnded)="tooltipsDisabled = false"
-                            (cdkDragStarted)="tooltipsDisabled = true"
-                            [cdkDragData]="action"
-                            [cdkDragStartDelay]="50"
-                            [cdkDragDisabled]="snapshotMode"
-                            *ngFor="let action of getQualityActions()"
-                            [action]="action"
-                            [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
+            <div class="category-row">
+              <div>
+                <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
+                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center" class="actions-row">
+                  <ng-container *ngFor="let action of getBuffActions()">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-action (actionclick)="addAction(action)"
+                                  cdkDrag
+                                  (cdkDragEnded)="tooltipsDisabled = false"
+                                  (cdkDragStarted)="tooltipsDisabled = true"
+                                  [cdkDragData]="action"
+                                  [cdkDragStartDelay]="50"
+                                  [cdkDragDisabled]="snapshotMode"
+                                  [action]="action"
+                                  [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                                  [simulation]="resultData.simulation"
+                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
+                      <div *ngIf="settings.detailedSimulatorActions">
+                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="category-row">
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Buff' | translate}}</h4>
-              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
-                <app-action (actionclick)="addAction(action)"
-                            cdkDrag
-                            (cdkDragEnded)="tooltipsDisabled = false"
-                            (cdkDragStarted)="tooltipsDisabled = true"
-                            [cdkDragData]="action"
-                            [cdkDragStartDelay]="50"
-                            [cdkDragDisabled]="snapshotMode"
-                            *ngFor="let action of getBuffActions()"
-                            [action]="action"
-                            [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
-              </div>
-            </div>
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
+              <div>
+                <h4>{{'SIMULATOR.CATEGORY.Repair' | translate}}</h4>
 
-              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
-                <app-action (actionclick)="addAction(action)"
-                            cdkDrag
-                            (cdkDragEnded)="tooltipsDisabled = false"
-                            (cdkDragStarted)="tooltipsDisabled = true"
-                            [cdkDragData]="action"
-                            [cdkDragStartDelay]="50"
-                            [cdkDragDisabled]="snapshotMode"
-                            *ngFor="let action of getRepairActions()"
-                            [action]="action"
-                            [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
+                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center" class="actions-row">
+
+                  <ng-container *ngFor="let action of getRepairActions()">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-action (actionclick)="addAction(action)"
+                                  cdkDrag
+                                  (cdkDragEnded)="tooltipsDisabled = false"
+                                  (cdkDragStarted)="tooltipsDisabled = true"
+                                  [cdkDragData]="action"
+                                  [cdkDragStartDelay]="50"
+                                  [cdkDragDisabled]="snapshotMode"
+                                  [action]="action"
+                                  [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                                  [simulation]="resultData.simulation"
+                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
+                      <div *ngIf="settings.detailedSimulatorActions">
+                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
               </div>
-            </div>
-            <div>
-              <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
-              <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled class="actions-row">
-                <app-action (actionclick)="addAction(action)"
-                            cdkDrag
-                            (cdkDragEnded)="tooltipsDisabled = false"
-                            (cdkDragStarted)="tooltipsDisabled = true"
-                            [cdkDragData]="action"
-                            [cdkDragStartDelay]="50"
-                            [cdkDragDisabled]="snapshotMode"
-                            *ngFor="let action of getOtherActions()"
-                            [action]="action"
-                            [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
-                            [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
-                            [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
-                            [simulation]="resultData.simulation"
-                            [tooltipDisabled]="tooltipsDisabled"></app-action>
+              <div>
+                <h4>{{'SIMULATOR.CATEGORY.Other' | translate}}</h4>
+                <div cdkDropList [cdkDropListConnectedTo]="['action-results']" cdkDropListSortingDisabled fxLayout="row wrap" fxLayoutGap="5px"
+                     fxLayoutAlign="flex-start center" class="actions-row">
+
+                  <ng-container *ngFor="let action of getOtherActions()">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-action (actionclick)="addAction(action)"
+                                  cdkDrag
+                                  (cdkDragEnded)="tooltipsDisabled = false"
+                                  (cdkDragStarted)="tooltipsDisabled = true"
+                                  [cdkDragData]="action"
+                                  [cdkDragStartDelay]="50"
+                                  [cdkDragDisabled]="snapshotMode"
+                                  [action]="action"
+                                  [disabled]="resultData.steps.length > 0 && !action.canBeUsed(resultData.simulation, true) || snapshotMode"
+                                  [notEnoughCp]="action.getBaseCPCost(resultData.simulation) > resultData.simulation.availableCP"
+                                  [safe]="!safeMode$.value || action.getSuccessRate(resultData.simulation) >= 100"
+                                  [simulation]="resultData.simulation"
+                                  [tooltipDisabled]="tooltipsDisabled"></app-action>
+                      <div *ngIf="settings.detailedSimulatorActions">
+                        <div class="action-name">{{action.getId(resultData.simulation.crafterStats.jobId) | actionName | i18n}}</div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </div>
               </div>
             </div>
           </div>

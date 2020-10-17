@@ -76,6 +76,14 @@ export class SettingsService {
     this.setSetting('simulation:configuration:expanded', expanded.toString());
   }
 
+  public get detailedSimulatorActions(): boolean {
+    return this.getSetting('simulation:actions:detailed', 'false') === 'true';
+  }
+
+  public set detailedSimulatorActions(detailed: boolean) {
+    this.setSetting('simulation:actions:detailed', detailed.toString());
+  }
+
   public get timeFormat(): '24H' | '12H' {
     return this.getSetting('time-format', '24H') as '24H' | '12H';
   }
