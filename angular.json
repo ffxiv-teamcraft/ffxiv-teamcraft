@@ -91,12 +91,14 @@
             },
             "electron": {
               "optimization": true,
-              "outputHashing": "none",
+              "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": true,
+              "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
+              "buildOptimizer": true,
               "baseHref": "",
               "fileReplacements": [
                 {
