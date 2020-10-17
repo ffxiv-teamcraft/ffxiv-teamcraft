@@ -913,6 +913,8 @@
     "Could_not_find_minstats": "Impossible de trouver les statistiques minimales pour cette rotation",
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
     "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
