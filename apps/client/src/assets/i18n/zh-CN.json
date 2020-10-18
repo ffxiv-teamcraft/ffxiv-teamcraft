@@ -430,6 +430,8 @@
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",

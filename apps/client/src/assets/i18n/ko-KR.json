@@ -430,6 +430,8 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
