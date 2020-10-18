@@ -107,7 +107,6 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
             storedNode.gig = spearFishingSpot.gig;
             storedNode.zoneid = spearFishingSpot.zoneId;
             storedNode.mapid = spearFishingSpot.mapId;
-            delete storedNode.coords;
             if (spearFishingSpot.spawn !== undefined) {
               storedNode.time = [spearFishingSpot.spawn];
               storedNode.uptime = spearFishingSpot.duration;
