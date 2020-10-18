@@ -1671,7 +1671,8 @@
     "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
     "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données",
     "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur",
-    "Quick_search": "Appuyez sur Ctrl + Maj + F pour ouvrir une fenêtre de recherche depuis n'importe où dans l'outil"
+    "Quick_search": "Appuyez sur Ctrl + Maj + F pour ouvrir une fenêtre de recherche depuis n'importe où dans l'outil",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",

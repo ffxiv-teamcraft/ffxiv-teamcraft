@@ -1671,7 +1671,8 @@
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。",
     "Start_desktop_before_game": "记得在启动游戏前启动 TeamCraft，以确保数据准确性",
     "Middle_click_share_button": "在桌面应用中，可以使用鼠标中键点击顶栏的分享按钮，在浏览器中打开当前页面",
-    "Quick_search": "在 TeamCraft 的任何界面中按下 Ctrl + Shift + F 可以打开搜索框"
+    "Quick_search": "在 TeamCraft 的任何界面中按下 Ctrl + Shift + F 可以打开搜索框",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "配方检索器",
