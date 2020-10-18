@@ -22,7 +22,9 @@
         <i nz-icon nzType="redo"></i>
       </button>
       <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
-              [nzTooltipTitle]="'SIMULATOR.Reset' | translate" nz-button nz-popconfirm nz-tooltip
+              [nzTooltipTitle]="'SIMULATOR.Reset' | translate"
+              [nzPopconfirmTitle]="'Confirm' | translate"
+              nz-button nz-popconfirm nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="reload"></i>
