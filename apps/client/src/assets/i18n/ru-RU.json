@@ -913,6 +913,8 @@
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",

@@ -913,6 +913,8 @@
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "Remove_final_appraisal": "Remover el beneficio de Final Appraisal",
     "Total_macro_duration": "Duración total de la macro: {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
