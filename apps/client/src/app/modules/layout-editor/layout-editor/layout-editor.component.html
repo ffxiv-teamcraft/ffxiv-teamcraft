@@ -35,7 +35,7 @@
   <nz-alert *ngIf="layout.default" [nzMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Default_readonly_message' | translate"
             class="default-warning" nzShowIcon nzType="info"></nz-alert>
   <div fxLayout="column" fxLayoutGap="10px">
-    <nz-input-group nzPrefixIcon="anticon anticon-edit">
+    <nz-input-group nzPrefixIcon="edit">
       <input [(ngModel)]="layout.name" (ngModelChange)="dirty = true" [disabled]="layout.default"
              nz-input type="text">
     </nz-input-group>
