@@ -1671,7 +1671,8 @@
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
     "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
-    "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다"
+    "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
