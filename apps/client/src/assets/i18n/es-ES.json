@@ -1671,7 +1671,8 @@
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
     "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
     "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador",
-    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta"
+    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
