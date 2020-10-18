@@ -12,7 +12,6 @@ import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { SettingsService } from '../../../modules/settings/settings.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 
 @Component({
@@ -130,8 +129,7 @@ export class InventoryComponent {
   constructor(private inventoryService: InventoryFacade, private universalis: UniversalisService,
               private authFacade: AuthFacade, private message: NzMessageService,
               private translate: TranslateService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, private lazyData: LazyDataService,
-              private settings: SettingsService) {
+              private i18n: I18nToolsService, private lazyData: LazyDataService) {
   }
 
   public getExpansions() {
@@ -183,6 +181,27 @@ export class InventoryComponent {
     ).subscribe(inventory => {
       this.inventoryService.updateInventory(inventory, true);
     });
+  }
+
+  public getInventoryJson(display: InventoryDisplay[]): string {
+    return JSON.stringify([].concat.apply([], display.map(i => i.items)));
+  }
+
+  public getInventoryCsv(display: InventoryDisplay[]): string {
+    const json = [].concat.apply([], display.map(i => i.items));
+
+    // Source: https://stackoverflow.com/a/31536517/4102561
+    const fields = Object.keys(json[0]);
+    const replacer = (key, value) => {
+      return value === null ? '' : value;
+    };
+    const csv = json.map((row) => {
+      return fields.map((fieldName) => {
+        return JSON.stringify(row[fieldName], replacer);
+      }).join(',');
+    });
+    csv.unshift(fields.join(','));
+    return csv.join('\r\n');
   }
 
   public deleteInventories(): void {
