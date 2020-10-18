@@ -1671,7 +1671,8 @@
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
     "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
     "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",

@@ -150,7 +150,8 @@ export class AppComponent implements OnInit {
         'Desktop_app_overlay',
         'Start_desktop_before_game',
         'Middle_click_share_button',
-        'Quick_search'
+        'Quick_search',
+        'Open_in_desktop_shortcut'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
@@ -179,26 +180,14 @@ export class AppComponent implements OnInit {
               private craftingReplayFacade: CraftingReplayFacade) {
 
 
-    fromEvent(document, 'keypress').pipe(
-      filter((event: KeyboardEvent) => {
-        return event.ctrlKey && event.shiftKey && event.keyCode === 6;
-      })
-    ).subscribe(() => {
-      this.quickSearch.openQuickSearch();
-    });
-
-    fromEvent(document, 'keypress').pipe(
-      filter((event: KeyboardEvent) => {
-        return event.ctrlKey && event.shiftKey && event.keyCode === 1;
-      })
-    ).subscribe(() => {
-      this.router.navigateByUrl('/admin/users');
+    fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
+      this.handleKeypressShortcuts(event);
     });
 
     // Scuff Zoom Handling
-    document.addEventListener("keydown", event => {
+    document.addEventListener('keydown', event => {
       if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
-        return this.ipc.send('zoom-in', event)
+        return this.ipc.send('zoom-in', event);
       }
     });
 
@@ -471,6 +460,22 @@ export class AppComponent implements OnInit {
     }
 
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
+  }
+
+  private handleKeypressShortcuts(event: KeyboardEvent): void {
+    if (event.ctrlKey && event.shiftKey && event.key === 'F') {
+      this.quickSearch.openQuickSearch();
+    } else if (event.ctrlKey && event.shiftKey && event.key === 'A') {
+      this.router.navigateByUrl('/admin/users');
+    } else if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+      event.preventDefault();
+      event.stopPropagation();
+      if (this.platformService.isDesktop()) {
+        this.openLink();
+      } else {
+        this.openInApp();
+      }
+    }
   }
 
   enablePacketCapture(): void {
