@@ -13,7 +13,7 @@ export class SettingsService {
   public regionChange$ = new Subject<{ previous: Region, next: Region }>();
   public region$: Observable<Region>;
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
-  public settingsChange$ = new Subject<void>();
+  public settingsChange$ = new Subject<string>();
   private cache: { [id: string]: string };
 
   constructor(@Optional() private ipc: IpcService) {
@@ -178,6 +178,14 @@ export class SettingsService {
 
   public set defaultPermissionLevel(level: number) {
     this.setSetting('default-permission-level', level.toString());
+  }
+
+  public get maximumVendorPrice(): number {
+    return +this.getSetting('maximum-vendor-price', '0');
+  }
+
+  public set maximumVendorPrice(price: number) {
+    this.setSetting('maximum-vendor-price', price.toString());
   }
 
   public get pageViews(): number {
@@ -619,7 +627,7 @@ export class SettingsService {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
     this.ipc.send('apply-settings', { ...this.cache });
-    this.settingsChange$.next();
+    this.settingsChange$.next(name);
   }
 
 }

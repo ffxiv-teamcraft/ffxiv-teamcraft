@@ -5,6 +5,8 @@ import { CraftedBy } from '../../modules/list/model/crafted-by';
 import { List } from '../../modules/list/model/list';
 import { beastTribeNpcs } from '../data/sources/beast-tribe-npcs';
 import { DataType } from '../../modules/list/data/data-type';
+import { SettingsService } from '../../modules/settings/settings.service';
+import { Vendor } from '../../modules/list/model/vendor';
 
 export class LayoutRowFilter {
 
@@ -18,8 +20,12 @@ export class LayoutRowFilter {
 
   static IS_TRADE = new LayoutRowFilter(row => LayoutRowFilter.getData(row, DataType.TRADE_SOURCES).length > 0, 'IS_TRADE');
 
-  static CAN_BE_BOUGHT = new LayoutRowFilter(row => {
-    return LayoutRowFilter.getData(row, DataType.VENDORS).length > 0;
+  static CAN_BE_BOUGHT = new LayoutRowFilter((row, _, settings) => {
+    let vendors = LayoutRowFilter.getData<Vendor[]>(row, DataType.VENDORS);
+    if (settings.maximumVendorPrice > 0) {
+      vendors = vendors.filter(vendor => vendor.price <= settings.maximumVendorPrice);
+    }
+    return vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
   static IS_ONLY_FROM_VENDOR = new LayoutRowFilter(row => {
@@ -289,13 +295,13 @@ export class LayoutRowFilter {
     return baseFilter;
   }
 
-  private static getData(row: ListRow, type: DataType, isObject = false): any {
-    return getItemSource(row, type, isObject);
+  private static getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
+    return getItemSource<T>(row, type, isObject);
   }
 
   public static not(baseFilter: LayoutRowFilter): LayoutRowFilter {
-    return new LayoutRowFilter((row: ListRow, list: List) => {
-      return !baseFilter._filter(row, list);
+    return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
+      return !baseFilter._filter(row, list, settings);
     }, `!${baseFilter.name}`);
   }
 
@@ -326,8 +332,8 @@ export class LayoutRowFilter {
    */
   public and(pipedFilter: LayoutRowFilter, buildNewName = true): LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:and:${pipedFilter.name}` : pipedFilter.name;
-    return new LayoutRowFilter((row: ListRow, list: List) => {
-      return this._filter(row, list) && pipedFilter._filter(row, list);
+    return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
+      return this._filter(row, list, settings) && pipedFilter._filter(row, list, settings);
     }, newName);
   }
 
@@ -339,8 +345,8 @@ export class LayoutRowFilter {
    */
   public or(pipedFilter: LayoutRowFilter, buildNewName = true): LayoutRowFilter {
     const newName = buildNewName ? `${this.name}:or:${pipedFilter.name}` : pipedFilter.name;
-    return new LayoutRowFilter((row: ListRow, list: List) => {
-      return this._filter(row, list) || pipedFilter._filter(row, list);
+    return new LayoutRowFilter((row: ListRow, list: List, settings: SettingsService) => {
+      return this._filter(row, list, settings) || pipedFilter._filter(row, list, settings);
     }, newName);
   }
 
@@ -349,12 +355,13 @@ export class LayoutRowFilter {
    * Filters a list with the filter
    * @param rows
    * @param list
+   * @param settings
    * @returns {accepted: ListRow[]; rejected: ListRow[]} A set of data with rejected and accepted rows.
    */
-  filter(rows: ListRow[], list: List): FilterResult {
+  filter(rows: ListRow[], list: List, settings: SettingsService): FilterResult {
     const result = { accepted: [], rejected: [] };
     for (const row of rows) {
-      if (this._filter(row, list)) {
+      if (this._filter(row, list, settings)) {
         result.accepted.push(row);
       } else {
         result.rejected.push(row);

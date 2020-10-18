@@ -9,7 +9,7 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { map, shareReplay, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
@@ -20,6 +20,7 @@ import { LayoutRow } from '../layout-row';
 import { LayoutRowOrder } from '../layout-row-order.enum';
 import { LayoutRowFilter } from '../layout-row-filter';
 import { DataType } from '../../../modules/list/data/data-type';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Injectable()
 export class LayoutsFacade {
@@ -46,11 +47,16 @@ export class LayoutsFacade {
     );
 
   constructor(private store: Store<{ layouts: LayoutsState }>, private layoutOrder: LayoutOrderService, private layoutService: LayoutService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private settings: SettingsService) {
   }
 
   public getDisplay(list: List, adaptativeFilter: boolean, overrideHideCompleted = false): Observable<ListDisplay> {
-    return combineLatest([this.selectedLayout$, this.authFacade.user$])
+    const settingsChange$ = this.settings.settingsChange$.pipe(
+      filter(name => name === 'maximum-vendor-price'),
+      debounceTime(2000),
+      startWith('')
+    );
+    return combineLatest([this.selectedLayout$, this.authFacade.user$, settingsChange$])
       .pipe(
         withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
         map(([[layout, user], characterEntry]) => {
@@ -83,7 +89,7 @@ export class LayoutsFacade {
                 return a.index - b.index;
               })
               .map((row: LayoutRow) => {
-                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags, list);
+                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags, list, this.settings);
                 unfilteredRows = result.rejected;
                 // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
                 let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);

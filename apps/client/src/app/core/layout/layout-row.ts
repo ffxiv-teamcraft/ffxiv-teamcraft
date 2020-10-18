@@ -3,6 +3,7 @@ import { LayoutRowFilter } from './layout-row-filter';
 import { FilterResult } from './filter-result';
 import { ListRow } from '../../modules/list/model/list-row';
 import { List } from '../../modules/list/model/list';
+import { SettingsService } from '../../modules/settings/settings.service';
 
 export class LayoutRow {
 
@@ -64,8 +65,8 @@ export class LayoutRow {
     this._order = newOrder;
   }
 
-  public doFilter(rows: ListRow[], userTags: { id: number, tag: string }[], list: List): FilterResult {
-    const filterResult = this.filter.filter(rows, list);
+  public doFilter(rows: ListRow[], userTags: { id: number, tag: string }[], list: List, settings: SettingsService): FilterResult {
+    const filterResult = this.filter.filter(rows, list, settings);
     if (this.hasTag !== null) {
       const rejected: ListRow[] = [];
       filterResult.accepted.forEach(row => {
