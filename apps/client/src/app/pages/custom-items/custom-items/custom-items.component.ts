@@ -656,14 +656,13 @@ export class CustomItemsComponent {
       )
       .subscribe((res: SearchResult) => {
         const reducedFrom = getItemSource(item, DataType.REDUCED_FROM);
-        const data = res.itemId;
         if (reducedFrom.length === 0) {
           item.sources.push({
             type: DataType.REDUCED_FROM,
-            data: data
+            data: [+res.itemId]
           });
         } else {
-          reducedFrom.data.push(data);
+          reducedFrom.push(+res.itemId);
         }
         item.dirty = true;
       });

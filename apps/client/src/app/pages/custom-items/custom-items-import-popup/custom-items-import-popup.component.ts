@@ -216,13 +216,12 @@ export class CustomItemsImportPopupComponent {
           data: [{
             recipeId: row[1],
             jobId: +this.craftTypes.indexOf(row[2]) + 8,
-            icon: '',
+            icon: `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === getItemSource(item, DataType.CRAFTED_BY)[0].job).abbreviation}.png`,
             itemId: +row[45],
             level: 80,
             stars_tooltip: ''
           }]
         });
-        getItemSource(item, DataType.CRAFTED_BY).icon = `https://garlandtools.org/db/images/${this.availableCraftJobs.find(j => j.id === getItemSource(item, DataType.CRAFTED_BY)[0].jobId).abbreviation}.png`;
         return { item: item, meta: row };
       });
     // Then, for each parsed row, let's populate an ingredient array, for the same purpose (will contain only the ones that aren't listed as recipe already)

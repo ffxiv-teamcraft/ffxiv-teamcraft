@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **db:** support for 5.35 update.`;
+* **db:** support for 5.35 update.`;

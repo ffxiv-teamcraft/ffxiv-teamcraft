@@ -87,13 +87,13 @@ export class LayoutOrderService {
       return -1;
     }
     const craft = craftedBy[0];
-    const logEntry = this.lazyData.data.craftingLog[craft.jobId - 8];
+    const logEntry = this.lazyData.data.craftingLog[craft.job - 8];
     // Log entry is undefined if it's an airship
     if (logEntry === undefined) {
       return -1;
     }
     // We multiply index by craft.jobId because we want it to keep the job order too
-    return logEntry.indexOf(+row.recipeId) * craft.jobId;
+    return logEntry.indexOf(+row.recipeId) * craft.job;
   }
 
   private getJobId(row: ListRow): number {
