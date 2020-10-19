@@ -674,7 +674,13 @@ export class SearchComponent implements OnInit {
 
   public createQuickList(item: SearchResult): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)
+    const operation$ = this.listManager.addToList({
+      itemId: +item.itemId,
+      list: list,
+      recipeId: item.recipe ? item.recipe.recipeId : '',
+      amount: item.amount,
+      collectible: item.addCrafts
+    })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {
@@ -696,8 +702,13 @@ export class SearchComponent implements OnInit {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
-          return this.listManager.addToList(+item.itemId, list,
-            item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+          return this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: item.recipe ? item.recipe.recipeId : '',
+            amount: item.amount,
+            collectible: item.addCrafts
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
@@ -735,7 +746,7 @@ export class SearchComponent implements OnInit {
       return 'https://ffxivteamcraft.com/search';
     }
     return `https://ffxivteamcraft.com/${(location.pathname + location.search).substr(1)}`;
-  }
+  };
 
   public addSelectedItemsToList(items: SearchResult[]): void {
     this.addItemsToList(items.filter(item => item.selected));

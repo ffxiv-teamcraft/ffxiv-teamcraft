@@ -1,10 +1,10 @@
-import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { Character } from '@xivapi/angular-client';
+import { TeamcraftGearsetStats } from './teamcraft-gearset-stats';
 
 export interface LodestoneIdEntry {
   id: number;
   verified: boolean;
-  stats?: GearSet[];
+  stats?: TeamcraftGearsetStats[];
   masterbooks?: number[];
   character?: Character;
 }

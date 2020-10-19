@@ -1,11 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { List } from './model/list';
 import { concat, Observable, of } from 'rxjs';
-import { getItemSource, isListRow, ListRow } from './model/list-row';
+import { getCraftByPriority, getItemSource, isListRow, ListRow } from './model/list-row';
 import { DataService } from '../../core/api/data.service';
 import { I18nToolsService } from '../../core/tools/i18n-tools.service';
 import { DataExtractorService } from './data/data-extractor.service';
-import { catchError, filter, first, map, mapTo, skip, switchMap, tap } from 'rxjs/operators';
+import { catchError, filter, first, map, mapTo, skip, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { DiscordWebhookService } from '../../core/discord/discord-webhook.service';
 import { TeamsFacade } from '../teams/+state/teams.facade';
@@ -15,6 +15,18 @@ import { CustomItem } from '../custom-items/model/custom-item';
 import { DataType } from './data/data-type';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { CraftedBy } from './model/crafted-by';
+import { AuthFacade } from '../../+state/auth.facade';
+import { TeamcraftGearsetStats } from '../../model/user/teamcraft-gearset-stats';
+
+interface ListAdditionParams {
+  itemId: number | string;
+  list: List;
+  recipeId: string | number;
+  amount?: number;
+  collectible?: boolean;
+  ignoreHooks?: boolean;
+  upgradeCustom?: boolean;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -31,14 +43,15 @@ export class ListManagerService {
               private discordWebhookService: DiscordWebhookService,
               private teamsFacade: TeamsFacade,
               private customItemsFacade: CustomItemsFacade,
-              private lazyDataService: LazyDataService) {
+              private lazyDataService: LazyDataService,
+              private authFacade: AuthFacade) {
 
     this.customItemsFacade.loadAll();
     this.customItemsFacade.allCustomItems$.subscribe(items => this.customItemsSync = items);
 
   }
 
-  public addToList(itemId: number | string, list: List, recipeId: string | number, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false): Observable<List> {
+  public addToList({ itemId, list, recipeId, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false }: ListAdditionParams): Observable<List> {
     let team$ = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
@@ -69,17 +82,18 @@ export class ListManagerService {
         }
       }),
       mapTo(itemSource),
-      switchMap((data) => {
+      withLatestFrom(this.authFacade.gearSets$),
+      switchMap(([data, gearsets]) => {
         if (data === undefined) {
           return of(new List());
         }
         // If it's a standard item, add it with the classic implementation.
         if (isListRow(data)) {
-          return this.processItemAddition(data, amount, collectible, recipeId);
+          return this.processItemAddition(data, amount, collectible, recipeId, gearsets);
         } else {
           if ((data as CustomItem).realItemId !== undefined && upgradeCustom) {
             const itemData = this.lazyDataService.getExtract((data as CustomItem).realItemId);
-            return this.processItemAddition(itemData, amount, collectible, recipeId).pipe(
+            return this.processItemAddition(itemData, amount, collectible, recipeId, gearsets).pipe(
               catchError(() => {
                 return this.processCustomItemAddition(data as CustomItem, amount);
               })
@@ -105,25 +119,31 @@ export class ListManagerService {
     itemClone.id = itemClone.$key;
     const added = addition.addToFinalItems(itemClone, this.lazyDataService.data);
     if (itemClone.requires.length > 0) {
-      return addition.addCraft([
-        {
-          amount: added,
-          data: itemClone,
-          item: null
-        }
-      ], this.gt, this.customItemsSync, this.db, this, this.lazyDataService);
+      return addition.addCraft({
+        _additions: [
+          {
+            amount: added,
+            data: itemClone,
+            item: null
+          }
+        ],
+        customItems: this.customItemsSync,
+        dataService: this.db,
+        listManager: this,
+        lazyDataService: this.lazyDataService
+      });
     }
     return of(addition);
   }
 
-  private processItemAddition(data: ListRow, amount: number, collectible: boolean, recipeId: string | number): Observable<List> {
+  private processItemAddition(data: ListRow, amount: number, collectible: boolean, recipeId: string | number, gearsets: TeamcraftGearsetStats[]): Observable<List> {
     const crafted = getItemSource<CraftedBy[]>(data, DataType.CRAFTED_BY);
     const addition = new List();
     const toAdd: ListRow = new ListRow();
     // If this is a craft
     if (crafted.length > 0) {
       if (!recipeId) {
-        const firstCraft = crafted[0];
+        const firstCraft = getCraftByPriority(crafted, gearsets);
         if (firstCraft.id !== undefined) {
           recipeId = firstCraft.id.toString();
         }
@@ -180,10 +200,18 @@ export class ListManagerService {
     let addition$: Observable<List>;
     if (crafted.length > 0) {
       // Then we add the craft to the addition list.
-      addition$ = addition.addCraft([{
-        item: toAdd,
-        amount: added
-      }], this.gt, this.customItemsSync, this.db, this, this.lazyDataService, recipeId.toString());
+      addition$ = addition.addCraft({
+        _additions: [{
+          item: toAdd,
+          amount: added
+        }],
+        customItems: this.customItemsSync,
+        dataService: this.db,
+        listManager: this,
+        lazyDataService: this.lazyDataService,
+        recipeId: recipeId.toString(),
+        gearsets: gearsets
+      });
     } else {
       addition$ = of(addition);
     }
@@ -223,7 +251,15 @@ export class ListManagerService {
     });
     const add: Observable<List>[] = [];
     list.finalItems.forEach((recipe) => {
-      add.push(this.addToList(recipe.id, list, recipe.recipeId, recipe.amount, false, true, true));
+      add.push(this.addToList({
+        itemId: recipe.id,
+        list: list,
+        recipeId: recipe.recipeId,
+        amount: recipe.amount,
+        collectible: false,
+        ignoreHooks: true,
+        upgradeCustom: true
+      }));
     });
     list.items = [];
     list.finalItems = [];

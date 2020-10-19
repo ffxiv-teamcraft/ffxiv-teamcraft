@@ -219,7 +219,12 @@ export class ListPanelComponent extends TeamcraftComponent {
             map(details => details.find(l => l.$key === this._list.$key)),
             filter(l => l !== undefined),
             first(),
-            switchMap(listDetails => this.listManager.addToList(item.id, listDetails, item.recipeId, newAmount - item.amount))
+            switchMap(listDetails => this.listManager.addToList({
+              itemId: item.id,
+              list: listDetails,
+              recipeId: item.recipeId,
+              amount: newAmount - item.amount
+            }))
           );
         }))
         .subscribe(list => {

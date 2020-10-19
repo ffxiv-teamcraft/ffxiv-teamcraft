@@ -273,7 +273,7 @@ export class CustomItemsComponent {
   public addToList(item: CustomItem, amount: string): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        return this.progressService.showProgress(this.listManager.addToList(item.$key, list, '', +amount),
+        return this.progressService.showProgress(this.listManager.addToList({ itemId: item.$key, list: list, recipeId: '', amount: +amount }),
           1,
           'Adding_recipes',
           { amount: 1, listname: list.name });

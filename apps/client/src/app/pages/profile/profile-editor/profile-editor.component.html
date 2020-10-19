@@ -69,13 +69,19 @@
               <nz-list-item [nzActions]="[masterbooks, stats]"
                             [nzContent]="set.jobId <= 15 ? content : null | ifMobile: null">
                 <ng-template #content>
-                  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                    <i *ngIf="set.specialist" [nzTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate" nz-icon nz-tooltip
-                       nzType="star"></i>
-                    <div>
-                      {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
-                      {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}} -
-                      {{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}: {{set.control}}
+                  <div fxLayout="column" fxLayoutGap="5px">
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <i *ngIf="set.specialist" [nzTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate" nz-icon nz-tooltip
+                         nzType="star"></i>
+                      <div>
+                        {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
+                        {{'SIMULATOR.CONFIGURATION.STATS.Craftsmanship' | translate}}: {{set.craftsmanship}} -
+                        {{'SIMULATOR.CONFIGURATION.STATS.Control' | translate}}: {{set.control}}
+                      </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+                      <div nz-tooltip [nzTooltipTitle]="'PROFILE.Gearset_priority_explain' | translate">{{'PROFILE.Gearset_priority' | translate}}: </div>
+                      <nz-slider [(ngModel)]="set.priority" (ngModelChange)="saveSet(set)" nzMin="0" nzMax="8" class="priority-slider"></nz-slider>
                     </div>
                   </div>
                 </ng-template>

@@ -13,6 +13,7 @@ import { I18nName } from '../../../model/common/i18n-name';
 import { Drop } from './drop';
 import { Treasure } from './treasure';
 import { FateData } from './fate-data';
+import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 
 export function isListRow(obj: any): obj is ListRow {
   return typeof obj === 'object'
@@ -106,4 +107,13 @@ export function getItemSource<T = any>(item: ListRow, type: DataType, isObject =
     }
   }
   return cache[key];
+}
+
+export function getCraftByPriority(crafts: CraftedBy[], sets: TeamcraftGearsetStats[]): CraftedBy {
+  if (crafts.length === 1) {
+    return crafts[0];
+  }
+  return crafts.sort((a, b) => {
+    return sets.findIndex(s => s.jobId === b.job) - sets.findIndex(s => s.jobId === a.job);
+  })[0];
 }
