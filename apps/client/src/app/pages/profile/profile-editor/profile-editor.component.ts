@@ -11,6 +11,7 @@ import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { VerificationPopupComponent } from './verification-popup/verification-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { AutofillStatsPopupComponent } from './autofill-stats-popup/autofill-stats-popup.component';
+import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 
 @Component({
   selector: 'app-profile-editor',
@@ -47,6 +48,10 @@ export class ProfileEditorComponent {
 
   constructor(private authFacade: AuthFacade, private dialog: NzModalService, private translate: TranslateService,
               private userPicker: UserPickerService, public ipc: IpcService) {
+  }
+
+  saveSet(set: TeamcraftGearsetStats): void {
+    this.authFacade.saveSet(set);
   }
 
   addCharacter(): void {

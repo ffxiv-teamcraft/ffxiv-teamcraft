@@ -127,7 +127,7 @@ export class GcSupplyComponent {
   public generateList(): void {
     const quickList = this.listsFacade.newEphemeralList(`GC Supply ${new Date().toLocaleDateString()}`);
     const operations = this.selection.map(row => {
-      return this.listManager.addToList(row.itemId, quickList, '', row.count);
+      return this.listManager.addToList({ itemId: row.itemId, list: quickList, recipeId: '', amount: row.count });
     });
     let operation$: Observable<any>;
     if (operations.length > 0) {

@@ -7,7 +7,8 @@ import { authQuery } from './auth.selectors';
 import {
   GetUser,
   LinkingCharacter,
-  Logout, MarkAsDoneInLog,
+  Logout,
+  MarkAsDoneInLog,
   RegisterUser,
   RemoveCharacter,
   SaveDefaultConsumables,
@@ -31,7 +32,6 @@ import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/c
 import { NzModalService } from 'ng-zorro-antd';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, from, Observable, of } from 'rxjs';
-import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
@@ -42,6 +42,8 @@ import { Character } from '@xivapi/angular-client';
 import { UserService } from '../core/database/user.service';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { LogTracking } from '../model/user/log-tracking';
+import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
+import { GearSet } from '@ffxiv-teamcraft/simulator';
 
 @Injectable({
   providedIn: 'root'
@@ -86,7 +88,7 @@ export class AuthFacade {
         if (entry.id > 0) {
           return this.userService.getCharacter(entry.id)
             .pipe(
-              catchError(err => of(null))
+              catchError(() => of(null))
             );
         }
         return of({
@@ -178,7 +180,8 @@ export class AuthFacade {
               craftsmanship: 0,
               cp: 180,
               level: 0,
-              specialist: false
+              specialist: false,
+              priority: jobId - 7
             });
           } else {
             sets.push({
@@ -187,7 +190,8 @@ export class AuthFacade {
               craftsmanship: 0,
               cp: 180,
               level: classJob.Level,
-              specialist: false
+              specialist: false,
+              priority: jobId - 7
             });
           }
         });
@@ -250,8 +254,8 @@ export class AuthFacade {
     this.store.dispatch(new ToggleMasterbooks(books));
   }
 
-  public saveSet(set: GearSet, ignoreSpecialist = false): void {
-    this.store.dispatch(new SaveSet(set, ignoreSpecialist));
+  public saveSet(set: TeamcraftGearsetStats | GearSet, ignoreSpecialist = false): void {
+    this.store.dispatch(new SaveSet(set as TeamcraftGearsetStats, ignoreSpecialist));
   }
 
   public saveDefaultConsumables(consumables: DefaultConsumables): void {

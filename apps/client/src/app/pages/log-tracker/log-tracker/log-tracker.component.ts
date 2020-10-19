@@ -109,7 +109,7 @@ export class LogTrackerComponent extends TrackerComponent {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = recipesToAdd.map(recipe => {
-          return this.listManager.addToList(recipe.itemId, list, recipe.recipeId, 1);
+          return this.listManager.addToList({ itemId: recipe.itemId, list: list, recipeId: recipe.recipeId, amount: 1 });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {

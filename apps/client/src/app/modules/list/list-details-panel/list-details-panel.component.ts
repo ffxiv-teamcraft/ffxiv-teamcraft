@@ -111,8 +111,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           filter(items => items.length > 0),
           switchMap((items) => {
             const operations = items.map(item => {
-              return this.listManager.addToList(+item.itemId, list,
-                item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+              return this.listManager.addToList({
+                itemId: +item.itemId,
+                list: list,
+                recipeId: item.recipe ? item.recipe.recipeId : '',
+                amount: item.amount,
+                collectible: item.addCrafts
+              });
             });
             let operation$: Observable<any>;
             if (operations.length > 0) {

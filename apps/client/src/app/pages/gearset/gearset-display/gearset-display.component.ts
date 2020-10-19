@@ -163,7 +163,12 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       mergeMap(list => {
         const operations = items.map(item => {
           const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
-          return this.listManager.addToList(+item.id, list, recipe ? recipe.id : '', item.amount);
+          return this.listManager.addToList({
+            itemId: +item.id,
+            list: list,
+            recipeId: recipe ? recipe.id : '',
+            amount: item.amount
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {

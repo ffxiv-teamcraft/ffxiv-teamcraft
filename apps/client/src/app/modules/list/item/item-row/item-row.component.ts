@@ -271,7 +271,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       switchMapTo(combineLatest([this.authFacade.mainCharacterEntry$, this.item$])),
       map(([entry, item]) => {
         return getItemSource(item, DataType.MASTERBOOKS)
-        // Ignore string ids, as they are draft ids
+          // Ignore string ids, as they are draft ids
           .filter(book => Number.isInteger(book.id))
           .filter(book => (entry.masterbooks || []).indexOf(book.id) === -1)
           .map(book => book.id);
@@ -436,7 +436,13 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
           return this.listsFacade.selectedList$.pipe(
             first(),
             switchMap(list => {
-              return this.listManager.addToList(item.id, list, item.recipeId, amount - item.amount);
+              return this.listManager.addToList({
+                itemId: item.id,
+                list: list,
+                recipeId: item.recipeId,
+                amount: amount - item.amount
+
+              });
             })
           );
         })
@@ -450,7 +456,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.listManager.addToList(item.id, list, item.recipeId, -item.amount);
+        return this.listManager.addToList({ itemId: item.id, list: list, recipeId: item.recipeId, amount: -item.amount });
       })
     ).subscribe((list) => {
       this.listsFacade.updateList(list, true);
@@ -551,8 +557,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   addToList(item: ListRow): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        const operation = this.listManager.addToList(item.id, list,
-          item.recipeId ? item.recipeId : '', item.amount);
+        const operation = this.listManager.addToList({
+          itemId: item.id,
+          list: list,
+          recipeId: item.recipeId ? item.recipeId : '',
+          amount: item.amount
+        });
         return this.progressService.showProgress(operation,
           1,
           'Adding_recipes',

@@ -222,11 +222,19 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
               switchMap(itemData => {
                 if (itemData.isCraft()) {
                   const craft = itemData.item.craft.find(c => c.job === leve.jobId);
-                  return this.listManager.addToList(leve.itemId, list, craft.id,
-                    leve.itemQuantity * this.craftAmount(leve));
+                  return this.listManager.addToList({
+                    itemId: leve.itemId,
+                    list: list,
+                    recipeId: craft.id,
+                    amount: leve.itemQuantity * this.craftAmount(leve)
+                  });
                 } else {
-                  return this.listManager.addToList(leve.itemId, list, null,
-                    leve.itemQuantity * this.craftAmount(leve));
+                  return this.listManager.addToList({
+                    itemId: leve.itemId,
+                    list: list,
+                    recipeId: null,
+                    amount: leve.itemQuantity * this.craftAmount(leve)
+                  });
                 }
               })
             );
@@ -258,7 +266,12 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
       switchMap(itemData => {
         const craft = itemData.item.craft.find(c => c.job === leve.jobId);
         return this.listManager
-          .addToList(leve.itemId, list, craft.id, leve.itemQuantity * this.craftAmount(leve))
+          .addToList({
+            itemId: leve.itemId,
+            list: list,
+            recipeId: craft.id,
+            amount: leve.itemQuantity * this.craftAmount(leve)
+          })
           .pipe(
             tap(resultList => this.listsFacade.addList(resultList)),
             mergeMap(resultList => {
