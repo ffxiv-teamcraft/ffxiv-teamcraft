@@ -58,8 +58,8 @@ export class LayoutsFacade {
     );
     return combineLatest([this.selectedLayout$, this.authFacade.user$, settingsChange$])
       .pipe(
-        withLatestFrom(adaptativeFilter ? this.authFacade.mainCharacterEntry$ : of(null)),
-        map(([[layout, user], characterEntry]) => {
+        withLatestFrom(this.authFacade.gearSets$),
+        map(([[layout, user], gearsets]) => {
           let unfilteredRows: ListRow[];
           if (!layout.considerCrystalsAsItems) {
             unfilteredRows = (list.items || []).filter(row => row.hidden !== true && (row.id < 1 || row.id > 20) || row.id === row.$key);
@@ -99,24 +99,35 @@ export class LayoutsFacade {
                 if (row.hideUsedRows) {
                   orderedAccepted = orderedAccepted.filter(item => item.used < item.amount);
                 }
-                if (adaptativeFilter) {
-                  orderedAccepted = orderedAccepted.filter(item => {
-                    const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
-                    const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
-                    if (gatheredBy.type !== undefined) {
-                      const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
-                      const set = (characterEntry.stats || []).find(stat => stat.jobId === gatherJob);
-                      return set && set.level >= gatheredBy.level;
+                const resultWithLevel: FilterResult = orderedAccepted.reduce((acc, item) => {
+                  const gatheredBy = getItemSource(item, DataType.GATHERED_BY);
+                  const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
+                  if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
+                    const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
+                    const set = gearsets.find(stat => stat.jobId === gatherJob);
+                    if (set && (set.level === 0 || set.level >= gatheredBy.level)) {
+                      acc.accepted.push(item);
+                    } else {
+                      acc.rejected.push(item);
                     }
-                    if (craftedBy.length > 0) {
-                      return craftedBy.reduce((canCraft, craft) => {
-                        const jobId = craft.jobId;
-                        const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
-                        return (set && set.level >= craft.level) || canCraft;
-                      }, false);
+                  } else if (row.filterName.includes('IS_CRAFT') && craftedBy.length > 0) {
+                    const match = craftedBy.some((craft) => {
+                      const set = gearsets.find(stat => stat.jobId === craft.job);
+                      return set && (set.level === 0 || set.level >= craft.lvl);
+                    });
+                    if (match) {
+                      acc.accepted.push(item);
+                    } else {
+                      acc.rejected.push(item);
                     }
-                    return true;
-                  });
+                  } else {
+                    acc.accepted.push(item);
+                  }
+                  return acc;
+                }, { accepted: [], rejected: [] });
+                orderedAccepted = resultWithLevel.accepted;
+                if (!adaptativeFilter) {
+                  unfilteredRows.push(...resultWithLevel.rejected);
                 }
                 return {
                   title: row.name,
@@ -158,9 +169,8 @@ export class LayoutsFacade {
             }
             if (craftedBy.length > 0) {
               return craftedBy.reduce((canCraft, craft) => {
-                const jobId = craft.jobId;
-                const set = (characterEntry.stats || []).find(stat => stat.jobId === jobId);
-                return (set && set.level >= craft.level) || canCraft;
+                const set = (characterEntry.stats || []).find(stat => stat.jobId === craft.job);
+                return (set && set.level >= craft.lvl) || canCraft;
               }, false);
             }
             return true;
