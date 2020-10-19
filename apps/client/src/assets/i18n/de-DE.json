@@ -484,6 +484,8 @@
     "Fishing_rankings": "Fischer-Ranglisten",
     "Total_rankings": "Gesamtrangliste",
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
