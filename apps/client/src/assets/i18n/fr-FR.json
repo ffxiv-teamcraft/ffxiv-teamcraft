@@ -1885,12 +1885,14 @@
     "Import_from_ariyala": "Importer depuis Ariyala",
     "Import_from_lodestone": "Importer depuis Lodestone",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Vos tenues",
     "Delete_gearset": "Supprimer la tenue",
     "Import_from_pcap_notice": "Changez pour la tenue voulue en jeu, avec le job désigné pour l'importer dans Teamcraft.",
     "No_food_selected": "Aucune nourriture sélectionnée",
     "Generate_list": "Générer une liste",
     "Clone_gearset": "Créer une copie sur votre compte",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
     "Update_from_pcap": "Mettre à jour en utilisant la capture de paquets",
@@ -1947,6 +1949,14 @@
       "Critical_hit_multiplier": "Mult. de coups critiques",
       "Determination_bonus": "Bonus de détermination",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {
