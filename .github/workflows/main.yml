@@ -20,6 +20,7 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
   build:
+    needs: setup
     runs-on: ubuntu-latest
     steps:
       - name: Build production web
