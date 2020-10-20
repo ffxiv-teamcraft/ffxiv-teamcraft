@@ -854,6 +854,7 @@
     "Include_consumables_notification": "Incluir notificação de consumíveis",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Esperar a mais",
+    "Completion_message": "Completion message",
     "Import_macro": "Importar da macro do jogo",
     "Ingame_macro": "Macro do jogo",
     "Min_stats": "Estatísticas mínimas",
