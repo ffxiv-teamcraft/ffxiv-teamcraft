@@ -1885,12 +1885,14 @@
     "Import_from_ariyala": "Importar desde Ariyala",
     "Import_from_lodestone": "Importar desde Lodestone",
     "Import_using_pcap": "Importar usando captura de paquetes",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Sus conjuntos de equipo",
     "Delete_gearset": "Eliminar conjunto de equipo",
     "Import_from_pcap_notice": "Cambia al conjunto de equipo deseado con la profesión correspondiente para importarlo.",
     "No_food_selected": "No hay comida seleccionada",
     "Generate_list": "Generar una lista",
     "Clone_gearset": "Copiar esto en su cuenta",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "No tiene conjuntos de equipo",
     "Favorite_gearsets": "Conjuntos de equipo favoritos",
     "Update_from_pcap": "Actualizar usando captura de paquetes",
@@ -1947,6 +1949,14 @@
       "Critical_hit_multiplier": "Mult. de Golpe Crítico",
       "Determination_bonus": "Bono de determinación",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {
