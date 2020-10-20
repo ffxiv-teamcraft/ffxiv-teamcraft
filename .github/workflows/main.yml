@@ -49,9 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-          if: github.ref == 'ref/head/master'
       - uses: actions/setup-node@v1
-          if: github.ref == 'ref/head/master'
         with:
           node-version: '12.x'
       - name: Publish github release
