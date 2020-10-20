@@ -854,6 +854,7 @@
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
+    "Completion_message": "Completion message",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
