@@ -18,7 +18,8 @@ import {
   PureUpdateGearset,
   UpdateGearset,
   UpdateGearsetIndexes,
-  SaveGearsetProgression
+  SaveGearsetProgression,
+  SyncFromPcap
 } from './gearsets.actions';
 import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, mergeMap, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -34,6 +35,7 @@ import { ImportFromPcapPopupComponent } from '../import-from-pcap-popup/import-f
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { GearsetsFacade } from './gearsets.facade';
 import { GearsetProgression, newEmptyProgression } from '../../../model/gearset/gearset-progression';
+import { SyncFromPcapPopupComponent } from '../sync-from-pcap-popup/sync-from-pcap-popup.component';
 
 @Injectable()
 export class GearsetsEffects {
@@ -128,7 +130,9 @@ export class GearsetsEffects {
         switchMap(gearset => {
           return this.gearsetService.add(gearset).pipe(
             tap((res) => {
-              this.router.navigate(['/gearset', res, 'edit']);
+              if (!action.preventNavigation) {
+                this.router.navigate(['/gearset', res, 'edit']);
+              }
             })
           );
         })
@@ -200,6 +204,21 @@ export class GearsetsEffects {
       this.router.navigate(['/gearset', res]);
     }),
     switchMapTo(EMPTY)
+  );
+
+
+  @Effect({
+    dispatch: false
+  })
+  syncFromPcap$ = this.actions$.pipe(
+    ofType<SyncFromPcap>(GearsetsActionTypes.SyncFromPcap),
+    switchMap(() => {
+      return this.dialog.create({
+        nzContent: SyncFromPcapPopupComponent,
+        nzFooter: null,
+        nzTitle: this.translate.instant('GEARSETS.SYNC.Title')
+      }).afterClose;
+    })
   );
 
   @Effect({

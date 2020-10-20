@@ -15,8 +15,10 @@
     <div>
       <button nz-button *ngIf="machinaToggle" (click)="importFromPcap()">{{'GEARSETS.Import_using_pcap' | translate}}</button>
     </div>
+    <div>
+      <button nz-button *ngIf="machinaToggle" (click)="syncFromPcap()">{{'GEARSETS.Sync_with_pcap' | translate}}</button>
+    </div>
   </div>
-
 
   <ng-container *ngIf="userId$ | async as userId">
     <ng-template #gearsetTemplate let-gearset>

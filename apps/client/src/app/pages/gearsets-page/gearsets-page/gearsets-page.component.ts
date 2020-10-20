@@ -87,6 +87,10 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
     this.gearsetsFacade.importFromPcap();
   }
 
+  syncFromPcap(): void {
+    this.gearsetsFacade.syncFromPcap();
+  }
+
   importLodestoneGearset(): void {
     this.gearsetsFacade.importLodestoneGearset();
   }

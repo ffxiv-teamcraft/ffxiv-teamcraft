@@ -33,6 +33,10 @@ export class GearsetRowComponent {
     this.gearsetsFacade.delete(key);
   }
 
+  cloneGearset(gearset: TeamcraftGearset): void {
+    this.gearsetsFacade.clone(gearset);
+  }
+
   rename(gearset: TeamcraftGearset): void {
     this.dialog.create({
       nzContent: NameQuestionPopupComponent,

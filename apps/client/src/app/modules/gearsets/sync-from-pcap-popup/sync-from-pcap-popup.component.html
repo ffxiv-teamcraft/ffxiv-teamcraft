@@ -1,0 +1,10 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <div>
+    <nz-alert nzType="info" [nzMessage]="'GEARSETS.Import_from_pcap_notice' | translate"></nz-alert>
+  </div>
+  <div class="timeline">
+    <nz-timeline nzReverse="true" [nzPending]="'GEARSETS.SYNC.Syncing_gearsets' | translate">
+      <nz-timeline-item *ngFor="let entry of timeline" [nzColor]="entry.color || 'gray'">{{entry.label}}</nz-timeline-item>
+    </nz-timeline>
+  </div>
+</div>
