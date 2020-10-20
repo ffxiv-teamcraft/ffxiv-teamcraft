@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build production web
-        if: { { github.ref == 'ref/head/master' } }
+        if: github.ref == 'ref/head/master'
         run: yarn run build:prod
       - name: Build staging web
-        if: { { github.ref != 'ref/head/master' } }
+        if: github.ref != 'ref/head/master'
         run: yarn run build:beta
