@@ -854,6 +854,7 @@
     "Include_consumables_notification": "添加消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
+    "Completion_message": "Completion message",
     "Import_macro": "从用户宏导入",
     "Ingame_macro": "用户宏",
     "Min_stats": "最低面板属性",

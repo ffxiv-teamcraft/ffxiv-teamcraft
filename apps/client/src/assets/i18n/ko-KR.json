@@ -854,6 +854,7 @@
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
+    "Completion_message": "Completion message",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
