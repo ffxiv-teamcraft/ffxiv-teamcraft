@@ -1,8 +1,4 @@
-default-steps: &default-steps
-  - uses: actions/checkout@v2
-  - uses: actions/setup-node@v1
-  with:
-    node-version: '12.x'
+
 
 name: Global workflow
 on: [ push ]
@@ -10,7 +6,10 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      <<: *default-steps
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
       - name: Cache Node.js modules
         uses: actions/cache@v2
         with:
@@ -29,7 +28,10 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      <<: *default-steps
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
       - uses: actions/download-artifact@v2
         with:
           name: Dependencies
@@ -48,7 +50,10 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-      <<: *default-steps
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
       - name: Publish github release
         if: github.ref == 'ref/head/master'
         run: yarn run electron:setup:publish
