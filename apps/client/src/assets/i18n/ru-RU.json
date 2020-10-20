@@ -1885,12 +1885,14 @@
     "Import_from_ariyala": "Импорт из Ariyala",
     "Import_from_lodestone": "Импорт с Lodestone",
     "Import_using_pcap": "Импорт используя захват пакетов",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Ваши наборы снаряжения",
     "Delete_gearset": "Удалить набор",
     "Import_from_pcap_notice": "Переключитесь на необходимый набор соответствующей профессии, чтобы сделать импорт.",
     "No_food_selected": "Еда не выбрана",
     "Generate_list": "Создать список",
     "Clone_gearset": "Копировать список на ваш аккаунт",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "У вас нет наборов",
     "Favorite_gearsets": "Избранные наборы снаряжения",
     "Update_from_pcap": "Обновить используя захват пакетов",
@@ -1947,6 +1949,14 @@
       "Critical_hit_multiplier": "Мультипликатор крит. урона",
       "Determination_bonus": "Determination бонус",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

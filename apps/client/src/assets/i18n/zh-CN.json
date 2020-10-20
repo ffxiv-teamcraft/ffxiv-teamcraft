@@ -1885,12 +1885,14 @@
     "Import_from_ariyala": "从 Ariyala 导入",
     "Import_from_lodestone": "从 Lodestone 导入",
     "Import_using_pcap": "使用数据包捕获导入",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "您的配装",
     "Delete_gearset": "删除配装",
     "Import_from_pcap_notice": "请切换至需要导入的对应职业配装",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
     "Clone_gearset": "将此配装复制到您的账号",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "没有配装",
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
@@ -1947,6 +1949,14 @@
       "Critical_hit_multiplier": "暴击倍率",
       "Determination_bonus": "信念加成",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {
