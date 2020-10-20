@@ -555,6 +555,14 @@ export class SettingsService {
     this.setSetting('macroEchoSeNumber', echoSeNumber.toString());
   }
 
+  public get macroCompletionMessage(): string {
+    return this.getSetting('macroCompletionMessage', 'Craft finished');
+  }
+
+  public set macroCompletionMessage(completionMessage: string) {
+    this.setSetting('macroCompletionMessage', completionMessage);
+  }
+
   public get macroEcho(): boolean {
     return this.getSetting('macroEcho', 'true') === 'true';
   }

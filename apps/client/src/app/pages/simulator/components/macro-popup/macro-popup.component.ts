@@ -28,6 +28,8 @@ export class MacroPopupComponent implements OnInit {
 
   public extraWait = this.settings.macroExtraWait;
 
+  public macroCompletionMessage = this.settings.macroCompletionMessage;
+
   public breakBeforeByregotsBlessing = this.settings.macroBreakBeforeByregot;
 
   public macroLock = this.settings.macroLock;
@@ -46,7 +48,7 @@ export class MacroPopupComponent implements OnInit {
 
   tooManyAactions = false;
 
-  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService, private settings: SettingsService) {
+  constructor(private l12n: LocalizedDataService, private i18n: I18nToolsService, private translator: TranslateService, public settings: SettingsService) {
     // TEMP: load settings and clean up localStorage
     if (localStorage.getItem("macros:addecho") !== null){
       this.addEcho = this.settings.macroEcho = localStorage.getItem("macros:addecho") !== 'false';
@@ -72,6 +74,7 @@ export class MacroPopupComponent implements OnInit {
     this.settings.macroBreakBeforeByregot = this.breakBeforeByregotsBlessing;
     this.settings.macroFixedEcho = this.fixedEcho;
     this.settings.macroEchoSeNumber = this.echoSeNumber;
+    this.settings.macroCompletionMessage = this.macroCompletionMessage;
 
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     this.totalDuration = 0;
@@ -122,7 +125,7 @@ export class MacroPopupComponent implements OnInit {
       } else {
         seNumber = Math.min(this.echoSeNumber + this.macro.length, 16);
       }
-      this.macro[this.macro.length - 1].push(`/echo Craft finished <se.${seNumber}>`);
+      this.macro[this.macro.length - 1].push(`/echo ${this.macroCompletionMessage} <se.${seNumber}>`);
     }
   }
 
