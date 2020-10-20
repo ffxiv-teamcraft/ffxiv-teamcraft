@@ -7,6 +7,7 @@ export enum GearsetsActionTypes {
   ImportAriyalaGearset = '[Gearsets] Import Ariyala Gearset',
   ImportLodestoneGearset = '[Gearsets] Import Lodestone Gearset',
   ImportFromPcap = '[Gearsets] Import From Pcap',
+  SyncFromPcap = '[Gearsets] Sync From Pcap',
 
   LoadGearsets = '[Gearsets] Load Gearsets',
   GearsetsLoaded = '[Gearsets] Gearsets Loaded',
@@ -46,7 +47,7 @@ export class UpdateGearsetIndexes implements Action {
 export class CreateGearset implements Action {
   readonly type = GearsetsActionTypes.CreateGearset;
 
-  constructor(public gearset?: TeamcraftGearset) {
+  constructor(public gearset?: TeamcraftGearset, public preventNavigation = false) {
   }
 }
 
@@ -56,6 +57,10 @@ export class ImportAriyalaGearset implements Action {
 
 export class ImportFromPcap implements Action {
   readonly type = GearsetsActionTypes.ImportFromPcap;
+}
+
+export class SyncFromPcap implements Action {
+  readonly type = GearsetsActionTypes.SyncFromPcap;
 }
 
 export class ImportLodestoneGearset implements Action {

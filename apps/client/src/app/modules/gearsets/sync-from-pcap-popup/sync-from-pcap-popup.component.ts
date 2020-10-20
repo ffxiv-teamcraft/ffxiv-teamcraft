@@ -3,41 +3,48 @@ import { NzModalRef } from 'ng-zorro-antd';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { map, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { Memoized } from '../../../core/decorators/memoized';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
+import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { GearsetsFacade } from '../+state/gearsets.facade';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-import-from-pcap-popup',
-  templateUrl: './import-from-pcap-popup.component.html',
-  styleUrls: ['./import-from-pcap-popup.component.less']
+  selector: 'app-sync-from-pcap-popup',
+  templateUrl: './sync-from-pcap-popup.component.html',
+  styleUrls: ['./sync-from-pcap-popup.component.less']
 })
-export class ImportFromPcapPopupComponent extends TeamcraftComponent {
+export class SyncFromPcapPopupComponent extends TeamcraftComponent {
 
-  public updateMode = false;
-
-  public job: number;
-
-  public gearsetName: string;
-
-  public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
+  public timeline: { color: string, label: string }[] = [];
 
   constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
               private ipc: IpcService, private lazyData: LazyDataService,
-              private gearsetsFacade: GearsetsFacade) {
+              private l12n: LocalizedDataService, private i18n: I18nToolsService,
+              private gearsetsFacade: GearsetsFacade, private translate: TranslateService) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),
-      filter(([, updateClassInfo]) => updateClassInfo.classId === this.job),
-      map(([packets]) => packets)
-    ).subscribe((packets) => {
+      withLatestFrom(this.gearsetsFacade.myGearsets$.pipe(
+        map(gearsets => {
+          return gearsets.filter(g => g.fromSync);
+        })
+      ))
+    ).subscribe(([[packets, classInfo], syncGearsets]) => {
+      let name = this.i18n.getName(this.l12n.getJobName(classInfo.classId));
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      this.timeline.push({
+        color: 'blue',
+        label: this.translate.instant('GEARSETS.SYNC.Importing_gearset', { name })
+      });
       const gearset = new TeamcraftGearset();
-      gearset.name = this.gearsetName;
-      gearset.job = this.job;
+      gearset.name = name;
+      gearset.job = classInfo.classId;
+      gearset.fromSync = true;
       packets
         .filter(p => p.containerId === 1000)
         .forEach(packet => {
@@ -61,42 +68,23 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
           };
         });
 
-      this.modalRef.close(gearset);
-    });
-  }
+      const syncGearset = syncGearsets.find(set => {
+        return set.job === gearset.job;
+      });
 
-  @Memoized()
-  private getPropertyName(slot: number): string {
-    switch (slot) {
-      case 0:
-        return 'mainHand';
-      case 1:
-        return 'offHand';
-      case 2:
-        return 'head';
-      case 3:
-        return 'chest';
-      case 4:
-        return 'gloves';
-      case 5:
-        return 'belt';
-      case 6:
-        return 'legs';
-      case 7:
-        return 'feet';
-      case 8:
-        return 'earRings';
-      case 9:
-        return 'necklace';
-      case 10:
-        return 'bracelet';
-      case 11:
-        return 'ring2';
-      case 12:
-        return 'ring1';
-      case 13:
-        return 'crystal';
-    }
+      this.timeline.pop();
+
+      if (syncGearset) {
+        const updatedSet = Object.assign(syncGearset, gearset);
+        this.gearsetsFacade.update(updatedSet.$key, updatedSet);
+      } else {
+        this.gearsetsFacade.createGearset(gearset, true);
+      }
+      this.timeline.push({
+        color: 'green',
+        label: this.translate.instant('GEARSETS.SYNC.Imported_gearset', { name })
+      });
+    });
   }
 
 }

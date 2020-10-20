@@ -4,6 +4,10 @@ import { DataWithPermissions } from '../../core/database/permissions/data-with-p
 export class TeamcraftGearset extends DataWithPermissions {
   name: string;
 
+  /**
+   * True when it has been imported via the automated gearset sync process
+   */
+  fromSync = false;
   job: number;
 
   index = -1;
