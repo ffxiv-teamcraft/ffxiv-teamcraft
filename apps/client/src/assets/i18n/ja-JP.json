@@ -854,6 +854,7 @@
     "Include_consumables_notification": "消耗品の通知を含める",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
+    "Completion_message": "Completion message",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
     "Min_stats": "下限サブステ",
