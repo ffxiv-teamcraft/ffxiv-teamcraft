@@ -40,7 +40,7 @@ export class WeatherService {
   }
 
   public getNextWeatherStart(mapId: number, weatherId: number, timestamp: number, weatherRate?: any, iterations = 0): Date | null {
-    if (iterations >= 100) {
+    if (iterations >= 500) {
       return null;
     }
     weatherRate = weatherRate || weatherIndex[mapIds.find(map => map.id === mapId).weatherRate];
