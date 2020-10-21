@@ -1948,5 +1948,39 @@ export const weatherIndex = {
       "rate": 100,
       "weatherId": 138
     }
+  ],
+  "124": [
+    {
+      "rate": 52,
+      "weatherId": 2
+    },
+    {
+      "rate": 64,
+      "weatherId": 7
+    },
+    {
+      "rate": 76,
+      "weatherId": 5
+    },
+    {
+      "rate": 88,
+      "weatherId": 9
+    },
+    {
+      "rate": 100,
+      "weatherId": 11
+    }
+  ],
+  "125": [
+    {
+      "rate": 100,
+      "weatherId": 137
+    }
+  ],
+  "126": [
+    {
+      "rate": 100,
+      "weatherId": 147
+    }
   ]
 };

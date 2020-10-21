@@ -181,7 +181,12 @@ export class CollectablesComponent {
       mergeMap(list => {
         const operations = items.map(item => {
           const recipeId = this.lazyData.getItemRecipeSync(item.itemId.toString())?.id;
-          return this.listManager.addToList(+item.itemId, list, recipeId || '', item.amount);
+          return this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: recipeId || '',
+            amount: item.amount
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
@@ -217,7 +222,12 @@ export class CollectablesComponent {
   public createQuickList(item: { itemId: number, amount: number }): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
     const recipeId = this.lazyData.getItemRecipeSync(item.itemId.toString())?.id;
-    const operation$ = this.listManager.addToList(+item.itemId, list, recipeId || '', item.amount)
+    const operation$ = this.listManager.addToList({
+      itemId: +item.itemId,
+      list: list,
+      recipeId: recipeId || '',
+      amount: item.amount
+    })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
         mergeMap(resultList => {

@@ -910,8 +910,9 @@ if (hasTodo('LGB', true)) {
   const aetherytes = [];
 
   // First things first, let's build the list of territories with multiple maps included.
-  Object.values(mapData)
-    .filter(map => map.priority_ui > 0)
+  const everyMaps = Object.values(mapData);
+  everyMaps
+    .filter(map => everyMaps.filter(m => m.territory_id === map.territory_id).length > 1)
     .forEach(map => {
       if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
         return map.priority_ui > 0 && entry.mapId === map.id;
@@ -1185,7 +1186,7 @@ if (hasTodo('npcs')) {
 
 if (hasTodo('leves')) {
   const leves = {};
-  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel').subscribe(page => {
+  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel,CraftLeve').subscribe(page => {
     page.Results.forEach(leve => {
       leves[leve.ID] = {
         en: leve.Name_en,
@@ -1198,7 +1199,15 @@ if (hasTodo('leves')) {
           de: leve.ClassJobCategory.Name_de,
           fr: leve.ClassJobCategory.Name_fr
         },
-        lvl: leve.ClassJobLevel
+        lvl: leve.ClassJobLevel,
+        items: leve.CraftLeve ? [0, 1, 2, 3]
+          .filter(i => leve.CraftLeve[`Item${i}`] !== null)
+          .map(i => {
+            return {
+              itemId: leve.CraftLeve[`Item${i}TargetID`],
+              amount: leve.CraftLeve[`ItemCount${i}`]
+            };
+          }) : []
       };
     });
   }, null, () => {

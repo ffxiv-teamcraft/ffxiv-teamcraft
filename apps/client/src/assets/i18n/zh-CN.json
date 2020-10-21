@@ -430,6 +430,8 @@
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -482,6 +484,8 @@
     "Fishing_rankings": "垂钓排名",
     "Total_rankings": "总排名",
     "Loading_fish_rankings": "正在加载垂钓排行",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "角色验证",
       "Guide": "若要认证您的账户，复制这个代码{{userId}}到Lodestone个人资料中，并点击下方的按键。更多信息在<a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>。",
@@ -699,8 +703,8 @@
     "LEVE": "理符",
     "GLAMOUR": "投影",
     "HOUSING": "住房",
-    "SUBMARINE": "Submarine",
-    "AIRSHIP": "Airship",
+    "SUBMARINE": "潜水艇",
+    "AIRSHIP": "飞空艇",
     "MISC": "其它",
     "QUEST": "任务",
     "TANK": "坦克",
@@ -850,6 +854,7 @@
     "Include_consumables_notification": "添加消耗品提示",
     "Consumable_notification": "使用 {{buffs}}",
     "Extra_wait": "单独延迟",
+    "Completion_message": "Completion message",
     "Import_macro": "从用户宏导入",
     "Ingame_macro": "用户宏",
     "Min_stats": "最低面板属性",
@@ -913,6 +918,8 @@
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -942,7 +949,7 @@
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
       "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Quality_filter_placeholder": "品质",
       "Intro": "输入筛选条件",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
       "Fail": "失败",
@@ -1068,7 +1075,8 @@
     "Craft_price": "制作价格",
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ 价格",
-    "Enter_total_earnings": "输入总收入"
+    "Enter_total_earnings": "输入总收入",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -1668,7 +1676,8 @@
     "Desktop_app_overlay": "使用桌面应用程序时，您可以开启闹钟悬浮窗(应用下载链接见侧边栏)。",
     "Start_desktop_before_game": "记得在启动游戏前启动 TeamCraft，以确保数据准确性",
     "Middle_click_share_button": "在桌面应用中，可以使用鼠标中键点击顶栏的分享按钮，在浏览器中打开当前页面",
-    "Quick_search": "在 TeamCraft 的任何界面中按下 Ctrl + Shift + F 可以打开搜索框"
+    "Quick_search": "在 TeamCraft 的任何界面中按下 Ctrl + Shift + F 可以打开搜索框",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "配方检索器",
@@ -1876,12 +1885,14 @@
     "Import_from_ariyala": "从 Ariyala 导入",
     "Import_from_lodestone": "从 Lodestone 导入",
     "Import_using_pcap": "使用数据包捕获导入",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "您的配装",
     "Delete_gearset": "删除配装",
     "Import_from_pcap_notice": "请切换至需要导入的对应职业配装",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
     "Clone_gearset": "将此配装复制到您的账号",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "没有配装",
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
@@ -1938,6 +1949,14 @@
       "Critical_hit_multiplier": "暴击倍率",
       "Determination_bonus": "信念加成",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {
@@ -2153,7 +2172,7 @@
     "No_collectables_for_this_level": "No collectables available"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
+    "Title": "工序重现",
     "Online_replays": "Online replays",
     "Offline_replays": "Offline replays",
     "Open_replay_page": "Open replay page",

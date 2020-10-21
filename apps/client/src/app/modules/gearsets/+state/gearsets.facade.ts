@@ -16,6 +16,7 @@ import {
   PureUpdateGearset,
   SaveGearsetProgression,
   SelectGearset,
+  SyncFromPcap,
   UpdateGearset,
   UpdateGearsetIndexes
 } from './gearsets.actions';
@@ -139,8 +140,8 @@ export class GearsetsFacade {
     this.store.dispatch(new SelectGearset(key));
   }
 
-  createGearset(gearset?: TeamcraftGearset): void {
-    this.store.dispatch(new CreateGearset(gearset));
+  createGearset(gearset?: TeamcraftGearset, preventNavigation = false): void {
+    this.store.dispatch(new CreateGearset(gearset, preventNavigation));
   }
 
   importAriyalaGearset(): void {
@@ -149,6 +150,10 @@ export class GearsetsFacade {
 
   importFromPcap(): void {
     this.store.dispatch(new ImportFromPcap());
+  }
+
+  syncFromPcap(): void {
+    this.store.dispatch(new SyncFromPcap());
   }
 
   importLodestoneGearset(): void {
@@ -312,5 +317,24 @@ export class GearsetsFacade {
         return gearset;
       })
     );
+  }
+
+  public getPropertyName(slot: number): string {
+    return [
+      'mainHand',
+      'offHand',
+      'head',
+      'chest',
+      'gloves',
+      'belt',
+      'legs',
+      'feet',
+      'earRings',
+      'necklace',
+      'bracelet',
+      'ring2',
+      'ring1',
+      'crystal'
+    ][slot];
   }
 }

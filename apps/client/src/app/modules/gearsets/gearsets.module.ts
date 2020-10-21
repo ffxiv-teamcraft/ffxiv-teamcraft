@@ -13,7 +13,7 @@ import {
   NzInputModule,
   NzMessageModule, NzModalModule,
   NzPopconfirmModule,
-  NzSelectModule,
+  NzSelectModule, NzTagModule, NzTimelineModule,
   NzToolTipModule
 } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
@@ -35,6 +35,7 @@ import { GearsetCostPopupComponent } from './gearset-cost-popup/gearset-cost-pop
 import { FullpageMessageModule } from '../fullpage-message/fullpage-message.module';
 import { ItemCapsTableComponent } from './item-caps-table/item-caps-table.component';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';
+import { SyncFromPcapPopupComponent } from './sync-from-pcap-popup/sync-from-pcap-popup.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     GearsetRowComponent,
     GearsetCostPopupComponent,
     ItemCapsTableComponent,
-    StatsPopupComponent
+    StatsPopupComponent,
+    SyncFromPcapPopupComponent
   ],
   imports: [
     CommonModule,
@@ -65,8 +67,6 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     NzIconModule,
     NzMessageModule,
 
-
-
     FormsModule,
     ReactiveFormsModule,
     PipesModule,
@@ -82,7 +82,9 @@ import { StatsPopupComponent } from './stats-popup/stats-popup.component';
     TranslateModule,
     RouterModule,
     ItemIconModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    NzTagModule,
+    NzTimelineModule
   ],
   exports: [
     MateriaSlotIconComponent,

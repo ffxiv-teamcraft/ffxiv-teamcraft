@@ -32,9 +32,9 @@ export class MachinaService {
 
   private _inventoryPatches$ = new Subject<InventoryPatch>();
 
-  public get inventoryPatches$(): Observable<InventoryPatch> {
-    return this._inventoryPatches$.asObservable();
-  }
+  public inventoryPatches$ = this._inventoryPatches$.asObservable().pipe(
+    shareReplay()
+  );
 
   public readonly inventoryEvents$ = this.inventoryPatches$.pipe(
     filter(patch => !patch.moved),
@@ -88,8 +88,8 @@ export class MachinaService {
     );
   }
 
-  private getInventoryTransactionFlag():number{
-    switch(this.settings.region){
+  private getInventoryTransactionFlag(): number {
+    switch (this.settings.region) {
       case Region.China:
         return 108;
       case Region.Korea:
@@ -252,7 +252,9 @@ export class MachinaService {
         }),
         map(([patch]) => patch),
         withLatestFrom(this.listsFacade.autocompleteEnabled$, this.listsFacade.selectedList$),
-        filter(([patch, autocompleteEnabled]) => autocompleteEnabled && patch.quantity > 0)
+        filter(([patch, autocompleteEnabled]) => {
+          return autocompleteEnabled && patch.quantity > 0;
+        })
       )
       .subscribe(([patch, , list]) => {
         const itemsEntry = list.items.find(i => i.id === patch.itemId);
@@ -339,9 +341,9 @@ export class MachinaService {
   private getEventType(patch: InventoryPatch): InventoryEventType {
     if (patch.quantity > 0) {
       return InventoryEventType.ADDED;
-    } else if(patch.moved) {
+    } else if (patch.moved) {
       return InventoryEventType.MOVED;
-    } else{
+    } else {
       return InventoryEventType.REMOVED;
     }
   }

@@ -430,6 +430,8 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -482,6 +484,8 @@
     "Fishing_rankings": "Fischer-Ranglisten",
     "Total_rankings": "Gesamtrangliste",
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -850,6 +854,7 @@
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
+    "Completion_message": "Completion message",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
@@ -913,6 +918,8 @@
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -1068,7 +1075,8 @@
     "Craft_price": "Preis zur Herstellung",
     "Marketboard_price": "NQ Preis",
     "Marketboard_price_hq": "HQ Preis",
-    "Enter_total_earnings": "Gesamteinnahmen eingeben"
+    "Enter_total_earnings": "Gesamteinnahmen eingeben",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -1668,7 +1676,8 @@
     "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
     "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
-    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen"
+    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1876,12 +1885,14 @@
     "Import_from_ariyala": "Aus Ariyala importieren",
     "Import_from_lodestone": "Aus dem Lodestone importieren",
     "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Deine Ausrüstungssets",
     "Delete_gearset": "Ausrüstungsset löschen",
     "Import_from_pcap_notice": "Wechsel zum gewünschten Ausrüstungsset mit dem entsprechenden Job, um es zu importieren.",
     "No_food_selected": "Kein Essen ausgewählt",
     "Generate_list": "Liste erstellen",
     "Clone_gearset": "Kopiere dies zu deinem Account",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "Du hast keine Ausrüstungssets",
     "Favorite_gearsets": "Favorisierte Ausrüstungssets",
     "Update_from_pcap": "Durch Paketerfassung aktualisieren",
@@ -1938,6 +1949,14 @@
       "Critical_hit_multiplier": "Multiplikator für Kritische Treffer",
       "Determination_bonus": "Bonus durch Entschlossenheit",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

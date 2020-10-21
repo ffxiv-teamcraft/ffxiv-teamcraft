@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { debounceTime, filter, map, switchMap, tap } from 'rxjs/operators';
 import { stats } from '../../../core/data/sources/stats';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { SearchIndex, XivapiSearchFilter, XivapiService } from '@xivapi/angular-client';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-food-picker',
@@ -15,13 +16,22 @@ export class FoodPickerComponent extends TeamcraftComponent {
 
   public availableStats = stats;
 
-  public stats$ = new BehaviorSubject<any[]>([null]);
+  public stats$ = this.route.queryParamMap.pipe(
+    map(query => {
+      if (query.get('stats')) {
+        const parsedStats = query.get('stats').split(',');
+        return parsedStats.map(name => stats.find(s => s.en === name)).filter(s => !!s);
+      }
+      return [];
+    })
+  );
 
   public results$: Observable<any[]>;
 
   public loading = false;
 
-  constructor(private xivapi: XivapiService, private lazyData: LazyDataService) {
+  constructor(private xivapi: XivapiService, private lazyData: LazyDataService,
+              private route: ActivatedRoute, private router: Router) {
     super();
 
     this.results$ = this.stats$.pipe(
@@ -43,39 +53,59 @@ export class FoodPickerComponent extends TeamcraftComponent {
         return this.xivapi.search({
           indexes: [SearchIndex.ITEM],
           filters: filters
-        });
+        }).pipe(
+          map(res => ([res, pickedStats]))
+        );
       }),
-      map((searchResult) => {
+      map(([searchResult, pickedStats]) => {
         return searchResult.Results
           .map(item => {
             const itemDetails = [...this.lazyData.data.foods, ...this.lazyData.data.medicines].find(f => f.ID === item.ID);
+            if (!itemDetails) {
+              return undefined;
+            }
             return {
               id: item.ID,
-              bonuses: Object.values(itemDetails.Bonuses) //TODO: Sort Bonuses so first attribute researched comes first
+              bonuses: Object.values<any>(itemDetails.Bonuses).sort((a, b) => {
+                return pickedStats.findIndex(s => s.id === a.ID) - pickedStats.findIndex(s => s.id === b.ID);
+              })
             };
-          }).sort((a, b) => {
-            return a.id === b.id ? a.id - b.id : b.id - a.id;
+          })
+          .filter(i => !!i)
+          .sort((a, b) => {
+            if (a.bonuses[0].Value > b.bonuses[0].Value) {
+              return -1;
+            } else if (a.bonuses[0].Value < b.bonuses[0].Value) {
+              return 1;
+            } else {
+              if (a.bonuses[1]?.Value > b.bonuses[1]?.Value) {
+                return -1;
+              } else if (a.bonuses[1]?.Value < b.bonuses[1]?.Value) {
+                return 1;
+              }
+            }
           });
       }),
       tap(() => this.loading = false)
     );
   }
 
-  trackByIndex(index: number): number {
-    return index;
-  }
+  updateStats(pickedStats: any[]): void {
+    if (pickedStats.length === 0) {
+      this.router.navigate([], {
+        queryParams: {},
+        relativeTo: this.route,
+        queryParamsHandling: 'merge'
+      });
+    } else {
+      this.router.navigate([], {
+        queryParams: {
+          stats: pickedStats.map(s => s.en).join(',')
+        },
+        relativeTo: this.route
+      });
 
-  changeStat(index: number, value: any): void {
-    const newArray = [...this.stats$.value];
-    newArray[index] = value;
-    this.stats$.next(newArray);
-  }
-
-  addStat(): void {
-    this.stats$.next([
-      ...this.stats$.value,
-      null
-    ]);
+    }
   }
 
 }

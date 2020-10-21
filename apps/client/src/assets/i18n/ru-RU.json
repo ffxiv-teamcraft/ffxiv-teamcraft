@@ -430,6 +430,8 @@
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -482,6 +484,8 @@
     "Fishing_rankings": "Рейтинг Рыбалки",
     "Total_rankings": "Общий рейтинг",
     "Loading_fish_rankings": "Загрузка рейтинга рыбалки",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
@@ -850,6 +854,7 @@
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
+    "Completion_message": "Completion message",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
     "Min_stats": "Минимальные статы",
@@ -913,6 +918,8 @@
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -1068,7 +1075,8 @@
     "Craft_price": "Цена создания",
     "Marketboard_price": "Цена NQ",
     "Marketboard_price_hq": "Цена HQ",
-    "Enter_total_earnings": "Введите общий доход"
+    "Enter_total_earnings": "Введите общий доход",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -1668,7 +1676,8 @@
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
     "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
     "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
-    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места"
+    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1876,12 +1885,14 @@
     "Import_from_ariyala": "Импорт из Ariyala",
     "Import_from_lodestone": "Импорт с Lodestone",
     "Import_using_pcap": "Импорт используя захват пакетов",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Ваши наборы снаряжения",
     "Delete_gearset": "Удалить набор",
     "Import_from_pcap_notice": "Переключитесь на необходимый набор соответствующей профессии, чтобы сделать импорт.",
     "No_food_selected": "Еда не выбрана",
     "Generate_list": "Создать список",
     "Clone_gearset": "Копировать список на ваш аккаунт",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "У вас нет наборов",
     "Favorite_gearsets": "Избранные наборы снаряжения",
     "Update_from_pcap": "Обновить используя захват пакетов",
@@ -1938,6 +1949,14 @@
       "Critical_hit_multiplier": "Мультипликатор крит. урона",
       "Determination_bonus": "Determination бонус",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

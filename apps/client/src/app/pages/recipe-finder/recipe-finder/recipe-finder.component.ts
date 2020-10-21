@@ -346,8 +346,13 @@ export class RecipeFinderComponent implements OnDestroy {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = this.basket.map(row => {
-          return this.listManager.addToList(+row.recipe.result, list,
-            row.recipe.id, row.amount, false);
+          return this.listManager.addToList({
+            itemId: +row.recipe.result,
+            list: list,
+            recipeId: row.recipe.id,
+            amount: row.amount,
+            collectible: false
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {

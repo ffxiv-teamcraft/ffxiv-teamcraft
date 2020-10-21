@@ -439,6 +439,28 @@ function afterOverlayClose(url) {
   openedOverlayUris = openedOverlayUris.filter(uri => uri !== url);
 }
 
+function applySettings(settings) {
+  try {
+    if (config.get('region') !== settings.region) {
+      config.set('region', settings.region);
+
+      if (config.get('machina') === true) {
+        Machina.stop();
+        Machina.start(win, config, options.verbose, options.winpcap);
+      }
+    }
+
+    config.set('clickthrough', settings.clickthrough === 'true');
+    forEachOverlay(overlay => {
+      overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
+      overlay.webContents.send('update-settings', settings);
+    });
+    win.webContents.send('update-settings', settings);
+  } catch (e) {
+    // Window already destroyed, so we don't care :)
+  }
+}
+
 function createTray() {
   const trayIcon = nativeIcon.resize({ width: 16, height: 16 });
   tray = new Tray(trayIcon);
@@ -454,32 +476,60 @@ function createTray() {
     }
     win.isVisible() ? win.hide() : win.show();
   });
-  tray.setToolTip('FFXIV Teamcraft');
-  const contextMenu = Menu.buildFromTemplate([
-    {
-      label: 'Fishing Overlay',
-      type: 'normal',
-      click: () => {
-        toggleOverlay({ url: '/fishing-reporter-overlay' });
-      }
-    },
-    {
-      label: 'Alarm Overlay',
-      type: 'normal',
-      click: () => {
-        toggleOverlay({ url: '/alarms-overlay' });
-      }
-    },
-    {
-      label: 'Quit',
-      type: 'normal',
-      click: () => {
-        app.isQuitting = true;
-        app.quit();
-      }
-    }
-  ]);
-  tray.setContextMenu(contextMenu);
+  win.webContents
+    .executeJavaScript('localStorage.getItem("settings");', true)
+    .then(settingsString => {
+      const settings = JSON.parse(settingsString);
+      tray.setToolTip('FFXIV Teamcraft');
+      const contextMenu = Menu.buildFromTemplate([
+        {
+          label: 'Item Search Overlay',
+          type: 'normal',
+          click: () => {
+            toggleOverlay({ url: '/item-search-overlay' });
+          }
+        },
+        {
+          label: 'List Overlay',
+          type: 'normal',
+          click: () => {
+            toggleOverlay({ url: '/list-panel-overlay' });
+          }
+        },
+        {
+          label: 'Fishing Overlay',
+          type: 'normal',
+          click: () => {
+            toggleOverlay({ url: '/fishing-reporter-overlay' });
+          }
+        },
+        {
+          label: 'Alarm Overlay',
+          type: 'normal',
+          click: () => {
+            toggleOverlay({ url: '/alarms-overlay' });
+          }
+        },
+        {
+          label: 'Clickthrough Overlays',
+          type: 'checkbox',
+          checked: settings.clickthrough === 'true',
+          click: (menuItem) => {
+            settings.clickthrough = menuItem.checked.toString();
+            applySettings(settings);
+          }
+        },
+        {
+          label: 'Quit',
+          type: 'normal',
+          click: () => {
+            app.isQuitting = true;
+            app.quit();
+          }
+        }
+      ]);
+      tray.setContextMenu(contextMenu);
+    });
 }
 
 function forEachOverlay(cb) {
@@ -635,25 +685,7 @@ app.on('activate', function() {
 });
 
 ipcMain.on('apply-settings', (event, settings) => {
-  try {
-    if (config.get('region') !== settings.region) {
-      config.set('region', settings.region);
-
-      if (config.get('machina') === true) {
-        Machina.stop();
-        Machina.start(win, config, options.verbose, options.winpcap);
-      }
-    }
-
-    config.set('clickthrough', settings.clickthrough === 'true');
-    forEachOverlay(overlay => {
-      overlay.setIgnoreMouseEvents(settings.clickthrough === 'true');
-      overlay.webContents.send('update-settings', settings);
-    });
-    win.webContents.send('update-settings', settings);
-  } catch (e) {
-    // Window already destroyed, so we don't care :)
-  }
+  applySettings(settings);
 });
 
 ipcMain.on('language', (event, lang) => {
@@ -855,9 +887,9 @@ ipcMain.on('navigated', (event, uri) => {
 });
 
 ipcMain.on('zoom-in', () => {
-    var currentzoom = win.webContents.getZoomLevel()
-    win.webContents.setZoomLevel(currentzoom++)
-})
+  var currentzoom = win.webContents.getZoomLevel();
+  win.webContents.setZoomLevel(currentzoom++);
+});
 
 // Oauth stuff
 ipcMain.on('oauth', (event, providerId) => {

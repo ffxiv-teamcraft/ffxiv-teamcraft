@@ -57,6 +57,10 @@ export class UserInventory extends DataModel {
 
   lastZone: number;
 
+  get trackItemsOnSale():boolean{
+    return localStorage.getItem('trackItemsOnSale') === 'true'
+  }
+
   getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
     return [].concat.apply([],
       Object.keys(this.items)
@@ -72,7 +76,7 @@ export class UserInventory extends DataModel {
             }
           }
           const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
-          if (localStorage.getItem('trackItemsOnSale') === 'true') {
+          if (this.trackItemsOnSale) {
             return matches;
           } else {
             return matches && !matchesRetainerMarket;

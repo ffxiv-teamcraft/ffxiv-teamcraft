@@ -40,6 +40,7 @@ export class GearsetCostPopupComponent implements OnInit {
   }
 
   private computeCosts(): void {
+    this.costs = [];
     Object.keys(this.gearset)
       .filter(key => {
         const validPiece = this.gearset[key] && this.gearset[key].itemId !== undefined;
