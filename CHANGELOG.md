@@ -35,7 +35,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **pricing:** new checkbox to ignore completed items in pricing mode ([43bd224](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43bd224))
 * **simulator:** new detailed display option for actions list ([97a2a8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97a2a8b)), closes [#1640](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1640)
 * **simulator:** you can now change the end message of your generated macros ([886ac29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/886ac29))
-* new Ctrl + Shift + C shortcut to open link popup or open in desktop app ([7bdc63f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bdc63f))
+* **hotkey:** new Ctrl + Shift + C shortcut to open link popup or open in desktop app ([7bdc63f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bdc63f))
 
 
 
