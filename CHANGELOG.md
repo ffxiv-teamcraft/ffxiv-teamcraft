@@ -2,6 +2,43 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.0"></a>
+# [7.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.6...v7.5.0) (2020-10-21)
+
+
+### Bug Fixes
+
+* **desktop:** fixed an issue with autofill sometimes not filling properly ([c215ae5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c215ae5))
+* **gearset:** fixed an issue with cost computing being inacurate when progression is set ([35e64ec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/35e64ec))
+* **inventory:** fixed "track items on sale" setting always being enabled ([e04591a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e04591a))
+* **list:** fixed an issue with missing spearfishing locations (some might be wrong tho) ([a567ec0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a567ec0))
+* **list:** fixed an issue with some spearfishing items breaking list display ([da4d5ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/da4d5ca))
+* **list:** fixed ignore button in total price popup ([2e0f5a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2e0f5a2))
+* **list:** update perf improvements, possible autofill fix ([c436e96](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c436e96))
+* **log-tracker:** fixed a rollback on several entries being unchecked quickly ([07cc869](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/07cc869))
+* **simulator:** fixed reset rotation button not working ([c1acf18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1acf18))
+
+
+### Features
+
+* **community-rotations:** rotations are now sorted by length ASC ([9de354b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9de354b))
+* **desktop:** better optimized build for electron (now using aot properly) ([1428db0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1428db0))
+* **desktop:** new menu entries in tray bar icon menu (new overlays & clickthrough option) ([01706b2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01706b2))
+* **food-picker:** shareable urls and sorting based on selected stats ([4174944](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4174944))
+* **gearsets:** you can now mass import your gear and keep them updated with the new sync button ([fd8ae19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd8ae19))
+* **inventory:** new button to copy entire inventory as JSON or CSV ([1928ea1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1928ea1))
+* **layout:** DoH and DoL levels are now affecting layout filters ([34c62de](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34c62de))
+* **list:** new global setting for maximum vendor price in list layouts ([a10df4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a10df4b))
+* **list:** you can now define priorities on jobs to pick for items with multiple recipes ([6829894](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6829894))
+* **lists:** added # of items in list next to its name in list picker ([fba9dca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fba9dca))
+* **log-tracker:** added leve icon next to recipes beign used for leves ([bdcc4e8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bdcc4e8))
+* **pricing:** new checkbox to ignore completed items in pricing mode ([43bd224](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/43bd224))
+* **simulator:** new detailed display option for actions list ([97a2a8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97a2a8b)), closes [#1640](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1640)
+* **simulator:** you can now change the end message of your generated macros ([886ac29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/886ac29))
+* new Ctrl + Shift + C shortcut to open link popup or open in desktop app ([7bdc63f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7bdc63f))
+
+
+
 <a name="7.4.6"></a>
 ## [7.4.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.5...v7.4.6) (2020-10-13)
 
