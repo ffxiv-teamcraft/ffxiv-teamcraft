@@ -26,7 +26,9 @@ export class LogTrackingService extends FirestoreStorage<LogTracking> {
       const docRef = this.firestore.firestore.doc(`${this.getBaseUri()}/${uid}`);
       return transaction.get(docRef)
         .then(doc => {
-          entries.forEach(entry => {
+          entries
+            .filter(entry => !!entry.itemId)
+            .forEach(entry => {
             if (!doc.exists && entry.done) {
               const newLog = {
                 crafting: [],
