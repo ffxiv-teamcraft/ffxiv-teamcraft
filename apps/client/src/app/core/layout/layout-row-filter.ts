@@ -28,10 +28,9 @@ export class LayoutRowFilter {
     return vendors.length > 0;
   }, 'CAN_BE_BOUGHT');
 
-  static IS_ONLY_FROM_VENDOR = new LayoutRowFilter(row => {
-    return getItemSource(row, DataType.VENDORS).length > 0
-      && getItemSource(row, DataType.TRADE_SOURCES).length === 0;
-  }, 'IS_ONLY_FROM_VENDOR');
+  static IS_ONLY_FROM_VENDOR = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
+    return getItemSource(row, DataType.TRADE_SOURCES).length === 0;
+  }, 'IS_ONLY_FROM_VENDOR'));
 
   static IS_HQ = new LayoutRowFilter((row, list) => {
     const recipesNeedingItem = list.finalItems
@@ -60,7 +59,7 @@ export class LayoutRowFilter {
     return getItemSource(row, DataType.TRADE_SOURCES).some(ts => ts.trades.some(trade => trade.currencies.some(c => c.id === 26807)));
   }, 'IS_FATE_ITEM');
 
-  static FROM_BEAST_TRIBE = new LayoutRowFilter(row => {
+  static FROM_BEAST_TRIBE = LayoutRowFilter.CAN_BE_BOUGHT._and(new LayoutRowFilter(row => {
     return getItemSource(row, DataType.VENDORS).some(vendor => {
       return beastTribeNpcs.indexOf(vendor.npcId) > -1;
     }) || getItemSource(row, DataType.TRADE_SOURCES).some(trade => {
@@ -68,7 +67,7 @@ export class LayoutRowFilter {
         return beastTribeNpcs.indexOf(npc.id) > -1;
       });
     });
-  }, 'FROM_BEAST_TRIBE');
+  }, 'FROM_BEAST_TRIBE'));
 
   static IS_MONSTER_DROP = new LayoutRowFilter(row => getItemSource(row, DataType.DROPS).length > 0, 'IS_MONSTER_DROP');
 
