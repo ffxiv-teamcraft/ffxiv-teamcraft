@@ -647,6 +647,7 @@
     "X_needed": "{{amount}} requis",
     "Leave_list": "Quitter cette liste",
     "Cannot_leave": "Vous ne pouvez pas quitter cette liste car elle est partagée à l'ensemble de votre CL (dans ce cas, vous devez demander au propriétaire de la supprimer) ou à l'une de vos équipes (dans ce cas, vous pouvez quitter l'équipe).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -689,6 +690,10 @@
       "Open": "Ouvrir/fermer l'overlay de liste",
       "No_display": "Ouvrir une liste dans la fenêtre principale pour commencer",
       "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
