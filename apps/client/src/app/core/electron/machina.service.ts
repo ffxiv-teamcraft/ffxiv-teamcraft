@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IpcService } from './ipc.service';
 import { UniversalisService } from '../api/universalis.service';
-import { delayWhen, distinctUntilChanged, filter, first, map, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { delayWhen, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../model/user/inventory/user-inventory';
 import { combineLatest, interval, merge, Observable, of, Subject } from 'rxjs';
 import { AuthFacade } from '../../+state/auth.facade';
@@ -121,52 +121,47 @@ export class MachinaService {
       }),
       debounceBufferTime(1000),
       filter(packets => packets.length > 0),
-      withLatestFrom(this.retainerSpawns$),
+      withLatestFrom(this.retainerSpawns$, this.inventory$),
       tap(([itemInfos, lastRetainerSpawned]) => this.ipc.log('ItemInfos', itemInfos.length, lastRetainerSpawned)),
-      switchMap(([itemInfos, lastRetainerSpawned]) => {
-        return this.inventory$.pipe(
-          first(),
-          map((inventory) => {
-            const updatedContainerIds = _.uniqBy(itemInfos, 'containerId').map(packet => packet.containerId);
-            const isRetainer = updatedContainerIds.some(id => id >= 10000 && id < 20000);
-            if (isRetainer && !lastRetainerSpawned) {
-              return null;
-            }
-            const groupedInfos = _.chain(itemInfos)
-              .groupBy('containerId')
-              .map((packets, containerId) => {
-                return {
-                  containerId: containerId,
-                  packets: packets
-                };
-              })
-              .value();
-            if (isRetainer) {
-              Object.keys(inventory)
-                .filter(key => key.startsWith(lastRetainerSpawned))
-                .forEach(key => inventory[key] = {});
-            }
-            groupedInfos.forEach(group => {
-              const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
-              inventory.items[containerKey] = {};
-              group.packets.forEach(packet => {
-                const item: InventoryItem = {
-                  itemId: +packet.catalogId,
-                  containerId: +packet.containerId,
-                  slot: +packet.slot,
-                  quantity: +packet.quantity,
-                  hq: packet.hqFlag === 1,
-                  spiritBond: +packet.spiritBond
-                };
-                if (isRetainer) {
-                  item.retainerName = lastRetainerSpawned;
-                }
-                inventory.items[containerKey][packet.slot] = item;
-              });
-            });
-            return inventory;
+      map(([itemInfos, lastRetainerSpawned, inventory]) => {
+        const updatedContainerIds = _.uniqBy(itemInfos, 'containerId').map(packet => packet.containerId);
+        const isRetainer = updatedContainerIds.some(id => id >= 10000 && id < 20000);
+        if (isRetainer && !lastRetainerSpawned) {
+          return null;
+        }
+        const groupedInfos = _.chain(itemInfos)
+          .groupBy('containerId')
+          .map((packets, containerId) => {
+            return {
+              containerId: containerId,
+              packets: packets
+            };
           })
-        );
+          .value();
+        if (isRetainer) {
+          Object.keys(inventory)
+            .filter(key => key.startsWith(lastRetainerSpawned))
+            .forEach(key => inventory[key] = {});
+        }
+        groupedInfos.forEach(group => {
+          const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
+          inventory.items[containerKey] = {};
+          group.packets.forEach(packet => {
+            const item: InventoryItem = {
+              itemId: +packet.catalogId,
+              containerId: +packet.containerId,
+              slot: +packet.slot,
+              quantity: +packet.quantity,
+              hq: packet.hqFlag === 1,
+              spiritBond: +packet.spiritBond
+            };
+            if (isRetainer) {
+              item.retainerName = lastRetainerSpawned;
+            }
+            inventory.items[containerKey][packet.slot] = item;
+          });
+        });
+        return inventory;
       }),
       filter(inventory => {
         return inventory !== null;
@@ -185,24 +180,19 @@ export class MachinaService {
         }
         return of(null);
       }),
-      withLatestFrom(this.retainerSpawns$),
-      switchMap(([packet, lastSpawnedRetainer]) => {
-        return this.inventory$.pipe(
-          first(),
-          map(inventory => {
-            try {
-              const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
-              if (patch) {
-                this._inventoryPatches$.next(patch);
-              }
-            } catch (e) {
-              console.log(packet);
-              console.error(e);
-              this.ipc.log(e.message, JSON.stringify(packet));
-            }
-            return inventory;
-          })
-        );
+      withLatestFrom(this.retainerSpawns$, this.inventory$),
+      map(([packet, lastSpawnedRetainer, inventory]) => {
+        try {
+          const patch = inventory.operateTransaction(packet, lastSpawnedRetainer);
+          if (patch) {
+            this._inventoryPatches$.next(patch);
+          }
+        } catch (e) {
+          console.log(packet);
+          console.error(e);
+          this.ipc.log(e.message, JSON.stringify(packet));
+        }
+        return inventory;
       })
     ).subscribe(inventory => {
       inventory.lastZone = Date.now();
@@ -218,20 +208,15 @@ export class MachinaService {
         return packet.catalogId < 40000;
       }),
       debounceBufferTime(500),
-      withLatestFrom(this.retainerSpawns$),
-      switchMap(([packets, lastRetainerSpawned]) => {
-        return this.inventory$.pipe(
-          first(),
-          map(inventory => {
-            packets.forEach(packet => {
-              const patch = inventory.updateInventorySlot(packet, lastRetainerSpawned);
-              if (patch) {
-                this._inventoryPatches$.next(patch);
-              }
-            });
-            return inventory;
-          })
-        );
+      withLatestFrom(this.retainerSpawns$, this.inventory$),
+      map(([packets, lastSpawnedRetainer, inventory]) => {
+        packets.forEach(packet => {
+          const patch = inventory.updateInventorySlot(packet, lastSpawnedRetainer);
+          if (patch) {
+            this._inventoryPatches$.next(patch);
+          }
+        });
+        return inventory;
       })
     ).subscribe(inventory => {
       inventory.lastZone = Date.now();
