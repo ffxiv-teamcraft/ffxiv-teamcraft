@@ -6,8 +6,8 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { uniq } from 'lodash';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
-import { combineLatest, concat, forkJoin, Observable, of, Subject } from 'rxjs';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, debounceTime } from 'rxjs/operators';
+import { combineLatest, concat, Observable, of } from 'rxjs';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, startWith } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -37,6 +37,8 @@ import { ATTTService } from '../service/attt.service';
 import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
@@ -87,9 +89,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     shareReplay(1)
   );
 
-  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
-    switchMap(([data, xivapiItem]) => {
-      let item: ListRow = {
+  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.user$.pipe(startWith(null))]).pipe(
+    switchMap(([data, xivapiItem, user]) => {
+      let item: any = {
         id: data.item.id,
         icon: data.item.icon,
         amount: 1,
@@ -98,6 +100,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         yield: 1
       };
       item = this.extractor.addDataToItem(item, data);
+      item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+      if (item.canBeGathered) {
+        item.isDoneInLog = user !== null && user.gatheringLogProgression.includes(item.id);
+      }
       return this.handleAdditionalData(item, data, xivapiItem);
     }),
     tap((item) => {
@@ -587,6 +593,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     public readonly settings: SettingsService,
     private readonly apollo: Apollo,
     private readonly itemContext: ItemContextService,
+    private readonly authFacade: AuthFacade,
     seo: SeoService
   ) {
     super(seo);
@@ -624,6 +631,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         return recipe;
       })
     );
+  }
+
+  markAsDoneInLog(id: number): void {
+    this.authFacade.markAsDoneInLog('gathering', id, true);
   }
 
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
