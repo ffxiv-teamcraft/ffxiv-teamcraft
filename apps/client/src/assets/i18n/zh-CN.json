@@ -1438,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
       "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_control": "Req. Control",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "上钩时间",
