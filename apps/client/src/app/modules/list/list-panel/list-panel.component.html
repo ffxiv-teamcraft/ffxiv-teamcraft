@@ -140,6 +140,10 @@
                   nz-menu-item>
                 {{'LIST.Unarchive' | translate}}
               </li>
+              <li (click)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1" [nzDisabled]="(permissionLevel$ | async)?.value < 30"
+                  nz-menu-item>
+                {{'LIST_DETAILS.Split_list' | translate}}
+              </li>
               <li (click)="openCommentsPopup(_list, userId === _list.authorId)" *ngIf="authFacade.userId$ | async as userId"
                   nz-menu-item>
                 {{'COMMENTS.Title' | translate}}
