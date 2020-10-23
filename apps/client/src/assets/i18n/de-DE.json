@@ -647,6 +647,7 @@
     "X_needed": "{{amount}} benötigt",
     "Leave_list": "Diese Liste verlassen",
     "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -689,6 +690,10 @@
       "Open": "Listen-Overlay umschalten",
       "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {

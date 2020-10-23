@@ -647,6 +647,7 @@
     "X_needed": "{{amount}} требуется",
     "Leave_list": "Покинуть этот список",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -689,6 +690,10 @@
       "Open": "Открыть оверлей списка",
       "No_display": "Открыть список в главном окне для начала",
       "No_panel_selected": "Выберите панель, используя кнопки выше"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {

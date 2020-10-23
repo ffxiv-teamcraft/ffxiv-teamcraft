@@ -647,6 +647,7 @@
     "X_needed": "需要 {{amount}} 个",
     "Leave_list": "离开此清单",
     "Cannot_leave": "无法离开此清单，因为此清单是分享给您的部队或某个团队的。请联系创建者移除清单或退出相应的团队。",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -689,6 +690,10 @@
       "Open": "显示/隐藏清单悬浮窗",
       "No_display": "请在主窗口中打开一个清单",
       "No_panel_selected": "使用上面的按钮选择一个面板"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
