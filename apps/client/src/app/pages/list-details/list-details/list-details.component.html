@@ -90,6 +90,16 @@
             {{'Public_list' | translate}}
           </label>
           <div fxLayout="row" fxLayoutGap="5px">
+            <button (click)="openSplitPopup(list)"
+                    *ngIf="list.finalItems.length > 1"
+                    [disabled]="(permissionLevel$ | async) < 30"
+                    [nzTooltipTitle]="'LIST_DETAILS.Split_list' | translate"
+                    nz-button
+                    nz-tooltip
+                    nzShape="circle"
+                    nzType="default">
+              <i nz-icon nzType="split-cells" nzTheme="outline"></i>
+            </button>
             <button (click)="openContributionsPopup()"
                     *ngIf="showContributionsButton$ | async"
                     [disabled]="(permissionLevel$ | async) < 20"
@@ -115,8 +125,7 @@
             </button>
             <button (click)="openInventorySynthesisPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
                     *ngIf="platform.isDesktop()"
-                    nz-button nz-tooltip nzShape="circle"
-                    nzType="primary">
+                    nz-button nz-tooltip nzShape="circle">
               <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
             </button>
             <button (click)="openInventoryPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_breakdown' | translate"

@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, Type, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { ListsFacade } from '../../+state/lists.facade';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
@@ -10,7 +10,7 @@ import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorr
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
-import { exhaustMap, filter, first, map, mergeMap, shareReplay, startWith, switchMap, switchMapTo, takeUntil, tap, withLatestFrom } from 'rxjs/operators';
+import { exhaustMap, filter, first, map, shareReplay, startWith, switchMap, switchMapTo, takeUntil, withLatestFrom } from 'rxjs/operators';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../../core/database/user.service';
@@ -31,7 +31,6 @@ import { CommentsService } from '../../../comments/comments.service';
 import { ListLayout } from '../../../../core/layout/list-layout';
 import { CustomItem } from '../../../custom-items/model/custom-item';
 import { ListPickerService } from '../../../list-picker/list-picker.service';
-import { ProgressPopupService } from '../../../progress-popup/progress-popup.service';
 import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
 import * as _ from 'lodash';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
@@ -45,7 +44,6 @@ import { MarketboardPopupComponent } from '../../../marketboard/marketboard-popu
 import { InventoryFacade } from '../../../inventory/+state/inventory.facade';
 import { DataType } from '../../data/data-type';
 import { RelationshipsComponent } from '../../../item-details/relationships/relationships.component';
-import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
@@ -57,7 +55,7 @@ import { LazyDataService } from '../../../../core/data/lazy-data.service';
 })
 export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
-  private buttonsCache = {};
+  buttonsCache = {};
 
   private _item$: BehaviorSubject<ListRow> = new BehaviorSubject<ListRow>(null);
 
@@ -74,7 +72,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     shareReplay(1)
   );
 
-  private finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  finalItem$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   @Input()
   set item(item: ListRow) {
@@ -146,7 +144,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
 
   newTag: string;
 
-  private list$: Observable<List> = this.listsFacade.selectedList$;
+  list$: Observable<List> = this.listsFacade.selectedList$;
 
   @ViewChild('inputElement') inputElement: ElementRef;
 
@@ -253,7 +251,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
               private rotationPicker: RotationPickerService,
               private commentsService: CommentsService,
               private listPicker: ListPickerService,
-              private progressService: ProgressPopupService,
               private notificationService: NzNotificationService,
               public consumablesService: ConsumablesService,
               public freeCompanyActionsService: FreeCompanyActionsService,
@@ -555,36 +552,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   addToList(item: ListRow): void {
-    this.listPicker.pickList().pipe(
-      mergeMap(list => {
-        const operation = this.listManager.addToList({
-          itemId: item.id,
-          list: list,
-          recipeId: item.recipeId ? item.recipeId : '',
-          amount: item.amount
-        });
-        return this.progressService.showProgress(operation,
-          1,
-          'Adding_recipes',
-          { amount: 1, listname: list.name });
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progressService.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
-      })
-    ).subscribe((list) => {
-      this.notificationService.success(
-        this.translate.instant('Success'),
-        this.translate.instant('Recipe_Added', { listname: list.name })
-      );
-    });
+    this.listPicker.addToList(item);
   }
 
 
@@ -632,18 +600,6 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
       nzComponentParams: {
         item: item,
         finalItem: this.finalItem
-      },
-      nzFooter: null
-    });
-  }
-
-  private openDetailsPopup(component: Type<ItemDetailsPopup>, item: ListRow, dataType: DataType): void {
-    this.modal.create({
-      nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
-      nzContent: component,
-      nzComponentParams: {
-        item: item,
-        details: getItemSource(item, dataType)
       },
       nzFooter: null
     });

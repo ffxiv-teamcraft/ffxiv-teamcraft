@@ -41,6 +41,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { DataType } from '../../../modules/list/data/data-type';
+import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -352,6 +353,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openSplitPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
+      nzFooter: null,
+      nzContent: ListSplitPopupComponent,
       nzComponentParams: { list: list }
     });
   }
