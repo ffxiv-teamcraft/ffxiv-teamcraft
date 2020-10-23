@@ -1438,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
-      "Required_control": "Contrôle requis"
+      "Required_control": "Contrôle requis",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "Heure du jour",
