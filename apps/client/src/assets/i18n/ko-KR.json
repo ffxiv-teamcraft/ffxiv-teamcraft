@@ -1438,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
-      "Required_control": "필요 가공 숙련도"
+      "Required_control": "필요 가공 숙련도",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "시간 통계",
