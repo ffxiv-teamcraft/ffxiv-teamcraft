@@ -1715,7 +1715,8 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템",
     "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
     "Shown_only_collectables": "소장품만 표시하기",
-    "Recipe_level": "제작법 레벨"
+    "Recipe_level": "제작법 레벨",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
