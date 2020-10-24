@@ -1729,7 +1729,7 @@
   "FOOD_PICKER": {
     "Title": "Food Picker",
     "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
-    "Pick_stat": "Choose an attribute"
+    "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
     "Title": "Blog"
@@ -1803,7 +1803,7 @@
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
-      "Current_Gear": "Current gear",
+      "Current_Gear": "Aktuelle Ausrüstung",
       "RetainerMarket": "Im Verkauf bei Gehilfen"
     }
   },
@@ -1892,14 +1892,14 @@
     "Import_from_ariyala": "Aus Ariyala importieren",
     "Import_from_lodestone": "Aus dem Lodestone importieren",
     "Import_using_pcap": "Durch Paketerfassung importieren",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "Synchronisiere Ausrüstungsset mit Paketaufzeichnung",
     "Your_gearsets": "Deine Ausrüstungssets",
     "Delete_gearset": "Ausrüstungsset löschen",
     "Import_from_pcap_notice": "Wechsel zum gewünschten Ausrüstungsset mit dem entsprechenden Job, um es zu importieren.",
     "No_food_selected": "Kein Essen ausgewählt",
     "Generate_list": "Liste erstellen",
     "Clone_gearset": "Kopiere dies zu deinem Account",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "Erstelle eine Kopie dieses Ausrüstungssets",
     "You_have_no_gearsets": "Du hast keine Ausrüstungssets",
     "Favorite_gearsets": "Favorisierte Ausrüstungssets",
     "Update_from_pcap": "Durch Paketerfassung aktualisieren",
@@ -1914,8 +1914,8 @@
     "Stats_caps": "Attributlimits",
     "Stat_computing_diclaimer": "Ergebnisse sind nicht 100% genau, da sie von Spielern wie dir und mir sind, die viel Zeit damit verbringen, die Formeln zu bestimmen. Bitte melde Ungenauigkeiten nicht als Fehler.",
     "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
-    "Copied_as_string": "Gearset copied as string",
-    "Mark_as_done": "Mark as done",
+    "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
+    "Mark_as_done": "Als erledigt markieren",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -1958,12 +1958,12 @@
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "Synchronisiere Ausrüstungssets",
       "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "Synchronisiere Ausrüstungssets..."
     }
   },
   "FOLDERS": {
@@ -2179,16 +2179,16 @@
     "No_collectables_for_this_level": "Keine Sammlerstücke verfügbar"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
+    "Title": "Herstellungswiederholung",
+    "Online_replays": "Online Wiederholungen",
+    "Offline_replays": "Offline Wiederholungen",
+    "Open_replay_page": "Öffne Wiederholungsseite",
+    "Open_result_modal": "Ergebnis-Popup öffnen",
+    "Copy_to_clipboard": "Link zum Teilen in die Zwischenablage kopieren",
+    "Delete": "Wiederholung löschen",
+    "No_online_replays": "Keine Online-Replays",
+    "No_offline_replays": "Keine Offline-Wiederholungen",
+    "Cannot_record": "Wiederholungen können nicht aufgezeichnet werden",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "Neues Verzeichnis",
     "Save_replay": "Save replay in database"
