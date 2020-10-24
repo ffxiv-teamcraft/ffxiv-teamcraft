@@ -647,6 +647,7 @@
     "X_needed": "{{amount}}개 필요",
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -689,6 +690,10 @@
       "Open": "목록 오버레이 켜기/끄기",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -1433,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
-      "Required_control": "필요 가공 숙련도"
+      "Required_control": "필요 가공 숙련도",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -1709,7 +1715,8 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템",
     "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
     "Shown_only_collectables": "소장품만 표시하기",
-    "Recipe_level": "제작법 레벨"
+    "Recipe_level": "제작법 레벨",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",

@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.1"></a>
+## [7.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.0...v7.5.1) (2020-10-24)
+
+
+### Bug Fixes
+
+* **alarms:** going further in the future looking for weather spawns now ([ea03e6a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea03e6a))
+* **autofill:** better integrity check on list autofill update ([6f252ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6f252ed))
+* **desktop:** fixed an error with auto log filling as you craft ([57edd21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/57edd21))
+* **inventory:** big performance improvement for inventory capture & autofill ([3358650](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3358650))
+* **layout:** maximum vendor price now applies to every vendor-related filters ([c6521e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c6521e6))
+
+
+### Features
+
+* **db:** you can now mark gatherable items as done in log from their db page ([a875e21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a875e21))
+* **list:** added link to the fishing spot db page on fish details popup ([822552e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/822552e))
+* **list:** you can now split a list in smaller lists ([216c5f1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/216c5f1))
+* **recipe-finder:** new filter to consider only recipes you never crafted ([6cc066d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6cc066d))
+
+
+
 <a name="7.5.0"></a>
 # [7.5.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.4.6...v7.5.0) (2020-10-21)
 

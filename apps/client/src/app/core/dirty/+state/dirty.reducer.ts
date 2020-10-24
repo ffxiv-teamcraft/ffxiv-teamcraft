@@ -21,6 +21,9 @@ export function dirtyReducer(
 ): DirtyState {
   switch (action.type) {
     case DirtyActionTypes.AddDirty: {
+      if (state.entries.some(entry => entry.id === action.payload.id && entry.scope === action.payload.scope)) {
+        return state;
+      }
       state = {
         ...state,
         entries: [

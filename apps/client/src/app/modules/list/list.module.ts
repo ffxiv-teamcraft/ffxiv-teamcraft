@@ -58,6 +58,7 @@ import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -129,7 +130,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemSourcesDisplayComponent,
     AlarmButtonComponent,
     ItemRowButtonsComponent,
-    ListProgressbarComponent
+    ListProgressbarComponent,
+    ListSplitPopupComponent
   ],
   exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
 })

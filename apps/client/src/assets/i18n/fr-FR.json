@@ -430,8 +430,8 @@
     "Enable_metrics_capture_explain": "(permet de capturer des données analytiques sur vos revenus de gils et d'objets, jamais téléchargées sur le serveur, ce n'est que pour vous)",
     "Metrics_capture_tooltip": "Cette fonctionnalité sera ajoutée dans une prochaine mise à jour, mais l'activation de la capture de données signifie qu'une fois qu'elle sera là, vous aurez des données à partir de cet instant au lieu de lorsqu'elle sera rajoutée à l'application.",
     "Metrics_capture_folder": "Dossier de log des métriques",
-    "Maximum_vendor_price": "Maximum vendor price",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price": "Prix maximum d'achat",
+    "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -484,8 +484,8 @@
     "Fishing_rankings": "Classement de Pêche",
     "Total_rankings": "Meilleurs classements",
     "Loading_fish_rankings": "Chargement des classements de pêche",
-    "Gearset_priority": "Priority",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
+    "Gearset_priority": "Priorité",
+    "Gearset_priority_explain": "Utilisé pour décider quelle recette choisir pour les objets qui peuvent être fabriqués par plusieurs jobs tels que les lingots, les pépites et d'autres matériaux de réparation d'aéronefs.",
     "VERIFICATION": {
       "Title": "Vérification de personnage",
       "Guide": "Pour vérifier votre compte, collez ce code: \"{{userId}}\" dans votre biographie de profil Lodestone et cliquez sur le bouton ci-dessous. Plus d'informations sur <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">le wiki</a>",
@@ -647,6 +647,7 @@
     "X_needed": "{{amount}} requis",
     "Leave_list": "Quitter cette liste",
     "Cannot_leave": "Vous ne pouvez pas quitter cette liste car elle est partagée à l'ensemble de votre CL (dans ce cas, vous devez demander au propriétaire de la supprimer) ou à l'une de vos équipes (dans ce cas, vous pouvez quitter l'équipe).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -689,6 +690,10 @@
       "Open": "Ouvrir/fermer l'overlay de liste",
       "No_display": "Ouvrir une liste dans la fenêtre principale pour commencer",
       "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -854,7 +859,7 @@
     "Include_consumables_notification": "Inclure une notification pour les consommables",
     "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
-    "Completion_message": "Completion message",
+    "Completion_message": "Message de fin",
     "Import_macro": "Importer une macro du jeu",
     "Ingame_macro": "Macro",
     "Min_stats": "Caractéristiques minimum",
@@ -1433,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
-      "Required_control": "Contrôle requis"
+      "Required_control": "Contrôle requis",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -1709,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} sur {{ total }} éléments",
     "Shown_only_craftable": "Uniquement avec niveau requis respecté",
     "Shown_only_collectables": "Collectionnables uniquement",
-    "Recipe_level": "Niveau de la recette"
+    "Recipe_level": "Niveau de la recette",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",

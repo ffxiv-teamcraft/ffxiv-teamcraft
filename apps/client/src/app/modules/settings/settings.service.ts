@@ -60,6 +60,14 @@ export class SettingsService {
     this.setSetting('recipe-finder:only-craftable', show.toString());
   }
 
+  public get showOnlyNotCompletedInRecipeFinder(): boolean {
+    return this.getSetting('recipe-finder:only-not-completed', 'false') === 'true';
+  }
+
+  public set showOnlyNotCompletedInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:only-not-completed', show.toString());
+  }
+
   public get showOnlyCollectablesInRecipeFinder(): boolean {
     return this.getSetting('recipe-finder:only-collectables', 'false') === 'true';
   }

@@ -29,6 +29,7 @@ import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { SettingsService } from '../../settings/settings.service';
 import { ListColor } from '../model/list-color';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { ListSplitPopupComponent } from '../list-split-popup/list-split-popup.component';
 
 @Component({
   selector: 'app-list-panel',
@@ -274,6 +275,15 @@ export class ListPanelComponent extends TeamcraftComponent {
   archiveList(list: List, archived: boolean): void {
     list.archived = archived;
     this.listsFacade.pureUpdateList(list.$key, { archived: archived });
+  }
+
+  openSplitPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
+      nzFooter: null,
+      nzContent: ListSplitPopupComponent,
+      nzComponentParams: { list: list }
+    });
   }
 
   renameList(_list: List): void {

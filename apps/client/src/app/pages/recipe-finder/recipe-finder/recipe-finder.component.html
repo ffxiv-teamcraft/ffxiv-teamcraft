@@ -84,6 +84,10 @@
              (ngModelChange)="onlyCraftable$.next($event)">{{'RECIPE_FINDER.Shown_only_craftable' | translate}}</label>
     </div>
     <div>
+      <label nz-checkbox [ngModel]="onlyNotCompleted$ | async"
+             (ngModelChange)="onlyNotCompleted$.next($event)">{{'RECIPE_FINDER.Shown_only_not_completed' | translate}}</label>
+    </div>
+    <div>
       <label nz-checkbox [ngModel]="onlyCollectables$ | async"
              (ngModelChange)="onlyCollectables$.next($event)">{{'RECIPE_FINDER.Shown_only_collectables' | translate}}</label>
     </div>
