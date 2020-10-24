@@ -16,20 +16,17 @@ export class ListCrystalsPanelComponent {
   @Input()
   crystals: ListRow[] = [];
 
-  constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService, private message: NzMessageService, private translate: TranslateService) {};
+  constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService, private message: NzMessageService, private translate: TranslateService) {
+  };
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;
   }
 
-  public getTextExport(): string {
+  public getTextExport = () => {
     let exportString = `${this.translate.instant('Crystals')}\n`;
     Object.keys(this.crystals).forEach(crystal => exportString += `${this.crystals[crystal].amount}x ${this.i18nTools.getName(this.l12n.getItem(this.crystals[crystal].id))}\n`);
     return exportString;
-  }
-
-  textCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
-  }
+  };
 
 }

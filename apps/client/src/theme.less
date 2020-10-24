@@ -16,6 +16,10 @@
   --error-color: #f5222d;
 }
 
+html {
+  --antd-wave-shadow-color: var(--primary-color) !important;
+}
+
 // Themes connections
 ::selection {
   background: var(--primary-color) !important;
@@ -41,6 +45,10 @@
 .ant-slider, .ant-slider:hover {
   .ant-slider-handle {
     border: solid 2px var(--primary-color) !important;
+
+    &:focus {
+      border-color: var(--primary-color) !important;
+    }
   }
 
   .ant-slider-track {

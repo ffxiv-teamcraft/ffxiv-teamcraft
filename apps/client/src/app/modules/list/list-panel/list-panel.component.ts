@@ -29,6 +29,7 @@ import { LayoutOrderService } from '../../../core/layout/layout-order.service';
 import { SettingsService } from '../../settings/settings.service';
 import { ListColor } from '../model/list-color';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
+import { ListSplitPopupComponent } from '../list-split-popup/list-split-popup.component';
 
 @Component({
   selector: 'app-list-panel',
@@ -101,7 +102,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     })
   );
 
-  permissionLevel$: Observable<{value: PermissionLevel}> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
+  permissionLevel$: Observable<{ value: PermissionLevel }> = combineLatest([this.teamsFacade.myTeams$, this.authFacade.loggedIn$]).pipe(
     switchMap(([teams, loggedIn]) => {
       return combineLatest([
         this.authFacade.userId$,
@@ -139,7 +140,7 @@ export class ListPanelComponent extends TeamcraftComponent {
     map(level => {
       return {
         value: level
-      }
+      };
     })
   );
 
@@ -161,9 +162,9 @@ export class ListPanelComponent extends TeamcraftComponent {
     this.listsFacade.deleteList(list.$key, list.offline);
   }
 
-  getLink(): string {
+  getLink = () => {
     return this.syncLinkUrl ? this.syncLinkUrl : this.linkTools.getLink(`/list/${this._list.$key}`);
-  }
+  };
 
   openList(favorite: boolean): void {
     if (!this.publicDisplay || favorite) {
@@ -219,7 +220,12 @@ export class ListPanelComponent extends TeamcraftComponent {
             map(details => details.find(l => l.$key === this._list.$key)),
             filter(l => l !== undefined),
             first(),
-            switchMap(listDetails => this.listManager.addToList(item.id, listDetails, item.recipeId, newAmount - item.amount))
+            switchMap(listDetails => this.listManager.addToList({
+              itemId: item.id,
+              list: listDetails,
+              recipeId: item.recipeId,
+              amount: newAmount - item.amount
+            }))
           );
         }))
         .subscribe(list => {
@@ -269,6 +275,15 @@ export class ListPanelComponent extends TeamcraftComponent {
   archiveList(list: List, archived: boolean): void {
     list.archived = archived;
     this.listsFacade.pureUpdateList(list.$key, { archived: archived });
+  }
+
+  openSplitPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
+      nzFooter: null,
+      nzContent: ListSplitPopupComponent,
+      nzComponentParams: { list: list }
+    });
   }
 
   renameList(_list: List): void {
@@ -342,14 +357,6 @@ export class ListPanelComponent extends TeamcraftComponent {
     });
   }
 
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('Share_link_copied'));
-  }
-
-  afterTemplateUrlCopy(): void {
-    this.message.success(this.translate.instant('LIST_TEMPLATE.Share_link_copied'));
-  }
-
   openTagsPopup(list: List): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
@@ -361,10 +368,6 @@ export class ListPanelComponent extends TeamcraftComponent {
 
   createCustomLink(list: List, user: TeamcraftUser): void {
     this.customLinksFacade.createCustomLink(list.name, `list/${list.$key}`, user);
-  }
-
-  afterCustomLinkCopy(): void {
-    this.message.success(this.translate.instant('CUSTOM_LINKS.Share_link_copied'));
   }
 
   createTemplate(list: List, user: TeamcraftUser): void {

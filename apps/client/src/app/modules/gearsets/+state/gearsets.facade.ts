@@ -11,13 +11,16 @@ import {
   ImportFromPcap,
   ImportLodestoneGearset,
   LoadGearset,
+  LoadGearsetProgression,
   LoadGearsets,
   PureUpdateGearset,
+  SaveGearsetProgression,
   SelectGearset,
+  SyncFromPcap,
   UpdateGearset,
   UpdateGearsetIndexes
 } from './gearsets.actions';
-import { catchError, filter, first, map, switchMap } from 'rxjs/operators';
+import { catchError, filter, map, switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { combineLatest, Observable, of } from 'rxjs';
@@ -31,6 +34,7 @@ import { HttpClient } from '@angular/common/http';
 import { AriyalaMateria } from '../../../pages/lists/list-import-popup/link-parser/aryiala-materia';
 import { XivapiService } from '@xivapi/angular-client';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +47,11 @@ export class GearsetsFacade {
   selectedGearset$ = this.store.pipe(
     select(gearsetsQuery.getSelectedGearset),
     filter(gearset => gearset !== undefined)
+  );
+
+  selectedGearsetProgression$ = this.store.pipe(
+    select(gearsetsQuery.getSelectedGearsetProgression),
+    filter(progression => progression !== undefined)
   );
 
   myGearsets$ = this.allGearsets$.pipe(
@@ -81,22 +90,22 @@ export class GearsetsFacade {
               private xivapi: XivapiService) {
   }
 
-  toArray(gearset: TeamcraftGearset): EquipmentPiece[] {
+  toArray(gearset: TeamcraftGearset): { piece: EquipmentPiece, slot: string }[] {
     return [
-      gearset.mainHand,
-      gearset.offHand,
-      gearset.head,
-      gearset.chest,
-      gearset.gloves,
-      gearset.belt,
-      gearset.legs,
-      gearset.feet,
-      gearset.necklace,
-      gearset.earRings,
-      gearset.bracelet,
-      gearset.ring1,
-      gearset.ring2
-    ].filter(p => p);
+      { piece: gearset.mainHand, slot: 'mainHand' },
+      { piece: gearset.offHand, slot: 'offHand' },
+      { piece: gearset.head, slot: 'head' },
+      { piece: gearset.chest, slot: 'chest' },
+      { piece: gearset.gloves, slot: 'gloves' },
+      { piece: gearset.belt, slot: 'belt' },
+      { piece: gearset.legs, slot: 'legs' },
+      { piece: gearset.feet, slot: 'feet' },
+      { piece: gearset.necklace, slot: 'necklace' },
+      { piece: gearset.earRings, slot: 'earRings' },
+      { piece: gearset.bracelet, slot: 'bracelet' },
+      { piece: gearset.ring1, slot: 'ring1' },
+      { piece: gearset.ring2, slot: 'ring2' }
+    ].filter(p => !!p.piece);
   }
 
   loadAll(): void {
@@ -131,8 +140,8 @@ export class GearsetsFacade {
     this.store.dispatch(new SelectGearset(key));
   }
 
-  createGearset(gearset?: TeamcraftGearset): void {
-    this.store.dispatch(new CreateGearset(gearset));
+  createGearset(gearset?: TeamcraftGearset, preventNavigation = false): void {
+    this.store.dispatch(new CreateGearset(gearset, preventNavigation));
   }
 
   importAriyalaGearset(): void {
@@ -143,12 +152,24 @@ export class GearsetsFacade {
     this.store.dispatch(new ImportFromPcap());
   }
 
+  syncFromPcap(): void {
+    this.store.dispatch(new SyncFromPcap());
+  }
+
   importLodestoneGearset(): void {
     this.store.dispatch(new ImportLodestoneGearset());
   }
 
   saveIndexes(sets: TeamcraftGearset[]): void {
     this.store.dispatch(new UpdateGearsetIndexes(sets));
+  }
+
+  loadProgression(gearsetKey: string): void {
+    this.store.dispatch(new LoadGearsetProgression(gearsetKey));
+  }
+
+  saveProgression(gearsetKey: string, progression: GearsetProgression): void {
+    this.store.dispatch(new SaveGearsetProgression(gearsetKey, progression));
   }
 
 
@@ -296,5 +317,24 @@ export class GearsetsFacade {
         return gearset;
       })
     );
+  }
+
+  public getPropertyName(slot: number): string {
+    return [
+      'mainHand',
+      'offHand',
+      'head',
+      'chest',
+      'gloves',
+      'belt',
+      'legs',
+      'feet',
+      'earRings',
+      'necklace',
+      'bracelet',
+      'ring2',
+      'ring1',
+      'crystal'
+    ][slot];
   }
 }

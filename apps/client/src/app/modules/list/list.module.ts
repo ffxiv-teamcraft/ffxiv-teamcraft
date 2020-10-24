@@ -27,7 +27,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { NameQuestionPopupModule } from '../name-question-popup/name-question-popup.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
 import { BellNodesService } from '../../core/data/bell-nodes.service';
 import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
@@ -58,6 +58,7 @@ import { AlarmButtonComponent } from './item/alarm-button/alarm-button.component
 import { ItemRowButtonsComponent } from './item/item-row-buttons/item-row-buttons.component';
 import { ListProgressbarComponent } from './list-progressbar/list-progressbar.component';
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.component';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -104,7 +105,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemIconModule,
     LayoutModule,
 
-    ClipboardModule,
+
     NgZorroAntdModule,
     FlexLayoutModule,
     MarketboardModule,
@@ -129,7 +130,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     ItemSourcesDisplayComponent,
     AlarmButtonComponent,
     ItemRowButtonsComponent,
-    ListProgressbarComponent
+    ListProgressbarComponent,
+    ListSplitPopupComponent
   ],
   exports: [ListPanelComponent, ListDetailsPanelComponent, ItemSourcesDisplayComponent, AlarmButtonComponent]
 })

@@ -117,7 +117,7 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Nach Markierungen filtern",
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
-    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_placeholder": "Benutze Tags ausschließen",
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
     "Name_filter_placeholder": "Nach Name filtern",
     "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
@@ -177,6 +177,7 @@
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
+    "Delete_group": "Gruppe löschen",
     "Delete_group_and_alarms": "Gruppe mit allen Alarmen löschen",
     "Confirm_group_delete_with_alarms": "Möchtest du diese Gruppe und alle Alarme darin wirklich löschen?",
     "Add_note": "Notiz hinzufügen",
@@ -429,6 +430,8 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
+    "Maximum_vendor_price": "Maximaler Händlerpreis",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -481,6 +484,8 @@
     "Fishing_rankings": "Fischer-Ranglisten",
     "Total_rankings": "Gesamtrangliste",
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
+    "Gearset_priority": "Priorität",
+    "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -642,6 +647,7 @@
     "X_needed": "{{amount}} benötigt",
     "Leave_list": "Diese Liste verlassen",
     "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
+    "Split_list": "Diese Liste aufteilen",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -684,6 +690,10 @@
       "Open": "Listen-Overlay umschalten",
       "No_display": "Öffne eine Liste im Hauptfenster, um zu beginnen",
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
+    },
+    "SPLIT": {
+      "Pick_items": "Elemente auswählen um sie einer anderen Liste hinzuzufügen",
+      "Remove_from_list": "Von aktueller Liste entfernen"
     }
   },
   "LIST_TAGS": {
@@ -849,6 +859,7 @@
     "Include_consumables_notification": "Benachrichtigung für Verzehrbares hinzufügen",
     "Consumable_notification": "Verwende{{buffs}}",
     "Extra_wait": "Extra Wartezeit",
+    "Completion_message": "Completion message",
     "Import_macro": "Von Spiel-Makro importieren",
     "Ingame_macro": "Spiel-Makro",
     "Min_stats": "Minimale Attribute",
@@ -912,6 +923,8 @@
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
+    "Compact": "Kompakt",
+    "Detailed": "Detailliert",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -940,8 +953,8 @@
       "Min_craftsmanship_filter_placeholder": "Minimum-Kunstfertigkeit",
       "Min_control_filter_placeholder": "Minimum-Kontrolle",
       "Min_cp_filter_placeholder": "Minimum-HP",
-      "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Difficulty_filter_placeholder": "Schwierigkeit",
+      "Quality_filter_placeholder": "Qualität",
       "Intro": "Filter eingeben, um zu beginnen",
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
@@ -1067,7 +1080,8 @@
     "Craft_price": "Preis zur Herstellung",
     "Marketboard_price": "NQ Preis",
     "Marketboard_price_hq": "HQ Preis",
-    "Enter_total_earnings": "Gesamteinnahmen eingeben"
+    "Enter_total_earnings": "Gesamteinnahmen eingeben",
+    "Ignore_completed_items": "Abgeschlossene Elemente ausschließen"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -1423,8 +1437,9 @@
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_craftsmanship": "benötigte Kunstfertigkeit",
+      "Required_control": "benötigte Kontrolle",
+      "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -1667,7 +1682,8 @@
     "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
     "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
-    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen"
+    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen",
+    "Open_in_desktop_shortcut": "Drücke Strg + Shift + C, um die aktuelle Seite in der Desktop-App zu öffnen oder um das \"Webadressen öffnen\" Modul in der Desktop-App zu öffnen."
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -1699,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} von {{ total }} Gegenständen",
     "Shown_only_craftable": "Nur wo ich das Level für habe",
     "Shown_only_collectables": "Nur Sammlerstücke",
-    "Recipe_level": "Rezeptstufe"
+    "Recipe_level": "Rezeptstufe",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Währungsumrechner",
@@ -1708,6 +1725,11 @@
     "You_can_buy": "Du kannst {{amount}} kaufen",
     "Disabled": "Der Währungsumrechner funktioniert nicht länger",
     "Disabled_description": "Dies liegt daran, dass Square Enix uns daran hindert, Marktbrett-Informationen abzurufen. Wenn du dich darüber beschweren möchtest, wende dich bitte an Square Enix."
+  },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Attribut auswählen"
   },
   "BLOG": {
     "Title": "Blog"
@@ -1781,6 +1803,7 @@
       "Bag": "Inventar",
       "Other": "Sonstige Vorräte",
       "Armory": "Arsenal",
+      "Current_Gear": "Aktuelle Ausrüstung",
       "RetainerMarket": "Im Verkauf bei Gehilfen"
     }
   },
@@ -1869,12 +1892,14 @@
     "Import_from_ariyala": "Aus Ariyala importieren",
     "Import_from_lodestone": "Aus dem Lodestone importieren",
     "Import_using_pcap": "Durch Paketerfassung importieren",
+    "Sync_with_pcap": "Synchronisiere Ausrüstungsset mit Paketaufzeichnung",
     "Your_gearsets": "Deine Ausrüstungssets",
     "Delete_gearset": "Ausrüstungsset löschen",
     "Import_from_pcap_notice": "Wechsel zum gewünschten Ausrüstungsset mit dem entsprechenden Job, um es zu importieren.",
     "No_food_selected": "Kein Essen ausgewählt",
     "Generate_list": "Liste erstellen",
     "Clone_gearset": "Kopiere dies zu deinem Account",
+    "Clone_gearset_from_sync": "Erstelle eine Kopie dieses Ausrüstungssets",
     "You_have_no_gearsets": "Du hast keine Ausrüstungssets",
     "Favorite_gearsets": "Favorisierte Ausrüstungssets",
     "Update_from_pcap": "Durch Paketerfassung aktualisieren",
@@ -1889,6 +1914,8 @@
     "Stats_caps": "Attributlimits",
     "Stat_computing_diclaimer": "Ergebnisse sind nicht 100% genau, da sie von Spielern wie dir und mir sind, die viel Zeit damit verbringen, die Formeln zu bestimmen. Bitte melde Ungenauigkeiten nicht als Fehler.",
     "Missing_items": "Scheinbar sind ein paar Plätze leer. Stell sicher, dass die Filter korrekt eingestellt sind.",
+    "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
+    "Mark_as_done": "Als erledigt markieren",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -1929,6 +1956,14 @@
       "Critical_hit_multiplier": "Multiplikator für Kritische Treffer",
       "Determination_bonus": "Bonus durch Entschlossenheit",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronisiere Ausrüstungssets",
+      "Tag": "Synchronisieren",
+      "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronisiere Ausrüstungssets..."
     }
   },
   "FOLDERS": {
@@ -2144,18 +2179,18 @@
     "No_collectables_for_this_level": "Keine Sammlerstücke verfügbar"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
+    "Title": "Herstellungswiederholung",
+    "Online_replays": "Online Wiederholungen",
+    "Offline_replays": "Offline Wiederholungen",
+    "Open_replay_page": "Öffne Wiederholungsseite",
+    "Open_result_modal": "Ergebnis-Popup öffnen",
+    "Copy_to_clipboard": "Link zum Teilen in die Zwischenablage kopieren",
+    "Delete": "Wiederholung löschen",
+    "No_online_replays": "Keine Online-Replays",
+    "No_offline_replays": "Keine Offline-Wiederholungen",
+    "Cannot_record": "Wiederholungen können nicht aufgezeichnet werden",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
-    "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Create_folder": "Neues Verzeichnis",
+    "Save_replay": "Wiederholung in Datenbank speichern"
   }
 }

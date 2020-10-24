@@ -142,6 +142,14 @@ export class LazyDataService {
     );
   }
 
+  public getItemLeveIds(itemId: number): number[] {
+    return Object.entries<any>(this.data.leves)
+      .filter(([, leve]) => {
+        return leve.items.some(i => i.itemId === itemId);
+      })
+      .map(([id]) => +id);
+  }
+
   public getRecipe(id: string): Observable<Craft> {
     return combineLatest([this.settings.regionChange$.pipe(startWith({ next: this.settings.region, previous: null })), this.data$]).pipe(
       map(([change, data]) => {

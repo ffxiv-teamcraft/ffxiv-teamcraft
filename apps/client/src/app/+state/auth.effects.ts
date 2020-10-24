@@ -31,6 +31,7 @@ import { AuthFacade } from './auth.facade';
 import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
 import { LogTrackingService } from '../core/database/log-tracking.service';
+import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 
 @Injectable()
 export class AuthEffects {
@@ -200,10 +201,17 @@ export class AuthEffects {
   @Effect({ dispatch: false })
   markAsDoneInLog$ = this.actions$.pipe(
     ofType<MarkAsDoneInLog>(AuthActionTypes.MarkAsDoneInLog),
+    debounceBufferTime(2000),
     withLatestFrom(this.authFacade.user$),
-    filter(([action, user]) => user.defaultLodestoneId !== undefined && action.itemId !== undefined),
-    switchMap(([action, user]) => {
-      return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, action.itemId, action.log, action.done);
+    filter(([, user]) => user.defaultLodestoneId !== undefined),
+    switchMap(([actions, user]) => {
+      return this.logTrackingService.markAsDone(`${user.$key}:${user.defaultLodestoneId.toString()}`, actions.map(action => {
+        return {
+          itemId: action.itemId,
+          log: action.log,
+          done: action.done
+        };
+      }));
     })
   );
 

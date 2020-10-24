@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Observable } from 'rxjs/Observable';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
@@ -9,6 +9,7 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapComponent } from '../../map/map/map.component';
 import { SettingsService } from '../../settings/settings.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-alarms-sidebar',
@@ -17,7 +18,9 @@ import { SettingsService } from '../../settings/settings.service';
 })
 export class AlarmsSidebarComponent implements OnInit {
 
-  public alarms$: Observable<AlarmDisplay[]>;
+  public alarms$: Observable<AlarmDisplay[]> = this.alarmsFacade.alarmsSidebarDisplay$.pipe(
+    tap(() => this.cd.detectChanges())
+  );
 
   public loaded$ = this.alarmsFacade.loaded$;
 
@@ -26,7 +29,8 @@ export class AlarmsSidebarComponent implements OnInit {
 
   constructor(private alarmBell: AlarmBellService, private alarmsFacade: AlarmsFacade,
               private dialog: NzModalService, private l12n: LocalizedDataService,
-              private i18n: I18nToolsService, public settings: SettingsService) {
+              private i18n: I18nToolsService, public settings: SettingsService,
+              private cd: ChangeDetectorRef) {
   }
 
   trackByAlarm(index: number, display: AlarmDisplay): string {
@@ -50,7 +54,6 @@ export class AlarmsSidebarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.alarms$ = this.alarmsFacade.alarmsSidebarDisplay$;
     this.alarmsFacade.loadAlarms();
   }
 

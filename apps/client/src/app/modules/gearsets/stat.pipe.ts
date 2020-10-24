@@ -31,7 +31,7 @@ export class StatPipe implements PipeTransform {
 
   @Memoized()
   private getStatValue(itemId: number, baseParamId: number, hq: boolean): number {
-    const stats = this.lazyData.data.itemStats[itemId];
+    const stats = this.lazyData.data.itemStats[itemId] || [];
     if (!stats) {
       return 0;
     }

@@ -128,8 +128,4 @@ export class CustomLinksComponent {
     this.customLinksFacade.deleteCustomLink(key);
   }
 
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('Share_link_copied'));
-  }
-
 }

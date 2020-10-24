@@ -4,7 +4,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { filter } from 'rxjs/operators';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
@@ -22,20 +22,19 @@ export class GearsetRowComponent {
   userId: string;
 
   constructor(private gearsetsFacade: GearsetsFacade, private translate: TranslateService,
-              private dialog: NzModalService, private message: NzMessageService,
-              private linkTools: LinkToolsService) {
+              private dialog: NzModalService, private linkTools: LinkToolsService) {
   }
 
-  getLink(): string {
+  getLink = () => {
     return this.linkTools.getLink(`/gearset/${this.gearset.$key}`);
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('COMMON.Share_link_copied'));
-  }
+  };
 
   deleteGearset(key: string): void {
     this.gearsetsFacade.delete(key);
+  }
+
+  cloneGearset(gearset: TeamcraftGearset): void {
+    this.gearsetsFacade.clone(gearset);
   }
 
   rename(gearset: TeamcraftGearset): void {

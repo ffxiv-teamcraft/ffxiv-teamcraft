@@ -273,7 +273,7 @@ export class CustomItemsComponent {
   public addToList(item: CustomItem, amount: string): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
-        return this.progressService.showProgress(this.listManager.addToList(item.$key, list, '', +amount),
+        return this.progressService.showProgress(this.listManager.addToList({ itemId: item.$key, list: list, recipeId: '', amount: +amount }),
           1,
           'Adding_recipes',
           { amount: 1, listname: list.name });
@@ -656,14 +656,13 @@ export class CustomItemsComponent {
       )
       .subscribe((res: SearchResult) => {
         const reducedFrom = getItemSource(item, DataType.REDUCED_FROM);
-        const data = res.itemId;
         if (reducedFrom.length === 0) {
           item.sources.push({
             type: DataType.REDUCED_FROM,
-            data: data
+            data: [+res.itemId]
           });
         } else {
-          reducedFrom.data.push(data);
+          reducedFrom.push(+res.itemId);
         }
         item.dirty = true;
       });

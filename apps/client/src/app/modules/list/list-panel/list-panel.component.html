@@ -36,7 +36,8 @@
           <div>
             {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
           </div>
-          <div *ngIf="(permissionLevel$ | async)?.value === 40" [nzTooltipTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }"
+          <div *ngIf="(permissionLevel$ | async)?.value === 40"
+               [nzTooltipTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }"
                class="permission-icon"
                nz-tooltip>
             <div [ngSwitch]="_list.everyone">
@@ -77,10 +78,12 @@
           <app-list-progressbar [list]="_list" [theme]="settings.theme" [locale]="translate.currentLang" *ngIf="!publicDisplay"></app-list-progressbar>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
-          <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10" [cbContent]="getLink()"
+          <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10"
+                  [clipboard]="getLink"
+                  [clipboardSuccessMessage]="'Share_link_copied' | translate"
                   [nzShape]="'circle'"
                   [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-                  ngxClipboard nz-button nz-tooltip
+                  nz-button nz-tooltip
                   tutorialStep="TUTORIAL.LIST_PANEL.Share"
                   tutorialStepIndex="0">
             <i nz-icon nzType="share-alt"></i>
@@ -100,7 +103,8 @@
               <i nz-icon nzType="copy" theme="outline"></i>
             </button>
           </ng-template>
-          <a (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10" [nzShape]="'circle'" [nzTooltipTitle]="'LIST.BUTTONS.Open' | translate"
+          <a (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async)?.value > 10" [nzShape]="'circle'"
+             [nzTooltipTitle]="'LIST.BUTTONS.Open' | translate"
              [nzType]="'primary'"
              nz-button
              nz-tooltip
@@ -135,6 +139,10 @@
               <li (click)="archiveList(_list, false)" *ngIf="!publicDisplay && _list.archived" [nzDisabled]="(permissionLevel$ | async)?.value < 40"
                   nz-menu-item>
                 {{'LIST.Unarchive' | translate}}
+              </li>
+              <li (click)="openSplitPopup(_list)" *ngIf="_list.finalItems.length > 1" [nzDisabled]="(permissionLevel$ | async)?.value < 30"
+                  nz-menu-item>
+                {{'LIST_DETAILS.Split_list' | translate}}
               </li>
               <li (click)="openCommentsPopup(_list, userId === _list.authorId)" *ngIf="authFacade.userId$ | async as userId"
                   nz-menu-item>
@@ -191,7 +199,9 @@
                       {{'LIST_TEMPLATE.Create_template' | translate}}
                     </li>
                     <ng-template #copyTemplate>
-                      <li (cbOnSuccess)="afterTemplateUrlCopy()" *ngIf="listTemplate$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                      <li *ngIf="listTemplate$ | async as link"
+                          [clipboard]="link.getUrl"
+                          [clipboardSuccessMessage]="'LIST_TEMPLATE.Share_link_copied' | translate"
                           nz-menu-item>
                         {{'LIST_TEMPLATE.Copy_template_url' | translate}}
                       </li>
@@ -202,7 +212,7 @@
                       {{'CUSTOM_LINKS.Add_link' | translate}}
                     </li>
                     <ng-template #copyLink>
-                      <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                      <li *ngIf="customLink$ | async as link" [clipboard]="link.getUrl" [clipboardSuccessMessage]="'CUSTOM_LINKS.Share_link_copied' | translate"
                           nz-menu-item>
                         {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                       </li>

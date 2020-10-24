@@ -177,6 +177,7 @@
     "Custom_sound": "알람소리 사용자 지정",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
+    "Delete_group": "그룹 삭제",
     "Delete_group_and_alarms": "그룹과 그룹 내 모든 알람 지우기",
     "Confirm_group_delete_with_alarms": "정말로 이 그룹과 그 안에 있는 알람을 지우시겠습니까?",
     "Add_note": "메모 추가",
@@ -429,6 +430,8 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -481,6 +484,8 @@
     "Fishing_rankings": "낚시 순위",
     "Total_rankings": "종합 순위",
     "Loading_fish_rankings": "낚시 순위 로딩중",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
@@ -642,6 +647,7 @@
     "X_needed": "{{amount}}개 필요",
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -684,6 +690,10 @@
       "Open": "목록 오버레이 켜기/끄기",
       "No_display": "시작하려면 목록을 메인프로그램에서 열어주세요",
       "No_panel_selected": "대분류를 선택해주세요"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -849,6 +859,7 @@
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
+    "Completion_message": "Completion message",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
@@ -912,14 +923,16 @@
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
       "Poor": "저품질",
       "Fail": "실패",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
+      "Pliant": "고효율",
+      "Sturdy": "견고",
+      "Centered": "안정",
       "Normal": "보통"
     },
     "SOLVER": {
@@ -1067,7 +1080,8 @@
     "Craft_price": "제작 단가",
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
-    "Enter_total_earnings": "총 수익"
+    "Enter_total_earnings": "총 수익",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1424,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
-      "Required_control": "필요 가공 숙련도"
+      "Required_control": "필요 가공 숙련도",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -1667,7 +1682,8 @@
     "Desktop_app_overlay": "데스크톱 앱을 사용시 알람을 오버레이 창으로 띄울 수 있습니다(사이드바 아래에 다운로드 링크가 있음).",
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
     "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
-    "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다"
+    "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1699,7 +1715,8 @@
     "Pages_range_label": "총 {{ total }}종류의 아이템 중 {{ range0 }}-{{ range1 }}번째 아이템",
     "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
     "Shown_only_collectables": "소장품만 표시하기",
-    "Recipe_level": "제작법 레벨"
+    "Recipe_level": "제작법 레벨",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1708,6 +1725,11 @@
     "You_can_buy": "{{amount}}개 구매 가능",
     "Disabled": "화폐 소비 가이드는 더 이상 이용할 수 없습니다.",
     "Disabled_description": "Square Enix에서 장터 정보를 가져오는 것을 막았기 때문에 이에 대한 불만은 Square Enix에 항의해 주세요. 우리는 Square Enix 없이 이 작업을 할 수 있는 게 없습니다."
+  },
+  "FOOD_PICKER": {
+    "Title": "음식 선택기",
+    "Description": "어떤 도핑 아이템이 원하는 능력치를 올려주는지 궁금하시나요? 다른 곳에서 찾지말고 이 곳에서 전부 찾아보세요!",
+    "Pick_stat": "능력치 선택"
   },
   "BLOG": {
     "Title": "블로그"
@@ -1781,6 +1803,7 @@
       "Bag": "소지품",
       "Other": "다른 소지품",
       "Armory": "장비함",
+      "Current_Gear": "현재 장비",
       "RetainerMarket": "집사가 판매중"
     }
   },
@@ -1869,12 +1892,14 @@
     "Import_from_ariyala": "Ariyala에서 가져오기",
     "Import_from_lodestone": "Lodestone을 이용하여 가져오기",
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "내 장비세트",
     "Delete_gearset": "장비세트 삭제",
     "Import_from_pcap_notice": "원하는 장비세트로 변경하여 해당 장비세트를 가져오세요",
     "No_food_selected": "선택된 음식 없음",
     "Generate_list": "목록 생성",
     "Clone_gearset": "해당 장비세트를 내 계정에 복사하기",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "등록된 장비세트가 없습니다",
     "Favorite_gearsets": "즐겨찾기 장비세트",
     "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
@@ -1889,6 +1914,8 @@
     "Stats_caps": "능력치",
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
     "Missing_items": "몇몇 슬롯이 비어있는 것처럼 보인다면 필터를 정확하게 세팅해 주세요.",
+    "Copied_as_string": "장비 세트의 아이템 이름이 복사되었습니다",
+    "Mark_as_done": "금단 완료로 표시",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1929,6 +1956,14 @@
       "Critical_hit_multiplier": "극대화 배율",
       "Determination_bonus": "의지력 배율",
       "GCD": "글쿨"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

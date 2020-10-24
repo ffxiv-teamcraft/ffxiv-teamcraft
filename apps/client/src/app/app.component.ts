@@ -150,7 +150,8 @@ export class AppComponent implements OnInit {
         'Desktop_app_overlay',
         'Start_desktop_before_game',
         'Middle_click_share_button',
-        'Quick_search'
+        'Quick_search',
+        'Open_in_desktop_shortcut'
       ];
       return tips[Math.floor(Math.random() * tips.length)];
     }),
@@ -178,20 +179,15 @@ export class AppComponent implements OnInit {
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
 
 
-    fromEvent(document, 'keypress').pipe(
-      filter((event: KeyboardEvent) => {
-        return event.ctrlKey && event.shiftKey && event.keyCode === 6;
-      })
-    ).subscribe(() => {
-      this.quickSearch.openQuickSearch();
+    fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
+      this.handleKeypressShortcuts(event);
     });
 
-    fromEvent(document, 'keypress').pipe(
-      filter((event: KeyboardEvent) => {
-        return event.ctrlKey && event.shiftKey && event.keyCode === 1;
-      })
-    ).subscribe(() => {
-      this.router.navigateByUrl('/admin/users');
+    // Scuff Zoom Handling
+    document.addEventListener('keydown', event => {
+      if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
+        return this.ipc.send('zoom-in', event);
+      }
     });
 
     const link = httpLink.create({ uri: 'https://us-central1-ffxivteamcraft.cloudfunctions.net/gubal-proxy' });
@@ -400,7 +396,7 @@ export class AppComponent implements OnInit {
         gtag('set', 'page', event.url);
         gtag('event', 'page_view', {
           page_path: event.urlAfterRedirects
-        })
+        });
       });
 
       // Custom protocol detection
@@ -465,6 +461,22 @@ export class AppComponent implements OnInit {
     fontawesome.library.add(faDiscord, faTwitter, faGithub, faCalculator, faBell, faMap, faGavel);
   }
 
+  private handleKeypressShortcuts(event: KeyboardEvent): void {
+    if (event.ctrlKey && event.shiftKey && event.key === 'F') {
+      this.quickSearch.openQuickSearch();
+    } else if (event.ctrlKey && event.shiftKey && event.key === 'A') {
+      this.router.navigateByUrl('/admin/users');
+    } else if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+      event.preventDefault();
+      event.stopPropagation();
+      if (this.platformService.isDesktop()) {
+        this.openLink();
+      } else {
+        this.openInApp();
+      }
+    }
+  }
+
   enablePacketCapture(): void {
     this.ipc.machinaToggle = true;
     this.settings.enableUniversalisSourcing = true;
@@ -487,10 +499,6 @@ export class AppComponent implements OnInit {
 
   getPathname(): string {
     return this.router.url;
-  }
-
-  afterPathNameCopy(): void {
-    this.message.success(this.translate.instant('Path_copied_to_clipboard'));
   }
 
   getLang(): string {
@@ -533,10 +541,8 @@ export class AppComponent implements OnInit {
         }
         if (!user.patron && !increasedPageViews) {
           const viewTriggersForPatreonPopup = [20, 200, 500];
-          if (this.settings.pageViews < viewTriggersForPatreonPopup[viewTriggersForPatreonPopup.length - 1]) {
-            this.settings.pageViews++;
-            increasedPageViews = true;
-          }
+          this.settings.pageViews++;
+          increasedPageViews = true;
           if (viewTriggersForPatreonPopup.indexOf(this.settings.pageViews) > -1) {
             this.patreonService.showSupportUsPopup();
           }

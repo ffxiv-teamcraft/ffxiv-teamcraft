@@ -90,6 +90,16 @@
             {{'Public_list' | translate}}
           </label>
           <div fxLayout="row" fxLayoutGap="5px">
+            <button (click)="openSplitPopup(list)"
+                    *ngIf="list.finalItems.length > 1"
+                    [disabled]="(permissionLevel$ | async) < 30"
+                    [nzTooltipTitle]="'LIST_DETAILS.Split_list' | translate"
+                    nz-button
+                    nz-tooltip
+                    nzShape="circle"
+                    nzType="default">
+              <i nz-icon nzType="split-cells" nzTheme="outline"></i>
+            </button>
             <button (click)="openContributionsPopup()"
                     *ngIf="showContributionsButton$ | async"
                     [disabled]="(permissionLevel$ | async) < 20"
@@ -115,8 +125,7 @@
             </button>
             <button (click)="openInventorySynthesisPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_synthesis' | translate"
                     *ngIf="platform.isDesktop()"
-                    nz-button nz-tooltip nzShape="circle"
-                    nzType="primary">
+                    nz-button nz-tooltip nzShape="circle">
               <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
             </button>
             <button (click)="openInventoryPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_breakdown' | translate"
@@ -176,17 +185,22 @@
                     nzShape="circle" nzSize="small">
               <i nz-icon nzType="bell"></i>
             </button>
-            <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()"
-                    *ngIf="(permissionLevel$ | async) > 10 && !list.offline" [cbContent]="getLink(list)"
+            <button (click)="$event.stopPropagation()"
+                    *ngIf="(permissionLevel$ | async) > 10 && !list.offline"
+                    [clipboard]="getLink"
+                    [clipboardFnArgs]="[list]"
+                    [clipboardSuccessMessage]="'Share_link_copied' | translate"
                     [nzShape]="'circle'"
                     [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
-                    ngxClipboard nz-button
+                    nz-button
                     nz-tooltip nzSize="small">
               <i nz-icon nzType="share-alt"></i>
             </button>
-            <button (cbOnSuccess)="afterListTextCopied()" *ngIf="display$ | async as listDisplay"
-                    [cbContent]="getListTextExport(listDisplay, list)" [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
-                    ngxClipboard
+            <button *ngIf="display$ | async as listDisplay"
+                    [clipboard]="getListTextExport"
+                    [clipboardFnArgs]="[listDisplay, list]"
+                    [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
+                    [nzTooltipTitle]="'LIST.Copy_list_as_text' | translate"
                     nz-button nz-tooltip
                     nzShape="circle"
                     nzSize="small">
@@ -277,7 +291,6 @@
           <app-list-crystals-panel *ngIf="listDisplay.crystalsPanel"
                                    [crystals]="crystals$ | async"></app-list-crystals-panel>
           <app-list-details-panel *ngFor="let displayRow of listDisplay.rows; trackBy: trackByDisplayRow"
-                                  [collapsed]="listIsLarge"
                                   [largeList]="listIsLarge"
                                   [displayRow]="displayRow"></app-list-details-panel>
           <app-list-details-panel *ngIf="listDisplay.showFinalItemsPanel"

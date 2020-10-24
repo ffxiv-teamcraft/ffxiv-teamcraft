@@ -5,7 +5,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { NgZone } from '@angular/core';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, map, takeUntil, tap } from 'rxjs/operators';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Action, AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
 import { Instantiable } from '@kaiu/serializer';
 import { environment } from '../../../../../environments/environment';
 
@@ -90,7 +90,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
         .pipe(
           tap(() => this.recordOperation('read', uid)),
-          map((snap: any) => {
+          map((snap: Action<DocumentSnapshot<T>>) => {
             const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.data(), $key: snap.payload.id });
             if (!snap.payload.exists) {
               throw new Error(`${this.getBaseUri(uriParams)}/${uid} Not found`);

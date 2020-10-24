@@ -4682,7 +4682,7 @@
   "787": {
     "en": "Hydrozoan Umbrella",
     "ja": "ヒドロゾアの傘",
-    "de": "Hydrozoa-Gallerte",
+    "de": "Hydrozoen-Gallerte",
     "fr": "Ombrelle d'hydrozoaire"
   },
   "788": {
@@ -5086,5 +5086,59 @@
     "ja": "探索依頼：水辺 G25",
     "de": "Gewässererkundung XXV",
     "fr": "Exploration en rivage XXV"
+  },
+  "855": {
+    "en": "Raw Onyx",
+    "ja": "オニキス原石",
+    "de": "Roh-Onyx",
+    "fr": "Onyx brut"
+  },
+  "856": {
+    "en": "Prismstone",
+    "ja": "虹結晶",
+    "de": "Spektralkristall",
+    "fr": "Cristal iridescent"
+  },
+  "857": {
+    "en": "Tungsten Ore",
+    "ja": "タングステン鉱",
+    "de": "Wolframerzklumpen",
+    "fr": "Minerai de tungstène"
+  },
+  "858": {
+    "en": "Lemonette",
+    "ja": "リトルレモン",
+    "de": "Zwergzitrone",
+    "fr": "Petit citron"
+  },
+  "859": {
+    "en": "Sandalwood Log",
+    "ja": "サンダルウッド原木",
+    "de": "Sandelholzscheit",
+    "fr": "Rondin de santal blanc"
+  },
+  "860": {
+    "en": "Ethereal Cocoon",
+    "ja": "泡マユ",
+    "de": "Schaumkokon",
+    "fr": "Cocon mousseux"
+  },
+  "861": {
+    "en": "Beryllium Ore",
+    "ja": "ベリリウム鉱",
+    "de": "Beryllium-Klumpen",
+    "fr": "Minerai de béryllium"
+  },
+  "862": {
+    "en": "Sandalwood Sap",
+    "ja": "サンダルウッド樹液",
+    "de": "Sandelharz",
+    "fr": "Sève de bois de santal"
+  },
+  "863": {
+    "en": "Sweetmeat Mussel",
+    "ja": "ムセル",
+    "de": "Miserabelmuschel",
+    "fr": "Moule marine"
   }
 }

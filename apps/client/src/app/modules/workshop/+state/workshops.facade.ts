@@ -6,17 +6,19 @@ import {
   CreateWorkshop,
   DeleteWorkshop,
   LoadMyWorkshops,
-  LoadWorkshop,
   LoadSharedWorkshops,
+  LoadWorkshop,
   RemoveListFromWorkshop,
   SelectWorkshop,
-  UpdateWorkshop, UpdateWorkshopIndex
+  UpdateWorkshop,
+  UpdateWorkshopIndex
 } from './workshops.actions';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { combineLatest } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Workshop } from '../../../model/other/workshop';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { uniqBy } from 'lodash';
 
 @Injectable()
 export class WorkshopsFacade {
@@ -32,11 +34,11 @@ export class WorkshopsFacade {
 
   sharedWorkshops$ = combineLatest([this.store.select(workshopsQuery.getAllWorkshops), this.authFacade.userId$, this.authFacade.fcId$]).pipe(
     map(([compacts, userId, fcId]) => {
-      return compacts.filter(c => {
+      return uniqBy(compacts.filter(c => {
         return Math.max(c.getPermissionLevel(userId), c.getPermissionLevel(fcId)) >= PermissionLevel.PARTICIPATE
           && (c.hasExplicitPermissions(userId) || c.hasExplicitPermissions(fcId))
           && c.authorId !== userId;
-      });
+      }), '$key');
     }),
     shareReplay(1)
   );

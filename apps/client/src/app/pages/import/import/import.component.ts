@@ -94,7 +94,12 @@ export class ImportComponent {
         }
         const operation$ = concat(
           ...data.items.map(row => {
-            return this.listManager.addToList(row.itemData.item.id, list, +row.recipeId, row.quantity);
+            return this.listManager.addToList({
+              itemId: row.itemData.item.id,
+              list: list,
+              recipeId: +row.recipeId,
+              amount: row.quantity
+            });
           })
         );
         return this.progressService.showProgress(operation$,

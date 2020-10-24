@@ -6,8 +6,8 @@ import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import { uniq } from 'lodash';
 import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
-import { combineLatest, concat, forkJoin, Observable, of, Subject } from 'rxjs';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, debounceTime } from 'rxjs/operators';
+import { combineLatest, concat, Observable, of } from 'rxjs';
+import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, startWith } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -37,11 +37,13 @@ import { ATTTService } from '../service/attt.service';
 import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.less'],
+  styleUrls: ['./item.component.less']
 })
 export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   public noData = false;
@@ -87,17 +89,21 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     shareReplay(1)
   );
 
-  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$]).pipe(
-    switchMap(([data, xivapiItem]) => {
-      let item: ListRow = {
+  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.user$.pipe(startWith(null))]).pipe(
+    switchMap(([data, xivapiItem, user]) => {
+      let item: any = {
         id: data.item.id,
         icon: data.item.icon,
         amount: 1,
         done: 0,
         used: 0,
-        yield: 1,
+        yield: 1
       };
       item = this.extractor.addDataToItem(item, data);
+      item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
+      if (item.canBeGathered) {
+        item.isDoneInLog = user !== null && user.gatheringLogProgression.includes(item.id);
+      }
       return this.handleAdditionalData(item, data, xivapiItem);
     }),
     tap((item) => {
@@ -116,7 +122,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             itemId
           }
         }
-        `,
+        `
           })
           .pipe(
             map((result) => {
@@ -138,9 +144,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           links: Object.keys(data.item.ingredient_of).map((itemId) => {
             return {
               itemId: +itemId,
-              recipes: this.lazyData.data.recipes.filter((r) => r.result === +itemId),
+              recipes: this.lazyData.data.recipes.filter((r) => r.result === +itemId)
             };
-          }),
+          })
         });
       }
       if (xivapiItem.BaitInfo !== undefined && xivapiItem.BaitInfo.length > 0) {
@@ -151,9 +157,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/classjob/fisher.png',
           links: xivapiItem.BaitInfo.map((row) => {
             return {
-              itemId: +row.itemId,
+              itemId: +row.itemId
             };
-          }),
+          })
         });
       }
       const lazyReductions = Object.keys(this.lazyData.data.reduction)
@@ -168,9 +174,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: 'https://www.garlandtools.org/db/images/Reduce.png',
           links: reductions.map((itemId) => {
             return {
-              itemId: +itemId,
+              itemId: +itemId
             };
-          }),
+          })
         });
       }
       const collectable = this.lazyData.data.collectables[data.item.id];
@@ -181,7 +187,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             flex: '1 1 auto',
             title: 'DB.Ishgard_restoration',
             icon: './assets/icons/status/collectors_glove.png',
-            ishgardRestoration: this.lazyData.data.collectables[data.item.id],
+            ishgardRestoration: this.lazyData.data.collectables[data.item.id]
           });
         } else {
           usedFor.push({
@@ -189,7 +195,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             flex: '1 1 auto',
             title: 'DB.Rowena_splendor',
             icon: './assets/icons/status/collectors_glove.png',
-            masterpiece: this.lazyData.data.collectables[data.item.id],
+            masterpiece: this.lazyData.data.collectables[data.item.id]
           });
         }
       }
@@ -205,9 +211,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/desynth.png',
           links: desynths.map((itemId) => {
             return {
-              itemId: +itemId,
+              itemId: +itemId
             };
-          }),
+          })
         });
       }
       if (xivapiItem.ItemActionTargetID === 1389) {
@@ -216,7 +222,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           type: UsedForType.TT_CARD_UNLOCK,
           title: 'DB.TT_card_unlock',
           icon: 'https://triad.raelys.com/images/logo.png',
-          cardId: xivapiItem.ItemAction.Data0,
+          cardId: xivapiItem.ItemAction.Data0
         });
       }
       if (data.item.tradeCurrency) {
@@ -248,14 +254,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                           id: currencyPartial.i,
                           icon: currencyPartial.c,
                           amount: currency.amount,
-                          hq: currency.hq === 1,
+                          hq: currency.hq === 1
                         };
                       } else if (+currency.id === data.item.id) {
                         return <TradeEntry>{
                           id: data.item.id,
                           icon: data.item.icon,
                           amount: currency.amount,
-                          hq: currency.hq === 1,
+                          hq: currency.hq === 1
                         };
                       }
                       return undefined;
@@ -270,24 +276,24 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                           id: itemPartial.i,
                           icon: itemPartial.c,
                           amount: tradeItem.amount,
-                          hq: tradeItem.hq === 1,
+                          hq: tradeItem.hq === 1
                         };
                       } else if (+tradeItem.id === data.item.id) {
                         return <TradeEntry>{
                           id: data.item.id,
                           icon: data.item.icon,
                           amount: tradeItem.amount,
-                          hq: tradeItem.hq === 1,
+                          hq: tradeItem.hq === 1
                         };
                       }
                       return undefined;
                     })
-                    .filter((res) => res !== undefined),
+                    .filter((res) => res !== undefined)
                 };
               }),
-              shopName: ts.shop,
+              shopName: ts.shop
             };
-          }),
+          })
         });
       }
       if (data.item.loot) {
@@ -298,9 +304,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           icon: './assets/icons/chest_open.png',
           links: data.item.loot.map((itemId) => {
             return {
-              itemId: +itemId,
+              itemId: +itemId
             };
-          }),
+          })
         });
       }
       if (data.item.requiredByLeves) {
@@ -314,9 +320,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
             return {
               leveId: leve,
               level: partial.obj.l,
-              job: partial.obj.j,
+              job: partial.obj.j
             };
-          }),
+          })
         });
       }
       if (data.item.usedInQuest) {
@@ -325,7 +331,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           flex: '1 1 auto',
           title: 'Quests',
           icon: './assets/icons/quest.png',
-          quests: data.item.usedInQuest,
+          quests: data.item.usedInQuest
         });
       }
       if (data.item.supply) {
@@ -337,8 +343,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           supply: {
             amount: data.item.supply.count,
             xp: data.item.supply.xp,
-            seals: data.item.supply.seals,
-          },
+            seals: data.item.supply.seals
+          }
         });
       }
       if (data.item.unlocks) {
@@ -350,9 +356,9 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           links: data.item.unlocks.map((itemId) => {
             return {
               itemId: +itemId,
-              recipes: [this.lazyData.getItemRecipeSync(itemId)],
+              recipes: [this.lazyData.getItemRecipeSync(itemId)]
             };
-          }),
+          })
         });
       }
       return usedFor;
@@ -365,19 +371,19 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         {
           title: 'GarlandTools',
           url: `http://www.garlandtools.org/db/#item/${xivapiItem.ID}`,
-          icon: 'https://garlandtools.org/favicon.png',
+          icon: 'https://garlandtools.org/favicon.png'
         },
         {
           title: 'Gamer Escape',
           url: `https://ffxiv.gamerescape.com/wiki/${xivapiItem.Name_en.toString().split(' ').join('_')}`,
-          icon: './assets/icons/ge.png',
-        },
+          icon: './assets/icons/ge.png'
+        }
       ];
       if (!xivapiItem.IsUntradable) {
         links.push({
           title: 'Universalis',
           icon: 'https://universalis.app/i/universalis/universalis.png',
-          url: `https://universalis.app/market/${xivapiItem.ID}`,
+          url: `https://universalis.app/market/${xivapiItem.ID}`
         });
       }
       const gardening = getItemSource(listRow, DataType.GARDENING);
@@ -385,14 +391,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         links.push({
           title: 'FFXIV Gardening',
           icon: './assets/icons/Gardening.png',
-          url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`,
+          url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
         });
       }
       if (xivapiItem.ItemActionTargetID === 1389) {
         links.push({
           title: 'Another Triple Triad Tracker',
           icon: 'https://triad.raelys.com/images/logo.png',
-          url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`,
+          url: `https://triad.raelys.com/cards/${xivapiItem.AdditionalData}`
         });
       }
       if (xivapiItem.ItemAction) {
@@ -400,42 +406,42 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/mounts/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/mounts/${xivapiItem.ItemAction.Data0}`
           });
         }
         if (xivapiItem.ItemAction.Type === 853) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/minions/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/minions/${xivapiItem.ItemAction.Data0}`
           });
         }
         if (xivapiItem.ItemAction.Type === 5845) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/orchestrions/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/orchestrions/${xivapiItem.ItemAction.Data0}`
           });
         }
         if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Ballroom Etiquette') > -1) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/emotes/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/emotes/${xivapiItem.ItemAction.Data0}`
           });
         }
         if (xivapiItem.ItemAction.Type === 2633 && xivapiItem.Name_en.indexOf('Modern Aesthetics') > -1) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/hairstyles/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/hairstyles/${xivapiItem.ItemAction.Data0}`
           });
         }
         if (xivapiItem.ItemAction.Type === 1013) {
           links.push({
             title: 'FFXIV Collect',
             icon: 'https://ffxivcollect.com/images/logo_small.png',
-            url: `https://ffxivcollect.com/bardings/${xivapiItem.ItemAction.Data0}`,
+            url: `https://ffxivcollect.com/bardings/${xivapiItem.ItemAction.Data0}`
           });
         }
       }
@@ -449,26 +455,26 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       if (item.ClassJobUseTargetID) {
         mainAttributes.push({
           name: 'DB.Class_job',
-          value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories')),
+          value: this.i18n.getName(this.l12n.xivapiToI18n(item.ClassJobCategory, 'jobCategories'))
         });
       }
       mainAttributes.push({
         name: 'TOOLTIP.Level',
-        value: item.LevelEquip,
+        value: item.LevelEquip
       });
       mainAttributes.push({
         name: 'TOOLTIP.Ilvl',
-        value: item.LevelItem,
+        value: item.LevelItem
       });
       if (item.ClassJobUseTargetID) {
         mainAttributes.push({
           name: 'DB.Delay',
-          value: item.DelayMs / 1000,
+          value: item.DelayMs / 1000
         });
         mainAttributes.push({
           name: 'DB.Auto',
           value: Math.floor((item.DamagePhys * item.DelayMs) / 30) / 100,
-          valueHq: Math.floor(((item.DamagePhys + item.BaseParamValueSpecial0) * item.DelayMs) / 30) / 100,
+          valueHq: Math.floor(((item.DamagePhys + item.BaseParamValueSpecial0) * item.DelayMs) / 30) / 100
         });
       }
       // If the item has some damage, handle it.
@@ -477,13 +483,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           mainAttributes.push({
             name: 'TOOLTIP.Damage_phys',
             value: item.DamagePhys,
-            valueHq: item.DamagePhys + item.BaseParamValueSpecial0,
+            valueHq: item.DamagePhys + item.BaseParamValueSpecial0
           });
         } else {
           mainAttributes.push({
             name: 'TOOLTIP.Damage_mag',
             value: item.DamageMag,
-            valueHq: item.DamageMag + item.BaseParamValueSpecial1,
+            valueHq: item.DamageMag + item.BaseParamValueSpecial1
           });
         }
       }
@@ -492,12 +498,12 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         mainAttributes.push({
           name: 'TOOLTIP.Defense_phys',
           value: item.DefensePhys,
-          valueHq: item.DefensePhys + item.BaseParamValueSpecial0,
+          valueHq: item.DefensePhys + item.BaseParamValueSpecial0
         });
         mainAttributes.push({
           name: 'TOOLTIP.Defense_mag',
           value: item.DefenseMag,
-          valueHq: item.DefenseMag + item.BaseParamValueSpecial1,
+          valueHq: item.DefenseMag + item.BaseParamValueSpecial1
         });
       }
       return mainAttributes;
@@ -513,7 +519,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           const res: any = {
             name: this.l12n.xivapiToI18n(item[key], 'baseParams'),
             value: item[`BaseParamValue${statIndex}`],
-            requiresPipe: true,
+            requiresPipe: true
           };
           if (item.CanBeHq === 1) {
             const statId = item[`BaseParam${statIndex}TargetID`];
@@ -587,6 +593,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     public readonly settings: SettingsService,
     private readonly apollo: Apollo,
     private readonly itemContext: ItemContextService,
+    private readonly authFacade: AuthFacade,
     seo: SeoService
   ) {
     super(seo);
@@ -626,6 +633,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     );
   }
 
+  markAsDoneInLog(id: number): void {
+    this.authFacade.markAsDoneInLog('gathering', id, true);
+  }
+
   public openInSimulator(item: ListRow, itemId: number, recipeId: string): void {
     this.rotationPicker.openInSimulator(itemId, recipeId);
   }
@@ -635,7 +646,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       itemId: item.id,
       icon: item.icon.toString(),
       addCrafts: false,
-      amount: 1,
+      amount: 1
     };
   }
 
@@ -655,10 +666,10 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       nzContent: ModelViewerComponent,
       nzComponentParams: {
         slot: slot,
-        models: gtData.item.models,
+        models: gtData.item.models
       },
       nzFooter: null,
-      nzClassName: 'model-viewer-modal',
+      nzClassName: 'model-viewer-modal'
     });
   }
 
@@ -679,7 +690,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           title: this.getName(item),
           description: this.getDescription(item),
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/item/${item.ID}/${this.getName(item).split(' ').join('+')}`,
-          image: `https://xivapi.com/i2/ls/${item.ID}.png`,
+          image: `https://xivapi.com/i2/ls/${item.ID}.png`
         };
       })
     );
@@ -687,7 +698,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
 
   public createQuickList(item: SearchResult, amount: number): void {
     const list = this.listsFacade.newEphemeralList(this.i18n.getName(this.l12n.getItem(+item.itemId)));
-    const operation$ = this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', amount, item.addCrafts).pipe(
+    const operation$ = this.listManager.addToList({
+      itemId: +item.itemId,
+      list: list,
+      recipeId: item.recipe ? item.recipe.recipeId : '',
+      amount: amount,
+      collectible: item.addCrafts
+    }).pipe(
       tap((resultList) => this.listsFacade.addList(resultList)),
       mergeMap((resultList) => {
         return this.listsFacade.myLists$.pipe(
@@ -709,7 +726,13 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       .pickList()
       .pipe(
         mergeMap((list) => {
-          const operations = [this.listManager.addToList(+item.itemId, list, item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts)];
+          const operations = [this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: item.recipe ? item.recipe.recipeId : '',
+            amount: item.amount,
+            collectible: item.addCrafts
+          })];
           let operation$: Observable<any>;
           if (operations.length > 0) {
             operation$ = concat(...operations);
@@ -760,15 +783,15 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                       zoneId: npcPosition ? npcPosition.zoneid : 0,
                       coords: {
                         x: npc.location.x,
-                        y: npc.location.y,
+                        y: npc.location.y
                       },
-                      rules: npc.rule_ids,
+                      rules: npc.rule_ids
                     };
                     if (npc.quest !== undefined) {
                       duel.unlockingQuestId = npc.quest.id;
                     }
                     return duel;
-                  }),
+                  })
                 });
               }
               if (card.sources.pack) {
@@ -776,8 +799,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
                   type: DataType.TRIPLE_TRIAD_DUELS,
                   data: {
                     id: [10128, 10129, 10130, 13380, 10077][card.sources.pack.id - 1],
-                    price: card.sources.pack.cost,
-                  },
+                    price: card.sources.pack.cost
+                  }
                 });
               }
               return item;
@@ -792,7 +815,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           map((res) => {
             res.sources.push({
               type: DataType.ACHIEVEMENTS,
-              data: xivapiItem.GameContentLinks.Achievement.Item,
+              data: xivapiItem.GameContentLinks.Achievement.Item
             });
             return res;
           })
@@ -804,7 +827,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         map((res) => {
           res.sources.push({
             type: DataType.QUESTS,
-            data: gtData.item.quests,
+            data: gtData.item.quests
           });
           return res;
         })
@@ -819,12 +842,12 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     if (slug === undefined) {
       this.router.navigate([correctSlug], {
         relativeTo: this.route,
-        replaceUrl: true,
+        replaceUrl: true
       });
     } else if (slug !== correctSlug) {
       this.router.navigate(['../', correctSlug], {
         relativeTo: this.route,
-        replaceUrl: true,
+        replaceUrl: true
       });
     }
   };

@@ -26,12 +26,16 @@
            routerLink="/rotation-folder/{{_folder.$key}}">
           <i nz-icon nzType="folder-open"></i>
         </a>
-        <button (cbOnSuccess)="afterLinkCopy()" (click)="$event.stopPropagation()" [cbContent]="getLink()" [nzShape]="'circle'" [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+        <button (click)="$event.stopPropagation()"
+                [clipboard]="getLink"
+                [clipboardSuccessMessage]="'SIMULATOR.ROTATIONS.FOLDERS.Share_link_copied' | translate"
+                [nzShape]="'circle'" [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
                 [nzType]="'primary'"
-                ngxClipboard nz-button nz-tooltip>
+                nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
-        <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
+        <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
+                [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
@@ -43,7 +47,8 @@
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'"
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+                [nzPlacement]="'bottomRight'"
                 [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
                 nz-dropdown>
           <i nz-icon nzType="ellipsis"></i>
@@ -62,7 +67,9 @@
                     {{'CUSTOM_LINKS.Add_link' | translate}}
                   </li>
                   <ng-template #copyLink>
-                    <li (cbOnSuccess)="afterCustomLinkCopy()" *ngIf="customLink$ | async as link" [cbContent]="link.getUrl()" ngxClipboard
+                    <li *ngIf="customLink$ | async as link"
+                        [clipboard]="link.getUrl()"
+                        [clipboardSuccessMessage]="'CUSTOM_LINKS.Share_link_copied' | translate"
                         nz-menu-item>
                       {{'CUSTOM_LINKS.Copy_custom_link' | translate}}
                     </li>

@@ -67,13 +67,12 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   finalItems = false;
 
   @Input()
-  collapsed = false;
-
-  @Input()
   overlay = false;
 
   @Input()
   largeList = false;
+
+  collapsed = false;
 
   progression: number;
 
@@ -112,8 +111,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           filter(items => items.length > 0),
           switchMap((items) => {
             const operations = items.map(item => {
-              return this.listManager.addToList(+item.itemId, list,
-                item.recipe ? item.recipe.recipeId : '', item.amount, item.addCrafts);
+              return this.listManager.addToList({
+                itemId: +item.itemId,
+                list: list,
+                recipeId: item.recipe ? item.recipe.recipeId : '',
+                amount: item.amount,
+                collectible: item.addCrafts
+              });
             });
             let operation$: Observable<any>;
             if (operations.length > 0) {
@@ -155,11 +159,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   ngOnInit(): void {
     if (this.displayRow && this.displayRow.collapsedByDefault) {
       this.collapsed = true;
+    } else if (this.displayRow && this.displayRow.rows.length > 25) {
+      this.collapsed = true;
     }
-  }
-
-  getData<T = any>(row: ListRow, type: DataType, isObject = false): T {
-    return getItemSource<T>(row, type, isObject);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -180,22 +182,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
-      return (this.getData(row, DataType.TRADE_SOURCES).length > 0) || (this.getData(row, DataType.VENDORS).length > 0) || hasTrades;
+      return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
     }, false);
     this.hasNavigationMap = this.hasPositionsInRows(this.displayRow.rows);
   }
 
   private hasPositionsInRows(rows: ListRow[], zoneId?: number): boolean {
     return rows.reduce((hasMap, row) => {
-      const hasMonstersWithPosition = this.getData<Drop[]>(row, DataType.DROPS).some(d => {
+      const hasMonstersWithPosition = getItemSource<Drop[]>(row, DataType.DROPS).some(d => {
         return d.position
           && (d.position.x !== undefined)
           && !this.lazyData.data.maps[d.mapid].dungeon
           && (!zoneId || d.zoneid === zoneId);
       });
-      const hasNodesWithPosition = (this.getData(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId));
-      const hasVendorsWithPosition = this.getData(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
-      const hasTradesWithPosition = this.getData(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || d.zoneId === zoneId)));
+      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.coords !== undefined && n.coords.length > 0 && (!zoneId || n.zoneid === zoneId));
+      const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
+      const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
     }, false);
   }
@@ -286,11 +288,11 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
   }
 
   private getPosition(row: ListRow, zoneBreakdownRow: ZoneBreakdownRow): Partial<NavigationObjective> {
-    const vendors = this.getData<Vendor[]>(row, DataType.VENDORS);
-    const tradeSources = this.getData<TradeSource[]>(row, DataType.TRADE_SOURCES);
-    const gatheredBy = this.getData<GatheredBy>(row, DataType.GATHERED_BY);
-    const drops = this.getData<Drop[]>(row, DataType.DROPS);
-    const alarms = this.getData<Alarm[]>(row, DataType.ALARMS);
+    const vendors = getItemSource<Vendor[]>(row, DataType.VENDORS);
+    const tradeSources = getItemSource<TradeSource[]>(row, DataType.TRADE_SOURCES);
+    const gatheredBy = getItemSource<GatheredBy>(row, DataType.GATHERED_BY);
+    const drops = getItemSource<Drop[]>(row, DataType.DROPS);
+    const alarms = getItemSource<Alarm[]>(row, DataType.ALARMS);
     const positions = [];
     if (vendors.some(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId)) {
       const vendor = vendors.find(d => d.coords && (d.coords.x !== undefined) && d.zoneId === zoneBreakdownRow.zoneId);
@@ -457,7 +459,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     });
   }
 
-  public getTextExport(): string {
+  public getTextExport = () => {
     let rows: ListRow[];
     if (this.tiers) {
       rows = this.tiers.reduce((res, tier) => {
@@ -469,11 +471,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return rows.reduce((exportString, row) => {
       return exportString + `${row.amount}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`;
     }, `${this.displayRow.title} :\n`);
-  }
-
-  textCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
-  }
+  };
 
   trackByItem(index: number, item: ListRow): number {
     return item.id;

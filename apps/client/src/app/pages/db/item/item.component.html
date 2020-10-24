@@ -52,6 +52,9 @@
                                   [showHistory]="true"
                                   [size]="'small'"></app-marketboard-icon>
           </div>
+          <div *ngIf="data.canBeGathered">
+            <button nz-button *ngIf="!data.isDoneInLog" (click)="markAsDoneInLog(data.id)">{{'DB.ITEM.Mark_as_done_in_gathering_log' | translate}}</button>
+          </div>
         </div>
         <div fxFlex="1 1 auto">
           <p *ngIf="xivapiItem.Description" [innerHTML]="xivapiItem | xivapiL12n: 'itemDescriptions':'Description' | i18n | xivUIText"></p>

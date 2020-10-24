@@ -1,0 +1,61 @@
+name: Global workflow
+on: [ push ]
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Dependencies
+          path: node_modules/
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - uses: actions/download-artifact@v2
+        with:
+          name: Dependencies
+      - name: Build production web
+        if: github.ref == 'ref/head/master'
+        run: yarn run build:prod
+      - name: Build staging web
+        if: github.ref != 'ref/head/master'
+        run: yarn run build:beta
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Web build
+          path: dist/
+  build-desktop:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Publish github release
+        if: github.ref == 'ref/head/master'
+        run: yarn run electron:setup:publish
+      - uses: actions/upload-artifact@v2
+        if: github.ref == 'ref/head/master'
+        with:
+          name: Desktop build
+          path: release/

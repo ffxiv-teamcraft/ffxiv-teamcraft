@@ -177,6 +177,7 @@
     "Custom_sound": "Som do alarme personalizado",
     "New_group": "Novo grupo de alarmes",
     "Confirm_group_delete": "Tem certeza que deseja eliminar este grupo?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Eliminar grupo com todos os alarmes",
     "Confirm_group_delete_with_alarms": "Tem a certeza que deseja eliminar este grupo e todos os seus alarmes?",
     "Add_note": "Adicionar uma nota",
@@ -429,6 +430,8 @@
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -481,6 +484,8 @@
     "Fishing_rankings": "Fishing rankings",
     "Total_rankings": "Total rankings",
     "Loading_fish_rankings": "Loading fishing rankings",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Verificação da personagem",
       "Guide": "To verify your account, paste this code: \"{{userId}}\" inside your Lodestone profile biography and click the button below. More informations on the <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -642,6 +647,7 @@
     "X_needed": "{{amount}} needed",
     "Leave_list": "Leave this list",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
@@ -684,6 +690,10 @@
       "Open": "Toggle list overlay",
       "No_display": "Open a list in main window to get started",
       "No_panel_selected": "Select a panel using the buttons above"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -849,6 +859,7 @@
     "Include_consumables_notification": "Include consumables notification",
     "Consumable_notification": "Use {{buffs}}",
     "Extra_wait": "Espera extra",
+    "Completion_message": "Completion message",
     "Import_macro": "Import from ingame macro",
     "Ingame_macro": "Ingame macro",
     "Min_stats": "Stats mínimos",
@@ -912,6 +923,8 @@
     "Could_not_find_minstats": "Could not find min stats for this rotation",
     "Remove_final_appraisal": "Remove Final Appraisal buff",
     "Total_macro_duration": "Total macro duration: {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Good",
@@ -1067,7 +1080,8 @@
     "Craft_price": "Crafting price",
     "Marketboard_price": "NQ price",
     "Marketboard_price_hq": "HQ price",
-    "Enter_total_earnings": "Enter total earnings"
+    "Enter_total_earnings": "Enter total earnings",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Levequests",
@@ -1424,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
       "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_control": "Req. Control",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "Hour of the day",
@@ -1667,7 +1682,8 @@
     "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
     "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
     "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool"
+    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
@@ -1699,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Recipe_level": "Recipe level",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
@@ -1708,6 +1725,11 @@
     "You_can_buy": "You can buy {{amount}}",
     "Disabled": "The currency spending guide isn't working anymore",
     "Disabled_description": "This is due to Square Enix stopping us from fetching marketboard informations, if you want to complain about this, please complain to Square Enix, there is nothing we can do to make this work without them."
+  },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
   },
   "BLOG": {
     "Title": "Blog"
@@ -1781,6 +1803,7 @@
       "Bag": "Inventory",
       "Other": "Other inventory",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     }
   },
@@ -1869,12 +1892,14 @@
     "Import_from_ariyala": "Import from Ariyala",
     "Import_from_lodestone": "Import from Lodestone",
     "Import_using_pcap": "Import using packet capture",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Your gearsets",
     "Delete_gearset": "Delete gearset",
     "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
     "No_food_selected": "No food selected",
     "Generate_list": "Generate a list",
     "Clone_gearset": "Copy this on your account",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "You have no gearsets",
     "Favorite_gearsets": "Favorite gearsets",
     "Update_from_pcap": "Update using packet capture",
@@ -1889,6 +1914,8 @@
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -1929,6 +1956,14 @@
       "Critical_hit_multiplier": "Critical Hit Mult.",
       "Determination_bonus": "Determination bonus",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

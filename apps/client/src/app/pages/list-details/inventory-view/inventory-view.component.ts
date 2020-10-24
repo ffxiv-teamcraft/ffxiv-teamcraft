@@ -44,8 +44,4 @@ export class InventoryViewComponent {
     );
   }
 
-  copied(key: string, args?: any): void {
-    this.messageService.success(this.translate.instant(key, args));
-  }
-
 }

@@ -177,6 +177,7 @@
     "Custom_sound": "Sonido de alarma personalizado",
     "New_group": "Nuevo grupo de alarmas",
     "Confirm_group_delete": "¿Está seguro de que quiere eliminar este grupo?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Eliminar grupo con todas las alarmas",
     "Confirm_group_delete_with_alarms": "¿Está seguro que desea eliminar este grupo y todas sus alarmas?",
     "Add_note": "Agregar una nota",
@@ -429,6 +430,8 @@
     "Enable_metrics_capture_explain": "(permite capturar analíticas de su gil y los ingresos de artículos, nunca son subidos al servidor, esto es sólo para usted)",
     "Metrics_capture_tooltip": "Esta característica se añadirá en una actualización futura, pero habilitar la captura de datos ahora significa que una vez que esté aquí, tendrá datos comenzando ahora en lugar de cuando se agregue a la aplicación.",
     "Metrics_capture_folder": "Carpeta de registro de métricas",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -481,6 +484,8 @@
     "Fishing_rankings": "Clasificaciones de pesca",
     "Total_rankings": "Clasificaciones totales",
     "Loading_fish_rankings": "Cargando clasificaciones de pesca",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Verificación de personaje",
       "Guide": "Para verificar su cuenta, pegue este código: \"{{userId}}\" dentro de su biografía en su perfil de Lodestone y haga clic en el botón de abajo. Más información en el <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">wiki</a>",
@@ -642,6 +647,7 @@
     "X_needed": "{{amount}} necesitados",
     "Leave_list": "Dejar esta lista",
     "Cannot_leave": "No puede dejar esta lista porque está compartida con todo su FC (en cuyo caso tiene que pedir al propietario que la elimine) o con uno de sus equipos (en cuyo caso puede abandonar el equipo).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Diseño",
       "Add_panel": "Agregar Panel",
@@ -684,6 +690,10 @@
       "Open": "Alternar capa sobrepuesta de listas",
       "No_display": "Abra una lista en la ventana principal para empezar",
       "No_panel_selected": "Seleccione un panel usando los botones de arriba"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -849,6 +859,7 @@
     "Include_consumables_notification": "Incluir notificación de consumibles",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
+    "Completion_message": "Completion message",
     "Import_macro": "Importar desde macro",
     "Ingame_macro": "Macro para el juego",
     "Min_stats": "Atributos mínimos",
@@ -912,6 +923,8 @@
     "Could_not_find_minstats": "No se pudieron encontrar atributos mínimos para esta rotación",
     "Remove_final_appraisal": "Remover el beneficio de Final Appraisal",
     "Total_macro_duration": "Duración total de la macro: {{duration}}s.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Excelente",
       "Good": "Bueno",
@@ -1067,7 +1080,8 @@
     "Craft_price": "Precio de fabricación",
     "Marketboard_price": "Precio NQ",
     "Marketboard_price_hq": "Precio HQ",
-    "Enter_total_earnings": "Ingrese ganancias totales"
+    "Enter_total_earnings": "Ingrese ganancias totales",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Misiones Leve",
@@ -1424,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
       "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_control": "Req. Control",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "Hora del día",
@@ -1667,7 +1682,8 @@
     "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
     "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
     "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador",
-    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta"
+    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
@@ -1699,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} de {{ total }} artículos",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Recipe_level": "Recipe level",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Guía de Gastos de Monedas",
@@ -1708,6 +1725,11 @@
     "You_can_buy": "Puede comprar {{amount}}",
     "Disabled": "La guía de gasto de monedas no está funcionando más",
     "Disabled_description": "Esto se debe a que Square Enix nos impide obtener información del mercado, si quiere quejarse de esto, por favor quéjese con Square Enix, no hay nada que podamos hacer para hacer esto funcionar sin ellos."
+  },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
   },
   "BLOG": {
     "Title": "Blog"
@@ -1781,6 +1803,7 @@
       "Bag": "Inventario",
       "Other": "Otro inventario",
       "Armory": "Armería",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "En venta por retenedores"
     }
   },
@@ -1869,12 +1892,14 @@
     "Import_from_ariyala": "Importar desde Ariyala",
     "Import_from_lodestone": "Importar desde Lodestone",
     "Import_using_pcap": "Importar usando captura de paquetes",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Sus conjuntos de equipo",
     "Delete_gearset": "Eliminar conjunto de equipo",
     "Import_from_pcap_notice": "Cambia al conjunto de equipo deseado con la profesión correspondiente para importarlo.",
     "No_food_selected": "No hay comida seleccionada",
     "Generate_list": "Generar una lista",
     "Clone_gearset": "Copiar esto en su cuenta",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "No tiene conjuntos de equipo",
     "Favorite_gearsets": "Conjuntos de equipo favoritos",
     "Update_from_pcap": "Actualizar usando captura de paquetes",
@@ -1889,6 +1914,8 @@
     "Stats_caps": "Límite de atributos",
     "Stat_computing_diclaimer": "Los resultados no son 100% exactos, son de jugadores (los estudios de allagan) como usted y yo que dedicamos mucho tiempo a tratar de encontrar las fórmulas, por favor no informe inexactitudes como un defecto.",
     "Missing_items": "Parece que le faltan algunas ranuras, asegúrese de que sus filtros estén correctamente configurados",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
@@ -1929,6 +1956,14 @@
       "Critical_hit_multiplier": "Mult. de Golpe Crítico",
       "Determination_bonus": "Bono de determinación",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

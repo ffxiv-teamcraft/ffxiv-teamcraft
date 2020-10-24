@@ -14,7 +14,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CraftingReplayRowComponent } from './crafting-replay-row/crafting-replay-row.component';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { CoreModule } from '../../core/core.module';
-import { ClipboardModule } from '@angular/cdk/clipboard';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -37,7 +36,7 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     TranslateModule,
     ItemIconModule,
-    ClipboardModule,
+
     CoreModule,
     RouterModule
   ],

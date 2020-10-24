@@ -4380,16 +4380,16 @@
     "fr": "Matérias"
   },
   "1770279": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bozjan Gear Exchange",
+    "ja": "ボズヤン装備の交換",
+    "de": "Bozja-Ausrüstung",
+    "fr": "Équipement bozjien"
   },
   "1770280": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bozjan Gear Augmentation",
+    "ja": "ボズヤン装備の強化",
+    "de": "Verstärkung von Bozja-Ausrüstung",
+    "fr": "Amélioration d'équipement bozjien"
   },
   "1770281": {
     "en": "",
@@ -4524,10 +4524,10 @@
     "fr": "Matérias"
   },
   "1770303": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Oddly Specific Materials Exchange (Gathering)",
+    "ja": "改良用部材の交換：ギャザラー",
+    "de": "Werkzeugkomponenten: Sammler",
+    "fr": "Composants d'affinage pour récolteurs"
   },
   "1770304": {
     "en": "Shire Gear Augmentation (IL 270 DoW)",

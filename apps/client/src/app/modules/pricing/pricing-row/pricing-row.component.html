@@ -3,15 +3,18 @@
     <label [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()" nz-checkbox></label>
     <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName| i18n"
                    [width]="24"></app-item-icon>
-    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'classic'" [cbContent]="item.id | itemName | i18n" [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+    <span *ngIf="settings.preferredCopyType === 'classic'"
+          [clipboard]="item.id | itemName | i18n"
+          [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
+          [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
           class="item-name"
-          ngxClipboard
           nz-tooltip>
         {{item.id | itemName | i18n}}
       </span>
-    <span (cbOnSuccess)="afterNameCopy($event.content)" *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate" cbContent="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
+    <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
+          [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
+          clipboard="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
           class="item-name"
-          ngxClipboard
           nz-tooltip>
         {{item.id | itemName | i18n}}
       </span>
@@ -28,7 +31,8 @@
     <i *ngIf="priceFromCrafting" class="material-icons"
        nz-tooltip
        nzTitle="{{'PRICING.From_crafting' | translate}}">gavel</i>
-    <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" [twoToneColor]="'#eb4141'" nz-icon nz-tooltip nzTooltipTitle="{{'PRICING.Cheaper_at_vendor' | translate: {price: vendorPrice?.nq } }}"
+    <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" [twoToneColor]="'#eb4141'" nz-icon nz-tooltip
+       nzTooltipTitle="{{'PRICING.Cheaper_at_vendor' | translate: {price: vendorPrice?.nq } }}"
        nzType="warning"
        theme="twotone">
     </i>

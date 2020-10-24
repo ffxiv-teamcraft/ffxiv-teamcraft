@@ -1,7 +1,7 @@
 const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
-const { map, switchMap, first } = require('rxjs/operators');
+const { map, switchMap, first, mergeMap } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get, gubalRequest } = require('./tools.js');
 
@@ -30,8 +30,8 @@ function getCoords(coords, mapData) {
   const x = (coords.x + mapData.offset_x) * c;
   const y = (coords.y + mapData.offset_y) * c;
   return {
-    x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) /100,
-    y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) /100,
+    x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) / 100,
+    y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) / 100,
     z: Math.floor((coords.z - mapData.offset_z)) / 100
   };
 }
@@ -910,8 +910,9 @@ if (hasTodo('LGB', true)) {
   const aetherytes = [];
 
   // First things first, let's build the list of territories with multiple maps included.
-  Object.values(mapData)
-    .filter(map => map.priority_ui > 0)
+  const everyMaps = Object.values(mapData);
+  everyMaps
+    .filter(map => everyMaps.filter(m => m.territory_id === map.territory_id).length > 1)
     .forEach(map => {
       if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
         return map.priority_ui > 0 && entry.mapId === map.id;
@@ -1185,7 +1186,7 @@ if (hasTodo('npcs')) {
 
 if (hasTodo('leves')) {
   const leves = {};
-  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel').subscribe(page => {
+  getAllPages('https://xivapi.com/Leve?columns=ID,Name_*,ClassJobCategory.Name_*,ClassJobLevel,CraftLeve').subscribe(page => {
     page.Results.forEach(leve => {
       leves[leve.ID] = {
         en: leve.Name_en,
@@ -1198,7 +1199,15 @@ if (hasTodo('leves')) {
           de: leve.ClassJobCategory.Name_de,
           fr: leve.ClassJobCategory.Name_fr
         },
-        lvl: leve.ClassJobLevel
+        lvl: leve.ClassJobLevel,
+        items: leve.CraftLeve ? [0, 1, 2, 3]
+          .filter(i => leve.CraftLeve[`Item${i}`] !== null)
+          .map(i => {
+            return {
+              itemId: leve.CraftLeve[`Item${i}TargetID`],
+              amount: leve.CraftLeve[`ItemCount${i}`]
+            };
+          }) : []
       };
     });
   }, null, () => {
@@ -1929,12 +1938,12 @@ if (hasTodo('collectables')) {
               scrip: baseReward ? baseReward.ScriptRewardAmount : 0
             },
             mid: {
-              rating: supply[`MidBaseCollectableRating${i}`],
+              rating: supply[`MidCollectableRating${i}`],
               exp: supply[`MidCollectableReward${i}`].ExpReward,
               scrip: supply[`MidCollectableReward${i}`].ScriptRewardAmount
             },
             high: {
-              rating: supply[`HighBaseCollectableRating${i}`],
+              rating: supply[`HighCollectableRating${i}`],
               exp: supply[`HighCollectableReward${i}`].ExpReward,
               scrip: supply[`HighCollectableReward${i}`].ScriptRewardAmount
             }
@@ -2334,6 +2343,54 @@ if (hasTodo('races')) {
   });
 }
 
+if (hasTodo('ventures')) {
+  const ventures = {};
+  getAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task`, null, 'Ventures')
+    .pipe(
+      mergeMap(page => {
+        return combineLatest(page.Results.map(row => {
+          let req;
+          if (row.IsRandom) {
+            req = get(`https://xivapi.com/RetainerTaskRandom/${row.Task}`);
+          } else {
+            req = get(`https://xivapi.com/RetainerTaskNormal/${row.Task}`);
+          }
+          return req.pipe(
+            map(task => {
+              return {
+                ...task,
+                ID: row.ID,
+                IsRandom: row.IsRandom
+              };
+            })
+          );
+        }));
+      })
+    )
+    .subscribe(tasks => {
+      tasks.forEach(task => {
+        if (task.IsRandom) {
+          ventures[task.ID] = {
+            en: task.Name_en,
+            ja: task.Name_ja,
+            de: task.Name_de,
+            fr: task.Name_fr
+          };
+        } else if (task.Item) {
+          ventures[task.ID] = {
+            en: task.Item.Name_en,
+            ja: task.Item.Name_ja,
+            de: task.Item.Name_de,
+            fr: task.Item.Name_fr
+          };
+        }
+      });
+    }, null, () => {
+      persistToJsonAsset('ventures', ventures);
+      done('ventures');
+    });
+}
+
 if (hasTodo('foods')) {
   const foods = [];
   getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemSearchCategory.ID=45&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
@@ -2345,6 +2402,20 @@ if (hasTodo('foods')) {
   }, null, () => {
     persistToJsonAsset('foods', foods);
     done('foods');
+  });
+}
+
+if (hasTodo('medicines')) {
+  const medicines = [];
+  getAllPages('https://xivapi.com/Search?indexes=items&filters=ItemSearchCategory.ID=43&columns=ID,Bonuses,LevelItem,LevelEquip').subscribe(page => {
+    page.Results.forEach(entry => {
+      if (entry.Bonuses) {
+        medicines.push(entry);
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('medicines', medicines);
+    done('medicines');
   });
 }
 

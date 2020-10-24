@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { ListModule } from '../../modules/list/list.module';
@@ -30,7 +30,7 @@ const routes: Routes = [
     FormsModule,
     TranslateModule,
     NgZorroAntdModule,
-    ClipboardModule,
+
     PipesModule,
     CoreModule,
     ListModule,

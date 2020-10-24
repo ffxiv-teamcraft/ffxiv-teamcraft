@@ -4,7 +4,7 @@ import { BehaviorSubject, combineLatest, concat, from, Observable, of, Subject }
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { debounceTime, filter, first, map, mergeMap, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, shareReplay, startWith, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import * as _ from 'lodash';
 import { LazyRecipe } from '../../../core/data/lazy-recipe';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
@@ -22,6 +22,7 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { environment } from '../../../../environments/environment';
+import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -37,6 +38,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public query: string;
 
   public onlyCraftable$ = new BehaviorSubject(this.settings.showOnlyCraftableInRecipeFinder);
+  public onlyNotCompleted$ = new BehaviorSubject(this.settings.showOnlyNotCompletedInRecipeFinder);
   public onlyCollectables$ = new BehaviorSubject(this.settings.showOnlyCollectablesInRecipeFinder);
 
   public clvlMin$ = new BehaviorSubject(0);
@@ -108,19 +110,24 @@ export class RecipeFinderComponent implements OnDestroy {
           this.authFacade.gearSets$.pipe(first()),
           this.onlyCraftable$,
           this.onlyCollectables$,
+          this.onlyNotCompleted$,
           this.clvlMin$,
           this.clvlMax$
         ]);
       }),
-      map(([sets, onlyCraftable, onlyCollectables, clvlMin, clvlMax]) => {
+      withLatestFrom(this.authFacade.user$.pipe(startWith(<TeamcraftUser>null))),
+      map(([[sets, onlyCraftable, onlyCollectables, onlyNotCompleted, clvlMin, clvlMax], user]) => {
         this.settings.showOnlyCraftableInRecipeFinder = onlyCraftable;
         this.settings.showOnlyCollectablesInRecipeFinder = onlyCollectables;
+        this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
         const possibleRecipes = [];
         for (const item of this.pool) {
           possibleRecipes.push(...this.lazyData.data.recipes.filter(r => {
-            if (r.ingredients.some(i => i.id === item.id && i.amount <= item.amount)) {
-              possibleRecipes.push({ ...r });
+            let canBeAdded = true;
+            if (onlyNotCompleted) {
+              canBeAdded = !user || !user.logProgression.includes(r.id);
             }
+            return canBeAdded && r.ingredients.some(i => i.id === item.id && i.amount <= item.amount);
           }));
         }
         const uniquified = _.uniqBy(possibleRecipes, 'id');
@@ -129,7 +136,7 @@ export class RecipeFinderComponent implements OnDestroy {
           const jobSet = sets.find(set => recipe.job === set.jobId);
           recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
           recipe.missing = recipe.ingredients
-          // Ignore crystals
+            // Ignore crystals
             .filter(i => i.id > 19)
             .filter(i => {
               const poolItem = this.pool.find(item => item.id === i.id);
@@ -184,7 +191,7 @@ export class RecipeFinderComponent implements OnDestroy {
   public canCraft(recipe: LazyRecipe, amount: number): boolean {
     const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
     const neededIngredients = allAvailableIngredients
-    // Ignore crystals
+      // Ignore crystals
       .filter(i => i.id > 19)
       .map(i => {
         return {
@@ -253,19 +260,13 @@ export class RecipeFinderComponent implements OnDestroy {
     this.savePool();
   }
 
-  public getPoolJSON(): string {
+  public getPoolJSON = () => {
     return JSON.stringify(this.pool);
-  }
+  };
 
   public sortPool(): void {
     this.pool = this.pool.sort((a, b) => {
       return this.i18n.getName(this.l12n.getItem(a.id)) > this.i18n.getName(this.l12n.getItem(b.id)) ? 1 : -1;
-    });
-  }
-
-  public afterJSONCopied(): void {
-    this.message.success(this.translate.instant('RECIPE_FINDER.Pool_copied'), {
-      nzDuration: 3000
     });
   }
 
@@ -352,8 +353,13 @@ export class RecipeFinderComponent implements OnDestroy {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = this.basket.map(row => {
-          return this.listManager.addToList(+row.recipe.result, list,
-            row.recipe.id, row.amount, false);
+          return this.listManager.addToList({
+            itemId: +row.recipe.result,
+            list: list,
+            recipeId: row.recipe.id,
+            amount: row.amount,
+            collectible: false
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {

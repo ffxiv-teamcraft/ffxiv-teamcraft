@@ -8,17 +8,20 @@
   <base href="/">
 
   <!-- Open Graph meta -->
+  <link type="application/json+oembed" href="oembed.json"/>
   <meta property="og:title" content="FFXIV Teamcraft"/>
   <meta property="og:description" content="Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://cdn.ffxivteamcraft.com/"/>
-  <meta property="og:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png"/>
+  <meta property="og:image" content="https://cdn.ffxivteamcraft.com/assets/banner.png"/>
+
+  <meta name="theme-color" content="#4880b1">
 
   <meta name="twitter:title" content="FFXIV Teamcraft"/>
-  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:description" content="Create crafting lists and collaborate with others, set gathering alarms, simulate crafting rotations, and more..."/>
   <meta name="twitter:site" content="@FFXIVTeamcraft"/>
-  <meta name="twitter:image" content="https://cdn.ffxivteamcraft.com/assets/logo.png"/>
+  <meta name="twitter:image" content="https://cdn.ffxivteamcraft.com/assets/banner.png"/>
 
   <meta name="viewport" content="width=device-width,user-scalable=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -32,7 +35,7 @@
     window.renderStart = Date.now();
   </script>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104948571-1"></script>
+  <script async src="https://ga.ffxivteamcraft.com/gtag/js?id=UA-104948571-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
 
@@ -41,7 +44,7 @@
     }
 
     gtag('js', new Date());
-    gtag('config', 'UA-104948571-1', {send_page_view: false});
+    gtag('config', 'UA-104948571-1', { send_page_view: false });
   </script>
   <script>
     //Garland tools data skeleton
@@ -73,7 +76,6 @@
   </script>
   <script src="https://www.garlandtools.org/bell/nodes.js"></script>
   <script src="https://www.garlandtools.org/bell/fish.js"></script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
 </head>
 <body>
 <app-root>

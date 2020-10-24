@@ -1,16 +1,24 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 
 @Component({
   selector: 'app-gearset-display-slot',
   templateUrl: './gearset-display-slot.component.html',
-  styleUrls: ['./gearset-display-slot.component.less']
+  styleUrls: ['./gearset-display-slot.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GearsetDisplaySlotComponent {
 
   @Input()
   gearset: TeamcraftGearset;
+
+  @Input()
+  progression: GearsetProgression;
+
+  @Output()
+  progressionChange: EventEmitter<GearsetProgression> = new EventEmitter<GearsetProgression>();
 
   @Input()
   propertyName: keyof TeamcraftGearset;

@@ -14,6 +14,22 @@
     <ng-template #suffixIconSearch>
       <i nz-icon nzType="search"></i>
     </ng-template>
+    <div nz-tooltip [nzTooltipTitle]="'INVENTORY.Copy_to_clipboard' | translate">
+      <button nz-button nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu">
+        <i nz-icon nzType="copy"></i>
+      </button>
+      <nz-dropdown-menu #menu="nzDropdownMenu">
+        <ul nz-menu>
+          <li nz-menu-item [clipboard]="getInventoryJson" [clipboardFnArgs]="[display]" [clipboardSuccessMessage]="'INVENTORY.Copied_to_clipboard' | translate">
+            JSON
+          </li>
+          <li nz-menu-item [clipboard]="getInventoryCsv" [clipboardFnArgs]="[display]" [clipboardSuccessMessage]="'INVENTORY.Copied_to_clipboard' | translate">
+            CSV
+          </li>
+        </ul>
+      </nz-dropdown-menu>
+    </div>
+
     <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
             (nzOnConfirm)="deleteInventories()">{{'INVENTORY.Clean_all' | translate}}</button>
   </div>
@@ -36,9 +52,11 @@
           </ng-template>
           <ng-template #extraTemplate>
             <div fxLayout="row" fxLayoutGap="5px">
-              <button (cbOnSuccess)="inventoryCopied()" [cbContent]="getClipboardContent(inventory)"
+              <button [clipboard]="getClipboardContent"
+                      [clipboardFnArgs]="[inventory]"
+                      [clipboardSuccessMessage]="'INVENTORY.Copied_to_clipboard' | translate"
                       [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
-                      ngxClipboard nz-button nz-tooltip
+                      nz-button nz-tooltip
                       nzShape="circle"
                       nzSize="small">
                 <i nz-icon nzType="copy"></i>

@@ -271,8 +271,11 @@ export class CommunityRotationsPageComponent {
           ...filters,
           tags: filters.tags
         }).pipe(
-          tap(rotations => {
+          map(rotations => {
             this.totalLength = rotations.length;
+            return rotations.sort((a,b) => {
+              return a.rotation.length - b.rotation.length
+            })
           }),
           switchMap(rotations => {
             return this.page$.pipe(map(page => {

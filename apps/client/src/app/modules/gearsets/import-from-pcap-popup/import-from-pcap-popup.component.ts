@@ -9,6 +9,7 @@ import { combineLatest } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { Memoized } from '../../../core/decorators/memoized';
 import { debounceBufferTime } from '../../../core/rxjs/debounce-buffer-time';
+import { GearsetsFacade } from '../+state/gearsets.facade';
 
 @Component({
   selector: 'app-import-from-pcap-popup',
@@ -26,7 +27,8 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
   public availableJobs = this.gt.getJobs().filter(job => job.id > 0);
 
   constructor(private modalRef: NzModalRef, private gt: GarlandToolsService,
-              private ipc: IpcService, private lazyData: LazyDataService) {
+              private ipc: IpcService, private lazyData: LazyDataService,
+              private gearsetsFacade: GearsetsFacade) {
     super();
     combineLatest([this.ipc.itemInfoPackets$.pipe(debounceBufferTime(2000)), this.ipc.updateClassInfoPackets$]).pipe(
       takeUntil(this.onDestroy$),
@@ -49,7 +51,7 @@ export class ImportFromPcapPopupComponent extends TeamcraftComponent {
               materias.push(0);
             }
           }
-          gearset[this.getPropertyName(packet.slot)] = {
+          gearset[this.gearsetsFacade.getPropertyName(packet.slot)] = {
             itemId: packet.catalogId,
             hq: packet.hqFlag === 1,
             materias: materias,

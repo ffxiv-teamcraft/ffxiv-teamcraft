@@ -24,15 +24,21 @@
       <nz-input-number [(ngModel)]="extraWait" (ngModelChange)="generateMacros()" [nzMax]="100"
                        [nzMin]="0"></nz-input-number>
     </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'SIMULATOR.Completion_message' | translate}}</nz-form-label>
+      <input type="text" nz-input
+             [(ngModel)]="macroCompletionMessage"
+             (ngModelChange)="generateMacros()">
+    </nz-form-item>
   </div>
 </div>
 <div class="macro">
   <pre *ngFor="let macroFragment of macro" class="macro-fragment">
-    <button [cbContent]="getText(macroFragment)" class="copy-macro" ngxClipboard nz-button nzShape="circle"
+    <button [clipboard]="getText(macroFragment)" class="copy-macro" nz-button nzShape="circle"
             nzSize="small">
         <i nz-icon nzType="copy"></i>
     </button>
     <span *ngFor="let line of macroFragment" class="macro-line">{{line}}<br></span>
   </pre>
-  <span>{{'SIMULATOR.Total_macro_duration' | translate:{duration: totalDuration} }}</span>
+  <span>{{'SIMULATOR.Total_macro_duration' | translate:{ duration: totalDuration } }}</span>
 </div>

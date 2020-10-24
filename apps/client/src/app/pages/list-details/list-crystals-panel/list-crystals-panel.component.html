@@ -18,9 +18,9 @@
         <div>{{'Crystals' | translate}}</div>
       </div>
       <div fxLayout="row" fxLayoutGap="10px">
-        <button (cbOnSuccess)="textCopied()" (click)="$event.stopPropagation()" [cbContent]="getTextExport()"
+        <button (click)="$event.stopPropagation()" [clipboard]="getTextExport"
+                [clipboardSuccessMessage]="'LIST.Copied_as_text' | translate"
                 [nzTitle]="'LIST.Copy_as_text' | translate"
-                ngxClipboard
                 nz-button nz-tooltip nzShape="circle" nzSize="small">
           <i nz-icon nzType="copy"></i>
         </button>

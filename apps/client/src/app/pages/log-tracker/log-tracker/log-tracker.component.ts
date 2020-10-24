@@ -65,7 +65,15 @@ export class LogTrackerComponent extends TrackerComponent {
               private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
-    this.dohTabs = [...this.lazyData.data.craftingLogPages];
+    this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
+      return page.map(tab => {
+        tab.recipes = tab.recipes.map(entry => {
+          entry.leves = this.lazyData.getItemLeveIds(entry.itemId);
+          return entry;
+        });
+        return tab;
+      });
+    });
     this.dolTabs = [...this.lazyData.data.gatheringLogPages];
     this.authFacade.user$.pipe(
     ).subscribe(user => {
@@ -101,7 +109,7 @@ export class LogTrackerComponent extends TrackerComponent {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = recipesToAdd.map(recipe => {
-          return this.listManager.addToList(recipe.itemId, list, recipe.recipeId, 1);
+          return this.listManager.addToList({ itemId: recipe.itemId, list: list, recipeId: recipe.recipeId, amount: 1 });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
@@ -177,23 +185,23 @@ export class LogTrackerComponent extends TrackerComponent {
   }
 
   public markDohPageAsDone(page: any): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      user.logProgression.push(...page.recipes.map(r => {
-        this.userCompletion[r.recipeId] = true;
-        return r.recipeId;
-      }));
-      this.authFacade.updateUser(user);
-    });
+    page.recipes
+      .filter(r => {
+        return !this.userCompletion[r.recipeId];
+      })
+      .map(r => {
+        this.authFacade.markAsDoneInLog('crafting', r.recipeId, true);
+      });
   }
 
   public markDolPageAsDone(page: any): void {
-    this.authFacade.user$.pipe(first()).subscribe(user => {
-      user.gatheringLogProgression.push(...page.items.map(i => {
-        this.userGatheringCompletion[i.itemId] = true;
-        return i.itemId;
-      }));
-      this.authFacade.updateUser(user);
-    });
+    page.items
+      .filter(i => {
+        return !this.userGatheringCompletion[i.itemId];
+      })
+      .map(i => {
+        this.authFacade.markAsDoneInLog('gathering', i.itemId, true);
+      });
   }
 
   @Memoized()

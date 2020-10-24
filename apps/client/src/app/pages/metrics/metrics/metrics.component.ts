@@ -83,10 +83,6 @@ export class MetricsComponent extends TeamcraftPageComponent {
     this.metricsDashboardsFacade.loadAll();
   }
 
-  afterExportCopied(): void {
-    this.message.success(this.translate.instant('METRICS.Export_copied_to_clipboard'));
-  }
-
   importLayout(): void {
     this.dialog.create({
       nzContent: TextQuestionPopupComponent,

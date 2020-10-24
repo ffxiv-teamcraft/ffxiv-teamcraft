@@ -69,7 +69,10 @@
                     <ng-template #inviteContent>
                       <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                         <div class="invite-url">{{('/teams/invite/' + invite.$key) | tcLink}}</div>
-                        <button (cbOnSuccess)="success('TEAMS.Invite_link_copied')" [cbContent]="('/teams/invite/'+invite.$key) | tcLink" [nzTitle]="'COMMON.Copy_to_clipboard' | translate" ngxClipboard nz-button
+                        <button [clipboard]="('/teams/invite/'+invite.$key) | tcLink"
+                                [clipboardSuccessMessage]="'TEAMS.Invite_link_copied' | translate"
+                                [nzTitle]="'COMMON.Copy_to_clipboard' | translate"
+                                nz-button
                                 nz-tooltip
                                 nzShape="circle"
                                 nzSize="small">

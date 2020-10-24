@@ -73,8 +73,9 @@
                 {{group.group.name}}
               </div>
               <button (click)="$event.stopPropagation()"
-                      [cdkCopyToClipboard]="getGroupLink(group.group.$key)"
-                      (cdkCopyToClipboardCopied)="afterGroupLinkCopy()"
+                      [clipboard]="getGroupLink(group.group.$key)"
+                      [clipboardFnArgs]="[group.group.$key]"
+                      [clipboardSuccessMessage]="'ALARMS.Group_link_copied' | translate"
                       nz-button
                       nzType="primary"
                       nzShape="circle"
@@ -85,12 +86,36 @@
                       nzSize="small">
                 <i nz-icon nzType="edit"></i>
               </button>
-              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroup(group.group)" [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
-                      nz-button nz-popconfirm
+              <button (click)="$event.stopPropagation();" 
+                      [nzDropdownMenu]="menu"
+                      nz-button
+                      nz-dropdown
                       nzGhost
-                      nzShape="circle" nzSize="small">
+                      nzTrigger="click"
+                      nzShape="circle" nzSize="small"
+               >
                 <i nz-icon nzType="delete"></i>
               </button>
+              <nz-dropdown-menu #menu="nzDropdownMenu" >
+                <ul nz-menu>
+                    <li nz-menu-item>
+                      <a (nzOnConfirm)="deleteGroup(group.group)"
+                        [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
+                        nz-popconfirm
+                      >
+                        {{'ALARMS.Delete_group' | translate}}
+                      </a>
+                    </li>
+                    <li nz-menu-item>
+                      <a (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
+                        [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                        nz-popconfirm
+                      >
+                        {{'ALARMS.Delete_group_and_alarms' | translate}}
+                      </a>
+                    </li>
+                </ul>
+              </nz-dropdown-menu>
               <button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
                       [nzTitle]="'ALARMS.Add_alarms_to_group' | translate"
                       [nzType]="'primary'" nz-button nz-tooltip
@@ -98,14 +123,6 @@
                 <i nz-icon nzType="plus"></i>
               </button>
               <div class="spacer"></div>
-              <button (click)="$event.stopPropagation();" (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
-                      [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
-                      nz-button
-                      nz-popconfirm
-                      nzSize="small"
-                      nzType="danger">
-                {{'ALARMS.Delete_group_and_alarms' | translate}}
-              </button>
               <nz-switch (click)="$event.stopPropagation();"
                          [(ngModel)]="group.group.enabled"
                          (ngModelChange)="updateGroupMuteState(group.group)"></nz-switch>
@@ -264,7 +281,10 @@
              nzType="delete"></i>
         </ng-template>
         <ng-template #copyMacro>
-          <i (cdkCopyToClipboardCopied)="macroCopied()" [cdkCopyToClipboard]="getIngameAlarmMacro(row)" nz-icon nz-tooltip
+          <i [clipboard]="getIngameAlarmMacro"
+             [clipboardFnArgs]="[row]"
+             [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
+             nz-icon nz-tooltip
              nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
              nzType="copy"></i>
         </ng-template>
@@ -390,7 +410,10 @@
               <i nz-icon nzType="delete"></i>
             </button>
           </span>
-          <button (cdkCopyToClipboardCopied)="macroCopied()" [cdkCopyToClipboard]="getIngameAlarmMacro(row)" nz-button nz-tooltip
+          <button [clipboard]="getIngameAlarmMacro"
+                  [clipboardFnArgs]="[row]"
+                  [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
+                  nz-button nz-tooltip
                   nzShape="circle"
                   nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
             <i nz-icon nzType="copy"></i>

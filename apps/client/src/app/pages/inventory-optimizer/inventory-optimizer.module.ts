@@ -17,7 +17,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { InventoryFacade } from '../../modules/inventory/+state/inventory.facade';
 import { Duplicates } from './optimizations/duplicates';
 import { FormsModule } from '@angular/forms';
-import { ClipboardModule } from 'ngx-clipboard';
+
 import { HasTooFew } from './optimizations/has-too-few';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { ConsolidateStacks } from './optimizations/consolidate-stacks';
@@ -94,7 +94,7 @@ const routes: Routes = [
     PageLoaderModule,
     FullpageMessageModule,
     ItemIconModule,
-    ClipboardModule,
+
     ScrollingModule,
     LazyScrollModule
   ],

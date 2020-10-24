@@ -41,6 +41,7 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { DataType } from '../../../modules/list/data/data-type';
+import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -137,8 +138,8 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     );
     this.layouts$ = this.layoutsFacade.allLayouts$;
     this.selectedLayout$ = this.layoutsFacade.selectedLayout$;
-    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$]).pipe(
-      mergeMap(([list, adaptativeFilter]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter))
+    this.finalItemsRow$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
+      mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getFinalItemsDisplay(list, adaptativeFilter, overrideHideCompleted))
     );
     this.display$ = combineLatest([this.list$, this.adaptativeFilter$, this.hideCompletedGlobal$]).pipe(
       mergeMap(([list, adaptativeFilter, overrideHideCompleted]) => this.layoutsFacade.getDisplay(list, adaptativeFilter, overrideHideCompleted)),
@@ -202,13 +203,9 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     this.listsFacade.updateList(list);
   }
 
-  getLink(list: List): string {
+  getLink = (list: List) => {
     return this.linkTools.getLink(`/list/${list.$key}`);
-  }
-
-  afterLinkCopy(): void {
-    this.message.success(this.translate.instant('Share_link_copied'));
-  }
+  };
 
   assignTeam(list: List, team: Team): void {
     list.teamId = team.$key;
@@ -317,7 +314,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     return (remaining > 0) ? (exportString + `${remaining}x ${this.i18nTools.getName(this.l12n.getItem(row.id))}\n`) : exportString;
   }
 
-  public getListTextExport(display: ListDisplay, list: List): string {
+  public getListTextExport = (display: ListDisplay, list: List) => {
     const seed = list.items.filter(row => row.id < 20).reduce((exportString, row) => {
       return this.appendExportStringWithRow(exportString, row);
     }, `${this.translate.instant('Crystals')} :\n`) + '\n';
@@ -327,11 +324,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       }, `${displayRow.title} :\n`) + '\n';
     }, seed);
 
-  }
-
-  afterListTextCopied(): void {
-    this.message.success(this.translate.instant('LIST.Copied_as_text'));
-  }
+  };
 
   regenerateList(list: List): void {
     this.regeneratingList = true;
@@ -360,6 +353,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Tags_popup'),
       nzFooter: null,
       nzContent: TagsPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openSplitPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Split_list'),
+      nzFooter: null,
+      nzContent: ListSplitPopupComponent,
       nzComponentParams: { list: list }
     });
   }

@@ -21,6 +21,7 @@ import {
 } from './lists.actions';
 import {
   catchError,
+  debounce,
   debounceTime,
   delay,
   distinctUntilChanged,
@@ -35,7 +36,7 @@ import {
 } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
-import { combineLatest, EMPTY, from, of } from 'rxjs';
+import { combineLatest, EMPTY, from, of, timer } from 'rxjs';
 import { ListsFacade } from './lists.facade';
 import { List } from '../model/list';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
@@ -56,6 +57,8 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
+import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
+import { DirtyScope } from '../../../core/dirty/dirty-scope';
 
 @Injectable()
 export class ListsEffects {
@@ -274,16 +277,24 @@ export class ListsEffects {
   @Effect({ dispatch: false })
   atomicListUpdate = this.actions$.pipe(
     ofType<UpdateListAtomic>(ListsActionTypes.UpdateListAtomic),
-    debounceTime(2000),
+    tap((action) => {
+      this.dirtyFacade.addEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
+    }),
+    debounce(action => action.fromPacket ? timer(5000) : timer(800)),
     filter(action => {
       return !(action.payload.ephemeral && action.payload.isComplete());
     }),
     switchMap((action) => {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
+        this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
         return of(null);
       }
-      return this.listService.update(action.payload.$key, action.payload);
+      return this.listService.update(action.payload.$key, action.payload).pipe(
+        tap(() => {
+          this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
+        })
+      );
     })
   );
 
@@ -390,7 +401,7 @@ export class ListsEffects {
           this.markAsDoneInDoLLog(action.itemId);
         }
       }
-      return new UpdateListAtomic(list);
+      return new UpdateListAtomic(list, action.fromPacket);
     })
   );
 
@@ -461,7 +472,8 @@ export class ListsEffects {
     private settings: SettingsService,
     private i18n: I18nToolsService,
     private l12n: LocalizedDataService,
-    private lazyData: LazyDataService
+    private lazyData: LazyDataService,
+    private dirtyFacade: DirtyFacade
   ) {
   }
 

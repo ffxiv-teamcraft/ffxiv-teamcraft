@@ -15,7 +15,6 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService, NzModalService } from 'ng-zorro-antd';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { PriceCheckResultComponent } from '../price-check-result/price-check-result.component';
 import { NumberQuestionPopupComponent } from '../../number-question-popup/number-question-popup/number-question-popup.component';
 import { UniversalisService } from '../../../core/api/universalis.service';
 import { DataType } from '../../list/data/data-type';
@@ -201,8 +200,8 @@ export class PricingComponent implements AfterViewInit {
     this.listsFacade.updateList(list);
   }
 
-  public getEarningText(rows: ListRow[], list: List): string {
-    return rows.filter(row => row.usePrice)
+  public getEarningText = (rows: ListRow[], list: List) => {
+    return rows.filter(row => row.usePrice !== false)
       .reduce((total, row) => {
         const price = this.pricingService.getEarnings(row);
         const amount = this.pricingService.getAmount(list.$key, row, true);
@@ -217,9 +216,9 @@ export class PricingComponent implements AfterViewInit {
         }
         return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
       }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
-  }
+  };
 
-  public getSpendingText(rows: ListRow[], list: List): string {
+  public getSpendingText = (rows: ListRow[], list: List) => {
     return rows.filter(row => row.usePrice)
       .reduce((total, row) => {
         const price = this.pricingService.getPrice(row);
@@ -235,11 +234,7 @@ export class PricingComponent implements AfterViewInit {
         }
         return `${total}\n ${this.i18n.getName(this.l12n.getItem(row.id))}: ${priceString}`;
       }, `${this.translate.instant('COMMON.Total')}: ${this.getTotalEarnings(rows, list).toLocaleString()}gil\n`);
-  }
-
-  public afterCopy(): void {
-    this.message.success(this.translate.instant('PRICING.Content_copied'));
-  }
+  };
 
   public getSpendingTotal(list: List): number {
     return list.finalItems.reduce((total, item) => {
@@ -298,6 +293,11 @@ export class PricingComponent implements AfterViewInit {
     if (this.pricingService.isCustomPrice(row)
       || price === 0
       || (this.pricingService.getPrice(row).fromVendor && list.finalItems.indexOf(row) === -1)) {
+
+      if (this.settings.ignoreCompletedItemInPricing && row.done >= row.amount) {
+        return 0;
+      }
+
       const prices = this.pricingService.getPrice(row);
       const amounts = this.pricingService.getAmount(list.$key, row);
       if (prices.hq > 0 && prices.hq < prices.nq) {
@@ -355,6 +355,11 @@ export class PricingComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    this.list$.pipe(
+      first()
+    ).subscribe(list => {
+      this.updateCosts(list);
+    });
     setTimeout(() => {
       this.cd.detectChanges();
     }, 500);

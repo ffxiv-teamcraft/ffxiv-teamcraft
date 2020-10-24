@@ -23,6 +23,8 @@ import { BaseParam } from '../../../modules/gearsets/base-param';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { GearsetProgression } from '../../../model/gearset/gearset-progression';
+import { Clipboard } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-gearset-display',
@@ -39,6 +41,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     })
   );
 
+  public progression$: Observable<GearsetProgression> = this.gearsetsFacade.selectedGearsetProgression$;
+
   public gearsetSlotProperties: (keyof TeamcraftGearset)[][] = [
     ['mainHand', 'offHand'],
     ['head', 'earRings'],
@@ -48,7 +52,6 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     ['legs', 'ring2'],
     ['feet', 'crystal']
   ];
-
 
   public level$ = new BehaviorSubject<number>(80);
 
@@ -94,7 +97,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private notificationService: NzNotificationService, private lazyData: LazyDataService,
               private router: Router, private i18n: I18nToolsService,
               private l12n: LocalizedDataService, private message: NzMessageService,
-              private authFacade: AuthFacade) {
+              private authFacade: AuthFacade, private clipboard: Clipboard) {
     super();
     this.activatedRoute.paramMap
       .pipe(
@@ -104,6 +107,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       )
       .subscribe(setId => {
         this.gearsetsFacade.select(setId);
+        this.gearsetsFacade.loadProgression(setId);
       });
   }
 
@@ -143,19 +147,28 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     return a === b || ((a && a.ID) === (b && b.ID) && a.HQ === b.HQ);
   }
 
-  generateList(gearset: TeamcraftGearset): void {
-    const items = this.gearsetsFacade.toArray(gearset).map(piece => {
-      return {
-        id: piece.itemId,
-        amount: 1
-      };
-    });
-    items.push(...this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools));
+  generateList(gearset: TeamcraftGearset, progression: GearsetProgression): void {
+    const items = this.gearsetsFacade.toArray(gearset)
+      .filter(piece => {
+        return progression[piece.slot]?.item === false;
+      })
+      .map(entry => {
+        return {
+          id: entry.piece.itemId,
+          amount: 1
+        };
+      });
+    items.push(...this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools, progression));
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
           const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
-          return this.listManager.addToList(+item.id, list, recipe ? recipe.id : '', item.amount);
+          return this.listManager.addToList({
+            itemId: +item.id,
+            list: list,
+            recipeId: recipe ? recipe.id : '',
+            amount: item.amount
+          });
         });
         let operation$: Observable<any>;
         if (operations.length > 0) {
@@ -190,19 +203,28 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
     });
   }
 
+  copyToClipboard(gearset: TeamcraftGearset): void {
+    const res = this.clipboard.copy(this.getString(gearset));
+    if (res) {
+      this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
+    }
+  }
+
   getString(gearset: TeamcraftGearset): string {
     return this.gearsetsFacade.toArray(gearset)
-      .reduce((acc, piece) => {
-        acc += `**${this.i18n.getName(this.l12n.getItem(piece.itemId))}${piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
-        ${piece.materias.filter(m => m > 0).reduce((materiaStr, materia) => {
+      .filter(entry => entry.piece !== null)
+      .reduce((acc, entry) => {
+        acc += `**${this.i18n.getName(this.l12n.getItem(entry.piece.itemId))}${entry.piece.hq ? ' ' + this.translate.instant('COMMON.Hq') : ''}**
+        ${entry.piece.materias.filter(m => m > 0).reduce((materiaStr, materia) => {
           return `${materiaStr}\n- ${this.i18n.getName(this.l12n.getItem(materia))}`;
         }, '')}\n\n`;
         return acc;
       }, '');
   }
 
-  afterStringCopy(): void {
-    this.message.success(this.translate.instant('GEARSETS.Copied_as_string'));
+  updateProgression(key: string, progression: GearsetProgression): void {
+    this.gearsetsFacade.saveProgression(key, { ...progression });
   }
+
 
 }

@@ -10,9 +10,10 @@
   <div *ngFor="let tab of display$ | async" class="tab" fxLayout="row wrap" fxLayoutGap="5px">
     <div *ngFor="let slot of tab" [class.empty]="slot === undefined" class="slot" nz-tooltip
          nzTitle="{{slot?.id | itemName| i18n}} ({{'Copy_isearch' | translate}})">
-      <div (cbOnSuccess)="copied('Item_name_copied', {itemname: $event.content})"
-           *ngIf="slot !== undefined" cbContent="/isearch &quot;{{slot?.id | itemName | i18n}}&quot;" class="item-container"
-           ngxClipboard>
+      <div *ngIf="slot !== undefined"
+           clipboard="/isearch &quot;{{slot?.id | itemName | i18n}}&quot;"
+           [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (slot?.id | itemName | i18n) + '&quot;'}"
+           class="item-container">
         <img src="{{slot.id | lazyIcon}}">
         <span class="amount">{{slot.amount}}</span>
       </div>

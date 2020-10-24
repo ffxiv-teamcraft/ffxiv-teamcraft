@@ -13,7 +13,7 @@
   <nz-list [nzDataSource]="lists.otherLists" [nzHeader]="yourListsHeader" [nzRenderItem]="list">
     <ng-template #list let-list>
       <nz-list-item [nzActions]="[pickOwnList]">
-        <nz-list-item-meta [nzTitle]="list.name">
+        <nz-list-item-meta nzTitle="{{list.name}} ({{list.finalItems.length}})">
         </nz-list-item-meta>
       </nz-list-item>
       <ng-template #pickOwnList>

@@ -13,7 +13,7 @@ export class SettingsService {
   public regionChange$ = new Subject<{ previous: Region, next: Region }>();
   public region$: Observable<Region>;
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
-  public settingsChange$ = new Subject<void>();
+  public settingsChange$ = new Subject<string>();
   private cache: { [id: string]: string };
 
   constructor(@Optional() private ipc: IpcService) {
@@ -60,6 +60,14 @@ export class SettingsService {
     this.setSetting('recipe-finder:only-craftable', show.toString());
   }
 
+  public get showOnlyNotCompletedInRecipeFinder(): boolean {
+    return this.getSetting('recipe-finder:only-not-completed', 'false') === 'true';
+  }
+
+  public set showOnlyNotCompletedInRecipeFinder(show: boolean) {
+    this.setSetting('recipe-finder:only-not-completed', show.toString());
+  }
+
   public get showOnlyCollectablesInRecipeFinder(): boolean {
     return this.getSetting('recipe-finder:only-collectables', 'false') === 'true';
   }
@@ -74,6 +82,14 @@ export class SettingsService {
 
   public set configurationPanelExpanded(expanded: boolean) {
     this.setSetting('simulation:configuration:expanded', expanded.toString());
+  }
+
+  public get detailedSimulatorActions(): boolean {
+    return this.getSetting('simulation:actions:detailed', 'false') === 'true';
+  }
+
+  public set detailedSimulatorActions(detailed: boolean) {
+    this.setSetting('simulation:actions:detailed', detailed.toString());
   }
 
   public get timeFormat(): '24H' | '12H' {
@@ -170,6 +186,14 @@ export class SettingsService {
 
   public set defaultPermissionLevel(level: number) {
     this.setSetting('default-permission-level', level.toString());
+  }
+
+  public get maximumVendorPrice(): number {
+    return +this.getSetting('maximum-vendor-price', '0');
+  }
+
+  public set maximumVendorPrice(price: number) {
+    this.setSetting('maximum-vendor-price', price.toString());
   }
 
   public get pageViews(): number {
@@ -328,6 +352,14 @@ export class SettingsService {
 
   public set expectToSellEverything(sellEverything: boolean) {
     this.setSetting('pricing:expect-sell-all', sellEverything.toString());
+  }
+
+  public get ignoreCompletedItemInPricing(): boolean {
+    return this.getSetting('pricing:ignore-completed-items', 'false') === 'true';
+  }
+
+  public set ignoreCompletedItemInPricing(ignore: boolean) {
+    this.setSetting('pricing:ignore-completed-items', ignore.toString());
   }
 
   public get theme(): Theme {
@@ -531,6 +563,14 @@ export class SettingsService {
     this.setSetting('macroEchoSeNumber', echoSeNumber.toString());
   }
 
+  public get macroCompletionMessage(): string {
+    return this.getSetting('macroCompletionMessage', 'Craft finished');
+  }
+
+  public set macroCompletionMessage(completionMessage: string) {
+    this.setSetting('macroCompletionMessage', completionMessage);
+  }
+
   public get macroEcho(): boolean {
     return this.getSetting('macroEcho', 'true') === 'true';
   }
@@ -603,7 +643,7 @@ export class SettingsService {
     this.cache[name] = value;
     localStorage.setItem('settings', JSON.stringify(this.cache));
     this.ipc.send('apply-settings', { ...this.cache });
-    this.settingsChange$.next();
+    this.settingsChange$.next(name);
   }
 
 }

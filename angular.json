@@ -13,7 +13,7 @@
           "prefix": "app",
           "style": "less",
           "changeDetection": "OnPush",
-          "spec": false
+          "skipTests": true
         }
       },
       "architect": {
@@ -39,7 +39,8 @@
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
-              }
+              },
+              "apps/client/src/oembed.json"
             ],
             "styles": [
               "apps/client/src/cdk.less",
@@ -91,12 +92,14 @@
             },
             "electron": {
               "optimization": true,
-              "outputHashing": "none",
+              "outputHashing": "all",
               "sourceMap": false,
               "extractCss": true,
-              "namedChunks": true,
+              "namedChunks": false,
+              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
+              "buildOptimizer": true,
               "baseHref": "",
               "fileReplacements": [
                 {

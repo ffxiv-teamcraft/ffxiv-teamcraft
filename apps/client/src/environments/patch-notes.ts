@@ -1,16 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **community-lists:** fixed community lists content not showing.
-* **list:** fixed an issue with ephemeral lists not being created properly.
-* **list:** fixed zone breakdown rows not showing item name.
-* **list-overlay:** fixed list panel overlay not using selected layout.
-* **profile:** fixed an issue with profile not loading properly.
-* **recipe-picker:** fixed result names always showing in english.
-* **rotations:** fixed loading screen not showing properly.
-* **simulator:** fixed a bug with simulator not opening properly.
-* **teams:** fixed team detach from lists page.
+* **alarms:** going further in the future looking for weather spawns now.
+* **autofill:** better integrity check on list autofill update.
+* **desktop:** fixed an error with auto log filling as you craft.
+* **inventory:** big performance improvement for inventory capture & autofill.
+* **layout:** maximum vendor price now applies to every vendor-related filters.
 
 
 ### Features
 
-* **patreon:** new supporter: Coss Collaborative..`;
+* **db:** you can now mark gatherable items as done in log from their db page.
+* **list:** added link to the fishing spot db page on fish details popup.
+* **list:** you can now split a list in smaller lists.
+* **recipe-finder:** new filter to consider only recipes you never crafted.`;

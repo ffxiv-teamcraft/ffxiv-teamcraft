@@ -155,10 +155,6 @@ export class AlarmsPageComponent implements OnInit {
     return this.linkService.getLink(`/alarm-group/${key}`);
   }
 
-  afterGroupLinkCopy(): void {
-    this.message.success(this.translate.instant('ALARMS.Group_link_copied'));
-  }
-
   deleteGroup(group: AlarmGroup): void {
     this.alarmsFacade.deleteGroup(group.$key);
   }
@@ -168,7 +164,7 @@ export class AlarmsPageComponent implements OnInit {
     alarms.map(alarm => alarm.alarm).forEach(alarm => this.deleteAlarm(alarm));
   }
 
-  getIngameAlarmMacro(display: AlarmDisplay): string {
+  getIngameAlarmMacro = (display: AlarmDisplay) => {
     const rp: I18nName = {
       en: 'rp',
       de: 'wh',
@@ -179,7 +175,7 @@ export class AlarmsPageComponent implements OnInit {
     return `/alarm "${display.alarm.itemId ? this.i18n.getName(this.l12n.getItem(display.alarm.itemId)).slice(0, 10) : display.alarm.name.slice(0, 10)
     }" et ${this.i18n.getName(rp)} ${display.nextSpawn.hours < 10 ? '0' : ''}${display.nextSpawn.hours}00 ${
       Math.ceil(this.etime.toEarthTime(this.settings.alarmHoursBefore * 60) / 60)}`;
-  }
+  };
 
   addAlarmsToGroup(group: AlarmGroup): void {
     this.display$.pipe(
@@ -212,10 +208,6 @@ export class AlarmsPageComponent implements OnInit {
         this.alarmsFacade.updateAlarm(alarm);
       });
     });
-  }
-
-  macroCopied(): void {
-    this.message.success(this.translate.instant('ALARMS.Macro_copied'));
   }
 
   showSettings(): void {

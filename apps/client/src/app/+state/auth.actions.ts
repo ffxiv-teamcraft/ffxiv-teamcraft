@@ -4,8 +4,8 @@ import { AuthState } from './auth.reducer';
 import { Character, CharacterResponse } from '@xivapi/angular-client';
 import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
-import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { LogTracking } from '../model/user/log-tracking';
+import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -232,7 +232,7 @@ export class ToggleMasterbooks implements Action {
 export class SaveSet implements Action {
   readonly type = AuthActionTypes.SaveSet;
 
-  constructor(public readonly set: GearSet, public readonly ignoreSpecialist: boolean) {
+  constructor(public readonly set: TeamcraftGearsetStats, public readonly ignoreSpecialist: boolean) {
   }
 }
 
@@ -246,7 +246,7 @@ export class SaveDefaultConsumables implements Action {
 export class MarkAsDoneInLog implements Action {
   readonly type = AuthActionTypes.MarkAsDoneInLog;
 
-  constructor(public readonly log: keyof LogTracking, public readonly itemId: number, public readonly done: boolean) {
+  constructor(public readonly log: keyof LogTracking, public readonly itemId: number, public readonly done = true) {
   }
 }
 

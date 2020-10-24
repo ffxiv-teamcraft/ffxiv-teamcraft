@@ -177,6 +177,7 @@
     "Custom_sound": "Настраиваемый звук",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
+    "Delete_group": "Delete group",
     "Delete_group_and_alarms": "Удалить группу со всеми оповещениями",
     "Confirm_group_delete_with_alarms": "Вы уверены, что хотите удалить эту группу и все её оповещения?",
     "Add_note": "Добавить заметку",
@@ -429,6 +430,8 @@
     "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
+    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -481,6 +484,8 @@
     "Fishing_rankings": "Рейтинг Рыбалки",
     "Total_rankings": "Общий рейтинг",
     "Loading_fish_rankings": "Загрузка рейтинга рыбалки",
+    "Gearset_priority": "Priority",
+    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "Подтверждение персонажа",
       "Guide": "Чтобы подтвердить свою учетную запись, вставьте этот код: \"{{userId}}\" в своём профиле Lodestone и нажмите кнопку ниже. Подробнее - на <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">вики</a>",
@@ -642,6 +647,7 @@
     "X_needed": "{{amount}} требуется",
     "Leave_list": "Покинуть этот список",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Split_list": "Split this list",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -684,6 +690,10 @@
       "Open": "Открыть оверлей списка",
       "No_display": "Открыть список в главном окне для начала",
       "No_panel_selected": "Выберите панель, используя кнопки выше"
+    },
+    "SPLIT": {
+      "Pick_items": "Pick items to add to another list",
+      "Remove_from_list": "Remove from the current list"
     }
   },
   "LIST_TAGS": {
@@ -849,6 +859,7 @@
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
+    "Completion_message": "Completion message",
     "Import_macro": "Импорт из внутриигрового макроса",
     "Ingame_macro": "Внутриигровой макрос",
     "Min_stats": "Минимальные статы",
@@ -912,6 +923,8 @@
     "Could_not_find_minstats": "Не удалось определить минимальные характеристики для этой ротации",
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
+    "Compact": "Compact",
+    "Detailed": "Detailed",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -1067,7 +1080,8 @@
     "Craft_price": "Цена создания",
     "Marketboard_price": "Цена NQ",
     "Marketboard_price_hq": "Цена HQ",
-    "Enter_total_earnings": "Введите общий доход"
+    "Enter_total_earnings": "Введите общий доход",
+    "Ignore_completed_items": "Exclude completed items"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -1424,7 +1438,8 @@
     "ITEM": {
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
       "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control"
+      "Required_control": "Req. Control",
+      "Mark_as_done_in_gathering_log": "Mark as done in log"
     },
     "FISH": {
       "Hour": "Время",
@@ -1667,7 +1682,8 @@
     "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
     "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
     "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
-    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места"
+    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места",
+    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1699,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Recipe_level": "Recipe level",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
@@ -1708,6 +1725,11 @@
     "You_can_buy": "Вы можете купить {{amount}}",
     "Disabled": "Гид по трате валют более не работает",
     "Disabled_description": "Это произошло по причине того, что Square Enix не позволяют нам получать информацию с маркета. Если вы хотите пожаловаться на это, пожалуйста, жалуйтесь Square Enix, мы не сможем заставить это работать без их помощи."
+  },
+  "FOOD_PICKER": {
+    "Title": "Food Picker",
+    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Pick_stat": "Choose an attribute"
   },
   "BLOG": {
     "Title": "Блог"
@@ -1781,6 +1803,7 @@
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
+      "Current_Gear": "Current gear",
       "RetainerMarket": "На продаже у ретейнеров"
     }
   },
@@ -1869,12 +1892,14 @@
     "Import_from_ariyala": "Импорт из Ariyala",
     "Import_from_lodestone": "Импорт с Lodestone",
     "Import_using_pcap": "Импорт используя захват пакетов",
+    "Sync_with_pcap": "Sync gearsets with packet capture",
     "Your_gearsets": "Ваши наборы снаряжения",
     "Delete_gearset": "Удалить набор",
     "Import_from_pcap_notice": "Переключитесь на необходимый набор соответствующей профессии, чтобы сделать импорт.",
     "No_food_selected": "Еда не выбрана",
     "Generate_list": "Создать список",
     "Clone_gearset": "Копировать список на ваш аккаунт",
+    "Clone_gearset_from_sync": "Create a copy of this gearset",
     "You_have_no_gearsets": "У вас нет наборов",
     "Favorite_gearsets": "Избранные наборы снаряжения",
     "Update_from_pcap": "Обновить используя захват пакетов",
@@ -1889,6 +1914,8 @@
     "Stats_caps": "Stats caps",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Copied_as_string": "Gearset copied as string",
+    "Mark_as_done": "Mark as done",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -1929,6 +1956,14 @@
       "Critical_hit_multiplier": "Мультипликатор крит. урона",
       "Determination_bonus": "Determination бонус",
       "GCD": "GCD"
+    },
+    "SYNC": {
+      "Title": "Synchronize gearsets",
+      "Tag": "Sync",
+      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Importing_gearset": "Importing set for {{name}}",
+      "Imported_gearset": "Imported set for {{name}}",
+      "Syncing_gearsets": "Synchronizing gearsets..."
     }
   },
   "FOLDERS": {

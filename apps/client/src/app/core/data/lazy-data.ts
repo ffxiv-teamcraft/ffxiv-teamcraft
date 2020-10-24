@@ -52,6 +52,7 @@ export interface LazyData {
   maps: any;
   marketItems: any;
   materias: any;
+  medicines: any;
   mobs: any;
   monsters: any;
   nodes: any;

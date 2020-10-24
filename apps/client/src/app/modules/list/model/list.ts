@@ -1,6 +1,5 @@
-import { getItemSource, ListRow } from './list-row';
+import { getCraftByPriority, getItemSource, ListRow } from './list-row';
 import { CraftAddition } from './craft-addition';
-import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import * as semver from 'semver';
 import { ListTag } from './list-tag.enum';
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
@@ -22,8 +21,19 @@ import { SettingsService } from '../../settings/settings.service';
 import { LazyData } from '../../../core/data/lazy-data';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CraftedBy } from './crafted-by';
+import { TeamcraftGearsetStats } from '../../../model/user/teamcraft-gearset-stats';
 
 declare const gtag: Function;
+
+interface CraftAdditionParams {
+  _additions: CraftAddition[];
+  customItems: CustomItem[];
+  dataService: DataService;
+  listManager: ListManagerService;
+  lazyDataService: LazyDataService;
+  gearsets?: TeamcraftGearsetStats[];
+  recipeId?: string;
+}
 
 export class List extends DataWithPermissions {
   offline?: boolean;
@@ -428,7 +438,7 @@ export class List extends DataWithPermissions {
     }
   }
 
-  public addCraft(_additions: CraftAddition[], gt: GarlandToolsService, customItems: CustomItem[], dataService: DataService, listManager: ListManagerService, lazyDataService: LazyDataService, recipeId?: string): Observable<List> {
+  public addCraft({ _additions, customItems, dataService, listManager, lazyDataService, recipeId, gearsets }: CraftAdditionParams): Observable<List> {
     const done$ = new Subject<void>();
     return of(_additions).pipe(
       expand(additions => {
@@ -441,7 +451,7 @@ export class List extends DataWithPermissions {
             if (addition.data instanceof CustomItem) {
               return this.addCustomCraft(addition, customItems, dataService, listManager, lazyDataService);
             } else {
-              return of(this.addNormalCraft(addition, listManager, lazyDataService, recipeId));
+              return of(this.addNormalCraft(addition, listManager, lazyDataService, gearsets, recipeId));
             }
           })
         ).pipe(
@@ -457,14 +467,14 @@ export class List extends DataWithPermissions {
     );
   }
 
-  private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, recipeId?: string): CraftAddition[] {
+  private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, gearsets: TeamcraftGearsetStats[], recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
     let craft: CraftedBy;
     const crafts = getItemSource<CraftedBy[]>(addition.item, DataType.CRAFTED_BY);
     if (recipeId !== undefined) {
       craft = crafts.find(c => c.id.toString() === recipeId.toString()) || crafts[0];
     } else {
-      craft = crafts[0];
+      craft = getCraftByPriority(crafts, gearsets);
     }
     const ingredients = lazyDataService.getRecipeSync(craft.id).ingredients;
     for (const element of ingredients) {
@@ -483,13 +493,14 @@ export class List extends DataWithPermissions {
       } else {
         const elementDetails = lazyDataService.getExtract(+element.id);
         const craftedBy = getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY);
+        const craftToAdd = getCraftByPriority(craftedBy, gearsets);
         if (elementDetails && getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY).length > 0) {
-          const yields = craftedBy[0].yield || 1;
+          const yields = craftToAdd.yield || 1;
           const added = this.add(this.items, {
             id: elementDetails.id,
             icon: elementDetails.icon,
             amount: element.amount * addition.amount,
-            requires: lazyDataService.getRecipeSync(craftedBy[0].id).ingredients,
+            requires: lazyDataService.getRecipeSync(craftToAdd.id).ingredients,
             done: 0,
             used: 0,
             yield: yields,
