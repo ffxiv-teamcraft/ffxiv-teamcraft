@@ -1959,7 +1959,7 @@
     },
     "SYNC": {
       "Title": "Synchronisiere Ausrüstungssets",
-      "Tag": "Sync",
+      "Tag": "Synchronisieren",
       "Tag_tooltip": "Dieses Ausrüstungsset stammt von einer Synchronisation, die mit Paketaufzeichnung erstellt wurde. Es wird aktualisiert, wenn du es für diesen Job erneut synchronisierst.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
