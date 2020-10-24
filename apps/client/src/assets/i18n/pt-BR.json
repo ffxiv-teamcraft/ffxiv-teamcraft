@@ -1715,7 +1715,8 @@
     "Pages_range_label": "{{ range0 }}-{{ range1 }} of {{ total }} items",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level"
+    "Recipe_level": "Recipe level",
+    "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
     "Title": "Currency Spending guide",
