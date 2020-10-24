@@ -117,7 +117,7 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Nach Markierungen filtern",
     "Tags_filter_reset": "Markierungsfilter zurücksetzen",
-    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_placeholder": "Benutze Tags ausschließen",
     "Exclude_filter_reset": "Ausgeschlossene Tags zurücksetzen",
     "Name_filter_placeholder": "Nach Name filtern",
     "No_lists_matching": "Keine Listen entsprechen deinen Filtern"
@@ -177,7 +177,7 @@
     "Custom_sound": "Benutzerdefinierter Benachrichtigungston",
     "New_group": "Neue Benachrichtigungsgruppe",
     "Confirm_group_delete": "Möchtest du diese Gruppe wirklich löschen?",
-    "Delete_group": "Delete group",
+    "Delete_group": "Gruppe löschen",
     "Delete_group_and_alarms": "Gruppe mit allen Alarmen löschen",
     "Confirm_group_delete_with_alarms": "Möchtest du diese Gruppe und alle Alarme darin wirklich löschen?",
     "Add_note": "Notiz hinzufügen",
@@ -430,7 +430,7 @@
     "Enable_metrics_capture_explain": "(Erlaubt das Erfassen und Analysieren deiner Gil und Einnahmen. Dies wird niemals auf dem Server gespeichert und dient nur für dich selbst)",
     "Metrics_capture_tooltip": "Diese Funktion wird zwar erst in einem künftigen Update hinzugefügt, die Datenerfassung jetzt schon zu aktivieren bedeutet aber, dass Daten bereits gesammelt werden können und nicht erst, wenn die Funktion zur App hinzugefügt wird.",
     "Metrics_capture_folder": "Metrik-Logordner",
-    "Maximum_vendor_price": "Maximum vendor price",
+    "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "COLORS": {
       "Background": "Hintergrundfarbe",
@@ -484,8 +484,8 @@
     "Fishing_rankings": "Fischer-Ranglisten",
     "Total_rankings": "Gesamtrangliste",
     "Loading_fish_rankings": "Fischerei-Ranglisten werden geladen",
-    "Gearset_priority": "Priority",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
+    "Gearset_priority": "Priorität",
+    "Gearset_priority_explain": "Wird verwendet, um zu entscheiden, welches Rezept für Gegenstände ausgewählt werden soll, die von mehreren Jobs hergestellt werden können wie Barren, Nuggets und anderen Luftschiffreparaturmaterialien.",
     "VERIFICATION": {
       "Title": "Charakterverifizierung",
       "Guide": "Um dein Konto zu verifizieren, füge den Code \"{{userId}}\" in die Biografie deines Lodestone-Profils ein und klicke danach den Button. Mehr Informationen findest du in der <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">Wiki</a>.",
@@ -647,7 +647,7 @@
     "X_needed": "{{amount}} benötigt",
     "Leave_list": "Diese Liste verlassen",
     "Cannot_leave": "Du kannst diese Liste nicht verlassen, weil sie mit deiner gesamten FG (in diesem Fall musst du den Besitzer bitten, sie zu entfernen) oder eines deiner Teams (in diesem Fall kannst du das Team verlassen) geteilt wird.",
-    "Split_list": "Split this list",
+    "Split_list": "Diese Liste aufteilen",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -692,8 +692,8 @@
       "No_panel_selected": "Wähle mit den Schaltflächen oben ein Panel aus"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "Elemente auswählen um sie einer anderen Liste hinzuzufügen",
+      "Remove_from_list": "Von aktueller Liste entfernen"
     }
   },
   "LIST_TAGS": {
@@ -923,8 +923,8 @@
     "Could_not_find_minstats": "Konnte keine minimalen Attribute für diese Rotation finden",
     "Remove_final_appraisal": "Entferne den Buff von Letzte Kontrolle",
     "Total_macro_duration": "Gesamte Makrodauer: {{duration}}s.",
-    "Compact": "Compact",
-    "Detailed": "Detailed",
+    "Compact": "Kompakt",
+    "Detailed": "Detailliert",
     "STATE": {
       "Excellent": "Exzellent",
       "Good": "Gut",
@@ -953,8 +953,8 @@
       "Min_craftsmanship_filter_placeholder": "Minimum-Kunstfertigkeit",
       "Min_control_filter_placeholder": "Minimum-Kontrolle",
       "Min_cp_filter_placeholder": "Minimum-HP",
-      "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Difficulty_filter_placeholder": "Schwierigkeit",
+      "Quality_filter_placeholder": "Qualität",
       "Intro": "Filter eingeben, um zu beginnen",
       "Result_tooltip": "Resultat einer Simulation mit dieser Rotation und deinen Attributen",
       "Fail": "Fehlgeschlagen",
@@ -1081,7 +1081,7 @@
     "Marketboard_price": "NQ Preis",
     "Marketboard_price_hq": "HQ Preis",
     "Enter_total_earnings": "Gesamteinnahmen eingeben",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Abgeschlossene Elemente ausschließen"
   },
   "LEVEQUESTS": {
     "Title": "Freibriefe",
@@ -1437,9 +1437,9 @@
     "Ishgard_restoration": "Wiederaufbau Ishgards",
     "ITEM": {
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Required_craftsmanship": "benötigte Kunstfertigkeit",
+      "Required_control": "benötigte Kontrolle",
+      "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -1683,7 +1683,7 @@
     "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
     "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
     "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
+    "Open_in_desktop_shortcut": "Drücke Strg + Shift + C, um die aktuelle Seite in der Desktop-App zu öffnen oder um das \"Webadressen öffnen\" Modul in der Desktop-App zu öffnen."
   },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
@@ -2191,6 +2191,6 @@
     "Cannot_record": "Wiederholungen können nicht aufgezeichnet werden",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "Neues Verzeichnis",
-    "Save_replay": "Save replay in database"
+    "Save_replay": "Wiederholung in Datenbank speichern"
   }
 }
