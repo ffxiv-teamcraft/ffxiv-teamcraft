@@ -135,7 +135,11 @@ export class FishingMissesPopupComponent implements OnInit {
 
   private getGraphQLQuery(spotId: number, filters: any): any {
     const filtersStr = Object.entries(filters).reduce((acc, [key, value]) => {
-      return `${acc}, ${key}:{_eq: ${value}}`;
+      if (value instanceof Array) {
+        return `${acc}, ${key}:{_in: ${JSON.stringify(value)}}`;
+      } else {
+        return `${acc}, ${key}:{_eq: ${value}}`;
+      }
     }, `{spot: {_eq: ${spotId}}, itemId: {_eq: -1}`);
     return gql`
           query fishData {
