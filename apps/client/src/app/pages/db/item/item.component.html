@@ -27,10 +27,10 @@
                        nz-input type="number">
               </nz-input-group>
               <ng-template #addButton>
-                <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
+                <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
                    nzType="plus"></i>
               </ng-template>
-              <button (click)="createQuickList(searchResult, +amountInput.value)" [nzShape]="'circle'" [nzTitle]="'Quick_list_create' | translate"
+              <button (click)="createQuickList(searchResult, +amountInput.value)" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate"
                       fxFlex="0 0 auto"
                       nz-button nz-tooltip>
                 <i nz-icon nzType="clock-circle-o"></i>
@@ -39,11 +39,11 @@
           </div>
           <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
                fxLayoutGap="5px">
-            <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+            <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
               <img [alt]="link.title" [src]="link.icon" class="link-icon">
             </a>
             <button (click)="openModelViewer(xivapiItem, gtData)" *ngIf="gtData.item.models?.length > 0"
-                    [nzTitle]="'DB.3d_model_help' | translate" nz-button
+                    [nzTooltipTitle]="'DB.3d_model_help' | translate" nz-button
                     nz-tooltip
                     nzShape="circle">
               <span>3D</span>
@@ -542,7 +542,7 @@
                                    nz-input type="number">
                           </nz-input-group>
                           <ng-template #addButton>
-                            <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
+                            <i (click)="addItemsToList(searchResult, +amountInput.value)" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" nz-icon nz-tooltip
                                nzType="plus"></i>
                           </ng-template>
                         </ng-container>
@@ -667,7 +667,7 @@
                           [nzDescription]="duelDescription"
                           [nzTitle]="duelTitle">
                           <ng-template #duelTitle>
-                            <a [nzTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
+                            <a [nzTooltipTitle]="'DB.More_on_attt_npc' | translate" href="https://triad.raelys.com/npcs/{{duel.atttNpcId}}" nz-tooltip
                                target="_blank">{{ duel.npcId | npcName | i18n }}</a>
                           </ng-template>
                           <ng-template #duelDescription>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { FreecompanyPickerComponent } from './user-picker/freecompany-picker.component';

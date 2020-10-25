@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 import { catchError, map, scan, skip, startWith } from 'rxjs/operators';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-progress-popup',

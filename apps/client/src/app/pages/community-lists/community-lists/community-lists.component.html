@@ -9,7 +9,7 @@
                nzMode="multiple">
       <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
     </nz-select>
-    <button (click)="tagsFilter$.next([])" [nzTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate" nz-button
+    <button (click)="tagsFilter$.next([])" [nzTooltipTitle]="'COMMUNITY_LISTS.Tags_filter_reset' | translate" nz-button
             nz-tooltip>
       <i nz-icon nzType="reload"></i>
     </button>
@@ -21,7 +21,7 @@
                nzMode="multiple">
       <nz-option *ngFor="let tag of tags" [nzLabel]="tag.label | translate" [nzValue]="tag.value"></nz-option>
     </nz-select>
-    <button (click)="excludeFilter$.next([])" [nzTitle]="'COMMUNITY_LISTS.Exclude_filter_reset' | translate" nz-button
+    <button (click)="excludeFilter$.next([])" [nzTooltipTitle]="'COMMUNITY_LISTS.Exclude_filter_reset' | translate" nz-button
             nz-tooltip>
       <i nz-icon nzType="reload"></i>
     </button>

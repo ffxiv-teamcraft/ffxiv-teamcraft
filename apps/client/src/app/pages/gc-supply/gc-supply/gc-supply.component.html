@@ -3,7 +3,7 @@
   <nz-form-item *ngFor="let control of form.controls | keys">
     <nz-form-control>
       <nz-input-group [nzPrefix]="jobIcon">
-        <input [formControlName]="control" [nzTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
+        <input [formControlName]="control" [nzTooltipTitle]="+control | jobName | i18n" class="lvl-input" min="0" nz-input
                nz-tooltip
                required type="number"/>
       </nz-input-group>

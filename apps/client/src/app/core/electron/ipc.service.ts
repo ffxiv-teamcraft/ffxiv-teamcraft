@@ -9,6 +9,7 @@ import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
 import * as pcap from '../../model/pcap';
 import { PlayerSpawn } from '../../model/pcap';
+import { environment } from '../../../environments/environment';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -105,10 +106,6 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('currencyCrystalInfo'));
   }
 
-  public get actorControlPackets$(): Observable<pcap.ActorControl> {
-    return this.packets$.pipe(ofPacketType('actorControl'));
-  }
-
   public get prepareZoningPackets$(): Observable<pcap.PrepareZoning> {
     return this.packets$.pipe(ofPacketType('prepareZoning'));
   }
@@ -189,6 +186,14 @@ export class IpcService {
 
   public send(channel: string, data?: any): void {
     if (this.ready) {
+      if (!environment.production) {
+        try {
+          this.canBeCloned(data);
+        } catch (e) {
+          console.error(`[DEV MODE ONLY] IPC Message sent on ${channel} will not work with Electron > 8`);
+          console.error(data);
+        }
+      }
       return this._ipc.send(channel, data);
     }
   }
@@ -231,6 +236,34 @@ export class IpcService {
     this.handleOverlayChange();
   }
 
+  private canBeCloned(val: any): boolean {
+    if (Object(val) !== val) // Primitive value
+      return true;
+    switch ({}.toString.call(val).slice(8, -1)) { // Class
+      case 'Boolean':
+      case 'Number':
+      case 'String':
+      case 'Date':
+      case 'RegExp':
+      case 'Blob':
+      case 'FileList':
+      case 'ImageData':
+      case 'ImageBitmap':
+      case 'ArrayBuffer':
+        return true;
+      case 'Array':
+      case 'Object':
+        return Object.keys(val).every(prop => this.canBeCloned(val[prop]));
+      case 'Map':
+        return [...val.keys()].every(this.canBeCloned)
+          && [...val.values()].every(this.canBeCloned);
+      case 'Set':
+        return [...val.keys()].every(this.canBeCloned);
+      default:
+        throw new Error(`${JSON.stringify(val)} cannot be cloned`);
+    }
+  }
+
   private handleOverlayChange(): void {
     if (this.overlayUri) {
       if (this.stateSubscription) {
@@ -249,7 +282,7 @@ export class IpcService {
           distinctUntilChanged()
         )
         .subscribe(state => {
-          this.send('app-state:set', state);
+          this.send('app-state:set', JSON.parse(JSON.stringify(state)));
         });
     }
   }

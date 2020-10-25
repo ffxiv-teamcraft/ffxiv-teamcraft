@@ -3,7 +3,7 @@ import { List } from '../model/list';
 import { ListPickerService } from '../../list-picker/list-picker.service';
 import { ListRow } from '../model/list-row';
 import { ListsFacade } from '../+state/lists.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-list-split-popup',

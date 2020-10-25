@@ -68,7 +68,7 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="{{data.weatherId | weatherIcon | xivapiIcon}}"
                nz-tooltip
-               [nzTitle]="data.weatherId | weatherName | i18n"
+               [nzTooltipTitle]="data.weatherId | weatherName | i18n"
                alt="{{data.weatherId | weatherName | i18n}}">
           <div>{{data.weatherId | weatherName | i18n}}</div>
         </div>
@@ -77,7 +77,7 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img src="{{data.previousWeatherId | weatherIcon | xivapiIcon}}"
                nz-tooltip
-               [nzTitle]="data.previousWeatherId | weatherName | i18n"
+               [nzTooltipTitle]="data.previousWeatherId | weatherName | i18n"
                alt="{{data.previousWeatherId | weatherName | i18n}}">
           <div>{{data.previousWeatherId | weatherName | i18n}}</div>
         </div>

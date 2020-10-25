@@ -20,12 +20,12 @@
       <div class="spacer"></div>
       <button [clipboard]="layout.base64"
               [clipboardSuccessMessage]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string_copied' | translate"
-              [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate"
+              [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_string' | translate"
               nz-button
               nz-tooltip>
         <i nz-icon nzType="upload"></i>
       </button>
-      <button (click)="importLayout()" [nzTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
+      <button (click)="importLayout()" [nzTooltipTitle]="'LIST_DETAILS.LAYOUT_DIALOG.Import_layout' | translate"
               nz-button
               nz-tooltip>
         <i nz-icon nzType="download"></i>

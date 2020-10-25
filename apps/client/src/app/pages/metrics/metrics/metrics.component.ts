@@ -16,7 +16,8 @@ import { MetricType } from '../../../modules/player-metrics/model/metric-type';
 import { ProbeReport } from '../../../modules/player-metrics/model/probe-report';
 import { PendingChangesService } from '../../../core/database/pending-changes/pending-changes.service';
 import { MetricsDashboardsFacade } from '../../../modules/player-metrics/+state/metrics-dashboards.facade';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TextQuestionPopupComponent } from '../../../modules/text-question-popup/text-question-popup/text-question-popup.component';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RotationsFacade } from '../+state/rotations.facade';
-import { NzDrawerRef } from 'ng-zorro-antd';
+import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { CraftingRotation } from '../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs/Observable';
 import { filter, map, switchMap, tap } from 'rxjs/operators';

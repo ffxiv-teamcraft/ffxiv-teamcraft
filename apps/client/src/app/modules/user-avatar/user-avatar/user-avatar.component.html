@@ -9,7 +9,7 @@
              class="avatar" nz-tooltip>
         <ng-template #krAvatar>
           <nz-avatar [nzText]="character.Name[0]"
-                     [nzTitle]="tooltip" [style.height.px]="width"
+                     [nzTooltipTitle]="tooltip" [style.height.px]="width"
                      [style.width.px]="width"
                      nz-tooltip></nz-avatar>
         </ng-template>
@@ -19,7 +19,7 @@
         </ng-template>
       </ng-container>
       <ng-template #anonymous>
-        <i [nzTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate" [style.width.px]="width" nz-icon
+        <i [nzTooltipTitle]="messageKey ? (messageKey | translate:{name: 'Anonymous' | translate}) : 'Anonymous' | translate" [style.width.px]="width" nz-icon
            nz-tooltip
            nzType="user">
         </i>
@@ -28,11 +28,11 @@
   </nz-badge>
   <ng-template #iconTemplate>
     <ng-container *ngIf="user.admin">
-      <i [nzTitle]="'COMMON.Admin' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
+      <i [nzTooltipTitle]="'COMMON.Admin' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
          nzType="crown"></i>
     </ng-container>
     <ng-container *ngIf="user.moderator">
-      <i [nzTitle]="'COMMON.Moderator' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
+      <i [nzTooltipTitle]="'COMMON.Moderator' | translate" class="ant-scroll-number-custom-component" nz-icon nz-tooltip
          nzType="safety"></i>
     </ng-container>
   </ng-template>

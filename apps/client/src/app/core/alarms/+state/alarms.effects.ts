@@ -23,7 +23,7 @@ import { AlarmsService } from '../alarms.service';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AlarmGroupService } from '../alarm-group.service';
 import { AlarmGroup } from '../alarm-group';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 

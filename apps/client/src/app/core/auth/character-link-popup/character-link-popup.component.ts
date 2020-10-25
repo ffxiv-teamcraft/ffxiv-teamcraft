@@ -5,7 +5,7 @@ import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operat
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { uniq } from 'lodash';
 
@@ -135,7 +135,7 @@ export class CharacterLinkPopupComponent {
     this.modalRef.close();
   }
 
-  selectCharacter(character: CharacterSearchResultRow): void {
+  selectCharacter(character: CharacterSearchResultRow | Character): void {
     this.store.dispatch(new AddCharacter(character.ID, this.useAsDefault));
     this.modalRef.close();
   }

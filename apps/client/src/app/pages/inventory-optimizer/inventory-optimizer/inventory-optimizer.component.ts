@@ -9,7 +9,7 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
 import { uniq, uniqBy } from 'lodash';
 import { ContainerType } from '../../../model/user/inventory/container-type';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { HasTooFew } from '../optimizations/has-too-few';
 import { ListRow } from '../../../modules/list/model/list-row';

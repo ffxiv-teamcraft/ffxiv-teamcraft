@@ -141,12 +141,12 @@
                   </label>
                 </div>
                 <div class="actions" nz-col nzSm="4">
-                  <button (click)="addLevesToList([leve])" [nzTitle]="'LEVEQUESTS.Add_to_list' | translate" nz-button
+                  <button (click)="addLevesToList([leve])" [nzTooltipTitle]="'LEVEQUESTS.Add_to_list' | translate" nz-button
                           nz-tooltip
                           nzShape="circle" nzType="primary">
                     <i nz-icon nzType="plus"></i>
                   </button>
-                  <button (click)="createQuickList(leve)" [nzTitle]="'Quick_list_create' | translate" nz-button
+                  <button (click)="createQuickList(leve)" [nzTooltipTitle]="'Quick_list_create' | translate" nz-button
                           nz-tooltip
                           nzShape="circle" nzType="primary">
                     <i nz-icon nzType="clock-circle-o"></i>

@@ -17,7 +17,7 @@
         </div>
         <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
           <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
-                  nzPlacement="bottom"
+                  nzTooltipPlacement="bottom"
                   nzShape="circle"
                   nzType="primary"><i nz-icon nzType="download"></i></button>
         </div>
@@ -53,7 +53,7 @@
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
             <li *ngIf="pinnedList !== 'none'"
                 class="ant-menu-item"
-                nzPlacement="bottom"
+                nzTooltipPlacement="bottom"
                 (contextmenu)="$event.preventDefault();listsFacade.unpin()"
                 nz-tooltip [nzTooltipTitle]="'LIST.Go_to_pinned' | translate"
                 routerLink="/list/{{pinnedList}}">
@@ -68,17 +68,17 @@
             {{time$ | async}}
           </li>
           <li *ngIf="!platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_in_desktop' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
-              nz-tooltip nzPlacement="bottom">
+              nz-tooltip nzTooltipPlacement="bottom">
             <a (click)="openInApp()">
               <i nzIconfont="icon-openinapp" nz-icon></i>
             </a>
           </li>
           <li *ngIf="platformService.isDesktop()" [nzTooltipTitle]="'COMMON.Open_link' | translate" class="clock ant-menu-item" fxFlex fxHide.lt-sm fxShow
-              nz-tooltip nzPlacement="bottom" (click)="openLink()">
+              nz-tooltip nzTooltipPlacement="bottom" (click)="openLink()">
             <i nz-icon nzType="laptop" nzTheme="outline"></i>
           </li>
-          <li *ngIf="notifications$ | async as notifications" [nzContent]="notificationsTemplate" class="ant-menu-item" nz-popover
-              nzPlacement="bottomRight">
+          <li *ngIf="notifications$ | async as notifications" [nzPopoverContent]="notificationsTemplate" class="ant-menu-item" nz-popover
+              nzPopoverPlacement="bottomRight">
             <nz-badge [nzCount]="notifications.length" class="notifications-count">
               <i nz-icon nzType="notification"></i>
             </nz-badge>

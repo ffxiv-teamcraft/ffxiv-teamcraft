@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListsFacade } from '../+state/lists.facade';
 import { List } from '../model/list';
 import { Router } from '@angular/router';

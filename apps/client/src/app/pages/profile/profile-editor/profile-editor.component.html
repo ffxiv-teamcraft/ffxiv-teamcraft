@@ -11,13 +11,13 @@
                      [nzValue]="characterEntry.character.Character.ID">
           </nz-option>
         </nz-select>
-        <i *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTitle]="'Not_verified' | translate" nz-icon
+        <i *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTooltipTitle]="'Not_verified' | translate" nz-icon
            nz-tooltip
            nzType="exclamation-circle"></i>
       </div>
       <div fxLayout="row" fxLayoutGap="5px">
         <ng-container *ngIf="userId$ | async as userId">
-          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTitle]="'PROFILE.VERIFICATION.Title' | translate"
+          <button (click)="verifyCharacter(userId, mainCharacter.character.ID)" *ngIf="!mainCharacter.verified && mainCharacter.character.ID > 0" [nzTooltipTitle]="'PROFILE.VERIFICATION.Title' | translate"
                   nz-button nz-tooltip
                   nzShape="circle" nzSize="small"
                   nzType="primary">
@@ -25,11 +25,11 @@
           </button>
         </ng-container>
 
-        <button (click)="addCharacter()" [nzTitle]="'PROFILE.Add_character' | translate" nz-button nz-tooltip nzShape="circle"
+        <button (click)="addCharacter()" [nzTooltipTitle]="'PROFILE.Add_character' | translate" nz-button nz-tooltip nzShape="circle"
                 nzSize="small" nzType="primary">
           <i nz-icon nzType="plus"></i>
         </button>
-        <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1" [nzTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
+        <button (click)="removeCharacter(mainCharacter.character.ID)" *ngIf="(characters$ | async)?.length > 1" [nzTooltipTitle]="'PROFILE.Remove_character' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small"
                 nzType="danger">
@@ -59,7 +59,7 @@
       <div [nzMd]="12" [nzXs]="24" class="profile-card" nz-col>
         <nz-card [nzExtra]="ipc.machinaToggle?autoFill:null" [nzTitle]="'PROFILE.Jobs' | translate">
           <ng-template #autoFill>
-            <button (click)="openAutoFillPopup()" [nzTitle]="'PROFILE.Autofill_from_packets' | translate" nz-button nz-tooltip nzShape="circle"
+            <button (click)="openAutoFillPopup()" [nzTooltipTitle]="'PROFILE.Autofill_from_packets' | translate" nz-button nz-tooltip nzShape="circle"
                     nzType="primary">
               <i nz-icon nzType="api"></i>
             </button>
@@ -71,7 +71,7 @@
                 <ng-template #content>
                   <div fxLayout="column" fxLayoutGap="5px">
                     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                      <i *ngIf="set.specialist" [nzTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate" nz-icon nz-tooltip
+                      <i *ngIf="set.specialist" [nzTooltipTitle]="'SIMULATOR.CONFIGURATION.Specialist' | translate" nz-icon nz-tooltip
                          nzType="star"></i>
                       <div>
                         {{'SIMULATOR.CONFIGURATION.STATS.CP' | translate}}: {{set.cp}} -
@@ -90,13 +90,13 @@
                   [nzTitle]="set.jobId | jobName | i18n"
                   nzDescription="lvl {{set.level}}"></nz-list-item-meta>
                 <ng-template #masterbooks>
-                  <button (click)="editMasterbooks(set.jobId)" [nzTitle]="'PROFILE.Masterbooks' | translate" nz-button nz-tooltip
+                  <button (click)="editMasterbooks(set.jobId)" [nzTooltipTitle]="'PROFILE.Masterbooks' | translate" nz-button nz-tooltip
                           nzShape="circle" nzType="primary">
                     <i nz-icon nzType="book"></i>
                   </button>
                 </ng-template>
                 <ng-template #stats>
-                  <button (click)="editStats(set.jobId)" [nzTitle]="'PROFILE.Stats' | translate" nz-button nz-tooltip nzShape="circle"
+                  <button (click)="editStats(set.jobId)" [nzTooltipTitle]="'PROFILE.Stats' | translate" nz-button nz-tooltip nzShape="circle"
                           nzType="primary">
                     <i nz-icon nzType="solution" theme="outline"></i>
                   </button>

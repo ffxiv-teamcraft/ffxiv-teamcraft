@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, EMPTY, Observable, of, Subject, Subscription } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';

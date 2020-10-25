@@ -4,7 +4,7 @@ import { AuthFacade } from '../../+state/auth.facade';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { SupportUsPopupComponent } from './support-us-popup/support-us-popup.component';
 

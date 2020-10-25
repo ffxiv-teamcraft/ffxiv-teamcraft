@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { List } from '../../list/model/list';
 import { ListsFacade } from '../../list/+state/lists.facade';
-import { NzDrawerRef } from 'ng-zorro-antd';
+import { NzDrawerRef } from 'ng-zorro-antd/drawer';
 import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { debounceTime, filter, first, map, shareReplay } from 'rxjs/operators';
 import { WorkshopsFacade } from '../../workshop/+state/workshops.facade';

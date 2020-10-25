@@ -5,7 +5,9 @@ import { TutorialStepComponent } from './tutorial-step/tutorial-step.component';
 import { RouterModule } from '@angular/router';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { TranslateModule } from '@ngx-translate/core';
-import { NzButtonModule, NzDividerModule, NzModalModule } from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.component';
 

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { List } from '../model/list';
 import { ListTag } from '../model/list-tag.enum';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ListsFacade } from '../+state/lists.facade';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';

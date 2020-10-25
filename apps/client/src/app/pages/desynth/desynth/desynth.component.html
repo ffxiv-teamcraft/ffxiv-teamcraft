@@ -81,11 +81,11 @@
           </nz-input-group>
         </div>
         <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-          <button (click)="addItemsToList([row])" [nzShape]="'circle'" [nzTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
+          <button (click)="addItemsToList([row])" [nzShape]="'circle'" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
                   nz-button nz-tooltip>
             <i nz-icon nzType="plus"></i>
           </button>
-          <button (click)="createQuickList(row)" [nzShape]="'circle'" [nzTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
+          <button (click)="createQuickList(row)" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
                   nz-button nz-tooltip>
             <i nz-icon nzType="clock-circle-o"></i>
           </button>

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { filter, first, map, shareReplay, switchMapTo } from 'rxjs/operators';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { MasterbooksPopupComponent } from './masterbooks-popup/masterbooks-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { StatsPopupComponent } from './stats-popup/stats-popup.component';

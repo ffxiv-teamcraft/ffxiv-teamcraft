@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListLayout } from '../../../core/layout/list-layout';
 import { ItemRowMenuElement } from '../../../model/display/item-row-menu-element';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-layout-row-display-editor',
