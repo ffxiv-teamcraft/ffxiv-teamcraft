@@ -2,9 +2,7 @@
   <thead>
   <tr>
     <th>{{'METRICS.TABLE.Entry_label' | translate}}</th>
-    <th>{{'METRICS.TABLE.Value' | translate}}</th>
-    <th>{{'METRICS.TABLE.Source' | translate}}</th>
-    <th>{{'METRICS.TABLE.Timestamp' | translate}}</th>
+    <th *ngFor="let column of columns" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">{{('METRICS.TABLE.' + column.title) | translate}}</th>
   </tr>
   </thead>
   <tbody>
