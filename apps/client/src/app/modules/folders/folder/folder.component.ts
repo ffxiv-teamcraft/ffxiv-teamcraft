@@ -6,7 +6,7 @@ import { CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 import { first } from 'rxjs/operators';
 import { Folder } from '../../../model/folder/folder';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({

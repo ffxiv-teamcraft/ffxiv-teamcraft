@@ -29,7 +29,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, from, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../model/user/teamcraft-user';

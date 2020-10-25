@@ -6,7 +6,8 @@ import { PermissionLevel } from '../../../../core/database/permissions/permissio
 import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { LinkToolsService } from '../../../../core/tools/link-tools.service';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { NameQuestionPopupComponent } from '../../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { PermissionsBoxComponent } from '../../../../modules/permissions/permissions-box/permissions-box.component';

@@ -3,7 +3,7 @@ import { TutorialStepEntry } from './tutorial-step-entry';
 import { Subject } from 'rxjs';
 import { debounceTime, skipUntil } from 'rxjs/operators';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TutorialPopupComponent } from './tutorial-popup/tutorial-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 

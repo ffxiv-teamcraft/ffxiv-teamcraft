@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CollectablesComponent } from './collectables/collectables.component';
-import {
-  NzButtonModule,
-  NzCheckboxModule,
-  NzCollapseModule,
-  NzFormModule,
-  NzIconModule,
-  NzInputModule,
-  NzInputNumberModule,
-  NzNotificationModule,
-  NzTabsModule,
-  NzToolTipModule
-} from 'ng-zorro-antd';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzNotificationModule } from 'ng-zorro-antd/notification';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';

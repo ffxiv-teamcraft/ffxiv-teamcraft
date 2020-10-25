@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeChoicePopupComponent } from '../recipe-choice-popup/recipe-choice-popup.component';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { Router } from '@angular/router';
 

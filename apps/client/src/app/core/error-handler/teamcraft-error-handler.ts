@@ -1,5 +1,5 @@
 import { Injectable, Injector, ErrorHandler } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { first, map } from 'rxjs/operators';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-inventory-import-popup',

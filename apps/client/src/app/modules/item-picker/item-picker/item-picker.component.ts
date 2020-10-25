@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';

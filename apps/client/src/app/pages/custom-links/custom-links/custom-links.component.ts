@@ -7,7 +7,7 @@ import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
 import { RotationsFacade } from '../../../modules/rotations/+state/rotations.facade';
 import { RotationFoldersFacade } from '../../../modules/rotation-folders/+state/rotation-folders.facade';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

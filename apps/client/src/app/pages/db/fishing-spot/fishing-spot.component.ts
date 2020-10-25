@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';

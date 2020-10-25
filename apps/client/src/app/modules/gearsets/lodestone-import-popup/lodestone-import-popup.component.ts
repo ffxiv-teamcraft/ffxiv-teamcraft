@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AriyalaLinkParser } from '../../../pages/lists/list-import-popup/link-parser/ariyala-link-parser';
 import { GearsetsFacade } from '../+state/gearsets.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-lodestone-import-popup',

@@ -2,7 +2,7 @@
 <ng-template #mainTemplate>
   <div fxLayout="column" fxLayoutGap="10px">
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-      <button (click)="createTeam()" [nzTitle]="'TEAMS.Create_team' | translate" nz-button nz-tooltip nzShape="circle"
+      <button (click)="createTeam()" [nzTooltipTitle]="'TEAMS.Create_team' | translate" nz-button nz-tooltip nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="usergroup-add"></i>
       </button>
@@ -71,7 +71,7 @@
                         <div class="invite-url">{{('/teams/invite/' + invite.$key) | tcLink}}</div>
                         <button [clipboard]="('/teams/invite/'+invite.$key) | tcLink"
                                 [clipboardSuccessMessage]="'TEAMS.Invite_link_copied' | translate"
-                                [nzTitle]="'COMMON.Copy_to_clipboard' | translate"
+                                [nzTooltipTitle]="'COMMON.Copy_to_clipboard' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"
@@ -128,7 +128,7 @@
                     <ng-container *ngIf="(userId$ | async) as userId">
                       <div fxLayout="row" fxLayoutAlign="center center">
                         <button (click)="addOfficer(team, member)" *ngIf="userId === team.leader && !team.notFound && !team.isOfficer(member) && member !== team.leader"
-                                [nzShape]="'circle'" [nzTitle]="'TEAMS.Promote_officer' | translate"
+                                [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Promote_officer' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzSize="small">

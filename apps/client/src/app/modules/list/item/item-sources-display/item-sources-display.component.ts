@@ -17,7 +17,7 @@ import { TradesComponent } from '../../../item-details/trades/trades.component';
 import { CraftedBy } from '../../model/crafted-by';
 import { ItemDetailsPopup } from '../../../item-details/item-details-popup';
 import { CustomItem } from '../../../custom-items/model/custom-item';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { RotationPickerService } from '../../../rotations/rotation-picker.service';

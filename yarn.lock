@@ -6075,9 +6075,9 @@ electron@*:
     extract-zip "^1.0.3"
 
 electron@^7.1.7:
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-7.2.3.tgz#d69d0984fdfa3f0deeeb1d698bf63dc52e1d2d1d"
-  integrity sha512-DqPjMLyNYROsvVCIZH84aWYs4AG9p2dlYhwLhyrtOJVXLbibzy0YXP2IPHMCC9GV2j2Z2hA9vR+frYHwpOsaDg==
+  version "7.3.3"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-7.3.3.tgz#f61502a3d42d85adfecd8e37f98da449b591f8af"
+  integrity sha512-PrJEsuRiaAhTDHtbH3EM+RIne+nZ6ifGChUadmtmPqHUQ+rIhf4jSi2ZN768IgBDw4SidMJiCrvQRiuDha9+Ew==
   dependencies:
     "@electron/get" "^1.0.1"
     "@types/node" "^12.0.12"
@@ -11322,6 +11322,11 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
+
+nz-tslint-rules@^0.901.2:
+  version "0.901.2"
+  resolved "https://registry.yarnpkg.com/nz-tslint-rules/-/nz-tslint-rules-0.901.2.tgz#ef4a23aeae091effbf3c50202cbca9794bf3731d"
+  integrity sha512-4WwtewYevPuHxRdvHqlMCO0I6naO7tj2R54E6d5M8aYZ4mB6yDzs9GIz6a3dLI0Ogeo64whsFT/8p8CbsZCSrQ==
 
 oauth-sign@~0.8.1:
   version "0.8.2"

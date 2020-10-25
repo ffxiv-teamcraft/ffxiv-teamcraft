@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { first, map, switchMap, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({

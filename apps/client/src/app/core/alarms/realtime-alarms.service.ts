@@ -7,7 +7,7 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { PushNotificationsService } from 'ng-push';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { NzMessageService, NzModalRef } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { PlatformService } from '../../tools/platform.service';
 import { TranslateService } from '@ngx-translate/core';
 
