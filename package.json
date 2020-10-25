@@ -203,7 +203,7 @@
     "deep-diff": "^1.0.2",
     "del-cli": "^1.1.0",
     "dotenv": "6.2.0",
-    "electron": "^7.1.7",
+    "electron": "^10.1.5",
     "electron-builder": "21.2.0",
     "electron-builder-squirrel-windows": "^22.2.0",
     "fast-json-patch": "^3.0.0-1",
