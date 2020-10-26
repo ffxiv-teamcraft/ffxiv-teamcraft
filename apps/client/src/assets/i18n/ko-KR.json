@@ -2115,7 +2115,8 @@
       "FISHING": "낚시",
       "VENDOR": "상인",
       "TELEPORT": "텔레포",
-      "MARKETBOARD": "장터게시판"
+      "MARKETBOARD": "장터게시판",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "모두",
