@@ -2115,7 +2115,8 @@
       "FISHING": "Pesca",
       "VENDOR": "Vendedor",
       "TELEPORT": "Teletrasportar",
-      "MARKETBOARD": "Mercado"
+      "MARKETBOARD": "Mercado",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Cualquiera",
