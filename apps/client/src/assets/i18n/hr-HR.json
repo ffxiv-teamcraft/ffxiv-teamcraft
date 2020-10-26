@@ -2115,7 +2115,8 @@
       "FISHING": "Fishing",
       "VENDOR": "Vendor",
       "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "MARKETBOARD": "Marketboard",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Any",
