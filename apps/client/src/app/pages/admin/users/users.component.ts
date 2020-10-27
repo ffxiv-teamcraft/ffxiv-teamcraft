@@ -8,7 +8,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { FormControl, Validators } from '@angular/forms';
 import { UserSearchMode } from './user-search-mode.enum';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { IntegrityCheckPopupComponent } from './integrity-check-popup/integrity-check-popup.component';
 

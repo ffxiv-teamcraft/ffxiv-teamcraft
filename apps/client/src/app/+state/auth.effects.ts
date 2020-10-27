@@ -21,7 +21,8 @@ import {
 } from './auth.actions';
 import { Store } from '@ngrx/store';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
-import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { XivapiService } from '@xivapi/angular-client';
 import { LoadAlarms } from '../core/alarms/+state/alarms.actions';

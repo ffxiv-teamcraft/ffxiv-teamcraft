@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { SimulationReliabilityReport, SimulationResult } from '@ffxiv-teamcraft/simulator';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../../modules/settings/settings.service';
 

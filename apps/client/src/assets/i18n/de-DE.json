@@ -2115,7 +2115,8 @@
       "FISHING": "Fischen",
       "VENDOR": "Verkäufer",
       "TELEPORT": "Teleportieren",
-      "MARKETBOARD": "Marktbrett"
+      "MARKETBOARD": "Marktbrett",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Alle",

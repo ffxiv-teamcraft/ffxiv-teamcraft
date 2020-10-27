@@ -2,7 +2,7 @@
   <div *ngIf="!rotation.notFound; else notFound" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="10px">
     <div class="buttons" fxLayout="column" fxLayout.lt-md="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
       <button (click)="saveRotationAsNew(rotation)" *ngIf="rotation.$key !== undefined"
-              [nzTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
+              [nzTooltipTitle]="'SIMULATOR.Save_as_new' | translate" nz-button
               nz-tooltip
               tutorialStep="TUTORIAL.SIMULATOR.Save_as_new"
               tutorialStepAlign="right"
@@ -11,11 +11,11 @@
         <i nz-icon nzType="copy"></i>
       </button>
       <button (click)="saveRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 30"
-              [nzTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
+              [nzTooltipTitle]="'SIMULATOR.Persist' | translate" nz-button nz-tooltip
               nzShape="circle" nzType="primary">
         <i nz-icon nzType="save"></i>
       </button>
-      <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTitle]="'SIMULATOR.Convert_rotation' | translate"
+      <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
               nz-button nz-tooltip
               nzShape="circle"
               nzType="primary">
@@ -30,7 +30,7 @@
         <i nz-icon nzType="reload"></i>
       </button>
       <button (click)="importFromCraftingOptimizer()"
-              [nzTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
+              [nzTooltipTitle]="'SIMULATOR.Import_from_crafting_optimizer' | translate"
               nz-button nz-tooltip
               nzShape="circle"
               nzType="primary">
@@ -39,13 +39,13 @@
       <button [clipboardSuccessMessage]="'SIMULATOR.Export_copied' | translate"
               [clipboard]="getCraftOptExportString"
               [disabled]="actions$.value.length === 0"
-              [nzTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
+              [nzTooltipTitle]="'SIMULATOR.Export_crafting_optimizer' | translate"
               nz-button nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="upload"></i>
       </button>
-      <button (click)="importFromXIVMacro()" [nzTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
+      <button (click)="importFromXIVMacro()" [nzTooltipTitle]="'SIMULATOR.Import_macro' | translate" nz-button nz-tooltip
               nzShape="circle"
               tutorialStep="TUTORIAL.SIMULATOR.Import_ingame_macro"
               tutorialStepAlign="right"
@@ -54,7 +54,7 @@
         <i nz-icon nzType="select"></i>
       </button>
       <button (click)="openMacroPopup(simulation)" *ngIf="simulation$ | async as simulation"
-              [disabled]="actions$.value.length === 0" [nzTitle]="'SIMULATOR.Generate_ingame_macro' | translate"
+              [disabled]="actions$.value.length === 0" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate"
               nz-button
               nz-tooltip
               nzShape="circle"
@@ -65,14 +65,14 @@
         <span class="text-icon">XIV</span>
       </button>
       <button (click)="openMinStatsPopup(simulation)" *ngIf="simulation$ | async as simulation"
-              [nzTitle]="'SIMULATOR.Min_stats' | translate" nz-button
+              [nzTooltipTitle]="'SIMULATOR.Min_stats' | translate" nz-button
               nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="safety-certificate"></i>
       </button>
       <button (click)="openStepByStepReportPopup(resultData)" *ngIf="result$ | async as resultData"
-              [nzTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
+              [nzTooltipTitle]="'SIMULATOR.Step_by_step_report' | translate" nz-button
               nz-tooltip
               nzShape="circle"
               nzType="primary">
@@ -82,7 +82,7 @@
         <button (click)="openSharePopup(rotation, stats)"
                 *ngIf="rotation.$key"
                 [nzShape]="'circle'"
-                [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                 tutorialStep="TUTORIAL.SIMULATOR.Share_with_stats"
                 tutorialStepAlign="right"
                 tutorialStepIndex="3"
@@ -103,7 +103,7 @@
           <button (click)="showRotationTips(tips, result)" *ngIf="result$ | async as result"
                   [disabled]="tips?.length === 0"
                   [nzShape]="'circle'"
-                  [nzTitle]="'SIMULATOR.Rotation_tips' | translate" [nzType]="'primary'"
+                  [nzTooltipTitle]="'SIMULATOR.Rotation_tips' | translate" [nzType]="'primary'"
                   nz-button
                   nz-tooltip>
             <i nz-icon nzType="bulb"></i>
@@ -116,7 +116,7 @@
           <button (click)="openCommunityRotationConfiguration(rotation, simulation, stats)"
                   *ngIf="rotation.$key && ((permissionLevel$ | async) === 40)"
                   [nzShape]="'circle'"
-                  [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
+                  [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Configuration_popup' | translate"
                   nz-button
                   nz-tooltip
                   nzType="primary">
@@ -138,16 +138,16 @@
         </nz-tag>
         <div>{{rotation.getName()}}<span *ngIf="dirty">*</span></div>
         <button (click)="renameRotation(rotation)" [disabled]="(permissionLevel$ | async) < 40"
-                [nzTitle]="'Edit' | translate" nz-button nz-tooltip
+                [nzTooltipTitle]="'Edit' | translate" nz-button nz-tooltip
                 nzShape="circle" nzSize="small">
           <i nz-icon nzType="edit"></i>
         </button>
-        <button (click)="changeRotation()" [nzTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
+        <button (click)="changeRotation()" [nzTooltipTitle]="'SIMULATOR.Change_rotation' | translate" nz-button nz-tooltip
                 nzShape="circle"
                 nzSize="small">
           <i nzIconfont="icon-exchange" nz-icon></i>
         </button>
-        <div [nzTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
+        <div [nzTooltipTitle]="'SIMULATOR.Safe_mode_tooltip' | translate" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px"
              nz-tooltip>
           <div>
@@ -433,7 +433,7 @@
         </nz-card>
 
         <nz-card [class.failed]="actionFailed" [class.success]="resultData.simulation.success" class="actions-card">
-          <i *ngIf="dirty" [nzTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
+          <i *ngIf="dirty" [nzTooltipTitle]="'SIMULATOR.Unsaved_changes' | translate" [twoToneColor]="'#aa9400'"
              class="warning-icon" nz-icon
              nz-tooltip nzType="exclamation-circle" theme="twotone"></i>
           <div class="actions-container" fxLayout="row wrap" cdkDropList cdkDropListOrientation="horizontal"

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 import { CraftingAction, Simulation, StepState } from '@ffxiv-teamcraft/simulator';
 import { SimulationService } from '../../../../core/simulation/simulation.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
-import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd';
+import { NzContextMenuService, NzDropdownMenuComponent } from 'ng-zorro-antd/dropdown';
 
 @Component({
   selector: 'app-action',

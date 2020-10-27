@@ -3,7 +3,7 @@ import { Observable, of, Subject } from 'rxjs';
 import { DirtyFacade } from './+state/dirty.facade';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { DirtyScope } from './dirty-scope';
 import { switchMap, tap, first } from 'rxjs/operators';
 

@@ -5,7 +5,7 @@ import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { weatherIndex } from '../../../core/data/sources/weather-index';
 import * as _ from 'lodash';
 

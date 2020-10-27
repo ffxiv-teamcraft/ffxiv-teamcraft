@@ -13,7 +13,7 @@
         <ng-template #authorRef>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div *ngIf="comment.author; else xivdbName" [class.patron]="comment.author | isPatron | async"
-                 [nzTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null"
+                 [nzTooltipTitle]="(comment.author | isPatron | async)?('PROFILE.Patreon_supporter' | translate):null"
                  nz-tooltip>
               {{comment.author | characterName | async}}
             </div>
@@ -21,16 +21,16 @@
               XIVDB
             </ng-template>
             <div *ngIf="comment.author | userLevel | async as userLvl">
-              <i *ngIf="userLvl === userLevels.ADMIN" [nzTitle]="'COMMON.Admin' | translate" nz-icon nz-tooltip
+              <i *ngIf="userLvl === userLevels.ADMIN" [nzTooltipTitle]="'COMMON.Admin' | translate" nz-icon nz-tooltip
                  nzType="crown"></i>
-              <i *ngIf="userLvl === userLevels.MODERATOR" [nzTitle]="'COMMON.Moderator' | translate" nz-icon nz-tooltip
+              <i *ngIf="userLvl === userLevels.MODERATOR" [nzTooltipTitle]="'COMMON.Moderator' | translate" nz-icon nz-tooltip
                  nzType="crown"></i>
             </div>
           </div>
         </ng-template>
         <nz-avatar [class.not-verified]="comment.author && !(comment.author | isVerified | async)"
                    [nzSrc]="comment.author ? (comment.author | characterAvatar | async) : './assets/xivdb_avatar.png'"
-                   [nzTitle]="(comment.author | isVerified | async)?null:''"
+                   [nzTooltipTitle]="(comment.author | isVerified | async)?null:''"
                    nz-comment-avatar
                    nz-tooltip
                    nzIcon="user"></nz-avatar>

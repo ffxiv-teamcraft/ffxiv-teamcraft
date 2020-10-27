@@ -6,7 +6,7 @@
     <div fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="10px">
       <h2>
         {{characterEntry.character.Name}}
-        <i *ngIf="!characterEntry.verified" [nzTitle]="'Not_verified' | translate" nz-icon nz-tooltip
+        <i *ngIf="!characterEntry.verified" [nzTooltipTitle]="'Not_verified' | translate" nz-icon nz-tooltip
            type="exclamation-circle"></i>
       </h2>
       <span>{{characterEntry.character.Server}}</span>

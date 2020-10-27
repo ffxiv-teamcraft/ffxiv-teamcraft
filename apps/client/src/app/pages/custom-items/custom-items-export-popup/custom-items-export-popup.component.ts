@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CustomItemsFacade } from '../../../modules/custom-items/+state/custom-items.facade';
 import { CustomItem } from '../../../modules/custom-items/model/custom-item';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-custom-items-export-popup',

@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DesynthSearchResult } from '../desynth-search-result';
 import { SearchResult } from '../../../model/search/search-result';
 import { ListManagerService } from '../../../modules/list/list-manager.service';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';

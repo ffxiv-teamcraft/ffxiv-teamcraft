@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { FormControl } from '@angular/forms';
 
 @Component({

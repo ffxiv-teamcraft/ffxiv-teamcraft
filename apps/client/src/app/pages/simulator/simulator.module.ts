@@ -21,7 +21,8 @@ import { RecipeChoicePopupComponent } from './components/recipe-choice-popup/rec
 import { RotationPanelComponent } from './components/rotation-panel/rotation-panel.component';
 import { CoreModule } from '../../core/core.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { NgZorroAntdModule, NzIconModule } from 'ng-zorro-antd';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
 import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';

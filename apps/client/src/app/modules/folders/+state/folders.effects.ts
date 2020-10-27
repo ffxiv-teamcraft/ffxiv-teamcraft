@@ -19,7 +19,7 @@ import { FoldersService } from '../../../core/database/folders.service';
 import { EMPTY, of } from 'rxjs';
 import { Folder } from '../../../model/folder/folder';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { FoldersFacade } from './folders.facade';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';

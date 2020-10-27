@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';

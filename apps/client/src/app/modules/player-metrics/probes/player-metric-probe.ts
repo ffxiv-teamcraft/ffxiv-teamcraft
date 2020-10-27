@@ -3,7 +3,7 @@ import { ProbeReport } from '../model/probe-report';
 import { InjectionToken } from '@angular/core';
 import { ProbeSource } from '../model/probe-source';
 import { ofPacketType } from '../../../core/rxjs/of-packet-type';
-import { filter, map } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 import { EventHandlerType } from '../../../core/electron/event-handler-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 
@@ -30,9 +30,19 @@ export abstract class PlayerMetricProbe {
         case EventHandlerType.Shop:
           return ProbeSource.VENDOR;
         case EventHandlerType.CustomTalk:
-          return (packet.eventId & 0xFFFF) === 0x27 ? ProbeSource.MARKETBOARD : ProbeSource.UNKNOWN;
+          switch (packet.eventId & 0xFFFF) {
+            case 0x27:
+              return ProbeSource.MARKETBOARD;
+            case 0x220:
+              return ProbeSource.RETAINER;
+            default:
+              return ProbeSource.UNKNOWN;
+          }
+        default:
+          return ProbeSource.UNKNOWN;
       }
-    })
+    }),
+    distinctUntilChanged()
   );
 
   protected teleportSource$ = merge(

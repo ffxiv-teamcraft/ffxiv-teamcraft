@@ -17,7 +17,7 @@
         </nz-list-item>
         <ng-template #share>
           <button [clipboardSuccessMessage]="'Share_link_copied' | translate" [clipboard]="linkDisplay.link.getUrl"
-                  [nzTitle]="(linkDisplay.link.type === 'link'?'CUSTOM_LINKS.Copy_custom_link':'LIST_TEMPLATE.Copy_template_url') | translate"
+                  [nzTooltipTitle]="(linkDisplay.link.type === 'link'?'CUSTOM_LINKS.Copy_custom_link':'LIST_TEMPLATE.Copy_template_url') | translate"
                   nz-button
                   nz-tooltip nzShape="circle" nzType="primary">
             <i nz-icon nzType="share-alt"></i>

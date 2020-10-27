@@ -8,7 +8,7 @@
       <div [class.played]="row.played && !row.spawned" [class.spawned]="row.spawned" class="alarm-row" fxLayout="row"
            fxLayoutGap="5px">
         <div class="ephemeral">
-          <i *ngIf="row.alarm.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
         </div>
         <div class="item-icon">
@@ -18,14 +18,14 @@
         </div>
         <div class="center-content">
           <span *ngIf="row.alarm.itemId; else customName" class="item-name">
-            <i *ngIf="row.groupName" [nzTitle]="row.groupName" class="folder-icon" nz-icon
+            <i *ngIf="row.groupName" [nzTooltipTitle]="row.groupName" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
             {{row.alarm.itemId | itemName: row.alarm | i18n}}
-            <i *ngIf="row.alarm.note" [nzTitle]="row.alarm.note" class="note-icon" nz-icon
+            <i *ngIf="row.alarm.note" [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
                nz-tooltip nzType="edit"></i>
           </span>
           <ng-template #customName>
-            <i *ngIf="row.groupName" [nzTitle]="row.groupName" class="folder-icon" nz-icon
+            <i *ngIf="row.groupName" [nzTooltipTitle]="row.groupName" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>

@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.2"></a>
+## [7.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.1...v7.5.2) (2020-10-27)
+
+
+### Bug Fixes
+
+* **db:** fishing spot misses popup weather filter is now working properly ([007398c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/007398c))
+
+
+### Features
+
+* **core:** support for 5.35 hotfix update ([dcd3074](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dcd3074))
+* **metrics:** new metric source: Retainer ([7e60cf0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e60cf0))
+* **metrics:** you can now sort table columns display ([19740b7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/19740b7))
+
+
+
 <a name="7.5.1"></a>
 ## [7.5.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.0...v7.5.1) (2020-10-24)
 

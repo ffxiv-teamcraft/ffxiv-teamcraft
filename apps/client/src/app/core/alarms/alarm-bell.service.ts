@@ -10,7 +10,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
 import { PushNotificationsService } from 'ng-push';
-import { NzNotificationService } from 'ng-zorro-antd';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
 

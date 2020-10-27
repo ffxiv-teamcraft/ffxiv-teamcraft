@@ -24,7 +24,7 @@ import {
 import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, first, map, mergeMap, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { EMPTY, of } from 'rxjs';
 import { GearsetCreationPopupComponent } from '../gearset-creation-popup/gearset-creation-popup.component';

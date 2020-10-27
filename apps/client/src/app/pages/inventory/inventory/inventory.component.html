@@ -55,21 +55,21 @@
               <button [clipboard]="getClipboardContent"
                       [clipboardFnArgs]="[inventory]"
                       [clipboardSuccessMessage]="'INVENTORY.Copied_to_clipboard' | translate"
-                      [nzTitle]="'INVENTORY.Copy_to_clipboard' | translate"
+                      [nzTooltipTitle]="'INVENTORY.Copy_to_clipboard' | translate"
                       nz-button nz-tooltip
                       nzShape="circle"
                       nzSize="small">
                 <i nz-icon nzType="copy"></i>
               </button>
               <button (click)="computePrices(inventory)" [disabled]="computingPrices[inventory.containerName]"
-                      [nzTitle]="'INVENTORY.Estimate_total_price' | translate" nz-button
+                      [nzTooltipTitle]="'INVENTORY.Estimate_total_price' | translate" nz-button
                       nz-tooltip nzShape="circle"
                       nzSize="small">
                 <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
               <button (nzOnConfirm)="deleteInventory(inventory)" nz-popconfirm
                       [nzPopconfirmTitle]="'Confirmation' | translate"
-                      [nzTitle]="'INVENTORY.Reset_inventory' | translate" nz-button
+                      [nzTooltipTitle]="'INVENTORY.Reset_inventory' | translate" nz-button
                       nz-tooltip nzShape="circle" nzSize="small" nzType="danger">
                 <i nzType="delete" nz-icon></i>
               </button>

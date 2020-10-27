@@ -5,17 +5,15 @@ import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { XivapiClientModule, XivapiService } from '@xivapi/angular-client';
 import { RouterModule, Routes } from '@angular/router';
-import {
-  NzAutocompleteModule,
-  NzButtonModule,
-  NzFormModule,
-  NzIconModule,
-  NzInputModule,
-  NzListModule,
-  NzSelectModule,
-  NzTabsModule,
-  NzToolTipModule
-} from 'ng-zorro-antd';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';

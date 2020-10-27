@@ -78,19 +78,19 @@
               <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="6">
                 <nz-input-number [(ngModel)]="collectable.amount"></nz-input-number>
                 <button (click)="addItemsToList([{itemId: collectable.itemId, amount: collectable.amount}])" [nzShape]="'circle'"
-                        [nzTitle]="'ITEMS.Add_to_list' | translate"
+                        [nzTooltipTitle]="'ITEMS.Add_to_list' | translate"
                         [nzType]="'primary'"
                         nz-button nz-tooltip>
                   <i nz-icon nzType="plus"></i>
                 </button>
                 <button (click)="createQuickList({itemId: collectable.itemId, amount: collectable.amount})" [nzShape]="'circle'"
-                        [nzTitle]="'Quick_list_create' | translate"
+                        [nzTooltipTitle]="'Quick_list_create' | translate"
                         [nzType]="'primary'"
                         nz-button nz-tooltip>
                   <i nz-icon nzType="clock-circle-o"></i>
                 </button>
                 <button *ngIf="row.job < 16" (click)="openInSimulator(collectable.itemId)" [nzShape]="'circle'"
-                        [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
+                        [nzTooltipTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
                         nz-button
                         nz-tooltip>
                   <i class="material-icons">gavel</i>

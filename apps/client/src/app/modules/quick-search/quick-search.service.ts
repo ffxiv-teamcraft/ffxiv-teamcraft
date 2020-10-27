@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { QuickSearchComponent } from './quick-search/quick-search.component';
 
 @Injectable({

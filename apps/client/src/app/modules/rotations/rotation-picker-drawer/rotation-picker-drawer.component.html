@@ -37,7 +37,7 @@
       <nz-list-item [nzActions]="[pickRotation]">
         <nz-list-item-meta [nzTitle]="title">
           <ng-template #title>
-            <div [nzTitle]="rotation.getName()" class="rotation-name" nz-tooltip>{{rotation.getName()}}</div>
+            <div [nzTooltipTitle]="rotation.getName()" class="rotation-name" nz-tooltip>{{rotation.getName()}}</div>
           </ng-template>
         </nz-list-item-meta>
       </nz-list-item>

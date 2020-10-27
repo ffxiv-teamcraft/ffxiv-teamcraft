@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { DataService } from '../../../core/api/data.service';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { TranslateService } from '@ngx-translate/core';

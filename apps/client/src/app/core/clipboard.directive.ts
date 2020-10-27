@@ -1,6 +1,6 @@
 import { Directive, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { environment } from '../../environments/environment';
 
 @Directive({

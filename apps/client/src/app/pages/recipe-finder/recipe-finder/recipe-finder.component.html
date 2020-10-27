@@ -103,7 +103,7 @@
         <div>{{'RECIPE_FINDER.Inventory' | translate}} ({{pool.length}} {{'items' | translate}})</div>
         <div fxLayout="row" fxLayoutGap="10px">
           <button (click)="$event.stopPropagation();sortPool()"
-                  [nzTitle]="'RECIPE_FINDER.Sort_alphabetically' | translate"
+                  [nzTooltipTitle]="'RECIPE_FINDER.Sort_alphabetically' | translate"
                   nz-button
                   nz-tooltip>
             <i nz-icon nzTheme="outline" nzType="sort-ascending"></i>
@@ -111,7 +111,7 @@
           <button (click)="$event.stopPropagation()"
                   [clipboard]="getPoolJSON"
                   [clipboardSuccessMessage]="'RECIPE_FINDER.Pool_copied' | translate"
-                  [nzTitle]="'RECIPE_FINDER.Copy_to_clipboard' | translate"
+                  [nzTooltipTitle]="'RECIPE_FINDER.Copy_to_clipboard' | translate"
                   nz-button
                   nz-tooltip>
             <i nz-icon nzTheme="outline" nzType="copy"></i>
@@ -172,11 +172,11 @@
                       class="recipe-result-row">
           <ng-template #content>
             <div fxLayout="row" fxLayoutGap="5px">
-              <button (click)="addToBasket(recipe, 1)" [nzTitle]="'RECIPE_FINDER.Add_one_to_basket' | translate" nz-button nz-tooltip
+              <button (click)="addToBasket(recipe, 1)" [nzTooltipTitle]="'RECIPE_FINDER.Add_one_to_basket' | translate" nz-button nz-tooltip
                       nzShape="circle">
                 +1
               </button>
-              <button (click)="addToBasket(recipe, recipe.possibleAmount)" [nzTitle]="'RECIPE_FINDER.Add_to_basket' | translate" nz-button nz-tooltip
+              <button (click)="addToBasket(recipe, recipe.possibleAmount)" [nzTooltipTitle]="'RECIPE_FINDER.Add_to_basket' | translate" nz-button nz-tooltip
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="shopping-cart"></i>
               </button>
@@ -239,7 +239,7 @@
                       [nzContent]="content"
                       class="recipe-result-row">
           <ng-template #content>
-            <button (click)="removeFromBasket(row)" [nzTitle]="'RECIPE_FINDER.Remove_from_basket' | translate" nz-button nz-tooltip nzShape="circle"
+            <button (click)="removeFromBasket(row)" [nzTooltipTitle]="'RECIPE_FINDER.Remove_from_basket' | translate" nz-button nz-tooltip nzShape="circle"
                     nzType="danger">
               <i nz-icon nzTheme="outline" nzType="delete"></i>
             </button>
