@@ -2115,7 +2115,8 @@
       "FISHING": "Pêche",
       "VENDOR": "Vendeur",
       "TELEPORT": "Téléporter",
-      "MARKETBOARD": "Tableau des ventes"
+      "MARKETBOARD": "Tableau des ventes",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Tout",

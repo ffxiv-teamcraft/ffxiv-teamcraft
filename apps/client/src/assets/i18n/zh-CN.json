@@ -2115,7 +2115,8 @@
       "FISHING": "钓鱼",
       "VENDOR": "商人",
       "TELEPORT": "传送",
-      "MARKETBOARD": "交易板"
+      "MARKETBOARD": "交易板",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "任何",
