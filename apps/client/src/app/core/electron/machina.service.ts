@@ -96,7 +96,7 @@ export class MachinaService {
         return 0x3A9;
       case Region.Global:
       default:
-        return 0x349;
+        return 0x13B;
     }
   }
 

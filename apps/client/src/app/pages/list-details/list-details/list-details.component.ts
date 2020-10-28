@@ -293,6 +293,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   cloneList(list: List): void {
+    this.listsFacade.loadMyLists();
     const clone = list.clone();
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
@@ -304,10 +305,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(lists => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
       filter(l => l !== undefined),
       first()
-    ), 1, 'List_fork_in_progress').pipe(first()).subscribe(l => {
-      this.router.navigate(['list', l.$key]);
-      this.message.success(this.translate.instant('List_forked'));
-    });
+    ), 1, 'List_fork_in_progress')
+      .pipe(
+        first()
+      )
+      .subscribe(l => {
+        this.router.navigate(['list', l.$key]);
+        this.message.success(this.translate.instant('List_forked'));
+      });
   }
 
   appendExportStringWithRow(exportString: string, row: ListRow): string {

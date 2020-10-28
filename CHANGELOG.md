@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.3"></a>
+## [7.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.2...v7.5.3) (2020-10-28)
+
+
+### Bug Fixes
+
+* **desktop:** fixed inventory tracking for some vendor purchases ([97e4408](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/97e4408))
+* **lists:** fixed an issue with list copy not working in some cases ([2503493](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2503493))
+
+
+
 <a name="7.5.2"></a>
 ## [7.5.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.1...v7.5.2) (2020-10-27)
 
