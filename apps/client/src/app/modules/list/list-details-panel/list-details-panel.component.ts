@@ -109,7 +109,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       first(),
       switchMap(list => {
         return this.itemPicker.pickItems().pipe(
-          filter(items => items.length > 0),
+          filter(items => items?.length > 0),
           switchMap((items) => {
             const operations = items.map(item => {
               return this.listManager.addToList({
