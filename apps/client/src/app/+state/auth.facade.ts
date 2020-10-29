@@ -44,6 +44,7 @@ import { AngularFireFunctions } from '@angular/fire/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
+import { LogTrackingService } from '../core/database/log-tracking.service';
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +80,20 @@ export class AuthFacade {
       return of(token);
     }),
     shareReplay(1)
+  );
+
+  logTracking$ = this.user$.pipe(
+    distinctUntilKeyChanged('defaultLodestoneId'),
+    switchMap(user => {
+      return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
+        catchError((_) => {
+          return of({
+            crafting: [],
+            gathering: []
+          });
+        })
+      );
+    })
   );
 
   characters$ = this.user$.pipe(
@@ -204,7 +219,7 @@ export class AuthFacade {
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private userService: UserService,
-              private fns: AngularFireFunctions) {
+              private fns: AngularFireFunctions, private logTrackingService: LogTrackingService) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });

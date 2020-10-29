@@ -233,7 +233,7 @@
     "ng-drag-drop": "^5.0.0",
     "ng-push": "^0.2.1",
     "ng-zorro-antd": "9.3.0",
-    "ngx-color-picker": "^9.0.0",
+    "ngx-color-picker": "^9.1.0",
     "ngx-markdown": "^9.0.0",
     "nz-tslint-rules": "^0.901.2",
     "papaparse": "^5.2.0",
