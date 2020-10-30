@@ -355,7 +355,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           title: 'DB.Unlocks',
           icon: './assets/icons/unlocks.png',
           links: data.item.unlocks.map((itemId) => {
-            const recipe = this.lazyData.getItemRecipeSync(itemId);
+            const recipe = this.lazyData.getItemRecipeSync(itemId, true);
             const res: any = {
               itemId: +itemId
             };
