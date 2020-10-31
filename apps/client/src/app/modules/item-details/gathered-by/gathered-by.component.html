@@ -7,7 +7,7 @@
       <nz-list-item [nzActions]="[openMap]">
         <nz-list-item-meta [nzDescription]="description" [nzTitle]="nodeTitle">
           <ng-template #nodeTitle>
-            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.type === 4">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.type === 4 && node.id > 0">
               <div>{{node.zoneid | placeName | i18n}}</div>
               <app-db-button [id]="node.id" type="fishing-spot"></app-db-button>
             </div>
