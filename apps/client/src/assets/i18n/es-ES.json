@@ -1880,7 +1880,7 @@
     "Cost": "Cost",
     "Modal_editor": "Materias para {{itemName}}",
     "Unavailable_slot": "Ranura no disponible",
-    "Job_cannot_be_changed": "No se puede cambiar después de creado",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Elija una profesión",
     "New_gearset": "Nuevo conjunto de equipo",
     "Please_input_ariyala_link": "Por favor, introduzca un enlace de ariyala",
