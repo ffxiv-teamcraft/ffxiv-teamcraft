@@ -1880,7 +1880,7 @@
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
-    "Job_cannot_be_changed": "Ne peut pas être modifié après la création",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Choisir un job",
     "New_gearset": "Nouvelle tenue",
     "Please_input_ariyala_link": "Veuillez entrer un lien ariyala",
