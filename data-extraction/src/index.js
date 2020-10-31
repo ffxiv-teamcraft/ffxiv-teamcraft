@@ -1218,17 +1218,17 @@ if (hasTodo('leves')) {
 
 if (hasTodo('jobCategories')) {
   const jobCategories = {};
-  getAllPages('https://xivapi.com/ClassJobCategory?columns=ID,Name_*').subscribe(page => {
-    page.Results.forEach(category => {
+  getAllEntries('https://xivapi.com/ClassJobCategory').subscribe(completeFetch => {
+    completeFetch.forEach(category => {
       jobCategories[category.ID] = {
         en: category.Name_en,
         ja: category.Name_ja,
         de: category.Name_de,
-        fr: category.Name_fr
+        fr: category.Name_fr,
+        jobs: Object.keys(category).filter(key => key.length === 3 && category[key] === 1)
       };
     });
-  }, null, () => {
-    persistToTypescript('job-categories', 'jobCategories', jobCategories);
+    persistToJsonAsset('job-categories', jobCategories);
     done('jobCategories');
   });
 }

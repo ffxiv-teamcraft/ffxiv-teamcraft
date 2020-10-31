@@ -21,10 +21,10 @@ import { Memoized } from '../../../core/decorators/memoized';
 import { MateriasNeededPopupComponent } from '../materias-needed-popup/materias-needed-popup.component';
 import { environment } from '../../../../environments/environment';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ImportFromPcapPopupComponent } from '../../../modules/gearsets/import-from-pcap-popup/import-from-pcap-popup.component';
 import { GearsetCostPopupComponent } from '../../../modules/gearsets/gearset-cost-popup/gearset-cost-popup.component';
+import { GearsetCreationPopupComponent } from '../../../modules/gearsets/gearset-creation-popup/gearset-creation-popup.component';
 
 @Component({
   selector: 'app-gearset-editor',
@@ -84,7 +84,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
           value: 1
         }
       ];
-      if (job >= 8 && job <= 15) {
+      if (job >= 8 && job <= 18) {
         xivapiFilters.push({
           column: `ClassJobCategoryTargetID`,
           operator: '>',
@@ -505,13 +505,6 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         value: 0
       }
     ];
-    if (controls.elvlMin.value > 50) {
-      filters.push({
-        column: 'ClassJobCategoryTargetID',
-        operator: '>',
-        value: 1
-      });
-    }
     this.filters$.next(filters);
   }
 
@@ -586,19 +579,23 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     });
   }
 
-  rename(gearset: TeamcraftGearset): void {
+  edit(gearset: TeamcraftGearset): void {
+    const clone = new TeamcraftGearset();
+    Object.assign(clone, JSON.parse(JSON.stringify(gearset)));
     this.dialog.create({
-      nzContent: NameQuestionPopupComponent,
-      nzComponentParams: { baseName: gearset.name },
+      nzContent: GearsetCreationPopupComponent,
+      nzComponentParams: { gearset: clone },
       nzFooter: null,
-      nzTitle: this.translate.instant('GEARSETS.Rename_gearset')
+      nzTitle: this.translate.instant('GEARSETS.Edit_gearset')
     }).afterClose.pipe(
-      filter(name => name !== undefined)
-    ).subscribe(name => {
-      gearset.name = name;
-      this.gearsetsFacade.pureUpdate(gearset.$key, {
-        name: gearset.name
-      });
+      filter(res => res !== undefined)
+    ).subscribe((res: TeamcraftGearset) => {
+      if (res.job !== gearset.job) {
+        delete res.crystal;
+        delete res.offHand;
+        delete res.mainHand;
+      }
+      this.gearsetsFacade.update(gearset.$key, res);
     });
   }
 
