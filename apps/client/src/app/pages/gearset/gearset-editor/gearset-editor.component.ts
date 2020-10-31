@@ -505,6 +505,13 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         value: 0
       }
     ];
+    if (controls.elvlMin.value > 50) {
+      filters.push({
+        column: 'ClassJobCategoryTargetID',
+        operator: '>',
+        value: 1
+      });
+    }
     this.filters$.next(filters);
   }
 
