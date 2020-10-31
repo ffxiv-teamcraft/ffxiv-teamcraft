@@ -1880,7 +1880,7 @@
     "Cost": "Cost",
     "Modal_editor": "{{itemName}} 的魔晶石",
     "Unavailable_slot": "此孔不可用",
-    "Job_cannot_be_changed": "配装创建后职业无法修改",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "选择一个职业",
     "New_gearset": "新建配装",
     "Please_input_ariyala_link": "请输入 Ariyala 链接",

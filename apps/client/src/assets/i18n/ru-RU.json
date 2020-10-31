@@ -1880,7 +1880,7 @@
     "Cost": "Cost",
     "Modal_editor": "Материи для {{itemName}}",
     "Unavailable_slot": "Слот не доступен",
-    "Job_cannot_be_changed": "Не может быть изменено после создания",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Выберите профессию",
     "New_gearset": "Новый набор снаряжения",
     "Please_input_ariyala_link": "Введите ссылку с Аriyala",

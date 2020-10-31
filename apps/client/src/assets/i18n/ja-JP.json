@@ -1880,7 +1880,7 @@
     "Cost": "Cost",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "Slot not available",
-    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Pick a job",
     "New_gearset": "New gearset",
     "Please_input_ariyala_link": "Please input an ariyala link",
