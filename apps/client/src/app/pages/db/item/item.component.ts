@@ -90,8 +90,8 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     shareReplay(1)
   );
 
-  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.user$.pipe(startWith(null))]).pipe(
-    switchMap(([data, xivapiItem, user]) => {
+  public readonly data$: Observable<ListRow> = combineLatest([this.garlandToolsItem$, this.xivapiItem$, this.authFacade.logTracking$.pipe(startWith(null))]).pipe(
+    switchMap(([data, xivapiItem, logTracking]) => {
       let item: any = {
         id: data.item.id,
         icon: data.item.icon,
@@ -103,7 +103,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       item = this.extractor.addDataToItem(item, data);
       item.canBeGathered = getItemSource(item, DataType.GATHERED_BY).type !== undefined;
       if (item.canBeGathered) {
-        item.isDoneInLog = user !== null && user.gatheringLogProgression.includes(item.id);
+        item.isDoneInLog = logTracking?.gathering.includes(item.id);
       }
       return this.handleAdditionalData(item, data, xivapiItem);
     }),
@@ -355,10 +355,14 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           title: 'DB.Unlocks',
           icon: './assets/icons/unlocks.png',
           links: data.item.unlocks.map((itemId) => {
-            return {
-              itemId: +itemId,
-              recipes: [this.lazyData.getItemRecipeSync(itemId)]
+            const recipe = this.lazyData.getItemRecipeSync(itemId);
+            const res: any = {
+              itemId: +itemId
             };
+            if (recipe) {
+              res.recipes = [recipe];
+            }
+            return res;
           })
         });
       }

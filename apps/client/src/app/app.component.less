@@ -4,6 +4,14 @@
   height: 100%;
 }
 
+.menu-categories {
+  overflow-y: auto;
+}
+
+.sidebar-scroll-box {
+  height: calc(~"100vh - 64px");
+}
+
 ::ng-deep .no-panel-borders {
   .ant-collapse,
   .ant-collapse > .ant-collapse-item,
@@ -101,7 +109,7 @@
 
   .sider {
     .ant-layout-sider-children {
-      overflow: auto;
+      overflow-y: auto;
     }
   }
 
@@ -150,7 +158,7 @@
 .bottom-buttons {
   width: 100%;
   padding-bottom: 64px;
-  padding-top: .1vh;
+  padding-top: 10px;
 }
 
 .overlay-buttons {

@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.4"></a>
+## [7.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.3...v7.5.4) (2020-11-02)
+
+
+### Bug Fixes
+
+* **db:** fixed a wrong link between some items and recipes having the same id ([0f4ff15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0f4ff15))
+* **db:** fixed broken link from fish db page to fishing spots in gathering details ([6a4b54b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6a4b54b))
+* **db:** fixed gathering masterbook db pages not working properly ([36e4f1f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/36e4f1f))
+* **gc-supply:** you can now search without every levels filled ([6d2015c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6d2015c))
+* **gearset:** better filtering for ilvl and lvl filters ([e2a48cf](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e2a48cf))
+* **log-tracking:** log tracker is now properly split per character ([e380a36](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e380a36))
+* **macro-generator:** fixed an issue with fixed echo not being applied properly ([827aada](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/827aada))
+* **sidebar:** overlay and social buttons are now out of the scrolling context ([f16265d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f16265d))
+
+
+### Features
+
+* **gearset:** you can now change job in a gearset (only in same category) ([a5b048e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5b048e))
+* **settings:** new autofill filter to only consider NQ items for rows not marked as HQ ([66f6729](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/66f6729))
+
+
+
 <a name="7.5.3"></a>
 ## [7.5.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.2...v7.5.3) (2020-10-28)
 

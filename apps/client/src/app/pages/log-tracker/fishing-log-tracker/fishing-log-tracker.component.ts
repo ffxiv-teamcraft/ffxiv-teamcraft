@@ -22,8 +22,8 @@ import { fshSpearLogOrder } from '../fsh-spear-log-order';
 })
 export class FishingLogTrackerComponent extends TrackerComponent implements OnInit {
 
-  private completion$ = this.authFacade.user$.pipe(
-    map(user => user.gatheringLogProgression),
+  private completion$ = this.authFacade.logTracking$.pipe(
+    map(logTracking => logTracking.gathering),
     startWith([])
   );
 
