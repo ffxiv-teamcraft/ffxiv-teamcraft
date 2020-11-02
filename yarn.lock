@@ -10953,7 +10953,7 @@ ng-zorro-antd@9.3.0:
     resize-observer-polyfill "^1.5.1"
     tslib "^1.10.0"
 
-ngx-color-picker@^9.0.0:
+ngx-color-picker@^9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/ngx-color-picker/-/ngx-color-picker-9.1.0.tgz#402b18a527702f06e7aa9ca61de5f96990e40638"
   integrity sha512-ViYBfXb4IL1UbM15LaZHYqHyHPYVEKg+rZB1GWSLqXVuDol3Cgt38D8XfOcivVAO60CziQ77k3ThDo31T6wC6A==
