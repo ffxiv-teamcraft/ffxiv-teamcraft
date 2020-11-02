@@ -335,10 +335,14 @@ export class ListsEffects {
       this.authFacade.fcId$,
       this.listsFacade.autocompleteEnabled$,
       this.listsFacade.completionNotificationEnabled$),
-    filter(([action, list, , , , autofillEnabled, completionNotificationEnabled]) => {
+    filter(([action, list, , , , autofillEnabled, _]) => {
       const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
-      if (autofillEnabled && this.settings.enableAutofillHQFilter && (list as List).requiredAsHQ(item) > 0) {
+      const requiredHq = list.requiredAsHQ(item) > 0;
+      if (autofillEnabled && this.settings.enableAutofillHQFilter && requiredHq) {
         return !action.fromPacket || action.hq;
+      }
+      if (autofillEnabled && this.settings.enableAutofillNQFilter && !requiredHq) {
+        return !action.fromPacket || !action.hq;
       }
       return true;
     }),
