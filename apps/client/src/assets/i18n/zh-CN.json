@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "默认启用自动填充",
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
     "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
+    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Change_email": "修改电子邮箱",

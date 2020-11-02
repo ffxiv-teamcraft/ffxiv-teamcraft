@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "Enable autofill by default",
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
+    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
     "Contribute_to_universalis": "Universalisに貢献する",
     "Track_items_on_sale": "リテイナーが販売されている物品も同期させる（クライアントやり直し、リフレッシュが必要）",
     "Change_email": "メールを変更する",
