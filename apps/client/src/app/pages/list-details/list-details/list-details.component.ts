@@ -147,7 +147,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
-      map(list => list.crystals)
+      map(list => list.crystals.sort((a, b) => a.id - b.id))
     );
 
     this.teams$ = this.teamsFacade.myTeams$;
