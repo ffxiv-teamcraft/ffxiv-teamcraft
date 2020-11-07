@@ -41,6 +41,11 @@ export class AlarmsSidebarComponent implements OnInit {
     this.alarmsFacade.deleteAlarm(alarm);
   }
 
+  hideAlarm(alarm: Alarm): void {
+    alarm.enabled = false
+    this.alarmsFacade.updateAlarm(alarm);
+  }
+
   openMap(alarm: Alarm): void {
     this.dialog.create({
       nzTitle: this.i18n.getName(this.l12n.getPlace(alarm.zoneId)),
