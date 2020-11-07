@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.5"></a>
+## [7.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.4...v7.5.5) (2020-11-07)
+
+
+### Bug Fixes
+
+* **auth:** fixed an issue with log tracker on anonymous accounts freezing some pages ([910e665](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/910e665))
+* **db:** fixed an error when opening some items' hunting details ([3189587](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3189587))
+* **desktop:** fixed an issue with some items being moved and not tracked properly ([8163e4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8163e4c)), closes [#1712](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1712)
+* **layout:** fixed some misslabeling in layout editor popup ([e88ac30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e88ac30))
+
+
+### Features
+
+* **list:** crystals in default crystal panel are now ordered by ID ([3f8c03c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3f8c03c))
+* **loading-screen:** new patreon supporter: Jajali Jali * Gilgamesh ([b7cb351](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7cb351))
+* **patreon:** new supporter: Mae Sorbet and Iranon Aira of Mateus ([5c8c5a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5c8c5a9))
+
+
+
 <a name="7.5.4"></a>
 ## [7.5.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.3...v7.5.4) (2020-11-02)
 
