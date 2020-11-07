@@ -85,7 +85,7 @@ export class AuthFacade {
   logTracking$ = this.user$.pipe(
     distinctUntilKeyChanged('defaultLodestoneId'),
     switchMap(user => {
-      return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId.toString()}`).pipe(
+      return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId?.toString()}`).pipe(
         catchError((_) => {
           return of({
             crafting: [],
