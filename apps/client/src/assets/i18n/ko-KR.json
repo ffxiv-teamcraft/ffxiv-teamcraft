@@ -1685,7 +1685,7 @@
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
     "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
     "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
+    "Open_in_desktop_shortcut": "Ctrl + Shift + C를 눌러 데스크톱 앱에서 현재 페이지를 열거나 \"웹페이지 열기\" 창을 표시합니다"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1718,7 +1718,7 @@
     "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
     "Shown_only_collectables": "소장품만 표시하기",
     "Recipe_level": "제작법 레벨",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "수첩에서 완료되지 않은 항목만 표시"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1882,7 +1882,7 @@
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "직업 변경은 전문장인 증표, 주. 부무기에 포함된 마테리아를 제거합니다. 같은 스펙으로 금단을 할 예정이라면 해당 부분을 참고하시길 바랍니다.",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
@@ -1894,14 +1894,14 @@
     "Import_from_ariyala": "Ariyala에서 가져오기",
     "Import_from_lodestone": "Lodestone을 이용하여 가져오기",
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "패킷 캡처로 장비 세트 동기화",
     "Your_gearsets": "내 장비세트",
     "Delete_gearset": "장비세트 삭제",
     "Import_from_pcap_notice": "원하는 장비세트로 변경하여 해당 장비세트를 가져오세요",
     "No_food_selected": "선택된 음식 없음",
     "Generate_list": "목록 생성",
     "Clone_gearset": "해당 장비세트를 내 계정에 복사하기",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "해당 장비 세트와 동일한 장비 세트 만들기",
     "You_have_no_gearsets": "등록된 장비세트가 없습니다",
     "Favorite_gearsets": "즐겨찾기 장비세트",
     "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
@@ -1961,11 +1961,11 @@
     },
     "SYNC": {
       "Title": "Synchronize gearsets",
-      "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Tag": "동기화",
+      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트 됩니다.",
+      "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
+      "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
+      "Syncing_gearsets": "장비 세트를 동기화 중.."
     }
   },
   "FOLDERS": {
@@ -2118,7 +2118,7 @@
       "VENDOR": "상인",
       "TELEPORT": "텔레포",
       "MARKETBOARD": "장터게시판",
-      "RETAINER": "Retainer"
+      "RETAINER": "집사"
     },
     "TYPES": {
       "ANY": "모두",
