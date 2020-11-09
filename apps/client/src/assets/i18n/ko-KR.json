@@ -415,7 +415,7 @@
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
     "Enable_autofill_notification_by_default": "자동채우기 알람을 기본으로 설정하기",
     "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
-    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Enable_autofill_nq_filter": "자동채우기에서 NQ아이템이 필요할 때만 HQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Change_email": "메일 주소 변경",
@@ -431,8 +431,8 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
-    "Maximum_vendor_price": "Maximum vendor price",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price": "상점 구매가 최대치",
+    "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -485,8 +485,8 @@
     "Fishing_rankings": "낚시 순위",
     "Total_rankings": "종합 순위",
     "Loading_fish_rankings": "낚시 순위 로딩중",
-    "Gearset_priority": "Priority",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
+    "Gearset_priority": "우선순위",
+    "Gearset_priority_explain": "주괴나 덩어리, 혹은 그 외 비공정 수리 재료와 같이 여러 제작 직업이 제작 가능한 레시피들을 선택하는 데 사용됩니다.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
@@ -648,14 +648,14 @@
     "X_needed": "{{amount}}개 필요",
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
-    "Split_list": "Split this list",
+    "Split_list": "목록 분할",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
       "Import_layout": "레이아웃 불러오기",
-      "Export_layout": "Export this layout",
+      "Export_layout": "레이아웃 내보내기",
       "Import_string": "레이아웃 코드",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "레이아웃 코드가 복사됨!",
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
@@ -694,8 +694,8 @@
       "No_panel_selected": "대분류를 선택해주세요"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "다른 목록에 추가할 아이템을 선택",
+      "Remove_from_list": "현재 목록에서 제거"
     }
   },
   "LIST_TAGS": {
@@ -861,7 +861,7 @@
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
-    "Completion_message": "Completion message",
+    "Completion_message": "완성 메세지",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
@@ -1083,7 +1083,7 @@
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
     "Enter_total_earnings": "총 수익",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "완료된 아이템 제외"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1441,7 +1441,7 @@
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
       "Required_control": "필요 가공 숙련도",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시"
     },
     "FISH": {
       "Hour": "시간 통계",
