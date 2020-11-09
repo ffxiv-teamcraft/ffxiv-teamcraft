@@ -1482,6 +1482,7 @@ if (hasTodo('items')) {
   const itemSlots = {};
   const itemStats = {};
   const itemMeldingData = {};
+  const hqFlags = {};
   const equipSlotCategoryId = {};
   const itemPatch = {};
   const marketItems = [];
@@ -1501,6 +1502,9 @@ if (hasTodo('items')) {
         stackSizes[item.ID] = item.StackSize;
         itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
         itemPatch[item.ID] = item.Patch;
+        if (item.CanBeHq) {
+          hqFlags[item.ID] = 1;
+        }
         if (item.ItemSearchCategoryTargetID > 9) {
           marketItems.push(item.ID);
         }
@@ -1516,8 +1520,7 @@ if (hasTodo('items')) {
             modifier: item.BaseParamModifier,
             prop: getSlotName(item.EquipSlotCategoryTargetID),
             slots: item.MateriaSlotCount,
-            overmeld: item.IsAdvancedMeldingPermitted === 1,
-            canBeHq: item.CanBeHq === 1
+            overmeld: item.IsAdvancedMeldingPermitted === 1
           };
         }
       });
@@ -1530,6 +1533,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-slots', itemSlots);
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
+      persistToJsonAsset('hq-flags', hqFlags);
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
       persistToJsonAsset('item-patch', itemPatch);
       persistToJsonAsset('market-items', marketItems);
