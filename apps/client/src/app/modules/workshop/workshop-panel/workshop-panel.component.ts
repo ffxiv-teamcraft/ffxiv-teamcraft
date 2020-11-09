@@ -40,8 +40,6 @@ export class WorkshopPanelComponent {
   @Input()
   lists: List[] = [];
 
-  private listsLoaded: string[] = [];
-
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => workshop.getPermissionLevel(userId)),
     distinctUntilChanged(),
