@@ -105,6 +105,8 @@ export class ListsComponent {
                   const list = lists.find(c => c.$key === key);
                   if (list !== undefined) {
                     list.workshopId = workshop.$key;
+                  } else {
+                    this.listsFacade.load(key);
                   }
                   return list;
                 })

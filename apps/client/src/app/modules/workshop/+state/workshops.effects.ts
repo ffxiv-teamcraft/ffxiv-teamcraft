@@ -6,10 +6,10 @@ import {
   LoadWorkshop,
   MyWorkshopsLoaded,
   RemoveListFromWorkshop,
+  SharedWorkshopsLoaded,
   UpdateWorkshop,
   WorkshopLoaded,
-  WorkshopsActionTypes,
-  SharedWorkshopsLoaded
+  WorkshopsActionTypes
 } from './workshops.actions';
 import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -77,7 +77,7 @@ export class WorkshopsEffects {
     }),
     distinctUntilChanged(),
     map(([WorkshopKey, user, userId, fcId, workshop]: [string, TeamcraftUser | null, string, string | null, Workshop]) => {
-      if(user !== null){
+      if (user !== null) {
         const idEntry = user.lodestoneIds.find(l => l.id === user.defaultLodestoneId);
         const verified = idEntry && idEntry.verified;
         if (!verified) {

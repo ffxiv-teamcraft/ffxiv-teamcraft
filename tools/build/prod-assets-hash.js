@@ -19,6 +19,9 @@ const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
     if (row.indexOf(hash) > -1) {
       return;
     }
+    // Stripping line breaks and other indent stuff
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    fs.writeFileSync(filePath, JSON.stringify(content));
     fs.renameSync(filePath, path.join(__dirname, '../../dist/apps/client/assets/data/', `${row.replace('.json', '')}.${hash}.json`));
   });
 

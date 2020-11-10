@@ -28,6 +28,7 @@ import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-search',
@@ -37,7 +38,7 @@ import { KeysOfType } from '../../../core/tools/key-of-type';
 export class SearchComponent implements OnInit {
 
   //Minimum and Maximum values for various nz-input-number elements
-  curMaxLevel = 80; //max player level; 80 for Shadowbringers
+  curMaxLevel = environment.maxLevel; //max player level
   maxilvlFilter = 999;
   maxStatFilter = 99999;
 
@@ -315,7 +316,8 @@ export class SearchComponent implements OnInit {
     this.route.queryParams.pipe(
       filter(params => {
         return params.query !== undefined && params.type !== undefined;
-      })
+      }),
+      debounceTime(100)
     ).subscribe(params => {
       this.searchType$.next(params.type);
       this.query$.next(params.query);

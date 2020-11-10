@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.5.6"></a>
+## [7.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.5...v7.5.6) (2020-11-10)
+
+
+### Bug Fixes
+
+* **desktop:** fixed misslabelling happening when moving an item to a retainer using drag and drop ([58a849f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58a849f))
+* **pricing:** fixed housing furnitures considered as HQ for price detection ([4868a7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4868a7d))
+* **search:** fixed an issue with lower level filters not applied properly (dated items) ([9bbb6c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bbb6c2))
+* **search:** fixed search type not being applied properly in some cases ([8830198](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8830198))
+* **workshop:** fixed an issue preventing workshop content from loading properly in lists page ([a7a8d1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a7a8d1e))
+
+
+### Features
+
+* **alarms-sidebar:** new icon to disable the alarm from sidebar ([d64d55f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d64d55f))
+* **data:** support for korean v5.25 update ([1f604ea](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f604ea))
+
+
+### Performance Improvements
+
+* **assets:** added line break removal in prod assets hashing process ([d11420f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d11420f))
+
+
+
 <a name="7.5.5"></a>
 ## [7.5.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.4...v7.5.5) (2020-11-07)
 
