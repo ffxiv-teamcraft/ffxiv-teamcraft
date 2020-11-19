@@ -22,7 +22,7 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { auth } from 'firebase/app';
+import firebase from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
 import { catchError, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -308,11 +308,11 @@ export class AuthFacade {
   }
 
   public googleOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new auth.GoogleAuthProvider());
+    return this.oauthPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   public facebookOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new auth.FacebookAuthProvider());
+    return this.oauthPopup(new firebase.auth.FacebookAuthProvider());
   }
 
   public logout(): void {

@@ -5,7 +5,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { LogTracking } from '../../model/user/log-tracking';
 import { from, Observable } from 'rxjs';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 interface MarkAsDoneEntry {
   itemId: number;

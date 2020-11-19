@@ -61,7 +61,7 @@
     <ng-container *ngIf="team">
       <button (click)="$event.stopPropagation()"
               *ngIf="team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))"
-              [nzBackdrop]="false"
+
               [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'"
               [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Assign_team_member' | translate"
@@ -94,7 +94,7 @@
       <i nz-icon nzType="user-add"></i>
     </button>
     <ng-container *ngIf="team; else removeSingleAssignment">
-      <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+      <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
               [nzTooltipTitle]="'Remove_work_on_it' | translate"
               [nzTrigger]="'click'"
@@ -115,7 +115,7 @@
     </ng-container>
     <ng-template #removeSingleAssignment>
       <button (click)="removeWorkingOnIt.emit(userId)"
-              *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn" [nzBackdrop]="false"
+              *ngIf="(workingOnIt || [])?.indexOf(userId) > -1 && loggedIn"
               [nzShape]="'circle'"
               [nzTooltipTitle]="'Remove_work_on_it' | translate"
               nz-button nz-dropdown
@@ -199,7 +199,7 @@
   </ng-container>
 
   <ng-container *ngIf="!overlay">
-    <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20" [nzBackdrop]="false"
+    <button (click)="$event.stopPropagation()" [disabled]="permissionLevel < 20"
             tutorialStep="TUTORIAL.LIST.More_actions_button"
             tutorialStepIndex="10"
             [nzDropdownMenu]="menu"

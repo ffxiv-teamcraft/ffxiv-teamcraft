@@ -4,7 +4,7 @@ import { combineLatest, merge, Observable } from 'rxjs';
 import { filter, map, scan, withLatestFrom, shareReplay, distinctUntilKeyChanged } from 'rxjs/operators';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { CraftingReplay } from './model/crafting-replay';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { LazyDataService } from '../../core/data/lazy-data.service';

@@ -56,7 +56,7 @@
                       </button>
                       <ng-container *ngIf="alarmGroups$ | async as groups">
                         <ng-container *ngIf="groups.length > 0">
-                          <button *ngIf="alarmsLoaded$ | async" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
+                          <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
                                   nz-dropdown
                                   nzShape="circle" nzSize="small">
                             <i nz-icon nzType="folder-open"></i>

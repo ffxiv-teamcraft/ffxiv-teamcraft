@@ -13,8 +13,8 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -41,7 +41,7 @@ const routes: Routes = [
     PageLoaderModule,
     FullpageMessageModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     OverlayContainerModule
   ],
   declarations: [FishingReporterOverlayComponent]

@@ -15,7 +15,7 @@ import { DataService } from '../../../core/api/data.service';
 import { Ingredient } from '../../../model/garland-tools/ingredient';
 import { ListManagerService } from '../list-manager.service';
 import { ListColor } from './list-color';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import { DataType } from '../data/data-type';
 import { SettingsService } from '../../settings/settings.service';
 import { LazyData } from '../../../core/data/lazy-data';

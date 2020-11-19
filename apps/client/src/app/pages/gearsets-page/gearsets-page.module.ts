@@ -10,7 +10,6 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ListModule } from '../../modules/list/list.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
@@ -20,6 +19,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { FoldersModule } from '../../modules/folders/folders.module';
 import { GearsetsModule } from '../../modules/gearsets/gearsets.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -46,7 +46,7 @@ const routes: Routes = [
     ListModule,
     ListPickerModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     PipesModule,
     ItemIconModule,
     PageLoaderModule,

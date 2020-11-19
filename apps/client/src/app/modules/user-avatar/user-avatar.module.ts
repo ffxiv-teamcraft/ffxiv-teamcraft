@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserAvatarComponent } from './user-avatar/user-avatar.component';
 import { DatabaseModule } from '../../core/database/database.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     DatabaseModule,
     XivapiClientModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [UserAvatarComponent],
   exports: [UserAvatarComponent]

@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { SupportUsComponent } from './support-us/support-us.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CoreModule } from '../../core/core.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     TranslateModule,
 
     PipesModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     RouterModule.forChild(routes),
     FlexLayoutModule

@@ -4,7 +4,6 @@ import { LayoutEditorComponent } from './layout-editor/layout-editor.component';
 import { LayoutModule } from '../../core/layout/layout.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { LayoutEditorRowComponent } from './layout-editor-row/layout-editor-row.component';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
@@ -16,6 +15,7 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/layout-row-display-editor.component';
 import { LayoutOrderPopupComponent } from './layout-order-popup/layout-order-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -34,7 +34,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NgSerializerModule,
 
     TranslateModule,
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent],
   exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]

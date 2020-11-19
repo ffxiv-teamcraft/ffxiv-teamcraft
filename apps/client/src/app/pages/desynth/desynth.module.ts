@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
@@ -15,6 +14,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -29,7 +29,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     PipesModule,
     CoreModule,

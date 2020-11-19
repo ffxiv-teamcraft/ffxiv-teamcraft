@@ -1,9 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { XivapiService } from '@xivapi/angular-client';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { Subscription } from 'rxjs/Subscription';
+import { Observable, Subject, Subscription } from 'rxjs';
 import { AuthFacade } from '../../../../+state/auth.facade';
 
 @Component({

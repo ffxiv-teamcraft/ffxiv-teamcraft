@@ -6,7 +6,6 @@ import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { uniq } from 'lodash';
 
 @Component({

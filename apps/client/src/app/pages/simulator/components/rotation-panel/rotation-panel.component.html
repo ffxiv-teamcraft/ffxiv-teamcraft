@@ -95,7 +95,7 @@
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
               <ng-container *ngIf="user.patron || user.admin">
-                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
                         [nzPlacement]="'bottomRight'"
                         [nzShape]="'circle'" [nzTrigger]="'click'"
                         nz-button

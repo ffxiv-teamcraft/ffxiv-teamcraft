@@ -4,7 +4,6 @@ import { CustomLinksComponent } from './custom-links/custom-links.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { DatabaseModule } from '../../core/database/database.module';
 import { ListModule } from '../../modules/list/list.module';
 import { RotationsModule } from '../../modules/rotations/rotations.module';
@@ -15,6 +14,7 @@ import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [{
   path: '',
@@ -28,7 +28,7 @@ const routes: Routes = [{
     CommonModule,
     CoreModule,
     FlexLayoutModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     DatabaseModule,
     FullpageMessageModule,
     PageLoaderModule,
