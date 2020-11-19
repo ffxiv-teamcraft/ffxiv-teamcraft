@@ -16,7 +16,6 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NZ_CONFIG, NzConfig } from 'ng-zorro-antd/core/config';
 import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { registerLocaleData } from '@angular/common';
@@ -107,6 +106,12 @@ import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.mod
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { CraftingReplayService } from './modules/crafting-replay/crafting-replay.service';
 import { CraftingReplayModule } from './modules/crafting-replay/crafting-replay.module';
+import { AntdSharedModule } from './core/antd-shared.module';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -259,7 +264,8 @@ const nzConfig: NzConfig = {
     CoreModule.forRoot(),
     PipesModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
+    NzMenuModule,
     NgDragDropModule.forRoot(),
     NgxDnDModule,
 
@@ -281,7 +287,11 @@ const nzConfig: NzConfig = {
     GraphQLModule,
 
     PlayerMetricsModule,
-    NzSpaceModule
+    NzSpaceModule,
+    NzLayoutModule,
+    NzAvatarModule,
+    NzSpinModule,
+    NzAlertModule
   ],
   bootstrap: [AppComponent]
 })

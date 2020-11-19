@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommunityListsComponent } from './community-lists/community-lists.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { ListModule } from '../../modules/list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -11,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
 
     RouterModule.forChild(routes),
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     FullpageMessageModule,
     ListModule,
     FlexLayoutModule,

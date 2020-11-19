@@ -5,14 +5,12 @@ import { EffectsModule } from '@ngrx/effects';
 import { alarmsReducer, initialState as alarmsInitialState } from './+state/alarms.reducer';
 import { AlarmsEffects } from './+state/alarms.effects';
 import { AlarmDisplayPipe } from './alarm-display.pipe';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { SettingsModule } from '../../modules/settings/settings.module';
 
 @NgModule({
   imports: [
     CommonModule,
     SettingsModule,
-    NgZorroAntdModule,
 
     StoreModule.forFeature('alarms', alarmsReducer, { initialState: alarmsInitialState }),
     EffectsModule.forFeature([AlarmsEffects])

@@ -4,7 +4,6 @@ import { ImportComponent } from './import/import.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../../modules/list/list.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -16,6 +15,7 @@ import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -33,7 +33,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     TranslateModule,
     ListModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,

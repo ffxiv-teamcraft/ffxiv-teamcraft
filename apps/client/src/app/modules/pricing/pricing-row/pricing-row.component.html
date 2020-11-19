@@ -25,12 +25,12 @@
       attach_money
     </i>
     <i *ngIf="price.fromVendor" class="from-vendor material-icons" nz-tooltip
-       nzTitle="{{'PRICING.From_vendor' | translate}}">
+       nzTooltipTitle="{{'PRICING.From_vendor' | translate}}">
       group
     </i>
     <i *ngIf="priceFromCrafting" class="material-icons"
        nz-tooltip
-       nzTitle="{{'PRICING.From_crafting' | translate}}">gavel</i>
+       nzTooltipTitle="{{'PRICING.From_crafting' | translate}}">gavel</i>
     <i *ngIf="vendorPrice?.nq > 0 && vendorPrice?.nq < price?.nq" [twoToneColor]="'#eb4141'" nz-icon nz-tooltip
        nzTooltipTitle="{{'PRICING.Cheaper_at_vendor' | translate: {price: vendorPrice?.nq } }}"
        nzType="warning"

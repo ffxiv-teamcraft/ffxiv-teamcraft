@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from '@angular/cdk/layout';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HuntingComponent } from './hunting/hunting.component';
 import { GatheredByComponent } from './gathered-by/gathered-by.component';
 import { InstancesComponent } from './instances/instances.component';
@@ -26,6 +25,7 @@ import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
 import { MapModule } from '../map/map.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { CoreModule } from '../../core/core.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -47,7 +47,7 @@ import { CoreModule } from '../../core/core.module';
     FlexLayoutModule,
 
     TranslateModule,
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [
     GatheredByComponent,

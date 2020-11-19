@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageLoaderComponent } from './page-loader/page-loader.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [PageLoaderComponent],
   exports: [PageLoaderComponent]

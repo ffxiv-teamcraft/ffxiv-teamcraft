@@ -1,5 +1,5 @@
 import { DataWithPermissions } from '../../core/database/permissions/data-with-permissions';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 export class CraftingRotationsFolder extends DataWithPermissions {
   name: string;

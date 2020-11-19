@@ -2,26 +2,26 @@
   <div *ngIf="display$ | async as display">
     <div class="toolbar">
       <div class="right-toolbar" fxLayout="row" fxLayoutGap="5px">
-        <a nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.Add_alarm' | translate}}" nzType="primary"
+        <a nz-button nz-tooltip nzShape="circle" nzTooltipTitle="{{'ALARMS.Add_alarm' | translate}}" nzType="primary"
            routerLink="/gathering-location">
           <i nz-icon nzType="bell"></i>
         </a>
-        <button (click)="createGroup(display.groupedAlarms.length)" nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.New_group' | translate}}"
+        <button (click)="createGroup(display.groupedAlarms.length)" nz-button nz-tooltip nzShape="circle" nzTooltipTitle="{{'ALARMS.New_group' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="folder-add"></i>
         </button>
         <button (click)="showSettings()" tutorialStep="TUTORIAL.ALARMS.Settings" tutorialStepIndex="0" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'Timer_options' | translate}}"
+                nzTooltipTitle="{{'Timer_options' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="setting"></i>
         </button>
         <button (click)="newCustomAlarm()" tutorialStep="TUTORIAL.ALARMS.Custom" tutorialStepIndex="1" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
+                nzTooltipTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="form"></i>
         </button>
         <button (click)="toggleCollapse()" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.Toggle_collapse' | translate}}"
+                nzTooltipTitle="{{'ALARMS.Toggle_collapse' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="sliders"></i>
         </button>
@@ -29,7 +29,7 @@
       <div class="spacer"></div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
         <button (click)="openOverlay()" *ngIf="platform.isDesktop()" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.Open_overlay' | translate}}" nzType="primary">
+                nzTooltipTitle="{{'ALARMS.Open_overlay' | translate}}" nzType="primary">
           <i nz-icon nzType="desktop"></i>
         </button>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -258,7 +258,7 @@
           </div>
           <button (click)="addNote(row.alarm)" *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" class="note-button"
                   nz-button nz-tooltip
-                  nzGhost nzShape="circle" nzSize="small" nzTitle="{{'ALARMS.Add_note' | translate}}">
+                  nzGhost nzShape="circle" nzSize="small" nzTooltipTitle="{{'ALARMS.Add_note' | translate}}">
             <i nz-icon nzType="file-add"></i>
           </button>
           <ng-template #note>
@@ -266,7 +266,7 @@
               <div>{{row.alarm.note}}</div>
               <button (click)="editNote(row.alarm)" nz-button nz-tooltip
                       nzGhost nzShape="circle"
-                      nzSize="small" nzTitle="{{'Edit' | translate}}">
+                      nzSize="small" nzTooltipTitle="{{'Edit' | translate}}">
                 <i nz-icon nzType="edit"></i>
               </button>
             </div>
@@ -285,7 +285,7 @@
              [clipboardFnArgs]="[row]"
              [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
              nz-icon nz-tooltip
-             nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
+             nzTooltipTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
              nzType="copy"></i>
         </ng-template>
       </div>
@@ -366,7 +366,7 @@
              nz-col>
           <button (click)="addNote(row.alarm)" *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button
                   nz-tooltip nzGhost
-                  nzShape="circle" nzSize="small" nzTitle="{{'ALARMS.Add_note' | translate}}">
+                  nzShape="circle" nzSize="small" nzTooltipTitle="{{'ALARMS.Add_note' | translate}}">
             <i nz-icon nzType="file-add"></i>
           </button>
           <ng-template #note>
@@ -374,7 +374,7 @@
               <div>{{row.alarm.note}}</div>
               <button (click)="editNote(row.alarm)" nz-button nz-tooltip
                       nzGhost nzShape="circle"
-                      nzSize="small" nzTitle="{{'Edit' | translate}}">
+                      nzSize="small" nzTooltipTitle="{{'Edit' | translate}}">
                 <i nz-icon nzType="edit"></i>
               </button>
             </div>
@@ -415,7 +415,7 @@
                   [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
                   nz-button nz-tooltip
                   nzShape="circle"
-                  nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
+                  nzTooltipTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
             <i nz-icon nzType="copy"></i>
           </button>
         </div>

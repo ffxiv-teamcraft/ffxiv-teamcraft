@@ -7,8 +7,7 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { HttpClient } from '@angular/common/http';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { filter, map } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable({

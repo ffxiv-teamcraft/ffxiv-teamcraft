@@ -10,7 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'

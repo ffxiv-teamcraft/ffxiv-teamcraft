@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   declarations: [LoadingScreenComponent],
@@ -12,7 +12,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     CommonModule,
     TranslateModule,
     FlexLayoutModule,
-    NgZorroAntdModule
+    AntdSharedModule
   ]
 })
 export class LoadingScreenModule {

@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
 import { ListModule } from '../../modules/list/list.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NgxDnDModule } from '@swimlane/ngx-dnd';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
@@ -19,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { ListImportPopupComponent } from './list-import-popup/list-import-popup.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -44,7 +44,7 @@ const routes: Routes = [
     ProgressPopupModule,
 
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     NgxDnDModule,
 
     RouterModule.forChild(routes)

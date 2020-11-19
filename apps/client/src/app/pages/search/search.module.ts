@@ -4,7 +4,6 @@ import { SearchComponent } from './search/search.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
@@ -22,6 +21,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 import { SearchResultComponent } from './search-result/search-result.component';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -52,7 +52,7 @@ const routes: Routes = [
     RotationsModule,
     ItemIconModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     RouterModule.forChild(routes)
   ],
