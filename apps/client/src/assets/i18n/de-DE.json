@@ -415,7 +415,7 @@
     "Enable_autofill_by_default": "Auto-Vervollständigung standardmäßig aktivieren",
     "Enable_autofill_notification_by_default": "Autovervollständigungsbenachrichtigung standardmäßig aktivieren",
     "Enable_autofill_hq_filter": "HQ-Gegenstände nur automatisch füllen, wenn der Gegenstand als HQ benötigt wird",
-    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Enable_autofill_nq_filter": "NQ-Gegenstände nur automatisch füllen, wenn der Gegenstand nicht in HQ benötigt wird",
     "Contribute_to_universalis": "Zu Universalis beitragen",
     "Track_items_on_sale": "Zum Verkauf stehende Gegenstände von Gehilfen verfolgen (erfordert Neustart/Aktualisierung)",
     "Change_email": "E-Mail Adresse ändern",
