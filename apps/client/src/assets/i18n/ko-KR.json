@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
     "Enable_autofill_notification_by_default": "자동채우기 알람을 기본으로 설정하기",
     "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
+    "Enable_autofill_nq_filter": "자동채우기에서 NQ아이템이 필요할 때만 HQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Change_email": "메일 주소 변경",
@@ -430,8 +431,8 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
-    "Maximum_vendor_price": "Maximum vendor price",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price": "상점 구매가 최대치",
+    "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -484,8 +485,8 @@
     "Fishing_rankings": "낚시 순위",
     "Total_rankings": "종합 순위",
     "Loading_fish_rankings": "낚시 순위 로딩중",
-    "Gearset_priority": "Priority",
-    "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
+    "Gearset_priority": "우선순위",
+    "Gearset_priority_explain": "주괴나 덩어리, 혹은 그 외 비공정 수리 재료와 같이 여러 제작 직업이 제작 가능한 레시피들을 선택하는 데 사용됩니다.",
     "VERIFICATION": {
       "Title": "캐릭터 인증",
       "Guide": "계정 인증을 위해 Lodestone Profile에 \"{{userId}}\"를 붙여넣고 아래의 인증버튼을 눌러주세요. 자세한 정보는 <a href=\"https://wiki.ffxivteamcraft.com/guides/verify-your-character\">위키</a>를 참고해주세요.",
@@ -647,13 +648,14 @@
     "X_needed": "{{amount}}개 필요",
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
-    "Split_list": "Split this list",
+    "Split_list": "목록 분할",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
       "Import_layout": "레이아웃 불러오기",
+      "Export_layout": "레이아웃 내보내기",
       "Import_string": "레이아웃 코드",
-      "Import_string_copied": "레이아웃 코드 복사됨!",
+      "Import_string_copied": "레이아웃 코드가 복사됨!",
       "Layout_name": "레이아웃 이름",
       "Invalid_import": "유효하지 않은 불러오기 코드입니다",
       "Global_options": "일반 설정",
@@ -692,8 +694,8 @@
       "No_panel_selected": "대분류를 선택해주세요"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "다른 목록에 추가할 아이템을 선택",
+      "Remove_from_list": "현재 목록에서 제거"
     }
   },
   "LIST_TAGS": {
@@ -859,7 +861,7 @@
     "Include_consumables_notification": "소모품 알림 포함",
     "Consumable_notification": "{{buffs}} 사용이 필요합니다",
     "Extra_wait": "매크로 지연시간",
-    "Completion_message": "Completion message",
+    "Completion_message": "완성 메세지",
     "Import_macro": "인게임 매크로 가져오기",
     "Ingame_macro": "인게임 매크로",
     "Min_stats": "제작에 필요한 최저능력치",
@@ -1081,7 +1083,7 @@
     "Marketboard_price": "NQ 가격",
     "Marketboard_price_hq": "HQ 가격",
     "Enter_total_earnings": "총 수익",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "완료된 아이템 제외"
   },
   "LEVEQUESTS": {
     "Title": "길드 의뢰",
@@ -1439,7 +1441,7 @@
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
       "Required_control": "필요 가공 숙련도",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -1683,7 +1685,7 @@
     "Start_desktop_before_game": "데이터 정확도를 높이기 위해 게임을 실행하기 전에 팀크래프트 앱을 실행하세요",
     "Middle_click_share_button": "데스크톱 앱에서 공유버튼을 휠클릭하여 현재 페이지를 브라우저에서 열 수 있습니다",
     "Quick_search": "어디서든 Ctrl + Shift + F키를 눌러서 검색 팝업창을 열 수 있습니다",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
+    "Open_in_desktop_shortcut": "Ctrl + Shift + C를 눌러 데스크톱 앱에서 현재 페이지를 열거나 \"웹페이지 열기\" 창을 표시합니다"
   },
   "RECIPE_FINDER": {
     "Title": "제작법 찾기",
@@ -1716,7 +1718,7 @@
     "Shown_only_craftable": "현재 레벨에 제작 가능한 품목만 표시하기",
     "Shown_only_collectables": "소장품만 표시하기",
     "Recipe_level": "제작법 레벨",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "수첩에서 완료되지 않은 항목만 표시"
   },
   "CURRENCY_SPENDING": {
     "Title": "화폐 소비 가이드",
@@ -1880,7 +1882,7 @@
     "Cost": "비용",
     "Modal_editor": "{{itemName}}",
     "Unavailable_slot": "해당 슬롯에 사용할 수 없습니다",
-    "Job_cannot_be_changed": "생성 후 변경할 수 없습니다",
+    "Warning_job_switch": "직업 변경은 전문장인 증표, 주. 부무기에 포함된 마테리아를 제거합니다. 같은 스펙으로 금단을 할 예정이라면 해당 부분을 참고하시길 바랍니다.",
     "Pick_a_job": "직업 선택",
     "New_gearset": "새로운 장비세트",
     "Please_input_ariyala_link": "Ariyala 링크를 입력하세요",
@@ -1892,14 +1894,14 @@
     "Import_from_ariyala": "Ariyala에서 가져오기",
     "Import_from_lodestone": "Lodestone을 이용하여 가져오기",
     "Import_using_pcap": "패킷캡쳐를 사용하여 가져오기",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "패킷 캡처로 장비 세트 동기화",
     "Your_gearsets": "내 장비세트",
     "Delete_gearset": "장비세트 삭제",
     "Import_from_pcap_notice": "원하는 장비세트로 변경하여 해당 장비세트를 가져오세요",
     "No_food_selected": "선택된 음식 없음",
     "Generate_list": "목록 생성",
     "Clone_gearset": "해당 장비세트를 내 계정에 복사하기",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "해당 장비 세트와 동일한 장비 세트 만들기",
     "You_have_no_gearsets": "등록된 장비세트가 없습니다",
     "Favorite_gearsets": "즐겨찾기 장비세트",
     "Update_from_pcap": "패킷캡쳐를 사용하여 최신화",
@@ -1959,11 +1961,11 @@
     },
     "SYNC": {
       "Title": "Synchronize gearsets",
-      "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Tag": "동기화",
+      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트 됩니다.",
+      "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
+      "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
+      "Syncing_gearsets": "장비 세트를 동기화 중.."
     }
   },
   "FOLDERS": {
@@ -2115,7 +2117,8 @@
       "FISHING": "낚시",
       "VENDOR": "상인",
       "TELEPORT": "텔레포",
-      "MARKETBOARD": "장터게시판"
+      "MARKETBOARD": "장터게시판",
+      "RETAINER": "집사"
     },
     "TYPES": {
       "ANY": "모두",

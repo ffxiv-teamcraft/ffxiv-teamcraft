@@ -20,7 +20,7 @@
         <ng-template #caps>
           <app-item-caps-table [job]="gearset.job" [equipmentPiece]="equipmentPiece"></app-item-caps-table>
         </ng-template>
-        <i nz-icon nzType="file-search" nzTheme="outline" nz-popover [nzTitle]="'GEARSETS.Stats_caps' | translate" [nzContent]="caps"
+        <i nz-icon nzType="file-search" nzTheme="outline" nz-popover [nzPopoverTitle]="'GEARSETS.Stats_caps' | translate" [nzPopoverContent]="caps"
            *ngIf="equipmentPiece.materias[0] > 0">
         </i>
       </ng-container>
@@ -44,7 +44,7 @@
       <ng-template #compactSlots>
         <app-materia-slot-icon *ngFor="let materia of equipmentPiece.materias; let i = index;"
                                nz-tooltip
-                               [nzTitle]="materia === 0 ? null : materia | itemName | i18n"
+                               [nzTooltipTitle]="materia === 0 ? null : materia | itemName | i18n"
                                [equipmentPiece]="equipmentPiece"
                                [index]="i"></app-materia-slot-icon>
       </ng-template>

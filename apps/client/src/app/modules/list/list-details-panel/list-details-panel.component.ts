@@ -5,7 +5,8 @@ import { ZoneBreakdownRow } from '../../../model/common/zone-breakdown-row';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nName } from '../../../model/common/i18n-name';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { ZoneBreakdown } from '../../../model/common/zone-breakdown';
 import { TotalPanelPricePopupComponent } from '../../../pages/list-details/total-panel-price-popup/total-panel-price-popup.component';
@@ -108,7 +109,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       first(),
       switchMap(list => {
         return this.itemPicker.pickItems().pipe(
-          filter(items => items.length > 0),
+          filter(items => items?.length > 0),
           switchMap((items) => {
             const operations = items.map(item => {
               return this.listManager.addToList({

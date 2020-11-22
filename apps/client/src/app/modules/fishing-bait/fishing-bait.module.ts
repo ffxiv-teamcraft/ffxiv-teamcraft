@@ -5,8 +5,8 @@ import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TooltipModule } from '../tooltip/tooltip.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { TooltipModule } from '../tooltip/tooltip.module';
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     TooltipModule
   ],
   declarations: [FishingBaitComponent],

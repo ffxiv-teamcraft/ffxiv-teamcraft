@@ -138,10 +138,7 @@ export class PricingService {
         return storedValue;
       }
     }
-    let canBeHq = this.lazyData.data.itemMeldingData[item.id]?.canBeHq;
-    if (canBeHq === undefined) {
-      canBeHq = true;
-    }
+    const canBeHq = !!this.lazyData.data.hqFlags[item.id];
     if (hq && canBeHq) {
       return { nq: 0, hq: item.amount };
     }

@@ -7,7 +7,8 @@ import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
 import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../../modules/name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -146,7 +147,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       shareReplay(1)
     );
     this.crystals$ = this.list$.pipe(
-      map(list => list.crystals)
+      map(list => list.crystals.sort((a, b) => a.id - b.id))
     );
 
     this.teams$ = this.teamsFacade.myTeams$;
@@ -292,6 +293,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
   }
 
   cloneList(list: List): void {
+    this.listsFacade.loadMyLists();
     const clone = list.clone();
     this.listsFacade.updateList(list);
     this.listManager.upgradeList(clone).pipe(
@@ -303,10 +305,14 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(lists => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
       filter(l => l !== undefined),
       first()
-    ), 1, 'List_fork_in_progress').pipe(first()).subscribe(l => {
-      this.router.navigate(['list', l.$key]);
-      this.message.success(this.translate.instant('List_forked'));
-    });
+    ), 1, 'List_fork_in_progress')
+      .pipe(
+        first()
+      )
+      .subscribe(l => {
+        this.router.navigate(['list', l.$key]);
+        this.message.success(this.translate.instant('List_forked'));
+      });
   }
 
   appendExportStringWithRow(exportString: string, row: ListRow): string {
@@ -428,8 +434,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       map(inventory => {
         list.items.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          if (this.settings.enableAutofillHQFilter && list.requiredAsHQ(item)) {
+          const requiredHq = list.requiredAsHQ(item) > 0;
+          if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
+          }
+          if (!requiredHq && this.settings.enableAutofillNQFilter) {
+            inventoryItems = inventoryItems.filter(i => !i.hq);
           }
           if (inventoryItems.length > 0) {
             let totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);
@@ -441,8 +451,12 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
         });
         list.finalItems.forEach(item => {
           let inventoryItems = inventory.getItem(item.id, true);
-          if (this.settings.enableAutofillHQFilter && list.requiredAsHQ(item)) {
+          const requiredHq = list.requiredAsHQ(item) > 0;
+          if (requiredHq && this.settings.enableAutofillHQFilter) {
             inventoryItems = inventoryItems.filter(i => i.hq);
+          }
+          if (!requiredHq && this.settings.enableAutofillNQFilter) {
+            inventoryItems = inventoryItems.filter(i => !i.hq);
           }
           if (inventoryItems.length > 0) {
             const totalAmount = inventoryItems.reduce((total, i) => total + i.quantity, 0);

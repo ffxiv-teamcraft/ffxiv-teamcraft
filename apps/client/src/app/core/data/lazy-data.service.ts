@@ -174,7 +174,7 @@ export class LazyDataService {
   }
 
   public getItemRecipeSync(id: string): Craft {
-    return this.getRecipes().find((r) => (r as any).result.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+    return this.getRecipes().find((r) => (r as any).result.toString() === id.toString());
   }
 
   public getRecipes(): Craft[] {

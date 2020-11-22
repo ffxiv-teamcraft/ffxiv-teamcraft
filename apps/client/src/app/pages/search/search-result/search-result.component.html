@@ -19,7 +19,7 @@
         <app-db-button [id]="row.itemId" type="item" tutorialStep="TUTORIAL.DB.Button"></app-db-button>
       </div>
       <div *ngIf="row.recipe !== undefined && row.recipe.job > 0" class="description">
-        <img *ngIf="((row.recipe.job | jobAbbr).en | async) as icon" 
+        <img *ngIf="((row.recipe.job | jobAbbr).en | async) as icon"
           alt="{{row.recipe.job | jobAbbr | i18n}}"
           class="job-icon small"
           src="https://garlandtools.org/db/images/{{icon}}.png">
@@ -50,16 +50,16 @@
     </div>
     <div class="actions" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px"
          nz-col>
-      <button (click)="addItemsToList.emit()" [nzShape]="'circle'" [nzTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
+      <button (click)="addItemsToList.emit()" [nzShape]="'circle'" [nzTooltipTitle]="'ITEMS.Add_to_list' | translate" [nzType]="'primary'"
               nz-button nz-tooltip>
         <i nz-icon nzType="plus"></i>
       </button>
-      <button (click)="createQuickList.emit()" [nzShape]="'circle'" [nzTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
+      <button (click)="createQuickList.emit()" [nzShape]="'circle'" [nzTooltipTitle]="'Quick_list_create' | translate" [nzType]="'primary'"
               nz-button nz-tooltip>
         <i nz-icon nzType="clock-circle-o"></i>
       </button>
       <button (click)="openInSimulator.emit()" *ngIf="row.recipe !== undefined" [nzShape]="'circle'"
-              [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
+              [nzTooltipTitle]="'SIMULATOR.Simulate_tooltip' | translate" [nzType]="'primary'"
               nz-button
               nz-tooltip>
         <i class="material-icons">gavel</i>

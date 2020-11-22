@@ -3,7 +3,8 @@ import { CraftingReplay } from '../model/crafting-replay';
 import { ReplaySimulationComponent } from '../replay-simulation/replay-simulation.component';
 import { CraftingReplayFacade } from '../+state/crafting-replay.facade';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Component({

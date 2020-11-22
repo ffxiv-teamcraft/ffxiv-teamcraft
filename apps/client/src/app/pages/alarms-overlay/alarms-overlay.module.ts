@@ -12,12 +12,12 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
 import { FormsModule } from '@angular/forms';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -47,10 +47,10 @@ const routes: Routes = [
     FullpageMessageModule,
     AlarmsSidebarModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     OverlayContainerModule
   ],
-  declarations: [AlarmsOverlayComponent],
+  declarations: [AlarmsOverlayComponent]
 })
 export class AlarmsOverlayModule {
 }

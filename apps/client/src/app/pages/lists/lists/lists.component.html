@@ -3,33 +3,33 @@
 <ng-template #lists>
   <div *ngIf="lists$ | async as lists">
     <div class="toolbar" fxLayout="row wrap" fxLayoutGap="5px">
-      <button (click)="createList()" [nzShape]="'circle'" [nzTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
+      <button (click)="createList()" [nzShape]="'circle'" [nzTooltipTitle]="'New_List' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="file-add"></i>
       </button>
-      <button (click)="createWorkshop()" [nzShape]="'circle'" [nzTitle]="'WORKSHOP.Add_workshop' | translate" [nzType]="'primary'" nz-button
+      <button (click)="createWorkshop()" [nzShape]="'circle'" [nzTooltipTitle]="'WORKSHOP.Add_workshop' | translate" [nzType]="'primary'" nz-button
               nz-tooltip>
         <i nz-icon nzType="folder-add"></i>
       </button>
-      <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
+      <button (click)="openMergeDialog()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.Merge_lists' | translate" [nzType]="'primary'" nz-button
               nz-tooltip
               tutorialStep="TUTORIAL.LISTS.Merge">
         <i nz-icon nzType="pull-request" nzTheme="outline"></i>
       </button>
-      <button (click)="importList()" [nzShape]="'circle'" [nzTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
+      <button (click)="importList()" [nzShape]="'circle'" [nzTooltipTitle]="'LISTS.IMPORT.Title' | translate" [nzType]="'primary'" nz-button
               nz-tooltip
               tutorialStep="TUTORIAL.LISTS.Import">
         <i nz-icon nzType="download"></i>
       </button>
       <div class="spacer">
       </div>
-      <button (click)="loadArchivedLists()" [nzTitle]="'LISTS.Load_archived' | translate" nz-button
+      <button (click)="loadArchivedLists()" [nzTooltipTitle]="'LISTS.Load_archived' | translate" nz-button
               nz-tooltip
               nzShape="circle"
               nzType="primary">
         <i nz-icon nzType="file-zip" nzTheme="outline"></i>
       </button>
-      <button (click)="regenerateLists(myLists)" *ngIf="myLists$ | async as myLists" [nzTitle]="'LISTS.Regenerate_all' | translate" nz-button
+      <button (click)="regenerateLists(myLists)" *ngIf="myLists$ | async as myLists" [nzTooltipTitle]="'LISTS.Regenerate_all' | translate" nz-button
               nz-tooltip
               nzShape="circle" nzType="primary">
         <i nz-icon nzType="file-sync"></i>

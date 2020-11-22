@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { NzDrawerService, NzNotificationService } from 'ng-zorro-antd';
+import { NzDrawerService } from 'ng-zorro-antd/drawer';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { ListPickerDrawerComponent } from './list-picker-drawer/list-picker-drawer.component';

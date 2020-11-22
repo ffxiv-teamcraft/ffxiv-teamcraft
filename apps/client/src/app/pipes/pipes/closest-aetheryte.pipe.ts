@@ -6,14 +6,15 @@ import { Vector2 } from '../../core/tools/vector2';
 import { filter, map } from 'rxjs/operators';
 
 @Pipe({
-  name: 'closestAetheryte',
+  name: 'closestAetheryte'
 })
 export class ClosestAetherytePipe implements PipeTransform {
-  constructor(private mapService: MapService) {}
+  constructor(private mapService: MapService) {
+  }
 
-  transform(mapId: number, position: Vector2): Observable<Aetheryte> {
+  transform(mapId: number, position: Vector2): Observable<Aetheryte | never> {
     return this.mapService.getMapById(mapId).pipe(
-      filter((mapData) => mapData !== undefined),
+      filter((mapData) => mapData !== undefined && !!position),
       map((mapData) => {
         return this.mapService.getNearestAetheryte(mapData, position);
       }),

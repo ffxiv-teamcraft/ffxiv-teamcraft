@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FolderAdditionPickerComponent } from './folder-addition-picker/folder-addition-picker.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   declarations: [FolderAdditionPickerComponent],
@@ -12,7 +12,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
     TranslateModule,
     FormsModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ]
 })
 export class FolderAdditionPickerModule {

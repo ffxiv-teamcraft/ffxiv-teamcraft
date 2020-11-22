@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-masterbooks-popup',

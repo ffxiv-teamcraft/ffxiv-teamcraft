@@ -6,7 +6,9 @@ import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Alarm } from '../../../../core/alarms/alarm';
-import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { TranslateService } from '@ngx-translate/core';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
@@ -215,14 +217,14 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     })
   );
 
-  showLogCompletionButton$ = combineLatest([this.authFacade.user$, this.item$]).pipe(
-    map(([user, item]) => {
+  showLogCompletionButton$ = combineLatest([this.authFacade.logTracking$, this.item$]).pipe(
+    map(([logTracking, item]) => {
       const craftedBy = getItemSource(item, DataType.CRAFTED_BY);
       const gatheredBy = getItemSource(item, DataType.GATHERED_BY, true);
       if (craftedBy.length > 0) {
-        return user.logProgression.indexOf(+item.recipeId || +craftedBy[0].id) === -1;
+        return logTracking.crafting.indexOf(+item.recipeId || +craftedBy[0].id) === -1;
       } else if (gatheredBy.type !== undefined) {
-        return user.gatheringLogProgression.indexOf(+item.id) === -1;
+        return logTracking.gathering.indexOf(+item.id) === -1;
       }
       return false;
     }),

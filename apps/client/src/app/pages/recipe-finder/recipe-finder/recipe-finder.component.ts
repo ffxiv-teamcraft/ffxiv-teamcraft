@@ -14,7 +14,9 @@ import { Router } from '@angular/router';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { List } from '../../../modules/list/model/list';
-import { NzMessageService, NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { ClipboardImportPopupComponent } from '../clipboard-import-popup/clipboard-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { InventoryImportPopupComponent } from '../inventory-import-popup/inventory-import-popup.component';
@@ -23,6 +25,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { environment } from '../../../../environments/environment';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
+import { LogTracking } from '../../../model/user/log-tracking';
 
 @Component({
   selector: 'app-recipe-finder',
@@ -115,8 +118,8 @@ export class RecipeFinderComponent implements OnDestroy {
           this.clvlMax$
         ]);
       }),
-      withLatestFrom(this.authFacade.user$.pipe(startWith(<TeamcraftUser>null))),
-      map(([[sets, onlyCraftable, onlyCollectables, onlyNotCompleted, clvlMin, clvlMax], user]) => {
+      withLatestFrom(this.authFacade.logTracking$.pipe(startWith(<LogTracking>null))),
+      map(([[sets, onlyCraftable, onlyCollectables, onlyNotCompleted, clvlMin, clvlMax], logTracking]) => {
         this.settings.showOnlyCraftableInRecipeFinder = onlyCraftable;
         this.settings.showOnlyCollectablesInRecipeFinder = onlyCollectables;
         this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
@@ -125,7 +128,7 @@ export class RecipeFinderComponent implements OnDestroy {
           possibleRecipes.push(...this.lazyData.data.recipes.filter(r => {
             let canBeAdded = true;
             if (onlyNotCompleted) {
-              canBeAdded = !user || !user.logProgression.includes(r.id);
+              canBeAdded = !logTracking || !logTracking.crafting.includes(r.id);
             }
             return canBeAdded && r.ingredients.some(i => i.id === item.id && i.amount <= item.amount);
           }));

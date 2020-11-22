@@ -96,10 +96,10 @@
                         nzShape="circle">
                   <i nz-icon nzType="export"></i>
                 </button>
-                <button (click)="$event.stopPropagation()" [nzContent]="calculator" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
+                <button (click)="$event.stopPropagation()" [nzPopoverContent]="calculator" [nzPopoverTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
                         nz-button nz-popover
                         nzShape="circle"
-                        nzTrigger="click" nzType="primary">
+                        nzPopoverTrigger="click" nzType="primary">
                   <i nz-icon nzType="plus"></i>
                   <ng-template #calculator>
                     <div fxLayout="row" fxLayoutGap="5px">
@@ -127,7 +127,7 @@
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
               <div>
-                <button [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
+                <button  [nzDropdownMenu]="menu" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
                         nz-dropdown nz-tooltip nzShape="circle"
                         nzSize="small">
                   <i nz-icon nzType="plus"></i>
@@ -380,7 +380,7 @@
                       <app-map-position [mapId]="alarm.mapId" [marker]="alarm.coords"></app-map-position>
                     </ng-template>
                     <ng-template #editAlarmAction>
-                      <button (click)="editAlarm(item, alarm)" [nzTitle]="'Edit' | translate" nz-button nz-tooltip nzShape="circle"
+                      <button (click)="editAlarm(item, alarm)" [nzTooltipTitle]="'Edit' | translate" nz-button nz-tooltip nzShape="circle"
                               nzSize="small">
                         <i nz-icon nzType="edit"></i>
                       </button>
@@ -405,7 +405,7 @@
                           </div>
                           <div *ngIf="alarm.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                             <div *ngFor="let weather of alarm.weathersFrom">
-                              <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                              <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                    nz-tooltip>
                             </div>
                           </div>
@@ -414,7 +414,7 @@
                           </div>
                           <div *ngIf="alarm.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                             <div *ngFor="let weather of alarm.weathers">
-                              <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                              <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                    nz-tooltip>
                             </div>
                           </div>

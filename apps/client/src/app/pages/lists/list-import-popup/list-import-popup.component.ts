@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 import { XivapiService } from '@xivapi/angular-client';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { GarlandtoolsGroupLinkParser } from './link-parser/garlandtools-group-link-parser';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 

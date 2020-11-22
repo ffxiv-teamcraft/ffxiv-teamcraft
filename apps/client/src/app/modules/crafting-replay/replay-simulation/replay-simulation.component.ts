@@ -6,7 +6,7 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { ActionResult, EffectiveBuff, SimulationService } from '../../../core/simulation/simulation.service';
 import { SettingsService } from '../../settings/settings.service';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-replay-simulation',

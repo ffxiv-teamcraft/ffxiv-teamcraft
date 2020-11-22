@@ -186,9 +186,9 @@
       <span *ngIf="item.requires !== undefined && item.requires.length > 0"
             [nzTooltipTitle]="'LIST_DETAILS.Add_from_external' | translate"
             nz-tooltip>
-        <button [disabled]="permissionLevel < 20" *ngIf="!overlay" [nzContent]="externalCalc" nz-button
+        <button [disabled]="permissionLevel < 20" *ngIf="!overlay" [nzPopoverContent]="externalCalc" nz-button
                 nz-popover
-                nzSize="small" nzTrigger="click">
+                nzSize="small" nzPopoverTrigger="click">
           <i nz-icon nzType="select"></i>
           <ng-template #externalCalc>
             <nz-input-number #numberInput [ngModel]="0"
@@ -200,11 +200,11 @@
         </button>
       </span>
       <span [nzTooltipTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-tooltip>
-        <button [disabled]="permissionLevel < 20" [nzContent]="calculator"
+        <button [disabled]="permissionLevel < 20" [nzPopoverContent]="calculator"
                 *ngIf="!overlay"
                 [nzPopoverTitle]="'LIST_DETAILS.Add_remove_amount' | translate" nz-button
                 nz-popover
-                nzSize="small" nzTrigger="click">
+                nzSize="small" nzPopoverTrigger="click">
           <i nz-icon nzType="calculator"></i>
           <ng-template #calculator>
             <nz-input-number #numberInput (keypress.enter)="add(numberInput.value, item)"

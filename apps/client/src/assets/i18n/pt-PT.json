@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "Enable autofill by default",
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
     "Enable_autofill_hq_filter": "Only autofill using hq items when item is required as HQ",
+    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
     "Contribute_to_universalis": "Contribute to Universalis",
     "Track_items_on_sale": "Track items on sale in your retainers (requires restart/refresh)",
     "Change_email": "Change email",
@@ -652,8 +653,9 @@
       "Title": "Layout",
       "Add_panel": "Adicionar painel",
       "Import_layout": "Importar um layout",
+      "Export_layout": "Export this layout",
       "Import_string": "Código de importação do layout",
-      "Import_string_copied": "Código de importação de layout copiado!",
+      "Import_string_copied": "Layout code copied !",
       "Layout_name": "Nome do layout",
       "Invalid_import": "Código de importação inválido",
       "Global_options": "Opções gerais",
@@ -1880,7 +1882,7 @@
     "Cost": "Cost",
     "Modal_editor": "Materias for {{itemName}}",
     "Unavailable_slot": "Slot not available",
-    "Job_cannot_be_changed": "Cannot be changed after creation",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Pick a job",
     "New_gearset": "New gearset",
     "Please_input_ariyala_link": "Please input an ariyala link",
@@ -2115,7 +2117,8 @@
       "FISHING": "Fishing",
       "VENDOR": "Vendor",
       "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "MARKETBOARD": "Marketboard",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Any",

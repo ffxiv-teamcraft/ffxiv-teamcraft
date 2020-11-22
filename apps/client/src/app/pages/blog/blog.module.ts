@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CoreModule } from '../../core/core.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { NewEntryComponent } from './new-entry/new-entry.component';
@@ -18,6 +17,7 @@ import { UserAvatarModule } from '../../modules/user-avatar/user-avatar.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -43,7 +43,7 @@ const routes: Routes = [
     CommonModule,
     TranslateModule,
     CoreModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     CoreModule,
     FullpageMessageModule,
     PageLoaderModule,

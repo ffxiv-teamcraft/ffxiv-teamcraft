@@ -21,7 +21,7 @@ import { RecipeChoicePopupComponent } from './components/recipe-choice-popup/rec
 import { RotationPanelComponent } from './components/rotation-panel/rotation-panel.component';
 import { CoreModule } from '../../core/core.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
-import { NgZorroAntdModule, NzIconModule } from 'ng-zorro-antd';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { RotationFolderPageComponent } from './components/rotation-folder-page/rotation-folder-page.component';
 import { StepByStepReportComponent } from './components/step-by-step-report/step-by-step-report.component';
@@ -48,6 +48,7 @@ import { SimulatorOpenerComponent } from './components/simulator-opener/simulato
 import { SimulationSharePopupComponent } from './components/simulation-share-popup/simulation-share-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SimulationResultComponent } from './components/simulation-result/simulation-result.component';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -124,9 +125,8 @@ const routes: Routes = [
     CustomLinksModule,
     RotationTipsModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     NzIconModule,
-
 
 
     // CustomLinksModule,

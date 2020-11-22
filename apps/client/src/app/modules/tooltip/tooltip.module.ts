@@ -8,13 +8,13 @@ import { XivapiItemTooltipDirective } from './xivapi-tooltip/xivapi-item-tooltip
 import { XivapiActionTooltipDirective } from './xivapi-action-tooltip/xivapi-action-tooltip.directive';
 import { XivapiItemTooltipComponent } from './xivapi-tooltip/xivapi-item-tooltip.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
 import { UiTextPipe } from './xiv-ui-text.pipe';
 import { CoreModule } from '../../core/core.module';
 import { FishTooltipComponent } from './fish-tooltip/fish-tooltip.component';
 import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -22,7 +22,7 @@ import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
     HttpClientModule,
     OverlayModule,
     FlexLayoutModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     TranslateModule,
     PipesModule,
     CoreModule

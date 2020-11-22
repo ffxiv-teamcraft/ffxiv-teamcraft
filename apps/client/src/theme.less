@@ -37,6 +37,10 @@ html {
   background: var(--background-color);
 }
 
+.ant-menu-dark.ant-menu-horizontal > .ant-menu-item:hover {
+  background-color: transparent !important;
+}
+
 .ant-table-thead > tr > th .ant-table-column-sorter .ant-table-column-sorter-inner .ant-table-column-sorter-up.active,
 .ant-table-thead > tr > th .ant-table-column-sorter .ant-table-column-sorter-inner .ant-table-column-sorter-down.active {
   color: var(--primary-color);
@@ -58,6 +62,10 @@ html {
 
 .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled)::before {
   background-color: var(--primary-color);
+}
+
+.ant-divider-horizontal.ant-divider-with-text {
+  border-top-color: @border-color-base;
 }
 
 .ant-progress-success-bg {
@@ -156,6 +164,15 @@ html {
   color: var(--primary-color) !important;
   text-decoration-color: var(--primary-color) !important;
 }
+
+.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn, .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color) !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: var(--primary-color) !important;
+}
+
 
 [ant-click-animating-without-extra-node]:after,
 .ant-click-animating-node {

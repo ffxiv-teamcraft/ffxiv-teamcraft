@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { SearchResult } from '../../model/search/search-result';
 import { Observable } from 'rxjs';
 import { ItemPickerComponent } from './item-picker/item-picker.component';

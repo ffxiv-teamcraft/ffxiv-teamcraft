@@ -17,7 +17,7 @@
         </ng-template>
       </nz-list-item-meta>
       <ng-template #undoTemplate>
-        <button (click)="undo(entry)" [nzTitle]="'COMMON.Undo' | translate" nz-button nz-tooltip nzShape="circle"
+        <button (click)="undo(entry)" [nzTooltipTitle]="'COMMON.Undo' | translate" nz-button nz-tooltip nzShape="circle"
                 nzSize="small">
           <i nz-icon nzType="rollback"></i>
         </button>

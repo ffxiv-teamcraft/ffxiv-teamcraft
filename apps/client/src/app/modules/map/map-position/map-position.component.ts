@@ -3,7 +3,7 @@ import { Vector2 } from '../../../core/tools/vector2';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { MapComponent } from '../map/map.component';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { I18nName } from '../../../model/common/i18n-name';
 import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';

@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NameQuestionPopupComponent } from './name-question-popup/name-question-popup.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
     TranslateModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [NameQuestionPopupComponent]
 })

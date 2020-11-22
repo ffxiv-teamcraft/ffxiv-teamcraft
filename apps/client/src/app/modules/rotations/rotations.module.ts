@@ -7,11 +7,11 @@ import { RotationsEffects } from './+state/rotations.effects';
 import { RotationsFacade } from './+state/rotations.facade';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CoreModule,
     FormsModule,
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     RouterModule,
     FlexLayoutModule,
 

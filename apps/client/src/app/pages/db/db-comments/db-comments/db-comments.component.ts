@@ -1,17 +1,15 @@
-import { Component, Inject, Input, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DbCommentsService } from '../db-comments.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
 import { DbComment } from '../model/db-comment';
-import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { filter, first, map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
+import { filter, map, shareReplay, switchMap, takeUntil } from 'rxjs/operators';
 import { AuthFacade } from '../../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
-import { isPlatformServer } from '@angular/common';
 import { TeamcraftUser } from '../../../../model/user/teamcraft-user';
 import { UserLevel } from '../../../../model/other/user-level';
 import { Router } from '@angular/router';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
-import { switchMap } from 'rxjs/internal/operators/switchMap';
 import { DbItemCommentNotification } from '../../../../model/notification/db-item-comment-notification';
 import { NotificationService } from '../../../../core/notification/notification.service';
 import { environment } from '../../../../../environments/environment';
@@ -20,7 +18,7 @@ import { DbCommentReplyNotification } from '../../../../model/notification/db-co
 @Component({
   selector: 'app-db-comments',
   templateUrl: './db-comments.component.html',
-  styleUrls: ['./db-comments.component.less'],
+  styleUrls: ['./db-comments.component.less']
 })
 export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
   @Input()

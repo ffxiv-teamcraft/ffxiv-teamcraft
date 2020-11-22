@@ -17,7 +17,8 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { TrackerComponent } from '../tracker-component';
 import { NavigationObjective } from '../../../modules/map/navigation-objective';
-import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { List } from '../../../modules/list/model/list';
 import { Memoized } from '../../../core/decorators/memoized';
@@ -75,14 +76,14 @@ export class LogTrackerComponent extends TrackerComponent {
       });
     });
     this.dolTabs = [...this.lazyData.data.gatheringLogPages];
-    this.authFacade.user$.pipe(
-    ).subscribe(user => {
+    this.authFacade.logTracking$.pipe(
+    ).subscribe(logTracking => {
       this.userCompletion = {};
       this.userGatheringCompletion = {};
-      user.logProgression.forEach(recipeId => {
+      logTracking.crafting.forEach(recipeId => {
         this.userCompletion[recipeId] = true;
       });
-      user.gatheringLogProgression.forEach(itemId => {
+      logTracking.gathering.forEach(itemId => {
         this.userGatheringCompletion[itemId] = true;
       });
     });

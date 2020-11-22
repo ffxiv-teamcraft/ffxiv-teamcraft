@@ -29,7 +29,6 @@ import { CustomLink } from './database/custom-links/custom-link';
 import { ListTemplate } from './database/custom-links/list-template';
 import { WeatherService } from './eorzea/weather.service';
 import { DbButtonComponent } from './db-button/db-button.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { RouterModule } from '@angular/router';
 import { ItemRarityDirective } from './item-rarity/item-rarity.directive';
 import { DbItemCommentNotification } from '../model/notification/db-item-comment-notification';
@@ -48,6 +47,10 @@ import { MouseWheelDirective } from './event/mouse-wheel/mouse-wheel.directive';
 import { SupportUsPopupComponent } from './patreon/support-us-popup/support-us-popup.component';
 import { ClipboardDirective } from './clipboard.directive';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
 
 @NgModule({
@@ -78,10 +81,14 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     PushNotificationsModule,
     MaintenanceModule,
     VersionLockModule,
-    NgZorroAntdModule,
     RouterModule,
     TutorialModule,
-    ClipboardModule
+    ClipboardModule,
+
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule,
+    NzDividerModule
   ],
   providers: [
     PendingChangesService,
@@ -123,7 +130,11 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
     LazyComponentDirective,
     TutorialModule,
     MouseWheelDirective,
-    ClipboardDirective
+    ClipboardDirective,
+
+    NzButtonModule,
+    NzToolTipModule,
+    NzIconModule
   ]
 })
 export class CoreModule {

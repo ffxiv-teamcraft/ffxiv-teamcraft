@@ -9,11 +9,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { MarketboardModule } from '../marketboard/marketboard.module';
 
 import { PriceCheckResultComponent } from './price-check-result/price-check-result.component';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -25,7 +25,7 @@ import { PriceCheckResultComponent } from './price-check-result/price-check-resu
     PipesModule,
     ItemIconModule,
     MarketboardModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
 
 
     ListModule

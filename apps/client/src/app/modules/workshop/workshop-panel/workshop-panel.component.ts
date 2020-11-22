@@ -7,7 +7,8 @@ import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, tap, 
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { List } from '../../list/model/list';
 import { PermissionsBoxComponent } from '../../permissions/permissions-box/permissions-box.component';
@@ -38,8 +39,6 @@ export class WorkshopPanelComponent {
 
   @Input()
   lists: List[] = [];
-
-  private listsLoaded: string[] = [];
 
   permissionLevel$: Observable<PermissionLevel> = combineLatest([this.authFacade.userId$, this.workshop$]).pipe(
     map(([userId, workshop]) => workshop.getPermissionLevel(userId)),

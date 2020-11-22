@@ -39,11 +39,11 @@
           <ng-container *ngIf="publicDisplay && authFacade.loggedIn$ | async">
             <div *ngIf="simulation$ | async as result" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
               <div *ngIf="rotation.tags.indexOf('SPECIALIST') > -1 && !((simulationSet$ | async)?.specialist)">
-                <i [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Specialist_rotation_warning' | translate"
+                <i [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Specialist_rotation_warning' | translate"
                    [twoToneColor]="'#aa9400'" nz-icon nz-tooltip
                    nzType="exclamation-circle" theme="twotone"></i>
               </div>
-              <div [nzTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip>
+              <div [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip>
                 <nz-tag *ngIf="result.success"
                         [style.border-color]="'darkgreen'"
                         class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
@@ -51,7 +51,7 @@
                         [style.border-color]="'#f50'"
                         class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
               </div>
-              <button (click)="openMacroPopup(result.simulation)" [nzTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
+              <button (click)="openMacroPopup(result.simulation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
                       nzShape="circle"
                       nzType="primary">
                 <span class="text-icon">XIV</span>
@@ -59,7 +59,7 @@
             </div>
           </ng-container>
           <button (click)="$event.stopPropagation();renameRotation(rotation)" *ngIf="(permissionLevel$ | async) >= 40"
-                  [nzTitle]="'SIMULATOR.Rename_rotation' | translate" nz-button
+                  [nzTooltipTitle]="'SIMULATOR.Rename_rotation' | translate" nz-button
                   nz-tooltip
                   nzShape="circle">
             <i nz-icon nzType="edit"></i>
@@ -69,11 +69,11 @@
                   [clipboardFnArgs]="[rotation]"
                   [clipboardSuccessMessage]="'SIMULATOR.Share_link_copied' | translate"
                   [nzShape]="'circle'"
-                  [nzTitle]="'SIMULATOR.Share_button_tooltip' | translate"
+                  [nzTooltipTitle]="'SIMULATOR.Share_button_tooltip' | translate"
                   nz-button nz-tooltip>
             <i nz-icon nzType="share-alt"></i>
           </button>
-          <a (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzTitle]="'SIMULATOR.Simulate_tooltip' | translate"
+          <a (click)="$event.stopPropagation()" [nzShape]="'circle'" [nzTooltipTitle]="'SIMULATOR.Simulate_tooltip' | translate"
              [nzType]="'primary'"
              [routerLink]="getRouterLink(rotation)"
              nz-button
@@ -81,7 +81,7 @@
             <i nz-icon nzType="folder-open"></i>
           </a>
           <button (click)="$event.stopPropagation();openOverlay(rotation)" *ngIf="platformService.isDesktop()" [nzShape]="'circle'"
-                  [nzTitle]="'ALARMS.Open_overlay' | translate" [nzType]="'primary'"
+                  [nzTooltipTitle]="'ALARMS.Open_overlay' | translate" [nzType]="'primary'"
                   nz-button
                   nz-tooltip>
             <i nz-icon nzType="desktop"></i>
@@ -95,7 +95,7 @@
           <ng-container *ngIf="(permissionLevel$ | async) >= 40">
             <ng-container *ngIf="user$ | async as user">
               <ng-container *ngIf="user.patron || user.admin">
-                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+                <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
                         [nzPlacement]="'bottomRight'"
                         [nzShape]="'circle'" [nzTrigger]="'click'"
                         nz-button

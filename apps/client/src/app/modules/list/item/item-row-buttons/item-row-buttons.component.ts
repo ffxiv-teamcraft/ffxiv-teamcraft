@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ItemRowMenuElement } from '../../../../model/display/item-row-menu-element';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';

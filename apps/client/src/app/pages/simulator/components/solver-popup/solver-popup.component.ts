@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Craft, CrafterStats, CraftingAction, CraftingActionsRegistry } from '@ffxiv-teamcraft/simulator';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { defaultConfiguration, SolverConfiguration } from '@ffxiv-teamcraft/crafting-solver';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';

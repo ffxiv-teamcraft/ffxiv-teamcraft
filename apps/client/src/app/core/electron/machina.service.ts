@@ -93,10 +93,10 @@ export class MachinaService {
       case Region.China:
         return 108;
       case Region.Korea:
-        return 0x3A9;
+        return 0x399;
       case Region.Global:
       default:
-        return 0x349;
+        return 0x13B;
     }
   }
 

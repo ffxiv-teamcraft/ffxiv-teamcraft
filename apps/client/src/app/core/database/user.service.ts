@@ -10,7 +10,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
 import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 @Injectable({
   providedIn: 'root'
@@ -123,21 +123,6 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
       tap(() => this.recordOperation('read')),
       map(snap => snap.docs.map(doc => doc.id))
     );
-  }
-
-  public set(uid: string, user: TeamcraftUser, ignoreLog = false): Observable<void> {
-    if (!ignoreLog && user.defaultLodestoneId && (user.logProgression.length > 0 || user.gatheringLogProgression.length > 0)) {
-      return this.logTrackingService.set(`${user.$key}:${user.defaultLodestoneId.toString()}`, {
-        crafting: user.logProgression,
-        gathering: user.gatheringLogProgression
-      }).pipe(
-        tap(() => this.recordOperation('write')),
-        switchMap(() => {
-          return super.set(uid, { ...user, gatheringLogProgression: [], logProgression: [] });
-        })
-      );
-    }
-    return super.set(uid, user);
   }
 
   /**

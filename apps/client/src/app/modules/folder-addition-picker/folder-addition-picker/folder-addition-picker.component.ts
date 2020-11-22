@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AdditionPickerEntry } from './addition-picker-entry';
 
 

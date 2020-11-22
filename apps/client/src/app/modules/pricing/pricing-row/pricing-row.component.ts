@@ -4,7 +4,7 @@ import { Price } from '../model/price';
 import { ItemAmount } from '../model/item-amount';
 import { getItemSource, ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SettingsService } from '../../settings/settings.service';

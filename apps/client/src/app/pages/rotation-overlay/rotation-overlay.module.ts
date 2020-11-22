@@ -8,12 +8,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { SimulatorModule } from '../simulator/simulator.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -40,7 +40,7 @@ const routes: Routes = [
     SimulatorModule,
     FullpageMessageModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     OverlayContainerModule
   ]
 })

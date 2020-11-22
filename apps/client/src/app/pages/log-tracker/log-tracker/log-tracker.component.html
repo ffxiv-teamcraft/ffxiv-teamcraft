@@ -13,7 +13,7 @@
           <nz-tab *ngFor="let page of tab;" [nzTitle]="titleTemplate">
             <ng-template #titleTemplate>
           <span [class.not-required]="!isRequiredForAchievement(page)">{{ getDohDivisionId(page.id) | notebookDivisionName | i18n }}<span
-            *ngIf="isRequiredForAchievement(page)" [nzTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
+            *ngIf="isRequiredForAchievement(page)" [nzTooltipTitle]="'LOG_TRACKER.Required_for_achievement' | translate"
             nz-tooltip>*</span>
             ({{getDohPageCompletion(page)}})
           </span>
@@ -59,7 +59,7 @@
                     </div>
                     <div>
                       <button (click)="markDohAsDone(recipe.recipeId, true)" *ngIf="!userCompletion[recipe.recipeId]"
-                              [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                              [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"
@@ -67,7 +67,7 @@
                         <i nz-icon nzType="check"></i>
                       </button>
                       <button (click)="markDohAsDone(recipe.recipeId, false)" *ngIf="userCompletion[recipe.recipeId]"
-                              [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                              [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"
@@ -201,7 +201,7 @@
                       <div [nzMd]="4" nz-col></div>
                       <div [nzMd]="2" nz-col>
                         <button (click)="markDolAsDone(item.itemId, true)" *ngIf="!userGatheringCompletion[item.itemId]"
-                                [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                                [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"
@@ -209,7 +209,7 @@
                           <i nz-icon nzType="check"></i>
                         </button>
                         <button (click)="markDolAsDone(item.itemId, false)" *ngIf="userGatheringCompletion[item.itemId]"
-                                [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                                [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                                 nz-button
                                 nz-tooltip
                                 nzShape="circle"

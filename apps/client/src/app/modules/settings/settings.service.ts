@@ -519,6 +519,14 @@ export class SettingsService {
     this.setSetting('autofill:enable-hq-filter', enabled.toString());
   }
 
+  public get enableAutofillNQFilter(): boolean {
+    return this.getSetting('autofill:enable-nq-filter', 'false') === 'true';
+  }
+
+  public set enableAutofillNQFilter(enabled: boolean) {
+    this.setSetting('autofill:enable-nq-filter', enabled.toString());
+  }
+
   public get enableUniversalisSourcing(): boolean {
     return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
   }

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { EquipmentPiece } from '../../../model/gearset/equipment-piece';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MateriaService } from '../../../modules/gearsets/materia.service';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 import { StatsService } from '../../../modules/gearsets/stats.service';
 import { sum } from 'lodash';
 import { Memoized } from '../../../core/decorators/memoized';

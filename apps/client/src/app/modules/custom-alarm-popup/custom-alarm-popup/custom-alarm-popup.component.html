@@ -18,7 +18,7 @@
   <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Spawns_twice' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
-      <label [nzTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate" formControlName="spawnsTwice" nz-checkbox
+      <label [nzTooltipTitle]="'ALARMS.CUSTOM.Spawns_twice_description' | translate" formControlName="spawnsTwice" nz-checkbox
              nz-tooltip></label>
     </nz-form-control>
   </nz-form-item>
@@ -34,7 +34,7 @@
     <nz-form-label [nzSm]="8" [nzXs]="24">
       <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px" fxFlex="0">
         <div>{{'ALARMS.CUSTOM.Slot' | translate}}</div>
-        <div [nzTitle]="'ALARMS.CUSTOM.Slot_description' | translate" nz-tooltip>
+        <div [nzTooltipTitle]="'ALARMS.CUSTOM.Slot_description' | translate" nz-tooltip>
           <i nz-icon nzType="question-circle" theme="outline"></i>
         </div>
       </div>

@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
     "Enable_autofill_notification_by_default": "Activer la notification de complétion automatique par défaut",
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
+    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "Change_email": "Changer votre email",
@@ -647,13 +648,14 @@
     "X_needed": "{{amount}} requis",
     "Leave_list": "Quitter cette liste",
     "Cannot_leave": "Vous ne pouvez pas quitter cette liste car elle est partagée à l'ensemble de votre CL (dans ce cas, vous devez demander au propriétaire de la supprimer) ou à l'une de vos équipes (dans ce cas, vous pouvez quitter l'équipe).",
-    "Split_list": "Split this list",
+    "Split_list": "Diviser cette liste",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
       "Import_layout": "Importer un affichage",
+      "Export_layout": "Export this layout",
       "Import_string": "Chaîne d'import de l'affichage",
-      "Import_string_copied": "Chaîne d'import de l'affichage copiée !",
+      "Import_string_copied": "Layout code copied !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
@@ -692,8 +694,8 @@
       "No_panel_selected": "Sélectionnez un panneau en utilisant les boutons ci-dessus"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "Choisir les éléments à ajouter à une autre liste",
+      "Remove_from_list": "Retirer de la liste actuelle"
     }
   },
   "LIST_TAGS": {
@@ -924,7 +926,7 @@
     "Remove_final_appraisal": "Supprimer le buff \"Dernières vérifications\"",
     "Total_macro_duration": "Durée totale de la macro : {{duration}}s.",
     "Compact": "Compact",
-    "Detailed": "Detailed",
+    "Detailed": "Détaillé",
     "STATE": {
       "Excellent": "Excellent",
       "Good": "Bon",
@@ -1439,7 +1441,7 @@
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
       "Required_control": "Contrôle requis",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -1683,7 +1685,7 @@
     "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données",
     "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur",
     "Quick_search": "Appuyez sur Ctrl + Maj + F pour ouvrir une fenêtre de recherche depuis n'importe où dans l'outil",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
+    "Open_in_desktop_shortcut": "Appuyez sur Ctrl + Shift + C pour ouvrir la page courante dans l'application bureau ou pour ouvrir la fenêtre modale \"Ouvrir un lien web\" sur l'application de bureau."
   },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
@@ -1716,7 +1718,7 @@
     "Shown_only_craftable": "Uniquement avec niveau requis respecté",
     "Shown_only_collectables": "Collectionnables uniquement",
     "Recipe_level": "Niveau de la recette",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "Uniquement jamais crafté"
   },
   "CURRENCY_SPENDING": {
     "Title": "Dépense de devises",
@@ -1880,7 +1882,7 @@
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
-    "Job_cannot_be_changed": "Ne peut pas être modifié après la création",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Choisir un job",
     "New_gearset": "Nouvelle tenue",
     "Please_input_ariyala_link": "Veuillez entrer un lien ariyala",
@@ -1892,14 +1894,14 @@
     "Import_from_ariyala": "Importer depuis Ariyala",
     "Import_from_lodestone": "Importer depuis Lodestone",
     "Import_using_pcap": "Importer en utilisant la capture de paquets",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "Synchroniser les tenues avec la capture de paquets",
     "Your_gearsets": "Vos tenues",
     "Delete_gearset": "Supprimer la tenue",
     "Import_from_pcap_notice": "Changez pour la tenue voulue en jeu, avec le job désigné pour l'importer dans Teamcraft.",
     "No_food_selected": "Aucune nourriture sélectionnée",
     "Generate_list": "Générer une liste",
     "Clone_gearset": "Créer une copie sur votre compte",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "Créer une copie de cette tenue",
     "You_have_no_gearsets": "Vous n'avez pas de tenues",
     "Favorite_gearsets": "Tenues favorites",
     "Update_from_pcap": "Mettre à jour en utilisant la capture de paquets",
@@ -1958,12 +1960,12 @@
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
-      "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Title": "Synchroniser les tenues",
+      "Tag": "Synchronisée",
+      "Tag_tooltip": "Cette tenue est synchronisée via la capture de paquets, elle sera mise à jour si la synchronisation est lancée de nouveau.",
+      "Importing_gearset": "Import en cours pour la tenue {{name}}",
+      "Imported_gearset": "Tenue {{name}} importée",
+      "Syncing_gearsets": "Synchronisation des tenues..."
     }
   },
   "FOLDERS": {
@@ -2115,7 +2117,8 @@
       "FISHING": "Pêche",
       "VENDOR": "Vendeur",
       "TELEPORT": "Téléporter",
-      "MARKETBOARD": "Tableau des ventes"
+      "MARKETBOARD": "Tableau des ventes",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Tout",

@@ -138,9 +138,12 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
       for (const spot of spots) {
         const mapId = this.localized.getMapId(spot.zone);
         const zoneId = this.localized.getAreaIdByENName(spot.title);
+        const lazySpot = this.lazyData.data.fishingSpots.find(s => {
+          return s.mapId === mapId && s.zoneId === zoneId && s.fishes.includes(item.id);
+        });
         if (mapId !== undefined) {
           const node: StoredNode = {
-            id: 0,
+            id: lazySpot?.id || 0,
             mapid: mapId,
             areaid: mapId,
             zoneid: zoneId,

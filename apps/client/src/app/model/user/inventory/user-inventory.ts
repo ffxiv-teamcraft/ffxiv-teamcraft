@@ -219,11 +219,10 @@ export class UserInventory extends DataModel {
           slot: packet.toSlot
         };
         delete this.items[fromContainerKey][packet.fromSlot];
-        let retainerName;
         if (isFromRetainer && !isToRetainer) {
-          retainerName = null;
+          moved.retainerName = null;
         } else if (!isFromRetainer && isToRetainer) {
-          retainerName = lastSpawnedRetainer;
+          moved.retainerName = lastSpawnedRetainer;
         }
         this.items[toContainerKey][packet.toSlot] = moved;
         if (packet.toContainer === ContainerType.HandIn
@@ -233,8 +232,7 @@ export class UserInventory extends DataModel {
         }
         return {
           ...moved,
-          moved: true,
-          retainerName: retainerName
+          moved: true
         };
     }
   }

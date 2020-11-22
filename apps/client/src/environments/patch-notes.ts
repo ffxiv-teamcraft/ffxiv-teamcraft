@@ -1,15 +1,18 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** going further in the future looking for weather spawns now.
-* **autofill:** better integrity check on list autofill update.
-* **desktop:** fixed an error with auto log filling as you craft.
-* **inventory:** big performance improvement for inventory capture & autofill.
-* **layout:** maximum vendor price now applies to every vendor-related filters.
+* **desktop:** fixed misslabelling happening when moving an item to a retainer using drag and drop.
+* **pricing:** fixed housing furnitures considered as HQ for price detection.
+* **search:** fixed an issue with lower level filters not applied properly (dated items).
+* **search:** fixed search type not being applied properly in some cases.
+* **workshop:** fixed an issue preventing workshop content from loading properly in lists page.
 
 
 ### Features
 
-* **db:** you can now mark gatherable items as done in log from their db page.
-* **list:** added link to the fishing spot db page on fish details popup.
-* **list:** you can now split a list in smaller lists.
-* **recipe-finder:** new filter to consider only recipes you never crafted.`;
+* **alarms-sidebar:** new icon to disable the alarm from sidebar.
+* **data:** support for korean v5.25 update.
+
+
+### Performance Improvements
+
+* **assets:** added line break removal in prod assets hashing process.`;

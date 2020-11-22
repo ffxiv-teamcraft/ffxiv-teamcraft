@@ -20,7 +20,7 @@
         <div fxLayout="row" (click)="triggerEditMaterias()" class="materias">
           <app-materia-slot-icon *ngFor="let materia of materias; let i = index;"
                                  nz-tooltip
-                                 [nzTitle]="materia === 0 ? null : materia | itemName | i18n"
+                                 [nzTooltipTitle]="materia === 0 ? null : materia | itemName | i18n"
                                  [equipmentPiece]="equipmentPiece"
                                  [index]="i"></app-materia-slot-icon>
         </div>
@@ -30,7 +30,7 @@
   <div nz-col [nzMd]="statColsSize" *ngFor="let stat of stats;let lastStat = last; trackBy: trackByStat" class="item-stat-row" [class.last]="lastStat">
     <span *ngIf="equipmentPiece | stat:stat.id as statValue"
           nz-tooltip
-          [nzTitle]="statValue.bonus === 0 ? null :  statValue.value + ' + ' + statValue.bonus"
+          [nzTooltipTitle]="statValue.bonus === 0 ? null :  statValue.value + ' + ' + statValue.bonus"
           [class.has-bonus]="statValue.bonus > 0">
       {{(statValue.total) > 0 ? (statValue.total) : '-'}}
     </span>

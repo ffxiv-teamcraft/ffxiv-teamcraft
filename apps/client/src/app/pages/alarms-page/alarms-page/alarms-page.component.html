@@ -2,26 +2,26 @@
   <div *ngIf="display$ | async as display">
     <div class="toolbar">
       <div class="right-toolbar" fxLayout="row" fxLayoutGap="5px">
-        <a nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.Add_alarm' | translate}}" nzType="primary"
+        <a nz-button nz-tooltip nzShape="circle" nzTooltipTitle="{{'ALARMS.Add_alarm' | translate}}" nzType="primary"
            routerLink="/gathering-location">
           <i nz-icon nzType="bell"></i>
         </a>
-        <button (click)="createGroup(display.groupedAlarms.length)" nz-button nz-tooltip nzShape="circle" nzTitle="{{'ALARMS.New_group' | translate}}"
+        <button (click)="createGroup(display.groupedAlarms.length)" nz-button nz-tooltip nzShape="circle" nzTooltipTitle="{{'ALARMS.New_group' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="folder-add"></i>
         </button>
         <button (click)="showSettings()" tutorialStep="TUTORIAL.ALARMS.Settings" tutorialStepIndex="0" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'Timer_options' | translate}}"
+                nzTooltipTitle="{{'Timer_options' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="setting"></i>
         </button>
         <button (click)="newCustomAlarm()" tutorialStep="TUTORIAL.ALARMS.Custom" tutorialStepIndex="1" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
+                nzTooltipTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="form"></i>
         </button>
         <button (click)="toggleCollapse()" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.Toggle_collapse' | translate}}"
+                nzTooltipTitle="{{'ALARMS.Toggle_collapse' | translate}}"
                 nzType="primary">
           <i nz-icon nzType="sliders"></i>
         </button>
@@ -29,7 +29,7 @@
       <div class="spacer"></div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
         <button (click)="openOverlay()" *ngIf="platform.isDesktop()" nz-button nz-tooltip nzShape="circle"
-                nzTitle="{{'ALARMS.Open_overlay' | translate}}" nzType="primary">
+                nzTooltipTitle="{{'ALARMS.Open_overlay' | translate}}" nzType="primary">
           <i nz-icon nzType="desktop"></i>
         </button>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -86,7 +86,7 @@
                       nzSize="small">
                 <i nz-icon nzType="edit"></i>
               </button>
-              <button (click)="$event.stopPropagation();" 
+              <button (click)="$event.stopPropagation();"
                       [nzDropdownMenu]="menu"
                       nz-button
                       nz-dropdown
@@ -117,7 +117,7 @@
                 </ul>
               </nz-dropdown-menu>
               <button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
-                      [nzTitle]="'ALARMS.Add_alarms_to_group' | translate"
+                      [nzTooltipTitle]="'ALARMS.Add_alarms_to_group' | translate"
                       [nzType]="'primary'" nz-button nz-tooltip
                       nzSize="small">
                 <i nz-icon nzType="plus"></i>
@@ -185,18 +185,18 @@
           </div>
         </ng-template>
         <ng-template #cardDescription>
-          <i *ngIf="row.alarm.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
                               [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
-            <img *ngIf="row.alarm.folklore !== undefined" [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
+            <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
                  class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
-            <img *ngIf="row.alarm.fishEyes" [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+            <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/fish_eyes.png">
-            <img *ngIf="row.alarm.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+            <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/snagging.png">
           </div>
           <div>
@@ -207,8 +207,8 @@
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.remainingTime | timer}}</div>
-            <div *ngIf="row.alarm.nodeContent" [nzContent]="nodeContent"
-                 [nzTitle]="'ALARMS.Node_content' | translate"
+            <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
+                 [nzPopoverTitle]="'ALARMS.Node_content' | translate"
                  nz-popover>
               <ng-template #nodeContent>
                 <ul>
@@ -225,7 +225,7 @@
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" *ngIf="row.alarm.weathersFrom && row.alarm.weathersFrom.length > 0">
             <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathersFrom">
-                <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                      nz-tooltip>
               </div>
             </div>
@@ -234,7 +234,7 @@
             </div>
             <div fxLayout="row wrap" fxLayoutGap="5px">
               <div *ngFor="let weather of row.alarm.weathers">
-                <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                      nz-tooltip>
               </div>
             </div>
@@ -243,12 +243,12 @@
             <app-fishing-bait [baits]="row.alarm.baits"></app-fishing-bait>
           </div>
           <div *ngIf="row.alarm.gig">
-            <img [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate" class="gig-icon" nz-tooltip
+            <img [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + row.alarm.gig) | translate" class="gig-icon" nz-tooltip
                  src="./assets/icons/gig/{{row.alarm.gig}}.png">
           </div>
           <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                fxLayoutGap="10px">
-            <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
             <div *ngFor="let predator of row.alarm.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                  fxLayoutGap="5px">
@@ -258,7 +258,7 @@
           </div>
           <button (click)="addNote(row.alarm)" *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" class="note-button"
                   nz-button nz-tooltip
-                  nzGhost nzShape="circle" nzSize="small" nzTitle="{{'ALARMS.Add_note' | translate}}">
+                  nzGhost nzShape="circle" nzSize="small" nzTooltipTitle="{{'ALARMS.Add_note' | translate}}">
             <i nz-icon nzType="file-add"></i>
           </button>
           <ng-template #note>
@@ -266,7 +266,7 @@
               <div>{{row.alarm.note}}</div>
               <button (click)="editNote(row.alarm)" nz-button nz-tooltip
                       nzGhost nzShape="circle"
-                      nzSize="small" nzTitle="{{'Edit' | translate}}">
+                      nzSize="small" nzTooltipTitle="{{'Edit' | translate}}">
                 <i nz-icon nzType="edit"></i>
               </button>
             </div>
@@ -285,7 +285,7 @@
              [clipboardFnArgs]="[row]"
              [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
              nz-icon nz-tooltip
-             nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
+             nzTooltipTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}"
              nzType="copy"></i>
         </ng-template>
       </div>
@@ -325,14 +325,14 @@
         <div nz-col nzMd="1">
           <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type-compact"
                src="{{row.alarm.type | nodeTypeIcon}}">
-          <i *ngIf="row.alarm.ephemeral" [nzTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
         </div>
         <div nz-col nzMd="2">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.remainingTime | timer}}</div>
-            <div *ngIf="row.alarm.nodeContent" [nzContent]="nodeContent"
-                 [nzTitle]="'ALARMS.Node_content' | translate"
+            <div *ngIf="row.alarm.nodeContent" [nzPopoverContent]="nodeContent"
+                 [nzPopoverTitle]="'ALARMS.Node_content' | translate"
                  nz-popover>
               <ng-template #nodeContent>
                 <ul>
@@ -353,7 +353,7 @@
           </div>
           <div *ngIf="row.alarm.predators && row.alarm.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                fxLayoutGap="10px">
-            <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+            <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/predators.png">
             <div *ngFor="let predator of row.alarm.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                  fxLayoutGap="5px">
@@ -366,7 +366,7 @@
              nz-col>
           <button (click)="addNote(row.alarm)" *ngIf="row.alarm.note === undefined || row.alarm.note.length === 0; else note" nz-button
                   nz-tooltip nzGhost
-                  nzShape="circle" nzSize="small" nzTitle="{{'ALARMS.Add_note' | translate}}">
+                  nzShape="circle" nzSize="small" nzTooltipTitle="{{'ALARMS.Add_note' | translate}}">
             <i nz-icon nzType="file-add"></i>
           </button>
           <ng-template #note>
@@ -374,16 +374,16 @@
               <div>{{row.alarm.note}}</div>
               <button (click)="editNote(row.alarm)" nz-button nz-tooltip
                       nzGhost nzShape="circle"
-                      nzSize="small" nzTitle="{{'Edit' | translate}}">
+                      nzSize="small" nzTooltipTitle="{{'Edit' | translate}}">
                 <i nz-icon nzType="edit"></i>
               </button>
             </div>
           </ng-template>
-          <img *ngIf="row.alarm.folklore !== undefined" [nzTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
+          <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
                class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
-          <img *ngIf="row.alarm.fishEyes" [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+          <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                src="./assets/icons/status/fish_eyes.png">
-          <img *ngIf="row.alarm.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+          <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
         <div nz-col nzMd="5">
@@ -403,7 +403,7 @@
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="1">
-          <span [nzTitle]="'Delete' | translate" nz-tooltip>
+          <span [nzTooltipTitle]="'Delete' | translate" nz-tooltip>
             <button (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
                     nz-popconfirm nzShape="circle"
                     nzType="danger">
@@ -415,7 +415,7 @@
                   [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
                   nz-button nz-tooltip
                   nzShape="circle"
-                  nzTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
+                  nzTooltipTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
             <i nz-icon nzType="copy"></i>
           </button>
         </div>

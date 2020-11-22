@@ -17,23 +17,23 @@
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
         <button (click)="$event.stopPropagation()" [clipboard]="getLink" [nzShape]="'circle'"
                 [clipboardSuccessMessage]="'WORKSHOP.Share_link_copied' | translate"
-                [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
                 nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
         <button (click)="$event.stopPropagation(); addLists()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
-                [nzTitle]="'WORKSHOP.Add_lists' | translate"
+                [nzTooltipTitle]="'WORKSHOP.Add_lists' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
           <i nz-icon nzType="plus"></i>
         </button>
         <button (nzOnConfirm)="deleteWorkshop()" [disabled]="(permissionLevel$ | async) < 30" [nzShape]="'circle'"
-                [nzTitle]="'WORKSHOP.Delete_message' | translate"
+                [nzPopconfirmTitle]="'WORKSHOP.Delete_message' | translate"
                 [nzType]="'danger'" nz-button nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
+        <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
                 [nzTrigger]="'click'"
                 nz-button nz-dropdown>
           <i nz-icon nzType="ellipsis"></i>

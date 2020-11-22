@@ -8,7 +8,7 @@ import { SettingsService } from '../../settings/settings.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { NzModalRef } from 'ng-zorro-antd';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-quick-search',

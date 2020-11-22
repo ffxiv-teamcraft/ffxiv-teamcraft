@@ -10,7 +10,6 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { MapModule } from '../../modules/map/map.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
@@ -19,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -47,7 +47,7 @@ const routes: Routes = [
     MapModule,
     ItemIconModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     RouterModule.forChild(routes)
   ],

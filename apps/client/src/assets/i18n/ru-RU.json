@@ -415,6 +415,7 @@
     "Enable_autofill_by_default": "Включить автозаполнение по умолчанию",
     "Enable_autofill_notification_by_default": "Включить уведомление автозаполнения по умолчанию",
     "Enable_autofill_hq_filter": "Автозаполнение только с использованием HQ, когда предмет требуется как HQ",
+    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
     "Contribute_to_universalis": "Внести данные в Universalis",
     "Track_items_on_sale": "Отслеживать товары на продажу у ваших ретейнеров (требуется перезапуск/обновление)",
     "Change_email": "Изменить email",
@@ -652,8 +653,9 @@
       "Title": "Макет",
       "Add_panel": "Добавить панель",
       "Import_layout": "Импорт макета",
+      "Export_layout": "Export this layout",
       "Import_string": "Импорт кода макета",
-      "Import_string_copied": "Импорт кода макета скопирован!",
+      "Import_string_copied": "Layout code copied !",
       "Layout_name": "Название макета",
       "Invalid_import": "Неверный файл импорта",
       "Global_options": "Главные настройки",
@@ -1880,7 +1882,7 @@
     "Cost": "Cost",
     "Modal_editor": "Материи для {{itemName}}",
     "Unavailable_slot": "Слот не доступен",
-    "Job_cannot_be_changed": "Не может быть изменено после создания",
+    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Выберите профессию",
     "New_gearset": "Новый набор снаряжения",
     "Please_input_ariyala_link": "Введите ссылку с Аriyala",
@@ -2115,7 +2117,8 @@
       "FISHING": "Fishing",
       "VENDOR": "Vendor",
       "TELEPORT": "Teleport",
-      "MARKETBOARD": "Marketboard"
+      "MARKETBOARD": "Marketboard",
+      "RETAINER": "Retainer"
     },
     "TYPES": {
       "ANY": "Any",

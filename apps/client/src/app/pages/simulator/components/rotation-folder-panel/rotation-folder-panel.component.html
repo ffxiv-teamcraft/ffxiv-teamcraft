@@ -20,7 +20,7 @@
       </div>
       <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="4">
         <a (click)="$event.stopPropagation()" [nzShape]="'circle'"
-           [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Open' | translate" [nzType]="'primary'"
+           [nzTooltipTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Open' | translate" [nzType]="'primary'"
            nz-button
            nz-tooltip
            routerLink="/rotation-folder/{{_folder.$key}}">
@@ -29,13 +29,13 @@
         <button (click)="$event.stopPropagation()"
                 [clipboard]="getLink"
                 [clipboardSuccessMessage]="'SIMULATOR.ROTATIONS.FOLDERS.Share_link_copied' | translate"
-                [nzShape]="'circle'" [nzTitle]="'LIST.BUTTONS.Share_description' | translate"
+                [nzShape]="'circle'" [nzTooltipTitle]="'LIST.BUTTONS.Share_description' | translate"
                 [nzType]="'primary'"
                 nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
         <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
-                [nzTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
+                [nzTooltipTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
                 [nzType]="'primary'"
                 nz-button
                 nz-tooltip>
@@ -47,7 +47,7 @@
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
                 [nzPlacement]="'bottomRight'"
                 [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
                 nz-dropdown>

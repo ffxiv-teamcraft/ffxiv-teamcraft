@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { ProgressPopupComponent } from './progress-popup/progress-popup.component';
 import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';

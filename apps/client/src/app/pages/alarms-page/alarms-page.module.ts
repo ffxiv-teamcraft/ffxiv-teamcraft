@@ -8,7 +8,6 @@ import { MapModule } from '../../modules/map/map.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
 import { NgDragDropModule } from 'ng-drag-drop';
@@ -24,6 +23,8 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-alarm-popup.module';
 
 import { ListModule } from '../../modules/list/list.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 const routes: Routes = [
   {
@@ -57,10 +58,11 @@ const routes: Routes = [
     FishingBaitModule,
     CustomAlarmPopupModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     NgDragDropModule,
 
-    ListModule
+    ListModule,
+    NzAvatarModule
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })

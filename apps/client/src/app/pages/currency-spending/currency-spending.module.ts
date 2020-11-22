@@ -10,9 +10,9 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { MapModule } from '../../modules/map/map.module';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 
 const routes: Routes = [{
@@ -34,7 +34,7 @@ const routes: Routes = [{
     ItemIconModule,
 
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),
     MarketboardModule

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NzDrawerService } from 'ng-zorro-antd';
+import { NzDrawerService } from 'ng-zorro-antd/drawer';
 import { TranslateService } from '@ngx-translate/core';
 import { RotationPickerDrawerComponent } from './rotation-picker-drawer/rotation-picker-drawer.component';
 import { Craft } from '../../model/garland-tools/craft';

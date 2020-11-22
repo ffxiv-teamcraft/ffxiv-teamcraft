@@ -4,7 +4,6 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
@@ -15,6 +14,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FormsModule } from '@angular/forms';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     CoreModule,
     RouterModule.forChild(routes),
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,

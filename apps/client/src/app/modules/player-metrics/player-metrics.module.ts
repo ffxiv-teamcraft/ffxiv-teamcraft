@@ -12,20 +12,18 @@ import { ObtentionFilter } from './filters/obtention-filter';
 import { SourceFilter } from './filters/source-filter';
 import { SpendingFilter } from './filters/spending-filter';
 import { MetricDisplayComponent } from './display/metric-display/metric-display.component';
-import {
-  NzAutocompleteModule,
-  NzButtonModule,
-  NzCardModule,
-  NzCheckboxModule,
-  NzDividerModule,
-  NzFormModule,
-  NzIconModule,
-  NzInputModule,
-  NzInputNumberModule,
-  NzPopconfirmModule,
-  NzSelectModule,
-  NzTableModule
-} from 'ng-zorro-antd';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzTableModule } from 'ng-zorro-antd/table';
 import { NoFilter } from './filters/no-filter';
 import { TranslateModule } from '@ngx-translate/core';
 import { HistogramComponent } from './display/histogram/histogram.component';

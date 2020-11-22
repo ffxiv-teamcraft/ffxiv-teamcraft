@@ -4,7 +4,7 @@ import { NameQuestionPopupComponent } from '../../name-question-popup/name-quest
 import { filter } from 'rxjs/operators';
 import { GearsetsFacade } from '../+state/gearsets.facade';
 import { TranslateService } from '@ngx-translate/core';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({

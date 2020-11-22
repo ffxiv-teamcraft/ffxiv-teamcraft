@@ -42,7 +42,7 @@ export class GcSupplyComponent {
     this.form$ = this.sets$.pipe(
       map(sets => {
         const groupConfig = sets.reduce((group, set) => {
-          group[set.jobId] = [set.level, [Validators.required, Validators.min(1)]];
+          group[set.jobId] = [set.level, [Validators.required, Validators.min(0)]];
           return group;
         }, {});
         return fb.group(groupConfig);

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { NzModalService, NzSizeLDSType } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzSizeLDSType } from 'ng-zorro-antd/core/types';
 import { TranslateService } from '@ngx-translate/core';
 import { MarketboardPopupComponent } from '../marketboard-popup/marketboard-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';

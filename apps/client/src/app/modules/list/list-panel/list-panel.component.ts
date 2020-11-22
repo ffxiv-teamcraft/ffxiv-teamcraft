@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 import { List } from '../model/list';
 import { ListsFacade } from '../+state/lists.facade';
-import { NzMessageService, NzModalService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { LinkToolsService } from '../../../core/tools/link-tools.service';
 import { ListRow } from '../model/list-row';
@@ -177,26 +178,17 @@ export class ListPanelComponent extends TeamcraftComponent {
     this.listsFacade.updateList(list);
   }
 
-  cloneList(compact: List): void {
-    // Connect with store to get full list details before cloning
-    this.listsFacade.load(compact.$key);
-    this.listsFacade.allListDetails$.pipe(
-      map(lists => lists.find(l => l.$key === compact.$key)),
-      filter(list => list !== undefined),
+  cloneList(list: List): void {
+    this.listsFacade.loadMyLists();
+    const clone = list.clone();
+    this.listsFacade.updateList(list);
+    this.listManager.upgradeList(clone).pipe(
       first(),
-      switchMap(list => {
-        const clone = list.clone();
-        this.listsFacade.updateList(list);
-        return this.listManager.upgradeList(clone).pipe(
-          first()
-        );
-      }),
-      switchMap(clone => {
-        this.listsFacade.addList(clone);
+      switchMap(upgradedClone => {
+        this.listsFacade.addList(upgradedClone);
         return this.listsFacade.myLists$
           .pipe(
-            map(lists => lists.find(l => l.createdAt.toMillis() === clone.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
+            filter(lists => lists.some(l => l.createdAt.toMillis() === upgradedClone.createdAt.toMillis() && l.$key !== undefined)),
             first()
           );
       })

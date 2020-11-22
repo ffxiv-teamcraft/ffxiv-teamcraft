@@ -123,7 +123,7 @@ export class MacroPopupComponent implements OnInit {
       if (this.fixedEcho) {
         seNumber = this.echoSeNumber;
       } else {
-        seNumber = Math.min(this.echoSeNumber + this.macro.length, 16);
+        seNumber = Math.min(this.echoSeNumber + this.macro.length - 1, 16);
       }
       this.macro[this.macro.length - 1].push(`/echo ${this.macroCompletionMessage} <se.${seNumber}>`);
     }

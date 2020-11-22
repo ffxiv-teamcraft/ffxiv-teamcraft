@@ -58,9 +58,9 @@
                       <div fxLayout="column" fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px">
                         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                           <div [appItemRarity]="item.itemId" class="recipe-name">{{item.itemId | itemName | i18n}}</div>
-                          <i *ngIf="item.timed" [nzTitle]="'LOG_TRACKER.Timed' | translate" nz-icon nz-tooltip
+                          <i *ngIf="item.timed" [nzTooltipTitle]="'LOG_TRACKER.Timed' | translate" nz-icon nz-tooltip
                              nzType="clock-circle" theme="outline"></i>
-                          <i *ngIf="item.weathered" [nzTitle]="'LOG_TRACKER.Weather_dependant' | translate" nz-icon nz-tooltip
+                          <i *ngIf="item.weathered" [nzTooltipTitle]="'LOG_TRACKER.Weather_dependant' | translate" nz-icon nz-tooltip
                              nzType="cloud" theme="outline"></i>
                           <i *ngIf="item.done" nz-icon nzType="check"></i>
                         </div>
@@ -106,28 +106,28 @@
                               </div>
                               <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center"
                                    fxLayoutGap="5px">
-                                <img [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
+                                <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                                      src="./assets/icons/status/fish_eyes.png">
                                 <div
                                   (click)="toggleFishEyesFormat()" *ngIf="node.itemId | fishEyesDuration as duration"
-                                  [nzTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
+                                  [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
                                   nz-tooltip>
                                   {{(fishEyesFormat === 1 ? 'COMMON.Minutes_duration' : 'COMMON.Seconds_duration') | translate: { amount: duration * fishEyesFormat } }}
                                 </div>
                               </div>
-                              <img *ngIf="node.snagging" [nzTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+                              <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/snagging.png">
                             </div>
                             <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"
                                               flex="row"></app-fishing-bait>
-                            <img *ngIf="node.gig" [nzTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon"
+                            <img *ngIf="node.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon"
                                  nz-tooltip src="./assets/icons/gig/{{node.gig}}.png">
-                            <img *ngIf="node.hookset" [nzTitle]="(node.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n" class="gig-icon"
+                            <img *ngIf="node.hookset" [nzTooltipTitle]="(node.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n" class="gig-icon"
                                  nz-tooltip
                                  src="./assets/icons/hookset/{{node.hookset}}.png">
                             <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                                  fxLayoutGap="10px">
-                              <img [nzTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                              <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/predators.png">
                               <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                                    fxLayoutGap="5px">
@@ -139,7 +139,7 @@
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                               <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                                 <div *ngFor="let weather of node.weathersFrom">
-                                  <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                  <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                        nz-tooltip>
                                 </div>
                               </div>
@@ -148,7 +148,7 @@
                               </div>
                               <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
                                 <div *ngFor="let weather of node.weathers">
-                                  <img [nzTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+                                  <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                        nz-tooltip>
                                 </div>
                               </div>
@@ -166,14 +166,14 @@
                     <div [nzMd]="3" fxLayout="column" fxLayoutGap="5px" nz-col>
                     </div>
                     <div [nzMd]="3" nz-col>
-                      <button (click)="markAsDone(item.itemId, true)" *ngIf="!item.done" [nzTitle]="'LOG_TRACKER.Mark_as_done' | translate"
+                      <button (click)="markAsDone(item.itemId, true)" *ngIf="!item.done" [nzTooltipTitle]="'LOG_TRACKER.Mark_as_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"
                               nzType="primary">
                         <i nz-icon nzType="check"></i>
                       </button>
-                      <button (click)="markAsDone(item.itemId, false)" *ngIf="item.done" [nzTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
+                      <button (click)="markAsDone(item.itemId, false)" *ngIf="item.done" [nzTooltipTitle]="'LOG_TRACKER.Mark_as_not_done' | translate"
                               nz-button
                               nz-tooltip
                               nzShape="circle"

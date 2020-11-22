@@ -2,12 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { GarlandToolsService } from './garland-tools.service';
 import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { map, switchMap } from 'rxjs/operators';
+import { expand, filter, first, map, switchMap } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -16,7 +15,7 @@ import { NpcData } from '../../model/garland-tools/npc-data';
 import { LeveData } from '../../model/garland-tools/leve-data';
 import { MobData } from '../../model/garland-tools/mob-data';
 import { FateData } from '../../model/garland-tools/fate-data';
-import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiSearchFilter, XivapiOptions, XivapiSearchOptions, XivapiService } from '@xivapi/angular-client';
+import { SearchAlgo, SearchIndex, XivapiEndpoint, XivapiOptions, XivapiSearchFilter, XivapiSearchOptions, XivapiService } from '@xivapi/angular-client';
 import { SearchType } from '../../pages/search/search-type';
 import { InstanceSearchResult } from '../../model/search/instance-search-result';
 import { QuestSearchResult } from '../../model/search/quest-search-result';
@@ -85,7 +84,7 @@ export class DataService {
     }
 
     if (lang !== 'chs') {
-      searchOptions.string_algo = SearchAlgo.WILDCARD_PLUS
+      searchOptions.string_algo = SearchAlgo.WILDCARD_PLUS;
     }
 
     return this.xivapi.search(searchOptions);
@@ -219,7 +218,7 @@ export class DataService {
       indexes: [SearchIndex.ITEM],
       string: query,
       filters: xivapiFilters,
-      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks'],
+      columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
     };
 
     if (sort[0]) {
@@ -228,9 +227,27 @@ export class DataService {
     searchOptions.sort_order = sort[1];
 
     let results$ = this.xivapiSearch(searchOptions).pipe(
-      map((response) => {
-        return response.Results.filter(item => !item.Name_en.startsWith('Dated'));
-      })
+      expand((response) => {
+        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
+        if (results.length === 0 && response.Results.length > 0 && response.Pagination.PageTotal > response.Pagination.Page) {
+          return this.xivapiSearch({
+            ...searchOptions,
+            page: (searchOptions.page || 1) + 1
+          });
+        } else {
+          return of(response);
+        }
+      }),
+      map(response => {
+        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
+        return {
+          results: results,
+          done: results.length > 0 || response.Pagination.PageTotal === response.Pagination.Page
+        };
+      }),
+      filter(res => res.done),
+      first(),
+      map(res => res.results)
     );
 
     if (this.isCompatible) {
@@ -248,18 +265,18 @@ export class DataService {
               if (!onlyCraftable) return true;
 
               const matchesRecipeFilter = item.Recipes && item.Recipes.length > 0;
-              return matchesRecipeFilter && xivapiFilters.reduce((matches, filter) => {
-                switch (filter.operator) {
+              return matchesRecipeFilter && xivapiFilters.reduce((matches, f) => {
+                switch (f.operator) {
                   case '>=':
-                    return matches && item[filter.column] >= filter.value;
+                    return matches && item[f.column] >= f.value;
                   case '<=':
-                    return matches && item[filter.column] <= filter.value;
+                    return matches && item[f.column] <= f.value;
                   case '=':
-                    return matches && item[filter.column] === filter.value;
+                    return matches && item[f.column] === f.value;
                   case '<':
-                    return matches && item[filter.column] < filter.value;
+                    return matches && item[f.column] < f.value;
                   case '>':
-                    return matches && item[filter.column] > filter.value;
+                    return matches && item[f.column] > f.value;
                 }
               }, true);
             });

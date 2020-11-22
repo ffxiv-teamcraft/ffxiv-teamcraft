@@ -9,7 +9,7 @@ import { Folder } from '../../../model/folder/folder';
 import { distinctUntilChanged, filter, first, map } from 'rxjs/operators';
 import { FolderDisplay } from '../../../model/folder/folder-display';
 import { DataModel } from '../../../core/database/storage/data-model';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthFacade } from '../../../+state/auth.facade';

@@ -22,14 +22,14 @@ import {
   UpdateUser,
   VerifyCharacter
 } from './auth.actions';
-import { auth } from 'firebase/app';
+import firebase from 'firebase/app';
 import { UserCredential } from '@firebase/auth-types';
 import { catchError, distinctUntilChanged, distinctUntilKeyChanged, filter, first, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { PlatformService } from '../core/tools/platform.service';
 import { IpcService } from '../core/electron/ipc.service';
 import { CharacterLinkPopupComponent } from '../core/auth/character-link-popup/character-link-popup.component';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { combineLatest, from, Observable, of } from 'rxjs';
 import { TeamcraftUser } from '../model/user/teamcraft-user';
@@ -44,6 +44,7 @@ import { AngularFireFunctions } from '@angular/fire/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
+import { LogTrackingService } from '../core/database/log-tracking.service';
 
 @Injectable({
   providedIn: 'root'
@@ -79,6 +80,20 @@ export class AuthFacade {
       return of(token);
     }),
     shareReplay(1)
+  );
+
+  logTracking$ = this.user$.pipe(
+    distinctUntilKeyChanged('defaultLodestoneId'),
+    switchMap(user => {
+      return this.logTrackingService.get(`${user.$key}:${user.defaultLodestoneId?.toString()}`).pipe(
+        catchError((_) => {
+          return of({
+            crafting: [],
+            gathering: []
+          });
+        })
+      );
+    })
   );
 
   characters$ = this.user$.pipe(
@@ -204,7 +219,7 @@ export class AuthFacade {
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private userService: UserService,
-              private fns: AngularFireFunctions) {
+              private fns: AngularFireFunctions, private logTrackingService: LogTrackingService) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });
@@ -293,11 +308,11 @@ export class AuthFacade {
   }
 
   public googleOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new auth.GoogleAuthProvider());
+    return this.oauthPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   public facebookOauth(): Observable<UserCredential> {
-    return this.oauthPopup(new auth.FacebookAuthProvider());
+    return this.oauthPopup(new firebase.auth.FacebookAuthProvider());
   }
 
   public logout(): void {

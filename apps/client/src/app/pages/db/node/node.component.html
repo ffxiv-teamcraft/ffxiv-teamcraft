@@ -22,7 +22,7 @@
         </div>
         <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
              fxLayoutGap="5px">
-          <a *ngFor="let link of links" [href]="link.url" [nzTitle]="link.title" nz-tooltip target="_blank">
+          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
             <img [alt]="link.title" [src]="link.icon" class="link-icon">
           </a>
         </div>
@@ -115,13 +115,13 @@
                       <ng-container *ngIf="(generateAlarm(xivapiNode, item) | alarmDisplay | async) as alarm">
                         <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
                              fxLayoutGap="5px">
-                          <button (click)="addAlarm(alarm.alarm)" [nzTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                          <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
                                   nzSize="small">
                             <i nz-icon nzType="clock-circle"></i>
                           </button>
                           <ng-container *ngIf="alarmGroups$ | async as groups">
                             <ng-container *ngIf="groups.length > 0">
-                              <button *ngIf="alarmsLoaded$ | async" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+                              <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu"
                                       [nzPlacement]="'bottomCenter'" nz-button
                                       nz-dropdown nzShape="circle" nzSize="small">
                                 <i nz-icon nzType="folder-open"></i>

@@ -44,7 +44,8 @@ import { Team } from '../../../model/team/team';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
 import { Router } from '@angular/router';
-import { NzModalService, NzNotificationService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { ListCompletionPopupComponent } from '../list-completion-popup/list-completion-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -337,10 +338,14 @@ export class ListsEffects {
       this.authFacade.fcId$,
       this.listsFacade.autocompleteEnabled$,
       this.listsFacade.completionNotificationEnabled$),
-    filter(([action, list, , , , autofillEnabled, completionNotificationEnabled]) => {
+    filter(([action, list, , , , autofillEnabled, _]) => {
       const item = list.getItemById(action.itemId, !action.finalItem, action.finalItem);
-      if (autofillEnabled && this.settings.enableAutofillHQFilter && (list as List).requiredAsHQ(item) > 0) {
+      const requiredHq = list.requiredAsHQ(item) > 0;
+      if (autofillEnabled && this.settings.enableAutofillHQFilter && requiredHq) {
         return !action.fromPacket || action.hq;
+      }
+      if (autofillEnabled && this.settings.enableAutofillNQFilter && !requiredHq) {
+        return !action.fromPacket || !action.hq;
       }
       return true;
     }),
