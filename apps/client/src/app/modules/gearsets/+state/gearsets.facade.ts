@@ -268,6 +268,7 @@ export class GearsetsFacade {
     }
     const itemId = item.ID;
     const itemMeldingData = this.lazyData.data.itemMeldingData[itemId];
+    const canBeHq = this.lazyData.data.hqFlags[itemId] === 1;
     const materias = item.Materia;
     while (materias.length < itemMeldingData.slots) {
       materias.push(0);
@@ -283,7 +284,7 @@ export class GearsetsFacade {
       materiaSlots: itemMeldingData.slots,
       canOvermeld: itemMeldingData.overmeld,
       baseParamModifier: itemMeldingData.modifier,
-      hq: itemMeldingData.canBeHq
+      hq: canBeHq
     };
   }
 
