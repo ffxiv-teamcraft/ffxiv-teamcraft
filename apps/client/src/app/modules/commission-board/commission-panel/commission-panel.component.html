@@ -1,1 +1,21 @@
-<p>commission-panel works!</p>
+<nz-collapse>
+  <nz-collapse-panel [nzHeader]="header">
+    <ng-template #header>
+      <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>
+        <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
+             nz-col nzMd="4" nzSm="20">
+          {{commission.name}}
+        </div>
+        <div>
+          <app-user-avatar [userId]="commission.authorId" [width]="24"></app-user-avatar>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="17" nzSm="24">
+          <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
+          <nz-tag *ngFor="let tag of commission.tags">{{tag}}</nz-tag>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
+        </div>
+      </div>
+    </ng-template>
+  </nz-collapse-panel>
+</nz-collapse>

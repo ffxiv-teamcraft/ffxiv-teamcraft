@@ -15,4 +15,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **assets:** added line break removal in prod assets hashing process.`;
+* **assets:** added line break removal in prod assets hashing process.`;

@@ -2,8 +2,11 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 import { CommissionStatus } from './commission-status';
 import { CommissionPayment } from './commission-payment';
 import { CommissionTag } from './commission-tag';
+import firebase from 'firebase';
 
 export class Commission extends DataWithPermissions {
+
+  createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();
 
   name: string;
 

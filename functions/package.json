@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "firebase": "^7.20.0",
-    "firebase-admin": "^9.1.1",
+    "firebase": "^8.0.1",
+    "firebase-admin": "^9.4.1",
     "firebase-functions": "^3.11.0",
     "node-fetch": "^2.6.1",
     "protobufjs": "^6.8.4",

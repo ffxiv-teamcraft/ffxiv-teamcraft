@@ -112,6 +112,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -215,6 +216,7 @@ const nzConfig: NzConfig = {
       synchronizeTabs: true
     }),
     AngularFireFunctionsModule,
+    AngularFireMessagingModule,
 
     XivapiClientModule.forRoot(),
 

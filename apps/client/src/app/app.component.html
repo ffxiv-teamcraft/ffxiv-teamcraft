@@ -279,6 +279,39 @@
                   </a>
                 </li>
 
+                <ng-container *ngIf="loggedIn$ | async">
+                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                  <span title>
+                    <i nz-icon nzType="shop"></i>
+                    <span>{{'SIDEBAR.Commissions' | translate}}</span>
+                  </span>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/board/{{character.Datacenter}}"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="project" nzTheme="outline"></i>
+                      <span class="nav-text">{{'SIDEBAR.Commission_board' | translate}}</span>
+                  </span>
+                    </a>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i class="companion-svg anticon">
+                        &#xE703;
+                      </i>
+                      <span class="nav-text">{{'SIDEBAR.My_commissions' | translate}}</span>
+                  </span>
+                    </a>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="container" nzTheme="outline"></i>
+                      <span class="nav-text">{{'SIDEBAR.Archived_commissions' | translate}}</span>
+                  </span>
+                    </a>
+                  </li>
+                </ng-container>
+
+
                 <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>
                   <i class="companion-svg anticon">

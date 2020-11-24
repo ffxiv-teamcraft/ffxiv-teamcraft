@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 
 export class CommissionPayment {
   public timestamp: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();

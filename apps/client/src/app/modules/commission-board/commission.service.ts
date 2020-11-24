@@ -3,24 +3,41 @@ import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore'
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { Injectable, NgZone } from '@angular/core';
 import { PendingChangesService } from '../../core/database/pending-changes/pending-changes.service';
-import { map, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { catchError, map, mapTo, switchMap, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 import { Commission } from './model/commission';
 import { QueryFn } from '@angular/fire/firestore/interfaces';
 import { CommissionStatus } from './model/commission-status';
 import { AngularFireMessaging } from '@angular/fire/messaging';
+import { AngularFireFunctions } from '@angular/fire/functions';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionService extends FirestoreRelationalStorage<Commission> {
 
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
-              protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging) {
+              protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging,
+              private fns: AngularFireFunctions) {
     super(firestore, serializer, zone, pendingChangesService);
-    if (navigator && navigator.serviceWorker) {
-      navigator.serviceWorker.getRegistration('/firebase-messaging-sw.js').then(registration => {
-        this.afm.useServiceWorker(registration);
-      });
-    }
+    this.afm.messages.subscribe(m => {
+      console.log('TODO Notification', m);
+    });
+  }
+
+  public enableNotifications(datacenter: string): Observable<boolean> {
+    return this.afm.requestToken
+      .pipe(
+        switchMap(token => {
+          return this.fns.httpsCallable('subscribeToCommissions')({
+            datacenter: datacenter,
+            token: token
+          });
+        }),
+        mapTo(true),
+        catchError((e) => {
+          console.error(e);
+          return of(false);
+        })
+      );
   }
 
   private where(query: QueryFn): Observable<Commission[]> {

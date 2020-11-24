@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Commission } from '../model/commission';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-commission-panel',
@@ -7,15 +8,16 @@ import { Commission } from '../model/commission';
   styleUrls: ['./commission-panel.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CommissionPanelComponent implements OnInit {
+export class CommissionPanelComponent {
 
   @Input()
   commission: Commission;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
-  ngOnInit(): void {
+  public openCommission(): void {
+    this.router.navigate([]);
   }
 
 }

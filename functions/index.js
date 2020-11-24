@@ -7,6 +7,7 @@ const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
 admin.initializeApp();
 const firestore = admin.firestore();
+const messaging = admin.messaging();
 firestore.settings({ timestampsInSnapshots: true });
 
 const runtimeOpts = {
@@ -42,6 +43,21 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
   return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
+});
+
+exports.commissionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
+  admin.messaging().sendToTopic(`/topics/commissions.${snapshot.data().datacenter}`, {
+    data: snapshot.data()
+  });
+});
+
+exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().subscribeToTopic(data.token, `commissions.${data.datacenter}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
 });
 
 validatedCache = {};
