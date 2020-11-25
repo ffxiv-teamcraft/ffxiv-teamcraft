@@ -1,7 +1,7 @@
 export enum CommissionTag {
-  CRAFTING,
-  GATHERING,
-  HUNTING,
-  FISHING,
-  GEAR
+  CRAFTING = 'CRAFTING',
+  GATHERING = 'GATHERING',
+  HUNTING = 'HUNTING',
+  FISHING = 'FISHING',
+  GEAR = 'GEAR'
 }

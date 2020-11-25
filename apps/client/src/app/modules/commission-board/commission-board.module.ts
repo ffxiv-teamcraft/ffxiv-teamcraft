@@ -18,13 +18,23 @@ import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { ItemIconModule } from '../item-icon/item-icon.module';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
+import { CommissionEditionPopupComponent } from './commission-edition-popup/commission-edition-popup.component';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [CommissionPanelComponent],
+  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent],
   exports: [CommissionPanelComponent],
   imports: [
     CommonModule,
     RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
+    FlexLayoutModule,
     StoreModule.forFeature(
       fromCommissions.COMMISSIONS_FEATURE_KEY,
       fromCommissions.reducer
@@ -34,14 +44,19 @@ import { CoreModule } from '../../core/core.module';
     AngularFireMessagingModule,
 
     NzModalModule,
-    NameQuestionPopupModule,
     NzCollapseModule,
-    UserAvatarModule,
     NzTagModule,
+    NzFormModule,
+    NzInputModule,
+    NzCheckboxModule,
+    NzSelectModule,
+
+    NameQuestionPopupModule,
+    UserAvatarModule,
     LazyScrollModule,
     ItemIconModule,
     PipesModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [CommissionsFacade]
 })
