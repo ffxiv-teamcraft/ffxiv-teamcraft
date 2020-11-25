@@ -43,6 +43,8 @@ export class List extends DataWithPermissions {
   // For ordering purpose, lower index means higher priority on ordering.
   index = -1;
 
+  hasCommission = false;
+
   finalItems: ListRow[] = [];
 
   items: ListRow[] = [];

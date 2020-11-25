@@ -1,34 +1,58 @@
 import { Action, createReducer, on } from '@ngrx/store';
-import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import * as CommissionsActions from './commissions.actions';
 import { Commission } from '../model/commission';
 
 export const COMMISSIONS_FEATURE_KEY = 'commissions';
 
-export interface State extends EntityState<Commission> {
-  selectedId?: string; // which Commissions record has been selected
-  loaded: boolean; // has the Commissions list been loaded
+export interface State {
+  selectedId?: string;
+  commissions: Commission[];
+  loaded: boolean;
 }
 
 export interface CommissionsPartialState {
   readonly [COMMISSIONS_FEATURE_KEY]: State;
 }
 
-export const commissionsAdapter: EntityAdapter<Commission> = createEntityAdapter<Commission>({
-  selectId: model => model.$key
-});
-
-export const initialState: State = commissionsAdapter.getInitialState({
-  // set initial required properties
+export const initialState: State = {
+  commissions: [],
   loaded: false
-});
+};
 
 const commissionsReducer = createReducer(
   initialState,
-  on(CommissionsActions.commissionsLoaded, (state, { commissions }) =>
-    commissionsAdapter.setAll(commissions, { ...state, loaded: true })
-  )
+  on(CommissionsActions.commissionsLoaded, (state, { commissions, userId }) => {
+    return {
+      ...state,
+      commissions: [...state.commissions.filter(c => c.authorId !== userId && c.crafterId !== userId), ...commissions],
+      loaded: true
+    };
+  }),
+  on(CommissionsActions.commissionLoaded, (state, { commission }) => {
+    return {
+      ...state,
+      commissions: [...state.commissions.filter(c => c.$key !== commission.$key), commission]
+    };
+  }),
+  on(CommissionsActions.selectCommission, (state, { key }) => {
+    return {
+      ...state,
+      selectedId: key
+    };
+  }),
+  on(CommissionsActions.updateCommission, (state, { commission }) => {
+    return {
+      ...state,
+      commissions: state.commissions.map(c => c.$key === commission.$key ? commission : c)
+    };
+  }),
+  on(CommissionsActions.deleteCommission, (state, { key }) => {
+    return {
+      ...state,
+      commissions: state.commissions.filter(c => c.$key !== key)
+    };
+  })
 );
 
 export function reducer(state: State | undefined, action: Action) {

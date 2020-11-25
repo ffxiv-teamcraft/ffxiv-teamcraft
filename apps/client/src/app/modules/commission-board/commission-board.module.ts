@@ -14,6 +14,10 @@ import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { RouterModule } from '@angular/router';
 import { UserAvatarModule } from '../user-avatar/user-avatar.module';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
+import { ItemIconModule } from '../item-icon/item-icon.module';
+import { PipesModule } from '../../pipes/pipes.module';
+import { CoreModule } from '../../core/core.module';
 
 @NgModule({
   declarations: [CommissionPanelComponent],
@@ -33,7 +37,11 @@ import { NzTagModule } from 'ng-zorro-antd/tag';
     NameQuestionPopupModule,
     NzCollapseModule,
     UserAvatarModule,
-    NzTagModule
+    NzTagModule,
+    LazyScrollModule,
+    ItemIconModule,
+    PipesModule,
+    CoreModule
   ],
   providers: [CommissionsFacade]
 })

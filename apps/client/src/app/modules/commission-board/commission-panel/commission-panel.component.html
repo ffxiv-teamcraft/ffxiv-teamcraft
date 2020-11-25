@@ -1,5 +1,5 @@
 <nz-collapse>
-  <nz-collapse-panel [nzHeader]="header">
+  <nz-collapse-panel #listContentPanel [nzHeader]="header">
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>
         <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
@@ -9,13 +9,27 @@
         <div>
           <app-user-avatar [userId]="commission.authorId" [width]="24"></app-user-avatar>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="17" nzSm="24">
-          <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
-          <nz-tag *ngFor="let tag of commission.tags">{{tag}}</nz-tag>
+        <div fxLayout="column" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="17" nzSm="24">
+          <div>{{commission.createdAt.toMillis() | date}}</div>
+          <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
+            <nz-tag [nzColor]="'lime'" *ngIf="commission.includesMaterials">{{'COMMISSIONS.Includes_materials' | translate}}</nz-tag>
+            <nz-tag *ngFor="let tag of commission.tags">{{tag}}</nz-tag>
+          </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="3" nzSm="24">
         </div>
       </div>
     </ng-template>
+    <ng-container *ngIf="listContentPanel.nzActive">
+      <app-lazy-scroll [data]="list.finalItems" [displayedRows]="8" rowSize="42" [rowTemplate]="itemRow" [trackBy]="trackByItem">
+        <ng-template #itemRow let-item let-odd="odd" let-last="last">
+          <div class="list-item-row" [class.odd]="odd" [class.last]="last" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            <app-item-icon [icon]="item.icon" [itemId]="item.id" [width]="32"></app-item-icon>
+            <div>{{item.id | itemName:item | i18n}}</div>
+          </div>
+        </ng-template>
+      </app-lazy-scroll>
+    </ng-container>
   </nz-collapse-panel>
 </nz-collapse>

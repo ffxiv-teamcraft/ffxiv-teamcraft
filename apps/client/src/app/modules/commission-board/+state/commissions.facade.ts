@@ -5,14 +5,14 @@ import { select, Store } from '@ngrx/store';
 import * as fromCommissions from './commissions.reducer';
 import * as CommissionsSelectors from './commissions.selectors';
 import { createCommission } from './commissions.actions';
-import { NzModalService } from 'ng-zorro-antd';
+import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { List } from '../../list/model/list';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
   loaded$ = this.store.pipe(select(CommissionsSelectors.getCommissionsLoaded));
 

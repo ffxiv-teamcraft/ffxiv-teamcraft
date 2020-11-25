@@ -53,6 +53,11 @@
         <div fxLayout="column" class="panel-middle-content" nz-col nzMd="17" nzSm="24">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div class="tags">
+              <nz-tag [style.border-color]="'#108ee9'" class="custom-tag clickable-tag" (click)="$event.stopPropagation()" *ngIf="_list.hasCommission"
+                      routerLink="/commissions/{{_list.$key}}">
+                <i nz-icon nzType="shop" nzTheme="outline"></i>
+                {{'LIST_DETAILS.Commission_list' | translate}}
+              </nz-tag>
               <nz-tag *ngIf="_list.ephemeral" [nzColor]="'volcano'" [nzTooltipTitle]="'Ephemeral_list' | translate" nz-tooltip>
                 {{'Ephemeral_tag' | translate}}
               </nz-tag>
@@ -114,12 +119,12 @@
             <i nz-icon nzType="folder-open"></i>
           </a>
           <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteList(_list)" *ngIf="(permissionLevel$ | async)?.value > 10"
-                  [disabled]="(permissionLevel$ | async)?.value < 40" [nzShape]="'circle'"
+                  [disabled]="(permissionLevel$ | async)?.value < 40 || _list.hasCommission" [nzShape]="'circle'"
                   [nzPopconfirmTitle]="'LIST.BUTTONS.Delete_warning' | translate"
                   [nzType]="'danger'"
                   nz-button nz-popconfirm>
             <i nz-icon nzType="delete"></i></button>
-          <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
+          <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu" [nzPlacement]="'bottomRight'" [nzShape]="'circle'"
                   nz-button
                   nz-dropdown nzTrigger="click"
                   tutorialStep="TUTORIAL.LIST_PANEL.More"

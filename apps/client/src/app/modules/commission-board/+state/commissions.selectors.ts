@@ -1,18 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-  COMMISSIONS_FEATURE_KEY,
-  State,
-  CommissionsPartialState,
-  commissionsAdapter,
-} from './commissions.reducer';
+import { COMMISSIONS_FEATURE_KEY, CommissionsPartialState, State } from './commissions.reducer';
 
 // Lookup the 'Commissions' feature state managed by NgRx
-export const getCommissionsState = createFeatureSelector<
-  CommissionsPartialState,
-  State
->(COMMISSIONS_FEATURE_KEY);
-
-const { selectAll, selectEntities } = commissionsAdapter.getSelectors();
+export const getCommissionsState = createFeatureSelector<CommissionsPartialState,
+  State>(COMMISSIONS_FEATURE_KEY);
 
 export const getCommissionsLoaded = createSelector(
   getCommissionsState,
@@ -21,12 +12,7 @@ export const getCommissionsLoaded = createSelector(
 
 export const getAllCommissions = createSelector(
   getCommissionsState,
-  (state: State) => selectAll(state)
-);
-
-export const getCommissionsEntities = createSelector(
-  getCommissionsState,
-  (state: State) => selectEntities(state)
+  (state: State) => state.commissions
 );
 
 export const getSelectedId = createSelector(
@@ -35,7 +21,7 @@ export const getSelectedId = createSelector(
 );
 
 export const getSelected = createSelector(
-  getCommissionsEntities,
+  getAllCommissions,
   getSelectedId,
-  (entities, selectedId) => selectedId && entities[selectedId]
+  (commissions, selectedId) => selectedId && commissions.find(c => c.$key === selectedId)
 );

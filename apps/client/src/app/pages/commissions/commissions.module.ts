@@ -8,12 +8,29 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CommissionsPageComponent } from './commissions-page/commissions-page.component';
 import { CommissionDetailsComponent } from './commission-details/commission-details.component';
 import { CommissionArchivesComponent } from './commission-archives/commission-archives.component';
+import { CoreModule } from '../../core/core.module';
+import { LoggedInGuard } from '../../core/guard/logged-in.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    component: CommissionsPageComponent,
+    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+  },
+  {
     path: 'board/:dc',
     component: CommissionBoardComponent,
-    canActivate: [MaintenanceGuard, VersionLockGuard]
+    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+  },
+  {
+    path: 'archives',
+    component: CommissionArchivesComponent,
+    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+  },
+  {
+    path: ':key',
+    component: CommissionDetailsComponent,
+    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
   }
 ];
 
@@ -21,6 +38,7 @@ const routes: Routes = [
   declarations: [CommissionBoardComponent, CommissionsPageComponent, CommissionDetailsComponent, CommissionArchivesComponent],
   imports: [
     CommonModule,
+    CoreModule,
 
     RouterModule.forChild(routes),
 

@@ -649,6 +649,8 @@
     "Leave_list": "Leave this list",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "Split_list": "Split this list",
+    "Create_commission": "Create a commission for this list",
+    "Commission_list": "Commission list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

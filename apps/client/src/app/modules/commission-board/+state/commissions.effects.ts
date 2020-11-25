@@ -4,12 +4,12 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
-import { commissionsLoaded } from './commissions.actions';
-import { distinctUntilChanged, first, map, switchMap, switchMapTo } from 'rxjs/operators';
+import { commissionLoaded, commissionsLoaded } from './commissions.actions';
+import { distinctUntilChanged, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Character } from '@xivapi/angular-client';
-import { of } from 'rxjs';
+import { combineLatest, of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
@@ -18,29 +18,62 @@ export class CommissionsEffects {
 
   loadCommissionsAsClient$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(CommissionsActions.loadUserCommissionsAsClient),
+      ofType(CommissionsActions.loadUserCommissions),
       switchMapTo(this.authFacade.userId$),
       distinctUntilChanged(),
       switchMap(userId => {
-        return this.commissionService.getByForeignKey(TeamcraftUser, userId);
-      }),
-      map(commissions => {
-        return commissionsLoaded({ commissions });
+        return combineLatest([this.commissionService.getByCrafterId(userId), this.commissionService.getByForeignKey(TeamcraftUser, userId)]).pipe(
+          map(([crafter, client]) => [...crafter, ...client]),
+          tap(commissions => {
+            commissions.forEach(c => this.listsFacade.load(c.$key));
+          }),
+          map(commissions => {
+            return commissionsLoaded({ commissions, userId });
+          })
+        );
       })
     );
   });
 
-  loadCommissionsAsCrafter$ = createEffect(() => {
+  loadCommission$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(CommissionsActions.loadUserCommissionsAsCrafter),
-      switchMap(({ userId }) => {
-        return this.commissionService.getByCrafterId(userId);
-      }),
-      map(commissions => {
-        return commissionsLoaded({ commissions });
+      ofType(CommissionsActions.loadCommission),
+      switchMapTo(this.authFacade.userId$),
+      distinctUntilChanged(),
+      switchMap((userId) => {
+        return this.commissionService.get(userId).pipe(
+          tap(commission => {
+            this.listsFacade.load(commission.$key);
+          }),
+          map(commission => {
+            return commissionLoaded({ commission });
+          })
+        );
       })
     );
   });
+
+  updateCommission$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CommissionsActions.updateCommission),
+      switchMap(({ commission }) => {
+        return this.commissionService.update(commission.$key, commission);
+      })
+    );
+  }, { dispatch: false });
+
+  deleteCommission$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(CommissionsActions.deleteCommission),
+      switchMap(({ key, deleteList }) => {
+        if (deleteList) {
+          return combineLatest([this.commissionService.remove(key), this.listsFacade.deleteList(key, false)]);
+        } else {
+          return combineLatest([this.commissionService.remove(key), this.listsFacade.pureUpdateList(key, { hasCommission: false })]);
+        }
+      })
+    );
+  }, { dispatch: false });
 
   createCommission$ = createEffect(() => {
     return this.actions$.pipe(
@@ -60,9 +93,11 @@ export class CommissionsEffects {
         commission.name = name;
         if (listKey) {
           commission.$key = listKey;
+          this.listsFacade.pureUpdateList(listKey, { hasCommission: true, ephemeral: false });
           return of(commission);
         }
         const list = this.listsFacade.newListWithName(name);
+        list.hasCommission = true;
         list.$key = this.afs.createId();
         this.listsFacade.addList(list);
         commission.$key = list.$key;
