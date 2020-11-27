@@ -122,7 +122,7 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     );
   }
 
-  pureUpdate(uid: string, data: any, uriParams?: any): Observable<void> {
+  pureUpdate(uid: string, data: Partial<T>, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(data)).pipe(
       tap(() => {

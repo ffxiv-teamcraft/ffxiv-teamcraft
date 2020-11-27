@@ -3,27 +3,39 @@
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>
         <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
-             nz-col nzMd="4" nzSm="20">
-          <app-user-avatar [userId]="commission.authorId" [width]="24"></app-user-avatar>
+             nz-col nzMd="5" nzSm="20">
+          <app-user-avatar [userId]="commission.authorId" [width]="32"></app-user-avatar>
           <div>
             {{commission.name}}
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="12" nzSm="24">
-          <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
+        <div nz-col nzMd="4">
+          {{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="8" nzSm="24">
           <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
           <nz-tag [style.border-color]="'#108ee9'" *ngIf="commission.includesMaterials" nz-tooltip
                   [nzTooltipTitle]="'COMMISSIONS.CREATION.Includes_materials_label' | translate"
                   class="custom-tag">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</nz-tag>
           <nz-tag *ngFor="let tag of commission.tags">{{('COMMISSIONS.TAGS.' + tag) | translate}}</nz-tag>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="5" nzSm="12">
+        <div nz-col nzMd="2" nzSm="6">
+          {{'COMMISSIONS.X_items' | translate:{ amount: commission.items.length } }}
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="3" nzSm="6">
           <app-item-icon [disableClick]="true" [itemId]="1" width="24"></app-item-icon>
           <div *ngIf="commission.price > 0">{{commission.price | number:'1.0':translate.currentLang}}</div>
           <div *ngIf="commission.price <= 0">{{'COMMISSIONS.Price_tbd' | translate}}</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="2" nzSm="12">
-          TODO Buttons
+          <a (click)="$event.stopPropagation()" [nzShape]="'circle'"
+             [nzTooltipTitle]="'COMMISSIONS.Open_commission_details' | translate"
+             [nzType]="'primary'"
+             nz-button
+             nz-tooltip
+             routerLink="/commission/{{commission.$key}}">
+            <i nz-icon nzType="folder-open"></i>
+          </a>
         </div>
       </div>
     </ng-template>
@@ -33,7 +45,12 @@
           <div class="list-item-row" [class.odd]="odd" [class.last]="last" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-item-icon [itemId]="item.id" [width]="32"></app-item-icon>
             <div>{{item.id | itemName:item | i18n}}</div>
-            <div>x{{item.amount}}</div>
+            <div fxFlex="1 1 auto" *ngIf="commission.status === CommissionStatus.IN_PROGRESS"></div>
+            <div [ngSwitch]="commission.status">
+              <ng-container *ngSwitchCase="CommissionStatus.OPENED">x{{item.amount - item.done}}</ng-container>
+              <ng-container *ngSwitchCase="CommissionStatus.IN_PROGRESS">{{item.done}}/{{item.amount}}</ng-container>
+              <ng-container *ngSwitchCase="CommissionStatus.ARCHIVED">x{{item.amount}}</ng-container>
+            </div>
           </div>
         </ng-template>
       </app-lazy-scroll>

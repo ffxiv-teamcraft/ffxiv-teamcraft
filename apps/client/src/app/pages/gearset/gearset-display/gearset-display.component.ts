@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { filter, first, map, mergeMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
@@ -27,6 +27,8 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GearsetProgression } from '../../../model/gearset/gearset-progression';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 
 @Component({
   selector: 'app-gearset-display',
@@ -89,6 +91,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
 
   userId$: Observable<string> = this.authFacade.userId$;
 
+  loggedIn$: Observable<boolean> = this.authFacade.loggedIn$;
+
   includeAllTools = localStorage.getItem('gearsets:include-all-tools') === 'true';
 
   constructor(private gearsetsFacade: GearsetsFacade, private activatedRoute: ActivatedRoute,
@@ -99,7 +103,8 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
               private notificationService: NzNotificationService, private lazyData: LazyDataService,
               private router: Router, private i18n: I18nToolsService,
               private l12n: LocalizedDataService, private message: NzMessageService,
-              private authFacade: AuthFacade, private clipboard: Clipboard) {
+              private authFacade: AuthFacade, private clipboard: Clipboard,
+              private afs: AngularFirestore, private commissionsFacade: CommissionsFacade) {
     super();
     this.activatedRoute.paramMap
       .pipe(
@@ -203,6 +208,50 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       );
       this.router.navigate(['/list', list.$key]);
     });
+  }
+
+  createCommission(gearset: TeamcraftGearset, progression: GearsetProgression): void {
+    const list = new List();
+    list.name = gearset.name;
+    const items = this.gearsetsFacade.toArray(gearset)
+      .filter(piece => {
+        return progression[piece.slot]?.item === false;
+      })
+      .map(entry => {
+        return {
+          id: entry.piece.itemId,
+          amount: 1
+        };
+      });
+    const operations = items.map(item => {
+      const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
+      return this.listManager.addToList({
+        itemId: +item.id,
+        list: list,
+        recipeId: recipe ? recipe.id : '',
+        amount: item.amount
+      });
+    });
+    let operation$: Observable<any>;
+    if (operations.length > 0) {
+      operation$ = concat(
+        ...operations
+      );
+    } else {
+      operation$ = of(list);
+    }
+    this.progressService.showProgress(operation$,
+      items.length,
+      'Adding_recipes',
+      { amount: items.length, listname: list.name })
+      .pipe(
+        switchMap(l => {
+          return this.listsFacade.addListAndWait(l);
+        })
+      )
+      .subscribe(resList => {
+        this.commissionsFacade.create(resList);
+      });
   }
 
   copyToClipboard(gearset: TeamcraftGearset): void {

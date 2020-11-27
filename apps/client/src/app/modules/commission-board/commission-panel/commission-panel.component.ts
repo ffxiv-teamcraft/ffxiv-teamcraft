@@ -3,6 +3,7 @@ import { Commission } from '../model/commission';
 import { Router } from '@angular/router';
 import { ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
+import { CommissionStatus } from '../model/commission-status';
 
 @Component({
   selector: 'app-commission-panel',
@@ -11,6 +12,8 @@ import { TranslateService } from '@ngx-translate/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CommissionPanelComponent {
+
+  CommissionStatus = CommissionStatus
 
   @Input()
   commission: Commission;

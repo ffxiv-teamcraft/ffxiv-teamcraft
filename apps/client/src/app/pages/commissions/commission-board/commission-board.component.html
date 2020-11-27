@@ -8,7 +8,8 @@
             <nz-option *ngFor="let dc of datacenters" [nzValue]="dc" [nzLabel]="dc"></nz-option>
           </nz-select>
         </ng-template>
-        <nz-select class="tags-input" [ngModel]="display.tags" (ngModelChange)="tags$.next($event)" nzShowSearch nzAllowClear nzMode="multiple">
+        <nz-select class="tags-input" [nzPlaceHolder]="'COMMISSIONS.BOARD.Filter_with_tags' | translate" [ngModel]="display.tags" (ngModelChange)="tags$.next($event)"
+                   nzShowSearch nzAllowClear nzMode="multiple">
           <nz-option *ngFor="let tag of commissionTags" [nzValue]="tag.value" [nzLabel]="tag.label | translate"></nz-option>
         </nz-select>
       </nz-input-group>

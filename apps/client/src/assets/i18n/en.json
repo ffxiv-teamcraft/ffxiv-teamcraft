@@ -1924,6 +1924,7 @@
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
+    "Create_commission": "Create a commission for this gearset",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -2205,6 +2206,8 @@
   "COMMISSIONS": {
     "New_commission": "New commission",
     "Price_tbd": "To be discussed",
+    "X_items": "{{amount}} items",
+    "Open_commission_details": "Open commission details",
     "TAGS": {
       "CRAFTING": "Crafting",
       "GATHERING": "Gathering",
@@ -2225,8 +2228,9 @@
       "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
       "Contact_info_required_error": "Please include contact informations"
     },
-    "BOARD":  {
-      "Title": "Commission board"
+    "BOARD": {
+      "Title": "Commission board",
+      "Filter_with_tags": "Filter using tags"
     }
   }
 }

@@ -274,12 +274,7 @@ export class ListsEffects {
         return of(null);
       }
       if (action.payload.hasCommission) {
-        this.commissionService.pureUpdate(action.payload.$key, {
-          items: action.payload.finalItems.map(item => ({
-            id: item.id,
-            amount: item.amount - item.done
-          })).filter(i => i.amount > 0)
-        });
+        this.updateCommission(action.payload);
       }
       return this.listService.update(action.payload.$key, action.payload);
     })
@@ -412,13 +407,8 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
-      if (action.finalItem && list.hasCommission) {
-        this.commissionService.pureUpdate(list.$key, {
-          items: list.finalItems.map(item => ({
-            id: item.id,
-            amount: item.amount - item.done
-          })).filter(i => i.amount > 0)
-        });
+      if (list.hasCommission) {
+        this.updateCommission(list);
       }
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       list.updateAllStatuses(action.itemId);
@@ -452,12 +442,7 @@ export class ListsEffects {
       if (action.finalItem) {
         list.finalItems = updatedItems;
         if (list.hasCommission) {
-          this.commissionService.pureUpdate(list.$key, {
-            items: list.finalItems.map(item => ({
-              id: item.id,
-              amount: item.amount - item.done
-            })).filter(i => i.amount > 0)
-          });
+          this.updateCommission(list);
         }
       } else {
         list.items = updatedItems;
@@ -512,6 +497,17 @@ export class ListsEffects {
     private dirtyFacade: DirtyFacade,
     private commissionService: CommissionService
   ) {
+  }
+
+  private updateCommission(list: List): void {
+    this.commissionService.pureUpdate(list.$key, {
+      materialsProgression: this.listsFacade.buildProgression(list.items),
+      items: list.finalItems.map(item => ({
+        id: item.id,
+        amount: item.amount,
+        done: item.done
+      }))
+    });
   }
 
   private markAsDoneInDoHLog(recipeId: number): void {

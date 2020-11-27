@@ -268,6 +268,17 @@ export class ListsFacade {
     });
   }
 
+  addListAndWait(list: List): Observable<List> {
+    this.addList(list);
+    return this.allListDetails$.pipe(
+      map(lists => {
+        return lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.items.length === list.items.length && l.name === list.name);
+      }),
+      filter(l => !!l),
+      first()
+    );
+  }
+
   deleteList(key: string, offline: boolean): void {
     this.store.dispatch(new DeleteList(key, offline));
     gtag('event', 'List', {

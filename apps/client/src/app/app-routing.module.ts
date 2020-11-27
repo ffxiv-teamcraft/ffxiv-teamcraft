@@ -88,6 +88,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/community-lists/community-lists.module').then(m => m.CommunityListsModule)
   },
   {
+    path: 'commission',
+    loadChildren: () => import('./pages/commission/commission.module').then(m => m.CommissionModule)
+  },
+  {
     path: 'commissions',
     loadChildren: () => import('./pages/commissions/commissions.module').then(m => m.CommissionsModule)
   },

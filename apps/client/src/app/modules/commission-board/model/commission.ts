@@ -17,7 +17,6 @@ export class Commission extends DataWithPermissions {
    * this is meant to make permissions easier to compute, as we can say that a list cannot be deleted
    * if it has a commission associated and not completed
    */
-
   crafterId: string;
 
   includesMaterials = false;
@@ -31,7 +30,7 @@ export class Commission extends DataWithPermissions {
 
   payments: CommissionPayment[] = [];
 
-  candidates: string[] = [];
+  candidates: { uid: string, offer: number }[] = [];
 
   tags: CommissionTag[] = [];
 
@@ -41,5 +40,7 @@ export class Commission extends DataWithPermissions {
 
   server: string;
 
-  items: { id: number, amount: number }[];
+  materialsProgression = 0;
+
+  items: { id: number, amount: number, done: number }[];
 }

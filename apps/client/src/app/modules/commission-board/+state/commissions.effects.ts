@@ -101,7 +101,7 @@ export class CommissionsEffects {
         commission.server = character.Server;
         commission.datacenter = this.lazyData.getDataCenter(character.Server);
         commission.createdAt = firebase.firestore.Timestamp.now();
-        commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount - item.done })).filter(i => i.amount > 0);
+        commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount, done: item.done }));
         Object.assign(commission, partialCommission);
         if (list) {
           commission.$key = list.$key;
