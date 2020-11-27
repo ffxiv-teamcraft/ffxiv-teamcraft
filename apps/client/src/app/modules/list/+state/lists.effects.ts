@@ -75,6 +75,7 @@ export class ListsEffects {
       this.listsFacade.offlineListsLoaded(this.localStore);
       return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', false))
         .pipe(
+          debounceTime(100),
           map(lists => new MyListsLoaded(lists, userId))
         );
     })
@@ -289,6 +290,11 @@ export class ListsEffects {
         return of(null);
       }
       return this.listService.update(action.payload.$key, action.payload).pipe(
+        catchError(e => {
+          console.error('Error while saving list update');
+          console.error(e);
+          return of(null);
+        }),
         tap(() => {
           this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
         })
