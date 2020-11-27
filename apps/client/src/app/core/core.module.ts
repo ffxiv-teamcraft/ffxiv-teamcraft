@@ -51,7 +51,6 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
-import { LoggedInGuard } from './guard/logged-in.guard';
 
 
 @NgModule({
@@ -104,7 +103,6 @@ import { LoggedInGuard } from './guard/logged-in.guard';
     AdminGuard,
     ModeratorGuard,
     DevGuard,
-    LoggedInGuard,
     ...DATA_REPORTERS,
     { provide: ErrorHandler, useClass: TeamcraftErrorHandler }
   ],

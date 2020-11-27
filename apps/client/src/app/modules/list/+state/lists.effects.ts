@@ -60,6 +60,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { DirtyScope } from '../../../core/dirty/dirty-scope';
+import { CommissionService } from '../../commission-board/commission.service';
 
 @Injectable()
 export class ListsEffects {
@@ -271,6 +272,14 @@ export class ListsEffects {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
       }
+      if (action.payload.hasCommission) {
+        this.commissionService.pureUpdate(action.payload.$key, {
+          items: action.payload.finalItems.map(item => ({
+            id: item.id,
+            amount: item.amount - item.done
+          })).filter(i => i.amount > 0)
+        });
+      }
       return this.listService.update(action.payload.$key, action.payload);
     })
   );
@@ -397,6 +406,14 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
+      if (action.finalItem && list.hasCommission) {
+        this.commissionService.pureUpdate(list.$key, {
+          items: list.finalItems.map(item => ({
+            id: item.id,
+            amount: item.amount - item.done
+          })).filter(i => i.amount > 0)
+        });
+      }
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       list.updateAllStatuses(action.itemId);
       if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
@@ -428,6 +445,14 @@ export class ListsEffects {
       const updatedItems = items.map(item => item.id === action.item.id ? action.item : item);
       if (action.finalItem) {
         list.finalItems = updatedItems;
+        if (list.hasCommission) {
+          this.commissionService.pureUpdate(list.$key, {
+            items: list.finalItems.map(item => ({
+              id: item.id,
+              amount: item.amount - item.done
+            })).filter(i => i.amount > 0)
+          });
+        }
       } else {
         list.items = updatedItems;
       }
@@ -478,7 +503,8 @@ export class ListsEffects {
     private i18n: I18nToolsService,
     private l12n: LocalizedDataService,
     private lazyData: LazyDataService,
-    private dirtyFacade: DirtyFacade
+    private dirtyFacade: DirtyFacade,
+    private commissionService: CommissionService
   ) {
   }
 

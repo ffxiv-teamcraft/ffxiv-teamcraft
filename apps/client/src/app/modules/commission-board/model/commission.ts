@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 
 export class Commission extends DataWithPermissions {
 
-  createdAt: firebase.firestore.Timestamp = firebase.firestore.Timestamp.now();
+  createdAt: firebase.firestore.Timestamp;
 
   name: string;
 
@@ -41,5 +41,5 @@ export class Commission extends DataWithPermissions {
 
   server: string;
 
-  items: number[];
+  items: { id: number, amount: number }[];
 }

@@ -9,28 +9,35 @@ import { CommissionsPageComponent } from './commissions-page/commissions-page.co
 import { CommissionDetailsComponent } from './commission-details/commission-details.component';
 import { CommissionArchivesComponent } from './commission-archives/commission-archives.component';
 import { CoreModule } from '../../core/core.module';
-import { LoggedInGuard } from '../../core/guard/logged-in.guard';
+import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
+import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
+import { FormsModule } from '@angular/forms';
+import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
   {
     path: '',
     component: CommissionsPageComponent,
-    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'board/:dc',
     component: CommissionBoardComponent,
-    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: 'archives',
     component: CommissionArchivesComponent,
-    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   },
   {
     path: ':key',
     component: CommissionDetailsComponent,
-    canActivate: [LoggedInGuard, MaintenanceGuard, VersionLockGuard]
+    canActivate: [MaintenanceGuard, VersionLockGuard]
   }
 ];
 
@@ -40,9 +47,18 @@ const routes: Routes = [
     CommonModule,
     CoreModule,
 
+    FlexLayoutModule,
+
     RouterModule.forChild(routes),
 
-    NzButtonModule
+    NzButtonModule,
+    PageLoaderModule,
+    CommissionBoardModule,
+    FormsModule,
+    NzSelectModule,
+    NzInputModule,
+    NzDividerModule,
+    FullpageMessageModule
   ]
 })
 export class CommissionsModule {

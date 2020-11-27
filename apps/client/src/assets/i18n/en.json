@@ -2204,6 +2204,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
+    "Price_tbd": "To be discussed",
     "TAGS": {
       "CRAFTING": "Crafting",
       "GATHERING": "Gathering",
@@ -2223,6 +2224,9 @@
       "Contact_info": "Contact informations",
       "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
       "Contact_info_required_error": "Please include contact informations"
+    },
+    "BOARD":  {
+      "Title": "Commission board"
     }
   }
 }

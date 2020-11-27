@@ -5,16 +5,16 @@ import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
 import { commissionLoaded, commissionsLoaded } from './commissions.actions';
-import { distinctUntilChanged, filter, first, map, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { Character } from '@xivapi/angular-client';
 import { combineLatest, of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { TranslateService } from '@ngx-translate/core';
+import firebase from 'firebase/app';
 
 @Injectable()
 export class CommissionsEffects {
@@ -27,9 +27,6 @@ export class CommissionsEffects {
       switchMap(userId => {
         return combineLatest([this.commissionService.getByCrafterId(userId), this.commissionService.getByForeignKey(TeamcraftUser, userId)]).pipe(
           map(([crafter, client]) => [...crafter, ...client]),
-          tap(commissions => {
-            commissions.forEach(c => this.listsFacade.load(c.$key));
-          }),
           map(commissions => {
             return commissionsLoaded({ commissions, userId });
           })
@@ -81,15 +78,8 @@ export class CommissionsEffects {
   createCommission$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.createCommission),
-      switchMap((action) => {
-        return this.authFacade.mainCharacter$.pipe(
-          map(char => {
-            return [action, char];
-          }),
-          first()
-        );
-      }),
-      switchMap(([action, char]: [any, Character]) => {
+      withLatestFrom(this.authFacade.mainCharacter$, this.authFacade.userId$),
+      switchMap(([action, char, userId]) => {
         return this.modalService.create({
           nzContent: CommissionEditionPopupComponent,
           nzComponentParams: {
@@ -101,25 +91,28 @@ export class CommissionsEffects {
           .pipe(
             filter(data => !!data),
             map(partialCommission => {
-              return [action, char, partialCommission];
+              return [action, char, userId, partialCommission];
             })
           );
       }),
-      switchMap(([{ listKey, name }, character, partialCommission]: [any, Character, Partial<Commission>]) => {
+      switchMap(([{ list, name }, character, userId, partialCommission]) => {
         const commission = new Commission();
+        commission.authorId = userId;
         commission.server = character.Server;
         commission.datacenter = this.lazyData.getDataCenter(character.Server);
+        commission.createdAt = firebase.firestore.Timestamp.now();
+        commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount - item.done })).filter(i => i.amount > 0);
         Object.assign(commission, partialCommission);
-        if (listKey) {
-          commission.$key = listKey;
-          this.listsFacade.pureUpdateList(listKey, { hasCommission: true, ephemeral: false });
+        if (list) {
+          commission.$key = list.$key;
+          this.listsFacade.pureUpdateList(list.$key, { hasCommission: true, ephemeral: false });
           return of(commission);
         }
-        const list = this.listsFacade.newListWithName(name);
-        list.hasCommission = true;
-        list.$key = this.afs.createId();
-        this.listsFacade.addList(list);
-        commission.$key = list.$key;
+        const newList = this.listsFacade.newListWithName(name);
+        newList.hasCommission = true;
+        newList.$key = this.afs.createId();
+        this.listsFacade.addList(newList);
+        commission.$key = newList.$key;
         return of(commission);
       }),
       switchMap(commission => {

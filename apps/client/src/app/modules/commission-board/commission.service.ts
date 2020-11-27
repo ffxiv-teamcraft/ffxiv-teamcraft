@@ -10,6 +10,7 @@ import { QueryFn } from '@angular/fire/firestore/interfaces';
 import { CommissionStatus } from './model/commission-status';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { AngularFireFunctions } from '@angular/fire/functions';
+import { CommissionTag } from './model/commission-tag';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionService extends FirestoreRelationalStorage<Commission> {
@@ -80,13 +81,17 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
     });
   }
 
-  public getByDatacenter(datacenter: string, allStatuses = false): Observable<Commission[]> {
+  public getByDatacenter(datacenter: string, tags: CommissionTag[], allStatuses = false): Observable<Commission[]> {
     return this.where(ref => {
-      const base = ref.where('datacenter', '==', datacenter);
-      if (allStatuses) {
-        return base;
+      let query = ref.where('datacenter', '==', datacenter);
+      if (tags.length > 0) {
+        console.log(tags);
+        query = query.where('tags', 'array-contains-any', tags);
       }
-      return base.where('status', '==', CommissionStatus.OPENED);
+      if (allStatuses) {
+        return query;
+      }
+      return query.where('status', '==', CommissionStatus.OPENED);
     });
   }
 

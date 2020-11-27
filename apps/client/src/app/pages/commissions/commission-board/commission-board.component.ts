@@ -3,11 +3,13 @@ import { CommissionService } from '../../../modules/commission-board/commission.
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { CommissionBoardDisplay } from './commission-board-display';
-import { ActivatedRoute } from '@angular/router';
-import { AuthFacade } from '../../../+state/auth.facade';
-import { map, switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
+import { LazyDataService } from '../../../core/data/lazy-data.service';
+import { CommissionTag } from '../../../modules/commission-board/model/commission-tag';
+import { Commission } from '../../../modules/commission-board/model/commission';
 
 @Component({
   selector: 'app-commission-board',
@@ -17,29 +19,59 @@ import { map, switchMap } from 'rxjs/operators';
 })
 export class CommissionBoardComponent {
 
-  public display$: Observable<CommissionBoardDisplay> = this.activatedRoute.paramMap.pipe(
-    map(params => {
+  /**
+   * Static data to compute only once.
+   */
+
+  public datacenters: string[] = Object.keys(this.lazyData.datacenters);
+
+  public commissionTags = Object.keys(CommissionTag).map(key => {
+    return {
+      value: key,
+      label: `COMMISSIONS.TAGS.${key}`
+    };
+  });
+
+  /**
+   * End static data
+   */
+
+  public loading = true;
+
+  public tags$ = new BehaviorSubject<CommissionTag[]>([]);
+
+  public display$: Observable<CommissionBoardDisplay> = combineLatest([
+    this.activatedRoute.paramMap,
+    this.tags$.pipe(debounceTime(1000))
+  ]).pipe(
+    map(([params, tags]) => {
+      this.loading = true;
       const dc = params.get('dc');
       return {
         datacenter: dc,
-        subscribed: localStorage.getItem(`c:fcm:${dc}`) === 'true'
+        subscribed: localStorage.getItem(`c:fcm:${dc}`) === 'true',
+        tags: tags
       };
     }),
     switchMap(data => {
-      return this.commissionsService.getByDatacenter(data.datacenter).pipe(
+      return this.commissionsService.getByDatacenter(data.datacenter, data.tags).pipe(
         map(commissions => {
           return {
             ...data,
             commissions: commissions
-          }
+          };
+        }),
+        tap(() => {
+          this.loading = false;
         })
-      )
+      );
     })
   );
 
   constructor(private commissionsService: CommissionService, private notificationsService: NzNotificationService,
               private messageService: NzMessageService, private translate: TranslateService,
-              private activatedRoute: ActivatedRoute, private authFacade: AuthFacade) {
+              private activatedRoute: ActivatedRoute, private router: Router,
+              private lazyData: LazyDataService) {
   }
 
   setNotifications(datacenter: string, enabled: boolean): void {
@@ -50,4 +82,11 @@ export class CommissionBoardComponent {
     });
   }
 
+  changeDatacenter(dc: string): void {
+    this.router.navigate(['..', dc], { relativeTo: this.activatedRoute });
+  }
+
+  trackByCommission(index: number, commission: Commission): string {
+    return commission.$key;
+  }
 }

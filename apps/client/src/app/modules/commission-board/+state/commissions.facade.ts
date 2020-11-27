@@ -52,7 +52,7 @@ export class CommissionsFacade {
 
   create(list?: List): void {
     if (list) {
-      this.store.dispatch(createCommission({ listKey: list.$key, name: list.name }));
+      this.store.dispatch(createCommission({ list: list, name: list.name }));
     } else {
       this.dialog.create({
         nzContent: NameQuestionPopupComponent,

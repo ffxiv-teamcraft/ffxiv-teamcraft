@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { List } from '../../list/model/list';
 import { Commission } from '../model/commission';
 
 export const loadUserCommissions = createAction('[Commissions] Load User Commissions as Client');
@@ -16,7 +17,7 @@ export const commissionLoaded = createAction(
 
 export const createCommission = createAction(
   '[Commissions] Create Commission',
-  props<{ name: string, listKey?: string }>()
+  props<{ name: string, list?: List }>()
 );
 
 export const selectCommission = createAction(

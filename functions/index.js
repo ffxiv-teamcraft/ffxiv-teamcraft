@@ -46,8 +46,16 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
 });
 
 exports.commissionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
+  const commission = snapshot.data();
   admin.messaging().sendToTopic(`/topics/commissions.${snapshot.data().datacenter}`, {
-    data: snapshot.data()
+    data: {
+      name: commission.name,
+      price: commission.price.toString(),
+      datacenter: commission.datacenter,
+      server: commission.server,
+      authorId: commission.authorId,
+      items: JSON.stringify(commission.items)
+    }
   });
 });
 
