@@ -42,5 +42,7 @@ export class Commission extends DataWithPermissions {
 
   materialsProgression = 0;
 
-  items: { id: number, amount: number, done: number }[];
+  totalItems = 0;
+
+  items: { id: number, amount: number, done: number }[] = [];
 }

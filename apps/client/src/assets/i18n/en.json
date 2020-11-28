@@ -2208,12 +2208,25 @@
     "Price_tbd": "To be discussed",
     "X_items": "{{amount}} items",
     "Open_commission_details": "Open commission details",
+    "Your_commissions_as_client": "Your commissions as client",
+    "No_commissions_as_client": "You don't have any commission as client",
+    "Your_commissions_as_crafter": "Commissions you're working on",
+    "No_commissions_as_crafter": "You're not working on any commission",
+    "Delete_commission": "Delete this commission",
+    "Delete_list_too": "Delete list too",
+    "Delete_commission_only": "Delete commission only",
     "TAGS": {
       "CRAFTING": "Crafting",
       "GATHERING": "Gathering",
       "HUNTING": "Hunting",
       "FISHING": "Fishing",
       "GEAR": "Gear"
+    },
+    "STATUS": {
+      "Label": "Status",
+      "OPENED": "Opened",
+      "IN_PROGRESS": "In progress",
+      "ARCHIVED": "Archives"
     },
     "CREATION": {
       "Name": "Name",

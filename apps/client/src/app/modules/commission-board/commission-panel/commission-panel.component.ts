@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { ListRow } from '../../list/model/list-row';
 import { TranslateService } from '@ngx-translate/core';
 import { CommissionStatus } from '../model/commission-status';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { Observable } from 'rxjs';
+import { CommissionsFacade } from '../+state/commissions.facade';
 
 @Component({
   selector: 'app-commission-panel',
@@ -13,16 +16,26 @@ import { CommissionStatus } from '../model/commission-status';
 })
 export class CommissionPanelComponent {
 
-  CommissionStatus = CommissionStatus
+  CommissionStatus = CommissionStatus;
 
   @Input()
   commission: Commission;
 
-  constructor(private router: Router, public translate: TranslateService) {
+  @Input()
+  showStatus = false;
+
+  public userId$: Observable<string> = this.authFacade.userId$;
+
+  constructor(private router: Router, public translate: TranslateService,
+              private authFacade: AuthFacade, public commissionsFacade: CommissionsFacade) {
   }
 
-  public openCommission(): void {
+  openCommission(): void {
     this.router.navigate(['/commissions/', this.commission.$key]);
+  }
+
+  deleteCommission(withLists: boolean): void {
+    this.commissionsFacade.delete(this.commission.$key, withLists);
   }
 
   trackByItem(index: number, item: ListRow): number {

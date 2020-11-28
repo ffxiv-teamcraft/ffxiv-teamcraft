@@ -25,6 +25,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 
 @NgModule({
   declarations: [CommissionPanelComponent, CommissionEditionPopupComponent],
@@ -57,6 +59,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ItemIconModule,
     PipesModule,
     CoreModule,
+    NzPopconfirmModule,
+    NzDropDownModule
   ],
   providers: [CommissionsFacade]
 })

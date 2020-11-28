@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 
 import * as fromCommissions from './commissions.reducer';
 import * as CommissionsSelectors from './commissions.selectors';
-import { createCommission, deleteCommission } from './commissions.actions';
+import { createCommission, deleteCommission, loadUserCommissions } from './commissions.actions';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
 import { distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
@@ -59,11 +59,15 @@ export class CommissionsFacade {
         nzFooter: null,
         nzTitle: this.translate.instant('COMMISSIONS.New_commission')
       }).afterClose.pipe(
-        filter(res => res && res.name !== undefined)
+        filter(res => res && res.length > 0)
       ).subscribe(res => {
         this.store.dispatch(createCommission({ name: res }));
       });
     }
+  }
+
+  loadAll(): void {
+    this.store.dispatch(loadUserCommissions());
   }
 
   delete(key: string, deleteList = false): void {

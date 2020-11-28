@@ -19,7 +19,7 @@ import firebase from 'firebase/app';
 @Injectable()
 export class CommissionsEffects {
 
-  loadCommissionsAsClient$ = createEffect(() => {
+  loadUserCommissions$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.loadUserCommissions),
       switchMapTo(this.authFacade.userId$),
@@ -101,10 +101,11 @@ export class CommissionsEffects {
         commission.server = character.Server;
         commission.datacenter = this.lazyData.getDataCenter(character.Server);
         commission.createdAt = firebase.firestore.Timestamp.now();
-        commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount, done: item.done }));
         Object.assign(commission, partialCommission);
         if (list) {
           commission.$key = list.$key;
+          commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount, done: item.done }));
+          commission.totalItems = commission.items.reduce((acc, item) => acc + item.amount, 0);
           this.listsFacade.pureUpdateList(list.$key, { hasCommission: true, ephemeral: false });
           return of(commission);
         }

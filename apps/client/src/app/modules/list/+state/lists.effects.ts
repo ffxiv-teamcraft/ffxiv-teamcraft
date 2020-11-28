@@ -506,7 +506,8 @@ export class ListsEffects {
         id: item.id,
         amount: item.amount,
         done: item.done
-      }))
+      })),
+      totalItems: list.finalItems.reduce((acc, item) => acc + item.amount, 0)
     });
   }
 

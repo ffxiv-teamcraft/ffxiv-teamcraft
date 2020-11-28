@@ -1,1 +1,23 @@
-<p>commissions-page works!</p>
+<div fxLayout="row" fxLayoutGap="5px">
+  <button nz-button nzShape="circle" nzType="primary" nz-tooltip [nzTooltipTitle]="'COMMISSIONS.New_commission' | translate" (click)="createCommission()">
+    <i nz-icon nzType="file-add"></i>
+  </button>
+</div>
+<div *ngIf="display$ | async as display; else loader">
+  <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_client' | translate"></nz-divider>
+  <div fxLayout="column" fxLayoutGap="5px">
+    <app-fullpage-message *ngIf="display.commissionsAsClient.length === 0"
+                          height="50px">{{'COMMISSIONS.No_commissions_as_client' | translate}}</app-fullpage-message>
+    <app-commission-panel *ngFor="let commission of display.commissionsAsClient" [commission]="commission"></app-commission-panel>
+  </div>
+
+  <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_commissions_as_crafter' | translate"></nz-divider>
+  <div fxLayout="column" fxLayoutGap="5px">
+    <app-fullpage-message *ngIf="display.commissionsAsCrafter.length === 0"
+                          height="50px">{{'COMMISSIONS.No_commissions_as_crafter' | translate}}</app-fullpage-message>
+    <app-commission-panel *ngFor="let commission of display.commissionsAsCrafter" [commission]="commission"></app-commission-panel>
+  </div>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

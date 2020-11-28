@@ -5,22 +5,30 @@
         <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
              nz-col nzMd="5" nzSm="20">
           <app-user-avatar [userId]="commission.authorId" [width]="32"></app-user-avatar>
-          <div>
+          <div class="name">
             {{commission.name}}
           </div>
         </div>
-        <div nz-col nzMd="4">
-          {{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}
+        <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="space-between center">
+          <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
+          <div [ngSwitch]="commission.status">
+            <nz-tag *ngSwitchCase="CommissionStatus.OPENED" nzColor="#108ee9">{{'COMMISSIONS.STATUS.Label' | translate}}
+              : {{'COMMISSIONS.STATUS.OPENED' | translate}}</nz-tag>
+            <nz-tag *ngSwitchCase="CommissionStatus.IN_PROGRESS" nzColor="#87d068">{{'COMMISSIONS.STATUS.Label' | translate}}
+              : {{'COMMISSIONS.STATUS.IN_PROGRESS' | translate}}</nz-tag>
+            <nz-tag *ngSwitchCase="CommissionStatus.ARCHIVED" nzColor="#f50">{{'COMMISSIONS.STATUS.Label' | translate}}
+              : {{'COMMISSIONS.STATUS.ARCHIVED' | translate}}</nz-tag>
+          </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="8" nzSm="24">
           <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
-          <nz-tag [style.border-color]="'#108ee9'" *ngIf="commission.includesMaterials" nz-tooltip
+          <nz-tag style.border-color="#108ee9" *ngIf="commission.includesMaterials" nz-tooltip
                   [nzTooltipTitle]="'COMMISSIONS.CREATION.Includes_materials_label' | translate"
                   class="custom-tag">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</nz-tag>
           <nz-tag *ngFor="let tag of commission.tags">{{('COMMISSIONS.TAGS.' + tag) | translate}}</nz-tag>
         </div>
         <div nz-col nzMd="2" nzSm="6">
-          {{'COMMISSIONS.X_items' | translate:{ amount: commission.items.length } }}
+          {{'COMMISSIONS.X_items' | translate:{ amount: commission.totalItems } }}
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="3" nzSm="6">
           <app-item-icon [disableClick]="true" [itemId]="1" width="24"></app-item-icon>
@@ -36,6 +44,36 @@
              routerLink="/commission/{{commission.$key}}">
             <i nz-icon nzType="folder-open"></i>
           </a>
+          <button (click)="$event.stopPropagation();"
+                  *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
+                  [nzDropdownMenu]="menu"
+                  nz-button
+                  nz-dropdown
+                  nz-tooltip
+                  [nzTooltipTitle]="'COMMISSIONS.Delete_commission' | translate"
+                  nzType="danger"
+                  nzTrigger="click"
+                  nzShape="circle">
+            <i nz-icon nzType="delete"></i>
+          </button>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              <li nz-menu-item>
+                <a (nzOnConfirm)="deleteCommission(true)"
+                   [nzPopconfirmTitle]="'Confirmation' | translate"
+                   nz-popconfirm>
+                  {{'COMMISSIONS.Delete_list_too' | translate}}
+                </a>
+              </li>
+              <li nz-menu-item>
+                <a (nzOnConfirm)="deleteCommission(false)"
+                   [nzPopconfirmTitle]="'Confirmation' | translate"
+                   nz-popconfirm>
+                  {{'COMMISSIONS.Delete_commission_only' | translate}}
+                </a>
+              </li>
+            </ul>
+          </nz-dropdown-menu>
         </div>
       </div>
     </ng-template>

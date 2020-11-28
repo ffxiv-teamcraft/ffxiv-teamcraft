@@ -20,7 +20,7 @@
   <nz-form-item>
     <nz-form-label nzFor="price" nzRequired>{{'COMMISSIONS.CREATION.Price' | translate}}</nz-form-label>
     <nz-form-control nzValidateStatus="validating" [nzValidatingTip]="priceTip">
-      <input nz-input formControlName="price" type="number" id="price" min="0">
+      <input nz-input formControlName="price" type="number" id="price" min="0" max="999999999">
       <ng-template #priceTip>
         {{'COMMISSIONS.CREATION.Price_tip' | translate}}
       </ng-template>
