@@ -2230,7 +2230,8 @@
     },
     "BOARD": {
       "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags"
+      "Filter_with_tags": "Filter using tags",
+      "No_matching_commissions": "No matching commissions"
     }
   }
 }

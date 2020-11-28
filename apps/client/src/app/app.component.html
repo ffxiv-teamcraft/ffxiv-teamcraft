@@ -280,7 +280,8 @@
                 </li>
 
                 <ng-container *ngIf="loggedIn$ | async">
-                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions" (nzOpenChange)="settings.sidebarState = sidebarState"
+                      nz-submenu>
                   <span title>
                     <i nz-icon nzType="shop"></i>
                     <span>{{'SIDEBAR.Commissions' | translate}}</span>
@@ -292,7 +293,7 @@
                       <span class="nav-text">{{'SIDEBAR.Commission_board' | translate}}</span>
                   </span>
                     </a>
-                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions"
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions" [routerLinkActiveOptions]="{exact: true}"
                        routerLinkActive="ant-menu-item-selected">
                   <span>
                       <i class="companion-svg anticon">
@@ -301,7 +302,7 @@
                       <span class="nav-text">{{'SIDEBAR.My_commissions' | translate}}</span>
                   </span>
                     </a>
-                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions"
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/archives"
                        routerLinkActive="ant-menu-item-selected">
                   <span>
                       <i nz-icon nzType="container" nzTheme="outline"></i>

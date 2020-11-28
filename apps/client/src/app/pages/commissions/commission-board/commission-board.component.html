@@ -8,14 +8,16 @@
             <nz-option *ngFor="let dc of datacenters" [nzValue]="dc" [nzLabel]="dc"></nz-option>
           </nz-select>
         </ng-template>
-        <nz-select class="tags-input" [nzPlaceHolder]="'COMMISSIONS.BOARD.Filter_with_tags' | translate" [ngModel]="display.tags" (ngModelChange)="tags$.next($event)"
+        <nz-select class="tags-input" [nzPlaceHolder]="'COMMISSIONS.BOARD.Filter_with_tags' | translate" [ngModel]="display.tags"
+                   (ngModelChange)="tags$.next($event)"
                    nzShowSearch nzAllowClear nzMode="multiple">
           <nz-option *ngFor="let tag of commissionTags" [nzValue]="tag.value" [nzLabel]="tag.label | translate"></nz-option>
         </nz-select>
       </nz-input-group>
       <div class="results" fxLayout="column" fxLayoutGap="5px">
         <app-commission-panel *ngFor="let commission of display.commissions; trackBy: trackByCommission" [commission]="commission"></app-commission-panel>
-        <app-fullpage-message *ngIf="display.commissions.length === 0">{{'COMMISSIONS.BOARD.No_matching_commissions' | translate}}</app-fullpage-message>
+        <app-fullpage-message *ngIf="display.commissions.length === 0"
+                              height="300px">{{'COMMISSIONS.BOARD.No_matching_commissions' | translate}}</app-fullpage-message>
       </div>
     </div>
   </app-page-loader>

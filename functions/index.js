@@ -5,10 +5,12 @@ const crypto = require('crypto');
 const admin = require('firebase-admin');
 const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
+const { PubSub } = require('@google-cloud/pubsub');
 admin.initializeApp();
 const firestore = admin.firestore();
-const messaging = admin.messaging();
 firestore.settings({ timestampsInSnapshots: true });
+const pubsub = new PubSub({ projectId: process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT });
+const commissionsCreatedTopic = pubsub.topic('commissions-created');
 
 const runtimeOpts = {
   timeoutSeconds: 120,
@@ -57,6 +59,8 @@ exports.commissionNotifications = functions.runWith(runtimeOpts).firestore.docum
       items: JSON.stringify(commission.items)
     }
   });
+
+  commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })));
 });
 
 exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {

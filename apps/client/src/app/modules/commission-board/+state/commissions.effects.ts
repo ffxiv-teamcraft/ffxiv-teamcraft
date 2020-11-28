@@ -116,7 +116,7 @@ export class CommissionsEffects {
         return of(commission);
       }),
       switchMap(commission => {
-        return this.commissionService.add(commission);
+        return this.commissionService.set(commission.$key, commission);
       })
     );
   }, { dispatch: false });
