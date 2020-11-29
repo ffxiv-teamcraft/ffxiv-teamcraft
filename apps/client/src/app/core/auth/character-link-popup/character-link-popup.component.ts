@@ -37,7 +37,7 @@ export class CharacterLinkPopupComponent {
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
-  private chineseServers = [
+  public chineseServers = [
     'HongYuHai',
     'ShenYiZhiDi',
     'LaNuoXiYa',
