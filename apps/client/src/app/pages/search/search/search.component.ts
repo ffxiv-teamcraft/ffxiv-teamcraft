@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -290,7 +290,7 @@ export class SearchComponent implements OnInit {
           relativeTo: this.route
         });
       }),
-      switchMap(([query, type, filters, sort]) => {
+      mergeMap(([query, type, filters, sort]) => {
         let processedQuery = query;
         const matches = /patch:([\d.]+)/.exec(query);
         if (matches && matches[1]) {
@@ -686,7 +686,7 @@ export class SearchComponent implements OnInit {
     })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
-        switchMap(resultList => {
+        mergeMap(resultList => {
           return this.listsFacade.myLists$.pipe(
             map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
@@ -703,7 +703,7 @@ export class SearchComponent implements OnInit {
 
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
-      switchMap(list => {
+      mergeMap(list => {
         const operations = items.map(item => {
           return this.listManager.addToList({
             itemId: +item.itemId,
@@ -727,7 +727,7 @@ export class SearchComponent implements OnInit {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      switchMap(list => {
+      mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

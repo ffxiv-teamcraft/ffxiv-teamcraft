@@ -4,7 +4,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { ListPickerDrawerComponent } from './list-picker-drawer/list-picker-drawer.component';
-import { filter, first, map, switchMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { ListsFacade } from '../list/+state/lists.facade';
 import { ListRow } from '../list/model/list-row';
@@ -32,7 +32,7 @@ export class ListPickerService {
       .afterClose
       .pipe(
         filter(list => list !== null && list !== undefined),
-        switchMap(list => {
+        mergeMap(list => {
           // If this isn't a new list, wait for it to be loaded;
           if (list.$key) {
             return this.listsFacade.allListDetails$.pipe(
@@ -53,7 +53,7 @@ export class ListPickerService {
     // or add your own logic once it's done.
     const done$ = new Subject<void>();
     this.pickList().pipe(
-      switchMap(list => {
+      mergeMap(list => {
         const operations = items.map(item => {
           return this.listManager.addToList({
             itemId: +item.id,
@@ -76,7 +76,7 @@ export class ListPickerService {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      switchMap(list => {
+      mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

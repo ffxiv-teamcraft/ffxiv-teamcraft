@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
@@ -40,7 +40,7 @@ export class AuthEffects {
   @Effect()
   getUser$ = this.actions$.pipe(
     ofType(AuthActionTypes.GetUser),
-    switchMapTo(this.af.authState),
+    mergeMap(() => this.af.authState),
     map((authState: User) => {
       if (authState === null) {
         return new LoginAsAnonymous();
@@ -59,7 +59,7 @@ export class AuthEffects {
   @Effect()
   loginAsAnonymous$ = this.actions$.pipe(
     ofType(AuthActionTypes.LoginAsAnonymous, AuthActionTypes.Logout),
-    switchMapTo(from(this.af.signInAnonymously())),
+    mergeMap(() => from(this.af.signInAnonymously())),
     map((result: UserCredential) => new LoggedInAsAnonymous(result.user.uid))
   );
 
