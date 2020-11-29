@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, TemplateRef, ViewChild } from '@angular/core';
 import { combineLatest, concat, merge, Observable, of, Subject } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { RotationPickerService } from '../../../modules/rotations/rotation-picker.service';
@@ -178,7 +178,7 @@ export class CollectablesComponent {
 
   public addItemsToList(items: { itemId: number, amount: number }[]): void {
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operations = items.map(item => {
           const recipeId = this.lazyData.getItemRecipeSync(item.itemId.toString())?.id;
           return this.listManager.addToList({
@@ -202,7 +202,7 @@ export class CollectablesComponent {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
@@ -230,7 +230,7 @@ export class CollectablesComponent {
     })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
+        switchMap(resultList => {
           return this.listsFacade.myLists$.pipe(
             map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),

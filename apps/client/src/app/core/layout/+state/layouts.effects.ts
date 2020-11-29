@@ -1,15 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import {
-  CreateLayout,
-  DeleteLayout,
-  LayoutsActionTypes,
-  LayoutsLoaded,
-  SelectLayout,
-  UpdateLayout
-} from './layouts.actions';
+import { CreateLayout, DeleteLayout, LayoutsActionTypes, LayoutsLoaded, SelectLayout, UpdateLayout } from './layouts.actions';
 import { LayoutService } from '../layout.service';
-import { distinctUntilChanged, filter, map, mergeMap, switchMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { LayoutsFacade } from './layouts.facade';
@@ -53,7 +46,7 @@ export class LayoutsEffects {
     switchMap((action: UpdateLayout) => {
       return this.layoutService.set(action.layout.$key, action.layout);
     }),
-    mergeMap(() => EMPTY)
+    switchMapTo(EMPTY)
   );
 
   @Effect()

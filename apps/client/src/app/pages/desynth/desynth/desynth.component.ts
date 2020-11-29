@@ -177,7 +177,7 @@ export class DesynthComponent {
     })
       .pipe(
         tap(resultList => this.listsFacade.addList(resultList)),
-        mergeMap(resultList => {
+        switchMap(resultList => {
           return this.listsFacade.myLists$.pipe(
             map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
             filter(l => l !== undefined),
@@ -194,7 +194,7 @@ export class DesynthComponent {
 
   public addItemsToList(items: SearchResult[]): void {
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operations = items.map(item => {
           return this.listManager.addToList({
             itemId: +item.itemId,
@@ -218,7 +218,7 @@ export class DesynthComponent {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

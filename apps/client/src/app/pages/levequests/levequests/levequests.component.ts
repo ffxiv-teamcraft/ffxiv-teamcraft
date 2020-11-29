@@ -215,7 +215,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
 
   public addLevesToList(leves: Levequest[]): void {
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operation$ = concat(
           ...leves.map(leve => {
             return this.dataService.getItem(leve.itemId).pipe(
@@ -244,7 +244,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           { amount: leves.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.listsFacade.myLists$.pipe(
           map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
@@ -274,7 +274,7 @@ export class LevequestsComponent extends TeamcraftComponent implements OnInit {
           })
           .pipe(
             tap(resultList => this.listsFacade.addList(resultList)),
-            mergeMap(resultList => {
+            switchMap(resultList => {
               return this.listsFacade.myLists$.pipe(
                 map(lists => lists.find(l => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
                 filter(l => l !== undefined),

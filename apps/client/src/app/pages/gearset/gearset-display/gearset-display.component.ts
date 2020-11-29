@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
 import { GearsetsFacade } from '../../../modules/gearsets/+state/gearsets.facade';
-import { filter, first, map, mergeMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { TranslateService } from '@ngx-translate/core';
@@ -162,7 +162,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
       });
     items.push(...this.materiaService.getTotalNeededMaterias(gearset, this.includeAllTools, progression));
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operations = items.map(item => {
           const recipe = this.lazyData.data.recipes.find(r => r.result === item.id);
           return this.listManager.addToList({
@@ -186,7 +186,7 @@ export class GearsetDisplayComponent extends TeamcraftComponent {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

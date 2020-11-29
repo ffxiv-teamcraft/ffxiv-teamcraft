@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
@@ -55,7 +55,7 @@ export class GatheringLocationComponent {
         this.loading = true;
       }),
       filter(query => query.length > 0),
-      mergeMap(query => this.dataService.searchGathering(query)),
+      switchMap(query => this.dataService.searchGathering(query)),
       map(items => {
         return this.bell.getAllNodes(...items);
       }),

@@ -143,7 +143,7 @@ export class GcSupplyComponent {
       { amount: this.selection.length, listname: quickList.name })
       .pipe(
         tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-        mergeMap(list => {
+        switchMap(list => {
           // We want to get the list created before calling it a success, let's be pessimistic !
           return this.progressService.showProgress(
             combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
