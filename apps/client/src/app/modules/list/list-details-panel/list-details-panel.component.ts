@@ -16,7 +16,7 @@ import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { combineLatest, concat, Observable, of } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -136,7 +136,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         );
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      switchMap(list => {
+      mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progress.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

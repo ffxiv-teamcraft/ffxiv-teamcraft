@@ -108,7 +108,7 @@ export class LogTrackerComponent extends TrackerComponent {
       recipesToAdd = recipesToAdd.slice(0, limit);
     }
     this.listPicker.pickList().pipe(
-      switchMap(list => {
+      mergeMap(list => {
         const operations = recipesToAdd.map(recipe => {
           return this.listManager.addToList({ itemId: recipe.itemId, list: list, recipeId: recipe.recipeId, amount: 1 });
         });
@@ -133,7 +133,7 @@ export class LogTrackerComponent extends TrackerComponent {
       }),
       filter(list => list !== null),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      switchMap(list => {
+      mergeMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
