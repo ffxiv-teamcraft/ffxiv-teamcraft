@@ -9,7 +9,7 @@ import { LayoutOrderService } from '../layout-order.service';
 import { List } from '../../../modules/list/model/list';
 import { combineLatest, Observable, of } from 'rxjs';
 import { LayoutRowDisplay } from '../layout-row-display';
-import { debounceTime, filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
+import { debounceTime, filter, map, shareReplay, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { FilterResult } from '../filter-result';
 import { ListLayout } from '../list-layout';
 import { LayoutService } from '../layout.service';
@@ -56,7 +56,16 @@ export class LayoutsFacade {
       debounceTime(2000),
       startWith('')
     );
-    return combineLatest([this.selectedLayout$, this.authFacade.user$, settingsChange$])
+    const user$ = this.authFacade.loggedIn$.pipe(
+      switchMap(loggedIn => {
+        if (loggedIn) {
+          return this.authFacade.user$;
+        } else {
+          return of(null);
+        }
+      })
+    );
+    return combineLatest([this.selectedLayout$, user$, settingsChange$])
       .pipe(
         withLatestFrom(this.authFacade.gearSets$),
         map(([[layout, user], gearsets]) => {
@@ -89,7 +98,7 @@ export class LayoutsFacade {
                 return a.index - b.index;
               })
               .map((row: LayoutRow) => {
-                const result: FilterResult = row.doFilter(unfilteredRows, user.itemTags, list, this.settings);
+                const result: FilterResult = row.doFilter(unfilteredRows, user?.itemTags || [], list, this.settings);
                 unfilteredRows = result.rejected;
                 // If it's using a tiers display, don't sort now, we'll sort later on, inside the display.
                 let orderedAccepted = row.tiers ? result.accepted : this.layoutOrder.order(result.accepted, row.orderBy, row.order);

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Character, CharacterSearchResult, CharacterSearchResultRow, XivapiService } from '@xivapi/angular-client';
 import { combineLatest, Observable } from 'rxjs';
-import { debounceTime, filter, map, mergeMap, startWith, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
@@ -37,7 +37,7 @@ export class CharacterLinkPopupComponent {
 
   private koreanServers = ['초코보', '모그리', '카벙클', '톤베리'];
 
-  private chineseServers = [
+  public chineseServers = [
     'HongYuHai',
     'ShenYiZhiDi',
     'LaNuoXiYa',
@@ -99,7 +99,7 @@ export class CharacterLinkPopupComponent {
       .pipe(
         tap(() => this.loadingResults = true),
         debounceTime(500),
-        mergeMap(([selectedServer, characterName]) => {
+        switchMap(([selectedServer, characterName]) => {
           return this.xivapi.searchCharacter(characterName, selectedServer);
         }),
         map((result: CharacterSearchResult) => result.Results || []),
@@ -109,7 +109,7 @@ export class CharacterLinkPopupComponent {
 
     this.lodestoneIdCharacter$ = this.lodestoneId.valueChanges.pipe(
       filter(id => id && id !== ''),
-      mergeMap(lodestoneId => {
+      switchMap(lodestoneId => {
         return this.xivapi.getCharacter(lodestoneId);
       }),
       map(response => response.Character),

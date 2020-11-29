@@ -3,7 +3,7 @@ import { WorkshopDisplay } from '../../../model/other/workshop-display';
 import { Observable } from 'rxjs/Observable';
 import { List } from '../../../modules/list/model/list';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { debounceTime, distinctUntilChanged, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, filter, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { combineLatest } from 'rxjs';
 import { WorkshopsFacade } from '../../../modules/workshop/+state/workshops.facade';
@@ -32,7 +32,7 @@ export class FavoritesComponent {
     this.lists$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.lists || [])),
       tap(lists => lists.forEach(list => this.listsFacade.load(list))),
-      mergeMap(lists => {
+      switchMap(lists => {
         return this.listsFacade.allListDetails$.pipe(
           map(details => details.filter(c => lists.indexOf(c.$key) > -1 && !c.notFound))
         );
@@ -43,7 +43,7 @@ export class FavoritesComponent {
       distinctUntilChanged((a, b) => JSON.stringify(a.rotations) === JSON.stringify(b.rotations)),
       map(favorites => (favorites.rotations || [])),
       tap(rotations => rotations.forEach(rotation => this.rotationsFacade.getRotation(rotation))),
-      mergeMap(rotations => {
+      switchMap(rotations => {
         return this.rotationsFacade.allRotations$.pipe(
           map(loadedRotations => loadedRotations.filter(r => rotations.indexOf(r.$key) > -1 && !r.notFound))
         );
@@ -53,7 +53,7 @@ export class FavoritesComponent {
     const favoriteWorkshops$ = this.authFacade.favorites$.pipe(
       map(favorites => (favorites.workshops || [])),
       tap(workshops => workshops.forEach(workshop => this.workshopsFacade.loadWorkshop(workshop))),
-      mergeMap(workshops => {
+      switchMap(workshops => {
         return this.workshopsFacade.allWorkshops$.pipe(
           map(ws => ws.filter(w => workshops.indexOf(w.$key) > -1)),
           filter(ws => ws.length === workshops.length),

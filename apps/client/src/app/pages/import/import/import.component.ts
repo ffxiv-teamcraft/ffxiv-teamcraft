@@ -88,7 +88,7 @@ export class ImportComponent {
 
   doImport(data: { items: { itemData: ItemData, quantity: number, recipeId?: string }[], url: string }): void {
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         if (data.url) {
           list.note = data.url;
         }
@@ -108,7 +108,7 @@ export class ImportComponent {
           { amount: data.items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

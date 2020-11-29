@@ -8,7 +8,7 @@ import { uniq } from 'lodash';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, startWith } from 'rxjs/operators';
+import { filter, first, map, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -39,7 +39,6 @@ import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
@@ -711,7 +710,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       collectible: item.addCrafts
     }).pipe(
       tap((resultList) => this.listsFacade.addList(resultList)),
-      mergeMap((resultList) => {
+      switchMap((resultList) => {
         return this.listsFacade.myLists$.pipe(
           map((lists) => lists.find((l) => l.createdAt.toMillis() === resultList.createdAt.toMillis() && l.$key !== undefined)),
           filter((l) => l !== undefined),
@@ -730,7 +729,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
     this.listPicker
       .pickList()
       .pipe(
-        mergeMap((list) => {
+        switchMap((list) => {
           const operations = [this.listManager.addToList({
             itemId: +item.itemId,
             list: list,
@@ -747,7 +746,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           return this.progressService.showProgress(operation$, 1, 'Adding_recipes', { amount: 1, listname: list.name });
         }),
         tap((list) => (list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list))),
-        mergeMap((list) => {
+        switchMap((list) => {
           // We want to get the list created before calling it a success, let's be pessimistic !
           return this.progressService.showProgress(
             combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(

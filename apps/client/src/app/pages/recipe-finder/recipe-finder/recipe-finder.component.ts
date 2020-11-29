@@ -354,7 +354,7 @@ export class RecipeFinderComponent implements OnDestroy {
 
   generateList(): void {
     this.listPicker.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operations = this.basket.map(row => {
           return this.listManager.addToList({
             itemId: +row.recipe.result,
@@ -378,7 +378,7 @@ export class RecipeFinderComponent implements OnDestroy {
           { amount: this.basket.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
