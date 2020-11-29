@@ -12,11 +12,11 @@
         <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
           <div [ngSwitch]="commission.status">
-            <nz-tag *ngSwitchCase="CommissionStatus.OPENED" nzColor="#108ee9">{{'COMMISSIONS.STATUS.Label' | translate}}
+            <nz-tag *ngSwitchCase="CommissionStatus.OPENED" [style.border-color]="'#108ee9'">{{'COMMISSIONS.STATUS.Label' | translate}}
               : {{'COMMISSIONS.STATUS.OPENED' | translate}}</nz-tag>
-            <nz-tag *ngSwitchCase="CommissionStatus.IN_PROGRESS" nzColor="#87d068">{{'COMMISSIONS.STATUS.Label' | translate}}
+            <nz-tag *ngSwitchCase="CommissionStatus.IN_PROGRESS" [style.border-color]="'#87d068'">{{'COMMISSIONS.STATUS.Label' | translate}}
               : {{'COMMISSIONS.STATUS.IN_PROGRESS' | translate}}</nz-tag>
-            <nz-tag *ngSwitchCase="CommissionStatus.ARCHIVED" nzColor="#f50">{{'COMMISSIONS.STATUS.Label' | translate}}
+            <nz-tag *ngSwitchCase="CommissionStatus.ARCHIVED" [style.border-color]="'#f50'">{{'COMMISSIONS.STATUS.Label' | translate}}
               : {{'COMMISSIONS.STATUS.ARCHIVED' | translate}}</nz-tag>
           </div>
         </div>
@@ -44,6 +44,12 @@
              routerLink="/commission/{{commission.$key}}">
             <i nz-icon nzType="folder-open"></i>
           </a>
+          <button nz-button nzShape="circle" nzSize="small"
+                  *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
+                  nz-tooltip [nzTooltipTitle]="'COMMISSIONS.DETAILS.Edit' | translate"
+                  (click)="editCommission()">
+            <i nz-icon nzType="edit"></i>
+          </button>
           <button (click)="$event.stopPropagation();"
                   *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
                   [nzDropdownMenu]="menu"

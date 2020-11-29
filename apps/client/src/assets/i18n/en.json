@@ -2245,6 +2245,30 @@
       "Title": "Commission board",
       "Filter_with_tags": "Filter using tags",
       "No_matching_commissions": "No matching commissions"
+    },
+    "DETAILS": {
+      "Created_by": "Created by {{name}}",
+      "Details": "Details",
+      "Price": "Price",
+      "Tags": "Tags",
+      "Server": "Server",
+      "Content": "Content",
+      "Progression": "Progression",
+      "Candidates": "Candidates ({{amount}})",
+      "Candidates_public_display": "Candidates : {{amount}}",
+      "Apply": "Apply",
+      "Edit": "Edit this commission",
+      "No_candidates": "No candidates",
+      "Your_offer": "Your offer",
+      "Remove_offer": "Remove your offer",
+      "Fire_contractor": "Fire the contractor",
+      "Resign": "Resign",
+      "Contractor": "Contractor",
+      "Open_list": "Open the list",
+      "List": "List"
+    },
+    "APPLY": {
+      "Price": "Your price"
     }
   }
 }

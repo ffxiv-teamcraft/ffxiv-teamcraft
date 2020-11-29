@@ -502,6 +502,7 @@ export class ListsEffects {
   private updateCommission(list: List): void {
     this.commissionService.pureUpdate(list.$key, {
       materialsProgression: this.listsFacade.buildProgression(list.items),
+      itemsProgression: this.listsFacade.buildProgression(list.finalItems),
       items: list.finalItems.map(item => ({
         id: item.id,
         amount: item.amount,

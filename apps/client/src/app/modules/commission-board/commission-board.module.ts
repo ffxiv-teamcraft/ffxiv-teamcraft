@@ -27,9 +27,10 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { ApplyPopupComponent } from './apply-popup/apply-popup.component';
 
 @NgModule({
-  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent],
+  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent],
   exports: [CommissionPanelComponent],
   imports: [
     CommonModule,

@@ -1,0 +1,18 @@
+<form nz-form nzLayout="vertical" [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label nzFor="price" nzRequired>{{'COMMISSIONS.APPLY.Price' | translate}}</nz-form-label>
+    <nz-form-control>
+      <input nz-input formControlName="price" type="number" id="price" min="0" max="999999999">
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+  <div>
+    <button [disabled]="!form.valid" (click)="submit()" nzType="primary" nz-button>{{'Confirm' | translate}}
+    </button>
+  </div>
+  <div>
+    <button (click)="close()" nz-button>{{'Cancel' | translate}}
+    </button>
+  </div>
+</div>

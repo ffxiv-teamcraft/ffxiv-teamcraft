@@ -5,7 +5,7 @@ import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
 import { commissionLoaded, commissionsLoaded } from './commissions.actions';
-import { distinctUntilChanged, filter, map, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest, of } from 'rxjs';
@@ -28,6 +28,7 @@ export class CommissionsEffects {
         return combineLatest([this.commissionService.getByCrafterId(userId), this.commissionService.getByForeignKey(TeamcraftUser, userId)]).pipe(
           map(([crafter, client]) => [...crafter, ...client]),
           map(commissions => {
+            console.log(commissions);
             return commissionsLoaded({ commissions, userId });
           })
         );
@@ -38,17 +39,11 @@ export class CommissionsEffects {
   loadCommission$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.loadCommission),
-      switchMapTo(this.authFacade.userId$),
-      distinctUntilChanged(),
-      switchMap((userId) => {
-        return this.commissionService.get(userId).pipe(
-          tap(commission => {
-            this.listsFacade.load(commission.$key);
-          }),
-          map(commission => {
-            return commissionLoaded({ commission });
-          })
-        );
+      mergeMap(({ key }) => {
+        return this.commissionService.get(key);
+      }),
+      map(commission => {
+        return commissionLoaded({ commission });
       })
     );
   });
@@ -56,7 +51,7 @@ export class CommissionsEffects {
   updateCommission$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.updateCommission),
-      switchMap(({ commission }) => {
+      mergeMap(({ commission }) => {
         return this.commissionService.update(commission.$key, commission);
       })
     );
@@ -65,7 +60,7 @@ export class CommissionsEffects {
   deleteCommission$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.deleteCommission),
-      switchMap(({ key, deleteList }) => {
+      mergeMap(({ key, deleteList }) => {
         if (deleteList) {
           return combineLatest([this.commissionService.remove(key), this.listsFacade.deleteList(key, false)]);
         } else {
@@ -83,7 +78,9 @@ export class CommissionsEffects {
         return this.modalService.create({
           nzContent: CommissionEditionPopupComponent,
           nzComponentParams: {
-            name: action.name
+            commission: {
+              name: action.name
+            }
           },
           nzFooter: null,
           nzTitle: this.translate.instant('COMMISSIONS.New_commission')

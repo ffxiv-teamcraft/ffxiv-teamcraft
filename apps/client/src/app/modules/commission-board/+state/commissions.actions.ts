@@ -11,7 +11,7 @@ export const commissionsLoaded = createAction(
 );
 
 export const commissionLoaded = createAction(
-  '[Commissions] Load Commission',
+  '[Commissions] Commission Loaded',
   props<{ commission: Commission }>()
 );
 

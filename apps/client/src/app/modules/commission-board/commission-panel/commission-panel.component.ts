@@ -38,6 +38,10 @@ export class CommissionPanelComponent {
     this.commissionsFacade.delete(this.commission.$key, withLists);
   }
 
+  editCommission(): void {
+    this.commissionsFacade.edit(this.commission);
+  }
+
   trackByItem(index: number, item: ListRow): number {
     return item.id;
   }

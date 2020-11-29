@@ -47,7 +47,7 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
   }).then(() => null);
 });
 
-exports.commissionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
+exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
   const commission = snapshot.data();
   admin.messaging().sendToTopic(`/topics/commissions.${snapshot.data().datacenter}`, {
     data: {
@@ -61,6 +61,10 @@ exports.commissionNotifications = functions.runWith(runtimeOpts).firestore.docum
   });
 
   commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })));
+});
+
+exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
+  //TODO
 });
 
 exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {

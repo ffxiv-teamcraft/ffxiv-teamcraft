@@ -1,6 +1,5 @@
 import { DataWithPermissions } from '../../../core/database/permissions/data-with-permissions';
 import { CommissionStatus } from './commission-status';
-import { CommissionPayment } from './commission-payment';
 import { CommissionTag } from './commission-tag';
 import firebase from 'firebase/app';
 
@@ -28,9 +27,7 @@ export class Commission extends DataWithPermissions {
 
   status: CommissionStatus = CommissionStatus.OPENED;
 
-  payments: CommissionPayment[] = [];
-
-  candidates: { uid: string, offer: number }[] = [];
+  candidates: { uid: string, offer: number, date: firebase.firestore.Timestamp }[] = [];
 
   tags: CommissionTag[] = [];
 
@@ -41,6 +38,8 @@ export class Commission extends DataWithPermissions {
   server: string;
 
   materialsProgression = 0;
+
+  itemsProgression = 0;
 
   totalItems = 0;
 
