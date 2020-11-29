@@ -49,14 +49,9 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
 
 exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
   const commission = snapshot.data();
-  admin.messaging().sendToTopic(`/topics/commissions.${snapshot.data().datacenter}`, {
+  admin.messaging().sendToTopic(`/topics/commissions.${commission.datacenter}`, {
     data: {
-      name: commission.name,
-      price: commission.price.toString(),
-      datacenter: commission.datacenter,
-      server: commission.server,
-      authorId: commission.authorId,
-      items: JSON.stringify(commission.items)
+      commission: JSON.stringify(commission)
     }
   });
 
@@ -64,7 +59,42 @@ exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firesto
 });
 
 exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
-  //TODO
+  const before = change.before.data();
+  const after = change.after.data();
+  if (before.crafterId !== after.crafterId) {
+    if (after.crafterId !== undefined) {
+      admin.messaging().sendToTopic(`/topics/users.${after.crafterId}.hired`, {
+        data: {
+          commission: JSON.stringify(after)
+        },
+        notification: {
+          title: `Commission contract started`,
+          body: `You have been hired on commission ${after.name}`
+        }
+      });
+    } else {
+      admin.messaging().sendToTopic(`/topics/users.${before.crafterId}.fired`, {
+        data: {
+          commission: JSON.stringify(after)
+        },
+        notification: {
+          title: `Commission contract ended`,
+          body: `You are no longer the contractor for commission ${before.name}`
+        }
+      });
+    }
+  }
+  if (before.candidates.length < after.candidates.length) {
+    admin.messaging().sendToTopic(`/topics/users.${before.authorId}.candidates`, {
+      data: {
+        commission: JSON.stringify(after)
+      },
+      notification: {
+        title: `New candidate`,
+        body: `New candidate for commission ${before.name}`
+      }
+    });
+  }
 });
 
 exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {

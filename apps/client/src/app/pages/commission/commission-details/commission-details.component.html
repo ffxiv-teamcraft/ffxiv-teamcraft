@@ -131,6 +131,11 @@
               {{'LIST.Progression_tooltip_items' | translate: { amount: display.commission.itemsProgression | number:'1.0-0':translate.currentLang } }}
             </ng-template>
           </ng-container>
+          <button nz-button nzType="primary" *ngIf="display.commission.itemsProgression === 100"
+                  nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+                  (nzOnConfirm)="markAsCompleted(display.commission)">
+            {{'COMMISSIONS.DETAILS.Mark_as_completed' | translate}}
+          </button>
         </div>
         <div fxLayout="column" fxLayoutGap="5px">
           <div>

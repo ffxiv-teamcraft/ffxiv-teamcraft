@@ -2265,7 +2265,8 @@
       "Resign": "Resign",
       "Contractor": "Contractor",
       "Open_list": "Open the list",
-      "List": "List"
+      "List": "List",
+      "Mark_as_completed": "Mark commission as completed and archive it"
     },
     "APPLY": {
       "Price": "Your price"

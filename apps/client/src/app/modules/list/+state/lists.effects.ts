@@ -461,14 +461,16 @@ export class ListsEffects {
     }),
     debounceTime(2000),
     tap(([, list]) => {
-      this.dialog.create({
-        nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
-        nzFooter: null,
-        nzContent: ListCompletionPopupComponent,
-        nzComponentParams: {
-          list: list
-        }
-      });
+      if (!list.hasCommission) {
+        this.dialog.create({
+          nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
+          nzFooter: null,
+          nzContent: ListCompletionPopupComponent,
+          nzComponentParams: {
+            list: list
+          }
+        });
+      }
     }),
     switchMap(() => EMPTY)
   );

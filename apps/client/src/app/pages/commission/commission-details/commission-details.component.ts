@@ -74,6 +74,11 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
     // TODO feedback popup
   }
 
+  markAsCompleted(commission: Commission): void {
+    this.commissionsFacade.markAsCompleted(commission);
+    // TODO feedback popup
+  }
+
   ngOnInit(): void {
     this.activatedRoute.paramMap
       .pipe(

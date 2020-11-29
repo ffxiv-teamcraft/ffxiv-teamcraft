@@ -7,7 +7,7 @@ import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Rout
 import { faDiscord, faGithub, faTwitter } from '@fortawesome/fontawesome-free-brands';
 import { faBell, faCalculator, faGavel, faMap } from '@fortawesome/fontawesome-free-solid';
 import fontawesome from '@fortawesome/fontawesome';
-import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, mergeMapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, delay, distinctUntilChanged, filter, first, map, mapTo, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { AuthFacade } from './+state/auth.facade';
 import { Character } from '@xivapi/angular-client';
@@ -57,7 +57,6 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
-import { AngularFireMessaging } from '@angular/fire/messaging';
 
 declare const gtag: Function;
 

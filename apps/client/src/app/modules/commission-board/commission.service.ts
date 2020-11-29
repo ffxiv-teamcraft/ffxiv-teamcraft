@@ -19,9 +19,6 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
               protected pendingChangesService: PendingChangesService, private afm: AngularFireMessaging,
               private fns: AngularFireFunctions) {
     super(firestore, serializer, zone, pendingChangesService);
-    this.afm.messages.subscribe(m => {
-      console.log('TODO Notification', m);
-    });
   }
 
   public enableNotifications(datacenter: string): Observable<boolean> {

@@ -153,6 +153,16 @@ export class CommissionsFacade {
     });
   }
 
+  markAsCompleted(commission: Commission): void {
+    commission.status = CommissionStatus.ARCHIVED;
+    this.update(commission);
+    this.listsFacade.pureUpdateList(commission.$key, {
+      registry: {},
+      everyone: PermissionLevel.READ,
+      authorId: null
+    });
+  }
+
   delete(key: string, deleteList = false): void {
     this.store.dispatch(deleteCommission({ key, deleteList }));
   }
