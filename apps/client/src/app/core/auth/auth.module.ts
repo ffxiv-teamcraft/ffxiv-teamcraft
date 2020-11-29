@@ -15,6 +15,8 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
 import { NzListModule } from 'ng-zorro-antd/list';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   imports: [
@@ -33,7 +35,9 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
     NzDividerModule,
     NzAutocompleteModule,
     NzListModule,
-    NzSpinModule
+    NzSpinModule,
+    NzInputModule,
+    NzButtonModule
   ],
   providers: [OauthService],
   declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]
