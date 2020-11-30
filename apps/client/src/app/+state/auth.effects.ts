@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { AuthState } from './auth.reducer';
-import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, exhaustMap, filter, map, mergeMap, switchMap, switchMapTo, tap, withLatestFrom } from 'rxjs/operators';
 import { EMPTY, from, of } from 'rxjs';
 import { UserService } from '../core/database/user.service';
 import {
   AddCharacter,
   AuthActionTypes,
   Authenticated,
+  CommissionProfileLoaded,
   LinkingCharacter,
   LoggedInAsAnonymous,
   LoginAsAnonymous,
@@ -33,6 +34,8 @@ import { PatreonService } from '../core/patreon/patreon.service';
 import { diff } from 'deep-diff';
 import { LogTrackingService } from '../core/database/log-tracking.service';
 import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
+import { CommissionProfile } from '../model/user/commission-profile';
+import { CommissionProfileService } from '../core/database/commission-profile.service';
 
 @Injectable()
 export class AuthEffects {
@@ -216,10 +219,27 @@ export class AuthEffects {
     })
   );
 
+  @Effect()
+  fetchCommissionProfile$ = this.actions$.pipe(
+    ofType<LoggedInAsAnonymous | Authenticated>(AuthActionTypes.LoggedInAsAnonymous, AuthActionTypes.Authenticated),
+    switchMap(({ uid }) => {
+      return this.commissionProfileService.get(uid)
+        .pipe(
+          catchError(() => {
+            return this.commissionProfileService.set(uid, new CommissionProfile()).pipe(
+              switchMapTo(EMPTY)
+            );
+          })
+        );
+    }),
+    map(cProfile => new CommissionProfileLoaded(cProfile))
+  );
+
   constructor(private actions$: Actions, private af: AngularFireAuth, private userService: UserService,
               private store: Store<{ auth: AuthState }>, private dialog: NzModalService,
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private patreonService: PatreonService, private logTrackingService: LogTrackingService) {
+              private patreonService: PatreonService, private logTrackingService: LogTrackingService,
+              private commissionProfileService: CommissionProfileService) {
   }
 }

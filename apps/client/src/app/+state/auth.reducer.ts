@@ -1,5 +1,6 @@
 import { TeamcraftUser } from '../model/user/teamcraft-user';
 import { AuthActions, AuthActionTypes } from './auth.actions';
+import { CommissionProfile } from '../model/user/commission-profile';
 
 /**
  * Interface for the 'Auth' data used in
@@ -16,6 +17,7 @@ export interface AuthState {
   user: TeamcraftUser | null;
   loading: boolean;
   linkingCharacter: boolean;
+  commissionProfile: CommissionProfile;
 }
 
 export const initialState: AuthState = {
@@ -23,7 +25,8 @@ export const initialState: AuthState = {
   user: null,
   loggedIn: false,
   loading: false,
-  linkingCharacter: false
+  linkingCharacter: false,
+  commissionProfile: null
 };
 
 export function authReducer(state = initialState, action: AuthActions): AuthState {
@@ -232,6 +235,12 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
 
     case AuthActionTypes.Logout:
       return { ...initialState, loading: true };
+
+    case AuthActionTypes.CommissionProfileLoaded:
+      return {
+        ...state,
+        commissionProfile: action.payload
+      };
 
     default:
       return state;

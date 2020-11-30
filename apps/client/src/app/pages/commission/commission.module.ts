@@ -21,6 +21,8 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
+import { NzRateModule } from 'ng-zorro-antd/rate';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -36,6 +38,7 @@ const routes: Routes = [
     CommonModule,
     CoreModule,
     FlexLayoutModule,
+    FormsModule,
 
     CommissionBoardModule,
 
@@ -53,7 +56,8 @@ const routes: Routes = [
     NzPopconfirmModule,
     NzToolTipModule,
     NzEmptyModule,
-    NzProgressModule
+    NzProgressModule,
+    NzRateModule
   ]
 })
 export class CommissionModule {

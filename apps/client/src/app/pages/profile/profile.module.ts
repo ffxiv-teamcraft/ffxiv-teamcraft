@@ -23,6 +23,7 @@ import { AutofillStatsPopupComponent } from './profile-editor/autofill-stats-pop
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 
 const routes: Routes = [
   {
@@ -55,7 +56,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SimulatorModule,
     ItemIconModule,
-    ScrollingModule
+    ScrollingModule,
+    CommissionBoardModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })

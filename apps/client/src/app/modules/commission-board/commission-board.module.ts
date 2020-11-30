@@ -28,10 +28,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { ApplyPopupComponent } from './apply-popup/apply-popup.component';
+import { CommissionRatingPopupComponent } from './commission-rating-popup/commission-rating-popup.component';
+import { NzRateModule } from 'ng-zorro-antd/rate';
+import { UserRatingDisplayComponent } from './user-rating-display/user-rating-display.component';
+import { UserRatingDetailsPopupComponent } from './user-rating-details-popup/user-rating-details-popup.component';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 @NgModule({
-  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent],
-  exports: [CommissionPanelComponent],
+  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent],
+  exports: [CommissionPanelComponent, UserRatingDisplayComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -61,7 +67,10 @@ import { ApplyPopupComponent } from './apply-popup/apply-popup.component';
     PipesModule,
     CoreModule,
     NzPopconfirmModule,
-    NzDropDownModule
+    NzDropDownModule,
+    NzRateModule,
+    NzDividerModule,
+    NzEmptyModule
   ],
   providers: [CommissionsFacade]
 })

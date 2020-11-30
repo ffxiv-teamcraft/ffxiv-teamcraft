@@ -19,12 +19,14 @@ export class ApplyPopupComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      price: [this.price, Validators.required]
+      price: [this.price, Validators.required],
+      contactInformations: [localStorage.getItem('commission:contact') || '', Validators.required]
     });
   }
 
   submit(): void {
     if (this.form.valid) {
+      localStorage.setItem('commission:contact', this.form.value.contactInformations);
       this.modalRef.close(this.form.value);
     }
   }

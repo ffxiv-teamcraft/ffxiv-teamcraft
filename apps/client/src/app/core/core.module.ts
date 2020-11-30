@@ -51,6 +51,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { AngularFireFunctionsModule } from '@angular/fire/functions';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
     ]),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
+    AngularFireFunctionsModule,
     PushNotificationsModule,
     MaintenanceModule,
     VersionLockModule,

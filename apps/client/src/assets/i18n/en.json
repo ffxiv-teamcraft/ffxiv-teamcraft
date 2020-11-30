@@ -2226,7 +2226,7 @@
       "Label": "Status",
       "OPENED": "Opened",
       "IN_PROGRESS": "In progress",
-      "ARCHIVED": "Archives"
+      "ARCHIVED": "Archived"
     },
     "CREATION": {
       "Name": "Name",
@@ -2251,6 +2251,7 @@
       "Details": "Details",
       "Price": "Price",
       "Tags": "Tags",
+      "No_tags": "No tags",
       "Server": "Server",
       "Content": "Content",
       "Progression": "Progression",
@@ -2266,10 +2267,46 @@
       "Contractor": "Contractor",
       "Open_list": "Open the list",
       "List": "List",
-      "Mark_as_completed": "Mark commission as completed and archive it"
+      "Mark_as_completed": "Mark commission as completed",
+      "Hire": "Hire this contractor",
+      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
+      "Ratings": "Ratings",
+      "Waiting_for_rating": "Waiting for rating",
+      "Rate_commission": "Add your rating"
     },
     "APPLY": {
       "Price": "Your price"
+    },
+    "NOTIFICATIONS": {
+      "Click_to_open": "Click to open the commission",
+      "CONTRACT_ENDED_CONTRACTOR": {
+        "Title": "Commission contract ended",
+        "Content": "You are no longer the contractor for commission {{name}}"
+      },
+      "CONTRACT_ENDED_CLIENT": {
+        "Title": "Commission contract ended",
+        "Content": "Contractor resigned from commission {{name}}"
+      },
+      "HIRED": {
+        "Title": "Commission contract started",
+        "Content": "You have been hired on commission {{name}}"
+      },
+      "CANDIDATE": {
+        "Title": "New candidate",
+        "Content": "New candidate for commission {{name}}"
+      }
+    },
+    "PROFILE": {
+      "Details": "Commission profile",
+      "View_details": "Open profile details",
+      "Ratings": "Ratings",
+      "Incidents": "Incidents",
+      "No_incidents": "No incidents",
+      "Fired": "Fired from a commission",
+      "Resigned": "Resigned from a commission",
+      "No_ratings": "No ratings yet",
+      "Fired_X_times": "Fired {{amount}} times",
+      "Resigned_X_times": "Resigned {{amount}} times"
     }
   }
 }

@@ -2,6 +2,7 @@ import { DataWithPermissions } from '../../../core/database/permissions/data-wit
 import { CommissionStatus } from './commission-status';
 import { CommissionTag } from './commission-tag';
 import firebase from 'firebase/app';
+import { CommissionRating } from './commission-rating';
 
 export class Commission extends DataWithPermissions {
 
@@ -16,7 +17,7 @@ export class Commission extends DataWithPermissions {
    * this is meant to make permissions easier to compute, as we can say that a list cannot be deleted
    * if it has a commission associated and not completed
    */
-  crafterId: string;
+  crafterId: string = null;
 
   includesMaterials = false;
 
@@ -27,11 +28,11 @@ export class Commission extends DataWithPermissions {
 
   status: CommissionStatus = CommissionStatus.OPENED;
 
-  candidates: { uid: string, offer: number, date: firebase.firestore.Timestamp }[] = [];
+  candidates: { uid: string, offer: number, contact: string, date: firebase.firestore.Timestamp }[] = [];
 
   tags: CommissionTag[] = [];
 
-  ratedBy: Record<string, boolean> = {};
+  ratings: Record<string, CommissionRating> = {};
 
   datacenter: string;
 

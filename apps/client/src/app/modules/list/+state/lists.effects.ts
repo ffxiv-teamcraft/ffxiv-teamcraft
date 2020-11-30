@@ -511,7 +511,7 @@ export class ListsEffects {
         done: item.done
       })),
       totalItems: list.finalItems.reduce((acc, item) => acc + item.amount, 0)
-    });
+    }).subscribe();
   }
 
   private markAsDoneInDoHLog(recipeId: number): void {

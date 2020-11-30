@@ -59,12 +59,42 @@ exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firesto
 });
 
 exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
-  const before = change.before.data();
-  const after = change.after.data();
+  const before = { $key: change.before.id, ...change.before.data() };
+  const after = { $key: change.after.id, ...change.after.data() };
+  // 2 is archived
+  if (after.status === before.status && before.status === 2) {
+    // If crafter posted their rating
+    if (!before.ratings[before.crafterId] && !!after.ratings[before.crafterId]) {
+      const rating = after.ratings[before.crafterId];
+      firestore
+        .collection('commission-profile')
+        .doc(before.authorId)
+        .update({
+          ratings: admin.firestore.FieldValue.arrayUnion({
+            ...rating,
+            commissionId: before.$key
+          })
+        });
+    }
+    // If client posted their rating
+    if (!before.ratings[before.authorId] && !!after.ratings[before.authorId]) {
+      const rating = after.ratings[before.authorId];
+      firestore
+        .collection('commission-profile')
+        .doc(before.crafterId)
+        .update({
+          ratings: admin.firestore.FieldValue.arrayUnion({
+            ...rating,
+            commissionId: before.$key
+          })
+        });
+    }
+  }
   if (before.crafterId !== after.crafterId) {
-    if (after.crafterId !== undefined) {
-      admin.messaging().sendToTopic(`/topics/users.${after.crafterId}.hired`, {
+    if (after.crafterId !== null) {
+      return admin.messaging().sendToTopic(`/topics/users.${after.crafterId}`, {
         data: {
+          type: 'hired',
           commission: JSON.stringify(after)
         },
         notification: {
@@ -73,20 +103,34 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
         }
       });
     } else {
-      admin.messaging().sendToTopic(`/topics/users.${before.crafterId}.fired`, {
-        data: {
-          commission: JSON.stringify(after)
-        },
-        notification: {
-          title: `Commission contract ended`,
-          body: `You are no longer the contractor for commission ${before.name}`
-        }
-      });
+      return Promise.all([
+        admin.messaging().sendToTopic(`/topics/users.${before.crafterId}`, {
+          data: {
+            type: 'contract_ended_contractor',
+            commission: JSON.stringify(after)
+          },
+          notification: {
+            title: `Commission contract ended`,
+            body: `You are no longer the contractor for commission ${before.name}`
+          }
+        }),
+        admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+          data: {
+            type: 'contract_ended_client',
+            commission: JSON.stringify(after)
+          },
+          notification: {
+            title: `Commission contract ended`,
+            body: `Contractor resigned from commission ${before.name}`
+          }
+        })
+      ]);
     }
   }
   if (before.candidates.length < after.candidates.length) {
-    admin.messaging().sendToTopic(`/topics/users.${before.authorId}.candidates`, {
+    return admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
       data: {
+        type: 'candidate',
         commission: JSON.stringify(after)
       },
       notification: {
@@ -99,6 +143,24 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
 
 exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {
   return admin.messaging().subscribeToTopic(data.token, `commissions.${data.datacenter}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
+});
+
+exports.subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().subscribeToTopic(data.token, `users.${context.auth.uid}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
+});
+
+exports.unsubscribeFromUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().unsubscribeFromTopic(data.token, `users.${context.auth.uid}`).then(res => {
     return {
       ...res,
       data: data

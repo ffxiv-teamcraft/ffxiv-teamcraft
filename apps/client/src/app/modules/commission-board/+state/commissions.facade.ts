@@ -16,6 +16,7 @@ import firebase from 'firebase/app';
 import { CommissionStatus } from '../model/commission-status';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
+import { CommissionRatingPopupComponent } from '../commission-rating-popup/commission-rating-popup.component';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
@@ -119,7 +120,8 @@ export class CommissionsFacade {
         commission.candidates.push({
           offer: res.price,
           uid: userId,
-          date: firebase.firestore.Timestamp.now()
+          date: firebase.firestore.Timestamp.now(),
+          contact: res.contactInformations
         });
         this.store.dispatch(updateCommission({ commission }));
       });
@@ -144,7 +146,7 @@ export class CommissionsFacade {
 
   fireContractor(commission: Commission): void {
     commission.status = CommissionStatus.OPENED;
-    delete commission.crafterId;
+    commission.crafterId = null;
     this.update(commission);
     this.listsFacade.pureUpdateList(commission.$key, {
       registry: {},
@@ -161,6 +163,22 @@ export class CommissionsFacade {
       everyone: PermissionLevel.READ,
       authorId: null
     });
+  }
+
+  rate(commission: Commission, authorId: string): void {
+    this.dialog.create({
+      nzContent: CommissionRatingPopupComponent,
+      nzComponentParams: {
+        commission,
+        authorId
+      },
+      nzFooter: null,
+      nzTitle: this.translate.instant('COMMISSIONS.DETAILS.Rate_commission')
+    }).afterClose
+      .subscribe((res) => {
+        commission.ratings[authorId] = res;
+        this.store.dispatch(updateCommission({ commission }));
+      });
   }
 
   delete(key: string, deleteList = false): void {

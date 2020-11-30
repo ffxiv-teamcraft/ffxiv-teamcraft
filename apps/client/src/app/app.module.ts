@@ -113,6 +113,7 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { MessagingService } from './core/messaging/messaging.service';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -190,6 +191,16 @@ const nzConfig: NzConfig = {
         };
       },
       deps: [CraftingReplayService],
+      multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (messagingService) => {
+        return () => {
+          messagingService.init();
+        };
+      },
+      deps: [MessagingService],
       multi: true
     }
   ],
