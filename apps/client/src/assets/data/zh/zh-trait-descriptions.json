@@ -951,13 +951,13 @@
     "zh": "转换到捕鱼人职业时自动发动海洋之相的效果"
   },
   "328": {
-    "zh": "转换到采矿工职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
+    "zh": "转换到采矿工职业或切换区域时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "329": {
-    "zh": "转换到园艺工职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
+    "zh": "转换到园艺工职业或切换区域时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "330": {
-    "zh": "转换到捕鱼人职业时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
+    "zh": "转换到捕鱼人职业或切换区域时自动发动隐行\n<UIForeground>F201F8</UIForeground><UIGlow>F201F9</UIGlow>发动条件：<UIGlow>01</UIGlow><UIForeground>01</UIForeground>允许发动隐行的区域"
   },
   "331": {
     "zh": "在十二神加护效果下获得个数的基本值提高1点"
@@ -1033,5 +1033,29 @@
   },
   "355": {
     "zh": "迸裂的威力提高到90"
+  },
+  "356": {
+    "zh": "可以使用制作练习"
+  },
+  "357": {
+    "zh": "可以使用制作练习"
+  },
+  "358": {
+    "zh": "可以使用制作练习"
+  },
+  "359": {
+    "zh": "可以使用制作练习"
+  },
+  "360": {
+    "zh": "可以使用制作练习"
+  },
+  "361": {
+    "zh": "可以使用制作练习"
+  },
+  "362": {
+    "zh": "可以使用制作练习"
+  },
+  "363": {
+    "zh": "可以使用制作练习"
   }
 }
