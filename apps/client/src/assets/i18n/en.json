@@ -2318,6 +2318,7 @@
       "Resigned_X_times": "Resigned {{amount}} times"
     },
     "FIRED": {
+      "Please_pick_reason": "Why are you firing this contractor?",
       "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
       "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
       "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
@@ -2325,6 +2326,7 @@
       "CANNOT_AFFORD": "I cannot afford this commission."
     },
     "RESIGNED": {
+      "Please_pick_reason": "Why are you resigning from this commission?",
       "NO_ACTIVE_SUB": "I no longer have active subscription.",
       "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
       "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",

@@ -273,6 +273,7 @@ export class SettingsService {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,
       sharing: true,
+      commissions: true,
       gathering: true,
       helpers: false,
       other: false

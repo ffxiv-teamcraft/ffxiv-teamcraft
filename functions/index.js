@@ -168,6 +168,18 @@ exports.unsubscribeFromUserTopic = functions.runWith(runtimeOpts).https.onCall((
   });
 });
 
+// Run everyday at 00:00
+functions.runWith(runtimeOpts).pubsub.schedule('0 0 * * *').onRun(() => {
+  const aMonthOldSeconds = Date.now() / 1000 - 30 * 86400;
+  return firestore
+    .collection('commissions')
+    .where('createdAt.seconds', '>=', aMonthOldSeconds)
+    .get()
+    .then(commissions => {
+      commissions.forEach(c => c.ref.delete());
+    });
+});
+
 validatedCache = {};
 
 exports.userIdValidator = functions.runWith(runtimeOpts).https.onRequest((request, response) => {
