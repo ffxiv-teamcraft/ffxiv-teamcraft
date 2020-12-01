@@ -11,7 +11,6 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { ListCrystalsPanelComponent } from './list-crystals-panel/list-crystals-panel.component';
 import { FormsModule } from '@angular/forms';
 import { AlarmsModule } from '../../core/alarms/alarms.module';
-
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { IconsModule } from '../../core/icons/icons.module';
@@ -38,6 +37,8 @@ import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { ListContributionsComponent } from './list-contributions/list-contributions.component';
 import { InventorySynthesisPopupComponent } from './inventory-synthesis-popup/inventory-synthesis-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { CommissionsModule } from '../commissions/commissions.module';
+import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 
 const routes: Routes = [
   {
@@ -83,7 +84,9 @@ const routes: Routes = [
     FlexLayoutModule,
 
     TranslateModule,
-    AntdSharedModule
+    AntdSharedModule,
+
+    CommissionBoardModule
   ],
   declarations: [
     ListDetailsComponent,

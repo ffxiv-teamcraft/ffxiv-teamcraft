@@ -108,15 +108,15 @@
                   nz-button nz-tooltip nzShape="circle" nzSize="small">
             <i nz-icon nzType="copy"></i>
           </button>
-          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" nz-tooltip>
-          <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
-                  [nzPopconfirmTitle]="'Confirmation' | translate"
-                  nz-button
-                  nz-popconfirm
-                  nzShape="circle" nzSize="small">
-            <i nz-icon nzType="check"></i>
-          </button>
-        </span>
+          <span [nzTooltipTitle]="'LIST.Mark_whole_panel_done' | translate" *ngIf="permissionLevel >= 20" nz-tooltip>
+            <button (click)="$event.stopPropagation()" (nzOnConfirm)="markPanelAsDone()"
+                    [nzPopconfirmTitle]="'Confirmation' | translate"
+                    nz-button
+                    nz-popconfirm
+                    nzShape="circle" nzSize="small">
+              <i nz-icon nzType="check"></i>
+            </button>
+          </span>
         </div>
       </div>
     </ng-template>

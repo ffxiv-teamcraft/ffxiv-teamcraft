@@ -30,6 +30,19 @@ html {
   z-index: 1000;
 }
 
+.ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner,
+.ant-radio-checked::after, .ant-radio-checked .ant-radio-inner {
+  border-color: var(--primary-color) !important;
+}
+
+.ant-radio-inner::after {
+  background-color: var(--primary-color) !important;
+}
+
+span.ant-radio + * {
+  white-space: normal;
+}
+
 .ant-layout, body, .ant-input, .ant-btn:not(.ant-btn-primary),
 .ant-input-number, .ant-select-selection,
 .ant-select-selection__clear, .ant-select-dropdown,
@@ -66,6 +79,10 @@ html {
 
 .ant-divider-horizontal.ant-divider-with-text {
   border-top-color: @border-color-base;
+}
+
+.ant-divider {
+  border-top: 1px solid @border-color-base;
 }
 
 .ant-progress-success-bg {

@@ -4,6 +4,7 @@ import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
 import { map, startWith } from 'rxjs/operators';
+import { CommissionTag } from '../commission-board/model/commission-tag';
 
 @Injectable({
   providedIn: 'root'
@@ -132,6 +133,30 @@ export class SettingsService {
     this.setSetting('tutorial:asked', asked.toString());
   }
 
+  public set commissionTags(tags: CommissionTag[]) {
+    this.setSetting('commission:tags', JSON.stringify(tags));
+  }
+
+  public get commissionTags(): CommissionTag[] {
+    return JSON.parse(this.getSetting('commissions:tags', '[]'));
+  }
+
+  public get onlyCraftingCommissions(): boolean {
+    return this.getSetting('commissions:onlyCrafting', 'false') === 'true';
+  }
+
+  public set onlyCraftingCommissions(onlyCrafting: boolean) {
+    this.setSetting('commissions:onlyCrafting', onlyCrafting.toString());
+  }
+
+  public get minCommissionPrice(): number {
+    return +this.getSetting('commissions:minPrice', '0');
+  }
+
+  public set minCommissionPrice(price: number) {
+    this.setSetting('commissions:minPrice', price.toString());
+  }
+
   public get autoDownloadUpdate(): boolean {
     return this.getSetting('auto-download-update', 'true') === 'true';
   }
@@ -248,6 +273,7 @@ export class SettingsService {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
       general: true,
       sharing: true,
+      commissions: true,
       gathering: true,
       helpers: false,
       other: false

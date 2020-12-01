@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <p>{{'COMMISSIONS.RESIGNED.Please_pick_reason' | translate}}</p>
+  <nz-radio-group [(ngModel)]="pickedReason">
+    <label nz-radio *ngFor="let reason of resignedReasons" [nzValue]="reason.value">{{reason.label | translate}}</label>
+  </nz-radio-group>
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+    <div>
+      <button [disabled]="!pickedReason" (click)="submit()" nzType="primary" nz-button>{{'Confirm' | translate}}
+      </button>
+    </div>
+    <div>
+      <button (click)="close()" nz-button>{{'Cancel' | translate}}
+      </button>
+    </div>
+  </div>
+</div>

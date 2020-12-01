@@ -49,6 +49,7 @@ import { SimulationSharePopupComponent } from './components/simulation-share-pop
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { SimulationResultComponent } from './components/simulation-result/simulation-result.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
   {
@@ -135,7 +136,8 @@ const routes: Routes = [
     CoreModule,
     SettingsModule,
     DirtyModule,
-    DragDropModule
+    DragDropModule,
+    NzPaginationModule
   ],
   declarations: [
     CustomSimulatorPageComponent,

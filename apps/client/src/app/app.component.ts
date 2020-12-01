@@ -57,7 +57,6 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
-import { CraftingReplayFacade } from './modules/crafting-replay/+state/crafting-replay.facade';
 
 declare const gtag: Function;
 
@@ -167,7 +166,7 @@ export class AppComponent implements OnInit {
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
-              private listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
+              public listsFacade: ListsFacade, private workshopsFacade: WorkshopsFacade, public settings: SettingsService,
               public teamsFacade: TeamsFacade, private notificationsFacade: NotificationsFacade,
               private iconService: NzIconService, private rotationsFacade: RotationsFacade, public platformService: PlatformService,
               private settingsPopupService: SettingsPopupService, private http: HttpClient, private sanitizer: DomSanitizer,
@@ -178,9 +177,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private craftingReplayFacade: CraftingReplayFacade) {
-
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
 
     fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
@@ -532,7 +529,17 @@ export class AppComponent implements OnInit {
       // Loading is !loaded
       this.loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
       this.loggedIn$ = this.authFacade.loggedIn$;
-      this.character$ = this.authFacade.mainCharacter$.pipe(shareReplay(1));
+
+      this.character$ = this.authFacade.mainCharacter$.pipe(
+        map(character => {
+          return {
+            ...character,
+            Datacenter: this.lazyData.getDataCenter(character.Server)
+          };
+        }),
+        shareReplay(1)
+      );
+
       this.notificationsFacade.loadAll();
       this.customLinksFacade.loadMyCustomLinks();
 

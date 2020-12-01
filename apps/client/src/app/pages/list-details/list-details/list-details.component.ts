@@ -43,6 +43,7 @@ import { InventorySynthesisPopupComponent } from '../inventory-synthesis-popup/i
 import { PlatformService } from '../../../core/tools/platform.service';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
+import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 
 @Component({
   selector: 'app-list-details',
@@ -109,7 +110,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private discordWebhookService: DiscordWebhookService, private i18nTools: I18nToolsService,
               private l12n: LocalizedDataService, private linkTools: LinkToolsService, protected seoService: SeoService,
               private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
-              public settings: SettingsService, public platform: PlatformService) {
+              public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade) {
     super(seoService);
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -494,6 +495,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     ).subscribe(res => {
       this.listsFacade.updateList(res);
     });
+  }
+
+  createCommission(list: List): void {
+    this.commissionsFacade.create(list);
   }
 
   trackByDisplayRow(index: number, row: LayoutRowDisplay): string {

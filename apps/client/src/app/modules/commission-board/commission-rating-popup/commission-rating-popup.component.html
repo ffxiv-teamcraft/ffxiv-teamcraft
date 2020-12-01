@@ -1,0 +1,26 @@
+<form nz-form nzLayout="vertical" [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label nzFor="rating" nzRequired>{{'COMMISSIONS.DETAILS.Rating' | translate}}</nz-form-label>
+    <nz-form-control>
+      <nz-rate formControlName="rating" id="rating"></nz-rate>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="comment">{{'COMMISSIONS.CREATION.Comment' | translate}}</nz-form-label>
+    <nz-form-control nzValidateStatus="validating" [nzValidatingTip]="commentTip">
+      <textarea nz-input formControlName="comment" rows="4" id="comment"
+                #area
+                [placeholder]="'COMMISSIONS.CREATION.Comment_placeholder' | translate">
+      </textarea>
+      <ng-template #commentTip>
+        <span [style.color]="area.value.length > 240 ? '#f5222d':'inherit'">{{area.value.length}}/240</span>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+</form>
+<div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+  <div>
+    <button [disabled]="!form.valid" (click)="submit()" nzType="primary" nz-button>{{'Confirm' | translate}}
+    </button>
+  </div>
+</div>

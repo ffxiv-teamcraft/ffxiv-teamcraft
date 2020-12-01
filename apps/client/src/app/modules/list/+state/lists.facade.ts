@@ -231,8 +231,7 @@ export class ListsFacade {
     }).afterClose.pipe(
       filter(res => res && res.name !== undefined),
       map(res => {
-        const list = new List(this.settings);
-        list.name = res.name;
+        const list = this.newListWithName(res);
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
         return list;
@@ -242,9 +241,14 @@ export class ListsFacade {
 
   newEphemeralList(itemName: string): List {
     this.loadMyLists();
-    const list = new List(this.settings);
+    const list = this.newListWithName(itemName);
     list.ephemeral = true;
-    list.name = itemName;
+    return list;
+  }
+
+  newListWithName(name: string): List {
+    const list = new List(this.settings);
+    list.name = name;
     return list;
   }
 
@@ -262,6 +266,17 @@ export class ListsFacade {
       'event_label': 'creation',
       'non_interaction': true
     });
+  }
+
+  addListAndWait(list: List): Observable<List> {
+    this.addList(list);
+    return this.allListDetails$.pipe(
+      map(lists => {
+        return lists.find(l => l.createdAt.seconds === list.createdAt.seconds && l.items.length === list.items.length && l.name === list.name);
+      }),
+      filter(l => !!l),
+      first()
+    );
   }
 
   deleteList(key: string, offline: boolean): void {
