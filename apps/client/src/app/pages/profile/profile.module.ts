@@ -24,6 +24,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 
 const routes: Routes = [
   {
@@ -57,7 +58,8 @@ const routes: Routes = [
     SimulatorModule,
     ItemIconModule,
     ScrollingModule,
-    CommissionBoardModule
+    CommissionBoardModule,
+    NzSkeletonModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })
