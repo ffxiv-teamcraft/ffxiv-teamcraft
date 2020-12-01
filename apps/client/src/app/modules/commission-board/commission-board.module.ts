@@ -34,9 +34,13 @@ import { UserRatingDisplayComponent } from './user-rating-display/user-rating-di
 import { UserRatingDetailsPopupComponent } from './user-rating-details-popup/user-rating-details-popup.component';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { FiredFeedbackPopupComponent } from './fired-feedback-popup/fired-feedback-popup.component';
+import { ResignedFeedbackPopupComponent } from './resigned-feedback-popup/resigned-feedback-popup.component';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 
 @NgModule({
-  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent],
+  declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent, FiredFeedbackPopupComponent, ResignedFeedbackPopupComponent],
   exports: [CommissionPanelComponent, UserRatingDisplayComponent],
   imports: [
     CommonModule,
@@ -70,7 +74,9 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
     NzDropDownModule,
     NzRateModule,
     NzDividerModule,
-    NzEmptyModule
+    NzEmptyModule,
+    NzRadioModule,
+    NzInputNumberModule
   ],
   providers: [CommissionsFacade]
 })

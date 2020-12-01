@@ -26,10 +26,6 @@ export class CommissionRatingPopupComponent implements OnInit {
     }
   }
 
-  close(): void {
-    this.modalRef.close();
-  }
-
   ngOnInit(): void {
     this.form = this.fb.group({
       rating: [5, Validators.required],

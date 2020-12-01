@@ -2,7 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { List } from '../../list/model/list';
 import { Commission } from '../model/commission';
 
-export const loadUserCommissions = createAction('[Commissions] Load User Commissions');
+export const loadUserCommissions = createAction('[Commissions] Load User Commissions', props<{ archived: boolean }>());
 export const loadCommission = createAction('[Commissions] Load Commission', props<{ key: string }>());
 
 export const commissionsLoaded = createAction(

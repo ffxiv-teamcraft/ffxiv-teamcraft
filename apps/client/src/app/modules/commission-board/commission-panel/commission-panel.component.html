@@ -11,7 +11,7 @@
         </div>
         <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
-          <div [ngSwitch]="commission.status">
+          <div [ngSwitch]="commission.status" *ngIf="showStatus">
             <nz-tag *ngSwitchCase="CommissionStatus.OPENED" [style.border-color]="'#108ee9'">{{'COMMISSIONS.STATUS.Label' | translate}}
               : {{'COMMISSIONS.STATUS.OPENED' | translate}}</nz-tag>
             <nz-tag *ngSwitchCase="CommissionStatus.IN_PROGRESS" [style.border-color]="'#87d068'">{{'COMMISSIONS.STATUS.Label' | translate}}
@@ -20,7 +20,7 @@
               : {{'COMMISSIONS.STATUS.ARCHIVED' | translate}}</nz-tag>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="8" nzSm="24">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="7" nzSm="24">
           <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
           <nz-tag style.border-color="#108ee9" *ngIf="commission.includesMaterials" nz-tooltip
                   [nzTooltipTitle]="'COMMISSIONS.CREATION.Includes_materials_label' | translate"
@@ -30,12 +30,18 @@
         <div nz-col nzMd="2" nzSm="6">
           {{'COMMISSIONS.X_items' | translate:{ amount: commission.totalItems } }}
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="3" nzSm="6">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4" nzSm="6">
           <app-item-icon [disableClick]="true" [itemId]="1" width="24"></app-item-icon>
           <div *ngIf="commission.price > 0">{{commission.price | number:'1.0':translate.currentLang}}</div>
           <div *ngIf="commission.price <= 0">{{'COMMISSIONS.Price_tbd' | translate}}</div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="2" nzSm="12">
+          <button nz-button nzShape="circle"
+                  (click)="$event.stopPropagation()"
+                  nz-tooltip [nzTooltipTitle]="'COMMISSIONS.DETAILS.Copy_share_link' | translate"
+                  [clipboard]="'/commission/' + commission.$key | tcLink" [clipboardSuccessMessage]="'COMMISSIONS.DETAILS.Share_link_copied' | translate">
+            <i nz-icon nzType="share-alt"></i>
+          </button>
           <a (click)="$event.stopPropagation()" [nzShape]="'circle'"
              [nzTooltipTitle]="'COMMISSIONS.Open_commission_details' | translate"
              [nzType]="'primary'"
@@ -44,11 +50,16 @@
              routerLink="/commission/{{commission.$key}}">
             <i nz-icon nzType="folder-open"></i>
           </a>
-          <button nz-button nzShape="circle" nzSize="small"
-                  *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
+          <button nz-button nzShape="circle" *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
                   nz-tooltip [nzTooltipTitle]="'COMMISSIONS.DETAILS.Edit' | translate"
-                  (click)="editCommission()">
+                  (click)="$event.stopPropagation();editCommission()">
             <i nz-icon nzType="edit"></i>
+          </button>
+          <button nz-button nzShape="circle" *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"
+                  nz-tooltip [nzTooltipTitle]="'COMMISSIONS.DETAILS.Bump' | translate"
+                  [disabled]="(now / 1000 - commission.bump?.seconds) < 86400"
+                  (click)="$event.stopPropagation();bumpCommission()">
+            <i nz-icon nzType="vertical-align-top" nzTheme="outline"></i>
           </button>
           <button (click)="$event.stopPropagation();"
                   *ngIf="commission.status === CommissionStatus.OPENED && (userId$ | async) === commission.authorId"

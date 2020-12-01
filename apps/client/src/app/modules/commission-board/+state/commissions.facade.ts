@@ -17,6 +17,9 @@ import { CommissionStatus } from '../model/commission-status';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { CommissionRatingPopupComponent } from '../commission-rating-popup/commission-rating-popup.component';
+import { FiredFeedbackPopupComponent } from '../fired-feedback-popup/fired-feedback-popup.component';
+import { ResignedFeedbackPopupComponent } from '../resigned-feedback-popup/resigned-feedback-popup.component';
+import { CommissionProfileService } from '../../../core/database/commission-profile.service';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
@@ -31,7 +34,7 @@ export class CommissionsFacade {
     switchMap(userId => {
       return this.allCommissions$.pipe(
         map(commissions => {
-          return commissions.filter(c => c.authorId === userId);
+          return commissions.filter(c => c.authorId === userId && c.status !== CommissionStatus.ARCHIVED);
         })
       );
     })
@@ -42,7 +45,29 @@ export class CommissionsFacade {
     switchMap(userId => {
       return this.allCommissions$.pipe(
         map(commissions => {
-          return commissions.filter(c => c.crafterId === userId);
+          return commissions.filter(c => c.crafterId === userId && c.status !== CommissionStatus.ARCHIVED);
+        })
+      );
+    })
+  );
+
+  userArchivedCommissionsAsClient$ = this.authFacade.userId$.pipe(
+    distinctUntilChanged(),
+    switchMap(userId => {
+      return this.allCommissions$.pipe(
+        map(commissions => {
+          return commissions.filter(c => c.authorId === userId && c.status === CommissionStatus.ARCHIVED);
+        })
+      );
+    })
+  );
+
+  userArchivedCommissionsAsCrafter$ = this.authFacade.userId$.pipe(
+    distinctUntilChanged(),
+    switchMap(userId => {
+      return this.allCommissions$.pipe(
+        map(commissions => {
+          return commissions.filter(c => c.crafterId === userId && c.status === CommissionStatus.ARCHIVED);
         })
       );
     })
@@ -54,7 +79,7 @@ export class CommissionsFacade {
 
   constructor(private store: Store<fromCommissions.CommissionsPartialState>, private dialog: NzModalService,
               private translate: TranslateService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade) {
+              private listsFacade: ListsFacade, private commissionProfileService: CommissionProfileService) {
   }
 
   create(list?: List): void {
@@ -74,7 +99,11 @@ export class CommissionsFacade {
   }
 
   loadAll(): void {
-    this.store.dispatch(loadUserCommissions());
+    this.store.dispatch(loadUserCommissions({ archived: false }));
+  }
+
+  loadArchived(): void {
+    this.store.dispatch(loadUserCommissions({ archived: true }));
   }
 
   load(key: string): void {
@@ -145,6 +174,38 @@ export class CommissionsFacade {
   }
 
   fireContractor(commission: Commission): void {
+    this.dialog.create({
+      nzContent: FiredFeedbackPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(reason => !!reason),
+        switchMap(reason => {
+          return this.commissionProfileService.addFiredFeedback(commission.crafterId, commission.$key, reason);
+        })
+      )
+      .subscribe(() => {
+        this.removeCrafterFromCommission(commission);
+      });
+  }
+
+  resignContractor(commission: Commission): void {
+    this.dialog.create({
+      nzContent: ResignedFeedbackPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        filter(reason => !!reason),
+        switchMap(reason => {
+          return this.commissionProfileService.addResignedFeedback(commission.crafterId, commission.$key, reason);
+        })
+      )
+      .subscribe(() => {
+        this.removeCrafterFromCommission(commission);
+      });
+  }
+
+  private removeCrafterFromCommission(commission: Commission): void {
     commission.status = CommissionStatus.OPENED;
     commission.crafterId = null;
     this.update(commission);
@@ -179,6 +240,11 @@ export class CommissionsFacade {
         commission.ratings[authorId] = res;
         this.store.dispatch(updateCommission({ commission }));
       });
+  }
+
+  bump(commission: Commission): void {
+    commission.bump = firebase.firestore.Timestamp.now();
+    this.store.dispatch(updateCommission({ commission }));
   }
 
   delete(key: string, deleteList = false): void {

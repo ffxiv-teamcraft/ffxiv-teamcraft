@@ -17,6 +17,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 const routes: Routes = [
   {
@@ -53,7 +55,9 @@ const routes: Routes = [
     NzSelectModule,
     NzInputModule,
     NzDividerModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    NzInputNumberModule,
+    NzCheckboxModule
   ]
 })
 export class CommissionsModule {

@@ -1,5 +1,6 @@
 <div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="center center" class="main-container">
   <h2>{{'COMMISSIONS.BOARD.Title' | translate}}</h2>
+  <i> <i nz-icon nzType="info-circle"></i> {{'COMMISSIONS.BOARD.Tracking_tip' | translate}}</i>
   <app-page-loader [loading]="loading">
     <div *ngIf="display$ | async as display" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <nz-input-group [nzAddOnBefore]="dcSelector" class="filter-input">
@@ -14,8 +15,18 @@
           <nz-option *ngFor="let tag of commissionTags" [nzValue]="tag.value" [nzLabel]="tag.label | translate"></nz-option>
         </nz-select>
       </nz-input-group>
+      <div class="filters" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <label nz-checkbox [ngModel]="onlyCrafting$ | async"
+               (ngModelChange)="onlyCrafting$.next($event)">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</label>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+          <div>{{'COMMISSIONS.BOARD.Min_price' | translate}}:</div>
+          <nz-input-number [ngModel]="minPrice$ | async" (ngModelChange)="minPrice$.next($event)" type="number" id="price" nzMin="0"
+                           nzMax="999999999"></nz-input-number>
+        </div>
+      </div>
       <div class="results" fxLayout="column" fxLayoutGap="5px">
-        <app-commission-panel *ngFor="let commission of display.commissions; trackBy: trackByCommission" [commission]="commission"></app-commission-panel>
+        <app-commission-panel *ngFor="let commission of display.commissions; trackBy: trackByCommission" [showStatus]="false"
+                              [commission]="commission"></app-commission-panel>
         <app-fullpage-message *ngIf="display.commissions.length === 0"
                               height="300px">{{'COMMISSIONS.BOARD.No_matching_commissions' | translate}}</app-fullpage-message>
       </div>

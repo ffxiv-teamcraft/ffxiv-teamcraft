@@ -8,6 +8,8 @@ export class Commission extends DataWithPermissions {
 
   createdAt: firebase.firestore.Timestamp;
 
+  bump: firebase.firestore.Timestamp;
+
   name: string;
 
   contactInformations: string;

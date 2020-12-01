@@ -10,6 +10,7 @@ import { debounceTime, map, switchMap, tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { CommissionTag } from '../../../modules/commission-board/model/commission-tag';
 import { Commission } from '../../../modules/commission-board/model/commission';
+import { SettingsService } from '../../../modules/settings/settings.service';
 
 @Component({
   selector: 'app-commission-board',
@@ -38,27 +39,40 @@ export class CommissionBoardComponent {
 
   public loading = true;
 
-  public tags$ = new BehaviorSubject<CommissionTag[]>([]);
+  public tags$ = new BehaviorSubject<CommissionTag[]>(this.settings.commissionTags);
+
+  public onlyCrafting$ = new BehaviorSubject<boolean>(this.settings.onlyCraftingCommissions);
+
+  public minPrice$ = new BehaviorSubject<number>(this.settings.minCommissionPrice);
 
   public display$: Observable<CommissionBoardDisplay> = combineLatest([
     this.activatedRoute.paramMap,
-    this.tags$.pipe(debounceTime(1000))
+    this.tags$.pipe(debounceTime(1000)),
+    this.onlyCrafting$,
+    this.minPrice$.pipe(debounceTime(500))
   ]).pipe(
-    map(([params, tags]) => {
+    map(([params, tags, onlyCrafting, minPrice]) => {
       this.loading = true;
       const dc = params.get('dc');
+      this.settings.commissionTags = tags;
+      this.settings.onlyCraftingCommissions = onlyCrafting;
+      this.settings.minCommissionPrice = minPrice;
       return {
         datacenter: dc,
         subscribed: localStorage.getItem(`c:fcm:${dc}`) === 'true',
-        tags: tags
+        tags: tags,
+        onlyCrafting,
+        minPrice
       };
     }),
     switchMap(data => {
-      return this.commissionsService.getByDatacenter(data.datacenter, data.tags).pipe(
+      return this.commissionsService.getByDatacenter(data.datacenter, data.tags, data.onlyCrafting, data.minPrice).pipe(
         map(commissions => {
           return {
             ...data,
-            commissions: commissions
+            commissions: commissions.sort((a, b) => {
+              return b.bump?.seconds - a.bump?.seconds;
+            })
           };
         }),
         tap(() => {
@@ -71,15 +85,7 @@ export class CommissionBoardComponent {
   constructor(private commissionsService: CommissionService, private notificationsService: NzNotificationService,
               private messageService: NzMessageService, private translate: TranslateService,
               private activatedRoute: ActivatedRoute, private router: Router,
-              private lazyData: LazyDataService) {
-  }
-
-  setNotifications(datacenter: string, enabled: boolean): void {
-    this.commissionsService.enableNotifications(datacenter).subscribe((res) => {
-      const message = res ? this.translate.instant('COMMISSIONS.Notifications_enabled') : this.translate.instant('COMMISSIONS.Notifications_enable_error');
-      this.messageService.success(message);
-      localStorage.setItem(`c:fcm:${datacenter}`, enabled.toString());
-    });
+              private lazyData: LazyDataService, private settings: SettingsService) {
   }
 
   changeDatacenter(dc: string): void {

@@ -4,6 +4,7 @@ import { Theme } from './theme';
 import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
 import { map, startWith } from 'rxjs/operators';
+import { CommissionTag } from '../commission-board/model/commission-tag';
 
 @Injectable({
   providedIn: 'root'
@@ -130,6 +131,30 @@ export class SettingsService {
 
   public set tutorialQuestionAsked(asked: boolean) {
     this.setSetting('tutorial:asked', asked.toString());
+  }
+
+  public set commissionTags(tags: CommissionTag[]) {
+    this.setSetting('commission:tags', JSON.stringify(tags));
+  }
+
+  public get commissionTags(): CommissionTag[] {
+    return JSON.parse(this.getSetting('commissions:tags', '[]'));
+  }
+
+  public get onlyCraftingCommissions(): boolean {
+    return this.getSetting('commissions:onlyCrafting', 'false') === 'true';
+  }
+
+  public set onlyCraftingCommissions(onlyCrafting: boolean) {
+    this.setSetting('commissions:onlyCrafting', onlyCrafting.toString());
+  }
+
+  public get minCommissionPrice(): number {
+    return +this.getSetting('commissions:minPrice', '0');
+  }
+
+  public set minCommissionPrice(price: number) {
+    this.setSetting('commissions:minPrice', price.toString());
   }
 
   public get autoDownloadUpdate(): boolean {

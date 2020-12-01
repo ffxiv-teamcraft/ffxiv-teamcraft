@@ -54,10 +54,13 @@
       </div>
     </ng-template>
     <ng-template #description>
-      <ng-container *ngIf="display.commission.authorId | characterName | async as authorName">
-        {{'COMMISSIONS.DETAILS.Created_by' | translate: { name: authorName } }}, {{
-        display.commission.createdAt.seconds * 1000 | date:'medium':null:translate.currentLang}}
-      </ng-container>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="10px">
+        <div *ngIf="display.commission.authorId | characterName | async as authorName">
+          {{'COMMISSIONS.DETAILS.Created_by' | translate: { name: authorName } }}, {{
+          display.commission.createdAt.seconds * 1000 | date:'medium':null:translate.currentLang}}
+        </div>
+        <app-user-rating-display [userId]="display.commission.authorId"></app-user-rating-display>
+      </div>
     </ng-template>
     <ng-template #avatarTemplate>
       <app-user-avatar [userId]="display.commission.authorId"></app-user-avatar>

@@ -22,7 +22,9 @@ export class CommissionPanelComponent {
   commission: Commission;
 
   @Input()
-  showStatus = false;
+  showStatus = true;
+
+  now = Date.now()
 
   public userId$: Observable<string> = this.authFacade.userId$;
 
@@ -32,6 +34,10 @@ export class CommissionPanelComponent {
 
   openCommission(): void {
     this.router.navigate(['/commissions/', this.commission.$key]);
+  }
+
+  bumpCommission():void{
+    this.commissionsFacade.bump(this.commission);
   }
 
   deleteCommission(withLists: boolean): void {

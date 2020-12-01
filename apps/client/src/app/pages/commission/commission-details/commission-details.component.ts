@@ -66,12 +66,10 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   fireContractor(commission: Commission): void {
     this.commissionsFacade.fireContractor(commission);
-    // TODO feedback popup
   }
 
   resignContractor(commission: Commission): void {
-    this.commissionsFacade.fireContractor(commission);
-    // TODO feedback popup
+    this.commissionsFacade.resignContractor(commission);
   }
 
   markAsCompleted(commission: Commission, userId: string): void {

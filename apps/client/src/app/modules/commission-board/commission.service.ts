@@ -71,18 +71,31 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
   public getByCrafterId(userId: string, archived = false): Observable<Commission[]> {
     return this.where(ref => {
       const base = ref.where('crafterId', '==', userId);
-      return base.where('status', '==', archived ? CommissionStatus.ARCHIVED: CommissionStatus.IN_PROGRESS);
+      return base.where('status', '==', archived ? CommissionStatus.ARCHIVED : CommissionStatus.IN_PROGRESS);
     });
   }
 
-  public getByDatacenter(datacenter: string, tags: CommissionTag[]): Observable<Commission[]> {
+  public getByClientId(userId: string, archived = false): Observable<Commission[]> {
+    return this.where(ref => {
+      const base = ref.where('authorId', '==', userId);
+      return base.where('status', '==', archived ? CommissionStatus.ARCHIVED : CommissionStatus.IN_PROGRESS);
+    });
+  }
+
+  public getByDatacenter(datacenter: string, tags: CommissionTag[], onlyCrafting: boolean, minPrice: number): Observable<Commission[]> {
     return this.where(ref => {
       let query = ref.where('datacenter', '==', datacenter);
       if (tags.length > 0) {
         query = query.where('tags', 'array-contains-any', tags);
       }
       return query.where('status', '==', CommissionStatus.OPENED);
-    });
+    }).pipe(
+      map(commissions => {
+        return commissions.filter(c => {
+          return c.price >= minPrice && (!onlyCrafting || c.includesMaterials);
+        });
+      })
+    );
   }
 
   protected getBaseUri(params?: any): string {

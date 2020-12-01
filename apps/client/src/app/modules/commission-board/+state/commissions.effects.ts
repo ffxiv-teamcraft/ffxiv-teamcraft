@@ -5,16 +5,16 @@ import { CommissionService } from '../commission.service';
 import { ListsFacade } from '../../list/+state/lists.facade';
 import * as CommissionsActions from './commissions.actions';
 import { commissionLoaded, commissionsLoaded } from './commissions.actions';
-import { distinctUntilChanged, filter, map, mergeMap, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { Commission } from '../model/commission';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { combineLatest, of } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { CommissionEditionPopupComponent } from '../commission-edition-popup/commission-edition-popup.component';
 import { TranslateService } from '@ngx-translate/core';
 import firebase from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class CommissionsEffects {
@@ -22,13 +22,17 @@ export class CommissionsEffects {
   loadUserCommissions$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(CommissionsActions.loadUserCommissions),
-      switchMapTo(this.authFacade.userId$),
-      distinctUntilChanged(),
-      switchMap(userId => {
-        return combineLatest([this.commissionService.getByCrafterId(userId), this.commissionService.getByForeignKey(TeamcraftUser, userId)]).pipe(
+      switchMap(({ archived }) => this.authFacade.userId$.pipe(
+        distinctUntilChanged(),
+        map(userId => ([userId, archived]))
+      )),
+      mergeMap(([userId, archived]: [string, boolean]) => {
+        return combineLatest([
+          this.commissionService.getByCrafterId(userId, archived),
+          this.commissionService.getByClientId(userId, archived)
+        ]).pipe(
           map(([crafter, client]) => [...crafter, ...client]),
           map(commissions => {
-            console.log(commissions);
             return commissionsLoaded({ commissions, userId });
           })
         );
@@ -98,6 +102,7 @@ export class CommissionsEffects {
         commission.server = character.Server;
         commission.datacenter = this.lazyData.getDataCenter(character.Server);
         commission.createdAt = firebase.firestore.Timestamp.now();
+        commission.bump = firebase.firestore.Timestamp.now();
         Object.assign(commission, partialCommission);
         if (list) {
           commission.$key = list.$key;
@@ -114,7 +119,11 @@ export class CommissionsEffects {
         return of(commission);
       }),
       switchMap(commission => {
-        return this.commissionService.set(commission.$key, commission);
+        return this.commissionService.set(commission.$key, commission).pipe(
+          tap(() => {
+            this.router.navigate(['commission', commission.$key]);
+          })
+        );
       })
     );
   }, { dispatch: false });
@@ -122,6 +131,7 @@ export class CommissionsEffects {
   constructor(private actions$: Actions, private authFacade: AuthFacade,
               private commissionService: CommissionService, private listsFacade: ListsFacade,
               private lazyData: LazyDataService, private afs: AngularFirestore,
-              private modalService: NzModalService, private translate: TranslateService) {
+              private modalService: NzModalService, private translate: TranslateService,
+              private router: Router) {
   }
 }
