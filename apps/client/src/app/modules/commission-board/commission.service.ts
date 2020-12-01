@@ -78,7 +78,10 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
   public getByClientId(userId: string, archived = false): Observable<Commission[]> {
     return this.where(ref => {
       const base = ref.where('authorId', '==', userId);
-      return base.where('status', '==', archived ? CommissionStatus.ARCHIVED : CommissionStatus.IN_PROGRESS);
+      if (!archived) {
+        return base;
+      }
+      return base.where('status', '==', CommissionStatus.ARCHIVED);
     });
   }
 
