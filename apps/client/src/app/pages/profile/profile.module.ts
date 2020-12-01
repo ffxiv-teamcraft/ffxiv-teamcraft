@@ -58,8 +58,8 @@ const routes: Routes = [
     SimulatorModule,
     ItemIconModule,
     ScrollingModule,
-    NzSkeletonModule,
-    CommissionBoardModule
+    CommissionBoardModule,
+    NzSkeletonModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })
