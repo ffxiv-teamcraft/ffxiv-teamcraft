@@ -25,6 +25,7 @@ import { CustomAlarmPopupModule } from '../../modules/custom-alarm-popup/custom-
 import { ListModule } from '../../modules/list/list.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
 
 const routes: Routes = [
   {
@@ -62,7 +63,8 @@ const routes: Routes = [
     NgDragDropModule,
 
     ListModule,
-    NzAvatarModule
+    NzAvatarModule,
+    NzSliderModule
   ],
   declarations: [AlarmsPageComponent, AlarmsOptionsPopupComponent]
 })

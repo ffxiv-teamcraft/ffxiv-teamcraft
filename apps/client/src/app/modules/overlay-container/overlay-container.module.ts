@@ -6,6 +6,7 @@ import { CoreModule } from '../../core/core.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
 
 @NgModule({
   declarations: [OverlayContainerComponent],
@@ -16,7 +17,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     FormsModule,
     FlexLayoutModule,
     TranslateModule,
-    CoreModule
+    CoreModule,
+    NzSliderModule
   ]
 })
 export class OverlayContainerModule {

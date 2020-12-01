@@ -70,6 +70,7 @@ import { FishDataService } from './service/fish-data.service';
 import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
+import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 
 const routes: Routes = [
   {
@@ -307,7 +308,8 @@ const routes: Routes = [
     MarketboardModule,
     AntdSharedModule,
     UserAvatarModule,
-    QuickSearchModule
+    QuickSearchModule,
+    NzStatisticModule
   ],
   providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)]
 })

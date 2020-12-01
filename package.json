@@ -255,6 +255,9 @@
     "xhr2": "^0.1.4",
     "zone.js": "~0.10.2"
   },
+  "resolutions": {
+    "webpack": "4.44.2"
+  },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"

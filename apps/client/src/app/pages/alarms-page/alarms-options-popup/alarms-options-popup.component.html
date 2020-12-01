@@ -9,7 +9,7 @@
 
 <div *ngIf="enableCustomSound; else soundSelect" class="custom-alarm">
   <div class="sound-preview">{{settings.alarmSound}}
-    <button (click)="previewSound()" mat-icon-button>
+    <button (click)="previewSound()" nz-button>
       <i nz-icon nzType="play-o"></i>
     </button>
   </div>

@@ -16,6 +16,7 @@ import { LayoutRowDisplayEditorComponent } from './layout-row-display-editor/lay
 import { LayoutOrderPopupComponent } from './layout-order-popup/layout-order-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     NgSerializerModule,
 
     TranslateModule,
-    AntdSharedModule
+    AntdSharedModule,
+    NzRadioModule
   ],
   declarations: [LayoutEditorComponent, LayoutEditorRowComponent, LayoutRowDisplayEditorComponent, LayoutOrderPopupComponent],
   exports: [LayoutEditorComponent, LayoutRowDisplayEditorComponent]
