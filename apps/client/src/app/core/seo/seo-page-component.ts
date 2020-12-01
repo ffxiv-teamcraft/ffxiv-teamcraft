@@ -1,9 +1,12 @@
-import { OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SeoService } from './seo.service';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { SeoMetaConfig } from './seo-meta-config';
 
+@Component({
+  template: ''
+})
 export abstract class SeoPageComponent implements OnDestroy, OnInit {
 
   private seoOnDestroy$ = new Subject<void>();
