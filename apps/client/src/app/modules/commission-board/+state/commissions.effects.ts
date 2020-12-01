@@ -15,6 +15,7 @@ import { CommissionEditionPopupComponent } from '../commission-edition-popup/com
 import { TranslateService } from '@ngx-translate/core';
 import firebase from 'firebase/app';
 import { Router } from '@angular/router';
+import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 
 @Injectable()
 export class CommissionsEffects {
@@ -108,7 +109,7 @@ export class CommissionsEffects {
           commission.$key = list.$key;
           commission.items = list.finalItems.map(item => ({ id: item.id, amount: item.amount, done: item.done }));
           commission.totalItems = commission.items.reduce((acc, item) => acc + item.amount, 0);
-          this.listsFacade.pureUpdateList(list.$key, { hasCommission: true, ephemeral: false });
+          this.listsFacade.pureUpdateList(list.$key, { hasCommission: true, ephemeral: false, everyone: PermissionLevel.READ });
           return of(commission);
         }
         const newList = this.listsFacade.newListWithName(name);
