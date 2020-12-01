@@ -83,7 +83,7 @@
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">
             <ng-container *ngIf="amountInInventory.length <= 3; else compactAmountInInventory">
-              <nz-tag (click)="add(entry.amount, item)"
+              <nz-tag (click)="permissionLevel >= 20 ? add(entry.amount, item) : null"
                       *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                       class="inventory-tag"
                       [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
@@ -101,7 +101,7 @@
                 <nz-dropdown-menu #containers="nzDropdownMenu">
                   <ul nz-menu>
                     <li nz-menu-item *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
-                        (click)="tooltip.hide();add(entry.amount, item)"
+                        (click)="tooltip.hide();permissionLevel >= 20 ? add(entry.amount, item) : null"
                         #tooltip="nzTooltip"
                         nz-tooltip [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
                       {{entry.containerName | translate}}: {{entry.amount}}
@@ -238,7 +238,7 @@
           <i nz-icon nzType="check"></i>
         </button>
         <ng-template #done>
-          <i (click)="resetDone(item)" class="done-icon" nz-icon nzType="check"></i>
+          <i (click)="permissionLevel >= 20 ? resetDone(item) : null" class="done-icon" nz-icon nzType="check"></i>
         </ng-template>
       </ng-container>
     </div>
