@@ -2244,7 +2244,7 @@
       "Only_crafting": "Only crafting",
       "Includes_materials_label": "This commission includes all base materials and requires only crafting",
       "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
       "Contact_info_required_error": "Please include contact informations",
       "Description": "Description",
       "Description_placeholder": "If you want to give more details about your commission, it's here",
@@ -2292,7 +2292,8 @@
       "No_description": "No description"
     },
     "APPLY": {
-      "Price": "Your price"
+      "Price": "Your price",
+      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Click to open the commission",
