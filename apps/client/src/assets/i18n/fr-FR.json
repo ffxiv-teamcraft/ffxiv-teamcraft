@@ -2239,13 +2239,18 @@
       "Name_placeholder": "Nom de votre commission",
       "Name_required_error": "Veuillez saisir un nom",
       "Tags": "Tags",
-      "Price": "Prix",
-      "Price_tip": "Entrez 0 si vous voulez que les gens suggèrent leur prix à la place",
+      "Price": "Price you're willing to pay",
+      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
       "Only_crafting": "Fabrication uniquement",
       "Includes_materials_label": "Cette commission comprend tous les matériaux de base et ne nécessite que l'artisanat",
       "Contact_info": "Coordonnées",
-      "Contact_info_placeholder": "Comment le prestataire peut-il vous contacter une fois qu'ils sont acceptés pour la commission ? Discord, ingame, e-mail, comme vous le souhaitez.",
-      "Contact_info_required_error": "Veuillez inclure les informations de contact"
+      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_required_error": "Veuillez inclure les informations de contact",
+      "Description": "Description",
+      "Description_placeholder": "If you want to give more details about your commission, it's here",
+      "Description_max_length_error": "Description has to be < 1000 characters",
+      "Warning": "Warning",
+      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account."
     },
     "BOARD": {
       "Title": "Tableau des commissions",
@@ -2257,7 +2262,7 @@
     "DETAILS": {
       "Created_by": "Créée par {{name}}",
       "Details": "Détails",
-      "Price": "Prix",
+      "Price": "Payment",
       "Tags": "Tags",
       "No_tags": "Aucun tag",
       "Server": "Serveur",
@@ -2283,10 +2288,12 @@
       "Rate_commission": "Ajouter votre évaluation",
       "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
       "Copy_share_link": "Copier le lien de partage",
-      "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers"
+      "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers",
+      "No_description": "No description"
     },
     "APPLY": {
-      "Price": "Votre prix"
+      "Price": "Votre prix",
+      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Cliquez pour ouvrir la commission",
