@@ -5,7 +5,7 @@ import * as CommissionsSelectors from './commissions.selectors';
 import { createCommission, deleteCommission, loadCommission, loadUserCommissions, selectCommission, updateCommission } from './commissions.actions';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { List } from '../../list/model/list';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -20,6 +20,9 @@ import { CommissionRatingPopupComponent } from '../commission-rating-popup/commi
 import { FiredFeedbackPopupComponent } from '../fired-feedback-popup/fired-feedback-popup.component';
 import { ResignedFeedbackPopupComponent } from '../resigned-feedback-popup/resigned-feedback-popup.component';
 import { CommissionProfileService } from '../../../core/database/commission-profile.service';
+import { NotificationType } from '../../../core/notification/notification-type';
+import { Router } from '@angular/router';
+import { NotificationsFacade } from '../../notifications/+state/notifications.facade';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
@@ -77,9 +80,18 @@ export class CommissionsFacade {
     select(CommissionsSelectors.getSelected)
   );
 
+  notifications$ = this.notificationsFacade.loaded$.pipe(
+    filter(loaded => loaded),
+    switchMapTo(this.notificationsFacade.notificationsDisplay$),
+    map(notifications => {
+      return notifications.filter(n => n.type === NotificationType.COMMISSION);
+    })
+  );
+
   constructor(private store: Store<fromCommissions.CommissionsPartialState>, private dialog: NzModalService,
               private translate: TranslateService, private authFacade: AuthFacade,
-              private listsFacade: ListsFacade, private commissionProfileService: CommissionProfileService) {
+              private listsFacade: ListsFacade, private commissionProfileService: CommissionProfileService,
+              private notificationsFacade: NotificationsFacade) {
   }
 
   create(list?: List): void {

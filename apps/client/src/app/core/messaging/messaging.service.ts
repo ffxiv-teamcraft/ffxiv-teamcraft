@@ -50,10 +50,9 @@ export class MessagingService {
             nzDuration: 10000
           }
         ).onClick.pipe(mapTo(commission));
-      }
-  )
-      ).subscribe((commission) => {
-        this.router.navigate(['commission', commission.$key]);
-      });
-    }
+      })
+    ).subscribe((commission) => {
+      this.router.navigate(['commission', commission.$key]);
+    });
   }
+}

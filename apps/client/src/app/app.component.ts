@@ -57,6 +57,7 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
+import { CommissionsFacade } from './modules/commission-board/+state/commissions.facade';
 
 declare const gtag: Function;
 
@@ -163,6 +164,11 @@ export class AppComponent implements OnInit {
 
   public firewallRuleApplied = false;
 
+  public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
+    map(notifications => notifications.length),
+    shareReplay(1)
+  );
+
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
@@ -177,7 +183,8 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
+              private commissionsFacade: CommissionsFacade) {
 
     fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);

@@ -5,9 +5,11 @@
         <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
              nz-col nzMd="5" nzSm="20">
           <app-user-avatar [userId]="commission.authorId" [width]="32"></app-user-avatar>
-          <div class="name">
-            {{commission.name}}
-          </div>
+          <nz-badge nzDot [nzShowDot]="hasNotifications$ | async">
+            <div class="name">
+              {{commission.name}}
+            </div>
+          </nz-badge>
         </div>
         <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>

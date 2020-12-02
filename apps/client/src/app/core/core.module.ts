@@ -52,6 +52,7 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
+import { CommissionNotification } from '../model/notification/commission-notification';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
           LIST_ITEM_COMMENT: ListItemCommentNotification,
           DB_ITEM_COMMENT: DbItemCommentNotification,
           DB_COMMENT_REPLY: DbCommentReplyNotification,
-          BLOG_POST: BlogPostNotification
+          BLOG_POST: BlogPostNotification,
+          COMMISSION: CommissionNotification
         }
       },
       {

@@ -58,6 +58,15 @@ exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firesto
   commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })));
 });
 
+function addUserCommissionNotification(targetId, type, payload) {
+  return firestore.collection('notifications').add({
+    ...payload,
+    targetId,
+    type: 'COMMISSION',
+    subType: type
+  });
+}
+
 exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
   const before = { $key: change.before.id, ...change.before.data() };
   const after = { $key: change.after.id, ...change.after.data() };
@@ -92,7 +101,11 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
   }
   if (before.crafterId !== after.crafterId) {
     if (after.crafterId !== null) {
-      return admin.messaging().sendToTopic(`/topics/users.${after.crafterId}`, {
+      return addUserCommissionNotification(
+        after.crafterId,
+        'HIRED',
+        { commissionName: after.name, commissionId: after.$key }
+      ).then(() => admin.messaging().sendToTopic(`/topics/users.${after.crafterId}`, {
         data: {
           type: 'hired',
           commission: JSON.stringify(after)
@@ -101,9 +114,19 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
           title: `Commission contract started`,
           body: `You have been hired on commission ${after.name}`
         }
-      });
+      }));
     } else {
       return Promise.all([
+        addUserCommissionNotification(
+          before.crafterId,
+          'CONTRACT_ENDED_CONTRACTOR',
+          { commissionName: before.name, commissionId: before.$key }
+        ),
+        addUserCommissionNotification(
+          after.authorId,
+          'CONTRACT_ENDED_CLIENT',
+          { commissionName: after.name, commissionId: after.$key }
+        ),
         admin.messaging().sendToTopic(`/topics/users.${before.crafterId}`, {
           data: {
             type: 'contract_ended_contractor',
@@ -128,7 +151,11 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
     }
   }
   if (before.candidates.length < after.candidates.length) {
-    return admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+    return addUserCommissionNotification(
+      after.authorId,
+      'CANDIDATE',
+      { commissionName: after.name, commissionId: after.$key }
+    ).then(() => admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
       data: {
         type: 'candidate',
         commission: JSON.stringify(after)
@@ -137,7 +164,23 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
         title: `New candidate`,
         body: `New candidate for commission ${before.name}`
       }
-    });
+    }));
+  }
+  if (before.itemsProgression < after.itemsProgression && after.itemsProgression >= 100) {
+    return addUserCommissionNotification(
+      after.authorId,
+      'DONE',
+      { commissionName: after.name, commissionId: after.$key }
+    ).then(() => admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+      data: {
+        type: 'done',
+        commission: JSON.stringify(after)
+      },
+      notification: {
+        title: `Commission list completed`,
+        body: `List associated with commission ${before.name} has been completed`
+      }
+    }));
   }
 });
 

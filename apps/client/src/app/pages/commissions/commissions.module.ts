@@ -19,6 +19,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
 
 const routes: Routes = [
   {
@@ -57,7 +58,8 @@ const routes: Routes = [
     NzDividerModule,
     FullpageMessageModule,
     NzInputNumberModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    NzAlertModule
   ]
 })
 export class CommissionsModule {

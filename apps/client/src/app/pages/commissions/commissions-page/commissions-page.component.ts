@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { combineLatest } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
+import { NotificationsFacade } from '../../../modules/notifications/+state/notifications.facade';
 
 @Component({
   selector: 'app-commissions-page',
@@ -28,7 +29,13 @@ export class CommissionsPageComponent implements OnInit {
     })
   );
 
-  constructor(private commissionsFacade: CommissionsFacade) {
+  public notifications$ = this.commissionsFacade.notifications$;
+
+  constructor(private commissionsFacade: CommissionsFacade, private notificationsFacade: NotificationsFacade) {
+  }
+
+  removeNotifications(): void {
+    this.notificationsFacade.removeCommissionNotifications(() => true);
   }
 
   createCommission(): void {

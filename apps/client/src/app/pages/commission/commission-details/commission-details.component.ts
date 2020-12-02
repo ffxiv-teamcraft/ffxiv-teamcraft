@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { CommissionStatus } from '../../../modules/commission-board/model/commission-status';
 import { Commission } from '../../../modules/commission-board/model/commission';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { NotificationsFacade } from '../../../modules/notifications/+state/notifications.facade';
 
 @Component({
   selector: 'app-commission-details',
@@ -39,7 +40,7 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   constructor(private activatedRoute: ActivatedRoute, private commissionsFacade: CommissionsFacade,
               private authFacade: AuthFacade, public translate: TranslateService,
-              public settings: SettingsService) {
+              public settings: SettingsService, private notificationsFacade: NotificationsFacade) {
     super();
   }
 
@@ -89,6 +90,7 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
       const commissionId = paramMap.get('id');
       this.commissionsFacade.load(commissionId);
       this.commissionsFacade.select(commissionId);
+      this.notificationsFacade.removeCommissionNotifications(n => n.commissionId === commissionId);
     });
   }
 

@@ -38,6 +38,7 @@ import { FiredFeedbackPopupComponent } from './fired-feedback-popup/fired-feedba
 import { ResignedFeedbackPopupComponent } from './resigned-feedback-popup/resigned-feedback-popup.component';
 import { NzRadioModule } from 'ng-zorro-antd/radio';
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 
 @NgModule({
   declarations: [CommissionPanelComponent, CommissionEditionPopupComponent, ApplyPopupComponent, CommissionRatingPopupComponent, UserRatingDisplayComponent, UserRatingDetailsPopupComponent, FiredFeedbackPopupComponent, ResignedFeedbackPopupComponent],
@@ -76,7 +77,8 @@ import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
     NzDividerModule,
     NzEmptyModule,
     NzRadioModule,
-    NzInputNumberModule
+    NzInputNumberModule,
+    NzBadgeModule
   ],
   providers: [CommissionsFacade]
 })
