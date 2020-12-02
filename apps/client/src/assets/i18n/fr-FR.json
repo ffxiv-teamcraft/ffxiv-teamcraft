@@ -2219,6 +2219,8 @@
     "No_archived_commissions_as_client": "Vous n'avez pas de commission archivée en tant que client",
     "Your_archived_commissions_as_crafter": "Commissions en tant que prestataire",
     "No_archived_commissions_as_crafter": "Vous n'avez aucune commission archivée en tant que prestataire",
+    "Updates": "Updates",
+    "Clear_notifications": "Clear notifications",
     "TAGS": {
       "CRAFTING": "Artisanat",
       "GATHERING": "Récolte",
@@ -2303,6 +2305,10 @@
       "CANDIDATE": {
         "Title": "New candidate",
         "Content": "New candidate for commission {{name}}"
+      },
+      "DONE": {
+        "Title": "Commission list completed",
+        "Content": "List associated with commission {{name}} has been completed"
       }
     },
     "PROFILE": {
