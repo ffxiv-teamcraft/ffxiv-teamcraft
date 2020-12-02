@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CustomItemsComponent } from './custom-items/custom-items.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NameQuestionPopupModule } from '../../modules/name-question-popup/name-question-popup.module';
@@ -22,6 +21,7 @@ import { ListPickerModule } from '../../modules/list-picker/list-picker.module';
 import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup.module';
 import { CustomItemsImportPopupComponent } from './custom-items-import-popup/custom-items-import-popup.component';
 import { CustomItemsExportPopupComponent } from './custom-items-export-popup/custom-items-export-popup.component';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [{
   path: '',
@@ -49,7 +49,7 @@ const routes: Routes = [{
     ProgressPopupModule,
 
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     RouterModule.forChild(routes)
   ]

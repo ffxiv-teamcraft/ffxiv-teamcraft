@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MacroTranslatorComponent } from './macro-translator/macro-translator.component';
 import { RouterModule, Routes } from '@angular/router';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CoreModule } from '../../core/core.module';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -10,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
+import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
@@ -24,13 +25,13 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     FlexLayoutModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     CoreModule,
     TranslateModule,
 
+    RouterModule.forChild(routes),
 
-
-    RouterModule.forChild(routes)
+    NzRadioModule
   ],
   declarations: [MacroTranslatorComponent]
 })

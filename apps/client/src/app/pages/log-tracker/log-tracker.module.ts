@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogTrackerComponent } from './log-tracker/log-tracker.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../../core/core.module';
@@ -18,6 +17,7 @@ import { FishingBaitModule } from '../../modules/fishing-bait/fishing-bait.modul
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { FishingLogTrackerComponent } from './fishing-log-tracker/fishing-log-tracker.component';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -50,7 +50,7 @@ const routes: Routes = [
     TooltipModule,
     FullpageMessageModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ]
 })
 export class LogTrackerModule {

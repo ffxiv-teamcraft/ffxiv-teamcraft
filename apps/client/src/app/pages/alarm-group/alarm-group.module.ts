@@ -13,16 +13,12 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { AlarmsSidebarModule } from '../../modules/alarms-sidebar/alarms-sidebar.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
-import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
-import { AlarmsOverlayComponent } from '../alarms-overlay/alarms-overlay/alarms-overlay.component';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ListModule } from '../../modules/list/list.module';
@@ -64,4 +60,5 @@ const routes: Routes = [
     NzIconModule
   ]
 })
-export class AlarmGroupModule { }
+export class AlarmGroupModule {
+}

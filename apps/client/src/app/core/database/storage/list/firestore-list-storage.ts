@@ -11,7 +11,7 @@ import { ListRow } from '../../../../modules/list/model/list-row';
 import { FirestoreRelationalStorage } from '../firestore/firestore-relational-storage';
 import { ListTag } from '../../../../modules/list/model/list-tag.enum';
 import { Class } from '@kaiu/serializer';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import { PermissionLevel } from '../../permissions/permission-level.enum';
 
 @Injectable({

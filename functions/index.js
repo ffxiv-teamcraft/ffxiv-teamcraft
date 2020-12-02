@@ -5,9 +5,12 @@ const crypto = require('crypto');
 const admin = require('firebase-admin');
 const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
+const { PubSub } = require('@google-cloud/pubsub');
 admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
+const pubsub = new PubSub({ projectId: process.env.GCP_PROJECT || process.env.GCLOUD_PROJECT });
+const commissionsCreatedTopic = pubsub.topic('commissions-created');
 
 const runtimeOpts = {
   timeoutSeconds: 120,
@@ -42,6 +45,182 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
   return creationsRef.transaction(current => {
     return current + 1;
   }).then(() => null);
+});
+
+exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
+  const commission = snapshot.data();
+  admin.messaging().sendToTopic(`/topics/commissions.${commission.datacenter}`, {
+    data: {
+      commission: JSON.stringify(commission)
+    }
+  });
+
+  commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })));
+});
+
+function addUserCommissionNotification(targetId, type, payload) {
+  return firestore.collection('notifications').add({
+    ...payload,
+    targetId,
+    type: 'COMMISSION',
+    subType: type
+  });
+}
+
+exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
+  const before = { $key: change.before.id, ...change.before.data() };
+  const after = { $key: change.after.id, ...change.after.data() };
+  // 2 is archived
+  if (after.status === before.status && before.status === 2) {
+    // If crafter posted their rating
+    if (!before.ratings[before.crafterId] && !!after.ratings[before.crafterId]) {
+      const rating = after.ratings[before.crafterId];
+      firestore
+        .collection('commission-profile')
+        .doc(before.authorId)
+        .update({
+          ratings: admin.firestore.FieldValue.arrayUnion({
+            ...rating,
+            commissionId: before.$key
+          })
+        });
+    }
+    // If client posted their rating
+    if (!before.ratings[before.authorId] && !!after.ratings[before.authorId]) {
+      const rating = after.ratings[before.authorId];
+      firestore
+        .collection('commission-profile')
+        .doc(before.crafterId)
+        .update({
+          ratings: admin.firestore.FieldValue.arrayUnion({
+            ...rating,
+            commissionId: before.$key
+          })
+        });
+    }
+  }
+  if (before.crafterId !== after.crafterId) {
+    if (after.crafterId !== null) {
+      return addUserCommissionNotification(
+        after.crafterId,
+        'HIRED',
+        { commissionName: after.name, commissionId: after.$key }
+      ).then(() => admin.messaging().sendToTopic(`/topics/users.${after.crafterId}`, {
+        data: {
+          type: 'hired',
+          commission: JSON.stringify(after)
+        },
+        notification: {
+          title: `Commission contract started`,
+          body: `You have been hired on commission ${after.name}`
+        }
+      }));
+    } else {
+      return Promise.all([
+        addUserCommissionNotification(
+          before.crafterId,
+          'CONTRACT_ENDED_CONTRACTOR',
+          { commissionName: before.name, commissionId: before.$key }
+        ),
+        addUserCommissionNotification(
+          after.authorId,
+          'CONTRACT_ENDED_CLIENT',
+          { commissionName: after.name, commissionId: after.$key }
+        ),
+        admin.messaging().sendToTopic(`/topics/users.${before.crafterId}`, {
+          data: {
+            type: 'contract_ended_contractor',
+            commission: JSON.stringify(after)
+          },
+          notification: {
+            title: `Commission contract ended`,
+            body: `You are no longer the contractor for commission ${before.name}`
+          }
+        }),
+        admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+          data: {
+            type: 'contract_ended_client',
+            commission: JSON.stringify(after)
+          },
+          notification: {
+            title: `Commission contract ended`,
+            body: `Contractor resigned from commission ${before.name}`
+          }
+        })
+      ]);
+    }
+  }
+  if (before.candidates.length < after.candidates.length) {
+    return addUserCommissionNotification(
+      after.authorId,
+      'CANDIDATE',
+      { commissionName: after.name, commissionId: after.$key }
+    ).then(() => admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+      data: {
+        type: 'candidate',
+        commission: JSON.stringify(after)
+      },
+      notification: {
+        title: `New candidate`,
+        body: `New candidate for commission ${before.name}`
+      }
+    }));
+  }
+  if (before.itemsProgression < after.itemsProgression && after.itemsProgression >= 100) {
+    return addUserCommissionNotification(
+      after.authorId,
+      'DONE',
+      { commissionName: after.name, commissionId: after.$key }
+    ).then(() => admin.messaging().sendToTopic(`/topics/users.${before.authorId}`, {
+      data: {
+        type: 'done',
+        commission: JSON.stringify(after)
+      },
+      notification: {
+        title: `Commission list completed`,
+        body: `List associated with commission ${before.name} has been completed`
+      }
+    }));
+  }
+});
+
+exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().subscribeToTopic(data.token, `commissions.${data.datacenter}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
+});
+
+exports.subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().subscribeToTopic(data.token, `users.${context.auth.uid}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
+});
+
+exports.unsubscribeFromUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  return admin.messaging().unsubscribeFromTopic(data.token, `users.${context.auth.uid}`).then(res => {
+    return {
+      ...res,
+      data: data
+    };
+  });
+});
+
+// Run everyday at 00:00
+functions.runWith(runtimeOpts).pubsub.schedule('0 0 * * *').onRun(() => {
+  const aMonthOldSeconds = Date.now() / 1000 - 30 * 86400;
+  return firestore
+    .collection('commissions')
+    .where('createdAt.seconds', '>=', aMonthOldSeconds)
+    .get()
+    .then(commissions => {
+      commissions.forEach(c => c.ref.delete());
+    });
 });
 
 validatedCache = {};

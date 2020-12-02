@@ -649,6 +649,8 @@
     "Leave_list": "Leave this list",
     "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
     "Split_list": "Split this list",
+    "Create_commission": "Create a commission for this list",
+    "Commission_list": "Commission list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -1760,7 +1762,11 @@
     "Sharing": "Sharing",
     "Gathering": "Gathering",
     "Helpers": "Helpers",
-    "Other": "Other"
+    "Other": "Other",
+    "Commissions": "Commissions",
+    "Commission_board": "Board",
+    "My_commissions": "My Commissions",
+    "Archived_commissions": "Archives"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",
@@ -1918,6 +1924,7 @@
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
+    "Create_commission": "Create a commission for this gearset",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -2195,5 +2202,142 @@
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "New folder",
     "Save_replay": "Save replay in database"
+  },
+  "COMMISSIONS": {
+    "New_commission": "New commission",
+    "Price_tbd": "To be discussed",
+    "X_items": "{{amount}} items",
+    "Open_commission_details": "Open commission details",
+    "Your_commissions_as_client": "Your commissions as client",
+    "No_commissions_as_client": "You don't have any commission as client",
+    "Your_commissions_as_crafter": "Commissions you're working on",
+    "No_commissions_as_crafter": "You're not working on any commission",
+    "Delete_commission": "Delete this commission",
+    "Delete_list_too": "Delete list too",
+    "Delete_commission_only": "Delete commission only",
+    "Your_archived_commissions_as_client": "Commissions as client",
+    "No_archived_commissions_as_client": "You have no archived commission as client",
+    "Your_archived_commissions_as_crafter": "Commissions as contractor",
+    "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
+    "Updates": "Updates",
+    "Clear_notifications": "Clear notifications",
+    "TAGS": {
+      "CRAFTING": "Crafting",
+      "GATHERING": "Gathering",
+      "HUNTING": "Hunting",
+      "FISHING": "Fishing",
+      "GEAR": "Gear"
+    },
+    "STATUS": {
+      "Label": "Status",
+      "OPENED": "Opened",
+      "IN_PROGRESS": "In progress",
+      "ARCHIVED": "Archived"
+    },
+    "CREATION": {
+      "Name": "Name",
+      "Name_placeholder": "Name of your commission",
+      "Name_required_error": "Please input a name",
+      "Tags": "Tags",
+      "Price": "Price",
+      "Price_tip": "Input 0 if you want people to suggest their price instead",
+      "Only_crafting": "Only crafting",
+      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
+      "Contact_info": "Contact informations",
+      "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_required_error": "Please include contact informations"
+    },
+    "BOARD": {
+      "Title": "Commission board",
+      "Filter_with_tags": "Filter using tags",
+      "No_matching_commissions": "No matching commissions",
+      "Min_price": "Min. price",
+      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+    },
+    "DETAILS": {
+      "Created_by": "Created by {{name}}",
+      "Details": "Details",
+      "Price": "Price",
+      "Tags": "Tags",
+      "No_tags": "No tags",
+      "Server": "Server",
+      "Content": "Content",
+      "Progression": "Progression",
+      "Candidates": "Candidates ({{amount}})",
+      "Candidates_public_display": "Candidates : {{amount}}",
+      "Apply": "Apply",
+      "Edit": "Edit this commission",
+      "No_candidates": "No candidates",
+      "Your_offer": "Your offer",
+      "Remove_offer": "Remove your offer",
+      "Fire_contractor": "Fire the contractor",
+      "Resign": "Resign",
+      "Contractor": "Contractor",
+      "Open_list": "Open the list",
+      "List": "List",
+      "Mark_as_completed": "Mark commission as completed",
+      "Hire": "Hire this contractor",
+      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
+      "Ratings": "Ratings",
+      "Waiting_for_rating": "Waiting for rating",
+      "Rate_commission": "Add your rating",
+      "Bump": "Bring this commission back to the top, only once per 24h",
+      "Copy_share_link": "Copy share link",
+      "Share_link_copied": "Commission share link copied to your clipboard"
+    },
+    "APPLY": {
+      "Price": "Your price"
+    },
+    "NOTIFICATIONS": {
+      "Click_to_open": "Click to open the commission",
+      "CONTRACT_ENDED_CONTRACTOR": {
+        "Title": "Commission contract ended",
+        "Content": "You are no longer the contractor for commission {{name}}"
+      },
+      "CONTRACT_ENDED_CLIENT": {
+        "Title": "Commission contract ended",
+        "Content": "Contractor for commission {{name}} is no longer assigned"
+      },
+      "HIRED": {
+        "Title": "Commission contract started",
+        "Content": "You have been hired on commission {{name}}"
+      },
+      "CANDIDATE": {
+        "Title": "New candidate",
+        "Content": "New candidate for commission {{name}}"
+      },
+      "DONE": {
+        "Title": "Commission list completed",
+        "Content": "List associated with commission {{name}} has been completed"
+      }
+    },
+    "PROFILE": {
+      "Details": "Commission profile",
+      "View_details": "Open profile details",
+      "Ratings": "Ratings",
+      "Incidents": "Incidents",
+      "No_incidents": "No incidents",
+      "Fired": "Fired from a commission",
+      "Resigned": "Resigned from a commission",
+      "No_ratings": "No ratings yet",
+      "Fired_X_times": "Fired {{amount}} times",
+      "Resigned_X_times": "Resigned {{amount}} times"
+    },
+    "FIRED": {
+      "Please_pick_reason": "Why are you firing this contractor?",
+      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
+      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
+      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
+      "CANNOT_AFFORD": "I cannot afford this commission."
+    },
+    "RESIGNED": {
+      "Please_pick_reason": "Why are you resigning from this commission?",
+      "NO_ACTIVE_SUB": "I no longer have active subscription.",
+      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
+      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
+      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
+      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+    }
   }
 }

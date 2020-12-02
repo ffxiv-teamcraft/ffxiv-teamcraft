@@ -8,7 +8,7 @@
            fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
           <ng-container *ngIf="layouts$ | async as layouts">
-            <button *ngIf="layouts.length > 1" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+            <button *ngIf="layouts.length > 1" [nzDropdownMenu]="menu"
                     [nzTooltipTitle]="'LIST.Quick_layout_swap' | translate"
                     nz-button
                     nz-dropdown
@@ -44,6 +44,10 @@
             <i nz-icon nzType="copy" theme="outline"></i>
           </button>
           <app-favorite-button *ngIf="!list.offline" [key]="list.$key" type="lists"></app-favorite-button>
+          <button nz-button nzShape="circle" (click)="createCommission(list)" *ngIf="!list.hasCommission && (permissionLevel$ | async) >= 40"
+                  nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.Create_commission' | translate">
+            <i nz-icon nzType="shop" nzTheme="outline"></i>
+          </button>
           <button nz-button nzShape="circle"
                   *ngIf="pinnedList$ | async as pinnedList"
                   (click)="pinnedList === list.$key ? unpinList() :pinList(list)"
@@ -52,7 +56,7 @@
           </button>
           <div *ngIf="teams$ | async as teams">
             <button *ngIf="(permissionLevel$ | async) >= 20 && list.teamId === undefined"
-                    [disabled]="teams.length === 0" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+                    [disabled]="teams.length === 0" [nzDropdownMenu]="menu"
                     [nzTooltipTitle]="'TEAMS.Assign_list' | translate"
                     [nzTrigger]="'click'" nz-button
                     nz-dropdown
@@ -84,7 +88,7 @@
         <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="center center" fxLayoutGap="5px">
           <label (ngModelChange)="list.index = -1;listsFacade.updateList(list)" *ngIf="!list.offline"
                  [(ngModel)]="list.public"
-                 [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral"
+                 [nzDisabled]="(permissionLevel$ | async) < 40 || list.ephemeral || list.hasCommission"
                  [nzTooltipTitle]="'LIST_DETAILS.Public_list_description' | translate" nz-checkbox
                  nz-tooltip>
             {{'Public_list' | translate}}
@@ -169,6 +173,14 @@
                 nzShape="circle" nzSize="small">
           <i nz-icon nzType="file-zip" nzTheme="outline"></i>
         </button>
+        <nz-tag [style.border-color]="'#108ee9'" *ngIf="list.hasCommission"
+                class="custom-tag clickable-tag"
+                nz-tooltip
+                [nzTooltipTitle]="'COMMISSIONS.Open_commission_details' | translate"
+                routerLink="/commission/{{list.$key}}">
+          <i nz-icon nzType="shop" nzTheme="outline"></i>
+          {{'LIST_DETAILS.Commission_list' | translate}}
+        </nz-tag>
         <nz-tag nzColor="purple" *ngIf="list.archived"
                 [nzMode]="(permissionLevel$ | async) < 40 ? 'default': 'closeable'"
                 (nzOnClose)="unArchiveList(list)">

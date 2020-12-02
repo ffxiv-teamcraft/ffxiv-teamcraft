@@ -12,12 +12,12 @@ import { AlarmsModule } from '../../core/alarms/alarms.module';
 import { SettingsModule } from '../../modules/settings/settings.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { OverlayContainerModule } from '../../modules/overlay-container/overlay-container.module';
 import { ListPanelOverlayComponent } from './list-panel-overlay/list-panel-overlay.component';
 import { ListModule } from '../../modules/list/list.module';
 import { ItemPickerModule } from '../../modules/item-picker/item-picker.module';
 import { FormsModule } from '@angular/forms';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -46,7 +46,7 @@ const routes: Routes = [
     ListModule,
     ItemPickerModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
     OverlayContainerModule,
     FormsModule
   ],

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PublicProfileComponent } from './public-profile/public-profile.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 import { ListModule } from '../../modules/list/list.module';
 import { CoreModule } from '../../core/core.module';
@@ -23,6 +22,9 @@ import { SimulatorModule } from '../simulator/simulator.module';
 import { AutofillStatsPopupComponent } from './profile-editor/autofill-stats-popup/autofill-stats-popup.component';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
+import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 
 const routes: Routes = [
   {
@@ -42,7 +44,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     PipesModule,
     CoreModule,
@@ -55,7 +57,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SimulatorModule,
     ItemIconModule,
-    ScrollingModule
+    ScrollingModule,
+    CommissionBoardModule,
+    NzSkeletonModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })

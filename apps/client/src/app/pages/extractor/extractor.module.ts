@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ExtractorComponent } from './extractor/extractor.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreModule } from '../../core/core.module';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from '../../pipes/pipes.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DevGuard } from '../../core/guard/dev.guard';
 import { NgSerializerModule } from '@kaiu/ng-serializer';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
     CommonModule,
     CoreModule,
     RouterModule.forChild(routes),
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     PipesModule,
     HttpClientModule,

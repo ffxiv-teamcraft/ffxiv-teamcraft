@@ -1,0 +1,20 @@
+<div *ngIf="commissionProfile$ | async as display" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
+  <nz-rate *ngIf="display.avgRating > -1; else noRatings" [ngModel]="display.avgRating" nzDisabled></nz-rate>
+  <div>({{display.profile.ratings.length}})</div>
+  <ng-template #noRatings>{{'COMMISSIONS.PROFILE.No_ratings' | translate}}</ng-template>
+  <div>
+    <span nz-tooltip [nzTooltipTitle]="'COMMISSIONS.PROFILE.Fired_X_times' | translate:{amount: display.profile.firedFeedbacks.length}">
+    <i nz-icon nzType="fire" nzTheme="outline"></i>
+      {{display.profile.firedFeedbacks.length}}
+    </span>
+    /
+    <span nz-tooltip [nzTooltipTitle]="'COMMISSIONS.PROFILE.Resigned_X_times' | translate:{amount: display.profile.resignedFeedback.length}">
+    <i nz-icon nzType="stop" nzTheme="outline"></i>
+      {{display.profile.resignedFeedback.length}}
+    </span>
+  </div>
+  <button nz-button *ngIf="display.profile.ratings.length > 0" nzSize="small" nzShape="circle"
+          nz-tooltip [nzTooltipTitle]="'COMMISSIONS.PROFILE.View_details' | translate" (click)="openDetails(display.profile)">
+    <i nz-icon nzType="file-search" nzTheme="outline"></i>
+  </button>
+</div>

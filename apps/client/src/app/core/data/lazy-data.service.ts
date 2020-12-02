@@ -52,7 +52,7 @@ export class LazyDataService {
 
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  public datacenters: { [index: string]: string[] } = {};
+  public datacenters: Record<string, string[]> = {};
   public patches: any[] = [];
 
   public extracts: ListRow[];
@@ -93,6 +93,13 @@ export class LazyDataService {
 
       this.loadForRegion(this.settings.region);
     }
+  }
+
+  public getDataCenter(serverName: string): string {
+    return Object.keys(this.datacenters)
+      .find(dc => {
+        return this.datacenters[dc].includes(serverName);
+      });
   }
 
   private loadForRegion(region: Region): void {

@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.0"></a>
+# [7.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.6...v7.6.0) (2020-12-02)
+
+
+### Bug Fixes
+
+* **gearset:** fixed ariyala items always being NQ ([0c1fcb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0c1fcb6))
+* **gearset:** fixed lodestone items always being NQ ([8033d75](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8033d75))
+* **list:** fixed list sometimes not loading properly if opened as anonymous ([f022c18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f022c18))
+
+
+### Features
+
+* **desktop:** support for CN 5.3 packet capture ([72b9679](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72b9679))
+* new commission board system ! ([5ebc6a9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5ebc6a9))
+* **data:** update for cn patch-5.3 ([62f5ee3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62f5ee3))
+
+
+### Performance Improvements
+
+* **async:** memory management optimizations ([635afd6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/635afd6))
+
+
+
 <a name="7.5.6"></a>
 ## [7.5.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.5...v7.5.6) (2020-11-10)
 

@@ -1,0 +1,25 @@
+<nz-divider [nzText]="'COMMISSIONS.PROFILE.Ratings' | translate"></nz-divider>
+<div class="ratings" fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let rating of profile.ratings">
+    <nz-rate [ngModel]="rating.rating" nzDisabled></nz-rate>
+    <p>{{rating.comment}}</p>
+    <a nz-button nzBlock routerLink="/commission/{{rating.commissionId}}" (click)="close()">{{'COMMISSIONS.Open_commission_details' | translate}}</a>
+  </div>
+</div>
+<nz-divider [nzText]="'COMMISSIONS.PROFILE.Incidents' | translate"></nz-divider>
+<nz-empty *ngIf="profile.firedFeedbacks.length === 0 && profile.resignedFeedback.length === 0"
+          [nzNotFoundContent]="'COMMISSIONS.PROFILE.No_incidents' | translate"></nz-empty>
+<div class="ratings" fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let fired of profile.firedFeedbacks">
+    <b><i nz-icon nzType="fire" nzTheme="outline"></i> {{'COMMISSIONS.PROFILE.Fired' | translate}}</b>
+    <p>{{('COMMISSIONS.FIRED.' + fired.reason) | translate}}</p>
+    <p>{{fired.date.seconds * 1000 | date:'medium':translate.currentLang}}</p>
+    <a nz-button nzBlock routerLink="/commission/{{fired.commissionId}}" (click)="close()">{{'COMMISSIONS.Open_commission_details' | translate}}</a>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center" *ngFor="let resigned of profile.resignedFeedback">
+    <b><i nz-icon nzType="stop" nzTheme="outline"></i> {{'COMMISSIONS.PROFILE.Resigned' | translate}}</b>
+    <p>{{('COMMISSIONS.RESIGNED.' + resigned.reason) | translate}}</p>
+    <p>{{resigned.date.seconds * 1000 | date:'medium':translate.currentLang}}</p>
+    <a nz-button nzBlock routerLink="/commission/{{resigned.commissionId}}" (click)="close()">{{'COMMISSIONS.Open_commission_details' | translate}}</a>
+  </div>
+</div>

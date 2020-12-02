@@ -6,13 +6,13 @@ import { MapPositionComponent } from './map-position/map-position.component';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { MapComponent } from './map/map.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { XivapiClientModule } from '@xivapi/angular-client';
 import { NavigationMapComponent } from './navigation-map/navigation-map.component';
 import { WorldNavigationMapComponent } from './world-navigation-map/world-navigation-map.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     RouterModule,
 
-    NgZorroAntdModule,
+    AntdSharedModule,
 
     PipesModule,
     CoreModule

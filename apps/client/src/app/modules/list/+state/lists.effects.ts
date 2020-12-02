@@ -60,6 +60,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { onlyIfNotConnected } from '../../../core/rxjs/only-if-not-connected';
 import { DirtyFacade } from '../../../core/dirty/+state/dirty.facade';
 import { DirtyScope } from '../../../core/dirty/dirty-scope';
+import { CommissionService } from '../../commission-board/commission.service';
 
 @Injectable()
 export class ListsEffects {
@@ -75,6 +76,7 @@ export class ListsEffects {
       this.listsFacade.offlineListsLoaded(this.localStore);
       return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', false))
         .pipe(
+          debounceTime(100),
           map(lists => new MyListsLoaded(lists, userId))
         );
     })
@@ -251,6 +253,9 @@ export class ListsEffects {
           this.saveToLocalstorage(list, true);
           return EMPTY;
         }
+        if (list.$key) {
+          return this.listService.set(list.$key, list);
+        }
         return this.listService.add(list);
       }
     )
@@ -267,6 +272,9 @@ export class ListsEffects {
       if (action.payload.offline) {
         this.saveToLocalstorage(action.payload, false);
         return of(null);
+      }
+      if (action.payload.hasCommission) {
+        this.updateCommission(action.payload);
       }
       return this.listService.update(action.payload.$key, action.payload);
     })
@@ -289,6 +297,11 @@ export class ListsEffects {
         return of(null);
       }
       return this.listService.update(action.payload.$key, action.payload).pipe(
+        catchError(e => {
+          console.error('Error while saving list update');
+          console.error(e);
+          return of(null);
+        }),
         tap(() => {
           this.dirtyFacade.removeEntry(`UpdateListAtomic:${action.payload.$key}`, DirtyScope.APP);
         })
@@ -394,6 +407,9 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
+      if (list.hasCommission) {
+        this.updateCommission(list);
+      }
       list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
       list.updateAllStatuses(action.itemId);
       if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
@@ -425,6 +441,9 @@ export class ListsEffects {
       const updatedItems = items.map(item => item.id === action.item.id ? action.item : item);
       if (action.finalItem) {
         list.finalItems = updatedItems;
+        if (list.hasCommission) {
+          this.updateCommission(list);
+        }
       } else {
         list.items = updatedItems;
       }
@@ -442,14 +461,16 @@ export class ListsEffects {
     }),
     debounceTime(2000),
     tap(([, list]) => {
-      this.dialog.create({
-        nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
-        nzFooter: null,
-        nzContent: ListCompletionPopupComponent,
-        nzComponentParams: {
-          list: list
-        }
-      });
+      if (!list.hasCommission) {
+        this.dialog.create({
+          nzTitle: this.translate.instant('LIST.COMPLETION_POPUP.Title'),
+          nzFooter: null,
+          nzContent: ListCompletionPopupComponent,
+          nzComponentParams: {
+            list: list
+          }
+        });
+      }
     }),
     switchMap(() => EMPTY)
   );
@@ -475,8 +496,22 @@ export class ListsEffects {
     private i18n: I18nToolsService,
     private l12n: LocalizedDataService,
     private lazyData: LazyDataService,
-    private dirtyFacade: DirtyFacade
+    private dirtyFacade: DirtyFacade,
+    private commissionService: CommissionService
   ) {
+  }
+
+  private updateCommission(list: List): void {
+    this.commissionService.pureUpdate(list.$key, {
+      materialsProgression: this.listsFacade.buildProgression(list.items),
+      itemsProgression: this.listsFacade.buildProgression(list.finalItems),
+      items: list.finalItems.map(item => ({
+        id: item.id,
+        amount: item.amount,
+        done: item.done
+      })),
+      totalItems: list.finalItems.reduce((acc, item) => acc + item.amount, 0)
+    }).subscribe();
   }
 
   private markAsDoneInDoHLog(recipeId: number): void {

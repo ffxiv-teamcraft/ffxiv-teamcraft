@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GatheringLocationComponent } from './gathering-location/gathering-location.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule } from '../../core/core.module';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,6 +16,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { FormsModule } from '@angular/forms';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const routes: Routes = [
   {
@@ -46,7 +46,7 @@ const routes: Routes = [
     FishingBaitModule,
     TooltipModule,
 
-    NgZorroAntdModule
+    AntdSharedModule
   ],
   declarations: [GatheringLocationComponent]
 })

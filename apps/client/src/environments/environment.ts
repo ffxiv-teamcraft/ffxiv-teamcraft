@@ -20,7 +20,8 @@ export const environment = {
     databaseURL: 'https://ffxiv-teamcraft-beta.firebaseio.com',
     projectId: 'ffxiv-teamcraft-beta',
     storageBucket: 'ffxiv-teamcraft-beta.appspot.com',
-    messagingSenderId: '716469847404'
+    messagingSenderId: '716469847404',
+    appId: '1:716469847404:web:d1716789557f9cca5e1f49'
   }
 };
 

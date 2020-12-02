@@ -5,10 +5,12 @@ import { Store } from '@ngrx/store';
 import { NotificationsState } from './notifications.reducer';
 import { notificationsQuery } from './notifications.selectors';
 import { LoadNotifications, RemoveNotification } from './notifications.actions';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { TranslateService } from '@ngx-translate/core';
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
+import { NotificationType } from '../../../core/notification/notification-type';
+import { CommissionNotification } from '../../../model/notification/commission-notification';
 
 @Injectable()
 export class NotificationsFacade {
@@ -30,6 +32,17 @@ export class NotificationsFacade {
 
   constructor(private store: Store<{ notifications: NotificationsState }>, private translate: TranslateService,
               private l12n: LocalizedDataService, private i18n: I18nToolsService) {
+  }
+
+  removeCommissionNotifications(predicate: (n: CommissionNotification) => boolean): void {
+    this.allNotifications$.pipe(
+      first(),
+      map(notifications => notifications.filter(n => {
+        return n.type === NotificationType.COMMISSION && predicate(n as CommissionNotification);
+      }))
+    ).subscribe(notifications => {
+      notifications.forEach(n => this.removeNotification(n.$key));
+    });
   }
 
   removeNotification(key: string): void {

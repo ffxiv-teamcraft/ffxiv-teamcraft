@@ -130,7 +130,7 @@
     </ng-template>
     <ng-template #actionAlarmToGroup>
       <ng-container *ngIf="alarmGroups$ | async as groups">
-        <i *ngIf="alarmsLoaded$ | async" [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" class="add-to-group"
+        <i *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" class="add-to-group"
            nz-dropdown nz-icon
            nzType="folder-open"
         ></i>

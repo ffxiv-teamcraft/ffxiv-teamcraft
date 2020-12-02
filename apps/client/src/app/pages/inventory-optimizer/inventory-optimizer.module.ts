@@ -2,7 +2,6 @@ import { NgModule, Provider } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InventoryOptimizerComponent } from './inventory-optimizer/inventory-optimizer.component';
 import { INVENTORY_OPTIMIZER } from './optimizations/inventory-optimizer';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CoreModule } from '../../core/core.module';
@@ -26,6 +25,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { CanBeGatheredEasily } from './optimizations/can-be-gathered-easily';
 import { CanExtractMateria } from './optimizations/can-extract-materia';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 const optimisations: Provider[] = [
   {
@@ -87,7 +87,7 @@ const routes: Routes = [
     FormsModule,
     CoreModule,
     PipesModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     TranslateModule,
     FlexLayoutModule,
     RouterModule.forChild(routes),

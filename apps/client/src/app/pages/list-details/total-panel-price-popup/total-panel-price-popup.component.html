@@ -18,7 +18,7 @@
         <ng-template #ignoreSource>
           <button nz-button nz-tooltip
                   nzShape="circle"
-                  [nzTitle]="'LIST.Ignore_currency' | translate"
+                  [nzTooltipTitle]="'LIST.Ignore_currency' | translate"
                   *ngIf="entry.canIgnore"
                   (click)="ignoredSources.push(entry.currencyId);computePrice()">
             <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>

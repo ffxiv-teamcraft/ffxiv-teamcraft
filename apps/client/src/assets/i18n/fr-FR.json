@@ -415,7 +415,7 @@
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
     "Enable_autofill_notification_by_default": "Activer la notification de complétion automatique par défaut",
     "Enable_autofill_hq_filter": "Remplissage automatique uniquement en utilisant des éléments hq lorsque l'élément est requis comme HQ",
-    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Enable_autofill_nq_filter": "Remplissage automatique uniquement en utilisant des éléments NQ lorsque l'élément n'est pas requis en HQ",
     "Contribute_to_universalis": "Contribuer à Universalis",
     "Track_items_on_sale": "Suivre les objets en vente par vos servants (nécessite un redémarrage/rafraîchissement)",
     "Change_email": "Changer votre email",
@@ -649,13 +649,15 @@
     "Leave_list": "Quitter cette liste",
     "Cannot_leave": "Vous ne pouvez pas quitter cette liste car elle est partagée à l'ensemble de votre CL (dans ce cas, vous devez demander au propriétaire de la supprimer) ou à l'une de vos équipes (dans ce cas, vous pouvez quitter l'équipe).",
     "Split_list": "Diviser cette liste",
+    "Create_commission": "Créer une commission pour cette liste",
+    "Commission_list": "Liée à une commission",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
       "Import_layout": "Importer un affichage",
-      "Export_layout": "Export this layout",
+      "Export_layout": "Exporter ce layout",
       "Import_string": "Chaîne d'import de l'affichage",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "Code du layout copié !",
       "Layout_name": "Nom de l'affichage",
       "Invalid_import": "Code d'import invalide",
       "Global_options": "Options générales",
@@ -1760,7 +1762,11 @@
     "Sharing": "Partage",
     "Gathering": "Récolte",
     "Helpers": "Assistants",
-    "Other": "Autre"
+    "Other": "Autre",
+    "Commissions": "Commissions",
+    "Commission_board": "Tableau",
+    "My_commissions": "Mes commissions",
+    "Archived_commissions": "Archives"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1882,7 +1888,7 @@
     "Cost": "Coût",
     "Modal_editor": "Matérias pour {{itemName}}",
     "Unavailable_slot": "Emplacement indisponible",
-    "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
+    "Warning_job_switch": "Changer de job retirera le crystal de job et les deux emplacements main droite et gauche, ainsi que les matérias. Notez les valeurs que vous ne souhaitez pas perdre avant de faire le changement.",
     "Pick_a_job": "Choisir un job",
     "New_gearset": "Nouvelle tenue",
     "Please_input_ariyala_link": "Veuillez entrer un lien ariyala",
@@ -1918,6 +1924,7 @@
     "Missing_items": "Il semble qu'il vous manque certains éléments, assurez-vous que vos filtres sont correctement définis",
     "Copied_as_string": "Tenue copiée au format texte",
     "Mark_as_done": "Marqué comme fait",
+    "Create_commission": "Créer une commission pour cette tenue",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2118,7 +2125,7 @@
       "VENDOR": "Vendeur",
       "TELEPORT": "Téléporter",
       "MARKETBOARD": "Tableau des ventes",
-      "RETAINER": "Retainer"
+      "RETAINER": "Servant"
     },
     "TYPES": {
       "ANY": "Tout",
@@ -2195,5 +2202,142 @@
     "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
     "Create_folder": "Nouveau dossier",
     "Save_replay": "Enregistrer en ligne"
+  },
+  "COMMISSIONS": {
+    "New_commission": "Nouvelle commission",
+    "Price_tbd": "à négocier",
+    "X_items": "{{amount}} objets",
+    "Open_commission_details": "Voir la commission",
+    "Your_commissions_as_client": "Vos commissions en tant que client",
+    "No_commissions_as_client": "Vous n'avez aucune commission en tant que client",
+    "Your_commissions_as_crafter": "Commissions sur lesquelles vous travaillez",
+    "No_commissions_as_crafter": "Vous ne travaillez sur aucune commission",
+    "Delete_commission": "Supprimer cette commission",
+    "Delete_list_too": "Supprimer également la liste",
+    "Delete_commission_only": "Supprimer la commission uniquement",
+    "Your_archived_commissions_as_client": "Commissions en tant que client",
+    "No_archived_commissions_as_client": "Vous n'avez pas de commission archivée en tant que client",
+    "Your_archived_commissions_as_crafter": "Commissions en tant que prestataire",
+    "No_archived_commissions_as_crafter": "Vous n'avez aucune commission archivée en tant que prestataire",
+    "Updates": "Nouveautés",
+    "Clear_notifications": "Effacer les notifications",
+    "TAGS": {
+      "CRAFTING": "Artisanat",
+      "GATHERING": "Récolte",
+      "HUNTING": "Chasse",
+      "FISHING": "Pêche",
+      "GEAR": "Équipement"
+    },
+    "STATUS": {
+      "Label": "Statut",
+      "OPENED": "Ouverte",
+      "IN_PROGRESS": "En cours",
+      "ARCHIVED": "Archivée"
+    },
+    "CREATION": {
+      "Name": "Nom",
+      "Name_placeholder": "Nom de votre commission",
+      "Name_required_error": "Veuillez saisir un nom",
+      "Tags": "Tags",
+      "Price": "Prix",
+      "Price_tip": "Entrez 0 si vous voulez que les gens suggèrent leur prix à la place",
+      "Only_crafting": "Fabrication uniquement",
+      "Includes_materials_label": "Cette commission comprend tous les matériaux de base et ne nécessite que l'artisanat",
+      "Contact_info": "Coordonnées",
+      "Contact_info_placeholder": "Comment le prestataire peut-il vous contacter une fois qu'ils sont acceptés pour la commission ? Discord, ingame, e-mail, comme vous le souhaitez.",
+      "Contact_info_required_error": "Veuillez inclure les informations de contact"
+    },
+    "BOARD": {
+      "Title": "Tableau des commissions",
+      "Filter_with_tags": "Filtrer par tags",
+      "No_matching_commissions": "Aucune commission correspondante",
+      "Min_price": "Prix min.",
+      "Tracking_tip": "Vous pouvez recevoir des notifications pour les nouvelles commissions sur votre datacenter en utilisant la section \"commissions\" du serveur officiel de discord (les notifications seront en anglais)"
+    },
+    "DETAILS": {
+      "Created_by": "Créée par {{name}}",
+      "Details": "Détails",
+      "Price": "Prix",
+      "Tags": "Tags",
+      "No_tags": "Aucun tag",
+      "Server": "Serveur",
+      "Content": "Contenu",
+      "Progression": "Progression",
+      "Candidates": "Candidats ({{amount}})",
+      "Candidates_public_display": "Candidats : {{amount}}",
+      "Apply": "Appliquer",
+      "Edit": "Modifier cette commission",
+      "No_candidates": "Aucun candidat",
+      "Your_offer": "Votre offre",
+      "Remove_offer": "Retirer votre offre",
+      "Fire_contractor": "Virer le prestataire",
+      "Resign": "Démissionner",
+      "Contractor": "Prestataire",
+      "Open_list": "Ouvrir la liste",
+      "List": "Liste",
+      "Mark_as_completed": "Marquer la commission comme terminée",
+      "Hire": "Embaucher ce prestataire",
+      "Progression_Tip": "Une fois que la liste sera remplie à 100%, vous pourrez marquer cette commission comme complétée",
+      "Ratings": "Évaluations",
+      "Waiting_for_rating": "En attente d'évaluation",
+      "Rate_commission": "Ajouter votre évaluation",
+      "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
+      "Copy_share_link": "Copier le lien de partage",
+      "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers"
+    },
+    "APPLY": {
+      "Price": "Votre prix"
+    },
+    "NOTIFICATIONS": {
+      "Click_to_open": "Cliquez pour ouvrir la commission",
+      "CONTRACT_ENDED_CONTRACTOR": {
+        "Title": "Contrat de commission terminé",
+        "Content": "Vous n'êtes plus le prestataire de la commission {{name}}"
+      },
+      "CONTRACT_ENDED_CLIENT": {
+        "Title": "Contrat de commission terminé",
+        "Content": "La commission {{name}} n'a plus de prestataire"
+      },
+      "HIRED": {
+        "Title": "Contrat de commission démarré",
+        "Content": "Vous avez été embauché sur la commission {{name}}"
+      },
+      "CANDIDATE": {
+        "Title": "Nouveau candidat",
+        "Content": "Nouveau candidat pour la commission {{name}}"
+      },
+      "DONE": {
+        "Title": "Liste liée à la commission terminée",
+        "Content": "La liste associée à la commission {{name}} a été complétée"
+      }
+    },
+    "PROFILE": {
+      "Details": "Profil de commission",
+      "View_details": "Ouvrir les détails du profil",
+      "Ratings": "Évaluations",
+      "Incidents": "Incidents",
+      "No_incidents": "Aucun incident",
+      "Fired": "Viré d'une commission",
+      "Resigned": "Démission d'une commission",
+      "No_ratings": "Aucune note pour l'instant",
+      "Fired_X_times": "Viré {{amount}} fois",
+      "Resigned_X_times": "{{amount}} démissions"
+    },
+    "FIRED": {
+      "Please_pick_reason": "Pourquoi virez-vous ce prestataire?",
+      "NO_ACTIVE_SUB": "Le prestataire n'a plus d'abonnement actif.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "Je ne suis pas à l'aise avec ce prestataire.",
+      "NO_LONGER_NEED_JOB_DONE": "La commission n'est plus nécessaire.",
+      "FOUND_SOMEONE_ELSE": "J'ai trouvé un autre prestataire pour cette commission.",
+      "CANNOT_AFFORD": "Je ne peux pas me permettre cette commission."
+    },
+    "RESIGNED": {
+      "Please_pick_reason": "Pourquoi démissionnez-vous de cette commission?",
+      "NO_ACTIVE_SUB": "Je n'ai plus d'abonnement actif.",
+      "UNCOMFORTABLE_WITH_CLIENT": "Je ne suis pas à l'aise avec ce client.",
+      "CANNOT_COMPLETE_LEVEL": "Je ne peux pas compléter cette commission en raison des exigences de niveau que je ne remplis pas.",
+      "CANNOT_COMPLETE_CONTENT": "Je ne peux pas compléter cette commission parce que je n'ai pas accès au contenu nécessaire (exemple : je n'ai pas la dernière extension).",
+      "CANNOT_GATHER": "Je ne suis pas en mesure de collecter les objets requis. Le client non plus."
+    }
   }
 }

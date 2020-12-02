@@ -7,7 +7,6 @@ import { WorkshopsEffects } from './+state/workshops.effects';
 import { WorkshopsFacade } from './+state/workshops.facade';
 import { DatabaseModule } from '../../core/database/database.module';
 import { WorkshopPanelComponent } from './workshop-panel/workshop-panel.component';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { TranslateModule } from '@ngx-translate/core';
 import { ListModule } from '../list/list.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,13 +16,14 @@ import { CoreModule } from '../../core/core.module';
 import { CustomLinksModule } from '../custom-links/custom-links.module';
 import { ListPickerModule } from '../list-picker/list-picker.module';
 import { FolderAdditionPickerModule } from '../folder-addition-picker/folder-addition-picker.module';
+import { AntdSharedModule } from '../../core/antd-shared.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     FlexLayoutModule,
     NgxDnDModule,
     CoreModule,

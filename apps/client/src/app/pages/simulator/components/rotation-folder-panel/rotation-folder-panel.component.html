@@ -47,7 +47,7 @@
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzBackdrop]="false" [nzDropdownMenu]="menu"
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
                 [nzPlacement]="'bottomRight'"
                 [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
                 nz-dropdown>

@@ -5,14 +5,14 @@ import { DirtyFacade } from './+state/dirty.facade';
 import { DIRTY_FEATURE_KEY, dirtyInitialState, dirtyReducer } from './+state/dirty.reducer';
 import { DirtyEffects } from './+state/dirty.effects';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { DirtyGuard } from './dirty-guard';
+import { AntdSharedModule } from '../antd-shared.module';
 
 @NgModule({
   providers: [
     DirtyFacade,
     TranslateModule,
-    NgZorroAntdModule,
+    AntdSharedModule,
     DirtyGuard
   ],
   imports: [

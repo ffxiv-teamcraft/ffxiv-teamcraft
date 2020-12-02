@@ -9,7 +9,7 @@
   <ng-template #unCheckedTemplate>{{'LIST.INVENTORY.Hide_final_items' | translate}}</ng-template>
   <div *ngFor="let tab of display$ | async" class="tab" fxLayout="row wrap" fxLayoutGap="5px">
     <div *ngFor="let slot of tab" [class.empty]="slot === undefined" class="slot" nz-tooltip
-         nzTitle="{{slot?.id | itemName| i18n}} ({{'Copy_isearch' | translate}})">
+         nzTooltipTitle="{{slot?.id | itemName| i18n}} ({{'Copy_isearch' | translate}})">
       <div *ngIf="slot !== undefined"
            clipboard="/isearch &quot;{{slot?.id | itemName | i18n}}&quot;"
            [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (slot?.id | itemName | i18n) + '&quot;'}"

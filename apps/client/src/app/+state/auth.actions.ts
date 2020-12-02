@@ -6,6 +6,7 @@ import { DefaultConsumables } from '../model/user/default-consumables';
 import { Favorites } from '../model/other/favorites';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
+import { CommissionProfile } from '../model/user/commission-profile';
 
 export enum AuthActionTypes {
   GetUser = '[Auth] Get user',
@@ -44,11 +45,12 @@ export enum AuthActionTypes {
   SaveSet = '[Auth] Save set',
   SaveDefaultConsumables = '[Auth] Save default consumables',
 
-  AnonymousWarningShown = '[Auth] Anonyous warning shown',
+  AnonymousWarningShown = '[Auth] Anonymous warning shown',
 
   AuthError = '[Auth] Error',
 
-  MarkAsDoneInLog = '[Auth] Mark as done in log'
+  MarkAsDoneInLog = '[Auth] Mark as done in log',
+  CommissionProfileLoaded = '[Auth] Commission Profile Loaded',
 }
 
 /// Get User AuthState
@@ -250,6 +252,13 @@ export class MarkAsDoneInLog implements Action {
   }
 }
 
+export class CommissionProfileLoaded implements Action {
+  readonly type = AuthActionTypes.CommissionProfileLoaded;
+
+  constructor(public readonly payload: CommissionProfile) {
+  }
+}
+
 // Just an action to be sent once user is persisted properly
 export class UserPersisted implements Action {
   readonly type = AuthActionTypes.UserPersisted;
@@ -290,4 +299,5 @@ export type AuthActions = GetUser
   | RegisterUser
   | SetCID
   | SetWorld
-  | MarkAsDoneInLog;
+  | MarkAsDoneInLog
+  | CommissionProfileLoaded;

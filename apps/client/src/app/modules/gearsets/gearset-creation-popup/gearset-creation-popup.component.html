@@ -1,6 +1,6 @@
 <form (submit)="submit()" [formGroup]="form" fxLayout="column" fxLayoutGap="5px">
   <input autofocus formControlName="name" nz-input placeholder="{{'Please_enter_a_name' | translate}}" type="text">
-  <nz-form-item [nzFlex]="true" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+  <nz-form-item fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
     <nz-form-control [nzValidateStatus]="gearset && gearset.job !== form.controls.job.value ? 'warning' : 'validating'"
                      [nzWarningTip]="'GEARSETS.Warning_job_switch' | translate">
       <nz-select class="filter-select" formControlName="job" nzShowSearch [nzPlaceHolder]="'GEARSETS.Pick_a_job' | translate">

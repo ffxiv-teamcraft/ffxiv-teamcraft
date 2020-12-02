@@ -99,7 +99,7 @@
                 <button (click)="$event.stopPropagation()" [nzPopoverContent]="calculator" [nzPopoverTitle]="'CUSTOM_ITEMS.Add_to_list' | translate"
                         nz-button nz-popover
                         nzShape="circle"
-                        nzTrigger="click" nzType="primary">
+                        nzPopoverTrigger="click" nzType="primary">
                   <i nz-icon nzType="plus"></i>
                   <ng-template #calculator>
                     <div fxLayout="row" fxLayoutGap="5px">
@@ -127,7 +127,7 @@
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <h2>{{'CUSTOM_ITEMS.Details' | translate}}</h2>
               <div>
-                <button [nzBackdrop]="false" [nzDropdownMenu]="menu" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
+                <button  [nzDropdownMenu]="menu" [nzTooltipTitle]="'CUSTOM_ITEMS.Add_details' | translate" [nzTrigger]="'click'" nz-button
                         nz-dropdown nz-tooltip nzShape="circle"
                         nzSize="small">
                   <i nz-icon nzType="plus"></i>

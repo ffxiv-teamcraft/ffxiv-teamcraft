@@ -85,7 +85,7 @@
             </nz-badge>
             <ng-template #notificationsTemplate>
               <nz-list [nzDataSource]="notifications" [nzNoResult]="noNotifications"
-                       [nzRenderItem]="notificationTemplate">
+                       [nzRenderItem]="notificationTemplate" class="notifications-list">
                 <ng-template #noNotifications>
                   <nz-empty [nzNotFoundContent]="'NOTIFICATIONS.No_notifications' | translate"></nz-empty>
                 </ng-template>
@@ -93,7 +93,7 @@
                   <nz-list-item [nzActions]="[actionOpen, actionClose]">
                     <nz-list-item-meta [nzAvatar]="icon"
                                        [nzDescription]="notification.route.join('/')"
-                                       [nzTooltipTitle]="notification.content">
+                                       [nzTitle]="notification.content">
                       <ng-template #icon>
                         <i nz-icon nzType="{{notification.icon}}"></i>
                       </ng-template>
@@ -278,6 +278,43 @@
                   </span>
                   </a>
                 </li>
+
+                <ng-container *ngIf="loggedIn$ | async">
+                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions" (nzOpenChange)="settings.sidebarState = sidebarState"
+                      nz-submenu>
+                  <span title>
+                    <i nz-icon nzType="shop"></i>
+                    <span>{{'SIDEBAR.Commissions' | translate}}</span>
+                    <nz-badge [nzCount]="commissionNotificationsCount$ | async" [nzStyle]="{transform: 'translate(15%, -25%)'}"></nz-badge>
+                  </span>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/board/{{character.Datacenter}}"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="project" nzTheme="outline"></i>
+                      <span class="nav-text">{{'SIDEBAR.Commission_board' | translate}}</span>
+                  </span>
+                    </a>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions" [routerLinkActiveOptions]="{exact: true}"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i class="companion-svg anticon">
+                        &#xE703;
+                      </i>
+                      <span class="nav-text">{{'SIDEBAR.My_commissions' | translate}}</span>
+                      <nz-badge nzDot nzStandalone [nzShowDot]="(commissionNotificationsCount$ | async) > 0"
+                                [nzStyle]="{transform: 'translate(0, -125%)'}"></nz-badge>
+                  </span>
+                    </a>
+                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/archives"
+                       routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="container" nzTheme="outline"></i>
+                      <span class="nav-text">{{'SIDEBAR.Archived_commissions' | translate}}</span>
+                  </span>
+                    </a>
+                  </li>
+                </ng-container>
+
 
                 <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
                 <span title>

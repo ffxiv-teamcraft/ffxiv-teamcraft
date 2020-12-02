@@ -4,10 +4,19 @@ import { RegisterPopupComponent } from './register-popup/register-popup.componen
 import { LoginPopupComponent } from './login-popup/login-popup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
-import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { CharacterLinkPopupComponent } from './character-link-popup/character-link-popup.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { OauthService } from './oauth.service';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzAutocompleteModule } from 'ng-zorro-antd/auto-complete';
+import { NzListModule } from 'ng-zorro-antd/list';
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 
 @NgModule({
   imports: [
@@ -19,7 +28,16 @@ import { OauthService } from './oauth.service';
 
     AngularFireAuthModule,
 
-    NgZorroAntdModule
+    NzModalModule,
+    NzMessageModule,
+    NzFormModule,
+    NzAlertModule,
+    NzDividerModule,
+    NzAutocompleteModule,
+    NzListModule,
+    NzSpinModule,
+    NzInputModule,
+    NzButtonModule
   ],
   providers: [OauthService],
   declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]

@@ -42,12 +42,13 @@
             <i nz-icon nzType="environment-o"></i>
           </button>
         </div>
-        <div (click)="deleteAlarm(row.alarm)" class="hide-icon">
-          <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>
-        </div>
-        <div (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon"
-             nz-popconfirm>
-          <i nz-icon nzType="close"></i>
+        <div class="top-right-icons" fxLayout="row" fxLayoutGap="5px">
+          <div (click)="hideAlarm(row.alarm)" class="hide-icon">
+            <i nz-icon nzType="eye-invisible" nzTheme="outline"></i>
+          </div>
+          <div (nzOnConfirm)="deleteAlarm(row.alarm)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
+            <i nz-icon nzType="close"></i>
+          </div>
         </div>
       </div>
       <nz-divider *ngIf="!last"></nz-divider>
