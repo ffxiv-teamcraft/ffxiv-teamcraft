@@ -29,6 +29,7 @@ export class CommissionEditionPopupComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       name: [this.commission.name, Validators.required],
+      description: [this.commission.description || '', Validators.maxLength(1000)],
       contactInformations: [this.commission.contactInformations || localStorage.getItem('commission:contact') || '', Validators.required],
       price: [this.commission.price || 0],
       includesMaterials: [this.commission.includesMaterials || false],

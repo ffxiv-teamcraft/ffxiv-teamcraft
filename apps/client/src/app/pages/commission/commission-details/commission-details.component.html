@@ -69,7 +69,15 @@
   <div class="card-content">
     <nz-divider [nzText]="'COMMISSIONS.DETAILS.Details' | translate" nzOrientation="left"></nz-divider>
     <div nz-row>
-      <div nz-col nzMd="5" nzSm="12" fxLayout="column" fxLayoutGap="5px">
+      <div nz-col nzMd="4" nzSm="12" fxLayout="column" fxLayoutGap="5px">
+        <div>
+          <b>{{'COMMISSIONS.CREATION.Description' | translate}}</b>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="flex-start center">
+          {{display.commission.description || ('COMMISSIONS.DETAILS.No_description' | translate)}}
+        </div>
+      </div>
+      <div nz-col nzMd="4" nzSm="12" fxLayout="column" fxLayoutGap="5px">
         <div>
           <b>{{'COMMISSIONS.CREATION.Price' | translate}}</b>
         </div>
@@ -79,7 +87,7 @@
           <div *ngIf="display.commission.price <= 0">{{'COMMISSIONS.Price_tbd' | translate}}</div>
         </div>
       </div>
-      <div nz-col nzMd="5" nzSm="12" fxLayout="column" fxLayoutGap="5px">
+      <div nz-col nzMd="4" nzSm="12" fxLayout="column" fxLayoutGap="5px">
         <div>
           <b>{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</b>
         </div>
@@ -87,7 +95,7 @@
           {{(display.commission.includesMaterials ? 'Yes' : 'No') | translate}}
         </div>
       </div>
-      <div nz-col nzMd="5" nzSm="12" fxLayout="column" fxLayoutGap="5px">
+      <div nz-col nzMd="4" nzSm="12" fxLayout="column" fxLayoutGap="5px">
         <div>
           <b>{{'COMMISSIONS.DETAILS.Tags' | translate}}</b>
         </div>
@@ -96,7 +104,7 @@
           <p *ngIf="display.commission.tags.length === 0">{{'COMMISSIONS.DETAILS.No_tags' | translate}}</p>
         </div>
       </div>
-      <div nz-col nzMd="5" nzSm="12" fxLayout="column" fxLayoutGap="5px">
+      <div nz-col nzMd="4" nzSm="12" fxLayout="column" fxLayoutGap="5px">
         <div>
           <b>{{'COMMISSIONS.DETAILS.Server' | translate}}</b>
         </div>
@@ -148,7 +156,8 @@
           && display.commission.authorId === display.userId">
             {{'COMMISSIONS.DETAILS.Progression_Tip' | translate}}
           </i>
-          <button nz-button nzType="primary" *ngIf="display.commission.itemsProgression === 100 && display.commission.status === CommissionStatus.IN_PROGRESS && display.commission.authorId === display.userId"
+          <button nz-button nzType="primary"
+                  *ngIf="display.commission.itemsProgression === 100 && display.commission.status === CommissionStatus.IN_PROGRESS && display.commission.authorId === display.userId"
                   nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                   (nzOnConfirm)="markAsCompleted(display.commission, display.userId)">
             {{'COMMISSIONS.DETAILS.Mark_as_completed' | translate}}

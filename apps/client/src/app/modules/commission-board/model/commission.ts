@@ -12,6 +12,8 @@ export class Commission extends DataWithPermissions {
 
   name: string;
 
+  description = '';
+
   contactInformations: string;
 
   /**
