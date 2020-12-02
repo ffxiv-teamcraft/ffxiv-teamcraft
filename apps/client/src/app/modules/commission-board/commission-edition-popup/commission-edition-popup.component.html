@@ -1,3 +1,9 @@
+<nz-alert nzType="warning" nzBanner *ngIf="showWarning"
+          [nzMessage]="'COMMISSIONS.CREATION.Warning' | translate"
+          [nzDescription]="'COMMISSIONS.CREATION.Warning_description' | translate"
+          nzCloseable
+          (nzOnClose)="hideWarning()"
+          [nzCloseText]="'Close' | translate"></nz-alert>
 <form nz-form nzLayout="vertical" [formGroup]="form">
   <nz-form-item>
     <nz-form-label nzFor="name" nzRequired>{{'COMMISSIONS.CREATION.Name' | translate}}</nz-form-label>

@@ -2248,7 +2248,9 @@
       "Contact_info_required_error": "Please include contact informations",
       "Description": "Description",
       "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters"
+      "Description_max_length_error": "Description has to be < 1000 characters",
+      "Warning": "Warning",
+      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account."
     },
     "BOARD": {
       "Title": "Commission board",
