@@ -1,18 +1,17 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed misslabelling happening when moving an item to a retainer using drag and drop.
-* **pricing:** fixed housing furnitures considered as HQ for price detection.
-* **search:** fixed an issue with lower level filters not applied properly (dated items).
-* **search:** fixed search type not being applied properly in some cases.
-* **workshop:** fixed an issue preventing workshop content from loading properly in lists page.
+* **gearset:** fixed ariyala items always being NQ.
+* **gearset:** fixed lodestone items always being NQ.
+* **list:** fixed list sometimes not loading properly if opened as anonymous.
 
 
 ### Features
 
-* **alarms-sidebar:** new icon to disable the alarm from sidebar.
-* **data:** support for korean v5.25 update.
+* **desktop:** support for CN 5.3 packet capture.
+* new commission board system !.
+* **data:** update for cn patch-5.3.
 
 
 ### Performance Improvements
 
-* **assets:** added line break removal in prod assets hashing process.`;
+* **async:** memory management optimizations.`;
