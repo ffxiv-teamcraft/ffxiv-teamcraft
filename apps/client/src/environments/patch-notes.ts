@@ -1,17 +1,14 @@
 export const patchNotes = `### Bug Fixes
 
-* **gearset:** fixed ariyala items always being NQ.
-* **gearset:** fixed lodestone items always being NQ.
-* **list:** fixed list sometimes not loading properly if opened as anonymous.
+* **commissions:** better labelling for commission price to avoid confusion.
+* **commissions:** better large title display in panels.
+* **commissions:** fixed a bug that allowed anyone to click the button to mark as done.
+* **commissions:** fixed missleading contractor contact informations field placeholder.
+* **commissions:** move to commissions page after commission was deleted.
+* **lists:** fixed a bug with creating a new list preventing lists page from being loaded.
 
 
 ### Features
 
-* **desktop:** support for CN 5.3 packet capture.
-* new commission board system !.
-* **data:** update for cn patch-5.3.
-
-
-### Performance Improvements
-
-* **async:** memory management optimizations.`;
+* **commissions:** new description field to give more details about what you're expecting.
+* **commissions:** warning about troll commissions and advertising.`;
