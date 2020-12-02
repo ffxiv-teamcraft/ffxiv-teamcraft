@@ -12802,10 +12802,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.37.26:
-  version "2.37.26"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.37.26.tgz#f7ebbfde83f079cf74b5e1894c9f81227c48c42c"
-  integrity sha512-SA7z/cGH1+IdjmwDA8E4P1L5dIh3P4VIJG++v3VjA96KEhdMJq9Js/ULzo4i9i+UzZY8ZsA1noo+85PQ8MlzNQ==
+node-machina-ffxiv@^2.37.29:
+  version "2.37.29"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.37.29.tgz#cdbe9dddd22fc6cc6e4eab7387d10ddbf8ed87b2"
+  integrity sha512-7WPFrztphRTDTsryJ0gJBtv6K1H+TUZPOKvSA/FrFfPU0QSVgeM/dyBw8irldHnBuK53xZL+8rEab1VtK3vJXA==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"
