@@ -2262,7 +2262,7 @@
     "DETAILS": {
       "Created_by": "Created by {{name}}",
       "Details": "Details",
-      "Price": "Price paid by the client",
+      "Price": "Payment",
       "Tags": "Tags",
       "No_tags": "No tags",
       "Server": "Server",
