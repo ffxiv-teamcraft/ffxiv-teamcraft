@@ -2219,8 +2219,8 @@
     "No_archived_commissions_as_client": "Vous n'avez pas de commission archivée en tant que client",
     "Your_archived_commissions_as_crafter": "Commissions en tant que prestataire",
     "No_archived_commissions_as_crafter": "Vous n'avez aucune commission archivée en tant que prestataire",
-    "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "Updates": "Nouveautés",
+    "Clear_notifications": "Effacer les notifications",
     "TAGS": {
       "CRAFTING": "Artisanat",
       "GATHERING": "Récolte",
@@ -2251,76 +2251,76 @@
       "Title": "Tableau des commissions",
       "Filter_with_tags": "Filtrer par tags",
       "No_matching_commissions": "Aucune commission correspondante",
-      "Min_price": "Min. price",
-      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+      "Min_price": "Prix min.",
+      "Tracking_tip": "Vous pouvez recevoir des notifications pour les nouvelles commissions sur votre datacenter en utilisant la section \"commissions\" du serveur officiel de discord (les notifications seront en anglais)"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
-      "Details": "Details",
-      "Price": "Price",
+      "Created_by": "Créée par {{name}}",
+      "Details": "Détails",
+      "Price": "Prix",
       "Tags": "Tags",
-      "No_tags": "No tags",
-      "Server": "Server",
-      "Content": "Content",
+      "No_tags": "Aucun tag",
+      "Server": "Serveur",
+      "Content": "Contenu",
       "Progression": "Progression",
-      "Candidates": "Candidates ({{amount}})",
-      "Candidates_public_display": "Candidates : {{amount}}",
-      "Apply": "Apply",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
-      "Your_offer": "Your offer",
-      "Remove_offer": "Remove your offer",
-      "Fire_contractor": "Fire the contractor",
-      "Resign": "Resign",
-      "Contractor": "Contractor",
-      "Open_list": "Open the list",
-      "List": "List",
-      "Mark_as_completed": "Mark commission as completed",
-      "Hire": "Hire this contractor",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
-      "Ratings": "Ratings",
-      "Waiting_for_rating": "Waiting for rating",
-      "Rate_commission": "Add your rating",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard"
+      "Candidates": "Candidats ({{amount}})",
+      "Candidates_public_display": "Candidats : {{amount}}",
+      "Apply": "Appliquer",
+      "Edit": "Modifier cette commission",
+      "No_candidates": "Aucun candidat",
+      "Your_offer": "Votre offre",
+      "Remove_offer": "Retirer votre offre",
+      "Fire_contractor": "Virer le prestataire",
+      "Resign": "Démissionner",
+      "Contractor": "Prestataire",
+      "Open_list": "Ouvrir la liste",
+      "List": "Liste",
+      "Mark_as_completed": "Marquer la commission comme terminée",
+      "Hire": "Embaucher ce prestataire",
+      "Progression_Tip": "Une fois que la liste sera remplie à 100%, vous pourrez marquer cette commission comme complétée",
+      "Ratings": "Évaluations",
+      "Waiting_for_rating": "En attente d'évaluation",
+      "Rate_commission": "Ajouter votre évaluation",
+      "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
+      "Copy_share_link": "Copier le lien de partage",
+      "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers"
     },
     "APPLY": {
-      "Price": "Your price"
+      "Price": "Votre prix"
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "Cliquez pour ouvrir la commission",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "Contrat de commission terminé",
+        "Content": "Vous n'êtes plus le prestataire de la commission {{name}}"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "Contrat de commission terminé",
+        "Content": "La commission {{name}} n'a plus de prestataire"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "Contrat de commission démarré",
+        "Content": "Vous avez été embauché sur la commission {{name}}"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "Nouveau candidat",
+        "Content": "Nouveau candidat pour la commission {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "Liste liée à la commission terminée",
+        "Content": "La liste associée à la commission {{name}} a été complétée"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
+      "Details": "Profil de commission",
+      "View_details": "Ouvrir les détails du profil",
+      "Ratings": "Évaluations",
       "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
+      "No_incidents": "Aucun incident",
+      "Fired": "Viré d'une commission",
+      "Resigned": "Démission d'une commission",
+      "No_ratings": "Aucune note pour l'instant",
+      "Fired_X_times": "Viré {{amount}} fois",
       "Resigned_X_times": "{{amount}} démissions"
     },
     "FIRED": {
