@@ -23,12 +23,15 @@ export class CommissionEditionPopupComponent implements OnInit {
     };
   });
 
+  showWarning = localStorage.getItem('cw:s') === null;
+
   constructor(private fb: FormBuilder, private modalRef: NzModalRef) {
   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
       name: [this.commission.name, Validators.required],
+      description: [this.commission.description || '', Validators.maxLength(1000)],
       contactInformations: [this.commission.contactInformations || localStorage.getItem('commission:contact') || '', Validators.required],
       price: [this.commission.price || 0],
       includesMaterials: [this.commission.includesMaterials || false],
@@ -41,6 +44,11 @@ export class CommissionEditionPopupComponent implements OnInit {
       localStorage.setItem('commission:contact', this.form.value.contactInformations);
       this.modalRef.close(this.form.value);
     }
+  }
+
+  hideWarning():void{
+    localStorage.setItem('cw:s', '1');
+    this.showWarning = false;
   }
 
   close(): void {

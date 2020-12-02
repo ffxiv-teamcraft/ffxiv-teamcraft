@@ -1,3 +1,9 @@
+<nz-alert nzType="warning" nzBanner *ngIf="showWarning"
+          [nzMessage]="'COMMISSIONS.CREATION.Warning' | translate"
+          [nzDescription]="'COMMISSIONS.CREATION.Warning_description' | translate"
+          nzCloseable
+          (nzOnClose)="hideWarning()"
+          [nzCloseText]="'Close' | translate"></nz-alert>
 <form nz-form nzLayout="vertical" [formGroup]="form">
   <nz-form-item>
     <nz-form-label nzFor="name" nzRequired>{{'COMMISSIONS.CREATION.Name' | translate}}</nz-form-label>
@@ -5,6 +11,17 @@
       <input nz-input formControlName="name" type="text" id="name" [placeholder]="'COMMISSIONS.CREATION.Name_placeholder' | translate">
       <ng-template #nameErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">{{'COMMISSIONS.CREATION.Name_required_error' | translate}}</ng-container>
+      </ng-template>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="description" nzRequired>{{'COMMISSIONS.CREATION.Description' | translate}}</nz-form-label>
+    <nz-form-control nzHasFeedback [nzErrorTip]="descriptionErrorTpl">
+      <textarea nz-input formControlName="description" rows="4" id="description"
+                [placeholder]="'COMMISSIONS.CREATION.Description_placeholder' | translate">
+      </textarea>
+      <ng-template #descriptionErrorTpl let-control>
+        <ng-container *ngIf="control.hasError('maxlength')">{{'COMMISSIONS.CREATION.Description_max_length_error' | translate}}</ng-container>
       </ng-template>
     </nz-form-control>
   </nz-form-item>

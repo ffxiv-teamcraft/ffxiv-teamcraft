@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { filter, map, takeUntil } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
@@ -40,12 +40,14 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   constructor(private activatedRoute: ActivatedRoute, private commissionsFacade: CommissionsFacade,
               private authFacade: AuthFacade, public translate: TranslateService,
-              public settings: SettingsService, private notificationsFacade: NotificationsFacade) {
+              public settings: SettingsService, private notificationsFacade: NotificationsFacade,
+              private router: Router) {
     super();
   }
 
   deleteCommission(commission: Commission, withLists: boolean): void {
     this.commissionsFacade.delete(commission.$key, withLists);
+    this.router.navigate(['commissions']);
   }
 
   editCommission(commission: Commission): void {

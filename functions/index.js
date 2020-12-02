@@ -49,13 +49,14 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
 
 exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
   const commission = snapshot.data();
-  admin.messaging().sendToTopic(`/topics/commissions.${commission.datacenter}`, {
-    data: {
-      commission: JSON.stringify(commission)
-    }
-  });
-
-  commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })));
+  return Promise.all([
+    admin.messaging().sendToTopic(`/topics/commissions.${commission.datacenter}`, {
+      data: {
+        commission: JSON.stringify(commission)
+      }
+    }),
+    commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })))
+  ]);
 });
 
 function addUserCommissionNotification(targetId, type, payload) {

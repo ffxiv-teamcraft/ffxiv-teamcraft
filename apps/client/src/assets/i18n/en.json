@@ -2239,13 +2239,18 @@
       "Name_placeholder": "Name of your commission",
       "Name_required_error": "Please input a name",
       "Tags": "Tags",
-      "Price": "Price",
-      "Price_tip": "Input 0 if you want people to suggest their price instead",
+      "Price": "Price you're willing to pay",
+      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
       "Only_crafting": "Only crafting",
       "Includes_materials_label": "This commission includes all base materials and requires only crafting",
       "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations"
+      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_required_error": "Please include contact informations",
+      "Description": "Description",
+      "Description_placeholder": "If you want to give more details about your commission, it's here",
+      "Description_max_length_error": "Description has to be < 1000 characters",
+      "Warning": "Warning",
+      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account."
     },
     "BOARD": {
       "Title": "Commission board",
@@ -2257,7 +2262,7 @@
     "DETAILS": {
       "Created_by": "Created by {{name}}",
       "Details": "Details",
-      "Price": "Price",
+      "Price": "Payment",
       "Tags": "Tags",
       "No_tags": "No tags",
       "Server": "Server",
@@ -2283,10 +2288,12 @@
       "Rate_commission": "Add your rating",
       "Bump": "Bring this commission back to the top, only once per 24h",
       "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard"
+      "Share_link_copied": "Commission share link copied to your clipboard",
+      "No_description": "No description"
     },
     "APPLY": {
-      "Price": "Your price"
+      "Price": "Your price",
+      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Click to open the commission",

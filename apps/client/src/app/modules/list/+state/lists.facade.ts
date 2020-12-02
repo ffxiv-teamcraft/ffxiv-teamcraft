@@ -231,7 +231,7 @@ export class ListsFacade {
     }).afterClose.pipe(
       filter(res => res && res.name !== undefined),
       map(res => {
-        const list = this.newListWithName(res);
+        const list = this.newListWithName(res.name);
         list.ephemeral = res.ephemeral;
         list.offline = res.offline;
         return list;

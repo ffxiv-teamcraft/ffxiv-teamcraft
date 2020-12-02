@@ -9,7 +9,7 @@
     <nz-form-label nzFor="contactInformations" nzRequired>{{'COMMISSIONS.CREATION.Contact_info' | translate}}</nz-form-label>
     <nz-form-control nzHasFeedback [nzErrorTip]="contactInformationsErrorTpl">
       <textarea nz-input formControlName="contactInformations" rows="4" id="contactInformations"
-                [placeholder]="'COMMISSIONS.CREATION.Contact_info_placeholder' | translate">
+                [placeholder]="'COMMISSIONS.APPLY.Contact_info_placeholder' | translate">
       </textarea>
       <ng-template #contactInformationsErrorTpl let-control>
         <ng-container *ngIf="control.hasError('required')">{{'COMMISSIONS.CREATION.Contact_info_required_error' | translate}}</ng-container>

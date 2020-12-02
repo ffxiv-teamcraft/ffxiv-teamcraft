@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.1"></a>
+## [7.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.0...v7.6.1) (2020-12-02)
+
+
+### Bug Fixes
+
+* **commissions:** better labelling for commission price to avoid confusion ([fdfa01f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fdfa01f))
+* **commissions:** better large title display in panels ([64634ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64634ce))
+* **commissions:** fixed a bug that allowed anyone to click the button to mark as done ([fc56a72](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc56a72))
+* **commissions:** fixed missleading contractor contact informations field placeholder ([8956aa6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8956aa6))
+* **commissions:** move to commissions page after commission was deleted ([0c58f55](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0c58f55))
+* **lists:** fixed a bug with creating a new list preventing lists page from being loaded ([000c7b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/000c7b3))
+
+
+### Features
+
+* **commissions:** new description field to give more details about what you're expecting ([8576383](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8576383))
+* **commissions:** warning about troll commissions and advertising ([f023bac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f023bac))
+
+
+
 <a name="7.6.0"></a>
 # [7.6.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.5.6...v7.6.0) (2020-12-02)
 
