@@ -1763,9 +1763,9 @@
     "Gathering": "採集",
     "Helpers": "ヘルパー",
     "Other": "その他",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
+    "Commissions": "依頼",
+    "Commission_board": "依頼ボード",
+    "My_commissions": "私の依頼",
     "Archived_commissions": "アーカイブ"
   },
   "PACKET_CAPTURE": {
