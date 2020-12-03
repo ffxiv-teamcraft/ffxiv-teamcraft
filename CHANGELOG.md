@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.2"></a>
+## [7.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.1...v7.6.2) (2020-12-03)
+
+
+### Bug Fixes
+
+* **xivapi:** better character loading management ([8e4b743](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e4b743))
+* fixed an error message about notifications service worker not registering on desktop ([2932f18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2932f18))
+* **commissions:** better discord bot tracking implementation ([7e00e45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7e00e45))
+* **lists:** fixed lists page not loading for some users ([081af1d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/081af1d))
+
+
+### Features
+
+* **commissions:** new header column inside board results ([ef6449c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ef6449c))
+
+
+### Performance Improvements
+
+* **lists:** way better performances with large amount of lists in lists page ([f1d9ab4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f1d9ab4))
+
+
+
 <a name="7.6.1"></a>
 ## [7.6.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.0...v7.6.1) (2020-12-02)
 
