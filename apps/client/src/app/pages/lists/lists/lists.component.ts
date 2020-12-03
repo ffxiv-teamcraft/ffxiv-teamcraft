@@ -48,6 +48,8 @@ export class ListsComponent {
 
   public needsVerification$ = this.listsFacade.needsVerification$;
 
+  private loadingLists = [];
+
   constructor(private listsFacade: ListsFacade, private progress: ProgressPopupService,
               private listManager: ListManagerService, private message: NzMessageService,
               private translate: TranslateService, private dialog: NzModalService,
@@ -105,7 +107,8 @@ export class ListsComponent {
                   const list = lists.find(c => c.$key === key);
                   if (list !== undefined) {
                     list.workshopId = workshop.$key;
-                  } else {
+                  } else if(!this.loadingLists.includes(key)) {
+                    this.loadingLists.push(key);
                     this.listsFacade.load(key);
                   }
                   return list;
