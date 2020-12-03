@@ -2311,30 +2311,30 @@
       },
       "CANDIDATE": {
         "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Content": "새로운 의뢰가 등록되었습니다 {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "의뢰 목록 완료",
+        "Content": "{{name}} 과/와 관련된 의뢰가 완료되었습니다"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Details": "의뢰 프로필",
+      "View_details": "프로필 상세보기",
+      "Ratings": "평가",
+      "Incidents": "사건/사고",
+      "No_incidents": "사건/사고가 없음",
+      "Fired": "의뢰에서 강제 퇴출됨",
+      "Resigned": "의뢰를 포기함",
+      "No_ratings": "평가 없음",
+      "Fired_X_times": "{{amount}} 회 퇴출됨",
+      "Resigned_X_times": "{{amount}} 회 의뢰를 포기함"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
+      "Please_pick_reason": "왜 해당 플레이어를 퇴출하나요:?",
+      "NO_ACTIVE_SUB": "의뢰와 관련된 활동을 하지 않음",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함",
+      "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어졌다.",
       "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
       "CANNOT_AFFORD": "I cannot afford this commission."
     },
