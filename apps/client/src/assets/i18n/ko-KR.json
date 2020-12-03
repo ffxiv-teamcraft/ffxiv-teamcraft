@@ -2271,39 +2271,39 @@
       "Candidates": "Candidates ({{amount}})",
       "Candidates_public_display": "Candidates : {{amount}}",
       "Apply": "신청하기",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
-      "Your_offer": "Your offer",
-      "Remove_offer": "Remove your offer",
-      "Fire_contractor": "Fire the contractor",
-      "Resign": "Resign",
-      "Contractor": "Contractor",
-      "Open_list": "Open the list",
-      "List": "List",
-      "Mark_as_completed": "Mark commission as completed",
+      "Edit": "해당 의뢰내용 수정",
+      "No_candidates": "후보자가 없습니다",
+      "Your_offer": "나의 제안",
+      "Remove_offer": "나의 제안 취소하기",
+      "Fire_contractor": "해당 플레이어 퇴출",
+      "Resign": "의뢰 포기",
+      "Contractor": "계약자",
+      "Open_list": "목록 열기",
+      "List": "목록",
+      "Mark_as_completed": "의뢰를 완료됨으로 표시",
       "Hire": "해당 플레이어 고용하기",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
+      "Progression_Tip": "진행도가 100%가 되면 해당 의뢰가 완료됨으로 표시됩니다",
       "Ratings": "평가",
       "Waiting_for_rating": "평가 대기 중",
       "Rate_commission": "평가 추가",
-      "Bump": "Bring this commission back to the top, only once per 24h",
+      "Bump": "해당 의뢰를 상단에 노출시키기(24시간마다 한번만 가능)",
       "Copy_share_link": "공유링크 복사",
       "Share_link_copied": "유저 의뢰 공유용 링크를 클립보드에 복사했습니다",
       "No_description": "설명 없음"
     },
     "APPLY": {
-      "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Price": "가격",
+      "Contact_info_placeholder": "만약 해당 의뢰자와 연락하고 싶다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요."
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "의뢰 열기",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "의뢰 종료",
+        "Content": "더 이상 {{name}} 의뢰의 계약자가 아닙니다"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "의뢰 계약이 종료됨",
+        "Content": "더 이상 해당 계약자가 {{name}} 의뢰를 수행하지 않습니다"
       },
       "HIRED": {
         "Title": "의뢰 시작",
