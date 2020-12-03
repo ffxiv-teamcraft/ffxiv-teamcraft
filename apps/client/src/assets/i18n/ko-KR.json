@@ -649,7 +649,7 @@
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
     "Split_list": "목록 분할",
-    "Create_commission": "이 목록에 대한 유저 의뢰를 만들기",
+    "Create_commission": "해당 목록에 대한 유저 의뢰를 만들기",
     "Commission_list": "유저 의뢰 목록",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
@@ -1178,7 +1178,7 @@
     "Purchase_date": "날짜",
     "More_on_universalis": "universalis에서 자세히 보기",
     "Server": "서버",
-    "Last_updated": "최근 갱신"
+    "Last_updated": "최종 갱신"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1923,7 +1923,7 @@
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
     "Missing_items": "몇몇 슬롯이 비어있는 것처럼 보인다면 필터를 정확하게 세팅해 주세요.",
     "Copied_as_string": "장비 세트의 아이템 이름이 복사되었습니다",
-    "Mark_as_done": "금단 완료로 표시",
+    "Mark_as_done": "완료됨으로 표기",
     "Create_commission": "해당 장비 세트를 유저 의뢰로 만들기",
     "SLOT": {
       "Body": "몸통",
@@ -1969,7 +1969,7 @@
     "SYNC": {
       "Title": "장비 세트 동기화",
       "Tag": "동기화",
-      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트 됩니다.",
+      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트됩니다.",
       "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
       "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
       "Syncing_gearsets": "장비 세트를 동기화 중.."
@@ -2275,7 +2275,7 @@
       "No_candidates": "후보자가 없습니다",
       "Your_offer": "나의 제안",
       "Remove_offer": "나의 제안 취소하기",
-      "Fire_contractor": "해당 플레이어 퇴출",
+      "Fire_contractor": "계약된 플레이어 퇴출",
       "Resign": "의뢰 포기",
       "Contractor": "계약자",
       "Open_list": "목록 열기",
