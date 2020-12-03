@@ -707,7 +707,7 @@ export class List extends DataWithPermissions {
       this.createdAt = new firebase.firestore.Timestamp((this.createdAt as any).seconds, (this.createdAt as any).nanoseconds);
     }
     // lmao nice hotfix
-    if ((<any>this.name).name) {
+    if ((<any>this.name)?.name) {
       this.name = (<any>this.name).name;
     }
   }
