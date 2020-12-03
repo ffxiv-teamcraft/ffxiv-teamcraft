@@ -8,7 +8,6 @@ import { AuthFacade } from '../../../+state/auth.facade';
 import { Observable } from 'rxjs';
 import { CommissionsFacade } from '../+state/commissions.facade';
 import { NotificationType } from '../../../core/notification/notification-type';
-import { CommissionNotification } from '../../../model/notification/commission-notification';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -60,9 +59,9 @@ export class CommissionPanelComponent implements OnInit {
   ngOnInit(): void {
     this.hasNotifications$ = this.commissionsFacade.notifications$.pipe(
       map(notifications => {
-        return notifications.some(n => n.type === NotificationType.COMMISSION && (<any>n).commissionId === this.commission.$key)
+        return notifications.some(n => n.type === NotificationType.COMMISSION && (<any>n).commissionId === this.commission.$key);
       })
-    )
+    );
   }
 
 }
