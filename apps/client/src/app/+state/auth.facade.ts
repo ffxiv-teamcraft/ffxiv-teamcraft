@@ -147,10 +147,12 @@ export class AuthFacade {
   mainCharacter$ = this.mainCharacterEntry$.pipe(
     map((entry) => {
       return entry.character as Character;
-    })
+    }),
+    filter(c => !!c)
   );
 
   fcId$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
+    filter((res) => !res.includes(undefined)),
     distinctUntilChanged(([a], [b]) => {
       return a.FreeCompanyId === b.FreeCompanyId;
     }),

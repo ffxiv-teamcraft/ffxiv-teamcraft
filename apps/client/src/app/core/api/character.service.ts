@@ -15,7 +15,7 @@ export class CharacterService {
 
   constructor(private userService: UserService, private xivapi: XivapiService) {
     if (!CharacterService.INTERVAL) {
-      CharacterService.INTERVAL = interval(1000).subscribe(() => {
+      CharacterService.INTERVAL = interval(1500).subscribe((i) => {
         const subject = CharacterService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
@@ -43,7 +43,8 @@ export class CharacterService {
         switchMapTo(this.xivapi.getCharacter(id)),
         tap(res => this.cacheCharacter(res)),
         startWith(this.getCachedCharacter(id)),
-        filter(res => res !== null)
+        filter(res => res !== null),
+        shareReplay(1)
       );
       this.addToQueue(trigger);
     }
