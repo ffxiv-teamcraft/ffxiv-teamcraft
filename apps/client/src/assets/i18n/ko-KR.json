@@ -2324,7 +2324,7 @@
       "Ratings": "평가",
       "Incidents": "사건/사고",
       "No_incidents": "사건/사고가 없음",
-      "Fired": "의뢰에서 강제 퇴출됨",
+      "Fired": "의뢰에서 퇴출됨",
       "Resigned": "의뢰를 포기함",
       "No_ratings": "평가 없음",
       "Fired_X_times": "{{amount}} 회 퇴출됨",
@@ -2332,16 +2332,16 @@
     },
     "FIRED": {
       "Please_pick_reason": "왜 해당 플레이어를 퇴출하나요:?",
-      "NO_ACTIVE_SUB": "의뢰와 관련된 활동을 하지 않음",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함",
-      "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어졌다.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "NO_ACTIVE_SUB": "의뢰를 받은 플레이어가 더 이상 게임 이용권을 결제하지 않음.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함.",
+      "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어짐.",
+      "FOUND_SOMEONE_ELSE": "의뢰를 대신 해줄 다른 플레이어를 찾음.",
+      "CANNOT_AFFORD": "해당 의뢰를 완료할 자신이 없음."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
+      "Please_pick_reason": "왜 해당 의뢰를 포기하나요?",
+      "NO_ACTIVE_SUB": "추가적인 게임 이용권을 구입할 계획이 없음",
+      "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
       "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
       "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
       "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
