@@ -11,6 +11,6 @@ export class CharacterNamePipe implements PipeTransform {
   constructor(private service: CharacterService, private translate: TranslateService) {}
 
   transform(userId: string): Observable<string> {
-    return this.service.getCharacter(userId).pipe(map((character) => (character ? character.character.Name : this.translate.instant('COMMON.Anonymous'))));
+    return this.service.getUserCharacter(userId).pipe(map((character) => (character ? character.character.Name : this.translate.instant('COMMON.Anonymous'))));
   }
 }

@@ -124,7 +124,7 @@ export class DiscordWebhookService {
       return;
     }
     const itemName = this.l12n.getItem(itemId);
-    this.characterService.getCharacter(memberId).pipe(
+    this.characterService.getUserCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
@@ -169,7 +169,7 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.LIST_PROGRESSION)) {
       return;
     }
-    this.characterService.getCharacter(memberId).pipe(
+    this.characterService.getUserCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.List_progress', {
@@ -188,7 +188,7 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.MEMBER_JOINED)) {
       return;
     }
-    this.characterService.getCharacter(memberId).pipe(
+    this.characterService.getUserCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Member_joined', {
@@ -204,7 +204,7 @@ export class DiscordWebhookService {
     if (!team.hasSettingEnabled(WebhookSettingType.MEMBER_LEFT)) {
       return;
     }
-    this.characterService.getCharacter(memberId).pipe(
+    this.characterService.getUserCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.Member_removed', {
@@ -221,7 +221,7 @@ export class DiscordWebhookService {
       return;
     }
     const itemName = this.l12n.getItem(itemId);
-    this.characterService.getCharacter(memberId).pipe(
+    this.characterService.getUserCharacter(memberId).pipe(
       first(),
       map(character => {
         this.sendMessage(team, 'TEAMS.NOTIFICATIONS.User_assigned', {

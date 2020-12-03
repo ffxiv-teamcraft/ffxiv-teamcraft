@@ -2,8 +2,7 @@
   <nz-collapse-panel #listContentPanel [nzHeader]="header">
     <ng-template #header>
       <div class="panel-header" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px" nz-row>
-        <div (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px"
-             nz-col nzMd="5" nzSm="20">
+        <div nz-col nzMd="5" nzSm="12" (dblclick)="openCommission()" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <app-user-avatar [userId]="commission.authorId" [width]="32"></app-user-avatar>
           <nz-badge nzDot [nzShowDot]="hasNotifications$ | async">
             <div class="name">
@@ -11,7 +10,7 @@
             </div>
           </nz-badge>
         </div>
-        <div nz-col nzMd="4" fxLayout="row" fxLayoutAlign="space-between center">
+        <div nz-col nzMd="4" nzSm="12" fxLayout="row" fxLayoutAlign="space-between center">
           <div>{{commission.createdAt.seconds * 1000 | date:'short':null:translate.currentLang}}</div>
           <div [ngSwitch]="commission.status" *ngIf="showStatus">
             <nz-tag *ngSwitchCase="CommissionStatus.OPENED" [style.border-color]="'#108ee9'">{{'COMMISSIONS.STATUS.Label' | translate}}
@@ -22,7 +21,7 @@
               : {{'COMMISSIONS.STATUS.ARCHIVED' | translate}}</nz-tag>
           </div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="7" nzSm="24">
+        <div nz-col nzMd="7" nzSm="24" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" >
           <nz-tag [nzColor]="'purple'">{{commission.server}}</nz-tag>
           <nz-tag style.border-color="#108ee9" *ngIf="commission.includesMaterials" nz-tooltip
                   [nzTooltipTitle]="'COMMISSIONS.CREATION.Includes_materials_label' | translate"
@@ -32,12 +31,12 @@
         <div nz-col nzMd="2" nzSm="6">
           {{'COMMISSIONS.X_items' | translate:{ amount: commission.totalItems } }}
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4" nzSm="6">
+        <div nz-col nzMd="3" nzSm="6" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <app-item-icon [disableClick]="true" [itemId]="1" width="24"></app-item-icon>
           <div *ngIf="commission.price > 0">{{commission.price | number:'1.0':translate.currentLang}}</div>
           <div *ngIf="commission.price <= 0">{{'COMMISSIONS.Price_tbd' | translate}}</div>
         </div>
-        <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px" nz-col nzMd="2" nzSm="12">
+        <div nz-col nzMd="3" nzSm="12" fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="2px">
           <button nz-button nzShape="circle"
                   (click)="$event.stopPropagation()"
                   nz-tooltip [nzTooltipTitle]="'COMMISSIONS.DETAILS.Copy_share_link' | translate"

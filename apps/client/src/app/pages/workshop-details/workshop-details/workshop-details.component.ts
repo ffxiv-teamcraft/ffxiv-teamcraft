@@ -8,6 +8,7 @@ import { catchError, filter, first, map, switchMap, tap } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
 import { Character, XivapiService } from '@xivapi/angular-client';
 import { UserService } from '../../../core/database/user.service';
+import { CharacterService } from '../../../core/api/character.service';
 
 @Component({
   selector: 'app-workshop-details',
@@ -23,7 +24,8 @@ export class WorkshopDetailsComponent implements OnInit {
   public lists$: Observable<List[]>;
 
   constructor(private route: ActivatedRoute, private workshopsFacade: WorkshopsFacade,
-              private listsFacade: ListsFacade, private xivapi: XivapiService, private userService: UserService) {
+              private listsFacade: ListsFacade, private xivapi: XivapiService,
+              private userService: UserService, private characterService: CharacterService) {
     this.workshop$ = this.workshopsFacade.selectedWorkshop$.pipe(
       filter(w => w !== undefined),
       tap(workshop => {
@@ -50,7 +52,7 @@ export class WorkshopDetailsComponent implements OnInit {
       }),
       switchMap(user => {
         if (user && user.defaultLodestoneId) {
-          return this.xivapi.getCharacter(user.defaultLodestoneId, { columns: ['Character.Name', 'Character.Avatar'] })
+          return this.characterService.getCharacter(user.defaultLodestoneId)
             .pipe(
               map(response => response.Character)
             );

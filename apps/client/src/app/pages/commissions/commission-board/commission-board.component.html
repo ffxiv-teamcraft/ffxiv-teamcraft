@@ -29,6 +29,16 @@
         </div>
       </div>
       <div class="results" fxLayout="column" fxLayoutGap="5px">
+        <div class="header" *ngIf="display.commissions.length > 0">
+          <div class="header-content" nz-row fxLayout="row" fxLayout.lt-md="column" fxLayoutGap.lt-md="5px">
+            <div nz-col nzMd="5" nzSm="20">{{'COMMISSIONS.CREATION.Name' | translate}}</div>
+            <div nz-col nzMd="4" nzSm="12">{{'COMMISSIONS.DETAILS.Creation_date' | translate}}</div>
+            <div nz-col nzMd="7" nzSm="24">{{'COMMISSIONS.DETAILS.Server_&_tags' | translate}}</div>
+            <div nz-col nzMd="2" nzSm="6">{{'COMMISSIONS.DETAILS.Items_count' | translate}}</div>
+            <div nz-col nzMd="3" nzSm="6">{{'COMMISSIONS.DETAILS.Price' | translate}}</div>
+            <div nz-col nzMd="3" nzSm="12"></div>
+          </div>
+        </div>
         <app-commission-panel *ngFor="let commission of display.commissions; trackBy: trackByCommission" [showStatus]="false"
                               [commission]="commission"></app-commission-panel>
         <app-fullpage-message *ngIf="display.commissions.length === 0"

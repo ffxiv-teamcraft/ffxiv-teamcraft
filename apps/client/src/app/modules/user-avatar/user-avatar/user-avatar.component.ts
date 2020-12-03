@@ -39,7 +39,7 @@ export class UserAvatarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.userService.get(this.userId);
-    const character$ = this.characterService.getCharacter(this.userId).pipe(
+    const character$ = this.characterService.getUserCharacter(this.userId).pipe(
       catchError(() => {
         return of(null);
       }),

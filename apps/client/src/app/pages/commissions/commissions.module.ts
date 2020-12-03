@@ -6,7 +6,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { CommissionsPageComponent } from './commissions-page/commissions-page.component';
-import { CommissionDetailsComponent } from '../commission/commission-details/commission-details.component';
 import { CommissionArchivesComponent } from './commission-archives/commission-archives.component';
 import { CoreModule } from '../../core/core.module';
 import { PageLoaderModule } from '../../modules/page-loader/page-loader.module';
@@ -20,6 +19,7 @@ import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-m
 import { NzInputNumberModule } from 'ng-zorro-antd/input-number';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 
 const routes: Routes = [
   {
@@ -59,7 +59,8 @@ const routes: Routes = [
     FullpageMessageModule,
     NzInputNumberModule,
     NzCheckboxModule,
-    NzAlertModule
+    NzAlertModule,
+    NzGridModule
   ]
 })
 export class CommissionsModule {

@@ -45,6 +45,7 @@ import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { LogTrackingService } from '../core/database/log-tracking.service';
+import { CharacterService } from '../core/api/character.service';
 
 @Injectable({
   providedIn: 'root'
@@ -101,7 +102,7 @@ export class AuthFacade {
     switchMap((user: TeamcraftUser) => {
       return combineLatest(user.lodestoneIds.map(entry => {
         if (entry.id > 0) {
-          return this.userService.getCharacter(entry.id)
+          return this.characterService.getCharacter(entry.id)
             .pipe(
               catchError(() => of(null))
             );
@@ -146,10 +147,12 @@ export class AuthFacade {
   mainCharacter$ = this.mainCharacterEntry$.pipe(
     map((entry) => {
       return entry.character as Character;
-    })
+    }),
+    filter(c => !!c)
   );
 
   fcId$ = combineLatest([this.mainCharacter$, this.user$]).pipe(
+    filter((res) => !res.includes(undefined)),
     distinctUntilChanged(([a], [b]) => {
       return a.FreeCompanyId === b.FreeCompanyId;
     }),
@@ -218,8 +221,8 @@ export class AuthFacade {
   constructor(private store: Store<{ auth: AuthState }>, private af: AngularFireAuth,
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
-              private oauthService: OauthService, private userService: UserService,
-              private fns: AngularFireFunctions, private logTrackingService: LogTrackingService) {
+              private oauthService: OauthService, private fns: AngularFireFunctions,
+              private logTrackingService: LogTrackingService, private characterService: CharacterService) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });

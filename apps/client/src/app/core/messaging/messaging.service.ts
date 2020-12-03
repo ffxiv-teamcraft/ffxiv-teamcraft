@@ -8,13 +8,15 @@ import { combineLatest, EMPTY } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { Commission } from '../../modules/commission-board/model/commission';
 import { Router } from '@angular/router';
+import { PlatformService } from '../tools/platform.service';
 
 @Injectable({ providedIn: 'root' })
 export class MessagingService {
 
   constructor(private afm: AngularFireMessaging, private afn: AngularFireFunctions,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,
-              private translate: TranslateService, private router: Router) {
+              private translate: TranslateService, private router: Router,
+              private platform: PlatformService) {
   }
 
   public init(): void {
@@ -40,19 +42,22 @@ export class MessagingService {
       })
     ).subscribe();
 
-    this.afm.messages.pipe(
-      switchMap((message: any) => {
-        const commission: Commission = JSON.parse(message.data.commission);
-        return this.notificationService.info(
-          this.translate.instant(`COMMISSIONS.NOTIFICATIONS.${message.data.type.toUpperCase()}.Title`),
-          this.translate.instant(`COMMISSIONS.NOTIFICATIONS.${message.data.type.toUpperCase()}.Content`, JSON.parse(message.data.commission)),
-          {
-            nzDuration: 10000
-          }
-        ).onClick.pipe(mapTo(commission));
-      })
-    ).subscribe((commission) => {
-      this.router.navigate(['commission', commission.$key]);
-    });
+
+    if (!this.platform.isDesktop()) {
+      this.afm.messages.pipe(
+        switchMap((message: any) => {
+          const commission: Commission = JSON.parse(message.data.commission);
+          return this.notificationService.info(
+            this.translate.instant(`COMMISSIONS.NOTIFICATIONS.${message.data.type.toUpperCase()}.Title`),
+            this.translate.instant(`COMMISSIONS.NOTIFICATIONS.${message.data.type.toUpperCase()}.Content`, JSON.parse(message.data.commission)),
+            {
+              nzDuration: 10000
+            }
+          ).onClick.pipe(mapTo(commission));
+        })
+      ).subscribe((commission) => {
+        this.router.navigate(['commission', commission.$key]);
+      });
+    }
   }
 }

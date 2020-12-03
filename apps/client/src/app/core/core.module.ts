@@ -20,7 +20,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LinkToolsService } from './tools/link-tools.service';
-import { CharacterService } from './api/character.service';
 import { DiscordWebhookService } from './discord/discord-webhook.service';
 import { ListItemCommentNotification } from '../model/notification/list-item-comment-notification';
 import { MaintenanceModule } from '../pages/maintenance/maintenance.module';
@@ -148,7 +147,6 @@ export class CoreModule {
       providers: [
         GarlandToolsService,
         EorzeanTimeService,
-        CharacterService,
         LocalizedDataService,
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
       ]

@@ -22,6 +22,10 @@ export class IpcService {
 
   private readonly _ipc: IpcRenderer | undefined = undefined;
 
+  private totalPacketsHandled = 0;
+
+  private start = Date.now();
+
   public get ready(): boolean {
     return this._ipc !== undefined;
   }
@@ -207,6 +211,10 @@ export class IpcService {
   }
 
   private connectListeners(): void {
+    (<any>window).packetsPerSecond = () => {
+      const durationSeconds = (Date.now() - this.start) / 1000;
+      console.log('Packets per second: ', Math.floor(this.totalPacketsHandled * 10 / durationSeconds) / 10);
+    };
     this.send('app-ready', true);
     this.on('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
@@ -290,6 +298,7 @@ export class IpcService {
   private handlePacket(packet: pcap.BasePacket): void {
     // If we're inside an overlay, don't do anything with the packet, we don't care.
     if (!this.overlayUri) {
+      this.totalPacketsHandled++;
       this.packets$.next(packet);
       const debugPackets = (<any>window).debugPackets;
       if (debugPackets === true || (typeof debugPackets === 'function' && debugPackets(packet))) {
