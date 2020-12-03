@@ -2289,7 +2289,10 @@
       "Bump": "Bring this commission back to the top, only once per 24h",
       "Copy_share_link": "Copy share link",
       "Share_link_copied": "Commission share link copied to your clipboard",
-      "No_description": "No description"
+      "No_description": "No description",
+      "Items_count": "# of items",
+      "Creation_date": "Creation date",
+      "Server_&_tags": "Server & tags"
     },
     "APPLY": {
       "Price": "Your price",
