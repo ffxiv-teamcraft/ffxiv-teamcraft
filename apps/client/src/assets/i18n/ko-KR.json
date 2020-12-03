@@ -415,7 +415,7 @@
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
     "Enable_autofill_notification_by_default": "자동채우기 알람을 기본으로 설정하기",
     "Enable_autofill_hq_filter": "자동채우기에서 HQ아이템이 필요할 때만 HQ아이템 사용하기",
-    "Enable_autofill_nq_filter": "자동채우기에서 NQ아이템이 필요할 때만 HQ아이템 사용하기",
+    "Enable_autofill_nq_filter": "자동채우기에서 HQ아이템이 필요없는 경우에만 NQ아이템 사용하기",
     "Contribute_to_universalis": "Universalis에 기여하기",
     "Track_items_on_sale": "집사가 판매중인 물품도 동기화시킴(클라이언트 재실행 및 새로고침 필요)",
     "Change_email": "메일 주소 변경",
@@ -649,8 +649,8 @@
     "Leave_list": "이 목록 나가기",
     "Cannot_leave": "다음과 같은 이유로 이 목록을 떠날 수 없습니다.\n해당 목록이 자유부대 (이 경우 관리자에게 지워달라고 요청하십시오) 또는 팀(이 경우 팀을 떠나십시오) 에 공유되어 있습니다.",
     "Split_list": "목록 분할",
-    "Create_commission": "Create a commission for this list",
-    "Commission_list": "Commission list",
+    "Create_commission": "해당 목록에 대한 유저 의뢰를 만들기",
+    "Commission_list": "유저 의뢰 목록",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -927,8 +927,8 @@
     "Could_not_find_minstats": "이 로테이션에서 최소 스텟을 찾을 수 없습니다",
     "Remove_final_appraisal": "'Final Appraisal' 버프 제거",
     "Total_macro_duration": "매크로 완료에 걸리는 시간: {{duration}} 초.",
-    "Compact": "Compact",
-    "Detailed": "Detailed",
+    "Compact": "간소화",
+    "Detailed": "세부 정보",
     "STATE": {
       "Excellent": "최고품질",
       "Good": "고품질",
@@ -1178,7 +1178,7 @@
     "Purchase_date": "날짜",
     "More_on_universalis": "universalis에서 자세히 보기",
     "Server": "서버",
-    "Last_updated": "최근 갱신"
+    "Last_updated": "최종 갱신"
   },
   "COMMENTS": {
     "Title": "댓글"
@@ -1763,10 +1763,10 @@
     "Gathering": "채집",
     "Helpers": "도우미",
     "Other": "기타",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Commissions": "유저 의뢰",
+    "Commission_board": "게시판",
+    "My_commissions": "나의 의뢰",
+    "Archived_commissions": "의뢰 기록"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
@@ -1923,8 +1923,8 @@
     "Stat_computing_diclaimer": "공식을 연구하는 많은 플레이어들(allagan studies) 로부터 얻은 정보이며, 결과값은 100% 정확하지 않습니다. 결과값이 정확하지 않더라도 버그로 보고하지 마시길 바랍니다.",
     "Missing_items": "몇몇 슬롯이 비어있는 것처럼 보인다면 필터를 정확하게 세팅해 주세요.",
     "Copied_as_string": "장비 세트의 아이템 이름이 복사되었습니다",
-    "Mark_as_done": "금단 완료로 표시",
-    "Create_commission": "Create a commission for this gearset",
+    "Mark_as_done": "완료됨으로 표기",
+    "Create_commission": "해당 장비 세트를 유저 의뢰로 만들기",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -1967,9 +1967,9 @@
       "GCD": "글쿨"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "장비 세트 동기화",
       "Tag": "동기화",
-      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트 됩니다.",
+      "Tag_tooltip": "해당 장비 세트는 패킷 캡처를 이용하여 동기화 되었습니다. 만약 해당 직업으로 동기화를 다시 한다면 업데이트됩니다.",
       "Importing_gearset": "{{name}} 를 장비 세트에 불러오기",
       "Imported_gearset": "{{name}} 를 장비 세트에 내보내기",
       "Syncing_gearsets": "장비 세트를 동기화 중.."
@@ -2204,140 +2204,150 @@
     "Save_replay": "데이터베이스에 리플레이 저장하기"
   },
   "COMMISSIONS": {
-    "New_commission": "New commission",
-    "Price_tbd": "To be discussed",
-    "X_items": "{{amount}} items",
-    "Open_commission_details": "Open commission details",
+    "New_commission": "새로운 의뢰",
+    "Price_tbd": "가격 협의",
+    "X_items": "아이템 {{amount}}개",
+    "Open_commission_details": "의뢰 자세히보기",
     "Your_commissions_as_client": "Your commissions as client",
     "No_commissions_as_client": "You don't have any commission as client",
-    "Your_commissions_as_crafter": "Commissions you're working on",
-    "No_commissions_as_crafter": "You're not working on any commission",
-    "Delete_commission": "Delete this commission",
-    "Delete_list_too": "Delete list too",
-    "Delete_commission_only": "Delete commission only",
+    "Your_commissions_as_crafter": "작업 중인 의뢰",
+    "No_commissions_as_crafter": "작업 중인 의뢰가 없습니다",
+    "Delete_commission": "해당 의뢰 삭제",
+    "Delete_list_too": "목록도 함께 삭제",
+    "Delete_commission_only": "의뢰만 삭제",
     "Your_archived_commissions_as_client": "Commissions as client",
     "No_archived_commissions_as_client": "You have no archived commission as client",
-    "Your_archived_commissions_as_crafter": "Commissions as contractor",
+    "Your_archived_commissions_as_crafter": "의뢰를 받은 플레이어",
     "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
-    "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "Updates": "업데이트",
+    "Clear_notifications": "알림 지우기",
     "TAGS": {
-      "CRAFTING": "Crafting",
-      "GATHERING": "Gathering",
-      "HUNTING": "Hunting",
-      "FISHING": "Fishing",
-      "GEAR": "Gear"
+      "CRAFTING": "제작",
+      "GATHERING": "채집",
+      "HUNTING": "사냥",
+      "FISHING": "낚시",
+      "GEAR": "장비"
     },
     "STATUS": {
-      "Label": "Status",
-      "OPENED": "Opened",
-      "IN_PROGRESS": "In progress",
-      "ARCHIVED": "Archived"
+      "Label": "상태",
+      "OPENED": "모집 중",
+      "IN_PROGRESS": "진행 중",
+      "ARCHIVED": "완료됨"
     },
     "CREATION": {
-      "Name": "Name",
-      "Name_placeholder": "Name of your commission",
-      "Name_required_error": "Please input a name",
-      "Tags": "Tags",
-      "Price": "Price",
-      "Price_tip": "Input 0 if you want people to suggest their price instead",
-      "Only_crafting": "Only crafting",
-      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
-      "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the crafter/gatherer contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations"
+      "Name": "이름",
+      "Name_placeholder": "의뢰 이름",
+      "Name_required_error": "의뢰 이름을 입력하세요",
+      "Tags": "태그",
+      "Price": "지불할 금액",
+      "Price_tip": "상대방과 가격을 협의하고 싶다면 금액란에 0을 입력하세요",
+      "Only_crafting": "제작직만 가능",
+      "Includes_materials_label": "해당 의뢰는 모든 재료를 포함하여 제작만 합니다",
+      "Contact_info": "연락 가능한 방법",
+      "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
+      "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
+      "Description": "설명",
+      "Description_placeholder": "의뢰에 대한 추가 설명을 이 곳에 적습니다",
+      "Description_max_length_error": "1000자 이내로 적어야 합니다",
+      "Warning": "경고",
+      "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다."
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
-      "Min_price": "Min. price",
+      "Title": "유저 의뢰 게시판",
+      "Filter_with_tags": "태그를 사용하여 필터링",
+      "No_matching_commissions": "조건에 맞는 의뢰가 없습니다",
+      "Min_price": "최소 가격",
       "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
-      "Details": "Details",
-      "Price": "Price",
-      "Tags": "Tags",
-      "No_tags": "No tags",
-      "Server": "Server",
-      "Content": "Content",
-      "Progression": "Progression",
+      "Created_by": "의뢰자: {{name}}",
+      "Details": "세부 정보",
+      "Price": "Payment",
+      "Tags": "태그",
+      "No_tags": "태그 없음",
+      "Server": "서버",
+      "Content": "세부 내용",
+      "Progression": "진행도",
       "Candidates": "Candidates ({{amount}})",
       "Candidates_public_display": "Candidates : {{amount}}",
-      "Apply": "Apply",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
-      "Your_offer": "Your offer",
-      "Remove_offer": "Remove your offer",
-      "Fire_contractor": "Fire the contractor",
-      "Resign": "Resign",
-      "Contractor": "Contractor",
-      "Open_list": "Open the list",
-      "List": "List",
-      "Mark_as_completed": "Mark commission as completed",
-      "Hire": "Hire this contractor",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
-      "Ratings": "Ratings",
-      "Waiting_for_rating": "Waiting for rating",
-      "Rate_commission": "Add your rating",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard"
+      "Apply": "신청하기",
+      "Edit": "해당 의뢰내용 수정",
+      "No_candidates": "후보자가 없습니다",
+      "Your_offer": "나의 제안",
+      "Remove_offer": "나의 제안 취소하기",
+      "Fire_contractor": "계약된 플레이어 퇴출",
+      "Resign": "의뢰 포기",
+      "Contractor": "계약자",
+      "Open_list": "목록 열기",
+      "List": "목록",
+      "Mark_as_completed": "의뢰를 완료됨으로 표시",
+      "Hire": "해당 플레이어 고용하기",
+      "Progression_Tip": "진행도가 100%가 되면 해당 의뢰가 완료됨으로 표시됩니다",
+      "Ratings": "평가",
+      "Waiting_for_rating": "평가 대기 중",
+      "Rate_commission": "평가 추가",
+      "Bump": "해당 의뢰를 상단에 노출시키기(24시간마다 한번만 가능)",
+      "Copy_share_link": "공유링크 복사",
+      "Share_link_copied": "유저 의뢰 공유용 링크를 클립보드에 복사했습니다",
+      "No_description": "설명 없음",
+      "Items_count": "# of items",
+      "Creation_date": "Creation date",
+      "Server_&_tags": "Server & tags"
     },
     "APPLY": {
-      "Price": "Your price"
+      "Price": "가격",
+      "Contact_info_placeholder": "만약 해당 의뢰자와 연락하고 싶다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요."
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "의뢰 열기",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "의뢰 종료",
+        "Content": "더 이상 {{name}} 의뢰의 계약자가 아닙니다"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "의뢰 계약이 종료됨",
+        "Content": "더 이상 해당 계약자가 {{name}} 의뢰를 수행하지 않습니다"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "의뢰 시작",
+        "Content": "{{name}} 의뢰에 고용되었습니다"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "새로운 후보",
+        "Content": "새로운 의뢰가 등록되었습니다 {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "의뢰 목록 완료",
+        "Content": "{{name}} 과/와 관련된 의뢰가 완료되었습니다"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Details": "의뢰 프로필",
+      "View_details": "프로필 상세보기",
+      "Ratings": "평가",
+      "Incidents": "사건/사고",
+      "No_incidents": "사건/사고가 없음",
+      "Fired": "의뢰에서 퇴출됨",
+      "Resigned": "의뢰를 포기함",
+      "No_ratings": "평가 없음",
+      "Fired_X_times": "{{amount}} 회 퇴출됨",
+      "Resigned_X_times": "{{amount}} 회 의뢰를 포기함"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "왜 해당 플레이어를 퇴출하나요:?",
+      "NO_ACTIVE_SUB": "의뢰를 받은 플레이어가 더 이상 게임 이용권을 결제하지 않음.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "함께 진행하는 것이 불편함.",
+      "NO_LONGER_NEED_JOB_DONE": "의뢰를 할 이유가 없어짐.",
+      "FOUND_SOMEONE_ELSE": "의뢰를 대신 해줄 다른 플레이어를 찾음.",
+      "CANNOT_AFFORD": "해당 의뢰를 완료할 자신이 없음."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "Please_pick_reason": "왜 해당 의뢰를 포기하나요?",
+      "NO_ACTIVE_SUB": "게임 이용권을 구입할 계획이 없음.",
+      "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
+      "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
+      "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
+      "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     }
   }
 }
