@@ -2289,7 +2289,10 @@
       "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
       "Copy_share_link": "Copier le lien de partage",
       "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers",
-      "No_description": "No description"
+      "No_description": "No description",
+      "Items_count": "# of items",
+      "Creation_date": "Creation date",
+      "Server_&_tags": "Server & tags"
     },
     "APPLY": {
       "Price": "Votre prix",
