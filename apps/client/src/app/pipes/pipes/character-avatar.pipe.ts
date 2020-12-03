@@ -10,6 +10,6 @@ export class CharacterAvatarPipe implements PipeTransform {
   constructor(private service: CharacterService) {}
 
   transform(userId: string): Observable<string> {
-    return this.service.getCharacter(userId).pipe(map((character) => character.character.Avatar));
+    return this.service.getUserCharacter(userId).pipe(map((character) => character.character.Avatar));
   }
 }

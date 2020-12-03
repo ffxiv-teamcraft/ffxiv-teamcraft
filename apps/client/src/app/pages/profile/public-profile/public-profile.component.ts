@@ -48,7 +48,7 @@ export class PublicProfileComponent {
       shareReplay(1)
     );
     this.characterEntry$ = userId$.pipe(
-      switchMap(userId => this.characterService.getCharacter(userId)),
+      switchMap(userId => this.characterService.getUserCharacter(userId)),
       catchError(() => {
         this.notFound = true;
         return EMPTY;

@@ -1,12 +1,12 @@
 import { IntegrityCheck } from './integrity-check';
 import { combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftUser } from 'apps/client/src/app/model/user/teamcraft-user';
-import { XivapiService } from '@xivapi/angular-client';
 import { catchError, map, mapTo } from 'rxjs/operators';
+import { CharacterService } from '../../../../core/api/character.service';
 
 export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
 
-  constructor(private xivapi: XivapiService) {
+  constructor(private characterService: CharacterService) {
   }
 
   getNameKey(): string {
@@ -20,7 +20,7 @@ export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
     }
     return combineLatest(
       user.lodestoneIds.map(entry => {
-        return this.xivapi.getCharacter(entry.id).pipe(
+        return this.characterService.getCharacter(entry.id).pipe(
           mapTo(true),
           catchError(() => of(false))
         );

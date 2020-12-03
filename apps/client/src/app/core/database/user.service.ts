@@ -2,14 +2,13 @@ import { Injectable, NgZone } from '@angular/core';
 import { EMPTY, Observable, of } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from './pending-changes/pending-changes.service';
-import { catchError, filter, map, shareReplay, startWith, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
 import { FirestoreStorage } from './storage/firestore/firestore-storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { HttpClient } from '@angular/common/http';
 import { LogTrackingService } from './log-tracking.service';
-import { CharacterResponse, XivapiService } from '@xivapi/angular-client';
 import firebase from 'firebase/app';
 
 @Injectable({
@@ -19,36 +18,10 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
 
   userCache = {};
 
-  characterCache: { [index: number]: Observable<CharacterResponse> } = {};
-
   constructor(protected firestore: AngularFirestore, protected serializer: NgSerializerService, protected zone: NgZone,
               protected pendingChangesService: PendingChangesService, private af: AngularFireAuth, private http: HttpClient,
-              private logTrackingService: LogTrackingService, private xivapi: XivapiService) {
+              private logTrackingService: LogTrackingService) {
     super(firestore, serializer, zone, pendingChangesService);
-  }
-
-  public cacheCharacter(charResponse: CharacterResponse): void {
-    localStorage.setItem(`character:${charResponse.Character.ID}`, JSON.stringify(charResponse));
-  }
-
-  public getCachedCharacter(id: number): CharacterResponse | null {
-    const data = localStorage.getItem(`character:${id}`);
-    if (data) {
-      return JSON.parse(data);
-    }
-    return null;
-  }
-
-  public getCharacter(id: number): Observable<CharacterResponse> {
-    if (this.characterCache[id] === undefined) {
-      this.characterCache[id] = this.xivapi.getCharacter(id).pipe(
-        tap(char => this.cacheCharacter(char)),
-        startWith(this.getCachedCharacter(id)),
-        filter(res => res !== null),
-        shareReplay(1)
-      );
-    }
-    return this.characterCache[id];
   }
 
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {
