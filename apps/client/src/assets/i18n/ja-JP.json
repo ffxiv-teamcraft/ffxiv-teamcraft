@@ -1766,7 +1766,7 @@
     "Commissions": "Commissions",
     "Commission_board": "Board",
     "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Archived_commissions": "アーカイブ"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
@@ -2205,7 +2205,7 @@
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
-    "Price_tbd": "To be discussed",
+    "Price_tbd": "議論されるには",
     "X_items": "{{amount}} items",
     "Open_commission_details": "Open commission details",
     "Your_commissions_as_client": "Your commissions as client",
@@ -2220,25 +2220,25 @@
     "Your_archived_commissions_as_crafter": "Commissions as contractor",
     "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
     "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "Clear_notifications": "通知を消去",
     "TAGS": {
-      "CRAFTING": "Crafting",
-      "GATHERING": "Gathering",
-      "HUNTING": "Hunting",
+      "CRAFTING": "クラフト",
+      "GATHERING": "ギャザー",
+      "HUNTING": "ハント",
       "FISHING": "Fishing",
-      "GEAR": "Gear"
+      "GEAR": "装備"
     },
     "STATUS": {
-      "Label": "Status",
+      "Label": "ステータス",
       "OPENED": "Opened",
-      "IN_PROGRESS": "In progress",
+      "IN_PROGRESS": "進行中",
       "ARCHIVED": "Archived"
     },
     "CREATION": {
-      "Name": "Name",
+      "Name": "名前",
       "Name_placeholder": "Name of your commission",
       "Name_required_error": "Please input a name",
-      "Tags": "Tags",
+      "Tags": "タグ",
       "Price": "Price you're willing to pay",
       "Price_tip": "Input 0 if you want people to suggest how much they want instead",
       "Only_crafting": "Only crafting",
@@ -2249,7 +2249,7 @@
       "Description": "Description",
       "Description_placeholder": "If you want to give more details about your commission, it's here",
       "Description_max_length_error": "Description has to be < 1000 characters",
-      "Warning": "Warning",
+      "Warning": "警告",
       "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account."
     },
     "BOARD": {
