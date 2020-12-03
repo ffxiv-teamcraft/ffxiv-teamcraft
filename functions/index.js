@@ -6,6 +6,7 @@ const admin = require('firebase-admin');
 const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
 const { PubSub } = require('@google-cloud/pubsub');
+const fetch = require('node-fetch');
 admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
@@ -47,16 +48,17 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
   }).then(() => null);
 });
 
+
+function notifyBot(event, commission) {
+  commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ event, commission })));
+}
+
 exports.commissionCreationNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onCreate((snapshot) => {
-  const commission = snapshot.data();
-  return Promise.all([
-    admin.messaging().sendToTopic(`/topics/commissions.${commission.datacenter}`, {
-      data: {
-        commission: JSON.stringify(commission)
-      }
-    }),
-    commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ $key: snapshot.id, ...snapshot.data() })))
-  ]);
+  return notifyBot('created', { $key: snapshot.$key, ...snapshot.data() });
+});
+
+exports.commissionDeletionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onDelete((snapshot) => {
+  return notifyBot('deleted', { $key: snapshot.$key, ...snapshot.data() });
 });
 
 function addUserCommissionNotification(targetId, type, payload) {
@@ -71,6 +73,7 @@ function addUserCommissionNotification(targetId, type, payload) {
 exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestore.document('/commissions/{uid}').onUpdate((change) => {
   const before = { $key: change.before.id, ...change.before.data() };
   const after = { $key: change.after.id, ...change.after.data() };
+  notifyBot('updated', after);
   // 2 is archived
   if (after.status === before.status && before.status === 2) {
     // If crafter posted their rating
@@ -185,16 +188,10 @@ exports.commissionEditionNotifications = functions.runWith(runtimeOpts).firestor
   }
 });
 
-exports.subscribeToCommissions = functions.runWith(runtimeOpts).https.onCall((data, context) => {
-  return admin.messaging().subscribeToTopic(data.token, `commissions.${data.datacenter}`).then(res => {
-    return {
-      ...res,
-      data: data
-    };
-  });
-});
-
 exports.subscribeToUserTopic = functions.runWith(runtimeOpts).https.onCall((data, context) => {
+  if (!data.token || data.token.length === 0) {
+    return Promise.resolve();
+  }
   return admin.messaging().subscribeToTopic(data.token, `users.${context.auth.uid}`).then(res => {
     return {
       ...res,
