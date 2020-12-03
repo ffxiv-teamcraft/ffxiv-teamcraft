@@ -2254,9 +2254,9 @@
     },
     "BOARD": {
       "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
-      "Min_price": "Min. price",
+      "Filter_with_tags": "태그를 사용하여 필터링",
+      "No_matching_commissions": "조건에 맞는 의뢰가 없습니다",
+      "Min_price": "최소 가격",
       "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
     },
     "DETAILS": {
@@ -2281,15 +2281,15 @@
       "Open_list": "Open the list",
       "List": "List",
       "Mark_as_completed": "Mark commission as completed",
-      "Hire": "Hire this contractor",
+      "Hire": "해당 플레이어 고용하기",
       "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
-      "Ratings": "Ratings",
-      "Waiting_for_rating": "Waiting for rating",
-      "Rate_commission": "Add your rating",
+      "Ratings": "평가",
+      "Waiting_for_rating": "평가 대기 중",
+      "Rate_commission": "평가 추가",
       "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard",
-      "No_description": "No description"
+      "Copy_share_link": "공유링크 복사",
+      "Share_link_copied": "유저 의뢰 공유용 링크를 클립보드에 복사했습니다",
+      "No_description": "설명 없음"
     },
     "APPLY": {
       "Price": "Your price",
@@ -2306,11 +2306,11 @@
         "Content": "Contractor for commission {{name}} is no longer assigned"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "의뢰 시작",
+        "Content": "{{name}} 의뢰에 고용되었습니다"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
+        "Title": "새로운 후보",
         "Content": "새로운 의뢰가 등록되었습니다 {{name}}"
       },
       "DONE": {
@@ -2340,11 +2340,11 @@
     },
     "RESIGNED": {
       "Please_pick_reason": "왜 해당 의뢰를 포기하나요?",
-      "NO_ACTIVE_SUB": "추가적인 게임 이용권을 구입할 계획이 없음",
+      "NO_ACTIVE_SUB": "게임 이용권을 구입할 계획이 없음.",
       "UNCOMFORTABLE_WITH_CLIENT": "해당 의뢰자와 함께 진행하는 것이 불편함.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
+      "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
+      "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     }
   }
 }
