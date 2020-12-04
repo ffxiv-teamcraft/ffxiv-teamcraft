@@ -80,12 +80,20 @@ export class CommissionsEffects {
       ofType(CommissionsActions.createCommission),
       withLatestFrom(this.authFacade.mainCharacter$, this.authFacade.userId$),
       switchMap(([action, char, userId]) => {
+        const formData = action.template || {
+          name: action.name,
+          items: action.list?.finalItems?.map(item => {
+            return {
+              amount: item.amount,
+              done: 0,
+              id: item.id
+            };
+          })
+        };
         return this.modalService.create({
           nzContent: CommissionEditionPopupComponent,
           nzComponentParams: {
-            commission: {
-              name: action.name
-            }
+            commission: formData
           },
           nzFooter: null,
           nzTitle: this.translate.instant('COMMISSIONS.New_commission')

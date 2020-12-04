@@ -66,6 +66,13 @@
     <button [disabled]="!form.valid" (click)="submit()" nzType="primary" nz-button>{{'Confirm' | translate}}
     </button>
   </div>
+  <div *ngIf="commission.items?.length">
+    <button [disabled]="!form.valid" [clipboard]="getCreationLink"
+            nz-tooltip [nzTooltipTitle]="'COMMISSIONS.CREATION.Copy_link_tooltip' | translate"
+            [clipboardSuccessMessage]="'COMMISSIONS.CREATION.Link_copied' | translate"
+            nz-button>{{'COMMISSIONS.CREATION.Copy_link' | translate}}
+    </button>
+  </div>
   <div>
     <button (click)="close()" nz-button>{{'Cancel' | translate}}
     </button>

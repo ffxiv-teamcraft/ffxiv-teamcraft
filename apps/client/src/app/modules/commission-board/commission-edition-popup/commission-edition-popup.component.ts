@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { CommissionTag } from '../model/commission-tag';
 import { Commission } from '../model/commission';
+import { LinkToolsService } from '../../../core/tools/link-tools.service';
 
 @Component({
   selector: 'app-commission-edition-popup',
@@ -25,7 +26,7 @@ export class CommissionEditionPopupComponent implements OnInit {
 
   showWarning = localStorage.getItem('cw:s') === null;
 
-  constructor(private fb: FormBuilder, private modalRef: NzModalRef) {
+  constructor(private fb: FormBuilder, private modalRef: NzModalRef, private linkTools: LinkToolsService) {
   }
 
   ngOnInit(): void {
@@ -45,6 +46,17 @@ export class CommissionEditionPopupComponent implements OnInit {
       this.modalRef.close(this.form.value);
     }
   }
+
+  getCreationLink = () => {
+    const template = this.form.value;
+    return this.linkTools.getLink(`/commission/import/${btoa([
+      template.name,
+      template.price.toString(),
+      template.tags.join(','),
+      this.commission.items.map(i => `${i.id},,${i.amount}`).join(';'),
+      template.description || ''
+    ].join('|'))}`);
+  };
 
   hideWarning(): void {
     localStorage.setItem('cw:s', '1');

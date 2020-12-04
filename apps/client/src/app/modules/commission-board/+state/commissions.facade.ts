@@ -94,9 +94,9 @@ export class CommissionsFacade {
               private notificationsFacade: NotificationsFacade) {
   }
 
-  create(list?: List): void {
+  create(list?: List, template?: Partial<Commission>): void {
     if (list) {
-      this.store.dispatch(createCommission({ list: list, name: list.name }));
+      this.store.dispatch(createCommission({ list: list, name: list.name, template }));
     } else {
       this.dialog.create({
         nzContent: NameQuestionPopupComponent,

@@ -17,7 +17,7 @@ export const commissionLoaded = createAction(
 
 export const createCommission = createAction(
   '[Commissions] Create Commission',
-  props<{ name: string, list?: List }>()
+  props<{ name: string, list?: List, template?: Partial<Commission> }>()
 );
 
 export const selectCommission = createAction(

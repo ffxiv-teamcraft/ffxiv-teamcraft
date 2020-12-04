@@ -1,0 +1,22 @@
+<div class="import-container">
+  <h2>{{'COMMISSIONS.IMPORT.Title' | translate}}</h2>
+  <div class="description">
+    {{'COMMISSIONS.IMPORT.Description' | translate}}
+  </div>
+  <div *ngIf="template$ | async as data; else loading" class="items-container" fxLayout="column">
+    <div *ngFor="let row of data.items; let odd = odd;" [class.odd]="odd" class="item-row" fxLayout="row"
+         fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <app-item-icon [itemId]="row.itemData.item.id" [width]="32"></app-item-icon>
+      <div class="item-name">{{row.itemData.item.id | itemName | i18n}} x{{row.quantity}}</div>
+    </div>
+    <app-fullpage-message *ngIf="data.items.length === 0" height="200px">
+      {{'COMMISSIONS.IMPORT.No_items' | translate}}
+    </app-fullpage-message>
+    <button (click)="doImport(data)" [disabled]="!canDoImport(data)" nz-button nzBlock nzType="primary">
+      {{'COMMISSIONS.IMPORT.Create_commission' | translate}}
+    </button>
+  </div>
+</div>
+<ng-template #loading>
+  <app-page-loader></app-page-loader>
+</ng-template>
