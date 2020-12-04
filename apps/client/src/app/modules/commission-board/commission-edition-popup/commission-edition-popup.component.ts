@@ -46,7 +46,7 @@ export class CommissionEditionPopupComponent implements OnInit {
     }
   }
 
-  hideWarning():void{
+  hideWarning(): void {
     localStorage.setItem('cw:s', '1');
     this.showWarning = false;
   }
