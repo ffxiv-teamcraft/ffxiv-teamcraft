@@ -407,11 +407,11 @@ export class ListsEffects {
       return [action, list];
     }),
     map(([action, list]: [SetItemDone, List]) => {
+      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
+      list.updateAllStatuses(action.itemId);
       if (list.hasCommission) {
         this.updateCommission(list);
       }
-      list.setDone(action.itemId, action.doneDelta, !action.finalItem, action.finalItem, false, action.recipeId, action.external);
-      list.updateAllStatuses(action.itemId);
       if (this.settings.autoMarkAsCompleted && action.doneDelta > 0) {
         if (action.recipeId) {
           this.markAsDoneInDoHLog(+(action.recipeId));
@@ -502,6 +502,8 @@ export class ListsEffects {
   }
 
   private updateCommission(list: List): void {
+    console.log('Final items progression', this.listsFacade.buildProgression(list.finalItems));
+
     this.commissionService.pureUpdate(list.$key, {
       materialsProgression: this.listsFacade.buildProgression(list.items),
       itemsProgression: this.listsFacade.buildProgression(list.finalItems),

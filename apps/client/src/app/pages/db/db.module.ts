@@ -71,6 +71,8 @@ import { ItemContextService } from './service/item-context.service';
 import { StatusComponent } from './status/status.component';
 import { TraitComponent } from './trait/trait.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
+import { NzCommentModule } from 'ng-zorro-antd/comment';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 const routes: Routes = [
   {
@@ -309,7 +311,9 @@ const routes: Routes = [
     AntdSharedModule,
     UserAvatarModule,
     QuickSearchModule,
-    NzStatisticModule
+    NzStatisticModule,
+    NzCommentModule,
+    NzAvatarModule
   ],
   providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)]
 })

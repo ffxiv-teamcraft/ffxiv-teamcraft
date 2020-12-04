@@ -2250,7 +2250,10 @@
       "Description_placeholder": "If you want to give more details about your commission, it's here",
       "Description_max_length_error": "Description has to be < 1000 characters",
       "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account."
+      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
+      "Copy_link": "Copy import code",
+      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Link_copied": "Commission import code copied"
     },
     "BOARD": {
       "Title": "Commission board",
@@ -2348,6 +2351,12 @@
       "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
       "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
       "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+    },
+    "IMPORT": {
+      "Title": "Commission import",
+      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
+      "Create_commission": "Create a commission",
+      "No_items": "No items"
     }
   }
 }

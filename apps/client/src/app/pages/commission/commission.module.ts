@@ -23,8 +23,15 @@ import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { NzProgressModule } from 'ng-zorro-antd/progress';
 import { NzRateModule } from 'ng-zorro-antd/rate';
 import { FormsModule } from '@angular/forms';
+import { CommissionImportComponent } from './commission-import/commission-import.component';
+import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
 
 const routes: Routes = [
+  {
+    path: 'import/:importString',
+    component: CommissionImportComponent,
+    canActivate: [MaintenanceGuard, VersionLockGuard]
+  },
   {
     path: ':id',
     component: CommissionDetailsComponent,
@@ -33,7 +40,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CommissionDetailsComponent],
+  declarations: [CommissionDetailsComponent, CommissionImportComponent],
   imports: [
     CommonModule,
     CoreModule,
@@ -57,7 +64,8 @@ const routes: Routes = [
     NzToolTipModule,
     NzEmptyModule,
     NzProgressModule,
-    NzRateModule
+    NzRateModule,
+    FullpageMessageModule
   ]
 })
 export class CommissionModule {

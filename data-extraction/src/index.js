@@ -1483,11 +1483,12 @@ if (hasTodo('items')) {
   const itemStats = {};
   const itemMeldingData = {};
   const hqFlags = {};
+  const tradeFlags = {};
   const equipSlotCategoryId = {};
   const itemPatch = {};
   const marketItems = [];
   const extractableItems = {};
-  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
+  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1504,6 +1505,9 @@ if (hasTodo('items')) {
         itemPatch[item.ID] = item.Patch;
         if (item.CanBeHq) {
           hqFlags[item.ID] = 1;
+        }
+        if (item.IsUntradable === 0) {
+          tradeFlags[item.ID] = 1;
         }
         if (item.ItemSearchCategoryTargetID > 9) {
           marketItems.push(item.ID);
@@ -1534,6 +1538,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('hq-flags', hqFlags);
+      persistToJsonAsset('trade-flags', tradeFlags);
       persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
       persistToJsonAsset('item-patch', itemPatch);
       persistToJsonAsset('market-items', marketItems);

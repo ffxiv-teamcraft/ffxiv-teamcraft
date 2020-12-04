@@ -2208,17 +2208,17 @@
     "Price_tbd": "가격 협의",
     "X_items": "아이템 {{amount}}개",
     "Open_commission_details": "의뢰 자세히보기",
-    "Your_commissions_as_client": "Your commissions as client",
-    "No_commissions_as_client": "You don't have any commission as client",
+    "Your_commissions_as_client": "다른 유저에게 부탁한 의뢰",
+    "No_commissions_as_client": "타인에게 의뢰한 내역이 없습니다",
     "Your_commissions_as_crafter": "작업 중인 의뢰",
     "No_commissions_as_crafter": "작업 중인 의뢰가 없습니다",
     "Delete_commission": "해당 의뢰 삭제",
     "Delete_list_too": "목록도 함께 삭제",
     "Delete_commission_only": "의뢰만 삭제",
-    "Your_archived_commissions_as_client": "Commissions as client",
-    "No_archived_commissions_as_client": "You have no archived commission as client",
-    "Your_archived_commissions_as_crafter": "의뢰를 받은 플레이어",
-    "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
+    "Your_archived_commissions_as_client": "다른 유저에게 부탁한 의뢰",
+    "No_archived_commissions_as_client": "완료한 타인에게 부탁한 의뢰가 없습니다",
+    "Your_archived_commissions_as_crafter": "다른 유저에게 받은 의뢰",
+    "No_archived_commissions_as_crafter": "완료한 타인의 의뢰가 없습니다",
     "Updates": "업데이트",
     "Clear_notifications": "알림 지우기",
     "TAGS": {
@@ -2250,26 +2250,29 @@
       "Description_placeholder": "의뢰에 대한 추가 설명을 이 곳에 적습니다",
       "Description_max_length_error": "1000자 이내로 적어야 합니다",
       "Warning": "경고",
-      "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다."
+      "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
+      "Copy_link": "Copy import code",
+      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Link_copied": "Commission import code copied"
     },
     "BOARD": {
       "Title": "유저 의뢰 게시판",
       "Filter_with_tags": "태그를 사용하여 필터링",
       "No_matching_commissions": "조건에 맞는 의뢰가 없습니다",
       "Min_price": "최소 가격",
-      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+      "Tracking_tip": "팀크래프트 디스코드의 commissions 채널에서 원하는 데이터센터의 알람을 받아보실 수 있습니다"
     },
     "DETAILS": {
       "Created_by": "의뢰자: {{name}}",
       "Details": "세부 정보",
-      "Price": "Payment",
+      "Price": "대금 방식",
       "Tags": "태그",
       "No_tags": "태그 없음",
       "Server": "서버",
       "Content": "세부 내용",
       "Progression": "진행도",
-      "Candidates": "Candidates ({{amount}})",
-      "Candidates_public_display": "Candidates : {{amount}}",
+      "Candidates": "신청한 플레이어 수 ({{amount}})",
+      "Candidates_public_display": "신청한 플레이어 수 : {{amount}}",
       "Apply": "신청하기",
       "Edit": "해당 의뢰내용 수정",
       "No_candidates": "후보자가 없습니다",
@@ -2290,9 +2293,9 @@
       "Copy_share_link": "공유링크 복사",
       "Share_link_copied": "유저 의뢰 공유용 링크를 클립보드에 복사했습니다",
       "No_description": "설명 없음",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Items_count": "품목",
+      "Creation_date": "생성 일자",
+      "Server_&_tags": "서버 & 태그"
     },
     "APPLY": {
       "Price": "가격",
@@ -2348,6 +2351,12 @@
       "CANNOT_COMPLETE_LEVEL": "해당 의뢰를 마치기에 능력이 모자름.",
       "CANNOT_COMPLETE_CONTENT": "해당 의뢰를 위한 최소조건을 충족하지 못했다 (예: 스토리 진행을 못해서 컨텐츠 오픈을 못했다거나).",
       "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
+    },
+    "IMPORT": {
+      "Title": "Commission import",
+      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
+      "Create_commission": "Create a commission",
+      "No_items": "No items"
     }
   }
 }
