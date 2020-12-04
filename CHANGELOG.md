@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.3"></a>
+## [7.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.2...v7.6.3) (2020-12-04)
+
+
+### Bug Fixes
+
+* **commissions:** fixed an issue with list tracking not working properly ([47ea932](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/47ea932))
+* **db:** better comments display in database pages ([25f16b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25f16b3))
+
+
+### Features
+
+* **commissions:** you can now import commissions from a single link ([928156a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/928156a))
+
+
+
 <a name="7.6.2"></a>
 ## [7.6.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.1...v7.6.2) (2020-12-03)
 
