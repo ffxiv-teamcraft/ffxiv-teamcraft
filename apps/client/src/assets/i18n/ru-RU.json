@@ -1969,7 +1969,7 @@
     "SYNC": {
       "Title": "Synchronize gearsets",
       "Tag": "Синхр.",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Tag_tooltip": "Этот набор снаряжения создан после синхронизации с помощью захвата пакетов, он будет обновлен если вы синхронизируетесь снова для этой профессии.",
       "Importing_gearset": "Импорт набора для {{name}}",
       "Imported_gearset": "Импортированный набор для {{name}}",
       "Syncing_gearsets": "Синхронизация набора снаряжения..."
@@ -1996,17 +1996,17 @@
       "Can_be_changed_in_settings": "Можно включить или выключить в настройках"
     },
     "APP": {
-      "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
+      "Profile": "Введите свое имя для доступа к редактору профиля и настройки уровней, параметров и многого другого."
     },
     "SEARCH": {
-      "Search_type": "You can change the type of data you're looking for here (Item, Quest, Map, Node, NPC, etc).",
-      "Share": "Use this button to get your search results as a shareable link.",
-      "Filters": "Open this panel to use advanced filters, to filter by stat, bonus, ilvl, and more"
+      "Search_type": "Вы можете изменить тип данных, которые вы ищите здесь (предметы, квесты, карта, нода, NPC и т.д.).",
+      "Share": "Нажмите эту кнопку, чтобы получить результаты поиска в качестве ссылки.",
+      "Filters": "Откройте эту панель, чтобы использовать дополнительные фильтры: по параметрам, бонусам, ilvl и прочему"
     },
     "LIST_PANEL": {
-      "Share": "Click here to copy a link to this list, to easily share it",
-      "Open_list": "Click here to open the list's detail, you can also double click list's name.",
-      "More": "Click this menu to rename the list, manage permissions, and more."
+      "Share": "Нажмите здесь, чтобы скопировать ссылку на этот список, чтобы легко им поделиться",
+      "Open_list": "Нажмите здесь, чтобы получить подробную информацию о списке, или можете дважды нажать на название списка.",
+      "More": "Нажмите на это меню, чтобы переименовать список, управлять разрешениями и многое другое."
     },
     "LIST": {
       "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
