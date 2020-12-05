@@ -40,7 +40,9 @@
     "Too_many_results_warning": "Мы нашли более 100 совпадений. Поскольку наш источник данных ограничен 100 результатами, вам могут потребоваться дополнительные фильтры чтобы найти конкретный предмет.",
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
-    "Only_craftable": "Только рецепты"
+    "Only_craftable": "Только рецепты",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -2295,7 +2297,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",
