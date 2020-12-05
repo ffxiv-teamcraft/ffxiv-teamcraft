@@ -1763,10 +1763,10 @@
     "Gathering": "Сбор",
     "Helpers": "Помощники",
     "Other": "Другое",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Commissions": "Заказы",
+    "Commission_board": "Доска",
+    "My_commissions": "Мои заказы",
+    "Archived_commissions": "Архив"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Захват пакетов доступен",
@@ -1778,11 +1778,11 @@
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "Пожалуйста, измените зону (по телепорту или войдите в дом), чтобы обновить ваш инвентарь. Это всплывающее окно будет закрыто, как только это будет сделано. Если эта проблема повторится, посмотрите руководство по устранению неполадок захвата пакетов в канале #troubleshooting на сервере Teamcraft Discord.",
     "Outdated": "Захват пакетов не работает",
     "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях.",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
-    "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
+    "Possible_missing_firewall_rule": "Захват пакетов работает некорректно",
+    "Possible_missing_firewall_rule_description": "Teamcraft видит только некоторые пакеты и не содержит тех, которые связаны с инвентарем, параметрами, одеждой и т.д., это может быть вызвано отсутствием правила брандмауэра на вашем компьютере.",
     "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
     "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
     "Add_firewall_rule": "Add the firewall rule"
