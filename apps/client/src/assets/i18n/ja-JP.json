@@ -2203,7 +2203,8 @@
     "Cannot_record": "Cannot record replays",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Save_replay": "Save replay in database",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "新しい依頼",
