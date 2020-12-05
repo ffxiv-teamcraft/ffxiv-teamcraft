@@ -177,7 +177,7 @@
     "Custom_sound": "Настраиваемый звук",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
-    "Delete_group": "Delete group",
+    "Delete_group": "Удалить группу",
     "Delete_group_and_alarms": "Удалить группу со всеми оповещениями",
     "Confirm_group_delete_with_alarms": "Вы уверены, что хотите удалить эту группу и все её оповещения?",
     "Add_note": "Добавить заметку",
@@ -189,7 +189,7 @@
     "Node_content": "Содержимое ноды",
     "Toggle_collapse": "Свернуть группы оповещений",
     "Add_alarms_to_group": "Добавить оповещения к этой группе",
-    "Group_link_copied": "Alarm group link copied",
+    "Group_link_copied": "Скопирована ссылка на группу оповещений",
     "Group_not_found": "Alarm group not found",
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "REALTIME": {
