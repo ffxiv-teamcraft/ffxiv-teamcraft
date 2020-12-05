@@ -179,7 +179,7 @@
     "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
-    "Delete_group": "Delete group",
+    "Delete_group": "删除分组",
     "Delete_group_and_alarms": "删除该分组和分组下的所有闹钟",
     "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "添加备注",
@@ -487,7 +487,7 @@
     "Fishing_rankings": "垂钓排名",
     "Total_rankings": "总排名",
     "Loading_fish_rankings": "正在加载垂钓排行",
-    "Gearset_priority": "Priority",
+    "Gearset_priority": "优先级",
     "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "角色验证",
@@ -650,16 +650,16 @@
     "X_needed": "需要 {{amount}} 个",
     "Leave_list": "离开此清单",
     "Cannot_leave": "无法离开此清单，因为此清单是分享给您的部队或某个团队的。请联系创建者移除清单或退出相应的团队。",
-    "Split_list": "Split this list",
-    "Create_commission": "Create a commission for this list",
-    "Commission_list": "Commission list",
+    "Split_list": "拆分此清单",
+    "Create_commission": "为此清单创建委托",
+    "Commission_list": "委托列表",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
       "Import_layout": "导入布局",
-      "Export_layout": "Export this layout",
+      "Export_layout": "导出此布局",
       "Import_string": "导出布局",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "已复制布局代码！",
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入码",
       "Global_options": "通用选项",
@@ -698,8 +698,8 @@
       "No_panel_selected": "使用上面的按钮选择一个面板"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "选择要添加到另一个清单的项目",
+      "Remove_from_list": "从当前清单中移除"
     }
   },
   "LIST_TAGS": {
@@ -936,8 +936,8 @@
       "Good": "高品质",
       "Poor": "低品质",
       "Fail": "制作失败",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
+      "Pliant": "高效",
+      "Sturdy": "结实",
       "Centered": "居中对齐",
       "Normal": "通常"
     },
@@ -959,7 +959,7 @@
       "Min_craftsmanship_filter_placeholder": "最小作业精度",
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
-      "Difficulty_filter_placeholder": "Difficulty",
+      "Difficulty_filter_placeholder": "难度",
       "Quality_filter_placeholder": "品质",
       "Intro": "输入筛选条件",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
@@ -1087,7 +1087,7 @@
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ 价格",
     "Enter_total_earnings": "输入总收入",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "排除已完成的物品"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -1437,15 +1437,15 @@
     "3d_model_help": "预览 3D 模型",
     "Achievements": "成就",
     "Currencies": "货币",
-    "Rowena_splendor": "Rowena's splendors",
+    "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Required_craftsmanship": "需要作业精度",
+      "Required_control": "需要加工精度",
+      "Mark_as_done_in_gathering_log": "在笔记中标为已完成"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1733,9 +1733,9 @@
     "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
+    "Title": "食物选择器",
     "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
-    "Pick_stat": "Choose an attribute"
+    "Pick_stat": "选择一个属性"
   },
   "BLOG": {
     "Title": "博客"
@@ -1768,7 +1768,7 @@
     "Commissions": "Commissions",
     "Commission_board": "Board",
     "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Archived_commissions": "归档"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1813,7 +1813,7 @@
       "Bag": "背包",
       "Other": "其他物品栏",
       "Armory": "兵装库",
-      "Current_Gear": "Current gear",
+      "Current_Gear": "当前装备",
       "RetainerMarket": "雇员出售列表"
     }
   },
@@ -1925,7 +1925,7 @@
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
     "Copied_as_string": "Gearset copied as string",
-    "Mark_as_done": "Mark as done",
+    "Mark_as_done": "标记为已完成",
     "Create_commission": "Create a commission for this gearset",
     "SLOT": {
       "Body": "身体",
