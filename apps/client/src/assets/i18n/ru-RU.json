@@ -1358,7 +1358,7 @@
     "Patreon_title": "Поддержать нас в Patreon",
     "Patreon_description": "Patreon - это платформа где вы можете внести деньги для поддержки проекта каждый месяц. Эти деньги используются на сервера, сертификаты, раздачи и для освобождения большего времени разработчику на работу над проектом.\n\nЗависимо от суммы, вы можете получить кое-какие приятные преимущества в качестве благодарности за вклад:",
     "Popup_introduction": "Привет, я Miu, разработчик инструмента, который вы сейчас используете.<br/> Teamcraft для меня последние года был хобби, и моя мечта состоит в том, чтобы сделать это основной работой. <br/><br/> С вашей помощью эта мечта может стать реальностью, вы можете поддержать проект на patreon, каждый доллар считается и поможет мне достичь этой цели. <br/><br/> Поддержка проекта на patreon также дает вам некоторые выгоды:",
-    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
+    "Already_supporting": "Уже поддерживаете на patreon? Убедитесь, что вы привязали свой аккаунт к patreon в настройках",
     "PATREON_BENEFITS": {
       "Discord_rank": "Особые ранги на дискорд-сервере, дающие доступ на канал для поддержавших, где можно увидеть, над чем сейчас идёт работа (${{price}})",
       "Profile_badge": "Особая отметка в вашем профиле Teamcraft (${{price}})",
@@ -1440,10 +1440,10 @@
     "Jump_to_page": "Быстрый переход на другую страницу",
     "Ishgard_restoration": "Восстановление Ишгарда",
     "ITEM": {
-      "Masterpiece_exp_tooltip": "% of exp needed for next level",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Masterpiece_exp_tooltip": "% опыта необходимого до следующего уровня",
+      "Required_craftsmanship": "Мин. Craftsmanship",
+      "Required_control": "Мин. Control",
+      "Mark_as_done_in_gathering_log": "Отметить как выполнено в журнале"
     },
     "FISH": {
       "Hour": "Время",
@@ -1687,7 +1687,7 @@
     "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
     "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
     "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
+    "Open_in_desktop_shortcut": "Нажмите Ctrl + Shift + C, чтобы открыть текущую страницу в приложении или открыть модуль \"Открыть веб-ссылку\" в приложении."
   },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
@@ -1717,10 +1717,10 @@
     "Pool_copied": "Инвентарь скопирован в буфер обмена",
     "Sort_alphabetically": "Сортировать по алфавиту",
     "Pages_range_label": "{{ range0 }}-{{ range1 }} из {{ total }} предметов",
-    "Shown_only_craftable": "Only what I have level for",
-    "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_craftable": "Только то, для чего у меня есть уровень",
+    "Shown_only_collectables": "Только collectables",
+    "Recipe_level": "Уровень рецепта",
+    "Shown_only_not_completed": "Только не завершенные в журнале"
   },
   "CURRENCY_SPENDING": {
     "Title": "Гид по валютам",
@@ -2185,8 +2185,8 @@
     "Marketboard_informations": "Marketboard informations"
   },
   "COLLECTABLES": {
-    "Title": "Collectables",
-    "No_collectables_for_this_level": "No collectables available"
+    "Title": "Сollectables",
+    "No_collectables_for_this_level": "Нет доступных collectables"
   },
   "CRAFTING_REPLAYS": {
     "Title": "Crafting replays",
