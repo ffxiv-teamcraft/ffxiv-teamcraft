@@ -240,7 +240,7 @@
                 <div>{{crafterRating.comment}}</div>
               </div>
               <button nz-button nzType="primary" *ngIf="!display.commission.ratings[display.commission.crafterId]
-              && display.userId === display.commission.crafterId && !ratingDone[commission.$key+':'+userId]"
+              && display.userId === display.commission.crafterId && !ratingDone[display.commission.$key+':'+display.commission.crafterId]"
                       (click)="rateCommission(display.commission, display.userId)">{{'COMMISSIONS.DETAILS.Rate_commission' | translate}}</button>
             </div>
             <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 50%" fxLayoutAlign="center center">
@@ -254,7 +254,7 @@
                 <div>{{authorRating.comment}}</div>
               </div>
               <button nz-button nzType="primary" *ngIf="!display.commission.ratings[display.commission.authorId]
-              && display.userId === display.commission.authorId && !ratingDone[commission.$key+':'+userId]"
+              && display.userId === display.commission.authorId && !ratingDone[display.commission.$key+':'+display.commission.authorId]"
                       (click)="rateCommission(display.commission, display.userId)">{{'COMMISSIONS.DETAILS.Rate_commission' | translate}}</button>
             </div>
           </div>
