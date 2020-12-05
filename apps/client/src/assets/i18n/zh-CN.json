@@ -2215,14 +2215,14 @@
     "No_commissions_as_client": "You don't have any commission as client",
     "Your_commissions_as_crafter": "Commissions you're working on",
     "No_commissions_as_crafter": "You're not working on any commission",
-    "Delete_commission": "Delete this commission",
-    "Delete_list_too": "Delete list too",
-    "Delete_commission_only": "Delete commission only",
-    "Your_archived_commissions_as_client": "Commissions as client",
-    "No_archived_commissions_as_client": "You have no archived commission as client",
-    "Your_archived_commissions_as_crafter": "Commissions as contractor",
-    "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
-    "Updates": "Updates",
+    "Delete_commission": "删除委托",
+    "Delete_list_too": "同时删除清单",
+    "Delete_commission_only": "只删除委托",
+    "Your_archived_commissions_as_client": "提出的委托",
+    "No_archived_commissions_as_client": "没有相关委托",
+    "Your_archived_commissions_as_crafter": "承包的委托",
+    "No_archived_commissions_as_crafter": "没有相关委托",
+    "Updates": "更新",
     "Clear_notifications": "Clear notifications",
     "TAGS": {
       "CRAFTING": "制作",
@@ -2234,7 +2234,7 @@
     "STATUS": {
       "Label": "状态",
       "OPENED": "Opened",
-      "IN_PROGRESS": "In progress",
+      "IN_PROGRESS": "进行中",
       "ARCHIVED": "Archived"
     },
     "CREATION": {
@@ -2275,37 +2275,37 @@
       "Content": "Content",
       "Progression": "进展",
       "Candidates": "候选（{{amount}}）",
-      "Candidates_public_display": "Candidates : {{amount}}",
+      "Candidates_public_display": "候选：{{amount}}",
       "Apply": "申请",
       "Edit": "Edit this commission",
       "No_candidates": "暂无候选",
       "Your_offer": "您的报价",
       "Remove_offer": "移除您的报价",
-      "Fire_contractor": "Fire the contractor",
+      "Fire_contractor": "中止此委托",
       "Resign": "Resign",
-      "Contractor": "Contractor",
+      "Contractor": "承包方",
       "Open_list": "打开清单",
       "List": "List",
       "Mark_as_completed": "Mark commission as completed",
       "Hire": "雇用此承包方",
       "Progression_Tip": "当清单完成度到达 100% 时，您可以标记此委托已完成",
-      "Ratings": "Ratings",
-      "Waiting_for_rating": "Waiting for rating",
+      "Ratings": "评价",
+      "Waiting_for_rating": "等待评价",
       "Rate_commission": "Add your rating",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
+      "Bump": "顶一下，每 24 小时只能操作一次",
+      "Copy_share_link": "复制分享链接",
       "Share_link_copied": "委托共享链接已复制到剪贴板",
       "No_description": "无说明",
-      "Items_count": "# of items",
+      "Items_count": "物品编号",
       "Creation_date": "Creation date",
       "Server_&_tags": "服务器 & 标签",
       "Add_items": "Add items",
       "Rating": "Rating",
-      "Comment": "Your comment",
+      "Comment": "您的评论",
       "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
-      "Price": "Your price",
+      "Price": "您的出价",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等"
     },
     "NOTIFICATIONS": {
@@ -2320,11 +2320,11 @@
       },
       "HIRED": {
         "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Content": "您已在委托 {{name}} 雇用"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "新候选",
+        "Content": "委托 {{name}} 有新候选"
       },
       "DONE": {
         "Title": "Commission list completed",
@@ -2337,7 +2337,7 @@
       "Ratings": "Ratings",
       "Incidents": "Incidents",
       "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
+      "Fired": "委托被终止",
       "Resigned": "Resigned from a commission",
       "No_ratings": "暂无评价",
       "Fired_X_times": "Fired {{amount}} times",
