@@ -40,7 +40,9 @@
     "Too_many_results_warning": "此搜索返回了超过 100 个物品。由于我们的数据源仅限 100 个，您可能需要增加筛选来找到所需的物品。",
     "Share_url": "将搜索链接复制到剪贴板",
     "Share_url_copied": "搜索链接已复制到剪贴板",
-    "Only_craftable": "仅显示有配方的物品"
+    "Only_craftable": "仅显示有配方的物品",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -2295,7 +2297,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",
