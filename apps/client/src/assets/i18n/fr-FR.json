@@ -40,7 +40,9 @@
     "Too_many_results_warning": "Cette recherche a donné plus de 100 résultats. Notre source de données est limitée à 100 résultats, vous devriez affiner vos filtres pour obtenir un résultat plus spécifique.",
     "Share_url": "Copier l'url de recherche dans le presse-papiers",
     "Share_url_copied": "Url de recherche copié dans le presse-papiers",
-    "Only_craftable": "Recettes uniquement"
+    "Only_craftable": "Recettes uniquement",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Utiliser comme personnage par défaut",
   "Download_desktop_app": "Télécharger l'application",
@@ -2295,7 +2297,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Votre prix",
