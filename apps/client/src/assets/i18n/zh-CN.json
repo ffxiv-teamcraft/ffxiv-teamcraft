@@ -119,7 +119,7 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
-    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_placeholder": "通过标签排除",
     "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "清单名筛选",
     "No_lists_matching": "没有符合的搜索结果"
@@ -2201,7 +2201,7 @@
     "No_online_replays": "No online replays",
     "No_offline_replays": "No offline replays",
     "Cannot_record": "Cannot record replays",
-    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
+    "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
     "Create_folder": "New folder",
     "Save_replay": "Save replay in database"
   },
@@ -2224,10 +2224,10 @@
     "Updates": "Updates",
     "Clear_notifications": "Clear notifications",
     "TAGS": {
-      "CRAFTING": "Crafting",
-      "GATHERING": "Gathering",
-      "HUNTING": "Hunting",
-      "FISHING": "Fishing",
+      "CRAFTING": "制作",
+      "GATHERING": "采集",
+      "HUNTING": "讨伐",
+      "FISHING": "钓鱼",
       "GEAR": "装备"
     },
     "STATUS": {
@@ -2240,19 +2240,19 @@
       "Name": "名称",
       "Name_placeholder": "委托名称",
       "Name_required_error": "请输入委托名称",
-      "Tags": "Tags",
+      "Tags": "标签",
       "Price": "期望价格",
       "Price_tip": "如果您希望对方提出价格，请填写 0",
-      "Only_crafting": "Only crafting",
-      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
-      "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations",
+      "Only_crafting": "仅限制作",
+      "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
+      "Contact_info": "联系方式",
+      "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
+      "Contact_info_required_error": "请填写联系方式",
       "Description": "说明",
       "Description_placeholder": "如果您想对委托提供更多细节，请在此处填写",
       "Description_max_length_error": "说明不能超过 1000 个字符",
-      "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
+      "Warning": "提示",
+      "Warning_description": "虚假、无效的委托将会被删除，并可能对您的帐号采取相关措施",
       "Copy_link": "Copy import code",
       "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
       "Link_copied": "Commission import code copied"
@@ -2268,8 +2268,8 @@
       "Created_by": "Created by {{name}}",
       "Details": "Details",
       "Price": "Payment",
-      "Tags": "Tags",
-      "No_tags": "No tags",
+      "Tags": "标签",
+      "No_tags": "无标签",
       "Server": "Server",
       "Content": "Content",
       "Progression": "Progression",
@@ -2297,7 +2297,7 @@
       "No_description": "无说明",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags",
+      "Server_&_tags": "服务器 & 标签",
       "Add_items": "Add items",
       "Rating": "Rating",
       "Comment": "Your comment",
@@ -2305,7 +2305,7 @@
     },
     "APPLY": {
       "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等"
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Click to open the commission",
