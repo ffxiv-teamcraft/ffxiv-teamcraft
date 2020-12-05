@@ -1783,9 +1783,9 @@
     "Outdated_description": "Ваша версия Teamcraft работает неправильно с текущей версией игры, она обрабатывается и будет исправлена в будущих обновлениях.",
     "Possible_missing_firewall_rule": "Захват пакетов работает некорректно",
     "Possible_missing_firewall_rule_description": "Teamcraft видит только некоторые пакеты и не содержит тех, которые связаны с инвентарем, параметрами, одеждой и т.д., это может быть вызвано отсутствием правила брандмауэра на вашем компьютере.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
-    "Firewall_rule_set": "Firewall rule has been applied, your inventory should now be detected properly.",
-    "Add_firewall_rule": "Add the firewall rule"
+    "Possible_missing_firewall_rule_check": "Если это сообщение не исчезает после телепорта в новую область, отсутствует правило брандмауэра или захват пакетов вообще не работает по другой причине (если это так, перейдите на канал #troubleshooting на сервере Teamcraft Discord).",
+    "Firewall_rule_set": "Правило брандмауэра применено, теперь ваш инвентарь должен быть обнаружен правильно.",
+    "Add_firewall_rule": "Добавить правило брандмауэра"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
@@ -1811,7 +1811,7 @@
       "Bag": "Инвентарь",
       "Other": "Другой инвентарь",
       "Armory": "Armory",
-      "Current_Gear": "Current gear",
+      "Current_Gear": "Текущее снаряжение",
       "RetainerMarket": "На продаже у ретейнеров"
     }
   },
@@ -1853,8 +1853,8 @@
       "Company_workshop": "Company Workshop"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Title": "Предметы, которые можно легко собрать",
+      "Message": "Может быть собрано на {{level}} уровне на постоянной ноде"
     },
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
