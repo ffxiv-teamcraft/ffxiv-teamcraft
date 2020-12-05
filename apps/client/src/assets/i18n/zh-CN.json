@@ -2203,13 +2203,14 @@
     "Cannot_record": "无法录制工序",
     "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
     "Create_folder": "新建文件夹",
-    "Save_replay": "上传回放"
+    "Save_replay": "上传回放",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
     "Price_tbd": "To be discussed",
-    "X_items": "{{amount}} items",
-    "Open_commission_details": "Open commission details",
+    "X_items": "{{amount}} 个物品",
+    "Open_commission_details": "打开委托详情",
     "Your_commissions_as_client": "Your commissions as client",
     "No_commissions_as_client": "You don't have any commission as client",
     "Your_commissions_as_crafter": "Commissions you're working on",
@@ -2231,7 +2232,7 @@
       "GEAR": "装备"
     },
     "STATUS": {
-      "Label": "Status",
+      "Label": "状态",
       "OPENED": "Opened",
       "IN_PROGRESS": "In progress",
       "ARCHIVED": "Archived"
@@ -2270,14 +2271,14 @@
       "Price": "Payment",
       "Tags": "标签",
       "No_tags": "无标签",
-      "Server": "Server",
+      "Server": "服务器",
       "Content": "Content",
-      "Progression": "Progression",
-      "Candidates": "Candidates ({{amount}})",
+      "Progression": "进展",
+      "Candidates": "候选（{{amount}}）",
       "Candidates_public_display": "Candidates : {{amount}}",
       "Apply": "Apply",
       "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
+      "No_candidates": "暂无候选",
       "Your_offer": "Your offer",
       "Remove_offer": "Remove your offer",
       "Fire_contractor": "Fire the contractor",
