@@ -21,6 +21,8 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   CommissionStatus = CommissionStatus;
 
+  ratingDone: Record<string, boolean> = {};
+
   public display$ = combineLatest([
     this.commissionsFacade.selectedCommission$.pipe(filter(c => !!c)),
     this.authFacade.userId$,
@@ -81,7 +83,7 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
   }
 
   rateCommission(commission: Commission, userId: string): void {
-    this.commissionsFacade.rate(commission, userId);
+    this.commissionsFacade.rate(commission, userId).subscribe(res => this.ratingDone[`${commission.$key}:${userId}`] = res);
   }
 
   ngOnInit(): void {
