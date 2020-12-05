@@ -1856,11 +1856,11 @@
     },
     "CAN_BE_GATHERED_EASILY": {
       "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Message": "可在 {{level}} 级的非限时点采集"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
-      "Message": "You can extract a materia from this gear piece"
+      "Title": "可以精炼魔晶石的装备（精炼度 100%）",
+      "Message": "此装备可以精炼魔晶石"
     }
   },
   "VERSION_LOCK": {
@@ -1902,14 +1902,14 @@
     "Import_from_ariyala": "从 Ariyala 导入",
     "Import_from_lodestone": "从 Lodestone 导入",
     "Import_using_pcap": "使用数据包捕获导入",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "使用数据包捕获同步",
     "Your_gearsets": "您的配装",
     "Delete_gearset": "删除配装",
     "Import_from_pcap_notice": "请切换至需要导入的对应职业配装",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
     "Clone_gearset": "将此配装复制到您的账号",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "创建此配装的副本",
     "You_have_no_gearsets": "没有配装",
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
@@ -1924,7 +1924,7 @@
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
-    "Copied_as_string": "Gearset copied as string",
+    "Copied_as_string": "配装已复制为字符串",
     "Mark_as_done": "标记为已完成",
     "Create_commission": "为此配装创建委托",
     "SLOT": {
@@ -1969,12 +1969,12 @@
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "同步配装",
       "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
+      "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Syncing_gearsets": "正在同步配装 ……"
     }
   },
   "FOLDERS": {
@@ -2228,7 +2228,7 @@
       "GATHERING": "Gathering",
       "HUNTING": "Hunting",
       "FISHING": "Fishing",
-      "GEAR": "Gear"
+      "GEAR": "装备"
     },
     "STATUS": {
       "Label": "Status",
@@ -2237,20 +2237,20 @@
       "ARCHIVED": "Archived"
     },
     "CREATION": {
-      "Name": "Name",
-      "Name_placeholder": "Name of your commission",
-      "Name_required_error": "Please input a name",
+      "Name": "名称",
+      "Name_placeholder": "委托名称",
+      "Name_required_error": "请输入委托名称",
       "Tags": "Tags",
-      "Price": "Price you're willing to pay",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
+      "Price": "期望价格",
+      "Price_tip": "如果您希望对方提出价格，请填写 0",
       "Only_crafting": "Only crafting",
       "Includes_materials_label": "This commission includes all base materials and requires only crafting",
       "Contact_info": "Contact informations",
       "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
       "Contact_info_required_error": "Please include contact informations",
-      "Description": "Description",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
+      "Description": "说明",
+      "Description_placeholder": "如果您想对委托提供更多细节，请在此处填写",
+      "Description_max_length_error": "说明不能超过 1000 个字符",
       "Warning": "Warning",
       "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
       "Copy_link": "Copy import code",
@@ -2294,7 +2294,7 @@
       "Bump": "Bring this commission back to the top, only once per 24h",
       "Copy_share_link": "Copy share link",
       "Share_link_copied": "委托共享链接已复制到剪贴板",
-      "No_description": "No description",
+      "No_description": "无说明",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
       "Server_&_tags": "Server & tags",
