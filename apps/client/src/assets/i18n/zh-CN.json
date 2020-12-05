@@ -929,8 +929,8 @@
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
-    "Compact": "Compact",
-    "Detailed": "Detailed",
+    "Compact": "简洁",
+    "Detailed": "详细",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
@@ -1734,7 +1734,7 @@
   },
   "FOOD_PICKER": {
     "Title": "食物选择器",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Description": "想知道哪个食物有你需要的属性？找对地方了！",
     "Pick_stat": "选择一个属性"
   },
   "BLOG": {
@@ -2127,7 +2127,7 @@
       "VENDOR": "商人",
       "TELEPORT": "传送",
       "MARKETBOARD": "交易板",
-      "RETAINER": "Retainer"
+      "RETAINER": "雇员"
     },
     "TYPES": {
       "ANY": "任何",
@@ -2188,7 +2188,7 @@
   },
   "COLLECTABLES": {
     "Title": "收藏品",
-    "No_collectables_for_this_level": "No collectables available"
+    "No_collectables_for_this_level": "当前等级没有可以制作的收藏品"
   },
   "CRAFTING_REPLAYS": {
     "Title": "工序重现",
@@ -2204,17 +2204,17 @@
     "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
     "Create_folder": "新建文件夹",
     "Save_replay": "上传回放",
-    "Replay_result": "Result"
+    "Replay_result": "结果"
   },
   "COMMISSIONS": {
     "New_commission": "新建委托",
     "Price_tbd": "待定",
     "X_items": "{{amount}} 个物品",
     "Open_commission_details": "打开委托详情",
-    "Your_commissions_as_client": "Your commissions as client",
-    "No_commissions_as_client": "You don't have any commission as client",
-    "Your_commissions_as_crafter": "Commissions you're working on",
-    "No_commissions_as_crafter": "You're not working on any commission",
+    "Your_commissions_as_client": "提出的委托",
+    "No_commissions_as_client": "您没有提出的委托",
+    "Your_commissions_as_crafter": "进行中的委托",
+    "No_commissions_as_crafter": "您没有进行中的委托",
     "Delete_commission": "删除委托",
     "Delete_list_too": "同时删除清单",
     "Delete_commission_only": "只删除委托",
@@ -2223,7 +2223,7 @@
     "Your_archived_commissions_as_crafter": "承包的委托",
     "No_archived_commissions_as_crafter": "没有相关委托",
     "Updates": "更新",
-    "Clear_notifications": "Clear notifications",
+    "Clear_notifications": "清空通知",
     "TAGS": {
       "CRAFTING": "制作",
       "GATHERING": "采集",
