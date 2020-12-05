@@ -2337,19 +2337,19 @@
       "Ratings": "Ratings",
       "Incidents": "Incidents",
       "No_incidents": "No incidents",
-      "Fired": "委托被终止",
+      "Fired": "委托被中止",
       "Resigned": "Resigned from a commission",
       "No_ratings": "暂无评价",
-      "Fired_X_times": "Fired {{amount}} times",
+      "Fired_X_times": "被中止 {{amount}} 次",
       "Resigned_X_times": "Resigned {{amount}} times"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "请选择中止委托的原因",
+      "NO_ACTIVE_SUB": "承包方不再登录游戏",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "与承包方合作不愉快",
+      "NO_LONGER_NEED_JOB_DONE": "不再需要委托中的物品",
+      "FOUND_SOMEONE_ELSE": "找到其他委托方",
+      "CANNOT_AFFORD": "无法承担此委托的费用"
     },
     "RESIGNED": {
       "Please_pick_reason": "Why are you resigning from this commission?",
