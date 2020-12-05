@@ -5,14 +5,14 @@ import { Observable, of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 import { shareReplay } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class ProgressPopupService {
 
   constructor(private dialog: NzModalService, private translate: TranslateService) {
   }
 
   public showProgress(operation$: Observable<any>, operationsCount: number, labelKey = 'Please_wait', labelParams = {}): Observable<any> {
-    if(operationsCount === 0){
+    if (operationsCount === 0) {
       return of(null);
     }
     return this.dialog.create({

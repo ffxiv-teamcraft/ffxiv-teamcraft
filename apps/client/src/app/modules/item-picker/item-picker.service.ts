@@ -15,6 +15,7 @@ export class ItemPickerService {
     return this.dialog.create({
       nzContent: ItemPickerComponent,
       nzFooter: null,
+      nzCloseOnNavigation: true,
       nzTitle: this.translate.instant('Pick_an_item')
     }).afterClose;
   }
@@ -23,6 +24,7 @@ export class ItemPickerService {
     return this.dialog.create({
       nzContent: ItemPickerComponent,
       nzFooter: null,
+      nzCloseOnNavigation: true,
       nzComponentParams: {
         multi: true
       },

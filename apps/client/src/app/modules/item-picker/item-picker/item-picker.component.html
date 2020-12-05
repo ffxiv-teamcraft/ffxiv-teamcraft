@@ -8,6 +8,10 @@
     <label nz-checkbox [(ngModel)]="onlyCraftable" (ngModelChange)="settings.onlyRecipesInPicker = $event">{{'ITEMS.Only_craftable' | translate}}</label>
   </ng-template>
 </nz-input-group>
+{{'ITEMS.Want_filters' | translate}}
+<a routerLink="/search" (click)="close()">
+  {{'ITEMS.Open_search' | translate}}
+</a>
 <ng-container *ngIf="results$ | async as results">
   <nz-list [nzDataSource]="results" [nzLoading]="loading" [nzRenderItem]="itemTemplate">
     <ng-template #itemTemplate let-result>
@@ -49,5 +53,6 @@
       </nz-list-item>
     </ng-template>
   </nz-list>
-  <button nz-button nzBlock (click)="pickMulti(results)" [disabled]="nothingSelected(results)" *ngIf="multi">{{'LISTS.Add_selection_to_list' | translate}}</button>
+  <button nz-button nzBlock (click)="pickMulti(results)" [disabled]="nothingSelected(results)"
+          *ngIf="multi">{{'LISTS.Add_selection_to_list' | translate}}</button>
 </ng-container>

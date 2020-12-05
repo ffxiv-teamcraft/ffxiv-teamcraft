@@ -59,6 +59,7 @@ import { ListProgressbarComponent } from './list-progressbar/list-progressbar.co
 import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { ItemPickerModule } from '../item-picker/item-picker.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -111,6 +112,7 @@ export const DATA_EXTRACTORS: Provider[] = [
     AlarmsModule,
     MapModule,
     ItemDetailsPopupsModule,
+    ItemPickerModule,
 
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),

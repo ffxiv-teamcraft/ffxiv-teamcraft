@@ -40,7 +40,9 @@
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "Only recipes",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -2295,7 +2297,8 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items"
     },
     "APPLY": {
       "Price": "Your price",
