@@ -928,7 +928,7 @@
     "Remove_final_appraisal": "Убрать эффект Final Appraisal",
     "Total_macro_duration": "Общая длительность макроса: {{duration}}сек.",
     "Compact": "Компактный",
-    "Detailed": "Detailed",
+    "Detailed": "Подробный",
     "STATE": {
       "Excellent": "Отличное",
       "Good": "Хорошее",
@@ -957,8 +957,8 @@
       "Min_craftsmanship_filter_placeholder": "Мин. Мастерство",
       "Min_control_filter_placeholder": "Мин. Контроль",
       "Min_cp_filter_placeholder": "Мин. CP",
-      "Difficulty_filter_placeholder": "Difficulty",
-      "Quality_filter_placeholder": "Quality",
+      "Difficulty_filter_placeholder": "Сложность",
+      "Quality_filter_placeholder": "Качество",
       "Intro": "Добавьте фильтры, чтобы начать",
       "Result_tooltip": "Результат моделирования при помощи этой ротации и ваших характеристик",
       "Fail": "Провал",
@@ -1013,7 +1013,7 @@
     },
     "CONFIGURATION": {
       "Job": "Профессия",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
+      "Job_not_configured": "Похоже, что вы еще не настроили эту профессию. Перейдите на страницу профиля, чтобы настроить ее и установить характеристики.",
       "Job_not_configured_anonymous": "Пожалуйста, введите свои характеристики, чтобы получать точные симуляции или войдите в свою учетную запись",
       "Select_job": "Выбрать профессию",
       "Craftsmanship": "Мастерство",
@@ -1045,10 +1045,10 @@
       "UNSAFE_ACTION": "Использованы небезопасные действия в безопасном режиме",
       "DURABILITY_REACHED_ZERO": "Durability достигла 0 до заполнения progress'а",
       "NOT_ENOUGH_CP": "Недостаточно CP",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "У вас нет требуемого уровня для создания этого предмета.",
       "NOT_SPECIALIST": "Ротация специалиста, но вы не являетесь специалистом",
       "NO_INNER_QUIET": "Попытка использования действия, связанного с Inner Quiet без включённого Inner Quiet",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "У вас нет минимальных параметров, необходимых для этого крафта"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "Почти все ротации должны включать Inner Quiet, если целью будет HQ предмет. Это обеспечивает действительно хороший рост качества и позволяет действия, такие как Byregot's Blessing.",
@@ -1085,7 +1085,7 @@
     "Marketboard_price": "Цена NQ",
     "Marketboard_price_hq": "Цена HQ",
     "Enter_total_earnings": "Введите общий доход",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "Исключить завершенные предметы"
   },
   "LEVEQUESTS": {
     "Title": "Ливквесты",
@@ -1178,7 +1178,7 @@
     "Purchase_date": "Дата",
     "More_on_universalis": "Подробнее на Universalis",
     "Server": "Сервер",
-    "Last_updated": "Last update"
+    "Last_updated": "Последнее обновление"
   },
   "COMMENTS": {
     "Title": "Комментарии"
@@ -1198,7 +1198,7 @@
     "Lists_created_counter": "{{amount}} списков создано с помощью FFXIV Teamcraft",
     "Support_patreon": "Поддержать нас в patreon",
     "Donation_button": "Внести пожертвование",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Купить мерч Teamcraft",
     "Features_header": "Вперёд!",
     "DESCRIPTION": {
       "Lists": "Создавайте списки, чтобы получить информацию о всех материалов, делитесь ими со своими друзьями, всё начинается именно здесь! Просто введите название предмета в поиск, настройте фильтры, чтобы найти нужный предмет и можете начать крафтить.",
@@ -1357,7 +1357,7 @@
     "Contribute_description": "Вы можете найти нас на github чтоб поучаствовать в проекте. Даже если вы новичок, мы рады всем!\n\nУчастие может проявляться не только лишь в коде. Запросы фич и отчёты об ошибках так же очень помогают доставлять наилучшее качество для всех благодаря тем, кто проверяет и находит ошибки.",
     "Patreon_title": "Поддержать нас в Patreon",
     "Patreon_description": "Patreon - это платформа где вы можете внести деньги для поддержки проекта каждый месяц. Эти деньги используются на сервера, сертификаты, раздачи и для освобождения большего времени разработчику на работу над проектом.\n\nЗависимо от суммы, вы можете получить кое-какие приятные преимущества в качестве благодарности за вклад:",
-    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Popup_introduction": "Привет, я Miu, разработчик инструмента, который вы сейчас используете.<br/> Teamcraft для меня последние года был хобби, и моя мечта состоит в том, чтобы сделать это основной работой. <br/><br/> С вашей помощью эта мечта может стать реальностью, вы можете поддержать проект на patreon, каждый доллар считается и поможет мне достичь этой цели. <br/><br/> Поддержка проекта на patreon также дает вам некоторые выгоды:",
     "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
     "PATREON_BENEFITS": {
       "Discord_rank": "Особые ранги на дискорд-сервере, дающие доступ на канал для поддержавших, где можно увидеть, над чем сейчас идёт работа (${{price}})",
