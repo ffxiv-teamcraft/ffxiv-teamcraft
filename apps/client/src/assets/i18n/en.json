@@ -2298,7 +2298,10 @@
       "Items_count": "# of items",
       "Creation_date": "Creation date",
       "Server_&_tags": "Server & tags",
-      "Add_items": "Add items"
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",
