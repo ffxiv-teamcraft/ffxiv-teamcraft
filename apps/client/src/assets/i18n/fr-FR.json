@@ -2203,7 +2203,8 @@
     "Cannot_record": "Impossible d'enregistrer",
     "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
     "Create_folder": "Nouveau dossier",
-    "Save_replay": "Enregistrer en ligne"
+    "Save_replay": "Enregistrer en ligne",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
