@@ -2203,7 +2203,8 @@
     "Cannot_record": "Wiederholungen können nicht aufgezeichnet werden",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "Neues Verzeichnis",
-    "Save_replay": "Wiederholung in Datenbank speichern"
+    "Save_replay": "Wiederholung in Datenbank speichern",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
