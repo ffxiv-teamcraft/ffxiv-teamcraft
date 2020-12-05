@@ -40,7 +40,9 @@
     "Too_many_results_warning": "Deze zoekopdracht heeft een meer dan 100 items opgeleverd. Aangezien onze gegevensbron beperkt is tot 100 resultaten, moet u mogelijk extra filters gebruiken om een specifiek item te vinden.",
     "Share_url": "Kopieer zoek-url naar uw klembord",
     "Share_url_copied": "Zoek-url gekopieerd naar uw klembord",
-    "Only_craftable": "Alleen recepten"
+    "Only_craftable": "Alleen recepten",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Gebruik als standaard teken",
   "Download_desktop_app": "Download desktop app",
@@ -2295,7 +2297,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",
