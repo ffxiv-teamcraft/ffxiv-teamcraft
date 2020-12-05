@@ -2235,7 +2235,7 @@
       "Label": "状态",
       "OPENED": "Opened",
       "IN_PROGRESS": "进行中",
-      "ARCHIVED": "Archived"
+      "ARCHIVED": "已归档"
     },
     "CREATION": {
       "Name": "名称",
@@ -2267,59 +2267,59 @@
     },
     "DETAILS": {
       "Created_by": "由 {{name}} 创建",
-      "Details": "Details",
+      "Details": "详情",
       "Price": "价格",
       "Tags": "标签",
       "No_tags": "无标签",
       "Server": "服务器",
-      "Content": "Content",
+      "Content": "内容",
       "Progression": "进展",
       "Candidates": "候选（{{amount}}）",
       "Candidates_public_display": "候选：{{amount}}",
       "Apply": "申请",
-      "Edit": "Edit this commission",
+      "Edit": "编辑委托",
       "No_candidates": "暂无候选",
       "Your_offer": "您的报价",
       "Remove_offer": "移除您的报价",
       "Fire_contractor": "中止此委托",
-      "Resign": "Resign",
+      "Resign": "放弃",
       "Contractor": "承包方",
       "Open_list": "打开清单",
-      "List": "List",
-      "Mark_as_completed": "Mark commission as completed",
+      "List": "清单",
+      "Mark_as_completed": "标记委托完成",
       "Hire": "雇用此承包方",
       "Progression_Tip": "当清单完成度到达 100% 时，您可以标记此委托已完成",
       "Ratings": "评价",
       "Waiting_for_rating": "等待评价",
-      "Rate_commission": "Add your rating",
+      "Rate_commission": "添加您的评价",
       "Bump": "顶一下，每 24 小时只能操作一次",
       "Copy_share_link": "复制分享链接",
       "Share_link_copied": "委托共享链接已复制到剪贴板",
       "No_description": "无说明",
       "Items_count": "物品编号",
-      "Creation_date": "Creation date",
+      "Creation_date": "创建日期",
       "Server_&_tags": "服务器 & 标签",
-      "Add_items": "Add items",
-      "Rating": "Rating",
+      "Add_items": "添加物品",
+      "Rating": "评价",
       "Comment": "您的评论",
-      "Comment_placeholder": "Add more details about your rating here"
+      "Comment_placeholder": "请填写评价的具体细节"
     },
     "APPLY": {
       "Price": "您的出价",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等"
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "点击打开委托",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "委托结束",
+        "Content": "您不再是委托 {{name}} 的承包人"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "委托结束",
+        "Content": "委托 {{name}} 的承包人放弃了委托"
       },
       "HIRED": {
-        "Title": "Commission contract started",
+        "Title": "委托开始",
         "Content": "您已在委托 {{name}} 雇用"
       },
       "CANDIDATE": {
@@ -2327,21 +2327,21 @@
         "Content": "委托 {{name}} 有新候选"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "委托清单已完成",
+        "Content": "委托 {{name}} 关联的清单已完成"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
+      "Details": "委托资料",
+      "View_details": "打开资料详情",
+      "Ratings": "评价",
+      "Incidents": "事故",
+      "No_incidents": "无事故",
       "Fired": "委托被中止",
-      "Resigned": "Resigned from a commission",
+      "Resigned": "已放弃委托",
       "No_ratings": "暂无评价",
       "Fired_X_times": "被中止 {{amount}} 次",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Resigned_X_times": "放弃 {{amount}} 次"
     },
     "FIRED": {
       "Please_pick_reason": "请选择中止委托的原因",
@@ -2352,18 +2352,18 @@
       "CANNOT_AFFORD": "无法承担此委托的费用"
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "Please_pick_reason": "请选择放弃委托的原因",
+      "NO_ACTIVE_SUB": "我不再登录游戏",
+      "UNCOMFORTABLE_WITH_CLIENT": "与客户合作不愉快",
+      "CANNOT_COMPLETE_LEVEL": "我不满足等级要求，无法完成此委托",
+      "CANNOT_COMPLETE_CONTENT": "我无法获得所需的物品，无法完成此委托（例如：在国际服中未购买最新版本）",
+      "CANNOT_GATHER": "我无法采集所需的物品，客户也拒绝采集物品"
     },
     "IMPORT": {
       "Title": "委托模板",
       "Description": "请确认您要创建以下物品的委托。提示：无法交易的物品将会自动从清单中移除。",
       "Create_commission": "创建委托",
-      "No_items": "No items"
+      "No_items": "没有物品"
     }
   }
 }
