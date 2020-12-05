@@ -1,6 +1,6 @@
 {
   "Quests": "Квесты",
-  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
+  "Facebook_notice": "Facebook логин больше не доступен, вы можете добавить пароль к своей учетной записи, используя систему \"сброса пароля\" или попросив Miu в дискорде.",
   "Search_placeholder": "{{type}} название",
   "Pick_a_list": "Выбрать список",
   "Pick_a_user": "Выбрать пользователя",
@@ -16,7 +16,7 @@
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
   "Hide_zone_duplicates": "Скрыть дубликаты зон (предметы из нескольких зон отображаются только один раз)",
   "Patch_notes": "{{version}} изменения",
-  "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
+  "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -49,7 +49,7 @@
   "See_code_github": "Просмотреть код на github",
   "Support_on_patreon": "Поддержите проект в patreon",
   "Access_patreon_page": "Перейти на нашу страницу Patreon",
-  "Like_the_tool": "Are you enjoying the tool so far?",
+  "Like_the_tool": "Вам нравится этот инструмент?",
   "Default": "По умолчанию",
   "Delete": "Удалить",
   "Copy_isearch": "Копирование макроса isearch",
@@ -117,8 +117,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "Фильтр по тегам",
     "Tags_filter_reset": "Сбросить фильтр",
-    "Exclude_filter_placeholder": "Exclude using tags",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_placeholder": "Исключить использование тегов",
+    "Exclude_filter_reset": "Сбросить фильтр исключений",
     "Name_filter_placeholder": "Фильтр по названию",
     "No_lists_matching": "По данному фильтру ничего не найдено"
   },
@@ -164,8 +164,8 @@
     "Copy": "Копировать",
     "Open_in_main_window": "Открыть в главном окне",
     "Example": "Пример",
-    "Change": "Change",
-    "Dirty_changes": "You have unapplied changes"
+    "Change": "Изменить",
+    "Dirty_changes": "Остались несохраненные изменения"
   },
   "ALARMS": {
     "Title": "Оповещения",
