@@ -1919,12 +1919,12 @@
     "Currency": "Валюта",
     "Optimize_materias": "Оптимизировать порядок материй",
     "No_trades_needed": "Нет необходимости обмена у нпс",
-    "Stats_caps": "Stats caps",
+    "Stats_caps": "Ограничение параметров",
     "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
     "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
-    "Copied_as_string": "Gearset copied as string",
-    "Mark_as_done": "Mark as done",
-    "Create_commission": "Create a commission for this gearset",
+    "Copied_as_string": "Набор снаряжения скопирован как строка",
+    "Mark_as_done": "Отметить как выполнено",
+    "Create_commission": "Создать заказ (поручение) для этого набора снаряжения",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -1968,11 +1968,11 @@
     },
     "SYNC": {
       "Title": "Synchronize gearsets",
-      "Tag": "Sync",
+      "Tag": "Синхр.",
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Importing_gearset": "Импорт набора для {{name}}",
+      "Imported_gearset": "Импортированный набор для {{name}}",
+      "Syncing_gearsets": "Синхронизация набора снаряжения..."
     }
   },
   "FOLDERS": {
@@ -1991,7 +1991,7 @@
     "Done": "Готово",
     "POPUP": {
       "Title": "Добро пожаловать в FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Explanation": "Teamcraft имеет небольшое пособие как использовать его основные функции и особенности. Оно появится в виде небольших окон и оповещений на различных страницах приложения.",
       "Question": "Вы хотите включить эту функцию?",
       "Can_be_changed_in_settings": "Можно включить или выключить в настройках"
     },
