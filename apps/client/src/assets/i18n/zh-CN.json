@@ -1972,8 +1972,8 @@
       "Title": "同步配装",
       "Tag": "Sync",
       "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
+      "Importing_gearset": "正在导入 {{name}} 的配装",
+      "Imported_gearset": "已导入 {{name}} 的配装",
       "Syncing_gearsets": "正在同步配装 ……"
     }
   },
@@ -2192,21 +2192,21 @@
   },
   "CRAFTING_REPLAYS": {
     "Title": "工序重现",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
+    "Online_replays": "在线回放",
+    "Offline_replays": "离线回放",
+    "Open_replay_page": "打开回放页面",
+    "Open_result_modal": "显示制作结果",
+    "Copy_to_clipboard": "将分享链接复制到剪贴板",
+    "Delete": "删除回放",
+    "No_online_replays": "没有在线回放",
+    "No_offline_replays": "没有离线回放",
+    "Cannot_record": "无法录制工序",
     "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
-    "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Create_folder": "新建文件夹",
+    "Save_replay": "上传回放"
   },
   "COMMISSIONS": {
-    "New_commission": "New commission",
+    "New_commission": "新建委托",
     "Price_tbd": "To be discussed",
     "X_items": "{{amount}} items",
     "Open_commission_details": "Open commission details",
@@ -2253,9 +2253,9 @@
       "Description_max_length_error": "说明不能超过 1000 个字符",
       "Warning": "提示",
       "Warning_description": "虚假、无效的委托将会被删除，并可能对您的帐号采取相关措施",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Copy_link": "复制模板链接",
+      "Copy_link_tooltip": "提供创建相同委托的链接，适合编写教程时使用",
+      "Link_copied": "委托模板链接已复制"
     },
     "BOARD": {
       "Title": "委托广场",
@@ -2265,7 +2265,7 @@
       "Tracking_tip": "您可以在官方 Discord 的委托（Commission）区中获取大区中的新委托通知"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
+      "Created_by": "由 {{name}} 创建",
       "Details": "Details",
       "Price": "Payment",
       "Tags": "标签",
@@ -2359,9 +2359,9 @@
       "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
+      "Title": "委托模板",
+      "Description": "请确认您要创建以下物品的委托。提示：无法交易的物品将会自动从清单中移除。",
+      "Create_commission": "创建委托",
       "No_items": "No items"
     }
   }
