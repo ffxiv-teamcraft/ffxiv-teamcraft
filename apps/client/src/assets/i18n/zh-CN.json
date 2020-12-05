@@ -41,8 +41,8 @@
     "Share_url": "将搜索链接复制到剪贴板",
     "Share_url_copied": "搜索链接已复制到剪贴板",
     "Only_craftable": "仅显示有配方的物品",
-    "Want_filters": "Need more filters?",
-    "Open_search": "Open search page instead"
+    "Want_filters": "需要更多过滤方式？",
+    "Open_search": "打开搜索页面"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -120,7 +120,7 @@
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
     "Exclude_filter_placeholder": "通过标签排除",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_reset": "重置排除过滤器",
     "Name_filter_placeholder": "清单名筛选",
     "No_lists_matching": "没有符合的搜索结果"
   },
@@ -416,8 +416,8 @@
     "Packet_capture_info": "针对国际服玩家：数据包捕获功能是违反 ToS 的，ACT 也因此违反 ToS。但在其他玩家不知晓的情况下，Square Enix 并不会进行处理，因此您可以私下使用而无需担心风险。",
     "Enable_autofill_by_default": "默认启用自动填充",
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
-    "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
-    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Enable_autofill_hq_filter": "只将 HQ 物品用于 HQ 需求的自动填充",
+    "Enable_autofill_nq_filter": "只将 NQ 物品用于非 HQ 需求的自动填充",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Change_email": "修改电子邮箱",
@@ -433,8 +433,8 @@
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
-    "Maximum_vendor_price": "Maximum vendor price",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price": "最大商店购买价格",
+    "Maximum_vendor_price_explain": "单个物品可被 CAN_BE_BOUGHT 布局捕获的最大价格（0 = 无限制）",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -1855,7 +1855,7 @@
       "Company_workshop": "部队工房"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
+      "Title": "易于采集的物品",
       "Message": "可在 {{level}} 级的非限时点采集"
     },
     "CAN_EXTRACT_MATERIA": {
@@ -1970,7 +1970,7 @@
     },
     "SYNC": {
       "Title": "同步配装",
-      "Tag": "Sync",
+      "Tag": "同步",
       "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
       "Importing_gearset": "正在导入 {{name}} 的配装",
       "Imported_gearset": "已导入 {{name}} 的配装",
@@ -2233,7 +2233,7 @@
     },
     "STATUS": {
       "Label": "状态",
-      "OPENED": "Opened",
+      "OPENED": "新委托",
       "IN_PROGRESS": "进行中",
       "ARCHIVED": "已归档"
     },
