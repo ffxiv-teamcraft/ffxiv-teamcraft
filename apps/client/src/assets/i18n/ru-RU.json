@@ -2060,16 +2060,16 @@
       "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
     },
     "METRICS": {
-      "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
+      "Welcome_time_range": "Добро пожаловать на страницу с панелями метрик, здесь вы можете выбрать временной диапазон, для которого вы хотите увидеть отображаемые данные, по умолчанию сегодня.",
       "Select_dashboard": "Вы можете иметь несколько панелей и легко переключаться между ними, чтобы увидеть то что важно для вас.",
       "Edit_dashboard": "Вы можете войти в режим редактирования, используя эту кнопку, она доступна только для панелей которые не по умолчанию.",
       "Create_dashboard": "Создавайте свои собственные панели легко, не забудьте редактировать их после того, как вы их создали, иначе это будет просто копия панели по умолчанию.",
-      "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
-      "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
-      "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
+      "Delete_layout": "Хотите избавиться от панели, нажмите эту кнопку, подтвердить и готово (удаление не может быть отменено).",
+      "Export_layout": "Хотите поделиться своей потрясающей панелью с друзьями? Нажмите эту кнопку, чтобы скопировать код экспорта для вашей текущей панели.",
+      "Import_layout": "Если кто-то поделится с вами панелью, используя код экспорта, используйте эту кнопку для импорта.",
       "EDITOR": {
-        "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
-        "Save": "Don't forget to save your modifications after you edited your dashboard.",
+        "Welcome_add_column": "Добро пожаловать в редактор макета панели, вы можете добавить столбцы с помощью этой кнопки (до 5 столбцов).",
+        "Save": "Не забудьте сохранить изменения после редактирования панели.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
         "Delete_column": "Хотите удалить столбец? Вот здесь!",
         "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
@@ -2111,34 +2111,34 @@
     "This_month": "This month",
     "Add_new_column": "Add a new column (max 5)",
     "Default_dashboard": "Панель по умолчанию",
-    "Copy_to_clipboard": "Copy export code to clipboard",
-    "Export_copied_to_clipboard": "Export code copied to clipboard",
+    "Copy_to_clipboard": "Копировать код экспорта в буфер обмена",
+    "Export_copied_to_clipboard": "Код экспорта скопирован в буфер обмена",
     "Import_dashboard": "Импортировать панель",
     "Export_code": "Код экспорта панели",
     "Import_failed": "Не удалось импортировать панель, неверный код",
     "Import_success": "Панель импортирована и выбрана",
-    "Nothing_to_show": "No data to display",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show": "Нет данных для отображения",
+    "Nothing_to_show_description": "Убедитесь, что вы выбрали период, в течение которого TC захватил данные и убедитесь, что эта опция включена (внутренние настройки -> рабочий стол -> разрешить сбор метрик)",
     "SOURCES": {
-      "UNKNOWN": "Unknown",
-      "GATHERING": "Gathering",
-      "CRAFTING": "Crafting",
-      "FISHING": "Fishing",
-      "VENDOR": "Vendor",
-      "TELEPORT": "Teleport",
+      "UNKNOWN": "Неизвестно",
+      "GATHERING": "Сбор",
+      "CRAFTING": "Крафт",
+      "FISHING": "Рыбалка",
+      "VENDOR": "Торговец",
+      "TELEPORT": "Телепорт",
       "MARKETBOARD": "Marketboard",
-      "RETAINER": "Retainer"
+      "RETAINER": "Ретейнер"
     },
     "TYPES": {
-      "ANY": "Any",
-      "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ANY": "Любой",
+      "CURRENCY": "Валюта",
+      "ITEM": "Предмет"
     },
     "TABLE": {
-      "Type": "Type",
-      "Entry_label": "Label",
-      "Value": "Value",
-      "Source": "Source",
+      "Type": "Тип",
+      "Entry_label": "Метка",
+      "Value": "Значение",
+      "Source": "Источник",
       "Timestamp": "Timestamp"
     },
     "PIE_METRICS": {
@@ -2165,13 +2165,13 @@
         "FishFilter": "Accept only fishes coming from fishing spots",
         "ItemFilter": "Accepts only a given set of items",
         "NoFilter": "Accepts everything",
-        "ObtentionFilter": "Accepts only values > 0",
+        "ObtentionFilter": "Принимает только значения > 0",
         "SourceFilter": "Accepts only a given set of sources",
-        "SpendingFilter": "Accepts only values < 0",
+        "SpendingFilter": "Принимает только значения < 0",
         "GilFilter": "Accepts only Gil entries"
       },
       "DISPLAY_TYPES": {
-        "total": "Aggregated value",
+        "total": "Агрегированное значение",
         "histogram": "Evolution over time",
         "pie-chart": "Pie chart",
         "table": "Table of all matching entries"
@@ -2180,11 +2180,11 @@
   },
   "ITEM_SEARCH_OVERLAY": {
     "Open": "Open item search overlay",
-    "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
+    "Intro_message": "Найдите предмет, чтобы увидеть детали о нем, информацию о инвентаре и MB",
     "Placeholder": "Item name",
     "None_inside_inventory": "This item is not in any inventories.",
     "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Marketboard_informations": "Информация о MB"
   },
   "COLLECTABLES": {
     "Title": "Сollectables",
