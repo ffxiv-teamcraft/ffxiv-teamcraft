@@ -2256,13 +2256,13 @@
       "Warning_description": "Создание спама приведет к удалению заказов и возможным действиям против вашего аккаунта.",
       "Copy_link": "Копировать код импорта",
       "Copy_link_tooltip": "Дает вам url-адрес для открытия, чтобы создать этот конкретный заказ, полезно для написания гайдов.",
-      "Link_copied": "Commission import code copied"
+      "Link_copied": "Код импорта заказа скопирован"
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
-      "Min_price": "Min. price",
+      "Title": "Доска заказов",
+      "Filter_with_tags": "Фильтр по тегам",
+      "No_matching_commissions": "Нет подходящих заказов",
+      "Min_price": "Мин. цена",
       "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
     },
     "DETAILS": {
@@ -2341,29 +2341,29 @@
       "Resigned": "Отказался от заказа",
       "No_ratings": "Рейтинга пока нет",
       "Fired_X_times": "Уволен {{amount}} раз",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Resigned_X_times": "Отказался {{amount}} раз"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "Почему вы увольняете этого исполнителя?",
+      "NO_ACTIVE_SUB": "У исполнителя больше нет активной подписки.",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "Больше не удобно работать с этим исполнителем.",
+      "NO_LONGER_NEED_JOB_DONE": "Заказ больше не требуется.",
+      "FOUND_SOMEONE_ELSE": "Найден другой исполнитель для этого заказа.",
+      "CANNOT_AFFORD": "Я не могу позволить себе этот заказ."
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "Please_pick_reason": "Почему вы отказываетесь от этого заказа?",
+      "NO_ACTIVE_SUB": "У меня больше нет активной подписки.",
+      "UNCOMFORTABLE_WITH_CLIENT": "Неудобно работать с клиентом.",
+      "CANNOT_COMPLETE_LEVEL": "Я не могу завершить этот заказ из-за требований по уровню, которым я не отвечаю.",
+      "CANNOT_COMPLETE_CONTENT": "Я не могу завершить этот заказ, потому что у меня нет доступа к требуемому контенту (например: у меня нет последнего дополнения).",
+      "CANNOT_GATHER": "Я не могу собирать необходимые предметы. Клиент не будет собирать предметы."
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "Импорт заказа",
+      "Description": "Пожалуйста, проверьте, что это те предметы для которых вы хотите создать заказ. Внимание: предметы, которые не могут быть переданы, удаляются из списка ниже автоматически.",
+      "Create_commission": "Создать заказ",
+      "No_items": "Нет предметов"
     }
   }
 }
