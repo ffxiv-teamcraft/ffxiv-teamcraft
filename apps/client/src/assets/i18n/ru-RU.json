@@ -41,8 +41,8 @@
     "Share_url": "Скопировать ссылку в буфер обмена",
     "Share_url_copied": "Ссылка скопирована в буфер обмена",
     "Only_craftable": "Только рецепты",
-    "Want_filters": "Need more filters?",
-    "Open_search": "Open search page instead"
+    "Want_filters": "Хотите больше фильтров?",
+    "Open_search": "Вместо этого откройте страницу поиска"
   },
   "Use_as_default_character": "Использовать персонажа по умолчанию",
   "Download_desktop_app": "Скачайте десктопное приложение",
@@ -1852,7 +1852,7 @@
       "Title": "Old materials that are only used to make low iLvl items",
       "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
       "Recipe_ilvl": "Мин. iLvl",
-      "Company_workshop": "Company Workshop"
+      "Company_workshop": "Мастерская ФК"
     },
     "CAN_BE_GATHERED_EASILY": {
       "Title": "Предметы, которые можно легко собрать",
@@ -1969,7 +1969,7 @@
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
+      "Title": "Синхронизировать наборы снаряжения",
       "Tag": "Синхр.",
       "Tag_tooltip": "Этот набор снаряжения создан после синхронизации с помощью захвата пакетов, он будет обновлен если вы синхронизируетесь снова для этой профессии.",
       "Importing_gearset": "Импорт набора для {{name}}",
@@ -2027,9 +2027,9 @@
       "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
     },
     "DESYNTH": {
-      "Job": "Select the job you want to level",
+      "Job": "Выберите профессию, которую вы хотите повысить",
       "Level": "Input the desynth level (not the actual job level)",
-      "Search": "Click search, and it's done !"
+      "Search": "Нажмите на поиск, и всё готово!"
     },
     "RESET_TIMERS": {
       "Toggle": "Enable alarms for a given timer by setting this switch to ON."
@@ -2045,19 +2045,19 @@
       "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
-      "Compact": "Click here to toggle alarms' compact display."
+      "Settings": "Нажмите здесь, чтобы изменить настройки оповещений (звук, громкость и т.д.).",
+      "Custom": "Нажмите здесь, чтобы создать настраиваемое оповещение.",
+      "Compact": "Нажмите здесь, чтобы переключить компактный дисплей оповещений."
     },
     "COMMUNITY_ROTATIONS": {
-      "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
+      "Text_filter": "Используйте это поле ввода, чтобы найти ротацию используя ее название",
+      "Tags_filter": "Фильтруйте по тегам, используя этот флажок",
+      "Rlvl_filter": "Фильтруйте по уровню рецепта, используя этот флажок",
+      "Durability_filter": "Фильтруйте по прочности, используя этот флажок",
       "Min_craftsmanship": "Фильтр по минимальному craftsmanship, найдет только ротации с требуемым craftsmanship ниже вашего значения.",
       "Min_control": "Фильтр по минимальному control, найдет только ротации с требуемым control ниже вашего значения.",
       "Min_cp": "Фильтр по минимальному CP, найдет только ротации с требуемым cp ниже вашего значения.",
-      "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
+      "Set_selector": "Выберите какая профессия должна использоваться для симуляций, используемых для отображения вероятности успеха ротации."
     },
     "METRICS": {
       "Welcome_time_range": "Добро пожаловать на страницу с панелями метрик, здесь вы можете выбрать временной диапазон, для которого вы хотите увидеть отображаемые данные, по умолчанию сегодня.",
@@ -2070,7 +2070,7 @@
       "EDITOR": {
         "Welcome_add_column": "Добро пожаловать в редактор макета панели, вы можете добавить столбцы с помощью этой кнопки (до 5 столбцов).",
         "Save": "Не забудьте сохранить изменения после редактирования панели.",
-        "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
+        "Revert": "Или, если вам не нравится то, что вы сделали, используйте это для возврата к оригинальной раскладке, которую вы использовали перед редактированием.",
         "Delete_column": "Хотите удалить столбец? Вот здесь!",
         "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
         "Reorder": "Вы можете использовать перетаскивание для перемещения панелей куда угодно.",
