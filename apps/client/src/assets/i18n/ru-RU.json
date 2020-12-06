@@ -1067,8 +1067,8 @@
       "Use_rapid_synthesis_earlier": "Не нужно использовать Rapid Synthesis в качестве завершающего действия. Если переместить его ближе к началу ротации, будет проще обработать его провал и получить выше надёжность ротации.",
       "Do_not_use_brand_without_name": "Не используйте Brand of the Elements без активного Name of the Elements.",
       "Avoid_using_good_actions": "Избегайте использования действий, которые требуют хорошего состояния в макросе, так как они не могут быть предсказаны",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Requires_reuse_to_proc": "Ротация требует прока Reuse для правильной работы, убедитесь, что она может работать без этого прока.",
+      "Use_reuse": "Ваша ротация достигает 100% HQ и у вас достаточно CP для использования Reuse, подумайте о его добавлении, чтобы получить дополнительные ресурсы обратно."
     }
   },
   "PRICING": {
@@ -1843,14 +1843,14 @@
       "Threshold_amount": "Пороговое значение"
     },
     "CONSOLIDATE_STACKS": {
-      "Title": "HQ stacks of items that can have their quality lowered",
+      "Title": "HQ стаки предметов, которым можно понизить их качество",
       "Message": "Комбинировать со стаком NQ в: {{containers}}",
       "Filter": "Показывать материалы только до: ",
       "Placeholder": "Выберите дополнение"
     },
     "UNWANTED_MATERIALS": {
-      "Title": "Old materials that are only used to make low iLvl items",
-      "Message": "The highest resulting ilvl that this material can be used to craft is {{ilvl}}",
+      "Title": "Старые материалы, которые используются только для изготовления предметов низкого iLvl",
+      "Message": "Наивысший итоговый ilvl, в котором можно использовать этот материал: {{ilvl}}",
       "Recipe_ilvl": "Мин. iLvl",
       "Company_workshop": "Мастерская ФК"
     },
@@ -1859,7 +1859,7 @@
       "Message": "Может быть собрано на {{level}} уровне на постоянной ноде"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
+      "Title": "Снаряжение, из которого можно извлечь материи (100% spiritbond)",
       "Message": "Вы можете получить материю из этого предмета снаряжения"
     }
   },
