@@ -140,7 +140,7 @@
     "@angular/compiler": "^11.0.1",
     "@angular/compiler-cli": "^11.0.1",
     "@angular/core": "^11.0.1",
-    "@angular/fire": "^6.1.2",
+    "@angular/fire": "^6.1.4",
     "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular/forms": "^11.0.1",
     "@angular/language-service": "^11.0.1",
