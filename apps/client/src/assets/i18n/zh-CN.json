@@ -166,7 +166,7 @@
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
-    "Change": "变化",
+    "Change": "修改",
     "Dirty_changes": "有尚未保存的修改"
   },
   "ALARMS": {
@@ -2213,8 +2213,8 @@
     "Open_commission_details": "打开委托详情",
     "Your_commissions_as_client": "提出的委托",
     "No_commissions_as_client": "您没有提出的委托",
-    "Your_commissions_as_crafter": "进行中的委托",
-    "No_commissions_as_crafter": "您没有进行中的委托",
+    "Your_commissions_as_crafter": "正在承包的委托",
+    "No_commissions_as_crafter": "您没有正在承包的委托",
     "Delete_commission": "删除委托",
     "Delete_list_too": "同时删除清单",
     "Delete_commission_only": "只删除委托",
@@ -2222,7 +2222,7 @@
     "No_archived_commissions_as_client": "没有相关委托",
     "Your_archived_commissions_as_crafter": "承包的委托",
     "No_archived_commissions_as_crafter": "没有相关委托",
-    "Updates": "更新",
+    "Updates": "有新进展",
     "Clear_notifications": "清空通知",
     "TAGS": {
       "CRAFTING": "制作",
