@@ -2020,29 +2020,29 @@
       "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Merge": "Вы можете объединить два списка, используя кнопку объединения.",
+      "Import": "Вы можете импортировать списки с различных сайтов, таких как ariyala, craftingasaservce and garlandtools."
     },
     "DB": {
-      "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
+      "Button": "Нажатие на эту кнопку открывает страницу базы данных, содержащую подробности о том, что это (имя нпс, карта, предмет, монстр и т.д.). Для предметов нажатие на значок также открывает страницу базы данных."
     },
     "DESYNTH": {
       "Job": "Выберите профессию, которую вы хотите повысить",
-      "Level": "Input the desynth level (not the actual job level)",
+      "Level": "Введите уровень десинтеза (не фактический уровень профессии)",
       "Search": "Нажмите на поиск, и всё готово!"
     },
     "RESET_TIMERS": {
-      "Toggle": "Enable alarms for a given timer by setting this switch to ON."
+      "Toggle": "Включите оповещения для заданного таймера, установив этот переключатель."
     },
     "SIMULATOR": {
-      "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
-      "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
-      "Import_ingame_macro": "Click here to import from ingame macro.",
-      "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
-      "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
+      "Character_configuration": "Настройте здесь ваш уровень и ваши параметры.",
+      "HQ_ingredients": "Введите здесь HQ ингредиенты, чтобы установить начальное качество.",
+      "Consumables": "Настройте здесь расходные материалы и баффы ФК.",
+      "Right_click_condition": "Щелкните правой кнопкой мыши на действии, чтобы установить его состояние (хорошее, отличное, плохое, провал и т.д.) и предсказать результаты.",
+      "Save_as_new": "Нажмите здесь, чтобы сохранить копию этой ротации в вашем аккаунте.",
+      "Import_ingame_macro": "Нажмите здесь, чтобы импортировать из игрового макроса.",
+      "Generate_ingame_macro": "Нажмите здесь, чтобы создать игровой макрос для этой ротации.",
+      "Share_with_stats": "Нажмите здесь, чтобы открыть всплывающее окно \"Поделиться\", позволяющее делиться параметрами и расходными материалами."
     },
     "ALARMS": {
       "Settings": "Нажмите здесь, чтобы изменить настройки оповещений (звук, громкость и т.д.).",
