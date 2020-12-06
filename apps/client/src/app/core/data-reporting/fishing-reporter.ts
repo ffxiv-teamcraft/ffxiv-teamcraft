@@ -267,7 +267,7 @@ export class FishingReporter implements DataReporter {
           previousWeatherId: throwData.previousWeatherId,
           baitId,
           biteTime: Math.floor((biteData.timestamp - throwData.timestamp) / 100),
-          fishEyes: throwData.statuses.indexOf(762) > -1,
+          fishEyes: false, // due to 5.4 changes, we'll report it as fals for now, just in case they revert the changes
           snagging: throwData.statuses.indexOf(761) > -1,
           chum: throwData.statuses.indexOf(763) > -1,
           patience: throwData.statuses.indexOf(850) > -1,

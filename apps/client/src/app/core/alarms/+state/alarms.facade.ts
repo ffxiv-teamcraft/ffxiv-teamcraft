@@ -145,7 +145,8 @@ export class AlarmsFacade {
       map(alarms => alarms.find(a => {
         return a.itemId === alarm.itemId
           && a.zoneId === alarm.zoneId
-          && a.type === alarm.type;
+          && a.type === alarm.type
+          && a.fishEyes === alarm.fishEyes;
       }))
     );
   }

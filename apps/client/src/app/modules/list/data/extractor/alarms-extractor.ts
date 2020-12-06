@@ -29,7 +29,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
   protected doExtract(item: Item, itemData: ItemData, row: ListRow): Partial<Alarm>[] {
     const alarms: Partial<Alarm>[] = [];
     if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
-      alarms.push(...getItemSource(row, DataType.GATHERED_BY, true).nodes
+      alarms.push(...[].concat.apply([], getItemSource(row, DataType.GATHERED_BY, true).nodes
         .filter(node => node.uptime !== undefined || node.weathers !== undefined)
         .filter(node => node.coords)
         .map(node => {
@@ -50,7 +50,6 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             },
             spawns: node.time,
             snagging: node.snagging,
-            fishEyes: node.fishEyes,
             predators: node.predators || []
           };
           if (node.baits !== undefined) {
@@ -59,15 +58,22 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           if (node.weathers !== undefined) {
             alarm.weathers = node.weathers;
           }
+          if (node.weathersFrom !== undefined) {
+            alarm.weathersFrom = node.weathersFrom;
+          }
           if (folklore !== undefined) {
             alarm.folklore = {
               id: +folklore,
               icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
             };
           }
-          return alarm;
+          if (alarm.weathers && alarm.spawns) {
+            const { spawns, ...alarmWithFishEyesEnabled } = alarm;
+            return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+          }
+          return [alarm];
         })
-      );
+      ));
     }
     if (getItemSource(row, DataType.REDUCED_FROM).length > 0) {
       alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)

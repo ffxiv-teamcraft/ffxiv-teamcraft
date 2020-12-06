@@ -44,7 +44,6 @@ export class TrackerComponent {
         weathers: node.weathers,
         weathersFrom: node.weathersFrom,
         snagging: node.snagging,
-        fishEyes: node.fishEyes,
         predators: node.predators || []
       };
     }

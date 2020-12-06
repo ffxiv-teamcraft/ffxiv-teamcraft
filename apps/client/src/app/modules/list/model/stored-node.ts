@@ -16,7 +16,6 @@ export interface StoredNode {
   baits?: FishingBait[];
   weathers?: number[];
   weathersFrom?: number[];
-  fishEyes?: boolean;
   snagging?: boolean;
   predators?: { id: number, icon: number, amount: number }[];
   gig?: string;

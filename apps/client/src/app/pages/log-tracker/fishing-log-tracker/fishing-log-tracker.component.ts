@@ -6,12 +6,11 @@ import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
-import { first, map, shareReplay, startWith, tap } from 'rxjs/operators';
+import { map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
 import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
 import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { TrackerComponent } from '../tracker-component';
-import { fishEyes } from '../../../core/data/sources/fish-eyes';
 import { fshLogOrder } from '../fsh-log-order';
 import { fshSpearLogOrder } from '../fsh-spear-log-order';
 
@@ -41,8 +40,6 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
   public loading = true;
 
-  public fishEyesFormat = 1;
-
   public hideCompleted = false;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
@@ -56,10 +53,6 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
       './assets/icons/angling.png',
       './assets/icons/spearfishing.png'
     ][index];
-  }
-
-  public toggleFishEyesFormat(): void {
-    this.fishEyesFormat = this.fishEyesFormat === 1 ? 60 : 1;
   }
 
   public markAsDone(itemId: number, done: boolean): void {
@@ -137,7 +130,6 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
                 itemId: spot.id,
                 icon: spot.icon,
                 timed: spot.during !== undefined,
-                fishEyes: spot.fishEyes || fishEyes[fish.itemId] !== undefined,
                 snagging: spot.snagging
               };
               if (spot.during !== undefined) {

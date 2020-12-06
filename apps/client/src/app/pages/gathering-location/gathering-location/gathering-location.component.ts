@@ -75,8 +75,7 @@ export class GatheringLocationComponent {
     return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00, `, ``).slice(0, -2);
   }
 
-  public addAlarm(node: any, group?: AlarmGroup): void {
-    const alarm: Partial<Alarm> = this.generateAlarm(node);
+  public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {
     this.mapService.getMapById(alarm.mapId)
       .pipe(
         map((mapData) => {
@@ -100,12 +99,12 @@ export class GatheringLocationComponent {
     });
   }
 
-  public canCreateAlarm(alarms: Alarm[], node: any): boolean {
-    const generatedAlarm = this.generateAlarm(node);
+  public canCreateAlarm(alarms: Alarm[], generatedAlarm: Partial<Alarm>): boolean {
     return alarms.find(alarm => {
       return generatedAlarm.itemId === alarm.itemId
         && generatedAlarm.zoneId === alarm.zoneId
-        && generatedAlarm.type === alarm.type;
+        && generatedAlarm.type === alarm.type
+        && generatedAlarm.fishEyes === alarm.fishEyes;
     }) === undefined;
   }
 
@@ -113,7 +112,7 @@ export class GatheringLocationComponent {
     localStorage.setItem('gathering-location:compact', value.toString());
   }
 
-  public generateAlarm(node: any): Partial<Alarm> {
+  public generateAlarms(node: any): Partial<Alarm>[] {
     const alarm: any = {
       itemId: node.itemId,
       icon: node.icon,
@@ -133,7 +132,6 @@ export class GatheringLocationComponent {
       weathers: node.weathers || [],
       weathersFrom: node.weathersFrom || [],
       snagging: node.snagging || false,
-      fishEyes: node.fishEyes || false,
       predators: node.predators || []
     };
     if (node.slot) {
@@ -145,7 +143,15 @@ export class GatheringLocationComponent {
     if (node.baits) {
       alarm.baits = node.baits;
     }
-    return alarm;
+    if (alarm.weathers && alarm.spawns) {
+      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
+      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+    }
+    return [alarm];
+  }
+
+  trackByAlarm(index: number, alarm: Partial<Alarm>): string {
+    return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
   }
 
 }

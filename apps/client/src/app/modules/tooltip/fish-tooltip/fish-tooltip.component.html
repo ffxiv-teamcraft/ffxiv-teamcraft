@@ -38,8 +38,6 @@
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img *ngIf="node.folklore !== undefined" [nzTooltipTitle]="node.folklore.id | itemName | i18n" alt=""
                class="folklore" nz-tooltip src="{{node.folklore.icon | icon}}">
-          <img *ngIf="node.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
-               src="./assets/icons/status/fish_eyes.png">
           <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>

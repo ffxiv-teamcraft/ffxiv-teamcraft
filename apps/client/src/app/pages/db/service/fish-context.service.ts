@@ -200,9 +200,7 @@ export class FishContextService {
       if (!res.data) return { ...res, data: undefined };
       const totalSnagging = res.data.snagging.reduce((acc, row) => acc + row.occurences, 0);
       const snagging = (100 * res.data.snagging.filter((entry) => entry.snagging === true).reduce((acc, row) => acc + row.occurences, 0)) / totalSnagging;
-      const totalFishEyes = res.data.fishEyes.reduce((acc, row) => acc + row.occurences, 0);
-      const fishEyes = (100 * res.data.fishEyes.filter((entry) => entry.fishEyes === true).reduce((acc, row) => acc + row.occurences, 0)) / totalFishEyes;
-      return { ...res, data: { ...res.data, snagging, fishEyes } };
+      return { ...res, data: { ...res.data, snagging } };
     }),
     shareReplay(1)
   );

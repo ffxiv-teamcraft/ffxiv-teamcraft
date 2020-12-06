@@ -25,6 +25,8 @@ export class GatheredByComponent extends ItemDetailsPopup {
 
   alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
 
+  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
+
   constructor(private alarmsFacade: AlarmsFacade, private mapService: MapService,
               private bell: BellNodesService, private lazyData: LazyDataService) {
     super();
@@ -70,7 +72,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
     );
   }
 
-  public generateAlarm(node: StoredNode): Partial<Alarm> {
+  public generateAlarms(node: StoredNode): Partial<Alarm>[] {
     if (!node.uptime && !node.weathers) {
       return null;
     }
@@ -93,7 +95,6 @@ export class GatheredByComponent extends ItemDetailsPopup {
       weathers: node.weathers,
       weathersFrom: node.weathersFrom,
       snagging: node.snagging,
-      fishEyes: node.fishEyes,
       predators: node.predators || [],
       coords: coords,
       icon: this.item.icon,
@@ -118,7 +119,15 @@ export class GatheredByComponent extends ItemDetailsPopup {
     if (node.baits) {
       alarm.baits = node.baits;
     }
-    return alarm;
+    if (alarm.weathers && alarm.spawns) {
+      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
+      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+    }
+    return [alarm];
+  }
+
+  trackByAlarm(index: number, alarm: Partial<Alarm>): string {
+    return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
   }
 
 }
