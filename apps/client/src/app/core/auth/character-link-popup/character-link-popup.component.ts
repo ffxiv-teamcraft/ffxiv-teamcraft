@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
 import { AddCharacter, AddCustomCharacter, Logout } from '../../../+state/auth.actions';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { uniq } from 'lodash';
+import { LodestoneService } from '../../api/lodestone.service';
 
 @Component({
   selector: 'app-character-link-popup',
@@ -78,7 +79,8 @@ export class CharacterLinkPopupComponent {
     'HuPoYuan'
   ];
 
-  constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef) {
+  constructor(private xivapi: XivapiService, private store: Store<any>, private modalRef: NzModalRef,
+              private lodestoneService: LodestoneService) {
     this.servers$ = this.xivapi.getServerList().pipe(
       map(servers => {
         return [
@@ -110,7 +112,7 @@ export class CharacterLinkPopupComponent {
     this.lodestoneIdCharacter$ = this.lodestoneId.valueChanges.pipe(
       filter(id => id && id !== ''),
       mergeMap(lodestoneId => {
-        return this.xivapi.getCharacter(lodestoneId);
+        return this.lodestoneService.getCharacter(lodestoneId);
       }),
       map(response => response.Character),
       filter(character => character !== null)

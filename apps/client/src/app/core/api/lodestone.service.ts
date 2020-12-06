@@ -5,7 +5,7 @@ import { EMPTY, interval, Observable, of, Subject, Subscription } from 'rxjs';
 import { filter, map, shareReplay, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
-export class CharacterService {
+export class LodestoneService {
 
   private static QUEUE: Subject<void>[] = [];
 
@@ -14,9 +14,9 @@ export class CharacterService {
   private static CACHE: { [index: number]: Observable<CharacterResponse> } = {};
 
   constructor(private userService: UserService, private xivapi: XivapiService) {
-    if (!CharacterService.INTERVAL) {
-      CharacterService.INTERVAL = interval(1500).subscribe((i) => {
-        const subject = CharacterService.QUEUE.shift();
+    if (!LodestoneService.INTERVAL) {
+      LodestoneService.INTERVAL = interval(1500).subscribe((i) => {
+        const subject = LodestoneService.QUEUE.shift();
         if (subject !== undefined) {
           subject.next();
         }
@@ -37,9 +37,9 @@ export class CharacterService {
   }
 
   public getCharacter(id: number): Observable<CharacterResponse> {
-    if (CharacterService.CACHE[id] === undefined) {
+    if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
-      CharacterService.CACHE[id] = trigger.pipe(
+      LodestoneService.CACHE[id] = trigger.pipe(
         switchMapTo(this.xivapi.getCharacter(id)),
         tap(res => this.cacheCharacter(res)),
         startWith(this.getCachedCharacter(id)),
@@ -48,7 +48,19 @@ export class CharacterService {
       );
       this.addToQueue(trigger);
     }
-    return CharacterService.CACHE[id];
+    return LodestoneService.CACHE[id];
+  }
+
+  public getFreeCompany(id: string): Observable<any> {
+    if (LodestoneService.CACHE[id] === undefined) {
+      const trigger = new Subject<void>();
+      LodestoneService.CACHE[id] = trigger.pipe(
+        switchMapTo(this.xivapi.getFreeCompany(id)),
+        shareReplay(1)
+      );
+      this.addToQueue(trigger);
+    }
+    return LodestoneService.CACHE[id];
   }
 
   public getUserCharacter(userId: string): Observable<{ character: Character, verified: boolean }> {
@@ -84,6 +96,6 @@ export class CharacterService {
   }
 
   private addToQueue(trigger: Subject<void>): void {
-    CharacterService.QUEUE.push(trigger);
+    LodestoneService.QUEUE.push(trigger);
   }
 }

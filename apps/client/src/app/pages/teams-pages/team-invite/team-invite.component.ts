@@ -7,7 +7,7 @@ import { BehaviorSubject, EMPTY, ReplaySubject } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { Team } from '../../../model/team/team';
 import { DiscordWebhookService } from '../../../core/discord/discord-webhook.service';
-import { CharacterService } from '../../../core/api/character.service';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-team-invite',
@@ -23,7 +23,7 @@ export class TeamInviteComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router,
               private teamsFacade: TeamsFacade, private teamInviteService: TeamInviteService,
               private authFacade: AuthFacade, private discordWebhook: DiscordWebhookService,
-              private characterService: CharacterService) {
+              private characterService: LodestoneService) {
   }
 
   ngOnInit() {

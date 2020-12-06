@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from '@xivapi/angular-client';
 import { EMPTY, Observable } from 'rxjs';
-import { CharacterService } from '../../../core/api/character.service';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 import { catchError, map, shareReplay, switchMap } from 'rxjs/operators';
 import { List } from '../../../modules/list/model/list';
 import { TeamcraftUser } from '../../../model/user/teamcraft-user';
@@ -39,7 +39,7 @@ export class PublicProfileComponent {
 
   public now = Math.floor(Date.now() / 1000);
 
-  constructor(private route: ActivatedRoute, private characterService: CharacterService,
+  constructor(private route: ActivatedRoute, private characterService: LodestoneService,
               private listsService: FirestoreListStorage, private authFacade: AuthFacade,
               private userService: UserService, private craftingRotationsService: CraftingRotationService,
               private apollo: Apollo, public translate: TranslateService) {
