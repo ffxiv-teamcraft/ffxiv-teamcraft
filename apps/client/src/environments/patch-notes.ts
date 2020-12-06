@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **commissions:** you can now import commissions from a single link.`;
+* **commissions:** you can now import commissions from a single link.`;
