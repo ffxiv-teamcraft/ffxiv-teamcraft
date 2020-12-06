@@ -9,6 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
 import { PipesModule } from '../../pipes/pipes.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     ItemIconModule,
     TranslateModule,
     FormsModule,
-    PipesModule
+    PipesModule,
+    RouterModule
   ],
   declarations: [ItemPickerComponent],
   providers: [

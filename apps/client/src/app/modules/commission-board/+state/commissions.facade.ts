@@ -5,7 +5,7 @@ import * as CommissionsSelectors from './commissions.selectors';
 import { createCommission, deleteCommission, loadCommission, loadUserCommissions, selectCommission, updateCommission } from './commissions.actions';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { List } from '../../list/model/list';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -21,8 +21,8 @@ import { FiredFeedbackPopupComponent } from '../fired-feedback-popup/fired-feedb
 import { ResignedFeedbackPopupComponent } from '../resigned-feedback-popup/resigned-feedback-popup.component';
 import { CommissionProfileService } from '../../../core/database/commission-profile.service';
 import { NotificationType } from '../../../core/notification/notification-type';
-import { Router } from '@angular/router';
 import { NotificationsFacade } from '../../notifications/+state/notifications.facade';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class CommissionsFacade {
@@ -94,9 +94,9 @@ export class CommissionsFacade {
               private notificationsFacade: NotificationsFacade) {
   }
 
-  create(list?: List): void {
+  create(list?: List, template?: Partial<Commission>): void {
     if (list) {
-      this.store.dispatch(createCommission({ list: list, name: list.name }));
+      this.store.dispatch(createCommission({ list: list, name: list.name, template }));
     } else {
       this.dialog.create({
         nzContent: NameQuestionPopupComponent,
@@ -238,8 +238,8 @@ export class CommissionsFacade {
     });
   }
 
-  rate(commission: Commission, authorId: string): void {
-    this.dialog.create({
+  rate(commission: Commission, authorId: string): Observable<boolean> {
+    return this.dialog.create({
       nzContent: CommissionRatingPopupComponent,
       nzComponentParams: {
         commission,
@@ -248,10 +248,15 @@ export class CommissionsFacade {
       nzFooter: null,
       nzTitle: this.translate.instant('COMMISSIONS.DETAILS.Rate_commission')
     }).afterClose
-      .subscribe((res) => {
-        commission.ratings[authorId] = res;
-        this.store.dispatch(updateCommission({ commission }));
-      });
+      .pipe(
+        map((res) => {
+          if (res) {
+            commission.ratings[authorId] = res;
+            this.store.dispatch(updateCommission({ commission }));
+          }
+          return !!res;
+        })
+      );
   }
 
   bump(commission: Commission): void {

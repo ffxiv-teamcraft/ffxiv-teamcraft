@@ -20,28 +20,31 @@ export class MessagingService {
   }
 
   public init(): void {
-    this.authFacade.userId$.pipe(
-      switchMap((userId) => {
-        if (localStorage.getItem(`afm:${userId}`) === null) {
-          localStorage.setItem(`afm:${userId}`, 'true');
-          return this.afm.requestToken;
-        }
-        return EMPTY;
-      }),
-      startWith(null),
-      pairwise(),
-      switchMap(([previousToken, token]) => {
-        if (previousToken) {
-          return combineLatest([
-            this.afn.httpsCallable('unsubscribeFromUserTopic')({ previousToken }),
-            this.afn.httpsCallable('subscribeToUserTopic')({ token })
-          ]);
-        } else {
-          return this.afn.httpsCallable('subscribeToUserTopic')({ token });
-        }
-      })
-    ).subscribe();
 
+
+    if (!this.platform.isDesktop()) {
+      this.authFacade.userId$.pipe(
+        switchMap((userId) => {
+          if (localStorage.getItem(`afm:${userId}`) === null) {
+            localStorage.setItem(`afm:${userId}`, 'true');
+            return this.afm.requestToken;
+          }
+          return EMPTY;
+        }),
+        startWith(null),
+        pairwise(),
+        switchMap(([previousToken, token]) => {
+          if (previousToken) {
+            return combineLatest([
+              this.afn.httpsCallable('unsubscribeFromUserTopic')({ previousToken }),
+              this.afn.httpsCallable('subscribeToUserTopic')({ token })
+            ]);
+          } else {
+            return this.afn.httpsCallable('subscribeToUserTopic')({ token });
+          }
+        })
+      ).subscribe();
+    }
 
     if (!this.platform.isDesktop()) {
       this.afm.messages.pipe(

@@ -28,10 +28,10 @@ import {
 } from './lists.actions';
 import { List } from '../model/list';
 import { NameQuestionPopupComponent } from '../../name-question-popup/name-question-popup/name-question-popup.component';
-import { distinctUntilChanged, filter, first, map, shareReplay, switchMap, throttleTime } from 'rxjs/operators';
+import { distinctUntilChanged, filter, first, map, mergeMap, shareReplay, switchMap, tap, throttleTime } from 'rxjs/operators';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, concat, Observable, of } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
 import { ListRow } from '../model/list-row';
@@ -42,6 +42,9 @@ import { environment } from '../../../../environments/environment';
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { NavigationEnd, Router } from '@angular/router';
 import { NgSerializerService } from '@kaiu/ng-serializer';
+import { ItemPickerService } from '../../item-picker/item-picker.service';
+import { ListManagerService } from '../list-manager.service';
+import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 
 declare const gtag: Function;
 
@@ -183,7 +186,8 @@ export class ListsFacade {
 
   constructor(private store: Store<{ lists: ListsState }>, private dialog: NzModalService, private translate: TranslateService, private authFacade: AuthFacade,
               private teamsFacade: TeamsFacade, private settings: SettingsService, private userInventoryService: InventoryFacade,
-              private router: Router, private serializer: NgSerializerService) {
+              private router: Router, private serializer: NgSerializerService, private itemPicker: ItemPickerService,
+              private listManager: ListManagerService, private progress: ProgressPopupService) {
     router.events
       .pipe(
         distinctUntilChanged((previous: any, current: any) => {
@@ -424,5 +428,46 @@ export class ListsFacade {
       acc += item.done / item.amount;
       return acc;
     }, 0) / items.length;
+  }
+
+  addItems(list: List): Observable<any> {
+    return this.itemPicker.pickItems().pipe(
+      filter(items => items?.length > 0),
+      switchMap((items) => {
+        const operations = items.map(item => {
+          return this.listManager.addToList({
+            itemId: +item.itemId,
+            list: list,
+            recipeId: item.recipe ? item.recipe.recipeId : '',
+            amount: item.amount,
+            collectible: item.addCrafts
+          });
+        });
+        let operation$: Observable<any>;
+        if (operations.length > 0) {
+          operation$ = concat(
+            ...operations
+          );
+        } else {
+          operation$ = of(list);
+        }
+        return this.progress.showProgress(operation$,
+          items.length,
+          'Adding_recipes',
+          { amount: items.length, listname: list.name });
+      }),
+      tap(l => list.$key ? this.updateList(l) : this.addList(l)),
+      mergeMap(updatedList => {
+        // We want to get the list created before calling it a success, let's be pessimistic !
+        return this.progress.showProgress(
+          combineLatest([this.myLists$, this.listsWithWriteAccess$]).pipe(
+            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
+            map(lists => lists.find(l => l.createdAt.toMillis() === updatedList.createdAt.toMillis() && l.$key !== undefined)),
+            filter(l => l !== undefined),
+            first()
+          ), 1, 'Saving_in_database');
+      })
+    );
+
   }
 }

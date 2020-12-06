@@ -94,7 +94,7 @@ export class ItemPickerComponent implements OnInit {
     return this.htmlTools.generateStars(nb);
   }
 
-  close(result: SearchResult): void {
+  close(result?: SearchResult): void {
     if (this.multi) {
       this.dialogRef.close([result]);
     } else {

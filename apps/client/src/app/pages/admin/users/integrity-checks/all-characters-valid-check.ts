@@ -2,11 +2,11 @@ import { IntegrityCheck } from './integrity-check';
 import { combineLatest, Observable, of } from 'rxjs';
 import { TeamcraftUser } from 'apps/client/src/app/model/user/teamcraft-user';
 import { catchError, map, mapTo } from 'rxjs/operators';
-import { CharacterService } from '../../../../core/api/character.service';
+import { LodestoneService } from '../../../../core/api/lodestone.service';
 
 export class AllCharactersValidCheck implements IntegrityCheck<number[]> {
 
-  constructor(private characterService: CharacterService) {
+  constructor(private characterService: LodestoneService) {
   }
 
   getNameKey(): string {

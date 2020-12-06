@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, map, takeUntil } from 'rxjs/operators';
+import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 import { combineLatest } from 'rxjs';
@@ -10,6 +10,7 @@ import { CommissionStatus } from '../../../modules/commission-board/model/commis
 import { Commission } from '../../../modules/commission-board/model/commission';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { NotificationsFacade } from '../../../modules/notifications/+state/notifications.facade';
+import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 
 @Component({
   selector: 'app-commission-details',
@@ -20,6 +21,8 @@ import { NotificationsFacade } from '../../../modules/notifications/+state/notif
 export class CommissionDetailsComponent extends TeamcraftComponent implements OnInit {
 
   CommissionStatus = CommissionStatus;
+
+  ratingDone: Record<string, boolean> = {};
 
   public display$ = combineLatest([
     this.commissionsFacade.selectedCommission$.pipe(filter(c => !!c)),
@@ -41,7 +44,7 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
   constructor(private activatedRoute: ActivatedRoute, private commissionsFacade: CommissionsFacade,
               private authFacade: AuthFacade, public translate: TranslateService,
               public settings: SettingsService, private notificationsFacade: NotificationsFacade,
-              private router: Router) {
+              private router: Router, private listsFacade: ListsFacade) {
     super();
   }
 
@@ -80,8 +83,22 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
     this.rateCommission(commission, userId);
   }
 
+  addItems(commission: Commission): void {
+    this.listsFacade.loadMyLists();
+    this.listsFacade.myLists$.pipe(
+      map(lists => {
+        return lists.find(l => l.$key === commission.$key);
+      }),
+      filter(l => !!l && !l.notFound),
+      first(),
+      switchMap(l => {
+        return this.listsFacade.addItems(l);
+      })
+    ).subscribe();
+  }
+
   rateCommission(commission: Commission, userId: string): void {
-    this.commissionsFacade.rate(commission, userId);
+    this.commissionsFacade.rate(commission, userId).subscribe(res => this.ratingDone[`${commission.$key}:${userId}`] = res);
   }
 
   ngOnInit(): void {

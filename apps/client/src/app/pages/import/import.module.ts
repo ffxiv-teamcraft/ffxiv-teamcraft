@@ -16,6 +16,8 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { HttpClientModule } from '@angular/common/http';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { CommissionImportComponent } from '../commission/commission-import/commission-import.component';
+import { NzRadioModule } from 'ng-zorro-antd/radio';
 
 const routes: Routes = [
   {
@@ -34,6 +36,7 @@ const routes: Routes = [
     TranslateModule,
     ListModule,
     AntdSharedModule,
+    NzRadioModule,
     FlexLayoutModule,
     ItemIconModule,
     PipesModule,

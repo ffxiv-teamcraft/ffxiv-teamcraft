@@ -134,6 +134,12 @@
             <div>{{item.id | itemName | i18n}} x{{item.amount}}</div>
           </div>
         </div>
+        <div>
+          <button nz-button *ngIf="display.commission.status === CommissionStatus.OPENED && display.commission.authorId === display.userId"
+                  [nzType]="display.commission.items.length === 0 ? 'primary' : 'default'" (click)="addItems(display.commission)">
+            {{'COMMISSIONS.DETAILS.Add_items' | translate}}
+          </button>
+        </div>
       </div>
       <div nz-col nzMd="6" nzSm="24" fxLayout="column" fxLayoutGap="10px">
         <div fxLayout="column" fxLayoutGap="5px">
@@ -240,7 +246,7 @@
                 <div>{{crafterRating.comment}}</div>
               </div>
               <button nz-button nzType="primary" *ngIf="!display.commission.ratings[display.commission.crafterId]
-              && display.userId === display.commission.crafterId"
+              && display.userId === display.commission.crafterId && !ratingDone[display.commission.$key+':'+display.commission.crafterId]"
                       (click)="rateCommission(display.commission, display.userId)">{{'COMMISSIONS.DETAILS.Rate_commission' | translate}}</button>
             </div>
             <div fxLayout="column" fxLayoutGap="5px" fxFlex="1 1 50%" fxLayoutAlign="center center">
@@ -254,7 +260,7 @@
                 <div>{{authorRating.comment}}</div>
               </div>
               <button nz-button nzType="primary" *ngIf="!display.commission.ratings[display.commission.authorId]
-              && display.userId === display.commission.authorId"
+              && display.userId === display.commission.authorId && !ratingDone[display.commission.$key+':'+display.commission.authorId]"
                       (click)="rateCommission(display.commission, display.userId)">{{'COMMISSIONS.DETAILS.Rate_commission' | translate}}</button>
             </div>
           </div>

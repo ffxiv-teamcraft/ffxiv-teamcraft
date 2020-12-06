@@ -108,43 +108,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.itemPicker.pickItems().pipe(
-          filter(items => items?.length > 0),
-          switchMap((items) => {
-            const operations = items.map(item => {
-              return this.listManager.addToList({
-                itemId: +item.itemId,
-                list: list,
-                recipeId: item.recipe ? item.recipe.recipeId : '',
-                amount: item.amount,
-                collectible: item.addCrafts
-              });
-            });
-            let operation$: Observable<any>;
-            if (operations.length > 0) {
-              operation$ = concat(
-                ...operations
-              );
-            } else {
-              operation$ = of(list);
-            }
-            return this.progress.showProgress(operation$,
-              items.length,
-              'Adding_recipes',
-              { amount: items.length, listname: list.name });
-          })
-        );
-      }),
-      tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
-        // We want to get the list created before calling it a success, let's be pessimistic !
-        return this.progress.showProgress(
-          combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
-            map(([myLists, listsICanWrite]) => [...myLists, ...listsICanWrite]),
-            map(lists => lists.find(l => l.createdAt.toMillis() === list.createdAt.toMillis() && l.$key !== undefined)),
-            filter(l => l !== undefined),
-            first()
-          ), 1, 'Saving_in_database');
+        return this.listsFacade.addItems(list)
       })
     ).subscribe();
   }
