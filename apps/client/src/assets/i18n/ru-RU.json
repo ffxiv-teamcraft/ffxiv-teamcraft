@@ -2054,9 +2054,9 @@
       "Tags_filter": "Filter by tags using this select box",
       "Rlvl_filter": "Filter by recipe level using this select box",
       "Durability_filter": "Filter by durability using this select box",
-      "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
-      "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
-      "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
+      "Min_craftsmanship": "Фильтр по минимальному craftsmanship, найдет только ротации с требуемым craftsmanship ниже вашего значения.",
+      "Min_control": "Фильтр по минимальному control, найдет только ротации с требуемым control ниже вашего значения.",
+      "Min_cp": "Фильтр по минимальному CP, найдет только ротации с требуемым cp ниже вашего значения.",
       "Set_selector": "Select which job should be used for the simulations used to show success rate of the result rotations."
     },
     "METRICS": {
@@ -2106,10 +2106,10 @@
   },
   "METRICS": {
     "Title": "Панель метрик",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
-    "Add_new_column": "Add a new column (max 5)",
+    "Today": "Сегодня",
+    "This_week": "Эта неделя",
+    "This_month": "Этот месяц",
+    "Add_new_column": "Добавить новый столбец (не более 5)",
     "Default_dashboard": "Панель по умолчанию",
     "Copy_to_clipboard": "Копировать код экспорта в буфер обмена",
     "Export_copied_to_clipboard": "Код экспорта скопирован в буфер обмена",
@@ -2139,50 +2139,50 @@
       "Entry_label": "Метка",
       "Value": "Значение",
       "Source": "Источник",
-      "Timestamp": "Timestamp"
+      "Timestamp": "Отметка времени"
     },
     "PIE_METRICS": {
-      "Amount": "Amount per item",
-      "Source": "Amount per source"
+      "Amount": "Сумма за предмет",
+      "Source": "Сумма на источник"
     },
     "EDITOR": {
-      "Data": "Data",
-      "Data_type": "Type",
-      "Filter": "Filter",
-      "Accepted_items": "Accepted items",
-      "Accepted_sources": "Accepted sources",
-      "Display": "Display",
-      "Display_type": "Display component",
-      "Title": "Title",
-      "Font_size": "Font size",
-      "Value_label": "Value label",
-      "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
-      "Operator": "Operator",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Data": "Данные",
+      "Data_type": "Тип",
+      "Filter": "Фильтр",
+      "Accepted_items": "Принятые предметы",
+      "Accepted_sources": "Принятые источники",
+      "Display": "Показать",
+      "Display_type": "Показать компонент",
+      "Title": "Заголовок",
+      "Font_size": "Размер шрифта",
+      "Value_label": "Метка значения",
+      "Pie_metric": "Метрика",
+      "Add_filter": "Добавить фильтр",
+      "Operator": "Оператор",
+      "Cannot_edit_default": "Вы не можете редактировать макет по умолчанию, создайте новый макет для его настройки",
+      "Cannot_delete_default": "Вы не можете удалить макет по умолчанию",
       "FILTER_TIPS": {
-        "FishFilter": "Accept only fishes coming from fishing spots",
-        "ItemFilter": "Accepts only a given set of items",
-        "NoFilter": "Accepts everything",
+        "FishFilter": "Принимать только рыбу, полученную из рыболовных мест",
+        "ItemFilter": "Принимает только заданный набор предметов",
+        "NoFilter": "Принимает все",
         "ObtentionFilter": "Принимает только значения > 0",
-        "SourceFilter": "Accepts only a given set of sources",
+        "SourceFilter": "Принимает только заданный набор источников",
         "SpendingFilter": "Принимает только значения < 0",
-        "GilFilter": "Accepts only Gil entries"
+        "GilFilter": "Принимает только записи про Gil"
       },
       "DISPLAY_TYPES": {
         "total": "Агрегированное значение",
-        "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
-        "table": "Table of all matching entries"
+        "histogram": "Эволюция со временем",
+        "pie-chart": "Круговая диаграмма",
+        "table": "Таблица всех соответствующих записей"
       }
     }
   },
   "ITEM_SEARCH_OVERLAY": {
-    "Open": "Open item search overlay",
+    "Open": "Открыть оверлей поиска предметов",
     "Intro_message": "Найдите предмет, чтобы увидеть детали о нем, информацию о инвентаре и MB",
-    "Placeholder": "Item name",
-    "None_inside_inventory": "This item is not in any inventories.",
+    "Placeholder": "Название предмета",
+    "None_inside_inventory": "Этот предмет не найден ни в одном инвентаре.",
     "Open_in_main_window": "Open in main window",
     "Marketboard_informations": "Информация о MB"
   },
