@@ -1922,8 +1922,8 @@
     "Optimize_materias": "Оптимизировать порядок материй",
     "No_trades_needed": "Нет необходимости обмена у нпс",
     "Stats_caps": "Ограничение параметров",
-    "Stat_computing_diclaimer": "Results are not 100% accurate, they are from players (the allagan studies) like you and me who spend a lot of time trying to figure the formulas, please do not report inaccuracies as bug.",
-    "Missing_items": "It looks like you're missing some slots, make sure your filters are properly set",
+    "Stat_computing_diclaimer": "Результаты не являются на 100% точными, они от игроков, как вы и я, которые тратят много времени пытаясь определить формулы, пожалуйста, не сообщайте о неточностях как об ошибке.",
+    "Missing_items": "Похоже вам не хватает некоторых элементов, убедитесь, что фильтры установлены правильно",
     "Copied_as_string": "Набор снаряжения скопирован как строка",
     "Mark_as_done": "Отметить как выполнено",
     "Create_commission": "Создать заказ (поручение) для этого набора снаряжения",
@@ -2011,13 +2011,13 @@
       "More": "Нажмите на это меню, чтобы переименовать список, управлять разрешениями и многое другое."
     },
     "LIST": {
-      "HQ_mark": "This icon means that this item is required for a final recipe, you might want it HQ, but aren't forced to.",
-      "Layout": "You can edit the display entirely, change panels and how they filter data by opening the layout editor. The button on the left of this one is used as a quick layout switch.",
-      "Permissions": "You can edit permissions, add other users, make your list readonly, share it to a FC, and more, by opening the permission editor.",
-      "Fill_with_inventory": "You can add everything that's inside your inventory inside this list.",
-      "Pricing_mode_button": "Easily prepare and predict your benefits for this list using the pricing mode.",
-      "More_actions_button": "This button opens a menu with a lot of different actions for the current list row. You can convert these actions to buttons using the layout editor.",
-      "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
+      "HQ_mark": "Эта иконка означает, что этот предмет необходим для итогового рецепта, вы можете захотеть чтобы он был в HQ, но это не обязательно.",
+      "Layout": "Вы можете полностью редактировать дисплей, изменять панели и как стоят фильтры данных, открыв редактор макета. Кнопка слева от этого используется в качестве быстрого переключателя между ними.",
+      "Permissions": "Вы можете редактировать права доступа, добавлять других пользователей, делать список доступным только для чтения, делиться им в ФК, и многое другое, если открыть редактор разрешений.",
+      "Fill_with_inventory": "Вы можете добавить всё, что есть в вашем инвентаре внутри этого списка.",
+      "Pricing_mode_button": "Легко подготавливать и прогнозировать свои выгоды для этого списка, используя режим ценообразования.",
+      "More_actions_button": "Эта кнопка открывает меню с множеством различных действий для текущей строки списка. Вы можете преобразовать эти действия в кнопки с помощью редактора макетов.",
+      "Alarm_button": "Нажмите здесь чтобы создать оповещение для этого предмета, который будет предупреждать о появлении."
     },
     "LISTS": {
       "Merge": "Вы можете объединить два списка, используя кнопку объединения.",
