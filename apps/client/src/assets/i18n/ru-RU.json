@@ -2061,9 +2061,9 @@
     },
     "METRICS": {
       "Welcome_time_range": "Welcome to the metrics dashboard page, here you can select the time range for which you want to see data displayed, it defaults to today.",
-      "Select_dashboard": "You can have multiple dashboards and easily cycle between them to see what's important for you.",
-      "Edit_dashboard": "You can enter edit mode using this button, it's only available for non-default dashboards.",
-      "Create_dashboard": "Create your own dashboards easily, don't forget to edit them after you created them, else it'll just be a copy of the default dashboard.",
+      "Select_dashboard": "Вы можете иметь несколько панелей и легко переключаться между ними, чтобы увидеть то что важно для вас.",
+      "Edit_dashboard": "Вы можете войти в режим редактирования, используя эту кнопку, она доступна только для панелей которые не по умолчанию.",
+      "Create_dashboard": "Создавайте свои собственные панели легко, не забудьте редактировать их после того, как вы их создали, иначе это будет просто копия панели по умолчанию.",
       "Delete_layout": "Want to get rid of a dashboard, press this button, confirm, and poof (deletion cannot be reverted).",
       "Export_layout": "Want to share your amazing dashboard with your mates? Click this button to copy the export code for your currently selected dashboard.",
       "Import_layout": "If someone shares a dashboard with you using the export code, use this button to import it.",
@@ -2071,52 +2071,52 @@
         "Welcome_add_column": "Welcome to the dashboard layout editor, you can add columns using this button (up to 5 columns).",
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
-        "Delete_column": "Want to remove a column? Here it is !",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
-        "Data_type": "First of all, select the metric type you want to use.",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
-        "Title": "Set a title for your panel",
-        "Display_type": "Select which component you want to use to represent your data, and add the inputs accordingly."
+        "Delete_column": "Хотите удалить столбец? Вот здесь!",
+        "Add_panel": "Нажмите здесь, чтобы добавить новую панель.",
+        "Reorder": "Вы можете использовать перетаскивание для перемещения панелей куда угодно.",
+        "Data_type": "Прежде всего, выберите тип метрики, который вы хотите использовать.",
+        "Filters": "Затем поставьте фильтр, чтобы использовать только то, что вы хотите показать, с возможностью комбинировать и инвертировать фильтры.",
+        "Title": "Задайте название для вашей панели",
+        "Display_type": "Выберите какой компонент вы хотите использовать для представления ваших данных, и добавьте вход соответственно."
       }
     }
   },
   "ADMIN": {
-    "Autofix_error": "Autofix this error",
+    "Autofix_error": "Автоисправление этой ошибки",
     "USERS": {
-      "X_characters_linked": "{{amount}} character(s) linked",
+      "X_characters_linked": "{{amount}} персонажей связаны",
       "Email": "Email",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "Не найдено пользователей",
+      "Integrity_check": "Проверка целостности",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "Режим поиска",
         "UID": "UID",
         "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "CHARACTER": "Персонаж"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
-        "Check": "Run integrity check"
+        "Profile": "Открыть профиль",
+        "Check": "Запустить проверку целостности"
       },
       "INTEGRITY_CHECK": {
-        "All_characters_valid": "All characters linked are valid"
+        "All_characters_valid": "Все привязанные персонажи действительны"
       }
     }
   },
   "METRICS": {
-    "Title": "Metrics dashboard",
+    "Title": "Панель метрик",
     "Today": "Today",
     "This_week": "This week",
     "This_month": "This month",
     "Add_new_column": "Add a new column (max 5)",
-    "Default_dashboard": "Default dashboard",
+    "Default_dashboard": "Панель по умолчанию",
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
+    "Import_dashboard": "Импортировать панель",
+    "Export_code": "Код экспорта панели",
+    "Import_failed": "Не удалось импортировать панель, неверный код",
+    "Import_success": "Панель импортирована и выбрана",
     "Nothing_to_show": "No data to display",
     "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
     "SOURCES": {
