@@ -2243,19 +2243,19 @@
       "Name_required_error": "Пожалуйста, введите имя",
       "Tags": "Теги",
       "Price": "Цена, которую вы готовы заплатить",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
-      "Only_crafting": "Only crafting",
-      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
-      "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations",
-      "Description": "Description",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
-      "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
+      "Price_tip": "Введите 0, если вы хотите, чтобы люди указывали сколько они хотят",
+      "Only_crafting": "Только крафт",
+      "Includes_materials_label": "Этот заказ включает в себя все базовые материалы и требуется только крафт",
+      "Contact_info": "Контактная информация",
+      "Contact_info_placeholder": "Как исполнители могут связаться с вами когда они будут приняты для заказа? Discord, ingame, email, как вы хотите.",
+      "Contact_info_required_error": "Пожалуйста, включите контактную информацию",
+      "Description": "Описание",
+      "Description_placeholder": "Если вы хотите дать более подробную информацию о своем заказе, это здесь",
+      "Description_max_length_error": "Описание должно быть не больше 1000 символов",
+      "Warning": "Предупреждение",
+      "Warning_description": "Создание спама приведет к удалению заказов и возможным действиям против вашего аккаунта.",
+      "Copy_link": "Копировать код импорта",
+      "Copy_link_tooltip": "Дает вам url-адрес для открытия, чтобы создать этот конкретный заказ, полезно для написания гайдов.",
       "Link_copied": "Commission import code copied"
     },
     "BOARD": {
@@ -2319,28 +2319,28 @@
         "Content": "Contractor for commission {{name}} is no longer assigned"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "Контракт на заказ начат",
+        "Content": "Вы были наняты на заказ {{name}}"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "Новый кандидат",
+        "Content": "Новый кандидат на заказ {{name}}"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "Список заказа завершен",
+        "Content": "Список связанный с заказом {{name}} завершен"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
+      "Details": "Профиль заказа",
+      "View_details": "Открыть детали профиля",
+      "Ratings": "Рейтинг",
+      "Incidents": "Инциденты",
+      "No_incidents": "Нет инцидентов",
+      "Fired": "Уволен из заказа",
+      "Resigned": "Отказался от заказа",
+      "No_ratings": "Рейтинга пока нет",
+      "Fired_X_times": "Уволен {{amount}} раз",
       "Resigned_X_times": "Resigned {{amount}} times"
     },
     "FIRED": {
