@@ -59,6 +59,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
           if (node.weathers !== undefined) {
             alarm.weathers = node.weathers;
           }
+          if (node.weathersFrom !== undefined) {
+            alarm.weathersFrom = node.weathersFrom;
+          }
           if (folklore !== undefined) {
             alarm.folklore = {
               id: +folklore,
