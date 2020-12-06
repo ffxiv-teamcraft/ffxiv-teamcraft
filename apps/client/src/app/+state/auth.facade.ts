@@ -39,7 +39,6 @@ import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
-import { UserService } from '../core/database/user.service';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
