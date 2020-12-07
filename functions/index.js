@@ -215,6 +215,7 @@ functions.runWith(runtimeOpts).pubsub.schedule('0 0 * * *').onRun(() => {
   return firestore
     .collection('commissions')
     .where('createdAt.seconds', '>=', aMonthOldSeconds)
+    .where('status', '==', 0)
     .get()
     .then(commissions => {
       commissions.forEach(c => c.ref.delete());
