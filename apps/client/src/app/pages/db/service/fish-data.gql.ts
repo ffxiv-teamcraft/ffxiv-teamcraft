@@ -37,6 +37,7 @@ interface FishEorzeaTime {
   spot: number;
   etime: number;
   occurences: number;
+  fishEyes: boolean;
 }
 
 interface FishEorzeaTimeResult {
@@ -52,6 +53,7 @@ export class EorzeaTimesPerFishPerSpotQuery extends Query<FishEorzeaTimeResult, 
         spot
         etime
         occurences
+        fishEyes
       }
     }
   `;

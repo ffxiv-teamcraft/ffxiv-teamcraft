@@ -1,4 +1,14 @@
-<nz-card [nzTitle]="'DB.FISH.Hour' | translate" [nzLoading]="loading$ | async" [style.width.px]="600 + 48">
+<nz-card [nzTitle]="title"
+         [nzLoading]="loading$ | async" [style.width.px]="600 + 48">
+  <ng-template #title>
+    <div fxLayout="row" fxLayoutAlign="space-between center" nz-tooltip [nzTooltipTitle]="'DB.FISH.Include_fisheyes_data' | translate">
+      <div>{{'DB.FISH.Hour' | translate}}</div>
+      <div>
+        <img [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes">
+        <nz-switch [ngModel]="fishEyes$ | async" (ngModelChange)="fishEyes$.next($event)"></nz-switch>
+      </div>
+    </div>
+  </ng-template>
   <ngx-charts-bar-vertical
     [view]="[600, 300]"
     [scheme]="{ domain: [settings.theme.primary] }"
