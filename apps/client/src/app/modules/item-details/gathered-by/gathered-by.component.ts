@@ -119,11 +119,7 @@ export class GatheredByComponent extends ItemDetailsPopup {
     if (node.baits) {
       alarm.baits = node.baits;
     }
-    if (alarm.weathers && alarm.spawns) {
-      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
-      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
-    }
-    return [alarm];
+    return this.alarmsFacade.applyFishEyes(alarm);
   }
 
   trackByAlarm(index: number, alarm: Partial<Alarm>): string {

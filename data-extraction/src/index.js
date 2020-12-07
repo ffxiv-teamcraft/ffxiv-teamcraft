@@ -480,6 +480,21 @@ if (hasTodo('gatheringLog')) {
 
 }
 
+if (hasTodo('fishParameter')) {
+  const bigFishes = {};
+
+  getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden').subscribe(res => {
+    res.Results.forEach(fish => {
+      if(fish.IsHidden){
+        bigFishes[fish.ID] = 1;
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('big-fishes', bigFishes);
+    done('fishParameter');
+  });
+}
+
 if (hasTodo('fishingLog')) {
 
   const diademTerritory = require('./input/diadem-territory.json');
@@ -544,7 +559,7 @@ if (hasTodo('fishingLog')) {
               fr: fish.FishingRecordType.Addon.Text_fr
             };
           }
-          fishParameter[fish.Item.ID] = entry;
+          fishParameter[fish.Item] = entry;
         });
       return fishParameter;
     })

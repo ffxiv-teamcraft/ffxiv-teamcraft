@@ -18,6 +18,7 @@ import { Language } from './language';
 import { LazyData } from './lazy-data';
 import { LazyDataProviderService } from './lazy-data-provider.service';
 import { lazyFilesList } from './lazy-files-list';
+import { XivapiPatch } from './model/xivapi-patch';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,7 @@ export class LazyDataService {
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public datacenters: Record<string, string[]> = {};
-  public patches: any[] = [];
+  public patches: XivapiPatch[] = [];
 
   public extracts: ListRow[];
   public extracts$: ReplaySubject<ListRow[]> = new ReplaySubject<ListRow[]>();
@@ -243,10 +244,10 @@ export class LazyDataService {
 
     const extractsPath = `/assets/extracts${environment.production ? '.' + extractsHash : ''}.json`;
 
-    combineLatest([this.xivapi.getDCList(), this.getData('https://xivapi.com/patchlist'), this.getData(extractsPath)]).subscribe(
+    combineLatest([this.xivapi.getDCList(), this.getData<XivapiPatch[]>('https://xivapi.com/patchlist'), this.getData(extractsPath)]).subscribe(
       ([dcList, patches, extracts]) => {
         this.datacenters = dcList as { [index: string]: string[] };
-        this.patches = patches as any[];
+        this.patches = patches;
         this.extracts = extracts;
         this.extracts$.next(extracts);
         xivapiAndExtractsReady$.next();
@@ -300,7 +301,7 @@ export class LazyDataService {
     });
   }
 
-  private getData(path: string): Observable<any> {
+  private getData<T = any>(path: string): Observable<T> {
     let url: string;
     if (path.startsWith('http')) {
       url = path;
@@ -311,6 +312,6 @@ export class LazyDataService {
         url = `https://cdn.ffxivteamcraft.com${path}`;
       }
     }
-    return this.http.get(url);
+    return this.http.get<T>(url);
   }
 }

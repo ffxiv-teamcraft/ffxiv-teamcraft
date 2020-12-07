@@ -28,6 +28,7 @@ import { WeatherService } from '../../eorzea/weather.service';
 import { NextSpawn } from '../next-spawn';
 import { weatherIndex } from '../../data/sources/weather-index';
 import { mapIds } from '../../data/sources/map-ids';
+import { LazyDataService } from '../../data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -85,7 +86,8 @@ export class AlarmsFacade {
   private nextSpawnCache: any = {};
 
   constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
-              private settings: SettingsService, private weatherService: WeatherService) {
+              private settings: SettingsService, private weatherService: WeatherService,
+              private lazyData: LazyDataService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -385,6 +387,18 @@ export class AlarmsFacade {
     }
     resMinutes += (resSeconds % 60) / 60;
     return resMinutes + (spawn.days * 1440);
+  }
+
+  public applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
+    const patch = this.lazyData.data.itemPatch[alarm.itemId];
+    const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
+    const isBigFish = this.lazyData.data.bigFishes[alarm.itemId];
+    // The changes only apply to fishes pre-SB and non-legendary
+    if (expansion < 2 && alarm.weathers && alarm.spawns && !isBigFish) {
+      const { spawns, ...alarmWithFishEyesEnabled } = alarm;
+      return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
+    }
+    return [alarm];
   }
 
 }

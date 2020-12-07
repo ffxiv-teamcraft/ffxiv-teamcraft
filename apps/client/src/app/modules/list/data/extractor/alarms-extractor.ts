@@ -8,9 +8,11 @@ import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService,
+              private alarmsFacade: AlarmsFacade) {
     super(gt);
   }
 
@@ -67,11 +69,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
               icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
             };
           }
-          if (alarm.weathers && alarm.spawns) {
-            const { spawns, ...alarmWithFishEyesEnabled } = alarm;
-            return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
-          }
-          return [alarm];
+          return this.alarmsFacade.applyFishEyes(alarm);
         })
       ));
     }
