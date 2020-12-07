@@ -22,7 +22,7 @@ jobs:
             - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install local dependencies
-          command: yarn install --frozen-lockfile
+          command: yarn install --immutable
       - run:
           name: Install functions dependencies
           command: cd functions && npm install && cd ../
@@ -30,7 +30,7 @@ jobs:
           name: Save Yarn Package Cache
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
-            - ~/.cache/yar
+            - ~/.cache/yarn
       - persist_to_workspace:
           root: ~/
           paths:
@@ -133,15 +133,14 @@ jobs:
           at: ~/
       - restore_cache:
           keys:
-            - v2-deps-win-{ .Branch }-{ checksum "package.json" }
+            - v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
       - run:
           name: Reinstalling dependencies for windows
-          command: yarn install --frozen-lockfile
+          command: yarn install --immutable
       - save_cache:
-          key: v2-deps-win-{ .Branch }-{ checksum "package.json" }
+          key: v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
           paths:
-            - ~/.cache
-            - ~/.npm
+            - ~/.cache/yarn
       - run:
           name: Deploying desktop on github
           command: yarn run electron:setup:publish
