@@ -1479,6 +1479,7 @@
       "Ranking": "Ranking",
       "Top_users": "Top rankings",
       "Your_ranking": "Your ranking",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
