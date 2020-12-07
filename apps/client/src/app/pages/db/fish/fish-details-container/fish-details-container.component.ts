@@ -9,7 +9,6 @@ interface FishDetailsStatsSummary {
   max?: number;
   avg?: number;
   gathering?: number;
-  fishEyes?: number;
   snagging?: number;
 }
 
@@ -34,7 +33,6 @@ export class FishDetailsContainerComponent {
       max: res.data?.stats.aggregate.max.size / 10,
       avg: res.data?.stats.aggregate.avg.size / 10,
       gathering: res.data?.stats.aggregate.min.gathering,
-      fishEyes: res.data?.fishEyes,
       snagging: res.data?.snagging,
     })),
     startWith({}),

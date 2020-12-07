@@ -29,6 +29,7 @@ import * as _ from 'lodash';
 import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { environment } from '../../../../environments/environment';
+import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
 
 @Component({
   selector: 'app-search',
@@ -197,7 +198,7 @@ export class SearchComponent implements OnInit {
     })
   );
 
-  patch$: Observable<number> = this.query$.pipe(
+  patch$: Observable<XivapiPatch> = this.query$.pipe(
     map(query => {
       const matches = /patch:([\d.]+)/.exec(query);
       if (matches && matches[1]) {

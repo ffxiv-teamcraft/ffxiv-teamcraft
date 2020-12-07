@@ -23,13 +23,6 @@
                   <nz-tag *ngIf="node.limitType !== undefined" nzColor="orange">
                     {{node.limitType | i18n}}
                   </nz-tag>
-                  <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
-                         src="./assets/icons/status/fish_eyes.png">
-                    <div
-                      *ngIf="node.itemId | fishEyesDuration as duration" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
-                      nz-tooltip>{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
-                  </div>
                   <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                        src="./assets/icons/status/snagging.png">
                 </div>

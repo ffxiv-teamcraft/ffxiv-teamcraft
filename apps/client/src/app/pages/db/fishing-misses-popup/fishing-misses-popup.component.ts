@@ -67,13 +67,6 @@ export class FishingMissesPopupComponent implements OnInit {
                 value: value
               };
             }),
-          fishEyes: Object.keys(_.groupBy(data, 'fishEyes'))
-            .map(value => {
-              return {
-                text: this.translate.instant(value === 'true' ? 'Yes' : 'No'),
-                value: value
-              };
-            }),
           gathering: Object.keys(_.groupBy(data, 'gathering'))
             .map(value => {
               return {
@@ -149,7 +142,6 @@ export class FishingMissesPopupComponent implements OnInit {
                   baitId
                   biteTime
                   chum
-                  fishEyes
                   gathering
                   weatherId
                   mooch

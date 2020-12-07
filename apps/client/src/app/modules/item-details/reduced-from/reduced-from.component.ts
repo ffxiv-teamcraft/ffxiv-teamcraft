@@ -90,7 +90,6 @@ export class ReducedFromComponent extends ItemDetailsPopup {
       weathers: node.weathers,
       weathersFrom: node.weathersFrom,
       snagging: node.snagging,
-      fishEyes: node.fishEyes,
       predators: node.predators || []
     };
     if (node.slot) {

@@ -1,23 +1,33 @@
 import { Observable } from 'rxjs';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
-import { map } from 'rxjs/operators';
+import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { AetherReductionDlg, ActorControl } from '../../model/pcap';
+import { MachinaService } from '../electron/machina.service';
 
 export class ReductionResultReporter implements DataReporter {
+
+  constructor(private machina: MachinaService) {
+  }
 
   getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {
     const reductionResults$ = packets$.pipe<AetherReductionDlg>(
       ofPacketSubType('aetherReductionDlg')
     );
 
+    const inventoryPatches$ = this.machina.inventoryPatches$.pipe(
+      filter(patch => {
+        return patch.quantity < 0 && patch.spiritBond && patch.spiritBond > 0;
+      })
+    );
+
     return reductionResults$.pipe(
-      map((packet) => {
+      withLatestFrom(inventoryPatches$),
+      map(([packet, patch]) => {
         return packet.resultItems.map(item => {
           return {
             itemId: packet.reducedItemID,
-            purity: 0,
-            collectability: 0,
+            collectability: patch.spiritBond,
             resultItemId: item.itemId,
             resultItemQuantity: item.quantity,
             resultItemHQ: item.hq

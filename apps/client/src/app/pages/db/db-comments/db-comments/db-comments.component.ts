@@ -14,6 +14,7 @@ import { DbItemCommentNotification } from '../../../../model/notification/db-ite
 import { NotificationService } from '../../../../core/notification/notification.service';
 import { environment } from '../../../../../environments/environment';
 import { DbCommentReplyNotification } from '../../../../model/notification/db-comment-reply-notification';
+import { XivapiPatch } from '../../../../core/data/model/xivapi-patch';
 
 @Component({
   selector: 'app-db-comments',
@@ -111,7 +112,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  getPatch(comment: DbComment): string {
+  getPatch(comment: DbComment): XivapiPatch {
     let version = this.lazyData.patches[0];
     for (const patch of this.lazyData.patches) {
       if (patch.ReleaseDate <= comment.date / 1000) {

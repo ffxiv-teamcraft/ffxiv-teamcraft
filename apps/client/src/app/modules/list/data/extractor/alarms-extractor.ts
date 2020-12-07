@@ -8,9 +8,11 @@ import { BellNodesService } from '../../../../core/data/bell-nodes.service';
 import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
 
 export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService) {
+  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService,
+              private alarmsFacade: AlarmsFacade) {
     super(gt);
   }
 
@@ -29,7 +31,7 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
   protected doExtract(item: Item, itemData: ItemData, row: ListRow): Partial<Alarm>[] {
     const alarms: Partial<Alarm>[] = [];
     if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
-      alarms.push(...getItemSource(row, DataType.GATHERED_BY, true).nodes
+      alarms.push(...[].concat.apply([], getItemSource(row, DataType.GATHERED_BY, true).nodes
         .filter(node => node.uptime !== undefined || node.weathers !== undefined)
         .filter(node => node.coords)
         .map(node => {
@@ -50,7 +52,6 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
             },
             spawns: node.time,
             snagging: node.snagging,
-            fishEyes: node.fishEyes,
             predators: node.predators || []
           };
           if (node.baits !== undefined) {
@@ -68,9 +69,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
               icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
             };
           }
-          return alarm;
+          return this.alarmsFacade.applyFishEyes(alarm);
         })
-      );
+      ));
     }
     if (getItemSource(row, DataType.REDUCED_FROM).length > 0) {
       alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)

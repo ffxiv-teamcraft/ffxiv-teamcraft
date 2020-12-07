@@ -60,6 +60,7 @@ import { LazyScrollModule } from '../lazy-scroll/lazy-scroll.module';
 import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { ItemPickerModule } from '../item-picker/item-picker.module';
+import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -79,7 +80,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService, LazyDataService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true }

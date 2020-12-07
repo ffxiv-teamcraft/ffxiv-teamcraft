@@ -28,13 +28,9 @@
           (nzFilterChange)="filter('snagging', $event)"
           nzSortKey="snagging">{{761 | statusName | i18n}}</th>
       <th nzShowFilter
-          [nzFilters]="filters.fishEyes"
-          (nzFilterChange)="filter('fishEyes', $event)"
-          nzSortKey="fishEyes">{{762 | statusName | i18n}}</th>
-      <th nzShowFilter
           [nzFilters]="filters.tug"
           (nzFilterChange)="filter('tug', $event)"
-          nzSortKey="fishEyes">{{'DB.FISH.OVERLAY.Tug' | translate}}</th>
+          nzSortKey="tug">{{'DB.FISH.OVERLAY.Tug' | translate}}</th>
       <th nzShowFilter
           [nzFilters]="filters.gathering"
           (nzFilterChange)="filter('gathering', $event)"
@@ -61,7 +57,6 @@
       <td>{{data.etime}}</td>
       <td>{{ (data.biteTime / 10) | number:'1.1':translate.currentLang}}s</td>
       <td>{{ (data.snagging ? 'Yes' : 'No') | translate }}</td>
-      <td>{{ (data.fishEyes ? 'Yes' : 'No') | translate }}</td>
       <td>{{ ('DB.FISH.TUG.' + getTugName(data.tug)) | translate }}</td>
       <td>{{ data.gathering }}</td>
       <td>

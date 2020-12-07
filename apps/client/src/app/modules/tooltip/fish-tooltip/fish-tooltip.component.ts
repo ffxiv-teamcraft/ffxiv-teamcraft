@@ -51,7 +51,6 @@ export class FishTooltipComponent {
               itemId: spot.id,
               icon: spot.icon,
               timed: spot.during !== undefined,
-              fishEyes: spot.fishEyes,
               snagging: spot.snagging
             };
             if (spot.during !== undefined) {

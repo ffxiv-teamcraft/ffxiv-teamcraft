@@ -93,27 +93,27 @@
                       nzGhost
                       nzTrigger="click"
                       nzShape="circle" nzSize="small"
-               >
+              >
                 <i nz-icon nzType="delete"></i>
               </button>
-              <nz-dropdown-menu #menu="nzDropdownMenu" >
+              <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
-                    <li nz-menu-item>
-                      <a (nzOnConfirm)="deleteGroup(group.group)"
-                        [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
-                        nz-popconfirm
-                      >
-                        {{'ALARMS.Delete_group' | translate}}
-                      </a>
-                    </li>
-                    <li nz-menu-item>
-                      <a (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
-                        [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
-                        nz-popconfirm
-                      >
-                        {{'ALARMS.Delete_group_and_alarms' | translate}}
-                      </a>
-                    </li>
+                  <li nz-menu-item>
+                    <a (nzOnConfirm)="deleteGroup(group.group)"
+                       [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete' | translate"
+                       nz-popconfirm
+                    >
+                      {{'ALARMS.Delete_group' | translate}}
+                    </a>
+                  </li>
+                  <li nz-menu-item>
+                    <a (nzOnConfirm)="deleteGroupAndAlarms(group.group, group.alarms)"
+                       [nzPopconfirmTitle]="'ALARMS.Confirm_group_delete_with_alarms' | translate"
+                       nz-popconfirm
+                    >
+                      {{'ALARMS.Delete_group_and_alarms' | translate}}
+                    </a>
+                  </li>
                 </ul>
               </nz-dropdown-menu>
               <button (click)="$event.stopPropagation(); addAlarmsToGroup(group.group)" [nzShape]="'circle'"
@@ -327,6 +327,12 @@
                src="{{row.alarm.type | nodeTypeIcon}}">
           <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
+          <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+               [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+          <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
+               class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
+          <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+               src="./assets/icons/status/snagging.png">
         </div>
         <div nz-col nzMd="2">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
@@ -379,12 +385,6 @@
               </button>
             </div>
           </ng-template>
-          <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
-               class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
-          <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
-               src="./assets/icons/status/fish_eyes.png">
-          <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-               src="./assets/icons/status/snagging.png">
         </div>
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">

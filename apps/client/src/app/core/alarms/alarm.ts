@@ -34,12 +34,18 @@ export class Alarm extends DataModel {
    */
   type: number;
 
+  /**
+   * With 5.4, SE changes fish eyes so it allows to ignore time requirement,
+   * because of that, this boolean now indicates if the alarm is only possible
+   * with fishEyes enabled.
+   */
+  fishEyes?: boolean;
+
   baits?: FishingBait[];
   gig?: string;
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;
-  fishEyes?: boolean;
   predators?: { id: number, icon: number, amount: number }[];
 
   note: string;

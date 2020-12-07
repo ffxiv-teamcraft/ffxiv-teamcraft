@@ -7,6 +7,7 @@ import { CoreModule } from '../../core/core.module';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     DatabaseModule,
     XivapiClientModule,
 
-    AntdSharedModule
+    AntdSharedModule,
+    NzAvatarModule
   ],
   declarations: [UserAvatarComponent],
   exports: [UserAvatarComponent]
