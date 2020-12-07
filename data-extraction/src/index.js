@@ -483,10 +483,10 @@ if (hasTodo('gatheringLog')) {
 if (hasTodo('fishParameter')) {
   const bigFishes = {};
 
-  getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden').subscribe(res => {
+  getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden,Item').subscribe(res => {
     res.Results.forEach(fish => {
       if(fish.IsHidden){
-        bigFishes[fish.ID] = 1;
+        bigFishes[fish.Item] = 1;
       }
     });
   }, null, () => {
