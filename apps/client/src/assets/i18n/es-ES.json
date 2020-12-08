@@ -40,7 +40,9 @@
     "Too_many_results_warning": "Esta búsqueda devuelve más de 100 artículos. Como nuestro origen de datos esta limitado a 100 resultados, puede que necesite filtros adicionales para encontrar un artículo específico.",
     "Share_url": "Copiar el url de búsqueda al portapapeles",
     "Share_url_copied": "URL de búsqueda copiado al portapapeles",
-    "Only_craftable": "Solo recetas"
+    "Only_craftable": "Solo recetas",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Usar como personaje por defecto",
   "Download_desktop_app": "Descargar aplicación para PC",
@@ -793,7 +795,9 @@
     "Ephemeral_node": "Nodo efímero, puede reaparecer",
     "Intro": "Ubicación de recolección le permite buscar fácilmente un artículo recolectable y ver sus detalles, dónde encontrarlo y crear una alarma para un nodo específico. ¡Solo introduzca un nombre en el campo anterior y deje que encontremos lo que está buscando!",
     "Hidden_item": "Oculto",
-    "Fish_eyes": "Requiere \"fish eyes\"",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "Requiere \"snagging\"",
     "Predators": "Pescar estos peces antes de",
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
@@ -1475,6 +1479,7 @@
       "Ranking": "Clasificación",
       "Top_users": "Mejores clasificaciones",
       "Your_ranking": "Su clasificación",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "Liviano (!)",
         "Medium": "Mediano (!!)",
@@ -2201,7 +2206,8 @@
     "Cannot_record": "Cannot record replays",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Save_replay": "Save replay in database",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
@@ -2295,7 +2301,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",

@@ -40,7 +40,9 @@
     "Too_many_results_warning": "검색 결과가 100개를 넘습니다. 데이터 소스의 제한으로 인해 정확한 아이템을 찾기 위해서는 추가적인 필터 설정이 필요합니다.",
     "Share_url": "검색URL을 클립보드로 복사하기",
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
-    "Only_craftable": "제작가능한 제작법만 검색"
+    "Only_craftable": "제작가능한 제작법만 검색",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -793,7 +795,9 @@
     "Ephemeral_node": "재등장 가능한 시간제 채집 장소",
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
-    "Fish_eyes": "물고기의 눈 필요",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
     "Fish_eyes_duration": "이 물고기를 낚기 위해서는 해당 지속시간만큼의 물고기의 눈이 필요합니다. 형식을 변경하려면 클릭하세요.",
@@ -1475,6 +1479,7 @@
       "Ranking": "순위",
       "Top_users": "최고 순위",
       "Your_ranking": "당신의 순위",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -2201,7 +2206,8 @@
     "Cannot_record": "리플레이를 기록할 수 없습니다",
     "Missing_stats": "다른 제작 직업으로 변경하여 TC가 리플레이를 기록하기 전에 제작 능력치를 동기화할 수 있도록 해주세요.",
     "Create_folder": "새 폴더",
-    "Save_replay": "데이터베이스에 리플레이 저장하기"
+    "Save_replay": "데이터베이스에 리플레이 저장하기",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
@@ -2295,7 +2301,11 @@
       "No_description": "설명 없음",
       "Items_count": "품목",
       "Creation_date": "생성 일자",
-      "Server_&_tags": "서버 & 태그"
+      "Server_&_tags": "서버 & 태그",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "가격",

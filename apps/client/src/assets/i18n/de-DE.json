@@ -40,7 +40,9 @@
     "Too_many_results_warning": "Die Suche lieferte über 100 Gegenstände. Da unsere Datenquelle auf 100 Einträge begrenzt ist, brauchst du möglicherweise weitere Filter um einen bestimmten Gegenstand zu finden.",
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
-    "Only_craftable": "Nur Rezepte"
+    "Only_craftable": "Nur Rezepte",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -793,7 +795,9 @@
     "Ephemeral_node": "Vergängliches Vorkommen, kann erneut erscheinen",
     "Intro": "In dieser Kategorie kannst du nach sammelbaren Gegenständen suchen und Details und Standorte anzeigen lassen, sowie Alarme für einzelne Standorte anlegen. Trage einfach einen Namen in das obige Feld ein und lass uns finden was du suchst!",
     "Hidden_item": "Versteckt",
-    "Fish_eyes": "Benötigt Fischaugen",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "Benötigt Reißen",
     "Predators": "Zunächst diese Fische angeln",
     "Fish_eyes_duration": "Deine Fischaugen müssen diese Dauer haben, um den Fisch zu bekommen. Klicke um das Format zu ändern.",
@@ -1475,6 +1479,7 @@
       "Ranking": "Rangliste",
       "Top_users": "Bestplatzierte",
       "Your_ranking": "Dein Rang",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "Leicht (!)",
         "Medium": "Mittel (!!)",
@@ -2201,7 +2206,8 @@
     "Cannot_record": "Wiederholungen können nicht aufgezeichnet werden",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "Neues Verzeichnis",
-    "Save_replay": "Wiederholung in Datenbank speichern"
+    "Save_replay": "Wiederholung in Datenbank speichern",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
@@ -2295,7 +2301,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",
