@@ -21,7 +21,7 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(css|js|jpg|jpeg|gif|svg|png|json)",
+        "source": "**/*.@(css|jpg|jpeg|gif|svg|png)",
         "headers": [
           {
             "key": "Cache-control",
@@ -30,11 +30,38 @@
         ]
       },
       {
+        "source": "**/*.@(js)",
+        "headers": [
+          {
+            "key": "Cache-control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/extracts.json",
+        "headers": [
+          {
+            "key": "Cache-control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
+        "source": "**/data/*.@(json)",
+        "headers": [
+          {
+            "key": "Cache-control",
+            "value": "max-age=31536000"
+          }
+        ]
+      },
+      {
         "source": "**/*.html",
         "headers": [
           {
             "key": "Cache-control",
-            "value": "max-age=120"
+            "value": "max-age=1800"
           }
         ]
       }
