@@ -5,6 +5,8 @@ export const patchNotes = `### Bug Fixes
 * **commissions:** fixed missing translations in rating popup.
 * **commissions:** new empty commission lists are now created with Readonly permissions.
 * **crafting-replays:** fixed missing translation in result popup.
+* **db:** fix for new items inside lists and packet capture.
+* **db:** fixed some gathering nodes missing from search.
 * **desktop:** fixed google login showing javascript security warning.
 * **desktop:** fixed message error about service worker not being registered.
 * **fishing:** fixed an issue with some alarms being inaccurate in lists.
