@@ -13,7 +13,7 @@ const multibar = new cliProgress.MultiBar({
   hideCursor: true,
   barCompleteChar: '\u2588',
   barIncompleteChar: '\u2591',
-  clearOnComplete: false,
+  clearOnComplete: true,
   stopOnComplete: true
 }, cliProgress.Presets.shades_grey);
 
@@ -38,7 +38,7 @@ const stopInterval$ = emptyQueue$.pipe(
   filter(empty => empty)
 );
 
-interval(key ? 50 : 1000).pipe(
+interval(key ? 50 : 250).pipe(
   tap(() => {
     emptyQueue$.next(queue.length === 0);
   }),
@@ -112,7 +112,8 @@ const getAllPages = (endpoint, body, label) => {
       return get(url, body).pipe(
         tap(result => {
           if (result === undefined || result.Pagination === undefined) {
-            console.error('Error', url.slice(0, 150), result === null, result.Pagination);
+            console.error('Payload error, retrying...');
+            page$.next(page);
           }
           if (label === undefined) {
             label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
