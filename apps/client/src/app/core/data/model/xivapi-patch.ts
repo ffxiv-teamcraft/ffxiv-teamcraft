@@ -1,6 +1,6 @@
 export interface XivapiPatch {
   Banner: string;
-  ExName: string;
+  ExName?: string;
   ExVersion: number;
   ID: number;
   Name: string;
