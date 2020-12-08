@@ -32,7 +32,7 @@ export class CraftedByExtractor extends AbstractExtractor<CraftedBy[]> {
         icon: `./assets/icons/classjob/${this.gt.getJob(craft.job).name.toLowerCase()}.png`,
         job: craft.job,
         lvl: craft.lvl,
-        stars_tooltip: this.htmlTools.generateStars(craft.stars),
+        stars_tooltip: craft.stars > 0 ? `(${craft.stars}★)` : '',
         id: craft.id,
         rlvl: craft.rlvl,
         durability: craft.durability,
