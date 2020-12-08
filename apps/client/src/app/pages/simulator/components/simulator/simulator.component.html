@@ -315,7 +315,7 @@
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Food' | translate"
                                nzAllowClear nzShowSearch>
                       <nz-option *ngFor="let food of foods" [nzValue]="food"
-                                 nzLabel="{{food.itemId | itemName | i18n}} {{food.hq?'(HQ)':''}}">
+                                 nzLabel="{{food.hq?'HQ':''}} {{food.itemId | itemName | i18n}} ">
                       </nz-option>
                     </nz-select>
                     <div *ngIf="selectedFood !== undefined && selectedFood !== null; else noFood">
@@ -340,7 +340,7 @@
                                [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Medicine' | translate"
                                nzAllowClear nzShowSearch>
                       <nz-option *ngFor="let medicine of medicines" [nzValue]="medicine"
-                                 nzLabel="{{medicine.itemId | itemName | i18n}} {{medicine.hq?'(HQ)':''}}">
+                                 nzLabel=" {{medicine.hq?'HQ':''}} {{medicine.itemId | itemName | i18n}}">
                       </nz-option>
                     </nz-select>
                     <div *ngIf="selectedMedicine !== undefined && selectedMedicine !== null; else noMedicine">
