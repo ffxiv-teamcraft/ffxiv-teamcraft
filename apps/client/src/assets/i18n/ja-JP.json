@@ -40,7 +40,9 @@
     "Too_many_results_warning": "検索結果が100件を超えてます。データソースの制限のため、正確なアイテムを探すためには、追加フィルター設定が必要とします。",
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
-    "Only_craftable": "レシピのみ"
+    "Only_craftable": "レシピのみ",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
   "Download_desktop_app": "デスクトップアプリをダウンロード",
@@ -793,7 +795,9 @@
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
-    "Fish_eyes": "フィッシュアイが必要",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
@@ -1475,6 +1479,7 @@
       "Ranking": "Ranking",
       "Top_users": "Top rankings",
       "Your_ranking": "Your ranking",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -2201,7 +2206,8 @@
     "Cannot_record": "Cannot record replays",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Save_replay": "Save replay in database",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "新しい依頼",
@@ -2295,7 +2301,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",

@@ -1,4 +1,6 @@
-export const patchList = [{
+import { XivapiPatch } from '../app/core/data/model/xivapi-patch';
+
+export const patchList: XivapiPatch[] = [{
   'Banner': 'https:\/\/i.imgur.com\/ZUUtGzH.png',
   'ExVersion': 0,
   'ID': 0,

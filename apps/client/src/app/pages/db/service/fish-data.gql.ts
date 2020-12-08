@@ -37,6 +37,7 @@ interface FishEorzeaTime {
   spot: number;
   etime: number;
   occurences: number;
+  fishEyes: boolean;
 }
 
 interface FishEorzeaTimeResult {
@@ -52,6 +53,7 @@ export class EorzeaTimesPerFishPerSpotQuery extends Query<FishEorzeaTimeResult, 
         spot
         etime
         occurences
+        fishEyes
       }
     }
   `;
@@ -194,13 +196,6 @@ interface FishSnagging {
   occurences: number;
 }
 
-interface FishEyesBuff {
-  itemId: number;
-  spot: number;
-  fishEyes: boolean;
-  occurences: number;
-}
-
 interface FishStatistics {
   aggregate: {
     min: {
@@ -218,7 +213,6 @@ interface FishStatistics {
 
 interface FishStatisticsResult {
   snagging: FishSnagging[];
-  fishEyes: FishEyesBuff[];
   stats: FishStatistics;
 }
 
@@ -230,12 +224,6 @@ export class FishStatisticsPerFishPerSpotQuery extends Query<FishStatisticsResul
         itemId
         spot
         snagging
-        occurences
-      }
-      fishEyes: fish_eyes_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
-        itemId
-        spot
-        fishEyes
         occurences
       }
       stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {

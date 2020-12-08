@@ -39,13 +39,12 @@ import { LodestoneIdEntry } from '../model/user/lodestone-id-entry';
 import { OauthService } from '../core/auth/oauth.service';
 import { ConvertLists } from '../modules/list/+state/lists.actions';
 import { Character } from '@xivapi/angular-client';
-import { UserService } from '../core/database/user.service';
 import { AngularFireFunctions } from '@angular/fire/functions';
 import { LogTracking } from '../model/user/log-tracking';
 import { TeamcraftGearsetStats } from '../model/user/teamcraft-gearset-stats';
 import { GearSet } from '@ffxiv-teamcraft/simulator';
 import { LogTrackingService } from '../core/database/log-tracking.service';
-import { CharacterService } from '../core/api/character.service';
+import { LodestoneService } from '../core/api/lodestone.service';
 
 @Injectable({
   providedIn: 'root'
@@ -222,7 +221,7 @@ export class AuthFacade {
               private platformService: PlatformService, private ipc: IpcService,
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private fns: AngularFireFunctions,
-              private logTrackingService: LogTrackingService, private characterService: CharacterService) {
+              private logTrackingService: LogTrackingService, private characterService: LodestoneService) {
     this.ipc.cid$.subscribe(packet => {
       this.setCID(packet.contentID);
     });

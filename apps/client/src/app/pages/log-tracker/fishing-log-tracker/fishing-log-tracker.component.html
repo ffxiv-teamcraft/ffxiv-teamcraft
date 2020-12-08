@@ -104,17 +104,6 @@
                                   </nz-button-group>
                                 </ng-container>
                               </div>
-                              <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center"
-                                   fxLayoutGap="5px">
-                                <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
-                                     src="./assets/icons/status/fish_eyes.png">
-                                <div
-                                  (click)="toggleFishEyesFormat()" *ngIf="node.itemId | fishEyesDuration as duration"
-                                  [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
-                                  nz-tooltip>
-                                  {{(fishEyesFormat === 1 ? 'COMMON.Minutes_duration' : 'COMMON.Seconds_duration') | translate: { amount: duration * fishEyesFormat } }}
-                                </div>
-                              </div>
                               <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/snagging.png">
                             </div>

@@ -17953,7 +17953,7 @@
   },
   "2993": {
     "en": "Thus did the second doom break us.",
-    "ja": "これが、第ニの災いである",
+    "ja": "これが、第二の災いである",
     "de": "Dies war das zweite Unheil, und es brach unseren Willen",
     "fr": "La deuxième Calamité"
   },
@@ -19191,7 +19191,7 @@
     "en": "Where the Dry Return",
     "ja": "陸人の墓標",
     "de": "Seelenruh der Landler",
-    "fr": "Crypte du Sans branchies"
+    "fr": "Crypte du Sans-branchies"
   },
   "3200": {
     "en": "Walls of the Forgotten",
@@ -19923,7 +19923,7 @@
     "en": "Where the Dry Return",
     "ja": "陸人の墓標",
     "de": "Seelenruh der Landler",
-    "fr": "Crypte du Sans branchies"
+    "fr": "Crypte du Sans-branchies"
   },
   "3322": {
     "en": "Northwest Caliban Gorge",
@@ -20853,7 +20853,7 @@
     "en": "Rolanberry Field",
     "ja": "ロランベリー・フィールド",
     "de": "Rolanbeeren-Feld",
-    "fr": "Champs de Rolanberry"
+    "fr": "Champs de rolanbaies"
   },
   "3477": {
     "en": "The Endeavor",
@@ -21480,100 +21480,100 @@
     "fr": "Vaisseau extraterrestre"
   },
   "3581": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Castrum Marinum Drydocks",
+    "ja": "カステッルム・マリヌム・ドライドック",
+    "de": "Trockendock von Castrum Marinum",
+    "fr": "Cale sèche de Castrum Marinum"
   },
   "3582": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Grimegrot",
+    "ja": "土いじりの虚",
+    "de": "Schoß der Erde",
+    "fr": "Grotte du pétrisseur"
   },
   "3583": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Wandering Well",
+    "ja": "水はこびの虚",
+    "de": "Schoß der Ströme",
+    "fr": "Puits du porteur d'eau"
   },
   "3584": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Flame's Fantasia",
+    "ja": "火あそびの虚",
+    "de": "Schoß der Flammen",
+    "fr": "Caveau du rôtisseur"
   },
   "3585": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Sorcerer's Interstice",
+    "ja": "魔まわしの虚",
+    "de": "Schoß der Hexerei",
+    "fr": "Repaire de la sorcière"
   },
   "3586": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Clayclot Cauldron",
+    "ja": "輝きの採土場",
+    "de": "Lehmgrube",
+    "fr": "Carrière clinquante"
   },
   "3587": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Clearnote Cauldron",
+    "ja": "涼しの採水場",
+    "de": "Stromkreuz",
+    "fr": "Fontaine frisquette"
   },
   "3588": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Kilnfire Cauldron",
+    "ja": "彩りの採熱場",
+    "de": "Glutherz",
+    "fr": "Brasier bariolé"
   },
   "3589": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Woebegone Workshop",
+    "ja": "居留守の工房",
+    "de": "Geht-Weg-Werkstatt",
+    "fr": "Grand four délaissé"
   },
   "3590": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Matoya's Relict",
+    "ja": "マトーヤのアトリエ",
+    "de": "Matoyas Atelier",
+    "fr": "Atelier abandonné de Matoya"
   },
   "3591": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Grimegrot",
+    "ja": "土いじりの虚",
+    "de": "Schoß der Erde",
+    "fr": "Grotte du pétrisseur"
   },
   "3592": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Wandering Well",
+    "ja": "水はこびの虚",
+    "de": "Schoß der Ströme",
+    "fr": "Puits du porteur d'eau"
   },
   "3593": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Flame's Fantasia",
+    "ja": "火あそびの虚",
+    "de": "Schoß der Flammen",
+    "fr": "Caveau du rôtisseur"
   },
   "3594": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Sorcerer's Interstice",
+    "ja": "魔まわしの虚",
+    "de": "Schoß der Hexerei",
+    "fr": "Repaire de la sorcière"
   },
   "3595": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Bygone Gaol",
+    "ja": "ユールモア監獄棟",
+    "de": "Verlies von Eulmore",
+    "fr": "Prison d'Eulmore"
   },
   "3596": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Sphere of Naught",
+    "ja": "暗闇の領域",
+    "de": "Nichtssphäre",
+    "fr": "Sphère de l'absence"
   },
   "3597": {
     "en": "",
@@ -21588,6 +21588,312 @@
     "fr": ""
   },
   "3599": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3600": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3601": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3602": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3603": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3604": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3605": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3606": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3607": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3608": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3609": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3610": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3611": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3612": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3613": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3614": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3615": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3616": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3617": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3618": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3619": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3620": {
+    "en": "Laxan Loft",
+    "ja": "ラクサン城",
+    "de": "Burg Selard",
+    "fr": "Château de Ganlag"
+  },
+  "3621": {
+    "en": "Cieldalaes Margin",
+    "ja": "シェルダレー諸島沖合",
+    "de": "Cieldaläen - Hochsee",
+    "fr": "Large des îles de Cieldalaes"
+  },
+  "3622": {
+    "en": "Cieldalaes Spectral Current",
+    "ja": "シェルダレー諸島沖合：幻海流",
+    "de": "Cieldaläen - Phantomströmung",
+    "fr": "Courant spectral (large des îles de Cieldalaes)"
+  },
+  "3623": {
+    "en": "Open Bloodbrine Sea",
+    "ja": "緋汐海沖合",
+    "de": "Schwerblütiges Meer - Hochsee",
+    "fr": "Large de la mer Pourpre"
+  },
+  "3624": {
+    "en": "Bloodbrine Spectral Current",
+    "ja": "緋汐海沖合：幻海流",
+    "de": "Schwerblütiges Meer - Phantomströmung",
+    "fr": "Courant spectral (large de la mer Pourpre)"
+  },
+  "3625": {
+    "en": "Outer Rothlyt Sound",
+    "ja": "ロズリト湾沖合",
+    "de": "Rothlyt-Meerbusen - Hochsee",
+    "fr": "Large du golfe de Rothlyt"
+  },
+  "3626": {
+    "en": "Rothlyt Spectral Current",
+    "ja": "ロズリト湾沖合：幻海流",
+    "de": "Rothlyt-Meerbusen - Phantomströmung",
+    "fr": "Courant spectral (large du golfe de Rothlyt)"
+  },
+  "3627": {
+    "en": "The Eastern Ruby Sea",
+    "ja": "紅玉海底東",
+    "de": "Östliche Rubinsee",
+    "fr": "Fond de la Mer de Rubis (est)"
+  },
+  "3628": {
+    "en": "Kobayashi Maru's Northern Wake",
+    "ja": "小林丸北",
+    "de": "Kobayashi Maru (Norden)",
+    "fr": "Nord du Kobayashimaru"
+  },
+  "3629": {
+    "en": "The Sunken Junk's South Side",
+    "ja": "沈没川船南",
+    "de": "Versunkene Dschunke (Süden)",
+    "fr": "Sud du bateau coulé"
+  },
+  "3630": {
+    "en": "Azim Khaat Southern Lakebed",
+    "ja": "アジム・カート湖底南",
+    "de": "Azim Khaat (Süden)",
+    "fr": "Fond du lac d'Azim Khaat (sud)"
+  },
+  "3631": {
+    "en": "Loch Seld Deep Lakebed",
+    "ja": "ロッホ・セル湖底深部",
+    "de": "Seldsee (Tiefen)",
+    "fr": "Profondeurs du lac Seld"
+  },
+  "3632": {
+    "en": "Eastern Isle of Ken",
+    "ja": "ケンの島東",
+    "de": "Insel der Erkenntnis (Osten)",
+    "fr": "Est de l'île de Ken"
+  },
+  "3633": {
+    "en": "East Longmirror Lake",
+    "ja": "姿見の湖東",
+    "de": "Großes Spiegelchen (Osten)",
+    "fr": "Est du lac Psyché"
+  },
+  "3634": {
+    "en": "Deep Lake Tusi Mek'ta",
+    "ja": "トゥシ・メキタ湖底深部",
+    "de": "Tusi Mek'ta (Tiefen)",
+    "fr": "Profondeurs du lac Tusi Mek'ta"
+  },
+  "3635": {
+    "en": "The Garden of Nowhere",
+    "ja": "絶望の園",
+    "de": "Nimmerwo-Garten",
+    "fr": "Jardin du désespoir"
+  },
+  "3636": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3637": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3638": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3639": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3640": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3641": {
+    "en": "The Cieldalaes",
+    "ja": "シェルダレー諸島",
+    "de": "Inseln der Cieldaläen",
+    "fr": "Îles de Cieldalaes"
+  },
+  "3642": {
+    "en": "The Bloodbrine Sea",
+    "ja": "緋汐海",
+    "de": "Schwerblütiges Meer",
+    "fr": "Mer Pourpre"
+  },
+  "3643": {
+    "en": "The Rothlyt Sound",
+    "ja": "ロズリト湾",
+    "de": "Rothlyt-Meerbusen",
+    "fr": "Golfe de Rothlyt"
+  },
+  "3644": {
+    "en": "The Shifting Oubliettes of Lyhe Ghiah",
+    "ja": "リェー・ギア・ダンジョン祭殿",
+    "de": "Das Karussell von Lyhe Ghiah",
+    "fr": "Jardin secret du Lyhe Ghiah"
+  },
+  "3645": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3646": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3647": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3648": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3649": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "3650": {
     "en": "",
     "ja": "",
     "de": "",

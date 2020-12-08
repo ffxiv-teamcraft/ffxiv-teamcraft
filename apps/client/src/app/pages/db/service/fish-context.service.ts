@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApolloQueryResult } from 'apollo-client';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
@@ -12,23 +12,29 @@ export interface Occurrence {
   id: number;
   occurrences: number;
 }
+
 export interface Occurrences<T = Occurrence, K extends string | number = number> {
   total: number;
   byId: Record<K, T>;
 }
+
 export type OccurrencesResult<T = Occurrence, K extends string | number = number> = ApolloQueryResult<Occurrences<T, K>>;
+
 export interface WeatherTransitionOccurrence {
   fromId: number;
   toId: number;
   occurrences: number;
 }
+
 export interface DatagridColDef<T = number> {
   colId: T;
 }
+
 export interface DatagridRow<T extends string | number = number> {
   rowId: number;
   valuesByColId: Record<T, number>;
 }
+
 export interface Datagrid<T extends string | number = number> {
   colDefs: Array<DatagridColDef<T>>;
   data: Array<DatagridRow<T>>;
@@ -92,6 +98,8 @@ export class FishContextService {
   private readonly baitIdSub$ = new BehaviorSubject<number | undefined>(undefined);
   /** The bait id that is currently active and being used to filter results by. */
   public readonly baitId$ = this.baitIdSub$.pipe(distinctUntilChanged());
+  /** The fish eyes state that is currently active and being used to filter results by. */
+  public readonly fishEyes$ = new BehaviorSubject<boolean>(false);
 
   /** An observable containing information about the spots of the currently active fish. */
   public readonly spotsByFish$ = this.fishId$.pipe(
@@ -100,25 +108,30 @@ export class FishContextService {
     map(([res, spotData]) => {
       return {
         ...res,
-        data: res.data?.spots.map(({ spot }) => ({ spot, spotData: spotData.find((row) => row.id === spot) })),
+        data: res.data?.spots.map(({ spot }) => ({ spot, spotData: spotData.find((row) => row.id === spot) }))
       };
     }),
     shareReplay(1)
   );
 
   /** An observable containing the number of recorded occurrences at each Eorzean hour. */
-  public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest([this.fishId$, this.spotId$]).pipe(
+  public readonly hoursByFish$: Observable<OccurrencesResult<number>> = combineLatest([this.fishId$, this.spotId$, this.fishEyes$]).pipe(
     filter(([fishId, spotId]) => fishId > 0 || spotId >= 0),
-    switchMap(([fishId, spotId]) => this.data.getHours(fishId, spotId)),
-    map((res) => {
-      const data = res.data?.etimes.reduce(
-        ({ total, byId }, val) => {
-          const next = { ...byId, [val.etime]: byId[val.etime] + val.occurences };
-          return { total: total + val.occurences, byId: next };
-        },
-        { total: 0, byId: this.makeHoursDict() }
+    switchMap(([fishId, spotId, fishEyes]) => {
+      return this.data.getHours(fishId, spotId).pipe(
+        map((res) => {
+          const data = res.data?.etimes
+            .filter(row => fishEyes || !row.fishEyes)
+            .reduce(
+              ({ total, byId }, val) => {
+                const next = { ...byId, [val.etime]: byId[val.etime] + val.occurences };
+                return { total: total + val.occurences, byId: next };
+              },
+              { total: 0, byId: this.makeHoursDict() }
+            );
+          return { ...res, data };
+        })
       );
-      return { ...res, data };
     }),
     shareReplay(1)
   );
@@ -200,9 +213,7 @@ export class FishContextService {
       if (!res.data) return { ...res, data: undefined };
       const totalSnagging = res.data.snagging.reduce((acc, row) => acc + row.occurences, 0);
       const snagging = (100 * res.data.snagging.filter((entry) => entry.snagging === true).reduce((acc, row) => acc + row.occurences, 0)) / totalSnagging;
-      const totalFishEyes = res.data.fishEyes.reduce((acc, row) => acc + row.occurences, 0);
-      const fishEyes = (100 * res.data.fishEyes.filter((entry) => entry.fishEyes === true).reduce((acc, row) => acc + row.occurences, 0)) / totalFishEyes;
-      return { ...res, data: { ...res.data, snagging, fishEyes } };
+      return { ...res, data: { ...res.data, snagging } };
     }),
     shareReplay(1)
   );
@@ -302,8 +313,8 @@ export class FishContextService {
       return [
         {
           name: `${time.getUTCHours().toString().padStart(2, '0')}:00`,
-          value: this.settings.theme.highlight,
-        },
+          value: this.settings.theme.highlight
+        }
       ];
     }),
     shareReplay(1)
@@ -315,7 +326,8 @@ export class FishContextService {
     private readonly etime: EorzeanTimeService,
     private readonly data: FishDataService,
     private readonly lazyData: LazyDataService
-  ) {}
+  ) {
+  }
 
   /** Sets the currently active spot. */
   public setSpotId(spotId?: number) {

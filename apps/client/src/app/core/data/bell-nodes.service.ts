@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LocalizedDataService } from './localized-data.service';
 import { folklores } from './sources/folklores';
-import { fishEyes } from './sources/fish-eyes';
 import { spearFishingNodes } from './sources/spear-fishing-nodes';
 import { GarlandToolsService } from '../api/garland-tools.service';
 import { LazyDataService } from './lazy-data.service';
@@ -191,7 +190,6 @@ export class BellNodesService {
               itemId: spot.id,
               icon: spot.icon,
               timed: spot.during !== undefined,
-              fishEyes: spot.fishEyes || fishEyes[item.obj.i] !== undefined,
               snagging: spot.snagging
             };
             if (spot.during !== undefined) {

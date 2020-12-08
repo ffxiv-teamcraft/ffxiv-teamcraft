@@ -767,7 +767,7 @@
     "de": "Improvisation",
     "ja": "踏鳴",
     "fr": "Équilibre parfait",
-    "icon": "/i/010000/010217.png"
+    "icon": "/i/017000/017564.png"
   },
   "111": {
     "en": "Greased Lightning",
@@ -5292,11 +5292,11 @@
     "icon": "/i/016000/016009.png"
   },
   "757": {
-    "en": "Discerning Eye",
-    "de": "Kennerblick",
-    "ja": "審美眼",
-    "fr": "Œil perspicace",
-    "icon": "/i/011000/011009.png"
+    "en": "Scrutiny",
+    "de": "Prüfender Blick",
+    "ja": "集中検分",
+    "fr": "Inspection rigoureuse",
+    "icon": "/i/016000/016017.png"
   },
   "758": {
     "en": "Utmost Caution",
@@ -11746,18 +11746,18 @@
     "icon": ""
   },
   "1679": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spell-in-Waiting: Return IV",
+    "de": "Verzögerung: Giga-Rückführung",
+    "ja": "ディレイスペル：リタンジャ",
+    "fr": "Sort déphasé: Giga Retour",
+    "icon": "/i/015000/015331.png"
   },
   "1680": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Spell-in-Waiting: Flare",
+    "de": "Verzögerung: Flare",
+    "ja": "ディレイスペル：フレア",
+    "fr": "Sort déphasé: Brasier",
+    "icon": "/i/015000/015970.png"
   },
   "1681": {
     "en": "Paying the Piper",
@@ -11844,25 +11844,25 @@
     "icon": "/i/015000/015869.png"
   },
   "1693": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Slashing Resistance Down",
+    "de": "Hiebresistenz -",
+    "ja": "斬属性耐性低下",
+    "fr": "Résistance au tranchant réduite",
+    "icon": "/i/015000/015786.png"
   },
   "1694": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Piercing Resistance Down",
+    "de": "Stichresistenz -",
+    "ja": "突属性耐性低下",
+    "fr": "Résistance au perforant réduite",
+    "icon": "/i/015000/015065.png"
   },
   "1695": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Apathetic",
+    "de": "Apathie",
+    "ja": "無気力",
+    "fr": "Apathie",
+    "icon": "/i/015000/015843.png"
   },
   "1696": {
     "en": "Drowning",
@@ -12194,10 +12194,10 @@
     "icon": "/i/016000/016657.png"
   },
   "1743": {
-    "en": "Doom",
-    "de": "Verhängnis",
-    "ja": "死の宣告",
-    "fr": "Glas",
+    "en": "Sacrifice",
+    "de": "Aufopferung",
+    "ja": "サクリファイス",
+    "fr": "Sacrifice",
     "icon": "/i/015000/015503.png"
   },
   "1744": {
@@ -12659,7 +12659,7 @@
     "en": "Spell-in-Waiting: Unholy Darkness",
     "de": "Verzögerung: Unheiliges Dunkel",
     "ja": "ディレイスペル：ダークホーリー",
-    "fr": "Sort déphasé: Miracle sombre",
+    "fr": "Sort déphasé: Miracle ténébreux",
     "icon": "/i/015000/015983.png"
   },
   "1810": {
@@ -15414,11 +15414,11 @@
     "icon": ""
   },
   "2203": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Mortal Powder Mark",
+    "de": "Brandmal der Sterblichen",
+    "ja": "大爆印",
+    "fr": "Marque de conflagration",
+    "icon": "/i/015000/015303.png"
   },
   "2204": {
     "en": "",
@@ -16121,11 +16121,11 @@
     "icon": "/i/015000/015270.png"
   },
   "2304": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Floating Fetters",
+    "de": "Schwebende Fesseln",
+    "ja": "浮遊拘束",
+    "fr": "Entraves flottantes",
+    "icon": "/i/015000/015301.png"
   },
   "2305": {
     "en": "Zombification",
@@ -16495,7 +16495,7 @@
     "en": "Fully Analyzed",
     "de": "Vollständige Analyse",
     "ja": "全解析",
-    "fr": "Décontruction totale",
+    "fr": "Déconstruction totale",
     "icon": "/i/015000/015254.png"
   },
   "2358": {
@@ -16688,25 +16688,25 @@
     "icon": "/i/015000/015777.png"
   },
   "2385": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Hypercharged Condensation",
+    "de": "Elektrisierte Kondensation",
+    "ja": "波動雲吸引",
+    "fr": "Aspiration particulaire",
+    "icon": "/i/015000/015283.png"
   },
   "2386": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Stygian Tendrils",
+    "de": "Stygische Ranke",
+    "ja": "闇の茨",
+    "fr": "Ronce ténébreuse",
+    "icon": "/i/015000/015601.png"
   },
   "2387": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Curse of Darkness",
+    "de": "Partikelfluch",
+    "ja": "波動の呪詛",
+    "fr": "Malédiction particulaire",
+    "icon": "/i/015000/015284.png"
   },
   "2388": {
     "en": "Nausea",
@@ -16919,20 +16919,1280 @@
     "icon": ""
   },
   "2418": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": "",
-    "icon": ""
+    "en": "Collector's Standard",
+    "de": "Akribie",
+    "ja": "活眼",
+    "fr": "Œil vif",
+    "icon": "/i/016000/016018.png"
   },
   "2419": {
+    "en": "Servant of Shadow",
+    "de": "Diener des Schattens",
+    "ja": "影の従僕",
+    "fr": "Serviteur de l'Ombre",
+    "icon": "/i/015000/015325.png"
+  },
+  "2420": {
+    "en": "Servant of Shadow",
+    "de": "Diener des Schattens",
+    "ja": "影の従僕",
+    "fr": "Serviteur de l'Ombre",
+    "icon": "/i/015000/015325.png"
+  },
+  "2421": {
+    "en": "Servant of Shadow",
+    "de": "Diener des Schattens",
+    "ja": "影の従僕",
+    "fr": "Serviteur de l'Ombre",
+    "icon": "/i/015000/015325.png"
+  },
+  "2422": {
+    "en": "Servant of Shadow",
+    "de": "Diener des Schattens",
+    "ja": "影の従僕",
+    "fr": "Serviteur de l'Ombre",
+    "icon": "/i/015000/015325.png"
+  },
+  "2423": {
+    "en": "Shadowed",
+    "de": "Beschattet",
+    "ja": "影の身代わり",
+    "fr": "Double sombre",
+    "icon": "/i/015000/015326.png"
+  },
+  "2424": {
+    "en": "Shackled Apart",
+    "de": "Kettenbruch",
+    "ja": "離別の鎖",
+    "fr": "Chaînes de rupture",
+    "icon": "/i/015000/015327.png"
+  },
+  "2425": {
+    "en": "Shackled Together",
+    "de": "Schattenfesseln",
+    "ja": "束縛の鎖",
+    "fr": "Chaînes d'union",
+    "icon": "/i/015000/015328.png"
+  },
+  "2426": {
     "en": "",
     "de": "",
     "ja": "",
     "fr": "",
     "icon": ""
   },
-  "2420": {
+  "2427": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2428": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2429": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2430": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2431": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2432": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2433": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2434": {
+    "en": "勝負師の薬",
+    "de": "Trank des Gauklers",
+    "ja": "勝負師の薬",
+    "fr": "勝負師の薬",
+    "icon": "/i/016000/016611.png"
+  },
+  "2435": {
+    "en": "賢者の薬",
+    "de": "Trank des Weisen",
+    "ja": "賢者の薬",
+    "fr": "賢者の薬",
+    "icon": "/i/016000/016612.png"
+  },
+  "2436": {
+    "en": "剣豪の薬",
+    "de": "Trank des Fechtmeisters",
+    "ja": "剣豪の薬",
+    "fr": "剣豪の薬",
+    "icon": "/i/016000/016613.png"
+  },
+  "2437": {
+    "en": "弓聖の薬",
+    "de": "Trank des Bogengeweihten",
+    "ja": "弓聖の薬",
+    "fr": "弓聖の薬",
+    "icon": "/i/016000/016614.png"
+  },
+  "2438": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2439": {
+    "en": "聖人の薬",
+    "de": "Trank der Göttin",
+    "ja": "聖人の薬",
+    "fr": "聖人の薬",
+    "icon": "/i/016000/016616.png"
+  },
+  "2440": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2441": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2442": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2443": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2444": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2445": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2446": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2447": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2448": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2449": {
+    "en": "蘇生制限",
+    "de": "蘇生制限",
+    "ja": "蘇生制限",
+    "fr": "蘇生制限",
+    "icon": "/i/015000/015959.png"
+  },
+  "2450": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2451": {
+    "en": "Powder Mark",
+    "de": "Brandmal",
+    "ja": "爆印",
+    "fr": "Marque explosive",
+    "icon": "/i/015000/015302.png"
+  },
+  "2452": {
+    "en": "Return",
+    "de": "Rückführung",
+    "ja": "リターン",
+    "fr": "Retour",
+    "icon": "/i/015000/015304.png"
+  },
+  "2453": {
+    "en": "Return IV",
+    "de": "Giga-Rückführung",
+    "ja": "リタンジャ",
+    "fr": "Giga Retour",
+    "icon": "/i/015000/015314.png"
+  },
+  "2454": {
+    "en": "Spell-in-Waiting: Unholy Darkness",
+    "de": "Verzögerung: Unheiliges Dunkel",
+    "ja": "ディレイスペル：ダークホーリー",
+    "fr": "Sort déphasé: Miracle ténébreux",
+    "icon": "/i/015000/015983.png"
+  },
+  "2455": {
+    "en": "Spell-in-Waiting: Dark Fire III",
+    "de": "Verzögerung: Dunkel-Feuga",
+    "ja": "ディレイスペル：ダークファイガ",
+    "fr": "Sort déphasé: Méga Feu ténébreux",
+    "icon": "/i/015000/015984.png"
+  },
+  "2456": {
+    "en": "Spell-in-Waiting: Shadoweye",
+    "de": "Verzögerung: Schattenauge",
+    "ja": "ディレイスペル：シャドウアイ",
+    "fr": "Sort déphasé: Œil de l'ombre",
+    "icon": "/i/015000/015986.png"
+  },
+  "2457": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2458": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2459": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2460": {
+    "en": "Spell-in-Waiting: Dark Eruption",
+    "de": "Verzögerung: Dunkle Eruption",
+    "ja": "ディレイスペル：ダークエラプション",
+    "fr": "Sort déphasé: Éruption ténébreuse",
+    "icon": "/i/015000/015305.png"
+  },
+  "2461": {
+    "en": "Spell-in-Waiting: Dark Water III",
+    "de": "Verzögerung: Dunkel-Aquaga",
+    "ja": "ディレイスペル：ダークウォタガ",
+    "fr": "Sort déphasé: Méga Eau ténébreuse",
+    "icon": "/i/015000/015306.png"
+  },
+  "2462": {
+    "en": "Spell-in-Waiting: Dark Blizzard III",
+    "de": "Verzögerung: Dunkel-Eisga",
+    "ja": "ディレイスペル：ダークブリザガ",
+    "fr": "Sort déphasé: Méga Glace ténébreuse",
+    "icon": "/i/015000/015307.png"
+  },
+  "2463": {
+    "en": "Spell-in-Waiting: Dark Aero III",
+    "de": "Verzögerung: Dunkel-Windga",
+    "ja": "ディレイスペル：ダークエアロガ",
+    "fr": "Sort déphasé: Méga Vent ténébreux",
+    "icon": "/i/015000/015308.png"
+  },
+  "2464": {
+    "en": "Spell-in-Waiting: Return",
+    "de": "Verzögerung: Rückgabe",
+    "ja": "ディレイスペル：リターン",
+    "fr": "Sort déphasé: Retour",
+    "icon": "/i/015000/015313.png"
+  },
+  "2465": {
+    "en": "Ice Resistance Down II",
+    "de": "Eisresistenz - (stark)",
+    "ja": "氷属性耐性低下［強］",
+    "fr": "Résistance à la glace réduite+",
+    "icon": "/i/015000/015596.png"
+  },
+  "2466": {
+    "en": "Stock Holder",
+    "de": "Bevorrater",
+    "ja": "ストック",
+    "fr": "Stock",
+    "icon": "/i/017000/017038.png"
+  },
+  "2467": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2468": {
+    "en": "Junction Shiva",
+    "de": "Verbindung: Shiva",
+    "ja": "ジャンクション：シヴァ",
+    "fr": "Association: Shiva",
+    "icon": "/i/015000/015310.png"
+  },
+  "2469": {
+    "en": "Junction Titan",
+    "de": "Verbindung: Titan",
+    "ja": "ジャンクション：タイタン",
+    "fr": "Association: Titan",
+    "icon": "/i/015000/015311.png"
+  },
+  "2470": {
+    "en": "Junction Loghrif",
+    "de": "Verbindung: Loghrif",
+    "ja": "ジャンクション：アログリフ",
+    "fr": "Association: Loghrif",
+    "icon": "/i/015000/015312.png"
+  },
+  "2471": {
+    "en": "Head in the Clouds",
+    "de": "Über den Wolken",
+    "ja": "雲上",
+    "fr": "Ennuagé",
+    "icon": "/i/015000/015329.png"
+  },
+  "2472": {
+    "en": "Head in the Clouds",
+    "de": "Über den Wolken",
+    "ja": "雲上",
+    "fr": "Ennuagé",
+    "icon": "/i/015000/015330.png"
+  },
+  "2473": {
+    "en": "Aetherial Depletion",
+    "de": "Ätherschwund",
+    "ja": "エーテル減少",
+    "fr": "Réduction d'éther",
+    "icon": "/i/019000/019841.png"
+  },
+  "2474": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2475": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2476": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2477": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2478": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2479": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2480": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2481": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2482": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2483": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2484": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2485": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2486": {
+    "en": "Sucked In",
+    "de": "Eingesaugt",
+    "ja": "吸引",
+    "fr": "Aspiré",
+    "icon": "/i/015000/015285.png"
+  },
+  "2487": {
+    "en": "Mortal Powder Mark",
+    "de": "Brandmal der Sterblichen",
+    "ja": "大爆印",
+    "fr": "Marque de conflagration",
+    "icon": "/i/015000/015303.png"
+  },
+  "2488": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2489": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2490": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2491": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2492": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2493": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2494": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2495": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2496": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2497": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2498": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2499": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2500": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2501": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2502": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2503": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2504": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2505": {
+    "en": "Herbsona",
+    "de": "Grasgrummel",
+    "ja": "草人化",
+    "fr": "Enfeuillement",
+    "icon": "/i/015000/015890.png"
+  },
+  "2506": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2507": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2508": {
+    "en": "Slashing Resistance Down",
+    "de": "Hiebresistenz -",
+    "ja": "斬属性耐性低下",
+    "fr": "Résistance au tranchant réduite",
+    "icon": "/i/017000/017681.png"
+  },
+  "2509": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2510": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2511": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2512": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2513": {
+    "en": "Formless Fist",
+    "de": "Freie Form",
+    "ja": "零の型",
+    "fr": "Poing informe",
+    "icon": "/i/012000/012535.png"
+  },
+  "2514": {
+    "en": "Six-sided Star",
+    "de": "Sechsstern-Tritt",
+    "ja": "六合星導脚",
+    "fr": "Étoile à six branches",
+    "icon": "/i/012000/012536.png"
+  },
+  "2515": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2516": {
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/015000/015503.png"
+  },
+  "2517": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2518": {
+    "en": "Bind",
+    "de": "Fessel",
+    "ja": "バインド",
+    "fr": "Entrave",
+    "icon": "/i/015000/015003.png"
+  },
+  "2519": {
+    "en": "Doom",
+    "de": "Verhängnis",
+    "ja": "死の宣告",
+    "fr": "Glas",
+    "icon": "/i/015000/015503.png"
+  },
+  "2520": {
+    "en": "Infirmity",
+    "de": "Gebrechlichkeit",
+    "ja": "虚弱",
+    "fr": "Infirmité",
+    "icon": "/i/015000/015531.png"
+  },
+  "2521": {
+    "en": "HP Penalty",
+    "de": "LP-Malus",
+    "ja": "最大ＨＰダウン",
+    "fr": "PV maximums réduits",
+    "icon": "/i/015000/015076.png"
+  },
+  "2522": {
+    "en": "Damage Down",
+    "de": "Schaden -",
+    "ja": "ダメージ低下",
+    "fr": "Malus de dégâts",
+    "icon": "/i/015000/015520.png"
+  },
+  "2523": {
+    "en": "Restricted Access",
+    "de": "Eingeschränktes Handeln",
+    "ja": "行動制限",
+    "fr": "Commandes restreintes",
+    "icon": "/i/016000/016237.png"
+  },
+  "2524": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2525": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2526": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2527": {
+    "en": "Mortal Powder Mark",
+    "de": "Brandmal der Sterblichen",
+    "ja": "大爆印",
+    "fr": "Marque de conflagration",
+    "icon": "/i/015000/015303.png"
+  },
+  "2528": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2529": {
+    "en": "Sucked In",
+    "de": "Eingesaugt",
+    "ja": "吸引",
+    "fr": "Aspiré",
+    "icon": "/i/015000/015285.png"
+  },
+  "2530": {
+    "en": "Thrice-come Ruin",
+    "de": "Zeichen des Untergangs III",
+    "ja": "破滅の刻印：参",
+    "fr": "Marque de ruine III",
+    "icon": "/i/019000/019861.png"
+  },
+  "2531": {
+    "en": "Spell-in-Waiting: Quietus",
+    "de": "Verzögerung: Quietus",
+    "ja": "ディレイスペル：クワイタス",
+    "fr": "Sort déphasé: Quietus",
+    "icon": "/i/015000/015341.png"
+  },
+  "2532": {
+    "en": "Cloying Condensation",
+    "de": "Dunkler Atem",
+    "ja": "暗闇の魔風",
+    "fr": "Souffle ténébreux",
+    "icon": "/i/015000/015342.png"
+  },
+  "2533": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2534": {
+    "en": "Twice-come Ruin",
+    "de": "Zeichen des Untergangs II",
+    "ja": "破滅の刻印：弐",
+    "fr": "Marque de ruine II",
+    "icon": "/i/019000/019861.png"
+  },
+  "2535": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2536": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2537": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2538": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2539": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2540": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2541": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2542": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2543": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2544": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2545": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2546": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2547": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2548": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2549": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2550": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2551": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2552": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2553": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2554": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2555": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2556": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2557": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2558": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2559": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2560": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2561": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2562": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2563": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2564": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2565": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2566": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2567": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2568": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2569": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2570": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2571": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2572": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2573": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2574": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2575": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2576": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2577": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2578": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2579": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2580": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2581": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2582": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2583": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2584": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2585": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2586": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2587": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2588": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2589": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2590": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2591": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2592": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2593": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2594": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2595": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2596": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2597": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2598": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2599": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": "",
+    "icon": ""
+  },
+  "2600": {
     "en": "",
     "de": "",
     "ja": "",

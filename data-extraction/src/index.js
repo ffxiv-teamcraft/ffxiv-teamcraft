@@ -480,6 +480,21 @@ if (hasTodo('gatheringLog')) {
 
 }
 
+if (hasTodo('fishParameter')) {
+  const bigFishes = {};
+
+  getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden,Item').subscribe(res => {
+    res.Results.forEach(fish => {
+      if (fish.IsHidden) {
+        bigFishes[fish.Item] = 1;
+      }
+    });
+  }, null, () => {
+    persistToJsonAsset('big-fishes', bigFishes);
+    done('fishParameter');
+  });
+}
+
 if (hasTodo('fishingLog')) {
 
   const diademTerritory = require('./input/diadem-territory.json');
@@ -544,7 +559,7 @@ if (hasTodo('fishingLog')) {
               fr: fish.FishingRecordType.Addon.Text_fr
             };
           }
-          fishParameter[fish.Item.ID] = entry;
+          fishParameter[fish.Item] = entry;
         });
       return fishParameter;
     })
@@ -1661,11 +1676,11 @@ if (hasTodo('recipes')) {
         };
       }
       for (let partIndex = 0; partIndex < 8; partIndex++) {
-        if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`] === 0) {
+        if (!companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`]) {
           continue;
         }
         for (let processIndex = 0; processIndex < 3; processIndex++) {
-          if (companyCraftSequence[`CompanyCraftPart${partIndex}TargetID`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
+          if (companyCraftSequence[`CompanyCraftPart${partIndex}`][`CompanyCraftProcess${processIndex}TargetID`] === 0) {
             continue;
           }
           for (let i = 0; i < 12; i++) {
@@ -1925,6 +1940,36 @@ if (hasTodo('territories')) {
 }
 
 if (hasTodo('collectables')) {
+  const currencies = {
+    '1': 10309,
+    '2': 17833,
+    '3': 10311,
+    '4': 17834,
+    '5': 10307,
+    '6': 25199,
+    '7': 25200,
+    '8': 21072,
+    '9': 21073,
+    '10': 21074,
+    '11': 21075,
+    '12': 21076,
+    '13': 21077,
+    '14': 21078,
+    '15': 21079,
+    '16': 21080,
+    '17': 21081,
+    '18': 21172,
+    '19': 21173,
+    '20': 21935,
+    '21': 22525,
+    '22': 26533,
+    '23': 26807,
+    '24': 28063,
+    '25': 28186,
+    '26': 28187,
+    '27': 28188,
+    '28': 30341
+  };
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
@@ -1970,7 +2015,7 @@ if (hasTodo('collectables')) {
             levelMax: collectable.LevelMax,
             group: collectable.CollectablesShopItemGroupTargetID,
             shopId: +collectable.ID.split('.')[0],
-            reward: collectable.CollectablesShopRewardScrip.Currency.ItemTargetID,
+            reward: currencies[collectable.CollectablesShopRewardScrip.CurrencyTargetID],
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
               exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,

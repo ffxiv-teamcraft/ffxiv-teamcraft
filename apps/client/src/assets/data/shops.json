@@ -2821,39 +2821,39 @@
   },
   "1770019": {
     "en": "Eulmoran Certificates of Import (Weapons)",
-    "ja": "ユールモアの手形との交換（武器）",
-    "de": "Eulmore-Marken (Waffen)",
-    "fr": "Avoirs d'Eulmore (armes)"
+    "ja": "ユールモアの手形G1との交換（武器）",
+    "de": "Eulmore-Marken I (Waffen)",
+    "fr": "Avoirs d'Eulmore I (armes)"
   },
   "1770020": {
     "en": "Eulmoran Certificates of Import (Gear)",
-    "ja": "ユールモアの手形との交換（防具）",
-    "de": "Eulmore-Marken (Rüstung)",
-    "fr": "Avoirs d'Eulmore (pièces d'armure)"
+    "ja": "ユールモアの手形G1との交換（防具）",
+    "de": "Eulmore-Marken I (Rüstung)",
+    "fr": "Avoirs d'Eulmore I (pièces d'armure)"
   },
   "1770021": {
     "en": "Eulmoran Certificates of Import (Accessories)",
-    "ja": "ユールモアの手形との交換（アクセサリー）",
-    "de": "Eulmore-Marken (Accessoires)",
-    "fr": "Avoirs d'Eulmore (accessoires)"
+    "ja": "ユールモアの手形G1との交換（アクセサリー）",
+    "de": "Eulmore-Marken I (Accessoires)",
+    "fr": "Avoirs d'Eulmore I (accessoires)"
   },
   "1770022": {
     "en": "Eulmoran Certificates of Import (Weapons)",
-    "ja": "ユールモアの手形との交換（武器）",
-    "de": "Eulmore-Marken (Waffen)",
-    "fr": "Avoirs d'Eulmore (armes)"
+    "ja": "ユールモアの手形G1との交換（武器）",
+    "de": "Eulmore-Marken I (Waffen)",
+    "fr": "Avoirs d'Eulmore I (armes)"
   },
   "1770023": {
     "en": "Eulmoran Certificates of Import (Gear)",
-    "ja": "ユールモアの手形との交換（防具）",
-    "de": "Eulmore-Marken (Rüstung)",
-    "fr": "Avoirs d'Eulmore (pièces d'armure)"
+    "ja": "ユールモアの手形G1との交換（防具）",
+    "de": "Eulmore-Marken I (Rüstung)",
+    "fr": "Avoirs d'Eulmore I (pièces d'armure)"
   },
   "1770024": {
     "en": "Eulmoran Certificates of Import (Accessories)",
-    "ja": "ユールモアの手形との交換（アクセサリー）",
-    "de": "Eulmore-Marken (Accessoires)",
-    "fr": "Avoirs d'Eulmore (accessoires)"
+    "ja": "ユールモアの手形G1との交換（アクセサリー）",
+    "de": "Eulmore-Marken I (Accessoires)",
+    "fr": "Avoirs d'Eulmore I (accessoires)"
   },
   "1770025": {
     "en": "Augmented Facet Equipment (Weapons)",
@@ -3877,8 +3877,8 @@
   },
   "1770195": {
     "en": "Folklore Items",
-    "ja": "伝承禄",
-    "de": "Almanachen",
+    "ja": "伝承録",
+    "de": "Almanache",
     "fr": "Recettes expertes"
   },
   "1770196": {
@@ -4339,19 +4339,19 @@
   },
   "1770272": {
     "en": "Fieldcraft King Tools (IL 330)",
-    "ja": "【ILv330】キング装備道具",
+    "ja": "【ILv330】キング装備（道具）",
     "de": "[G.-St. 330] Königs-Werkzeuge",
     "fr": "[NvObj 330] Équipement royal (outils)"
   },
   "1770273": {
     "en": "Fieldcraft King Gear (IL 330)",
-    "ja": "【ILv330】キング装備防具",
+    "ja": "【ILv330】キング装備（防具）",
     "de": "[G.-St. 330] Königs-Rüstungen",
     "fr": "[NvObj 330] Équipement royal (armure)"
   },
   "1770274": {
     "en": "Landking Gear (IL 330-350)",
-    "ja": "【ILv330～350】キングランド装備防具",
+    "ja": "【ILv330～350】キングランド装備",
     "de": "[G.-St. 330-350] Sammlerkönig-Ausrüstung",
     "fr": "[NvObj 330-350] Équipement royal"
   },
@@ -4369,8 +4369,8 @@
   },
   "1770277": {
     "en": "Folklore Items",
-    "ja": "伝承禄",
-    "de": "Almanachen",
+    "ja": "伝承録",
+    "de": "Almanache",
     "fr": "Recettes expertes"
   },
   "1770278": {
@@ -4552,5 +4552,155 @@
     "ja": "【ILv400】スカエウァ装備の強化（ソーサラー）",
     "de": "[G.-St. 400] Verstärkung von Scaeva-Ausrüstung (Magier)",
     "fr": "[NvObj 400] Amélioration d'équipements Scaeva (magie)"
+  },
+  "1770308": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770309": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770310": {
+    "en": "White Crafters' Scrip Exchange (Lv. 80 Gear) III",
+    "ja": "クラフタースクリップ:白貨の取引（Lv80向け・装備その3）",
+    "de": "Weiße Handwerkerscheine (ab St. 80, Ausrüstung III)",
+    "fr": "Assignats blancs d'artisan III (équipements/Nv 80)"
+  },
+  "1770311": {
+    "en": "White Gatherers' Scrip Exchange (Lv. 80 Gear) III",
+    "ja": "ギャザラースクリップ:白貨の取引（Lv80向け・装備その3）",
+    "de": "Weiße Sammlerscheine (ab St. 80, Ausrüstung III)",
+    "fr": "Assignats blancs de récolteur III (équipements/Nv 80)"
+  },
+  "1770312": {
+    "en": "Bombastic Bric-a-brac",
+    "ja": "アイテムの取引",
+    "de": "Gegenstände",
+    "fr": "Objets"
+  },
+  "1770313": {
+    "en": "Totem Gear (The Emerald Weapon)",
+    "ja": "報酬装備の取引（エメラルドウェポン）",
+    "de": "Smaragd-Ausrüstung",
+    "fr": "Équipements totémiques (Arme Émeraude)"
+  },
+  "1770314": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770315": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770316": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "1770317": {
+    "en": "Deepshadow Gear Exchange (DoW)",
+    "ja": "「ディープシャドウ装備」の取引（ファイター）",
+    "de": "Dunkelschatten-Ausrüstung (Krieger)",
+    "fr": "Échange d'équipements de la Pleine-ombre (guerre)"
+  },
+  "1770318": {
+    "en": "Deepshadow Gear Exchange (DoM)",
+    "ja": "「ディープシャドウ装備」の取引（ソーサラー）",
+    "de": "Dunkelschatten-Ausrüstung (Magier)",
+    "fr": "Échange d'équipements de la Pleine-ombre (magie)"
+  },
+  "1770319": {
+    "en": "Allagan Tomestones of Revelation (DoW)",
+    "ja": "アラガントームストーン:黙示の取引（ファイター）",
+    "de": "Allagische Steine der Offenbarung (Krieger)",
+    "fr": "Mémoquartz allagois révélateurs (guerre)"
+  },
+  "1770320": {
+    "en": "Allagan Tomestones of Revelation (DoM)",
+    "ja": "アラガントームストーン:黙示の取引（ソーサラー）",
+    "de": "Allagische Steine der Offenbarung (Magier)",
+    "fr": "Mémoquartz allagois révélateurs (magie)"
+  },
+  "1770321": {
+    "en": "Allagan Tomestones of Revelation (Other)",
+    "ja": "アラガントームストーン:黙示の取引（その他）",
+    "de": "Allagische Steine der Offenbarung (Anderes)",
+    "fr": "Mémoquartz allagois révélateurs (divers)"
+  },
+  "1770322": {
+    "en": "Cryptlurker Gear Exchange",
+    "ja": "「クリプトラーカー装備」の交換",
+    "de": "Gruftschleicher-Ausrüstung",
+    "fr": "Échange d'équipements de rôdeur des cryptes"
+  },
+  "1770323": {
+    "en": "Cryptlurker Gear Augmentation (DoW) I",
+    "ja": "「クリプトラーカー装備」の強化（ファイターその1）",
+    "de": "Verstärkung von Gruftschleicher-Ausrüstung (Krieger I)",
+    "fr": "Amélioration d'équipements de rôdeur des cryptes (guerre 1)"
+  },
+  "1770324": {
+    "en": "Cryptlurker Gear Augmentation (DoW) II",
+    "ja": "「クリプトラーカー装備」の強化（ファイターその2）",
+    "de": "Verstärkung von Gruftschleicher-Ausrüstung (Krieger II)",
+    "fr": "Amélioration d'équipements de rôdeur des cryptes (guerre 2)"
+  },
+  "1770325": {
+    "en": "Cryptlurker Gear Augmentation (DoM)",
+    "ja": "「クリプトラーカー装備」の強化（ソーサラー）",
+    "de": "Verstärkung von Gruftschleicher-Ausrüstung (Magier)",
+    "fr": "Amélioration d'équipements de rôdeur des cryptes (magie)"
+  },
+  "1770326": {
+    "en": "Eden's Promise Antique Exchange (DoW) I",
+    "ja": "古びた装備【再】の取引（ファイターその1）",
+    "de": "Edenmaß-Ausrüstung (Krieger I)",
+    "fr": "Équipements antiques de la Promesse (guerre 1)"
+  },
+  "1770327": {
+    "en": "Eden's Promise Antique Exchange (DoW) II",
+    "ja": "古びた装備【再】の取引（ファイターその2）",
+    "de": "Edenmaß-Ausrüstung (Krieger II)",
+    "fr": "Équipements antiques de la Promesse (guerre 2)"
+  },
+  "1770328": {
+    "en": "Eden's Promise Antique Exchange (DoM)",
+    "ja": "古びた装備【再】の取引（ソーサラー）",
+    "de": "Edenmaß-Ausrüstung (Magier)",
+    "fr": "Équipements antiques de la Promesse (magie)"
+  },
+  "1770329": {
+    "en": "Eden's Promise Apocrypha Exchange (DoW) I",
+    "ja": "再生の断章の取引（ファイターその1）",
+    "de": "Edenmorgen-Ausrüstung (Krieger I)",
+    "fr": "Codex de la Promesse (guerre 1)"
+  },
+  "1770330": {
+    "en": "Eden's Promise Apocrypha Exchange (DoW) II",
+    "ja": "再生の断章の取引（ファイターその2）",
+    "de": "Edenmorgen-Ausrüstung (Krieger II)",
+    "fr": "Codex de la Promesse (guerre 2)"
+  },
+  "1770331": {
+    "en": "Eden's Promise Apocrypha Exchange (DoM)",
+    "ja": "再生の断章の取引（ソーサラー）",
+    "de": "Edenmorgen-Ausrüstung (Magier)",
+    "fr": "Codex de la Promesse (magie)"
+  },
+  "1770332": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
   }
 }

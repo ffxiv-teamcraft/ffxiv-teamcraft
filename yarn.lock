@@ -387,10 +387,10 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/fire@^6.1.2":
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-6.1.2.tgz#448caeec67a856280768bf4d5e964f49aa8a41f4"
-  integrity sha512-yGF9th73k9RLlgiUuy63Mldj5Jfhq/OykjIkCkks02oHToXVCCF7f0wMq24WvOQV8C69afUoCDE34DEuNmbvyQ==
+"@angular/fire@^6.1.4":
+  version "6.1.4"
+  resolved "https://registry.yarnpkg.com/@angular/fire/-/fire-6.1.4.tgz#d3923a68336d7177abbb2676731d0aef566b9739"
+  integrity sha512-5u305XnBC041JMrAtczLa0bdprxw7RkXy4kgcRCisPI8maGuiN4XzlwNYX+plCHZCo4R0motxQom//tPTA2edQ==
   dependencies:
     tslib "^2.0.0"
 
@@ -2200,10 +2200,17 @@
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/crafting-solver/-/crafting-solver-1.3.2.tgz#92a9ff1793e9cd3e91d1c49e1f5f2e49400920d4"
   integrity sha512-egehDjSiMPzwNQ5Zf8ZjcuVnUw4LnknFYLSTrPMmvhlmwR7rBOVfSb+pR2xTzd9cTFrIHRlNVzGVb08yKaqn4A==
 
-"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator@^2.7.1":
+"@ffxiv-teamcraft/simulator-cn@npm:@ffxiv-teamcraft/simulator@2.7.1", "@ffxiv-teamcraft/simulator-kr@npm:@ffxiv-teamcraft/simulator@2.7.1":
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.7.1.tgz#320c0dd8fce3abafd0abb5384504e0fdbecd31ee"
   integrity sha512-lOUAhHLAmNnYkTTLN57MKuBL0PwewIIEMRAB291VP2xigpfFg6XWMx6kykPb6KAux2z0h0Ho/hc2nbQo65iXiQ==
+  dependencies:
+    "@kaiu/serializer" "^1.4.0"
+
+"@ffxiv-teamcraft/simulator@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.8.0.tgz#09373ca9e6e9a5370e36d317fe67df5a993fd89e"
+  integrity sha512-SjPHuFq3GZ4wnPjCx94egGb7zTjZDOrpAPTnnLQZQ2oaMwgklUbpBApmaQLD20gK+JHDiX8ImOcmzIjnAP8lKA==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 

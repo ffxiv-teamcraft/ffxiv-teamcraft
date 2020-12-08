@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { map, startWith } from 'rxjs/operators';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { map } from 'rxjs/operators';
 import { FishContextService } from '../../service/fish-context.service';
 import { SettingsService } from 'apps/client/src/app/modules/settings/settings.service';
 
@@ -7,7 +7,7 @@ import { SettingsService } from 'apps/client/src/app/modules/settings/settings.s
   selector: 'app-fish-hours',
   templateUrl: './fish-hours.component.html',
   styleUrls: ['./fish-hours.component.less', '../../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishHoursComponent {
   public readonly loading$ = this.fishCtx.hoursByFish$.pipe(map((res) => res.loading));
@@ -19,5 +19,8 @@ export class FishHoursComponent {
     })
   );
 
-  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {}
+  public readonly fishEyes$ = this.fishCtx.fishEyes$;
+
+  constructor(public readonly settings: SettingsService, public readonly fishCtx: FishContextService) {
+  }
 }

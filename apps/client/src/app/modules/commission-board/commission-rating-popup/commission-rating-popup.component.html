@@ -6,11 +6,11 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label nzFor="comment">{{'COMMISSIONS.CREATION.Comment' | translate}}</nz-form-label>
+    <nz-form-label nzFor="comment">{{'COMMISSIONS.DETAILS.Comment' | translate}}</nz-form-label>
     <nz-form-control nzValidateStatus="validating" [nzValidatingTip]="commentTip">
       <textarea nz-input formControlName="comment" rows="4" id="comment"
                 #area
-                [placeholder]="'COMMISSIONS.CREATION.Comment_placeholder' | translate">
+                [placeholder]="'COMMISSIONS.DETAILS.Comment_placeholder' | translate">
       </textarea>
       <ng-template #commentTip>
         <span [style.color]="area.value.length > 240 ? '#f5222d':'inherit'">{{area.value.length}}/240</span>

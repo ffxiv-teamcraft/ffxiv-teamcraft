@@ -5788,7 +5788,7 @@
   },
   "66179": {
     "name": {
-      "en": "Amethysts Are Forever ",
+      "en": "Amethysts Are Forever",
       "ja": "誠実さは身を助ける",
       "de": "Gildenrivalen",
       "fr": "Les gemmes de la détermination"
@@ -13528,7 +13528,7 @@
   },
   "67039": {
     "name": {
-      "en": " Hells-vent on the Heavens ",
+      "en": " Hells-vent on the Heavens",
       "ja": " アタマ獲ったれ",
       "de": " Dullahan-Stahl",
       "fr": " Extra ventilation"
@@ -15517,7 +15517,7 @@
   },
   "67260": {
     "name": {
-      "en": "Trials of the Padjals ",
+      "en": "Trials of the Padjals",
       "ja": "角尊は惑う",
       "de": "Enttäuschte Hoffnung",
       "fr": "Le dilemme des Padjals"
@@ -20737,7 +20737,7 @@
   },
   "67840": {
     "name": {
-      "en": " Back to the Drawing Board ",
+      "en": " Back to the Drawing Board",
       "ja": " 復元目指して",
       "de": " Erst die Arbeit, dann die Kupo-Nüsse",
       "fr": " Restauration mogderniste"
@@ -30673,7 +30673,7 @@
   },
   "68944": {
     "name": {
-      "en": " Scents of Security ",
+      "en": " Scents of Security",
       "ja": " 芳醇な香りを振りまいて",
       "de": " Gefangen vom Duft",
       "fr": " Spécialité nu mou"
@@ -33643,12 +33643,12 @@
   },
   "69274": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Steering Clear of Trouble",
+      "ja": "ウシと暴れ餅と降神祭",
+      "de": "Muh und muckendes Mochi",
+      "fr": "Prendre le mochi par les cornes"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080124.png"
   },
   "69275": {
     "name": {
@@ -33760,12 +33760,12 @@
   },
   "69287": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bully for Mochi",
+      "ja": "ウシと餅配りと降神祭",
+      "de": "Muh und Mochi mampfen",
+      "fr": "Des mochi à l'effet bœuf"
     },
-    "icon": "/i/071000/071221.png"
+    "icon": "/i/080000/080124.png"
   },
   "69288": {
     "name": {
@@ -35776,64 +35776,64 @@
   },
   "69511": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Empty Promise",
+      "ja": "この闘いが終わったら",
+      "de": "Leeres Versprechen",
+      "fr": "Quand nous en aurons fini"
     },
     "icon": "/i/071000/071221.png"
   },
   "69512": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fear of the Dark",
+      "ja": "暗闇、再誕",
+      "de": "Angst vor der Dunkelheit",
+      "fr": "Nuage à l'horizon"
     },
     "icon": "/i/071000/071221.png"
   },
   "69513": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Shadows of the Past",
+      "ja": "いにしえの記憶",
+      "de": "Flüchtige Vergangenheit",
+      "fr": "Une ombre du passé"
     },
     "icon": "/i/071000/071221.png"
   },
   "69514": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Voice of the Soul",
+      "ja": "騎士の誓い",
+      "de": "Die Stimme der Seele",
+      "fr": "Une promesse pour l'éternité"
     },
     "icon": "/i/071000/071221.png"
   },
   "69515": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Where I Belong",
+      "ja": "いつか再び生まれてくる命たちの物語",
+      "de": "Mein Platz in dieser Welt",
+      "fr": "Le jardin de l'espoir"
     },
     "icon": "/i/071000/071221.png"
   },
   "69516": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Blood of Emerald",
+      "ja": "悲しみのアリー",
+      "de": "Blutsmaragd",
+      "fr": "À la poursuite du joyau vert"
     },
     "icon": "/i/071000/071221.png"
   },
   "69517": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "In Memory",
+      "ja": "はじめてのともだち",
+      "de": "Mahnmal der Sühne",
+      "fr": "Memento Mori"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -35866,37 +35866,37 @@
   },
   "69521": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Safekeeping",
+      "ja": "時を超えた想い",
+      "de": "Die Kristalle der Krieger des Lichts",
+      "fr": "Les cristaux du souvenir"
     },
     "icon": "/i/071000/071221.png"
   },
   "69522": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Hero's Journey",
+      "ja": "第一世界へ",
+      "de": "Wiedersehen auf dem ersten Splitter",
+      "fr": "Retour vers les reflets"
     },
     "icon": "/i/071000/071221.png"
   },
   "69523": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "One Step Closer",
+      "ja": "ウヌクアルハイとテイナー",
+      "de": "Unukalhai und Taynor",
+      "fr": "Un déjà-vu troublant"
     },
     "icon": "/i/071000/071221.png"
   },
   "69524": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Bounty of Hunters",
+      "ja": "英雄候補と仲間たち",
+      "de": "Untersuchung des dreizehnten Splitters",
+      "fr": "Le héros en formation"
     },
     "icon": "/i/071000/071221.png"
   },
@@ -35965,14 +35965,32 @@
   },
   "69532": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A Delivery of Love",
+      "ja": "ヴァレンティオンデーとラブの配達士",
+      "de": "Eine Sendung Liebe am Valentiontag",
+      "fr": "Le courrier du cœur"
+    },
+    "icon": "/i/080000/080126.png"
+  },
+  "69533": {
+    "name": {
+      "en": "Little Lady Adventurer",
+      "ja": "プリンセスデーと小さな冒険者",
+      "de": "Eine kleine Abenteurerin mit großem Herzen",
+      "fr": "Les demoiselles de la Valention"
+    },
+    "icon": "/i/080000/080126.png"
+  },
+  "69534": {
+    "name": {
+      "en": "To Make Amends",
+      "ja": "コメラの村の傷痕",
+      "de": "Kummer in Kugelform",
+      "fr": "Konogg, le mal aimé"
     },
     "icon": "/i/071000/071221.png"
   },
-  "69533": {
+  "69535": {
     "name": {
       "en": "",
       "ja": "",
@@ -35981,7 +35999,709 @@
     },
     "icon": "/i/071000/071221.png"
   },
-  "69534": {
+  "69536": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69537": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69538": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69539": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69540": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69541": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69542": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69543": {
+    "name": {
+      "en": "Alisaie's Quest",
+      "ja": "アリゼーの志",
+      "de": "Hohe Ziele",
+      "fr": "La quête d'Alisaie"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69544": {
+    "name": {
+      "en": "The Wisdom of Allag",
+      "ja": "アラグの研究者",
+      "de": "Mit dem Allwissen der Allager",
+      "fr": "Le savoir caché d'Allag"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69545": {
+    "name": {
+      "en": "Reviving the Legacy",
+      "ja": "ノアの仲間たち",
+      "de": "Das Erbe Noahs",
+      "fr": "L'équipe Noah reformée"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69546": {
+    "name": {
+      "en": "Forget Us Not",
+      "ja": "想いよ届け",
+      "de": "Titanische Taten",
+      "fr": "Le fruit de nos efforts"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69547": {
+    "name": {
+      "en": "Like Master, Like Pupil",
+      "ja": "仲睦まじき師弟",
+      "de": "Hexen hexen",
+      "fr": "Les deux Matoya"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69548": {
+    "name": {
+      "en": "The Admiral's Resolve",
+      "ja": "提督の決意",
+      "de": "Der Argwohn des Admirals",
+      "fr": "La résolution de l'Amirale"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69549": {
+    "name": {
+      "en": "The Search for Sicard",
+      "ja": "首領代行シカルド",
+      "de": "Kristallkabale",
+      "fr": "À la recherche des Bourreaux"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69550": {
+    "name": {
+      "en": "On Rough Seas",
+      "ja": "荒波を撃ち抜く弾丸",
+      "de": "Schuss ins Herz",
+      "fr": "Le cœur en joue"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69551": {
+    "name": {
+      "en": "The Great Ship Vylbrand",
+      "ja": "バイルブランドの船出",
+      "de": "Gute Winde für Vylbrand",
+      "fr": "Un navire nommé Vylbrand"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69552": {
+    "name": {
+      "en": "Futures Rewritten",
+      "ja": "もうひとつの未来",
+      "de": "Auf Unheilsschwingen",
+      "fr": "Avenirs réécrits"
+    },
+    "icon": "/i/071000/071201.png"
+  },
+  "69553": {
+    "name": {
+      "en": "A Festive Fiasco",
+      "ja": "星芒祭が始まらない？",
+      "de": "Kein Fest ohne Firlefanz",
+      "fr": "Étoiles en berne"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69554": {
+    "name": {
+      "en": "Starlight Slapdashery",
+      "ja": "星芒祭に欲しいのは？",
+      "de": "Schnelligkeit vor Sorgfalt",
+      "fr": "Le dos tourné à autrui"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69555": {
+    "name": {
+      "en": "The True Spirit of Starlight",
+      "ja": "星芒祭は何のため？",
+      "de": "Der wahre Wert des Sternenlichtfests",
+      "fr": "Attention au sapin"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69556": {
+    "name": {
+      "en": "One Happy Family",
+      "ja": "星芒祭を誰と過ごす？",
+      "de": "Drei Schneemänner im Schnee",
+      "fr": "Travail d'équipe"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69557": {
+    "name": {
+      "en": "Wish Upon a Starlight",
+      "ja": "星芒祭に足りないもの？",
+      "de": "Was man für Gil nicht kaufen kann",
+      "fr": "Tous unis pour Isainne"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69558": {
+    "name": {
+      "en": "Starlit Smiles",
+      "ja": "星芒祭でみんな笑顔に！",
+      "de": "Das Sternenlichtwunder",
+      "fr": "Des sourires jusqu'aux étoiles"
+    },
+    "icon": "/i/080000/080106.png"
+  },
+  "69559": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69560": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69561": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69562": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69563": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69564": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69565": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69566": {
+    "name": {
+      "en": "Open and Inviting",
+      "ja": "開催！ カードバトル新トーナメント",
+      "de": "Willkommen zu den Triple Triad-Turnieren!",
+      "fr": "Entre officialité et liberté"
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69567": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69568": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69569": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69570": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69571": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69572": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69573": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69574": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69575": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69576": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69577": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69578": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69579": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69580": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69581": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69582": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69583": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69584": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69585": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69586": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69587": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69588": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69589": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69590": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69591": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69592": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69593": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69594": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69595": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69596": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69597": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69598": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69599": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69600": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69601": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69602": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69603": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69604": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69605": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69606": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69607": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69608": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69609": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69610": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69611": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69612": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69613": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "/i/071000/071221.png"
+  },
+  "69614": {
     "name": {
       "en": "",
       "ja": "",

@@ -17070,6 +17070,21 @@
     }
   },
   {
+    "itemId": 31771,
+    "level": 59,
+    "icon": "",
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2112,
+    "spot": {
+      "id": 143,
+      "coords": {
+        "x": 11.09,
+        "y": 30.81
+      }
+    }
+  },
+  {
     "itemId": 15638,
     "level": 59,
     "icon": "/i/029000/029430.png",
@@ -17148,6 +17163,21 @@
     "itemId": 12774,
     "level": 60,
     "icon": "/i/029000/029396.png",
+    "mapId": 216,
+    "placeId": 2101,
+    "zoneId": 2173,
+    "spot": {
+      "id": 144,
+      "coords": {
+        "x": 5.78,
+        "y": 34.35
+      }
+    }
+  },
+  {
+    "itemId": 31770,
+    "level": 60,
+    "icon": "",
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2173,
@@ -22110,6 +22140,21 @@
     }
   },
   {
+    "itemId": 32049,
+    "level": 72,
+    "icon": "/i/028000/028486.png",
+    "mapId": 491,
+    "placeId": 2953,
+    "zoneId": 3293,
+    "spot": {
+      "id": 203,
+      "coords": {
+        "x": 10.92,
+        "y": 20.53
+      }
+    }
+  },
+  {
     "itemId": 27425,
     "level": 71,
     "icon": "/i/029000/029316.png",
@@ -22488,6 +22533,21 @@
     "itemId": 28190,
     "level": 71,
     "icon": "/i/029000/029304.png",
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3298,
+    "spot": {
+      "id": 208,
+      "coords": {
+        "x": 28.43,
+        "y": 20.42
+      }
+    }
+  },
+  {
+    "itemId": 32050,
+    "level": 71,
+    "icon": "/i/028000/028487.png",
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3298,
@@ -22923,6 +22983,21 @@
     "itemId": 27456,
     "level": 72,
     "icon": "/i/029000/029176.png",
+    "mapId": 492,
+    "placeId": 2954,
+    "zoneId": 3303,
+    "spot": {
+      "id": 213,
+      "coords": {
+        "x": 34.24,
+        "y": 34.84
+      }
+    }
+  },
+  {
+    "itemId": 32051,
+    "level": 72,
+    "icon": "/i/029000/029198.png",
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3303,
@@ -23595,6 +23670,21 @@
     }
   },
   {
+    "itemId": 32052,
+    "level": 74,
+    "icon": "/i/028000/028488.png",
+    "mapId": 494,
+    "placeId": 2956,
+    "zoneId": 3310,
+    "spot": {
+      "id": 220,
+      "coords": {
+        "x": 21.03,
+        "y": 8.11
+      }
+    }
+  },
+  {
     "itemId": 27470,
     "level": 74,
     "icon": "/i/029000/029577.png",
@@ -24030,6 +24120,21 @@
     }
   },
   {
+    "itemId": 32053,
+    "level": 70,
+    "icon": "/i/028000/028489.png",
+    "mapId": 495,
+    "placeId": 2957,
+    "zoneId": 3316,
+    "spot": {
+      "id": 226,
+      "coords": {
+        "x": 8.71,
+        "y": 19.82
+      }
+    }
+  },
+  {
     "itemId": 27482,
     "level": 70,
     "icon": "/i/029000/029588.png",
@@ -24438,6 +24543,21 @@
     "itemId": 27503,
     "level": 79,
     "icon": "/i/029000/029183.png",
+    "mapId": 496,
+    "placeId": 2958,
+    "zoneId": 3321,
+    "spot": {
+      "id": 231,
+      "coords": {
+        "x": 36.74,
+        "y": 6.01
+      }
+    }
+  },
+  {
+    "itemId": 32054,
+    "level": 79,
+    "icon": "/i/029000/029199.png",
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3321,
@@ -26126,6 +26246,906 @@
       "coords": {
         "x": 25.03,
         "y": 35.74
+      }
+    }
+  },
+  {
+    "itemId": 32055,
+    "level": 1,
+    "icon": "/i/029000/029110.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32056,
+    "level": 1,
+    "icon": "/i/029000/029902.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32057,
+    "level": 1,
+    "icon": "/i/029000/029118.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32058,
+    "level": 1,
+    "icon": "/i/029000/029130.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32059,
+    "level": 1,
+    "icon": "/i/029000/029494.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32060,
+    "level": 1,
+    "icon": "/i/029000/029710.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32061,
+    "level": 1,
+    "icon": "/i/029000/029142.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32062,
+    "level": 1,
+    "icon": "/i/029000/029038.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32063,
+    "level": 1,
+    "icon": "/i/028000/028027.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32064,
+    "level": 1,
+    "icon": "/i/028000/028021.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3621,
+    "spot": {
+      "id": 246,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32065,
+    "level": 1,
+    "icon": "/i/028000/028023.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32066,
+    "level": 1,
+    "icon": "/i/028000/028020.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32067,
+    "level": 1,
+    "icon": "/i/029000/029079.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32068,
+    "level": 1,
+    "icon": "/i/029000/029658.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32069,
+    "level": 1,
+    "icon": "/i/028000/028024.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32070,
+    "level": 1,
+    "icon": "/i/029000/029663.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32071,
+    "level": 1,
+    "icon": "/i/029000/029195.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32072,
+    "level": 1,
+    "icon": "/i/028000/028475.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32073,
+    "level": 1,
+    "icon": "/i/028000/028017.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32074,
+    "level": 1,
+    "icon": "/i/028000/028030.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3622,
+    "spot": {
+      "id": 247,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32075,
+    "level": 1,
+    "icon": "/i/029000/029441.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32076,
+    "level": 1,
+    "icon": "/i/029000/029553.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32077,
+    "level": 1,
+    "icon": "/i/029000/029135.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32078,
+    "level": 1,
+    "icon": "/i/029000/029174.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32079,
+    "level": 1,
+    "icon": "/i/028000/028013.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32080,
+    "level": 1,
+    "icon": "/i/029000/029179.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32081,
+    "level": 1,
+    "icon": "/i/029000/029018.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32082,
+    "level": 1,
+    "icon": "/i/028000/028016.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32083,
+    "level": 1,
+    "icon": "/i/028000/028028.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32084,
+    "level": 1,
+    "icon": "/i/029000/029746.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3623,
+    "spot": {
+      "id": 248,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32085,
+    "level": 1,
+    "icon": "/i/028000/028025.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32086,
+    "level": 1,
+    "icon": "/i/029000/029080.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32087,
+    "level": 1,
+    "icon": "/i/028000/028022.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32088,
+    "level": 1,
+    "icon": "/i/029000/029817.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32089,
+    "level": 1,
+    "icon": "/i/029000/029098.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32090,
+    "level": 1,
+    "icon": "/i/029000/029347.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32091,
+    "level": 1,
+    "icon": "/i/029000/029083.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32092,
+    "level": 1,
+    "icon": "/i/029000/029091.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32093,
+    "level": 1,
+    "icon": "/i/028000/028026.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32094,
+    "level": 1,
+    "icon": "/i/028000/028032.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3624,
+    "spot": {
+      "id": 249,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32095,
+    "level": 1,
+    "icon": "/i/029000/029504.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32096,
+    "level": 1,
+    "icon": "/i/029000/029063.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32097,
+    "level": 1,
+    "icon": "/i/029000/029170.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32098,
+    "level": 1,
+    "icon": "/i/029000/029582.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32099,
+    "level": 1,
+    "icon": "/i/029000/029047.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32100,
+    "level": 1,
+    "icon": "/i/029000/029114.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32101,
+    "level": 1,
+    "icon": "/i/029000/029122.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32102,
+    "level": 1,
+    "icon": "/i/029000/029257.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32103,
+    "level": 1,
+    "icon": "/i/028000/028029.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32104,
+    "level": 1,
+    "icon": "/i/028000/028490.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3625,
+    "spot": {
+      "id": 250,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32105,
+    "level": 1,
+    "icon": "/i/029000/029365.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32106,
+    "level": 1,
+    "icon": "/i/029000/029159.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32107,
+    "level": 1,
+    "icon": "/i/028000/028019.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32108,
+    "level": 1,
+    "icon": "/i/029000/029355.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32109,
+    "level": 1,
+    "icon": "/i/029000/029087.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32110,
+    "level": 1,
+    "icon": "/i/029000/029439.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32111,
+    "level": 1,
+    "icon": "/i/029000/029340.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32112,
+    "level": 1,
+    "icon": "/i/028000/028472.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32113,
+    "level": 1,
+    "icon": "/i/028000/028018.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
+      }
+    }
+  },
+  {
+    "itemId": 32114,
+    "level": 1,
+    "icon": "/i/028000/028031.png",
+    "mapId": 604,
+    "placeId": 3477,
+    "zoneId": 3626,
+    "spot": {
+      "id": 251,
+      "coords": {
+        "x": 5.14,
+        "y": 5.14
       }
     }
   },

@@ -14904,10 +14904,10 @@
     "fr": "Rencontres de n'importe quel type"
   },
   "2485": {
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Happy Moo Year",
+    "de": "Marmorierungsstufe A5",
+    "ja": "A5ランク",
+    "fr": "Fini les vaches maigres !"
   },
   "2486": {
     "en": "Go Big Far from Home I",
@@ -15691,7 +15691,7 @@
   },
   "2616": {
     "en": "Otherworldly Glaives",
-    "de": "Chakram einer fremden Welt",
+    "de": "Chakrams einer fremden Welt",
     "ja": "妖怪武器：百鬼円陣",
     "fr": "Arme-toi d'un Yo-kai : armes de jet"
   },
@@ -16276,5 +16276,635 @@
     "de": "Seliger des Federfall-Quartiers",
     "ja": "蒼天街の福者：第三次復興事業",
     "fr": "Bienheureux d'Azurée (3e phase)"
+  },
+  "2714": {
+    "en": "Pen and Sword",
+    "de": "Eine zweite Zukunft",
+    "ja": "もうひとつの未来",
+    "fr": "Avenirs réécrits"
+  },
+  "2715": {
+    "en": "Friends to the End",
+    "de": "Bewahrer der Erinnerungen",
+    "ja": "時を超えた想い",
+    "fr": "Les cristaux du souvenir"
+  },
+  "2716": {
+    "en": "Go Big Far from Home IV",
+    "de": "Kapitalbeschaffung im ersten Splitter IV",
+    "ja": "第一世界の太公望：ランク4",
+    "fr": "Pêcheur de légendes itinérant IV"
+  },
+  "2717": {
+    "en": "Mapping the Realm: Matoya's Relict",
+    "de": "Kartograph: Matoyas Atelier",
+    "ja": "マトーヤのアトリエを踏破せしもの",
+    "fr": "Cartographe du continent : Atelier abandonné de Matoya"
+  },
+  "2718": {
+    "en": "It's Not Easy",
+    "de": "Smaragdschleifer",
+    "ja": "エメラルドウェポンを破壊せし者",
+    "fr": "Pourfendeur de l'Hexachire"
+  },
+  "2719": {
+    "en": "Paradise Within Thee I",
+    "de": "Das Paradies in dir I",
+    "ja": "再生せしエデンを制覇せし者：ランク1",
+    "fr": "La promesse du souvenir I"
+  },
+  "2720": {
+    "en": "Paradise Within Thee II",
+    "de": "Das Paradies in dir II",
+    "ja": "再生せしエデンを制覇せし者：ランク2",
+    "fr": "La promesse du souvenir II"
+  },
+  "2721": {
+    "en": "Paradise Within Thee III",
+    "de": "Das Paradies in dir III",
+    "ja": "再生せしエデンを制覇せし者：ランク3",
+    "fr": "La promesse du souvenir III"
+  },
+  "2722": {
+    "en": "Savage Paradise Within Thee I",
+    "de": "Das epische Paradies in dir I",
+    "ja": "再生せしエデンを完全制覇せし者：ランク1",
+    "fr": "Dans son jardin I"
+  },
+  "2723": {
+    "en": "Savage Paradise Within Thee II",
+    "de": "Das epische Paradies in dir II",
+    "ja": "再生せしエデンを完全制覇せし者：ランク2",
+    "fr": "Dans son jardin II"
+  },
+  "2724": {
+    "en": "Savage Paradise Within Thee III",
+    "de": "Das epische Paradies in dir III",
+    "ja": "再生せしエデンを完全制覇せし者：ランク3",
+    "fr": "Dans son jardin III"
+  },
+  "2725": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2726": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2727": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2728": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2729": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2730": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2731": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2732": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2733": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2734": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2735": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2736": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2737": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2738": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2739": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2740": {
+    "en": "The Dancing Prisoners I",
+    "de": "Das listige Karussell der Fuath I",
+    "ja": "リェー・ギア・ダンジョン祭殿に侵入せし者：ランク1",
+    "fr": "Visiteur du Jardin secret du Lyhe Ghiah I"
+  },
+  "2741": {
+    "en": "The Dancing Prisoners II",
+    "de": "Das listige Karussell der Fuath II",
+    "ja": "リェー・ギア・ダンジョン祭殿に侵入せし者：ランク2",
+    "fr": "Visiteur du Jardin secret du Lyhe Ghiah II"
+  },
+  "2742": {
+    "en": "The Dancing Prisoners III",
+    "de": "Das listige Karussell der Fuath III",
+    "ja": "リェー・ギア・ダンジョン祭殿に侵入せし者：ランク3",
+    "fr": "Visiteur du Jardin secret du Lyhe Ghiah III"
+  },
+  "2743": {
+    "en": "The Dancing Prisoners IV",
+    "de": "Das listige Karussell der Fuath IV",
+    "ja": "リェー・ギア・ダンジョン祭殿に侵入せし者：ランク4",
+    "fr": "Visiteur du Jardin secret du Lyhe Ghiah IV"
+  },
+  "2744": {
+    "en": "Away with the Fae I",
+    "de": "Am Rad der Fuath gedreht I",
+    "ja": "リェー・ギア・ダンジョン祭殿の覇者：ランク1",
+    "fr": "Secret éventé I"
+  },
+  "2745": {
+    "en": "Away with the Fae II",
+    "de": "Am Rad der Fuath gedreht II",
+    "ja": "リェー・ギア・ダンジョン祭殿の覇者：ランク2",
+    "fr": "Secret éventé II"
+  },
+  "2746": {
+    "en": "Away with the Fae III",
+    "de": "Am Rad der Fuath gedreht III",
+    "ja": "リェー・ギア・ダンジョン祭殿の覇者：ランク3",
+    "fr": "Secret éventé III"
+  },
+  "2747": {
+    "en": "Away with the Fae IV",
+    "de": "Am Rad der Fuath gedreht IV",
+    "ja": "リェー・ギア・ダンジョン祭殿の覇者：ランク4",
+    "fr": "Secret éventé IV"
+  },
+  "2748": {
+    "en": "Denizens of the Cieldalaes",
+    "de": "Meisterfischer der Cieldaläen",
+    "ja": "シェルダレー諸島沖合の魚拓王",
+    "fr": "Ichtyogrammiste des îles de Cieldalaes"
+  },
+  "2749": {
+    "en": "Denizens of the Bloodbrine",
+    "de": "Meisterfischer des Schwerblütigen Meeres",
+    "ja": "緋汐海沖合の魚拓王",
+    "fr": "Ichtyogrammiste de la mer Pourpre"
+  },
+  "2750": {
+    "en": "Denizens of the Rothlyt Sound",
+    "de": "Meisterfischer des Rothlyt-Meerbusens",
+    "ja": "ロズリト湾沖合の魚拓王",
+    "fr": "Ichtyogrammiste du golfe de Rothlyt"
+  },
+  "2751": {
+    "en": "Specters of the Cieldalaes",
+    "de": "Phantomfischer der Cieldaläen",
+    "ja": "シェルダレー諸島沖合の幻海王",
+    "fr": "Spectre des îles de Cieldalaes"
+  },
+  "2752": {
+    "en": "Specters of the Bloodbrine",
+    "de": "Phantomfischer des Schwerblütigen Meeres",
+    "ja": "緋汐海沖合の幻海王",
+    "fr": "Spectre de la mer Pourpre"
+  },
+  "2753": {
+    "en": "Specters of the Rothlyt Sound",
+    "de": "Phantomfischer des Rothlyt-Meerbusens",
+    "ja": "ロズリト湾沖合の幻海王",
+    "fr": "Spectre du golfe de Rothlyt"
+  },
+  "2754": {
+    "en": "What Did Balloons Do to You?",
+    "de": "Ballonfänger",
+    "ja": "バルーンキャッチャー",
+    "fr": "Amateur du ballon rond"
+  },
+  "2755": {
+    "en": "What Did Crabs Do to You?",
+    "de": "Krabbenschiffsbesatzung",
+    "ja": "蟹工船",
+    "fr": "Pince-sans-rire"
+  },
+  "2756": {
+    "en": "What Did Mantas Do to You?",
+    "de": "Manta! Manta!",
+    "ja": "エイエイオー",
+    "fr": "Raies arraisonnées"
+  },
+  "2757": {
+    "en": "On a Boat IV",
+    "de": "Fischer auf großer Fahrt IV",
+    "ja": "世界を釣る者：ランク4",
+    "fr": "Grand pêcheur IV"
+  },
+  "2758": {
+    "en": "On a Boat V",
+    "de": "Fischer auf großer Fahrt V",
+    "ja": "世界を釣る者：ランク5",
+    "fr": "Grand pêcheur V"
+  },
+  "2759": {
+    "en": "No More Fish in the Sea IV",
+    "de": "Hochseefischer IV",
+    "ja": "オーシャンフィッシャー：ランク4",
+    "fr": "Ratisseur des océans IV"
+  },
+  "2760": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2761": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2762": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2763": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2764": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2765": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2766": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2767": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2768": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2769": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2770": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2771": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2772": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2773": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2774": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2775": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2776": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2777": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2778": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2779": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2780": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2781": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2782": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2783": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2784": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2785": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2786": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2787": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2788": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2789": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2790": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2791": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2792": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2793": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2794": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2795": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2796": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2797": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2798": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2799": {
+    "en": "Open and Shut I",
+    "de": "Turnierchampion I",
+    "ja": "トーナメントの勝者：ランク１",
+    "fr": "Officiellement vainqueur I"
+  },
+  "2800": {
+    "en": "Open and Shut II",
+    "de": "Turnierchampion II",
+    "ja": "トーナメントの勝者：ランク2",
+    "fr": "Officiellement vainqueur II"
+  },
+  "2801": {
+    "en": "Open to Victory I",
+    "de": "Turnierspieler I",
+    "ja": "オフィシャルレコード：ランク1",
+    "fr": "Duelliste officiel I"
+  },
+  "2802": {
+    "en": "Open to Victory II",
+    "de": "Turnierspieler II",
+    "ja": "オフィシャルレコード：ランク2",
+    "fr": "Duelliste officiel II"
+  },
+  "2803": {
+    "en": "Open to Victory III",
+    "de": "Turnierspieler III",
+    "ja": "オフィシャルレコード：ランク3",
+    "fr": "Duelliste officiel III"
+  },
+  "2804": {
+    "en": "Snow Day",
+    "de": "Sternenstrahlendes Lächeln",
+    "ja": "星のような笑顔",
+    "fr": "Sourires étoilés"
+  },
+  "2805": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2806": {
+    "en": "Celebrating in Sync",
+    "de": "Kleine Schritte, große Sprünge",
+    "ja": "小さな冒険、大きな一歩",
+    "fr": "Lettre à Elyne"
+  },
+  "2807": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2808": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2809": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2810": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2811": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2812": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2813": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2814": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2815": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2816": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2817": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
+  },
+  "2818": {
+    "en": "",
+    "de": "",
+    "ja": "",
+    "fr": ""
   }
 }

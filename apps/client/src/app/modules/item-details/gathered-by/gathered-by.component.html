@@ -23,13 +23,6 @@
                 <nz-tag *ngIf="node.hidden" nzColor="#108ee9">
                   {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
                 </nz-tag>
-                <div *ngIf="node.fishEyes" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
-                       src="./assets/icons/status/fish_eyes.png">
-                  <div
-                    *ngIf="node.itemId | fishEyesDuration as duration" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes_duration' | translate"
-                    nz-tooltip>{{'COMMON.Minutes_duration' | translate: { amount: duration } }}</div>
-                </div>
                 <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                      src="./assets/icons/status/snagging.png">
               </div>
@@ -41,41 +34,45 @@
                   </i>
                 </span>
               </div>
-              <ng-container *ngIf="(generateAlarm(node) | alarmDisplay | async) as alarm">
-                <div *ngIf="alarm.remainingTime"
-                     [class.played-timer]="alarm.played"
-                     [class.spawned-timer]="alarm.spawned"
-                     fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
-                  <ng-container *ngIf="showAlarmsIntegration">
-                    <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
-                         fxLayoutGap="5px">
-                      <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
-                              nzSize="small">
-                        <i nz-icon nzType="clock-circle"> </i>
-                      </button>
-                      <ng-container *ngIf="alarmGroups$ | async as groups">
-                        <ng-container *ngIf="groups.length > 0">
-                          <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
-                                  nz-dropdown
-                                  nzShape="circle" nzSize="small">
-                            <i nz-icon nzType="folder-open"></i>
-                          </button>
-                          <nz-dropdown-menu #menu="nzDropdownMenu">
-                            <ul nz-menu>
-                              <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                                {{group.name}}
-                              </li>
-                            </ul>
-                          </nz-dropdown-menu>
+              <ng-container *ngFor="let generatedAlarm of generateAlarms(node); trackBy: trackByAlarm">
+                <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
+                  <div *ngIf="alarm.remainingTime"
+                       [class.played-timer]="alarm.played"
+                       [class.spawned-timer]="alarm.spawned"
+                       fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
+                    <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" [src]="762 | statusIcon | xivapiIcon"
+                         alt="" class="fish-eyes-alarm">
+                    <ng-container *ngIf="showAlarmsIntegration">
+                      <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                           fxLayoutGap="5px">
+                        <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                                nzSize="small">
+                          <i nz-icon nzType="clock-circle"> </i>
+                        </button>
+                        <ng-container *ngIf="alarmGroups$ | async as groups">
+                          <ng-container *ngIf="groups.length > 0">
+                            <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
+                                    nz-dropdown
+                                    nzShape="circle" nzSize="small">
+                              <i nz-icon nzType="folder-open"></i>
+                            </button>
+                            <nz-dropdown-menu #menu="nzDropdownMenu">
+                              <ul nz-menu>
+                                <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
+                                  {{group.name}}
+                                </li>
+                              </ul>
+                            </nz-dropdown-menu>
+                          </ng-container>
                         </ng-container>
-                      </ng-container>
-                    </div>
-                    <ng-template #alarmCreated>
-                      {{'ALARMS.Alarm_already_created' | translate}}
-                    </ng-template>
-                  </ng-container>
-                </div>
+                      </div>
+                      <ng-template #alarmCreated>
+                        {{'ALARMS.Alarm_already_created' | translate}}
+                      </ng-template>
+                    </ng-container>
+                  </div>
+                </ng-container>
               </ng-container>
               <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
                 <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">

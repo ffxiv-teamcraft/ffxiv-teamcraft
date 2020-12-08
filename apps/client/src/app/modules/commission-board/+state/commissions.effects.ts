@@ -122,6 +122,7 @@ export class CommissionsEffects {
         }
         const newList = this.listsFacade.newListWithName(name);
         newList.hasCommission = true;
+        newList.everyone = PermissionLevel.READ;
         newList.$key = this.afs.createId();
         this.listsFacade.addList(newList);
         commission.$key = newList.$key;

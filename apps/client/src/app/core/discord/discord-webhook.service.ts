@@ -7,7 +7,7 @@ import { Team } from '../../model/team/team';
 import { List } from '../../modules/list/model/list';
 import { LinkToolsService } from '../tools/link-tools.service';
 import { LocalizedDataService } from '../data/localized-data.service';
-import { CharacterService } from '../api/character.service';
+import { LodestoneService } from '../api/lodestone.service';
 import { WebhookSettingType } from '../../model/team/webhook-setting-type';
 import { LazyDataService } from '../data/lazy-data.service';
 import { PermissionLevel } from '../database/permissions/permission-level.enum';
@@ -21,7 +21,7 @@ export class DiscordWebhookService {
 
   constructor(private http: HttpClient, private translate: TranslateService,
               private i18n: I18nToolsService, private linkTools: LinkToolsService,
-              private l12n: LocalizedDataService, private characterService: CharacterService,
+              private l12n: LocalizedDataService, private characterService: LodestoneService,
               private lazyData: LazyDataService) {
   }
 

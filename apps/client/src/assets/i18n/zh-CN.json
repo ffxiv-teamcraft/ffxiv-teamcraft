@@ -40,7 +40,9 @@
     "Too_many_results_warning": "此搜索返回了超过 100 个物品。由于我们的数据源仅限 100 个，您可能需要增加筛选来找到所需的物品。",
     "Share_url": "将搜索链接复制到剪贴板",
     "Share_url_copied": "搜索链接已复制到剪贴板",
-    "Only_craftable": "仅显示有配方的物品"
+    "Only_craftable": "仅显示有配方的物品",
+    "Want_filters": "需要更多过滤方式？",
+    "Open_search": "打开搜索页面"
   },
   "Use_as_default_character": "设为默认角色",
   "Download_desktop_app": "下载客户端",
@@ -117,8 +119,8 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "标签筛选",
     "Tags_filter_reset": "重置标签筛选",
-    "Exclude_filter_placeholder": "Exclude using tags",
-    "Exclude_filter_reset": "Reset exclusion filter",
+    "Exclude_filter_placeholder": "通过标签排除",
+    "Exclude_filter_reset": "重置排除过滤器",
     "Name_filter_placeholder": "清单名筛选",
     "No_lists_matching": "没有符合的搜索结果"
   },
@@ -164,7 +166,7 @@
     "Copy": "复制",
     "Open_in_main_window": "在主页面打开",
     "Example": "示例",
-    "Change": "变化",
+    "Change": "修改",
     "Dirty_changes": "有尚未保存的修改"
   },
   "ALARMS": {
@@ -177,7 +179,7 @@
     "Custom_sound": "自定义闹钟声音",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
-    "Delete_group": "Delete group",
+    "Delete_group": "删除分组",
     "Delete_group_and_alarms": "删除该分组和分组下的所有闹钟",
     "Confirm_group_delete_with_alarms": "您确定要删除此组及其中的所有闹钟吗？",
     "Add_note": "添加备注",
@@ -414,8 +416,8 @@
     "Packet_capture_info": "针对国际服玩家：数据包捕获功能是违反 ToS 的，ACT 也因此违反 ToS。但在其他玩家不知晓的情况下，Square Enix 并不会进行处理，因此您可以私下使用而无需担心风险。",
     "Enable_autofill_by_default": "默认启用自动填充",
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
-    "Enable_autofill_hq_filter": "当物品被标记为需要 HQ 时，仅使用 HQ 物品自动填充",
-    "Enable_autofill_nq_filter": "Only autofill using nq items when item is not required as HQ",
+    "Enable_autofill_hq_filter": "只将 HQ 物品用于 HQ 需求的自动填充",
+    "Enable_autofill_nq_filter": "只将 NQ 物品用于非 HQ 需求的自动填充",
     "Contribute_to_universalis": "向 Universalis 提交数据",
     "Track_items_on_sale": "追踪雇员出售的物品（需要重启应用或刷新页面）",
     "Change_email": "修改电子邮箱",
@@ -431,8 +433,8 @@
     "Enable_metrics_capture_explain": "（通过金币和物品收入进行捕获和统计，此信息仅供您查看，不会上传至服务器）",
     "Metrics_capture_tooltip": "此功能将在未来的更新中添加，但现在启用数据捕获即意味着更新后您可以查看更多的数据。",
     "Metrics_capture_folder": "计量日志文件夹",
-    "Maximum_vendor_price": "Maximum vendor price",
-    "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Maximum_vendor_price": "最大商店购买价格",
+    "Maximum_vendor_price_explain": "单个物品可被 CAN_BE_BOUGHT 布局捕获的最大价格（0 = 无限制）",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -485,7 +487,7 @@
     "Fishing_rankings": "垂钓排名",
     "Total_rankings": "总排名",
     "Loading_fish_rankings": "正在加载垂钓排行",
-    "Gearset_priority": "Priority",
+    "Gearset_priority": "优先级",
     "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "角色验证",
@@ -648,16 +650,16 @@
     "X_needed": "需要 {{amount}} 个",
     "Leave_list": "离开此清单",
     "Cannot_leave": "无法离开此清单，因为此清单是分享给您的部队或某个团队的。请联系创建者移除清单或退出相应的团队。",
-    "Split_list": "Split this list",
-    "Create_commission": "Create a commission for this list",
-    "Commission_list": "Commission list",
+    "Split_list": "拆分此清单",
+    "Create_commission": "为此清单创建委托",
+    "Commission_list": "委托列表",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
       "Import_layout": "导入布局",
-      "Export_layout": "Export this layout",
+      "Export_layout": "导出此布局",
       "Import_string": "导出布局",
-      "Import_string_copied": "Layout code copied !",
+      "Import_string_copied": "已复制布局代码！",
       "Layout_name": "布局名称",
       "Invalid_import": "无效的导入码",
       "Global_options": "通用选项",
@@ -696,8 +698,8 @@
       "No_panel_selected": "使用上面的按钮选择一个面板"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "选择要添加到另一个清单的项目",
+      "Remove_from_list": "从当前清单中移除"
     }
   },
   "LIST_TAGS": {
@@ -793,7 +795,9 @@
     "Ephemeral_node": "限时采集点，可以刷新",
     "Intro": "采集地点用于快速搜索可采集物品，并查看其详情，并为节点设置采集闹钟。在上面的输入框中输入物品名字，它会找到你要找的物品！",
     "Hidden_item": "隐藏资源",
-    "Fish_eyes": "需要鱼眼",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "需要钓组",
     "Predators": "需要前置鱼",
     "Fish_eyes_duration": "你的鱼眼需要持续这个时间才能钓上该鱼。点击改变显示格式。",
@@ -927,15 +931,15 @@
     "Could_not_find_minstats": "找不到这个手法的最低属性要求",
     "Remove_final_appraisal": "移除 “Final Appraisal” 状态",
     "Total_macro_duration": "宏执行时间：{{duration}}秒。",
-    "Compact": "Compact",
-    "Detailed": "Detailed",
+    "Compact": "简洁",
+    "Detailed": "详细",
     "STATE": {
       "Excellent": "最高品质",
       "Good": "高品质",
       "Poor": "低品质",
       "Fail": "制作失败",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
+      "Pliant": "高效",
+      "Sturdy": "结实",
       "Centered": "居中对齐",
       "Normal": "通常"
     },
@@ -957,7 +961,7 @@
       "Min_craftsmanship_filter_placeholder": "最小作业精度",
       "Min_control_filter_placeholder": "最小加工精度",
       "Min_cp_filter_placeholder": "最小制作力",
-      "Difficulty_filter_placeholder": "Difficulty",
+      "Difficulty_filter_placeholder": "难度",
       "Quality_filter_placeholder": "品质",
       "Intro": "输入筛选条件",
       "Result_tooltip": "使用模拟器运行本手法的结果和你的属性",
@@ -1085,7 +1089,7 @@
     "Marketboard_price": "NQ价格",
     "Marketboard_price_hq": "HQ 价格",
     "Enter_total_earnings": "输入总收入",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "排除已完成的物品"
   },
   "LEVEQUESTS": {
     "Title": "理符任务",
@@ -1435,15 +1439,15 @@
     "3d_model_help": "预览 3D 模型",
     "Achievements": "成就",
     "Currencies": "货币",
-    "Rowena_splendor": "Rowena's splendors",
+    "Rowena_splendor": "罗薇娜显赫商会",
     "Unlocks": "解锁",
     "Jump_to_page": "快速跳转到其他页面",
     "Ishgard_restoration": "伊修加德重建",
     "ITEM": {
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Required_craftsmanship": "需要作业精度",
+      "Required_control": "需要加工精度",
+      "Mark_as_done_in_gathering_log": "在笔记中标为已完成"
     },
     "FISH": {
       "Hour": "上钩时间",
@@ -1475,6 +1479,7 @@
       "Ranking": "排名",
       "Top_users": "排行榜",
       "Your_ranking": "你的排名",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "轻杆 (!)",
         "Medium": "中杆 (!!)",
@@ -1717,10 +1722,10 @@
     "Pool_copied": "物品栏已复制到剪贴板",
     "Sort_alphabetically": "按字母顺序整理",
     "Pages_range_label": "{{ total }} 物品中的{{ range0 }}-{{ range1 }}",
-    "Shown_only_craftable": "Only what I have level for",
+    "Shown_only_craftable": "只显示满足等级限制的",
     "Shown_only_collectables": "仅限收藏品",
     "Recipe_level": "配方等级",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "只显示笔记中未完成的"
   },
   "CURRENCY_SPENDING": {
     "Title": "货币消费指南",
@@ -1731,9 +1736,9 @@
     "Disabled_description": "SE一再禁止我们读取交易板信息致使此功能失效。对此造成的不便，Teamcraft深表遗憾。"
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
-    "Pick_stat": "Choose an attribute"
+    "Title": "食物选择器",
+    "Description": "想知道哪个食物有你需要的属性？找对地方了！",
+    "Pick_stat": "选择一个属性"
   },
   "BLOG": {
     "Title": "博客"
@@ -1763,10 +1768,10 @@
     "Gathering": "采集相关",
     "Helpers": "实用工具",
     "Other": "其他",
-    "Commissions": "Commissions",
-    "Commission_board": "Board",
-    "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Commissions": "委托",
+    "Commission_board": "广场",
+    "My_commissions": "我的委托",
+    "Archived_commissions": "归档"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1811,7 +1816,7 @@
       "Bag": "背包",
       "Other": "其他物品栏",
       "Armory": "兵装库",
-      "Current_Gear": "Current gear",
+      "Current_Gear": "当前装备",
       "RetainerMarket": "雇员出售列表"
     }
   },
@@ -1853,12 +1858,12 @@
       "Company_workshop": "部队工房"
     },
     "CAN_BE_GATHERED_EASILY": {
-      "Title": "Items that can be gathered easily",
-      "Message": "Can be gathered at level {{level}} on a non-timed node"
+      "Title": "易于采集的物品",
+      "Message": "可在 {{level}} 级的非限时点采集"
     },
     "CAN_EXTRACT_MATERIA": {
-      "Title": "Gear you can extract materia from (100% spiritbond)",
-      "Message": "You can extract a materia from this gear piece"
+      "Title": "可以精炼魔晶石的装备（精炼度 100%）",
+      "Message": "此装备可以精炼魔晶石"
     }
   },
   "VERSION_LOCK": {
@@ -1900,14 +1905,14 @@
     "Import_from_ariyala": "从 Ariyala 导入",
     "Import_from_lodestone": "从 Lodestone 导入",
     "Import_using_pcap": "使用数据包捕获导入",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
+    "Sync_with_pcap": "使用数据包捕获同步",
     "Your_gearsets": "您的配装",
     "Delete_gearset": "删除配装",
     "Import_from_pcap_notice": "请切换至需要导入的对应职业配装",
     "No_food_selected": "没有选择食物",
     "Generate_list": "生成清单",
     "Clone_gearset": "将此配装复制到您的账号",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "创建此配装的副本",
     "You_have_no_gearsets": "没有配装",
     "Favorite_gearsets": "收藏配装",
     "Update_from_pcap": "使用数据包捕获更新",
@@ -1922,9 +1927,9 @@
     "Stats_caps": "属性上限",
     "Stat_computing_diclaimer": "公式是由像你我一样的玩家（Allagan Studies）花费大量时间精力总结出的，结果不保证完全准确。请不要将不准确的数值上报为 Bug。",
     "Missing_items": "某些栏位没有合适的装备，请确保筛选条件设置正确",
-    "Copied_as_string": "Gearset copied as string",
-    "Mark_as_done": "Mark as done",
-    "Create_commission": "Create a commission for this gearset",
+    "Copied_as_string": "配装已复制为字符串",
+    "Mark_as_done": "标记为已完成",
+    "Create_commission": "为此配装创建委托",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -1967,12 +1972,12 @@
       "GCD": "GCD"
     },
     "SYNC": {
-      "Title": "Synchronize gearsets",
-      "Tag": "Sync",
-      "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
-      "Importing_gearset": "Importing set for {{name}}",
-      "Imported_gearset": "Imported set for {{name}}",
-      "Syncing_gearsets": "Synchronizing gearsets..."
+      "Title": "同步配装",
+      "Tag": "同步",
+      "Tag_tooltip": "此配装通过数据包捕获同步，会在再次执行同步时更新。",
+      "Importing_gearset": "正在导入 {{name}} 的配装",
+      "Imported_gearset": "已导入 {{name}} 的配装",
+      "Syncing_gearsets": "正在同步配装 ……"
     }
   },
   "FOLDERS": {
@@ -2125,7 +2130,7 @@
       "VENDOR": "商人",
       "TELEPORT": "传送",
       "MARKETBOARD": "交易板",
-      "RETAINER": "Retainer"
+      "RETAINER": "雇员"
     },
     "TYPES": {
       "ANY": "任何",
@@ -2186,177 +2191,182 @@
   },
   "COLLECTABLES": {
     "Title": "收藏品",
-    "No_collectables_for_this_level": "No collectables available"
+    "No_collectables_for_this_level": "当前等级没有可以制作的收藏品"
   },
   "CRAFTING_REPLAYS": {
     "Title": "工序重现",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
-    "Open_replay_page": "Open replay page",
-    "Open_result_modal": "Open result popup",
-    "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
-    "No_offline_replays": "No offline replays",
-    "Cannot_record": "Cannot record replays",
-    "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
-    "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Online_replays": "在线回放",
+    "Offline_replays": "离线回放",
+    "Open_replay_page": "打开回放页面",
+    "Open_result_modal": "显示制作结果",
+    "Copy_to_clipboard": "将分享链接复制到剪贴板",
+    "Delete": "删除回放",
+    "No_online_replays": "没有在线回放",
+    "No_offline_replays": "没有离线回放",
+    "Cannot_record": "无法录制工序",
+    "Missing_stats": "在记录数据前，请切换到任意制作职业以采集您的属性",
+    "Create_folder": "新建文件夹",
+    "Save_replay": "上传回放",
+    "Replay_result": "结果"
   },
   "COMMISSIONS": {
-    "New_commission": "New commission",
-    "Price_tbd": "To be discussed",
-    "X_items": "{{amount}} items",
-    "Open_commission_details": "Open commission details",
-    "Your_commissions_as_client": "Your commissions as client",
-    "No_commissions_as_client": "You don't have any commission as client",
-    "Your_commissions_as_crafter": "Commissions you're working on",
-    "No_commissions_as_crafter": "You're not working on any commission",
-    "Delete_commission": "Delete this commission",
-    "Delete_list_too": "Delete list too",
-    "Delete_commission_only": "Delete commission only",
-    "Your_archived_commissions_as_client": "Commissions as client",
-    "No_archived_commissions_as_client": "You have no archived commission as client",
-    "Your_archived_commissions_as_crafter": "Commissions as contractor",
-    "No_archived_commissions_as_crafter": "You have no archived commissions as crafter",
-    "Updates": "Updates",
-    "Clear_notifications": "Clear notifications",
+    "New_commission": "新建委托",
+    "Price_tbd": "待定",
+    "X_items": "{{amount}} 个物品",
+    "Open_commission_details": "打开委托详情",
+    "Your_commissions_as_client": "提出的委托",
+    "No_commissions_as_client": "您没有提出的委托",
+    "Your_commissions_as_crafter": "正在承包的委托",
+    "No_commissions_as_crafter": "您没有正在承包的委托",
+    "Delete_commission": "删除委托",
+    "Delete_list_too": "同时删除清单",
+    "Delete_commission_only": "只删除委托",
+    "Your_archived_commissions_as_client": "提出的委托",
+    "No_archived_commissions_as_client": "没有相关委托",
+    "Your_archived_commissions_as_crafter": "承包的委托",
+    "No_archived_commissions_as_crafter": "没有相关委托",
+    "Updates": "有新进展",
+    "Clear_notifications": "清空通知",
     "TAGS": {
-      "CRAFTING": "Crafting",
-      "GATHERING": "Gathering",
-      "HUNTING": "Hunting",
-      "FISHING": "Fishing",
-      "GEAR": "Gear"
+      "CRAFTING": "制作",
+      "GATHERING": "采集",
+      "HUNTING": "讨伐",
+      "FISHING": "钓鱼",
+      "GEAR": "装备"
     },
     "STATUS": {
-      "Label": "Status",
-      "OPENED": "Opened",
-      "IN_PROGRESS": "In progress",
-      "ARCHIVED": "Archived"
+      "Label": "状态",
+      "OPENED": "新委托",
+      "IN_PROGRESS": "进行中",
+      "ARCHIVED": "已归档"
     },
     "CREATION": {
-      "Name": "Name",
-      "Name_placeholder": "Name of your commission",
-      "Name_required_error": "Please input a name",
-      "Tags": "Tags",
-      "Price": "Price you're willing to pay",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
-      "Only_crafting": "Only crafting",
-      "Includes_materials_label": "This commission includes all base materials and requires only crafting",
-      "Contact_info": "Contact informations",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
-      "Contact_info_required_error": "Please include contact informations",
-      "Description": "Description",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
-      "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Name": "名称",
+      "Name_placeholder": "委托名称",
+      "Name_required_error": "请输入委托名称",
+      "Tags": "标签",
+      "Price": "期望价格",
+      "Price_tip": "如果您希望对方提出价格，请填写 0",
+      "Only_crafting": "仅限制作",
+      "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
+      "Contact_info": "联系方式",
+      "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
+      "Contact_info_required_error": "请填写联系方式",
+      "Description": "说明",
+      "Description_placeholder": "如果您想对委托提供更多细节，请在此处填写",
+      "Description_max_length_error": "说明不能超过 1000 个字符",
+      "Warning": "提示",
+      "Warning_description": "虚假、无效的委托将会被删除，并可能对您的帐号采取相关措施",
+      "Copy_link": "复制模板链接",
+      "Copy_link_tooltip": "提供创建相同委托的链接，适合编写教程时使用",
+      "Link_copied": "委托模板链接已复制"
     },
     "BOARD": {
-      "Title": "Commission board",
-      "Filter_with_tags": "Filter using tags",
-      "No_matching_commissions": "No matching commissions",
-      "Min_price": "Min. price",
-      "Tracking_tip": "You can get notifications for new commissions on your datacenter using the official discord server's commissions section"
+      "Title": "委托广场",
+      "Filter_with_tags": "按标签筛选",
+      "No_matching_commissions": "没有符合条件的委托",
+      "Min_price": "最低价格",
+      "Tracking_tip": "您可以在官方 Discord 的委托（Commission）区中获取大区中的新委托通知"
     },
     "DETAILS": {
-      "Created_by": "Created by {{name}}",
-      "Details": "Details",
-      "Price": "Payment",
-      "Tags": "Tags",
-      "No_tags": "No tags",
-      "Server": "Server",
-      "Content": "Content",
-      "Progression": "Progression",
-      "Candidates": "Candidates ({{amount}})",
-      "Candidates_public_display": "Candidates : {{amount}}",
-      "Apply": "Apply",
-      "Edit": "Edit this commission",
-      "No_candidates": "No candidates",
-      "Your_offer": "Your offer",
-      "Remove_offer": "Remove your offer",
-      "Fire_contractor": "Fire the contractor",
-      "Resign": "Resign",
-      "Contractor": "Contractor",
-      "Open_list": "Open the list",
-      "List": "List",
-      "Mark_as_completed": "Mark commission as completed",
-      "Hire": "Hire this contractor",
-      "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
-      "Ratings": "Ratings",
-      "Waiting_for_rating": "Waiting for rating",
-      "Rate_commission": "Add your rating",
-      "Bump": "Bring this commission back to the top, only once per 24h",
-      "Copy_share_link": "Copy share link",
-      "Share_link_copied": "Commission share link copied to your clipboard",
-      "No_description": "No description",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Created_by": "由 {{name}} 创建",
+      "Details": "详情",
+      "Price": "价格",
+      "Tags": "标签",
+      "No_tags": "无标签",
+      "Server": "服务器",
+      "Content": "内容",
+      "Progression": "进展",
+      "Candidates": "候选（{{amount}}）",
+      "Candidates_public_display": "候选：{{amount}}",
+      "Apply": "申请",
+      "Edit": "编辑委托",
+      "No_candidates": "暂无候选",
+      "Your_offer": "您的报价",
+      "Remove_offer": "移除您的报价",
+      "Fire_contractor": "中止此委托",
+      "Resign": "放弃",
+      "Contractor": "承包方",
+      "Open_list": "打开清单",
+      "List": "清单",
+      "Mark_as_completed": "标记委托完成",
+      "Hire": "雇用此承包方",
+      "Progression_Tip": "当清单完成度到达 100% 时，您可以标记此委托已完成",
+      "Ratings": "评价",
+      "Waiting_for_rating": "等待评价",
+      "Rate_commission": "添加您的评价",
+      "Bump": "顶一下，每 24 小时只能操作一次",
+      "Copy_share_link": "复制分享链接",
+      "Share_link_copied": "委托共享链接已复制到剪贴板",
+      "No_description": "无说明",
+      "Items_count": "物品编号",
+      "Creation_date": "创建日期",
+      "Server_&_tags": "服务器 & 标签",
+      "Add_items": "添加物品",
+      "Rating": "评价",
+      "Comment": "您的评论",
+      "Comment_placeholder": "请填写评价的具体细节"
     },
     "APPLY": {
-      "Price": "Your price",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Price": "您的出价",
+      "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等"
     },
     "NOTIFICATIONS": {
-      "Click_to_open": "Click to open the commission",
+      "Click_to_open": "点击打开委托",
       "CONTRACT_ENDED_CONTRACTOR": {
-        "Title": "Commission contract ended",
-        "Content": "You are no longer the contractor for commission {{name}}"
+        "Title": "委托结束",
+        "Content": "您不再是委托 {{name}} 的承包人"
       },
       "CONTRACT_ENDED_CLIENT": {
-        "Title": "Commission contract ended",
-        "Content": "Contractor for commission {{name}} is no longer assigned"
+        "Title": "委托结束",
+        "Content": "委托 {{name}} 的承包人放弃了委托"
       },
       "HIRED": {
-        "Title": "Commission contract started",
-        "Content": "You have been hired on commission {{name}}"
+        "Title": "委托开始",
+        "Content": "您已在委托 {{name}} 雇用"
       },
       "CANDIDATE": {
-        "Title": "New candidate",
-        "Content": "New candidate for commission {{name}}"
+        "Title": "新候选",
+        "Content": "委托 {{name}} 有新候选"
       },
       "DONE": {
-        "Title": "Commission list completed",
-        "Content": "List associated with commission {{name}} has been completed"
+        "Title": "委托清单已完成",
+        "Content": "委托 {{name}} 关联的清单已完成"
       }
     },
     "PROFILE": {
-      "Details": "Commission profile",
-      "View_details": "Open profile details",
-      "Ratings": "Ratings",
-      "Incidents": "Incidents",
-      "No_incidents": "No incidents",
-      "Fired": "Fired from a commission",
-      "Resigned": "Resigned from a commission",
-      "No_ratings": "No ratings yet",
-      "Fired_X_times": "Fired {{amount}} times",
-      "Resigned_X_times": "Resigned {{amount}} times"
+      "Details": "委托资料",
+      "View_details": "打开资料详情",
+      "Ratings": "评价",
+      "Incidents": "事故",
+      "No_incidents": "无事故",
+      "Fired": "委托被中止",
+      "Resigned": "已放弃委托",
+      "No_ratings": "暂无评价",
+      "Fired_X_times": "被中止 {{amount}} 次",
+      "Resigned_X_times": "放弃 {{amount}} 次"
     },
     "FIRED": {
-      "Please_pick_reason": "Why are you firing this contractor?",
-      "NO_ACTIVE_SUB": "Contractor no longer has active subscription.",
-      "UNCOMFORTABLE_WITH_CONTRACTOR": "No longer comfortable working with this contractor.",
-      "NO_LONGER_NEED_JOB_DONE": "The commission isn't needed anymore.",
-      "FOUND_SOMEONE_ELSE": "Found another contractor for this commission.",
-      "CANNOT_AFFORD": "I cannot afford this commission."
+      "Please_pick_reason": "请选择中止委托的原因",
+      "NO_ACTIVE_SUB": "承包方不再登录游戏",
+      "UNCOMFORTABLE_WITH_CONTRACTOR": "与承包方合作不愉快",
+      "NO_LONGER_NEED_JOB_DONE": "不再需要委托中的物品",
+      "FOUND_SOMEONE_ELSE": "找到其他委托方",
+      "CANNOT_AFFORD": "无法承担此委托的费用"
     },
     "RESIGNED": {
-      "Please_pick_reason": "Why are you resigning from this commission?",
-      "NO_ACTIVE_SUB": "I no longer have active subscription.",
-      "UNCOMFORTABLE_WITH_CLIENT": "No longer comfortable working with the client.",
-      "CANNOT_COMPLETE_LEVEL": "I cannot complete this commission due to level requirements I don't meet.",
-      "CANNOT_COMPLETE_CONTENT": "I cannot complete this commission because I don't have access to the content it requires (example: I don't have the latest expansion).",
-      "CANNOT_GATHER": "I am not capable of collecting required items. Client will not collect items."
+      "Please_pick_reason": "请选择放弃委托的原因",
+      "NO_ACTIVE_SUB": "我不再登录游戏",
+      "UNCOMFORTABLE_WITH_CLIENT": "与客户合作不愉快",
+      "CANNOT_COMPLETE_LEVEL": "我不满足等级要求，无法完成此委托",
+      "CANNOT_COMPLETE_CONTENT": "我无法获得所需的物品，无法完成此委托（例如：在国际服中未购买最新版本）",
+      "CANNOT_GATHER": "我无法采集所需的物品，客户也拒绝采集物品"
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "委托模板",
+      "Description": "请确认您要创建以下物品的委托。提示：无法交易的物品将会自动从清单中移除。",
+      "Create_commission": "创建委托",
+      "No_items": "没有物品"
     }
   }
 }

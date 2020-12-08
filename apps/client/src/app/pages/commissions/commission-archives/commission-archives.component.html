@@ -2,6 +2,7 @@
   <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_archived_commissions_as_client' | translate"></nz-divider>
   <div fxLayout="column" fxLayoutGap="5px">
     <app-fullpage-message *ngIf="display.commissionsAsClient.length === 0"
+                          fontSize="2rem"
                           height="50px">{{'COMMISSIONS.No_archived_commissions_as_client' | translate}}</app-fullpage-message>
     <app-commission-panel *ngFor="let commission of display.commissionsAsClient" [commission]="commission"></app-commission-panel>
   </div>
@@ -9,6 +10,7 @@
   <nz-divider nzOrientation="left" [nzText]="'COMMISSIONS.Your_archived_commissions_as_crafter' | translate"></nz-divider>
   <div fxLayout="column" fxLayoutGap="5px">
     <app-fullpage-message *ngIf="display.commissionsAsCrafter.length === 0"
+                          fontSize="2rem"
                           height="50px">{{'COMMISSIONS.No_archived_commissions_as_crafter' | translate}}</app-fullpage-message>
     <app-commission-panel *ngFor="let commission of display.commissionsAsCrafter" [commission]="commission"></app-commission-panel>
   </div>

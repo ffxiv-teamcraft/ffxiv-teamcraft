@@ -38,7 +38,7 @@ const stopInterval$ = emptyQueue$.pipe(
   filter(empty => empty)
 );
 
-interval(key ? 10 : 250).pipe(
+interval(key ? 50 : 1000).pipe(
   tap(() => {
     emptyQueue$.next(queue.length === 0);
   }),
@@ -112,8 +112,7 @@ const getAllPages = (endpoint, body, label) => {
       return get(url, body).pipe(
         tap(result => {
           if (result === undefined || result.Pagination === undefined) {
-            console.error('Error', url);
-            console.error(result);
+            console.error('Error', url.slice(0, 150), result === null, result.Pagination);
           }
           if (label === undefined) {
             label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;

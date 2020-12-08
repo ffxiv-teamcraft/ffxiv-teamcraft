@@ -1250,5 +1250,80 @@
     "ID": 29496,
     "LevelEquip": 1,
     "LevelItem": 480
+  },
+  {
+    "Bonuses": {
+      "Strength": {
+        "ID": 1,
+        "Max": 371,
+        "MaxHQ": 464,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 31893,
+    "LevelEquip": 1,
+    "LevelItem": 510
+  },
+  {
+    "Bonuses": {
+      "Dexterity": {
+        "ID": 2,
+        "Max": 371,
+        "MaxHQ": 464,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 31894,
+    "LevelEquip": 1,
+    "LevelItem": 510
+  },
+  {
+    "Bonuses": {
+      "Vitality": {
+        "ID": 3,
+        "Max": 417,
+        "MaxHQ": 521,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 31895,
+    "LevelEquip": 1,
+    "LevelItem": 510
+  },
+  {
+    "Bonuses": {
+      "Intelligence": {
+        "ID": 4,
+        "Max": 371,
+        "MaxHQ": 464,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 31896,
+    "LevelEquip": 1,
+    "LevelItem": 510
+  },
+  {
+    "Bonuses": {
+      "Mind": {
+        "ID": 5,
+        "Max": 371,
+        "MaxHQ": 464,
+        "Relative": true,
+        "Value": 8,
+        "ValueHQ": 10
+      }
+    },
+    "ID": 31897,
+    "LevelEquip": 1,
+    "LevelItem": 510
   }
 ]

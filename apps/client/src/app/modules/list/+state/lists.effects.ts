@@ -502,8 +502,6 @@ export class ListsEffects {
   }
 
   private updateCommission(list: List): void {
-    console.log('Final items progression', this.listsFacade.buildProgression(list.finalItems));
-
     this.commissionService.pureUpdate(list.$key, {
       materialsProgression: this.listsFacade.buildProgression(list.items),
       itemsProgression: this.listsFacade.buildProgression(list.finalItems),

@@ -40,7 +40,9 @@
     "Too_many_results_warning": "This search returned over 100 item. Since our data source is limited to 100 results, you may need additional filters to find a specific item.",
     "Share_url": "Copy search url to your clipboard",
     "Share_url_copied": "Search url copied to your clipboard",
-    "Only_craftable": "Only recipes"
+    "Only_craftable": "Only recipes",
+    "Want_filters": "Need more filters?",
+    "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "Use as default character",
   "Download_desktop_app": "Download desktop app",
@@ -793,7 +795,9 @@
     "Ephemeral_node": "Ephemeral node, can be respawned",
     "Intro": "Gathering location allows you to easily search for a gatherable item and see details about it, where to find it and create an alarm for a given node. Just input a name in the field above and let it find what you're looking for !",
     "Hidden_item": "Hidden",
-    "Fish_eyes": "Requires fish eyes",
+    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Add_alarm": "Add alarm",
+    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "Requires snagging",
     "Predators": "Fish these fish before",
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
@@ -1475,6 +1479,7 @@
       "Ranking": "Ranking",
       "Top_users": "Top rankings",
       "Your_ranking": "Your ranking",
+      "Include_fisheyes_data": "Include reports using Fish Eyes",
       "TUG": {
         "Light": "Light (!)",
         "Medium": "Medium (!!)",
@@ -2201,7 +2206,8 @@
     "Cannot_record": "Cannot record replays",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
     "Create_folder": "New folder",
-    "Save_replay": "Save replay in database"
+    "Save_replay": "Save replay in database",
+    "Replay_result": "Result"
   },
   "COMMISSIONS": {
     "New_commission": "New commission",
@@ -2295,7 +2301,11 @@
       "No_description": "No description",
       "Items_count": "# of items",
       "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags"
+      "Server_&_tags": "Server & tags",
+      "Add_items": "Add items",
+      "Rating": "Rating",
+      "Comment": "Your comment",
+      "Comment_placeholder": "Add more details about your rating here"
     },
     "APPLY": {
       "Price": "Your price",

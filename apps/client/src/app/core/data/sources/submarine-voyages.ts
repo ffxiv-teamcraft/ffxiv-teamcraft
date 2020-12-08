@@ -421,38 +421,38 @@ export const submarineVoyages = [
   },
   {
     "id": 61,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "the Blind Sound",
+    "de": "Blinder Meeresarm (I)",
+    "ja": "I　目隠し峡江",
+    "fr": "Fjord aveugle (I)"
   },
   {
     "id": 62,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sea of Jade 3",
+    "de": "Jademeer 3 (J)",
+    "ja": "J　翠浪海03",
+    "fr": "Mer de Jade 3 (J)"
   },
   {
     "id": 63,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Moergynn's Forge",
+    "de": "Moergynns Schmiede (K)",
+    "ja": "K　ムールギンの鍛冶場",
+    "fr": "Forge de Moergynn (K)"
   },
   {
     "id": 64,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Tangaroa's Beacon",
+    "de": "Tangaroas Boje (L)",
+    "ja": "L　タナロアの浮標",
+    "fr": "Fanal de Tangaroa (L)"
   },
   {
     "id": 65,
-    "en": "",
-    "de": "",
-    "ja": "",
-    "fr": ""
+    "en": "Sea of Jade 4",
+    "de": "Jademeer 4 (M)",
+    "ja": "M　翠浪海04",
+    "fr": "Mer de Jade 4 (M)"
   },
   {
     "id": 66,

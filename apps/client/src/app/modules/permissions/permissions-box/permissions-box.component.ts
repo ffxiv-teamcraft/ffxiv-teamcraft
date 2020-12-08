@@ -12,6 +12,7 @@ import { FreecompanyPickerService } from '../../freecompany-picker/freecompany-p
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TeamsFacade } from '../../teams/+state/teams.facade';
 import { Team } from '../../../model/team/team';
+import { LodestoneService } from '../../../core/api/lodestone.service';
 
 @Component({
   selector: 'app-permissions-box',
@@ -49,9 +50,9 @@ export class PermissionsBoxComponent implements OnInit {
 
   canAddFc$: Observable<boolean>;
 
-  constructor(private xivapi: XivapiService, private userService: UserService, private userPickerService: UserPickerService,
+  constructor(private userService: UserService, private userPickerService: UserPickerService,
               private freecompanyPickerService: FreecompanyPickerService, private authFacade: AuthFacade,
-              private teamsFacade: TeamsFacade) {
+              private teamsFacade: TeamsFacade, private lodestoneService: LodestoneService) {
     this.canAddFc$ = this.authFacade.mainCharacter$.pipe(map(char => char.ID > 0));
   }
 
@@ -77,7 +78,7 @@ export class PermissionsBoxComponent implements OnInit {
               let entityDetails$: Observable<{ name: string, avatar: string[] }>;
               // If the id has no character in it, it's a free company id, not a TC user id
               if (/^\d+$/im.test(id)) {
-                entityDetails$ = this.xivapi.getFreeCompany(id, { columns: ['FreeCompany.Name', 'FreeCompany.Crest'] }).pipe(
+                entityDetails$ = this.lodestoneService.getFreeCompany(id).pipe(
                   map((res: any) => ({ name: res.FreeCompany.Name, avatar: res.FreeCompany.Crest }))
                 );
               } else if (id.startsWith('team:')) {
@@ -92,7 +93,7 @@ export class PermissionsBoxComponent implements OnInit {
                 entityDetails$ = this.userService.get(id).pipe(
                   first(),
                   switchMap(user => {
-                    return this.xivapi.getCharacter(user.defaultLodestoneId, { columns: ['Character.Name', 'Character.Avatar'] }).pipe(
+                    return this.lodestoneService.getCharacter(user.defaultLodestoneId).pipe(
                       map(res => ({ name: res.Character.Name, avatar: [res.Character.Avatar] }))
                     );
                   })
