@@ -82,15 +82,27 @@ export class BellNodesService {
         })
         .map(node => {
           const bellNode = this.getNode(+node.nodeId);
-          node.timed = bellNode !== undefined;
+          node.timed = bellNode !== undefined || node.spawns?.length > 0;
           node.itemId = node.obj.i;
           node.icon = item.obj.c;
+          if (bellNode?.coords && !node.x) {
+            node.x = bellNode.coords[0];
+            node.y = bellNode.coords[1];
+          }
           if (node.timed) {
-            const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === item.obj.i);
-            node.spawnTimes = bellNode.time;
-            node.uptime = bellNode.uptime;
-            if (slotMatch !== undefined) {
-              node.slot = slotMatch.slot;
+            if (bellNode) {
+              node.spawnTimes = bellNode.time;
+              node.uptime = bellNode.uptime;
+            } else {
+              node.spawnTimes = node.spawns;
+              switch (node.duration) {
+                case 160:
+                  node.uptime = 120;
+                  break;
+                case 300:
+                  node.uptime = 240;
+                  break;
+              }
             }
           }
           node.hidden = !(node.items || []).some(itemId => itemId === node.itemId);
@@ -142,10 +154,10 @@ export class BellNodesService {
                   ...item,
                   nodeId: node.id,
                   zoneid: this.l12n.getAreaIdByENName(node.zone),
-                  mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
-                  x: nodePosition ? nodePosition.x : 0,
-                  y: nodePosition ? nodePosition.y : 0,
-                  z: nodePosition ? nodePosition.z : 0,
+                  mapId: nodePosition?.map || this.l12n.getAreaIdByENName(node.zone),
+                  x: nodePosition?.x || node?.coords[0] || 0,
+                  y: nodePosition?.y || node?.coords[1] || 0,
+                  z: nodePosition?.z || 0,
                   level: node.lvl,
                   type: node.type,
                   itemId: node.itemId,

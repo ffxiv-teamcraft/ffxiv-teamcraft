@@ -155,6 +155,11 @@
     </ng-template>
     <app-fullpage-message *ngIf="results.length === 0">{{'No_items_found' | translate}}</app-fullpage-message>
   </ng-container>
+  <ng-container *ngIf="results.length === 0">
+    <app-fullpage-message fontSize="2rem">
+      {{'GATHERING_LOCATIONS.No_items' | translate}}
+    </app-fullpage-message>
+  </ng-container>
 </div>
 
 <ng-template #noResults>
