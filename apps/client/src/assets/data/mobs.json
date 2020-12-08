@@ -47691,7 +47691,7 @@
     "en": "nightstalker",
     "ja": "ナイトストーカー",
     "de": "Nachtwandler",
-    "fr": "rodeur nocturne"
+    "fr": "rôdeur nocturne"
   },
   "7950": {
     "en": "dark crusader",
@@ -50372,7 +50372,7 @@
   "8396": {
     "en": "Giott the Aleforged",
     "ja": "最強のジオット",
-    "de": "Giott [t] Härtest[a] Hammer",
+    "de": "Giott [t] härtest[a] Hammer",
     "fr": "Giott l'invincible"
   },
   "8397": {
@@ -52160,7 +52160,7 @@
   "8694": {
     "en": "dungeon irismoth",
     "ja": "ダンジョン・イリスモス",
-    "de": "Verlies-Irismottte",
+    "de": "Verlies-Irismotte",
     "fr": "écaille irisée hypogéenne"
   },
   "8695": {
@@ -52322,7 +52322,7 @@
   "8721": {
     "en": "territorial irismoth",
     "ja": "テリトリアル・イリスモス",
-    "de": "hinterhältig[a] Irismottte",
+    "de": "hinterhältig[a] Irismotte",
     "fr": "écaille irisée territoriale"
   },
   "8722": {
@@ -52652,7 +52652,7 @@
   "8776": {
     "en": "Giott the Aleforged",
     "ja": "最強のジオット",
-    "de": "Giott [t] Härtest[a] Hammer",
+    "de": "Giott [t] härtest[a] Hammer",
     "fr": "Giott l'invincible"
   },
   "8777": {
@@ -55116,16 +55116,16 @@
     "fr": "duo d'Asciens"
   },
   "9187": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Gozu",
+    "ja": "モチツキ・ゴズ",
+    "de": "stampfend[a] Gozu",
+    "fr": "gozu marteleur"
   },
   "9188": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "mochi daikan's assistant",
+    "ja": "餅代官の手代",
+    "de": "Gehilfe[p] des Mochi-Meisters ",
+    "fr": "assistant du maître du mochi"
   },
   "9189": {
     "en": "Arch Ultima",
@@ -55362,10 +55362,10 @@
     "fr": "voix de Julia"
   },
   "9228": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Wakamaru",
+    "ja": "ワカマル",
+    "de": "Wakamaru",
+    "fr": "Wakamaru"
   },
   "9229": {
     "en": "Estinien Wyrmblood",
@@ -56400,10 +56400,10 @@
     "fr": "Akbaba"
   },
   "9401": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "frightened villager",
+    "ja": "アラガーナの住人",
+    "de": "Tränenhustenopfer",
+    "fr": "villageoise apeurée"
   },
   "9402": {
     "en": "whirlwind",
@@ -56978,7 +56978,7 @@
   "9497": {
     "en": "Giott the Aleforged",
     "ja": "最強のジオット",
-    "de": "Giott [t] Härtest[a] Hammer",
+    "de": "Giott [t] härtest[a] Hammer",
     "fr": "Giott l'invincible"
   },
   "9498": {
@@ -58170,30 +58170,1530 @@
     "fr": ""
   },
   "9696": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "the Emerald Weapon",
+    "ja": "エメラルドウェポン",
+    "de": "Smaragd-Waffe",
+    "fr": "Arme Émeraude"
   },
   "9697": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "claw bit",
+    "ja": "ハンドビット",
+    "de": "Satellitenarm",
+    "fr": "main volante"
   },
   "9698": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "energy",
+    "ja": "エネルギー弾",
+    "de": "energetisch[a] Geschoss",
+    "fr": "balle d'énergie"
   },
   "9699": {
+    "en": "magnetic mine",
+    "ja": "マグネットマイン",
+    "de": "Magnetmine",
+    "fr": "mine magnétique"
+  },
+  "9700": {
+    "en": "bitblade",
+    "ja": "ガンブレードビット",
+    "de": "Revolverklingen-Arm",
+    "fr": "pistolame volante"
+  },
+  "9701": {
+    "en": "imperial image",
+    "ja": "帝国兵の幻影",
+    "de": "garleisch[a] Soldat",
+    "fr": "spectre de soldat impérial"
+  },
+  "9702": {
+    "en": "Black Wolf's image",
+    "ja": "ガイウスの幻影",
+    "de": "Gaius-Projektion",
+    "fr": "spectre de Gaius"
+  },
+  "9703": {
+    "en": "airborne image",
+    "ja": "スカイアーマーの幻影",
+    "de": "Himmelspanzer-Projektion",
+    "fr": "spectre d'armure aérienne"
+  },
+  "9704": {
+    "en": "reaper image",
+    "ja": "リーパーの幻影",
+    "de": "Schnitter-Projektion",
+    "fr": "spectre de faucheuse"
+  },
+  "9705": {
+    "en": "ceruleum sphere",
+    "ja": "セルリウムスフィア",
+    "de": "Erdseim-Sphäre",
+    "fr": "sphère de céruléum"
+  },
+  "9706": {
+    "en": "nitrosphere",
+    "ja": "ニトロスフィア",
+    "de": "Nitro-Sphäre",
+    "fr": "nitrosphère"
+  },
+  "9707": {
+    "en": "Fatebreaker",
+    "ja": "フェイトブレイカー",
+    "de": "fusioniert[a] Ascian",
+    "fr": "Sabreur de destins"
+  },
+  "9708": {
+    "en": "Fatebreaker's image",
+    "ja": "フェイトブレイカーの幻影",
+    "de": "Abbild[p] des fusionierten Ascians",
+    "fr": "double du Sabreur de destins"
+  },
+  "9709": {
+    "en": "Demi-Gukumatz",
+    "ja": "デミグクマッツ",
+    "de": "Demi-Gukumatz",
+    "fr": "demi-Gukumatz"
+  },
+  "9710": {
+    "en": "halo of flame",
+    "ja": "焔の光輪",
+    "de": "Halo[p] der Flamme",
+    "fr": "halo de feu"
+  },
+  "9711": {
+    "en": "halo of levin",
+    "ja": "雷の光輪",
+    "de": "Halo[p] des Blitzes",
+    "fr": "halo de foudre"
+  },
+  "9712": {
+    "en": "portal of flame",
+    "ja": "焔の魔紋",
+    "de": "Portal[p] der Flamme",
+    "fr": "portail de feu"
+  },
+  "9713": {
+    "en": "portal of levin",
+    "ja": "雷の魔紋",
+    "de": "Portal[p] des Blitzes",
+    "fr": "portail de foudre"
+  },
+  "9714": {
+    "en": "exoray",
+    "ja": "エクソレイ",
+    "de": "Antensan",
+    "fr": "exoray"
+  },
+  "9715": {
+    "en": "relict werewood",
+    "ja": "レリクト・ウェアウッド",
+    "de": "Atelier-Ebenhöh",
+    "fr": "arbre-garou de l'Atelier"
+  },
+  "9716": {
+    "en": "cave mantis",
+    "ja": "ケイブ・キラーマンティス",
+    "de": "Höhlenmantis",
+    "fr": "mante tueuse des cavernes"
+  },
+  "9717": {
+    "en": "cave tarantula hawk",
+    "ja": "ケイブ・タランチュラホーク",
+    "de": "Höhlen-Tarantulafalke",
+    "fr": "guêpe pepsis des cavernes"
+  },
+  "9718": {
+    "en": "spriggan stonebearer",
+    "ja": "スプリガン・ストーンベアラー",
+    "de": "Spriggan-Steinschlepper",
+    "fr": "spriggan porte-roche"
+  },
+  "9719": {
+    "en": "spriggan quarrier",
+    "ja": "スプリガン・クウォリアー",
+    "de": "Spriggan-Steinhauer",
+    "fr": "spriggan mineur"
+  },
+  "9720": {
+    "en": "sonny of Ziggy",
+    "ja": "ソニー・オブ・ズィギー",
+    "de": "Ziggys Sprösschen",
+    "fr": "fiston de Ziggy"
+  },
+  "9721": {
+    "en": "cave pugil",
+    "ja": "ケイブ・プギル",
+    "de": "Höhlen-Pugil",
+    "fr": "pugil des cavernes"
+  },
+  "9722": {
+    "en": "cave gelatin",
+    "ja": "ケイブ・ゼラチン",
+    "de": "Höhlengelatine",
+    "fr": "gélatine des cavernes"
+  },
+  "9723": {
+    "en": "cave opken",
+    "ja": "ケイブ・オプケン",
+    "de": "Höhlen-Opken",
+    "fr": "opken des cavernes"
+  },
+  "9724": {
+    "en": "cave hropken",
+    "ja": "ケイブ・ロプケン",
+    "de": "Höhlen-Hropken",
+    "fr": "hropken des cavernes"
+  },
+  "9725": {
+    "en": "lava phoebad",
+    "ja": "ラーヴァ・フォーバッド",
+    "de": "Lava-Phoebad",
+    "fr": "phoebad de lave"
+  },
+  "9726": {
+    "en": "molten phoebad",
+    "ja": "モルテン・フォーバッド",
+    "de": "geschmolzen[a] Phoebad",
+    "fr": "phoebad en fusion"
+  },
+  "9727": {
+    "en": "relict licorice",
+    "ja": "レリクト・リコリス",
+    "de": "Atelier-Lakritze",
+    "fr": "réglisse de l'Atelier"
+  },
+  "9728": {
+    "en": "relict flan",
+    "ja": "レリクト・フラン",
+    "de": "Atelier-Flan",
+    "fr": "flan de l'Atelier"
+  },
+  "9729": {
+    "en": "relict marshmallow",
+    "ja": "レリクト・マシュマロ",
+    "de": "Atelier-Marshmallow",
+    "fr": "guimauve de l'Atelier"
+  },
+  "9730": {
+    "en": "relict bavarois",
+    "ja": "レリクト・ババロア",
+    "de": "Atelier-Creme",
+    "fr": "bavarois de l'Atelier"
+  },
+  "9731": {
+    "en": "relict pudding",
+    "ja": "レリクト・プリン",
+    "de": "Atelier-Pudding",
+    "fr": "pudding de l'Atelier"
+  },
+  "9732": {
+    "en": "relict slime",
+    "ja": "レリクト・スライム",
+    "de": "Atelier-Schleim",
+    "fr": "gluant de l'Atelier"
+  },
+  "9733": {
+    "en": "relict syrup",
+    "ja": "レリクト・シロップ",
+    "de": "Atelier-Sirup",
+    "fr": "syrop de l'Atelier"
+  },
+  "9734": {
+    "en": "pyroduct Eldthurs",
+    "ja": "パイロダクト・エルドスルス",
+    "de": "Immolations-Eldthurs",
+    "fr": "Eldthurs pyroconductible"
+  },
+  "9735": {
+    "en": "mudman",
+    "ja": "マッドマン",
+    "de": "Matschmann",
+    "fr": "tadboue"
+  },
+  "9736": {
+    "en": "mudman's double",
+    "ja": "マッドマン・ダブル",
+    "de": "Matschmann-Doppelgänger",
+    "fr": "petit tadboue"
+  },
+  "9737": {
+    "en": "mud bubble",
+    "ja": "泥団子",
+    "de": "Matschblase",
+    "fr": "bulle de boue"
+  },
+  "9738": {
+    "en": "nixie",
+    "ja": "ノッケン",
+    "de": "Nixchen",
+    "fr": "nixe"
+  },
+  "9739": {
+    "en": "unfinished nixie",
+    "ja": "プチノッケン",
+    "de": "unvollkommen[a] Nixchen",
+    "fr": "petite nixe"
+  },
+  "9740": {
+    "en": "icicle",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
+  },
+  "9741": {
+    "en": "mother porxie",
+    "ja": "マザーポークシー",
+    "de": "Muttersau",
+    "fr": "mère porxie"
+  },
+  "9742": {
+    "en": "aeolian cave sprite",
+    "ja": "ウィンドケイブ・スプライト",
+    "de": "Windhöhlen-Exergon",
+    "fr": "élémentaire des cavernes venteuses"
+  },
+  "9743": {
+    "en": "Puro Roggo the Unwashed",
+    "ja": "土いじりのプロ・ロッゴ",
+    "de": "Puro Roggo [t] Malproper[a]",
+    "fr": "Puro Roggo le pétrisseur"
+  },
+  "9744": {
+    "en": "Mero Roggo the Damp",
+    "ja": "水はこびのメロ・ロッゴ",
+    "de": "Mero Roggo [t] Klamm[a]",
+    "fr": "Mero Roggo le porteur d'eau"
+  },
+  "9745": {
+    "en": "Buro Roggo the Tepid",
+    "ja": "火あそびのブロ・ロッゴ",
+    "de": "Buro Roggo [t] Mollig[a]",
+    "fr": "Buro Roggo le rôtisseur"
+  },
+  "9746": {
     "en": "",
     "ja": "",
     "de": "",
     "fr": ""
   },
-  "9700": {
+  "9747": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9748": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9749": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9750": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9751": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9752": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9753": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9754": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9755": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9756": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9757": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9758": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9759": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9760": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9761": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9762": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9763": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9764": {
+    "en": "Cloud of Darkness",
+    "ja": "暗闇の雲",
+    "de": "Wolke[p] der Dunkelheit",
+    "fr": "Nuage de Ténèbres"
+  },
+  "9765": {
+    "en": "Clone of Darkness",
+    "ja": "幻影の雲",
+    "de": "Klon[p] der Dunkelheit",
+    "fr": "nuée de Ténèbres"
+  },
+  "9766": {
+    "en": "hypercharged cloud",
+    "ja": "波動雲",
+    "de": "pulsierend[a] Wolke",
+    "fr": "nuage de particules"
+  },
+  "9767": {
+    "en": "stygian tendrils",
+    "ja": "闇の茨",
+    "de": "stygisch[a] Ranke",
+    "fr": "ronce ténébreuse"
+  },
+  "9768": {
+    "en": "stygian arbor",
+    "ja": "闇の大樹",
+    "de": "stygisch[a] Dorn",
+    "fr": "arbre ténébreux"
+  },
+  "9769": {
+    "en": "Shadowkeeper",
+    "ja": "影の王",
+    "de": "Schattenkönig",
+    "fr": "roi de l'Ombre"
+  },
+  "9770": {
+    "en": "flameshadow",
+    "ja": "シャドウフレイム",
+    "de": "Schattenflamme",
+    "fr": "flamme ombrale"
+  },
+  "9771": {
+    "en": "shadefire",
+    "ja": "シャドウファイア",
+    "de": "Schattenfeuer",
+    "fr": "feu ombral"
+  },
+  "9772": {
+    "en": "shadow of a hero",
+    "ja": "英雄の影",
+    "de": "Schatten[p] eines Helden",
+    "fr": "ombre de héros"
+  },
+  "9773": {
+    "en": "the Keeper of the Keys",
+    "ja": "キーパー・オブ・ダンジョン",
+    "de": "Schlüsselwächter",
+    "fr": "gardien hypogéen"
+  },
+  "9774": {
+    "en": "Fuath trickster",
+    "ja": "フーア・トリックスター",
+    "de": "Fuath-Schwindler",
+    "fr": "Fuath espiègle"
+  },
+  "9775": {
+    "en": "secret sweeper",
+    "ja": "シークレット・スウィーパー",
+    "de": "geheim[a] Atomos",
+    "fr": "ratisseur du jardin secret"
+  },
+  "9776": {
+    "en": "secret serpent",
+    "ja": "シークレット・サーペント",
+    "de": "geheim[a] Schlange",
+    "fr": "serpent du jardin secret"
+  },
+  "9777": {
+    "en": "serpent hatchling",
+    "ja": "サーペント・ハッチリング",
+    "de": "jung[a] Schlange",
+    "fr": "serpenteau"
+  },
+  "9778": {
+    "en": "secret Cladoselache",
+    "ja": "シークレット・クラドセラケ",
+    "de": "geheim[a] Cladoselache",
+    "fr": "Cladoselache du jardin secret"
+  },
+  "9779": {
+    "en": "secret shark",
+    "ja": "シークレット・シャーク",
+    "de": "geheim[a] Hai",
+    "fr": "requin du jardin secret"
+  },
+  "9780": {
+    "en": "secret worm",
+    "ja": "シークレット・ウォーム",
+    "de": "geheim[a] Wurm",
+    "fr": "ver du jardin secret"
+  },
+  "9781": {
+    "en": "bubble",
+    "ja": "バブル",
+    "de": "Blase",
+    "fr": "bulle"
+  },
+  "9782": {
+    "en": "secret swallow",
+    "ja": "シークレット・スワロー",
+    "de": "geheim[a] Schwalbe",
+    "fr": "hirondelle du jardin secret"
+  },
+  "9783": {
+    "en": "swallow hatchling",
+    "ja": "スワロー・ハッチリング",
+    "de": "Schwalbenküken",
+    "fr": "hirondeau"
+  },
+  "9784": {
+    "en": "secret basket",
+    "ja": "シークレット・バスケット",
+    "de": "geheim[a] Korb",
+    "fr": "panier du jardin secret"
+  },
+  "9785": {
+    "en": "secret echivore",
+    "ja": "シークレット・エケボア",
+    "de": "geheim[a] Echevore",
+    "fr": "échevore du jardin secret"
+  },
+  "9786": {
+    "en": "Fuath troublemaker",
+    "ja": "フーア・トラブルメーカー",
+    "de": "Fuath-Unruhestifter",
+    "fr": "Fuath trublion"
+  },
+  "9787": {
+    "en": "stylish tentacle",
+    "ja": "たこあし",
+    "de": "Tentakel",
+    "fr": "tentacule"
+  },
+  "9788": {
+    "en": "secret djinn",
+    "ja": "シークレット・ジン",
+    "de": "geheim[a] Dschinn",
+    "fr": "djinn du jardin secret"
+  },
+  "9789": {
+    "en": "secret rabbit's tail",
+    "ja": "シークレット・ラビットテール",
+    "de": "geheim[a] Hasenbommel",
+    "fr": "queue-de-lièvre du jardin secret"
+  },
+  "9790": {
+    "en": "secret undine",
+    "ja": "シークレット・ウンディーネ",
+    "de": "geheim[a] Undine",
+    "fr": "ondine du jardin secret"
+  },
+  "9791": {
+    "en": "flawless bubble",
+    "ja": "ウォータースフィア",
+    "de": "Wasserspähre",
+    "fr": "sphère d'eau"
+  },
+  "9792": {
+    "en": "aqueous aether",
+    "ja": "ウォーターエーテル",
+    "de": "Wasseräther",
+    "fr": "éther d'eau"
+  },
+  "9793": {
+    "en": "secret pegasus",
+    "ja": "シークレット・ペガサス",
+    "de": "geheim[a] Pegasus",
+    "fr": "pégase du jardin secret"
+  },
+  "9794": {
+    "en": "thunderhead",
+    "ja": "雷雲",
+    "de": "Gewitterwolke",
+    "fr": "nuage de foudre"
+  },
+  "9795": {
+    "en": "secret porxie",
+    "ja": "シークレット・ポークシー",
+    "de": "geheim[a] Quiexie",
+    "fr": "porxie du jardin secret"
+  },
+  "9796": {
+    "en": "magicked broom",
+    "ja": "マジックブルーム",
+    "de": "Zauberbesen",
+    "fr": "balai magique"
+  },
+  "9797": {
+    "en": "greedy pixie",
+    "ja": "宝探しのピクシー",
+    "de": "Schatzsucher-Pixie",
+    "fr": "Pixie chasseuse de trésors"
+  },
+  "9798": {
+    "en": "pixie double",
+    "ja": "ピクシーの幻体",
+    "de": "Pixie-Phantom",
+    "fr": "illusion pixie"
+  },
+  "9799": {
+    "en": "secret morpho",
+    "ja": "シークレット・モルフォ",
+    "de": "geheim[a] Morpho",
+    "fr": "morpho du jardin secret"
+  },
+  "9800": {
+    "en": "secret mandragora",
+    "ja": "シークレット・マンドラゴラ",
+    "de": "geheim[a] Mandragora",
+    "fr": "mandragore du jardin secret"
+  },
+  "9801": {
+    "en": "secret onion",
+    "ja": "シークレット・オニオン",
+    "de": "geheim[a] Zwiebel",
+    "fr": "oignon du jardin secret"
+  },
+  "9802": {
+    "en": "secret egg",
+    "ja": "シークレット・エッグ",
+    "de": "geheim[a] Aubergine",
+    "fr": "aubergine du jardin secret"
+  },
+  "9803": {
+    "en": "secret garlic",
+    "ja": "シークレット・ガーリック",
+    "de": "geheim[a] Knoblauch",
+    "fr": "ail du jardin secret"
+  },
+  "9804": {
+    "en": "secret tomato",
+    "ja": "シークレット・トマト",
+    "de": "geheim[a] Tomate",
+    "fr": "tomate du jardin secret"
+  },
+  "9805": {
+    "en": "secret queen",
+    "ja": "シークレット・クイーン",
+    "de": "geheim[a] Königin",
+    "fr": "reine du jardin secret"
+  },
+  "9806": {
+    "en": "secret korrigan",
+    "ja": "シークレット・コリガン",
+    "de": "geheim[a] Korrigane",
+    "fr": "korrigan du jardin secret"
+  },
+  "9807": {
+    "en": "secret keeper",
+    "ja": "シークレット・キーパー",
+    "de": "geheim[a] Wächter",
+    "fr": "gardien du jardin secret"
+  },
+  "9808": {
+    "en": "Daen Ose the Avaricious",
+    "ja": "強欲のダエン＝オセ",
+    "de": "Daen Ose",
+    "fr": "Daen Ose l'avare"
+  },
+  "9809": {
+    "en": "wriggling menace",
+    "ja": "蠢く魔物",
+    "de": "bedrohlich[a] Kriecher",
+    "fr": "malice grouillante"
+  },
+  "9810": {
+    "en": "lingering snort",
+    "ja": "渦巻く鼻息",
+    "de": "Wirbelschnaufer",
+    "fr": "souffle nasal tourbillonnant"
+  },
+  "9811": {
+    "en": "giant beaver",
+    "ja": "ジャイアントビーバー",
+    "de": "Riesenbiber",
+    "fr": "castor géant"
+  },
+  "9812": {
+    "en": "fake Fuath",
+    "ja": "フーアドール",
+    "de": "Fuath-Marionette",
+    "fr": "poupée fuath"
+  },
+  "9813": {
+    "en": "Eden's Promise",
+    "ja": "プロミス・オブ・エデン",
+    "de": "Edens Verheißung",
+    "fr": "Promesse d'Éden"
+  },
+  "9814": {
+    "en": "Guardian of Eden",
+    "ja": "ガーディアン・オブ・エデン",
+    "de": "Wächter[p] von Eden",
+    "fr": "Gardien d'Éden"
+  },
+  "9815": {
+    "en": "bomb boulder",
+    "ja": "ボムボルダー",
+    "de": "Bomber-Brocken",
+    "fr": "bombo rocher"
+  },
+  "9816": {
+    "en": "titanic bomb boulder",
+    "ja": "メガ・ボムボルダー",
+    "de": "Mega-Bomber-Brocken",
+    "fr": "méga bombo rocher"
+  },
+  "9817": {
+    "en": "lissom sculpture",
+    "ja": "創られた女",
+    "de": "Abbild[p] einer Frau",
+    "fr": "création féminine"
+  },
+  "9818": {
+    "en": "chiseled sculpture",
+    "ja": "創られた男",
+    "de": "Abbild[p] eines Mannes",
+    "fr": "création masculine"
+  },
+  "9819": {
+    "en": "beastly sculpture",
+    "ja": "創られた獅子",
+    "de": "Abbild[p] eines Löwen",
+    "fr": "création léonine"
+  },
+  "9820": {
+    "en": "regal sculpture",
+    "ja": "創られた獅子王",
+    "de": "Abbild[p] eines großen Löwen",
+    "fr": "création léonine royale"
+  },
+  "9821": {
+    "en": "ice pillar",
+    "ja": "氷柱",
+    "de": "Eissäule",
+    "fr": "pilier de glace"
+  },
+  "9822": {
+    "en": "joy's hourglass",
+    "ja": "喜びの砂時計",
+    "de": "Sanduhr[p] des Glücks",
+    "fr": "sablier de joie"
+  },
+  "9823": {
+    "en": "sorrow's hourglass",
+    "ja": "悲しみの砂時計",
+    "de": "Sanduhr[p] der Sorge",
+    "fr": "sablier de chagrin"
+  },
+  "9824": {
+    "en": "anger's hourglass",
+    "ja": "怒りの砂時計",
+    "de": "Sanduhr[p] der Wut",
+    "fr": "sablier de colère"
+  },
+  "9825": {
+    "en": "delight's hourglass",
+    "ja": "楽しみの砂時計",
+    "de": "Sanduhr[p] der Freude",
+    "fr": "sablier de plaisir"
+  },
+  "9826": {
+    "en": "treasured memory",
+    "ja": "美しき思い出",
+    "de": "geschätzt[a] Erinnerung",
+    "fr": "souvenir précieux"
+  },
+  "9827": {
+    "en": "treasured memory",
+    "ja": "美しき思い出",
+    "de": "geschätzt[a] Erinnerung",
+    "fr": "souvenir précieux"
+  },
+  "9828": {
+    "en": "treasured memory",
+    "ja": "美しき思い出",
+    "de": "geschätzt[a] Erinnerung",
+    "fr": "souvenir précieux"
+  },
+  "9829": {
+    "en": "vision of Ryne",
+    "ja": "リーンの幻影",
+    "de": "Vision[p] von Ryne",
+    "fr": "vision de Ryne"
+  },
+  "9830": {
+    "en": "vision of Gaia",
+    "ja": "ガイアの幻影",
+    "de": "Vision[p] von Gaia",
+    "fr": "vision de Gaïa"
+  },
+  "9831": {
+    "en": "Mitron",
+    "ja": "アシエン・ミトロン",
+    "de": "Mitron",
+    "fr": "Mitron"
+  },
+  "9832": {
+    "en": "Oracle of Darkness",
+    "ja": "闇の巫女",
+    "de": "Orakel[p] der Dunkelheit",
+    "fr": "prêtresse des Ténèbres"
+  },
+  "9833": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9834": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9835": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9836": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9837": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9838": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9839": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9840": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9841": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9842": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9843": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9844": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9845": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9846": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9847": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9848": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9849": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9850": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9851": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9852": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9853": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9854": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9855": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9856": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9857": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9858": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9859": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9860": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9861": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9862": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9863": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9864": {
+    "en": "void torch",
+    "ja": "ヴォイドトーチ",
+    "de": "Nichtsfackel",
+    "fr": "torche du néant"
+  },
+  "9865": {
+    "en": "void wanderer",
+    "ja": "ヴォイドワンダラー",
+    "de": "Nichtswanderer",
+    "fr": "rôdeur du néant"
+  },
+  "9866": {
+    "en": "void scavenger",
+    "ja": "ヴォイドスカベンジャー",
+    "de": "Nichtssammler",
+    "fr": "charognard du néant"
+  },
+  "9867": {
+    "en": "Dvalinn",
+    "ja": "ドヴァリン",
+    "de": "Dvalinn",
+    "fr": "Dvalinn"
+  },
+  "9868": {
+    "en": "Rex",
+    "ja": "レックスの声",
+    "de": "Stimme[p] von Rex",
+    "fr": "Rex"
+  },
+  "9869": {
+    "en": "Alisaie",
+    "ja": "アリゼー",
+    "de": "Alisaie",
+    "fr": "Alisaie"
+  },
+  "9870": {
+    "en": "Angelo",
+    "ja": "アンジェロ",
+    "de": "Angel",
+    "fr": "Angelo"
+  },
+  "9871": {
+    "en": "Admiral Bloefhiswyn",
+    "ja": "メルウィブ・ブルーフィスウィン",
+    "de": "Merlwyb Bloefhiswyn",
+    "fr": "Merlwyb Bloefhiswyn"
+  },
+  "9872": {
+    "en": "Grand Storm Marshal Slafyrsyn",
+    "ja": "エインザル・スラフィルシン大甲将",
+    "de": "Konteradmiral Eynzahr Slafyrsyn",
+    "fr": "Eynzahr Slafyrsyn"
+  },
+  "9873": {
+    "en": "G'raha Tia",
+    "ja": "グ・ラハ・ティア",
+    "de": "G'raha Tia",
+    "fr": "G'raha Tia"
+  },
+  "9874": {
+    "en": "2nd Order roundsman",
+    "ja": "02オーダー・ラウンズマン",
+    "de": "Laufbursche[p] des 2. Ordens",
+    "fr": "livreur du 2e ordre"
+  },
+  "9875": {
+    "en": "2nd Order pickman",
+    "ja": "02オーダー・ピックマン",
+    "de": "Hauer[p] des 2. Ordens",
+    "fr": "piocheur du 2e ordre"
+  },
+  "9876": {
+    "en": "2nd Order alchemist",
+    "ja": "02オーダー・アルケミスト",
+    "de": "Alchemist[p] des 2. Ordens",
+    "fr": "alchimiste du 2e ordre"
+  },
+  "9877": {
+    "en": "O'Ghomoro golem",
+    "ja": "ゴモロ・ゴーレム",
+    "de": "Ghomoro-Golem",
+    "fr": "golem d'O'Ghomoro"
+  },
+  "9878": {
+    "en": "Construct 2",
+    "ja": "コンストラクト02",
+    "de": "Konstrukt[p] 2",
+    "fr": "constructeur 02"
+  },
+  "9879": {
+    "en": "grenade",
+    "ja": "グレネード",
+    "de": "Granate",
+    "fr": "grenado"
+  },
+  "9880": {
+    "en": "2nd Order Patriarch Za Da",
+    "ja": "ペイトリアーク02 ザ・ダ",
+    "de": "Patriarch[p] des 2. Ordens Za Da",
+    "fr": "Za Da patriarche du 2e ordre"
+  },
+  "9881": {
+    "en": "2nd Order rocksplitter",
+    "ja": "02オーダー・ロックスプリッター",
+    "de": "Felsspalter[p] des 2. Ordens",
+    "fr": "perforateur du 2e ordre"
+  },
+  "9882": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9883": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9884": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9885": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9886": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9887": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9888": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9889": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9890": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9891": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9892": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9893": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9894": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9895": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9896": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9897": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9898": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9899": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9900": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9901": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9902": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9903": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9904": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9905": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9906": {
+    "en": "Matoya",
+    "ja": "マトーヤ",
+    "de": "Matoya",
+    "fr": "Matoya"
+  },
+  "9907": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9908": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9909": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9910": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9911": {
+    "en": "master coeurl",
+    "ja": "マスタークァール",
+    "de": "Meister-Coeurl",
+    "fr": "maître coeurl"
+  },
+  "9912": {
+    "en": "courser chocobo",
+    "ja": "コーサーチョコボ",
+    "de": "Kurier-Chocobo",
+    "fr": "chocobo coursier"
+  },
+  "9913": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9914": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9915": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9916": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9917": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9918": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9919": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9920": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9921": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9922": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9923": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9924": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9925": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9926": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9927": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9928": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9929": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9930": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9931": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9932": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9933": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9934": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9935": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9936": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9937": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9938": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9939": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9940": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9941": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9942": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9943": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9944": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9945": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9946": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9947": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9948": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9949": {
+    "en": "",
+    "ja": "",
+    "de": "",
+    "fr": ""
+  },
+  "9950": {
     "en": "",
     "ja": "",
     "de": "",

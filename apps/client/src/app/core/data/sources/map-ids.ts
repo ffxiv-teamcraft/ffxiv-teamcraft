@@ -5006,5 +5006,261 @@ export const mapIds = [
     "territory": 928,
     "scale": 200,
     "weatherRate": 0
+  },
+  {
+    "id": 627,
+    "zone": 3590,
+    "name": "Matoya's Relict",
+    "territory": 933,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 628,
+    "zone": 3590,
+    "name": "Matoya's Relict",
+    "territory": 933,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 629,
+    "zone": 3590,
+    "name": "Matoya's Relict",
+    "territory": 933,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 630,
+    "zone": 3590,
+    "name": "Matoya's Relict",
+    "territory": 933,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 631,
+    "zone": 3596,
+    "name": "Sphere of Naught",
+    "territory": 942,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 632,
+    "zone": 3635,
+    "name": "The Garden of Nowhere",
+    "territory": 945,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 633,
+    "zone": 3635,
+    "name": "The Garden of Nowhere",
+    "territory": 945,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 634,
+    "zone": 3635,
+    "name": "The Garden of Nowhere",
+    "territory": 945,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 635,
+    "zone": 3635,
+    "name": "The Garden of Nowhere",
+    "territory": 945,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 636,
+    "zone": 3635,
+    "name": "The Garden of Nowhere",
+    "territory": 945,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 637,
+    "zone": 3620,
+    "name": "Laxan Loft",
+    "territory": 943,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 638,
+    "zone": 3581,
+    "name": "Castrum Marinum Drydocks",
+    "territory": 934,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 639,
+    "zone": 3590,
+    "name": "Matoya's Relict",
+    "territory": 933,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 640,
+    "zone": 3644,
+    "name": "The Shifting Oubliettes of Lyhe Ghiah",
+    "territory": 924,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 641,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 642,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 643,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 644,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 645,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 646,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 647,
+    "zone": 3597,
+    "name": "",
+    "territory": 936,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 648,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 649,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 650,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 651,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 652,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 653,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 654,
+    "zone": 3435,
+    "name": "The Firmament",
+    "territory": 886,
+    "scale": 200,
+    "weatherRate": 47
+  },
+  {
+    "id": 655,
+    "zone": 3542,
+    "name": "The Last Trace",
+    "territory": 964,
+    "scale": 200,
+    "weatherRate": 0
+  },
+  {
+    "id": 656,
+    "zone": 3595,
+    "name": "Bygone Gaol",
+    "territory": 944,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 657,
+    "zone": 3581,
+    "name": "Castrum Marinum Drydocks",
+    "territory": 967,
+    "scale": 400,
+    "weatherRate": 0
+  },
+  {
+    "id": 658,
+    "zone": 3225,
+    "name": "The Empty",
+    "territory": 965,
+    "scale": 400,
+    "weatherRate": 0
   }
 ];

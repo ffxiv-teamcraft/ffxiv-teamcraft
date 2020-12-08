@@ -584,7 +584,7 @@
   "98": {
     "en": "Alumen",
     "ja": "アルメン",
-    "de": "Alaune",
+    "de": "Alaun",
     "fr": "Alun"
   },
   "100": {
@@ -854,7 +854,7 @@
   "145": {
     "en": "Black Alumen",
     "ja": "ブラックアルメン",
-    "de": "Schwarzalaune",
+    "de": "Schwarzalaun",
     "fr": "Alun noir"
   },
   "146": {
@@ -1149,7 +1149,7 @@
     "en": "Humus",
     "ja": "腐葉土",
     "de": "Humus",
-    "fr": "Humus"
+    "fr": "Terreau de feuilles"
   },
   "196": {
     "en": "Coerthan Carrot",
@@ -3554,7 +3554,7 @@
   "599": {
     "en": "Red Alumen",
     "ja": "レッドアルメン",
-    "de": "Rotalaune",
+    "de": "Rotalaun",
     "fr": "Alun rouge"
   },
   "600": {
@@ -3836,7 +3836,7 @@
   "646": {
     "en": "Gyr Abanian Alumen",
     "ja": "ギラバニアアルメン",
-    "de": "Abanische Alaune",
+    "de": "Abanischer Alaun",
     "fr": "Alun gyrabanien"
   },
   "647": {
@@ -4760,7 +4760,7 @@
   "800": {
     "en": "Yellow Alumen",
     "ja": "イエローアルメン",
-    "de": "Gelbalaune",
+    "de": "Gelbalaun",
     "fr": "Alun jaune"
   },
   "801": {
@@ -5140,5 +5140,41 @@
     "ja": "ムセル",
     "de": "Miserabelmuschel",
     "fr": "Moule marine"
+  },
+  "864": {
+    "en": "Fireheart Cobalt",
+    "ja": "輝コバルト鉱",
+    "de": "Kobaltsulfiderz",
+    "fr": "Minerai de cobaltite"
+  },
+  "865": {
+    "en": "Purpure Shell Chip",
+    "ja": "プルプラシェルチップ",
+    "de": "Purpur-Muschelsplitter",
+    "fr": "Éclat de perle purpurine"
+  },
+  "866": {
+    "en": "Ashen Alumen",
+    "ja": "アッシュアルメン",
+    "de": "Asch-Alaun",
+    "fr": "Alun cendré"
+  },
+  "867": {
+    "en": "Merbau Log",
+    "ja": "メルバウ原木",
+    "de": "Merbauholzscheit",
+    "fr": "Rondin d'intsia bijuga"
+  },
+  "868": {
+    "en": "Duskblooms",
+    "ja": "紫根",
+    "de": "Steinsamenwurzel",
+    "fr": "Grémil"
+  },
+  "869": {
+    "en": "Imperial Fern",
+    "ja": "レガリスゼンマイ",
+    "de": "Kaiserfarn",
+    "fr": "Osmonde royale"
   }
 }

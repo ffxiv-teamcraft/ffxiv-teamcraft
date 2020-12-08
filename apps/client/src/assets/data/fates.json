@@ -5214,7 +5214,7 @@
       "de": "Die Kobolde waren über den Rausschmiss aus dem Zedernwald wenig amüsiert und haben im Zorn ihren Champion Bu Ga gerufen, einen der mächtigsten Kobold-Hauer. Weise die Aufrührer in ihre Schranken.",
       "fr": "Enragés par leur défaite à La Cédrière, les Kobolds ont fait appel à l'un de leurs champions, Bu Ga piocheur du 426e ordre, pour se venger. Éliminez-le au plus vite pour leur donner une bonne leçon."
     },
-    "icon": "/i/060000/060501.png",
+    "icon": "/i/060000/060502.png",
     "level": 9,
     "location": 4089383,
     "position": {
@@ -6953,7 +6953,7 @@
     },
     "description": {
       "en": "The shorthanded Brass Blades desperately seek aid in ridding the area of deadly peistes, who, without any predators save man, continue to multiply at an alarming rate.",
-      "ja": "ウルダハの警備隊「銅刃団」が\n\n街道をおびやかすペイストと戦っている\n\n銅刃団の衛士と協力し、ペイストを倒せ",
+      "ja": "ウルダハの警備隊「銅刃団」が\n\n街道をおびやかすペイストと戦っている\n\n銅刃団の衛兵と協力し、ペイストを倒せ",
       "de": "Tollwütige Peiste greifen willkürlich arglose Reisende auf der Überlandstraße an. Hilf den Messingklingen bei ihrem Versuch, die Gefahr einzudämmen.",
       "fr": "Les lames de cuivre ont désespérément besoin d'aide pour éliminer les dangereux peistes qui infestent la région. Ces reptiles n'ayant aucun prédateur naturel à part l'homme, ils se multiplient à une vitesse alarmante."
     },
@@ -9202,9 +9202,9 @@
     "position": {
       "map": 23,
       "zoneid": 45,
-      "x": 23.38,
-      "y": 10.52,
-      "z": 0.29
+      "x": 22.7,
+      "y": 10.01,
+      "z": 0.33
     }
   },
   "457": {
@@ -18917,7 +18917,7 @@
       "fr": "Défi: Sthéno en quarantaine"
     },
     "description": {
-      "en": "Data retrieved from tomestones discovered in the Delta Quadrant provide proof that the chimerical failure codenamed Stheno was one of the reasons the quarantine block was originally constructed.",
+      "en": "Data retrieved from tomestones discovered in the Delta Quadrant provide proof that the chimerical failure code-named Stheno was one of the reasons the quarantine block was originally constructed.",
       "ja": "隔離実験島が造られる切っ掛けとなった\n\nラミア型キメラ生物が、ひっそり佇んでいる\n\n不吉なる実験体、ステンノーを倒せ",
       "de": "Der Quarantäne-Block wurde eigens dafür geschaffen, die Welt vor dem unberechenbaren experimentellen Wesen Stheno zu schützen. Doch wie lange hält der Block das Ungetüm noch im Zaum? Es darf kein Risiko eingegangen werden.",
       "fr": "Des données extraites de mémoquartz indiquent que l'échec du projet de créature chimérique “Sthéno” fut une des raisons premières de l'instauration d'un bloc de quarantaine."
@@ -33365,20 +33365,27 @@
   },
   "1537": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "The Mochi that Ate Vylbrand",
+      "ja": "降神祭「モチモチ餅を切り分けろ！」",
+      "de": "Mach das Mochi tot oder ein Gozu sieht rot",
+      "fr": "Le mochi avant les bœufs"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Long thought devoured after the previous turn of the heavens, the celebratory mochi turned monster from the Far East has returned. Does it crave revenge? The flesh of unsuspecting Lalafells? It won't matter if you manage to slice it into delectable morsels.",
+      "ja": "霊験あらたかな大天山の霊泉が\n\nまたもや「降神餅」に仮初の命を与えた\n\nゴズに注意しながら、降神餅を切り分けろ",
+      "de": "Das Festtags-Mochi für die Himmelswende hat durch das wunderkräftige Wasser vom Daitenzan wieder ein Eigenleben entwickelt. Zerteile den rabiaten rasenden Reisteigklumpen in mundgerechte Portionen und weiche den Hörnern des Gozu aus!",
+      "fr": "L'eau mystique du Mont Daiten utilisée l'année passée par le maître du mochi s'est imprégnée dans son mortier, ce qui a redonné vie au gluant de riz! À vous de le battre et de le découper en petits morceaux, mais attention au gozu en furie!"
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060508.png",
+    "level": 5,
+    "location": 8160822,
+    "position": {
+      "map": 15,
+      "zoneid": 30,
+      "x": 24.05,
+      "y": 26.07,
+      "z": 0.59
+    }
   },
   "1538": {
     "name": {
@@ -34954,7 +34961,7 @@
     },
     "description": {
       "en": "It appears there is no end to Sicinius mal Vellutus's magitek monstrosities, as yet more of his unmanned warmachina take to the field. With each of his creations deadlier than the last, the Resistance will be hard-pressed to repel them without your aid.",
-      "ja": "魔導技師シシニアスが\n\n新型無人兵器を戦場に投入した\n\n敵部隊をせん滅せよ",
+      "ja": "魔導技師長シシニアスが\n\n新型無人兵器を戦場に投入した\n\n敵部隊をせん滅せよ",
       "de": "Magitechnicus Sicinius hat neuartige unbemannte Kampfmaschinen ins Gelände entsandt. Zeig ihm, wie viel dir seine aufwendigen Apparate wert sind.",
       "fr": "Sicinius a décidé de mener un test à grande échelle en déployant une multitude de prototypes d'arme magitek contre une poignée de résistants. Offrez-lui une défaite cuisante pour tout résultat."
     },
@@ -35667,6 +35674,686 @@
     "location": 0
   },
   "1670": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1671": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1672": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1673": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1674": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1675": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1676": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1677": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1678": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1679": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1680": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1681": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1682": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1683": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1684": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1685": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1686": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1687": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1688": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1689": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1690": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1691": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1692": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1693": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1694": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1695": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1696": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1697": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1698": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1699": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1700": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1701": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1702": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1703": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1704": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1705": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1706": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1707": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1708": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1709": {
+    "name": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "description": {
+      "en": "",
+      "ja": "",
+      "de": "",
+      "fr": ""
+    },
+    "icon": "",
+    "level": 0,
+    "location": 0
+  },
+  "1710": {
     "name": {
       "en": "",
       "ja": "",

@@ -11,7 +11,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -67,7 +68,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -133,7 +135,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -204,7 +207,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -275,7 +279,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -351,7 +356,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -417,7 +423,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -488,7 +495,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -559,7 +567,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -635,7 +644,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -761,7 +771,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -867,7 +878,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -978,7 +990,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -1114,7 +1127,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -1240,7 +1254,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -1416,7 +1431,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -1627,7 +1643,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte I",
           "Singular_ja": "木工秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7778,
@@ -1645,7 +1662,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -1841,7 +1859,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte II",
           "Singular_ja": "木工秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9336,
@@ -1859,7 +1878,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -2015,7 +2035,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte III",
           "Singular_ja": "木工秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12244,
@@ -2033,7 +2054,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -2092,13 +2114,13 @@
           "rlvl": 160
         },
         {
-          "recipeId": 30968,
-          "itemId": 10349,
+          "recipeId": 30970,
+          "itemId": 10351,
           "rlvl": 160
         },
         {
-          "recipeId": 30970,
-          "itemId": 10351,
+          "recipeId": 30968,
+          "itemId": 10349,
           "rlvl": 160
         },
         {
@@ -2304,7 +2326,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte IV",
           "Singular_ja": "木工秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14126,
@@ -2322,7 +2345,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -2411,6 +2435,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33232,
+          "itemId": 25041,
+          "rlvl": 210
+        },
+        {
           "recipeId": 32103,
           "itemId": 15602,
           "rlvl": 210
@@ -2428,6 +2457,11 @@
         {
           "recipeId": 33217,
           "itemId": 25026,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33233,
+          "itemId": 25042,
           "rlvl": 210
         },
         {
@@ -2738,7 +2772,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte V",
           "Singular_ja": "木工秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17869,
@@ -2756,7 +2791,8 @@
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100
+        "SuggestedCraftsmanship": 1100,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -2952,7 +2988,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte VI",
           "Singular_ja": "木工秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22309,
@@ -2970,7 +3007,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -3351,7 +3389,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte VII",
           "Singular_ja": "木工秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24266,
@@ -3369,7 +3408,8 @@
         "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
-        "SuggestedCraftsmanship": 2000
+        "SuggestedCraftsmanship": 2000,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -3525,7 +3565,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte VIII",
           "Singular_ja": "木工秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29484,
@@ -3543,7 +3584,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -3645,6 +3687,71 @@
           "recipeId": 33948,
           "itemId": 30480,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34576,
+          "itemId": 32934,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34484,
+          "itemId": 31816,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34489,
+          "itemId": 31821,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34546,
+          "itemId": 31878,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34547,
+          "itemId": 31879,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34548,
+          "itemId": 31880,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34550,
+          "itemId": 31882,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34549,
+          "itemId": 31881,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34551,
+          "itemId": 31883,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34552,
+          "itemId": 31884,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34553,
+          "itemId": 31885,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34555,
+          "itemId": 31887,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34554,
+          "itemId": 31886,
+          "rlvl": 510
         }
       ]
     },
@@ -3754,7 +3861,8 @@
           "Singular_fr": "exemplaire de Menuiserie experte: mirages",
           "Singular_ja": "木工秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7786,
@@ -3772,7 +3880,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -3823,7 +3932,8 @@
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -4142,13 +4252,13 @@
           "rlvl": 70
         },
         {
-          "recipeId": 1998,
-          "itemId": 7116,
+          "recipeId": 2124,
+          "itemId": 8818,
           "rlvl": 90
         },
         {
-          "recipeId": 2124,
-          "itemId": 8818,
+          "recipeId": 1998,
+          "itemId": 7116,
           "rlvl": 90
         },
         {
@@ -4267,6 +4377,16 @@
           "rlvl": 415
         },
         {
+          "recipeId": 4669,
+          "itemId": 32254,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4667,
+          "itemId": 32252,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4599,
           "itemId": 28962,
           "rlvl": 430
@@ -4289,7 +4409,8 @@
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -4378,13 +4499,13 @@
           "rlvl": 28
         },
         {
-          "recipeId": 1786,
-          "itemId": 6560,
+          "recipeId": 1789,
+          "itemId": 6563,
           "rlvl": 28
         },
         {
-          "recipeId": 1789,
-          "itemId": 6563,
+          "recipeId": 1786,
+          "itemId": 6560,
           "rlvl": 28
         },
         {
@@ -4593,13 +4714,13 @@
           "rlvl": 45
         },
         {
-          "recipeId": 1794,
-          "itemId": 6568,
+          "recipeId": 2916,
+          "itemId": 15974,
           "rlvl": 45
         },
         {
-          "recipeId": 2916,
-          "itemId": 15974,
+          "recipeId": 1794,
+          "itemId": 6568,
           "rlvl": 45
         },
         {
@@ -4668,6 +4789,11 @@
           "rlvl": 55
         },
         {
+          "recipeId": 2939,
+          "itemId": 17024,
+          "rlvl": 55
+        },
+        {
           "recipeId": 2107,
           "itemId": 8793,
           "rlvl": 55
@@ -4680,11 +4806,6 @@
         {
           "recipeId": 2109,
           "itemId": 8795,
-          "rlvl": 55
-        },
-        {
-          "recipeId": 2939,
-          "itemId": 17024,
           "rlvl": 55
         },
         {
@@ -4793,13 +4914,13 @@
           "rlvl": 90
         },
         {
-          "recipeId": 1972,
-          "itemId": 7089,
+          "recipeId": 1982,
+          "itemId": 7102,
           "rlvl": 90
         },
         {
-          "recipeId": 1982,
-          "itemId": 7102,
+          "recipeId": 1972,
+          "itemId": 7089,
           "rlvl": 90
         },
         {
@@ -5030,7 +5151,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5171,7 +5293,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5207,7 +5330,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5253,7 +5377,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5464,7 +5589,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5610,7 +5736,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5761,7 +5888,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5827,7 +5955,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5893,7 +6022,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5902,13 +6032,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32900,
-          "itemId": 23154,
+          "recipeId": 32899,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32899,
-          "itemId": 23143,
+          "recipeId": 32900,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -5922,13 +6052,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32904,
-          "itemId": 23156,
+          "recipeId": 32903,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32903,
-          "itemId": 23145,
+          "recipeId": 32904,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -5959,7 +6089,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -5968,13 +6099,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33248,
-          "itemId": 24573,
+          "recipeId": 33247,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33247,
-          "itemId": 24562,
+          "recipeId": 33248,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -5988,13 +6119,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33252,
-          "itemId": 24575,
+          "recipeId": 33251,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33251,
-          "itemId": 24564,
+          "recipeId": 33252,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -6025,7 +6156,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6066,7 +6198,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6107,7 +6240,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6153,7 +6287,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6189,7 +6324,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6325,7 +6461,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6366,7 +6503,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6412,7 +6550,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6458,7 +6597,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6499,7 +6639,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6542,7 +6683,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6623,7 +6765,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6719,7 +6862,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6825,7 +6969,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -6961,7 +7106,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7097,7 +7243,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7238,7 +7385,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7384,7 +7532,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7520,7 +7669,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7721,7 +7871,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -7932,7 +8083,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -8188,7 +8340,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -8404,7 +8557,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -8720,7 +8874,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -8986,7 +9141,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -9282,7 +9438,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -9648,7 +9805,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte I",
           "Singular_ja": "鍛冶秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7779,
@@ -9666,7 +9824,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -9852,7 +10011,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte II",
           "Singular_ja": "鍛冶秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9337,
@@ -9870,7 +10030,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -10051,7 +10212,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte III",
           "Singular_ja": "鍛冶秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12245,
@@ -10069,7 +10231,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -10335,7 +10498,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte IV",
           "Singular_ja": "鍛冶秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14127,
@@ -10353,7 +10517,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -10437,13 +10602,13 @@
           "rlvl": 180
         },
         {
-          "recipeId": 31460,
-          "itemId": 14048,
+          "recipeId": 32064,
+          "itemId": 15975,
           "rlvl": 180
         },
         {
-          "recipeId": 32064,
-          "itemId": 15975,
+          "recipeId": 31460,
+          "itemId": 14048,
           "rlvl": 180
         },
         {
@@ -10477,6 +10642,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33229,
+          "itemId": 25038,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31366,
           "itemId": 13790,
           "rlvl": 210
@@ -10507,6 +10677,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33231,
+          "itemId": 25040,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31368,
           "itemId": 13792,
           "rlvl": 210
@@ -10534,6 +10709,11 @@
         {
           "recipeId": 33219,
           "itemId": 25028,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33235,
+          "itemId": 25044,
           "rlvl": 210
         },
         {
@@ -10577,6 +10757,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33230,
+          "itemId": 25039,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31367,
           "itemId": 13791,
           "rlvl": 210
@@ -10607,6 +10792,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33242,
+          "itemId": 25051,
+          "rlvl": 210
+        },
+        {
           "recipeId": 32104,
           "itemId": 15603,
           "rlvl": 210
@@ -10624,6 +10814,11 @@
         {
           "recipeId": 33218,
           "itemId": 25027,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33234,
+          "itemId": 25043,
           "rlvl": 210
         },
         {
@@ -10659,6 +10854,11 @@
         {
           "recipeId": 33220,
           "itemId": 25029,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33236,
+          "itemId": 25045,
           "rlvl": 210
         },
         {
@@ -10899,7 +11099,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte V",
           "Singular_ja": "鍛冶秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17870,
@@ -10917,7 +11118,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -11103,7 +11305,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte VI",
           "Singular_ja": "鍛冶秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22310,
@@ -11121,7 +11324,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -11577,7 +11781,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte VII",
           "Singular_ja": "鍛冶秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24267,
@@ -11595,7 +11800,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -11831,7 +12037,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte VIII",
           "Singular_ja": "鍛冶秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29485,
@@ -11849,7 +12056,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -11981,6 +12189,61 @@
           "recipeId": 33928,
           "itemId": 30460,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34577,
+          "itemId": 32935,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34481,
+          "itemId": 31813,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34483,
+          "itemId": 31815,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34487,
+          "itemId": 31819,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34496,
+          "itemId": 31828,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34482,
+          "itemId": 31814,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34494,
+          "itemId": 31826,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34486,
+          "itemId": 31818,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34485,
+          "itemId": 31817,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34488,
+          "itemId": 31820,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34497,
+          "itemId": 31829,
+          "rlvl": 510
         }
       ]
     },
@@ -12090,7 +12353,8 @@
           "Singular_fr": "exemplaire de Métallurgie experte: mirages",
           "Singular_ja": "鍛冶秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7787,
@@ -12108,7 +12372,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12234,7 +12499,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12338,11 +12604,6 @@
           "rlvl": 90
         },
         {
-          "recipeId": 1999,
-          "itemId": 7117,
-          "rlvl": 90
-        },
-        {
           "recipeId": 2123,
           "itemId": 8817,
           "rlvl": 90
@@ -12350,6 +12611,11 @@
         {
           "recipeId": 2125,
           "itemId": 8819,
+          "rlvl": 90
+        },
+        {
+          "recipeId": 1999,
+          "itemId": 7117,
           "rlvl": 90
         },
         {
@@ -12386,6 +12652,16 @@
           "recipeId": 4621,
           "itemId": 30380,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4668,
+          "itemId": 32253,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4672,
+          "itemId": 32244,
+          "rlvl": 430
         }
       ]
     },
@@ -12400,7 +12676,8 @@
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12592,6 +12869,11 @@
           "recipeId": 4632,
           "itemId": 30400,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4659,
+          "itemId": 32235,
+          "rlvl": 430
         }
       ]
     },
@@ -12606,7 +12888,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12747,7 +13030,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12783,7 +13067,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -12829,7 +13114,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13040,7 +13326,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13186,7 +13473,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13337,7 +13625,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13403,7 +13692,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13469,7 +13759,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13478,13 +13769,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32910,
-          "itemId": 23154,
+          "recipeId": 32909,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32909,
-          "itemId": 23143,
+          "recipeId": 32910,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -13498,13 +13789,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32914,
-          "itemId": 23156,
+          "recipeId": 32913,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32913,
-          "itemId": 23145,
+          "recipeId": 32914,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -13535,7 +13826,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13544,13 +13836,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33258,
-          "itemId": 24573,
+          "recipeId": 33257,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33257,
-          "itemId": 24562,
+          "recipeId": 33258,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -13564,13 +13856,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33262,
-          "itemId": 24575,
+          "recipeId": 33261,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33261,
-          "itemId": 24564,
+          "recipeId": 33262,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -13601,7 +13893,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13642,7 +13935,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13683,7 +13977,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13729,7 +14024,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13765,7 +14061,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13901,7 +14198,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13942,7 +14240,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -13988,7 +14287,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14034,7 +14334,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14075,7 +14376,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14118,7 +14420,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14169,7 +14472,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14225,7 +14529,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14311,7 +14616,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14387,7 +14693,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14483,7 +14790,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14594,7 +14902,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14715,7 +15024,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -14826,7 +15136,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -15012,7 +15323,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -15298,7 +15610,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -15489,7 +15802,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -15685,7 +15999,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -15871,7 +16186,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -16037,7 +16353,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -16313,7 +16630,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -16589,7 +16907,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte I",
           "Singular_ja": "板金秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7780,
@@ -16607,7 +16926,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -16808,7 +17128,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte II",
           "Singular_ja": "板金秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9338,
@@ -16826,7 +17147,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -16992,7 +17314,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte III",
           "Singular_ja": "板金秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12246,
@@ -17010,7 +17333,8 @@
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539
+        "SuggestedCraftsmanship": 539,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -17321,7 +17645,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte IV",
           "Singular_ja": "板金秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14128,
@@ -17339,7 +17664,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -17565,6 +17891,11 @@
         {
           "recipeId": 33228,
           "itemId": 25037,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33244,
+          "itemId": 25053,
           "rlvl": 210
         },
         {
@@ -17905,7 +18236,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte V",
           "Singular_ja": "板金秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17871,
@@ -17923,7 +18255,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -18094,7 +18427,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte VI",
           "Singular_ja": "板金秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22311,
@@ -18112,7 +18446,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -18383,7 +18718,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte VII",
           "Singular_ja": "板金秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24268,
@@ -18401,7 +18737,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -18607,7 +18944,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte VIII",
           "Singular_ja": "板金秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29486,
@@ -18625,7 +18963,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -18737,6 +19076,86 @@
           "recipeId": 34046,
           "itemId": 30381,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34578,
+          "itemId": 32935,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34498,
+          "itemId": 31830,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34499,
+          "itemId": 31831,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34505,
+          "itemId": 31837,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34500,
+          "itemId": 31832,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34506,
+          "itemId": 31838,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34501,
+          "itemId": 31833,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34507,
+          "itemId": 31839,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34504,
+          "itemId": 31836,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34510,
+          "itemId": 31842,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34540,
+          "itemId": 31872,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34534,
+          "itemId": 31866,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34503,
+          "itemId": 31835,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34509,
+          "itemId": 31841,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34596,
+          "itemId": 32823,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34595,
+          "itemId": 32206,
+          "rlvl": 510
         }
       ]
     },
@@ -18846,7 +19265,8 @@
           "Singular_fr": "exemplaire d'Armurerie experte: mirages",
           "Singular_ja": "板金秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7788,
@@ -18864,7 +19284,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -18895,7 +19316,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19071,7 +19493,8 @@
         "Quality": 751,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19257,7 +19680,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19398,7 +19822,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19434,7 +19859,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19480,7 +19906,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19691,7 +20118,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19837,7 +20265,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -19988,7 +20417,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20054,7 +20484,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20120,7 +20551,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20129,13 +20561,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32920,
-          "itemId": 23154,
+          "recipeId": 32919,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32919,
-          "itemId": 23143,
+          "recipeId": 32920,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -20149,13 +20581,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32924,
-          "itemId": 23156,
+          "recipeId": 32923,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32923,
-          "itemId": 23145,
+          "recipeId": 32924,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -20186,7 +20618,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20195,13 +20628,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33268,
-          "itemId": 24573,
+          "recipeId": 33267,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33267,
-          "itemId": 24562,
+          "recipeId": 33268,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -20215,13 +20648,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33272,
-          "itemId": 24575,
+          "recipeId": 33271,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33271,
-          "itemId": 24564,
+          "recipeId": 33272,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -20252,7 +20685,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20293,7 +20727,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20334,7 +20769,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20425,7 +20861,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20471,7 +20908,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20507,7 +20945,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20643,7 +21082,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20684,7 +21124,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20730,7 +21171,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20776,7 +21218,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20817,7 +21260,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20860,7 +21304,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20911,7 +21356,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -20982,7 +21428,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21083,7 +21530,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21189,7 +21637,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21345,7 +21794,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21526,7 +21976,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21737,7 +22188,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -21771,13 +22223,8 @@
           "rlvl": 36
         },
         {
-          "recipeId": 803,
-          "itemId": 4349,
-          "rlvl": 37
-        },
-        {
-          "recipeId": 804,
-          "itemId": 4347,
+          "recipeId": 807,
+          "itemId": 4345,
           "rlvl": 37
         },
         {
@@ -21786,18 +22233,13 @@
           "rlvl": 37
         },
         {
+          "recipeId": 804,
+          "itemId": 4347,
+          "rlvl": 37
+        },
+        {
           "recipeId": 806,
           "itemId": 4341,
-          "rlvl": 37
-        },
-        {
-          "recipeId": 807,
-          "itemId": 4345,
-          "rlvl": 37
-        },
-        {
-          "recipeId": 808,
-          "itemId": 4343,
           "rlvl": 37
         },
         {
@@ -21806,28 +22248,18 @@
           "rlvl": 37
         },
         {
+          "recipeId": 803,
+          "itemId": 4349,
+          "rlvl": 37
+        },
+        {
+          "recipeId": 808,
+          "itemId": 4343,
+          "rlvl": 37
+        },
+        {
           "recipeId": 2409,
           "itemId": 10526,
-          "rlvl": 38
-        },
-        {
-          "recipeId": 810,
-          "itemId": 4143,
-          "rlvl": 38
-        },
-        {
-          "recipeId": 811,
-          "itemId": 4141,
-          "rlvl": 38
-        },
-        {
-          "recipeId": 812,
-          "itemId": 4133,
-          "rlvl": 38
-        },
-        {
-          "recipeId": 813,
-          "itemId": 4135,
           "rlvl": 38
         },
         {
@@ -21836,8 +22268,18 @@
           "rlvl": 38
         },
         {
-          "recipeId": 815,
-          "itemId": 4137,
+          "recipeId": 812,
+          "itemId": 4133,
+          "rlvl": 38
+        },
+        {
+          "recipeId": 811,
+          "itemId": 4141,
+          "rlvl": 38
+        },
+        {
+          "recipeId": 813,
+          "itemId": 4135,
           "rlvl": 38
         },
         {
@@ -21846,8 +22288,18 @@
           "rlvl": 38
         },
         {
-          "recipeId": 817,
-          "itemId": 4243,
+          "recipeId": 810,
+          "itemId": 4143,
+          "rlvl": 38
+        },
+        {
+          "recipeId": 815,
+          "itemId": 4137,
+          "rlvl": 38
+        },
+        {
+          "recipeId": 821,
+          "itemId": 4233,
           "rlvl": 39
         },
         {
@@ -21856,23 +22308,13 @@
           "rlvl": 39
         },
         {
-          "recipeId": 821,
-          "itemId": 4233,
-          "rlvl": 39
-        },
-        {
           "recipeId": 823,
           "itemId": 4235,
           "rlvl": 39
         },
         {
-          "recipeId": 818,
-          "itemId": 4478,
-          "rlvl": 39
-        },
-        {
-          "recipeId": 820,
-          "itemId": 4476,
+          "recipeId": 817,
+          "itemId": 4243,
           "rlvl": 39
         },
         {
@@ -21881,8 +22323,18 @@
           "rlvl": 39
         },
         {
+          "recipeId": 820,
+          "itemId": 4476,
+          "rlvl": 39
+        },
+        {
           "recipeId": 824,
           "itemId": 4470,
+          "rlvl": 39
+        },
+        {
+          "recipeId": 818,
+          "itemId": 4478,
           "rlvl": 39
         },
         {
@@ -21958,7 +22410,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -22002,13 +22455,13 @@
           "rlvl": 41
         },
         {
-          "recipeId": 839,
-          "itemId": 4245,
+          "recipeId": 1451,
+          "itemId": 4247,
           "rlvl": 41
         },
         {
-          "recipeId": 1451,
-          "itemId": 4247,
+          "recipeId": 839,
+          "itemId": 4245,
           "rlvl": 41
         },
         {
@@ -22197,13 +22650,13 @@
           "rlvl": 45
         },
         {
-          "recipeId": 863,
-          "itemId": 4363,
+          "recipeId": 864,
+          "itemId": 4371,
           "rlvl": 45
         },
         {
-          "recipeId": 864,
-          "itemId": 4371,
+          "recipeId": 863,
+          "itemId": 4363,
           "rlvl": 45
         },
         {
@@ -22229,7 +22682,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -22243,13 +22697,13 @@
           "rlvl": 47
         },
         {
-          "recipeId": 873,
-          "itemId": 4367,
+          "recipeId": 875,
+          "itemId": 4373,
           "rlvl": 47
         },
         {
-          "recipeId": 875,
-          "itemId": 4373,
+          "recipeId": 873,
+          "itemId": 4367,
           "rlvl": 47
         },
         {
@@ -22263,13 +22717,13 @@
           "rlvl": 47
         },
         {
-          "recipeId": 874,
-          "itemId": 4158,
+          "recipeId": 876,
+          "itemId": 4164,
           "rlvl": 47
         },
         {
-          "recipeId": 876,
-          "itemId": 4164,
+          "recipeId": 874,
+          "itemId": 4158,
           "rlvl": 47
         },
         {
@@ -22293,8 +22747,8 @@
           "rlvl": 48
         },
         {
-          "recipeId": 880,
-          "itemId": 4369,
+          "recipeId": 884,
+          "itemId": 4365,
           "rlvl": 48
         },
         {
@@ -22303,13 +22757,13 @@
           "rlvl": 48
         },
         {
-          "recipeId": 884,
-          "itemId": 4365,
+          "recipeId": 880,
+          "itemId": 4369,
           "rlvl": 48
         },
         {
-          "recipeId": 881,
-          "itemId": 4160,
+          "recipeId": 885,
+          "itemId": 4156,
           "rlvl": 48
         },
         {
@@ -22318,8 +22772,8 @@
           "rlvl": 48
         },
         {
-          "recipeId": 885,
-          "itemId": 4156,
+          "recipeId": 881,
+          "itemId": 4160,
           "rlvl": 48
         },
         {
@@ -22353,13 +22807,23 @@
           "rlvl": 49
         },
         {
-          "recipeId": 887,
-          "itemId": 4504,
+          "recipeId": 892,
+          "itemId": 4502,
           "rlvl": 49
         },
         {
           "recipeId": 888,
           "itemId": 4510,
+          "rlvl": 49
+        },
+        {
+          "recipeId": 887,
+          "itemId": 4504,
+          "rlvl": 49
+        },
+        {
+          "recipeId": 891,
+          "itemId": 4514,
           "rlvl": 49
         },
         {
@@ -22373,16 +22837,6 @@
           "rlvl": 49
         },
         {
-          "recipeId": 891,
-          "itemId": 4514,
-          "rlvl": 49
-        },
-        {
-          "recipeId": 892,
-          "itemId": 4502,
-          "rlvl": 49
-        },
-        {
           "recipeId": 893,
           "itemId": 2133,
           "rlvl": 50
@@ -22393,13 +22847,23 @@
           "rlvl": 50
         },
         {
-          "recipeId": 895,
-          "itemId": 4260,
+          "recipeId": 900,
+          "itemId": 4258,
           "rlvl": 50
         },
         {
           "recipeId": 896,
           "itemId": 4266,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 895,
+          "itemId": 4260,
+          "rlvl": 50
+        },
+        {
+          "recipeId": 899,
+          "itemId": 4270,
           "rlvl": 50
         },
         {
@@ -22410,16 +22874,6 @@
         {
           "recipeId": 898,
           "itemId": 4262,
-          "rlvl": 50
-        },
-        {
-          "recipeId": 899,
-          "itemId": 4270,
-          "rlvl": 50
-        },
-        {
-          "recipeId": 900,
-          "itemId": 4258,
           "rlvl": 50
         },
         {
@@ -22563,18 +23017,13 @@
           "rlvl": 70
         },
         {
-          "recipeId": 1490,
-          "itemId": 4284,
-          "rlvl": 70
-        },
-        {
           "recipeId": 1493,
           "itemId": 4285,
           "rlvl": 70
         },
         {
-          "recipeId": 1485,
-          "itemId": 4389,
+          "recipeId": 1490,
+          "itemId": 4284,
           "rlvl": 70
         },
         {
@@ -22583,8 +23032,8 @@
           "rlvl": 70
         },
         {
-          "recipeId": 1486,
-          "itemId": 4182,
+          "recipeId": 1485,
+          "itemId": 4389,
           "rlvl": 70
         },
         {
@@ -22593,13 +23042,18 @@
           "rlvl": 70
         },
         {
-          "recipeId": 1487,
-          "itemId": 4527,
+          "recipeId": 1486,
+          "itemId": 4182,
           "rlvl": 70
         },
         {
           "recipeId": 1495,
           "itemId": 4528,
+          "rlvl": 70
+        },
+        {
+          "recipeId": 1487,
+          "itemId": 4527,
           "rlvl": 70
         }
       ]
@@ -22615,7 +23069,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -23016,7 +23471,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -23327,7 +23783,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -23773,7 +24230,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -24154,7 +24612,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -24525,7 +24984,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -24921,7 +25381,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte I",
           "Singular_ja": "彫金秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7781,
@@ -24939,7 +25400,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -25130,7 +25592,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte II",
           "Singular_ja": "彫金秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9339,
@@ -25148,7 +25611,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -25394,7 +25858,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte III",
           "Singular_ja": "彫金秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12247,
@@ -25412,7 +25877,8 @@
         "Quality": 7339,
         "Stars": 0,
         "SuggestedControl": 546,
-        "SuggestedCraftsmanship": 580
+        "SuggestedCraftsmanship": 580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -25753,7 +26219,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte IV",
           "Singular_ja": "彫金秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14129,
@@ -25771,7 +26238,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -25905,6 +26373,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33238,
+          "itemId": 25047,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31417,
           "itemId": 13841,
           "rlvl": 210
@@ -25935,6 +26408,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33243,
+          "itemId": 25052,
+          "rlvl": 210
+        },
+        {
           "recipeId": 33186,
           "itemId": 24328,
           "rlvl": 210
@@ -25942,6 +26420,11 @@
         {
           "recipeId": 33221,
           "itemId": 25030,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33237,
+          "itemId": 25046,
           "rlvl": 210
         },
         {
@@ -25972,6 +26455,11 @@
         {
           "recipeId": 33225,
           "itemId": 25034,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33241,
+          "itemId": 25050,
           "rlvl": 210
         },
         {
@@ -26317,7 +26805,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte V",
           "Singular_ja": "彫金秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17872,
@@ -26335,7 +26824,8 @@
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100
+        "SuggestedCraftsmanship": 1100,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -26546,7 +27036,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VI",
           "Singular_ja": "彫金秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22312,
@@ -26564,7 +27055,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -26633,11 +27125,6 @@
           "rlvl": 320
         },
         {
-          "recipeId": 32980,
-          "itemId": 22532,
-          "rlvl": 320
-        },
-        {
           "recipeId": 32677,
           "itemId": 21869,
           "rlvl": 320
@@ -26645,6 +27132,11 @@
         {
           "recipeId": 33210,
           "itemId": 24868,
+          "rlvl": 320
+        },
+        {
+          "recipeId": 32980,
+          "itemId": 22532,
           "rlvl": 320
         },
         {
@@ -26663,6 +27155,11 @@
           "rlvl": 320
         },
         {
+          "recipeId": 32673,
+          "itemId": 21843,
+          "rlvl": 320
+        },
+        {
           "recipeId": 32982,
           "itemId": 22537,
           "rlvl": 320
@@ -26670,11 +27167,6 @@
         {
           "recipeId": 32661,
           "itemId": 21813,
-          "rlvl": 320
-        },
-        {
-          "recipeId": 32673,
-          "itemId": 21843,
           "rlvl": 320
         },
         {
@@ -27005,7 +27497,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VII",
           "Singular_ja": "彫金秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24269,
@@ -27023,7 +27516,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -27279,7 +27773,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte VIII",
           "Singular_ja": "彫金秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29487,
@@ -27297,7 +27792,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -27394,6 +27890,81 @@
           "recipeId": 33943,
           "itemId": 30475,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34579,
+          "itemId": 32936,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34490,
+          "itemId": 31822,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34495,
+          "itemId": 31827,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34493,
+          "itemId": 31825,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34529,
+          "itemId": 31861,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34541,
+          "itemId": 31873,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34542,
+          "itemId": 31874,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34543,
+          "itemId": 31875,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34545,
+          "itemId": 31877,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34544,
+          "itemId": 31876,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34556,
+          "itemId": 31888,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34557,
+          "itemId": 31889,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34558,
+          "itemId": 31890,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34560,
+          "itemId": 31892,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34559,
+          "itemId": 31891,
+          "rlvl": 510
         }
       ]
     },
@@ -27503,7 +28074,8 @@
           "Singular_fr": "exemplaire d'Orfèvrerie experte: mirages",
           "Singular_ja": "彫金秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7789,
@@ -27521,7 +28093,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -27742,7 +28315,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28026,13 +28600,13 @@
           "rlvl": 70
         },
         {
-          "recipeId": 2942,
-          "itemId": 17036,
+          "recipeId": 1721,
+          "itemId": 6474,
           "rlvl": 70
         },
         {
-          "recipeId": 1721,
-          "itemId": 6474,
+          "recipeId": 2942,
+          "itemId": 17036,
           "rlvl": 70
         },
         {
@@ -28163,7 +28737,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28459,7 +29034,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28600,7 +29176,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28636,7 +29213,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28682,7 +29260,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -28893,7 +29472,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29039,7 +29619,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29190,7 +29771,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29256,7 +29838,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29322,7 +29905,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29331,13 +29915,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32930,
-          "itemId": 23154,
+          "recipeId": 32929,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32929,
-          "itemId": 23143,
+          "recipeId": 32930,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -29351,13 +29935,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32934,
-          "itemId": 23156,
+          "recipeId": 32933,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32933,
-          "itemId": 23145,
+          "recipeId": 32934,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -29388,7 +29972,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29397,13 +29982,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33278,
-          "itemId": 24573,
+          "recipeId": 33277,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33277,
-          "itemId": 24562,
+          "recipeId": 33278,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -29417,13 +30002,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33282,
-          "itemId": 24575,
+          "recipeId": 33281,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33281,
-          "itemId": 24564,
+          "recipeId": 33282,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -29454,7 +30039,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29495,7 +30081,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29536,7 +30123,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29597,7 +30185,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29643,7 +30232,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29679,7 +30269,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29815,7 +30406,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29856,7 +30448,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29902,7 +30495,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29948,7 +30542,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -29989,7 +30584,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30032,7 +30628,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30123,7 +30720,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30224,7 +30822,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30350,7 +30949,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30446,7 +31046,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30552,7 +31153,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30658,7 +31260,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30779,7 +31382,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -30940,7 +31544,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -31156,7 +31761,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -31612,7 +32218,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -32048,7 +32655,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -32254,7 +32862,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -32650,7 +33259,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -32986,7 +33596,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -33347,7 +33958,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -33683,7 +34295,8 @@
           "Singular_fr": "exemplaire de Tannerie experte I",
           "Singular_ja": "革細工秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7782,
@@ -33701,7 +34314,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -33937,7 +34551,8 @@
           "Singular_fr": "exemplaire de Tannerie experte II",
           "Singular_ja": "革細工秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9340,
@@ -33955,7 +34570,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -34176,7 +34792,8 @@
           "Singular_fr": "exemplaire de Tannerie experte III",
           "Singular_ja": "革細工秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12248,
@@ -34194,7 +34811,8 @@
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539
+        "SuggestedCraftsmanship": 539,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -34865,7 +35483,8 @@
           "Singular_fr": "exemplaire de Tannerie experte IV",
           "Singular_ja": "革細工秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14130,
@@ -34883,7 +35502,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -35519,7 +36139,8 @@
           "Singular_fr": "exemplaire de Tannerie experte V",
           "Singular_ja": "革細工秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17873,
@@ -35537,7 +36158,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -35763,7 +36385,8 @@
           "Singular_fr": "exemplaire de Tannerie experte VI",
           "Singular_ja": "革細工秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22313,
@@ -35781,7 +36404,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36122,7 +36746,8 @@
           "Singular_fr": "exemplaire de Tannerie experte VII",
           "Singular_ja": "革細工秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24270,
@@ -36140,7 +36765,8 @@
         "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
-        "SuggestedCraftsmanship": 2000
+        "SuggestedCraftsmanship": 2000,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36366,7 +36992,8 @@
           "Singular_fr": "exemplaire de Tannerie experte VIII",
           "Singular_ja": "革細工秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29488,
@@ -36384,7 +37011,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36501,6 +37129,106 @@
           "recipeId": 34044,
           "itemId": 30758,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34581,
+          "itemId": 32938,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34535,
+          "itemId": 31867,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34597,
+          "itemId": 32798,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34536,
+          "itemId": 31868,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34598,
+          "itemId": 32799,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34513,
+          "itemId": 31845,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34525,
+          "itemId": 31857,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34519,
+          "itemId": 31851,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34537,
+          "itemId": 31869,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34599,
+          "itemId": 32800,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34502,
+          "itemId": 31834,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34508,
+          "itemId": 31840,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34538,
+          "itemId": 31870,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34532,
+          "itemId": 31864,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34600,
+          "itemId": 32801,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34515,
+          "itemId": 31847,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34527,
+          "itemId": 31859,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34521,
+          "itemId": 31853,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34539,
+          "itemId": 31871,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34601,
+          "itemId": 32802,
+          "rlvl": 510
         }
       ]
     },
@@ -36610,7 +37338,8 @@
           "Singular_fr": "exemplaire de Tannerie experte: mirages",
           "Singular_ja": "革細工秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7790,
@@ -36628,7 +37357,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36729,7 +37459,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36775,7 +37506,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -36926,7 +37658,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37067,7 +37800,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37103,7 +37837,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37149,7 +37884,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37360,7 +38096,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37506,7 +38243,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37657,7 +38395,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37723,7 +38462,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37789,7 +38529,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37798,13 +38539,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32940,
-          "itemId": 23154,
+          "recipeId": 32939,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32939,
-          "itemId": 23143,
+          "recipeId": 32940,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -37818,13 +38559,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32944,
-          "itemId": 23156,
+          "recipeId": 32943,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32943,
-          "itemId": 23145,
+          "recipeId": 32944,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -37855,7 +38596,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37864,13 +38606,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33288,
-          "itemId": 24573,
+          "recipeId": 33287,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33287,
-          "itemId": 24562,
+          "recipeId": 33288,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -37884,13 +38626,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33292,
-          "itemId": 24575,
+          "recipeId": 33291,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33291,
-          "itemId": 24564,
+          "recipeId": 33292,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -37921,7 +38663,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -37962,7 +38705,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38003,7 +38747,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38164,7 +38909,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38210,7 +38956,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38246,7 +38993,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38382,7 +39130,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38423,7 +39172,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38469,7 +39219,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38515,7 +39266,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38556,7 +39308,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38599,7 +39352,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38720,7 +39474,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38826,7 +39581,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -38952,7 +39708,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39068,7 +39825,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39189,7 +39947,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39310,7 +40069,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39466,7 +40226,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39647,7 +40408,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -39938,7 +40700,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -40409,7 +41172,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -40815,7 +41579,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -41001,7 +41766,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -41322,7 +42088,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -41558,7 +42325,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -41879,7 +42647,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -42190,7 +42959,8 @@
           "Singular_fr": "exemplaire de Couture experte I",
           "Singular_ja": "裁縫秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7783,
@@ -42208,7 +42978,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -42414,7 +43185,8 @@
           "Singular_fr": "exemplaire de Couture experte II",
           "Singular_ja": "裁縫秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9341,
@@ -42432,7 +43204,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -42633,7 +43406,8 @@
           "Singular_fr": "exemplaire de Couture experte III",
           "Singular_ja": "裁縫秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12249,
@@ -42651,7 +43425,8 @@
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539
+        "SuggestedCraftsmanship": 539,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -43227,7 +44002,8 @@
           "Singular_fr": "exemplaire de Couture experte IV",
           "Singular_ja": "裁縫秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14131,
@@ -43245,7 +44021,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -43369,6 +44146,16 @@
           "rlvl": 180
         },
         {
+          "recipeId": 32060,
+          "itemId": 15967,
+          "rlvl": 180
+        },
+        {
+          "recipeId": 32061,
+          "itemId": 15968,
+          "rlvl": 180
+        },
+        {
           "recipeId": 31455,
           "itemId": 14047,
           "rlvl": 180
@@ -43391,16 +44178,6 @@
         {
           "recipeId": 31459,
           "itemId": 14903,
-          "rlvl": 180
-        },
-        {
-          "recipeId": 32060,
-          "itemId": 15967,
-          "rlvl": 180
-        },
-        {
-          "recipeId": 32061,
-          "itemId": 15968,
           "rlvl": 180
         },
         {
@@ -43801,7 +44578,8 @@
           "Singular_fr": "exemplaire de Couture experte V",
           "Singular_ja": "裁縫秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17874,
@@ -43819,7 +44597,8 @@
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100
+        "SuggestedCraftsmanship": 1100,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -44060,7 +44839,8 @@
           "Singular_fr": "exemplaire de Couture experte VI",
           "Singular_ja": "裁縫秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22314,
@@ -44078,7 +44858,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -44534,7 +45315,8 @@
           "Singular_fr": "exemplaire de Couture experte VII",
           "Singular_ja": "裁縫秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24271,
@@ -44552,7 +45334,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -44788,7 +45571,8 @@
           "Singular_fr": "exemplaire de Couture experte VIII",
           "Singular_ja": "裁縫秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29489,
@@ -44806,7 +45590,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -44928,6 +45713,86 @@
           "recipeId": 34043,
           "itemId": 30757,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34580,
+          "itemId": 32937,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34511,
+          "itemId": 31843,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34523,
+          "itemId": 31855,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34517,
+          "itemId": 31849,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34512,
+          "itemId": 31844,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34524,
+          "itemId": 31856,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34518,
+          "itemId": 31850,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34530,
+          "itemId": 31862,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34531,
+          "itemId": 31863,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34516,
+          "itemId": 31848,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34528,
+          "itemId": 31860,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34522,
+          "itemId": 31854,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34514,
+          "itemId": 31846,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34526,
+          "itemId": 31858,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34520,
+          "itemId": 31852,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34533,
+          "itemId": 31865,
+          "rlvl": 510
         }
       ]
     },
@@ -45037,7 +45902,8 @@
           "Singular_fr": "exemplaire de Couture experte: mirages",
           "Singular_ja": "裁縫秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7791,
@@ -45055,7 +45921,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45141,7 +46008,8 @@
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45255,13 +46123,13 @@
           "rlvl": 70
         },
         {
-          "recipeId": 2017,
-          "itemId": 7150,
+          "recipeId": 2191,
+          "itemId": 9768,
           "rlvl": 70
         },
         {
-          "recipeId": 2191,
-          "itemId": 9768,
+          "recipeId": 2017,
+          "itemId": 7150,
           "rlvl": 70
         },
         {
@@ -45283,6 +46151,16 @@
           "recipeId": 4624,
           "itemId": 30388,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4670,
+          "itemId": 32242,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4671,
+          "itemId": 32243,
+          "rlvl": 430
         }
       ]
     },
@@ -45297,7 +46175,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45361,13 +46240,13 @@
           "rlvl": 40
         },
         {
-          "recipeId": 1894,
-          "itemId": 6676,
+          "recipeId": 2038,
+          "itemId": 7983,
           "rlvl": 40
         },
         {
-          "recipeId": 2038,
-          "itemId": 7983,
+          "recipeId": 1894,
+          "itemId": 6676,
           "rlvl": 40
         },
         {
@@ -45441,16 +46320,6 @@
           "rlvl": 55
         },
         {
-          "recipeId": 1966,
-          "itemId": 7083,
-          "rlvl": 55
-        },
-        {
-          "recipeId": 1979,
-          "itemId": 7099,
-          "rlvl": 55
-        },
-        {
           "recipeId": 2032,
           "itemId": 7977,
           "rlvl": 55
@@ -45458,6 +46327,16 @@
         {
           "recipeId": 2917,
           "itemId": 15976,
+          "rlvl": 55
+        },
+        {
+          "recipeId": 1966,
+          "itemId": 7083,
+          "rlvl": 55
+        },
+        {
+          "recipeId": 1979,
+          "itemId": 7099,
           "rlvl": 55
         },
         {
@@ -45531,13 +46410,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 3720,
-          "itemId": 20730,
+          "recipeId": 3808,
+          "itemId": 24528,
           "rlvl": 279
         },
         {
-          "recipeId": 3808,
-          "itemId": 24528,
+          "recipeId": 3720,
+          "itemId": 20730,
           "rlvl": 279
         },
         {
@@ -45546,13 +46425,13 @@
           "rlvl": 288
         },
         {
-          "recipeId": 4566,
-          "itemId": 28142,
+          "recipeId": 4569,
+          "itemId": 28147,
           "rlvl": 415
         },
         {
-          "recipeId": 4569,
-          "itemId": 28147,
+          "recipeId": 4566,
+          "itemId": 28142,
           "rlvl": 415
         },
         {
@@ -45571,8 +46450,23 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4665,
+          "itemId": 32224,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4625,
           "itemId": 30389,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4657,
+          "itemId": 32233,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4658,
+          "itemId": 32234,
           "rlvl": 430
         }
       ]
@@ -45588,7 +46482,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45729,7 +46624,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45765,7 +46661,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -45811,7 +46708,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46022,7 +46920,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46168,7 +47067,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46319,7 +47219,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46385,7 +47286,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46451,7 +47353,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46460,13 +47363,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32950,
-          "itemId": 23154,
+          "recipeId": 32949,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32949,
-          "itemId": 23143,
+          "recipeId": 32950,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -46480,13 +47383,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32954,
-          "itemId": 23156,
+          "recipeId": 32953,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32953,
-          "itemId": 23145,
+          "recipeId": 32954,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -46517,7 +47420,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46526,13 +47430,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33298,
-          "itemId": 24573,
+          "recipeId": 33297,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33297,
-          "itemId": 24562,
+          "recipeId": 33298,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -46546,13 +47450,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33302,
-          "itemId": 24575,
+          "recipeId": 33301,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33301,
-          "itemId": 24564,
+          "recipeId": 33302,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -46583,7 +47487,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46624,7 +47529,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46665,7 +47571,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46766,7 +47673,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46812,7 +47720,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46848,7 +47757,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -46984,7 +47894,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47025,7 +47936,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47071,7 +47983,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47117,7 +48030,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47158,7 +48072,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47201,7 +48116,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47257,7 +48173,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47313,7 +48230,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47369,7 +48287,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47440,7 +48359,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47516,7 +48436,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47592,7 +48513,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47708,7 +48630,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47779,7 +48702,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -47855,7 +48779,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48126,7 +49051,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48232,7 +49158,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48313,7 +49240,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48419,7 +49347,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48510,7 +49439,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48616,7 +49546,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -48797,7 +49728,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte I",
           "Singular_ja": "錬成秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7784,
@@ -48815,7 +49747,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -49161,7 +50094,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte II",
           "Singular_ja": "錬成秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9342,
@@ -49179,7 +50113,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -49380,7 +50315,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte III",
           "Singular_ja": "錬成秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12250,
@@ -49398,7 +50334,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -49694,7 +50631,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte IV",
           "Singular_ja": "錬成秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14132,
@@ -49712,7 +50650,8 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -49806,6 +50745,11 @@
           "rlvl": 210
         },
         {
+          "recipeId": 33239,
+          "itemId": 25048,
+          "rlvl": 210
+        },
+        {
           "recipeId": 31373,
           "itemId": 13797,
           "rlvl": 210
@@ -49833,6 +50777,11 @@
         {
           "recipeId": 33224,
           "itemId": 25033,
+          "rlvl": 210
+        },
+        {
+          "recipeId": 33240,
+          "itemId": 25049,
           "rlvl": 210
         },
         {
@@ -50058,7 +51007,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte V",
           "Singular_ja": "錬成秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17875,
@@ -50076,7 +51026,8 @@
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100
+        "SuggestedCraftsmanship": 1100,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -50252,7 +51203,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte VI",
           "Singular_ja": "錬成秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22315,
@@ -50270,7 +51222,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -50616,7 +51569,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte VII",
           "Singular_ja": "錬成秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24272,
@@ -50634,7 +51588,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -50815,7 +51770,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte VIII",
           "Singular_ja": "錬成秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29490,
@@ -50833,7 +51789,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -50915,6 +51872,71 @@
           "recipeId": 34432,
           "itemId": 31663,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34602,
+          "itemId": 33110,
+          "rlvl": 480
+        },
+        {
+          "recipeId": 34582,
+          "itemId": 32939,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34583,
+          "itemId": 32940,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34584,
+          "itemId": 32941,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34585,
+          "itemId": 32942,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34586,
+          "itemId": 32943,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34491,
+          "itemId": 31823,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34492,
+          "itemId": 31824,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34561,
+          "itemId": 31893,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34562,
+          "itemId": 31894,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34563,
+          "itemId": 31895,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34564,
+          "itemId": 31896,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34565,
+          "itemId": 31897,
+          "rlvl": 510
         }
       ]
     },
@@ -51024,7 +52046,8 @@
           "Singular_fr": "exemplaire d'Alchimie experte: mirages",
           "Singular_ja": "錬成秘伝書:ミラージュプリズム",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7792,
@@ -51042,7 +52065,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51188,7 +52212,8 @@
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51207,13 +52232,13 @@
           "rlvl": 20
         },
         {
-          "recipeId": 1723,
-          "itemId": 6476,
+          "recipeId": 1724,
+          "itemId": 6477,
           "rlvl": 20
         },
         {
-          "recipeId": 1724,
-          "itemId": 6477,
+          "recipeId": 1723,
+          "itemId": 6476,
           "rlvl": 20
         },
         {
@@ -51237,13 +52262,13 @@
           "rlvl": 23
         },
         {
-          "recipeId": 1726,
-          "itemId": 6479,
+          "recipeId": 1752,
+          "itemId": 6510,
           "rlvl": 24
         },
         {
-          "recipeId": 1752,
-          "itemId": 6510,
+          "recipeId": 1726,
+          "itemId": 6479,
           "rlvl": 24
         },
         {
@@ -51467,11 +52492,6 @@
           "rlvl": 70
         },
         {
-          "recipeId": 2773,
-          "itemId": 12113,
-          "rlvl": 136
-        },
-        {
           "recipeId": 2775,
           "itemId": 12234,
           "rlvl": 136
@@ -51484,6 +52504,11 @@
         {
           "recipeId": 2860,
           "itemId": 14061,
+          "rlvl": 136
+        },
+        {
+          "recipeId": 2773,
+          "itemId": 12113,
           "rlvl": 136
         },
         {
@@ -51530,6 +52555,16 @@
           "recipeId": 4631,
           "itemId": 30396,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4675,
+          "itemId": 32249,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4673,
+          "itemId": 32245,
+          "rlvl": 430
         }
       ]
     },
@@ -51544,7 +52579,8 @@
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51688,8 +52724,23 @@
           "rlvl": 430
         },
         {
+          "recipeId": 4654,
+          "itemId": 32228,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4656,
+          "itemId": 32221,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4601,
           "itemId": 28970,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4660,
+          "itemId": 32236,
           "rlvl": 430
         }
       ]
@@ -51705,7 +52756,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51846,7 +52898,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51882,7 +52935,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -51928,7 +52982,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52139,7 +53194,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52285,7 +53341,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52436,7 +53493,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52502,7 +53560,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52568,7 +53627,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52577,13 +53637,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32960,
-          "itemId": 23154,
+          "recipeId": 32959,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32959,
-          "itemId": 23143,
+          "recipeId": 32960,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -52597,13 +53657,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32964,
-          "itemId": 23156,
+          "recipeId": 32963,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32963,
-          "itemId": 23145,
+          "recipeId": 32964,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -52634,7 +53694,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52643,13 +53704,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33308,
-          "itemId": 24573,
+          "recipeId": 33307,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33307,
-          "itemId": 24562,
+          "recipeId": 33308,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -52663,13 +53724,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33312,
-          "itemId": 24575,
+          "recipeId": 33311,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33311,
-          "itemId": 24564,
+          "recipeId": 33312,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -52700,7 +53761,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52741,7 +53803,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52782,7 +53845,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52828,7 +53892,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -52864,7 +53929,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53000,7 +54066,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53041,7 +54108,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53087,7 +54155,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53133,7 +54202,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53174,7 +54244,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53215,7 +54286,8 @@
         "Quality": 5783,
         "Stars": 0,
         "SuggestedControl": 480,
-        "SuggestedCraftsmanship": 519
+        "SuggestedCraftsmanship": 519,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53802,6 +54874,51 @@
           "recipeId": 4649,
           "itemId": 31100,
           "rlvl": 400
+        },
+        {
+          "recipeId": 4677,
+          "itemId": 33028,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4678,
+          "itemId": 33029,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4679,
+          "itemId": 33030,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4680,
+          "itemId": 33031,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4681,
+          "itemId": 33032,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4682,
+          "itemId": 33033,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4683,
+          "itemId": 33034,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4684,
+          "itemId": 33035,
+          "rlvl": 400
+        },
+        {
+          "recipeId": 4685,
+          "itemId": 33036,
+          "rlvl": 400
         }
       ]
     }
@@ -53818,7 +54935,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53909,7 +55027,8 @@
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50
+        "SuggestedCraftsmanship": 50,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -53990,7 +55109,8 @@
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54071,7 +55191,8 @@
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78
+        "SuggestedCraftsmanship": 78,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54162,7 +55283,8 @@
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54243,7 +55365,8 @@
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99
+        "SuggestedCraftsmanship": 99,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54312,11 +55435,6 @@
           "rlvl": 30
         },
         {
-          "recipeId": 2144,
-          "itemId": 9621,
-          "rlvl": 30
-        },
-        {
           "recipeId": 2146,
           "itemId": 9624,
           "rlvl": 30
@@ -54324,6 +55442,11 @@
         {
           "recipeId": 2148,
           "itemId": 9627,
+          "rlvl": 30
+        },
+        {
+          "recipeId": 2144,
+          "itemId": 9621,
           "rlvl": 30
         }
       ]
@@ -54339,7 +55462,8 @@
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121
+        "SuggestedCraftsmanship": 121,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54410,7 +55534,8 @@
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129
+        "SuggestedCraftsmanship": 129,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54481,7 +55606,8 @@
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136
+        "SuggestedCraftsmanship": 136,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54542,7 +55668,8 @@
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150
+        "SuggestedCraftsmanship": 150,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54666,11 +55793,6 @@
           "rlvl": 70
         },
         {
-          "recipeId": 2145,
-          "itemId": 9622,
-          "rlvl": 70
-        },
-        {
           "recipeId": 2147,
           "itemId": 9625,
           "rlvl": 70
@@ -54678,6 +55800,11 @@
         {
           "recipeId": 2149,
           "itemId": 9628,
+          "rlvl": 70
+        },
+        {
+          "recipeId": 2145,
+          "itemId": 9622,
           "rlvl": 70
         }
       ]
@@ -54693,7 +55820,8 @@
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468
+        "SuggestedCraftsmanship": 468,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54784,7 +55912,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54875,7 +56004,8 @@
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006
+        "SuggestedCraftsmanship": 1006,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -54981,7 +56111,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55087,7 +56218,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55198,7 +56330,8 @@
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580
+        "SuggestedCraftsmanship": 1580,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55394,7 +56527,8 @@
           "Singular_fr": "exemplaire de Cuisine experte I",
           "Singular_ja": "調理秘伝書:第1巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 7785,
@@ -55412,7 +56546,8 @@
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325
+        "SuggestedCraftsmanship": 325,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55578,7 +56713,8 @@
           "Singular_fr": "exemplaire de Cuisine experte II",
           "Singular_ja": "調理秘伝書:第2巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 9343,
@@ -55596,7 +56732,8 @@
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451
+        "SuggestedCraftsmanship": 451,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55727,7 +56864,8 @@
           "Singular_fr": "exemplaire de Cuisine experte III",
           "Singular_ja": "調理秘伝書:第3巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 12251,
@@ -55745,7 +56883,8 @@
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550
+        "SuggestedCraftsmanship": 550,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -55911,7 +57050,8 @@
           "Singular_fr": "exemplaire de Cuisine experte IV",
           "Singular_ja": "調理秘伝書:第4巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 14133,
@@ -55929,9 +57069,15 @@
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718
+        "SuggestedCraftsmanship": 718,
+        "Unknown5-4": 15
       },
       "recipes": [
+        {
+          "recipeId": 31481,
+          "itemId": 14141,
+          "rlvl": 180
+        },
         {
           "recipeId": 31479,
           "itemId": 14139,
@@ -55940,11 +57086,6 @@
         {
           "recipeId": 31480,
           "itemId": 14140,
-          "rlvl": 180
-        },
-        {
-          "recipeId": 31481,
-          "itemId": 14141,
           "rlvl": 180
         },
         {
@@ -56125,7 +57266,8 @@
           "Singular_fr": "exemplaire de Cuisine experte V",
           "Singular_ja": "調理秘伝書:第5巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 17876,
@@ -56143,7 +57285,8 @@
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56279,7 +57422,8 @@
           "Singular_fr": "exemplaire de Cuisine experte VI",
           "Singular_ja": "調理秘伝書:第6巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 22316,
@@ -56297,7 +57441,8 @@
         "Quality": 13144,
         "Stars": 3,
         "SuggestedControl": 1350,
-        "SuggestedCraftsmanship": 1500
+        "SuggestedCraftsmanship": 1500,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56498,7 +57643,8 @@
           "Singular_fr": "exemplaire de Cuisine experte VII",
           "Singular_ja": "調理秘伝書:第7巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 24273,
@@ -56516,7 +57662,8 @@
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140
+        "SuggestedCraftsmanship": 2140,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56687,7 +57834,8 @@
           "Singular_fr": "exemplaire de Cuisine experte VIII",
           "Singular_ja": "調理秘伝書:第8巻",
           "StackSize": 1,
-          "StartsWithVowel": 0
+          "StartsWithVowel": 0,
+          "Unknown5-4": 0
         },
         "ItemTarget": "Item",
         "ItemTargetID": 29491,
@@ -56705,7 +57853,8 @@
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480
+        "SuggestedCraftsmanship": 2480,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56767,6 +57916,56 @@
           "recipeId": 33950,
           "itemId": 30482,
           "rlvl": 480
+        },
+        {
+          "recipeId": 34566,
+          "itemId": 31898,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34567,
+          "itemId": 31899,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34568,
+          "itemId": 31900,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34569,
+          "itemId": 31901,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34570,
+          "itemId": 31902,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34571,
+          "itemId": 31903,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34572,
+          "itemId": 31904,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34573,
+          "itemId": 31905,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34574,
+          "itemId": 31906,
+          "rlvl": 510
+        },
+        {
+          "recipeId": 34575,
+          "itemId": 31907,
+          "rlvl": 510
         }
       ]
     },
@@ -56781,7 +57980,8 @@
         "Quality": 16162,
         "Stars": 0,
         "SuggestedControl": 1541,
-        "SuggestedCraftsmanship": 1662
+        "SuggestedCraftsmanship": 1662,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56803,6 +58003,11 @@
           "recipeId": 4584,
           "itemId": 28171,
           "rlvl": 415
+        },
+        {
+          "recipeId": 4674,
+          "itemId": 32246,
+          "rlvl": 430
         }
       ]
     },
@@ -56817,7 +58022,8 @@
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67
+        "SuggestedCraftsmanship": 67,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -56871,13 +58077,13 @@
           "rlvl": 43
         },
         {
-          "recipeId": 2135,
-          "itemId": 8804,
+          "recipeId": 2887,
+          "itemId": 15146,
           "rlvl": 45
         },
         {
-          "recipeId": 2887,
-          "itemId": 15146,
+          "recipeId": 2135,
+          "itemId": 8804,
           "rlvl": 45
         },
         {
@@ -56886,13 +58092,13 @@
           "rlvl": 50
         },
         {
-          "recipeId": 2174,
-          "itemId": 9728,
+          "recipeId": 2181,
+          "itemId": 9738,
           "rlvl": 55
         },
         {
-          "recipeId": 2181,
-          "itemId": 9738,
+          "recipeId": 2174,
+          "itemId": 9728,
           "rlvl": 55
         },
         {
@@ -56926,11 +58132,6 @@
           "rlvl": 136
         },
         {
-          "recipeId": 2793,
-          "itemId": 12092,
-          "rlvl": 139
-        },
-        {
           "recipeId": 2827,
           "itemId": 13070,
           "rlvl": 139
@@ -56943,6 +58144,11 @@
         {
           "recipeId": 2937,
           "itemId": 17021,
+          "rlvl": 139
+        },
+        {
+          "recipeId": 2793,
+          "itemId": 12092,
           "rlvl": 139
         },
         {
@@ -56986,6 +58192,11 @@
           "rlvl": 415
         },
         {
+          "recipeId": 4653,
+          "itemId": 32227,
+          "rlvl": 430
+        },
+        {
           "recipeId": 4605,
           "itemId": 28977,
           "rlvl": 430
@@ -57009,6 +58220,21 @@
           "recipeId": 4651,
           "itemId": 30427,
           "rlvl": 430
+        },
+        {
+          "recipeId": 4662,
+          "itemId": 32202,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4663,
+          "itemId": 32212,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 4661,
+          "itemId": 32237,
+          "rlvl": 430
         }
       ]
     },
@@ -57023,7 +58249,8 @@
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106
+        "SuggestedCraftsmanship": 106,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57164,7 +58391,8 @@
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037
+        "SuggestedCraftsmanship": 1037,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57200,7 +58428,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57246,7 +58475,8 @@
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22
+        "SuggestedCraftsmanship": 22,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57457,7 +58687,8 @@
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176
+        "SuggestedCraftsmanship": 176,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57603,7 +58834,8 @@
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570
+        "SuggestedCraftsmanship": 570,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57754,7 +58986,8 @@
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560
+        "SuggestedCraftsmanship": 560,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57820,7 +59053,8 @@
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587
+        "SuggestedCraftsmanship": 587,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57886,7 +59120,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57895,13 +59130,13 @@
           "rlvl": 265
         },
         {
-          "recipeId": 32970,
-          "itemId": 23154,
+          "recipeId": 32969,
+          "itemId": 23143,
           "rlvl": 265
         },
         {
-          "recipeId": 32969,
-          "itemId": 23143,
+          "recipeId": 32970,
+          "itemId": 23154,
           "rlvl": 265
         },
         {
@@ -57915,13 +59150,13 @@
           "rlvl": 270
         },
         {
-          "recipeId": 32974,
-          "itemId": 23156,
+          "recipeId": 32973,
+          "itemId": 23145,
           "rlvl": 270
         },
         {
-          "recipeId": 32973,
-          "itemId": 23145,
+          "recipeId": 32974,
+          "itemId": 23156,
           "rlvl": 270
         },
         {
@@ -57952,7 +59187,8 @@
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056
+        "SuggestedCraftsmanship": 1056,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -57961,13 +59197,13 @@
           "rlvl": 279
         },
         {
-          "recipeId": 33318,
-          "itemId": 24573,
+          "recipeId": 33317,
+          "itemId": 24562,
           "rlvl": 279
         },
         {
-          "recipeId": 33317,
-          "itemId": 24562,
+          "recipeId": 33318,
+          "itemId": 24573,
           "rlvl": 279
         },
         {
@@ -57981,13 +59217,13 @@
           "rlvl": 282
         },
         {
-          "recipeId": 33322,
-          "itemId": 24575,
+          "recipeId": 33321,
+          "itemId": 24564,
           "rlvl": 282
         },
         {
-          "recipeId": 33321,
-          "itemId": 24564,
+          "recipeId": 33322,
+          "itemId": 24575,
           "rlvl": 282
         },
         {
@@ -58018,7 +59254,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58059,7 +59296,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58100,7 +59338,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58146,7 +59385,8 @@
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866
+        "SuggestedCraftsmanship": 1866,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58182,7 +59422,8 @@
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079
+        "SuggestedCraftsmanship": 1079,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58318,7 +59559,8 @@
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320
+        "SuggestedCraftsmanship": 1320,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58359,7 +59601,8 @@
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94
+        "SuggestedCraftsmanship": 94,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58405,7 +59648,8 @@
         "Quality": 2743,
         "Stars": 0,
         "SuggestedControl": 314,
-        "SuggestedCraftsmanship": 314
+        "SuggestedCraftsmanship": 314,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58451,7 +59695,8 @@
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027
+        "SuggestedCraftsmanship": 1027,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
@@ -58492,7 +59737,8 @@
         "Quality": 13660,
         "Stars": 0,
         "SuggestedControl": 1284,
-        "SuggestedCraftsmanship": 1388
+        "SuggestedCraftsmanship": 1388,
+        "Unknown5-4": 15
       },
       "recipes": [
         {
