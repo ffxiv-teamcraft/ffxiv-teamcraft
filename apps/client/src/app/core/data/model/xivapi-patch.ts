@@ -1,7 +1,8 @@
 export interface XivapiPatch {
   Banner: string;
   ExName?: string;
-  ExVersion: number;
+  ExVersion?: number;
+  IsExpansion?: boolean;
   ID: number;
   Name: string;
   Name_cn: string;
@@ -17,4 +18,5 @@ export interface XivapiPatch {
   PatchNotes_en?: string;
   PatchNotes_fr?: string;
   PatchNotes_ja?: string;
+  Url?: string;
 }
