@@ -11,5 +11,6 @@ export interface XivapiPatch {
   Name_ja: string;
   Name_kr: string;
   ReleaseDate: number;
+  PatchNotes?: string;
   Version: string;
 }
