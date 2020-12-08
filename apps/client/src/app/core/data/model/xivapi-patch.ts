@@ -13,4 +13,8 @@ export interface XivapiPatch {
   ReleaseDate: number;
   PatchNotes?: string;
   Version: string;
+  PatchNotes_de?: string;
+  PatchNotes_en?: string;
+  PatchNotes_fr?: string;
+  PatchNotes_ja?: string;
 }
