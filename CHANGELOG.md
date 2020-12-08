@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.4"></a>
+## [7.6.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.3...v7.6.4) (2020-12-08)
+
+
+### Bug Fixes
+
+* **commissions:** fixed a bug with commission being rated twice ([7c24c8d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7c24c8d))
+* **commissions:** fixed font size being too big in commissions page ([a0c5323](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a0c5323))
+* **commissions:** fixed missing translations in rating popup ([337050c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/337050c))
+* **commissions:** new empty commission lists are now created with Readonly permissions ([68fa579](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68fa579))
+* **crafting-replays:** fixed missing translation in result popup ([6ae6c4b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6ae6c4b))
+* **desktop:** fixed google login showing javascript security warning ([58d039b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/58d039b))
+* **desktop:** fixed message error about service worker not being registered ([9bf8bc8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9bf8bc8))
+* **fishing:** fixed an issue with some alarms being inaccurate in lists ([5a753ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a753ca)), closes [#1483](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1483)
+* **map:** fixed navigation map having weird icon display ([368acb6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/368acb6))
+* **permissions:** fixed an issue preventing addition of more than 2 players to a list's permissions ([5602762](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5602762))
+* **simulator:** put HQ label in front of consumables ([78af0ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/78af0ef))
+
+
+### Features
+
+* **commissions:** you can now add items to the commission from its details page ([9a213a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9a213a2))
+* **db:** new toggle in fish hour graph to include fish eyes reports ([72c8c89](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72c8c89))
+* **db:** support for 5.4 data ([4978aed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4978aed))
+* **fishing:** support for new fish eyes system ([e985ef1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e985ef1)), closes [#1731](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1731)
+* **simulator:** support for 5.4 changes ([2d8628d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2d8628d))
+
+
+
 <a name="7.6.3"></a>
 ## [7.6.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.2...v7.6.3) (2020-12-04)
 
