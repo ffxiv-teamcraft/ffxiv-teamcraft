@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.6"></a>
+## [7.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.5...v7.6.6) (2020-12-09)
+
+
+### Bug Fixes
+
+* **alarms:** you can now properly add alarms to folders again ([7b643a0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7b643a0))
+* **gathering:** fixed some items being considered as fishing while they weren't ([741b235](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/741b235))
+* **lists:** changed stars notation for (#★) format ([509dd44](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/509dd44))
+* **log-trcker:** fixed Quarrying 66-70 page missing from the tracker ([8df6606](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8df6606))
+* **nodes:** fixed location and timer for 5.4 nodes and new collectable nodes ([63bbd24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/63bbd24))
+* **recipes:** fixed recipes for some FC crafts ([edcb825](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/edcb825))
+
+
+### Performance Improvements
+
+* **web:** moved hosting back to firebase's scaled solution ([3b20e57](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3b20e57))
+
+
+
 <a name="7.6.5"></a>
 ## [7.6.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.3...v7.6.5) (2020-12-08)
 

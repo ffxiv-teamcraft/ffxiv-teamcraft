@@ -117,6 +117,9 @@
         </div>
       </div>
     </ng-template>
+    <ng-template #alarmCreated>
+      {{'ALARMS.Alarm_already_created' | translate}}
+    </ng-template>
     <ng-template #actionAlarm>
       <div *ngIf="generateAlarms(node) as alarms" fxLayout="row" fxLayoutAlign="space-around center">
         <ng-container *ngFor="let row of alarms; trackBy: trackByAlarm">
@@ -133,24 +136,29 @@
           </ng-container>
         </ng-container>
       </div>
-
-      <ng-template #alarmCreated>
-        {{'ALARMS.Alarm_already_created' | translate}}
-      </ng-template>
     </ng-template>
     <ng-template #actionAlarmToGroup>
       <ng-container *ngIf="alarmGroups$ | async as groups">
-        <i *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" class="add-to-group"
-           nz-dropdown nz-icon
-           nzType="folder-open"
-        ></i>
-        <nz-dropdown-menu #menu="nzDropdownMenu">
-          <ul nz-menu>
-            <li (click)="addAlarm(node, group)" *ngFor="let group of groups" nz-menu-item>
-              {{group.name}}
-            </li>
-          </ul>
-        </nz-dropdown-menu>
+        <div *ngIf="generateAlarms(node) as alarms" fxLayout="row" fxLayoutAlign="space-around center">
+          <ng-container *ngFor="let row of alarms; trackBy: trackByAlarm">
+            <ng-container *ngIf="canCreateAlarm(alarms$ | async, row); else alarmCreated">
+              <ng-container *ngIf="alarmsLoaded$ | async">
+                <i [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" class="add-to-group"
+                   nz-dropdown nz-icon
+                   nzType="folder-open"
+                ></i>
+                <img [src]="762 | statusIcon | xivapiIcon" *ngIf="row.fishEyes" alt="" class="fish-eyes-alarm create-alarm">
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu>
+                    <li (click)="addAlarm(row, group)" *ngFor="let group of groups" nz-menu-item>
+                      {{group.name}}
+                    </li>
+                  </ul>
+                </nz-dropdown-menu>
+              </ng-container>
+            </ng-container>
+          </ng-container>
+        </div>
       </ng-container>
     </ng-template>
     <app-fullpage-message *ngIf="results.length === 0">{{'No_items_found' | translate}}</app-fullpage-message>

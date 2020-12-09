@@ -73,6 +73,7 @@ if (hasTodo('missingNodes', true)) {
       data[node.map] = [
         ...(data[node.map] || []),
         {
+          zoneId: node.zoneid,
           items: node.items.map(item => itemNames[item.toString()].en).join(', '),
           level: node.level,
           limited: node.limited
@@ -84,7 +85,8 @@ if (hasTodo('missingNodes', true)) {
     .forEach((mapId) => {
       console.log(`## ${places[mapData[mapId].placename_id].en}`);
       data[mapId].forEach(node => {
-        console.log(` - [ ] Items: ${node.items}`);
+        console.log(` - [ ] Zone: ${places[node.zoneId].en}`);
+        console.log(`| Items: ${node.items}`);
         console.log(`| Level: ${node.level}`);
         console.log(`| Limited: ${node.limited}`);
       });
@@ -169,7 +171,7 @@ if (hasTodo('mappy', true)) {
       if (node.GameContentLinks.GatheringPoint) {
         linkedPoints = node.GameContentLinks.GatheringPoint.GatheringPointBase;
       }
-      const point = gatheringPoints[linkedPoints[0]];
+      const point = gatheringPoints[linkedPoints[linkedPoints.length - 1]];
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
@@ -1854,8 +1856,8 @@ if (hasTodo('patchContent')) {
   const patchContent = require(path.join(__dirname, '../../apps/client/src/assets/data/patch-content.json'));
   get('https://xivapi.com/patchlist').pipe(
     switchMap(patchList => {
-      return combineLatest(patchList.slice(-5).map(patch => {
-        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patch ${patch.Version}`)
+      return combineLatest(patchList.map(patch => {
+        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patches`)
           .pipe(
             map(pages => {
               return {

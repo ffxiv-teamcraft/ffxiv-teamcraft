@@ -9,6 +9,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzSliderModule } from 'ng-zorro-antd/slider';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     FormsModule,
     ColorPickerModule,
     PipesModule,
-    CoreModule
+    CoreModule,
+    NzSliderModule
   ],
   declarations: [
     SettingsPopupComponent
