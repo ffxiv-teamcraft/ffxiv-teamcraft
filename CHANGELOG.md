@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.7"></a>
+## [7.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.6...v7.6.7) (2020-12-09)
+
+
+### Bug Fixes
+
+* **list:** fixed wrong amount sometimes shown in HQ suggestion tooltip ([379cf04](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/379cf04))
+* **map:** fixed map page not loading for some territories ([de2f4af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/de2f4af))
+* **nodes:** added warning next to ephemeral nodes for 5.4 changes ([adba90b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/adba90b))
+* **nodes:** fixed positions for some of the new ephemeral node locations ([181bf51](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/181bf51))
+
+
+
 <a name="7.6.6"></a>
 ## [7.6.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.5...v7.6.6) (2020-12-09)
 
