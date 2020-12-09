@@ -187,6 +187,7 @@
         <ng-template #cardDescription>
           <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
+          <nz-alert nzType="warning" [nzMessage]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" *ngIf="row.alarm.ephemeral"></nz-alert>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
@@ -327,6 +328,7 @@
                src="{{row.alarm.type | nodeTypeIcon}}">
           <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
              nzType="clock-circle"></i>
+          <nz-alert nzType="warning" [nzMessage]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" *ngIf="row.alarm.ephemeral"></nz-alert>
           <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
           <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
