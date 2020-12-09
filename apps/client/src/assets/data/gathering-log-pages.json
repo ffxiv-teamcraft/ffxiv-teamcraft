@@ -2599,6 +2599,117 @@
       ]
     },
     {
+      "id": 53,
+      "startLevel": 66,
+      "items": [
+        {
+          "itemId": 20010,
+          "ilvl": 230,
+          "lvl": 66,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 33152,
+          "ilvl": 230,
+          "lvl": 66,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 19952,
+          "ilvl": 230,
+          "lvl": 66,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 24569,
+          "ilvl": 230,
+          "lvl": 66,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 19955,
+          "ilvl": 245,
+          "lvl": 67,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 19956,
+          "ilvl": 275,
+          "lvl": 69,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 19907,
+          "ilvl": 275,
+          "lvl": 69,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 28199,
+          "ilvl": 290,
+          "lvl": 70,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 28200,
+          "ilvl": 290,
+          "lvl": 70,
+          "stars": 0,
+          "hidden": 0
+        },
+        {
+          "itemId": 26752,
+          "ilvl": 290,
+          "lvl": 70,
+          "stars": 0,
+          "hidden": 68772
+        },
+        {
+          "itemId": 28202,
+          "ilvl": 300,
+          "lvl": 70,
+          "stars": 1,
+          "hidden": 0
+        },
+        {
+          "itemId": 28203,
+          "ilvl": 300,
+          "lvl": 70,
+          "stars": 1,
+          "hidden": 0
+        },
+        {
+          "itemId": 23220,
+          "ilvl": 320,
+          "lvl": 70,
+          "stars": 2,
+          "hidden": 0
+        },
+        {
+          "itemId": 27954,
+          "ilvl": 320,
+          "lvl": 70,
+          "stars": 2,
+          "hidden": 0
+        },
+        {
+          "itemId": 27817,
+          "ilvl": 320,
+          "lvl": 70,
+          "stars": 2,
+          "hidden": 0
+        }
+      ]
+    },
+    {
       "id": 54,
       "startLevel": 71,
       "items": [
@@ -3626,47 +3737,6 @@
           "ilvl": 80,
           "lvl": 50,
           "stars": 3,
-          "hidden": 0
-        }
-      ]
-    },
-    {
-      "id": 90,
-      "startLevel": 51,
-      "items": [
-        {
-          "itemId": 12899,
-          "ilvl": 120,
-          "lvl": 51,
-          "stars": 0,
-          "hidden": 0
-        },
-        {
-          "itemId": 12578,
-          "ilvl": 133,
-          "lvl": 54,
-          "stars": 0,
-          "hidden": 0
-        },
-        {
-          "itemId": 12943,
-          "ilvl": 133,
-          "lvl": 54,
-          "stars": 0,
-          "hidden": 0
-        },
-        {
-          "itemId": 12893,
-          "ilvl": 136,
-          "lvl": 55,
-          "stars": 0,
-          "hidden": 0
-        },
-        {
-          "itemId": 12585,
-          "ilvl": 136,
-          "lvl": 55,
-          "stars": 0,
           "hidden": 0
         }
       ]

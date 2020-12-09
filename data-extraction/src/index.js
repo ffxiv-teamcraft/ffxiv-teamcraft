@@ -1854,8 +1854,8 @@ if (hasTodo('patchContent')) {
   const patchContent = require(path.join(__dirname, '../../apps/client/src/assets/data/patch-content.json'));
   get('https://xivapi.com/patchlist').pipe(
     switchMap(patchList => {
-      return combineLatest(patchList.slice(-5).map(patch => {
-        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patch ${patch.Version}`)
+      return combineLatest(patchList.map(patch => {
+        return aggregateAllPages(`https://xivapi.com/search?indexes=achievement,action,craftaction,fate,instancecontent,item,leve,placename,bnpcname,enpcresident,quest,status,trait&filters=Patch=${patch.ID}`, undefined, `Patches`)
           .pipe(
             map(pages => {
               return {

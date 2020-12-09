@@ -13,8 +13,8 @@ const multibar = new cliProgress.MultiBar({
   hideCursor: true,
   barCompleteChar: '\u2588',
   barIncompleteChar: '\u2591',
-  clearOnComplete: true,
-  stopOnComplete: true
+  clearOnComplete: false,
+  stopOnComplete: false
 }, cliProgress.Presets.shades_grey);
 
 const barsRegistry = {};
@@ -22,6 +22,9 @@ const barsRegistry = {};
 function updateProgress(name, max) {
   if (barsRegistry[name] === undefined) {
     barsRegistry[name] = multibar.create(max, 0, { label: name });
+  }
+  if (barsRegistry[name].getTotal() < max) {
+    barsRegistry[name].setTotal(max + barsRegistry[name].getTotal());
   }
   barsRegistry[name].increment();
 }
