@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "Su \"fish eyes\" necesita esta duración para obtener el pescado. Haga clic para cambiar el formato.",
     "Spawned_for": "Desaparecerá en {{timer}}",
     "Will_spawn_in": "Aparecerá en {{timer}}",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "Cabeza de anzuelo pequeña",
       "Normal": "Cabeza de anzuelo normal",
