@@ -236,9 +236,9 @@ export class List extends DataWithPermissions {
     } else {
       let count = 0;
       recipesNeedingItem.forEach(recipe => {
-        count += recipe.requires.find(req => req.id === item.id).amount * recipe.amount;
+        count += Math.ceil(recipe.requires.find(req => req.id === item.id).amount * recipe.amount / recipe.yield);
       });
-      return count;
+      return Math.max(count, item.amount);
     }
   }
 
