@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "Vos yeux de poisson doivent avoir cette durée pour obtenir le poisson. Cliquez vous changer le format.",
     "Spawned_for": "Disparaîtra dans {{timer}}",
     "Will_spawn_in": "Apparaît dans {{timer}}",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
