@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "이 물고기를 낚기 위해서는 해당 지속시간만큼의 물고기의 눈이 필요합니다. 형식을 변경하려면 클릭하세요.",
     "Spawned_for": "{{timer}} 이후 사라짐",
     "Will_spawn_in": "{{timer}} 이후 나타남",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",

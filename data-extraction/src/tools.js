@@ -42,6 +42,7 @@ const stopInterval$ = emptyQueue$.pipe(
   tap(() => {
     Object.values(barsRegistry).forEach(bar => bar.stop());
     console.log('All done !');
+    process.exit(0);
   })
 );
 

@@ -190,7 +190,7 @@ export class MapPageComponent extends TeamcraftPageComponent {
 
   private getHunts(territoryId: number, sizeFactor: number): MapRelatedElement[] {
     const zoneHunts = this.lazyData.data.hunts.find(h => h.zoneid === territoryId);
-    if (zoneHunts === undefined) {
+    if (!zoneHunts || !zoneHunts.hunts) {
       return [];
     }
     const c = sizeFactor / 100;
