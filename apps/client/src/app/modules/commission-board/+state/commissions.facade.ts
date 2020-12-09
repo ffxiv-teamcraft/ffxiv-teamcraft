@@ -229,8 +229,6 @@ export class CommissionsFacade {
   }
 
   markAsCompleted(commission: Commission): void {
-    commission.status = CommissionStatus.ARCHIVED;
-    this.update(commission);
     this.listsFacade.pureUpdateList(commission.$key, {
       registry: {},
       everyone: PermissionLevel.READ,

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { filter, first, map, switchMap, takeUntil } from 'rxjs/operators';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
 import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
-import { combineLatest } from 'rxjs';
+import { combineLatest, Observable, Subject } from 'rxjs';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { TranslateService } from '@ngx-translate/core';
 import { CommissionStatus } from '../../../modules/commission-board/model/commission-status';
@@ -80,7 +80,10 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
 
   markAsCompleted(commission: Commission, userId: string): void {
     this.commissionsFacade.markAsCompleted(commission);
-    this.rateCommission(commission, userId);
+    commission.status = CommissionStatus.ARCHIVED;
+    this.rateCommission(commission, userId).subscribe(() => {
+      this.commissionsFacade.update(commission);
+    });
   }
 
   addItems(commission: Commission): void {
@@ -97,8 +100,14 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
     ).subscribe();
   }
 
-  rateCommission(commission: Commission, userId: string): void {
-    this.commissionsFacade.rate(commission, userId).subscribe(res => this.ratingDone[`${commission.$key}:${userId}`] = res);
+  rateCommission(commission: Commission, userId: string): Observable<void> {
+    const done$ = new Subject<void>();
+    this.commissionsFacade.rate(commission, userId).subscribe(res => {
+      this.ratingDone[`${commission.$key}:${userId}`] = res;
+      done$.next();
+      done$.complete();
+    });
+    return done$.asObservable();
   }
 
   ngOnInit(): void {
