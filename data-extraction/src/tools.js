@@ -38,7 +38,11 @@ const key = process.env.XIVAPI_KEY;
 const stopInterval$ = emptyQueue$.pipe(
   distinctUntilChanged(),
   debounceTime(30000),
-  filter(empty => empty)
+  filter(empty => empty),
+  tap(() => {
+    Object.values(barsRegistry).forEach(bar => bar.stop());
+    console.log('All done !');
+  })
 );
 
 interval(key ? 50 : 250).pipe(
