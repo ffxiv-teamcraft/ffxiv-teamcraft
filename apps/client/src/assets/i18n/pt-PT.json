@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "Your fish eyes needs to have this duration to get the fish. Click to change format.",
     "Spawned_for": "Vai desaparecer daquí a {{timer}}",
     "Will_spawn_in": "Vai aparecer daquí a {{timer}}",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
