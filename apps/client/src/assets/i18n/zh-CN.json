@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "你的鱼眼需要持续这个时间才能钓上该鱼。点击改变显示格式。",
     "Spawned_for": "在 {{timer}} 后消失",
     "Will_spawn_in": "在 {{timer}} 后出现",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",

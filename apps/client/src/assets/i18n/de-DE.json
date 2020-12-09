@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "Deine Fischaugen müssen diese Dauer haben, um den Fisch zu bekommen. Klicke um das Format zu ändern.",
     "Spawned_for": "Verschwindet in {{timer}}",
     "Will_spawn_in": "Taucht in {{timer}} auf",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "Kleine Speerspitze",
       "Normal": "Normale Speerspitze",

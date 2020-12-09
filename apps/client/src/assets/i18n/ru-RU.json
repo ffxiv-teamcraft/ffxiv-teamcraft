@@ -803,6 +803,7 @@
     "Fish_eyes_duration": "Для того, чтобы поймать рыбу, на \"fish eyes\" должно оставаться столько секунд. Нажмите, чтобы изменить формат.",
     "Spawned_for": "Деспавнится через {{timer}}",
     "Will_spawn_in": "Заспавнится через {{timer}}",
+    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
     "GIG_HEAD": {
       "Small": "Маленькая насадка",
       "Normal": "Нормальная насадка",
