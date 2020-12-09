@@ -34,6 +34,7 @@
                 nz-button nz-tooltip>
           <i nz-icon nzType="share-alt"></i>
         </button>
+        <app-favorite-button (click)="$event.stopPropagation()" type="rotationFolders" [key]="_folder.$key"></app-favorite-button>
         <button (click)="$event.stopPropagation(); addRotations()" *ngIf="(permissionLevel$ | async) >= 30" [nzShape]="'circle'"
                 [nzTooltipTitle]="'SIMULATOR.ROTATIONS.FOLDERS.Add_rotations' | translate"
                 [nzType]="'primary'"
@@ -47,7 +48,7 @@
                 nz-popconfirm>
           <i nz-icon nzType="delete"></i>
         </button>
-        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30"  [nzDropdownMenu]="menu"
+        <button (click)="$event.stopPropagation()" *ngIf="(permissionLevel$ | async) >= 30" [nzDropdownMenu]="menu"
                 [nzPlacement]="'bottomRight'"
                 [nzShape]="'circle'" [nzTrigger]="'click'" nz-button
                 nz-dropdown>
