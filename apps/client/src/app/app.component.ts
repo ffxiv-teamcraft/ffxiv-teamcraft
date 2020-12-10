@@ -469,11 +469,11 @@ export class AppComponent implements OnInit {
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {
-    if (event.ctrlKey && event.shiftKey && event.key === 'F') {
+    if (event.ctrlKey && event.shiftKey && event.code === 'KeyF') {
       this.quickSearch.openQuickSearch();
-    } else if (event.ctrlKey && event.shiftKey && event.key === 'A') {
+    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyQ') {
       this.router.navigateByUrl('/admin/users');
-    } else if (event.ctrlKey && event.shiftKey && event.key === 'C') {
+    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
       event.preventDefault();
       event.stopPropagation();
       if (this.platformService.isDesktop()) {
