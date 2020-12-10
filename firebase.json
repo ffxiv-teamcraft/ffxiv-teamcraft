@@ -21,7 +21,7 @@
     ],
     "headers": [
       {
-        "source": "**/*.@(css|jpg|jpeg|gif|svg|png)",
+        "source": "**/*.@(css|js|jpg|jpeg|gif|svg|png|json)",
         "headers": [
           {
             "key": "Cache-control",
@@ -61,10 +61,11 @@
         "headers": [
           {
             "key": "Cache-control",
-            "value": "max-age=1800"
+            "value": "max-age=120"
           }
         ]
       }
     ]
   }
 }
+
