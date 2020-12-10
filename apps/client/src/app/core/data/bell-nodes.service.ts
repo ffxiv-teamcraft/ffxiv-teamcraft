@@ -90,11 +90,10 @@ export class BellNodesService {
             node.y = bellNode.coords[1];
           }
           if (node.timed) {
+            node.spawnTimes = node.spawns;
             if (bellNode) {
-              node.spawnTimes = bellNode.time;
               node.uptime = bellNode.uptime;
             } else {
-              node.spawnTimes = node.spawns;
               switch (node.duration) {
                 case 160:
                   node.uptime = 120;
@@ -162,7 +161,7 @@ export class BellNodesService {
                   type: node.type,
                   itemId: node.itemId,
                   icon: node.icon,
-                  spawnTimes: node.time,
+                  spawnTimes: nodePosition.spawns,
                   uptime: node.uptime,
                   slot: node.slot,
                   timed: true,
