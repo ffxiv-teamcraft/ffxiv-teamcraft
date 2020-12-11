@@ -95,19 +95,6 @@ jobs:
             - .cache/*
 
 
-  deploy-cdn:
-    <<: *defaults
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying cdn
-          command: bash tools/cdn/deploy.sh
-
-
   deploy-firebase-hosting:
     <<: *defaults
     steps:
@@ -177,8 +164,9 @@ jobs:
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400"
+            --endpoint=https://fra1.digitaloceanspaces.com
           from: dist/apps/client/
-          to: 's3://fra1.digitaloceanspaces.com/cdn-ffxivteamcraft'
+          to: 's3://cdn-ffxivteamcraft'
 
 
 workflows:
@@ -199,9 +187,6 @@ workflows:
       - deploy-cdn:
           requires:
             - build
-          filters:
-            branches:
-              only: master
       - deploy-firebase-hosting:
           requires:
             - build
@@ -233,7 +218,4 @@ workflows:
           filters:
             branches:
               only: staging
-      - deploy-cdn:
-          requires:
-            - build
 
