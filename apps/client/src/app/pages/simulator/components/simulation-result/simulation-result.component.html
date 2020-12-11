@@ -135,7 +135,18 @@
                 <span class="report-row">
                     {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
                 </span>
-          <span class="report-row">
+                <span class="report-row" nz-tooltip [nzTooltipTitle]="detailsTooltip">
+                  <ng-template #detailsTooltip>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
+                      <div>{{'SIMULATOR.Median_HQ' | translate}}:</div><div>{{report.medianHQPercent}}%</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="report.minHQPercent !== undefined" fxLayoutGap="5px">
+                      <div>{{'SIMULATOR.Min_HQ' | translate}}:</div><div>{{report.minHQPercent}}%</div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" *ngIf="report.maxHQPercent !== undefined" fxLayoutGap="5px">
+                      <div>{{'SIMULATOR.Max_HQ' | translate}}:</div><div>{{report.maxHQPercent}}%</div>
+                    </div>
+                  </ng-template>
                     {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
                 </span>
         </div>
