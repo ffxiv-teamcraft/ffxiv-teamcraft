@@ -164,20 +164,13 @@ jobs:
           at: ~/
       - run:
           name: Copying standard files to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ \
-                  --exclude '*.html' --exclude '/*.js' --exclude 'assets/data/*' \
-                  --exclude 'assets/extracts/*' --recursive \
-                  --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude '*.html' --exclude '/*.js' --exclude 'assets/data/*' --exclude 'assets/extracts/*' --recursive --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com
       - run:
           name: Copying lazy data files and JS bundles to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ \
-                  --exclude '*' --include '/*.js' --include 'assets/data/*' \
-                  --include 'assets/extracts/*' --recursive \
-                  --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude '*' --include '/*.js' --include 'assets/data/*' --include 'assets/extracts/*' --recursive --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com
       - run:
           name: Copying new index.html to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/index.html s3://cdn-ffxivteamcraft/ \
-                  --cache-control max-age=120 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/index.html s3://cdn-ffxivteamcraft/ --cache-control max-age=120 --endpoint=https://fra1.digitaloceanspaces.com
 
 
 workflows:
