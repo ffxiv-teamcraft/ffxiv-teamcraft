@@ -94,6 +94,19 @@ jobs:
             - ffxiv-teamcraft/dist/*
             - .cache/*
 
+
+  deploy-cdn:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/
+      - aws-s3/sync:
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
+          from: dist/apps/client/
+          to: 's3://fra1.digitaloceanspaces.com/cdn-ffxivteamcraft'
+
   deploy-firebase-hosting:
     <<: *defaults
     steps:
@@ -152,20 +165,6 @@ jobs:
       - run:
           name: Deploying functions
           command: ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
-
-
-
-  deploy-cdn:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - aws-s3/sync:
-          arguments: |
-            --acl public-read \
-            --cache-control "max-age=86400"
-          from: dist/apps/client/
-          to: 's3://fra1.digitaloceanspaces.com/cdn-ffxivteamcraft'
 
 
   deploy-desktop-update:
