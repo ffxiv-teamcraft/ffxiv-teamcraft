@@ -94,19 +94,6 @@ jobs:
             - ffxiv-teamcraft/dist/*
             - .cache/*
 
-
-  deploy-cdn:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - aws-s3/sync:
-          arguments: |
-            --acl public-read \
-            --cache-control "max-age=86400"
-          from: dist/apps/client/
-          to: 's3://fra1.digitaloceanspaces.com/cdn-ffxivteamcraft'
-
   deploy-firebase-hosting:
     <<: *defaults
     steps:
@@ -172,12 +159,12 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/
-      - aws-s3/copy:
+      - aws-s3/sync:
           arguments: |
             --acl public-read \
-            --cache-control "max-age=1"
-          from: release/squirrel-windows/RELEASES
-          to: 's3://fra1.digitaloceanspaces.com/update-ffxivteamcraft'
+            --cache-control "max-age=86400"
+          from: dist/apps/client/
+          to: 's3://fra1.digitaloceanspaces.com/cdn-ffxivteamcraft'
 
 
 workflows:
@@ -211,9 +198,8 @@ workflows:
           requires:
             - lint
             - test
-      - deploy-desktop-update:
-          requires:
-            - release-desktop
+          branches:
+            only: master
       - deploy-staging:
           requires:
             - build
