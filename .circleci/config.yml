@@ -159,6 +159,7 @@ jobs:
     <<: *defaults
     executor: aws-cli/default
     steps:
+      - aws-cli/setup
       - attach_workspace:
           at: ~/
       - run:
