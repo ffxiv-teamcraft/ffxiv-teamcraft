@@ -34,7 +34,7 @@ export class UseDurabilityRestorationLater extends RotationTip {
     });
 
     const usedManipulationTooEarly = manipulationIIIndexes.some((index) => {
-      const repairSteps = simulationResult.steps.slice(index + 1, index + 1 + new Manipulation().getDuration(simulationResult.simulation));
+      const repairSteps = simulationResult.steps.filter(s => !s.action.skipsBuffTicks()).slice(index + 1, index + 1 + new Manipulation().getDuration(simulationResult.simulation));
       const matches = repairSteps.some(step => {
         return step.afterBuffTick.solidityDifference === 0 && step.solidityDifference === 0;
       });
