@@ -172,7 +172,7 @@ jobs:
           name: Copying lazy data files and JS bundles to CDN Bucket
           command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ \
                   --exclude '*' --include '/*.js' --include 'assets/data/*' \
-                  --include 'assets/extracts*' --recursive \
+                  --include 'assets/extracts.*.json' --recursive \
                   --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com
       - run:
           name: Copying new index.html to CDN Bucket
