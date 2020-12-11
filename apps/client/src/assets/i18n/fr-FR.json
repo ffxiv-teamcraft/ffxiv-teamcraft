@@ -2253,6 +2253,8 @@
       "Price_tip": "Input 0 if you want people to suggest how much they want instead",
       "Only_crafting": "Fabrication uniquement",
       "Includes_materials_label": "Cette commission comprend tous les matériaux de base et ne nécessite que l'artisanat",
+      "Only_materials": "Only materials",
+      "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "Coordonnées",
       "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
       "Contact_info_required_error": "Veuillez inclure les informations de contact",
