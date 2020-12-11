@@ -2253,6 +2253,8 @@
       "Price_tip": "如果您希望对方提出价格，请填写 0",
       "Only_crafting": "仅限制作",
       "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
+      "Only_materials": "Only materials",
+      "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "联系方式",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
       "Contact_info_required_error": "请填写联系方式",
