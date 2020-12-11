@@ -13,6 +13,9 @@
   <label [(ngModel)]="macroLock" (ngModelChange)="generateMacros()" nz-checkbox>
     {{'SIMULATOR.Macrolock' | translate}}
   </label>
+  <label [(ngModel)]="addConsumables" (ngModelChange)="generateMacros()" nz-checkbox>
+    {{'SIMULATOR.Include_consumables_notification' | translate}}
+  </label>
   <div class="fields">
     <nz-form-item>
       <nz-form-label>{{'SIMULATOR.Starting_echo_number' | translate}}</nz-form-label>
