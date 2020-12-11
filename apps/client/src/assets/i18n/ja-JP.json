@@ -2253,6 +2253,8 @@
       "Price_tip": "Input 0 if you want people to suggest how much they want instead",
       "Only_crafting": "クラフトだけ",
       "Includes_materials_label": "This commission includes all base materials and requires only crafting",
+      "Only_materials": "Only materials",
+      "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "問い合わせ先",
       "Contact_info_placeholder": "連絡手段（ディスコ、ゲーム中、メール、他）",
       "Contact_info_required_error": "Please include contact informations",
