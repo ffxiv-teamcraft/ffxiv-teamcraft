@@ -149,6 +149,14 @@ export class SettingsService {
     this.setSetting('commissions:onlyCrafting', onlyCrafting.toString());
   }
 
+  public get onlyMaterialsCommissions(): boolean {
+    return this.getSetting('commissions:onlyMaterials', 'false') === 'true';
+  }
+
+  public set onlyMaterialsCommissions(onlyMaterials: boolean) {
+    this.setSetting('commissions:onlyMaterials', onlyMaterials.toString());
+  }
+
   public get minCommissionPrice(): number {
     return +this.getSetting('commissions:minPrice', '0');
   }

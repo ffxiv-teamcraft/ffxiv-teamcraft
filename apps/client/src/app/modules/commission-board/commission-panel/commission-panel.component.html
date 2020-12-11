@@ -26,6 +26,9 @@
           <nz-tag style.border-color="#108ee9" *ngIf="commission.includesMaterials" nz-tooltip
                   [nzTooltipTitle]="'COMMISSIONS.CREATION.Includes_materials_label' | translate"
                   class="custom-tag">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</nz-tag>
+          <nz-tag style.border-color="#108ee9" *ngIf="commission.requiresOnlyMaterials" nz-tooltip
+                  [nzTooltipTitle]="'COMMISSIONS.CREATION.Only_requires_materials' | translate"
+                  class="custom-tag">{{'COMMISSIONS.CREATION.Only_materials' | translate}}</nz-tag>
           <nz-tag *ngFor="let tag of commission.tags">{{('COMMISSIONS.TAGS.' + tag) | translate}}</nz-tag>
         </div>
         <div nz-col nzMd="2" nzSm="6">
