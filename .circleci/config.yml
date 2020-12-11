@@ -198,8 +198,9 @@ workflows:
           requires:
             - lint
             - test
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
       - deploy-staging:
           requires:
             - build
