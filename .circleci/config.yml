@@ -7,6 +7,7 @@ defaults: &defaults
 version: 2.1
 orbs:
   win: circleci/windows@2.2.0
+  aws-s3: circleci/aws-s3@2.0.0
 jobs:
   setup:
     <<: *defaults
@@ -59,6 +60,7 @@ jobs:
       - run:
           name: Codecov upload
           command: yarn run codecov
+
 
   e2e:
     <<: *defaults
@@ -119,14 +121,10 @@ jobs:
           at: ~/
       - restore_cache:
           keys:
-            - v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
+            - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
-      - save_cache:
-          key: v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
-          paths:
-            - ~/.cache/yarn
       - run:
           name: Deploying desktop on github
           command: yarn run electron:setup:publish
@@ -134,15 +132,6 @@ jobs:
           root: ~/
           paths:
             - ffxiv-teamcraft/release/*
-
-  deploy-desktop-update:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying desktop update
-          command: bash tools/desktop/deploy.sh
 
 
   deploy-staging:
@@ -196,15 +185,9 @@ workflows:
           requires:
             - lint
             - test
-          filters:
-            branches:
-              only: master
       - deploy-desktop-update:
           requires:
             - release-desktop
-          filters:
-            branches:
-              only: master
       - deploy-staging:
           requires:
             - build
