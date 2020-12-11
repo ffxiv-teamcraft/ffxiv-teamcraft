@@ -2253,6 +2253,8 @@
       "Price_tip": "Введите 0, если вы хотите, чтобы люди указывали сколько они хотят",
       "Only_crafting": "Только крафт",
       "Includes_materials_label": "Этот заказ включает в себя все базовые материалы и требуется только крафт",
+      "Only_materials": "Only materials",
+      "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "Контактная информация",
       "Contact_info_placeholder": "Как исполнители могут связаться с вами когда они будут приняты для заказа? Discord, ingame, email, как вы хотите.",
       "Contact_info_required_error": "Пожалуйста, включите контактную информацию",
