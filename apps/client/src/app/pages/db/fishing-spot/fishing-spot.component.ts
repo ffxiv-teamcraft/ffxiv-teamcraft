@@ -108,7 +108,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
           title,
           description: '',
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fishing-spot/${fishingSpot.ID}/${title.split(' ').join('-')}`,
-          image: `./assets/icons/classjob/fisher.png`,
+          image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`,
         };
       })
     );

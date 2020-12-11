@@ -37,6 +37,10 @@ export class LazyDataProviderService {
   }
 
   private readonly getUrl = (path: string): string => {
+    if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
       return `.${path}`;
+    } else {
+      return `https://cdn.ffxivteamcraft.com${path}`;
+    }
   };
 }
