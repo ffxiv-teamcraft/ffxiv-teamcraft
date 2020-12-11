@@ -2253,6 +2253,8 @@
       "Price_tip": "상대방과 가격을 협의하고 싶다면 금액란에 0을 입력하세요",
       "Only_crafting": "제작직만 가능",
       "Includes_materials_label": "해당 의뢰는 모든 재료를 포함하여 제작만 합니다",
+      "Only_materials": "Only materials",
+      "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "연락 가능한 방법",
       "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
       "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
