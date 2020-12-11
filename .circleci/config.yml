@@ -164,13 +164,24 @@ jobs:
           at: ~/
       - run:
           name: Copying standard files to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*.html" --exclude "/*.js" --exclude "assets/data/*" --exclude "assets/extracts/*" --recursive --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*.html" --exclude "/*.js" --exclude "assets/data/*" --exclude "assets/extracts/*" --recursive --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
       - run:
           name: Copying lazy data files and JS bundles to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*" --include "/*.js" --include "assets/data/*" --include "assets/extracts/*" --recursive --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*" --include "/*.js" --include "assets/data/*" --include "assets/extracts/*" --recursive --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
       - run:
           name: Copying new index.html to CDN Bucket
-          command: aws s3 cp ./dist/apps/client/index.html s3://cdn-ffxivteamcraft/ --cache-control max-age=120 --endpoint=https://fra1.digitaloceanspaces.com
+          command: aws s3 cp ./dist/apps/client/index.html s3://cdn-ffxivteamcraft/ --cache-control max-age=120 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
+
+  deploy-desktop-update:
+    <<: *defaults
+    executor: aws-cli/default
+    steps:
+      - aws-cli/setup
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Copying desktop update to update Bucket
+          command: aws s3 cp ./release/squirrel-windows/* s3://cdn-ffxivteamcraft/ --recursive --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
 
 
 workflows:
@@ -207,9 +218,9 @@ workflows:
           requires:
             - lint
             - test
-          filters:
-            branches:
-              only: master
+      - deploy-desktop-update:
+          requires:
+            - release-desktop
       - deploy-staging:
           requires:
             - build
