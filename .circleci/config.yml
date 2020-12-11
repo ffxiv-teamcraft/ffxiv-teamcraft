@@ -213,4 +213,7 @@ workflows:
           filters:
             branches:
               only: staging
+      - deploy-cdn:
+          requires:
+            - build
 
