@@ -44,7 +44,7 @@ export class TranslationsLoader implements TranslateLoader {
     } else if (this.platformService.isDesktop() || !environment.production) {
       return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
     } else {
-      return this.http.get(`./assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
+      return this.http.get(`https://cdn.ffxivteamcraft.com/assets/i18n/${getFilename(lang)}.json`).pipe(shareReplay(1));
     }
   }
 }

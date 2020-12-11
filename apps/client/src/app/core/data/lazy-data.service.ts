@@ -306,7 +306,11 @@ export class LazyDataService {
     if (path.startsWith('http')) {
       url = path;
     } else {
-      url = `.${path}`;
+      if (this.platformService.isDesktop() || !environment.production || isPlatformServer(this.platform)) {
+        url = `.${path}`;
+      } else {
+        url = `https://cdn.ffxivteamcraft.com${path}`;
+      }
     }
     return this.http.get<T>(url);
   }
