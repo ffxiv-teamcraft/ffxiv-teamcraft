@@ -51,6 +51,7 @@ import { SimulationResultComponent } from './components/simulation-result/simula
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 
 const routes: Routes = [
   {
@@ -139,7 +140,8 @@ const routes: Routes = [
     DirtyModule,
     DragDropModule,
     NzPaginationModule,
-    NzCheckboxModule
+    NzCheckboxModule,
+    LazyScrollModule
   ],
   declarations: [
     CustomSimulatorPageComponent,
