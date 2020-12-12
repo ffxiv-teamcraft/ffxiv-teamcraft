@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "Als nicht erledigt markieren",
     "Create_list": "Erstelle eine List um diese Seite vervollständigen",
     "Create_list_limited": "Liste erstellen, um Seite zu vervollständigen (bis zu 50 Gegenstände)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "Regionale Folklore",
     "Timed": "Zeitgebunden",
     "Weather_dependant": "Nur zu bestimmten Wetterverhältnissen",
