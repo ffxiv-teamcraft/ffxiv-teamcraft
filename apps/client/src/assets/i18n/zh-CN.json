@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "将此物品标记为未完成",
     "Create_list": "新建本页未完成项目的清单",
     "Create_list_limited": "新建本页未完成项目的清单(前 50 个)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "传承录",
     "Timed": "限时",
     "Weather_dependant": "需要天气",
