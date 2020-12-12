@@ -23,6 +23,8 @@ export class Commission extends DataWithPermissions {
    */
   crafterId: string = null;
 
+  crafterContact: string = null;
+
   includesMaterials = false;
 
   requiresOnlyMaterials = false;

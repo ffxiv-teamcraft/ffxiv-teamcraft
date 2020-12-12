@@ -66,7 +66,7 @@ export class CommissionDetailsComponent extends TeamcraftComponent implements On
     this.commissionsFacade.update(commission);
   }
 
-  hire(commission: Commission, candidate: { uid: string, offer: number }): void {
+  hire(commission: Commission, candidate: { uid: string, offer: number, contact: string }): void {
     this.commissionsFacade.hire(commission, candidate);
   }
 
