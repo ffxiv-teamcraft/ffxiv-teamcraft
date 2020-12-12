@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "Marcar este item como não concluído",
     "Create_list": "Criar uma lista para completar esta página",
     "Create_list_limited": "Create a list to complete this page (50 items max)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "Regional Folklore",
     "Timed": "Timed",
     "Weather_dependant": "Only with some weathers",
