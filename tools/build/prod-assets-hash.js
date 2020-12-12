@@ -26,7 +26,7 @@ const zhFiles = fs.readdirSync(path.join(__dirname, '../../dist/apps/client/asse
   });
 
 // Extracts
-const extractsPath = path.join(__dirname, '../../dist/apps/client/assets/extracts.json');
+const extractsPath = path.join(__dirname, '../../dist/apps/client/assets/extracts/extracts.json');
 const extractsHash = hashFiles.sync({ files: [extractsPath] });
 fs.renameSync(extractsPath, extractsPath.replace('.json', `.${extractsHash}.json`));
 

@@ -242,7 +242,7 @@ export class LazyDataService {
         this.loaded$.next(true);
       });
 
-    const extractsPath = `/assets/extracts${environment.production ? '.' + extractsHash : ''}.json`;
+    const extractsPath = `/assets/extracts/extracts${environment.production ? '.' + extractsHash : ''}.json`;
 
     combineLatest([this.xivapi.getDCList(), this.getData<XivapiPatch[]>('https://xivapi.com/patchlist'), this.getData(extractsPath)]).subscribe(
       ([dcList, patches, extracts]) => {

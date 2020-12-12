@@ -7,6 +7,7 @@ defaults: &defaults
 version: 2.1
 orbs:
   win: circleci/windows@2.2.0
+  aws-cli: circleci/aws-cli@1.3.1
 jobs:
   setup:
     <<: *defaults
@@ -60,6 +61,7 @@ jobs:
           name: Codecov upload
           command: yarn run codecov
 
+
   e2e:
     <<: *defaults
     steps:
@@ -93,19 +95,6 @@ jobs:
             - .cache/*
 
 
-  deploy-cdn:
-    <<: *defaults
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "96:02:36:2b:33:81:70:ce:37:3d:f8:9b:e5:ac:65:30"
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying cdn
-          command: bash tools/cdn/deploy.sh
-
-
   deploy-firebase-hosting:
     <<: *defaults
     steps:
@@ -133,14 +122,10 @@ jobs:
           at: ~/
       - restore_cache:
           keys:
-            - v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
+            - v2-deps-{ .Branch }-{ checksum "yarn.lock" }
       - run:
           name: Reinstalling dependencies for windows
           command: yarn install --immutable
-      - save_cache:
-          key: v2-deps-win-{ .Branch }-{ checksum "yarn.lock" }
-          paths:
-            - ~/.cache/yarn
       - run:
           name: Deploying desktop on github
           command: yarn run electron:setup:publish
@@ -148,15 +133,6 @@ jobs:
           root: ~/
           paths:
             - ffxiv-teamcraft/release/*
-
-  deploy-desktop-update:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: Deploying desktop update
-          command: bash tools/desktop/deploy.sh
 
 
   deploy-staging:
@@ -177,6 +153,35 @@ jobs:
       - run:
           name: Deploying functions
           command: ./node_modules/.bin/firebase deploy -P beta --only functions --token "$FIREBASE_TOKEN"
+
+
+  deploy-cdn:
+    <<: *defaults
+    executor: aws-cli/default
+    steps:
+      - aws-cli/setup
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Copying standard files to CDN Bucket
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*.html" --exclude "/*.js" --exclude "assets/data/*" --exclude "assets/extracts/*" --recursive --cache-control max-age=7200 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
+      - run:
+          name: Copying lazy data files and JS bundles to CDN Bucket
+          command: aws s3 cp ./dist/apps/client/ s3://cdn-ffxivteamcraft/ --exclude "*" --include "/*.js" --include "assets/data/*" --include "assets/extracts/*" --recursive --cache-control max-age=31536000 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
+      - run:
+          name: Copying new index.html to CDN Bucket
+          command: aws s3 cp ./dist/apps/client/index.html s3://cdn-ffxivteamcraft/ --cache-control max-age=120 --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
+
+  deploy-desktop-update:
+    <<: *defaults
+    executor: aws-cli/default
+    steps:
+      - aws-cli/setup
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Copying desktop update to update Bucket
+          command: aws s3 cp ./release/squirrel-windows/* s3://update-ffxivteamcraft/ --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
 
 
 workflows:
