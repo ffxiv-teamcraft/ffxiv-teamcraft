@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "Marquer comme non fait",
     "Create_list": "Créer une liste pour compléter cette page",
     "Create_list_limited": "Créer une liste pour compléter cette page (50 objets max)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "Légendes locales",
     "Timed": "Timé",
     "Weather_dependant": "Uniquement avec certains climats",
