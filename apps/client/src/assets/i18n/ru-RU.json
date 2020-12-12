@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "Отметить этот предмет как невыполненный",
     "Create_list": "Создать список для завершения этой страницы",
     "Create_list_limited": "Создать список для завершения этой страницы (50 предметов максимум)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "Regional Folklore",
     "Timed": "Временный",
     "Weather_dependant": "Только с определенной погодой",
