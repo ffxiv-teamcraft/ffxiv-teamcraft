@@ -1232,6 +1232,7 @@
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
     "Create_list_limited": "このページを完了するためなリスト作成する(最大50個のアイテム)",
+    "Create_list_selection": "Create a list from selection ({{amount}})",
     "Folklore": "伝承録",
     "Timed": "タイムリミットあり",
     "Weather_dependant": "特殊天候のみ可能",
