@@ -94,7 +94,7 @@
     "electron:setup:build": "del-cli release/* && npm run build:electron-prod && electron-builder -w",
     "electron:setup:build-dev": "electron-builder -w",
     "electron:setup:build-beta": "del-cli release/* && npm run build:electron-dev && electron-builder -w",
-    "electron:setup:publish": "npm run build:electron-prod && electron-builder -w",
+    "electron:setup:publish": "npm run build:electron-prod && electron-builder -w -p always",
     "postinstall": "ngcc && electron-builder install-app-deps",
     "release:full": "npm run build:prod && firebase deploy -P default --only hosting && npm run electron:setup:publish",
     "pack": "electron-builder --dir",

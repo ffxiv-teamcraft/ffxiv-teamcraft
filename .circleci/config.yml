@@ -202,6 +202,9 @@ workflows:
       - deploy-cdn:
           requires:
             - build
+          filters:
+            branches:
+              only: master
       - deploy-firebase-hosting:
           requires:
             - build
@@ -218,9 +221,15 @@ workflows:
           requires:
             - lint
             - test
+          filters:
+            branches:
+              only: master
       - deploy-desktop-update:
           requires:
             - release-desktop
+          filters:
+            branches:
+              only: master
       - deploy-staging:
           requires:
             - build
