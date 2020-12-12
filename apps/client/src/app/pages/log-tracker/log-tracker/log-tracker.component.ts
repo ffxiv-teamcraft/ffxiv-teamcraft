@@ -36,7 +36,6 @@ export class LogTrackerComponent extends TrackerComponent {
   public dohTabs: any[];
   public dolTabs: any[];
 
-  private dohDivisionIdCache: { [index: number]: number } = {};
   private dolPageNameCache: { [index: number]: string } = {};
 
   public userCompletion: { [index: number]: boolean } = {};
@@ -44,13 +43,31 @@ export class LogTrackerComponent extends TrackerComponent {
 
   public nodeDataCache: any[][] = [];
 
-  public dohSelectedPage = 0;
-  public dolSelectedPage = 0;
+  private _dohSelectedPage = 0;
+  public get dohSelectedPage(): number {
+    return this._dohSelectedPage;
+  }
+
+  public set dohSelectedPage(index: number) {
+    this._dohSelectedPage = index;
+    this.selectedRecipes = [];
+  }
+
+  private _dolSelectedPage = 0;
+  public get dolSelectedPage(): number {
+    return this._dolSelectedPage;
+  }
+
+  public set dolSelectedPage(index: number) {
+    this._dolSelectedPage = index;
+    this.selectedRecipes = [];
+  }
 
   public type$: Observable<number>;
 
   public hideCompleted = false;
 
+  public selectedRecipes: { itemId: number, recipeId: number }[] = [];
 
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
@@ -102,11 +119,23 @@ export class LogTrackerComponent extends TrackerComponent {
     });
   }
 
-  public createList(page: any, limit?: number): void {
+  public setSelection(recipe: any, selected: boolean): void {
+    if (selected) {
+      this.selectedRecipes.push(recipe);
+    } else {
+      this.selectedRecipes = this.selectedRecipes.filter(r => r.recipeId !== recipe.recipeId);
+    }
+  }
+
+  public createListForPage(page: any, limit?: number): void {
     let recipesToAdd = page.recipes.filter(recipe => !this.userCompletion[recipe.recipeId]);
     if (limit) {
       recipesToAdd = recipesToAdd.slice(0, limit);
     }
+    this.createList(recipesToAdd);
+  }
+
+  public createList(recipesToAdd: { itemId: number, recipeId: number }[]): void {
     this.listPicker.pickList().pipe(
       mergeMap(list => {
         const operations = recipesToAdd.map(recipe => {

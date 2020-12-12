@@ -25,11 +25,14 @@
                           nz-popconfirm>
                     <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Mark_page_as_done' | translate}}
                   </button>
-                  <button (click)="createList(page)" nz-button>
+                  <button (click)="createListForPage(page)" nz-button>
                     <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list' | translate}}
                   </button>
-                  <button (click)="createList(page, 50)" nz-button>
+                  <button (click)="createListForPage(page, 50)" nz-button>
                     <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
+                  </button>
+                  <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
+                    <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{amount: selectedRecipes.length} }}
                   </button>
                   <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                     <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
@@ -40,6 +43,7 @@
                   <div *ngIf="!userCompletion[recipe.recipeId] || !hideCompleted" fxLayout="row"
                        fxLayoutAlign="flex-start center"
                        fxLayoutGap="5px">
+                    <label nz-checkbox [(ngModel)]="recipe.selected" (ngModelChange)="setSelection(recipe, $event)"></label>
                     <app-item-icon *ngIf="true | ifMobile: false"
                                    [icon]="recipe.itemId | lazyIcon"
                                    [itemId]="recipe.itemId"
