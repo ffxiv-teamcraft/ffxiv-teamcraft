@@ -26,6 +26,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 
 const routes: Routes = [
   {
@@ -61,7 +62,8 @@ const routes: Routes = [
     ScrollingModule,
     CommissionBoardModule,
     NzSkeletonModule,
-    NzSliderModule
+    NzSliderModule,
+    NzAvatarModule
   ],
   declarations: [PublicProfileComponent, ProfileEditorComponent, MasterbooksPopupComponent, StatsPopupComponent, VerificationPopupComponent, AutofillStatsPopupComponent]
 })
