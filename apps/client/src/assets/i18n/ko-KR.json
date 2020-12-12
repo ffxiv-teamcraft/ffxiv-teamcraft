@@ -796,7 +796,7 @@
     "Intro": "채집수첩에서는 채집 가능한 아이템을 찾을 수 있으며, 채집 장소 확인과 알람 생성 등의 세부 기능을 제공합니다. 위쪽 검색창에 내용을 적고 찾으려는 채집 정보를 확인하세요!",
     "Hidden_item": "숨은 자원",
     "Fish_eyes": "Requires fish eyes to only care about weather requirement",
-    "Add_alarm": "Add alarm",
+    "Add_alarm": "알람 추가",
     "Add_alarm_fish_eyes": "Add alarm with fish eyes",
     "Snagging": "갈고리 낚시 필요",
     "Predators": "사전에 낚아야 할 물고기",
@@ -887,9 +887,9 @@
     "Level": "레벨",
     "Reliability": "신뢰도",
     "Average_hq": "평균 HQ확률",
-    "Median_HQ": "Median HQ",
-    "Min_HQ": "Min. HQ",
-    "Max_HQ": "Max. HQ",
+    "Median_HQ": "평균 HQ",
+    "Min_HQ": "최소 HQ",
+    "Max_HQ": "최대 HQ",
     "Specialist": "전문장인",
     "New_rotation": "새로운 제작 로테이션",
     "Rotations": "제작 로테이션",
@@ -1483,7 +1483,7 @@
       "Ranking": "순위",
       "Top_users": "최고 순위",
       "Your_ranking": "당신의 순위",
-      "Include_fisheyes_data": "Include reports using Fish Eyes",
+      "Include_fisheyes_data": "물고기의 눈을 통계에 포함",
       "TUG": {
         "Light": "소형 (!)",
         "Medium": "중형 (!!)",
@@ -2211,7 +2211,7 @@
     "Missing_stats": "다른 제작 직업으로 변경하여 TC가 리플레이를 기록하기 전에 제작 능력치를 동기화할 수 있도록 해주세요.",
     "Create_folder": "새 폴더",
     "Save_replay": "데이터베이스에 리플레이 저장하기",
-    "Replay_result": "Result"
+    "Replay_result": "결과"
   },
   "COMMISSIONS": {
     "New_commission": "새로운 의뢰",
@@ -2253,8 +2253,8 @@
       "Price_tip": "상대방과 가격을 협의하고 싶다면 금액란에 0을 입력하세요",
       "Only_crafting": "제작직만 가능",
       "Includes_materials_label": "해당 의뢰는 모든 재료를 포함하여 제작만 합니다",
-      "Only_materials": "Only materials",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_materials": "재료만",
+      "Only_requires_materials": "해당 의뢰는 목록의 재료만 필요합니다",
       "Contact_info": "연락 가능한 방법",
       "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
       "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
@@ -2263,9 +2263,9 @@
       "Description_max_length_error": "1000자 이내로 적어야 합니다",
       "Warning": "경고",
       "Warning_description": "트롤링이나 스팸 목적의 의뢰는 계정 제재를 당하실 수도 있습니다.",
-      "Copy_link": "Copy import code",
+      "Copy_link": "불러오기 코드 복사",
       "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Link_copied": "유저 의뢰 불러오기 코드가 복사되었습니다"
     },
     "BOARD": {
       "Title": "유저 의뢰 게시판",
@@ -2308,10 +2308,10 @@
       "Items_count": "품목",
       "Creation_date": "생성 일자",
       "Server_&_tags": "서버 & 태그",
-      "Add_items": "Add items",
-      "Rating": "Rating",
-      "Comment": "Your comment",
-      "Comment_placeholder": "Add more details about your rating here"
+      "Add_items": "아이템 추가",
+      "Rating": "평가",
+      "Comment": "내 댓글",
+      "Comment_placeholder": "평가에 대해 자세한 내용을 추가"
     },
     "APPLY": {
       "Price": "가격",
@@ -2369,10 +2369,10 @@
       "CANNOT_GATHER": "필요한 아이템을 얻을 수 없음. 또한 의뢰자도 필요한 아이템을 구할 수 없음."
     },
     "IMPORT": {
-      "Title": "Commission import",
+      "Title": "유저 의뢰 불러오기",
       "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Create_commission": "의뢰 만들기",
+      "No_items": "아이템 없음"
     }
   }
 }
