@@ -443,6 +443,14 @@
             <i>{{'SETTINGS.Packet_capture_info' | translate}}</i>
           </div>
           <div>
+            <label [(ngModel)]="winpcap" (ngModelChange)="winpcapChange($event)" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Winpcap_flag' | translate}}
+            </label>
+          </div>
+          <div>
+            <i>{{'SETTINGS.Winpcap_details' | translate}}: <a href="https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe">https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe</a></i>
+          </div>
+          <div>
             <label [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Contribute_to_universalis' | translate}}
             </label>

@@ -569,6 +569,14 @@ export class SettingsService {
     this.setSetting('universalis:enable-sourcing', enabled.toString());
   }
 
+  public get winpcap(): boolean {
+    return this.getSetting('winpcap', 'false') === 'true';
+  }
+
+  public set winpcap(enabled: boolean) {
+    this.setSetting('winpcap', enabled.toString());
+  }
+
   public get customTheme(): Theme {
     return {
       ...Theme.DEFAULT,
