@@ -18,14 +18,15 @@ import { zhWorlds } from './sources/zh-worlds';
 export class LocalizedDataService {
   indentRegexp = new RegExp('<Indent/>', 'i');
 
-  constructor(private lazyDataProvider: LazyDataProviderService, private lazyData: LazyDataService) {}
+  constructor(private lazyDataProvider: LazyDataProviderService, private lazyData: LazyDataService) {
+  }
 
   public getWorldName(world: string): I18nName {
     const i18nName: I18nName = {
       fr: world,
       en: world,
       de: world,
-      ja: world,
+      ja: world
     };
 
     if (zhWorlds[world]) {
@@ -141,7 +142,7 @@ export class LocalizedDataService {
       en: lazyRow.Name_en,
       de: lazyRow.Name_de,
       ja: lazyRow.Name_ja,
-      fr: lazyRow.Name_fr,
+      fr: lazyRow.Name_fr
     };
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhTribes', koKey: 'koTribes' });
     return row;
@@ -160,7 +161,7 @@ export class LocalizedDataService {
       en: lazyRow.Name_en,
       de: lazyRow.Name_de,
       ja: lazyRow.Name_ja,
-      fr: lazyRow.Name_fr,
+      fr: lazyRow.Name_fr
     };
     this.tryFillExtendedLanguage(row, id, { zhKey: 'zhBaseParams', koKey: 'koBaseParams' });
 
@@ -258,6 +259,9 @@ export class LocalizedDataService {
     if (resultIndex === -1) {
       resultIndex = this.getIndexByName(this.lazyData.data.actions, name, language);
     }
+    if (name === 'Scrutiny' && language === 'en') {
+      resultIndex = 22185;
+    }
     const result = this.lazyData.data.craftActions[resultIndex] || this.lazyData.data.actions[resultIndex];
     if (resultIndex === -1) {
       throw new Error(`Data row not found for crafting action ${name}`);
@@ -307,7 +311,7 @@ export class LocalizedDataService {
       return {
         exVersion: exVersionNum,
         majorVersion: exVersionNum + 2, // Not sure if this is guaranteed
-        name: name as I18nName,
+        name: name as I18nName
       };
     });
   }
@@ -332,7 +336,7 @@ export class LocalizedDataService {
   private guessExtendedLanguageKeys(key: keyof LazyData) {
     return {
       zhKey: this.guessExtendedLanguageKey('zh', key),
-      koKey: this.guessExtendedLanguageKey('ko', key),
+      koKey: this.guessExtendedLanguageKey('ko', key)
     };
   }
 
@@ -367,7 +371,7 @@ export class LocalizedDataService {
       [`${fieldName}_de`]: value.de,
       [`${fieldName}_ja`]: value.ja,
       [`${fieldName}_ko`]: value.ko || value.en,
-      [`${fieldName}_chs`]: value.zh || value.en,
+      [`${fieldName}_chs`]: value.zh || value.en
     };
   }
 
@@ -378,7 +382,7 @@ export class LocalizedDataService {
       de: value[`${fieldName}_de`],
       ja: value[`${fieldName}_ja`],
       ko: value[`${fieldName}_ko`],
-      zh: value[`${fieldName}_chs`],
+      zh: value[`${fieldName}_chs`]
     };
 
     if (key !== null) {

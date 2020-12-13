@@ -47,6 +47,8 @@ export class SettingsPopupComponent {
 
   machinaToggle = false;
 
+  winpcap = false;
+
   startMinimized = false;
 
   alwaysQuit = true;
@@ -142,6 +144,9 @@ export class SettingsPopupComponent {
     this.ipc.once('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
+    this.ipc.once('winpcap:value', (event, value) => {
+      this.winpcap = value;
+    });
     this.ipc.once('start-minimized:value', (event, value) => {
       this.startMinimized = value;
     });
@@ -202,6 +207,7 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
     this.ipc.send('metrics:path:get');
+    this.ipc.send('winpcap:get');
     this.customTheme = this.settings.customTheme;
   }
 
@@ -265,6 +271,10 @@ export class SettingsPopupComponent {
       this.settings.enableUniversalisSourcing = true;
     }
     this.ipc.send('toggle-machina', value);
+  }
+
+  winpcapChange(value: boolean): void {
+    this.ipc.send('winpcap:set', value);
   }
 
   openDesktopConsole(): void {

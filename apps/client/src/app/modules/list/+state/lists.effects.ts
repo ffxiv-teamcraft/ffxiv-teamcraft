@@ -77,6 +77,13 @@ export class ListsEffects {
       return this.listService.getByForeignKey(TeamcraftUser, userId, query => query.where('archived', '==', false))
         .pipe(
           debounceTime(100),
+          tap(lists => {
+            lists.forEach(list => {
+              if (!list.name) {
+                this.listsFacade.deleteList(list.$key, false);
+              }
+            });
+          }),
           map(lists => new MyListsLoaded(lists, userId))
         );
     })

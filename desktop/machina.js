@@ -45,6 +45,7 @@ module.exports.start = function(win, config, verbose, winpcap, pid) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
     if (elevated) {
+      log.info('winpcap', winpcap);
       if (!isDev) {
         const appPath = app.getAppPath();
         const appVersion = /\d\.\d\.\d/.exec(appPath);

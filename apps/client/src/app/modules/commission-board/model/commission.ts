@@ -23,7 +23,11 @@ export class Commission extends DataWithPermissions {
    */
   crafterId: string = null;
 
+  crafterContact: string = null;
+
   includesMaterials = false;
+
+  requiresOnlyMaterials = false;
 
   /**
    * The price that the buyer is willing to pay, defaults to 0 if he wants to negotiate the price or doesn't know which one to set.

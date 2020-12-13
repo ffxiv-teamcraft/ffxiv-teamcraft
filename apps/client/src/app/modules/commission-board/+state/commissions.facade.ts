@@ -172,9 +172,10 @@ export class CommissionsFacade {
     this.store.dispatch(updateCommission({ commission }));
   }
 
-  hire(commission: Commission, candidate: { uid: string, offer: number }): void {
+  hire(commission: Commission, candidate: { uid: string, offer: number, contact: string }): void {
     commission.status = CommissionStatus.IN_PROGRESS;
     commission.crafterId = candidate.uid;
+    commission.crafterContact = candidate.contact;
     commission.price = candidate.offer;
     commission.candidates = commission.candidates.filter(c => c.uid !== candidate.uid);
     this.update(commission);
@@ -229,8 +230,6 @@ export class CommissionsFacade {
   }
 
   markAsCompleted(commission: Commission): void {
-    commission.status = CommissionStatus.ARCHIVED;
-    this.update(commission);
     this.listsFacade.pureUpdateList(commission.$key, {
       registry: {},
       everyone: PermissionLevel.READ,

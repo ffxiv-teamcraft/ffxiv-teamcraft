@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { CraftingAction, GearSet, Simulation, SimulationResult, SimulationService } from '../../../../core/simulation/simulation.service';
 import { BehaviorSubject, combineLatest, Observable, ReplaySubject } from 'rxjs';
@@ -32,7 +32,8 @@ import { LazyDataService } from '../../../../core/data/lazy-data.service';
 @Component({
   selector: 'app-rotation-panel',
   templateUrl: './rotation-panel.component.html',
-  styleUrls: ['./rotation-panel.component.less']
+  styleUrls: ['./rotation-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RotationPanelComponent implements OnInit {
 

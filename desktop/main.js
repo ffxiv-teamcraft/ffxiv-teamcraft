@@ -147,7 +147,7 @@ for (let i = 0; i < argv.length; i++) {
     options.verbose = true;
   }
   if (argv[i] === '--winpcap' || argv[i] === '-wp') {
-    options.winpcap = true;
+    config.set('winpcap', true);
   }
   if (argv[i] === '-pid') {
     options.pid = +argv[i + 1];
@@ -259,6 +259,10 @@ app.on('ready', () => {
   });
 });
 
+function startMachina() {
+  Machina.start(win, config, options.verbose, config.get('winpcap'), options.pid);
+}
+
 function createWindow() {
   app.releaseSingleInstanceLock();
   app.setAsDefaultProtocolClient('teamcraft');
@@ -294,7 +298,7 @@ function createWindow() {
   win = new BrowserWindow(opts);
 
   if (config.get('machina') === true) {
-    Machina.start(win, config, options.verbose, options.winpcap, options.pid);
+    startMachina();
   }
 
   const proxyRule = config.get('proxy-rule', '');
@@ -446,7 +450,7 @@ function applySettings(settings) {
 
       if (config.get('machina') === true) {
         Machina.stop();
-        Machina.start(win, config, options.verbose, options.winpcap);
+        startMachina();
       }
     }
 
@@ -567,7 +571,7 @@ ipcMain.on('toggle-machina', (event, enabled) => {
   config.set('machina', enabled);
   event.sender.send('toggle-machina:value', enabled);
   if (enabled) {
-    Machina.start(win, config, options.verbose, options.winpcap);
+    startMachina();
   } else {
     Machina.stop();
   }
@@ -763,6 +767,17 @@ ipcMain.on('metrics:path:set', (event, value) => {
   });
 });
 // End metrics system
+
+
+ipcMain.on('winpcap:get', (event) => {
+  event.sender.send('winpcap:value', config.get('winpcap'));
+});
+
+ipcMain.on('winpcap:set', (event, flag) => {
+  config.set('winpcap', flag);
+  Machina.stop();
+  startMachina();
+});
 
 ipcMain.on('show-devtools', () => {
   win.webContents.openDevTools();

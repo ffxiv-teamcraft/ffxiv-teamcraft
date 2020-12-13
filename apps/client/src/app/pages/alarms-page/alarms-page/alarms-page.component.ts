@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { AlarmBellService } from '../../../core/alarms/alarm-bell.service';
@@ -28,7 +28,8 @@ import { LinkToolsService } from '../../../core/tools/link-tools.service';
 @Component({
   selector: 'app-alarms-page',
   templateUrl: './alarms-page.component.html',
-  styleUrls: ['./alarms-page.component.less']
+  styleUrls: ['./alarms-page.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlarmsPageComponent implements OnInit {
 

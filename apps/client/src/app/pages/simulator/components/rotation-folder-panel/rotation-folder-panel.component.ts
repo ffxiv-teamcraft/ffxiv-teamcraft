@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CraftingRotationsFolder } from '../../../../model/other/crafting-rotations-folder';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { combineLatest, Observable, ReplaySubject, Subject } from 'rxjs';
@@ -21,7 +21,8 @@ import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.
 @Component({
   selector: 'app-rotation-folder-panel',
   templateUrl: './rotation-folder-panel.component.html',
-  styleUrls: ['./rotation-folder-panel.component.less']
+  styleUrls: ['./rotation-folder-panel.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RotationFolderPanelComponent {
 

@@ -200,7 +200,7 @@ export class SearchComponent implements OnInit {
 
   patch$: Observable<XivapiPatch> = this.query$.pipe(
     map(query => {
-      const matches = /patch:([\d.]+)/.exec(query);
+      const matches = /patch:\s?([\d.]+)/.exec(query);
       if (matches && matches[1]) {
         return this.lazyData.patches.find(p => {
           return p.Version === matches[1];
@@ -293,9 +293,9 @@ export class SearchComponent implements OnInit {
       }),
       mergeMap(([query, type, filters, sort]) => {
         let processedQuery = query;
-        const matches = /patch:([\d.]+)/.exec(query);
+        const matches = /patch:\s?([\d.]+)/.exec(query);
         if (matches && matches[1]) {
-          processedQuery = query.replace(/patch:([\d.]+)/, '');
+          processedQuery = query.replace(/patch:\s?([\d.]+)/, '');
           const patch = this.lazyData.patches.find(p => {
             return p.Version === matches[1];
           });

@@ -36,7 +36,7 @@ export class InventoryOptimizerComponent {
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
             return this.optimizers
-              .filter(optimizer => !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
+              .filter(optimizer => this.showHidden || !this.hiddenArray.some(o => o.optimizerId === optimizer.getId()))
               .map(optimizer => {
                 const entries = inventory.toArray()
                   .filter(item => {

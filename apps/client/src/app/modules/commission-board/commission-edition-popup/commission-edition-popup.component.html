@@ -46,7 +46,13 @@
   <nz-form-item>
     <nz-form-label nzFor="includesMaterials">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</nz-form-label>
     <nz-form-control>
-      <label nz-checkbox formControlName="includesMaterials" id="includesMaterials">{{'COMMISSIONS.CREATION.Includes_materials_label' | translate}}</label>
+      <label nz-checkbox [nzDisabled]="form.value.requiresOnlyMaterials" formControlName="includesMaterials" id="includesMaterials">{{'COMMISSIONS.CREATION.Includes_materials_label' | translate}}</label>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="requiresOnlyMaterials">{{'COMMISSIONS.CREATION.Only_materials' | translate}}</nz-form-label>
+    <nz-form-control>
+      <label nz-checkbox [nzDisabled]="form.value.includesMaterials" formControlName="requiresOnlyMaterials" id="requiresOnlyMaterials">{{'COMMISSIONS.CREATION.Only_requires_materials' | translate}}</label>
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>

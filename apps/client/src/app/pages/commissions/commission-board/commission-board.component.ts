@@ -43,30 +43,35 @@ export class CommissionBoardComponent {
 
   public onlyCrafting$ = new BehaviorSubject<boolean>(this.settings.onlyCraftingCommissions);
 
+  public onlyMaterials$ = new BehaviorSubject<boolean>(this.settings.onlyMaterialsCommissions);
+
   public minPrice$ = new BehaviorSubject<number>(this.settings.minCommissionPrice);
 
   public display$: Observable<CommissionBoardDisplay> = combineLatest([
     this.activatedRoute.paramMap,
     this.tags$.pipe(debounceTime(1000)),
     this.onlyCrafting$,
+    this.onlyMaterials$,
     this.minPrice$.pipe(debounceTime(500))
   ]).pipe(
-    map(([params, tags, onlyCrafting, minPrice]) => {
+    map(([params, tags, onlyCrafting, onlyMaterials, minPrice]) => {
       this.loading = true;
       const dc = params.get('dc');
       this.settings.commissionTags = tags;
       this.settings.onlyCraftingCommissions = onlyCrafting;
+      this.settings.onlyMaterialsCommissions = onlyMaterials;
       this.settings.minCommissionPrice = minPrice;
       return {
         datacenter: dc,
         subscribed: localStorage.getItem(`c:fcm:${dc}`) === 'true',
         tags: tags,
         onlyCrafting,
-        minPrice
+        minPrice,
+        onlyMaterials
       };
     }),
     switchMap(data => {
-      return this.commissionsService.getByDatacenter(data.datacenter, data.tags, data.onlyCrafting, data.minPrice).pipe(
+      return this.commissionsService.getByDatacenter(data.datacenter, data.tags, data.onlyCrafting, data.onlyMaterials, data.minPrice).pipe(
         map(commissions => {
           return {
             ...data,

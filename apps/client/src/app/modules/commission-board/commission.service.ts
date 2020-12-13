@@ -85,7 +85,7 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
     });
   }
 
-  public getByDatacenter(datacenter: string, tags: CommissionTag[], onlyCrafting: boolean, minPrice: number): Observable<Commission[]> {
+  public getByDatacenter(datacenter: string, tags: CommissionTag[], onlyCrafting: boolean, onlyMaterials: boolean, minPrice: number): Observable<Commission[]> {
     return this.where(ref => {
       let query = ref.where('datacenter', '==', datacenter);
       if (tags.length > 0) {
@@ -95,7 +95,7 @@ export class CommissionService extends FirestoreRelationalStorage<Commission> {
     }).pipe(
       map(commissions => {
         return commissions.filter(c => {
-          return c.price >= minPrice && (!onlyCrafting || c.includesMaterials);
+          return c.price >= minPrice && (!onlyCrafting || c.includesMaterials) && (!onlyMaterials || c.requiresOnlyMaterials);
         });
       })
     );

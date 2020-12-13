@@ -163,7 +163,7 @@
             {{'COMMISSIONS.DETAILS.Progression_Tip' | translate}}
           </i>
           <button nz-button nzType="primary"
-                  *ngIf="display.commission.itemsProgression === 100 && display.commission.status === CommissionStatus.IN_PROGRESS && display.commission.authorId === display.userId"
+                  *ngIf="(display.commission.itemsProgression === 100 || display.commission.requiresOnlyMaterials) && display.commission.status === CommissionStatus.IN_PROGRESS && display.commission.authorId === display.userId"
                   nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                   (nzOnConfirm)="markAsCompleted(display.commission, display.userId)">
             {{'COMMISSIONS.DETAILS.Mark_as_completed' | translate}}
@@ -210,6 +210,9 @@
           <div fxLayout="row" fxLayoutAlign="flex-start center">
             <app-user-avatar [userId]="display.commission.crafterId" width="32"></app-user-avatar>
             <div>{{display.commission.crafterId | characterName | async}}</div>
+          </div>
+          <div *ngIf="display.commission.authorId === display.userId">
+            {{display.commission.crafterContact}}
           </div>
           <button nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
                   (nzOnConfirm)="fireContractor(display.commission)"

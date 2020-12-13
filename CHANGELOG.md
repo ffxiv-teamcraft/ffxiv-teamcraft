@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.8"></a>
+## [7.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.7...v7.6.8) (2020-12-13)
+
+
+### Bug Fixes
+
+* **alarms:** fixed ephemeral warning in compact mode breaking design ([3a6cdd3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3a6cdd3))
+* **alarms:** get spawn times from game data so it cannot be wrong anymore ([cb33b63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cb33b63))
+* **collectables:** fixed wrong collectability thresholds on ishgard recipes ([8e67c00](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8e67c00))
+* **commission:** fixed an issue with rating sometimes not applied properly ([152000e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/152000e))
+* **inventory-optimizer:** hidden optimizers are now properly shown when enabling "show hidden" ([c519348](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c519348))
+* **lists:** auto cleanup for lists that have no name ([b7073c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b7073c3))
+* **macro-translator:** fixed bad translation for Scrutiny ([e780ccb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e780ccb))
+* **profile:** better rendering for narrower resolutions ([9486ae8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9486ae8))
+* better handling of character not loading properly to avoid xivapi errors ([848bead](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/848bead))
+* **rotation-overlay:** removed cp cost from actions to prevent possible crashes ([4656a35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4656a35))
+* **search:** fixed patch search not working properly ([94ccebe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94ccebe))
+* **shortcuts:** fixed keyboard shortcuts for search and open in app ([ebd6de9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ebd6de9))
+* **simulator:** fixed a bug with HQ ingredients and recipe switch ([5407d2b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5407d2b))
+* **simulator:** fixed an issue with specialist checkbox not working properly ([ec1dca7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ec1dca7))
+* **simulator:** fixed manipulation tip with final appraisal ([a8a36b4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a8a36b4))
+
+
+### Features
+
+* **commissions:** new checkbox for commissions that require only materials ([44def68](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/44def68))
+* **commissions:** you can now see contractor contact after hiring them (not retroactive) ([5211a92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5211a92))
+* **community-rotations:** added missing 80★★★★ filter entry ([5a79937](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5a79937))
+* **desktop:** added winpcap checkbox inside settings page ([87ffe92](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/87ffe92))
+* **log-tracker:** you can now pick individual recipes to add to a list ([2a12af6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2a12af6))
+* **patreon:** new loading screen supporter: Sombra's Scavengers on Jenova ([083f3dc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/083f3dc))
+* **simulator:** new checkbox in macro generation popup to add consumables notification ([01144d0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01144d0))
+* **simulator:** new tooltip to show min, max and median HQ% when hovering avg HQ% ([6121b50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6121b50))
+
+
+### Performance Improvements
+
+* **rotations:** virtual scrolling to help with large amount of rotations ([42872a7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/42872a7))
+* moved hosting back to a real CDN and desktop update too, to avoid the 5.4 bandwidth problem again ([8c74ed2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c74ed2))
+
+
+
 <a name="7.6.7"></a>
 ## [7.6.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.6...v7.6.7) (2020-12-09)
 

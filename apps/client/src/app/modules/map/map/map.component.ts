@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MapData } from '../map-data';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MapService } from '../map.service';
@@ -9,7 +9,8 @@ import { Vector2 } from '../../../core/tools/vector2';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.less']
+  styleUrls: ['./map.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MapComponent implements OnInit {
 

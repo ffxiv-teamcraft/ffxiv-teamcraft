@@ -149,6 +149,14 @@ export class SettingsService {
     this.setSetting('commissions:onlyCrafting', onlyCrafting.toString());
   }
 
+  public get onlyMaterialsCommissions(): boolean {
+    return this.getSetting('commissions:onlyMaterials', 'false') === 'true';
+  }
+
+  public set onlyMaterialsCommissions(onlyMaterials: boolean) {
+    this.setSetting('commissions:onlyMaterials', onlyMaterials.toString());
+  }
+
   public get minCommissionPrice(): number {
     return +this.getSetting('commissions:minPrice', '0');
   }
@@ -559,6 +567,14 @@ export class SettingsService {
 
   public set enableUniversalisSourcing(enabled: boolean) {
     this.setSetting('universalis:enable-sourcing', enabled.toString());
+  }
+
+  public get winpcap(): boolean {
+    return this.getSetting('winpcap', 'false') === 'true';
+  }
+
+  public set winpcap(enabled: boolean) {
+    this.setSetting('winpcap', enabled.toString());
   }
 
   public get customTheme(): Theme {

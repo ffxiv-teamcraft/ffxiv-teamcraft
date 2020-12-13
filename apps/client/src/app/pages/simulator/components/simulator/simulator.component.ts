@@ -4,7 +4,6 @@ import { Craft } from '../../../../model/garland-tools/craft';
 import { debounceTime, distinctUntilChanged, filter, first, map, pairwise, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { AuthFacade } from '../../../../+state/auth.facade';
-import { Item } from '../../../../model/garland-tools/item';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ConsumablesService } from '../../model/consumables.service';
 import { FreeCompanyActionsService } from '../../model/free-company-actions.service';
@@ -341,7 +340,7 @@ export class SimulatorComponent implements OnInit, OnDestroy {
 
   getCraftOptExportString = () => {
     return this.registry.exportToCraftOpt(this.registry.serializeRotation(this.actions$.value));
-  }
+  };
 
   changeRecipe(rotation: CraftingRotation): void {
     this.dialog.create({
@@ -352,7 +351,12 @@ export class SimulatorComponent implements OnInit, OnDestroy {
         warning: this.dirty ? 'SIMULATOR.Changing_recipe_save_warning' : null
       },
       nzTitle: this.translate.instant('Pick_a_recipe')
-    });
+    }).afterClose
+      .subscribe(pickedARecipe => {
+        if (pickedARecipe) {
+          this.hqIngredients = [];
+        }
+      });
   }
 
   showRotationTips(tips: RotationTip[], result: SimulationResult): void {
@@ -957,7 +961,9 @@ export class SimulatorComponent implements OnInit, OnDestroy {
             averageHQPercent: 0,
             medianHQPercent: 0,
             rawData: [],
-            successPercent: 0
+            successPercent: 0,
+            minHQPercent: 0,
+            maxHQPercent: 0
           };
         } else {
           return simulation.clone().getReliabilityReport();

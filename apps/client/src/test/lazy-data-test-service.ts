@@ -15,7 +15,7 @@ export class LazyDataTestService extends LazyDataService {
   }
 
   load(): void {
-    const extracts = require('../assets/extracts.json');
+    const extracts = require('../assets/extracts/extracts.json');
     this.extracts = extracts;
     this.extracts$.next(extracts);
     this.datacenters = {

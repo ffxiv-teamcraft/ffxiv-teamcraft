@@ -20,8 +20,10 @@
         </nz-select>
       </nz-input-group>
       <div class="filters" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="20px">
-        <label nz-checkbox [ngModel]="onlyCrafting$ | async"
+        <label nz-checkbox [nzDisabled]="onlyMaterials$ | async" [ngModel]="onlyCrafting$ | async"
                (ngModelChange)="onlyCrafting$.next($event)">{{'COMMISSIONS.CREATION.Only_crafting' | translate}}</label>
+        <label nz-checkbox [nzDisabled]="onlyCrafting$ | async" [ngModel]="onlyMaterials$ | async"
+               (ngModelChange)="onlyMaterials$.next($event)">{{'COMMISSIONS.CREATION.Only_materials' | translate}}</label>
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
           <div>{{'COMMISSIONS.BOARD.Min_price' | translate}}:</div>
           <nz-input-number [ngModel]="minPrice$ | async" (ngModelChange)="minPrice$.next($event)" type="number" id="price" nzMin="0"

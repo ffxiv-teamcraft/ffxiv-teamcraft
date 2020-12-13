@@ -36,6 +36,7 @@ export class CommissionEditionPopupComponent implements OnInit {
       contactInformations: [this.commission.contactInformations || localStorage.getItem('commission:contact') || '', Validators.required],
       price: [this.commission.price || 0],
       includesMaterials: [this.commission.includesMaterials || false],
+      requiresOnlyMaterials: [this.commission.requiresOnlyMaterials || false],
       tags: [this.commission.tags || []]
     });
   }
