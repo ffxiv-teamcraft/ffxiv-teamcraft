@@ -435,6 +435,8 @@
     "Metrics_capture_folder": "Dossier de log des métriques",
     "Maximum_vendor_price": "Prix maximum d'achat",
     "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
+    "Winpcap_flag": "Use winpcap for packet capture",
+    "Winpcap_details": "Make sure you have winpcap installed or install it from this link: ",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
