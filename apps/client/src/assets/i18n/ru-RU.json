@@ -435,6 +435,8 @@
     "Metrics_capture_folder": "Папка логов с метрикой",
     "Maximum_vendor_price": "Максимальная цена продавца",
     "Maximum_vendor_price_explain": "Максимальная цена товара для фильтра раскладки CAN_BE_BOUGHT (0 = без максимальной цены)",
+    "Winpcap_flag": "Use winpcap for packet capture",
+    "Winpcap_details": "Make sure you have winpcap installed or install it from this link: ",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
