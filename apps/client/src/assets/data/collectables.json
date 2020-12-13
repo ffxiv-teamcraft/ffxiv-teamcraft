@@ -25718,19 +25718,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28726": {
@@ -25738,19 +25738,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28727": {
@@ -25758,19 +25758,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28728": {
@@ -25778,19 +25778,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28729": {
@@ -25798,19 +25798,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28730": {
@@ -25818,19 +25818,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28731": {
@@ -25838,19 +25838,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28732": {
@@ -25858,19 +25858,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57697,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102486,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146469,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "28733": {
@@ -25878,19 +25878,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28734": {
@@ -25898,19 +25898,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28735": {
@@ -25918,19 +25918,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28736": {
@@ -25938,19 +25938,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28737": {
@@ -25958,19 +25958,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28738": {
@@ -25978,19 +25978,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28739": {
@@ -25998,19 +25998,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28740": {
@@ -26018,19 +26018,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 214842,
-      "scrip": 1
+      "scrip": 6
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 422400,
-      "scrip": 1
+      "scrip": 7
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 853227,
-      "scrip": 1
+      "scrip": 8
     }
   },
   "28741": {
@@ -26038,19 +26038,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28742": {
@@ -26058,19 +26058,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28743": {
@@ -26078,19 +26078,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28744": {
@@ -26098,19 +26098,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28745": {
@@ -26118,19 +26118,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28746": {
@@ -26138,19 +26138,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28747": {
@@ -26158,19 +26158,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28748": {
@@ -26178,19 +26178,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1265714,
-      "scrip": 1
+      "scrip": 10
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1399000,
-      "scrip": 1
+      "scrip": 12
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1744182,
-      "scrip": 2
+      "scrip": 14
     }
   },
   "28749": {
@@ -26198,19 +26198,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28750": {
@@ -26218,19 +26218,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28751": {
@@ -26238,19 +26238,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28752": {
@@ -26258,19 +26258,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28753": {
@@ -26278,19 +26278,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28754": {
@@ -26298,19 +26298,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28755": {
@@ -26318,19 +26318,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28756": {
@@ -26338,19 +26338,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2074133,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2862821,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4093750,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "28757": {
@@ -26358,19 +26358,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28758": {
@@ -26378,19 +26378,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28759": {
@@ -26398,19 +26398,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28760": {
@@ -26418,19 +26418,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28761": {
@@ -26438,19 +26438,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28762": {
@@ -26458,19 +26458,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28763": {
@@ -26478,19 +26478,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "28764": {
@@ -26498,19 +26498,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4706521,
-      "scrip": 1
+      "scrip": 29
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5177173,
-      "scrip": 2
+      "scrip": 43
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5647825,
-      "scrip": 3
+      "scrip": 58
     }
   },
   "29792": {
@@ -26518,19 +26518,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29793": {
@@ -26538,19 +26538,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29794": {
@@ -26558,19 +26558,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29795": {
@@ -26578,19 +26578,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29796": {
@@ -26598,19 +26598,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29797": {
@@ -26618,19 +26618,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29798": {
@@ -26638,19 +26638,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29799": {
@@ -26658,19 +26658,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 57826,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 102715,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 146796,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "29800": {
@@ -26678,19 +26678,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29801": {
@@ -26698,19 +26698,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29802": {
@@ -26718,19 +26718,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29803": {
@@ -26738,19 +26738,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29804": {
@@ -26758,19 +26758,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29805": {
@@ -26778,19 +26778,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29806": {
@@ -26798,19 +26798,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29807": {
@@ -26818,19 +26818,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 220477,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 433478,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 875604,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "29808": {
@@ -26838,19 +26838,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29809": {
@@ -26858,19 +26858,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29810": {
@@ -26878,19 +26878,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29811": {
@@ -26898,19 +26898,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29812": {
@@ -26918,19 +26918,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29813": {
@@ -26938,19 +26938,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29814": {
@@ -26958,19 +26958,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29815": {
@@ -26978,19 +26978,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1301116,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1438130,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1792967,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "29816": {
@@ -26998,19 +26998,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29817": {
@@ -27018,19 +27018,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29818": {
@@ -27038,19 +27038,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29819": {
@@ -27058,19 +27058,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29820": {
@@ -27078,19 +27078,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29821": {
@@ -27098,19 +27098,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29822": {
@@ -27118,19 +27118,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29823": {
@@ -27138,19 +27138,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2084005,
-      "scrip": 1
+      "scrip": 16
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 2876447,
-      "scrip": 1
+      "scrip": 18
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4113234,
-      "scrip": 2
+      "scrip": 20
     }
   },
   "29824": {
@@ -27158,19 +27158,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29825": {
@@ -27178,19 +27178,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29826": {
@@ -27198,19 +27198,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29827": {
@@ -27218,19 +27218,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29828": {
@@ -27238,19 +27238,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29829": {
@@ -27258,19 +27258,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29830": {
@@ -27278,19 +27278,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29831": {
@@ -27298,19 +27298,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 30
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 45
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 60
     }
   },
   "29832": {
@@ -27318,19 +27318,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29833": {
@@ -27338,19 +27338,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29834": {
@@ -27358,19 +27358,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29835": {
@@ -27378,19 +27378,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29836": {
@@ -27398,19 +27398,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29837": {
@@ -27418,19 +27418,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29838": {
@@ -27438,19 +27438,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "29839": {
@@ -27458,19 +27458,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 2,
+      "rating": 4500,
       "exp": 4905155,
-      "scrip": 1
+      "scrip": 63
     },
     "mid": {
-      "rating": 4500,
+      "rating": 5100,
       "exp": 5395671,
-      "scrip": 2
+      "scrip": 69
     },
     "high": {
-      "rating": 5100,
+      "rating": 6000,
       "exp": 5886186,
-      "scrip": 3
+      "scrip": 76
     }
   },
   "30970": {
@@ -30606,19 +30606,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31185": {
@@ -30626,19 +30626,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31186": {
@@ -30646,19 +30646,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31187": {
@@ -30666,19 +30666,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31188": {
@@ -30686,19 +30686,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31189": {
@@ -30706,19 +30706,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31190": {
@@ -30726,19 +30726,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31191": {
@@ -30746,19 +30746,19 @@
     "level": 20,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 50,
       "exp": 60480,
-      "scrip": 1
+      "scrip": 3
     },
     "mid": {
-      "rating": 50,
+      "rating": 80,
       "exp": 107430,
-      "scrip": 1
+      "scrip": 4
     },
     "high": {
-      "rating": 80,
+      "rating": 105,
       "exp": 153534,
-      "scrip": 1
+      "scrip": 5
     }
   },
   "31192": {
@@ -30766,19 +30766,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31193": {
@@ -30786,19 +30786,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31194": {
@@ -30806,19 +30806,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31195": {
@@ -30826,19 +30826,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31196": {
@@ -30846,19 +30846,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31197": {
@@ -30866,19 +30866,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31198": {
@@ -30886,19 +30886,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31199": {
@@ -30906,19 +30906,19 @@
     "level": 40,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 90,
       "exp": 233729,
-      "scrip": 1
+      "scrip": 7
     },
     "mid": {
-      "rating": 90,
+      "rating": 150,
       "exp": 459534,
-      "scrip": 1
+      "scrip": 8
     },
     "high": {
-      "rating": 150,
+      "rating": 380,
       "exp": 928236,
-      "scrip": 1
+      "scrip": 9
     }
   },
   "31200": {
@@ -30926,19 +30926,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31201": {
@@ -30946,19 +30946,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31202": {
@@ -30966,19 +30966,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31203": {
@@ -30986,19 +30986,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31204": {
@@ -31006,19 +31006,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31205": {
@@ -31026,19 +31026,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31206": {
@@ -31046,19 +31046,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31207": {
@@ -31066,19 +31066,19 @@
     "level": 60,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 300,
       "exp": 1285456,
-      "scrip": 1
+      "scrip": 11
     },
     "mid": {
-      "rating": 300,
+      "rating": 850,
       "exp": 1420821,
-      "scrip": 1
+      "scrip": 13
     },
     "high": {
-      "rating": 850,
+      "rating": 1320,
       "exp": 1771387,
-      "scrip": 2
+      "scrip": 15
     }
   },
   "31208": {
@@ -31086,19 +31086,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31209": {
@@ -31106,19 +31106,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31210": {
@@ -31126,19 +31126,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31211": {
@@ -31146,19 +31146,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31212": {
@@ -31166,19 +31166,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31213": {
@@ -31186,19 +31186,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31214": {
@@ -31206,19 +31206,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31215": {
@@ -31226,19 +31226,19 @@
     "level": 70,
     "reward": 28063,
     "base": {
-      "rating": 0,
+      "rating": 480,
       "exp": 2263139,
-      "scrip": 1
+      "scrip": 18
     },
     "mid": {
-      "rating": 480,
+      "rating": 2180,
       "exp": 3123696,
-      "scrip": 1
+      "scrip": 20
     },
     "high": {
-      "rating": 2180,
+      "rating": 2880,
       "exp": 4466794,
-      "scrip": 2
+      "scrip": 22
     }
   },
   "31216": {
@@ -31246,19 +31246,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31217": {
@@ -31266,19 +31266,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31218": {
@@ -31286,19 +31286,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31219": {
@@ -31306,19 +31306,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31220": {
@@ -31326,19 +31326,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31221": {
@@ -31346,19 +31346,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31222": {
@@ -31366,19 +31366,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31223": {
@@ -31386,19 +31386,19 @@
     "level": 80,
     "reward": 28063,
     "base": {
-      "rating": 1,
+      "rating": 1350,
       "exp": 4877967,
-      "scrip": 1
+      "scrip": 31
     },
     "mid": {
-      "rating": 1350,
+      "rating": 1890,
       "exp": 5365763,
-      "scrip": 2
+      "scrip": 47
     },
     "high": {
-      "rating": 1890,
+      "rating": 3150,
       "exp": 5853560,
-      "scrip": 3
+      "scrip": 63
     }
   },
   "31652": {
