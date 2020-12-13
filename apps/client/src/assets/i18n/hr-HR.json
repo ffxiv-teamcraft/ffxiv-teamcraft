@@ -435,6 +435,8 @@
     "Metrics_capture_folder": "Metrics log folder",
     "Maximum_vendor_price": "Maximum vendor price",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
+    "Winpcap_flag": "Use winpcap for packet capture",
+    "Winpcap_details": "Make sure you have winpcap installed or install it from this link: ",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
