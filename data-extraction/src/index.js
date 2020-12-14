@@ -132,7 +132,7 @@ if (hasTodo('mappy', true)) {
         }
         gatheringPoints[point.ID] = {
           legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
-          ephemeral: point.EphemeralStartTime < 65535,
+          ephemeral: point.GatheringPointTransient.EphemeralStartTime < 65535,
           spawns: [],
           duration: 0,
           zoneid: point.PlaceNameTargetID
@@ -141,11 +141,11 @@ if (hasTodo('mappy', true)) {
           gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
         }
         if (gatheringPoints[point.ID].ephemeral) {
-          let duration = Math.abs(point.EphemeralEndTime - point.EphemeralStartTime) / 100;
-          if (point.EphemeralEndTime < point.EphemeralStartTime) {
-            duration = Math.abs(point.EphemeralEndTime - 2400 - point.EphemeralStartTime) / 100;
+          let duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - point.GatheringPointTransient.EphemeralStartTime) / 100;
+          if (point.GatheringPointTransient.EphemeralEndTime < point.GatheringPointTransient.EphemeralStartTime) {
+            duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - 2400 - point.GatheringPointTransient.EphemeralStartTime) / 100;
           }
-          gatheringPoints[point.ID].spawns = [point.EphemeralStartTime / 100];
+          gatheringPoints[point.ID].spawns = [point.GatheringPointTransient.EphemeralStartTime / 100];
           gatheringPoints[point.ID].duration = duration;
         } else if (gatheringPoints[point.ID].legendary) {
           gatheringPoints[point.ID].spawns = [0, 1, 2].map(index => {
@@ -1503,9 +1503,11 @@ if (hasTodo('items')) {
   const tradeFlags = {};
   const equipSlotCategoryId = {};
   const itemPatch = {};
+  const itemSetBonuses = {};
   const marketItems = [];
   const extractableItems = {};
-  getAllPages('https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID')
+  const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
+  getAllPages(`https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1535,6 +1537,20 @@ if (hasTodo('items')) {
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
         }
+        if (item.ItemSeries) {
+          itemSetBonuses[item.ID] = {
+            itemSeriesId: item.ItemSeries.ID,
+            bonuses: [0, 1, 2, 3, 4, 5]
+              .filter(i => item[`BaseParamSpecial${i}`] !== null)
+              .map(i => {
+                return {
+                  baseParam: item[`BaseParamSpecial${i}`].ID,
+                  value: item[`BaseParamValueSpecial${i}`],
+                  amountRequired: i + 2
+                };
+              })
+          };
+        }
         if (item.EquipSlotCategoryTargetID) {
           equipSlotCategoryId[item.ID] = item.EquipSlotCategoryTargetID;
           itemMeldingData[item.ID] = {
@@ -1560,8 +1576,28 @@ if (hasTodo('items')) {
       persistToJsonAsset('item-patch', itemPatch);
       persistToJsonAsset('market-items', marketItems);
       persistToJsonAsset('extractable-items', extractableItems);
+      persistToJsonAsset('item-set-bonuses', itemSetBonuses);
       done('items');
     });
+}
+
+if (hasTodo('itemSeries')) {
+  const itemSeries = {};
+  getAllPages('https://xivapi.com/ItemSeries?columns=ID,GameContentLinks,Name_*').subscribe(page => {
+    page.Results.forEach(series => {
+      itemSeries[series.ID] = {
+        items: series.GameContentLinks.Item.ItemSeries,
+        en: series.Name_en,
+        de: series.Name_de,
+        ja: series.Name_ja,
+        fr: series.Name_fr
+      };
+    });
+  }, null, () => {
+    persistToJsonAsset('item-series', itemSeries);
+    done('itemSeries');
+  });
+
 }
 
 if (hasTodo('aetherytes')) {

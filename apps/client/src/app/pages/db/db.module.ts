@@ -73,6 +73,7 @@ import { TraitComponent } from './trait/trait.component';
 import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
+import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 
 const routes: Routes = [
   {
@@ -313,7 +314,8 @@ const routes: Routes = [
     QuickSearchModule,
     NzStatisticModule,
     NzCommentModule,
-    NzAvatarModule
+    NzAvatarModule,
+    LazyScrollModule
   ],
   providers: [ItemContextService, FishDataService, FishContextService, ...Object.values(FishGQLProviders)]
 })

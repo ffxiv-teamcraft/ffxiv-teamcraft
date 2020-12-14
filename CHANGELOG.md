@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.9"></a>
+## [7.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.8...v7.6.9) (2020-12-14)
+
+
+### Bug Fixes
+
+* **gathering:** fixed an issue with ephemeral nodes not having spawn timers at all ([729e470](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/729e470))
+
+
+### Features
+
+* **db,gearsets:** added support for item set bonuses ([4a1ae4a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4a1ae4a))
+
+
+
 <a name="7.6.8"></a>
 ## [7.6.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.7...v7.6.8) (2020-12-13)
 
