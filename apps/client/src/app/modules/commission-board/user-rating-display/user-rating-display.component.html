@@ -1,5 +1,5 @@
 <div *ngIf="commissionProfile$ | async as display" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center">
-  <nz-rate *ngIf="display.avgRating > -1; else noRatings" [ngModel]="display.avgRating" nzDisabled></nz-rate>
+  <nz-rate *ngIf="display.avgRating > -1 || display.profile.resignedFeedback.length > 0 || display.profile.firedFeedbacks.length > 0; else noRatings" [ngModel]="display.avgRating" nzDisabled></nz-rate>
   <div>({{display.profile.ratings.length}})</div>
   <ng-template #noRatings>{{'COMMISSIONS.PROFILE.No_ratings' | translate}}</ng-template>
   <div>

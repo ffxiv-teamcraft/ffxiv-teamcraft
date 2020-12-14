@@ -53,7 +53,7 @@ export interface LazyData {
 }`.replace(/"/g, "'")
 );
 
-const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/extracts.json')] });
+const extractsHash = hashFiles.sync({ files: [path.join(__dirname, '../../apps/client/src/assets/extracts/extracts.json')] });
 fs.writeFileSync(
   path.join(__dirname + '/../../apps/client/src/environments/extracts-hash.ts'),
   `export const extractsHash = \`${extractsHash}\`;
