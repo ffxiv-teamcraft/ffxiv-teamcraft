@@ -1454,7 +1454,9 @@
       "Masterpiece_exp_tooltip": "% опыта необходимого до следующего уровня",
       "Required_craftsmanship": "Мин. Craftsmanship",
       "Required_control": "Мин. Control",
-      "Mark_as_done_in_gathering_log": "Отметить как выполнено в журнале"
+      "Mark_as_done_in_gathering_log": "Отметить как выполнено в журнале",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Время",
