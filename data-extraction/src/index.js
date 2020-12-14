@@ -132,7 +132,7 @@ if (hasTodo('mappy', true)) {
         }
         gatheringPoints[point.ID] = {
           legendary: point.GatheringPointTransient.GatheringRarePopTimeTableTargetID > 0,
-          ephemeral: point.EphemeralStartTime < 65535,
+          ephemeral: point.GatheringPointTransient.EphemeralStartTime < 65535,
           spawns: [],
           duration: 0,
           zoneid: point.PlaceNameTargetID
@@ -141,11 +141,11 @@ if (hasTodo('mappy', true)) {
           gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
         }
         if (gatheringPoints[point.ID].ephemeral) {
-          let duration = Math.abs(point.EphemeralEndTime - point.EphemeralStartTime) / 100;
-          if (point.EphemeralEndTime < point.EphemeralStartTime) {
-            duration = Math.abs(point.EphemeralEndTime - 2400 - point.EphemeralStartTime) / 100;
+          let duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - point.GatheringPointTransient.EphemeralStartTime) / 100;
+          if (point.GatheringPointTransient.EphemeralEndTime < point.GatheringPointTransient.EphemeralStartTime) {
+            duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - 2400 - point.GatheringPointTransient.EphemeralStartTime) / 100;
           }
-          gatheringPoints[point.ID].spawns = [point.EphemeralStartTime / 100];
+          gatheringPoints[point.ID].spawns = [point.GatheringPointTransient.EphemeralStartTime / 100];
           gatheringPoints[point.ID].duration = duration;
         } else if (gatheringPoints[point.ID].legendary) {
           gatheringPoints[point.ID].spawns = [0, 1, 2].map(index => {
