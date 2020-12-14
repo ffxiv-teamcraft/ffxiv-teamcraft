@@ -8,7 +8,7 @@ import { uniq } from 'lodash';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { combineLatest, concat, Observable, of } from 'rxjs';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap, startWith } from 'rxjs/operators';
+import { filter, first, map, mergeMap, shareReplay, startWith, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -39,7 +39,6 @@ import { ItemContextService } from '../service/item-context.service';
 import { ModelViewerComponent } from './model-viewer/model-viewer.component';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 
 @Component({
   selector: 'app-item',
@@ -78,6 +77,19 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           return fragment;
         })
         .join('/');
+
+      // For now we only have more details if there's an associated series
+      item.hasMoreDetails = item.ItemSeries !== null;
+
+      if (item.ItemSeries) {
+        item.ItemSeries.Content = this.lazyData.data.itemSeries[item.ItemSeries.ID].items.map(itemId => {
+          return {
+            itemId,
+            bonuses: this.lazyData.data.itemSetBonuses[itemId]?.bonuses || []
+          };
+        });
+      }
+
       return of(item);
     }),
     shareReplay(1)

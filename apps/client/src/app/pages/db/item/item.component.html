@@ -405,6 +405,40 @@
       </ng-template>
       <ng-template #howToObtainTpl>
         <div fxLayout="column">
+          <div *ngIf="xivapiItem.hasMoreDetails" fxLayout="column">
+            <div>
+              <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+            </div>
+            <nz-card *ngIf="xivapiItem.ItemSeries" [nzTitle]="title"
+                     class="details-card" fxFlex="1 1 auto"
+                     nzBordered="false">
+              <ng-template #title>
+                <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                  <img class="img-icon round-icon"
+                       src="./assets/icons/ItemSeries.png">
+                  <div>
+                    {{'DB.ITEM.Item_series' | translate}}
+                  </div>
+                </div>
+              </ng-template>
+              <h3>{{xivapiItem.ItemSeries | xivapiI18n}}</h3>
+              <ul>
+                <app-lazy-scroll [data]="xivapiItem.ItemSeries.Content" [rowTemplate]="rowTpl" rowSize="56" displayedRows="10"></app-lazy-scroll>
+                <ng-template #rowTpl let-item>
+                  <li class="series-entry">
+                    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                      <app-item-icon [itemId]="item.itemId" [width]="24"></app-item-icon>
+                      <div>{{item.itemId | itemName | i18n}}</div>
+                    </div>
+                    <ul *ngIf="item.bonuses">
+                      <li *ngFor="let bonus of item.bonuses">{{'DB.ITEM.X_Equipped' | translate:{ amount: bonus.amountRequired } }}
+                        {{bonus.baseParam | baseParamName | i18n}} +{{bonus.value}}</li>
+                    </ul>
+                  </li>
+                </ng-template>
+              </ul>
+            </nz-card>
+          </div>
           <div>
             <nz-divider [nzText]="'DB.How_to_obtain' | translate" nzOrientation="left"></nz-divider>
           </div>

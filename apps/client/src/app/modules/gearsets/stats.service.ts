@@ -151,10 +151,15 @@ export class StatsService {
           value: this.getBaseValue(stat, set.job, level, tribe)
         };
       });
+    const possibleSetBonuses = [];
     Object.values(set)
       .filter(value => value && value.itemId !== undefined)
       .forEach((equipmentPiece: EquipmentPiece) => {
         const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
+        const itemSetBonuses = this.lazyData.data.itemSetBonuses[equipmentPiece.itemId];
+        if (itemSetBonuses) {
+          possibleSetBonuses.push(itemSetBonuses);
+        }
         // If this item has no stats, return !
         if (!itemStats) {
           return;
@@ -209,6 +214,25 @@ export class StatsService {
         }
       });
     }
+
+    // Process set bonuses
+    possibleSetBonuses.forEach(possibleSetBonus => {
+      const sameSetPieces = possibleSetBonuses.filter(b => b.itemSeriesId === possibleSetBonus.itemSeriesId).length;
+      possibleSetBonus.bonuses.forEach(bonus => {
+        if (sameSetPieces > bonus.amountRequired) {
+          let statsRow = stats.find(s => s.id === bonus.baseParam);
+          if (statsRow === undefined) {
+            stats.push({
+              id: bonus.baseParam,
+              value: this.getBaseValue(bonus.baseParamId, set.job, level, tribe)
+            });
+            statsRow = stats[stats.length - 1];
+          }
+          statsRow.value += bonus.value;
+        }
+      });
+    });
+
     if (set.job >= 8 && set.job <= 18) {
       // Nobody cares about vitality for DoH/W and it lets us have more space if we take it out
       return stats.filter(s => s.id !== BaseParam.VITALITY);

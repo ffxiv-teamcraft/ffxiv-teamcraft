@@ -114,6 +114,10 @@ export class XivapiItemTooltipComponent implements OnInit {
         }
       }
     }
+
+    if (this.item.ItemSpecialBonus) {
+      this.item.SetBonuses = this.lazyData.data.itemSetBonuses[this.item.ID].bonuses;
+    }
   }
 
 
