@@ -1454,7 +1454,9 @@
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
       "Required_control": "Contrôle requis",
-      "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet"
+      "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Heure du jour",
