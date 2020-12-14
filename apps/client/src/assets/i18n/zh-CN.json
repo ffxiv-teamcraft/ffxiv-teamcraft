@@ -1454,7 +1454,9 @@
       "Masterpiece_exp_tooltip": "下一等级所需经验的百分比",
       "Required_craftsmanship": "需要作业精度",
       "Required_control": "需要加工精度",
-      "Mark_as_done_in_gathering_log": "在笔记中标为已完成"
+      "Mark_as_done_in_gathering_log": "在笔记中标为已完成",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "上钩时间",
