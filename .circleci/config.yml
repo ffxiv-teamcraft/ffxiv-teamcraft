@@ -207,7 +207,7 @@ workflows:
               only: master
       - deploy-firebase-hosting:
           requires:
-            - build
+            - deploy-cdn
           filters:
             branches:
               only: master
