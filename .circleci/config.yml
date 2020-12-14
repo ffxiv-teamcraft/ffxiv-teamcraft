@@ -181,7 +181,7 @@ jobs:
           at: ~/
       - run:
           name: Copying desktop update to update Bucket
-          command: aws s3 cp ./release/squirrel-windows/* s3://update-ffxivteamcraft/ --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
+          command: aws s3 cp ./release/squirrel-windows/ s3://update-ffxivteamcraft/ --endpoint=https://fra1.digitaloceanspaces.com --acl public-read
 
 
 workflows:
