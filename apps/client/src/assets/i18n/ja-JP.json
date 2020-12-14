@@ -1454,7 +1454,9 @@
       "Masterpiece_exp_tooltip": "% of exp needed for next level",
       "Required_craftsmanship": "Req. Craftsmanship",
       "Required_control": "Req. Control",
-      "Mark_as_done_in_gathering_log": "Mark as done in log"
+      "Mark_as_done_in_gathering_log": "Mark as done in log",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Hour of the day",
