@@ -1,1836 +1,2208 @@
 Fish,Bait,Start,End,Transition,Weather,"Predator, Amount",Tug,Hookset,Gathering,Snagging?,Fish Eyes?,ID
-Limsa Lominsa Upper Decks,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Malm Kelp,Pill Bug,,,,,,,,,,,
-Finger Shrimp,Lugworm,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Coral Butterfly,Pill Bug,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Goldenfin,Pill Bug,9,14,,,,,,,,,208
-Limsa Lominsa Lower Decks,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Malm Kelp,Pill Bug,,,,,,,,,,,
-Finger Shrimp,Lugworm,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Coral Butterfly,Pill Bug,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Octomammoth,Harbor Herring,9,17,,,,,,,,,230
-Zephyr Drift,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Finger Shrimp,Lugworm,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Sea Cucumber,,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Coral Butterfly,Pill Bug,,,,,,,,,,,
-Angelfish,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Zalera,Rat Tail,9,14,,,,,,,,,201
-Rogue River,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Chub,,,,,,,,,,,,
-Dwarf Catfish,,,,,,,,,,,,
-Princess Trout,,,,,,,,,,,,
-La Noscean Perch,,,,,,,,,,,,
-Beguiler Chub,Moth Pupa,9,14,,,,,,,,,202
-West Agelyss River,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Chub,,,,,,,,,,,,
-Dwarf Catfish,,,,,,,,,,,,
-Princess Trout,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-La Noscean Perch,,,,,,,,,,,,
-Great Gudgeon,Crayfish Ball,,,,,,,,,,,211
-Summerford,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Finger Shrimp,Lugworm,,,,,,,,,,,
-White Coral,,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Vongola Clam,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Ogre Barracuda,,,,,,,,,,,,
-Silver Shark,,,,,,,,,,,,
-Gigantshark,Harbor Herring,,,,"Clear Skies, Fair Skies",,,,,,,209
-Nym River,,,,,,,,,,,,
-Chub,,,,,,,,,,,,
-Dwarf Catfish,,,,,,,,,,,,
-Princess Trout,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-La Noscean Perch,,,,,,,,,,,,
-High Perch,Sinking Minnow,5,8,,,,,,,,,232
-Woad Whisper Canyon,,,,,,,,,,,,
-Dwarf Catfish,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-La Noscean Perch,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Glass Perch,,,,,,,,,,,,
-Crystal Perch,Butterworm,,,,"Fog, Clouds, Wind",,,,,,,205
-The Mourning Widow,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Chub,,,,,,,,,,,,
-Dwarf Catfish,,,,,,,,,,,,
-Princess Trout,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-Caterwauler,Moth Pupa,,,,,,,,,,,204
-Moraby Bay,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Malm Kelp,Pill Bug,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Sea Cucumber,,,,,,,,,,,,
-Vongola Clam,,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Oschon's Print,Goby Ball,,,,,,,,,,,203
-Cedarwood,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Leafy Seadragon,,,,,,,,,,,,
-Syldra,Spoon Worm,,,,Rain,,,,,,,233
-Oschon's Torch,,,,,,,,,,,,
-Sea Cucumber,,,,,,,,,,,,
-Vongola Clam,,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Mahi-Mahi,Yumizuno,10,18,,,,,,,,,159
-Silver Sovereign,Yumizuno,,,,,,,,,,,213
-Candlekeep Quay,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Vongola Clam,,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Shall Shell,,,,,,,,,,,,
-Sabertooth Cod,Goby Ball,16,22,,,,,,,,,214
-Moraby Drydocks,,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Navigator's Dagger,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Jacques the Snipper,Goby Ball,21,3,,,,,,,,,235
-Empty Heart,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Crimson Crayfish,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Grip Killifish,,,,,,,,,,,,
-Faerie Queen,Spinnerbait,,,,"Fog, Clouds, Wind",,,,,,,220
-The Salt Strand,,,,,,,,,,,,
-Sea Cucumber,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Helmet Crab,,,,,,,,,,,,
-Razor Clam,,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Sea Bo,,,,,,,,,,,,
-Black Sole,,,,,,,,,,,,
-Tiny Tortoise,,,,,,,,,,,,
-Meteor Survivor,Rat Tail,3,5,,"Fog, Clouds, Wind",,,,,,,239
-Blind Iron Mines,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Blindfish,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Cupfish,Syrphid Basket,17,19,,,,,,,,,238
-South Bloodshore,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Coral Butterfly,Pill Bug,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Blue Coral,,,,,,,,,,,,
-Sea Bo,,,,,,,,,,,,
-Bianaq Bream,,,,,,,,,,,,
-Fullmoon Sardine,Spoon Worm,18,6,,,,,,,,,83
-Silver Shark,,,,,,,,,,,,
-Gigant Clam,Heavy Steel Jig,23,2,,,,,,,,,313
-The Greatest Bream in the World,Shrimp Cage Feeder,20,23,,,,,,,,,245
-Costa del Sol,,,,,,,,,,,,
-Angelfish,,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Bianaq Bream,,,,,,,,,,,,
-Indigo Herring,,,,,,,,,,,,
-Ash Tuna,,,,,,,,,,,,
-Fullmoon Sardine,Spoon Worm,18,6,,,,,,,,,83
-Lavender Remora,,,,,,,,,,,,
-Silver Shark,,,,,,,,,,,,
-Little Thalaos,Northern Krill,,,,"Rain, Showers",,,,,,,155
-Shark Tuna,Fullmoon Sardine,19,21,,"Clear Skies, Fair Skies",,,,,,,251
-North Bloodshore,,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Ogre Barracuda,,,,,,,,,,,,
-Black Sole,,,,,,,,,,,,
-Sea Pickle,,,,,,,,,,,,
-Ash Tuna,,,,,,,,,,,,
-Whitelip Oyster,,,,,,,,,,,,
-Balloonfish,,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Mazlaya Marlin,,,,,,,,,,,,
-Bombardfish,Herring Ball,9,15,,Clear Skies,,,,,,,260
-Rhotano Sea (Privateer Forecastle),,,,,,,,,,,,
-Finger Shrimp,Lugworm,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Balloonfish,,,,,,,,,,,,
-Ash Tuna,,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Ogre Barracuda,Harbor Herring,,,,,,,,,,,
-Mazlaya Marlin,,,,,,,,,,,,
-Gigant Octopus,,,,,,,,,,,,
-The Old Man in the Sea,Ogre Barracuda,,,"Rain, Showers",Clear Skies,,,,,,,289
-Rhotano Sea (Privateer Sterncastle),,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Leafy Seadragon,,,,,,,,,,,,
-Rock Lobster,Northern Krill,17,21,,,,,,,,,149
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Little Thalaos,Northern Krill,,,,"Rain, Showers",,,,,,,155
-Shall Shell,,,,,,,,,,,,
-Megalodon,,,,,,,,,,,,
-Giant Squid,,,,,,,,,,,,
-Nepto Dragon,Northern Krill,,,,"Rain, Showers","Little Thalaos, 3",,,,,,290
-Hidden Falls,,,,,,,,,,,,
-Crimson Crayfish,,,,,,,,,,,,
-Dark Sleeper,Brass Spoon Lure,15,10,,N/A,,Light,,,,,
-Mitten Crab,,,,,,,,,,,,
-Spotted Puffer,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Kobold Puffer,,,,,,,,,,,,
-The Salter,Honey Worm,17,20,,N/A,,Light,,,,,261
-East Agelyss River,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Monke Onke,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Loyal Pleco,,,,,,,,,,,,
-Archerfish,,,,,,,,,,,,
-Agelyss Carp,,,,,,,,,,,,
-The Drowned Sniper,Snurble Fly,,,,"Clear Skies, Fair Skies",,,,,,,274
-Raincatcher Gully,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Loyal Pleco,,,,,,,,,,,,
-Thunderbolt Sculpin,Spinner,,,,"Rain, Showers",,,,,,,113
-Archerfish,,,,,,,,,,,,
-Agelyss Carp,,,,,,,,,,,,
-The Terpsichorean,Honey Worm,,,,Fog,,,,,,,275
-The Juggernaut,,,,,,,,,,,,
-Copperfish,Midge Basket,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Grip Killifish,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Sludgeskipper,,,,,,,,,,,,
-Vampire Lampern,,,,,,,,,,,,
-Mirrorscale,Copperfish,9,16,,"Clear Skies, Fair Skies",,,,,,,276
-Red Mantis Falls,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Clown Loach,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
-Agelyss Carp,,,,,,,,,,,,
-Goldfish,Silverfish,,,,,,,,,,,
-Jungle Catfish,Goldfish,,,,,,,,,,,184
-Imperial Goldfish,Silverfish,,,,,"Jungle Catfish, 3",,,,,,288
-North Isle of Endless Summer,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Leafy Seadragon,,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Little Thalaos,Northern Krill,,,,"Rain, Showers",,,,,,,155
-Shall Shell,,,,,,,,,,,,
-Megalodon,,,,,,,,,,,,
-Giant Squid,,,,,,,,,,,,
-Castaway Chocobo Chick,,,,,,,,,,,,
-Little Perykos,Wahoo,,,,"Rain, Showers",,,,,,,637
-Swiftperch,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-White Coral,,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Moraby Flounder,,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Halibut,,,,,,,,,,,,
-Armorer,Northern Krill,19,3,,N/A,,,,,,,210
-Skull Valley,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Razor Clam,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Goosefish,,,,,,,,,,,,
-Junkmonger,Wahoo,16,2,,,,,,,,,207
-The Brewer's Beacon,,,,,,,,,,,,
-White Coral,,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Helmet Crab,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Navigator's Dagger,,,,,,,,,,,,
-Ogre Barracuda,,,,,,,,,,,,
-Gigant Octopus,,,,,,,,,,,,
-Navigator's Brand,Yumizuno,9,14,,"Clear Skies, Fair Skies",,,,,,,216
-Halfstone,,,,,,,,,,,,
-Saber Sardine,,,,,,,,,,,,
-Blue Coral,,,,,,,,,,,,
-Hammerhead Shark,,,,,,,,,,,,
-Sea Pickle,,,,,,,,,,,,
-Whitelip Oyster,,,,,,,,,,,,
-Lavender Remora,,,,,,,,,,,,
-Balloonfish,,,,,,,,,,,,
-The Lone Ripper,Heavy Steel Jig,,,,Gales,,,Powerful,,,,262
-Isles of Umbra Northshore,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Ocean Cloud,Pill Bug,,,,,,,,,,,
-Fullmoon Sardine,Spoon Worm,18,6,,,,,,,,,83
-Lavender Remora,,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Silver Shark,,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Pike Eel,,,,,,,,,,,,
-Sunfish,,,,,,,,,,,,
-Helmsman's Hand,Ocean Cloud,9,15,,"Fog, Clouds, Wind",,,,,,,277
-The Ship Graveyard,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Blacklip Oyster,,,,,,,,,,,,
-Pike Eel,,,,,,,,,,,,
-Mummer Wrasse,,,,,,,,,,,,
-Plaice,,,,,,,,,,,,
-Giant Squid,Wahoo,,,,,,,,,,,
-Megalodon,,,,,,,,,,,,
-Frilled Shark,Giant Squid,17,3,,"Fog, Clouds, Wind",,,,,,,286
-Sapsa Spawning Grounds,,,,,,,,,,,,
-Fullmoon Sardine,Steel Jig,18,6,,,,,,,,,83
-Whitelip Oyster,,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Blacklip Oyster,,,,,,,,,,,,
-Nautilus,Fullmoon Sardine,N/A,N/A,,,,,,,,,124
-Sea Devil,,,,,,,,,,,,
-The Captain's Chalice,Fullmoon Sardine,23,2,,,,,,,,,284
-Isles of Umbra Southshore,,,,,,,,,,,,
-Fullmoon Sardine,Spoon Worm,18,6,,,,,,,,,83
-Red Coral,,,,,,,,,,,,
-Blacklip Oyster,,,,,,,,,,,,
-Nautilus,Fullmoon Sardine,N/A,N/A,,,,,,,,,124
-Mummer Wrasse,,,,,,,,,,,,
-Plaice,,,,,,,,,,,,
-Sea Devil,,,,,,,,,,,,
-Coelacanth,Fullmoon Sardine,N/A,N/A,,,,,,,,,166
-Coelacanthus,Fullmoon Sardine,22,3,,"Fog, Clouds, Wind",,,,,,,291
-Endoceras,Fullmoon Sardine,20,4,"Clear Skies, Fair Skies","Fog, Clouds, Wind",,,,,,,292
-Reaver Hide,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Red Coral,,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Blacklip Oyster,,,,,,,,,,,,
-Rock Lobster,Northern Krill,17,21,,,,,,,,,149
-Dinichthys,,,,,,,,,,,,
-Seahag,Wahoo,19,2,,"Clear Skies, Fair Skies",,,,,,,293
-Oakwood,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Jade Eel,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Warmwater Trout,,,,,,,,,,,,
-Four-eyed Fish,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Common Sculpin,Spinner,,,,,,,,,,,
-Coeurlfish,,,,,,,,,,,,
-Toramafish,Common Sculpin,17,20,,"Fog, Clouds",,,,,,,241
-Fool Falls,,,,,,,,,,,,
-Crimson Crayfish,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Bluebell Salmon,,,,,,,,,,,,
-Jade Eel,,,,,,,,,,,,
-Warmwater Trout,,,,,,,,,,,,
-Four-eyed Fish,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Fall Jumper,,,,,,,,,,,,
-Joan of Trout,Crow Fly,4,6,,,,,,,,,240
-Bronze Lake Shallows,,,,,,,,,,,,
-Crimson Crayfish,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Jade Eel,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Worm of Nym,Butterworm,19,22,,,,,,,,,252
-Northeast Bronze Lake,,,,,,,,,,,,
-Jade Eel,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Four-eyed Fish,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Bronze Lake Trout,,,,,,,,,,,,
-Giant Catfish,,,,,,,,,,,,
-King of the Spring,Spinnerbait,16,19,,,,,,,,,263
-The Long Climb,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Thunderbolt Sculpin,Spinner,,,,"Rain, Showers",,,,,,,113
-Warmwater Trout,,,,,,,,,,,,
-Bronze Lake Trout,,,,,,,,,,,,
-Giant Donko,Spinnerbait,4,12,,,,,,,,,157
-Thundergut,Stem Borer,19,3,,Rain,,,,,,,273
-Northwest Bronze Lake,,,,,,,,,,,,
-Jade Eel,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Four-eyed Fish,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Bronze Lake Trout,,,,,,,,,,,,
-Giant Catfish,,,,,,,,,,,,
-King of the Spring,Spinnerbait,16,19,,,,,,,,,263
-Mist,,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Bianaq Bream,,,,,,,,,,,,
-Indigo Herring,,,,,,,,,,,,
-Ash Tuna,,,,,,,,,,,,
-Fullmoon Sardine,Spoon Worm,18,6,,,,,,,,,83
-Nautilus,Fullmoon Sardine,N/A,N/A,,,,,,,,,124
-Twitchbeard,Fullmoon Sardine,4,6,,"Clear Skies, Fair Skies",,,,,,,253
-Jadeite Flood,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Moat Carp,,,,,,,,,,,,
-Raincaller,Stem Borer,,,,Rain,,,,,,,117
-Stormdancer,Stem Borer,17,2,,Rain,,,,,,,236
-Lower Black Tea Brook,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Bloody Brewer,Crayfish Ball,,,,,,,,,,,219
-Whispering Gorge,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Raincaller,Stem Borer,,,,Rain,,,,,,,117
-Matron Carp,Bloodworm,15,21,,,,,,,,,231
-Upper Black Tea Brook,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Carp Diem,Crow Fly,9,14,,"Fog, Clouds",,,,,,,224
-The Vein,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Striped Goby,Moth Pupa,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Chirurgeon,Striped Goby,,,,,,,,,,,228
-The Mirror,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Tri-colored Carp,,,,,,,,,,,,
-Ghost Carp,Butterworm,21,3,,Rain,,,,,,,223
-Everschade,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,
-Monke Onke,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Spotted Pleco,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Levinlight,Syrphid Basket,18,23,,,,,,,,,256
-Hopeseed Pond,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,
-Black Ghost,Ala Mhigan Fighting Fish,,,,,,,,,,,
-Mudskipper,,,,,,,,,,,,
-Clown Loach,,,,,,,,,,,,
-Seema,,,,,,,,,,,,
-The Green Jester,Honey Worm,18,21,,,,,,,,,270
-Haukke Manor,,,,,,,,,,,,
-Mudskipper,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Mudcrab,,,,,,,,,,,,
-Monke Onke,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Bloodbath,Silverfish,,,,Thunder,,,,,,,271
-Sweetbloom Pier,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Striped Goby,Moth Pupa,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Maiden Carp,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-Dark Sleeper,Midge Basket,15,10,,N/A,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
+Limsa Lominsa Upper Decks,,,,,,,,,,,,10101
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Malm Kelp,Lugworm,,,,,,Light,,,,,1
+Finger Shrimp,Lugworm,,,,,,Light,,,,,8
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Coral Butterfly,Pill Bug,,,,,,Medium,Powerful,,,,20
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Goldenfin,Pill Bug,9,14,,,,Heavy,Precision,,,,208
+Limsa Lominsa Lower Decks,,,,,,,,,,,,10201
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Malm Kelp,Pill Bug,,,,,,Light,,,,,1
+Finger Shrimp,Lugworm,,,,,,Light,,,,,8
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Coral Butterfly,Floating Minnow,,,,,,Medium,Powerful,,,,20
+Blue Octopus,Ocean Cloud,,,,,,Medium,Powerful,,,,45
+Octomammoth,Harbor Herring,9,17,,,,Heavy,Powerful,,,,230
+Zephyr Drift,,,,,,,,,,,,10301
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Finger Shrimp,Lugworm,,,,,,Light,,,,,8
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Sea Cucumber,Goby Ball,,,,,,Light,,,,,14
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Coral Butterfly,Floating Minnow,,,,,,Medium,Powerful,,,,20
+Angelfish,Steel Jig,,,,,,Medium,Powerful,,,,40
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Zalera,Rat Tail,9,14,,,,Heavy,Precision,,,,201
+Rogue River,,,,,,,,,,,,10303
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Chub,Moth Pupa,,,,,,Light,,,,,3
+Dwarf Catfish,Moth Pupa,,,,,,Light,,,,,7
+Princess Trout,Crayfish Ball,,,,,,Medium,Powerful,,,,11
+La Noscean Perch,Floating Minnow,,,,,,Medium,Powerful,,,,37
+Beguiler Chub,Moth Pupa,9,14,,,,Heavy,Precision,,,,202
+West Agelyss River,,,,,,,,,,,,10304
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Chub,Moth Pupa,,,,,,Light,,,,,3
+Dwarf Catfish,Moth Pupa,,,,,,Light,,,,,7
+Princess Trout,Crayfish Ball,,,,,,Medium,Powerful,,,,11
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+La Noscean Perch,Sinking Minnow,,,,,,Medium,Powerful,,,,37
+Great Gudgeon,Crayfish Ball,,,,,,Heavy,Precision,,,,211
+Summerford,,,,,,,,,,,,10302
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Finger Shrimp,Lugworm,,,,,,Light,,,,,8
+White Coral,Pill Bug,,,,,,Light,,,,,10
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Harbor Herring,Floating Minnow,,,,,,Medium,Powerful,,,,15
+Vongola Clam,Northern Krill,,,,,,Light,,,,,18
+Blue Octopus,Ocean Cloud,,,,,,Medium,Powerful,,,,45
+Ogre Barracuda,Harbor Herring,,,,,,Medium,Powerful,,,,58
+Silver Shark,Merlthor Goby,,,,,,Medium,Powerful,,,,111
+Gigantshark,Merlthor Goby,,,,"Clear Skies, Fair Skies",,Heavy,Powerful,,,,209
+Nym River,,,,,,,,,,,,10305
+Chub,Moth Pupa,,,,,,Light,,,,,3
+Dwarf Catfish,Moth Pupa,,,,,,Light,,,,,7
+Princess Trout,Crayfish Ball,,,,,,Medium,Powerful,,,,11
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Bloodworm,,,,,,Medium,Powerful,,,,23
+La Noscean Perch,Floating Minnow,,,,,,Medium,Powerful,,,,37
+High Perch,Sinking Minnow,5,8,,,,Heavy,Powerful,,,,232
+Woad Whisper Canyon,,,,,,,,,,,,10306
+Dwarf Catfish,Moth Pupa,,,,,,Light,,,,,7
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+River Crab,Bloodworm,,,,,,Light,,,,,29
+La Noscean Perch,Floating Minnow,,,,,,Medium,Powerful,,,,37
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Glass Perch,Chocobo Fly,,,,,,Medium,Powerful,,,,52
+Crystal Perch,Butterworm,,,,"Clouds, Fog, Wind",,Heavy,Precision,,,,205
+The Mourning Widow,,,,,,,,,,,,10401
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Chub,Moth Pupa,,,,,,Light,,,,,3
+Dwarf Catfish,Moth Pupa,,,,,,Light,,,,,7
+Princess Trout,Crayfish Ball,,,,,,Medium,Powerful,,,,11
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Caterwauler,Moth Pupa,,,,,,Heavy,Precision,,,,204
+Moraby Bay,,,,,,,,,,,,10402
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Malm Kelp,Pill Bug,,,,,,Light,,,,,1
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Sea Cucumber,Rat Tail,,,,,,Light,,,,,14
+Vongola Clam,Goby Ball,,,,,,Light,,,,,18
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Oschon's Print,Goby Ball,,,,,,Heavy,Powerful,,,,203
+Cedarwood,,,,,,,,,,,,10403
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Leafy Seadragon,Northern Krill,,,,,,Light,,,,,81
+Syldra,Spoon Worm,,,,Rain,,Heavy,Powerful,,,,233
+Oschon's Torch,,,,,,,,,,,,10405
+Sea Cucumber,Rat Tail,,,,,,Light,,,,,14
+Vongola Clam,Goby Ball,,,,,,Light,,,,,18
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Mahi-Mahi,Yumizuno,10,18,,,,Heavy,Powerful,,,,159
+Silver Sovereign,Yumizuno,,,,,,Heavy,Powerful,,,,213
+Candlekeep Quay,,,,,,,,,,,,10407
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Vongola Clam,Goby Ball,,,,,,Light,,,,,18
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Shall Shell,Northern Krill,,,,,,Medium,Powerful,,,,156
+Sabertooth Cod,Goby Ball,16,22,,,,Heavy,Powerful,,,,214
+Moraby Drydocks,,,,,,,,,,,,10404
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Navigator's Dagger,Yumizuno,,,,,,Medium,Powerful,,,,38
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Jacques the Snipper,Goby Ball,21,3,,,,Heavy,Precision,,,,235
+Empty Heart,,,,,,,,,,,,10408
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Crimson Crayfish,Crayfish Ball,,,,,,Light,,,,,17
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Grip Killifish,Chocobo Fly,,,,,,Light,,,,,78
+Faerie Queen,Spinnerbait,,,,"Clouds, Fog, Wind",,Heavy,Powerful,,,,220
+The Salt Strand,,,,,,,,,,,,10406
+Sea Cucumber,Rat Tail,,,,,,Light,,,,,14
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Helmet Crab,Rat Tail,,,,,,Light,,,,,32
+Razor Clam,Rat Tail,,,,,,Light,,,,,43
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Sea Bo,Shrimp Cage Feeder,,,,,,Light,,,,,62
+Black Sole,Herring Ball,,,,,,Medium,Powerful,,,,67
+Tiny Tortoise,Yumizuno,,,,,,Heavy,Powerful,,,,185
+Meteor Survivor,Rat Tail,3,5,,"Clouds, Fog, Wind",,Heavy,Powerful,,,,239
+Blind Iron Mines,,,,,,,,,,,,10409
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Blindfish,Syrphid Basket,,,,,,Light,,,,,25
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Cupfish,Syrphid Basket,17,19,,,,Heavy,Precision,,,,238
+South Bloodshore,,,,,,,,,,,,10501
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Coral Butterfly,Pill Bug,,,,,,Medium,Powerful,,,,20
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Blue Coral,Shrimp Cage Feeder,,,,,,Light,,,,,57
+Sea Bo,Shrimp Cage Feeder,,,,,,Light,,,,,62
+Bianaq Bream,Heavy Steel Jig,,,,,,Medium,Powerful,,,,65
+Fullmoon Sardine,Spoon Worm,18,6,,,,Light,,,,,83
+Silver Shark,Merlthor Goby,,,,,,Medium,Powerful,,,,111
+Gigant Clam,Heavy Steel Jig,23,2,,,,Heavy,Powerful,,,,313
+The Greatest Bream in the World,Shrimp Cage Feeder,20,23,,,,Heavy,Powerful,,,,245
+Costa del Sol,,,,,,,,,,,,10502
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Angelfish,Rat Tail,,,,,,Medium,Powerful,,,,40
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Bianaq Bream,Heavy Steel Jig,,,,,,Medium,Powerful,,,,65
+Indigo Herring,Spoon Worm,,,,,,Medium,Powerful,,,,75
+Ash Tuna,Spoon Worm,,,,,,Medium,Powerful,,,,77
+Fullmoon Sardine,Spoon Worm,18,6,,,,Light,,,,,83
+Lavender Remora,Heavy Steel Jig,,,,,,Medium,Powerful,,,,93
+Silver Shark,Merlthor Goby,,,,,,Medium,Powerful,,,,111
+Little Thalaos,Northern Krill,,,,"Rain, Showers",,Medium,Powerful,,,,155
+Shark Tuna,Fullmoon Sardine,19,21,,"Clear Skies, Fair Skies",,Heavy,Powerful,,,,251
+North Bloodshore,,,,,,,,,,,,10503
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Ogre Barracuda,Harbor Herring,,,,,,Medium,Powerful,,,,58
+Black Sole,Herring Ball,,,,,,Medium,Powerful,,,,67
+Sea Pickle,Herring Ball,,,,,,Light,,,,,72
+Ash Tuna,Spoon Worm,,,,,,Medium,Powerful,,,,77
+Whitelip Oyster,Herring Ball,,,,,,Light,,,,,88
+Balloonfish,Heavy Steel Jig,,,,,,Medium,Powerful,,,,97
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Mazlaya Marlin,Ogre Barracuda,,,,,,Heavy,Powerful,,,,165
+Bombardfish,Herring Ball,9,15,,Clear Skies,,Heavy,Powerful,,,,260
+Rhotano Sea (Privateer Forecastle),,,,,,,,,,,,10509
+Finger Shrimp,Lugworm,,,,,,Light,,,,,8
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Balloonfish,Heavy Steel Jig,,,,,,Medium,Powerful,,,,97
+Ash Tuna,Spoon Worm,,,,,,Medium,Powerful,,,,77
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Ogre Barracuda,Harbor Herring,,,,,,Medium,Powerful,,,,58
+Mazlaya Marlin,Ogre Barracuda,,,,,,Heavy,Powerful,,,,165
+Gigant Octopus,Ogre Barracuda,,,,,,Heavy,Powerful,,,,170
+The Old Man in the Sea,Ogre Barracuda,,,"Rain, Showers",Clear Skies,,Heavy,Powerful,,,,289
+Rhotano Sea (Privateer Sterncastle),,,,,,,,,,,,10510
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Leafy Seadragon,Northern Krill,,,,,,Light,,,,,81
+Rock Lobster,Northern Krill,17,22,,,,Medium,Powerful,,,,149
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Little Thalaos,Northern Krill,,,,"Rain, Showers",,Medium,Powerful,,,,155
+Shall Shell,Northern Krill,,,,,,Medium,Powerful,,,,156
+Megalodon,Wahoo,,,,,,Heavy,Powerful,,,,179
+Giant Squid,Wahoo,,,,,,Heavy,Powerful,,,,169
+Nepto Dragon,Northern Krill,,,,"Rain, Showers","Little Thalaos, 3",Heavy,Powerful,,,,290
+Hidden Falls,,,,,,,,,,,,10504
+Crimson Crayfish,Crayfish Ball,,,,,,Light,,,,,17
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Spotted Puffer,Honey Worm,,,,,,Light,,,,,99
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Kobold Puffer,Spinnerbait,,,,,,Light,Precision,,,,123
+The Salter,Honey Worm,17,20,,,,Light,Precision,,,,261
+East Agelyss River,,,,,,,,,,,,10505
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Loyal Pleco,Stem Borer,,,,,,Medium,Powerful,,,,112
+Archerfish,Snurble Fly,,,,,,Light,,,,,125
+Agelyss Carp,Snurble Fly,,,,,,Medium,Powerful,,,,128
+The Drowned Sniper,Snurble Fly,,,,"Clear Skies, Fair Skies",,Heavy,Powerful,,,,274
+Raincatcher Gully,,,,,,,,,,,,10506
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Loyal Pleco,Stem Borer,,,,,,Medium,Powerful,,,,112
+Thunderbolt Sculpin,Spinner,,,,"Rain, Showers",,Medium,Powerful,,,,113
+Archerfish,Snurble Fly,,,,,,Light,,,,,125
+Agelyss Carp,Snurble Fly,,,,,,Medium,Powerful,,,,128
+The Terpsichorean,Honey Worm,,,,Fog,,Heavy,Powerful,,,,275
+The Juggernaut,,,,,,,,,,,,10507
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Grip Killifish,Chocobo Fly,,,,,,Light,,,,,78
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Sludgeskipper,Stem Borer,,,,,,Light,Precision,,,,131
+Vampire Lampern,Silverfish,,,,,,Medium,Powerful,,,,150
+Mirrorscale,Copperfish,9,16,,"Clear Skies, Fair Skies",,Heavy,Precision,,,,276
+Red Mantis Falls,,,,,,,,,,,,10508
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Clown Loach,Honey Worm,,,,,,Light,,,,,91
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
+Agelyss Carp,Snurble Fly,,,,,,Medium,Powerful,,,,128
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Jungle Catfish,Goldfish,,,,,,Medium,Powerful,,,,184
+Imperial Goldfish,Silverfish,,,,,"Jungle Catfish, 3",Heavy,Powerful,,,,288
+North Isle of Endless Summer,,,,,,,,,,,,10511
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Leafy Seadragon,Northern Krill,,,,,,Light,,,,,81
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Little Thalaos,Northern Krill,,,,"Rain, Showers",,Medium,Powerful,,,,155
+Shall Shell,Northern Krill,,,,,,Medium,Powerful,,,,156
+Megalodon,Wahoo,,,,,,Heavy,Powerful,,,,179
+Giant Squid,Wahoo,,,,,,Heavy,Powerful,,,,169
+Castaway Chocobo Chick,Wahoo,8,16,,,,Heavy,Powerful,,,,636
+Little Perykos,Wahoo,,,,"Rain, Showers",,Medium,Powerful,,,,637
+Swiftperch,,,,,,,,,,,,10601
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+White Coral,Goby Ball,,,,,,Light,,,,,10
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Moraby Flounder,Yumizuno,,,,,,Medium,Powerful,,,,22
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Halibut,Northern Krill,,,,,,Heavy,Powerful,,,,160
+Armorer,Northern Krill,19,3,,,,Heavy,Precision,,,,210
+Skull Valley,,,,,,,,,,,,10602
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Razor Clam,Rat Tail,,,,,,Light,,,,,43
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Goosefish,Wahoo,,,,,,Light,Powerful,,,,152
+Junkmonger,Wahoo,16,2,,,,Heavy,Powerful,,,,207
+The Brewer's Beacon,,,,,,,,,,,,10606
+White Coral,Goby Ball,,,,,,Light,,,,,10
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Helmet Crab,Rat Tail,,,,,,Light,,,,,32
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Navigator's Dagger,Yumizuno,,,,,,Medium,Powerful,,,,38
+Ogre Barracuda,Harbor Herring,,,,,,Medium,Powerful,,,,58
+Gigant Octopus,Ogre Barracuda,,,,,,Heavy,Powerful,,,,170
+Navigator's Brand,Yumizuno,9,14,,"Clear Skies, Fair Skies",,Heavy,Powerful,,,,216
+Halfstone,,,,,,,,,,,,10603
+Saber Sardine,Heavy Steel Jig,,,,,,Light,,,,,54
+Blue Coral,Shrimp Cage Feeder,,,,,,Light,,,,,57
+Hammerhead Shark,Steel Jig,,,,,,Heavy,Powerful,,,,70
+Sea Pickle,Herring Ball,,,,,,Light,,,,,72
+Whitelip Oyster,Herring Ball,,,,,,Light,,,,,88
+Lavender Remora,Heavy Steel Jig,,,,,,Medium,Powerful,,,,93
+Balloonfish,Heavy Steel Jig,,,,,,Medium,Powerful,,,,97
+The Lone Ripper,Heavy Steel Jig,,,,Gales,,Heavy,Powerful,,,,262
+Isles of Umbra Northshore,,,,,,,,,,,,10604
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Ocean Cloud,Pill Bug,,,,,,Light,,,,,12
+Fullmoon Sardine,Spoon Worm,18,6,,,,Light,,,,,83
+Lavender Remora,Heavy Steel Jig,,,,,,Medium,Powerful,,,,93
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Silver Shark,Merlthor Goby,,,,,,Medium,Powerful,,,,111
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Pike Eel,Yumizuno,,,,,,Medium,Powerful,,,,129
+Sunfish,Ocean Cloud,,,,,,Medium,Powerful,,,,171
+Helmsman's Hand,Ocean Cloud,9,15,,"Clouds, Fog, Wind",,Heavy,Powerful,,,,277
+The Ship Graveyard,,,,,,,,,,,,10607
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Wahoo,Merlthor Goby,,,,,,Medium,,,,,116
+Blacklip Oyster,Krill Cage Feeder,,,,,,Light,,,,,120
+Pike Eel,Yumizuno,,,,,,Medium,Powerful,,,,129
+Mummer Wrasse,Yumizuno,,,,,,Medium,Powerful,,,,133
+Plaice,Yumizuno,,,,,,Medium,Powerful,,,,138
+Giant Squid,Wahoo,,,,,,Heavy,Powerful,,,,169
+Megalodon,Wahoo,,,,,,Heavy,Powerful,,,,179
+Frilled Shark,Giant Squid,17,3,,"Clouds, Fog, Wind",,Heavy,Powerful,,,,286
+Sapsa Spawning Grounds,,,,,,,,,,,,10608
+Fullmoon Sardine,Steel Jig,18,6,,,,Light,,,,,83
+Whitelip Oyster,Herring Ball,,,,,,Light,,,,,88
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Blacklip Oyster,Krill Cage Feeder,,,,,,Light,,,,,120
+Nautilus,Fullmoon Sardine,,,,,,Medium,Powerful,,,,124
+Sea Devil,Yumizuno,,,,,,Medium,Powerful,,,,143
+The Captain's Chalice,Fullmoon Sardine,23,2,,,,Heavy,Powerful,,,,284
+Isles of Umbra Southshore,,,,,,,,,,,,10605
+Fullmoon Sardine,Spoon Worm,18,6,,,,Light,,,,,83
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Blacklip Oyster,Krill Cage Feeder,,,,,,Light,,,,,120
+Nautilus,Fullmoon Sardine,,,,,,Medium,Powerful,,,,124
+Mummer Wrasse,Yumizuno,,,,,,Medium,Powerful,,,,133
+Plaice,Yumizuno,,,,,,Medium,Powerful,,,,138
+Sea Devil,Yumizuno,,,,,,Medium,Powerful,,,,143
+Coelacanth,Fullmoon Sardine,18,6,,,,Medium,Powerful,,,,166
+Coelacanthus,Fullmoon Sardine,22,3,,"Clouds, Fog, Wind",,Heavy,Powerful,,,,291
+Endoceras,Fullmoon Sardine,20,4,"Clear Skies, Fair Skies","Clouds, Fog, Wind",,Heavy,Powerful,,,,292
+Reaver Hide,,,,,,,,,,,,10609
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Red Coral,Herring Ball,,,,,,Small,,,,,107
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Blacklip Oyster,Krill Cage Feeder,,,,,,Light,,,,,120
+Rock Lobster,Northern Krill,17,22,,,,Medium,Powerful,,,,149
+Dinichthys,Wahoo,,,,,,Heavy,Powerful,,,,172
+Seahag,Wahoo,19,2,"Clear Skies, Fair Skies","Clear Skies, Fair Skies",,Heavy,Powerful,,,,293
+Oakwood,,,,,,,,,,,,10701
+River Crab,Butterworm,,,,,,Light,,,,,29
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Jade Eel,Butterworm,17,10,,,,Medium,Powerful,,,,48
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Four-eyed Fish,Spinnerbait,,,,,,Medium,Powerful,,,,53
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Common Sculpin,Spinnerbait,,,,,,Light,,,,,119
+Coeurlfish,Common Sculpin,,,,,,Heavy,Powerful,,,,154
+Toramafish,Common Sculpin,17,20,,"Clouds, Fog",,Heavy,Powerful,,,,241
+Fool Falls,,,,,,,,,,,,10702
+Crimson Crayfish,Crayfish Ball,,,,,,Light,,,,,17
+River Crab,Butterworm,,,,,,Light,,,,,29
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Bluebell Salmon,Floating Minnow,,,,,,Medium,Powerful,,,,42
+Jade Eel,Butterworm,17,10,,,,Medium,Powerful,,,,48
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Four-eyed Fish,Spinnerbait,,,,,,Medium,Powerful,,,,53
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Fall Jumper,Copperfish,,,,,,Medium,Powerful,,,,114
+Joan of Trout,Crow Fly,4,6,,,,Heavy,Powerful,,,,240
+Bronze Lake Shallows,,,,,,,,,,,,10704
+Crimson Crayfish,Crayfish Ball,,,,,,Light,,,,,17
+River Crab,Butterworm,,,,,,Light,,,,,29
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Jade Eel,Butterworm,17,10,,,,Medium,Powerful,,,,48
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Worm of Nym,Butterworm,19,22,,,,Heavy,Powerful,,,,252
+Northeast Bronze Lake,,,,,,,,,,,,10703
+Jade Eel,Butterworm,17,10,,,,Medium,Powerful,,,,48
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Four-eyed Fish,Spinnerbait,,,,,,Medium,Powerful,,,,53
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Bronze Lake Trout,Spinnerbait,,,,,,Medium,Powerful,,,,108
+Giant Catfish,Silverfish,,,,,,Medium,Powerful,,,,163
+King of the Spring,Spinnerbait,16,19,,,,Heavy,Powerful,,,,263
+The Long Climb,,,,,,,,,,,,10801
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Thunderbolt Sculpin,Stem Borer,,,,"Rain, Showers",,Medium,Powerful,,,,113
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Bronze Lake Trout,Spinnerbait,,,,,,Medium,Powerful,,,,108
+Giant Donko,Spinnerbait,4,9,,,,Medium,Powerful,,,,157
+Thundergut,Stem Borer,19,3,,Rain,,Heavy,Powerful,,,,273
+Northwest Bronze Lake,,,,,,,,,,,,10802
+Jade Eel,Butterworm,17,10,,,,Medium,Powerful,,,,48
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Four-eyed Fish,Spinnerbait,,,,,,Medium,Powerful,,,,53
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Bronze Lake Trout,Spinnerbait,,,,,,Medium,Powerful,,,,108
+Giant Catfish,Silverfish,,,,,,Medium,Powerful,,,,163
+King of the Spring,Spinnerbait,16,19,,,,Heavy,Powerful,,,,263
+Mist,,,,,,,,,,,,10901
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Bianaq Bream,Heavy Steel Jig,,,,,,Medium,Powerful,,,,65
+Indigo Herring,Spoon Worm,,,,,,Medium,Powerful,,,,75
+Ash Tuna,Spoon Worm,,,,,,Medium,Powerful,,,,77
+Fullmoon Sardine,Spoon Worm,18,6,,,,Light,,,,,83
+Nautilus,Fullmoon Sardine,,,,,,Medium,Powerful,,,,124
+Twitchbeard,Fullmoon Sardine,4,6,,"Clear Skies, Fair Skies",,Heavy,Powerful,,,,253
+Jadeite Flood,,,,,,,,,,,,20101
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Raincaller,Stem Borer,,,,"Rain, Snow",,Medium,Powerful,,,,117
+Stormdancer,Stem Borer,17,2,,"Rain, Snow",,Heavy,Powerful,,,,236
+Lower Black Tea Brook,,,,,,,,,,,,20102
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Bloody Brewer,Crayfish Ball,,,,,,Heavy,Powerful,,,,219
+Whispering Gorge,,,,,,,,,,,,20201
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Raincaller,Stem Borer,,,,"Rain, Snow",,Medium,Powerful,,,,117
+Matron Carp,Bloodworm,15,21,,,,Heavy,Powerful,,,,231
+Upper Black Tea Brook,,,,,,,,,,,,20202
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Carp Diem,Crow Fly,9,14,,"Clouds, Fog",,Heavy,Precision,,,,224
+The Vein,,,,,,,,,,,,20301
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Chirurgeon,Striped Goby,,,,,,Heavy,,,,,228
+The Mirror,,,,,,,,,,,,20302
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Tri-colored Carp,Butterworm,,,,,,Medium,Powerful,,,,46
+Ghost Carp,Butterworm,21,3,,Rain,,Heavy,Powerful,,,,223
+Everschade,,,,,,,,,,,,20303
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Spotted Pleco,Syrphid Basket,,,,,,Medium,Powerful,,,,73
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Levinlight,Syrphid Basket,18,23,,,,Heavy,Precision,,,,256
+Hopeseed Pond,,,,,,,,,,,,20304
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Black Ghost,Ala Mhigan Fighting Fish,,,,,,,Powerful,,,,66
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Clown Loach,Honey Worm,,,,,,Light,,,,,91
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+The Green Jester,Honey Worm,18,21,,,,,Powerful,,,,270
+Haukke Manor,,,,,,,,,,,,20305
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Bloodbath,Silverfish,,,,Thunder,,,Powerful,,,,271
+Sweetbloom Pier,,,,,,,,,,,,20401
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+River Crab,Butterworm,,,,,,Light,,,,,29
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
 Dark Ambusher,Striped Goby,21,3,,,,,,,,,217
-Springripple Brook,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-River Crab,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,
-Bluebell Salmon,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Moldva,Ala Mhigan Fighting Fish,18,2,,,,,,,,,206
-Sanctum of the Twelve,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-River Crab,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Tri-colored Carp,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-The Assassin,Butterworm,21,23,,,,,,,,,243
-Verdant Drop,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-River Crab,,,,,,,,,,,,
-Copperfish,Butterworm,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Climbing Perch,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Spotted Pleco,,,,,,,,,,,,
-Fall Jumper,,,,,,,,,,,,
-Sylphsbane,Copperfish,,,,Rain,,,,,,,248
-Sylphlands,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-Oakroot,,,,,,,,,,,,
-Common Sculpin,Spinner,,,,,,,,,,,
-Southern Pike,,,,,,,,,,,,
-Mushroom Crab,Common Sculpin,,,,"Fog, Clouds",,,,,,,173
-Magicked Mushroom,Common Sculpin,,,"Rain, Thunder","Fog, Clouds",,,,,,,309
-Upper Hathoeva River,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-River Crab,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Faerie Bass,,,,,,,,,,,,
-Dark Sleeper,Midge Basket,15,10,,N/A,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-Vip Viper,Butterworm,18,19,,,,,,,,,244
-Lower Hathoeva River,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Faerie Bass,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Climbing Perch,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-Floating Boulder,Bass Ball,0,8,,"Fog, Clouds",,,,,,,249
-East Hathoeva River,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Faerie Bass,,,,,,,,,,,,
-Dark Sleeper,Midge Basket,15,10,,N/A,,,,,,,
-Copperfish,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-The Grinner,Syrphid Basket,,,,,,,,,,,250
-Middle Hathoeva River,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Dark Sleeper,Butterworm,15,10,,N/A,,,,,,,
-Five-ilm Pleco,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Seema,,,,,,,,,,,,
-Armored Pleco,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-The Sinker,Sinking Minnow,21,3,,"Clear Skies, Fair Skies",,,,,,,257
-Goblinblood,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Mudcrab,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Five-ilm Pleco,,,,,,,,,,,,
-Black Ghost,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Goblin Perch,,,,,,,,,,,,
-The Gobfather,Silverfish,,,,"Thunder, Thunderstorms",,,,,,,258
-Rootslake,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Climbing Perch,,,,,,,,,,,,
-Root Skipper,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Armored Pleco,,,,,,,,,,,,
-Judgment Staff,Caddisfly Larva,,,,"Thunder, Thunderstorms",,,,,,,174
-Son of Levin,Caddisfly Larva,,,,Thunderstorms,,,,,,,272
-Urth's Gift,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Monke Onke,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Velodyna Carp,,,,,,,,,,,,
-Southern Pike,,,,,,,,,,,,
+Springripple Brook,,,,,,,,,,,,20403
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Rainbow Trout,Snurble Fly,,,,,,Medium,Powerful,,,,28
+River Crab,Butterworm,,,,,,Light,,,,,29
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Bluebell Salmon,Floating Minnow,,,,,,,Powerful,,,,42
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Moldva,Ala Mhigan Fighting Fish,18,2,,,,,Powerful,,,,206
+Sanctum of the Twelve,,,,,,,,,,,,20405
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+River Crab,Butterworm,,,,,,Light,,,,,29
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Tri-colored Carp,Butterworm,,,,,,Medium,Powerful,,,,46
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+The Assassin,Butterworm,21,23,,,,,Powerful,,,,243
+Verdant Drop,,,,,,,,,,,,20402
+Rainbow Trout,Crow Fly,,,,,,Medium,Powerful,,,,28
+River Crab,Butterworm,,,,,,Light,,,,,29
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Climbing Perch,Bass Ball,,,,,,,,,,,63
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Spotted Pleco,Syrphid Basket,,,,,,Medium,Powerful,,,,73
+Fall Jumper,Copperfish,,,,,,Medium,Powerful,,,,114
+Sylphsbane,Copperfish,,,,Rain,,,Powerful,,,,248
+Sylphlands,,,,,,,,,,,,20404
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+Oakroot,Streamer,17,10,,,,,Powerful,,,,118
+Common Sculpin,Spinnerbait,,,,,,Light,,,,,119
+Southern Pike,Topwater Frog,,,,,,,Powerful,,,,121
+Mushroom Crab,Common Sculpin,,,,"Clouds, Fog",,,,,,,173
+Magicked Mushroom,Common Sculpin,,,"Rain, Thunder","Clouds, Fog",,,Powerful,,,,309
+Upper Hathoeva River,,,,,,,,,,,,20501
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Rainbow Trout,Bloodworm,,,,,,Medium,,,,,28
+River Crab,Butterworm,,,,,,Light,,,,,29
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+Vip Viper,Butterworm,18,19,,,,,Powerful,,,,244
+Lower Hathoeva River,,,,,,,,,,,,20503
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Rainbow Trout,Bloodworm,,,,,,Medium,Powerful,,,,28
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Climbing Perch,Bass Ball,,,,,,,,,,,63
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+Floating Boulder,Bass Ball,0,8,,"Clouds, Fog",,,Powerful,,,,249
+East Hathoeva River,,,,,,,,,,,,20504
+Rainbow Trout,Bloodworm,,,,,,Medium,Powerful,,,,28
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+The Grinner,Syrphid Basket,,,,,,,Powerful,,,,250
+Middle Hathoeva River,,,,,,,,,,,,20502
+Rainbow Trout,Bloodworm,,,,,,Medium,Powerful,,,,28
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Five-ilm Pleco,Floating Minnow,,,,,,,,,,,60
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+Armored Pleco,Freshwater Boilie,,,,,,,Powerful,,,,94
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+The Sinker,Sinking Minnow,21,3,,"Clear Skies, Fair Skies",,,Powerful,,,,257
+Goblinblood,,,,,,,,,,,,20505
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Five-ilm Pleco,Bass Ball,,,,,,,,,,,60
+Black Ghost,Ala Mhigan Fighting Fish,,,,,,,Powerful,,,,66
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Goblin Perch,Silverfish,,,,,,,Powerful,,,,127
+The Gobfather,Silverfish,,,,"Thunder, Thunderstorms",,,Powerful,,,,258
+Rootslake,,,,,,,,,,,,20506
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Climbing Perch,Bass Ball,,,,,,,,,,,63
+Root Skipper,Syrphid Basket,,,,,,,Precision,,,,80
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Armored Pleco,Honey Worm,,,,,,,Powerful,,,,94
+Judgment Staff,Caddisfly Larva,,,,"Thunder, Thunderstorms",,,Powerful,,,,174
+Son of Levin,Caddisfly Larva,,,,Thunderstorms,,,Powerful,,,,272
+Urth's Gift,,,,,,,,,,,,20507
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Velodyna Carp,Streamer,,,,,,,Powerful,,,,98
+Southern Pike,Topwater Frog,,,,,,,Powerful,,,,121
 Boxing Pleco,Glowworm,,,,,,,,,,,141
-Takitaro,,,,,,,,,,,,
-Giant Takitaro,Glowworm,,,,"Thunder, Thunderstorms",,,,,,,310
-Namitaro,Topwater Frog,,,,N/A,"Giant Takitaro, 1",,,,,,311
-Murmur Rills,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-River Crab,,,,,,,,,,,,
-Bluebell Salmon,,,,,,,,,,,,
-Tri-colored Carp,,,,,,,,,,,,
-Blue Widow,Floating Minnow,9,14,,N/A,,,,,,,222
-Fallgourd Float,,,,,,,,,,,,
-Striped Goby,,,,,,,,,,,,
-Brass Loach,Wildfowl Fly,,,,,,Medium,,,,,
-Maiden Carp,Wildfowl Fly,,,,,,Medium,,,,,
-Rainbow Trout,Wildfowl Fly,,,,,,Medium,,,,,
-Ala Mhigan Fighting Fish,Wildfowl Fly,,,,,,Light,,,,,
-Faerie Bass,,,,,,,,,,,,
-Dark Sleeper,Brass Spoon Lure,15,10,,N/A,,,,,,,
-Shadow Catfish,,,,,,,,,,,,
-Judgeray,Wildfowl Fly,17,21,,,,Heavy,,,,,218
-Proud Creek,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Seema,,,,,,,,,,,,
-Golden Loach,,,,,,,,,,,,
-Loyal Pleco,,,,,,,,,,,,
-Oakroot,,,,,,,,,,,,
-Southern Pike,,,,,,,,,,,,
-Pirarucu,,,,,,,,,,,,
-Shadowstreak,Topwater Frog,4,10,,Fog,,,,,,,283
-Lake Tahtotl,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Pond Mussel,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Assassin Betta,,,,,,,,,,,,
+Takitaro,Streamer,,,,,,,Powerful,,,,181
+Giant Takitaro,Glowworm,,,,"Thunder, Thunderstorms",,,Powerful,,,,310
+Namitaro,Topwater Frog,,,,,"Giant Takitaro, 1",,Powerful,,,,311
+Murmur Rills,,,,,,,,,,,,20601
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Rainbow Trout,Bloodworm,,,,,,Medium,Powerful,,,,28
+River Crab,Butterworm,,,,,,Light,,,,,29
+Bluebell Salmon,Floating Minnow,,,,,,,Powerful,,,,42
+Tri-colored Carp,Butterworm,,,,,,Medium,Powerful,,,,46
+Blue Widow,Floating Minnow,9,14,,,,,Powerful,,,,222
+Fallgourd Float,,,,,,,,,,,,20602
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Rainbow Trout,Wildfowl Fly,,,,,,Medium,Powerful,,,,28
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Faerie Bass,Midge Basket,,,,,,Medium,,,,,33
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Shadow Catfish,Striped Goby,,,,,,,,,,,64
+Judgeray,Wildfowl Fly,17,21,,,,Heavy,Powerful,,,,218
+Proud Creek,,,,,,,,,,,,20603
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+Golden Loach,Honey Worm,,,,,,,Precision,,,,101
+Loyal Pleco,Stem Borer,,,,,,Medium,Powerful,,,,112
+Oakroot,Streamer,17,10,,,,,Powerful,,,,118
+Southern Pike,Topwater Frog,,,,,,,Powerful,,,,121
+Pirarucu,Streamer,,,,,,,,,,,182
+Shadowstreak,Topwater Frog,4,10,,Fog,,,Powerful,,,,283
+Lake Tahtotl,,,,,,,,,,,,20604
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Pond Mussel,Butterworm,,,,,,Light,,,,,50
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Assassin Betta,Silverfish,,,,,,,,,,,130
 Boxing Pleco,Glowworm,,,,,,,,,,,141
-Goldfish,,,,,,,,,,,,
-Bowfin,,,,,,,,,,,,
-Cornelia,Rainbow Spoon Lure,,,,,"Boxing Pleco, 5",,,,,,296
-The Lavender Beds,,,,,,,,,,,,
-Pipira,,,,,,,,,,,,
-Dark Sleeper,Brass Spoon Lure,15,10,,N/A,,Light,,,,,
-Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,
-Tri-colored Carp,,,,,,,,,,,,
-Shadow Catfish,,,,,,,,,,,,
-Spotted Pleco,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Monke Onke,,,,,,,,,,,,
-Sweetnewt,Ala Mhigan Fighting Fish,23,4,,Fog,,,,,,,259
-Nophica's Wells,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Gudgeon,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Copperfish,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Bowfin,Goldfish,,,,,,,Powerful,,,,177
+Cornelia,Rainbow Spoon Lure,,,,,"Boxing Pleco, 5",,Powerful,,,,296
+The Lavender Beds,,,,,,,,,,,,20701
+Pipira,Crayfish Ball,,,,,,Light,,,,,16
+Dark Sleeper,Midge Basket,15,10,,,,Light,,,,,36
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Tri-colored Carp,Butterworm,,,,,,Medium,Powerful,,,,46
+Shadow Catfish,Ala Mhigan Fighting Fish,,,,,,,,,,,64
+Spotted Pleco,Syrphid Basket,,,,,,Medium,Powerful,,,,73
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
+Sweetnewt,Ala Mhigan Fighting Fish,23,4,,Fog,,,Powerful,,,,259
+Nophica's Wells,,,,,,,,,,,,30104
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Gudgeon,Crayfish Ball,,,,,,Light,,,,,19
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
 Glimmerscale,Butterworm,,,,"Clear Skies, Fair Skies",,,,,,,237
-The Footfalls,,,,,,,,,,,,
-Crayfish,,,,,,,,,,,,
-Mudskipper,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
+The Footfalls,,,,,,,,,,,,30105
+Crayfish,Moth Pupa,,,,,,Light,,,,,2
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
 Mud Golem,Butterworm,21,3,,,,,,,,,229
-Vesper Bay,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Harbor Herring,Pill Bug,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Blue Octopus,Merlthor Goby,,,,,,,,,,,
+Vesper Bay,,,,,,,,,,,,30102
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Harbor Herring,Pill Bug,,,,,,Medium,Powerful,,,,15
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Blue Octopus,Merlthor Goby,,,,,,Medium,Powerful,,,,45
 Rivet Oyster,Heavy Steel Jig,,,,,,,,,,,234
-Crescent Cove,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Razor Clam,,,,,,,,,,,,
-Blowfish,,,,,,,,,,,,
-Saber Sardine,,,,,,,,,,,,
-Monkfish,,,,,,,,,,,,
-Spotted Puffer,,,,,,,,,,,,
-Rock Lobster,Northern Krill,17,21,,,,,,,,,149
-Fingers,Northern Krill,17,18,,,,,,,,,242
-The Silver Bazaar,,,,,,,,,,,,
-Lominsan Anchovy,Lugworm,,,,,,,,,,,
-Pebble Crab,,,,,,,,,,,,
-Tiger Cod,,,,,,,,,,,,
-Rothlyt Oyster,,,,,,,,,,,,
-Hammerhead Shark,,,,,,,,,,,,
-Indigo Herring,,,,,,,,,,,,
-Rock Lobster,Northern Krill,17,21,,,,,,,,,149
+Crescent Cove,,,,,,,,,,,,30103
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Razor Clam,Rat Tail,,,,,,Light,,,,,43
+Blowfish,Northern Krill,,,,,,Medium,Powerful,,,,49
+Saber Sardine,Heavy Steel Jig,,,,,,,,,,,54
+Monkfish,Heavy Steel Jig,,,,,,,Powerful,,,,61
+Spotted Puffer,Honey Worm,,,,,,Light,,,,,99
+Rock Lobster,Northern Krill,17,22,,,,Medium,Powerful,,,,149
+Fingers,Northern Krill,17,18,,,,,Powerful,,,,242
+The Silver Bazaar,,,,,,,,,,,,30101
+Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
+Pebble Crab,Yumizuno,,,,,,Light,,,,,26
+Tiger Cod,Rat Tail,,,,,,Medium,Powerful,,,,30
+Rothlyt Oyster,Rat Tail,,,,,,Light,,,,,35
+Hammerhead Shark,Steel Jig,,,,,,,,,,,70
+Indigo Herring,Spoon Worm,,,,,,Medium,Powerful,,,,75
+Rock Lobster,Northern Krill,17,22,,,,Medium,Powerful,,,,149
 Dirty Herry,Northern Krill,20,22,,,,,,,,,246
-Cape Westwind,,,,,,,,,,,,
-Merlthor Goby,Lugworm,,,,,,,,,,,
-Haraldr Haddock,,,,,,,,,,,,
-Whitelip Oyster,,,,,,,,,,,,
-Silver Shark,,,,,,,,,,,,
-Wahoo,Merlthor Goby,,,,,,,,,,,116
-Blacklip Oyster,,,,,,,,,,,,
-Plaice,,,,,,,,,,,,
-Sea Devil,,,,,,,,,,,,
-Titanic Sawfish,Wahoo,9,15,,"Clear Skies, Fair Skies",,,,,,,180
-Pirate's Bane,Wahoo,,,,,"Wahoo, 6",,,,,,300
-Moondrip,,,,,,,,,,,,
-Blindfish,,,,,,,,,,,,
-Grip Killifish,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Assassin Betta,Silverfish,,,,,,,,,,,
-Garpike,,,,,,,,,,,,
-Ndendecki,Assassin Betta,18,5,,Fog,,,,,,,301
-Parata's Peace,,,,,,,,,,,,
-Grip Killifish,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Sludgeskipper,,,,,,,,,,,,
-Boltfish,,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Vampire Lampern,,,,,,,,,,,,
-Bat-o'-Nine-Tails,Silverfish,,,Rain,"Fog, Clouds, Clear Skies, Fair Skies",,,,,,,302
-Upper Soot Creek,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Dark Bass,,,,,,,,,,,,
-Dream Goby,Crayfish Ball,17,3,,,,,,,,,215
-Lower Soot Creek,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Dark Bass,,,,,,,,,,,,
-Aegis Shrimp,,,,,,,,,,,,
-Slime King,Crayfish Ball,19,24,,,,,,,,,221
-The Clutch,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Dark Bass,,,,,,,,,,,,
-Old Softie,Bloodworm,17,21,,N/A,,,,,,,226
-The Unholy Heir,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Mudskipper,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Aegis Shrimp,,,,,,,,,,,,
-Dark Knight,Crow Fly,,,,"Fog, Clouds, Dust Storms",,,,,,,212
-North Drybone,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Mudskipper,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Bone Cleaner,,,,,,,,,,,,
+Cape Westwind,,,,,,,,,,,,30106
+Merlthor Goby,Lugworm,,,,,,Light,,,,,4
+Haraldr Haddock,Heavy Steel Jig,,,,,,,,,,,85
+Whitelip Oyster,Herring Ball,,,,,,Light,,,,,88
+Silver Shark,Merlthor Goby,,,,,,Medium,Powerful,,,,111
+Wahoo,Merlthor Goby,,,,,,Medium,Powerful,,,,116
+Blacklip Oyster,Krill Cage Feeder,,,,,,Light,,,,,120
+Plaice,Yumizuno,,,,,,Medium,Powerful,,,,138
+Sea Devil,Yumizuno,,,,,,Medium,Powerful,,,,143
+Titanic Sawfish,Wahoo,9,15,,"Clear Skies, Fair Skies",,,Powerful,,,,180
+Pirate's Bane,Wahoo,,,,,"Wahoo, 6",,Powerful,,,,300
+Moondrip,,,,,,,,,,,,30108
+Blindfish,Syrphid Basket,,,,,,Light,,,,,25
+Grip Killifish,Chocobo Fly,,,,,,Light,,,,,78
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Assassin Betta,Silverfish,,,,,,,,,,,130
+Garpike,Silverfish,,,,Fog,,,Powerful,,,,136
+Ndendecki,Assassin Betta,18,5,,Fog,,,Powerful,,,,301
+Parata's Peace,,,,,,,,,,,,30107
+Grip Killifish,Chocobo Fly,,,,,,Light,,,,,78
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Sludgeskipper,Stem Borer,,,,,,Light,Precision,,,,131
+Boltfish,Silverfish,,,,,,,Powerful,,,,135
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Vampire Lampern,Silverfish,,,,,,Medium,Powerful,,,,150
+Bat-o'-Nine-Tails,Silverfish,,,Rain,"Clear Skies, Clouds, Fog, Fair Skies",,,Powerful,,,,302
+Upper Soot Creek,,,,,,,,,,,,30201
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Dream Goby,Crayfish Ball,17,3,,,,,Precision,,,,215
+Lower Soot Creek,,,,,,,,,,,,30202
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Aegis Shrimp,Bass Ball,,,,,,,,,,,59
+Slime King,Crayfish Ball,19,24,,,,,Precision,,,,221
+The Clutch,,,,,,,,,,,,30204
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Old Softie,Bloodworm,17,21,,,,,,,,,226
+The Unholy Heir,,,,,,,,,,,,30203
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Aegis Shrimp,Bass Ball,,,,,,,,,,,59
+Dark Knight,Crow Fly,,,,"Clouds, Dust Storms, Fog",,,Powerful,,,,212
+North Drybone,,,,,,,,,,,,30301
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Bone Cleaner,Syrphid Basket,,,,,,,,,,,79
 Marrow Sucker,Syrphid Basket,20,3,,"Rain, Showers",,,,,,,227
-South Drybone,,,,,,,,,,,,
-Dusk Goby,,,,,,,,,,,,
-Mudskipper,,,,,,,,,,,,
-Faerie Bass,,,,,,,,,,,,
-Acorn Snail,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Bone Cleaner,,,,,,,,,,,,
-Mud Pilgrim,Midge Basket,17,7,,"Rain, Showers",,,,,,,225
-Yugr'am River,,,,,,,,,,,,
-Warmwater Trout,,,,,,,,,,,,
-Black Eel,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Trader Eel,,,,,,,,,,,,
-The Warden's Wand,Honey Worm,17,20,,Clear Skies,,,,,,,254
-The Burning Wall,,,,,,,,,,,,
-Yugr'am Salmon,,,,,,,,,,,,
-Bonytongue,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Loyal Pleco,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
-Southern Pike,,,,,,,,,,,,
-Gigantpole,,,,,,,,,,,,
-Sundisc,Caddisfly Larva,10,15,,"Clear Skies, Fair Skies",,,,,,,158
-The Thousand-year Itch,Stem Borer,,,,Fog,,,,,,,278
-Burnt Lizard Creek,,,,,,,,,,,,
-Copperfish,Butterworm,,,,,,,,,,,
-Warmwater Trout,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Plaguefish,,,,,,,,,,,,
-Old Hollow Eyes,Copperfish,,,,Fog,,,,,,,247
-Zahar'ak,,,,,,,,,,,,
-Moat Carp,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Plaguefish,,,,,,,,,,,,
-Clown Loach,,,,,,,,,,,,
-Discus,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Paglth'an Discus,Glowworm,,,,"Heat Waves, Fair Skies, Clear Skies",,,,,,,140
-Discobolus,Glowworm,12,18,,Heat Waves,,,,,,,264
-Forgotten Springs,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Warmwater Trout,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Plaguefish,,,,,,,,,,,,
-Ropefish,,,,,,,,,,,,
-Clown Loach,,,,,,,,,,,,
-Golden Loach,,,,,,,,,,,,
-Iron Noose,Spinner,,,,Fog,,,,,,,265
-Sagolii Desert,,,,,,,,,,,,
-Sandfish,,,,,,,,,,,,
-Sand Bream,,,,,,,,,,,,
-Dustfish,,,,,,,,,,,,
-Storm Rider,Sand Leech,,,,,,,,,,,
-Antlion Slug,,,,,,,,,,,,
-Dune Manta,,,,,,,,,,,,
-Sagolii Monkfish,,,,,,,,,,,,
-Magic Carpet,Storm Rider,9,16,,Heat Waves,,,,,,,267
-Helicoprion,Storm Rider,8,20,"Fog, Clouds",Heat Waves,,,,,,,304
-Sagolii Dunes,,,,,,,,,,,,
-Sand Bream,,,,,,,,,,,,
-Desert Catfish,,,,,,,,,,,,
-Dustfish,,,,,,,,,,,,
-Storm Rider,Sand Leech,,,,,,,,,,,
-Antlion Slug,,,,,,,,,,,,
-Dune Manta,,,,,,,,,,,,
-Caravan Eel,,,,,,,,,,,,
-Olgoi-Khorkhoi,Storm Rider,,,,Heat Waves,,,,,,,266
-Bluefog,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Golden Loach,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
-Common Sculpin,Spinnerbait,,,,,,,,,,,
-Garpike,,,,,,,,,,,,
-Alligator Garfish,,,,,,,,,,,,
-Hannibal,Common Sculpin,22,4,,Fog,,,,,,,279
-Ceruleum Field,,,,,,,,,,,,
-Grip Killifish,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Sludgeskipper,,,,,,,,,,,,
-Boltfish,,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Goldfish,,,,,,,,,,,,
-Wootz Knifefish,,,,,,,,,,,,
-Wootz Knifefish Zenith,Silverfish,1,4,"Clear Skies, Fair Skies",Fog,,,,,,,303
-The Goblet,,,,,,,,,,,,
-Brass Loach,,,,,,,Medium,,,,,
-Faerie Bass,,,,,,,,,,,,
-Copperfish,,,,,,,,,,,,
-Eunuch Crayfish,,,,,,,,,,,,
-Dark Bass,,,,,,,,,,,,
-Lamprey,,,,,,,,,,,,
-Silverfish,,,,,,,,,,,,
-Goldfish,,,,,,,,,,,,
-Spearnose,Caddisfly Larva,21,24,,"Fog, Clouds",,,,,,,255
-Coerthas River,,,,,,,,,,,,
-Striped Goby,,,,,,,,,,,,
-Maiden Carp,,,,,,,Medium,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Seema,,,,,,,Medium,,,,,
-Giant Bass,,,,,,,,,,,,
-Crimson Trout,,,,,,,,,,,,
-Kissing Trout,,,,,,,,,,,,
-Daniffen's Mark,Wildfowl Fly,,,,Blizzards,,,,,,,268
-Daniffen Pass,,,,,,,,,,,,
-Striped Goby,,,,,,,,,,,,
-Blindfish,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Golden Loach,,,,,,,,,,,,
-Cave Cherax,,,,,,,,,,,,
-Charon's Lantern,Glowworm,0,4,,N/A,,,,,,,269
-The Nail,,,,,,,,,,,,
-Striped Goby,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Crimson Trout,,,,,,,,,,,,
-Bronze Lake Trout,,,,,,,,,,,,
-Northern Pike,,,,,,,,,,,,
-Kissing Trout,,,,,,,,,,,,
-Emperor Fish,,,,,,,,,,,,
-Starbright,Abalathian Smelt,21,4,,"Clear Skies, Fair Skies",,,,,,,281
-Dragonhead Latrines,,,,,,,,,,,,
-Striped Goby,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Seema,,,,,,,,,,,,
-Crimson Trout,,,,,,,,,,,,
-Kissing Trout,,,,,,,,,,,,
-Dawn Maiden,Wildfowl Fly,5,7,,"Clear Skies, Fair Skies",,,,,,,280
-Exploratory Ice Hole,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Northern Pike,,,,,,,,,,,,
-Kissing Trout,,,,,,,,,,,,
-The Matriarch,Abalathian Smelt,,,,,,,,,,,282
-The Weeping Saint,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Crimson Trout,,,,,,,,,,,,
-Common Sculpin,,,,,,,,,,,,
-Northern Pike,,,,,,,,,,,,
-Angry Pike,,,,,,,,,,,,
-Darkstar,Abalathian Smelt,19,4,,"Blizzards, Snow","Lamp Marimo, 5",,,,,,305
-Snowcloak,,,,,,,,,,,,
-Rainbow Trout,,,,,,,Medium,,,,,
-Seema,,,,,,,,,,,,
-Crimson Trout,,,,,,,,,,,,
-Wandering Sculpin,,,,,,,,,,,,
+South Drybone,,,,,,,,,,,,30302
+Dusk Goby,Crayfish Ball,,,,,,Light,,,,,13
+Mudskipper,Midge Basket,,,,,,,,,,,27
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Acorn Snail,Midge Basket,,,,,,Light,,,,,34
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Bone Cleaner,Syrphid Basket,,,,,,,,,,,79
+Mud Pilgrim,Midge Basket,17,7,,"Rain, Showers",,,Powerful,,,,225
+Yugr'am River,,,,,,,,,,,,30303
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Black Eel,Butterworm,17,10,,,,Medium,Powerful,,,,55
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Trader Eel,Honey Worm,,,,,,,Powerful,,,,103
+The Warden's Wand,Honey Worm,17,20,,Clear Skies,,,Powerful,,,,254
+The Burning Wall,,,,,,,,,,,,30304
+Yugr'am Salmon,Bass Ball,,,,,,,,,,,71
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Loyal Pleco,Stem Borer,,,,,,Medium,Powerful,,,,112
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
+Southern Pike,Topwater Frog,,,,,,,Powerful,,,,121
+Gigantpole,Topwater Frog,,,,,,,,,,,186
+Sundisc,Caddisfly Larva,10,15,,"Clear Skies, Fair Skies",,,Powerful,,,,158
+The Thousand-year Itch,Stem Borer,,,,Fog,,,Powerful,,,,278
+Burnt Lizard Creek,,,,,,,,,,,,30401
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Plaguefish,Chocobo Fly,,,,,,,Precision,,,,69
+Old Hollow Eyes,Copperfish,,,,Fog,,,Powerful,,,,247
+Zahar'ak,,,,,,,,,,,,30402
+Moat Carp,Crow Fly,,,,,,Light,,,,,39
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Plaguefish,Bass Ball,,,,,,,Precision,,,,69
+Clown Loach,Honey Worm,,,,,,Light,,,,,91
+Discus,Honey Worm,,,,,,Medium,Powerful,,,,105
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Paglth'an Discus,Glowworm,,,,"Clear Skies, Fair Skies, Heat Waves",,,,,,,140
+Discobolus,Glowworm,12,18,,Heat Waves,,,Powerful,,,,264
+Forgotten Springs,,,,,,,,,,,,30403
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Warmwater Trout,Crow Fly,,,,,,Medium,Powerful,,,,51
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Plaguefish,Chocobo Fly,,,,,,,Precision,,,,69
+Ropefish,Silver Spoon Lure,,,,,,,Powerful,,,,76
+Clown Loach,Honey Worm,,,,,,Light,,,,,91
+Golden Loach,Honey Worm,,,,,,,Precision,,,,101
+Iron Noose,Spinner,,,,Fog,,,Powerful,,,,265
+Sagolii Desert,,,,,,,,,,,,30404
+Sandfish,Freshwater Boilie,,,,,,,,,,,89
+Sand Bream,Rolling Stone,,,,,,,,,,,92
+Dustfish,Rolling Stone,,,,,,,,,,,100
+Storm Rider,Sand Leech,,,,,,,,,,,102
+Antlion Slug,Sand Gecko,,,,,,,,,,,106
+Dune Manta,Storm Rider,,,,,,,,,,,110
+Sagolii Monkfish,Sandfish,,,,,,,Powerful,,,,147
+Magic Carpet,Storm Rider,9,16,,Heat Waves,,,Powerful,,,,267
+Helicoprion,Storm Rider,8,20,"Fog, Clouds",Heat Waves,,,Powerful,,,,304
+Sagolii Dunes,,,,,,,,,,,,30405
+Sand Bream,Sand Leech,,,,,,,,,,,92
+Desert Catfish,Sand Leech,,,,,,,Powerful,,,,96
+Dustfish,Sand Leech,,,,,,,,,,,100
+Storm Rider,Sand Leech,,,,,,,,,,,102
+Antlion Slug,Sand Gecko,,,,,,,,,,,106
+Dune Manta,Storm Rider,,,,,,,,,,,110
+Caravan Eel,Storm Rider,,,,,,,Powerful,,,,164
+Olgoi-Khorkhoi,Storm Rider,,,,Heat Waves,,,Powerful,,,,266
+Bluefog,,,,,,,,,,,,30502
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,,,,,95
+Golden Loach,Honey Worm,,,,,,,Precision,,,,101
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
+Common Sculpin,Spinnerbait,,,,,,Light,,,,,119
+Garpike,Silverfish,,,,,,,Powerful,,,,136
+Alligator Garfish,Common Sculpin,,,,,,,Powerful,,,,161
+Hannibal,Common Sculpin,22,4,,Fog,,,Powerful,,,,279
+Ceruleum Field,,,,,,,,,,,,30501
+Grip Killifish,Chocobo Fly,,,,,,Light,,,,,78
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Sludgeskipper,Stem Borer,,,,,,Light,Precision,,,,131
+Boltfish,Silverfish,,,,,,,Powerful,,,,135
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Wootz Knifefish,Goldfish,,,,,,,Powerful,,,,162
+Wootz Knifefish Zenith,Silverfish,1,4,"Clear Skies, Fair Skies",Fog,,,Powerful,,,,303
+The Goblet,,,,,,,,,,,,30601
+Brass Loach,Wildfowl Fly,,,,,,Medium,Powerful,,,,21
+Faerie Bass,Midge Basket,,,,,,Medium,Powerful,,,,33
+Copperfish,Butterworm,,,,,,Light,,,,,41
+Eunuch Crayfish,Copperfish,,,,,,Light,,,,,47
+Dark Bass,Crow Fly,,,,,,Medium,,,,,56
+Lamprey,Copperfish,,,,,,Light,,,,,68
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Spearnose,Caddisfly Larva,21,24,,"Clouds, Fog",,,,,,,255
+Coerthas River,,,,,,,,,,,,40101
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Maiden Carp,Wildfowl Fly,,,,,,Medium,Powerful,,,,23
+Rainbow Trout,Midge Basket,,,,,,Medium,Powerful,,,,28
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Crimson Trout,Spinner,,,,,,,,,,,104
+Kissing Trout,Striped Goby,,,,,,,,,,,144
+Daniffen's Mark,Wildfowl Fly,,,,Blizzards,,,Powerful,,,,268
+Daniffen Pass,,,,,,,,,,,,40106
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Blindfish,Syrphid Basket,,,,,,Light,,,,,25
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Abalathian Smelt,Brute Leech,,,,,,,,,,,24
+Golden Loach,Topwater Frog,,,,,,,Precision,,,,101
+Cave Cherax,Striped Goby,,,,,,,Powerful,,,,153
+Charon's Lantern,Glowworm,0,4,,,,,Precision,,,,269
+The Nail,,,,,,,,,,,,40103
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,24
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Crimson Trout,Wildfowl Fly,,,,,,,,,,,104
+Bronze Lake Trout,Spinnerbait,,,,,,Medium,Powerful,,,,108
+Northern Pike,Topwater Frog,,,,,,,Precision,,,,122
+Kissing Trout,Striped Goby,,,,,,,,,,,144
+Emperor Fish,Abalathian Smelt,,,,,,,Powerful,,,,176
+Starbright,Abalathian Smelt,21,4,,"Clear Skies, Fair Skies",,,Powerful,,,,281
+Dragonhead Latrines,,,,,,,,,,,,40105
+Striped Goby,Moth Pupa,,,,,,Light,,,,,6
+Rainbow Trout,Crow Fly,,,,,,Medium,Powerful,,,,28
+Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,24
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+Crimson Trout,Spinner,,,,,,,,,,,104
+Kissing Trout,Striped Goby,,,,,,,,,,,144
+Dawn Maiden,Wildfowl Fly,5,7,,"Clear Skies, Fair Skies",,,Powerful,,,,280
+Exploratory Ice Hole,,,,,,,,,,,,40107
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Abalathian Smelt,Brute Leech,,,,,,,,,,,24
+Northern Pike,Topwater Frog,,,,,,,Precision,,,,122
+Kissing Trout,Abalathian Smelt,,,,,,,,,,,144
+The Matriarch,Abalathian Smelt,,,,,,,Precision,,,,282
+The Weeping Saint,,,,,,,,,,,,40104
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Abalathian Smelt,Brute Leech,,,,,,,,,,,24
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Crimson Trout,Wildfowl Fly,,,,,,,,,,,104
+Common Sculpin,Spinnerbait,,,,,,Light,,,,,119
+Northern Pike,Topwater Frog,,,,,,,Precision,,,,122
+Angry Pike,Abalathian Smelt,,,,,,,Powerful,,,,145
+Darkstar,Abalathian Smelt,19,4,,"Blizzards, Snow","Lamp Marimo, 5",,Powerful,,,,305
+Snowcloak,,,,,,,,,,,,40108
+Rainbow Trout,Crow Fly,,,,,,Medium,Powerful,,,,28
+Seema,Wildfowl Fly,,,,,,Medium,Powerful,,,,87
+Crimson Trout,Spinner,,,,,,,,,,,104
+Wandering Sculpin,Caddisfly Larva,,,,,,,,,,,151
 Blue Corpse,Caddisfly Larva,,,"Blizzards, Snow","Clear Skies, Fair Skies",,,,,,,306
-Sea of Clouds,,,,,,,,,,,,
-Cloud Jellyfish,,,,,,,,,,,,
-Skyfish,,,,,,,,,,,,
-Cloud Cutter,Hoverworm,,,,,,,,,,,
-Blind Manta,,,,,,,,,,,,
-Rift Sailor,,,,,,,,,,,,
-Anomalocaris,Cloud Cutter,10,15,,"Clear Skies, Fair Skies",,,,,,,285
-Witchdrop,,,,,,,,,,,,
-Cloud Jellyfish,,,,,,,,,,,,
-Skyfish,,,,,,,,,,,,
-Cloud Cutter,Hoverworm,,,,,,,,,,,
-Blind Manta,,,,,,,,,,,,
-Rift Sailor,,,,,,,,,,,,
-Saucerfish,,,,,,,,,,,,
-Rhamphorhynchus,,,,,,,,,,,,
+Sea of Clouds,,,,,,,,,,,,40109
+Cloud Jellyfish,Hoverworm,,,,,,Small,,,,,126
+Skyfish,Hoverworm,,,,,,,,,,,132
+Cloud Cutter,Hoverworm,,,,,,,,,,,134
+Blind Manta,Cloud Cutter,,,,,,,,,,,137
+Rift Sailor,Hoverworm,,,,,,,,,,,142
+Anomalocaris,Cloud Cutter,10,15,,"Clear Skies, Fair Skies",,,Powerful,,,,285
+Witchdrop,,,,,,,,,,,,40102
+Cloud Jellyfish,Balloon Bug,,,,,,,,,,,126
+Skyfish,Balloon Bug,,,,,,,,,,,132
+Cloud Cutter,Hoverworm,,,,,,,,,,,134
+Blind Manta,Cloud Cutter,,,,,,,,,,,137
+Rift Sailor,Balloon Bug,,,,,,,,,,,142
+Saucerfish,Cloud Cutter,,,,,,,,,,,148
+Rhamphorhynchus,Saucerfish,,,,,,,Powerful,,,,168
 Mahar,Cloud Cutter,,,"Clear Skies, Fair Skies",Blizzards,,,,,,,307
-Shonisaurus,Mahar,,,N/A,N/A,,,,,,,308
-Riversmeet,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Coerthan Crab,,,,,,,,,,,,
-Coerthan Puffer,Purse Web Spider,,,,"Snow, Blizzards",,,,,,,362
+Shonisaurus,Mahar,,,,Blizzards,,,Powerful,,,,308
+Riversmeet,,,,,,,,,,,,40201
+Abalathian Smelt,Syrphid Basket,,,,,,,,,,,24
+Coerthan Crab,Stonefly Nymph,,,,,,,,,,,318
+Coerthan Puffer,Purse Web Spider,,,,"Blizzards, Snow",,,,,,,362
 Fat Purse,Brute Leech,,,,,,,,,,,462
-Greytail Falls,,,,,,,,,,,,
-Cloud Coral,,,,,,,,,,,,
-Skyworm,Giant Crane Fly,,,,,,,,,,,
+Greytail Falls,,,,,,,,,,,,40202
+Cloud Coral,Balloon Bug,,,,,,,,,,,315
+Skyworm,Giant Crane Fly,,,,,,,,,,,317
 Glacier Core,Red Balloon,,,,"Blizzards, Snow",,,,,,,324
-Warballoon,Skyworm,,,,"Fair Skies, Clear Skies",,,,,,1,399
-Rime Eater,Glacier Core,,,,"Snow, Blizzards",,,,,,,366
-Hailfinder,Glacier Core,,,,Blizzards,,,,,,,478
-Unfrozen Pond,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Icepick,Goblin Jig,,,,,,,,,,,314
-Ice Faerie,Purse Web Spider,,,,,,,,,,,316
-Sorcerer Fish,Stonefly Nymph,8,20,,,,,,,,,326
-Albino Octopus,Brute Leech,8,17,,,,,,,,,396
-Coerthan Clione,Brute Leech,0,2,,Blizzards,,,,,,,439
-Flarefish,Ice Faerie,10,16,,Blizzards,,,,,,,479
-Clearpool,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
-Ice Faerie,Purse Web Spider,,,,,,,,,,,316
-Coerthan Crab,,,,,,,,,,,,
-Hotrod,Brute Leech,,,,"Snow, Blizzards",,,,,,,327
-Capelin,Brute Leech,0,6,,,,,,,,,437
-Priestfish,,,,,,,,,,,,
-Ghost Faerie,,,,,,,,,,,,
-Bishopfish,Brute Leech,10,14,"Snow, Blizzards, Fog",Clear Skies,,,,,,1,489
-Charibenet,Ice Faerie,0,3,,Blizzards,"Ice Faerie, 5",,,,,,504
-Dragonspit,,,,,,,,,,,,
-Ogre Horn Snail,,,,,,,,,,,,
-Cherry Trout,,,,,,,,,,,,
-Hospitalier Fish,,,,,,,,,,,,
-Spring Urchin,Brute Leech,,,,,,,,,1,,
-The Impaler,Brute Leech,,,,,,,Precision,,1,,463
-South Banepool,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
+Warballoon,Skyworm,,,,"Clear Skies, Fair Skies",,,Precision,,,1,399
+Rime Eater,Glacier Core,,,,"Blizzards, Snow",,,Precision,,,,366
+Hailfinder,Glacier Core,,,"Snow, Blizzards",Blizzards,,,,,,,478
+Unfrozen Pond,,,,,,,,,,,,40203
+Abalathian Smelt,Syrphid Basket,,,,,,,,,,,24
 Icepick,Goblin Jig,,,,,,,Precision,,,,314
 Ice Faerie,Purse Web Spider,,,,,,,,,,,316
-Lake Urchin,,,,,,,,,,,,
-Ammonite,,,,,,,,,,,,
-Seema Patrician,Stonefly Nymph,,,,,,,,,,,
-Fanged Clam,Ice Faerie,,,,,,,,,,,
-Mountain Kraken,Brute Leech,,,,N/A,,,,,,1,459
-Magic Bucket,Brute Leech,,,,,,,,,1,,461
-Captain Nemo,Brute Leech,,,,Blizzards,,,,,,,490
-Ashpool,,,,,,,,,,,,
-Abalathian Smelt,Stonefly Nymph,,,,,,,,,,,
+Sorcerer Fish,Abalathian Smelt,8,20,,,,,,,,,326
+Albino Octopus,Brute Leech,8,17,,,,,,,,,396
+Coerthan Clione,Brute Leech,0,2,,Blizzards,,,Precision,,,,439
+Flarefish,Ice Faerie,10,16,,Blizzards,,,Powerful,,,,479
+Clearpool,,,,,,,,,,,,40204
+Abalathian Smelt,Syrphid Basket,,,,,,,,,,,24
 Ice Faerie,Purse Web Spider,,,,,,,,,,,316
-Fanged Clam,Goblin Jig,,,,,,,,,,,
-Lake Urchin,Stonefly Nymph,,,,,,,,,1,,
-Gigant Grouper,Abalathian Smelt,,,,,,,,,,,
-Battle Galley,Ice Faerie,,,,,,,,,,,
-Northern Oyster,Stonefly Nymph,,,,,,,,,,,
-La Reale,Brute Leech,,,,,,,,,,,464
-West Banepool,,,,,,,,,,,,
-Fanged Clam,,,,,,,,,,,,
-Lake Urchin,,,,,,,,,,,,
+Coerthan Crab,Stonefly Nymph,,,,,,,,,,,318
+Hotrod,Brute Leech,,,,"Blizzards, Snow",,,,,,,327
+Priestfish,Brute Leech,,,,,,,Powerful,,,1,456
+Ghost Faerie,Stonefly Nymph,,,,,,,Precision,,,,507
+Bishopfish,Brute Leech,10,14,,Clear Skies,,,Powerful,,,1,489
+Charibenet,Ice Faerie,0,3,,Blizzards,"Ice Faerie, 5",,Precision,,,,504
+Dragonspit,,,,,,,,,,,,40205
+Ogre Horn Snail,Stonefly Nymph,,,,,,,,,,,325
+Cherry Trout,Bladed Steel Jig,,,,,,,Powerful,,,,424
+Hospitalier Fish,Purse Web Spider,,,,,,,,,,,409
+Spring Urchin,Brute Leech,,,,,,,Precision,,1,,423
+The Impaler,Brute Leech,,,,,,,Precision,,1,,463
+Dragonspine,Signature Skyball,,,,,,,Precision,,,,3300
+South Banepool,,,,,,,,,,,,40206
+Abalathian Smelt,Syrphid Basket,,,,,,,,,,,24
+Icepick,Goblin Jig,,,,,,,Precision,,,,314
 Ice Faerie,Purse Web Spider,,,,,,,,,,,316
-Mercy Staff,Brute Leech,,,,"Snow, Blizzards",,,,,,,365
-Snowcaller,Brute Leech,,,,"Snow, Blizzards",,,,,,,363
+Lake Urchin,Stonefly Nymph,,,,,,,,,1,,320
+Ammonite,Goblin Jig,,,,,,,,,,,338
+Seema Patrician,Stonefly Nymph,,,,,,,,,,,337
+Fanged Clam,Ice Faerie,,,,,,,,,,,319
+Mountain Kraken,Brute Leech,,,,,,,,,,1,459
+Magic Bucket,Brute Leech,,,,,,,Powerful,,1,,461
+Captain Nemo,Brute Leech,,,Snow,Blizzards,,,,,,,490
+Ashpool,,,,,,,,,,,,40207
+Abalathian Smelt,Syrphid Basket,,,,,,,,,,,24
+Ice Faerie,Purse Web Spider,,,,,,,,,,,316
+Fanged Clam,Goblin Jig,,,,,,,,,,,319
+Lake Urchin,Stonefly Nymph,,,,,,,,,1,,320
+Gigant Grouper,Abalathian Smelt,,,,,,,Powerful,,,,348
+Battle Galley,Ice Faerie,,,,,,,Powerful,,,,417
+Northern Oyster,Stonefly Nymph,,,,,,,,,,,835
+La Reale,Brute Leech,,,,,,,Powerful,,,,464
+West Banepool,,,,,,,,,,,,40208
+Fanged Clam,Goblin Jig,,,,,,,,,,,319
+Lake Urchin,Goblin Jig,,,,,,,,,1,,320
+Ice Faerie,Purse Web Spider,,,,,,,,,,,316
+Mercy Staff,Brute Leech,,,,"Blizzards, Snow",,,,,,,365
+Snowcaller,Brute Leech,,,,"Blizzards, Snow",,,,,,,363
 Coerthan Oyster,Brute Leech,,,,,,,,,1,,457
 Merciless,Ice Faerie,,,"Snow, Blizzards",Blizzards,,,,,,1,488
-North Silvertear,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Silverfish,,,,,,,,,,,,
-Ignus Snail,Glowworm,,,,,,,,,,,
-Sludgeskipper,Glowworm,,,,,,,,,,,
-Assassin Betta,Glowworm,,,,,,,,,,,
-Ilsabardian Bass,Glowworm,,,,,,,,,,,
-Goldfish,,,,,,,,,,,,
-Heliobatis,Caddisfly Larva,17,9,,,,,,,,,178
-Aetherlouse,Glowworm,3,13,,Gloom,,,,,,,287
-The Deep Tangle,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,,,,,,,Light,,,,,
-Dark Bass,,,,,,,,,,,,
-Mitten Crab,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
+North Silvertear,,,,,,,,,,,,50101
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Sludgeskipper,Stem Borer,,,,,,Light,Precision,,,,131
+Assassin Betta,Silverfish,,,,,,,,,,,130
+Ilsabardian Bass,Glowworm,,,,,,,,,,,139
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Heliobatis,Caddisfly Larva,17,9,,,,,Powerful,,,,178
+Aetherlouse,Glowworm,3,13,,Gloom,,,Powerful,,,,287
+The Deep Tangle,,,,,,,,,,,,50104
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Dark Bass,Crow Fly,,,,,,Medium,Powerful,,,,56
+Mitten Crab,Honey Worm,,,,,,Light,,,,,84
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
 Boxing Pleco,Glowworm,,,,,,,,,,,141
-Monke Onke,,,,,,,,,,,,
+Monke Onke,Ala Mhigan Fighting Fish,,,,,,Light,,,,,86
 Ignus Horn,Glowworm,,,Gloom,"Clear Skies, Fair Skies",,,,,,,294
-Singing Shards,,,,,,,,,,,,
-Mudcrab,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Bonytongue,,,,,,,,,,,,
-Silverfish,Honey Worm,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
-Garpike,,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Blood Red Bonytongue,Silverfish,4,12,"Clear Skies, Fair Skies",Fog,,,,,,,312
-Rathefrost,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Silverfish,,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Knifefish,,,,,,,,,,,,
-Assassin Betta,,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Goldfish,,,,,,,,,,,,
-Poxpike,,,,,,,,,,,,
-Void Bass,Glowworm,,,"Clear Skies, Fair Skies",Gloom,,,,,,,295
-The Tangle,,,,,,,,,,,,
-Bone Crayfish,,,,,,,,,,,,
-Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,
-Silverfish,,,,,,,,,,,,
-Sludgeskipper,,,,,,,,,,,,
-Assassin Betta,Ala Mhigan Fighting Fish,,,,,,,,,,,
-Boltfish,,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Cadaver Carp,Rainbow Spoon Lure,,,,Gloom,,,,,,,167
-Ninja Betta,Assassin Betta,18,9,,Gloom,,,,,,,297
-The North Shards,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
-Silverfish,Honey Worm,,,,,,,,,,,
-Giant Bass,,,,,,,,,,,,
-Ignus Snail,,,,,,,,,,,,
-Assassin Betta,Silverfish,,,,,,,,,,,
-Ilsabardian Bass,,,,,,,,,,,,
-Goldfish,Silverfish,,,,,,,,,,,
-Morinabaligi,,,,,,,,,,,,
-Canavan,Goldfish,8,18,,Gloom,,,,,,,298
-Kuno the Killer,Assassin Betta,N/A,N/A,,N/A,"Canavan, 1",,,,,,299
-Voor Sian Siran,,,,,,,,,,,,
+Singing Shards,,,,,,,,,,,,50105
+Mudcrab,Honey Worm,,,,,,Light,,,,,44
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Bonytongue,Streamer,,,,,,Medium,Powerful,,,,82
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
+Garpike,Silverfish,,,,,,,Powerful,,,,136
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Blood Red Bonytongue,Silverfish,4,12,"Clear Skies, Fair Skies",Fog,,,Powerful,,,,312
+Rathefrost,,,,,,,,,,,,50102
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Knifefish,Glowworm,,,,,,Medium,Powerful,,,,115
+Assassin Betta,Silverfish,,,,,,,,,,,130
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Poxpike,Goldfish,,,,,,,,,,,175
+Void Bass,Glowworm,,,"Clear Skies, Fair Skies",Gloom,,,Powerful,,,,295
+The Tangle,,,,,,,,,,,,50103
+Bone Crayfish,Moth Pupa,,,,,,Light,,,,,9
+Ala Mhigan Fighting Fish,Midge Basket,,,,,,Light,,,,,31
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Sludgeskipper,Stem Borer,,,,,,Light,Precision,,,,131
+Assassin Betta,Ala Mhigan Fighting Fish,,,,,,,,,,,130
+Boltfish,Silverfish,,,,,,,Powerful,,,,135
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Cadaver Carp,Rainbow Spoon Lure,,,,Gloom,,,Powerful,,,,167
+Ninja Betta,Assassin Betta,18,9,,Gloom,,,Powerful,,,,297
+The North Shards,,,,,,,,,,,,50106
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
+Silverfish,Honey Worm,,,,,,Light,,,,,90
+Giant Bass,Honey Worm,,,,,,Medium,Powerful,,,,95
+Ignus Snail,Stem Borer,,,,,,Light,,,,,109
+Assassin Betta,Silverfish,,,,,,,,,,,130
+Ilsabardian Bass,Topwater Frog,,,,,,,,,,,139
+Goldfish,Silverfish,,,,,,Light,,,,,146
+Morinabaligi,Goldfish,,,,,,,Powerful,,,,183
+Canavan,Goldfish,8,18,,Gloom,,,Powerful,,,,298
+Kuno the Killer,Assassin Betta,,,,,"Canavan, 1",,Powerful,,,,299
+Voor Sian Siran,,,,,,,,,,,,60101
 Hedgemole Cricket,Stonefly Nymph,,,,,,,,,,,357
-Cloudfish,,,,,,,,,,,,
-Bullfrog,Bladed Steel Jig,,,,,,,,,,,
-Maiboi,,,,,,,,,,,,
-Bubble Eye,Stonefly Nymph,10,18,,,,,,,,,339
-Caiman,Bullfrog,18,21,,,,,,,,,402
-Inkfish,Brute Leech,14,16,,,,,,,,1,471
-The Eddies,,,,,,,,,,,,
+Cloudfish,Stonefly Nymph,,,,,,,,,,,331
+Bullfrog,Bladed Steel Jig,,,,,,,,,,,330
+Maiboi,Stonefly Nymph,,,,,,,,,,,328
+Bubble Eye,Brute Leech,10,18,,,,,,,,,339
+Caiman,Bullfrog,18,21,,,,,Powerful,,,,402
+Inkfish,Brute Leech,14,16,,,,,Powerful,,,1,471
+The Eddies,,,,,,,,,,,,60102
 Hedgemole Cricket,Stonefly Nymph,,,,,,,,,,,357
-Cloudfish,,,,,,,,,,,,
-Bullfrog,Bladed Steel Jig,,,,,,,,,,,
-Yalm Lobster,,,,,,,,,,,,
+Cloudfish,Stonefly Nymph,,,,,,,,,,,331
+Bullfrog,Bladed Steel Jig,,,,,,,,,,,330
+Yalm Lobster,Bladed Steel Jig,,,,,,,,,,,418
 Vanuhead,Bladed Steel Jig,,,,"Clear Skies, Fair Skies",,,,,,,349
-Catkiller,Brute Leech,,,,"Fair Skies, Clear Skies",,,,,,,429
-Red Sky Coral,,,,,,,,,,,,
-Paikiller,Bullfrog,8,12,Fog,Clear Skies,,,,,,,491
-Cloudtop,,,,,,,,,,,,
-Starflower,Red Balloon,,,,"Fair Skies, Clear Skies",,,,,,,323
-Buoyant Oviform,,,,,,,,,,,,
-Mahu Wai,,,,,,,,,,,,
-Mitre Slug,,,,,,,,,,,,
-Blue Cloud Coral,,,,,,,,,,,,
-Fleece Stingray,Giant Crane Fly,,,,"Fair Skies, Clear Skies",,,,,,,453
-Cirrostratus,Giant Crane Fly,10,13,,"Fair Skies, Clear Skies",,,,,,,483
-The Blue Window,,,,,,,,,,,,
-Buoyant Oviform,,,,,,,,,,,,
+Catkiller,Brute Leech,,,,"Clear Skies, Fair Skies",,,,,,,429
+Red Sky Coral,Bladed Steel Jig,,,,,,,,,1,,508
+Paikiller,Bullfrog,8,12,Fog,Clear Skies,,,Powerful,,,,491
+Cloudtop,,,,,,,,,,,,60103
+Starflower,Red Balloon,,,,"Clear Skies, Fair Skies",,,Precision,,,,323
+Buoyant Oviform,Red Balloon,,,,,,,,,,,334
+Mahu Wai,Red Balloon,,,,,,,,,,,332
+Mitre Slug,Red Balloon,,,,,,,,,,,344
+Blue Cloud Coral,Red Balloon,,,,,,,,,1,,336
+Fleece Stingray,Giant Crane Fly,,,,"Clear Skies, Fair Skies",,,,,,,453
+Cirrostratus,Giant Crane Fly,10,13,,"Clear Skies, Fair Skies",,,,,,,483
+The Blue Window,,,,,,,,,,,,60104
+Buoyant Oviform,Red Balloon,,,,,,,,,,,334
 Sky Faerie,Red Balloon,,,,,,,,,,,353
-Whiteloom,,,,,,,,,,,,
-Storm Core,Red Balloon,,,,"Clouds, Fog, Wind",,,,,,,346
-Winged Gurnard,,,,,,,,,,,,
-Sky Sweeper,,,,,,,,,,,,
-Tornado Shark,,,,,,,,,,,,
+Whiteloom,Red Balloon,,,,,,,Precision,,,,335
+Storm Core,Red Balloon,,,,"Clouds, Fog, Wind",,,Precision,,,,346
+Winged Gurnard,Giant Crane Fly,,,,,,,Powerful,,,,422
+Sky Sweeper,Giant Crane Fly,,,,,,,Powerful,,,,385
+Tornado Shark,Giant Crane Fly,,,,,,,Powerful,,,,398
 The Second One,Giant Crane Fly,,,,Wind,,,,,,,472
-Mok Oogl Island,,,,,,,,,,,,
-Starflower,Red Balloon,,,,"Fair Skies, Clear Skies",,,,,,,323
+Cloudweed,Metal Spinner,,,,,,,,,,,3313
+Mok Oogl Island,,,,,,,,,,,,60105
+Starflower,Red Balloon,,,,"Clear Skies, Fair Skies",,,Precision,,,,323
 Sky Faerie,Red Balloon,,,,,,,,,,,353
 Scorpionfly,Giant Crane Fly,,,,,,,,,,,410
-Moogle Spirit,Giant Crane Fly,,,,N/A,,,,,,,414
+Moogle Spirit,Giant Crane Fly,,,,,,,,,,,414
 Vampiric Tapestry,Giant Crane Fly,,,,,,,,,,,434
-Heavens Coral,Giant Crane Fly,0,5,,"Clear Skies, Fair Skies",,,,,1,,441
-Basking Shark,Sky Faerie,,,Fog,Clear Skies,,,,,,,476
+Heavens Coral,Giant Crane Fly,0,5,,"Clear Skies, Fair Skies",,,Precision,,1,,441
+Basking Shark,Sky Faerie,,,Fog,Clear Skies,,,Powerful,,,,476
 Sea Butterfly,Giant Crane Fly,5,7,,Clear Skies,"Scorpionfly, 3, Sky Faerie, 3",,,,,,503
-Alpha Quadrant,,,,,,,,,,,,
-Platinum Fish,Fiend Worm,,,,,,,,,,,
-Bullwhip,,,,,,,,,,,,
+Alpha Quadrant,,,,,,,,,,,,60201
+Platinum Fish,Fiend Worm,,,,,,Light,,,,,376
+Bullwhip,Fiend Worm,,,,,,Medium,,,,,373
 Blood Skipper,Fiend Worm,,,,Thunder,,,,,,,412
-High Allagan Helmet,,,,,,,,,,,,
-Augmented High Allagan Helmet,Platinum Fish,,,,,,,,,,,473
-Aetherochemical Spill,,,,,,,,,,,,
-Platinum Fish,Fiend Worm,,,,,,,,,,,
-Bullwhip,,,,,,,,,,,,
+High Allagan Helmet,Platinum Fish,,,,,,Medium,Powerful,,,,375
+Allagan Hunter,Signature Skyball,,,,,,Medium,,,,,
+Augmented High Allagan Helmet,Platinum Fish,,,,,,Heavy,Powerful,,,,473
+Aetherochemical Spill,,,,,,,,,,,,60202
+Platinum Fish,Fiend Worm,,,,,,,,,,,376
+Bullwhip,Fiend Worm,,,,,,,,,,,373
 Blood Skipper,Fiend Worm,,,,Thunder,,,,,,,412
-Aetherochemical Compound #123,,,,,,,,,,,,
-Proto-hropken,,,,,,,,,,,,
-Aetherochemical Compound #666,Platinum Fish,,,,,,,,,,1,485
-Hyperstellar Downconverter,,,,,,,,,,,,
-Platinum Fish,Fiend Worm,,,,,,,,,,,
-Azysfish,,,,,,,,,,,,
-Oil Eel,Platinum Fish,,,,Thunder,,,,,,,415
-Mucous Minnow,,,,,,,,,,,,
-Oliphant's Trunk,Fiend Worm,18,23,,Thunder,,,,,,,458
+Aetherochemical Compound #123,Platinum Fish,,,,,,,Precision,,,,388
+Proto-hropken,Platinum Fish,,,,,,,,,,,401
+Aetherochemical Compound #666,Platinum Fish,,,,,,,Precision,,,1,485
+Hyperstellar Downconverter,,,,,,,,,,,,60203
+Platinum Fish,Fiend Worm,,,,,,,,,,,376
+Azysfish,Fiend Worm,,,,,,,,,,,378
+Oil Eel,Platinum Fish,,,,Thunder,,,Powerful,,,,415
+Mucous Minnow,Fiend Worm,,,,,,,Powerful,,,,407
+Oliphant's Trunk,Fiend Worm,18,23,,Thunder,,,Precision,,,,458
 Ceti,Fiend Worm,18,22,Clouds,Thunder,,,,,,1,492
-Delta Quadrant,,,,,,,,,,,,
-Fountfish,,,,,,,,,,,,
-Rockclimber,,,,,,,,,,,,
-Aether Eye,Purse Web Spider,,,,,,,,,,,
-Yalm Lobster,,,,,,,,,,,,
-Euphotic Pirarucu,Brute Leech,18,2,,Clouds,,,,,,,403
-Aphotic Pirarucu,Aether Eye,22,2,,Clouds,,,,,,,474
-The Pappus Tree,,,,,,,,,,,,
-Fountfish,,,,,,,,,,,,
-Crystalfin,,,,,,,,,,,,
-Aether Eye,Purse Web Spider,,,,,,,,,,,
-Lungfish,Brute Leech,,,,Clouds,,,,,,,351
-Tiny Axolotl,Brute Leech,21,24,,,,,,,,,374
+Delta Quadrant,,,,,,,,,,,,60204
+Fountfish,Goblin Jig,,,,,,,Powerful,,,,391
+Rockclimber,Bladed Steel Jig,,,,,,,,,,,411
+Aether Eye,Purse Web Spider,,,,,,,Precision,,,,377
+Yalm Lobster,Bladed Steel Jig,,,,,,,,,,,418
+Euphotic Pirarucu,Brute Leech,18,2,,Clouds,,,Powerful,,,,403
+Aphotic Pirarucu,Aether Eye,22,2,,Clouds,,,Powerful,,,,474
+The Pappus Tree,,,,,,,,,,,,60205
+Fountfish,Goblin Jig,,,,,,,Powerful,,,,391
+Crystalfin,Bladed Steel Jig,,,,,,,,,,,379
+Aether Eye,Purse Web Spider,,,,,,,Precision,,,,377
+Lungfish,Brute Leech,,,,Clouds,,,Powerful,,,,351
+Tiny Axolotl,Brute Leech,21,24,,,,,Precision,,,,374
 Hundred-eyed Axolotl,Aether Eye,6,10,,,,,,,,,486
-The Habisphere,,,,,,,,,,,,
+The Habisphere,,,,,,,,,,,,60206
 Sky Faerie,Red Balloon,,,,,,,,,,,353
 Rudderfish,Giant Crane Fly,,,,,,,,,,,405
-Unidentified Flying Biomass,,,,,,,,,,,,
-Bomb Puffer,,,,,,,,,,,,
-Sky Sweeper,,,,,,,,,,,,
-Tupuxuara,Red Balloon,15,18,,,,,,,,,433
+Unidentified Flying Biomass,Red Balloon,,,,,,,,,,,408
+Bomb Puffer,Giant Crane Fly,,,,,,,Powerful,,,,406
+Sky Sweeper,Giant Crane Fly,,,,,,,Powerful,,,,385
+Tupuxuara,Red Balloon,15,18,,,,,Powerful,,,,433
 Stupendemys,Rudderfish,,,,,,,,,,,425
-Cobrafish,,,,,,,,,,,,
-Crystal Pigeon,Rudderfish,,,Fair Skies,Thunder,,,,,,1,493
-The Flagship,,,,,,,,,,,,
-Platinum Fish,Fiend Worm,,,,,,,,,,,
-Azysfish,,,,,,,,,,,,
-Oil Eel,Platinum Fish,,,,Thunder,,,,,,,415
-Jeweled Jellyfish,Platinum Fish,20,3,,N/A,,,,,,,416
-Barreleye,Platinum Fish,,,,Thunder,,,,,,1,427
-Functional Proto-hropken,Platinum Fish,,,,Thunder,,,,,,1,438
-Allagan Bladeshark,Platinum Fish,,,Clouds,Thunder,,,,,,,477
-Opabinia,Platinum Fish,,,Thunder,Thunder,"Functional Proto-hropken, 3",,,,,,501
-The Hundred Throes,,,,,,,,,,,,
-Whilom Catfish,Goblin Jig,,,,,,,,,,,321
-Pipira Pira,Goblin Jig,,,,"Dust Storms, Fog, Clouds",,,,,,,341
-Blueclaw Shrimp,,,,,,,,,,,,
-Grass Carp,Bladed Steel Jig,,,,"Dust Storms, Clouds, Fog",,,,,,,340
-Shadowhisker,,,,,,,,,,,,
+Cobrafish,Giant Crane Fly,,,,,,,Powerful,,,,413
+Crystal Pigeon,Rudderfish,,,Fair Skies,Thunder,,,Powerful,,,1,493
+The Flagship,,,,,,,,,,,,60207
+Platinum Fish,Fiend Worm,,,,,,,,,,,376
+Azysfish,Fiend Worm,,,,,,,,,,,378
+Oil Eel,Platinum Fish,,,,Thunder,,,Powerful,,,,415
+Jeweled Jellyfish,Platinum Fish,20,3,,,,,,,,,416
+Barreleye,Platinum Fish,,,,Thunder,,,Powerful,,,1,427
+Functional Proto-hropken,Fiend Worm,,,,Thunder,,,Powerful,,,1,438
+Allagan Bladeshark,Platinum Fish,,,Clouds,Thunder,,,Powerful,,,,477
+Opabinia,Platinum Fish,,,,Thunder,"Functional Proto-hropken, 3",,Precision,,,,501
+The Hundred Throes,,,,,,,,,,,,70101
+Whilom Catfish,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,321
+Pipira Pira,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,341
+Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,322
+Grass Carp,Bladed Steel Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,340
+Shadowhisker,Brute Leech,,,,,,,,,,,369
 Dravanian Smelt,Brute Leech,,,,,,,,,,,440
-River Shrimp,Brute Leech,,,,,,Light,,,,,
-Scaleripper,Brute Leech,,,,"Dust Storms, Fog, Clouds",,,,,,,465
-Whilom River,,,,,,,,,,,,
-Whilom Catfish,Goblin Jig,,,,,,,,,,,321
+River Shrimp,Brute Leech,,,,,,Light,,,,,510
+Scaleripper,Brute Leech,,,,"Clouds, Dust Storms, Fog",,,Powerful,,,,465
+Whilom River,,,,,,,,,,,,70102
+Whilom Catfish,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,321
 Rock Mussel,Stonefly Nymph,,,,,,,,,1,,333
-Pipira Pira,Goblin Jig,,,,"Dust Storms, Fog, Clouds",,,,,,,341
-Three-lip Carp,,,,,,,,,,,,
-Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,
-Dravanian Bass,Blueclaw Shrimp,0,6,,"Dust Storms, Clouds, Fog",,,,,,,361
+Pipira Pira,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,341
+Three-lip Carp,Bladed Steel Jig,,,,,,,,,,,329
+Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,322
+Dravanian Bass,Blueclaw Shrimp,0,6,,"Clouds, Dust Storms, Fog",,,Powerful,,,,361
 Twin-tongued Carp,Brute Leech,12,16,"Clouds, Dust Storms",Clear Skies,,,,,,,480
-The Smoldering Wastes,,,,,,,,,,,,
-Whilom Catfish,Goblin Jig,,,,,,,,,,,321
-Rock Mussel,Stonefly Nymph,,,,,,,,,1,,333
-Blueclaw Shrimp,,,,,,,,,,,,
-Three-lip Carp,,,,,,,,,,,,
-Warmwater Bichir,Purse Web Spider,21,3,,,,,,,,,367
-Marble Oscar,,,,,,,,,,,,
-The Dreamweaver,Brute Leech,22,2,,"Dust Storms, Fog, Clouds",,,,,,,466
-The Iron Feast,,,,,,,,,,,,
-Pipira Pira,Goblin Jig,,,,"Dust Storms, Fog, Clouds",,,,,,,341
-Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,
-Dragonhead,,,,,,,,,,,,
-Caiman,Blueclaw Shrimp,18,21,,,,,,,,,402
-Thunderbolt Eel,Blueclaw Shrimp,22,4,,,,,,,,,428
-Amber Salamander,Brute Leech,6,12,,,,,,,,,451
-Thunderscale,Blueclaw Shrimp,6,8,"Clouds, Dust Storms",Thunder,,,,,,,494
-Mourn,,,,,,,,,,,,
-Lava Crab,,,,,,,,,,,,
-Granite Crab,Magma Worm,,,,,,,,,,,
-Cindersmith,,,,,,,,,,,,
-Cometoise,,,,,,,,,,,,
-Oven Catfish,,,,,,,,,,,,
-Meteortoise,Granite Crab,,,,N/A,,,,,,,467
-West Mourn,,,,,,,,,,,,
-Granite Crab,,,,,,,,,,,,
-Aithon's Colt,,,,,,,,,,,,
-Magma Tree,,,,,,,,,,,,
-Cindersmith,,,,,,,,,,,,
-Black Magefish,,,,,,,,,,,,
+The Smoldering Wastes,,,,,,,,,,,,70103
+Whilom Catfish,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,321
+Rock Mussel,Goblin Jig,,,,,,,,,1,,333
+Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,322
+Three-lip Carp,Bladed Steel Jig,,,,,,,,,,,329
+Warmwater Bichir,Purse Web Spider,21,3,,,,,Powerful,,,,367
+Marble Oscar,Purse Web Spider,,,,,,,Powerful,,,,350
+The Dreamweaver,Brute Leech,22,2,,"Clouds, Dust Storms, Fog",,,Powerful,,,,466
+The Iron Feast,,,,,,,,,,,,70104
+Pipira Pira,Goblin Jig,,,,"Clouds, Dust Storms, Fog",,,,,,,341
+Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,322
+Dragonhead,Goblin Jig,,,,,,,,,,,364
+Caiman,Blueclaw Shrimp,18,21,,,,,Powerful,,,,402
+Thunderbolt Eel,Blueclaw Shrimp,22,4,,,,,Powerful,,,,428
+Amber Salamander,Brute Leech,6,12,,,,,Powerful,,,,451
+Thunderscale,Blueclaw Shrimp,6,8,"Clouds, Dust Storms, Fog",Thunder,,,Powerful,,,,494
+Mourn,,,,,,,,,,,,70105
+Lava Crab,Magma Worm,,,,,,,,,,,345
+Granite Crab,Magma Worm,,,,,,,Precision,,,,354
+Cindersmith,Magma Worm,,,,,,,Precision,,,,372
+Cometoise,Granite Crab,,,,,,Medium,Powerfull,,,,387
+Oven Catfish,Granite Crab,,,,,,,Powerfull,,,,420
+Meteortoise,Granite Crab,,,,,,,Powerful,,,,467
+West Mourn,,,,,,,,,,,,70106
+Granite Crab,Magma Worm,,,,,,,,,,,354
+Aithon's Colt,Magma Worm,,,,,,,Precision,,,,355
+Magma Tree,Magma Worm,,,,,,,Precision,,1,,359
+Cindersmith,Magma Worm,,,,,,,Precision,,1,,372
+Black Magefish,Granite Crab,,,,,,,Powerful,,,1,426
 Hraesvelgr's Tear,Magma Worm,2,6,,,,,,,,1,484
-Anyx Old,,,,,,,,,,,,
-Lava Crab,,,,,,,,,,,,
-Granite Crab,Magma Worm,,,,,,,,,,,
-Cindersmith,,,,,,,,,,,,
-Aithon's Colt,,,,,,,,,,,,
-Cometoise,,,,,,,,,,,,
-Magma Louse,Granite Crab,18,5,,,,,,,,1,386
-Riddle,Granite Crab,8,16,Clear Skies,Clear Skies,,,,,,1,495
-Halo,,,,,,,,,,,,
-Granite Crab,Magma Worm,,,,,,,,,,,
-Magma Tree,,,,,,,,,,,,
-Cometoise,,,,,,,,,,,,
-Fossiltongue,Granite Crab,,,,,,,,,,1,400
-Lavalord,Granite Crab,10,16,,"Heat Waves, Clear Skies, Fair Skies",,,,,,1,432
-Lava Snail,,,,,,,,,,,,
-The Lord of Lords,Granite Crab,8,16,,"Clear Skies, Fair Skies",,,,,,1,496
-Problematicus,Granite Crab,10,15,,"Clear Skies, Fair Skies","Fossiltongue, 3, Granite Crab, 5",,,,,,500
-Thaliak River,,,,,,,,,,,,
+Anyx Old,,,,,,,,,,,,70107
+Lava Crab,Magma Worm,,,,,,,,,,,345
+Granite Crab,Magma Worm,,,,,,,,,,,354
+Cindersmith,Magma Worm,,,,,,,Precision,,1,,372
+Aithon's Colt,Magma Worm,,,,,,,Precision,,,,355
+Cometoise,Granite Crab,,,,,,,,,,,387
+Magma Louse,Granite Crab,18,5,,,,,Powerful,,,1,386
+Riddle,Granite Crab,8,16,Clear Skies,Clear Skies,,,Powerful,,,1,495
+Hoplite,Metal Spinner,,,,,,,,,,,3311
+Halo,,,,,,,,,,,,70108
+Granite Crab,Magma Worm,,,,,,,,,,,354
+Magma Tree,Magma Worm,,,,,,,Precision,,1,,359
+Cometoise,Granite Crab,,,,,,,,,,,387
+Fossiltongue,Magma Worm,,,,,,,Powerful,,,1,400
+Lavalord,Granite Crab,9,16,,"Clear Skies, Fair Skies",,,Powerful,,,1,432
+Lava Snail,Magma Worm,,,,"Clear Skies, Fair Skies",,,,,1,,455
+The Lord of Lords,Granite Crab,8,16,"Clouds, Dust Storms, Fog","Clear Skies, Fair Skies",,,Powerful,,,1,496
+Problematicus,Granite Crab,10,15,,"Clear Skies, Fair Skies","Fossiltongue, 3, Granite Crab, 5",,Powerful,,,,500
+Thaliak River,,,,,,,,,,,,70201
 Hedgemole Cricket,Stonefly Nymph,,,,,,,,,,,357
-Sweetfish,Goblin Jig,,,,,,,,,,,
-Philosopher's Stone,,,,,,,,,,,,
-Shipworm,,,,,,,,,,,,
-Autumn Leaf,,,,,,,,,,,,
+Sweetfish,Goblin Jig,,,,,,,Powerful,,,,380
+Philosopher's Stone,Bladed Steel Jig,,,,,,,,,,,390
+Shipworm,Goblin Jig,,,,,,,,,,,356
+Autumn Leaf,Purse Web Spider,,,,,,,Precision,,,,383
 Illuminati Perch,Hedgemole Cricket,,,,,,,,,,,404
-Hinterlands Perch,,,,,,,,,,,,
-The Ewer King,Sweetfish,,,,,,,,,,,468
-Quickspill Delta,,,,,,,,,,,,
-Blueclaw Shrimp,,,,,,,,,,,,
-Bullfrog,,,,,,,,,,,,
+Hinterlands Perch,Bladed Steel Jig,,,,,,,Powerful,,,,419
+The Ewer King,Sweetfish,,,,,,,Powerful,,,,468
+Thinker's Coral,Signature Skyball,,,,,,,Precision,,,,3299
+Quickspill Delta,,,,,,,,,,,,70202
+Blueclaw Shrimp,Stonefly Nymph,,,,,,,,,,,322
+Bullfrog,Bladed Steel Jig,,,,,,,,,,,330
 Hedgemole Cricket,Purse Web Spider,,,,,,,,,,,357
-Yalm Lobster,,,,,,,,,,,,
-Orn Butterfly,,,,,,,,,,,,
-Tigerfish,,,,,,,,,,,,
-Gnomefish,Brute Leech,,,,N/A,,,,,,,452
-Madam Butterfly,Hedgemole Cricket,21,2,,Clear Skies,,,,,,,481
-Upper Thaliak River,,,,,,,,,,,,
+Yalm Lobster,Bladed Steel Jig,,,,,,,,,,,418
+Orn Butterfly,Brute Leech,,,,,,,Powerful,,,,381
+Tigerfish,Brute Leech,,,,,,,Powerful,,,,352
+Gnomefish,Purse Web Spider,,,,,,,Precision,,,,452
+Madam Butterfly,Hedgemole Cricket,21,2,,Clear Skies,,,Powerful,,,,481
+Upper Thaliak River,,,,,,,,,,,,70203
+Hedgemole Cricket,Purse Web Spider,,,,,,,,,,,357
+Scholar Sculpin,Purse Web Spider,,,,,,,,,,,347
+Sweetfish,Bladed Steel Jig,,,,,,,Powerful,,,,380
+Shipworm,Goblin Jig,,,,,,,,,,,356
+Yalm Lobster,Bladed Steel Jig,,,,,,,,,,,418
+Loosetongue,Brute Leech,13,20,,,,,Powerful,,,,430
+Armored Catfish,Brute Leech,,,,"Clouds, Fog",,,Powerful,,,,460
+Thavnairian Leaf,Stonefly Nymph,,,,,,,,,,,506
+The Speaker,Hedgemole Cricket,,,"Clouds, Fog",Showers,,,Powerful,,,,497
+Armor Fish,Hedgemole Cricket,1,4,,Clear Skies,"Hedgemole Cricket, 6",,Precision,,,,502
+Middle Thaliak River,,,,,,,,,,,,70204
+Philosopher's Stone,Goblin Jig,,,,,,,,,,,390
+Scholar Sculpin,Purse Web Spider,,,,,,,,,,,347
+Sweetfish,Goblin Jig,,,,,,,Powerful,,,,380
 Hedgemole Cricket,Stonefly Nymph,,,,,,,,,,,357
-Scholar Sculpin,,,,,,,,,,,,
-Sweetfish,,,,,,,,,,,,
-Shipworm,,,,,,,,,,,,
-Yalm Lobster,,,,,,,,,,,,
-Loosetongue,Brute Leech,7,20,,,,,,,,,430
-Armored Catfish,Brute Leech,,,,"Fog, Clouds",,,,,,,460
-Thavnairian Leaf,,,,,,,,,,,,
-The Speaker,Hedgemole Cricket,,,"Clouds, Fog",Showers,,,,,,,497
-Armor Fish,Purse Web Spider,1,4,,Clear Skies,"Hedgemole Cricket, 6",,,,,,502
-Middle Thaliak River,,,,,,,,,,,,
-Philosopher's Stone,,,,,,,,,,,,
-Scholar Sculpin,,,,,,,,,,,,
-Sweetfish,Goblin Jig,,,,,,,,,,,
-Hedgemole Cricket,Stonefly Nymph,,,,,,,,,,,357
-Bullfrog,Bladed Steel Jig,,,,,,,,,,,
-Thaliak Caiman,Bullfrog,15,18,,,,,,,,,431
-Berserker Betta,Brute Leech,,,,"Clear Skies, Fair Skies",,,,,,,436
+Bullfrog,Bladed Steel Jig,,,,,,,,,,,330
+Thaliak Caiman,Bullfrog,15,18,,,,,Powerful,,,,431
+Berserker Betta,Brute Leech,,,,"Clear Skies, Fair Skies",,,Powerful,,,,436
 Goblin Bass,Brute Leech,0,5,,"Clouds, Fog",,,,,,1,443
-Bobgoblin Bass,Sweetfish,2,6,Rain,Showers,,,,,,,487
-Eil Tohm,,,,,,,,,,,,
-Cloudfish,,,,,,,,,,,,
-Lamp Marimo,Chocobo Fly,,,,,,,,,,,74
+Bobgoblin Bass,Sweetfish,2,6,Rain,Showers,,,Powerful,,,,487
+Inkshell,Metal Spinner,,,,,,,,,,,3315
+Eil Tohm,,,,,,,,,,,,70301
+Cloudfish,Stonefly Nymph,,,,,,,,,,,331
+Lamp Marimo,Chocobo Fly,,,,,,Light,,,,,74
 Kissing Fish,Stonefly Nymph,9,2,,,,,,,,,343
-Noontide Oscar,Brute Leech,N/A,N/A,,,,,,,,,368
-Vidofnir,Brute Leech,8,10,,,,,,,,,469
-Greensward,,,,,,,,,,,,
-Mogpom,,,,,,,,,,,,
+Noontide Oscar,Brute Leech,,,,,,,,,,,368
+Vidofnir,Brute Leech,8,10,,,,,Powerful,,,,469
+Greensward,,,,,,,,,,,,70302
+Mogpom,Goblin Jig,,,,,,,Precision,,,,358
 Moggle Mogpom,Brute Leech,10,13,Gales,Clear Skies,,,,,,,482
-Weston Waters,,,,,,,,,,,,
-Cloudfish,,,,,,,,,,,,
+Weston Waters,,,,,,,,,,,,70303
+Cloudfish,Stonefly Nymph,,,,,,,,,,,331
 Dravanian Squeaker,Stonefly Nymph,16,19,,,,,,,,,342
 Weston Bowfin,Goblin Jig,8,12,,,,,,,,,392
-Hundred Fin,,,,,,,,,,,,
-Lovers' Clam,Bladed Steel Jig,,,,,,Light,,,,,
+Hundred Fin,Goblin Jig,,,,,,,,,,,382
+Lovers' Clam,Bladed Steel Jig,,,,,,Light,,,,,509
 Thousand Fin,Brute Leech,,,Clouds,Gales,,,,,,1,498
-Landlord Colony,,,,,,,,,,,,
+Landlord Colony,,,,,,,,,,,,70304
 Sky Faerie,Red Balloon,,,,,,,,,,,353
-Gloaming Coral,,,,,,,,,,,,
-Cloud Rider,,,,,,,,,,,,
-Blue Medusa,,,,,,,,,,,,
-Letter Puffer,,,,,,,,,,,,
-Dragon's Soul,,,,,,,,,,,,
-Sunsail,Giant Crane Fly,15,17,,"Clear Skies, Fair Skies",,,,,,,442
+Gloaming Coral,Red Balloon,,,,,,,,,1,,395
+Cloud Rider,Red Balloon,,,,,,,,,,,360
+Blue Medusa,Red Balloon,,,,,,,,,,,371
+Letter Puffer,Giant Crane Fly,,,,,,,,,,,393
+Dragon's Soul,Giant Crane Fly,,,,,,,,,,,397
+Sunsail,Giant Crane Fly,15,17,,"Clear Skies, Fair Skies",,,Powerful,,,,442
 The Soul of the Martyr,Giant Crane Fly,4,6,,"Clear Skies, Fair Skies",,,,,,,470
-Sohm Al Summit,,,,,,,,,,,,
+Sohm Al Summit,,,,,,,,,,,,70305
 Sky Faerie,Red Balloon,,,,,,,,,,,353
-Gloaming Coral,,,,,,,,,,,,
-Cloud Rider,,,,,,,,,,,,
+Gloaming Coral,Red Balloon,,,,,,,,,1,,395
+Cloud Rider,Red Balloon,,,,,,,,,,,360
 Rudderfish,Giant Crane Fly,,,,,,,,,,,405
-Gobbie Mask,,,,,,,,,,,,
-Star Faerie,,,,,,,,,,,,
-Pteranodon,Giant Crane Fly,9,17,,,,,,,,,421
-Dimorphodon,Rudderfish,,,Clear Skies,Gales,,,,,,1,475
-Tharl Oom Khash,,,,,,,,,,,,
+Gobbie Mask,Giant Crane Fly,,,,,,,,,,,370
+Star Faerie,Red Balloon,,,,,,,Precision,,,,394
+Pteranodon,Giant Crane Fly,9,17,,,,,Powerful,,,,421
+Dimorphodon,Rudderfish,,,Clear Skies,Gales,,,Powerful,,,1,475
+Tharl Oom Khash,,,,,,,,,,,,70306
 Sky Faerie,Red Balloon,,,,,,,,,,,353
-Cloud Rider,,,,,,,,,,,,
+Cloud Rider,Red Balloon,,,,,,,,,,,360
 Rudderfish,Giant Crane Fly,,,,,,,,,,,405
-Manasail,Rudderfish,10,14,,"Clear Skies, Fair Skies",,,,,,,384
-Brown Bolo,Red Balloon,,,,Clouds,,,,,,,389
-Cobrafish,,,,,,,,,,,,
+Manasail,Rudderfish,10,14,,"Clear Skies, Fair Skies",,,Powerful,,,,384
+Brown Bolo,Red Balloon,,,,Clouds,,,Powerful,,,,389
+Cobrafish,Giant Crane Fly,,,,,,,Powerful,,,,413
 Storm Chaser,Giant Crane Fly,,,,,,,,,,,435
-Nyctosaur,,,,,,,,,,,,
+Nyctosaur,Giant Crane Fly,,,,,,,,,,,454
 Bloodchaser,Giant Crane Fly,,,Clear Skies,Gales,,,,,,1,499
-Raimdellopterus,Rudderfish,6,8,,Gales,"Rudderfish, 5",,,,,,505
-Diadem Grotto,,,,,,,,,,,,
-Thunderbolt Eel,Brute Leech,22,4,,,,,,,,,428
-Noontide Oscar,Brute Leech,N/A,N/A,,,,,,,,,368
+Raimdellopterus,Rudderfish,5,8,,Gales,"Rudderfish, 5",,Powerful,,,,505
+Diadem Grotto,,,,,,,,,,,,80102
+Thunderbolt Eel,Brute Leech,22,4,,,,,Powerful,,,,428
+Noontide Oscar,Brute Leech,,,,,,,,,,,368
 Goldsmith Crab,Bladed Steel Jig,,,,,,,,,,,450
 Crown Trout,Stonefly Nymph,,,,,,,,,,,447
 Retribution Staff,Purse Web Spider,,,,,,,,,,,448
-Southern Diadem Lake,,,,,,,,,,,,
-Maiboi,,,,,,,,,,,,
-Bullfrog,,,,,,,,,,,,
-Cloudfish,,,,,,,,,,,,
-Yalm Lobster,,,,,,,,,,,,
+Southern Diadem Lake,,,,,,,,,,,,80103
+Maiboi,Stonefly Nymph,,,,,,,,,,,328
+Bullfrog,Bladed Steel Jig,,,,,,,,,,,330
+Cloudfish,Purse Web Spider,,,,,,,,,,,331
+Yalm Lobster,Bladed Steel Jig,,,,,,,,,,,418
 Goldsmith Crab,Bladed Steel Jig,,,,,,,,,,,450
 Crown Trout,Stonefly Nymph,,,,,,,,,,,447
 Retribution Staff,Purse Web Spider,,,,,,,,,,,448
-Northern Diadem Lake,,,,,,,,,,,,
-Cloudfish,,,,,,,,,,,,
+Northern Diadem Lake,,,,,,,,,,,,80105
+Cloudfish,Stonefly Nymph,,,,,,,,,,,331
 Crown Trout,Stonefly Nymph,,,,,,,,,,,447
 Retribution Staff,Purse Web Spider,,,,,,,,,,,448
-Calm Cloudtop,,,,,,,,,,,,
-Mahu Wai,,,,,,,,,,,,
-Whiteloom,,,,,,,,,,,,
-Blue Cloud Coral,,,,,,,,,,,,
-Mitre Slug,,,,,,,,,,,,
+Calm Cloudtop,,,,,,,,,,,,80107
+Mahu Wai,Giant Crane Fly,,,,,,,,,,,332
+Whiteloom,Red Balloon,,,,,,,Precision,,,,335
+Blue Cloud Coral,Red Balloon,,,,,,,,,1,,336
+Mitre Slug,Red Balloon,,,,,,,,,,,344
 Eurhinosaur,Giant Crane Fly,,,,,,,,,,,445
 Gem Marimo,Giant Crane Fly,,,,,,,,,,,446
 Pterodactyl,Giant Crane Fly,,,,,,,,,,,444
-Swirling Cloudtop,,,,,,,,,,,,
+Swirling Cloudtop,,,,,,,,,,,,80108
 Vampiric Tapestry,Giant Crane Fly,,,,,,,,,,,434
-Moogle Spirit,Giant Crane Fly,,,,N/A,,,,,,,414
+Moogle Spirit,Giant Crane Fly,,,,,,,,,,,414
 Eurhinosaur,Giant Crane Fly,,,,,,,,,,,445
 Pterodactyl,Giant Crane Fly,,,,,,,,,,,444
-Blustery Cloudtop,,,,,,,,,,,,
-Buoyant Oviform,,,,,,,,,,,,
-Mahu Wai,,,,,,,,,,,,
-Mitre Slug,,,,,,,,,,,,
-Blue Cloud Coral,,,,,,,,,,,,
+Blustery Cloudtop,,,,,,,,,,,,80106
+Buoyant Oviform,Giant Crane Fly,,,,,,,,,,,334
+Mahu Wai,Giant Crane Fly,,,,,,,,,,,332
+Mitre Slug,Red Balloon,,,,,,,,,,,344
+Blue Cloud Coral,Red Balloon,,,,,,,,,1,,336
 Pterodactyl,Giant Crane Fly,,,,,,,,,,,444
-Upper Mirage Creek,,,,,,,,,,,,
-Abalathian Bitterling,Salmon Roe,,,,,,,,,,,514
+Upper Mirage Creek,,,,,,,,,,,,90101
+Abalathian Bitterling,Salmon Roe,,,,,,,Precision,,,,514
 Broken Crab,Salmon Roe,,,,,,,,,,,517
 Gyr Abanian Trout,Midge Larva,,,,,,,,,,,531
-Miounnefish,Gyr Abanian Trout,,,,"Clouds, Fog",,,,,,,518
+Miounnefish,Gyr Abanian Trout,,,,"Clouds, Fog",,,Powerful,,,,518
 Bloodsipper,Gyr Abanian Trout,,,,,,,,,,,532
-Hookstealer,Gyr Abanian Trout,,,,,,,,,,,
-Rhalgr's Reach,,,,,,,,,,,,
+Hookstealer,Gyr Abanian Trout,,,,,,,,,,,760
+Rhalgr's Reach,,,,,,,,,,,,90102
 Golden Cichlid,Salmon Roe,,,,,,,,,,,513
-Temple Carp,Salmon Roe,,,,,,,,,,,519
+Temple Carp,Salmon Roe,,,,,,,Precision,,,,519
 Gyr Abanian Trout,Midge Larva,,,,,,,,,,,531
 Monk Betta,Gyr Abanian Trout,,,,,,,,,,,533
-Electric Catfish,Midge Larva,,,,,,,,,,,548
-Pagan Pirarucu,Gyr Abanian Trout,,,,,,,,,,,566
-Watcher Catfish,Gyr Abanian Trout,,,,Thunder,,,,,,,
-The Outer Fist,,,,,,,,,,,,
-Comet Minnow,,,,,,,,,,,,
-Balloon Frog,Salmon Roe,,,,,,,,,,,520
-Lantern Marimo,,,,,,,,,,,,
+Electric Catfish,Midge Larva,,,,,,,Powerful,,,,548
+Pagan Pirarucu,Gyr Abanian Trout,,,,,,,Powerful,,,,566
+Watcher Catfish,Gyr Abanian Trout,,,,Thunder,,,Powerful,,,,808
+The Outer Fist,,,,,,,,,,,,90103
+Comet Minnow,Suspending Minnow,,,,,,,,,,,512
+Balloon Frog,Nightcrawler,,,,,,,,,,,520
+Lantern Marimo,Suspending Minnow,,,,,,,Precision,,,,521
 Bloodsipper,Salmon Roe,,,,,,,,,,,532
-Gilfish,,,,,,,,,,,,
-Redtail,Balloon Frog,,,,"Clouds, Fog",,,,,,,
-Bloodtail Zombie,Balloon Frog,8,12,,Clouds,,,,,,,
-Timmon Beck,,,,,,,,,,,,
-Steelhead Trout,,,,,,,,,,,,
-Miounnefish,Suspending Minnow,,,,"Clouds, Fog",,,,,,,518
-Balloon Frog,Salmon Roe,,,,,,,,,,,520
+Gilfish,Nightcrawler,,,,,,,Precision,,,,534
+Redtail,Balloon Frog,,,,"Clouds, Fog",,,Powerful,,,,750
+Bloodtail Zombie,Balloon Frog,8,12,,Clouds,,,Powerful,,,,809
+Timmon Beck,,,,,,,,,,,,90201
+Steelhead Trout,Suspending Minnow,,,,,,,,,,,516
+Balloon Frog,Nightcrawler,,,,,,,,,,,520
+Miounnefish,Balloon Frog,,,,"Clouds, Fog",,,Powerful,,,,518
 Death Loach,Salmon Roe,,,,,,,,,,,549
-Gyr Abanian Chub,Salmon Roe,,,,,,,,,,,
-Hardhead Trout,Stonefly Larva,16,20,,,,,,,,,
-Xenacanthus,Hardhead Trout,,,,,,,,,,,
-Dimwold,,,,,,,,,,,,
-Miounnefish,Stonefly Larva,,,,"Clouds, Fog",,,,,,,518
+Gyr Abanian Chub,Salmon Roe,,,,,,,,,,,742
+Hardhead Trout,Stonefly Larva,16,20,,,,,Powerful,,,,810
+Xenacanthus,Hardhead Trout,16,20,,,,,Powerful,,,,840
+Dimwold,,,,,,,,,,,,90202
+Miounnefish,Stonefly Larva,,,,"Clouds, Fog",,,Powerful,,,,518
 Bone Melter,Salmon Roe,,,,,,,,,,,524
-Fallen Leaf,Suspending Minnow,,,,,,,,,,,525
+Fallen Leaf,Suspending Minnow,,,,,,,Precision,,,,525
 Padjali Loach,Salmon Roe,,,,,,,,,,,530
 Cave Killifish,Suspending Minnow,,,,,,,,,,,553
 Wraithfish,Stonefly Larva,0,4,,Fog,,,,,,1,635
-Chakrafish,Salmon Roe,,,,,,,,,,,
-Sapphire Fan,Stonefly Larva,,,,Thunder,,,,,,,761
-The Comet's Tail,,,,,,,,,,,,
+Chakrafish,Salmon Roe,,,,,,,Powerful,,,,837
+Sapphire Fan,Stonefly Larva,,,,Thunder,,,Precision,,,,761
+The Comet's Tail,,,,,,,,,,,,90203
 Bone Melter,Salmon Roe,,,,,,,,,,,524
 Falling Star,Salmon Roe,,,,"Clouds, Fog",,,,,,,535
-Capsized Squeaker,Salmon Roe,,,,,,,,,,,536
-Nirvana Crab,Salmon Roe,,,,"Clouds, Fog",,,,,,,537
-Cardinalfish,Suspending Minnow,20,24,,Fog,,,,,,,735
-Lake Sphairai,Salmon Roe,,,,,,,,,,,762
-The Archbishop,Suspending Minnow,12,16,,,,,,,,,
-The Velodyna River,,,,,,,,,,,,
+Capsized Squeaker,Salmon Roe,16,19,,,,,Precision,,,,536
+Nirvana Crab,Salmon Roe,,,,"Clouds, Fog",,,Powerful,,,,537
+Cardinalfish,Suspending Minnow,19,23,,"Clouds, Fog",,,,,,,735
+Lake Sphairai,Salmon Roe,,,,,,,,,,,775
+The Archbishop,Suspending Minnow,12,16,,,,,Powerful,,,,762
+The Velodyna River,,,,,,,,,,,,90204
 Velodyna Grass Carp,Nightcrawler,,,,,,,,,,,526
 Greenstream Loach,Salmon Roe,,,,,,,,,,,528
 Bloodsipper,Salmon Roe,,,,,,,,,,,532
 Black Velodyna Carp,Salmon Roe,,,,,,,,,,,568
-Deep Velodyna Carp,Salmon Roe,,,,,,,,,,,5000
-Velodyna Salmon,Nightcrawler,,,,,,,,,,,
-Downstream Loach,Stonefly Larva,,,,Fog,,,,,,,
-Mirage Creek,,,,,,,,,,,,
-Highland Perch,Salmon Roe,,,,,,,,,,,527
+Deep Velodyna Carp,Salmon Roe,,,,,,,,,,,
+Velodyna Salmon,Nightcrawler,,,,,,,Powerful,,,,745
+Downstream Loach,Stonefly Larva,,,,Fog,,,,,,,811
+Mirage Creek,,,,,,,,,,,,90205
+Highland Perch,Salmon Roe,,,,,,,Powerful,,,,527
 Mirage Chub,Salmon Roe,,,,,,,,,,,529
-Gravel Gudgeon,Salmon Roe,,,,,,,,,,,538
-Rhalgr's Bolt,Salmon Roe,,,,,,,,,,,554
-Mirage Mahi,Stonefly Larva,4,8,,,,,,,,,747
-Corpse Chub,Suspending Minnow,20,24,,Clear Skies,,,,,,,
-Grymm & Enid,,,,,,,,,,,,
+Gravel Gudgeon,Salmon Roe,,,,,,,Precision,,,,538
+Rhalgr's Bolt,Salmon Roe,,,,,,,Powerful,,,,554
+Mirage Mahi,Stonefly Larva,4,8,,,,,Powerful,,,,747
+Corpse Chub,Suspending Minnow,20,24,,Clear Skies,,,Powerful,,,,812
+Grymm & Enid,,,,,,,,,,,,90301
 Death Loach,Salmon Roe,,,,,,,,,,,549
 Grymm Crab,Nightcrawler,,,,,,,,,,,550
-Enid Shrimp,Nightcrawler,,,,,,,,,,,567
-Curefish,Salmon Roe,,,,,,,,,,,
-Bondsplitter,Suspending Minnow,,,,Dust Storms,,,,,,,763
-Drepanaspis,Suspending Minnow,,,,,"Bondsplitter, 2",,,,,,
-The Slow Wash,,,,,,,,,,,,
-Idle Goby,Salmon Roe,,,,,,,,,,,515
-Rapids Jumper,Nightcrawler,,,,,,,,,,,522
+Enid Shrimp,Nightcrawler,,,,,,,Precision,,,,567
+Curefish,Salmon Roe,,,,,,,,,,,774
+Bondsplitter,Suspending Minnow,,,,Dust Storms,,,Powerful,,,,763
+Drepanaspis,Suspending Minnow,,,,Dust Storms,"Bondsplitter, 2",,Powerful,,,,841
+The Slow Wash,,,,,,,,,,,,90302
+Idle Goby,Salmon Roe,,,,,,,Powerful,,,,515
+Rapids Jumper,Nightcrawler,,,,,,,Powerful,,,,522
 Gyr Abanian Trout,Midge Larva,,,,,,,,,,,531
-Heather Charr,Suspending Minnow,,,,,,,,,,,547
+Heather Charr,Suspending Minnow,,,,,,,Powerful,,,,547
 Death Loach,Salmon Roe,,,,,,,,,,,549
 Invisible Crayfish,Nightcrawler,,,,,,,,,,,551
-The Undecided,Gyr Abanian Trout,8,12,,,,,,,,,764
-Heather Falls,,,,,,,,,,,,
-Adamantite Bichir,Suspending Minnow,,,,,,,,,,,523
+The Undecided,Gyr Abanian Trout,8,12,,,,,Powerful,,,,764
+Heather Falls,,,,,,,,,,,,90303
+Adamantite Bichir,Suspending Minnow,,,,,,,Powerful,,,,523
 Death Loach,Salmon Roe,,,,,,,,,,,549
-Abalathian Salamander,Suspending Minnow,,,,,,,,,,,552
-Steelshark,Suspending Minnow,,,,Clear Skies,,,,,,,627
-Purple Buckler,Midge Larva,,,,,,,,,,,
-The Last Tear,Salmon Roe,,,Fog,Fair Skies,,,,,,,
-The Ephor,,,,,,,,,,,,
-Heather Charr,Suspending Minnow,,,,,,,,,,,547
-Meditator,Suspending Minnow,,,,,,,,,,,612
-Stonytongue,Suspending Minnow,,,,,,,,,,,613
-Deemster,Stonefly Larva,,,,Wind,,,,,,,631
-Moksha,Suspending Minnow,N/A,N/A,"Clouds, Wind, Fog, Dust Storms",Clear Skies,,,,,,,
-The Bull's Bath,,,,,,,,,,,,
+Abalathian Salamander,Suspending Minnow,,,,,,,Precision,,,,552
+Steelshark,Suspending Minnow,,,,Clear Skies,,,Precision,,,,627
+Purple Buckler,Midge Larva,,,,,,,Powerful,,,,746
+The Last Tear,Salmon Roe,,,Fog,Fair Skies,,,Powerful,,,,813
+The Ephor,,,,,,,,,,,,90304
+Heather Charr,Suspending Minnow,,,,,,,Powerful,,,,547
+Meditator,Suspending Minnow,,,,,,,Powerful,,,,612
+Stonytongue,Suspending Minnow,,,,,,,Powerful,,,,613
+Deemster,Stonefly Larva,,,,Wind,,,Powerful,,,,631
+Moksha,Suspending Minnow,,,"Clouds, Wind, Fog, Dust Storms",Clear Skies,,,,,,,815
+The Bull's Bath,,,,,,,,,,,,90305
 Death Loach,Salmon Roe,,,,,,,,,,,549
 Invisible Crayfish,Nightcrawler,,,,,,,,,,,551
-Bull's Bite,Midge Larva,,,,"Clouds, Wind, Fog, Dust Storms",,,,,,,600
-Peeping Pisces,Midge Larva,,,,,,,,,,,601
-Meditator,Suspending Minnow,,,,,,,,,,,612
-Alligator Snapping Turtle,Suspending Minnow,,,,"Clear Skies, Fair Skies",,,,,,,
-Hemon,Suspending Minnow,16,20,,Clouds,,,,,,,
-The Arms of Meed,,,,,,,,,,,,
+Bull's Bite,Midge Larva,,,,"Clouds, Dust Storms, Fog, Wind",,,Powerful,,,,600
+Peeping Pisces,Midge Larva,,,,,,,Powerful,,,,601
+Meditator,Suspending Minnow,,,,,,,Powerful,,,,612
+Alligator Snapping Turtle,Suspending Minnow,,,,"Clear Skies, Fair Skies",,,Powerful,,,,749
+Hemon,Suspending Minnow,16,20,,Clouds,,,Powerful,,,,814
+The Arms of Meed,,,,,,,,,,,,90306
 Gyr Abanian Trout,Midge Larva,,,,,,,,,,,531
-Gigant Bass,Stonefly Larva,,,,,,,,,,,602
-Eastern Pike,Suspending Minnow,,,,"Clear Skies, Fair Skies",,,,,,,607
-Scimitarfish,Suspending Minnow,,,,,,,,,,,614
-Ala Mhigan Ribbon,Suspending Minnow,,,,,,,,,,,619
-Rockfish,Suspending Minnow,12,16,,"Clouds, Wind, Fog, Dust Storms",,,,,1,,
-Lily of the Veil,Suspending Minnow,,,Clear Skies,Fair Skies,,,,,,,
-Loch Seld,,,,,,,,,,,,
-Rock Saltfish,Silkworm,,,,,,,,,,,608
-Saltshield Snapper,Silkworm,,,,,,,,,,,611
-Whitehorse,Silkworm,,,,,,,,,,,624
-Pearl-eye,Rock Saltfish,,,,,,,,,,,626
+Gigant Bass,Stonefly Larva,,,,,,,Powerful,,,,602
+Eastern Pike,Suspending Minnow,,,,"Clear Skies, Fair Skies",,,Powerful,,,,607
+Scimitarfish,Suspending Minnow,,,,,,,Powerful,,,,614
+Ala Mhigan Ribbon,Suspending Minnow,,,,,,,Precision,,,,619
+Rockfish,Suspending Minnow,12,16,,"Clouds, Dust Storms, Fog, Wind",,,,,,,736
+Lily of the Veil,Suspending Minnow,,,Clear Skies,Fair Skies,,,Precision,,,,822
+Loch Seld,,,,,,,,,,,,90401
+Rock Saltfish,Silkworm,,,,,,,Powerful,,,,608
+Saltshield Snapper,Silkworm,,,,,,,Powerful,,,,611
+Whitehorse,Silkworm,,,,,,,Precision,,,,624
+Pearl-eye,Rock Saltfish,,,,,,,Powerful,,,,626
 Sculptor,Rock Saltfish,12,18,,Thunderstorms,,,,,,1,625
-Saltmill,Rock Saltfish,,,,"Clouds, Fog",,,,,,,
-Diamond-eye,Rock Saltfish,,,,Clear Skies,,,,,,,765
-Stethacanthus,Rock Saltfish,,,,,"Sculptor, 2",,,,,,
-The Ruby Price,,,,,,,,,,,,
+Saltmill,Rock Saltfish,,,,"Clouds, Fog",,,Powerful,,,,752
+Diamond-eye,Rock Saltfish,,,,Clear Skies,,,Powerful,,,1,765
+Stethacanthus,Rock Saltfish,16,18,,,"Sculptor, 2",,Powerful,,,,842
+The Ruby Price,,,,,,,,,,,,100101
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Glass Herring,Live Shrimp,,,,,,,,,,,540
-Coeurl Snake Eel,Live Shrimp,,,,,,,,,,,546
-Coral Horse,Live Shrimp,,,,,,,,,,,
-Ku'er,Blue Bobbit,0,8,Thunder,Clouds,,,,,,,
-The Ruby Dragon,,,,,,,,,,,,
-Hells' Lid,,,,,,,,,,,,
+Coeurl Snake Eel,Live Shrimp,,,,,,,Powerful,,,,546
+Coral Horse,Live Shrimp,,,,,,,Precision,,,,743
+Ku'er,Blue Bobbit,0,8,Thunder,Clouds,,,Powerful,,,,817
+The Ruby Dragon,Ku'er,4,8,Thunder,Clouds,,,Powerful,,,,843
+Hells' Lid,,,,,,,,,,,,100102
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Hellyfish,Live Shrimp,,,,,,,,,,,541
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Blockhead,Ruby Shrimp,,,,,,,,,,,615
 Liopleurodon,Ruby Shrimp,,,,Thunder,,,Powerful,,,,618
-Ukiki,Blue Bobbit,8,12,,Wind,,,,,,,
-Shrieker,Ruby Shrimp,,,,,,,,,,,
-Wicked Wartfish,Bream Lure,,,,,,,,,,,
-The Vegetarian,Ruby Shrimp,20,24,,Thunder,,,,,,,
-The Isle of Bekko,,,,,,,,,,,,
+Ukiki,Blue Bobbit,8,12,,Wind,,,Powerful,,,,737
+Shrieker,Ruby Shrimp,,,,,,,Powerful,,,,757
+Wicked Wartfish,Bream Lure,,,,,,,Powerful,,,,838
+The Vegetarian,Ruby Shrimp,20,24,,Thunder,,,Powerful,,,,823
+The Isle of Bekko,,,,,,,,,,,,100103
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Hellyfish,Live Shrimp,,,,,,,,,,,541
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Dafu,Ruby Shrimp,,,,,,,,,,,556
 Glass Tuna,Ruby Shrimp,,,,,,,,,,,605
-Tawny Wench Shark,Ruby Shrimp,10,16,,Clear Skies,,,,,,1,609
-Usuginu Octopus,Live Shrimp,,,,,,,,,,,22393
-Seven Stars,Blue Bobbit,10,16,Thunder,Fair Skies,,,,,,,24883
-Shoal Rock,,,,,,,,,,,,
+Tawny Wench Shark,Blue Bobbit,10,18,,Clear Skies,,,Powerful,,,1,609
+Usuginu Octopus,Ruby Shrimp,,,,,,,Powerful,,,,751
+Seven Stars,Blue Bobbit,10,18,Thunder,Fair Skies,,,,,,,824
+Fatty Herring,Metal Spinner,,,,,,,,,,,3314
+Shoal Rock,,,,,,,,,,,,100104
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Ruby Coral,Live Shrimp,,,,,,,,,1,,542
 Sapphire Coral,Live Shrimp,,,,,,,,,1,,543
 Bone Coral,Live Shrimp,,,,,,,,,1,,544
 Butterfly Fish,Blue Bobbit,,,,,,,,,,,555
 Harutsuge,Blue Bobbit,,,,,,,Precision,,,,628
-Harutsuge Sprag,Live Shrimp,,,,,,,Precision,,,,5001
-Ruby Laver,Live Shrimp,,,,,,,,,,,
+Harutsuge Sprag,Live Shrimp,,,,,,,Precision,,,,
+Ruby Laver,Live Shrimp,,,,,,,,,,,836
 The Winter Queen,Blue Bobbit,16,20,,,,,,,,,768
-Onokoro,,,,,,,,,,,,
+Onokoro,,,,,,,,,,,,100105
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Leaf Tatsunoko,Ruby Shrimp,,,,,,,,,,,557
 Glass Flounder,Ruby Shrimp,,,,,,,,,,,558
-Blackfin Snake Eel,Ruby Shrimp,,,,,,,,,,,621
+Blackfin Snake Eel,Blue Bobbit,,,,,,,Powerful,,,1,621
 Swordfish,Blue Bobbit,8,16,,"Clouds, Wind",,,Powerful,,,1,632
-Giant Plesiosaur,Live Shrimp,,,,,,,Powerful,,,,5003
-Argonautica,Ruby Shrimp,,,,Wind,,,,,,,
-Isari,,,,,,,,,,,,
+Giant Plesiosaur,Live Shrimp,,,,,,,Powerful,,,,
+Argonautica,Ruby Shrimp,,,,Wind,,,Powerful,,,,818
+Hook Fish,Metal Spinner,,,,,,,,,,,3312
+Isari,,,,,,,,,,,,100106
 Glass Herring,Live Shrimp,,,,,,,,,,,540
-Gliding Fish,Bream Lure,,,,,,,,,,,559
-Globefish,Live Shrimp,,,,,,,,,,,560
-Fan Clam,Live Shrimp,,,,,,,,,1,,561
-Ruby Meagre,Bream Lure,,,,,,,,,,,563
-Triplespine,Blue Bobbit,5,7,,,,,,,,,748
-Shirogane Clam,Live Shrimp,,,,,,,,,,,
-Pinhead,Live Shrimp,16,24,,Thunder,,,,,,,
-The Isle of Zekki,,,,,,,,,,,,
+Gliding Fish,Bream Lure,,,,,,,Powerful,,,,559
+Globefish,Live Shrimp,,,,,,,Powerful,,,,560
+Fan Clam,Live Shrimp,,,,,,,Powerful,,1,,561
+Ruby Meagre,Bream Lure,,,,,,,Powerful,,,,563
+Triplespine,Blue Bobbit,5,7,,,,,Precision,,,,748
+Shirogane Clam,Live Shrimp,,,,,,,,,,,777
+Pinhead,Live Shrimp,16,24,"Clear Skies, Fair Skies",Thunder,,,,,,,825
+The Isle of Zekki,,,,,,,,,,,,100107
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Daio Squid,Ruby Shrimp,,,,,,,Powerful,,,,603
 Koromo Octopus,Ruby Shrimp,,,,,,,Powerful,,,,604
 Zekki Grouper,Ruby Shrimp,,,,,,,,,,,610
-Zekki Gator,Ruby Shrimp,,,,,,,,,,,634
-Rakshasa,Ruby Shrimp,,,,Thunder,,,,,,,769
-The Heron's Nest,,,,,,,,,,,,
+Zekki Gator,Ruby Shrimp,,,,,,,Powerful,,,,634
+Rakshasa,Ruby Shrimp,,,,Thunder,,,Powerful,,,,769
+The Heron's Nest,,,,,,,,,,,,100201
 Doman Trout,Nightcrawler,,,,,,,,,,,571
-Doman Crayfish,Nightcrawler,,,,,,,,,,,575
-Maiden's Heart,Nightcrawler,,,,,,,,,,,
-Pomegranate Trout,Nightcrawler,,,,Rain,,,,,,,
-The Heron's Way,,,,,,,,,,,,
-River Barramundi,Nightcrawler,,,,,,,,,,,564
+Doman Crayfish,Nightcrawler,,,,,,,Precision,,,,575
+Maiden's Heart,Nightcrawler,,,,,,,Precision,,,,744
+Pomegranate Trout,Nightcrawler,,,,Rain,,,Powerful,,,1,826
+The Heron's Way,,,,,,,,,,,,100202
+River Barramundi,Nightcrawler,,,,,,,Powerful,,,,564
 Doman Trout,Nightcrawler,,,,,,,,,,,571
-Doman Crayfish,Nightcrawler,,,,,,,,,,,575
-Glarramundi,Suspending Minnow,,,Fair Skies,Clear Skies,,,,,,,
-Namai,,,,,,,,,,,,
-Nogoi,Nightcrawler,,,,,,,,,,,565
-Hermit's End,Stonefly Larva,20,24,,Clear Skies,,,,,,,
-The One River (East),,,,,,,,,,,,
-Yanxian Koi,Nightcrawler,,,,,,,,,,,569
-Longhair Catfish,Suspending Minnow,,,,N/A,,,Powerful,,,,570
+Doman Crayfish,Nightcrawler,,,,,,,Precision,,,,575
+Glarramundi,Suspending Minnow,,,Fair Skies,Clear Skies,,,,,,,827
+Namai,,,,,,,,,,,,100203
+Nogoi,Nightcrawler,,,,,,,Powerful,,,,565
+Hermit's End,Stonefly Larva,20,24,,Clear Skies,,,Powerful,,,,828
+The One River (East),,,,,,,,,,,,100208
+Yanxian Koi,Nightcrawler,,,,,,,Powerful,,,,569
+Longhair Catfish,Suspending Minnow,,,,,,,Powerful,,,,570
 Doman Trout,Nightcrawler,,,,,,,,,,,571
 Yanxian Barramundi,Nightcrawler,,,,,,,Powerful,,,,572
 Kotsu Zetsu,Suspending Minnow,,,,,,,,,,,616
-Othardian Salmon,Nightcrawler,,,,,,,,,,,
-Axelrod,Stonefly Larva,0,6,Clouds,Fair Skies,,,,,,,
-The One River (West),,,,,,,,,,,,
-Longhair Catfish,Suspending Minnow,,,,N/A,,,Powerful,,,,570
+Othardian Salmon,Nightcrawler,,,,,,,,,,,839
+Axelrod,Stonefly Larva,0,6,Clouds,Fair Skies,,,,,,,830
+The One River (West),,,,,,,,,,,,100209
+Longhair Catfish,Suspending Minnow,,,,,,,Powerful,,,,570
 Doman Trout,Nightcrawler,,,,,,,,,,,571
 Kotsu Zetsu,Suspending Minnow,,,,,,,,,,,616
-Seraphim,Suspending Minnow,16,24,,,,,,,,,620
-Hagoromo Bijin,Stonefly Larva,,,Clouds,"Clear Skies, Fair Skies",,,,,,,
-Plum Spring,,,,,,,,,,,,
-Doman Trout,Nightcrawler,,,,,,,,,,,571
+Seraphim,Suspending Minnow,16,24,,,,,Powerful,,,,620
+Hagoromo Bijin,Stonefly Larva,,,Clouds,"Clear Skies, Fair Skies",,,Powerful,,,,819
+Plum Spring,,,,,,,,,,,,100210
+Doman Trout,Nightcrawler,,,,,,Medium,,,,,571
 Kotsu Zetsu,Suspending Minnow,,,,,,,,,,,616
-Pandamoth,Midge Larva,10,18,,,,,,,,,617
+Pandamoth,Midge Larva,10,18,,,,,Powerful,,,,617
 Silken Koi,Stonefly Larva,,,,Rain,,,Powerful,,,1,629
 Plum Gazer,Midge Larva,,,,,,,,,,,633
+Petal Shell,Signature Skyball,,,,,,Light,Precision,,,,
 Hagoromo Koi,Stonefly Larva,,,,Fog,,,,,,1,771
-Prism Canyon,,,,,,,,,,,,
+Prism Canyon,,,,,,,,,,,,100205
 Doman Trout,Nightcrawler,,,,,,,,,,,571
-Doman Crayfish,Nightcrawler,,,,,,,,,,,575
+Doman Crayfish,Nightcrawler,,,,,,,Precision,,,,575
 Doman Eel,Midge Larva,,,,,,,,,,,584
-The Unraveled Bow,Suspending Minnow,12,16,,Fog,,,,,,,
-Prism Lake,,,,,,,,,,,,
+The Unraveled Bow,Suspending Minnow,12,16,,Fog,,,Powerful,,,,831
+Prism Lake,,,,,,,,,,,,100204
 Yellow Prismfish,Suspending Minnow,,,,,,,,,,,598
 Blue Prismfish,Suspending Minnow,,,,,,,,,,,599
-Violet Prismfish,Stonefly Larva,0,4,,,,,,,,,
-Red Prismfish,Stonefly Larva,4,8,,,,,,,,,755
-White Goldfish,Red Prismfish,N/A,N/A,,,,,,,,,758
-Firelight Goldfish,Red Prismfish,N/A,N/A,,,,,,,,,
-Indigo Prismfish,Violet Prismfish,N/A,N/A,,,,,,,,,
-Green Prismfish,Stonefly Larva,0,16,,"Clear Skies, Fair Skies",,,,,,,
-Warden of the Seven Hues,Stonefly Larva,,,,,"Indigo Prismfish, 3, Firelight Goldfish 3, Green Prismfish, 5",,,,,,
-Mercantile Docks,,,,,,,,,,,,
+Violet Prismfish,Stonefly Larva,0,4,,,,,Powerful,,,,738
+Red Prismfish,Stonefly Larva,4,8,,,,,Powerful,,,,755
+White Goldfish,Red Prismfish,4,8,,,,,,,,,758
+Firelight Goldfish,Red Prismfish,4,8,,,,,Precision,,,,759
+Indigo Prismfish,Violet Prismfish,0,4,,,,,Precision,,,,806
+Green Prismfish,Stonefly Larva,0,16,Fair Skies,"Clear Skies, Fair Skies",,,,,,,807
+Warden of the Seven Hues,Stonefly Larva,,,,,"Indigo Prismfish, 3, Firelight Goldfish, 3, Green Prismfish, 5",,,,,,844
+Mercantile Docks,,,,,,,,,,,,100207
 Doman Trout,Nightcrawler,,,,,,,,,,,571
 Doman Grass Carp,Midge Larva,20,4,,,,,Powerful,,,,592
 Lordly Salmon,Midge Larva,,,,,,,,,,,597
 Kotsu Zetsu,Suspending Minnow,,,,,,,,,,,616
-Suiten Ippeki,Stonefly Larva,16,24,Fair Skies,Showers,,,,,,,
-Doma Castle,,,,,,,,,,,,
+Suiten Ippeki,Stonefly Larva,16,24,Fair Skies,Showers,,,Powerful,,,,829
+Doma Castle,,,,,,,,,,,,100206
 Doman Trout,Nightcrawler,,,,,,,,,,,571
-Samurai Fish,Midge Larva,,,,,,,,,,,593
+Samurai Fish,Midge Larva,,,,,,,Precision,,,,593
 Blank Oscar,Midge Larva,,,,,,,,,,,595
 Dragonfish,Suspending Minnow,,,,,,,,,,,596
 Raitonfish,Suspending Minnow,,,,"Rain, Showers",,,Powerful,,,,606
-Bokuden,Stonefly Larva,12,14,,,,,,,,,23067
-Nem Khaal,,,,,,,,,,,,
-Killifish,Midge Larva,,,,Clear Skies,,,,,,,574
+Bokuden,Stonefly Larva,12,14,,,,,,,,,770
+Nem Khaal,,,,,,,,,,,,100301
+Killifish,Midge Larva,,,,Clear Skies,,,Precision,,,,574
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
 Othardian Trout,Zagas Khaal,,,,,,,,,,,576
 Steppe Skipper,Midge Larva,,,,,,,Precision,,,,578
-Dawn Crayfish,Zagas Khaal,,,,,,,,,,,580
-Garden Skipper,Midge Larva,8,12,Fair Skies,Clear Skies,,,,,,,
-Hak Khaal,,,,,,,,,,,,
+Dawn Crayfish,Zagas Khaal,,,,,,,Precision,,,,580
+Garden Skipper,Midge Larva,8,12,Fair Skies,Clear Skies,,,,,,,833
+Hak Khaal,,,,,,,,,,,,100302
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
-Curtain Pleco,Suspending Minnow,,,,,,,,,,,581
-Dry Steppe Skipper,Midge Larva,,,,,,,,,,,586
+Curtain Pleco,Suspending Minnow,,,,,,,Powerful,,,,581
+Dry Steppe Skipper,Midge Larva,,,,,,,Precision,,,,586
 Dusk Crayfish,Zagas Khaal,,,,,,,,,,,588
 Hak Bitterling,Stonefly Larva,0,4,,Rain,,,,,,1,623
-Banderole,Zagas Khaal,0,8,Fair Skies,Fog,,,,,,,
-Upper Yat Khaal,,,,,,,,,,,,
-Tail Mountains Minnow,Midge Larva,,,,,,,,,,,573
+Banderole,Zagas Khaal,0,8,Fair Skies,Fog,,,Powerful,,,,834
+Upper Yat Khaal,,,,,,,,,,,,100303
+Tail Mountains Minnow,Midge Larva,,,,,,,Precision,,,,573
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
-Dry Steppe Skipper,Midge Larva,,,,,,,,,,,586
-Skytear,Midge Larva,,,,,,,,,,,587
+Dry Steppe Skipper,Midge Larva,,,,,,,Precision,,,,586
+Skytear,Midge Larva,,,,,,,Precision,,,,587
 Dusk Crayfish,Zagas Khaal,,,,,,,,,,,588
-Sunshell,Midge Larva,,,,,,,,,,,
-Fatty Eel,Salmon Roe,,,,,,,,,,,
-Leatherscale,Salmon Roe,,,,,,,,,,,
-Appleseed,Salmon Roe,,,,,,,,,,,
-Blade Skipper,Suspending Minnow,4,8,,Fog,,,,,,,
-Azim Khaat,,,,,,,,,,,,
+Sunshell,Midge Larva,,,,,,,,,,,779
+Fatty Eel,Salmon Roe,,,,,,,,,,,786
+Leatherscale,Salmon Roe,,,,,,,,,,,796
+Appleseed,Salmon Roe,,,,,,,,,,,803
+Blade Skipper,Suspending Minnow,4,8,,Fog,,,,,,,821
+Azim Khaat,,,,,,,,,,,,100304
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
 Othardian Trout,Zagas Khaal,,,,,,,,,,,576
-Sun Bass,Midge Larva,,,,,,,,,,,579
+Sun Bass,Midge Larva,,,,,,,Powerful,,,,579
 Hardscale,Suspending Minnow,,,,,,,,,,,591
 Sweatfish,Stonefly Larva,,,,,,,Precision,,,,622
-Guppy,Stonefly Larva,16,20,,"Clear Skies, Fair Skies",,,,,,,
-Water Fan,Salmon Roe,,,,,,,,,,,
-Gigas Catfish,Salmon Roe,,,,,,,,,,,
-Greasy Strangler,Salmon Roe,,,,,,,,,,,
-Spikefish,Salmon Roe,,,,,,,,,,,
-Duskfish,Zagas Khaal,10,15,"Rain, Gales",Clouds,,,,,,,
-Tao Khaal,,,,,,,,,,,,
+Guppy,Stonefly Larva,16,20,,"Clear Skies, Fair Skies",,,,,,,739
+Water Fan,Salmon Roe,,,,,,,,,,,781
+Gigas Catfish,Salmon Roe,,,,,,,,,,,789
+Greasy Strangler,Salmon Roe,,,,,,,,,,,792
+Spikefish,Salmon Roe,,,,,,,,,,,798
+Duskfish,Zagas Khaal,8,16,"Rain, Gales",Clouds,,,Powerful,,,,820
+Tao Khaal,,,,,,,,,,,,100305
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
-Dry Steppe Skipper,Midge Larva,,,,,,,,,,,586
+Dry Steppe Skipper,Midge Larva,,,,,,,Precision,,,,586
 Dusk Crayfish,Zagas Khaal,,,,,,,,,,,588
 Bowfish,Midge Larva,,,,,,,,,,,589
-Tao Bitterling,Midge Larva,,,,,,,,,,,594
+Tao Bitterling,Midge Larva,,,,,,,Precision,,,,594
 The Word of God,Stonefly Larva,20,24,,,,,,,,,772
-Fish Offering,Salmon Roe,,,,,,,,,,,
-Zagas A'khaal,Salmon Roe,,,,,,,,,,,
-Steppe Sweetfish,Salmon Roe,,,,,,,,,,,
-Moon Oyster,Salmon Roe,,,,,,,,,,,
-Lower Yat Khaal,,,,,,,,,,,,
+Fish Offering,Salmon Roe,,,,,,,,,,,785
+Zagas A'khaal,Salmon Roe,,,,,,,,,,,788
+Steppe Sweetfish,Salmon Roe,,,,,,,,,,,791
+Moon Oyster,Salmon Roe,,,,,,,,,,,795
+Elder Gourami,Zagas Khaal,,,,"Fog, Clouds",,,Powerful,,,,756
+Lower Yat Khaal,,,,,,,,,,,,100306
 Zagas Khaal,Nightcrawler,,,,,,,,,,,577
 Othardian Trout,Zagas Khaal,,,,,,,,,,,576
 Steppe Skipper,Midge Larva,,,,,,,Precision,,,,578
-Dawn Crayfish,Zagas Khaal,,,,,,,,,,,580
-Yat Goby,Midge Larva,,,,,,,,,,,582
-Jade Sculpin,Midge Larva,,,,,,,,,,,590
-Yat Khan,Stonefly Larva,,,,Wind,,,,,,,773
-Crimson Copperfish,Salmon Roe,,,,,,,,,,,
-Dusk Scallop,Salmon Roe,,,,,,,,,,,
-Granite Hardscale,Salmon Roe,,,,,,,,,,,
-Fishy Fish,Salmon Roe,,,,,,,,,,,
-Dotharl Khaa,,,,,,,,,,,,
+Dawn Crayfish,Zagas Khaal,,,,,,,Precision,,,,580
+Yat Goby,Midge Larva,,,,,,,Precision,,,,582
+Jade Sculpin,Midge Larva,,,,,,,Precision,,,,590
+Yat Khan,Stonefly Larva,,,,Wind,,,Precision,,,,773
+Crimson Copperfish,Salmon Roe,,,,,,,,,,,787
+Dusk Scallop,Salmon Roe,,,,,,,,,,,797
+Granite Hardscale,Salmon Roe,,,,,,,,,,,801
+Fishy Fish,Salmon Roe,,,,,,,,,,,805
+Dotharl Khaa,,,,,,,,,,,,100307
 Brassfish,Nightcrawler,,,,,,,,,,,585
-Nhaama's Boon,Midge Larva,,,,,,,,,,,583
-Steppe Barramundi,Salmon Roe,,,,,,,,,,,
-Arrowhead Snail,Salmon Roe,,,,,,,,,,,
-Plump Trout,Salmon Roe,,,,,,,,,,,
-Crawling Cog,Salmon Roe,,,,,,,,,,,
-Nhaama's Treasure,Suspending Minnow,4,8,Rain,Clear Skies,,,,,,,
-The Unconditional,,,,,,,,,,,,
-Kugane Piers,,,,,,,,,,,,
+Nhaama's Boon,Midge Larva,,,,,,,Powerful,,,,583
+Steppe Barramundi,Salmon Roe,,,,,,,,,,,780
+Arrowhead Snail,Salmon Roe,,,,,,,,,,,782
+Plump Trout,Salmon Roe,,,,,,,,,,,802
+Crawling Cog,Salmon Roe,,,,,,,,,,,804
+Nhaama's Treasure,Suspending Minnow,4,8,Rain,"Clear Skies, Fair Skies",,,Powerful,,,,832
+The Unconditional,Stonefly Larva,5,7,Rain,Clear Skies,,Heavy,,,,,845
+Kugane Piers,,,,,,,,,,,,110101
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Striped Fugu,Ruby Shrimp,,,,,,,,,,,562
 Glass Tuna,Ruby Shrimp,,,,,,,,,,,605
 Hanatatsu,Ruby Shrimp,,,,,,,,,,,630
-Ribbon Eel,Ruby Shrimp,,,,,,,,,,,
-Rising Dragon,Ruby Shrimp,,,,,,,,,,,
-Shirogane,,,,,,,,,,,,
+Ribbon Eel,Ruby Shrimp,,,,,,,Precision,,,,754
+Rising Dragon,Ruby Shrimp,,,,,,,Powerful,,,,766
+Shirogane,,,,,,,,,,,,110201
 Grinning Anchovy,Live Shrimp,,,,,,,,,,,539
 Ruby Shrimp,Live Shrimp,,,,,,,,,,,545
 Striped Fugu,Ruby Shrimp,,,,,,,,,,,562
 Glass Tuna,Ruby Shrimp,,,,,,,,,,,605
-The Gambler,Blue Bobbit,,,,,,,,,,,
-The Silver Canal,,,,,,,,,,,,
-Nogoi,Nightcrawler,,,,,,,,,,,565
+The Gambler,Blue Bobbit,,,,,,,Powerful,,,,767
+The Silver Canal,,,,,,,,,,,,110202
+Nogoi,Nightcrawler,,,,,,,Powerful,,,,565
 Doman Trout,Nightcrawler,,,,,,,,,,,571
-Killifish,Midge Larva,,,,Clear Skies,,,,,,,574
+Killifish,Midge Larva,,,,Clear Skies,,,Precision,,,,574
 Brassfish,Nightcrawler,,,,,,,,,,,585
-Bonsai Fish,Nightcrawler,,,,,,,,,,,
-Princess Killifish,Nightcrawler,4,6,,,,,,,,,
-Ruby Price Depths,,,,,,,,,,,,
+Bonsai Fish,Nightcrawler,,,,,,,Precision,,,,753
+Princess Killifish,Nightcrawler,4,6,,,,,Precision,,,,816
+Ruby Price Depths,,,,,,,,,,,,100151
 Wentletrap,Small Gig Head,,,,,,,,,,,638
 Black Boxfish,Normal Gig Head,,,,,,,,,,,639
 Spider Crab,Large Gig Head,,,,,,,,,,,648
 Hatchetfish,Small Gig Head,,,,,,,,,,,656
 Threadfish,Normal Gig Head,,,,,,,,,,,657
 Corpse-eater,Large Gig Head,,,,,,,,,,,665
-Tamamizu,,,,,,,,,,,,
+Tamamizu,,,,,,,,,,,,100152
 Wentletrap,Small Gig Head,,,,,,,,,,,638
 Glass Manta,Large Gig Head,,,,,,,,,,,640
 Little Dragonfish,Normal Gig Head,,,,,,,,,,,649
 Garden Eel,Small Gig Head,,,,,,,,,,,658
 Ronin Trevally,Large Gig Head,,,,,,,,,,,666
 Swordtip,Normal Gig Head,,,,,,,,,,,673
-Sui–no–Sato,,,,,,,,,,,,
+Sui–no–Sato,,,,,,,,,,,,100153
 Regal Silverside,Small Gig Head,,,,,,,,,,,641
 Little Dragonfish,Normal Gig Head,,,,,,,,,,,649
 Black Fanfish,Large Gig Head,,,,,,,,,,,650
 Eastern Sea Pickle,Small Gig Head,,,,,,,,,,,659
 Toothsome Grouper,Large Gig Head,,,,,,,,,,,667
 False Scad,Normal Gig Head,,,,,,,,,,,674
-The Adventure,,,,,,,,,,,,
+The Adventure,,,,,,,,,,,,100154
 Regal Silverside,Small Gig Head,,,,,,,,,,,641
 Black Boxfish,Normal Gig Head,,,,,,,,,,,639
 Zebra Shark,Large Gig Head,,,,,,,,,,,651
 Brindlebass,Large Gig Head,,,,,,,,,,,660
 Horned Turban,Small Gig Head,,,,,,,,,,,668
 Snow Crab,Normal Gig Head,,,,,,,,,,,675
-Shisui of the Violet Tides,,,,,,,,,,,,
+Shisui of the Violet Tides,,,,,,,,,,,,100155
 Snowflake Moray,Normal Gig Head,,,,,,,,,,,642
 Nophica's Comb,Small Gig Head,,,,,,,,,,,652
 Black Fanfish,Large Gig Head,,,,,,,,,,,650
 Demon Stonefish,Normal Gig Head,,,,,,,,,,,661
 Ruby Sea Star,Small Gig Head,,,,,,,,,,,669
 Red-eyed Lates,Large Gig Head,,,,,,,,,,,676
-The One River Southwestern Riverbeds,,,,,,,,,,,,
+The One River Southwestern Riverbeds,,,,,,,,,,,,100251
 Hoppfish,Small Gig Head,,,,,,,,,,,643
 Lightscale,Large Gig Head,,,,,,,,,,,644
 Warty Wartfish,Normal Gig Head,,,,,,,,,,,653
 Gauntlet Crab,Small Gig Head,,,,,,,,,,,670
 Common Bitterling,Normal Gig Head,,,,,,,,,,,677
 Fifty-summer Cod,Large Gig Head,,,,,,,,,,,678
-The One River Southern Riverbeds,,,,,,,,,,,,
+The One River Southern Riverbeds,,,,,,,,,,,,100252
 Grass Fugu,Normal Gig Head,,,,,,,,,,,645
 Giant Eel,Large Gig Head,,,,,,,,,,,646
 Common Whelk,Small Gig Head,,,,,,,,,,,654
 Armored Crayfish,Small Gig Head,,,,,,,,,,,662
 Bighead Carp,Large Gig Head,,,,,,,,,,,663
 Hermit Goby,Normal Gig Head,,,,,,,,,,,671
-Imperial Hypersonic Assault Craft L-XXIII,,,,,,,,,,,,
+Imperial Hypersonic Assault Craft L-XXIII,,,,,,,,,,,,100253
 Kamina Crab,Small Gig Head,,,,,,,,,,,647
 Grass Fugu,Normal Gig Head,,,,,,,,,,,645
 Hairless Barb,Large Gig Head,,,,,,,,,,,655
 Zeni Clam,Small Gig Head,,,,,,,,,,,664
 Nagxian Mullet,Normal Gig Head,,,,,,,,,,,679
 Skythorn,Large Gig Head,,,,,,,,,,,672
-The Kobayashi Maru,,,,,,,,,,,,
+The Kobayashi Maru,,,,,,,,,,,,100156
 Redcoat,Normal Gig Head,,,,,,,,,,,680
 Sea Lamp,Small Gig Head,,,,,,,,,,,692
 Amberjack,Large Gig Head,,,,,,,,,,,693
 Spiny Lobster,Normal Gig Head,,,,,,,,,,,703
 Bashful Batfish,Small Gig Head,,,,,,,,,,,711
 Motley Beakfish,Large Gig Head,,,,,,,,,,,720
-Ichimonji,Large Gig Head,2,12,,,,,,,,,
-The Sunken Junk,,,,,,,,,,,,
+Ichimonji,Large Gig Head,2,12,,,,,,,,,740
+The Sunken Junk,,,,,,,,,,,,100254
 Yanxian Tiger Prawn,Small Gig Head,,,,,,,,,,,681
 Tengu Fan,Normal Gig Head,,,,,,,,,,,682
 Cherry Salmon,Large Gig Head,,,,,,,,,,,694
 Doman Bubble Eye,Small Gig Head,,,,,,,,,,,705
 River Bream,Normal Gig Head,,,,,,,,,,,712
 Ichthyosaur,Large Gig Head,,,,,,,,,,,722
-The Dragon's Struggle,,,,,,,,,,,,
+The Dragon's Struggle,,,,,,,,,,,,100255
 Star Turban,Small Gig Head,,,,,,,,,,,683
 Blue-fish,Large Gig Head,,,,,,,,,,,684
 Yu-no-hana Crab,Normal Gig Head,,,,,,,,,,,695
 Dragon Squeaker,Small Gig Head,,,,,,,,,,,706
 Snipe Eel,Large Gig Head,,,,,,,,,,,713
 Sailfin,Normal Gig Head,,,,,,,,,,,723
-Azim Khaat Western Lakebed,,,,,,,,,,,,
+Azim Khaat Western Lakebed,,,,,,,,,,,,100351
 Steppe Bullfrog,Small Gig Head,,,,,,,,,,,685
 Cavalry Catfish,Large Gig Head,,,,,,,,,,,686
 Dotharli Gudgeon,Normal Gig Head,,,,,,,,,,,696
 Dawn Herald,Small Gig Head,,,,,,,,,,,707
 Dusk Herald,Normal Gig Head,,,,,,,,,,,715
 Flamefish,Large Gig Head,,,,,,,,,,,725
-Azim Khaat Eastern Lakebed,,,,,,,,,,,,
+Azim Khaat Eastern Lakebed,,,,,,,,,,,,100352
 Redfin,Normal Gig Head,,,,,,,,,,,687
 River Clam,Small Gig Head,,,,,,,,,,,697
 Grass Shark,Large Gig Head,,,,,,,,,,,698
 Dawn Herald,Small Gig Head,,,,,,,,,,,707
 Fickle Krait,Normal Gig Head,,,,,,,,,,,726
 Glaring Perch,Large Gig Head,,,,,,,,,,,716
-Loch Seld Northwestern Lakebed,,,,,,,,,,,,
+Loch Seld Northwestern Lakebed,,,,,,,,,,,,90451
 Moondisc,Small Gig Head,,,,,,,,,,,688
 Bleached Bonytongue,Large Gig Head,,,,,,,,,,,689
 Typhoon Shrimp,Normal Gig Head,,,,,,,,,,,699
 Salt Cellar,Small Gig Head,,,,,,,,,,,708
 Abalathian Pipira,Normal Gig Head,,,,,,,,,,,717
 Flood Tuna,Large Gig Head,,,,,,,,,,,729
-Loch Seld Central Lakebed,,,,,,,,,,,,
+Loch Seld Central Lakebed,,,,,,,,,,,,90452
 Salt Shark,Normal Gig Head,,,,,,,,,,,690
 Bleached Bonytongue,Large Gig Head,,,,,,,,,,,689
 Rock Oyster,Small Gig Head,,,,,,,,,,,700
 White Sturgeon,Large Gig Head,,,,,,,,,,,709
 Steel Loach,Small Gig Head,,,,,,,,,,,718
 Mercenary Crab,Normal Gig Head,,,,,,,,,,,730
-Loch Seld Southeastern Lakebed,,,,,,,,,,,,
+Loch Seld Southeastern Lakebed,,,,,,,,,,,,90453
 King's Mantle,Large Gig Head,,,,,,,,,,,691
 Salt Urchin,Small Gig Head,,,,,,,,,,,701
 Carpenter Crab,Normal Gig Head,,,,,,,,,,,702
 Tithe Collector,Large Gig Head,,,,,,,,,,,710
 Ivory Sole,Normal Gig Head,,,,,,,,,,,719
 Ashfish,Small Gig Head,,,,,,,,,,,731
-Node #480,,,,,,,,,,,,
+Node #480,,,,,,,,,,,,100191
 Horned Turban,Small Gig Head,,,,,,,,,,,668
 Swordtip,Normal Gig Head,,,,,,,,,,,673
 Spiny Lobster,Normal Gig Head,,,,,,,,,,,703
 Bashful Batfish,Small Gig Head,,,,,,,,,,,711
-Mitsukuri Shark,Large Gig Head,,,,,"Bashful Batfish, 10",,,,,,704
-Thousandfang,Large Gig Head,,,,,"Bashful Batfish, 10",,,,,,721
-Tiny Tatsunoko,Large Gig Head,,,,,"Bashful Batfish, 10",,,,,,734
-Node #481,,,,,,,,,,,,
+Mitsukuri Shark,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,704
+Thousandfang,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,721
+Tiny Tatsunoko,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,734
+Node #481,,,,,,,,,,,,100291
 Doman Bubble Eye,Small Gig Head,,,,,,,,,,,705
 Dragon Squeaker,Small Gig Head,,,,,,,,,,,706
 Snipe Eel,Large Gig Head,,,,,,,,,,,713
 Ichthyosaur,Large Gig Head,,,,,,,,,,,722
-Cherubfish,Normal Gig Head,,,,,"Ichthyosaur, 10",,,,,,714
-Fangshi,Normal Gig Head,,,,,"Ichthyosaur, 10",,,,,,724
-Dafangshi,Small Gig Head,,,,,"Ichthyosaur, 10",,,,,,5002
-Node #482,,,,,,,,,,,,
+Cherubfish,Normal Gig Head,,,,,"Ichthyosaur, 7",,,,,,714
+Fangshi,Normal Gig Head,,,,,"Ichthyosaur, 7",,,,,,724
+Dafangshi,Small Gig Head,,,,,"Ichthyosaur, 7",,,,,,
+Node #482,,,,,,,,,,,,100391
 Dusk Herald,Normal Gig Head,,,,,,,,,,,715
 Glaring Perch,Large Gig Head,,,,,,,,,,,716
 Fickle Krait,Normal Gig Head,,,,,,,,,,,726
 Flamefish,Large Gig Head,,,,,,,,,,,725
-Eternal Eye,Small Gig Head,,,,,"Glaring Perch, 10",,,,,,727
-Soul of the Stallion,Small Gig Head,,,,,"Glaring Perch, 10",,,,,,728
-Node #483,,,,,,,,,,,,
+Eternal Eye,Small Gig Head,,,,,"Glaring Perch, 7",,,,,,727
+Soul of the Stallion,Small Gig Head,,,,,"Glaring Perch, 7",,,,,,728
+Node #483,,,,,,,,,,,,90491
 Salt Cellar,Small Gig Head,,,,,,,,,,,708
 Steel Loach,Small Gig Head,,,,,,,,,,,718
 Abalathian Pipira,Normal Gig Head,,,,,,,,,,,717
 Ivory Sole,Normal Gig Head,,,,,,,,,,,719
-Silken Sunfish,Large Gig Head,,,,,"Mercenary Crab, 10",,,,,,732
-Mosasaur,Large Gig Head,,,,,"Mercenary Crab, 10",,,,,,733
-Node #530,,,,,,,,,,,,
-Corpse-eater,Large Gig Head,,,,,,,,,,,
-Eastern Sea Pickle,Small Gig Head,,,,,,,,,,,
-Horned Turban,Small Gig Head,,,,,,,,,,,
-Motley Beakfish,Large Gig Head,,,,,,,,,,,
-Snailfish,Normal Gig Head,,,,,"Ichimonji, 10",,,,,,
-Spiny Lobster,Normal Gig Head,,,,,,,,,,,
+Silken Sunfish,Large Gig Head,,,,,"Mercenary Crab, 7",,,,,,732
+Mosasaur,Large Gig Head,,,,,"Mercenary Crab, 7",,,,,,733
+Node #530,,,,,,,,,,,,100192
+Corpse-eater,Large Gig Head,,,,,,,,,,,665
+Eastern Sea Pickle,Small Gig Head,,,,,,,,,,,659
+Horned Turban,Small Gig Head,,,,,,,,,,,668
+Motley Beakfish,Large Gig Head,,,,,,,,,,,720
+Snailfish,Normal Gig Head,,,,,"Ichimonji, 10",,,,,,741
+Spiny Lobster,Normal Gig Head,,,,,,,,,,,703
+The Trivium,,,,,,,,,,,,120101
+Crystal Knife,Marble Nymph,,,,,,,,,,,3014
+Laxan Carp,Marble Nymph,,,,,,,,,,,3008
+Asteroidea,Robber Ball,,,,,,,Precision,,,,3009
+Jacketed Snail,Robber Ball,,,,,,,Precision,,,,3010
+Lover's Flower,Marble Nymph,,,,,,,Precision,,,,3011
+The Quadrivium,,,,,,,,,,,,120102
+Crystal Knife,Robber Ball,,,,,,,,,,,3014
+Laxan Carp,Robber Ball,,,,,,,,,,,3008
+Sinspitter,Marble Nymph,,,,,,,Precision,,,,3012
+Wandering Catfish,Baitbugs,,,,,,,Precision,,,,3013
+The Sinsteeped,Fruit Worm,22,24,,"Clear Skies, Fair Skies",,,Precision,,,,3301
+Crystarium Personal Suites,,,,,,,,,,,,120103
+Crystal Knife,Freshwater Boilie,,,,,,,,,,,3014
+Laxan Carp,Fruit Worm,,,,,,,,,,,3008
+Crystarium Tetra,Fruit Worm,,,,,,,Precision,,,,3007
+Skeletonfish,Freshwater Boilie,,,,,,,Precision,,,,3015
+Loose Pendant,Baitbugs,18,22,,,,,Precision,,,,3179
+The Derelicts,,,,,,,,,,,,120201
+Milky Coral,Short Bill Minnow,,,,,,,Precision,,1,,3016
+Gravel Mussel,Short Bill Minnow,,,,,,,Precision,,1,,3017
+Crimson Sea Spider,Moyebi Shrimp,,,,,,,,,,,3018
+Bonefish,Moyebi Shrimp,,,,,,,,,,,3019
+Eulmore Butterfly,Squid Strip,,,,,,,Precision,,,,3020
+Red Hammerhead,Squid Strip,,,,,,,,,,,3021
+Winged Dame,Squid Strip,12,19,,Clear Skies,,,Precision,,,,3180
+The Rift of Sighs,,,,,,,,,,,,120301
+Eighteyes Eel,Fruit Worm,,,,,,,,,,,3001
+Hard Candy,Robber Ball,,,,,,,,,,,3022
+Abyssal Snail,Robber Ball,,,,,,,,,,,3024
+Water Ball,Baitbugs,,,,,,,,,,,3023
+Albino Caiman,Robber Ball,,,,,,,,,,,3028
+Sweetheart,Baitbugs,,,Fog,"Clear Skies, Fair Skies",,,Powerful,,,,3302
+The Rusted Reservoir,,,,,,,,,,,,120302
+Hard Candy,Metal Spinner,,,,,,,,,,,3022
+Abyssal Snail,Robber Ball,,,,,,,,,,,3024
+Water Ball,Marble Nymph,,,,,,,,,,,3023
+Platinum Guppy,Baitbugs,,,,Clear Skies,,,Precision,,,,3029
+Misty Killifish,Robber Ball,,,,,,,,,,,3030
+The Source,,,,,,,,,,,,120303
+Hard Candy,Robber Ball,,,,,,,,,,,3022
+Clean Saucer,Baitbugs,,,,,,,,,,,3025
+Rabbit Skipper,Robber Ball,,,,,,,Precision,,,,3026
+Xanthic Bass,Marble Nymph,,,,,,,,,,,3027
+Albino Rock Crab,Baitbugs,,,,,,,Precision,,,,3031
+Laxan Inkhorn,Metal Spinner,,,,,,,Precision,,,,3187
+The Unforgiven,Baitbugs,,,,Fog,,,Powerful,,,,3181
+Sullen,,,,,,,,,,,,120304
+Hard Candy,Baitbugs,,,,,,,,,,,3022
+Rabbit Skipper,Metal Spinner,,,,,,,Precision,,,,3026
+Xanthic Bass,Fruit Worm,,,,,,,,,,,3027
+Snakeskin Discus,Baitbugs,,,,,,,Precision,,,,3032
+The Isle of Ken,,,,,,,,,,,,120305
+Hard Candy,Fruit Worm,,,,,,,,,,,3022
+Clean Saucer,Metal Spinner,,,,,,,,,,,3025
+Albino Garfish,Robber Ball,,,,,,,Powerful,,,,3033
+Vicejaw,Robber Ball,,,,,,,Powerful,,,,3034
+The Jaws of Undeath,Baitbugs,16,0,,Clouds,,,Powerful,,,,3193
+Northeast Source,,,,,,,,,,,,120351
+Lilac Goby,Small Gig Head,,,,,,,,,,,3114
+Purple Ghost,Small Gig Head,,,,,,,,,,,3115
+Gazing Glass,Normal Gig Head,,,,,,,,,,,3117
+Lakelouse,Normal Gig Head,,,,,,,,,,,3116
+Elven Spear,Large Gig Head,,,,,,,,,,,3119
+Source Octopus,Large Gig Head,,,,,,,,,,,3118
+Southeast Source,,,,,,,,,,,,120353
+Skykisser,Small Gig Head,,,,,,,,,,,3125
+Viola Clam,Small Gig Head,,,,,,,,,,,3126
+Lakeland Cod,Large Gig Head,,,,,,,,,,,3130
+Geayi,Normal Gig Head,,,,,,,,,,,3127
+Noblefish,Normal Gig Head,,,,,,,,,,,3128
+Misteye,Large Gig Head,,,,,,,,,,,3129
+The Isle of Ken,,,,,,,,,,,,120352
+Grey Carp,Small Gig Head,,,,,,,,,,,3113
+Shade Gudgeon,Small Gig Head,,,,,,,,,,,3120
+Lakethistle,Normal Gig Head,,,,,,,,,,,3121
+Platinum Bream,Normal Gig Head,,,,,,,,,,,3122
+Wardenfish,Large Gig Head,,,,,,,,,,,3123
+Finned Eggplant,Large Gig Head,,,,,,,,,,,3124
+Upper Watts River,,,,,,,,,,,,120401
+Skulleater,Marble Nymph,,,,,,,,,,,3035
+Toffee Snail,Fruit Worm,,,,,,,,,,,3036
+Watts Trout,Metal Spinner,,,,,,,,,,,3037
+Hucho Taimen,Robber Ball,,,,,,,,,,,3038
+Winged Hatchetfish,Robber Ball,,,,,,,,,,,3039
+Giant Taimen,Baitbugs,,,,,,,Powerful,,,,3303
+White Oil Falls,,,,,,,,,,,,120402
+Skulleater,Marble Nymph,,,,,,,,,,,3035
+Watts Trout,Fruit Worm,,,,,,,,,,,3037
+Noble's Fan,Robber Ball,,,,,,,Precision,,,,3040
+White Oil Perch,Metal Spinner,,,,,,,Powerful,,,,3188
+Lower Watts River,,,,,,,,,,,,120403
+Skulleater,Metal Spinner,,,,,,,,,,,3035
+Toffee Snail,Metal Spinner,,,,,,,,,,,3036
+Watts Trout,Metal Spinner,,,,,,,,,,,3037
+Zebra Catfish,Robber Ball,,,,,,,Precision,,,,3041
+White Ronso,Baitbugs,0,2,,,,,Precision,,,,3194
+Sharptongue Drip,,,,,,,,,,,,120404
+Skulleater,Metal Spinner,,,,,,,,,,,3035
+Toffee Snail,Robber Ball,,,,,,,,,,,3036
+Sepia Sole,Marble Nymph,,,,,,,Precision,,,,3042
+Bronze Sole,Marble Nymph,,,,Rain,,,Powerful,,,,3182
+The Western Kholusian Coast,,,,,,,,,,,,120405
+South Kholusian Cod,Short Bill Minnow,,,,,,,,,,,3046
+Kholusian Flounder,Squid Strip,,,,,,,,,,,3045
+Shellfracture Kelp,Squid Strip,,,,,,,,,,,3043
+Creamy Oyster,Moyebi Shrimp,,,,,,,,,,,3002
+Rose Shrimp,Short Bill Minnow,,,,,,,Precision,,,,3048
+Razorfish,Short Bill Minnow,,,,,,,,,,,3047
+Kholusian King Crab,Metal Spinner,,,,,,,,,,,3191
+Blue Crab,Squid Strip,,,,,,,,,,,3310
+Seagazer Shoals,,,,,,,,,,,,120406
+South Kholusian Cod,Metal Spinner,,,,,,,,,,,3046
+Kholusian Flounder,Metal Spinner,,,,,,,,,,,3045
+Blood Cloud,Short Bill Minnow,,,,,,,,,,,3044
+Shapeshifter,Squid Strip,,,,,,,Precision,,,,3049
+Minstrelfish,Short Bill Minnow,,,,,,,Powerful,,,,3050
+The Eastern Kholusian Coast,,,,,,,,,,,,120407
+South Kholusian Cod,Metal Spinner,,,,,,,,,,,3046
+Shellfracture Kelp,Metal Spinner,,,,,,,,,,,3043
+Blood Cloud,Moyebi Shrimp,,,,,,,,,,,3044
+Spearhead Squid,Short Bill Minnow,,,,,,,,,,,3054
+Kholusian Wrasse,Spearhead Squid,,,,,,,Powerful,,,,3051
+Weedy Seadragon,Short Bill Minnow,,,,,,,,,,,3052
+Henodus,Spearhead Squid,16,0,,"Clouds, Fog",,,Powerful,,,,3053
+The River of Sand,,,,,,,,,,,,120501
+Shadow Crab,Desert Dessert Frog,,,,,,,,,,,3055
+Desert Dustfish,Desert Dessert Frog,,,,,,,,,,,3056
+Hornhelm,Jerked Ovim,,,,,,,,,,,3057
+Sand Egg,Desert Dessert Frog,,,,,,,,,,,3059
+Web-footed Sand Gecko,Desert Dessert Frog,,,,,,,,,,,3058
+The Horned King,Hornhelm,0,6,,Dust Storms,,,Powerful,,,,3183
+The Nabaath Severance,,,,,,,,,,,,120502
+Shadow Crab,Desert Dessert Frog,,,,,,,,,,,3055
+Desert Dustfish,Desert Dessert Frog,,,,,,,,,,,3056
+Hornhelm,Jerked Ovim,,,,,,,,,,,3057
+Amber Lamprey,Desert Dessert Frog,,,,,,,Powerful,,,,3060
+Desert Saw,Jerked Ovim,,,,,,,Powerful,,,,3061
+Areng Dire,Metal Spinner,,,,,,,Powerful,,,,3190
+The Hills of Amber,,,,,,,,,,,,120503
+Amber Monkfish,Desert Dessert Frog,,,,,,,,,,,3004
+Desert Dustfish,Desert Dessert Frog,,,,,,,,,,,3056
+Web-footed Sand Gecko,Desert Dessert Frog,,,,,,,,,,,3058
+Garik Crab,Jerked Ovim,,,,,,,,,,,3062
+Nabaath Manta,Web-footed Sand Gecko,,,,,,,,,,,3063
+Thorned Lizard,Web-footed Sand Gecko,10,18,,"Clear Skies, Fair Skies, Heat Waves",,,Powerful,,,,3064
+Ambling Caltrop,Web-footed Sand Gecko,12,16,,Clear Skies,,,,,,,3195
+Handmirror Lake,,,,,,,,,,,,120601
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Pixie Fish,Fruit Worm,,,,,,,Precision,,,,3068
+Wimple Carp,Baitbugs,,,,,,,Precision,,,,3071
+Lemonfish,Robber Ball,,,,,,,,,,,3072
+Faeshine Clam,Metal Spinner,,,,,,,Precision,,,,3189
+Leannisg,Marble Nymph,6,8,,Rain,,,Powerful,,,,3304
+Longmirror Lake,,,,,,,,,,,,120602
+Calico Trout,Fruit Worm,,,,,,,,,,,3005
+Official Ball,Marble Nymph,,,,,,,Precision,,,,3066
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Rebel,Marble Nymph,,,,,,,Precision,,,,3073
+Wild Red Betta,Baitbugs,,,,,,,Precision,,,,3074
+Cerulean Loach,Fruit Worm,,,,,,,,,,,3076
+The Sound of Fury,Baitbugs,20,0,,"Clear Skies, Fair Skies",,,Precision,,,,3184
+Fuchsia Bloom,Robber Ball,,,,,,,,,,,3309
+The Haughty One,,,,,,,,,,,,120603
+Official Ball,Baitbugs,,,,,,,Precision,,,,3066
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Blood-eyed Frog,Marble Nymph,,,,,,,Precision,,,,3069
+Spotted Ctenopoma,Robber Ball,,,,,,,Precision,,,,3075
+Cerulean Loach,Fruit Worm,,,,,,,,,,,3076
+The Jealous One,,,,,,,,,,,,120604
+Spotted Blue-eye,Marble Nymph,,,,,,,Precision,,,,3065
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Blood-eyed Frog,Baitbugs,,,,,,,Precision,,,,3069
+Cerulean Loach,Fruit Worm,,,,,,,,,,,3076
+Fae Rainbow,Marble Nymph,,,"Clear Skies, Fair Skies",Fog,,,,,,,3196
+The Spoiled One,,,,,,,,,,,,120605
+Brightmirror Clam,Fruit Worm,,,,,,,,,,,3003
+Grey Skipper,Baitbugs,,,,,,,,,,,3067
+Cherry Herring,Marble Nymph,,,,,,,,,,,3070
+Cerulean Loach,Robber Ball,,,,,,,,,,,3076
+Saint Fathric's Temple,,,,,,,,,,,,120606
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Blood-eyed Frog,Baitbugs,,,,,,,Precision,,,,3069
+Cerulean Loach,Fruit Worm,,,,,,,,,,,3076
+Golden Lobster,Marble Nymph,,,,,,,Precision,,,,3077
+Gold Hammer,Baitbugs,,,"Clear Skies, Fair Skies",Clear Skies,,,Precision,,,,3305
+Father Collard's Failings,,,,,,,,,,,,120607
+Official Ball,Robber Ball,,,,,,,Precision,,,,3066
+Grey Skipper,Fruit Worm,,,,,,,,,,,3067
+Pixie Fish,Fruit Worm,,,,,,,Precision,,,,3068
+Toadhead,Baitbugs,,,,Clear Skies,,,Precision,,,1,3078
+North Lyhe Ghiah,,,,,,,,,,,,120651
+Jenanna's Tear,Small Gig Head,,,,,,,,,,,3134
+Shade Axolotl,Normal Gig Head,,,,,,,,,,,3136
+Daisy Turban,Small Gig Head,,,,,,,,,,,3135
+Little Flirt,Normal Gig Head,,,,,,,,,,,3137
+Peallaidh,Large Gig Head,,,,,,,,,,,3138
+Voeburt Bichir,Large Gig Head,,,,,,,,,,,3139
+Deepwood Swim,,,,,,,,,,,,120652
+Poecilia,Small Gig Head,,,,,,,,,,,3140
+Gilded Batfish,Small Gig Head,,,,,,,,,,,3141
+Petalfish,Normal Gig Head,,,,,,,,,,,3142
+Mirrorfish,Normal Gig Head,,,,,,,,,,,3143
+Glass Eel,Large Gig Head,,,,,,,,,,,3144
+Voeburt Salamander,Large Gig Head,,,,,,,,,,,3145
+Central Longmirror Lake,,,,,,,,,,,,120653
+Bedskipper,Small Gig Head,,,,,,,,,,,3146
+Dandyfish,Small Gig Head,,,,,,,,,,,3147
+Sauldia Ruby,Normal Gig Head,,,,,,,,,,,3148
+Mock Pixie,Normal Gig Head,,,,,,,,,,,3149
+Hunter's Arrow,Large Gig Head,,,,,,,,,,,3150
+Fuathgobbler,Large Gig Head,,,,,,,,,,,3151
+Thysm Lran,,,,,,,,,,,,120654
+Paradise Crab,Small Gig Head,,,,,,,,,,,3152
+Saint Fathric's Ire,Small Gig Head,,,,,,,,,,,3153
+Queensgown,Normal Gig Head,,,,,,,,,,,3154
+Flowering Kelpie,Normal Gig Head,,,,,,,,,,,3155
+Ghoulfish,Large Gig Head,,,,,,,,,,,3156
+Measan Deala,Large Gig Head,,,,,,,,,,,3157
+South Longmirror Lake,,,,,,,,,,,,120655
+Big-eye,Normal Gig Head,,,,,,,,,,,3133
+Dohn Horn,Small Gig Head,,,,,,,,,,,3158
+Aquabloom,Small Gig Head,,,,,,,,,,,3159
+Jester Fish,Normal Gig Head,,,,,,,,,,,3160
+Blue Lightning,Large Gig Head,,,,,,,,,,,3161
+Maidenhair,Large Gig Head,,,,,,,,,,,3162
+Lake Tusi Mek'ta,,,,,,,,,,,,120701
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Robber Crab,Baitbugs,,,,,,,,,,,3081
+Yellow Pipira,Fruit Worm,,,,,,,,,,,3083
+Clown Tetra,Robber Ball,,,,,,,,,,,3087
+Eryops,Clown Tetra,,,,,,,,,,,3088
+Priest of Yx'Lokwa,Eryops,10,12,,,,,Powerful,,,,3185
+The Red Chalice,,,,,,,,,,,,120702
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Darkroot,Robber Ball,,,,,,,,,,,3082
+Yellow Pipira,Fruit Worm,,,,,,,,,,,3083
+Oathfish,Baitbugs,,,,,,,Powerful,,,,3084
+Diamond Pipira,Robber Ball,12,20,,,,,Powerful,,,,3089
+The Lozatl,,,,,,,,,,,,120703
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Black Tri-star,Robber Ball,,,,,,,Precision,,,,3080
+Yellow Pipira,Marble Nymph,,,,,,,,,,,3083
+Night's Bass,Robber Ball,,,,,,,Precision,,,,3085
+Rak'tika Trout,Robber Ball,,,,,,,Precision,,,,3086
+Black Jet,Robber Ball,2,12,"Clouds, Fog",Fair Skies,,,,,,,3197
+South Mjrl's Regret,,,,,,,,,,,,120704
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Robber Crab,Baitbugs,,,,,,,,,,,3081
+Yellow Pipira,Fruit Worm,,,,,,,,,,,3083
+Night's Bass,Robber Ball,,,,,,,Precision,,,,3085
+Rak'tika Trout,Robber Ball,,,,,,,Precision,,,,3086
+Silver Kitten,Robber Ball,,,,,,,,,,,3090
+Recordkiller,Baitbugs,18,24,"Clear Skies, Fair Skies",Fog,,,Precision,,,,3306
+Woven Oath,,,,,,,,,,,,120705
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Darkroot,Robber Ball,,,,,,,,,,,3082
+Oathfish,Marble Nymph,,,,,,,Powerful,,,,3084
+Darkdweller,Baitbugs,0,8,,Fog,,,,,,1,3091
+Mjrl's Tears,,,,,,,,,,,,120706
+Clawbow,Fruit Worm,,,,,,,,,,,3079
+Yellow Pipira,Fruit Worm,,,,,,,,,,,3083
+North Lake Tusi Mek'ta,,,,,,,,,,,,120751
+Ankle Snipper,Small Gig Head,,,,,,,,,,,3165
+Treescale,Small Gig Head,,,,,,,,,,,3166
+Ronkan Pleco,Normal Gig Head,,,,,,,,,,,3167
+Gourmand Crab,Normal Gig Head,,,,,,,,,,,3168
+Gatorl's Bead,Large Gig Head,,,,,,,,,,,3169
+Diamondtongue,Large Gig Head,,,,,,,,,,,3170
+The Covered Halls of Dwatl,,,,,,,,,,,,120752
+Hermit's Hood,Small Gig Head,,,,,,,,,,,3171
+Hermit Crab,Small Gig Head,,,,,,,,,,,3172
+Megapiranha,Normal Gig Head,,,,,,,,,,,3173
+Everdark Bass,Normal Gig Head,,,,,,,,,,,3174
+Lozatl Pirarucu,Large Gig Head,,,,,,,,,,,3175
+Anpa's Handmaid,Large Gig Head,,,,,,,,,,,3176
+Central Lake Tusi Mek'ta,,,,,,,,,,,,120753
+Hermit's Hood,Small Gig Head,,,,,,,,,,,3171
+Ronkan Pleco,Normal Gig Head,,,,,,,,,,,3167
+South Lake Tusi Mek'ta,,,,,,,,,,,,120754
+Hermit's Hood,Small Gig Head,,,,,,,,,,,3171
+Ronkan Pleco,Normal Gig Head,,,,,,,,,,,3167
+The Flounders' Floor,,,,,,,,,,,,120801
+Deep Purple Coral,Squid Strip,,,,,,,,,1,,3092
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Caliban,Moyebi Shrimp,,,,,,,,,,,3096
+Bubble Angler,Squid Strip,,,,,,,Precision,,,,3098
+Ondo Harpoon,Squid Strip,,,,,,,Powerful,,,,3099
+Ondo Sigh,Squid Strip,12,14,,"Clear Skies, Fair Skies",,,,,,,3198
+Where the Dry Return,,,,,,,,,,,,120802
+Deep Purple Coral,Squid Strip,,,,,,,,,1,,3092
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Caliban,Moyebi Shrimp,,,,,,,,,,,3096
+Ondobane,Short Bill Minnow,,,,,,,Powerful,,,,3100
+Stippled Eel,Short Bill Minnow,,,,,,,,,,,3101
+Northwest Caliban Gorge,,,,,,,,,,,,120803
+Sycorax,Short Bill Minnow,,,,,,,,,1,,3093
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Caliban,Moyebi Shrimp,,,,,,,,,,,3096
+Hoodwinker,Short Bill Minnow,,,,Fair Skies,,,,,,,3097
+Seatrap,Squid Strip,,,,,,,,,,,3102
+Sweetmeat Mussel,Squid Strip,,,,,,,,,1,,3192
+West Caliban Gap,,,,,,,,,,,,120804
+Sycorax,Moyebi Shrimp,,,,,,,,,1,,3093
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Ancient Shrimp,Squid Strip,,,,,,,,,,,3103
+Yeti Crab,Ancient Shrimp,,,,,,,,,,,3104
+Aapoak,Ancient Shrimp,12,16,,Clear Skies,,,Powerful,,,1,3105
+East Caliban Gap,,,,,,,,,,,,120805
+Sycorax,Moyebi Shrimp,,,,,,,,,1,,3093
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Hoodwinker,Short Bill Minnow,,,,Fair Skies,,,,,,,3097
+Cyan Sea Devil,Short Bill Minnow,,,,,,,,,,,3106
+Pancake Octopus,Squid Strip,,,,,,,,,,,3107
+The Mother of All Pancakes,Squid Strip,0,3,Clouds,Clear Skies,,,,,,,3307
+Purpure,,,,,,,,,,,,120806
+Sycorax,Moyebi Shrimp,,,,,,,,,1,,3093
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Azure Sea Spider,Squid Strip,,,,,,,,,,,3095
+Maneater Clam,Short Bill Minnow,,,,,,,Precision,,1,,3108
+Stargazer,Squid Strip,,,,,,,,,,,3109
+Starchaser,Squid Strip,6,10,,Clouds,,,,,,1,3186
+The Norvrandt Slope,,,,,,,,,,,,120807
+Prospero Eel,Moyebi Shrimp,,,,,,,,,,,3006
+Sycorax,Moyebi Shrimp,,,,,,,,,1,,3093
+Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
+Azure Sea Spider,Short Bill Minnow,,,,,,,,,,,3095
+Sweetflesh Oyster,Short Bill Minnow,,,,,,,,,1,,3110
+Rainbow Shrimp,Short Bill Minnow,,,,,,,,,,,3111
+Predator,Squid Strip,,,,,,,,,,,3112
+Opal Shrimp,Squid Strip,18,20,,Clear Skies,,,Precision,,,,3308
+Node #645,,,,,,,,,,,,120391
+Purple Ghost,Small Gig Head,,,,,,,,,,,3115
+Lakelouse,Normal Gig Head,,,,,,,,,,,3116
+Shade Gudgeon,Small Gig Head,,,,,,,,,,,3120
+Platinum Bream,Normal Gig Head,,,,,,,,,,,3122
+Little Bismarck,Large Gig Head,,,,,"Noblefish, 10",,,,,,3131
+Bothriolepis,Large Gig Head,,,,,"Noblefish, 10",,,,,,3132
+Node #646,,,,,,,,,,,,120691
+Dandyfish,Small Gig Head,,,,,,,,,,,3147
+Paradise Crab,Small Gig Head,,,,,,,,,,,3152
+Ghoulfish,Large Gig Head,,,,,,,,,,,3156
+Blue Lightning,Large Gig Head,,,,,,,,,,,3161
+Blue Mountain Bubble,Normal Gig Head,,,,,"Sauldia Ruby, 10",,,,,,3163
+Elder Pixie,Normal Gig Head,,,,,"Sauldia Ruby, 10",,,,,,3164
+Node #647,,,,,,,,,,,,120791
+Gourmand Crab,Normal Gig Head,,,,,,,,,,,3168
+Diamondtongue,Large Gig Head,,,,,,,,,,,3170
+Megapiranha,Normal Gig Head,,,,,,,,,,,3173
+Anpa's Handmaid,Large Gig Head,,,,,,,,,,,3176
+Viis Ear,Small Gig Head,,,,,"Treescale, 10",,,,,,3177
+Rak'tika Goby,Small Gig Head,,,,,"Treescale, 10",,,,,,3178

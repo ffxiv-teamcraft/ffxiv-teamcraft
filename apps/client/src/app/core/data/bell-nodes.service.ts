@@ -292,7 +292,7 @@ export class BellNodesService {
               return {
                 id: itemId,
                 icon: this.lazyData.data.itemIcons[itemId],
-                predatorAmount: predator.predatorAmount
+                amount: predator.predatorAmount
               };
             });
           }
