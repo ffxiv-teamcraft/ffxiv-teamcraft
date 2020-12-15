@@ -167,7 +167,8 @@
     "Open_in_main_window": "메인 창에서 열기",
     "Example": "예제",
     "Change": "변경",
-    "Dirty_changes": "적용되지 않은 변경점이 있습니다"
+    "Dirty_changes": "적용되지 않은 변경점이 있습니다",
+    "Never": "Never"
   },
   "ALARMS": {
     "Title": "알람",
@@ -2096,6 +2097,7 @@
   "ADMIN": {
     "Autofix_error": "오류 자동수정",
     "USERS": {
+      "Title": "Users",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "이메일",
       "Uid": "UID",
@@ -2379,5 +2381,14 @@
       "Create_commission": "의뢰 만들기",
       "No_items": "아이템 없음"
     }
+  },
+  "MAPPY": {
+    "Total_entries": "Total entries",
+    "Last_updated": "Last updated",
+    "Last_bnpc_update": "Last monster position uploaded",
+    "Last_node_update": "Last node position uploaded",
+    "Clear_map": "Clear this map",
+    "Dashboard": "Mappy Dashboard",
+    "Open_details": "Open details page"
   }
 }
