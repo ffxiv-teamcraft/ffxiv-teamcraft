@@ -167,7 +167,8 @@
     "Open_in_main_window": "메인 창에서 열기",
     "Example": "예제",
     "Change": "변경",
-    "Dirty_changes": "적용되지 않은 변경점이 있습니다"
+    "Dirty_changes": "적용되지 않은 변경점이 있습니다",
+    "Never": "Never"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1454,7 +1455,9 @@
       "Masterpiece_exp_tooltip": "다음 레벨까지 필요한 경험치 %입니다.",
       "Required_craftsmanship": "필요 작업 숙련도",
       "Required_control": "필요 가공 숙련도",
-      "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시"
+      "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "시간 통계",
@@ -2094,6 +2097,7 @@
   "ADMIN": {
     "Autofix_error": "오류 자동수정",
     "USERS": {
+      "Title": "Users",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "이메일",
       "Uid": "UID",
@@ -2377,5 +2381,14 @@
       "Create_commission": "의뢰 만들기",
       "No_items": "아이템 없음"
     }
+  },
+  "MAPPY": {
+    "Total_entries": "Total entries",
+    "Last_updated": "Last updated",
+    "Last_bnpc_update": "Last monster position uploaded",
+    "Last_node_update": "Last node position uploaded",
+    "Clear_map": "Clear this map",
+    "Dashboard": "Mappy Dashboard",
+    "Open_details": "Open details page"
   }
 }
