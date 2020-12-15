@@ -3581,13 +3581,6 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-amazon-s3@0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/amazon-s3/-/amazon-s3-0.0.6.tgz#e2e33659bf6a1e38d427417215bd0f186a077b31"
-  integrity sha512-CXf2RN2s5JWpdP3mN5Q3Kr1A04SOB6+GP3Shl4V2ZxfA7gLDv6kn4alMle7o/wqqdK//WkQ/s4rGLzaL6G4ZSw==
-  dependencies:
-    crypto-js "3.1.9-1"
-
 amqplib@^0.5.2:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/amqplib/-/amqplib-0.5.5.tgz#698f0cb577e0591954a90572fcb3b8998a76fd40"
@@ -6357,11 +6350,6 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-crypto-js@3.1.9-1:
-  version "3.1.9-1"
-  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
-  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
-
 crypto-random-string@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-1.0.0.tgz#a230f64f568310e1498009940790ec99545bca7e"
@@ -7150,13 +7138,6 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
-
-digitalocean-spaces@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/digitalocean-spaces/-/digitalocean-spaces-0.0.1.tgz#712230bbbfad29ca4f98f9c9261e2ce5c86b2468"
-  integrity sha512-ugXD7bo7VoO2jvruWmlLo1jd6vszQ/2pCBjTpY6/mIxj+ML714RHX1nyted+l6pV4svoIS+GI/tNoWAJS7AUqQ==
-  dependencies:
-    amazon-s3 "0.0.6"
 
 dir-glob@^3.0.1:
   version "3.0.1"
@@ -12828,10 +12809,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.37.31:
-  version "2.37.31"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.37.31.tgz#95d349d94328a4abafe10a98a0f7caa34130de64"
-  integrity sha512-rHQJGtfG81afaUzWjJ/SNwV9d7olaqoOHsmtGk/fqO2aM7/PXDNZkD2h5P8xqwr0s6krjvNOucr0SnRIxU2ERQ==
+node-machina-ffxiv@^2.37.33:
+  version "2.38.0"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.38.0.tgz#c326c7e82f961f7b268dbac7bffbd8232896ab52"
+  integrity sha512-jycEujrqWiQIK06hNsrULGmWArAOc6rpzTy4/eF4VBOPUvgO6+SgKHet1HmniRFpCBv55EykacgvEwuqKA8Ouw==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"
