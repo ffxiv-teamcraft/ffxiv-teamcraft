@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.10"></a>
+## [7.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.9...v7.6.10) (2020-12-15)
+
+
+### Bug Fixes
+
+* **db:** no more fishing spot link from spearfishing items ([cfbd038](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cfbd038))
+* **spearfishing:** fixed a lot of missing or wrong informations ([c1ffc20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c1ffc20))
+
+
+### Features
+
+* **desktop:** support for CN 5.3 hotfix packet capture ([dc4c827](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dc4c827))
+
+
+
 <a name="7.6.9"></a>
 ## [7.6.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.8...v7.6.9) (2020-12-14)
 
