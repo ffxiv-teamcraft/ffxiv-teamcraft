@@ -1,12 +1,12 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
-import { distinctUntilChanged, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MapService } from '../../../modules/map/map.service';
 import { Vector2 } from '../../../core/tools/vector2';
 import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
-import { MappyReporterState, BNpcEntry, ObjEntry, MappyMarker } from '../../../core/electron/mappy/mappy-reporter';
+import { MappyMarker, MappyReporterState } from '../../../core/electron/mappy/mappy-reporter';
 
 @Component({
   selector: 'app-mappy-overlay',
@@ -63,11 +63,13 @@ export class MappyOverlayComponent implements OnInit {
           y: (-1 * state.player.y * 2048 / 100) + this.windowSize.y / 2
         };
       }
+      this.cdr.detectChanges();
     })
   );
 
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {
+    this.cdr.detach();
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });

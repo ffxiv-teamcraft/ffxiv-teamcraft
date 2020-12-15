@@ -1,0 +1,39 @@
+<nz-divider nzOrientation="left" [nzText]="title">
+  <ng-template #title>
+    <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+      <div>{{'MAPPY.Dashboard' | translate}}</div>
+      <div>
+        <button nz-button nzSize="small" nzShape="circle" (click)="reloader$.next()">
+          <i nz-icon nzType="reload" nzTheme="outline"></i>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</nz-divider>
+
+<nz-list nzItemLayout="horizontal" [nzLoading]="loading">
+  <ng-container *ngIf="display$ | async as maps">
+    <nz-list-item *ngFor="let map of maps">
+      <nz-list-item-meta>
+        <nz-list-item-meta-title>
+          <i>{{map.id}}</i> - {{map.id | mapName | i18n}}
+        </nz-list-item-meta-title>
+        <nz-list-item-meta-description>
+          <nz-tag class="custom-tag" [style.border-color]="map.updates?.BNPC && !map.old.BNPC ? '#87d068' : '#f50'">
+            <span class="companion-svg">&#x0F202;</span>
+            {{map.updates?.BNPC ? (map.updates?.BNPC * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
+          </nz-tag>
+          <nz-tag class="custom-tag" [style.border-color]="map.updates?.Node && !map.old.Node ? '#87d068' : '#f50'">
+            <span class="companion-svg">&#x0F016;</span>
+            {{map.updates?.Node ? (map.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
+          </nz-tag>
+        </nz-list-item-meta-description>
+      </nz-list-item-meta>
+      <ul nz-list-item-actions>
+        <nz-list-item-action>
+          <a routerLink="/mappy/{{map.id}}">{{'MAPPY.Open_details' | translate}}</a>
+        </nz-list-item-action>
+      </ul>
+    </nz-list-item>
+  </ng-container>
+</nz-list>

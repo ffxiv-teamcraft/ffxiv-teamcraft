@@ -68,6 +68,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/fishing-reporter-overlay/fishing-reporter-overlay.module').then(m => m.FishingReporterOverlayModule)
   },
   {
+    path: 'mappy',
+    loadChildren: () => import('./pages/mappy/mappy.module').then(m => m.MappyModule)
+  },
+  {
     path: 'mappy-overlay',
     loadChildren: () => import('./pages/mappy-overlay/mappy-overlay.module').then(m => m.MappyOverlayModule)
   },

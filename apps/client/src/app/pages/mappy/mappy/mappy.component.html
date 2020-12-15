@@ -1,0 +1,55 @@
+<div *ngIf="display$ | async as display; else loader">
+  <nz-divider nzOrientation="left" [nzText]="title">
+    <ng-template #title>
+      <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{display.map.id | mapName | i18n}}</div>
+        <div>
+          <button nz-button nzSize="small" nzShape="circle" (click)="reloader$.next()">
+            <i nz-icon nzType="reload" nzTheme="outline"></i>
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </nz-divider>
+  <div fxLayout="row" fxLayout.lt-xl="column" fxLayoutGap="10px">
+    <div class="map">
+      <img [src]="display.map.image" alt="" class="map-background">
+      <img [src]="bnpc.FateID ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
+           class="marker hover"
+           *ngFor="let bnpc of display.bnpcs; trackBy: trackByID"
+           [style.width.px]="32"
+           [style.height.px]="32"
+           [style.margin-left.px]="-32/2"
+           [style.margin-top.px]="-32/2"
+           [style.top.%]="+bnpc.cssCoords.y"
+           [style.left.%]="+bnpc.cssCoords.x"
+           nz-tooltip
+           [nzTooltipTitle]="bnpc.BNpcNameID | mobName | i18n">
+      <img [src]="getNodeIcon(node.NodeID)"
+           class="marker hover"
+           *ngFor="let node of display.nodes; trackBy: trackByID"
+           [style.width.px]="32"
+           [style.height.px]="32"
+           [style.margin-left.px]="-32/2"
+           [style.margin-top.px]="-32/2"
+           [style.top.%]="+node.cssCoords.y"
+           [style.left.%]="+node.cssCoords.x"
+           nz-tooltip
+           [nzTooltipTitle]="node.BNpcNameID | mobName | i18n">
+    </div>
+
+    <div fxLayout="column">
+      <nz-statistic [nzValue]="display.entries.length" [nzTitle]="'MAPPY.Total_entries' | translate"></nz-statistic>
+      <nz-statistic [nzValue]="display.updates?.BNPC ? (display.updates?.BNPC* 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate"
+                    [nzTitle]="'MAPPY.Last_bnpc_update' | translate"></nz-statistic>
+      <nz-statistic [nzValue]="display.updates?.Node ? (display.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate"
+                    [nzTitle]="'MAPPY.Last_node_update' | translate"></nz-statistic>
+
+      <button *ngIf="isAdmin$ | async" nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirm' | translate"
+              (nzOnConfirm)="clearMap(display.map.id)">{{'MAPPY.Clear_map' | translate}}</button>
+    </div>
+  </div>
+</div>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>
