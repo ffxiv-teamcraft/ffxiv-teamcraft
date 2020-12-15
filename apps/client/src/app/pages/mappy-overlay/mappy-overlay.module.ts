@@ -29,6 +29,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FlexLayoutModule,
+    FormsModule,
 
     RouterModule.forChild(routes),
 
@@ -43,8 +44,7 @@ const routes: Routes = [
     MapModule,
 
     AntdSharedModule,
-    OverlayContainerModule,
-    FormsModule
+    OverlayContainerModule
   ],
   declarations: [MappyOverlayComponent]
 })

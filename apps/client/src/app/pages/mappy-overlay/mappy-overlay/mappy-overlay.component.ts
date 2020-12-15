@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ReplaySubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -11,7 +11,8 @@ import { MappyMarker, MappyReporterState } from '../../../core/electron/mappy/ma
 @Component({
   selector: 'app-mappy-overlay',
   templateUrl: './mappy-overlay.component.html',
-  styleUrls: ['./mappy-overlay.component.less']
+  styleUrls: ['./mappy-overlay.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MappyOverlayComponent implements OnInit {
 
@@ -62,14 +63,15 @@ export class MappyOverlayComponent implements OnInit {
           x: (-1 * state.player.x * 2048 / 100) + this.windowSize.x / 2,
           y: (-1 * state.player.y * 2048 / 100) + this.windowSize.y / 2
         };
+        this.updateImageTransform();
       }
-      this.cdr.detectChanges();
     })
   );
 
+  public imageTransform: SafeStyle;
+
   constructor(private ipc: IpcService, private lazyData: LazyDataService, private mapService: MapService,
-              private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {
-    this.cdr.detach();
+              private sanitizer: DomSanitizer) {
     this.ipc.on('mappy-state', (event, data) => {
       this.state$.next(data);
     });
@@ -85,9 +87,8 @@ export class MappyOverlayComponent implements OnInit {
     this.ipc.send('mappy:reload');
   }
 
-  /* Method which adds style to the image */
-  imageTransform(): SafeStyle {
-    return this.sanitizer.bypassSecurityTrustStyle(`translate(${this.pan['x'] + this.editedPan['x']}px,${
+  private updateImageTransform(): void {
+    this.imageTransform = this.sanitizer.bypassSecurityTrustStyle(`translate(${this.pan['x'] + this.editedPan['x']}px,${
       this.pan['y'] + this.editedPan['y']
     }px) scale(${this.scale}) rotate(0deg)`);
   }
@@ -101,12 +102,14 @@ export class MappyOverlayComponent implements OnInit {
         y: this.pan.y + this.editedPan.y
       };
       this.editedPan = { x: 0, y: 0 };
+      this.updateImageTransform();
     }
   }
 
   /* Method will be called when user zooms image */
   onZoomP(): void {
     this.scale = Math.floor(10 * (this.scale + 0.1)) / 10;
+    this.updateImageTransform();
   }
 
   /* Method will be called when user zooms out image */
@@ -115,6 +118,7 @@ export class MappyOverlayComponent implements OnInit {
       return;
     } else {
       this.scale = Math.floor(10 * (this.scale - 0.1)) / 10;
+      this.updateImageTransform();
     }
   }
 
@@ -154,6 +158,7 @@ export class MappyOverlayComponent implements OnInit {
       x: -1 * (mock.x * 2048 / 100),
       y: -1 * (mock.y * 2048 / 100)
     };
+    this.updateImageTransform();
   }
 
 }

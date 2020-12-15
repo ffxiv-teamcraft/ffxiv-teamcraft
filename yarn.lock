@@ -12809,7 +12809,7 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.37.33:
+node-machina-ffxiv@^2.38.0:
   version "2.38.0"
   resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.38.0.tgz#c326c7e82f961f7b268dbac7bffbd8232896ab52"
   integrity sha512-jycEujrqWiQIK06hNsrULGmWArAOc6rpzTy4/eF4VBOPUvgO6+SgKHet1HmniRFpCBv55EykacgvEwuqKA8Ouw==
