@@ -604,7 +604,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Bashful Batfish",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -700,7 +700,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Ichthyosaur",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -769,7 +769,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Bashful Batfish",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -802,7 +802,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Ichthyosaur",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -835,7 +835,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Glaring Perch",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -850,7 +850,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Glaring Perch",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -892,7 +892,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Mercenary Crab",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -907,7 +907,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Mercenary Crab",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -922,7 +922,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Bashful Batfish",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },
@@ -960,7 +960,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029210.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20100,
@@ -968,7 +969,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029230.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20101,
@@ -976,7 +978,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029597.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20102,
@@ -984,7 +987,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029718.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20103,
@@ -992,7 +996,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/028000/028425.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20104,
@@ -1000,7 +1005,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029410.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20105,
@@ -1008,7 +1014,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/028000/028430.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20106,
@@ -1016,7 +1023,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/028000/028434.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20107,
@@ -1024,7 +1032,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029421.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20108,
@@ -1032,7 +1041,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/029000/029598.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20109,
@@ -1040,7 +1050,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/029000/029599.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20110,
@@ -1048,7 +1059,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028426.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Small"
   },
   {
     "id": 20111,
@@ -1056,7 +1068,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028427.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20112,
@@ -1064,7 +1077,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028428.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20113,
@@ -1072,7 +1086,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028429.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20114,
@@ -1080,7 +1095,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028431.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20115,
@@ -1088,7 +1104,8 @@ export const spearFishingNodes = [
     "level": 350,
     "icon": "/i/028000/028432.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Normal"
   },
   {
     "id": 20116,
@@ -1096,7 +1113,8 @@ export const spearFishingNodes = [
     "level": 355,
     "icon": "/i/029000/029096.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20117,
@@ -1104,7 +1122,8 @@ export const spearFishingNodes = [
     "level": 355,
     "icon": "/i/028000/028433.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large"
   },
   {
     "id": 20118,
@@ -1112,7 +1131,8 @@ export const spearFishingNodes = [
     "level": 355,
     "icon": "/i/028000/028437.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20119,
@@ -1120,7 +1140,8 @@ export const spearFishingNodes = [
     "level": 355,
     "icon": "/i/028000/028439.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20120,
@@ -1128,7 +1149,8 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/028000/028438.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20121,
@@ -1136,7 +1158,8 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/028000/028440.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20122,
@@ -1144,7 +1167,8 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/029000/029758.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20123,
@@ -1152,7 +1176,8 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/029000/029106.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20124,
@@ -1160,7 +1185,8 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/029000/029246.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20125,
@@ -1168,7 +1194,8 @@ export const spearFishingNodes = [
     "level": 345,
     "icon": "/i/028000/028444.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20126,
@@ -1176,7 +1203,8 @@ export const spearFishingNodes = [
     "level": 380,
     "icon": "/i/028000/028441.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20127,
@@ -1184,7 +1212,8 @@ export const spearFishingNodes = [
     "level": 380,
     "icon": "/i/028000/028442.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20128,
@@ -1192,7 +1221,8 @@ export const spearFishingNodes = [
     "level": 380,
     "icon": "/i/028000/028443.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20129,
@@ -1200,7 +1230,8 @@ export const spearFishingNodes = [
     "level": 380,
     "icon": "/i/028000/028445.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20130,
@@ -1208,7 +1239,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029295.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20131,
@@ -1216,7 +1248,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028446.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20132,
@@ -1224,7 +1257,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029752.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20133,
@@ -1232,7 +1266,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028448.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20134,
@@ -1240,7 +1275,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028449.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20135,
@@ -1248,7 +1284,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028450.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20136,
@@ -1256,7 +1293,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028451.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20137,
@@ -1264,7 +1302,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028452.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20138,
@@ -1272,7 +1311,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029235.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small"
   },
   {
     "id": 20139,
@@ -1280,7 +1320,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029503.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small"
   },
   {
     "id": 20140,
@@ -1288,7 +1329,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/029000/029309.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Normal"
   },
   {
     "id": 20141,
@@ -1296,7 +1338,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028463.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Normal"
   },
   {
     "id": 20142,
@@ -1304,7 +1347,8 @@ export const spearFishingNodes = [
     "level": 400,
     "icon": "/i/028000/028447.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20143,
@@ -1312,7 +1356,8 @@ export const spearFishingNodes = [
     "level": 400,
     "icon": "/i/028000/028453.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20144,
@@ -1320,7 +1365,8 @@ export const spearFishingNodes = [
     "level": 400,
     "icon": "/i/028000/028454.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20145,
@@ -1328,7 +1374,8 @@ export const spearFishingNodes = [
     "level": 400,
     "icon": "/i/029000/029451.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20146,
@@ -1336,7 +1383,8 @@ export const spearFishingNodes = [
     "level": 390,
     "icon": "/i/028000/028456.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20147,
@@ -1344,7 +1392,8 @@ export const spearFishingNodes = [
     "level": 400,
     "icon": "/i/029000/029268.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Normal"
   },
   {
     "id": 20148,
@@ -1352,7 +1401,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/028000/028457.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Small"
   },
   {
     "id": 20149,
@@ -1360,7 +1410,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/028000/028458.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal"
   },
   {
     "id": 20150,
@@ -1368,7 +1419,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/028000/028459.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20151,
@@ -1376,7 +1428,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/028000/028460.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Large"
   },
   {
     "id": 20152,
@@ -1384,7 +1437,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/028000/028465.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small"
   },
   {
     "id": 20153,
@@ -1392,7 +1446,8 @@ export const spearFishingNodes = [
     "level": 410,
     "icon": "/i/029000/029212.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Normal"
   },
   {
     "id": 20154,
@@ -1400,7 +1455,14 @@ export const spearFishingNodes = [
     "level": 370,
     "icon": "/i/028000/028435.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large",
+    "predator": [
+      {
+        "name": "Noblefish",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 20155,
@@ -1408,7 +1470,14 @@ export const spearFishingNodes = [
     "level": 420,
     "icon": "/i/028000/028462.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal",
+    "predator": [
+      {
+        "name": "Sauldia Ruby",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 20156,
@@ -1416,7 +1485,8 @@ export const spearFishingNodes = [
     "level": 420,
     "icon": "/i/029000/029243.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Large"
   },
   {
     "id": 20157,
@@ -1424,7 +1494,8 @@ export const spearFishingNodes = [
     "level": 420,
     "icon": "/i/028000/028466.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small"
   },
   {
     "id": 20158,
@@ -1432,7 +1503,8 @@ export const spearFishingNodes = [
     "level": 420,
     "icon": "/i/029000/029224.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Large"
   },
   {
     "id": 20159,
@@ -1440,7 +1512,14 @@ export const spearFishingNodes = [
     "level": 420,
     "icon": "/i/028000/028469.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small",
+    "predator": [
+      {
+        "name": "Treescale",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 20160,
@@ -1448,7 +1527,14 @@ export const spearFishingNodes = [
     "level": 380,
     "icon": "/i/028000/028436.png",
     "mapId": 491,
-    "zoneId": 2953
+    "zoneId": 2953,
+    "gig": "Large",
+    "predator": [
+      {
+        "name": "Noblefish",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 20161,
@@ -1456,7 +1542,14 @@ export const spearFishingNodes = [
     "level": 430,
     "icon": "/i/028000/028461.png",
     "mapId": 494,
-    "zoneId": 2956
+    "zoneId": 2956,
+    "gig": "Normal",
+    "predator": [
+      {
+        "name": "Sauldia Ruby",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 20162,
@@ -1464,7 +1557,8 @@ export const spearFishingNodes = [
     "level": 430,
     "icon": "/i/028000/028464.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Large"
   },
   {
     "id": 20163,
@@ -1472,7 +1566,8 @@ export const spearFishingNodes = [
     "level": 430,
     "icon": "/i/028000/028467.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Large"
   },
   {
     "id": 20164,
@@ -1480,7 +1575,14 @@ export const spearFishingNodes = [
     "level": 430,
     "icon": "/i/028000/028468.png",
     "mapId": 495,
-    "zoneId": 2957
+    "zoneId": 2957,
+    "gig": "Small",
+    "predator": [
+      {
+        "name": "Treescale",
+        "predatorAmount": 10
+      }
+    ]
   },
   {
     "id": 30000,
@@ -1509,7 +1611,7 @@ export const spearFishingNodes = [
     "predator": [
       {
         "name": "Ichthyosaur",
-        "predatorAmount": 10
+        "predatorAmount": 7
       }
     ]
   },

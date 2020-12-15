@@ -31,6 +31,8 @@ export class TeamcraftUser extends DataModel {
 
   patron = false;
 
+  sekrit?: boolean;
+
   defaultConsumables: DefaultConsumables;
 
   patreonToken?: string;

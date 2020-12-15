@@ -1,8 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **gathering:** fixed an issue with ephemeral nodes not having spawn timers at all.
+* **db:** no more fishing spot link from spearfishing items.
+* **spearfishing:** fixed a lot of missing or wrong informations.
 
 
 ### Features
 
-* **db,gearsets:** added support for item set bonuses.`;
+* **desktop:** support for CN 5.3 hotfix packet capture.`;

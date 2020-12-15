@@ -167,7 +167,8 @@
     "Open_in_main_window": "Ouvrir dans la fenêtre principale",
     "Example": "Exemple",
     "Change": "Changer",
-    "Dirty_changes": "Vous avez des modifications non enregistrées"
+    "Dirty_changes": "Vous avez des modifications non enregistrées",
+    "Never": "Never"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -1454,7 +1455,9 @@
       "Masterpiece_exp_tooltip": "% de l'EXP nécessaire pour le niveau suivant",
       "Required_craftsmanship": "Habileté requise",
       "Required_control": "Contrôle requis",
-      "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet"
+      "Mark_as_done_in_gathering_log": "Marquer comme fait dans le carnet",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Heure du jour",
@@ -2094,6 +2097,7 @@
   "ADMIN": {
     "Autofix_error": "Correction auto",
     "USERS": {
+      "Title": "Users",
       "X_characters_linked": "{{amount}} personnage(s) lié(s)",
       "Email": "Email",
       "Uid": "UID",
@@ -2377,5 +2381,14 @@
       "Create_commission": "Create a commission",
       "No_items": "No items"
     }
+  },
+  "MAPPY": {
+    "Total_entries": "Total entries",
+    "Last_updated": "Last updated",
+    "Last_bnpc_update": "Last monster position uploaded",
+    "Last_node_update": "Last node position uploaded",
+    "Clear_map": "Clear this map",
+    "Dashboard": "Mappy Dashboard",
+    "Open_details": "Open details page"
   }
 }

@@ -471,8 +471,10 @@ export class AppComponent implements OnInit {
   private handleKeypressShortcuts(event: KeyboardEvent): void {
     if (event.ctrlKey && event.shiftKey && event.code === 'KeyF') {
       this.quickSearch.openQuickSearch();
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyQ') {
+    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyA') {
       this.router.navigateByUrl('/admin/users');
+    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyM') {
+      this.router.navigateByUrl('/mappy');
     } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
       event.preventDefault();
       event.stopPropagation();

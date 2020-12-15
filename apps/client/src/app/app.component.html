@@ -155,16 +155,20 @@
                 <i nz-icon nzType="heart"></i>
                 {{'Favorites' | translate}}
               </a>
+              <a (click)="openSettings()" nz-menu-item>
+                <i nz-icon nzType="setting"></i>
+                {{'SETTINGS.Title' | translate}}
+              </a>
               <ng-container *ngIf="user$ | async as user">
                 <a *ngIf="user.patron || user.admin" nz-menu-item routerLink="/custom-links">
                   <i nz-icon nzType="link"></i>
                   {{'CUSTOM_LINKS.Title' | translate}}
                 </a>
+                <a *ngIf="user.sekrit" nz-menu-item routerLink="/mappy">
+                  <i nz-icon nzType="scan"></i>
+                  Mappy
+                </a>
               </ng-container>
-              <a (click)="openSettings()" nz-menu-item>
-                <i nz-icon nzType="setting"></i>
-                {{'SETTINGS.Title' | translate}}
-              </a>
               <span nz-menu-divider></span>
               <a (click)="logOut()" *ngIf="loggedIn$ | async" nz-menu-item>
                 <i nz-icon nzType="logout"></i>

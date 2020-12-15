@@ -167,7 +167,8 @@
     "Open_in_main_window": "Im Hauptfenster öffnen",
     "Example": "Beispiel",
     "Change": "Ändern",
-    "Dirty_changes": "Du hast nicht gespeicherte Änderungen"
+    "Dirty_changes": "Du hast nicht gespeicherte Änderungen",
+    "Never": "Never"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -1454,7 +1455,9 @@
       "Masterpiece_exp_tooltip": "% an Routine, die für das nächste Level benötigt wird",
       "Required_craftsmanship": "benötigte Kunstfertigkeit",
       "Required_control": "benötigte Kontrolle",
-      "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren"
+      "Mark_as_done_in_gathering_log": "Im Log als erledigt markieren",
+      "X_Equipped": "{{amount}} Equipped:",
+      "Item_series": "Set details"
     },
     "FISH": {
       "Hour": "Eorzea-Zeit",
@@ -2094,6 +2097,7 @@
   "ADMIN": {
     "Autofix_error": "Diesen Fehler automatisch korrigieren",
     "USERS": {
+      "Title": "Users",
       "X_characters_linked": "{{amount}} Charakter(e) verknüpft",
       "Email": "E-Mail",
       "Uid": "UID",
@@ -2377,5 +2381,14 @@
       "Create_commission": "Create a commission",
       "No_items": "No items"
     }
+  },
+  "MAPPY": {
+    "Total_entries": "Total entries",
+    "Last_updated": "Last updated",
+    "Last_bnpc_update": "Last monster position uploaded",
+    "Last_node_update": "Last node position uploaded",
+    "Clear_map": "Clear this map",
+    "Dashboard": "Mappy Dashboard",
+    "Open_details": "Open details page"
   }
 }

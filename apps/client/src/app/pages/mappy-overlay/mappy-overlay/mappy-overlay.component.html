@@ -1,9 +1,9 @@
-<app-overlay-container uri="/mappy-overlay">
+<app-overlay-container uri="/mappy-overlay" title="Mappy Overlay">
   <ng-container *ngIf="display$ | async as display">
     <div *ngIf="display.mapId; else noMap" class="mappy-overlay-container">
       <ng-container *ngIf="!display.layersNotConfigured; else noLayers">
-        <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform()" (wheel)="onScroll($event)" (pan)="onPan($event)">
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showLGBLayers">
+        <img [src]="display.map.image" alt="" class="map-background" [style.transform]="imageTransform" (wheel)="onScroll($event)" (pan)="onPan($event)">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showLGBLayers">
           <img src="./assets/icons/mappy/npc.png"
                class="marker"
                *ngFor="let enpc of display.enpcs; trackBy: trackByUid"
@@ -14,7 +14,7 @@
                [style.top.%]="enpc.displayPosition.y"
                [style.left.%]="enpc.displayPosition.x">
         </div>
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showLGBLayers">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showLGBLayers">
           <img [src]="aetheryte.data.type === 1 ? './assets/icons/Aetheryte_Shard.png' : './assets/icons/Aetheryte.png'"
                class="marker"
                *ngFor="let aetheryte of display.aetherytes; trackBy: trackByUid"
@@ -25,7 +25,7 @@
                [style.top.%]="aetheryte.displayPosition.y"
                [style.left.%]="aetheryte.displayPosition.x">
         </div>
-        <div class="layer" [style.transform]="imageTransform()">
+        <div class="layer" [style.transform]="imageTransform">
           <img src="./assets/icons/mappy/trail.png"
                class="marker trail"
                *ngFor="let snap of display.trail; trackBy: trackBySnap"
@@ -36,7 +36,7 @@
                [style.top.%]="snap.y"
                [style.left.%]="snap.x">
         </div>
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showLocalLayers">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showLocalLayers">
           <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
                class="marker hover"
                *ngFor="let bnpc of display.bnpcs; trackBy: trackByUid"
@@ -48,7 +48,7 @@
                [style.left.%]="bnpc.displayPosition.x"
                nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
         </div>
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showMappyLayers">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showMappyLayers">
           <img [src]="bnpc.fateId ? './assets/icons/mappy/unknown.png' : './assets/icons/mappy/enemy.png'"
                class="marker hover"
                *ngFor="let bnpc of display.mappyBnpcs; trackBy: trackByUid"
@@ -60,7 +60,7 @@
                [style.left.%]="bnpc.displayPosition.x"
                nz-tooltip [nzTooltipTitle]="bnpc.nameId | mobName | i18n">
         </div>
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showLocalLayers">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showLocalLayers">
           <img class="marker hover"
                *ngFor="let obj of display.objs; trackBy: trackByUid"
                [src]="obj.icon"
@@ -71,7 +71,7 @@
                [style.top.%]="obj.displayPosition.y"
                [style.left.%]="obj.displayPosition.x">
         </div>
-        <div class="layer" [style.transform]="imageTransform()" *ngIf="showMappyLayers">
+        <div class="layer" [style.transform]="imageTransform" *ngIf="showMappyLayers">
           <img class="marker hover"
                *ngFor="let obj of display.mappyObjs; trackBy: trackByUid"
                [src]="obj.icon"
@@ -82,7 +82,7 @@
                [style.top.%]="obj.displayPosition.y"
                [style.left.%]="obj.displayPosition.x">
         </div>
-        <div class="layer" [style.transform]="imageTransform()">
+        <div class="layer" [style.transform]="imageTransform">
           <img src="./assets/icons/mappy/player.png"
                alt="You"
                class="marker"
