@@ -167,7 +167,8 @@
     "Open_in_main_window": "Open in main window",
     "Example": "Example",
     "Change": "Change",
-    "Dirty_changes": "You have unapplied changes"
+    "Dirty_changes": "You have unapplied changes",
+    "Never": "Never"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -2096,6 +2097,7 @@
   "ADMIN": {
     "Autofix_error": "Autofix this error",
     "USERS": {
+      "Title": "Users",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Email",
       "Uid": "UID",
@@ -2379,5 +2381,14 @@
       "Create_commission": "Create a commission",
       "No_items": "No items"
     }
+  },
+  "MAPPY": {
+    "Total_entries": "Total entries",
+    "Last_updated": "Last updated",
+    "Last_bnpc_update": "Last monster position uploaded",
+    "Last_node_update": "Last node position uploaded",
+    "Clear_map": "Clear this map",
+    "Dashboard": "Mappy Dashboard",
+    "Open_details": "Open details page"
   }
 }
