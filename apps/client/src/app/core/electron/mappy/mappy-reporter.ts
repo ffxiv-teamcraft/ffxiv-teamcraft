@@ -207,7 +207,7 @@ export class MappyReporterService {
       };
       const playerCoords = this.getCoords(pos);
       let mapId = this.state.mapId;
-      const possibleLayers = (this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id] || []).filter(layer => !layer.ignored);
+      const possibleLayers = (this.lazyData.data.territoryLayers[this.lazyData.data.maps[this.state.mapId].territory_id] || []).filter(layer => !layer.ignored && layer.placeNameId > 0);
       if (possibleLayers.length > 0) {
         const currentLayer = possibleLayers.length === 1 ? possibleLayers[0] : possibleLayers.find(layer => {
           return this.isInLayer(playerCoords, layer.bounds);

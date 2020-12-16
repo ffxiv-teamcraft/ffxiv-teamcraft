@@ -49,7 +49,7 @@
       <nz-empty *ngIf="display.missingNodes.length === 0" [nzNotFoundContent]="'MAPPY.No_missing_nodes' | translate"></nz-empty>
       <ul>
         <li *ngFor="let node of display.missingNodes">
-          <span>{{node.id}} - {{node.zoneid | placeName | i18n}} <span *ngIf="node.spawns.length > 0"> - </span>  <i *ngFor="let spawn of node.spawns">{{spawn}}:00 - {{(spawn + duration / 60)%24}}:00</i></span>
+          <span>{{node.id}} - {{node.zoneid | placeName | i18n}}</span>
           <ul>
             <li *ngFor="let item of node.items">{{item | itemName | i18n}}</li>
           </ul>
