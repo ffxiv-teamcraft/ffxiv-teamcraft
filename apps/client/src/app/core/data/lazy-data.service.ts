@@ -51,6 +51,9 @@ export class LazyDataService {
     ]
   };
 
+  // List of GatheringPointBase ids that cannot spawn anymore due to various conditions
+  public ignoredNodes = [653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 675, 676, 677, 678, 679, 680];
+
   public loaded$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public datacenters: Record<string, string[]> = {};
