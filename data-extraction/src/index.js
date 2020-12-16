@@ -211,14 +211,18 @@ if (hasTodo('mappy', true)) {
 
   combineLatest([mapData$, nodes$])
     .subscribe(([mapData]) => {
-      mapData.forEach(row => {
-        if (row.Type === 'BNPC') {
-          handleMonster(row);
-        }
-        if (row.Type === 'Node') {
-          handleNode(row);
-        }
-      });
+      mapData
+        .sort((a, b) => {
+          return a.Added - b.Added;
+        })
+        .forEach(row => {
+          if (row.Type === 'BNPC') {
+            handleMonster(row);
+          }
+          if (row.Type === 'Node') {
+            handleNode(row);
+          }
+        });
       // Write data that needs to be joined with game data first
       persistToJsonAsset('nodes', nodes);
       // console.log('nodes written');

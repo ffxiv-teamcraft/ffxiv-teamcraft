@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RotationsFacade } from '../../../../modules/rotations/+state/rotations.facade';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { Observable } from 'rxjs/Observable';
@@ -14,7 +14,8 @@ import { combineLatest } from 'rxjs';
 @Component({
   selector: 'app-rotations-page',
   templateUrl: './rotations-page.component.html',
-  styleUrls: ['./rotations-page.component.less']
+  styleUrls: ['./rotations-page.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RotationsPageComponent {
 

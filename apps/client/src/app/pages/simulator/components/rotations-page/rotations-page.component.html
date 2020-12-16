@@ -16,16 +16,10 @@
     <div (drop)="setRotationIndex($event.value, $event.dropIndex, rotations)" *ngIf="rotations.length > 0; else noRotations" class="ngx-dnd-container"
          fxLayout="column" fxLayoutGap="5px"
          ngxDroppable="rotation">
-      <app-lazy-scroll [data]="rotations" [rowTemplate]="rotationTpl" [rowSize]="46" [trackBy]="trackByKey">
-        <ng-template #rotationTpl let-rotation>
-          <div *ngIf="rotation !== undefined"
-               [model]="rotation"
-               class="ngx-dnd-item"
-               ngxDraggable="rotation">
-            <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
-          </div>
-        </ng-template>
-      </app-lazy-scroll>
+      <div *ngFor="let rotation of rotations; trackBy: trackByKey" [model]="rotation" class="ngx-dnd-item"
+           ngxDraggable="rotation">
+        <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+      </div>
     </div>
     <ng-container *ngIf="rotationFoldersDisplay$ | async as folders">
       <div *ngIf="folders.length > 0" class="folders" fxLayout="column" fxLayoutGap="10px">
