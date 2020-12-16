@@ -2389,6 +2389,10 @@
     "Last_node_update": "Last node position uploaded",
     "Clear_map": "Clear this map",
     "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page"
+    "Open_details": "Open details page",
+    "X_Missing_nodes": "{{amount}} missing node(s)",
+    "Missing_nodes": "Missing nodes",
+    "No_missing_nodes": "No missing nodes",
+    "Only_missing_nodes": "Only show maps with missing nodes"
   }
 }
