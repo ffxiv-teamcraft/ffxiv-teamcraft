@@ -869,6 +869,7 @@
     "Break_on_reclaim": "Dividir macros en el punto de no regreso de Reclaim",
     "Break_before_byregots_blessing": "Dividir macros antes de Byregot's Blessing",
     "Include_consumables_notification": "Incluir notificación de consumibles",
+    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "Usar {{buffs}}",
     "Extra_wait": "Espera extra",
     "Completion_message": "Completion message",
