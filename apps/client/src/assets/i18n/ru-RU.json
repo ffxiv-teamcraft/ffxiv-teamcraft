@@ -869,6 +869,7 @@
     "Break_on_reclaim": "Разделить макросы на этапе невозвратности Reclaim'а",
     "Break_before_byregots_blessing": "Разделить макрос перед Byregot's Blessing",
     "Include_consumables_notification": "Включить уведомления о расходных материалах",
+    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "Используйте {{buffs}}",
     "Extra_wait": "Дополнительное ожидание",
     "Completion_message": "Сообщение о завершении",
