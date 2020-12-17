@@ -869,6 +869,7 @@
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
     "Break_before_byregots_blessing": "「ビエルゴの祝福」を使用する前に、マクロを取り外してください",
     "Include_consumables_notification": "消耗品の通知を含める",
+    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
     "Completion_message": "Completion message",
