@@ -669,6 +669,14 @@ export class SettingsService {
     this.setSetting('macroConsumables', addConsumables.toString());
   }
 
+  public get addConsumablesWaitTime(): number {
+    return +this.getSetting('addConsumablesWaitTime', '5');
+  }
+
+  public set addConsumablesWaitTime(addConsumablesWaitTime: number) {
+    this.setSetting('addConsumablesWaitTime', addConsumablesWaitTime.toString());
+  }
+
   public get macroBreakBeforeByregot(): boolean {
     return this.getSetting('macroBreakBeforeByregot', 'false') === 'true';
   }

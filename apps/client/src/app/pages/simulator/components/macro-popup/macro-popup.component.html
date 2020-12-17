@@ -17,6 +17,11 @@
     {{'SIMULATOR.Include_consumables_notification' | translate}}
   </label>
   <div class="fields">
+    <nz-form-item *ngIf="addConsumables">
+      <nz-form-label>{{'SIMULATOR.Include_consumables_notification_wait_time' | translate}}</nz-form-label>
+      <nz-input-number [(ngModel)]="addConsumablesWaitTime" (ngModelChange)="generateMacros()" [nzMax]="100"
+                       [nzMin]="0"></nz-input-number>
+    </nz-form-item>
     <nz-form-item>
       <nz-form-label>{{'SIMULATOR.Starting_echo_number' | translate}}</nz-form-label>
       <nz-input-number [(ngModel)]="echoSeNumber" (ngModelChange)="generateMacros()" [nzDisabled]="!addEcho" [nzMax]="16"
