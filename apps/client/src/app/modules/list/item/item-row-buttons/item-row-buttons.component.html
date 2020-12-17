@@ -94,7 +94,7 @@
       <i nz-icon nzType="user-add"></i>
     </button>
     <ng-container *ngIf="team; else removeSingleAssignment">
-      <button (click)="$event.stopPropagation()"  [nzDropdownMenu]="menu"
+      <button (click)="$event.stopPropagation()" [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'" [nzShape]="'circle'"
               [nzTooltipTitle]="'Remove_work_on_it' | translate"
               [nzTrigger]="'click'"
@@ -365,11 +365,13 @@
     <i nz-icon nzType="warning" nzTheme="outline"></i>
   </button>
   <ng-container *ngIf="attachedRotation">
-    <nz-tag (click)="openRotationMacroPopup.emit(rotation)"
-            *ngIf="attachedRotation | rotation | async as rotation"
-            [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
-            nz-tooltip>
-      {{rotation.getName()}}
-    </nz-tag>
+    <ng-container *ngIf="rotation$ | async as rotation">
+      <nz-tag (click)="openRotationMacroPopup.emit(rotation)"
+              [nzTooltipTitle]="'LIST.ROTATION.Click_to_copy_macro' | translate"
+              nz-tooltip>
+        {{rotation.getName()}}
+      </nz-tag>
+      <app-rotation-result-tag [rotation]="rotation" [recipe]="recipe"></app-rotation-result-tag>
+    </ng-container>
   </ng-container>
 </div>

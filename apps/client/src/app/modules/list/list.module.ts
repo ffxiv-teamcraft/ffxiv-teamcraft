@@ -61,6 +61,7 @@ import { ListSplitPopupComponent } from './list-split-popup/list-split-popup.com
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
+import { SimulatorModule } from '../../pages/simulator/simulator.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -117,7 +118,8 @@ export const DATA_EXTRACTORS: Provider[] = [
 
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),
-    LazyScrollModule
+    LazyScrollModule,
+    SimulatorModule
   ],
   providers: [
     ...DATA_EXTRACTORS,

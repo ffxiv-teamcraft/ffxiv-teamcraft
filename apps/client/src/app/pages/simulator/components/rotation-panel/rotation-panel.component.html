@@ -43,14 +43,7 @@
                    [twoToneColor]="'#aa9400'" nz-icon nz-tooltip
                    nzType="exclamation-circle" theme="twotone"></i>
               </div>
-              <div [nzTooltipTitle]="'SIMULATOR.COMMUNITY_ROTATIONS.Result_tooltip' | translate" nz-tooltip>
-                <nz-tag *ngIf="result.success"
-                        [style.border-color]="'darkgreen'"
-                        class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Success' | translate: { HQ: result.hqPercent } }}</nz-tag>
-                <nz-tag *ngIf="!result.success"
-                        [style.border-color]="'#f50'"
-                        class="custom-tag">{{'SIMULATOR.COMMUNITY_ROTATIONS.Fail' | translate}}</nz-tag>
-              </div>
+              <app-rotation-result-tag [rotation]="rotation" [simulationSet]="simulationSet$ | async"></app-rotation-result-tag>
               <button (click)="openMacroPopup(result.simulation)" [nzTooltipTitle]="'SIMULATOR.Generate_ingame_macro' | translate" nz-button nz-tooltip
                       nzShape="circle"
                       nzType="primary">

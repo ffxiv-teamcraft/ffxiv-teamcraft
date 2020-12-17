@@ -52,6 +52,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+import { RotationResultTagComponent } from './components/rotation-result-tag/rotation-result-tag.component';
 
 const routes: Routes = [
   {
@@ -162,14 +163,16 @@ const routes: Routes = [
     SolverPopupComponent,
     SimulatorOpenerComponent,
     SimulationSharePopupComponent,
-    SimulationResultComponent
+    SimulationResultComponent,
+    RotationResultTagComponent
   ],
   exports: [
     RotationPanelComponent,
     RotationFolderPanelComponent,
     ActionComponent,
     SimulatorComponent,
-    SimulationResultComponent
+    SimulationResultComponent,
+    RotationResultTagComponent
   ],
   providers: [
     ConsumablesService,
