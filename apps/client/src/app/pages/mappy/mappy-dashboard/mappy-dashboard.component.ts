@@ -18,26 +18,40 @@ export class MappyDashboardComponent {
 
   public reloader$ = new BehaviorSubject<void>(null);
 
+  public onlyMissingNodes$ = new BehaviorSubject(false);
+
   public display$ = this.reloader$.pipe(switchMapTo(
     combineLatest([
       this.lazyData.data$,
-      this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true })
+      this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true }),
+      this.xivapi.getList(`mappy/nodes` as XivapiEndpoint, { staging: true }),
+      this.onlyMissingNodes$
     ]).pipe(
-      map(([data, updates]) => {
+      map(([data, updates, gatheringPointsRegistry, onlyMissingNodes]) => {
         const acceptedMaps = Object.values<any>(data.nodes).map(n => n.map);
         return Object.values<any>(data.maps)
           .filter(m => {
             return acceptedMaps.includes(m.id);
           })
           .map(m => {
+            const mapNodes = Object.entries<any>(data.nodes)
+              .map(([id, n]) => ({ id: +id, ...n }))
+              .filter(n => n.map === m.id && n.items.length > 0 && !this.lazyData.ignoredNodes.includes(n.id));
+            const gatheringPoints = gatheringPointsRegistry[m.id] || [];
             return {
               ...m,
               updates: updates[m.id],
               old: {
                 BNPC: updates[m.id]?.BNPC < subMonths(new Date(), 3).getTime() / 1000,
-                Node: updates[m.id]?.Node < subMonths(new Date(), 3).getTime() / 1000,
-              }
+                Node: updates[m.id]?.Node < subMonths(new Date(), 3).getTime() / 1000
+              },
+              missingNodes: mapNodes.filter((node) => {
+                return !gatheringPoints.some(gatheringPoint => data.gatheringPointBaseToNodeId[gatheringPoint] === node.id);
+              }).length
             };
+          })
+          .filter(m => {
+            return !onlyMissingNodes || m.missingNodes > 0;
           });
       }),
       tap(() => this.loading = false)

@@ -32,7 +32,7 @@
                     <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_limited' | translate}}
                   </button>
                   <button (click)="createList(selectedRecipes)" [disabled]="selectedRecipes.length === 0" nzType="primary" nz-button>
-                    <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{amount: selectedRecipes.length} }}
+                    <i nz-icon nzType="check"></i> {{'LOG_TRACKER.Create_list_selection' | translate:{ amount: selectedRecipes.length } }}
                   </button>
                   <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px">
                     <nz-switch [(ngModel)]="hideCompleted"></nz-switch>
@@ -166,35 +166,36 @@
                                                   flex="row"></app-map-position>
                               </div>
                               <div *ngIf="node.timed">
-                                <ng-container *ngIf="getAlarm(node) as alarm">
-                                  <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
-                                    <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered"
-                                            [nzSize]="'small'"
-                                            [nzType]="display.spawned?'primary':'default'"
-                                            nz-button
-                                            nz-tooltip>
-                                      <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
-                                      <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
-                                      {{display.remainingTime | timer}}
-                                      <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
-                                      <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
-                                    </button>
-                                    <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
-                                      <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
-                                              [nzSize]="'small'"
-                                              nz-button nz-dropdown>
-                                        <i nz-icon nzType="ellipsis"></i>
+                                <ng-container *ngIf="getAlarms(node) as alarms">
+                                  <ng-container *ngFor="let alarm of alarms">
+                                    <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
+                                      <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
+                                              [nzType]="display.spawned?'primary':'default'"
+                                              nz-button
+                                              nz-tooltip>
+                                        <i *ngIf="!display.registered" nz-icon nzType="bell"></i>
+                                        <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
+                                        {{display.remainingTime | timer}}
+                                        <span *ngIf="display.alarm.slot">({{display.alarm.slot}})</span>
+                                        <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
                                       </button>
-                                      <nz-dropdown-menu #menu="nzDropdownMenu">
-                                        <ul nz-menu>
-                                          <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
-                                              nz-menu-item>
-                                            {{group.name}}
-                                          </li>
-                                        </ul>
-                                      </nz-dropdown-menu>
-                                    </ng-container>
-                                  </nz-button-group>
+                                      <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
+                                        <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
+                                                [nzSize]="'small'"
+                                                nz-button nz-dropdown>
+                                          <i nz-icon nzType="ellipsis"></i>
+                                        </button>
+                                        <nz-dropdown-menu #menu="nzDropdownMenu">
+                                          <ul nz-menu>
+                                            <li (click)="addAlarmWithGroup(alarm, group)" *ngFor="let group of alarmGroups"
+                                                nz-menu-item>
+                                              {{group.name}}
+                                            </li>
+                                          </ul>
+                                        </nz-dropdown-menu>
+                                      </ng-container>
+                                    </nz-button-group>
+                                  </ng-container>
                                 </ng-container>
                               </div>
                             </div>

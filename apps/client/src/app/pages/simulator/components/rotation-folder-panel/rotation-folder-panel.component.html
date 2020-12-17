@@ -2,17 +2,15 @@
   <nz-collapse-panel [nzHeader]="panelHeader" #panel>
     <div (drop)="onCraftingRotationDrop($event)" (remove)="removeCraftingRotation($event.value)" [removeOnSpill]="true"
          class="ngx-dnd-container rotations-container"
-         fxLayout="column" fxLayoutGap="5px" ngxDroppable="rotation">
-      <app-lazy-scroll [data]="rotations" [rowTemplate]="rotationTpl" [rowSize]="46" [displayedRows]="6" [trackBy]="trackByCraftingRotation">
-        <ng-template #rotationTpl let-rotation>
-          <div *ngIf="rotation !== undefined"
-               [model]="rotation"
-               class="ngx-dnd-item"
-               ngxDraggable="rotation">
-            <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
-          </div>
-        </ng-template>
-      </app-lazy-scroll>
+         fxLayout="column" fxLayoutGap="5px" ngxDroppable="rotation" *ngIf="panel.nzActive">
+      <ng-container *ngFor="let rotation of rotations; trackBy: trackByCraftingRotation">
+        <div *ngIf="rotation !== undefined"
+             [model]="rotation"
+             class="ngx-dnd-item"
+             ngxDraggable="rotation">
+          <app-rotation-panel [rotation]="rotation"></app-rotation-panel>
+        </div>
+      </ng-container>
     </div>
   </nz-collapse-panel>
   <ng-template #panelHeader>

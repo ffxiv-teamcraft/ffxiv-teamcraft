@@ -1,4 +1,3 @@
-import { Vector2 } from '../tools/vector2';
 import { DataModel } from '../database/storage/data-model';
 import { ForeignKey } from '../database/relational/foreign-key';
 import { TeamcraftUser } from '../../model/user/teamcraft-user';
@@ -41,6 +40,7 @@ export class Alarm extends DataModel {
    */
   fishEyes?: boolean;
 
+  hookset?: string;
   baits?: FishingBait[];
   gig?: string;
   weathers?: number[];

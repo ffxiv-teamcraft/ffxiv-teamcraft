@@ -4,10 +4,14 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { TranslateService } from '@ngx-translate/core';
 import { SettingsService } from '../../../settings/settings.service';
 import { TeamcraftComponent } from '../../../../core/component/teamcraft-component';
-import { takeUntil } from 'rxjs/operators';
+import { filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { Team } from '../../../../model/team/team';
 import { PermissionLevel } from '../../../../core/database/permissions/permission-level.enum';
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
+import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
+import { RotationsFacade } from '../../../rotations/+state/rotations.facade';
+import { Craft } from '@ffxiv-teamcraft/simulator';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
   selector: 'app-item-row-buttons',
@@ -38,8 +42,17 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   @Input()
   hasAlarms: boolean;
 
+  _attachedRotationKey$: BehaviorSubject<string> = new BehaviorSubject<string>(null);
+
   @Input()
-  attachedRotation: string;
+  set attachedRotation(rotationKey: string) {
+    this.rotationsFacade.getRotation(rotationKey);
+    this._attachedRotationKey$.next(rotationKey);
+  }
+
+  get attachedRotation(): string {
+    return this._attachedRotationKey$.value;
+  }
 
   @Input()
   userId: string;
@@ -69,7 +82,7 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   missingBooks: number[];
 
   @Input()
-  masterbooks: number[]
+  masterbooks: number[];
 
   @Output()
   attachRotation = new EventEmitter<void>();
@@ -125,10 +138,34 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
   @Output()
   requiredAsHQChange = new EventEmitter<boolean>();
 
+  recipeId$: ReplaySubject<string> = new ReplaySubject<string>();
+
+  recipe$ = this.recipeId$.pipe(
+    switchMap(id => this.lazyData.getRecipe(id))
+  );
+
+  @Input()
+  set recipeId(id: string) {
+    this.recipeId$.next(id);
+  }
+
   itemRowTypes = ItemRowMenuElement;
 
+  rotation$: Observable<CraftingRotation> = this._attachedRotationKey$.pipe(
+    filter(key => !!key),
+    switchMap(key => {
+      return this.rotationsFacade.allRotations$.pipe(
+        map(rotations => {
+          return rotations.find(rotation => rotation.$key === key);
+        }),
+        filter(rotation => rotation !== undefined && !rotation.notFound)
+      );
+    })
+  );
+
   constructor(private messageService: NzMessageService, private translate: TranslateService,
-              public settings: SettingsService, private cd: ChangeDetectorRef) {
+              public settings: SettingsService, private cd: ChangeDetectorRef,
+              private rotationsFacade: RotationsFacade, private lazyData: LazyDataService) {
     super();
     this.settings.settingsChange$.pipe(
       takeUntil(this.onDestroy$)

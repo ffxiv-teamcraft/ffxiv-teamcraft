@@ -30,11 +30,16 @@ export class MappyComponent extends TeamcraftComponent {
       const mapId = +params.get('mapId');
       return combineLatest([
         this.xivapi.get('mappy/map' as XivapiEndpoint, mapId),
-        this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true })
+        this.xivapi.getList('mappy/updates' as XivapiEndpoint, { staging: true }),
+        this.xivapi.getList(`mappy/map/${mapId}/nodes` as XivapiEndpoint, { staging: true }).pipe(map(res => res as any as number[])),
+        this.lazyData.data$
       ])
         .pipe(
-          map(([entries, updates]) => {
-            const mapData = this.lazyData.data.maps[mapId];
+          map(([entries, updates, gatheringPoints, data]) => {
+            const mapData = data.maps[mapId];
+            const mapNodes = Object.entries<any>(data.nodes)
+              .map(([id, n]) => ({ id: +id, ...n }))
+              .filter(n => n.map === mapId && n.items.length > 0 && !this.lazyData.ignoredNodes.includes(n.id));
             return {
               entries,
               updates: updates[mapId],
@@ -50,6 +55,9 @@ export class MappyComponent extends TeamcraftComponent {
                   ...e,
                   cssCoords: this.mapService.getPositionOnMap(mapData, { x: e.PosX, y: e.PosY })
                 };
+              }),
+              missingNodes: mapNodes.filter((node) => {
+                return !gatheringPoints.some(gatheringPoint => data.gatheringPointBaseToNodeId[gatheringPoint] === node.id);
               })
             };
           })

@@ -69,6 +69,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
               icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
             };
           }
+          if (node.hookset) {
+            alarm.hookset = node.hookset;
+          }
           return this.alarmsFacade.applyFishEyes(alarm);
         })
       ));

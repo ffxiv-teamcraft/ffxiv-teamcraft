@@ -171,7 +171,11 @@ if (hasTodo('mappy', true)) {
       if (node.GameContentLinks.GatheringPoint) {
         linkedPoints = node.GameContentLinks.GatheringPoint.GatheringPointBase;
       }
-      const point = gatheringPoints[linkedPoints[linkedPoints.length - 1]];
+      let point = gatheringPoints[linkedPoints[linkedPoints.length - 1]];
+      // Hotfix for Rarefied Pyrite
+      if (node.ID === 306) {
+        point = gatheringPoints[31437];
+      }
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
@@ -207,14 +211,18 @@ if (hasTodo('mappy', true)) {
 
   combineLatest([mapData$, nodes$])
     .subscribe(([mapData]) => {
-      mapData.forEach(row => {
-        if (row.Type === 'BNPC') {
-          handleMonster(row);
-        }
-        if (row.Type === 'Node') {
-          handleNode(row);
-        }
-      });
+      mapData
+        .sort((a, b) => {
+          return a.Added - b.Added;
+        })
+        .forEach(row => {
+          if (row.Type === 'BNPC') {
+            handleMonster(row);
+          }
+          if (row.Type === 'Node') {
+            handleNode(row);
+          }
+        });
       // Write data that needs to be joined with game data first
       persistToJsonAsset('nodes', nodes);
       // console.log('nodes written');

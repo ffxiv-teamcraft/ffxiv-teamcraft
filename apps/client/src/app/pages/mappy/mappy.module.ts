@@ -13,9 +13,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { MappyDashboardComponent } from './mappy-dashboard/mappy-dashboard.component';
 import { MappyGuard } from './mappy.guard';
-import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
-import { NzListModule } from 'ng-zorro-antd/list';
 import { NzTagModule } from 'ng-zorro-antd/tag';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzSwitchModule } from 'ng-zorro-antd/switch';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -40,6 +42,7 @@ const routes: Routes = [
     CommonModule,
     MapModule,
     FlexLayoutModule,
+    FormsModule,
 
     RouterModule.forChild(routes),
     NzDividerModule,
@@ -49,9 +52,10 @@ const routes: Routes = [
     PageLoaderModule,
     NzButtonModule,
     NzPopconfirmModule,
-    LazyScrollModule,
-    NzListModule,
-    NzTagModule
+    NzTagModule,
+    NzCardModule,
+    NzEmptyModule,
+    NzSwitchModule
   ]
 })
 export class MappyModule {

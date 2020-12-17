@@ -11,14 +11,22 @@
   </ng-template>
 </nz-divider>
 
-<nz-list nzItemLayout="horizontal" [nzLoading]="loading">
-  <ng-container *ngIf="display$ | async as maps">
-    <nz-list-item *ngFor="let map of maps">
-      <nz-list-item-meta>
-        <nz-list-item-meta-title>
+<div fxLayout="row" fxLayoutAlign="center center" class="missing-nodes-toggle" fxLayoutGap="5px">
+  <nz-switch [ngModel]="onlyMissingNodes$ | async" (ngModelChange)="onlyMissingNodes$.next($event)"></nz-switch>
+  <div>{{'MAPPY.Only_missing_nodes' | translate}}</div>
+</div>
+
+<div *ngIf="display$ | async as maps" fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center flex-start">
+  <div *ngFor="let map of maps">
+    <nz-card [nzCover]="cover" [nzActions]="[openAction]">
+      <ng-template #cover>
+        <img [src]="map.image" alt="" class="map-cover">
+      </ng-template>
+      <nz-card-meta [nzTitle]="title" [nzDescription]="description">
+        <ng-template #title>
           <i>{{map.id}}</i> - {{map.id | mapName | i18n}}
-        </nz-list-item-meta-title>
-        <nz-list-item-meta-description>
+        </ng-template>
+        <ng-template #description>
           <nz-tag class="custom-tag" [style.border-color]="map.updates?.BNPC && !map.old.BNPC ? '#87d068' : '#f50'">
             <span class="companion-svg">&#x0F202;</span>
             {{map.updates?.BNPC ? (map.updates?.BNPC * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
@@ -27,13 +35,12 @@
             <span class="companion-svg">&#x0F016;</span>
             {{map.updates?.Node ? (map.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate}}
           </nz-tag>
-        </nz-list-item-meta-description>
-      </nz-list-item-meta>
-      <ul nz-list-item-actions>
-        <nz-list-item-action>
+          <nz-tag [nzColor]="'#f50'" *ngIf="map.missingNodes > 0">{{'MAPPY.X_Missing_nodes' | translate:{ amount: map.missingNodes } }}</nz-tag>
+        </ng-template>
+        <ng-template #openAction>
           <a routerLink="/mappy/{{map.id}}">{{'MAPPY.Open_details' | translate}}</a>
-        </nz-list-item-action>
-      </ul>
-    </nz-list-item>
-  </ng-container>
-</nz-list>
+        </ng-template>
+      </nz-card-meta>
+    </nz-card>
+  </div>
+</div>

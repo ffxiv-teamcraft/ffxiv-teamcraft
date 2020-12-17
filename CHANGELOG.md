@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.11"></a>
+## [7.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.10...v7.6.11) (2020-12-17)
+
+
+### Bug Fixes
+
+* **db:** fixed wrong coordinates or spawn times for some nodes ([12460af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12460af))
+* **inventory:** fixed CSV format sometimes not having retainer name ([2dd0dee](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2dd0dee)), closes [#1753](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1753)
+* **rotations:** fixed an issue with rotations drag and drop system ([6bc3fd0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6bc3fd0))
+
+
+### Features
+
+* **alarms:** added hookset information to alarm, not retroactive ([be035ed](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/be035ed))
+* **list:** added rotation result to list items with linked rotation ([318beb3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/318beb3))
+* **simulator:** you can now include wait time in consumables notification ([1898d0b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1898d0b))
+
+
+
 <a name="7.6.10"></a>
 ## [7.6.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.9...v7.6.10) (2020-12-15)
 

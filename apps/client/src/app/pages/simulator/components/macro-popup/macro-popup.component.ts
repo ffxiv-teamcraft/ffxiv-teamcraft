@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftingAction, CraftingJob, HastyTouch, ByregotsBlessing, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
+import { ByregotsBlessing, CraftingAction, CraftingJob, FinalAppraisal, Simulation } from '@ffxiv-teamcraft/simulator';
 import { LocalizedDataService } from '../../../../core/data/localized-data.service';
 import { I18nToolsService } from '../../../../core/tools/i18n-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -36,6 +36,8 @@ export class MacroPopupComponent implements OnInit {
 
   public addConsumables = this.settings.macroConsumables;
 
+  public addConsumablesWaitTime = this.settings.addConsumablesWaitTime;
+
   rotation: CraftingAction[];
 
   job: CraftingJob;
@@ -69,16 +71,21 @@ export class MacroPopupComponent implements OnInit {
   public generateMacros(): void {
     this.settings.macroExtraWait = this.extraWait;
     this.settings.macroLock = this.macroLock;
-    this.settings.macroConsumables = this.addConsumables;
     this.settings.macroEcho = this.addEcho;
     this.settings.macroBreakBeforeByregot = this.breakBeforeByregotsBlessing;
     this.settings.macroFixedEcho = this.fixedEcho;
     this.settings.macroEchoSeNumber = this.echoSeNumber;
     this.settings.macroCompletionMessage = this.macroCompletionMessage;
 
+    this.settings.macroConsumables = this.addConsumables;
+    this.settings.addConsumablesWaitTime = this.addConsumablesWaitTime;
+
     this.macro = this.macroLock ? [['/mlock']] : [[]];
     if (this.addConsumables) {
-      this.macro[0].push(this.getConsumablesNotification());
+      const notification = this.getConsumablesNotification();
+      if (notification) {
+        this.macro[0].push(notification);
+      }
     }
     this.totalDuration = 0;
     let totalLength = 0;
@@ -171,7 +178,7 @@ export class MacroPopupComponent implements OnInit {
     if (necessaryBuffs.length > 0) {
       const notification = this.translator.instant('SIMULATOR.Consumable_notification',
         { buffs: necessaryBuffs.join(', ') });
-      return `/echo ${notification} <se.5>`;
+      return `/echo ${notification} <se.5> <wait.${this.addConsumablesWaitTime}>`;
     }
     return undefined;
   }

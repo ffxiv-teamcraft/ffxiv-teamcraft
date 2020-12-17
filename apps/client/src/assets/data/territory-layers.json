@@ -925,8 +925,8 @@
           "max": 0
         },
         "z": {
-          "min": 0,
-          "max": 0
+          "min": -1,
+          "max": 2
         }
       }
     },
@@ -934,6 +934,7 @@
       "mapId": 180,
       "index": 0,
       "placeNameId": 112,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -953,6 +954,7 @@
       "mapId": 209,
       "index": 0,
       "placeNameId": 0,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -972,6 +974,7 @@
       "mapId": 180,
       "index": 0,
       "placeNameId": 112,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -991,6 +994,7 @@
       "mapId": 209,
       "index": 0,
       "placeNameId": 0,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,

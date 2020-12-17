@@ -45,6 +45,16 @@
       <nz-statistic [nzValue]="display.updates?.Node ? (display.updates?.Node * 1000 | date:'medium':null:translate.currentLang) : 'COMMON.Never' | translate"
                     [nzTitle]="'MAPPY.Last_node_update' | translate"></nz-statistic>
 
+      <nz-divider nzOrientation="left" nzText="{{'MAPPY.Missing_nodes' | translate}}"></nz-divider>
+      <nz-empty *ngIf="display.missingNodes.length === 0" [nzNotFoundContent]="'MAPPY.No_missing_nodes' | translate"></nz-empty>
+      <ul>
+        <li *ngFor="let node of display.missingNodes">
+          <span>{{node.id}} - {{node.zoneid | placeName | i18n}}</span>
+          <ul>
+            <li *ngFor="let item of node.items">{{item | itemName | i18n}}</li>
+          </ul>
+        </li>
+      </ul>
       <button *ngIf="isAdmin$ | async" nz-button nzType="danger" nz-popconfirm [nzPopconfirmTitle]="'Confirm' | translate"
               (nzOnConfirm)="clearMap(display.map.id)">{{'MAPPY.Clear_map' | translate}}</button>
     </div>

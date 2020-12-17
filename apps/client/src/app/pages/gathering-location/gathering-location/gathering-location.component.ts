@@ -143,6 +143,9 @@ export class GatheringLocationComponent {
     if (node.baits) {
       alarm.baits = node.baits;
     }
+    if (node.hookset) {
+      alarm.hookset = node.hookset;
+    }
     return this.alarmsFacade.applyFishEyes(alarm);
   }
 

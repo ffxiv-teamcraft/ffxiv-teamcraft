@@ -191,9 +191,18 @@ export class InventoryComponent {
     const json = [].concat.apply([], display.map(i => i.items));
 
     // Source: https://stackoverflow.com/a/31536517/4102561
-    const fields = Object.keys(json[0]);
+    const fields: Array<keyof InventoryItem> = [
+      'itemId',
+      'containerId',
+      'retainerName',
+      'slot',
+      'quantity',
+      'hq',
+      'spiritBond',
+      'price'
+    ];
     const replacer = (key, value) => {
-      return value === null ? '' : value;
+      return !value ? '' : value;
     };
     const csv = json.map((row) => {
       return fields.map((fieldName) => {
