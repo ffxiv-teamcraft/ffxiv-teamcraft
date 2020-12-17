@@ -17,22 +17,22 @@ export class TrackerComponent {
     this.alarms$ = this.alarmsFacade.allAlarms$;
   }
 
-  public getAlarm(node: any): Partial<Alarm> | null {
+  public getAlarms(node: any): Alarm[] {
     if (!node.timed && (node.weathers === undefined || node.weathers.length === 0)) {
       return null;
     }
     if (this.alarmsCache[`${node.itemId}-${node.type}`] === undefined) {
-      this.alarmsCache[`${node.itemId}-${node.type}`] = {
+      this.alarmsCache[`${node.itemId}-${node.type}`] = this.alarmsFacade.applyFishEyes({
         itemId: node.itemId,
         icon: node.icon,
         duration: node.uptime / 60 || 8,
         zoneId: node.zoneid,
-        areaId: node.areaid,
         slot: +node.slot,
         type: node.type,
         coords: {
           x: node.x,
-          y: node.y
+          y: node.y,
+          z: node.z
         },
         folklore: node.folklore,
         reduction: node.reduction,
@@ -44,8 +44,9 @@ export class TrackerComponent {
         weathers: node.weathers,
         weathersFrom: node.weathersFrom,
         snagging: node.snagging,
-        predators: node.predators || []
-      };
+        predators: node.predators || [],
+        hookset: node.hookset
+      });
     }
     return this.alarmsCache[`${node.itemId}-${node.type}`];
   }
