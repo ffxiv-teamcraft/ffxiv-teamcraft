@@ -869,6 +869,7 @@
     "Break_on_reclaim": "Découper la macro de manière à pouvoir utiliser Récupération",
     "Break_before_byregots_blessing": "Diviser les macros avant la bénédiction de Byregot",
     "Include_consumables_notification": "Inclure une notification pour les consommables",
+    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
     "Consumable_notification": "Utilisez {{buffs}}",
     "Extra_wait": "Temps d'attente supp.",
     "Completion_message": "Message de fin",
