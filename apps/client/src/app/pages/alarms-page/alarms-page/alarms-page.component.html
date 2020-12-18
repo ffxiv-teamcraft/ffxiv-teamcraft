@@ -334,6 +334,8 @@
              nzTheme="outline"></i>
           <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+          <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon" nz-tooltip
+               src="./assets/icons/hookset/{{row.alarm.hookset}}.png">
           <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
                class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
           <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
