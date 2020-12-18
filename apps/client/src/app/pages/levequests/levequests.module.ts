@@ -19,6 +19,7 @@ import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzProgressModule } from 'ng-zorro-antd/progress';
 
 const routes: Routes = [
   {
@@ -48,6 +49,7 @@ const routes: Routes = [
     ItemIconModule,
 
     AntdSharedModule,
+    NzProgressModule,
 
     RouterModule.forChild(routes)
   ],
