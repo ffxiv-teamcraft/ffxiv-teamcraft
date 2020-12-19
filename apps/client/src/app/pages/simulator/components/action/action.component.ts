@@ -113,7 +113,7 @@ export class ActionComponent {
       case StepState.CENTERED:
         return 'yellow';
       case StepState.POOR:
-        return 'purple';
+        return 'violet';
     }
   }
 }
