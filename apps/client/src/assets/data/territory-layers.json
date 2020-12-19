@@ -660,6 +660,7 @@
       "mapId": 181,
       "index": 0,
       "placeNameId": 1428,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -698,6 +699,7 @@
       "mapId": 181,
       "index": 0,
       "placeNameId": 1428,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -757,6 +759,7 @@
       "mapId": 93,
       "index": 0,
       "placeNameId": 255,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -776,6 +779,7 @@
       "mapId": 93,
       "index": 0,
       "placeNameId": 255,
+      "ignored":  true,
       "bounds": {
         "x": {
           "min": 0,
@@ -1035,6 +1039,7 @@
       "mapId": 105,
       "index": 0,
       "placeNameId": 19,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
@@ -1054,6 +1059,7 @@
       "mapId": 105,
       "index": 0,
       "placeNameId": 19,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,
