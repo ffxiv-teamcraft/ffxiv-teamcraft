@@ -901,6 +901,7 @@
     "No_rotations": "Sem rotação",
     "Create_a_custom_rotation": "Criar uma rotação personalizada",
     "Reset": "Redefinir rotação",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Importar para o otimizador de craft",
     "Export_crafting_optimizer": "Exportar usando um formato de otimizador para craft",
     "Export_copied": "Código de exportação do otimizador de craft copiado para a área de transferência",
