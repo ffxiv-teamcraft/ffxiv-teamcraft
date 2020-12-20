@@ -901,6 +901,7 @@
     "No_rotations": "No hay rotaciones",
     "Create_a_custom_rotation": "Crear rotación personalizada",
     "Reset": "Reiniciar rotación",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Importar desde optimizador de artesanía",
     "Export_crafting_optimizer": "Exportar usando el formato de optimizador de elaboración",
     "Export_copied": "Código de exportación de optimizador de elaboración copiado al portapapeles",
