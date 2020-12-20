@@ -901,6 +901,7 @@
     "No_rotations": "无手法",
     "Create_a_custom_rotation": "创建自定义手法",
     "Reset": "重置手法",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "从制作模拟器导入",
     "Export_crafting_optimizer": "使用制作优化器支持的格式导出",
     "Export_copied": "代码已复制到剪贴板",
