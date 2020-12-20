@@ -219,7 +219,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     comment.dislikes = comment.dislikes.filter((id) => id !== userId);
     if (!comment.likes.some((id) => id === userId)) {
       comment.likes.push(userId);
-      this.saveComment(comment);
+      this.saveComment(comment).subscribe();
     }
   }
 
@@ -227,7 +227,7 @@ export class DbCommentsComponent extends TeamcraftComponent implements OnInit {
     comment.likes = comment.likes.filter((id) => id !== userId);
     if (!comment.dislikes.some((id) => id === userId)) {
       comment.dislikes.push(userId);
-      this.saveComment(comment);
+      this.saveComment(comment).subscribe();
     }
   }
 
