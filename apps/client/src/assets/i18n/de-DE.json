@@ -901,6 +901,7 @@
     "No_rotations": "Keine Rotationen",
     "Create_a_custom_rotation": "Erstelle eine benutzerdefinierte Rotation",
     "Reset": "Rotation zurücksetzen",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Von Handwerks Optimierung importieren",
     "Export_crafting_optimizer": "Exportiere im Format der Handwerks-Optimierer",
     "Export_copied": "Export-Code für Handwerks-Optimierer in die Zwischenablage kopiert",
