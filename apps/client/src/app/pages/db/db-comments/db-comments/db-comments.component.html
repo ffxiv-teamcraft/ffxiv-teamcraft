@@ -30,9 +30,8 @@
         </ng-template>
         <nz-avatar [class.not-verified]="comment.author && !(comment.author | isVerified | async)"
                    [nzSrc]="comment.author ? (comment.author | characterAvatar | async) : './assets/xivdb_avatar.png'"
-                   [nzTooltipTitle]="(comment.author | isVerified | async)?null:''"
+                   routerLink="/profile/{{comment.author}}"
                    nz-comment-avatar
-                   nz-tooltip
                    nzIcon="user"></nz-avatar>
         <nz-comment-content>
           <p (click)="$event.preventDefault(); handleClick($event)"
