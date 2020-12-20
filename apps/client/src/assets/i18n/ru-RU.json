@@ -901,6 +901,7 @@
     "No_rotations": "Нет ротаций",
     "Create_a_custom_rotation": "Создать кастомную ротацию",
     "Reset": "Сбросить ротацию",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Импортировать из crafting optimizer",
     "Export_crafting_optimizer": "Экспортировать используя формать crafting optimizer",
     "Export_copied": "Код экспорта для crafting optimizer'а скопирован в буфер",
