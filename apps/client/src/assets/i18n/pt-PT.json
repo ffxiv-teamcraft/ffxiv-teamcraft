@@ -901,6 +901,7 @@
     "No_rotations": "Sem sequências",
     "Create_a_custom_rotation": "Create a custom rotation",
     "Reset": "Redefinir sequência",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Import from crafting optimizer",
     "Export_crafting_optimizer": "Export using crafting optimizer format",
     "Export_copied": "Crafting optimizer export code copied to your clipboard",
