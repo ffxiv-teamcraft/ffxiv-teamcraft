@@ -901,6 +901,7 @@
     "No_rotations": "등록된 로테이션이 없습니다",
     "Create_a_custom_rotation": "사용자 지정 로테이션 만들기",
     "Reset": "로테이션 초기화",
+    "Reset_saved": "Revert unsaved changes",
     "Import_from_crafting_optimizer": "Crafting optimizer 에서 가져오기",
     "Export_crafting_optimizer": "Crafting optimizer 형식으로 내보내기",
     "Export_copied": "Crafting optimizer 내보내기 코드를 클립보드에 복사하였습니다.",
