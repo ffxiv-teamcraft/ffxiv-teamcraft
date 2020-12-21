@@ -7,7 +7,7 @@
      fxLayoutGap="5px">
   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
     <div class="checkbox">
-      <label [(ngModel)]="selected" (ngModelChange)="selectedChange.emit($event)"
+      <label [(ngModel)]="selected" (ngModelChange)="selectionChange(row, $event)"
              nz-checkbox></label>
     </div>
     <div class="avatar">
@@ -36,7 +36,10 @@
     <div class="input-box" fxLayout="row" fxLayoutAlign="center center" nz-col>
       <nz-input-group [nzAddOnBefore]="null | ifRegions:[Region.China, Region.Korea]:(row.recipe !== undefined?addCrafts:null)" [nzCompact]="true"
                       class="amount-input">
-        <nz-input-number mouseWheel [(ngModel)]="row.amount" [class.amount-input-field]="row.recipe !== undefined"
+        <nz-input-number mouseWheel
+                         [(ngModel)]="row.amount"
+                         (ngModelChange)="amountChanged.next(row)"
+                         [class.amount-input-field]="row.recipe !== undefined"
                          [nzMin]="minAmount"
                          (mouseWheelUp)="adjust(1)"
                          (mouseWheelDown)="adjust(-1)">

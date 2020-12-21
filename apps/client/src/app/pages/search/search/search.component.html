@@ -411,10 +411,29 @@
   <div *ngIf="results$ | async as results">
     <div *ngIf="searchType === searchTypes.ITEM || searchType === searchTypes.RECIPE  || searchType === searchTypes.ANY"
          class="addition-buttons">
-      <label [(ngModel)]="allSelected" (ngModelChange)="selectAll(results, $event)" nz-checkbox>{{'Select_all' |
-        translate}}</label>
-      <button (click)="addSelectedItemsToList(results)" nz-button>{{'LISTS.Add_selection' | translate}}</button>
+      <button nz-button (click)="selectAll(results, !allSelected)">{{(allSelected ? 'Unselect_all' : 'Select_all') | translate}}</button>
     </div>
+    <ng-container *ngIf="selection$ | async as selection">
+      <div *ngIf="selection.length > 0" class="selection">
+        <nz-divider nzOrientation="left" [nzText]="'Selection' | translate"></nz-divider>
+        <div nz-row>
+          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="selection-row">
+            <div (nzOnConfirm)="removeSelection(item, results)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
+              <i nz-icon nzType="close"></i>
+            </div>
+            <app-item-icon [itemId]="item.itemId" [width]="24"></app-item-icon>
+            <div fxLayout="column">
+              <div>{{item.itemId | itemName | i18n}}</div>
+              <div>x{{item.amount | number:'1.0':translate.currentLang}}</div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutGap="10px" class="selection-buttons">
+          <button (click)="addSelectedItemsToList(results)" nz-button nzBlock>{{'LISTS.Add_selection' | translate}}</button>
+          <button (click)="selection$.next([])" nz-button nzType="danger" nzBlock>{{'LISTS.Reset_selection' | translate}}</button>
+        </div>
+      </div>
+    </ng-container>
     <nz-alert *ngIf="results.length >= 100" [nzMessage]="'ITEMS.Too_many_results_warning' | translate" class="dark" nzShowIcon
               nzType="warning"></nz-alert>
     <div *ngIf="patch$ | async as patch" class="patch" fxLayout="column" fxLayoutAlign="center center">
@@ -428,10 +447,11 @@
       <app-page-loader [loading]="loading">
         <app-search-result *ngFor="let row of results; trackBy: trackByItem; let odd = odd"
                            [odd]="odd" [row]="row" [currentLang]="translate.currentLang"
-                           [(selected)]="row.selected"
+                           [selected]="row.selected"
                            (addItemsToList)="addItemsToList([row])"
-                           (selectedChange)="updateAllSelected(results)"
+                           (selectedChange)="rowSelectionChange($event)"
                            (createQuickList)="createQuickList(row)"
+                           (amountChanged)="afterAmountChanged($event)"
                            (openInSimulator)="openInSimulator(row.itemId, row.recipe.recipeId)"
         ></app-search-result>
       </app-page-loader>
