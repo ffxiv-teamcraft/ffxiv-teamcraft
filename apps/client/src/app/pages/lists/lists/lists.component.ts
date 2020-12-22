@@ -17,7 +17,6 @@ import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { requestsWithDelay } from '../../../core/rxjs/requests-with-delay';
 
 @Component({
   selector: 'app-lists',
@@ -43,8 +42,6 @@ export class ListsComponent {
   public myLists$ = this.listsFacade.myLists$.pipe(debounceTime(50));
 
   public loading$: Observable<boolean>;
-
-  private regenerating = false;
 
   public needsVerification$ = this.listsFacade.needsVerification$;
 
@@ -107,7 +104,7 @@ export class ListsComponent {
                   const list = lists.find(c => c.$key === key);
                   if (list !== undefined) {
                     list.workshopId = workshop.$key;
-                  } else if(!this.loadingLists.includes(key)) {
+                  } else if (!this.loadingLists.includes(key)) {
                     this.loadingLists.push(key);
                     this.listsFacade.load(key);
                   }
@@ -203,38 +200,6 @@ export class ListsComponent {
     ).subscribe((workshop) => {
       this.workshopsFacade.createWorkshop(workshop);
     });
-  }
-
-  regenerateLists(compacts: List[]): void {
-    this.regenerating = true;
-    const regenerations = compacts
-      .filter(compact => compact.isOutDated())
-      .map(compact => {
-        return this.listsFacade.allListDetails$.pipe(
-          map(details => details.find(l => l.$key === compact.$key)),
-          filter(list => list !== undefined),
-          first(),
-          switchMap(list => this.listManager.upgradeList(list)),
-          tap(l => this.listsFacade.updateList(l, false, true))
-        );
-      });
-
-    this.progress.showProgress(requestsWithDelay(regenerations, 250, true), regenerations.length)
-      .pipe(
-        first(),
-        switchMap(() => {
-          return this.progress.showProgress(this.listsFacade.myLists$.pipe(
-            filter(lists => {
-              return lists.some(l => l.isOutDated()) === false;
-            }),
-            first()
-          ), 1, 'Saving_in_database');
-        })
-      )
-      .subscribe(() => {
-        this.regenerating = false;
-        this.message.success(this.translate.instant('LISTS.Regenerated_all'));
-      });
   }
 
   setListIndex(list: List, index: number, lists: List[]): void {

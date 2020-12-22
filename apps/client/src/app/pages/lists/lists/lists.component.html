@@ -29,11 +29,6 @@
               nzType="primary">
         <i nz-icon nzType="file-zip" nzTheme="outline"></i>
       </button>
-      <button (click)="regenerateLists(myLists)" *ngIf="myLists$ | async as myLists" [nzTooltipTitle]="'LISTS.Regenerate_all' | translate" nz-button
-              nz-tooltip
-              nzShape="circle" nzType="primary">
-        <i nz-icon nzType="file-sync"></i>
-      </button>
     </div>
     <nz-alert *ngIf="needsVerification$ | async" [nzMessage]="'LISTS.Needs_verification' | translate"
               class="fc-check-warning" nzShowIcon nzType="warning"></nz-alert>
