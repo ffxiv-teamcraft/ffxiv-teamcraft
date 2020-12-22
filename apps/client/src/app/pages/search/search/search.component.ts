@@ -754,7 +754,7 @@ export class SearchComponent implements OnInit {
   };
 
   public addSelectedItemsToList(items: SearchResult[]): void {
-    this.addItemsToList(items.filter(item => item.selected));
+    this.addItemsToList(items);
   }
 
   public removeSelection(row: SearchResult, items: SearchResult[]): void {
