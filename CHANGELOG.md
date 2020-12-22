@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.12"></a>
+## [7.6.12](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.11...v7.6.12) (2020-12-22)
+
+
+### Bug Fixes
+
+* **alarms:** added hookset icon to compact alarms too ([71a2abe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/71a2abe))
+* **character:** fixed some small bugs in character link popup display ([f5f7475](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5f7475))
+* **db:** fixed comment upvote marking page as dirty even after they were saved ([25c6333](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25c6333))
+* **db:** fixed data for some gathering nodes ([8c96784](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8c96784))
+* **desktop:** you can now capture packets without admin permission if using winpcap ([6597306](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6597306))
+* **levequests:** fixed total exp not showing anymore on exp progress bars hover ([b0522db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b0522db))
+* **recipe-finder:** fixed pagination bar not working at all ([fd92d97](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fd92d97))
+* **simulator:** changed step color for "poor" to violet instead of purple, for better visibility ([1d5a813](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1d5a813))
+
+
+### Features
+
+* **db:** comment avatar now opens author's profile page on click ([f2d01c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f2d01c3))
+* **desktop:** support for 5.4 hotfix packet capture ([7ee3907](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7ee3907))
+* **lists:** removed max regenerate button as it's not required anymore ([9709024](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9709024))
+* **search:** you can now "store" selection between searches and add them all to a list at once ([2c90fdb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2c90fdb)), closes [#1436](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1436)
+* **simulator:** new button to rollback unsaved changes ([3100385](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/3100385))
+
+
+
 <a name="7.6.11"></a>
 ## [7.6.11](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.10...v7.6.11) (2020-12-17)
 
