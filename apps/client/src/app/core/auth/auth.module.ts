@@ -17,6 +17,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 
 @NgModule({
   imports: [
@@ -37,7 +38,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzListModule,
     NzSpinModule,
     NzInputModule,
-    NzButtonModule
+    NzButtonModule,
+    NzCheckboxModule
   ],
   providers: [OauthService],
   declarations: [RegisterPopupComponent, LoginPopupComponent, CharacterLinkPopupComponent]

@@ -44,7 +44,7 @@ module.exports.addMachinaFirewallRule = addMachinaFirewallRule;
 module.exports.start = function(win, config, verbose, winpcap, pid) {
   isElevated().then(elevated => {
     log.info('elevated', elevated);
-    if (elevated) {
+    if (elevated || winpcap) {
       log.info('winpcap', winpcap);
       if (!isDev) {
         const appPath = app.getAppPath();

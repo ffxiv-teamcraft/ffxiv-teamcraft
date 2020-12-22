@@ -16,6 +16,7 @@ import { MarketboardModule } from '../../modules/marketboard/marketboard.module'
 import { ClipboardImportPopupComponent } from './clipboard-import-popup/clipboard-import-popup.component';
 import { InventoryImportPopupComponent } from './inventory-import-popup/inventory-import-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzPaginationModule } from 'ng-zorro-antd/pagination';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
 
     RouterModule.forChild(routes),
     ItemIconModule,
-    MarketboardModule
+    MarketboardModule,
+    NzPaginationModule
   ]
 })
 export class RecipeFinderModule {

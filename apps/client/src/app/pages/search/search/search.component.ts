@@ -47,7 +47,8 @@ export class SearchComponent implements OnInit {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  results$: Observable<any[]>;
+  results$: Observable<SearchResult[]>;
+  selection$: BehaviorSubject<SearchResult[]> = new BehaviorSubject<SearchResult[]>([]);
 
   filters$: BehaviorSubject<SearchFilter[]> = new BehaviorSubject<any>([]);
 
@@ -756,16 +757,38 @@ export class SearchComponent implements OnInit {
     this.addItemsToList(items.filter(item => item.selected));
   }
 
+  public removeSelection(row: SearchResult, items: SearchResult[]): void {
+    row.selected = false;
+    this.rowSelectionChange(row);
+    items.forEach(i => i.itemId === row.itemId ? i.selected = false : null);
+  }
+
   public selectAll(items: SearchResult[], selected: boolean): void {
+    if (selected) {
+      this.selection$.next([...this.selection$.value, ...items]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => !items.some(item => item.itemId === i.itemId)));
+    }
     (items || []).forEach(item => item.selected = selected);
+    this.allSelected = selected;
+  }
+
+  public rowSelectionChange(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next([...this.selection$.value, row]);
+    } else {
+      this.selection$.next(this.selection$.value.filter(i => i.itemId !== row.itemId));
+    }
+  }
+
+  public afterAmountChanged(row: SearchResult): void {
+    if (row.selected) {
+      this.selection$.next(this.selection$.value.map(item => item.itemId === row.itemId ? row : item));
+    }
   }
 
   public openInSimulator(itemId: number, recipeId: string): void {
     this.rotationPicker.openInSimulator(itemId, recipeId);
-  }
-
-  public updateAllSelected(items: SearchResult[]): void {
-    this.allSelected = items.reduce((res, item) => item.selected && res, true);
   }
 
   trackByItem(index: number, item: SearchResult): number {

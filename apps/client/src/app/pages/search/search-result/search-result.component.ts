@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
-import {SearchType} from '../search-type';
-import {SearchResult} from '../../../model/search/search-result';
-import {HtmlToolsService} from '../../../core/tools/html-tools.service';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { SearchType } from '../search-type';
+import { SearchResult } from '../../../model/search/search-result';
+import { HtmlToolsService } from '../../../core/tools/html-tools.service';
 import { Region } from '../../../modules/settings/region.enum';
 
 @Component({
@@ -34,7 +34,10 @@ export class SearchResultComponent {
   openInSimulator = new EventEmitter();
 
   @Output()
-  selectedChange = new EventEmitter();
+  selectedChange = new EventEmitter<SearchResult>();
+
+  @Output()
+  amountChanged = new EventEmitter<SearchResult>();
 
   @Input()
   selected: boolean;
@@ -46,6 +49,10 @@ export class SearchResultComponent {
   constructor(private htmlTools: HtmlToolsService) {
   }
 
+  selectionChange(row: SearchResult, selected: boolean): void {
+    this.selectedChange.emit({ ...row, selected });
+  }
+
   public getStars(amount: number): string {
     return this.htmlTools.generateStars(amount);
   }
@@ -55,8 +62,10 @@ export class SearchResultComponent {
     this.row.amount += amount;
 
     if (this.row.amount <= this.minAmount) {
-      this.row.amount = this.minAmount
+      this.row.amount = this.minAmount;
     }
+
+    this.amountChanged.next(this.row);
   }
 
 }

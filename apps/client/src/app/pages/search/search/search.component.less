@@ -126,6 +126,36 @@ nz-form-item {
   }
 }
 
+.selection {
+  padding: 0 50px;
+  @media @mobile {
+    padding: 0 10px;
+  }
+
+  .selection-row {
+    position: relative;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 5px;
+
+    .delete-icon {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  .selection-buttons {
+    width: 100%;
+
+    > button:first-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+
 .instance-banner {
   width: 220px;
 }

@@ -15,6 +15,16 @@
               nzShape="circle" nzType="primary">
         <i nz-icon nzType="save"></i>
       </button>
+      <ng-container *ngIf="dirty">
+        <button (nzOnConfirm)="resetToSavedRotation(rotation)"
+                [nzTooltipTitle]="'SIMULATOR.Reset_saved' | translate"
+                [nzPopconfirmTitle]="'Confirm' | translate"
+                nz-button nz-popconfirm nz-tooltip
+                nzShape="circle"
+                nzType="primary">
+          <i nz-icon nzType="rollback" nzTheme="outline"></i>
+        </button>
+      </ng-container>
       <button (click)="changeRecipe(rotation)" *ngIf="custom" [nzTooltipTitle]="'SIMULATOR.Convert_rotation' | translate"
               nz-button nz-tooltip
               nzShape="circle"
