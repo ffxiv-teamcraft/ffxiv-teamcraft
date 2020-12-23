@@ -5,6 +5,7 @@ import { Vendor } from '../../model/vendor';
 import { Item } from '../../../../model/garland-tools/item';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
+import { uniqBy } from 'lodash';
 
 export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
 
@@ -25,7 +26,7 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): Vendor[] {
-    const vendors: Vendor[] = [];
+    let vendors: Vendor[] = [];
     for (const vendorId of item.vendors) {
       let itemPartial = itemData.getPartial(item.id.toString(), 'item');
       const vendor: Vendor = {
@@ -56,16 +57,25 @@ export class VendorsExtractor extends AbstractExtractor<Vendor[]> {
       }
       if (vendor.price > -1) {
         const npcEntry = this.lazyData.data.npcs[vendorId];
-        if (npcEntry && npcEntry.position) {
+        if (npcEntry) {
           const npcPosition = npcEntry.position;
-          vendor.coords = { x: Math.floor(npcPosition.x * 10) / 10, y: Math.floor(npcPosition.y * 10) / 10 };
-          vendor.zoneId = npcPosition.zoneid;
-          vendor.mapId = npcPosition.map;
+          if (npcPosition) {
+            vendor.coords = { x: Math.floor(npcPosition.x * 10) / 10, y: Math.floor(npcPosition.y * 10) / 10 };
+            vendor.zoneId = npcPosition.zoneid;
+            vendor.mapId = npcPosition.map;
+          }
+          vendor.festival = npcEntry.festival || 0;
         }
         vendors.push(vendor);
       }
     }
-    return vendors;
+    const vendorsWithoutFestivals = vendors.filter(v => v.festival === 0);
+    if (vendorsWithoutFestivals.length > 0) {
+      vendors = vendorsWithoutFestivals;
+    }
+    return uniqBy(vendors, v => {
+      return this.lazyData.data.npcs[v.npcId].en;
+    });
   }
 
 }

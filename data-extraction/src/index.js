@@ -919,7 +919,7 @@ if (hasTodo('LGB', true)) {
     .filter(map => everyMaps.filter(m => m.territory_id === map.territory_id).length > 1)
     .forEach(map => {
       if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
-        return map.priority_ui > 0 && entry.mapId === map.id;
+        return entry.mapId === map.id && entry.placeNameId === map.placename_sub_id;
       })) {
         territoryLayers[map.territory_id] = [
           ...(territoryLayers[map.territory_id] || []),
@@ -1015,6 +1015,9 @@ if (hasTodo('LGB', true)) {
                   map: mapId,
                   ...coords
                 };
+                if (lgbLayer.FestivalID > 0) {
+                  npc.festival = lgbLayer.FestivalID;
+                }
                 break;
               // Aetherytes
               case 40:
