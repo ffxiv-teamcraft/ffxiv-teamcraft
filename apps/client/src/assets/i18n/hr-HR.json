@@ -169,7 +169,8 @@
     "Example": "Example",
     "Change": "Change",
     "Dirty_changes": "You have unapplied changes",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Alarmi",
@@ -327,6 +328,7 @@
   "List_not_found": "Popis nije pronađen ili nemate pristup",
   "Requirements_for_craft": "Vidjeti zahtjeve",
   "Zone_breakdown": "Opis područja",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Display reversed tiers",
   "Timer_options": "Mogućnosti timera",
   "Early_by": "Rano po (eorzean sati)",
@@ -429,6 +431,7 @@
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Show_patch_notes_on_update": "Show patch notes on new updates",
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
@@ -573,6 +576,9 @@
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "Final_item": "Final item",
     "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
@@ -583,6 +589,7 @@
       "GREEN": "Green",
       "YELLOW": "Yellow",
       "BLUE": "Blue",
+      "LIGHT_BLUE": "Light blue",
       "PURPLE": "Purple",
       "ORANGE": "Orange",
       "PINK": "Pink",

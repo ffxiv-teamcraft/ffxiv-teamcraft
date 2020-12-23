@@ -128,6 +128,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   @Input()
   alarmGroups: AlarmGroup[];
 
+  @Input()
+  skip?: number;
+
   userId$: Observable<string>;
 
   loggedIn$: Observable<boolean>;
@@ -504,7 +507,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     });
   }
 
-  private saveItem(item: ListRow): void {
+  saveItem(item: ListRow): void {
     this.listsFacade.updateItem(item, this.finalItem);
   }
 

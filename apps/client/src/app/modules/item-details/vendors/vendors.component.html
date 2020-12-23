@@ -7,6 +7,7 @@
       <ng-template #title>
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <div>{{vendor.npcId | npcName | i18n}}</div>
+          <nz-tag class="custom-tag" style.border-color="f50" *ngIf="vendor.festival">{{'COMMON.Festival' | translate}}</nz-tag>
           <app-db-button [id]="vendor.npcId" type="npc"></app-db-button>
         </div>
       </ng-template>

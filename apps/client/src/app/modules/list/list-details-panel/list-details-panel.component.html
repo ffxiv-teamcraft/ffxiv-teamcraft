@@ -1,13 +1,14 @@
 <span [class.overlay]="overlay" *ngIf="displayRow">
   <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
   <nz-collapse *ngIf="permissionLevel$ | async as permissionLevel">
-    <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems">
+    <ng-template #itemsListDisplay let-items let-displayedItems="displayedItems" let-skip="skip">
     <app-lazy-scroll [data]="items" [noScroll]="noScroll" [displayedRows]="displayedItems" rowSize="36" [rowTemplate]="itemRow" [trackBy]="trackByItem">
       <ng-template #itemRow let-item let-odd="odd">
         <app-item-row [permissionLevel]="overlay ? 10 : permissionLevel"
                       [overlay]="overlay"
                       [finalItem]="finalItems"
                       [alarmGroups]="alarmGroups"
+                      [skip]="skip && skip[item.id]"
                       [item]="item"
                       [layout]="displayRow.layout"
                       [odd]="odd"></app-item-row>
@@ -16,40 +17,62 @@
     </ng-template>
     <ng-template #display>
       <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed">
-        <div *ngIf="!displayRow.tiers && ! displayRow.zoneBreakdown && !displayRow.reverseTiers">
-            <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: displayRow.rows, displayedItems: 12}"></ng-container>
-        </div>
-        <div *ngIf="displayRow.tiers || displayRow.reverseTiers">
-          <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
-            <ng-template #tierTitle>
-              {{'Precraft_tier' | translate}} <span
-              *ngIf="!displayRow.reverseTiers">{{index + 1}}</span> <span
-              *ngIf="displayRow.reverseTiers">{{tiers.length - index}}</span>
-            </ng-template>
-            <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
-            <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: tier, displayedItems: 8}"></ng-container>
-          </div>
-        </div>
-        <div *ngIf="displayRow.zoneBreakdown">
-          <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
-            <div *ngIf="row.items.length > 0">
-              <ng-template #zoneTitle>
-                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                  <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
-                    <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
-                       nz-tooltip [nzTooltipTitle]="'NAVIGATION.You_are_here' | translate"></i>
-                  </span>
-                  <button (click)="openNavigationMap(row)" *ngIf="hasNavigationMapForZone[row.zoneId] && !overlay"
-                          [nzTooltipTitle]="'NAVIGATION.Title' | translate" nz-button
-                          nz-tooltip
-                          nzShape="circle" nzSize="small">
-                    <i nz-icon nzType="gateway"></i>
-                  </button>
-                </div>
+        <ng-template #tiersTpl>
+            <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
+              <ng-template #tierTitle>
+                {{'Precraft_tier' | translate}} <span
+                *ngIf="!displayRow.reverseTiers">{{index + 1}}</span> <span
+                *ngIf="displayRow.reverseTiers">{{tiers.length - index}}</span>
               </ng-template>
-              <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
-              <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: row.items, displayedItems: 8}"></ng-container>
+              <nz-divider [nzText]="tierTitle" nzOrientation="left"></nz-divider>
+              <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: tier, displayedItems: 8}"></ng-container>
             </div>
+        </ng-template>
+        <div [ngSwitch]="displayMode">
+          <div *ngSwitchCase="LayoutRowDisplayMode.TIERS">
+              <ng-container *ngTemplateOutlet="tiersTpl"></ng-container>
+          </div>
+          <div *ngSwitchCase="LayoutRowDisplayMode.REVERSE_TIERS">
+              <ng-container *ngTemplateOutlet="tiersTpl"></ng-container>
+          </div>
+          <div *ngSwitchCase="LayoutRowDisplayMode.ZONE_BREAKDOWN">
+            <div *ngFor="let row of zoneBreakdown?.rows; trackBy: trackByZone">
+              <div *ngIf="row.items.length > 0">
+                <ng-template #zoneTitle>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
+                      <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
+                         nz-tooltip [nzTooltipTitle]="'NAVIGATION.You_are_here' | translate"></i>
+                    </span>
+                    <button (click)="openZoneBreakdownRowNavigationMap(row)" *ngIf="hasNavigationMapForZone[row.zoneId] && !overlay"
+                            [nzTooltipTitle]="'NAVIGATION.Title' | translate" nz-button
+                            nz-tooltip
+                            nzShape="circle" nzSize="small">
+                      <i nz-icon nzType="gateway"></i>
+                    </button>
+                  </div>
+                </ng-template>
+                <nz-divider [nzText]="zoneTitle" nzOrientation="left"></nz-divider>
+                <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: row.items, displayedItems: 8}"></ng-container>
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchCase="LayoutRowDisplayMode.NPC_BREAKDOWN">
+            <div *ngFor="let row of npcBreakdown?.rows; trackBy: trackByNpc">
+              <div *ngIf="row.items.length > 0">
+                <ng-template #npcTitle>
+                  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                    <span class="zone-title">{{getNpc(row.npcId) | i18n}}</span>,&nbsp;
+                    <app-map-position [hideCoords]="true" [mapId]="row.position.map" [showZoneName]="true" flex="row" [zoneId]="row.position.zoneid" [marker]="row.position"></app-map-position>
+                  </div>
+                </ng-template>
+                <nz-divider [nzText]="npcTitle" nzOrientation="left"></nz-divider>
+                <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: row.items, skip: npcBreakdown.canSkip, displayedItems: 8}"></ng-container>
+              </div>
+            </div>
+          </div>
+          <div *ngSwitchDefault>
+              <ng-container *ngTemplateOutlet="itemsListDisplay;context:{$implicit: displayRow.rows, displayedItems: 12}"></ng-container>
           </div>
         </div>
       </ng-container>

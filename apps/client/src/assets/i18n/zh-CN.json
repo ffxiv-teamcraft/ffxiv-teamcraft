@@ -169,7 +169,8 @@
     "Example": "示例",
     "Change": "修改",
     "Dirty_changes": "有尚未保存的修改",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "闹钟",
@@ -327,6 +328,7 @@
   "List_not_found": "没有找到清单或者你没有权限访问",
   "Requirements_for_craft": "查看要求",
   "Zone_breakdown": "按地图显示",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "以相反的顺序显示",
   "Timer_options": "闹钟选项",
   "Early_by": "提前 (艾欧泽亚小时)",
@@ -429,6 +431,7 @@
     "Always_disable_hq_suggestions": "禁止在清单中提供自动 HQ 建议",
     "Ignored_inventories": "已忽略的物品栏",
     "Enable_tutorials": "启用教程",
+    "Show_patch_notes_on_update": "Show patch notes on new updates",
     "Scrolling_behavior": "滚动行为",
     "Scrolling_behavior_explain": "设置清单面板的滚动行为。默认情况下，每个面板在显示滚动条前可显示 12 个项目。",
     "Enable_auto_log_check": "采集（制作）物品后自动标记采集（制作）笔记",
@@ -573,6 +576,9 @@
     "Progression_tooltip_items": "已制作物品：{{amount}}%",
     "Final_item": "终产物",
     "Include_final_items_in_main_layout": "在主布局中包含终产物",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "默认",
       "Only_large": "仅限超长清单",
@@ -583,6 +589,7 @@
       "GREEN": "绿色",
       "YELLOW": "黄色",
       "BLUE": "蓝色",
+      "LIGHT_BLUE": "Light blue",
       "PURPLE": "紫色",
       "ORANGE": "橙色",
       "PINK": "粉色",

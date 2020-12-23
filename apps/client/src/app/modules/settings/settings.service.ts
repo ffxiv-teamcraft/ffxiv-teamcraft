@@ -117,6 +117,14 @@ export class SettingsService {
     this.setSetting('auto-open-in-desktop', open.toString());
   }
 
+  public get autoShowPatchNotes(): boolean {
+    return this.getSetting('auto-show-patch-notes', 'true') === 'true';
+  }
+
+  public set autoShowPatchNotes(show: boolean) {
+    this.setSetting('auto-show-patch-notes', show.toString());
+  }
+
   public get tutorialEnabled(): boolean {
     return this.getSetting('tutorial:enabled', 'false') === 'true';
   }

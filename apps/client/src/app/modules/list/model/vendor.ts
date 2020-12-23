@@ -5,4 +5,5 @@ export interface Vendor {
   areaId?: number;
   price: number;
   coords?: { x: number; y: number; };
+  festival?: number;
 }

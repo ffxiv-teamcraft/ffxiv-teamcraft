@@ -3,7 +3,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { delay, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { delay, filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -32,7 +32,15 @@ export class InventoryOptimizerComponent {
 
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
     switchMap((extracts: ListRow[]) => {
-      return combineLatest([this.settings.settingsChange$.pipe(startWith(0)), this.resultsReloader$]).pipe(
+      return combineLatest([
+        this.settings.settingsChange$.pipe(
+          filter(change => {
+            return change.startsWith('optimizer:');
+          }),
+          startWith(0)
+        ),
+        this.resultsReloader$
+      ]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
             return this.optimizers

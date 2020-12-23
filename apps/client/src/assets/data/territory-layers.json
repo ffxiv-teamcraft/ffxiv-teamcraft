@@ -779,7 +779,7 @@
       "mapId": 93,
       "index": 0,
       "placeNameId": 255,
-      "ignored":  true,
+      "ignored": true,
       "bounds": {
         "x": {
           "min": 0,

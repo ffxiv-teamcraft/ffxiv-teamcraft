@@ -14,9 +14,9 @@ import { NavigationMapComponent } from '../../map/navigation-map/navigation-map.
 import { NavigationObjective } from '../../map/navigation-objective';
 import { ListsFacade } from '../+state/lists.facade';
 import { PermissionLevel } from '../../../core/database/permissions/permission-level.enum';
-import { combineLatest, concat, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ItemPickerService } from '../../item-picker/item-picker.service';
-import { filter, first, map, mergeMap, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { first, switchMap, takeUntil } from 'rxjs/operators';
 import { ListManagerService } from '../list-manager.service';
 import { ProgressPopupService } from '../../progress-popup/progress-popup.service';
 import { LayoutOrderService } from '../../../core/layout/layout-order.service';
@@ -32,6 +32,9 @@ import { Alarm } from '../../../core/alarms/alarm';
 import { GatheredBy } from '../model/gathered-by';
 import { TradeSource } from '../model/trade-source';
 import { Vendor } from '../model/vendor';
+import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
+import { NpcBreakdown } from '../../../model/common/npc-breakdown';
+import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -40,6 +43,8 @@ import { Vendor } from '../model/vendor';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListDetailsPanelComponent implements OnChanges, OnInit {
+
+  public LayoutRowDisplayMode = LayoutRowDisplayMode;
 
   private _displayRow: LayoutRowDisplay;
 
@@ -51,6 +56,22 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   public get displayRow(): LayoutRowDisplay {
     return this._displayRow;
+  }
+
+  public get displayMode(): LayoutRowDisplayMode {
+    if (this._displayRow.zoneBreakdown) {
+      return LayoutRowDisplayMode.ZONE_BREAKDOWN;
+    }
+    if (this._displayRow.tiers) {
+      return LayoutRowDisplayMode.TIERS;
+    }
+    if (this._displayRow.reverseTiers) {
+      return LayoutRowDisplayMode.REVERSE_TIERS;
+    }
+    if (this._displayRow.npcBreakdown) {
+      return LayoutRowDisplayMode.NPC_BREAKDOWN;
+    }
+    return LayoutRowDisplayMode.DEFAULT;
   }
 
   public get noScroll(): boolean {
@@ -81,6 +102,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   zoneBreakdown: ZoneBreakdown;
 
+  npcBreakdown: NpcBreakdown;
+
   hasTrades = false;
 
   hasNavigationMap = false;
@@ -95,6 +118,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
+  currentRowHash: string;
+
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
@@ -108,7 +133,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     this.listsFacade.selectedList$.pipe(
       first(),
       switchMap(list => {
-        return this.listsFacade.addItems(list)
+        return this.listsFacade.addItems(list);
       })
     ).subscribe();
   }
@@ -133,10 +158,15 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     if (!this.displayRow) {
       return;
     }
-    if (this.displayRow && (this.displayRow.tiers || this.displayRow.reverseTiers)) {
+    const hash = `${this.displayMode}:${this.getHideZoneDuplicates()}:${this.displayRow.filterChain}:${JSON.stringify(this.displayRow.rows.map(row => row.id).sort())}`;
+    if (this.currentRowHash === hash) {
+      return;
+    }
+    this.currentRowHash = hash;
+    if (this.displayRow.tiers || this.displayRow.reverseTiers) {
       this.generateTiers(this.displayRow.reverseTiers);
     }
-    if (this.displayRow && this.displayRow.zoneBreakdown) {
+    if (this.displayRow.zoneBreakdown) {
       this.zoneBreakdown = new ZoneBreakdown(this.displayRow.rows, this.displayRow.filterChain, this.getHideZoneDuplicates(), this.finalItems);
       this.hasNavigationMapForZone = this.zoneBreakdown.rows.reduce((res, zbRow) => {
         return {
@@ -145,6 +175,9 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         };
       }, {});
       this.hasNavigationMap = this.getZoneBreakdownPathRows(this.zoneBreakdown).length > 0;
+    }
+    if (this.displayRow.npcBreakdown) {
+      this.npcBreakdown = new NpcBreakdown(this.displayRow.rows, this.lazyData);
     }
     this.hasTrades = this.displayRow.rows.reduce((hasTrades, row) => {
       return (getItemSource(row, DataType.TRADE_SOURCES).length > 0) || (getItemSource(row, DataType.VENDORS).length > 0) || hasTrades;
@@ -174,7 +207,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return this.displayRow.layoutRow.hideZoneDuplicates;
   }
 
-  public openNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
+  public openZoneBreakdownRowNavigationMap(zoneBreakdownRow: ZoneBreakdownRow): void {
     this.dialog.create({
       nzTitle: this.translate.instant(this.displayRow.title),
       nzContent: NavigationMapComponent,
@@ -218,7 +251,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
                   x: partial.x,
                   y: partial.y,
                   name: this.l12n.getItem(item.id),
-                  iconid: item.icon,
                   itemId: item.id,
                   total_item_amount: item.amount,
                   item_amount: item.amount_needed - item.done,
@@ -228,7 +260,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
               }
               return undefined;
             })
-            .filter(row => row !== undefined);
+            .filter(r => r !== undefined);
         })
       );
   }
@@ -413,6 +445,13 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     return this.l12n.getPlace(id);
   }
 
+  public getNpc(id: number): I18nName {
+    if (id === -1) {
+      return { fr: 'Autre', de: 'Anderes', ja: 'Other', en: 'Other', zh: '其他', ko: '기타' };
+    }
+    return this.l12n.getNpc(id);
+  }
+
   public openTotalPricePopup(): void {
     this.dialog.create({
       nzTitle: this.translate.instant('LIST.Total_price'),
@@ -448,6 +487,10 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   trackByZone(index: number, item: ZoneBreakdownRow) {
     return item.zoneId;
+  }
+
+  trackByNpc(index: number, item: NpcBreakdownRow) {
+    return item.npcId;
   }
 
 }

@@ -364,21 +364,10 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
 
 
 if (hasTodo('craftingLog')) {
-  const recipeLevelTable = {};
-  const RecipeLevelTable$ = new Subject();
-  getAllPages('https://xivapi.com/RecipeLevelTable?columns=ClassJobLevel,Difficulty,ID,Quality,Stars,SuggestedControl,SuggestedCraftsmanship').subscribe(page => {
-    page.Results.forEach(entry => {
-      recipeLevelTable[entry.ID] = entry;
-    });
-  }, null, () => RecipeLevelTable$.next(recipeLevelTable));
-
-  combineLatest([
-    getAllEntries('https://xivapi.com/RecipeNotebookList', true),
-    RecipeLevelTable$
-  ]).subscribe(([completeFetch, rlvlTable]) => {
+  getAllEntries('https://xivapi.com/RecipeNotebookList', true).subscribe((completeFetch) => {
     completeFetch.forEach(page => {
-      // If it's an empty page, don't go further
-      if (!page.Recipe0 || page.Recipe0.ID === -1) {
+      // If it's an empty page or a collectable one, don't go further
+      if (!page.Recipe0 || page.Recipe0.ID === -1 || (page.ID >= 1256 && page.ID < 1280)) {
         return;
       }
       Object.keys(page)
@@ -416,38 +405,26 @@ if (hasTodo('notebookDivision')) {
           de: row.Name_de,
           fr: row.Name_fr
         },
-        pages: [0, 1, 2, 3, 4, 5, 6, 7].map(index => {
-          if (row.ID < 1000) {
-            return 40 * index + row.ID;
-          }
-          return 1000 + 8 * (row.ID - 1000) + index;
-        })
+        pages: [0, 1, 2, 3, 4, 5, 6, 7]
+          .map(index => {
+            if (row.ID < 1000) {
+              // Level ranges
+              return 40 * index + row.ID;
+            } else if (row.ID < 2000) {
+              // DoH masterbooks
+              return 1000 + 8 * (row.ID - 1000) + index;
+            } else {
+              // DoL folklores, only 4 DoLs tho
+              return index < 4 ? (2000 + 4 * (row.ID - 2000) + index) : -1;
+            }
+          })
+          .filter(id => id > -1)
       };
     });
     persistToJsonAsset('notebook-division', notebookDivision);
     done('notebookDivision');
   });
 }
-
-// if (hasTodo('notebookDivisionCategory')) {
-//   const notebookDivisionCategory = {};
-//   getAllPages('https://xivapi.com/NotebookDivisionCategory?columns=ID,Name_*,GameContentLinks').subscribe(page => {
-//     page.Results.forEach(row => {
-//       notebookDivisionCategory[row.ID] = {
-//         name: {
-//           en: row.Name_en,
-//           ja: row.Name_ja,
-//           de: row.Name_de,
-//           fr: row.Name_fr
-//         },
-//         divisions: row.GameContentLinks.NotebookDivision.NotebookDivisionCategory
-//       };
-//     });
-//   }, null, () => {
-//     persistToJsonAsset('notebook-division-category', notebookDivisionCategory);
-//     done('notebookDivisionCategory');
-//   });
-// }
 
 if (hasTodo('gatheringLog')) {
 
@@ -465,6 +442,9 @@ if (hasTodo('gatheringLog')) {
           return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
         })
         .forEach(key => {
+          if (page.ID >= 2200) {
+            return;
+          }
           let pageId = page.ID;
           const entry = page[key];
           // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
@@ -479,7 +459,6 @@ if (hasTodo('gatheringLog')) {
             gathererIndex = 3;
           } else {
             gathererIndex = (page.ID - 2000) % 4;
-            pageId = 9999;
           }
           addToGatheringLogPage(entry, pageId, gathererIndex);
         });
@@ -940,7 +919,7 @@ if (hasTodo('LGB', true)) {
     .filter(map => everyMaps.filter(m => m.territory_id === map.territory_id).length > 1)
     .forEach(map => {
       if (!territoryLayers[map.territory_id] || !territoryLayers[map.territory_id].some(entry => {
-        return map.priority_ui > 0 && entry.mapId === map.id;
+        return entry.mapId === map.id && entry.placeNameId === map.placename_sub_id;
       })) {
         territoryLayers[map.territory_id] = [
           ...(territoryLayers[map.territory_id] || []),
@@ -972,28 +951,6 @@ if (hasTodo('LGB', true)) {
       delete territoryLayers[key];
     }
   });
-
-  // const todoTerritories = Object.keys(territoryLayers)
-  //   .filter(key => {
-  //     const layers = territoryLayers[key].filter(layer => !layer.ignored);
-  //     return +key > 0
-  //       && layers.length > 0
-  //       && layers.some(layer => {
-  //         return (layer.bounds.z.min === 0 && layer.bounds.z.max === 0)
-  //           && (layer.bounds.x.min === 0 && layer.bounds.x.max === 0)
-  //           && (layer.bounds.y.min === 0 && layer.bounds.y.max === 0);
-  //       });
-  //   })
-  //   .filter(key => mapData[territoryLayers[key][0].mapId].placename_id > 0)
-  //   .map(key => {
-  //     return territoryLayers[key].reduce((acc, layer) => {
-  //       return `${acc}
-  //   - [ ] ${layer.mapId} - ${places[mapData[layer.mapId].placename_sub_id || mapData[layer.mapId].placename_id].en}`;
-  //     }, ` - [ ] ${places[mapData[territoryLayers[key][0].mapId].placename_id].en}`);
-  //   })
-  //   .join('\n');
-
-  // fs.writeFileSync('./TODO.md', todoTerritories);
 
   // Then, let's work on lgb files
   combineLatest([
@@ -1058,6 +1015,9 @@ if (hasTodo('LGB', true)) {
                   map: mapId,
                   ...coords
                 };
+                if (lgbLayer.FestivalID > 0) {
+                  npc.festival = lgbLayer.FestivalID;
+                }
                 break;
               // Aetherytes
               case 40:
@@ -1080,45 +1040,6 @@ if (hasTodo('LGB', true)) {
                 }
                 break;
 
-              // MapRanges, used to automatically detect thresholds for each map in a given territory.
-              // case 43:
-              //   if (object.Object.Map) {
-              //     const mapEntry = mapData[object.Object.Map];
-              //     if (territoryLayers[mapEntry.territory_id]) {
-              //       const mapLayer = territoryLayers[mapEntry.territory_id].find(layer => layer.mapId === object.Object.Map);
-              //       if (!mapLayer) {
-              //         break;
-              //       }
-              //       const scaledPosition = getCoords({
-              //         x: object.Transform.Translation.x,
-              //         y: object.Transform.Translation.z,
-              //         z: object.Transform.Translation.y
-              //       }, mapEntry);
-              //       const c = mapEntry.size_factor / 100;
-              //       const xSize = (41.0 / c) * ((object.Transform.Scale.x * c) / 2048.0);
-              //       const ySize = (41.0 / c) * ((object.Transform.Scale.z * c) / 2048.0);
-              //       const zSize = object.Transform.Scale.y / 100;
-              //       if (mapLayer.bounds.x.min === 0 && mapLayer.bounds.x.max === 0) {
-              //         mapLayer.bounds.x = {
-              //           min: scaledPosition.x - xSize / 2,
-              //           max: scaledPosition.x + xSize / 2
-              //         };
-              //       }
-              //       if (mapLayer.bounds.y.min === 0 && mapLayer.bounds.y.max === 0) {
-              //         mapLayer.bounds.y = {
-              //           min: scaledPosition.y - ySize / 2,
-              //           max: scaledPosition.y + ySize / 2
-              //         };
-              //       }
-              //       if (mapLayer.bounds.z.min === 0 && mapLayer.bounds.z.max === 0) {
-              //         mapLayer.bounds.z = {
-              //           min: scaledPosition.z - zSize / 2,
-              //           max: scaledPosition.z + zSize / 2
-              //         };
-              //       }
-              //     }
-              //   }
-              //   break;
               // FATEs
               case 49:
                 const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
