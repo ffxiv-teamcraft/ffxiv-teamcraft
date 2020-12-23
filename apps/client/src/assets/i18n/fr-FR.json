@@ -169,7 +169,8 @@
     "Example": "Exemple",
     "Change": "Changer",
     "Dirty_changes": "Vous avez des modifications non enregistrées",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Alarmes",
@@ -327,6 +328,7 @@
   "List_not_found": "Liste introuvable ou vous n'avez pas les droits d'accès",
   "Requirements_for_craft": "Voir les prérequis",
   "Zone_breakdown": "Résumé par zone",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Voir les étapes de craft, sens inversé",
   "Timer_options": "Options des alarmes",
   "Early_by": "Prévenir en avance (heures éorzéennes)",
@@ -574,6 +576,9 @@
     "Progression_tooltip_items": "Objets fabriqués : {{amount}}%",
     "Final_item": "Item final",
     "Include_final_items_in_main_layout": "Inclure les éléments finaux dans la mise en page principale",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Défaut",
       "Only_large": "Seulement les grandes listes",
