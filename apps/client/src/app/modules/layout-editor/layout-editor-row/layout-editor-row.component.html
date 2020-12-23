@@ -34,6 +34,7 @@
         <label [nzValue]="'tiers'" nz-radio-button>{{"Tier_display_toggle" | translate}}</label>
         <label [nzValue]="'reverseTiers'" nz-radio-button>{{"Reverse_tiers" | translate}}</label>
         <label [nzValue]="'zoneBreakdown'" nz-radio-button>{{"Zone_breakdown" | translate}}</label>
+        <label [nzValue]="'npcBreakdown'" nz-radio-button>{{"Npc_breakdown" | translate}}</label>
       </nz-radio-group>
       <div fxLayout="column" fxLayoutGap="5px">
         <label [(ngModel)]="row.hideIfEmpty" (ngModelChange)="rowChange.emit(row)" [nzDisabled]="readonly"

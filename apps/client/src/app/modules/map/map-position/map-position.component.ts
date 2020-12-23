@@ -51,6 +51,9 @@ export class MapPositionComponent {
   showMapName = false;
 
   @Input()
+  hideCoords = false;
+
+  @Input()
   flex = 'column';
 
   @Input()

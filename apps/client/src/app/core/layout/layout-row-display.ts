@@ -7,6 +7,7 @@ export interface LayoutRowDisplay {
   rows: ListRow[];
   index: number;
   zoneBreakdown: boolean;
+  npcBreakdown: boolean;
   tiers: boolean;
   reverseTiers: boolean;
   filterChain: string;
