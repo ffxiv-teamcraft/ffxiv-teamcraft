@@ -169,7 +169,8 @@
     "Example": "Example",
     "Change": "Change",
     "Dirty_changes": "You have unapplied changes",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Wekkers",
@@ -327,6 +328,7 @@
   "List_not_found": "List not found or you don't have access to it",
   "Requirements_for_craft": "See requirements",
   "Zone_breakdown": "Area breakdown",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Display reversed tiers",
   "Timer_options": "Timer options",
   "Early_by": "Early by (eorzean hours)",
@@ -574,6 +576,9 @@
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "Final_item": "Final item",
     "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
