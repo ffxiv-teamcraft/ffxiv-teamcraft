@@ -237,16 +237,15 @@ export class LogTrackerComponent extends TrackerComponent {
   @Memoized()
   public getDohDivisionId(pageId: number): number {
     return +Object.keys(this.lazyData.data.notebookDivision).find(key => {
-      const division = this.lazyData.data.notebookDivision[key];
-      return division.pages.indexOf(pageId) > -1;
+      return this.lazyData.data.notebookDivision[key].pages.indexOf(pageId) > -1;
     });
   }
 
-  public getDolPageName(page: any): string {
-    if (this.dolPageNameCache[page.id] === undefined) {
-      this.dolPageNameCache[page.id] = this._getDolPageName(page);
-    }
-    return this.dolPageNameCache[page.id];
+  @Memoized()
+  public getDolDivisionId(pageId: number): number {
+    return +Object.keys(this.lazyData.data.notebookDivision).find(key => {
+      return this.lazyData.data.notebookDivision[key].pages.indexOf(pageId) > -1;
+    });
   }
 
   public isRequiredForAchievement(page: any): boolean {

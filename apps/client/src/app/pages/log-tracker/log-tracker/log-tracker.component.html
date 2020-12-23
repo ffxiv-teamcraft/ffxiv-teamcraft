@@ -121,7 +121,7 @@
                    nzTabPosition="left">
           <nz-tab *ngFor="let page of tab;" [nzTitle]="!isPageDone(page) || !hideCompleted ? titleTemplate: null">
             <ng-template #titleTemplate>
-              <span>{{ getDolPageName(page) }}
+              <span>{{ getDolDivisionId(page.id) | notebookDivisionName | i18n }}
                 ({{getDolPageCompletion(page)}})
               </span>
             </ng-template>
