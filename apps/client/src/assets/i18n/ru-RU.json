@@ -169,7 +169,8 @@
     "Example": "Пример",
     "Change": "Изменить",
     "Dirty_changes": "Остались несохраненные изменения",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -327,6 +328,7 @@
   "List_not_found": "Список не найден или у вас нет к нему доступа",
   "Requirements_for_craft": "Посмотреть требования",
   "Zone_breakdown": "Площадь зоны",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Показать обратные тиры",
   "Timer_options": "Настройки таймера",
   "Early_by": "Рано (эорзейские часы)",
@@ -429,6 +431,7 @@
     "Always_disable_hq_suggestions": "Всегда отключать автоматические предложения HQ в списках",
     "Ignored_inventories": "Игнорируемые инвентари",
     "Enable_tutorials": "Включить систему обучения",
+    "Show_patch_notes_on_update": "Show patch notes on new updates",
     "Scrolling_behavior": "Режим прокрутки",
     "Scrolling_behavior_explain": "Настройте как работает прокрутка в панелях списка, по умолчанию означает разрешение до 12 элементов на панель перед прокруткой.",
     "Enable_auto_log_check": "Автоматически отмечать предметы в журнале как выполненные при сборе/крафте",
@@ -573,6 +576,9 @@
     "Progression_tooltip_items": "Предметов сделано: {{amount}}%",
     "Final_item": "Итоговый предмет",
     "Include_final_items_in_main_layout": "Включить итоговые предметы в основную раскладку",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "По умолчанию",
       "Only_large": "Только крупные списки",
@@ -583,6 +589,7 @@
       "GREEN": "Зеленый",
       "YELLOW": "Желтый",
       "BLUE": "Синий",
+      "LIGHT_BLUE": "Light blue",
       "PURPLE": "Фиолетовый",
       "ORANGE": "Оранжевый",
       "PINK": "Розовый",

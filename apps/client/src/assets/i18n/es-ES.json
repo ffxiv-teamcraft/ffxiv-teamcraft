@@ -169,7 +169,8 @@
     "Example": "Ejemplo",
     "Change": "Cambio",
     "Dirty_changes": "You have unapplied changes",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Alarmas",
@@ -327,6 +328,7 @@
   "List_not_found": "Lista no encontrada o no tiene acceso a ella",
   "Requirements_for_craft": "Ver requerimientos",
   "Zone_breakdown": "Desglose por área",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Mostrar niveles invertidos",
   "Timer_options": "Opciones de Temporizador",
   "Early_by": "Avisar n horas eorzeanas antes",
@@ -429,6 +431,7 @@
     "Always_disable_hq_suggestions": "Siempre desactivar las sugerencias automáticas de HQ en las listas",
     "Ignored_inventories": "Inventarios ignorados",
     "Enable_tutorials": "Activar tutoriales",
+    "Show_patch_notes_on_update": "Show patch notes on new updates",
     "Scrolling_behavior": "Comportamiento de desplazamiento",
     "Scrolling_behavior_explain": "Configurar cómo se comporta el desplazamiento en los paneles de la lista, por defecto es permitir hasta 12 elementos por panel antes de desplazarse.",
     "Enable_auto_log_check": "Marcar automáticamente los artículos como completados en el registro cuando sean recolectados/elaborados",
@@ -573,6 +576,9 @@
     "Progression_tooltip_items": "Artículos fabricados: {{amount}}%",
     "Final_item": "Artículo final",
     "Include_final_items_in_main_layout": "Incluir artículos finales en el diseño principal",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Por defecto",
       "Only_large": "Sólo listas grandes",
@@ -583,6 +589,7 @@
       "GREEN": "Verde",
       "YELLOW": "Amarillo",
       "BLUE": "Azul",
+      "LIGHT_BLUE": "Light blue",
       "PURPLE": "Morado",
       "ORANGE": "Naranja",
       "PINK": "Rosa",

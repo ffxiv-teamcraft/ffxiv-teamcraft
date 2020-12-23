@@ -169,7 +169,8 @@
     "Example": "Example",
     "Change": "Change",
     "Dirty_changes": "You have unapplied changes",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "アラーム",
@@ -327,6 +328,7 @@
   "List_not_found": "リストになかったり、接近する権限がありません",
   "Requirements_for_craft": "詳細情報",
   "Zone_breakdown": "エリアを纏めて表示する",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "段階を逆順に表示",
   "Timer_options": "タイマー設定",
   "Early_by": "出現前に知らせ(ET標準)",
@@ -429,6 +431,7 @@
     "Always_disable_hq_suggestions": "Always disable automatic HQ suggestions on lists",
     "Ignored_inventories": "Ignored inventories",
     "Enable_tutorials": "Enable tutorial system",
+    "Show_patch_notes_on_update": "Show patch notes on new updates",
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
@@ -573,6 +576,9 @@
     "Progression_tooltip_items": "Items crafted: {{amount}}%",
     "Final_item": "Final item",
     "Include_final_items_in_main_layout": "Include final items in main layout",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Default",
       "Only_large": "Only large lists",
@@ -583,6 +589,7 @@
       "GREEN": "緑",
       "YELLOW": "黄",
       "BLUE": "青",
+      "LIGHT_BLUE": "Light blue",
       "PURPLE": "紫",
       "ORANGE": "オレンジ",
       "PINK": "ピンク",
