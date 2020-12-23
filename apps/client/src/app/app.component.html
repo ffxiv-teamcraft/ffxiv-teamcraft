@@ -452,6 +452,12 @@
                       <span class="nav-text">{{'ABOUT.title' | translate}}</span>
                   </span>
                   </a>
+                  <a (click)="onNavLinkClick();showPatchNotes()" class="menu-link" nz-menu-item routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="diff" nzTheme="outline"></i>
+                      <span class="nav-text">{{'Patch_notes' | translate:{version: version} }}</span>
+                  </span>
+                  </a>
                 </li>
               </ul>
             </div>

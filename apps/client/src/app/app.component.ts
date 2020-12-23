@@ -27,7 +27,7 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, combineLatest, fromEvent, interval, of } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, interval, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -278,17 +278,8 @@ export class AppComponent implements OnInit {
               return of(false);
             }
             const lastChangesSeen = this.settings.lastChangesSeen;
-            if (semver.gt(version, lastChangesSeen)) {
-              return this.dialog.create({
-                nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
-                nzContent: ChangelogPopupComponent,
-                nzFooter: null
-              }).afterClose
-                .pipe(
-                  tap(() => {
-                    this.settings.lastChangesSeen = version;
-                  })
-                );
+            if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen)) {
+              return this.showPatchNotes();
             } else {
               return of(null);
             }
@@ -498,6 +489,21 @@ export class AppComponent implements OnInit {
       this.message.success(this.translate.instant('PACKET_CAPTURE.Firewall_rule_set'));
     });
     this.ipc.send('machina:firewall:set-rule');
+  }
+
+  showPatchNotes(): Observable<any> {
+    const res$ = new Subject();
+    this.dialog.create({
+      nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
+      nzContent: ChangelogPopupComponent,
+      nzFooter: null
+    }).afterClose
+      .pipe(
+        tap(() => {
+          this.settings.lastChangesSeen = version;
+        })
+      ).subscribe(() => res$.next());
+    return res$;
   }
 
   changeToSuggestedRegion(): void {
