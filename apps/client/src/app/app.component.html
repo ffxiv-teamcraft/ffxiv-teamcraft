@@ -198,7 +198,7 @@
           <div fxLayout="column" fxFlex="1 1 auto" class="sidebar-scroll-box">
             <div class="menu-categories" fxFlex="1 1 auto">
               <ul [nzInlineCollapsed]="collapsedSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
-                <li [(nzOpen)]="sidebarState.general" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                <li [(nzOpen)]="sidebarState.general" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
                 <span title>
                   <i nz-icon nzType="home"></i>
                   <span>{{'SIDEBAR.General' | translate}}</span>
@@ -262,7 +262,7 @@
                   </a>
                 </li>
 
-                <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
                 <span title>
                   <i nz-icon nzType="share-alt"></i>
                   <span>{{'SIDEBAR.Sharing' | translate}}</span>
@@ -284,7 +284,8 @@
                 </li>
 
                 <ng-container *ngIf="loggedIn$ | async">
-                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions" (nzOpenChange)="settings.sidebarState = sidebarState"
+                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions"
+                      (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null"
                       nz-submenu>
                   <span title>
                     <i nz-icon nzType="shop"></i>
@@ -320,7 +321,7 @@
                 </ng-container>
 
 
-                <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
                 <span title>
                   <i class="companion-svg anticon">
                     &#xF121;
@@ -344,7 +345,7 @@
                   </a>
                 </li>
 
-                <li [(nzOpen)]="sidebarState.helpers" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                <li [(nzOpen)]="sidebarState.helpers" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
                 <span title>
                   <i nz-icon nzType="appstore"></i>
                   <span>{{'SIDEBAR.Helpers' | translate}}</span>
@@ -435,7 +436,7 @@
                   </a>
                 </li>
 
-                <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="settings.sidebarState = sidebarState" nz-submenu>
+                <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
                 <span title>
                   <i nz-icon nzType="info-circle"></i>
                   <span>{{'SIDEBAR.Other' | translate}}</span>
@@ -455,7 +456,7 @@
                   <a (click)="onNavLinkClick();showPatchNotes()" class="menu-link" nz-menu-item routerLinkActive="ant-menu-item-selected">
                   <span>
                       <i nz-icon nzType="diff" nzTheme="outline"></i>
-                      <span class="nav-text">{{'Patch_notes' | translate:{version: version} }}</span>
+                      <span class="nav-text">{{'Patch_notes' | translate:{ version: version } }}</span>
                   </span>
                   </a>
                 </li>
