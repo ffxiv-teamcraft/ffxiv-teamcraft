@@ -169,7 +169,8 @@
     "Example": "Beispiel",
     "Change": "Ändern",
     "Dirty_changes": "Du hast nicht gespeicherte Änderungen",
-    "Never": "Never"
+    "Never": "Never",
+    "Festival": "Only during a festival"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -327,6 +328,7 @@
   "List_not_found": "Liste nicht gefunden oder du hast keinen Zugriff darauf",
   "Requirements_for_craft": "Bedingungen ansehen",
   "Zone_breakdown": "Gebietsübersicht",
+  "Npc_breakdown": "Npc breakdown",
   "Reverse_tiers": "Zeige umgedrehte Meilensteine",
   "Timer_options": "Alarm-Optionen",
   "Early_by": "Frühzeitig (in Eorzäischen Stunden)",
@@ -574,6 +576,9 @@
     "Progression_tooltip_items": "Gegenstände gefertigt: {{amount}}%",
     "Final_item": "Endprodukt",
     "Include_final_items_in_main_layout": "Endprodukte in Hauptlayout einbeziehen",
+    "Can_skip_buying_X": "Can skip {{amount}}",
+    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "Standard",
       "Only_large": "Nur große Listen",
