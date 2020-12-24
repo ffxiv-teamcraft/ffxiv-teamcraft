@@ -1,5 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
+* **currency(spending:** no more invalid/duplicate items.
+* **layout:** hotfix for material supplier.
 * **list:** hotfix for lists not updating properly.
 * **db:** fixed coords for a lot of monsters and nodes.
 * **desktop:** fixed crafting replay not recording and various machina issues.
