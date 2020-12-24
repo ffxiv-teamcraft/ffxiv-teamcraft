@@ -1,4 +1,4 @@
-import { from, Observable, of, Subject } from 'rxjs';
+import { from, Observable, of, Subject, throwError } from 'rxjs';
 import { DataModel } from '../data-model';
 import { DataStore } from '../data-store';
 import { NgSerializerService } from '@kaiu/ng-serializer';
@@ -82,6 +82,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   add(data: T, uriParams?: any): Observable<string> {
     return from(this.firestore.collection(this.getBaseUri(uriParams)).add(this.prepareData(data))).pipe(
+      catchError(error => {
+        console.error(`ADD ${this.getBaseUri(uriParams)}`);
+        console.error(error);
+        return throwError(error);
+      }),
       tap(() => this.recordOperation('write', data.$key)),
       map(res => res.id)
     );
@@ -91,6 +96,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     if (this.cache[uid] === undefined) {
       this.cache[uid] = this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).snapshotChanges()
         .pipe(
+          catchError(error => {
+            console.error(`GET ${this.getBaseUri(uriParams)}/${uid}`);
+            console.error(error);
+            return throwError(error);
+          }),
           tap(() => this.recordOperation('read', uid)),
           map((snap: Action<DocumentSnapshot<T>>) => {
             const valueWithKey: T = this.beforeDeserialization(<T>{ ...snap.payload.data(), $key: snap.payload.id });
@@ -127,6 +137,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
   pureUpdate(uid: string, data: Partial<T | Record<string, FieldValue>>, uriParams?: any): Observable<void> {
     this.pendingChangesService.addPendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(data)).pipe(
+      catchError(error => {
+        console.error(`UPDATE ${this.getBaseUri(uriParams)}/${uid}`);
+        console.error(error);
+        return throwError(error);
+      }),
       tap(() => {
         this.recordOperation('write', uid);
         this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
@@ -140,6 +155,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       throw new Error(`Empty uid ${this.getBaseUri(uriParams)}`);
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).update(this.prepareData(data))).pipe(
+      catchError(error => {
+        console.error(`UPDATE ${this.getBaseUri(uriParams)}/${uid}`);
+        console.error(error);
+        return throwError(error);
+      }),
       tap(() => {
         this.recordOperation('write', uid);
         this.pendingChangesService.removePendingChange(`update ${this.getBaseUri(uriParams)}/${uid}`);
@@ -153,6 +173,11 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
       throw new Error(`Empty uid ${this.getBaseUri(uriParams)}`);
     }
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).set(this.prepareData(data))).pipe(
+      catchError(error => {
+        console.error(`SET ${this.getBaseUri(uriParams)}/${uid}`);
+        console.error(error);
+        return throwError(error);
+      }),
       tap(() => {
         this.recordOperation('write', uid);
         this.pendingChangesService.removePendingChange(`set ${this.getBaseUri(uriParams)}/${uid}`);
@@ -167,7 +192,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     }
     // Delete subcollections before data, else we can't rely on parent data for permissions
     return from(this.firestore.collection(this.getBaseUri(uriParams)).doc(uid).delete()).pipe(
-      catchError(() => {
+      catchError(error => {
+        console.error(`DELETE ${this.getBaseUri(uriParams)}/${uid}`);
+        console.error(error);
         return of(null);
       }),
       tap(() => {
