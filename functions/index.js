@@ -48,6 +48,16 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
   }).then(() => null);
 });
 
+exports.desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
+  if (req.url === '/RELEASES') {
+    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest/download/RELEASES`);
+  } else if (req.url.endsWith('.nupkg')) {
+    const version = req.url.split('-')[2];
+    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.url}`);
+  }
+  return res.status(400).end();
+});
+
 
 function notifyBot(event, commission) {
   commissionsCreatedTopic.publish(Buffer.from(JSON.stringify({ event, commission })));
