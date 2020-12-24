@@ -6,7 +6,6 @@ const admin = require('firebase-admin');
 const { Solver } = require('@ffxiv-teamcraft/crafting-solver');
 const { CraftingActionsRegistry, CrafterStats } = require('@ffxiv-teamcraft/simulator');
 const { PubSub } = require('@google-cloud/pubsub');
-const fetch = require('node-fetch');
 admin.initializeApp();
 const firestore = admin.firestore();
 firestore.settings({ timestampsInSnapshots: true });
@@ -49,11 +48,11 @@ exports.firestoreCountReplaysCreate = functions.runWith(runtimeOpts).firestore.d
 });
 
 exports.desktopUpdater = functions.runWith(runtimeOpts).https.onRequest((req, res) => {
-  if (req.url === '/RELEASES') {
+  if (req.path === '/RELEASES') {
     return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/latest/download/RELEASES`);
-  } else if (req.url.endsWith('.nupkg')) {
-    const version = req.url.split('-')[2];
-    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.url}`);
+  } else if (req.path.endsWith('.nupkg')) {
+    const version = req.path.split('-')[2];
+    return res.redirect(301, `https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v${version}${req.path}`);
   }
   return res.status(400).end();
 });
