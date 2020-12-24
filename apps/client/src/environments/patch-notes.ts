@@ -1,5 +1,6 @@
 export const patchNotes = `### Bug Fixes
 
+* **list:** hotfix for lists not updating properly.
 * **db:** fixed coords for a lot of monsters and nodes.
 * **desktop:** fixed crafting replay not recording and various machina issues.
 * **inventory-optimizer:** hovering sidebar elements no longer makes the app slow.
@@ -16,4 +17,4 @@ export const patchNotes = `### Bug Fixes
 * **layout:** new layout type: npc breakdown, enabled by default on default layout's vendor panel.
 * **list:** new list color: light blue.
 * **log-tracker:** better display and filtering for log pages.
-* you can now disable auto patch notes on update, and open them from sidebar.`;
+* you can now disable auto patch notes on update, and open them from sidebar.`;
