@@ -118,8 +118,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
 
   hasAlreadyBeenOpened: boolean;
 
-  currentRowHash: string;
-
   constructor(private i18nTools: I18nToolsService, private l12n: LocalizedDataService,
               private message: NzMessageService, public translate: TranslateService,
               private dialog: NzModalService, private listsFacade: ListsFacade,
@@ -158,11 +156,6 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
     if (!this.displayRow) {
       return;
     }
-    const hash = `${this.displayMode}:${this.getHideZoneDuplicates()}:${this.displayRow.filterChain}:${JSON.stringify(this.displayRow.rows.map(row => row.id).sort())}`;
-    if (this.currentRowHash === hash) {
-      return;
-    }
-    this.currentRowHash = hash;
     if (this.displayRow.tiers || this.displayRow.reverseTiers) {
       this.generateTiers(this.displayRow.reverseTiers);
     }
