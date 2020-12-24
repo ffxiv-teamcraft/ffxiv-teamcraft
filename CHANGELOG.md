@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.15"></a>
+## [7.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.14...v7.6.15) (2020-12-24)
+
+
+### Bug Fixes
+
+* **list:** hotfix for lists not updating properly ([f5fe453](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5fe453))
+
+
+
 <a name="7.6.14"></a>
 ## [7.6.14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.12...v7.6.14) (2020-12-24)
 
