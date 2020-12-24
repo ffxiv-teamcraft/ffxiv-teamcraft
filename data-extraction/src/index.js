@@ -1572,6 +1572,7 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
+  const rlookup = {};
   combineLatest([
     getAllEntries('https://xivapi.com/CompanyCraftSequence'),
     aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert')
@@ -1624,6 +1625,22 @@ if (hasTodo('recipes')) {
       });
     });
 
+    recipes.forEach(recipe => {
+      recipe.ingredients.forEach(ingredient => {
+        rlookup[ingredient.id] = rlookup[ingredient.id] || [];
+        rlookup[ingredient.id].push({
+          itemId: recipe.result,
+          recipeId: recipe.id,
+          amount: ingredient.amount,
+          ingredients: recipe.ingredients,
+          yields: recipe.yields,
+          lvl: recipe.lvl,
+          job: recipe.job,
+          stars: recipe.stars
+        })
+      })
+    });
+
     companyCrafts.forEach(companyCraftSequence => {
       const recipe = {
         id: `fc${companyCraftSequence.ID}`,
@@ -1668,6 +1685,7 @@ if (hasTodo('recipes')) {
     });
 
     persistToJsonAsset('recipes', recipes);
+    persistToJsonAsset('recipes-ingredient-lookup', rlookup);
     done('recipes');
   });
 }
