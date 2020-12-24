@@ -10,6 +10,24 @@ All notable changes to this project will be documented in this file. See [standa
 
 * **currency(spending:** no more invalid/duplicate items ([999d34e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/999d34e))
 * **layout:** hotfix for material supplier ([025958a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/025958a))
+* **list:** hotfix for lists not updating properly ([f5fe453](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5fe453))
+* **db:** fixed coords for a lot of monsters and nodes ([5642020](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5642020))
+* **desktop:** fixed crafting replay not recording and various machina issues ([ae6467e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae6467e))
+* **inventory-optimizer:** hovering sidebar elements no longer makes the app slow ([c72f2ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c72f2ce))
+* **layout:** hotfix for new npc breakdown system ([e630ce7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e630ce7))
+* **log-tracker:** fixed small layout issue with some resolutions ([369f969](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/369f969))
+* **pricing:** disabling one item no longer disabled every items ([dd1769b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dd1769b)), closes [#1761](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1761)
+* **search:** fixed an issue with "add selection to list" sometimes not working ([c95147e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c95147e))
+* **simulator:** Tricks of the Trade no longer regenerate 20CP on normal state in linear mode ([a9c4c1a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a9c4c1a))
+
+
+### Features
+
+* **db:** removed festival npcs when possible and duplicate names ([c88b4fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c88b4fe))
+* **layout:** new layout type: npc breakdown, enabled by default on default layout's vendor panel ([89c3ebe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89c3ebe))
+* **list:** new list color: light blue ([5becc8e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5becc8e))
+* **log-tracker:** better display and filtering for log pages ([e98d20d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e98d20d))
+* you can now disable auto patch notes on update, and open them from sidebar ([f033b8b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f033b8b))
 
 
 
