@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.16"></a>
+## [7.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.15...v7.6.16) (2020-12-24)
+
+
+### Bug Fixes
+
+* **currency(spending:** no more invalid/duplicate items ([999d34e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/999d34e))
+* **layout:** hotfix for material supplier ([025958a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/025958a))
+
+
+
 <a name="7.6.15"></a>
 ## [7.6.15](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.14...v7.6.15) (2020-12-24)
 
