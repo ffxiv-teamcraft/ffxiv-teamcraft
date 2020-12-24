@@ -496,7 +496,10 @@ export class AppComponent implements OnInit {
     this.dialog.create({
       nzTitle: this.translate.instant('Patch_notes', { version: environment.version }),
       nzContent: ChangelogPopupComponent,
-      nzFooter: null
+      nzFooter: null,
+      nzStyle: {
+        'z-index': 10000
+      }
     }).afterClose
       .pipe(
         tap(() => {
