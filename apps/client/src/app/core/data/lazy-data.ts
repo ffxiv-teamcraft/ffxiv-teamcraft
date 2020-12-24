@@ -69,6 +69,7 @@ export interface LazyData {
   quests: any;
   races: any;
   rarities: any;
+  recipesIngredientLookup: any;
   recipes: any;
   reduction: any;
   shops: any;
