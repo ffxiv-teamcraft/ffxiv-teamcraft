@@ -3,6 +3,7 @@ export const patchNotes = `### Bug Fixes
 * **db:** fixed coords for a lot of monsters and nodes.
 * **desktop:** fixed crafting replay not recording and various machina issues.
 * **inventory-optimizer:** hovering sidebar elements no longer makes the app slow.
+* **layout:** hotfix for new npc breakdown system.
 * **log-tracker:** fixed small layout issue with some resolutions.
 * **pricing:** disabling one item no longer disabled every items.
 * **search:** fixed an issue with "add selection to list" sometimes not working.
