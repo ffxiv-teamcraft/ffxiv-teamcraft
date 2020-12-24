@@ -39,7 +39,7 @@ export class NpcBreakdown {
     });
 
     this._rows = this._rows.sort((a, b) => {
-      return a.position.zoneid - b.position.zoneid;
+      return a.position?.zoneid - b.position?.zoneid;
     });
 
     this._rows = this._rows.map(row => {
