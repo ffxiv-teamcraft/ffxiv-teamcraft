@@ -62,11 +62,15 @@ export class NpcBreakdown {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
     const bestNpc = [].concat.apply([], tradeSources.map(ts => ts.npcs)).sort((a, b) => {
       return this.getRowScore(b.id) - this.getRowScore(a.id);
-    });
+    })[0];
     this.addRow(bestNpc.id, row);
   }
 
   private getRowScore(npcId: number): number {
+    // Hardcoded fix for Anna, has a wrong map for some reason.
+    if (npcId === 1033785) {
+      return 0;
+    }
     const sameNpc = this._rows.find(r => r.npcId === npcId);
     if (sameNpc) {
       return 10 + sameNpc.items.length;

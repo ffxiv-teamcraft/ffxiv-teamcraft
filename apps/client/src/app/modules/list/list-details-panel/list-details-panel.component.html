@@ -63,7 +63,7 @@
                 <ng-template #npcTitle>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
                     <span class="zone-title">{{getNpc(row.npcId) | i18n}}</span>,&nbsp;
-                    <app-map-position [hideCoords]="true" [mapId]="row.position.map" [showZoneName]="true" flex="row" [zoneId]="row.position.zoneid" [marker]="row.position"></app-map-position>
+                    <app-map-position [hideCoords]="true" *ngIf="row.position" [mapId]="row.position?.map" [showZoneName]="true" flex="row" [zoneId]="row.position?.zoneid" [marker]="row.position"></app-map-position>
                   </div>
                 </ng-template>
                 <nz-divider [nzText]="npcTitle" nzOrientation="left"></nz-divider>
