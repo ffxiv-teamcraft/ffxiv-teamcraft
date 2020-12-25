@@ -85,7 +85,7 @@ export class BellNodesService {
           node.timed = bellNode !== undefined || node.spawns?.length > 0;
           node.itemId = node.obj.i;
           node.icon = item.obj.c;
-          if (bellNode?.coords) {
+          if (bellNode?.coords && !node.x) {
             node.x = bellNode.coords[0];
             node.y = bellNode.coords[1];
           }
@@ -154,8 +154,8 @@ export class BellNodesService {
                   nodeId: node.id,
                   zoneid: this.l12n.getAreaIdByENName(node.zone),
                   mapId: nodePosition?.map || this.l12n.getAreaIdByENName(node.zone),
-                  x: node?.coords[0] || nodePosition?.x || 0,
-                  y: node?.coords[1] || nodePosition?.y || 0,
+                  x: nodePosition?.x || node?.coords[0] || 0,
+                  y: nodePosition?.y || node?.coords[1] || 0,
                   z: nodePosition?.z || 0,
                   level: node.lvl,
                   type: node.type,

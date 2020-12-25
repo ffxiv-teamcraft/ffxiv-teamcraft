@@ -100,10 +100,14 @@ export class LazyDataService {
   }
 
   public getDataCenter(serverName: string): string {
-    return Object.keys(this.datacenters)
+    const fromData = Object.keys(this.datacenters)
       .find(dc => {
         return this.datacenters[dc].includes(serverName);
       });
+    if (!fromData && serverName.toLowerCase().includes('korean')) {
+      return 'Korea';
+    }
+    return '';
   }
 
   private loadForRegion(region: Region): void {

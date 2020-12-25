@@ -30239,7 +30239,7 @@
     "levelMax": 80,
     "group": 35,
     "shopId": 1,
-    "reward": 17833,
+    "reward": 30315,
     "base": {
       "rating": 2000,
       "exp": 100,
@@ -30254,7 +30254,8 @@
       "rating": 4000,
       "exp": 150,
       "scrip": 15
-    }
+    },
+    "hwd": true
   },
   "31102": {
     "level": 80,
@@ -30262,7 +30263,7 @@
     "levelMax": 80,
     "group": 36,
     "shopId": 2,
-    "reward": 17834,
+    "reward": 30317,
     "base": {
       "rating": 2000,
       "exp": 45,
@@ -30277,7 +30278,8 @@
       "rating": 4000,
       "exp": 58,
       "scrip": 9
-    }
+    },
+    "hwd": true
   },
   "31103": {
     "level": 80,
@@ -30285,7 +30287,7 @@
     "levelMax": 80,
     "group": 37,
     "shopId": 3,
-    "reward": 17834,
+    "reward": 30319,
     "base": {
       "rating": 2000,
       "exp": 42,
@@ -30300,7 +30302,8 @@
       "rating": 4000,
       "exp": 54,
       "scrip": 10
-    }
+    },
+    "hwd": true
   },
   "31104": {
     "level": 80,
@@ -30308,7 +30311,7 @@
     "levelMax": 80,
     "group": 38,
     "shopId": 4,
-    "reward": 17834,
+    "reward": 30321,
     "base": {
       "rating": 2000,
       "exp": 44,
@@ -30323,7 +30326,8 @@
       "rating": 4000,
       "exp": 57,
       "scrip": 10
-    }
+    },
+    "hwd": true
   },
   "31105": {
     "level": 80,
@@ -30331,7 +30335,7 @@
     "levelMax": 80,
     "group": 39,
     "shopId": 5,
-    "reward": 17834,
+    "reward": 30323,
     "base": {
       "rating": 2000,
       "exp": 40,
@@ -30346,7 +30350,8 @@
       "rating": 4000,
       "exp": 52,
       "scrip": 11
-    }
+    },
+    "hwd": true
   },
   "31106": {
     "level": 80,
@@ -30354,7 +30359,7 @@
     "levelMax": 80,
     "group": 40,
     "shopId": 6,
-    "reward": 17834,
+    "reward": 30325,
     "base": {
       "rating": 2000,
       "exp": 44,
@@ -30369,7 +30374,8 @@
       "rating": 4000,
       "exp": 57,
       "scrip": 12
-    }
+    },
+    "hwd": true
   },
   "31107": {
     "level": 80,
@@ -30377,7 +30383,7 @@
     "levelMax": 80,
     "group": 41,
     "shopId": 7,
-    "reward": 17834,
+    "reward": 30327,
     "base": {
       "rating": 2000,
       "exp": 120,
@@ -30392,7 +30398,8 @@
       "rating": 4000,
       "exp": 180,
       "scrip": 36
-    }
+    },
+    "hwd": true
   },
   "31108": {
     "level": 80,
@@ -30400,7 +30407,7 @@
     "levelMax": 80,
     "group": 42,
     "shopId": 8,
-    "reward": 17834,
+    "reward": 30329,
     "base": {
       "rating": 2000,
       "exp": 120,
@@ -30415,7 +30422,8 @@
       "rating": 4000,
       "exp": 180,
       "scrip": 38
-    }
+    },
+    "hwd": true
   },
   "31109": {
     "level": 80,
@@ -30423,7 +30431,7 @@
     "levelMax": 80,
     "group": 35,
     "shopId": 1,
-    "reward": 17834,
+    "reward": 30316,
     "base": {
       "rating": 3000,
       "exp": 56,
@@ -30438,7 +30446,8 @@
       "rating": 4600,
       "exp": 72,
       "scrip": 6
-    }
+    },
+    "hwd": true
   },
   "31110": {
     "level": 80,
@@ -30446,7 +30455,7 @@
     "levelMax": 80,
     "group": 36,
     "shopId": 2,
-    "reward": 17834,
+    "reward": 30318,
     "base": {
       "rating": 3000,
       "exp": 44,
@@ -30461,7 +30470,8 @@
       "rating": 4600,
       "exp": 57,
       "scrip": 10
-    }
+    },
+    "hwd": true
   },
   "31111": {
     "level": 80,
@@ -30469,7 +30479,7 @@
     "levelMax": 80,
     "group": 37,
     "shopId": 3,
-    "reward": 17834,
+    "reward": 30320,
     "base": {
       "rating": 3000,
       "exp": 300,
@@ -30484,7 +30494,8 @@
       "rating": 4600,
       "exp": 360,
       "scrip": 9
-    }
+    },
+    "hwd": true
   },
   "31112": {
     "level": 80,
@@ -30492,7 +30503,7 @@
     "levelMax": 80,
     "group": 38,
     "shopId": 4,
-    "reward": 17834,
+    "reward": 30322,
     "base": {
       "rating": 3000,
       "exp": 42,
@@ -30507,7 +30518,8 @@
       "rating": 4600,
       "exp": 54,
       "scrip": 11
-    }
+    },
+    "hwd": true
   },
   "31113": {
     "level": 80,
@@ -30515,7 +30527,7 @@
     "levelMax": 80,
     "group": 39,
     "shopId": 5,
-    "reward": 17834,
+    "reward": 30324,
     "base": {
       "rating": 3000,
       "exp": 300,
@@ -30530,7 +30542,8 @@
       "rating": 4600,
       "exp": 360,
       "scrip": 10
-    }
+    },
+    "hwd": true
   },
   "31114": {
     "level": 80,
@@ -30538,7 +30551,7 @@
     "levelMax": 80,
     "group": 40,
     "shopId": 6,
-    "reward": 17834,
+    "reward": 30326,
     "base": {
       "rating": 3000,
       "exp": 300,
@@ -30553,7 +30566,8 @@
       "rating": 4600,
       "exp": 360,
       "scrip": 12
-    }
+    },
+    "hwd": true
   },
   "31115": {
     "level": 80,
@@ -30561,7 +30575,7 @@
     "levelMax": 80,
     "group": 41,
     "shopId": 7,
-    "reward": 17834,
+    "reward": 30328,
     "base": {
       "rating": 3000,
       "exp": 32,
@@ -30576,7 +30590,8 @@
       "rating": 4600,
       "exp": 41,
       "scrip": 13
-    }
+    },
+    "hwd": true
   },
   "31116": {
     "level": 80,
@@ -30584,7 +30599,7 @@
     "levelMax": 80,
     "group": 42,
     "shopId": 8,
-    "reward": 17834,
+    "reward": 30330,
     "base": {
       "rating": 3000,
       "exp": 300,
@@ -30599,7 +30614,8 @@
       "rating": 4600,
       "exp": 390,
       "scrip": 14
-    }
+    },
+    "hwd": true
   },
   "31184": {
     "hwd": true,

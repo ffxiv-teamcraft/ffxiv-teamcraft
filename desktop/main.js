@@ -481,7 +481,7 @@ function createTray() {
     win.isVisible() ? win.hide() : win.show();
   });
   win.webContents
-    .executeJavaScript('localStorage.getItem("settings") || {};', true)
+    .executeJavaScript('localStorage.getItem("settings") || "{}";', true)
     .then(settingsString => {
       const settings = JSON.parse(settingsString);
       tray.setToolTip('FFXIV Teamcraft');

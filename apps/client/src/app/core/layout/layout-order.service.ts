@@ -100,19 +100,10 @@ export class LayoutOrderService {
     const craftedBy = getItemSource(row, DataType.CRAFTED_BY);
     const gatheredBy = getItemSource(row, DataType.GATHERED_BY);
     if (craftedBy.length > 0) {
-      // Returns the lowest level available for the craft.
-      const jobName = LayoutOrderService.JOBS.find(job => craftedBy[0].icon.indexOf(job) > -1);
-      if (jobName !== undefined) {
-        return LayoutOrderService.JOBS.indexOf(jobName);
-      }
-      return 0;
+      return craftedBy[0].job;
     }
     if (gatheredBy.type !== undefined) {
-      const jobName = ['miner', 'miner', 'botanist', 'botanist', 'fisher'][gatheredBy.type];
-      if (jobName !== undefined) {
-        return LayoutOrderService.JOBS.indexOf(jobName);
-      }
-      return 0;
+      return gatheredBy.type;
     }
     return 0;
   }

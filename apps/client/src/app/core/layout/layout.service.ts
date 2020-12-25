@@ -37,7 +37,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
       new LayoutRow('Drops_or_GC', 'NAME', LayoutRowOrder.DESC,
         LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,
         6, false, false, false, false, true, false, false, true),
-      new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name,
+      new LayoutRow('Pre_crafts', 'JOB', LayoutRowOrder.ASC, LayoutRowFilter.IS_CRAFT.name,
         8, false, false, true, false, true, false, false, true),
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
         7, true, false, false, false, true, false, false, true)
@@ -66,7 +66,7 @@ export class LayoutService extends FirestoreRelationalStorage<ListLayout> {
       new LayoutRow('Drops_or_GC', 'NAME', LayoutRowOrder.DESC,
         LayoutRowFilter.IS_MONSTER_DROP.name + ':or:' + LayoutRowFilter.IS_GC_TRADE.name,
         5, false, false, false, false, true, false, false, true),
-      new LayoutRow('Pre_crafts', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.IS_CRAFT.name,
+      new LayoutRow('Pre_crafts', 'JOB', LayoutRowOrder.ASC, LayoutRowFilter.IS_CRAFT.name,
         6, false, false, true, false, true, false, false, true),
       new LayoutRow('Other', 'NAME', LayoutRowOrder.DESC, LayoutRowFilter.ANYTHING.name,
         7, true, false, false, false, true, false, false, true)

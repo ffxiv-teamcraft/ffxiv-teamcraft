@@ -24,7 +24,6 @@ import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { environment } from '../../../../environments/environment';
-import { TeamcraftUser } from '../../../model/user/teamcraft-user';
 import { LogTracking } from '../../../model/user/log-tracking';
 
 @Component({
@@ -70,7 +69,7 @@ export class RecipeFinderComponent implements OnDestroy {
 
   public highlight$: BehaviorSubject<number[]> = new BehaviorSubject<number[]>([]);
 
-  public basket: { recipe: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
+  public basket: { entry: any, amount: number, ingredients: { id: number, amount: number }[] }[] = [];
 
   public editingAmount: number;
 
@@ -123,43 +122,43 @@ export class RecipeFinderComponent implements OnDestroy {
         this.settings.showOnlyCraftableInRecipeFinder = onlyCraftable;
         this.settings.showOnlyCollectablesInRecipeFinder = onlyCollectables;
         this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
-        const possibleRecipes = [];
+        const possibleEntries = [];
         for (const item of this.pool) {
-          possibleRecipes.push(...this.lazyData.data.recipes.filter(r => {
+          possibleEntries.push(...(this.lazyData.data.recipesIngredientLookup[item.id] || []).filter(entry => {
             let canBeAdded = true;
             if (onlyNotCompleted) {
-              canBeAdded = !logTracking || !logTracking.crafting.includes(r.id);
+              canBeAdded = !logTracking || !logTracking.crafting.includes(entry.recipeId);
             }
-            return canBeAdded && r.ingredients.some(i => i.id === item.id && i.amount <= item.amount);
+            return canBeAdded && entry.amount <= item.amount;
           }));
         }
-        const uniquified = _.uniqBy(possibleRecipes, 'id');
+        const uniquified = _.uniqBy(possibleEntries, 'recipeId');
         // Now that we have all possible recipes, let's filter and rate them
-        const finalRecipes = uniquified.map(recipe => {
-          const jobSet = sets.find(set => recipe.job === set.jobId);
-          recipe.missingLevel = jobSet === undefined || jobSet.level < recipe.lvl;
-          recipe.missing = recipe.ingredients
+        const finalEntries = uniquified.map(entry => {
+          const jobSet = sets.find(set => entry.job === set.jobId);
+          entry.missingLevel = jobSet === undefined || jobSet.level < entry.lvl;
+          entry.missing = entry.ingredients
             // Ignore crystals
             .filter(i => i.id > 19)
             .filter(i => {
               const poolItem = this.pool.find(item => item.id === i.id);
               return !poolItem || poolItem.amount < i.amount;
             });
-          recipe.possibleAmount = recipe.yields;
-          while (this.canCraft(recipe, recipe.possibleAmount)) {
-            recipe.possibleAmount += recipe.yields;
+          entry.possibleAmount = entry.yields;
+          while (this.canCraft(entry, entry.possibleAmount)) {
+            entry.possibleAmount += entry.yields;
           }
           // Remove the final iteration check
-          recipe.possibleAmount -= recipe.yields;
-          return recipe;
+          entry.possibleAmount -= entry.yields;
+          return entry;
         });
-        return finalRecipes
-          .filter(recipe => {
-            let match = !onlyCraftable || !recipe.missingLevel;
+        return finalEntries
+          .filter(entry => {
+            let match = !onlyCraftable || !entry.missingLevel;
             if (onlyCollectables) {
-              match = match && this.lazyData.data.collectables[recipe.result] !== undefined;
+              match = match && this.lazyData.data.collectables[entry.itemId] !== undefined;
             }
-            return match && (recipe.lvl >= clvlMin && recipe.lvl <= clvlMax);
+            return match && (entry.lvl >= clvlMin && entry.lvl <= clvlMax);
           })
           .sort((a, b) => {
             const missingDiff = a.missing.length - b.missing.length;
@@ -176,30 +175,31 @@ export class RecipeFinderComponent implements OnDestroy {
             if (jobDiff !== 0) {
               return jobDiff;
             }
-            return a.level - b.level;
+            return a.lvl - b.lvl;
           });
       }),
-      tap(results => {
-        this.totalItems = results.length;
+      tap(entries => {
+        this.totalItems = entries.length;
       }),
       shareReplay(1)
     );
     this.results$ = combineLatest([results$, this.page$]).pipe(
       map(([results, page]) => {
-        return _.chunk(results, this.pageSize)[page - 1] || [];
+        const start = (page - 1) * this.pageSize;
+        return results.slice(start, start + this.pageSize);
       })
     );
   }
 
-  public canCraft(recipe: LazyRecipe, amount: number): boolean {
-    const allAvailableIngredients = recipe.ingredients.filter(i => this.pool.some(item => i.id === item.id));
+  public canCraft(entry: any, amount: number): boolean {
+    const allAvailableIngredients = entry.ingredients.filter(i => this.pool.some(item => i.id === item.id));
     const neededIngredients = allAvailableIngredients
       // Ignore crystals
       .filter(i => i.id > 19)
       .map(i => {
         return {
           ...i,
-          amount: i.amount * amount / recipe.yields
+          amount: i.amount * amount / entry.yields
         };
       });
     return !neededIngredients.some(i => {
@@ -357,9 +357,9 @@ export class RecipeFinderComponent implements OnDestroy {
       mergeMap(list => {
         const operations = this.basket.map(row => {
           return this.listManager.addToList({
-            itemId: +row.recipe.result,
+            itemId: +row.entry.itemId,
             list: list,
-            recipeId: row.recipe.id,
+            recipeId: row.entry.recipeId,
             amount: row.amount,
             collectible: false
           });
@@ -397,11 +397,11 @@ export class RecipeFinderComponent implements OnDestroy {
     });
   }
 
-  addToBasket(recipe: any, amount: number): void {
+  addToBasket(entry: any, amount: number): void {
     const newEntry = {
-      recipe: recipe,
+      entry: entry,
       amount: amount,
-      ingredients: recipe.ingredients
+      ingredients: entry.ingredients
         .map(ingredient => {
           const poolItem = this.pool.find(item => item.id === ingredient.id);
           if (poolItem === undefined) {
@@ -409,7 +409,7 @@ export class RecipeFinderComponent implements OnDestroy {
           } else {
             return {
               id: poolItem.id,
-              amount: ingredient.amount * amount / recipe.yields
+              amount: ingredient.amount * amount / entry.yields
             };
           }
         })
@@ -425,11 +425,11 @@ export class RecipeFinderComponent implements OnDestroy {
     this.search$.next();
   }
 
-  removeFromBasket(entry: { recipe: any, amount: number, ingredients: { id: number, amount: number }[] }): void {
+  removeFromBasket(row: { entry: any, amount: number, ingredients: { id: number, amount: number }[] }): void {
     this.basket = this.basket.filter(item => {
-      return item.recipe.id !== entry.recipe.id;
+      return item.entry.recipeId !== row.entry.recipeId;
     });
-    entry.ingredients.forEach(ingredient => {
+    row.ingredients.forEach(ingredient => {
       this.addToPool(ingredient.id, ingredient.amount, true);
     });
     this.search$.next();

@@ -5,10 +5,10 @@ import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { METADATA_FOREIGN_KEY_REGISTRY } from '../../relational/foreign-key';
 import { Class } from '@kaiu/serializer';
-import { map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { DataModel } from '../data-model';
 import { AngularFirestore, DocumentChangeAction } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { Query } from '@angular/fire/firestore/interfaces';
 
 @Injectable()
@@ -36,6 +36,11 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', 20))
       .snapshotChanges()
       .pipe(
+        catchError(error => {
+          console.error(`GET SHARED ${this.getBaseUri()}:${userId}`);
+          console.error(error);
+          return throwError(error);
+        }),
         tap(() => this.recordOperation('read')),
         map((snaps: DocumentChangeAction<T>[]) => {
           const rows = snaps
@@ -66,6 +71,11 @@ export abstract class FirestoreRelationalStorage<T extends DataModel> extends Fi
       })
         .snapshotChanges()
         .pipe(
+          catchError(error => {
+            console.error(`GET BY FOREIGN KEY ${this.getBaseUri()}:${foreignPropertyKey}=${foreignKeyValue}`);
+            console.error(error);
+            return throwError(error);
+          }),
           tap(() => this.recordOperation('read')),
           map((snaps: DocumentChangeAction<T>[]) => {
             const elements = snaps

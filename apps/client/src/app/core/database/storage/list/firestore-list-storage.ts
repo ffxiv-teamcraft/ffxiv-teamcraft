@@ -1,10 +1,10 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, Observable, of } from 'rxjs';
+import { combineLatest, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
-import { filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { catchError, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { AngularFirestore, DocumentChangeAction, Query, QueryFn } from '@angular/fire/firestore';
 import { LazyDataService } from '../../../data/lazy-data.service';
 import { ListRow } from '../../../../modules/list/model/list-row';
@@ -128,6 +128,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), ref => ref.where(`registry.${userId}`, '>=', PermissionLevel.READ))
       .snapshotChanges()
       .pipe(
+        catchError(error => {
+          console.error(`GET SHARED LISTS ${this.getBaseUri()}:${userId}`);
+          console.error(error);
+          return throwError(error);
+        }),
         tap(() => this.recordOperation('read')),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
@@ -158,6 +163,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
+        catchError(error => {
+          console.error(`GET COMMuNITY LISTS`);
+          console.error(error);
+          return throwError(error);
+        }),
         tap(() => this.recordOperation('read')),
         takeUntil(this.stop$.pipe(filter(stop => stop === 'community'))),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
@@ -185,6 +195,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
     return this.firestore.collection(this.getBaseUri(), query)
       .snapshotChanges()
       .pipe(
+        catchError(error => {
+          console.error(`GET USER COMMUNITY LISTS ${this.getBaseUri()}:${userId}`);
+          console.error(error);
+          return throwError(error);
+        }),
         tap(() => this.recordOperation('read')),
         switchMap((snaps: DocumentChangeAction<List>[]) => {
           const lists = snaps
@@ -234,6 +249,11 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
       .collection(this.getBaseUri(), ref => ref.where('authorId', '==', uid).orderBy('createdAt', 'desc'))
       .snapshotChanges()
       .pipe(
+        catchError(error => {
+          console.error(`GET BY AUTHOR REF ${this.getBaseUri()}:${uid}`);
+          console.error(error);
+          return throwError(error);
+        }),
         tap(() => this.recordOperation('read')),
         map((snaps: any[]) => snaps.map(snap => {
           // Issue #227 showed that sometimes, $key gets persisted (probably because of a migration process),

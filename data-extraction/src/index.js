@@ -1572,6 +1572,7 @@ if (hasTodo('achievements')) {
 if (hasTodo('recipes')) {
   // We're maintaining two formats, that's bad but migrating all the usages of the current recipe model isn't possible, sadly.
   const recipes = [];
+  const rlookup = {};
   combineLatest([
     getAllEntries('https://xivapi.com/CompanyCraftSequence'),
     aggregateAllPages('https://xivapi.com/Recipe?columns=ID,ClassJob.ID,MaterialQualityFactor,DurabilityFactor,QualityFactor,DifficultyFactor,RequiredControl,RequiredCraftsmanship,CanQuickSynth,RecipeLevelTable,AmountResult,ItemResultTargetID,ItemIngredient0,ItemIngredient1,ItemIngredient2,ItemIngredient3,ItemIngredient4,ItemIngredient5,ItemIngredient6,ItemIngredient7,ItemIngredient8,ItemIngredient9,AmountIngredient0,AmountIngredient1,AmountIngredient2,AmountIngredient3,AmountIngredient4,AmountIngredient5,AmountIngredient6,AmountIngredient7,AmountIngredient8,AmountIngredient9,IsExpert')
@@ -1624,6 +1625,22 @@ if (hasTodo('recipes')) {
       });
     });
 
+    recipes.forEach(recipe => {
+      recipe.ingredients.forEach(ingredient => {
+        rlookup[ingredient.id] = rlookup[ingredient.id] || [];
+        rlookup[ingredient.id].push({
+          itemId: recipe.result,
+          recipeId: recipe.id,
+          amount: ingredient.amount,
+          ingredients: recipe.ingredients,
+          yields: recipe.yields,
+          lvl: recipe.lvl,
+          job: recipe.job,
+          stars: recipe.stars
+        });
+      });
+    });
+
     companyCrafts.forEach(companyCraftSequence => {
       const recipe = {
         id: `fc${companyCraftSequence.ID}`,
@@ -1668,6 +1685,7 @@ if (hasTodo('recipes')) {
     });
 
     persistToJsonAsset('recipes', recipes);
+    persistToJsonAsset('recipes-ingredient-lookup', rlookup);
     done('recipes');
   });
 }
@@ -1937,6 +1955,38 @@ if (hasTodo('collectables')) {
     '27': 28188,
     '28': 30341
   };
+
+  const hwdRewards = {
+    '1.0': 30315,
+    '1.1': 30316,
+    '2.0': 30317,
+    '2.1': 30318,
+    '3.0': 30319,
+    '3.1': 30320,
+    '4.0': 30321,
+    '4.1': 30322,
+    '5.0': 30323,
+    '5.1': 30324,
+    '6.0': 30325,
+    '6.1': 30326,
+    '7.0': 30327,
+    '7.1': 30328,
+    '8.0': 30329,
+    '8.1': 30330,
+    // After this line, they don't exist for now, just assuming new values, will update after next patch
+    '1.2': 31736,
+    '2.2': 31737,
+    '3.2': 31738,
+    '4.2': 31739,
+    '5.2': 31740,
+    '6.2': 31741,
+    '7.2': 31742,
+    '8.2': 31743,
+    '1.3': 31746,
+    '2.3': 31744,
+    '3.3': 31748,
+    '4.3': 31749
+  };
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
@@ -1999,6 +2049,13 @@ if (hasTodo('collectables')) {
               scrip: collectable.CollectablesShopRewardScrip.HighReward
             }
           };
+          if (+collectable.ID < 10) {
+            collectables[collectable.ItemTargetID] = {
+              ...collectables[collectable.ItemTargetID],
+              hwd: true,
+              reward: hwdRewards[collectable.ID]
+            };
+          }
         });
       persistToJsonAsset('collectables', collectables);
       done('collectables');
