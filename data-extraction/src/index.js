@@ -1637,8 +1637,8 @@ if (hasTodo('recipes')) {
           lvl: recipe.lvl,
           job: recipe.job,
           stars: recipe.stars
-        })
-      })
+        });
+      });
     });
 
     companyCrafts.forEach(companyCraftSequence => {
@@ -2017,6 +2017,9 @@ if (hasTodo('collectables')) {
               scrip: collectable.CollectablesShopRewardScrip.HighReward
             }
           };
+          if (collectable.CollectablesShopItemGroupTargetID >= 25 && collectable.CollectablesShopItemGroupTargetID <= 42) {
+            collectables[collectable.ItemTargetID].hwd = true;
+          }
         });
       persistToJsonAsset('collectables', collectables);
       done('collectables');
