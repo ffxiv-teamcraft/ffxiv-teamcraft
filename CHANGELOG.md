@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.17"></a>
+## [7.6.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.16...v7.6.17) (2020-12-25)
+
+
+### Bug Fixes
+
+* **changelog:** fixed patch notes popup always spawning behind search autofill ([08d5731](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08d5731))
+* **collectables:** removed ishgard deliveries from the collectables page ([881d227](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/881d227))
+* **commission-board:** you can now access commission board properly as korean user ([098db17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/098db17))
+* **gathering-locations:** use better data source for node positions ([e35d7db](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e35d7db))
+* **layout:** fixed default precraft sorting by job not being applied properly ([e8c51a3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e8c51a3)), closes [#1768](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1768)
+* **npc-breakdown:** fixed map name not aligned properly with NPC name ([7eff0e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7eff0e3))
+
+
+### Performance Improvements
+
+* **desktop:** updated to electron 11 (chromium 87) ([ce90edd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ce90edd))
+* **recipe-finder:** way less CPU usage when searching for recipes ([d916671](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d916671))
+
+
+
 <a name="7.6.16"></a>
 ## [7.6.16](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.15...v7.6.16) (2020-12-24)
 
