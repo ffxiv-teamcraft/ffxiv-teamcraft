@@ -216,10 +216,10 @@ export class IpcService {
       console.log('Packets per second: ', Math.floor(this.totalPacketsHandled * 10 / durationSeconds) / 10);
     };
     this.send('app-ready', true);
-    this.on('toggle-machina:value', (event, value) => {
+    this.on('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.send('toggle-machina:get');
+    this.send('toggle-pcap:get');
     this.on('packet', (event, packet: pcap.BasePacket) => {
       this.handlePacket(packet);
     });

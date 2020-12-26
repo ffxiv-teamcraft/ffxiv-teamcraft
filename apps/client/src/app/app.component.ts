@@ -41,7 +41,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { MachinaService } from './core/electron/machina.service';
+import { PcapService } from './core/electron/pcap.service';
 import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
@@ -179,7 +179,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
+              private machina: PcapService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
@@ -480,7 +480,7 @@ export class AppComponent implements OnInit {
   enablePacketCapture(): void {
     this.ipc.machinaToggle = true;
     this.settings.enableUniversalisSourcing = true;
-    this.ipc.send('toggle-machina', true);
+    this.ipc.send('toggle-pcap', true);
   }
 
   applyFirewallRule(): void {

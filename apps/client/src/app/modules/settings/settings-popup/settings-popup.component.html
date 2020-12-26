@@ -442,67 +442,76 @@
       <nz-card>
         <div fxLayout="column">
           <div>
-            <label [(ngModel)]="machinaToggle" (ngModelChange)="machinaToggleChange($event)" nz-checkbox>
+            <label [(ngModel)]="pcapToggle" (ngModelChange)="pcapToggleChange($event)" nz-checkbox>
               {{'SETTINGS.Enable_packet_capture' | translate}}
             </label>
           </div>
           <div>
             <i>{{'SETTINGS.Packet_capture_info' | translate}}</i>
           </div>
+          <nz-form-item fxLayoutAlign="flex-start flex-start">
+            <nz-form-label nzFor="pcap-mode">{{'SETTINGS.Pcap_mode' | translate}}</nz-form-label>
+            <nz-form-control [nzExtra]="extraTpl">
+              <nz-select [(ngModel)]="pcapMode" (ngModelChange)="pcapModeChange($event)" class="pcap-select" id="pcap-mode">
+                <nz-option nzValue="Zanarkand" nzLabel="Zanarkand ({{'COMMON.Recommended' | translate}})"></nz-option>
+                <nz-option nzValue="Machina" nzLabel="Machina"></nz-option>
+              </nz-select>
+              <ng-template #extraTpl>
+                <i *ngIf="pcapMode === 'Machina'">{{'SETTINGS.Winpcap_details' | translate}}: <a href="https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe">https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe</a></i>
+              </ng-template>
+            </nz-form-control>
+          </nz-form-item>
           <div>
-            <label [(ngModel)]="winpcap" (ngModelChange)="winpcapChange($event)" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label *ngIf="pcapMode === 'Machina'" [(ngModel)]="winpcap" (ngModelChange)="winpcapChange($event)" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Winpcap_flag' | translate}}
             </label>
           </div>
           <div>
-            <i>{{'SETTINGS.Winpcap_details' | translate}}: <a href="https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe">https://www.winpcap.org/install/bin/WinPcap_4_1_3.exe</a></i>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Contribute_to_universalis' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_by_default' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.enableAutofillNotificationByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.enableAutofillNotificationByDefault" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_notification_by_default' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.enableAutofillHQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.enableAutofillHQFilter" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_hq_filter' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.enableAutofillNQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.enableAutofillNQFilter" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_nq_filter' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.pcapLogEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
+            <label [(ngModel)]="settings.pcapLogEnabled" [nzDisabled]="!pcapToggle" nz-checkbox>
               {{'SETTINGS.Enable_auto_log_check' | translate}}
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
+            <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!pcapToggle" nz-checkbox nz-tooltip
                    [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
               {{'SETTINGS.Enable_metrics_capture' | translate}}
             </label>
             <i>{{'SETTINGS.Enable_metrics_capture_explain' | translate}}</i>
           </div>
-          <nz-form-item nzFlex *ngIf="settings.playerMetricsEnabled" fxLayoutAlign="flex-start center">
-            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Metrics_capture_folder' | translate}}</nz-form-label>
+          <nz-form-item *ngIf="settings.playerMetricsEnabled" fxLayoutAlign="flex-start center">
+            <nz-form-label nzFor="metrics-folder">{{'SETTINGS.Metrics_capture_folder' | translate}}</nz-form-label>
             <nz-form-control>
               <nz-input-group [nzAddOnBefore]="metricsPath">
-                <button nz-button nzType="primary" (click)="changeMetricsPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
+                <button nz-button nzType="primary" id="metrics-folder" (click)="changeMetricsPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
-          <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
+          <nz-form-item *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
             <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
             <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"
                        class="ignored-inventories" id="ignored-inventories" nzShowSearch nzMode="multiple" nzAllowClear>

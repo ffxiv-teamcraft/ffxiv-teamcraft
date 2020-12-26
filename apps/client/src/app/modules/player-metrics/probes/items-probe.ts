@@ -3,14 +3,14 @@ import { filter, map, startWith, withLatestFrom } from 'rxjs/operators';
 import { ProbeReport } from '../model/probe-report';
 import { Observable } from 'rxjs';
 import { MetricType } from '../model/metric-type';
-import { MachinaService } from '../../../core/electron/machina.service';
+import { PcapService } from '../../../core/electron/pcap.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { ProbeSource } from '../model/probe-source';
 
 export class ItemsProbe extends PlayerMetricProbe {
 
-  constructor(protected ipc: IpcService, private machina: MachinaService) {
+  constructor(protected ipc: IpcService, private machina: PcapService) {
     super(ipc);
   }
 

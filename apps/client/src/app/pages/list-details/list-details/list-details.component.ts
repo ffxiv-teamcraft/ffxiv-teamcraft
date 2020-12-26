@@ -112,10 +112,10 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
               private media: MediaObserver, public ipc: IpcService, private inventoryFacade: InventoryFacade,
               public settings: SettingsService, public platform: PlatformService, private commissionsFacade: CommissionsFacade) {
     super(seoService);
-    this.ipc.once('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
+    this.ipc.send('toggle-pcap:get');
     this.list$ = combineLatest([this.listsFacade.selectedList$, this.permissionLevel$]).pipe(
       filter(([list]) => list !== undefined),
       tap(([list, permissionLevel]) => {

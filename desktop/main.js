@@ -94,6 +94,7 @@ const { app, ipcMain, BrowserWindow, Tray, nativeImage, protocol, Menu, autoUpda
 const path = require('path');
 const isDev = require('electron-is-dev');
 const Machina = require('./machina.js');
+const Zanarkand = require('./zanarkand.js');
 const fs = require('fs-extra');
 const net = require('net');
 const http = require('http');
@@ -231,6 +232,10 @@ function sendToAlreadyOpenedTC(url) {
 app.on('ready', () => {
   handleSquirrelEvent();
 
+  if (config.get('machina')) {
+    config.set('pcap', true);
+  }
+
   isPortTaken(mainWindowPort, (err, taken) => {
     if (taken) {
       sendToAlreadyOpenedTC((argv[0] || '').replace('teamcraft://', ''));
@@ -254,13 +259,25 @@ app.on('ready', () => {
         }
         res.writeHead(200);
         res.end();
-      }).listen(mainWindowPort);
+      }).listen(mainWindowPort, 'localhost');
     }
   });
 });
 
-function startMachina() {
-  Machina.start(win, config, options.verbose, config.get('winpcap'), options.pid);
+function startPcap() {
+  if (config.get('pcapMode', 'Zanarkand') === 'Machina') {
+    Machina.start(win, config, options.verbose, config.get('winpcap'), options.pid);
+  } else {
+    Zanarkand.start(win, config, options.verbose);
+  }
+}
+
+function stopPcap() {
+  if (config.get('pcapMode', 'Zanarkand') === 'Machina') {
+    Machina.stop();
+  } else {
+    Zanarkand.stop();
+  }
 }
 
 function createWindow() {
@@ -297,8 +314,8 @@ function createWindow() {
   Object.assign(opts, config.get('win:bounds'));
   win = new BrowserWindow(opts);
 
-  if (config.get('machina') === true) {
-    startMachina();
+  if (config.get('pcap') === true) {
+    startPcap();
   }
 
   const proxyRule = config.get('proxy-rule', '');
@@ -363,8 +380,8 @@ function createWindow() {
       win.hide();
       return false;
     }
-    if (config.get('machina') === true) {
-      Machina.stop();
+    if (config.get('pcap') === true) {
+      stopPcap();
     }
     config.set('overlays', openedOverlayUris);
     config.set('win:bounds', win.getBounds());
@@ -448,9 +465,9 @@ function applySettings(settings) {
     if (config.get('region') !== settings.region) {
       config.set('region', settings.region);
 
-      if (config.get('machina') === true) {
-        Machina.stop();
-        startMachina();
+      if (config.get('pcap') === true) {
+        stopPcap();
+        startPcap();
       }
     }
 
@@ -567,18 +584,29 @@ ipcMain.on('app-ready', (event) => {
   }
 });
 
-ipcMain.on('toggle-machina', (event, enabled) => {
-  config.set('machina', enabled);
-  event.sender.send('toggle-machina:value', enabled);
+ipcMain.on('toggle-pcap', (event, enabled) => {
+  config.set('pcap', enabled);
+  event.sender.send('toggle-pcap:value', enabled);
   if (enabled) {
-    startMachina();
+    startPcap();
   } else {
-    Machina.stop();
+    stopPcap();
   }
 });
 
-ipcMain.on('toggle-machina:get', (event) => {
-  event.sender.send('toggle-machina:value', config.get('machina'));
+ipcMain.on('toggle-pcap:get', (event) => {
+  event.sender.send('toggle-pcap:value', config.get('pcap'));
+});
+
+ipcMain.on('pcap-mode', (event, mode) => {
+  stopPcap();
+  config.set('pcapMode', mode);
+  event.sender.send('pcap-mode:value', mode);
+  startPcap();
+});
+
+ipcMain.on('pcap-mode:get', (event) => {
+  event.sender.send('pcap-mode:value', config.get('pcapMode', 'Zanarkand'));
 });
 
 ipcMain.on('proxy-rule', (event, value) => {
@@ -775,8 +803,8 @@ ipcMain.on('winpcap:get', (event) => {
 
 ipcMain.on('winpcap:set', (event, flag) => {
   config.set('winpcap', flag);
-  Machina.stop();
-  startMachina();
+  stopPcap();
+  startPcap();
 });
 
 ipcMain.on('show-devtools', () => {

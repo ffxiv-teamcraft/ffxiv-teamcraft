@@ -45,7 +45,9 @@ export class SettingsPopupComponent {
 
   alwaysOnTop = false;
 
-  machinaToggle = false;
+  pcapToggle = false;
+
+  pcapMode = 'Zanarkand';
 
   winpcap = false;
 
@@ -133,7 +135,7 @@ export class SettingsPopupComponent {
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
-              private ipc: IpcService, private router: Router, private http: HttpClient,
+              public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryFacade,
               private lazyData: LazyDataService, private mappy: MappyReporterService) {
@@ -141,8 +143,11 @@ export class SettingsPopupComponent {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
-    this.ipc.once('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+    this.ipc.once('toggle-pcap:value', (event, value) => {
+      this.pcapToggle = value;
+    });
+    this.ipc.once('pcap-mode:value', (event, value) => {
+      this.pcapMode = value;
     });
     this.ipc.once('winpcap:value', (event, value) => {
       this.winpcap = value;
@@ -200,7 +205,8 @@ export class SettingsPopupComponent {
     });
     this.ipc.send('always-on-top:get');
     this.ipc.send('no-shortcut:get');
-    this.ipc.send('toggle-machina:get');
+    this.ipc.send('toggle-pcap:get');
+    this.ipc.send('pcap-mode:get');
     this.ipc.send('start-minimized:get');
     this.ipc.send('always-quit:get');
     this.ipc.send('proxy-rule:get');
@@ -266,11 +272,15 @@ export class SettingsPopupComponent {
     }
   }
 
-  machinaToggleChange(value: boolean): void {
+  pcapToggleChange(value: boolean): void {
     if (value) {
       this.settings.enableUniversalisSourcing = true;
     }
-    this.ipc.send('toggle-machina', value);
+    this.ipc.send('toggle-pcap', value);
+  }
+
+  pcapModeChange(value: string): void {
+    this.ipc.send('pcap-mode', value);
   }
 
   winpcapChange(value: boolean): void {

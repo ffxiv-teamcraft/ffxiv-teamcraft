@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PLAYER_METRICS_PROBES } from './probes/player-metric-probe';
 import { CurrenciesProbe } from './probes/currencies-probe';
 import { ItemsProbe } from './probes/items-probe';
-import { MachinaService } from '../../core/electron/machina.service';
+import { PcapService } from '../../core/electron/pcap.service';
 import { IpcService } from '../../core/electron/ipc.service';
 import { TotalComponent } from './display/total/total.component';
 import { METRICS_DISPLAY_FILTERS } from './filters/metrics-display-filter';
@@ -50,13 +50,13 @@ const probes: Provider[] = [
   {
     provide: PLAYER_METRICS_PROBES,
     useClass: CurrenciesProbe,
-    deps: [IpcService, MachinaService],
+    deps: [IpcService, PcapService],
     multi: true
   },
   {
     provide: PLAYER_METRICS_PROBES,
     useClass: ItemsProbe,
-    deps: [IpcService, MachinaService],
+    deps: [IpcService, PcapService],
     multi: true
   }
 ];

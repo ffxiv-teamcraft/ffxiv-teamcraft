@@ -26,7 +26,7 @@ import { ActorControl, EffectResult, FishingBaitMsg, InitZone, PlayerSetup, Upda
 @Injectable({
   providedIn: 'root'
 })
-export class MachinaService {
+export class PcapService {
 
   private inventory$: Observable<UserInventory>;
 

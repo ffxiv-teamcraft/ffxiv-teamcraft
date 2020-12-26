@@ -384,10 +384,10 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         this.router.navigate(['/gearsets']);
       }
     });
-    this.ipc.once('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
+    this.ipc.send('toggle-pcap:get');
   }
 
   ngOnInit() {

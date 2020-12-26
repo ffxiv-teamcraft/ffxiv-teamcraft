@@ -3,11 +3,11 @@ import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
 import { filter, map, withLatestFrom } from 'rxjs/operators';
 import { AetherReductionDlg, ActorControl } from '../../model/pcap';
-import { MachinaService } from '../electron/machina.service';
+import { PcapService } from '../electron/pcap.service';
 
 export class ReductionResultReporter implements DataReporter {
 
-  constructor(private machina: MachinaService) {
+  constructor(private machina: PcapService) {
   }
 
   getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {

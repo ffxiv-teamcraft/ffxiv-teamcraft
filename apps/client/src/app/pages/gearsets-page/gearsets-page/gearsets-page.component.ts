@@ -37,10 +37,10 @@ export class GearsetsPageComponent extends TeamcraftComponent implements OnInit 
               private authFacade: AuthFacade, private ipc: IpcService,
               private foldersFacade: FoldersFacade) {
     super();
-    this.ipc.once('toggle-machina:value', (event, value) => {
+    this.ipc.once('toggle-pcap:value', (event, value) => {
       this.machinaToggle = value;
     });
-    this.ipc.send('toggle-machina:get');
+    this.ipc.send('toggle-pcap:get');
 
     this.display$ = this.userId$.pipe(
       switchMap(userId => {

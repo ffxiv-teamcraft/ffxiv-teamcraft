@@ -170,7 +170,8 @@
     "Change": "Change",
     "Dirty_changes": "You have unapplied changes",
     "Never": "Never",
-    "Festival": "Only during a festival"
+    "Festival": "Only during a festival",
+    "Recommended": "Recommended"
   },
   "ALARMS": {
     "Title": "Alarms",
