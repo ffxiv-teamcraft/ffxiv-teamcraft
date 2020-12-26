@@ -119,6 +119,12 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
       }
       return this.handleAdditionalData(item, data, xivapiItem);
     }),
+    map(data => {
+      if (data.id > 1 && data.id < 19) {
+        data.sources = data.sources.filter(s => ![DataType.DESYNTHS].includes(s.type));
+      }
+      return data;
+    }),
     tap((item) => {
       this.noData = item.sources.length === 0;
     })
