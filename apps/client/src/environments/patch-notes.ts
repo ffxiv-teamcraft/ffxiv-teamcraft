@@ -1,14 +1,8 @@
 export const patchNotes = `### Bug Fixes
 
-* **changelog:** fixed patch notes popup always spawning behind search autofill.
-* **collectables:** removed ishgard deliveries from the collectables page.
-* **commission-board:** you can now access commission board properly as korean user.
-* **gathering-locations:** use better data source for node positions.
-* **layout:** fixed default precraft sorting by job not being applied properly.
-* **npc-breakdown:** fixed map name not aligned properly with NPC name.
-
-
-### Performance Improvements
-
-* **desktop:** updated to electron 11 (chromium 87).
-* **recipe-finder:** way less CPU usage when searching for recipes.`;
+* **commission-board:** fixed board not opening at all.
+* **db:** added some missing drop sources.
+* **db:** fixed crystal pages too slow to load because of thousands of desynth sources.
+* **db:** fixed wrong coords for some modified nodes.
+* **desktop:** fix for firewall permissions due to local server.
+* **log-tracker:** hide completed now properly hides tabs too.`;

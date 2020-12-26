@@ -121,7 +121,7 @@ const isPortTaken = (port, fn) => {
       })
         .close();
     })
-    .listen(port);
+    .listen(port, 'localhost');
 };
 
 /**
@@ -254,7 +254,7 @@ app.on('ready', () => {
         }
         res.writeHead(200);
         res.end();
-      }).listen(mainWindowPort);
+      }).listen(mainWindowPort, 'localhost');
     }
   });
 });

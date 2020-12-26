@@ -233,6 +233,10 @@ if (hasTodo('mappy', true)) {
 
 
 handleNode = (row) => {
+  const excludedGatheringPointBases = [31481, 31482, 31483];
+  if (excludedGatheringPointBases.includes(+row.NodeID)) {
+    return;
+  }
   const baseId = gatheringPointToBaseId[+row.NodeID];
   if (baseId && +row.MapID) {
     nodes[baseId] = {

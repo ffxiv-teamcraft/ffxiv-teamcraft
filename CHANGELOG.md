@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.18"></a>
+## [7.6.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.17...v7.6.18) (2020-12-26)
+
+
+### Bug Fixes
+
+* **commission-board:** fixed board not opening at all ([7730f23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7730f23))
+* **db:** added some missing drop sources ([25a8c66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/25a8c66))
+* **db:** fixed crystal pages too slow to load because of thousands of desynth sources ([8983f4d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8983f4d))
+* **db:** fixed wrong coords for some modified nodes ([e62393b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e62393b))
+* **desktop:** fix for firewall permissions due to local server ([bca9ce4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/bca9ce4))
+* **log-tracker:** hide completed now properly hides tabs too ([ae0c1f4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ae0c1f4)), closes [#1774](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1774)
+
+
+
 <a name="7.6.17"></a>
 ## [7.6.17](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.16...v7.6.17) (2020-12-25)
 
