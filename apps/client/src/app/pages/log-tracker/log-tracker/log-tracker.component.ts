@@ -22,6 +22,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { List } from '../../../modules/list/model/list';
 import { Memoized } from '../../../core/decorators/memoized';
+import { NzTabComponent } from 'ng-zorro-antd/tabs';
 
 @Component({
   selector: 'app-log-tracker',
@@ -187,8 +188,12 @@ export class LogTrackerComponent extends TrackerComponent {
     return `${page.items.filter(item => this.userGatheringCompletion[item.itemId]).length}/${page.items.length}`;
   }
 
-  public isPageDone(page: any): boolean {
+  public isDoLPageDone(page: any): boolean {
     return page.items.filter(item => this.userGatheringCompletion[item.itemId]).length >= page.items.length;
+  }
+
+  public isDoHPageDone(page: any): boolean {
+    return page.recipes.filter(r => this.userCompletion[r.recipeId]).length >= page.recipes.length;
   }
 
   public getDohIcon(index: number): string {
