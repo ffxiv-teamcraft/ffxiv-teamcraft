@@ -1,14 +1,13 @@
-const MachinaFFXIV = require('node-machina-ffxiv');
+const { ZanarkandFFXIV } = require('node-zanarkand-ffxiv');
 const isDev = require('electron-is-dev');
 const path = require('path');
 const { app } = require('electron');
 const log = require('electron-log');
-const isElevated = require('is-elevated');
 const { exec } = require('child_process');
 
-const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+const zanarkandExePath = path.join(app.getAppPath(), '../../resources/ZanarkandWrapper/ZanarkandWrapperJSON.exe');
 
-let Machina;
+let Zanarkand;
 
 function sendToRenderer(win, packet) {
   win && win.webContents && win.webContents.send('packet', packet);
@@ -41,113 +40,79 @@ function addMachinaFirewallRule() {
 
 module.exports.addMachinaFirewallRule = addMachinaFirewallRule;
 
+const acceptedPackets = [
+  'actorCast',
+  'itemInfo',
+  'updateInventorySlot',
+  'inventoryTransaction',
+  'currencyCrystalInfo',
+  'marketBoardItemListingCount',
+  'marketBoardItemListing',
+  'marketBoardItemListingHistory',
+  'marketBoardSearchResult',
+  'marketTaxRates',
+  'playerSetup',
+  'playerSpawn',
+  'inventoryModifyHandler',
+  'npcSpawn',
+  'objectSpawn',
+  'playerStats',
+  'updateClassInfo',
+  'actorControl',
+  'initZone',
+  'effectResult',
+  'eventPlay',
+  'eventStart',
+  'eventFinish',
+  'eventPlay4',
+  'eventPlay32',
+  'someDirectorUnk4',
+  'actorControlSelf',
+  'retainerInformation',
+  'weatherChange',
+  'updatePositionHandler',
+  'updatePositionInstance',
+  'prepareZoning'
+];
+
 module.exports.start = function(win, config, verbose, winpcap, pid) {
-  isElevated().then(elevated => {
-    log.info('elevated', elevated);
-    if (elevated || winpcap) {
-      log.info('winpcap', winpcap);
-      if (!isDev) {
-        const appPath = app.getAppPath();
-        const appVersion = /\d\.\d\.\d/.exec(appPath);
-        exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
-          if (output[1].indexOf(appVersion) === -1) {
-            exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
-              addMachinaFirewallRule();
-            });
-          }
-        });
-      }
+  const region = config.get('region', null);
+  const options = isDev ?
+    {
+      region: region,
+      dataPath: path.join(__dirname, './zanarkand/')
+    } : {
+      region: region,
+      executablePath: zanarkandExePath,
+      remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
+      definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
+    };
 
-      const region = config.get('region', null);
-      const options = isDev ?
-        {
-          monitorType: winpcap ? 'WinPCap' : 'RawSocket',
-          parseAlgorithm: 'PacketSpecific',
-          region: region
-        } : {
-          parseAlgorithm: 'PacketSpecific',
-          noData: true,
-          monitorType: winpcap ? 'WinPCap' : 'RawSocket',
-          region: region,
-          machinaExePath: machinaExePath,
-          remoteDataPath: path.join(app.getAppPath(), '../../resources/remote-data'),
-          definitionsDir: path.join(app.getAppPath(), '../../resources/app.asar.unpacked/node_modules/node-machina-ffxiv/models/default')
-        };
+  options.logger = message => {
+    log.log(message);
+  };
 
-      options.logger = message => {
-        if (message.level === 'info' && verbose) {
-          log.info(message.message);
-        } else if (message.level !== 'info') {
-          log[message.level || 'warn'](message.message);
-        }
-      };
+  console.log(options);
 
-      if (pid) {
-        options.pid = pid;
-      }
-
-      const acceptedPackets = [
-        'actorCast',
-        'itemInfo',
-        'updateInventorySlot',
-        'inventoryTransaction',
-        'currencyCrystalInfo',
-        'marketBoardItemListingCount',
-        'marketBoardItemListing',
-        'marketBoardItemListingHistory',
-        'marketBoardSearchResult',
-        'marketTaxRates',
-        'playerSetup',
-        'playerSpawn',
-        'inventoryModifyHandler',
-        'npcSpawn',
-        'objectSpawn',
-        'playerStats',
-        'updateClassInfo',
-        'actorControl',
-        'initZone',
-        'effectResult',
-        'eventPlay',
-        'eventStart',
-        'eventFinish',
-        'eventPlay4',
-        'eventPlay32',
-        'someDirectorUnk4',
-        'actorControlSelf',
-        'retainerInformation',
-        'weatherChange',
-        'updatePositionHandler',
-        'updatePositionInstance',
-        'prepareZoning'
-      ];
-
-      Machina = new MachinaFFXIV(options);
-      Machina.filter(acceptedPackets);
-      Machina.start(() => {
-        log.info('Packet capture started');
-      });
-      Machina.setMaxListeners(0);
-      Machina.on('any', (packet) => {
-        if (verbose) {
-          log.log(JSON.stringify(packet));
-        }
-        if (!filterPacketSessionID(packet)) {
-          return;
-        }
-        if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
-          sendToRenderer(win, packet);
-        }
-      });
-    } else {
-      log.error('Not enough permissions to run packet capture');
+  Zanarkand = new ZanarkandFFXIV(options);
+  Zanarkand.filter(acceptedPackets);
+  Zanarkand.start();
+  Zanarkand.setMaxListeners(0);
+  Zanarkand.on('any', (packet) => {
+    if (verbose) {
+      log.log(JSON.stringify(packet));
+    }
+    if (!filterPacketSessionID(packet)) {
+      return;
+    }
+    if (acceptedPackets.indexOf(packet.type) > -1 || acceptedPackets.indexOf(packet.superType) > -1) {
+      sendToRenderer(win, packet);
     }
   });
-
-
 };
 
 module.exports.stop = function() {
-  if (Machina) {
-    Machina.stop();
+  if (Zanarkand) {
+    Zanarkand.stop();
   }
 };

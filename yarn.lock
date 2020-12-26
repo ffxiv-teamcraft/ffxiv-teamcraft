@@ -12985,6 +12985,14 @@ node-uuid@~1.4.7:
   resolved "https://registry.yarnpkg.com/node-uuid/-/node-uuid-1.4.8.tgz#b040eb0923968afabf8d32fb1f17f1167fdab907"
   integrity sha1-sEDrCSOWivq/jTL7HxfxFn/auQc=
 
+node-zanarkand-ffxiv@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/node-zanarkand-ffxiv/-/node-zanarkand-ffxiv-1.4.1.tgz#665c0d6cb757e4566c26e8667ac72704fd628505"
+  integrity sha512-T5K5zg95QysGKjTJLd1Y0/tRzF5WE4ZeIJBWUow0pSyo+SAeyPnegUJog6RmB69flxrT8ccKKrm/XLcgsFZZWQ==
+  dependencies:
+    lodash.defaults "^4.2.0"
+    ws "^7.3.1"
+
 nodemailer-direct-transport@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/nodemailer-direct-transport/-/nodemailer-direct-transport-3.3.2.tgz#e96fafb90358560947e569017d97e60738a50a86"
