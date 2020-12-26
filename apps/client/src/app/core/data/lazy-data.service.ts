@@ -107,7 +107,7 @@ export class LazyDataService {
     if (!fromData && serverName.toLowerCase().includes('korean')) {
       return 'Korea';
     }
-    return '';
+    return fromData;
   }
 
   private loadForRegion(region: Region): void {
