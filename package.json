@@ -125,7 +125,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
     "node-machina-ffxiv": "^2.39.1",
-    "node-zanarkand-ffxiv": "^1.4.1",
+    "node-zanarkand-ffxiv": "^1.4.2",
     "request": "^2.88.2",
     "tslib": "^1.10.0"
   },

@@ -67,7 +67,7 @@ const acceptedPackets = [
 ];
 
 module.exports.start = function(win, config, verbose) {
-  const region = config.get('region', null);
+  const region = config.get('region', 'Global');
   const options = isDev ?
     {
       region: region,
