@@ -19,4 +19,5 @@ export enum DataType {
   TRIPLE_TRIAD_PACK,
   QUESTS,
   ACHIEVEMENTS,
+  REQUIREMENTS
 }

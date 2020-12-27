@@ -53,7 +53,7 @@
               [itemId]="item.id"
               [fallbackItemName]="item.name"
               [overlay]="overlay"
-              [isCraft]="item.craftedBy && item.craftedBy.length > 0"
+              [isCraft]="item.craftedBy && item.craftedBy.length > 0 && item.craftedBy[0].id[0] !== 'f'"
               [hasAlarms]="alarms.length > 0"
               [attachedRotation]="item.attachedRotation"
               [userId]="userId"

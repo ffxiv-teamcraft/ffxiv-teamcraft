@@ -5,4 +5,4 @@ export const patchNotes = `### Bug Fixes
 * **db:** fixed crystal pages too slow to load because of thousands of desynth sources.
 * **db:** fixed wrong coords for some modified nodes.
 * **desktop:** fix for firewall permissions due to local server.
-* **log-tracker:** hide completed now properly hides tabs too.`;
+* **log-tracker:** hide completed now properly hides tabs too.`;

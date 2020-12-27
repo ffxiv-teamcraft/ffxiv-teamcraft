@@ -51,7 +51,15 @@ export class ListManagerService {
 
   }
 
-  public addToList({ itemId, list, recipeId, amount = 1, collectible = false, ignoreHooks = false, upgradeCustom = false }: ListAdditionParams): Observable<List> {
+  public addToList({
+                     itemId,
+                     list,
+                     recipeId,
+                     amount = 1,
+                     collectible = false,
+                     ignoreHooks = false,
+                     upgradeCustom = false
+                   }: ListAdditionParams): Observable<List> {
     let team$ = of(null);
     if (list.teamId && !ignoreHooks) {
       this.teamsFacade.loadTeam(list.teamId);
@@ -149,7 +157,6 @@ export class ListManagerService {
         }
       }
       const craft = crafted.find(c => c.id.toString() === recipeId.toString());
-
       const ingredients = this.lazyDataService.getRecipeSync(craft.id).ingredients;
       const yields = collectible ? 1 : (craft.yield || 1);
       // Then we prepare the list row to add.
@@ -171,15 +178,9 @@ export class ListManagerService {
         usePrice: true
       });
     } else {
-      const inspection = this.lazyDataService.data.hwdInspections.find(row => {
-        return row.receivedItem === data.id;
-      });
-      if (inspection) {
-        toAdd.requires = [{
-          id: inspection.requiredItem,
-          amount: 1,
-          batches: inspection.amount
-        }];
+      const requirements = getItemSource(data, DataType.REQUIREMENTS);
+      if (requirements.length > 0) {
+        toAdd.requires = requirements;
       }
       // If it's not a recipe, add as item
       Object.assign(toAdd, {
@@ -198,7 +199,7 @@ export class ListManagerService {
     // We add the row to recipes.
     const added = addition.addToFinalItems(toAdd, this.lazyDataService.data);
     let addition$: Observable<List>;
-    if (crafted.length > 0) {
+    if (toAdd.requires.length > 0) {
       // Then we add the craft to the addition list.
       addition$ = addition.addCraft({
         _additions: [{
@@ -209,7 +210,7 @@ export class ListManagerService {
         dataService: this.db,
         listManager: this,
         lazyDataService: this.lazyDataService,
-        recipeId: recipeId.toString(),
+        recipeId: recipeId?.toString(),
         gearsets: gearsets
       });
     } else {
