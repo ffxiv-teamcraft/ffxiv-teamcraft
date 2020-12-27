@@ -25,18 +25,20 @@ export class TotalPanelPricePopupComponent implements OnInit {
         return this.getTradeEntries(source).length > 0;
       })
       .sort((a, b) => {
-        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id]
-        > TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id] ? 1 : -1;
+        return TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(b)[0].id]
+          - TradeIconPipe.TRADE_SOURCES_PRIORITIES[this.getTradeEntries(a)[0].id];
       })[0];
   }
 
-  private getTradeEntries(tradeSource: TradeSource): TradeEntry[] {
-    return tradeSource.trades.reduce((acc, trade) => {
-      return [
-        ...acc,
-        ...this.getFilteredCurrencies(trade.currencies)
-      ];
-    }, []);
+  private getTradeEntries(...tradeSources: TradeSource[]): TradeEntry[] {
+    return [].concat.apply([], tradeSources.map(tradeSource => {
+      return tradeSource.trades.reduce((acc, trade) => {
+        return [
+          ...acc,
+          ...this.getFilteredCurrencies(trade.currencies)
+        ];
+      }, []);
+    }));
   }
 
   private getFilteredCurrencies(currencies: TradeEntry[]): TradeEntry[] {
@@ -82,7 +84,7 @@ export class TotalPanelPricePopupComponent implements OnInit {
               currencyId: currency.id,
               currencyIcon: currency.icon,
               costs: costs,
-              canIgnore: uniqBy(this.getTradeEntries(tradeSource), 'id').length > 1
+              canIgnore: uniqBy(this.getTradeEntries(...tradeSources), 'id').length > 1
             });
           } else {
             tradeRow.costs[0] = (tradeRow.costs[0] || 0) + costs[0];
