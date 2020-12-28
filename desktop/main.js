@@ -45,24 +45,19 @@ function handleSquirrelEvent() {
   switch (squirrelEvent) {
     case '--squirrel-install':
     case '--squirrel-firstrun':
-      if (!config.get('setup:noShortcut')) {
+      if (!config.get('setup:noShortcut', false)) {
         spawnUpdate(['--createShortcut', exeName]);
       }
-      Machina.addMachinaFirewallRule();
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
       // - Add your .exe to the PATH
       // - Write to the registry for things like file associations and
       //   explorer context menus
-      // Remove previous firewall rules
-      ChildProcess.exec('netsh advfirewall firewall delete rule name="ffxiv teamcraft.exe"');
-      Machina.addMachinaFirewallRule();
       // Install desktop and start menu shortcuts
-      if (!config.get('setup:noShortcut')) {
+      if (!config.get('setup:noShortcut', false)) {
         spawnUpdate(['--createShortcut', exeName]);
       }
-
       setTimeout(app.quit, 1000);
       return true;
 
@@ -260,7 +255,31 @@ app.on('ready', () => {
 });
 
 function startMachina() {
-  Machina.start(win, config, options.verbose, config.get('winpcap'), options.pid);
+  ChildProcess.exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
+    if (err) {
+      if (isDev) {
+        win.webContents.send('installing-npcap', true);
+        ipcMain.once('app-ready', () => {
+          win.webContents.send('installing-npcap', true);
+        });
+        ChildProcess.exec(path.join(__dirname, './npcap-1.10.exe'), () => {
+          app.relaunch();
+          app.exit();
+        });
+      } else {
+        win.webContents.send('installing-npcap', true);
+        ipcMain.once('app-ready', () => {
+          win.webContents.send('installing-npcap', true);
+        });
+        ChildProcess.exec(path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe'), () => {
+          app.relaunch();
+          app.exit();
+        });
+      }
+    } else {
+      Machina.start(win, config, options.verbose, options.pid);
+    }
+  });
 }
 
 function createWindow() {
@@ -637,7 +656,7 @@ ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
 });
 
-let mappyState = {};
+let iState = {};
 ipcMain.on('mappy-state:set', (_, data) => {
   mappyState = data;
   if (openedOverlays['/mappy-overlay'] !== undefined) {
@@ -798,9 +817,9 @@ ipcMain.on('notification', (event, config) => {
 });
 
 ipcMain.on('clear-cache', () => {
-  win.webContents.session.clearStorageData(() => {
+  win.webContents.session.clearStorageData().then(() => {
     app.relaunch();
-    app.exit(0);
+    app.exit();
   });
 });
 
@@ -839,11 +858,6 @@ ipcMain.on('start-minimized:get', (event) => {
 
 ipcMain.on('overlay', (event, data) => {
   toggleOverlay(data);
-});
-
-ipcMain.on('machina:firewall:set-rule', (event) => {
-  Machina.addMachinaFirewallRule();
-  event.sender.send('machina:firewall:rule-set', true);
 });
 
 ipcMain.on('overlay:set-opacity', (event, data) => {

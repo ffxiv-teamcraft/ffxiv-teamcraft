@@ -10,6 +10,8 @@ import { Store } from '@ngrx/store';
 import * as pcap from '../../model/pcap';
 import { PlayerSpawn } from '../../model/pcap';
 import { environment } from '../../../environments/environment';
+import { NzModalService } from 'ng-zorro-antd/modal';
+import { TranslateService } from '@ngx-translate/core';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -142,7 +144,8 @@ export class IpcService {
   );
 
   constructor(private platformService: PlatformService, private router: Router,
-              private store: Store<any>, private zone: NgZone) {
+              private store: Store<any>, private zone: NgZone, private dialog: NzModalService,
+              private translate: TranslateService) {
     // Only load ipc if we're running inside electron
     if (platformService.isDesktop()) {
       if (window.require) {
@@ -231,6 +234,14 @@ export class IpcService {
       this.router.navigate(url.split('/'));
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));
+    this.on('installing-npcap', () => {
+      this.dialog.create({
+        nzClosable: false,
+        nzFooter: null,
+        nzTitle: this.translate.instant('SETTINGS.Installing_npcap'),
+        nzContent: this.translate.instant('SETTINGS.Installing_npcap_description'),
+      })
+    });
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
       ofPacketType('ping'),

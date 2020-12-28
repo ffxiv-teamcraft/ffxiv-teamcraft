@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.19"></a>
+## [7.6.19](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.18...v7.6.19) (2020-12-28)
+
+
+### Bug Fixes
+
+* **db:** fixed position for rarefied raw petalite ([d24a971](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d24a971))
+* **layout:** consider levels 5 by 5 for panel filtering based on gathering level ([b2563d4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b2563d4))
+* **total-trades:** fixed some currencies that could not be ignored despite having alternatives ([5f0f669](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5f0f669))
+
+
+### Features
+
+* **desktop:** no more start as admin, npcap will be installed if missing for packet capture to work ([06b0078](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/06b0078)), closes [#1760](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1760)
+* **list:** modified submarines now properly link the original version inside list content ([5bf136e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5bf136e))
+
+
+### Performance Improvements
+
+* **lodestone:** better cache models optimization to avoid reaching quota ([4c0cde0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c0cde0))
+
+
+
 <a name="7.6.18"></a>
 ## [7.6.18](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.17...v7.6.18) (2020-12-26)
 

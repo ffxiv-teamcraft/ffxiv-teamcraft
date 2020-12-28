@@ -62,6 +62,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 import { SimulatorModule } from '../../pages/simulator/simulator.module';
+import { RequirementsExtractor } from './data/extractor/requirements-extractor';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -84,7 +85,8 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService, LazyDataService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true }
+  { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
+  { provide: EXTRACTORS, useClass: RequirementsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true }
 ];
 
 @NgModule({

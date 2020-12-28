@@ -88,6 +88,7 @@ export function getItemSource<T = any>(item: ListRow, type: DataType.ALARMS, isO
 export function getItemSource<T = any>(item: ListRow, type: DataType.MASTERBOOKS, isObject?: boolean): CompactMasterbook[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.TREASURES, isObject?: boolean): Treasure[]
 export function getItemSource<T = any>(item: ListRow, type: DataType.FATES, isObject?: boolean): FateData[]
+export function getItemSource<T = any>(item: ListRow, type: DataType.REQUIREMENTS, isObject?: boolean): Ingredient[]
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject?: boolean): T
 export function getItemSource<T = any>(item: ListRow, type: DataType, isObject = false): T {
   const key = `${item.id}:${type}`;

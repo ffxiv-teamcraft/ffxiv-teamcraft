@@ -52,6 +52,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { CommissionNotification } from '../model/notification/commission-notification';
+import { NzModalModule } from 'ng-zorro-antd/modal';
 
 
 @NgModule({
@@ -91,7 +92,8 @@ import { CommissionNotification } from '../model/notification/commission-notific
     NzButtonModule,
     NzToolTipModule,
     NzIconModule,
-    NzDividerModule
+    NzDividerModule,
+    NzModalModule
   ],
   providers: [
     PendingChangesService,

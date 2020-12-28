@@ -1,8 +1,16 @@
 export const patchNotes = `### Bug Fixes
 
-* **commission-board:** fixed board not opening at all.
-* **db:** added some missing drop sources.
-* **db:** fixed crystal pages too slow to load because of thousands of desynth sources.
-* **db:** fixed wrong coords for some modified nodes.
-* **desktop:** fix for firewall permissions due to local server.
-* **log-tracker:** hide completed now properly hides tabs too.`;
+* **db:** fixed position for rarefied raw petalite.
+* **layout:** consider levels 5 by 5 for panel filtering based on gathering level.
+* **total-trades:** fixed some currencies that could not be ignored despite having alternatives.
+
+
+### Features
+
+* **desktop:** no more start as admin, npcap will be installed if missing for packet capture to work.
+* **list:** modified submarines now properly link the original version inside list content.
+
+
+### Performance Improvements
+
+* **lodestone:** better cache models optimization to avoid reaching quota.`;

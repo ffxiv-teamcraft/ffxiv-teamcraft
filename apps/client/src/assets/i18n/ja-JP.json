@@ -397,6 +397,8 @@
     "Show_devtools": "Devツールを表示",
     "Clear_cache": "キャッシュをクリア(アプリが再起動されます)",
     "Add_firewall_rule": "Add packet capture firewall rule",
+    "Installing_npcap": "Npcap installation in progress",
+    "Installing_npcap_description": "In order to have packet capture working, we need to install npcap. Make sure you keep the default settings like they are (do not uncheck winpcap api compatibility). Teamcraft will restart once this is done.",
     "Enable_item_tags": "アイテムダグを使用",
     "Show_copy_list_own_list": "マイリストバネルにコピーボタンを表示する",
     "Custom_theme": "カスタムテーマ",

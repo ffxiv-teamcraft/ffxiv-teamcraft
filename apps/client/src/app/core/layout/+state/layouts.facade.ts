@@ -114,7 +114,7 @@ export class LayoutsFacade {
                   if (row.filterName.includes('IS_GATHERING') && gatheredBy.type !== undefined) {
                     const gatherJob = [16, 16, 17, 17, 18, 18][gatheredBy.type];
                     const set = gearsets.find(stat => stat.jobId === gatherJob);
-                    if (set && (set.level === 0 || set.level >= gatheredBy.level)) {
+                    if (set && (set.level === 0 || (set.level / 5) > (gatheredBy.level - 1) / 5)) {
                       acc.accepted.push(item);
                     } else {
                       acc.rejected.push(item);

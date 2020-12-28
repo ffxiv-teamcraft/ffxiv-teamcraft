@@ -158,7 +158,7 @@ export class List extends DataWithPermissions {
   public addToFinalItems(data: ListRow, lazyData: LazyData): number {
     if (getItemSource(data, DataType.CRAFTED_BY).length === 0) {
       (data.requires || []).forEach(row => {
-        let amount = row.amount * data.amount_needed;
+        let amount = row.amount * (data.amount_needed || data.amount);
         if (row.batches) {
           amount = Math.ceil(amount / row.batches) * row.batches;
         }
@@ -472,13 +472,13 @@ export class List extends DataWithPermissions {
   private addNormalCraft(addition: CraftAddition, listManager: ListManagerService, lazyDataService: LazyDataService, gearsets: TeamcraftGearsetStats[], recipeId?: string): CraftAddition[] {
     const nextIteration: CraftAddition[] = [];
     let craft: CraftedBy;
-    const crafts = getItemSource<CraftedBy[]>(addition.item, DataType.CRAFTED_BY);
+    const crafts = getItemSource(addition.item, DataType.CRAFTED_BY);
     if (recipeId !== undefined) {
       craft = crafts.find(c => c.id.toString() === recipeId.toString()) || crafts[0];
     } else {
       craft = getCraftByPriority(crafts, gearsets);
     }
-    const ingredients = lazyDataService.getRecipeSync(craft.id).ingredients;
+    const ingredients = craft ? lazyDataService.getRecipeSync(craft.id).ingredients : getItemSource(addition.item, DataType.REQUIREMENTS);
     for (const element of ingredients) {
       // If this is a crystal
       if (element.id < 20 && element.id > 1) {
@@ -494,9 +494,9 @@ export class List extends DataWithPermissions {
         listManager.addDetails(this);
       } else {
         const elementDetails = lazyDataService.getExtract(+element.id);
-        const craftedBy = getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY);
+        const craftedBy = getItemSource(elementDetails, DataType.CRAFTED_BY);
         const craftToAdd = getCraftByPriority(craftedBy, gearsets);
-        if (elementDetails && getItemSource<CraftedBy[]>(elementDetails, DataType.CRAFTED_BY).length > 0) {
+        if (elementDetails && getItemSource(elementDetails, DataType.CRAFTED_BY).length > 0) {
           const yields = craftToAdd.yield || 1;
           const added = this.add(this.items, {
             id: elementDetails.id,
@@ -510,13 +510,9 @@ export class List extends DataWithPermissions {
           });
           nextIteration.push({
             item: elementDetails,
-            data: addition.data,
             amount: added
           });
         } else {
-          const inspection = lazyDataService.data.hwdInspections.find(row => {
-            return row.receivedItem === element.id;
-          });
           const rowToAdd: Partial<ListRow> = {
             id: elementDetails.id,
             icon: elementDetails.icon,
@@ -526,23 +522,28 @@ export class List extends DataWithPermissions {
             yield: 1,
             usePrice: true
           };
-          // Handle inspections just like crafts, as they add a requirement
-          // TODO maybe convert requirements to an extractor, to allow more stuff like this.
-          if (inspection) {
-            rowToAdd.requires = [{
-              id: inspection.requiredItem,
-              amount: 1,
-              batches: inspection.amount
-            }];
+          // Handle possible additional requirements
+          const requirements = getItemSource(elementDetails, DataType.REQUIREMENTS);
+          if (requirements.length > 0) {
+            rowToAdd.requires = requirements;
             const reqAmount = element.amount * addition.amount;
-            this.add(this.items, {
-              id: inspection.requiredItem,
-              icon: lazyDataService.data.itemIcons[inspection.requiredItem],
-              amount: Math.ceil(reqAmount / inspection.amount) * inspection.amount,
-              done: 0,
-              used: 0,
-              yield: 1,
-              usePrice: true
+            requirements.forEach(req => {
+              const reqDetails = lazyDataService.getExtract(+req.id);
+              const reqRecipeId = getItemSource(reqDetails, DataType.CRAFTED_BY)[0]?.id;
+              this.add(this.items, {
+                id: +req.id,
+                icon: lazyDataService.data.itemIcons[+req.id],
+                amount: Math.ceil(reqAmount / req.amount) * req.amount,
+                done: 0,
+                used: 0,
+                yield: 1,
+                usePrice: true,
+                requires: reqRecipeId ? lazyDataService.getRecipeSync(reqRecipeId).ingredients : getItemSource(reqDetails, DataType.REQUIREMENTS)
+              });
+              nextIteration.push({
+                item: lazyDataService.getExtract(+req.id),
+                amount: Math.ceil(reqAmount / req.amount) * req.amount
+              });
             });
           }
           this.add(this.items, rowToAdd as ListRow);

@@ -397,6 +397,8 @@
     "Show_devtools": "Entwicklerwerkzeuge zeigen",
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Add_firewall_rule": "Firewall-Regel für Paketerfassung hinzufügen",
+    "Installing_npcap": "Npcap installation in progress",
+    "Installing_npcap_description": "In order to have packet capture working, we need to install npcap. Make sure you keep the default settings like they are (do not uncheck winpcap api compatibility). Teamcraft will restart once this is done.",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Design",

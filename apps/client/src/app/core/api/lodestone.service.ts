@@ -32,16 +32,28 @@ export class LodestoneService {
     return null;
   }
 
-  private cacheCharacter(charResponse: CharacterResponse): void {
-    localStorage.setItem(`character:${charResponse.Character.ID}`, JSON.stringify(charResponse));
+  private cacheCharacter(data: CharacterResponse, userCharacter = false): void {
+    const cachedCharacter: Partial<Character> = {
+      ID: data.Character.ID,
+      Avatar: data.Character.Avatar,
+      FreeCompanyId: data.Character.FreeCompanyId,
+      Name: data.Character.Name,
+      Server: data.Character.Server,
+      Portrait: data.Character.Portrait,
+      Bio: data.Character.Bio
+    };
+    if (userCharacter) {
+      cachedCharacter.ClassJobs = data.Character.ClassJobs;
+    }
+    localStorage.setItem(`character:${cachedCharacter.ID}`, JSON.stringify({ Character: cachedCharacter }));
   }
 
-  public getCharacter(id: number): Observable<CharacterResponse> {
+  public getCharacter(id: number, userCharacter = false): Observable<CharacterResponse> {
     if (LodestoneService.CACHE[id] === undefined) {
       const trigger = new Subject<void>();
       LodestoneService.CACHE[id] = trigger.pipe(
-        switchMapTo(this.xivapi.getCharacter(id)),
-        tap(res => this.cacheCharacter(res)),
+        switchMapTo(this.xivapi.getCharacter(id, { columns: ['Character'] })),
+        tap(res => this.cacheCharacter(res, userCharacter)),
         startWith(this.getCachedCharacter(id)),
         filter(res => res !== null),
         shareReplay(1)

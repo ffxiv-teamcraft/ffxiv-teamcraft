@@ -397,6 +397,8 @@
     "Show_devtools": "Показать инструменты разработчика",
     "Clear_cache": "Очистить кэш (перезапустит приложение)",
     "Add_firewall_rule": "Добавить правило брандмауэра захвата пакетов",
+    "Installing_npcap": "Npcap installation in progress",
+    "Installing_npcap_description": "In order to have packet capture working, we need to install npcap. Make sure you keep the default settings like they are (do not uncheck winpcap api compatibility). Teamcraft will restart once this is done.",
     "Enable_item_tags": "Включить теги предметов",
     "Show_copy_list_own_list": "Показать кнопку копирования на панели своих списков",
     "Custom_theme": "Пользовательская тема",
