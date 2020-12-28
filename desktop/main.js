@@ -257,24 +257,26 @@ app.on('ready', () => {
 function startMachina() {
   ChildProcess.exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
     if (err) {
+      const postInstallCallback = (err) => {
+        if (err) {
+          log.error(err);
+        } else {
+          app.relaunch();
+          app.exit();
+        }
+      };
       if (isDev) {
         win.webContents.send('installing-npcap', true);
         ipcMain.once('app-ready', () => {
           win.webContents.send('installing-npcap', true);
         });
-        ChildProcess.exec(path.join(__dirname, './npcap-1.10.exe'), () => {
-          app.relaunch();
-          app.exit();
-        });
+        ChildProcess.exec(`"${path.join(__dirname, './npcap-1.10.exe')}"`, postInstallCallback);
       } else {
         win.webContents.send('installing-npcap', true);
         ipcMain.once('app-ready', () => {
           win.webContents.send('installing-npcap', true);
         });
-        ChildProcess.exec(path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe'), () => {
-          app.relaunch();
-          app.exit();
-        });
+        ChildProcess.exec(`"${path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe')}"`, postInstallCallback);
       }
     } else {
       Machina.start(win, config, options.verbose, options.pid);
