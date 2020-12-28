@@ -235,12 +235,14 @@ export class IpcService {
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));
     this.on('installing-npcap', () => {
-      this.dialog.create({
-        nzClosable: false,
-        nzFooter: null,
-        nzTitle: this.translate.instant('SETTINGS.Installing_npcap'),
-        nzContent: this.translate.instant('SETTINGS.Installing_npcap_description'),
-      })
+      setTimeout(() => {
+        this.dialog.create({
+          nzClosable: false,
+          nzFooter: null,
+          nzTitle: this.translate.instant('SETTINGS.Installing_npcap'),
+          nzContent: this.translate.instant('SETTINGS.Installing_npcap_description')
+        });
+      }, 1000);
     });
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
