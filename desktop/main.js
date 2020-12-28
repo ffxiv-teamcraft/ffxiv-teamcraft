@@ -656,7 +656,7 @@ ipcMain.on('fishing-state:get', (event) => {
   event.sender.send('fishing-state', fishingState);
 });
 
-let mappyState = {};
+let iState = {};
 ipcMain.on('mappy-state:set', (_, data) => {
   mappyState = data;
   if (openedOverlays['/mappy-overlay'] !== undefined) {
