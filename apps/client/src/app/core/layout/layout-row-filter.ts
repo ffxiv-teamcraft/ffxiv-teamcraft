@@ -100,6 +100,8 @@ export class LayoutRowFilter {
       37,
       38,
       39,
+      40,
+      41,
       7811,
       9383,
       14298,
@@ -122,7 +124,7 @@ export class LayoutRowFilter {
   }, 'IS_TOME_TRADE');
 
   static IS_SCRIPT_TRADE = new LayoutRowFilter(row => {
-    const scriptIds = [
+    const scripIds = [
       10309,
       10311,
       17833,
@@ -131,7 +133,7 @@ export class LayoutRowFilter {
       25200
     ];
 
-    for (const tokenId of scriptIds) {
+    for (const tokenId of scripIds) {
       if (getItemSource(row, DataType.TRADE_SOURCES).some(source => {
         return source.trades.some(trade => {
           return trade.currencies.some(c => c.id === tokenId);

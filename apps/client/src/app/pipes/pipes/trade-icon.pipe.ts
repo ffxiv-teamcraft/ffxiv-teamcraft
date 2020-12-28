@@ -15,7 +15,7 @@ export class TradeIconPipe implements PipeTransform {
     27: 29, // Allied
     10307: 30, // Centurio
     26533: 30, // Sack of nuts (lol)
-    // Scripts
+    // Scrips
     10309: 0, // Red crafter
     10311: 0, // Red gatherer
     17833: 30, // Yellow crafter
