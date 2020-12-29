@@ -3,21 +3,23 @@
     <label [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()" nz-checkbox></label>
     <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName| i18n"
                    [width]="24"></app-item-icon>
+    <ng-container *ngIf="item.id | itemName | i18n as name">
     <span *ngIf="settings.preferredCopyType === 'classic'"
-          [clipboard]="item.id | itemName | i18n"
+          [clipboard]="name"
           [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
           [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
           class="item-name"
           nz-tooltip>
-        {{item.id | itemName | i18n}}
+        {{name}}
       </span>
-    <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
-          [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
-          clipboard="/isearch &quot;{{item.id | itemName | i18n}}&quot;"
-          class="item-name"
-          nz-tooltip>
-        {{item.id | itemName | i18n}}
+      <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
+            [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
+            clipboard="/isearch &quot;{{name}}&quot;"
+            class="item-name"
+            nz-tooltip>
+        {{name}}
       </span>
+    </ng-container>
     <i *ngIf="_craftCost !== undefined"
        class="material-icons"
        nz-tooltip
