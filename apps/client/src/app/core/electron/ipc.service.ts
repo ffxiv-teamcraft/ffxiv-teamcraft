@@ -227,7 +227,7 @@ export class IpcService {
       this.router.navigate(url.split('/'));
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));
-    this.on('install-npcap', () => {
+    this.on('install-npcap-prompt', () => {
       this.translate.get('PACKET_CAPTURE.Install_npcap')
         .pipe(
           first(),
@@ -241,8 +241,8 @@ export class IpcService {
         )
         .subscribe(res => {
           switch (res) {
-            case 'winpcap':
-              this.send('rawsock', false);
+            case 'install':
+              this.send('install-npcap', false);
               break;
             case 'disable':
               this.send('toggle-machina', false);

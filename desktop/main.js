@@ -263,21 +263,7 @@ app.on('ready', () => {
 function startMachina() {
   ChildProcess.exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
     if (err) {
-      const postInstallCallback = (err) => {
-        if (err) {
-          log.error(err);
-        } else {
-          app.relaunch();
-          app.exit();
-        }
-      };
-      if (isDev) {
-        Machina.sendWhenReady(win, 'installing-npcap', true);
-        ChildProcess.exec(`"${path.join(__dirname, './npcap-1.10.exe')}"`, postInstallCallback);
-      } else {
-        Machina.sendWhenReady(win, 'installing-npcap', true);
-        ChildProcess.exec(`"${path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe')}"`, postInstallCallback);
-      }
+      win.webContents.send('install-npcap-prompt', true);
     } else {
       Machina.start(win, config, options.verbose, options.pid);
     }
@@ -317,10 +303,6 @@ function createWindow() {
   };
   Object.assign(opts, config.get('win:bounds'));
   win = new BrowserWindow(opts);
-
-  if (config.get('machina') === true) {
-    startMachina();
-  }
 
   const proxyRule = config.get('proxy-rule', '');
   const proxyPac = config.get('proxy-pac', '');
@@ -576,6 +558,25 @@ function setProxy({ rule, pac, bypass }) {
 ipcMain.on('app-ready', (event) => {
   if (options.nativeDecorator) {
     event.sender.send('window-decorator', false);
+  }
+  if (config.get('machina') === true) {
+    startMachina();
+  }
+});
+
+ipcMain.on('install-npcap', () => {
+  const postInstallCallback = (err) => {
+    if (err) {
+      log.error(err);
+    } else {
+      app.relaunch();
+      app.exit();
+    }
+  };
+  if (isDev) {
+    ChildProcess.exec(`"${path.join(__dirname, './npcap-1.10.exe')}"`, postInstallCallback);
+  } else {
+    ChildProcess.exec(`"${path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe')}"`, postInstallCallback);
   }
 });
 

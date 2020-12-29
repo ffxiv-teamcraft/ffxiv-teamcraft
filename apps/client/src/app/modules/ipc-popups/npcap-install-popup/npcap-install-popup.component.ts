@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NzModalRef } from 'ng-zorro-antd/modal';
 
 @Component({
   selector: 'app-npcap-install-popup',
@@ -6,11 +7,17 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./npcap-install-popup.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NpcapInstallPopupComponent implements OnInit {
+export class NpcapInstallPopupComponent {
 
-  constructor() { }
+  constructor(private modalRef: NzModalRef) {
+  }
 
-  ngOnInit(): void {
+  shutdownPcap(): void {
+    this.modalRef.close('disable');
+  }
+
+  install(): void {
+    this.modalRef.close('install');
   }
 
 }

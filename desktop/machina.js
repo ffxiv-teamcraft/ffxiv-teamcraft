@@ -72,11 +72,6 @@ function filterPacketSessionID(packet) {
 
 function sendWhenReady(win, channel, data) {
   win.webContents.send(channel, data);
-  ipcMain.once('app-ready', () => {
-    setTimeout(() => {
-      win.webContents.send(channel, data);
-    }, 2000);
-  });
 }
 
 function addMachinaFirewallRule() {
@@ -94,7 +89,7 @@ module.exports.start = async function(win, config, verbose, pid) {
 
   if (rawsock) {
     if (!elevated) {
-      sendWhenReady(win, 'rawsock-needs-admin', true);
+      win.webContents.send('rawsock-needs-admin', true);
       return;
     }
     exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
