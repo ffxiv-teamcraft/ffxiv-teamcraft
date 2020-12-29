@@ -450,6 +450,14 @@
             <i>{{'SETTINGS.Packet_capture_info' | translate}}</i>
           </div>
           <div>
+            <label [(ngModel)]="rawsock" (ngModelChange)="rawsockChange($event)" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Rawsock_flag' | translate}}
+            </label>
+          </div>
+          <div>
+            <i>{{'SETTINGS.Rawsock_details' | translate}}</i>
+          </div>
+          <div>
             <label [(ngModel)]="settings.enableUniversalisSourcing" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Contribute_to_universalis' | translate}}
             </label>

@@ -63,7 +63,9 @@ export class SettingsPopupComponent {
 
   customTheme: Theme;
 
-  public sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
+  sounds = ['Confirm', 'Full_Party', 'Feature_unlocked'];
+
+  rawsock = false;
 
   startingPlaces = [
     {
@@ -131,7 +133,7 @@ export class SettingsPopupComponent {
   constructor(public settings: SettingsService, public translate: TranslateService,
               public platform: PlatformService, private authFacade: AuthFacade,
               private af: AngularFireAuth, private message: NzMessageService,
-              private ipc: IpcService, private router: Router, private http: HttpClient,
+              public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryFacade,
               private lazyData: LazyDataService, private mappy: MappyReporterService) {
@@ -139,7 +141,7 @@ export class SettingsPopupComponent {
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;
     });
-    this.ipc.once('toggle-machina:value', (event, value) => {
+    this.ipc.on('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });
     this.ipc.once('start-minimized:value', (event, value) => {
@@ -184,6 +186,9 @@ export class SettingsPopupComponent {
       this.proxyType = scheme as any;
       this.proxyValue = host;
     });
+    this.ipc.on('rawsock:value', (event, value) => {
+      this.rawsock = value;
+    });
     this.ipc.once('proxy-bypass:value', (event, value) => {
       this.proxyBypass = value;
     });
@@ -202,6 +207,7 @@ export class SettingsPopupComponent {
     this.ipc.send('proxy-bypass:get');
     this.ipc.send('proxy-pac:get');
     this.ipc.send('metrics:path:get');
+    this.ipc.send('rawsock:get');
     this.customTheme = this.settings.customTheme;
   }
 
@@ -265,6 +271,10 @@ export class SettingsPopupComponent {
       this.settings.enableUniversalisSourcing = true;
     }
     this.ipc.send('toggle-machina', value);
+  }
+
+  rawsockChange(value: boolean): void {
+    this.ipc.send('rawsock', value);
   }
 
   openDesktopConsole(): void {

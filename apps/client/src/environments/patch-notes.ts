@@ -1,17 +1,10 @@
 export const patchNotes = `### Bug Fixes
 
-* **db:** fixed position for rarefied raw petalite.
-* **desktop:** fixed an issue with restart loop when you have a space in your windows profile name.
-* **layout:** consider levels 5 by 5 for panel filtering based on gathering level.
-* **total-trades:** fixed some currencies that could not be ignored despite having alternatives.
+* **pricing-mode:** fixed clipboard copy success notification content.
 
 
 ### Features
 
-* **desktop:** no more start as admin, npcap will be installed if missing for packet capture to work.
-* **list:** modified submarines now properly link the original version inside list content.
-
-
-### Performance Improvements
-
-* **lodestone:** better cache models optimization to avoid reaching quota.`;
+* **desktop:** user-friendly npcap installation process, instead of starting setup asap.
+* **desktop:** you can now enable rawsock for packet capture, requires TC to be started as admin.
+* **gearset:** max display ilvl is now max gearset ilvl + 30.`;

@@ -443,8 +443,8 @@
     "Metrics_capture_folder": "Dossier de log des métriques",
     "Maximum_vendor_price": "Prix maximum d'achat",
     "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
-    "Winpcap_flag": "Use winpcap for packet capture",
-    "Winpcap_details": "Make sure you have winpcap installed or install it from this link: ",
+    "Rawsock_flag": "Use RawSocket for packet capture",
+    "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1813,8 +1813,13 @@
     "Possible_missing_firewall_rule": "La capture de paquets ne fonctionne pas correctement",
     "Possible_missing_firewall_rule_description": "Teamcraft ne voit que certains des paquets et pas ceux liés aux inventaires, stats, gear, etc, cela peut être dû à une règle de pare-feu manquante sur votre PC.",
     "Possible_missing_firewall_rule_check": "Si ce message ne disparaît pas après que vous vous soyez téléporté dans une nouvelle zone, soit la règle de pare-feu est manquante ou la capture de paquets ne fonctionne pas du tout pour une autre raison (si c'est le cas, rejoignez le serveur discord et allez sur le canal #troubleshooting).",
-    "Firewall_rule_set": "La règle du pare-feu a été appliquée, votre inventaire devrait maintenant être détecté correctement.",
-    "Add_firewall_rule": "Ajouter la règle de pare-feu"
+    "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
+    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
+    "Switch_to_winpcap": "Switch to winpcap mode",
+    "Disable_pcap": "Disable packet capture",
+    "Install_npcap": "Npcap is missing from your system",
+    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_button": "Install npcap and restart Teamcraft"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",

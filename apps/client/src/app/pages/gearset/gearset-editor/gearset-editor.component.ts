@@ -346,7 +346,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
         .filter(entry => entry.piece.itemId !== 17726)
         .map(entry => this.lazyData.data.ilvls[entry.piece.itemId]);
       let lowestIlvl = Math.min(...ilvls);
-      let highestIlvl = Math.max(...ilvls);
+      let highestIlvl = Math.max(...ilvls) + 30;
       let usedDefaultValues = false;
       if (lowestIlvl === Infinity) {
         lowestIlvl = 460;

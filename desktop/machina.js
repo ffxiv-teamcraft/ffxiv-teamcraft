@@ -1,8 +1,10 @@
 const MachinaFFXIV = require('node-machina-ffxiv');
 const isDev = require('electron-is-dev');
 const path = require('path');
-const { app } = require('electron');
+const { app, ipcMain } = require('electron');
 const log = require('electron-log');
+const isElevated = require('is-elevated');
+const { exec } = require('child_process');
 
 const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
 
@@ -67,15 +69,45 @@ function filterPacketSessionID(packet) {
     || packet.sourceActorSessionID === packet.targetActorSessionID;
 }
 
-module.exports.start = function(win, config, verbose, pid) {
+
+function sendWhenReady(win, channel, data) {
+  win.webContents.send(channel, data);
+}
+
+function addMachinaFirewallRule() {
+  const machinaExePath = path.join(app.getAppPath(), '../../resources/MachinaWrapper/MachinaWrapper.exe');
+  exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${machinaExePath}" enable=yes`);
+}
+
+module.exports.addMachinaFirewallRule = addMachinaFirewallRule;
+module.exports.sendWhenReady = sendWhenReady;
+
+module.exports.start = async function(win, config, verbose, pid) {
   const region = config.get('region', null);
+  const rawsock = config.get('rawsock', false);
+  const elevated = await isElevated();
+
+  if (rawsock) {
+    if (!elevated) {
+      win.webContents.send('rawsock-needs-admin', true);
+      return;
+    }
+    exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
+      if (output[1].indexOf(appVersion) === -1) {
+        exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
+          addMachinaFirewallRule();
+        });
+      }
+    });
+  }
+
   const options = isDev ?
     {
-      monitorType: 'WinPCap',
+      monitorType: rawsock ? 'RawSocket' : 'WinPCap',
       parseAlgorithm: 'PacketSpecific',
       region: region
     } : {
-      monitorType: 'WinPCap',
+      monitorType: rawsock ? 'RawSocket' : 'WinPCap',
       parseAlgorithm: 'PacketSpecific',
       region: region,
       noData: true,

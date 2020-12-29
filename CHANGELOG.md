@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.21"></a>
+## [7.6.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.20...v7.6.21) (2020-12-29)
+
+
+### Bug Fixes
+
+* **pricing-mode:** fixed clipboard copy success notification content ([28ffce4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/28ffce4))
+
+
+### Features
+
+* **desktop:** user-friendly npcap installation process, instead of starting setup asap ([12458ce](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12458ce))
+* **desktop:** you can now enable rawsock for packet capture, requires TC to be started as admin ([04d044d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/04d044d))
+* **gearset:** max display ilvl is now max gearset ilvl + 30 ([7cc3ae4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7cc3ae4))
+
+
+
 <a name="7.6.20"></a>
 ## [7.6.20](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.18...v7.6.20) (2020-12-28)
 
