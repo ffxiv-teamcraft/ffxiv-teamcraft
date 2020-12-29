@@ -1816,7 +1816,10 @@
     "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
     "Switch_to_winpcap": "Switch to winpcap mode",
-    "Disable_pcap": "Disable packet capture"
+    "Disable_pcap": "Disable packet capture",
+    "Install_npcap": "Npcap is missing from your system",
+    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
+    "Install_npcap_button": "Install npcap and restart Teamcraft"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
