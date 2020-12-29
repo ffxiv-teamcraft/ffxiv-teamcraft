@@ -53,6 +53,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
     RouterModule,
     TutorialModule,
     ClipboardModule,
+    IpcPopupsModule,
 
     NzButtonModule,
     NzToolTipModule,

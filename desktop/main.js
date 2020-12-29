@@ -48,6 +48,9 @@ function handleSquirrelEvent() {
       if (!config.get('setup:noShortcut', false)) {
         spawnUpdate(['--createShortcut', exeName]);
       }
+      if (config.get('rawsock', false)) {
+        Machina.addMachinaFirewallRule();
+      }
       break;
     case '--squirrel-updated':
       // Optionally do things such as:
@@ -55,6 +58,9 @@ function handleSquirrelEvent() {
       // - Write to the registry for things like file associations and
       //   explorer context menus
       // Install desktop and start menu shortcuts
+      if (config.get('rawsock', false)) {
+        Machina.addMachinaFirewallRule();
+      }
       if (!config.get('setup:noShortcut', false)) {
         spawnUpdate(['--createShortcut', exeName]);
       }
@@ -266,16 +272,10 @@ function startMachina() {
         }
       };
       if (isDev) {
-        win.webContents.send('installing-npcap', true);
-        ipcMain.once('app-ready', () => {
-          win.webContents.send('installing-npcap', true);
-        });
+        Machina.sendWhenReady(win, 'installing-npcap', true);
         ChildProcess.exec(`"${path.join(__dirname, './npcap-1.10.exe')}"`, postInstallCallback);
       } else {
-        win.webContents.send('installing-npcap', true);
-        ipcMain.once('app-ready', () => {
-          win.webContents.send('installing-npcap', true);
-        });
+        Machina.sendWhenReady(win, 'installing-npcap', true);
         ChildProcess.exec(`"${path.join(app.getAppPath(), '../../resources/MachinaWrapper/', 'npcap-1.10.exe')}"`, postInstallCallback);
       }
     } else {
@@ -564,15 +564,6 @@ function forEachOverlay(cb) {
     });
 }
 
-function broadcast(eventName, data) {
-  if (win) {
-    win.webContents.send(eventName, data);
-  }
-  forEachOverlay(overlay => {
-    overlay.webContents.send(eventName, data);
-  });
-}
-
 function setProxy({ rule, pac, bypass }) {
   const ses = win.webContents.session;
   ses.setProxy({
@@ -598,8 +589,24 @@ ipcMain.on('toggle-machina', (event, enabled) => {
   }
 });
 
+ipcMain.on('machina:firewall:set-rule', (event) => {
+  Machina.addMachinaFirewallRule();
+  event.sender.send('machina:firewall:rule-set', true);
+});
+
 ipcMain.on('toggle-machina:get', (event) => {
   event.sender.send('toggle-machina:value', config.get('machina'));
+});
+
+ipcMain.on('rawsock', (event, enabled) => {
+  config.set('rawsock', enabled);
+  event.sender.send('rawsock:value', enabled);
+  Machina.stop();
+  startMachina();
+});
+
+ipcMain.on('rawsock:get', (event) => {
+  event.sender.send('rawsock:value', config.get('rawsock'));
 });
 
 ipcMain.on('proxy-rule', (event, value) => {

@@ -4,14 +4,15 @@ import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
 import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay } from 'rxjs/operators';
+import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
 import * as pcap from '../../model/pcap';
 import { PlayerSpawn } from '../../model/pcap';
-import { environment } from '../../../environments/environment';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
+import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
+import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -193,14 +194,6 @@ export class IpcService {
 
   public send(channel: string, data?: any): void {
     if (this.ready) {
-      if (!environment.production) {
-        try {
-          this.canBeCloned(data);
-        } catch (e) {
-          console.error(`[DEV MODE ONLY] IPC Message sent on ${channel} will not work with Electron > 8`);
-          console.error(data);
-        }
-      }
       return this._ipc.send(channel, data);
     }
   }
@@ -234,15 +227,53 @@ export class IpcService {
       this.router.navigate(url.split('/'));
     });
     this.on('fishing-state', (event, data) => this.fishingState$.next(data));
-    this.on('installing-npcap', () => {
-      setTimeout(() => {
-        this.dialog.create({
-          nzClosable: false,
-          nzFooter: null,
-          nzTitle: this.translate.instant('SETTINGS.Installing_npcap'),
-          nzContent: this.translate.instant('SETTINGS.Installing_npcap_description')
+    this.on('install-npcap', () => {
+      this.translate.get('PACKET_CAPTURE.Install_npcap')
+        .pipe(
+          first(),
+          switchMap(title => {
+            return this.dialog.create({
+              nzFooter: null,
+              nzTitle: title,
+              nzContent: NpcapInstallPopupComponent
+            }).afterClose;
+          })
+        )
+        .subscribe(res => {
+          switch (res) {
+            case 'winpcap':
+              this.send('rawsock', false);
+              break;
+            case 'disable':
+              this.send('toggle-machina', false);
+              this.machinaToggle = false;
+              break;
+          }
         });
-      }, 1000);
+    });
+    this.on('rawsock-needs-admin', () => {
+      this.translate.get('PACKET_CAPTURE.Rawsock_needs_admin')
+        .pipe(
+          first(),
+          switchMap(title => {
+            return this.dialog.create({
+              nzFooter: null,
+              nzTitle: title,
+              nzContent: RawsockAdminErrorPopupComponent
+            }).afterClose;
+          })
+        )
+        .subscribe(res => {
+          switch (res) {
+            case 'winpcap':
+              this.send('rawsock', false);
+              break;
+            case 'disable':
+              this.send('toggle-machina', false);
+              this.machinaToggle = false;
+              break;
+          }
+        });
     });
     // If we don't get a ping for an entire minute, something is wrong.
     this.packets$.pipe(
@@ -255,34 +286,6 @@ export class IpcService {
       });
     });
     this.handleOverlayChange();
-  }
-
-  private canBeCloned(val: any): boolean {
-    if (Object(val) !== val) // Primitive value
-      return true;
-    switch ({}.toString.call(val).slice(8, -1)) { // Class
-      case 'Boolean':
-      case 'Number':
-      case 'String':
-      case 'Date':
-      case 'RegExp':
-      case 'Blob':
-      case 'FileList':
-      case 'ImageData':
-      case 'ImageBitmap':
-      case 'ArrayBuffer':
-        return true;
-      case 'Array':
-      case 'Object':
-        return Object.keys(val).every(prop => this.canBeCloned(val[prop]));
-      case 'Map':
-        return [...val.keys()].every(this.canBeCloned)
-          && [...val.values()].every(this.canBeCloned);
-      case 'Set':
-        return [...val.keys()].every(this.canBeCloned);
-      default:
-        throw new Error(`${JSON.stringify(val)} cannot be cloned`);
-    }
   }
 
   private handleOverlayChange(): void {

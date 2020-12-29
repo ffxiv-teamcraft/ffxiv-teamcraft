@@ -118,6 +118,7 @@
     "electron-config": "^2.0.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
+    "is-elevated": "^3.0.0",
     "electron-squirrel-startup": "^1.0.0",
     "fs-extra": "^7.0.1",
     "jwt-decode": "^2.2.0",

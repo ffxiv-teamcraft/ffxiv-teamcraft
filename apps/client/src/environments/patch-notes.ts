@@ -14,4 +14,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Performance Improvements
 
-* **lodestone:** better cache models optimization to avoid reaching quota.`;
+* **lodestone:** better cache models optimization to avoid reaching quota.`;
