@@ -443,8 +443,8 @@
     "Metrics_capture_folder": "Папка логов с метрикой",
     "Maximum_vendor_price": "Максимальная цена продавца",
     "Maximum_vendor_price_explain": "Максимальная цена товара для фильтра раскладки CAN_BE_BOUGHT (0 = без максимальной цены)",
-    "Winpcap_flag": "Use winpcap for packet capture",
-    "Winpcap_details": "Make sure you have winpcap installed or install it from this link: ",
+    "Rawsock_flag": "Use RawSocket for packet capture",
+    "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -1813,8 +1813,10 @@
     "Possible_missing_firewall_rule": "Захват пакетов работает некорректно",
     "Possible_missing_firewall_rule_description": "Teamcraft видит только некоторые пакеты и не содержит тех, которые связаны с инвентарем, параметрами, одеждой и т.д., это может быть вызвано отсутствием правила брандмауэра на вашем компьютере.",
     "Possible_missing_firewall_rule_check": "Если это сообщение не исчезает после телепорта в новую область, отсутствует правило брандмауэра или захват пакетов вообще не работает по другой причине (если это так, перейдите на канал #troubleshooting на сервере Teamcraft Discord).",
-    "Firewall_rule_set": "Правило брандмауэра применено, теперь ваш инвентарь должен быть обнаружен правильно.",
-    "Add_firewall_rule": "Добавить правило брандмауэра"
+    "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
+    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
+    "Switch_to_winpcap": "Switch to winpcap mode",
+    "Disable_pcap": "Disable packet capture"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Предлагается изменить регион на {{region}}",
