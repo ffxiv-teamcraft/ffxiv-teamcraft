@@ -211,7 +211,9 @@ export class IpcService {
       const durationSeconds = (Date.now() - this.start) / 1000;
       console.log('Packets per second: ', Math.floor(this.totalPacketsHandled * 10 / durationSeconds) / 10);
     };
-    this.send('app-ready', true);
+    if (window.location.href.indexOf('?overlay') === -1) {
+      this.send('app-ready', true);
+    }
     this.on('toggle-machina:value', (event, value) => {
       this.machinaToggle = value;
     });

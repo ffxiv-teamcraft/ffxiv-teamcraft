@@ -555,10 +555,7 @@ function setProxy({ rule, pac, bypass }) {
   });
 }
 
-ipcMain.on('app-ready', (event) => {
-  if (options.nativeDecorator) {
-    event.sender.send('window-decorator', false);
-  }
+ipcMain.once('app-ready', () => {
   if (config.get('machina') === true) {
     startMachina();
   }

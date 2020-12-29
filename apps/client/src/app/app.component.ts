@@ -78,8 +78,6 @@ export class AppComponent implements OnInit {
     return window.location.href.indexOf('?overlay') > -1;
   }
 
-  public windowDecorator = false;
-
   public overlayOpacity = 1;
 
   collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
@@ -378,9 +376,6 @@ export class AppComponent implements OnInit {
         this.tutorialService.reset();
         this.seoService.resetConfig();
         this.ipc.send('navigated', event.url);
-        this.ipc.on('window-decorator', (e, value) => {
-          this.windowDecorator = value;
-        });
         if (this.overlay) {
           this.ipc.on(`overlay:${this.ipc.overlayUri}:opacity`, (e, value) => {
             this.overlayOpacity = value;
