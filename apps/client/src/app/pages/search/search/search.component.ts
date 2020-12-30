@@ -529,6 +529,7 @@ export class SearchComponent implements OnInit {
           formArray: 'stats',
           name: fieldName,
           entryName: entry.name,
+          canExclude: true,
           value: {
             min: (+entry.min * valueMultiplier),
             max: (+entry.max * valueMultiplier)
@@ -543,6 +544,7 @@ export class SearchComponent implements OnInit {
           formArray: 'bonuses',
           name: `Bonuses.${entry.name}.Max`,
           entryName: entry.name,
+          canExclude: true,
           value: {
             min: entry.min,
             max: entry.max

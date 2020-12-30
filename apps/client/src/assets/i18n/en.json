@@ -1778,6 +1778,8 @@
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
     "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
+    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
@@ -1817,7 +1819,7 @@
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
     "Switch_to_winpcap": "Switch to winpcap mode",
     "Disable_pcap": "Disable packet capture",
-    "Install_npcap":  "Npcap is missing from your system",
+    "Install_npcap": "Npcap is missing from your system",
     "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Install npcap and restart Teamcraft"
   },

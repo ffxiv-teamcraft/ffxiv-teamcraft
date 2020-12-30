@@ -178,18 +178,27 @@ export class DataService {
       })
       .map(f => {
         if (f.minMax) {
-          return [
-            {
-              column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
+          if (f.canExclude && f.value.min < 0) {
+            return [
+              {
+                column: f.name,
+                operator: '!'
+              }
+            ]
+          } else {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          }
         } else if (f.array) {
           return [
             {
