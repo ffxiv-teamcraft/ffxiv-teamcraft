@@ -28,7 +28,8 @@
   <nz-form-label nzFor="early-alarm">{{'Early_by' | translate}}</nz-form-label>
   <nz-select (ngModelChange)="setHoursBefore($event)" [ngModel]="settings.alarmHoursBefore" class="select-box"
              id="early-alarm">
-    <nz-option *ngFor="let value of [0,0.5,1,2,5]" [nzLabel]="value" [nzValue]="value">
+    <nz-option *ngFor="let value of [-1,-0.5,0,0.5,1,2,5]" [nzLabel]="value" [nzValue]="value">
     </nz-option>
   </nz-select>
+  <i>{{'ALARMS.Early_by_tip' | translate}}</i>
 </div>

@@ -180,6 +180,7 @@
     "Alarms_created": "{{amount}} alarms created",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
+    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
     "Delete_group": "Delete group",
