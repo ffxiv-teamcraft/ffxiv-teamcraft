@@ -143,6 +143,10 @@
                       <div>{{jobId | jobAbbr | i18n}}</div>
                     </div>
                   </nz-option>
+
+                  <nz-option *ngFor="let category of availableJobCategories" [nzLabel]="category | jobCategoryName | i18n"
+                             [nzValue]="1000 + category">
+                  </nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>

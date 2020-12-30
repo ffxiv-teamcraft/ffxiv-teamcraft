@@ -115,6 +115,8 @@ export class SearchComponent implements OnInit {
 
   availableJobs = [];
 
+  availableJobCategories = [30, 31, 32, 33];
+
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
   autocomplete$: Observable<string[]> = combineLatest([this.query$, this.searchType$]).pipe(
@@ -465,7 +467,11 @@ export class SearchComponent implements OnInit {
     formRawValue.jobCategories = filters
       .filter(f => f.name.startsWith('ClassJobCategory'))
       .map(f => {
-        return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
+        if (f.name.endsWith('.ID')) {
+          return f.value + 1000;
+        } else {
+          return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
+        }
       });
     return formRawValue;
   }
@@ -574,10 +580,18 @@ export class SearchComponent implements OnInit {
     }
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
-          return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
-          };
+          if (jobId > 1000) {
+            //This is a category, not a jobId
+            return {
+              name: `ClassJobCategory.ID`,
+              value: jobId - 1000
+            };
+          } else {
+            return {
+              name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+              value: 1
+            };
+          }
         })
       );
     }
