@@ -63,6 +63,7 @@ import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { RequirementsExtractor } from './data/extractor/requirements-extractor';
+import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -121,7 +122,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),
     LazyScrollModule,
-    SimulatorModule
+    SimulatorModule,
+    CompanyWorkshopTreeModule
   ],
   providers: [
     ...DATA_EXTRACTORS,
