@@ -48,6 +48,15 @@ export class AlarmsEffects {
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
   );
 
+  @Effect({ dispatch: false })
+  deleteAllAlarms$ = this.actions$.pipe(
+    ofType(AlarmsActionTypes.DeleteAllAlarms),
+    withLatestFrom(this.alarmsFacade.allAlarms$),
+    switchMap(([, alarms]) => {
+      return this.alarmsService.deleteAll(alarms);
+    })
+  );
+
   @Effect()
   loadAlarmGroup$ = this.actions$.pipe(
     ofType<LoadAlarmGroup>(AlarmsActionTypes.LoadAlarmGroup),

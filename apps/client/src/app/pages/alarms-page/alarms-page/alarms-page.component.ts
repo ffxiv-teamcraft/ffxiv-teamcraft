@@ -96,6 +96,10 @@ export class AlarmsPageComponent implements OnInit {
     });
   }
 
+  deleteAllAlarms(): void {
+    this.alarmsFacade.deleteAllAlarms();
+  }
+
   toggleCollapse(): void {
     this.expanded = !this.expanded;
   }

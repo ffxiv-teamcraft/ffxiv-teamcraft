@@ -19,7 +19,8 @@ export enum AlarmsActionTypes {
   AssignGroupToAlarm = '[Alarms] Assign Group To Alarm',
 
   LoadAlarmGroup = '[Alarms] Load external alarm group',
-  AlarmGroupLoaded = '[Alarms] External alarm group Loaded'
+  AlarmGroupLoaded = '[Alarms] External alarm group Loaded',
+  DeleteAllAlarms = '[Alarms] Delete all alarms',
 }
 
 export class LoadAlarms implements Action {
@@ -94,6 +95,9 @@ export class AssignGroupToAlarm implements Action {
   }
 }
 
+export class DeleteAllAlarms implements Action {
+  readonly type = AlarmsActionTypes.DeleteAllAlarms;
+}
 export class LoadAlarmGroup implements Action {
   readonly type = AlarmsActionTypes.LoadAlarmGroup;
 

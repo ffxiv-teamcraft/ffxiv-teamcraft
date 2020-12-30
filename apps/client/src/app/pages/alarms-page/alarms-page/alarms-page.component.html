@@ -25,6 +25,14 @@
                 nzType="primary">
           <i nz-icon nzType="sliders"></i>
         </button>
+        <button (nzOnConfirm)="deleteAllAlarms()"
+                nz-button
+                nz-popconfirm [nzPopconfirmTitle]="'Confirm' | translate"
+                nz-tooltip nzShape="circle"
+                nzTooltipTitle="{{'ALARMS.Delete_all' | translate}}"
+                nzType="danger">
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
       </div>
       <div class="spacer"></div>
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
@@ -334,7 +342,8 @@
              nzTheme="outline"></i>
           <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-          <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon" nz-tooltip
+          <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon"
+               nz-tooltip
                src="./assets/icons/hookset/{{row.alarm.hookset}}.png">
           <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
                class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">

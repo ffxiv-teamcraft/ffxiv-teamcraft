@@ -198,6 +198,7 @@
     "Group_link_copied": "Alarm group link copied",
     "Group_not_found": "Alarm group not found",
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Delete_all": "Delete all your alarms",
     "REALTIME": {
       "Reset_timers": "Reset timers",
       "WEEKLY_RESETS": "Weeklies",

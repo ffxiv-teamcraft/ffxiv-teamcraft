@@ -9,6 +9,7 @@ import {
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
+  DeleteAllAlarms,
   LoadAlarmGroup,
   LoadAlarms,
   RemoveAlarm,
@@ -132,6 +133,10 @@ export class AlarmsFacade {
 
   public loadExternalGroup(key: string): void {
     this.store.dispatch(new LoadAlarmGroup(key));
+  }
+
+  public deleteAllAlarms(): void {
+    this.store.dispatch(new DeleteAllAlarms());
   }
 
   /**
