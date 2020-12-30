@@ -39,6 +39,7 @@ import { InventorySynthesisPopupComponent } from './inventory-synthesis-popup/in
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CommissionsModule } from '../commissions/commissions.module';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
+import { InventoryCleanupPopupComponent } from './inventory-cleanup-popup/inventory-cleanup-popup.component';
 
 const routes: Routes = [
   {
@@ -95,7 +96,8 @@ const routes: Routes = [
     InventoryViewComponent,
     TotalPanelPricePopupComponent,
     ListContributionsComponent,
-    InventorySynthesisPopupComponent
+    InventorySynthesisPopupComponent,
+    InventoryCleanupPopupComponent
   ]
 })
 export class ListDetailsModule {

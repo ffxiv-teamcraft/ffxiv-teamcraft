@@ -132,6 +132,11 @@
                     nz-button nz-tooltip nzShape="circle">
               <i nz-icon nzType="reconciliation" nzTheme="outline"></i>
             </button>
+            <button (click)="openInventoryCleanupPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_cleanup' | translate"
+                    *ngIf="platform.isDesktop()"
+                    nz-button nz-tooltip nzShape="circle">
+              <i nz-icon nzType="clear" nzTheme="outline"></i>
+            </button>
             <button (click)="openInventoryPopup(list)" [nzTooltipTitle]="'LIST_DETAILS.Inventory_breakdown' | translate"
                     nz-button nz-tooltip nzShape="circle"
                     nzType="primary">

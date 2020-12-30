@@ -669,6 +669,8 @@
     "Split_list": "Split this list",
     "Create_commission": "Create a commission for this list",
     "Commission_list": "Commission list",
+    "Inventory_cleanup": "Inventory cleanup",
+    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",

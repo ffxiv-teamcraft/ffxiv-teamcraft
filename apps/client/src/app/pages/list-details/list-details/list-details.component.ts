@@ -44,6 +44,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
+import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -417,6 +418,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_synthesis'),
       nzFooter: null,
       nzContent: InventorySynthesisPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openInventoryCleanupPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Inventory_cleanup'),
+      nzFooter: null,
+      nzContent: InventoryCleanupPopupComponent,
       nzComponentParams: { list: list }
     });
   }

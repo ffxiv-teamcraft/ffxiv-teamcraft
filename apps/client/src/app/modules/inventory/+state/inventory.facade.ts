@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-
 import { select, Store } from '@ngrx/store';
-
 import { InventoryPartialState } from './inventory.reducer';
 import { inventoryQuery } from './inventory.selectors';
 import { LoadInventory, ResetInventory, UpdateInventory } from './inventory.actions';

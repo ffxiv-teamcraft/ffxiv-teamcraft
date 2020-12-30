@@ -57,8 +57,8 @@ export class UserInventory extends DataModel {
 
   lastZone: number;
 
-  get trackItemsOnSale():boolean{
-    return localStorage.getItem('trackItemsOnSale') === 'true'
+  get trackItemsOnSale(): boolean {
+    return localStorage.getItem('trackItemsOnSale') === 'true';
   }
 
   getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
@@ -245,6 +245,15 @@ export class UserInventory extends DataModel {
           .map(key => container[key]);
       })
     );
+  }
+
+  getFromContainers(...containers: ContainerType[]): InventoryItem[] {
+    return containers.reduce((acc, container) => {
+      return [
+        ...acc,
+        ...Object.values(this.items[container])
+      ];
+    }, []);
   }
 
   clone(): UserInventory {
