@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CompanyWorkshopTreePopupComponent } from './company-workshop-tree-popup/company-workshop-tree-popup.component';
-import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
@@ -11,13 +10,11 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 
 
-
 @NgModule({
   declarations: [CompanyWorkshopTreePopupComponent, CompanyWorkshopTreeButtonComponent],
   exports: [CompanyWorkshopTreeButtonComponent],
   imports: [
     CommonModule,
-    NzTreeViewModule,
     NzButtonModule,
     NzToolTipModule,
     TranslateModule,
@@ -26,4 +23,5 @@ import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
     NzModalModule
   ]
 })
-export class CompanyWorkshopTreeModule { }
+export class CompanyWorkshopTreeModule {
+}
