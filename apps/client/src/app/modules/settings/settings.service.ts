@@ -5,6 +5,7 @@ import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
 import { map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
+import { Language } from '../../core/data/language';
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +84,14 @@ export class SettingsService {
 
   public set configurationPanelExpanded(expanded: boolean) {
     this.setSetting('simulation:configuration:expanded', expanded.toString());
+  }
+
+  public get searchLanguage(): Language {
+    return this.getSetting('search:language', null) as Language;
+  }
+
+  public set searchLanguage(lang: Language) {
+    this.setSetting('search:language', lang.toString());
   }
 
   public get detailedSimulatorActions(): boolean {

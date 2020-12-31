@@ -33,6 +33,7 @@ import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
+import { Language } from '../data/language';
 
 @Injectable()
 export class DataService {
@@ -49,6 +50,8 @@ export class DataService {
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
+  public searchLang = this.translate.currentLang;
+
   constructor(private http: HttpClient,
               private i18n: I18nToolsService,
               private settings: SettingsService,
@@ -59,9 +62,12 @@ export class DataService {
               private l12n: LocalizedDataService) {
   }
 
+  public setSearchLang(lang: Language): void {
+    this.searchLang = lang;
+  }
+
   private get isCompatible() {
-    const lang = this.translate.currentLang;
-    return lang === 'ko' || lang === 'zh' && this.settings.region !== Region.China;
+    return this.searchLang === 'ko' || this.searchLang === 'zh' && this.settings.region !== Region.China;
   }
 
   private get baseUrl() {
@@ -184,7 +190,7 @@ export class DataService {
                 column: f.name,
                 operator: '!'
               }
-            ]
+            ];
           } else {
             return [
               {
@@ -260,7 +266,7 @@ export class DataService {
     );
 
     if (this.isCompatible) {
-      const ids = this.mapToItemIds(query, this.translate.currentLang as 'ko' | 'zh');
+      const ids = this.mapToItemIds(query, this.searchLang as 'ko' | 'zh');
       if (ids.length > 0) {
         results$ = this.xivapi.getList(
           XivapiEndpoint.Item,
@@ -418,15 +424,15 @@ export class DataService {
    * @returns {Observable<ItemData[]>}
    */
   public searchGathering(name: string): Observable<any[]> {
-    let lang = this.translate.currentLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1;
+    let lang = this.searchLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.searchLang.toLowerCase()) > -1;
     if (isKoOrZh) {
       if (name.length > 0) {
         lang = 'en';
       } else {
         return of([]);
       }
-    } else if (name.length < 3 && (this.translate.currentLang !== 'ja' && name.length === 0)) {
+    } else if (name.length < 3 && (this.searchLang !== 'ja' && name.length === 0)) {
       return of([]);
     }
 
@@ -437,7 +443,7 @@ export class DataService {
 
     // If the lang is korean, handle it properly to map to item ids.
     if (isKoOrZh) {
-      const ids = this.mapToItemIds(name, this.translate.currentLang as 'ko' | 'zh');
+      const ids = this.mapToItemIds(name, this.searchLang as 'ko' | 'zh');
       params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
     } else {
       params = params.set('text', name);
@@ -498,7 +504,7 @@ export class DataService {
   }
 
   getSearchLang(): string {
-    const lang = this.translate.currentLang;
+    const lang = this.searchLang;
     if (lang === 'zh' && !this.isCompatible) {
       return 'chs';
     } else if (lang === 'ko' && !this.isCompatible) {

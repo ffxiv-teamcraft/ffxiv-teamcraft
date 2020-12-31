@@ -3,7 +3,7 @@
     <ng-container *ngIf="false | ifMobile: true">
       <ng-container *ngTemplateOutlet="searchType"></ng-container>
     </ng-container>
-    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
+    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzAddOnAfter]="languageSelector | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input #searchInput (input)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
              (keydown.enter)="query$.next(searchInput.value)"
              (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
@@ -67,6 +67,13 @@
                    [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
                    [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
+      </nz-select>
+    </ng-template>
+    <ng-template #languageSelector>
+      <nz-select (ngModelChange)="searchLang$.next($event);settings.searchLanguage = $event" [ngModel]="searchLang$ | async"
+                 class="search-language">
+        <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                   [nzValue]="locale"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -196,7 +203,8 @@
                                    (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'stats', i)"
                                    (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, -1, maxStatFilter, 'stats', i)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number mouseWheel [nzDisabled]="statMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                  <nz-input-number mouseWheel [nzDisabled]="statMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0"
+                                   formControlName="max"
                                    (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'stats', i)"
                                    (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'stats', i)"></nz-input-number>
                 </nz-input-group>
@@ -226,7 +234,8 @@
                                      (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'bonuses', i)"
                                      (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, -1, maxStatFilter, 'bonuses', i)"></nz-input-number>
                     <input disabled nz-input placeholder="-" type="text">
-                    <nz-input-number mouseWheel  [nzDisabled]="bonusMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                    <nz-input-number mouseWheel [nzDisabled]="bonusMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0"
+                                     formControlName="max"
                                      (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'bonuses', i)"
                                      (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'bonuses', i)"></nz-input-number>
                   </nz-input-group>
@@ -423,7 +432,8 @@
       <div *ngIf="selection.length > 0" class="selection">
         <nz-divider nzOrientation="left" [nzText]="'Selection' | translate"></nz-divider>
         <div nz-row>
-          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="selection-row">
+          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
+               class="selection-row">
             <div (nzOnConfirm)="removeSelection(item, results)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
               <i nz-icon nzType="close"></i>
             </div>
