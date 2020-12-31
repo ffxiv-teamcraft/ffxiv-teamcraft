@@ -17,6 +17,7 @@ import { Team } from '../../../model/team/team';
 import { MergeListsPopupComponent } from '../merge-lists-popup/merge-lists-popup.component';
 import { ListImportPopupComponent } from '../list-import-popup/list-import-popup.component';
 import { AuthFacade } from '../../../+state/auth.facade';
+import { DeleteMultipleListsPopupComponent } from '../delete-multiple-lists-popup/delete-multiple-lists-popup.component';
 
 @Component({
   selector: 'app-lists',
@@ -182,6 +183,14 @@ export class ListsComponent {
 
   loadArchivedLists(): void {
     this.listsFacade.loadArchivedLists();
+  }
+
+  deleteMultipleLists(): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LISTS.Delete_multiple_lists'),
+      nzContent: DeleteMultipleListsPopupComponent,
+      nzFooter: null
+    });
   }
 
   createWorkshop(): void {

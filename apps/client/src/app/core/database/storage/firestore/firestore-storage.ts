@@ -207,6 +207,14 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     );
   }
 
+  removeMany(keys: string[], uriParams?: any) {
+    const batch = this.firestore.firestore.batch();
+    keys.forEach(key => {
+      batch.delete(this.firestore.collection(this.getBaseUri(uriParams)).doc(key).ref);
+    });
+    return from(batch.commit());
+  }
+
   updateIndexes(rows: T[]): Observable<void> {
     this.recordOperation('write', rows.map(row => row.$key));
     const batch = this.firestore.firestore.batch();

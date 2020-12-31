@@ -531,6 +531,7 @@
     "Delete_after_merge": "Delete original lists after merge",
     "Favorite_lists": "Favorite lists",
     "No_favorite_lists": "You have no favorite lists",
+    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "Import list from external website",
       "Paste_link_step_title": "Paste your link to the external list",

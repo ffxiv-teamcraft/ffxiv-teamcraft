@@ -5,6 +5,7 @@ import {
   ConvertLists,
   CreateList,
   DeleteList,
+  DeleteLists,
   ListDetailsLoaded,
   ListsActionTypes,
   LoadListDetails,
@@ -343,6 +344,14 @@ export class ListsEffects {
         return EMPTY;
       }
       return this.listService.remove(action.key);
+    })
+  );
+
+  @Effect({ dispatch: false })
+  deleteListsFromDatabase$ = this.actions$.pipe(
+    ofType<DeleteLists>(ListsActionTypes.DeleteLists),
+    switchMap(({ keys }) => {
+      return this.listService.removeMany(keys);
     })
   );
 
