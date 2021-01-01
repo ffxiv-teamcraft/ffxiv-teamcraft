@@ -411,6 +411,7 @@ export class AlarmsFacade {
   public generateAlarms(node: GatheringNode): Alarm[] {
     const alarm: Partial<Alarm> = {
       itemId: node.matchingItemId,
+      nodeId: node.id,
       duration: node.duration ? node.duration / 60 : 0,
       mapId: node.map,
       zoneId: node.zoneId,

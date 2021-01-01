@@ -9,7 +9,7 @@ import { AlarmGroup } from '../../../../core/alarms/alarm-group';
   styleUrls: ['./alarm-button.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AlarmButtonComponent {
+export class AlarmButtonComponent implements OnInit {
 
   @Input()
   alarm: Alarm;
@@ -22,4 +22,8 @@ export class AlarmButtonComponent {
 
   @Output()
   addAlarmWithGroup = new EventEmitter<{ alarm: Alarm, group: AlarmGroup }>();
+
+  ngOnInit(): void {
+    console.log(this.alarm);
+  }
 }

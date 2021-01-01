@@ -28,7 +28,7 @@ export class AlarmsExtractor extends AbstractExtractor<Alarm[]> {
 
   protected doExtract(item: Item, itemData: ItemData, row: ListRow): Alarm[] {
     const nodes = this.gatheringNodesService.getItemNodes(item.id);
-    return nodes.map(node => this.alarmsFacade.generateAlarms(node)).flat();
+    return nodes.map(node => node.limited ? this.alarmsFacade.generateAlarms(node) : []).flat();
   }
 
 }

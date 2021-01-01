@@ -5,12 +5,13 @@ import { DataType } from '../data-type';
 import { HtmlToolsService } from '../../../../core/tools/html-tools.service';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 import { Item } from '../../../../model/garland-tools/item';
-import { gatheringItems } from '../../../../core/data/sources/gathering-items';
 import { GatheringNodesService } from '../../../../core/data/gathering-nodes.service';
+import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
 
-  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService, private gatheringNodesService: GatheringNodesService) {
+  constructor(protected gt: GarlandToolsService, private htmlTools: HtmlToolsService, private gatheringNodesService: GatheringNodesService,
+              private lazyData: LazyDataService) {
     super(gt);
   }
 
@@ -27,13 +28,13 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): GatheredBy {
-    const gatheringItem = Object.keys(gatheringItems).map(key => gatheringItems[key]).find(g => g.itemId === item.id);
+    const gatheringItem = Object.values<any>(this.lazyData.data.gatheringItems).find(g => g.itemId === item.id);
+    const nodes = this.gatheringNodesService.getItemNodes(item.id, true);
     return {
-      icon: '',
       stars_tooltip: gatheringItem ? this.htmlTools.generateStars(gatheringItem.stars) : '',
       level: gatheringItem ? gatheringItem.level : 999,
-      nodes: this.gatheringNodesService.getItemNodes(item.id, true),
-      type: -1
+      nodes: nodes,
+      type: nodes.length > 0 ? nodes[0].type : -1
     };
   }
 

@@ -70,7 +70,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
-    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService],
+    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataService],
     multi: true
   },
   { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },

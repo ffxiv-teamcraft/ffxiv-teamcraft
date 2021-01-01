@@ -228,7 +228,6 @@ export class CustomItemsComponent {
 
   private beforeSave(item: CustomItem): CustomItem {
     if (getItemSource(item, DataType.GATHERED_BY, true).type !== undefined) {
-      getItemSource(item, DataType.GATHERED_BY, true).icon = NodeTypeIconPipe.icons[getItemSource(item, DataType.GATHERED_BY, true).type];
       getItemSource(item, DataType.GATHERED_BY, true).nodes[0].zoneId = getItemSource(item, DataType.GATHERED_BY, true).nodes[0].map;
       getItemSource(item, DataType.GATHERED_BY, true).nodes[0].level = getItemSource(item, DataType.GATHERED_BY, true).level;
     }
