@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
-import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
 import { MapService } from '../../../modules/map/map.service';
@@ -12,6 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { TranslateService } from '@ngx-translate/core';
+import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { GatheringNode } from '../../../core/data/model/gathering-node';
 
 @Component({
   selector: 'app-gathering-location',
@@ -23,7 +24,7 @@ export class GatheringLocationComponent {
 
   query$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  results$: Observable<any[]>;
+  results$: Observable<{ originalItemId: number, node: GatheringNode, alarms: Alarm[] }[]>;
 
   alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
 
@@ -37,9 +38,10 @@ export class GatheringLocationComponent {
 
   compactDisplay = false;
 
-  constructor(private dataService: DataService, private bell: BellNodesService, private alarmsFacade: AlarmsFacade,
+  constructor(private dataService: DataService, private alarmsFacade: AlarmsFacade,
               private mapService: MapService, private l12n: LocalizedDataService, private gt: GarlandToolsService,
-              private router: Router, private route: ActivatedRoute, public translate: TranslateService) {
+              private router: Router, private route: ActivatedRoute, public translate: TranslateService,
+              private gatheringNodesService: GatheringNodesService) {
 
     this.compactDisplay = localStorage.getItem('gathering-location:compact') === 'true';
 
@@ -56,8 +58,16 @@ export class GatheringLocationComponent {
       }),
       filter(query => query.length > 0),
       mergeMap(query => this.dataService.searchGathering(query)),
-      map(items => {
-        return this.bell.getAllNodes(...items);
+      map(itemIds => {
+        return itemIds.map(itemId => {
+          return this.gatheringNodesService.getItemNodes(itemId).map(node => {
+            return {
+              originalItemId: itemId,
+              node: node,
+              alarms: this.alarmsFacade.generateAlarms(node)
+            };
+          });
+        }).flat();
       }),
       tap(() => this.loading = false)
     );
@@ -68,43 +78,27 @@ export class GatheringLocationComponent {
       });
   }
 
-  public getNodeSpawns(node: any): string {
-    if (node.spawnTimes === undefined || node.spawnTimes.length === 0) {
-      return '';
+  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+    if (group) {
+      alarm.groupId = group.$key;
     }
-    return node.spawnTimes.reduce((res, current) => `${res}${current}:00 - ${(current + node.uptime / 60) % 24}:00, `, ``).slice(0, -2);
+    this.alarmsFacade.addAlarms(alarm);
   }
 
-  public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {
-    this.mapService.getMapById(alarm.mapId)
-      .pipe(
-        map((mapData) => {
-          if (mapData !== undefined) {
-            return this.mapService.getNearestAetheryte(mapData, alarm.coords);
-          } else {
-            return undefined;
-          }
-        }),
-        map(aetheryte => {
-          if (aetheryte !== undefined && aetheryte.aethernetCoords !== undefined) {
-            alarm.aetheryte = aetheryte;
-          }
-          return alarm;
-        })
-      ).subscribe((result: Alarm) => {
-      if (group) {
-        alarm.groupId = group.$key;
-      }
-      this.alarmsFacade.addAlarms(result);
-    });
-  }
-
-  public canCreateAlarm(alarms: Alarm[], generatedAlarm: Partial<Alarm>): boolean {
+  public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {
     return alarms.find(alarm => {
-      return generatedAlarm.itemId === alarm.itemId
-        && generatedAlarm.zoneId === alarm.zoneId
-        && generatedAlarm.type === alarm.type
-        && generatedAlarm.fishEyes === alarm.fishEyes;
+      return node.matchingItemId === alarm.itemId
+        && node.zoneId === alarm.zoneId
+        && node.type === alarm.type;
+    }) === undefined;
+  }
+
+  public canCreateAlarm(alarms: Alarm[], alarm: Alarm): boolean {
+    return alarms.find(a => {
+      return alarm.itemId === a.itemId
+        && alarm.zoneId === a.zoneId
+        && alarm.type === a.type
+        && alarm.fishEyes === a.fishEyes;
     }) === undefined;
   }
 

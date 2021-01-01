@@ -30,6 +30,8 @@ import { NextSpawn } from '../next-spawn';
 import { weatherIndex } from '../../data/sources/weather-index';
 import { mapIds } from '../../data/sources/map-ids';
 import { LazyDataService } from '../../data/lazy-data.service';
+import { GatheringNode } from '../../data/model/gathering-node';
+import { MapService } from '../../../modules/map/map.service';
 
 @Injectable({
   providedIn: 'root'
@@ -88,7 +90,7 @@ export class AlarmsFacade {
 
   constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataService) {
+              private lazyData: LazyDataService, private mapService: MapService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -404,6 +406,43 @@ export class AlarmsFacade {
       return [alarm, { ...alarmWithFishEyesEnabled, fishEyes: true }];
     }
     return [alarm];
+  }
+
+  public generateAlarms(node: GatheringNode): Alarm[] {
+    const alarm: Partial<Alarm> = {
+      itemId: node.matchingItemId,
+      duration: node.duration ? node.duration / 60 : 0,
+      mapId: node.map,
+      zoneId: node.zoneId,
+      type: node.type,
+      coords: {
+        x: node.x,
+        y: node.y,
+        z: node.z || 0
+      },
+      spawns: node.spawns,
+      folklore: node.folklore,
+      reduction: node.isReduction || false,
+      ephemeral: node.ephemeral || false,
+      nodeContent: node.items,
+      weathers: node.weathers || [],
+      weathersFrom: node.weathersFrom || [],
+      snagging: node.snagging || false,
+      predators: node.predators || [],
+      note: '',
+      enabled: true
+    };
+    if (node.gig) {
+      alarm.gig = node.gig;
+    }
+    if (node.baits) {
+      alarm.baits = node.baits;
+    }
+    if (node.hookset) {
+      alarm.hookset = node.hookset;
+    }
+    alarm.aetheryte = this.mapService.getNearestAetheryte(this.lazyData.data.maps[alarm.mapId], alarm.coords);
+    return this.applyFishEyes(alarm) as Alarm[];
   }
 
 }

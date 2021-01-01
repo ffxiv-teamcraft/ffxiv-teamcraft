@@ -1,0 +1,77 @@
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { Alarm } from '../../../core/alarms/alarm';
+import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { TranslateService } from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-node-details',
+  templateUrl: './node-details.component.html',
+  styleUrls: ['./node-details.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class NodeDetailsComponent implements OnInit {
+
+  alarmsLoaded$: Observable<boolean> = this.alarmsFacade.loaded$;
+
+  alarms$: Observable<Alarm[]> = this.alarmsFacade.allAlarms$;
+
+  alarmGroups$: Observable<AlarmGroup[]> = this.alarmsFacade.allGroups$;
+
+  @Input()
+  showAlarmsIntegration = false;
+
+  private _node: GatheringNode;
+
+  @Input()
+  set node(node: GatheringNode) {
+    this._node = node;
+    if (node.limited) {
+      this.alarms = this.alarmsFacade.generateAlarms(node);
+    }
+  }
+
+  get node(): GatheringNode {
+    return this._node;
+  }
+
+  public alarms: Alarm[] = [];
+
+  constructor(private alarmsFacade: AlarmsFacade, public translate: TranslateService) {
+  }
+
+  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+    if (group) {
+      alarm.groupId = group.$key;
+    }
+    this.alarmsFacade.addAlarms(alarm);
+  }
+
+  public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
+    return this.alarms$.pipe(
+      map(alarms => {
+        return !alarms.some(alarm => {
+          return alarm.itemId === generatedAlarm.itemId
+            && alarm.zoneId === generatedAlarm.zoneId
+            && alarm.fishEyes === generatedAlarm.fishEyes;
+        });
+      })
+    );
+  }
+
+  getDespawnTime(time: number, uptime: number): string {
+    const res = (time + uptime / 60) % 24;
+    return res.toString();
+  }
+
+  trackByAlarm(index: number, alarm: Partial<Alarm>): string {
+    return `${JSON.stringify(alarm.spawns)}:${JSON.stringify(alarm.weathers)}`;
+  }
+
+  ngOnInit(): void {
+  }
+
+}

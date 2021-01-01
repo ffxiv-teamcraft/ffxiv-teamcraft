@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { combineLatest, Observable, of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,23 +11,23 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { SeoService } from '../../../core/seo/seo.service';
 import { map, shareReplay, switchMap } from 'rxjs/operators';
 import { SeoMetaConfig } from '../../../core/seo/seo-meta-config';
-import { gatheringItems } from '../../../core/data/sources/gathering-items';
 import { I18nName } from '../../../model/common/i18n-name';
-import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { MapService } from '../../../modules/map/map.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
+import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 
 @Component({
   selector: 'app-node',
   templateUrl: './node.component.html',
-  styleUrls: ['./node.component.less']
+  styleUrls: ['./node.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NodeComponent extends TeamcraftPageComponent {
 
-  public xivapiNode$: Observable<any>;
+  public nodeData$: Observable<any>;
 
   public bonuses$: Observable<any[]>;
 
@@ -43,7 +43,7 @@ export class NodeComponent extends TeamcraftPageComponent {
               private gt: DataService, private l12n: LocalizedDataService,
               private i18n: I18nToolsService, private translate: TranslateService,
               private router: Router, private lazyData: LazyDataService,
-              private gtBell: BellNodesService, private alarmsFacade: AlarmsFacade,
+              private alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private mapService: MapService, public settings: SettingsService, seo: SeoService) {
     super(seo);
 
@@ -51,21 +51,40 @@ export class NodeComponent extends TeamcraftPageComponent {
       map(params => params.get('nodeId'))
     );
 
-    this.xivapiNode$ = nodeId$.pipe(
+    this.nodeData$ = nodeId$.pipe(
       switchMap(id => {
         return this.xivapi.get(XivapiEndpoint.GatheringPointBase, +id);
       }),
-      map(base => {
-        base.mappyData = this.lazyData.data.nodes[base.ID];
-        base.gtNode = this.gtBell.getNode(base.ID);
-        if (base.gtNode) {
-          base.gtNode.items.forEach(item => {
-            if (base.mappyData.items.indexOf(item.id) === -1) {
-              base.mappyData.items.push(item.id);
-            }
-          });
+      map(node => {
+        node.mappyData = this.lazyData.data.nodes[node.ID];
+        node.mappyData.items = node.mappyData.items.map(item => {
+          return {
+            item: item,
+            gatheringItem: this.getGatheringItem(item),
+            alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
+              ...node.mappyData,
+              matchingItemId: item,
+              matchingItemIsHidden: false
+            }) : []
+          };
+        });
+        if (node.mappyData.hiddenItems) {
+          node.mappyData.items.push(...node.mappyData.hiddenItems.map(item => {
+            return {
+              item: item,
+              gatheringItem: this.getGatheringItem(item),
+              alarms: node.mappyData.limited ? this.alarmsFacade.generateAlarms({
+                ...node.mappyData,
+                matchingItemId: item,
+                matchingItemIsHidden: true
+              }) : []
+            };
+          }));
         }
-        return base;
+        if (node.mappyData.limited) {
+          node.alarms = this.alarmsFacade.generateAlarms(node.mappyData);
+        }
+        return node;
       }),
       switchMap(base => {
         if (!(base.GameContentLinks && base.GameContentLinks.GatheringPoint)) {
@@ -85,7 +104,7 @@ export class NodeComponent extends TeamcraftPageComponent {
       shareReplay(1)
     );
 
-    this.bonuses$ = this.xivapiNode$.pipe(
+    this.bonuses$ = this.nodeData$.pipe(
       map(node => {
         const bonuses = [];
         (node.GatheringPoints || []).forEach(point => {
@@ -102,25 +121,17 @@ export class NodeComponent extends TeamcraftPageComponent {
               condition.zh = zhRow.condition.zh;
             }
 
-            /*
-            const koRow = this.lazyData.data.koGatheringBonuses[bonus.ID];
-            if (koRow && koRow.value === bonus.BonusValue && koRow.conditionValue === bonus.ConditionValue) {
-              bonusType.ko = koRow.bonus.ko;
-              condition.ko = koRow.condition.ko;
-            }
-            */
-
             bonuses.push({
               bonus: this.bonusToText(bonusType, bonus.BonusValue),
               condition: this.bonusToText(condition, bonus.ConditionValue)
             });
-          })
+          });
         });
         return bonuses;
       })
     );
 
-    this.links$ = this.xivapiNode$.pipe(
+    this.links$ = this.nodeData$.pipe(
       map((xivapiNode) => {
         return [
           {
@@ -135,7 +146,7 @@ export class NodeComponent extends TeamcraftPageComponent {
 
   public bonusToText(entry: I18nName, value: number): I18nName {
     return Object.entries(entry).reduce((obj, [key, text]) => {
-      obj[key] = text.replace('<Value>IntegerParameter(1)</Value>', value)
+      obj[key] = text.replace('<Value>IntegerParameter(1)</Value>', value);
       return obj;
     }, { en: '', fr: '', de: '', ja: '' });
   }
@@ -151,88 +162,24 @@ export class NodeComponent extends TeamcraftPageComponent {
     );
   }
 
-  public generateAlarm(xivapiNode: any, itemId?: number): Partial<Alarm> {
-    const nodes = this.gtBell.getAllNodes({ obj: { i: itemId || xivapiNode.gtNode.items[0].id } });
-    const node = nodes.find(n => n.nodeId === xivapiNode.ID);
-    const alarm: any = {
-      itemId: node.itemId,
-      icon: node.icon,
-      duration: node.uptime / 60,
-      mapId: node.mapId,
-      zoneId: node.zoneid,
-      type: node.type,
-      coords: {
-        x: node.x,
-        y: node.y
-      },
-      spawns: node.spawnTimes,
-      folklore: node.folklore,
-      reduction: node.reduction,
-      ephemeral: node.ephemeral,
-      nodeContent: node.items,
-      weathers: node.weathers,
-      weathersFrom: node.weathersFrom,
-      snagging: node.snagging,
-      predators: node.predators || []
-    };
-    if (node.slot) {
-      alarm.slot = +node.slot;
+  public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
+    if (group) {
+      alarm.groupId = group.$key;
     }
-    if (node.gig) {
-      alarm.gig = node.gig;
-    }
-    if (node.baits) {
-      alarm.baits = node.baits;
-    }
-    return alarm;
-  }
-
-  public addAlarm(alarm: Partial<Alarm>, group?: AlarmGroup): void {
-    this.mapService.getMapById(alarm.mapId)
-      .pipe(
-        map((mapData) => {
-          if (mapData !== undefined) {
-            return this.mapService.getNearestAetheryte(mapData, alarm.coords);
-          } else {
-            return undefined;
-          }
-        }),
-        map(aetheryte => {
-          if (aetheryte !== undefined) {
-            alarm.aetheryte = aetheryte;
-          }
-          return alarm;
-        })
-      ).subscribe((result: Alarm) => {
-      if (group) {
-        alarm.groupId = group.$key;
-      }
-      this.alarmsFacade.addAlarms(result);
-    });
+    this.alarmsFacade.addAlarms(alarm);
   }
 
   public getGatheringItem(itemId: number): any {
-    return Object.keys(gatheringItems)
-      .map(key => gatheringItems[key])
+    return Object.keys(this.lazyData.data.gatheringItems)
+      .map(key => this.lazyData.data.gatheringItems[key])
       .find(item => item.itemId === itemId);
-  }
-
-  public getSlot(itemId: number, data: any): string {
-    if (data === undefined || data.gtNode === undefined) {
-      return null;
-    }
-    const entry = data.gtNode.items.find(i => i.id === itemId);
-    if (entry) {
-      return entry.slot;
-    }
-    return null;
   }
 
   private getDescription(node: any): string {
     return `Lvl ${node.GatheringLevel} ${this.i18n.getName(this.l12n.xivapiToI18n(node.GatheringType, 'gatheringTypes'))}`;
   }
 
-  private getName(node: any): string {
+  public getName(node: any): string {
     if (!node) return '';
 
     if (node.GatheringPoints && node.GatheringPoints.length) {
@@ -246,7 +193,7 @@ export class NodeComponent extends TeamcraftPageComponent {
   }
 
   protected getSeoMeta(): Observable<Partial<SeoMetaConfig>> {
-    return this.xivapiNode$.pipe(
+    return this.nodeData$.pipe(
       map(node => {
         return {
           title: this.getName(node),

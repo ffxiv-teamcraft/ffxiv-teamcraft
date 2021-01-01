@@ -13,96 +13,11 @@
             </div>
           </ng-template>
           <ng-template #description>
-            <div fxLayout="column" fxLayoutGap="5px">
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                <span>{{node.mapid | mapName | i18n}} - lvl {{node.level}}
-                  <app-db-button *ngIf="node.id" [id]="node.id" type="node"></app-db-button></span>
-                <nz-tag *ngIf="node.limitType !== undefined" nzColor="#108ee9">
-                  {{node.limitType | i18n}}
-                </nz-tag>
-                <nz-tag *ngIf="node.hidden" nzColor="#108ee9">
-                  {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
-                </nz-tag>
-                <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
-                     src="./assets/icons/status/snagging.png">
-              </div>
-              <div fxLayout="row wrap" fxLayoutGap="5px">
-                <span *ngIf="node.slot !== undefined">Slot {{node.slot}}</span>
-                <span *ngIf="node.time !== undefined">
-                  <i *ngFor="let time of node.time">
-                    {{time}}:00 - {{getDespawnTime(time, node.uptime)}}:00
-                  </i>
-                </span>
-              </div>
-              <ng-container *ngFor="let generatedAlarm of generateAlarms(node); trackBy: trackByAlarm">
-                <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
-                  <div *ngIf="alarm.remainingTime"
-                       [class.played-timer]="alarm.played"
-                       [class.spawned-timer]="alarm.spawned"
-                       fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
-                    <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" [src]="762 | statusIcon | xivapiIcon"
-                         alt="" class="fish-eyes-alarm">
-                    <ng-container *ngIf="showAlarmsIntegration">
-                      <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
-                           fxLayoutGap="5px">
-                        <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
-                                nzSize="small">
-                          <i nz-icon nzType="clock-circle"> </i>
-                        </button>
-                        <ng-container *ngIf="alarmGroups$ | async as groups">
-                          <ng-container *ngIf="groups.length > 0">
-                            <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
-                                    nz-dropdown
-                                    nzShape="circle" nzSize="small">
-                              <i nz-icon nzType="folder-open"></i>
-                            </button>
-                            <nz-dropdown-menu #menu="nzDropdownMenu">
-                              <ul nz-menu>
-                                <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                                  {{group.name}}
-                                </li>
-                              </ul>
-                            </nz-dropdown-menu>
-                          </ng-container>
-                        </ng-container>
-                      </div>
-                      <ng-template #alarmCreated>
-                        {{'ALARMS.Alarm_already_created' | translate}}
-                      </ng-template>
-                    </ng-container>
-                  </div>
-                </ng-container>
-              </ng-container>
-              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-                  <div *ngFor="let weather of node.weathersFrom">
-                    <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
-                         nz-tooltip>
-                  </div>
-                </div>
-                <div *ngIf="node.weathersFrom !== undefined">
-                  <i nz-icon nzType="right" theme="outline"></i>
-                </div>
-                <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-                  <div *ngFor="let weather of node.weathers">
-                    <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
-                         nz-tooltip>
-                  </div>
-                </div>
-              </div>
-              <div class="node-map">
-                <app-map [mapId]="node.mapid"
-                         *ngIf="node.coords"
-                         [markers]="[
-                         {
-                          x:node.coords[0],
-                          y: node.coords[1],
-                          iconImg: node.type | nodeTypeIcon: (node.time || []).length > 0,
-                          iconType: 'img'
-                         }
-                         ]"></app-map>
-              </div>
+            <app-node-details [node]="node" [showAlarmsIntegration]="showAlarmsIntegration"></app-node-details>
+            <div class="node-map">
+              <app-map [mapId]="node.map"
+                       *ngIf="node"
+                       [markers]="[{x:node.x,y: node.y,iconImg: node.type | nodeTypeIcon: node.limited,iconType: 'img'}]"></app-map>
             </div>
           </ng-template>
           <ng-template #openMap>
@@ -122,7 +37,7 @@
               <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                    fxLayoutGap="5px">
                 <div>{{predator.amount}}x</div>
-                <app-item-icon [appFishTooltip]="predator.id" [icon]="predator.icon" [itemId]="predator.id"
+                <app-item-icon [appFishTooltip]="predator.id" [itemId]="predator.id"
                                [tooltipDisabled]="true" [width]="32"></app-item-icon>
               </div>
             </div>

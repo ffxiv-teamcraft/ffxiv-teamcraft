@@ -1,3 +1,10 @@
+:host ::ng-deep {
+  .ant-card-body {
+    flex: 1 1 auto;
+  }
+}
+
+
 .search-box {
   width: 80%;
   margin: auto;
@@ -29,6 +36,8 @@
     max-width: 475px;
     margin: 4px;
     min-width: 250px;
+    display: flex;
+    flex-direction: column;
   }
 
   .ant-card-loading {

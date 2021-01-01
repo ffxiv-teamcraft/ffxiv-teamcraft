@@ -18,10 +18,8 @@ export class Alarm extends DataModel {
   itemId: number;
   // Use for custom alarms
   name?: string;
-  icon: number;
   spawns: number[];
   duration: number;
-  slot: number | string;
   zoneId: number;
   mapId: number;
   coords: Vector3;
@@ -41,18 +39,18 @@ export class Alarm extends DataModel {
   fishEyes?: boolean;
 
   hookset?: string;
-  baits?: FishingBait[];
+  baits?: number[];
   gig?: string;
   weathers?: number[];
   weathersFrom?: number[];
   snagging?: boolean;
-  predators?: { id: number, icon: number, amount: number }[];
+  predators?: { id: number, amount: number }[];
 
   note: string;
 
   aetheryte: Aetheryte;
 
-  folklore?: CompactMasterbook;
+  folklore?: number;
 
   reduction?: boolean;
 

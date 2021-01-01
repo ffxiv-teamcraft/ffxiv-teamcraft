@@ -152,10 +152,10 @@ export class LayoutRowFilter {
       'IS_MASTERCRAFT'));
 
   static IS_FOLKLORE = LayoutRowFilter.IS_GATHERING
-    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.limitType !== undefined) !== undefined, 'IS_FOLKLORE'));
+    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.legendary !== undefined) !== undefined, 'IS_FOLKLORE'));
 
   static IS_TIMED = new LayoutRowFilter(row => {
-    const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.time !== undefined).length > 0;
+    const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.spawns !== undefined).length > 0;
     const isTimedReduction = getItemSource(row, DataType.REDUCED_FROM)
       .filter(reduction => {
         return (<any>window).gt.bell.nodes.find(node => {

@@ -201,8 +201,7 @@
                               [mapId]="row.alarm.mapId"
                               [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
-            <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
-                 class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
+            <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
             <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/fish_eyes.png">
             <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
@@ -345,8 +344,7 @@
           <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon"
                nz-tooltip
                src="./assets/icons/hookset/{{row.alarm.hookset}}.png">
-          <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
-               class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
+          <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
           <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>

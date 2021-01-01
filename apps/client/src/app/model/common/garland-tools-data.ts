@@ -1,5 +1,7 @@
 import { JobCategory } from '../garland-tools/job-category';
 import { Venture } from '../garland-tools/venture';
+import { GtFish } from './gt-fish';
+import { GtNode } from './gt-node';
 
 export interface GarlandToolsData {
   patch: any;
@@ -25,8 +27,8 @@ export interface GarlandToolsData {
   jobCategories: JobCategory[];
   ventureIndex: Venture[];
   bell: {
-    nodes: any[];
-    fish: any[];
-    bait: any[];
+    nodes: GtNode[];
+    fish: GtFish[];
+    bait: Record<string, { name: string, id: number, icon: number }>;
   };
 }

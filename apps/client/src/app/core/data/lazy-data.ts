@@ -32,7 +32,7 @@ export interface LazyData {
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
-  gatheringPointBaseToNodeId: any;
+  gatheringPointToNodeId: any;
   hqFlags: any;
   hunts: any;
   hwdInspections: any;
@@ -73,6 +73,8 @@ export interface LazyData {
   recipes: any;
   reduction: any;
   shops: any;
+  spearFishingLog: any;
+  spearFishingNodes: any;
   stackSizes: any;
   statuses: any;
   territoryLayers: any;

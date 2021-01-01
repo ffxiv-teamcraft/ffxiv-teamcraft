@@ -1,4 +1,4 @@
-export const spearFishingLog = [
+[
   {
     "id": 0,
     "itemId": 20000,
@@ -2519,4 +2519,4 @@ export const spearFishingLog = [
       "y": 29.08740234375
     }
   }
-];
+]

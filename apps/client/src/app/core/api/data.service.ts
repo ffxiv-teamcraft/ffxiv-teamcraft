@@ -421,9 +421,9 @@ export class DataService {
    * Will return an observable of empty array if name is shorter than 3 characters.
    *
    * @param {string} name
-   * @returns {Observable<ItemData[]>}
+   * @returns {Observable<number[]>}
    */
-  public searchGathering(name: string): Observable<any[]> {
+  public searchGathering(name: string): Observable<number[]> {
     let lang = this.searchLang;
     const isKoOrZh = ['ko', 'zh'].indexOf(this.searchLang.toLowerCase()) > -1;
     if (isKoOrZh) {
@@ -450,26 +450,8 @@ export class DataService {
     }
 
     return this.getGarlandSearch(params).pipe(
-      switchMap(results => {
-        const itemIds = (results || []).map(item => item.obj.i);
-        if (itemIds.length === 0) {
-          return of([]);
-        }
-        return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${itemIds.join(',')}`)
-          .pipe(
-            map(items => {
-              if (!(items instanceof Array)) {
-                items = [{ obj: items }];
-              }
-              return items.map(itemData => {
-                const itemPartial = results.find(res => res.obj.i === itemData.obj.item.id);
-                return {
-                  ...itemPartial,
-                  nodes: itemData.obj.item.nodes
-                };
-              });
-            })
-          );
+      map(results => {
+        return (results || []).map(item => item.obj.i);
       })
     );
   }

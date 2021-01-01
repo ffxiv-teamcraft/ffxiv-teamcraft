@@ -9,7 +9,7 @@ import { FishingBait } from '../../list/model/fishing-bait';
 export class FishingBaitComponent {
 
   @Input()
-  baits: FishingBait[];
+  baits: number[];
 
   @Input()
   flex = 'column';

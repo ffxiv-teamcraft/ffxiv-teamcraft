@@ -11,6 +11,7 @@
   "FC_name": "Free Company Name",
   "Saving_in_database": "Saving data on server",
   "See_on_map": "See on map",
+  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Edit amount",
   "List_fork_in_progress": "Copying the list to your account...",
   "Network_error_logged_out": "A network error has been detected, you have been logged out. If this issue persists, please contact Miu on the discord server.",
@@ -824,6 +825,7 @@
     "Spawned_for": "Will despawn in {{timer}}",
     "Will_spawn_in": "Will spawn in {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
+    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",

@@ -26,6 +26,7 @@ import { MapModule } from '../map/map.module';
 import { TooltipModule } from '../tooltip/tooltip.module';
 import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NodeDetailsModule } from '../node-details/node-details.module';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     FlexLayoutModule,
 
     TranslateModule,
-    AntdSharedModule
+    AntdSharedModule,
+    NodeDetailsModule
   ],
   declarations: [
     GatheredByComponent,

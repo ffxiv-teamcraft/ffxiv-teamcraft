@@ -1,4 +1,4 @@
-Fish,Bait,Start,End,Transition,Weather,"Predator, Amount",Tug,Hookset,Gathering,Snagging?,Fish Eyes?,ID
+Location,Bait,Start,End,Transition,Weather,"Predator, Amount",Tug,Hookset,Gathering,Snagging?,Fish Eyes?,ID
 Limsa Lominsa Upper Decks,,,,,,,,,,,,10101
 Merlthor Goby,Lugworm,,,,,,Light,,,,,4
 Lominsan Anchovy,Lugworm,,,,,,Light,,,,,5
@@ -1817,7 +1817,7 @@ Carpenter Crab,Normal Gig Head,,,,,,,,,,,702
 Tithe Collector,Large Gig Head,,,,,,,,,,,710
 Ivory Sole,Normal Gig Head,,,,,,,,,,,719
 Ashfish,Small Gig Head,,,,,,,,,,,731
-Node #480,,,,,,,,,,,,100191
+The Eastern Ruby Sea,,,,,,,,,,,,100191
 Horned Turban,Small Gig Head,,,,,,,,,,,668
 Swordtip,Normal Gig Head,,,,,,,,,,,673
 Spiny Lobster,Normal Gig Head,,,,,,,,,,,703
@@ -1825,7 +1825,7 @@ Bashful Batfish,Small Gig Head,,,,,,,,,,,711
 Mitsukuri Shark,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,704
 Thousandfang,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,721
 Tiny Tatsunoko,Large Gig Head,,,,,"Bashful Batfish, 7",,,,,,734
-Node #481,,,,,,,,,,,,100291
+The Sunken Junk's South Side,,,,,,,,,,,,100291
 Doman Bubble Eye,Small Gig Head,,,,,,,,,,,705
 Dragon Squeaker,Small Gig Head,,,,,,,,,,,706
 Snipe Eel,Large Gig Head,,,,,,,,,,,713
@@ -1833,21 +1833,21 @@ Ichthyosaur,Large Gig Head,,,,,,,,,,,722
 Cherubfish,Normal Gig Head,,,,,"Ichthyosaur, 7",,,,,,714
 Fangshi,Normal Gig Head,,,,,"Ichthyosaur, 7",,,,,,724
 Dafangshi,Small Gig Head,,,,,"Ichthyosaur, 7",,,,,,
-Node #482,,,,,,,,,,,,100391
+Azim Khaat Southern Lakebed,,,,,,,,,,,,100391
 Dusk Herald,Normal Gig Head,,,,,,,,,,,715
 Glaring Perch,Large Gig Head,,,,,,,,,,,716
 Fickle Krait,Normal Gig Head,,,,,,,,,,,726
 Flamefish,Large Gig Head,,,,,,,,,,,725
 Eternal Eye,Small Gig Head,,,,,"Glaring Perch, 7",,,,,,727
 Soul of the Stallion,Small Gig Head,,,,,"Glaring Perch, 7",,,,,,728
-Node #483,,,,,,,,,,,,90491
+Loch Seld Deep Lakebed,,,,,,,,,,,,90491
 Salt Cellar,Small Gig Head,,,,,,,,,,,708
 Steel Loach,Small Gig Head,,,,,,,,,,,718
 Abalathian Pipira,Normal Gig Head,,,,,,,,,,,717
 Ivory Sole,Normal Gig Head,,,,,,,,,,,719
 Silken Sunfish,Large Gig Head,,,,,"Mercenary Crab, 7",,,,,,732
 Mosasaur,Large Gig Head,,,,,"Mercenary Crab, 7",,,,,,733
-Node #530,,,,,,,,,,,,100192
+Kobayashi Maru's Northern Wake,,,,,,,,,,,,100192
 Corpse-eater,Large Gig Head,,,,,,,,,,,665
 Eastern Sea Pickle,Small Gig Head,,,,,,,,,,,659
 Horned Turban,Small Gig Head,,,,,,,,,,,668
@@ -1893,6 +1893,7 @@ Abyssal Snail,Robber Ball,,,,,,,,,,,3024
 Water Ball,Marble Nymph,,,,,,,,,,,3023
 Platinum Guppy,Baitbugs,,,,Clear Skies,,,Precision,,,,3029
 Misty Killifish,Robber Ball,,,,,,,,,,,3030
+Moonlight Guppy,Baitbugs,6,8,Clear Skies,Fair Skies,,,,,,,3344
 The Source,,,,,,,,,,,,120303
 Hard Candy,Robber Ball,,,,,,,,,,,3022
 Clean Saucer,Baitbugs,,,,,,,,,,,3025
@@ -1945,6 +1946,7 @@ Skulleater,Marble Nymph,,,,,,,,,,,3035
 Watts Trout,Fruit Worm,,,,,,,,,,,3037
 Noble's Fan,Robber Ball,,,,,,,Precision,,,,3040
 White Oil Perch,Metal Spinner,,,,,,,Powerful,,,,3188
+Steel Fan,Marble Nymph,,,Clouds,Fog,,,,,,,3345
 Lower Watts River,,,,,,,,,,,,120403
 Skulleater,Metal Spinner,,,,,,,,,,,3035
 Toffee Snail,Metal Spinner,,,,,,,,,,,3036
@@ -1979,6 +1981,7 @@ Spearhead Squid,Short Bill Minnow,,,,,,,,,,,3054
 Kholusian Wrasse,Spearhead Squid,,,,,,,Powerful,,,,3051
 Weedy Seadragon,Short Bill Minnow,,,,,,,,,,,3052
 Henodus,Spearhead Squid,16,0,,"Clouds, Fog",,,Powerful,,,,3053
+Henodus Grandis,Spearhead Squid,22,0,,Clouds,,,,,,,3346
 The River of Sand,,,,,,,,,,,,120501
 Shadow Crab,Desert Dessert Frog,,,,,,,,,,,3055
 Desert Dustfish,Desert Dessert Frog,,,,,,,,,,,3056
@@ -2023,6 +2026,7 @@ Grey Skipper,Fruit Worm,,,,,,,,,,,3067
 Blood-eyed Frog,Marble Nymph,,,,,,,Precision,,,,3069
 Spotted Ctenopoma,Robber Ball,,,,,,,Precision,,,,3075
 Cerulean Loach,Fruit Worm,,,,,,,,,,,3076
+Sunken Tome,Marble Nymph,12,16,Fair Skies,Thunderstorms,,,,,,,3347
 The Jealous One,,,,,,,,,,,,120604
 Spotted Blue-eye,Marble Nymph,,,,,,,Precision,,,,3065
 Grey Skipper,Fruit Worm,,,,,,,,,,,3067
@@ -2093,6 +2097,7 @@ Darkroot,Robber Ball,,,,,,,,,,,3082
 Yellow Pipira,Fruit Worm,,,,,,,,,,,3083
 Oathfish,Baitbugs,,,,,,,Powerful,,,,3084
 Diamond Pipira,Robber Ball,12,20,,,,,Powerful,,,,3089
+Pearl Pipira,Diamond Pipira,16,20,Fair Skies,Fog,,,,,,,3348
 The Lozatl,,,,,,,,,,,,120703
 Clawbow,Fruit Worm,,,,,,,,,,,3079
 Black Tri-star,Robber Ball,,,,,,,Precision,,,,3080
@@ -2149,6 +2154,7 @@ Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
 Caliban,Moyebi Shrimp,,,,,,,,,,,3096
 Ondobane,Short Bill Minnow,,,,,,,Powerful,,,,3100
 Stippled Eel,Short Bill Minnow,,,,,,,,,,,3101
+The Ondotaker,Squid Strip,8,10,Clear Skies,Clouds,,,Powerful,,,,3349
 Northwest Caliban Gorge,,,,,,,,,,,,120803
 Sycorax,Short Bill Minnow,,,,,,,,,1,,3093
 Stormfish,Moyebi Shrimp,,,,,,,,,,,3094
@@ -2185,21 +2191,21 @@ Sweetflesh Oyster,Short Bill Minnow,,,,,,,,,1,,3110
 Rainbow Shrimp,Short Bill Minnow,,,,,,,,,,,3111
 Predator,Squid Strip,,,,,,,,,,,3112
 Opal Shrimp,Squid Strip,18,20,,Clear Skies,,,Precision,,,,3308
-Node #645,,,,,,,,,,,,120391
+Eastern Isle of Ken,,,,,,,,,,,,120391
 Purple Ghost,Small Gig Head,,,,,,,,,,,3115
 Lakelouse,Normal Gig Head,,,,,,,,,,,3116
 Shade Gudgeon,Small Gig Head,,,,,,,,,,,3120
 Platinum Bream,Normal Gig Head,,,,,,,,,,,3122
 Little Bismarck,Large Gig Head,,,,,"Noblefish, 10",,,,,,3131
 Bothriolepis,Large Gig Head,,,,,"Noblefish, 10",,,,,,3132
-Node #646,,,,,,,,,,,,120691
+East Longmirror Lake,,,,,,,,,,,,120691
 Dandyfish,Small Gig Head,,,,,,,,,,,3147
 Paradise Crab,Small Gig Head,,,,,,,,,,,3152
 Ghoulfish,Large Gig Head,,,,,,,,,,,3156
 Blue Lightning,Large Gig Head,,,,,,,,,,,3161
 Blue Mountain Bubble,Normal Gig Head,,,,,"Sauldia Ruby, 10",,,,,,3163
 Elder Pixie,Normal Gig Head,,,,,"Sauldia Ruby, 10",,,,,,3164
-Node #647,,,,,,,,,,,,120791
+Deep Lake Tusi Mek'ta,,,,,,,,,,,,120791
 Gourmand Crab,Normal Gig Head,,,,,,,,,,,3168
 Diamondtongue,Large Gig Head,,,,,,,,,,,3170
 Megapiranha,Normal Gig Head,,,,,,,,,,,3173

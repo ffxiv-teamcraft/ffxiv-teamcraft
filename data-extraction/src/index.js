@@ -1,7 +1,7 @@
 const csv = require('csv-parser');
 const path = require('path');
 const fs = require('fs');
-const { map, switchMap, first, mergeMap } = require('rxjs/operators');
+const { map, switchMap, first, mergeMap, skip } = require('rxjs/operators');
 const { Subject, combineLatest, merge } = require('rxjs');
 const { aggregateAllPages, getAllPages, persistToJsonAsset, persistToTypescript, getAllEntries, get, gubalRequest } = require('./tools.js');
 
@@ -59,54 +59,19 @@ function done(operation) {
 
 fs.existsSync('output') || fs.mkdirSync('output');
 
-if (hasTodo('missingNodes', true)) {
-  const nodes = require(path.join(__dirname, '../../apps/client/src/assets/data/nodes.json'));
-  const itemNames = require(path.join(__dirname, '../../apps/client/src/assets/data/items.json'));
-  let count = 0;
-  const mapData = require('../../apps/client/src/assets/data/maps.json');
-  const places = require('../../apps/client/src/assets/data/places.json');
-  const data = {};
-  Object.values(nodes)
-    .filter(node => node.items.filter(i => i < 100000).length > 0 && node.x === undefined && node.map > 0)
-    .filter(node => node.items.map(item => itemNames[item.toString()].en).join(', ').indexOf('Skybuilders') === -1)
-    .forEach((node) => {
-      data[node.map] = [
-        ...(data[node.map] || []),
-        {
-          zoneId: node.zoneid,
-          items: node.items.map(item => itemNames[item.toString()].en).join(', '),
-          level: node.level,
-          limited: node.limited
-        }
-      ];
-      count++;
-    });
-  Object.keys(data)
-    .forEach((mapId) => {
-      console.log(`## ${places[mapData[mapId].placename_id].en}`);
-      data[mapId].forEach(node => {
-        console.log(` - [ ] Zone: ${places[node.zoneId].en}`);
-        console.log(`| Items: ${node.items}`);
-        console.log(`| Level: ${node.level}`);
-        console.log(`| Limited: ${node.limited}`);
-      });
-      console.log('\n');
-    });
-
-  console.log(`
-
-  **Total**: ${count}`);
-}
-
 if (hasTodo('mappy', true)) {
   // MapData extraction
   const mapData$ = get('https://xivapi.com/mappy/json');
+  const spearFishingItems = require('../../apps/client/src/assets/data/spear-fishing-nodes.json');
   const nodes$ = new Subject();
+  const gatheringPointToBaseId$ = new Subject();
 
   const gatheringItems$ = new Subject();
   const gatheringPoints$ = new Subject();
+  const gatheringItemPoints$ = new Subject();
   const gatheringItems = {};
   const gatheringPoints = {};
+  const gatheringItemPoints = {};
 
   getAllPages('https://xivapi.com/GatheringItem?columns=ID,GatheringItemLevel,IsHidden,Item').subscribe(page => {
     page.Results
@@ -115,7 +80,7 @@ if (hasTodo('mappy', true)) {
         gatheringItems[item.ID] = {
           level: item.GatheringItemLevel.GatheringItemLevel,
           stars: item.GatheringItemLevel.Stars,
-          itemId: item.Item,
+          itemId: item.Item.ID,
           hidden: item.IsHidden
         };
       });
@@ -124,7 +89,20 @@ if (hasTodo('mappy', true)) {
     gatheringItems$.next(gatheringItems);
   });
 
-  getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType').subscribe(page => {
+  getAllPages('https://xivapi.com/GatheringItemPoint?columns=ID,GatheringPointTargetID').subscribe(page => {
+    page.Results
+      .filter(item => item.GatheringPointTargetID)
+      .forEach(item => {
+        gatheringItemPoints[item.GatheringPointTargetID] = [
+          ...(gatheringItemPoints[item.GatheringPointTargetID] || []),
+          +item.ID.split('.')[0]
+        ];
+      });
+  }, null, () => {
+    gatheringItemPoints$.next(gatheringItemPoints);
+  });
+
+  getAllPages('https://xivapi.com/GatheringPoint?columns=ID,GatheringPointTransient,PlaceNameTargetID,TerritoryType.PlaceNameTargetID,TerritoryType.MapTargetID').subscribe(page => {
     page.Results
       .forEach(point => {
         if (point.PlaceNameTargetID === 0 && point.TerritoryType) {
@@ -141,9 +119,10 @@ if (hasTodo('mappy', true)) {
           gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
         }
         if (gatheringPoints[point.ID].ephemeral) {
-          let duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - point.GatheringPointTransient.EphemeralStartTime) / 100;
-          if (point.GatheringPointTransient.EphemeralEndTime < point.GatheringPointTransient.EphemeralStartTime) {
-            duration = Math.abs(point.GatheringPointTransient.EphemeralEndTime - 2400 - point.GatheringPointTransient.EphemeralStartTime) / 100;
+          const endTime = point.GatheringPointTransient.EphemeralEndTime || 24;
+          let duration = 60 * Math.abs(endTime - point.GatheringPointTransient.EphemeralStartTime) / 100;
+          if (endTime < point.GatheringPointTransient.EphemeralStartTime) {
+            duration = 60 * Math.abs(2400 - point.GatheringPointTransient.EphemeralStartTime + endTime) / 100;
           }
           gatheringPoints[point.ID].spawns = [point.GatheringPointTransient.EphemeralStartTime / 100];
           gatheringPoints[point.ID].duration = duration;
@@ -152,20 +131,26 @@ if (hasTodo('mappy', true)) {
             return point.GatheringPointTransient.GatheringRarePopTimeTable[`StartTime${index}`];
           }).filter(start => start < 65535).map(start => start / 100);
           gatheringPoints[point.ID].duration = point.GatheringPointTransient.GatheringRarePopTimeTable.DurationM0;
+          if (gatheringPoints[point.ID].duration === 160) {
+            gatheringPoints[point.ID].duration = 120;
+          }
+          if (gatheringPoints[point.ID].duration === 300) {
+            gatheringPoints[point.ID].duration = 240;
+          }
         }
       });
   }, null, () => {
     gatheringPoints$.next(gatheringPoints);
   });
 
-  combineLatest([gatheringItems$, gatheringPoints$]).pipe(
-    switchMap(([gatheringItems, gatheringPoints]) => {
-      return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
+  combineLatest([gatheringItems$, gatheringPoints$, gatheringItemPoints$]).pipe(
+    switchMap(([gatheringItems, gatheringPoints, gatheringItemPoints]) => {
+      return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0TargetID,Item1TargetID,Item2TargetID,Item3TargetID,Item4TargetID,Item5TargetID,Item6TargetID,Item7TargetID,IsLimited,GameContentLinks,GatheringLevel')
         .pipe(
-          map((page) => [page, gatheringItems, gatheringPoints])
+          map((page) => [page, gatheringItems, gatheringPoints, gatheringItemPoints])
         );
     })
-  ).subscribe(([page, items, gatheringPoints]) => {
+  ).subscribe(([page, items, gatheringPoints, gatheringItemPoints]) => {
     page.Results.forEach(node => {
       let linkedPoints = [];
       if (node.GameContentLinks.GatheringPoint) {
@@ -176,17 +161,25 @@ if (hasTodo('mappy', true)) {
       if (node.ID === 306) {
         point = gatheringPoints[31437];
       }
+      const hiddenItems = linkedPoints
+        .map(p => (gatheringItemPoints[p] || []))
+        .flat()
+        .filter(i => items[i].hidden)
+        .map(i => items[i].itemId);
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
-          .filter(i => node[`Item${i}`] > 0)
-          .map(i => node[`Item${i}`])
-          .filter(gatheringItemId => {
-            return items[gatheringItemId];
-          })
+          .filter(i => node[`Item${i}TargetID`] > 0)
+          .map(i => node[`Item${i}TargetID`])
           .map(gatheringItemId => {
-            return items[gatheringItemId].itemId;
-          }),
+            if (items[gatheringItemId]) {
+              return items[gatheringItemId].itemId;
+            } else {
+              const spearFishingItem = spearFishingItems.find(i => i.id === gatheringItemId);
+              return spearFishingItem && spearFishingItem.itemId;
+            }
+          })
+          .filter(itemId => !!itemId),
         limited: point && (point.legendary || point.ephemeral),
         level: node.GatheringLevel,
         type: node.GatheringTypeTargetID
@@ -197,6 +190,12 @@ if (hasTodo('mappy', true)) {
           ...point
         };
       }
+      if (hiddenItems.length > 0) {
+        nodes[node.ID] = {
+          ...nodes[node.ID],
+          hiddenItems
+        };
+      }
       if (linkedPoints.length > 0) {
         linkedPoints.forEach(point => {
           gatheringPointToBaseId[point] = node.ID;
@@ -205,11 +204,31 @@ if (hasTodo('mappy', true)) {
     });
     if (page.Pagination.Page === page.Pagination.PageTotal) {
       nodes$.next(nodes);
-      persistToJsonAsset('gathering-point-base-to-node-id', gatheringPointToBaseId);
+      persistToJsonAsset('gathering-point-to-node-id', gatheringPointToBaseId);
+      gatheringPointToBaseId$.next(gatheringPointToBaseId);
     }
   });
 
-  combineLatest([mapData$, nodes$])
+
+  combineLatest([
+    aggregateAllPages('https://xivapi.com/GatheringSubCategory?columns=ItemTargetID,GameContentLinks', null, 'GatheringSubCategory'),
+    gatheringPointToBaseId$,
+    nodes$.pipe(first())
+  ])
+    .subscribe(([GatheringSubCategories, pointToBaseId, nodes]) => {
+      GatheringSubCategories.forEach(subCategory => {
+        if (subCategory.GameContentLinks.GatheringPoint && subCategory.ItemTargetID > 0) {
+          subCategory.GameContentLinks.GatheringPoint.GatheringSubCategory
+            .forEach(point => {
+              nodes[pointToBaseId[point]].folklore = subCategory.ItemTargetID;
+            });
+        }
+      });
+      nodes$.next(nodes);
+    });
+
+
+  combineLatest([mapData$, nodes$.pipe(skip(1))])
     .subscribe(([mapData]) => {
       mapData
         .sort((a, b) => {
@@ -544,6 +563,9 @@ if (hasTodo('fishingLog')) {
             timed: fish.TimeRestricted,
             weathered: fish.WeatherRestricted
           };
+          if (fish.GatheringSubCategory) {
+            entry.folklore = fish.GatheringSubCategory.ItemTargetID;
+          }
           if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
             entry.recordType = {
               en: fish.FishingRecordType.Addon.Text_en,
@@ -552,7 +574,7 @@ if (hasTodo('fishingLog')) {
               fr: fish.FishingRecordType.Addon.Text_fr
             };
           }
-          fishParameter[fish.Item] = entry;
+          fishParameter[fish.ItemTargetID] = entry;
         });
       return fishParameter;
     })
@@ -577,6 +599,7 @@ if (hasTodo('fishingLog')) {
           mapId: spot.TerritoryType.Map.ID,
           placeId: spot.TerritoryType.PlaceName.ID,
           zoneId: spot.PlaceName.ID,
+          level: spot.GatheringLevel,
           coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
             x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
             y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
@@ -639,7 +662,7 @@ if (hasTodo('spearFishingLog')) {
           .filter(entry => entry.GatheringPointBase)
           .forEach(entry => {
             const entries = Object.keys(entry.GatheringPointBase)
-              .filter(key => /Item\d/.test(key))
+              .filter(key => /Item\dTargetID/.test(key))
               .filter(key => entry.GatheringPointBase[key] !== 0)
               .map(key => {
                 const c = entry.TerritoryType.Map.SizeFactor / 100.0;
@@ -658,7 +681,7 @@ if (hasTodo('spearFishingLog')) {
               });
             spearFishingLog.push(...entries);
           });
-        persistToTypescript('spear-fishing-log', 'spearFishingLog', spearFishingLog);
+        persistToJsonAsset('spear-fishing-log', spearFishingLog);
       });
 
       const spearFishingNodes = [];
@@ -701,7 +724,7 @@ if (hasTodo('spearFishingLog')) {
             }
             spearFishingNodes.push(entry);
           });
-        persistToTypescript('spear-fishing-nodes', 'spearFishingNodes', spearFishingNodes);
+        persistToJsonAsset('spear-fishing-nodes', spearFishingNodes);
         done('spearFishingLog');
       });
     });

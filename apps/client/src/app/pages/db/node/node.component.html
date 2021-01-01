@@ -1,4 +1,4 @@
-<ng-container *ngIf="xivapiNode$ | async as xivapiNode; else loader">
+<ng-container *ngIf="nodeData$ | async as nodeData; else loader">
   <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
     <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
          fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
@@ -6,17 +6,17 @@
            fxLayoutAlign="space-between" fxLayoutGap="10px">
         <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
           <img
-            [src]="(xivapiNode.IsLimited?xivapiNode.GatheringType.IconOff : xivapiNode.GatheringType.IconMain) | xivapiIcon"
+            [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
             class="img-icon" fxFlex="0 0 auto">
           <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
-            <h2 class="item-name">{{getName(xivapiNode)}}</h2>
+            <h2 class="item-name">{{getName(nodeData)}}</h2>
             <div class="item-kind">
-              Lvl {{xivapiNode.GatheringLevel}} <span
-              [innerHTML]="xivapiNode.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
+              Lvl {{nodeData.GatheringLevel}} <span
+              [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
             </div>
-            <div *ngIf="xivapiNode.GamePatch" class="patch">
-              {{xivapiNode.GamePatch | xivapiL12n: 'patchs' | i18n}}
-              <app-db-button [id]="xivapiNode.GamePatch.ID" type="patch"></app-db-button>
+            <div *ngIf="nodeData.GamePatch" class="patch">
+              {{nodeData.GamePatch | xivapiL12n: 'patchs' | i18n}}
+              <app-db-button [id]="nodeData.GamePatch.ID" type="patch"></app-db-button>
             </div>
           </div>
         </div>
@@ -33,21 +33,21 @@
     <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
       <div class="details-block">
         <div class="detail-name">{{'DB.Limited' | translate}}</div>
-        <div class="detail-value">{{(xivapiNode.IsLimited === 0 ? 'No' : 'Yes') | translate}}</div>
+        <div class="detail-value">{{(nodeData.mappyData.limited === 0 ? 'No' : 'Yes') | translate}}</div>
       </div>
-      <div *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode" class="details-block">
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
         <div class="detail-name">{{'DB.NODE.Spawn_duration' | translate}}</div>
-        <div class="detail-value">{{xivapiNode.gtNode.uptime / 60}}h</div>
+        <div class="detail-value">{{nodeData.mappyData.duration / 60}}h</div>
       </div>
-      <div *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode" class="details-block">
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
         <div class="detail-name">{{'DB.NODE.Spawns' | translate}}</div>
-        <div class="detail-value"><span *ngFor="let hour of xivapiNode.gtNode.time; let last = last">{{hour}}:00<span
+        <div class="detail-value"><span *ngFor="let hour of nodeData.mappyData.spawns; let last = last">{{hour}}:00<span
           *ngIf="!last">, </span></span></div>
       </div>
-      <div *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode" class="details-block">
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
         <div class="detail-value">
-          <ng-container>
-            <div *ngIf="(generateAlarm(xivapiNode) | alarmDisplay | async) as alarm"
+          <ng-container *ngFor="let alarmEntry of nodeData.alarms">
+            <div *ngIf="(alarmEntry | alarmDisplay | async) as alarm"
                  [class.played-timer]="alarm.played"
                  [class.spawned-timer]="alarm.spawned">
               {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
@@ -56,11 +56,11 @@
         </div>
       </div>
     </div>
-    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="xivapiNode.ID" type="node"></app-db-comments>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="nodeData.ID" type="node"></app-db-comments>
     <div>
       <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
     </div>
-    <div *ngIf="xivapiNode.mappyData as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+    <div *ngIf="nodeData.mappyData as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
       <nz-card *ngIf="data.zoneid" [nzTitle]="title"
                class="details-card"
                fxFlex="1 1 30%"
@@ -71,7 +71,7 @@
           </div>
         </ng-template>
         <app-map [mapId]="data.map"
-                 [markers]="[{x: data.x, y: data.y}]"></app-map>
+                 [markers]="[{x: data.x, y: data.y, iconType: 'img', iconImg: data.type | nodeTypeIcon:data.limited}]"></app-map>
       </nz-card>
       <nz-card *ngIf="data.items.length > 0" [nzTitle]="title"
                class="details-card"
@@ -91,58 +91,56 @@
                 [nzDescription]="description"
                 [nzTitle]="title">
                 <ng-template #description>
-                  <div *ngIf="getGatheringItem(item) as gatheringItem">
+                  <div *ngIf="item.gatheringItem as gatheringItem">
                     Lvl {{gatheringItem.level}} <span
                     *ngIf="gatheringItem.stars">{{gatheringItem.stars | ingameStars}}</span>
-                    <span *ngIf="getSlot(item, xivapiNode) as slot"> ({{'ALARMS.CUSTOM.Slot' | translate}} {{slot}}
-                      )</span>
                   </div>
                 </ng-template>
                 <ng-template #itemAvatar>
-                  <app-item-icon [icon]="item | lazyIcon" [itemId]="item"
-                                 [width]="32"></app-item-icon>
+                  <app-item-icon [itemId]="item.item" [width]="32"></app-item-icon>
                 </ng-template>
                 <ng-template #title>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <div [appItemRarity]="item">{{item | itemName | i18n}}</div>
-                    <nz-tag
-                      *ngIf="getGatheringItem(item)?.hidden">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
+                    <div [appItemRarity]="item">{{item.item | itemName | i18n}}</div>
+                    <nz-tag *ngIf="item.gatheringItem?.hidden"  nzColor="#108ee9">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
                   </div>
                 </ng-template>
                 <ng-template #more>
                   <div fxLayout="row" fxLayoutAlign="flex-start center">
-                    <div *ngIf="xivapiNode.IsLimited && xivapiNode.gtNode">
-                      <ng-container *ngIf="(generateAlarm(xivapiNode, item) | alarmDisplay | async) as alarm">
-                        <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
-                             fxLayoutGap="5px">
-                          <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
-                                  nzSize="small">
-                            <i nz-icon nzType="clock-circle"></i>
-                          </button>
-                          <ng-container *ngIf="alarmGroups$ | async as groups">
-                            <ng-container *ngIf="groups.length > 0">
-                              <button *ngIf="alarmsLoaded$ | async"  [nzDropdownMenu]="menu"
-                                      [nzPlacement]="'bottomCenter'" nz-button
-                                      nz-dropdown nzShape="circle" nzSize="small">
-                                <i nz-icon nzType="folder-open"></i>
-                              </button>
-                              <nz-dropdown-menu #menu="nzDropdownMenu">
-                                <ul nz-menu>
-                                  <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
-                                    {{group.name}}
-                                  </li>
-                                </ul>
-                              </nz-dropdown-menu>
+                    <div *ngIf="data.limited">
+                      <ng-container *ngFor="let alarmEntry of item.alarms">
+                        <ng-container *ngIf="(alarmEntry | alarmDisplay | async) as alarm">
+                          <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                               fxLayoutGap="5px">
+                            <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                                    nzSize="small">
+                              <i nz-icon nzType="clock-circle"></i>
+                            </button>
+                            <ng-container *ngIf="alarmGroups$ | async as groups">
+                              <ng-container *ngIf="groups.length > 0">
+                                <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu"
+                                        [nzPlacement]="'bottomCenter'" nz-button
+                                        nz-dropdown nzShape="circle" nzSize="small">
+                                  <i nz-icon nzType="folder-open"></i>
+                                </button>
+                                <nz-dropdown-menu #menu="nzDropdownMenu">
+                                  <ul nz-menu>
+                                    <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
+                                      {{group.name}}
+                                    </li>
+                                  </ul>
+                                </nz-dropdown-menu>
+                              </ng-container>
                             </ng-container>
-                          </ng-container>
-                        </div>
-                        <ng-template #alarmCreated>
-                          {{'ALARMS.Alarm_already_created' | translate}}
-                        </ng-template>
+                          </div>
+                          <ng-template #alarmCreated>
+                            {{'ALARMS.Alarm_already_created' | translate}}
+                          </ng-template>
+                        </ng-container>
                       </ng-container>
                     </div>
                     <nz-divider nzType="vertical"></nz-divider>
-                    <app-db-button [id]="item" type="item"></app-db-button>
+                    <app-db-button [id]="item.item" type="item"></app-db-button>
                   </div>
                 </ng-template>
               </nz-list-item-meta>
@@ -178,7 +176,7 @@
       </ng-container>
     </div>
   </div>
-  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="xivapiNode.ID" type="node"></app-db-comments>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="nodeData.ID" type="node"></app-db-comments>
 </ng-container>
 <ng-template #loader>
   <app-page-loader></app-page-loader>

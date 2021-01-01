@@ -1,0 +1,90 @@
+<div fxLayout="column" fxLayoutGap="5px">
+  <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+    <div fxLayout="column">
+      <div>
+      <span>{{node.map | mapName | i18n}} - lvl {{node.level}}
+        <app-db-button *ngIf="node.id" [id]="node.id" type="node"></app-db-button>
+      </span>
+      </div>
+      <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
+      <div>
+        <nz-tag *ngIf="node.ephemeral" nzColor="#108ee9">
+          {{'Ephemeral_tag' | translate}}
+        </nz-tag>
+        <nz-tag *ngIf="node.legendary" nzColor="#108ee9">
+          {{'GATHERING_LOCATIONS.Legendary' | translate}}
+        </nz-tag>
+        <nz-tag *ngIf="node.matchingItemIsHidden" nzColor="#108ee9">
+          {{'GATHERING_LOCATIONS.Hidden_item' | translate}}
+        </nz-tag>
+        <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+             src="./assets/icons/status/snagging.png">
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutGap="5px">
+      <span *ngIf="node.spawns !== undefined">
+        <i *ngFor="let time of node.spawns">
+          {{time}}:00 - {{getDespawnTime(time, node.duration)}}:00
+        </i>
+      </span>
+  </div>
+  <ng-container *ngFor="let generatedAlarm of alarms; trackBy: trackByAlarm">
+    <ng-container *ngIf="(generatedAlarm | alarmDisplay | async) as alarm">
+      <div *ngIf="alarm.remainingTime"
+           [class.played-timer]="alarm.played"
+           [class.spawned-timer]="alarm.spawned"
+           fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+        <div>{{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}</div>
+        <img *ngIf="generatedAlarm.fishEyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate"
+             [src]="762 | statusIcon | xivapiIcon"
+             alt="" class="fish-eyes-alarm">
+        <ng-container *ngIf="showAlarmsIntegration">
+          <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+               fxLayoutGap="5px">
+            <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                    nzSize="small">
+              <i nz-icon nzType="clock-circle"> </i>
+            </button>
+            <ng-container *ngIf="alarmGroups$ | async as groups">
+              <ng-container *ngIf="groups.length > 0">
+                <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'" nz-button
+                        nz-dropdown
+                        nzShape="circle" nzSize="small">
+                  <i nz-icon nzType="folder-open"></i>
+                </button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu>
+                    <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
+                      {{group.name}}
+                    </li>
+                  </ul>
+                </nz-dropdown-menu>
+              </ng-container>
+            </ng-container>
+          </div>
+          <ng-template #alarmCreated>
+            {{'ALARMS.Alarm_already_created' | translate}}
+          </ng-template>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+    <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+      <div *ngFor="let weather of node.weathersFrom">
+        <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+             nz-tooltip>
+      </div>
+    </div>
+    <div *ngIf="node.weathersFrom !== undefined">
+      <i nz-icon nzType="right" theme="outline"></i>
+    </div>
+    <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+      <div *ngFor="let weather of node.weathers">
+        <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
+             nz-tooltip>
+      </div>
+    </div>
+  </div>
+</div>
