@@ -43,7 +43,7 @@
     "Share_url_copied": "검색URL이 클립보드에 복사되었습니다",
     "Only_craftable": "제작가능한 제작법만 검색",
     "Want_filters": "더 많은 필터가 필요한가요?",
-    "Open_search": "Open search page instead"
+    "Open_search": "대신 검색 페이지 열기"
   },
   "Use_as_default_character": "기본 캐릭터로 사용",
   "Download_desktop_app": "데스크톱 앱 다운로드",
@@ -169,8 +169,8 @@
     "Example": "예제",
     "Change": "변경",
     "Dirty_changes": "적용되지 않은 변경점이 있습니다",
-    "Never": "Never",
-    "Festival": "Only during a festival"
+    "Never": "하지 않음",
+    "Festival": "이벤트 기간에만 가능"
   },
   "ALARMS": {
     "Title": "알람",
@@ -1470,7 +1470,7 @@
       "Required_craftsmanship": "필요 작업 숙련도",
       "Required_control": "필요 가공 숙련도",
       "Mark_as_done_in_gathering_log": "수첩에 완료됨으로 표시",
-      "X_Equipped": "{{amount}} Equipped:",
+      "X_Equipped": "장착됨: {{amount}} 개",
       "Item_series": "장비 세부정보"
     },
     "FISH": {
@@ -1818,8 +1818,8 @@
     "Switch_to_winpcap": "winpcap모드 전환",
     "Disable_pcap": "패킷 캡쳐 비활성화",
     "Install_npcap": "Npcap이 현재 사용자 시스템에 설치되지 않았습니다",
-    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap_description": "팀크래프트의 패킷 캡처를 npcap 모드로 사용하기 위해서는 npcap 설치가 필요합니다. 설치가 끝나면 팀크래프트를 다시 실행하실 수 있습니다.",
+    "Install_npcap_button": "npcap 설치 및 팀크래프트 재실행"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "{{region}} 로 변경하시는 것을 권장합니다.",
@@ -2116,7 +2116,7 @@
   "ADMIN": {
     "Autofix_error": "오류 자동수정",
     "USERS": {
-      "Title": "Users",
+      "Title": "사용자",
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "이메일",
       "Uid": "UID",
@@ -2396,22 +2396,22 @@
     },
     "IMPORT": {
       "Title": "유저 의뢰 불러오기",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
+      "Description": "해당 아이템이 유저 의뢰에 필요한 품목인지 확인해주세요. 주의: 거래할 수 없는 아이템은 자동으로 목록에서 삭제됩니다.",
       "Create_commission": "의뢰 만들기",
       "No_items": "아이템 없음"
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
-    "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Total_entries": "총 항목 수",
+    "Last_updated": "최근 업데이트",
+    "Last_bnpc_update": "마지막 몬스터 위치가 업로드됨",
+    "Last_node_update": "마지막 노드 위치가 업로드됨",
+    "Clear_map": "해당 맵 초기화",
+    "Dashboard": "Mappy 대시보드",
+    "Open_details": "세부 페이지 열기",
+    "X_Missing_nodes": "{{amount}} 개의 노드가 누락됨",
+    "Missing_nodes": "누락된 노드",
+    "No_missing_nodes": "누락된 노드 없음",
+    "Only_missing_nodes": "누락된 노드가 있는 맵만 표시"
   }
 }
