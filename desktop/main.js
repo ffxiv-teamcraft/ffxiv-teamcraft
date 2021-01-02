@@ -222,7 +222,12 @@ ipcMain.on('update:check', () => {
 });
 
 function sendToAlreadyOpenedTC(url) {
-  request(`http://localhost:${mainWindowPort}${url}`);
+  if (!url.startsWith('/')) {
+    url = `/${url}`;
+  }
+  const finalUrl = `http://localhost:${mainWindowPort}${url}`;
+  log.info(`Sending to already opened TC: ${finalUrl}`);
+  request(finalUrl);
 }
 
 /**
