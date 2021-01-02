@@ -30,7 +30,7 @@
                   *ngIf="row.node.map | closestAetheryte: { x: row.node.x, y: row.node.y } | async as aetheryte"
                   class="closest-tp">
                   <img alt="" class="aetheryte-icon" src="./assets/icons/Aetheryte.png">
-                  {{aetheryte.nameid | placeName | i18n}}
+                  {{aetheryte?.nameid | placeName | i18n}}
                 </div>
                 <ng-container *ngIf="row.node.baits !== undefined">
                   <app-fishing-bait [baits]="row.node.baits"></app-fishing-bait>

@@ -18,7 +18,7 @@
           <div *ngIf="drop.mapid | closestAetheryte: drop?.position | async as aetheryte"
                class="closest-tp">
             <img alt="" class="aetheryte-icon"
-                 src="./assets/icons/Aetheryte.png"> {{aetheryte.nameid | placeName | i18n}}
+                 src="./assets/icons/Aetheryte.png"> {{aetheryte?.nameid | placeName | i18n}}
           </div>
         </div>
       </ng-template>

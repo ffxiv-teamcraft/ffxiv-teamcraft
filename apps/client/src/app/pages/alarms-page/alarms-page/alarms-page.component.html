@@ -217,7 +217,7 @@
                  src="./assets/icons/status/snagging.png">
           </div>
           <div>
-            {{row.alarm.aetheryte.nameid | placeName | i18n}}
+            {{row.alarm.aetheryte?.nameid | placeName | i18n}}
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.remainingTime | timer}}</div>
@@ -298,11 +298,7 @@
         </ng-template>
         <ng-template #removeFromGroup>
           <span [nzTooltipTitle]="'ALARMS.Remove_from_group' | translate" nz-tooltip>
-            <button (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-                    nz-popconfirm nzShape="circle"
-                    nzDanger>
-              <i nz-icon nzType="close"></i>
-            </button>
+              <i nz-icon nzType="close" (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"></i>
           </span>
         </ng-template>
         <ng-template #copyMacro>
@@ -423,7 +419,7 @@
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div>
-              {{row.alarm.aetheryte.nameid | placeName | i18n}}
+              {{row.alarm.aetheryte?.nameid | placeName | i18n}}
             </div>
 
             <app-map-position [mapId]="row.alarm.mapId"

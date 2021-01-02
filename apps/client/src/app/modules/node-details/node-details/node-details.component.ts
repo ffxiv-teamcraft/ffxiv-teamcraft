@@ -24,6 +24,9 @@ export class NodeDetailsComponent implements OnInit {
   @Input()
   showAlarmsIntegration = false;
 
+  @Input()
+  hideTimers = false;
+
   private _node: GatheringNode;
 
   @Input()

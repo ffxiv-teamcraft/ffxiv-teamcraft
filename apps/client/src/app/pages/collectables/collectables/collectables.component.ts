@@ -15,6 +15,11 @@ import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
+import { AlarmDisplay } from '../../../core/alarms/alarm-display';
+import { Alarm } from '../../../core/alarms/alarm';
+import { AlarmGroup } from '../../../core/alarms/alarm-group';
 
 @Component({
   selector: 'app-collectables',
@@ -50,6 +55,8 @@ export class CollectablesComponent {
 
   loading$ = this.authFacade.loaded$.pipe(map(loaded => !loaded));
 
+  alarmGroups$ = this.alarmsFacade.allGroups$;
+
   selectedTabFromRoute$: Observable<number> = this.activeRoute.paramMap.pipe(
     map(params => {
       const jobAbbr = params.get('jobAbbr') || 'CRP';
@@ -73,7 +80,8 @@ export class CollectablesComponent {
               private listPicker: ListPickerService, private listManager: ListManagerService,
               private progressService: ProgressPopupService, private notificationService: NzNotificationService,
               private listsFacade: ListsFacade, private i18n: I18nToolsService, private l12n: LocalizedDataService,
-              private router: Router, private activeRoute: ActivatedRoute, private location: Location) {
+              private router: Router, private activeRoute: ActivatedRoute, private location: Location,
+              private gatheringNodesService: GatheringNodesService, private alarmsFacade: AlarmsFacade) {
 
     this.form$ = this.levels$.pipe(
       map(levels => {
@@ -166,10 +174,36 @@ export class CollectablesComponent {
         return acc;
       }, [])
       .map(group => {
-        group.collectables = group.collectables.sort((a, b) => b.levelMax - a.levelMax);
+        group.collectables = group.collectables
+          .sort((a, b) => b.levelMax - a.levelMax)
+          .map(collectable => {
+            if ([16, 17, 18].includes(jobId)) {
+              collectable.nodes = this.gatheringNodesService.getItemNodes(collectable.itemId, true)
+                .map(gatheringNode => {
+                  return {
+                    gatheringNode,
+                    alarms: gatheringNode.limited ? this.alarmsFacade.generateAlarms(gatheringNode) : []
+                  };
+                });
+            }
+            return collectable;
+          });
         return group;
       })
       .reverse();
+  }
+
+  toggleAlarm(display: AlarmDisplay): void {
+    if (display.registered) {
+      this.alarmsFacade.deleteAlarm(display.alarm);
+    } else {
+      this.alarmsFacade.addAlarms(display.alarm);
+    }
+  }
+
+  addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+    this.alarmsFacade.addAlarms(alarm);
+    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
   }
 
   public openInSimulator(itemId: number): void {
