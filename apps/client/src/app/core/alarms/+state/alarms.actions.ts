@@ -7,11 +7,15 @@ export enum AlarmsActionTypes {
   AlarmsLoaded = '[Alarms] Alarms Loaded',
 
   AddAlarms = '[Alarms] Add Alarms',
+  AddAlarmsAndGroup = '[Alarms] Add alarms and group',
   AlarmsCreated = '[Alarms] Alarms created',
   UpdateAlarm = '[Alarms] Update Alarm',
   RemoveAlarm = '[Alarms] Remove Alarm',
 
   PersistAlarms = '[Alarms] Persist Alarms',
+
+  SetAlarms = '[Alarms] Set Alarms',
+  SetGroups = '[Alarms] Set Groups',
 
   CreateAlarmGroup = '[Alarms] Create Group',
   UpdateAlarmGroup = '[Alarms] Update Group',
@@ -41,6 +45,13 @@ export class AddAlarms implements Action {
   }
 }
 
+export class AddAlarmsAndGroup implements Action {
+  readonly type = AlarmsActionTypes.AddAlarmsAndGroup;
+
+  constructor(public payload: Alarm[], public groupName: string) {
+  }
+}
+
 export class AlarmsCreated implements Action {
   readonly type = AlarmsActionTypes.AlarmsCreated;
 
@@ -66,11 +77,25 @@ export class PersistAlarms implements Action {
   readonly type = AlarmsActionTypes.PersistAlarms;
 }
 
+export class SetAlarms implements Action {
+  readonly type = AlarmsActionTypes.SetAlarms;
+
+  constructor(public readonly alarms: Alarm[]) {
+  }
+}
+
 // Group-related actions
 export class CreateAlarmGroup implements Action {
   readonly type = AlarmsActionTypes.CreateAlarmGroup;
 
-  constructor(public readonly name: string, public readonly index: number) {
+  constructor(public readonly name: string, public readonly index: number, public readonly initialContent: string[] = []) {
+  }
+}
+
+export class SetGroups implements Action {
+  readonly type = AlarmsActionTypes.SetGroups;
+
+  constructor(public readonly groups: AlarmGroup[]) {
   }
 }
 
@@ -98,6 +123,7 @@ export class AssignGroupToAlarm implements Action {
 export class DeleteAllAlarms implements Action {
   readonly type = AlarmsActionTypes.DeleteAllAlarms;
 }
+
 export class LoadAlarmGroup implements Action {
   readonly type = AlarmsActionTypes.LoadAlarmGroup;
 
@@ -125,4 +151,6 @@ export type AlarmsAction =
   | AssignGroupToAlarm
   | AlarmsCreated
   | LoadAlarmGroup
-  | AlarmGroupLoaded;
+  | AlarmGroupLoaded
+  | SetAlarms
+  | SetGroups;

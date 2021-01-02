@@ -207,10 +207,18 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
     );
   }
 
-  removeMany(keys: string[], uriParams?: any) {
+  removeMany(keys: string[], uriParams?: any): Observable<void> {
     const batch = this.firestore.firestore.batch();
     keys.forEach(key => {
       batch.delete(this.firestore.collection(this.getBaseUri(uriParams)).doc(key).ref);
+    });
+    return from(batch.commit());
+  }
+
+  setMany(entities: T[], uriParams?: any): Observable<void> {
+    const batch = this.firestore.firestore.batch();
+    entities.forEach(entity => {
+      batch.set(this.firestore.collection(this.getBaseUri(uriParams)).doc(entity.$key).ref, this.prepareData(entity));
     });
     return from(batch.commit());
   }

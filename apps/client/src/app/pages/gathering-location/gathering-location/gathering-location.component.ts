@@ -79,10 +79,10 @@ export class GatheringLocationComponent {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    if (group) {
-      alarm.groupId = group.$key;
-    }
     this.alarmsFacade.addAlarms(alarm);
+    if (group) {
+      this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    }
   }
 
   public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {
@@ -104,43 +104,6 @@ export class GatheringLocationComponent {
 
   public saveCompactDisplay(value: boolean): void {
     localStorage.setItem('gathering-location:compact', value.toString());
-  }
-
-  public generateAlarms(node: any): Partial<Alarm>[] {
-    const alarm: any = {
-      itemId: node.itemId,
-      icon: node.icon,
-      duration: node.uptime ? node.uptime / 60 : 0,
-      mapId: node.mapId,
-      zoneId: node.zoneid,
-      type: node.type,
-      coords: {
-        x: node.x,
-        y: node.y
-      },
-      spawns: node.spawnTimes,
-      folklore: node.folklore,
-      reduction: node.reduction || false,
-      ephemeral: node.ephemeral || false,
-      nodeContent: node.items,
-      weathers: node.weathers || [],
-      weathersFrom: node.weathersFrom || [],
-      snagging: node.snagging || false,
-      predators: node.predators || []
-    };
-    if (node.slot) {
-      alarm.slot = +node.slot;
-    }
-    if (node.gig) {
-      alarm.gig = node.gig;
-    }
-    if (node.baits) {
-      alarm.baits = node.baits;
-    }
-    if (node.hookset) {
-      alarm.hookset = node.hookset;
-    }
-    return this.alarmsFacade.applyFishEyes(alarm);
   }
 
   trackByAlarm(index: number, alarm: Partial<Alarm>): string {

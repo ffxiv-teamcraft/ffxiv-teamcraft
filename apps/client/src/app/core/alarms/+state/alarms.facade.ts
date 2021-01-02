@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
 import {
-  AddAlarms,
+  AddAlarms, AddAlarmsAndGroup,
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
@@ -13,12 +13,14 @@ import {
   LoadAlarmGroup,
   LoadAlarms,
   RemoveAlarm,
+  SetAlarms,
+  SetGroups,
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map } from 'rxjs/operators';
-import { combineLatest, Observable } from 'rxjs';
+import { filter, first, map, shareReplay, skipUntil, switchMap } from 'rxjs/operators';
+import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
 import { AlarmsPageDisplay } from '../alarms-page-display';
@@ -32,57 +34,90 @@ import { mapIds } from '../../data/sources/map-ids';
 import { LazyDataService } from '../../data/lazy-data.service';
 import { GatheringNode } from '../../data/model/gathering-node';
 import { MapService } from '../../../modules/map/map.service';
+import { GatheringNodesService } from '../../data/gathering-nodes.service';
+import * as semver from 'semver';
+import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
+import { environment } from 'apps/client/src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AlarmsFacade {
 
+  regenerating = false;
+
   loaded$ = this.store.select(alarmsQuery.getLoaded);
-  allAlarms$ = this.store.select(alarmsQuery.getAllAlarms);
+  allAlarms$ = this.store.select(alarmsQuery.getAllAlarms).pipe(
+    skipUntil(this.lazyData.data$),
+    map(alarms => {
+      if (this.regenerating) {
+        return [null];
+      }
+      if (alarms[0] && semver.ltr(alarms[0].appVersion, '8.0.0')) {
+        this.regenerateAlarms(alarms);
+        return [null];
+      }
+      return alarms;
+    }),
+    filter(alarms => alarms.length === 0 || !!alarms[0])
+  );
   allGroups$ = this.store.select(alarmsQuery.getAllGroups);
 
   externalGroup$ = this.store.select(alarmsQuery.getExternalGroup);
   externalGroupAlarms$ = this.store.select(alarmsQuery.getExternalGroupAlarms);
 
-  alarmsPageDisplay$ = combineLatest([this.etime.getEorzeanTime(), this.allAlarms$, this.allGroups$]).pipe(
-    map(([date, alarms, groups]) => {
-      const display = new AlarmsPageDisplay();
-      // First of all, populate grouped alarms.
-      display.groupedAlarms = groups
-        .sort((a, b) => {
-          if (a.index === b.index) {
-            return a.name < b.name ? -1 : 1;
-          }
-          return a.index < b.index ? -1 : 1;
+  alarmsPageDisplay$ = combineLatest([this.allAlarms$, this.allGroups$]).pipe(
+    map(([alarms, groups]) => {
+      return {
+        groupedAlarms: groups
+          .sort((a, b) => {
+            if (a.index === b.index) {
+              return a.name < b.name ? -1 : 1;
+            }
+            return a.index < b.index ? -1 : 1;
+          })
+          .map(group => {
+            return {
+              group: group,
+              alarms: group.alarms.map(key => alarms.find(a => a.$key === key)).filter(a => !!a)
+            };
+          }),
+        noGroup: alarms.filter(alarm => !groups.some(group => group.alarms.includes(alarm.$key)))
+      };
+    }),
+    switchMap(preparedDisplay => {
+      return this.etime.getEorzeanTime().pipe(
+        map(date => {
+          const display = new AlarmsPageDisplay();
+          display.groupedAlarms = preparedDisplay.groupedAlarms
+            .map(groupData => {
+              return new AlarmGroupDisplay(groupData.group, this.createDisplayArray(groupData.alarms, date));
+            });
+
+          display.noGroup = this.createDisplayArray(preparedDisplay.noGroup, date);
+          return display;
         })
-        .map(group => {
-          const groupAlarms = alarms
-            .filter(alarm => alarm.groupId !== undefined && alarm.groupId === group.$key);
-          return new AlarmGroupDisplay(group, this.createDisplayArray(groupAlarms, date));
-        });
-
-      // Then, populate the alarms without group, I know this isn't the best approach, but it's the easiest to read for a small perf loss.
-      display.noGroup = this.createDisplayArray(alarms.filter(alarm => groups.find(group => group.$key !== undefined && group.$key === alarm.groupId) === undefined), date);
-
-      return display;
+      );
     })
   );
 
-  alarmsSidebarDisplay$ = this.alarmsPageDisplay$.pipe(
-    map(alarmsPageDisplay => {
-      return this.sortAlarmDisplays([
-        ...alarmsPageDisplay.noGroup.filter(display => display.alarm.enabled),
-        ...[].concat.apply([], alarmsPageDisplay.groupedAlarms
-          .filter(groupedAlarms => groupedAlarms.group.enabled)
-          .map(grouped => {
-            return grouped.alarms.map(alarm => {
-              alarm.groupName = grouped.group.name;
-              return alarm;
-            });
-          }))
-          .filter(display => display.alarm.enabled)
-      ]);
+  alarmsSidebarDisplay$ = combineLatest([this.allAlarms$, this.allGroups$]).pipe(
+    map(([alarms, groups]) => {
+      return alarms
+        .map(alarm => {
+          const alarmGroups = groups.filter(g => g.alarms.some(key => key === alarm.$key));
+          alarm.groupNames = alarmGroups.map(g => g.name).join(', ');
+          if (!alarm.enabled || (alarmGroups.length > 0 && alarmGroups.every(g => !g.enabled))) {
+            return null;
+          }
+          return alarm;
+        })
+        .filter(alarm => !!alarm);
+    }),
+    switchMap(alarms => {
+      return this.etime.getEorzeanTime().pipe(
+        map(date => this.createDisplayArray(alarms, date))
+      );
     })
   );
 
@@ -90,7 +125,8 @@ export class AlarmsFacade {
 
   constructor(private store: Store<{ alarms: AlarmsState }>, private etime: EorzeanTimeService,
               private settings: SettingsService, private weatherService: WeatherService,
-              private lazyData: LazyDataService, private mapService: MapService) {
+              private lazyData: LazyDataService, private mapService: MapService,
+              private gatheringNodesService: GatheringNodesService, private progressService: ProgressPopupService) {
   }
 
   public addAlarms(...alarms: Alarm[]): void {
@@ -98,15 +134,7 @@ export class AlarmsFacade {
   }
 
   public addAlarmsAndGroup(alarms: Alarm[], groupName: string): void {
-    this.store.dispatch(new CreateAlarmGroup(groupName, 0));
-    this.allGroups$.pipe(
-      map(groups => groups.find(g => g.name === groupName && g.index === 0)),
-      filter(g => g !== undefined && g.$key !== undefined),
-      first()
-    ).subscribe(group => {
-      alarms.forEach(alarm => alarm.groupId = group.$key);
-      this.store.dispatch(new AddAlarms(alarms));
-    });
+    this.store.dispatch(new AddAlarmsAndGroup(alarms, groupName));
   }
 
   public updateAlarm(alarm: Alarm): void {
@@ -169,6 +197,7 @@ export class AlarmsFacade {
     const nextSpawn = { ...this.getNextSpawn(alarm, date) };
     display.spawned = this.isSpawned(alarm, date);
     display.played = this.isPlayed(alarm, date);
+    display.groupNames = alarm.groupNames || '';
     if (display.spawned) {
       if (alarm.duration === null) {
         nextSpawn.hours = nextSpawn.despawn;
@@ -396,7 +425,7 @@ export class AlarmsFacade {
     return resMinutes + (spawn.days * 1440);
   }
 
-  public applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
+  private applyFishEyes(alarm: Partial<Alarm>): Partial<Alarm>[] {
     const patch = this.lazyData.data.itemPatch[alarm.itemId];
     const expansion = this.lazyData.patches.find(p => p.ID === patch)?.ExVersion;
     const isBigFish = this.lazyData.data.bigFishes[alarm.itemId];
@@ -414,7 +443,8 @@ export class AlarmsFacade {
       nodeId: node.id,
       duration: node.duration ? node.duration / 60 : 0,
       mapId: node.map,
-      zoneId: node.zoneId,
+      zoneId: mapIds.find((m) => m.id === node.map)?.zone || node.zoneId,
+      areaId: node.zoneId,
       type: node.type,
       coords: {
         x: node.x,
@@ -446,4 +476,59 @@ export class AlarmsFacade {
     return this.applyFishEyes(alarm) as Alarm[];
   }
 
+  public regenerateAlarm(alarm: Partial<Alarm>): Alarm {
+    const nodes = this.gatheringNodesService.getItemNodes(alarm.itemId);
+    const nodeForThisAlarm = nodes.find(n => {
+      if (alarm.nodeId) {
+        return n.id === alarm.nodeId;
+      }
+      return alarm.mapId === n.map;
+    });
+    if (nodeForThisAlarm) {
+      const regenerated = this.generateAlarms(nodeForThisAlarm).find(a => a.fishEyes === alarm.fishEyes);
+      regenerated.userId = alarm.userId;
+      regenerated.$key = alarm.$key;
+      regenerated.appVersion = environment.version;
+      return regenerated;
+    }
+  }
+
+  public regenerateAlarms(_alarms?: Alarm[]): void {
+    let alarms$ = of(_alarms);
+    if (!_alarms) {
+      alarms$ = this.allAlarms$;
+    }
+    const operation$ = combineLatest([alarms$, this.allGroups$]).pipe(
+      first(),
+      map(([alarms, groups]) => {
+        this.regenerating = true;
+        const newGroups = groups.map(group => {
+          const clone = new AlarmGroup(group.name, group.index);
+          clone.userId = group.userId;
+          clone.alarms = group.alarms;
+          clone.$key = group.$key;
+          clone.appVersion = environment.version;
+          return clone;
+        });
+        const newAlarms = alarms.map(alarm => {
+          if ((<any>alarm).groupId) {
+            const group = newGroups.find(g => g.$key === (<any>alarm).groupId);
+            if (group && !group.alarms.includes(alarm.$key)) {
+              group.alarms.push(alarm.$key);
+            }
+          }
+          // If custom alarm, return it
+          if (alarm.name) {
+            return alarm;
+          }
+          return this.regenerateAlarm(alarm);
+        });
+
+        this.store.dispatch(new SetAlarms(newAlarms));
+        this.store.dispatch(new SetGroups(newGroups));
+        this.regenerating = false;
+      })
+    );
+    this.progressService.showProgress(operation$, 1, 'ALARMS.Regenerating_alarms').subscribe();
+  }
 }

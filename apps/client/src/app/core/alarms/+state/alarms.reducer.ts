@@ -88,11 +88,11 @@ export function alarmsReducer(
     case AlarmsActionTypes.AssignGroupToAlarm:
       return {
         ...state,
-        alarms: [...state.alarms.map(alarm => {
-          if (alarm.$key === action.alarm.$key) {
-            alarm.groupId = action.groupId;
+        groups: [...state.groups.map(group => {
+          if (group.$key === action.groupId) {
+            group.alarms.push(action.alarm.$key);
           }
-          return alarm;
+          return group;
         })]
       };
   }

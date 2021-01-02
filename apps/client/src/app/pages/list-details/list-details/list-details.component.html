@@ -227,7 +227,7 @@
                     [nzTooltipTitle]="'LIST.Regenerate' | translate" nz-button
                     nz-tooltip nzShape="circle"
                     nzSize="small">
-              <i class="material-icons">update</i>
+              <i nz-icon nzType="cloud-sync" nzTheme="outline"></i>
             </button>
             <button (nzOnConfirm)="resetList(list)" [disabled]="(permissionLevel$ | async) < 20"
                     [nzTooltipTitle]="'Reset_progression' | translate"

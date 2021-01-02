@@ -11,9 +11,7 @@ export class Alarm extends DataModel {
 
   @ForeignKey(TeamcraftUser)
   userId?: string;
-
-  @ForeignKey(AlarmGroup)
-  groupId?: string;
+  groupNames?: string;
 
   itemId: number;
   nodeId?: number;
@@ -22,6 +20,7 @@ export class Alarm extends DataModel {
   spawns: number[];
   duration: number;
   zoneId: number;
+  areaId: number;
   mapId: number;
   coords: Vector3;
   /**

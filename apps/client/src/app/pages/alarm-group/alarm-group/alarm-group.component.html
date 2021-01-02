@@ -1,7 +1,12 @@
 <ng-container *ngIf="group$ | async as group; else loading">
   <ng-container *ngIf="alarms$ | async as alarms">
-    <app-fullpage-message *ngIf="group.notFound; else groupCard">
+    <app-fullpage-message *ngIf="group.notFound || (outdated$ | async); else groupCard">
+      <span *ngIf="group.notFound">
       {{'ALARMS.Group_not_found' | translate}}
+      </span>
+      <span *ngIf="outdated$ | async">
+      {{'ALARMS.Group_outdated' | translate}}
+      </span>
     </app-fullpage-message>
 
     <ng-template #groupCard>

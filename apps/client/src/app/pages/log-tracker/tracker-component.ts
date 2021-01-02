@@ -25,8 +25,8 @@ export class TrackerComponent {
     }
   }
 
-  public addAlarmWithGroup(alarm: Partial<Alarm>, group: AlarmGroup) {
-    alarm.groupId = group.$key;
-    this.alarmsFacade.addAlarms(<Alarm>alarm);
+  public addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
+    this.alarmsFacade.addAlarms(alarm);
+    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
   }
 }

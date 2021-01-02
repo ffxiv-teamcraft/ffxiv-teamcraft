@@ -36,11 +36,11 @@ export class AlarmBellService {
             if (alarm.spawns === undefined) {
               return false;
             }
-            const alarmGroup = groups.find(group => {
-              return alarm.groupId === group.$key;
+            const hasOneGroupEnabled = groups.some(group => {
+              return group.enabled && group.alarms.includes(alarm.$key);
             });
             // If this alarm has a group and it's muted, don't even go further
-            if ((alarmGroup && !alarmGroup.enabled) || !alarm.enabled) {
+            if ((!hasOneGroupEnabled) || !alarm.enabled) {
               return false;
             }
             const lastPlayed = this.getLastPlayed(alarm);

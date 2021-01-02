@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';
@@ -9,7 +9,7 @@ import { AlarmGroup } from '../../../../core/alarms/alarm-group';
   styleUrls: ['./alarm-button.component.less'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AlarmButtonComponent implements OnInit {
+export class AlarmButtonComponent {
 
   @Input()
   alarm: Alarm;
@@ -22,8 +22,4 @@ export class AlarmButtonComponent implements OnInit {
 
   @Output()
   addAlarmWithGroup = new EventEmitter<{ alarm: Alarm, group: AlarmGroup }>();
-
-  ngOnInit(): void {
-    console.log(this.alarm);
-  }
 }

@@ -44,10 +44,10 @@ export class NodeDetailsComponent implements OnInit {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    if (group) {
-      alarm.groupId = group.$key;
-    }
     this.alarmsFacade.addAlarms(alarm);
+    if (group) {
+      this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    }
   }
 
   public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
