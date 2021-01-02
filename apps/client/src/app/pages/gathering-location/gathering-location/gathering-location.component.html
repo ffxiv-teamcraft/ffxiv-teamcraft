@@ -102,7 +102,7 @@
       </div>
     </ng-template>
     <ng-template #actionAlarmToGroup>
-      <div *ngIf="alarmGroups$ | async as groups">
+      <div *ngIf="alarmGroups$ | async as groups" fxLayout="row" fxLayoutAlign="space-around center">
         <ng-container *ngFor="let alarm of row.alarms; trackBy: trackByAlarm">
           <ng-container *ngIf="canCreateAlarm(alarms$ | async, alarm); else alarmCreated">
             <ng-container *ngIf="alarmsLoaded$ | async">

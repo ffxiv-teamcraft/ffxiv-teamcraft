@@ -3,7 +3,7 @@
        fxLayoutGap="5px">
     <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
       <app-item-icon [appFishTooltip]="bait" [hq]="baits.length > 1 && index > 0"
-                     [itemId]="bait" [tooltipDisabled]="true" [width]="32"></app-item-icon>
+                     [itemId]="bait" [tooltipDisabled]="true" [width]="iconWidth"></app-item-icon>
       <div *ngIf="!hideNames">{{bait | itemName | i18n}}</div>
     </div>
     <i *ngIf="!last" [nzType]="flex === 'column'?'caret-down':'caret-right'" nz-icon theme="outline"></i>

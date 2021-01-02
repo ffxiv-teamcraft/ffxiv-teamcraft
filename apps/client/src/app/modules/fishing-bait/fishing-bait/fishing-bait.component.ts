@@ -16,4 +16,7 @@ export class FishingBaitComponent {
 
   @Input()
   hideNames = false;
+
+  @Input()
+  iconWidth = 32;
 }
