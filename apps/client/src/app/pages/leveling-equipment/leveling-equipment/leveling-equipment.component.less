@@ -1,0 +1,33 @@
+.job-icon {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+th, td:not(:first-child) {
+  text-align: center;
+  padding: 5px;
+  width: 15%;
+}
+
+.selected {
+  background-color: var(--primary-color-20);
+}
+
+td.selected {
+  border-left: 1px solid var(--primary-color);
+  border-right: 1px solid var(--primary-color);
+
+  &.bottom {
+    border-bottom: 1px solid var(--primary-color);
+  }
+}
+
+th.selected {
+  border-left: 1px solid var(--primary-color);
+  border-right: 1px solid var(--primary-color);
+  border-top: 1px solid var(--primary-color);
+}
+
+.job-filter {
+  min-width: 200px;
+}

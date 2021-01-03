@@ -48,10 +48,10 @@ export class ListPickerService {
       );
   }
 
-  addToList(...items: ListRow[]): Observable<void> {
+  addToList(...items: ListRow[]): Observable<List> {
     // Making the observable optional, this way you can just call it and ignore it,
     // or add your own logic once it's done.
-    const done$ = new Subject<void>();
+    const done$ = new Subject<List>();
     this.pickList().pipe(
       mergeMap(list => {
         const operations = items.map(item => {
@@ -89,9 +89,9 @@ export class ListPickerService {
     ).subscribe((list) => {
       this.notificationService.success(
         this.translate.instant('Success'),
-        this.translate.instant('Recipe_Added', { listname: list.name })
+        this.translate.instant('Recipes_Added', { listname: list.name, itemcount: items.length })
       );
-      done$.next();
+      done$.next(list);
       done$.complete();
     });
     return done$;

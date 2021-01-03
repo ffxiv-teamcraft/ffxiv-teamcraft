@@ -1452,7 +1452,7 @@ if (hasTodo('items')) {
   const itemIcons = {};
   const ilvls = {};
   const stackSizes = {};
-  const itemSlots = {};
+  const equipment = {};
   const itemStats = {};
   const itemMeldingData = {};
   const hqFlags = {};
@@ -1463,7 +1463,7 @@ if (hasTodo('items')) {
   const marketItems = [];
   const extractableItems = {};
   const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
-  getAllPages(`https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
+  getAllPages(`https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1476,7 +1476,6 @@ if (hasTodo('items')) {
         rarities[item.ID] = item.Rarity;
         ilvls[item.ID] = item.LevelItem;
         stackSizes[item.ID] = item.StackSize;
-        itemSlots[item.ID] = item.EquipSlotCategoryTargetID;
         itemPatch[item.ID] = item.Patch;
         if (item.CanBeHq) {
           hqFlags[item.ID] = 1;
@@ -1507,8 +1506,15 @@ if (hasTodo('items')) {
               })
           };
         }
-        if (item.EquipSlotCategoryTargetID) {
+        if (item.EquipSlotCategoryTargetID && !item.Name_en.startsWith('Dated ')) {
           equipSlotCategoryId[item.ID] = item.EquipSlotCategoryTargetID;
+          if (item.Stats) {
+            equipment[item.ID] = {
+              equipSlotCategory: item.EquipSlotCategoryTargetID,
+              level: item.LevelEquip,
+              unique: item.IsUnique
+            };
+          }
           itemMeldingData[item.ID] = {
             modifier: item.BaseParamModifier,
             prop: getSlotName(item.EquipSlotCategoryTargetID),
@@ -1523,7 +1529,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('rarities', rarities);
       persistToJsonAsset('ilvls', ilvls);
       persistToJsonAsset('stack-sizes', stackSizes);
-      persistToJsonAsset('item-slots', itemSlots);
+      persistToJsonAsset('equipment', equipment);
       persistToJsonAsset('item-stats', itemStats);
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('hq-flags', hqFlags);

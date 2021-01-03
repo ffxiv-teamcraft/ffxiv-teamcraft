@@ -434,6 +434,13 @@
                       <span class="nav-text">{{'COLLECTABLES.Title' | translate}}</span>
                   </span>
                   </a>
+                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/leveling-equipment"
+                     routerLinkActive="ant-menu-item-selected">
+                  <span>
+                      <i nz-icon nzType="medicine-box" nzTheme="outline"></i>
+                      <span class="nav-text">{{'LEVELING_EQUIPMENT.Title' | translate}}</span>
+                  </span>
+                  </a>
                 </li>
 
                 <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>

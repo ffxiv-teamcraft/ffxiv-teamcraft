@@ -172,6 +172,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/food-picker/food-picker.module').then(m => m.FoodPickerModule)
   },
   {
+    path: 'leveling-equipment',
+    loadChildren: () => import('./pages/leveling-equipment/leveling-equipment.module').then(m => m.LevelingEquipmentModule)
+  },
+  {
     path: 'blog',
     loadChildren: () => import('./pages/blog/blog.module').then(m => m.BlogModule)
   },

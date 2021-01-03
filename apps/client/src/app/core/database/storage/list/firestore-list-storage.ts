@@ -87,13 +87,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts.find(i => i.id === item.id));
+          return Object.assign(item, extracts[item.id]);
         });
         list.finalItems = list.finalItems.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts.find(i => i.id === item.id));
+          return Object.assign(item, extracts[item.id]);
         });
         list.afterDeserialized();
         return list;

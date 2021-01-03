@@ -58,8 +58,8 @@ export class LayoutOrderService {
       }
     },
     'SLOT': (a, b) => {
-      const aSlot = this.lazyData.data.itemSlots[a.id];
-      const bSlot = this.lazyData.data.itemSlots[b.id];
+      const aSlot = this.lazyData.data.itemEquipSlotCategory[a.id] || 0;
+      const bSlot = this.lazyData.data.itemEquipSlotCategory[b.id] || 0;
       if (aSlot === bSlot) {
         return this.orderFunctions['JOB'](a, b);
       } else {

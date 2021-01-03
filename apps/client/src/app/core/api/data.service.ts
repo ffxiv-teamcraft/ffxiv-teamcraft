@@ -78,7 +78,7 @@ export class DataService {
     return 'https://xivapi.com';
   }
 
-  private xivapiSearch(options: XivapiSearchOptions) {
+  public xivapiSearch(options: XivapiSearchOptions) {
     const lang = this.getSearchLang();
 
     const searchOptions: XivapiSearchOptions = Object.assign({}, options, {
@@ -188,7 +188,7 @@ export class DataService {
             return [
               {
                 column: f.name,
-                operator: '!'
+                operator: '!!'
               }
             ];
           } else {
@@ -233,6 +233,7 @@ export class DataService {
       indexes: [SearchIndex.ITEM],
       string: query,
       filters: xivapiFilters,
+      exclude_dated: 1,
       columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
     };
 
@@ -242,27 +243,9 @@ export class DataService {
     searchOptions.sort_order = sort[1];
 
     let results$ = this.xivapiSearch(searchOptions).pipe(
-      expand((response) => {
-        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
-        if (results.length === 0 && response.Results.length > 0 && response.Pagination.PageTotal > response.Pagination.Page) {
-          return this.xivapiSearch({
-            ...searchOptions,
-            page: (searchOptions.page || 1) + 1
-          });
-        } else {
-          return of(response);
-        }
-      }),
       map(response => {
-        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
-        return {
-          results: results,
-          done: results.length > 0 || response.Pagination.PageTotal === response.Pagination.Page
-        };
-      }),
-      filter(res => res.done),
-      first(),
-      map(res => res.results)
+        return response.Results;
+      })
     );
 
     if (this.isCompatible) {
@@ -306,8 +289,7 @@ export class DataService {
         if (onlyCraftable) {
           return results.filter(row => {
             return (row.Recipes && row.Recipes.length > 0)
-              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem)
-              && !row.Name_en.startsWith('Dated');
+              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
           });
         }
         return results;

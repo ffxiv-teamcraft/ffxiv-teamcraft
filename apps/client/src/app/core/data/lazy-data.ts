@@ -20,6 +20,7 @@ export interface LazyData {
   desynth: any;
   diademTerritory: any;
   equipSlotCategories: any;
+  equipment: any;
   exVersions: any;
   extractableItems: any;
   fates: any;
@@ -46,7 +47,6 @@ export interface LazyData {
   itemPatch: any;
   itemSeries: any;
   itemSetBonuses: any;
-  itemSlots: any;
   itemStats: any;
   items: any;
   jobAbbr: any;

@@ -49,7 +49,7 @@ export class GearsetCostPopupComponent implements OnInit {
       })
       .forEach(key => {
         const gearPiece = this.gearset[key];
-        const itemExtract = this.lazyData.extracts.find(row => row.id === gearPiece.itemId);
+        const itemExtract = this.lazyData.getExtract(gearPiece.itemId);
         const trades = getItemSource<TradeSource[]>(itemExtract, DataType.TRADE_SOURCES);
         trades.forEach(trade => {
           trade.trades.forEach(t => {
@@ -64,7 +64,7 @@ export class GearsetCostPopupComponent implements OnInit {
   private addCurrency(currency: TradeEntry): void {
     // If you can equip this item, let's trigger recursion and not include it as a trade currency
     if (this.lazyData.data.itemEquipSlotCategory[currency.id]) {
-      const itemExtract = this.lazyData.extracts.find(row => row.id === currency.id);
+      const itemExtract = this.lazyData.getExtract(+currency.id);
       const trades = getItemSource<TradeSource[]>(itemExtract, DataType.TRADE_SOURCES);
       if (trades.length > 0) {
         trades.forEach(trade => {

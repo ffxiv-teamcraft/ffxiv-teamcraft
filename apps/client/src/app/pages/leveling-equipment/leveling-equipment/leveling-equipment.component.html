@@ -1,0 +1,73 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <form [nzLayout]="'inline'" nz-form [formGroup]="filtersForm">
+    <nz-form-item>
+      <nz-form-label>{{'DESYNTH.Job' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-select formControlName="job" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
+                   class="job-filter"
+                   nzShowSearch>
+          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job | jobAbbr | i18n" [nzValue]="job" nzCustomContent>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
+              <div>{{job | jobAbbr | i18n}}</div>
+            </div>
+          </nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'DESYNTH.Level' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-input-number formControlName="level" nzMin="3"></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Include_crafting' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="includeCrafting"></label>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Include_trades' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="includeTrades"></label>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control>
+        <button (click)="search$.next()" [disabled]="filtersForm.invalid" nz-button
+                nzType="primary">
+          <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <ng-container *ngIf="results$ | async as results; else description">
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let row of results" [class.selected]="row.level === selectedLevel" (click)="selectedLevel = row.level">{{row.level}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let slot of slots; let last = last">
+        <td>{{('GEARSETS.SLOT.' + slot.name) | translate}}</td>
+        <td *ngFor="let row of results" [class.selected]="row.level === selectedLevel" [class.bottom]="last" (click)="selectedLevel = row.level">
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <app-item-icon *ngIf="row.gearset[slot.property]; else noItem" [itemId]="row.gearset[slot.property].itemId" [width]="32"></app-item-icon>
+            <ng-template #noItem>
+              NO ITEM
+            </ng-template>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button nz-button nzBlock (click)="createList(results)" nzType="primary">{{'LEVELING_EQUIPMENT.Generate_list' | translate}}</button>
+  </ng-container>
+  <ng-template #description>
+    <app-fullpage-message>{{'LEVELING_EQUIPMENT.Description' | translate}}</app-fullpage-message>
+  </ng-template>
+</div>

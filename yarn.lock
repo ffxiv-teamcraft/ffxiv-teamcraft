@@ -3477,10 +3477,10 @@
   dependencies:
     tslib "^1.9.3"
 
-"@xivapi/angular-client@1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@xivapi/angular-client/-/angular-client-1.7.1.tgz#36112829f268f53024f7f30978438909f63d1aa6"
-  integrity sha512-YC2i3vm8jy5q7j9AjgKFd0N3BeiUg3UMT4trsaFJ1BZo6yFxSEos9zGAzQu+qXS74RI17LYxI1sjpqUkKxfQQA==
+"@xivapi/angular-client@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@xivapi/angular-client/-/angular-client-1.8.0.tgz#5929a3383988af75b7f4e77c240ac1ca5f87bc52"
+  integrity sha512-eYXzz/L3xc4risuYoYJOktctukr0NpXHtvoylLiltqRh1QNMFkmV4SFKwu7ITxnk5Sv0Yu5ox6LkxU+glC204w==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"

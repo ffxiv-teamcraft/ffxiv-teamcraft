@@ -321,6 +321,19 @@ export class GearsetsFacade {
     );
   }
 
+  public applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): TeamcraftGearset {
+    const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[itemId]];
+    if (!equipSlotCategory) {
+      return gearset;
+    }
+    Object.keys(equipSlotCategory)
+      .filter(key => +equipSlotCategory[key] === -1)
+      .forEach(key => {
+        delete gearset[this.getPropertyNameFromCategoryName(key)];
+      });
+    return gearset;
+  }
+
   public getPropertyName(slot: number): string {
     return [
       'mainHand',
@@ -338,5 +351,39 @@ export class GearsetsFacade {
       'ring1',
       'crystal'
     ][slot];
+  }
+
+  @Memoized()
+  public getPropertyNameFromCategoryName(slotName: string): keyof TeamcraftGearset {
+    switch (slotName) {
+      case 'Body':
+        return 'chest';
+      case 'Ears':
+        return 'earRings';
+      case 'Feet':
+        return 'feet';
+      case 'FingerL':
+        return 'ring1';
+      case 'FingerR':
+        return 'ring2';
+      case 'Gloves':
+        return 'gloves';
+      case 'Head':
+        return 'head';
+      case 'Legs':
+        return 'legs';
+      case 'MainHand':
+        return 'mainHand';
+      case 'Neck':
+        return 'necklace';
+      case 'OffHand':
+        return 'offHand';
+      case 'SoulCrystal':
+        return 'crystal';
+      case 'Waist':
+        return 'belt';
+      case 'Wrists':
+        return 'bracelet';
+    }
   }
 }
