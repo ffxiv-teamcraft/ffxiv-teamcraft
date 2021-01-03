@@ -156,7 +156,7 @@ export class RecipeFinderComponent implements OnDestroy {
           .filter(entry => {
             let match = !onlyCraftable || !entry.missingLevel;
             if (onlyCollectables) {
-              match = match && this.lazyData.data.collectables[entry.itemId] !== undefined;
+              match = match && this.lazyData.data.collectables[entry.itemId]?.collectable === 1;
             }
             return match && (entry.lvl >= clvlMin && entry.lvl <= clvlMax);
           })

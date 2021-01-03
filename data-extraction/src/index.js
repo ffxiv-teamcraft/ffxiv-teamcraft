@@ -2017,7 +2017,7 @@ if (hasTodo('collectables')) {
   const collectables = {};
   combineLatest([
     getAllEntries('https://xivapi.com/HWDCrafterSupply'),
-    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
+    aggregateAllPages('https://xivapi.com/CollectablesShopItem?columns=ID,CollectablesShopRefine,CollectablesShopRewardScrip,ItemTargetID,Item.IsCollectable,LevelMin,LevelMax,CollectablesShopItemGroupTargetID')
   ])
     .subscribe(([hwdCompleteFetch, collectablesCompleteFetch]) => {
       hwdCompleteFetch.forEach(supply => {
@@ -2054,6 +2054,7 @@ if (hasTodo('collectables')) {
         })
         .forEach(collectable => {
           collectables[collectable.ItemTargetID] = {
+            collectable: collectable.Item.IsCollectable,
             level: collectable.LevelMin,
             levelMin: collectable.LevelMin,
             levelMax: collectable.LevelMax,
