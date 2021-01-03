@@ -518,6 +518,25 @@ function createTray() {
           }
         },
         {
+          label: 'Reset overlay positions',
+          type: 'normal',
+          click: () => {
+            forEachOverlay(overlay => overlay.close());
+            openedOverlayUris = [];
+            [
+              '/item-search-overlay',
+              '/list-panel-overlay',
+              '/fishing-reporter-overlay',
+              '/alarms-overlay',
+              '/list-panel-overlay',
+              '/rotation-overlay',
+              '/mappy-overlay'
+            ].forEach(uri => {
+              config.delete(`overlay:${uri}:bounds`);
+            });
+          }
+        },
+        {
           label: 'Clickthrough Overlays',
           type: 'checkbox',
           checked: settings.clickthrough === 'true',
