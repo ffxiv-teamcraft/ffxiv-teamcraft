@@ -124,7 +124,7 @@
       </div>
       <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async) && !overlay">
         <nz-tag
-          (nzAfterClose)="removeTag(tag, item)"
+          (nzOnClose)="removeTag(tag, item)"
           *ngFor="let tag of itemTags$ | async"
           [nzMode]="'closeable'"
         >

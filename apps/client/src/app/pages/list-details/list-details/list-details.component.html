@@ -70,7 +70,7 @@
             </nz-dropdown-menu>
           </div>
           <div *ngIf="assignedTeam$ | async as team">
-            <nz-tag (nzAfterClose)="removeTeam(list, team)" *ngIf="list.teamId !== undefined"
+            <nz-tag (nzOnClose)="removeTeam(list, team)" *ngIf="list.teamId !== undefined"
                     [nzMode]="(canRemoveTag$ | async) ? 'closeable' : 'default'"
                     nzColor="purple">
               {{team.name}}
