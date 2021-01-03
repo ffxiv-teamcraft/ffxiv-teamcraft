@@ -228,15 +228,17 @@ if (hasTodo('mappy', true)) {
     });
 
 
-  combineLatest([mapData$, nodes$.pipe(skip(1))])
-    .subscribe(([mapData]) => {
+  const mapDiscoveryIndexes$ = aggregateAllPages('https://xivapi.com/map?columns=ID,DiscoveryIndex');
+
+  combineLatest([mapData$, nodes$.pipe(skip(1)), mapDiscoveryIndexes$])
+    .subscribe(([mapData, , mapDiscoveryIndexes]) => {
       mapData
         .sort((a, b) => {
           return a.Added - b.Added;
         })
         .forEach(row => {
           if (row.Type === 'BNPC') {
-            handleMonster(row);
+            handleMonster(row, mapDiscoveryIndexes);
           }
           if (row.Type === 'Node') {
             handleNode(row);
@@ -269,7 +271,11 @@ handleNode = (row) => {
   }
 };
 
-handleMonster = (row) => {
+handleMonster = (row, mapDiscoveryIndexes) => {
+  const mapEntry = mapDiscoveryIndexes.find(m => m.ID === +row.MapID);
+  if (+mapEntry.DiscoveryIndex < 1) {
+    return;
+  }
   let bnpcNameID = +row.BNpcNameID;
   // const monsterMemoryRow = memoryData.find(mRow => mRow.Hash === row.Hash);
   monsters[bnpcNameID] = monsters[row.BNpcNameID] || {
