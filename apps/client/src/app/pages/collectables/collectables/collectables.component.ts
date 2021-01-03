@@ -146,7 +146,7 @@ export class CollectablesComponent {
     return Object.keys(this.lazyData.data.collectables)
       .filter(key => {
         const collectableEntry = this.lazyData.data.collectables[key];
-        if (collectableEntry.hwd) {
+        if (collectableEntry.hwd || !collectableEntry.collectable) {
           return false;
         }
         const job = Object.keys(this.lazyData.data.collectablesShops).find(sKey => {
