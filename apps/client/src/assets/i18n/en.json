@@ -1811,7 +1811,9 @@
     "Commissions": "Commissions",
     "Commission_board": "Board",
     "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Archived_commissions": "Archives",
+    "Leveling": "Leveling",
+    "Currencies": "Currencies"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",
