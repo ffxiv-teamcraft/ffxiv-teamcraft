@@ -22,6 +22,17 @@
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
       </div>
+      <nz-form-item *ngIf="sidebarItems$ | async as sidebarItems">
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Favorite_features' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Favorite_features_explain' | translate">
+          <nz-select [(ngModel)]="sidebarFavorites"
+                     (ngModelChange)="settings.sidebarFavorites = sidebarFavorites"
+                     nzShowSearch nzMode="multiple">
+            <nz-option *ngFor="let item of sidebarItems" [nzLabel]="item.name | translate"
+                       [nzValue]="item.link"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
       <ng-container *ngIf="user$ | async as user">
         <nz-form-item>
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>

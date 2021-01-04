@@ -296,6 +296,7 @@ export class SettingsService {
 
   public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
+      favorites: true,
       general: true,
       sharing: true,
       commissions: true,
@@ -307,6 +308,14 @@ export class SettingsService {
 
   public set sidebarState(state: { [index: string]: boolean }) {
     this.setSetting('sidebar-state', JSON.stringify(state));
+  }
+
+  public get sidebarFavorites(): string[] {
+    return JSON.parse(this.getSetting('sidebar-favorites', JSON.stringify([])));
+  }
+
+  public set sidebarFavorites(favorites: string[]) {
+    this.setSetting('sidebar-favorites', JSON.stringify(favorites));
   }
 
   public get autoMarkAsCompleted(): boolean {

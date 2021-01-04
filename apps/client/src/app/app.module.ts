@@ -114,6 +114,7 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { MessagingService } from './core/messaging/messaging.service';
+import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -304,7 +305,8 @@ const nzConfig: NzConfig = {
     NzLayoutModule,
     NzAvatarModule,
     NzSpinModule,
-    NzAlertModule
+    NzAlertModule,
+    NavigationSidebarModule
   ],
   bootstrap: [AppComponent]
 })

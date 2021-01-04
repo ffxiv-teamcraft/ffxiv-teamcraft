@@ -452,6 +452,8 @@
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "Rawsock_flag": "Use RawSocket for packet capture",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
+    "Favorite_features": "Favorite features",
+    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -1800,6 +1802,7 @@
     }
   },
   "SIDEBAR": {
+    "Favorites": "Favorites",
     "General": "General",
     "Sharing": "Sharing",
     "Gathering": "Gathering",

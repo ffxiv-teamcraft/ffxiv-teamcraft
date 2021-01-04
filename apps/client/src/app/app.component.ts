@@ -80,11 +80,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
-
   collapsedAlarmsBar = true;
-
-  sidebarState = this.settings.sidebarState;
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
@@ -92,7 +88,7 @@ export class AppComponent implements OnInit {
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character>;
+  public character$: Observable<Character & { Datacenter: string }>;
 
   public userId$ = this.authFacade.userId$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
@@ -162,11 +158,6 @@ export class AppComponent implements OnInit {
 
   public firewallRuleApplied = false;
 
-  public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
-    map(notifications => notifications.length),
-    shareReplay(1)
-  );
-
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
               private authFacade: AuthFacade, private dialog: NzModalService, private eorzeanTime: EorzeanTimeService,
@@ -181,8 +172,7 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private commissionsFacade: CommissionsFacade) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
 
     fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
@@ -329,7 +319,7 @@ export class AppComponent implements OnInit {
       );
 
       combineLatest([language$, region$]).subscribe(([lang, region]) => {
-        let suggestedRegion = null;
+        let suggestedRegion;
         switch (lang) {
           case 'ko':
             suggestedRegion = Region.Korea;
@@ -473,7 +463,7 @@ export class AppComponent implements OnInit {
   }
 
   enablePacketCapture(): void {
-    this.ipc.machinaToggle = true;
+    this.ipc.machinaToggle$.next(true);
     this.settings.enableUniversalisSourcing = true;
     this.ipc.send('toggle-machina', true);
   }
@@ -572,10 +562,6 @@ export class AppComponent implements OnInit {
         }
       });
 
-      if (this.media.isActive('lt-md')) {
-        this.collapsedSidebar = true;
-      }
-
       this.settings.themeChange$.subscribe((change => {
         this.applyTheme(change.next);
       }));
@@ -623,12 +609,6 @@ export class AppComponent implements OnInit {
       this.settings.timeFormat = '24H';
     }
     this.reloadTime$.next(null);
-  }
-
-  public onNavLinkClick(): void {
-    if (this.media.isActive('lt-md')) {
-      this.collapsedSidebar = true;
-    }
   }
 
   deleteNotification(notification: AbstractNotification): void {
@@ -728,24 +708,8 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public openAlarmsOverlay(): void {
-    this.ipc.openOverlay('/alarms-overlay');
-  }
-
-  public openFishingOverlay(): void {
-    this.ipc.openOverlay('/fishing-reporter-overlay');
-  }
-
-  public openMappyOverlay(): void {
-    this.ipc.openOverlay('/mappy-overlay');
-  }
-
-  public openListPanelOverlay(): void {
-    this.ipc.openOverlay('/list-panel-overlay');
-  }
-
-  public openItemSearchOverlay(): void {
-    this.ipc.openOverlay('/item-search-overlay');
+  public openOverlay(uri: string): void {
+    this.ipc.openOverlay(uri);
   }
 
   @HostListener('window:beforeunload', ['$event'])

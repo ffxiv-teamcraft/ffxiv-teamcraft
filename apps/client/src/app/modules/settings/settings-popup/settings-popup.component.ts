@@ -21,6 +21,9 @@ import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
 import { from } from 'rxjs';
+import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
+import { Observable } from 'rxjs/Observable';
+import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
 
 @Component({
   selector: 'app-settings-popup',
@@ -94,7 +97,11 @@ export class SettingsPopupComponent {
     }
   ];
 
+  public sidebarItems$: Observable<SidebarItem[]> = this.navigationSidebarService.allLinks$.pipe(first());
+
   public allAetherytes = this.lazyData.data.aetherytes.filter(a => a.nameid !== 0);
+
+  public sidebarFavorites = [...this.settings.sidebarFavorites];
 
   public favoriteAetherytes = [...this.settings.favoriteAetherytes];
 
@@ -136,7 +143,8 @@ export class SettingsPopupComponent {
               public ipc: IpcService, private router: Router, private http: HttpClient,
               private userService: UserService, private customLinksFacade: CustomLinksFacade,
               private dialog: NzModalService, private inventoryFacade: InventoryFacade,
-              private lazyData: LazyDataService, private mappy: MappyReporterService) {
+              private lazyData: LazyDataService, private mappy: MappyReporterService,
+              private navigationSidebarService: NavigationSidebarService) {
 
     this.ipc.once('always-on-top:value', (event, value) => {
       this.alwaysOnTop = value;

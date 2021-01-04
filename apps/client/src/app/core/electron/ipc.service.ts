@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
@@ -127,7 +127,11 @@ export class IpcService {
 
   public packets$: Subject<pcap.BasePacket> = new Subject<pcap.BasePacket>();
 
-  public machinaToggle: boolean;
+  public get machinaToggle(): boolean {
+    return this.machinaToggle$.value;
+  }
+
+  public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
 
@@ -215,7 +219,7 @@ export class IpcService {
       this.send('app-ready', true);
     }
     this.on('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+      this.machinaToggle$.next(value);
     });
     this.send('toggle-machina:get');
     this.on('packet', (event, packet: pcap.BasePacket) => {
@@ -248,7 +252,7 @@ export class IpcService {
               break;
             case 'disable':
               this.send('toggle-machina', false);
-              this.machinaToggle = false;
+              this.machinaToggle$.next(false);
               break;
           }
         });
@@ -272,7 +276,7 @@ export class IpcService {
               break;
             case 'disable':
               this.send('toggle-machina', false);
-              this.machinaToggle = false;
+              this.machinaToggle$.next(false);
               break;
           }
         });
