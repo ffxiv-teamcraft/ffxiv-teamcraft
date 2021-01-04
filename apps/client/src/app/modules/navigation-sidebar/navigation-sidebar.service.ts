@@ -158,7 +158,7 @@ export class NavigationSidebarService {
                 content: 'project'
               },
               hidden: !character,
-              link: `/commissions/board/${character.Datacenter}`
+              link: `/commissions/board/${character?.Datacenter}`
             },
             {
               name: 'SIDEBAR.My_commissions',
@@ -210,22 +210,13 @@ export class NavigationSidebarService {
           ]
         },
         {
-          name: 'SIDEBAR.Helpers',
-          collapsedKey: 'helpers',
+          name: 'SIDEBAR.Leveling',
+          collapsedKey: 'leveling',
           icon: {
-            type: SidebarIconType.ANTD,
-            content: 'appstore'
+            type: SidebarIconType.COMPANION_SVG,
+            content: this.sanitizer.bypassSecurityTrustHtml('&#xE267;')
           },
           children: [
-            {
-              name: 'INVENTORY_OPTIMIZER.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'container'
-              },
-              link: '/inventory-optimizer',
-              hidden: !this.platformService.isDesktop()
-            },
             {
               name: 'LEVEQUESTS.Title',
               icon: {
@@ -233,22 +224,6 @@ export class NavigationSidebarService {
                 content: 'book'
               },
               link: '/levequests'
-            },
-            {
-              name: 'LOG_TRACKER.Title',
-              icon: {
-                type: SidebarIconType.ANTD_ICONFONT,
-                content: 'icon-book'
-              },
-              link: '/log-tracker'
-            },
-            {
-              name: 'GC_SUPPLY.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'file-done'
-              },
-              link: '/gc-supply'
             },
             {
               name: 'DESYNTH.Title',
@@ -259,12 +234,30 @@ export class NavigationSidebarService {
               link: '/desynth'
             },
             {
-              name: 'RECIPE_FINDER.Title',
+              name: 'LEVELING_EQUIPMENT.Title',
               icon: {
                 type: SidebarIconType.ANTD,
-                content: 'experiment'
+                content: 'medicine-box'
               },
-              link: '/recipe-finder'
+              link: '/leveling-equipment'
+            }
+          ]
+        },
+        {
+          name: 'SIDEBAR.Currencies',
+          collapsedKey: 'currencies',
+          icon: {
+            type: SidebarIconType.COMPANION_SVG,
+            content: this.sanitizer.bypassSecurityTrustHtml('&#xF209;')
+          },
+          children: [
+            {
+              name: 'GC_SUPPLY.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'file-done'
+              },
+              link: '/gc-supply'
             },
             {
               name: 'CURRENCY_SPENDING.Title',
@@ -273,6 +266,57 @@ export class NavigationSidebarService {
                 content: 'shopping'
               },
               link: '/currency-spending'
+            },
+            {
+              name: 'COLLECTABLES.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'table'
+              },
+              link: '/collectables'
+            }
+          ]
+        },
+        {
+          name: 'SIDEBAR.Helpers',
+          collapsedKey: 'helpers',
+          icon: {
+            type: SidebarIconType.ANTD,
+            content: 'appstore'
+          },
+          children: [
+            {
+              name: 'MACRO_TRANSLATION.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'translation'
+              },
+              link: '/macro-translator'
+            },
+            {
+              name: 'INVENTORY_OPTIMIZER.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'container'
+              },
+              link: '/inventory-optimizer',
+              hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'LOG_TRACKER.Title',
+              icon: {
+                type: SidebarIconType.ANTD_ICONFONT,
+                content: 'icon-book'
+              },
+              link: '/log-tracker'
+            },
+            {
+              name: 'RECIPE_FINDER.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'experiment'
+              },
+              link: '/recipe-finder'
             },
             {
               name: 'FOOD_PICKER.Title',
@@ -291,36 +335,12 @@ export class NavigationSidebarService {
               link: '/custom-items'
             },
             {
-              name: 'MACRO_TRANSLATION.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'translation'
-              },
-              link: '/macro-translator'
-            },
-            {
               name: 'ALARMS.REALTIME.Reset_timers',
               icon: {
                 type: SidebarIconType.ANTD,
                 content: 'hourglass'
               },
               link: '/reset-timers'
-            },
-            {
-              name: 'COLLECTABLES.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'table'
-              },
-              link: '/collectables'
-            },
-            {
-              name: 'LEVELING_EQUIPMENT.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'medicine-box'
-              },
-              link: '/leveling-equipment'
             }
           ]
         }
@@ -342,7 +362,9 @@ export class NavigationSidebarService {
             type: SidebarIconType.ANTD,
             content: 'star'
           },
-          children: favoriteLinks,
+          children: favoriteLinks.sort((a, b) => {
+            return sidebarFavorites.indexOf(a.link) - sidebarFavorites.indexOf(b.link);
+          }),
           collapsedKey: 'favorites'
         });
       }
