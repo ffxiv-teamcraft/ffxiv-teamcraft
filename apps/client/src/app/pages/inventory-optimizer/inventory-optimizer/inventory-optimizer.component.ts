@@ -79,7 +79,6 @@ export class InventoryOptimizerComponent {
     })
   );
 
-
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
     switchMap(optimizations => {
       return this.reloader$.pipe(
@@ -167,6 +166,10 @@ export class InventoryOptimizerComponent {
 
   public getExpansions() {
     return this.l12n.getExpansions();
+  }
+
+  public resetInventory(): void {
+    this.inventoryFacade.resetInventory();
   }
 
   public get selectedExpansion(): number {

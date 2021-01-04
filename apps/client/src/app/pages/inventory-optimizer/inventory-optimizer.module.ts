@@ -26,6 +26,7 @@ import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { CanBeGatheredEasily } from './optimizations/can-be-gathered-easily';
 import { CanExtractMateria } from './optimizations/can-extract-materia';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 
 const optimisations: Provider[] = [
   {
