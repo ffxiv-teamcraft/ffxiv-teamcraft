@@ -91,7 +91,7 @@ export class MachinaService {
   private getInventoryTransactionFlag(): number {
     switch (this.settings.region) {
       case Region.China:
-        return 0x036A;
+        return 0x02CB;
       case Region.Korea:
         return 0x399;
       case Region.Global:
