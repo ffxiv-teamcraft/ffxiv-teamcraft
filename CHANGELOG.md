@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.22"></a>
+## [7.6.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.21...v7.6.22) (2021-01-05)
+
+
+### Bug Fixes
+
+* **desktop:** fixed a possible error when opening from file protocol ([ced35df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ced35df))
+
+
+### Features
+
+* **data:** update for cn patch-5.31 ([abd2945](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/abd2945))
+* **desktop:** support for chinese 5.31 packet capture ([34505fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34505fe))
+
+
+
 <a name="7.6.21"></a>
 ## [7.6.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.20...v7.6.21) (2020-12-29)
 
