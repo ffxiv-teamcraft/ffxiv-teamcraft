@@ -1,10 +1,9 @@
 export const patchNotes = `### Bug Fixes
 
-* **pricing-mode:** fixed clipboard copy success notification content.
+* **desktop:** fixed a possible error when opening from file protocol.
 
 
 ### Features
 
-* **desktop:** user-friendly npcap installation process, instead of starting setup asap.
-* **desktop:** you can now enable rawsock for packet capture, requires TC to be started as admin.
-* **gearset:** max display ilvl is now max gearset ilvl + 30.`;
+* **data:** update for cn patch-5.31.
+* **desktop:** support for chinese 5.31 packet capture.`;
