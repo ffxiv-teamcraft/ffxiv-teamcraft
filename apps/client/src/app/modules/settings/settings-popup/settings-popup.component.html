@@ -474,6 +474,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.clearInventoryOnStartup" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Clear_inventory_on_startup' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_by_default' | translate}}
             </label>

@@ -587,6 +587,14 @@ export class SettingsService {
     this.setSetting('autofill:enable-nq-filter', enabled.toString());
   }
 
+  public get clearInventoryOnStartup(): boolean {
+    return this.getBoolean('inventory:clear-on-startup', false);
+  }
+
+  public set clearInventoryOnStartup(clear: boolean) {
+    this.setBoolean('inventory:clear-on-startup', clear);
+  }
+
   public get enableUniversalisSourcing(): boolean {
     return this.getBoolean('universalis:enable-sourcing', false);
   }

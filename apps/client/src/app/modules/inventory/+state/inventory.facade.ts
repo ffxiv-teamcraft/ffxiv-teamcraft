@@ -7,8 +7,8 @@ import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { Memoized } from '../../../core/decorators/memoized';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
+import { SettingsService } from '../../settings/settings.service';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,10 @@ export class InventoryFacade {
     shareReplay(1)
   );
 
-  constructor(private store: Store<InventoryPartialState>) {
+  constructor(private store: Store<InventoryPartialState>, settings: SettingsService) {
+    if (settings.clearInventoryOnStartup) {
+      this.resetInventory();
+    }
   }
 
   public getContainerDisplayName(item: InventoryItem): string {
@@ -33,7 +36,6 @@ export class InventoryFacade {
     return `INVENTORY.BAG.${this.getContainerName(item.containerId)}`;
   }
 
-  @Memoized()
   public getContainerName(containerId: number): string {
     switch (containerId) {
       case ContainerType.Bag0:
