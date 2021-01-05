@@ -2,14 +2,13 @@ import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { InventoryActionTypes, InventoryLoaded, ResetInventory, UpdateInventory } from './inventory.actions';
 import { UserInventoryService } from '../../../core/database/user-inventory.service';
-import { auditTime, distinctUntilKeyChanged, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilKeyChanged, map, switchMap, switchMapTo, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
 import { of } from 'rxjs';
 import { INVENTORY_FEATURE_KEY } from './inventory.reducer';
 import { NgSerializerService } from '@kaiu/ng-serializer';
-import { PlatformService } from '../../../core/tools/platform.service';
 
 @Injectable()
 export class InventoryEffects {
@@ -35,7 +34,9 @@ export class InventoryEffects {
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
     map(action => {
-      localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(action.payload));
+      const savePayload = JSON.parse(JSON.stringify(action.payload));
+      delete savePayload.searchCache;
+      localStorage.setItem(INVENTORY_FEATURE_KEY, JSON.stringify(savePayload));
     })
   );
 
@@ -56,8 +57,7 @@ export class InventoryEffects {
     private inventoryService: UserInventoryService,
     private authFacade: AuthFacade,
     private settings: SettingsService,
-    private serializer: NgSerializerService,
-    private platform: PlatformService
+    private serializer: NgSerializerService
   ) {
   }
 }

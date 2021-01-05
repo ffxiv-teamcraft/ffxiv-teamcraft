@@ -1460,6 +1460,7 @@ if (hasTodo('items')) {
   const stackSizes = {};
   const equipment = {};
   const itemStats = {};
+  const itemMainAttributes = {};
   const itemMeldingData = {};
   const hqFlags = {};
   const tradeFlags = {};
@@ -1469,7 +1470,7 @@ if (hasTodo('items')) {
   const marketItems = [];
   const extractableItems = {};
   const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
-  getAllPages(`https://xivapi.com/Item?columns=Patch,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
+  getAllPages(`https://xivapi.com/Item?columns=Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
     .subscribe(page => {
       page.Results.forEach(item => {
         itemIcons[item.ID] = item.Icon;
@@ -1497,6 +1498,39 @@ if (hasTodo('items')) {
         }
         if (item.Stats) {
           itemStats[item.ID] = Object.values(item.Stats);
+          itemMainAttributes[item.ID] = [];
+          if (item.DamagePhys || item.DamageMag) {
+            if (item.DamagePhys > item.DamageMag) {
+              itemMainAttributes[item.ID].push(
+                {
+                  ID: 12,
+                  NQ: item.DamagePhys,
+                  HQ: item.DamagePhys + item.BaseParamValueSpecial0
+                });
+            } else {
+              itemMainAttributes[item.ID].push(
+                {
+                  ID: 13,
+                  NQ: item.DamageMag,
+                  HQ: item.DamageMag + item.BaseParamValueSpecial1
+                });
+            }
+          }
+          if (item.DefensePhys || item.DefenseMag) {
+            itemMainAttributes[item.ID].push({
+                ID: 21,
+                NQ: item.DefensePhys,
+                HQ: item.DefensePhys + item.BaseParamValueSpecial0
+              },
+              {
+                ID: 24,
+                NQ: item.DefenseMag,
+                HQ: item.DefenseMag + item.BaseParamValueSpecial1
+              });
+          }
+          if (itemMainAttributes[item.ID].length === 0) {
+            delete itemMainAttributes[item.ID];
+          }
         }
         if (item.ItemSeries) {
           itemSetBonuses[item.ID] = {
@@ -1537,6 +1571,7 @@ if (hasTodo('items')) {
       persistToJsonAsset('stack-sizes', stackSizes);
       persistToJsonAsset('equipment', equipment);
       persistToJsonAsset('item-stats', itemStats);
+      persistToJsonAsset('item-main-attributes', itemMainAttributes);
       persistToJsonAsset('item-melding-data', itemMeldingData);
       persistToJsonAsset('hq-flags', hqFlags);
       persistToJsonAsset('trade-flags', tradeFlags);

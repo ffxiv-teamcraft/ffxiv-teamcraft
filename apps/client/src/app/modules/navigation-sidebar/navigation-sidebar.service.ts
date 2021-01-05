@@ -375,7 +375,7 @@ export class NavigationSidebarService {
 
   public allLinks$: Observable<SidebarItem[]> = this.content$.pipe(
     map(content => {
-      return [].concat.apply([], content.map(category => category.children.filter(child => !child.hidden)));
+      return [].concat.apply([], content.filter(category => category.name !== 'SIDEBAR.Favorites').map(category => category.children.filter(child => !child.hidden)));
     })
   );
 

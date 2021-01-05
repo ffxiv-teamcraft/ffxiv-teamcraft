@@ -43,6 +43,7 @@ export interface LazyData {
   itemEquipSlotCategory: any;
   itemIcons: any;
   itemLevel: any;
+  itemMainAttributes: any;
   itemMeldingData: any;
   itemPatch: any;
   itemSeries: any;

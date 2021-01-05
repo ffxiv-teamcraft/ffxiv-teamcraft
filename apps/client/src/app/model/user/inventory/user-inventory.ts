@@ -57,39 +57,24 @@ export class UserInventory extends DataModel {
 
   lastZone: number;
 
+  private searchCache: InventoryItem[];
+
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
   }
 
+  hasItem(itemId: number, onlyUserInventory = false): boolean {
+    this.generateSearchCacheIfNeeded();
+    return this.searchCache.some(item => (!onlyUserInventory || item.containerId < 10) && item.itemId === itemId);
+  }
+
   getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
-    return [].concat.apply([],
-      Object.keys(this.items)
-        .filter(key => {
-          let matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
-          if (onlyUserInventory) {
-            matches = matches && +key < 10;
-          }
-          // In some cases, items are registered as retainer while they aren't, just remove them from the output.
-          if (key.indexOf(':') > -1) {
-            if (+key.split(':')[1] < 10000) {
-              return false;
-            }
-          }
-          const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
-          if (this.trackItemsOnSale) {
-            return matches;
-          } else {
-            return matches && !matchesRetainerMarket;
-          }
-        })
-        .map(key => {
-          return Object.keys(this.items[key])
-            .map(slot => this.items[key][slot]);
-        })
-    ).filter(item => item.itemId === itemId);
+    this.generateSearchCacheIfNeeded();
+    return this.searchCache.filter(item => (!onlyUserInventory || item.containerId < 10) && item.itemId === itemId);
   }
 
   updateInventorySlot(packet: UpdateInventorySlot | InventoryTransaction, lastSpawnedRetainer: string): InventoryPatch | null {
+    delete this.searchCache;
     const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
     const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
     if (this.items[containerKey] === undefined) {
@@ -143,6 +128,7 @@ export class UserInventory extends DataModel {
   }
 
   operateTransaction(packet: InventoryTransaction | InventoryModifyHandler, lastSpawnedRetainer: string): InventoryPatch | null {
+    delete this.searchCache;
     const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
     const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.fromContainer}` : `${packet.fromContainer}`;
@@ -263,5 +249,31 @@ export class UserInventory extends DataModel {
     clone.characterId = this.characterId;
     clone.lastZone = this.lastZone;
     return clone;
+  }
+
+  private generateSearchCacheIfNeeded():void{
+    if(!this.searchCache){
+      this.searchCache = [].concat.apply([],
+        Object.keys(this.items)
+          .filter(key => {
+            const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+            // In some cases, items are registered as retainer while they aren't, just remove them from the output.
+            if (key.indexOf(':') > -1) {
+              if (+key.split(':')[1] < 10000) {
+                return false;
+              }
+            }
+            const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
+            if (this.trackItemsOnSale) {
+              return matches;
+            } else {
+              return matches && !matchesRetainerMarket;
+            }
+          })
+          .map(key => {
+            return Object.values(this.items[key]);
+          })
+      );
+    }
   }
 }

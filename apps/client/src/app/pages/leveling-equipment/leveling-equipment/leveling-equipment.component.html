@@ -33,7 +33,12 @@
         <label nz-checkbox formControlName="includeTrades"></label>
       </nz-form-control>
     </nz-form-item>
-
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Only_inventory' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="onlyInventoryContent"></label>
+      </nz-form-control>
+    </nz-form-item>
     <nz-form-item>
       <nz-form-control>
         <button (click)="search$.next()" [disabled]="filtersForm.invalid" nz-button
@@ -56,9 +61,14 @@
         <td>{{('GEARSETS.SLOT.' + slot.name) | translate}}</td>
         <td *ngFor="let row of results" [class.selected]="row.level === selectedLevel" [class.bottom]="last" (click)="selectedLevel = row.level">
           <div fxLayout="row" fxLayoutAlign="center center">
-            <app-item-icon *ngIf="row.gearset[slot.property]; else noItem" [itemId]="row.gearset[slot.property].itemId" [width]="32"></app-item-icon>
+            <div *ngIf="row.gearset[slot.property] as equipmentPiece; else noItem" class="slot-icon">
+              <app-item-icon [itemId]="equipmentPiece.itemId" [width]="32"></app-item-icon>
+              <div class="inventory-icon" *ngIf="equipmentPiece.isInInventory" nz-tooltip [nzTooltipTitle]="'LEVELING_EQUIPMENT.In_inventory' | translate">
+                <div class="companion-svg">&#xF153;</div>
+              </div>
+            </div>
             <ng-template #noItem>
-              NO ITEM
+              {{'LEVELING_EQUIPMENT.Empty_slot' | translate}}
             </ng-template>
           </div>
         </td>
