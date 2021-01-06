@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { delay, filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { debounceTime, filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -30,7 +30,9 @@ export class InventoryOptimizerComponent {
 
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-  public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
+  public optimizations$: Observable<InventoryOptimization[]> = this.reloader$.pipe(
+    debounceTime(50),
+    switchMapTo(this.lazyData.extracts$),
     switchMap((extracts: ListRow[]) => {
       return combineLatest([
         this.settings.settingsChange$.pipe(
@@ -80,42 +82,37 @@ export class InventoryOptimizerComponent {
   );
 
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
-    switchMap(optimizations => {
-      return this.reloader$.pipe(
-        delay(20),
-        map(() => {
-          return JSON.parse(JSON.stringify(optimizations)).map(opt => {
-            const total: number[] = [];
-            opt.entries = opt.entries.map(entry => {
-              entry.ignored = this.ignoreArray.some(ignored => {
-                return ignored.containerName === entry.containerName && ignored.id === opt.type;
-              });
-              entry.items = entry.items.map(item => {
-                item.ignored = this.ignoreArray.some(ignored => {
-                  return ignored.itemId === item.item.itemId && ignored.id === opt.type;
-                });
-                return item;
-              }).filter(item => {
-                return this.showIgnored || !item.ignored;
-              });
-              if (this.showIgnored) {
-                entry.totalLength = entry.items.length;
-              } else {
-                entry.totalLength = entry.items.filter(i => !i.ignored).length;
-              }
-              if (this.showIgnored || !entry.ignored) {
-                total.push(...entry.items.map(i => i.item.itemId));
-              }
-              return entry;
-            });
-            opt.hidden = this.hiddenArray.some(hidden => {
-              return hidden.optimizerId === opt.type;
-            });
-            opt.totalLength = uniq(total).length;
-            return opt;
+    map((optimizations) => {
+      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
+        const total: number[] = [];
+        opt.entries = opt.entries.map(entry => {
+          entry.ignored = this.ignoreArray.some(ignored => {
+            return ignored.containerName === entry.containerName && ignored.id === opt.type;
           });
-        })
-      );
+          entry.items = entry.items.map(item => {
+            item.ignored = this.ignoreArray.some(ignored => {
+              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
+            });
+            return item;
+          }).filter(item => {
+            return this.showIgnored || !item.ignored;
+          });
+          if (this.showIgnored) {
+            entry.totalLength = entry.items.length;
+          } else {
+            entry.totalLength = entry.items.filter(i => !i.ignored).length;
+          }
+          if (this.showIgnored || !entry.ignored) {
+            total.push(...entry.items.map(i => i.item.itemId));
+          }
+          return entry;
+        });
+        opt.hidden = this.hiddenArray.some(hidden => {
+          return hidden.optimizerId === opt.type;
+        });
+        opt.totalLength = uniq(total).length;
+        return opt;
+      });
     })
   );
 
