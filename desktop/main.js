@@ -8,7 +8,6 @@ log.log(argv);
 const Config = require('electron-config');
 const config = new Config();
 const ChildProcess = require('child_process');
-if (require('electron-squirrel-startup')) return;
 
 const mainWindowPort = 14500;
 
