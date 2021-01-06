@@ -3,7 +3,7 @@ import { InventoryFacade } from '../../../modules/inventory/+state/inventory.fac
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { debounceTime, filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -26,13 +26,9 @@ import { CanBeBought } from '../optimizations/can-be-bought';
 })
 export class InventoryOptimizerComponent {
 
-  public resultsReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
-
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
-  public optimizations$: Observable<InventoryOptimization[]> = this.reloader$.pipe(
-    debounceTime(50),
-    switchMapTo(this.lazyData.extracts$),
+  public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
     switchMap((extracts: ListRow[]) => {
       return combineLatest([
         this.settings.settingsChange$.pipe(
@@ -41,7 +37,7 @@ export class InventoryOptimizerComponent {
           }),
           startWith(0)
         ),
-        this.resultsReloader$
+        this.reloader$
       ]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
@@ -136,7 +132,7 @@ export class InventoryOptimizerComponent {
     if (size > 0) {
       localStorage.setItem(HasTooFew.THRESHOLD_KEY, size.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 
@@ -148,7 +144,7 @@ export class InventoryOptimizerComponent {
     if (price > 0) {
       localStorage.setItem(CanBeBought.MAXIMUM_PRICE_KEY, price.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 
@@ -182,7 +178,7 @@ export class InventoryOptimizerComponent {
     }
 
     this.loading = true;
-    this.resultsReloader$.next(null);
+    this.reloader$.next();
   }
 
   public get minRecipeIlvl(): number {
@@ -193,7 +189,7 @@ export class InventoryOptimizerComponent {
     if (size > 0) {
       localStorage.setItem(UnwantedMaterials.RECIPE_ILVL_KEY, size.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 
