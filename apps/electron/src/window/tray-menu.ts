@@ -5,6 +5,7 @@ import { Constants } from '../constants';
 import { OverlayManager } from './overlay-manager';
 import { Store } from '../store';
 import { app } from 'electron/main';
+import { PacketCapture } from '../pcap/packet-capture';
 
 export class TrayMenu {
 
@@ -15,7 +16,7 @@ export class TrayMenu {
   }
 
   constructor(private mainWindow: MainWindow, private overlayManager: OverlayManager,
-              private store: Store) {
+              private store: Store, private pcap: PacketCapture) {
   }
 
   createTray(): void {
@@ -44,7 +45,7 @@ export class TrayMenu {
           content: 'To change this behavior, visit Settings -> Desktop.'
         });
       }
-    })
+    });
     this.mainWindow.win.webContents
       .executeJavaScript('localStorage.getItem("settings") || "{}";', true)
       .then(settingsString => {
@@ -52,48 +53,67 @@ export class TrayMenu {
         this._tray.setToolTip('FFXIV Teamcraft');
         const contextMenu = Menu.buildFromTemplate([
           {
-            label: 'Item Search Overlay',
-            type: 'normal',
-            click: () => {
-              this.overlayManager.toggleOverlay({ url: '/item-search-overlay' });
-            }
-          },
-          {
-            label: 'List Overlay',
-            type: 'normal',
-            click: () => {
-              this.overlayManager.toggleOverlay({ url: '/list-panel-overlay' });
-            }
-          },
-          {
-            label: 'Fishing Overlay',
-            type: 'normal',
-            click: () => {
-              this.overlayManager.toggleOverlay({ url: '/fishing-reporter-overlay' });
-            }
-          },
-          {
-            label: 'Alarm Overlay',
-            type: 'normal',
-            click: () => {
-              this.overlayManager.toggleOverlay({ url: '/alarms-overlay' });
-            }
-          },
-          {
-            label: 'Reset overlay positions',
-            type: 'normal',
-            click: () => {
-              this.overlayManager.resetOverlayPositions();
-            }
-          },
-          {
-            label: 'Clickthrough Overlays',
-            type: 'checkbox',
-            checked: settings.clickthrough === 'true',
+            label: 'Packet Capture',
+            type: 'submenu',
+            checked: this.store.get<boolean>('machina', false),
             click: (menuItem) => {
-              settings.clickthrough = menuItem.checked.toString();
-              this.store.set('clickthrough', settings.clickthrough === 'true');
+              this.store.set('machina', menuItem.checked);
+              if (menuItem.checked) {
+                this.pcap.start();
+              } else {
+                this.pcap.stop();
+              }
             }
+          },
+          {
+            label: 'Overlay',
+            type: 'submenu',
+            submenu: Menu.buildFromTemplate([
+              {
+                label: 'Item Search Overlay',
+                type: 'normal',
+                click: () => {
+                  this.overlayManager.toggleOverlay({ url: '/item-search-overlay' });
+                }
+              },
+              {
+                label: 'List Overlay',
+                type: 'normal',
+                click: () => {
+                  this.overlayManager.toggleOverlay({ url: '/list-panel-overlay' });
+                }
+              },
+              {
+                label: 'Fishing Overlay',
+                type: 'normal',
+                click: () => {
+                  this.overlayManager.toggleOverlay({ url: '/fishing-reporter-overlay' });
+                }
+              },
+              {
+                label: 'Alarm Overlay',
+                type: 'normal',
+                click: () => {
+                  this.overlayManager.toggleOverlay({ url: '/alarms-overlay' });
+                }
+              },
+              {
+                label: 'Reset overlay positions',
+                type: 'normal',
+                click: () => {
+                  this.overlayManager.resetOverlayPositions();
+                }
+              },
+              {
+                label: 'Clickthrough Overlays',
+                type: 'checkbox',
+                checked: settings.clickthrough === 'true',
+                click: (menuItem) => {
+                  settings.clickthrough = menuItem.checked.toString();
+                  this.store.set('clickthrough', settings.clickthrough === 'true');
+                }
+              }
+            ])
           },
           {
             label: 'Quit',

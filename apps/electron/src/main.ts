@@ -48,8 +48,8 @@ const store = new Store();
 const overlayManager = new OverlayManager(store);
 const proxyManager = new ProxyManager(store);
 const mainWindow = new MainWindow(store, overlayManager, proxyManager);
-const trayMenu = new TrayMenu(mainWindow, overlayManager, store);
 const pcapManager = new PacketCapture(mainWindow, store, options);
+const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);
 
 // Prepare listeners connector
 const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager, mainWindow, store, trayMenu, proxyManager);

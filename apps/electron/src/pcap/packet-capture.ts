@@ -112,7 +112,6 @@ export class PacketCapture {
       }
       const appPath = app.getAppPath();
       const appVersion = /\d\.\d\.\d/.exec(appPath)[1];
-      console.log(appVersion);
       exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
         if (output[1].indexOf(appVersion) === -1) {
           exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {
