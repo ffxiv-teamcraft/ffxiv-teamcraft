@@ -179,7 +179,7 @@ export class AppComponent implements OnInit {
 
     // Scuff Zoom Handling
     document.addEventListener('keydown', event => {
-      if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
+      if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
         return this.ipc.send('zoom-in', event);
       }
     });
@@ -447,13 +447,13 @@ export class AppComponent implements OnInit {
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {
-    if (event.ctrlKey && event.shiftKey && event.code === 'KeyF') {
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyF') {
       this.quickSearch.openQuickSearch();
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyQ') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyQ') {
       this.router.navigateByUrl('/admin/users');
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyM') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyM') {
       this.router.navigateByUrl('/mappy');
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyC') {
       event.preventDefault();
       event.stopPropagation();
       if (this.platformService.isDesktop()) {
