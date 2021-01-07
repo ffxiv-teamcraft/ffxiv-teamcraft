@@ -72,16 +72,6 @@ export class MainWindow {
       }
     });
 
-    this.win.once('ready-to-show', () => {
-      if (!this.store.get('start-minimized', false)) {
-        this.win.focus();
-        this.win.show();
-        if (this.store.get('win:fullscreen', false)) {
-          this.win.maximize();
-        }
-      }
-    });
-
     // save window size and position
     this.win.on('close', (event) => {
       if (!(<any>app).isQuitting && this.store.get<boolean>('always-quit', true) === false) {
@@ -105,5 +95,15 @@ export class MainWindow {
     this.win.webContents.on('will-navigate', handleRedirect);
     this.win.webContents.on('new-window', handleRedirect);
     (this.store.get('overlays', []) || []).forEach(overlayUri => this.overlayManager.toggleOverlay({ url: overlayUri }));
+  }
+
+  public show(): void {
+    if (!this.store.get('start-minimized', false)) {
+      this.win.focus();
+      this.win.show();
+      if (this.store.get('win:fullscreen', false)) {
+        this.win.maximize();
+      }
+    }
   }
 }

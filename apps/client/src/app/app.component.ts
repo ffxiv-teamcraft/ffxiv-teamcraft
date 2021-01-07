@@ -57,7 +57,6 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
-import { CommissionsFacade } from './modules/commission-board/+state/commissions.facade';
 
 declare const gtag: Function;
 
@@ -437,6 +436,9 @@ export class AppComponent implements OnInit {
               this.mappy.start();
             }
             this.playerMetricsService.start();
+            setTimeout(() => {
+              this.ipc.send('app-ready', true);
+            }, 500);
           });
       }
     }

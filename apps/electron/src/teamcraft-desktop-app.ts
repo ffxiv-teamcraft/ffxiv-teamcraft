@@ -1,4 +1,4 @@
-import { app, ipcMain, protocol } from 'electron';
+import { app, BrowserWindow, ipcMain, protocol } from 'electron';
 import { createServer } from 'net';
 import { createServer as createHttpServer, Server } from 'http';
 import * as request from 'request';
@@ -7,8 +7,11 @@ import { TrayMenu } from './window/tray-menu';
 import { Store } from './store';
 import { PacketCapture } from './pcap/packet-capture';
 import * as log from 'electron-log';
+import { Constants } from './constants';
+import { join } from 'path';
 
 export class TeamcraftDesktopApp {
+
   private static readonly MAIN_WINDOW_PORT = 14500;
 
   private httpServer: Server;
@@ -45,26 +48,7 @@ export class TeamcraftDesktopApp {
         if (taken) {
           this.sendToAlreadyOpenedTC((this.argv[0] || '').replace('teamcraft://', ''));
         } else {
-          this.mainWindow.createWindow();
-          this.tray.createTray();
-          this.httpServer = createHttpServer((req, res) => {
-            res.setHeader('Access-Control-Allow-Origin', '*');
-            res.setHeader('Access-Control-Request-Method', '*');
-            res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
-            res.setHeader('Access-Control-Allow-Headers', '*');
-            if (req.method === 'OPTIONS') {
-              res.writeHead(200);
-              res.end();
-              return;
-            }
-            this.mainWindow.win.focus();
-            this.mainWindow.win.show();
-            if (req.url.length > 1) {
-              this.mainWindow.win.webContents.send('navigate', req.url);
-            }
-            res.writeHead(200);
-            res.end();
-          }).listen(TeamcraftDesktopApp.MAIN_WINDOW_PORT, 'localhost');
+          this.bootApp();
         }
       });
     });
@@ -83,12 +67,6 @@ export class TeamcraftDesktopApp {
       // macOS specific close process
       if (this.mainWindow.win === null) {
         this.mainWindow.createWindow(deepLink);
-      }
-    });
-
-    ipcMain.once('app-ready', () => {
-      if (this.store.get<boolean>('machina', false) === true) {
-        this.pcap.start();
       }
     });
 
@@ -116,5 +94,51 @@ export class TeamcraftDesktopApp {
 
   private sendToAlreadyOpenedTC(url: string): void {
     request(`http://localhost:${TeamcraftDesktopApp.MAIN_WINDOW_PORT}${url}`);
+  }
+
+  private bootApp(): void {
+    const loaderWindow = new BrowserWindow({
+      width: 400,
+      height: 500,
+      show: false,
+      frame: false,
+      backgroundColor: '#2f3237',
+      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`
+    });
+
+    loaderWindow.once('show', () => {
+      this.mainWindow.createWindow();
+      this.tray.createTray();
+      this.httpServer = createHttpServer((req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Request-Method', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+        res.setHeader('Access-Control-Allow-Headers', '*');
+        if (req.method === 'OPTIONS') {
+          res.writeHead(200);
+          res.end();
+          return;
+        }
+        this.mainWindow.win.focus();
+        this.mainWindow.win.show();
+        if (req.url.length > 1) {
+          this.mainWindow.win.webContents.send('navigate', req.url);
+        }
+        res.writeHead(200);
+        res.end();
+      }).listen(TeamcraftDesktopApp.MAIN_WINDOW_PORT, 'localhost');
+
+      ipcMain.once('app-ready', () => {
+        if (this.store.get<boolean>('machina', false) === true) {
+          this.pcap.start();
+        }
+        loaderWindow.hide();
+        loaderWindow.close();
+        this.mainWindow.show();
+      });
+    });
+
+    loaderWindow.loadURL(join(__dirname, 'loader.html'));
+    loaderWindow.show();
   }
 }
