@@ -93,10 +93,10 @@
     "electron:build:watch": "tsc -p apps/electron/tsconfig.json -w",
     "electron:start": "yarn electron:build && yarn electron ./dist/apps/electron/src/main.js",
     "************ELECTRON SETUP BUILD************************": "",
-    "electron:setup:build": "del-cli release/* && yarn build:electron-prod && electron-builder -w",
+    "electron:setup:build": "del-cli release/* && yarn electron:build && yarn build:electron-prod && electron-builder -w",
     "electron:setup:build-dev": "electron-builder -w",
     "electron:setup:build-beta": "del-cli release/* && yarn build:electron-dev && electron-builder -w",
-    "electron:setup:publish": "yarn build:electron-prod && electron-builder -w -p always",
+    "electron:setup:publish": "yarn build:electron-prod && yarn electron:build && electron-builder -w -p always",
     "postinstall": "ngcc && electron-builder install-app-deps",
     "release:full": "yarn build:prod && firebase deploy -P default --only hosting && yarn electron:setup:publish",
     "pack": "electron-builder --dir",
@@ -124,7 +124,8 @@
     "lodash": "^4.17.10",
     "node-machina-ffxiv": "^2.39.1",
     "request": "^2.88.2",
-    "tslib": "^1.10.0"
+    "tslib": "^1.10.0",
+    "rxjs": "^6.6.3"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^10.0.1",
@@ -236,7 +237,6 @@
     "nz-tslint-rules": "^0.901.2",
     "papaparse": "^5.2.0",
     "prettier": "^2.0.5",
-    "rxjs": "^6.6.3",
     "rxjs-compat": "^6.6.3",
     "semver": "^5.4.1",
     "standard-version": "^4.4.0",
