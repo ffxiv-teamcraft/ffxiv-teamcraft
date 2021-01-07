@@ -1,16 +1,19 @@
-const querystring = require('querystring');
-const { BrowserWindow } = require('electron');
-const nodeUrl = require('url');
-const { session } = require('electron');
+import { OauthProvider } from './oauth-provider';
+import * as querystring from 'querystring';
+import * as nodeUrl from 'url';
+import { BrowserWindow, session } from 'electron';
 
-module.exports = function(config) {
-  function getCode(opts) {
+export class Oauth {
+  constructor(private provider: OauthProvider) {
+  }
+
+  getCode(opts: any = {}): Promise<string | string[]> {
     opts = opts || {};
 
-    let urlParams = {
+    let urlParams: any = {
       response_type: 'code',
-      redirect_uri: config.redirect_uri,
-      client_id: config.client_id
+      redirect_uri: this.provider.redirect_uri,
+      client_id: this.provider.client_id
     };
 
     if (opts.scope) {
@@ -23,15 +26,15 @@ module.exports = function(config) {
 
     urlParams = Object.assign(urlParams, opts.additionalAuthCodeRequestData);
 
-    let url = config.authorize_url + '?' + querystring.stringify(urlParams);
+    const url = this.provider.authorize_url + '?' + querystring.stringify(urlParams);
 
-    return new Promise(function(resolve, reject) {
+    return new Promise((resolve, reject) => {
       let authWindow = new BrowserWindow({
         alwaysOnTop: true,
         autoHideMenuBar: true,
         webPreferences: {
           contextIsolation: false,
-          nodeIntegration: config.authorize_url.indexOf('discordapp.com') === -1,
+          nodeIntegration: this.provider.authorize_url.indexOf('discordapp.com') === -1,
           webviewTag: true
         },
         useContentSize: true
@@ -44,18 +47,18 @@ module.exports = function(config) {
         reject(new Error('window was closed by user'));
       });
 
-      function onCallback(url) {
-        let url_parts = nodeUrl.parse(url, true);
-        let query = url_parts.query;
-        let code = query.code;
-        let error = query.error;
+      function onCallback(cbUrl: string) {
+        const url_parts = nodeUrl.parse(cbUrl, true);
+        const query = url_parts.query;
+        const code = query.code;
+        const error = query.error;
 
         if (error !== undefined) {
           reject(error);
           if (authWindow) {
             authWindow.removeAllListeners('closed');
           }
-          setImmediate(function() {
+          setImmediate(() => {
             if (authWindow) {
               authWindow.close();
               authWindow = null;
@@ -66,7 +69,7 @@ module.exports = function(config) {
           if (authWindow) {
             authWindow.removeAllListeners('closed');
           }
-          setImmediate(function() {
+          setImmediate(() => {
             if (authWindow) {
               authWindow.close();
               authWindow = null;
@@ -85,10 +88,9 @@ module.exports = function(config) {
       };
 
       // intercept all the requests for that includes my redirect uri
-      session.defaultSession.webRequest.onBeforeRequest(filter, function(details, callback) {
-        const url = details.url;
+      session.defaultSession.webRequest.onBeforeRequest(filter, (details, callback) => {
         // process the callback url and get any param you need
-        onCallback(url);
+        onCallback(details.url);
 
         // don't forget to let the request proceed
         callback({
@@ -96,7 +98,7 @@ module.exports = function(config) {
         });
       });
 
-      let googleLoginURLs = ['accounts.google.com/signin/oauth', 'accounts.google.com/ServiceLogin'];
+      const googleLoginURLs = ['accounts.google.com/signin/oauth', 'accounts.google.com/ServiceLogin'];
       session.defaultSession.webRequest.onBeforeSendHeaders((details, callback) => {
         googleLoginURLs.forEach((loginURL) => {
           if (details.url.indexOf(loginURL) > -1) {
@@ -107,8 +109,4 @@ module.exports = function(config) {
       });
     });
   }
-
-  return {
-    getCode: getCode
-  };
-};
+}
