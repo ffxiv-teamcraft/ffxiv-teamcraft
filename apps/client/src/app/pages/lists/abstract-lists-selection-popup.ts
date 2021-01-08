@@ -1,4 +1,4 @@
-import { OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { combineLatest, Observable } from 'rxjs';
 import { debounceTime, map } from 'rxjs/operators';
 import { List } from '../../modules/list/model/list';
@@ -6,6 +6,10 @@ import { WorkshopDisplay } from '../../model/other/workshop-display';
 import { ListsFacade } from '../../modules/list/+state/lists.facade';
 import { WorkshopsFacade } from '../../modules/workshop/+state/workshops.facade';
 
+@Component({
+  template: ''
+})
+// tslint:disable-next-line:component-class-suffix
 export abstract class AbstractListsSelectionPopup implements OnInit {
 
   lists$: Observable<List[]>;
