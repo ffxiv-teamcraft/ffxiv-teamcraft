@@ -54,7 +54,7 @@ export class TrayMenu {
         const contextMenu = Menu.buildFromTemplate([
           {
             label: 'Packet Capture',
-            type: 'submenu',
+            type: 'checkbox',
             checked: this.store.get<boolean>('machina', false),
             click: (menuItem) => {
               this.store.set('machina', menuItem.checked);
@@ -68,7 +68,7 @@ export class TrayMenu {
           {
             label: 'Overlay',
             type: 'submenu',
-            submenu: Menu.buildFromTemplate([
+            submenu: [
               {
                 label: 'Item Search Overlay',
                 type: 'normal',
@@ -113,7 +113,7 @@ export class TrayMenu {
                   this.store.set('clickthrough', settings.clickthrough === 'true');
                 }
               }
-            ])
+            ]
           },
           {
             label: 'Quit',
