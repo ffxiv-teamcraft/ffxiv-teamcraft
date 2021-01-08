@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -171,7 +171,8 @@ export class AppComponent implements OnInit {
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
-              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService) {
+              private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
+              private cd: ChangeDetectorRef) {
 
     fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
@@ -438,6 +439,7 @@ export class AppComponent implements OnInit {
             this.playerMetricsService.start();
             setTimeout(() => {
               this.ipc.send('app-ready', true);
+              this.cd.detectChanges();
             }, 500);
           });
       }

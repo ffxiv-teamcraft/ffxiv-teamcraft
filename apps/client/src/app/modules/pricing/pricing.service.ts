@@ -183,6 +183,7 @@ export class PricingService {
       if (price.fromMB) {
         price.nqServer = rowData[3];
         price.hqServer = rowData[4];
+        price.updated = +(rowData[5] || 0);
       }
       result[rowId] = price;
     });
@@ -199,7 +200,7 @@ export class PricingService {
     for (const index in data) {
       if (data.hasOwnProperty(index)) {
         const entry = data[index];
-        resultString += `${index.toString()}:${entry.nq},${entry.hq},${entry.fromVendor ? 1 : 0}${entry.fromMB ? `,${entry.nqServer},${entry.hqServer}` : ''};`;
+        resultString += `${index.toString()}:${entry.nq},${entry.hq},${entry.fromVendor ? 1 : 0}${entry.fromMB ? `,${entry.nqServer},${entry.hqServer},${entry.updated}` : ''};`;
       }
     }
     return resultString;

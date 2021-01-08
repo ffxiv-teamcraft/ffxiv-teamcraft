@@ -5,4 +5,5 @@ export interface Price {
   hqServer?: string;
   fromVendor: boolean;
   fromMB: boolean;
+  updated?: number;
 }

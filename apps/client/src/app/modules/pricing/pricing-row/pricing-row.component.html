@@ -40,10 +40,12 @@
     </i>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
   </div>
-  <div nz-col nzMd="10" nzXs="24">
-
+  <div nz-col nzMd="7" nzXs="24" fxLayout="row" fxLayoutAlign="flex-end center">
+    <div *ngIf="price.fromMB && price.updated">
+      {{price.updated | date:'medium':null:translate.currentLang}}
+    </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="8" nzXs="24">
+  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="11" nzXs="24">
     <label [(ngModel)]="customPrice" *ngIf="preCraft" (ngModelChange)="saveCustomPrice()" nz-checkbox></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">
