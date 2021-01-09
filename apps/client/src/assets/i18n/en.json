@@ -455,6 +455,8 @@
     "Favorite_features": "Favorite features",
     "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
     "Clear_inventory_on_startup": "Clear inventory on startup",
+    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
+    "Reset_ignored_characters": "Reset ignored characters",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",

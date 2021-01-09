@@ -504,6 +504,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.followIngameCharacterSwitches" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Switch_tc_when_switch_ingame_character' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
                    [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
               {{'SETTINGS.Enable_metrics_capture' | translate}}

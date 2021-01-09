@@ -727,6 +727,14 @@ export class SettingsService {
     this.setSetting('macroBreakBeforeByregot', breakBeforeByregot.toString());
   }
 
+  public get followIngameCharacterSwitches(): boolean {
+    return this.getBoolean('followIngameCharacterSwitches', true);
+  }
+
+  public set followIngameCharacterSwitches(follow: boolean) {
+    this.setBoolean('followIngameCharacterSwitches', follow);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }
