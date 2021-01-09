@@ -22,7 +22,7 @@ export class NpcBreakdown {
           if (requirement) {
             return acc + requirement.amount * ((r.amount_needed || r.amount) - r.done);
           }
-          return acc;
+          return Math.max(acc, 0);
         }, 0)
       };
     }, {});
