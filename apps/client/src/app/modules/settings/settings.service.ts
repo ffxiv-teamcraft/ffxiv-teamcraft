@@ -735,6 +735,14 @@ export class SettingsService {
     this.setBoolean('followIngameCharacterSwitches', follow);
   }
 
+  public get showOthercharacterInventoriesInList(): boolean {
+    return this.getBoolean('showOthercharacterInventoriesInList', true);
+  }
+
+  public set showOthercharacterInventoriesInList(show: boolean) {
+    this.setBoolean('showOthercharacterInventoriesInList', show);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }

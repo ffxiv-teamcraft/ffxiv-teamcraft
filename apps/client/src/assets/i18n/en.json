@@ -457,6 +457,7 @@
     "Clear_inventory_on_startup": "Clear inventory on startup",
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
+    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",

@@ -159,7 +159,8 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         map(([, inventory]) => {
           return inventory.getItem(item.id)
             .filter(entry => {
-              return this.settings.ignoredInventories.indexOf(this.inventoryService.getContainerTranslateKey(entry)) === -1;
+              return !this.settings.ignoredInventories.includes(this.inventoryService.getContainerTranslateKey(entry))
+                && (!this.settings.showOthercharacterInventoriesInList || entry.isCurrentCharacter);
             })
             .map(entry => {
               return {

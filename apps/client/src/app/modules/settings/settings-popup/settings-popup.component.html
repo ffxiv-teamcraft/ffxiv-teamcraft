@@ -509,6 +509,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.showOthercharacterInventoriesInList" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Show_other_characters_inventories_in_list' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.playerMetricsEnabled" [nzDisabled]="!machinaToggle" nz-checkbox nz-tooltip
                    [nzTooltipTitle]="'SETTINGS.Metrics_capture_tooltip' | translate">
               {{'SETTINGS.Enable_metrics_capture' | translate}}
