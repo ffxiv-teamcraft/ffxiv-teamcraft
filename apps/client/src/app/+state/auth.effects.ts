@@ -170,7 +170,8 @@ export class AuthEffects {
       AuthActionTypes.VerifyCharacter,
       AuthActionTypes.SaveDefaultConsumables,
       AuthActionTypes.SetCID,
-      AuthActionTypes.SetWorld
+      AuthActionTypes.SetWorld,
+      AuthActionTypes.SetContentId
     ),
     debounceTime(100),
     withLatestFrom(this.authFacade.user$),

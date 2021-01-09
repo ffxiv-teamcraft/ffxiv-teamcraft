@@ -352,6 +352,13 @@
                       nzShowIcon
                       nzType="warning">
             </nz-alert>
+            <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone_or_sort' | translate"
+                      [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzType="warning">
+            </nz-alert>
             <ng-container *ngIf="user$ | async as user">
               <nz-alert *ngIf="user.cid === undefined && (loggedIn$ | async) && settings.enableUniversalisSourcing && !overlay"
                         [nzDescription]="'PACKET_CAPTURE.Please_relog' | translate"

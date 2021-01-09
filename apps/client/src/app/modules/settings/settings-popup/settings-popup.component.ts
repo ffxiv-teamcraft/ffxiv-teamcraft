@@ -111,7 +111,7 @@ export class SettingsPopupComponent {
     map(inventory => {
       return uniq(inventory
         .toArray()
-        .map(item => this.inventoryFacade.getContainerDisplayName(item)));
+        .map(item => this.inventoryFacade.getContainerTranslateKey(item)));
     })
   );
 

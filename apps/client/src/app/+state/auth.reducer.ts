@@ -155,17 +155,40 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
     }
 
     case AuthActionTypes.VerifyCharacter: {
-      const lodestoneId = state.user.lodestoneIds.find(entry => entry.id === action.lodestoneId);
-      lodestoneId.verified = true;
       return {
         ...state,
         user: {
           ...state.user,
           lodestoneIds: [
-            ...state.user.lodestoneIds.filter(entry => {
-              return entry.id !== lodestoneId.id;
-            }),
-            lodestoneId
+            ...state.user.lodestoneIds.map(entry => {
+              if (entry.id === action.lodestoneId) {
+                return {
+                  ...entry,
+                  verified: true
+                };
+              }
+              return entry;
+            })
+          ]
+        }
+      };
+    }
+
+    case AuthActionTypes.SetContentId: {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          lodestoneIds: [
+            ...state.user.lodestoneIds.map(entry => {
+              if (entry.id === action.characterId) {
+                return {
+                  ...entry,
+                  contentId: action.contentId
+                };
+              }
+              return entry;
+            })
           ]
         }
       };

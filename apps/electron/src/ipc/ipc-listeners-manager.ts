@@ -11,6 +11,7 @@ import { TrayMenu } from '../window/tray-menu';
 import { exec } from 'child_process';
 import * as isDev from 'electron-is-dev';
 import { ProxyManager } from '../tools/proxy-manager';
+import { readFile, writeFileSync } from 'fs';
 
 export class IpcListenersManager {
 
@@ -44,6 +45,7 @@ export class IpcListenersManager {
     this.setupSettingsListeners();
     this.setupToolingListeners();
     this.setupProxyManagerListeners();
+    this.setupInventoryListeners();
   }
 
   private setupOauthListeners(): void {
@@ -344,6 +346,24 @@ export class IpcListenersManager {
 
     ipcMain.on('proxy-pac:get', (event) => {
       event.sender.send('proxy-pac:value', this.store.get('proxy-pac', ''));
+    });
+  }
+
+  private setupInventoryListeners(): void {
+    const inventoryPath = join(app.getPath('userData'), 'inventory.json');
+
+    ipcMain.on('inventory:set', (event, inventory) => {
+      writeFileSync(inventoryPath, JSON.stringify(inventory));
+    });
+
+    ipcMain.on('inventory:get', (event, inventory) => {
+      readFile(inventoryPath, 'utf8', (err, content) => {
+        if (err) {
+          event.sender.send('inventory:value', {});
+        } else {
+          event.sender.send('inventory:value', JSON.parse(content));
+        }
+      });
     });
   }
 }

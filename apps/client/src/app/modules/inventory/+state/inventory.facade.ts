@@ -2,13 +2,18 @@ import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { InventoryPartialState } from './inventory.reducer';
 import { inventoryQuery } from './inventory.selectors';
-import { LoadInventory, ResetInventory, UpdateInventory } from './inventory.actions';
+import { LoadInventory, ResetInventory, SetContentId, UpdateInventory } from './inventory.actions';
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import { SettingsService } from '../../settings/settings.service';
+import { AuthFacade } from '../../../+state/auth.facade';
+import { IpcService } from '../../../core/electron/ipc.service';
+import { LodestoneIdEntry } from '../../../model/user/lodestone-id-entry';
+import { CharacterResponse } from '@xivapi/angular-client';
+import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -23,17 +28,36 @@ export class InventoryFacade {
     shareReplay(1)
   );
 
-  constructor(private store: Store<InventoryPartialState>, settings: SettingsService) {
+  characterEntries: Array<LodestoneIdEntry & { character: CharacterResponse }>;
+
+  constructor(private store: Store<InventoryPartialState>, private authFacade: AuthFacade, private ipc: IpcService,
+              private translate: TranslateService, settings: SettingsService) {
     if (settings.clearInventoryOnStartup) {
       this.resetInventory();
     }
+    this.ipc.on('dat:content-id', (event, contentId) => {
+      this.setContentId(contentId);
+    });
+    this.authFacade.characterEntries$.subscribe(entries => {
+      this.characterEntries = entries;
+    });
   }
 
-  public getContainerDisplayName(item: InventoryItem): string {
+  public getContainerTranslateKey(item: ItemSearchResult): string {
     if (item.retainerName && item.containerId !== ContainerType.RetainerMarket) {
       return item.retainerName;
     }
-    return `INVENTORY.BAG.${this.getContainerName(item.containerId)}`;
+    return this.translate.instant(`INVENTORY.BAG.${this.getContainerName(item.containerId)}`);
+  }
+
+  public getContainerDisplayName(item: ItemSearchResult): string {
+    const containerName = this.getContainerTranslateKey(item);
+    if (item.isCurrentCharacter) {
+      return containerName;
+    } else {
+      const entry = this.characterEntries.find(e => e.contentId === item.contentId);
+      return `${containerName} (${entry?.character.Character.Name || this.translate.instant('COMMON.Unknown')})`;
+    }
   }
 
   public getContainerName(containerId: number): string {
@@ -90,7 +114,7 @@ export class InventoryFacade {
     return 'Other';
   }
 
-  load() {
+  load(): void {
     this.store.dispatch(new LoadInventory());
   }
 
@@ -100,5 +124,9 @@ export class InventoryFacade {
 
   resetInventory(): void {
     this.store.dispatch(new ResetInventory());
+  }
+
+  setContentId(contentId: string): void {
+    this.store.dispatch(new SetContentId(contentId));
   }
 }

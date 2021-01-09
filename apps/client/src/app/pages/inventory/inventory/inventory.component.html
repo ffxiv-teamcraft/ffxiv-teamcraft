@@ -41,7 +41,7 @@
           <ng-template #title>
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div>
-                {{inventory.isRetainer ? inventory.containerName : (('INVENTORY.BAG.' + inventory.containerName) | translate) }}
+                {{inventory.containerName}}
                 ({{inventory.items.length}})
               </div>
               <div *ngIf="inventory.totalPrice" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">

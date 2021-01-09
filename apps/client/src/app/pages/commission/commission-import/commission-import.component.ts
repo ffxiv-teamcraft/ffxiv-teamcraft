@@ -63,7 +63,6 @@ export class CommissionImportComponent {
             })
             .filter(i => {
               // Remove items that cannot be traded
-              console.log(i.itemId, this.lazyData.data.tradeFlags[i.itemId]);
               return this.lazyData.data.tradeFlags[i.itemId];
             }),
           description: exploded[4] || '',

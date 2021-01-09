@@ -8,7 +8,8 @@ import { SquirrelEventHandler } from './update/squirrel-event-handler';
 import { TeamcraftDesktopApp } from './teamcraft-desktop-app';
 import { ProxyManager } from './tools/proxy-manager';
 import * as log from 'electron-log';
-import { app, ipcMain, protocol } from 'electron';
+import { app, ipcMain } from 'electron';
+import { DatFilesWatcher } from './dat/dat-files-watcher';
 
 const argv = process.argv.slice(1);
 
@@ -50,6 +51,7 @@ const proxyManager = new ProxyManager(store);
 const mainWindow = new MainWindow(store, overlayManager, proxyManager);
 const pcapManager = new PacketCapture(mainWindow, store, options);
 const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);
+const datFilesWatcher = new DatFilesWatcher(mainWindow);
 
 // Prepare listeners connector
 const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager, mainWindow, store, trayMenu, proxyManager);
@@ -64,5 +66,6 @@ squirrelEventHandler.handleSquirrelEvent();
 const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, argv);
 desktopApp.start();
 
-// Then start all our ipc listeners
+// Then start all our ipc listeners and dat fiels watcher
 ipcListenersManager.init();
+datFilesWatcher.start();

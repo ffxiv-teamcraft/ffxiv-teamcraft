@@ -151,11 +151,19 @@ export class SettingsService {
   }
 
   public set commissionTags(tags: CommissionTag[]) {
-    this.setSetting('commission:tags', JSON.stringify(tags));
+    this.setSetting('commissions:tags', JSON.stringify(tags));
   }
 
   public get commissionTags(): CommissionTag[] {
     return JSON.parse(this.getSetting('commissions:tags', '[]'));
+  }
+
+  public set ignoredContentIds(ids: string[]) {
+    this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
+  }
+
+  public get ignoredContentIds(): string[] {
+    return JSON.parse(this.getSetting('inventory:ignored-content-ids', '[]'));
   }
 
   public get onlyCraftingCommissions(): boolean {
@@ -737,6 +745,14 @@ export class SettingsService {
 
   public setBoolean(name: string, value: boolean): void {
     this.setSetting(name, value.toString());
+  }
+
+  public getString(name: string, defaultValue: string): string {
+    return this.getSetting(name, defaultValue);
+  }
+
+  public setString(name: string, value: string): void {
+    this.setSetting(name, value);
   }
 
   private setSetting(name: string, value: string): void {

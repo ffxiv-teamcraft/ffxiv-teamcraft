@@ -1,9 +1,10 @@
 import { InventoryItem } from './inventory-item';
 import { InventoryPatch } from './inventory-patch';
-import { InventoryContainer } from './inventory-container';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
 import { InventoryModifyHandler, InventoryTransaction, UpdateInventorySlot } from '../../pcap';
+import { CharacterInventory } from './character-inventory';
+import { ItemSearchResult } from './item-search-result';
 
 export class UserInventory extends DataModel {
 
@@ -51,13 +52,25 @@ export class UserInventory extends DataModel {
     ContainerType.GearSet0
   ];
 
-  items: { [index: string]: InventoryContainer } = {};
-
-  characterId: number;
+  items: { [contentId: string]: CharacterInventory } = {};
 
   lastZone: number;
 
-  private searchCache: InventoryItem[];
+  private _contentId?: string;
+
+  public get contentId(): string {
+    return this._contentId;
+  }
+
+  public set contentId(contentId: string) {
+    this._contentId = contentId;
+    if (!this.items[contentId] && contentId) {
+      this.items[contentId] = {};
+    }
+    delete this.searchCache;
+  }
+
+  private searchCache: ItemSearchResult[];
 
   get trackItemsOnSale(): boolean {
     return localStorage.getItem('trackItemsOnSale') === 'true';
@@ -68,22 +81,25 @@ export class UserInventory extends DataModel {
     return this.searchCache.some(item => (!onlyUserInventory || item.containerId < 10) && item.itemId === itemId);
   }
 
-  getItem(itemId: number, onlyUserInventory = false): InventoryItem[] {
+  getItem(itemId: number, onlyUserInventory = false): ItemSearchResult[] {
     this.generateSearchCacheIfNeeded();
-    return this.searchCache.filter(item => (!onlyUserInventory || item.containerId < 10) && item.itemId === itemId);
+    return this.searchCache.filter(item => (!onlyUserInventory || (item.containerId < 10 && item.contentId === this.contentId)) && item.itemId === itemId);
   }
 
   updateInventorySlot(packet: UpdateInventorySlot | InventoryTransaction, lastSpawnedRetainer: string): InventoryPatch | null {
     delete this.searchCache;
-    const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
-    const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
-    if (this.items[containerKey] === undefined) {
+    if (!this.items[this.contentId]) {
       return null;
     }
-    let item = this.items[containerKey][packet.slot];
+    const isRetainer = packet.containerId >= 10000 && packet.containerId < 20000;
+    const containerKey = isRetainer ? `${lastSpawnedRetainer}:${packet.containerId}` : `${packet.containerId}`;
+    if (this.items[this.contentId][containerKey] === undefined) {
+      return null;
+    }
+    let item = this.items[this.contentId][containerKey][packet.slot];
     const previousQuantity = item ? item.quantity : 0;
     if (packet.quantity === 0 && packet.catalogId === 0) {
-      delete this.items[containerKey][packet.slot];
+      delete this.items[this.contentId][containerKey][packet.slot];
       if (item !== undefined) {
         return {
           itemId: item.itemId,
@@ -110,8 +126,8 @@ export class UserInventory extends DataModel {
       if (isRetainer) {
         entry.retainerName = lastSpawnedRetainer;
       }
-      this.items[containerKey][packet.slot] = entry;
-      item = this.items[containerKey][packet.slot];
+      this.items[this.contentId][containerKey][packet.slot] = entry;
+      item = this.items[this.contentId][containerKey][packet.slot];
     }
     item.quantity = packet.quantity;
     item.hq = packet.hqFlag === 1;
@@ -129,16 +145,22 @@ export class UserInventory extends DataModel {
 
   operateTransaction(packet: InventoryTransaction | InventoryModifyHandler, lastSpawnedRetainer: string): InventoryPatch | null {
     delete this.searchCache;
+    if (!this.items[this.contentId]) {
+      return null;
+    }
     const isFromRetainer = packet.fromContainer >= 10000 && packet.fromContainer < 20000;
     const isToRetainer = packet.toContainer >= 10000 && packet.toContainer < 20000;
     const fromContainerKey = isFromRetainer ? `${lastSpawnedRetainer}:${packet.fromContainer}` : `${packet.fromContainer}`;
     const toContainerKey = isToRetainer ? `${lastSpawnedRetainer}:${packet.toContainer}` : `${packet.toContainer}`;
 
-    const fromContainer = this.items[fromContainerKey];
-    let toContainer = this.items[toContainerKey];
+    const fromContainer = this.items[this.contentId][fromContainerKey];
+    if (fromContainer === undefined) {
+      return null;
+    }
+    let toContainer = this.items[this.contentId][toContainerKey];
     if (toContainer === undefined) {
-      this.items[toContainerKey] = {};
-      toContainer = this.items[toContainerKey];
+      this.items[this.contentId][toContainerKey] = {};
+      toContainer = this.items[this.contentId][toContainerKey];
     }
     if (toContainer === undefined && packet.action === 'merge') {
       console.warn('Tried to move an item to an inexisting container', JSON.stringify(packet));
@@ -159,11 +181,11 @@ export class UserInventory extends DataModel {
         fromItem.slot = toItem.slot;
         toItem.containerId = fromContainerId;
         toItem.slot = fromSlot;
-        this.items[fromContainerKey][packet.fromSlot] = toItem;
-        this.items[toContainerKey][packet.toSlot] = fromItem;
+        this.items[this.contentId][fromContainerKey][packet.fromSlot] = toItem;
+        this.items[this.contentId][toContainerKey][packet.toSlot] = fromItem;
         return null;
       case 'merge':
-        delete this.items[fromContainerKey][packet.fromSlot];
+        delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
         toItem.quantity += fromItem.quantity;
         return Math.floor(fromItem.containerId / 1000) !== Math.floor(toItem.containerId / 1000) ? {
           itemId: toItem.itemId,
@@ -186,10 +208,10 @@ export class UserInventory extends DataModel {
         if (isToRetainer) {
           newStack.retainerName = lastSpawnedRetainer;
         }
-        this.items[toContainerKey][packet.toSlot] = newStack;
+        this.items[this.contentId][toContainerKey][packet.toSlot] = newStack;
         return null;
       case 'discard':
-        delete this.items[fromContainerKey][packet.fromSlot];
+        delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
         return {
           itemId: fromItem.itemId,
           containerId: fromItem.containerId,
@@ -204,13 +226,13 @@ export class UserInventory extends DataModel {
           containerId: packet.toContainer,
           slot: packet.toSlot
         };
-        delete this.items[fromContainerKey][packet.fromSlot];
+        delete this.items[this.contentId][fromContainerKey][packet.fromSlot];
         if (isFromRetainer && !isToRetainer) {
           moved.retainerName = null;
         } else if (!isFromRetainer && isToRetainer) {
           moved.retainerName = lastSpawnedRetainer;
         }
-        this.items[toContainerKey][packet.toSlot] = moved;
+        this.items[this.contentId][toContainerKey][packet.toSlot] = moved;
         if (packet.toContainer === ContainerType.HandIn
           || packet.fromContainer === ContainerType.HandIn
           || (packet.fromContainer < 10 && packet.toContainer < 10)) {
@@ -223,57 +245,66 @@ export class UserInventory extends DataModel {
     }
   }
 
-  toArray(): InventoryItem[] {
-    return [].concat.apply([], Object.keys(this.items)
-      .map(key => this.items[key])
-      .map(container => {
-        return Object.keys(container)
-          .map(key => container[key]);
-      })
-    );
+  toArray(): ItemSearchResult[] {
+    this.generateSearchCacheIfNeeded();
+    return this.searchCache;
   }
 
-  getFromContainers(...containers: ContainerType[]): InventoryItem[] {
-    return containers.reduce((acc, container) => {
-      return [
-        ...acc,
-        ...Object.values(this.items[container])
-      ];
-    }, []);
+  getFromContainers(...containers: ContainerType[]): ItemSearchResult[] {
+    return this.searchCache.filter(item => {
+      return containers.includes(item.containerId);
+    });
   }
 
   clone(): UserInventory {
     const clone = new UserInventory();
     clone.$key = this.$key;
     clone.items = { ...this.items };
-    clone.characterId = this.characterId;
     clone.lastZone = this.lastZone;
+    clone.contentId = this.contentId;
     return clone;
   }
 
-  private generateSearchCacheIfNeeded():void{
-    if(!this.searchCache){
-      this.searchCache = [].concat.apply([],
-        Object.keys(this.items)
-          .filter(key => {
-            const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
-            // In some cases, items are registered as retainer while they aren't, just remove them from the output.
-            if (key.indexOf(':') > -1) {
-              if (+key.split(':')[1] < 10000) {
-                return false;
+  private generateSearchCacheIfNeeded(): void {
+    if (!this.searchCache) {
+      this.searchCache = Object.keys(this.items)
+        .filter(key => key !== 'ignored')
+        .map(key => {
+          return {
+            contentId: key,
+            characterInventory: this.items[key]
+          };
+        })
+        .map(entry => {
+          return Object.keys(entry.characterInventory)
+            .filter(key => {
+              const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+              // In some cases, items are registered as retainer while they aren't, just remove them from the output.
+              if (key.indexOf(':') > -1) {
+                if (+key.split(':')[1] < 10000) {
+                  return false;
+                }
               }
-            }
-            const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
-            if (this.trackItemsOnSale) {
-              return matches;
-            } else {
-              return matches && !matchesRetainerMarket;
-            }
-          })
-          .map(key => {
-            return Object.values(this.items[key]);
-          })
-      );
+              const matchesRetainerMarket = (+key.split(':')[1] === ContainerType.RetainerMarket);
+              if (this.trackItemsOnSale) {
+                return matches;
+              } else {
+                return matches && !matchesRetainerMarket;
+              }
+            })
+            .map(key => {
+              return Object.values(entry.characterInventory[key])
+                .map(item => {
+                  return {
+                    ...item,
+                    contentId: entry.contentId,
+                    isCurrentCharacter: entry.contentId === this.contentId
+                  };
+                });
+            })
+            .flat();
+        })
+        .flat();
     }
   }
 }

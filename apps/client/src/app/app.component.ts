@@ -41,7 +41,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { MachinaService } from './core/electron/machina.service';
+import { PacketCaptureTrackerService } from './core/electron/packet-capture-tracker.service';
 import { UniversalisService } from './core/api/universalis.service';
 import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
@@ -127,6 +127,8 @@ export class AppComponent implements OnInit {
 
   public emptyInventory$: Observable<boolean>;
 
+  public unknownContentId$: Observable<boolean>;
+
   public pinnedList$ = this.listsFacade.pinnedList$;
 
   public suggestedRegion: Region = null;
@@ -167,7 +169,7 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
+              private machina: PacketCaptureTrackerService, private message: NzMessageService, private universalis: UniversalisService,
               private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
@@ -221,6 +223,7 @@ export class AppComponent implements OnInit {
     if (isPlatformServer(this.platform)) {
       this.dataLoaded = true;
       this.emptyInventory$ = of(false);
+      this.unknownContentId$ = of(false);
     }
 
     if (isPlatformBrowser(this.platform)) {
@@ -229,7 +232,12 @@ export class AppComponent implements OnInit {
         this.gubal.init();
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
-            return Object.keys(inventory.items).length === 0;
+            return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;
+          })
+        );
+        this.unknownContentId$ = this.inventoryService.inventory$.pipe(
+          map(inventory => {
+            return !inventory.contentId;
           })
         );
         this.universalis.initCapture();

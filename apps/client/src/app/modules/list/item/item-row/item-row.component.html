@@ -95,7 +95,7 @@
                       *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                       class="inventory-tag"
                       [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
-                {{entry.containerName | translate}}: {{entry.amount}}
+                {{entry.containerName}}: {{entry.amount}}
                 <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
               </nz-tag>
             </ng-container>
@@ -112,7 +112,7 @@
                         (click)="tooltip.hide();permissionLevel >= 20 ? add(entry.amount, item) : null"
                         #tooltip="nzTooltip"
                         nz-tooltip [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
-                      {{entry.containerName | translate}}: {{entry.amount}}
+                      {{entry.containerName}}: {{entry.amount}}
                       <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
                     </li>
                   </ul>

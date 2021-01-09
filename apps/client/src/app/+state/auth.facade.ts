@@ -14,6 +14,7 @@ import {
   SaveDefaultConsumables,
   SaveSet,
   SetCID,
+  SetContentId,
   SetCurrentFcId,
   SetDefaultCharacter,
   SetWorld,
@@ -112,6 +113,34 @@ export class AuthFacade {
       }));
     }),
     map(characters => characters.filter(c => c && c.Character)),
+    distinctUntilChanged((a, b) => a.length === b.length),
+    shareReplay(1)
+  );
+
+  characterEntries$ = this.user$.pipe(
+    filter(u => u.lodestoneIds !== undefined),
+    switchMap((user: TeamcraftUser) => {
+      return combineLatest(user.lodestoneIds.map(entry => {
+        if (entry.id > 0) {
+          return this.characterService.getCharacter(entry.id)
+            .pipe(
+              catchError(() => of(null)),
+              map(c => {
+                return {
+                  ...entry,
+                  character: c
+                };
+              })
+            );
+        }
+        return of({
+          ...entry,
+          character: {
+            Character: user.customCharacters.find(c => c.ID === entry.id)
+          }
+        });
+      }));
+    }),
     distinctUntilChanged((a, b) => a.length === b.length),
     shareReplay(1)
   );
@@ -330,6 +359,10 @@ export class AuthFacade {
 
   public setCID(cid: string): void {
     this.store.dispatch(new SetCID(cid));
+  }
+
+  public setContentId(lodestoneId: number, contentId: string): void {
+    this.store.dispatch(new SetContentId(lodestoneId, contentId));
   }
 
   public setWorld(world: number): void {

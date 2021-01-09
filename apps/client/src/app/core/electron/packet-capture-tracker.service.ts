@@ -26,7 +26,7 @@ import { ActorControl, EffectResult, FishingBaitMsg, InitZone, PlayerSetup, Upda
 @Injectable({
   providedIn: 'root'
 })
-export class MachinaService {
+export class PacketCaptureTrackerService {
 
   private inventory$: Observable<UserInventory>;
 
@@ -71,6 +71,7 @@ export class MachinaService {
     map(([, name]) => {
       return name;
     }),
+    distinctUntilChanged(),
     tap(name => this.ipc.log('Retainer spawn', name)),
     startWith('')
   );
@@ -80,6 +81,7 @@ export class MachinaService {
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
               private settings: SettingsService, private lazyData: LazyDataService) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
+      filter(inventory => !!inventory.contentId),
       distinctUntilChanged((a, b) => {
         return _.isEqual(a, b);
       }),
@@ -138,14 +140,14 @@ export class MachinaService {
             };
           })
           .value();
-        if (isRetainer) {
-          Object.keys(inventory)
+        if (isRetainer && inventory.items[inventory.contentId]) {
+          Object.keys(inventory.items[inventory.contentId])
             .filter(key => key.startsWith(lastRetainerSpawned))
-            .forEach(key => inventory[key] = {});
+            .forEach(key => inventory.items[inventory.contentId][key] = {});
         }
         groupedInfos.forEach(group => {
           const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
-          inventory.items[containerKey] = {};
+          inventory.items[inventory.contentId][containerKey] = {};
           group.packets.forEach(packet => {
             const item: InventoryItem = {
               itemId: +packet.catalogId,
@@ -158,7 +160,7 @@ export class MachinaService {
             if (isRetainer) {
               item.retainerName = lastRetainerSpawned;
             }
-            inventory.items[containerKey][packet.slot] = item;
+            inventory.items[inventory.contentId][containerKey][packet.slot] = item;
           });
         });
         return inventory;

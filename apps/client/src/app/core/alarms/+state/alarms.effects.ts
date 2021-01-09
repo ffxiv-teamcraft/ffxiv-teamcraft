@@ -130,7 +130,6 @@ export class AlarmsEffects {
             const newGroup = new AlarmGroup(groupName, 0);
             newGroup.userId = userId;
             newGroup.alarms = [...alarmKeys, ...alreadyCreated.map(a => a.$key)];
-            console.log(newGroup);
             return this.alarmGroupsService.add(newGroup).pipe(
               mapTo(alarmKeys)
             );

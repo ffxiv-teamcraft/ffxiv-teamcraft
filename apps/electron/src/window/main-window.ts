@@ -9,7 +9,7 @@ export class MainWindow {
 
   private _win: BrowserWindow;
 
-  public closed: Subject<void> = new Subject<void>();
+  public closed$: Subject<void> = new Subject<void>();
 
   public get win(): BrowserWindow {
     return this._win;

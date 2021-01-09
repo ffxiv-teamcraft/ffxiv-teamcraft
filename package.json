@@ -115,17 +115,18 @@
   },
   "private": true,
   "dependencies": {
-    "electron-store": "^5.2.0",
+    "buffer-reader": "^0.1.0",
     "electron-is-dev": "^1.1.0",
     "electron-log": "^3.0.6",
-    "is-elevated": "^3.0.0",
+    "electron-store": "^5.2.0",
     "fs-extra": "^7.0.1",
+    "is-elevated": "^3.0.0",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.10",
     "node-machina-ffxiv": "^2.39.1",
     "request": "^2.88.2",
-    "tslib": "^1.10.0",
-    "rxjs": "^6.6.3"
+    "rxjs": "^6.6.3",
+    "tslib": "^1.10.0"
   },
   "devDependencies": {
     "@angular-builders/custom-webpack": "^10.0.1",

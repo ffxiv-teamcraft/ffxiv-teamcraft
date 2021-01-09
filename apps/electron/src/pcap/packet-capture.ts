@@ -64,7 +64,7 @@ export class PacketCapture {
   private machina: any;
 
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
-    this.mainWindow.closed.subscribe(() => {
+    this.mainWindow.closed$.subscribe(() => {
       this.stop();
     })
   }

@@ -70,7 +70,7 @@ export class TeamcraftDesktopApp {
       }
     });
 
-    this.mainWindow.closed.subscribe(() => {
+    this.mainWindow.closed$.subscribe(() => {
       this.store.set('router:uri', deepLink);
     });
   }
@@ -103,7 +103,10 @@ export class TeamcraftDesktopApp {
       show: false,
       frame: false,
       backgroundColor: '#2f3237',
-      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`
+      icon: `file://${Constants.BASE_APP_PATH}/assets/app-icon.png`,
+      webPreferences: {
+        contextIsolation: false
+      }
     });
 
     loaderWindow.once('show', () => {
