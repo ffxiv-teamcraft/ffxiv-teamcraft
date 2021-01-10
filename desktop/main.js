@@ -268,6 +268,7 @@ app.on('ready', () => {
 function startMachina() {
   ChildProcess.exec('Get-Service -Name Npcap', { 'shell': 'powershell.exe' }, (err) => {
     if (err) {
+      log.error(err);
       win.webContents.send('install-npcap-prompt', true);
     } else {
       Machina.start(win, config, options.verbose, options.pid);
