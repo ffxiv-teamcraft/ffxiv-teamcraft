@@ -81,8 +81,21 @@
                 <nz-list-item *cdkVirtualFor="let item of inventory.items" [nzContent]="content" class="bag-item">
                   <nz-list-item-meta
                     [nzAvatar]="avatar"
-                    [nzTitle]="item.itemId | itemName | i18n"
+                    [nzTitle]="title"
                     nzDescription="x{{item.quantity}}">
+                    <ng-template #title>
+                      <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+                        <div>
+                          {{item.itemId | itemName | i18n}}
+                        </div>
+                        <div>
+                          <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
+                          <ng-template #positionTooltip>
+                            <app-inventory-position [item]="item"></app-inventory-position>
+                          </ng-template>
+                        </div>
+                      </div>
+                    </ng-template>
                     <ng-template #avatar>
                       <app-item-icon [hq]="item.hq" [icon]="item.itemId | lazyIcon"
                                      [itemId]="item.itemId" width="32"></app-item-icon>

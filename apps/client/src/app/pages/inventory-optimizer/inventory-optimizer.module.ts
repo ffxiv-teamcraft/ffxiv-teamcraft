@@ -27,6 +27,7 @@ import { CanBeGatheredEasily } from './optimizations/can-be-gathered-easily';
 import { CanExtractMateria } from './optimizations/can-extract-materia';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { InventoryModule } from '../../modules/inventory/inventory.module';
 
 const optimisations: Provider[] = [
   {
@@ -97,7 +98,8 @@ const routes: Routes = [
     ItemIconModule,
 
     ScrollingModule,
-    LazyScrollModule
+    LazyScrollModule,
+    InventoryModule
   ],
   providers: [
     ...optimisations

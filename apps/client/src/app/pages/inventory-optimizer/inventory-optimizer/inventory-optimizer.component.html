@@ -167,13 +167,20 @@
                                   width="32"></app-item-icon>
                               </ng-template>
                               <ng-template #nzTitle>
-                      <span [nzTooltipTitle]="'Copy_isearch' | translate"
-                            nz-tooltip
-                            clipboard="/isearch &quot;{{entry.item.itemId | itemName | i18n}}&quot;"
-                            [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (entry.item.itemId | itemName | i18n) + '&quot;'}"
-                            class="item-name">{{entry.item.itemId | itemName | i18n}}</span> x{{entry.item.quantity}}
-                                <span
-                                  *ngIf="entry.item.hq">{{'Hq' | translate}}</span>
+                                <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+                                  <div [nzTooltipTitle]="'Copy_isearch' | translate"
+                                       nz-tooltip
+                                       clipboard="/isearch &quot;{{entry.item.itemId | itemName | i18n}}&quot;"
+                                       [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (entry.item.itemId | itemName | i18n) + '&quot;'}"
+                                       class="item-name">{{entry.item.itemId | itemName | i18n}} x{{entry.item.quantity}}</div>
+                                  <div *ngIf="entry.item.hq">{{'Hq' | translate}}</div>
+                                  <div>
+                                    <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
+                                    <ng-template #positionTooltip>
+                                      <app-inventory-position [item]="item"></app-inventory-position>
+                                    </ng-template>
+                                  </div>
+                                </div>
                               </ng-template>
                             </nz-list-item-meta>
                           </nz-list-item>

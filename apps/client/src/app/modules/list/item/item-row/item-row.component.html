@@ -91,13 +91,20 @@
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">
             <ng-container *ngIf="amountInInventory.length <= 3; else compactAmountInInventory">
-              <nz-tag (click)="permissionLevel >= 20 ? add(entry.amount, item) : null"
-                      *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
-                      class="inventory-tag"
-                      [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
-                {{entry.containerName}}: {{entry.amount}}
-                <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-              </nz-tag>
+              <ng-container *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry">
+                <nz-tag (click)="permissionLevel >= 20 ? add(entry.amount, item) : null"
+                        class="inventory-tag"
+                        [nzTooltipTitle]="positionTooltip" nz-tooltip>
+                  <ng-template #positionTooltip>
+                    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                      <app-inventory-position [item]="entry.item"></app-inventory-position>
+                      <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                    </div>
+                  </ng-template>
+                  {{entry.containerName}}: {{entry.amount}}
+                  <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+                </nz-tag>
+              </ng-container>
             </ng-container>
             <ng-template #compactAmountInInventory>
               <ng-container *ngIf="totalAmountInInventory$ | async as total">
@@ -111,7 +118,13 @@
                     <li nz-menu-item *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                         (click)="tooltip.hide();permissionLevel >= 20 ? add(entry.amount, item) : null"
                         #tooltip="nzTooltip"
-                        nz-tooltip [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
+                        nz-tooltip [nzTooltipTitle]="positionTooltip">
+                      <ng-template #positionTooltip>
+                        <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                          <app-inventory-position [item]="entry.item"></app-inventory-position>
+                          <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                        </div>
+                      </ng-template>
                       {{entry.containerName}}: {{entry.amount}}
                       <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
                     </li>

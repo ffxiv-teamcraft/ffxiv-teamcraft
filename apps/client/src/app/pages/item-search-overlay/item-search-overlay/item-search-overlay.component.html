@@ -21,8 +21,17 @@
         <div fxLayout="column" fxLayoutGap="5px">
           <div>{{display.data.id | itemName | i18n}}</div>
           <div fxLayout="row wrap" *ngIf="display.inventoryItems.length > 0; else nothingInsideInventory">
-            <nz-tag *ngFor="let item of display.inventoryItems">{{item.containerName | translate}}: {{item.quantity}}
-              <img *ngIf="item.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/></nz-tag>
+            <ng-container *ngFor="let item of display.inventoryItems">
+              <ng-template #positionTooltip>
+                <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                  <app-inventory-position [item]="item"></app-inventory-position>
+                  <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                </div>
+              </ng-template>
+              <nz-tag nz-tooltip [nzTooltipTitle]="positionTooltip">{{item.containerName | translate}}: {{item.quantity}}
+                <img *ngIf="item.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+              </nz-tag>
+            </ng-container>
           </div>
           <ng-template #nothingInsideInventory>
             <i>{{'ITEM_SEARCH_OVERLAY.None_inside_inventory' | translate}}</i>

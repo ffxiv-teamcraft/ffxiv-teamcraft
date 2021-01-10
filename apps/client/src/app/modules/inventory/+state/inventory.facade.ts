@@ -6,7 +6,7 @@ import { LoadInventory, ResetInventory, SetContentId, UpdateInventory } from './
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { SettingsService } from '../../settings/settings.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -14,6 +14,7 @@ import { LodestoneIdEntry } from '../../../model/user/lodestone-id-entry';
 import { CharacterResponse } from '@xivapi/angular-client';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 import { TranslateService } from '@ngx-translate/core';
+import { ItemOdr, OdrCoords } from './item-odr';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,8 @@ export class InventoryFacade {
 
   characterEntries: Array<LodestoneIdEntry & { character: CharacterResponse }>;
 
+  private odr$: BehaviorSubject<Record<string, ItemOdr>> = new BehaviorSubject<Record<string, ItemOdr>>({});
+
   constructor(private store: Store<InventoryPartialState>, private authFacade: AuthFacade, private ipc: IpcService,
               private translate: TranslateService, settings: SettingsService) {
     if (settings.clearInventoryOnStartup) {
@@ -38,9 +41,121 @@ export class InventoryFacade {
     this.ipc.on('dat:content-id', (event, contentId) => {
       this.setContentId(contentId);
     });
+    this.ipc.on('dat:item-odr', (event, { odr, contentId }) => {
+      this.odr$.next({ ...this.odr$.value, [contentId]: odr });
+    });
+    this.ipc.once('dat:all-odr:value', (event, odr) => {
+      this.odr$.next(odr);
+    });
+    this.ipc.send('dat:all-odr');
     this.authFacade.characterEntries$.subscribe(entries => {
       this.characterEntries = entries;
     });
+  }
+
+  public getPosition(item: ItemSearchResult): Observable<number> {
+    return this.odr$.pipe(
+      map(odr => {
+        const itemOdr = odr[item.contentId];
+        const inventory = this.getOdrInventory(item, itemOdr);
+        let containerId = item.containerId;
+        // Armory
+        const armoryContainers = [
+          ContainerType.ArmoryMain,
+          ContainerType.ArmoryHead,
+          ContainerType.ArmoryBody,
+          ContainerType.ArmoryHand,
+          ContainerType.ArmoryWaist,
+          ContainerType.ArmoryLegs,
+          ContainerType.ArmoryFeet,
+          ContainerType.ArmoryOff,
+          ContainerType.ArmoryEar,
+          ContainerType.ArmoryNeck,
+          ContainerType.ArmoryWrist,
+          ContainerType.ArmoryRing,
+          ContainerType.ArmorySoulCrystal
+        ];
+        if (armoryContainers.includes(item.containerId)) {
+          containerId = 0;
+        }
+        // Saddlebag
+        if ([ContainerType.SaddleBag0, ContainerType.SaddleBag1].includes(item.containerId)) {
+          containerId -= ContainerType.SaddleBag0;
+        }
+        if ([ContainerType.PremiumSaddleBag0, ContainerType.PremiumSaddleBag1].includes(item.containerId)) {
+          containerId -= ContainerType.PremiumSaddleBag0;
+        }
+        // Retainers
+        const retainerContainers = [
+          ContainerType.RetainerBag0,
+          ContainerType.RetainerBag1,
+          ContainerType.RetainerBag2,
+          ContainerType.RetainerBag3,
+          ContainerType.RetainerBag4,
+          ContainerType.RetainerBag5,
+          ContainerType.RetainerBag6
+        ];
+        if (retainerContainers.includes(item.containerId)) {
+          containerId -= ContainerType.RetainerBag0;
+        }
+        return inventory.findIndex(coords => {
+          return coords.slot === item.slot && coords.container === containerId;
+        });
+      })
+    );
+  }
+
+  private getOdrInventory(item: ItemSearchResult, odr: ItemOdr): OdrCoords[] {
+    if (!odr) {
+      return [];
+    }
+    switch (item.containerId) {
+      case ContainerType.Bag0:
+      case ContainerType.Bag1:
+      case ContainerType.Bag2:
+      case ContainerType.Bag3:
+        return odr.Player;
+      case ContainerType.ArmoryMain:
+        return odr.ArmoryMain;
+      case ContainerType.ArmoryHead:
+        return odr.ArmoryHead;
+      case ContainerType.ArmoryBody:
+        return odr.ArmoryBody;
+      case ContainerType.ArmoryHand:
+        return odr.ArmoryHand;
+      case ContainerType.ArmoryWaist:
+        return odr.ArmoryWaist;
+      case ContainerType.ArmoryLegs:
+        return odr.ArmoryLegs;
+      case ContainerType.ArmoryFeet:
+        return odr.ArmoryFeet;
+      case ContainerType.ArmoryOff:
+        return odr.ArmoryOff;
+      case ContainerType.ArmoryEar:
+        return odr.ArmoryEar;
+      case ContainerType.ArmoryNeck:
+        return odr.ArmoryNeck;
+      case ContainerType.ArmoryWrist:
+        return odr.ArmoryWrist;
+      case ContainerType.ArmoryRing:
+        return odr.ArmoryRing;
+      case ContainerType.ArmorySoulCrystal:
+        return odr.ArmorySoulCrystal;
+      case ContainerType.SaddleBag0:
+      case ContainerType.SaddleBag1:
+        return odr.SaddleBag;
+      case ContainerType.PremiumSaddleBag0:
+      case ContainerType.PremiumSaddleBag1:
+        return odr.PremiumSaddlebag;
+      case ContainerType.RetainerBag0:
+      case ContainerType.RetainerBag1:
+      case ContainerType.RetainerBag4:
+      case ContainerType.RetainerBag5:
+      case ContainerType.RetainerBag6:
+      //TODO Retainer linking using retainer ID
+      default:
+        return [];
+    }
   }
 
   public getContainerTranslateKey(item: ItemSearchResult): string {

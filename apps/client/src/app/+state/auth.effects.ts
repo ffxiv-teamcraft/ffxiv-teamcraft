@@ -186,12 +186,10 @@ export class AuthEffects {
     filter(() => this.settings.followIngameCharacterSwitches),
     withLatestFrom(this.authFacade.user$),
     map(([action, user]) => {
-      console.log('content id !', action);
       const newDefault = user.lodestoneIds.find(entry => entry.contentId === action.contentId);
       if (newDefault) {
         user.defaultLodestoneId = newDefault.id;
       }
-      console.log('content id !', user);
       return new UpdateUser(user);
     })
   );

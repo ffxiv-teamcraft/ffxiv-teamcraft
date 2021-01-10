@@ -1864,6 +1864,7 @@
     "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
     "New_character_detected": "New character detected",
+    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",

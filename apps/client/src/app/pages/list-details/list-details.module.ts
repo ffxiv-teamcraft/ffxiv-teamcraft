@@ -40,6 +40,7 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
 import { CommissionsModule } from '../commissions/commissions.module';
 import { CommissionBoardModule } from '../../modules/commission-board/commission-board.module';
 import { InventoryCleanupPopupComponent } from './inventory-cleanup-popup/inventory-cleanup-popup.component';
+import { InventoryModule } from '../../modules/inventory/inventory.module';
 
 const routes: Routes = [
   {
@@ -87,7 +88,8 @@ const routes: Routes = [
     TranslateModule,
     AntdSharedModule,
 
-    CommissionBoardModule
+    CommissionBoardModule,
+    InventoryModule
   ],
   declarations: [
     ListDetailsComponent,

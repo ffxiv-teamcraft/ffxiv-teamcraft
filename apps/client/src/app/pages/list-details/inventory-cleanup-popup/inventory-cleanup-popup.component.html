@@ -8,6 +8,12 @@
           <div>{{item.itemId | itemName | i18n}}</div>
           <img *ngIf="item.hq" alt="(HQ)" src="./assets/icons/HQ.png" class="hq-icon">
           <div>x{{item.quantity}}</div>
+          <div>
+            <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
+            <ng-template #positionTooltip>
+              <app-inventory-position [item]="item"></app-inventory-position>
+            </ng-template>
+          </div>
         </div>
       </div>
     </nz-card>

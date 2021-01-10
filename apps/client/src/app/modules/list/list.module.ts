@@ -63,6 +63,7 @@ import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { RequirementsExtractor } from './data/extractor/requirements-extractor';
 import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
 import { GatheringNodesService } from '../../core/data/gathering-nodes.service';
+import { InventoryModule } from '../inventory/inventory.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -122,7 +123,8 @@ export const DATA_EXTRACTORS: Provider[] = [
     EffectsModule.forFeature([ListsEffects]),
     LazyScrollModule,
     SimulatorModule,
-    CompanyWorkshopTreeModule
+    CompanyWorkshopTreeModule,
+    InventoryModule
   ],
   providers: [
     ...DATA_EXTRACTORS,
