@@ -17,7 +17,7 @@
   "Hide_zone_duplicates": "Zonen-Dubletten ausblenden (Gegenstände aus mehreren Zonen werden nur einmal angezeigt)",
   "Patch_notes": "{{version}} Änderungen",
   "Patch_notes_footer": "Gefallen dir die neuen Funktionen? Dann ziehe doch in Betracht das Projekt auf Patreon zu unterstützen.",
-  "Selection": "Selection",
+  "Selection": "Auswahl",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Account wird bereits benutzt",
     "auth/email-already-in-use": "Email wird bereits benutzt",
@@ -42,8 +42,8 @@
     "Share_url": "Kopiere Link zur Suche in die Zwischenablage",
     "Share_url_copied": "Link zur Suche wurde in die Zwischenablage kopiert",
     "Only_craftable": "Nur Rezepte",
-    "Want_filters": "Need more filters?",
-    "Open_search": "Open search page instead"
+    "Want_filters": "Brauchen Sie mehr Filter?",
+    "Open_search": "Suchseite stattdessen öffnen"
   },
   "Use_as_default_character": "Als Standard-Charakter setzen",
   "Download_desktop_app": "Desktopanwendung herunterladen",
@@ -169,8 +169,8 @@
     "Example": "Beispiel",
     "Change": "Ändern",
     "Dirty_changes": "Du hast nicht gespeicherte Änderungen",
-    "Never": "Never",
-    "Festival": "Only during a festival"
+    "Never": "Nie",
+    "Festival": "Nur während eines Festivals"
   },
   "ALARMS": {
     "Title": "Alarme",
@@ -243,8 +243,8 @@
   "No_statuses_found": "Keine Statuseffekte gefunden",
   "No_traits_found": "Keine Eigenschaften gefunden",
   "No_achievements_found": "Keine Errungenschaften gefunden",
-  "Select_all": "Select all results",
-  "Unselect_all": "Unselect all results",
+  "Select_all": "Alle Ergebnisse auswählen",
+  "Unselect_all": "Alle Ergebnisse abwählen",
   "Do you really want to reset the list?": "Möchtest du die Liste wirklich zurücksetzen?",
   "Yes": "Ja",
   "No": "Nein",
@@ -398,7 +398,7 @@
     "Clear_cache": "Cache leeren (erfordert einen Neustart der App)",
     "Add_firewall_rule": "Firewall-Regel für Paketerfassung hinzufügen",
     "Installing_npcap": "Npcap installation in progress",
-    "Installing_npcap_description": "In order to have packet capture working, we need to install npcap. Make sure you keep the default settings like they are (do not uncheck winpcap api compatibility). Teamcraft will restart once this is done.",
+    "Installing_npcap_description": "Damit die Paketerfassung funktioniert, muss npcap installiert werden. Vergewissern Sie sich, dass Sie die Standardeinstellungen beibehalten (deaktivieren Sie nicht die Winpcap api Kompatibilität). Teamcraft wird neu gestartet, sobald dies erledigt ist.",
     "Enable_item_tags": "Gegenstand-Markierungen aktivieren",
     "Show_copy_list_own_list": "Kopieren-Schaltfläche auf eigenen Listenblöcken anzeigen",
     "Custom_theme": "Benutzerdefiniertes Design",
@@ -443,7 +443,7 @@
     "Metrics_capture_folder": "Metrik-Logordner",
     "Maximum_vendor_price": "Maximaler Händlerpreis",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
-    "Rawsock_flag": "Use RawSocket for packet capture",
+    "Rawsock_flag": "Verwenden Sie RawSocket für die Paketerfassung",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "COLORS": {
       "Background": "Hintergrundfarbe",
@@ -517,7 +517,7 @@
     "Lists_merged": "Listen erfolgreich zusammengefasst!",
     "Shared_lists": "Mit dir geteilte Listen",
     "Add_selection": "Auswahl zu einer Liste hinzufügen",
-    "Reset_selection": "Reset selection",
+    "Reset_selection": "Auswahl zurücksetzen",
     "Add_selection_to_list": "Auswahl zu einer Liste hinzufügen",
     "Your_lists": "Deine Listen",
     "Outdated_tag": "veraltet",
@@ -591,7 +591,7 @@
       "GREEN": "Grün",
       "YELLOW": "Gelb",
       "BLUE": "Blau",
-      "LIGHT_BLUE": "Light blue",
+      "LIGHT_BLUE": "Hellblau",
       "PURPLE": "Lila",
       "ORANGE": "Orange",
       "PINK": "Rosa",
@@ -2334,7 +2334,7 @@
       "Items_count": "# of items",
       "Creation_date": "Creation date",
       "Server_&_tags": "Server & tags",
-      "Add_items": "Add items",
+      "Add_items": "Items hinzufügen",
       "Rating": "Rating",
       "Comment": "Your comment",
       "Comment_placeholder": "Add more details about your rating here"
