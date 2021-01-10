@@ -6,7 +6,7 @@ import { LoadInventory, ResetInventory, SetContentId, UpdateInventory } from './
 import { ContainerType } from '../../../model/user/inventory/container-type';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { filter, map, shareReplay } from 'rxjs/operators';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { SettingsService } from '../../settings/settings.service';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { IpcService } from '../../../core/electron/ipc.service';
@@ -15,6 +15,7 @@ import { CharacterResponse } from '@xivapi/angular-client';
 import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 import { TranslateService } from '@ngx-translate/core';
 import { ItemOdr, OdrCoords } from './item-odr';
+import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class InventoryFacade {
   private odr$: BehaviorSubject<Record<string, ItemOdr>> = new BehaviorSubject<Record<string, ItemOdr>>({});
 
   constructor(private store: Store<InventoryPartialState>, private authFacade: AuthFacade, private ipc: IpcService,
-              private translate: TranslateService, settings: SettingsService) {
+              private translate: TranslateService, private retainersService: RetainersService, settings: SettingsService) {
     if (settings.clearInventoryOnStartup) {
       this.resetInventory();
     }
@@ -54,10 +55,10 @@ export class InventoryFacade {
   }
 
   public getPosition(item: ItemSearchResult): Observable<number> {
-    return this.odr$.pipe(
-      map(odr => {
+    return combineLatest([this.odr$, this.retainersService.retainers$]).pipe(
+      map(([odr, retainers]) => {
         const itemOdr = odr[item.contentId];
-        const inventory = this.getOdrInventory(item, itemOdr);
+        const inventory = this.getOdrInventory(item, itemOdr, retainers);
         let containerId = item.containerId;
         // Armory
         const armoryContainers = [
@@ -105,7 +106,7 @@ export class InventoryFacade {
     );
   }
 
-  private getOdrInventory(item: ItemSearchResult, odr: ItemOdr): OdrCoords[] {
+  private getOdrInventory(item: ItemSearchResult, odr: ItemOdr, retainers: Record<string, Retainer>): OdrCoords[] {
     if (!odr) {
       return [];
     }
@@ -152,7 +153,12 @@ export class InventoryFacade {
       case ContainerType.RetainerBag4:
       case ContainerType.RetainerBag5:
       case ContainerType.RetainerBag6:
-      //TODO Retainer linking using retainer ID
+        const retainerKey = Object.keys(retainers).find(key => retainers[key].name.toLowerCase() === item.retainerName.toLowerCase());
+        if (retainerKey) {
+          const retainerEntry = odr.Retainers.find(retainer => retainer.id.endsWith(retainerKey));
+          return retainerEntry?.inventory || [];
+        }
+        return [];
       default:
         return [];
     }

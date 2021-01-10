@@ -169,8 +169,8 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private machina: PacketCaptureTrackerService, private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
+              private message: NzMessageService, private universalis: UniversalisService,
+              private inventoryService: InventoryFacade, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
@@ -228,8 +228,6 @@ export class AppComponent implements OnInit {
 
     if (isPlatformBrowser(this.platform)) {
       if (this.platformService.isDesktop()) {
-        this.machina.init();
-        this.gubal.init();
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
             return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;
