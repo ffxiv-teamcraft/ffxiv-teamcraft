@@ -106,23 +106,15 @@ export class DatFilesWatcher {
     if (!!this.watcher) {
       return;
     }
-    log.log('Documents', app.getPath('documents'));
-    exec('Get-ItemProperty -Path Registry::HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\"User Shell Folders" -Name Personal', { 'shell': 'powershell.exe' }, (err, output) => {
-      if (output) {
-        const documentsDir = /Personal\s+:\s?(.*)/.exec(output.trim())[1];
-        const watchDir = `${documentsDir}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
-        this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
-          this.onEvent(event, filename, watchDir);
-        });
-        ipcMain.on('dat:all-odr', event => {
-          event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
-        });
-        log.log(`DAT Watcher started on ${watchDir}`);
-      } else {
-        log.error('No output from reg read command, DAT Watcher cannot start.');
-        log.error(`Error: ${err}`);
-      }
+    const watchDir = `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+    this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
+      this.onEvent(event, filename, watchDir);
     });
+    ipcMain.on('dat:all-odr', event => {
+      event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
+    });
+    log.log(`DAT Watcher started on ${watchDir}`);
+
   }
 
   stop(): void {
