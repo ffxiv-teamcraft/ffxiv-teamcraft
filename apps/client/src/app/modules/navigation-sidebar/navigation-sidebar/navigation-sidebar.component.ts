@@ -1,12 +1,9 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { SettingsService } from '../../settings/settings.service';
 import { MediaObserver } from '@angular/flex-layout';
 import { Character } from '@xivapi/angular-client';
 import { SidebarIconType } from '../sidebar-icon-type';
-import { SidebarCategory, SidebarEntry, SidebarItem } from '../sidebar-entry';
-import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { filter, map, startWith } from 'rxjs/operators';
-import { DomSanitizer } from '@angular/platform-browser';
+import { SidebarEntry } from '../sidebar-entry';
 import { SidebarBadgeType } from '../sidebar-badge-type';
 import { NavigationSidebarService } from '../navigation-sidebar.service';
 
@@ -60,6 +57,16 @@ export class NavigationSidebarComponent {
   public onNavLinkClick(): void {
     if (this.media.isActive('lt-md')) {
       this.settings.compactSidebar = true;
+    }
+  }
+
+  public onOpenChange(collapsedKey: string, change: boolean): void {
+    if (!this.settings.compactSidebar) {
+      this.state = {
+        ...this.state,
+        [collapsedKey]: change
+      };
+      this.settings.sidebarState = this.state;
     }
   }
 

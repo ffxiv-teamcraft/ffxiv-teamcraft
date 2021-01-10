@@ -213,8 +213,8 @@ export class NavigationSidebarService {
           name: 'SIDEBAR.Leveling',
           collapsedKey: 'leveling',
           icon: {
-            type: SidebarIconType.COMPANION_SVG,
-            content: this.sanitizer.bypassSecurityTrustHtml('&#xE267;')
+            type: SidebarIconType.CUSTOM_FONT,
+            content: this.sanitizer.bypassSecurityTrustHtml('&#xE902;')
           },
           children: [
             {
@@ -236,8 +236,8 @@ export class NavigationSidebarService {
             {
               name: 'LEVELING_EQUIPMENT.Title',
               icon: {
-                type: SidebarIconType.ANTD,
-                content: 'medicine-box'
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE900;')
               },
               link: '/leveling-equipment'
             }
@@ -247,8 +247,8 @@ export class NavigationSidebarService {
           name: 'SIDEBAR.Currencies',
           collapsedKey: 'currencies',
           icon: {
-            type: SidebarIconType.COMPANION_SVG,
-            content: this.sanitizer.bypassSecurityTrustHtml('&#xF209;')
+            type: SidebarIconType.CUSTOM_FONT,
+            content: this.sanitizer.bypassSecurityTrustHtml('&#xE904;')
           },
           children: [
             {
@@ -270,8 +270,8 @@ export class NavigationSidebarService {
             {
               name: 'COLLECTABLES.Title',
               icon: {
-                type: SidebarIconType.ANTD,
-                content: 'table'
+                type: SidebarIconType.CUSTOM_FONT,
+                content: this.sanitizer.bypassSecurityTrustHtml('&#xE903;')
               },
               link: '/collectables'
             }

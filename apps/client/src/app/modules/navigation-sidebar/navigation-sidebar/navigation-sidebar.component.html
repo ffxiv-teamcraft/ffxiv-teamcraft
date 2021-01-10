@@ -5,6 +5,7 @@
       <i *ngSwitchCase="SidebarIconType.ANTD" nz-icon [nzType]="entry.content"></i>
       <i *ngSwitchCase="SidebarIconType.ANTD_ICONFONT" nz-icon [nzIconfont]="entry.content"></i>
       <i *ngSwitchCase="SidebarIconType.COMPANION_SVG" class="companion-svg anticon" [innerHTML]="entry.content"></i>
+      <i *ngSwitchCase="SidebarIconType.CUSTOM_FONT" class="teamcraft-svg anticon" [innerHTML]="entry.content"></i>
       <span *ngSwitchCase="SidebarIconType.CUSTOM" [innerHTML]="entry.content"></span>
     </ng-container>
   </ng-template>
@@ -21,8 +22,8 @@
   </ng-template>
 
   <li *ngFor="let category of content$ | async; trackBy: trackByName"
-      [(nzOpen)]="state[category.collapsedKey]"
-      (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = state:null"
+      [nzOpen]="settings.compactSidebar?false:state[category.collapsedKey]"
+      (nzOpenChange)="onOpenChange(category.collapsedKey, $event)"
       nz-submenu>
                 <span title>
                   <ng-container *ngTemplateOutlet="icon;context:{$implicit: category.icon}"></ng-container>
@@ -44,7 +45,8 @@
     </ng-container>
   </li>
 
-  <li [(nzOpen)]="state.other" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = state:null" nz-submenu>
+  <li [nzOpen]="settings.compactSidebar?false:state.other"
+      (nzOpenChange)="onOpenChange('other', $event)" nz-submenu>
     <span title>
       <i nz-icon nzType="info-circle"></i>
       <span>{{'SIDEBAR.Other' | translate}}</span>
