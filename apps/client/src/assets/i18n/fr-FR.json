@@ -1795,7 +1795,7 @@
     "Add_stat_filter": "Ajouter un filtre de stat",
     "Add_bonus_stat_filter": "Ajouter un filtre de caractéristique bonus",
     "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
+    "Stats_exclude_tip": "Définissez la valeur minimale d'une statistique à -1 pour rechercher des objets sans cette statistique",
     "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "Pertinence",
@@ -2436,50 +2436,50 @@
     }
   },
   "MAPPY": {
-    "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
-    "Last_bnpc_update": "Last monster position uploaded",
-    "Last_node_update": "Last node position uploaded",
-    "Clear_map": "Clear this map",
-    "Dashboard": "Mappy Dashboard",
-    "Open_details": "Open details page",
-    "X_Missing_nodes": "{{amount}} missing node(s)",
-    "Missing_nodes": "Missing nodes",
-    "No_missing_nodes": "No missing nodes",
-    "Only_missing_nodes": "Only show maps with missing nodes"
+    "Total_entries": "Total des entrées",
+    "Last_updated": "Dernière mise à jour",
+    "Last_bnpc_update": "Dernière position de monstre téléchargée",
+    "Last_node_update": "Dernière position de nœud téléchargée",
+    "Clear_map": "Effacer cette carte",
+    "Dashboard": "Tableau de bord Mappy",
+    "Open_details": "Ouvrir la page de détails",
+    "X_Missing_nodes": "{{amount}} nœud(s) manquant(s)",
+    "Missing_nodes": "Nœuds manquants",
+    "No_missing_nodes": "Aucun nœud manquant",
+    "Only_missing_nodes": "Afficher uniquement les cartes avec les nœuds manquants"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "Arbre de recettes de l'atelier",
+    "View_tree": "Ouvrir l'arbre des recettes de l'atelier",
     "Phase": "Phase {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Title": "Equipement de leveling",
+    "Include_crafting": "Inclure la fabrication",
+    "Include_trades": "Inclure les échanges",
+    "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
+    "Generate_list": "Générer une liste",
+    "Empty_slot": "Emplacement vide",
+    "In_inventory": "Vous avez cet objet dans un de vos inventaires",
+    "Only_inventory": "Considérer uniquement les éléments dans l'inventaire"
   },
   "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Title": "Servants",
+    "No_retainers": "Aucun servant, veuillez sonner la cloche des servants pour charger des informations sur vos servants.",
+    "Selling": "{{amount}} objets en vente",
+    "X_items": "{{amount}} objets",
+    "Task_complete": "Tâche terminée",
+    "Task_completed_notification_title": "{{name}} a terminé sa tâche",
+    "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
+    "Task_completion_alarm": "Alarme de complétion de tâche"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Title": "Tâches de servant",
+    "Description": "Entrez le job de votre servant, son niveau, ilvl et collecte (si nécessaire) pour trouver la tâche idéale à réaliser pour le profit. Cela peut prendre jusqu'à une minute si votre servant est de haut niveau car il vérifiera le prix de chaque objet qu'il peut obtenir pour le profit.",
     "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
+    "Gathering": "Récolte",
+    "Task_level": "Niveau de la tâche",
+    "Total_per_venture": "Total par tâche",
+    "Use_retainer": "Utiliser le servant"
   }
 }
