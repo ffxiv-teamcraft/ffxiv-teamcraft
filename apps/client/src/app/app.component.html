@@ -29,23 +29,29 @@
         <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
         </div>
-        <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
-          <ng-container *ngIf="platformService.isDesktop()">
-            <nz-space nzSize="middle">
+        <div *ngIf="platformService.isDesktop()" class="nav-buttons">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <div>
               <button (click)="back()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-left"></i>
               </button>
+            </div>
+            <div>
               <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}" nz-button
                       (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="share-alt"></i>
               </button>
+            </div>
+            <div>
               <button (click)="forward()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-right"></i>
               </button>
-            </nz-space>
-          </ng-container>
-          <div class="tips" fxHide.lt-lg fxShow>
+            </div>
+          </div>
+        </div>
+        <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
+          <div class="tips" fxHide.lt-lg fxShow *ngIf="!platformService.isDesktop()">
             <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
           </div>
         </div>
@@ -357,6 +363,7 @@
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
+                      nzCloseable
                       nzType="warning">
             </nz-alert>
             <ng-container *ngIf="user$ | async as user">

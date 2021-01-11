@@ -743,6 +743,14 @@ export class SettingsService {
     this.setBoolean('showOthercharacterInventoriesInList', show);
   }
 
+  public get retainerTaskAlarms(): boolean {
+    return this.getBoolean('retainerTaskAlarms', false);
+  }
+
+  public set retainerTaskAlarms(enabled: boolean) {
+    this.setBoolean('retainerTaskAlarms', enabled);
+  }
+
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
     this.setSetting(`overlay:clock:${overlay}`, show.toString());
   }

@@ -152,6 +152,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/desynth/desynth.module').then(m => m.DesynthModule)
   },
   {
+    path: 'retainers',
+    loadChildren: () => import('./pages/retainers/retainers.module').then(m => m.RetainersModule)
+  },
+  {
     path: 'support-us',
     loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
   },

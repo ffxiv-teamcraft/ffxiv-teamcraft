@@ -286,14 +286,6 @@ export class NavigationSidebarService {
           },
           children: [
             {
-              name: 'MACRO_TRANSLATION.Title',
-              icon: {
-                type: SidebarIconType.ANTD,
-                content: 'translation'
-              },
-              link: '/macro-translator'
-            },
-            {
               name: 'INVENTORY_OPTIMIZER.Title',
               icon: {
                 type: SidebarIconType.ANTD,
@@ -301,6 +293,23 @@ export class NavigationSidebarService {
               },
               link: '/inventory-optimizer',
               hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'RETAINERS.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'alert'
+              },
+              link: '/retainers',
+              hidden: !this.platformService.isDesktop()
+            },
+            {
+              name: 'MACRO_TRANSLATION.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'translation'
+              },
+              link: '/macro-translator'
             },
             {
               name: 'LOG_TRACKER.Title',
@@ -327,20 +336,20 @@ export class NavigationSidebarService {
               link: '/food-picker'
             },
             {
-              name: 'CUSTOM_ITEMS.Title',
-              icon: {
-                type: SidebarIconType.ANTD_ICONFONT,
-                content: 'icon-custom'
-              },
-              link: '/custom-items'
-            },
-            {
               name: 'ALARMS.REALTIME.Reset_timers',
               icon: {
                 type: SidebarIconType.ANTD,
                 content: 'hourglass'
               },
               link: '/reset-timers'
+            },
+            {
+              name: 'CUSTOM_ITEMS.Title',
+              icon: {
+                type: SidebarIconType.ANTD_ICONFONT,
+                content: 'icon-custom'
+              },
+              link: '/custom-items'
             }
           ]
         }

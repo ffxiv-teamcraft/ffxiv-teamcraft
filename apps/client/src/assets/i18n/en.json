@@ -1874,7 +1874,7 @@
       "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
     },
-    "CONTENT_ID_POPUP":  {
+    "CONTENT_ID_POPUP": {
       "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
       "Linked": "Linked",
       "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
@@ -2462,5 +2462,15 @@
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
     "Only_inventory": "Only consider items in inventory"
+  },
+  "RETAINERS": {
+    "Title": "Retainers",
+    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
+    "Selling": "Selling {{amount}} items",
+    "X_items": "{{amount}} items",
+    "Task_complete": "Task complete",
+    "Task_completed_notification_title": "{{name}} has finished its venture",
+    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
+    "Task_completion_alarm": "Task completion alarm"
   }
 }
