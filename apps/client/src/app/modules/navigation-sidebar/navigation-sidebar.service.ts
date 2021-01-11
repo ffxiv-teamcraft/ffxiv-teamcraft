@@ -304,6 +304,14 @@ export class NavigationSidebarService {
               hidden: !this.platformService.isDesktop()
             },
             {
+              name: 'RETAINER_VENTURES.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'carry-out'
+              },
+              link: '/retainer-ventures'
+            },
+            {
               name: 'MACRO_TRANSLATION.Title',
               icon: {
                 type: SidebarIconType.ANTD,

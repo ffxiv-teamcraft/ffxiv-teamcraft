@@ -501,7 +501,7 @@ export class StatsService {
    * Stats computing methods here, source: http://allaganstudies.akhmorning.com/guide/parameters/
    */
 
-  private getAvgIlvl(set: TeamcraftGearset): number {
+  public getAvgIlvl(set: TeamcraftGearset): number {
     const withoutOffHand = ['mainHand', 'head', 'earRings', 'chest', 'necklace', 'gloves', 'bracelet', 'belt', 'ring1', 'legs', 'ring2', 'feet']
       .filter(key => set[key])
       .reduce((acc, row) => {

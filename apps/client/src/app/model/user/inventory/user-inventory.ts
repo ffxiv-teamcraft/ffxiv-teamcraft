@@ -86,6 +86,13 @@ export class UserInventory extends DataModel {
     return this.searchCache.filter(item => (!onlyUserInventory || (item.containerId < 10 && item.contentId === this.contentId)) && item.itemId === itemId);
   }
 
+  getRetainerGear(retainerName: string): ItemSearchResult[] {
+    this.generateSearchCacheIfNeeded();
+    return this.searchCache.filter(item => {
+      return item.containerId === ContainerType.RetainerEquippedGear && item.retainerName === retainerName;
+    });
+  }
+
   updateInventorySlot(packet: UpdateInventorySlot | InventoryTransaction, lastSpawnedRetainer: string): InventoryPatch | null {
     delete this.searchCache;
     if (!this.items[this.contentId]) {
@@ -121,7 +128,8 @@ export class UserInventory extends DataModel {
         slot: packet.slot,
         containerId: packet.containerId,
         spiritBond: +packet.spiritBond,
-        retainerName: isRetainer ? lastSpawnedRetainer : null
+        retainerName: isRetainer ? lastSpawnedRetainer : null,
+        materias: packet.materia || []
       };
       if (isRetainer) {
         entry.retainerName = lastSpawnedRetainer;
@@ -203,7 +211,8 @@ export class UserInventory extends DataModel {
           itemId: fromItem.itemId,
           hq: fromItem.hq,
           slot: packet.toSlot,
-          spiritBond: fromItem.spiritBond
+          spiritBond: fromItem.spiritBond,
+          materias: []
         };
         if (isToRetainer) {
           newStack.retainerName = lastSpawnedRetainer;

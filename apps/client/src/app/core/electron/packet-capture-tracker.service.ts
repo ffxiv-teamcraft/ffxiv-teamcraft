@@ -155,7 +155,8 @@ export class PacketCaptureTrackerService {
               slot: +packet.slot,
               quantity: +packet.quantity,
               hq: packet.hqFlag === 1,
-              spiritBond: +packet.spiritBond
+              spiritBond: +packet.spiritBond,
+              materias: packet.materia || []
             };
             if (isRetainer) {
               item.retainerName = lastRetainerSpawned;

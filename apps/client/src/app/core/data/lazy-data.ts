@@ -73,6 +73,7 @@ export interface LazyData {
   recipesIngredientLookup: any;
   recipes: any;
   reduction: any;
+  retainerTasks: any;
   shops: any;
   spearFishingLog: any;
   spearFishingNodes: any;

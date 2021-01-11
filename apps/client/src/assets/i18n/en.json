@@ -2472,5 +2472,14 @@
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
     "Task_completion_alarm": "Task completion alarm"
+  },
+  "RETAINER_VENTURES": {
+    "Title": "Retainer ventures",
+    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Retainer_ilvl": "Ilvl",
+    "Gathering": "Gathering",
+    "Task_level": "Task level",
+    "Total_per_venture": "Total per venture",
+    "Use_retainer": "Fill with retainer"
   }
 }

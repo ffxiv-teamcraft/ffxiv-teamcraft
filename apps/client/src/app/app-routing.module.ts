@@ -156,6 +156,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/retainers/retainers.module').then(m => m.RetainersModule)
   },
   {
+    path: 'retainer-ventures',
+    loadChildren: () => import('./pages/retainer-ventures/retainer-ventures.module').then(m => m.RetainerVenturesModule)
+  },
+  {
     path: 'support-us',
     loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
   },

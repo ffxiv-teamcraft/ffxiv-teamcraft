@@ -2498,48 +2498,57 @@ if (hasTodo('races')) {
 
 if (hasTodo('ventures')) {
   const ventures = {};
-  getAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task`, null, 'Ventures')
-    .pipe(
-      mergeMap(page => {
-        return combineLatest(page.Results.map(row => {
-          let req;
-          if (row.IsRandom) {
-            req = get(`https://xivapi.com/RetainerTaskRandom/${row.Task}`);
-          } else {
-            req = get(`https://xivapi.com/RetainerTaskNormal/${row.Task}`);
-          }
-          return req.pipe(
-            map(task => {
-              return {
-                ...task,
-                ID: row.ID,
-                IsRandom: row.IsRandom
-              };
-            })
-          );
-        }));
-      })
-    )
+  const retainerTasks = [];
+  aggregateAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task,Experience,RequiredGathering,RequiredItemLevel,RetainerLevel,RetainerTaskParameter,VentureCost,ClassJobCategoryTargetID,Quantity0,Quantity1,Quantity2`, null, 'Ventures')
     .subscribe(tasks => {
       tasks.forEach(task => {
         if (task.IsRandom) {
           ventures[task.ID] = {
-            en: task.Name_en,
-            ja: task.Name_ja,
-            de: task.Name_de,
-            fr: task.Name_fr
+            en: task.Task.Name_en,
+            ja: task.Task.Name_ja,
+            de: task.Task.Name_de,
+            fr: task.Task.Name_fr
           };
-        } else if (task.Item) {
+        } else if (task.Task && task.Task.Item) {
+          let reqStat = 'ilvl';
+          if (task.ClassJobCategoryTargetID !== 34) {
+            reqStat = 'gathering';
+          }
+          let reqStatValue = 'ItemLevelDoW';
+          if (task.ClassJobCategoryTargetID !== 34) {
+            if(task.ClassJobCategoryTargetID === 17){
+              reqStatValue = 'GatheringFSH';
+            }else{
+              reqStatValue = 'GatheringDoL';
+            }
+          }
+          retainerTasks.push({
+            exp: task.Experience,
+            reqGathering: task.RequiredGathering,
+            reqIlvl: task.RequiredItemLevel,
+            lvl: task.RetainerLevel,
+            cost: task.VentureCost,
+            item: task.Task.Item.ID,
+            quantities: [0, 1, 2].map(index => {
+              return {
+                quantity: task.Task[`Quantity${index}`],
+                stat: reqStat,
+                value: task.RetainerTaskParameter ? task.RetainerTaskParameter[`${reqStatValue}${index - 1}`] : 0
+              };
+            }),
+            category: task.ClassJobCategoryTargetID
+          });
           ventures[task.ID] = {
-            en: task.Item.Name_en,
-            ja: task.Item.Name_ja,
-            de: task.Item.Name_de,
-            fr: task.Item.Name_fr
+            en: task.Task.Item.Name_en,
+            ja: task.Task.Item.Name_ja,
+            de: task.Task.Item.Name_de,
+            fr: task.Task.Item.Name_fr
           };
         }
       });
     }, null, () => {
       persistToJsonAsset('ventures', ventures);
+      persistToJsonAsset('retainer-tasks', retainerTasks);
       done('ventures');
     });
 }
