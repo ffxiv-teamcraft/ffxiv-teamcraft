@@ -116,7 +116,7 @@ export class MobComponent extends TeamcraftPageComponent {
             mapRow.positions.push({ x: position.x, y: position.y });
           }
         }
-        const mobHuntSpawns = this.lazyData.data.hunts.find(h => h.hunts.some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
+        const mobHuntSpawns = this.lazyData.data.hunts.find(h => (h.hunts || []).some(hh => hh.name.toLowerCase() === mob.Name_en.toLowerCase()));
         if (mobHuntSpawns !== undefined) {
           const mapIdEntry = mapIds.find(entry => entry.territory === mobHuntSpawns.zoneid);
           const c = mapIdEntry.scale / 100;
