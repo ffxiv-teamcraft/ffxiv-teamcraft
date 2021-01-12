@@ -1625,7 +1625,8 @@ if (hasTodo('recipes')) {
               quality: ingredient.id > 19 ? (ingredient.ilvl / totalIlvl) * totalContrib : 0
             };
           }),
-        expert: recipe.IsExpert === 1
+        expert: recipe.IsExpert === 1,
+        conditionsFlag: recipe.RecipeLevelTable.ConditionsFlag
       });
     });
 

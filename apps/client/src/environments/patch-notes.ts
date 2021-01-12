@@ -6,4 +6,4 @@ export const patchNotes = `### Bug Fixes
 ### Features
 
 * **data:** update for cn patch-5.31.
-* **desktop:** support for chinese 5.31 packet capture.`;
+* **desktop:** support for chinese 5.31 packet capture.`;

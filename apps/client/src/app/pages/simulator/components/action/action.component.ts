@@ -24,8 +24,17 @@ export class ActionComponent {
   @Input()
   action: CraftingAction;
 
+
+  private _simulation: Simulation;
   @Input()
-  simulation: Simulation;
+  set simulation(simulation: Simulation) {
+    this._simulation = simulation;
+    this.computeAvailableConditions();
+  }
+
+  get simulation(): Simulation {
+    return this._simulation;
+  }
 
   @Input()
   wasted = false;
@@ -58,7 +67,7 @@ export class ActionComponent {
   safe = true;
 
   @Input()
-  state: StepState;
+  state: StepState = StepState.NORMAL;
 
   @Input()
   showStateMenu = false;
@@ -66,7 +75,7 @@ export class ActionComponent {
   @Input()
   readonly = false;
 
-  public states = StepState;
+  availableConditions: { condition: number, name: string }[] = [];
 
   private get simulator() {
     return this.simulationService.getSimulator(this.settings.region);
@@ -78,6 +87,15 @@ export class ActionComponent {
 
   constructor(private nzDropdownService: NzContextMenuService, private settings: SettingsService,
               private simulationService: SimulationService) {
+  }
+
+  private computeAvailableConditions(): void {
+    this.availableConditions = this.simulation.possibleConditions.map(condition => {
+      return {
+        condition,
+        name: `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`
+      };
+    });
   }
 
   getAlt(): string {
@@ -114,6 +132,10 @@ export class ActionComponent {
         return 'yellow';
       case StepState.POOR:
         return 'violet';
+      case StepState.MALLEABLE:
+        return 'darkblue';
+      case StepState.PRIMED:
+        return 'darkmagenta';
     }
   }
 }
