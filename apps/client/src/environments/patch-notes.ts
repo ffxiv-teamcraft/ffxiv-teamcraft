@@ -9,4 +9,4 @@ export const patchNotes = `### Bug Fixes
 
 * **data:** support for korean v5.3 update.
 * **db:** 5.41 data.
-* **simulator:** support for new conditions.`;
+* **simulator:** support for new conditions.`;
