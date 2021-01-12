@@ -11,7 +11,6 @@
   "FC_name": "Nom de la compagnie libre",
   "Saving_in_database": "Sauvegarde en cours",
   "See_on_map": "Voir sur la carte",
-  "No_known_coordinates": "Pas de coordonnées connues",
   "Edit_amount": "Modifier le montant",
   "List_fork_in_progress": "Copie de la liste en cours...",
   "Network_error_logged_out": "Une erreur réseau a été détectée. Vous avez été déconnecté afin d'éviter tout problème avec votre compte causé par cette erreur. Si le problème persiste, merci de contacter Miu sur le serveur Discord de Teamcraft (en anglais ou français).",
@@ -181,7 +180,6 @@
     "Alarms_created": "{{amount}} alarmes créées",
     "Alarm_already_created": "Alarme déjà définie",
     "Custom_sound": "Son d'alarme personnalisé",
-    "Early_by_tip": "Valeur négative = après le spawn",
     "New_group": "Nouveau groupe d’alarmes",
     "Confirm_group_delete": "Êtes-vous sûr de vouloir supprimer ce groupe ?",
     "Delete_group": "Supprimer le groupe",
@@ -199,11 +197,6 @@
     "Group_link_copied": "Lien du groupe d'alarmes copié",
     "Group_not_found": "Groupe d’alarmes introuvable",
     "Add_group_and_alarms": "Ajouter ce groupe et toutes ses alarmes à vos alarmes",
-    "Delete_all": "Supprimer toutes vos alarmes",
-    "Regenerating_alarms": "Régénération de vos alarmes...",
-    "Regenerate": "Régénérer les alarmes",
-    "Group_outdated": "Ce groupe est périmé, demandez au propriétaire de se connecter avec une nouvelle mise à jour et il sera régénéré",
-    "Remove_from_group": "Retirer de ce groupe",
     "REALTIME": {
       "Reset_timers": "Timers de reset",
       "WEEKLY_RESETS": "Resets hebdos",
@@ -426,7 +419,7 @@
     "Clickthrough_overlay": "Permettre de cliquer à travers l'overlay",
     "Disable_search_history": "Supprimer l'historique de recherche",
     "Disable_search_debounce": "Désactiver la recherche auto (seul appuyer sur Entrée déclenchera la recherche)",
-    "Enable_packet_capture": "Activer la capture de paquets (ajoute des fonctionnalités d'inventaire en temps réel)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturer des paquets est contre le CLUF (Contrat de license de l'utilisateur final), la même raison pour laquelle ACT est contre le CLUF. Mais Square Enix le tolère à moins que vous ne vous soyez entrain de le répéter à tout le monde en jeu. Ne faites rien et vous ne risquerez rien.",
     "Enable_autofill_by_default": "Activer le remplissage automatique par défaut",
     "Enable_autofill_notification_by_default": "Activer la notification de complétion automatique par défaut",
@@ -452,12 +445,6 @@
     "Maximum_vendor_price_explain": "Prix maximum pour un élément à considérer pour le filtre CAN_BE_BOUGHT (0 = pas de prix maximum)",
     "Rawsock_flag": "Utiliser RawSocket pour la capture de paquets",
     "Rawsock_details": "L'utilisation de RawSocket capture le trafic sans npcap, peut aider avec les VPN. Cependant, c'est globalement moins fiable et vous devez démarrer TC manuellement en tant qu'administrateur à chaque fois",
-    "Favorite_features": "Fonctionnalités favorites",
-    "Favorite_features_explain": "Les fonctionnalités que vous voulez afficher dans la section des favoris de la barre latérale.",
-    "Clear_inventory_on_startup": "Vider l'inventaire au démarrage",
-    "Switch_tc_when_switch_ingame_character": "Changer de personnage sur Teamcraft quand il change en jeu",
-    "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
-    "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -542,7 +529,6 @@
     "Delete_after_merge": "Supprimer les listes originales après la fusion",
     "Favorite_lists": "Listes favorites",
     "No_favorite_lists": "Vous n'avez pas de liste favorite",
-    "Delete_multiple_lists": "Supprimer plusieurs listes",
     "IMPORT": {
       "Title": "Importer depuis un site externe",
       "Paste_link_step_title": "Coller votre lien vers la liste externe",
@@ -682,8 +668,6 @@
     "Split_list": "Diviser cette liste",
     "Create_commission": "Créer une commission pour cette liste",
     "Commission_list": "Liée à une commission",
-    "Inventory_cleanup": "Nettoyage de l'inventaire",
-    "Inventory_cleanup_description": "Voici les objets qui se trouvent dans votre inventaire et qui ne sont pas utilisés pour la liste",
     "LAYOUT_DIALOG": {
       "Title": "Affichage",
       "Add_panel": "Ajouter une catégorie",
@@ -835,7 +819,6 @@
     "Spawned_for": "Disparaîtra dans {{timer}}",
     "Will_spawn_in": "Apparaît dans {{timer}}",
     "Ephemeral_warning": "Les noeuds éphémères ont plusieurs emplacements, la position est une approximation.",
-    "Legendary": "Légendaire",
     "GIG_HEAD": {
       "Small": "Petite pointe de harpon",
       "Normal": "Pointe de harpon normale",
@@ -979,6 +962,8 @@
       "Pliant": "Modulable",
       "Sturdy": "Robuste",
       "Centered": "Stable",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1795,8 +1780,6 @@
     "Add_stat_filter": "Ajouter un filtre de stat",
     "Add_bonus_stat_filter": "Ajouter un filtre de caractéristique bonus",
     "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
-    "Stats_exclude_tip": "Définissez la valeur minimale d'une statistique à -1 pour rechercher des objets sans cette statistique",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
@@ -1806,7 +1789,6 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
     "General": "Général",
     "Sharing": "Partage",
     "Gathering": "Récolte",
@@ -1815,9 +1797,7 @@
     "Commissions": "Commissions",
     "Commission_board": "Tableau",
     "My_commissions": "Mes commissions",
-    "Archived_commissions": "Archives",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Archived_commissions": "Archives"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1826,8 +1806,6 @@
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
@@ -1863,8 +1841,6 @@
     "Search_for_an_item": "Rechercher un objet",
     "Filter_by_expansion": "Filtrer par extension",
     "In_x_containers": "Dans {{amount}} inventaires",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1873,14 +1849,6 @@
       "Armory": "Arsenal",
       "Current_Gear": "Équipement actuel",
       "RetainerMarket": "En vente par les servants"
-    },
-    "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2447,39 +2415,5 @@
     "Missing_nodes": "Nœuds manquants",
     "No_missing_nodes": "Aucun nœud manquant",
     "Only_missing_nodes": "Afficher uniquement les cartes avec les nœuds manquants"
-  },
-  "WORKSHOP_TREE": {
-    "Title": "Arbre de recettes de l'atelier",
-    "View_tree": "Ouvrir l'arbre des recettes de l'atelier",
-    "Phase": "Phase {{phase}}"
-  },
-  "LEVELING_EQUIPMENT": {
-    "Title": "Equipement de leveling",
-    "Include_crafting": "Inclure la fabrication",
-    "Include_trades": "Inclure les échanges",
-    "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
-    "Generate_list": "Générer une liste",
-    "Empty_slot": "Emplacement vide",
-    "In_inventory": "Vous avez cet objet dans un de vos inventaires",
-    "Only_inventory": "Considérer uniquement les éléments dans l'inventaire"
-  },
-  "RETAINERS": {
-    "Title": "Servants",
-    "No_retainers": "Aucun servant, veuillez sonner la cloche des servants pour charger des informations sur vos servants.",
-    "Selling": "{{amount}} objets en vente",
-    "X_items": "{{amount}} objets",
-    "Task_complete": "Tâche terminée",
-    "Task_completed_notification_title": "{{name}} a terminé sa tâche",
-    "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
-    "Task_completion_alarm": "Alarme de complétion de tâche"
-  },
-  "RETAINER_VENTURES": {
-    "Title": "Tâches de servant",
-    "Description": "Entrez le job de votre servant, son niveau, ilvl et collecte (si nécessaire) pour trouver la tâche idéale à réaliser pour le profit. Cela peut prendre jusqu'à une minute si votre servant est de haut niveau car il vérifiera le prix de chaque objet qu'il peut obtenir pour le profit.",
-    "Retainer_ilvl": "Ilvl",
-    "Gathering": "Récolte",
-    "Task_level": "Niveau de la tâche",
-    "Total_per_venture": "Total par tâche",
-    "Use_retainer": "Utiliser le servant"
   }
 }
