@@ -11,7 +11,6 @@
   "FC_name": "部队名称",
   "Saving_in_database": "正在保存数据到服务器",
   "See_on_map": "查看地图",
-  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "编辑数量",
   "List_fork_in_progress": "正在将清单复制到你的账户",
   "Network_error_logged_out": "检测到网络错误，你已被注销。如果此问题一直存在，请与 Discord 服务器上的 Miu 联系。",
@@ -181,7 +180,6 @@
     "Alarms_created": "已创建 {{amount}} 个闹钟",
     "Alarm_already_created": "闹钟已设置",
     "Custom_sound": "自定义闹钟声音",
-    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "新建闹钟组",
     "Confirm_group_delete": "确定要删除这个分组吗？",
     "Delete_group": "删除分组",
@@ -199,11 +197,6 @@
     "Group_link_copied": "已复制闹钟组链接",
     "Group_not_found": "未找到闹钟组",
     "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟",
-    "Delete_all": "Delete all your alarms",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
-    "Remove_from_group": "Remove from this group",
     "REALTIME": {
       "Reset_timers": "CD计时器",
       "WEEKLY_RESETS": "周常",
@@ -426,7 +419,7 @@
     "Clickthrough_overlay": "悬浮窗鼠标穿透",
     "Disable_search_history": "关闭搜索记录",
     "Disable_search_debounce": "防止搜索误操作（仅在按下回车后搜索）",
-    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "针对国际服玩家：数据包捕获功能是违反 ToS 的，ACT 也因此违反 ToS。但在其他玩家不知晓的情况下，Square Enix 并不会进行处理，因此您可以私下使用而无需担心风险。",
     "Enable_autofill_by_default": "默认启用自动填充",
     "Enable_autofill_notification_by_default": "默认启用自动填充通知",
@@ -452,12 +445,6 @@
     "Maximum_vendor_price_explain": "单个物品可被 CAN_BE_BOUGHT 布局捕获的最大价格（0 = 无限制）",
     "Rawsock_flag": "Use RawSocket for packet capture",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
-    "Favorite_features": "Favorite features",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
-    "Clear_inventory_on_startup": "Clear inventory on startup",
-    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
-    "Reset_ignored_characters": "Reset ignored characters",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "COLORS": {
       "Background": "背景颜色",
       "Primary": "主体色",
@@ -542,7 +529,6 @@
     "Delete_after_merge": "合并后删除原始清单",
     "Favorite_lists": "收藏列表",
     "No_favorite_lists": "您还没有收藏列表",
-    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "从外部网站导入清单",
       "Paste_link_step_title": "粘贴您的链接到外部清单",
@@ -682,8 +668,6 @@
     "Split_list": "拆分此清单",
     "Create_commission": "为此清单创建委托",
     "Commission_list": "委托列表",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "布局",
       "Add_panel": "新建面板",
@@ -835,7 +819,6 @@
     "Spawned_for": "在 {{timer}} 后消失",
     "Will_spawn_in": "在 {{timer}} 后出现",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "小型渔叉尖",
       "Normal": "中型渔叉尖",
@@ -979,6 +962,8 @@
       "Pliant": "高效",
       "Sturdy": "结实",
       "Centered": "居中对齐",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "通常"
     },
     "SOLVER": {
@@ -1795,8 +1780,6 @@
     "Add_stat_filter": "添加属性过滤器",
     "Add_bonus_stat_filter": "添加奖励属性过滤器",
     "Search_tip": "在输入框中输入：“patch:xx” 可以查看某个版本的更新内容，如：patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
@@ -1806,7 +1789,6 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
     "General": "基本功能",
     "Sharing": "共享社区",
     "Gathering": "采集相关",
@@ -1815,9 +1797,7 @@
     "Commissions": "委托",
     "Commission_board": "广场",
     "My_commissions": "我的委托",
-    "Archived_commissions": "归档",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Archived_commissions": "归档"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1826,8 +1806,6 @@
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
     "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
     "Inventory_outdated": "您的物品栏尚未更新",
@@ -1863,8 +1841,6 @@
     "Search_for_an_item": "搜索物品",
     "Filter_by_expansion": "按版本筛选",
     "In_x_containers": "在 {{amount}} 个物品栏中",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "陆行鸟鞍囊",
       "FC_chest": "部队储物柜",
@@ -1873,14 +1849,6 @@
       "Armory": "兵装库",
       "Current_Gear": "当前装备",
       "RetainerMarket": "雇员出售列表"
-    },
-    "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2447,39 +2415,5 @@
     "Missing_nodes": "Missing nodes",
     "No_missing_nodes": "No missing nodes",
     "Only_missing_nodes": "Only show maps with missing nodes"
-  },
-  "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
-  },
-  "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
-  },
-  "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
-  },
-  "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
   }
 }
