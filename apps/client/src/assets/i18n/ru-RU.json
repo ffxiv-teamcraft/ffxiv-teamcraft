@@ -11,7 +11,6 @@
   "FC_name": "Название FC",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
-  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Изменить количество",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
@@ -181,7 +180,6 @@
     "Alarms_created": "{{amount}} оповещений создано",
     "Alarm_already_created": "Оповещение уже установлено",
     "Custom_sound": "Настраиваемый звук",
-    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
     "Delete_group": "Удалить группу",
@@ -199,11 +197,6 @@
     "Group_link_copied": "Скопирована ссылка на группу оповещений",
     "Group_not_found": "Группа оповещений не найдена",
     "Add_group_and_alarms": "Добавить эту группу и все оповещения в ней",
-    "Delete_all": "Delete all your alarms",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
-    "Remove_from_group": "Remove from this group",
     "REALTIME": {
       "Reset_timers": "Таймеры сброса",
       "WEEKLY_RESETS": "Еженедельное",
@@ -426,7 +419,7 @@
     "Clickthrough_overlay": "Сделать оверлей прозрачным для нажатий",
     "Disable_search_history": "Отключить историю поиска",
     "Disable_search_debounce": "Отключить автопоиск (только нажатие enter вызовет поиск)",
-    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Захват пакетов идет против ToS, по той же причине, что и ACT. Square Enix терпит его, если вы не рассказываете про него всем игрокам.",
     "Enable_autofill_by_default": "Включить автозаполнение по умолчанию",
     "Enable_autofill_notification_by_default": "Включить уведомление автозаполнения по умолчанию",
@@ -452,12 +445,6 @@
     "Maximum_vendor_price_explain": "Максимальная цена товара для фильтра раскладки CAN_BE_BOUGHT (0 = без максимальной цены)",
     "Rawsock_flag": "Use RawSocket for packet capture",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
-    "Favorite_features": "Favorite features",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
-    "Clear_inventory_on_startup": "Clear inventory on startup",
-    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
-    "Reset_ignored_characters": "Reset ignored characters",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -542,7 +529,6 @@
     "Delete_after_merge": "Удалить исходные списки после объединения",
     "Favorite_lists": "Избранные списки",
     "No_favorite_lists": "У вас нет избранных списков",
-    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "Импорт списка из внешнего веб-сайта",
       "Paste_link_step_title": "Вставьте вашу ссылку на внешний список",
@@ -682,8 +668,6 @@
     "Split_list": "Разделить этот список",
     "Create_commission": "Создать заказ (поручение) для этого списка",
     "Commission_list": "Список заказов (поручений)",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "Макет",
       "Add_panel": "Добавить панель",
@@ -835,7 +819,6 @@
     "Spawned_for": "Деспавнится через {{timer}}",
     "Will_spawn_in": "Заспавнится через {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "Маленькая насадка",
       "Normal": "Нормальная насадка",
@@ -979,6 +962,8 @@
       "Pliant": "Pliant",
       "Sturdy": "Sturdy",
       "Centered": "Centered",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "Обычное"
     },
     "SOLVER": {
@@ -1795,8 +1780,6 @@
     "Add_stat_filter": "Добавить фильтр характеристики",
     "Add_bonus_stat_filter": "Добавить фильтр бонусной характеристики",
     "Search_tip": "Вы можете ввести patch:<номер патча> чтобы отфильтровать по конкретному патчу, например: patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "Релевантность",
       "ID": "ID",
@@ -1806,7 +1789,6 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
     "General": "Основное",
     "Sharing": "Поделиться",
     "Gathering": "Сбор",
@@ -1815,9 +1797,7 @@
     "Commissions": "Заказы",
     "Commission_board": "Доска",
     "My_commissions": "Мои заказы",
-    "Archived_commissions": "Архив",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Archived_commissions": "Архив"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Захват пакетов доступен",
@@ -1826,8 +1806,6 @@
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
     "Inventory_outdated": "Ваш инвентарь устарел",
@@ -1863,8 +1841,6 @@
     "Search_for_an_item": "Поиск предмета",
     "Filter_by_expansion": "Фильтр по дополнению",
     "In_x_containers": "В {{amount}} инвентарях",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "Сумка Чокобо",
       "FC_chest": "FC сундук",
@@ -1873,14 +1849,6 @@
       "Armory": "Armory",
       "Current_Gear": "Текущее снаряжение",
       "RetainerMarket": "На продаже у ретейнеров"
-    },
-    "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2447,39 +2415,5 @@
     "Missing_nodes": "Missing nodes",
     "No_missing_nodes": "No missing nodes",
     "Only_missing_nodes": "Only show maps with missing nodes"
-  },
-  "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
-  },
-  "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
-  },
-  "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
-  },
-  "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
   }
 }
