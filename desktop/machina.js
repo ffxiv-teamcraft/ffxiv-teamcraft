@@ -93,7 +93,7 @@ module.exports.start = async function(win, config, verbose, pid) {
       return;
     }
     const appPath = app.getAppPath();
-    const appVersion = /\d\.\d\.\d/.exec(appPath);
+    const appVersion = /\d+\.\d+\.\d+/.exec(appPath);
     exec(`netsh advfirewall firewall show rule status=enabled name="FFXIVTeamcraft - Machina" verbose`, (...output) => {
       if (output[1].indexOf(appVersion) === -1) {
         exec('netsh advfirewall firewall delete rule name="FFXIVTeamcraft - Machina"', () => {

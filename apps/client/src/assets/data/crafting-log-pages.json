@@ -5,14 +5,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -62,14 +62,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -129,14 +129,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -201,14 +201,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -273,14 +273,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -350,14 +350,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -417,14 +417,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -489,14 +489,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -561,14 +561,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -638,14 +638,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -765,14 +765,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -872,14 +872,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -984,14 +984,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -1121,14 +1121,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -1248,14 +1248,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -1425,14 +1425,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -1656,14 +1656,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -1872,14 +1872,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -2048,14 +2048,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -2339,14 +2339,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -2785,14 +2785,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2361,
         "Durability": 70,
         "ID": 300,
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1100
       },
       "recipes": [
         {
@@ -3001,14 +3001,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -3402,14 +3402,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4143,
         "Durability": 70,
         "ID": 440,
         "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
-        "SuggestedCraftsmanship": 2000,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2000
       },
       "recipes": [
         {
@@ -3578,14 +3578,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -3874,14 +3874,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -3926,14 +3926,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 12,
+        "ConditionsFlag": 15,
         "Difficulty": 53,
         "Durability": 60,
         "ID": 12,
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -4403,14 +4403,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 12,
+        "ConditionsFlag": 15,
         "Difficulty": 53,
         "Durability": 60,
         "ID": 12,
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -5145,14 +5145,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -5287,14 +5287,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -5324,14 +5324,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -5371,14 +5371,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -5583,14 +5583,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -5730,14 +5730,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -5882,14 +5882,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -5949,14 +5949,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -6016,14 +6016,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -6083,14 +6083,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -6150,14 +6150,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -6192,14 +6192,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -6234,14 +6234,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -6281,14 +6281,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -6318,14 +6318,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -6455,14 +6455,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -6497,14 +6497,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -6538,6 +6538,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1288,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34433,
+          "itemId": 31913,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34441,
+          "itemId": 31921,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34449,
+          "itemId": 31929,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34457,
+          "itemId": 31937,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34465,
+          "itemId": 31945,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34473,
+          "itemId": 31953,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -6546,14 +6593,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -6628,14 +6675,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -6725,14 +6772,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -6832,14 +6879,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -6969,14 +7016,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -7106,14 +7153,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -7248,14 +7295,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -7395,14 +7442,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -7532,14 +7579,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -7734,14 +7781,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -7946,14 +7993,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -8203,14 +8250,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -8420,14 +8467,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -8737,14 +8784,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -9004,14 +9051,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -9301,14 +9348,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -9687,14 +9734,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -9893,14 +9940,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -10094,14 +10141,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -10380,14 +10427,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -10981,14 +11028,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -11187,14 +11234,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -11663,14 +11710,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -11919,14 +11966,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -12235,14 +12282,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -12362,14 +12409,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -12539,14 +12586,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 17,
+        "ConditionsFlag": 15,
         "Difficulty": 66,
         "Durability": 70,
         "ID": 17,
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -12751,14 +12798,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -12893,14 +12940,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -12930,14 +12977,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -12977,14 +13024,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -13189,14 +13236,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -13336,14 +13383,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -13488,14 +13535,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -13555,14 +13602,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -13622,14 +13669,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -13689,14 +13736,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -13756,14 +13803,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -13798,14 +13845,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -13840,14 +13887,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -13887,14 +13934,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -13924,14 +13971,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -14061,14 +14108,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -14103,14 +14150,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -14144,6 +14191,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1289,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34434,
+          "itemId": 31914,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34442,
+          "itemId": 31922,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34450,
+          "itemId": 31930,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34458,
+          "itemId": 31938,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34466,
+          "itemId": 31946,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34474,
+          "itemId": 31954,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -14152,14 +14246,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -14204,14 +14298,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -14261,14 +14355,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -14348,14 +14442,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -14425,14 +14519,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -14522,14 +14616,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -14634,14 +14728,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -14756,14 +14850,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -14868,14 +14962,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -15055,14 +15149,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -15342,14 +15436,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -15534,14 +15628,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -15731,14 +15825,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -15918,14 +16012,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -16085,14 +16179,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -16362,14 +16456,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -16658,14 +16752,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -16879,14 +16973,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -17065,14 +17159,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 55,
+        "ConditionsFlag": 15,
         "Difficulty": 697,
         "Durability": 70,
         "ID": 136,
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 539
       },
       "recipes": [
         {
@@ -17396,14 +17490,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -17987,14 +18081,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -18178,14 +18272,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -18469,14 +18563,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -18695,14 +18789,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -19016,14 +19110,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -19048,14 +19142,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -19225,14 +19319,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 14,
+        "ConditionsFlag": 15,
         "Difficulty": 54,
         "Durability": 60,
         "ID": 14,
         "Quality": 751,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -19412,14 +19506,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -19554,14 +19648,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -19591,14 +19685,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -19638,14 +19732,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -19850,14 +19944,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -19997,14 +20091,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -20149,14 +20243,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -20216,14 +20310,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -20283,14 +20377,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -20350,14 +20444,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -20417,14 +20511,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -20459,14 +20553,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -20501,14 +20595,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -20593,14 +20687,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -20640,14 +20734,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -20677,14 +20771,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -20814,14 +20908,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -20856,14 +20950,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -20897,6 +20991,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1290,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34435,
+          "itemId": 31915,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34443,
+          "itemId": 31923,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34451,
+          "itemId": 31931,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34459,
+          "itemId": 31939,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34467,
+          "itemId": 31947,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34475,
+          "itemId": 31955,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -20905,14 +21046,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -20957,14 +21098,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -21029,14 +21170,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -21131,14 +21272,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -21238,14 +21379,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -21395,14 +21536,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -21577,14 +21718,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -21789,14 +21930,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -22011,14 +22152,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -22283,14 +22424,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -22670,14 +22811,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -23072,14 +23213,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -23384,14 +23525,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -23831,14 +23972,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -24213,14 +24354,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -24585,14 +24726,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -25001,14 +25142,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -25212,14 +25353,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -25478,14 +25619,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 59,
+        "ConditionsFlag": 15,
         "Difficulty": 919,
         "Durability": 70,
         "ID": 148,
         "Quality": 7339,
         "Stars": 0,
         "SuggestedControl": 546,
-        "SuggestedCraftsmanship": 580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 580
       },
       "recipes": [
         {
@@ -25839,14 +25980,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -26425,14 +26566,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2361,
         "Durability": 70,
         "ID": 300,
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1100
       },
       "recipes": [
         {
@@ -26656,14 +26797,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -27117,14 +27258,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -27393,14 +27534,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -27694,14 +27835,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -27916,14 +28057,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -28338,14 +28479,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -28635,14 +28776,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -28777,14 +28918,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -28814,14 +28955,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -28861,14 +29002,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -29073,14 +29214,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -29220,14 +29361,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -29372,14 +29513,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -29439,14 +29580,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -29506,14 +29647,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -29573,14 +29714,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -29640,14 +29781,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -29682,14 +29823,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -29724,14 +29865,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -29786,14 +29927,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -29833,14 +29974,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -29870,14 +30011,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -30007,14 +30148,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -30049,14 +30190,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -30090,6 +30231,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1291,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34436,
+          "itemId": 31916,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34444,
+          "itemId": 31924,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34452,
+          "itemId": 31932,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34460,
+          "itemId": 31940,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34468,
+          "itemId": 31948,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34476,
+          "itemId": 31956,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -30098,14 +30286,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -30190,14 +30378,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -30292,14 +30480,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -30419,14 +30607,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -30516,14 +30704,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -30623,14 +30811,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -30730,14 +30918,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -30852,14 +31040,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -31014,14 +31202,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -31231,14 +31419,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -31688,14 +31876,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -32125,14 +32313,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -32332,14 +32520,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -32729,14 +32917,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -33066,14 +33254,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -33428,14 +33616,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -33784,14 +33972,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -34040,14 +34228,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -34281,14 +34469,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 55,
+        "ConditionsFlag": 15,
         "Difficulty": 697,
         "Durability": 70,
         "ID": 136,
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 539
       },
       "recipes": [
         {
@@ -34972,14 +35160,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -35628,14 +35816,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -35874,14 +36062,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -36235,14 +36423,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4143,
         "Durability": 70,
         "ID": 440,
         "Quality": 19662,
         "Stars": 1,
         "SuggestedControl": 1860,
-        "SuggestedCraftsmanship": 2000,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2000
       },
       "recipes": [
         {
@@ -36481,14 +36669,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -36827,14 +37015,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -36929,14 +37117,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -36976,14 +37164,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -37128,14 +37316,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -37270,14 +37458,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -37307,14 +37495,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -37354,14 +37542,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -37566,14 +37754,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -37713,14 +37901,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -37865,14 +38053,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -37932,14 +38120,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -37999,14 +38187,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -38066,14 +38254,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -38133,14 +38321,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -38175,14 +38363,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -38217,14 +38405,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -38379,14 +38567,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -38426,14 +38614,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -38463,14 +38651,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -38600,14 +38788,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -38642,14 +38830,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -38683,6 +38871,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1292,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34437,
+          "itemId": 31917,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34445,
+          "itemId": 31925,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34453,
+          "itemId": 31933,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34461,
+          "itemId": 31941,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34469,
+          "itemId": 31949,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34477,
+          "itemId": 31957,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -38691,14 +38926,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -38813,14 +39048,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -38920,14 +39155,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -39047,14 +39282,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -39164,14 +39399,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -39286,14 +39521,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -39408,14 +39643,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -39565,14 +39800,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -39747,14 +39982,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -40039,14 +40274,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -40511,14 +40746,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -40918,14 +41153,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -41105,14 +41340,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -41427,14 +41662,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -41664,14 +41899,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -41986,14 +42221,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -42317,14 +42552,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -42543,14 +42778,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -42764,14 +42999,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 55,
+        "ConditionsFlag": 15,
         "Difficulty": 697,
         "Durability": 70,
         "ID": 136,
         "Quality": 6301,
         "Stars": 0,
         "SuggestedControl": 502,
-        "SuggestedCraftsmanship": 539,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 539
       },
       "recipes": [
         {
@@ -43360,14 +43595,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -43936,14 +44171,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2361,
         "Durability": 70,
         "ID": 300,
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1100
       },
       "recipes": [
         {
@@ -44197,14 +44432,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -44673,14 +44908,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -44929,14 +45164,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -45260,14 +45495,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -45347,14 +45582,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 17,
+        "ConditionsFlag": 15,
         "Difficulty": 66,
         "Durability": 70,
         "ID": 17,
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -45514,14 +45749,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -45821,14 +46056,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -45963,14 +46198,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -46000,14 +46235,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -46047,14 +46282,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -46259,14 +46494,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -46406,14 +46641,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -46558,14 +46793,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -46625,14 +46860,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -46692,14 +46927,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -46759,14 +46994,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -46826,14 +47061,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -46868,14 +47103,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -46910,14 +47145,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -47012,14 +47247,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -47059,14 +47294,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -47096,14 +47331,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -47233,14 +47468,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -47275,14 +47510,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -47316,6 +47551,53 @@
           "rlvl": 511
         }
       ]
+    },
+    {
+      "id": 1293,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34438,
+          "itemId": 31918,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34446,
+          "itemId": 31926,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34454,
+          "itemId": 31934,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34462,
+          "itemId": 31942,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34470,
+          "itemId": 31950,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34478,
+          "itemId": 31958,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -47324,14 +47606,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -47381,14 +47663,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -47438,14 +47720,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -47495,14 +47777,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -47567,14 +47849,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -47644,14 +47926,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -47721,14 +48003,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -47838,14 +48120,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -47910,14 +48192,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -47987,14 +48269,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -48259,14 +48541,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -48366,14 +48648,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -48448,14 +48730,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -48555,14 +48837,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -48647,14 +48929,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -48754,14 +49036,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -48955,14 +49237,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -49321,14 +49603,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -49542,14 +49824,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -49858,14 +50140,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -50234,14 +50516,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2361,
         "Durability": 70,
         "ID": 300,
         "Quality": 11960,
         "Stars": 1,
         "SuggestedControl": 1080,
-        "SuggestedCraftsmanship": 1100,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1100
       },
       "recipes": [
         {
@@ -50430,14 +50712,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -50796,14 +51078,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -50997,14 +51279,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -51273,14 +51555,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -51420,14 +51702,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 17,
+        "ConditionsFlag": 15,
         "Difficulty": 66,
         "Durability": 70,
         "ID": 17,
         "Quality": 898,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -51787,14 +52069,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 12,
+        "ConditionsFlag": 15,
         "Difficulty": 53,
         "Durability": 60,
         "ID": 12,
         "Quality": 702,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -51964,14 +52246,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -52106,14 +52388,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -52143,14 +52425,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -52190,14 +52472,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -52402,14 +52684,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -52549,14 +52831,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -52701,14 +52983,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -52768,14 +53050,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -52835,14 +53117,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -52902,14 +53184,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -52969,14 +53251,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -53011,14 +53293,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -53053,14 +53335,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -53100,14 +53382,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -53137,14 +53419,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -53274,14 +53556,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -53316,14 +53598,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -53363,14 +53645,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 53,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 130,
         "Quality": 5783,
         "Stars": 0,
         "SuggestedControl": 480,
-        "SuggestedCraftsmanship": 519,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 519
       },
       "recipes": [
         {
@@ -54004,6 +54286,53 @@
           "rlvl": 400
         }
       ]
+    },
+    {
+      "id": 1294,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34439,
+          "itemId": 31919,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34447,
+          "itemId": 31927,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34455,
+          "itemId": 31935,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34463,
+          "itemId": 31943,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34471,
+          "itemId": 31951,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34479,
+          "itemId": 31959,
+          "rlvl": 513
+        }
+      ]
     }
   ],
   [
@@ -54012,14 +54341,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -54104,14 +54433,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 6,
+        "ConditionsFlag": 15,
         "Difficulty": 36,
         "Durability": 60,
         "ID": 6,
         "Quality": 474,
         "Stars": 0,
         "SuggestedControl": 25,
-        "SuggestedCraftsmanship": 50,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 50
       },
       "recipes": [
         {
@@ -54186,14 +54515,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 11,
+        "ConditionsFlag": 15,
         "Difficulty": 48,
         "Durability": 60,
         "ID": 11,
         "Quality": 665,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -54268,14 +54597,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 16,
+        "ConditionsFlag": 15,
         "Difficulty": 63,
         "Durability": 70,
         "ID": 16,
         "Quality": 866,
         "Stars": 0,
         "SuggestedControl": 39,
-        "SuggestedCraftsmanship": 78,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 78
       },
       "recipes": [
         {
@@ -54360,14 +54689,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 21,
+        "ConditionsFlag": 15,
         "Difficulty": 75,
         "Durability": 70,
         "ID": 21,
         "Quality": 1090,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -54442,14 +54771,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 26,
+        "ConditionsFlag": 15,
         "Difficulty": 90,
         "Durability": 70,
         "ID": 26,
         "Quality": 1332,
         "Stars": 0,
         "SuggestedControl": 49,
-        "SuggestedCraftsmanship": 99,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 99
       },
       "recipes": [
         {
@@ -54539,14 +54868,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 31,
+        "ConditionsFlag": 15,
         "Difficulty": 106,
         "Durability": 80,
         "ID": 31,
         "Quality": 1670,
         "Stars": 0,
         "SuggestedControl": 60,
-        "SuggestedCraftsmanship": 121,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 121
       },
       "recipes": [
         {
@@ -54611,14 +54940,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 36,
+        "ConditionsFlag": 15,
         "Difficulty": 124,
         "Durability": 80,
         "ID": 36,
         "Quality": 1882,
         "Stars": 0,
         "SuggestedControl": 64,
-        "SuggestedCraftsmanship": 129,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 129
       },
       "recipes": [
         {
@@ -54683,14 +55012,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 41,
+        "ConditionsFlag": 15,
         "Difficulty": 143,
         "Durability": 80,
         "ID": 41,
         "Quality": 2109,
         "Stars": 0,
         "SuggestedControl": 68,
-        "SuggestedCraftsmanship": 136,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 136
       },
       "recipes": [
         {
@@ -54745,14 +55074,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 46,
+        "ConditionsFlag": 15,
         "Difficulty": 159,
         "Durability": 80,
         "ID": 46,
         "Quality": 2372,
         "Stars": 0,
         "SuggestedControl": 75,
-        "SuggestedCraftsmanship": 150,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 150
       },
       "recipes": [
         {
@@ -54897,14 +55226,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 51,
+        "ConditionsFlag": 15,
         "Difficulty": 339,
         "Durability": 80,
         "ID": 115,
         "Quality": 3951,
         "Stars": 0,
         "SuggestedControl": 426,
-        "SuggestedCraftsmanship": 468,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 468
       },
       "recipes": [
         {
@@ -54989,14 +55318,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -55081,14 +55410,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 61,
+        "ConditionsFlag": 15,
         "Difficulty": 1116,
         "Durability": 80,
         "ID": 255,
         "Quality": 8377,
         "Stars": 0,
         "SuggestedControl": 968,
-        "SuggestedCraftsmanship": 1006,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1006
       },
       "recipes": [
         {
@@ -55188,14 +55517,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -55295,14 +55624,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -55407,14 +55736,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 76,
+        "ConditionsFlag": 15,
         "Difficulty": 3526,
         "Durability": 80,
         "ID": 409,
         "Quality": 15322,
         "Stars": 0,
         "SuggestedControl": 1464,
-        "SuggestedCraftsmanship": 1580,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1580
       },
       "recipes": [
         {
@@ -55623,14 +55952,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 233,
         "Durability": 80,
         "ID": 70,
         "Quality": 2921,
         "Stars": 2,
         "SuggestedControl": 325,
-        "SuggestedCraftsmanship": 325,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 325
       },
       "recipes": [
         {
@@ -55809,14 +56138,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 586,
         "Durability": 80,
         "ID": 110,
         "Quality": 5783,
         "Stars": 4,
         "SuggestedControl": 407,
-        "SuggestedCraftsmanship": 451,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 451
       },
       "recipes": [
         {
@@ -55960,14 +56289,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 56,
+        "ConditionsFlag": 15,
         "Difficulty": 752,
         "Durability": 70,
         "ID": 139,
         "Quality": 6561,
         "Stars": 0,
         "SuggestedControl": 513,
-        "SuggestedCraftsmanship": 550,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 550
       },
       "recipes": [
         {
@@ -56146,14 +56475,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 1033,
         "Durability": 70,
         "ID": 180,
         "Quality": 8015,
         "Stars": 2,
         "SuggestedControl": 695,
-        "SuggestedCraftsmanship": 718,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 718
       },
       "recipes": [
         {
@@ -56362,14 +56691,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2657,
         "Durability": 70,
         "ID": 320,
         "Quality": 12511,
         "Stars": 2,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -56518,14 +56847,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2760,
         "Durability": 70,
         "ID": 350,
         "Quality": 13144,
         "Stars": 3,
         "SuggestedControl": 1350,
-        "SuggestedCraftsmanship": 1500,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1500
       },
       "recipes": [
         {
@@ -56739,14 +57068,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4343,
         "Durability": 70,
         "ID": 450,
         "Quality": 23395,
         "Stars": 2,
         "SuggestedControl": 1990,
-        "SuggestedCraftsmanship": 2140,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2140
       },
       "recipes": [
         {
@@ -56930,14 +57259,14 @@
       },
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 4943,
         "Durability": 70,
         "ID": 480,
         "Quality": 25863,
         "Stars": 3,
         "SuggestedControl": 2195,
-        "SuggestedCraftsmanship": 2480,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 2480
       },
       "recipes": [
         {
@@ -57057,14 +57386,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 78,
+        "ConditionsFlag": 15,
         "Difficulty": 3645,
         "Durability": 80,
         "ID": 415,
         "Quality": 16162,
         "Stars": 0,
         "SuggestedControl": 1541,
-        "SuggestedCraftsmanship": 1662,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1662
       },
       "recipes": [
         {
@@ -57099,14 +57428,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 15,
+        "ConditionsFlag": 15,
         "Difficulty": 55,
         "Durability": 70,
         "ID": 15,
         "Quality": 807,
         "Stars": 0,
         "SuggestedControl": 33,
-        "SuggestedCraftsmanship": 67,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 67
       },
       "recipes": [
         {
@@ -57326,14 +57655,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 30,
+        "ConditionsFlag": 15,
         "Difficulty": 102,
         "Durability": 70,
         "ID": 30,
         "Quality": 1584,
         "Stars": 0,
         "SuggestedControl": 53,
-        "SuggestedCraftsmanship": 106,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 106
       },
       "recipes": [
         {
@@ -57468,14 +57797,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 63,
+        "ConditionsFlag": 15,
         "Difficulty": 1476,
         "Durability": 80,
         "ID": 270,
         "Quality": 9186,
         "Stars": 0,
         "SuggestedControl": 1005,
-        "SuggestedCraftsmanship": 1037,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1037
       },
       "recipes": [
         {
@@ -57505,14 +57834,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -57552,14 +57881,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 1,
+        "ConditionsFlag": 15,
         "Difficulty": 19,
         "Durability": 60,
         "ID": 1,
         "Quality": 312,
         "Stars": 0,
         "SuggestedControl": 11,
-        "SuggestedCraftsmanship": 22,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 22
       },
       "recipes": [
         {
@@ -57764,14 +58093,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 50,
+        "ConditionsFlag": 15,
         "Difficulty": 186,
         "Durability": 80,
         "ID": 50,
         "Quality": 2641,
         "Stars": 0,
         "SuggestedControl": 88,
-        "SuggestedCraftsmanship": 176,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 176
       },
       "recipes": [
         {
@@ -57911,14 +58240,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 58,
+        "ConditionsFlag": 15,
         "Difficulty": 863,
         "Durability": 70,
         "ID": 145,
         "Quality": 7080,
         "Stars": 0,
         "SuggestedControl": 535,
-        "SuggestedCraftsmanship": 570,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 570
       },
       "recipes": [
         {
@@ -58063,14 +58392,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 57,
+        "ConditionsFlag": 15,
         "Difficulty": 808,
         "Durability": 70,
         "ID": 142,
         "Quality": 6820,
         "Stars": 0,
         "SuggestedControl": 524,
-        "SuggestedCraftsmanship": 560,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 560
       },
       "recipes": [
         {
@@ -58130,14 +58459,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 60,
+        "ConditionsFlag": 15,
         "Difficulty": 956,
         "Durability": 70,
         "ID": 150,
         "Quality": 7851,
         "Stars": 0,
         "SuggestedControl": 553,
-        "SuggestedCraftsmanship": 587,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 587
       },
       "recipes": [
         {
@@ -58197,14 +58526,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 62,
+        "ConditionsFlag": 15,
         "Difficulty": 1263,
         "Durability": 80,
         "ID": 265,
         "Quality": 8581,
         "Stars": 0,
         "SuggestedControl": 993,
-        "SuggestedCraftsmanship": 1027,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1027
       },
       "recipes": [
         {
@@ -58264,14 +58593,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 66,
+        "ConditionsFlag": 15,
         "Difficulty": 1808,
         "Durability": 80,
         "ID": 279,
         "Quality": 10389,
         "Stars": 0,
         "SuggestedControl": 1028,
-        "SuggestedCraftsmanship": 1056,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1056
       },
       "recipes": [
         {
@@ -58331,14 +58660,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -58373,14 +58702,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -58415,14 +58744,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -58462,14 +58791,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 80,
+        "ConditionsFlag": 15,
         "Difficulty": 3943,
         "Durability": 80,
         "ID": 430,
         "Quality": 18262,
         "Stars": 0,
         "SuggestedControl": 1733,
-        "SuggestedCraftsmanship": 1866,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1866
       },
       "recipes": [
         {
@@ -58499,14 +58828,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 70,
+        "ConditionsFlag": 15,
         "Difficulty": 2214,
         "Durability": 80,
         "ID": 290,
         "Quality": 11736,
         "Stars": 0,
         "SuggestedControl": 1055,
-        "SuggestedCraftsmanship": 1079,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1079
       },
       "recipes": [
         {
@@ -58636,14 +58965,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 71,
+        "ConditionsFlag": 15,
         "Difficulty": 3149,
         "Durability": 80,
         "ID": 390,
         "Quality": 13086,
         "Stars": 0,
         "SuggestedControl": 1220,
-        "SuggestedCraftsmanship": 1320,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 1320
       },
       "recipes": [
         {
@@ -58678,14 +59007,14 @@
       "masterbook": null,
       "startLevel": {
         "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
         "Difficulty": 74,
         "Durability": 70,
         "ID": 20,
         "Quality": 1053,
         "Stars": 0,
         "SuggestedControl": 47,
-        "SuggestedCraftsmanship": 94,
-        "Unknown5-4": 15
+        "SuggestedCraftsmanship": 94
       },
       "recipes": [
         {
@@ -58717,6 +59046,53 @@
           "recipeId": 34422,
           "itemId": 31231,
           "rlvl": 511
+        }
+      ]
+    },
+    {
+      "id": 1295,
+      "masterbook": null,
+      "startLevel": {
+        "ClassJobLevel": 20,
+        "ConditionsFlag": 15,
+        "Difficulty": 74,
+        "Durability": 70,
+        "ID": 20,
+        "Quality": 1053,
+        "Stars": 0,
+        "SuggestedControl": 47,
+        "SuggestedCraftsmanship": 94
+      },
+      "recipes": [
+        {
+          "recipeId": 34440,
+          "itemId": 31920,
+          "rlvl": 20
+        },
+        {
+          "recipeId": 34448,
+          "itemId": 31928,
+          "rlvl": 40
+        },
+        {
+          "recipeId": 34456,
+          "itemId": 31936,
+          "rlvl": 150
+        },
+        {
+          "recipeId": 34464,
+          "itemId": 31944,
+          "rlvl": 290
+        },
+        {
+          "recipeId": 34472,
+          "itemId": 31952,
+          "rlvl": 430
+        },
+        {
+          "recipeId": 34480,
+          "itemId": 31960,
+          "rlvl": 513
         }
       ]
     }
