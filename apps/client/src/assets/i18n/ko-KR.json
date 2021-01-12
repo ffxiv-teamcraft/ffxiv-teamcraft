@@ -11,7 +11,6 @@
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
-  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
@@ -181,7 +180,6 @@
     "Alarms_created": "{{amount}}개의 알람 생성됨",
     "Alarm_already_created": "알람이 이미 설정되었습니다",
     "Custom_sound": "알람소리 사용자 지정",
-    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
     "Delete_group": "그룹 삭제",
@@ -199,11 +197,6 @@
     "Group_link_copied": "알람 그룹 링크 복사됨",
     "Group_not_found": "알람 그룹을 찾을 수 없습니다",
     "Add_group_and_alarms": "알람에 해당 그룹과 알람을 모두 추가하기",
-    "Delete_all": "Delete all your alarms",
-    "Regenerating_alarms": "Regenerating your alarms...",
-    "Regenerate": "Regenerate alarms",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
-    "Remove_from_group": "Remove from this group",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
       "WEEKLY_RESETS": "주 제한",
@@ -426,7 +419,7 @@
     "Clickthrough_overlay": "오버레이 클릭 무시",
     "Disable_search_history": "검색 기록 비활성화",
     "Disable_search_debounce": "자동 검색 기능 사용 안 함(엔터키를 눌렀을 때만 검색이 됨)",
-    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
+    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
     "Packet_capture_info": "패킷 캡쳐는 ACT(미터기) 와 같이 이용약관(ToS) 에 위배됩니다. 하지만 스퀘어에닉스에서는 ACT같은 외부 프로그램을 사용하는것을 다른사람들에게 말하지않으면 묵인해줍니다. 그냥 말하지마세요. 그러면 문제될건 없습니다.",
     "Enable_autofill_by_default": "자동채우기를 기본으로 설정하기",
     "Enable_autofill_notification_by_default": "자동채우기 알람을 기본으로 설정하기",
@@ -452,12 +445,6 @@
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
     "Rawsock_flag": "패킷 캡처를 위하여 RawSocket 사용하기",
     "Rawsock_details": "RawSocket을 사용하면 npcap 없이 트래픽을 캡처하므로 VPN 사용시에 도움이 될 수 있습니다. 하지만 전반적으로 신뢰성이 떨어지며 팀크래프트 실행시마다 수동으로 관리자권한 실행을 하셔야 합니다.",
-    "Favorite_features": "Favorite features",
-    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
-    "Clear_inventory_on_startup": "Clear inventory on startup",
-    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
-    "Reset_ignored_characters": "Reset ignored characters",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -542,7 +529,6 @@
     "Delete_after_merge": "병합 후 기존 목록 삭제",
     "Favorite_lists": "즐겨찾기 목록",
     "No_favorite_lists": "즐겨찾기 목록이 없습니다",
-    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -682,8 +668,6 @@
     "Split_list": "목록 분할",
     "Create_commission": "해당 목록에 대한 유저 의뢰를 만들기",
     "Commission_list": "유저 의뢰 목록",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -835,7 +819,6 @@
     "Spawned_for": "{{timer}} 이후 사라짐",
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
-    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
@@ -979,6 +962,8 @@
       "Pliant": "고효율",
       "Sturdy": "견고",
       "Centered": "안정",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "보통"
     },
     "SOLVER": {
@@ -1795,8 +1780,6 @@
     "Add_stat_filter": "스탯 필터 추가",
     "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
     "Search_tip": "<patch #>를 입력하여 해당 버전으로 필터가 가능합니다. 예시: patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1806,7 +1789,6 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
     "General": "일반",
     "Sharing": "공유",
     "Gathering": "채집",
@@ -1815,9 +1797,7 @@
     "Commissions": "유저 의뢰",
     "Commission_board": "게시판",
     "My_commissions": "나의 의뢰",
-    "Archived_commissions": "의뢰 기록",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Archived_commissions": "의뢰 기록"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "패킷 캡쳐를 사용할 수 있습니다",
@@ -1826,8 +1806,6 @@
     "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없습니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
@@ -1863,8 +1841,6 @@
     "Search_for_an_item": "아이템 검색",
     "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "초코보 가방",
       "FC_chest": "부대 금고",
@@ -1873,14 +1849,6 @@
       "Armory": "장비함",
       "Current_Gear": "현재 장비",
       "RetainerMarket": "집사가 판매중"
-    },
-    "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2447,39 +2415,5 @@
     "Missing_nodes": "누락된 노드",
     "No_missing_nodes": "누락된 노드 없음",
     "Only_missing_nodes": "누락된 노드가 있는 맵만 표시"
-  },
-  "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
-    "Phase": "Phase {{phase}}"
-  },
-  "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "목록 생성",
-    "Empty_slot": "빈 슬롯",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
-  },
-  "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
-  },
-  "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "아이템레벨",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
   }
 }
