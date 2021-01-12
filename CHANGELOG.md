@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.24"></a>
+## [7.6.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.23...v7.6.24) (2021-01-12)
+
+
+### Bug Fixes
+
+* **log-tracker:** fixed log tracker not opening properly ([186377f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/186377f))
+
+
+
 <a name="7.6.23"></a>
 ## [7.6.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.22...v7.6.23) (2021-01-12)
 
