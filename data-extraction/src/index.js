@@ -115,7 +115,7 @@ if (hasTodo('mappy', true)) {
         gatheringItems[item.ID] = {
           level: item.GatheringItemLevel.GatheringItemLevel,
           stars: item.GatheringItemLevel.Stars,
-          itemId: item.Item,
+          itemId: item.Item.ID,
           hidden: item.IsHidden
         };
       });
@@ -358,7 +358,7 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
     page = gatheringLogPages[gathererIndex].find(page => page.id === pageId);
   }
   page.items.push({
-    itemId: entry.Item,
+    itemId: entry.ItemTargetID,
     ilvl: entry.GatheringItemLevelTargetID,
     lvl: entry.GatheringItemLevel.GatheringItemLevel,
     stars: entry.GatheringItemLevel.Stars,
@@ -479,7 +479,7 @@ if (hasTodo('fishParameter')) {
   getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden,Item').subscribe(res => {
     res.Results.forEach(fish => {
       if (fish.IsHidden) {
-        bigFishes[fish.Item] = 1;
+        bigFishes[fish.Item.ID] = 1;
       }
     });
   }, null, () => {
@@ -2037,7 +2037,7 @@ if (hasTodo('collectables')) {
             levelMax: collectable.LevelMax,
             group: collectable.CollectablesShopItemGroupTargetID,
             shopId: +collectable.ID.split('.')[0],
-            reward: currencies[collectable.CollectablesShopRewardScrip.CurrencyTargetID],
+            reward: currencies[collectable.CollectablesShopRewardScrip.Currency],
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
               exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
@@ -2118,7 +2118,7 @@ if (hasTodo('HWDGatherer')) {
           return;
         }
         inspections.push({
-          requiredItem: inspection[`ItemRequired${i}`].Item,
+          requiredItem: inspection[`ItemRequired${i}`].ItemTargetID,
           amount: inspection[`AmountRequired${i}`],
           receivedItem: inspection[`ItemReceived${i}TargetID`],
           scrips: inspection[`Reward1${i}`].Scrips,
@@ -2428,47 +2428,25 @@ if (hasTodo('races')) {
 
 if (hasTodo('ventures')) {
   const ventures = {};
-  getAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task`, null, 'Ventures')
-    .pipe(
-      mergeMap(page => {
-        return combineLatest(page.Results.map(row => {
-          let req;
-          if (row.IsRandom) {
-            req = get(`https://xivapi.com/RetainerTaskRandom/${row.Task}`);
-          } else {
-            req = get(`https://xivapi.com/RetainerTaskNormal/${row.Task}`);
-          }
-          return req.pipe(
-            map(task => {
-              return {
-                ...task,
-                ID: row.ID,
-                IsRandom: row.IsRandom
-              };
-            })
-          );
-        }));
-      })
-    )
+  aggregateAllPages(`https://xivapi.com/RetainerTask?columns=ID,IsRandom,Task,Experience,RequiredGathering,RequiredItemLevel,RetainerLevel,RetainerTaskParameter,VentureCost,ClassJobCategoryTargetID,Quantity0,Quantity1,Quantity2`, null, 'Ventures')
     .subscribe(tasks => {
       tasks.forEach(task => {
         if (task.IsRandom) {
           ventures[task.ID] = {
-            en: task.Name_en,
-            ja: task.Name_ja,
-            de: task.Name_de,
-            fr: task.Name_fr
+            en: task.Task.Name_en,
+            ja: task.Task.Name_ja,
+            de: task.Task.Name_de,
+            fr: task.Task.Name_fr
           };
-        } else if (task.Item) {
+        } else if (task.Task && task.Task.Item) {
           ventures[task.ID] = {
-            en: task.Item.Name_en,
-            ja: task.Item.Name_ja,
-            de: task.Item.Name_de,
-            fr: task.Item.Name_fr
+            en: task.Task.Item.Name_en,
+            ja: task.Task.Item.Name_ja,
+            de: task.Task.Item.Name_de,
+            fr: task.Task.Item.Name_fr
           };
         }
       });
-    }, null, () => {
       persistToJsonAsset('ventures', ventures);
       done('ventures');
     });

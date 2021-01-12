@@ -35641,717 +35641,717 @@
   },
   "1668": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 1st Stage",
+      "ja": "リズンソング文化区西：第一期整備計画完工",
+      "de": "Westliches Himmelsang: 1. Phase",
+      "fr": "Le Nouveau Refrain (Ouest), phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n破砕片を選別して\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1669": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 2nd Stage: First Shift",
+      "ja": "リズンソング文化区西：第二期整備計画着工",
+      "de": "Westliches Himmelsang: 2. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1670": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 2nd Stage: Last Shift",
+      "ja": "リズンソング文化区西：第二期整備計画完工",
+      "de": "Westliches Himmelsang: 2. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das westliche Himmelsang. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1671": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 3rd Stage: First Shift",
+      "ja": "リズンソング文化区西：第三期整備計画着工",
+      "de": "Westliches Himmelsang: 3. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1672": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 3rd Stage: Last Shift",
+      "ja": "リズンソング文化区西：第三期整備計画完工",
+      "de": "Westliches Himmelsang: 3. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1673": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 4th Stage: First Shift",
+      "ja": "リズンソング文化区西：第四期整備計画着工",
+      "de": "Westliches Himmelsang: 4. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1674": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 4th Stage: Last Shift",
+      "ja": "リズンソング文化区西：第四期整備計画完工",
+      "de": "Westliches Himmelsang: 4. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1675": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 5th Stage: First Shift",
+      "ja": "リズンソング文化区西：第五期整備計画着工",
+      "de": "Westliches Himmelsang: 5. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 5: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1676": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 5th Stage: Last Shift",
+      "ja": "リズンソング文化区西：第五期整備計画完工",
+      "de": "Westliches Himmelsang: 5. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 5: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1677": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bright Ballad's Passage, 1st Stage",
+      "ja": "詩伯門：第一期整備計画完工",
+      "de": "Balladenpassage: 1. Phase",
+      "fr": "Porte des Industrieux, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare of the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Balladenpassage wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1678": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bright Ballad's Passage, 2nd Stage",
+      "ja": "詩伯門：第二期整備計画完工",
+      "de": "Balladenpassage: 2. Phase",
+      "fr": "Porte des Industrieux, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare of the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Balladenpassage wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1679": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 1st Stage",
+      "ja": "リズンソング文化区東：第一期整備計画完工",
+      "de": "Östliches Himmelsang: 1. Phase",
+      "fr": "Le Nouveau Refrain (Est), phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n破砕片を選別して\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1680": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 2nd Stage: First Shift",
+      "ja": "リズンソング文化区東：第二期整備計画着工",
+      "de": "Östliches Himmelsang: 2. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1681": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 2nd Stage: Last Shift",
+      "ja": "リズンソング文化区東：第二期整備計画完工",
+      "de": "Östliches Himmelsang: 2. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das östliche Himmelsang. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1682": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 3rd Stage: First Shift",
+      "ja": "リズンソング文化区東：第三期整備計画着工",
+      "de": "Östliches Himmelsang: 3. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1683": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 3rd Stage: Last Shift",
+      "ja": "リズンソング文化区東：第三期整備計画完工",
+      "de": "Östliches Himmelsang: 3. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1684": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 4th Stage: First Shift",
+      "ja": "リズンソング文化区東：第四期整備計画着工",
+      "de": "Östliches Himmelsang: 4. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1685": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 4th Stage: Last Shift",
+      "ja": "リズンソング文化区東：第四期整備計画完工",
+      "de": "Östliches Himmelsang: 4. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1686": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Snowsoak Springs, 1st Stage",
+      "ja": "スノーソーク浴場：第一期整備計画完工",
+      "de": "Thermalbad Winterwonne: 1. Phase",
+      "fr": "Les Bains floconneux, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for Snowsoak Springs. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Thermalbad Winterwonne. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1687": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Snowsoak Springs, 2nd Stage",
+      "ja": "スノーソーク浴場：第二期整備計画完工",
+      "de": "Thermalbad Winterwonne: 2. Phase",
+      "fr": "Les Bains floconneux, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for Snowsoak Springs. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Thermalbad Winterwonne. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1688": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Skybuilders' Monument",
+      "ja": "名高き職人の記念碑：建造計画完工",
+      "de": "Monument der Arbeit: 1. Phase",
+      "fr": "Monument dédié aux ouvriers: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A monument is being built as the consummation of the restoration effort. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Monument der Arbeit. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit un monument dédié à nous tous! Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1689": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 1st Stage",
+      "ja": "リズンソング文化区西：第一期整備計画完工",
+      "de": "Westliches Himmelsang: 1. Phase",
+      "fr": "Le Nouveau Refrain (Ouest), phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n破砕片を選別して\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1690": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 2nd Stage: First Shift",
+      "ja": "リズンソング文化区西：第二期整備計画着工",
+      "de": "Westliches Himmelsang: 2. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1691": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 2nd Stage: Last Shift",
+      "ja": "リズンソング文化区西：第二期整備計画完工",
+      "de": "Westliches Himmelsang: 2. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das westliche Himmelsang. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1692": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 3rd Stage: First Shift",
+      "ja": "リズンソング文化区西：第三期整備計画着工",
+      "de": "Westliches Himmelsang: 3. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1693": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 3rd Stage: Last Shift",
+      "ja": "リズンソング文化区西：第三期整備計画完工",
+      "de": "Westliches Himmelsang: 3. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1694": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 4th Stage: First Shift",
+      "ja": "リズンソング文化区西：第四期整備計画着工",
+      "de": "Westliches Himmelsang: 4. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1695": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 4th Stage: Last Shift",
+      "ja": "リズンソング文化区西：第四期整備計画完工",
+      "de": "Westliches Himmelsang: 4. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1696": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 5th Stage: First Shift",
+      "ja": "リズンソング文化区西：第五期整備計画着工",
+      "de": "Westliches Himmelsang: 5. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Ouest), phase 5: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1697": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Western Risensong Quarter, 5th Stage: Last Shift",
+      "ja": "リズンソング文化区西：第五期整備計画完工",
+      "de": "Westliches Himmelsang: 5. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Ouest), phase 5: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1698": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bright Ballad's Passage, 1st Stage",
+      "ja": "詩伯門：第一期整備計画完工",
+      "de": "Balladenpassage: 1. Phase",
+      "fr": "Porte des Industrieux, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare of the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Balladenpassage wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1699": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Bright Ballad's Passage, 2nd Stage",
+      "ja": "詩伯門：第二期整備計画完工",
+      "de": "Balladenpassage: 2. Phase",
+      "fr": "Porte des Industrieux, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out on the main thoroughfare of the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and put it to use at building sites.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir bauen die Balladenpassage wieder auf. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1700": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 1st Stage",
+      "ja": "リズンソング文化区東：第一期整備計画完工",
+      "de": "Östliches Himmelsang: 1. Phase",
+      "fr": "Le Nouveau Refrain (Est), phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Debris must be cleared away for the upcoming construction. Break down large pieces of debris, gather up the fragments, and transport them for disposal.",
+      "ja": "瓦礫を破砕し\n\n破砕片を選別して\n\n集積場まで運べ",
+      "de": "Der Bauplatz will freigeräumt werden! Dazu müssen wir große Trümmer zerschlagen, den Schutt dann einsammeln und zum Abladeplatz karren.",
+      "fr": "On doit déblayer tous ces gravats. Brisez les débris les plus volumineux, rassemblez tout ça dans une caisse et jetez son contenu au dépotoir."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1701": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 2nd Stage: First Shift",
+      "ja": "リズンソング文化区東：第二期整備計画着工",
+      "de": "Östliches Himmelsang: 2. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 2: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Fine debris fragments still litter the work site. Clear them away so that construction may proceed.",
+      "ja": "瓦礫の撤去作業の結果\n\n微細な砕片が散乱している\n\n清掃を行い、瓦礫片を撤去しろ",
+      "de": "Jetzt geht es an die allerletzten Trümmerteile! Feg sie auf, dann können wir mit dem Aufbau beginnen.",
+      "fr": "Les plus gros gravats ont été déblayés, mais le sol est jonché de débris plus fins maintenant. Prenez un balai et mettez-vous au boulot."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1702": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 2nd Stage: Last Shift",
+      "ja": "リズンソング文化区東：第二期整備計画完工",
+      "de": "Östliches Himmelsang: 2. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 2: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で土木資材に加工して\n\n破損個所の舗装を進めろ",
+      "de": "Wir pflastern das östliche Himmelsang. Besorge dir Material von einem der Stapel, verarbeite es an einer Sandgrube zu Fugensand und führe diesen dann einem Pflasterloch zu.",
+      "fr": "Les fondations ont sacrément été esquintées alors on doit les retaper. Prenez des matériaux sur une pile, transformez-les sur un poste de travail et servez-vous-en sur les emplacements à restaurer."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1703": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 3rd Stage: First Shift",
+      "ja": "リズンソング文化区東：第三期整備計画着工",
+      "de": "Östliches Himmelsang: 3. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 3: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1704": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 3rd Stage: Last Shift",
+      "ja": "リズンソング文化区東：第三期整備計画完工",
+      "de": "Östliches Himmelsang: 3. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 3: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1705": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 4th Stage: First Shift",
+      "ja": "リズンソング文化区東：第四期整備計画着工",
+      "de": "Östliches Himmelsang: 4. Phase - Beginn",
+      "fr": "Le Nouveau Refrain (Est), phase 4: début des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1706": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Eastern Risensong Quarter, 4th Stage: Last Shift",
+      "ja": "リズンソング文化区東：第四期整備計画完工",
+      "de": "Östliches Himmelsang: 4. Phase - Abschluss",
+      "fr": "Le Nouveau Refrain (Est), phase 4: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Construction is being carried out in the Risensong Quarter. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n住居の建築を進めろ",
+      "de": "Es wird Zeit, Häuser zu bauen! Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On s'attaque à la construction d'habitations dignes de ce nom. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1707": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Snowsoak Springs, 1st Stage",
+      "ja": "スノーソーク浴場：第一期整備計画完工",
+      "de": "Thermalbad Winterwonne: 1. Phase",
+      "fr": "Les Bains floconneux, phase 1"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for Snowsoak Springs. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Thermalbad Winterwonne. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1708": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Snowsoak Springs, 2nd Stage",
+      "ja": "スノーソーク浴場：第二期整備計画完工",
+      "de": "Thermalbad Winterwonne: 2. Phase",
+      "fr": "Les Bains floconneux, phase 2"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Facilities are being built for Snowsoak Springs. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Thermalbad Winterwonne. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit des installations pour la reconstruction d'Azurée. Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1709": {
     "name": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "Skybuilders' Monument",
+      "ja": "名高き職人の記念碑：建造計画完工",
+      "de": "Monument der Arbeit: 1. Phase",
+      "fr": "Monument dédié aux ouvriers: fin des travaux"
     },
     "description": {
-      "en": "",
-      "ja": "",
-      "de": "",
-      "fr": ""
+      "en": "A monument is being built as the consummation of the restoration effort. Obtain raw material from a supply pile, process it at a work station, and use it to repair damaged areas.",
+      "ja": "物資集積場から物資を入手し\n\n一次作業場で建築資材に加工して\n\n施設の建築を進めろ",
+      "de": "Wir errichten das Monument der Arbeit. Besorge dir Material von einem der Stapel, verarbeite es an einer Steinsäge zu einer der benötigten Komponenten und führe diese dann einer Baustelle zu.",
+      "fr": "On bâtit un monument dédié à nous tous! Prenez un matériau sur une pile, transformez-le sur un poste de travail et allez le poser sur un des postes d'assemblage."
     },
-    "icon": "",
-    "level": 0,
-    "location": 0
+    "icon": "/i/060000/060994.png",
+    "level": 1,
+    "location": 8426999
   },
   "1710": {
     "name": {
