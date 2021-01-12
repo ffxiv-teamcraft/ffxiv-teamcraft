@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.23"></a>
+## [7.6.23](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.22...v7.6.23) (2021-01-12)
+
+
+### Bug Fixes
+
+* **db:** fixed mob page not loading properly ([db9656f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/db9656f))
+* **layout:** fixed can skip showing negative values in some cases ([2655c6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2655c6c))
+* **simulator:** fixed an issue with step by step mode and buffs duration ([c65bd66](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c65bd66))
+
+
+### Features
+
+* **data:** support for korean v5.3 update ([ea72dbc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ea72dbc))
+* **db:** 5.41 data ([068a2d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/068a2d2))
+* **simulator:** support for new conditions ([b78bb45](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b78bb45))
+
+
+
+<a name="7.6.22"></a>
+## [7.6.22](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.21...v7.6.22) (2021-01-05)
+
+
+### Bug Fixes
+
+* **desktop:** fixed a possible error when opening from file protocol ([ced35df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ced35df))
+
+
+### Features
+
+* **data:** update for cn patch-5.31 ([abd2945](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/abd2945))
+* **desktop:** support for chinese 5.31 packet capture ([34505fe](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/34505fe))
+
+
+
 <a name="7.6.21"></a>
 ## [7.6.21](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.20...v7.6.21) (2020-12-29)
 

@@ -1,6 +1,6 @@
 const request = require('request');
 const { BehaviorSubject, Subject, interval } = require('rxjs');
-const { mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged, of } = require('rxjs/operators');
+const { mergeMap, switchMap, map, tap, takeUntil, skip, filter, debounceTime, distinctUntilChanged, retry } = require('rxjs/operators');
 const path = require('path');
 const fs = require('fs');
 const cliProgress = require('cli-progress');
@@ -118,6 +118,7 @@ const getAllPages = (endpoint, body, label) => {
         url = addQueryParam(endpoint, 'page', page);
       }
       return get(url, body).pipe(
+        retry(3),
         tap(result => {
           if (result === undefined || result.Pagination === undefined) {
             console.error('Payload error, retrying...');

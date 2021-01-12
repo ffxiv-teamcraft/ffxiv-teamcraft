@@ -1,10 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **pricing-mode:** fixed clipboard copy success notification content.
+* **db:** fixed mob page not loading properly.
+* **layout:** fixed can skip showing negative values in some cases.
+* **simulator:** fixed an issue with step by step mode and buffs duration.
 
 
 ### Features
 
-* **desktop:** user-friendly npcap installation process, instead of starting setup asap.
-* **desktop:** you can now enable rawsock for packet capture, requires TC to be started as admin.
-* **gearset:** max display ilvl is now max gearset ilvl + 30.`;
+* **data:** support for korean v5.3 update.
+* **db:** 5.41 data.
+* **simulator:** support for new conditions.`;

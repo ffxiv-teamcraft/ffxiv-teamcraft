@@ -464,7 +464,7 @@
                           [ignoreDisabled]="true"
                           [showStateMenu]="true"
                           [simulation]="resultData.simulation"
-                          [state]="stepStates$.value[i]"></app-action>
+                          [state]="stepStates$.value[i] || 1"></app-action>
             </div>
           </div>
           <ng-container *ngIf="resultData.failCause !== undefined">

@@ -383,7 +383,7 @@ function addToGatheringLogPage(entry, pageId, gathererIndex) {
     page = gatheringLogPages[gathererIndex].find(page => page.id === pageId);
   }
   page.items.push({
-    itemId: entry.Item,
+    itemId: entry.ItemTargetID,
     ilvl: entry.GatheringItemLevelTargetID,
     lvl: entry.GatheringItemLevel.GatheringItemLevel,
     stars: entry.GatheringItemLevel.Stars,
@@ -504,7 +504,7 @@ if (hasTodo('fishParameter')) {
   getAllPages('https://xivapi.com/FishParameter?columns=ID,IsHidden,Item').subscribe(res => {
     res.Results.forEach(fish => {
       if (fish.IsHidden) {
-        bigFishes[fish.Item] = 1;
+        bigFishes[fish.Item.ID] = 1;
       }
     });
   }, null, () => {
@@ -1695,7 +1695,8 @@ if (hasTodo('recipes')) {
               quality: ingredient.id > 19 ? (ingredient.ilvl / totalIlvl) * totalContrib : 0
             };
           }),
-        expert: recipe.IsExpert === 1
+        expert: recipe.IsExpert === 1,
+        conditionsFlag: recipe.RecipeLevelTable.ConditionsFlag
       });
     });
 
@@ -2107,7 +2108,7 @@ if (hasTodo('collectables')) {
             levelMax: collectable.LevelMax,
             group: collectable.CollectablesShopItemGroupTargetID,
             shopId: +collectable.ID.split('.')[0],
-            reward: currencies[collectable.CollectablesShopRewardScrip.CurrencyTargetID],
+            reward: currencies[collectable.CollectablesShopRewardScrip.Currency],
             base: {
               rating: collectable.CollectablesShopRefine.LowCollectability,
               exp: collectable.CollectablesShopRewardScrip.ExpRatioLow,
@@ -2188,7 +2189,7 @@ if (hasTodo('HWDGatherer')) {
           return;
         }
         inspections.push({
-          requiredItem: inspection[`ItemRequired${i}`].Item,
+          requiredItem: inspection[`ItemRequired${i}`].ItemTargetID,
           amount: inspection[`AmountRequired${i}`],
           receivedItem: inspection[`ItemReceived${i}TargetID`],
           scrips: inspection[`Reward1${i}`].Scrips,
@@ -2546,7 +2547,6 @@ if (hasTodo('ventures')) {
           };
         }
       });
-    }, null, () => {
       persistToJsonAsset('ventures', ventures);
       persistToJsonAsset('retainer-tasks', retainerTasks);
       done('ventures');
