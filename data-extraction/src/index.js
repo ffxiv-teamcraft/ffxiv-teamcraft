@@ -525,22 +525,21 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter').pipe(
+  aggregateAllPages('https://xivapi.com/FishParameter?columns=ID,ItemTargetID,Item.Icon,TerritoryType.MapTargetID,TerritoryType.PlaceNameTargetID,GatheringItemLevel,TimeRestricted,WeatherRestricted,FishingRecordType,IsInLog').pipe(
     map(completeFetch => {
       const fishParameter = {};
       completeFetch
-        .filter(fish => fish.Item !== null && fish.IsInLog === 1)
+        .filter(fish => {
+          return fish.ItemTargetID > 0 && fish.IsInLog === 1;
+        })
         .forEach(fish => {
-          if (fish.TerritoryType === null) {
-            throw new Error(`No territory for FishParameter#${fish.ID}`);
-          }
           const entry = {
             id: fish.ID,
-            itemId: fish.Item.ID,
+            itemId: fish.ItemTargetID,
             level: fish.GatheringItemLevel,
             icon: fish.Item.Icon,
-            mapId: fish.TerritoryType.Map.ID,
-            zoneId: fish.TerritoryType.PlaceName.ID,
+            mapId: fish.TerritoryType.MapTargetID,
+            zoneId: fish.TerritoryType.PlaceNameTargetID,
             timed: fish.TimeRestricted,
             weathered: fish.WeatherRestricted
           };
@@ -552,7 +551,7 @@ if (hasTodo('fishingLog')) {
               fr: fish.FishingRecordType.Addon.Text_fr
             };
           }
-          fishParameter[fish.Item] = entry;
+          fishParameter[fish.ItemTargetID] = entry;
         });
       return fishParameter;
     })

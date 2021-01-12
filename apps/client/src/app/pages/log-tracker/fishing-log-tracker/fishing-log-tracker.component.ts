@@ -60,6 +60,9 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
   }
 
   public getFshData(fish: any): any[] {
+    if (fish === undefined) {
+      return [];
+    }
     if (this.fshDataCache[fish.itemId] === undefined) {
       this.fshDataCache[fish.itemId] = this._getFshData(fish);
     }
