@@ -1,9 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fixed a possible error when opening from file protocol.
+* **db:** fixed mob page not loading properly.
+* **layout:** fixed can skip showing negative values in some cases.
+* **simulator:** fixed an issue with step by step mode and buffs duration.
 
 
 ### Features
 
-* **data:** update for cn patch-5.31.
-* **desktop:** support for chinese 5.31 packet capture.`;
+* **data:** support for korean v5.3 update.
+* **db:** 5.41 data.
+* **simulator:** support for new conditions.`;
