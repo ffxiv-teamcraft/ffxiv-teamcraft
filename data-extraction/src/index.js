@@ -550,22 +550,22 @@ if (hasTodo('fishingLog')) {
 
   const fishingLog = [];
 
-  getAllEntries('https://xivapi.com/FishParameter').pipe(
+  aggregateAllPages('https://xivapi.com/FishParameter?columns=ID,ItemTargetID,Item.Icon,TerritoryType.MapTargetID,TerritoryType.PlaceNameTargetID,GatheringItemLevel,TimeRestricted,WeatherRestricted,FishingRecordType,IsInLog,GatheringSubCategory').pipe(
     map(completeFetch => {
       const fishParameter = {};
       completeFetch
-        .filter(fish => fish.Item !== null && fish.IsInLog === 1)
+        .filter(fish => fish.ItemTargetID > 0 && fish.IsInLog === 1)
         .forEach(fish => {
           if (fish.TerritoryType === null) {
             throw new Error(`No territory for FishParameter#${fish.ID}`);
           }
           const entry = {
             id: fish.ID,
-            itemId: fish.Item.ID,
-            level: fish.GatheringItemLevel,
+            itemId: fish.ItemTargetID,
+            level: fish.GatheringItemLevel.GatheringItemLevel,
             icon: fish.Item.Icon,
-            mapId: fish.TerritoryType.Map.ID,
-            zoneId: fish.TerritoryType.PlaceName.ID,
+            mapId: fish.TerritoryType.MapTargetID,
+            zoneId: fish.TerritoryType.PlaceNameTargetID,
             timed: fish.TimeRestricted,
             weathered: fish.WeatherRestricted
           };
@@ -675,7 +675,7 @@ if (hasTodo('spearFishingLog')) {
                 return {
                   id: entry.ID,
                   itemId: entry.GatheringPointBase[key],
-                  level: entry.GatheringLevel,
+                  level: entry.GatheringLevel.GatheringLevel,
                   mapId: entry.TerritoryType.Map.ID,
                   placeId: entry.TerritoryType.PlaceName.ID,
                   zoneId: entry.PlaceName.ID,

@@ -21,12 +21,16 @@ const barsRegistry = {};
 
 function updateProgress(name, max) {
   if (barsRegistry[name] === undefined) {
-    barsRegistry[name] = multibar.create(max, 0, { label: name });
+    barsRegistry[name] = multibar.create(max, 0, { label: name, forceRedraw: true });
   }
   if (barsRegistry[name].getTotal() < max) {
     barsRegistry[name].setTotal(max + barsRegistry[name].getTotal());
   }
   barsRegistry[name].increment();
+  if (barsRegistry[name].value === barsRegistry[name].getTotal()) {
+    barsRegistry[name].stop();
+    multibar.remove(barsRegistry[name]);
+  }
 }
 
 const queue = [];
