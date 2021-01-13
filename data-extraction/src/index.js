@@ -160,7 +160,7 @@ if (hasTodo('mappy', true)) {
 
   combineLatest([gatheringItems$, gatheringPoints$]).pipe(
     switchMap(([gatheringItems, gatheringPoints]) => {
-      return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0,Item1,Item2,Item3,Item4,Item5,Item6,Item7,IsLimited,GameContentLinks,GatheringLevel')
+      return getAllPages('https://xivapi.com/GatheringPointBase?columns=ID,GatheringTypeTargetID,Item0TargetID,Item1TargetID,Item2TargetID,Item3TargetID,Item4TargetID,Item5TargetID,Item6TargetID,Item7TargetID,IsLimited,GameContentLinks,GatheringLevel')
         .pipe(
           map((page) => [page, gatheringItems, gatheringPoints])
         );
@@ -179,8 +179,8 @@ if (hasTodo('mappy', true)) {
       nodes[node.ID] = {
         ...nodes[node.ID],
         items: [0, 1, 2, 3, 4, 5, 6, 7]
-          .filter(i => node[`Item${i}`] > 0)
-          .map(i => node[`Item${i}`])
+          .filter(i => node[`Item${i}TargetID`] > 0)
+          .map(i => node[`Item${i}TargetID`])
           .filter(gatheringItemId => {
             return items[gatheringItemId];
           })
