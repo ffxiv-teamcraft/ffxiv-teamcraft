@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="7.6.25"></a>
+## [7.6.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.24...v7.6.25) (2021-01-13)
+
+
+### Bug Fixes
+
+* **desktop:** fix for korean inventory tracking and global weather tracking ([6281c29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6281c29))
+* **simulator:** fixed inaccuracy with higher progression values on Malleable condition ([1702406](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1702406))
+
+
+### Features
+
+* **desktop:** support for KR v5.3 packet capture ([5b9571b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5b9571b))
+
+
+
 <a name="7.6.24"></a>
 ## [7.6.24](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.23...v7.6.24) (2021-01-12)
 
