@@ -41,9 +41,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { PacketCaptureTrackerService } from './core/electron/packet-capture-tracker.service';
 import { UniversalisService } from './core/api/universalis.service';
-import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { Apollo } from 'apollo-angular';
@@ -642,9 +640,11 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Login'),
       nzContent: LoginPopupComponent,
       nzFooter: null
-    }).afterClose.subscribe(() => {
-      // HOTFIX
-      window.location.reload();
+    }).afterClose.subscribe((res) => {
+      if (res) {
+        // HOTFIX
+        window.location.reload();
+      }
     });
   }
 
