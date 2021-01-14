@@ -53,6 +53,7 @@ export class InventoryEffects {
           return of(contentId);
         }
       }
+      console.log('New Content ID', contentId);
       // If we're here, there's no matching entries anywhere
       return this.modal.create({
         nzContent: ContentIdLinkingPopupComponent,

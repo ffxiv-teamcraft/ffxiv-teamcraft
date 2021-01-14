@@ -55,4 +55,4 @@ const patrons = [
   'G\'lek Tarssza'
 ];
 const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
-document.getElementById('random-patron').innerText = 'Forgiven Ignorance | Cerberus';
+document.getElementById('random-patron').innerText = randomPatron;

@@ -33,10 +33,10 @@
     </button>
   </div>
   <nz-divider [nzText]="'Or' | translate"></nz-divider>
-  <div fxLayout="row" fxLayoutGap="5px">
-    <div>
+  <div fxLayout="column" fxLayoutGap="5px">
       <button nz-button (click)="ignoreContentId()">{{'INVENTORY.CONTENT_ID_POPUP.Ignore' | translate}}</button>
-      <i>{{'INVENTORY.CONTENT_ID_POPUP.You_can_reset_ignore' | translate}}</i>
-    </div>
+      <div>
+        <i>{{'INVENTORY.CONTENT_ID_POPUP.You_can_reset_ignore' | translate}}</i>
+      </div>
   </div>
 </div>

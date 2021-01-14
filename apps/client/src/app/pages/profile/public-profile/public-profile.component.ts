@@ -58,7 +58,7 @@ export class PublicProfileComponent {
     this.gearSets$ = this.user$.pipe(
       map(user => {
         const lodestoneId = user.defaultLodestoneId ? user.defaultLodestoneId : user.lodestoneIds[0].id;
-        return user.lodestoneIds.find(entry => entry.id === lodestoneId).stats;
+        return user.lodestoneIds.find(entry => entry.id === lodestoneId)?.stats;
       })
     );
     this.communityLists$ = userId$.pipe(
