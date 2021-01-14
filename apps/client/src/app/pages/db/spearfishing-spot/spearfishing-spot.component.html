@@ -1,0 +1,188 @@
+<ng-container *ngIf="nodeData$ | async as nodeData; else loader">
+  <div [style.padding]="'0 25px' | ifMobile: '0'" fxLayout="column" fxLayoutGap="10px">
+    <div class="top-bar" fxFlex="1 1 auto" fxLayout="row" fxLayout.lt-md="column"
+         fxLayoutAlign="flex-start flex-start" fxLayoutGap="5px" fxLayoutGap.lt-md="10px">
+      <div class="top-left-block" fxFlex="0 0 300px" fxFlex.lt-md="1 1 auto" fxLayout="column"
+           fxLayoutAlign="space-between" fxLayoutGap="10px">
+        <div class="icon-block" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+          <img
+            [src]="(nodeData.mappyData.limited ? nodeData.GatheringType.IconOff : nodeData.GatheringType.IconMain) | xivapiIcon"
+            class="img-icon" fxFlex="0 0 auto">
+          <div fxLayout="column" fxLayoutAlign="flex-start flex-start">
+            <h2 class="item-name">{{getName(nodeData)}}</h2>
+            <div class="item-kind">
+              Lvl {{nodeData.GatheringLevel}} <span
+              [innerHTML]="nodeData.GatheringType | xivapiL12n: 'gatheringTypes' | i18n"></span>
+            </div>
+            <div *ngIf="nodeData.GamePatch" class="patch">
+              {{nodeData.GamePatch | xivapiL12n: 'patchs' | i18n}}
+              <app-db-button [id]="nodeData.GamePatch.ID" type="patch"></app-db-button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="links$ | async as links" class="links" fxLayout="row" fxLayoutAlign="flex-start center"
+             fxLayoutGap="5px">
+          <a *ngFor="let link of links" [href]="link.url" [nzTooltipTitle]="link.title" nz-tooltip target="_blank">
+            <img [alt]="link.title" [src]="link.icon" class="link-icon">
+          </a>
+        </div>
+      </div>
+      <div fxFlex="1 1 auto">
+      </div>
+    </div>
+    <div class="details-container" fxLayout="row wrap" fxLayoutGap="5px">
+      <div class="details-block">
+        <div class="detail-name">{{'DB.Limited' | translate}}</div>
+        <div class="detail-value">{{(nodeData.mappyData.limited === 0 ? 'No' : 'Yes') | translate}}</div>
+      </div>
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+        <div class="detail-name">{{'DB.NODE.Spawn_duration' | translate}}</div>
+        <div class="detail-value">{{nodeData.mappyData.duration / 60}}h</div>
+      </div>
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+        <div class="detail-name">{{'DB.NODE.Spawns' | translate}}</div>
+        <div class="detail-value"><span *ngFor="let hour of nodeData.mappyData.spawns; let last = last">{{hour}}:00<span
+          *ngIf="!last">, </span></span></div>
+      </div>
+      <div *ngIf="nodeData.mappyData.limited" class="details-block">
+        <div class="detail-value">
+          <ng-container *ngFor="let alarmEntry of nodeData.alarms">
+            <div *ngIf="(alarmEntry | alarmDisplay | async) as alarm"
+                 [class.played-timer]="alarm.played"
+                 [class.spawned-timer]="alarm.spawned">
+              {{ (alarm.spawned ? 'GATHERING_LOCATIONS.Spawned_for' : 'GATHERING_LOCATIONS.Will_spawn_in') | translate : { timer: (alarm.remainingTime | timer) } }}
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <app-db-comments *ngIf="settings.dbCommentsPosition === 'TOP'" [id]="nodeData.ID" type="node"></app-db-comments>
+    <div>
+      <nz-divider [nzText]="'DB.Details' | translate" nzOrientation="left"></nz-divider>
+    </div>
+    <div *ngIf="nodeData.mappyData as data" fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="10px">
+      <nz-card *ngIf="data.zoneid" [nzTitle]="title"
+               class="details-card"
+               fxFlex="1 1 30%"
+               nzBordered="false">
+        <ng-template #title>
+          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            {{data.zoneid | placeName | i18n}} - X:{{data.x | number}} Y:{{data.y | number}}
+          </div>
+        </ng-template>
+        <app-map [mapId]="data.map"
+                 [markers]="[{x: data.x, y: data.y, iconType: 'img', iconImg: data.type | nodeTypeIcon:data.limited}]"></app-map>
+      </nz-card>
+      <nz-card *ngIf="data.items.length > 0" [nzTitle]="title"
+               class="details-card"
+               fxFlex="1 1 auto"
+               nzBordered="false">
+        <ng-template #title>
+          <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+            {{'DB.NODE.Items' | translate}}
+          </div>
+        </ng-template>
+        <div nz-row *ngFor="let item of data.items" class="item-row">
+          <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
+            <app-item-icon [itemId]="item.item" [width]="32"></app-item-icon>
+          </div>
+          <div nz-col nzMd="4" fxLayout="column">
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              <div [appItemRarity]="item">{{item.item | itemName | i18n}}</div>
+              <nz-tag *ngIf="item.gatheringItem?.hidden" nzColor="#108ee9">{{'GATHERING_LOCATIONS.Hidden_item' | translate}}</nz-tag>
+            </div>
+            <div *ngIf="item.gatheringItem as gatheringItem" class="description">
+              Lvl {{gatheringItem.level}} <span
+              *ngIf="gatheringItem.stars">{{gatheringItem.stars | ingameStars}}</span>
+            </div>
+          </div>
+          <div nz-col nzMd="9"  fxLayout="row" fxLayoutAlign="flex-start center">
+            <ng-container *ngIf="item.gatheringItem as gatheringItem">
+              <img *ngIf="gatheringItem.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + gatheringItem.gig) | translate" class="gig-icon" nz-tooltip
+                   src="./assets/icons/gig/{{gatheringItem.gig}}.png">
+              <div *ngIf="gatheringItem.predators && gatheringItem.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+                   fxLayoutGap="10px">
+                <nz-divider nzType="vertical"></nz-divider>
+                <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
+                     src="./assets/icons/status/predators.png">
+                <div *ngFor="let predator of gatheringItem.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                     fxLayoutGap="5px">
+                  <div>{{predator.amount}}x</div>
+                  <app-item-icon [appFishTooltip]="predator.id" [itemId]="predator.id"
+                                 [tooltipDisabled]="true" [width]="24"></app-item-icon>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+          <div nz-col nzMd="8"  fxLayout="row" fxLayoutAlign="center center">
+            <div *ngIf="data.limited">
+              <ng-container *ngFor="let alarmEntry of item.alarms">
+                <ng-container *ngIf="(alarmEntry | alarmDisplay | async) as alarm">
+                  <div *ngIf="canCreateAlarm(alarm.alarm) | async; else alarmCreated" fxLayout="row"
+                       fxLayoutGap="5px">
+                    <button (click)="addAlarm(alarm.alarm)" [nzTooltipTitle]="'ALARMS.Add_alarm' | translate" nz-button nz-tooltip nzShape="circle"
+                            nzSize="small">
+                      <i nz-icon nzType="clock-circle"></i>
+                    </button>
+                    <ng-container *ngIf="alarmGroups$ | async as groups">
+                      <ng-container *ngIf="groups.length > 0">
+                        <button *ngIf="alarmsLoaded$ | async" [nzDropdownMenu]="menu"
+                                [nzPlacement]="'bottomCenter'" nz-button
+                                nz-dropdown nzShape="circle" nzSize="small">
+                          <i nz-icon nzType="folder-open"></i>
+                        </button>
+                        <nz-dropdown-menu #menu="nzDropdownMenu">
+                          <ul nz-menu>
+                            <li (click)="addAlarm(alarm.alarm, group)" *ngFor="let group of groups" nz-menu-item>
+                              {{group.name}}
+                            </li>
+                          </ul>
+                        </nz-dropdown-menu>
+                      </ng-container>
+                    </ng-container>
+                  </div>
+                  <ng-template #alarmCreated>
+                    {{'ALARMS.Alarm_already_created' | translate}}
+                  </ng-template>
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
+          <div nz-col nzMd="1" fxLayout="row" fxLayoutAlign="center center">
+            <app-db-button [id]="item.item" type="item"></app-db-button>
+          </div>
+        </div>
+      </nz-card>
+      <ng-container *ngIf="bonuses$ | async as bonuses">
+        <nz-card *ngIf="bonuses.length > 0" [nzTitle]="title"
+                 class="details-card"
+                 fxFlex="1 1 auto"
+                 nzBordered="false">
+          <ng-template #title>
+            <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
+              {{'DB.NODE.Possible_bonuses' | translate}}
+            </div>
+          </ng-template>
+          <nz-list [nzDataSource]="bonuses" [nzItemLayout]="'horizontal'"
+                   [nzRenderItem]="bonusTemplate">
+            <ng-template #bonusTemplate let-bonus>
+              <nz-list-item>
+                <nz-list-item-meta
+                  [nzDescription]="description"
+                  [nzTitle]="bonus.bonus | i18n">
+                  <ng-template #description>
+                    {{'DB.NODE.Bonus_condition' | translate}}: {{bonus.condition | i18n}}
+                  </ng-template>
+                </nz-list-item-meta>
+              </nz-list-item>
+            </ng-template>
+          </nz-list>
+        </nz-card>
+      </ng-container>
+    </div>
+  </div>
+  <app-db-comments *ngIf="settings.dbCommentsPosition === 'BOTTOM'" [id]="nodeData.ID" type="node"></app-db-comments>
+</ng-container>
+<ng-template #loader>
+  <app-page-loader></app-page-loader>
+</ng-template>

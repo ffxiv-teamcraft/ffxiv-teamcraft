@@ -697,12 +697,13 @@ if (hasTodo('spearFishingLog')) {
           .filter(fish => fish.Item !== null)
           .forEach(fish => {
             const sheetEntry = sheetEntries.find(entry => {
-              return entry.Fish === fish.Item.Name_en;
+              return entry.Location === fish.Item.Name_en;
             });
             const entry = {
               id: fish.ID,
               itemId: fish.ItemTargetID,
-              level: fish.GatheringItemLevel.ID,
+              level: fish.GatheringItemLevel.GatheringItemLevel,
+              ilvl: fish.GatheringItemLevel.ID,
               icon: fish.Item.Icon,
               mapId: fish.TerritoryType.Map.ID,
               zoneId: fish.TerritoryType.PlaceName.ID

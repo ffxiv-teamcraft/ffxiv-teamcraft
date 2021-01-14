@@ -3,7 +3,7 @@
     <div fxLayout="column">
       <div>
       <span>{{node.map | mapName | i18n}} - lvl {{node.level}}
-        <app-db-button *ngIf="node.id" [id]="node.id" type="node"></app-db-button>
+        <app-db-button *ngIf="!hideDbButton && node.id" [id]="node.id" type="node"></app-db-button>
       </span>
       </div>
       <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>

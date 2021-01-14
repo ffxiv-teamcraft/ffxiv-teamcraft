@@ -7,13 +7,17 @@
       <nz-list-item [nzActions]="[openMap]">
         <nz-list-item-meta [nzDescription]="description" [nzTitle]="nodeTitle">
           <ng-template #nodeTitle>
-            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.type === 4 && node.id > 0">
-              <div>{{node.zoneid | placeName | i18n}}</div>
-              <app-db-button *ngIf="!node.gig" [id]="node.id" type="fishing-spot"></app-db-button>
+            <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngIf="node.id > 0">
+              <div>{{node.zoneId | placeName | i18n}}</div>
+              <div [ngSwitch]="node.type">
+                <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
+                <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>
+                <app-db-button *ngSwitchDefault [id]="node.id" type="node"></app-db-button>
+              </div>
             </div>
           </ng-template>
           <ng-template #description>
-            <app-node-details [node]="node" [showAlarmsIntegration]="showAlarmsIntegration"></app-node-details>
+            <app-node-details [node]="node" [showAlarmsIntegration]="showAlarmsIntegration" [hideDbButton]="true"></app-node-details>
             <div class="node-map">
               <app-map [mapId]="node.map"
                        *ngIf="node"

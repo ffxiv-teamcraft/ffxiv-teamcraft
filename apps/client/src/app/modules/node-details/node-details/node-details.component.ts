@@ -27,6 +27,9 @@ export class NodeDetailsComponent implements OnInit {
   @Input()
   hideTimers = false;
 
+  @Input()
+  hideDbButton = false;
+
   private _node: GatheringNode;
 
   @Input()

@@ -74,6 +74,7 @@ import { NzStatisticModule } from 'ng-zorro-antd/statistic';
 import { NzCommentModule } from 'ng-zorro-antd/comment';
 import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
+import { SpearfishingSpotComponent } from './spearfishing-spot/spearfishing-spot.component';
 
 const routes: Routes = [
   {
@@ -175,6 +176,12 @@ const routes: Routes = [
       },
 
       {
+        path: 'spearfishing-spot/:spotId',
+        component: SpearfishingSpotComponent,
+        canActivate: [MaintenanceGuard, VersionLockGuard]
+      },
+
+      {
         path: 'action/:actionId',
         component: ActionComponent,
         canActivate: [MaintenanceGuard, VersionLockGuard]
@@ -255,6 +262,7 @@ const routes: Routes = [
     FateComponent,
     MapPageComponent,
     NodeComponent,
+    SpearfishingSpotComponent,
     ActionComponent,
     StatusComponent,
     TraitComponent,
