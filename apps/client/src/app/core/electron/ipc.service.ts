@@ -13,6 +13,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
+import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -54,7 +55,7 @@ export class IpcService {
   }
 
   public get marketTaxRatePackets$(): Observable<pcap.MarketTaxRates> {
-    return this.packets$.pipe(ofPacketType('marketTaxRates'));
+    return this.packets$.pipe(ofPacketSubType('marketTaxRates'));
   }
 
   public get marketBoardSearchResult$(): Observable<pcap.MarketBoardSearchResult> {

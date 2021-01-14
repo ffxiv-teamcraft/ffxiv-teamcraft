@@ -1,36 +1,24 @@
 import { Observable } from 'rxjs';
 import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 import { DataReporter } from './data-reporter';
-import { filter, map, withLatestFrom } from 'rxjs/operators';
-import { AetherReductionDlg, ActorControl } from '../../model/pcap';
-import { PacketCaptureTrackerService } from '../electron/packet-capture-tracker.service';
+import { map } from 'rxjs/operators';
+import { BasePacket, ReductionResult } from '../../model/pcap';
 
 export class ReductionResultReporter implements DataReporter {
 
-  constructor(private machina: PacketCaptureTrackerService) {
-  }
-
-  getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {
-    const reductionResults$ = packets$.pipe<AetherReductionDlg>(
-      ofPacketSubType('aetherReductionDlg')
-    );
-
-    const inventoryPatches$ = this.machina.inventoryPatches$.pipe(
-      filter(patch => {
-        return patch.quantity < 0 && patch.spiritBond && patch.spiritBond > 0;
-      })
+  getDataReports(packets$: Observable<BasePacket>): Observable<any[]> {
+    const reductionResults$ = packets$.pipe(
+      ofPacketSubType<ReductionResult>('reductionResult')
     );
 
     return reductionResults$.pipe(
-      withLatestFrom(inventoryPatches$),
-      map(([packet, patch]) => {
-        return packet.resultItems.map(item => {
+      map((packet) => {
+        return packet.result.map(item => {
           return {
-            itemId: packet.reducedItemID,
-            collectability: patch.spiritBond,
+            itemId: packet.itemId,
             resultItemId: item.itemId,
-            resultItemQuantity: item.quantity,
-            resultItemHQ: item.hq
+            resultItemQuantity: item.itemQuantity,
+            resultItemHQ: item.itemHq
           };
         });
       })
