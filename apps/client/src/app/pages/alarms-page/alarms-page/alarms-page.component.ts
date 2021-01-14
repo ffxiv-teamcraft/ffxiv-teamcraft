@@ -37,7 +37,7 @@ export class AlarmsPageComponent implements OnInit {
 
   public loaded$: Observable<boolean>;
 
-  public expanded = true;
+  public expanded = !this.settings.alarmPanelsCollapsedByDefault;
 
   constructor(private alarmBell: AlarmBellService, public alarmsFacade: AlarmsFacade,
               private _settings: SettingsService, private dialog: NzModalService,

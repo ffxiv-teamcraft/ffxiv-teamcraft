@@ -21,8 +21,8 @@ export class RetainersComponent {
         .map(retainer => {
           return {
             ...retainer,
-            taskComplete: retainer.taskComplete,
-            taskDone: retainer.taskComplete <= Date.now()
+            taskComplete: retainer.taskComplete * 1000,
+            taskDone: retainer.taskComplete <= Date.now() / 1000
           };
         });
     })

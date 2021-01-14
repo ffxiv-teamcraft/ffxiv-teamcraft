@@ -4,7 +4,7 @@ import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { Observable, Subject } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'apps/client/src/environments/environment';
-import { debounceTime, first, map, startWith, switchMap } from 'rxjs/operators';
+import { debounceTime, first, map, startWith, switchMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { SearchIndex, XivapiSearchOptions } from '@xivapi/angular-client';
 import { TeamcraftGearset } from '../../../model/gearset/teamcraft-gearset';
@@ -56,7 +56,7 @@ export class LevelingEquipmentComponent {
     { property: 'ring2', name: 'FingerR', equipSlotCategoryId: 12 }
   ];
 
-  selectedLevel: number;
+  selectedItems: Partial<Record<keyof TeamcraftGearset, number>> = {};
 
   desktop = this.platformService.isDesktop();
 
@@ -92,7 +92,6 @@ export class LevelingEquipmentComponent {
         this.settings.setBoolean('leveling-equipment:includeCrafting', filters.includeCrafting);
         this.settings.setBoolean('leveling-equipment:includeTrades', filters.includeTrades);
         this.settings.setBoolean('leveling-equipment:onlyInventoryContent', filters.onlyInventoryContent);
-        this.selectedLevel = filters.level;
         const mainStat = this.statsService.getMainStat(filters.job);
         const searchOptions: XivapiSearchOptions = {
           indexes: [SearchIndex.ITEM],
@@ -205,6 +204,10 @@ export class LevelingEquipmentComponent {
                 }
                 return row;
               });
+            }),
+            tap(results => {
+              const row = results.find(r => r.level === filters.level);
+              this.selectRow(row);
             })
           );
       })
@@ -288,12 +291,23 @@ export class LevelingEquipmentComponent {
     return false;
   }
 
-  createList(results: { level: number, gearset: TeamcraftGearset }[]): void {
-    const gearset = results.find(r => r.level === this.selectedLevel).gearset;
-    const items: ListRow[] = this.gearsetsFacade.toArray(gearset)
-      .map(entry => {
+  selectRow(row: { level: number, gearset: TeamcraftGearset }): void {
+    this.selectedItems = this.gearsetsFacade
+      .toArray(row.gearset)
+      .reduce((acc, item) => {
         return {
-          id: entry.piece.itemId,
+          ...acc,
+          [item.slot]: item.piece.itemId
+        };
+      }, {});
+  }
+
+  createList(): void {
+    const items: ListRow[] = Object.values(this.selectedItems)
+      .filter(id => !!id)
+      .map(itemId => {
+        return {
+          id: itemId,
           amount: 1,
           done: 0,
           used: 0,

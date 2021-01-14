@@ -48,18 +48,27 @@
       </nz-form-control>
     </nz-form-item>
   </form>
+  <div>
+    <i>{{'LEVELING_EQUIPMENT.Interactions_description' | translate}}</i>
+  </div>
   <ng-container *ngIf="results$ | async as results; else description">
     <table>
       <thead>
       <tr>
         <th></th>
-        <th *ngFor="let row of results" [class.selected]="row.level === selectedLevel" (click)="selectedLevel = row.level">{{row.level}}</th>
+        <th *ngFor="let row of results" (click)="selectRow(row)">{{row.level}}</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let slot of slots; let last = last">
+      <tr *ngFor="let slot of slots">
         <td>{{('GEARSETS.SLOT.' + slot.name) | translate}}</td>
-        <td *ngFor="let row of results" [class.selected]="row.level === selectedLevel" [class.bottom]="last" (click)="selectedLevel = row.level">
+        <td *ngFor="let row of results" [class.selected]="selectedItems[slot.property] && selectedItems[slot.property] === row.gearset[slot.property]?.itemId"
+            (click)="row.gearset[slot.property]?selectedItems[slot.property] = row.gearset[slot.property]?.itemId : 0" class="slot-item">
+          <button nz-button nzDanger nzSize="small" nzShape="circle" class="remove-button"
+                  *ngIf="selectedItems[slot.property] === row.gearset[slot.property]?.itemId"
+                  (click)="$event.stopPropagation();selectedItems[slot.property]=null">
+            <i nz-icon nzType="delete"></i>
+          </button>
           <div fxLayout="row" fxLayoutAlign="center center">
             <div *ngIf="row.gearset[slot.property] as equipmentPiece; else noItem" class="slot-icon">
               <app-item-icon [itemId]="equipmentPiece.itemId" [width]="32"></app-item-icon>
@@ -75,7 +84,7 @@
       </tr>
       </tbody>
     </table>
-    <button nz-button nzBlock (click)="createList(results)" nzType="primary">{{'LEVELING_EQUIPMENT.Generate_list' | translate}}</button>
+    <button nz-button nzBlock (click)="createList()" nzType="primary">{{'LEVELING_EQUIPMENT.Generate_list' | translate}}</button>
   </ng-container>
   <ng-template #description>
     <app-fullpage-message>{{'LEVELING_EQUIPMENT.Description' | translate}}</app-fullpage-message>

@@ -9,23 +9,26 @@ th, td:not(:first-child) {
   width: 15%;
 }
 
+th {
+  cursor: pointer;
+}
+
 .selected {
   background-color: var(--primary-color-20);
 }
 
 td.selected {
-  border-left: 1px solid var(--primary-color);
-  border-right: 1px solid var(--primary-color);
-
-  &.bottom {
-    border-bottom: 1px solid var(--primary-color);
-  }
+  border: 1px solid var(--primary-color);
 }
 
-th.selected {
-  border-left: 1px solid var(--primary-color);
-  border-right: 1px solid var(--primary-color);
-  border-top: 1px solid var(--primary-color);
+.slot-item {
+  position: relative;
+
+  .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
 }
 
 .job-filter {

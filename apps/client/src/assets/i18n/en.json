@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -478,6 +480,7 @@
       "Theme": "Theme",
       "Search": "Search",
       "Lists": "Lists",
+      "Alarms": "Alarms",
       "Other": "Other",
       "Sekrit": "Sekrit"
     },
@@ -2467,7 +2470,8 @@
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
     "Title": "Retainers",

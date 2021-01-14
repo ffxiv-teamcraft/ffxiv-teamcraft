@@ -507,6 +507,22 @@ export class SettingsService {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get alarmPanelsCollapsedByDefault(): boolean {
+    return this.getBoolean('alarmPanelsCollapsedByDefault', false);
+  }
+
+  public set alarmPanelsCollapsedByDefault(bool: boolean) {
+    this.setBoolean('alarmPanelsCollapsedByDefault', bool);
+  }
+
+  public get alarmGroupsBeforeNoGroup(): boolean {
+    return this.getBoolean('alarmGroupsBeforeNoGroups', false);
+  }
+
+  public set alarmGroupsBeforeNoGroup(bool: boolean) {
+    this.setBoolean('alarmGroupsBeforeNoGroups', bool);
+  }
+
   public get playerMetricsEnabled(): boolean {
     return this.getBoolean('playerMetricsEnabled', false);
   }

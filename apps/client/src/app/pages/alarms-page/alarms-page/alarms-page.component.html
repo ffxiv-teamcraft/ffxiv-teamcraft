@@ -54,7 +54,7 @@
       </div>
     </div>
 
-    <div class="alarms">
+    <div class="alarms" [fxLayout]="settings.alarmGroupsBeforeNoGroup ? 'column-reverse' : 'column'">
       <div class="alarms-container" fxLayout="row wrap" fxLayoutGap="5px">
         <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: display.noGroup}"></ng-container>
       </div>
