@@ -2,19 +2,7 @@
   <app-marketboard-icon *ngIf="isButton(itemRowTypes.MARKET_BOARD_INFORMATIONS)" [itemId]="itemId"
                         [showHistory]="finalItem"></app-marketboard-icon>
   <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
-    <button (cbOnSuccess)="success('Item_name_copied', {itemname: $event.content})"
-            *ngIf="settings.preferredCopyType === 'classic'" [nzTooltipTitle]="'Copy_isearch' | translate"
-            clipboard="/isearch &quot;{{itemId | itemName: ({name: fallbackItemName}) | i18n}}&quot;"
-            [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (itemId | itemName: ({name: fallbackItemName}) | i18n) + '&quot;'}"
-            nz-button
-            nz-tooltip nzShape="circle"
-            nzSize="small">
-      <i nz-icon nzType="copy"></i>
-    </button>
-    <button *ngIf="settings.preferredCopyType === 'isearch'"
-            [clipboard]="itemId | itemName: ({name: fallbackItemName}) | i18n"
-            [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: itemId | itemName: ({name: fallbackItemName}) | i18n}"
-            [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+    <button [itemNameCopy]="itemId"
             nz-button
             nz-tooltip nzShape="circle"
             nzSize="small">
@@ -214,16 +202,9 @@
     <nz-dropdown-menu #menu="nzDropdownMenu" class="item-options">
       <ul nz-menu>
         <ng-container *ngIf="!isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
-          <li (clipboardCopySuccess)="success('Item_name_copied', {itemname: $event.content})"
-              *ngIf="settings.preferredCopyType === 'classic'"
-              clipboard="/isearch &quot;{{itemId | itemName: ({name: fallbackItemName}) | i18n}}&quot;"
+          <li [itemNameCopy]="itemId"
               nz-menu-item>
             {{'Copy_isearch' | translate}}
-          </li>
-          <li (clipboardCopySuccess)="success('Item_name_copied', {itemname: $event.content})"
-              *ngIf="settings.preferredCopyType === 'isearch'" [clipboard]="itemId | itemName: ({name: fallbackItemName}) | i18n"
-              nz-menu-item>
-            {{'Copy_item_name_to_clipboard' | translate}}
           </li>
         </ng-container>
 

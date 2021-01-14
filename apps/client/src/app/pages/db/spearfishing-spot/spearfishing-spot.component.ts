@@ -197,7 +197,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
         return {
           title: this.getName(node),
           description: this.getDescription(node),
-          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/node/${node.ID}`,
+          url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/spearfishing-spot/${node.ID}`,
           image: `https://xivapi.com${node.IconMap}`
         };
       })

@@ -13,16 +13,7 @@
           <div>
             <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
                *ngIf="item.finalItem && !this.finalItem$.value"></i>
-            <span *ngIf="settings.preferredCopyType === 'classic'" [clipboard]="item.id | itemName: item | i18n"
-                  [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
-                  [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: item.id | itemName: item | i18n}"
-                  class="item-name"
-                  nz-tooltip>
-              {{item.id | itemName: item | i18n}}
-            </span>
-            <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
-                  clipboard="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
-                  [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (item.id | itemName: item | i18n) + '&quot;'}"
+            <span [itemNameCopy]="item.id"
                   class="item-name"
                   nz-tooltip>
               {{item.id | itemName: item | i18n}}

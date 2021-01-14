@@ -54,6 +54,7 @@ import { AngularFireFunctionsModule } from '@angular/fire/functions';
 import { CommissionNotification } from '../model/notification/commission-notification';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
+import { ItemNameClipboardDirective } from './item-name-clipboard.directive';
 
 
 @NgModule({
@@ -121,7 +122,8 @@ import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
     LazyComponentDirective,
     MouseWheelDirective,
     SupportUsPopupComponent,
-    ClipboardDirective
+    ClipboardDirective,
+    ItemNameClipboardDirective
   ],
   exports: [
     I18nPipe,
@@ -138,6 +140,7 @@ import { IpcPopupsModule } from '../modules/ipc-popups/ipc-popups.module';
     TutorialModule,
     MouseWheelDirective,
     ClipboardDirective,
+    ItemNameClipboardDirective,
 
     NzButtonModule,
     NzToolTipModule,
