@@ -26,8 +26,9 @@ import { LazyScrollModule } from '../../modules/lazy-scroll/lazy-scroll.module';
 import { CanBeGatheredEasily } from './optimizations/can-be-gathered-easily';
 import { CanExtractMateria } from './optimizations/can-extract-materia';
 import { AntdSharedModule } from '../../core/antd-shared.module';
-import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { InventoryModule } from '../../modules/inventory/inventory.module';
+import { UselessHq } from './optimizations/useless-hq';
+import { AuthFacade } from '../../+state/auth.facade';
 
 const optimisations: Provider[] = [
   {
@@ -69,6 +70,12 @@ const optimisations: Provider[] = [
     provide: INVENTORY_OPTIMIZER,
     useClass: CanBeGatheredEasily,
     multi: true
+  },
+  {
+    provide: INVENTORY_OPTIMIZER,
+    useClass: UselessHq,
+    multi: true,
+    deps: [AuthFacade, LazyDataService]
   }
 ];
 
