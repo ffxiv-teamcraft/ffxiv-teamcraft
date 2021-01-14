@@ -48,7 +48,6 @@ export interface LazyData {
   itemPatch: any;
   itemSeries: any;
   itemSetBonuses: any;
-  itemSlots: any;
   itemStats: any;
   items: any;
   jobAbbr: any;

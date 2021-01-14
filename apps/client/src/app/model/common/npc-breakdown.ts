@@ -2,6 +2,8 @@ import { DataType } from '../../modules/list/data/data-type';
 import { getItemSource, ListRow } from '../../modules/list/model/list-row';
 import { NpcBreakdownRow } from './npc-breakdown-row';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { TradeSource } from '../../modules/list/model/trade-source';
+import { TradeIconPipe } from '../../pipes/pipes/trade-icon.pipe';
 
 export class NpcBreakdown {
   private readonly _rows: NpcBreakdownRow[] = [];
@@ -60,10 +62,28 @@ export class NpcBreakdown {
 
   private handleTradeSources(row: ListRow): void {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
-    const bestNpc = [].concat.apply([], tradeSources.map(ts => ts.npcs)).sort((a, b) => {
-      return this.getRowScore(b.id) - this.getRowScore(a.id);
-    })[0];
+    const bestNpc = tradeSources
+      .sort((a, b) => {
+        return this.getTradeSourceScore(b) - this.getTradeSourceScore(a);
+      })
+      .map(ts => ts.npcs)
+      .flat()
+      .sort((a, b) => {
+        return this.getRowScore(b.id) - this.getRowScore(a.id);
+      })[0];
     this.addRow(bestNpc.id, row);
+  }
+
+  private getTradeSourceScore(tradeSource: TradeSource): number {
+    return tradeSource.trades
+      .map(trade => {
+        return trade.currencies
+          .map(currency => TradeIconPipe.TRADE_SOURCES_PRIORITIES[currency.id])
+          .sort((ca, cb) => cb.ca)[0];
+      })
+      .sort((a, b) => {
+        return b - a;
+      })[0];
   }
 
   private getRowScore(npcId: number): number {
