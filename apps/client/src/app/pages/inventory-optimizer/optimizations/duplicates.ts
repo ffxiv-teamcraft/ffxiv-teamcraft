@@ -16,7 +16,7 @@ export class Duplicates extends InventoryOptimizer {
   protected _getOptimization(item: InventoryItem, inventory: UserInventory, data: ListRow): { [p: string]: number | string } | null {
     const dupes = inventory.toArray()
       .filter(i => {
-        let matches = true;
+        let matches = i.contentId === inventory.contentId;
         if (!inventory.trackItemsOnSale) {
           matches = i.containerId !== ContainerType.RetainerMarket;
         }

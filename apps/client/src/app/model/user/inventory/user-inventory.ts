@@ -76,9 +76,13 @@ export class UserInventory extends DataModel {
     return localStorage.getItem('trackItemsOnSale') === 'true';
   }
 
-  hasItem(itemId: number, onlyUserInventory = false): boolean {
+  hasItem(itemId: number, onlyCurrentCharacter = false, onlyUserInventory = false): boolean {
     this.generateSearchCacheIfNeeded();
-    return this.searchCache.some(item => (!onlyUserInventory || item.containerId < 10) && item.itemId === itemId);
+    return this.searchCache.some(item => {
+      return (!onlyCurrentCharacter || item.contentId === this.contentId)
+        && (!onlyUserInventory || item.containerId < 10)
+        && item.itemId === itemId
+    });
   }
 
   getItem(itemId: number, onlyUserInventory = false): ItemSearchResult[] {

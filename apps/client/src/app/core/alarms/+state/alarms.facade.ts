@@ -53,7 +53,7 @@ export class AlarmsFacade {
       if (this.regenerating) {
         return [null];
       }
-      if (alarms[0] && semver.ltr(alarms[0].appVersion, '8.0.0')) {
+      if (alarms[0] && semver.ltr(alarms[0].appVersion || '6.0.0', '7.999.999')) {
         this.regenerateAlarms(alarms);
         return [null];
       }

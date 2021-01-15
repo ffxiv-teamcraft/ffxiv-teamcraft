@@ -185,7 +185,7 @@ export class LevelingEquipmentComponent {
                     if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
                       row.gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
                       if (row.gearset[slot.property]) {
-                        row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId);
+                        row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                       }
                     }
                   });
@@ -195,7 +195,7 @@ export class LevelingEquipmentComponent {
                     if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
                       row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
                       if (row.gearset.offHand) {
-                        row.gearset.offHand.isInInventory = inventory.hasItem(row.gearset.offHand.itemId);
+                        row.gearset.offHand.isInInventory = inventory.hasItem(row.gearset.offHand.itemId, true);
                       }
                     } else {
                       row.gearset.ring2 = JSON.parse(JSON.stringify(row.gearset.ring1));
@@ -216,7 +216,7 @@ export class LevelingEquipmentComponent {
 
   private allowItem(itemId: number, includeCrafting: boolean, includeTrades: boolean, onlyInventory: boolean, inventory: UserInventory): boolean {
     if (onlyInventory && inventory) {
-      return inventory.hasItem(itemId);
+      return inventory.hasItem(itemId, true);
     }
     const extract = this.lazyData.getExtract(itemId);
     // If it can be bought, no need to go further
@@ -250,7 +250,7 @@ export class LevelingEquipmentComponent {
       materiaSlots: itemMeldingData.slots,
       canOvermeld: itemMeldingData.overmeld,
       baseParamModifier: itemMeldingData.modifier,
-      isInInventory: inventory && inventory.hasItem(+itemId)
+      isInInventory: inventory && inventory.hasItem(+itemId, true)
     };
   }
 

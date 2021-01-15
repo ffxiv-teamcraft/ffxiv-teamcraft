@@ -40,7 +40,7 @@ export class InventorySynthesisPopupComponent implements OnInit {
             return true;
           })
           .forEach(finalItem => {
-            finalItems.push(...inventory.getItem(finalItem.id, false).map(inventoryItem => {
+            finalItems.push(...inventory.getItem(finalItem.id).map(inventoryItem => {
               return {
                 ...inventoryItem,
                 needed: finalItem.amount - finalItem.done
@@ -56,7 +56,7 @@ export class InventorySynthesisPopupComponent implements OnInit {
             return true;
           })
           .forEach(item => {
-            items.push(...inventory.getItem(item.id, false).map(inventoryItem => {
+            items.push(...inventory.getItem(item.id).map(inventoryItem => {
               return {
                 ...inventoryItem,
                 needed: item.amount - item.done

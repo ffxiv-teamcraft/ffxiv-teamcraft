@@ -119,7 +119,7 @@ if (hasTodo('mappy', true)) {
           gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
         }
         if (gatheringPoints[point.ID].ephemeral) {
-          const endTime = point.GatheringPointTransient.EphemeralEndTime || 24;
+          const endTime = point.GatheringPointTransient.EphemeralEndTime || 2400;
           let duration = 60 * Math.abs(endTime - point.GatheringPointTransient.EphemeralStartTime) / 100;
           if (endTime < point.GatheringPointTransient.EphemeralStartTime) {
             duration = 60 * Math.abs(2400 - point.GatheringPointTransient.EphemeralStartTime + endTime) / 100;

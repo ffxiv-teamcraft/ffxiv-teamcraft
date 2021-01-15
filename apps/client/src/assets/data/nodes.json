@@ -5719,7 +5719,7 @@
     "spawns": [
       20
     ],
-    "duration": 254.4,
+    "duration": 240,
     "zoneid": 2221,
     "map": 211,
     "x": 26.4,
@@ -6177,7 +6177,7 @@
     "spawns": [
       20
     ],
-    "duration": 254.4,
+    "duration": 240,
     "zoneid": 2108,
     "map": 215,
     "x": 12.8,
@@ -6358,7 +6358,7 @@
     "spawns": [
       0
     ],
-    "duration": 14.4,
+    "duration": 1440,
     "zoneid": null,
     "map": null
   },
@@ -6372,7 +6372,7 @@
     "spawns": [
       0
     ],
-    "duration": 14.4,
+    "duration": 1440,
     "zoneid": null,
     "map": null
   },
@@ -6410,7 +6410,7 @@
     "spawns": [
       20
     ],
-    "duration": 254.4,
+    "duration": 240,
     "zoneid": 2754,
     "map": 354
   },
@@ -7415,7 +7415,7 @@
     "spawns": [
       0
     ],
-    "duration": 14.4,
+    "duration": 1440,
     "zoneid": null,
     "map": null
   },
@@ -9264,7 +9264,7 @@
     "spawns": [
       20
     ],
-    "duration": 254.4,
+    "duration": 240,
     "zoneid": 2754,
     "map": 354,
     "x": 30.3,
@@ -11855,7 +11855,7 @@
     "spawns": [
       20
     ],
-    "duration": 254.4,
+    "duration": 240,
     "zoneid": 3105,
     "map": 492,
     "x": 18.7,
