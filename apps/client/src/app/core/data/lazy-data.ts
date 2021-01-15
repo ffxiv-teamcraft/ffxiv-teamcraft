@@ -7,6 +7,7 @@ export interface LazyData {
   actionTimeline: any;
   actions: any;
   aetherytes: any;
+  airshipVoyages: any;
   baseParams: any;
   bigFishes: any;
   classJobsModifiers: any;
@@ -78,6 +79,7 @@ export interface LazyData {
   spearFishingNodes: any;
   stackSizes: any;
   statuses: any;
+  submarineVoyages: any;
   territoryLayers: any;
   tradeFlags: any;
   traits: any;
