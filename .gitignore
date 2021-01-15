@@ -54,3 +54,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+/apps/data-extraction/build/
+/apps/data-extraction/input/*
+/apps/data-extraction/csv/*

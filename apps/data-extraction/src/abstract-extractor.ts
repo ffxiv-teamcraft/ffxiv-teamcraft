@@ -1,0 +1,241 @@
+import { writeFileSync } from 'fs';
+import { join } from 'path';
+import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
+import { map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { XivapiList } from '@xivapi/angular-client';
+import * as request from 'request';
+
+export abstract class AbstractExtractor {
+
+  protected static outputFolder = join(__dirname, '../../../client/src/app/core/data/sources/');
+
+  protected static assetOutputFolder = join(__dirname, '../../../client/src/assets/data/');
+
+  protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
+
+  protected static TOTAL_REQUESTS = 0;
+
+  private queue: Subject<void>[] = [];
+
+  private done$ = new Subject<string>();
+
+  public isSpecific = false;
+
+  private progress: any;
+
+  constructor() {
+    interval(AbstractExtractor.XIVAPI_KEY ? 50 : 250)
+      .pipe(
+        takeUntil(this.done$)
+      )
+      .subscribe(() => {
+        const subject = this.queue.shift();
+        if (subject) {
+          subject.next();
+        }
+      });
+  }
+
+  public abstract getName(): string;
+
+  protected abstract doExtract(): any;
+
+  public extract(progress: any): Observable<string> {
+    this.progress = progress;
+    return of(null).pipe(
+      switchMap(() => {
+        this.doExtract();
+        return this.done$;
+      })
+    );
+  }
+
+  protected addQueryParam(url: string, paramName: string, paramValue: string | number): string {
+    if (url.indexOf('?') > -1) {
+      return `${url}&${paramName}=${paramValue}`;
+    } else {
+      return `${url}?${paramName}=${paramValue}`;
+    }
+  }
+
+  protected done(): void {
+    this.done$.next(this.getName());
+    this.done$.complete();
+  }
+
+  protected getCoords(coords: { x: number, y: number, z: number }, mapData: { size_factor: number, offset_y: number, offset_x: number, offset_z: number }): { x: number, y: number, z: number } {
+    const c = mapData.size_factor / 100;
+    const x = (coords.x + mapData.offset_x) * c;
+    const y = (coords.y + mapData.offset_y) * c;
+    return {
+      x: Math.floor(((41.0 / c) * ((x + 1024.0) / 2048.0) + 1) * 100) / 100,
+      y: Math.floor(((41.0 / c) * ((y + 1024.0) / 2048.0) + 1) * 100) / 100,
+      z: Math.floor((coords.z - mapData.offset_z)) / 100
+    };
+  }
+
+  protected isInLayerBounds(point: { z: number }, bounds: { z: { min: number, max: number } }): boolean {
+    // Only checking Z axis for now (which is Y using ingame naming) because bounding boxes are far from being accurate on X and Y axis, due to how map ranges work.
+    return (point.z >= bounds.z.min && point.z <= bounds.z.max);
+  }
+
+  protected get<T = any>(url: string, body?: any): Observable<T> {
+    const req$ = new Subject<void>();
+    const queryUrl = AbstractExtractor.XIVAPI_KEY ? this.addQueryParam(url, 'private_key', AbstractExtractor.XIVAPI_KEY) : url;
+    this.queue.push(req$);
+    return req$.pipe(
+      switchMap(() => {
+        AbstractExtractor.TOTAL_REQUESTS++;
+        this.progress.update({
+          requests: AbstractExtractor.TOTAL_REQUESTS
+        });
+        const res$ = new Subject<T>();
+        if (body !== undefined) {
+          request(queryUrl, {
+            body: body,
+            json: true
+          }, (err, _, res) => {
+            if (err || res === '404 not found.') {
+              if (err) {
+                console.error(err);
+              }
+              res$.next(null);
+              res$.complete();
+            } else {
+              res$.next(res);
+              res$.complete();
+            }
+          });
+        } else {
+          request(queryUrl, { json: true }, (err, _, res) => {
+            if (err || res === '404 not found.') {
+              if (err) {
+                console.error(err);
+              }
+              res$.next(null);
+              res$.complete();
+            } else {
+              res$.next(res);
+              res$.complete();
+            }
+          });
+        }
+        return res$;
+      }),
+      tap(() => {
+      })
+    );
+  }
+
+  protected getAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<XivapiList<T>> {
+    const page$ = new BehaviorSubject(1);
+    const complete$ = new Subject();
+    return page$.pipe(
+      mergeMap(page => {
+        let url = endpoint;
+        if (body) {
+          body.page = page;
+        } else {
+          url = this.addQueryParam(endpoint, 'page', page);
+        }
+        return this.get<XivapiList<T>>(url, body).pipe(
+          retry(3),
+          tap(result => {
+            if (result === undefined || result.Pagination === undefined) {
+              page$.next(page);
+            }
+            if (typeof result.Pagination.PageNext === 'number' && result.Pagination.PageNext > page) {
+              page$.next(result.Pagination.PageNext);
+            } else {
+              setTimeout(() => {
+                complete$.next(null);
+                page$.complete();
+              }, 250);
+            }
+          })
+        );
+      }),
+      takeUntil(complete$)
+    );
+  };
+
+  protected aggregateAllPages<T = any>(endpoint: string, body?: any, label?: string): Observable<T[]> {
+    const data = [];
+    const res$ = new Subject<T[]>();
+    this.getAllPages(endpoint, body, label).subscribe(page => {
+      data.push(...page.Results);
+    }, () => {
+    }, () => {
+      res$.next(data);
+      res$.complete();
+    });
+    return res$;
+  };
+
+  protected getAllEntries<T = any>(endpoint: string, startsAt0?: boolean, label?: string): Observable<T[]> {
+    const allIds = startsAt0 ? ['0'] : [];
+    const index$ = new Subject<number>();
+    this.getAllPages(this.addQueryParam(endpoint, 'columns', 'ID')).subscribe(page => {
+      allIds.push(...page.Results.map(res => res.ID));
+    }, null, () => {
+      index$.next(0);
+    });
+    const completeFetch = [];
+    return index$.pipe(
+      switchMap(index => {
+        return this.get(`${endpoint}/${allIds[index]}`).pipe(
+          tap(result => {
+            if (label === undefined) {
+              label = `${endpoint.replace('https://xivapi.com/', '').substring(0, 120)}${endpoint.length > 120 ? '...' : ''}`;
+            }
+            completeFetch.push(result);
+            if (allIds[index + 1] !== undefined) {
+              index$.next(index + 1);
+            }
+          })
+        );
+      }),
+      skip(allIds.length - 1),
+      map(() => completeFetch)
+    );
+  };
+
+  protected gubalRequest(gql: string): Observable<any> {
+    const res$ = new Subject();
+    if (process.env.HASURA_SECRET === undefined) {
+      console.error(`Missing hasura secret, skipping request`);
+      return res$;
+    }
+    request.post({
+      url: 'http://35.236.87.103/v1/graphql',
+      json: true,
+      headers: {
+        'content-type': 'application/json',
+        'x-hasura-admin-secret': process.env.HASURA_SECRET
+      },
+      body: {
+        query: gql
+      }
+    }, (err, _, res) => {
+      if (err) {
+        console.error(err);
+      } else {
+        res$.next(res);
+      }
+    });
+    return res$;
+  };
+
+  protected persistToJson(fileName, content): void {
+    writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
+  }
+
+  protected persistToJsonAsset(fileName, content): void {
+    writeFileSync(join(AbstractExtractor.assetOutputFolder, `${fileName}.json`), JSON.stringify(content, null, 2));
+  }
+
+  protected persistToTypescript(fileName, variableName, content): void {
+    const ts = `export const ${variableName} = ${JSON.stringify(content, null, 2)};`;
+    writeFileSync(join(AbstractExtractor.outputFolder, `${fileName}.ts`), ts);
+  }
+}
