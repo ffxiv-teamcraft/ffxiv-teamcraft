@@ -124,13 +124,15 @@ export class RecipeFinderComponent implements OnDestroy {
         this.settings.showOnlyNotCompletedInRecipeFinder = onlyNotCompleted;
         const possibleEntries = [];
         for (const item of this.pool) {
-          possibleEntries.push(...(this.lazyData.data.recipesIngredientLookup[item.id] || []).filter(entry => {
-            let canBeAdded = true;
-            if (onlyNotCompleted) {
-              canBeAdded = !logTracking || !logTracking.crafting.includes(entry.recipeId);
-            }
-            return canBeAdded && entry.amount <= item.amount;
-          }));
+          possibleEntries.push(...(this.lazyData.data.recipesIngredientLookup.searchIndex[item.id] || [])
+            .map(id => this.lazyData.data.recipesIngredientLookup.recipes[id])
+            .filter(entry => {
+              let canBeAdded = true;
+              if (onlyNotCompleted) {
+                canBeAdded = !logTracking || !logTracking.crafting.includes(entry.recipeId);
+              }
+              return canBeAdded && entry.amount <= item.amount;
+            }));
         }
         const uniquified = _.uniqBy(possibleEntries, 'recipeId');
         // Now that we have all possible recipes, let's filter and rate them
