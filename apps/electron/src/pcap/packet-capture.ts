@@ -41,7 +41,9 @@ export class PacketCapture {
     'weatherChange',
     'updatePositionHandler',
     'updatePositionInstance',
-    'prepareZoning'
+    'prepareZoning',
+    'submarineExplorationResult',
+    'submarineStatusList',
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
