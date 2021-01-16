@@ -120,7 +120,7 @@
   "COMMUNITY_LISTS": {
     "Tags_filter_placeholder": "タグを使用してフィルタリング",
     "Tags_filter_reset": "フィルター初期化",
-    "Exclude_filter_placeholder": "Exclude using tags",
+    "Exclude_filter_placeholder": "除外するタグ",
     "Exclude_filter_reset": "Reset exclusion filter",
     "Name_filter_placeholder": "名前を使用してフィルタリング",
     "No_lists_matching": "フィルターに一致するリストがありません"
@@ -2226,14 +2226,14 @@
     "No_collectables_for_this_level": "No collectables available"
   },
   "CRAFTING_REPLAYS": {
-    "Title": "Crafting replays",
-    "Online_replays": "Online replays",
-    "Offline_replays": "Offline replays",
+    "Title": "製作録画",
+    "Online_replays": "オンライン録画",
+    "Offline_replays": "オフライン録画",
     "Open_replay_page": "Open replay page",
     "Open_result_modal": "Open result popup",
     "Copy_to_clipboard": "Copy share link to your clipboard",
-    "Delete": "Delete replay",
-    "No_online_replays": "No online replays",
+    "Delete": "録画を削除",
+    "No_online_replays": "オンライン録画がありません",
     "No_offline_replays": "No offline replays",
     "Cannot_record": "Cannot record replays",
     "Missing_stats": "Please switch to any crafting job to let TC know about your stats before it can record anything.",
