@@ -82,9 +82,6 @@ export class PacketCaptureTrackerService {
               private settings: SettingsService, private lazyData: LazyDataService) {
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       filter(inventory => !!inventory.contentId),
-      distinctUntilChanged((a, b) => {
-        return _.isEqual(a, b);
-      }),
       map(inventory => inventory.clone()),
       shareReplay(1)
     );

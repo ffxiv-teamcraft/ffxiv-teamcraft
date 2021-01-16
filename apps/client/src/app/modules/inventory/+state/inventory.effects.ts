@@ -92,9 +92,12 @@ export class InventoryEffects {
   @Effect()
   resetInventory$ = this.actions$.pipe(
     ofType<ResetInventory>(InventoryActionTypes.ResetInventory),
-    map(() => {
-      this.ipc.send('inventory:set', {});
-      return new InventoryLoaded(new UserInventory());
+    withLatestFrom(this.inventoryFacade.inventory$),
+    map(([, inventory]) => {
+      const reset = new UserInventory();
+      reset.contentId = inventory.contentId;
+      this.ipc.send('inventory:set', reset);
+      return new InventoryLoaded(reset);
     })
   );
 

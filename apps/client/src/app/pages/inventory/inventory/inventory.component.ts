@@ -164,25 +164,6 @@ export class InventoryComponent {
     }, []));
   };
 
-  public deleteInventory(display: InventoryDisplay): void {
-    this.inventoryService.inventory$.pipe(
-      first(),
-      map(inventory => {
-        display.containerIds.forEach(containerId => {
-          const isRetainer = containerId >= 10000 && containerId < 20000;
-          if (isRetainer) {
-            delete inventory.items[`${display.containerName}:${containerId}`];
-          } else {
-            delete inventory.items[containerId];
-          }
-        });
-        return inventory;
-      })
-    ).subscribe(inventory => {
-      this.inventoryService.updateInventory(inventory, true);
-    });
-  }
-
   public getInventoryJson(display: InventoryDisplay[]): string {
     return JSON.stringify([].concat.apply([], display.map(i => i.items)));
   }
