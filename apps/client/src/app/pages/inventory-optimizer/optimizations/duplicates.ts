@@ -32,7 +32,7 @@ export class Duplicates extends InventoryOptimizer {
     if (dupes.length > 0) {
       return {
         containers: dupes.map(dupe => {
-          return dupe.retainerName || this.translate.instant(`INVENTORY.BAG.${this.inventoryFacade.getContainerName(dupe.containerId)}`);
+          return this.inventoryFacade.getContainerDisplayName(dupe);
         }).join(', ')
       };
     }
