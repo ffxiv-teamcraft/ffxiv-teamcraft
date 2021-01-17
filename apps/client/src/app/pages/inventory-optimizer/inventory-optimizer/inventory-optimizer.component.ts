@@ -46,7 +46,8 @@ export class InventoryOptimizerComponent {
               .map(optimizer => {
                 const entries = inventory.toArray()
                   .filter(item => {
-                    return this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
+                    return item.contentId === inventory.contentId
+                      && this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
                       && [
                         ContainerType.RetainerMarket,
                         ContainerType.RetainerEquippedGear
