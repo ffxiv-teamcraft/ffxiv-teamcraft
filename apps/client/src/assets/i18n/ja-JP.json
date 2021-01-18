@@ -1117,7 +1117,7 @@
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
     "Levequest_name": "リーヴ名",
-    "Level_range": "Level range",
+    "Level_range": "レベル帯",
     "No_results": "ギルドリーヴが見つかりません",
     "Add_to_list": "このギルドリーヴのアイテムをリストに追加する",
     "Quantity": "分量",
@@ -1205,7 +1205,7 @@
     "Purchase_date": "日付",
     "More_on_universalis": "Universalisで詳しく見る",
     "Server": "サーバー",
-    "Last_updated": "Last update"
+    "Last_updated": "最終更新"
   },
   "COMMENTS": {
     "Title": "コメント"
@@ -1529,7 +1529,7 @@
         "Total_reports": "Total reports for this session",
         "Last_report": "Last report",
         "Fish": "Fish",
-        "Size": "Size",
+        "Size": "サイズ",
         "Time_since_thrown": "Time since throw",
         "ERRORS": {
           "No_bait": "No bait detected, switch bait once to fix.",
@@ -1538,7 +1538,7 @@
       }
     },
     "FISHING_SPOT": {
-      "Next": "Next",
+      "Next": "次",
       "Possible_weathers": "Possible weathers",
       "Available_fishes": "Available fishes",
       "Fish_per_weather": "Fish per weather",
@@ -1717,7 +1717,7 @@
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。",
     "Start_desktop_before_game": "データの整合性を保つために、ゲームの前にデスクトップアプリを起動することを忘れないでください",
     "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
+    "Quick_search": "Ctrl + Shift + F を押して、ツール内の任意の場所から検索ポップアップを開きます",
     "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
   },
   "RECIPE_FINDER": {
@@ -1733,7 +1733,7 @@
     "Remove_from_basket": "制作リストから削除",
     "Search": "レシピ検索",
     "Generate_list": "リストに追加",
-    "Description": "Input the items you have and click \"Find recipes\" to get a list of possible recipes to craft and easily generate a crafting list from the results.",
+    "Description": "持っているアイテムを入力し、「レシピ検索」をクリックすると、作成可能なレシピのリストが表示され、結果から簡単に制作リストが生成されます。",
     "Empty_basket": "制作リストが空いています。",
     "Add_item": "アイテム追加",
     "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",
@@ -1750,7 +1750,7 @@
     "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム",
     "Shown_only_craftable": "Only what I have level for",
     "Shown_only_collectables": "Only collectables",
-    "Recipe_level": "Recipe level",
+    "Recipe_level": "制作レベル",
     "Shown_only_not_completed": "Only not done in log"
   },
   "CURRENCY_SPENDING": {
@@ -1810,11 +1810,11 @@
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
     "Please_update_inventory_popup": "持ち物を更新するには、エリアを変更してください（テレポまたは家に入って）。完了するとポップアップは閉じられます。 この問題が解決しない場合は、Teamcraft Discordサーバーでの#troubleshootingのピン留めメッセージでパケットキャプチャのトラブルシューティングガイドをお試しください。",
-    "Outdated": "Packet capture isn't working",
+    "Outdated": "パケットキャプチャが機能していません",
     "Outdated_description": "あなたのバージョンのTeamcraftは現在のゲームバージョンで正しく動作していません。今後のアップデートで修正されます。",
     "Possible_missing_firewall_rule": "Packet capture isn't working properly",
     "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
-    "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
+    "Possible_missing_firewall_rule_check": "新しいエリアにテレポした後、このメッセージが消えない場合はファイアウォールのルールがないかパケットキャプチャが別の理由で動作していません。Discordサーバーに参加して、#troubleshooting チャンネルにアクセスしてください。",
     "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
     "Switch_to_winpcap": "Switch to winpcap mode",
@@ -2055,7 +2055,7 @@
     },
     "LISTS": {
       "Merge": "You can merge two lists using the merge button.",
-      "Import": "You can import lists from various websites such as ariyala, craftingasaservce and garlandtools."
+      "Import": "Ariyala、craftingaservce、garlandtoolsなど様々なウェブサイトからリストをインポートすることができます。"
     },
     "DB": {
       "Button": "Clicking this information button opens the database page containing details on the thing it's next to (npc name, map, item, monster, etc). For items, clicking on the icon also opens database page."
