@@ -438,7 +438,7 @@
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
     "Enable_metrics_capture": "Enable metrics capture",
-    "Enable_metrics_capture_explain": "(allows to capture analytics on your gil and items income, never uploaded to the server, this is only for you)",
+    "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
     "Metrics_capture_folder": "Metrics log folder",
     "Maximum_vendor_price": "Maximum vendor price",
@@ -1225,7 +1225,7 @@
     "Lists_created_counter": "{{amount}} 個のリストが、FFXIV Teamcraftを使用して作成されました",
     "Support_patreon": "Patreonでサポートする",
     "Donation_button": "寄付する（1回）",
-    "Buy_merch": "Get Teamcraft merch",
+    "Buy_merch": "Teamcraftのグッズを買う",
     "Features_header": "始める！",
     "DESCRIPTION": {
       "Lists": "リストを作成して制作に必要な全ての素材を確認し、フレンドにシェアできます。アイテム検索でフィルターに適用して、特定アイテムを選択してから制作を開始することができます。",
@@ -1715,7 +1715,7 @@
     "Levequests": "ギルドリーヴページからリーヴを比べて獲得可能な経験値をプレビューすることができます。",
     "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
     "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
+    "Start_desktop_before_game": "データの整合性を保つために、ゲームの前にデスクトップアプリを起動することを忘れないでください",
     "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
     "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
     "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
@@ -1770,7 +1770,7 @@
     "Title": "ブログ"
   },
   "ERRORS": {
-    "Http_request_error": "There is an issue with {{tool}}, please wait a moment and try again. If the issue persists, check #announcements in the Teamcraft Discord server for updates.",
+    "Http_request_error": "{{tool}} に問題があります。しばらく待ってからもう一度やり直してください。 問題が解決しない場合は、Teamcraft Discordサーバーの #announcementsを確認して更新してください。",
     "Firebase_blocked": "データベースにアクセスできません。何か問題があるか、インターネットが切断される場合があります。"
   },
   "SEARCH": {
@@ -1809,9 +1809,9 @@
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
-    "Please_update_inventory_popup": "Please change zone (by either teleporting or entering a house) in order to update your inventory. This popup will close once it's done. If this issue persists, try the packet capture troubleshooting guide in the pinned messages of #troubleshooting in the Teamcraft Discord server.",
+    "Please_update_inventory_popup": "持ち物を更新するには、エリアを変更してください（テレポまたは家に入って）。完了するとポップアップは閉じられます。 この問題が解決しない場合は、Teamcraft Discordサーバーでの#troubleshootingのピン留めメッセージでパケットキャプチャのトラブルシューティングガイドをお試しください。",
     "Outdated": "Packet capture isn't working",
-    "Outdated_description": "Your version of Teamcraft isn't working properly with the current game version, it's being worked on and will be fixed in a future update.",
+    "Outdated_description": "あなたのバージョンのTeamcraftは現在のゲームバージョンで正しく動作していません。今後のアップデートで修正されます。",
     "Possible_missing_firewall_rule": "Packet capture isn't working properly",
     "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
     "Possible_missing_firewall_rule_check": "If this message doesn't disappear after you teleport to a new area, the firewall rule is missing or packet capture is not working at all for another reason (if it's the case, join the discord server and go to #troubleshooting channel).",
@@ -1903,7 +1903,7 @@
   },
   "GEARSETS": {
     "Title": "ギアセット",
-    "Rename_gearset": "Rename gearset",
+    "Rename_gearset": "ギアセット名を変更",
     "View_gearset": "ギアセットを見る",
     "Edit_gearset": "Edit gearset",
     "generate_list": "Generate a list",
@@ -2014,7 +2014,7 @@
   "FOLDERS": {
     "New_folder": "New folder",
     "Delete_folder": "Delete folder",
-    "Rename_folder": "Rename folder",
+    "Rename_folder": "フォルダ名を変更",
     "View_folder": "Open folder",
     "Content": "Content",
     "Folder_not_found": "Folder not found",
@@ -2026,8 +2026,8 @@
     "Next": "Next",
     "Done": "Done",
     "POPUP": {
-      "Title": "Welcome to FFXIV Teamcraft",
-      "Explanation": "Teamcraft has a small tutorial on how to use it's basic features and functionality. It will appear in the form of small windows and pop-ups on various pages throughout the app.",
+      "Title": "FFXIV Teamcraftへようこそ",
+      "Explanation": "Teamcraft には、基本的な機能と機能の使い方についての小さなチュートリアルがあります。 それは、アプリ全体のさまざまなページに小さなウィンドウやポップアップの形で表示されます。",
       "Question": "Would you like to enable this functionality?",
       "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
     },
@@ -2141,9 +2141,9 @@
   },
   "METRICS": {
     "Title": "Metrics dashboard",
-    "Today": "Today",
-    "This_week": "This week",
-    "This_month": "This month",
+    "Today": "今日",
+    "This_week": "今週",
+    "This_month": "今月",
     "Add_new_column": "Add a new column (max 5)",
     "Default_dashboard": "Default dashboard",
     "Copy_to_clipboard": "Copy export code to clipboard",
@@ -2167,14 +2167,14 @@
     "TYPES": {
       "ANY": "Any",
       "CURRENCY": "Currency",
-      "ITEM": "Item"
+      "ITEM": "アイテム"
     },
     "TABLE": {
       "Type": "Type",
       "Entry_label": "Label",
       "Value": "Value",
       "Source": "Source",
-      "Timestamp": "Timestamp"
+      "Timestamp": "日時"
     },
     "PIE_METRICS": {
       "Amount": "Amount per item",
@@ -2216,7 +2216,7 @@
   "ITEM_SEARCH_OVERLAY": {
     "Open": "Open item search overlay",
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
-    "Placeholder": "Item name",
+    "Placeholder": "アイテム名",
     "None_inside_inventory": "This item is not in any inventories.",
     "Open_in_main_window": "Open in main window",
     "Marketboard_informations": "Marketboard informations"
