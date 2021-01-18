@@ -1810,15 +1810,15 @@
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
     "Please_update_inventory_popup": "持ち物を更新するには、エリアを変更してください（テレポまたは家に入って）。完了するとポップアップは閉じられます。 この問題が解決しない場合は、Teamcraft Discordサーバーでの#troubleshootingのピン留めメッセージでパケットキャプチャのトラブルシューティングガイドをお試しください。",
-    "Outdated": "パケットキャプチャが機能していません",
+    "Outdated": "パケットキャプチャが動作していません",
     "Outdated_description": "あなたのバージョンのTeamcraftは現在のゲームバージョンで正しく動作していません。今後のアップデートで修正されます。",
-    "Possible_missing_firewall_rule": "Packet capture isn't working properly",
+    "Possible_missing_firewall_rule": "パケットキャプチャが正しく動作していません",
     "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
     "Possible_missing_firewall_rule_check": "新しいエリアにテレポした後、このメッセージが消えない場合はファイアウォールのルールがないかパケットキャプチャが別の理由で動作していません。Discordサーバーに参加して、#troubleshooting チャンネルにアクセスしてください。",
     "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
     "Switch_to_winpcap": "Switch to winpcap mode",
-    "Disable_pcap": "Disable packet capture",
+    "Disable_pcap": "パケットキャプチャを無効にする",
     "Install_npcap": "Npcap is missing from your system",
     "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
     "Install_npcap_button": "Install npcap and restart Teamcraft"
@@ -1847,8 +1847,8 @@
       "Bag": "所持品",
       "Other": "他の所持品",
       "Armory": "アーマリーチェスト",
-      "Current_Gear": "Current gear",
-      "RetainerMarket": "On sale by retainers"
+      "Current_Gear": "現在の装備",
+      "RetainerMarket": "リテイナーが出品中"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1921,7 +1921,7 @@
     "Total_cost": "Total cost (trades, gil, etc)",
     "Materia": "マテリア",
     "Amount_needed": "数量",
-    "Cost": "Cost",
+    "Cost": "価格",
     "Modal_editor": "{{itemName}} のマテリア",
     "Unavailable_slot": "Slot not available",
     "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
@@ -1933,20 +1933,20 @@
     "Stats": "サブステ",
     "Materias": "マテリア",
     "Pieces": "装備品",
-    "Import_from_ariyala": "Import from Ariyala",
+    "Import_from_ariyala": "Ariyalaからインポート",
     "Import_from_lodestone": "ロドストからインポートさせる",
-    "Import_using_pcap": "Import using packet capture",
-    "Sync_with_pcap": "Sync gearsets with packet capture",
-    "Your_gearsets": "Your gearsets",
-    "Delete_gearset": "Delete gearset",
+    "Import_using_pcap": "パケットキャプチャを使用してインポート",
+    "Sync_with_pcap": "ギアセットとパケットキャプチャを同期",
+    "Your_gearsets": "ギアセット",
+    "Delete_gearset": "ギアセットを削除",
     "Import_from_pcap_notice": "Switch to the desired gearset with the corresponding job to import it.",
-    "No_food_selected": "No food selected",
+    "No_food_selected": "食べ物が選択されていません",
     "Generate_list": "Generate a list",
     "Clone_gearset": "Copy this on your account",
     "Clone_gearset_from_sync": "Create a copy of this gearset",
-    "You_have_no_gearsets": "You have no gearsets",
-    "Favorite_gearsets": "Favorite gearsets",
-    "Update_from_pcap": "Update using packet capture",
+    "You_have_no_gearsets": "ギアセットがありません",
+    "Favorite_gearsets": "お気に入りのギアセット",
+    "Update_from_pcap": "パケット キャプチャを使用して更新",
     "Copy_as_text": "Copy this gearset as text",
     "Include_all_tools": "Include tools for the other jobs too",
     "Use_in_simulator": "Use these stats in the simulator",
@@ -1988,8 +1988,8 @@
       "Paste_link_step_title": "ギアセットのリンク",
       "Pick_your_gearset": "Pick your gearset",
       "Submit": "比較する",
-      "Your_gearset": "Your gearset",
-      "Other_gearset": "Other gearset",
+      "Your_gearset": "ギアセット",
+      "Other_gearset": "その他のギアセット",
       "Diff": "Diff",
       "Avg_melding_chances": "Avg. overmeld chances"
     },
@@ -2012,14 +2012,14 @@
     }
   },
   "FOLDERS": {
-    "New_folder": "New folder",
-    "Delete_folder": "Delete folder",
+    "New_folder": "新規フォルダ",
+    "Delete_folder": "フォルダを削除",
     "Rename_folder": "フォルダ名を変更",
-    "View_folder": "Open folder",
+    "View_folder": "フォルダを開く",
     "Content": "Content",
     "Folder_not_found": "Folder not found",
     "Your_folders": "Your folders",
-    "Favorite_folders": "Favorite folders"
+    "Favorite_folders": "お気に入りフォルダ"
   },
   "TUTORIAL": {
     "Start": "Start tutorial for this page",
@@ -2054,7 +2054,7 @@
       "Alarm_button": "Click here to create an alarm for this item, to be alerted when it spawns."
     },
     "LISTS": {
-      "Merge": "You can merge two lists using the merge button.",
+      "Merge": "マージボタンを使用して、2つのリストをマージできます。",
       "Import": "Ariyala、craftingaservce、garlandtoolsなど様々なウェブサイトからリストをインポートすることができます。"
     },
     "DB": {
@@ -2106,8 +2106,8 @@
         "Save": "Don't forget to save your modifications after you edited your dashboard.",
         "Revert": "Or if you don't like what you did, use this to go back to the original layout you had before editing it.",
         "Delete_column": "Want to remove a column? Here it is !",
-        "Add_panel": "Click here to add a new panel.",
-        "Reorder": "You can use drag and drop to move panels anywhere you want.",
+        "Add_panel": "ここをクリックして新しいパネルを追加します。",
+        "Reorder": "ドラッグアンドドロップで、任意の場所にパネルを移動できます。",
         "Data_type": "First of all, select the metric type you want to use.",
         "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
         "Title": "Set a title for your panel",
@@ -2120,7 +2120,7 @@
     "USERS": {
       "Title": "Users",
       "X_characters_linked": "{{amount}} character(s) linked",
-      "Email": "Email",
+      "Email": "Eメール",
       "Uid": "UID",
       "No_users_found": "No users found",
       "Integrity_check": "Integrity check",
@@ -2128,10 +2128,10 @@
         "Label": "Search mode",
         "UID": "UID",
         "EMAIL": "Email",
-        "CHARACTER": "Character"
+        "CHARACTER": "キャラクター"
       },
       "ACTIONS": {
-        "Profile": "Open profile",
+        "Profile": "プロファイルを開く",
         "Check": "Run integrity check"
       },
       "INTEGRITY_CHECK": {
@@ -2270,7 +2270,7 @@
       "Label": "ステータス",
       "OPENED": "Opened",
       "IN_PROGRESS": "進行中",
-      "ARCHIVED": "Archived"
+      "ARCHIVED": "アーカイブ済み"
     },
     "CREATION": {
       "Name": "名前",
@@ -2313,7 +2313,7 @@
       "Progression": "Progression",
       "Candidates": "Candidates ({{amount}})",
       "Candidates_public_display": "Candidates : {{amount}}",
-      "Apply": "Apply",
+      "Apply": "適用",
       "Edit": "Edit this commission",
       "No_candidates": "No candidates",
       "Your_offer": "Your offer",
