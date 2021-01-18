@@ -1,6 +1,6 @@
 {
   "Quests": "クエスト",
-  "Facebook_notice": "Facebook login is no longer available, you can add a password to your account using the \"reset password\" system, or by asking Miu on discord.",
+  "Facebook_notice": "Facebookからのログインは利用できなくなりました。「パスワードのリセット」システムを使用してアカウントにパスワードを追加するか、miuにdiscordで問い合わせてください。",
   "Search_placeholder": "{{type}} 検索",
   "Pick_a_list": "リストを選択する",
   "Pick_a_user": "ユーザーを選択する",
@@ -17,7 +17,7 @@
   "Hide_zone_duplicates": "複数エリアを隠す(複数エリアにあるアイテムの場合、一度だけ表示される)",
   "Patch_notes": "{{version}} の変更",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
-  "Selection": "Selection",
+  "Selection": "選択",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "このアカウントは既に使われています",
     "auth/email-already-in-use": "このメールアドレスは既に使われています",
@@ -42,7 +42,7 @@
     "Share_url": "検索URLをクリップボードにコピーする",
     "Share_url_copied": "検索URLがクリップボードにコピーされました",
     "Only_craftable": "レシピのみ",
-    "Want_filters": "Need more filters?",
+    "Want_filters": "さらにフィルターが必要ですか？",
     "Open_search": "Open search page instead"
   },
   "Use_as_default_character": "デフォルトキャラとして使う",
