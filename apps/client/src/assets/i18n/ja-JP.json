@@ -368,7 +368,7 @@
     "Title": "設定",
     "General": "一般",
     "Link_base": "アイテムリンク",
-    "Region": "Region",
+    "Region": "地域",
     "Region_explain": "Data source and functions based on specific game version will be adjusted per region. Some of them may not be available in certain region.",
     "Proxy": "プロキシ",
     "Proxy_bypass": "No proxy for",
@@ -437,10 +437,10 @@
     "Scrolling_behavior": "Scrolling behavior",
     "Scrolling_behavior_explain": "Configure how scrolling in list panels behaves, default means allow up to 12 items per panel before scrolling.",
     "Enable_auto_log_check": "Automatically check items as done in log when they are gathered/crafted",
-    "Enable_metrics_capture": "Enable metrics capture",
+    "Enable_metrics_capture": "メトリックキャプチャを有効にする",
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "This feature will be added in a future update, but enabling the data capture now means that once it'll be here, you will have data starting now instead of when it's added to the app.",
-    "Metrics_capture_folder": "Metrics log folder",
+    "Metrics_capture_folder": "メトリックログフォルダ",
     "Maximum_vendor_price": "Maximum vendor price",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "Rawsock_flag": "Use RawSocket for packet capture",
@@ -464,12 +464,12 @@
       "Networking": "Networking",
       "Theme": "テーマ",
       "Search": "検索",
-      "Lists": "Lists",
+      "Lists": "リスト",
       "Other": "その他",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
-      "Global": "Global",
+      "Global": "グローバル",
       "CN": "中国",
       "KR": "韓国"
     }
@@ -492,12 +492,12 @@
     "Veteran": "ベテラン",
     "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
-    "Open_public_profile": "Open public profile",
+    "Open_public_profile": "公開プロフィールを開く",
     "Community_contributions": "Community contributions",
     "Fishing_rankings": "Fishing rankings",
-    "Total_rankings": "Total rankings",
-    "Loading_fish_rankings": "Loading fishing rankings",
-    "Gearset_priority": "Priority",
+    "Total_rankings": "総合ランキング",
+    "Loading_fish_rankings": "釣りのランキングを読み込み中",
+    "Gearset_priority": "優先度",
     "Gearset_priority_explain": "Used to decide which recipe to pick for items that can be crafted by multiple jobs like ingots, nuggets and other airship repair materials.",
     "VERIFICATION": {
       "Title": "キャラクター認証",
@@ -548,8 +548,8 @@
     }
   },
   "LIST": {
-    "Archive": "Archive",
-    "Unarchive": "Unarchive",
+    "Archive": "アーカイブ",
+    "Unarchive": "アーカイブ解除",
     "Regenerate": "最新Teamcraftバージョンにリストをアップデートする",
     "Rename": "リスト名を変更する",
     "Copied_x_times": "{{count}} 回コピーされました",
@@ -951,7 +951,7 @@
     "Recipe_picker_placeholder": "製作しようとするアイテム名を入力してください",
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
-    "Total_macro_duration": "Total macro duration: {{duration}}s.",
+    "Total_macro_duration": "マクロの合計時間: {{duration}}秒。",
     "Compact": "Compact",
     "Detailed": "詳細",
     "STATE": {
@@ -1469,8 +1469,8 @@
     "Ishgard_restoration": "イシュガルド復興",
     "ITEM": {
       "Masterpiece_exp_tooltip": "次のレベルに必要な経験値の％",
-      "Required_craftsmanship": "Req. Craftsmanship",
-      "Required_control": "Req. Control",
+      "Required_craftsmanship": "必要作業精度",
+      "Required_control": "必要加工精度",
       "Mark_as_done_in_gathering_log": "完了としてログにマーク",
       "X_Equipped": "{{amount}} Equipped:",
       "Item_series": "Set details"
@@ -1521,8 +1521,8 @@
         "Mooch_report": "Mooch",
         "Current_weather": "現在の天気",
         "Previous_weather": "以前の天気",
-        "Spot": "Spot",
-        "Possible_fish": "Possible fish",
+        "Spot": "場所",
+        "Possible_fish": "釣れる可能性のある魚",
         "Stats": "Stats",
         "Statuses": "Statuses",
         "No_statuses": "No relevant statuses",
@@ -1697,7 +1697,7 @@
     "Trait": "特性",
     "Any": "任意",
     "Achievement": "アチーブメント",
-    "Fishing-spot": "Fishing spot"
+    "Fishing-spot": "釣り場"
   },
   "SEARCH_FILTERS": {
     "Level": "レベル",
@@ -1817,16 +1817,16 @@
     "Possible_missing_firewall_rule_check": "新しいエリアにテレポした後、このメッセージが消えない場合はファイアウォールのルールがないかパケットキャプチャが別の理由で動作していません。Discordサーバーに参加して、#troubleshooting チャンネルにアクセスしてください。",
     "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
-    "Switch_to_winpcap": "Switch to winpcap mode",
+    "Switch_to_winpcap": "Winpcapモードに切り替える",
     "Disable_pcap": "パケットキャプチャを無効にする",
-    "Install_npcap": "Npcap is missing from your system",
+    "Install_npcap": "Npcapがシステムから見つかりません。",
     "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap_button": "Npcap をインストールして Teamcraft を再起動します"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggest changing region to {{region}}",
     "Banner_description": "You can change the region to which you played in for better experience in database, simulator, packet capture, etc.",
-    "Button_label": "Change region"
+    "Button_label": "地域を変更"
   },
   "INVENTORY": {
     "Title": "所持品",
@@ -2322,7 +2322,7 @@
       "Resign": "Resign",
       "Contractor": "Contractor",
       "Open_list": "Open the list",
-      "List": "List",
+      "List": "リスト",
       "Mark_as_completed": "Mark commission as completed",
       "Hire": "Hire this contractor",
       "Progression_Tip": "Once the list completion is 100%, you'll be able to mark this commission as completed",
@@ -2400,12 +2400,12 @@
       "Title": "Commission import",
       "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
       "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "No_items": "アイテムがありません"
     }
   },
   "MAPPY": {
     "Total_entries": "Total entries",
-    "Last_updated": "Last updated",
+    "Last_updated": "最終更新",
     "Last_bnpc_update": "Last monster position uploaded",
     "Last_node_update": "Last node position uploaded",
     "Clear_map": "Clear this map",
