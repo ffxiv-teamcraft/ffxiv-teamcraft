@@ -1839,7 +1839,7 @@
     "Reset_inventory": "所持品の初期化",
     "Clean_all": "全所持品の初期化",
     "Search_for_an_item": "所持状況を確認",
-    "Filter_by_expansion": "Filter by expansion",
+    "Filter_by_expansion": "拡張パッケージで絞り込む",
     "In_x_containers": "In {{amount}} containers",
     "BAG": {
       "SaddleBag": "チョコボかばん",
@@ -1906,7 +1906,7 @@
     "Rename_gearset": "ギアセット名を変更",
     "View_gearset": "ギアセットを見る",
     "Edit_gearset": "Edit gearset",
-    "generate_list": "Generate a list",
+    "generate_list": "リストを生成",
     "Content": "Content",
     "Stat_name": "サブステ名",
     "Current_value": "Current",
@@ -1914,7 +1914,7 @@
     "Add_materia": "マテリアを装着する",
     "No_materia": "No materia",
     "Value": "Value",
-    "Empty_slot": "Empty slot",
+    "Empty_slot": "空のスロット",
     "Filters": "フィルター",
     "Total_stats": "Total stats",
     "Total_materias_needed": "Total materias needed",
@@ -1926,7 +1926,7 @@
     "Unavailable_slot": "Slot not available",
     "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Pick a job",
-    "New_gearset": "New gearset",
+    "New_gearset": "新しいギアセット",
     "Please_input_ariyala_link": "Please input an ariyala link",
     "Link_not_supported": "Link not supported",
     "Compare_gearset": "Compare this gearset with another",
@@ -1943,7 +1943,7 @@
     "No_food_selected": "食べ物が選択されていません",
     "Generate_list": "Generate a list",
     "Clone_gearset": "Copy this on your account",
-    "Clone_gearset_from_sync": "Create a copy of this gearset",
+    "Clone_gearset_from_sync": "このギアセットのコピーを作成する",
     "You_have_no_gearsets": "ギアセットがありません",
     "Favorite_gearsets": "お気に入りのギアセット",
     "Update_from_pcap": "パケット キャプチャを使用して更新",
@@ -1981,7 +1981,7 @@
       "Compare_popup_title": "{{setName}} を比較させる",
       "Error_title": "ギアセットを比較できさせなかった",
       "Error_description": "Please make sure the gearset you entered exists and is the same type as the current one (same main stat)",
-      "Type": "Gearset type",
+      "Type": "ギアセットの種類",
       "Ariyala": "An ariyala set",
       "External_gearset": "A Teamcraft gearset from someone else",
       "Personal_gearset": "One of your gearsets",
@@ -2017,19 +2017,19 @@
     "Rename_folder": "フォルダ名を変更",
     "View_folder": "フォルダを開く",
     "Content": "Content",
-    "Folder_not_found": "Folder not found",
-    "Your_folders": "Your folders",
+    "Folder_not_found": "フォルダが見つかりません",
+    "Your_folders": "あなたのフォルダ",
     "Favorite_folders": "お気に入りフォルダ"
   },
   "TUTORIAL": {
     "Start": "Start tutorial for this page",
-    "Next": "Next",
-    "Done": "Done",
+    "Next": "次",
+    "Done": "完了",
     "POPUP": {
       "Title": "FFXIV Teamcraftへようこそ",
       "Explanation": "Teamcraft には、基本的な機能と機能の使い方についての小さなチュートリアルがあります。 それは、アプリ全体のさまざまなページに小さなウィンドウやポップアップの形で表示されます。",
-      "Question": "Would you like to enable this functionality?",
-      "Can_be_changed_in_settings": "Can be switched on or off inside the settings"
+      "Question": "この機能を有効にしますか？",
+      "Can_be_changed_in_settings": "設定内でオンまたはオフに切り替えることができます"
     },
     "APP": {
       "Profile": "Hover your name to access profile editor and configure your levels, your stats, and more."
@@ -2079,15 +2079,15 @@
       "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
     },
     "ALARMS": {
-      "Settings": "Click here to edit alarms settings (sound, volume, etc).",
-      "Custom": "Click here to create a custom alarm.",
+      "Settings": "アラームの設定（音量、音量など）を編集するには、ここをクリックしてください。",
+      "Custom": "カスタムアラームを作成するにはここをクリックしてください。",
       "Compact": "Click here to toggle alarms' compact display."
     },
     "COMMUNITY_ROTATIONS": {
       "Text_filter": "Use this input field to find a rotation using its name",
-      "Tags_filter": "Filter by tags using this select box",
-      "Rlvl_filter": "Filter by recipe level using this select box",
-      "Durability_filter": "Filter by durability using this select box",
+      "Tags_filter": "この選択ボックスを使用してタグでフィルター",
+      "Rlvl_filter": "この選択ボックスを使用してレシピレベルでフィルター",
+      "Durability_filter": "この選択ボックスを使用して耐久度でフィルター",
       "Min_craftsmanship": "Filter by minimum craftsmanship required here, this will find only rotations with required craftsmanship < your value.",
       "Min_control": "Filter by minimum control required here, this will find only rotations with required control < your value.",
       "Min_cp": "Filter by minimum cp required here, this will find only rotations with required cp < your value.",
