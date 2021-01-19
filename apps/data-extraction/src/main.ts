@@ -123,7 +123,7 @@ const operationsSelection = new MultiSelect({
     'everything',
     ...extractors.map(extractor => {
       return extractor.getName();
-    })
+    }).sort((a, b) => a.localeCompare(b)),
   ]
 });
 
