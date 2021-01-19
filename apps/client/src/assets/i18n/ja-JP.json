@@ -904,8 +904,8 @@
     "Reliability": "確実",
     "Average_hq": "平均HQ",
     "Median_HQ": "Median HQ",
-    "Min_HQ": "Min. HQ",
-    "Max_HQ": "Max. HQ",
+    "Min_HQ": "最低HQ率",
+    "Max_HQ": "最高HQ率",
     "Specialist": "マイスター",
     "New_rotation": "新しいスキル回し",
     "Rotations": "スキル回し",
@@ -1040,7 +1040,7 @@
     },
     "CONFIGURATION": {
       "Job": "ジョブ",
-      "Job_not_configured": "It seems like you haven't configured this job yet.  Go to your profile page to configure it properly and set stats.",
+      "Job_not_configured": "このジョブはまだ設定されていないようです。プロフィールページで確認してから, ステータスを設定してください。",
       "Job_not_configured_anonymous": "正確なシミュレーションのためにサブステの入力やアカウントにログインをしてください",
       "Select_job": "ジョブを選び出します",
       "Craftsmanship": "作業精度",
@@ -1092,8 +1092,8 @@
       "Use_rapid_synthesis_earlier": "'突貫作業'を工程の最後に入れないで下さい。失敗する恐れがありますので、早く使用するのが制作スキル回しの信頼性が向上します。",
       "Do_not_use_brand_without_name": "「ブランド・オブ・エレメンタル\"スキルは\" アート・オブ・エレメンタルの芸術」スキルを活性化して使用してください",
       "Avoid_using_good_actions": "マクロを構想する時、高品質を要求するアクションを使用しないでください。高品質は予測が不可能です",
-      "Requires_reuse_to_proc": "Your rotation requires Reuse to proc in order to work properly, make sure it can work without a reuse proc.",
-      "Use_reuse": "Your rotation reaches 100% HQ and you have enough CP to use Reuse, consider adding it to get extra mats back."
+      "Requires_reuse_to_proc": "スキル回しをでprocを正しく行うためにはリユースする必要があります。リユースのprocなしで動作することを確認してください。",
+      "Use_reuse": "100%HQになる上、リユースできるCPが残っています。リユースを追加して素材を取り戻すことを検討してみてください。"
     }
   },
   "PRICING": {
@@ -1241,7 +1241,7 @@
     "New_update_available": "新しいアップデートがあります! ",
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。"
   },
   "LOG_TRACKER": {
     "Title": "制作/採集手帳トラッカー",
@@ -1905,7 +1905,7 @@
     "Title": "ギアセット",
     "Rename_gearset": "ギアセット名を変更",
     "View_gearset": "ギアセットを見る",
-    "Edit_gearset": "Edit gearset",
+    "Edit_gearset": "ギアセットを編集",
     "generate_list": "リストを生成",
     "Content": "Content",
     "Stat_name": "サブステ名",
@@ -1927,9 +1927,9 @@
     "Warning_job_switch": "Switching job will remove crystal, main hand and off hand, including materias. Please take note of them before switching if you want to use the same melds.",
     "Pick_a_job": "Pick a job",
     "New_gearset": "新しいギアセット",
-    "Please_input_ariyala_link": "Please input an ariyala link",
-    "Link_not_supported": "Link not supported",
-    "Compare_gearset": "Compare this gearset with another",
+    "Please_input_ariyala_link": "Ariyalaのリンクを入力してください",
+    "Link_not_supported": "リンクはサポートされていません",
+    "Compare_gearset": "このギアセットを別のものと比較する",
     "Stats": "サブステ",
     "Materias": "マテリア",
     "Pieces": "装備品",
@@ -2004,7 +2004,7 @@
     },
     "SYNC": {
       "Title": "Synchronize gearsets",
-      "Tag": "Sync",
+      "Tag": "同期",
       "Tag_tooltip": "This gearset is from a synchronization operated using packet capture, it'll be updated if you synchronize again for this job.",
       "Importing_gearset": "Importing set for {{name}}",
       "Imported_gearset": "Imported set for {{name}}",
@@ -2022,7 +2022,7 @@
     "Favorite_folders": "お気に入りフォルダ"
   },
   "TUTORIAL": {
-    "Start": "Start tutorial for this page",
+    "Start": "このページのチュートリアルを開始",
     "Next": "次",
     "Done": "完了",
     "POPUP": {
