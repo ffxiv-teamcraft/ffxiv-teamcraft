@@ -2070,10 +2070,10 @@
     },
     "SIMULATOR": {
       "Character_configuration": "Configure your level and your stats here.",
-      "HQ_ingredients": "Input HQ ingredients here to set a starting quality.",
+      "HQ_ingredients": "ここでHQの材料を入力すると、初期品質を設定できます。",
       "Consumables": "Configure consumables and FC buffs here.",
-      "Right_click_condition": "Right click on an action to set its condition (good, excellent, poor, fail, etc) and predict the results.",
-      "Save_as_new": "Click here to save a copy of this rotation in your account.",
+      "Right_click_condition": "アクションを右クリックして、条件(高品質、最高品質、低品質、失敗など) を設定し、結果を予測します。",
+      "Save_as_new": "ここをクリックして、このスキル回しのコピーをアカウントに保存します。",
       "Import_ingame_macro": "Click here to import from ingame macro.",
       "Generate_ingame_macro": "Click here to generate an ingame macro for this rotation.",
       "Share_with_stats": "Click here to open the share popup, allowing you to share with your stats and consumables."
@@ -2122,17 +2122,17 @@
       "X_characters_linked": "{{amount}} character(s) linked",
       "Email": "Eメール",
       "Uid": "UID",
-      "No_users_found": "No users found",
-      "Integrity_check": "Integrity check",
+      "No_users_found": "ユーザーが見つかりませんでした",
+      "Integrity_check": "整合性チェック",
       "SEARCH_MODE": {
-        "Label": "Search mode",
+        "Label": "検索モード",
         "UID": "UID",
-        "EMAIL": "Email",
+        "EMAIL": "Eメール",
         "CHARACTER": "キャラクター"
       },
       "ACTIONS": {
         "Profile": "プロファイルを開く",
-        "Check": "Run integrity check"
+        "Check": "整合性チェックを実行"
       },
       "INTEGRITY_CHECK": {
         "All_characters_valid": "All characters linked are valid"
@@ -2144,16 +2144,16 @@
     "Today": "今日",
     "This_week": "今週",
     "This_month": "今月",
-    "Add_new_column": "Add a new column (max 5)",
+    "Add_new_column": "新しい列を追加 (最大 5)",
     "Default_dashboard": "Default dashboard",
     "Copy_to_clipboard": "Copy export code to clipboard",
     "Export_copied_to_clipboard": "Export code copied to clipboard",
-    "Import_dashboard": "Import a dashboard",
-    "Export_code": "Dashboard export code",
-    "Import_failed": "Dashboard import failed, the code is invalid",
-    "Import_success": "Dashboard imported and selected",
+    "Import_dashboard": "ダッシュボードをインポート",
+    "Export_code": "ダッシュボードのエクスポートコード",
+    "Import_failed": "ダッシュボードのインポートに失敗しました。コードが無効です。",
+    "Import_success": "ダッシュボードをインポートして選択しました",
     "Nothing_to_show": "No data to display",
-    "Nothing_to_show_description": "Make sure you selected a period in which TC captured data and check that this option is enabled (inside settings -> desktop -> Enable metrics capture)",
+    "Nothing_to_show_description": "TCがデータをキャプチャする期間を選択したことを確認し、このオプションが有効になっていることを確認してください（設定 -> デスクトップ -> メトリックキャプチャを有効にする）",
     "SOURCES": {
       "UNKNOWN": "不明",
       "GATHERING": "採集",
@@ -2192,10 +2192,10 @@
       "Font_size": "Font size",
       "Value_label": "Value label",
       "Pie_metric": "Metric",
-      "Add_filter": "Add filter",
+      "Add_filter": "フィルターを追加",
       "Operator": "Operator",
-      "Cannot_edit_default": "You can't edit default layout, create a new layout to customize it instead",
-      "Cannot_delete_default": "You can't delete default layout",
+      "Cannot_edit_default": "デフォルトのレイアウトは編集できません。代わりにカスタマイズできる新しいレイアウトを作成します。",
+      "Cannot_delete_default": "デフォルトのレイアウトは削除できません",
       "FILTER_TIPS": {
         "FishFilter": "Accept only fishes coming from fishing spots",
         "ItemFilter": "Accepts only a given set of items",
@@ -2208,7 +2208,7 @@
       "DISPLAY_TYPES": {
         "total": "Aggregated value",
         "histogram": "Evolution over time",
-        "pie-chart": "Pie chart",
+        "pie-chart": "円グラフ",
         "table": "Table of all matching entries"
       }
     }
@@ -2218,8 +2218,8 @@
     "Intro_message": "Search for an item to see details about it, inventory and marketboard informations",
     "Placeholder": "アイテム名",
     "None_inside_inventory": "This item is not in any inventories.",
-    "Open_in_main_window": "Open in main window",
-    "Marketboard_informations": "Marketboard informations"
+    "Open_in_main_window": "メインウィンドウで開く",
+    "Marketboard_informations": "マーケットボード情報"
   },
   "COLLECTABLES": {
     "Title": "収集品",
