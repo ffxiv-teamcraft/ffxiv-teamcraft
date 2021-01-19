@@ -1,13 +1,17 @@
 import { DataReporter } from './data-reporter';
 import { Observable } from 'rxjs/Observable';
-import { UpdateInventorySlot } from '../../model/pcap';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
-import { merge, zip } from 'rxjs';
+import { merge } from 'rxjs';
+import { LazyDataService } from '../data/lazy-data.service';
+import { ExplorationResultReporter, ExplorationType } from './exploration-result.reporter';
 
-export class SubmarineExplorationResultReporter implements DataReporter {
+export class SubmarineExplorationResultReporter implements DataReporter, ExplorationResultReporter {
   private statusList$;
   private resultLog$;
+
+  constructor(private lazyData: LazyDataService) {
+  }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const isSubmarineMenuOpen$ = merge(
@@ -24,28 +28,82 @@ export class SubmarineExplorationResultReporter implements DataReporter {
 
     this.resultLog$ = packets$.pipe(
       ofPacketType('submarineExplorationResult'),
-      filter((packet) => packet.explorationResult),
       map((packet) => packet.explorationResult),
+      tap((data) => {
+        console.log(data);
+      })
     );
 
     this.statusList$ = packets$.pipe(
       ofPacketType('submarineStatusList'),
       map((packet) => packet.statusList),
-    );
-
-    return merge(
-      this.createSubmarineUpdateObservable(packets$, 0),
-      this.createSubmarineUpdateObservable(packets$, 1),
-      this.createSubmarineUpdateObservable(packets$, 2),
-      this.createSubmarineUpdateObservable(packets$, 3)
-    ).pipe(
-      withLatestFrom(isSubmarineMenuOpen$),
-      filter(([, isOpen]) => isOpen),
-      map(([submarineBuild]) => submarineBuild),
-      withLatestFrom(this.resultLog$),
-      map(([status, resultLog]) => [{ status, resultLog }]),
       tap((data) => {
         console.log(data);
+      })
+    );
+
+    const voyages$ = packets$.pipe(
+      ofPacketType('updateInventorySlot'),
+      withLatestFrom(isSubmarineMenuOpen$),
+      filter(([updateInventory, isOpen]) => {
+        return isOpen && updateInventory.containerId === 25004 && [0, 5, 10, 15].includes(updateInventory.slot) && updateInventory.condition < 30000;
+      }),
+      map(([updateInventory]) => updateInventory.slot / 5),
+      withLatestFrom(this.statusList$),
+      tap((data) => {
+        console.log(data);
+      }),
+      map(([submarineSlot, statusList]) => {
+        const submarine = statusList[submarineSlot];
+        console.log('BUIIIILDS');
+        return this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
+      }),
+      tap((data) => {
+        console.log(data);
+      }),
+      withLatestFrom(this.resultLog$),
+      map(([stats, resultLog]: any[]): any[] => {
+        const reports = [];
+        resultLog.forEach((voyage) => {
+          reports.push({
+            voyageId: voyage.sectorId,
+            itemId: voyage.loot1ItemId,
+            hq: voyage.loot1isHQ,
+            quantity: voyage.loot1Quantity,
+            surveillanceProc: voyage.loot1SurveillanceResult,
+            retrievalProc: voyage.loot1RetrievalResult,
+            favorProc: voyage.favorResult,
+            surveillance: stats.surveillance,
+            retrieval: stats.retrieval,
+            favor: stats.favor,
+            type: this.getExplorationType()
+          });
+          if (voyage.loot2ItemId) {
+            reports.push({
+              voyageId: voyage.sectorId,
+              itemId: voyage.loot2ItemId,
+              hq: voyage.loot2isHQ,
+              quantity: voyage.loot2Quantity,
+              surveillanceProc: voyage.loot2SurveillanceResult,
+              retrievalProc: voyage.loot2RetrievalResult,
+              favorProc: null,
+              surveillance: stats.surveillance,
+              retrieval: stats.retrieval,
+              favor: stats.favor,
+              type: this.getExplorationType()
+            });
+          }
+        });
+        return reports;
+      }),
+      tap((data) => {
+        console.log(data);
+      })
+    );
+
+    return voyages$.pipe(
+      map((data: any[]) => {
+        return data;
       })
     );
   }
@@ -54,34 +112,20 @@ export class SubmarineExplorationResultReporter implements DataReporter {
     return 'submarineExplorationResult';
   }
 
-  private createSubmarineUpdateObservable(packets$: Observable<any>, index: number) {
-    const hull_slot = (index === 0 ? 0 : 5 * index);
-    return zip(
-      this.statusList$,
-      this.createSubmarinePartUpdateObservable(packets$, hull_slot),
-      this.createSubmarinePartUpdateObservable(packets$, hull_slot + 1),
-      this.createSubmarinePartUpdateObservable(packets$, hull_slot + 2),
-      this.createSubmarinePartUpdateObservable(packets$, hull_slot + 3)
-    ).pipe(
-      map(([statusList, hull, stern, bow, bridge]) => {
-        return {
-          submarineSlot: index,
-          rank: statusList[index]['rank'],
-          hull,
-          stern,
-          bow,
-          bridge
-        };
-      })
-    );
+  getExplorationType(): ExplorationType {
+    return ExplorationType.SUBMARINE;
   }
 
-  private createSubmarinePartUpdateObservable(packets$: Observable<any>, slot): Observable<UpdateInventorySlot> {
-    return packets$.pipe(
-      ofPacketType('updateInventorySlot'),
-      filter((update: UpdateInventorySlot) => {
-        return update.containerId === 25004 && update.slot === slot && update.condition < 30000;
-      })
-    );
+  private getBuildStats(rankId: number, hullId: number, sternId: number, bowId: number, bridgeId: number): { surveillance: number, retrieval: number, favor: number } {
+    const hull = this.lazyData.data.submarineParts[hullId];
+    const stern = this.lazyData.data.submarineParts[sternId];
+    const bow = this.lazyData.data.submarineParts[bowId];
+    const bridge = this.lazyData.data.submarineParts[bridgeId];
+    const rank = this.lazyData.data.submarineRanks[rankId];
+    return {
+      surveillance: +hull.Surveillance + +stern.Surveillance + +bow.Surveillance + +bridge.Surveillance + +rank.SurveillanceBonus,
+      retrieval: +hull.Retrieval + +stern.Retrieval + +bow.Retrieval + +bridge.Retrieval + +rank.RetrievalBonus,
+      favor: +hull.Favor + +stern.Favor + bow.Favor + +bridge.Favor + +rank.FavorBonus
+    };
   }
 }
