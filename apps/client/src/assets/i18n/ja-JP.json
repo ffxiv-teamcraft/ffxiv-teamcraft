@@ -443,7 +443,7 @@
     "Metrics_capture_folder": "メトリックログフォルダ",
     "Maximum_vendor_price": "Maximum vendor price",
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
-    "Rawsock_flag": "Use RawSocket for packet capture",
+    "Rawsock_flag": "パケットキャプチャにRawSocketを使用",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
     "COLORS": {
       "Background": "背景色",
@@ -493,8 +493,8 @@
     "Autofill_from_packets": "パケットキャプチャを利用して、能力値を自動で埋める",
     "Autofill_stats_explain": "更新のために必要なジョブに変更してください、また完了すると、このポップアップウィンドウを閉じます。（食品の効果が含まれていないようにしてください。シミュレータ使用時に食品の効果が含まれている能力だったら使用するときに問題が発生する可能性があります）",
     "Open_public_profile": "公開プロフィールを開く",
-    "Community_contributions": "Community contributions",
-    "Fishing_rankings": "Fishing rankings",
+    "Community_contributions": "コミュニティの貢献",
+    "Fishing_rankings": "釣りのランキング",
     "Total_rankings": "総合ランキング",
     "Loading_fish_rankings": "釣りのランキングを読み込み中",
     "Gearset_priority": "優先度",
@@ -508,7 +508,7 @@
     }
   },
   "LISTS": {
-    "Load_archived": "Load archived lists",
+    "Load_archived": "アーカイブされたリストを読み込む",
     "Needs_verification": "フリーカンパニーにシェアされたリストを確認するためには、あなたのキャラクターを認証してください",
     "Regenerate_all": "全リストを更新する",
     "Regenerated_all": "リストが更新されました",
@@ -517,7 +517,7 @@
     "Lists_merged": "リスト併合が完了されました！",
     "Shared_lists": "自分と共有されているリスト",
     "Add_selection": "選択項目をリストに追加する",
-    "Reset_selection": "Reset selection",
+    "Reset_selection": "選択を解除",
     "Add_selection_to_list": "選択項目をリストに追加",
     "Your_lists": "マイリスト",
     "Outdated_tag": "古い",
@@ -573,7 +573,7 @@
     "Mark_whole_panel_done": "パネルの内容を完了済みと表示する",
     "Set_color": "リストカラー設定",
     "Go_to_pinned": "固定しておいたリストに行く（右クリックすると固定解除）",
-    "Reset_panel": "Reset all the items of this panel",
+    "Reset_panel": "このパネルのすべてのアイテムをリセット",
     "Progression_tooltip_materials": "Materials obtained: {{amount}}%",
     "Progression_tooltip_items": "制作されたアイテム: {{amount}}%",
     "Final_item": "Final item",
@@ -1072,10 +1072,10 @@
       "UNSAFE_ACTION": "セーフモードに合わないスキルが使用される",
       "DURABILITY_REACHED_ZERO": "作業完了の直前に耐久度が0になった",
       "NOT_ENOUGH_CP": "CP不足",
-      "MISSING_LEVEL_REQUIREMENT": "You don't have required level to craft this item.",
+      "MISSING_LEVEL_REQUIREMENT": "このアイテムを制作するにはレベルが足りません。",
       "NOT_SPECIALIST": "非マイスターは、使用できないマイスタースキル回し",
       "NO_INNER_QUIET": "インナーク ワイエットを使わず、インナーク ワイエットを要求するスキルを使用",
-      "MISSING_STATS_REQUIREMENT": "You don't have the minimum stats needed for this craft"
+      "MISSING_STATS_REQUIREMENT": "このアイテムを制作するにはステータスが足りません。"
     },
     "ROTATION_TIPS": {
       "Use_inner_quiet": "殆どのすべてのスキル回しは、HQ制作を目指しにするには '精神集中' が含まれる必要があります。このスキルは、品質を向上させつつ 'ビエルゴの祝福' と同じようなスキルが使うことができます。",
@@ -1386,7 +1386,7 @@
     "Patreon_title": "Patreonにサポートする",
     "Patreon_description": "Patreonは毎月プロジェクトを寄付できるプラットフォームです。この寄付金はサーバー、認証書、分かち合いに使用され、プロジェクトを作業する開発者たちがもっと多くの時間を割くところに使われます。\n\n寄付金に応じて、寄付金に対する謝礼として、いくつかの素晴らしい特典が得られます。",
     "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
-    "Already_supporting": "Already a patreon supporter? Make sure you link your account to patreon in the settings",
+    "Already_supporting": "すでにPatreonのサポーターですか？設定でアカウントをPatreonにリンクしてください",
     "PATREON_BENEFITS": {
       "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
       "Profile_badge": "Teamcraft プロフィールに特別なバッジを付与 (${{price}})",
