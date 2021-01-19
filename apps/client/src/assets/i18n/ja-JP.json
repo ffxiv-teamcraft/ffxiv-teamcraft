@@ -952,7 +952,7 @@
     "Could_not_find_minstats": "このローテーションで最小ステップを見つけることができません",
     "Remove_final_appraisal": "'Final Appraisal' バフ削除",
     "Total_macro_duration": "マクロの合計時間: {{duration}}秒。",
-    "Compact": "Compact",
+    "Compact": "コンパクト表示",
     "Detailed": "詳細",
     "STATE": {
       "Excellent": "最高品質",
