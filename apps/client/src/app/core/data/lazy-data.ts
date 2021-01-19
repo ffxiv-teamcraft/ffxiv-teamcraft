@@ -79,6 +79,8 @@ export interface LazyData {
   spearFishingNodes: any;
   stackSizes: any;
   statuses: any;
+  submarineParts: any;
+  submarineRanks: any;
   submarineVoyages: any;
   territoryLayers: any;
   tradeFlags: any;
