@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ApplyContentId, InventoryActionTypes, InventoryLoaded, ResetInventory, SetContentId, UpdateInventory } from './inventory.actions';
-import { distinctUntilKeyChanged, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilKeyChanged, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -36,40 +36,44 @@ export class InventoryEffects {
   showContentIdPopup$ = this.actions$.pipe(
     ofType<SetContentId>(InventoryActionTypes.SetContentId),
     distinctUntilKeyChanged('contentId'),
-    withLatestFrom(this.authFacade.user$),
-    switchMap(([{ contentId }, user]) => {
-      if (this.settings.ignoredContentIds.includes(contentId)) {
-        return of('ignored');
-      }
-      const isCustom = user.lodestoneIds.length === 0 && user.customCharacters.length > 0;
-      if (isCustom) {
-        const matchingCustomCharacter = user.customCharacters.find(entry => entry.contentId === contentId);
-        if (matchingCustomCharacter) {
-          return of(contentId);
-        }
-      } else {
-        const matchingLodestoneEntry = user.lodestoneIds.find(entry => entry.contentId === contentId);
-        if (matchingLodestoneEntry) {
-          return of(contentId);
-        }
-      }
-      console.log('New Content ID', contentId);
-      // If we're here, there's no matching entries anywhere
-      return this.modal.create({
-        nzContent: ContentIdLinkingPopupComponent,
-        nzComponentParams: {
-          contentId: contentId
-        },
-        nzClosable: false,
-        nzMaskClosable: false,
-        nzFooter: null,
-        nzTitle: this.translate.instant('INVENTORY.New_character_detected')
-      }).afterClose.pipe(
-        map((res) => {
-          if (!res) {
-            return 'ignored';
+    switchMap(({ contentId }) => {
+      return this.authFacade.user$.pipe(
+        first(),
+        switchMap((user) => {
+          if (this.settings.ignoredContentIds.includes(contentId)) {
+            return of('ignored');
           }
-          return contentId;
+          const isCustom = user.lodestoneIds.length === 0 && user.customCharacters.length > 0;
+          if (isCustom) {
+            const matchingCustomCharacter = user.customCharacters.find(entry => entry.contentId === contentId);
+            if (matchingCustomCharacter) {
+              return of(contentId);
+            }
+          } else {
+            const matchingLodestoneEntry = user.lodestoneIds.find(entry => entry.contentId === contentId);
+            if (matchingLodestoneEntry) {
+              return of(contentId);
+            }
+          }
+          console.log('New Content ID', contentId);
+          // If we're here, there's no matching entries anywhere
+          return this.modal.create({
+            nzContent: ContentIdLinkingPopupComponent,
+            nzComponentParams: {
+              contentId: contentId
+            },
+            nzClosable: false,
+            nzMaskClosable: false,
+            nzFooter: null,
+            nzTitle: this.translate.instant('INVENTORY.New_character_detected')
+          }).afterClose.pipe(
+            map((res) => {
+              if (!res) {
+                return 'ignored';
+              }
+              return contentId;
+            })
+          );
         })
       );
     }),

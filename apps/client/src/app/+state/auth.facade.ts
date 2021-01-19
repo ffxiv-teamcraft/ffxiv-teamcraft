@@ -141,7 +141,7 @@ export class AuthFacade {
         });
       }));
     }),
-    distinctUntilChanged((a, b) => a.length === b.length),
+    distinctUntilChanged((a, b) => JSON.stringify(a) === JSON.stringify(b)),
     shareReplay(1)
   );
 
