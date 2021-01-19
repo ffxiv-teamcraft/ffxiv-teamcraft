@@ -1763,7 +1763,7 @@
   },
   "FOOD_PICKER": {
     "Title": "Food Picker",
-    "Description": "You want to know which food will give the stats you want ? Look no further, you're where you need to be!",
+    "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
     "Pick_stat": "Choose an attribute"
   },
   "BLOG": {
@@ -1815,7 +1815,7 @@
     "Possible_missing_firewall_rule": "パケットキャプチャが正しく動作していません",
     "Possible_missing_firewall_rule_description": "Teamcraft only sees some of the packets and is missing the ones related to inventories, stats, gear, etc, this may be due to a missing firewall rule on your PC.",
     "Possible_missing_firewall_rule_check": "新しいエリアにテレポした後、このメッセージが消えない場合はファイアウォールのルールがないかパケットキャプチャが別の理由で動作していません。Discordサーバーに参加して、#troubleshooting チャンネルにアクセスしてください。",
-    "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
+    "Rawsock_needs_admin": "RawSocketキャプチャモードには管理者権限が必要です",
     "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
     "Switch_to_winpcap": "Winpcapモードに切り替える",
     "Disable_pcap": "パケットキャプチャを無効にする",
