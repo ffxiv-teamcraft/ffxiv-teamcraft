@@ -583,8 +583,8 @@
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "デフォルト",
-      "Only_large": "Only large lists",
-      "Never": "Never"
+      "Only_large": "超過された時のみ",
+      "Never": "しない"
     },
     "COLORS": {
       "RED": "赤",
@@ -646,10 +646,10 @@
     "Disable_HQ_suggestions": "HQ自動表示を解除する",
     "Amount_craftable": "{{amount}} 個 作られます",
     "Add_item": "アイテムを追加する",
-    "List_large": "This is a large list",
-    "Enable_performance_mode": "You might want to enable performance mode in settings in order to get faster rendering. Do not report performance issues displaying this error as a bug, it will not be supported.",
+    "List_large": "大きいリストです",
+    "Enable_performance_mode": "もっと早いレンダリングの為にモードをパフォーマンスモードを活性化したならパフォーマンス問題エラーがバグだと表示される事があります。この問題をバグとして報告しないでください。今はサポートされない機能になります。",
     "List_too_large": "リストが大き過ぎます",
-    "List_too_large_description": "This list is too large and might slow down your computer or hit database limitations. To ensure you won't lose the list, you are no longer able to add further items to it unless existing items are removed.",
+    "List_too_large_description": "このリストが大きいのでパソコンが遅くなるかデータベースの限界に到達しました。リストが削除されない事を望めばアイテムをこれ以上追加せずにリスト内存在するアイテムを整理してください。",
     "New_tag": "新しいタグ",
     "Amount_ilvl": "本数（ilvl）",
     "Contributions_popup": "このリストの寄与度の統計",
@@ -659,7 +659,7 @@
     "Autofill_notification": "完了通知",
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
-    "Fill_with_inventory": "Fill with inventory (only accounts what you have in personal inventory)",
+    "Fill_with_inventory": "所持品から埋める(アカウントに連動している所持品だけ埋めます)",
     "Filter_items_done": "Ignore completed items",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "X_needed": "{{amount}} needed",
