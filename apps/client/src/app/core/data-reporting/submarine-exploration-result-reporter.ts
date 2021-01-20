@@ -4,17 +4,19 @@ import { ofPacketType } from '../rxjs/of-packet-type';
 import { filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
-import { ExplorationResultReporter, ExplorationType } from './exploration-result.reporter';
+import { ExplorationResultReporter } from './exploration-result.reporter';
+import { ExplorationType } from '../../model/other/exploration-type';
+import { UpdateInventorySlot } from '../../model/pcap';
+import { SubmarineStatusList } from '../../model/pcap/SubmarineStatusList';
+import { SubmarineExplorationResult } from '../../model/pcap/SubmarineExplorationResult';
 
 export class SubmarineExplorationResultReporter implements DataReporter, ExplorationResultReporter {
-  private statusList$;
-  private resultLog$;
 
   constructor(private lazyData: LazyDataService) {
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
-    const isSubmarineMenuOpen$ = merge(
+    const isSubmarineMenuOpen$: Observable<boolean> = merge(
       packets$.pipe(ofPacketType('eventStart')),
       packets$.pipe(ofPacketType('eventFinish'))
     ).pipe(
@@ -26,49 +28,51 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
       shareReplay(1)
     );
 
-    this.resultLog$ = packets$.pipe(
-      ofPacketType('submarineExplorationResult'),
+    const resultLog$ = packets$.pipe(
+      ofPacketType<SubmarineExplorationResult>('submarineExplorationResult'),
       map((packet) => packet.explorationResult),
       tap((data) => {
         console.log(data);
       })
     );
 
-    this.statusList$ = packets$.pipe(
-      ofPacketType('submarineStatusList'),
+    const statusList$ = packets$.pipe(
+      ofPacketType<SubmarineStatusList>('submarineStatusList'),
       map((packet) => packet.statusList),
       tap((data) => {
         console.log(data);
       })
     );
 
-    const voyages$ = packets$.pipe(
-      ofPacketType('updateInventorySlot'),
+    const updateHullCondition$ = packets$.pipe(
+      ofPacketType<UpdateInventorySlot>('updateInventorySlot'),
       withLatestFrom(isSubmarineMenuOpen$),
       filter(([updateInventory, isOpen]) => {
         return isOpen && updateInventory.containerId === 25004 && [0, 5, 10, 15].includes(updateInventory.slot) && updateInventory.condition < 30000;
       }),
+    );
+
+    return updateHullCondition$.pipe(
       map(([updateInventory]) => updateInventory.slot / 5),
-      withLatestFrom(this.statusList$),
+      withLatestFrom(statusList$),
       tap((data) => {
         console.log(data);
       }),
       map(([submarineSlot, statusList]) => {
         const submarine = statusList[submarineSlot];
-        console.log('BUIIIILDS');
         return this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
       }),
       tap((data) => {
         console.log(data);
       }),
-      withLatestFrom(this.resultLog$),
-      map(([stats, resultLog]: any[]): any[] => {
+      withLatestFrom(resultLog$),
+      map(([stats, resultLog]): any[] => {
         const reports = [];
         resultLog.forEach((voyage) => {
           reports.push({
             voyageId: voyage.sectorId,
             itemId: voyage.loot1ItemId,
-            hq: voyage.loot1isHQ,
+            hq: voyage.loot1IsHQ,
             quantity: voyage.loot1Quantity,
             surveillanceProc: voyage.loot1SurveillanceResult,
             retrievalProc: voyage.loot1RetrievalResult,
@@ -78,11 +82,11 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
             favor: stats.favor,
             type: this.getExplorationType()
           });
-          if (voyage.loot2ItemId) {
+          if (voyage.loot2ItemId > 0) {
             reports.push({
               voyageId: voyage.sectorId,
               itemId: voyage.loot2ItemId,
-              hq: voyage.loot2isHQ,
+              hq: voyage.loot2IsHQ,
               quantity: voyage.loot2Quantity,
               surveillanceProc: voyage.loot2SurveillanceResult,
               retrievalProc: voyage.loot2RetrievalResult,
@@ -96,20 +100,11 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
         });
         return reports;
       }),
-      tap((data) => {
-        console.log(data);
-      })
-    );
-
-    return voyages$.pipe(
-      map((data: any[]) => {
-        return data;
-      })
     );
   }
 
   getDataType(): string {
-    return 'submarineExplorationResult';
+    return 'explorationresults';
   }
 
   getExplorationType(): ExplorationType {
