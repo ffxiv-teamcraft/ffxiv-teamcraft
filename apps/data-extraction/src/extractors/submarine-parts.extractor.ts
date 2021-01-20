@@ -9,29 +9,38 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
 
     this.getAllPages(`${this.getSearchEndpointWithQuery({
       indexes: XivapiEndpoint.Item,
-      columns: 'ID,Name_*,ItemUICategory.ID,AdditionalData',
+      columns: 'ID,AdditionalData',
       string_column: 'FilterGroup',
       string: '36',
       string_algo: 'match',
     })}`).pipe(
       map((page) => page.Results.map((result) => {
         return {
-          AdditionalData: result.AdditionalData,
-          ItemID: result.ID
+          additionalData: result.AdditionalData,
+          itemId: result.ID
         };
       })),
       switchMap((itemResults) => {
         return this.get(this.getResourceEndpointWithQuery(XivapiEndpoint.SubmarinePart, {
-          ids: itemResults.map((r) => r.AdditionalData).join(','),
-          columns: 'ID,Components,Favor,Range,Rank,RepairMaterials,Retrieval,Slot,Speed,Surveillance'
+          ids: itemResults.map((r) => r.additionalData).join(','),
+          columns: 'ID,Slot,Rank,Components,Surveillance,Retrieval,Speed,Range,Favor,RepairMaterials'
         }))
           .pipe(
             map((page) => page.Results),
             tap((partResults) => {
               partResults.forEach((part) => {
                 parts[part.ID] = {
-                  ...part,
-                  ItemID: itemResults.filter((r) => r.AdditionalData === part.ID)[0]['ItemID']
+                  id: part.ID,
+                  slot: part.Slot,
+                  rank: part.Rank,
+                  components: part.Components,
+                  surveillance: part.Surveillance,
+                  retrieval: part.Retrieval,
+                  speed: part.Speed,
+                  range: part.Range,
+                  favor: part.Favor,
+                  repairMaterials: part.RepairMaterials,
+                  itemId: itemResults.filter((r) => r.additionalData === part.ID)[0]['itemId'],
                 };
               });
             })

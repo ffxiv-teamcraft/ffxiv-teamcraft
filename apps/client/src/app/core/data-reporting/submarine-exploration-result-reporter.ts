@@ -118,9 +118,9 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
     const bridge = this.lazyData.data.submarineParts[bridgeId];
     const rank = this.lazyData.data.submarineRanks[rankId];
     return {
-      surveillance: +hull.Surveillance + +stern.Surveillance + +bow.Surveillance + +bridge.Surveillance + +rank.SurveillanceBonus,
-      retrieval: +hull.Retrieval + +stern.Retrieval + +bow.Retrieval + +bridge.Retrieval + +rank.RetrievalBonus,
-      favor: +hull.Favor + +stern.Favor + bow.Favor + +bridge.Favor + +rank.FavorBonus
+      surveillance: +hull.surveillance + +stern.surveillance + +bow.surveillance + +bridge.surveillance + +rank.surveillanceBonus,
+      retrieval: +hull.retrieval + +stern.retrieval + +bow.retrieval + +bridge.retrieval + +rank.retrievalBonus,
+      favor: +hull.favor + +stern.favor + bow.favor + +bridge.favor + +rank.favorBonus
     };
   }
 }

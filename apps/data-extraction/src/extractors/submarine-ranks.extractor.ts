@@ -10,10 +10,19 @@ export class SubmarineRanksExtractor extends AbstractExtractor {
     this.getAllPages(this.getResourceEndpointWithQuery(XivapiEndpoint.SubmarineRank, {
       columns: 'ID,Capacity,ExpToNext,SurveillanceBonus,RetrievalBonus,SpeedBonus,RangeBonus,FavorBonus',
     })).pipe(
-      map(((page) => page.Results)),
+      map((page) => page.Results),
       tap((rankResults)  => {
         rankResults.forEach((result) => {
-          ranks[result.ID] = result;
+          ranks[result.ID] = {
+            id: result.ID,
+            capacity: result.Capacity,
+            expToNext: result.ExpToNext,
+            surveillanceBonus: result.SurveillanceBonus,
+            retrievalBonus: result.RetrievalBonus,
+            speedBonus: result.SpeedBonus,
+            rangeBonus: result.RangeBonus,
+            favorBonus: result.FavorBonus,
+          };
         });
       }),
     ).subscribe(() => {
