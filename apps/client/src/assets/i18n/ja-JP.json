@@ -579,7 +579,7 @@
     "Final_item": "最終アイテム",
     "Include_final_items_in_main_layout": "基本レイアウトに最終アイテムを含める",
     "Can_skip_buying_X": "{{amount}} 個スキップ可能",
-    "Can_skip_buying_entirely": "Can skip entirely",
+    "Can_skip_buying_entirely": "全部スキップ可能",
     "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
     "SCROLLING": {
       "Default": "デフォルト",
