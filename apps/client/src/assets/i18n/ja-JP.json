@@ -169,8 +169,8 @@
     "Example": "例",
     "Change": "変更",
     "Dirty_changes": "保存されていない変更があります。",
-    "Never": "Never",
-    "Festival": "Only during a festival"
+    "Never": "しない",
+    "Festival": "フェスティバルの間のみ"
   },
   "ALARMS": {
     "Title": "アラーム",
