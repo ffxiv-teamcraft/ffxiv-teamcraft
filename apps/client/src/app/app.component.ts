@@ -131,28 +131,6 @@ export class AppComponent implements OnInit {
 
   public suggestedRegion: Region = null;
 
-  public randomTip$: Observable<string> = interval(600000).pipe(
-    startWith(-1),
-    map(() => {
-      const tips = [
-        'Community_rotations',
-        'GC_Deliveries',
-        'Desynth',
-        'DB',
-        '3D_model',
-        'Levequests',
-        'Log_tracker',
-        'Desktop_app_overlay',
-        'Start_desktop_before_game',
-        'Middle_click_share_button',
-        'Quick_search',
-        'Open_in_desktop_shortcut'
-      ];
-      return tips[Math.floor(Math.random() * tips.length)];
-    }),
-    isPlatformServer(this.platform) ? first() : tap()
-  );
-
   public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
 
   public firewallRuleApplied = false;

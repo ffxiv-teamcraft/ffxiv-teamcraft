@@ -4,12 +4,30 @@
     <tr>
       <th>{{'GEARSETS.Stat_name' | translate}}</th>
       <th class="value">{{'GEARSETS.Value' | translate}}</th>
+      <th class="value" *ngIf="gearset.isCombatSet()">{{'GEARSETS.Value_for_next' | translate}}</th>
+      <th class="value" *ngIf="gearset.isCombatSet()">{{'GEARSETS.Value_for_previous' | translate}}</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let row of getDisplay()">
       <td>{{('GEARSETS.STAT_DISPLAY.' + row.name) | translate}}</td>
       <td class="value">{{row.value | floor:2 | number:'1.0-2':translate.currentLang}}{{row.suffix}}</td>
+      <td class="value" *ngIf="gearset.isCombatSet()">
+        <span *ngIf="row.next && row.next < 500; else nope">
+        +{{row.next | number:'1.0-2':translate.currentLang}}
+        </span>
+        <ng-template #nope>
+          N/A
+        </ng-template>
+      </td>
+      <td class="value" *ngIf="gearset.isCombatSet()">
+        <span *ngIf="row.previous && row.previous > -500; else nope">
+        {{row.previous | number:'1.0-2':translate.currentLang}}
+        </span>
+        <ng-template #nope>
+          N/A
+        </ng-template>
+      </td>
     </tr>
     </tbody>
   </table>

@@ -240,6 +240,29 @@ export class StatsService {
     return stats;
   }
 
+  private getNextBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): number {
+    const baseValue = this.getStatValue(displayName, level, job, stats);
+    let currentValue = 0;
+    let currentBonus = 0;
+    while (Math.abs(currentBonus) < 100 && currentValue <= baseValue) {
+      currentBonus++;
+      currentValue = this.getStatValue(displayName, level, job, stats, currentBonus);
+    }
+    return currentBonus;
+  }
+
+
+  private getPreviousBreakpoint(displayName: string, level: number, job: number, stats: { id: number, value: number }[]): number {
+    const baseValue = this.getStatValue(displayName, level, job, stats);
+    let currentValue = Infinity;
+    let currentBonus = 0;
+    while (Math.abs(currentBonus) < 500 && currentValue >= baseValue) {
+      currentBonus--;
+      currentValue = this.getStatValue(displayName, level, job, stats, currentBonus);
+    }
+    return currentBonus;
+  }
+
   public getBaseValue(baseParamId: number, job: number, level: number, tribe: number) {
     if (StatsService.MAIN_STATS.indexOf(baseParamId) > -1) {
       return Math.floor(StatsService.LEVEL_TABLE[level][0] * this.getModifier(baseParamId, job))
@@ -445,9 +468,9 @@ export class StatsService {
     return null;
   }
 
-  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, suffix?: string }[] {
+  public getStatsDisplay(set: TeamcraftGearset, level: number, tribe: number, food?: any): { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] {
     const stats = this.getStats(set, level, tribe, food);
-    const display: { baseParamIds: number[], name: string, value: number, suffix?: string }[] = [
+    const display: { baseParamIds: number[], name: string, value: number, next?: number, previous?: number, suffix?: string }[] = [
       {
         baseParamIds: [0],
         name: 'Ilvl',
@@ -460,36 +483,48 @@ export class StatsService {
         {
           baseParamIds: [BaseParam.VITALITY],
           name: 'HP',
-          value: this.getMaxHp(set.job, level, stats.find(stat => stat.id === BaseParam.VITALITY).value)
+          value: this.getStatValue('HP', level, set.job, stats),
+          next: this.getNextBreakpoint('HP', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('HP', level, set.job, stats)
         },
         {
           baseParamIds: [BaseParam.DIRECT_HIT_RATE],
           name: 'Direct_hit_chances',
-          value: this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value),
+          value: this.getStatValue('Direct_hit_chances', level, set.job, stats),
+          next: this.getNextBreakpoint('Direct_hit_chances', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('Direct_hit_chances', level, set.job, stats),
           suffix: '%'
         },
         {
           baseParamIds: [BaseParam.CRITICAL_HIT],
           name: 'Critical_hit_chances',
-          value: this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value),
+          value: this.getStatValue('Critical_hit_chances', level, set.job, stats),
+          next: this.getNextBreakpoint('Critical_hit_chances', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('Critical_hit_chances', level, set.job, stats),
           suffix: '%'
         },
         {
           baseParamIds: [BaseParam.CRITICAL_HIT],
           name: 'Critical_hit_multiplier',
-          value: this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value),
+          value: this.getStatValue('Critical_hit_multiplier', level, set.job, stats),
+          next: this.getNextBreakpoint('Critical_hit_multiplier', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('Critical_hit_multiplier', level, set.job, stats),
           suffix: '%'
         },
         {
           baseParamIds: [BaseParam.DETERMINATION],
           name: 'Determination_bonus',
-          value: this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value),
+          value: this.getStatValue('Determination_bonus', level, set.job, stats),
+          next: this.getNextBreakpoint('Determination_bonus', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('Determination_bonus', level, set.job, stats),
           suffix: '%'
         },
         {
           baseParamIds: [BaseParam.SKILL_SPEED, BaseParam.SPELL_SPEED],
           name: 'GCD',
-          value: this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value),
+          value: this.getStatValue('GCD', level, set.job, stats),
+          next: this.getNextBreakpoint('GCD', level, set.job, stats),
+          previous: this.getPreviousBreakpoint('GCD', level, set.job, stats),
           suffix: 's'
         }
       ]);
@@ -514,6 +549,25 @@ export class StatsService {
     return Math.floor(withoutOffHand / 12);
   }
 
+  private getStatValue(displayName: string, level: number, job: number, stats: { id: number, value: number }[], statBonus = 0): number {
+    switch (displayName) {
+      case 'HP':
+        return this.getMaxHp(job, level, stats.find(stat => stat.id === BaseParam.VITALITY).value + statBonus);
+      case 'Direct_hit_chances':
+        return Math.floor(this.getDirectHitChances(level, stats.find(stat => stat.id === BaseParam.DIRECT_HIT_RATE).value + statBonus)) / 10;
+      case 'Critical_hit_chances':
+        return Math.floor(this.getCriticalHitChances(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10;
+      case 'Critical_hit_multiplier':
+        return Math.floor(this.getCriticalMultiplier(level, stats.find(stat => stat.id === BaseParam.CRITICAL_HIT).value + statBonus)) / 10;
+      case 'Determination_bonus':
+        return Math.floor(this.getDeterminationBonus(level, stats.find(stat => stat.id === BaseParam.DETERMINATION).value + statBonus)) / 10;
+      case 'GCD':
+        return Math.floor(this.getGCD(level, stats.find(stat => stat.id === BaseParam.SKILL_SPEED || stat.id === BaseParam.SPELL_SPEED).value + statBonus)) / 1000;
+      default:
+        return 0;
+    }
+  }
+
   private getMaxHp(job: number, level: number, vitality: number): number {
     if (level > environment.maxLevel) {
       return 0;
@@ -527,30 +581,30 @@ export class StatsService {
   private getDirectHitChances(level: number, directHit: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return Math.floor(550 * (directHit - levelModSub) / levelModDiv) / 10;
+    return 550 * (directHit - levelModSub) / levelModDiv;
   }
 
   private getCriticalHitChances(level: number, critical: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return Math.floor(200 * (critical - levelModSub) / levelModDiv + 50) / 10;
+    return 200 * (critical - levelModSub) / levelModDiv + 50;
   }
 
   private getGCD(level: number, speed: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return Math.floor((1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5) / 1000;
+    return (1000 - Math.floor(130 * (speed - levelModSub) / levelModDiv)) * 2.5;
   }
 
   private getCriticalMultiplier(level: number, critical: number): number {
     const levelModSub = StatsService.LEVEL_TABLE[level][1];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return Math.floor(Math.floor(200 * (critical - levelModSub) / levelModDiv + 1400) / 10);
+    return 200 * (critical - levelModSub) / levelModDiv + 1400;
   }
 
   private getDeterminationBonus(level: number, determination: number): number {
     const levelModMain = StatsService.LEVEL_TABLE[level][0];
     const levelModDiv = StatsService.LEVEL_TABLE[level][2];
-    return Math.floor(Math.floor(130 * (determination - levelModMain) / levelModDiv + 1000) / 10);
+    return 130 * (determination - levelModMain) / levelModDiv + 1000;
   }
 }

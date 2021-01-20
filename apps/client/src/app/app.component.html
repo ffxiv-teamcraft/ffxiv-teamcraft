@@ -50,9 +50,10 @@
             </div>
           </div>
         </div>
-        <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
-          <div class="tips" fxHide.lt-lg fxShow *ngIf="!platformService.isDesktop()">
-            <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
+        <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
+          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">
+<!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
+<!--            TODO ad banner here? -->
           </div>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>

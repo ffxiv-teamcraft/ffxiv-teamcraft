@@ -22,10 +22,6 @@
       justify-content: center;
     }
 
-    #logo {
-      position: relative;
-    }
-
     .brought-to-you {
       text-align: center;
       padding-top: 20px;
@@ -45,8 +41,8 @@
 </head>
 <body>
 <div class="init-loader-container">
-  <div id="logo">
-    <img src="../../client/assets/loader.gif" alt="FFXIV Teamcraft" class="logo">
+  <div>
+    <img src="" alt="FFXIV Teamcraft" id="loader">
   </div>
   <div class="brought-to-you">
     Brought to you by <span id="random-patron"></span>
@@ -55,6 +51,9 @@
     <img src="../../client/assets/become_a_patron_button@2x.png" alt="Become a patron">
   </a>
 </div>
+<script>
+  window.baseGifPath = "../../client/assets/";
+</script>
 <script src="./tc-loader.js"></script>
 </body>
 </html>
