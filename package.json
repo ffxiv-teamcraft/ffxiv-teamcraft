@@ -1,13 +1,14 @@
 {
-  "name": "ffxiv-teamcraft-beta",
+  "name": "ffxiv-teamcraft",
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "8.0.0-beta.1",
+  "version": "7.6.25",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
-    "appId": "ffxiv-teamcraft-beta",
+    "appId": "ffxiv-teamcraft",
+    "forceCodeSigning": true,
     "productName": "FFXIV Teamcraft",
     "directories": {
       "output": "release"
@@ -44,6 +45,7 @@
       "icon": "./tools/build/icon.ico",
       "publisherName": "FFXIV Teamcraft",
       "target": "squirrel",
+      "sign": "./tools/build/sign-windows.js",
       "publish": {
         "provider": "github",
         "releaseType": "release"
@@ -57,7 +59,7 @@
   "scripts": {
     "ng-high-memory": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng",
     "ng": "ng",
-    "prebuild": "node ./tools/build/prebuild.js && yarn update-lazy-files",
+    "prebuild": "node ./tools/build/prebuild.js && yarn update-lazy-files && yarn web:copyfiles",
     "assets:hash": "node ./tools/build/prod-assets-hash.js",
     "start-high-memory": "yarn prebuild && ng-high-memory serve --project=client",
     "start": "yarn prebuild && yarn ng-high-memory serve -- --project=client",
@@ -83,6 +85,7 @@
     "commitmsg": "validate-commit-msg",
     "prerelease": "npm test",
     "commit": "git-cz",
+    "web:copyfiles": "copyfiles ./libs/loader/tc-loader.js ./apps/client/src/assets/ -f",
     "update-lazy-files": "node ./tools/build/lazy-files-updater.js",
     "data-extractor": "tsc -p apps/data-extraction/tsconfig.json && node apps/data-extraction/build/src/main.js",
     "************ELECTRON STUFF*****************": "",

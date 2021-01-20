@@ -291,7 +291,7 @@ export class UserInventory extends DataModel {
         .map(entry => {
           return Object.keys(entry.characterInventory)
             .filter(key => {
-              const matches = UserInventory.DISPLAYED_CONTAINERS.indexOf(+key) > -1 || key.indexOf(':') > -1;
+              const matches = UserInventory.DISPLAYED_CONTAINERS.includes(+key) || key.indexOf(':') > -1;
               // In some cases, items are registered as retainer while they aren't, just remove them from the output.
               if (key.indexOf(':') > -1) {
                 if (+key.split(':')[1] < 10000) {
