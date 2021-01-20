@@ -431,7 +431,7 @@
     "Change_email_success": "メールが変更されました",
     "No_shortcut": "更新時にショートカットを作成しない",
     "Always_disable_hq_suggestions": "リストから自動でHQアイテムをおすすめする事を無効にする",
-    "Ignored_inventories": "無視するインベントリ",
+    "Ignored_inventories": "無視する所持品",
     "Enable_tutorials": "チュートリアル機能を有効にする",
     "Show_patch_notes_on_update": "更新時にパッチノートを表示する",
     "Scrolling_behavior": "スクロール設定",
