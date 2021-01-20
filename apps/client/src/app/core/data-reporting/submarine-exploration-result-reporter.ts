@@ -49,7 +49,7 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
       withLatestFrom(isSubmarineMenuOpen$),
       filter(([updateInventory, isOpen]) => {
         return isOpen && updateInventory.containerId === 25004 && [0, 5, 10, 15].includes(updateInventory.slot) && updateInventory.condition < 30000;
-      }),
+      })
     );
 
     return updateHullCondition$.pipe(
@@ -69,37 +69,39 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
       map(([stats, resultLog]): any[] => {
         const reports = [];
         resultLog.forEach((voyage) => {
-          reports.push({
-            voyageId: voyage.sectorId,
-            itemId: voyage.loot1ItemId,
-            hq: voyage.loot1IsHQ,
-            quantity: voyage.loot1Quantity,
-            surveillanceProc: voyage.loot1SurveillanceResult,
-            retrievalProc: voyage.loot1RetrievalResult,
-            favorProc: voyage.favorResult,
-            surveillance: stats.surveillance,
-            retrieval: stats.retrieval,
-            favor: stats.favor,
-            type: this.getExplorationType()
-          });
-          if (voyage.loot2ItemId > 0) {
+          if (voyage.sectorId > 0) {
             reports.push({
               voyageId: voyage.sectorId,
-              itemId: voyage.loot2ItemId,
-              hq: voyage.loot2IsHQ,
-              quantity: voyage.loot2Quantity,
-              surveillanceProc: voyage.loot2SurveillanceResult,
-              retrievalProc: voyage.loot2RetrievalResult,
-              favorProc: null,
+              itemId: voyage.loot1ItemId,
+              hq: voyage.loot1IsHQ,
+              quantity: voyage.loot1Quantity,
+              surveillanceProc: voyage.loot1SurveillanceResult,
+              retrievalProc: voyage.loot1RetrievalResult,
+              favorProc: voyage.favorResult,
               surveillance: stats.surveillance,
               retrieval: stats.retrieval,
               favor: stats.favor,
               type: this.getExplorationType()
             });
+            if (voyage.loot2ItemId > 0) {
+              reports.push({
+                voyageId: voyage.sectorId,
+                itemId: voyage.loot2ItemId,
+                hq: voyage.loot2IsHQ,
+                quantity: voyage.loot2Quantity,
+                surveillanceProc: voyage.loot2SurveillanceResult,
+                retrievalProc: voyage.loot2RetrievalResult,
+                favorProc: null,
+                surveillance: stats.surveillance,
+                retrieval: stats.retrieval,
+                favor: stats.favor,
+                type: this.getExplorationType()
+              });
+            }
           }
         });
         return reports;
-      }),
+      })
     );
   }
 
