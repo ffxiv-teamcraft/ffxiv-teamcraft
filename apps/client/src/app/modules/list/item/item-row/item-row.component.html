@@ -13,16 +13,7 @@
           <div>
             <i nz-icon nzType="experiment" nzTheme="outline" nz-tooltip [nzTooltipTitle]="'LIST.Final_item' | translate"
                *ngIf="item.finalItem && !this.finalItem$.value"></i>
-            <span *ngIf="settings.preferredCopyType === 'classic'" [clipboard]="item.id | itemName: item | i18n"
-                  [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
-                  [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: item.id | itemName: item | i18n}"
-                  class="item-name"
-                  nz-tooltip>
-              {{item.id | itemName: item | i18n}}
-            </span>
-            <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
-                  clipboard="/isearch &quot;{{item.id | itemName: item | i18n}}&quot;"
-                  [clipboardSuccessMessage]="'Item_name_copied' | translate: {itemname: '/isearch &quot;' + (item.id | itemName: item | i18n) + '&quot;'}"
+            <span [itemNameCopy]="item.id"
                   class="item-name"
                   nz-tooltip>
               {{item.id | itemName: item | i18n}}
@@ -91,13 +82,20 @@
           <div *ngIf="amountInInventory$ | async as amountInInventory" class="amount-in-inventories" fxLayout="row wrap"
                fxLayoutGap="5px">
             <ng-container *ngIf="amountInInventory.length <= 3; else compactAmountInInventory">
-              <nz-tag (click)="permissionLevel >= 20 ? add(entry.amount, item) : null"
-                      *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
-                      class="inventory-tag"
-                      [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate" nz-tooltip>
-                {{entry.containerName | translate}}: {{entry.amount}}
-                <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
-              </nz-tag>
+              <ng-container *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry">
+                <nz-tag (click)="permissionLevel >= 20 ? add(entry.amount, item) : null"
+                        class="inventory-tag"
+                        [nzTooltipTitle]="positionTooltip" nz-tooltip>
+                  <ng-template #positionTooltip>
+                    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                      <app-inventory-position [item]="entry.item"></app-inventory-position>
+                      <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                    </div>
+                  </ng-template>
+                  {{entry.containerName}}: {{entry.amount}}
+                  <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
+                </nz-tag>
+              </ng-container>
             </ng-container>
             <ng-template #compactAmountInInventory>
               <ng-container *ngIf="totalAmountInInventory$ | async as total">
@@ -111,8 +109,14 @@
                     <li nz-menu-item *ngFor="let entry of amountInInventory;trackBy: trackByInventoryEntry"
                         (click)="tooltip.hide();permissionLevel >= 20 ? add(entry.amount, item) : null"
                         #tooltip="nzTooltip"
-                        nz-tooltip [nzTooltipTitle]="'INVENTORY.Click_to_add_to_progression' | translate">
-                      {{entry.containerName | translate}}: {{entry.amount}}
+                        nz-tooltip [nzTooltipTitle]="positionTooltip">
+                      <ng-template #positionTooltip>
+                        <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="center center">
+                          <app-inventory-position [item]="entry.item"></app-inventory-position>
+                          <div>{{'INVENTORY.Click_to_add_to_progression' | translate}}</div>
+                        </div>
+                      </ng-template>
+                      {{entry.containerName}}: {{entry.amount}}
                       <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
                     </li>
                   </ul>
@@ -124,7 +128,7 @@
       </div>
       <div *ngIf="settings.itemTagsEnabled && (loggedIn$ | async) && !overlay">
         <nz-tag
-          (nzAfterClose)="removeTag(tag, item)"
+          (nzOnClose)="removeTag(tag, item)"
           *ngFor="let tag of itemTags$ | async"
           [nzMode]="'closeable'"
         >

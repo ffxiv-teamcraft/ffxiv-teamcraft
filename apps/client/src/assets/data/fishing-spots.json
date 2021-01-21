@@ -4,6 +4,7 @@
     "mapId": 4,
     "placeId": 54,
     "zoneId": 951,
+    "level": 5,
     "coords": {
       "x": 21.91,
       "y": 21.19
@@ -26,6 +27,7 @@
     "mapId": 4,
     "placeId": 54,
     "zoneId": 952,
+    "level": 15,
     "coords": {
       "x": 25.55,
       "y": 27.99
@@ -48,6 +50,7 @@
     "mapId": 4,
     "placeId": 54,
     "zoneId": 101,
+    "level": 30,
     "coords": {
       "x": 14.62,
       "y": 23.15
@@ -70,6 +73,7 @@
     "mapId": 4,
     "placeId": 54,
     "zoneId": 104,
+    "level": 35,
     "coords": {
       "x": 13.82,
       "y": 20.24
@@ -92,6 +96,7 @@
     "mapId": 5,
     "placeId": 55,
     "zoneId": 155,
+    "level": 15,
     "coords": {
       "x": 8.03,
       "y": 21.91
@@ -114,6 +119,7 @@
     "mapId": 5,
     "placeId": 55,
     "zoneId": 953,
+    "level": 25,
     "coords": {
       "x": 19.48,
       "y": 20.53
@@ -136,6 +142,7 @@
     "mapId": 5,
     "placeId": 55,
     "zoneId": 954,
+    "level": 15,
     "coords": {
       "x": 23.03,
       "y": 24.31
@@ -158,6 +165,7 @@
     "mapId": 5,
     "placeId": 55,
     "zoneId": 955,
+    "level": 45,
     "coords": {
       "x": 25.03,
       "y": 19.74
@@ -180,6 +188,7 @@
     "mapId": 5,
     "placeId": 55,
     "zoneId": 112,
+    "level": 20,
     "coords": {
       "x": 16.68,
       "y": 15.98
@@ -202,6 +211,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 956,
+    "level": 20,
     "coords": {
       "x": 17.02,
       "y": 18.02
@@ -224,6 +234,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 957,
+    "level": 30,
     "coords": {
       "x": 18.96,
       "y": 21.55
@@ -246,6 +257,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 958,
+    "level": 25,
     "coords": {
       "x": 17.36,
       "y": 23.83
@@ -268,6 +280,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 959,
+    "level": 25,
     "coords": {
       "x": 22.87,
       "y": 21.37
@@ -290,6 +303,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 960,
+    "level": 30,
     "coords": {
       "x": 26.51,
       "y": 20.48
@@ -312,6 +326,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 126,
+    "level": 35,
     "coords": {
       "x": 17.62,
       "y": 28.05
@@ -334,6 +349,7 @@
     "mapId": 6,
     "placeId": 56,
     "zoneId": 82,
+    "level": 45,
     "coords": {
       "x": 31.56,
       "y": 22.97
@@ -356,6 +372,7 @@
     "mapId": 7,
     "placeId": 57,
     "zoneId": 961,
+    "level": 15,
     "coords": {
       "x": 25.39,
       "y": 24.11
@@ -378,6 +395,7 @@
     "mapId": 7,
     "placeId": 57,
     "zoneId": 962,
+    "level": 15,
     "coords": {
       "x": 20.02,
       "y": 23.67
@@ -400,6 +418,7 @@
     "mapId": 7,
     "placeId": 57,
     "zoneId": 86,
+    "level": 40,
     "coords": {
       "x": 19.82,
       "y": 19.82
@@ -422,6 +441,7 @@
     "mapId": 7,
     "placeId": 57,
     "zoneId": 963,
+    "level": 50,
     "coords": {
       "x": 16.82,
       "y": 18.82
@@ -444,6 +464,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 410,
+    "level": 45,
     "coords": {
       "x": 24.09,
       "y": 12.06
@@ -466,6 +487,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 414,
+    "level": 50,
     "coords": {
       "x": 17.74,
       "y": 16.68
@@ -488,6 +510,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 413,
+    "level": 50,
     "coords": {
       "x": 13.42,
       "y": 12.32
@@ -510,6 +533,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 966,
+    "level": 45,
     "coords": {
       "x": 11.92,
       "y": 10.58
@@ -532,6 +556,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 968,
+    "level": 35,
     "coords": {
       "x": 19.46,
       "y": 29.59
@@ -554,6 +579,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 389,
+    "level": 50,
     "coords": {
       "x": 32.7,
       "y": 17.78
@@ -576,6 +602,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 969,
+    "level": 40,
     "coords": {
       "x": 14.64,
       "y": 20.4
@@ -598,6 +625,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 392,
+    "level": 45,
     "coords": {
       "x": 30.53,
       "y": 6.51
@@ -620,6 +648,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 970,
+    "level": 40,
     "coords": {
       "x": 26.91,
       "y": 15.94
@@ -642,6 +671,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 398,
+    "level": 35,
     "coords": {
       "x": 12.26,
       "y": 21.81
@@ -664,6 +694,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 971,
+    "level": 40,
     "coords": {
       "x": 5.45,
       "y": 21.63
@@ -686,6 +717,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 404,
+    "level": 45,
     "coords": {
       "x": 2.17,
       "y": 20.3
@@ -708,6 +740,7 @@
     "mapId": 53,
     "placeId": 63,
     "zoneId": 972,
+    "level": 45,
     "coords": {
       "x": 13.22,
       "y": 12.42
@@ -730,6 +763,7 @@
     "mapId": 12,
     "placeId": 29,
     "zoneId": 29,
+    "level": 1,
     "coords": {
       "x": 6.69,
       "y": 11.22
@@ -752,6 +786,7 @@
     "mapId": 11,
     "placeId": 28,
     "zoneId": 28,
+    "level": 1,
     "coords": {
       "x": 9.31,
       "y": 10.34
@@ -774,6 +809,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 973,
+    "level": 1,
     "coords": {
       "x": 17.7,
       "y": 21.01
@@ -796,6 +832,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 974,
+    "level": 5,
     "coords": {
       "x": 13.66,
       "y": 14.7
@@ -818,6 +855,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 182,
+    "level": 1,
     "coords": {
       "x": 21.11,
       "y": 21.19
@@ -840,6 +878,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 975,
+    "level": 1,
     "coords": {
       "x": 19.22,
       "y": 17.02
@@ -862,6 +901,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 193,
+    "level": 5,
     "coords": {
       "x": 17.24,
       "y": 13.88
@@ -884,6 +924,7 @@
     "mapId": 15,
     "placeId": 30,
     "zoneId": 192,
+    "level": 15,
     "coords": {
       "x": 19.8,
       "y": 11.18
@@ -906,6 +947,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 197,
+    "level": 1,
     "coords": {
       "x": 23.79,
       "y": 22.03
@@ -928,6 +970,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 976,
+    "level": 5,
     "coords": {
       "x": 25.91,
       "y": 24.99
@@ -950,6 +993,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 977,
+    "level": 10,
     "coords": {
       "x": 34.28,
       "y": 17.02
@@ -972,6 +1016,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 337,
+    "level": 15,
     "coords": {
       "x": 25.43,
       "y": 33.48
@@ -994,6 +1039,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 341,
+    "level": 10,
     "coords": {
       "x": 23.51,
       "y": 38.72
@@ -1016,6 +1062,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 338,
+    "level": 20,
     "coords": {
       "x": 16.38,
       "y": 35.08
@@ -1038,6 +1085,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 339,
+    "level": 10,
     "coords": {
       "x": 19.62,
       "y": 38.04
@@ -1060,6 +1108,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 340,
+    "level": 15,
     "coords": {
       "x": 21.01,
       "y": 34.02
@@ -1082,6 +1131,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 978,
+    "level": 25,
     "coords": {
       "x": 31.94,
       "y": 33.48
@@ -1104,6 +1154,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 206,
+    "level": 30,
     "coords": {
       "x": 31.9,
       "y": 28.31
@@ -1126,6 +1177,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 979,
+    "level": 35,
     "coords": {
       "x": 32.04,
       "y": 23.23
@@ -1148,6 +1200,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 211,
+    "level": 35,
     "coords": {
       "x": 29.83,
       "y": 22.03
@@ -1170,6 +1223,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 980,
+    "level": 40,
     "coords": {
       "x": 19.2,
       "y": 24.97
@@ -1192,6 +1246,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 168,
+    "level": 40,
     "coords": {
       "x": 19.48,
       "y": 29.27
@@ -1214,6 +1269,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 981,
+    "level": 40,
     "coords": {
       "x": 15.84,
       "y": 31.04
@@ -1236,6 +1292,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 214,
+    "level": 45,
     "coords": {
       "x": 14.36,
       "y": 26.47
@@ -1258,6 +1315,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 218,
+    "level": 10,
     "coords": {
       "x": 32.86,
       "y": 30.88
@@ -1280,6 +1338,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 982,
+    "level": 15,
     "coords": {
       "x": 25.69,
       "y": 25.99
@@ -1302,6 +1361,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 983,
+    "level": 35,
     "coords": {
       "x": 16.56,
       "y": 19.98
@@ -1324,6 +1384,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 984,
+    "level": 40,
     "coords": {
       "x": 13.48,
       "y": 28.91
@@ -1346,6 +1407,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 985,
+    "level": 50,
     "coords": {
       "x": 11.82,
       "y": 35.24
@@ -1368,6 +1430,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 220,
+    "level": 15,
     "coords": {
       "x": 29.15,
       "y": 29.63
@@ -1390,6 +1453,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 228,
+    "level": 45,
     "coords": {
       "x": 14.58,
       "y": 35.08
@@ -1412,6 +1476,7 @@
     "mapId": 19,
     "placeId": 34,
     "zoneId": 174,
+    "level": 20,
     "coords": {
       "x": 12.6,
       "y": 23.31
@@ -1434,6 +1499,7 @@
     "mapId": 19,
     "placeId": 34,
     "zoneId": 234,
+    "level": 20,
     "coords": {
       "x": 8.05,
       "y": 20.1
@@ -1456,6 +1522,7 @@
     "mapId": 19,
     "placeId": 34,
     "zoneId": 987,
+    "level": 35,
     "coords": {
       "x": 27.15,
       "y": 21.85
@@ -1478,6 +1545,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 266,
+    "level": 25,
     "coords": {
       "x": 13.58,
       "y": 28.55
@@ -1500,6 +1568,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 274,
+    "level": 15,
     "coords": {
       "x": 10.54,
       "y": 11.58
@@ -1522,6 +1591,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 272,
+    "level": 20,
     "coords": {
       "x": 14.58,
       "y": 18.22
@@ -1544,6 +1614,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 264,
+    "level": 5,
     "coords": {
       "x": 23.51,
       "y": 20.59
@@ -1566,6 +1637,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 245,
+    "level": 10,
     "coords": {
       "x": 16.18,
       "y": 14.7
@@ -1588,6 +1660,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 246,
+    "level": 45,
     "coords": {
       "x": 8.93,
       "y": 6.37
@@ -1610,6 +1683,7 @@
     "mapId": 21,
     "placeId": 43,
     "zoneId": 990,
+    "level": 5,
     "coords": {
       "x": 22.43,
       "y": 17.22
@@ -1632,6 +1706,7 @@
     "mapId": 21,
     "placeId": 43,
     "zoneId": 991,
+    "level": 10,
     "coords": {
       "x": 16.14,
       "y": 22.79
@@ -1654,6 +1729,7 @@
     "mapId": 21,
     "placeId": 43,
     "zoneId": 297,
+    "level": 15,
     "coords": {
       "x": 26.83,
       "y": 18.3
@@ -1676,6 +1752,7 @@
     "mapId": 22,
     "placeId": 44,
     "zoneId": 992,
+    "level": 15,
     "coords": {
       "x": 12.66,
       "y": 19.7
@@ -1698,6 +1775,7 @@
     "mapId": 22,
     "placeId": 44,
     "zoneId": 993,
+    "level": 15,
     "coords": {
       "x": 16.22,
       "y": 23.83
@@ -1720,6 +1798,7 @@
     "mapId": 22,
     "placeId": 44,
     "zoneId": 308,
+    "level": 30,
     "coords": {
       "x": 24.67,
       "y": 21.67
@@ -1742,6 +1821,7 @@
     "mapId": 3,
     "placeId": 53,
     "zoneId": 1000,
+    "level": 5,
     "coords": {
       "x": 15.55,
       "y": 5.31
@@ -1764,6 +1844,7 @@
     "mapId": 22,
     "placeId": 44,
     "zoneId": 253,
+    "level": 40,
     "coords": {
       "x": 28.15,
       "y": 23.71
@@ -1786,6 +1867,7 @@
     "mapId": 23,
     "placeId": 45,
     "zoneId": 314,
+    "level": 25,
     "coords": {
       "x": 20.75,
       "y": 14.1
@@ -1808,6 +1890,7 @@
     "mapId": 23,
     "placeId": 45,
     "zoneId": 995,
+    "level": 35,
     "coords": {
       "x": 24.39,
       "y": 20.02
@@ -1830,6 +1913,7 @@
     "mapId": 23,
     "placeId": 45,
     "zoneId": 323,
+    "level": 35,
     "coords": {
       "x": 14.66,
       "y": 29.95
@@ -1852,6 +1936,7 @@
     "mapId": 23,
     "placeId": 45,
     "zoneId": 996,
+    "level": 35,
     "coords": {
       "x": 11.38,
       "y": 35.04
@@ -1874,6 +1959,7 @@
     "mapId": 23,
     "placeId": 45,
     "zoneId": 997,
+    "level": 35,
     "coords": {
       "x": 26.31,
       "y": 35.96
@@ -1896,6 +1982,7 @@
     "mapId": 24,
     "placeId": 46,
     "zoneId": 330,
+    "level": 45,
     "coords": {
       "x": 19.74,
       "y": 22.59
@@ -1918,6 +2005,7 @@
     "mapId": 24,
     "placeId": 46,
     "zoneId": 998,
+    "level": 40,
     "coords": {
       "x": 23.15,
       "y": 25.01
@@ -1940,6 +2028,7 @@
     "mapId": 2,
     "placeId": 52,
     "zoneId": 964,
+    "level": 5,
     "coords": {
       "x": 11.62,
       "y": 13.63
@@ -1962,6 +2051,7 @@
     "mapId": 2,
     "placeId": 52,
     "zoneId": 965,
+    "level": 5,
     "coords": {
       "x": 9.73,
       "y": 10.67
@@ -1984,6 +2074,7 @@
     "mapId": 4,
     "placeId": 54,
     "zoneId": 59,
+    "level": 35,
     "coords": {
       "x": 9.87,
       "y": 22.17
@@ -2006,6 +2097,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 417,
+    "level": 45,
     "coords": {
       "x": 28.15,
       "y": 9.33
@@ -2028,6 +2120,7 @@
     "mapId": 25,
     "placeId": 67,
     "zoneId": 967,
+    "level": 50,
     "coords": {
       "x": 29.99,
       "y": 5.21
@@ -2050,6 +2143,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 276,
+    "level": 50,
     "coords": {
       "x": 14.06,
       "y": 5.39
@@ -2072,6 +2166,7 @@
     "mapId": 21,
     "placeId": 43,
     "zoneId": 249,
+    "level": 10,
     "coords": {
       "x": 28.55,
       "y": 20.42
@@ -2094,6 +2189,7 @@
     "mapId": 16,
     "placeId": 31,
     "zoneId": 202,
+    "level": 20,
     "coords": {
       "x": 26.45,
       "y": 14.7
@@ -2116,6 +2212,7 @@
     "mapId": 19,
     "placeId": 34,
     "zoneId": 988,
+    "level": 30,
     "coords": {
       "x": 32.58,
       "y": 23.95
@@ -2138,6 +2235,7 @@
     "mapId": 30,
     "placeId": 350,
     "zoneId": 989,
+    "level": 40,
     "coords": {
       "x": 14.9,
       "y": 10.34
@@ -2160,6 +2258,7 @@
     "mapId": 3,
     "placeId": 53,
     "zoneId": 999,
+    "level": 5,
     "coords": {
       "x": 7.91,
       "y": 7.01
@@ -2182,6 +2281,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 363,
+    "level": 45,
     "coords": {
       "x": 16.14,
       "y": 14.78
@@ -2204,6 +2304,7 @@
     "mapId": 18,
     "placeId": 33,
     "zoneId": 365,
+    "level": 50,
     "coords": {
       "x": 12.78,
       "y": 12.18
@@ -2226,6 +2327,7 @@
     "mapId": 20,
     "placeId": 42,
     "zoneId": 275,
+    "level": 45,
     "coords": {
       "x": 17.02,
       "y": 6.07
@@ -2248,6 +2350,7 @@
     "mapId": 72,
     "placeId": 425,
     "zoneId": 425,
+    "level": 30,
     "coords": {
       "x": 10.01,
       "y": 10.01
@@ -2270,6 +2373,7 @@
     "mapId": 82,
     "placeId": 426,
     "zoneId": 426,
+    "level": 30,
     "coords": {
       "x": 10.01,
       "y": 10.01
@@ -2292,6 +2396,7 @@
     "mapId": 83,
     "placeId": 427,
     "zoneId": 427,
+    "level": 30,
     "coords": {
       "x": 10.01,
       "y": 10.01
@@ -2314,6 +2419,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 1001,
+    "level": 50,
     "coords": {
       "x": 36.64,
       "y": 21.83
@@ -2336,6 +2442,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 1002,
+    "level": 50,
     "coords": {
       "x": 36.24,
       "y": 23.03
@@ -2358,6 +2465,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 2201,
+    "level": 50,
     "coords": {
       "x": 31.87,
       "y": 26.56
@@ -2380,6 +2488,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 2217,
+    "level": 51,
     "coords": {
       "x": 34.57,
       "y": 26.39
@@ -2402,6 +2511,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 1003,
+    "level": 52,
     "coords": {
       "x": 27.44,
       "y": 16.91
@@ -2424,6 +2534,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 1004,
+    "level": 60,
     "coords": {
       "x": 35.79,
       "y": 4.98
@@ -2446,6 +2557,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 2227,
+    "level": 60,
     "coords": {
       "x": 7.72,
       "y": 8.73
@@ -2468,6 +2580,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 1005,
+    "level": 53,
     "coords": {
       "x": 20.78,
       "y": 10.33
@@ -2490,6 +2603,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 2211,
+    "level": 52,
     "coords": {
       "x": 13.07,
       "y": 14.71
@@ -2512,6 +2626,7 @@
     "mapId": 211,
     "placeId": 2200,
     "zoneId": 1006,
+    "level": 53,
     "coords": {
       "x": 12.27,
       "y": 7.84
@@ -2534,6 +2649,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2019,
+    "level": 52,
     "coords": {
       "x": 30.39,
       "y": 9.11
@@ -2556,6 +2672,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2020,
+    "level": 52,
     "coords": {
       "x": 29.63,
       "y": 13.83
@@ -2578,6 +2695,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2004,
+    "level": 52,
     "coords": {
       "x": 24.28,
       "y": 24.83
@@ -2600,6 +2718,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2029,
+    "level": 55,
     "coords": {
       "x": 30.62,
       "y": 5.06
@@ -2622,6 +2741,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2008,
+    "level": 55,
     "coords": {
       "x": 12.14,
       "y": 12.4
@@ -2644,6 +2764,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 1007,
+    "level": 56,
     "coords": {
       "x": 8.65,
       "y": 6.54
@@ -2666,6 +2787,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2064,
+    "level": 57,
     "coords": {
       "x": 18.47,
       "y": 9.83
@@ -2688,6 +2810,7 @@
     "mapId": 212,
     "placeId": 2000,
     "zoneId": 2030,
+    "level": 60,
     "coords": {
       "x": 6.66,
       "y": 4.43
@@ -2710,6 +2833,7 @@
     "mapId": 213,
     "placeId": 2001,
     "zoneId": 2039,
+    "level": 57,
     "coords": {
       "x": 22.17,
       "y": 22.55
@@ -2732,6 +2856,7 @@
     "mapId": 213,
     "placeId": 2001,
     "zoneId": 2035,
+    "level": 58,
     "coords": {
       "x": 10.33,
       "y": 26.56
@@ -2754,6 +2879,7 @@
     "mapId": 213,
     "placeId": 2001,
     "zoneId": 1008,
+    "level": 58,
     "coords": {
       "x": 21.96,
       "y": 35.37
@@ -2776,6 +2902,7 @@
     "mapId": 213,
     "placeId": 2001,
     "zoneId": 1009,
+    "level": 60,
     "coords": {
       "x": 19.62,
       "y": 24.03
@@ -2798,6 +2925,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2013,
+    "level": 54,
     "coords": {
       "x": 35.83,
       "y": 29.51
@@ -2820,6 +2948,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2017,
+    "level": 54,
     "coords": {
       "x": 7.76,
       "y": 33.38
@@ -2842,6 +2971,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2079,
+    "level": 54,
     "coords": {
       "x": 8.18,
       "y": 7.09
@@ -2864,6 +2994,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2014,
+    "level": 54,
     "coords": {
       "x": 28.71,
       "y": 24.37
@@ -2886,6 +3017,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 1010,
+    "level": 55,
     "coords": {
       "x": 17.45,
       "y": 39.37
@@ -2908,6 +3040,7 @@
     "mapId": 214,
     "placeId": 2002,
     "zoneId": 2048,
+    "level": 55,
     "coords": {
       "x": 19.27,
       "y": 5.4
@@ -2930,6 +3063,7 @@
     "mapId": 215,
     "placeId": 2100,
     "zoneId": 2103,
+    "level": 52,
     "coords": {
       "x": 27.91,
       "y": 33.93
@@ -2952,6 +3086,7 @@
     "mapId": 215,
     "placeId": 2100,
     "zoneId": 2120,
+    "level": 60,
     "coords": {
       "x": 30.56,
       "y": 38.61
@@ -2974,6 +3109,7 @@
     "mapId": 215,
     "placeId": 2100,
     "zoneId": 2102,
+    "level": 53,
     "coords": {
       "x": 14.08,
       "y": 37.6
@@ -2996,6 +3132,7 @@
     "mapId": 215,
     "placeId": 2100,
     "zoneId": 2105,
+    "level": 56,
     "coords": {
       "x": 6.66,
       "y": 10.54
@@ -3018,6 +3155,7 @@
     "mapId": 215,
     "placeId": 2100,
     "zoneId": 2129,
+    "level": 56,
     "coords": {
       "x": 14.33,
       "y": 4.64
@@ -3040,6 +3178,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2109,
+    "level": 58,
     "coords": {
       "x": 15.85,
       "y": 11.05
@@ -3062,6 +3201,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 1011,
+    "level": 59,
     "coords": {
       "x": 30.14,
       "y": 5.69
@@ -3084,6 +3224,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2177,
+    "level": 60,
     "coords": {
       "x": 5.91,
       "y": 15.68
@@ -3106,6 +3247,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2112,
+    "level": 59,
     "coords": {
       "x": 11.09,
       "y": 30.81
@@ -3128,6 +3270,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2173,
+    "level": 60,
     "coords": {
       "x": 5.78,
       "y": 34.35
@@ -3150,6 +3293,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2113,
+    "level": 60,
     "coords": {
       "x": 39.2,
       "y": 17.71
@@ -3172,6 +3316,7 @@
     "mapId": 216,
     "placeId": 2101,
     "zoneId": 2114,
+    "level": 60,
     "coords": {
       "x": 21.08,
       "y": 21.08
@@ -3194,6 +3339,7 @@
     "mapId": 30,
     "placeId": 350,
     "zoneId": 1012,
+    "level": 35,
     "coords": {
       "x": 18.42,
       "y": 17.22
@@ -3216,6 +3362,7 @@
     "mapId": 17,
     "placeId": 32,
     "zoneId": 1013,
+    "level": 50,
     "coords": {
       "x": 35.04,
       "y": 25.63
@@ -3238,6 +3385,7 @@
     "mapId": 370,
     "placeId": 2404,
     "zoneId": 2501,
+    "level": 63,
     "coords": {
       "x": 9.51,
       "y": 10.01
@@ -3260,6 +3408,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1027,
+    "level": 62,
     "coords": {
       "x": 37.44,
       "y": 37.44
@@ -3282,6 +3431,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1028,
+    "level": 62,
     "coords": {
       "x": 24.83,
       "y": 32.64
@@ -3304,6 +3454,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1029,
+    "level": 65,
     "coords": {
       "x": 33.64,
       "y": 19.22
@@ -3326,6 +3477,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1030,
+    "level": 63,
     "coords": {
       "x": 31.64,
       "y": 7.21
@@ -3348,6 +3500,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1031,
+    "level": 64,
     "coords": {
       "x": 21.03,
       "y": 10.01
@@ -3370,6 +3523,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1032,
+    "level": 64,
     "coords": {
       "x": 8.01,
       "y": 10.94
@@ -3392,6 +3546,7 @@
     "mapId": 371,
     "placeId": 2409,
     "zoneId": 1033,
+    "level": 70,
     "coords": {
       "x": 7.31,
       "y": 25.63
@@ -3414,6 +3569,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1034,
+    "level": 64,
     "coords": {
       "x": 33.84,
       "y": 13.02
@@ -3436,6 +3592,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1035,
+    "level": 64,
     "coords": {
       "x": 34.84,
       "y": 16.02
@@ -3458,6 +3615,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1036,
+    "level": 64,
     "coords": {
       "x": 28.53,
       "y": 14.62
@@ -3480,6 +3638,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1042,
+    "level": 67,
     "coords": {
       "x": 27.63,
       "y": 5.51
@@ -3502,6 +3661,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1043,
+    "level": 67,
     "coords": {
       "x": 30.73,
       "y": 6.21
@@ -3524,6 +3684,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1037,
+    "level": 67,
     "coords": {
       "x": 13.42,
       "y": 6.41
@@ -3546,6 +3707,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1038,
+    "level": 67,
     "coords": {
       "x": 10.42,
       "y": 13.02
@@ -3568,6 +3730,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1039,
+    "level": 65,
     "coords": {
       "x": 19.02,
       "y": 23.23
@@ -3590,6 +3753,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1040,
+    "level": 70,
     "coords": {
       "x": 10.01,
       "y": 31.94
@@ -3612,6 +3776,7 @@
     "mapId": 354,
     "placeId": 2410,
     "zoneId": 1041,
+    "level": 70,
     "coords": {
       "x": 35.04,
       "y": 22.83
@@ -3634,6 +3799,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1046,
+    "level": 60,
     "coords": {
       "x": 31.44,
       "y": 29.43
@@ -3656,6 +3822,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 2500,
+    "level": 60,
     "coords": {
       "x": 28.03,
       "y": 19.42
@@ -3678,6 +3845,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1049,
+    "level": 60,
     "coords": {
       "x": 16.94,
       "y": 17.82
@@ -3700,6 +3868,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1045,
+    "level": 60,
     "coords": {
       "x": 20.63,
       "y": 21.43
@@ -3722,6 +3891,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1047,
+    "level": 60,
     "coords": {
       "x": 15.62,
       "y": 13.42
@@ -3744,6 +3914,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1048,
+    "level": 60,
     "coords": {
       "x": 21.63,
       "y": 27.43
@@ -3766,6 +3937,7 @@
     "mapId": 372,
     "placeId": 2411,
     "zoneId": 1044,
+    "level": 60,
     "coords": {
       "x": 11.52,
       "y": 32.24
@@ -3788,6 +3960,7 @@
     "mapId": 366,
     "placeId": 2403,
     "zoneId": 2502,
+    "level": 61,
     "coords": {
       "x": 10.01,
       "y": 13.02
@@ -3810,6 +3983,7 @@
     "mapId": 366,
     "placeId": 2403,
     "zoneId": 2504,
+    "level": 62,
     "coords": {
       "x": 10.27,
       "y": 9.36
@@ -3832,6 +4006,7 @@
     "mapId": 366,
     "placeId": 2403,
     "zoneId": 2503,
+    "level": 62,
     "coords": {
       "x": 11.17,
       "y": 4.91
@@ -3854,6 +4029,7 @@
     "mapId": 367,
     "placeId": 2406,
     "zoneId": 1014,
+    "level": 61,
     "coords": {
       "x": 10.52,
       "y": 17.22
@@ -3876,6 +4052,7 @@
     "mapId": 367,
     "placeId": 2406,
     "zoneId": 1015,
+    "level": 62,
     "coords": {
       "x": 8.61,
       "y": 28.03
@@ -3898,6 +4075,7 @@
     "mapId": 367,
     "placeId": 2406,
     "zoneId": 1016,
+    "level": 62,
     "coords": {
       "x": 12.92,
       "y": 30.03
@@ -3920,6 +4098,7 @@
     "mapId": 367,
     "placeId": 2406,
     "zoneId": 1017,
+    "level": 61,
     "coords": {
       "x": 16.92,
       "y": 8.51
@@ -3942,6 +4121,7 @@
     "mapId": 367,
     "placeId": 2406,
     "zoneId": 1018,
+    "level": 62,
     "coords": {
       "x": 26.53,
       "y": 15.42
@@ -3964,6 +4144,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1019,
+    "level": 61,
     "coords": {
       "x": 5.21,
       "y": 14.02
@@ -3986,6 +4167,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1020,
+    "level": 61,
     "coords": {
       "x": 22.63,
       "y": 8.21
@@ -4008,6 +4190,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1021,
+    "level": 65,
     "coords": {
       "x": 31.64,
       "y": 5.61
@@ -4030,6 +4213,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1022,
+    "level": 70,
     "coords": {
       "x": 31.04,
       "y": 16.02
@@ -4052,6 +4236,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1023,
+    "level": 68,
     "coords": {
       "x": 19.58,
       "y": 31.68
@@ -4074,6 +4259,7 @@
     "mapId": 368,
     "placeId": 2407,
     "zoneId": 1025,
+    "level": 70,
     "coords": {
       "x": 8.21,
       "y": 36.44
@@ -4096,6 +4282,7 @@
     "mapId": 369,
     "placeId": 2408,
     "zoneId": 1026,
+    "level": 70,
     "coords": {
       "x": 20.53,
       "y": 20.53
@@ -4118,6 +4305,7 @@
     "mapId": 364,
     "placeId": 2412,
     "zoneId": 2505,
+    "level": 63,
     "coords": {
       "x": 7.51,
       "y": 13.52
@@ -4140,6 +4328,7 @@
     "mapId": 364,
     "placeId": 2412,
     "zoneId": 2506,
+    "level": 65,
     "coords": {
       "x": 9.71,
       "y": 10.32
@@ -4162,6 +4351,7 @@
     "mapId": 497,
     "placeId": 2951,
     "zoneId": 3289,
+    "level": 70,
     "coords": {
       "x": 7.71,
       "y": 6.46
@@ -4184,6 +4374,7 @@
     "mapId": 497,
     "placeId": 2951,
     "zoneId": 3290,
+    "level": 70,
     "coords": {
       "x": 9.41,
       "y": 14.62
@@ -4206,6 +4397,7 @@
     "mapId": 497,
     "placeId": 2951,
     "zoneId": 3291,
+    "level": 70,
     "coords": {
       "x": 11.77,
       "y": 15.32
@@ -4228,6 +4420,7 @@
     "mapId": 491,
     "placeId": 2953,
     "zoneId": 3292,
+    "level": 71,
     "coords": {
       "x": 30.03,
       "y": 10.92
@@ -4250,6 +4443,7 @@
     "mapId": 491,
     "placeId": 2953,
     "zoneId": 3293,
+    "level": 72,
     "coords": {
       "x": 10.92,
       "y": 20.53
@@ -4272,6 +4466,7 @@
     "mapId": 491,
     "placeId": 2953,
     "zoneId": 3294,
+    "level": 71,
     "coords": {
       "x": 11.72,
       "y": 28.63
@@ -4294,6 +4489,7 @@
     "mapId": 491,
     "placeId": 2953,
     "zoneId": 3295,
+    "level": 72,
     "coords": {
       "x": 18.42,
       "y": 34.84
@@ -4316,6 +4512,7 @@
     "mapId": 491,
     "placeId": 2953,
     "zoneId": 3296,
+    "level": 75,
     "coords": {
       "x": 8.21,
       "y": 36.64
@@ -4338,6 +4535,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3297,
+    "level": 78,
     "coords": {
       "x": 26.03,
       "y": 13.42
@@ -4360,6 +4558,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3298,
+    "level": 71,
     "coords": {
       "x": 28.43,
       "y": 20.42
@@ -4382,6 +4581,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3299,
+    "level": 71,
     "coords": {
       "x": 29.23,
       "y": 26.03
@@ -4404,6 +4604,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3300,
+    "level": 71,
     "coords": {
       "x": 19.62,
       "y": 23.23
@@ -4426,6 +4627,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3301,
+    "level": 72,
     "coords": {
       "x": 7.41,
       "y": 34.24
@@ -4448,6 +4650,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3302,
+    "level": 75,
     "coords": {
       "x": 15.82,
       "y": 34.84
@@ -4470,6 +4673,7 @@
     "mapId": 492,
     "placeId": 2954,
     "zoneId": 3303,
+    "level": 72,
     "coords": {
       "x": 34.24,
       "y": 34.84
@@ -4492,6 +4696,7 @@
     "mapId": 498,
     "placeId": 2952,
     "zoneId": 3304,
+    "level": 72,
     "coords": {
       "x": 10.27,
       "y": 10.27
@@ -4514,6 +4719,7 @@
     "mapId": 493,
     "placeId": 2955,
     "zoneId": 3305,
+    "level": 71,
     "coords": {
       "x": 30.84,
       "y": 11.72
@@ -4536,6 +4742,7 @@
     "mapId": 493,
     "placeId": 2955,
     "zoneId": 3307,
+    "level": 77,
     "coords": {
       "x": 14.52,
       "y": 13.82
@@ -4558,6 +4765,7 @@
     "mapId": 493,
     "placeId": 2955,
     "zoneId": 3306,
+    "level": 72,
     "coords": {
       "x": 30.03,
       "y": 30.63
@@ -4580,6 +4788,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3308,
+    "level": 73,
     "coords": {
       "x": 3.31,
       "y": 21.33
@@ -4602,6 +4811,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3309,
+    "level": 73,
     "coords": {
       "x": 20.02,
       "y": 21.83
@@ -4624,6 +4834,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3310,
+    "level": 74,
     "coords": {
       "x": 21.03,
       "y": 8.11
@@ -4646,6 +4857,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3311,
+    "level": 74,
     "coords": {
       "x": 24.83,
       "y": 8.01
@@ -4668,6 +4880,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3314,
+    "level": 75,
     "coords": {
       "x": 30.94,
       "y": 21.33
@@ -4690,6 +4903,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3312,
+    "level": 74,
     "coords": {
       "x": 27.93,
       "y": 12.52
@@ -4712,6 +4926,7 @@
     "mapId": 494,
     "placeId": 2956,
     "zoneId": 3313,
+    "level": 74,
     "coords": {
       "x": 33.94,
       "y": 25.33
@@ -4734,6 +4949,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3315,
+    "level": 70,
     "coords": {
       "x": 6.41,
       "y": 27.73
@@ -4756,6 +4972,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3316,
+    "level": 70,
     "coords": {
       "x": 8.71,
       "y": 19.82
@@ -4778,6 +4995,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3317,
+    "level": 70,
     "coords": {
       "x": 15.02,
       "y": 20.53
@@ -4800,6 +5018,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3318,
+    "level": 70,
     "coords": {
       "x": 23.03,
       "y": 30.63
@@ -4822,6 +5041,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3319,
+    "level": 80,
     "coords": {
       "x": 6.81,
       "y": 15.22
@@ -4844,6 +5064,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3320,
+    "level": 80,
     "coords": {
       "x": 10.21,
       "y": 5.61
@@ -4866,6 +5087,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3321,
+    "level": 79,
     "coords": {
       "x": 36.74,
       "y": 6.01
@@ -4888,6 +5110,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3322,
+    "level": 79,
     "coords": {
       "x": 10.92,
       "y": 9.91
@@ -4910,6 +5133,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3323,
+    "level": 80,
     "coords": {
       "x": 5.21,
       "y": 12.52
@@ -4932,6 +5156,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3324,
+    "level": 80,
     "coords": {
       "x": 7.51,
       "y": 14.62
@@ -4954,6 +5179,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3325,
+    "level": 79,
     "coords": {
       "x": 32.64,
       "y": 29.63
@@ -4976,6 +5202,7 @@
     "mapId": 496,
     "placeId": 2958,
     "zoneId": 3326,
+    "level": 80,
     "coords": {
       "x": 28.03,
       "y": 13.92
@@ -4998,6 +5225,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3448,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5020,6 +5248,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3449,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5042,6 +5271,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3450,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5064,6 +5294,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3451,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5086,6 +5317,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3454,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5108,6 +5340,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3455,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5130,6 +5363,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3452,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5152,6 +5386,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3453,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5174,6 +5409,7 @@
     "mapId": 495,
     "placeId": 2957,
     "zoneId": 3458,
+    "level": 70,
     "coords": {
       "x": 25.03,
       "y": 35.74
@@ -5196,6 +5432,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3621,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5218,6 +5455,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3622,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5240,6 +5478,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3623,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5262,6 +5501,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3624,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5284,6 +5524,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3625,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5306,6 +5547,7 @@
     "mapId": 604,
     "placeId": 3477,
     "zoneId": 3626,
+    "level": 1,
     "coords": {
       "x": 5.14,
       "y": 5.14
@@ -5328,6 +5570,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2507,
+    "level": 70,
     "fishes": [
       20123,
       20119,
@@ -5346,6 +5589,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2258,
+    "level": 70,
     "coords": {
       "x": 12,
       "y": 36
@@ -5368,6 +5612,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2259,
+    "level": 1,
     "coords": {
       "x": 11,
       "y": 29
@@ -5390,6 +5635,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2261,
+    "level": 60,
     "coords": {
       "x": 10.5,
       "y": 9.1
@@ -5412,6 +5658,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2262,
+    "level": 80,
     "coords": {
       "x": 32.4,
       "y": 9.5
@@ -5434,6 +5681,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2263,
+    "level": 80,
     "coords": {
       "x": 29,
       "y": 33
@@ -5456,6 +5704,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2264,
+    "level": 80,
     "coords": {
       "x": 12.2,
       "y": 24.4
@@ -5478,6 +5727,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3489,
+    "level": 80,
     "coords": {
       "x": 26,
       "y": 16
@@ -5500,6 +5750,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2258,
+    "level": 70,
     "fishes": [
       31586,
       31587,
@@ -5518,6 +5769,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2259,
+    "level": 1,
     "fishes": [
       31578,
       31579,
@@ -5536,6 +5788,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2261,
+    "level": 60,
     "fishes": [
       31582,
       31583,
@@ -5554,6 +5807,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2262,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5572,6 +5826,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2263,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5590,6 +5845,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2264,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5608,6 +5864,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3489,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5626,6 +5883,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3532,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5644,6 +5902,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3533,
+    "level": 80,
     "fishes": [
       31590,
       31591,
@@ -5662,6 +5921,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2258,
+    "level": 70,
     "fishes": [
       32890,
       32891,
@@ -5680,6 +5940,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2259,
+    "level": 1,
     "fishes": [
       32882,
       32883,
@@ -5698,6 +5959,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2261,
+    "level": 60,
     "fishes": [
       32886,
       32887,
@@ -5716,6 +5978,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2262,
+    "level": 80,
     "fishes": [
       32894,
       32895,
@@ -5734,6 +5997,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2263,
+    "level": 80,
     "fishes": [
       32894,
       32895,
@@ -5752,6 +6016,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 2264,
+    "level": 80,
     "fishes": [
       32894,
       32895,
@@ -5770,6 +6035,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3489,
+    "level": 80,
     "fishes": [
       32894,
       32895,
@@ -5788,6 +6054,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3532,
+    "level": 80,
     "fishes": [
       32894,
       32895,
@@ -5806,6 +6073,7 @@
     "mapId": 584,
     "placeId": 1647,
     "zoneId": 3533,
+    "level": 80,
     "fishes": [
       32894,
       32895,

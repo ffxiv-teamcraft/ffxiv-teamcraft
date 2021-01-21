@@ -72,11 +72,12 @@
             <div>{{craft.lvl}}</div>
             <div *ngIf="craft.stars_tooltip !== undefined">{{craft.stars_tooltip}}</div>
           </ng-container>
+          <app-company-workshop-tree-button *ngIf="craft.job == 0" [recipeId]="craft.id"></app-company-workshop-tree-button>
         </div>
       </ng-container>
       <div *ngSwitchCase="dataTypes.GATHERED_BY" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="2px">
         <button (click)="openGatheredByPopup(item)" nz-button nzShape="circle">
-          <img class="img-icon gathering-icon" src="{{source.data.icon}}">
+          <img class="gathering-icon" src="{{source.data.type | nodeTypeIcon: source.data.nodes[0]?.limited}}">
         </button>
         <div>{{source.data.level}}</div>
         <div *ngIf="source.data.stars_tooltip !== undefined">{{source.data.stars_tooltip}}</div>

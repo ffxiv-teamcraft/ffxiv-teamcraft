@@ -152,6 +152,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/desynth/desynth.module').then(m => m.DesynthModule)
   },
   {
+    path: 'retainers',
+    loadChildren: () => import('./pages/retainers/retainers.module').then(m => m.RetainersModule)
+  },
+  {
+    path: 'retainer-ventures',
+    loadChildren: () => import('./pages/retainer-ventures/retainer-ventures.module').then(m => m.RetainerVenturesModule)
+  },
+  {
     path: 'support-us',
     loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
   },
@@ -170,6 +178,10 @@ const routes: Routes = [
   {
     path: 'food-picker',
     loadChildren: () => import('./pages/food-picker/food-picker.module').then(m => m.FoodPickerModule)
+  },
+  {
+    path: 'leveling-equipment',
+    loadChildren: () => import('./pages/leveling-equipment/leveling-equipment.module').then(m => m.LevelingEquipmentModule)
   },
   {
     path: 'blog',

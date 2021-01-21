@@ -8,20 +8,10 @@
       </div>
       <div fxLayout="column" fxLayoutGap="5px">
         <div>
-            <span (clipboardCopySuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
-                  *ngIf="settings.preferredCopyType === 'classic'"
-                  [clipboard]="itemId | itemName | i18n"
-                  [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+            <span [itemNameCopy]="itemId"
                   class="item-name"
                   nz-tooltip>
               {{itemId | itemName | i18n}}
-            </span>
-          <span (clipboardCopySuccess)="nameCopied('Item_name_copied', {itemname: $event.content})"
-                *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
-                clipboard="/isearch &quot;{{itemId | itemName | i18n}}&quot;"
-                class="item-name"
-                nz-tooltip>
-                      {{itemId | itemName | i18n}}
             </span>
           <button *ngIf="!readonly" (click)="changeRecipe.emit()" [nzTooltipTitle]="'SIMULATOR.Change_recipe' | translate" nz-button
                   nz-tooltip nzShape="circle"
@@ -135,7 +125,7 @@
                 <span class="report-row">
                     {{'SIMULATOR.Reliability' | translate}}: {{report.successPercent}}%
                 </span>
-                <span class="report-row" nz-tooltip [nzTooltipTitle]="detailsTooltip">
+          <span class="report-row" nz-tooltip [nzTooltipTitle]="detailsTooltip">
                   <ng-template #detailsTooltip>
                     <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="5px">
                       <div>{{'SIMULATOR.Median_HQ' | translate}}:</div><div>{{report.medianHQPercent}}%</div>
@@ -147,7 +137,7 @@
                       <div>{{'SIMULATOR.Max_HQ' | translate}}:</div><div>{{report.maxHQPercent}}%</div>
                     </div>
                   </ng-template>
-                    {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
+            {{'SIMULATOR.Average_hq' | translate}}: {{report.averageHQPercent}}%
                 </span>
         </div>
       </div>

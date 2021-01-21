@@ -4,6 +4,8 @@ import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { AlarmDisplay } from '../../../core/alarms/alarm-display';
 import { Alarm } from '../../../core/alarms/alarm';
 import { AlarmGroup } from '../../../core/alarms/alarm-group';
+import { map } from 'rxjs/operators';
+import { ltr } from 'semver';
 
 @Component({
   selector: 'app-alarm-group',
@@ -14,6 +16,12 @@ import { AlarmGroup } from '../../../core/alarms/alarm-group';
 export class AlarmGroupComponent {
 
   public group$ = this.alarmsFacade.externalGroup$;
+
+  public outdated$ = this.group$.pipe(
+    map(group => {
+      return !group.notFound && ltr(group.appVersion, '8.0.0');
+    })
+  )
 
   public alarms$ = this.alarmsFacade.externalGroupAlarms$;
 
@@ -34,8 +42,8 @@ export class AlarmGroupComponent {
   }
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    alarm.groupId = group.$key;
     this.alarmsFacade.addAlarms(alarm);
+    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
   }
 
   cloneGroup(group: AlarmGroup, alarms: Alarm[]): void {

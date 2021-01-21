@@ -12,7 +12,7 @@ export class TeamcraftUser extends DataModel {
   currentFcId: string;
   lodestoneIds: LodestoneIdEntry[] = [];
 
-  customCharacters: Partial<Character>[] = [];
+  customCharacters: Partial<Character & { contentId: string }>[] = [];
 
   favorites: Favorites = {
     lists: [],

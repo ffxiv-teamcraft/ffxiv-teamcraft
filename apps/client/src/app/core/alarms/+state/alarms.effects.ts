@@ -1,7 +1,7 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import {
-  AddAlarms,
+  AddAlarms, AddAlarmsAndGroup,
   AlarmGroupLoaded,
   AlarmsActionTypes,
   AlarmsCreated,
@@ -11,10 +11,12 @@ import {
   DeleteAlarmGroup,
   LoadAlarmGroup,
   RemoveAlarm,
+  SetAlarms,
+  SetGroups,
   UpdateAlarm,
   UpdateAlarmGroup
 } from './alarms.actions';
-import { bufferTime, catchError, debounceTime, distinctUntilChanged, filter, map, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { bufferTime, catchError, debounceTime, distinctUntilChanged, filter, map, mapTo, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, of } from 'rxjs';
 import { AlarmsFacade } from './alarms.facade';
 import { AuthFacade } from '../../../+state/auth.facade';
@@ -48,30 +50,43 @@ export class AlarmsEffects {
     map(([alarms, groups]) => new AlarmsLoaded(alarms, groups))
   );
 
+  @Effect({ dispatch: false })
+  deleteAllAlarms$ = this.actions$.pipe(
+    ofType(AlarmsActionTypes.DeleteAllAlarms),
+    withLatestFrom(this.alarmsFacade.allAlarms$),
+    switchMap(([, alarms]) => {
+      return this.alarmsService.deleteAll(alarms);
+    })
+  );
+
   @Effect()
   loadAlarmGroup$ = this.actions$.pipe(
     ofType<LoadAlarmGroup>(AlarmsActionTypes.LoadAlarmGroup),
     switchMap((action) => {
-      return combineLatest([
-        this.alarmGroupsService.get(action.key).pipe(
-          catchError(() => {
-            const notFound = new AlarmGroup('', 0);
-            notFound.notFound = true;
-            return of(notFound);
-          })
-        ),
-        this.alarmsService.getByForeignKey(AlarmGroup, action.key)
-      ]);
-    }),
-    map(([group, alarms]) => {
-      return new AlarmGroupLoaded(group, alarms);
+      return this.alarmGroupsService.get(action.key).pipe(
+        catchError(() => {
+          const notFound = new AlarmGroup('', 0);
+          notFound.notFound = true;
+          return of(notFound);
+        }),
+        switchMap(group => {
+          if (group.notFound || group.alarms.length === 0) {
+            return of(new AlarmGroupLoaded(group, []));
+          }
+          return combineLatest(group.alarms.map(key => this.alarmsService.get(key))).pipe(
+            map(alarms => {
+              return new AlarmGroupLoaded(group, alarms);
+            })
+          );
+        })
+      );
     })
   );
 
   @Effect()
   addAlarmsToDatabase$ = this.actions$
     .pipe(
-      ofType(AlarmsActionTypes.AddAlarms),
+      ofType<AddAlarms>(AlarmsActionTypes.AddAlarms),
       withLatestFrom(this.authFacade.userId$),
       map(([action, userId]) => {
         return (<AddAlarms>action).payload.map(alarm => {
@@ -82,6 +97,42 @@ export class AlarmsEffects {
         return combineLatest(
           alarms.map(alarm => {
             return this.alarmsService.add(alarm);
+          })
+        );
+      }),
+      map((alarms) => new AlarmsCreated(alarms.length))
+    );
+
+  @Effect()
+  addAlarmsAndGroupToDatabase$ = this.actions$
+    .pipe(
+      ofType<AddAlarmsAndGroup>(AlarmsActionTypes.AddAlarmsAndGroup),
+      withLatestFrom(this.authFacade.userId$, this.alarmsFacade.allAlarms$),
+      switchMap(([{ payload, groupName }, userId, allAlarms]) => {
+        const alreadyCreated = payload
+          .map(alarm => allAlarms.find(a => a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes))
+          .filter(a => !!a);
+        const alarms = payload
+          .filter(alarm => !allAlarms.some(a => a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes))
+          .map(alarm => {
+            return new Alarm({ ...alarm, userId: userId });
+          });
+        let res = combineLatest(
+          alarms.map(alarm => {
+            return this.alarmsService.add(alarm);
+          })
+        );
+        if (alarms.length === 0) {
+          res = of([]);
+        }
+        return res.pipe(
+          switchMap(alarmKeys => {
+            const newGroup = new AlarmGroup(groupName, 0);
+            newGroup.userId = userId;
+            newGroup.alarms = [...alarmKeys, ...alreadyCreated.map(a => a.$key)];
+            return this.alarmGroupsService.add(newGroup).pipe(
+              mapTo(alarmKeys)
+            );
           })
         );
       }),
@@ -99,9 +150,31 @@ export class AlarmsEffects {
   @Effect({ dispatch: false })
   removeAlarmFromDatabase$ = this.actions$
     .pipe(
-      ofType(AlarmsActionTypes.RemoveAlarm),
-      switchMap((action: RemoveAlarm) => this.alarmsService.remove(action.id))
+      ofType<RemoveAlarm>(AlarmsActionTypes.RemoveAlarm),
+      withLatestFrom(this.alarmsFacade.allGroups$),
+      switchMap(([action, groups]) => {
+        const groupsToUpdate = groups.map(g => {
+          const lengthBefore = g.alarms.length;
+          g.alarms = g.alarms.filter(key => key !== action.id);
+          return g.alarms.length !== lengthBefore ? g : null;
+        }).filter(g => !!g);
+        if (groupsToUpdate) {
+          return combineLatest([
+            this.alarmsService.remove(action.id),
+            this.alarmGroupsService.setMany(groupsToUpdate)
+          ]);
+        }
+        return this.alarmsService.remove(action.id);
+      })
     );
+
+  @Effect({ dispatch: false })
+  setAlarmsInDatabase$ = this.actions$.pipe(
+    ofType<SetAlarms>(AlarmsActionTypes.SetAlarms),
+    switchMap((action) => {
+      return this.alarmsService.setMany(action.alarms);
+    })
+  );
 
   @Effect({ dispatch: false })
   clearLocalstorageOnAlarmDelete$ = this.actions$
@@ -112,11 +185,11 @@ export class AlarmsEffects {
 
   @Effect({ dispatch: false })
   addGroupToDatabase$ = this.actions$.pipe(
-    ofType(AlarmsActionTypes.CreateAlarmGroup),
+    ofType<CreateAlarmGroup>(AlarmsActionTypes.CreateAlarmGroup),
     withLatestFrom(this.authFacade.userId$),
-    switchMap(([_action, userId]) => {
-      const action = <CreateAlarmGroup>_action;
+    switchMap(([action, userId]) => {
       const group = new AlarmGroup(action.name, action.index);
+      group.alarms = action.initialContent;
       group.userId = userId;
       return this.alarmGroupsService.add(group);
     })
@@ -131,11 +204,18 @@ export class AlarmsEffects {
   );
 
   @Effect({ dispatch: false })
+  setGroupsInDatabase$ = this.actions$.pipe(
+    ofType<SetGroups>(AlarmsActionTypes.SetGroups),
+    switchMap((action) => {
+      return this.alarmGroupsService.setMany(action.groups);
+    })
+  );
+
+  @Effect({ dispatch: false })
   updateGroupInsideDatabase$ = this.actions$.pipe(
-    ofType(AlarmsActionTypes.UpdateAlarmGroup),
+    ofType<UpdateAlarmGroup>(AlarmsActionTypes.UpdateAlarmGroup),
     withLatestFrom(this.alarmsFacade.allGroups$),
-    switchMap(([_action, groups]) => {
-      const action = <UpdateAlarmGroup>_action;
+    switchMap(([action, groups]) => {
       const editedGroup = groups.find(group => group.$key === action.group.$key);
       return this.alarmGroupsService.set(editedGroup.$key, editedGroup);
     })
@@ -143,11 +223,11 @@ export class AlarmsEffects {
 
   @Effect({ dispatch: false })
   saveAlarmGroupAssignment$ = this.actions$.pipe(
-    ofType(AlarmsActionTypes.AssignGroupToAlarm),
-    withLatestFrom(this.alarmsFacade.allAlarms$),
-    switchMap(([action, alarms]) => {
-      const alarm = alarms.find(a => a.$key === (<AssignGroupToAlarm>action).alarm.$key);
-      return this.alarmsService.set(alarm.$key, alarm);
+    ofType<AssignGroupToAlarm>(AlarmsActionTypes.AssignGroupToAlarm),
+    withLatestFrom(this.alarmsFacade.allGroups$),
+    switchMap(([action, groups]) => {
+      const group = groups.find(g => g.$key === action.groupId);
+      return this.alarmGroupsService.set(group.$key, group);
     })
   );
 

@@ -10,7 +10,7 @@ export class AchievementIconPipe implements PipeTransform {
   }
 
   transform(id: number): string {
-    return this.lazyData.data.achievementIcons[id];
+    return this.lazyData.data.achievements[id]?.icon;
   }
 
 }

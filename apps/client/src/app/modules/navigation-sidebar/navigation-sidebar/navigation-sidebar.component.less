@@ -1,0 +1,43 @@
+@import "../../../../common";
+
+:host ::ng-deep {
+  .sider {
+    .ant-layout-sider-children {
+      overflow-y: auto;
+    }
+  }
+
+  .ant-menu-submenu-title {
+    .anticon {
+      font-size: 16px;
+    }
+  }
+}
+
+.menu-link, .menu-link:visited, .menu-link:focus {
+  text-decoration: none;
+  color: inherit;
+  padding-left: 34px !important;
+}
+
+.menu-categories {
+  overflow-y: auto;
+}
+
+.sidebar-scroll-box {
+  height: calc(~"100vh - @{layout-header-height}");
+}
+
+.flex-container {
+  min-height: 100%;
+}
+
+.overlay-buttons {
+  margin-bottom: 10px;
+}
+
+.bottom-buttons {
+  width: 100%;
+  padding-bottom: 64px;
+  padding-top: 10px;
+}

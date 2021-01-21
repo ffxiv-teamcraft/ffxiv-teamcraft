@@ -152,10 +152,10 @@ export class LayoutRowFilter {
       'IS_MASTERCRAFT'));
 
   static IS_FOLKLORE = LayoutRowFilter.IS_GATHERING
-    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.limitType !== undefined) !== undefined, 'IS_FOLKLORE'));
+    ._and(new LayoutRowFilter(row => (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).find(node => node.folklore !== undefined) !== undefined, 'IS_FOLKLORE'));
 
   static IS_TIMED = new LayoutRowFilter(row => {
-    const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.time !== undefined).length > 0;
+    const isTimedGathering = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).filter(node => node.limited).length > 0;
     const isTimedReduction = getItemSource(row, DataType.REDUCED_FROM)
       .filter(reduction => {
         return (<any>window).gt.bell.nodes.find(node => {
@@ -251,7 +251,7 @@ export class LayoutRowFilter {
 
   static IS_GATHERED_BY_FSH = LayoutRowFilter.IS_GATHERING
     ._and(new LayoutRowFilter((row: ListRow) => {
-      return getItemSource(row, DataType.GATHERED_BY, true).icon.indexOf('FSH') > -1;
+      return getItemSource(row, DataType.GATHERED_BY, true).type === 4 || getItemSource(row, DataType.GATHERED_BY, true).type === -5;
     }, 'IS_GATHERED_BY_FSH'));
 
   static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING');

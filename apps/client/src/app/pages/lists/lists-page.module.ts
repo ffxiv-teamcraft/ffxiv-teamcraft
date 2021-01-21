@@ -19,6 +19,7 @@ import { ListImportPopupComponent } from './list-import-popup/list-import-popup.
 import { MaintenanceGuard } from '../maintenance/maintenance.guard';
 import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { DeleteMultipleListsPopupComponent } from './delete-multiple-lists-popup/delete-multiple-lists-popup.component';
 
 const routes: Routes = [
   {
@@ -49,7 +50,7 @@ const routes: Routes = [
 
     RouterModule.forChild(routes)
   ],
-  declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent]
+  declarations: [ListsComponent, MergeListsPopupComponent, ListImportPopupComponent, DeleteMultipleListsPopupComponent]
 })
 export class ListsPageModule {
 }

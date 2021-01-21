@@ -2,7 +2,7 @@ import { Component, Inject, OnInit, PLATFORM_ID, TemplateRef, ViewChild } from '
 import { BehaviorSubject, combineLatest, concat, Observable, of } from 'rxjs';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { DataService } from '../../../core/api/data.service';
-import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, pairwise, startWith, takeUntil, tap } from 'rxjs/operators';
 import { SearchResult } from '../../../model/search/search-result';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -30,13 +30,15 @@ import { stats } from '../../../core/data/sources/stats';
 import { KeysOfType } from '../../../core/tools/key-of-type';
 import { environment } from '../../../../environments/environment';
 import { XivapiPatch } from '../../../core/data/model/xivapi-patch';
+import { Language } from '../../../core/data/language';
+import { TeamcraftComponent } from '../../../core/component/teamcraft-component';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.less']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent extends TeamcraftComponent implements OnInit {
 
   //Minimum and Maximum values for various nz-input-number elements
   curMaxLevel = environment.maxLevel; //max player level
@@ -58,6 +60,10 @@ export class SearchComponent implements OnInit {
 
   public searchType$: BehaviorSubject<SearchType> =
     new BehaviorSubject<SearchType>(<SearchType>localStorage.getItem('search:type') || SearchType.ITEM);
+
+  public availableLanguages = ['en', 'de', 'fr', 'ja', 'ko', 'zh'];
+
+  public searchLang$: BehaviorSubject<Language> = new BehaviorSubject<Language>(this.settings.searchLanguage);
 
   @ViewChild('notificationRef', { static: true })
   notification: TemplateRef<any>;
@@ -114,6 +120,8 @@ export class SearchComponent implements OnInit {
   availableCraftJobs = [];
 
   availableJobs = [];
+
+  availableJobCategories = [30, 31, 32, 33];
 
   uiCategories$: Observable<{ id: number, name: I18nName }[]>;
 
@@ -219,6 +227,7 @@ export class SearchComponent implements OnInit {
               private rotationPicker: RotationPickerService, private htmlTools: HtmlToolsService,
               private message: NzMessageService, public translate: TranslateService, private lazyData: LazyDataService,
               @Inject(PLATFORM_ID) private platform: Object) {
+    super();
     this.uiCategories$ = this.xivapi.getList(XivapiEndpoint.ItemUICategory, {
       columns: ['ID', 'Name_de', 'Name_en', 'Name_fr', 'Name_ja'],
       max_items: 200
@@ -247,23 +256,35 @@ export class SearchComponent implements OnInit {
         localStorage.setItem('search:type', value);
       });
     }
+    if (this.searchLang$.value === null) {
+      this.searchLang$.next(this.translate.currentLang as Language);
+    }
   }
 
   ngOnInit(): void {
+    this.translate.onLangChange.pipe(
+      startWith({ lang: this.translate.currentLang }),
+      pairwise(),
+      takeUntil(this.onDestroy$)
+    ).subscribe(([before, after]) => {
+      if (before.lang === this.searchLang$.value) {
+        this.searchLang$.next(after.lang as Language);
+      }
+    });
     this.gt.onceLoaded$.pipe(first()).subscribe(() => {
       this.availableCraftJobs = this.gt.getJobs().filter(job => job.category.indexOf('Hand') > -1);
       this.availableJobs = this.gt.getJobs().filter(job => job.id > 0).map(job => job.id);
     });
-    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$]).pipe(
-      debounceTime(1200),
-      filter(([query, , filters]) => {
-        if (['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1) {
+    this.results$ = combineLatest([this.query$, this.searchType$, this.filters$, this.sort$, this.searchLang$]).pipe(
+      debounceTime(400),
+      filter(([query, , filters, , lang]) => {
+        if (['ko', 'zh'].indexOf(lang.toLowerCase()) > -1) {
           // Chinese and korean characters system use fewer chars for the same thing, filters have to be handled accordingly.
           return query.length > 0 || filters.length > 0;
         }
-        return query.length > 3 || (this.translate.currentLang === 'ja' && query.length > 0) || filters.length > 0;
+        return query.length > 3 || (lang === 'ja' && query.length > 0) || filters.length > 0;
       }),
-      tap(([query, type, filters, [sortBy, sortOrder]]) => {
+      tap(([query, type, filters, [sortBy, sortOrder], lang]) => {
         this.allSelected = false;
         this.showIntro = false;
         this.loading = true;
@@ -286,6 +307,7 @@ export class SearchComponent implements OnInit {
           searchHistory[type] = _.uniq([...(searchHistory[type] || []), query]);
           localStorage.setItem('search:history', JSON.stringify(searchHistory));
         }
+        this.data.setSearchLang(lang);
         this.router.navigate([], {
           queryParamsHandling: 'merge',
           queryParams: queryParams,
@@ -465,7 +487,11 @@ export class SearchComponent implements OnInit {
     formRawValue.jobCategories = filters
       .filter(f => f.name.startsWith('ClassJobCategory'))
       .map(f => {
-        return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
+        if (f.name.endsWith('.ID')) {
+          return f.value + 1000;
+        } else {
+          return +Object.keys(this.lazyData.data.jobAbbr).find(k => this.lazyData.data.jobAbbr[k].en === f.name.split('.')[1]);
+        }
       });
     return formRawValue;
   }
@@ -529,6 +555,7 @@ export class SearchComponent implements OnInit {
           formArray: 'stats',
           name: fieldName,
           entryName: entry.name,
+          canExclude: true,
           value: {
             min: (+entry.min * valueMultiplier),
             max: (+entry.max * valueMultiplier)
@@ -543,6 +570,7 @@ export class SearchComponent implements OnInit {
           formArray: 'bonuses',
           name: `Bonuses.${entry.name}.Max`,
           entryName: entry.name,
+          canExclude: true,
           value: {
             min: entry.min,
             max: entry.max
@@ -572,10 +600,18 @@ export class SearchComponent implements OnInit {
     }
     if (controls.jobCategories.value && controls.jobCategories.value.length > 0) {
       filters.push(...controls.jobCategories.value.map(jobId => {
-          return {
-            name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
-            value: 1
-          };
+          if (jobId > 1000) {
+            //This is a category, not a jobId
+            return {
+              name: `ClassJobCategory.ID`,
+              value: jobId - 1000
+            };
+          } else {
+            return {
+              name: `ClassJobCategory.${this.gt.getJob(jobId).abbreviation}`,
+              value: 1
+            };
+          }
         })
       );
     }

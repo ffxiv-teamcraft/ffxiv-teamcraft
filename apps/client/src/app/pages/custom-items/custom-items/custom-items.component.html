@@ -57,7 +57,7 @@
                         </button>
                       </div>
                       <div class="buttons" fxLayout="row" fxLayoutAlign="center" fxLayoutGap="5px">
-                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)" [nzPopconfirmTitle]="'Confirm' | translate"
+                        <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItemFolder(folderDisplay.folder.$key)" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nz-button
                                 nz-popconfirm
                                 nzShape="circle"
@@ -113,7 +113,7 @@
                     </div>
                   </ng-template>
                 </button>
-                <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItem(item.$key)" [nzPopconfirmTitle]="'Confirm' | translate"
+                <button (click)="$event.stopPropagation()" (nzOnConfirm)="deleteCustomItem(item.$key)" [nzPopconfirmTitle]="'Confirmation' | translate"
                         nz-button
                         nz-popconfirm
                         nzShape="circle"
@@ -252,7 +252,7 @@
                         <div *ngIf="!ingredient.custom">{{ingredient.id | itemName | i18n}}</div>
                       </div>
                     </ng-template>
-                    <button (nzOnConfirm)="deleteIngredient(ingredient, item)" [nzPopconfirmTitle]="'Confirm' | translate"
+                    <button (nzOnConfirm)="deleteIngredient(ingredient, item)" [nzPopconfirmTitle]="'Confirmation' | translate"
                             nz-button
                             nz-popconfirm
                             nzShape="circle"
@@ -386,7 +386,7 @@
                       </button>
                     </ng-template>
                     <ng-template #deleteAlarmAction>
-                      <button (nzOnConfirm)="deleteAlarm(item, alarm)" [nzPopconfirmTitle]="'Confirm' | translate" nz-button nz-popconfirm nz-tooltip
+                      <button (nzOnConfirm)="deleteAlarm(item, alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button nz-popconfirm nz-tooltip
                               nzShape="circle"
                               nzSize="small" nzType="danger">
                         <i nz-icon nzType="delete"></i>
@@ -474,7 +474,7 @@
                     <nz-form-item>
                       <nz-form-label class="fake-form-label"></nz-form-label>
                       <nz-form-control>
-                        <button (nzOnConfirm)="deleteVendor(item, vendor)" [nzPopconfirmTitle]="'Confirm' | translate"
+                        <button (nzOnConfirm)="deleteVendor(item, vendor)" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nz-button
                                 nz-popconfirm nzType="danger">
                           <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.VENDORS.Delete_vendor' | translate}}
@@ -534,7 +534,7 @@
                     <nz-form-item>
                       <nz-form-label class="fake-form-label"></nz-form-label>
                       <nz-form-control>
-                        <button (nzOnConfirm)="deleteTrade(item, tradeSource)" [nzPopconfirmTitle]="'Confirm' | translate"
+                        <button (nzOnConfirm)="deleteTrade(item, tradeSource)" [nzPopconfirmTitle]="'Confirmation' | translate"
                                 nz-button
                                 nz-popconfirm nzType="danger">
                           <i nz-icon nzType="delete"></i> {{'CUSTOM_ITEMS.DETAILS.TRADES.Delete_trade' | translate}}

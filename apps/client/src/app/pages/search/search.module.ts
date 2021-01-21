@@ -22,6 +22,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 
 import { SearchResultComponent } from './search-result/search-result.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { CompanyWorkshopTreeModule } from '../../modules/company-workshop-tree/company-workshop-tree.module';
 
 const routes: Routes = [
   {
@@ -54,7 +55,8 @@ const routes: Routes = [
 
     AntdSharedModule,
 
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    CompanyWorkshopTreeModule
   ],
   declarations: [SearchComponent, SearchIntroComponent, SearchResultComponent]
 })

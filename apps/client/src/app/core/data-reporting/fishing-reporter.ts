@@ -205,6 +205,16 @@ export class FishingReporter implements DataReporter {
     );
 
     /**
+     * Reset the state when user changes character
+     */
+    packets$.pipe(
+      ofPacketType('playerSetup')
+    ).subscribe(() => {
+      this.state = {};
+      this.setState({});
+    });
+
+    /**
      * Let's subscribe everything to update the global fishing state for debug overlay.
      */
     combineLatest([

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/
 import { LayoutsFacade } from '../../../core/layout/+state/layouts.facade';
 import { ListsFacade } from '../../../modules/list/+state/lists.facade';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, first, map, mergeMap, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { filter, first, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { LayoutRowDisplay } from '../../../core/layout/layout-row-display';
 import { List } from '../../../modules/list/model/list';
@@ -44,6 +44,7 @@ import { PlatformService } from '../../../core/tools/platform.service';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListSplitPopupComponent } from '../../../modules/list/list-split-popup/list-split-popup.component';
 import { CommissionsFacade } from '../../../modules/commission-board/+state/commissions.facade';
+import { InventoryCleanupPopupComponent } from '../inventory-cleanup-popup/inventory-cleanup-popup.component';
 
 @Component({
   selector: 'app-list-details',
@@ -227,7 +228,7 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
     if (team.webhook !== undefined) {
       this.discordWebhookService.notifyListRemovedFromTeam(team, list);
     }
-    this.listsFacade.updateList(list, true, true);
+    this.listsFacade.updateList(list);
   }
 
   renameList(list: List): void {
@@ -417,6 +418,15 @@ export class ListDetailsComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: this.translate.instant('LIST_DETAILS.Inventory_synthesis'),
       nzFooter: null,
       nzContent: InventorySynthesisPopupComponent,
+      nzComponentParams: { list: list }
+    });
+  }
+
+  openInventoryCleanupPopup(list: List): void {
+    this.dialog.create({
+      nzTitle: this.translate.instant('LIST_DETAILS.Inventory_cleanup'),
+      nzFooter: null,
+      nzContent: InventoryCleanupPopupComponent,
       nzComponentParams: { list: list }
     });
   }

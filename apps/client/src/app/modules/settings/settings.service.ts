@@ -5,6 +5,7 @@ import { IpcService } from '../../core/electron/ipc.service';
 import { Region } from './region.enum';
 import { map, startWith } from 'rxjs/operators';
 import { CommissionTag } from '../commission-board/model/commission-tag';
+import { Language } from '../../core/data/language';
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +47,7 @@ export class SettingsService {
   }
 
   public get hideRegionBanner(): boolean {
-    return this.getSetting('region:hide-banner', 'false') === 'true';
+    return this.getBoolean('region:hide-banner', false);
   }
 
   public set hideRegionBanner(hide: boolean) {
@@ -54,7 +55,7 @@ export class SettingsService {
   }
 
   public get showOnlyCraftableInRecipeFinder(): boolean {
-    return this.getSetting('recipe-finder:only-craftable', 'false') === 'true';
+    return this.getBoolean('recipe-finder:only-craftable', false);
   }
 
   public set showOnlyCraftableInRecipeFinder(show: boolean) {
@@ -62,7 +63,7 @@ export class SettingsService {
   }
 
   public get showOnlyNotCompletedInRecipeFinder(): boolean {
-    return this.getSetting('recipe-finder:only-not-completed', 'false') === 'true';
+    return this.getBoolean('recipe-finder:only-not-completed', false);
   }
 
   public set showOnlyNotCompletedInRecipeFinder(show: boolean) {
@@ -70,7 +71,7 @@ export class SettingsService {
   }
 
   public get showOnlyCollectablesInRecipeFinder(): boolean {
-    return this.getSetting('recipe-finder:only-collectables', 'false') === 'true';
+    return this.getBoolean('recipe-finder:only-collectables', false);
   }
 
   public set showOnlyCollectablesInRecipeFinder(show: boolean) {
@@ -78,15 +79,23 @@ export class SettingsService {
   }
 
   public get configurationPanelExpanded(): boolean {
-    return this.getSetting('simulation:configuration:expanded', 'true') === 'true';
+    return this.getBoolean('simulation:configuration:expanded', true);
   }
 
   public set configurationPanelExpanded(expanded: boolean) {
     this.setSetting('simulation:configuration:expanded', expanded.toString());
   }
 
+  public get searchLanguage(): Language {
+    return this.getSetting('search:language', null) as Language;
+  }
+
+  public set searchLanguage(lang: Language) {
+    this.setSetting('search:language', lang.toString());
+  }
+
   public get detailedSimulatorActions(): boolean {
-    return this.getSetting('simulation:actions:detailed', 'false') === 'true';
+    return this.getBoolean('simulation:actions:detailed', false);
   }
 
   public set detailedSimulatorActions(detailed: boolean) {
@@ -110,7 +119,7 @@ export class SettingsService {
   }
 
   public get autoOpenInDesktop(): boolean {
-    return this.getSetting('auto-open-in-desktop', 'true') === 'true';
+    return this.getBoolean('auto-open-in-desktop', true);
   }
 
   public set autoOpenInDesktop(open: boolean) {
@@ -118,7 +127,7 @@ export class SettingsService {
   }
 
   public get autoShowPatchNotes(): boolean {
-    return this.getSetting('auto-show-patch-notes', 'true') === 'true';
+    return this.getBoolean('auto-show-patch-notes', true);
   }
 
   public set autoShowPatchNotes(show: boolean) {
@@ -126,7 +135,7 @@ export class SettingsService {
   }
 
   public get tutorialEnabled(): boolean {
-    return this.getSetting('tutorial:enabled', 'false') === 'true';
+    return this.getBoolean('tutorial:enabled', false);
   }
 
   public set tutorialEnabled(enabled: boolean) {
@@ -134,7 +143,7 @@ export class SettingsService {
   }
 
   public get tutorialQuestionAsked(): boolean {
-    return this.getSetting('tutorial:asked', 'false') === 'true';
+    return this.getBoolean('tutorial:asked', false);
   }
 
   public set tutorialQuestionAsked(asked: boolean) {
@@ -142,15 +151,23 @@ export class SettingsService {
   }
 
   public set commissionTags(tags: CommissionTag[]) {
-    this.setSetting('commission:tags', JSON.stringify(tags));
+    this.setSetting('commissions:tags', JSON.stringify(tags));
   }
 
   public get commissionTags(): CommissionTag[] {
     return JSON.parse(this.getSetting('commissions:tags', '[]'));
   }
 
+  public set ignoredContentIds(ids: string[]) {
+    this.setSetting('inventory:ignored-content-ids', JSON.stringify(ids));
+  }
+
+  public get ignoredContentIds(): string[] {
+    return JSON.parse(this.getSetting('inventory:ignored-content-ids', '[]'));
+  }
+
   public get onlyCraftingCommissions(): boolean {
-    return this.getSetting('commissions:onlyCrafting', 'false') === 'true';
+    return this.getBoolean('commissions:onlyCrafting', false);
   }
 
   public set onlyCraftingCommissions(onlyCrafting: boolean) {
@@ -158,7 +175,7 @@ export class SettingsService {
   }
 
   public get onlyMaterialsCommissions(): boolean {
-    return this.getSetting('commissions:onlyMaterials', 'false') === 'true';
+    return this.getBoolean('commissions:onlyMaterials', false);
   }
 
   public set onlyMaterialsCommissions(onlyMaterials: boolean) {
@@ -174,7 +191,7 @@ export class SettingsService {
   }
 
   public get autoDownloadUpdate(): boolean {
-    return this.getSetting('auto-download-update', 'true') === 'true';
+    return this.getBoolean('auto-download-update', true);
   }
 
   public set autoDownloadUpdate(dl: boolean) {
@@ -182,7 +199,7 @@ export class SettingsService {
   }
 
   public get hideOverlayCompleted(): boolean {
-    return this.getSetting('hideOverlayCompleted', 'false') === 'true';
+    return this.getBoolean('hideOverlayCompleted', false);
   }
 
   public set hideOverlayCompleted(hide: boolean) {
@@ -190,7 +207,7 @@ export class SettingsService {
   }
 
   public get removeDoneInInventorSynthesis(): boolean {
-    return this.getSetting('remove-done-in-synthesis', 'false') === 'true';
+    return this.getBoolean('remove-done-in-synthesis', false);
   }
 
   public set removeDoneInInventorSynthesis(remove: boolean) {
@@ -270,7 +287,7 @@ export class SettingsService {
   }
 
   public get compactSidebar(): boolean {
-    return this.getSetting('compact-sidebar', 'false') === 'true';
+    return this.getBoolean('compact-sidebar', false);
   }
 
   public set compactSidebar(compact: boolean) {
@@ -287,6 +304,7 @@ export class SettingsService {
 
   public get sidebarState(): { [index: string]: boolean } {
     return JSON.parse(this.getSetting('sidebar-state', JSON.stringify({
+      favorites: true,
       general: true,
       sharing: true,
       commissions: true,
@@ -300,8 +318,16 @@ export class SettingsService {
     this.setSetting('sidebar-state', JSON.stringify(state));
   }
 
+  public get sidebarFavorites(): string[] {
+    return JSON.parse(this.getSetting('sidebar-favorites', JSON.stringify([])));
+  }
+
+  public set sidebarFavorites(favorites: string[]) {
+    this.setSetting('sidebar-favorites', JSON.stringify(favorites));
+  }
+
   public get autoMarkAsCompleted(): boolean {
-    return this.getSetting('auto-mark-as-completed', 'false') === 'true';
+    return this.getBoolean('auto-mark-as-completed', false);
   }
 
   public set autoMarkAsCompleted(markAsCompleted: boolean) {
@@ -309,7 +335,7 @@ export class SettingsService {
   }
 
   public get onlyRecipesInPicker(): boolean {
-    return this.getSetting('only-recipes-in-picker', 'false') === 'true';
+    return this.getBoolean('only-recipes-in-picker', false);
   }
 
   public set onlyRecipesInPicker(onlyRecipes: boolean) {
@@ -317,7 +343,7 @@ export class SettingsService {
   }
 
   public get clickthroughOverlay(): boolean {
-    return this.getSetting('clickthrough', 'false') === 'true';
+    return this.getBoolean('clickthrough', false);
   }
 
   public set clickthroughOverlay(clickthrough: boolean) {
@@ -325,7 +351,7 @@ export class SettingsService {
   }
 
   public get alwaysHQLeves(): boolean {
-    return this.getSetting('always-hq-leves', 'false') === 'true';
+    return this.getBoolean('always-hq-leves', false);
   }
 
   public set alwaysHQLeves(alwaysHqLeves: boolean) {
@@ -333,7 +359,7 @@ export class SettingsService {
   }
 
   public get alwaysAllDeliveries(): boolean {
-    return this.getSetting('always-all-deliveries', 'false') === 'true';
+    return this.getBoolean('always-all-deliveries', false);
   }
 
   public set alwaysAllDeliveries(alwaysAllDeliveries: boolean) {
@@ -341,7 +367,7 @@ export class SettingsService {
   }
 
   public get compactAlarms(): boolean {
-    return this.getSetting('compact-alarms', 'false') === 'true';
+    return this.getBoolean('compact-alarms', false);
   }
 
   public set compactAlarms(compact: boolean) {
@@ -349,7 +375,7 @@ export class SettingsService {
   }
 
   public get performanceMode(): boolean {
-    return this.getSetting('lists:perf-mode', 'false') === 'true';
+    return this.getBoolean('lists:perf-mode', false);
   }
 
   public set performanceMode(enabled: boolean) {
@@ -357,7 +383,7 @@ export class SettingsService {
   }
 
   public get hideLargeListMessage(): boolean {
-    return this.getSetting('lists:hide-large-list-message', 'false') === 'true';
+    return this.getBoolean('lists:hide-large-list-message', false);
   }
 
   public set hideLargeListMessage(hidden: boolean) {
@@ -365,7 +391,7 @@ export class SettingsService {
   }
 
   public get disableHQSuggestions(): boolean {
-    return this.getSetting('lists:disable-hq-suggestion', 'false') === 'true';
+    return this.getBoolean('lists:disable-hq-suggestion', false);
   }
 
   public set disableHQSuggestions(disabled: boolean) {
@@ -373,7 +399,7 @@ export class SettingsService {
   }
 
   public get disableSearchHistory(): boolean {
-    return this.getSetting('disable-search-history', 'false') === 'true';
+    return this.getBoolean('disable-search-history', false);
   }
 
   public set disableSearchHistory(disabled: boolean) {
@@ -381,7 +407,7 @@ export class SettingsService {
   }
 
   public get disableSearchDebounce(): boolean {
-    return this.getSetting('disable-search-debounce', 'false') === 'true';
+    return this.getBoolean('disable-search-debounce', false);
   }
 
   public set disableSearchDebounce(disabled: boolean) {
@@ -389,7 +415,7 @@ export class SettingsService {
   }
 
   public get expectToSellEverything(): boolean {
-    return this.getSetting('pricing:expect-sell-all', 'false') === 'true';
+    return this.getBoolean('pricing:expect-sell-all', false);
   }
 
   public set expectToSellEverything(sellEverything: boolean) {
@@ -397,7 +423,7 @@ export class SettingsService {
   }
 
   public get ignoreCompletedItemInPricing(): boolean {
-    return this.getSetting('pricing:ignore-completed-items', 'false') === 'true';
+    return this.getBoolean('pricing:ignore-completed-items', false);
   }
 
   public set ignoreCompletedItemInPricing(ignore: boolean) {
@@ -458,7 +484,7 @@ export class SettingsService {
   }
 
   public get alarmsMuted(): boolean {
-    return this.getSetting('alarms:muted', 'false') === 'true';
+    return this.getBoolean('alarms:muted', false);
   }
 
   public set alarmsMuted(muted: boolean) {
@@ -466,7 +492,7 @@ export class SettingsService {
   }
 
   public get noPanelBorders(): boolean {
-    return this.getSetting('noPanelBorders', 'false') === 'true';
+    return this.getBoolean('noPanelBorders', false);
   }
 
   public set noPanelBorders(borders: boolean) {
@@ -474,15 +500,31 @@ export class SettingsService {
   }
 
   public get itemTagsEnabled(): boolean {
-    return this.getSetting('itemTagsEnabled', 'false') === 'true';
+    return this.getBoolean('itemTagsEnabled', false);
   }
 
   public set itemTagsEnabled(tagsEnabled: boolean) {
     this.setSetting('itemTagsEnabled', tagsEnabled.toString());
   }
 
+  public get alarmPanelsCollapsedByDefault(): boolean {
+    return this.getBoolean('alarmPanelsCollapsedByDefault', false);
+  }
+
+  public set alarmPanelsCollapsedByDefault(bool: boolean) {
+    this.setBoolean('alarmPanelsCollapsedByDefault', bool);
+  }
+
+  public get alarmGroupsBeforeNoGroup(): boolean {
+    return this.getBoolean('alarmGroupsBeforeNoGroups', false);
+  }
+
+  public set alarmGroupsBeforeNoGroup(bool: boolean) {
+    this.setBoolean('alarmGroupsBeforeNoGroups', bool);
+  }
+
   public get playerMetricsEnabled(): boolean {
-    return this.getSetting('playerMetricsEnabled', 'false') === 'true';
+    return this.getBoolean('playerMetricsEnabled', false);
   }
 
   public set playerMetricsEnabled(enabled: boolean) {
@@ -490,7 +532,7 @@ export class SettingsService {
   }
 
   public get pcapLogEnabled(): boolean {
-    return this.getSetting('pcapLogEnabled', 'true') === 'true';
+    return this.getBoolean('pcapLogEnabled', true);
   }
 
   public set pcapLogEnabled(enabled: boolean) {
@@ -498,7 +540,7 @@ export class SettingsService {
   }
 
   public get showAllAlarms(): boolean {
-    return this.getSetting('showAllAlarms', 'false') === 'true';
+    return this.getBoolean('showAllAlarms', false);
   }
 
   public set showAllAlarms(showAllAlarms: boolean) {
@@ -506,7 +548,7 @@ export class SettingsService {
   }
 
   public get displayRemaining(): boolean {
-    return this.getSetting('displayRemaining', 'false') === 'true';
+    return this.getBoolean('displayRemaining', false);
   }
 
   public set displayRemaining(displayRemaining: boolean) {
@@ -514,7 +556,7 @@ export class SettingsService {
   }
 
   public get disableCrossWorld(): boolean {
-    return this.getSetting('disableCrossWorld', 'false') === 'true';
+    return this.getBoolean('disableCrossWorld', false);
   }
 
   public set disableCrossWorld(disableCrossWorld: boolean) {
@@ -522,7 +564,7 @@ export class SettingsService {
   }
 
   public get showCopyOnOwnList(): boolean {
-    return this.getSetting('showCopyOnOwnList', 'false') === 'true';
+    return this.getBoolean('showCopyOnOwnList', false);
   }
 
   public set showCopyOnOwnList(tagsEnabled: boolean) {
@@ -530,7 +572,7 @@ export class SettingsService {
   }
 
   public get hideMachinaBanner(): boolean {
-    return this.getSetting('machina:hide-banner', 'false') === 'true';
+    return this.getBoolean('machina:hide-banner', false);
   }
 
   public set hideMachinaBanner(hide: boolean) {
@@ -538,7 +580,7 @@ export class SettingsService {
   }
 
   public get enableAutofillByDefault(): boolean {
-    return this.getSetting('autofill:enable-by-default', 'false') === 'true';
+    return this.getBoolean('autofill:enable-by-default', false);
   }
 
   public set enableAutofillByDefault(enable: boolean) {
@@ -546,7 +588,7 @@ export class SettingsService {
   }
 
   public get enableAutofillNotificationByDefault(): boolean {
-    return this.getSetting('autofill:enable-notification-by-default', 'false') === 'true';
+    return this.getBoolean('autofill:enable-notification-by-default', false);
   }
 
   public set enableAutofillNotificationByDefault(enable: boolean) {
@@ -554,7 +596,7 @@ export class SettingsService {
   }
 
   public get enableAutofillHQFilter(): boolean {
-    return this.getSetting('autofill:enable-hq-filter', 'false') === 'true';
+    return this.getBoolean('autofill:enable-hq-filter', false);
   }
 
   public set enableAutofillHQFilter(enabled: boolean) {
@@ -562,15 +604,23 @@ export class SettingsService {
   }
 
   public get enableAutofillNQFilter(): boolean {
-    return this.getSetting('autofill:enable-nq-filter', 'false') === 'true';
+    return this.getBoolean('autofill:enable-nq-filter', false);
   }
 
   public set enableAutofillNQFilter(enabled: boolean) {
     this.setSetting('autofill:enable-nq-filter', enabled.toString());
   }
 
+  public get clearInventoryOnStartup(): boolean {
+    return this.getBoolean('inventory:clear-on-startup', false);
+  }
+
+  public set clearInventoryOnStartup(clear: boolean) {
+    this.setBoolean('inventory:clear-on-startup', clear);
+  }
+
   public get enableUniversalisSourcing(): boolean {
-    return this.getSetting('universalis:enable-sourcing', 'false') === 'true';
+    return this.getBoolean('universalis:enable-sourcing', false);
   }
 
   public set enableUniversalisSourcing(enabled: boolean) {
@@ -578,7 +628,7 @@ export class SettingsService {
   }
 
   public get winpcap(): boolean {
-    return this.getSetting('winpcap', 'false') === 'true';
+    return this.getBoolean('winpcap', false);
   }
 
   public set winpcap(enabled: boolean) {
@@ -598,7 +648,7 @@ export class SettingsService {
   }
 
   public get hideLargeLeves(): boolean {
-    return this.getSetting('hideLargeLeves', 'false') === 'true';
+    return this.getBoolean('hideLargeLeves', false);
   }
 
   public set hideLargeLeves(hideLargeLeves: boolean) {
@@ -630,7 +680,7 @@ export class SettingsService {
   }
 
   public get macroEcho(): boolean {
-    return this.getSetting('macroEcho', 'true') === 'true';
+    return this.getBoolean('macroEcho', true);
   }
 
   public set macroEcho(echo: boolean) {
@@ -638,7 +688,7 @@ export class SettingsService {
   }
 
   public get macroFixedEcho(): boolean {
-    return this.getSetting('macroFixedEcho', 'false') === 'true';
+    return this.getBoolean('macroFixedEcho', false);
   }
 
   public set macroFixedEcho(fixedEcho: boolean) {
@@ -646,7 +696,7 @@ export class SettingsService {
   }
 
   public get macroLock(): boolean {
-    return this.getSetting('macroLock', 'false') === 'true';
+    return this.getBoolean('macroLock', false);
   }
 
   public set macroLock(lock: boolean) {
@@ -662,7 +712,7 @@ export class SettingsService {
   }
 
   public get enableMappy(): boolean {
-    return this.getSetting('enableMappy', 'true') === 'true';
+    return this.getBoolean('enableMappy', true);
   }
 
   public set enableMappy(enabled: boolean) {
@@ -670,7 +720,7 @@ export class SettingsService {
   }
 
   public get macroConsumables(): boolean {
-    return this.getSetting('macroConsumables', 'true') === 'true';
+    return this.getBoolean('macroConsumables', true);
   }
 
   public set macroConsumables(addConsumables: boolean) {
@@ -686,11 +736,35 @@ export class SettingsService {
   }
 
   public get macroBreakBeforeByregot(): boolean {
-    return this.getSetting('macroBreakBeforeByregot', 'false') === 'true';
+    return this.getBoolean('macroBreakBeforeByregot', false);
   }
 
   public set macroBreakBeforeByregot(breakBeforeByregot: boolean) {
     this.setSetting('macroBreakBeforeByregot', breakBeforeByregot.toString());
+  }
+
+  public get followIngameCharacterSwitches(): boolean {
+    return this.getBoolean('followIngameCharacterSwitches', true);
+  }
+
+  public set followIngameCharacterSwitches(follow: boolean) {
+    this.setBoolean('followIngameCharacterSwitches', follow);
+  }
+
+  public get showOthercharacterInventoriesInList(): boolean {
+    return this.getBoolean('showOthercharacterInventoriesInList', true);
+  }
+
+  public set showOthercharacterInventoriesInList(show: boolean) {
+    this.setBoolean('showOthercharacterInventoriesInList', show);
+  }
+
+  public get retainerTaskAlarms(): boolean {
+    return this.getBoolean('retainerTaskAlarms', false);
+  }
+
+  public set retainerTaskAlarms(enabled: boolean) {
+    this.setBoolean('retainerTaskAlarms', enabled);
   }
 
   public setOverlayClockDisplay(overlay: string, show: boolean): void {
@@ -698,11 +772,27 @@ export class SettingsService {
   }
 
   public getOverlayClockDisplay(overlay: string): boolean {
-    return this.getSetting(`overlay:clock:${overlay}`, 'true') === 'true';
+    return this.getBoolean(`overlay:clock:${overlay}`, true);
   }
 
   private getSetting(name: string, defaultValue: string): string {
     return this.cache[name] || defaultValue;
+  }
+
+  public getBoolean(name: string, defaultValue: boolean): boolean {
+    return this.getSetting(name, defaultValue.toString()) === 'true';
+  }
+
+  public setBoolean(name: string, value: boolean): void {
+    this.setSetting(name, value.toString());
+  }
+
+  public getString(name: string, defaultValue: string): string {
+    return this.getSetting(name, defaultValue);
+  }
+
+  public setString(name: string, value: string): void {
+    this.setSetting(name, value);
   }
 
   private setSetting(name: string, value: string): void {

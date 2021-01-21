@@ -31,21 +31,6 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-label [nzSm]="8" [nzXs]="24">
-      <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px" fxFlex="0">
-        <div>{{'ALARMS.CUSTOM.Slot' | translate}}</div>
-        <div [nzTooltipTitle]="'ALARMS.CUSTOM.Slot_description' | translate" nz-tooltip>
-          <i nz-icon nzType="question-circle" theme="outline"></i>
-        </div>
-      </div>
-    </nz-form-label>
-    <nz-form-control [nzSm]="16" [nzXs]="24">
-      <nz-input-number mouseWheel [nzMax]="SLOT_VALIDATOR.max" [nzMin]="SLOT_VALIDATOR.min" [nzStep]="1" formControlName="slot"
-                       (mouseWheelUp)="adjust('slot', 1)" (mouseWheelDown)="adjust('slot', -1)">
-      </nz-input-number>
-    </nz-form-control>
-  </nz-form-item>
-  <nz-form-item>
     <nz-form-label [nzSm]="8" [nzXs]="24">{{'ALARMS.CUSTOM.Type' | translate}}</nz-form-label>
     <nz-form-control [nzSm]="16" [nzXs]="24">
       <nz-select formControlName="type">

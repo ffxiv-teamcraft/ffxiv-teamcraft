@@ -42,7 +42,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
   private onDestroy$: Subject<void> = new Subject<void>();
 
   constructor(private pricingService: PricingService, private message: NzMessageService,
-              private translator: TranslateService, private cd: ChangeDetectorRef,
+              public translate: TranslateService, private cd: ChangeDetectorRef,
               public settings: SettingsService) {
   }
 
@@ -86,7 +86,7 @@ export class PricingRowComponent implements OnInit, OnDestroy {
 
   public afterNameCopy(name: string): void {
     this.message.success(
-      this.translator.instant('Item_name_copied', { itemname: name })
+      this.translate.instant('Item_name_copied', { itemname: name })
     );
   }
 

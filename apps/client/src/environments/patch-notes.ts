@@ -1,9 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **desktop:** fix for korean inventory tracking and global weather tracking.
-* **simulator:** fixed inaccuracy with higher progression values on Malleable condition.
+* **db:** fixed mob page not loading properly.
+* **layout:** fixed can skip showing negative values in some cases.
+* **simulator:** fixed an issue with step by step mode and buffs duration.
 
 
 ### Features
 
-* **desktop:** support for KR v5.3 packet capture.`;
+* **data:** support for korean v5.3 update.
+* **db:** 5.41 data.
+* **simulator:** support for new conditions.`;

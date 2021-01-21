@@ -70,7 +70,7 @@
         </p>
       </div>
     </div>
-    <div *ngIf="item.ItemSpecialBonus">
+    <div *ngIf="item.ItemSpecialBonus?.ID > 1">
       <b class="set-bonus">{{item.ItemSpecialBonus | xivapiI18n}}: {{item.ItemSeries | xivapiI18n}}</b>
       <ul>
         <li *ngFor="let bonus of item.SetBonuses"> {{'DB.ITEM.X_Equipped' | translate:{ amount: bonus.amountRequired } }}

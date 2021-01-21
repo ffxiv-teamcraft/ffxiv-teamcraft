@@ -46,7 +46,7 @@ export class MappyDashboardComponent {
                 Node: updates[m.id]?.Node < subMonths(new Date(), 3).getTime() / 1000
               },
               missingNodes: mapNodes.filter((node) => {
-                return !gatheringPoints.some(gatheringPoint => data.gatheringPointBaseToNodeId[gatheringPoint] === node.id);
+                return !gatheringPoints.some(gatheringPoint => data.gatheringPointToNodeId[gatheringPoint] === node.id);
               }).length
             };
           })

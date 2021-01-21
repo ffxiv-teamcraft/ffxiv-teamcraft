@@ -5,6 +5,7 @@ export interface SearchFilter extends BaseSearchResult {
   array?: boolean;
   formArray?: string;
   entryName?: string;
+  canExclude?: boolean;
   value: any;
   name: string;
   displayName?: string;

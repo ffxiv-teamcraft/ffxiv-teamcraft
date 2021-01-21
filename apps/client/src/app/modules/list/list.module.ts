@@ -4,7 +4,6 @@ import { CraftedByExtractor } from './data/extractor/crafted-by-extractor';
 import { GarlandToolsService } from '../../core/api/garland-tools.service';
 import { HtmlToolsService } from '../../core/tools/html-tools.service';
 import { GatheredByExtractor } from './data/extractor/gathered-by-extractor';
-import { LocalizedDataService } from '../../core/data/localized-data.service';
 import { TradeSourcesExtractor } from './data/extractor/trade-sources-extractor';
 import { VendorsExtractor } from './data/extractor/vendors-extractor';
 import { ReducedFromExtractor } from './data/extractor/reduced-from-extractor';
@@ -28,7 +27,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { AlarmsExtractor } from './data/extractor/alarms-extractor';
-import { BellNodesService } from '../../core/data/bell-nodes.service';
 import { MasterbooksExtractor } from './data/extractor/masterbooks-extractor';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { TagsPopupComponent } from './tags-popup/tags-popup.component';
@@ -63,6 +61,9 @@ import { ItemPickerModule } from '../item-picker/item-picker.module';
 import { AlarmsFacade } from '../../core/alarms/+state/alarms.facade';
 import { SimulatorModule } from '../../pages/simulator/simulator.module';
 import { RequirementsExtractor } from './data/extractor/requirements-extractor';
+import { CompanyWorkshopTreeModule } from '../company-workshop-tree/company-workshop-tree.module';
+import { GatheringNodesService } from '../../core/data/gathering-nodes.service';
+import { InventoryModule } from '../inventory/inventory.module';
 
 
 export const DATA_EXTRACTORS: Provider[] = [
@@ -70,7 +71,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   {
     provide: EXTRACTORS,
     useClass: GatheredByExtractor,
-    deps: [GarlandToolsService, HtmlToolsService, LocalizedDataService, LazyDataService],
+    deps: [GarlandToolsService, HtmlToolsService, GatheringNodesService, LazyDataService],
     multi: true
   },
   { provide: EXTRACTORS, useClass: TradeSourcesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
@@ -82,7 +83,7 @@ export const DATA_EXTRACTORS: Provider[] = [
   { provide: EXTRACTORS, useClass: VoyagesExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: DropsExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
   { provide: EXTRACTORS, useClass: VenturesExtractor, deps: [GarlandToolsService], multi: true },
-  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, BellNodesService, LazyDataService, AlarmsFacade], multi: true },
+  { provide: EXTRACTORS, useClass: AlarmsExtractor, deps: [GarlandToolsService, GatheringNodesService, AlarmsFacade], multi: true },
   { provide: EXTRACTORS, useClass: MasterbooksExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: TreasuresExtractor, deps: [GarlandToolsService], multi: true },
   { provide: EXTRACTORS, useClass: FatesExtractor, deps: [GarlandToolsService, LazyDataService], multi: true },
@@ -121,7 +122,9 @@ export const DATA_EXTRACTORS: Provider[] = [
     StoreModule.forFeature('lists', listsReducer, { initialState: listsInitialState }),
     EffectsModule.forFeature([ListsEffects]),
     LazyScrollModule,
-    SimulatorModule
+    SimulatorModule,
+    CompanyWorkshopTreeModule,
+    InventoryModule
   ],
   providers: [
     ...DATA_EXTRACTORS,

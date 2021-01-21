@@ -17,6 +17,7 @@ import { VersionLockGuard } from '../version-lock/version-lock.guard';
 import { FormsModule } from '@angular/forms';
 import { TooltipModule } from '../../modules/tooltip/tooltip.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NodeDetailsModule } from '../../modules/node-details/node-details.module';
 
 const routes: Routes = [
   {
@@ -46,7 +47,8 @@ const routes: Routes = [
     FishingBaitModule,
     TooltipModule,
 
-    AntdSharedModule
+    AntdSharedModule,
+    NodeDetailsModule
   ],
   declarations: [GatheringLocationComponent]
 })

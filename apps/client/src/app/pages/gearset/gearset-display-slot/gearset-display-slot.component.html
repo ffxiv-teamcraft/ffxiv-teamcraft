@@ -15,7 +15,7 @@
           <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].item"
                  (ngModelChange)="progressionChange.emit(progression)"></label>
         </div>
-        <div>{{equipmentPiece.itemId | itemName | i18n}}</div>
+        <div [itemNameCopy]="equipmentPiece.itemId">{{equipmentPiece.itemId | itemName | i18n}}</div>
         <img *ngIf="equipmentPiece.hq" alt="HQ" class="item-hq" src="./assets/icons/HQ.png"/>
         <ng-template #caps>
           <app-item-caps-table [job]="gearset.job" [equipmentPiece]="equipmentPiece"></app-item-caps-table>
@@ -37,7 +37,7 @@
               <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].materias[i]"
                      (ngModelChange)="progressionChange.emit(progression)"></label>
             </div>
-            <div class="verbose-materia-name">{{materia === 0 ? ('GEARSETS.No_materia' | translate) : materia | itemName | i18n}}</div>
+            <div class="verbose-materia-name" [itemNameCopy]="materia">{{materia === 0 ? ('GEARSETS.No_materia' | translate) : materia | itemName | i18n}}</div>
           </div>
         </div>
       </ng-container>

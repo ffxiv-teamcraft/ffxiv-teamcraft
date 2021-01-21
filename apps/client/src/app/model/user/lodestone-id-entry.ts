@@ -7,4 +7,5 @@ export interface LodestoneIdEntry {
   stats?: TeamcraftGearsetStats[];
   masterbooks?: number[];
   character?: Character;
+  contentId?: string;
 }

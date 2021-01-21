@@ -39,10 +39,18 @@ export enum ListsActionTypes {
   ToggleCompletionNotification = '[Lists] Toggle completion notification',
   PinList = '[Lists] Pin list',
   UnPinList = '[Lists] Unpin list',
+  DeleteLists = '[Lists] Delete Lists',
 }
 
 export class LoadMyLists implements Action {
   readonly type = ListsActionTypes.LoadMyLists;
+}
+
+export class DeleteLists implements Action {
+  readonly type = ListsActionTypes.DeleteLists;
+
+  constructor(public readonly keys: string[]) {
+  }
 }
 
 export class LoadTeamLists implements Action {

@@ -13,6 +13,7 @@ import { PushNotificationsService } from 'ng-push';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
+import { LazyDataService } from '../data/lazy-data.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,8 @@ export class AlarmBellService {
   constructor(private eorzeanTime: EorzeanTimeService, private alarmsFacade: AlarmsFacade, private l12n: LocalizedDataService,
               private settings: SettingsService, private platform: PlatformService, private ipc: IpcService,
               private localizedData: LocalizedDataService, private translate: TranslateService, private pushNotificationsService: PushNotificationsService,
-              private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService) {
+              private notificationService: NzNotificationService, private i18n: I18nToolsService, private mapService: MapService,
+              private lazyData: LazyDataService) {
     this.initBell();
   }
 
@@ -34,11 +36,11 @@ export class AlarmBellService {
             if (alarm.spawns === undefined) {
               return false;
             }
-            const alarmGroup = groups.find(group => {
-              return alarm.groupId === group.$key;
+            const hasOneGroupEnabled = groups.some(group => {
+              return group.enabled && group.alarms.includes(alarm.$key);
             });
             // If this alarm has a group and it's muted, don't even go further
-            if ((alarmGroup && !alarmGroup.enabled) || !alarm.enabled) {
+            if ((!hasOneGroupEnabled) || !alarm.enabled) {
               return false;
             }
             const lastPlayed = this.getLastPlayed(alarm);
@@ -103,11 +105,11 @@ export class AlarmBellService {
       first()
     ).subscribe(alarm => {
       const aetheryteName = this.i18n.getName(this.localizedData.getPlace(alarm.aetheryte.nameid));
-      const notificationIcon = alarm.icon ? `https://www.garlandtools.org/db/icons/item/${alarm.icon}.png` : 'https://ffxivteamcraft.com/assets/logo.png';
+      const icon = this.lazyData.data.itemIcons[alarm.itemId];
+      const notificationIcon = `https://xivapi.com${icon}`;
       const notificationTitle = alarm.itemId ? this.i18n.getName(this.localizedData.getItem(alarm.itemId)) : alarm.name;
       const notificationBody = `${this.i18n.getName(this.localizedData.getPlace(alarm.zoneId || alarm.mapId))} - `
-        + `${aetheryteName ? aetheryteName : ''}` +
-        (alarm.slot !== undefined && alarm.slot !== null ? ` - Slot ${alarm.slot}` : '');
+        + `${aetheryteName ? aetheryteName : ''}`;
       if (this.platform.isDesktop()) {
         this.ipc.send('notification', {
           title: notificationTitle,

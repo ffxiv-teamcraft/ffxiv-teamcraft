@@ -34,7 +34,7 @@
         <div (dblclick)="openList(isFavorite.value)" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4"
              nzSm="20">
           <div>
-            {{_list.name}} - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
+            <span class="list-name">{{_list.name}}</span> - {{'LIST.Items_count' | translate:{ amount: _list.finalItems.length } }}
           </div>
           <div *ngIf="(permissionLevel$ | async)?.value === 40"
                [nzTooltipTitle]="'PERMISSIONS.List_tooltip' | translate: { level: _list.everyone | permissionLevel }"
@@ -47,10 +47,10 @@
             </div>
           </div>
         </div>
-        <div *ngIf="!hideAvatar && _list.authorId !== undefined" class="author-avatar">
-          <app-user-avatar [userId]="_list.authorId" [width]="24"></app-user-avatar>
+        <div fxLayout="row" fxLayoutAlign="center center" nz-col nzMd="1" class="author-avatar">
+          <app-user-avatar *ngIf="!hideAvatar && _list.authorId !== undefined" [userId]="_list.authorId" [width]="24"></app-user-avatar>
         </div>
-        <div fxLayout="column" class="panel-middle-content" nz-col nzMd="17" nzSm="24">
+        <div fxLayout="column" class="panel-middle-content" nz-col nzMd="16" nzSm="24">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div class="tags">
               <nz-tag [style.border-color]="'#108ee9'" class="custom-tag clickable-tag" (click)="$event.stopPropagation()" *ngIf="_list.hasCommission"

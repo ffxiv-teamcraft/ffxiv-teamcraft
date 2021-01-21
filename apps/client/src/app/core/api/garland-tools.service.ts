@@ -9,6 +9,8 @@ import { ItemData } from '../../model/garland-tools/item-data';
 import { filter, map } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
+import { GtFish } from '../../model/common/gt-fish';
+import { GtNode } from '../../model/common/gt-node';
 
 @Injectable({
   providedIn: 'root'
@@ -97,9 +99,9 @@ export class GarlandToolsService {
   /**
    * Gets details about a fishing spot in garlandtools data.
    * @param {number} id
-   * @returns {any}
+   * @returns {GtFish}
    */
-  public getFishingSpots(id: number): any[] {
+  public getFishingSpots(id: number): GtFish[] {
     return this.gt.bell.fish.filter(fish => {
       return +fish.id === id;
     });
@@ -117,10 +119,14 @@ export class GarlandToolsService {
   /**
    * Gets details in a bell node (data used for garlandtools bell)
    * @param {number} id
-   * @returns {any}
+   * @returns {GtNode}
    */
-  getBellNode(id: number): any {
+  getBellNode(id: number): GtNode {
     return this.gt.bell.nodes.find(node => node.id === id);
+  }
+
+  getBellNodesForItemId(itemId:number): GtNode[]{
+    return this.gt.bell.nodes.filter(node => node.items.some(i => i.id === itemId))
   }
 
   /**

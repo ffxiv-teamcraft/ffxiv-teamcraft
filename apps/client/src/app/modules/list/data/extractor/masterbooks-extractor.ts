@@ -4,7 +4,6 @@ import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { getItemSource, ListRow } from '../../model/list-row';
 import { DataType } from '../data-type';
-import { folklores } from '../../../../core/data/sources/folklores';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
 
 export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]> {
@@ -43,14 +42,12 @@ export class MasterbooksExtractor extends AbstractExtractor<CompactMasterbook[]>
         }
       }
     }
-    if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
-      const folklore = itemData.item.unlockId;
-      if (folklore !== undefined) {
-        res.push({
-          id: +folklore,
-          icon: [7012, 7012, 7127, 7127, 7128, 7128][getItemSource(row, DataType.GATHERED_BY, true).type]
-        });
-      }
+    const gatheredBy = getItemSource(row, DataType.GATHERED_BY, true);
+    if (gatheredBy.type !== undefined && gatheredBy.nodes[0] !== undefined && gatheredBy.nodes[0].folklore) {
+      res.push({
+        id: gatheredBy.nodes[0].folklore,
+        icon: [7012, 7012, 7127, 7127, 7128, 7128][gatheredBy.type]
+      });
     }
     return res;
   }

@@ -151,7 +151,8 @@ export class PricingComponent implements AfterViewInit {
                   hq: cheapestHq ? cheapestHq.PricePerUnit : this.pricingService.getPrice(row).hq,
                   hqServer: cheapestHq ? (<any>cheapestHq).Server : null,
                   nq: cheapestNq ? cheapestNq.PricePerUnit : this.pricingService.getPrice(row).nq,
-                  nqServer: cheapestNq ? (<any>cheapestNq).Server : null
+                  nqServer: cheapestNq ? (<any>cheapestNq).Server : null,
+                  updated: item.Updated
                 };
               })
             );
@@ -165,7 +166,8 @@ export class PricingComponent implements AfterViewInit {
           hq: res.hq,
           hqServer: res.hqServer,
           fromVendor: false,
-          fromMB: true
+          fromMB: true,
+          updated: res.updated
         });
       })
     );

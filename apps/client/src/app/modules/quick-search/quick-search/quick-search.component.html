@@ -2,6 +2,7 @@
   <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null">
     <nz-select
       class="search-input"
+      id="search-input"
       nzShowSearch
       nzServerSearch
       [nzPlaceHolder]="'DB.Jump_to_page' | translate"
@@ -47,7 +48,7 @@
                   {{row.id | mobName | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.FATE">
-                  {{row.id | fate | i18n}}
+                  {{(row.id | fate)?.name | i18n}}
                 </span>
               <span *ngSwitchCase="searchTypes.MAP">
                   {{row.zoneid | placeName | i18n}}

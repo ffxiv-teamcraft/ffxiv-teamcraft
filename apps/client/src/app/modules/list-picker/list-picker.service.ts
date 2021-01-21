@@ -4,7 +4,7 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { List } from '../list/model/list';
 import { combineLatest, concat, Observable, of, Subject } from 'rxjs';
 import { ListPickerDrawerComponent } from './list-picker-drawer/list-picker-drawer.component';
-import { filter, first, map, mergeMap, tap } from 'rxjs/operators';
+import { filter, first, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import { TranslateService } from '@ngx-translate/core';
 import { ListsFacade } from '../list/+state/lists.facade';
 import { ListRow } from '../list/model/list-row';
@@ -48,12 +48,12 @@ export class ListPickerService {
       );
   }
 
-  addToList(...items: ListRow[]): Observable<void> {
+  addToList(...items: ListRow[]): Observable<List> {
     // Making the observable optional, this way you can just call it and ignore it,
     // or add your own logic once it's done.
-    const done$ = new Subject<void>();
+    const done$ = new Subject<List>();
     this.pickList().pipe(
-      mergeMap(list => {
+      switchMap(list => {
         const operations = items.map(item => {
           return this.listManager.addToList({
             itemId: +item.id,
@@ -76,7 +76,7 @@ export class ListPickerService {
           { amount: items.length, listname: list.name });
       }),
       tap(list => list.$key ? this.listsFacade.updateList(list) : this.listsFacade.addList(list)),
-      mergeMap(list => {
+      switchMap(list => {
         // We want to get the list created before calling it a success, let's be pessimistic !
         return this.progressService.showProgress(
           combineLatest([this.listsFacade.myLists$, this.listsFacade.listsWithWriteAccess$]).pipe(
@@ -89,9 +89,9 @@ export class ListPickerService {
     ).subscribe((list) => {
       this.notificationService.success(
         this.translate.instant('Success'),
-        this.translate.instant('Recipe_Added', { listname: list.name })
+        this.translate.instant('Recipes_Added', { listname: list.name, itemcount: items.length })
       );
-      done$.next();
+      done$.next(list);
       done$.complete();
     });
     return done$;

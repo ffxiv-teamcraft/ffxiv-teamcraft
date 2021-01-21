@@ -36,6 +36,8 @@ import { LogTrackingService } from '../core/database/log-tracking.service';
 import { debounceBufferTime } from '../core/rxjs/debounce-buffer-time';
 import { CommissionProfile } from '../model/user/commission-profile';
 import { CommissionProfileService } from '../core/database/commission-profile.service';
+import { ApplyContentId, InventoryActionTypes } from '../modules/inventory/+state/inventory.actions';
+import { SettingsService } from '../modules/settings/settings.service';
 
 @Injectable()
 export class AuthEffects {
@@ -170,11 +172,26 @@ export class AuthEffects {
       AuthActionTypes.VerifyCharacter,
       AuthActionTypes.SaveDefaultConsumables,
       AuthActionTypes.SetCID,
-      AuthActionTypes.SetWorld
+      AuthActionTypes.SetWorld,
+      AuthActionTypes.SetContentId
     ),
     debounceTime(100),
     withLatestFrom(this.authFacade.user$),
     map(([, user]) => new UpdateUser(user))
+  );
+
+  @Effect()
+  selectContentId$ = this.actions$.pipe(
+    ofType<ApplyContentId>(InventoryActionTypes.ApplyContentId),
+    filter(() => this.settings.followIngameCharacterSwitches),
+    withLatestFrom(this.authFacade.user$),
+    map(([action, user]) => {
+      const newDefault = user.lodestoneIds.find(entry => entry.contentId === action.contentId);
+      if (newDefault) {
+        user.defaultLodestoneId = newDefault.id;
+      }
+      return new UpdateUser(user);
+    })
   );
 
   @Effect()
@@ -240,6 +257,6 @@ export class AuthEffects {
               private translate: TranslateService, private xivapi: XivapiService,
               private notificationService: NzNotificationService, private authFacade: AuthFacade,
               private patreonService: PatreonService, private logTrackingService: LogTrackingService,
-              private commissionProfileService: CommissionProfileService) {
+              private commissionProfileService: CommissionProfileService, private settings: SettingsService) {
   }
 }

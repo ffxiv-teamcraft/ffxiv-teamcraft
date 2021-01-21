@@ -57,7 +57,7 @@ export class MappyComponent extends TeamcraftComponent {
                 };
               }),
               missingNodes: mapNodes.filter((node) => {
-                return !gatheringPoints.some(gatheringPoint => data.gatheringPointBaseToNodeId[gatheringPoint] === node.id);
+                return !gatheringPoints.some(gatheringPoint => data.gatheringPointToNodeId[gatheringPoint] === node.id);
               })
             };
           })
@@ -94,7 +94,7 @@ export class MappyComponent extends TeamcraftComponent {
   }
 
   getNodeIcon(gatheringPointBaseId: number): string {
-    const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
+    const nodeId = this.lazyData.data.gatheringPointToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
     if (!node) {
       return './assets/icons/mappy/highlight.png';

@@ -33,6 +33,7 @@ import { FishingSpotSearchResult } from '../../model/search/fishing-spot-search-
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { SettingsService } from '../../modules/settings/settings.service';
 import { Region } from '../../modules/settings/region.enum';
+import { Language } from '../data/language';
 
 @Injectable()
 export class DataService {
@@ -49,6 +50,8 @@ export class DataService {
   };
   private garlandApiUrl = 'https://www.garlandtools.org/api';
 
+  public searchLang = this.translate.currentLang;
+
   constructor(private http: HttpClient,
               private i18n: I18nToolsService,
               private settings: SettingsService,
@@ -59,9 +62,12 @@ export class DataService {
               private l12n: LocalizedDataService) {
   }
 
+  public setSearchLang(lang: Language): void {
+    this.searchLang = lang;
+  }
+
   private get isCompatible() {
-    const lang = this.translate.currentLang;
-    return lang === 'ko' || lang === 'zh' && this.settings.region !== Region.China;
+    return this.searchLang === 'ko' || this.searchLang === 'zh' && this.settings.region !== Region.China;
   }
 
   private get baseUrl() {
@@ -72,7 +78,7 @@ export class DataService {
     return 'https://xivapi.com';
   }
 
-  private xivapiSearch(options: XivapiSearchOptions) {
+  public xivapiSearch(options: XivapiSearchOptions) {
     const lang = this.getSearchLang();
 
     const searchOptions: XivapiSearchOptions = Object.assign({}, options, {
@@ -178,18 +184,27 @@ export class DataService {
       })
       .map(f => {
         if (f.minMax) {
-          return [
-            {
-              column: f.name,
-              operator: '>=',
-              value: f.value.min
-            },
-            {
-              column: f.name,
-              operator: '<=',
-              value: f.value.max
-            }
-          ];
+          if (f.canExclude && f.value.min < 0) {
+            return [
+              {
+                column: f.name,
+                operator: '!!'
+              }
+            ];
+          } else {
+            return [
+              {
+                column: f.name,
+                operator: '>=',
+                value: f.value.min
+              },
+              {
+                column: f.name,
+                operator: '<=',
+                value: f.value.max
+              }
+            ];
+          }
         } else if (f.array) {
           return [
             {
@@ -218,6 +233,7 @@ export class DataService {
       indexes: [SearchIndex.ITEM],
       string: query,
       filters: xivapiFilters,
+      exclude_dated: 1,
       columns: ['ID', 'Name_*', 'Icon', 'Recipes', 'GameContentLinks']
     };
 
@@ -227,31 +243,13 @@ export class DataService {
     searchOptions.sort_order = sort[1];
 
     let results$ = this.xivapiSearch(searchOptions).pipe(
-      expand((response) => {
-        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
-        if (results.length === 0 && response.Results.length > 0 && response.Pagination.PageTotal > response.Pagination.Page) {
-          return this.xivapiSearch({
-            ...searchOptions,
-            page: (searchOptions.page || 1) + 1
-          });
-        } else {
-          return of(response);
-        }
-      }),
       map(response => {
-        const results = response.Results.filter(item => !item.Name_en.startsWith('Dated'));
-        return {
-          results: results,
-          done: results.length > 0 || response.Pagination.PageTotal === response.Pagination.Page
-        };
-      }),
-      filter(res => res.done),
-      first(),
-      map(res => res.results)
+        return response.Results;
+      })
     );
 
     if (this.isCompatible) {
-      const ids = this.mapToItemIds(query, this.translate.currentLang as 'ko' | 'zh');
+      const ids = this.mapToItemIds(query, this.searchLang as 'ko' | 'zh');
       if (ids.length > 0) {
         results$ = this.xivapi.getList(
           XivapiEndpoint.Item,
@@ -291,8 +289,7 @@ export class DataService {
         if (onlyCraftable) {
           return results.filter(row => {
             return (row.Recipes && row.Recipes.length > 0)
-              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem)
-              && !row.Name_en.startsWith('Dated');
+              || (row.GameContentLinks && row.GameContentLinks.CompanyCraftSequence && row.GameContentLinks.CompanyCraftSequence.ResultItem);
           });
         }
         return results;
@@ -406,18 +403,18 @@ export class DataService {
    * Will return an observable of empty array if name is shorter than 3 characters.
    *
    * @param {string} name
-   * @returns {Observable<ItemData[]>}
+   * @returns {Observable<number[]>}
    */
-  public searchGathering(name: string): Observable<any[]> {
-    let lang = this.translate.currentLang;
-    const isKoOrZh = ['ko', 'zh'].indexOf(this.translate.currentLang.toLowerCase()) > -1;
+  public searchGathering(name: string): Observable<number[]> {
+    let lang = this.searchLang;
+    const isKoOrZh = ['ko', 'zh'].indexOf(this.searchLang.toLowerCase()) > -1;
     if (isKoOrZh) {
       if (name.length > 0) {
         lang = 'en';
       } else {
         return of([]);
       }
-    } else if (name.length < 3 && (this.translate.currentLang !== 'ja' && name.length === 0)) {
+    } else if (name.length < 3 && (this.searchLang !== 'ja' && name.length === 0)) {
       return of([]);
     }
 
@@ -428,33 +425,15 @@ export class DataService {
 
     // If the lang is korean, handle it properly to map to item ids.
     if (isKoOrZh) {
-      const ids = this.mapToItemIds(name, this.translate.currentLang as 'ko' | 'zh');
+      const ids = this.mapToItemIds(name, this.searchLang as 'ko' | 'zh');
       params = ids.length > 0 ? params.set('ids', ids.join(',')) : params.set('text', name);
     } else {
       params = params.set('text', name);
     }
 
     return this.getGarlandSearch(params).pipe(
-      switchMap(results => {
-        const itemIds = (results || []).map(item => item.obj.i);
-        if (itemIds.length === 0) {
-          return of([]);
-        }
-        return this.getGarlandData(`/item/en/${this.garlandtoolsVersions.item}/${itemIds.join(',')}`)
-          .pipe(
-            map(items => {
-              if (!(items instanceof Array)) {
-                items = [{ obj: items }];
-              }
-              return items.map(itemData => {
-                const itemPartial = results.find(res => res.obj.i === itemData.obj.item.id);
-                return {
-                  ...itemPartial,
-                  nodes: itemData.obj.item.nodes
-                };
-              });
-            })
-          );
+      map(results => {
+        return (results || []).map(item => item.obj.i);
       })
     );
   }
@@ -489,7 +468,7 @@ export class DataService {
   }
 
   getSearchLang(): string {
-    const lang = this.translate.currentLang;
+    const lang = this.searchLang;
     if (lang === 'zh' && !this.isCompatible) {
       return 'chs';
     } else if (lang === 'ko' && !this.isCompatible) {

@@ -6,7 +6,7 @@ import { ListsState } from './lists.reducer';
 import { listsQuery } from './lists.selectors';
 import {
   CreateList,
-  DeleteList,
+  DeleteList, DeleteLists,
   ListDetailsLoaded,
   LoadArchivedLists,
   LoadListDetails,
@@ -221,6 +221,10 @@ export class ListsFacade {
 
   loadArchivedLists(): void {
     this.store.dispatch(new LoadArchivedLists());
+  }
+
+  deleteLists(keys: string[]): void {
+    this.store.dispatch(new DeleteLists(keys))
   }
 
   newList(): Observable<List> {

@@ -16,6 +16,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { FishingBaitModule } from '../fishing-bait/fishing-bait.module';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     TranslateModule,
 
     PipesModule,
-    AntdSharedModule
+    AntdSharedModule,
+    FishingBaitModule
   ],
   declarations: [AlarmsSidebarComponent],
   exports: [AlarmsSidebarComponent]

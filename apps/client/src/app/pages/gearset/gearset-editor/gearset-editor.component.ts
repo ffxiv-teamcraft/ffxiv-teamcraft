@@ -206,7 +206,7 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
               itemSlotNames.forEach(itemSlotName => {
                 let arrayEntry = resArray.find(row => row.name === itemSlotName);
-                const propertyName = this.getPropertyName(itemSlotName);
+                const propertyName = this.gearsetsFacade.getPropertyNameFromCategoryName(itemSlotName);
                 if (arrayEntry === undefined) {
                   resArray.push({
                     name: itemSlotName,
@@ -432,43 +432,9 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
     return [];
   }
 
-  @Memoized()
-  private getPropertyName(slotName: string): keyof TeamcraftGearset {
-    switch (slotName) {
-      case 'Body':
-        return 'chest';
-      case 'Ears':
-        return 'earRings';
-      case 'Feet':
-        return 'feet';
-      case 'FingerL':
-        return 'ring1';
-      case 'FingerR':
-        return 'ring2';
-      case 'Gloves':
-        return 'gloves';
-      case 'Head':
-        return 'head';
-      case 'Legs':
-        return 'legs';
-      case 'MainHand':
-        return 'mainHand';
-      case 'Neck':
-        return 'necklace';
-      case 'OffHand':
-        return 'offHand';
-      case 'SoulCrystal':
-        return 'crystal';
-      case 'Waist':
-        return 'belt';
-      case 'Wrists':
-        return 'bracelet';
-    }
-  }
-
   setGearsetPiece(gearset: TeamcraftGearset, property: string, equipmentPiece: EquipmentPiece): void {
     gearset[property] = equipmentPiece;
-    this.gearsetsFacade.update(gearset.$key, equipmentPiece ? this.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
+    this.gearsetsFacade.update(gearset.$key, equipmentPiece ? this.gearsetsFacade.applyEquipSlotChanges(gearset, equipmentPiece.itemId) : gearset);
   }
 
   canEquipSlot(slotName: string, chestPieceId: number, legsPieceId: number): boolean {
@@ -609,18 +575,5 @@ export class GearsetEditorComponent extends TeamcraftComponent implements OnInit
 
   trackByChunk(index: number): number {
     return index;
-  }
-
-  private applyEquipSlotChanges(gearset: TeamcraftGearset, itemId: number): TeamcraftGearset {
-    const equipSlotCategory = this.lazyData.data.equipSlotCategories[this.lazyData.data.itemEquipSlotCategory[itemId]];
-    if (!equipSlotCategory) {
-      return gearset;
-    }
-    Object.keys(equipSlotCategory)
-      .filter(key => +equipSlotCategory[key] === -1)
-      .forEach(key => {
-        delete gearset[this.getPropertyName(key)];
-      });
-    return gearset;
   }
 }

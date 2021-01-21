@@ -50,8 +50,9 @@ export class MapService {
   }
 
   public getNearestAetheryte(mapData: MapData, coords: Vector2 | Vector3): Aetheryte {
-    let nearest = mapData.aetherytes[0];
-    for (const aetheryte of mapData.aetherytes) {
+    const aetherytes = this.getAetherytes(mapData.id, true);
+    let nearest = aetherytes[0];
+    for (const aetheryte of aetherytes) {
       if (this.mathService.distance(aetheryte, coords) < this.mathService.distance(nearest, coords)) {
         nearest = aetheryte;
       }
@@ -164,13 +165,15 @@ export class MapService {
     };
   }
 
-  private getAetherytes(id: number): Aetheryte[] {
+  private getAetherytes(id: number, excludeMinis = false): Aetheryte[] {
     // If it's dravanian forelandes, use Idyllshire id instead.
     if (id === 213) {
       id = 257;
     }
     return this.lazyData.data.aetherytes
-      .filter((aetheryte) => aetheryte.map === id)
+      .filter((aetheryte) => {
+        return aetheryte.map === id && (!excludeMinis || aetheryte.type === 0)
+      })
       .map((aetheryte: Aetheryte) => {
         aetheryte.aethernetCoords = aetherstream[id] || { x: 0, y: 0 };
         return aetheryte;

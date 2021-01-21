@@ -1,0 +1,21 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <p>{{'LIST_DETAILS.Inventory_cleanup_description' | translate}}</p>
+  <div *ngIf="cleanup$ | async as cleanup" fxLayout="column" fxLayoutGap="10px">
+    <nz-card [nzTitle]="('INVENTORY.BAG.Bag') | translate">
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" *ngFor="let item of cleanup; let odd = odd">
+          <app-item-icon [width]="24" [itemId]="item.itemId" [hq]="item.hq"></app-item-icon>
+          <div>{{item.itemId | itemName | i18n}}</div>
+          <img *ngIf="item.hq" alt="(HQ)" src="./assets/icons/HQ.png" class="hq-icon">
+          <div>x{{item.quantity}}</div>
+          <div>
+            <i nz-icon nzType="search" nzTheme="outline" nz-tooltip [nzTooltipTitle]="positionTooltip"></i>
+            <ng-template #positionTooltip>
+              <app-inventory-position [item]="item"></app-inventory-position>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>

@@ -1,0 +1,430 @@
+import { createReadStream } from 'fs-extra';
+import { join } from 'path';
+import { combineLatest, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AbstractExtractor } from '../abstract-extractor';
+import * as csv from 'csv-parser';
+
+export class LogsExtractor extends AbstractExtractor {
+  private craftingLog = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ];
+
+  private craftingLogPages = [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ];
+
+  private gatheringLogPages = [
+    [],
+    [],
+    [],
+    []
+  ];
+
+
+  private craftingLogDone$ = new Subject<void>();
+  private gatheringLogDone$ = new Subject<void>();
+  private fishingLogDone$ = new Subject<void>();
+  private spearFishingLogDone$ = new Subject<void>();
+  private spearFishingNodesDone$ = new Subject<void>();
+
+  protected doExtract(): any {
+    const notebookDivisionDone$ = new Subject<void>();
+
+    combineLatest([this.craftingLogDone$, notebookDivisionDone$, this.gatheringLogDone$,
+      this.fishingLogDone$, this.spearFishingNodesDone$, this.spearFishingLogDone$])
+      .subscribe(() => {
+        this.done();
+      });
+
+    const notebookDivision = {};
+    this.getAllEntries('https://xivapi.com/NotebookDivision', true).subscribe(completeFetch => {
+      completeFetch.forEach(row => {
+        notebookDivision[row.ID] = {
+          name: {
+            en: row.Name_en,
+            ja: row.Name_ja,
+            de: row.Name_de,
+            fr: row.Name_fr
+          },
+          pages: [0, 1, 2, 3, 4, 5, 6, 7]
+            .map(index => {
+              if (row.ID < 1000) {
+                // Level ranges
+                return 40 * index + row.ID;
+              } else if (row.ID < 2000) {
+                // DoH masterbooks
+                return 1000 + 8 * (row.ID - 1000) + index;
+              } else {
+                // DoL folklores, only 4 DoLs tho
+                return index < 4 ? (2000 + 4 * (row.ID - 2000) + index) : -1;
+              }
+            })
+            .filter(id => id > -1)
+        };
+      });
+      this.persistToJsonAsset('notebook-division', notebookDivision);
+      notebookDivisionDone$.next();
+    });
+
+    this.extractCraftingLog();
+    this.extractGatheringLog();
+    this.extractFishingLog();
+    this.extractSpearfishingLog();
+  }
+
+  private extractCraftingLog(): void {
+    this.getAllEntries('https://xivapi.com/RecipeNotebookList', true).subscribe((completeFetch) => {
+      completeFetch.forEach(page => {
+        // If it's an empty page or a collectable one, don't go further
+        if (!page.Recipe0 || page.Recipe0.ID === -1 || (page.ID >= 1256 && page.ID < 1280)) {
+          return;
+        }
+        Object.keys(page)
+          .filter(key => {
+            return /^Recipe\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
+          })
+          .sort((a, b) => {
+            return +a.match(/^Recipe(\d+)$/)[1] - +b.match(/^Recipe(\d+)$/)[1];
+          })
+          .forEach(key => {
+            const entry = page[key];
+            try {
+              this.craftingLog[entry.CraftTypeTargetID].push(entry.ID);
+              this.addToCraftingLogPage(entry, page.ID);
+            } catch (e) {
+              console.log(e);
+              console.log(entry);
+            }
+          });
+      });
+      this.persistToJsonAsset('crafting-log', this.craftingLog);
+      this.persistToJsonAsset('crafting-log-pages', this.craftingLogPages);
+      this.craftingLogDone$.next();
+    });
+  }
+
+  private extractGatheringLog(): void {
+    this.getAllEntries('https://xivapi.com/GatheringNotebookList', true).subscribe(completeFetch => {
+      completeFetch.forEach(page => {
+        // If it's an empty page, don't go further
+        if (!page.GatheringItem0 || page.GatheringItem0.ID === -1) {
+          return;
+        }
+        Object.keys(page)
+          .filter(key => {
+            return /^GatheringItem\d+$/.test(key) && page[key] && page[key].ID !== -1 && page[key].ID !== null;
+          })
+          .sort((a, b) => {
+            return +a.match(/^GatheringItem(\d+)$/)[1] - +b.match(/^GatheringItem(\d+)$/)[1];
+          })
+          .forEach(key => {
+            if (page.ID >= 2200) {
+              return;
+            }
+            const pageId = page.ID;
+            const entry = page[key];
+            // 0 = MIN, 1 = MIN (quarrying), 2 = BTN, 3 = BTN (grass thing)
+            let gathererIndex;
+            if (page.ID < 40) {
+              gathererIndex = 0;
+            } else if (page.ID < 80) {
+              gathererIndex = 1;
+            } else if (page.ID < 120) {
+              gathererIndex = 2;
+            } else if (page.ID < 200) {
+              gathererIndex = 3;
+            } else {
+              gathererIndex = (page.ID - 2000) % 4;
+            }
+            this.addToGatheringLogPage(entry, pageId, gathererIndex);
+          });
+      });
+      this.persistToJsonAsset('gathering-log-pages', this.gatheringLogPages);
+      this.gatheringLogDone$.next();
+    });
+  }
+
+  private extractFishingLog(): void {
+    const diademTerritory = require('../../../input/diadem-territory.json');
+
+    const diademFishingSpotCoords = {
+      10001: {
+        x: 12,
+        y: 36
+      },
+      10002: {
+        x: 11,
+        y: 29
+      },
+      10003: {
+        x: 10.5,
+        y: 9.1
+      },
+      10004: {
+        x: 32.4,
+        y: 9.5
+      },
+      10005: {
+        x: 29,
+        y: 33
+      },
+      10006: {
+        x: 12.2,
+        y: 24.4
+      },
+      10007: {
+        x: 26,
+        y: 16
+      }
+    };
+
+    const fishingLog = [];
+
+    this.aggregateAllPages('https://xivapi.com/FishParameter?columns=ID,ItemTargetID,Item.Icon,TerritoryType.MapTargetID,TerritoryType.PlaceNameTargetID,GatheringItemLevel,TimeRestricted,WeatherRestricted,FishingRecordType,IsInLog,GatheringSubCategory').pipe(
+      map(completeFetch => {
+        const fishParameter = {};
+        completeFetch
+          .filter(fish => fish.ItemTargetID > 0 && fish.IsInLog === 1)
+          .forEach(fish => {
+            if (fish.TerritoryType === null) {
+              throw new Error(`No territory for FishParameter#${fish.ID}`);
+            }
+            const entry: any = {
+              id: fish.ID,
+              itemId: fish.ItemTargetID,
+              level: fish.GatheringItemLevel.GatheringItemLevel,
+              icon: fish.Item.Icon,
+              mapId: fish.TerritoryType.MapTargetID,
+              zoneId: fish.TerritoryType.PlaceNameTargetID,
+              timed: fish.TimeRestricted,
+              weathered: fish.WeatherRestricted,
+              stars: fish.GatheringItemLevel.Stars || 0
+            };
+            if (fish.GatheringSubCategory) {
+              entry.folklore = fish.GatheringSubCategory.ItemTargetID;
+            }
+            if (fish.FishingRecordType && fish.FishingRecordType.Addon) {
+              entry.recordType = {
+                en: fish.FishingRecordType.Addon.Text_en,
+                de: fish.FishingRecordType.Addon.Text_de,
+                ja: fish.FishingRecordType.Addon.Text_ja,
+                fr: fish.FishingRecordType.Addon.Text_fr
+              };
+            }
+            fishParameter[fish.ItemTargetID] = entry;
+          });
+        return fishParameter;
+      })
+    ).subscribe(fishParameter => {
+      this.persistToJsonAsset('fish-parameter', fishParameter);
+    });
+
+    this.getAllEntries('https://xivapi.com/FishingSpot', true).subscribe((completeFetch) => {
+      const spots = [];
+      const fishes = [];
+      completeFetch
+        .filter(spot => spot.Item0 !== null && spot.PlaceName !== null && (spot.TerritoryType !== null || spot.ID >= 10000))
+        .forEach(spot => {
+          // Let's check if this is diadem
+          if (spot.TerritoryType === null && spot.ID >= 10000) {
+            spot.TerritoryType = diademTerritory;
+          }
+          const c = spot.TerritoryType.Map.SizeFactor / 100.0;
+
+          spots.push({
+            id: spot.ID,
+            mapId: spot.TerritoryType.Map.ID,
+            placeId: spot.TerritoryType.PlaceName.ID,
+            zoneId: spot.PlaceName.ID,
+            level: spot.GatheringLevel,
+            coords: spot.ID >= 10000 ? diademFishingSpotCoords[spot.ID] : {
+              x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
+              y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
+            },
+            fishes: Object.keys(spot)
+              .filter(key => /Item\dTargetID/.test(key))
+              .map(key => +spot[key])
+          });
+          Object.keys(spot)
+            .filter(key => {
+              return /^Item\d+$/.test(key) && spot[key] && spot[key].ID !== -1 && spot[key].ID !== null;
+            })
+            .sort((a, b) => {
+              return +a.match(/^Item(\d+)$/)[1] - +b.match(/^Item(\d+)$/)[1];
+            })
+            .forEach(key => {
+              const fish = spot[key];
+              if (fishes.indexOf(fish.ID) === -1) {
+                fishes.push(fish.ID);
+              }
+              const entry = {
+                itemId: fish.ID,
+                level: spot.GatheringLevel,
+                icon: fish.Icon,
+                mapId: spot.TerritoryType.Map.ID,
+                placeId: spot.TerritoryType.PlaceName.ID,
+                zoneId: spot.PlaceName.ID,
+                spot: {
+                  id: spot.ID,
+                  coords: {
+                    x: Math.floor(100 * (41.0 / c) * (spot.X / 2048.0) + 1) / 100,
+                    y: Math.floor(100 * (41.0 / c) * (spot.Z / 2048.0) + 1) / 100
+                  }
+                }
+              };
+              fishingLog.push(entry);
+            });
+        });
+      this.persistToJsonAsset('fishing-log', fishingLog);
+      this.persistToJsonAsset('fishing-spots', spots);
+      this.persistToJsonAsset('fishes', fishes);
+      this.fishingLogDone$.next();
+    });
+  }
+
+  private extractSpearfishingLog(): void {
+    const sheetEntries = [];
+
+    createReadStream(join(__dirname, '../../../csv/FFXIV Data - Fishing.csv'))
+      .pipe(csv())
+      .on('data', (data) => sheetEntries.push(data))
+      .on('end', () => {
+
+        const spearFishingLog = [];
+
+        this.getAllEntries('https://xivapi.com/SpearfishingNotebook', true).subscribe(completeFetch => {
+          completeFetch
+            .filter(entry => entry.GatheringPointBase)
+            .forEach(entry => {
+              const entries = Object.keys(entry.GatheringPointBase)
+                .filter(key => /Item\dTargetID/.test(key))
+                .filter(key => entry.GatheringPointBase[key] !== 0)
+                .map(key => {
+                  const c = entry.TerritoryType.Map.SizeFactor / 100.0;
+                  return {
+                    id: entry.ID,
+                    itemId: entry.GatheringPointBase[key],
+                    level: entry.GatheringLevel.GatheringLevel,
+                    mapId: entry.TerritoryType.Map.ID,
+                    placeId: entry.TerritoryType.PlaceName.ID,
+                    zoneId: entry.PlaceName.ID,
+                    coords: {
+                      x: (41.0 / c) * ((entry.X * c) / 2048.0) + 1,
+                      y: (41.0 / c) * ((entry.Y * c) / 2048.0) + 1
+                    }
+                  };
+                });
+              spearFishingLog.push(...entries);
+            });
+          this.persistToJsonAsset('spear-fishing-log', spearFishingLog);
+          this.spearFishingLogDone$.next();
+        });
+
+        const spearFishingNodes = [];
+
+        this.getAllEntries('https://xivapi.com/SpearfishingItem', true).subscribe(completeFetch => {
+          completeFetch
+            .filter(fish => fish.Item !== null)
+            .forEach(fish => {
+              const sheetEntry = sheetEntries.find(e => {
+                return e.Location === fish.Item.Name_en;
+              });
+              const entry: any = {
+                id: fish.ID,
+                itemId: fish.ItemTargetID,
+                level: fish.GatheringItemLevel.GatheringItemLevel,
+                ilvl: fish.GatheringItemLevel.ID,
+                icon: fish.Item.Icon,
+                mapId: fish.TerritoryType.Map.ID,
+                zoneId: fish.TerritoryType.PlaceName.ID
+              };
+              if (sheetEntry !== undefined) {
+                entry.gig = sheetEntry.Bait.split(' ')[0];
+                if (sheetEntry.Start) {
+                  entry.spawn = +sheetEntry.Start;
+                  entry.duration = +sheetEntry.End > +sheetEntry.Start ? +sheetEntry.End - +sheetEntry.Start : +sheetEntry.Start - +sheetEntry.End;
+                }
+                if (sheetEntry['Predator, Amount']) {
+                  const split = sheetEntry['Predator, Amount'].split(', ');
+                  const predatorSheetEntry = sheetEntries.find(e => {
+                    return e.Fish === split[0];
+                  });
+                  entry.predator = [{
+                    name: split[0],
+                    predatorAmount: +split[1]
+                  }];
+                  if (predatorSheetEntry && predatorSheetEntry.Start) {
+                    entry.spawn = +predatorSheetEntry.Start;
+                    entry.duration = +predatorSheetEntry.End > +predatorSheetEntry.Start ? +predatorSheetEntry.End - +predatorSheetEntry.Start : +predatorSheetEntry.Start - +predatorSheetEntry.End;
+                  }
+                }
+              }
+              spearFishingNodes.push(entry);
+            });
+          this.persistToJsonAsset('spear-fishing-nodes', spearFishingNodes);
+          this.spearFishingNodesDone$.next();
+        });
+      });
+  }
+
+  private addToCraftingLogPage(entry, pageId) {
+    this.craftingLogPages[entry.CraftTypeTargetID] = this.craftingLogPages[entry.CraftTypeTargetID] || [];
+    let page = this.craftingLogPages[entry.CraftTypeTargetID].find(p => p.id === pageId);
+    if (page === undefined) {
+      this.craftingLogPages[entry.CraftTypeTargetID].push({
+        id: pageId,
+        masterbook: entry.SecretRecipeBook,
+        startLevel: entry.RecipeLevelTable,
+        recipes: []
+      });
+      page = this.craftingLogPages[entry.CraftTypeTargetID].find(p => p.id === pageId);
+    }
+    if (page.recipes.some(r => r.recipeId === entry.ID)) {
+      return;
+    }
+    page.recipes.push({
+      recipeId: entry.ID,
+      itemId: entry.ItemResultTargetID,
+      rlvl: entry.RecipeLevelTable.ID
+    });
+  }
+
+  private addToGatheringLogPage(entry, pageId, gathererIndex) {
+    let page = this.gatheringLogPages[gathererIndex].find(p => p.id === pageId);
+    if (page === undefined) {
+      this.gatheringLogPages[gathererIndex].push({
+        id: pageId,
+        startLevel: entry.GatheringItemLevel.GatheringItemLevel,
+        items: []
+      });
+      page = this.gatheringLogPages[gathererIndex].find(p => p.id === pageId);
+    }
+    page.items.push({
+      itemId: entry.ItemTargetID,
+      ilvl: entry.GatheringItemLevelTargetID,
+      lvl: entry.GatheringItemLevel.GatheringItemLevel,
+      stars: entry.GatheringItemLevel.Stars,
+      hidden: entry.IsHidden
+    });
+  }
+
+  getName(): string {
+    return 'logs';
+  }
+
+}

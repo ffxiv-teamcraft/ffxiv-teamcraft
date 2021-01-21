@@ -1,4 +1,4 @@
-import { Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, HostListener, Inject, Injector, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '../environments/environment';
 import { GarlandToolsService } from './core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -41,9 +41,7 @@ import { Theme } from './modules/settings/theme';
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as semver from 'semver';
-import { MachinaService } from './core/electron/machina.service';
 import { UniversalisService } from './core/api/universalis.service';
-import { GubalService } from './core/api/gubal.service';
 import { InventoryFacade } from './modules/inventory/+state/inventory.facade';
 import { TextQuestionPopupComponent } from './modules/text-question-popup/text-question-popup/text-question-popup.component';
 import { Apollo } from 'apollo-angular';
@@ -57,7 +55,6 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
-import { CommissionsFacade } from './modules/commission-board/+state/commissions.facade';
 
 declare const gtag: Function;
 
@@ -80,11 +77,7 @@ export class AppComponent implements OnInit {
 
   public overlayOpacity = 1;
 
-  collapsedSidebar = this.media.isActive('lt-md') ? true : this.settings.compactSidebar;
-
   collapsedAlarmsBar = true;
-
-  sidebarState = this.settings.sidebarState;
 
   public notifications$ = this.notificationsFacade.notificationsDisplay$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
@@ -92,7 +85,7 @@ export class AppComponent implements OnInit {
 
   public loggedIn$: Observable<boolean>;
 
-  public character$: Observable<Character>;
+  public character$: Observable<Character & { Datacenter: string }>;
 
   public userId$ = this.authFacade.userId$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
@@ -132,40 +125,15 @@ export class AppComponent implements OnInit {
 
   public emptyInventory$: Observable<boolean>;
 
+  public unknownContentId$: Observable<boolean>;
+
   public pinnedList$ = this.listsFacade.pinnedList$;
 
   public suggestedRegion: Region = null;
 
-  public randomTip$: Observable<string> = interval(600000).pipe(
-    startWith(-1),
-    map(() => {
-      const tips = [
-        'Community_rotations',
-        'GC_Deliveries',
-        'Desynth',
-        'DB',
-        '3D_model',
-        'Levequests',
-        'Log_tracker',
-        'Desktop_app_overlay',
-        'Start_desktop_before_game',
-        'Middle_click_share_button',
-        'Quick_search',
-        'Open_in_desktop_shortcut'
-      ];
-      return tips[Math.floor(Math.random() * tips.length)];
-    }),
-    isPlatformServer(this.platform) ? first() : tap()
-  );
-
   public possibleMissingFirewallRule$ = this.ipc.possibleMissingFirewallRule$;
 
   public firewallRuleApplied = false;
-
-  public commissionNotificationsCount$ = this.commissionsFacade.notifications$.pipe(
-    map(notifications => notifications.length),
-    shareReplay(1)
-  );
 
   constructor(private gt: GarlandToolsService, public translate: TranslateService,
               public ipc: IpcService, private router: Router, private firebase: AngularFireDatabase,
@@ -177,12 +145,12 @@ export class AppComponent implements OnInit {
               private customLinksFacade: CustomLinksFacade, private renderer: Renderer2, private media: MediaObserver,
               private layoutsFacade: LayoutsFacade, private lazyData: LazyDataService, private customItemsFacade: CustomItemsFacade,
               private dirtyFacade: DirtyFacade, private seoService: SeoService, private injector: Injector,
-              private machina: MachinaService, private message: NzMessageService, private universalis: UniversalisService,
-              private inventoryService: InventoryFacade, private gubal: GubalService, @Inject(PLATFORM_ID) private platform: Object,
+              private message: NzMessageService, private universalis: UniversalisService,
+              private inventoryService: InventoryFacade, @Inject(PLATFORM_ID) private platform: Object,
               private quickSearch: QuickSearchService, public mappy: MappyReporterService,
               apollo: Apollo, httpLink: HttpLink, private tutorialService: TutorialService,
               private playerMetricsService: PlayerMetricsService, private patreonService: PatreonService,
-              private commissionsFacade: CommissionsFacade) {
+              private cd: ChangeDetectorRef) {
 
     fromEvent(document, 'keypress').subscribe((event: KeyboardEvent) => {
       this.handleKeypressShortcuts(event);
@@ -190,7 +158,7 @@ export class AppComponent implements OnInit {
 
     // Scuff Zoom Handling
     document.addEventListener('keydown', event => {
-      if (event.ctrlKey && [187, 107].includes(event.keyCode)) {
+      if ((event.ctrlKey || event.metaKey) && [187, 107].includes(event.keyCode)) {
         return this.ipc.send('zoom-in', event);
       }
     });
@@ -231,15 +199,19 @@ export class AppComponent implements OnInit {
     if (isPlatformServer(this.platform)) {
       this.dataLoaded = true;
       this.emptyInventory$ = of(false);
+      this.unknownContentId$ = of(false);
     }
 
     if (isPlatformBrowser(this.platform)) {
       if (this.platformService.isDesktop()) {
-        this.machina.init();
-        this.gubal.init();
         this.emptyInventory$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
-            return Object.keys(inventory.items).length === 0;
+            return inventory.contentId && Object.keys(inventory.items[inventory.contentId]).length === 0;
+          })
+        );
+        this.unknownContentId$ = this.inventoryService.inventory$.pipe(
+          map(inventory => {
+            return !inventory.contentId;
           })
         );
         this.universalis.initCapture();
@@ -329,7 +301,7 @@ export class AppComponent implements OnInit {
       );
 
       combineLatest([language$, region$]).subscribe(([lang, region]) => {
-        let suggestedRegion = null;
+        let suggestedRegion;
         switch (lang) {
           case 'ko':
             suggestedRegion = Region.Korea;
@@ -447,6 +419,10 @@ export class AppComponent implements OnInit {
               this.mappy.start();
             }
             this.playerMetricsService.start();
+            setTimeout(() => {
+              this.ipc.send('app-ready', true);
+              this.cd.detectChanges();
+            }, 500);
           });
       }
     }
@@ -455,13 +431,13 @@ export class AppComponent implements OnInit {
   }
 
   private handleKeypressShortcuts(event: KeyboardEvent): void {
-    if (event.ctrlKey && event.shiftKey && event.code === 'KeyF') {
+    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyF') {
       this.quickSearch.openQuickSearch();
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyQ') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyQ') {
       this.router.navigateByUrl('/admin/users');
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyM') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyM') {
       this.router.navigateByUrl('/mappy');
-    } else if (event.ctrlKey && event.shiftKey && event.code === 'KeyC') {
+    } else if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.code === 'KeyC') {
       event.preventDefault();
       event.stopPropagation();
       if (this.platformService.isDesktop()) {
@@ -473,7 +449,7 @@ export class AppComponent implements OnInit {
   }
 
   enablePacketCapture(): void {
-    this.ipc.machinaToggle = true;
+    this.ipc.machinaToggle$.next(true);
     this.settings.enableUniversalisSourcing = true;
     this.ipc.send('toggle-machina', true);
   }
@@ -572,10 +548,6 @@ export class AppComponent implements OnInit {
         }
       });
 
-      if (this.media.isActive('lt-md')) {
-        this.collapsedSidebar = true;
-      }
-
       this.settings.themeChange$.subscribe((change => {
         this.applyTheme(change.next);
       }));
@@ -625,12 +597,6 @@ export class AppComponent implements OnInit {
     this.reloadTime$.next(null);
   }
 
-  public onNavLinkClick(): void {
-    if (this.media.isActive('lt-md')) {
-      this.collapsedSidebar = true;
-    }
-  }
-
   deleteNotification(notification: AbstractNotification): void {
     this.notificationsFacade.removeNotification(notification.$key);
   }
@@ -652,9 +618,11 @@ export class AppComponent implements OnInit {
       nzTitle: this.translate.instant('Login'),
       nzContent: LoginPopupComponent,
       nzFooter: null
-    }).afterClose.subscribe(() => {
-      // HOTFIX
-      window.location.reload();
+    }).afterClose.subscribe((res) => {
+      if (res) {
+        // HOTFIX
+        window.location.reload();
+      }
     });
   }
 
@@ -728,24 +696,8 @@ export class AppComponent implements OnInit {
     this.settingsPopupService.openSettings();
   }
 
-  public openAlarmsOverlay(): void {
-    this.ipc.openOverlay('/alarms-overlay');
-  }
-
-  public openFishingOverlay(): void {
-    this.ipc.openOverlay('/fishing-reporter-overlay');
-  }
-
-  public openMappyOverlay(): void {
-    this.ipc.openOverlay('/mappy-overlay');
-  }
-
-  public openListPanelOverlay(): void {
-    this.ipc.openOverlay('/list-panel-overlay');
-  }
-
-  public openItemSearchOverlay(): void {
-    this.ipc.openOverlay('/item-search-overlay');
+  public openOverlay(uri: string): void {
+    this.ipc.openOverlay(uri);
   }
 
   @HostListener('window:beforeunload', ['$event'])

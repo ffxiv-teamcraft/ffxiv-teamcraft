@@ -24,7 +24,7 @@
       <nz-list-item>
         <nz-list-item-meta [nzAvatar]="checkbox" [nzDescription]="description" [nzTitle]="list.name">
           <ng-template #checkbox>
-            <label (ngModelChange)="setSelection(list, $event)" [ngModel]="false" [nzDisabled]="list.isOutDated()"
+            <label (ngModelChange)="setSelection(list, $event)" [ngModel]="false" [nzDisabled]="list.isOutDated() || list.isLarge()"
                    nz-checkbox></label>
           </ng-template>
           <ng-template #description>

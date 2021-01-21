@@ -1,13 +1,13 @@
 export type LazyDataKey = keyof LazyData;
 
 export interface LazyData {
-  achievementIcons: any;
   achievements: any;
   actionCdGroups: any;
   actionIcons: any;
   actionTimeline: any;
   actions: any;
   aetherytes: any;
+  airshipVoyages: any;
   baseParams: any;
   bigFishes: any;
   classJobsModifiers: any;
@@ -20,6 +20,7 @@ export interface LazyData {
   desynth: any;
   diademTerritory: any;
   equipSlotCategories: any;
+  equipment: any;
   exVersions: any;
   extractableItems: any;
   fates: any;
@@ -32,7 +33,7 @@ export interface LazyData {
   gatheringBonuses: any;
   gatheringItems: any;
   gatheringLogPages: any;
-  gatheringPointBaseToNodeId: any;
+  gatheringPointToNodeId: any;
   hqFlags: any;
   hunts: any;
   hwdInspections: any;
@@ -42,11 +43,11 @@ export interface LazyData {
   itemEquipSlotCategory: any;
   itemIcons: any;
   itemLevel: any;
+  itemMainAttributes: any;
   itemMeldingData: any;
   itemPatch: any;
   itemSeries: any;
   itemSetBonuses: any;
-  itemSlots: any;
   itemStats: any;
   items: any;
   jobAbbr: any;
@@ -72,9 +73,13 @@ export interface LazyData {
   recipesIngredientLookup: any;
   recipes: any;
   reduction: any;
+  retainerTasks: any;
   shops: any;
+  spearFishingLog: any;
+  spearFishingNodes: any;
   stackSizes: any;
   statuses: any;
+  submarineVoyages: any;
   territoryLayers: any;
   tradeFlags: any;
   traits: any;

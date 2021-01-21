@@ -5,7 +5,7 @@ export const INVENTORY_FEATURE_KEY = 'inventory';
 
 export interface InventoryState {
   inventory: UserInventory,
-  loaded: boolean; // has the Inventory list been loaded
+  loaded: boolean; // has the Inventory been loaded
 }
 
 export interface InventoryPartialState {
@@ -34,6 +34,14 @@ export function inventoryReducer(
       state = {
         ...state,
         inventory: action.payload
+      };
+      break;
+    }
+    case InventoryActionTypes.ApplyContentId: {
+      state.inventory = state.inventory.clone();
+      state.inventory.contentId = action.contentId;
+      state = {
+        ...state
       };
       break;
     }

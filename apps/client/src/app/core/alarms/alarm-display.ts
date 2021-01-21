@@ -40,9 +40,9 @@ export class AlarmDisplay {
   weather?: number;
 
   /**
-   * If it has a group, its name.
+   * If it has groups, their names.
    */
-  groupName?: string;
+  groupNames?: string;
 
   constructor(public readonly alarm: Alarm) {
   }

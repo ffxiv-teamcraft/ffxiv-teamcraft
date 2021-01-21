@@ -55,7 +55,10 @@ export class ExtractorComponent implements OnInit {
         })
       );
     }), 200).subscribe(items => {
-      const blob = new Blob([JSON.stringify([].concat.apply([], items))], { type: 'text/plain;charset:utf-8' });
+      const blob = new Blob([JSON.stringify([].concat.apply([], items).reduce((acc, i) => {
+        acc[i.id] = i;
+        return acc;
+      }, {}))], { type: 'text/plain;charset:utf-8' });
       saveAs(blob, `extracts.json`);
     });
   }

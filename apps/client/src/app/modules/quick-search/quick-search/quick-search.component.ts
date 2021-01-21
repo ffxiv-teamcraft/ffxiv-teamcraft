@@ -1,4 +1,4 @@
-import { Component, Inject, Optional, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, OnInit, Optional, PLATFORM_ID } from '@angular/core';
 import { SearchType } from '../../../pages/search/search-type';
 import { BehaviorSubject, combineLatest, merge, Subject } from 'rxjs';
 import { SearchResult } from '../../../model/search/search-result';
@@ -15,7 +15,7 @@ import { NzModalRef } from 'ng-zorro-antd/modal';
   templateUrl: './quick-search.component.html',
   styleUrls: ['./quick-search.component.less']
 })
-export class QuickSearchComponent extends TeamcraftComponent {
+export class QuickSearchComponent extends TeamcraftComponent implements OnInit {
 
   searchTypes = SearchType;
 
@@ -64,6 +64,13 @@ export class QuickSearchComponent extends TeamcraftComponent {
     if (this.modal) {
       this.modal.close();
     }
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      const element: any = document.getElementById('search-input').getElementsByClassName('ant-select-selection-search-input').item(0);
+      element.focus();
+    }, 500);
   }
 
 }

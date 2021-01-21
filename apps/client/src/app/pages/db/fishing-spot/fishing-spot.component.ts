@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { XivapiEndpoint, XivapiService } from '@xivapi/angular-client';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { BehaviorSubject, combineLatest, Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
+import { distinctUntilChanged, filter, map, shareReplay, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { TeamcraftPageComponent } from '../../../core/component/teamcraft-page-component';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { LocalizedLazyDataService } from '../../../core/data/localized-lazy-data.service';
@@ -22,7 +22,7 @@ export type XivApiFishingSpot = any;
   selector: 'app-fishing-spot',
   templateUrl: './fishing-spot.component.html',
   styleUrls: ['./fishing-spot.component.less', '../fish/fish.common.less', '../common-db.less'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FishingSpotComponent extends TeamcraftPageComponent implements OnInit, OnDestroy {
   private readonly loadingSub$ = new BehaviorSubject<boolean>(false);
@@ -93,10 +93,10 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
       nzTitle: `${this.translate.instant('DB.FISH.Misses_popup_title')}`,
       nzContent: FishingMissesPopupComponent,
       nzComponentParams: {
-        spotId: spotId,
+        spotId: spotId
       },
       nzFooter: null,
-      nzWidth: '80vw',
+      nzWidth: '80vw'
     });
   }
 
@@ -108,7 +108,7 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
           title,
           description: '',
           url: `https://ffxivteamcraft.com/db/${this.translate.currentLang}/fishing-spot/${fishingSpot.ID}/${title.split(' ').join('-')}`,
-          image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`,
+          image: `https://cdn.ffxivteamcraft.com/assets/icons/classjob/fisher.png`
         };
       })
     );
@@ -120,12 +120,12 @@ export class FishingSpotComponent extends TeamcraftPageComponent implements OnIn
     if (slug === undefined) {
       this.router.navigate([correctSlug], {
         relativeTo: this.route,
-        replaceUrl: true,
+        replaceUrl: true
       });
     } else if (slug !== correctSlug) {
       this.router.navigate(['../', correctSlug], {
         relativeTo: this.route,
-        replaceUrl: true,
+        replaceUrl: true
       });
     }
   };

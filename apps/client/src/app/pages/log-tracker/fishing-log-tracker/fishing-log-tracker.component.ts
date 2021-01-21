@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { GarlandToolsService } from '../../../core/api/garland-tools.service';
 import { TranslateService } from '@ngx-translate/core';
-import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { map, shareReplay, startWith, tap } from 'rxjs/operators';
 import { BehaviorSubject, combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { spearFishingNodes } from '../../../core/data/sources/spear-fishing-nodes';
-import { spearFishingLog } from '../../../core/data/sources/spear-fishing-log';
 import { TrackerComponent } from '../tracker-component';
 import { fshLogOrder } from '../fsh-log-order';
 import { fshSpearLogOrder } from '../fsh-spear-log-order';
+import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { Alarm } from '../../../core/alarms/alarm';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -36,15 +36,15 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
   public spotId$: ReplaySubject<number> = new ReplaySubject<number>();
 
-  public fshDataCache: any[] = [];
+  public fshDataCache: Record<number, { gatheringNode: GatheringNode, alarms: Alarm[] }[]> = {};
 
   public loading = true;
 
   public hideCompleted = false;
 
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
-              private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
-              private lazyData: LazyDataService) {
+              private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private lazyData: LazyDataService,
+              private gatheringNodesService: GatheringNodesService) {
     super(alarmsFacade);
   }
 
@@ -59,128 +59,20 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
     this.authFacade.markAsDoneInLog('gathering', itemId, done);
   }
 
-  public getFshData(fish: any): any[] {
-    if (fish === undefined) {
-      return [];
+  public getFshData(itemId: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
+    if (this.fshDataCache[itemId] === undefined) {
+      this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true).map(node => {
+        return {
+          gatheringNode: node,
+          alarms: this.alarmsFacade.generateAlarms(node)
+        };
+      });
     }
-    if (this.fshDataCache[fish.itemId] === undefined) {
-      this.fshDataCache[fish.itemId] = this._getFshData(fish);
-    }
-    return this.fshDataCache[fish.itemId];
-  }
-
-  private _getFshData(fish: any): any[] {
-    const spots = this.gt.getFishingSpots(fish.itemId);
-    if (fish.id >= 20000) {
-      const logEntries = spearFishingLog.filter(entry => entry.itemId === fish.id);
-      const spot = spearFishingNodes.find(node => node.itemId === fish.itemId);
-      return logEntries
-        .map(entry => {
-          const result: any = {
-            id: fish.id,
-            zoneid: entry.zoneId,
-            mapId: entry.mapId,
-            x: entry.coords.x,
-            y: entry.coords.y,
-            level: entry.level,
-            type: 4,
-            itemId: fish.itemId,
-            icon: fish.icon,
-            timed: fish.spawn !== undefined
-          };
-
-          if (spot !== undefined) {
-            result.gig = spot.gig;
-          }
-
-          if (spot.spawn !== undefined) {
-            result.spawnTimes = [spot.spawn];
-            result.uptime = spot.duration;
-            // Just in case it despawns the day after.
-            result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-            // As uptimes are always in minutes, gotta convert to minutes here too.
-            result.uptime *= 60;
-          }
-
-          if (spot.predator) {
-            result.predators = spot.predator.map(predator => {
-              const itemId = +Object.keys(this.lazyData.data.items).find(key => this.lazyData.data.items[key].en === predator.name);
-              return {
-                id: itemId,
-                icon: this.lazyData.data.itemIcons[itemId],
-                amount: predator.predatorAmount
-              };
-            });
-          }
-          return result;
-        })
-        .slice(0, 1);
-    } else {
-      if (spots.length > 0) {
-        return spots
-          .map(spot => {
-            const mapId = this.l12n.getMapId(spot.zone);
-            const zoneId = this.l12n.getAreaIdByENName(spot.title);
-            if (mapId !== undefined) {
-              const result: any = {
-                id: fish.id,
-                zoneid: zoneId,
-                mapId: mapId,
-                x: spot.coords[0],
-                y: spot.coords[1],
-                level: spot.lvl,
-                type: 4,
-                itemId: spot.id,
-                icon: spot.icon,
-                timed: spot.during !== undefined,
-                snagging: spot.snagging
-              };
-              if (spot.during !== undefined) {
-                result.spawnTimes = [spot.during.start];
-                result.uptime = spot.during.end - spot.during.start;
-                // Just in case it despawns the day after.
-                result.uptime = result.uptime < 0 ? result.uptime + 24 : result.uptime;
-                // As uptimes are always in minutes, gotta convert to minutes here too.
-                result.uptime *= 60;
-              }
-              if (spot.predator) {
-                result.predators = spot.predator.map(predator => {
-                  return {
-                    id: predator.id,
-                    icon: predator.icon,
-                    amount: predator.predatorAmount
-                  };
-                });
-              }
-              if (spot.hookset) {
-                result.hookset = spot.hookset.split(' ')[0].toLowerCase();
-              }
-              result.baits = spot.bait.map(bait => {
-                const baitData = this.gt.getBait(bait);
-                return {
-                  icon: baitData.icon,
-                  id: baitData.id
-                };
-              });
-              if (spot.weather) {
-                result.weathers = spot.weather.map(w => this.l12n.getWeatherId(w));
-              }
-              if (spot.transition) {
-                result.weathersFrom = spot.transition.map(w => this.l12n.getWeatherId(w));
-              }
-              return result;
-            }
-            return undefined;
-          })
-          .filter(res => res !== undefined)
-          .slice(0, 1);
-      }
-    }
-    return null;
+    return this.fshDataCache[itemId];
   }
 
   ngOnInit(): void {
-    const completeDisplay$ = of([this.lazyData.data.fishingLog, spearFishingLog]).pipe(
+    const completeDisplay$ = of([this.lazyData.data.fishingLog, this.lazyData.data.spearFishingLog]).pipe(
       map((logs) => {
         return logs.map((log: any[], type) => {
           const display = { tabs: [], total: 0, done: 0 };
@@ -218,7 +110,7 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
                 itemId: entry.itemId,
                 level: entry.level,
                 icon: entry.icon,
-                data: this.getFshData({ ...entry, id: entry.spot.id })
+                data: this.getFshData(entry.itemId)
               };
               if (parameter) {
                 fish.timed = parameter.timed;
@@ -226,15 +118,15 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
               }
               spot.fishes.push(fish);
             } else {
-              const node = spearFishingNodes.find(n => n.id === entry.itemId);
-              const data = this.getFshData(node);
+              const node = this.lazyData.data.spearFishingNodes.find(n => n.id === entry.itemId);
+              const data = this.getFshData(node.itemId);
               spot.fishes.push({
                 id: spot.id,
                 itemId: node.itemId,
                 level: node.level,
                 icon: node.icon,
                 data: data,
-                timed: data[0] && data[0].timed
+                timed: data[0].gatheringNode.limited
               });
             }
           });

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading Teamcraft</title>
+  <style>
+    body {
+      font-family: "Monospaced Number", Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif;
+      width: 100vw;
+      height: 100vh;
+      padding: 0;
+      margin: 0;
+      background-color: #2F3237;
+    }
+
+    .init-loader-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brought-to-you {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 20px;
+      color: darkgrey;
+      opacity: .7;
+    }
+
+    .patreon-widget {
+      margin-top: 25px;
+    }
+
+    .patreon-widget > img {
+      width: 175px;
+    }
+  </style>
+</head>
+<body>
+<div class="init-loader-container">
+  <div>
+    <img src="" alt="FFXIV Teamcraft" id="loader">
+  </div>
+  <div class="brought-to-you">
+    Brought to you by <span id="random-patron"></span>
+  </div>
+  <a href="https://www.patreon.com/bePatron?u=702160" class="patreon-widget" target="_blank">
+    <img src="../../client/assets/become_a_patron_button@2x.png" alt="Become a patron">
+  </a>
+</div>
+<script>
+  window.baseGifPath = "../../client/assets/";
+</script>
+<script src="./tc-loader.js"></script>
+</body>
+</html>

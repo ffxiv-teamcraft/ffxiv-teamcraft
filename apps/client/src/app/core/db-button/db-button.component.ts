@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { IpcService } from '../electron/ipc.service';
 
 @Component({
   selector: 'app-db-button',
   templateUrl: './db-button.component.html',
-  styleUrls: ['./db-button.component.less']
+  styleUrls: ['./db-button.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DbButtonComponent {
 
@@ -14,7 +16,15 @@ export class DbButtonComponent {
   @Input()
   id: number;
 
-  constructor(public translate: TranslateService) {
+  constructor(private translate: TranslateService, private ipc: IpcService) {
+  }
+
+  getLink(): string {
+    return `/db/${this.translate.currentLang}/${this.type}/${this.id}`;
+  }
+
+  openInBrowser(url: string): void {
+    this.ipc.send('open-link', url);
   }
 
 }

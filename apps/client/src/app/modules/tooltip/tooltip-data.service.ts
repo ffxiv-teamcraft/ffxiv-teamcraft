@@ -10,8 +10,7 @@ export class TooltipDataService {
 
   private actions: { [index: number]: Observable<any> } = {};
 
-  constructor(private translator: TranslateService, private xivapi: XivapiService,
-              private lazyData: LazyDataService) {
+  constructor(private translator: TranslateService, private xivapi: XivapiService) {
   }
 
   getItemTooltipData(id: number): Observable<any> {
