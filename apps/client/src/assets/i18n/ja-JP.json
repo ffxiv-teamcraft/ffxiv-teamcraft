@@ -11,6 +11,7 @@
   "FC_name": "フリーカンパニー名",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
+  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
@@ -180,6 +181,7 @@
     "Alarms_created": "{{amount}} 個のアラームが設定済み",
     "Alarm_already_created": "アラームが既に設定されています",
     "Custom_sound": "カスタムアラート音",
+    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "新しいアラームグループ",
     "Confirm_group_delete": "本当にこのグループを削除しますか？",
     "Delete_group": "グループを削除",
@@ -197,6 +199,11 @@
     "Group_link_copied": "アラームグループのリンクをコピーしました",
     "Group_not_found": "アラームグループが見つかりません",
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
+    "Delete_all": "Delete all your alarms",
+    "Regenerating_alarms": "Regenerating your alarms...",
+    "Regenerate": "Regenerate alarms",
+    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
+    "Remove_from_group": "Remove from this group",
     "REALTIME": {
       "Reset_timers": "タイマーのリセット",
       "WEEKLY_RESETS": "週制限",
@@ -419,7 +426,7 @@
     "Clickthrough_overlay": "オーバーレイクリック無視",
     "Disable_search_history": "検索記録を削除",
     "Disable_search_debounce": "自動検索機能を使用しない（エンターキーを押すときのみ検索ができる）",
-    "Enable_packet_capture": "パケットキャプチャを使用（リアルタイム持ち物同期機能を追加）",
+    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
     "Packet_capture_info": "パケットキャプチャはACT（メーター）のように利用規約（ToS）に違反します。でも、スクウェア・エニックスからACTのようなプログラムを使用することを他の人に言わなければ黙認してくれます。ただ言わないでください。そうすれば、問題になることはありません。",
     "Enable_autofill_by_default": "デフォルトで自動入力を有効にする",
     "Enable_autofill_notification_by_default": "自動入れ通知を基本として設定する",
@@ -445,6 +452,14 @@
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT レイアウトフィルターで使用される価格最大値(0=最大値なし)",
     "Rawsock_flag": "パケットキャプチャにRawSocketを使用",
     "Rawsock_details": "RawSocketを使用するとnpcapなしでトラフィックをキャプチャするので、VPN使用時に役に立ちます。ただ、全体的に信頼性が低いしTeamCraft実行の度々に手動で管理者権限で実行する必要があります。",
+    "Favorite_features": "Favorite features",
+    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
+    "Clear_inventory_on_startup": "Clear inventory on startup",
+    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
+    "Reset_ignored_characters": "Reset ignored characters",
+    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "背景色",
       "Primary": "デフォルトカラー",
@@ -465,6 +480,7 @@
       "Theme": "テーマ",
       "Search": "検索",
       "Lists": "リスト",
+      "Alarms": "Alarms",
       "Other": "その他",
       "Sekrit": "Sekrit"
     },
@@ -529,6 +545,7 @@
     "Delete_after_merge": "併合後に既存のリストを削除する",
     "Favorite_lists": "お気に入りのリスト",
     "No_favorite_lists": "お気に入りのリストがありません",
+    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
@@ -668,6 +685,8 @@
     "Split_list": "このリストを分割",
     "Create_commission": "このリストから依頼する",
     "Commission_list": "このリストから依頼する",
+    "Inventory_cleanup": "Inventory cleanup",
+    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -819,6 +838,7 @@
     "Spawned_for": "{{timer}} 以降消滅",
     "Will_spawn_in": "{{timer}} 以降現れる",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
+    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -1705,21 +1725,6 @@
     "Job": "ジョブ",
     "Leve_level": "必要レベル"
   },
-  "TIPS": {
-    "Title": "ヒント",
-    "Community_rotations": "コミュニティースキル回しのページから特定レシピのスキル回しが見つかります。",
-    "GC_Deliveries": "調達任務ページからグランドカンパニーの調達品目が準備できます。",
-    "Desynth": "分解ガイドページから自分の分解レベルに合うアイテムが見つかります。",
-    "DB": "Teamcraftはデータベースが含まれており、”i”をクリックすれば該当品目に関する結果に対するデータベースが開けることができます",
-    "3D_model": "データベース内にアイテムの3Dモデルをプレビューすることができます。",
-    "Levequests": "ギルドリーヴページからリーヴを比べて獲得可能な経験値をプレビューすることができます。",
-    "Log_tracker": "手帳トラッカーページから採集、制作、漁師の手帳の進行状況が確認することができます。",
-    "Desktop_app_overlay": "デスクトップ アプリの使用時にアラームのオーバーレイを設定できます(サイドバー内のダウンロード リンク有り)。",
-    "Start_desktop_before_game": "データの整合性を保つために、ゲームの前にデスクトップアプリを起動することを忘れないでください",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Ctrl + Shift + F を押して、ツール内の任意の場所から検索ポップアップを開きます",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
-  },
   "RECIPE_FINDER": {
     "Title": "レシピ検索",
     "Placeholder": "アイテム名",
@@ -1780,6 +1785,8 @@
     "Add_stat_filter": "ステータスフィルタの追加",
     "Add_bonus_stat_filter": "ボーナスステータスフィルタの追加",
     "Search_tip": "<patch＃>を入力して、該当するバージョンでフィルタが可能です。例：patch：5.01",
+    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
+    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "関連性",
       "ID": "ID",
@@ -1789,6 +1796,7 @@
     }
   },
   "SIDEBAR": {
+    "Favorites": "Favorites",
     "General": "一般",
     "Sharing": "共有",
     "Gathering": "採集",
@@ -1797,7 +1805,9 @@
     "Commissions": "依頼",
     "Commission_board": "依頼ボード",
     "My_commissions": "私の依頼",
-    "Archived_commissions": "アーカイブ"
+    "Archived_commissions": "アーカイブ",
+    "Leveling": "Leveling",
+    "Currencies": "Currencies"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "パケットキャプチャを使用することができます",
@@ -1806,6 +1816,8 @@
     "Banner_description_warning": "パケットキャプチャは利用規約（ToS）に違反するので、デフォルトでは無効になっています。ゲーム上で他の人には、この機能を使用していることを言わなかったら、この機能を使用するには問題はありません。",
     "Empty_inventory": "所持品をまだロードされていません",
     "Please_zone": "所持品システムを初期化するには、任意の位置にテレポートしてチョコボバッグを開けてください。",
+    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Unknown_character": "Unknown ingame character",
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
     "Inventory_outdated": "所持品連動情報が古くなっています",
@@ -1841,6 +1853,8 @@
     "Search_for_an_item": "所持状況を確認",
     "Filter_by_expansion": "拡張パッケージで絞り込む",
     "In_x_containers": "In {{amount}} containers",
+    "New_character_detected": "New character detected",
+    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "チョコボかばん",
       "FC_chest": "カンパニーチェスト",
@@ -1849,6 +1863,14 @@
       "Armory": "アーマリーチェスト",
       "Current_Gear": "現在の装備",
       "RetainerMarket": "リテイナーが出品中"
+    },
+    "CONTENT_ID_POPUP": {
+      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
+      "Linked": "Linked",
+      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
+      "Override_link_confirmation": "Are you sure you want to override this link?",
+      "Ignore": "Ignore this ingame character",
+      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1895,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
       "Message": "You can extract a materia from this gear piece"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1961,6 +1987,8 @@
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
     "Create_commission": "このギアセットから依頼する",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "胴防具",
       "Ears": "耳飾り",
@@ -2415,5 +2443,40 @@
     "Missing_nodes": "Missing nodes",
     "No_missing_nodes": "No missing nodes",
     "Only_missing_nodes": "Only show maps with missing nodes"
+  },
+  "WORKSHOP_TREE": {
+    "Title": "Workshop recipe tree",
+    "View_tree": "Open workshop recipe tree",
+    "Phase": "Phase {{phase}}"
+  },
+  "LEVELING_EQUIPMENT": {
+    "Title": "Leveling Equipment",
+    "Include_crafting": "Include crafting",
+    "Include_trades": "Include trades",
+    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Generate_list": "Generate a list",
+    "Empty_slot": "Empty slot",
+    "In_inventory": "You have this item inside one of your inventories",
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+  },
+  "RETAINERS": {
+    "Title": "Retainers",
+    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
+    "Selling": "Selling {{amount}} items",
+    "X_items": "{{amount}} items",
+    "Task_complete": "Task complete",
+    "Task_completed_notification_title": "{{name}} has finished its venture",
+    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
+    "Task_completion_alarm": "Task completion alarm"
+  },
+  "RETAINER_VENTURES": {
+    "Title": "Retainer ventures",
+    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Retainer_ilvl": "Ilvl",
+    "Gathering": "Gathering",
+    "Task_level": "Task level",
+    "Total_per_venture": "Total per venture",
+    "Use_retainer": "Fill with retainer"
   }
 }
