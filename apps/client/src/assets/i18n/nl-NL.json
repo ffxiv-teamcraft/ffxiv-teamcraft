@@ -11,6 +11,7 @@
   "FC_name": "Free Company Naam",
   "Saving_in_database": "Gegevens op aan het slaan op de server",
   "See_on_map": "Op kaart bekijken",
+  "No_known_coordinates": "No known coordinates",
   "Edit_amount": "Hoeveelheid aanpassen",
   "List_fork_in_progress": "De lijst naar uw account aan het kopiëren...",
   "Network_error_logged_out": "Er is een netwerkfout gedetecteerd, u bent uitgelogd. Als dit probleem zich blijft voordoen, neem dan contact op met Miu op de discord server.",
@@ -180,6 +181,7 @@
     "Alarms_created": "{{amount}} wekkers gecreeërd",
     "Alarm_already_created": "Alarm already set",
     "Custom_sound": "Custom alarm sound",
+    "Early_by_tip": "Negative value = later than the spawn",
     "New_group": "New alarm group",
     "Confirm_group_delete": "Are you sure you want to delete this group?",
     "Delete_group": "Delete group",
@@ -197,6 +199,11 @@
     "Group_link_copied": "Alarm group link copied",
     "Group_not_found": "Alarm group not found",
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
+    "Delete_all": "Delete all your alarms",
+    "Regenerating_alarms": "Regenerating your alarms...",
+    "Regenerate": "Regenerate alarms",
+    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
+    "Remove_from_group": "Remove from this group",
     "REALTIME": {
       "Reset_timers": "Reset timers",
       "WEEKLY_RESETS": "Weeklies",
@@ -419,7 +426,7 @@
     "Clickthrough_overlay": "Make overlay clickthrough",
     "Disable_search_history": "Disable search history",
     "Disable_search_debounce": "Disable search debounce (only pressing enter will trigger search)",
-    "Enable_packet_capture": "Enabled packet capture (adds realtime inventory features)",
+    "Enable_packet_capture": "Enable packet capture (adds realtime inventory features)",
     "Packet_capture_info": "Capturing packets is against ToS, the same reason why ACT is against ToS. But Square Enix tolerates it unless you brag about it to everyone ingame. Just don't and you won't risk anything.",
     "Enable_autofill_by_default": "Enable autofill by default",
     "Enable_autofill_notification_by_default": "Enable autofill notification by default",
@@ -445,6 +452,14 @@
     "Maximum_vendor_price_explain": "Maximum price for an item to be caught by the CAN_BE_BOUGHT layout filter (0 = no maximum price)",
     "Rawsock_flag": "Use RawSocket for packet capture",
     "Rawsock_details": "Using RawSocket captures the traffic without npcap, can help with VPNs. However, it's overall less reliable and you need to manually start TC as admin everytime",
+    "Favorite_features": "Favorite features",
+    "Favorite_features_explain": "The features you want to show in the favorites section of the sidebar.",
+    "Clear_inventory_on_startup": "Clear inventory on startup",
+    "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
+    "Reset_ignored_characters": "Reset ignored characters",
+    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Background color",
       "Primary": "Primary color",
@@ -465,6 +480,7 @@
       "Theme": "Theme",
       "Search": "Search",
       "Lists": "Lists",
+      "Alarms": "Alarms",
       "Other": "Other",
       "Sekrit": "Sekrit"
     },
@@ -529,6 +545,7 @@
     "Delete_after_merge": "Delete original lists after merge",
     "Favorite_lists": "Favorite lists",
     "No_favorite_lists": "You have no favorite lists",
+    "Delete_multiple_lists": "Delete multiple lists",
     "IMPORT": {
       "Title": "Import list from external website",
       "Paste_link_step_title": "Paste your link to the external list",
@@ -668,6 +685,8 @@
     "Split_list": "Split this list",
     "Create_commission": "Create a commission for this list",
     "Commission_list": "Commission list",
+    "Inventory_cleanup": "Inventory cleanup",
+    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Add Panel",
@@ -819,6 +838,7 @@
     "Spawned_for": "Will despawn in {{timer}}",
     "Will_spawn_in": "Will spawn in {{timer}}",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
+    "Legendary": "Legendary",
     "GIG_HEAD": {
       "Small": "Small Gig Head",
       "Normal": "Normal Gig Head",
@@ -1705,21 +1725,6 @@
     "Job": "Job",
     "Leve_level": "Required level"
   },
-  "TIPS": {
-    "Title": "Tip",
-    "Community_rotations": "You can find rotations for a given recipe inside the community rotations page.",
-    "GC_Deliveries": "You can prepare lists for GC deliveries inside the GC deliveries page.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
-  },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
     "Placeholder": "Item name",
@@ -1780,6 +1785,8 @@
     "Add_stat_filter": "Add stat filter",
     "Add_bonus_stat_filter": "Add bonus stat filter",
     "Search_tip": "You can type patch:<patch #> to filter on a given patch, example: patch:5.01",
+    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
+    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
     "SORT_BY": {
       "Relevance": "Relevance",
       "ID": "ID",
@@ -1789,6 +1796,7 @@
     }
   },
   "SIDEBAR": {
+    "Favorites": "Favorites",
     "General": "General",
     "Sharing": "Sharing",
     "Gathering": "Gathering",
@@ -1797,7 +1805,9 @@
     "Commissions": "Commissions",
     "Commission_board": "Board",
     "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives"
+    "Archived_commissions": "Archives",
+    "Leveling": "Leveling",
+    "Currencies": "Currencies"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Packet capture is available",
@@ -1806,6 +1816,8 @@
     "Banner_description_warning": "Packet capture is against ToS, which is why it's disabled by default, please make sure to avoid telling everybody ingame and you'll be fine.",
     "Empty_inventory": "Your inventory hasn't been loaded yet",
     "Please_zone": "Please teleport to a random location and open your chocobo saddlebag once you are arrived to initialize the inventory system properly.",
+    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Unknown_character": "Unknown ingame character",
     "No_character_id": "No ingame character id set",
     "Please_relog": "In order to contribute to Universalis, we need you to log out and in (ingame), this is only needed once.",
     "Inventory_outdated": "Your inventory is outdated",
@@ -1841,6 +1853,8 @@
     "Search_for_an_item": "Search for an item",
     "Filter_by_expansion": "Filter by expansion",
     "In_x_containers": "In {{amount}} containers",
+    "New_character_detected": "New character detected",
+    "Unknown_position": "Uknown position",
     "BAG": {
       "SaddleBag": "Chocobo Saddlebag",
       "FC_chest": "FC chest",
@@ -1849,6 +1863,14 @@
       "Armory": "Armory",
       "Current_Gear": "Current gear",
       "RetainerMarket": "On sale by retainers"
+    },
+    "CONTENT_ID_POPUP": {
+      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
+      "Linked": "Linked",
+      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
+      "Override_link_confirmation": "Are you sure you want to override this link?",
+      "Ignore": "Ignore this ingame character",
+      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1895,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
       "Message": "You can extract a materia from this gear piece"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1961,6 +1987,8 @@
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
     "Create_commission": "Create a commission for this gearset",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -2415,5 +2443,40 @@
     "Missing_nodes": "Missing nodes",
     "No_missing_nodes": "No missing nodes",
     "Only_missing_nodes": "Only show maps with missing nodes"
+  },
+  "WORKSHOP_TREE": {
+    "Title": "Workshop recipe tree",
+    "View_tree": "Open workshop recipe tree",
+    "Phase": "Phase {{phase}}"
+  },
+  "LEVELING_EQUIPMENT": {
+    "Title": "Leveling Equipment",
+    "Include_crafting": "Include crafting",
+    "Include_trades": "Include trades",
+    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Generate_list": "Generate a list",
+    "Empty_slot": "Empty slot",
+    "In_inventory": "You have this item inside one of your inventories",
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+  },
+  "RETAINERS": {
+    "Title": "Retainers",
+    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
+    "Selling": "Selling {{amount}} items",
+    "X_items": "{{amount}} items",
+    "Task_complete": "Task complete",
+    "Task_completed_notification_title": "{{name}} has finished its venture",
+    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
+    "Task_completion_alarm": "Task completion alarm"
+  },
+  "RETAINER_VENTURES": {
+    "Title": "Retainer ventures",
+    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Retainer_ilvl": "Ilvl",
+    "Gathering": "Gathering",
+    "Task_level": "Task level",
+    "Total_per_venture": "Total per venture",
+    "Use_retainer": "Fill with retainer"
   }
 }
