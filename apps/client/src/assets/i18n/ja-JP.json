@@ -660,7 +660,7 @@
     "Autofill_notification_title": "アイテム完了",
     "Autofill_notification_body": "{{listName}} リストの{{itemName}} 作業が完了できました",
     "Fill_with_inventory": "所持品から埋める(アカウントに連動している所持品だけ埋めます)",
-    "Filter_items_done": "Ignore completed items",
+    "Filter_items_done": "完了したアイテムを無視",
     "Inventory_synthesis": "Inventory synthesis (items per inventory)",
     "X_needed": "{{amount}} needed",
     "Leave_list": "Leave this list",
