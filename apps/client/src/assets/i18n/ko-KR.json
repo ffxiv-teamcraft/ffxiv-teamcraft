@@ -11,7 +11,7 @@
   "FC_name": "자유부대 이름",
   "Saving_in_database": "서버에 데이터를 저장하는 중",
   "See_on_map": "지도에서 보기",
-  "No_known_coordinates": "No known coordinates",
+  "No_known_coordinates": "알려진 좌표 없음",
   "Edit_amount": "수량 수정",
   "List_fork_in_progress": "목록을 내 계정으로 복사중...",
   "Network_error_logged_out": "네트워크 오류가 감지되었으며 로그아웃 되었습니다. 이 문제가 계속된다면 TC디스코드 서버의 'Miu' 에게 문의하시길 바랍니다.",
@@ -545,7 +545,7 @@
     "Delete_after_merge": "병합 후 기존 목록 삭제",
     "Favorite_lists": "즐겨찾기 목록",
     "No_favorite_lists": "즐겨찾기 목록이 없습니다",
-    "Delete_multiple_lists": "Delete multiple lists",
+    "Delete_multiple_lists": "여러 목록 삭제",
     "IMPORT": {
       "Title": "외부 사이트에서 목록 가져오기",
       "Paste_link_step_title": "외부 사이트 링크 붙여넣기",
@@ -838,7 +838,7 @@
     "Spawned_for": "{{timer}} 이후 사라짐",
     "Will_spawn_in": "{{timer}} 이후 나타남",
     "Ephemeral_warning": "시간제 채집물은 여러 장소에서 존재하며, 위치는 근사치입니다.",
-    "Legendary": "Legendary",
+    "Legendary": "전설",
     "GIG_HEAD": {
       "Small": "작은 작살",
       "Normal": "중간 작살",
