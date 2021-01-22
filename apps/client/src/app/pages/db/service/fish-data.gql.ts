@@ -11,6 +11,12 @@ interface FishIdSpotIdVariable {
   spotId?: number;
 }
 
+interface FishIdSpotIdWeathersVariable {
+  fishId?: number;
+  spotId?: number;
+  $weatherIds?: number[];
+}
+
 interface FishSpot {
   spot: number;
   itemId: number;
@@ -226,7 +232,7 @@ export class FishStatisticsPerFishPerSpotQuery extends Query<FishStatisticsResul
         snagging
         occurences
       }
-      stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }}) {
         aggregate {
           min {
             size
@@ -261,16 +267,16 @@ interface FishWeatherResult {
 }
 
 @Injectable()
-export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdVariable> {
+export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdWeathersVariable> {
   public document = gql`
-    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int!]) {
+      weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot
         weatherId
         occurences
       }
-      weatherTransitions: weather_transitions_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
+      weatherTransitions: weather_transitions_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot
         weatherId
