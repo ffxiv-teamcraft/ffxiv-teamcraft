@@ -7,13 +7,13 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
   protected doExtract(): any {
     const parts = {};
 
-    this.getAllPages(`${this.getSearchEndpointWithQuery({
+    this.getAllPages(this.getSearchEndpointWithQuery({
       indexes: XivapiEndpoint.Item,
       columns: 'ID,AdditionalData',
       string_column: 'FilterGroup',
       string: '36',
-      string_algo: 'match',
-    })}`).pipe(
+      string_algo: 'match'
+    })).pipe(
       map((page) => page.Results.map((result) => {
         return {
           additionalData: result.AdditionalData,
@@ -40,7 +40,7 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
                   range: part.Range,
                   favor: part.Favor,
                   repairMaterials: part.RepairMaterials,
-                  itemId: itemResults.filter((r) => r.additionalData === part.ID)[0]['itemId'],
+                  itemId: itemResults.filter((r) => r.additionalData === part.ID)[0]['itemId']
                 };
               });
             })

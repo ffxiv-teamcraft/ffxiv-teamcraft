@@ -31,17 +31,11 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
     const resultLog$ = packets$.pipe(
       ofPacketType<SubmarineExplorationResult>('submarineExplorationResult'),
       map((packet) => packet.explorationResult),
-      tap((data) => {
-        console.log(data);
-      })
     );
 
     const statusList$ = packets$.pipe(
       ofPacketType<SubmarineStatusList>('submarineStatusList'),
       map((packet) => packet.statusList),
-      tap((data) => {
-        console.log(data);
-      })
     );
 
     const updateHullCondition$ = packets$.pipe(
@@ -55,15 +49,9 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
     return updateHullCondition$.pipe(
       map(([updateInventory]) => updateInventory.slot / 5),
       withLatestFrom(statusList$),
-      tap((data) => {
-        console.log(data);
-      }),
       map(([submarineSlot, statusList]) => {
         const submarine = statusList[submarineSlot];
         return this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
-      }),
-      tap((data) => {
-        console.log(data);
       }),
       withLatestFrom(resultLog$),
       map(([stats, resultLog]): any[] => {
@@ -73,7 +61,7 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
             reports.push({
               voyageId: voyage.sectorId,
               itemId: voyage.loot1ItemId,
-              hq: voyage.loot1IsHQ,
+              hq: voyage.loot1IsHq,
               quantity: voyage.loot1Quantity,
               surveillanceProc: voyage.loot1SurveillanceResult,
               retrievalProc: voyage.loot1RetrievalResult,
@@ -87,7 +75,7 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
               reports.push({
                 voyageId: voyage.sectorId,
                 itemId: voyage.loot2ItemId,
-                hq: voyage.loot2IsHQ,
+                hq: voyage.loot2IsHq,
                 quantity: voyage.loot2Quantity,
                 surveillanceProc: voyage.loot2SurveillanceResult,
                 retrievalProc: voyage.loot2RetrievalResult,
