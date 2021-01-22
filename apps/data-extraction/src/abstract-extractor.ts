@@ -65,7 +65,7 @@ export abstract class AbstractExtractor {
     return `${AbstractExtractor.XIVAPI_BASE_URL}/${resource}?${querystring.stringify(queryParams)}`;
   }
 
-  protected getSearchEndpointWithQuery(queryParams: { indexes?: string, columns?: string, string_column?: string, string?: string, string_algo?: string }): string {
+  protected getSearchEndpointWithQuery(queryParams: { indexes?: string, columns?: string, string_column?: string, string?: string, string_algo?: string, filters?: string }): string {
     return `${AbstractExtractor.XIVAPI_BASE_URL}/search?${querystring.stringify(queryParams)}`;
   }
 

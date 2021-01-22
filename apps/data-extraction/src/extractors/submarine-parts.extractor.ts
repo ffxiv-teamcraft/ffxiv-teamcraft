@@ -10,9 +10,7 @@ export class SubmarinePartsExtractor extends AbstractExtractor {
     this.getAllPages(this.getSearchEndpointWithQuery({
       indexes: XivapiEndpoint.Item,
       columns: 'ID,AdditionalData',
-      string_column: 'FilterGroup',
-      string: '36',
-      string_algo: 'match'
+      filters: 'FilterGroup=36',
     })).pipe(
       map((page) => page.Results.map((result) => {
         return {
