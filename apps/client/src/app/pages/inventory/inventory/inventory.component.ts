@@ -50,7 +50,7 @@ export class InventoryComponent {
           if (!inventory.trackItemsOnSale) {
             matches = matches && item.containerId !== ContainerType.RetainerMarket;
           }
-          return matches && UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
+          return matches && UserInventory.DISPLAYED_CONTAINERS.includes(item.containerId);
         })
         .reduce((bags: InventoryDisplay[], item: ItemSearchResult) => {
           const containerName = this.inventoryService.getContainerDisplayName(item);

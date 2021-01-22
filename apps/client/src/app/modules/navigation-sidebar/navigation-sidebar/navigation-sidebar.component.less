@@ -1,3 +1,5 @@
+@import "../../../../common";
+
 :host ::ng-deep {
   .sider {
     .ant-layout-sider-children {
@@ -23,7 +25,7 @@
 }
 
 .sidebar-scroll-box {
-  height: calc(~"100vh - 64px");
+  height: calc(~"100vh - @{layout-header-height}");
 }
 
 .flex-container {

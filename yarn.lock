@@ -2210,10 +2210,10 @@
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
-"@ffxiv-teamcraft/simulator@^2.10.0":
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.0.tgz#89cc17eb5bb6491dbdbd296ec3d86c4bc7ff50bb"
-  integrity sha512-tW/EmvkOHSu1jE/FPwD44AJimV+eycsHhURJA0U1O8VCDMwhXxeRbIUXuzQKOcS+x2LVwjnGhe7GYu7WZmniQQ==
+"@ffxiv-teamcraft/simulator@^2.10.1":
+  version "2.10.1"
+  resolved "https://registry.yarnpkg.com/@ffxiv-teamcraft/simulator/-/simulator-2.10.1.tgz#19db1d53b23cc80df09326086a2de6dc05c4739c"
+  integrity sha512-Mcz/de/ChExVJiEAhF5dM3HUz5ZkjfQps5woumW22Ew8ouWNlfqGrFrf6Y4dQxcVej2HNUFsUXd7gtDO97OUkg==
   dependencies:
     "@kaiu/serializer" "^1.4.0"
 
@@ -12946,10 +12946,10 @@ node-libs-browser@^2.2.1:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-machina-ffxiv@^2.41.8:
-  version "2.41.8"
-  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.41.8.tgz#b73e7f17dce414d8ebc83162e385888189435ad2"
-  integrity sha512-Hqxfn0G4K3aHfw9RErEzsagKKc7GwMzMbctuJccgM9m2ZJCJ6r3mssYoijYZxa2F55YFu9u0H4gWTWu8/aA56A==
+node-machina-ffxiv@^2.41.9:
+  version "2.41.9"
+  resolved "https://registry.yarnpkg.com/node-machina-ffxiv/-/node-machina-ffxiv-2.41.9.tgz#94d6c2f13024d0a11d0b51a2920cfdaa651504da"
+  integrity sha512-Y1LaqfhkItVDsq9ygqy7sYl08MrUF1CFleHj+XtkuIb9ct7/fHax9jZoq0Aj+NaZhuMSMqFUp8I6mvM1wi5+sw==
   dependencies:
     jsbi "^3.1.1"
     request "^2.88.0"

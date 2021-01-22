@@ -80,8 +80,8 @@
 <body>
 <app-root>
   <div class="init-loader-container">
-    <div id="logo">
-      <img src="./assets/loader.gif" alt="FFXIV Teamcraft" class="logo">
+    <div>
+      <img src="./assets/loader_BSM.gif" alt="FFXIV Teamcraft" id="loader">
     </div>
     <div class="brought-to-you">
       Brought to you by <span id="random-patron"></span>
@@ -90,6 +90,10 @@
       <img src="./assets/become_a_patron_button@2x.png" alt="Become a patron">
     </a>
   </div>
+  <script>
+    window.baseGifPath = "./assets/";
+  </script>
+  <script src="./assets/tc-loader.js"></script>
 </app-root>
 </body>
 </html>

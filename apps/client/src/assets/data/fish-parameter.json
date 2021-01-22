@@ -7,7 +7,8 @@
     "mapId": 11,
     "zoneId": 28,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4869": {
     "id": 4,
@@ -17,7 +18,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4870": {
     "id": 5,
@@ -27,7 +29,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4871": {
     "id": 8,
@@ -37,7 +40,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4872": {
     "id": 12,
@@ -47,7 +51,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4873": {
     "id": 14,
@@ -57,7 +62,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4874": {
     "id": 15,
@@ -67,7 +73,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4875": {
     "id": 18,
@@ -77,7 +84,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4876": {
     "id": 20,
@@ -87,7 +95,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4877": {
     "id": 22,
@@ -97,7 +106,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4878": {
     "id": 26,
@@ -107,7 +117,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4879": {
     "id": 30,
@@ -117,7 +128,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4880": {
     "id": 32,
@@ -127,7 +139,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4881": {
     "id": 35,
@@ -137,7 +150,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4882": {
     "id": 38,
@@ -148,6 +162,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -164,6 +179,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -179,7 +195,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4885": {
     "id": 45,
@@ -190,6 +207,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -205,7 +223,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4887": {
     "id": 54,
@@ -216,6 +235,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -232,6 +252,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -248,6 +269,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -263,7 +285,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4891": {
     "id": 65,
@@ -274,6 +297,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -289,7 +313,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4893": {
     "id": 70,
@@ -300,6 +325,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -315,7 +341,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4895": {
     "id": 75,
@@ -325,7 +352,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4896": {
     "id": 77,
@@ -336,6 +364,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -351,7 +380,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4898": {
     "id": 83,
@@ -361,7 +391,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4899": {
     "id": 85,
@@ -372,6 +403,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -387,7 +419,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4901": {
     "id": 93,
@@ -398,6 +431,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -413,7 +447,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4903": {
     "id": 111,
@@ -424,6 +459,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -440,6 +476,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -456,6 +493,7 @@
     "zoneId": 53,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -471,7 +509,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4907": {
     "id": 129,
@@ -482,6 +521,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -498,6 +538,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -513,7 +554,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4910": {
     "id": 143,
@@ -523,7 +565,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4911": {
     "id": 149,
@@ -533,7 +576,8 @@
     "mapId": 20,
     "zoneId": 42,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "4912": {
     "id": 152,
@@ -544,6 +588,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -560,6 +605,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -575,7 +621,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 1
   },
   "4915": {
     "id": 159,
@@ -586,6 +633,7 @@
     "zoneId": 31,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -602,6 +650,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -618,6 +667,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -633,7 +683,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 1
   },
   "4919": {
     "id": 169,
@@ -644,6 +695,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -660,6 +712,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -676,6 +729,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -692,6 +746,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -708,6 +763,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -724,6 +780,7 @@
     "zoneId": 42,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -740,6 +797,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -756,6 +814,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -772,6 +831,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -788,6 +848,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -804,6 +865,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -820,6 +882,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -836,6 +899,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -852,6 +916,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -868,6 +933,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -884,6 +950,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -900,6 +967,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -916,6 +984,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -932,6 +1001,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -948,6 +1018,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -964,6 +1035,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -980,6 +1052,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -996,6 +1069,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1012,6 +1086,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1028,6 +1103,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1044,6 +1120,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1060,6 +1137,7 @@
     "zoneId": 56,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1076,6 +1154,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1092,6 +1171,7 @@
     "zoneId": 52,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1108,6 +1188,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1124,6 +1205,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1140,6 +1222,7 @@
     "zoneId": 43,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1156,6 +1239,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1172,6 +1256,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1188,6 +1273,7 @@
     "zoneId": 34,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1204,6 +1290,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1220,6 +1307,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1236,6 +1324,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1252,6 +1341,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1268,6 +1358,7 @@
     "zoneId": 56,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1284,6 +1375,7 @@
     "zoneId": 43,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1300,6 +1392,7 @@
     "zoneId": 43,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1316,6 +1409,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1332,6 +1426,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1348,6 +1443,7 @@
     "zoneId": 57,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1364,6 +1460,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1380,6 +1477,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1396,6 +1494,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1412,6 +1511,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1428,6 +1528,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1444,6 +1545,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1460,6 +1562,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1476,6 +1579,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1492,6 +1596,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1508,6 +1613,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1524,6 +1630,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1540,6 +1647,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1556,6 +1664,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1572,6 +1681,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -1588,6 +1698,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1604,6 +1715,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1620,6 +1732,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1636,6 +1749,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1652,6 +1766,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1668,6 +1783,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1684,6 +1800,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1700,6 +1817,7 @@
     "zoneId": 44,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1716,6 +1834,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1732,6 +1851,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1748,6 +1868,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1764,6 +1885,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1780,6 +1902,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1796,6 +1919,7 @@
     "zoneId": 350,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1812,6 +1936,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1828,6 +1953,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1844,6 +1970,7 @@
     "zoneId": 57,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1860,6 +1987,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1876,6 +2004,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1892,6 +2021,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1908,6 +2038,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1924,6 +2055,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1940,6 +2072,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1956,6 +2089,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -1972,6 +2106,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -1988,6 +2123,7 @@
     "zoneId": 46,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2004,6 +2140,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2020,6 +2157,7 @@
     "zoneId": 46,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2036,6 +2174,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2052,6 +2191,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2068,6 +2208,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2084,6 +2225,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2100,6 +2242,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2116,6 +2259,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2132,6 +2276,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2148,6 +2293,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2164,6 +2310,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2180,6 +2327,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2196,6 +2344,7 @@
     "zoneId": 350,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2212,6 +2361,7 @@
     "zoneId": 44,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2228,6 +2378,7 @@
     "zoneId": 46,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2244,6 +2395,7 @@
     "zoneId": 46,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2260,6 +2412,7 @@
     "zoneId": 34,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2276,6 +2429,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2292,6 +2446,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2308,6 +2463,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2324,6 +2480,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2340,6 +2497,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2356,6 +2514,7 @@
     "zoneId": 57,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2372,6 +2531,7 @@
     "zoneId": 67,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2388,6 +2548,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2404,6 +2565,7 @@
     "zoneId": 57,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2420,6 +2582,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2436,6 +2599,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2452,6 +2616,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2468,6 +2633,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2484,6 +2650,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2500,6 +2667,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2516,6 +2684,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2532,6 +2701,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2548,6 +2718,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2564,6 +2735,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2580,6 +2752,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2596,6 +2769,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2612,6 +2786,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2628,6 +2803,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2644,6 +2820,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2660,6 +2837,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -2676,6 +2854,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -2691,7 +2870,8 @@
     "mapId": 15,
     "zoneId": 30,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "5461": {
     "id": 57,
@@ -2702,6 +2882,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2717,7 +2898,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "5466": {
     "id": 120,
@@ -2727,7 +2909,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "5544": {
     "id": 74,
@@ -2738,6 +2921,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2753,7 +2937,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "6191": {
     "id": 186,
@@ -2764,6 +2949,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2780,6 +2966,7 @@
     "zoneId": 30,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2796,6 +2983,7 @@
     "zoneId": 30,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2811,7 +2999,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 2
   },
   "7681": {
     "id": 190,
@@ -2822,6 +3011,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2838,6 +3028,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2854,6 +3045,7 @@
     "zoneId": 55,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2870,6 +3062,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2885,7 +3078,8 @@
     "mapId": 11,
     "zoneId": 28,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 2
   },
   "7686": {
     "id": 195,
@@ -2896,6 +3090,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2912,6 +3107,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2928,6 +3124,7 @@
     "zoneId": 30,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -2944,6 +3141,7 @@
     "zoneId": 43,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -2960,6 +3158,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -2975,7 +3174,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 2
   },
   "7692": {
     "id": 201,
@@ -2986,6 +3186,7 @@
     "zoneId": 43,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3002,6 +3203,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3018,6 +3220,7 @@
     "zoneId": 55,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3034,6 +3237,7 @@
     "zoneId": 57,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3050,6 +3254,7 @@
     "zoneId": 52,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3066,6 +3271,7 @@
     "zoneId": 31,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3082,6 +3288,7 @@
     "zoneId": 43,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3098,6 +3305,7 @@
     "zoneId": 57,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3114,6 +3322,7 @@
     "zoneId": 54,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3130,6 +3339,7 @@
     "zoneId": 53,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3146,6 +3356,7 @@
     "zoneId": 44,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3162,6 +3373,7 @@
     "zoneId": 43,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3178,6 +3390,7 @@
     "zoneId": 44,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3194,6 +3407,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3210,6 +3424,7 @@
     "zoneId": 42,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3225,7 +3440,8 @@
     "mapId": 12,
     "zoneId": 29,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 2
   },
   "7708": {
     "id": 217,
@@ -3236,6 +3452,7 @@
     "zoneId": 53,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3252,6 +3469,7 @@
     "zoneId": 30,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3267,7 +3485,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 0,
-    "weathered": 1
+    "weathered": 1,
+    "stars": 2
   },
   "7711": {
     "id": 220,
@@ -3277,7 +3496,8 @@
     "mapId": 20,
     "zoneId": 42,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 3
   },
   "7712": {
     "id": 221,
@@ -3287,7 +3507,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 2
   },
   "7713": {
     "id": 222,
@@ -3298,6 +3519,7 @@
     "zoneId": 52,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3314,6 +3536,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3330,6 +3553,7 @@
     "zoneId": 31,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3345,7 +3569,8 @@
     "mapId": 16,
     "zoneId": 31,
     "timed": 1,
-    "weathered": 1
+    "weathered": 1,
+    "stars": 3
   },
   "7904": {
     "id": 226,
@@ -3356,6 +3581,7 @@
     "zoneId": 34,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3372,6 +3598,7 @@
     "zoneId": 34,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3387,7 +3614,8 @@
     "mapId": 20,
     "zoneId": 42,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 3
   },
   "7907": {
     "id": 229,
@@ -3398,6 +3626,7 @@
     "zoneId": 55,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3414,6 +3643,7 @@
     "zoneId": 56,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3430,6 +3660,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3446,6 +3677,7 @@
     "zoneId": 42,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3462,6 +3694,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3478,6 +3711,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3494,6 +3728,7 @@
     "zoneId": 56,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3510,6 +3745,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3526,6 +3762,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3542,6 +3779,7 @@
     "zoneId": 34,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3558,6 +3796,7 @@
     "zoneId": 425,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3574,6 +3813,7 @@
     "zoneId": 44,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3590,6 +3830,7 @@
     "zoneId": 427,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3606,6 +3847,7 @@
     "zoneId": 54,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3622,6 +3864,7 @@
     "zoneId": 56,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3638,6 +3881,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3654,6 +3898,7 @@
     "zoneId": 426,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3669,7 +3914,8 @@
     "mapId": 17,
     "zoneId": 32,
     "timed": 1,
-    "weathered": 1
+    "weathered": 1,
+    "stars": 3
   },
   "7925": {
     "id": 247,
@@ -3680,6 +3926,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3696,6 +3943,7 @@
     "zoneId": 33,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3712,6 +3960,7 @@
     "zoneId": 34,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3728,6 +3977,7 @@
     "zoneId": 45,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3744,6 +3994,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3760,6 +4011,7 @@
     "zoneId": 45,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -3776,6 +4028,7 @@
     "zoneId": 45,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -3792,6 +4045,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3808,6 +4062,7 @@
     "zoneId": 63,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3824,6 +4079,7 @@
     "zoneId": 54,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3840,6 +4096,7 @@
     "zoneId": 54,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3856,6 +4113,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3872,6 +4130,7 @@
     "zoneId": 350,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3888,6 +4147,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3904,6 +4164,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -3920,6 +4181,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3936,6 +4198,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -3952,6 +4215,7 @@
     "zoneId": 44,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3968,6 +4232,7 @@
     "zoneId": 46,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -3984,6 +4249,7 @@
     "zoneId": 63,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4000,6 +4266,7 @@
     "zoneId": 63,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4016,6 +4283,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4032,6 +4300,7 @@
     "zoneId": 57,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4047,7 +4316,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 1,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 3
   },
   "7949": {
     "id": 271,
@@ -4058,6 +4328,7 @@
     "zoneId": 63,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4074,6 +4345,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4090,6 +4362,7 @@
     "zoneId": 67,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4106,6 +4379,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4122,6 +4396,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4138,6 +4413,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4153,7 +4429,8 @@
     "mapId": 18,
     "zoneId": 33,
     "timed": 1,
-    "weathered": 1
+    "weathered": 1,
+    "stars": 3
   },
   "8756": {
     "id": 278,
@@ -4164,6 +4441,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4180,6 +4458,7 @@
     "zoneId": 33,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4196,6 +4475,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4212,6 +4492,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4228,6 +4509,7 @@
     "zoneId": 57,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4244,6 +4526,7 @@
     "zoneId": 67,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4260,6 +4543,7 @@
     "zoneId": 67,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4276,6 +4560,7 @@
     "zoneId": 67,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4292,6 +4577,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4308,6 +4594,7 @@
     "zoneId": 42,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4324,6 +4611,7 @@
     "zoneId": 42,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4340,6 +4628,7 @@
     "zoneId": 46,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4356,6 +4645,7 @@
     "zoneId": 45,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -4372,6 +4662,7 @@
     "zoneId": 63,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4388,6 +4679,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4404,6 +4696,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4420,6 +4713,7 @@
     "zoneId": 63,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4436,6 +4730,7 @@
     "zoneId": 55,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4452,6 +4747,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4468,6 +4764,7 @@
     "zoneId": 56,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4484,6 +4781,7 @@
     "zoneId": 67,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4500,6 +4798,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -4516,6 +4815,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4532,6 +4832,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4548,6 +4849,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4564,6 +4866,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4580,6 +4883,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4596,6 +4900,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4612,6 +4917,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4628,6 +4934,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4644,6 +4951,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4660,6 +4968,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -4676,6 +4985,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -4692,6 +5002,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4708,6 +5019,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4724,6 +5036,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4740,6 +5053,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4756,6 +5070,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4772,6 +5087,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4788,6 +5104,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4804,6 +5121,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -4820,6 +5138,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4836,6 +5155,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -4852,6 +5172,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -4868,6 +5189,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -4884,6 +5206,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4900,6 +5223,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4916,6 +5240,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4932,6 +5257,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4948,6 +5274,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4964,6 +5291,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -4980,6 +5308,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -4996,6 +5325,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5012,6 +5342,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5028,6 +5359,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5044,6 +5376,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5060,6 +5393,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5076,6 +5410,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5092,6 +5427,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5108,6 +5444,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5124,6 +5461,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5140,6 +5478,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5156,6 +5495,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5172,6 +5512,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5188,6 +5529,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5204,6 +5546,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5220,6 +5563,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5236,6 +5580,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5252,6 +5597,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5268,6 +5614,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5284,6 +5631,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5300,6 +5648,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5316,6 +5665,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5332,6 +5682,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5348,6 +5699,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -5364,6 +5716,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5380,6 +5733,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5396,6 +5750,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5412,6 +5767,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5428,6 +5784,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5444,6 +5801,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5460,6 +5818,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5476,6 +5835,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5492,6 +5852,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5508,6 +5869,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5524,6 +5886,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5540,6 +5903,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5556,6 +5920,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5572,6 +5937,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5588,6 +5954,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5604,6 +5971,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5620,6 +5988,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5636,6 +6005,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5652,6 +6022,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5668,6 +6039,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5684,6 +6056,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5700,6 +6073,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5716,6 +6090,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5732,6 +6107,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5748,6 +6124,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5764,6 +6141,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5780,6 +6158,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5796,6 +6175,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -5812,6 +6192,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5828,6 +6209,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5844,6 +6226,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5860,6 +6243,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5876,6 +6260,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -5892,6 +6277,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -5908,6 +6294,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -5924,6 +6311,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5940,6 +6328,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -5956,6 +6345,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -5972,6 +6362,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -5988,6 +6379,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6004,6 +6396,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -6020,6 +6413,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6036,6 +6430,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6052,6 +6447,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6068,6 +6464,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6084,6 +6481,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -6100,6 +6498,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6116,6 +6515,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6132,6 +6532,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -6148,6 +6549,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -6164,6 +6566,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -6180,6 +6583,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6196,6 +6600,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6212,6 +6617,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -6228,6 +6634,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6244,6 +6651,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6260,6 +6668,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6277,6 +6686,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6293,6 +6703,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -6310,6 +6721,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -6326,6 +6738,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -6343,6 +6756,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -6359,6 +6773,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6375,6 +6790,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -6392,6 +6808,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -6408,6 +6825,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -6425,6 +6843,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6441,6 +6860,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6457,6 +6877,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -6473,6 +6894,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6490,6 +6912,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6507,6 +6930,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -6524,6 +6948,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6541,6 +6966,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -6557,6 +6983,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -6574,6 +7001,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -6591,6 +7019,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6608,6 +7037,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6625,6 +7055,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6642,6 +7073,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -6659,6 +7091,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -6676,6 +7109,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -6693,6 +7127,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6710,6 +7145,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6727,6 +7163,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -6744,6 +7181,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6761,6 +7199,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6778,6 +7217,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6794,6 +7234,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6810,6 +7251,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -6827,6 +7269,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12701,
     "recordType": {
       "en": "Rivers",
@@ -6844,6 +7287,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -6861,6 +7305,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -6878,6 +7323,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -6895,6 +7341,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -6911,6 +7358,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -6928,6 +7376,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -6945,6 +7394,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Rivers",
@@ -6962,6 +7412,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -6979,6 +7430,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -6995,6 +7447,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 12703,
     "recordType": {
       "en": "Lakes",
@@ -7012,6 +7465,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -7029,6 +7483,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -7046,6 +7501,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -7063,6 +7519,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Skies",
       "de": "Wolken",
@@ -7079,6 +7536,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7095,6 +7553,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -7112,6 +7571,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -7129,6 +7589,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -7146,6 +7607,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -7163,6 +7625,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -7180,6 +7643,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -7197,6 +7661,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 12703,
     "recordType": {
       "en": "Lakes",
@@ -7214,6 +7679,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -7231,6 +7697,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 12701,
     "recordType": {
       "en": "Rivers",
@@ -7248,6 +7715,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7264,6 +7732,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7280,6 +7749,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7296,6 +7766,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7312,6 +7783,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7328,6 +7800,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -7345,6 +7818,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7361,6 +7835,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12703,
     "recordType": {
       "en": "Lakes",
@@ -7378,6 +7853,7 @@
     "zoneId": 2101,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -7395,6 +7871,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -7412,6 +7889,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -7429,6 +7907,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -7446,6 +7925,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -7463,6 +7943,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -7480,6 +7961,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Lakes",
@@ -7497,6 +7979,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -7514,6 +7997,7 @@
     "zoneId": 2000,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Magma",
@@ -7531,6 +8015,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12703,
     "recordType": {
       "en": "Aetherochemical Spills",
@@ -7548,6 +8033,7 @@
     "zoneId": 2001,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Rivers",
@@ -7565,6 +8051,7 @@
     "zoneId": 2100,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12703,
     "recordType": {
       "en": "Floating Islands",
@@ -7582,6 +8069,7 @@
     "zoneId": 2200,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12701,
     "recordType": {
       "en": "Lakes",
@@ -7599,6 +8087,7 @@
     "zoneId": 2002,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 12702,
     "recordType": {
       "en": "Floating Islands",
@@ -7616,6 +8105,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -7633,6 +8123,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7649,6 +8140,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7665,6 +8157,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7681,6 +8174,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -7697,6 +8191,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7713,6 +8208,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -7730,6 +8226,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Salt Lakes",
       "de": "Salzseen",
@@ -7746,6 +8243,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7762,6 +8260,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7778,6 +8277,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7794,6 +8294,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -7810,6 +8311,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -7827,6 +8329,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7842,7 +8345,8 @@
     "mapId": 371,
     "zoneId": 2409,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "20033": {
     "id": 506,
@@ -7853,6 +8357,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7869,6 +8374,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -7885,6 +8391,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Salt Lakes",
       "de": "Salzseen",
@@ -7901,6 +8408,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -7917,6 +8425,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -7933,6 +8442,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -7949,6 +8459,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Salt Lakes",
       "de": "Salzseen",
@@ -7965,6 +8476,7 @@
     "zoneId": 2408,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17842,
     "recordType": {
       "en": "Salt Lakes",
@@ -7982,6 +8494,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Salt Lakes",
       "de": "Salzseen",
@@ -7998,6 +8511,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8014,6 +8528,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8030,6 +8545,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8046,6 +8562,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8062,6 +8579,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8078,6 +8596,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8094,6 +8613,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -8111,6 +8631,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8127,6 +8648,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8143,6 +8665,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -8160,6 +8683,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8176,6 +8700,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8192,6 +8717,7 @@
     "zoneId": 2404,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -8209,6 +8735,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8225,6 +8752,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8241,6 +8769,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8257,6 +8786,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8273,6 +8803,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8289,6 +8820,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8305,6 +8837,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8321,6 +8854,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8337,6 +8871,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8353,6 +8888,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8369,6 +8905,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8385,6 +8922,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8401,6 +8939,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8417,6 +8956,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8433,6 +8973,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8449,6 +8990,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8465,6 +9007,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8481,6 +9024,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8497,6 +9041,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8513,6 +9058,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8529,6 +9075,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8545,6 +9092,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8561,6 +9109,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8577,6 +9126,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8593,6 +9143,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8609,6 +9160,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8625,6 +9177,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8641,6 +9194,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8657,6 +9211,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8673,6 +9228,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8689,6 +9245,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8705,6 +9262,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -8721,6 +9279,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8737,6 +9296,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8753,6 +9313,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8769,6 +9330,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8785,6 +9347,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -8801,6 +9364,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8817,6 +9381,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8833,6 +9398,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8849,6 +9415,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8865,6 +9432,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8881,6 +9449,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8897,6 +9466,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8913,6 +9483,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8929,6 +9500,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -8946,6 +9518,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8962,6 +9535,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8978,6 +9552,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -8994,6 +9569,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9010,6 +9586,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9025,7 +9602,8 @@
     "mapId": 371,
     "zoneId": 2409,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "20107": {
     "id": 538,
@@ -9035,7 +9613,8 @@
     "mapId": 371,
     "zoneId": 2409,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "20108": {
     "id": 539,
@@ -9045,7 +9624,8 @@
     "mapId": 371,
     "zoneId": 2409,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "20109": {
     "id": 593,
@@ -9056,6 +9636,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9072,6 +9653,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9088,6 +9670,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9104,6 +9687,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9120,6 +9704,7 @@
     "zoneId": 2404,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9136,6 +9721,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9152,6 +9738,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9168,6 +9755,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9184,6 +9772,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9200,6 +9789,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9216,6 +9806,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9232,6 +9823,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9248,6 +9840,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9264,6 +9857,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9280,6 +9874,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9296,6 +9891,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9312,6 +9908,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9328,6 +9925,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9344,6 +9942,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9360,6 +9959,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9376,6 +9976,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9392,6 +9993,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9408,6 +10010,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9424,6 +10027,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9440,6 +10044,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9456,6 +10061,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9472,6 +10078,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9488,6 +10095,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9504,6 +10112,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9520,6 +10129,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9536,6 +10146,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9552,6 +10163,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9568,6 +10180,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -9585,6 +10198,7 @@
     "zoneId": 32,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9601,6 +10215,7 @@
     "zoneId": 32,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9617,6 +10232,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9633,6 +10249,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -9649,6 +10266,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9665,6 +10283,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -9681,6 +10300,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -9697,6 +10317,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -9714,6 +10335,7 @@
     "zoneId": 2407,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -9731,6 +10353,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -9748,6 +10371,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -9765,6 +10389,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -9782,6 +10407,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -9799,6 +10425,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843
   },
   "22391": {
@@ -9810,6 +10437,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -9827,6 +10455,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -9844,6 +10473,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -9861,6 +10491,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Salt Lakes",
@@ -9878,6 +10509,7 @@
     "zoneId": 2412,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -9895,6 +10527,7 @@
     "zoneId": 2404,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -9912,6 +10545,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -9929,6 +10563,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -9946,6 +10581,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -9963,6 +10599,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -9980,6 +10617,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -9997,6 +10635,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10014,6 +10653,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10031,6 +10671,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10048,6 +10689,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10065,6 +10707,7 @@
     "zoneId": 2407,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -10082,6 +10725,7 @@
     "zoneId": 2408,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17842,
     "recordType": {
       "en": "Salt Lakes",
@@ -10099,6 +10743,7 @@
     "zoneId": 2404,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10116,6 +10761,7 @@
     "zoneId": 2412,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10133,6 +10779,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10150,6 +10797,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10167,6 +10815,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10184,6 +10833,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10201,6 +10851,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10218,6 +10869,7 @@
     "zoneId": 2411,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10235,6 +10887,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -10251,6 +10904,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -10267,6 +10921,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -10282,7 +10937,8 @@
     "mapId": 371,
     "zoneId": 2409,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "23075": {
     "id": 657,
@@ -10293,6 +10949,7 @@
     "zoneId": 2002,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -10309,6 +10966,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10326,6 +10984,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10343,6 +11002,7 @@
     "zoneId": 2403,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10360,6 +11020,7 @@
     "zoneId": 2403,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10377,6 +11038,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -10394,6 +11056,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -10411,6 +11074,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -10428,6 +11092,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10445,6 +11110,7 @@
     "zoneId": 2407,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10462,6 +11128,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10479,6 +11146,7 @@
     "zoneId": 2412,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10496,6 +11164,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10513,6 +11182,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10530,6 +11200,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10547,6 +11218,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10564,6 +11236,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10581,6 +11254,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -10597,6 +11271,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -10613,6 +11288,7 @@
     "zoneId": 2406,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -10629,6 +11305,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -10645,6 +11322,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -10661,6 +11339,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10678,6 +11357,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10695,6 +11375,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10712,6 +11393,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843
   },
   "24885": {
@@ -10723,6 +11405,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10740,6 +11423,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10757,6 +11441,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10774,6 +11459,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10791,6 +11477,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10808,6 +11495,7 @@
     "zoneId": 2410,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10825,6 +11513,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10842,6 +11531,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10859,6 +11549,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Rivers",
@@ -10876,6 +11567,7 @@
     "zoneId": 2406,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Rivers",
@@ -10893,6 +11585,7 @@
     "zoneId": 2407,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Lakes",
@@ -10910,6 +11603,7 @@
     "zoneId": 2408,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "folklore": 17842,
     "recordType": {
       "en": "Salt Lakes",
@@ -10927,6 +11621,7 @@
     "zoneId": 2409,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Deep Sea",
@@ -10944,6 +11639,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10961,6 +11657,7 @@
     "zoneId": 2411,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 17843,
     "recordType": {
       "en": "Lakes",
@@ -10978,6 +11675,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -10993,7 +11691,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "26748": {
     "id": 764,
@@ -11004,6 +11703,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11020,6 +11720,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11036,6 +11737,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11052,6 +11754,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11068,6 +11771,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11084,6 +11788,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11100,6 +11805,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11116,6 +11822,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11132,6 +11839,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11148,6 +11856,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11164,6 +11873,7 @@
     "zoneId": 2951,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11180,6 +11890,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11196,6 +11907,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11212,6 +11924,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11228,6 +11941,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11244,6 +11958,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11260,6 +11975,7 @@
     "zoneId": 2952,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -11276,6 +11992,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11292,6 +12009,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11308,6 +12026,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11324,6 +12043,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11340,6 +12060,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11356,6 +12077,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11372,6 +12094,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11388,6 +12111,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -11405,6 +12129,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11421,6 +12146,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11437,6 +12163,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11453,6 +12180,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11469,6 +12197,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11485,6 +12214,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11501,6 +12231,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11517,6 +12248,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11533,6 +12265,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11549,6 +12282,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11565,6 +12299,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11581,6 +12316,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11597,6 +12333,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11612,7 +12349,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27447": {
     "id": 716,
@@ -11622,7 +12360,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27448": {
     "id": 714,
@@ -11632,7 +12371,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27449": {
     "id": 713,
@@ -11642,7 +12382,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27450": {
     "id": 735,
@@ -11652,7 +12393,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27451": {
     "id": 717,
@@ -11662,7 +12404,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27452": {
     "id": 733,
@@ -11672,7 +12415,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27453": {
     "id": 745,
@@ -11682,7 +12426,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27454": {
     "id": 734,
@@ -11692,7 +12437,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27455": {
     "id": 736,
@@ -11702,7 +12448,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27456": {
     "id": 793,
@@ -11713,6 +12460,7 @@
     "zoneId": 2954,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810
   },
   "27457": {
@@ -11723,7 +12471,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "27458": {
     "id": 737,
@@ -11734,6 +12483,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11750,6 +12500,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11766,6 +12517,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11782,6 +12534,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11798,6 +12551,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11814,6 +12568,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11830,6 +12585,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11846,6 +12602,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11862,6 +12619,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -11878,6 +12636,7 @@
     "zoneId": 2955,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Sands",
@@ -11895,6 +12654,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11911,6 +12671,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11927,6 +12688,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11943,6 +12705,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -11959,6 +12722,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11975,6 +12739,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -11991,6 +12756,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12007,6 +12773,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12023,6 +12790,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12039,6 +12807,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12055,6 +12824,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12071,6 +12841,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12087,6 +12858,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12103,6 +12875,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -12120,6 +12893,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12136,6 +12910,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12152,6 +12927,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12168,6 +12944,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12184,6 +12961,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12200,6 +12978,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12216,6 +12995,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12232,6 +13012,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12248,6 +13029,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12264,6 +13046,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12280,6 +13063,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12296,6 +13080,7 @@
     "zoneId": 2957,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12312,6 +13097,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12329,6 +13115,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12345,6 +13132,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12361,6 +13149,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12377,6 +13166,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12393,6 +13183,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12409,6 +13200,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12425,6 +13217,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12441,6 +13234,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12457,6 +13251,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12473,6 +13268,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12489,6 +13285,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12505,6 +13302,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12521,6 +13319,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12537,6 +13336,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -12554,6 +13354,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12570,6 +13371,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12586,6 +13388,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12602,6 +13405,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12618,6 +13422,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12634,6 +13439,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12650,6 +13456,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -12666,6 +13473,7 @@
     "zoneId": 2951,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12683,6 +13491,7 @@
     "zoneId": 2952,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -12700,6 +13509,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12717,6 +13527,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12734,6 +13545,7 @@
     "zoneId": 2955,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Sands",
@@ -12751,6 +13563,7 @@
     "zoneId": 2956,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12768,6 +13581,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 0,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12785,6 +13599,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -12802,6 +13617,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -12818,6 +13634,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12834,6 +13651,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -12850,6 +13668,7 @@
     "zoneId": 2955,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Sands",
       "de": "Dünen",
@@ -12865,7 +13684,8 @@
     "mapId": 492,
     "zoneId": 2954,
     "timed": 0,
-    "weathered": 0
+    "weathered": 0,
+    "stars": 0
   },
   "28719": {
     "id": 808,
@@ -12876,6 +13696,7 @@
     "zoneId": 2958,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -12893,6 +13714,7 @@
     "zoneId": 2953,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -12910,6 +13732,7 @@
     "zoneId": 2954,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -12927,6 +13750,7 @@
     "zoneId": 2955,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Sands",
@@ -12944,6 +13768,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -12961,6 +13786,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -12978,6 +13804,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -12995,6 +13822,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13011,6 +13839,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13027,6 +13856,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13043,6 +13873,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13059,6 +13890,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13075,6 +13907,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13091,6 +13924,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 1,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -13107,6 +13941,7 @@
     "zoneId": 2200,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -13123,6 +13958,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13139,6 +13975,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13155,6 +13992,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13171,6 +14009,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13187,6 +14026,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13203,6 +14043,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13219,6 +14060,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13235,6 +14077,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13251,6 +14094,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13267,6 +14111,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13283,6 +14128,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13299,6 +14145,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13315,6 +14162,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13331,6 +14179,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13347,6 +14196,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13363,6 +14213,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13379,6 +14230,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13395,6 +14247,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13411,6 +14264,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13427,6 +14281,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13443,6 +14298,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13459,6 +14315,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13475,6 +14332,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13491,6 +14349,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13507,6 +14366,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13523,6 +14383,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13539,6 +14400,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13555,6 +14417,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13571,6 +14434,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13587,6 +14451,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13603,6 +14468,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13619,6 +14485,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13635,6 +14502,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13651,6 +14519,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13667,6 +14536,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13683,6 +14553,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13699,6 +14570,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13715,6 +14587,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13731,6 +14604,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13747,6 +14621,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13763,6 +14638,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13779,6 +14655,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13795,6 +14672,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13811,6 +14689,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13827,6 +14706,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13843,6 +14723,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13859,6 +14740,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13875,6 +14757,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13891,6 +14774,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13907,6 +14791,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13923,6 +14808,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13939,6 +14825,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13955,6 +14842,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13971,6 +14859,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -13987,6 +14876,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14003,6 +14893,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14019,6 +14910,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14035,6 +14927,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14051,6 +14944,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14067,6 +14961,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14083,6 +14978,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14099,6 +14995,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14115,6 +15012,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14131,6 +15029,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14147,6 +15046,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14163,6 +15063,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14179,6 +15080,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14195,6 +15097,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14211,6 +15114,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14227,6 +15131,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14243,6 +15148,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14259,6 +15165,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14275,6 +15182,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14291,6 +15199,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14307,6 +15216,7 @@
     "zoneId": 2951,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -14324,6 +15234,7 @@
     "zoneId": 2953,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -14341,6 +15252,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -14358,6 +15270,7 @@
     "zoneId": 2956,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -14375,6 +15288,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -14392,6 +15306,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -14409,6 +15324,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -14426,6 +15342,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 2,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -14443,6 +15360,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "folklore": 26810
   },
   "30488": {
@@ -14454,6 +15372,7 @@
     "zoneId": 2000,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Magma",
       "de": "Magma",
@@ -14470,6 +15389,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14486,6 +15406,7 @@
     "zoneId": 2100,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Floating Islands",
       "de": "Schweb-Inseln",
@@ -14502,6 +15423,7 @@
     "zoneId": 2409,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14518,6 +15440,7 @@
     "zoneId": 2001,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Rivers",
       "de": "Flüsse",
@@ -14534,6 +15457,7 @@
     "zoneId": 2956,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -14550,6 +15474,7 @@
     "zoneId": 2410,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Lakes",
       "de": "Seen",
@@ -14566,6 +15491,7 @@
     "zoneId": 2101,
     "timed": 0,
     "weathered": 0,
+    "stars": 2,
     "recordType": {
       "en": "Aetherochemical Spills",
       "de": "Ätherquellen",
@@ -14582,6 +15508,7 @@
     "zoneId": 2953,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -14599,6 +15526,7 @@
     "zoneId": 2954,
     "timed": 0,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -14616,6 +15544,7 @@
     "zoneId": 2954,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810
   },
   "32052": {
@@ -14627,6 +15556,7 @@
     "zoneId": 2956,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810,
     "recordType": {
       "en": "Rivers",
@@ -14644,6 +15574,7 @@
     "zoneId": 2957,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810,
     "recordType": {
       "en": "Lakes",
@@ -14661,6 +15592,7 @@
     "zoneId": 2958,
     "timed": 1,
     "weathered": 1,
+    "stars": 3,
     "folklore": 26810,
     "recordType": {
       "en": "Deep Sea",
@@ -14678,6 +15610,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14694,6 +15627,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14710,6 +15644,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14726,6 +15661,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14742,6 +15678,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14758,6 +15695,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14774,6 +15712,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14790,6 +15729,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14806,6 +15746,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14822,6 +15763,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14838,6 +15780,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14854,6 +15797,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14870,6 +15814,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14886,6 +15831,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14902,6 +15848,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14918,6 +15865,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14934,6 +15882,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14950,6 +15899,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14966,6 +15916,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14982,6 +15933,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -14998,6 +15950,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15014,6 +15967,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15030,6 +15984,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15046,6 +16001,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15062,6 +16018,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15078,6 +16035,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15094,6 +16052,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15110,6 +16069,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15126,6 +16086,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15142,6 +16103,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15158,6 +16120,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15174,6 +16137,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15190,6 +16154,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15206,6 +16171,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15222,6 +16188,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15238,6 +16205,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15254,6 +16222,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15270,6 +16239,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15286,6 +16256,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15302,6 +16273,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15318,6 +16290,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15334,6 +16307,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15350,6 +16324,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15366,6 +16341,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15382,6 +16358,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15398,6 +16375,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15414,6 +16392,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15430,6 +16409,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15446,6 +16426,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 1,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15462,6 +16443,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15478,6 +16460,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15494,6 +16477,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15510,6 +16494,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15526,6 +16511,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15542,6 +16528,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15558,6 +16545,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15574,6 +16562,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15590,6 +16579,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15606,6 +16596,7 @@
     "zoneId": 3477,
     "timed": 0,
     "weathered": 0,
+    "stars": 0,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",
@@ -15622,6 +16613,7 @@
     "zoneId": 3477,
     "timed": 1,
     "weathered": 0,
+    "stars": 3,
     "recordType": {
       "en": "Deep Sea",
       "de": "Hochsee",

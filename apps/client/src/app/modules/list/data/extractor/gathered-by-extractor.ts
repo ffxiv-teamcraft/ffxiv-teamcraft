@@ -28,8 +28,14 @@ export class GatheredByExtractor extends AbstractExtractor<GatheredBy> {
   }
 
   protected doExtract(item: Item, itemData: ItemData): GatheredBy {
-    const gatheringItem = Object.values<any>(this.lazyData.data.gatheringItems).find(g => g.itemId === item.id);
     const nodes = this.gatheringNodesService.getItemNodes(item.id, true);
+    const nodeType = nodes.length > 0 ? nodes[0].type : -1;
+    let gatheringItem: { level: number, stars: number };
+    if (nodeType === -5) {
+      gatheringItem = this.lazyData.data.fishParameter[item.id];
+    } else {
+      gatheringItem = Object.values<any>(this.lazyData.data.gatheringItems).find(g => g.itemId === item.id);
+    }
     return {
       stars_tooltip: gatheringItem ? this.htmlTools.generateStars(gatheringItem.stars) : '',
       level: gatheringItem ? gatheringItem.level : 999,

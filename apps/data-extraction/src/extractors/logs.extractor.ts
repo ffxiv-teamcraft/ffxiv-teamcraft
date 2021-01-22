@@ -212,7 +212,8 @@ export class LogsExtractor extends AbstractExtractor {
               mapId: fish.TerritoryType.MapTargetID,
               zoneId: fish.TerritoryType.PlaceNameTargetID,
               timed: fish.TimeRestricted,
-              weathered: fish.WeatherRestricted
+              weathered: fish.WeatherRestricted,
+              stars: fish.GatheringItemLevel.Stars || 0
             };
             if (fish.GatheringSubCategory) {
               entry.folklore = fish.GatheringSubCategory.ItemTargetID;

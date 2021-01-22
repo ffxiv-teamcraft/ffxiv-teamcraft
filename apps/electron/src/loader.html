@@ -10,6 +10,7 @@
       height: 100vh;
       padding: 0;
       margin: 0;
+      background-color: #2F3237;
     }
 
     .init-loader-container {
@@ -19,14 +20,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    #logo {
-      position: relative;
-    }
-
-    img {
-      width: 400px;
     }
 
     .brought-to-you {
@@ -48,8 +41,8 @@
 </head>
 <body>
 <div class="init-loader-container">
-  <div id="logo">
-    <img src="../../client/assets/loader.gif" alt="FFXIV Teamcraft" class="logo">
+  <div>
+    <img src="" alt="FFXIV Teamcraft" id="loader">
   </div>
   <div class="brought-to-you">
     Brought to you by <span id="random-patron"></span>
@@ -58,6 +51,9 @@
     <img src="../../client/assets/become_a_patron_button@2x.png" alt="Become a patron">
   </a>
 </div>
+<script>
+  window.baseGifPath = "../../client/assets/";
+</script>
 <script src="./tc-loader.js"></script>
 </body>
 </html>

@@ -57,8 +57,7 @@
               "apps/client/src/theme.less"
             ],
             "scripts": [
-              "node_modules/marked/lib/marked.js",
-              "libs/loader/tc-loader.js"
+              "node_modules/marked/lib/marked.js"
             ],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },

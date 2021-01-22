@@ -179,17 +179,15 @@ export function authReducer(state = initialState, action: AuthActions): AuthStat
         ...state,
         user: {
           ...state.user,
-          lodestoneIds: [
-            ...state.user.lodestoneIds.map(entry => {
-              if (entry.id === action.characterId) {
-                return {
-                  ...entry,
-                  contentId: action.contentId
-                };
-              }
-              return entry;
-            })
-          ]
+          lodestoneIds: state.user.lodestoneIds.map(entry => {
+            if (entry.id === action.characterId) {
+              return {
+                ...entry,
+                contentId: action.contentId
+              };
+            }
+            return entry;
+          })
         }
       };
     }

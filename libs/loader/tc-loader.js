@@ -54,5 +54,14 @@ const patrons = [
   'Raeanya Ashurke',
   'G\'lek Tarssza'
 ];
+
+const gifs = [
+  'loader_BSM.gif',
+  'loader_MIN.gif'
+];
+
+const randomGif = gifs[Math.floor(Math.random() * gifs.length)];
+document.getElementById('loader').setAttribute('src', window.baseGifPath + randomGif);
+
 const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
 document.getElementById('random-patron').innerText = randomPatron;
