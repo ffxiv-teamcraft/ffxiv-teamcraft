@@ -1817,7 +1817,7 @@
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
     "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
+    "Unknown_character": "알 수 없는 인게임 캐릭터",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
     "Inventory_outdated": "소지품 연동 정보가 오래되었습니다",
@@ -1869,8 +1869,8 @@
       "Linked": "Linked",
       "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
       "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "Ignore": "해당 인게임 캐릭터를 무시",
+      "You_can_reset_ignore": "데스크톱 앱의 설정에서 무시된 캐릭터를 초기화할 수 있습니다"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2445,8 +2445,8 @@
     "Only_missing_nodes": "누락된 노드가 있는 맵만 표시"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "공방 제작 수형도",
+    "View_tree": "공방 제작 수형도 열기",
     "Phase": "단계 {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
@@ -2454,9 +2454,9 @@
     "Include_crafting": "제작템 포함",
     "Include_trades": "교환/구매템 포함",
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
+    "Generate_list": "목록 생성",
+    "Empty_slot": "빈 슬롯",
+    "In_inventory": "해당 아이템이 소지품에 있습니다",
     "Only_inventory": "Only consider items in inventory",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
@@ -2468,10 +2468,10 @@
     "Task_complete": "집사 수행 완료",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Task_completion_alarm": "수행 완료 알람"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
+    "Title": "집사 수행",
     "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
     "Retainer_ilvl": "아이템 레벨",
     "Gathering": "채집",
