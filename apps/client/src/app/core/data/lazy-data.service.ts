@@ -172,6 +172,12 @@ export class LazyDataService {
       filter((recipes) => recipes !== undefined),
       map((recipes) => {
         return recipes.find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+      }),
+      map(recipe => {
+        if (!recipe.conditionsFlag) {
+          recipe.conditionsFlag = 15;
+        }
+        return recipe;
       })
     );
   }
