@@ -52,4 +52,4 @@ export const patchNotes = `### Bug Fixes
 ### Performance Improvements
 
 * **gathering:** complete refactor of gathering and alarms system.
-* **inventory:** big performance improvements for inventory search operations.`;
+* **inventory:** big performance improvements for inventory search operations.`;

@@ -272,13 +272,9 @@ export class PacketCaptureTrackerService {
     this.ipc.packets$.pipe(
       ofPacketSubType<FishingBaitMsg>('fishingBaitMsg')
     ).subscribe(packet => {
-      this.eorzeaFacade.setBait(packet.baitID);
-    });
-
-    this.ipc.packets$.pipe(
-      ofPacketType<PlayerSetup>('playerSetup')
-    ).subscribe(packet => {
-      this.eorzeaFacade.setBait(packet.useBaitCatalogId);
+      if (this.lazyData.data.baitItems.includes(packet.baitID)) {
+        this.eorzeaFacade.setBait(packet.baitID);
+      }
     });
 
     this.ipc.packets$.pipe(
