@@ -44,6 +44,8 @@ export class PacketCapture {
     'prepareZoning',
     'submarineExplorationResult',
     'submarineStatusList',
+    'resultDialog',
+    'desynthResult'
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
@@ -68,7 +70,7 @@ export class PacketCapture {
   constructor(private mainWindow: MainWindow, private store: Store, private options: any) {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
-    })
+    });
   }
 
   start(): void {

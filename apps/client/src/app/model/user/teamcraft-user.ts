@@ -31,6 +31,9 @@ export class TeamcraftUser extends DataModel {
 
   patron = false;
 
+  // For shared benefits or one-time donations benefits.
+  patreonBenefitsUntil: firebase.firestore.Timestamp;
+
   sekrit?: boolean;
 
   defaultConsumables: DefaultConsumables;
