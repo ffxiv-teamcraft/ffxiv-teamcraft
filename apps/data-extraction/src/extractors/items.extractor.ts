@@ -45,6 +45,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const itemPatch = {};
     const itemSetBonuses = {};
     const marketItems = [];
+    const baitItems = [];
     const extractableItems = {};
     const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
     this.getAllPages(`https://xivapi.com/Item?columns=Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
@@ -69,6 +70,9 @@ export class ItemsExtractor extends AbstractExtractor {
           }
           if (item.ItemSearchCategoryTargetID > 9) {
             marketItems.push(item.ID);
+          }
+          if ([30, 46].includes(item.ItemSearchCategoryTargetID)) {
+            baitItems.push(item.ID);
           }
           if (item.MaterializeType > 0) {
             extractableItems[item.ID] = 1;
@@ -155,6 +159,7 @@ export class ItemsExtractor extends AbstractExtractor {
         this.persistToJsonAsset('item-equip-slot-category', equipSlotCategoryId);
         this.persistToJsonAsset('item-patch', itemPatch);
         this.persistToJsonAsset('market-items', marketItems);
+        this.persistToJsonAsset('bait-items', baitItems);
         this.persistToJsonAsset('extractable-items', extractableItems);
         this.persistToJsonAsset('item-set-bonuses', itemSetBonuses);
         this.done();

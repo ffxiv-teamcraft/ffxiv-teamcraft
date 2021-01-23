@@ -8,6 +8,7 @@ export interface LazyData {
   actions: any;
   aetherytes: any;
   airshipVoyages: any;
+  baitItems: any;
   baseParams: any;
   bigFishes: any;
   classJobsModifiers: any;
