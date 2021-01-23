@@ -33,7 +33,7 @@
         <label nz-checkbox formControlName="includeTrades"></label>
       </nz-form-control>
     </nz-form-item>
-    <nz-form-item>
+    <nz-form-item *ngIf="desktop">
       <nz-form-label>{{'LEVELING_EQUIPMENT.Only_inventory' | translate}}</nz-form-label>
       <nz-form-control>
         <label nz-checkbox formControlName="onlyInventoryContent"></label>
