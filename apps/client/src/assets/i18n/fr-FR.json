@@ -1833,7 +1833,7 @@
     "Disable_pcap": "Désactiver la capture de paquets",
     "Install_npcap": "Npcap est manquant dans votre système",
     "Install_npcap_description": "Afin de capturer les paquets sur Teamcraft avec son mode npcap par défaut, vous devez installer npcap. Teamcraft peut l'installer pour vous et redémarrer l'application une fois terminé.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Install_npcap_button": "Installez npcap et redémarrez Teamcraft"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
@@ -1853,8 +1853,8 @@
     "Search_for_an_item": "Rechercher un objet",
     "Filter_by_expansion": "Filtrer par extension",
     "In_x_containers": "Dans {{amount}} inventaires",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
+    "New_character_detected": "Nouveau personnage détecté",
+    "Unknown_position": "Position inconnue",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1865,12 +1865,12 @@
       "RetainerMarket": "En vente par les servants"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
+      "Linked": "Lié",
+      "Linked_tooltip": "Ce personnage est déjà lié à un autre personnage en jeu, le sélectionner supprimera le lien avec l'autre personnage",
+      "Override_link_confirmation": "Êtes-vous sûr de vouloir remplacer ce lien ?",
+      "Ignore": "Ignorer ce personnage",
+      "You_can_reset_ignore": "Vous pouvez réinitialiser les caractères ignorés dans la page des paramètres, section Application"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1919,8 +1919,8 @@
       "Message": "Vous pouvez extraire une matéria de cette pièce d'équipement"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Title": "Objets dont vous n'avez pas besoin en HQ car vous pouvez utiliser Main Preste",
+      "Message": "Cet objet est utilisé uniquement dans les recettes sur lesquelles vous pouvez utiliser Main Preste, le rendant inutile en HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1987,8 +1987,8 @@
     "Copied_as_string": "Tenue copiée au format texte",
     "Mark_as_done": "Marqué comme fait",
     "Create_commission": "Créer une commission pour cette tenue",
-    "Value_for_next": "Next breakpoint",
-    "Value_for_previous": "Previous breakpoint",
+    "Value_for_next": "Prochain palier",
+    "Value_for_previous": "Palier précédent",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2146,7 +2146,7 @@
   "ADMIN": {
     "Autofix_error": "Correction auto",
     "USERS": {
-      "Title": "Users",
+      "Title": "Utilisateurs",
       "X_characters_linked": "{{amount}} personnage(s) lié(s)",
       "Email": "Email",
       "Uid": "UID",
@@ -2267,7 +2267,7 @@
     "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
     "Create_folder": "Nouveau dossier",
     "Save_replay": "Enregistrer en ligne",
-    "Replay_result": "Result"
+    "Replay_result": "Résultat"
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
@@ -2305,23 +2305,23 @@
       "Name_placeholder": "Nom de votre commission",
       "Name_required_error": "Veuillez saisir un nom",
       "Tags": "Tags",
-      "Price": "Price you're willing to pay",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
+      "Price": "Prix que vous êtes prêt à payer",
+      "Price_tip": "Entrez 0 si vous voulez que les gens suggèrent leur prix à la place",
       "Only_crafting": "Fabrication uniquement",
       "Includes_materials_label": "Cette commission comprend tous les matériaux de base et ne nécessite que l'artisanat",
-      "Only_materials": "Only materials",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_materials": "Seulement les matériaux",
+      "Only_requires_materials": "Cette commission ne nécessite que les matériaux pour cette liste",
       "Contact_info": "Coordonnées",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_placeholder": "Comment le prestataire peut-il vous contacter une fois qu'ils sont acceptés pour la commission ? Discord, ingame, e-mail, comme vous le souhaitez.",
       "Contact_info_required_error": "Veuillez inclure les informations de contact",
       "Description": "Description",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
-      "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Description_placeholder": "Si vous voulez donner plus de détails sur votre commission, c'est ici",
+      "Description_max_length_error": "La description peut comprendre jusqu'à 1000 caractères",
+      "Warning": "Attention",
+      "Warning_description": "La création de commissions troll/spam entraînera la suppression de la commission et une action possible contre votre compte.",
+      "Copy_link": "Copier le code d'importation",
+      "Copy_link_tooltip": "Vous donne l'url à ouvrir pour créer cette commission exacte, utile pour écrire des tutoriels.",
+      "Link_copied": "Code d'importation copié"
     },
     "BOARD": {
       "Title": "Tableau des commissions",
@@ -2333,7 +2333,7 @@
     "DETAILS": {
       "Created_by": "Créée par {{name}}",
       "Details": "Détails",
-      "Price": "Payment",
+      "Price": "Paiement",
       "Tags": "Tags",
       "No_tags": "Aucun tag",
       "Server": "Serveur",
@@ -2360,18 +2360,18 @@
       "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
       "Copy_share_link": "Copier le lien de partage",
       "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers",
-      "No_description": "No description",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags",
-      "Add_items": "Add items",
-      "Rating": "Rating",
-      "Comment": "Your comment",
-      "Comment_placeholder": "Add more details about your rating here"
+      "No_description": "Aucune description",
+      "Items_count": "Nombre d'objet(s)",
+      "Creation_date": "Date de création",
+      "Server_&_tags": "Serveur & Tags",
+      "Add_items": "Ajouter des objets",
+      "Rating": "Évaluation",
+      "Comment": "Votre commentaire",
+      "Comment_placeholder": "Ajoutez plus de détails sur votre évaluation ici"
     },
     "APPLY": {
       "Price": "Votre prix",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Contact_info_placeholder": "Comment le client peut-il vous contacter pour parler de votre candidature si nécessaire? Discord, ingame, email, comme vous le souhaitez."
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Cliquez pour ouvrir la commission",
@@ -2425,10 +2425,10 @@
       "CANNOT_GATHER": "Je ne suis pas en mesure de collecter les objets requis. Le client non plus."
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "Import de commission",
+      "Description": "Veuillez vérifier que ces éléments sont ceux pour lesquels vous souhaitez créer une commission. Remarque : les éléments qui ne peuvent pas être échangés sont supprimés de la liste ci-dessous automatiquement.",
+      "Create_commission": "Créer une commission",
+      "No_items": "Aucun objet"
     }
   },
   "MAPPY": {
@@ -2445,38 +2445,38 @@
     "Only_missing_nodes": "Afficher uniquement les cartes avec les nœuds manquants"
   },
   "WORKSHOP_TREE": {
-    "Title": "Workshop recipe tree",
-    "View_tree": "Open workshop recipe tree",
+    "Title": "Arbre de recettes de l'atelier",
+    "View_tree": "Ouvrir l'arbre des recettes de l'atelier",
     "Phase": "Phase {{phase}}"
   },
   "LEVELING_EQUIPMENT": {
-    "Title": "Leveling Equipment",
-    "Include_crafting": "Include crafting",
-    "Include_trades": "Include trades",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory",
-    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
+    "Title": "Equipement de leveling",
+    "Include_crafting": "Inclure le craft",
+    "Include_trades": "Inclure les échanges",
+    "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
+    "Generate_list": "Générer une liste",
+    "Empty_slot": "Slot vide",
+    "In_inventory": "Vous avez cet objet dans un de vos inventaires",
+    "Only_inventory": "Considérer uniquement les objets possédés",
+    "Interactions_description": "Cliquez sur un niveau pour sélectionner toute la colonne, cliquez sur une zone d'élément pour la sélectionner, et cliquez sur l'icône de suppression pour désélectionner un élément sans le remplacer."
   },
   "RETAINERS": {
-    "Title": "Retainers",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Title": "Servants",
+    "No_retainers": "Aucun servant, veuillez sonner la cloche des servants pour charger des informations sur vos servants.",
+    "Selling": "{{amount}} objets en vente",
+    "X_items": "{{amount}} objets",
+    "Task_complete": "Tâche terminée",
+    "Task_completed_notification_title": "{{name}} a terminé sa tâche",
+    "Task_completed_notification_content": "{{name}} a terminé la tâche {{taskName}}",
+    "Task_completion_alarm": "Alarme de complétion de tâche"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Title": "Tâches de servant",
+    "Description": "Entrez le job de votre servant, son niveau, ilvl et collecte (si nécessaire) pour trouver la tâche idéale à réaliser pour le profit. Cela peut prendre jusqu'à une minute si votre servant est de haut niveau car il vérifiera le prix de chaque objet qu'il peut obtenir pour le profit.",
     "Retainer_ilvl": "Ilvl",
-    "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
+    "Gathering": "Récolte",
+    "Task_level": "Niveau de la tâche",
+    "Total_per_venture": "Total par tâche",
+    "Use_retainer": "Utiliser le servant"
   }
 }
