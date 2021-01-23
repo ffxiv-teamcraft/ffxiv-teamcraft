@@ -2,6 +2,68 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.0"></a>
+# [8.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.25...v8.0.0) (2021-01-23)
+
+
+### Bug Fixes
+
+* **db:** added automated filter for some wrong reports ([40700cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/40700cb))
+* **db:** fixed reduction data sources for HW nodes ([51f321e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/51f321e))
+* **db:** fixed required item name shown twice in leve details pages ([ca47a0b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ca47a0b))
+* **db:** fixed some monster positions not linked to a proper map ([2652ab8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2652ab8))
+* **desktop:** possible fix for update shotcut setting being ignored ([1a091af](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a091af))
+* **fishing-reporter:** fixed reporter sometimes stopping its reports entirely ([8289481](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8289481))
+* **inventory-optimizer:** fixed an issue with "show hidden" not working as intended ([c699607](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c699607))
+* **list:** you can now remove team association properly again ([fa962ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fa962ff))
+* **list-panel:** fixed list panel display sometimes breaking in workshop panels ([b4b1165](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b4b1165))
+* **quick-search:** input field is now properly focused ([0455781](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0455781))
+* **recipe-finder:** collectable filter now works as intended ([2888a3e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2888a3e))
+
+
+### Features
+
+* **alarms:** added fishing baits in alarm sidebar and overlay ([aee3fd5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aee3fd5))
+* **alarms:** new button to delete all your alarms at once ([d0d4d8a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0d4d8a))
+* **alarms:** you can now add an alarm to multiple groups ([173b942](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/173b942))
+* **alarms:** you can now set "early by" to negative value, making it "late by" ([95a28df](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/95a28df))
+* **collectables:** you can now create alarms from the collectables page ([aa0147c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aa0147c))
+* **company-workshops:** new tree view button in search results and company workshop crafts in lists ([f757827](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f757827))
+* **desktop:** inventory tracking now supports multiple characters ([f76f0c5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f76f0c5))
+* **desktop:** middle clicking db buttons now opens the target url in browser ([6471cd3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6471cd3))
+* **desktop:** new checkbox in tray menu to control packet capture ([881a242](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/881a242)), closes [#1789](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1789)
+* **desktop:** new loading window for better loading UX ([1412871](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1412871)), closes [#1788](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1788)
+* **desktop:** new tray icon menu entry to reset positions of all your overlay windows ([f4bfb35](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f4bfb35))
+* **desktop:** support for command key instead of ctrl for shortcuts on OSX ([9ae0434](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9ae0434)), closes [#1790](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1790)
+* **gearset:** you can now copy materia and gear piece names in clipboard on click ([2782ac5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2782ac5))
+* **gearsets:** new stats breakpoints display ([6814918](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6814918))
+* **inventory:** new setting to reset inventory on app startup ([b406c3b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b406c3b))
+* **inventory:** new tooltip to display position inside inventory when possible ([03b0ae1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/03b0ae1))
+* **inventory-optimizer:** added a reset inventories button ([39fa0ae](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/39fa0ae))
+* **inventory-optimizer:** new optimizer for useless hq items ([6fdfbcd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6fdfbcd))
+* **layout:** npc breakdown now takes currency priorities into account ([08eb1eb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/08eb1eb))
+* **spearfishing:** new spearfishing spot page ([864349f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/864349f))
+* new leveling equipment feature to easily find leveling gear ([b78fd3f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b78fd3f))
+* new retainer ventures page to find best venture for your retainer ([62fc97d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62fc97d)), closes [#1416](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1416)
+* new retainers tracking page with alarms for tasks ([826da71](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/826da71))
+* **list:** new "inventory cleanup" popup to list items inside your inventory that are not used in list ([a5325c3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a5325c3))
+* **lists:** new mass delete menu to delete multiple lists at once ([c7866c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c7866c2))
+* **loading-screen:** new patron: G'lek Tarssza ([d0650e3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d0650e3))
+* **pricing:** show last updated date on each pricing row when filled from MB ([355da58](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/355da58))
+* **search:** new dropdown to select language to search with ([6b3f506](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6b3f506))
+* **search:** you can now exclude a stat or a bonus in search filters ([b63764d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b63764d))
+* **search:** you can now filter with "Worn by" targeting "Disciple of ..." categories ([0a93ece](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0a93ece))
+* **sidebar:** new categories to stop having everything in helpers ([cd8283e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cd8283e))
+* **sidebar:** you can now set favorite features in settings to list them in the favorites section ([888320a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/888320a))
+
+
+### Performance Improvements
+
+* **gathering:** complete refactor of gathering and alarms system ([04b069f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/04b069f))
+* **inventory:** big performance improvements for inventory search operations ([0731c4c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0731c4c))
+
+
+
 <a name="7.6.25"></a>
 ## [7.6.25](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.24...v7.6.25) (2021-01-13)
 
