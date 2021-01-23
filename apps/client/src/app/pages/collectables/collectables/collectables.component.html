@@ -33,7 +33,7 @@
         <nz-collapse-panel [nzHeader]="group.groupId | collectablesShopGroupName | i18n" [nzActive]="first" *ngFor="let group of row.groups; first as first">
           <div fxLayout="column" fxLayoutGap="10px">
             <div *ngFor="let collectable of group.collectables" nz-row>
-              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="12">
+              <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px" nz-col nzMd="4">
                 <label nz-checkbox [ngModel]="isItemSelected(group.groupId, collectable.itemId)"
                        (ngModelChange)="selectItem(group.groupId, collectable.itemId, $event)"></label>
                 <app-item-icon [itemId]="collectable.itemId" [width]="32"></app-item-icon>
@@ -41,6 +41,21 @@
                   <div>{{collectable.itemId | itemName | i18n}}</div>
                   <div>{{'Level' | translate}} {{collectable.levelMax}}</div>
                 </div>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px" nz-col nzMd="8">
+                <ng-container *ngIf="collectable.nodes">
+                  <div *ngFor="let node of collectable.nodes" fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center">
+                    <div>
+                      <app-map-position [mapId]="node.gatheringNode.map" [zoneId]="node.gatheringNode.zoneId"
+                                        [marker]="{x: node.gatheringNode.x, y: node.gatheringNode.y, iconType: 'img', iconImg: node.gatheringNode.type | nodeTypeIcon: node.gatheringNode.limited}"
+                                        [showMapName]="true"></app-map-position>
+                    </div>
+                    <div *ngIf="alarmGroups$ | async as alarmGroups" fxLayout="column" fxLayoutGap="5px">
+                      <app-alarm-button *ngFor="let alarm of node.alarms" [alarm]="alarm" [alarmGroups]="alarmGroups" (toggleAlarm)="toggleAlarm($event)"
+                                        (addAlarmWithGroup)="addAlarmWithGroup($event.alarm, $event.group)"></app-alarm-button>
+                    </div>
+                  </div>
+                </ng-container>
               </div>
               <div fxLayout="column" fxLayoutAlign="center center" nz-col nzMd="2">
                 <div><b>{{collectable.base.rating}} - {{collectable.mid.rating - 1}}</b></div>

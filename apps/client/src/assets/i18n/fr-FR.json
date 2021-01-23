@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Changer de personnage sur Teamcraft quand il change en jeu",
     "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
+    "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
+    "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -478,6 +480,7 @@
       "Theme": "Thème",
       "Search": "Recherche",
       "Lists": "Listes",
+      "Alarms": "Alarmes",
       "Other": "Autre",
       "Sekrit": "Sekrit"
     },
@@ -979,6 +982,8 @@
       "Pliant": "Modulable",
       "Sturdy": "Robuste",
       "Centered": "Stable",
+      "Malleable": "Malléable",
+      "Primed": "Apprêté",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1720,21 +1725,6 @@
     "Job": "Job",
     "Leve_level": "Niveau requis"
   },
-  "TIPS": {
-    "Title": "Astuce",
-    "Community_rotations": "Vous pouvez trouver des rotations pour une recette donnée dans la page rotations communautaires.",
-    "GC_Deliveries": "Vous pouvez préparer des listes pour les livraisons de grande compagnie dans la page du même nom.",
-    "Desynth": "Vous pouvez trouver des éléments idéaux pour améliorer le recyclage dans la page \"Guide de recyclage\".",
-    "DB": "Teamcraft inclut une base de données, vous pouvez cliquer sur l'icône \"i\" n'importe où pour ouvrir la page de base de données pour l'élément concerné par l'icône.",
-    "3D_model": "Vous pouvez visualiser le modèle 3D des éléments à l'intérieur de la base de données.",
-    "Levequests": "Vous pouvez préparer des listes de mandats et prévisualiser leur exp dans la page Mandats.",
-    "Log_tracker": "Vous pouvez suivre la progression de votre journal (collecte, fabrication, pêche) à l'intérieur de la page carnets.",
-    "Desktop_app_overlay": "Vous pouvez avoir une fenêtre flottante pour afficher vos alarmes avec l'application de bureau Teamcraft, lien dans la barre latérale.",
-    "Start_desktop_before_game": "N'oubliez pas de démarrer l'application de bureau avant le jeu pour assurer l'intégrité maximale des données",
-    "Middle_click_share_button": "Dans l'application de bureau, cliquez avec le bouton molette sur le bouton de partage dans la barre supérieure pour ouvrir la page actuelle dans le navigateur",
-    "Quick_search": "Appuyez sur Ctrl + Maj + F pour ouvrir une fenêtre de recherche depuis n'importe où dans l'outil",
-    "Open_in_desktop_shortcut": "Appuyez sur Ctrl + Shift + C pour ouvrir la page courante dans l'application bureau ou pour ouvrir la fenêtre modale \"Ouvrir un lien web\" sur l'application de bureau."
-  },
   "RECIPE_FINDER": {
     "Title": "Recherche de recette",
     "Placeholder": "Nom de l'objet",
@@ -1796,7 +1786,7 @@
     "Add_bonus_stat_filter": "Ajouter un filtre de caractéristique bonus",
     "Search_tip": "Vous pouvez taper patch :<patch #> pour filtrer sur un patch donné, exemple : patch:5.01",
     "Stats_exclude_tip": "Définissez la valeur minimale d'une statistique à -1 pour rechercher des objets sans cette statistique",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Bonuses_exclude_tip": "Définissez la valeur minimale d'une statistique à -1 pour rechercher des objets sans cette statistique",
     "SORT_BY": {
       "Relevance": "Pertinence",
       "ID": "ID",
@@ -1806,7 +1796,7 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
+    "Favorites": "Favoris",
     "General": "Général",
     "Sharing": "Partage",
     "Gathering": "Récolte",
@@ -1817,7 +1807,7 @@
     "My_commissions": "Mes commissions",
     "Archived_commissions": "Archives",
     "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Currencies": "Devises"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Capture de paquets disponible",
@@ -1826,8 +1816,8 @@
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
-    "Unknown_character": "Unknown ingame character",
+    "Please_zone_or_sort": "Le suivi de l'inventaire ne peut pas fonctionner sans savoir quel personnage vous jouez actuellement, veuillez trier/annuler le tri votre inventaire ou vous téléporter à un endroit aléatoire.",
+    "Unknown_character": "Personnage en jeu inconnu",
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
     "Inventory_outdated": "Votre inventaire est obsolète",
@@ -1837,13 +1827,13 @@
     "Possible_missing_firewall_rule": "La capture de paquets ne fonctionne pas correctement",
     "Possible_missing_firewall_rule_description": "Teamcraft ne voit que certains des paquets et pas ceux liés aux inventaires, stats, gear, etc, cela peut être dû à une règle de pare-feu manquante sur votre PC.",
     "Possible_missing_firewall_rule_check": "Si ce message ne disparaît pas après que vous vous soyez téléporté dans une nouvelle zone, soit la règle de pare-feu est manquante ou la capture de paquets ne fonctionne pas du tout pour une autre raison (si c'est le cas, rejoignez le serveur discord et allez sur le canal #troubleshooting).",
-    "Rawsock_needs_admin": "RawSocket capture mode requires admin permissions",
-    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
-    "Switch_to_winpcap": "Switch to winpcap mode",
-    "Disable_pcap": "Disable packet capture",
-    "Install_npcap": "Npcap is missing from your system",
-    "Install_npcap_description": "In order to have Teamcraft capture packet with its default npcap mode, you need to install npcap. Teamcraft can install it for you and restart the app once it's done.",
-    "Install_npcap_button": "Install npcap and restart Teamcraft"
+    "Rawsock_needs_admin": "Le mode de capture RawSocket nécessite des autorisations d'administration",
+    "Rawsock_needs_admin_description": "Afin de manipuler correctement les règles du pare-feu et de pouvoir capturer le trafic depuis votre jeu, le mode RawSocket nécessite que TC ait les autorisations d'administration. Vous pouvez le fermer et l'exécuter à nouveau en tant qu'administrateur pour résoudre ce problème ou choisir l'une des options ci-dessous.",
+    "Switch_to_winpcap": "Basculer en mode winpcap",
+    "Disable_pcap": "Désactiver la capture de paquets",
+    "Install_npcap": "Npcap est manquant dans votre système",
+    "Install_npcap_description": "Afin de capturer les paquets sur Teamcraft avec son mode npcap par défaut, vous devez installer npcap. Teamcraft peut l'installer pour vous et redémarrer l'application une fois terminé.",
+    "Install_npcap_button": "Installez npcap et redémarrez Teamcraft"
   },
   "SUGGESTED_REGION": {
     "Banner_title": "Suggérer un changement de région à {{region}}",
@@ -1863,8 +1853,8 @@
     "Search_for_an_item": "Rechercher un objet",
     "Filter_by_expansion": "Filtrer par extension",
     "In_x_containers": "Dans {{amount}} inventaires",
-    "New_character_detected": "New character detected",
-    "Unknown_position": "Uknown position",
+    "New_character_detected": "Nouveau personnage détecté",
+    "Unknown_position": "Position inconnue",
     "BAG": {
       "SaddleBag": "Sacoche Chocobo",
       "FC_chest": "Coffre de compagnie",
@@ -1875,12 +1865,12 @@
       "RetainerMarket": "En vente par les servants"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
-      "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "Description": "Afin de prendre en charge le suivi multi-personnages et d'autres fonctionnalités intéressantes, Teamcraft a besoin de savoir sur quel personnage vous jouez actuellement, ou au moins quel personnage doit être lié au personnage actuellement en jeu.",
+      "Linked": "Lié",
+      "Linked_tooltip": "Ce personnage est déjà lié à un autre personnage en jeu, le sélectionner supprimera le lien avec l'autre personnage",
+      "Override_link_confirmation": "Êtes-vous sûr de vouloir remplacer ce lien ?",
+      "Ignore": "Ignorer ce personnage",
+      "You_can_reset_ignore": "Vous pouvez réinitialiser les caractères ignorés dans la page des paramètres, section Application"
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -1927,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Équipement dont vous pouvez extraire des matérias (100% de symbiose)",
       "Message": "Vous pouvez extraire une matéria de cette pièce d'équipement"
+    },
+    "USELESS_HQ": {
+      "Title": "Objets dont vous n'avez pas besoin en HQ car vous pouvez utiliser Main Preste",
+      "Message": "Cet objet est utilisé uniquement dans les recettes sur lesquelles vous pouvez utiliser Main Preste, le rendant inutile en HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1993,6 +1987,8 @@
     "Copied_as_string": "Tenue copiée au format texte",
     "Mark_as_done": "Marqué comme fait",
     "Create_commission": "Créer une commission pour cette tenue",
+    "Value_for_next": "Prochain palier",
+    "Value_for_previous": "Palier précédent",
     "SLOT": {
       "Body": "Torse",
       "Ears": "Oreilles",
@@ -2150,7 +2146,7 @@
   "ADMIN": {
     "Autofix_error": "Correction auto",
     "USERS": {
-      "Title": "Users",
+      "Title": "Utilisateurs",
       "X_characters_linked": "{{amount}} personnage(s) lié(s)",
       "Email": "Email",
       "Uid": "UID",
@@ -2271,7 +2267,7 @@
     "Missing_stats": "Veuillez changer de classe pour n'importe quel crafteur afin de permettre de connaître vos stats.",
     "Create_folder": "Nouveau dossier",
     "Save_replay": "Enregistrer en ligne",
-    "Replay_result": "Result"
+    "Replay_result": "Résultat"
   },
   "COMMISSIONS": {
     "New_commission": "Nouvelle commission",
@@ -2309,23 +2305,23 @@
       "Name_placeholder": "Nom de votre commission",
       "Name_required_error": "Veuillez saisir un nom",
       "Tags": "Tags",
-      "Price": "Price you're willing to pay",
-      "Price_tip": "Input 0 if you want people to suggest how much they want instead",
+      "Price": "Prix que vous êtes prêt à payer",
+      "Price_tip": "Entrez 0 si vous voulez que les gens suggèrent leur prix à la place",
       "Only_crafting": "Fabrication uniquement",
       "Includes_materials_label": "Cette commission comprend tous les matériaux de base et ne nécessite que l'artisanat",
-      "Only_materials": "Only materials",
-      "Only_requires_materials": "This commission only requires materials for this list",
+      "Only_materials": "Seulement les matériaux",
+      "Only_requires_materials": "Cette commission ne nécessite que les matériaux pour cette liste",
       "Contact_info": "Coordonnées",
-      "Contact_info_placeholder": "How can the contractors contact you once they are accepted for the commission? Discord, ingame, email, as you want.",
+      "Contact_info_placeholder": "Comment le prestataire peut-il vous contacter une fois qu'ils sont acceptés pour la commission ? Discord, ingame, e-mail, comme vous le souhaitez.",
       "Contact_info_required_error": "Veuillez inclure les informations de contact",
       "Description": "Description",
-      "Description_placeholder": "If you want to give more details about your commission, it's here",
-      "Description_max_length_error": "Description has to be < 1000 characters",
-      "Warning": "Warning",
-      "Warning_description": "Creating troll/spam commissions will result in the commission being deleted and possible action against your account.",
-      "Copy_link": "Copy import code",
-      "Copy_link_tooltip": "Gives you the url to open to create this exact commission, useful for guides writing.",
-      "Link_copied": "Commission import code copied"
+      "Description_placeholder": "Si vous voulez donner plus de détails sur votre commission, c'est ici",
+      "Description_max_length_error": "La description peut comprendre jusqu'à 1000 caractères",
+      "Warning": "Attention",
+      "Warning_description": "La création de commissions troll/spam entraînera la suppression de la commission et une action possible contre votre compte.",
+      "Copy_link": "Copier le code d'importation",
+      "Copy_link_tooltip": "Vous donne l'url à ouvrir pour créer cette commission exacte, utile pour écrire des tutoriels.",
+      "Link_copied": "Code d'importation copié"
     },
     "BOARD": {
       "Title": "Tableau des commissions",
@@ -2337,7 +2333,7 @@
     "DETAILS": {
       "Created_by": "Créée par {{name}}",
       "Details": "Détails",
-      "Price": "Payment",
+      "Price": "Paiement",
       "Tags": "Tags",
       "No_tags": "Aucun tag",
       "Server": "Serveur",
@@ -2364,18 +2360,18 @@
       "Bump": "Remonter cette commission dans le tableau, possible une fois toutes les 24h",
       "Copy_share_link": "Copier le lien de partage",
       "Share_link_copied": "Lien de partage de la commission copié dans votre presse-papiers",
-      "No_description": "No description",
-      "Items_count": "# of items",
-      "Creation_date": "Creation date",
-      "Server_&_tags": "Server & tags",
-      "Add_items": "Add items",
-      "Rating": "Rating",
-      "Comment": "Your comment",
-      "Comment_placeholder": "Add more details about your rating here"
+      "No_description": "Aucune description",
+      "Items_count": "Nombre d'objet(s)",
+      "Creation_date": "Date de création",
+      "Server_&_tags": "Serveur & Tags",
+      "Add_items": "Ajouter des objets",
+      "Rating": "Évaluation",
+      "Comment": "Votre commentaire",
+      "Comment_placeholder": "Ajoutez plus de détails sur votre évaluation ici"
     },
     "APPLY": {
       "Price": "Votre prix",
-      "Contact_info_placeholder": "How can the client contact you to talk about your application if needed? Discord, ingame, email, as you want."
+      "Contact_info_placeholder": "Comment le client peut-il vous contacter pour parler de votre candidature si nécessaire? Discord, ingame, email, comme vous le souhaitez."
     },
     "NOTIFICATIONS": {
       "Click_to_open": "Cliquez pour ouvrir la commission",
@@ -2429,10 +2425,10 @@
       "CANNOT_GATHER": "Je ne suis pas en mesure de collecter les objets requis. Le client non plus."
     },
     "IMPORT": {
-      "Title": "Commission import",
-      "Description": "Please check that these items are the ones you want to create a commission for. Note: items that cannot be traded are removed from the list below automatically.",
-      "Create_commission": "Create a commission",
-      "No_items": "No items"
+      "Title": "Import de commission",
+      "Description": "Veuillez vérifier que ces éléments sont ceux pour lesquels vous souhaitez créer une commission. Remarque : les éléments qui ne peuvent pas être échangés sont supprimés de la liste ci-dessous automatiquement.",
+      "Create_commission": "Créer une commission",
+      "No_items": "Aucun objet"
     }
   },
   "MAPPY": {
@@ -2455,13 +2451,14 @@
   },
   "LEVELING_EQUIPMENT": {
     "Title": "Equipement de leveling",
-    "Include_crafting": "Inclure la fabrication",
+    "Include_crafting": "Inclure le craft",
     "Include_trades": "Inclure les échanges",
     "Description": "Sélectionnez le job et le niveau que vous voulez équiper, définissez vos filtres et cliquez sur rechercher pour trouver l'équipement pour pex vos jobs",
     "Generate_list": "Générer une liste",
-    "Empty_slot": "Emplacement vide",
+    "Empty_slot": "Slot vide",
     "In_inventory": "Vous avez cet objet dans un de vos inventaires",
-    "Only_inventory": "Considérer uniquement les éléments dans l'inventaire"
+    "Only_inventory": "Considérer uniquement les objets possédés",
+    "Interactions_description": "Cliquez sur un niveau pour sélectionner toute la colonne, cliquez sur une zone d'élément pour la sélectionner, et cliquez sur l'icône de suppression pour désélectionner un élément sans le remplacer."
   },
   "RETAINERS": {
     "Title": "Servants",

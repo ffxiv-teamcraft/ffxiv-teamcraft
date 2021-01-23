@@ -18,12 +18,12 @@ export class ZoneBreakdown {
       if (getItemSource(row, DataType.GATHERED_BY, true).nodes !== undefined && getItemSource(row, DataType.GATHERED_BY, true).nodes.length !== 0
         && this.hasOneFilter(filterChain, LayoutRowFilter.IS_GATHERING, LayoutRowFilter.IS_GATHERED_BY_BTN, LayoutRowFilter.IS_GATHERED_BY_MIN, LayoutRowFilter.IS_GATHERED_BY_FSH)) {
         getItemSource<GatheredBy>(row, DataType.GATHERED_BY, true).nodes.forEach(node => {
-          const coords = node.coords || [0, 0];
+          const coords = {x: node.x || 0, y: node.y || 0};
           // In the case of fishing, we have to get the zone name differently, as the spot has zoneid for its own place name, not the map's name
           if (node.type === 4) {
-            this.addToBreakdown(mapIds.find(m => m.id === node.mapid)?.zone, node.mapid, row, hideZoneDuplicates, { x: coords[0], y: coords[1] });
+            this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords);
           } else {
-            this.addToBreakdown(node.zoneid, node.mapid, row, hideZoneDuplicates, { x: coords[0], y: coords[1] });
+            this.addToBreakdown(node.zoneId, node.map, row, hideZoneDuplicates, coords);
           }
         });
       } else if (getItemSource<Drop[]>(row, DataType.DROPS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {

@@ -102,6 +102,7 @@ export class ItemSourcesDisplayComponent {
     this.modal.create({
       nzTitle: this.i18n.getName(this.l12n.getItem(item.id), item as CustomItem),
       nzContent: component,
+      nzCloseOnNavigation: true,
       nzComponentParams: {
         item: item,
         details: getItemSource(item, dataType)

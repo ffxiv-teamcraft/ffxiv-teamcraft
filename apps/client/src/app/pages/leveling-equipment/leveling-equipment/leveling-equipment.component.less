@@ -1,0 +1,47 @@
+.job-icon {
+  font-size: 24px;
+  line-height: 24px;
+}
+
+th, td:not(:first-child) {
+  text-align: center;
+  padding: 5px;
+  width: 15%;
+}
+
+th {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: var(--primary-color-20);
+}
+
+td.selected {
+  border: 1px solid var(--primary-color);
+}
+
+.slot-item {
+  position: relative;
+
+  .remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.job-filter {
+  min-width: 200px;
+}
+
+.slot-icon {
+  position: relative;
+
+  .inventory-icon {
+    cursor: pointer;
+    position: absolute;
+    bottom: -7px;
+    right: -7px;
+  }
+}

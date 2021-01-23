@@ -1,21 +1,21 @@
 import { Pipe, PipeTransform, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { LazyDataService } from '../../core/data/lazy-data.service';
 import { Subject, combineLatest, Subscription } from 'rxjs';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import { distinctUntilChanged, map, tap } from 'rxjs/operators';
 
 @Pipe({
   name: 'lazyIcon',
-  pure: false,
+  pure: false
 })
 export class LazyIconPipe implements PipeTransform, OnDestroy {
   private readonly itemId$ = new Subject<number | undefined>();
   private readonly itemIcon$ = combineLatest([this.itemId$, this.lazyData.itemIcons$]).pipe(
     distinctUntilChanged(([idA], [idB]) => idA === idB),
     map(([itemId, itemIcons]) => {
-      if (!itemIcons[itemId] && itemId.toString().indexOf('draft') > -1) {
+      if (!itemIcons[itemId] && itemId?.toString().indexOf('draft') > -1) {
         return `https://garlandtools.org/files/icons/item/custom/draft.png`;
       } else if (!itemIcons[itemId]) {
-        return undefined;
+        return 'https://xivapi.com/img-misc/code-regular.svg';
       } else {
         return `https://xivapi.com${itemIcons[itemId]}`;
       }

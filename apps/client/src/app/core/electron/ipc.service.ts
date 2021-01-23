@@ -3,7 +3,7 @@ import { PlatformService } from '../tools/platform.service';
 import { IpcRenderer, IpcRendererEvent } from 'electron';
 import { Router } from '@angular/router';
 import { Vector2 } from '../tools/vector2';
-import { interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
+import { BehaviorSubject, interval, Observable, ReplaySubject, Subject, Subscription } from 'rxjs';
 import { bufferCount, debounce, debounceTime, distinctUntilChanged, first, map, shareReplay, switchMap } from 'rxjs/operators';
 import { ofPacketType } from '../rxjs/of-packet-type';
 import { Store } from '@ngrx/store';
@@ -13,6 +13,7 @@ import { NzModalService } from 'ng-zorro-antd/modal';
 import { TranslateService } from '@ngx-translate/core';
 import { RawsockAdminErrorPopupComponent } from '../../modules/ipc-popups/rawsock-admin-error-popup/rawsock-admin-error-popup.component';
 import { NpcapInstallPopupComponent } from '../../modules/ipc-popups/npcap-install-popup/npcap-install-popup.component';
+import { ofPacketSubType } from '../rxjs/of-packet-subtype';
 
 type EventCallback = (event: IpcRendererEvent, ...args: any[]) => void;
 
@@ -54,7 +55,7 @@ export class IpcService {
   }
 
   public get marketTaxRatePackets$(): Observable<pcap.MarketTaxRates> {
-    return this.packets$.pipe(ofPacketType('marketTaxRates'));
+    return this.packets$.pipe(ofPacketSubType('marketTaxRates'));
   }
 
   public get marketBoardSearchResult$(): Observable<pcap.MarketBoardSearchResult> {
@@ -127,7 +128,11 @@ export class IpcService {
 
   public packets$: Subject<pcap.BasePacket> = new Subject<pcap.BasePacket>();
 
-  public machinaToggle: boolean;
+  public get machinaToggle(): boolean {
+    return this.machinaToggle$.value;
+  }
+
+  public machinaToggle$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   public fishingState$: ReplaySubject<any> = new ReplaySubject<any>();
 
@@ -211,11 +216,8 @@ export class IpcService {
       const durationSeconds = (Date.now() - this.start) / 1000;
       console.log('Packets per second: ', Math.floor(this.totalPacketsHandled * 10 / durationSeconds) / 10);
     };
-    if (window.location.href.indexOf('?overlay') === -1) {
-      this.send('app-ready', true);
-    }
     this.on('toggle-machina:value', (event, value) => {
-      this.machinaToggle = value;
+      this.machinaToggle$.next(value);
     });
     this.send('toggle-machina:get');
     this.on('packet', (event, packet: pcap.BasePacket) => {
@@ -248,7 +250,7 @@ export class IpcService {
               break;
             case 'disable':
               this.send('toggle-machina', false);
-              this.machinaToggle = false;
+              this.machinaToggle$.next(false);
               break;
           }
         });
@@ -272,7 +274,7 @@ export class IpcService {
               break;
             case 'disable':
               this.send('toggle-machina', false);
-              this.machinaToggle = false;
+              this.machinaToggle$.next(false);
               break;
           }
         });

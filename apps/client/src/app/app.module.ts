@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { APP_INITIALIZER, NgModule, PLATFORM_ID } from '@angular/core';
+import { NgModule, PLATFORM_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
@@ -104,7 +104,6 @@ import { GearsetsModule } from './modules/gearsets/gearsets.module';
 import { ChangelogPopupModule } from './modules/changelog-popup/changelog-popup.module';
 import { PlayerMetricsModule } from './modules/player-metrics/player-metrics.module';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-import { CraftingReplayService } from './modules/crafting-replay/crafting-replay.service';
 import { CraftingReplayModule } from './modules/crafting-replay/crafting-replay.module';
 import { AntdSharedModule } from './core/antd-shared.module';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
@@ -113,7 +112,8 @@ import { NzAvatarModule } from 'ng-zorro-antd/avatar';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
-import { MessagingService } from './core/messaging/messaging.service';
+import { NavigationSidebarModule } from './modules/navigation-sidebar/navigation-sidebar.module';
+import { APP_INITIALIZERS } from './app-initializers';
 
 const icons: IconDefinition[] = [
   SettingOutline,
@@ -183,26 +183,7 @@ const nzConfig: NzConfig = {
     { provide: NZ_ICONS, useValue: icons },
     { provide: HTTP_INTERCEPTORS, useClass: UniversalInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApolloInterceptor, multi: true },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (craftingReplayService) => {
-        return () => {
-          craftingReplayService.init();
-        };
-      },
-      deps: [CraftingReplayService],
-      multi: true
-    },
-    {
-      provide: APP_INITIALIZER,
-      useFactory: (messagingService) => {
-        return () => {
-          messagingService.init();
-        };
-      },
-      deps: [MessagingService],
-      multi: true
-    }
+    ...APP_INITIALIZERS
   ],
   imports: [
     FlexLayoutModule,
@@ -304,7 +285,8 @@ const nzConfig: NzConfig = {
     NzLayoutModule,
     NzAvatarModule,
     NzSpinModule,
-    NzAlertModule
+    NzAlertModule,
+    NavigationSidebarModule
   ],
   bootstrap: [AppComponent]
 })

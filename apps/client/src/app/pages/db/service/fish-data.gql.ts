@@ -11,6 +11,12 @@ interface FishIdSpotIdVariable {
   spotId?: number;
 }
 
+interface FishIdSpotIdWeathersVariable {
+  fishId?: number;
+  spotId?: number;
+  $weatherIds?: number[];
+}
+
 interface FishSpot {
   spot: number;
   itemId: number;
@@ -48,7 +54,7 @@ interface FishEorzeaTimeResult {
 export class EorzeaTimesPerFishPerSpotQuery extends Query<FishEorzeaTimeResult, FishIdSpotIdVariable> {
   public document = gql`
     query EorzeaTimesPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      etimes: etimes_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      etimes: etimes_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
         etime
@@ -81,13 +87,13 @@ interface FishBaitResult {
 export class BaitsPerFishPerSpotQuery extends Query<FishBaitResult, FishIdSpotIdVariable> {
   public document = gql`
     query BaitsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gte: 1 } }) {
+      baits: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
         occurences
       }
-      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId }, occurences: { _gte: 1 } }) {
+      mooches: baits_per_fish_per_spot(where: { spot: { _eq: $spotId }, baitId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
         baitId
@@ -119,13 +125,13 @@ interface FishHooksetTugResult {
 export class HooksetTugsPerFishPerSpotQuery extends Query<FishHooksetTugResult, FishIdSpotIdVariable> {
   public document = gql`
     query HooksetTugsPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      hooksets: hooksets_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, hookset: { _neq: 0 } }) {
+      hooksets: hooksets_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, hookset: { _neq: 0 }, occurences: { _gt: 1 } }) {
         itemId
         spot
         hookset
         occurences
       }
-      tugs: tug_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      tugs: tug_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
         tug
@@ -177,7 +183,7 @@ export class BiteTimesPerFishPerSpotPerBaitQuery extends Query<FishBiteTimePerBa
   public document = gql`
     query BiteTimesPerFishPerSpotPerBaitQuery($fishId: Int, $spotId: Int, $baitId: Int) {
       biteTimes: bite_time_per_fish_per_spot_per_bait(
-        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1 }, occurences: { _gte: 1 } }
+        where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, baitId: { _eq: $baitId }, biteTime: { _gt: 1 }, occurences: { _gt: 1 } }
       ) {
         itemId
         spot
@@ -220,13 +226,13 @@ interface FishStatisticsResult {
 export class FishStatisticsPerFishPerSpotQuery extends Query<FishStatisticsResult, FishIdSpotIdVariable> {
   public document = gql`
     query FishStatisticsPerFishPerSpotQuery($fishId: Int!, $spotId: Int) {
-      snagging: snagging_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      snagging: snagging_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 } }) {
         itemId
         spot
         snagging
         occurences
       }
-      stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      stats: fishingresults_aggregate(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }}) {
         aggregate {
           min {
             size
@@ -261,16 +267,16 @@ interface FishWeatherResult {
 }
 
 @Injectable()
-export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdVariable> {
+export class WeathersPerFishPerSpotQuery extends Query<FishWeatherResult, FishIdSpotIdWeathersVariable> {
   public document = gql`
-    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int) {
-      weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+    query WeathersPerFishPerSpotQuery($fishId: Int, $spotId: Int, $weatherIds: [Int!]) {
+      weathers: weathers_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot
         weatherId
         occurences
       }
-      weatherTransitions: weather_transitions_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId } }) {
+      weatherTransitions: weather_transitions_per_fish_per_spot(where: { spot: { _eq: $spotId }, itemId: { _eq: $fishId }, occurences: { _gt: 1 }, weatherId: {_in: $weatherIds} }) {
         itemId
         spot
         weatherId

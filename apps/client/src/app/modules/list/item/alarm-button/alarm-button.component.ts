@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Alarm } from '../../../../core/alarms/alarm';
 import { AlarmDisplay } from '../../../../core/alarms/alarm-display';
 import { AlarmGroup } from '../../../../core/alarms/alarm-group';

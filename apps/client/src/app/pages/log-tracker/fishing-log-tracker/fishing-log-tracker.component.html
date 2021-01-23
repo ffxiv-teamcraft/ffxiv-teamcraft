@@ -69,13 +69,12 @@
                     </div>
                     <div [nzMd]="12" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center center" nz-col>
                       <ng-container *ngIf="item.data as nodeData; else baseData">
-                        <div *ngFor="let node of nodeData; let last = last" fxLayout="row"
+                        <div *ngFor="let entry of nodeData; let last = last" fxLayout="row"
                              fxLayoutAlign="flex-start center">
                           <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                              <div *ngIf="node.timed || node.weathers?.length > 0">
-                                <ng-container *ngIf="getAlarms(node) as alarms">
-                                  <ng-container *ngFor="let alarm of alarms">
+                              <div *ngIf="entry.gatheringNode.timed || entry.gatheringNode.weathers?.length > 0">
+                                  <ng-container *ngFor="let alarm of entry.alarms">
                                     <nz-button-group *ngIf="alarm | alarmDisplay | async as display">
                                       <button (click)="toggleAlarm(display)" [nzGhost]="!display.registered" [nzSize]="'small'"
                                               [nzType]="display.spawned?'primary':'default'"
@@ -85,6 +84,7 @@
                                         <i *ngIf="display.registered" nz-icon nzType="close-circle-o"></i>
                                         {{display.remainingTime | timer}}
                                         <img [src]="display.alarm.type | nodeTypeIcon" alt="" class="node-type-icon">
+                                        <img *ngIf="display.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
                                       </button>
                                       <ng-container *ngIf="alarmGroups$ | async as alarmGroups">
                                         <button *ngIf="!display.registered && alarmGroups.length > 0" [nzDropdownMenu]="menu" [nzPlacement]="'bottomCenter'"
@@ -103,24 +103,23 @@
                                       </ng-container>
                                     </nz-button-group>
                                   </ng-container>
-                                </ng-container>
                               </div>
-                              <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
+                              <img *ngIf="entry.gatheringNode.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/snagging.png">
                             </div>
-                            <app-fishing-bait *ngIf="node.baits !== undefined" [baits]="node.baits"
+                            <app-fishing-bait *ngIf="entry.gatheringNode.baits !== undefined" [baits]="entry.gatheringNode.baits"
                                               flex="row"></app-fishing-bait>
-                            <img *ngIf="node.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + node.gig) | translate" class="gig-icon"
-                                 nz-tooltip src="./assets/icons/gig/{{node.gig}}.png">
-                            <img *ngIf="node.hookset" [nzTooltipTitle]="(node.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n"
+                            <img *ngIf="entry.gatheringNode.gig" [nzTooltipTitle]="('GATHERING_LOCATIONS.GIG_HEAD.' + entry.gatheringNode.gig) | translate" class="gig-icon"
+                                 nz-tooltip src="./assets/icons/gig/{{entry.gatheringNode.gig}}.png">
+                            <img *ngIf="entry.gatheringNode.hookset" [nzTooltipTitle]="(entry.gatheringNode.hookset === 'Precision Hookset'? 4179 : 4103) | actionName | i18n"
                                  class="gig-icon"
                                  nz-tooltip
-                                 src="./assets/icons/hookset/{{node.hookset}}.png">
-                            <div *ngIf="node.predators && node.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
+                                 src="./assets/icons/hookset/{{entry.gatheringNode.hookset}}.png">
+                            <div *ngIf="entry.gatheringNode.predators && entry.gatheringNode.predators.length > 0" fxLayout="row" fxLayoutAlign="flex-start center"
                                  fxLayoutGap="10px">
                               <img [nzTooltipTitle]="'GATHERING_LOCATIONS.Predators' | translate" alt="" nz-tooltip
                                    src="./assets/icons/status/predators.png">
-                              <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
+                              <div *ngFor="let predator of entry.gatheringNode.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                                    fxLayoutGap="5px">
                                 <div>{{predator.amount}}x</div>
                                 <app-item-icon [appFishTooltip]="predator.id" [icon]="predator.icon" [itemId]="predator.id"
@@ -128,17 +127,17 @@
                               </div>
                             </div>
                             <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-                              <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-                                <div *ngFor="let weather of node.weathersFrom">
+                              <div *ngIf="entry.gatheringNode.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                                <div *ngFor="let weather of entry.gatheringNode.weathersFrom">
                                   <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                        nz-tooltip>
                                 </div>
                               </div>
-                              <div *ngIf="node.weathersFrom !== undefined">
+                              <div *ngIf="entry.gatheringNode.weathersFrom !== undefined">
                                 <i nz-icon nzType="right" theme="outline"></i>
                               </div>
-                              <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-                                <div *ngFor="let weather of node.weathers">
+                              <div *ngIf="entry.gatheringNode.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
+                                <div *ngFor="let weather of entry.gatheringNode.weathers">
                                   <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
                                        nz-tooltip>
                                 </div>

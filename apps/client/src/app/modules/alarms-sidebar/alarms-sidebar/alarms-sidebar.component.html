@@ -14,30 +14,33 @@
         <div class="item-icon">
           <app-item-icon [disableClick]="overlayMode" [icon]="row.alarm.itemId | lazyIcon"
                          [itemId]="row.alarm.itemId" [itemName]="row.alarm.itemId | itemName: row.alarm | i18n" [width]="32"></app-item-icon>
-          <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon}}">
+          <img alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
         </div>
         <div class="center-content">
           <span *ngIf="row.alarm.itemId; else customName" class="item-name">
-            <i *ngIf="row.groupName" [nzTooltipTitle]="row.groupName" class="folder-icon" nz-icon
+            <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
             {{row.alarm.itemId | itemName: row.alarm | i18n}}
             <i *ngIf="row.alarm.note" [nzTooltipTitle]="row.alarm.note" class="note-icon" nz-icon
                nz-tooltip nzType="edit"></i>
           </span>
           <ng-template #customName>
-            <i *ngIf="row.groupName" [nzTooltipTitle]="row.groupName" class="folder-icon" nz-icon
+            <i *ngIf="row.groupNames" [nzTooltipTitle]="row.groupNames" class="folder-icon" nz-icon
                nz-tooltip nzType="folder-open"></i>
             <span class="item-name">{{row.alarm.name}}</span>
           </ng-template>
           <div fxLayout="row wrap" fxLayoutGap="5px">
             <div class="timer">{{row.remainingTime | timer}}</div>
             <div
-              class="map">{{(row.alarm.mapId | closestAetheryte: row.alarm.coords | async)?.nameid |  placeName | i18n}}</div>
+              class="map">{{row.alarm.aetheryte?.nameid |  placeName | i18n}}</div>
             <div class="coords">X:{{row.alarm.coords.x}} - Y: {{row.alarm.coords.y}}</div>
           </div>
+          <div *ngIf="row.alarm.baits">
+            <app-fishing-bait [baits]="row.alarm.baits" flex="row wrap" hideNames="true" iconWidth="24"></app-fishing-bait>
+          </div>
         </div>
-        <div *ngIf="row.alarm.slot" class="slot">({{row.alarm.slot}})</div>
-        <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
+        <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
+             [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
         <div *ngIf="!overlayMode" class="map-button">
           <button (click)="openMap(row.alarm)" nz-button nzShape="circle" nzSize="small" nzType="primary">
             <i nz-icon nzType="environment-o"></i>

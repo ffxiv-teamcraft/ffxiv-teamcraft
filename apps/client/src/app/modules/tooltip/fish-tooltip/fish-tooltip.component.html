@@ -13,32 +13,10 @@
   </div>
   <div *ngIf="getFshData(fish) as nodes" class="details">
     <div *ngFor="let node of nodes; let last = last">
-      {{node.zoneid | placeName | i18n}}<br>
-      X: {{node.x}}, Y: {{node.y}}<br>
-      {{getNodeSpawns(node)}} <i *ngIf="node.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
-                                 nzType="clock-circle"></i>
-      <nz-alert nzType="warning" [nzMessage]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" *ngIf="node.ephemeral"></nz-alert>
-      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
-        <div *ngIf="node.weathersFrom !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-          <div *ngFor="let weather of node.weathersFrom">
-            <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
-                 nz-tooltip>
-          </div>
-        </div>
-        <div *ngIf="node.weathersFrom !== undefined">
-          <i nz-icon nzType="right" theme="outline"></i>
-        </div>
-        <div *ngIf="node.weathers !== undefined" fxLayout="row wrap" fxLayoutGap="5px">
-          <div *ngFor="let weather of node.weathers">
-            <img [nzTooltipTitle]="weather | weatherName | i18n" [src]="weather | weatherIcon" alt="{{weather | weatherName | i18n}}"
-                 nz-tooltip>
-          </div>
-        </div>
-      </div>
+      <app-node-details [node]="node" [showAlarmsIntegration]="false"></app-node-details>
       <div fxLayout="column" fxLayoutGap="5px">
         <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-          <img *ngIf="node.folklore !== undefined" [nzTooltipTitle]="node.folklore.id | itemName | i18n" alt=""
-               class="folklore" nz-tooltip src="{{node.folklore.icon | icon}}">
+          <img *ngIf="row.folklore !== undefined" [src]="row.folklore | lazyIcon" class="item-icon small-icon">
           <img *ngIf="node.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
@@ -47,11 +25,11 @@
                fxLayoutGap="5px">
             <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
               <div class="icon-container">
-                <img [src]="bait.icon | icon" class="item-icon small-icon">
+                <img [src]="bait | lazyIcon" class="item-icon small-icon">
                 <img *ngIf="index > 0" class="hq-overlay small-icon"
                      src="https://www.garlandtools.org/db/images/HQOverlay.png">
               </div>
-              <div>{{bait.id | itemName | i18n}}</div>
+              <div>{{bait | itemName | i18n}}</div>
             </div>
             <i *ngIf="!last" nz-icon nzType="caret-right" theme="outline"></i>
           </div>
@@ -63,7 +41,7 @@
           <div *ngFor="let predator of node.predators" fxLayout="row" fxLayoutAlign="flex-start center"
                fxLayoutGap="5px">
             <div>{{predator.amount}}x</div>
-            <img class="small-icon" src="{{predator.icon | icon}}"/>
+            <img class="small-icon" src="{{predator.id | lazyIcon}}"/>
             <div>{{predator.id | itemName | i18n}}</div>
           </div>
         </div>

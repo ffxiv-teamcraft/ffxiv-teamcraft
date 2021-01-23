@@ -220,6 +220,9 @@ export class List extends DataWithPermissions {
   }
 
   public requiredAsHQ(item: ListRow): number {
+    if (!item) {
+      return 0;
+    }
     const recipesNeedingItem = this.finalItems
       .filter(i => i.requires !== undefined)
       .filter(i => {

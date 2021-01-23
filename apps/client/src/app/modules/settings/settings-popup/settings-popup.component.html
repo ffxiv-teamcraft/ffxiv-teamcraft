@@ -22,6 +22,17 @@
       <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Theme' | translate"></nz-divider>
       </div>
+      <nz-form-item *ngIf="sidebarItems$ | async as sidebarItems">
+        <nz-form-label [nzSpan]="5">{{'SETTINGS.Favorite_features' | translate}}</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzValidateStatus="validating" [nzValidatingTip]="'SETTINGS.Favorite_features_explain' | translate">
+          <nz-select [(ngModel)]="sidebarFavorites"
+                     (ngModelChange)="settings.sidebarFavorites = sidebarFavorites"
+                     nzShowSearch nzMode="multiple">
+            <nz-option *ngFor="let item of sidebarItems" [nzLabel]="item.name | translate"
+                       [nzValue]="item.link"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
       <ng-container *ngIf="user$ | async as user">
         <nz-form-item>
           <nz-form-label [nzSpan]="5">{{'SETTINGS.Theme' | translate}}</nz-form-label>
@@ -218,6 +229,23 @@
         </nz-form-control>
       </nz-form-item>
       <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Alarms' | translate"></nz-divider>
+      </div>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.alarmPanelsCollapsedByDefault"
+                 nz-checkbox>{{'SETTINGS.Alarm_panels_collapsed_by_default' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item class="empty-label">
+        <nz-form-label [nzSpan]="5"></nz-form-label>
+        <nz-form-control [nzSpan]="12">
+          <label [(ngModel)]="settings.alarmGroupsBeforeNoGroup"
+                 nz-checkbox>{{'SETTINGS.Alarm_groups_before_no_group' | translate}}</label>
+        </nz-form-control>
+      </nz-form-item>
+      <div>
         <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Other' | translate"></nz-divider>
       </div>
       <nz-form-item class="empty-label">
@@ -291,8 +319,8 @@
                      nzShowSearch
                      style="width: 100%">
             <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)"
-                       [nzValue]="aetheryte.nameid"></nz-option>
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+                       [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
@@ -307,8 +335,8 @@
             nzMode="multiple"
             style="width: 100%">
             <nz-option *ngFor="let aetheryte of allAetherytes"
-                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte.nameid | placeName | i18n)"
-                       [nzValue]="aetheryte.nameid"></nz-option>
+                       [nzLabel]="(aetheryte.id | aetheryteName | i18n) || (aetheryte?.nameid | placeName | i18n)"
+                       [nzValue]="aetheryte?.nameid"></nz-option>
           </nz-select>
         </nz-form-control>
       </nz-form-item>
@@ -463,6 +491,11 @@
             </label>
           </div>
           <div>
+            <label [(ngModel)]="settings.clearInventoryOnStartup" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Clear_inventory_on_startup' | translate}}
+            </label>
+          </div>
+          <div>
             <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_autofill_by_default' | translate}}
             </label>
@@ -485,6 +518,16 @@
           <div>
             <label [(ngModel)]="settings.pcapLogEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_auto_log_check' | translate}}
+            </label>
+          </div>
+          <div>
+            <label [(ngModel)]="settings.followIngameCharacterSwitches" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Switch_tc_when_switch_ingame_character' | translate}}
+            </label>
+          </div>
+          <div>
+            <label [(ngModel)]="settings.showOthercharacterInventoriesInList" [nzDisabled]="!machinaToggle" nz-checkbox>
+              {{'SETTINGS.Show_other_characters_inventories_in_list' | translate}}
             </label>
           </div>
           <div>
@@ -512,6 +555,9 @@
           </nz-form-item>
         </div>
       </nz-card>
+      <button (click)="settings.ignoredContentIds = []" nz-button>
+        {{'SETTINGS.Reset_ignored_characters' | translate}}
+      </button>
       <button (click)="openDesktopConsole()" nz-button>
         {{'SETTINGS.Show_devtools' | translate}}
       </button>

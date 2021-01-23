@@ -6,6 +6,8 @@ export enum InventoryActionTypes {
   InventoryLoaded = '[Inventory] Inventory Loaded',
   UpdateInventory = '[Inventory] Update Inventory',
   ResetInventory = '[Inventory] Reset Inventory',
+  SetContentId = '[Inventory] Set Content ID',
+  ApplyContentId = '[Inventory] Apply Content ID',
 }
 
 export class LoadInventory implements Action {
@@ -30,8 +32,24 @@ export class ResetInventory implements Action {
   readonly type = InventoryActionTypes.ResetInventory;
 }
 
+export class SetContentId implements Action {
+  readonly type = InventoryActionTypes.SetContentId;
+
+  constructor(public readonly contentId: string) {
+  }
+}
+
+export class ApplyContentId implements Action {
+  readonly type = InventoryActionTypes.ApplyContentId;
+
+  constructor(public readonly contentId: string) {
+  }
+}
+
 export type InventoryAction =
   | LoadInventory
   | InventoryLoaded
   | UpdateInventory
-  | ResetInventory;
+  | ResetInventory
+  | SetContentId
+  | ApplyContentId;

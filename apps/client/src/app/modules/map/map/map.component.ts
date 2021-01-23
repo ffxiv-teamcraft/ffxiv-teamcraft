@@ -28,8 +28,19 @@ export class MapComponent implements OnInit {
 
   private _mapId: number;
 
+  public unknownPosition = false;
+
+  _markers: MapMarker[] = [];
+
   @Input()
-  markers: MapMarker[] = [];
+  set markers(markers: MapMarker[]) {
+    this._markers = markers;
+    this.unknownPosition = markers.every(marker => !marker.x && !marker.y);
+  }
+
+  get markers(): MapMarker[] {
+    return this._markers;
+  }
 
   @Input()
   hideDbButton = false;

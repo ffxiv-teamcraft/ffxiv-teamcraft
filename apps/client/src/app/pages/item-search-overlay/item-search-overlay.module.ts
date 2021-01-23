@@ -19,6 +19,7 @@ import { ItemIconModule } from '../../modules/item-icon/item-icon.module';
 import { ListModule } from '../../modules/list/list.module';
 import { MarketboardModule } from '../../modules/marketboard/marketboard.module';
 import { FullpageMessageModule } from '../../modules/fullpage-message/fullpage-message.module';
+import { InventoryModule } from '../../modules/inventory/inventory.module';
 
 const routes: Routes = [
   {
@@ -50,7 +51,8 @@ const routes: Routes = [
     ListModule,
     NzDividerModule,
     MarketboardModule,
-    FullpageMessageModule
+    FullpageMessageModule,
+    InventoryModule
   ]
 })
 export class ItemSearchOverlayModule {

@@ -15,6 +15,7 @@ import { CoreModule } from '../../core/core.module';
 import { FishTooltipComponent } from './fish-tooltip/fish-tooltip.component';
 import { FishTooltipDirective } from './fish-tooltip/fish-tooltip.directive';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NodeDetailsModule } from '../node-details/node-details.module';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { AntdSharedModule } from '../../core/antd-shared.module';
     AntdSharedModule,
     TranslateModule,
     PipesModule,
-    CoreModule
+    CoreModule,
+    NodeDetailsModule
   ],
   declarations: [XivapiActionTooltipComponent, XivapiItemTooltipComponent, FishTooltipComponent, XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],
   exports: [XivapiItemTooltipDirective, XivapiActionTooltipDirective, FishTooltipDirective, UiTextPipe],

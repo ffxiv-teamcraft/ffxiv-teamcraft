@@ -24,12 +24,6 @@ export class CustomAlarmPopupComponent implements OnInit {
     max: 23
   };
 
-  /** Slot are limited from 0 to 8 **/
-  public SLOT_VALIDATOR = {
-    min: 0,
-    max: 8
-  };
-
   /** Duration is only limited to hours (0 to 23) **/
   public DURATION_VALIDATOR = {
     min: 0,
@@ -99,9 +93,6 @@ export class CustomAlarmPopupComponent implements OnInit {
       alarm.spawns = data.spawnsTwice ? [data.spawn, (data.spawn + 12) % 24] : [data.spawn];
       alarm.duration = data.duration;
     }
-    if (data.slot !== undefined) {
-      alarm.slot = data.slot;
-    }
     if (data.type !== undefined) {
       alarm.type = data.type;
     }
@@ -131,7 +122,6 @@ export class CustomAlarmPopupComponent implements OnInit {
       spawn: [this.spawn, [Validators.min(this.SPAWN_VALIDATOR.min), Validators.max(this.SPAWN_VALIDATOR.max)]],
       spawnsTwice: [this.spawnsTwice],
       duration: [this.duration, [Validators.min(this.DURATION_VALIDATOR.min), Validators.max(this.DURATION_VALIDATOR.max)]],
-      slot: [this.slot, [Validators.min(this.SLOT_VALIDATOR.min), Validators.max(this.SLOT_VALIDATOR.max)]],
       type: [this.type, [Validators.min(0), Validators.max(4)]],
       mapId: [this.mapId, Validators.required],
       x: [this.x, [Validators.min(this.X_VALIDATOR.min), Validators.max(this.X_VALIDATOR.max)]],

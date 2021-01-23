@@ -40,11 +40,11 @@ export abstract class InventoryOptimizer {
     return source.slot === target.slot && source.containerId === target.containerId;
   }
 
-  public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: ListRow[]): { [p: string]: number | string } | null {
+  public getOptimization(item: InventoryItem, inventory: UserInventory, extracts: Record<number, ListRow>): { [p: string]: number | string } | null {
     if (InventoryOptimizer.IGNORED_CONTAINERS.indexOf(item.containerId) > -1) {
       return null;
     }
-    const data = extracts.find(i => i.id === item.itemId);
+    const data = extracts[item.itemId];
     return this._getOptimization(item, inventory, data);
   }
 

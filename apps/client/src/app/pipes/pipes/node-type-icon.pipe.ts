@@ -10,6 +10,7 @@ export class NodeTypeIconPipe implements PipeTransform {
     './assets/icons/nodes/060433.png',
     './assets/icons/nodes/060432.png',
     './assets/icons/nodes/060465.png',
+    './assets/icons/nodes/060445.png'
   ];
 
   public static timed_icons = [
@@ -18,9 +19,10 @@ export class NodeTypeIconPipe implements PipeTransform {
     './assets/icons/nodes/060462.png',
     './assets/icons/nodes/060461.png',
     './assets/icons/nodes/060466.png',
+    './assets/icons/nodes/060445.png'
   ];
 
   transform(type: number, timed?: boolean): string {
-    return timed ? NodeTypeIconPipe.timed_icons[type] : NodeTypeIconPipe.icons[type];
+    return timed ? NodeTypeIconPipe.timed_icons[Math.abs(type)] : NodeTypeIconPipe.icons[Math.abs(type)];
   }
 }

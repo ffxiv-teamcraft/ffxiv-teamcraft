@@ -12,7 +12,7 @@ export class TeamcraftUser extends DataModel {
   currentFcId: string;
   lodestoneIds: LodestoneIdEntry[] = [];
 
-  customCharacters: Partial<Character>[] = [];
+  customCharacters: Partial<Character & { contentId: string }>[] = [];
 
   favorites: Favorites = {
     lists: [],
@@ -30,6 +30,9 @@ export class TeamcraftUser extends DataModel {
   moderator = false;
 
   patron = false;
+
+  // For shared benefits or one-time donations benefits.
+  patreonBenefitsUntil: firebase.firestore.Timestamp;
 
   sekrit?: boolean;
 

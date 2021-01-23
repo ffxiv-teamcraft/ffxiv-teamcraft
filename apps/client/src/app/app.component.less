@@ -4,20 +4,19 @@
   height: 100%;
 }
 
-.menu-categories {
-  overflow-y: auto;
-}
-
-.sidebar-scroll-box {
-  height: calc(~"100vh - 64px");
-}
-
 ::ng-deep .no-panel-borders {
   .ant-collapse,
   .ant-collapse > .ant-collapse-item,
   .ant-collapse-content {
     border: 0;
   }
+}
+
+.nav-buttons {
+  position: absolute;
+  top: 32px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .svg-icon {
@@ -27,8 +26,13 @@
 }
 
 .download-spinner {
-  height: 64px;
+  height: @layout-header-height;
   width: 32px;
+}
+
+.venatus-container {
+  box-sizing: border-box;
+  width: 728px;
 }
 
 .notifications-list {
@@ -43,15 +47,6 @@
     font-size: 11px;
   }
 }
-
-.tips-container {
-  height: 64px;
-
-  .tips {
-    line-height: 12px;
-  }
-}
-
 
 .wiki-link {
   margin: 0 10px;
@@ -131,7 +126,7 @@
 }
 
 .content-container {
-  margin-top: 64px;
+  margin-top: @layout-header-height;
   height: 100%;
 
   &.overlay {
@@ -141,7 +136,7 @@
 
 .right-menu {
   float: right;
-  line-height: 64px;
+  line-height: @layout-header-height;
 }
 
 .right-sider {

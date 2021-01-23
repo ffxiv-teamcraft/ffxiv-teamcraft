@@ -13,6 +13,7 @@ import { LocalizedDataService } from '../../../core/data/localized-data.service'
 import { I18nToolsService } from '../../../core/tools/i18n-tools.service';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { ContainerType } from '../../../model/user/inventory/container-type';
+import { ItemSearchResult } from '../../../model/user/inventory/item-search-result';
 
 @Component({
   selector: 'app-inventory',
@@ -38,10 +39,9 @@ export class InventoryComponent {
   public computingPrices: { [index: string]: boolean } = {};
 
   private inventory$: Observable<InventoryDisplay[]> = this.inventoryService.inventory$.pipe(
-    map(inventory => inventory.clone()),
     map(inventory => {
       return inventory.toArray()
-        .filter((item: InventoryItem) => {
+        .filter((item: ItemSearchResult) => {
           // Happens if you add an item that you never had in your inventory before (in an empty slot)
           if (item.retainerName && item.containerId < 10000) {
             return false;
@@ -50,10 +50,10 @@ export class InventoryComponent {
           if (!inventory.trackItemsOnSale) {
             matches = matches && item.containerId !== ContainerType.RetainerMarket;
           }
-          return matches && UserInventory.DISPLAYED_CONTAINERS.indexOf(item.containerId) > -1;
+          return matches && UserInventory.DISPLAYED_CONTAINERS.includes(item.containerId);
         })
-        .reduce((bags: InventoryDisplay[], item: InventoryItem) => {
-          const containerName = item.retainerName || this.inventoryService.getContainerName(item.containerId);
+        .reduce((bags: InventoryDisplay[], item: ItemSearchResult) => {
+          const containerName = this.inventoryService.getContainerDisplayName(item);
           let bag = bags.find(i => i.containerName === containerName);
           if (bag === undefined) {
             bags.push({
@@ -163,25 +163,6 @@ export class InventoryComponent {
       return [...content, { id: item.itemId, amount: item.quantity }];
     }, []));
   };
-
-  public deleteInventory(display: InventoryDisplay): void {
-    this.inventoryService.inventory$.pipe(
-      first(),
-      map(inventory => {
-        display.containerIds.forEach(containerId => {
-          const isRetainer = containerId >= 10000 && containerId < 20000;
-          if (isRetainer) {
-            delete inventory.items[`${display.containerName}:${containerId}`];
-          } else {
-            delete inventory.items[containerId];
-          }
-        });
-        return inventory;
-      })
-    ).subscribe(inventory => {
-      this.inventoryService.updateInventory(inventory, true);
-    });
-  }
 
   public getInventoryJson(display: InventoryDisplay[]): string {
     return JSON.stringify([].concat.apply([], display.map(i => i.items)));

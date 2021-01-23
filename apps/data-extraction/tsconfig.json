@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "ES2019",
+    "importHelpers": true,
+    "module": "CommonJS",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "baseUrl": ".",
+    "paths": {},
+    "rootDir": ".",
+    "outDir": "./build"
+  },
+  "files": [
+    "src/main.ts"
+  ]
+}

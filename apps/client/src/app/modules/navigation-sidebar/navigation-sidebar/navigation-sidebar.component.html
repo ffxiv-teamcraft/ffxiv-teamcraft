@@ -1,0 +1,73 @@
+<ul [nzInlineCollapsed]="collapsed" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
+
+  <ng-template #icon let-entry>
+    <ng-container [ngSwitch]="entry.type">
+      <i *ngSwitchCase="SidebarIconType.ANTD" nz-icon [nzType]="entry.content"></i>
+      <i *ngSwitchCase="SidebarIconType.ANTD_ICONFONT" nz-icon [nzIconfont]="entry.content"></i>
+      <i *ngSwitchCase="SidebarIconType.COMPANION_SVG" class="companion-svg anticon" [innerHTML]="entry.content"></i>
+      <i *ngSwitchCase="SidebarIconType.CUSTOM_FONT" class="teamcraft-svg anticon" [innerHTML]="entry.content"></i>
+      <span *ngSwitchCase="SidebarIconType.CUSTOM" [innerHTML]="entry.content"></span>
+    </ng-container>
+  </ng-template>
+
+  <ng-template #badge let-entry>
+    <ng-container [ngSwitch]="entry.type">
+      <nz-badge *ngSwitchCase="SidebarBadgeType.COUNT"
+                [nzCount]="entry.content"
+                [nzStyle]="{transform: 'translate(15%, -25%)'}"></nz-badge>
+      <nz-badge *ngSwitchCase="SidebarBadgeType.DOT" nzDot nzStandalone
+                [nzShowDot]="entry.content"
+                [nzStyle]="{transform: 'translate(0, -125%)'}"></nz-badge>
+    </ng-container>
+  </ng-template>
+
+  <li *ngFor="let category of content$ | async; trackBy: trackByName"
+      [nzOpen]="settings.compactSidebar?false:state[category.collapsedKey]"
+      (nzOpenChange)="onOpenChange(category.collapsedKey, $event)"
+      nz-submenu>
+                <span title>
+                  <ng-container *ngTemplateOutlet="icon;context:{$implicit: category.icon}"></ng-container>
+                  <span>{{category.name | translate}}</span>
+                </span>
+    <ng-container *ngFor="let entry of category.children;trackBy: trackByName">
+      <a *ngIf="!entry.hidden" (click)="(entry.preventDefault ? $event.preventDefault() : null);onNavLinkClick()"
+         [routerLink]="entry.link" [routerLinkActiveOptions]="{exact: true}"
+         class="menu-link" nz-menu-item
+         routerLinkActive="ant-menu-item-selected">
+                  <span>
+                    <ng-container *ngTemplateOutlet="icon;context:{$implicit: entry.icon}"></ng-container>
+                    <span>{{entry.name | translate}}</span>
+                    <ng-container *ngIf="entry.badge">
+                      <ng-container *ngTemplateOutlet="badge;context:{$implicit: entry.badge}"></ng-container>
+                    </ng-container>
+                  </span>
+      </a>
+    </ng-container>
+  </li>
+
+  <li [nzOpen]="settings.compactSidebar?false:state.other"
+      (nzOpenChange)="onOpenChange('other', $event)" nz-submenu>
+    <span title>
+      <i nz-icon nzType="info-circle"></i>
+      <span>{{'SIDEBAR.Other' | translate}}</span>
+    </span>
+    <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
+       nz-tooltip target="_blank">
+      <i nz-icon nzType="question-circle"></i>
+      <span class="nav-text">{{'WIKI.Title' | translate}}</span>
+    </a>
+    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
+       routerLinkActive="ant-menu-item-selected">
+          <span>
+              <i nz-icon nzType="info-circle-o"></i>
+              <span class="nav-text">{{'ABOUT.title' | translate}}</span>
+          </span>
+    </a>
+    <a (click)="onNavLinkClick();showPatchNotes.emit()" class="menu-link" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span>
+            <i nz-icon nzType="diff" nzTheme="outline"></i>
+            <span class="nav-text">{{'Patch_notes' | translate:{ version: version } }}</span>
+        </span>
+    </a>
+  </li>
+</ul>

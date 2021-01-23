@@ -9,9 +9,6 @@ import { combineLatest, concat, interval, Observable, of } from 'rxjs';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
 import { ProgressPopupService } from '../../../modules/progress-popup/progress-popup.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { folklores } from '../../../core/data/sources/folklores';
-import { reductions } from '../../../core/data/sources/reductions';
-import { BellNodesService } from '../../../core/data/bell-nodes.service';
 import { LocalizedDataService } from '../../../core/data/localized-data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
@@ -22,7 +19,9 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { WorldNavigationMapComponent } from '../../../modules/map/world-navigation-map/world-navigation-map.component';
 import { List } from '../../../modules/list/model/list';
 import { Memoized } from '../../../core/decorators/memoized';
-import { NzTabComponent } from 'ng-zorro-antd/tabs';
+import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
+import { GatheringNode } from '../../../core/data/model/gathering-node';
+import { Alarm } from '../../../core/alarms/alarm';
 
 @Component({
   selector: 'app-log-tracker',
@@ -37,12 +36,10 @@ export class LogTrackerComponent extends TrackerComponent {
   public dohTabs: any[];
   public dolTabs: any[];
 
-  private dolPageNameCache: { [index: number]: string } = {};
-
   public userCompletion: { [index: number]: boolean } = {};
   public userGatheringCompletion: { [index: number]: boolean } = {};
 
-  public nodeDataCache: any[][] = [];
+  public nodeDataCache: { gatheringNode: GatheringNode, alarms: Alarm[] }[][][] = [];
 
   private _dohSelectedPage = 0;
   public get dohSelectedPage(): number {
@@ -81,7 +78,7 @@ export class LogTrackerComponent extends TrackerComponent {
   constructor(private authFacade: AuthFacade, private gt: GarlandToolsService, private translate: TranslateService,
               private listsFacade: ListsFacade, private listManager: ListManagerService, private listPicker: ListPickerService,
               private progressService: ProgressPopupService, private router: Router, private route: ActivatedRoute,
-              private bell: BellNodesService, private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade,
+              private l12n: LocalizedDataService, protected alarmsFacade: AlarmsFacade, private gatheringNodesService: GatheringNodesService,
               private lazyData: LazyDataService, private dialog: NzModalService, private notificationService: NzNotificationService) {
     super(alarmsFacade);
     this.dohTabs = [...this.lazyData.data.craftingLogPages].map(page => {
@@ -258,113 +255,21 @@ export class LogTrackerComponent extends TrackerComponent {
     return /\d{1,2}-\d{1,2}/.test(division.name.en) || division.name.en.startsWith('Housing');
   }
 
-  public getNodeData(itemId: number, tab: number): any {
+  public getNodeData(itemId: number, tab: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
     if (this.nodeDataCache[itemId] === undefined) {
       this.nodeDataCache[itemId] = [];
     }
     if (this.nodeDataCache[itemId][tab] === undefined) {
-      this.nodeDataCache[itemId][tab] = this._getNodeData(itemId, tab);
+      this.nodeDataCache[itemId][tab] = this.gatheringNodesService.getItemNodes(itemId, true)
+        .slice(0, 3)
+        .map(gatheringNode => {
+          return {
+            gatheringNode: gatheringNode,
+            alarms: gatheringNode.limited ? this.alarmsFacade.generateAlarms(gatheringNode) : []
+          };
+        });
     }
     return this.nodeDataCache[itemId][tab];
-  }
-
-  private _getNodeData(itemId: number, pageId: number): any {
-    const tab = Math.floor(pageId / 40);
-    const availableNodeIds = Object.keys(this.lazyData.data.nodes)
-      .filter(key => {
-        return this.lazyData.data.nodes[key].items.indexOf(itemId) > -1;
-      });
-    const nodesFromPositions = availableNodeIds
-      .map(key => {
-        return { ...this.lazyData.data.nodes[key], nodeId: key };
-      })
-      .filter(node => {
-        return tab > 10 || node.type === tab;
-      })
-      .map(node => {
-        const bellNode = this.bell.getNode(+node.nodeId);
-        node.timed = bellNode !== undefined;
-        node.itemId = itemId;
-        node.icon = this.lazyData.data.itemIcons[itemId];
-        if (node.timed) {
-          const slotMatch = bellNode.items.find(nodeItem => nodeItem.id === itemId);
-          node.spawnTimes = bellNode.time;
-          node.uptime = bellNode.uptime;
-          if (slotMatch !== undefined) {
-            node.slot = slotMatch.slot;
-          }
-        }
-        node.hidden = node.items && !node.items.some(i => i === node.itemId);
-        node.mapId = node.map;
-        const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(itemId) > -1);
-        if (folklore !== undefined) {
-          node.folklore = {
-            id: +folklore,
-            icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
-          };
-        }
-        return node;
-      });
-    const nodesFromGarlandBell = this.bell.getNodesByItemId(itemId)
-      .filter(node => {
-        return tab > 10 || node.type === tab;
-      })
-      .map(node => {
-        const nodePosition = this.lazyData.data.nodes[node.id];
-        const result: any = {
-          nodeId: node.id,
-          zoneid: this.l12n.getAreaIdByENName(node.zone),
-          mapId: nodePosition ? nodePosition.map : this.l12n.getAreaIdByENName(node.zone),
-          x: node.coords[0],
-          y: node.coords[1],
-          level: node.lvl,
-          type: node.type,
-          itemId: node.itemId,
-          icon: node.icon,
-          spawnTimes: node.time,
-          uptime: node.uptime,
-          slot: node.slot,
-          timed: true,
-          reduction: reductions[itemId] && reductions[itemId].indexOf(node.itemId) > -1,
-          ephemeral: node.name === 'Ephemeral',
-          items: node.items
-        };
-        const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(itemId) > -1);
-        if (folklore !== undefined) {
-          result.folklore = {
-            id: +folklore,
-            icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
-          };
-        }
-        return result;
-      });
-    const results = [...nodesFromPositions, ...nodesFromGarlandBell];
-    const finalNodes = [];
-    results
-      .sort((a, b) => {
-        if (a.ephemeral && !b.ephemeral) {
-          return -1;
-        } else if (b.ephemeral && !a.ephemeral) {
-          return 1;
-        }
-        return 0;
-      })
-      .forEach(row => {
-        if (!finalNodes.some(node => node.nodeId)) {
-          finalNodes.push(row);
-        }
-      });
-    return finalNodes.slice(0, 3);
-  }
-
-  private _getDolPageName(page: any): string {
-    if (page.id === 9999) {
-      return this.translate.instant('LOG_TRACKER.Folklore');
-    }
-    if (page.id === 47) {
-      return `36-40`;
-    }
-    return `${Math.floor(page.startLevel / 5) * 5 + 1} - ${Math.floor((page.startLevel + 4) / 5) * 5}`;
   }
 
   public showOptimizedMap(index: number): void {
@@ -375,13 +280,13 @@ export class LogTrackerComponent extends TrackerComponent {
             const nodes = this.getNodeData(item.itemId, page.id);
             return !this.userGatheringCompletion[item.itemId]
               && nodes.length > 0
-              && nodes.some(n => !n.timed);
+              && nodes.some(n => !n.gatheringNode.limited);
           })
           .map(item => {
-            const node = this.getNodeData(item.itemId, page.id)[0];
+            const node = this.getNodeData(item.itemId, page.id)[0].gatheringNode;
             return <NavigationObjective>{
-              mapId: node.mapId,
-              zoneId: node.zoneid,
+              mapId: node.map,
+              zoneId: node.zoneId,
               iconid: null,
               item_amount: 1,
               name: this.l12n.getItem(item.itemId),

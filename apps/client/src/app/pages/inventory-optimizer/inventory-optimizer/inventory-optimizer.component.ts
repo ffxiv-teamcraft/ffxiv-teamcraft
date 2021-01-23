@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { InventoryFacade } from '../../../modules/inventory/+state/inventory.facade';
 import { INVENTORY_OPTIMIZER, InventoryOptimizer } from '../optimizations/inventory-optimizer';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
-import { delay, filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
+import { filter, map, startWith, switchMap, switchMapTo, tap } from 'rxjs/operators';
 import { InventoryOptimization } from '../inventory-optimization';
 import { InventoryItem } from '../../../model/user/inventory/inventory-item';
 import * as _ from 'lodash';
@@ -26,8 +26,6 @@ import { CanBeBought } from '../optimizations/can-be-bought';
 })
 export class InventoryOptimizerComponent {
 
-  public resultsReloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
-
   public reloader$: BehaviorSubject<void> = new BehaviorSubject<void>(null);
 
   public optimizations$: Observable<InventoryOptimization[]> = this.lazyData.extracts$.pipe(
@@ -39,7 +37,7 @@ export class InventoryOptimizerComponent {
           }),
           startWith(0)
         ),
-        this.resultsReloader$
+        this.reloader$
       ]).pipe(
         switchMapTo(this.inventoryFacade.inventory$.pipe(
           map(inventory => {
@@ -48,7 +46,8 @@ export class InventoryOptimizerComponent {
               .map(optimizer => {
                 const entries = inventory.toArray()
                   .filter(item => {
-                    return this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
+                    return item.contentId === inventory.contentId
+                      && this.settings.ignoredInventories.indexOf(this.inventoryFacade.getContainerDisplayName(item)) === -1
                       && [
                         ContainerType.RetainerMarket,
                         ContainerType.RetainerEquippedGear
@@ -79,44 +78,38 @@ export class InventoryOptimizerComponent {
     })
   );
 
-
   public display$: Observable<InventoryOptimization[]> = this.optimizations$.pipe(
-    switchMap(optimizations => {
-      return this.reloader$.pipe(
-        delay(20),
-        map(() => {
-          return JSON.parse(JSON.stringify(optimizations)).map(opt => {
-            const total: number[] = [];
-            opt.entries = opt.entries.map(entry => {
-              entry.ignored = this.ignoreArray.some(ignored => {
-                return ignored.containerName === entry.containerName && ignored.id === opt.type;
-              });
-              entry.items = entry.items.map(item => {
-                item.ignored = this.ignoreArray.some(ignored => {
-                  return ignored.itemId === item.item.itemId && ignored.id === opt.type;
-                });
-                return item;
-              }).filter(item => {
-                return this.showIgnored || !item.ignored;
-              });
-              if (this.showIgnored) {
-                entry.totalLength = entry.items.length;
-              } else {
-                entry.totalLength = entry.items.filter(i => !i.ignored).length;
-              }
-              if (this.showIgnored || !entry.ignored) {
-                total.push(...entry.items.map(i => i.item.itemId));
-              }
-              return entry;
-            });
-            opt.hidden = this.hiddenArray.some(hidden => {
-              return hidden.optimizerId === opt.type;
-            });
-            opt.totalLength = uniq(total).length;
-            return opt;
+    map((optimizations) => {
+      return JSON.parse(JSON.stringify(optimizations)).map(opt => {
+        const total: number[] = [];
+        opt.entries = opt.entries.map(entry => {
+          entry.ignored = this.ignoreArray.some(ignored => {
+            return ignored.containerName === entry.containerName && ignored.id === opt.type;
           });
-        })
-      );
+          entry.items = entry.items.map(item => {
+            item.ignored = this.ignoreArray.some(ignored => {
+              return ignored.itemId === item.item.itemId && ignored.id === opt.type;
+            });
+            return item;
+          }).filter(item => {
+            return this.showIgnored || !item.ignored;
+          });
+          if (this.showIgnored) {
+            entry.totalLength = entry.items.length;
+          } else {
+            entry.totalLength = entry.items.filter(i => !i.ignored).length;
+          }
+          if (this.showIgnored || !entry.ignored) {
+            total.push(...entry.items.map(i => i.item.itemId));
+          }
+          return entry;
+        });
+        opt.hidden = this.hiddenArray.some(hidden => {
+          return hidden.optimizerId === opt.type;
+        });
+        opt.totalLength = uniq(total).length;
+        return opt;
+      });
     })
   );
 
@@ -140,7 +133,7 @@ export class InventoryOptimizerComponent {
     if (size > 0) {
       localStorage.setItem(HasTooFew.THRESHOLD_KEY, size.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 
@@ -152,7 +145,7 @@ export class InventoryOptimizerComponent {
     if (price > 0) {
       localStorage.setItem(CanBeBought.MAXIMUM_PRICE_KEY, price.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 
@@ -169,6 +162,10 @@ export class InventoryOptimizerComponent {
     return this.l12n.getExpansions();
   }
 
+  public resetInventory(): void {
+    this.inventoryFacade.resetInventory();
+  }
+
   public get selectedExpansion(): number {
     const selection = localStorage.getItem(ConsolidateStacks.SELECTION_KEY);
     return selection ? +selection : null;
@@ -182,7 +179,7 @@ export class InventoryOptimizerComponent {
     }
 
     this.loading = true;
-    this.resultsReloader$.next(null);
+    this.reloader$.next();
   }
 
   public get minRecipeIlvl(): number {
@@ -193,7 +190,7 @@ export class InventoryOptimizerComponent {
     if (size > 0) {
       localStorage.setItem(UnwantedMaterials.RECIPE_ILVL_KEY, size.toString());
       this.loading = true;
-      this.resultsReloader$.next(null);
+      this.reloader$.next();
     }
   }
 

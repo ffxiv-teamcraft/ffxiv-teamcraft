@@ -3,23 +3,11 @@
     <label [(ngModel)]="item.usePrice" (ngModelChange)="save.emit()" nz-checkbox></label>
     <app-item-icon [icon]="item.icon" [itemId]="item.id" [itemName]="item.id | itemName| i18n"
                    [width]="24"></app-item-icon>
-    <ng-container *ngIf="item.id | itemName | i18n as name">
-    <span *ngIf="settings.preferredCopyType === 'classic'"
-          [clipboard]="name"
-          [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
-          [nzTooltipTitle]="'Copy_item_name_to_clipboard' | translate"
+    <span [itemNameCopy]="item.id"
           class="item-name"
           nz-tooltip>
-        {{name}}
+        {{item.id | itemName | i18n}}
       </span>
-      <span *ngIf="settings.preferredCopyType === 'isearch'" [nzTooltipTitle]="'Copy_isearch' | translate"
-            [clipboardSuccessMessage]="'Item_name_copied' | translate:{ itemname: name }"
-            clipboard="/isearch &quot;{{name}}&quot;"
-            class="item-name"
-            nz-tooltip>
-        {{name}}
-      </span>
-    </ng-container>
     <i *ngIf="_craftCost !== undefined"
        class="material-icons"
        nz-tooltip
@@ -40,10 +28,12 @@
     </i>
     <app-marketboard-icon [itemId]="item.id" [showHistory]="true"></app-marketboard-icon>
   </div>
-  <div nz-col nzMd="10" nzXs="24">
-
+  <div nz-col nzMd="7" nzXs="24" fxLayout="row" fxLayoutAlign="flex-end center">
+    <div *ngIf="price.fromMB && price.updated">
+      {{price.updated | date:'medium':null:translate.currentLang}}
+    </div>
   </div>
-  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="8" nzXs="24">
+  <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="11" nzXs="24">
     <label [(ngModel)]="customPrice" *ngIf="preCraft" (ngModelChange)="saveCustomPrice()" nz-checkbox></label>
     <div class="amount-group" fxLayout="row" fxLayoutGap="5px">
       <div fxLayout="row">

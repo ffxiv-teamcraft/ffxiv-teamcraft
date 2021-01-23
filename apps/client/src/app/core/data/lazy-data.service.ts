@@ -12,7 +12,6 @@ import { I18nName } from '../../model/common/i18n-name';
 import { ListRow } from '../../modules/list/model/list-row';
 import { Region } from '../../modules/settings/region.enum';
 import { SettingsService } from '../../modules/settings/settings.service';
-import { Memoized } from '../decorators/memoized';
 import { PlatformService } from '../tools/platform.service';
 import { Language } from './language';
 import { LazyData } from './lazy-data';
@@ -59,7 +58,7 @@ export class LazyDataService {
   public datacenters: Record<string, string[]> = {};
   public patches: XivapiPatch[] = [];
 
-  public extracts: ListRow[];
+  protected extracts: Record<number, ListRow> = {};
   public extracts$: ReplaySubject<ListRow[]> = new ReplaySubject<ListRow[]>();
 
   public data: LazyData;
@@ -173,6 +172,12 @@ export class LazyDataService {
       filter((recipes) => recipes !== undefined),
       map((recipes) => {
         return recipes.find((r) => r.id.toString() === id.toString()) || this.data.recipes.find((r) => r.id.toString() === id.toString());
+      }),
+      map(recipe => {
+        if (!recipe.conditionsFlag) {
+          recipe.conditionsFlag = 15;
+        }
+        return recipe;
       })
     );
   }
@@ -196,9 +201,8 @@ export class LazyDataService {
     }
   }
 
-  @Memoized()
   public getExtract(id: number): ListRow {
-    return this.extracts.find((ex) => ex.id === id);
+    return this.extracts[id];
   }
 
   public get allItems(): any {

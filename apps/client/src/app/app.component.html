@@ -29,24 +29,31 @@
         <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
           <nz-spin [nzSimple]="true"></nz-spin>
         </div>
-        <div class="tips-container" fxFlex="1 1 auto" fxLayout="column" fxLayoutAlign="center center">
-          <ng-container *ngIf="platformService.isDesktop()">
-            <nz-space nzSize="middle">
+        <div *ngIf="platformService.isDesktop()" class="nav-buttons">
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
+            <div>
               <button (click)="back()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-left"></i>
               </button>
+            </div>
+            <div>
               <button [clipboardSuccessMessage]="'Path_copied_to_clipboard' | translate" clipboard="https://ffxivteamcraft.com{{getPathname()}}" nz-button
                       (mouseup)="$event.which === 2 ? openInBrowser('https://ffxivteamcraft.com' + getPathname()) : null"
                       nzShape="circle">
                 <i nz-icon nzTheme="outline" nzType="share-alt"></i>
               </button>
+            </div>
+            <div>
               <button (click)="forward()" nz-button nzShape="circle">
                 <i nz-icon nzType="arrow-right"></i>
               </button>
-            </nz-space>
-          </ng-container>
-          <div class="tips" fxHide.lt-lg fxShow>
-            <i>{{'TIPS.Title' | translate}}: {{('TIPS.' + (randomTip$ | async)) | translate}}</i>
+            </div>
+          </div>
+        </div>
+        <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
+          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">
+<!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
+<!--            TODO ad banner here? -->
           </div>
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
@@ -190,334 +197,81 @@
     <nz-layout [class.overlay]="overlay" class="content-container">
       <nz-sider (nzCollapsedChange)="settings.compactSidebar = $event"
                 *ngIf="!overlay"
-                [(nzCollapsed)]="collapsedSidebar"
+                [(nzCollapsed)]="settings.compactSidebar"
                 [nzCollapsedWidth]="80 | ifMobile: 0"
                 class="sider"
                 nzCollapsible>
         <div class="flex-container" fxLayout="column" fxLayoutAlign="space-between">
           <div fxLayout="column" fxFlex="1 1 auto" class="sidebar-scroll-box">
             <div class="menu-categories" fxFlex="1 1 auto">
-              <ul [nzInlineCollapsed]="collapsedSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
-                <li [(nzOpen)]="sidebarState.general" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
-                <span title>
-                  <i nz-icon nzType="home"></i>
-                  <span>{{'SIDEBAR.General' | translate}}</span>
-                </span>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/search"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="search"></i>
-                      <span class="nav-text">{{'ITEMS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/lists"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon
-                         nzType="profile"></i>
-                      <span class="nav-text">{{'Lists' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="$event.preventDefault();onNavLinkClick()" class="menu-link" nz-menu-item
-                     routerLink="/simulator" routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i class="companion-svg anticon">
-                        &#xF239;
-                      </i>
-                      <span class="nav-text">{{'SIMULATOR.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/rotations"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="build"></i>
-                      <span class="nav-text">{{'SIMULATOR.Rotations' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/gearsets"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span fxLayout="row">
-                      <span class="companion-svg svg-icon">&#x0F202;</span>
-                      <span class="nav-text">{{'GEARSETS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a nz-menu-item (click)="onNavLinkClick()" class="menu-link" routerLink="/inventory"
-                     routerLinkActive="ant-menu-item-selected" *ngIf="ipc.machinaToggle">
-                    <i nz-icon nzType="appstore"></i>
-                    <span class="nav-text">{{'INVENTORY.Title' | translate}}</span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/crafting-replays"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="video-camera" nzTheme="outline"></i>
-                      <span class="nav-text">{{'CRAFTING_REPLAYS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/metrics"
-                     routerLinkActive="ant-menu-item-selected" *ngIf="platformService.isDesktop()">
-                  <span>
-                      <i nz-icon nzType="stock"></i>
-                      <span class="nav-text">{{'METRICS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                </li>
-
-                <li [(nzOpen)]="sidebarState.sharing" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
-                <span title>
-                  <i nz-icon nzType="share-alt"></i>
-                  <span>{{'SIDEBAR.Sharing' | translate}}</span>
-                </span>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/community-lists"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="solution"></i>
-                      <span class="nav-text">{{'Public_lists' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/community-rotations"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <img class="man-attacked-by-tetris-block anticon" src="./assets/icons/svg/thing.svg"/>
-                      <span class="nav-text">{{'SIMULATOR.COMMUNITY_ROTATIONS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                </li>
-
-                <ng-container *ngIf="loggedIn$ | async">
-                  <li *ngIf="character$ | async as character" [(nzOpen)]="sidebarState.commissions"
-                      (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null"
-                      nz-submenu>
-                  <span title>
-                    <i nz-icon nzType="shop"></i>
-                    <span>{{'SIDEBAR.Commissions' | translate}}</span>
-                    <nz-badge [nzCount]="commissionNotificationsCount$ | async" [nzStyle]="{transform: 'translate(15%, -25%)'}"></nz-badge>
-                  </span>
-                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/board/{{character.Datacenter}}"
-                       routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="project" nzTheme="outline"></i>
-                      <span class="nav-text">{{'SIDEBAR.Commission_board' | translate}}</span>
-                  </span>
-                    </a>
-                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions" [routerLinkActiveOptions]="{exact: true}"
-                       routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i class="companion-svg anticon">
-                        &#xE703;
-                      </i>
-                      <span class="nav-text">{{'SIDEBAR.My_commissions' | translate}}</span>
-                      <nz-badge nzDot nzStandalone [nzShowDot]="(commissionNotificationsCount$ | async) > 0"
-                                [nzStyle]="{transform: 'translate(0, -125%)'}"></nz-badge>
-                  </span>
-                    </a>
-                    <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/commissions/archives"
-                       routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="container" nzTheme="outline"></i>
-                      <span class="nav-text">{{'SIDEBAR.Archived_commissions' | translate}}</span>
-                  </span>
-                    </a>
-                  </li>
-                </ng-container>
-
-
-                <li [(nzOpen)]="sidebarState.gathering" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
-                <span title>
-                  <i class="companion-svg anticon">
-                    &#xF121;
-                  </i>
-                  <span>{{'SIDEBAR.Gathering' | translate}}</span>
-                </span>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/alarms"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="bell"></i>
-                      <span class="nav-text">{{'ALARMS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/gathering-location"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon
-                         nzType="environment-o"></i>
-                      <span class="nav-text">{{'GATHERING_LOCATIONS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                </li>
-
-                <li [(nzOpen)]="sidebarState.helpers" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
-                <span title>
-                  <i nz-icon nzType="appstore"></i>
-                  <span>{{'SIDEBAR.Helpers' | translate}}</span>
-                </span>
-                  <a (click)="onNavLinkClick()" *ngIf="platformService.isDesktop()" class="menu-link" nz-menu-item routerLink="/inventory-optimizer"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="container"></i>
-                      <span class="nav-text">{{'INVENTORY_OPTIMIZER.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/levequests"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="book"></i>
-                      <span class="nav-text">{{'LEVEQUESTS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/log-tracker"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nzIconfont="icon-book" nz-icon></i>
-                      <span class="nav-text">{{'LOG_TRACKER.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/gc-supply"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="file-done"></i>
-                      <span class="nav-text">{{'GC_SUPPLY.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/desynth"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nzIconfont="icon-vectorcombine" nz-icon></i>
-                      <span class="nav-text">{{'DESYNTH.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/recipe-finder"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzTheme="outline" nzType="experiment"></i>
-                      <span class="nav-text">{{'RECIPE_FINDER.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/currency-spending"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzTheme="outline" nzType="shopping"></i>
-                      <span class="nav-text">{{'CURRENCY_SPENDING.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/food-picker"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="shopping-cart" nzTheme="outline"></i>
-                      <span class="nav-text">{{'FOOD_PICKER.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/custom-items"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nzIconfont="icon-custom" nz-icon></i>
-                      <span class="nav-text">{{'CUSTOM_ITEMS.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/macro-translator"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="message"></i>
-                      <span class="nav-text">{{'MACRO_TRANSLATION.Title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/reset-timers"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="hourglass"></i>
-                      <span class="nav-text">{{'ALARMS.REALTIME.Reset_timers' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/collectables"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="table" nzTheme="outline"></i>
-                      <span class="nav-text">{{'COLLECTABLES.Title' | translate}}</span>
-                  </span>
-                  </a>
-                </li>
-
-                <li [(nzOpen)]="sidebarState.other" (nzOpenChange)="!settings.compactSidebar?settings.sidebarState = sidebarState:null" nz-submenu>
-                <span title>
-                  <i nz-icon nzType="info-circle"></i>
-                  <span>{{'SIDEBAR.Other' | translate}}</span>
-                </span>
-                  <a (click)="onNavLinkClick()" nz-menu-item class="menu-link" href="https://wiki.ffxivteamcraft.com"
-                     nz-tooltip target="_blank">
-                    <i nz-icon nzType="question-circle"></i>
-                    <span class="nav-text">{{'WIKI.Title' | translate}}</span>
-                  </a>
-                  <a (click)="onNavLinkClick()" class="menu-link" nz-menu-item routerLink="/about"
-                     routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="info-circle-o"></i>
-                      <span class="nav-text">{{'ABOUT.title' | translate}}</span>
-                  </span>
-                  </a>
-                  <a (click)="onNavLinkClick();showPatchNotes()" class="menu-link" nz-menu-item routerLinkActive="ant-menu-item-selected">
-                  <span>
-                      <i nz-icon nzType="diff" nzTheme="outline"></i>
-                      <span class="nav-text">{{'Patch_notes' | translate:{ version: version } }}</span>
-                  </span>
-                  </a>
-                </li>
+              <ul [nzInlineCollapsed]="settings.compactSidebar" [nzMode]="'inline'" [nzTheme]="'dark'" nz-menu>
+                <app-navigation-sidebar
+                  [desktop]="platformService.isDesktop()"
+                  [collapsed]="settings.compactSidebar"
+                  [mappyEnabled]="mappy.available"
+                  [version]="version"
+                  (showPatchNotes)="showPatchNotes()">
+                </app-navigation-sidebar>
               </ul>
             </div>
 
-            <div [fxLayout]="collapsedSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons" *ngIf="desktop">
-              <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate" (click)="openAlarmsOverlay()">
+            <div [fxLayout]="settings.compactSidebar?'column':'row'" fxLayoutAlign="center center" fxLayoutGap="5px" class="overlay-buttons"
+                 *ngIf="platformService.isDesktop()">
+              <button nz-button nzShape="circle" nz-tooltip [nzTooltipTitle]="'ALARMS.Open_alarms_overlay' | translate"
+                      (click)="openOverlay('/alarms-overlay')">
                 <i nz-icon nzType="bell"></i>
               </button>
               <button nz-button nzShape="circle"
                       *ngIf="ipc.machinaToggle"
                       nz-tooltip [nzTooltipTitle]="'DB.FISH.OVERLAY.Open' | translate"
-                      (click)="openFishingOverlay()" class="button-with-img">
+                      (click)="openOverlay('/fishing-reporter-overlay')" class="button-with-img">
                 <img src="./assets/icons/classjob/fisher.png" alt="">
               </button>
               <button nz-button nzShape="circle"
                       *ngIf="ipc.machinaToggle && mappy.available"
                       nz-tooltip nzTooltipTitle="Open mappy overlay"
-                      (click)="openMappyOverlay()">
+                      (click)="openOverlay('/mappy-overlay')">
                 <i nz-icon nzType="scan" nzTheme="outline"></i>
               </button>
               <button nz-button nzShape="circle"
                       nz-tooltip [nzTooltipTitle]="'LIST_DETAILS.OVERLAY.Open' | translate"
-                      (click)="openListPanelOverlay()">
+                      (click)="openOverlay('/list-panel-overlay')">
                 <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
               </button>
               <button nz-button nzShape="circle"
                       nz-tooltip [nzTooltipTitle]="'ITEM_SEARCH_OVERLAY.Open' | translate"
-                      (click)="openItemSearchOverlay()">
+                      (click)="openOverlay('/item-search-overlay')">
                 <i nz-icon nzType="search" nzTheme="outline"></i>
               </button>
             </div>
 
             <div fxLayout="row" class="bottom-buttons" fxLayoutAlign="center center"
                  fxLayoutGap="5px">
-              <a *ngIf="!collapsedSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
+              <a *ngIf="!settings.compactSidebar" class="social-fab twitter" href="https://twitter.com/FFXIVTeamcraft" nz-button
                  nz-tooltip
                  nzShape="circle"
                  nzTooltipTitle="{{'Find_us_on_twitter' | translate}}" target="_blank">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a *ngIf="!collapsedSidebar" class="social-fab discord" href="https://discord.gg/r6qxt6P" nz-button nz-tooltip
+              <a *ngIf="!settings.compactSidebar" class="social-fab discord" href="https://discord.gg/r6qxt6P" nz-button nz-tooltip
                  nzShape="circle"
                  nzTooltipTitle="{{'Join_discord_server' | translate}}"
                  target="_blank">
                 <i class="fab fa-discord"></i>
               </a>
-              <a *ngIf="!desktop && !collapsedSidebar" href="https://ffxivteamcraft.com/desktop" nz-button nz-tooltip
+              <a *ngIf="!desktop && !settings.compactSidebar" href="https://ffxivteamcraft.com/desktop" nz-button nz-tooltip
                  nzShape="circle"
                  nzTooltipTitle="{{'Download_desktop_app' | translate}}"
                  target="_blank">
                 <i nz-icon nzType="desktop"></i>
               </a>
-              <a *ngIf="!collapsedSidebar" class="social-fab github" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-button
+              <a *ngIf="!settings.compactSidebar" class="social-fab github" href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft" nz-button
                  nz-tooltip
                  nzShape="circle"
                  nzTooltipTitle="{{'See_code_github' | translate}}"
                  target="_blank"><i class="fab fa-github"></i>
               </a>
-              <a *ngIf="!collapsedSidebar" class="social-fab patreon" href="https://www.patreon.com/ffxivteamcraft" nz-button
+              <a *ngIf="!settings.compactSidebar" class="social-fab patreon" href="https://www.patreon.com/ffxivteamcraft" nz-button
                  nz-tooltip
                  nzShape="circle"
                  nzTooltipTitle="{{'Support_on_patreon' | translate}}"
@@ -525,11 +279,8 @@
                 <i class="fab fa-patreon"></i>
               </a>
             </div>
-
           </div>
-
         </div>
-
       </nz-sider>
       <nz-content>
         <div [class.overlay]="overlay" class="page-container">
@@ -606,6 +357,14 @@
                       class="new-version-alert"
                       nzBanner
                       nzShowIcon
+                      nzType="warning">
+            </nz-alert>
+            <nz-alert *ngIf="unknownContentId$ | async" [nzDescription]="'PACKET_CAPTURE.Please_zone_or_sort' | translate"
+                      [nzMessage]="'PACKET_CAPTURE.Unknown_character' | translate"
+                      class="new-version-alert"
+                      nzBanner
+                      nzShowIcon
+                      nzCloseable
                       nzType="warning">
             </nz-alert>
             <ng-container *ngIf="user$ | async as user">

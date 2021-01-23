@@ -159,10 +159,12 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
         map(([, inventory]) => {
           return inventory.getItem(item.id)
             .filter(entry => {
-              return this.settings.ignoredInventories.indexOf(this.inventoryService.getContainerDisplayName(entry)) === -1;
+              return !this.settings.ignoredInventories.includes(this.inventoryService.getContainerTranslateKey(entry))
+                && (this.settings.showOthercharacterInventoriesInList || entry.isCurrentCharacter);
             })
             .map(entry => {
               return {
+                item: entry,
                 isRetainer: entry.retainerName !== undefined,
                 containerName: this.inventoryService.getContainerDisplayName(entry),
                 amount: entry.quantity,
@@ -560,10 +562,9 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
     this.listPicker.addToList(item);
   }
 
-
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    alarm.groupId = group.$key;
     this.alarmsFacade.addAlarms(alarm);
+    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
   }
 
   private handleAlarms(item: ListRow): void {

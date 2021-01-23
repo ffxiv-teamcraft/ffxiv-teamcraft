@@ -8,9 +8,10 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class UiTextPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) {}
 
-  transform(value?: string): SafeHtml | null {
+  transform(value?: string | SafeHtml): SafeHtml | null {
     if (!value) return null;
     const next = value
+      ?.toString()
       ?.replace?.(/<73>(.*?)<\/73>/gi, '')
       ?.replace?.(/\n\n/g, '\n')
       ?.replace?.('<SoftHyphen/>', '\u00AD')

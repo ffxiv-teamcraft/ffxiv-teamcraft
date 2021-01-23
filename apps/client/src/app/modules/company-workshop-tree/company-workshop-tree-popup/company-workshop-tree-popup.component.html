@@ -1,0 +1,10 @@
+<ul *ngIf="display$ | async as display">
+  <li *ngFor="let phase of display">
+    <b>{{'WORKSHOP_TREE.Phase' | translate:{phase: phase.index} }}</b>
+    <ul>
+      <li *ngFor="let ingredient of phase.ingredients">
+        {{ingredient.id | itemName | i18n}} x{{ingredient.amount}}
+      </li>
+    </ul>
+  </li>
+</ul>

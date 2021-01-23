@@ -10,20 +10,29 @@
                 nzType="primary">
           <i nz-icon nzType="folder-add"></i>
         </button>
-        <button (click)="showSettings()" tutorialStep="TUTORIAL.ALARMS.Settings" tutorialStepIndex="0" nz-button nz-tooltip nzShape="circle"
-                nzTooltipTitle="{{'Timer_options' | translate}}"
+        <button (click)="regenerateAlarms()" nz-button nz-tooltip nzShape="circle" nzTooltipTitle="{{'ALARMS.Regenerate' | translate}}"
                 nzType="primary">
+          <i nz-icon nzType="cloud-sync" nzTheme="outline"></i>
+        </button>
+        <button (click)="showSettings()" tutorialStep="TUTORIAL.ALARMS.Settings" tutorialStepIndex="0" nz-button nz-tooltip nzShape="circle"
+                nzTooltipTitle="{{'Timer_options' | translate}}">
           <i nz-icon nzType="setting"></i>
         </button>
         <button (click)="newCustomAlarm()" tutorialStep="TUTORIAL.ALARMS.Custom" tutorialStepIndex="1" nz-button nz-tooltip nzShape="circle"
-                nzTooltipTitle="{{'ALARMS.CUSTOM.Title' | translate}}"
-                nzType="primary">
+                nzTooltipTitle="{{'ALARMS.CUSTOM.Title' | translate}}">
           <i nz-icon nzType="form"></i>
         </button>
         <button (click)="toggleCollapse()" nz-button nz-tooltip nzShape="circle"
-                nzTooltipTitle="{{'ALARMS.Toggle_collapse' | translate}}"
-                nzType="primary">
+                nzTooltipTitle="{{'ALARMS.Toggle_collapse' | translate}}">
           <i nz-icon nzType="sliders"></i>
+        </button>
+        <button (nzOnConfirm)="deleteAllAlarms()"
+                nz-button
+                nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"
+                nz-tooltip nzShape="circle"
+                nzTooltipTitle="{{'ALARMS.Delete_all' | translate}}"
+                nzDanger>
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
         </button>
       </div>
       <div class="spacer"></div>
@@ -45,10 +54,8 @@
       </div>
     </div>
 
-    <div class="alarms">
-      <div (onDrop)="setAlarmGroup($event.dragData, undefined)" class="alarms-container" dropScope="alarm" droppable
-           fxLayout="row wrap"
-           fxLayoutGap="5px">
+    <div class="alarms" [fxLayout]="settings.alarmGroupsBeforeNoGroup ? 'column-reverse' : 'column'">
+      <div class="alarms-container" fxLayout="row wrap" fxLayoutGap="5px">
         <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: display.noGroup}"></ng-container>
       </div>
       <div (onDrop)="setGroupIndex(0, $event.dragData.group, display.groupedAlarms)" class="panel-drop-zone" dropScope="group"
@@ -64,7 +71,7 @@
                  droppable
                  fxLayout="row wrap"
                  fxLayoutGap="5px">
-              <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: group.alarms}"></ng-container>
+              <ng-container *ngTemplateOutlet="alarmsDisplay;context:{$implicit: group.alarms, group: group.group}"></ng-container>
             </div>
           </nz-collapse-panel>
           <ng-template #panelTitle>
@@ -143,15 +150,18 @@
   <app-page-loader></app-page-loader>
 </ng-template>
 
-<ng-template #alarmsDisplay let-alarms>
-  <ng-container *ngIf="!settings.compactAlarms; else compactAlarms">
+<ng-template #alarmsDisplay let-alarms let-group="group">
+  <ng-template #compactAlarmsTpl>
+    <ng-container *ngTemplateOutlet="compactAlarms;context:{$implicit: group}"></ng-container>
+  </ng-template>
+  <ng-container *ngIf="!settings.compactAlarms; else compactAlarmsTpl">
     <ng-container *ngFor="let row of alarms; trackBy: trackByAlarm">
       <div [dragData]="row.alarm" class="alarm-card-container" dragScope="alarm" draggable fxFlex="1 1 20%"
            fxFlex.lt-md="1 1 auto">
         <nz-card [class.disabled]="!row.alarm.enabled"
                  [class.played]="row.played  && !row.spawned"
                  [class.spawned]="row.spawned"
-                 [nzActions]="[delete, copyMacro]"
+                 [nzActions]="group ? [deleteAlarmTpl, removeFromGroup, copyMacro] : [deleteAlarmTpl, copyMacro]"
                  [nzCover]="row.alarm.mapId > 0 ? map : null"
                  class="alarm-card"
                  fxLayout="column">
@@ -181,30 +191,33 @@
               </ng-template>
               <span *ngIf="row.alarm.slot" fxFlex="0 0 auto">({{row.alarm.slot}})</span>
             </div>
-            <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon}}">
+            <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type" src="{{row.alarm.type | nodeTypeIcon: true}}">
           </div>
         </ng-template>
         <ng-template #cardDescription>
-          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
-             nzType="clock-circle"></i>
-          <nz-alert nzType="warning" [nzMessage]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" *ngIf="row.alarm.ephemeral"></nz-alert>
+          <div fxLayout="row" fxLayoutGap="5px" *ngIf="row.alarm.ephemeral">
+            <div>
+              <i [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+                 nzType="clock-circle"></i>
+            </div>
+            <div>
+              <i nz-icon *ngIf="row.alarm.ephemeral" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" nzType="warning"
+                 nzTheme="outline"></i>
+            </div>
+          </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <app-map-position *ngIf="row.alarm.mapId > 0"
                               [mapId]="row.alarm.mapId"
-                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y}"
+                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
                               [zoneId]="row.alarm.zoneId"></app-map-position>
-            <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
-                 class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
+            <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
             <img *ngIf="row.alarm.fishEyes" [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/fish_eyes.png">
             <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                  src="./assets/icons/status/snagging.png">
           </div>
           <div>
-            {{(row.alarm.mapId | closestAetheryte: {
-            x: row.alarm.coords.x,
-            y: row.alarm.coords.y
-          } | async)?.nameid | placeName | i18n}}
+            {{row.alarm.aetheryte?.nameid | placeName | i18n}}
           </div>
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <div>{{row.remainingTime | timer}}</div>
@@ -277,11 +290,16 @@
         </ng-template>
         <ng-template #map>
           <app-map *ngIf="row.alarm.mapId > 0" [mapId]="row.alarm.mapId"
-                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y}]"></app-map>
+                   [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}]"></app-map>
         </ng-template>
-        <ng-template #delete>
+        <ng-template #deleteAlarmTpl>
           <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-icon nz-popconfirm
              nzType="delete"></i>
+        </ng-template>
+        <ng-template #removeFromGroup>
+          <span [nzTooltipTitle]="'ALARMS.Remove_from_group' | translate" nz-tooltip>
+              <i nz-icon nzType="close" (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate"></i>
+          </span>
         </ng-template>
         <ng-template #copyMacro>
           <i [clipboard]="getIngameAlarmMacro"
@@ -295,7 +313,7 @@
     </ng-container>
   </ng-container>
 
-  <ng-template #compactAlarms>
+  <ng-template #compactAlarms let-group>
     <div class="compact-alarms" fxLayout="column">
       <div *ngFor="let row of alarms; let last = last; trackBy: trackByAlarm" [class.disabled]="!row.alarm.enabled"
            [class.played]="row.played  && !row.spawned" [class.spawned]="row.spawned"
@@ -305,13 +323,13 @@
            fxLayout="row"
            fxLayoutAlign="flex-start center"
            nz-row>
-        <div nz-col nzMd="3">
+        <div nz-col nzMd="4">
           <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
             <nz-switch (click)="$event.stopPropagation();"
                        [(ngModel)]="row.alarm.enabled"
                        (ngModelChange)="alarmsFacade.updateAlarm(row.alarm)"
                        nzSize="small"></nz-switch>
-            <app-item-icon *ngIf="row.alarm.itemId; else customAlarmIcon" [icon]="row.alarm.itemId | lazyIcon"
+            <app-item-icon *ngIf="row.alarm.itemId; else customAlarmIcon"
                            [itemId]="row.alarm.itemId" [width]="32"></app-item-icon>
             <ng-template #customAlarmIcon>
               <nz-avatar [nzText]="row.alarm.name?row.alarm.name[0]:'?'"></nz-avatar>
@@ -324,20 +342,25 @@
             </div>
           </div>
         </div>
-        <div nz-col nzMd="1"><span *ngIf="row.alarm.slot">({{row.alarm.slot}})</span></div>
-        <div nz-col nzMd="1">
+        <div nz-col nzMd="1" fxLayout="row wrap">
           <img *ngIf="row.alarm.type !== undefined" alt="" class="node-type-compact"
-               src="{{row.alarm.type | nodeTypeIcon}}">
-          <i *ngIf="row.alarm.ephemeral" [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
-             nzType="clock-circle"></i>
-          <i nz-icon *ngIf="row.alarm.ephemeral" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" nzType="warning"
-             nzTheme="outline"></i>
+               src="{{row.alarm.type | nodeTypeIcon: true}}">
+          <div fxLayout="row" fxLayoutGap="5px" *ngIf="row.alarm.ephemeral">
+            <div>
+              <i [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_node' | translate" nz-icon nz-tooltip
+                 nzType="clock-circle"></i>
+            </div>
+            <div>
+              <i nz-icon *ngIf="row.alarm.ephemeral" nz-tooltip [nzTooltipTitle]="'GATHERING_LOCATIONS.Ephemeral_warning' | translate" nzType="warning"
+                 nzTheme="outline"></i>
+            </div>
+          </div>
           <img *ngIf="row.alarm.fishEyes" [src]="762 | statusIcon | xivapiIcon" alt="" class="fish-eyes" nz-tooltip
                [nzTooltipTitle]="'GATHERING_LOCATIONS.Fish_eyes' | translate">
-          <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon" nz-tooltip
+          <img *ngIf="row.alarm.hookset" [nzTooltipTitle]="(row.alarm.hookset === 'precision'? 4179 : 4103) | actionName | i18n" class="compact-gig-icon"
+               nz-tooltip
                src="./assets/icons/hookset/{{row.alarm.hookset}}.png">
-          <img *ngIf="row.alarm.folklore !== undefined" [nzTooltipTitle]="row.alarm.folklore.id | itemName | i18n" alt=""
-               class="folklore" nz-tooltip src="{{row.alarm.folklore.icon | icon}}">
+          <app-item-icon *ngIf="row.alarm.folklore !== undefined" [itemId]="row.alarm.folklore" [width]="32"></app-item-icon>
           <img *ngIf="row.alarm.snagging" [nzTooltipTitle]="'GATHERING_LOCATIONS.Snagging' | translate" alt="" nz-tooltip
                src="./assets/icons/status/snagging.png">
         </div>
@@ -396,27 +419,17 @@
         <div nz-col nzMd="5">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div>
-              {{(row.alarm.mapId | closestAetheryte: {
-              x: row.alarm.coords.x,
-              y: row.alarm.coords.y
-            } | async)?.nameid | placeName | i18n}}
+              {{row.alarm.aetheryte?.nameid | placeName | i18n}}
             </div>
 
             <app-map-position [mapId]="row.alarm.mapId"
-                              [marker]="row.alarm.coords"
+                              [marker]="{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}"
                               [showZoneName]="true"
                               [zoneId]="row.alarm.zoneId"
                               flex="column"></app-map-position>
           </div>
         </div>
         <div fxLayout="row" fxLayoutAlign="flex-end center" fxLayoutGap="5px" nz-col nzMd="1">
-          <span [nzTooltipTitle]="'Delete' | translate" nz-tooltip>
-            <button (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
-                    nz-popconfirm nzShape="circle"
-                    nzType="danger">
-              <i nz-icon nzType="delete"></i>
-            </button>
-          </span>
           <button [clipboard]="getIngameAlarmMacro"
                   [clipboardFnArgs]="[row]"
                   [clipboardSuccessMessage]="'ALARMS.Macro_copied' | translate"
@@ -425,6 +438,20 @@
                   nzTooltipTitle="{{'SIMULATOR.Generate_ingame_macro' | translate}}">
             <i nz-icon nzType="copy"></i>
           </button>
+          <span [nzTooltipTitle]="'Delete' | translate" nz-tooltip>
+            <button (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+                    nz-popconfirm nzShape="circle"
+                    nzDanger>
+              <i nz-icon nzType="delete"></i>
+            </button>
+          </span>
+          <span [nzTooltipTitle]="'ALARMS.Remove_from_group' | translate" nz-tooltip *ngIf="group">
+            <button (nzOnConfirm)="removeAlarmFromGroup(row.alarm.$key, group)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-button
+                    nz-popconfirm nzShape="circle"
+                    nzDanger>
+              <i nz-icon nzType="close"></i>
+            </button>
+          </span>
         </div>
       </div>
     </div>

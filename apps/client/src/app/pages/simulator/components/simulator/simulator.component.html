@@ -18,7 +18,7 @@
       <ng-container *ngIf="dirty">
         <button (nzOnConfirm)="resetToSavedRotation(rotation)"
                 [nzTooltipTitle]="'SIMULATOR.Reset_saved' | translate"
-                [nzPopconfirmTitle]="'Confirm' | translate"
+                [nzPopconfirmTitle]="'Confirmation' | translate"
                 nz-button nz-popconfirm nz-tooltip
                 nzShape="circle"
                 nzType="primary">
@@ -33,7 +33,7 @@
       </button>
       <button (nzOnConfirm)="actions$.next([]);this.dirty = true;dirtyFacade.removeEntry('simulator', dirtyScope.PAGE);"
               [nzTooltipTitle]="'SIMULATOR.Reset' | translate"
-              [nzPopconfirmTitle]="'Confirm' | translate"
+              [nzPopconfirmTitle]="'Confirmation' | translate"
               nz-button nz-popconfirm nz-tooltip
               nzShape="circle"
               nzType="primary">

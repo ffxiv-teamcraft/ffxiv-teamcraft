@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchIndex, XivapiService } from '@xivapi/angular-client';
 import { BehaviorSubject, combineLatest, Observable, of, Subject } from 'rxjs';
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -16,7 +16,7 @@ import { UniversalisService } from '../../../core/api/universalis.service';
   templateUrl: './currency-spending.component.html',
   styleUrls: ['./currency-spending.component.less']
 })
-export class CurrencySpendingComponent extends TeamcraftComponent {
+export class CurrencySpendingComponent extends TeamcraftComponent implements OnInit {
 
   public currencies$: Observable<any>;
 
@@ -40,23 +40,6 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
         return servers.sort();
       })
     );
-
-    this.authFacade.loggedIn$.pipe(
-      switchMap(loggedIn => {
-        if (loggedIn) {
-          return this.authFacade.mainCharacter$.pipe(
-            map(character => character.Server)
-          );
-        } else {
-          return of(null);
-        }
-      }),
-      takeUntil(this.onDestroy$)
-    ).subscribe(server => {
-      if (server !== null) {
-        this.server$.next(server);
-      }
-    });
 
     this.currencies$ = this.xivapi.search({
       indexes: [SearchIndex.ITEM],
@@ -148,6 +131,25 @@ export class CurrencySpendingComponent extends TeamcraftComponent {
       }),
       tap(() => this.loading = false)
     );
+  }
+
+  ngOnInit(): void {
+    this.authFacade.loggedIn$.pipe(
+      switchMap(loggedIn => {
+        if (loggedIn) {
+          return this.authFacade.mainCharacter$.pipe(
+            map(character => character.Server)
+          );
+        } else {
+          return of(null);
+        }
+      }),
+      takeUntil(this.onDestroy$)
+    ).subscribe(server => {
+      if (server !== null) {
+        this.server$.next(server);
+      }
+    });
   }
 
 }

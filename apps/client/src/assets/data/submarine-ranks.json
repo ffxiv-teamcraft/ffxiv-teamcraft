@@ -1,0 +1,802 @@
+{
+  "1": {
+    "id": 1,
+    "capacity": 20,
+    "expToNext": 6180,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "2": {
+    "id": 2,
+    "capacity": 21,
+    "expToNext": 12504,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "3": {
+    "id": 3,
+    "capacity": 22,
+    "expToNext": 18972,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "4": {
+    "id": 4,
+    "capacity": 23,
+    "expToNext": 25581,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "5": {
+    "id": 5,
+    "capacity": 24,
+    "expToNext": 32331,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "6": {
+    "id": 6,
+    "capacity": 25,
+    "expToNext": 39221,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "7": {
+    "id": 7,
+    "capacity": 26,
+    "expToNext": 46251,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "8": {
+    "id": 8,
+    "capacity": 27,
+    "expToNext": 53418,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "9": {
+    "id": 9,
+    "capacity": 28,
+    "expToNext": 60721,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "10": {
+    "id": 10,
+    "capacity": 29,
+    "expToNext": 68161,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "11": {
+    "id": 11,
+    "capacity": 30,
+    "expToNext": 75735,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "12": {
+    "id": 12,
+    "capacity": 31,
+    "expToNext": 83443,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "13": {
+    "id": 13,
+    "capacity": 32,
+    "expToNext": 91283,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "14": {
+    "id": 14,
+    "capacity": 33,
+    "expToNext": 99256,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "15": {
+    "id": 15,
+    "capacity": 34,
+    "expToNext": 107359,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "16": {
+    "id": 16,
+    "capacity": 35,
+    "expToNext": 115591,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "17": {
+    "id": 17,
+    "capacity": 36,
+    "expToNext": 123953,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "18": {
+    "id": 18,
+    "capacity": 37,
+    "expToNext": 132442,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "19": {
+    "id": 19,
+    "capacity": 38,
+    "expToNext": 141058,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "20": {
+    "id": 20,
+    "capacity": 39,
+    "expToNext": 149799,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "21": {
+    "id": 21,
+    "capacity": 40,
+    "expToNext": 158666,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "22": {
+    "id": 22,
+    "capacity": 41,
+    "expToNext": 167656,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "23": {
+    "id": 23,
+    "capacity": 42,
+    "expToNext": 176770,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "24": {
+    "id": 24,
+    "capacity": 43,
+    "expToNext": 186005,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "25": {
+    "id": 25,
+    "capacity": 44,
+    "expToNext": 195361,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "26": {
+    "id": 26,
+    "capacity": 45,
+    "expToNext": 204838,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "27": {
+    "id": 27,
+    "capacity": 46,
+    "expToNext": 214434,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "28": {
+    "id": 28,
+    "capacity": 47,
+    "expToNext": 224148,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "29": {
+    "id": 29,
+    "capacity": 48,
+    "expToNext": 233979,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "30": {
+    "id": 30,
+    "capacity": 49,
+    "expToNext": 243927,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "31": {
+    "id": 31,
+    "capacity": 50,
+    "expToNext": 253991,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "32": {
+    "id": 32,
+    "capacity": 51,
+    "expToNext": 264169,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "33": {
+    "id": 33,
+    "capacity": 52,
+    "expToNext": 274462,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "34": {
+    "id": 34,
+    "capacity": 53,
+    "expToNext": 284867,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "35": {
+    "id": 35,
+    "capacity": 54,
+    "expToNext": 295384,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "36": {
+    "id": 36,
+    "capacity": 55,
+    "expToNext": 306012,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "37": {
+    "id": 37,
+    "capacity": 56,
+    "expToNext": 316751,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "38": {
+    "id": 38,
+    "capacity": 57,
+    "expToNext": 327599,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "39": {
+    "id": 39,
+    "capacity": 58,
+    "expToNext": 338556,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "40": {
+    "id": 40,
+    "capacity": 59,
+    "expToNext": 349621,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "41": {
+    "id": 41,
+    "capacity": 60,
+    "expToNext": 360793,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "42": {
+    "id": 42,
+    "capacity": 61,
+    "expToNext": 372071,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "43": {
+    "id": 43,
+    "capacity": 62,
+    "expToNext": 383454,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "44": {
+    "id": 44,
+    "capacity": 63,
+    "expToNext": 394941,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "45": {
+    "id": 45,
+    "capacity": 64,
+    "expToNext": 406533,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "46": {
+    "id": 46,
+    "capacity": 65,
+    "expToNext": 418227,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "47": {
+    "id": 47,
+    "capacity": 66,
+    "expToNext": 430023,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "48": {
+    "id": 48,
+    "capacity": 67,
+    "expToNext": 441921,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "49": {
+    "id": 49,
+    "capacity": 68,
+    "expToNext": 453919,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "50": {
+    "id": 50,
+    "capacity": 80,
+    "expToNext": 466016,
+    "surveillanceBonus": 0,
+    "retrievalBonus": 0,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "51": {
+    "id": 51,
+    "capacity": 80,
+    "expToNext": 551237,
+    "surveillanceBonus": 2,
+    "retrievalBonus": 1,
+    "speedBonus": 0,
+    "rangeBonus": 0,
+    "favorBonus": 0
+  },
+  "52": {
+    "id": 52,
+    "capacity": 80,
+    "expToNext": 566099,
+    "surveillanceBonus": 2,
+    "retrievalBonus": 3,
+    "speedBonus": 0,
+    "rangeBonus": 1,
+    "favorBonus": 0
+  },
+  "53": {
+    "id": 53,
+    "capacity": 80,
+    "expToNext": 582554,
+    "surveillanceBonus": 2,
+    "retrievalBonus": 3,
+    "speedBonus": 1,
+    "rangeBonus": 2,
+    "favorBonus": 1
+  },
+  "54": {
+    "id": 54,
+    "capacity": 80,
+    "expToNext": 1497759,
+    "surveillanceBonus": 3,
+    "retrievalBonus": 4,
+    "speedBonus": 1,
+    "rangeBonus": 3,
+    "favorBonus": 1
+  },
+  "55": {
+    "id": 55,
+    "capacity": 80,
+    "expToNext": 600864,
+    "surveillanceBonus": 3,
+    "retrievalBonus": 7,
+    "speedBonus": 3,
+    "rangeBonus": 3,
+    "favorBonus": 1
+  },
+  "56": {
+    "id": 56,
+    "capacity": 80,
+    "expToNext": 621107,
+    "surveillanceBonus": 4,
+    "retrievalBonus": 7,
+    "speedBonus": 3,
+    "rangeBonus": 5,
+    "favorBonus": 1
+  },
+  "57": {
+    "id": 57,
+    "capacity": 80,
+    "expToNext": 643477,
+    "surveillanceBonus": 4,
+    "retrievalBonus": 7,
+    "speedBonus": 3,
+    "rangeBonus": 7,
+    "favorBonus": 2
+  },
+  "58": {
+    "id": 58,
+    "capacity": 80,
+    "expToNext": 668186,
+    "surveillanceBonus": 4,
+    "retrievalBonus": 8,
+    "speedBonus": 3,
+    "rangeBonus": 8,
+    "favorBonus": 3
+  },
+  "59": {
+    "id": 59,
+    "capacity": 80,
+    "expToNext": 2078961,
+    "surveillanceBonus": 5,
+    "retrievalBonus": 8,
+    "speedBonus": 4,
+    "rangeBonus": 9,
+    "favorBonus": 3
+  },
+  "60": {
+    "id": 60,
+    "capacity": 80,
+    "expToNext": 695566,
+    "surveillanceBonus": 5,
+    "retrievalBonus": 10,
+    "speedBonus": 5,
+    "rangeBonus": 10,
+    "favorBonus": 5
+  },
+  "61": {
+    "id": 61,
+    "capacity": 80,
+    "expToNext": 725781,
+    "surveillanceBonus": 7,
+    "retrievalBonus": 10,
+    "speedBonus": 6,
+    "rangeBonus": 10,
+    "favorBonus": 6
+  },
+  "62": {
+    "id": 62,
+    "capacity": 80,
+    "expToNext": 759114,
+    "surveillanceBonus": 7,
+    "retrievalBonus": 10,
+    "speedBonus": 8,
+    "rangeBonus": 12,
+    "favorBonus": 7
+  },
+  "63": {
+    "id": 63,
+    "capacity": 80,
+    "expToNext": 795877,
+    "surveillanceBonus": 8,
+    "retrievalBonus": 11,
+    "speedBonus": 8,
+    "rangeBonus": 12,
+    "favorBonus": 9
+  },
+  "64": {
+    "id": 64,
+    "capacity": 80,
+    "expToNext": 2509232,
+    "surveillanceBonus": 8,
+    "retrievalBonus": 12,
+    "speedBonus": 10,
+    "rangeBonus": 14,
+    "favorBonus": 9
+  },
+  "65": {
+    "id": 65,
+    "capacity": 80,
+    "expToNext": 840559,
+    "surveillanceBonus": 10,
+    "retrievalBonus": 15,
+    "speedBonus": 10,
+    "rangeBonus": 15,
+    "favorBonus": 10
+  },
+  "66": {
+    "id": 66,
+    "capacity": 80,
+    "expToNext": 889710,
+    "surveillanceBonus": 13,
+    "retrievalBonus": 17,
+    "speedBonus": 11,
+    "rangeBonus": 15,
+    "favorBonus": 10
+  },
+  "67": {
+    "id": 67,
+    "capacity": 80,
+    "expToNext": 943775,
+    "surveillanceBonus": 13,
+    "retrievalBonus": 19,
+    "speedBonus": 13,
+    "rangeBonus": 17,
+    "favorBonus": 10
+  },
+  "68": {
+    "id": 68,
+    "capacity": 80,
+    "expToNext": 1003248,
+    "surveillanceBonus": 16,
+    "retrievalBonus": 19,
+    "speedBonus": 15,
+    "rangeBonus": 17,
+    "favorBonus": 12
+  },
+  "69": {
+    "id": 69,
+    "capacity": 80,
+    "expToNext": 3009743,
+    "surveillanceBonus": 16,
+    "retrievalBonus": 23,
+    "speedBonus": 15,
+    "rangeBonus": 19,
+    "favorBonus": 13
+  },
+  "70": {
+    "id": 70,
+    "capacity": 80,
+    "expToNext": 1075209,
+    "surveillanceBonus": 20,
+    "retrievalBonus": 25,
+    "speedBonus": 15,
+    "rangeBonus": 20,
+    "favorBonus": 15
+  },
+  "71": {
+    "id": 71,
+    "capacity": 80,
+    "expToNext": 1154367,
+    "surveillanceBonus": 23,
+    "retrievalBonus": 29,
+    "speedBonus": 15,
+    "rangeBonus": 20,
+    "favorBonus": 15
+  },
+  "72": {
+    "id": 72,
+    "capacity": 80,
+    "expToNext": 1241440,
+    "surveillanceBonus": 26,
+    "retrievalBonus": 29,
+    "speedBonus": 17,
+    "rangeBonus": 22,
+    "favorBonus": 15
+  },
+  "73": {
+    "id": 73,
+    "capacity": 80,
+    "expToNext": 1337221,
+    "surveillanceBonus": 26,
+    "retrievalBonus": 33,
+    "speedBonus": 18,
+    "rangeBonus": 22,
+    "favorBonus": 17
+  },
+  "74": {
+    "id": 74,
+    "capacity": 80,
+    "expToNext": 4011663,
+    "surveillanceBonus": 26,
+    "retrievalBonus": 35,
+    "speedBonus": 20,
+    "rangeBonus": 23,
+    "favorBonus": 19
+  },
+  "75": {
+    "id": 75,
+    "capacity": 80,
+    "expToNext": 1453116,
+    "surveillanceBonus": 30,
+    "retrievalBonus": 40,
+    "speedBonus": 20,
+    "rangeBonus": 23,
+    "favorBonus": 20
+  },
+  "76": {
+    "id": 76,
+    "capacity": 80,
+    "expToNext": 1580600,
+    "surveillanceBonus": 30,
+    "retrievalBonus": 45,
+    "speedBonus": 20,
+    "rangeBonus": 23,
+    "favorBonus": 24
+  },
+  "77": {
+    "id": 77,
+    "capacity": 80,
+    "expToNext": 1720833,
+    "surveillanceBonus": 34,
+    "retrievalBonus": 45,
+    "speedBonus": 21,
+    "rangeBonus": 26,
+    "favorBonus": 25
+  },
+  "78": {
+    "id": 78,
+    "capacity": 80,
+    "expToNext": 1875089,
+    "surveillanceBonus": 36,
+    "retrievalBonus": 45,
+    "speedBonus": 23,
+    "rangeBonus": 29,
+    "favorBonus": 27
+  },
+  "79": {
+    "id": 79,
+    "capacity": 80,
+    "expToNext": 5625266,
+    "surveillanceBonus": 38,
+    "retrievalBonus": 45,
+    "speedBonus": 25,
+    "rangeBonus": 33,
+    "favorBonus": 28
+  },
+  "80": {
+    "id": 80,
+    "capacity": 80,
+    "expToNext": 2061738,
+    "surveillanceBonus": 40,
+    "retrievalBonus": 50,
+    "speedBonus": 25,
+    "rangeBonus": 35,
+    "favorBonus": 30
+  }
+}

@@ -1,0 +1,92 @@
+<div fxLayout="column" fxLayoutGap="10px">
+  <form [nzLayout]="'inline'" nz-form [formGroup]="filtersForm">
+    <nz-form-item>
+      <nz-form-label>{{'DESYNTH.Job' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-select formControlName="job" [nzPlaceHolder]="'SIMULATOR.CONFIGURATION.Select_job' | translate"
+                   class="job-filter"
+                   nzShowSearch>
+          <nz-option *ngFor="let job of jobList$ | async" [nzLabel]="job | jobAbbr | i18n" [nzValue]="job" nzCustomContent>
+            <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center">
+              <div class="companion-svg job-icon" [innerHtml]="job | jobUnicode"></div>
+              <div>{{job | jobAbbr | i18n}}</div>
+            </div>
+          </nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'DESYNTH.Level' | translate}}</nz-form-label>
+      <nz-form-control>
+        <nz-input-number formControlName="level" nzMin="3"></nz-input-number>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Include_crafting' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="includeCrafting"></label>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Include_trades' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="includeTrades"></label>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>{{'LEVELING_EQUIPMENT.Only_inventory' | translate}}</nz-form-label>
+      <nz-form-control>
+        <label nz-checkbox formControlName="onlyInventoryContent"></label>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button (click)="search$.next()" [disabled]="filtersForm.invalid" nz-button
+                nzType="primary">
+          <i nz-icon nzType="search"></i>{{'GC_SUPPLY.Search' | translate}}
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+  <div>
+    <i>{{'LEVELING_EQUIPMENT.Interactions_description' | translate}}</i>
+  </div>
+  <ng-container *ngIf="results$ | async as results; else description">
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th *ngFor="let row of results" (click)="selectRow(row)">{{row.level}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let slot of slots">
+        <td>{{('GEARSETS.SLOT.' + slot.name) | translate}}</td>
+        <td *ngFor="let row of results" [class.selected]="selectedItems[slot.property] && selectedItems[slot.property] === row.gearset[slot.property]?.itemId"
+            (click)="row.gearset[slot.property]?selectedItems[slot.property] = row.gearset[slot.property]?.itemId : 0" class="slot-item">
+          <button nz-button nzDanger nzSize="small" nzShape="circle" class="remove-button"
+                  *ngIf="selectedItems[slot.property] === row.gearset[slot.property]?.itemId"
+                  (click)="$event.stopPropagation();selectedItems[slot.property]=null">
+            <i nz-icon nzType="delete"></i>
+          </button>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <div *ngIf="row.gearset[slot.property] as equipmentPiece; else noItem" class="slot-icon">
+              <app-item-icon [itemId]="equipmentPiece.itemId" [width]="32"></app-item-icon>
+              <div class="inventory-icon" *ngIf="equipmentPiece.isInInventory" nz-tooltip [nzTooltipTitle]="'LEVELING_EQUIPMENT.In_inventory' | translate">
+                <div class="companion-svg">&#xF153;</div>
+              </div>
+            </div>
+            <ng-template #noItem>
+              {{'LEVELING_EQUIPMENT.Empty_slot' | translate}}
+            </ng-template>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button nz-button nzBlock (click)="createList()" nzType="primary">{{'LEVELING_EQUIPMENT.Generate_list' | translate}}</button>
+  </ng-container>
+  <ng-template #description>
+    <app-fullpage-message>{{'LEVELING_EQUIPMENT.Description' | translate}}</app-fullpage-message>
+  </ng-template>
+</div>

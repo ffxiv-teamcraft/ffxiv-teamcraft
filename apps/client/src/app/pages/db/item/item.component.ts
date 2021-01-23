@@ -414,7 +414,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
         links.push({
           title: 'FFXIV Gardening',
           icon: './assets/icons/Gardening.png',
-          url: `http://${this.translate.currentLang === 'en' ? 'www' : this.translate.currentLang}.ffxivgardening.com/seed-details.php?SeedID=${gardening}`
+          url: `http://www.ffxivgardening.com/seed-details.php?SeedID=${gardening}${this.translate.currentLang === 'en' ? '' : ('&lang=' + this.translate.currentLang + '_' + this.translate.currentLang.toUpperCase())}`
         });
       }
       if (xivapiItem.ItemActionTargetID === 1389) {

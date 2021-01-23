@@ -9,11 +9,14 @@ import { FishingBait } from '../../list/model/fishing-bait';
 export class FishingBaitComponent {
 
   @Input()
-  baits: FishingBait[];
+  baits: number[];
 
   @Input()
   flex = 'column';
 
   @Input()
   hideNames = false;
+
+  @Input()
+  iconWidth = 32;
 }

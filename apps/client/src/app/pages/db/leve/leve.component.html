@@ -75,7 +75,6 @@
                 nzDescription="x{{item.amount}}">
                 <ng-template #itemAvatar>
                   <app-item-icon [icon]="item.id | lazyIcon" [itemId]="item.id" [width]="48"></app-item-icon>
-                  <div [appItemRarity]="item.id">{{item.id | itemName | i18n}}</div>
                 </ng-template>
                 <ng-template #more>
                   <app-db-button [id]="item.id" type="item"></app-db-button>

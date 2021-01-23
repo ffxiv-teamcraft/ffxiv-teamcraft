@@ -134,15 +134,24 @@
       <div nz-col [nzMd]="2" fxLayout="row" fxLayoutAlign="flex-end center" class="avg-ilvl">{{'GEARSETS.STAT_DISPLAY.Ilvl' | translate}}
         : {{(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):0).value}}</div>
       <div nz-col [nzMd]="2" *ngFor="let stat of stats;let lastStat = last" class="item-stat-row" [class.last]="lastStat">
-        <b>{{stat.value | number:'1.0-0':translate.currentLang}}
-          <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
-          <span *ngFor="let statDisplay of statDisplays" nz-tooltip
-                [class.multiple-stats-display]="statDisplays.length > 1"
-                [nzTitle]="('GEARSETS.STAT_DISPLAY.'+statDisplay.name) | translate">
+        <ng-container *ngIf="(gearset | statDisplay:(level$ | async):(tribe$ | async):(food$ | async):stat.id) as statDisplays">
+          <b>{{stat.value | number:'1.0-0':translate.currentLang}}
+            <span *ngFor="let statDisplay of statDisplays"
+                  nz-tooltip [nzTooltipTitle]="tooltip"
+                  [class.multiple-stats-display]="statDisplays.length > 1">
+              <ng-template #tooltip>
+                <div fxLayout="column">
+                  <div>{{('GEARSETS.STAT_DISPLAY.' + statDisplay.name) | translate}}</div>
+                  <ng-container *ngIf="gearset.job < 8 || gearset.job > 18">
+                    <div>{{'GEARSETS.Value_for_next' | translate}}: +{{statDisplay.next | number:'1.0-2':translate.currentLang}}</div>
+                    <div>{{'GEARSETS.Value_for_previous' | translate}}: {{statDisplay.previous | number:'1.0-2':translate.currentLang}}</div>
+                  </ng-container>
+                </div>
+              </ng-template>
             ({{statDisplay.value | floor:2 | number:'1.0-2':translate.currentLang}}{{statDisplay.suffix}})
           </span>
-          </ng-container>
-        </b>
+          </b>
+        </ng-container>
       </div>
     </div>
   </ng-container>

@@ -546,7 +546,7 @@ export class MappyReporterService {
   }
 
   private getNodeIcon(gatheringPointBaseId: number): string {
-    const nodeId = this.lazyData.data.gatheringPointBaseToNodeId[gatheringPointBaseId];
+    const nodeId = this.lazyData.data.gatheringPointToNodeId[gatheringPointBaseId];
     const node = this.lazyData.data.nodes[nodeId];
     if (!node) {
       return './assets/icons/mappy/highlight.png';

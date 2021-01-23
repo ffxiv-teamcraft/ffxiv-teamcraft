@@ -1,0 +1,27 @@
+@import '../common-db';
+
+.spawned-timer {
+  color: var(--primary-color);
+}
+
+.played-timer {
+  color: var(--highlight-color);
+}
+
+.item-row {
+  padding: 5px;
+
+  &:not(last-child) {
+    border-bottom: 1px solid #444;
+  }
+
+  .description {
+    color: #666;
+  }
+
+  .gig-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+  }
+}

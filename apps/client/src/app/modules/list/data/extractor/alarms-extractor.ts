@@ -3,15 +3,13 @@ import { Alarm } from '../../../../core/alarms/alarm';
 import { Item } from '../../../../model/garland-tools/item';
 import { ItemData } from '../../../../model/garland-tools/item-data';
 import { DataType } from '../data-type';
-import { getItemSource, ListRow } from '../../model/list-row';
-import { BellNodesService } from '../../../../core/data/bell-nodes.service';
-import { folklores } from '../../../../core/data/sources/folklores';
+import { ListRow } from '../../model/list-row';
 import { GarlandToolsService } from '../../../../core/api/garland-tools.service';
-import { LazyDataService } from '../../../../core/data/lazy-data.service';
 import { AlarmsFacade } from '../../../../core/alarms/+state/alarms.facade';
+import { GatheringNodesService } from '../../../../core/data/gathering-nodes.service';
 
-export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
-  constructor(gt: GarlandToolsService, private bellNodes: BellNodesService, private lazyData: LazyDataService,
+export class AlarmsExtractor extends AbstractExtractor<Alarm[]> {
+  constructor(gt: GarlandToolsService, private gatheringNodesService: GatheringNodesService,
               private alarmsFacade: AlarmsFacade) {
     super(gt);
   }
@@ -28,90 +26,9 @@ export class AlarmsExtractor extends AbstractExtractor<Partial<Alarm>[]> {
     return true;
   }
 
-  protected doExtract(item: Item, itemData: ItemData, row: ListRow): Partial<Alarm>[] {
-    const alarms: Partial<Alarm>[] = [];
-    if (getItemSource(row, DataType.GATHERED_BY, true).type !== undefined) {
-      alarms.push(...[].concat.apply([], getItemSource(row, DataType.GATHERED_BY, true).nodes
-        .filter(node => node.uptime !== undefined || node.weathers !== undefined)
-        .filter(node => node.coords)
-        .map(node => {
-          const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(row.id) > -1);
-          const alarm: Partial<Alarm> = {
-            itemId: item.id,
-            icon: item.icon,
-            duration: node.uptime / 60,
-            zoneId: node.zoneid,
-            mapId: node.mapid,
-            slot: +node.slot,
-            type: node.type,
-            ephemeral: node.limitType && node.limitType.en === 'Ephemeral',
-            coords: {
-              x: node.coords[0],
-              y: node.coords[1],
-              z: node.coords[2]
-            },
-            spawns: node.time,
-            snagging: node.snagging,
-            predators: node.predators || []
-          };
-          if (node.baits !== undefined) {
-            alarm.baits = node.baits;
-          }
-          if (node.weathers !== undefined) {
-            alarm.weathers = node.weathers;
-          }
-          if (node.weathersFrom !== undefined) {
-            alarm.weathersFrom = node.weathersFrom;
-          }
-          if (folklore !== undefined) {
-            alarm.folklore = {
-              id: +folklore,
-              icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
-            };
-          }
-          if (node.hookset) {
-            alarm.hookset = node.hookset;
-          }
-          return this.alarmsFacade.applyFishEyes(alarm);
-        })
-      ));
-    }
-    if (getItemSource(row, DataType.REDUCED_FROM).length > 0) {
-      alarms.push(...[].concat.apply([], getItemSource(row, DataType.REDUCED_FROM)
-        .map(reduction => {
-          const nodes = this.bellNodes.getNodesByItemId(reduction);
-          return nodes
-            .filter(node => node.coords)
-            .map(node => {
-              const folklore = Object.keys(folklores).find(id => folklores[id].indexOf(node.itemId) > -1);
-              const nodePosition = this.lazyData.data.nodes[node.id];
-              const alarm: Partial<Alarm> = {
-                itemId: node.itemId,
-                icon: node.icon,
-                duration: node.uptime / 60,
-                zoneId: node.zoneid,
-                mapId: nodePosition ? nodePosition.map : node.mapid,
-                slot: +node.slot,
-                type: node.type,
-                spawns: node.time,
-                coords: {
-                  x: nodePosition.x,
-                  y: nodePosition.y,
-                  z: nodePosition.z
-                }
-              };
-              if (folklore !== undefined) {
-                alarm.folklore = {
-                  id: +folklore,
-                  icon: [7012, 7012, 7127, 7127, 7128, 7128][node.type]
-                };
-              }
-              return alarm;
-            });
-        })
-      ));
-    }
-    return alarms;
+  protected doExtract(item: Item, itemData: ItemData, row: ListRow): Alarm[] {
+    const nodes = this.gatheringNodesService.getItemNodes(item.id);
+    return nodes.map(node => node.limited ? this.alarmsFacade.generateAlarms(node) : []).flat();
   }
 
 }

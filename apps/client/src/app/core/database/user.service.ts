@@ -24,6 +24,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
     super(firestore, serializer, zone, pendingChangesService);
   }
 
+  protected prepareData(data: any): any {
+    delete data.logProgression;
+    delete data.gatheringLogProgression;
+    return super.prepareData(data);
+  }
+
   public get(uid: string, external = false, isCurrentUser = false): Observable<TeamcraftUser> {
     if (this.userCache[uid] === undefined) {
       if (!uid) {
@@ -43,8 +49,12 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
           } else {
             delete user.notFound;
           }
-          if (user.patreonToken === undefined) {
+          if (!user.patreonToken && !user.patreonBenefitsUntil) {
             user.patron = false;
+            return of(user);
+          }
+          if (user.patreonBenefitsUntil) {
+            user.patron = user.patreonBenefitsUntil.toMillis() >= Date.now();
             return of(user);
           }
           return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`).pipe(

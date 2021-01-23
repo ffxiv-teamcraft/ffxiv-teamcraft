@@ -3,7 +3,7 @@
     <ng-container *ngIf="false | ifMobile: true">
       <ng-container *ngTemplateOutlet="searchType"></ng-container>
     </ng-container>
-    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzSuffix]="suffixTemplate">
+    <nz-input-group [nzAddOnBefore]="searchType | ifMobile: null" [nzAddOnAfter]="languageSelector | ifMobile: null" [nzSuffix]="suffixTemplate">
       <input #searchInput (input)="!settings.disableSearchDebounce?query$.next(searchInput.value):null"
              (keydown.enter)="query$.next(searchInput.value)"
              (ngModelChange)="!settings.disableSearchDebounce?query$.next($event):null" [ngModel]="query$.value"
@@ -67,6 +67,13 @@
                    [nzValue]="searchTypes.ACHIEVEMENT"></nz-option>
         <nz-option [nzLabel]="('SEARCH_TYPES.'+searchTypes.FISHING_SPOT) | translate"
                    [nzValue]="searchTypes.FISHING_SPOT"></nz-option>
+      </nz-select>
+    </ng-template>
+    <ng-template #languageSelector>
+      <nz-select (ngModelChange)="searchLang$.next($event);settings.searchLanguage = $event" [ngModel]="searchLang$ | async"
+                 class="search-language">
+        <nz-option *ngFor="let locale of availableLanguages" [nzLabel]="locale | uppercase"
+                   [nzValue]="locale"></nz-option>
       </nz-select>
     </ng-template>
   </div>
@@ -143,6 +150,10 @@
                       <div>{{jobId | jobAbbr | i18n}}</div>
                     </div>
                   </nz-option>
+
+                  <nz-option *ngFor="let category of availableJobCategories" [nzLabel]="category | jobCategoryName | i18n"
+                             [nzValue]="1000 + category">
+                  </nz-option>
                 </nz-select>
               </nz-form-control>
             </nz-form-item>
@@ -181,18 +192,19 @@
               <nz-form-item *ngFor="let item of itemFiltersform.get('stats').controls; let i = index;"
                             [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
-                <nz-select class="filter-select" formControlName="name"
+                <nz-select class="filter-select-compact" formControlName="name"
                            nzShowSearch>
                   <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
                              [nzValue]="stat.filterName">
                   </nz-option>
                 </nz-select>
                 <nz-input-group class="level-range" nzCompact>
-                  <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
+                  <nz-input-number mouseWheel #statMin [nzMin]="-1" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
                                    (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'stats', i)"
-                                   (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'stats', i)"></nz-input-number>
+                                   (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, -1, maxStatFilter, 'stats', i)"></nz-input-number>
                   <input disabled nz-input placeholder="-" type="text">
-                  <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                  <nz-input-number mouseWheel [nzDisabled]="statMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0"
+                                   formControlName="max"
                                    (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'stats', i)"
                                    (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'stats', i)"></nz-input-number>
                 </nz-input-group>
@@ -200,6 +212,7 @@
                         nzType="danger"><i nz-icon nzType="delete"></i>
                 </button>
               </nz-form-item>
+              <i>{{'SEARCH.Stats_exclude_tip' | translate}}</i>
               <button (click)="$event.preventDefault();addFilter('stats')" nz-button
                       nzBlock>{{'SEARCH.Add_stat_filter' | translate}}</button>
             </div>
@@ -210,18 +223,19 @@
                             [formGroupName]="i" class="stat-filter-row" fxFlex="1 1 auto"
                             fxLayout="row" fxLayoutAlign="center center">
                 <nz-form-control>
-                  <nz-select class="filter-select" formControlName="name"
+                  <nz-select class="filter-select-compact" formControlName="name"
                              nzShowSearch>
                     <nz-option *ngFor="let stat of availableStats" [nzLabel]="stat | i18n"
                                [nzValue]="stat.filterName">
                     </nz-option>
                   </nz-select>
                   <nz-input-group class="level-range" nzCompact>
-                    <nz-input-number mouseWheel [nzMin]="0" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
+                    <nz-input-number mouseWheel #bonusMin [nzMin]="-1" [nzMax]="maxStatFilter" [nzPrecision]="0" class="min-input" formControlName="min"
                                      (mouseWheelUp)="adjust('itemFiltersform', 'min', 1, 0, maxStatFilter, 'bonuses', i)"
-                                     (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, 0, maxStatFilter, 'bonuses', i)"></nz-input-number>
+                                     (mouseWheelDown)="adjust('itemFiltersform', 'min', -1, -1, maxStatFilter, 'bonuses', i)"></nz-input-number>
                     <input disabled nz-input placeholder="-" type="text">
-                    <nz-input-number mouseWheel [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0" formControlName="max"
+                    <nz-input-number mouseWheel [nzDisabled]="bonusMin.displayValue < 0" [nzMin]="1" [nzMax]="maxStatFilter" [nzPrecision]="0"
+                                     formControlName="max"
                                      (mouseWheelUp)="adjust('itemFiltersform', 'max', 1, 1, maxStatFilter, 'bonuses', i)"
                                      (mouseWheelDown)="adjust('itemFiltersform', 'max', -1, 1, maxStatFilter, 'bonuses', i)"></nz-input-number>
                   </nz-input-group>
@@ -230,6 +244,7 @@
                   </button>
                 </nz-form-control>
               </nz-form-item>
+              <i>{{'SEARCH.Bonuses_exclude_tip' | translate}}</i>
               <button (click)="$event.preventDefault();addFilter('bonuses')" nz-button
                       nzBlock>{{'SEARCH.Add_bonus_stat_filter' | translate}}</button>
             </div>
@@ -417,7 +432,8 @@
       <div *ngIf="selection.length > 0" class="selection">
         <nz-divider nzOrientation="left" [nzText]="'Selection' | translate"></nz-divider>
         <div nz-row>
-          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center" class="selection-row">
+          <div nz-col nzMd="4" nzSm="24" *ngFor="let item of selection" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="flex-start center"
+               class="selection-row">
             <div (nzOnConfirm)="removeSelection(item, results)" nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" class="delete-icon">
               <i nz-icon nzType="close"></i>
             </div>

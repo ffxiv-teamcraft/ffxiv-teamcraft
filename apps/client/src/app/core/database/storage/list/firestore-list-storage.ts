@@ -1,7 +1,7 @@
 import { List } from '../../../../modules/list/model/list';
 import { Injectable, NgZone } from '@angular/core';
 import { ListStore } from './list-store';
-import { combineLatest, Observable, of, throwError } from 'rxjs';
+import { combineLatest, from, Observable, of, throwError } from 'rxjs';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { PendingChangesService } from '../../pending-changes/pending-changes.service';
 import { catchError, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
@@ -87,13 +87,13 @@ export class FirestoreListStorage extends FirestoreRelationalStorage<List> imple
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts.find(i => i.id === item.id));
+          return Object.assign(item, extracts[item.id]);
         });
         list.finalItems = list.finalItems.map(item => {
           if (!(item.requires instanceof Array)) {
             item.requires = [];
           }
-          return Object.assign(item, extracts.find(i => i.id === item.id));
+          return Object.assign(item, extracts[item.id]);
         });
         list.afterDeserialized();
         return list;

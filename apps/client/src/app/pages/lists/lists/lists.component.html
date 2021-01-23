@@ -29,6 +29,13 @@
               nzType="primary">
         <i nz-icon nzType="file-zip" nzTheme="outline"></i>
       </button>
+      <button (click)="deleteMultipleLists()"
+              nz-button
+              nz-tooltip nzShape="circle"
+              nzTooltipTitle="{{'LISTS.Delete_multiple_lists' | translate}}"
+              nzType="danger">
+        <i nz-icon nzType="delete" nzTheme="outline"></i>
+      </button>
     </div>
     <nz-alert *ngIf="needsVerification$ | async" [nzMessage]="'LISTS.Needs_verification' | translate"
               class="fc-check-warning" nzShowIcon nzType="warning"></nz-alert>

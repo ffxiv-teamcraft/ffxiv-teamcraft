@@ -13,6 +13,9 @@ export class XivapiI18nPipe implements PipeTransform {
   }
 
   transform(value: any, fieldName = 'Name', sanitized = false): SafeHtml {
+    if (!value) {
+      return '';
+    }
     let lang = (this.request && this.request.lang) || this.translate.currentLang;
     // xivapi uses chs instead of zh
     if (lang === 'zh') {
