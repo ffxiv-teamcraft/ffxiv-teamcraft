@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -478,6 +480,7 @@
       "Theme": "Theme",
       "Search": "Suche",
       "Lists": "Listen",
+      "Alarms": "Alarms",
       "Other": "Anderes",
       "Sekrit": "Geheim"
     },
@@ -979,6 +982,8 @@
       "Pliant": "Ergiebig",
       "Sturdy": "Robust",
       "Centered": "Stabil",
+      "Malleable": "Formbar",
+      "Primed": "Präpariert",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1720,21 +1725,6 @@
     "Job": "Job",
     "Leve_level": "Benötigte Stufe"
   },
-  "TIPS": {
-    "Title": "Tipp",
-    "Community_rotations": "Bei \"Community-Rotationen\" findest du Rotationen zu beliebigen Rezepten.",
-    "GC_Deliveries": "Du kannst für Lieferaufträge deiner Staatlichen Gesellschaft Listen vorbereiten.",
-    "Desynth": "Auf der \"Desynthese\"-Seite findest du ideale Gegenstände zum Erhöhen deiner Desynthese-Stufen.",
-    "DB": "Teamcraft beinhaltet eine Datenbank. Du kannst das \"i\"-Icon an verschiedenen Stellen verwenden, um für das jeweilige Element den Datenbank-Eintrag zu öffnen.",
-    "3D_model": "Du kannst in der Datenbank die 3D-Modelle von Gegenständen betrachten.",
-    "Levequests": "Auf der \"Freibriefe\"-Seite kannst du Listen für Freibriefe vorbereiten und sogar die Erfahrungspunkte dafür berechnen.",
-    "Log_tracker": "Auf der Seite \"Notizbuch-Tracker\" kannst du den Fortschritt deiner Notizbücher (Sammler, Handwerker, Fischer) verfolgen.",
-    "Desktop_app_overlay": "Mit der Desktop-App kannst du im Spiel ein Overlay für deine Alarme anzeigen (Download-Link in der Seitenleiste).",
-    "Start_desktop_before_game": "Denk daran, die Desktop-App vor dem Spiel zu starten, um die maximale Datenintegrität zu gewährleisten",
-    "Middle_click_share_button": "In der Desktop-App: Mittlere Maustaste auf die Teilen-Schaltfläche in der oberen Menü-Leiste, um die momentane Seite im Browser zu öffnen",
-    "Quick_search": "Strg + Umschalt + F, um von einem beliebigen Ort aus das Suchfenster zu öffnen",
-    "Open_in_desktop_shortcut": "Drücke Strg + Shift + C, um die aktuelle Seite in der Desktop-App zu öffnen oder um das \"Webadressen öffnen\" Modul in der Desktop-App zu öffnen."
-  },
   "RECIPE_FINDER": {
     "Title": "Rezeptfinder",
     "Placeholder": "Gegenstandsname",
@@ -1927,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Ausrüstung, aus dem Materia extrahiert werden kann (100% gebunden)",
       "Message": "Du kannst aus diesem Ausrüstungsgegenstand Materia extrahieren"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1993,6 +1987,8 @@
     "Copied_as_string": "Ausrüstungsset als Zeichenfolge kopiert",
     "Mark_as_done": "Als erledigt markieren",
     "Create_commission": "Create a commission for this gearset",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "Rumpf",
       "Ears": "Ohrring",
@@ -2461,7 +2457,8 @@
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
     "Title": "Retainers",

@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -478,6 +480,7 @@
       "Theme": "Tema",
       "Search": "Búsqueda",
       "Lists": "Listas",
+      "Alarms": "Alarms",
       "Other": "Otros",
       "Sekrit": "Sekrit"
     },
@@ -979,6 +982,8 @@
       "Pliant": "Flexible",
       "Sturdy": "Robusto",
       "Centered": "Centrado",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1720,21 +1725,6 @@
     "Job": "Profesión",
     "Leve_level": "Nivel requerido"
   },
-  "TIPS": {
-    "Title": "Consejo",
-    "Community_rotations": "Puede encontrar rotaciones para una receta determinada dentro de la página de rotaciones comunitarias.",
-    "GC_Deliveries": "Puede preparar listas para las entregas de GC dentro de la página entregas de GC.",
-    "Desynth": "Puede encontrar los artículos ideales para subir desíntesis de nivel en la página de desíntesis.",
-    "DB": "Teamcraft incluye una base de datos. Puede hacer clic en el ícono \"i\" junto a cualquier artículo en cualquier lugar de la página para abrir la página de base de datos del mismo.",
-    "3D_model": "Puede previsualizar modelos 3D de artículos en de la base de datos.",
-    "Levequests": "Puede preparar listas de leve y previsualizar la experiencia recibida dentro de la página de misiones leve.",
-    "Log_tracker": "Puede dar seguimiento a la progresión de su registro (recolección, fabricación, pesca) dentro de la página de seguimiento de registro.",
-    "Desktop_app_overlay": "Puede tener una ventana sobrepuesta para las alarmas si utiliza la versión para escritorio (enlace de descarga en la barra lateral).",
-    "Start_desktop_before_game": "Recuerde iniciar la aplicación de escritorio antes que el juego para asegurar la máxima integridad de datos",
-    "Middle_click_share_button": "En la aplicación de escritorio, haga clic medio en el botón de compartir en la barra superior para abrir la página actual en el navegador",
-    "Quick_search": "Presione Ctrl + Mayus + F para abrir una ventana de búsqueda desde cualquier lugar de la herramienta",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
-  },
   "RECIPE_FINDER": {
     "Title": "Buscador de recetas",
     "Placeholder": "Nombre del artículo",
@@ -1927,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Equipo del que puede extraer materia (100% spiritbond)",
       "Message": "Puede extraer una materia de esta pieza de equipo"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1993,6 +1987,8 @@
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
     "Create_commission": "Create a commission for this gearset",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "Pecho",
       "Ears": "Orejas",
@@ -2461,7 +2457,8 @@
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
     "Title": "Retainers",

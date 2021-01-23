@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -478,6 +480,7 @@
       "Theme": "Тема",
       "Search": "Поиск",
       "Lists": "Списки",
+      "Alarms": "Alarms",
       "Other": "Прочее",
       "Sekrit": "Sekrit"
     },
@@ -979,6 +982,8 @@
       "Pliant": "Pliant",
       "Sturdy": "Sturdy",
       "Centered": "Centered",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "Обычное"
     },
     "SOLVER": {
@@ -1720,21 +1725,6 @@
     "Job": "Профессия",
     "Leve_level": "Требуемый уровень"
   },
-  "TIPS": {
-    "Title": "Совет",
-    "Community_rotations": "Вы можете найти ротации для данного рецепта внутри страницы Ротации сообщества.",
-    "GC_Deliveries": "Вы можете подготовить списки поставок GC на странице Поставки Grand Company.",
-    "Desynth": "Вы можете найти идеальные предметы для повышения уровня десинтеза в разделе Гайд по десинтезу.",
-    "DB": "Teamcraft включает в себя базу данных, вы можете нажать на значок \"i\" около любого предмета, чтобы открыть страницу с информацией.",
-    "3D_model": "Вы можете просмотреть 3D модель предметов внутри базы данных.",
-    "Levequests": "Вы можете подготовить списки ливквестов и предварительно посмотреть количество опыта за них в разделе Ливквесты.",
-    "Log_tracker": "Вы можете отслеживать прогресс вашего журнала (сбор, крафт, рыбалка) на странице трекера журнала.",
-    "Desktop_app_overlay": "Вы можете включить оверлей для оповещений при использовании приложения на рабочем столе (ссылка внизу на боковой панели).",
-    "Start_desktop_before_game": "Не забудьте запустить приложение перед игрой, чтобы обеспечить максимальную целостность данных",
-    "Middle_click_share_button": "В приложении, нажмите на среднюю кнопку \"Поделиться\" в верхней панели, чтобы открыть текущую страницу в браузере",
-    "Quick_search": "Нажмите Ctrl + Shift + F, чтобы открыть всплывающее окно поиска из любого места",
-    "Open_in_desktop_shortcut": "Нажмите Ctrl + Shift + C, чтобы открыть текущую страницу в приложении или открыть модуль \"Открыть веб-ссылку\" в приложении."
-  },
   "RECIPE_FINDER": {
     "Title": "Поиск рецептов",
     "Placeholder": "Название предмета",
@@ -1927,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Снаряжение, из которого можно извлечь материи (100% spiritbond)",
       "Message": "Вы можете получить материю из этого предмета снаряжения"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1993,6 +1987,8 @@
     "Copied_as_string": "Набор снаряжения скопирован как строка",
     "Mark_as_done": "Отметить как выполнено",
     "Create_commission": "Создать заказ (поручение) для этого набора снаряжения",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "Броня",
       "Ears": "Уши",
@@ -2461,7 +2457,8 @@
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
     "Title": "Retainers",

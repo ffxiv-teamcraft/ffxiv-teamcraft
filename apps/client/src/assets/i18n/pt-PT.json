@@ -458,6 +458,8 @@
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
+    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -478,6 +480,7 @@
       "Theme": "Tema",
       "Search": "Pesquisa",
       "Lists": "Lists",
+      "Alarms": "Alarms",
       "Other": "Outro",
       "Sekrit": "Sekrit"
     },
@@ -979,6 +982,8 @@
       "Pliant": "Pliant",
       "Sturdy": "Sturdy",
       "Centered": "Centered",
+      "Malleable": "Malleable",
+      "Primed": "Primed",
       "Normal": "Normal"
     },
     "SOLVER": {
@@ -1720,21 +1725,6 @@
     "Job": "Job",
     "Leve_level": "Required level"
   },
-  "TIPS": {
-    "Title": "Tip",
-    "Community_rotations": "Pode encontrar sequências para uma determinada fórmula dentro da página de sequências da comunidade.",
-    "GC_Deliveries": "Pode preparar listas para entregas de GC dentro da página de entregas da mesma.",
-    "Desynth": "You can find ideal items to level up desynth in desynth page.",
-    "DB": "Teamcraft includes a database, you can click on the \"i\" icon anywhere to open database page for the item it is next to.",
-    "3D_model": "You can preview 3D model of items inside the database.",
-    "Levequests": "You can prepare leve lists and preview exp gains inside the levequests page.",
-    "Log_tracker": "You can track your log progression (gathering, crafting, fishing) inside the log tracker page.",
-    "Desktop_app_overlay": "You can have an overlay for alarms when using the desktop app (download link inside the sidebar).",
-    "Start_desktop_before_game": "Remember to start desktop app before the game to ensure maximum data integrity",
-    "Middle_click_share_button": "On desktop app, middle click on the share button in topbar to open current page in browser",
-    "Quick_search": "Press Ctrl + Shift + F  to open a search popup from anywhere in the tool",
-    "Open_in_desktop_shortcut": "Press Ctrl + Shift + C to open current page in desktop app or to open the \"Open web link\" modal on desktop app."
-  },
   "RECIPE_FINDER": {
     "Title": "Recipe finder",
     "Placeholder": "Item name",
@@ -1927,6 +1917,10 @@
     "CAN_EXTRACT_MATERIA": {
       "Title": "Gear you can extract materia from (100% spiritbond)",
       "Message": "You can extract a materia from this gear piece"
+    },
+    "USELESS_HQ": {
+      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
   "VERSION_LOCK": {
@@ -1993,6 +1987,8 @@
     "Copied_as_string": "Gearset copied as string",
     "Mark_as_done": "Mark as done",
     "Create_commission": "Create a commission for this gearset",
+    "Value_for_next": "Next breakpoint",
+    "Value_for_previous": "Previous breakpoint",
     "SLOT": {
       "Body": "Chest",
       "Ears": "Ears",
@@ -2461,7 +2457,8 @@
     "Generate_list": "Generate a list",
     "Empty_slot": "Empty slot",
     "In_inventory": "You have this item inside one of your inventories",
-    "Only_inventory": "Only consider items in inventory"
+    "Only_inventory": "Only consider items in inventory",
+    "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
     "Title": "Retainers",
