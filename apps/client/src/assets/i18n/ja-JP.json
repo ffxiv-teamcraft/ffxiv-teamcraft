@@ -979,12 +979,12 @@
       "Good": "高品質",
       "Poor": "低品質",
       "Fail": "失敗",
-      "Pliant": "Pliant",
-      "Sturdy": "Sturdy",
-      "Centered": "Centered",
-      "Malleable": "Malleable",
-      "Primed": "Primed",
-      "Normal": "普通"
+      "Pliant": "高能率",
+      "Sturdy": "頑丈",
+      "Centered": "安定",
+      "Malleable": "高進捗",
+      "Primed": "長持続",
+      "Normal": "通常"
     },
     "SOLVER": {
       "Hq_target": "HQ目標値",
