@@ -76,7 +76,7 @@ export class LevelingEquipmentComponent {
       level: [null, [Validators.required, Validators.min(3), Validators.max(environment.maxLevel - 1)]],
       includeCrafting: [this.settings.getBoolean('leveling-equipment:includeCrafting', true)],
       includeTrades: [this.settings.getBoolean('leveling-equipment:includeTrades', true)],
-      onlyInventoryContent: [this.settings.getBoolean('leveling-equipment:onlyInventoryContent', false)]
+      onlyInventoryContent: [this.desktop ? this.settings.getBoolean('leveling-equipment:onlyInventoryContent', false) : false]
     });
 
     this.results$ = this.search$.pipe(
@@ -184,7 +184,7 @@ export class LevelingEquipmentComponent {
                   .forEach(slot => {
                     if (!row.gearset[slot.property] && this.gearsetsFacade.canEquipSlot(slot.name, row.gearset.chest?.itemId, row.gearset.legs?.itemId)) {
                       row.gearset[slot.property] = this.getSlotPiece(row.level, mainStat, slot.equipSlotCategoryId, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
-                      if (row.gearset[slot.property]) {
+                      if (row.gearset[slot.property] && this.desktop) {
                         row.gearset[slot.property].isInInventory = inventory.hasItem(row.gearset[slot.property].itemId, true);
                       }
                     }
@@ -194,7 +194,7 @@ export class LevelingEquipmentComponent {
                   if (row.gearset.ring1) {
                     if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
                       row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
-                      if (row.gearset.offHand) {
+                      if (row.gearset.offHand && this.desktop) {
                         row.gearset.offHand.isInInventory = inventory.hasItem(row.gearset.offHand.itemId, true);
                       }
                     } else {
