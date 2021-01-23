@@ -2,14 +2,17 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { BehaviorSubject, interval, Observable, of, Subject } from 'rxjs';
 import { map, mergeMap, retry, skip, switchMap, takeUntil, tap } from 'rxjs/operators';
-import { XivapiList } from '@xivapi/angular-client';
+import { XivapiEndpoint, XivapiList } from '@xivapi/angular-client';
 import * as request from 'request';
+import * as querystring from 'querystring';
 
 export abstract class AbstractExtractor {
 
   protected static outputFolder = join(__dirname, '../../../client/src/app/core/data/sources/');
 
   protected static assetOutputFolder = join(__dirname, '../../../client/src/assets/data/');
+
+  protected static XIVAPI_BASE_URL = process.env.XIVAPI_BASE_URL || 'https://xivapi.com';
 
   protected static XIVAPI_KEY = process.env.XIVAPI_KEY;
 
@@ -56,6 +59,14 @@ export abstract class AbstractExtractor {
     } else {
       return `${url}?${paramName}=${paramValue}`;
     }
+  }
+
+  protected getResourceEndpointWithQuery(resource: XivapiEndpoint, queryParams: { ids?: string, columns?: string }): string {
+    return `${AbstractExtractor.XIVAPI_BASE_URL}/${resource}?${querystring.stringify(queryParams)}`;
+  }
+
+  protected getSearchEndpointWithQuery(queryParams: { indexes?: string, columns?: string, string_column?: string, string?: string, string_algo?: string, filters?: string }): string {
+    return `${AbstractExtractor.XIVAPI_BASE_URL}/search?${querystring.stringify(queryParams)}`;
   }
 
   protected done(): void {
