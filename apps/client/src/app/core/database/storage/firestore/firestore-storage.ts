@@ -217,7 +217,9 @@ export abstract class FirestoreStorage<T extends DataModel> extends DataStore<T>
 
   setMany(entities: T[], uriParams?: any): Observable<void> {
     const batch = this.firestore.firestore.batch();
-    entities.forEach(entity => {
+    entities
+      .filter(entity => !!entity)
+      .forEach(entity => {
       batch.set(this.firestore.collection(this.getBaseUri(uriParams)).doc(entity.$key).ref, this.prepareData(entity));
     });
     return from(batch.commit());
