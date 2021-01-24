@@ -200,7 +200,7 @@
     "Group_not_found": "알람 그룹을 찾을 수 없습니다",
     "Add_group_and_alarms": "알람에 해당 그룹과 알람을 모두 추가하기",
     "Delete_all": "모든 알람 삭제",
-    "Delete_alarm": "Delete this alarm",
+    "Delete_alarm": "해당 알람 삭제",
     "Regenerating_alarms": "알람 갱신 중..",
     "Regenerate": "알람 갱신",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
