@@ -82,11 +82,11 @@ export class DatFilesWatcher {
       if (this.mainWindow.win) {
         if (filename.endsWith('ITEMODR.DAT')) {
           this.parseItemODR(join(watchDir, filename), contentId);
-        }
-        this.mainWindow.win.webContents.send('dat:content-id', contentId);
-        if (contentId !== this.lastContentId) {
-          log.log(`New content ID: ${contentId}`);
-          this.lastContentId = contentId;
+          this.mainWindow.win.webContents.send('dat:content-id', contentId);
+          if (contentId !== this.lastContentId) {
+            log.log(`New content ID: ${contentId}`);
+            this.lastContentId = contentId;
+          }
         }
       }
     }
