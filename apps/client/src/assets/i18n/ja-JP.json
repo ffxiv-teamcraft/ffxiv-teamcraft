@@ -200,6 +200,7 @@
     "Group_not_found": "アラームグループが見つかりません",
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
+    "Delete_alarm": "Delete this alarm",
     "Regenerating_alarms": "アラーム更新中...",
     "Regenerate": "アラーム更新",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
