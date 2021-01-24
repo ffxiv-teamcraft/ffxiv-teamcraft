@@ -203,7 +203,7 @@
     "Delete_alarm": "해당 알람 삭제",
     "Regenerating_alarms": "알람 갱신 중..",
     "Regenerate": "알람 갱신",
-    "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
+    "Group_outdated": "해당 그룹은 오래되었습니다. 사용자가 새 업데이트를 통해 로그인을 하면 갱신됩니다",
     "Remove_from_group": "해당 그룹 삭제",
     "REALTIME": {
       "Reset_timers": "초기화 타이머",
@@ -449,7 +449,7 @@
     "Enable_metrics_capture_explain": "(해당 기능은 길 또는 아이템의 변경 내역을 수집하지만 서버에 업로드되지 않고, 오직 개인만을 위한 기능입니다)",
     "Metrics_capture_tooltip": "해당 기능은 추후 업데이트를 통해 추가됩니다. 하지만 데이터 캡쳐가 활성화된 상태라면, 해당 시점부터 데이터가 기록됩니다",
     "Metrics_capture_folder": "메트릭스 로그 폴더",
-    "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
+    "Char_data_folder": "캐릭터 데이터 폴더 (CHRXXXXXXX 폴더가 있는 곳)",
     "Maximum_vendor_price": "상점 구매가 최대치",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT 레이아웃 필터에서 사용될 가격 최대치 (0 = 최대치 없음)",
     "Rawsock_flag": "패킷 캡처를 위하여 RawSocket 사용하기",
@@ -461,7 +461,7 @@
     "Reset_ignored_characters": "무시된 캐릭터 초기화",
     "Show_other_characters_inventories_in_list": "목록에 다른 캐릭터의 소지품도 표시",
     "Alarm_panels_collapsed_by_default": "알람 패널 간소화를 기본값으로 설정",
-    "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Alarm_groups_before_no_group": "그룹지정이 안된 알람 앞에 그룹 알람을 표시",
     "COLORS": {
       "Background": "배경 색상",
       "Primary": "기본 색상",
@@ -688,7 +688,7 @@
     "Create_commission": "해당 목록에 대한 유저 의뢰를 만들기",
     "Commission_list": "유저 의뢰 목록",
     "Inventory_cleanup": "소지품 정리",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Inventory_cleanup_description": "여기는 목록에 사용되지 않는 소지품 내아이템입니다",
     "LAYOUT_DIALOG": {
       "Title": "레이아웃",
       "Add_panel": "패널 추가",
@@ -1787,8 +1787,8 @@
     "Add_stat_filter": "스탯 필터 추가",
     "Add_bonus_stat_filter": "보너스 스탯 필터 추가",
     "Search_tip": "<patch #>를 입력하여 해당 버전으로 필터가 가능합니다. 예시: patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Stats_exclude_tip": "해당 능력치가 없는 아이템을 검색하길 원한다면 능력치 최솟값은 -1로 설정",
+    "Bonuses_exclude_tip": "해당 보너스 능력치가 없는 아이템을 검색하길 원한다면 보너스 최솟값은 -1로 설정",
     "SORT_BY": {
       "Relevance": "관련성",
       "ID": "ID",
@@ -1818,7 +1818,7 @@
     "Banner_description_warning": "패킷 캡쳐는 이용약관(ToS) 에 위배되므로 기본값은 비활성화 상태입니다. 게임 상에서 다른 사람들에게 이 기능을 사용한다는 것을 이야기하지 않는다면 이 기능을 사용하는 데에는 문제가 없습니다.",
     "Empty_inventory": "소지품을 아직 불러오지 못했습니다",
     "Please_zone": "소지품 시스템을 초기화하려면 임의의 위치로 텔레포트 한 다음 초코보 가방을 열어주세요.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Please_zone_or_sort": "현재 플레이 중인 캐릭터를 인식하지 못하면 소지품 동기화는 작동하지 않습니다. 소지품 아이템 정렬/정렬 해제 또는 텔레포를 사용하여 아무 맵으로 이동하세요.",
     "Unknown_character": "알 수 없는 인게임 캐릭터",
     "No_character_id": "캐릭터의 id 설정이 존재하지 않습니다.",
     "Please_relog": "Universalis에 기여하기 위해서는 게임 상에서 한번의 재접속이 필요합니다.",
@@ -1855,7 +1855,7 @@
     "Search_for_an_item": "아이템 검색",
     "Filter_by_expansion": "확장팩으로 필터링",
     "In_x_containers": "집사 내에 {{amount}} 개 있습니다",
-    "New_character_detected": "New character detected",
+    "New_character_detected": "새로운 캐릭터가 감지됨",
     "Unknown_position": "알 수 없는 위치",
     "BAG": {
       "SaddleBag": "초코보 가방",
@@ -1867,10 +1867,10 @@
       "RetainerMarket": "집사가 판매중"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
-      "Linked": "Linked",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
+      "Description": "다중 캐릭터 동기화와 다른 멋진 기능들을 사용하고 싶으시다면, 팀크래프트는 현재 플레이중인 캐릭터 또는 동기화를 원하는 캐릭터가 어떤건지 알아야 합니다.",
+      "Linked": "연결됨",
+      "Linked_tooltip": "해당 캐릭터는 이미 다른 인게임 캐릭터와 연결되었습니다. 선택하면 다른 캐릭터와의 연결이 해제됩니다",
+      "Override_link_confirmation": "정말 연결을 해제하고 싶으신가요?",
       "Ignore": "해당 인게임 캐릭터를 무시",
       "You_can_reset_ignore": "데스크톱 앱의 설정에서 무시된 캐릭터를 초기화할 수 있습니다"
     }
