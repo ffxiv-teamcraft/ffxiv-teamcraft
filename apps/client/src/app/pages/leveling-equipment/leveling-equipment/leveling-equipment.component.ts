@@ -193,9 +193,9 @@ export class LevelingEquipmentComponent {
                 if (!row.gearset.ring2) {
                   if (row.gearset.ring1) {
                     if (this.lazyData.data.equipment[row.gearset.ring1.itemId].unique) {
-                      row.gearset.offHand = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
-                      if (row.gearset.offHand && this.desktop) {
-                        row.gearset.offHand.isInInventory = inventory.hasItem(row.gearset.offHand.itemId, true);
+                      row.gearset.ring2 = this.getSlotPiece(row.level, mainStat, 12, filters.includeCrafting, filters.includeTrades, filters.onlyInventoryContent, inventory);
+                      if (row.gearset.ring2 && this.desktop) {
+                        row.gearset.ring2.isInInventory = inventory.hasItem(row.gearset.ring2.itemId, true);
                       }
                     } else {
                       row.gearset.ring2 = JSON.parse(JSON.stringify(row.gearset.ring1));
