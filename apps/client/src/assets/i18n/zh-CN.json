@@ -200,6 +200,7 @@
     "Group_not_found": "未找到闹钟组",
     "Add_group_and_alarms": "将此组及其所有提醒添加到您的闹钟",
     "Delete_all": "Delete all your alarms",
+    "Delete_alarm": "Delete this alarm",
     "Regenerating_alarms": "Regenerating your alarms...",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
