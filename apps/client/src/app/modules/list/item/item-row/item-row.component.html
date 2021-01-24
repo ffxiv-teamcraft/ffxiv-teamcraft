@@ -38,7 +38,7 @@
         <ng-container *ngIf="list$ | async as list">
           <div class="menu-buttons" fxLayout="row" fxLayoutGap="5px" *ngIf="userId$ | async as userId">
             <app-item-row-buttons
-              [recipeId]="item.recipeId"
+              [recipeId]="item.recipeId || (item.craftedBy && item.craftedBy.length > 0 && item.craftedBy[0].id)"
               [buttonsCache]="buttonsCache"
               [finalItem]="finalItem$ | async"
               [itemId]="item.id"

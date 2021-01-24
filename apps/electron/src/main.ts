@@ -10,6 +10,7 @@ import { ProxyManager } from './tools/proxy-manager';
 import * as log from 'electron-log';
 import { app, ipcMain } from 'electron';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
+import { MetricsSystem } from './ipc/metrics-system';
 
 const argv = process.argv.slice(1);
 
@@ -51,7 +52,8 @@ const proxyManager = new ProxyManager(store);
 const mainWindow = new MainWindow(store, overlayManager, proxyManager);
 const pcapManager = new PacketCapture(mainWindow, store, options);
 const trayMenu = new TrayMenu(mainWindow, overlayManager, store, pcapManager);
-const datFilesWatcher = new DatFilesWatcher(mainWindow);
+const metrics = new MetricsSystem(mainWindow, store);
+const datFilesWatcher = new DatFilesWatcher(mainWindow, store);
 
 // Prepare listeners connector
 const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager, mainWindow, store, trayMenu, proxyManager);
@@ -69,3 +71,4 @@ desktopApp.start();
 // Then start all our ipc listeners and dat fiels watcher
 ipcListenersManager.init();
 datFilesWatcher.start();
+metrics.start();

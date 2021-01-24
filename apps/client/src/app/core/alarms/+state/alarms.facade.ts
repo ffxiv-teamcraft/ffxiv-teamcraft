@@ -5,7 +5,8 @@ import { Store } from '@ngrx/store';
 import { AlarmsState } from './alarms.reducer';
 import { alarmsQuery } from './alarms.selectors';
 import {
-  AddAlarms, AddAlarmsAndGroup,
+  AddAlarms,
+  AddAlarmsAndGroup,
   AssignGroupToAlarm,
   CreateAlarmGroup,
   DeleteAlarmGroup,
@@ -19,7 +20,7 @@ import {
   UpdateAlarmGroup
 } from './alarms.actions';
 import { Alarm } from '../alarm';
-import { filter, first, map, shareReplay, skipUntil, switchMap } from 'rxjs/operators';
+import { filter, first, map, skipUntil, switchMap } from 'rxjs/operators';
 import { combineLatest, Observable, of } from 'rxjs';
 import { AlarmDisplay } from '../alarm-display';
 import { EorzeanTimeService } from '../../eorzea/eorzean-time.service';
@@ -485,7 +486,8 @@ export class AlarmsFacade {
       return alarm.mapId === n.map;
     });
     if (nodeForThisAlarm) {
-      const regenerated = this.generateAlarms(nodeForThisAlarm).find(a => a.fishEyes === alarm.fishEyes);
+      const alarms = this.generateAlarms(nodeForThisAlarm);
+      const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
       regenerated.userId = alarm.userId;
       regenerated.$key = alarm.$key;
       regenerated.appVersion = environment.version;

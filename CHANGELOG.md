@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.1"></a>
+## [8.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.0...v8.0.1) (2021-01-24)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms not loading properly in some cases ([62c867f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/62c867f))
+* **desktop:** character detection should now be more reliable ([2cbeef9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2cbeef9))
+* **leveling-equipment:** fixed ring being shown in offhand slot ([f5f2cab](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5f2cab))
+* **list:** fixed layout button not using proper copy mode ([4c0acac](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/4c0acac))
+* **retainer-ventures:** now sorted by total price ([cc32049](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/cc32049))
+
+
+### Features
+
+* **desktop:** you can now change the characters folder to watch ([baf4b6c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/baf4b6c))
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v7.6.25...v8.0.0) (2021-01-23)
 

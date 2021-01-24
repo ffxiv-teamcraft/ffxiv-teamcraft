@@ -140,7 +140,9 @@ export class RetainerVenturesComponent extends TeamcraftComponent implements OnI
                 })
                 .filter(entry => entry.price)
                 .sort((a, b) => {
-                  const priceDiff = b.price - a.price;
+                  const aPrice = a.price * a.obtainedAmount;
+                  const bPrice = b.price * a.obtainedAmount;
+                  const priceDiff = bPrice - aPrice;
                   if (priceDiff === 0) {
                     return b.rate - a.rate;
                   }

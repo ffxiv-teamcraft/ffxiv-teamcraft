@@ -54,7 +54,7 @@ export class UserService extends FirestoreStorage<TeamcraftUser> {
             return of(user);
           }
           if (user.patreonBenefitsUntil) {
-            user.patron = user.patreonBenefitsUntil.toMillis() >= Date.now();
+            user.patron = user.patreonBenefitsUntil.seconds * 1000 >= Date.now();
             return of(user);
           }
           return this.http.get(`https://us-central1-ffxivteamcraft.cloudfunctions.net/patreon-pledges?token=${user.patreonToken}`).pipe(

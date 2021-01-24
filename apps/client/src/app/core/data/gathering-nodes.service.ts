@@ -103,7 +103,7 @@ export class GatheringNodesService {
   }
 
   private fishingSpotToGatheringNode(spot: any, itemId: number): GatheringNode {
-    const gtFish = this.gtData.getFishingSpots(itemId)
+    const gtSpots = this.gtData.getFishingSpots(itemId)
       .map(s => {
         const mapId = this.l12n.getMapId(s.zone);
         const zoneId = this.l12n.getAreaIdByENName(s.title);
@@ -112,10 +112,10 @@ export class GatheringNodesService {
           mapId,
           zoneId
         };
-      })
-      .filter(s => {
-        return s.mapId === spot.mapId && s.zoneId === spot.zoneId;
-      })[0];
+      });
+    const gtFish = gtSpots.find(s => {
+      return s.mapId === spot.mapId && s.zoneId === spot.zoneId;
+    }) || gtSpots[0];
     const fishParameter = this.lazyData.data.fishParameter[itemId];
     const node: GatheringNode = {
       id: spot.id,
