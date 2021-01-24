@@ -99,6 +99,7 @@
                       nz-dropdown
                       nzGhost
                       nzTrigger="click"
+                      nzDanger
                       nzShape="circle" nzSize="small"
               >
                 <i nz-icon nzType="delete"></i>
@@ -293,7 +294,8 @@
                    [markers]="[{x: row.alarm.coords.x, y: row.alarm.coords.y, iconType: 'img', iconImg: row.alarm.type | nodeTypeIcon: true}]"></app-map>
         </ng-template>
         <ng-template #deleteAlarmTpl>
-          <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzPopconfirmTitle]="'Confirmation' | translate" nz-icon nz-popconfirm
+          <i (nzOnConfirm)="deleteAlarm(row.alarm)" [nzTooltipTitle]="'ALARMS.Delete_alarm' | translate" nz-tooltip
+             [nzPopconfirmTitle]="'Confirmation' | translate" nz-icon nz-popconfirm
              nzType="delete"></i>
         </ng-template>
         <ng-template #removeFromGroup>
