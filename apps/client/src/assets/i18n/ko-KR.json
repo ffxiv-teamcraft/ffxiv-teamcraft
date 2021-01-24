@@ -2466,7 +2466,7 @@
     "Title": "집사",
     "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
     "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
+    "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
     "Task_completed_notification_title": "{{name}} has finished its venture",
     "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
