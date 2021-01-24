@@ -1922,7 +1922,7 @@
     },
     "USELESS_HQ": {
       "Title": "해당 아이템은 '장인의 날랜손'을 사용할 수 있기 때문에 HQ재료가 필요하지 않습니다",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Message": "해당 아이템은 '장인의 날랜손'을 사용할 수 있는 레시피에만 필요하므로, HQ가 필요하지 않습니다"
     }
   },
   "VERSION_LOCK": {
