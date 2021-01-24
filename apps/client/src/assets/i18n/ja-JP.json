@@ -457,8 +457,8 @@
     "Clear_inventory_on_startup": "実行時所持品を空にする",
     "Switch_tc_when_switch_ingame_character": "ゲーム内でキャラクター変更時Teamcraftのキャラクターも一緒に変更",
     "Reset_ignored_characters": "無視されたキャラクター初期化",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
-    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
+    "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "背景色",
@@ -480,7 +480,7 @@
       "Theme": "テーマ",
       "Search": "検索",
       "Lists": "リスト",
-      "Alarms": "Alarms",
+      "Alarms": "アラーム",
       "Other": "その他",
       "Sekrit": "Sekrit"
     },
@@ -545,7 +545,7 @@
     "Delete_after_merge": "併合後に既存のリストを削除する",
     "Favorite_lists": "お気に入りのリスト",
     "No_favorite_lists": "お気に入りのリストがありません",
-    "Delete_multiple_lists": "Delete multiple lists",
+    "Delete_multiple_lists": "複数のリスト削除",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
@@ -681,11 +681,11 @@
     "Inventory_synthesis": "所持品統合(各所持品ごとのアイテム)",
     "X_needed": "{{amount}} 個必要",
     "Leave_list": "このリストから出る",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Cannot_leave": "次の理由でこのリストを離れません。\nこのリストがフリーカンパニー(この場合管理者に消すように頼んでください) 或はパーティ(この場合はパーティーを出てください) に共有されています。",
     "Split_list": "このリストを分割",
     "Create_commission": "このリストから依頼する",
     "Commission_list": "このリストから依頼する",
-    "Inventory_cleanup": "Inventory cleanup",
+    "Inventory_cleanup": "所持品整理",
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
@@ -728,12 +728,12 @@
     },
     "OVERLAY": {
       "Open": "リストオーバーレイの切り替え",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "No_display": "始めにリストをメインプログラムから開いてください",
+      "No_panel_selected": "大分類を選択してください"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "他のリストに追加するアイテムを選択",
+      "Remove_from_list": "現在リストから消去"
     }
   },
   "LIST_TAGS": {
@@ -829,9 +829,9 @@
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
-    "Fish_eyes": "Requires fish eyes to only care about weather requirement",
+    "Fish_eyes": "ただ天気条件の為に魚の目が必要",
     "Add_alarm": "アラームを追加する",
-    "Add_alarm_fish_eyes": "Add alarm with fish eyes",
+    "Add_alarm_fish_eyes": "魚の目と共にアラームを追加",
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
