@@ -1406,7 +1406,7 @@
     "Contribute_description": "Githubでこのプロジェクトに貢献することができます。初心者もいつでも歓迎です!\n\nコードの貢献のみならず、機能要請とバグ報告は皆に最上の機能を提供するのに、役に立ちます。時間をかけてテストし、バグを探してくださる皆さんに感謝しております。",
     "Patreon_title": "Patreonにサポートする",
     "Patreon_description": "Patreonは毎月プロジェクトを寄付できるプラットフォームです。この寄付金はサーバー、認証書、分かち合いに使用され、プロジェクトを作業する開発者たちがもっと多くの時間を割くところに使われます。\n\n寄付金に応じて、寄付金に対する謝礼として、いくつかの素晴らしい特典が得られます。",
-    "Popup_introduction": "Hi, I'm Miu, the developer of the tool you're currently using.<br/> Teamcraft has been a hobby for me since the last few years and my dream is to make this my fulltime job. <br/><br/>With your help, this dream could become a reality, you can support the tool on patreon, every single dollar counts and will help me reach this goal. <br/><br/> Supporting the project on patreon also gives you some cool benefits:",
+    "Popup_introduction": "おはようございます、私はTeamcraft開発者Miuです。<br/>Teamcraftはここ数年前から私の趣味であり現在は趣味ではない私の職業にするための夢として、その夢を叶えるために頑張っています。<br/><br/>もし皆さんがpatreonでサポートしてくれるなら、Teamcraftをもっと改善して私は私の夢を現実にする事ができます。<br/><br/>patreonでプロジェクトにサポートしてくれるなら次のような素敵な特典を得る事ができます。",
     "Already_supporting": "すでにPatreonのサポーターですか？設定でアカウントをPatreonにリンクしてください",
     "PATREON_BENEFITS": {
       "Discord_rank": "現在、進行中のジョブが見れるサポーターチャンネルにアクセス可能な Discordサーバー特別等級 (${{price}})",
@@ -1493,15 +1493,15 @@
       "Required_craftsmanship": "必要作業精度",
       "Required_control": "必要加工精度",
       "Mark_as_done_in_gathering_log": "完了としてログにマーク",
-      "X_Equipped": "{{amount}} Equipped:",
-      "Item_series": "Set details"
+      "X_Equipped": "装備中:{{amount}} 個",
+      "Item_series": "装備詳細情報"
     },
     "FISH": {
-      "Hour": "Hour of the day",
+      "Hour": "時間通計",
       "Etime": "エオルゼア時間",
-      "Misses_popup_title": "Misses for this spot",
-      "Show_misses": "Show misses",
-      "Baits": "Bait used",
+      "Misses_popup_title": "該当する釣り場で逃がした魚",
+      "Show_misses": "逃がした魚表示",
+      "Baits": "使われた餌",
       "Hookset_and_tug": "Hooksets and tugs",
       "Weathers": "天気",
       "Weather_transitions": "Weather transitions",
