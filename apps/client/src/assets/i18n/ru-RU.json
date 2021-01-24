@@ -11,7 +11,7 @@
   "FC_name": "Название FC",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
-  "No_known_coordinates": "No known coordinates",
+  "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
@@ -170,8 +170,8 @@
     "Example": "Пример",
     "Change": "Изменить",
     "Dirty_changes": "Остались несохраненные изменения",
-    "Never": "Never",
-    "Festival": "Only during a festival"
+    "Never": "Никогда",
+    "Festival": "Только во время фестиваля"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -181,7 +181,7 @@
     "Alarms_created": "{{amount}} оповещений создано",
     "Alarm_already_created": "Оповещение уже установлено",
     "Custom_sound": "Настраиваемый звук",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "Отрицательное значение = позже появления",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
     "Delete_group": "Удалить группу",
