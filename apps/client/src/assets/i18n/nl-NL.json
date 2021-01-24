@@ -200,6 +200,7 @@
     "Group_not_found": "Alarm group not found",
     "Add_group_and_alarms": "Add this group and all its alarms to your alarms",
     "Delete_all": "Delete all your alarms",
+    "Delete_alarm": "Delete this alarm",
     "Regenerating_alarms": "Regenerating your alarms...",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
