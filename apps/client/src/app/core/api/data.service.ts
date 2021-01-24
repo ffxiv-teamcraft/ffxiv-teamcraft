@@ -6,7 +6,7 @@ import { Recipe } from '../../model/search/recipe';
 import { ItemData } from '../../model/garland-tools/item-data';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { SearchFilter } from '../../model/search/search-filter.interface';
-import { expand, filter, first, map, switchMap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { SearchResult } from '../../model/search/search-result';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InstanceData } from '../../model/garland-tools/instance-data';
@@ -78,8 +78,8 @@ export class DataService {
     return 'https://xivapi.com';
   }
 
-  public xivapiSearch(options: XivapiSearchOptions) {
-    const lang = this.getSearchLang();
+  public xivapiSearch(options: XivapiSearchOptions, forcedLang?: string) {
+    const lang = forcedLang || this.getSearchLang();
 
     const searchOptions: XivapiSearchOptions = Object.assign({}, options, {
       language: lang
@@ -172,9 +172,10 @@ export class DataService {
    * @param {SearchFilter[]} filters
    * @param onlyCraftable
    * @param sort
+   * @param ignoreLanguageSetting
    * @returns {Observable<Recipe[]>}
    */
-  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc']): Observable<SearchResult[]> {
+  public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false): Observable<SearchResult[]> {
     // Filter HQ and Collectable Symbols from search
     query = query.replace(/[\ue03a-\ue03d]/g, '').toLowerCase();
 
@@ -242,7 +243,7 @@ export class DataService {
     }
     searchOptions.sort_order = sort[1];
 
-    let results$ = this.xivapiSearch(searchOptions).pipe(
+    let results$ = this.xivapiSearch(searchOptions, ignoreLanguageSetting ? this.translate.currentLang : null).pipe(
       map(response => {
         return response.Results;
       })
