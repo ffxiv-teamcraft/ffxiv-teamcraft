@@ -2464,7 +2464,7 @@
   },
   "RETAINERS": {
     "Title": "リテイナー",
-    "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
+    "No_retainers": "リテイナーがいません。リテイナーベルを鳴らしてリテイナーの情報を読み込んでください",
     "Selling": "{{amount}} 個のアイテムを販売中",
     "X_items": "{{amount}} 個のアイテム",
     "Task_complete": "ベンチャーが完了しました。",
@@ -2474,9 +2474,9 @@
   },
   "RETAINER_VENTURES": {
     "Title": "リテイナーベンチャー",
-    "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
+    "Description": "リテーナーのジョブ、レベル、IL、獲得力（必要に応じて）を入力して、一番利益の出るベンチャーを見つけます。 あなたのリテイナーのレベルが高い場合、利益のために獲得できるすべてのアイテムを考慮するため、これは1分かかることがあります。",
     "Retainer_ilvl": "IL",
-    "Gathering": "Gathering",
+    "Gathering": "獲得力",
     "Task_level": "ベンチャーレベル",
     "Total_per_venture": "ベンチャーあたりの合計",
     "Use_retainer": "Fill with retainer"
