@@ -1,4 +1,3 @@
-import { exec } from 'child_process';
 import * as log from 'electron-log';
 import { FSWatcher, readdirSync, readFile, readFileSync, statSync, watch } from 'fs';
 import { join } from 'path';
@@ -6,7 +5,9 @@ import { MainWindow } from '../window/main-window';
 import * as BufferReader from 'buffer-reader';
 import { InventoryCoords } from './inventory-coords';
 import { RetainerInventory } from './retainer-inventory';
-import { app, ipcMain } from 'electron';
+import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
+import { Store } from '../store';
+import { moveSync } from 'fs-extra';
 
 class UnexpectedSizeError extends Error {
   constructor(expected, real) {
@@ -51,7 +52,28 @@ export class DatFilesWatcher {
 
   private watcher: FSWatcher;
 
-  constructor(private mainWindow: MainWindow) {
+  constructor(private mainWindow: MainWindow, private store: Store) {
+    ipcMain.on('dat:path:get', (event) => {
+      event.sender.send('dat:path:value', this.getWatchDir());
+    });
+
+    ipcMain.on('dat:path:set', (event, value) => {
+      const folderPickerOptions: OpenDialogOptions = {
+        // See place holder 2 in above image
+        defaultPath: this.getWatchDir(),
+        properties: ['openDirectory']
+      };
+      dialog.showOpenDialog(this.mainWindow.win, folderPickerOptions).then((result) => {
+        if (result.canceled) {
+          return;
+        }
+        const filePath = result.filePaths[0];
+        this.store.set('dat-watcher:dir', filePath);
+        event.sender.send('dat:path:value', this.getWatchDir());
+        this.stop();
+        this.start();
+      });
+    });
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
@@ -99,6 +121,22 @@ export class DatFilesWatcher {
     }, {});
   }
 
+  private getWatchDir(): string {
+    const region = this.store.get('region', null);
+    const customDir = this.store.get('dat-watcher:dir', null);
+    if (customDir) {
+      return customDir;
+    }
+    switch (region) {
+      case 'Korea':
+        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - KOREA`;
+      case 'China':
+        return 'C:\\Program Files (x86)\\上海数龙科技有限公司\\最终幻想XIV\\game\\My Games\\FINAL FANTASY XIV - A Realm Reborn';
+      default:
+        return `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
+    }
+  }
+
   start(): void {
     this.mainWindow.closed$.subscribe(() => {
       this.stop();
@@ -106,15 +144,18 @@ export class DatFilesWatcher {
     if (!!this.watcher) {
       return;
     }
-    const watchDir = `${app.getPath('documents')}\\My Games\\FINAL FANTASY XIV - A Realm Reborn`;
-    this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
-      this.onEvent(event, filename, watchDir);
-    });
-    ipcMain.on('dat:all-odr', event => {
-      event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
-    });
-    log.log(`DAT Watcher started on ${watchDir}`);
-
+    const watchDir = this.getWatchDir();
+    try {
+      this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
+        this.onEvent(event, filename, watchDir);
+      });
+      ipcMain.on('dat:all-odr', event => {
+        event.sender.send('dat:all-odr:value', this.getAllItemODRs(watchDir));
+      });
+      log.log(`DAT Watcher started on ${watchDir}`);
+    } catch (e) {
+      log.error(e);
+    }
   }
 
   stop(): void {
