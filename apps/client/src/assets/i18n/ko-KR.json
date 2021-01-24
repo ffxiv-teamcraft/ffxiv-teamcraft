@@ -1921,7 +1921,7 @@
       "Message": "해당 장비에서 마테리아를 추출하실 수 있습니다"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Title": "해당 아이템은 '장인의 날랜손'을 사용할 수 있기 때문에 HQ재료가 필요하지 않습니다",
       "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
@@ -1989,8 +1989,8 @@
     "Copied_as_string": "장비 세트의 아이템 이름이 복사되었습니다",
     "Mark_as_done": "완료됨으로 표기",
     "Create_commission": "해당 장비 세트를 유저 의뢰로 만들기",
-    "Value_for_next": "Next breakpoint",
-    "Value_for_previous": "Previous breakpoint",
+    "Value_for_next": "다음 중단점",
+    "Value_for_previous": "이전 중단점",
     "SLOT": {
       "Body": "몸통",
       "Ears": "귀",
@@ -2455,11 +2455,11 @@
     "Title": "레벨링 장비",
     "Include_crafting": "제작템 포함",
     "Include_trades": "교환/구매템 포함",
-    "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
+    "Description": "직업과 레벨을 선택하고, 필터를 설정하여 검색을 클릭하여 직업 레벨에 맞는 장비를 찾을 수 있습니다",
     "Generate_list": "목록 생성",
     "Empty_slot": "빈 슬롯",
     "In_inventory": "해당 아이템이 소지품에 있습니다",
-    "Only_inventory": "Only consider items in inventory",
+    "Only_inventory": "소지품에 있는 장비만 찾기",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
