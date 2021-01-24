@@ -681,11 +681,11 @@
     "Inventory_synthesis": "所持品統合(各所持品ごとのアイテム)",
     "X_needed": "{{amount}} 個必要",
     "Leave_list": "このリストから出る",
-    "Cannot_leave": "You can't leave this list because it is shared to your entire FC (in which case you have to ask the owner to remove it) or one of your teams (in which case you can leave the team).",
+    "Cannot_leave": "次の理由でこのリストを離れません。\nこのリストがフリーカンパニー(この場合管理者に消すように頼んでください) 或はパーティ(この場合はパーティーを出てください) に共有されています。",
     "Split_list": "このリストを分割",
     "Create_commission": "このリストから依頼する",
     "Commission_list": "このリストから依頼する",
-    "Inventory_cleanup": "Inventory cleanup",
+    "Inventory_cleanup": "所持品整理",
     "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
@@ -728,12 +728,12 @@
     },
     "OVERLAY": {
       "Open": "リストオーバーレイの切り替え",
-      "No_display": "Open a list in main window to get started",
-      "No_panel_selected": "Select a panel using the buttons above"
+      "No_display": "始めにリストをメインプログラムから開いてください",
+      "No_panel_selected": "大分類を選択してください"
     },
     "SPLIT": {
-      "Pick_items": "Pick items to add to another list",
-      "Remove_from_list": "Remove from the current list"
+      "Pick_items": "他のリストに追加するアイテムを選択",
+      "Remove_from_list": "現在リストから消去"
     }
   },
   "LIST_TAGS": {
