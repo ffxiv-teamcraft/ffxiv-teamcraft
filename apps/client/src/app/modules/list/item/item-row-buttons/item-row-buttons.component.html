@@ -3,6 +3,7 @@
                         [showHistory]="finalItem"></app-marketboard-icon>
   <ng-container *ngIf="isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
     <button [itemNameCopy]="itemId"
+            [forceCopyMode]="notFavoriteCopyMode"
             nz-button
             nz-tooltip nzShape="circle"
             nzSize="small">

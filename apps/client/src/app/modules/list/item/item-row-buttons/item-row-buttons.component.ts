@@ -10,7 +10,6 @@ import { PermissionLevel } from '../../../../core/database/permissions/permissio
 import { CraftingRotation } from '../../../../model/other/crafting-rotation';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { RotationsFacade } from '../../../rotations/+state/rotations.facade';
-import { Craft } from '@ffxiv-teamcraft/simulator';
 import { LazyDataService } from '../../../../core/data/lazy-data.service';
 
 @Component({
@@ -162,6 +161,8 @@ export class ItemRowButtonsComponent extends TeamcraftComponent implements OnIni
       );
     })
   );
+
+  notFavoriteCopyMode = this.settings.preferredCopyType === 'classic' ? 'isearch' : 'classic';
 
   constructor(private messageService: NzMessageService, private translate: TranslateService,
               public settings: SettingsService, private cd: ChangeDetectorRef,
