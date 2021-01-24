@@ -181,7 +181,7 @@
     "Alarms_created": "{{amount}}개의 알람 생성됨",
     "Alarm_already_created": "알람이 이미 설정되었습니다",
     "Custom_sound": "알람소리 사용자 지정",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "음수 값 = 알람 이후",
     "New_group": "새로운 알람 그룹",
     "Confirm_group_delete": "정말 이 그룹을 삭제하시겠습니까?",
     "Delete_group": "그룹 삭제",
@@ -599,7 +599,7 @@
     "Include_final_items_in_main_layout": "기본 레이아웃에 최종 아이템을 포함",
     "Can_skip_buying_X": "{{amount}} 개 스킵 가능",
     "Can_skip_buying_entirely": "전부 스킵 가능",
-    "Can_skip_tooltip": "Another item you're buying requires this item, meaning that you can buy less of this one or skip it entirely if you're planning on buying everything in this panel",
+    "Can_skip_tooltip": "다른 아이템을 구매하기 위해선 해당 아이템이 필요합니다. 즉, 해당 패널에 있는 모든 것을 구매할 계획이라면 아이템을 적게 구매하거나 완전히 건너뛸 수 있습니다",
     "SCROLLING": {
       "Default": "기본 설정",
       "Only_large": "초과 되었을 때만 하기",
