@@ -127,6 +127,7 @@ jobs:
           command: yarn install --immutable
       - run:
           name: Deploying desktop on github
+          no_output_timeout: 30m
           command: yarn run electron:setup:publish
       - persist_to_workspace:
           root: ~/
