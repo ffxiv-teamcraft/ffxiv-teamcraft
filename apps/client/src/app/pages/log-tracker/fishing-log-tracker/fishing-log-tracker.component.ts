@@ -13,6 +13,7 @@ import { fshSpearLogOrder } from '../fsh-spear-log-order';
 import { GatheringNodesService } from '../../../core/data/gathering-nodes.service';
 import { GatheringNode } from '../../../core/data/model/gathering-node';
 import { Alarm } from '../../../core/alarms/alarm';
+import { uniqBy } from 'lodash';
 
 @Component({
   selector: 'app-fishing-log-tracker',
@@ -61,12 +62,15 @@ export class FishingLogTrackerComponent extends TrackerComponent implements OnIn
 
   public getFshData(itemId: number): { gatheringNode: GatheringNode, alarms: Alarm[] }[] {
     if (this.fshDataCache[itemId] === undefined) {
-      this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true).map(node => {
-        return {
-          gatheringNode: node,
-          alarms: this.alarmsFacade.generateAlarms(node)
-        };
-      });
+      this.fshDataCache[itemId] = this.gatheringNodesService.getItemNodes(itemId, true)
+        .map(node => {
+          return {
+            gatheringNode: node,
+            alarms: this.alarmsFacade.generateAlarms(node)
+          };
+        });
+
+      this.fshDataCache[itemId] = uniqBy(this.fshDataCache[itemId], entry => entry.gatheringNode.baits && entry.gatheringNode.baits[0]);
     }
     return this.fshDataCache[itemId];
   }
