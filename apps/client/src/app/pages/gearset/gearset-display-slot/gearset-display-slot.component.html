@@ -37,7 +37,14 @@
               <label nz-tooltip [nzTooltipTitle]="'GEARSETS.Mark_as_done' | translate" nz-checkbox [(ngModel)]="progression[propertyName].materias[i]"
                      (ngModelChange)="progressionChange.emit(progression)"></label>
             </div>
-            <div class="verbose-materia-name" [itemNameCopy]="materia">{{materia === 0 ? ('GEARSETS.No_materia' | translate) : materia | itemName | i18n}}</div>
+            <div class="verbose-materia-name" [itemNameCopy]="materia">
+              <span *ngIf="materia === 0 else materiaDisplay">
+                {{'GEARSETS.No_materia' | translate}}
+              </span>
+              <ng-template #materiaDisplay>
+                {{materia | itemName | i18n}} <span *ngIf="materia | materiaBonus as materiaBonus">({{materiaBonus.baseParamId | baseParamName | i18n}} +{{materiaBonus.value}})</span>
+              </ng-template>
+            </div>
           </div>
         </div>
       </ng-container>

@@ -90,7 +90,7 @@ export class ActionComponent {
   }
 
   private computeAvailableConditions(): void {
-    this.availableConditions = this.simulation.possibleConditions.map(condition => {
+    this.availableConditions = (this.simulation.possibleConditions || [StepState.NORMAL, StepState.GOOD, StepState.EXCELLENT, StepState.POOR]).map(condition => {
       return {
         condition,
         name: `${StepState[condition].slice(0, 1)}${StepState[condition].slice(1).toLowerCase()}`
