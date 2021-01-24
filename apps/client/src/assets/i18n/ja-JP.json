@@ -449,6 +449,7 @@
     "Enable_metrics_capture_explain": "（これはあなたのためのものなので、ギルとアイテム収入の分析結果をサーバーにアップロードすることはありません）",
     "Metrics_capture_tooltip": "この機能は今後のアップデートで追加されます。ただ、データキャプチャを有効にする状態だったら、その時点からデータが記録されます。",
     "Metrics_capture_folder": "メトリックログフォルダ",
+    "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
     "Maximum_vendor_price": "ショップ購入価格最大値",
     "Maximum_vendor_price_explain": "CAN_BE_BOUGHT レイアウトフィルターで使用される価格最大値(0=最大値なし)",
     "Rawsock_flag": "パケットキャプチャにRawSocketを使用",
@@ -2462,22 +2463,22 @@
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
   "RETAINERS": {
-    "Title": "Retainers",
+    "Title": "リテイナー",
     "No_retainers": "No retainers, please ring the retainers bell to load informations about your retainers.",
-    "Selling": "Selling {{amount}} items",
-    "X_items": "{{amount}} items",
-    "Task_complete": "Task complete",
-    "Task_completed_notification_title": "{{name}} has finished its venture",
-    "Task_completed_notification_content": "{{name}} has finished task {{taskName}}",
-    "Task_completion_alarm": "Task completion alarm"
+    "Selling": "{{amount}} 個のアイテムを販売中",
+    "X_items": "{{amount}} 個のアイテム",
+    "Task_complete": "ベンチャーが完了しました。",
+    "Task_completed_notification_title": "{{name}} がベンチャーを終了しました",
+    "Task_completed_notification_content": "{{name}} がベンチャー {{taskName}} を終了しました",
+    "Task_completion_alarm": "ベンチャー完了アラーム"
   },
   "RETAINER_VENTURES": {
-    "Title": "Retainer ventures",
+    "Title": "リテイナーベンチャー",
     "Description": "Input your retainer job, level, ilvl and gathering (if needed) to find the ideal task to run for profit. This can take up to a minute if your retainer is high level because it'll consider every single item it can obtain for profit.",
-    "Retainer_ilvl": "Ilvl",
+    "Retainer_ilvl": "IL",
     "Gathering": "Gathering",
-    "Task_level": "Task level",
-    "Total_per_venture": "Total per venture",
+    "Task_level": "ベンチャーレベル",
+    "Total_per_venture": "ベンチャーあたりの合計",
     "Use_retainer": "Fill with retainer"
   }
 }
