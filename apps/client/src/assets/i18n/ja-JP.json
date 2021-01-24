@@ -11,7 +11,7 @@
   "FC_name": "フリーカンパニー名",
   "Saving_in_database": "サーバーにデータを保存します。",
   "See_on_map": "地図で見る",
-  "No_known_coordinates": "No known coordinates",
+  "No_known_coordinates": "知られた座標なし",
   "Edit_amount": "総量を編集する",
   "List_fork_in_progress": "このリストをマイアカウントにコピー中",
   "Network_error_logged_out": "ネットワークエラーが検出されて、ログアウトされました。この問題が解決しない場合は、TCディスコードで「Miu」にお問い合わせください。",
@@ -200,7 +200,7 @@
     "Group_not_found": "アラームグループが見つかりません",
     "Add_group_and_alarms": "このグループとすべてのアラームをあなたのアラームに追加",
     "Delete_all": "全てのアラームを削除",
-    "Delete_alarm": "Delete this alarm",
+    "Delete_alarm": "このアラームを削除",
     "Regenerating_alarms": "アラーム更新中...",
     "Regenerate": "アラーム更新",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
@@ -838,8 +838,8 @@
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
     "Spawned_for": "{{timer}} 以降消滅",
     "Will_spawn_in": "{{timer}} 以降現れる",
-    "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
+    "Ephemeral_warning": "時間制採集物は色んな場所に存在し、位置はほぼ同じになります。",
+    "Legendary": "伝説",
     "GIG_HEAD": {
       "Small": "スモールギグヘッド",
       "Normal": "ミドルギグヘッド",
@@ -896,16 +896,16 @@
   },
   "SIMULATOR": {
     "Title": "制作シミュレーター",
-    "Include_stats": "Include stats and consumables",
+    "Include_stats": "能力値と消耗品適用",
     "Fixed_notification_number": "お知らせのSEを選ぶ",
     "Starting_echo_number": "お知らせ ＃",
     "Break_on_reclaim": "’リクレイム’が使える部分にマクロを分ける",
     "Break_before_byregots_blessing": "「ビエルゴの祝福」を使用する前に、マクロを取り外してください",
     "Include_consumables_notification": "消耗品の通知を含める",
-    "Include_consumables_notification_wait_time": "Wait time after consumables notification",
+    "Include_consumables_notification_wait_time": "消耗品アラーム後待機時間",
     "Consumable_notification": "{{buffs}} を使用が必要とします",
     "Extra_wait": "追加待ち",
-    "Completion_message": "Completion message",
+    "Completion_message": "完成メッセージ",
     "Import_macro": "ゲームのマクロから取り込む",
     "Ingame_macro": "マクロ",
     "Min_stats": "下限サブステ",
@@ -924,7 +924,7 @@
     "Level": "レベル",
     "Reliability": "確実",
     "Average_hq": "平均HQ",
-    "Median_HQ": "Median HQ",
+    "Median_HQ": "平均HQ",
     "Min_HQ": "最低HQ率",
     "Max_HQ": "最高HQ率",
     "Specialist": "マイスター",
@@ -1133,7 +1133,7 @@
     "Marketboard_price": "NQ 値段",
     "Marketboard_price_hq": "HQ 値段",
     "Enter_total_earnings": "総収入",
-    "Ignore_completed_items": "Exclude completed items"
+    "Ignore_completed_items": "完了したアイテム除外"
   },
   "LEVEQUESTS": {
     "Title": "ギルドリーヴ",
@@ -1212,7 +1212,7 @@
       "FINAL_LIST_PROGRESSION": "最終項目の進行状況をリストアップする",
       "USER_ASSIGNMENT": "チームメンバーに作業を割り当てる",
       "ITEM_COMPLETION": "アイテム完了",
-      "ITEM_PROGRESSION": "Item progression"
+      "ITEM_PROGRESSION": "アイテム初期化"
     }
   },
   "MARKETBOARD": {
@@ -1272,7 +1272,7 @@
     "Mark_as_not_done": "このアイテムを未完了として表示する",
     "Create_list": "このページを完成させるためのリストを作成する",
     "Create_list_limited": "このページを完了するためなリスト作成する(最大50個のアイテム)",
-    "Create_list_selection": "Create a list from selection ({{amount}})",
+    "Create_list_selection": "選択した({{amount}}) 個をリストに作る",
     "Folklore": "伝承録",
     "Timed": "タイムリミットあり",
     "Weather_dependant": "特殊天候のみ可能",
