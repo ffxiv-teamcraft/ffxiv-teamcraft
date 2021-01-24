@@ -457,8 +457,8 @@
     "Clear_inventory_on_startup": "実行時所持品を空にする",
     "Switch_tc_when_switch_ingame_character": "ゲーム内でキャラクター変更時Teamcraftのキャラクターも一緒に変更",
     "Reset_ignored_characters": "無視されたキャラクター初期化",
-    "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
-    "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
+    "Show_other_characters_inventories_in_list": "リストに他のキャラクターの所持品も表示",
+    "Alarm_panels_collapsed_by_default": "アラームパネル簡素化を基本値として設定",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "COLORS": {
       "Background": "背景色",
@@ -480,7 +480,7 @@
       "Theme": "テーマ",
       "Search": "検索",
       "Lists": "リスト",
-      "Alarms": "Alarms",
+      "Alarms": "アラーム",
       "Other": "その他",
       "Sekrit": "Sekrit"
     },
@@ -545,7 +545,7 @@
     "Delete_after_merge": "併合後に既存のリストを削除する",
     "Favorite_lists": "お気に入りのリスト",
     "No_favorite_lists": "お気に入りのリストがありません",
-    "Delete_multiple_lists": "Delete multiple lists",
+    "Delete_multiple_lists": "複数のリスト削除",
     "IMPORT": {
       "Title": "外部サイトからリストを取り込む",
       "Paste_link_step_title": "外部サイトのリンクをペーストする",
