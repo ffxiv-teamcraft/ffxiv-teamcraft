@@ -35,6 +35,7 @@ import { Vendor } from '../model/vendor';
 import { LayoutRowDisplayMode } from '../../../core/layout/layout-row-display-mode';
 import { NpcBreakdown } from '../../../model/common/npc-breakdown';
 import { NpcBreakdownRow } from '../../../model/common/npc-breakdown-row';
+import { mapIds } from '../../../core/data/sources/map-ids';
 
 @Component({
   selector: 'app-list-details-panel',
@@ -186,7 +187,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
           && !this.lazyData.data.maps[d.mapid].dungeon
           && (!zoneId || d.zoneid === zoneId);
       });
-      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || n.zoneId === zoneId));
+      const hasNodesWithPosition = (getItemSource(row, DataType.GATHERED_BY, true).nodes || []).some(n => n.x !== undefined && (!zoneId || mapIds.find(m => m.id === n.map)?.zone === zoneId));
       const hasVendorsWithPosition = getItemSource(row, DataType.VENDORS).some(d => d.coords && (d.coords.x !== undefined) && (!zoneId || d.zoneId === zoneId));
       const hasTradesWithPosition = getItemSource(row, DataType.TRADE_SOURCES).some(d => d.npcs.some(npc => npc.coords && npc.coords.x !== undefined && (!zoneId || npc.zoneId === zoneId)));
       return hasMonstersWithPosition || hasNodesWithPosition || hasVendorsWithPosition || hasTradesWithPosition || hasMap;
@@ -302,7 +303,7 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
       });
     }
     if ((gatheredBy.nodes || []).some(n => n.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId)) {
-      const node = gatheredBy.nodes.find(n => n.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
+      const node = gatheredBy.nodes.find(n => n.x !== undefined && mapIds.find(m => m.id === n.map)?.zone === zoneBreakdownRow.zoneId);
       positions.push({
         x: node.x,
         y: node.y,
