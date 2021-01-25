@@ -48,7 +48,7 @@ export class ItemsExtractor extends AbstractExtractor {
     const baitItems = [];
     const extractableItems = {};
     const baseParamSpecialColumns = [].concat.apply([], ['BaseParamSpecial', 'BaseParamValueSpecial'].map(prop => [0, 1, 2, 3, 4, 5].map(i => `${prop}${i}`))).join(',');
-    this.getAllPages(`https://xivapi.com/Item?columns=Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
+    this.getAllPages(`https://xivapi.com/Item?columns=Patch,DamagePhys,DamageMag,DefensePhys,DefenseMag,ID,Name_*,IsUnique,IsUntradable,MaterializeType,CanBeHq,Rarity,GameContentLinks,Icon,LevelItem,LevelEquip,StackSize,EquipSlotCategoryTargetID,ClassJobCategory,Stats,MateriaSlotCount,BaseParamModifier,IsAdvancedMeldingPermitted,ItemSearchCategoryTargetID,ItemSeries,${baseParamSpecialColumns}`)
       .subscribe(page => {
         page.Results.forEach(item => {
           itemIcons[item.ID] = item.Icon;
@@ -133,7 +133,8 @@ export class ItemsExtractor extends AbstractExtractor {
               equipment[item.ID] = {
                 equipSlotCategory: item.EquipSlotCategoryTargetID,
                 level: item.LevelEquip,
-                unique: item.IsUnique
+                unique: item.IsUnique,
+                jobs: Object.keys(item.ClassJobCategory).filter(jobAbbr => item.ClassJobCategory[jobAbbr] === 1)
               };
             }
             itemMeldingData[item.ID] = {
