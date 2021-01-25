@@ -19,6 +19,7 @@
   "Patch_notes": "Cambios en {{version}}",
   "Patch_notes_footer": "Do you enjoy the new features? Consider supporting the project on patreon",
   "Selection": "Selection",
+  "Change_character": "Character",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Esta cuenta ya está en uso",
     "auth/email-already-in-use": "Este correo electrónico ya está en uso",
@@ -459,9 +460,11 @@
     "Clear_inventory_on_startup": "Clear inventory on startup",
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
+    "Reset_contentid_characters": "Reset linked characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Disconnect_patreon": "Disconnect from patreon",
     "COLORS": {
       "Background": "Color de fondo",
       "Primary": "Color primario",
@@ -1818,7 +1821,7 @@
     "Banner_description_warning": "La captura de paquetes es contra los TdS, por lo que está deshabilitada por defecto, por favor asegúrese de evitar decirle a todos en el juego y estará bien.",
     "Empty_inventory": "Su inventario no ha sido cargado aún",
     "Please_zone": "Por favor teletranspórtese a una ubicación aleatoria y abra su alforja de chocobo una vez que llegue para inicializar el sistema de inventario correctamente.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or move a random item to a free slot of your own inventory.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "No hay un id de personaje establecido",
     "Please_relog": "Para contribuir a Universalis, necesitamos que cierre y vuelva iniciar sesión (en el juego), esto sólo es necesario una vez.",
@@ -1872,7 +1875,8 @@
       "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
       "Override_link_confirmation": "Are you sure you want to override this link?",
       "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
+      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
     }
   },
   "INVENTORY_OPTIMIZER": {
