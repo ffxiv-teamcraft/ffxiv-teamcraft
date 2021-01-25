@@ -9,7 +9,7 @@ import { SettingsService } from '../../modules/settings/settings.service';
 import { PlatformService } from '../tools/platform.service';
 import { IpcService } from '../electron/ipc.service';
 import { TranslateService } from '@ngx-translate/core';
-import { PushNotificationsService } from 'ng-push';
+import { PushNotificationsService } from 'ng-push-ivy';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { I18nToolsService } from '../tools/i18n-tools.service';
 import { MapService } from '../../modules/map/map.service';
@@ -52,12 +52,14 @@ export class AlarmBellService {
               && timeBeforePlay <= 0;
           });
         })
-      ).subscribe(alarmsToPlay => alarmsToPlay.forEach(alarm => {
-      if (!this.settings.alarmsMuted) {
-        this.ring(alarm);
-        this.notify(alarm);
-      }
-    }));
+      ).subscribe(alarmsToPlay => {
+      alarmsToPlay.forEach(alarm => {
+        if (!this.settings.alarmsMuted) {
+          this.ring(alarm);
+          this.notify(alarm);
+        }
+      });
+    });
   }
 
   /**
@@ -124,7 +126,7 @@ export class AlarmBellService {
             renotify: false,
             body: notificationBody
           }
-        );
+        ).subscribe();
         this.notificationService.info(notificationTitle, notificationBody);
       }
     });

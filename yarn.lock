@@ -12809,10 +12809,12 @@ ng-drag-drop@^5.0.0:
   resolved "https://registry.yarnpkg.com/ng-drag-drop/-/ng-drag-drop-5.0.0.tgz#aec44831143a095102dc24505f712ac889c3b98c"
   integrity sha1-rsRIMRQ6CVEC3CRQX3EqyInDuYw=
 
-ng-push@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ng-push/-/ng-push-0.2.2.tgz#61c16c3ef8590947d3bef8e19d84682017c05127"
-  integrity sha512-ch7qHGNWUBa1pJvdmzGpG7PbFCP3T78FCmBzELh21o4HRDFKlJgKTbchzz0i+MeexNbD3/pD1kevM0tY/2RVAg==
+ng-push-ivy@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/ng-push-ivy/-/ng-push-ivy-1.0.7.tgz#d04ad6c1205c7d7463d60863567382992aa5b786"
+  integrity sha512-uUzIKBc6LA9Bw0sl7aj6x3eUr2UcCbXEw1PKpLFZ2OxzbnAhqh3IVX4ah0PRiDpfscFhmGUR2amLo19njAbMVg==
+  dependencies:
+    tslib "^2.0.0"
 
 ng-zorro-antd@^10.1.2:
   version "10.2.2"

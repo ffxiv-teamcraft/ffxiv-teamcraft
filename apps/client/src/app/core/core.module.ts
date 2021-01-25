@@ -6,7 +6,7 @@ import { NgSerializerModule } from '@kaiu/ng-serializer';
 import { I18nPipe } from './i18n.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { LocalizedDataService } from './data/localized-data.service';
-import { PushNotificationsModule } from 'ng-push';
+import { PushNotificationsModule } from 'ng-push-ivy';
 import { AbstractNotification } from './notification/abstract-notification';
 import { ListCommentNotification } from '../model/notification/list-comment-notification';
 import { PendingChangesService } from './database/pending-changes/pending-changes.service';

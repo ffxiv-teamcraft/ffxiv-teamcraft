@@ -51,7 +51,6 @@ import { ListCompletionPopupComponent } from '../list-completion-popup/list-comp
 import { TranslateService } from '@ngx-translate/core';
 import { NgSerializerService } from '@kaiu/ng-serializer';
 import { FirestoreListStorage } from '../../../core/database/storage/list/firestore-list-storage';
-import { PushNotificationsService } from 'ng-push';
 import { PlatformService } from '../../../core/tools/platform.service';
 import { IpcService } from '../../../core/electron/ipc.service';
 import { SettingsService } from '../../settings/settings.service';
@@ -504,7 +503,6 @@ export class ListsEffects {
     private translate: TranslateService,
     private discordWebhookService: DiscordWebhookService,
     private serializer: NgSerializerService,
-    private pushNotificationsService: PushNotificationsService,
     private notificationService: NzNotificationService,
     private platform: PlatformService,
     private ipc: IpcService,
