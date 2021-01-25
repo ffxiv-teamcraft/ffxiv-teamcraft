@@ -27,7 +27,7 @@ import { AbstractNotification } from './core/notification/abstract-notification'
 import { RotationsFacade } from './modules/rotations/+state/rotations.facade';
 import { PlatformService } from './core/tools/platform.service';
 import { SettingsPopupService } from './modules/settings/settings-popup.service';
-import { BehaviorSubject, combineLatest, fromEvent, interval, of, Subject } from 'rxjs';
+import { BehaviorSubject, combineLatest, fromEvent, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CustomLinksFacade } from './modules/custom-links/+state/custom-links.facade';
@@ -86,6 +86,8 @@ export class AppComponent implements OnInit {
   public loggedIn$: Observable<boolean>;
 
   public character$: Observable<Character & { Datacenter: string }>;
+
+  public otherCharacters$: Observable<Character[]>;
 
   public userId$ = this.authFacade.userId$.pipe(
     isPlatformServer(this.platform) ? first() : tap()
@@ -529,6 +531,12 @@ export class AppComponent implements OnInit {
         shareReplay(1)
       );
 
+      this.otherCharacters$ = combineLatest([this.authFacade.characters$, this.authFacade.mainCharacter$]).pipe(
+        map(([entries, mainChar]) => {
+          return entries.map(entry => entry.Character).filter(e => e.ID !== mainChar.ID);
+        })
+      );
+
       this.notificationsFacade.loadAll();
       this.customLinksFacade.loadMyCustomLinks();
 
@@ -556,6 +564,10 @@ export class AppComponent implements OnInit {
       this.loading$ = of(false);
       this.loggedIn$ = of(false);
     }
+  }
+
+  switchCharacter(id: number): void {
+    this.authFacade.setDefaultCharacter(id);
   }
 
   hexToRgbA(hex: string, opacity: number) {

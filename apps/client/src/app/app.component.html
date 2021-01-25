@@ -51,10 +51,10 @@
           </div>
         </div>
         <div fxFlex="1 1 auto" fxLayout="row" fxLayoutAlign="center center">
-<!--          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">-->
-<!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
-<!--            TODO ad banner here? -->
-<!--          </div>-->
+          <!--          <div class="venatus-container" fxLayout="row" fxLayoutAlign="center center">-->
+          <!--            <img src="./assets/01082021-153814371-BDES-1203_Post-Quantum-Article_728x90_FR.jpg" alt="">-->
+          <!--            TODO ad banner here? -->
+          <!--          </div>-->
         </div>
         <ul [nzMode]="'horizontal'" [nzTheme]="'dark'" class="right-menu" nz-menu>
           <ng-container *ngIf="pinnedList$ | async as pinnedList">
@@ -149,7 +149,7 @@
                 </span>
               </ng-template>
             </span>
-            <span>
+            <div>
               <a *ngIf="loggedIn$ | async" nz-menu-item routerLink="/profile">
                 <i nz-icon nzType="idcard"></i>
                 {{'Profile' | translate}}
@@ -162,6 +162,19 @@
                 <i nz-icon nzType="heart"></i>
                 {{'Favorites' | translate}}
               </a>
+              <ng-container *ngIf="otherCharacters$ | async as characters">
+              <span *ngIf="characters.length > 0" nz-submenu>
+                <span title>
+                  <i nz-icon nzType="swap" nzTheme="outline"></i>
+                  {{'Change_character' | translate}}
+                </span>
+                <ul>
+                  <li nz-menu-item *ngFor="let character of characters" (click)="switchCharacter(character.ID)">
+                    {{character.Name}}
+                  </li>
+                </ul>
+              </span>
+              </ng-container>
               <a (click)="openSettings()" nz-menu-item>
                 <i nz-icon nzType="setting"></i>
                 {{'SETTINGS.Title' | translate}}
@@ -189,7 +202,7 @@
                 <i nz-icon nzType="login"></i>
                 {{'Login' | translate}}
               </a>
-            </span>
+            </div>
           </li>
         </ul>
       </nz-header>
