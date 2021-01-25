@@ -65,3 +65,6 @@ document.getElementById('loader').setAttribute('src', window.baseGifPath + rando
 
 const randomPatron = patrons[Math.floor(Math.random() * patrons.length)];
 document.getElementById('random-patron').innerText = randomPatron;
+
+window.randomGif = window.baseGifPath + randomGif;
+window.randomPatron = randomPatron;

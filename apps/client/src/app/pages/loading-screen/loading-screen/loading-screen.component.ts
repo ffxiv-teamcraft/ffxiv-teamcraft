@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./loading-screen.component.less']
 })
 export class LoadingScreenComponent {
+  gif = (window as any).randomGif;
+  patron = (window as any).randomPatron;
 }
