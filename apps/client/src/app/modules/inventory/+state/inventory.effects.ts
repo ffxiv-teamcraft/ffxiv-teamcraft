@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
 import { ApplyContentId, InventoryActionTypes, InventoryLoaded, ResetInventory, SetContentId, UpdateInventory } from './inventory.actions';
-import { distinctUntilKeyChanged, first, map, switchMap, withLatestFrom } from 'rxjs/operators';
+import { distinctUntilKeyChanged, first, map, pairwise, startWith, switchMap, withLatestFrom } from 'rxjs/operators';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { SettingsService } from '../../settings/settings.service';
@@ -36,31 +36,31 @@ export class InventoryEffects {
   showContentIdPopup$ = this.actions$.pipe(
     ofType<SetContentId>(InventoryActionTypes.SetContentId),
     distinctUntilKeyChanged('contentId'),
-    switchMap(({ contentId }) => {
+    startWith({ contentId: '' }),
+    pairwise(),
+    switchMap(([previous, next]) => {
       return this.authFacade.user$.pipe(
         first(),
         switchMap((user) => {
-          if (this.settings.ignoredContentIds.includes(contentId)) {
-            return of('ignored');
-          }
           const isCustom = user.lodestoneIds.length === 0 && user.customCharacters.length > 0;
           if (isCustom) {
-            const matchingCustomCharacter = user.customCharacters.find(entry => entry.contentId === contentId);
+            const matchingCustomCharacter = user.customCharacters.find(entry => entry.contentId === next.contentId);
             if (matchingCustomCharacter) {
-              return of(contentId);
+              return of(next.contentId);
             }
           } else {
-            const matchingLodestoneEntry = user.lodestoneIds.find(entry => entry.contentId === contentId);
+            const matchingLodestoneEntry = user.lodestoneIds.find(entry => entry.contentId === next.contentId);
             if (matchingLodestoneEntry) {
-              return of(contentId);
+              return of(next.contentId);
             }
           }
-          console.log('New Content ID', contentId);
+          console.log('New Content ID', next.contentId);
           // If we're here, there's no matching entries anywhere
           return this.modal.create({
             nzContent: ContentIdLinkingPopupComponent,
             nzComponentParams: {
-              contentId: contentId
+              contentId: next.contentId,
+              previousContentId: previous.contentId
             },
             nzClosable: false,
             nzMaskClosable: false,
@@ -71,7 +71,7 @@ export class InventoryEffects {
               if (!res) {
                 return 'ignored';
               }
-              return contentId;
+              return next.contentId;
             })
           );
         })
