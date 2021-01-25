@@ -5,7 +5,6 @@ export interface Levequest {
   level: number;
   jobId: number;
   itemId: number;
-  itemIcon: string;
   exp: number;
   gil: number;
   hq: boolean;
