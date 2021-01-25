@@ -137,7 +137,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           .query<any>({
             query: gql`
         query fishData {
-          baits_per_fish(where: {baitId: {_eq: ${xivapiItem.ID}}}) {
+          baits_per_fish(where: {baitId: {_eq: ${xivapiItem.ID}}, occurences: {_gt: 5}}) {
             itemId
           }
         }
@@ -145,7 +145,7 @@ export class ItemComponent extends TeamcraftPageComponent implements OnInit, OnD
           })
           .pipe(
             map((result) => {
-              xivapiItem.BaitInfo = result.data.baits_per_fish.filter((bait) => bait.id > 0);
+              xivapiItem.BaitInfo = result.data.baits_per_fish.filter((row) => row.itemId > 0);
               return [data, xivapiItem];
             })
           );
