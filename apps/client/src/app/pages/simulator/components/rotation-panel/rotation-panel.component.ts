@@ -125,7 +125,8 @@ export class RotationPanelComponent implements OnInit {
           stats.specialist,
           stats.level,
           gearSets.length > 0 ? gearSets.map(set => set.level) as [number, number, number, number, number, number, number, number] : [70, 70, 70, 70, 70, 70, 70, 70]);
-        return new this.simulator.Simulation(rotation.recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
+        const recipe = this.lazyData.data.recipes.find(r => r.id === rotation.recipe.id);
+        return new this.simulator.Simulation(recipe as Craft, this.registry.deserializeRotation(rotation.rotation), crafterStats).run(true);
       })
     );
   }

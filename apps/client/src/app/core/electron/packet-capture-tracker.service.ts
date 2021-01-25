@@ -137,11 +137,17 @@ export class PacketCaptureTrackerService {
             };
           })
           .value();
-        if (isRetainer && inventory.items[inventory.contentId]) {
-          Object.keys(inventory.items[inventory.contentId])
-            .filter(key => key.startsWith(lastRetainerSpawned))
-            .forEach(key => inventory.items[inventory.contentId][key] = {});
+
+        if (inventory.items[inventory.contentId]) {
+          if (isRetainer) {
+            Object.keys(inventory.items[inventory.contentId])
+              .filter(key => key.startsWith(lastRetainerSpawned))
+              .forEach(key => inventory.items[inventory.contentId][key] = {});
+          } else {
+            inventory = this.resetInventoryForItemInfo(inventory);
+          }
         }
+
         groupedInfos.forEach(group => {
           const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
           inventory.items[inventory.contentId][containerKey] = {};
@@ -317,6 +323,18 @@ export class PacketCaptureTrackerService {
         }
       }
     });
+  }
+
+  private resetInventoryForItemInfo(inventory: UserInventory): UserInventory {
+    const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]))
+    Object.keys(itemsClone)
+      .forEach(key => {
+        if (key.indexOf(':') === -1 && +key < 4000) {
+          itemsClone[key] = {};
+        }
+      });
+    inventory.items[inventory.contentId] = itemsClone;
+    return inventory;
   }
 
   private getEventType(patch: InventoryPatch): InventoryEventType {

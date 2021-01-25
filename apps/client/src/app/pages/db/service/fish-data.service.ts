@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { switchMap } from 'rxjs/operators';
 import { AuthFacade } from '../../../+state/auth.facade';
-import { LazyDataService } from '../../../core/data/lazy-data.service';
 import {
   BaitsPerFishPerSpotQuery,
   BiteTimesPerFishPerSpotPerBaitQuery,
@@ -13,8 +12,6 @@ import {
   SpotsPerFishQuery,
   WeathersPerFishPerSpotQuery
 } from './fish-data.gql';
-import { weatherIndex } from '../../../core/data/sources/weather-index';
-import { mapIds } from '../../../core/data/sources/map-ids';
 
 const qOpts = { useInitialLoading: true };
 
@@ -33,20 +30,8 @@ export class FishDataService {
     private readonly biteFishSpotBaitQuery: BiteTimesPerFishPerSpotPerBaitQuery,
     private readonly statFishSpotQuery: FishStatisticsPerFishPerSpotQuery,
     private readonly weathersFishSpotQuery: WeathersPerFishPerSpotQuery,
-    private readonly rankingFishQuery: RankingPerFishQuery,
-    private readonly lazyData: LazyDataService
+    private readonly rankingFishQuery: RankingPerFishQuery
   ) {
-  }
-
-  private getPossibleWeathers(spotId: number): number[] {
-    // We don't have the list of possible weathers in diadem, so we just return every single weather id, not a too long list ^^
-    if (spotId >= 10000) {
-      return Object.keys(this.lazyData.data.weathers).map(key => +key);
-    }
-    const spot = this.lazyData.data.fishingSpots.find(s => s.id === spotId);
-    const weatherRate = mapIds.find(map => map.id === spot.mapId).weatherRate;
-    const rates = weatherIndex[weatherRate];
-    return (rates || []).map(rate => rate.weatherId);
   }
 
   /**
@@ -134,11 +119,7 @@ export class FishDataService {
    * @returns An apollo result observable containing information about the weathers a fish can be caught during.
    */
   public getWeather = (fishId?: number, spotId?: number) => {
-    const params: any = { fishId, spotId };
-    if (spotId && spotId < 10000) {
-      params.weatherIds = this.getPossibleWeathers(spotId);
-    }
-    return this.weathersFishSpotQuery.watch(params, qOpts).valueChanges;
+    return this.weathersFishSpotQuery.watch({ fishId, spotId }, qOpts).valueChanges;
   };
 
   /**

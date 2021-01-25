@@ -5,7 +5,7 @@
     <button [itemNameCopy]="itemId"
             [forceCopyMode]="notFavoriteCopyMode"
             nz-button
-            nz-tooltip nzShape="circle"
+            nzShape="circle"
             nzSize="small">
       <i nz-icon nzType="copy"></i>
     </button>
@@ -50,7 +50,6 @@
     <ng-container *ngIf="team">
       <button (click)="$event.stopPropagation()"
               *ngIf="team?.leader === userId || (!team?.notFound && team?.isOfficer(userId))"
-
               [nzDropdownMenu]="menu"
               [nzPlacement]="'bottomLeft'"
               [nzShape]="'circle'" [nzTooltipTitle]="'TEAMS.Assign_team_member' | translate"
@@ -204,8 +203,9 @@
       <ul nz-menu>
         <ng-container *ngIf="!isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
           <li [itemNameCopy]="itemId"
+              [forceCopyMode]="notFavoriteCopyMode"
               nz-menu-item>
-            {{'Copy_isearch' | translate}}
+            {{(notFavoriteCopyMode === 'isearch' ? 'Copy_isearch': 'Copy_item_name_to_clipboard') | translate}}
           </li>
         </ng-container>
 

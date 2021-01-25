@@ -7,6 +7,8 @@ import { EorzeanTimeService } from '../../../core/eorzea/eorzean-time.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 import { FishDataService } from './fish-data.service';
 import { ItemContextService } from './item-context.service';
+import { mapIds } from '../../../core/data/sources/map-ids';
+import { weatherIndex } from '../../../core/data/sources/weather-index';
 
 export interface Occurrence {
   id: number;
@@ -178,7 +180,16 @@ export class FishContextService {
 
   private readonly weatherAndTransitionsByFish$ = combineLatest([this.fishId$, this.spotId$]).pipe(
     filter(([fishId, spotId]) => fishId >= 0 || spotId > 0),
-    switchMap(([fishId, spotId]) => this.data.getWeather(fishId, spotId))
+    switchMap(([fishId, spotId]) => {
+      return this.data.getWeather(fishId, spotId).pipe(
+        map(res => {
+          res.data.weathers = res.data.weathers.filter(e => {
+            return spotId >= 10000 || this.getPossibleWeathers(spotId).includes(e.weatherId);
+          });
+          return res;
+        })
+      );
+    })
   );
 
   /** An observable containing information about the weathers recorded to catch the active fish. */
@@ -327,6 +338,13 @@ export class FishContextService {
     private readonly data: FishDataService,
     private readonly lazyData: LazyDataService
   ) {
+  }
+
+  private getPossibleWeathers(spotId: number): number[] {
+    const spot = this.lazyData.data.fishingSpots.find(s => s.id === spotId);
+    const weatherRate = mapIds.find(m => m.id === spot.mapId).weatherRate;
+    const rates = weatherIndex[weatherRate];
+    return (rates || []).map(rate => rate.weatherId);
   }
 
   /** Sets the currently active spot. */

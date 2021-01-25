@@ -34,7 +34,7 @@
         <i nz-icon nzType="check-circle" nzTheme="outline" class="task-icon complete"></i> {{'RETAINERS.Task_complete' | translate}}
       </ng-container>
       <ng-template #taskCompleteDate>
-        <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.taskComplete | date:'medium':translate.currentLang}}
+        <i nz-icon nzType="field-time" nzTheme="outline" class="task-icon"></i> {{retainer.remainingTime | timer}}
       </ng-template>
     </div>
   </div>

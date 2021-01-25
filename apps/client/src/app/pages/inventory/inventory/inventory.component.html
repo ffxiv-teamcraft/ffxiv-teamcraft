@@ -67,6 +67,12 @@
                       nzSize="small">
                 <i nzIconfont="icon-dollar" nz-icon></i>
               </button>
+              <button (nzOnConfirm)="deleteInventory(inventory)" nz-popconfirm
+                      [nzPopconfirmTitle]="'Confirmation' | translate"
+                      [nzTooltipTitle]="'INVENTORY.Reset_inventory' | translate" nz-button
+                      nz-tooltip nzShape="circle" nzSize="small" nzDanger>
+                <i nzType="delete" nz-icon></i>
+              </button>
             </div>
           </ng-template>
           <div class="bag-container">

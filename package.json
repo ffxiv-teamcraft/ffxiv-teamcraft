@@ -3,7 +3,7 @@
   "description": "Collaborative crafting made easy",
   "homepage": "https://ffxivteamcraft.com",
   "author": "FFXIV Teamcraft",
-  "version": "8.0.1",
+  "version": "8.0.2",
   "license": "MIT",
   "main": "dist/apps/electron/src/main.js",
   "build": {
@@ -235,7 +235,7 @@
     "memoizee": "^0.4.14",
     "multi-progress": "^2.0.0",
     "ng-drag-drop": "^5.0.0",
-    "ng-push": "^0.2.2",
+    "ng-push-ivy": "^1.0.7",
     "ng-zorro-antd": "^10.1.2",
     "ngx-color-picker": "^10.1.0",
     "ngx-markdown": "^10.1.1",

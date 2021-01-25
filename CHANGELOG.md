@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.2"></a>
+## [8.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.1...v8.0.2) (2021-01-25)
+
+
+### Bug Fixes
+
+* **alarms:** fixed alarms not showing notification on web version ([b9c8e0a](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b9c8e0a))
+* **alarms:** fixed alarms regenerating forever in some cases ([662c4ff](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/662c4ff))
+* **auth:** fixed google login not working properly in some cases ([eb3af93](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/eb3af93))
+* **community-rotations:** fixed an issue with simulation result not showing ([621d7f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/621d7f8))
+* **db:** fixed fish page data sometimes not loading properly ([7342f79](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7342f79))
+* **desktop:** fixed various issues with multi character inventory tracking ([64fea29](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/64fea29))
+* **layout:** fixed buttons and support menu entries overlapping ([1a75691](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1a75691))
+* **layout:** fixed copy isearch menu entry not working as intended ([92a957f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/92a957f))
+* **leveling-equipment:** fixed wrong suggestions in some cases ([d30bf6f](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d30bf6f))
+* **leveling-equipment:** ignore items that are linked to a festival ([98b16cb](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98b16cb))
+* **list:** fixed path optimizer popups ([6328971](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6328971))
+* **nodes:** fixed some nodes showing 4h spawn duration instead of 3h ([49a1108](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/49a1108))
+* **retainer-ventures:** fixed result ordering ([e3c8014](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e3c8014))
+* **retainers:** now showing remaining time instead of end time ([c094eec](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c094eec))
+
+
+### Features
+
+* **db:** added a link from baits to the fish they can catch ([fc5c9c8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fc5c9c8))
+* **desktop:** new button in settings to unlink your characters from ingame characters ([aca549b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/aca549b))
+* **desktop:** you can now delete one inventory again in inventory page ([7cd0d65](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7cd0d65))
+* **loading:** better loading screen for lazy data on web app ([010bec2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/010bec2))
+* **profile:** new entry in top-right profile menu to quickly select another character ([b5fc85c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b5fc85c))
+* **settings:** new button to disconnect from patreon ([548bb14](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/548bb14))
+
+
+
 <a name="8.0.1"></a>
 ## [8.0.1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.0...v8.0.1) (2021-01-24)
 

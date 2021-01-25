@@ -81,7 +81,7 @@ export class RotationResultTagComponent implements OnInit {
     this.result$ = combineLatest([this.rotation$, this.authFacade.gearSets$, this.recipe$, this.simulationSet$]).pipe(
       filter(([rotation]) => rotation !== null),
       map(([rotation, gearSets, _recipe, simulationSet]) => {
-        const recipe = _recipe || rotation.recipe as Craft;
+        const recipe = this.lazyData.data.recipes.find(r => r.id === (_recipe || rotation.recipe).id);
         const stats = simulationSet || gearSets.find(g => g.jobId === recipe.job);
         const food = this.foods.find(f => this.rotation.food && f.itemId === this.rotation.food.id && f.hq === this.rotation.food.hq);
         const medicine = this.medicines.find(f => this.rotation.medicine && f.itemId === this.rotation.medicine.id && f.hq === this.rotation.medicine.hq);

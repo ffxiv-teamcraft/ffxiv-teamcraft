@@ -357,9 +357,16 @@
           {{'SETTINGS.Connect_with_patreon' | translate}}
         </button>
         <ng-template #connectedWithPatreon>
-          <p>
-            {{'SETTINGS.Connected_with_patreon' | translate}}
-          </p>
+          <div fxLayout="row" fxLayoutAlign="flex-start center">
+            <div>
+              {{'SETTINGS.Connected_with_patreon' | translate}}
+            </div>
+            <button nz-button nzShape="circle" nzSize="small" nzDanger
+                    nz-tooltip [nzTooltipTitle]="'SETTINGS.Disconnect_patreon' | translate"
+                    nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate" (nzOnConfirm)="disconnectPatreon(user)">
+              <i nz-icon nzType="disconnect" nzTheme="outline"></i>
+            </button>
+          </div>
         </ng-template>
         <div *ngIf="user.patron || user.admin" fxLayout="column" fxLayoutGap="5px">
           <nz-input-group>
@@ -565,6 +572,9 @@
       </nz-card>
       <button (click)="settings.ignoredContentIds = []" nz-button>
         {{'SETTINGS.Reset_ignored_characters' | translate}}
+      </button>
+      <button (click)="resetLinkedChars()" nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate">
+        {{'SETTINGS.Reset_contentid_characters' | translate}}
       </button>
       <button (click)="openDesktopConsole()" nz-button>
         {{'SETTINGS.Show_devtools' | translate}}

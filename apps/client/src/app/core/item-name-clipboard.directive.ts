@@ -37,7 +37,7 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
               elementRef: ElementRef, hostView: ViewContainerRef,
               resolver: ComponentFactoryResolver, renderer: Renderer2) {
     super(elementRef, hostView, resolver, renderer);
-    this.translate.get(settings.preferredCopyType === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
+    this.translate.get(this.copyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
       .pipe(
         first()
       ).subscribe(translated => this.title = translated);

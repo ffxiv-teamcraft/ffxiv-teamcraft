@@ -35,8 +35,8 @@ export class InventoryFacade {
   private odr$: BehaviorSubject<Record<string, ItemOdr>> = new BehaviorSubject<Record<string, ItemOdr>>({});
 
   constructor(private store: Store<InventoryPartialState>, private authFacade: AuthFacade, private ipc: IpcService,
-              private translate: TranslateService, private retainersService: RetainersService, settings: SettingsService) {
-    if (settings.clearInventoryOnStartup) {
+              private translate: TranslateService, private retainersService: RetainersService, private settings: SettingsService) {
+    if (this.settings.clearInventoryOnStartup) {
       this.resetInventory();
     }
     this.ipc.on('dat:content-id', (event, contentId) => {
@@ -248,6 +248,8 @@ export class InventoryFacade {
   }
 
   setContentId(contentId: string): void {
-    this.store.dispatch(new SetContentId(contentId));
+    if (!this.settings.ignoredContentIds.includes(contentId)) {
+      this.store.dispatch(new SetContentId(contentId));
+    }
   }
 }

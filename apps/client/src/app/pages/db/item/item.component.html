@@ -594,7 +594,7 @@
                          nzBordered="false">
                   <ng-template #title>
                     <div class="card-header" fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                      <img class="img-icon gathering-icon" src="{{source.data.icon}}">
+                      <img class="img-icon gathering-icon" src="{{source.data.type | nodeTypeIcon}}">
                       <div>
                         {{'DB.Gathering' | translate}}
                       </div>

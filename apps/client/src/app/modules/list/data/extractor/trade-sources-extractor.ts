@@ -78,6 +78,9 @@ export class TradeSourcesExtractor extends AbstractExtractor<TradeSource[]> {
             npc.zoneId = npcEntry.position.zoneid;
             npc.mapId = npcEntry.position.map;
           }
+          if(npcEntry && npcEntry.festival){
+            npc.festival = npcEntry.festival;
+          }
           return npc;
         }),
         trades: ts.listings.map(row => {

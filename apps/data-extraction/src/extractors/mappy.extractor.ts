@@ -86,7 +86,7 @@ export class MappyExtractor extends AbstractExtractor {
               this.gatheringPoints[point.ID].duration = 120;
             }
             if (this.gatheringPoints[point.ID].duration === 300) {
-              this.gatheringPoints[point.ID].duration = 240;
+              this.gatheringPoints[point.ID].duration = 180;
             }
           }
         });

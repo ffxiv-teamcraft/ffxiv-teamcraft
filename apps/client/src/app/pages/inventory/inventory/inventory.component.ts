@@ -60,6 +60,7 @@ export class InventoryComponent {
               isRetainer: item.retainerName !== undefined,
               containerName: containerName,
               containerIds: [item.containerId],
+              contentId: item.contentId,
               items: []
             });
             bag = bags[bags.length - 1];
@@ -155,6 +156,25 @@ export class InventoryComponent {
         })
       ]);
       this.computingPrices[inventory.containerName] = false;
+    });
+  }
+
+  public deleteInventory(display: InventoryDisplay): void {
+    this.inventoryService.inventory$.pipe(
+      first(),
+      map(inventory => {
+        display.containerIds.forEach(containerId => {
+          const isRetainer = containerId >= 10000 && containerId < 20000;
+          if (isRetainer) {
+            inventory.items[display.contentId][`${display.containerName}:${containerId}`] = {};
+          } else {
+            inventory.items[display.contentId][containerId] = {};
+          }
+        });
+        return inventory;
+      })
+    ).subscribe(inventory => {
+      this.inventoryService.updateInventory(inventory, true);
     });
   }
 

@@ -484,7 +484,7 @@ export class AlarmsFacade {
         return n.id === alarm.nodeId;
       }
       return alarm.mapId === n.map;
-    });
+    }) || nodes[0];
     if (nodeForThisAlarm) {
       const alarms = this.generateAlarms(nodeForThisAlarm);
       const regenerated = alarms.find(a => a.fishEyes === alarm.fishEyes) || alarms[0];
@@ -521,6 +521,7 @@ export class AlarmsFacade {
           }
           // If custom alarm, return it
           if (alarm.name) {
+            alarm.appVersion = environment.version;
             return alarm;
           }
           return this.regenerateAlarm(alarm);
