@@ -299,6 +299,21 @@ export class SettingsPopupComponent {
     this.ipc.send('show-devtools');
   }
 
+  resetLinkedChars(): void {
+    this.authFacade.user$.pipe(
+      first(),
+      map(user => {
+        user.lodestoneIds = user.lodestoneIds.map(entry => {
+          delete entry.contentId;
+          return entry;
+        });
+        return user;
+      })
+    ).subscribe(user => {
+      this.authFacade.updateUser(user);
+    });
+  }
+
   clearCache(): void {
     this.ipc.send('clear-cache');
   }

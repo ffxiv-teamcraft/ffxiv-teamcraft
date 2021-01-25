@@ -5,9 +5,7 @@
     <button [itemNameCopy]="itemId"
             [forceCopyMode]="notFavoriteCopyMode"
             nz-button
-            nz-tooltip
             nzShape="circle"
-            [nzTooltipTitle]="(notFavoriteCopyMode === 'isearch' ? 'Copy_isearch': 'Copy_item_name_to_clipboard') | translate"
             nzSize="small">
       <i nz-icon nzType="copy"></i>
     </button>

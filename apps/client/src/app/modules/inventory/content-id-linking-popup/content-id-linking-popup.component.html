@@ -1,5 +1,6 @@
 <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
   <p>{{'INVENTORY.CONTENT_ID_POPUP.Description' | translate}}</p>
+  <i>{{'INVENTORY.CONTENT_ID_POPUP.Tip' | translate}}</i>
   <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="5px">
     <div *ngFor="let entry of characterEntries$ | async" fxLayout="column" fxLayoutGap="2px">
       <img *ngIf="entry.character.Character.ID > 0; else custom"

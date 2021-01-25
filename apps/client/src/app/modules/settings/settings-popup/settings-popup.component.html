@@ -573,6 +573,9 @@
       <button (click)="settings.ignoredContentIds = []" nz-button>
         {{'SETTINGS.Reset_ignored_characters' | translate}}
       </button>
+      <button (click)="resetLinkedChars()" nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate">
+        {{'SETTINGS.Reset_contentid_characters' | translate}}
+      </button>
       <button (click)="openDesktopConsole()" nz-button>
         {{'SETTINGS.Show_devtools' | translate}}
       </button>
