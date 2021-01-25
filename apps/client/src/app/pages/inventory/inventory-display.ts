@@ -9,5 +9,7 @@ export interface InventoryDisplay {
 
   items: InventoryItem[];
 
+  contentId: string;
+
   totalPrice?: number;
 }
