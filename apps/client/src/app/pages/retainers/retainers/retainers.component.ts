@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { interval, Observable } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { Retainer, RetainersService } from '../../../core/electron/retainers.service';
 import { SettingsService } from '../../../modules/settings/settings.service';
 
@@ -14,17 +14,21 @@ import { SettingsService } from '../../../modules/settings/settings.service';
 export class RetainersComponent {
 
   retainers$: Observable<Retainer[]> = this.retainersService.retainers$.pipe(
-    map(retainers => {
-      return Object.values<Retainer>(retainers)
-        .filter(retainer => !!retainer.name)
-        .sort((a, b) => a.order - b.order)
-        .map(retainer => {
-          return {
-            ...retainer,
-            taskComplete: retainer.taskComplete * 1000,
-            taskDone: retainer.taskComplete <= Date.now() / 1000
-          };
-        });
+    switchMap(retainers => {
+      return interval(1000).pipe(
+        map(() => {
+          return Object.values<Retainer>(retainers)
+            .filter(retainer => !!retainer.name)
+            .sort((a, b) => a.order - b.order)
+            .map(retainer => {
+              return {
+                ...retainer,
+                taskDone: retainer.taskComplete <= Date.now() / 1000,
+                remainingTime: retainer.taskComplete - Math.floor(Date.now() / 1000)
+              };
+            });
+        })
+      );
     })
   );
 
