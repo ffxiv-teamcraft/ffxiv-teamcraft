@@ -19,6 +19,7 @@
   "Patch_notes": "{{version}} изменения",
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Selection",
+  "Change_character": "Character",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -459,9 +460,11 @@
     "Clear_inventory_on_startup": "Clear inventory on startup",
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
+    "Reset_contentid_characters": "Reset linked characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Disconnect_patreon": "Disconnect from patreon",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -1818,7 +1821,7 @@
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or move a random item to a free slot of your own inventory.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
@@ -1872,7 +1875,8 @@
       "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
       "Override_link_confirmation": "Are you sure you want to override this link?",
       "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
+      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
     }
   },
   "INVENTORY_OPTIMIZER": {
