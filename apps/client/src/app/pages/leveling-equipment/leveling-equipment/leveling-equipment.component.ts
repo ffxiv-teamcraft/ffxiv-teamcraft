@@ -14,7 +14,7 @@ import { StatsService } from '../../../modules/gearsets/stats.service';
 import { BaseParam } from '../../../modules/gearsets/base-param';
 import { DataType } from '../../../modules/list/data/data-type';
 import { ListPickerService } from '../../../modules/list-picker/list-picker.service';
-import { ListRow } from '../../../modules/list/model/list-row';
+import { getItemSource, ListRow } from '../../../modules/list/model/list-row';
 import { Router } from '@angular/router';
 import { UserInventory } from '../../../model/user/inventory/user-inventory';
 import { PlatformService } from '../../../core/tools/platform.service';
@@ -220,13 +220,15 @@ export class LevelingEquipmentComponent {
     }
     const extract = this.lazyData.getExtract(itemId);
     // If it can be bought, no need to go further
-    if (extract.sources.some(source => source.type === DataType.VENDORS)) {
+    const vendors = getItemSource(extract, DataType.VENDORS).filter(vendor => !vendor.festival);
+    if (vendors.length > 0) {
       return true;
     }
     if (includeCrafting && extract.sources.some(source => source.type === DataType.CRAFTED_BY)) {
       return true;
     }
-    return includeTrades && extract.sources.some(source => source.type === DataType.TRADE_SOURCES);
+    const trades = getItemSource(extract, DataType.TRADE_SOURCES).filter(trade => trade.npcs.some(npc => !npc.festival));
+    return includeTrades && trades.length > 0;
   }
 
   private getSlotPiece(level: number, mainStat: BaseParam, equipSlotCategory: number, includeCrafting: boolean, includeTrades: boolean, onlyInventory: boolean, inventory: UserInventory, job: number): EquipmentPiece & { isInInventory: boolean } | null {

@@ -6,4 +6,5 @@ export interface TradeNpc {
   mapId?: number;
   zoneId?: number;
   areaId?: number;
+  festival?: number;
 }
