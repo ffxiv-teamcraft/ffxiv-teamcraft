@@ -49,7 +49,7 @@ export class ItemPickerComponent implements OnInit {
       }),
       tap(() => this.loading = true),
       switchMap(query => {
-        return this.dataService.searchItem(query, [], this.onlyCraftable).pipe(
+        return this.dataService.searchItem(query, [], this.onlyCraftable, [null, 'desc'], true).pipe(
           switchMap(results => {
             if (!this.includeCustomItems) {
               return of(results);
