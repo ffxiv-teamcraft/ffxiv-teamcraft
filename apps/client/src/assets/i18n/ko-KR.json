@@ -2465,11 +2465,11 @@
   "RETAINERS": {
     "Title": "집사",
     "No_retainers": "집사가 없습니다. 집사 초인종을 클릭하여 집사들의 정보를 불러오기 해주세요.",
-    "Selling": "{{amount}}개 아이템 출품 중",
+    "Selling": "출품 중 ({{amount}}건)",
     "X_items": "아이템 {{amount}}개",
     "Task_complete": "집사 수행 완료",
-    "Task_completed_notification_title": "{{name}} 이/가 집사 수행이 끝났습니다",
-    "Task_completed_notification_content": "{{name}} 이/가 {{taskName}} 을/를 끝냈습니다",
+    "Task_completed_notification_title": "{{name}} 이/가 수행을 마치고 돌아왔습니다",
+    "Task_completed_notification_content": "{{name}} 이/가 수행을 마치고 돌아왔습니다({{taskName}})",
     "Task_completion_alarm": "수행 완료 알람"
   },
   "RETAINER_VENTURES": {
@@ -2479,7 +2479,7 @@
     "Gathering": "획득력",
     "Task_level": "수행 레벨",
     "Total_per_venture": "집사 수행 총 집계",
-    "Use_retainer": "Fill with retainer",
+    "Use_retainer": "고용 중인 집사",
     "Select_retainer": "집사를 선택하세요"
   }
 }
