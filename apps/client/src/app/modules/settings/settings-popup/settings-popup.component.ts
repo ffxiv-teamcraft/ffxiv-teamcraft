@@ -427,4 +427,11 @@ export class SettingsPopupComponent {
     }
   }
 
+  public disconnectPatreon(user: TeamcraftUser): void {
+    delete user.patreonToken;
+    delete user.patreonRefreshToken;
+    delete user.lastPatreonRefresh;
+    this.authFacade.updateUser(user);
+  }
+
 }
