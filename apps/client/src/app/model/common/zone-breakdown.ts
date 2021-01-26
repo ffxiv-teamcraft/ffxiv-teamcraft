@@ -23,7 +23,7 @@ export class ZoneBreakdown {
           if (node.type === 4) {
             this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords);
           } else {
-            this.addToBreakdown(mapIds.find(m => m.id === node.map)?.zone, node.map, row, hideZoneDuplicates, coords);
+            this.addToBreakdown(node.zoneId, node.map, row, hideZoneDuplicates, coords);
           }
         });
       } else if (getItemSource<Drop[]>(row, DataType.DROPS).length > 0 && this.hasOneFilter(filterChain, LayoutRowFilter.IS_DUNGEON_DROP, LayoutRowFilter.IS_MONSTER_DROP)) {
