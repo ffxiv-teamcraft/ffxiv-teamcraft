@@ -59,7 +59,7 @@ export class CurrencySpendingComponent extends TeamcraftComponent implements OnI
       map(res => {
         return res.Results.filter(item => {
           // Remove gil, venture and outdated tomes/scrips
-          return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 10308, 10310, 21072].indexOf(item.ID) === -1;
+          return [1, 23, 24, 26, 30, 31, 32, 33, 34, 35, 10308, 10309, 10310, 10311, 21072].indexOf(item.ID) === -1;
         });
       })
     );
