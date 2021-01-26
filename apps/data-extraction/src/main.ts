@@ -50,6 +50,7 @@ import { ParamGrowExtractor } from './extractors/param-grow.extractor';
 import { GubalExtractor } from './extractors/gubal.extractor';
 import { SubmarinePartsExtractor } from './extractors/submarine-parts.extractor';
 import { SubmarineRanksExtractor } from './extractors/submarine-ranks.extractor';
+import { AirshipPartsExtractor } from './extractors/airship-parts.extractor';
 
 // We have to do it like that because the lib seems to dynamically import its prompts,
 // which creates shitty typings
@@ -114,6 +115,7 @@ const extractors: AbstractExtractor[] = [
   new GubalExtractor(),
   new SubmarinePartsExtractor(),
   new SubmarineRanksExtractor(),
+  new AirshipPartsExtractor(),
 ];
 
 if (process.env.XIVAPI_KEY) {
