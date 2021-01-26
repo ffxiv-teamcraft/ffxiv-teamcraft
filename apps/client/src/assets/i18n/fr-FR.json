@@ -1821,7 +1821,7 @@
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or move a random item to a free slot of your own inventory.",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Personnage en jeu inconnu",
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
