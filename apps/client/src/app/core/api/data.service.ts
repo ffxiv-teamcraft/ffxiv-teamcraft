@@ -249,8 +249,13 @@ export class DataService {
       })
     );
 
-    if (this.isCompatible) {
-      const ids = this.mapToItemIds(query, this.searchLang as 'ko' | 'zh');
+
+    const searchLang = ignoreLanguageSetting ? this.translate.currentLang : this.searchLang;
+
+    const isCompatibleLocal = searchLang === 'ko' || searchLang === 'zh' && this.settings.region !== Region.China;
+
+    if (this.isCompatible || isCompatibleLocal) {
+      const ids = this.mapToItemIds(query, searchLang as 'ko' | 'zh');
       if (ids.length > 0) {
         results$ = this.xivapi.getList(
           XivapiEndpoint.Item,
