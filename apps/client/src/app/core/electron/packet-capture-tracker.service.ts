@@ -143,13 +143,14 @@ export class PacketCaptureTrackerService {
             Object.keys(inventory.items[inventory.contentId])
               .filter(key => key.startsWith(lastRetainerSpawned))
               .forEach(key => inventory.items[inventory.contentId][key] = {});
-          } else {
-            inventory = this.resetInventoryForItemInfo(inventory);
           }
         }
 
         groupedInfos.forEach(group => {
           const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
+          if (!isRetainer && +group.containerId % 1000 === 0) {
+            inventory = this.resetInventoryForItemInfo(inventory, +group.containerId);
+          }
           inventory.items[inventory.contentId][containerKey] = {};
           group.packets.forEach(packet => {
             const item: InventoryItem = {
@@ -331,15 +332,15 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.playerSetupPackets$.subscribe((packet) => {
-      this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, "0").toUpperCase());
+      this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, '0').toUpperCase());
     });
   }
 
-  private resetInventoryForItemInfo(inventory: UserInventory): UserInventory {
+  private resetInventoryForItemInfo(inventory: UserInventory, containerKey: number): UserInventory {
     const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]));
     Object.keys(itemsClone)
       .forEach(key => {
-        if (key.indexOf(':') === -1 && +key < 4000) {
+        if (key.indexOf(':') === -1 && Math.floor(+key / 1000) === Math.floor(containerKey / 1000)) {
           itemsClone[key] = {};
         }
       });
