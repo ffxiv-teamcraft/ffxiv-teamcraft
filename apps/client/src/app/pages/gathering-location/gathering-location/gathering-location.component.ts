@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { debounceTime, filter, map, mergeMap, tap } from 'rxjs/operators';
+import { debounceTime, filter, first, map, mergeMap, tap } from 'rxjs/operators';
 import { DataService } from '../../../core/api/data.service';
 import { AlarmsFacade } from '../../../core/alarms/+state/alarms.facade';
 import { Alarm } from '../../../core/alarms/alarm';
@@ -79,10 +79,7 @@ export class GatheringLocationComponent {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    this.alarmsFacade.addAlarms(alarm);
-    if (group) {
-      this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
-    }
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   public canCreateAlarmFromNode(alarms: Alarm[], node: GatheringNode): boolean {

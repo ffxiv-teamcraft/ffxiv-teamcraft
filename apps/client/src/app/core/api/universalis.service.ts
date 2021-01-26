@@ -152,7 +152,7 @@ export class UniversalisService {
         this.uploadMarketTaxRates(packet);
       }
     });
-    this.ipc.cid$.subscribe(packet => {
+    this.ipc.playerSetupPackets$.subscribe(packet => {
       if (this.settings.enableUniversalisSourcing) {
         this.uploadCid(packet);
       }

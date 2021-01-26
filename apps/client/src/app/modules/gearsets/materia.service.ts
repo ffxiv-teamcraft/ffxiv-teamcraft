@@ -29,6 +29,12 @@ export class MateriaService {
       };
     }
     const materia = this.getMateria(materiaId);
+    if (materia === undefined) {
+      return {
+        overcapped: false,
+        value: 0
+      };
+    }
     const itemStats = this.lazyData.data.itemStats[equipmentPiece.itemId] || [];
     const stat: any = itemStats.find((s: any) => s.ID === materia.baseParamId);
     let statValue = 0;

@@ -7,7 +7,7 @@ import { InventoryCoords } from './inventory-coords';
 import { RetainerInventory } from './retainer-inventory';
 import { app, dialog, ipcMain, OpenDialogOptions } from 'electron';
 import { Store } from '../store';
-import { moveSync } from 'fs-extra';
+import * as hashFiles from 'hash-files';
 
 class UnexpectedSizeError extends Error {
   constructor(expected, real) {
@@ -52,6 +52,10 @@ export class DatFilesWatcher {
 
   private watcher: FSWatcher;
 
+  private readonly hashRegistry: Record<string, string> = {};
+
+  private lastChanges: { file: string, timestamp: number }[] = [];
+
   constructor(private mainWindow: MainWindow, private store: Store) {
     ipcMain.on('dat:path:get', (event) => {
       event.sender.send('dat:path:value', this.getWatchDir());
@@ -74,6 +78,32 @@ export class DatFilesWatcher {
         this.start();
       });
     });
+
+    // Prepare hash cache
+    const baseDir = this.getWatchDir();
+    const dirs = readdirSync(baseDir);
+    this.hashRegistry = dirs.reduce((acc, dir) => {
+      const match = DatFilesWatcher.CONTENT_ID_REGEXP.exec(dir);
+      const contentId = match && match[1];
+      const stats = statSync(join(baseDir, dir));
+      if (stats.isDirectory() && contentId) {
+        try {
+          const odrPath = join(baseDir, dir, 'ITEMODR.DAT');
+          const gsPath = join(baseDir, dir, 'GS.DAT');
+          const odrHash = hashFiles.sync({ files: [odrPath] });
+          const gsHash = hashFiles.sync({ files: [gsPath] });
+          return {
+            ...acc,
+            [odrPath]: odrHash,
+            [gsPath]: gsHash
+          };
+        } catch (e) {
+          log.error(e);
+          return acc;
+        }
+      }
+      return acc;
+    }, {});
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
@@ -84,12 +114,39 @@ export class DatFilesWatcher {
           this.parseItemODR(join(watchDir, filename), contentId);
         }
       }
-      if (contentId !== this.lastContentId && (filename.endsWith('ITEMODR.DAT') || filename.endsWith('GS.DAT'))) {
+      if (contentId !== this.lastContentId && this.shouldTriggerContentIdChange(watchDir, filename)) {
         log.log(`New content ID: ${contentId}`);
         this.lastContentId = contentId;
         this.mainWindow.win.webContents.send('dat:content-id', contentId);
       }
     }
+  }
+
+  private shouldTriggerContentIdChange(watchDir: string, filename: string): boolean {
+    if (!filename.endsWith('ITEMODR.DAT') && !filename.endsWith('GS.DAT')) {
+      return false;
+    }
+    log.log(`File change detected: ${filename}`);
+    // If we had the same change less than 10s ago, we can safely assume it's from the game
+    if (this.lastChanges.filter(change => change.file === filename && Date.now() - change.timestamp < 10000).length > 0) {
+      log.log('Approved timestamp');
+      this.lastChanges = [];
+      return true;
+    }
+    const fullFilePath = join(watchDir, filename);
+    const newHash = hashFiles.sync({ files: [fullFilePath] });
+    if (this.hashRegistry[fullFilePath] !== newHash) {
+      log.log('Approved hash');
+      this.hashRegistry[fullFilePath] = newHash;
+      this.lastChanges = [];
+      return true;
+    }
+    this.lastChanges = [
+      ...this.lastChanges.filter(c => Date.now() - c.timestamp < 10000),
+      { timestamp: Date.now(), file: filename }
+    ];
+    log.log('Ignored');
+    return false;
   }
 
   private parseItemODR(filePath: string, contentId): void {

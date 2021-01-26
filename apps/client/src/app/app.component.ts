@@ -213,7 +213,7 @@ export class AppComponent implements OnInit {
         );
         this.unknownContentId$ = this.inventoryService.inventory$.pipe(
           map(inventory => {
-            return !inventory.contentId;
+            return inventory.contentId === undefined;
           })
         );
         this.universalis.initCapture();

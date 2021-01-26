@@ -42,6 +42,9 @@ export class InventoryEffects {
       return this.authFacade.user$.pipe(
         first(),
         switchMap((user) => {
+          if (next.contentId === null) {
+            return of(null);
+          }
           const isCustom = user.lodestoneIds.length === 0 && user.customCharacters.length > 0;
           if (isCustom) {
             const matchingCustomCharacter = user.customCharacters.find(entry => entry.contentId === next.contentId);

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { ListRow } from '../../list/model/list-row';
 import { List } from '../../list/model/list';
 import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { ListsFacade } from '../../list/+state/lists.facade';
+import { PlatformService } from '../../../core/tools/platform.service';
 
 @Component({
   selector: 'app-relationships',
@@ -25,7 +26,8 @@ export class RelationshipsComponent implements OnInit {
 
   public markedAsDone: { [index: number]: boolean } = {};
 
-  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryFacade) {
+  constructor(private listsFacade: ListsFacade, private inventoryService: InventoryFacade,
+              private platform: PlatformService) {
     this.list$ = this.listsFacade.selectedList$;
   }
 
@@ -37,30 +39,34 @@ export class RelationshipsComponent implements OnInit {
           .map(req => {
             let item: any = list.getItemById(req.id, true);
             item = { ...item, reqAmount: req.amount, canBeCrafted: list.canBeCrafted(item) };
-            return this.inventoryService.inventory$.pipe(
-              map(inventory => {
-                return inventory.getItem(item.id).map(entry => {
-                  return {
-                    isRetainer: entry.retainerName !== undefined,
-                    containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
-                    amount: entry.quantity,
-                    hq: entry.hq
-                  };
-                }).reduce((res, entry) => {
-                  const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
-                  if (resEntry !== undefined) {
-                    resEntry.amount += entry.amount;
-                  } else {
-                    res.push(entry);
-                  }
-                  return res;
-                }, []);
-              }),
-              map(entries => {
-                item.inventoryEntries = entries;
-                return item;
-              })
-            );
+            if (this.platform.isDesktop()) {
+              return this.inventoryService.inventory$.pipe(
+                map(inventory => {
+                  return inventory.getItem(item.id).map(entry => {
+                    return {
+                      isRetainer: entry.retainerName !== undefined,
+                      containerName: entry.retainerName ? entry.retainerName : this.inventoryService.getContainerName(entry.containerId),
+                      amount: entry.quantity,
+                      hq: entry.hq
+                    };
+                  }).reduce((res, entry) => {
+                    const resEntry = res.find(e => e.containerName === entry.containerName && e.hq === entry.hq);
+                    if (resEntry !== undefined) {
+                      resEntry.amount += entry.amount;
+                    } else {
+                      res.push(entry);
+                    }
+                    return res;
+                  }, []);
+                }),
+                map(entries => {
+                  item.inventoryEntries = entries;
+                  return item;
+                })
+              );
+            } else {
+              return of(item);
+            }
           });
         return combineLatest(items$);
       })

@@ -40,7 +40,7 @@
               <div *ngIf="row.items.length > 0">
                 <ng-template #zoneTitle>
                   <div fxLayout="row" fxLayoutAlign="flex-start center" fxLayoutGap="5px">
-                    <span class="zone-title">{{getLocation(row.zoneId) | i18n}}
+                    <span class="zone-title">{{getLocation(row.mapId) | i18n}}
                       <i *ngIf="(currentZoneId$ | async) === row.zoneId" nz-icon nzType="environment-o"
                          nz-tooltip [nzTooltipTitle]="'NAVIGATION.You_are_here' | translate"></i>
                     </span>

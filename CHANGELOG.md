@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.3"></a>
+## [8.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.2...v8.0.3) (2021-01-26)
+
+
+### Bug Fixes
+
+* **alarms:** fixed a bug with alarms sometimes not playing the sound notification ([98c3d70](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/98c3d70))
+* **alarms:** fixed an issue with "add alarms to a group" not working properly ([245f970](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/245f970))
+* **currency-spending:** removed outdated red scrips ([499b8ad](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/499b8ad))
+* **desktop:** better multi character detection combining packets and proper content checks ([9691039](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9691039))
+* **desktop:** fixed a bug with inventory resetting in some cases ([61d06a8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/61d06a8))
+* **list:** fixed requirements popup not showing on website ([c3cf7f8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c3cf7f8))
+* **list:** fixed wrong tooltip on copy menu entry ([ba2277c](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/ba2277c))
+* **list:** fixed zone breakdown sometimes not loading properly ([b808650](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/b808650))
+* **retainer-ventures:** fixed retainer selector not showing properly ([1172fe5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1172fe5))
+
+
+
 <a name="8.0.2"></a>
 ## [8.0.2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.1...v8.0.2) (2021-01-25)
 

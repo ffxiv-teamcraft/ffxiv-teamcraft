@@ -50,10 +50,7 @@ export class NodeDetailsComponent implements OnInit {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    this.alarmsFacade.addAlarms(alarm);
-    if (group) {
-      this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
-    }
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   public canCreateAlarm(generatedAlarm: Partial<Alarm>): Observable<boolean> {
