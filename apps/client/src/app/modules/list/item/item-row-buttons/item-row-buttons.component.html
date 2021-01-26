@@ -204,6 +204,7 @@
         <ng-container *ngIf="!isButton(itemRowTypes.COPY_NAME_NOT_FAVORITE)">
           <li [itemNameCopy]="itemId"
               [forceCopyMode]="notFavoriteCopyMode"
+              [disableTooltip]="true"
               nz-menu-item>
             {{(notFavoriteCopyMode === 'isearch' ? 'Copy_isearch': 'Copy_item_name_to_clipboard') | translate}}
           </li>

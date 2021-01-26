@@ -19,6 +19,9 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
   @Input()
   forceCopyMode: 'classic' | 'isearch' = null;
 
+  @Input()
+  disableTooltip = false;
+
   private get copyMode() {
     return this.forceCopyMode || this.settings.preferredCopyType;
   }
@@ -37,10 +40,14 @@ export class ItemNameClipboardDirective extends NzTooltipDirective {
               elementRef: ElementRef, hostView: ViewContainerRef,
               resolver: ComponentFactoryResolver, renderer: Renderer2) {
     super(elementRef, hostView, resolver, renderer);
-    this.translate.get(this.copyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
-      .pipe(
-        first()
-      ).subscribe(translated => this.title = translated);
+    if (!this.disableTooltip) {
+      this.translate.get(this.copyMode === 'isearch' ? 'Copy_isearch' : 'Copy_item_name_to_clipboard')
+        .pipe(
+          first()
+        ).subscribe(translated => {
+        this.title = translated;
+      });
+    }
     renderer.setStyle(
       elementRef.nativeElement,
       'cursor',
