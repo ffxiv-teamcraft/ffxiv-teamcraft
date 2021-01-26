@@ -1552,23 +1552,23 @@
         "Statuses": "状態",
         "No_statuses": "最新状態なし",
         "Total_reports": "このセッションでの総報告",
-        "Last_report": "Last report",
-        "Fish": "Fish",
+        "Last_report": "最近報告",
+        "Fish": "魚",
         "Size": "サイズ",
         "Time_since_thrown": "Time since throw",
         "ERRORS": {
-          "No_bait": "No bait detected, switch bait once to fix.",
-          "No_stats": "No stats detected, switch to fisher again to fix."
+          "No_bait": "餌が確認されません。修正の為に餌を一度変えてください",
+          "No_stats": "能力値を確認できませんでした。漁師にまた変更してこれを解決してください。"
         }
       }
     },
     "FISHING_SPOT": {
       "Next": "次",
-      "Possible_weathers": "Possible weathers",
-      "Available_fishes": "Available fishes",
-      "Fish_per_weather": "Fish per weather",
-      "Fish_per_bait": "Fish per bait",
-      "Fish_per_tug": "Fish per tug"
+      "Possible_weathers": "可能な天気",
+      "Available_fishes": "釣れる魚",
+      "Fish_per_weather": "天気ごとの魚",
+      "Fish_per_bait": "餌ごとの魚",
+      "Fish_per_tug": "当たりごとの魚"
     },
     "NODE": {
       "Items": "アイテム",
@@ -1738,8 +1738,8 @@
     "Missing": "不足な素材:",
     "Results": "制作可能な品目",
     "Basket": "制作リスト",
-    "Add_to_basket": "Add all to basket",
-    "Add_one_to_basket": "Add one to basket",
+    "Add_to_basket": "全て制作リストに追加",
+    "Add_one_to_basket": "制作リストに1つ入れる",
     "Remove_from_basket": "制作リストから削除",
     "Search": "レシピ検索",
     "Generate_list": "リストに追加",
@@ -1748,7 +1748,7 @@
     "Add_item": "アイテム追加",
     "Clipboard_content_malformed": "クリップボードにコピーされた内容の形式が正しくありません",
     "Import_from_clipboard": "クリップボードから読み込む",
-    "Import_from_inventory": "Import from inventory",
+    "Import_from_inventory": "所持品から呼び出す(インポート)",
     "Extension_tip": "[グローバルサーバ専用] クローム拡張アプリ[Lodestone inventory grabber] を利用して、執事インベントリ内のアイテムをクリップボードにコピーすることができます： ",
     "Extension_link": "ChromeのWebストアから拡張アプリをダウンロード",
     "Clear": "アイテムリストの初期化",
@@ -1758,10 +1758,10 @@
     "Pool_copied": "所持品の名称がクリップボードにコピーされました。",
     "Sort_alphabetically": "アルファベット順",
     "Pages_range_label": "総{{total}} 種類のアイテムの中で{{range0}} - {{range1}} のアイテム",
-    "Shown_only_craftable": "Only what I have level for",
-    "Shown_only_collectables": "Only collectables",
+    "Shown_only_craftable": "現在レベルで制作可能な物だけ表示する",
+    "Shown_only_collectables": "所藏品だけ表示する",
     "Recipe_level": "制作レベル",
-    "Shown_only_not_completed": "Only not done in log"
+    "Shown_only_not_completed": "手帳で完了してない項目だけ表示"
   },
   "CURRENCY_SPENDING": {
     "Title": "通貨消費ガイド",
@@ -1772,9 +1772,9 @@
     "Disabled_description": "Square Enixの市場情報を取得することを妨げたので、これに対する不満は、Square Enixに抗議してください。私たちは、Square Enixなく、この作業ができません。"
   },
   "FOOD_PICKER": {
-    "Title": "Food Picker",
+    "Title": "飲食選択機",
     "Description": "どの食べ物に欲しいステータスがあるか知りたいですか？もう探す必要はありません、あなたに必要なものがここにあります！",
-    "Pick_stat": "Choose an attribute"
+    "Pick_stat": "能力値選択"
   },
   "BLOG": {
     "Title": "ブログ"
@@ -1790,8 +1790,8 @@
     "Add_stat_filter": "ステータスフィルタの追加",
     "Add_bonus_stat_filter": "ボーナスステータスフィルタの追加",
     "Search_tip": "<patch＃>を入力して、該当するバージョンでフィルタが可能です。例：patch：5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Stats_exclude_tip": "該当能力値がないアイテムの検索を望なら能力値最小値は-1で設定",
+    "Bonuses_exclude_tip": "該当ボーナス能力値がないアイテムの検索を望ならボーナス最小値は-1で設定",
     "SORT_BY": {
       "Relevance": "関連性",
       "ID": "ID",
@@ -1801,7 +1801,7 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
+    "Favorites": "お気に入り",
     "General": "一般",
     "Sharing": "共有",
     "Gathering": "採集",
@@ -1811,7 +1811,7 @@
     "Commission_board": "依頼ボード",
     "My_commissions": "私の依頼",
     "Archived_commissions": "アーカイブ",
-    "Leveling": "Leveling",
+    "Leveling": "レベリング",
     "Currencies": "Currencies"
   },
   "PACKET_CAPTURE": {
