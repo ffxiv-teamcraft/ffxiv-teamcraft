@@ -88,7 +88,7 @@ export class ZoneBreakdown {
    * @param coords
    */
   private addToBreakdown(zoneId: number, mapId: number, item: ListRow, hideZoneDuplicates: boolean, coords: Vector2): void {
-    const existingRow = this.rows.find(r => r.zoneId === zoneId);
+    const existingRow = this.rows.find(r => r.mapId === mapId);
     // If we hide duplicates and it's bicolor gems, ignore eulmore and crystarium
     if (hideZoneDuplicates
       && getItemSource(item, DataType.TRADE_SOURCES).some(ts => ts.trades.some(t => t.currencies.some(c => c.id === 26807)))
