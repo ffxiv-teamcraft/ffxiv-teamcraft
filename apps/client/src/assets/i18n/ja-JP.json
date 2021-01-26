@@ -1821,7 +1821,7 @@
     "Banner_description_warning": "パケットキャプチャは利用規約（ToS）に違反するので、デフォルトでは無効になっています。ゲーム上で他の人には、この機能を使用していることを言わなかったら、この機能を使用するには問題はありません。",
     "Empty_inventory": "所持品をまだロードされていません",
     "Please_zone": "所持品システムを初期化するには、任意の位置にテレポートしてチョコボバッグを開けてください。",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or move a random item to a free slot of your own inventory.",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",
