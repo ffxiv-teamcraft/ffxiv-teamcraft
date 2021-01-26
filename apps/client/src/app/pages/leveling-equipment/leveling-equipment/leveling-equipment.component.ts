@@ -152,7 +152,7 @@ export class LevelingEquipmentComponent {
                     }
 
                     const currentlyEquipped: EquipmentPiece = row.gearset[propertyName] as EquipmentPiece;
-                    if (this.shouldReplaceItem(currentlyEquipped, item.ID, mainStat, slotName)) {
+                    if (this.shouldReplaceItem(currentlyEquipped, item.ID, mainStat, slotName, item.EquipSlotCategory.ID, filters.job)) {
                       const canBeEquipped = this.gearsetsFacade.canEquipSlot(slotName, row.gearset.chest?.itemId, row.gearset.legs?.itemId);
                       if (canBeEquipped) {
                         const itemMeldingData = this.lazyData.data.itemMeldingData[item.ID];
@@ -240,8 +240,8 @@ export class LevelingEquipmentComponent {
       })
       .filter(key => this.allowItem(+key, includeCrafting, includeTrades, onlyInventory, inventory))
       .sort((a, b) => {
-        const aMainStat = this.lazyData.data.itemStats[a]?.find(stat => stat.ID === mainStat)?.NQ || 0;
-        const bMainStat = this.lazyData.data.itemStats[b]?.find(stat => stat.ID === mainStat)?.NQ || 0;
+        const aMainStat = this.getMainStatValue(+a, mainStat, equipSlotCategory, job);
+        const bMainStat = this.getMainStatValue(+b, mainStat, equipSlotCategory, job);
         return bMainStat - aMainStat;
       })[0];
 
@@ -260,13 +260,23 @@ export class LevelingEquipmentComponent {
     };
   }
 
-  private shouldReplaceItem(currentlyEquipped: EquipmentPiece | undefined, itemId: number, mainStat: BaseParam, slotName: string): boolean {
+  private getMainStatValue(itemId: number, mainStat: number, equipSlotCategory:number, job:number):number{
+    if ([16, 17, 18].includes(job) && [9, 10, 11, 12].includes(equipSlotCategory)) {
+      mainStat = 10;
+    }
+    if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job) && [9, 10, 11, 12].includes(equipSlotCategory)) {
+      mainStat = 11;
+    }
+    return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat)?.NQ || 0;
+  }
+
+  private shouldReplaceItem(currentlyEquipped: EquipmentPiece | undefined, itemId: number, mainStat: BaseParam, slotName: string, equipSlotCategory: number, job: number): boolean {
     const itemMainStatValue = this.lazyData.data.itemStats[itemId].find(stat => stat.ID === mainStat)?.NQ || 0;
     if (!currentlyEquipped && itemMainStatValue > 0) {
       return true;
     }
     if (currentlyEquipped && itemMainStatValue > 0) {
-      const currentlyEquippedMainStatValue = this.lazyData.data.itemStats[currentlyEquipped.itemId].find(stat => stat.ID === mainStat)?.NQ || 0;
+      const currentlyEquippedMainStatValue = this.getMainStatValue(currentlyEquipped.itemId, mainStat, equipSlotCategory, job);
       if (itemMainStatValue > currentlyEquippedMainStatValue) {
         return true;
       }
