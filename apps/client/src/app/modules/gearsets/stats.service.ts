@@ -182,7 +182,7 @@ export class StatsService {
             }
           });
         equipmentPiece.materias
-          .filter(materia => materia > 0)
+          .filter(materia => materia > 0 && this.materiasService.getMateria(materia) !== undefined)
           .forEach((materiaId, index) => {
             const bonus = this.materiasService.getMateriaBonus(equipmentPiece, materiaId, index);
             const materia = this.materiasService.getMateria(materiaId);
