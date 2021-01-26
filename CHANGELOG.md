@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.4"></a>
+## [8.0.4](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.3...v8.0.4) (2021-01-26)
+
+
+### Bug Fixes
+
+* **db:** fixed fishing page not loading properly ([80dfae7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80dfae7))
+* **layout:** fixed wrong grouping logic with zone breakdown display ([94cfcdc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/94cfcdc))
+
+
+
 <a name="8.0.3"></a>
 ## [8.0.3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.2...v8.0.3) (2021-01-26)
 
