@@ -691,7 +691,7 @@
     "Create_commission": "このリストから依頼する",
     "Commission_list": "このリストから依頼する",
     "Inventory_cleanup": "所持品整理",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Inventory_cleanup_description": "ここはリストに使用されない所持品内アイテムであります。",
     "LAYOUT_DIALOG": {
       "Title": "レイアウト",
       "Add_panel": "パネルを追加する",
@@ -1537,10 +1537,10 @@
         "Big": "激震(!!!)"
       },
       "OVERLAY": {
-        "Open": "Toggle fishing report overlay",
-        "Bait": "Attached bait",
-        "Tug": "Tug",
-        "Hookset": "Hookset",
+        "Open": "釣り報告用オーバーレイ　オン/オフ",
+        "Bait": "現在の餌",
+        "Tug": "当たり",
+        "Hookset": "ひったくり",
         "Fishing": "Fishing",
         "Mooch": "Last throw was mooch",
         "Mooch_report": "Mooch",
