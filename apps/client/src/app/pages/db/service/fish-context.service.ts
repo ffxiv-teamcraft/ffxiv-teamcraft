@@ -183,9 +183,11 @@ export class FishContextService {
     switchMap(([fishId, spotId]) => {
       return this.data.getWeather(fishId, spotId).pipe(
         map(res => {
-          res.data.weathers = res.data.weathers.filter(e => {
-            return spotId >= 10000 || this.getPossibleWeathers(spotId).includes(e.weatherId);
-          });
+          if (res.data && spotId) {
+            res.data.weathers = res.data.weathers.filter(e => {
+              return spotId >= 10000 || this.getPossibleWeathers(spotId).includes(e.weatherId);
+            });
+          }
           return res;
         })
       );
