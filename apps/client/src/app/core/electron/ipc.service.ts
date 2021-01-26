@@ -46,7 +46,7 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('inventoryTransaction'));
   }
 
-  public get cid$(): Observable<pcap.PlayerSetup> {
+  public get playerSetupPackets$(): Observable<pcap.PlayerSetup> {
     return this.packets$.pipe(ofPacketType('playerSetup'));
   }
 

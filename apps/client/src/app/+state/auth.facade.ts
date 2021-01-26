@@ -251,7 +251,7 @@ export class AuthFacade {
               private dialog: NzModalService, private translate: TranslateService,
               private oauthService: OauthService, private fns: AngularFireFunctions,
               private logTrackingService: LogTrackingService, private characterService: LodestoneService) {
-    this.ipc.cid$.subscribe(packet => {
+    this.ipc.playerSetupPackets$.subscribe(packet => {
       this.setCID(packet.contentID);
     });
 

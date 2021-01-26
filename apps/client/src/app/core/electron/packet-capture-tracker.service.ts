@@ -21,7 +21,7 @@ import { Region } from '../../modules/settings/region.enum';
 import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
-import { ActorControl, EffectResult, FishingBaitMsg, InitZone, PlayerSetup, UpdateClassInfo, WeatherChange } from '../../model/pcap';
+import { ActorControl, EffectResult, FishingBaitMsg, InitZone, UpdateClassInfo, WeatherChange } from '../../model/pcap';
 
 @Injectable({
   providedIn: 'root'
@@ -323,10 +323,20 @@ export class PacketCaptureTrackerService {
         }
       }
     });
+
+    this.ipc.packets$.pipe(
+      ofPacketType('logout')
+    ).subscribe(() => {
+      this.userInventoryService.setContentId(null);
+    });
+
+    this.ipc.playerSetupPackets$.subscribe((packet) => {
+      this.userInventoryService.setContentId(BigInt(packet.contentID).toString(16).padStart(16, "0").toUpperCase());
+    });
   }
 
   private resetInventoryForItemInfo(inventory: UserInventory): UserInventory {
-    const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]))
+    const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]));
     Object.keys(itemsClone)
       .forEach(key => {
         if (key.indexOf(':') === -1 && +key < 4000) {

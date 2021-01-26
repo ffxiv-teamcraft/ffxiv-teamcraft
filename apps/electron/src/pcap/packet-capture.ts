@@ -45,7 +45,8 @@ export class PacketCapture {
     'submarineExplorationResult',
     'submarineStatusList',
     'resultDialog',
-    'desynthResult'
+    'desynthResult',
+    'logout'
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
@@ -93,13 +94,13 @@ export class PacketCapture {
     exec(`netsh advfirewall firewall add rule name="FFXIVTeamcraft - Machina" dir=in action=allow program="${PacketCapture.MACHINA_EXE_PATH}" enable=yes`);
   }
 
-  sendToRenderer(packet: any) {
+  sendToRenderer(packet: any): void {
     if (this.mainWindow) {
       this.mainWindow.win.webContents.send('packet', packet);
     }
   }
 
-  private filterPacketSessionID(packet: any) {
+  private filterPacketSessionID(packet: any): boolean {
     return PacketCapture.PACKETS_FROM_OTHERS.indexOf(packet.type) > -1
       || packet.sourceActorSessionID === packet.targetActorSessionID;
   }
