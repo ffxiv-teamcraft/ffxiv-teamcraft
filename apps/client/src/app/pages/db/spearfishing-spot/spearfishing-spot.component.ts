@@ -163,10 +163,7 @@ export class SpearfishingSpotComponent extends TeamcraftPageComponent {
   }
 
   public addAlarm(alarm: Alarm, group?: AlarmGroup): void {
-    this.alarmsFacade.addAlarms(alarm);
-    if (group) {
-      this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
-    }
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   public getGatheringItem(itemId: number): any {

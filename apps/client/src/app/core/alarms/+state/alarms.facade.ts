@@ -134,6 +134,21 @@ export class AlarmsFacade {
     this.store.dispatch(new AddAlarms(alarms));
   }
 
+  public addAlarmInGroup(alarm: Alarm, group?: AlarmGroup): void {
+    this.addAlarms(alarm);
+    if (group) {
+      this.allAlarms$.pipe(
+        map(as => as.find(a => {
+          return a.itemId === alarm.itemId && a.nodeId === alarm.nodeId && a.fishEyes === alarm.fishEyes
+        })),
+        filter(a => !!a),
+        first()
+      ).subscribe(resultAlarm => {
+        this.assignAlarmGroup(resultAlarm, group.$key);
+      })
+    }
+  }
+
   public addAlarmsAndGroup(alarms: Alarm[], groupName: string): void {
     this.store.dispatch(new AddAlarmsAndGroup(alarms, groupName));
   }
