@@ -11,7 +11,7 @@
   "FC_name": "Название FC",
   "Saving_in_database": "Сохранение данных на сервер",
   "See_on_map": "Посмотреть на карте",
-  "No_known_coordinates": "No known coordinates",
+  "No_known_coordinates": "Нет известных координат",
   "Edit_amount": "Изменить количество",
   "List_fork_in_progress": "Копирование списка на ваш аккаунт...",
   "Network_error_logged_out": "Обнаружена сетевая ошибка, вы были разлогинены. Если эта проблема повторится, пожалуйста, свяжитесь с Miu в дискорд сервере.",
@@ -19,6 +19,7 @@
   "Patch_notes": "{{version}} изменения",
   "Patch_notes_footer": "Вам нравятся новые возможности? Рассмотрите возможность поддержки проекта на patreon",
   "Selection": "Selection",
+  "Change_character": "Character",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Аккаунт уже существует",
     "auth/email-already-in-use": "Этот адрес уже используется",
@@ -170,8 +171,8 @@
     "Example": "Пример",
     "Change": "Изменить",
     "Dirty_changes": "Остались несохраненные изменения",
-    "Never": "Never",
-    "Festival": "Only during a festival"
+    "Never": "Никогда",
+    "Festival": "Только во время фестиваля"
   },
   "ALARMS": {
     "Title": "Оповещения",
@@ -181,7 +182,7 @@
     "Alarms_created": "{{amount}} оповещений создано",
     "Alarm_already_created": "Оповещение уже установлено",
     "Custom_sound": "Настраиваемый звук",
-    "Early_by_tip": "Negative value = later than the spawn",
+    "Early_by_tip": "Отрицательное значение = позже появления",
     "New_group": "Новая группа оповещений",
     "Confirm_group_delete": "Вы действительно хотите удалить эту группу?",
     "Delete_group": "Удалить группу",
@@ -199,7 +200,8 @@
     "Group_link_copied": "Скопирована ссылка на группу оповещений",
     "Group_not_found": "Группа оповещений не найдена",
     "Add_group_and_alarms": "Добавить эту группу и все оповещения в ней",
-    "Delete_all": "Delete all your alarms",
+    "Delete_all": "Удалить все оповещения",
+    "Delete_alarm": "Удалить оповещение",
     "Regenerating_alarms": "Regenerating your alarms...",
     "Regenerate": "Regenerate alarms",
     "Group_outdated": "This group is outdated, ask the owner to log in with new update and it'll be updated",
@@ -448,6 +450,7 @@
     "Enable_metrics_capture_explain": "(позволяет собирать аналитику по вашим доходам/расходам gil и предметов, никогда не загружается на сервер, это только для вас)",
     "Metrics_capture_tooltip": "Эта функция будет добавлена в будущем обновлении, но включение захвата данных сейчас означает, что, как только она будет, у вас данные будут с текущего момента вместо того, когда функция только заработает.",
     "Metrics_capture_folder": "Папка логов с метрикой",
+    "Char_data_folder": "Character data folder (where the CHRXXXXXXX folders are)",
     "Maximum_vendor_price": "Максимальная цена продавца",
     "Maximum_vendor_price_explain": "Максимальная цена товара для фильтра раскладки CAN_BE_BOUGHT (0 = без максимальной цены)",
     "Rawsock_flag": "Use RawSocket for packet capture",
@@ -457,9 +460,11 @@
     "Clear_inventory_on_startup": "Clear inventory on startup",
     "Switch_tc_when_switch_ingame_character": "Switch Teamcraft character when switched ingame",
     "Reset_ignored_characters": "Reset ignored characters",
+    "Reset_contentid_characters": "Reset linked characters",
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
+    "Disconnect_patreon": "Disconnect from patreon",
     "COLORS": {
       "Background": "Цвет фона",
       "Primary": "Основной цвет",
@@ -1816,7 +1821,7 @@
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
-    "Please_zone_or_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or teleport to a random location.",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",
@@ -1870,7 +1875,8 @@
       "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
       "Override_link_confirmation": "Are you sure you want to override this link?",
       "Ignore": "Ignore this ingame character",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section"
+      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
+      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
     }
   },
   "INVENTORY_OPTIMIZER": {
@@ -2477,6 +2483,7 @@
     "Gathering": "Gathering",
     "Task_level": "Task level",
     "Total_per_venture": "Total per venture",
-    "Use_retainer": "Fill with retainer"
+    "Use_retainer": "Fill with retainer",
+    "Select_retainer": "Pick one of your retainers"
   }
 }
