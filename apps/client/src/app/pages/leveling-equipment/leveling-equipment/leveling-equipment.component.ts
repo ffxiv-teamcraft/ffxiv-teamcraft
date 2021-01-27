@@ -260,14 +260,24 @@ export class LevelingEquipmentComponent {
     };
   }
 
-  private getMainStatValue(itemId: number, mainStat: number, equipSlotCategory:number, job:number):number{
-    if ([16, 17, 18].includes(job) && [9, 10, 11, 12].includes(equipSlotCategory)) {
-      mainStat = 10;
+  private getMainStatValue(itemId: number, mainStat: number, equipSlotCategory: number, job: number): number {
+    if ([9, 10, 11, 12].includes(equipSlotCategory)) {
+      if ([16, 17, 18].includes(job)) {
+        mainStat = BaseParam.GP;
+      }
+      if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
+        mainStat = BaseParam.CP;
+      }
     }
-    if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job) && [9, 10, 11, 12].includes(equipSlotCategory)) {
-      mainStat = 11;
+    const mainStatEntry = this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat);
+    if (mainStatEntry > 0) {
+      return mainStatEntry?.NQ || 0;
+    } else if ([16, 17, 18].includes(job)) {
+      return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.PERCEPTION)?.NQ || 0;
+    } else if ([8, 9, 10, 11, 12, 13, 14, 15].includes(job)) {
+      return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === BaseParam.CONTROL)?.NQ || 0;
     }
-    return this.lazyData.data.itemStats[itemId]?.find(stat => stat.ID === mainStat)?.NQ || 0;
+    return 0;
   }
 
   private shouldReplaceItem(currentlyEquipped: EquipmentPiece | undefined, itemId: number, mainStat: BaseParam, slotName: string, equipSlotCategory: number, job: number): boolean {

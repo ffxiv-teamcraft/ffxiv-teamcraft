@@ -46,7 +46,7 @@ export class RecipeChoicePopupComponent {
       tap(() => this.loading = true),
       debounceTime(500),
       switchMap(query => {
-        return this.dataService.searchItem(query, [], true);
+        return this.dataService.searchItem(query, [], true, [null, 'desc'], true);
       }),
       map(results => {
         return results.map(res => res.recipe).filter(recipe => recipe !== undefined);

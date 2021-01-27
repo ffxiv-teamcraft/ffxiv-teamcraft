@@ -19,7 +19,7 @@
   "Patch_notes": "Patch notes de la version {{version}}",
   "Patch_notes_footer": "Vous aimez les nouvelles fonctionnalités ? Pensez à soutenir le projet sur patreon",
   "Selection": "Sélection",
-  "Change_character": "Character",
+  "Change_character": "Personnage",
   "AUTH_ERRORS": {
     "auth/credential-already-in-use": "Compte déjà utilisé",
     "auth/email-already-in-use": "Email déjà utilisé",
@@ -460,11 +460,11 @@
     "Clear_inventory_on_startup": "Vider l'inventaire au démarrage",
     "Switch_tc_when_switch_ingame_character": "Changer de personnage sur Teamcraft quand il change en jeu",
     "Reset_ignored_characters": "Réinitialiser les personnages ignorés",
-    "Reset_contentid_characters": "Reset linked characters",
+    "Reset_contentid_characters": "Réinitialiser les caractères liés",
     "Show_other_characters_inventories_in_list": "Afficher les inventaires des autres personnages dans les listes",
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
-    "Disconnect_patreon": "Disconnect from patreon",
+    "Disconnect_patreon": "Se déconnecter de patreon",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -1821,7 +1821,7 @@
     "Banner_description_warning": "La capture de paquets est contre le Contrat de License d'Utilisateur Final, c'est pourquoi elle est désactivée par défaut, s'il vous plaît assurez-vous d'éviter de vous en venter en jeu afin de rester safe (le jeu ne peut pas détecter ce processus).",
     "Empty_inventory": "Votre inventaire n'a pas encore été chargé",
     "Please_zone": "Veuillez téléporter à un endroit aléatoire et ouvrir votre sac à dos chocobo une fois que vous êtes arrivé pour initialiser correctement le système d'inventaire.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Le suivi de l'inventaire ne peut pas fonctionner sans savoir quel personnage vous jouez actuellement, veuillez trier/détrier votre inventaire ou connectez-vous avec votre personnage pour que Teamcraft détecte votre personnage actuel.",
     "Unknown_character": "Personnage en jeu inconnu",
     "No_character_id": "Personnage actuel inconnu",
     "Please_relog": "Pour contribuer à Universalis, nous avons besoin de vous déconnecter et de vous reconnecter (ingame), cela n'est nécessaire qu'une fois.",
@@ -1876,7 +1876,7 @@
       "Override_link_confirmation": "Êtes-vous sûr de vouloir remplacer ce lien ?",
       "Ignore": "Ignorer ce personnage",
       "You_can_reset_ignore": "Vous pouvez réinitialiser les caractères ignorés dans la page des paramètres, section Application",
-      "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
+      "Tip": "Si vous avez déjà lié le personnage sur lequel vous jouez, vous pouvez ignorer ce personnage, Teamcraft lit les changements de fichiers et certains fichiers peuvent être modifiés pour quelque raison que ce soit, ce qui déclenche cela si le fichier n'est pas encore associé."
     }
   },
   "INVENTORY_OPTIMIZER": {

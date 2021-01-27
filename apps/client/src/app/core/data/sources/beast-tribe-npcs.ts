@@ -20,5 +20,7 @@ export const beastTribeNpcs = [
   // Madhura
   1024774,
   // Gyosho
-  1025604
+  1025604,
+  // Mizutt
+  1033714
 ];

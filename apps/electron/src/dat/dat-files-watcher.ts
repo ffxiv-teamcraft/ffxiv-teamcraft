@@ -48,11 +48,9 @@ export class DatFilesWatcher {
     'PremiumSaddlebag'
   ];
 
-  private lastContentId: string;
-
   private watcher: FSWatcher;
 
-  private readonly hashRegistry: Record<string, string> = {};
+  private hashRegistry: Record<string, string> = {};
 
   private lastChanges: { file: string, timestamp: number }[] = [];
 
@@ -78,32 +76,6 @@ export class DatFilesWatcher {
         this.start();
       });
     });
-
-    // Prepare hash cache
-    const baseDir = this.getWatchDir();
-    const dirs = readdirSync(baseDir);
-    this.hashRegistry = dirs.reduce((acc, dir) => {
-      const match = DatFilesWatcher.CONTENT_ID_REGEXP.exec(dir);
-      const contentId = match && match[1];
-      const stats = statSync(join(baseDir, dir));
-      if (stats.isDirectory() && contentId) {
-        try {
-          const odrPath = join(baseDir, dir, 'ITEMODR.DAT');
-          const gsPath = join(baseDir, dir, 'GS.DAT');
-          const odrHash = hashFiles.sync({ files: [odrPath] });
-          const gsHash = hashFiles.sync({ files: [gsPath] });
-          return {
-            ...acc,
-            [odrPath]: odrHash,
-            [gsPath]: gsHash
-          };
-        } catch (e) {
-          log.error(e);
-          return acc;
-        }
-      }
-      return acc;
-    }, {});
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
@@ -114,9 +86,8 @@ export class DatFilesWatcher {
           this.parseItemODR(join(watchDir, filename), contentId);
         }
       }
-      if (contentId !== this.lastContentId && this.shouldTriggerContentIdChange(watchDir, filename)) {
-        log.log(`New content ID: ${contentId}`);
-        this.lastContentId = contentId;
+      if (this.shouldTriggerContentIdChange(watchDir, filename)) {
+        log.log(`Content ID: ${contentId}`);
         this.mainWindow.win.webContents.send('dat:content-id', contentId);
       }
     }
@@ -203,6 +174,31 @@ export class DatFilesWatcher {
     }
     const watchDir = this.getWatchDir();
     try {
+      // Prepare hash cache
+      const dirs = readdirSync(watchDir);
+      this.hashRegistry = dirs.reduce((acc, dir) => {
+        const match = DatFilesWatcher.CONTENT_ID_REGEXP.exec(dir);
+        const contentId = match && match[1];
+        const stats = statSync(join(watchDir, dir));
+        if (stats.isDirectory() && contentId) {
+          try {
+            const odrPath = join(watchDir, dir, 'ITEMODR.DAT');
+            const gsPath = join(watchDir, dir, 'GS.DAT');
+            const odrHash = hashFiles.sync({ files: [odrPath] });
+            const gsHash = hashFiles.sync({ files: [gsPath] });
+            return {
+              ...acc,
+              [odrPath]: odrHash,
+              [gsPath]: gsHash
+            };
+          } catch (e) {
+            log.error(e);
+            return acc;
+          }
+        }
+        return acc;
+      }, {});
+
       this.watcher = watch(watchDir, { recursive: true }, (event, filename) => {
         this.onEvent(event, filename, watchDir);
       });

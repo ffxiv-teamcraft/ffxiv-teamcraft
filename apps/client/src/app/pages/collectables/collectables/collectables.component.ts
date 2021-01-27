@@ -202,8 +202,7 @@ export class CollectablesComponent {
   }
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarms(alarm);
-    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   public openInSimulator(itemId: number): void {

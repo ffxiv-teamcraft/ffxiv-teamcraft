@@ -301,8 +301,8 @@ export class ListDetailsPanelComponent implements OnChanges, OnInit {
         type: 'Trade'
       });
     }
-    if ((gatheredBy.nodes || []).some(n => n.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId)) {
-      const node = gatheredBy.nodes.find(n => n.x !== undefined && n.zoneId === zoneBreakdownRow.zoneId);
+    if ((gatheredBy.nodes || []).some(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId)) {
+      const node = gatheredBy.nodes.find(n => n.x !== undefined && n.map === zoneBreakdownRow.mapId);
       positions.push({
         x: node.x,
         y: node.y,
