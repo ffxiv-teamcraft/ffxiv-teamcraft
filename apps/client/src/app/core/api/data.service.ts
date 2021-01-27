@@ -176,6 +176,8 @@ export class DataService {
    * @returns {Observable<Recipe[]>}
    */
   public searchItem(query: string, filters: SearchFilter[], onlyCraftable: boolean, sort: [string, 'asc' | 'desc'] = [null, 'desc'], ignoreLanguageSetting = false): Observable<SearchResult[]> {
+    const searchLang = ignoreLanguageSetting ? this.translate.currentLang : this.searchLang;
+    const isCompatibleLocal = searchLang === 'ko' || searchLang === 'zh' && this.settings.region !== Region.China;
     // Filter HQ and Collectable Symbols from search
     query = query.replace(/[\ue03a-\ue03d]/g, '').toLowerCase();
 
@@ -222,7 +224,7 @@ export class DataService {
         }];
       }));
 
-    if (onlyCraftable && !this.isCompatible) {
+    if (onlyCraftable && !isCompatibleLocal) {
       xivapiFilters.push({
         column: 'Recipes.ClassJobID',
         operator: '>',
@@ -249,12 +251,7 @@ export class DataService {
       })
     );
 
-
-    const searchLang = ignoreLanguageSetting ? this.translate.currentLang : this.searchLang;
-
-    const isCompatibleLocal = searchLang === 'ko' || searchLang === 'zh' && this.settings.region !== Region.China;
-
-    if (this.isCompatible || isCompatibleLocal) {
+    if (isCompatibleLocal) {
       const ids = this.mapToItemIds(query, searchLang as 'ko' | 'zh');
       if (ids.length > 0) {
         results$ = this.xivapi.getList(
