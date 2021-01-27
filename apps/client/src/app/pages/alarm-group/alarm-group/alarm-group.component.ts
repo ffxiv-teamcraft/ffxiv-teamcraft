@@ -42,8 +42,7 @@ export class AlarmGroupComponent {
   }
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarms(alarm);
-    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   cloneGroup(group: AlarmGroup, alarms: Alarm[]): void {

@@ -563,8 +563,7 @@ export class ItemRowComponent extends TeamcraftComponent implements OnInit {
   }
 
   addAlarmWithGroup(alarm: Alarm, group: AlarmGroup) {
-    this.alarmsFacade.addAlarms(alarm);
-    this.alarmsFacade.assignAlarmGroup(alarm, group.$key);
+    this.alarmsFacade.addAlarmInGroup(alarm, group);
   }
 
   private handleAlarms(item: ListRow): void {
