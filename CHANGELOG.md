@@ -8,8 +8,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **alarùs:** fixed "add alarm in group" in various places ([dad0304](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dad0304))
-* **desktop:** fixed an issue with filew watcher crashing on folder not found ([a50a284](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a50a284)), closes [#1819](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1819)
+* **alarms:** fixed "add alarm in group" in various places ([dad0304](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/dad0304))
+* **desktop:** fixed an issue with file watcher crashing on folder not found ([a50a284](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a50a284)), closes [#1819](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1819)
 * **desktop:** possible fix for some specific character detection issues ([80cf281](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/80cf281))
 * **layout:** fixed zone breakdown not loading in some very specific cases ([6cdcd7d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/6cdcd7d))
 * **leveling-equipment:** fixed wrong suggestion for low level DoH accessories ([89039bc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89039bc))

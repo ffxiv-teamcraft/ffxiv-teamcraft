@@ -1,7 +1,7 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarùs:** fixed "add alarm in group" in various places.
-* **desktop:** fixed an issue with filew watcher crashing on folder not found.
+* **alarms:** fixed "add alarm in group" in various places.
+* **desktop:** fixed an issue with file watcher crashing on folder not found.
 * **desktop:** possible fix for some specific character detection issues.
 * **layout:** fixed zone breakdown not loading in some very specific cases.
 * **leveling-equipment:** fixed wrong suggestion for low level DoH accessories.
@@ -10,4 +10,4 @@ export const patchNotes = `### Bug Fixes
 
 ### Features
 
-* **layout:** new beat tribe npc: Mizutt.`;
+* **layout:** new beat tribe npc: Mizutt.`;
