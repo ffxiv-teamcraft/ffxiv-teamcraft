@@ -85,10 +85,10 @@ export class DatFilesWatcher {
         if (filename.endsWith('ITEMODR.DAT')) {
           this.parseItemODR(join(watchDir, filename), contentId);
         }
-      }
-      if (this.shouldTriggerContentIdChange(watchDir, filename)) {
-        log.log(`Content ID: ${contentId}`);
-        this.mainWindow.win.webContents.send('dat:content-id', contentId);
+        if (this.shouldTriggerContentIdChange(watchDir, filename)) {
+          log.log(`Content ID: ${contentId}`);
+          this.mainWindow.win.webContents.send('dat:content-id', contentId);
+        }
       }
     }
   }
