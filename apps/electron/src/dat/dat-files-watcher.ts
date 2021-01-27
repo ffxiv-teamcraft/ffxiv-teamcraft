@@ -48,8 +48,6 @@ export class DatFilesWatcher {
     'PremiumSaddlebag'
   ];
 
-  private lastContentId: string;
-
   private watcher: FSWatcher;
 
   private hashRegistry: Record<string, string> = {};
@@ -88,9 +86,8 @@ export class DatFilesWatcher {
           this.parseItemODR(join(watchDir, filename), contentId);
         }
       }
-      if (contentId !== this.lastContentId && this.shouldTriggerContentIdChange(watchDir, filename)) {
-        log.log(`New content ID: ${contentId}`);
-        this.lastContentId = contentId;
+      if (this.shouldTriggerContentIdChange(watchDir, filename)) {
+        log.log(`Content ID: ${contentId}`);
         this.mainWindow.win.webContents.send('dat:content-id', contentId);
       }
     }
