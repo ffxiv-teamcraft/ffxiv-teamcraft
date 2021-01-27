@@ -88,10 +88,13 @@ export class InventoryEffects {
   @Effect({ dispatch: false })
   updateInventory$ = this.actions$.pipe(
     ofType<UpdateInventory>(InventoryActionTypes.UpdateInventory),
-    map(action => {
+    withLatestFrom(this.authFacade.user$),
+    map(([action, user]) => {
       const savePayload = JSON.parse(JSON.stringify(action.payload));
       delete savePayload.searchCache;
-      delete savePayload._contentId;
+      if (user.lodestoneIds.length === 0) {
+        delete savePayload._contentId;
+      }
       this.ipc.send('inventory:set', savePayload);
     })
   );
