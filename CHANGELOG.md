@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.6"></a>
+## [8.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.5...v8.0.6) (2021-01-28)
+
+
+### Bug Fixes
+
+* **commission-board:** fixed datacenter selector width ([5924547](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/5924547))
+* **desktop:** close file watcher properly on quit to avoid getting ipc errors ([1c56e1e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1c56e1e))
+* **layout:** fixed possible issue with npc breakdown not displaying properly ([e1e69ef](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e1e69ef))
+* **quick-search:** fixed search type select box ([9edcfc9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9edcfc9))
+* **search:** fixed english search for chinese region ([610623e](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/610623e))
+* **simulator:** fixed custom simulator not showing actions ([e911f28](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/e911f28))
+
+
+### Features
+
+* **desktop:** keep linked character in cache if there's only one character on the user's account ([89357c2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/89357c2))
+* **layout:** new filters: IS_NORMAL_GATHERING and REQUIRES_WEATHER ([12ee2b3](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/12ee2b3))
+* **settings:** new setting categories for inventory and characters tracking ([c8e4472](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c8e4472))
+
+
+
 <a name="8.0.5"></a>
 ## [8.0.5](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.4...v8.0.5) (2021-01-27)
 
