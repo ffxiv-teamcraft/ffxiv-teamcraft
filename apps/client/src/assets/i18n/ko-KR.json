@@ -2316,7 +2316,7 @@
       "Only_crafting": "제작직만 가능",
       "Includes_materials_label": "모든 재료를 제공하며 제작만 의뢰합니다",
       "Only_materials": "재료만",
-      "Only_requires_materials": "해당 의뢰는 목록의 재료만 필요합니다",
+      "Only_requires_materials": "최종 아이템을 제외한 목록의 재료만 의뢰합니다",
       "Contact_info": "연락 가능한 방법",
       "Contact_info_placeholder": "가격 협의를 해야한다면 디스코드, 인게임, 이메일 등 원하는 방법을 사용하세요.",
       "Contact_info_required_error": "연락 가능한 정보를 입력하세요",
