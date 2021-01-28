@@ -148,4 +148,16 @@ output('traits', () => db('Trait').simpleObject('Name'))
 output('tribes', () => db('Tribe').simpleObject('Masculine'))
 output('triple-triad-rule-descriptions', () => db('TripleTriadRule').simpleObject('#2'))
 output('triple-triad-rules', () => db('TripleTriadRule').simpleObject('Name'))
+output('ventures', () => db('RetainerTask').toObject(row => {
+  if (!row.Task || +row.Task == 0) {
+    return
+  }
+
+  if (row.Task > 30000) {
+    return i18n('RetainerTaskRandom', row.Task, 'Name')
+  } else {
+    const id = +db('RetainerTaskNormal', null, true).findById(row.Task)['Item']
+    return i18n('Item', id, 'Name')
+  }
+}))
 output('weathers', () => db('Weather').simpleObject('Name'))
