@@ -1821,7 +1821,7 @@
     "Banner_description_warning": "Захват инвентаря против ToS, поэтому он отключен по умолчанию, пожалуйста, убедитесь, что вы не сообщаете о этом всем в игре и все будет хорошо.",
     "Empty_inventory": "Ваш инвентарь еще не загружен",
     "Please_zone": "Пожалуйста, телепортируйтесь в случайное место и откройте свою сумку Чокобо для корректного анализа инвентаря.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Because you have multiple characters on your account, inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "Не указан игровой id персонажа",
     "Please_relog": "Для того чтобы внести свой вклад в Universalis, нам нужно выйти и войти (в игре) это необходимо только один раз.",

@@ -498,43 +498,8 @@
             </label>
           </div>
           <div>
-            <label [(ngModel)]="settings.clearInventoryOnStartup" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Clear_inventory_on_startup' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Enable_autofill_by_default' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.enableAutofillNotificationByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Enable_autofill_notification_by_default' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.enableAutofillHQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Enable_autofill_hq_filter' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.enableAutofillNQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Enable_autofill_nq_filter' | translate}}
-            </label>
-          </div>
-          <div>
             <label [(ngModel)]="settings.pcapLogEnabled" [nzDisabled]="!machinaToggle" nz-checkbox>
               {{'SETTINGS.Enable_auto_log_check' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.followIngameCharacterSwitches" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Switch_tc_when_switch_ingame_character' | translate}}
-            </label>
-          </div>
-          <div>
-            <label [(ngModel)]="settings.showOthercharacterInventoriesInList" [nzDisabled]="!machinaToggle" nz-checkbox>
-              {{'SETTINGS.Show_other_characters_inventories_in_list' | translate}}
             </label>
           </div>
           <div>
@@ -552,30 +517,80 @@
               </nz-input-group>
             </nz-form-control>
           </nz-form-item>
-          <nz-form-item nzFlex *ngIf="machinaToggle" fxLayoutAlign="flex-start center">
-            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Char_data_folder' | translate}}</nz-form-label>
-            <nz-form-control>
-              <nz-input-group [nzAddOnBefore]="watchFilesPath">
-                <button nz-button nzType="primary" (click)="changeWatchFilesPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
-              </nz-input-group>
-            </nz-form-control>
-          </nz-form-item>
-          <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
-            <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
-            <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"
-                       class="ignored-inventories" id="ignored-inventories" nzShowSearch nzMode="multiple" nzAllowClear>
-              <nz-option *ngFor="let inventory of inventories" [nzLabel]="inventory | translate" [nzValue]="inventory">
-              </nz-option>
-            </nz-select>
-          </nz-form-item>
         </div>
       </nz-card>
+
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Character_tracking' | translate"></nz-divider>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.followIngameCharacterSwitches" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Switch_tc_when_switch_ingame_character' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.showOthercharacterInventoriesInList" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Show_other_characters_inventories_in_list' | translate}}
+        </label>
+      </div>
+
       <button (click)="settings.ignoredContentIds = []" nz-button>
         {{'SETTINGS.Reset_ignored_characters' | translate}}
       </button>
+
       <button (click)="resetLinkedChars()" nz-button nzDanger nz-popconfirm [nzPopconfirmTitle]="'Confirmation' | translate">
         {{'SETTINGS.Reset_contentid_characters' | translate}}
       </button>
+
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Inventory_tracking' | translate"></nz-divider>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.clearInventoryOnStartup" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Clear_inventory_on_startup' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.enableAutofillByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Enable_autofill_by_default' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.enableAutofillNotificationByDefault" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Enable_autofill_notification_by_default' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.enableAutofillHQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Enable_autofill_hq_filter' | translate}}
+        </label>
+      </div>
+      <div>
+        <label [(ngModel)]="settings.enableAutofillNQFilter" [nzDisabled]="!machinaToggle" nz-checkbox>
+          {{'SETTINGS.Enable_autofill_nq_filter' | translate}}
+        </label>
+      </div>
+
+      <nz-form-item nzFlex *ngIf="machinaToggle" fxLayoutAlign="flex-start center">
+        <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Char_data_folder' | translate}}</nz-form-label>
+        <nz-form-control>
+          <nz-input-group [nzAddOnBefore]="watchFilesPath">
+            <button nz-button nzType="primary" (click)="changeWatchFilesPath()" class="corners-left">{{'COMMON.Change' | translate}}</button>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item nzFlex *ngIf="inventories$ | async as inventories" fxLayoutAlign="flex-start center">
+        <nz-form-label nzFor="ignored-inventories">{{'SETTINGS.Ignored_inventories' | translate}}</nz-form-label>
+        <nz-select [(ngModel)]="ignoredInventories" (ngModelChange)="settings.ignoredInventories = ignoredInventories"
+                   class="ignored-inventories" id="ignored-inventories" nzShowSearch nzMode="multiple" nzAllowClear>
+          <nz-option *ngFor="let inventory of inventories" [nzLabel]="inventory | translate" [nzValue]="inventory">
+          </nz-option>
+        </nz-select>
+      </nz-form-item>
+
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Tooling' | translate"></nz-divider>
+      </div>
       <button (click)="openDesktopConsole()" nz-button>
         {{'SETTINGS.Show_devtools' | translate}}
       </button>

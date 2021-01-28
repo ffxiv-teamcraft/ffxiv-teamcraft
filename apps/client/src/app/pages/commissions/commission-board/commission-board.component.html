@@ -9,7 +9,7 @@
     <div *ngIf="display$ | async as display" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <nz-input-group [nzAddOnBefore]="dcSelector" class="filter-input">
         <ng-template #dcSelector>
-          <nz-select [ngModel]="display.datacenter" (ngModelChange)="changeDatacenter($event)" nzShowSearch>
+          <nz-select [ngModel]="display.datacenter" (ngModelChange)="changeDatacenter($event)" nzShowSearch class="dc-selector">
             <nz-option *ngFor="let dc of datacenters" [nzValue]="dc" [nzLabel]="dc"></nz-option>
           </nz-select>
         </ng-template>

@@ -55,6 +55,10 @@ export class DatFilesWatcher {
   private lastChanges: { file: string, timestamp: number }[] = [];
 
   constructor(private mainWindow: MainWindow, private store: Store) {
+    mainWindow.closed$.subscribe(() => {
+      this.stop();
+    });
+
     ipcMain.on('dat:path:get', (event) => {
       event.sender.send('dat:path:value', this.getWatchDir());
     });
@@ -85,10 +89,10 @@ export class DatFilesWatcher {
         if (filename.endsWith('ITEMODR.DAT')) {
           this.parseItemODR(join(watchDir, filename), contentId);
         }
-      }
-      if (this.shouldTriggerContentIdChange(watchDir, filename)) {
-        log.log(`Content ID: ${contentId}`);
-        this.mainWindow.win.webContents.send('dat:content-id', contentId);
+        if (this.shouldTriggerContentIdChange(watchDir, filename)) {
+          log.log(`Content ID: ${contentId}`);
+          this.mainWindow.win.webContents.send('dat:content-id', contentId);
+        }
       }
     }
   }

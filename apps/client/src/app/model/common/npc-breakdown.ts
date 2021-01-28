@@ -63,11 +63,13 @@ export class NpcBreakdown {
   private handleTradeSources(row: ListRow): void {
     const tradeSources = getItemSource(row, DataType.TRADE_SOURCES);
     const bestNpc = tradeSources
+      .filter(ts => !!ts)
       .sort((a, b) => {
         return this.getTradeSourceScore(b) - this.getTradeSourceScore(a);
       })
       .map(ts => ts.npcs)
       .flat()
+      .filter(npc => !!npc)
       .sort((a, b) => {
         return this.getRowScore(b.id) - this.getRowScore(a.id);
       })[0];
