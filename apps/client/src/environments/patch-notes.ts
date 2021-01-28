@@ -1,13 +1,15 @@
 export const patchNotes = `### Bug Fixes
 
-* **alarms:** fixed "add alarm in group" in various places.
-* **desktop:** fixed an issue with file watcher crashing on folder not found.
-* **desktop:** possible fix for some specific character detection issues.
-* **layout:** fixed zone breakdown not loading in some very specific cases.
-* **leveling-equipment:** fixed wrong suggestion for low level DoH accessories.
-* **search:** fixed item search in some popups.
+* **commission-board:** fixed datacenter selector width.
+* **desktop:** close file watcher properly on quit to avoid getting ipc errors.
+* **layout:** fixed possible issue with npc breakdown not displaying properly.
+* **quick-search:** fixed search type select box.
+* **search:** fixed english search for chinese region.
+* **simulator:** fixed custom simulator not showing actions.
 
 
 ### Features
 
-* **layout:** new beat tribe npc: Mizutt.`;
+* **desktop:** keep linked character in cache if there's only one character on the user's account.
+* **layout:** new filters: IS_NORMAL_GATHERING and REQUIRES_WEATHER.
+* **settings:** new setting categories for inventory and characters tracking.`;
