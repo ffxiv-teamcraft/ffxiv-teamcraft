@@ -1821,7 +1821,7 @@
     "Banner_description_warning": "数据包捕获功能是违反 ToS 的，因此其默认被禁用。使用此功能时请不要告知其他玩家，以避免风险。",
     "Empty_inventory": "您的物品栏尚未加载",
     "Please_zone": "为了正确初始化物品栏数据，请传送至任意地点并在传送完成后打开陆行鸟鞍囊。",
-    "Please_sort": "你的账号有多个角色，TC 需要扫描你当前的角色才能使用背包相关功能。请在游戏中整理你的背包或者返回标题界面再登录游戏。",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "未知游戏角色",
     "No_character_id": "未设置游戏内角色 ID",
     "Please_relog": "为了向 Universalis 提交数据，您需要在游戏中登出并重新登录。此操作只需要执行一次。",
