@@ -1833,7 +1833,7 @@
     "Possible_missing_firewall_rule_description": "Teamcraft只能捕获到一部分数据包，丢失了与物品栏、 统计、装备等相关的数据包，可能是由于您的 PC 上缺少防火墙规则。",
     "Possible_missing_firewall_rule_check": "如果此消息不会在你传送到新区域后消失， 防火墙规则缺失或封包捕获因某种原因根本无法工作(如果是这种情况，请加入Discord 服务器，前往 #troubleshooting 频道解决)。",
     "Rawsock_needs_admin": "RawSocket 抓包模式需要管理员权限",
-    "Rawsock_needs_admin_description": "In order to manipulate firewall rules properly and be able to capture traffic from your game, RawSocket mode requires TC to have admin permissions. You can close it and run it again as admin to fix this issue, or pick one of the options below.",
+    "Rawsock_needs_admin_description": "TC 需要管理员权限才能使用 RawSocket 抓包和设置防火墙规则。用管理员权限运行 TC，或者从下面选择一个选项：",
     "Switch_to_winpcap": "切换至 WinPcap 模式",
     "Disable_pcap": "停用数据包捕获",
     "Install_npcap": "您未安装 Npcap",
@@ -1870,12 +1870,12 @@
       "RetainerMarket": "雇员出售列表"
     },
     "CONTENT_ID_POPUP": {
-      "Description": "In order to support multi-character tracking and other nice features, Teamcraft needs to know which character you're currently playing on, or at least which character should be linked to the current ingame one.",
+      "Description": "请选择你当前登录的游戏角色要关联的 TC 角色。",
       "Linked": "已关联",
-      "Linked_tooltip": "This character is already linked to another ingame character, selecting it will delete the link with the other character",
-      "Override_link_confirmation": "Are you sure you want to override this link?",
+      "Linked_tooltip": "该 TC 角色已经关联到了另一个游戏角色，选择该角色的话将覆盖该关联。",
+      "Override_link_confirmation": "确定要覆盖关联吗？",
       "Ignore": "忽略此游戏角色",
-      "You_can_reset_ignore": "You can reset ignored characters in the settings page, Desktop section",
+      "You_can_reset_ignore": "在客户端设置中可以重置被忽略的角色",
       "Tip": "If you already linked the character you're currently playing on, you can safely ignore this character, Teamcraft reads file changes and some files could be changing for whatever reason, triggering this if the file isn't associated yet."
     }
   },
