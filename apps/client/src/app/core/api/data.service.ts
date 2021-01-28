@@ -89,7 +89,7 @@ export class DataService {
       searchOptions.baseUrl = this.baseUrl;
     }
 
-    if (lang !== 'chs') {
+    if (!['chs', 'zh'].includes(lang)) {
       searchOptions.string_algo = SearchAlgo.WILDCARD_PLUS;
     }
 
