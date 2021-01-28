@@ -1790,8 +1790,8 @@
     "Add_stat_filter": "添加属性过滤器",
     "Add_bonus_stat_filter": "添加奖励属性过滤器",
     "Search_tip": "在输入框中输入：“patch:xx” 可以查看某个版本的更新内容，如：patch:5.01",
-    "Stats_exclude_tip": "Set min value of a stat to -1 to search for items without this stat",
-    "Bonuses_exclude_tip": "Set min value of a bonus to -1 to search for items without this bonus",
+    "Stats_exclude_tip": "设置最小值为 -1 可以搜索没有该值的物品",
+    "Bonuses_exclude_tip": "设置最小值为 -1 可以搜索没有该值的物品",
     "SORT_BY": {
       "Relevance": "相关性",
       "ID": "ID",
@@ -1925,8 +1925,8 @@
       "Message": "此装备可以精炼魔晶石"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
-      "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
+      "Title": "不需要保留 HQ 的物品（因为可以使用工匠的神速技巧）",
+      "Message": "该物品仅在可以使用工匠的神速技巧的配方中有用，所以不需要保留 HQ"
     }
   },
   "VERSION_LOCK": {
@@ -2143,7 +2143,7 @@
         "Add_panel": "点击此处添加一个新面板。",
         "Reorder": "您可以使用拖放来移动任何您想要的面板。",
         "Data_type": "首先，请选择您想要使用的计量方式。",
-        "Filters": "Then, filter the data to only use what you want to show, with the ability to combine and invert filters.",
+        "Filters": "然后，使用过滤器可以组合、反向以筛选你想要显示的数据。",
         "Title": "为您的面板设置标题",
         "Display_type": "选择您想要使用哪个组件来表示您的数据，然后添加相应的输入。"
       }
