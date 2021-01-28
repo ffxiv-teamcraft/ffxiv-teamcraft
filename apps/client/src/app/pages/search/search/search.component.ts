@@ -245,6 +245,8 @@ export class SearchComponent extends TeamcraftComponent implements OnInit {
           };
           if (this.lazyData.data.zhItemUiCategories) {
             res.name.zh = this.lazyData.data.zhItemUiCategories[result.ID] !== undefined ? this.lazyData.data.zhItemUiCategories[result.ID].zh : result.Name_en;
+          }
+          if (this.lazyData.data.koItemUiCategories) {
             res.name.ko = this.lazyData.data.koItemUiCategories[result.ID] !== undefined ? this.lazyData.data.koItemUiCategories[result.ID].ko : result.Name_en;
           }
           return res;

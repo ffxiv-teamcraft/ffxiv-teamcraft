@@ -165,6 +165,10 @@ export class LayoutRowFilter {
     return isTimedGathering || isTimedReduction;
   }, 'IS_TIMED');
 
+  static IS_NORMAL_GATHERING = LayoutRowFilter.IS_GATHERING
+    ._and(LayoutRowFilter.not(LayoutRowFilter.IS_TIMED))
+    ._and(new LayoutRowFilter(() => true, 'IS_NORMAL_GATHERING'));
+
   static IS_END_CRAFT_MATERIAL = new LayoutRowFilter((row, list) => {
     for (const item of list.finalItems) {
       if (item.requires.some(req => req.id === row.id)) {
@@ -253,6 +257,11 @@ export class LayoutRowFilter {
     ._and(new LayoutRowFilter((row: ListRow) => {
       return getItemSource(row, DataType.GATHERED_BY, true).type === 4 || getItemSource(row, DataType.GATHERED_BY, true).type === -5;
     }, 'IS_GATHERED_BY_FSH'));
+
+  static REQUIRES_WEATHER = LayoutRowFilter.IS_GATHERED_BY_FSH
+    ._and(new LayoutRowFilter((row: ListRow) => {
+      return getItemSource(row, DataType.GATHERED_BY).nodes.some(node => node.weathers && node.weathers.length > 0);
+    }, 'REQUIRES_WEATHER'));
 
   static ANYTHING = new LayoutRowFilter(() => true, 'ANYTHING');
 
