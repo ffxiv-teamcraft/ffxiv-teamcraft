@@ -82,6 +82,10 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
     );
 
     this.recipe$ = merge(recipeFromForm$, recipeFromRotation$).pipe(
+      map(recipe => {
+        (recipe as Craft).conditionsFlag = recipe.expert ? 511 : 15;
+        return recipe;
+      }),
       tap(recipe => {
         this.recipeForm.patchValue({
           rlvl: recipe.rlvl,
@@ -113,10 +117,10 @@ export class CustomSimulatorPageComponent extends AbstractSimulationPage {
     const oldValue = this.recipeForm.value[prop];
     const newValue = this.recipeForm.value[prop] + amount;
 
-    this.recipeForm.patchValue({[prop]: newValue});
+    this.recipeForm.patchValue({ [prop]: newValue });
 
     if (this.recipeForm.controls[prop].invalid) {
-      this.recipeForm.patchValue({[prop]: oldValue})
+      this.recipeForm.patchValue({ [prop]: oldValue });
     }
   }
 }
