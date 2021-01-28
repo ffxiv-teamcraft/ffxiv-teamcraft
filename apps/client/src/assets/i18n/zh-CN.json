@@ -1801,7 +1801,7 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
+    "Favorites": "收藏",
     "General": "基本功能",
     "Sharing": "共享社区",
     "Gathering": "采集相关",
@@ -1811,8 +1811,8 @@
     "Commission_board": "广场",
     "My_commissions": "我的委托",
     "Archived_commissions": "归档",
-    "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Leveling": "升级",
+    "Currencies": "货币"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "数据包捕获功能可用",
@@ -1993,8 +1993,8 @@
     "Copied_as_string": "配装已复制为字符串",
     "Mark_as_done": "标记为已完成",
     "Create_commission": "为此配装创建委托",
-    "Value_for_next": "Next breakpoint",
-    "Value_for_previous": "Previous breakpoint",
+    "Value_for_next": "下一临界值",
+    "Value_for_previous": "上一临界值",
     "SLOT": {
       "Body": "身体",
       "Ears": "耳部",
@@ -2128,16 +2128,16 @@
       "Set_selector": "选择用于手法模拟的职业，结果中会推算手法的成功率并展示"
     },
     "METRICS": {
-      "Welcome_time_range": "欢迎来到计量表盘页面，在这里您可以选择您想要看到数据显示的时间范围，默认本日。",
-      "Select_dashboard": "您可以有多个表盘，并且可以轻松地在它们之间切换看到对您来说什么是重要的。",
-      "Edit_dashboard": "您可以使用此按钮进入编辑模式，它只适用于非默认表盘。",
-      "Create_dashboard": "轻松创建您自己的表盘，不要忘记在您创建它们后编辑它们，否则它将只是默认表盘的副本。",
-      "Delete_layout": "如果想要移除表盘，点击此按钮并确认（删除无法撤销）",
-      "Export_layout": "想要将您精心制作的表盘与您的好友分享吗？点击此按钮复制您当前选定表盘的导出代码。",
-      "Import_layout": "如果有人使用导出代码向您分享一个表盘，请使用此按钮导入它。",
+      "Welcome_time_range": "欢迎来到统计面板页面，在这里您可以选择您想要看到数据显示的时间范围，默认本日。",
+      "Select_dashboard": "您可以有多个面板，并且可以轻松地在它们之间切换看到对你来说什么是重要的。",
+      "Edit_dashboard": "你可以使用此按钮进入编辑模式，它只适用于非默认面板。",
+      "Create_dashboard": "轻松创建您自己的面板，不要忘记在创建它们后编辑它们，否则它将只是默认面板的副本。",
+      "Delete_layout": "如果想要移除面板，点击此按钮并确认（删除无法撤销）",
+      "Export_layout": "想要将您精心制作的面板与您的好友分享吗？点击此按钮复制您当前选定面板的导出代码。",
+      "Import_layout": "如果有人使用导出代码向您分享一个面板，请使用此按钮导入它。",
       "EDITOR": {
-        "Welcome_add_column": "欢迎来到表盘布局编辑器，您可以使用此按钮添加列 (最多5列)。",
-        "Save": "在您编辑表盘后不要忘记保存您的修改。",
+        "Welcome_add_column": "欢迎来到面板布局编辑器，您可以使用此按钮添加列 (最多5列)。",
+        "Save": "在您编辑面板后不要忘记保存您的修改。",
         "Revert": "又或者，如果你不喜欢这么做，请在编辑之前用这个回到原来的布局。",
         "Delete_column": "想要删除一列吗？这里！",
         "Add_panel": "点击此处添加一个新面板。",
@@ -2174,18 +2174,18 @@
     }
   },
   "METRICS": {
-    "Title": "计量表盘",
+    "Title": "统计面板",
     "Today": "本日",
     "This_week": "本周",
     "This_month": "本月",
     "Add_new_column": "添加新的纵列(最多5个)",
-    "Default_dashboard": "默认表盘",
+    "Default_dashboard": "默认面板",
     "Copy_to_clipboard": "复制导出代码到剪贴板",
     "Export_copied_to_clipboard": "导出代码已复制到剪贴板",
-    "Import_dashboard": "导入一个表盘",
-    "Export_code": "表盘导出代码",
-    "Import_failed": "表盘导入失败，代码无效",
-    "Import_success": "Dashboard imported and selected",
+    "Import_dashboard": "导入一个面板",
+    "Export_code": "面板导出代码",
+    "Import_failed": "面板导入失败，代码无效",
+    "Import_success": "表盘已面板",
     "Nothing_to_show": "没有可展示的数据",
     "Nothing_to_show_description": "请确保您选择了一个您启用了TC 捕获数据的时间期间，并检查是否启用了此选项(在 设置 -> 客户端 中勾选启用计量捕获)",
     "SOURCES": {
@@ -2315,7 +2315,7 @@
       "Price_tip": "如果您希望对方提出价格，请填写 0",
       "Only_crafting": "仅限制作",
       "Includes_materials_label": "此委托会提供所有的基础材料，只需要进行制作",
-      "Only_materials": "Only materials",
+      "Only_materials": "只看材料",
       "Only_requires_materials": "This commission only requires materials for this list",
       "Contact_info": "联系方式",
       "Contact_info_placeholder": "如果需要，对方该如何联系您？可以提供 QQ、Email、角色名等",
@@ -2460,9 +2460,9 @@
     "Include_crafting": "Include crafting",
     "Include_trades": "Include trades",
     "Description": "Select the job and the level you want to equip, set your filters and click search to find equipment to level your jobs",
-    "Generate_list": "Generate a list",
-    "Empty_slot": "Empty slot",
-    "In_inventory": "You have this item inside one of your inventories",
+    "Generate_list": "生成清单",
+    "Empty_slot": "空栏位",
+    "In_inventory": "已拥有",
     "Only_inventory": "Only consider items in inventory",
     "Interactions_description": "Click on a level to select the entire column, click on an item box to select it, and click the delete icon to deselect an item without replacing it."
   },
