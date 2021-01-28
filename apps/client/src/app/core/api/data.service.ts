@@ -85,7 +85,7 @@ export class DataService {
       language: lang
     });
 
-    if (this.settings.region === Region.China) {
+    if (this.settings.region === Region.China && lang === 'zh') {
       searchOptions.baseUrl = this.baseUrl;
     }
 
@@ -228,7 +228,7 @@ export class DataService {
       xivapiFilters.push({
         column: 'Recipes.ClassJobID',
         operator: '>',
-        value: 0
+        value: 1
       });
     }
 
