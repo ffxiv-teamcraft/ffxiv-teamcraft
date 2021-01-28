@@ -3,7 +3,11 @@
     <div fxLayout="column">
       <div>
       <span>{{node.map | mapName | i18n}} - lvl {{node.level}}
-        <app-db-button *ngIf="!hideDbButton && node.id" [id]="node.id" type="node"></app-db-button>
+        <div [ngSwitch]="node.type" *ngIf="!hideDbButton && node.id">
+          <app-db-button *ngSwitchCase="-5" [id]="node.id" type="fishing-spot"></app-db-button>
+          <app-db-button *ngSwitchCase="4" [id]="node.id" type="spearfishing-spot"></app-db-button>
+          <app-db-button *ngSwitchDefault [id]="node.id" type="node"></app-db-button>
+        </div>
       </span>
       </div>
       <div>X: {{node.x | number:'1.1-1':translate.currentLang}}, Y: {{node.y | number:'1.1-1':translate.currentLang}}</div>
