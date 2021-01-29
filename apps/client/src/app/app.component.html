@@ -36,18 +36,18 @@
                 <nz-spin [nzSimple]="true"></nz-spin>
               </div>
             </div>
+            <div *ngSwitchCase="UpdaterStatus.POSSIBLE_ERROR">
+              <a *ngIf="updateVersion$ | async as updateVersion"
+                 href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
+                 target="_blank">
+                <i nz-icon nzType="exclamation-circle"
+                   nzTheme="twotone"
+                   nzTwotoneColor="#f5222d"
+                   nz-tooltip
+                   [nzTooltipTitle]="'UPDATE.Downloading_update' | translate"></i>
+              </a>
+            </div>
           </ng-container>
-        </div>
-        <div>
-          <a *ngIf="updateVersion$ | async as updateVersion"
-             href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
-             target="_blank">
-            <i nz-icon nzType="exclamation-circle"
-               nzTheme="twotone"
-               nzTwotoneColor="#f5222d"
-               nz-tooltip
-               [nzTooltipTitle]="'UPDATE.Downloading_update' | translate"></i>
-          </a>
         </div>
         <div *ngIf="platformService.isDesktop()" class="nav-buttons">
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">
