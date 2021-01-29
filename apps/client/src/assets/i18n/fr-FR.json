@@ -487,6 +487,8 @@
       "Lists": "Listes",
       "Alarms": "Alarmes",
       "Other": "Autre",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "Une nouvelle mise à jour est disponible ! ",
     "New_update_available_desktop": "Une nouvelle mise à jour est disponible !\nCliquez ici pour la télécharger et l'installer.",
     "Web_instructions": "Veuillez recharger la page pour obtenir la version la plus récente.",
-    "Downloading_update": "Téléchargement de la mise à jour en cours, un redémarrage vous sera proposé une fois celle-ci téléchargée"
+    "Downloading_update": "Téléchargement de la mise à jour en cours, un redémarrage vous sera proposé une fois celle-ci téléchargée",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Carnets",
