@@ -1,15 +1,12 @@
 export const patchNotes = `### Bug Fixes
 
-* **commission-board:** fixed datacenter selector width.
-* **desktop:** close file watcher properly on quit to avoid getting ipc errors.
-* **layout:** fixed possible issue with npc breakdown not displaying properly.
-* **quick-search:** fixed search type select box.
-* **search:** fixed english search for chinese region.
-* **simulator:** fixed custom simulator not showing actions.
-
-
-### Features
-
-* **desktop:** keep linked character in cache if there's only one character on the user's account.
-* **layout:** new filters: IS_NORMAL_GATHERING and REQUIRES_WEATHER.
-* **settings:** new setting categories for inventory and characters tracking.`;
+* **character-tracker:** fixed name display for KR/CN characters.
+* **commissions:** fixed commission board not opening properly for korean characters.
+* **commissions:** fixed commission import code generation with non latin names.
+* **desktop:** don't show patch notes on overlays.
+* **desktop:** fixed auto updater not working at all.
+* **desktop:** fixed packet capture for chinese client.
+* **i18n:** fixed missing translations in settings.
+* **list:** fixed requirements popup with long item names.
+* **retainers:** support ventures localization for KR/CN.
+* **search:** fixed search for chinese region.`;
