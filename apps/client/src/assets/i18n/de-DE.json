@@ -487,6 +487,8 @@
       "Lists": "Listen",
       "Alarms": "Alarms",
       "Other": "Anderes",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Geheim"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "Eine neue Version ist verfügbar!",
     "New_update_available_desktop": "Eine neue Version ist verfügbar!\nKlicke hier, um sie herunterzuladen und zu installieren.",
     "Web_instructions": "Bitte lade die Seite neu um die neueste Version zu verwenden.",
-    "Downloading_update": "Das Update wird heruntergeladen. Sobald es abgeschlossen ist, erhaltet Ihr eine Benachrichtigung."
+    "Downloading_update": "Das Update wird heruntergeladen. Sobald es abgeschlossen ist, erhaltet Ihr eine Benachrichtigung.",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Notizbuch-Tracker",
