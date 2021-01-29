@@ -487,6 +487,8 @@
       "Lists": "Lists",
       "Alarms": "Alarms",
       "Other": "Outro",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "A new update is available ! ",
     "New_update_available_desktop": "A new update is available !\nClick here to download and install it.",
     "Web_instructions": "Please reload the page to get the latest version.",
-    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done"
+    "Downloading_update": "Downloading the update, you'll be prompted to install once the download is done",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Log Tracker",
