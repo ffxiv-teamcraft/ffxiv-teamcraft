@@ -487,6 +487,8 @@
       "Lists": "リスト",
       "Alarms": "アラーム",
       "Other": "その他",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "新しいアップデートがあります! ",
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
-    "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。"
+    "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "制作/採集手帳トラッカー",
