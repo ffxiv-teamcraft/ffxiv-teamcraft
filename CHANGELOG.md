@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.7"></a>
+## [8.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.6...v8.0.7) (2021-01-29)
+
+
+### Bug Fixes
+
+* **character-tracker:** fixed name display for KR/CN characters ([0417b42](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0417b42))
+* **commissions:** fixed commission board not opening properly for korean characters ([d63bf30](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d63bf30))
+* **commissions:** fixed commission import code generation with non latin names ([a1dde5d](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a1dde5d))
+* **desktop:** don't show patch notes on overlays ([1f24a61](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1f24a61))
+* **desktop:** fixed auto updater not working at all ([2239b10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/2239b10))
+* **desktop:** fixed packet capture for chinese client ([53f37d2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/53f37d2))
+* **i18n:** fixed missing translations in settings ([1af9de0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/1af9de0))
+* **list:** fixed requirements popup with long item names ([d7d0bf6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/d7d0bf6))
+* **retainers:** support ventures localization for KR/CN ([815dcfc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/815dcfc))
+* **search:** fixed search for chinese region ([7af2e63](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7af2e63))
+
+
+
 <a name="8.0.6"></a>
 ## [8.0.6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.5...v8.0.6) (2021-01-28)
 
