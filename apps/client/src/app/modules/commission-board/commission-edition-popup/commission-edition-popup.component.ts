@@ -50,13 +50,17 @@ export class CommissionEditionPopupComponent implements OnInit {
 
   getCreationLink = () => {
     const template = this.form.value;
-    return this.linkTools.getLink(`/commission/import/${btoa([
-      template.name,
-      template.price.toString(),
-      template.tags.join(','),
-      this.commission.items.map(i => `${i.id},,${i.amount}`).join(';'),
-      template.description || ''
-    ].join('|'))}`);
+    return this.linkTools.getLink(`/commission/import/${btoa(
+      unescape(
+        encodeURIComponent([
+          template.name,
+          template.price.toString(),
+          template.tags.join(','),
+          this.commission.items.map(i => `${i.id},,${i.amount}`).join(';'),
+          template.description || ''
+        ].join('|'))
+      )
+    )}`);
   };
 
   hideWarning(): void {

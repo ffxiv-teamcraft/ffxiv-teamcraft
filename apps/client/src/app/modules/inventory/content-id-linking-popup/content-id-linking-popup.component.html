@@ -13,7 +13,7 @@
            alt="" class="character-avatar">
       <ng-template #custom>
         <div>
-          <nz-avatar [nzText]="entry.character.Character.Name[0]"
+          <nz-avatar [nzText]="entry.character.Character.Name"
                      [nzTooltipTitle]="entry.character.Character.Name"
                      (click)="entry.contentId ? null : selectCharacter(entry.character.Character.ID)"
                      nz-popconfirm

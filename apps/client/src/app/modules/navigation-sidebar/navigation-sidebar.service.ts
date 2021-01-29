@@ -158,7 +158,7 @@ export class NavigationSidebarService {
                 content: 'project'
               },
               hidden: !character,
-              link: `/commissions/board/${character?.Datacenter}`
+              link: `/commissions/board/${character?.Datacenter || 'korea'}`
             },
             {
               name: 'SIDEBAR.My_commissions',

@@ -487,6 +487,8 @@
       "Lists": "リスト",
       "Alarms": "アラーム",
       "Other": "その他",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -834,9 +836,9 @@
     "Ephemeral_node": "リスポン可能な、時間制採集場所",
     "Intro": "採集手帳では、採集可能なアイテムを検索することができ、採集場所の確認とアラーム作成などの詳細機能を提供します。検索欄に内容を書き、探そうとする採集情報をご確認下さい！",
     "Hidden_item": "隠し資源",
-    "Fish_eyes": "ただ天気条件の為に魚の目が必要",
+    "Fish_eyes": "ただ天気条件の為にフィッシュアイが必要",
     "Add_alarm": "アラームを追加する",
-    "Add_alarm_fish_eyes": "魚の目と共にアラームを追加",
+    "Add_alarm_fish_eyes": "フィッシュアイと共にアラームを追加",
     "Snagging": "引掛釣りが必要",
     "Predators": "前にこの魚を釣る",
     "Fish_eyes_duration": "この魚を釣るためには、持続時間ほどのフィッシュアイが必要とします。形式を変更するにはクリックして下さい。",
@@ -1266,7 +1268,8 @@
     "New_update_available": "新しいアップデートがあります! ",
     "New_update_available_desktop": "新しいアップデートが追加されました。\nここを押してダウンロードしてください。",
     "Web_instructions": "最新バージョンを利用するには、ページを再読み込みしてください。",
-    "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。"
+    "Downloading_update": "アップデートのダウンロードが終わるとインストールが求められます。",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "制作/採集手帳トラッカー",
@@ -1530,7 +1533,7 @@
       "Ranking": "ランキング",
       "Top_users": "最高順位",
       "Your_ranking": "あなたのランキング",
-      "Include_fisheyes_data": "魚の目を通計で含む",
+      "Include_fisheyes_data": "フィッシュアイを通計で含む",
       "TUG": {
         "Light": "弱震(!)",
         "Medium": "強震(!!)",
@@ -1821,7 +1824,7 @@
     "Banner_description_warning": "パケットキャプチャは利用規約（ToS）に違反するので、デフォルトでは無効になっています。ゲーム上で他の人には、この機能を使用していることを言わなかったら、この機能を使用するには問題はありません。",
     "Empty_inventory": "所持品をまだロードされていません",
     "Please_zone": "所持品システムを初期化するには、任意の位置にテレポートしてチョコボバッグを開けてください。",
-    "Please_sort": "Because you have multiple characters on your account, inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "キャラクターidの設定が存在しません。",
     "Please_relog": "Universalisに貢献するためには、ゲーム上で一度の再接続が必要です。",

@@ -38,7 +38,7 @@ export class CommissionImportComponent {
     this.template$ = combineLatest([this.route.paramMap, this.route.queryParamMap]).pipe(
       map(([params, query]) => [params.get('importString'), query.get('url')]),
       map(([importString, url]) => {
-        const parsed = atob(importString);
+        const parsed = decodeURIComponent(escape(atob(importString)));
         if (parsed.indexOf(',') === -1) {
           this.wrongFormat = true;
           return { name: 'Invalid', price: 0, tags: [], items: [], url: url };

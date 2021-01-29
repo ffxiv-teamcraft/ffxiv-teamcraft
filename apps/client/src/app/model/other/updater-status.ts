@@ -1,0 +1,6 @@
+export enum UpdaterStatus {
+  UPDATE_AVAILABLE = 1,
+  NO_UPDATE,
+  DOWNLOADING,
+  POSSIBLE_ERROR
+}
