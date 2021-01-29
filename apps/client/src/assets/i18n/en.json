@@ -487,6 +487,8 @@
       "Lists": "Lists",
       "Alarms": "Alarms",
       "Other": "Other",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
