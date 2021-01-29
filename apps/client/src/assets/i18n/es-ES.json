@@ -487,6 +487,8 @@
       "Lists": "Listas",
       "Alarms": "Alarms",
       "Other": "Otros",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "¡Nueva actualización disponible! ",
     "New_update_available_desktop": "¡Una nueva actualización está disponible!\nHaga clic aquí para descargarla e instalarla.",
     "Web_instructions": "Por favor refresque la página para obtener la última versión.",
-    "Downloading_update": "Descargando la actualización, se le pedirá que instale una vez que haya finalizado la descarga"
+    "Downloading_update": "Descargando la actualización, se le pedirá que instale una vez que haya finalizado la descarga",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Seguidor de registro",
