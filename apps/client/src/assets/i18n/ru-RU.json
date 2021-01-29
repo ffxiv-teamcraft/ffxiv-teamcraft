@@ -487,6 +487,8 @@
       "Lists": "Списки",
       "Alarms": "Alarms",
       "Other": "Прочее",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "Доступно новое обновление!",
     "New_update_available_desktop": "Доступно новое обновление !\nНажмите здесь, чтобы скачать и установить его.",
     "Web_instructions": "Пожалуйста, перезагрузите страницу, чтобы увидеть последнюю версию.",
-    "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его"
+    "Downloading_update": "Идет загрузка обновления, по завершении вам будет предложено установить его",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "Трекер журнала",
