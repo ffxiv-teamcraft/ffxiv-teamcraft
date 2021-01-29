@@ -5,10 +5,13 @@ import * as isDev from 'electron-is-dev';
 
 
 export class AutoUpdater {
-  private win: BrowserWindow;
+  private readonly win: BrowserWindow;
 
-  connectListeners(mainWindow: MainWindow): void {
-    this.win = mainWindow.win;
+  constructor(private mainWindow: MainWindow) {
+    this.win = this.mainWindow.win;
+  }
+
+  connectListeners(): void {
     if (!isDev) {
       autoUpdater.setFeedURL({
         url: `https://update.ffxivteamcraft.com`

@@ -15,19 +15,39 @@
                        [nzValue]="locale"></nz-option>
           </nz-select>
         </div>
-        <div *ngIf="(newVersionAvailable$ | async ) && platformService.isDesktop() && !checkingForUpdate && !downloading">
-          <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
-                  nzTooltipPlacement="bottom"
-                  nzShape="circle"
-                  nzType="primary"><i nz-icon nzType="download"></i></button>
-        </div>
         <div>
           <i nz-icon nzType="question-circle" nzTheme="outline"
              (click)="startTutorial()" class="tutorial-start"
              nz-tooltip [nzTooltipTitle]="'TUTORIAL.Start' | translate"></i>
         </div>
-        <div *ngIf="checkingForUpdate" class="download-spinner" nz-tooltip [nzTooltipTitle]="'UPDATE.Downloading_update' | translate">
-          <nz-spin [nzSimple]="true"></nz-spin>
+        <div *ngIf="platformService.isDesktop() && newVersionAvailable$ | async" class="update-status">
+          <ng-container *ngIf="checkingForUpdate$ | async as updateStatus">
+            <div [ngSwitch]="updateStatus">
+              <div *ngSwitchCase="UpdaterStatus.UPDATE_AVAILABLE">
+                <button (click)="updateDesktopApp()" [nzTooltipTitle]="'UPDATE.New_update_available_desktop' | translate" nz-button nz-tooltip
+                        nzTooltipPlacement="bottom"
+                        nzShape="circle"
+                        nzType="primary"><i nz-icon nzType="download"></i></button>
+              </div>
+              <div *ngSwitchCase="UpdaterStatus.DOWNLOADING"
+                   class="download-spinner"
+                   nz-tooltip
+                   [nzTooltipTitle]="'UPDATE.Possible_update_issue' | translate">
+                <nz-spin [nzSimple]="true"></nz-spin>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div>
+          <a *ngIf="updateVersion$ | async as updateVersion"
+             href="https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/releases/download/v{{updateVersion}}/ffxiv-teamcraft-Setup-{{updateVersion}}.exe"
+             target="_blank">
+            <i nz-icon nzType="exclamation-circle"
+               nzTheme="twotone"
+               nzTwotoneColor="#f5222d"
+               nz-tooltip
+               [nzTooltipTitle]="'UPDATE.Downloading_update' | translate"></i>
+          </a>
         </div>
         <div *ngIf="platformService.isDesktop()" class="nav-buttons">
           <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="5px">

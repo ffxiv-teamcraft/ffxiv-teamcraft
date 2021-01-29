@@ -55,6 +55,7 @@ import { ChangelogPopupComponent } from './modules/changelog-popup/changelog-pop
 import { version } from '../environments/version';
 import { PlayerMetricsService } from './modules/player-metrics/player-metrics.service';
 import { PatreonService } from './core/patreon/patreon.service';
+import { UpdaterStatus } from './model/other/updater-status';
 
 declare const gtag: Function;
 
@@ -113,6 +114,8 @@ export class AppComponent implements OnInit {
 
   public newVersionAvailable$: Observable<boolean>;
 
+  public updateVersion$: Observable<string>;
+
   public pcapOutDated$: Observable<boolean>;
 
   public dataLoaded = false;
@@ -121,9 +124,8 @@ export class AppComponent implements OnInit {
 
   private dirty = false;
 
-  public downloading: any;
-
-  public checkingForUpdate = false;
+  UpdaterStatus = UpdaterStatus;
+  public checkingForUpdate$ = new BehaviorSubject<number>(UpdaterStatus.NO_UPDATE);
 
   public emptyInventory$: Observable<boolean>;
 
@@ -263,16 +265,21 @@ export class AppComponent implements OnInit {
           }
         });
 
-      this.newVersionAvailable$ = this.firebase.object('app_version').valueChanges().pipe(
-        map((value: string) => {
-          return semver.ltr(environment.version, value);
-        }),
-        tap(update => {
-          if (update && this.settings.autoDownloadUpdate) {
-            this.updateDesktopApp();
-          }
-        })
-      );
+      this.updateVersion$ = this.firebase.object<string>('app_version').valueChanges();
+
+      this.newVersionAvailable$ = this.updateVersion$
+        .pipe(
+          map((value: string) => {
+            return semver.ltr(environment.version, value);
+          }),
+          tap(update => {
+            if (update && this.settings.autoDownloadUpdate) {
+              this.updateDesktopApp();
+            } else {
+              this.checkingForUpdate$.next(UpdaterStatus.UPDATE_AVAILABLE);
+            }
+          })
+        );
 
       const language$ = this.translate.onLangChange.pipe(
         map(event => event.lang),
@@ -511,7 +518,11 @@ export class AppComponent implements OnInit {
 
   updateDesktopApp(): void {
     this.ipc.send('update:check');
-    this.checkingForUpdate = true;
+    this.checkingForUpdate$.next(UpdaterStatus.DOWNLOADING);
+    // After 5 minutes, maybe there's something wrong in the update download...
+    setTimeout(() => {
+      this.checkingForUpdate$.next(UpdaterStatus.POSSIBLE_ERROR);
+    }, 300000);
   }
 
   ngOnInit(): void {
