@@ -252,7 +252,7 @@ export class AppComponent implements OnInit {
               return of(false);
             }
             const lastChangesSeen = this.settings.lastChangesSeen;
-            if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen)) {
+            if (this.settings.autoShowPatchNotes && semver.gt(version, lastChangesSeen) && !this.overlay) {
               return this.showPatchNotes();
             } else {
               return of(null);
