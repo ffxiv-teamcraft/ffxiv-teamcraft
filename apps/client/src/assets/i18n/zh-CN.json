@@ -487,6 +487,8 @@
       "Lists": "清单",
       "Alarms": "闹钟",
       "Other": "其他",
+      "Inventory_tracking": "Inventory tracking",
+      "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
@@ -1266,7 +1268,8 @@
     "New_update_available": "发现新版本！ ",
     "New_update_available_desktop": "有新的更新！点击此处下载并安装。",
     "Web_instructions": "请刷新页面以使用最新版本。",
-    "Downloading_update": "正在下载更新，完成后会提醒您进行安装"
+    "Downloading_update": "正在下载更新，完成后会提醒您进行安装",
+    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
   },
   "LOG_TRACKER": {
     "Title": "笔记追踪",
