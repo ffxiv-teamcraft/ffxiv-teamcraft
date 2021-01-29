@@ -85,7 +85,7 @@ export class DataService {
       language: lang
     });
 
-    if (this.settings.region === Region.China && lang === 'zh') {
+    if (this.settings.region === Region.China) {
       searchOptions.baseUrl = this.baseUrl;
     }
 
