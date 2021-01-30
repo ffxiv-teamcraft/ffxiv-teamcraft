@@ -124,10 +124,10 @@ export class LgbExtractor extends AbstractExtractor {
                 // Aetherytes
                 case 40:
                   const xivapiAetheryte = xivapiAetherytes.find(aetheryte => {
-                      return aetheryte.Level0TargetID === object.InstanceID;
+                      return aetheryte.Level0TargetID === object.InstanceId;
                     })
                     || xivapiHousingAetherytes.find(aetheryte => {
-                      return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === mapId && aetheryte.LevelTargetID === object.InstanceID;
+                      return aetheryte.TerritoryType && aetheryte.TerritoryType.MapTargetID === mapId && aetheryte.LevelTargetID === object.InstanceId;
                     });
                   if (xivapiAetheryte) {
                     const aetheryteEntry = {
@@ -144,7 +144,7 @@ export class LgbExtractor extends AbstractExtractor {
 
                 // FATEs
                 case 49:
-                  const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceID);
+                  const fateId = Object.keys(fates).find(key => fates[key].location === object.InstanceId);
                   if (fateId === undefined) {
                     return;
                   }

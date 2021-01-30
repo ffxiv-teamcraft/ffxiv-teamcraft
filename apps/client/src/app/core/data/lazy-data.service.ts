@@ -272,7 +272,6 @@ export class LazyDataService {
       return;
     }
 
-    this.loaded$.next(false);
     this.loadedLangs.push(languageToLoad);
 
     const mandatoryForeignFiles = ['job-abbr.json'];
