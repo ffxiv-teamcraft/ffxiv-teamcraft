@@ -16,7 +16,7 @@
     </app-lazy-scroll>
     </ng-template>
     <ng-template #display>
-      <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed">
+      <ng-container *ngIf="hasAlreadyBeenOpened || !collapsed || overlay">
         <ng-template #tiersTpl>
             <div *ngFor="let tier of tiers; trackBy: trackByTier; let index = index">
               <ng-template #tierTitle>
