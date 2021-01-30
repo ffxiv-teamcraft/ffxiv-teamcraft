@@ -140,6 +140,7 @@ export interface LazyData {
   koTribes: any;
   koTripleTriadRuleDescriptions: any;
   koTripleTriadRules: any;
+  koVentures: any;
   koWeathers: any;
   zhAchievementDescriptions: any;
   zhAchievements: any;
@@ -190,5 +191,6 @@ export interface LazyData {
   zhTribes: any;
   zhTripleTriadRuleDescriptions: any;
   zhTripleTriadRules: any;
+  zhVentures: any;
   zhWeathers: any;
 }

@@ -1,18 +1,16 @@
-<div *ngIf="requires$ | async as requires">
-  <nz-list *ngIf="requires.length > 0"
-           [nzDataSource]="requires"
-           [nzHeader]="'Requires' | translate"
-           [nzRenderItem]="requirement">
-    <ng-template #requirement let-req>
-      <nz-list-item [class.craftable]="req.canBeCrafted" [class.done]="req.amount <= req.done" class="item-row" [nzContent]="inventoryInformations">
-        <nz-list-item-meta [nzAvatar]="itemIcon" [nzTitle]="req.id | itemName | i18n"
-                           nzDescription="x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})">
-        </nz-list-item-meta>
-        <ng-template #itemIcon>
-          <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
-        </ng-template>
-      </nz-list-item>
-      <ng-template #inventoryInformations>
+<div *ngIf="requires$ | async as requires" fxLayout="column">
+  <div *ngFor="let req of requires; last as last">
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="flex-start center"
+         [class.craftable]="req.canBeCrafted"
+         [class.done]="req.amount <= req.done"
+         [class.with-border]="!last"
+         class="item-row">
+      <app-item-icon [icon]="req.icon" [itemId]="req.id" [width]="32"></app-item-icon>
+      <div fxLayout="column" fxLayoutGap="5px">
+        <div>
+          {{req.id | itemName | i18n}}&nbsp;<i>x{{req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil)}}({{req.reqAmount}} x {{((item.amount_needed - item.done / item.yield) | ceil)}})</i>
+        </div>
+        <!-- Inventory informations -->
         <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
           <div class="amount-in-inventories" fxLayout="row wrap" fxLayoutGap="5px">
             <nz-tag *ngFor="let entry of req.inventoryEntries;trackBy: trackByInventoryEntry">
@@ -21,18 +19,19 @@
               <img *ngIf="entry.hq" alt="HQ" class="inventory-hq" src="./assets/icons/HQ.png"/>
             </nz-tag>
           </div>
-          <ng-container *ngIf="req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil) as requiredAmount">
-            <button *ngIf="!markedAsDone[req.id] && req.amount > req.done" (click)="markAsDone(req, requiredAmount)" nz-button
-                    nzShape="circle"
-                    nzSize="small"
-                    nzType="primary">
-              <i nz-icon nzType="check"></i>
-            </button>
-          </ng-container>
         </div>
-      </ng-template>
-    </ng-template>
-  </nz-list>
+      </div>
+      <div fxFlex="1 1 auto"></div>
+      <ng-container *ngIf="req.reqAmount * ((item.amount_needed - item.done / item.yield) | ceil) as requiredAmount">
+        <button *ngIf="!markedAsDone[req.id] && req.amount > req.done" (click)="markAsDone(req, requiredAmount)" nz-button
+                nzShape="circle"
+                nzSize="small"
+                nzType="primary">
+          <i nz-icon nzType="check"></i>
+        </button>
+      </ng-container>
+    </div>
+  </div>
 </div>
 <div *ngIf="requiredBy$ | async as requiredBy">
   <nz-list *ngIf="requiredBy.length > 0"

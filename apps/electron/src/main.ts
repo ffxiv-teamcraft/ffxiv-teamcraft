@@ -11,6 +11,7 @@ import * as log from 'electron-log';
 import { app, ipcMain } from 'electron';
 import { DatFilesWatcher } from './dat/dat-files-watcher';
 import { MetricsSystem } from './ipc/metrics-system';
+import { AutoUpdater } from './update/auto-updater';
 
 const argv = process.argv.slice(1);
 
@@ -60,15 +61,18 @@ const ipcListenersManager = new IpcListenersManager(pcapManager, overlayManager,
 
 // Let's start everything
 
-// First of all, handle squirrel events
+// First of all, handle squirrel events and auto updater
 const squirrelEventHandler = new SquirrelEventHandler(pcapManager, store);
 squirrelEventHandler.handleSquirrelEvent();
+
+const autoUpdater = new AutoUpdater(mainWindow);
+autoUpdater.connectListeners();
 
 // Then, create the Electron application
 const desktopApp = new TeamcraftDesktopApp(mainWindow, trayMenu, store, pcapManager, argv);
 desktopApp.start();
 
-// Then start all our ipc listeners and dat fiels watcher
+// Then start all our ipc listeners and dat files watcher
 ipcListenersManager.init();
 datFilesWatcher.start();
 metrics.start();
