@@ -148,7 +148,7 @@ export class PacketCaptureTrackerService {
 
         groupedInfos.forEach(group => {
           const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
-          if (!isRetainer && +group.containerId % 1000 === 0) {
+          if (!isRetainer) {
             inventory = this.resetInventoryForItemInfo(inventory, +group.containerId);
           }
           inventory.items[inventory.contentId][containerKey] = {};
@@ -338,12 +338,16 @@ export class PacketCaptureTrackerService {
 
   private resetInventoryForItemInfo(inventory: UserInventory, containerKey: number): UserInventory {
     const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]));
-    Object.keys(itemsClone)
-      .forEach(key => {
-        if (key.indexOf(':') === -1 && Math.floor(+key / 1000) === Math.floor(containerKey / 1000)) {
-          itemsClone[key] = {};
-        }
-      });
+    if (containerKey >= ContainerType.FreeCompanyBag0 && containerKey <= ContainerType.FreeCompanyBag10) {
+      itemsClone[containerKey] = {};
+    } else if (containerKey % 1000 === 0) {
+      Object.keys(itemsClone)
+        .forEach(key => {
+          if (key.indexOf(':') === -1 && Math.floor(+key / 1000) === Math.floor(containerKey / 1000)) {
+            itemsClone[key] = {};
+          }
+        });
+    }
     inventory.items[inventory.contentId] = itemsClone;
     return inventory;
   }
