@@ -1,13 +1,14 @@
 import { ExplorationType } from '../../model/other/exploration-type';
 import { DataReporter } from './data-reporter';
 import { Observable } from 'rxjs/Observable';
+import { ExplorationResult } from './exploration-result';
 
 export abstract class ExplorationResultReporter implements DataReporter{
   abstract getDataReports(packets$: Observable<any>): Observable<any[]>;
   abstract getExplorationType(): ExplorationType;
 
   createReportsList(stats, resultLog) {
-    const reports = [];
+    const reports: ExplorationResult[] = [];
 
     resultLog.forEach((voyage) => {
       if (this.isSectorIdValid(voyage.sectorId)) {

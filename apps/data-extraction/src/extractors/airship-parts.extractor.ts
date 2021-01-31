@@ -29,8 +29,7 @@ export class AirshipPartsExtractor extends AbstractExtractor {
               partResults.forEach((part) => {
                 parts[part.ID] = {
                   id: part.ID,
-                  // TODO: Waiting for XIVAPI update for the Slot field
-                  slot: Math.trunc(+part.ID / 7), // part.Slot,
+                  slot: part.Slot,
                   rank: part.Rank,
                   components: part.Components,
                   surveillance: part.Surveillance,

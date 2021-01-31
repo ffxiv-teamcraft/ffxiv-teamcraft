@@ -6,8 +6,8 @@ import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
 import { UpdateInventorySlot } from '../../model/pcap';
-import { AirshipStatus } from '../../model/pcap/AirshipStatus';
-import { AirshipExplorationResult } from '../../model/pcap/AirshipExplorationResult';
+import { AirshipStatus } from '../../model/pcap';
+import { AirshipExplorationResult } from '../../model/pcap';
 
 export class AirshipExplorationResultReporter extends ExplorationResultReporter {
 
