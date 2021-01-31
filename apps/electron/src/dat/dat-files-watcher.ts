@@ -83,7 +83,7 @@ export class DatFilesWatcher {
   }
 
   private onEvent(event: string, filename: string, watchDir: string): void {
-    if (event === 'change' && filename.indexOf('FFXIV_CHR') > -1) {
+    if (event === 'change' && filename?.includes('FFXIV_CHR')) {
       const contentId = DatFilesWatcher.CONTENT_ID_REGEXP.exec(filename)[1];
       if (this.mainWindow.win) {
         if (filename.endsWith('ITEMODR.DAT')) {
@@ -127,7 +127,9 @@ export class DatFilesWatcher {
   private parseItemODR(filePath: string, contentId): void {
     readFile(filePath, (err, content) => {
       const odr = this.parseItemOrder(content);
-      this.mainWindow.win.webContents.send('dat:item-odr', { contentId, odr });
+      if (this.mainWindow.win) {
+        this.mainWindow.win.webContents.send('dat:item-odr', { contentId, odr });
+      }
     });
   }
 
