@@ -51,7 +51,7 @@ export class GearsetCostPopupComponent implements OnInit {
         const gearPiece = this.gearset[key];
         const itemExtract = this.lazyData.getExtract(gearPiece.itemId);
         const trades = getItemSource<TradeSource[]>(itemExtract, DataType.TRADE_SOURCES);
-        trades.forEach(trade => {
+        trades.filter(trade => trade.npcs.length > 0).forEach(trade => {
           trade.trades.forEach(t => {
             t.currencies.forEach(currency => {
               this.addCurrency(currency);
@@ -67,7 +67,7 @@ export class GearsetCostPopupComponent implements OnInit {
       const itemExtract = this.lazyData.getExtract(+currency.id);
       const trades = getItemSource<TradeSource[]>(itemExtract, DataType.TRADE_SOURCES);
       if (trades.length > 0) {
-        trades.forEach(trade => {
+        trades.filter(trade => trade.npcs.length > 0).forEach(trade => {
           trade.trades.forEach(t => {
             t.currencies.forEach(c => {
               this.addCurrency(c);
