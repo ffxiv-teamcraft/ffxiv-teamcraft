@@ -362,7 +362,11 @@ export class IpcListenersManager {
         if (err) {
           event.sender.send('inventory:value', {});
         } else {
-          event.sender.send('inventory:value', JSON.parse(content));
+          try {
+            event.sender.send('inventory:value', JSON.parse(content));
+          } catch (e) {
+            event.sender.send('inventory:value', {});
+          }
         }
       });
     });
