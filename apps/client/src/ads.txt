@@ -1,4 +1,4 @@
-#V 06.01.2021 PH
+#V 28.01.2021 PH
 
 #A9
 #------------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ gumgum.com,14141,RESELLER,ffdef49475d318a9                                   # G
 vdopia.com, 15297, DIRECT, 49a66ce31a704197                                  # Chocolate OB
 chocolateplatform.com, 15297, DIRECT, 49a66ce31a704197                       # Chocolate OB
 adingo.jp, 24379, DIRECT                                                     # Fluct OB
-improvedigital.com, 1012, DIRECT 			                     # Improve OB
+improvedigital.com, 1640, RESELLER			                     # Improve OB
 indexexchange.com, 188416, DIRECT, 50b1c356f2c5c8fc                          # Index OB
 openx.com, 540368327, RESELLER, 6a698e2ec38604c6                             # OpenX OB
 rubiconproject.com, 17902, RESELLER, 0bfd66d529a55807                        # Rubicon OB
@@ -71,6 +71,7 @@ indexexchange.com, 191503, RESELLER                                          # A
 districtm.io, 100749, DIRECT                                                 # DistrictM
 appnexus.com, 1908, RESELLER,f5ab79cb980f11d1                                # DistrictM
 appnexus.com, 7944, RESELLER,f5ab79cb980f11d1                                # DistrictM
+improvedigital.com, 1012,  RESELLER                                          # Improve prebid
 indexexchange.com, 183921, DIRECT, 50b1c356f2c5c8fc                          # Index Exchange Display and Video
 openx.com, 537144009, DIRECT, 6a698e2ec38604c6                               # OpenX
 pubmatic.com,159234,DIRECT,5d62403b186f2ace                                  # Pubmatic
@@ -138,12 +139,6 @@ smartclip.net, 8153, DIRECT                                                  # A
 spotxchange.com, 245212, DIRECT, 7842df1d2fe2db34                            # Adbility
 spotx.tv, 245212, DIRECT, 7842df1d2fe2db34                                   # Adbility
 appnexus.com, 806, DIRECT                                                    # Xandr video
-spotxchange.com,81557, RESELLER, 7842df1d2fe2db34                            # Digiteka
-spotx.tv, 81557, RESELLER, 7842df1d2fe2db34                                  # Digiteka
-spotxchange.com, 182292, RESELLER, 7842df1d2fe2db34                          # Digiteka
-spotx.tv, 182292, RESELLER, 7842df1d2fe2db34                                 # Digiteka
-google.com, pub-7026431251527825, RESELLER, f08c47fec0942fa0                 # Digiteka
-google.com, pub-5549723401598621, DIRECT, f08c47fec0942fa0                   # Digiteka
 freewheel.tv, 1953, DIRECT                                                   # Freewheel
 freewheel.tv, 187721, DIRECT                                                 # Freewheel
 freewheel.tv, 211121, DIRECT                                                 # Freewheel
@@ -153,6 +148,7 @@ freewheel.tv, 187865, DIRECT                                                 # F
 freewheel.tv, 211129, DIRECT                                                 # Freewheel
 freewheel.tv, 196145, DIRECT                                                 # Freewheel
 freewheel.tv, 228649, DIRECT                                                 # Freewheel
+improvedigital.com, 1012,  RESELLER                                          # Improve prebid
 indexexchange.com, 183921, DIRECT, 50b1c356f2c5c8fc                          # Index video
 ironsrc.com, 5fa94677b2db6a00015b22a9, DIRECT                                # IronSource
 ironsrc.com, 5a169d7d9515390002000001, DIRECT                                # IronSource
@@ -181,12 +177,6 @@ contextweb.com, 561910, RESELLER, 89ff185a4c4e857c                           # S
 openx.com, 540226160, RESELLER, 6a698e2ec38604c6                             # SpringServe
 openx.com, 540255318, RESELLER, 6a698e2ec38604c6                             # SpringServe
 ssp.ynxs.io, 185, RESELLER                                                   # SpringServe
-spotxchange.com,81557, RESELLER, 7842df1d2fe2db34                            # TappX
-spotx.tv, 81557, RESELLER, 7842df1d2fe2db34                                  # TappX
-spotxchange.com, 182292, RESELLER, 7842df1d2fe2db34                          # TappX
-spotx.tv, 182292, RESELLER, 7842df1d2fe2db34                                 # TappX
-google.com, pub-7026431251527825, RESELLER, f08c47fec0942fa0                 # TappX
-google.com, pub-5549723401598621, DIRECT, f08c47fec0942fa0                   # TappX
 teads.tv, 16676, DIRECT, 15a9c44f6d26cbe1                                    # Teads video
 tremorhub.com, hpwve, RESELLER, 1a4e959a1b50034a                             # Telaria video
 telaria.com, hpwve, RESELLER, 1a4e959a1b50034a                               # Telaria video
