@@ -2,6 +2,8 @@ export * from './BasePacket';
 
 export * from './ActorControl';
 export * from './AetherReductionDlg';
+export * from './AirshipExplorationResult';
+export * from './AirshipStatus';
 export * from './CurrencyCrystalInfo';
 export * from './ReductionResult';
 export * from './DesynthResult';
@@ -25,6 +27,8 @@ export * from './PlayerSpawn';
 export * from './PlayerStats';
 export * from './PrepareZoning';
 export * from './RetainerInformation';
+export * from './SubmarineExplorationResult';
+export * from './SubmarineStatusList';
 export * from './UpdateClassInfo';
 export * from './UpdateInventorySlot';
 export * from './UpdatePositionInstance';

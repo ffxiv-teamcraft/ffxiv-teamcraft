@@ -1,18 +1,18 @@
-import { DataReporter } from './data-reporter';
 import { Observable } from 'rxjs/Observable';
 import { ofPacketType } from '../rxjs/of-packet-type';
-import { filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, shareReplay, startWith, withLatestFrom } from 'rxjs/operators';
 import { merge } from 'rxjs';
 import { LazyDataService } from '../data/lazy-data.service';
 import { ExplorationResultReporter } from './exploration-result.reporter';
 import { ExplorationType } from '../../model/other/exploration-type';
 import { UpdateInventorySlot } from '../../model/pcap';
-import { SubmarineStatusList } from '../../model/pcap/SubmarineStatusList';
-import { SubmarineExplorationResult } from '../../model/pcap/SubmarineExplorationResult';
+import { SubmarineStatusList } from '../../model/pcap';
+import { SubmarineExplorationResult } from '../../model/pcap';
 
-export class SubmarineExplorationResultReporter implements DataReporter, ExplorationResultReporter {
+export class SubmarineExplorationResultReporter extends ExplorationResultReporter {
 
   constructor(private lazyData: LazyDataService) {
+    super();
   }
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
@@ -30,12 +30,12 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
 
     const resultLog$ = packets$.pipe(
       ofPacketType<SubmarineExplorationResult>('submarineExplorationResult'),
-      map((packet) => packet.explorationResult),
+      map((packet) => packet.explorationResult)
     );
 
     const statusList$ = packets$.pipe(
       ofPacketType<SubmarineStatusList>('submarineStatusList'),
-      map((packet) => packet.statusList),
+      map((packet) => packet.statusList)
     );
 
     const updateHullCondition$ = packets$.pipe(
@@ -54,47 +54,8 @@ export class SubmarineExplorationResultReporter implements DataReporter, Explora
         return this.getBuildStats(submarine.rank, submarine.hull, submarine.stern, submarine.bow, submarine.bridge);
       }),
       withLatestFrom(resultLog$),
-      map(([stats, resultLog]): any[] => {
-        const reports = [];
-        resultLog.forEach((voyage) => {
-          if (voyage.sectorId > 0) {
-            reports.push({
-              voyageId: voyage.sectorId,
-              itemId: voyage.loot1ItemId,
-              hq: voyage.loot1IsHq,
-              quantity: voyage.loot1Quantity,
-              surveillanceProc: voyage.loot1SurveillanceResult,
-              retrievalProc: voyage.loot1RetrievalResult,
-              favorProc: voyage.favorResult,
-              surveillance: stats.surveillance,
-              retrieval: stats.retrieval,
-              favor: stats.favor,
-              type: this.getExplorationType()
-            });
-            if (voyage.loot2ItemId > 0) {
-              reports.push({
-                voyageId: voyage.sectorId,
-                itemId: voyage.loot2ItemId,
-                hq: voyage.loot2IsHq,
-                quantity: voyage.loot2Quantity,
-                surveillanceProc: voyage.loot2SurveillanceResult,
-                retrievalProc: voyage.loot2RetrievalResult,
-                favorProc: null,
-                surveillance: stats.surveillance,
-                retrieval: stats.retrieval,
-                favor: stats.favor,
-                type: this.getExplorationType()
-              });
-            }
-          }
-        });
-        return reports;
-      })
+      map(([stats, resultLog]): any[] => this.createReportsList(stats, resultLog))
     );
-  }
-
-  getDataType(): string {
-    return 'explorationresults';
   }
 
   getExplorationType(): ExplorationType {

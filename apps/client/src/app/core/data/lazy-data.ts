@@ -7,6 +7,7 @@ export interface LazyData {
   actionTimeline: any;
   actions: any;
   aetherytes: any;
+  airshipParts: any;
   airshipVoyages: any;
   baitItems: any;
   baseParams: any;
