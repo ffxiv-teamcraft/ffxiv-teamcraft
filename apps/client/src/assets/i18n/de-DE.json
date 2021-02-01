@@ -464,7 +464,7 @@
     "Show_other_characters_inventories_in_list": "Show other characters inventories in lists",
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
-    "Disconnect_patreon": "Disconnect from patreon",
+    "Disconnect_patreon": "Verbindung zu Patreon trennen",
     "COLORS": {
       "Background": "Hintergrundfarbe",
       "Primary": "Hauptfarbe",
@@ -501,7 +501,7 @@
   "PROFILE": {
     "Account": "Konto",
     "Add_character": "Charakter hinzufügen",
-    "Remove_character": "Remove this character",
+    "Remove_character": "Diesen Charakter entfernen",
     "Jobs": "Jobs",
     "Stats": "Attribute",
     "View_on_apkallu_falls": "Auf ApkalluFalls.com öffnen",
@@ -553,7 +553,7 @@
     "Delete_after_merge": "Ursprüngliche Listen nach Zusammenfassung löschen",
     "Favorite_lists": "Favorisierte Listen",
     "No_favorite_lists": "Du hast keine favorisierten Listen",
-    "Delete_multiple_lists": "Delete multiple lists",
+    "Delete_multiple_lists": "Mehrere Listen löschen",
     "IMPORT": {
       "Title": "Liste von externer Website importieren",
       "Paste_link_step_title": "Füge deinen link der externen Liste ein",
@@ -693,8 +693,8 @@
     "Split_list": "Diese Liste aufteilen",
     "Create_commission": "Create a commission for this list",
     "Commission_list": "Commission list",
-    "Inventory_cleanup": "Inventory cleanup",
-    "Inventory_cleanup_description": "Here are the items that are inside your inventory that are not used for the list",
+    "Inventory_cleanup": "Inventar bereinigen",
+    "Inventory_cleanup_description": "Hier sind die Gegenstände aus deinem Inventar, die nicht für die Liste verwendet werden",
     "LAYOUT_DIALOG": {
       "Title": "Layout",
       "Add_panel": "Bereich hinzufügen",
@@ -846,7 +846,7 @@
     "Spawned_for": "Verschwindet in {{timer}}",
     "Will_spawn_in": "Taucht in {{timer}} auf",
     "Ephemeral_warning": "Ephemeral nodes have multiple locations, position is an approximation.",
-    "Legendary": "Legendary",
+    "Legendary": "Legendär",
     "GIG_HEAD": {
       "Small": "Kleine Speerspitze",
       "Normal": "Normale Speerspitze",
@@ -1805,7 +1805,7 @@
     }
   },
   "SIDEBAR": {
-    "Favorites": "Favorites",
+    "Favorites": "Favoriten",
     "General": "Allgemein",
     "Sharing": "Teilen",
     "Gathering": "Sammler",
@@ -1814,9 +1814,9 @@
     "Commissions": "Commissions",
     "Commission_board": "Board",
     "My_commissions": "My Commissions",
-    "Archived_commissions": "Archives",
+    "Archived_commissions": "Archive",
     "Leveling": "Leveling",
-    "Currencies": "Currencies"
+    "Currencies": "Währungen"
   },
   "PACKET_CAPTURE": {
     "Banner_title": "Die Paketerfassung ist verfügbar",
@@ -1825,7 +1825,7 @@
     "Banner_description_warning": "Die Paketerfassung ist gegen die Nutzungsbedingungen von FFXIV, weshalb sie standardmäßig deaktiviert ist. Solange du niemandem davon im Spiel erzählst, ist es aber in Ordnung diese zu benutzen.",
     "Empty_inventory": "Dein Inventar wurde noch nicht geladen",
     "Please_zone": "Bitte teleportiere dich an einen zufälligen Ort und öffne die Satteltasche deines Chocobos, sobald du dort angekommen bist, um das Inventar-System zu initialisieren.",
-    "Please_sort": "Inventory tracking cannot work without knowing which character you're currently playing, please sort/unsort your inventory or log in with your character to have Teamcraft detect your current character.",
+    "Please_sort": "Inventar-Tracking funktioniert nicht, ohne zu wissen, welchen Charakter du gerade spielst, sortiere/entsortiere dein Inventar oder melde dich mit deinem Charakter an, damit Teamcraft deinen aktuellen Charakter erkennen kann.",
     "Unknown_character": "Unknown ingame character",
     "No_character_id": "Keine Charakter-ID gesetzt",
     "Please_relog": "Um etwas zu Universalis beitragen zu können, musst du dich einmal im Spiel aus und wieder einloggen. Dies ist nur einmal erforderlich.",
