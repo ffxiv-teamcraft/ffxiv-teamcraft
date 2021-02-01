@@ -501,7 +501,7 @@
   "PROFILE": {
     "Account": "账号",
     "Add_character": "添加角色",
-    "Remove_character": "删除角色",
+    "Remove_character": "Remove this character",
     "Jobs": "职业",
     "Stats": "属性",
     "View_on_apkallu_falls": "在 Apkallu Falls 中打开",
