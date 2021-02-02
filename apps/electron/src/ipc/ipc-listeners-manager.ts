@@ -272,6 +272,7 @@ export class IpcListenersManager {
       const iconPath = join(Constants.BASE_APP_PATH, 'assets/app-icon.png');
       // Override icon for now, as getting the icon from url doesn't seem to be working properly.
       config.icon = nativeImage.createFromPath(iconPath);
+      config.silent = true;
       this.trayMenu.tray.displayBalloon(config);
     });
 
@@ -361,7 +362,11 @@ export class IpcListenersManager {
         if (err) {
           event.sender.send('inventory:value', {});
         } else {
-          event.sender.send('inventory:value', JSON.parse(content));
+          try {
+            event.sender.send('inventory:value', JSON.parse(content));
+          } catch (e) {
+            event.sender.send('inventory:value', {});
+          }
         }
       });
     });

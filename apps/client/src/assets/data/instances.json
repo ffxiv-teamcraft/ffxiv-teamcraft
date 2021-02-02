@@ -1320,11 +1320,15 @@
     ]
   },
   "5043": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Fit for a Queen",
+    "ja": "ゴッド・セイブ・ザ・クイーン",
+    "de": "Hinab in die Ruinen",
+    "fr": "Que les Dieux gardent la Reine",
+    "icon": "/i/061000/061805.png",
+    "contentText": [
+      26511,
+      26500
+    ]
   },
   "5044": {
     "en": null,
@@ -3915,11 +3919,15 @@
     "icon": "/i/061000/061836.png"
   },
   "35031": {
-    "en": null,
-    "ja": null,
-    "de": null,
-    "fr": null,
-    "icon": null
+    "en": "Anything Gogo's",
+    "ja": "黄金頭巾「ものまね士ゴゴ」",
+    "de": "Gogo der Mime",
+    "fr": "Gogo le mime",
+    "icon": "/i/061000/061836.png",
+    "contentText": [
+      26206,
+      26200
+    ]
   },
   "35032": {
     "en": null,

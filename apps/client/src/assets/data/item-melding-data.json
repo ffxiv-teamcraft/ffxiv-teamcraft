@@ -111653,6 +111653,138 @@
     "slots": 0,
     "overmeld": false
   },
+  "31714": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31715": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31716": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31717": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31718": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31719": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31720": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31721": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31722": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31723": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31724": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31725": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31726": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31727": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31728": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31729": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31730": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31731": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31732": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31733": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31734": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "31735": {
+    "modifier": 9,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
   "31772": {
     "modifier": 9,
     "prop": "1HWpn%",
@@ -114669,6 +114801,924 @@
     "modifier": 5,
     "prop": "Ring%",
     "slots": 2,
+    "overmeld": false
+  },
+  "32640": {
+    "modifier": 5,
+    "prop": "Earring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "32641": {
+    "modifier": 5,
+    "prop": "Necklace%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "32642": {
+    "modifier": 5,
+    "prop": "Bracelet%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "32643": {
+    "modifier": 5,
+    "prop": "Ring%",
+    "slots": 1,
+    "overmeld": false
+  },
+  "32644": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32645": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32646": {
+    "modifier": 5,
+    "prop": "Head%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32647": {
+    "modifier": 5,
+    "prop": "Chest%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32648": {
+    "modifier": 5,
+    "prop": "Hands%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32649": {
+    "modifier": 5,
+    "prop": "Legs%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32650": {
+    "modifier": 5,
+    "prop": "Feet%",
+    "slots": 2,
+    "overmeld": false
+  },
+  "32651": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32652": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32653": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32654": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32655": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32656": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32657": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32658": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32659": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32660": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32661": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32662": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32663": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32664": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32665": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32666": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32667": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32668": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32669": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32670": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32671": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32672": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32673": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32674": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32675": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32676": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32677": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32678": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32679": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32680": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32681": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32682": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32683": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32684": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32685": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32686": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32687": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32688": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32689": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32690": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32691": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32692": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32693": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32694": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32695": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32696": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32697": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32698": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32699": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32700": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32701": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32702": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32703": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32704": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32705": {
+    "modifier": 1,
+    "prop": "1HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32706": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32707": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32708": {
+    "modifier": 2,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32709": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32710": {
+    "modifier": 11,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32711": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32712": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32713": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32714": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32715": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32716": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32717": {
+    "modifier": 6,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32718": {
+    "modifier": 3,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32719": {
+    "modifier": 5,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32720": {
+    "modifier": 1,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32721": {
+    "modifier": 4,
+    "prop": "2HWpn%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32722": {
+    "modifier": 1,
+    "prop": "OH%",
+    "slots": 0,
+    "overmeld": false
+  },
+  "32723": {
+    "modifier": 1,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32724": {
+    "modifier": 1,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32725": {
+    "modifier": 1,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32726": {
+    "modifier": 1,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32727": {
+    "modifier": 1,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32728": {
+    "modifier": 2,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32729": {
+    "modifier": 2,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32730": {
+    "modifier": 2,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32731": {
+    "modifier": 2,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32732": {
+    "modifier": 2,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32733": {
+    "modifier": 3,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32734": {
+    "modifier": 3,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32735": {
+    "modifier": 3,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32736": {
+    "modifier": 3,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32737": {
+    "modifier": 3,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32738": {
+    "modifier": 4,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32739": {
+    "modifier": 4,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32740": {
+    "modifier": 4,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32741": {
+    "modifier": 4,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32742": {
+    "modifier": 4,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32743": {
+    "modifier": 11,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32744": {
+    "modifier": 11,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32745": {
+    "modifier": 11,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32746": {
+    "modifier": 11,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32747": {
+    "modifier": 11,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32748": {
+    "modifier": 6,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32749": {
+    "modifier": 6,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32750": {
+    "modifier": 6,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32751": {
+    "modifier": 6,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32752": {
+    "modifier": 6,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32753": {
+    "modifier": 5,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32754": {
+    "modifier": 5,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32755": {
+    "modifier": 5,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32756": {
+    "modifier": 5,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32757": {
+    "modifier": 5,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32758": {
+    "modifier": 1,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32759": {
+    "modifier": 1,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32760": {
+    "modifier": 1,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32761": {
+    "modifier": 1,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32762": {
+    "modifier": 1,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32763": {
+    "modifier": 2,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32764": {
+    "modifier": 2,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32765": {
+    "modifier": 2,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32766": {
+    "modifier": 2,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32767": {
+    "modifier": 2,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32768": {
+    "modifier": 3,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32769": {
+    "modifier": 3,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32770": {
+    "modifier": 3,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32771": {
+    "modifier": 3,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32772": {
+    "modifier": 3,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32773": {
+    "modifier": 4,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32774": {
+    "modifier": 4,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32775": {
+    "modifier": 4,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32776": {
+    "modifier": 4,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32777": {
+    "modifier": 4,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32778": {
+    "modifier": 11,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32779": {
+    "modifier": 11,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32780": {
+    "modifier": 11,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32781": {
+    "modifier": 11,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32782": {
+    "modifier": 11,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32783": {
+    "modifier": 6,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32784": {
+    "modifier": 6,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32785": {
+    "modifier": 6,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32786": {
+    "modifier": 6,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32787": {
+    "modifier": 6,
+    "prop": "Feet%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32788": {
+    "modifier": 5,
+    "prop": "Head%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32789": {
+    "modifier": 5,
+    "prop": "Chest%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32790": {
+    "modifier": 5,
+    "prop": "Hands%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32791": {
+    "modifier": 5,
+    "prop": "Legs%",
+    "slots": 5,
+    "overmeld": false
+  },
+  "32792": {
+    "modifier": 5,
+    "prop": "Feet%",
+    "slots": 5,
     "overmeld": false
   },
   "32793": {

@@ -468,7 +468,7 @@ export class AlarmsFacade {
         z: node.z || 0
       },
       spawns: node.spawns,
-      folklore: node.folklore,
+      folklore: node?.folklore,
       reduction: node.isReduction || false,
       ephemeral: node.ephemeral || false,
       nodeContent: node.items,

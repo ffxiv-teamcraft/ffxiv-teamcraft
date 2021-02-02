@@ -21152,7 +21152,7 @@
   "3526": {
     "en": "Skysteel Workshop",
     "ja": "スカイスチール機工房分館",
-    "de": "Nebengebäude der Himmelsstahl-Werkstätte",
+    "de": "Zweigstelle der Himmelsstahl-Werkstätte",
     "fr": "Annexe de la manufacture de Cielacier"
   },
   "3527": {
@@ -21576,142 +21576,142 @@
     "fr": "Sphère de l'absence"
   },
   "3597": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Delubrum Reginae",
+    "ja": "グンヒルド・ディルーブラム",
+    "de": "Delubrum Reginae",
+    "fr": "Delubrum Reginae"
   },
   "3598": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Outer Locus",
+    "ja": "遺跡浅層",
+    "de": "Obere Ebene",
+    "fr": "Ruines extérieures"
   },
   "3599": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Inner Locus",
+    "ja": "遺跡中層",
+    "de": "Untere Ebene",
+    "fr": "Ruines intérieures"
   },
   "3600": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Hidden Locus",
+    "ja": "遺跡深層",
+    "de": "Verborgene Ebene",
+    "fr": "Ruines cachées"
   },
   "3601": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Suspended Approach",
+    "ja": "取り残された前庭",
+    "de": "Verwilderter Vorhof",
+    "fr": "Jardins royaux délaissés"
   },
   "3602": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Abandoned Barracks",
+    "ja": "失われた兵舎",
+    "de": "Verlassene Kaserne",
+    "fr": "Caserne déserte"
   },
   "3603": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Neglected Granary",
+    "ja": "捨てられた穀倉",
+    "de": "Vergessener Kornspeicher",
+    "fr": "Grenier abandonné"
   },
   "3604": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dead Living Quarters",
+    "ja": "知られざる離宮",
+    "de": "Verwaiste Kammern",
+    "fr": "Villa royale cachée"
   },
   "3605": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Uninviting Entrance",
+    "ja": "語られぬ拝廊",
+    "de": "Verschlossener Eingang",
+    "fr": "Avant-nef ineffable"
   },
   "3606": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Silent Prayer Hall",
+    "ja": "祈りなき拝殿",
+    "de": "Halle des Schweigenden Gebets",
+    "fr": "Prières silencieuses"
   },
   "3607": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Concealed Staircase",
+    "ja": "隠された階段",
+    "de": "Versteckte Treppen",
+    "fr": "Escalier dérobé"
   },
   "3608": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Undisturbed Shrine",
+    "ja": "触れ得ざる身廊",
+    "de": "Verschwiegener Schrein",
+    "fr": "Nef sacrale"
   },
   "3609": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Dormant Altar",
+    "ja": "命なき神殿",
+    "de": "Ruhender Altar",
+    "fr": "Sanctuaire décati"
   },
   "3610": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Still Sanctum",
+    "ja": "満たされぬ聖所",
+    "de": "Stilles Sanktum",
+    "fr": "Saint des saints"
   },
   "3611": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Theater of One",
+    "ja": "円形劇場跡",
+    "de": "Einsame Arena",
+    "fr": "Amphithéâtre en ruines"
   },
   "3612": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pride of the Lioness",
+    "ja": "雌獅子の広間",
+    "de": "Saal der Löwin",
+    "fr": "Hall de la Lionne"
   },
   "3613": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Hall of Supplication",
+    "ja": "大祈祷所",
+    "de": "Große Gebetshalle",
+    "fr": "Grande salle des prières"
   },
   "3614": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Hall of Hieromancy",
+    "ja": "託宣所",
+    "de": "Halle des Orakels",
+    "fr": "Salle des oracles"
   },
   "3615": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Pride of the Lion",
+    "ja": "雄獅子の広間",
+    "de": "Saal des Löwen",
+    "fr": "Hall du Lion"
   },
   "3616": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Vault of Singing Crystal",
+    "ja": "響き合う水晶の間",
+    "de": "Ort des Klingenden Kristalls",
+    "fr": "Chambre des cristaux chantants"
   },
   "3617": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Seer's Solace",
+    "ja": "静かなる瞑想室",
+    "de": "Zimmer der Abgeschiedenheit",
+    "fr": "Alcove des méditations"
   },
   "3618": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "The Path of Divine Clarity",
+    "ja": "命の至聖所",
+    "de": "Sanktuarium des Lebens",
+    "fr": "Salle des sages"
   },
   "3619": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Queensheart",
+    "ja": "巫女たちの広間",
+    "de": "Saal der Dienerinnen",
+    "fr": "Chambre des prêtresses"
   },
   "3620": {
     "en": "Laxan Loft",

@@ -32864,7 +32864,7 @@
     }
   },
   "31750": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -32888,7 +32888,7 @@
     }
   },
   "31751": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -32912,7 +32912,7 @@
     }
   },
   "31752": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -32936,7 +32936,7 @@
     }
   },
   "31753": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -32960,7 +32960,7 @@
     }
   },
   "31754": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -32984,7 +32984,7 @@
     }
   },
   "31755": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33008,7 +33008,7 @@
     }
   },
   "31756": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33032,7 +33032,7 @@
     }
   },
   "31757": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33056,7 +33056,7 @@
     }
   },
   "31766": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33080,7 +33080,7 @@
     }
   },
   "31768": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33104,7 +33104,7 @@
     }
   },
   "31770": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,
@@ -33128,7 +33128,7 @@
     }
   },
   "31771": {
-    "collectable": 0,
+    "collectable": 1,
     "level": 80,
     "levelMin": 80,
     "levelMax": 80,

@@ -46,7 +46,9 @@ export class PacketCapture {
     'submarineStatusList',
     'resultDialog',
     'desynthResult',
-    'logout'
+    'logout',
+    'airshipStatus',
+    'airshipExplorationResult'
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [

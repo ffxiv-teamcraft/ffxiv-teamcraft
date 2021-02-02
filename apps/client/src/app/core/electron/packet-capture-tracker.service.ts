@@ -22,6 +22,7 @@ import { environment } from '../../../environments/environment';
 import { LazyDataService } from '../data/lazy-data.service';
 import { InventoryEventType } from '../../model/user/inventory/inventory-event-type';
 import { ActorControl, EffectResult, FishingBaitMsg, InitZone, UpdateClassInfo, WeatherChange } from '../../model/pcap';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -76,10 +77,15 @@ export class PacketCaptureTrackerService {
     startWith('')
   );
 
+  private constants: Record<'CN' | 'KR' | 'Global', Record<string, number>>;
+
   constructor(private ipc: IpcService, private userInventoryService: InventoryFacade,
               private universalis: UniversalisService, private authFacade: AuthFacade,
               private listsFacade: ListsFacade, private eorzeaFacade: EorzeaFacade,
-              private settings: SettingsService, private lazyData: LazyDataService) {
+              private settings: SettingsService, private lazyData: LazyDataService,
+              private http: HttpClient) {
+    this.http.get<Record<'CN' | 'KR' | 'Global', Record<string, number>>>('https://cdn.jsdelivr.net/gh/karashiiro/FFXIVOpcodes@latest/constants.min.json')
+      .subscribe(constants => this.constants = constants);
     this.inventory$ = this.userInventoryService.inventory$.pipe(
       filter(inventory => !!inventory.contentId),
       map(inventory => inventory.clone()),
@@ -90,12 +96,12 @@ export class PacketCaptureTrackerService {
   private getInventoryTransactionFlag(): number {
     switch (this.settings.region) {
       case Region.China:
-        return 0x02CB;
+        return this.constants.CN.InventoryOperationBaseValue;
       case Region.Korea:
-        return 0x01A0;
+        return this.constants.KR.InventoryOperationBaseValue;
       case Region.Global:
       default:
-        return 0x0197;
+        return this.constants.Global.InventoryOperationBaseValue;
     }
   }
 
@@ -148,7 +154,7 @@ export class PacketCaptureTrackerService {
 
         groupedInfos.forEach(group => {
           const containerKey = isRetainer ? `${lastRetainerSpawned}:${group.containerId}` : `${group.containerId}`;
-          if (!isRetainer && +group.containerId % 1000 === 0) {
+          if (!isRetainer) {
             inventory = this.resetInventoryForItemInfo(inventory, +group.containerId);
           }
           inventory.items[inventory.contentId][containerKey] = {};
@@ -338,12 +344,16 @@ export class PacketCaptureTrackerService {
 
   private resetInventoryForItemInfo(inventory: UserInventory, containerKey: number): UserInventory {
     const itemsClone = JSON.parse(JSON.stringify(inventory.items[inventory.contentId]));
-    Object.keys(itemsClone)
-      .forEach(key => {
-        if (key.indexOf(':') === -1 && Math.floor(+key / 1000) === Math.floor(containerKey / 1000)) {
-          itemsClone[key] = {};
-        }
-      });
+    if (containerKey >= ContainerType.FreeCompanyBag0 && containerKey <= ContainerType.FreeCompanyBag10) {
+      itemsClone[containerKey] = {};
+    } else if (containerKey % 1000 === 0) {
+      Object.keys(itemsClone)
+        .forEach(key => {
+          if (key.indexOf(':') === -1 && Math.floor(+key / 1000) === Math.floor(containerKey / 1000)) {
+            itemsClone[key] = {};
+          }
+        });
+    }
     inventory.items[inventory.contentId] = itemsClone;
     return inventory;
   }

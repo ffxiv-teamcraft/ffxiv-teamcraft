@@ -5122,7 +5122,7 @@ export const mapIds = [
   {
     "id": 641,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5130,7 +5130,7 @@ export const mapIds = [
   {
     "id": 642,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5138,7 +5138,7 @@ export const mapIds = [
   {
     "id": 643,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5146,7 +5146,7 @@ export const mapIds = [
   {
     "id": 644,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5154,7 +5154,7 @@ export const mapIds = [
   {
     "id": 645,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5162,7 +5162,7 @@ export const mapIds = [
   {
     "id": 646,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
@@ -5170,7 +5170,7 @@ export const mapIds = [
   {
     "id": 647,
     "zone": 3597,
-    "name": "",
+    "name": "Delubrum Reginae",
     "territory": 936,
     "scale": 200,
     "weatherRate": 0
