@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.8"></a>
+## [8.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.7...v8.0.8) (2021-02-02)
+
+
+### Bug Fixes
+
+* **desktop:** fix for the errors happening even after the app has been closed ([8df53f7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8df53f7))
+* **desktop:** fixed a possible crash in the alarms overlay ([7092df0](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/7092df0))
+* **desktop:** fixed an error message when the app is started if inventory is empty ([96d66a2](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/96d66a2))
+* **desktop:** fixed inventory reset issue with FC chest ([f5ec6e6](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/f5ec6e6))
+* **desktop:** no more windows notification sound when Teamcraft has its own sound for it ([c300e50](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/c300e50))
+* **gearset:** fixed wrong trade cost for some older gearset pieces ([0c07099](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/0c07099)), closes [#1832](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/issues/1832)
+* **i18n:** fixed missing translation in settings popup ([30eb232](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/30eb232))
+* **list-overlay:** fixed an issue with panels being collapsed by default not being shown properly ([48d69cd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/48d69cd))
+* **profile:** fixed missleading label on character deletion button tooltip ([284b7bd](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/284b7bd))
+* **ux:** removed the loading screen when loading a database page for the first time ([68366fc](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/68366fc))
+
+
+### Features
+
+* **db:** support for 5.45 update ([967db1b](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/967db1b))
+* airship-exploration-result reporter ([fdcc4e1](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/fdcc4e1))
+
+
+
 <a name="8.0.7"></a>
 ## [8.0.7](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.6...v8.0.7) (2021-01-29)
 
