@@ -488,6 +488,7 @@
       "Alarms": "Alarmes",
       "Other": "Autre",
       "Inventory_tracking": "Inventory tracking",
+      "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
@@ -500,7 +501,7 @@
   "PROFILE": {
     "Account": "Compte",
     "Add_character": "Ajouter un personnage",
-    "Remove_character": "Supprimer ce personnage",
+    "Remove_character": "Remove this character",
     "Jobs": "Jobs",
     "Stats": "Caractéristiques",
     "View_on_apkallu_falls": "Voir sur Apkallu Falls",

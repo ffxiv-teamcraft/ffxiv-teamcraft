@@ -488,6 +488,7 @@
       "Alarms": "Alarms",
       "Other": "Other",
       "Inventory_tracking": "Inventory tracking",
+      "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
@@ -500,7 +501,7 @@
   "PROFILE": {
     "Account": "Account",
     "Add_character": "Add a character",
-    "Remove_character": "Remove a character",
+    "Remove_character": "Remove this character",
     "Jobs": "Jobs",
     "Stats": "Stats",
     "View_on_apkallu_falls": "Open in Apkallu Falls",

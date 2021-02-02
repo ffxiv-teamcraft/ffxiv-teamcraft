@@ -488,6 +488,7 @@
       "Alarms": "アラーム",
       "Other": "その他",
       "Inventory_tracking": "Inventory tracking",
+      "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
@@ -500,7 +501,7 @@
   "PROFILE": {
     "Account": "アカウント",
     "Add_character": "キャラクターを追加する",
-    "Remove_character": "キャラクターを削除する",
+    "Remove_character": "Remove this character",
     "Jobs": "ジョブ",
     "Stats": "サブステ",
     "View_on_apkallu_falls": "アプカル・フォールズに開く",

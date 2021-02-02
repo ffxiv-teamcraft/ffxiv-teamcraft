@@ -487,7 +487,8 @@
       "Lists": "목록",
       "Alarms": "알람",
       "Other": "기타",
-      "Inventory_tracking": "Inventory tracking",
+      "Inventory_tracking": "소지품 트래킹",
+      "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
       "Sekrit": "Sekrit"
     },
@@ -500,7 +501,7 @@
   "PROFILE": {
     "Account": "계정",
     "Add_character": "캐릭터 추가",
-    "Remove_character": "캐릭터 삭제",
+    "Remove_character": "Remove this character",
     "Jobs": "직업",
     "Stats": "능력치",
     "View_on_apkallu_falls": "아프칼루 폭포에서 열기",
@@ -1269,7 +1270,7 @@
     "New_update_available_desktop": "새로운 업데이트가 추가되었습니다.\n여기를 눌러 다운로드 받으세요.",
     "Web_instructions": "최신 버전을 이용하려면 페이지를 새로고침하세요.",
     "Downloading_update": "업데이트 다운로드가 완료되면 설치페이지가 표시됩니다",
-    "Possible_update_issue": "It seems like your download is having an issue, please click this icon to download latest setup."
+    "Possible_update_issue": "다운로드가 문제가 있습니다. 아이콘을 클릭하여 최신 버전을 설치하세요."
   },
   "LOG_TRACKER": {
     "Title": "수첩 트래커",
