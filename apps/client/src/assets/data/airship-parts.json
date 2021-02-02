@@ -157,7 +157,7 @@
   },
   "13": {
     "id": 13,
-    "slot": 1,
+    "slot": 2,
     "rank": 1,
     "components": 3,
     "surveillance": 80,
@@ -235,7 +235,7 @@
   },
   "19": {
     "id": 19,
-    "slot": 2,
+    "slot": 3,
     "rank": 1,
     "components": 3,
     "surveillance": "-10",
@@ -248,7 +248,7 @@
   },
   "20": {
     "id": 20,
-    "slot": 2,
+    "slot": 3,
     "rank": 5,
     "components": 6,
     "surveillance": "-14",
@@ -313,7 +313,7 @@
   },
   "25": {
     "id": 25,
-    "slot": 3,
+    "slot": 0,
     "rank": 50,
     "components": 31,
     "surveillance": 0,
@@ -326,7 +326,7 @@
   },
   "26": {
     "id": 26,
-    "slot": 3,
+    "slot": 1,
     "rank": 50,
     "components": 31,
     "surveillance": 0,
@@ -339,7 +339,7 @@
   },
   "27": {
     "id": 27,
-    "slot": 3,
+    "slot": 2,
     "rank": 50,
     "components": 31,
     "surveillance": 164,
@@ -352,7 +352,7 @@
   },
   "28": {
     "id": 28,
-    "slot": 4,
+    "slot": 3,
     "rank": 50,
     "components": 31,
     "surveillance": "-34",

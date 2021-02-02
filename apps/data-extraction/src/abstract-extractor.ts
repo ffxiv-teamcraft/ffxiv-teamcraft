@@ -175,7 +175,9 @@ export abstract class AbstractExtractor {
     const res$ = new Subject<T[]>();
     this.getAllPages(endpoint, body, label).subscribe(page => {
       data.push(...page.Results);
-    }, () => {
+    }, (e) => {
+      console.log(endpoint);
+      console.log(e);
     }, () => {
       res$.next(data);
       res$.complete();

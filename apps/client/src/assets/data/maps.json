@@ -11515,7 +11515,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 1,
-    "dungeon": false
+    "dungeon": true
   },
   "642": {
     "id": 642,
@@ -11533,7 +11533,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 2,
-    "dungeon": false
+    "dungeon": true
   },
   "643": {
     "id": 643,
@@ -11551,7 +11551,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 3,
-    "dungeon": false
+    "dungeon": true
   },
   "644": {
     "id": 644,
@@ -11569,7 +11569,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "645": {
     "id": 645,
@@ -11587,7 +11587,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "646": {
     "id": 646,
@@ -11605,7 +11605,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "647": {
     "id": 647,
@@ -11623,7 +11623,7 @@
     "size_factor": 200,
     "territory_id": 936,
     "index": 0,
-    "dungeon": false
+    "dungeon": true
   },
   "648": {
     "id": 648,

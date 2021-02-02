@@ -89,7 +89,6 @@ const extractors: AbstractExtractor[] = [
   new JobsExtractor(),
   new JobCategoriesExtractor(),
   new FatesExtractor(),
-  //new HuntsExtractor(), Disabled because the website it's getting data from doesn't exist anymore
   new GatheringBonusesExtractor(),
   new CdGroupsExtractor(),
   new CombosExtractor(),

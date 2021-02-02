@@ -5995,10 +5995,10 @@
     "value": 0,
     "conditionValue": 30301,
     "bonus": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "<If(IntegerParameter(2))> Collectable Available<Else/> Collectable Unavailable</If>",
+      "de": "<If(IntegerParameter(2))>Sammlerstück<Else/>Kein Sammlerstück</If>",
+      "ja": "<If(IntegerParameter(2))>収集品採集可能<Else/>収集品採集不可</If>",
+      "fr": "<If(IntegerParameter(2))>Collectionnable<Else/>Non collectionnable</If>"
     },
     "condition": {
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",
@@ -6011,10 +6011,10 @@
     "value": 0,
     "conditionValue": 30302,
     "bonus": {
-      "en": "",
-      "de": "",
-      "ja": "",
-      "fr": ""
+      "en": "<If(IntegerParameter(2))> Collectable Available<Else/> Collectable Unavailable</If>",
+      "de": "<If(IntegerParameter(2))>Sammlerstück<Else/>Kein Sammlerstück</If>",
+      "ja": "<If(IntegerParameter(2))>収集品採集可能<Else/>収集品採集不可</If>",
+      "fr": "<If(IntegerParameter(2))>Collectionnable<Else/>Non collectionnable</If>"
     },
     "condition": {
       "en": "<Sheet(Item,IntegerParameter(1),9)/> <If(IntegerParameter(2))>Equipped<Else/>Unequipped</If>",

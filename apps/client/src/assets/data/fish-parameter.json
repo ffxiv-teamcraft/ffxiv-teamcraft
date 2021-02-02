@@ -15499,6 +15499,40 @@
       "fr": "Fuites magismologiques"
     }
   },
+  "31770": {
+    "id": 994,
+    "itemId": 31770,
+    "level": 80,
+    "icon": "/i/029000/029450.png",
+    "mapId": 216,
+    "zoneId": 2101,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
+  "31771": {
+    "id": 993,
+    "itemId": 31771,
+    "level": 80,
+    "icon": "/i/029000/029406.png",
+    "mapId": 216,
+    "zoneId": 2101,
+    "timed": 0,
+    "weathered": 0,
+    "stars": 3,
+    "recordType": {
+      "en": "Lakes",
+      "de": "Seen",
+      "ja": "湖沼",
+      "fr": "Lacs et marais"
+    }
+  },
   "32049": {
     "id": 927,
     "itemId": 32049,

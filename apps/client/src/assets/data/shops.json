@@ -4554,16 +4554,16 @@
     "fr": "[NvObj 400] Amélioration d'équipements Scaeva (magie)"
   },
   "1770308": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Law's Order Gear Exchange",
+    "ja": "ジャッジ装備の交換",
+    "de": "Richter-Ausrüstung",
+    "fr": "Équipements du verdict des Juges"
   },
   "1770309": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Law's Order Gear Augmentation",
+    "ja": "ジャッジ装備の強化",
+    "de": "Verstärkung von Richter-Ausrüstung",
+    "fr": "Amélioration d'équipements du verdict des Juges"
   },
   "1770310": {
     "en": "White Crafters' Scrip Exchange (Lv. 80 Gear) III",
@@ -4698,9 +4698,9 @@
     "fr": "Codex de la Promesse (magie)"
   },
   "1770332": {
-    "en": "",
-    "ja": "",
-    "de": "",
-    "fr": ""
+    "en": "Inconceivably Delicate Parts Exchange",
+    "ja": "最終改良用補助部材の交換",
+    "de": "Vollendung von Himmelsstahl-Werkzeugen",
+    "fr": "Composants auxiliaires d'affinage final"
   }
 }
