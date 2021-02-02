@@ -68,6 +68,10 @@ export class MappyExtractor extends AbstractExtractor {
           };
           if (point.TerritoryType) {
             this.gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
+            // South shroud hotfix.
+            if (this.gatheringPoints[point.ID].map === 181) {
+              this.gatheringPoints[point.ID].map = 6;
+            }
           }
           if (this.gatheringPoints[point.ID].ephemeral) {
             const endTime = point.GatheringPointTransient.EphemeralEndTime || 2400;
