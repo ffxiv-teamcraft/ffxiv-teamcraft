@@ -465,6 +465,10 @@
     "Alarm_panels_collapsed_by_default": "Fermer les groupes d'alarmes par défaut",
     "Alarm_groups_before_no_group": "Afficher les groupes d'alarmes avant les alarmes sans groupe",
     "Disconnect_patreon": "Se déconnecter de patreon",
+    "Export_settings": "Export settings",
+    "Import_settings": "Import settings",
+    "Import_successful": "Settings imported",
+    "Import_error": "Error while trying to import settings",
     "COLORS": {
       "Background": "Couleur d'arrière-plan",
       "Primary": "Couleur principale",
@@ -490,6 +494,7 @@
       "Inventory_tracking": "Inventory tracking",
       "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
+      "Import_export": "Import/export",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
