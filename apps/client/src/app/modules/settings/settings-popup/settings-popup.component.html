@@ -340,6 +340,21 @@
           </nz-select>
         </nz-form-control>
       </nz-form-item>
+      <div>
+        <nz-divider nzOrientation="left" [nzText]="'SETTINGS.CATEGORIES.Import_export' | translate"></nz-divider>
+      </div>
+      <button (click)="downloadSettings()" nz-button nzType="primary">
+        <i nz-icon nzType="upload"></i> {{'SETTINGS.Export_settings' | translate}}
+      </button>
+      <nz-upload nzType="drag" nzAccept=".json"
+                 [nzCustomRequest]="handleFile">
+        <div class="upload-content">
+          <p class="ant-upload-drag-icon">
+            <i nz-icon nzType="download"></i>
+          </p>
+          <p class="ant-upload-text">{{'SETTINGS.Import_settings' | translate}}</p>
+        </div>
+      </nz-upload>
     </div>
   </nz-tab>
   <nz-tab *ngIf="loggedIn$ | async" [nzTitle]="'SETTINGS.Account' | translate">

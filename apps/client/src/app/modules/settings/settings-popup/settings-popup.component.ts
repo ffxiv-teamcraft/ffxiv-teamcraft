@@ -20,10 +20,11 @@ import { InventoryFacade } from '../../inventory/+state/inventory.facade';
 import { uniq } from 'lodash';
 import { LazyDataService } from '../../../core/data/lazy-data.service';
 import { MappyReporterService } from '../../../core/electron/mappy/mappy-reporter';
-import { from } from 'rxjs';
+import { from, Subscription } from 'rxjs';
 import { NavigationSidebarService } from '../../navigation-sidebar/navigation-sidebar.service';
 import { Observable } from 'rxjs/Observable';
 import { SidebarItem } from '../../navigation-sidebar/sidebar-entry';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-settings-popup',
@@ -298,6 +299,33 @@ export class SettingsPopupComponent {
   openDesktopConsole(): void {
     this.ipc.send('show-devtools');
   }
+
+  downloadSettings(): void {
+    const blob = new Blob([JSON.stringify(this.settings.cache)], { type: 'text/plain;charset:utf-8' });
+    saveAs(blob, `settings.json`);
+  }
+
+  public handleFile = (event: any) => {
+    const reader = new FileReader();
+    let data = '';
+    reader.onload = ((_) => {
+      return (e) => {
+        data += e.target.result;
+      };
+    })(event.file);
+    reader.onloadend = () => {
+      try {
+        this.settings.cache = JSON.parse(data);
+        this.message.success(this.translate.instant('SETTINGS.Import_successful'));
+      } catch (e) {
+        console.error(e);
+        this.message.error(this.translate.instant('SETTINGS.Import_error'));
+      }
+    };
+    // Read in the image file as a data URL.
+    reader.readAsText(event.file);
+    return new Subscription();
+  };
 
   resetLinkedChars(): void {
     this.authFacade.user$.pipe(
