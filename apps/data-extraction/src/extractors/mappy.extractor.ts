@@ -68,10 +68,6 @@ export class MappyExtractor extends AbstractExtractor {
           };
           if (point.TerritoryType) {
             this.gatheringPoints[point.ID].map = point.TerritoryType.MapTargetID;
-            // South shroud hotfix.
-            if (this.gatheringPoints[point.ID].map === 181) {
-              this.gatheringPoints[point.ID].map = 6;
-            }
           }
           if (this.gatheringPoints[point.ID].ephemeral) {
             const endTime = point.GatheringPointTransient.EphemeralEndTime || 2400;
@@ -229,6 +225,10 @@ export class MappyExtractor extends AbstractExtractor {
                   y: Math.round(+row.PosY * 10) / 10,
                   z: Math.round(+row.PosZ * 10) / 10
                 };
+                // South shroud hotfix.
+                if (this.nodes[baseId].map === 181) {
+                  this.nodes[baseId].map = 6;
+                }
               }
             }
           });
