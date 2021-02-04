@@ -7530,6 +7530,11 @@ ecdsa-sig-formatter@1.0.11, ecdsa-sig-formatter@^1.0.11:
   dependencies:
     safe-buffer "^5.0.1"
 
+edge-cs@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/edge-cs/-/edge-cs-1.2.1.tgz#bd1a9ecdb94ef0ed40c894582046749e57045e5a"
+  integrity sha1-vRqezblO8O1AyJRYIEZ0nlcEXlo=
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
@@ -7580,6 +7585,14 @@ electron-builder@^22.9.1:
     sanitize-filename "^1.6.3"
     update-notifier "^4.1.1"
     yargs "^16.0.3"
+
+electron-edge-js@^12.18.5:
+  version "12.18.5"
+  resolved "https://registry.yarnpkg.com/electron-edge-js/-/electron-edge-js-12.18.5.tgz#09a1217ae116e54754940d65f6baa875b6298ba0"
+  integrity sha512-7AEui4n4ag4VvqoMfnkuAD83PAgFUoNl0fSWAHJUtykytQ98jY6J+SLY/+ydiZIAmGHYLuyL/uy4rdkQ/aqX7g==
+  dependencies:
+    edge-cs "1.2.1"
+    nan "^2.14.0"
 
 electron-is-dev@^1.1.0:
   version "1.2.0"
@@ -12737,7 +12750,7 @@ nan@^2.12.1:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.0.tgz#7818f722027b2459a86f0295d434d1fc2336c52c"
   integrity sha512-INOFj37C7k3AfaNTtX8RhsTw7qRy7eLET14cROi9+5HAVbbHuIWUHEauBv5qT4Av2tWasiTY1Jw6puUNqRJXQg==
 
-nan@^2.14.2:
+nan@^2.14.0, nan@^2.14.2:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==

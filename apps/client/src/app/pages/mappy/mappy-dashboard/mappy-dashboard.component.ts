@@ -14,6 +14,8 @@ import { subMonths } from 'date-fns';
 })
 export class MappyDashboardComponent {
 
+  private static readonly IGNORED_NODES = [174];
+
   public loading = true;
 
   public reloader$ = new BehaviorSubject<void>(null);
@@ -46,7 +48,9 @@ export class MappyDashboardComponent {
                 Node: updates[m.id]?.Node < subMonths(new Date(), 3).getTime() / 1000
               },
               missingNodes: mapNodes.filter((node) => {
-                return !gatheringPoints.some(gatheringPoint => data.gatheringPointToNodeId[gatheringPoint] === node.id);
+                return !MappyDashboardComponent.IGNORED_NODES.includes(node.id)
+                  && !gatheringPoints.some(gatheringPoint => data.gatheringPointToNodeId[gatheringPoint] === node.id)
+                  && node.items.some(i => i < 2000000);
               }).length
             };
           })
