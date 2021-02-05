@@ -312,6 +312,14 @@ export class NavigationSidebarService {
               link: '/retainer-ventures'
             },
             {
+              name: 'VOYAGE_TRACKER.Title',
+              icon: {
+                type: SidebarIconType.ANTD,
+                content: 'carry-out'
+              },
+              link: '/voyage-tracker'
+            },
+            {
               name: 'MACRO_TRANSLATION.Title',
               icon: {
                 type: SidebarIconType.ANTD,

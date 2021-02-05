@@ -160,6 +160,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/retainer-ventures/retainer-ventures.module').then(m => m.RetainerVenturesModule)
   },
   {
+    path: 'voyage-tracker',
+    loadChildren: () => import('./pages/voyage-tracker/voyage-tracker.module').then(m => m.VoyageTrackerModule)
+  },
+  {
     path: 'support-us',
     loadChildren: () => import('./pages/support-us/support-us.module').then(m => m.SupportUsModule)
   },

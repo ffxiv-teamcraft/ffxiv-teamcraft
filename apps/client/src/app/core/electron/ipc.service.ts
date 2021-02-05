@@ -54,6 +54,10 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType<PlayerSpawn>('playerSpawn'), map(packet => packet.currentWorldId));
   }
 
+  public get freecompanyId$(): Observable<number> {
+    return this.packets$.pipe(ofPacketType<pcap.FreecompanyInfo>('freeCompanyInfo'), map(packet => packet.fcId));
+  }
+
   public get marketTaxRatePackets$(): Observable<pcap.MarketTaxRates> {
     return this.packets$.pipe(ofPacketSubType('marketTaxRates'));
   }
@@ -90,6 +94,18 @@ export class IpcService {
     return this.packets$.pipe(ofPacketType('retainerInformation'));
   }
 
+  public get submarinesStatusListPackets$(): Observable<pcap.SubmarineStatusList> {
+    return this.packets$.pipe(ofPacketType('submarineStatusList'));
+  }
+
+  public get airshipStatusPackets$(): Observable<pcap.AirshipStatus> {
+    return this.packets$.pipe(ofPacketType('airshipStatus'));
+  }
+
+  public get airshipStatusListPackets$(): Observable<pcap.AirshipStatusList> {
+    return this.packets$.pipe(ofPacketType('airshipStatusList'));
+  }
+
   public get updatePositionHandlerPackets$(): Observable<pcap.UpdatePositionHandler> {
     return this.packets$.pipe(ofPacketType('updatePositionHandler'));
   }
@@ -120,6 +136,10 @@ export class IpcService {
 
   public get eventPlay4Packets$(): Observable<pcap.EventPlay4> {
     return this.packets$.pipe(ofPacketType('eventPlay4'));
+  }
+
+  public get eventPlay8Packets$(): Observable<pcap.EventPlay8> {
+    return this.packets$.pipe(ofPacketType('eventPlay8'));
   }
 
   public get eventPlay32Packets$(): Observable<pcap.EventPlay32> {
