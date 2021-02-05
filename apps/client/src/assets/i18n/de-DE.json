@@ -1934,7 +1934,7 @@
       "Message": "Du kannst aus diesem Ausrüstungsgegenstand Materia extrahieren"
     },
     "USELESS_HQ": {
-      "Title": "Items you don't need HQ because you can use Trained Eye",
+      "Title": "Gegenstände für die du kein HQ benötigst, weil du Flinke Hand verwenden kannst",
       "Message": "This item is only used in recipes that you can use Trained Eye on, making it useless to have it HQ"
     }
   },
