@@ -22,6 +22,7 @@ import { ProgressPopupModule } from '../../modules/progress-popup/progress-popup
 import { CustomItemsImportPopupComponent } from './custom-items-import-popup/custom-items-import-popup.component';
 import { CustomItemsExportPopupComponent } from './custom-items-export-popup/custom-items-export-popup.component';
 import { AntdSharedModule } from '../../core/antd-shared.module';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 const routes: Routes = [{
   path: '',
@@ -51,7 +52,8 @@ const routes: Routes = [{
     TranslateModule,
     AntdSharedModule,
     FlexLayoutModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NzUploadModule
   ]
 })
 export class CustomItemsPageModule {

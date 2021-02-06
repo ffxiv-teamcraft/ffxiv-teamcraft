@@ -225,6 +225,10 @@ export class MappyExtractor extends AbstractExtractor {
                   y: Math.round(+row.PosY * 10) / 10,
                   z: Math.round(+row.PosZ * 10) / 10
                 };
+                // South shroud hotfix.
+                if (this.nodes[baseId].map === 181) {
+                  this.nodes[baseId].map = 6;
+                }
               }
             }
           });

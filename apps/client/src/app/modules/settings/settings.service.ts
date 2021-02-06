@@ -16,7 +16,20 @@ export class SettingsService {
   public region$: Observable<Region>;
   public themeChange$ = new Subject<{ previous: Theme, next: Theme }>();
   public settingsChange$ = new Subject<string>();
-  private cache: { [id: string]: string };
+  private _cache: Record<string, string>;
+
+  public get cache(): Record<string, string> {
+    return this._cache;
+  }
+
+  public set cache(cache: Record<string, string>) {
+    this._cache = cache;
+    localStorage.setItem('settings', JSON.stringify(this.cache));
+    if (this.ipc) {
+      this.ipc.send('apply-settings', { ...this.cache });
+    }
+    this.settingsChange$.next('');
+  }
 
   constructor(@Optional() private ipc: IpcService) {
     this.cache = JSON.parse(localStorage.getItem('settings')) || {};

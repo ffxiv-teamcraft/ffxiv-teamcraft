@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.9"></a>
+## [8.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.8...v8.0.9) (2021-02-06)
+
+
+### Bug Fixes
+
+* **db:** fixed coords for some nodes ([8a11212](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/8a11212))
+* **db:** fixed db button not aligned properly for some nodes ([9c0bf13](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/9c0bf13))
+
+
+### Features
+
+* **settings:** new import/export feature in general settings ([72c9917](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/72c9917))
+
+
+
 <a name="8.0.8"></a>
 ## [8.0.8](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.7...v8.0.8) (2021-02-02)
 

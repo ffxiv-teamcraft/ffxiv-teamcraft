@@ -18,8 +18,7 @@ export class SettingsPopupService {
         paddingBottom: 0
       },
       nzBodyStyle: {
-        width: '100vw',
-        height: 'calc(100vh - 56px)'
+        height: 'calc(100vh - 72px)'
       },
       nzFooter: null
     });

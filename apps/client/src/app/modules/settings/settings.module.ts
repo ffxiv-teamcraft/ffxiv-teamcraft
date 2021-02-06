@@ -10,6 +10,7 @@ import { PipesModule } from '../../pipes/pipes.module';
 import { CoreModule } from '../../core/core.module';
 import { AntdSharedModule } from '../../core/antd-shared.module';
 import { NzSliderModule } from 'ng-zorro-antd/slider';
+import { NzUploadModule } from 'ng-zorro-antd/upload';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { NzSliderModule } from 'ng-zorro-antd/slider';
     ColorPickerModule,
     PipesModule,
     CoreModule,
-    NzSliderModule
+    NzSliderModule,
+    NzUploadModule
   ],
   declarations: [
     SettingsPopupComponent

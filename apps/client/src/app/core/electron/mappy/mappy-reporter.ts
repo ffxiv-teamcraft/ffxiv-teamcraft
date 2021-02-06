@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { AuthFacade } from '../../../+state/auth.facade';
 import { EorzeaFacade } from '../../../modules/eorzea/+state/eorzea.facade';
 import { Vector2 } from '../../tools/vector2';
-import { delayWhen, filter, takeUntil, tap } from 'rxjs/operators';
+import { delayWhen, filter, first, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { interval, merge, Subject } from 'rxjs';
 import { MapData } from '../../../modules/map/map-data';
 import { MapService } from '../../../modules/map/map.service';
@@ -149,6 +149,7 @@ export class MappyReporterService {
   }
 
   private initReporter(): void {
+
     this.ipc.on('mappy:reload', () => {
       this.addMappyData(this.state.mapId);
     });
@@ -164,10 +165,22 @@ export class MappyReporterService {
       this.pushReports();
     }, 10000));
     // Base map tracker
-    this.eorzeaFacade.mapId$.subscribe((mapId) => {
-      this.setMap(mapId, true);
-    });
-
+    this.lazyData.data$
+      .pipe(
+        filter(data => !!data.nodes && !!data.maps),
+        first(),
+        switchMap(data => {
+          const acceptedMaps = Object.values<any>(data.nodes).map(n => n.map);
+          return this.eorzeaFacade.mapId$.pipe(
+            map(mapId => {
+              return acceptedMaps.includes(mapId) ? mapId : 0;
+            })
+          );
+        })
+      )
+      .subscribe((mapId) => {
+        this.setMap(mapId, true);
+      });
 
     this.ipc.prepareZoningPackets$
       .pipe(
@@ -254,7 +267,7 @@ export class MappyReporterService {
     this.ipc.npcSpawnPackets$.pipe(
       takeUntil(this.stop$),
       delayWhen(() => {
-        return this.state.zoning ? interval(1000) : interval(0);
+        return this.state.zoning ? interval(2000) : interval(0);
       })
     ).subscribe(packet => {
       const isPet = packet.bNPCName >= 1398 && packet.bNPCName <= 1404;
@@ -309,7 +322,7 @@ export class MappyReporterService {
     this.ipc.objectSpawnPackets$.pipe(
       takeUntil(this.stop$),
       delayWhen(() => {
-        return this.state.zoning ? interval(1000) : interval(0);
+        return this.state.zoning ? interval(2000) : interval(0);
       }),
       filter(() => this.state !== undefined)
     ).subscribe(packet => {
@@ -319,7 +332,7 @@ export class MappyReporterService {
         z: packet.position.y
       };
       const coords = this.getCoords(position);
-      const uniqId = `${packet.objId}-${coords.x}/${coords.y}`;
+      const uniqId = `${packet.objId}-${Math.floor(coords.x)}/${Math.floor(coords.y)}`;
       if (this.state.objs.some(row => row.uniqId === uniqId)
         || this.state.outOfBoundsObjs.some(row => row.uniqId === uniqId)
         || packet.objKind !== 6) {
