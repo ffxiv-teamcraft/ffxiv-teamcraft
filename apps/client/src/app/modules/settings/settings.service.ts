@@ -18,14 +18,16 @@ export class SettingsService {
   public settingsChange$ = new Subject<string>();
   private _cache: Record<string, string>;
 
-  public get cache():Record<string, string>{
+  public get cache(): Record<string, string> {
     return this._cache;
   }
 
-  public set cache(cache: Record<string, string>){
+  public set cache(cache: Record<string, string>) {
     this._cache = cache;
     localStorage.setItem('settings', JSON.stringify(this.cache));
-    this.ipc.send('apply-settings', { ...this.cache });
+    if (this.ipc) {
+      this.ipc.send('apply-settings', { ...this.cache });
+    }
     this.settingsChange$.next('');
   }
 
