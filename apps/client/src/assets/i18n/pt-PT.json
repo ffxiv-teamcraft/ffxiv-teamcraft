@@ -465,6 +465,10 @@
     "Alarm_panels_collapsed_by_default": "Alarm group panels collapsed by default",
     "Alarm_groups_before_no_group": "Show alarm groups before alarms with no group",
     "Disconnect_patreon": "Disconnect from patreon",
+    "Export_settings": "Export settings",
+    "Import_settings": "Import settings",
+    "Import_successful": "Settings imported",
+    "Import_error": "Error while trying to import settings",
     "COLORS": {
       "Background": "Cor de fundo",
       "Primary": "Cor principal",
@@ -490,6 +494,7 @@
       "Inventory_tracking": "Inventory tracking",
       "Character_tracking": "Character tracking",
       "Tooling": "Tooling",
+      "Import_export": "Import/export",
       "Sekrit": "Sekrit"
     },
     "REGIONS": {
