@@ -312,10 +312,11 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType<ActorControl>('actorControl'),
-      filter(packet => packet.category === 20 && packet.sourceActorSessionID === packet.targetActorSessionID)
+      ofPacketType<ActorControl>('addStatusEffect')
     ).subscribe(packet => {
-      this.eorzeaFacade.addStatus(packet.param1);
+      // TODO use packet struct once moved to pcap-ffxiv
+      const statusId = Buffer.from(packet.data).readUInt16LE(0x1A);
+      this.eorzeaFacade.addStatus(statusId);
     });
 
     this.ipc.packets$.pipe(
