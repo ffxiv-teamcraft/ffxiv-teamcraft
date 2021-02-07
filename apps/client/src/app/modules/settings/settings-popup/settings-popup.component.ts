@@ -316,6 +316,10 @@ export class SettingsPopupComponent {
     reader.onloadend = () => {
       try {
         this.settings.cache = JSON.parse(data);
+        if (this.ipc) {
+          this.ipc.send('apply-settings', { ...this.settings.cache });
+        }
+        this.settings.settingsChange$.next('');
         this.message.success(this.translate.instant('SETTINGS.Import_successful'));
       } catch (e) {
         console.error(e);
