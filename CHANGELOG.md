@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="8.0.10"></a>
+## [8.0.10](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.9...v8.0.10) (2021-02-07)
+
+
+### Bug Fixes
+
+* **core:** fixed major CPU usage issue caused by settings reloading system ([01bb132](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/01bb132))
+* **updater:** fixed updating status not properly shown in topbar ([a99f2ca](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/commit/a99f2ca))
+
+
+
 <a name="8.0.9"></a>
 ## [8.0.9](https://github.com/ffxiv-teamcraft/ffxiv-teamcraft/compare/v8.0.8...v8.0.9) (2021-02-06)
 

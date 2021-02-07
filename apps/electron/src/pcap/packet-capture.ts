@@ -48,7 +48,8 @@ export class PacketCapture {
     'desynthResult',
     'logout',
     'airshipStatus',
-    'airshipExplorationResult'
+    'airshipExplorationResult',
+    'addStatusEffect'
   ];
 
   private static readonly PACKETS_FROM_OTHERS = [
