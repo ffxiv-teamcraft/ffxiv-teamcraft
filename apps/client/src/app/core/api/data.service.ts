@@ -302,7 +302,11 @@ export class DataService {
         xivapiSearchResults.forEach(item => {
           const recipes = this.lazyData.data.recipes.filter(recipe => recipe.result === item.ID);
           if (recipes.length > 0) {
+            const craftedByFilter = filters.find(f => f.name === 'Recipes.ClassJobID');
             recipes
+              .filter(recipe => {
+                return !craftedByFilter || craftedByFilter.value === recipe.job;
+              })
               .forEach(recipe => {
                 results.push({
                   itemId: item.ID,
