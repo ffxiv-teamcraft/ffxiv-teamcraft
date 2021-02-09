@@ -1,6 +1,6 @@
 import { DataReporter } from './data-reporter';
 import { BehaviorSubject, combineLatest, merge, Observable } from 'rxjs';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { ofMessageType } from '../rxjs/of-message-type';
 import { delay, distinctUntilChanged, filter, map, shareReplay, startWith, tap, withLatestFrom } from 'rxjs/operators';
 import { EorzeaFacade } from '../../modules/eorzea/+state/eorzea.facade';
 import { LazyDataService } from '../data/lazy-data.service';
@@ -50,7 +50,7 @@ export class FishingReporter implements DataReporter {
 
   getDataReports(packets$: Observable<any>): Observable<any[]> {
     const actorControlSelf$ = packets$.pipe(
-      ofPacketType('actorControlSelf'),
+      ofMessageType('actorControlSelf'),
       filter(packet => packet.category === 320)
     );
 
@@ -66,7 +66,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const spot$ = packets$.pipe(
-      ofPacketType('someDirectorUnk4'),
+      ofMessageType('someDirectorUnk4'),
       map((packet) => {
         return this.lazyData.data.fishingSpots.find(spot => spot.zoneId === packet.param3);
       }),
@@ -79,8 +79,8 @@ export class FishingReporter implements DataReporter {
     );
 
     const isFishing$ = merge(
-      packets$.pipe(ofPacketType('eventStart')),
-      packets$.pipe(ofPacketType('eventFinish'))
+      packets$.pipe(ofMessageType('eventStart')),
+      packets$.pipe(ofMessageType('eventFinish'))
     ).pipe(
       filter(packet => packet.eventId === 0x150001),
       map(packet => {
@@ -91,14 +91,14 @@ export class FishingReporter implements DataReporter {
     );
 
     const eventPlay$ = packets$.pipe(
-      ofPacketType('eventPlay'),
+      ofMessageType('eventPlay'),
       filter(packet => packet.eventId === 0x150001)
     );
 
     const moochId$ = new BehaviorSubject<number>(null);
 
     packets$.pipe(
-      ofPacketType('inventoryTransaction')
+      ofMessageType('inventoryTransaction')
     ).subscribe(packet => {
       moochId$.next(packet.catalogId);
     });
@@ -135,7 +135,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const actionTimeline$ = packets$.pipe(
-      ofPacketType('eventPlay4'),
+      ofMessageType('eventPlay4'),
       map(packet => {
         return this.lazyData.data?.actionTimeline[packet.param1.toString()];
       }),
@@ -143,7 +143,7 @@ export class FishingReporter implements DataReporter {
     );
 
     const mooch$ = packets$.pipe(
-      ofPacketType('someDirectorUnk4'),
+      ofMessageType('someDirectorUnk4'),
       filter(packet => packet.actionTimeline === 257 || packet.actionTimeline === 3073),
       map(packet => {
         return packet.param1 === 1121;
@@ -153,7 +153,7 @@ export class FishingReporter implements DataReporter {
 
     const misses$ = combineLatest([
       packets$.pipe(
-        ofPacketType('someDirectorUnk4'),
+        ofMessageType('someDirectorUnk4'),
         map(packet => {
           return {
             animation: packet.actionTimeline,
@@ -189,8 +189,8 @@ export class FishingReporter implements DataReporter {
     );
 
     const fisherStats$ = combineLatest([
-      packets$.pipe(ofPacketType('playerStats')),
-      packets$.pipe(ofPacketType('updateClassInfo'))
+      packets$.pipe(ofMessageType('playerStats')),
+      packets$.pipe(ofMessageType('updateClassInfo'))
     ]).pipe(
       filter(([, classInfo]) => {
         return classInfo.classId === 18;
@@ -208,7 +208,7 @@ export class FishingReporter implements DataReporter {
      * Reset the state when user changes character
      */
     packets$.pipe(
-      ofPacketType('playerSetup')
+      ofMessageType('playerSetup')
     ).subscribe(() => {
       this.state = {};
       this.setState({});

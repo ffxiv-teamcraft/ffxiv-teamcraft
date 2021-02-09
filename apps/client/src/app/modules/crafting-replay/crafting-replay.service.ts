@@ -8,6 +8,7 @@ import firebase from 'firebase/app';
 import { CrafterStats } from '@ffxiv-teamcraft/simulator';
 import { CraftingReplayFacade } from './+state/crafting-replay.facade';
 import { LazyDataService } from '../../core/data/lazy-data.service';
+import { ofMessageType } from '../../core/rxjs/of-message-type';
 
 @Injectable({ providedIn: 'root' })
 export class CraftingReplayService {
@@ -34,21 +35,22 @@ export class CraftingReplayService {
   }
 
   public init(): void {
-    merge(this.ipc.eventPlay4Packets$, this.ipc.eventPlay32Packets$)
+    merge(this.ipc.packets$.pipe(ofMessageType('eventPlay4')), this.ipc.packets$.pipe(ofMessageType('eventPlay32')))
       .pipe(
-        filter(packet => packet.eventId === CraftingReplayService.CRAFTING_EVENT_ID),
+        filter(message => message.parsedIpcData.eventId === CraftingReplayService.CRAFTING_EVENT_ID),
         withLatestFrom(this.stats$),
         filter(([, stats]) => !!stats),
-        scan((replay: CraftingReplay, [packet, stats]) => {
-          if (packet.type === 'eventPlay4') {
-            switch (packet.param1) {
+        scan((replay: CraftingReplay, [message, stats]) => {
+          const packet = message.parsedIpcData;
+          if (message.type === 'eventPlay4') {
+            switch (packet.params[0]) {
               case 1:
                 return null;
               case 2:
                 return new CraftingReplay(
                   this.afs.createId(),
-                  this.lazyData.data.recipes.find(r => r.id === packet.param2)?.result,
-                  packet.param2,
+                  this.lazyData.data.recipes.find(r => r.id === packet.params[1])?.result,
+                  packet.params[1],
                   firebase.firestore.Timestamp.now(),
                   stats
                 );
@@ -60,14 +62,14 @@ export class CraftingReplayService {
               default:
                 return replay;
             }
-          } else if (packet.type === 'eventPlay32') {
+          } else if (message.type === 'eventPlay32') {
             if (!replay) return null;
             replay.steps.push({
-              action: packet.param5,
-              addedProgression: packet.param9,
-              addedQuality: packet.param11,
-              solidityDifference: new Int32Array([packet.param14])[0],
-              state: packet.param16,
+              action: packet.params[4],
+              addedProgression: packet.params[8],
+              addedQuality: packet.params[10],
+              solidityDifference: new Int32Array([packet.params[13]])[0],
+              state: packet.params[15],
               success: this.isSuccess(packet)
             });
           }
@@ -82,8 +84,8 @@ export class CraftingReplayService {
   }
 
   isSuccess(eventPlay32: any): boolean {
-    if (new Int32Array([eventPlay32.param14])[0] < 0) {
-      return eventPlay32.param9 > 0 || eventPlay32.param11 > 0;
+    if (new Int32Array([eventPlay32.params[13]])[0] < 0) {
+      return eventPlay32.params[8] > 0 || eventPlay32.params[10] > 0;
     }
     return true;
   }

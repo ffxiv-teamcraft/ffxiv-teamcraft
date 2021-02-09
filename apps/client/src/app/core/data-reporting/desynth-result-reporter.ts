@@ -2,15 +2,17 @@ import { Observable } from 'rxjs';
 import { buffer, debounceTime, map } from 'rxjs/operators';
 import { DataReporter } from './data-reporter';
 import { Injectable } from '@angular/core';
-import { ActorControl, DesynthResult } from '../../model/pcap';
-import { ofPacketType } from '../rxjs/of-packet-type';
+import { ofMessageType } from '../rxjs/of-message-type';
+import { toIpcData } from '../rxjs/to-ipc-data';
+import { Message } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 @Injectable()
 export class DesynthResultReporter implements DataReporter {
 
-  getDataReports(packets$: Observable<ActorControl>): Observable<any[]> {
+  getDataReports(packets$: Observable<Message>): Observable<any[]> {
     const desynthResult$ = packets$.pipe(
-      ofPacketType<DesynthResult>('desynthResult')
+      ofMessageType('desynthResult'),
+      toIpcData(),
     );
 
     return desynthResult$.pipe(

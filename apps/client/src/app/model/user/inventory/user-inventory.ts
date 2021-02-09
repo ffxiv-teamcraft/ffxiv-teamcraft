@@ -2,9 +2,9 @@ import { InventoryItem } from './inventory-item';
 import { InventoryPatch } from './inventory-patch';
 import { DataModel } from '../../../core/database/storage/data-model';
 import { ContainerType } from './container-type';
-import { InventoryModifyHandler, InventoryTransaction, UpdateInventorySlot } from '../../pcap';
 import { CharacterInventory } from './character-inventory';
 import { ItemSearchResult } from './item-search-result';
+import { InventoryModifyHandler, InventoryTransaction, UpdateInventorySlot } from '@ffxiv-teamcraft/pcap-ffxiv';
 
 export class UserInventory extends DataModel {
 
@@ -128,12 +128,12 @@ export class UserInventory extends DataModel {
       const entry: InventoryItem = {
         itemId: packet.catalogId,
         quantity: packet.quantity,
-        hq: packet.hqFlag === 1,
+        hq: (packet as UpdateInventorySlot).hqFlag || false,
         slot: packet.slot,
         containerId: packet.containerId,
-        spiritBond: +packet.spiritBond,
+        spiritBond: +(packet as UpdateInventorySlot).spiritBond || 0,
         retainerName: isRetainer ? lastSpawnedRetainer : null,
-        materias: packet.materia || []
+        materias: (packet as UpdateInventorySlot).materia || []
       };
       if (isRetainer) {
         entry.retainerName = lastSpawnedRetainer;
@@ -142,20 +142,20 @@ export class UserInventory extends DataModel {
       item = this.items[this.contentId][containerKey][packet.slot];
     }
     item.quantity = packet.quantity;
-    item.hq = packet.hqFlag === 1;
+    item.hq = (packet as UpdateInventorySlot).hqFlag;
     if (packet.quantity - previousQuantity !== 0) {
       return {
         itemId: packet.catalogId,
         quantity: packet.quantity - previousQuantity,
         containerId: packet.containerId,
-        hq: packet.hqFlag === 1,
+        hq: (packet as UpdateInventorySlot).hqFlag,
         retainerName: isRetainer ? lastSpawnedRetainer : null
       };
     }
     return null;
   }
 
-  operateTransaction(packet: InventoryTransaction | InventoryModifyHandler, lastSpawnedRetainer: string): InventoryPatch | null {
+  operateTransaction(packet: InventoryModifyHandler, lastSpawnedRetainer: string): InventoryPatch | null {
     delete this.searchCache;
     if (!this.items[this.contentId]) {
       return null;
