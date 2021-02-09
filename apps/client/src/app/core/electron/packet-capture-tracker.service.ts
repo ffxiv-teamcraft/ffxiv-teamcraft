@@ -312,7 +312,7 @@ export class PacketCaptureTrackerService {
     });
 
     this.ipc.packets$.pipe(
-      ofPacketType<ActorControl>('addStatusEffect')
+      ofPacketType('addStatusEffect')
     ).subscribe(packet => {
       // TODO use packet struct once moved to pcap-ffxiv
       const statusId = Buffer.from(packet.data).readUInt16LE(0x1A);
